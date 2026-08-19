@@ -135,3 +135,64 @@ STAGE1の自動除外にかかってしまう。該当論文が別ルートで�
   シーン枚数を先に固定しない
 - 内訳の目安: フック1 / 出典明示1 / 論文の背景・課題設定1〜2 / 論文の内容・手法・結果
   2〜3 / グラフ・比較図1〜2（企画書の画配分方針を踏襲） / 生活への影響2〜3 / 締め1
+
+### シーンタイプ体系とBGM3曲構成の対応（2026-08確定）
+
+上記の内訳をそのまま `scene.type` の値にする。`kl_video_gen.py`（今後作成）は
+SCの `sc_video_gen.py` と同じ考え方で、シーンタイプの並びからBGM3曲
+（序盤intro／中盤main／終盤outro）の切り替え境界を自動計算する。
+
+| type | 内容 | BGM役割 | 画風 |
+|---|---|---|---|
+| `hook` | 冒頭フック（3〜5秒） | intro | 物語調イラスト |
+| `citation` | 出典明示（5〜10秒、大学名・発表年等） | intro | 物語調イラスト |
+| `context` | 論文の背景・課題設定 | main | 物語調イラスト |
+| `finding` | 論文の内容・手法・結果 | main | 物語調イラスト |
+| `data` | グラフ・比較図・フローチャート | main | チャート調（BASE_CONTEXTと別トーン） |
+| `impact` | 生活への影響（使い捨ての生活者が登場） | outro | 物語調イラスト |
+| `closing` | 締め | outro | 物語調イラスト |
+
+**境界計算ルール**（SCの `rising_action`/`climax` 境界判定と同じ考え方）:
+- 境界1（intro→main）: 最初の `context` または `finding` シーンの開始位置
+- 境界2（main→outro）: 最初の `impact` シーンの開始位置
+
+`data` タイプのシーンは、企画書の画配分方針（1〜2枚のグラフ・比較図）に対応する。
+`kl_image_gen.py`（今後作成）は `data` タイプの場合、物語調イラストのBASE_CONTEXTではなく
+チャート・フローチャート向けの別プロンプトテンプレートを使う。
+
+### エピソードJSONフォーマット（`episodes/kl{NNN}.json`）
+
+SCのフォーマットを土台に、Shorts・ティザー関連フィールド（企画書に記載がないため
+今回は作らない）を削除し、`references`（出典）と `protagonist`（使い捨ての生活者）を
+追加した。
+
+```json
+{
+  "episode_id": "kl001",
+  "episode_title": "...",
+  "youtube_title": "...",
+  "youtube_description": "...",
+  "youtube_tags": [...],
+  "references": [
+    {"title": "...", "authors": ["...", "..."], "year": 2024, "venue": "...", "url": "..."}
+  ],
+  "protagonist": {"name": "...", "age": 0, "job": "..."},
+  "thumbnail_prompt": "...",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "hook",
+      "duration_seconds": 5,
+      "narration": "...",
+      "image_prompt": "...",
+      "ken_burns": "zoom_in"
+    }
+  ]
+}
+```
+
+`duration_seconds` はSCと同じくフォールバック専用（音声なしシーン用）で、
+音声ありシーンの実クリップ尺は生成されたナレーション音声の長さから決定する。
+`references` は `topics_queue.json` の該当エントリ（title/authors/year/venue/url）を
+そのまま引き継いで生成する。`protagonist` も `topics_queue.json` の該当エントリに
+STAGE4で生成済みの値があればそれを引き継ぐ。
