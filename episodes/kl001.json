@@ -1,0 +1,109 @@
+{
+  "episode_id": "kl001",
+  "episode_title": "Robi Butler：遠隔操作で動く家事ロボット",
+  "youtube_title": "スマホから『これ、片付けて』出張中でも家事ロボットに頼める時代が来た",
+  "youtube_description": "3日間の出張中でも、スマホから自宅のロボットに家事を頼める――そんな研究がシンガポール国立大学から発表されました。実際にどこまでできるのか、論文をもとに検証します。\n\n📚 参考文献:\nXiao, A., Janaka, N., Hu, T., Gupta, A., Li, K., Yu, C., & Hsu, D. (2025). Robi Butler: Multimodal Remote Interaction with a Household Robot Assistant. IEEE International Conference on Robotics and Automation (ICRA).\nDOI: 10.1109/ICRA55743.2025.11128329\nhttps://robibutler.github.io/\n\n#AIロボット #家事ロボット #くらしを変える科学",
+  "youtube_tags": ["AIロボット", "家事ロボット", "遠隔操作ロボット", "ICRA", "在宅DX", "スマートホーム", "ロボティクス", "研究紹介", "LLM", "テクノロジー"],
+  "references": [
+    {
+      "title": "Robi Butler: Multimodal Remote Interaction with a Household Robot Assistant",
+      "authors": ["Anxing Xiao", "Nuwan Janaka", "Tianrun Hu", "Anshul Gupta", "Kaixin Li", "Cunjun Yu", "David Hsu"],
+      "year": 2025,
+      "venue": "IEEE International Conference on Robotics and Automation (ICRA)",
+      "url": "https://arxiv.org/abs/2409.20548",
+      "doi": "10.1109/ICRA55743.2025.11128329"
+    }
+  ],
+  "protagonist": {"name": "佐々木 由紀", "age": 38, "job": "IT企業の営業職（出張多め）"},
+  "thumbnail_prompt": "Flat geometric science-infographic illustration, close-up of a friendly household robot arm reaching toward a glowing smartphone screen showing a video-call interface, cool blue-teal palette with one warm orange accent color, Kurzgesagt-style, no photorealism, no text, 16:9",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "hook",
+      "duration_seconds": 10,
+      "narration": "出張続きで家を空けて3日目。洗濯物はたまり、観葉植物の水やりも気がかり。もしスマホひとつで、自宅のロボットに『これ、お願い』と頼めるとしたら――そんな未来、想像できますか?",
+      "image_prompt": "Flat infographic illustration of a young professional woman standing in an airport lounge, looking at her smartphone with a slightly worried expression, a small thought-bubble icon showing a house silhouette above her head, cool blue-teal palette, minimal geometric shapes, Kurzgesagt-style, no text",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 2,
+      "type": "citation",
+      "duration_seconds": 10,
+      "narration": "これは空想の話ではありません。シンガポール国立大学の研究チームが2025年、国際ロボット学会議ICRAで発表した、実際に動くロボットシステムの話です。",
+      "image_prompt": "Flat infographic illustration of a university research lab building icon with a small conference banner reading style graphic (no legible text), geometric campus silhouette, cool blue-teal palette, minimal flat shapes, Kurzgesagt-style",
+      "ken_burns": "static"
+    },
+    {
+      "scene_id": 3,
+      "type": "context",
+      "duration_seconds": 32,
+      "narration": "これまでの家庭用ロボットは、決められた指示しか理解できませんでした。『冷蔵庫を開けて』とは言えても、『さっきのそれ、片付けといて』のような曖昧な言い方には対応できなかったのです。研究チームは、実際に人がどんな家事に時間を使っているかという公的な生活時間調査をもとに、料理の準備や部屋の片付け、日用品の管理といった、本当に日常的なタスクだけを選んで実験することにしました。",
+      "image_prompt": "Flat infographic illustration split into two panels: left panel shows an old rigid robot with a confused expression and a speech bubble containing a simple gear icon (limited commands), right panel shows a simple clock-and-checklist icon representing daily household time use, cool color palette, geometric flat shapes, Kurzgesagt-style, no text",
+      "ken_burns": "pan_right"
+    },
+    {
+      "scene_id": 4,
+      "type": "finding",
+      "duration_seconds": 34,
+      "narration": "研究チームが開発したのは『Robi Butler』。ロボット本体は7本の関節を持つアームと車輪で家の中を移動できる本体で、ユーザーはゴーグル型のデバイスを着けてビデオ通話でロボットとつながります。映像を見ながら声で指示を出し、画面上を指差して対象物を選ぶと、搭載されたAIがその意図を読み取り、行動計画を自動で組み立てます。",
+      "image_prompt": "Flat infographic illustration of a household robot with a simple round camera-head, a 7-joint arm icon, and a wheeled base, standing in a living room, with a floating video-call interface icon nearby showing a hand-pointing gesture icon and a sound-wave icon, cool blue-teal palette with warm accent, Kurzgesagt-style, no text",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 5,
+      "type": "finding",
+      "duration_seconds": 30,
+      "narration": "『これをソファに持ってきて』と言いながら画面上の物を指差すと、ロボットはその物をつかみ、指定の場所へ運びます。候補が複数あって指示が曖昧な時は、ロボット自身が『どちらのことですか?』と聞き返し、ユーザーがもう一度指差すまで待ってくれる、という細やかな設計になっています。",
+      "image_prompt": "Flat infographic illustration showing a robot arm picking up a small object from a table and carrying it toward a sofa icon, with a simple dotted trajectory line, a small speech-bubble icon with a question mark showing the robot asking for clarification, cool blue-teal palette, minimal geometric shapes, Kurzgesagt-style, no text",
+      "ken_burns": "pan_left"
+    },
+    {
+      "scene_id": 6,
+      "type": "finding",
+      "duration_seconds": 36,
+      "narration": "研究チームは、アボカドをゴミ箱に捨てる、冷蔵庫のビールを確認する、戸棚の中身を説明する、など10種類の家事タスクで実験を行いました。結果、平均成功率は96.7%。指示の理解自体は100%正確でしたが、実際に物をつかむ動作でわずかに失敗することがあり、あるタスクでは緑茶の箱を別の袋と見間違えるミスもありました。1つのタスクにかかった時間は平均およそ105秒、やりとりの回数はわずか2.3回でした。",
+      "image_prompt": "Flat infographic illustration showing a row of ten small simple household task icons (trash can, fridge, cup, remote control, chair, laptop) arranged in a grid, with a large bold checkmark icon summarizing success and one small icon showing a minor mix-up, cool blue-teal palette with warm accent, Kurzgesagt-style, no legible text just icons",
+      "ken_burns": "zoom_out"
+    },
+    {
+      "scene_id": 7,
+      "type": "data",
+      "duration_seconds": 34,
+      "narration": "さらに12人の初心者を対象にした実験では、『声だけ』『指差しだけ』『声とジェスチャーの組み合わせ』の3パターンを比較しました。結果、信頼度のスコアは、両方を組み合わせたRobi Butlerが他の2パターンより統計的に有意に高い評価を得ました。使いやすさのスコアも数値上はRobi Butlerが最も高く、特に指差しのみのパターンより有意に高い結果でした。参加者の一人は『声とジェスチャーを両方使う方が、間違いを避けやすいと感じたから信頼できた』と話しています。",
+      "image_prompt": "Flat clean bar chart infographic comparing three simple labeled groups (voice-only, gesture-only, combined) with the combined group's bars clearly the tallest for trust score and usability score, minimal flat design, cool blue-teal palette with one warm accent color highlighting the combined bar, no photorealism, simple sans-serif style numeric bars without legible text",
+      "ken_burns": "static"
+    },
+    {
+      "scene_id": 8,
+      "type": "finding",
+      "duration_seconds": 20,
+      "narration": "面白いのは、距離がほとんど問題にならないという点です。シンガポール国内での遅延はわずか0.2秒。遠く離れたアブダビからの操作でも、0.5秒以内に収まりました。",
+      "image_prompt": "Flat infographic illustration of a simplified world map with two glowing points connected by a curved dotted line, one point labeled with a small robot icon and the other with a small smartphone icon, cool blue-teal palette, minimal geometric flat style, Kurzgesagt-style, no legible text",
+      "ken_burns": "pan_right"
+    },
+    {
+      "scene_id": 9,
+      "type": "impact",
+      "duration_seconds": 32,
+      "narration": "もしこの技術が実用化されたら――出張の多い会社員も、移動中の新幹線からスマホで『洗濯物、畳んでおいて』『冷蔵庫に何が残っているか教えて』と頼み、帰宅したときには片付いた部屋と、買い足す物のメモが待っている、そんな日常が訪れるかもしれません。",
+      "image_prompt": "Flat infographic illustration of the same young professional woman now smiling, sitting on a train looking at her smartphone showing a small robot icon giving a thumbs-up, warm cozy home silhouette visible in a thought bubble with a folded-laundry icon and a fridge icon, cool blue-teal palette with warm accent color, Kurzgesagt-style, no text",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 10,
+      "type": "impact",
+      "duration_seconds": 26,
+      "narration": "ただし、これはまだ研究段階のプロトタイプです。専用のゴーグルや高性能なコンピューターが必要で、扱える物も柔らかい物や透明な物は対象外でした。研究チーム自身も、今後さらに賢く、人に合わせて学習していく必要があると述べています。実用化にはまだ時間がかかりそうです。",
+      "image_prompt": "Flat infographic illustration of a research prototype robot with a small VR-headset icon and a computer-tower icon nearby, one object icon shown crossed out to represent excluded fragile items, muted cool color palette, Kurzgesagt-style, honest and grounded tone, no text",
+      "ken_burns": "static"
+    },
+    {
+      "scene_id": 11,
+      "type": "closing",
+      "duration_seconds": 20,
+      "narration": "研究チーム自身も、この論文を『実現への一歩』と位置づけています。ロボットが日々の家事を静かに支える未来は、まだ少し先。けれどその一歩は、確実に私たちの暮らしに近づいてきています。",
+      "image_prompt": "Flat infographic illustration of a single footprint icon leading toward a glowing warm-toned home silhouette on the horizon, minimal geometric shapes, cool blue-teal palette with warm accent, Kurzgesagt-style, hopeful and calm mood, no text",
+      "ken_burns": "zoom_out"
+    }
+  ]
+}
