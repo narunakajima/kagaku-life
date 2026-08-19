@@ -1,0 +1,39 @@
+{
+  "_comment": "制作キュー。配列の先頭が次に制作するエピソード（SC/LWと同じ並び順規約）。statusはpending(候補)→confirmed(STAGE5ゴーサイン済み・制作パイプライン未着手)→in_production→published。kl_paper_search.pyはsemantic_scholar_idを既出として重複排除に使う。",
+  "queue": [
+    {
+      "episode_id": "kl001",
+      "status": "confirmed",
+      "title": "Robi Butler: Multimodal Remote Interaction with a Household Robot Assistant",
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "venue": "IEEE International Conference on Robotics and Automation (ICRA) 2024",
+      "year": 2024,
+      "doi": "10.1109/ICRA55743.2025.11128329",
+      "semantic_scholar_id": "74ecb95811c816f2d59d9ffb7da112063beafd6d",
+      "authors": ["Anxing Xiao", "Nuwan Janaka", "Tianrun Hu", "Anshul Gupta", "Kaixin Li"],
+      "protagonist": {"name": "佐々木 由紀", "age": 38, "job": "IT企業の営業職（出張多め）"},
+      "hook_idea": "出張先からZoomで『これ片付けて！』と指差すだけ。自宅のロボットが動く未来、想像できますか？",
+      "notes": "STAGE4総合スコア3.95（生活実感5・意外性2・ペルソナ適合5）。意外性のある定量数値がアブストラクトに乏しいため、タスク成功率等の数字で1〜2枚のグラフシーンを補強する。プロトタイプ段階である旨を必ず明記（STAGE3ヘッジ注記: 「完全な家事ロボットが実用化された」といった誤解を与える表現を避ける）。第1話として確定（2026-08-19）。"
+    },
+    {
+      "episode_id": "kl002",
+      "status": "confirmed",
+      "title": "Generative AI at Work",
+      "category": "work",
+      "category_label": "働き方の変化",
+      "venue": "Quarterly Journal of Economics (2025)",
+      "year": 2025,
+      "url": "https://academic.oup.com/qje/article/140/2/889/7990658",
+      "semantic_scholar_id": "5a23a489bb9e742edacc8b8e778b06e1594365d3",
+      "semantic_scholar_indexed_venue": "Social Science Research Network (2023, NBER working paper版。DOI 10.3386/w31161)",
+      "authors": ["Erik Brynjolfsson", "Danielle Li", "Lindsey Raymond"],
+      "n": 5172,
+      "key_finding": "生成AIアシスタント導入でコールセンター従業員の生産性が平均+15%向上。経験の浅い従業員ほど恩恵が大きく、スキル格差が縮小。",
+      "notes": "パイプライン自動探索（STAGE1〜4）では未検出。Semantic ScholarにはNBER/SSRN版（2023年）のみ索引され、2025年QJE出版版が別レコードとして存在しないため、査読済みのみフィルタで機械的に漏れた。査読済み掲載であることはOxford Academic版のURLで人間が直接確認済みの例外的救済（pipeline_gap_flag参照）。第2話として確定（2026-08-19）。",
+      "pipeline_gap_flag": true
+    }
+  ],
+  "total_topics": 2,
+  "last_updated": "2026-08-19"
+}
