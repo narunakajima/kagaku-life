@@ -1,0 +1,80 @@
+{
+  "_comment": "kl_paper_search.py（今後作成）がSemantic Scholar Graph APIへのクエリ生成に使う設定。カテゴリはCLAUDE.mdのSTAGE1サブジャンル表と対応。weightはSTAGE1でのカテゴリ登場頻度に使う。最低12話公開されるまでは全カテゴリ均等のまま固定し、アナリティクスによる自動調整は行わない（weight_policy参照）。",
+  "categories": {
+    "aging_care": {
+      "label": "高齢化・介護・自立支援",
+      "weight": 1.0,
+      "queries": [
+        "\"socially assistive robot\" AND \"older adults\" AND (RCT OR \"randomized controlled trial\")",
+        "\"companion robot\" AND loneliness AND trial",
+        "(\"transfer assist robot\" OR \"mobility assist robot\") AND caregiver AND evaluation",
+        "\"fall detection\" AND wearable AND elderly AND trial",
+        "dementia AND \"social robot\" AND (cognitive OR depression) AND trial",
+        "\"aging in place\" AND \"smart home\" AND independence AND study",
+        "\"conversational agent\" AND \"older adults\" AND isolation AND trial"
+      ]
+    },
+    "home_robot": {
+      "label": "家庭内ロボット・家事自動化",
+      "weight": 1.0,
+      "queries": [
+        "\"household robot\" AND \"user study\" AND task",
+        "\"domestic robot\" AND (\"idle time\" OR \"multi-task\")",
+        "\"cleaning robot\" AND (survey OR \"user study\" OR adoption)",
+        "(\"kitchen robot\" OR \"cooking robot\") AND manipulation AND evaluation",
+        "\"laundry folding\" AND robot AND \"success rate\"",
+        "\"whole-body manipulation\" AND household AND \"real-world\" AND evaluation",
+        "\"home robot\" AND (trust OR acceptance) AND survey"
+      ]
+    },
+    "medical_support": {
+      "label": "医療補助技術",
+      "note": "AI/ロボットによる支援技術のみ対象。診断・治療そのものの医学的妥当性を論じる候補はSTAGE2/3で個別に除外判断する（CLAUDE.md参照）。",
+      "weight": 1.0,
+      "queries": [
+        "\"AI-assisted rehabilitation\" AND stroke AND (trial OR RCT)",
+        "\"remote patient monitoring\" AND wearable AND elderly AND trial",
+        "\"robotic exoskeleton\" AND rehabilitation AND gait AND clinical",
+        "\"fall prevention\" AND wearable AND sensor AND randomized",
+        "\"assistive technology\" AND \"activities of daily living\" AND evaluation",
+        "\"AI hearing device\" AND clinical AND evaluation"
+      ]
+    },
+    "mobility": {
+      "label": "モビリティ・身体拡張",
+      "weight": 1.0,
+      "queries": [
+        "exoskeleton AND gait AND elderly AND (trial OR evaluation)",
+        "\"wearable robot\" AND mobility AND clinical",
+        "\"powered prosthesis\" AND user AND evaluation",
+        "\"autonomous wheelchair\" AND navigation AND \"user study\"",
+        "\"soft exoskeleton\" AND walking AND energy AND study"
+      ]
+    },
+    "work": {
+      "label": "働き方の変化",
+      "weight": 1.0,
+      "queries": [
+        "\"generative AI\" AND productivity AND workplace AND (\"field experiment\" OR randomized)",
+        "\"AI agent\" AND collaboration AND productivity AND experiment",
+        "\"AI copilot\" AND (\"call center\" OR \"customer support\") AND performance",
+        "\"human-AI collaboration\" AND workplace AND randomized",
+        "\"algorithmic management\" AND worker AND wellbeing AND study"
+      ]
+    },
+    "disaster_safety": {
+      "label": "防災・安全",
+      "weight": 1.0,
+      "queries": [
+        "\"search and rescue robot\" AND field AND evaluation",
+        "\"disaster response robot\" AND deployment AND \"case study\"",
+        "\"swarm robotics\" AND disaster AND field",
+        "\"autonomous drone\" AND disaster AND response AND evaluation"
+      ]
+    }
+  },
+  "weight_policy": {
+    "min_episodes_before_adjustment": 12,
+    "note": "公開エピソードが最低12話に達するまではweightを全カテゴリ均等(1.0)のまま固定する。それ以前にカテゴリ別CTR・完了率の差でweightを調整すると、少数サンプルのノイズに早合点するリスクがある（lamp-whisperのn≈12ルールを踏襲）。12話到達後はkl_analytics_report.py（今後作成）の分析結果を踏まえ、人間が手動でweightと個々のクエリ語彙を見直す。自動での語彙生成・自動weight更新は行わない。"
+  }
+}
