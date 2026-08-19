@@ -3,8 +3,12 @@ kl_paper_search.py — くらしを変える科学 STAGE1論文検索スクリ�
 
 Semantic Scholar Graph API（bulk search）を使い、query_vocabulary.json のカテゴリ別
 クエリでSTAGE1（一次収集）を実行する。実際の総ヒット件数（total）を必ずログに残し、
-CLAUDE.md STAGE2の自動プレフィルタ（鮮度・publicationTypes除外・重複排除）を適用したうえで、
+CLAUDE.md STAGE1の自動プレフィルタ（鮮度・publicationTypes除外・重複排除）を適用したうえで、
 カテゴリごとの上位候補を stage1_pool.json に出力する。
+
+2026-08〜: プレプリント（arXiv等）は自動除外しない。信頼性の判断（著者所属機関・
+技術的厳密さ等）はSTAGE2（kl_paper_screen.py）のGeminiに委ねる方針に変更した
+（CLAUDE.md STAGE2参照）。各候補には is_preprint フラグを付けて出力する。
 
 使い方:
   python3 kl_paper_search.py                        # 全カテゴリ実行
@@ -35,8 +39,9 @@ TOPICS_QUEUE_PATH = BASE_DIR / "topics_queue.json"
 API_URL = "https://api.semanticscholar.org/graph/v1/paper/search/bulk"
 FIELDS = "title,abstract,year,venue,publicationTypes,citationCount,externalIds,authors"
 EXCLUDE_TYPES = {"Review", "Editorial", "LettersAndComments"}
-# venueがこれらに一致する場合はプレプリントサーバ経由とみなし除外する
-# （publicationTypesだけではarXiv等の投稿がJournalArticle扱いになり見逃すことがあるため）
+# venueがこれらに一致する場合はプレプリントサーバ経由。2026-08〜プレプリントは
+# 自動除外しない（CLAUDE.md STAGE2改訂）が、is_preprintフラグを付けてSTAGE2の
+# Gemini審査（著者所属・技術的厳密さでの信頼性判断）に必ず回すための目印にする。
 PREPRINT_VENUES = {
     "arxiv.org",
     "arxiv",
@@ -144,16 +149,22 @@ def score_paper(paper: dict) -> float:
     return math.log1p(citation_count) + recency * 1.5
 
 
-def passes_stage2_prefilter(paper: dict) -> tuple:
-    """CLAUDE.md STAGE2の自動プレフィルタ。(合格可否, 除外理由) を返す。"""
+def is_preprint(paper: dict) -> bool:
+    venue = (paper.get("venue") or "").strip().lower()
+    return venue in PREPRINT_VENUES
+
+
+def passes_stage1_prefilter(paper: dict) -> tuple:
+    """CLAUDE.md STAGE1の自動プレフィルタ。(合格可否, 除外理由) を返す。
+    2026-08〜: プレプリントは自動除外しない（信頼性判断はSTAGE2のGeminiに委ねる）。
+    レビュー/エディトリアル等の独自データを持たない論文と、venue情報が全くない
+    （出典として提示すらできない）ものだけを機械的に弾く。"""
     types = paper.get("publicationTypes") or []
     if any(t in EXCLUDE_TYPES for t in types):
         return False, f"publicationTypesにReview/Editorial等を含む: {types}"
     venue = (paper.get("venue") or "").strip()
     if not venue:
-        return False, "venue情報なし（査読誌か確認できない）"
-    if venue.lower() in PREPRINT_VENUES:
-        return False, f"プレプリントサーバ経由（査読済みではない）: {venue}"
+        return False, "venue情報なし（出典として提示できない）"
     return True, None
 
 
@@ -193,23 +204,23 @@ def run_category(name: str, cat: dict, year_from: int, year_to: int, top_n: int,
         return {"label": cat["label"], "dry_run": True, "queries": query_log}
 
     excluded_review = 0
-    excluded_preprint = 0
     excluded_no_venue = 0
     excluded_dup = 0
+    preprint_count = 0
     passing = []
     for pid, paper in all_candidates.items():
         if pid in seen_ids:
             excluded_dup += 1
             continue
-        ok, reason = passes_stage2_prefilter(paper)
+        ok, reason = passes_stage1_prefilter(paper)
         if not ok:
             if "Review/Editorial" in (reason or ""):
                 excluded_review += 1
-            elif "プレプリント" in (reason or ""):
-                excluded_preprint += 1
             else:
                 excluded_no_venue += 1
             continue
+        if is_preprint(paper):
+            preprint_count += 1
         passing.append(paper)
 
     passing.sort(key=score_paper, reverse=True)
@@ -218,8 +229,8 @@ def run_category(name: str, cat: dict, year_from: int, year_to: int, top_n: int,
     print(
         f"  カテゴリ集計: 収集{len(all_candidates)}件 → "
         f"重複排除-{excluded_dup} → レビュー等除外-{excluded_review} → "
-        f"プレプリント除外-{excluded_preprint} → venue不明除外-{excluded_no_venue} → "
-        f"通過{len(passing)}件 → 上位{len(top)}件を採用"
+        f"venue不明除外-{excluded_no_venue} → "
+        f"通過{len(passing)}件（うちプレプリント{preprint_count}件） → 上位{len(top)}件を採用"
     )
 
     return {
@@ -228,9 +239,9 @@ def run_category(name: str, cat: dict, year_from: int, year_to: int, top_n: int,
         "raw_collected": len(all_candidates),
         "excluded_duplicate": excluded_dup,
         "excluded_review_type": excluded_review,
-        "excluded_preprint_venue": excluded_preprint,
         "excluded_no_venue": excluded_no_venue,
-        "passed_stage2": len(passing),
+        "passed_stage1": len(passing),
+        "preprint_count": preprint_count,
         "candidates": [
             {
                 "paperId": p.get("paperId"),
@@ -243,6 +254,7 @@ def run_category(name: str, cat: dict, year_from: int, year_to: int, top_n: int,
                 "authors": [a.get("name") for a in (p.get("authors") or [])][:5],
                 "abstract": p.get("abstract"),
                 "score": round(score_paper(p), 3),
+                "is_preprint": is_preprint(p),
             }
             for p in top
         ],

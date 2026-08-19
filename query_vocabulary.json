@@ -1,5 +1,5 @@
 {
-  "_comment": "kl_paper_search.py（今後作成）がSemantic Scholar Graph APIへのクエリ生成に使う設定。カテゴリはCLAUDE.mdのSTAGE1サブジャンル表と対応。weightはSTAGE1でのカテゴリ登場頻度に使う。最低12話公開されるまでは全カテゴリ均等のまま固定し、アナリティクスによる自動調整は行わない（weight_policy参照）。",
+  "_comment": "kl_paper_search.py（今後作成）がSemantic Scholar Graph APIへのクエリ生成に使う設定。カテゴリはCLAUDE.mdのSTAGE1サブジャンル表と対応。weightはSTAGE1でのカテゴリ登場頻度に使う。最低12話公開されるまでは全カテゴリ均等のまま固定し、アナリティクスによる自動調整は行わない（weight_policy参照）。2026-08〜: RCT/trial/evaluation系のクエリだけだと『既に検証済みだが地味』な研究に偏り、企画書が求める『変革ポテンシャル』を取りこぼすと判明（kl001実制作で発覚）。各カテゴリのqueries末尾に、最先端・野心的な能力実証を狙うクエリを追加した（トップ研究機関・企業の発表を拾いやすいよう研究デザイン語ではなく能力・世代を表す語を使う）。信頼性の担保はSTAGE2（著者機関・技術的厳密さでの判断）とSTAGE3（誇張チェック）に委ねる。",
   "categories": {
     "aging_care": {
       "label": "高齢化・介護・自立支援",
@@ -11,7 +11,9 @@
         "\"fall detection\" AND wearable AND elderly AND trial",
         "dementia AND \"social robot\" AND (cognitive OR depression) AND trial",
         "\"aging in place\" AND \"smart home\" AND independence AND study",
-        "\"conversational agent\" AND \"older adults\" AND isolation AND trial"
+        "\"conversational agent\" AND \"older adults\" AND isolation AND trial",
+        "\"humanoid robot\" AND caregiving AND \"foundation model\"",
+        "\"large language model\" AND \"elderly care\" AND autonomous"
       ]
     },
     "home_robot": {
@@ -24,7 +26,10 @@
         "(\"kitchen robot\" OR \"cooking robot\") AND manipulation AND evaluation",
         "\"laundry folding\" AND robot AND \"success rate\"",
         "\"whole-body manipulation\" AND household AND \"real-world\" AND evaluation",
-        "\"home robot\" AND (trust OR acceptance) AND survey"
+        "\"home robot\" AND (trust OR acceptance) AND survey",
+        "\"humanoid robot\" AND \"general-purpose manipulation\" AND home",
+        "\"vision-language-action\" AND robot AND household",
+        "\"foundation model\" AND \"mobile manipulation\" AND \"open-vocabulary\""
       ]
     },
     "medical_support": {
@@ -37,7 +42,9 @@
         "\"robotic exoskeleton\" AND rehabilitation AND gait AND clinical",
         "\"fall prevention\" AND wearable AND sensor AND randomized",
         "\"assistive technology\" AND \"activities of daily living\" AND evaluation",
-        "\"AI hearing device\" AND clinical AND evaluation"
+        "\"AI hearing device\" AND clinical AND evaluation",
+        "\"brain-computer interface\" AND assistive AND breakthrough",
+        "\"AI-powered prosthetic\" AND \"next generation\""
       ]
     },
     "mobility": {
@@ -48,7 +55,9 @@
         "\"wearable robot\" AND mobility AND clinical",
         "\"powered prosthesis\" AND user AND evaluation",
         "\"autonomous wheelchair\" AND navigation AND \"user study\"",
-        "\"soft exoskeleton\" AND walking AND energy AND study"
+        "\"soft exoskeleton\" AND walking AND energy AND study",
+        "\"bionic limb\" AND \"neural interface\" AND breakthrough",
+        "\"full-body exoskeleton\" AND \"superhuman\""
       ]
     },
     "work": {
@@ -59,7 +68,9 @@
         "\"AI agent\" AND collaboration AND productivity AND experiment",
         "\"AI copilot\" AND (\"call center\" OR \"customer support\") AND performance",
         "\"human-AI collaboration\" AND workplace AND randomized",
-        "\"algorithmic management\" AND worker AND wellbeing AND study"
+        "\"algorithmic management\" AND worker AND wellbeing AND study",
+        "\"autonomous AI agent\" AND \"knowledge work\" AND automation",
+        "\"AI agent\" AND \"software engineering\" AND autonomous"
       ]
     },
     "disaster_safety": {
@@ -69,7 +80,9 @@
         "\"search and rescue robot\" AND field AND evaluation",
         "\"disaster response robot\" AND deployment AND \"case study\"",
         "\"swarm robotics\" AND disaster AND field",
-        "\"autonomous drone\" AND disaster AND response AND evaluation"
+        "\"autonomous drone\" AND disaster AND response AND evaluation",
+        "\"humanoid robot\" AND \"disaster response\" AND autonomous",
+        "\"quadruped robot\" AND \"search and rescue\" AND autonomous"
       ]
     }
   },

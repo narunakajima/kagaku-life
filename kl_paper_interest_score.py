@@ -2,10 +2,14 @@
 kl_paper_interest_score.py — くらしを変える科学 STAGE4「面白いか」一次判定スクリプト
 
 stage3_hypecheck.json（kl_paper_hypecheck.pyの出力）のうち overall が high_risk でない
-候補をGeminiに渡し、CLAUDE.md STAGE4の4観点（生活実感との直結度・数字のインパクト・
-「使い捨ての生活者」ペルソナへの落とし込みやすさ・サブジャンル分散）で判定させる。
+候補をGeminiに渡し、CLAUDE.md STAGE4の観点（変革ポテンシャル・野心度／生活実感との
+直結度／数字のインパクト／「使い捨ての生活者」ペルソナへの落とし込みやすさ）で判定させる。
 検索は不要な創作寄りの判断のためGoogle Searchグラウンディングは使わない。
 Opusは使わない（STAGE2/3と同方針）。
+
+2026-08〜: 「変革ポテンシャル・野心度」を追加し、最も重く重み付けする（CLAUDE.md
+STAGE4参照）。kl001実制作で「査読済み・安全だが地味」な研究に寄り、企画書の核心
+（信頼できる研究が暮らしを劇的に変える面白さ）を欠く結果になったための改訂。
 
 具体的な主人公プロフィール（名前・年齢・職業）とフック文の叩き台まで生成し、
 STAGE5（人間の最終ゴーサイン）にそのまま渡せる形にする。
@@ -46,14 +50,19 @@ AI・ロボティクス分野の学術論文を一般視聴者向けに解説し
 
 タイトル: {title}
 掲載誌: {venue}
+プレプリントか: {preprint_label}
 発表年: {year}
 アブストラクト: {abstract}
 STAGE3での注意点（動画化時に踏まえるべきヘッジ・限界）: {hedging_notes}
 
 以下4つの観点で1〜5点評価してください（5が最高）:
-1. life_relevance_score: 生活実感との直結度（視聴者が「自分ごと」として想像できるか）
-2. surprise_score: 数字のインパクト（意外性のある定量的結果があるか）
-3. persona_fit_score: 「使い捨ての生活者」ペルソナ（1エピソード限りの具体的な生活者を主人公にする
+1. transformation_score: 変革ポテンシャル・野心度。この技術が本当に広く実現した場合、
+   暮らしをどれだけ劇的に変えるか。「すでに確立された地味な改善」には低い点を、
+   「まだ実現していないが実現すれば劇的」には高い点をつける。査読済みか未査読かは
+   このスコアに影響させない（査読状況の信頼性判断はSTAGE2で既に完了している前提）
+2. life_relevance_score: 生活実感との直結度（視聴者が「自分ごと」として想像できるか）
+3. surprise_score: 数字のインパクト（意外性のある定量的結果があるか）
+4. persona_fit_score: 「使い捨ての生活者」ペルソナ（1エピソード限りの具体的な生活者を主人公にする
    演出）に、具体的な生活シーンとして落とし込みやすいか
 
 さらに、実際にこの論文を扱うとしたら:
@@ -62,7 +71,7 @@ STAGE3での注意点（動画化時に踏まえるべきヘッジ・限界）: 
 - hook_idea: 冒頭3〜5秒のフック文の叩き台（日本語、生活実感に直結する問いかけ）
 
 出力は次のJSON形式のみで、他のテキスト・Markdown装飾は一切含めないこと:
-{{"life_relevance_score": 1-5, "surprise_score": 1-5, "persona_fit_score": 1-5, "example_protagonist": {{"name": "...", "age": 0, "job": "..."}}, "hook_idea": "...", "reasoning": "..."}}
+{{"transformation_score": 1-5, "life_relevance_score": 1-5, "surprise_score": 1-5, "persona_fit_score": 1-5, "example_protagonist": {{"name": "...", "age": 0, "job": "..."}}, "hook_idea": "...", "reasoning": "..."}}
 """
 
 
@@ -76,6 +85,7 @@ def score_paper(client: genai.Client, paper: dict, retries: int = 3) -> dict:
     prompt = PROMPT_TEMPLATE.format(
         title=paper.get("title") or "(不明)",
         venue=paper.get("venue") or "(不明)",
+        preprint_label="プレプリント（査読前）" if paper.get("is_preprint") else "査読済み想定",
         year=paper.get("year") or "(不明)",
         abstract=(paper.get("abstract") or "(アブストラクトなし)")[:2000],
         hedging_notes=(paper.get("stage3") or {}).get("hedging_notes") or "(特になし)",
@@ -87,6 +97,7 @@ def score_paper(client: genai.Client, paper: dict, retries: int = 3) -> dict:
             return json.loads(raw)
         except json.JSONDecodeError:
             return {
+                "transformation_score": 1,
                 "life_relevance_score": 1,
                 "surprise_score": 1,
                 "persona_fit_score": 1,
@@ -101,6 +112,7 @@ def score_paper(client: genai.Client, paper: dict, retries: int = 3) -> dict:
                 time.sleep(wait)
                 continue
             return {
+                "transformation_score": 1,
                 "life_relevance_score": 1,
                 "surprise_score": 1,
                 "persona_fit_score": 1,
@@ -112,9 +124,10 @@ def score_paper(client: genai.Client, paper: dict, retries: int = 3) -> dict:
 
 def overall_score(v: dict) -> float:
     return (
-        v.get("life_relevance_score", 0) * 0.4
-        + v.get("surprise_score", 0) * 0.35
-        + v.get("persona_fit_score", 0) * 0.25
+        v.get("transformation_score", 0) * 0.35
+        + v.get("life_relevance_score", 0) * 0.25
+        + v.get("surprise_score", 0) * 0.25
+        + v.get("persona_fit_score", 0) * 0.15
     )
 
 

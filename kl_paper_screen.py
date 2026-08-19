@@ -6,6 +6,10 @@ stage1_pool.json（kl_paper_search.pyの出力）の候補をGemini（Google Sea
 掲載誌の信頼度・サンプルサイズの妥当性・再現性・資金源/利益相反を確認させる
 （CLAUDE.md STAGE2）。判定は pass / flag / exclude の3段階。
 
+2026-08〜: 「査読済みのみ」ルールを撤回したため、プレプリント（is_preprint: true）は
+掲載誌の査読体制だけでなく、著者所属機関の実績・技術的検証の厳密さで信頼性を
+判断する（CLAUDE.md STAGE2参照）。
+
 Opusは使わない（コスト・利用枠の都合。2026-08確定）。Geminiのみで完結する。
 
 使い方:
@@ -38,21 +42,29 @@ MODEL = "models/gemini-3.6-flash"
 CALL_DELAY_SEC = 1.5
 
 PROMPT_TEMPLATE = """あなたは懐疑的な査読担当者です。以下の論文候補について、
-必要なら検索して掲載誌の実在性・査読体制の信頼度、サンプルサイズの妥当性、
-既に他の独立した研究で類似結果が追試されているか、資金源・利益相反の懸念が
-ないかを確認してください。
+必要なら検索して信頼性を確認してください。
 
 タイトル: {title}
 掲載誌: {venue}
+プレプリントか: {preprint_label}
 発表年: {year}
 被引用数: {citation_count}
 著者: {authors}
 アブストラクト: {abstract}
 
 判断基準:
-- 掲載誌が実在し、まともな査読体制を持つか（IEEE/ACM/Nature/Science/JMIR/PLOS等の
-  認知された出版社・学会か、逆に量産型・実効的な査読が機能していない疑いのある
-  会議/誌でないか）
+- 【査読済みの場合】掲載誌が実在し、まともな査読体制を持つか（IEEE/ACM/Nature/Science/
+  JMIR/PLOS等の認知された出版社・学会か、逆に量産型・実効的な査読が機能していない
+  疑いのある会議/誌でないか）
+- 【プレプリントの場合、査読済みと同列の必須条件にはしない。代わりに以下で信頼性を判断する】
+  - 著者の所属機関（DeepMind / Stanford / MIT / CMU / Berkeley / NUS等の主要大学・研究所、
+    Figure AI / 1X / Boston Dynamics等の実績あるロボティクス企業の研究部門など、実績ある
+    機関に所属しているか。無名の個人・実績不明の機関のみの場合は信頼性を下げて判断する）
+  - 技術的検証の厳密さ（定量的なベンチマーク・比較評価が示されているか、単なる宣伝や
+    コンセプト提案に留まらないか）
+  - 著者・研究室の過去実績（同分野で既発表の実績があるか検索で確認できるか）
+  - 動画化する場合は「査読前の研究」であることを必ず明示する前提で判断してよい
+    （査読前であること自体は除外理由にしない）
 - アブストラクトからサンプルサイズ（参加者数・実験規模）が読み取れるか、
   極端に小さい場合はその旨
 - 単発研究か、既知の先行研究で類似結果が追試されているように見えるか
@@ -73,6 +85,7 @@ def screen_paper(client: genai.Client, paper: dict, retries: int = 3) -> dict:
     prompt = PROMPT_TEMPLATE.format(
         title=paper.get("title") or "(不明)",
         venue=paper.get("venue") or "(不明)",
+        preprint_label="プレプリント（査読前）" if paper.get("is_preprint") else "査読済み想定",
         year=paper.get("year") or "(不明)",
         citation_count=paper.get("citationCount", 0),
         authors=", ".join(paper.get("authors") or []) or "(不明)",
