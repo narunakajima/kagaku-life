@@ -83,7 +83,8 @@ def build_doc(ep: dict) -> str:
             add(f"    URL: {ref['url']}")
         add("")
     if preprint_count:
-        add(f"⚠️ {preprint_count}本がプレプリント（査読前）。動画内で必ず明示すること（CLAUDE.md STAGE2方針）。")
+        add(f"⚠️ {preprint_count}本がプレプリント（査読前）。「査読」「プレプリント」は専門用語のため")
+        add("   ナレーションでは使わず、概要欄の参考文献欄で開示する（CLAUDE.md STAGE2方針、2026-08-20改訂）。")
         add("")
 
     add("=" * 64)
@@ -95,7 +96,8 @@ def build_doc(ep: dict) -> str:
     add("□ ヘッジ表現（研究段階である旨・限界の記載）が省略されていない")
     add("□ 二次報道由来の誇張表現が混入していない（STAGE3チェック結果と整合）")
     if preprint_count:
-        add("□ プレプリント（査読前）である旨が動画内で明示されている")
+        add("□ 「査読」「プレプリント」の語がナレーションに残っていない（概要欄のみでの開示）")
+        add("□ ナレーション内で研究段階・未実用化であることが一般的な表現で伝わっている")
     add("")
 
     add("=" * 64)
