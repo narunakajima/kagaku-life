@@ -10,6 +10,12 @@ stage1_pool.json（kl_paper_search.pyの出力）の候補をGemini（Google Sea
 掲載誌の査読体制だけでなく、著者所属機関の実績・技術的検証の厳密さで信頼性を
 判断する（CLAUDE.md STAGE2参照）。
 
+2026-08〜: コスト削減のため、明らかに信頼できる出版社・学会（REPUTABLE_VENUE_KEYWORDS）
+に一致する非プレプリント論文はGemini呼び出しをスキップして自動passする。
+一致しないもの（未知の誌・すべてのプレプリント）だけを個別にGeminiへ回す。
+許可リスト外を自動excludeにはしない（プレプリント全体を機械的に締め出すと
+査読済み限定ルールの復活になり、STAGE2改訂の意図を無効化するため）。
+
 Opusは使わない（コスト・利用枠の都合。2026-08確定）。Geminiのみで完結する。
 
 使い方:
@@ -40,6 +46,42 @@ import os
 API_KEY = os.environ.get("GEMINI_API_KEY", "")
 MODEL = "models/gemini-3.6-flash"
 CALL_DELAY_SEC = 1.5
+
+# 明らかに信頼できる出版社・学会の許可リスト（venue文字列への部分一致、大小無視）。
+# 該当する場合はGemini呼び出しをスキップして自動passする（コスト削減）。
+# 2026-08確定: 「許可リスト外は切り捨て」にはしない——プレプリントサーバー自体は
+# 当然このリストに入らないため、それをやると査読済み限定ルールの復活になり
+# STAGE2改訂の意図（著者機関・技術的厳密さでの個別判断）を無効化してしまう。
+# リスト外・プレプリントは全てGeminiに個別レビューさせる（切り捨てない）。
+REPUTABLE_VENUE_KEYWORDS = [
+    # 総合誌
+    "nature", "science robotics", "science advances", "science translational medicine",
+    "proceedings of the national academy", "pnas", "scientific reports", "cell reports", "cell press",
+    "plos", "jmir", "the lancet", "jama", "new england journal of medicine", "bmj",
+    # IEEE / ロボティクス
+    "ieee transactions", "ieee robotics and automation letters",
+    "international conference on robotics and automation",
+    "international conference on intelligent robots and systems",
+    "robotics: science and systems", "conference on robot learning",
+    "ieee robotics & automation magazine",
+    # ACM / HCI
+    "acm transactions", "conference on human factors in computing systems",
+    # ML/AI トップ会議
+    "neural information processing systems", "international conference on machine learning",
+    "international conference on learning representations",
+    "conference on computer vision and pattern recognition",
+    "international conference on computer vision", "european conference on computer vision",
+    "aaai conference on artificial intelligence",
+    "international joint conference on artificial intelligence",
+    # 経済学トップジャーナル
+    "quarterly journal of economics", "american economic review", "econometrica",
+    "journal of political economy", "review of economic studies", "management science",
+]
+
+
+def is_reputable_venue(venue: str) -> bool:
+    v = (venue or "").lower()
+    return any(kw in v for kw in REPUTABLE_VENUE_KEYWORDS)
 
 PROMPT_TEMPLATE = """あなたは懐疑的な査読担当者です。以下の論文候補について、
 必要なら検索して信頼性を確認してください。
@@ -136,25 +178,43 @@ def run_category(client: genai.Client, name: str, cat: dict, limit: int) -> dict
 
     results = []
     counts = {"pass": 0, "flag": 0, "exclude": 0}
+    auto_passed = 0
     for paper in candidates:
-        time.sleep(CALL_DELAY_SEC)
-        verdict = screen_paper(client, paper)
-        overall = verdict.get("overall", "flag")
-        if overall not in counts:
-            overall = "flag"
-        counts[overall] += 1
-        mark = {"pass": "✅", "flag": "⚠️", "exclude": "❌"}[overall]
-        print(f"  {mark} [{overall}] {paper.get('title')[:70]} — {verdict.get('venue_assessment')}")
+        if not paper.get("is_preprint") and is_reputable_venue(paper.get("venue")):
+            verdict = {
+                "venue_assessment": "reputable",
+                "venue_note": "許可リストに一致したため自動pass（Gemini呼び出しなし）",
+                "sample_size_note": "",
+                "replication_note": "",
+                "funding_coi_note": "",
+                "overall": "pass",
+                "reasoning": "既知の信頼できる出版社・学会のためGeminiレビューを省略した。",
+            }
+            auto_passed += 1
+            mark = "✅"
+            print(f"  {mark} [pass/auto] {paper.get('title')[:70]} — {paper.get('venue')}")
+        else:
+            time.sleep(CALL_DELAY_SEC)
+            verdict = screen_paper(client, paper)
+            overall = verdict.get("overall", "flag")
+            if overall not in counts:
+                overall = "flag"
+            verdict["overall"] = overall
+            mark = {"pass": "✅", "flag": "⚠️", "exclude": "❌"}[overall]
+            print(f"  {mark} [{overall}] {paper.get('title')[:70]} — {verdict.get('venue_assessment')}")
+
+        counts[verdict["overall"]] += 1
         results.append({**paper, "stage2": verdict})
 
     print(
-        f"  カテゴリ集計: pass={counts['pass']} flag={counts['flag']} "
-        f"exclude={counts['exclude']}"
+        f"  カテゴリ集計: pass={counts['pass']}（うち許可リスト自動pass{auto_passed}）"
+        f" flag={counts['flag']} exclude={counts['exclude']}"
     )
 
     return {
         "label": label,
         "counts": counts,
+        "auto_passed": auto_passed,
         "papers": results,
     }
 
@@ -185,22 +245,25 @@ def main():
 
     results = {}
     total_counts = {"pass": 0, "flag": 0, "exclude": 0}
+    total_auto_passed = 0
     for name, cat in categories.items():
         cat_result = run_category(client, name, cat, args.limit)
         results[name] = cat_result
         for k in total_counts:
             total_counts[k] += cat_result["counts"][k]
+        total_auto_passed += cat_result["auto_passed"]
 
     output = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "source": str(INPUT_PATH.name),
         "total_counts": total_counts,
+        "total_auto_passed": total_auto_passed,
         "categories": results,
     }
     OUTPUT_PATH.write_text(json.dumps(output, ensure_ascii=False, indent=2))
     print(
-        f"\n✅ STAGE2完了。pass={total_counts['pass']} flag={total_counts['flag']} "
-        f"exclude={total_counts['exclude']}。{OUTPUT_PATH} に保存しました。"
+        f"\n✅ STAGE2完了。pass={total_counts['pass']}（うち許可リスト自動pass{total_auto_passed}） "
+        f"flag={total_counts['flag']} exclude={total_counts['exclude']}。{OUTPUT_PATH} に保存しました。"
     )
 
 
