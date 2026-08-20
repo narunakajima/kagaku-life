@@ -177,15 +177,15 @@ STAGE1の自動除外にかかってしまう。該当論文が別ルートで�
 SCの `sc_video_gen.py` と同じ考え方で、シーンタイプの並びからBGM3曲
 （序盤intro／中盤main／終盤outro）の切り替え境界を自動計算する。
 
-| type | 内容 | BGM役割 | 画風 |
-|---|---|---|---|
-| `hook` | 冒頭フック（3〜5秒） | intro | 物語調イラスト |
-| `citation` | 出典明示（5〜10秒、大学名・発表年等） | intro | 物語調イラスト |
-| `context` | 論文の背景・課題設定 | main | 物語調イラスト |
-| `finding` | 論文の内容・手法・結果 | main | 物語調イラスト |
-| `data` | グラフ・比較図・フローチャート | main | チャート調（BASE_CONTEXTと別トーン） |
-| `impact` | 生活への影響（使い捨ての生活者が登場） | outro | 物語調イラスト |
-| `closing` | 締め | outro | 物語調イラスト |
+| type | 内容 | BGM役割 | 画風 | ナレーター |
+|---|---|---|---|---|
+| `hook` | 主人公の自己紹介（3〜5秒） | intro | 物語調イラスト | 生活者ボイス |
+| `citation` | 出典明示（5〜10秒、大学名・発表年等） | intro | 物語調イラスト | 研究ボイス |
+| `context` | 主人公が抱える課題の説明 | main | 物語調イラスト | 生活者ボイス |
+| `finding` | 課題を解決しうる研究の紹介（内容・手法・結果） | main | 物語調イラスト | 研究ボイス |
+| `data` | グラフ・比較図・フローチャート | main | チャート調（BASE_CONTEXTと別トーン） | 研究ボイス |
+| `impact` | それが実現した未来の暮らし（主人公視点） | outro | 物語調イラスト | 生活者ボイス |
+| `closing` | 締め | outro | 物語調イラスト | 生活者ボイス |
 
 **境界計算ルール**（SCの `rising_action`/`climax` 境界判定と同じ考え方）:
 - 境界1（intro→main）: 最初の `context` または `finding` シーンの開始位置
@@ -194,6 +194,30 @@ SCの `sc_video_gen.py` と同じ考え方で、シーンタイプの並びか�
 `data` タイプのシーンは、企画書の画配分方針（1〜2枚のグラフ・比較図）に対応する。
 `kl_image_gen.py`（今後作成）は `data` タイプの場合、物語調イラストのBASE_CONTEXTではなく
 チャート・フローチャート向けの別プロンプトテンプレートを使う。
+
+### ストーリー構成と2ナレーターボイス制（2026-08確定）
+
+企画書の「物語調」演出を徹底するため、単なる論文解説ではなく以下4部構成で語る。
+
+1. 主人公の簡単な自己紹介（`hook`）
+2. 主人公が抱える課題の説明（`context`）
+3. それを解決しうる研究の紹介（`citation` / `finding` / `data`）
+4. それが実現したときの未来の暮らし（`impact` / `closing`）
+
+**ナレーターは2声を使い分ける。** 主人公パート（1・2・4）は主人公と同性の
+「生活者ボイス」、研究解説パート（3）は主人公と異性の「研究ボイス」を使う
+（例: 主人公が女性なら研究解説パートは男性ボイス）。物語部分と研究解説部分を
+声で切り替えることで、聞き手にも構成の切り替わりが自然に伝わる。
+
+`protagonist.gender` から生活者ボイスの性別を決め、研究ボイスはその逆に固定する。
+`kl_tts_gen.py`（今後作成）が `scene.narrator` を見てGemini TTSのボイス名を
+切り替える想定（具体的なボイス名の選定はkl_tts_gen.py実装時に行う）。
+
+**複数論文を扱う回について**（2026-08追加。企画書「複数論文を扱う回は、該当箇所
+ごとに簡易テロップを併用」に対応）: `references` 配列に複数エントリを持たせ、
+各 `finding`/`data` シーンに `reference_index`（`references` 配列のインデックス、
+0始まり）を付けて、どのシーンがどの論文の紹介かを紐づける。単一論文の回では
+`reference_index: 0` で固定でよい。
 
 ### エピソードJSONフォーマット（`episodes/kl{NNN}.json`）
 
@@ -211,13 +235,24 @@ SCのフォーマットを土台に、Shorts・ティザー関連フィールド
   "references": [
     {"title": "...", "authors": ["...", "..."], "year": 2024, "venue": "...", "url": "..."}
   ],
-  "protagonist": {"name": "...", "age": 0, "job": "..."},
+  "protagonist": {"name": "...", "age": 0, "job": "...", "gender": "female"},
   "thumbnail_prompt": "...",
   "scenes": [
     {
       "scene_id": 1,
       "type": "hook",
+      "narrator": "persona",
       "duration_seconds": 5,
+      "narration": "...",
+      "image_prompt": "...",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 3,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 20,
       "narration": "...",
       "image_prompt": "...",
       "ken_burns": "zoom_in"
@@ -229,5 +264,7 @@ SCのフォーマットを土台に、Shorts・ティザー関連フィールド
 `duration_seconds` はSCと同じくフォールバック専用（音声なしシーン用）で、
 音声ありシーンの実クリップ尺は生成されたナレーション音声の長さから決定する。
 `references` は `topics_queue.json` の該当エントリ（title/authors/year/venue/url）を
-そのまま引き継いで生成する。`protagonist` も `topics_queue.json` の該当エントリに
-STAGE4で生成済みの値があればそれを引き継ぐ。
+そのまま引き継いで生成する（複数論文回は複数エントリ）。`protagonist` も
+`topics_queue.json` の該当エントリにSTAGE4で生成済みの値があればそれを引き継ぐ。
+`narrator` は `persona`/`research` の2値、`reference_index` は `finding`/`data`
+シーンにのみ付与する（上記「ストーリー構成と2ナレーターボイス制」参照）。
