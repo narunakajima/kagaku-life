@@ -1,6 +1,54 @@
 {
   "_comment": "制作キュー。配列の先頭が次に制作するエピソード（SC/LWと同じ並び順規約）。statusはpending(候補)→confirmed(STAGE5ゴーサイン済み・制作パイプライン未着手)→in_production→published。kl_paper_search.pyはsemantic_scholar_idを既出として重複排除に使う。",
-  "queue": [],
-  "total_topics": 0,
-  "last_updated": "2026-08-19"
+  "queue": [
+    {
+      "episode_id": "kl001",
+      "status": "confirmed",
+      "title": "家事ロボットの潮流：複数の独立研究が同時に家事の壁を崩しつつある",
+      "format": "multi_paper",
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "references": [
+        {
+          "title": "BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday Household Activities",
+          "authors": ["Yunfan Jiang", "Ruohan Zhang", "Josiah Wong", "Chen Wang", "Yanjie Ze"],
+          "year": 2025,
+          "venue": "arXiv.org",
+          "url": "https://arxiv.org/abs/2503.05652",
+          "doi": "10.48550/arXiv.2503.05652",
+          "is_preprint": true
+        },
+        {
+          "title": "DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation",
+          "authors": ["Taiyi Su", "Jian Zhu", "Tianjian Wang", "Youzhang He", "Zitai Huang"],
+          "year": 2026,
+          "venue": "arXiv.org",
+          "url": "https://arxiv.org/abs/2605.31286",
+          "doi": "10.48550/arXiv.2605.31286",
+          "is_preprint": true
+        },
+        {
+          "title": "Bi-VLA: Vision-Language-Action Model-Based System for Bimanual Robotic Dexterous Manipulations",
+          "authors": ["Koffivi Fidele Gbagbe", "Miguel Altamirano Cabrera", "Ali Alabbas", "Oussama Alyunes", "Artem Lykov"],
+          "year": 2024,
+          "venue": "IEEE International Conference on Systems, Man and Cybernetics",
+          "doi": "10.1109/SMC54092.2024.10831380",
+          "is_preprint": false
+        },
+        {
+          "title": "OopsieVerse: A Safety Benchmark with Damage-Aware Simulation for Robot Manipulation",
+          "authors": ["Arnav Balaji", "Arpit Bahety", "Sriniket Ambatipudi", "Daniel Lam", "Junhong Xu"],
+          "year": 2026,
+          "venue": "arXiv.org",
+          "url": "https://arxiv.org/abs/2606.31993",
+          "doi": "10.48550/arXiv.2606.31993",
+          "is_preprint": true
+        }
+      ],
+      "protagonist": {"name": "田中 美咲", "age": 34, "job": "IT企業マーケティング職（共働き・3歳の娘）", "gender": "female"},
+      "notes": "STAGE4上位20件のうち家庭内ロボットカテゴリが13/20を占め、内容が似通ったVLA基盤モデル論文群だったため、1本を選ぶのではなく4本を組み合わせた潮流ストーリーとして構成する方針に変更（2026-08-20）。単一研究室の主張ではなく複数の独立研究が同時期に別々の家事タスクを攻略している構図で、STAGE2の「複数の独立研究による追試」的信頼性シグナルにも合致する。構成は4部（自己紹介→課題→研究紹介→未来の暮らし）、ナレーターは主人公（女性）が生活者ボイス、研究紹介パートは男性の研究ボイスで分ける新方式。4本中3本は査読前プレプリント（BEHAVIOR Robot Suite・DeMaVLA・OopsieVerse）、Bi-VLAのみ査読済み。動画内で査読前である旨を必ず明示する。第1話として確定（2026-08-20、旧kl001のRobi Butler単体案を置き換え）。"
+    }
+  ],
+  "total_topics": 1,
+  "last_updated": "2026-08-20"
 }
