@@ -47,6 +47,7 @@ import os
 API_KEY = os.environ.get("GEMINI_API_KEY", "")
 MODEL = "models/gemini-3.6-flash"
 CALL_DELAY_SEC = 1.5
+REQUEST_TIMEOUT_MS = 60_000  # 2026-08追加: タイムアウト未設定で1件が3時間以上ハングした事故があったため
 
 # 明らかに信頼できる出版社・学会の許可リスト（venue文字列への部分一致、大小無視）。
 # 該当する場合はGemini呼び出しをスキップして自動passする（コスト削減）。
@@ -213,6 +214,8 @@ def main():
         print(f"❌ {INPUT_PATH} がありません。先に kl_paper_search.py を実行してください", file=sys.stderr)
         sys.exit(1)
 
+    sys.stdout.reconfigure(line_buffering=True)  # ファイルにリダイレクトしても進捗が都度見えるように
+
     pool = json.loads(INPUT_PATH.read_text())
     categories = pool["categories"]
     if args.category:
@@ -221,29 +224,37 @@ def main():
             sys.exit(1)
         categories = {args.category: categories[args.category]}
 
-    client = genai.Client(api_key=API_KEY)
+    client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
+
+    def write_checkpoint(results: dict, done: bool) -> dict:
+        total_counts = {"pass": 0, "flag": 0, "exclude": 0}
+        total_auto_passed = 0
+        for cat_result in results.values():
+            for k in total_counts:
+                total_counts[k] += cat_result["counts"][k]
+            total_auto_passed += cat_result["auto_passed"]
+        output = {
+            "generated_at": datetime.now().isoformat(timespec="seconds"),
+            "source": str(INPUT_PATH.name),
+            "complete": done,
+            "total_counts": total_counts,
+            "total_auto_passed": total_auto_passed,
+            "categories": results,
+        }
+        OUTPUT_PATH.write_text(json.dumps(output, ensure_ascii=False, indent=2))
+        return total_counts | {"auto_passed": total_auto_passed}
 
     results = {}
-    total_counts = {"pass": 0, "flag": 0, "exclude": 0}
-    total_auto_passed = 0
     for name, cat in categories.items():
-        cat_result = run_category(client, name, cat, args.limit)
-        results[name] = cat_result
-        for k in total_counts:
-            total_counts[k] += cat_result["counts"][k]
-        total_auto_passed += cat_result["auto_passed"]
+        results[name] = run_category(client, name, cat, args.limit)
+        # カテゴリ完了ごとに書き出す（2026-08追加: 1件のハングで全進捗を失った事故を受けて）
+        totals = write_checkpoint(results, done=False)
+        print(f"  [チェックポイント保存済み] 累計 pass={totals['pass']} flag={totals['flag']} exclude={totals['exclude']}")
 
-    output = {
-        "generated_at": datetime.now().isoformat(timespec="seconds"),
-        "source": str(INPUT_PATH.name),
-        "total_counts": total_counts,
-        "total_auto_passed": total_auto_passed,
-        "categories": results,
-    }
-    OUTPUT_PATH.write_text(json.dumps(output, ensure_ascii=False, indent=2))
+    totals = write_checkpoint(results, done=True)
     print(
-        f"\n✅ STAGE2完了。pass={total_counts['pass']}（うち許可リスト自動pass{total_auto_passed}） "
-        f"flag={total_counts['flag']} exclude={total_counts['exclude']}。{OUTPUT_PATH} に保存しました。"
+        f"\n✅ STAGE2完了。pass={totals['pass']}（うち許可リスト自動pass{totals['auto_passed']}） "
+        f"flag={totals['flag']} exclude={totals['exclude']}。{OUTPUT_PATH} に保存しました。"
     )
 
 

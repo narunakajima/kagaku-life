@@ -42,6 +42,7 @@ OUTPUT_PATH = BASE_DIR / "stage4_ranked.json"
 API_KEY = os.environ.get("GEMINI_API_KEY", "")
 MODEL = "models/gemini-3.6-flash"
 CALL_DELAY_SEC = 1.0
+REQUEST_TIMEOUT_MS = 60_000  # 2026-08追加: タイムアウト未設定で1件が3時間以上ハングした事故があったため（kl_paper_screen.py参照）
 
 PROMPT_TEMPLATE = """あなたは日本語YouTubeチャンネル「くらしを変える科学」の企画担当です。
 AI・ロボティクス分野の学術論文を一般視聴者向けに解説し、「その研究が生活をどう変えるか」を
@@ -164,6 +165,8 @@ def main():
         print(f"❌ {INPUT_PATH} がありません。先に kl_paper_hypecheck.py を実行してください", file=sys.stderr)
         sys.exit(1)
 
+    sys.stdout.reconfigure(line_buffering=True)  # ファイルにリダイレクトしても進捗が都度見えるように
+
     checked = json.loads(INPUT_PATH.read_text())
     categories = checked["categories"]
     if args.category:
@@ -172,11 +175,17 @@ def main():
             sys.exit(1)
         categories = {args.category: categories[args.category]}
 
-    client = genai.Client(api_key=API_KEY)
+    client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
 
     all_scored = []
     for name, cat in categories.items():
         all_scored.extend(run_category(client, name, cat, args.limit))
+        # カテゴリ完了ごとに書き出す（2026-08追加: 1件のハングで全進捗を失った事故を受けて）
+        OUTPUT_PATH.write_text(json.dumps(
+            {"generated_at": datetime.now().isoformat(timespec="seconds"), "complete": False, "all_scored": all_scored},
+            ensure_ascii=False, indent=2,
+        ))
+        print(f"  [チェックポイント保存済み] 累計{len(all_scored)}件")
 
     all_scored.sort(key=lambda p: p["overall_score"], reverse=True)
     top_n = all_scored[: args.top]
@@ -189,6 +198,7 @@ def main():
     output = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "source": str(INPUT_PATH.name),
+        "complete": True,
         "total_scored": len(all_scored),
         "stage5_candidates": top_n,
         "all_scored": all_scored,

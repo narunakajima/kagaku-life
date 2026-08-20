@@ -36,6 +36,7 @@ OUTPUT_PATH = BASE_DIR / "stage3_hypecheck.json"
 API_KEY = os.environ.get("GEMINI_API_KEY", "")
 MODEL = "models/gemini-3.6-flash"
 CALL_DELAY_SEC = 1.5
+REQUEST_TIMEOUT_MS = 60_000  # 2026-08追加: タイムアウト未設定で1件が3時間以上ハングした事故があったため（kl_paper_screen.py参照）
 
 PROMPT_TEMPLATE = """あなたはアドバーサリアル役（懐疑的レビュアー）です。以下の論文について、
 実際に検索して二次報道・プレスリリース・SNSでの紹介記事を確認し、論文本文が実際に
@@ -158,6 +159,8 @@ def main():
         print(f"❌ {INPUT_PATH} がありません。先に kl_paper_screen.py を実行してください", file=sys.stderr)
         sys.exit(1)
 
+    sys.stdout.reconfigure(line_buffering=True)  # ファイルにリダイレクトしても進捗が都度見えるように
+
     screened = json.loads(INPUT_PATH.read_text())
     categories = screened["categories"]
     if args.category:
@@ -166,23 +169,30 @@ def main():
             sys.exit(1)
         categories = {args.category: categories[args.category]}
 
-    client = genai.Client(api_key=API_KEY)
+    client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
+
+    def write_checkpoint(results: dict, done: bool) -> dict:
+        total_counts = {"ok": 0, "caution": 0, "high_risk": 0}
+        for cat_result in results.values():
+            for k in total_counts:
+                total_counts[k] += cat_result["counts"][k]
+        output = {
+            "generated_at": datetime.now().isoformat(timespec="seconds"),
+            "source": str(INPUT_PATH.name),
+            "complete": done,
+            "total_counts": total_counts,
+            "categories": results,
+        }
+        OUTPUT_PATH.write_text(json.dumps(output, ensure_ascii=False, indent=2))
+        return total_counts
 
     results = {}
-    total_counts = {"ok": 0, "caution": 0, "high_risk": 0}
     for name, cat in categories.items():
-        cat_result = run_category(client, name, cat, args.limit)
-        results[name] = cat_result
-        for k in total_counts:
-            total_counts[k] += cat_result["counts"][k]
+        results[name] = run_category(client, name, cat, args.limit)
+        totals = write_checkpoint(results, done=False)
+        print(f"  [チェックポイント保存済み] 累計 ok={totals['ok']} caution={totals['caution']} high_risk={totals['high_risk']}")
 
-    output = {
-        "generated_at": datetime.now().isoformat(timespec="seconds"),
-        "source": str(INPUT_PATH.name),
-        "total_counts": total_counts,
-        "categories": results,
-    }
-    OUTPUT_PATH.write_text(json.dumps(output, ensure_ascii=False, indent=2))
+    total_counts = write_checkpoint(results, done=True)
     print(
         f"\n✅ STAGE3完了。ok={total_counts['ok']} caution={total_counts['caution']} "
         f"high_risk={total_counts['high_risk']}。{OUTPUT_PATH} に保存しました。"
