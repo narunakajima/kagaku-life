@@ -34,7 +34,14 @@ def is_reputable_venue(venue: str, keywords: list) -> bool:
 def main():
     parser = argparse.ArgumentParser(description="許可リスト更新（stage2_screened.jsonの実績から提案）")
     parser.add_argument("--apply", action="store_true", help="提案をreputable_venues.jsonに実際に追記する")
-    parser.add_argument("--min-count", type=int, default=1, help="提案に必要な最低出現回数（デフォルト1）")
+    parser.add_argument("--min-count", type=int, default=1, help="提案に必要な最低出現回数（pass+flag合計、デフォルト1）")
+    parser.add_argument(
+        "--min-pass",
+        type=int,
+        default=0,
+        help="提案に必要な最低pass件数（デフォルト0=flagのみでも可）。1以上にするとflagのみの掲載誌"
+        "（venueはreputableと判定されたが個別論文は他の理由でflagだった）を除外できる",
+    )
     args = parser.parse_args()
 
     if not INPUT_PATH.exists():
@@ -67,11 +74,12 @@ def main():
                 entry["flag_count"] += 1
             entry["titles"].append(paper.get("title", "")[:60])
 
-    # 信頼度の高い順（pass回数優先）に並べ、min-count未満は除外
+    # 信頼度の高い順（pass回数優先）に並べ、min-count/min-pass未満は除外
     ranked = [
         (venue, info)
         for venue, info in candidates.items()
         if (info["pass_count"] + info["flag_count"]) >= args.min_count
+        and info["pass_count"] >= args.min_pass
     ]
     ranked.sort(key=lambda x: (x[1]["pass_count"], x[1]["flag_count"]), reverse=True)
 
