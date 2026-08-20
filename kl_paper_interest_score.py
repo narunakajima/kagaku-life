@@ -14,11 +14,18 @@ STAGE4参照）。kl001実制作で「査読済み・安全だが地味」な研
 具体的な主人公プロフィール（名前・年齢・職業）とフック文の叩き台まで生成し、
 STAGE5（人間の最終ゴーサイン）にそのまま渡せる形にする。
 
+2026-08〜: このスコアリング自体は主観的・創作寄りの判断で、Geminiに単発プロンプトで
+228件処理させるより人間・Claudeの文脈判断の方が精度が高い可能性がある。ただし
+全件を人間が見るのは非現実的なため、一次選抜（大量処理・低コスト）はGeminiに
+任せつつ、STAGE5でClaudeが確認する範囲を上位5件→上位20件に広げることで、
+Geminiのスコアだけを鵜呑みにしない設計にした（kl001選定時、上位5件だけでは
+カテゴリの偏りに気づきにくかった反省を踏まえる）。
+
 使い方:
   python3 kl_paper_interest_score.py                        # STAGE3通過分すべてを判定
   python3 kl_paper_interest_score.py --category aging_care   # 特定カテゴリのみ
   python3 kl_paper_interest_score.py --limit 3               # 各カテゴリ先頭N件のみ（動作確認用）
-  python3 kl_paper_interest_score.py --top 5                 # 全体上位N件をSTAGE5候補として出力（デフォルト5）
+  python3 kl_paper_interest_score.py --top 20                # 全体上位N件をSTAGE5候補として出力（デフォルト20）
 
 出力: stage4_ranked.json（全カテゴリ横断でスコア順に並べた候補・上位N件のSTAGE5候補リスト）
 """
@@ -154,7 +161,7 @@ def main():
     parser = argparse.ArgumentParser(description="STAGE4「面白いか」一次判定（Gemini）")
     parser.add_argument("--category", help="特定カテゴリのみ実行（stage3_hypecheck.jsonのキー）")
     parser.add_argument("--limit", type=int, default=0, help="カテゴリごとに先頭N件のみ処理（0=全件）")
-    parser.add_argument("--top", type=int, default=5, help="全体上位N件をSTAGE5候補として出力（デフォルト5）")
+    parser.add_argument("--top", type=int, default=20, help="全体上位N件をSTAGE5候補として出力（デフォルト20）")
     args = parser.parse_args()
 
     if not API_KEY:
