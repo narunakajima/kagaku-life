@@ -77,6 +77,10 @@ def build_doc(ep: dict) -> str:
         status = "⚠️ プレプリント（査読前）" if is_pp else "✅ 査読済み"
         add(f"[{i}] {authors} ({ref.get('year')}). {ref.get('title')}.")
         add(f"    掲載誌: {ref.get('venue')} — {status}")
+        if ref.get("institution"):
+            add(f"    所属機関: {ref['institution']}")
+        if ref.get("lead_researcher"):
+            add(f"    中心研究者: {ref['lead_researcher']}")
         if ref.get("doi"):
             add(f"    DOI: {ref['doi']}")
         if ref.get("url"):
@@ -92,6 +96,7 @@ def build_doc(ep: dict) -> str:
     add("=" * 64)
     add("")
     add("□ 全シーンのナレーションを出典論文（上記URL/DOI）と1文ずつ突き合わせた")
+    add("□ ナレーション内の所属機関・研究者名が出典の記載と一致している")
     add("□ 数値（成功率・人数・統計的有意差の有無等）が本文の記載と一致している")
     add("□ ヘッジ表現（研究段階である旨・限界の記載）が省略されていない")
     add("□ 二次報道由来の誇張表現が混入していない（STAGE3チェック結果と整合）")

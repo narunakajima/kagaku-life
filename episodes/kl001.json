@@ -12,7 +12,9 @@
       "venue": "arXiv.org",
       "url": "https://arxiv.org/abs/2503.05652",
       "doi": "10.48550/arXiv.2503.05652",
-      "is_preprint": true
+      "is_preprint": true,
+      "institution": "Stanford University (Stanford Vision and Learning Lab)",
+      "lead_researcher": "Ruohan Zhang"
     },
     {
       "title": "DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation",
@@ -21,15 +23,20 @@
       "venue": "arXiv.org",
       "url": "https://arxiv.org/abs/2605.31286",
       "doi": "10.48550/arXiv.2605.31286",
-      "is_preprint": true
+      "is_preprint": true,
+      "institution": "Midea Group AIRC / Tongji University",
+      "lead_researcher": "Jian Zhu (Project Leader)"
     },
     {
       "title": "Bi-VLA: Vision-Language-Action Model-Based System for Bimanual Robotic Dexterous Manipulations",
-      "authors": ["Koffivi Fidele Gbagbe", "Miguel Altamirano Cabrera", "Ali Alabbas", "Oussama Alyunes", "Artem Lykov"],
+      "authors": ["Koffivi Fidele Gbagbe", "Miguel Altamirano Cabrera", "Ali Alabbas", "Oussama Alyunes", "Artem Lykov", "Dzmitry Tsetserukou"],
       "year": 2024,
       "venue": "IEEE International Conference on Systems, Man and Cybernetics",
+      "url": "https://arxiv.org/abs/2405.06039",
       "doi": "10.1109/SMC54092.2024.10831380",
-      "is_preprint": false
+      "is_preprint": false,
+      "institution": "Skolkovo Institute of Science and Technology (Skoltech), Intelligent Space Robotics Laboratory",
+      "lead_researcher": "Dzmitry Tsetserukou"
     },
     {
       "title": "OopsieVerse: A Safety Benchmark with Damage-Aware Simulation for Robot Manipulation",
@@ -38,7 +45,9 @@
       "venue": "arXiv.org",
       "url": "https://arxiv.org/abs/2606.31993",
       "doi": "10.48550/arXiv.2606.31993",
-      "is_preprint": true
+      "is_preprint": true,
+      "institution": "University of Texas at Austin (RobIn Lab)",
+      "lead_researcher": "Roberto Martín-Martín"
     }
   ],
   "protagonist": {"name": "田中 美咲", "age": 34, "job": "IT企業マーケティング職（共働き・3歳の娘）", "gender": "female"},
@@ -86,7 +95,7 @@
       "narrator": "research",
       "reference_index": 0,
       "duration_seconds": 26,
-      "narration": "1つ目はアメリカの研究チームによる、車輪で移動する双腕ロボット。狭い場所での作業や、柔らかい物・関節のある物の扱いなど、家庭内のさまざまな複雑なタスクに対応する、全身を使った家事の基盤づくりを目指しています。",
+      "narration": "1つ目は、スタンフォード大学のRuohan Zhang氏らの研究チームによる、車輪で移動する双腕ロボット。狭い場所での作業や、柔らかい物・関節のある物の扱いなど、家庭内のさまざまな複雑なタスクに対応する、全身を使った家事の基盤づくりを目指しています。",
       "image_prompt": "Flat infographic illustration of a wheeled household robot with two arms and a telescoping torso segment, reaching into a narrow cabinet space, cool blue-teal palette with warm accent, Kurzgesagt-style, no text",
       "ken_burns": "zoom_in"
     },
@@ -96,7 +105,7 @@
       "narrator": "research",
       "reference_index": 1,
       "duration_seconds": 24,
-      "narration": "2つ目は、洗濯物たたみに特化した研究です。これまでのロボットは服の種類ごとに別々のプログラムが必要でしたが、この研究では約5000時間分の実演データをもとに、素材や形が違うさまざまな衣類にも1つのモデルで対応できることを目指しています。",
+      "narration": "2つ目は、中国の大手家電メーカー・美的集団の研究チーム、プロジェクトリードのJian Zhu氏らによる、洗濯物たたみに特化した研究です。これまでのロボットは服の種類ごとに別々のプログラムが必要でしたが、この研究では約5000時間分の実演データをもとに、素材や形が違うさまざまな衣類にも1つのモデルで対応できることを目指しています。",
       "image_prompt": "Flat infographic illustration of a robot arm gently folding a piece of clothing on a table, with small icons of different clothing types (shirt, towel, sock) arranged nearby, cool blue-teal palette, minimal geometric shapes, Kurzgesagt-style, no text",
       "ken_burns": "pan_left"
     },
@@ -106,7 +115,7 @@
       "narrator": "research",
       "reference_index": 2,
       "duration_seconds": 26,
-      "narration": "3つ目は、両手を使った調理に挑んだ研究です。『サラダを作って』という指示を理解し、食材を認識して盛り付けるまでを検証したところ、指示の理解では100%、食材の認識では96.06%、最終的な調理の成功率は83.4%という結果が報告されています。",
+      "narration": "3つ目は、ロシアのスコルコボ科学技術大学、Dzmitry Tsetserukou教授の研究室による、両手を使った調理に挑んだ研究です。『サラダを作って』という指示を理解し、食材を認識して盛り付けるまでを検証したところ、指示の理解では100%、食材の認識では96.06%、最終的な調理の成功率は83.4%という結果が報告されています。",
       "image_prompt": "Flat infographic illustration of a robot with two arms preparing a salad on a kitchen counter, small icons of vegetables being recognized with subtle highlight outlines, cool blue-teal palette with warm accent, Kurzgesagt-style, no text",
       "ken_burns": "zoom_in"
     },
@@ -125,7 +134,7 @@
       "narrator": "research",
       "reference_index": 3,
       "duration_seconds": 28,
-      "narration": "そしてもう1つ、見過ごせない研究があります。『壊さない』ための取り組みです。研究チームは、接触や温度、液体などによる『損傷』を仮想空間で再現できる訓練環境を開発しました。ロボットは実際に物を壊す前に、その失敗を仮想空間で経験し、安全な動き方を学べるようになります。",
+      "narration": "そしてもう1つ、見過ごせない研究があります。テキサス大学オースティン校、Roberto Martín-Martín教授の研究室が取り組む『壊さない』ための研究です。研究チームは、接触や温度、液体などによる『損傷』を仮想空間で再現できる訓練環境を開発しました。ロボットは実際に物を壊す前に、その失敗を仮想空間で経験し、安全な動き方を学べるようになります。",
       "image_prompt": "Flat infographic illustration of a robot inside a simulated virtual environment shown as a translucent grid box, with a small cracked vase icon and a warning icon representing simulated damage feedback, cool muted blue-teal palette, Kurzgesagt-style, no text",
       "ken_burns": "pan_right"
     },
