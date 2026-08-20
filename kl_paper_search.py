@@ -4,17 +4,22 @@ kl_paper_search.py — くらしを変える科学 STAGE1論文検索スクリ�
 Semantic Scholar Graph API（bulk search）を使い、query_vocabulary.json のカテゴリ別
 クエリでSTAGE1（一次収集）を実行する。実際の総ヒット件数（total）を必ずログに残し、
 CLAUDE.md STAGE1の自動プレフィルタ（鮮度・publicationTypes除外・重複排除）を適用したうえで、
-カテゴリごとの上位候補を stage1_pool.json に出力する。
+機械的フィルタを通過した全件を stage1_pool.json に出力する。
 
 2026-08〜: プレプリント（arXiv等）は自動除外しない。信頼性の判断（著者所属機関・
 技術的厳密さ等）はSTAGE2（kl_paper_screen.py）のGeminiに委ねる方針に変更した
 （CLAUDE.md STAGE2参照）。各候補には is_preprint フラグを付けて出力する。
 
+2026-08〜: 被引用数×新しさによるスコアでの足切り（旧: 各カテゴリ上位8件）も廃止した。
+発表直後で被引用数がまだ積み上がっていない最先端論文がこのスコアで不当に低く
+評価され、STAGE2のGeminiが判断する前に機械的に取りこぼされるのを防ぐため
+（CLAUDE.md STAGE1参照）。`--top-n` で明示的に上限を指定した場合のみ足切りする。
+
 使い方:
   python3 kl_paper_search.py                        # 全カテゴリ実行
   python3 kl_paper_search.py --category aging_care   # 特定カテゴリのみ
   python3 kl_paper_search.py --years 3               # 鮮度基準（年数）を上書き
-  python3 kl_paper_search.py --top-n 8               # カテゴリごとの採用件数
+  python3 kl_paper_search.py --top-n 8               # カテゴリごとの上限件数（省略時は無制限。全件STAGE2へ）
   python3 kl_paper_search.py --dry-run               # API呼び出しをせず生成クエリのみ表示
 
 出力先: stage1_pool.json（カテゴリ別: 実ヒット件数ログ・採用候補・除外理由の内訳）
@@ -223,14 +228,18 @@ def run_category(name: str, cat: dict, year_from: int, year_to: int, top_n: int,
             preprint_count += 1
         passing.append(paper)
 
+    # スコア（被引用数×新しさ）は参考の並び順にのみ使い、足切りには使わない。
+    # STAGE1時点では発表直後で被引用数がほぼ0の論文が同点になりやすく、
+    # このスコアで機械的に上位N件へ絞ると「変革ポテンシャルの高い最先端論文」を
+    # STAGE2のGeminiが判断する前に取りこぼすリスクがあるため（2026-08確認）。
     passing.sort(key=score_paper, reverse=True)
-    top = passing[:top_n]
+    top = passing[:top_n] if top_n else passing
 
     print(
         f"  カテゴリ集計: 収集{len(all_candidates)}件 → "
         f"重複排除-{excluded_dup} → レビュー等除外-{excluded_review} → "
         f"venue不明除外-{excluded_no_venue} → "
-        f"通過{len(passing)}件（うちプレプリント{preprint_count}件） → 上位{len(top)}件を採用"
+        f"通過{len(passing)}件（うちプレプリント{preprint_count}件） → STAGE2へ{len(top)}件を送付"
     )
 
     return {
@@ -265,7 +274,7 @@ def main():
     parser = argparse.ArgumentParser(description="STAGE1論文検索（Semantic Scholar Graph API）")
     parser.add_argument("--category", help="特定カテゴリのみ実行（query_vocabulary.jsonのキー）")
     parser.add_argument("--years", type=int, default=3, help="鮮度基準（年数、デフォルト3）")
-    parser.add_argument("--top-n", type=int, default=8, help="カテゴリごとの採用件数（デフォルト8）")
+    parser.add_argument("--top-n", type=int, default=0, help="カテゴリごとの上限件数（0=無制限、デフォルト。STAGE1のスコアで足切りせず全件STAGE2へ送る）")
     parser.add_argument("--dry-run", action="store_true", help="API呼び出しをせず生成クエリのみ表示")
     args = parser.parse_args()
 
