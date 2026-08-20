@@ -49,7 +49,7 @@
       "type": "hook",
       "narrator": "persona",
       "duration_seconds": 14,
-      "narration": "IT企業でマーケティングの仕事をしながら、3歳の娘を育てる田中美咲さん、34歳。毎朝6時に起きて弁当を作り、身支度をさせて保育園に送り届けてから出社する。夫と分担しているとはいえ、そんな慌ただしい毎日を送っています。",
+      "narration": "IT企業でマーケティングの仕事をしながら、3歳の娘を育てる田中美咲さん、34歳。毎朝6時に起きて弁当を作り、身支度をさせて保育園に送り届けてから出社する。夫と家事を分担しているつもりでも、気づけば名もなき家事の大半は自分が引き受けている——そんな日々を送っています。娘が生まれる前は当たり前だった『自分の時間』も、今ではすっかり遠い記憶になっていました。",
       "image_prompt": "Flat infographic illustration of a woman in her mid-30s getting ready in the morning, small clock icon showing early hour, a small child icon nearby, gentle busy-but-warm mood, cool blue-teal palette, minimal geometric shapes, Kurzgesagt-style, no text",
       "ken_burns": "zoom_in"
     },
@@ -58,12 +58,21 @@
       "type": "context",
       "narrator": "persona",
       "duration_seconds": 26,
-      "narration": "仕事から帰れば、畳む間もなく積み上がった洗濯物、品数を増やす余裕のない夕食の支度、そして娘が散らかしたおもちゃの数々が待っています。休日にまとめて片付けようとしても、また月曜には元通り。『誰かに片付けてもらえたら』と思う一方で、『大事な物を機械に壊されたら』という不安もぬぐえず、便利家電にもなかなか踏み切れずにいました。",
+      "narration": "仕事から帰れば、畳む間もなく積み上がった洗濯物、品数を増やす余裕のない夕食の支度、そして娘が散らかしたおもちゃの数々が待っています。休日にまとめて片付けようとしても、また月曜には元通り。夜、娘を寝かしつけたあとにようやく洗濯物と向き合う頃には、もうくたくたで、明日のことを考える余力も残っていません。『誰かに片付けてもらえたら』と思う一方で、『大事な物を機械に壊されたら』という不安もぬぐえず、便利家電にもなかなか踏み切れずにいました。同じような悩みを抱える友人たちとも、『結局は自分がやるしかないよね』と笑い合うことが増えていました。",
       "image_prompt": "Flat infographic illustration of a tired woman standing in a living room with a pile of unfolded laundry, simple dinner ingredients, and scattered toys, a small thought bubble showing both a helpful hand icon and a cracked object icon representing worry, cool blue-teal palette, Kurzgesagt-style, no text",
       "ken_burns": "pan_right"
     },
     {
       "scene_id": 3,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 16,
+      "narration": "こうした悩みを抱えているのは、美咲さんだけではありません。共働きで子育てをしながら働く世帯にとって、家事の負担は日々の大きなストレスになっています。仕事と育児の両立に加えて、終わりの見えない家事まで背負う——『誰かが代わりにやってくれたら』という願いは、多くの家庭に共通するものです。",
+      "image_prompt": "Flat infographic illustration of several small simplified household silhouettes side by side, each showing a similar pile of laundry or scattered items, representing many households sharing the same struggle, cool blue-teal palette, Kurzgesagt-style, no text",
+      "ken_burns": "pan_left"
+    },
+    {
+      "scene_id": 4,
       "type": "citation",
       "narrator": "research",
       "duration_seconds": 22,
@@ -72,17 +81,17 @@
       "ken_burns": "static"
     },
     {
-      "scene_id": 4,
+      "scene_id": 5,
       "type": "finding",
       "narrator": "research",
       "reference_index": 0,
       "duration_seconds": 26,
-      "narration": "1つ目はアメリカの研究チームによる、車輪で移動する双腕ロボット。4つの自由度を持つ伸縮式の胴体を組み合わせることで、狭い場所での作業や、柔らかい物・関節のある物の扱いなど、家庭内のさまざまな複雑なタスクに対応する、全身を使った家事の基盤づくりを目指しています。",
+      "narration": "1つ目はアメリカの研究チームによる、車輪で移動する双腕ロボット。狭い場所での作業や、柔らかい物・関節のある物の扱いなど、家庭内のさまざまな複雑なタスクに対応する、全身を使った家事の基盤づくりを目指しています。",
       "image_prompt": "Flat infographic illustration of a wheeled household robot with two arms and a telescoping torso segment, reaching into a narrow cabinet space, cool blue-teal palette with warm accent, Kurzgesagt-style, no text",
       "ken_burns": "zoom_in"
     },
     {
-      "scene_id": 5,
+      "scene_id": 6,
       "type": "finding",
       "narrator": "research",
       "reference_index": 1,
@@ -92,17 +101,17 @@
       "ken_burns": "pan_left"
     },
     {
-      "scene_id": 6,
+      "scene_id": 7,
       "type": "finding",
       "narrator": "research",
       "reference_index": 2,
       "duration_seconds": 26,
-      "narration": "3つ目は、両手を使った調理に挑んだ研究です。『サラダを作って』という言葉での指示を理解し、必要な食材をカメラで見分け、実際に盛り付けるところまでを検証したところ、指示の理解では100%、食材の認識では96.06%、最終的に正しく調理を完了できた割合は83.4%という結果が報告されています。",
+      "narration": "3つ目は、両手を使った調理に挑んだ研究です。『サラダを作って』という指示を理解し、食材を認識して盛り付けるまでを検証したところ、指示の理解では100%、食材の認識では96.06%、最終的な調理の成功率は83.4%という結果が報告されています。",
       "image_prompt": "Flat infographic illustration of a robot with two arms preparing a salad on a kitchen counter, small icons of vegetables being recognized with subtle highlight outlines, cool blue-teal palette with warm accent, Kurzgesagt-style, no text",
       "ken_burns": "zoom_in"
     },
     {
-      "scene_id": 7,
+      "scene_id": 8,
       "type": "data",
       "narrator": "research",
       "duration_seconds": 22,
@@ -111,39 +120,39 @@
       "ken_burns": "static"
     },
     {
-      "scene_id": 8,
+      "scene_id": 9,
       "type": "finding",
       "narrator": "research",
       "reference_index": 3,
       "duration_seconds": 28,
-      "narration": "そしてもう1つ、見過ごせない研究があります。『壊さない』ための取り組みです。研究チームは、接触の力や温度、液体の影響などを仮想空間で『損傷』として再現できる訓練環境を開発しました。ロボットは実際に物を壊す前に、その失敗を仮想空間で何度も経験し、安全な動き方を学べるようになります。",
+      "narration": "そしてもう1つ、見過ごせない研究があります。『壊さない』ための取り組みです。研究チームは、接触や温度、液体などによる『損傷』を仮想空間で再現できる訓練環境を開発しました。ロボットは実際に物を壊す前に、その失敗を仮想空間で経験し、安全な動き方を学べるようになります。",
       "image_prompt": "Flat infographic illustration of a robot inside a simulated virtual environment shown as a translucent grid box, with a small cracked vase icon and a warning icon representing simulated damage feedback, cool muted blue-teal palette, Kurzgesagt-style, no text",
       "ken_burns": "pan_right"
-    },
-    {
-      "scene_id": 9,
-      "type": "impact",
-      "narrator": "persona",
-      "duration_seconds": 26,
-      "narration": "もしこれらの技術がいつか1つに組み合わさったら——美咲さんが娘を迎えに行き、一緒に帰宅すると、洗濯物はきちんと畳まれ、温かい夕食が用意され、娘の大切なおもちゃも壊れることなくそのままの場所にある。片付けに追われることなく、娘と過ごす時間が増える。そんな夜が、当たり前になるかもしれません。",
-      "image_prompt": "Flat infographic illustration of the same woman opening her front door smiling, seeing neatly folded laundry, a warm dinner on the table, and a child's toy safely intact on the floor, warm cozy home tones with cool blue-teal palette, Kurzgesagt-style, no text",
-      "ken_burns": "zoom_in"
     },
     {
       "scene_id": 10,
       "type": "impact",
       "narrator": "persona",
+      "duration_seconds": 26,
+      "narration": "もしこれらの技術がいつか1つに組み合わさったら——美咲さんが娘を迎えに行き、一緒に帰宅すると、洗濯物はきちんと畳まれ、温かい夕食が用意され、娘の大切なおもちゃも壊れることなくそのままの場所にある。『ただいま』と扉を開けた瞬間の安堵感は、想像するだけで肩の力が抜けるようです。片付けに追われることなく、娘と過ごす時間が増える。絵本を読む時間も、他愛のないおしゃべりの時間も、これまでより少しだけ長くなるかもしれません。休日は『まとめて片付ける日』ではなく、家族でゆっくり過ごす時間に変わるかもしれません。そんな夜が、当たり前になるかもしれません。",
+      "image_prompt": "Flat infographic illustration of the same woman opening her front door smiling, seeing neatly folded laundry, a warm dinner on the table, and a child's toy safely intact on the floor, warm cozy home tones with cool blue-teal palette, Kurzgesagt-style, no text",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 11,
+      "type": "impact",
+      "narrator": "persona",
       "duration_seconds": 20,
-      "narration": "ただし、これらはまだそれぞれ別々の研究段階のプロトタイプで、1つの製品として完成しているわけではありません。紹介した4つの研究のうち3つは査読前の段階で、実用化にはまだ時間がかかりそうです。",
+      "narration": "ただし、これらはまだそれぞれ別々の研究段階のプロトタイプで、1つの製品として完成しているわけではありません。紹介した4つの研究のうち3つは査読前の段階で、実用化にはまだ時間がかかりそうです。それでも美咲さんは、こうした研究が生まれていること自体に、小さな希望を感じずにはいられませんでした。",
       "image_prompt": "Flat infographic illustration of four separate small prototype robot icons in individual lab settings, not yet connected to each other, muted cool color palette, honest and grounded tone, Kurzgesagt-style, no text",
       "ken_burns": "static"
     },
     {
-      "scene_id": 11,
+      "scene_id": 12,
       "type": "closing",
       "narrator": "persona",
       "duration_seconds": 18,
-      "narration": "それでも、世界中の研究者たちが同じ場所を目指して、着実に歩みを進めている。美咲さんの忙しい毎日に、その歩みが追いつく日は、思っているより近いのかもしれません。",
+      "narration": "それでも、世界中の研究者たちが、家事という同じ壁に向かって、それぞれの持ち場で着実に歩みを進めている。美咲さんの忙しい毎日に、その歩みが追いつく日は、思っているより近いのかもしれません。",
       "image_prompt": "Flat infographic illustration of several small distinct research icons converging along gentle paths toward a single glowing warm-toned home silhouette on the horizon, minimal geometric shapes, cool blue-teal palette with warm accent, Kurzgesagt-style, hopeful and calm mood, no text",
       "ken_burns": "zoom_out"
     }
