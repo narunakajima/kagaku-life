@@ -40,6 +40,7 @@ from google.genai import types
 BASE_DIR = Path(__file__).parent
 INPUT_PATH = BASE_DIR / "stage1_pool.json"
 OUTPUT_PATH = BASE_DIR / "stage2_screened.json"
+VENUE_ALLOWLIST_PATH = BASE_DIR / "reputable_venues.json"
 
 import os
 
@@ -49,34 +50,13 @@ CALL_DELAY_SEC = 1.5
 
 # 明らかに信頼できる出版社・学会の許可リスト（venue文字列への部分一致、大小無視）。
 # 該当する場合はGemini呼び出しをスキップして自動passする（コスト削減）。
+# reputable_venues.json から読み込む（kl_venue_allowlist_update.pyが
+# stage2_screened.jsonの実績から追加候補を提案・追記する）。
 # 2026-08確定: 「許可リスト外は切り捨て」にはしない——プレプリントサーバー自体は
 # 当然このリストに入らないため、それをやると査読済み限定ルールの復活になり
 # STAGE2改訂の意図（著者機関・技術的厳密さでの個別判断）を無効化してしまう。
 # リスト外・プレプリントは全てGeminiに個別レビューさせる（切り捨てない）。
-REPUTABLE_VENUE_KEYWORDS = [
-    # 総合誌
-    "nature", "science robotics", "science advances", "science translational medicine",
-    "proceedings of the national academy", "pnas", "scientific reports", "cell reports", "cell press",
-    "plos", "jmir", "the lancet", "jama", "new england journal of medicine", "bmj",
-    # IEEE / ロボティクス
-    "ieee transactions", "ieee robotics and automation letters",
-    "international conference on robotics and automation",
-    "international conference on intelligent robots and systems",
-    "robotics: science and systems", "conference on robot learning",
-    "ieee robotics & automation magazine",
-    # ACM / HCI
-    "acm transactions", "conference on human factors in computing systems",
-    # ML/AI トップ会議
-    "neural information processing systems", "international conference on machine learning",
-    "international conference on learning representations",
-    "conference on computer vision and pattern recognition",
-    "international conference on computer vision", "european conference on computer vision",
-    "aaai conference on artificial intelligence",
-    "international joint conference on artificial intelligence",
-    # 経済学トップジャーナル
-    "quarterly journal of economics", "american economic review", "econometrica",
-    "journal of political economy", "review of economic studies", "management science",
-]
+REPUTABLE_VENUE_KEYWORDS = json.loads(VENUE_ALLOWLIST_PATH.read_text())["keywords"]
 
 
 def is_reputable_venue(venue: str) -> bool:

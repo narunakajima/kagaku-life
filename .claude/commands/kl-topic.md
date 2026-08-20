@@ -13,18 +13,31 @@ CLAUDE.md「論文選定ロジック（目利きプロセス）」のSTAGE1〜4�
 ## 定数
 
 - スクリプト: `kl_paper_search.py`（STAGE1）→ `kl_paper_screen.py`（STAGE2）→
+  `kl_venue_allowlist_update.py`（許可リスト更新・提案）→
   `kl_paper_hypecheck.py`（STAGE3）→ `kl_paper_interest_score.py`（STAGE4）
 - 中間出力（すべて実行のたびに再生成される作業ファイル。`.gitignore`済み）:
   `stage1_pool.json` / `stage2_screened.json` / `stage3_hypecheck.json` / `stage4_ranked.json`
+- 許可リスト: `reputable_venues.json`（gitで追跡。STAGE2のコスト最適化用）
 - 確定キュー: `topics_queue.json`（gitで追跡）
 
 ---
 
-## STEP 1 — STAGE1〜4を順に実行する
+## STEP 1 — STAGE1・STAGE2を実行し、許可リストを更新する
 
 ```bash
 python3 kl_paper_search.py
 python3 kl_paper_screen.py
+python3 kl_venue_allowlist_update.py
+```
+
+`kl_venue_allowlist_update.py` は提案のみ行う（`reputable_venues.json` は自動で
+書き換えない）。提案された掲載誌をユーザーに見せ、追加してよいか確認してから
+`--apply` で反映する（低品質誌を誤って許可リストに載せるリスクがあるため、
+必ず人間確認を挟む。CLAUDE.md STAGE2の許可リスト方針参照）。
+
+続けてSTAGE3・STAGE4を実行する:
+
+```bash
 python3 kl_paper_hypecheck.py
 python3 kl_paper_interest_score.py
 ```
@@ -32,8 +45,9 @@ python3 kl_paper_interest_score.py
 各STAGE完了後、簡潔な件数サマリのみ報告する（詳細な生データは画面に出さない）:
 
 ```
-STAGE1: 収集{N}件 → プレフィルタ通過{N}件
-STAGE2: pass={N} flag={N} exclude={N}
+STAGE1: 収集{N}件 → プレフィルタ通過{N}件（うちプレプリント{N}件）
+STAGE2: pass={N}（うち許可リスト自動pass{N}） flag={N} exclude={N}
+許可リスト提案: {N}件（承認・適用したか）
 STAGE3: ok={N} caution={N} high_risk={N}
 STAGE4: 上位{N}件をランキング
 ```
