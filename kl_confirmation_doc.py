@@ -56,23 +56,34 @@ def build_doc(ep: dict) -> str:
     est_min = estimate_seconds("".join(s["narration"] for s in ep["scenes"])) / 60
     add(f"ナレーション総文字数: {total_chars}字（推定尺 約{est_min:.1f}分・実尺はTTS生成後に確定）")
     protagonist = ep.get("protagonist") or {}
-    add(f"主人公        : {protagonist.get('name', '—')}（{protagonist.get('age', '—')}歳・{protagonist.get('job', '—')}）")
+    p_gender = protagonist.get("gender", "—")
+    r_gender = {"female": "male", "male": "female"}.get(p_gender, "—")
+    add(f"主人公        : {protagonist.get('name', '—')}（{protagonist.get('age', '—')}歳・{protagonist.get('job', '—')}・{p_gender}）")
+    add(f"ナレーター    : 生活者ボイス={p_gender} / 研究ボイス={r_gender}（2026-08〜2ナレーター制）")
     add("BGM           : ❌ 未選択")
     add("サムネイル    : ❌ 未生成")
     add("")
 
     add("=" * 64)
-    add("【出典】")
+    add(f"【出典】（{len(ep.get('references', []))}本）")
     add("=" * 64)
     add("")
-    for ref in ep.get("references", []):
+    preprint_count = 0
+    for i, ref in enumerate(ep.get("references", [])):
         authors = ", ".join(ref.get("authors", []))
-        add(f"{authors} ({ref.get('year')}). {ref.get('title')}.")
-        add(f"  掲載誌: {ref.get('venue')}")
+        is_pp = ref.get("is_preprint", False)
+        if is_pp:
+            preprint_count += 1
+        status = "⚠️ プレプリント（査読前）" if is_pp else "✅ 査読済み"
+        add(f"[{i}] {authors} ({ref.get('year')}). {ref.get('title')}.")
+        add(f"    掲載誌: {ref.get('venue')} — {status}")
         if ref.get("doi"):
-            add(f"  DOI: {ref['doi']}")
+            add(f"    DOI: {ref['doi']}")
         if ref.get("url"):
-            add(f"  URL: {ref['url']}")
+            add(f"    URL: {ref['url']}")
+        add("")
+    if preprint_count:
+        add(f"⚠️ {preprint_count}本がプレプリント（査読前）。動画内で必ず明示すること（CLAUDE.md STAGE2方針）。")
         add("")
 
     add("=" * 64)
@@ -83,6 +94,8 @@ def build_doc(ep: dict) -> str:
     add("□ 数値（成功率・人数・統計的有意差の有無等）が本文の記載と一致している")
     add("□ ヘッジ表現（研究段階である旨・限界の記載）が省略されていない")
     add("□ 二次報道由来の誇張表現が混入していない（STAGE3チェック結果と整合）")
+    if preprint_count:
+        add("□ プレプリント（査読前）である旨が動画内で明示されている")
     add("")
 
     add("=" * 64)
@@ -99,10 +112,15 @@ def build_doc(ep: dict) -> str:
     add("【各シーンのナレーション・画像プロンプト】")
     add("=" * 64)
     add("")
+    refs = ep.get("references", [])
     for s in ep["scenes"]:
         role = BGM_ROLE_BY_TYPE.get(s["type"], "main")
         est = estimate_seconds(s["narration"])
-        add(f"▶ S{s['scene_id']:02d}  [{s['type']} / BGM:{role}]  文字数: {len(s['narration'])}字（推定実尺: 約{est:.0f}秒）  ken_burns: {s['ken_burns']}")
+        narrator = s.get("narrator", "—")
+        ref_note = ""
+        if "reference_index" in s and 0 <= s["reference_index"] < len(refs):
+            ref_note = f"  出典[{s['reference_index']}]: {refs[s['reference_index']].get('title', '')[:40]}"
+        add(f"▶ S{s['scene_id']:02d}  [{s['type']} / BGM:{role} / narrator:{narrator}]  文字数: {len(s['narration'])}字（推定実尺: 約{est:.0f}秒）  ken_burns: {s['ken_burns']}{ref_note}")
         add("")
         add(f"  【ナレーション】")
         add(f"  {s['narration']}")
