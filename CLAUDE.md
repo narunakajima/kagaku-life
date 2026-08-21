@@ -17,6 +17,27 @@ YouTubeの動画タイトル・概要欄・タグ・チャンネル名など視�
 
 ---
 
+## ストレージ方針（2026-08-21確定）
+
+samurai-chronicles・ランプのひとりごとと同じ運用とする。
+
+- **Desktop（`~/Desktop/kagaku-life/{episode}/`）: 確認用。** `kl_image_gen.py`・
+  `kl_tts_gen.py` の生成物はまずここに保存し、内容を確認・採用してから次工程へ進む。
+- **Google Drive（`Kagaku-Life/KL{NNN}/`）: コンテンツ格納用。** 確認・採用済みの
+  素材を `kl_finalize.py --episode kl{NNN}` でGoogle Driveのローカル同期フォルダへ
+  コピーする（Google DriveのフォルダIDは `Kagaku-Life` フォルダ配下、エピソード
+  フォルダ名は大文字化した `KL{NNN}`。SC/LWの命名規則に合わせる）。
+
+**既知の制約:** この環境ではmacOSの権限制約により、ターミナルからの
+`ls`／ディレクトリ一覧（`iterdir()`等）がDesktop・Google Driveのローカル同期
+フォルダに対して失敗することがある（既知のTCC権限問題、過去に再起動で解消した
+実績あり）。一方、既知のファイル名を指定した直接の読み書き（`open()`/`Path.write_bytes()`
+等）は問題なく動作する。そのため `kl_finalize.py` はディレクトリ一覧を使わず、
+`episodes/kl{NNN}.json` の `scene_id` から期待されるファイル名を組み立てて
+1件ずつ処理する設計にしている。
+
+---
+
 ## マシン判定ルール
 
 MacBook・iMac の両方から運用する（`samurai-chronicles` / `lamp-whisper` と同様）。
