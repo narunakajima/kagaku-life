@@ -579,6 +579,28 @@ Geminiが実際に論文の表・具体的な数値（例: DeMaVLAのTable 5の
 Pre-training Scaling Analysis）まで引用して照合しており、単なる
 形式チェックではなく実質的な検証になっていることを確認した。
 
+### zoom_anchor（`kl_zoom_anchor.py`、2026-08-21追加）
+
+`kl_video_gen.py`（今後実装）のKen Burnsエフェクトで、ズームの焦点が
+画像の中心（0.5, 0.5）固定だと主被写体からズレることがあるため、SCの
+`sc_zoom_anchor.py` と同じ考え方で、生成済み画像の主被写体重心を
+Gemini Visionで判定し `scene.zoom_anchor` に書き込む先出し処理を用意した
+（動画生成本体より先に、画像QAと同じタイミングで実行できる独立した工程）。
+
+**SCとの違い:** SCは `character_ref`（固定キャラクター）を前提に「顔〜胸」を
+対象とし、2人構図は対象外にしてpan処理に譲る。kagaku-lifeには
+`character_ref`の概念がなく、主人公はエピソードごとに変わり、ロボットや
+チャート図解が主役になるシーンもあるため、判定対象を**「画像内で視線が
+集まる主被写体（人物・ロボット・図解の中心要素等）」という汎用的な表現に
+一般化**し、対象シーンも `character_ref` の有無ではなく **`ken_burns` が
+`zoom_in`/`zoom_out` のシーン全般**（pan/staticは対象外）に変更した。
+
+**出力形式:** `scene.zoom_anchor = {"x": 0.0〜1.0, "y": 0.0〜1.0}`
+（左上が0,0・右下が1,1の正規化座標）。
+
+**動作確認（2026-08-21、kl001で実施）:** `ken_burns`が`zoom_in`/`zoom_out`の
+全10シーンで判定・書き込みに成功した。
+
 ### エピソードJSONフォーマット（`episodes/kl{NNN}.json`）
 
 SCのフォーマットを土台に、`references`（出典）と `protagonist`（使い捨ての生活者）
@@ -615,7 +637,8 @@ Shorts（`shorts`フィールド）は2026-08-21に追加した（経緯は下�
       "duration_seconds": 5,
       "narration": "...",
       "image_prompt": "...",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {"x": 0.5, "y": 0.5}
     },
     {
       "scene_id": 4,
