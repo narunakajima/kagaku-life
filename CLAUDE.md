@@ -262,7 +262,16 @@ SCの `sc_video_gen.py` と同じ考え方で、シーンタイプの並びか�
 
 `protagonist.gender` から生活者ボイスの性別を決め、研究ボイスはその逆に固定する。
 `kl_tts_gen.py`（今後作成）が `scene.narrator` を見てGemini TTSのボイス名を
-切り替える想定（具体的なボイス名の選定はkl_tts_gen.py実装時に行う）。
+切り替える想定。
+
+**ボイス選定（2026-08確定）:** モデルは `gemini-3.1-flash-tts-preview`。
+女性ボイスに `Leda`、男性ボイスに `Orus` を採用する。女性候補5種
+（Kore/Leda/Autonoe/Despina/Sulafat）・男性候補5種（Charon/Orus/Iapetus/
+Rasalgethi/Achird）をkl001の実ナレーション文で読み上げ比較した結果選定した。
+この2声は性別に固定（女性キャラの声は常にLeda、男性キャラの声は常にOrus）
+であり、`narrator`（persona/research）ではなく `protagonist.gender` と
+その逆で役割に割り当てる。例: 主人公が女性の回は 生活者=Leda / 研究=Orus、
+主人公が男性の回は 生活者=Orus / 研究=Leda となる。
 
 **複数論文を扱う回について**（2026-08追加。企画書「複数論文を扱う回は、該当箇所
 ごとに簡易テロップを併用」に対応）: `references` 配列に複数エントリを持たせ、
