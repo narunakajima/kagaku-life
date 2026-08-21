@@ -122,7 +122,16 @@
       "zoom_anchor": {
         "x": 0.36,
         "y": 0.52
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "夕食はできたてで"
+          ],
+          "start": 0.0,
+          "end": 2.12
+        }
+      ]
     },
     {
       "scene_id": 3,
@@ -245,7 +254,121 @@
       "duration_seconds": 28,
       "narration": "そしてもう1つ、見過ごせない研究があります。テキサス大学オースティン校の研究室が取り組む『壊さない』ための研究です。研究チームが最新のAIロボットを調べたところ、『電子レンジを開ける』という作業自体は92%成功する一方で、壊さずに安全にやり遂げられたのはわずか4%だったといいます。そこで研究チームは、接触や温度、液体などによる『損傷』を仮想空間で再現できる訓練環境を開発しました。ロボットは実際に物を壊す前に、その失敗を仮想空間で経験し、安全な動き方を学べるようになります。実際に『コップの水を運ぶ』作業では、この訓練を経て安全に完了できた割合が20%から100%まで向上したと報告されています。",
       "image_prompt": "A research lab room where a robot — its head is a clearly mechanical sensor unit (a simple camera lens or flat sensor panel), with NO human-like face, no eyes, no nose, no mouth, nothing resembling a human head — stands facing a large wall monitor, an American researcher (Western appearance, matching the US-based institution, visibly a different individual from other researchers in this episode — different age, hairstyle, and build) wearing a white lab coat, seated at a desk nearby watching the same monitor. The monitor displays a simulated virtual training environment (a translucent grid box) with a small cracked vase icon and a warning icon representing simulated damage feedback (this is the research's own subject — training a robot to avoid breaking things), plus a simple flat split before/after graphic: left side shows one tall bar next to one very short bar, right side shows both bars equally tall after training. Clearly a lab/testing environment. Absolutely no text, words, letters, or numerals anywhere in the image, including on the monitor — convey meaning through shape and bar height only.",
-      "ken_burns": "pan_right"
+      "ken_burns": "pan_right",
+      "telop_cards": [
+        {
+          "lines": [
+            "そしてもう1つ、見過ごせない研究があります。"
+          ],
+          "start": 0.0,
+          "end": 2.82
+        },
+        {
+          "lines": [
+            "テキサス大学オースティン校の研究室が取り"
+          ],
+          "start": 2.97,
+          "end": 5.54
+        },
+        {
+          "lines": [
+            "組む『壊さない』ための研究です。"
+          ],
+          "start": 5.69,
+          "end": 7.74
+        },
+        {
+          "lines": [
+            "研究チームが最新のAIロボットを調べたところ、"
+          ],
+          "start": 7.89,
+          "end": 10.84
+        },
+        {
+          "lines": [
+            "『電子レンジを開ける』という作業自体は"
+          ],
+          "start": 10.99,
+          "end": 13.43
+        },
+        {
+          "lines": [
+            "92%成功する一方で、壊さずに安全にやり"
+          ],
+          "start": 13.58,
+          "end": 16.15
+        },
+        {
+          "lines": [
+            "遂げられたのはわずか4%だったといいます。"
+          ],
+          "start": 16.3,
+          "end": 18.99
+        },
+        {
+          "lines": [
+            "そこで研究チームは、接触や温度、"
+          ],
+          "start": 19.14,
+          "end": 21.19
+        },
+        {
+          "lines": [
+            "液体などによる『損傷』を仮想空間で再現で"
+          ],
+          "start": 21.34,
+          "end": 23.91
+        },
+        {
+          "lines": [
+            "きる訓練環境を開発しました。"
+          ],
+          "start": 24.06,
+          "end": 25.86
+        },
+        {
+          "lines": [
+            "ロボットは実際に物を壊す前に、"
+          ],
+          "start": 26.01,
+          "end": 27.93
+        },
+        {
+          "lines": [
+            "その失敗を仮想空間で経験し、"
+          ],
+          "start": 28.08,
+          "end": 29.88
+        },
+        {
+          "lines": [
+            "安全な動き方を学べるようになります。"
+          ],
+          "start": 30.03,
+          "end": 32.34
+        },
+        {
+          "lines": [
+            "実際に『コップの水を運ぶ』作業では、"
+          ],
+          "start": 32.49,
+          "end": 34.8
+        },
+        {
+          "lines": [
+            "この訓練を経て安全に完了できた割合が"
+          ],
+          "start": 34.95,
+          "end": 37.26
+        },
+        {
+          "lines": [
+            "20%から100%まで向上したと報告されています。"
+          ],
+          "start": 37.41,
+          "end": 40.62
+        }
+      ]
     },
     {
       "scene_id": 14,
