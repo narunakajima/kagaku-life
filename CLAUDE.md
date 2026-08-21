@@ -525,6 +525,34 @@ kl001の検証で判明した。`image_prompt`では時間帯を視覚的に明�
 bright dawn light)"、"evening — warm interior lighting with a dusk sky visible
 through the window"）。
 
+### 画像QA（2026-08-21追加）
+
+samurai-chroniclesの `sc_image_gen.py` の画像QA（Gemini Vision）と同じ考え方で、
+`kl_image_gen.py` に自動QAを組み込んだ。それまでの不具合（ロボットの顔が人間的、
+複数人物が同一人物に見える、文字混入等）はすべて人間の目視確認頼みだったため。
+
+**流れ:** 生成 → `gemini-3.6-flash` の画像理解でQAチェック → NGならQAの指摘内容を
+プロンプトに追記して自動再生成（最大2回試行。SCの実績データで3回目以降は
+効果が薄いことが判明していたため2回に設定）。それでも解決しなければ、その旨を
+表示してユーザーの目視確認に委ねる。
+
+**QAカテゴリ（SCの時代考証・髪型カテゴリの代わりに、kagaku-lifeで実際に
+繰り返し起きた問題をカテゴリ化）:**
+- `MISMATCH` — シーン内容と食い違う
+- `DISTORTION` — 手・顔・身体の歪み
+- `TEXT` — 読める文字・数字・透かしが写り込む
+- `STYLE` — 意図した画風（物語調イラスト／チャート）と異なる
+- `FACE` — 研究用ロボットの頭部が機械的であるべきなのに人間的な顔になっている
+- `DUPLICATE_PERSON` — 別人であるべき複数人物が同一人物に見える
+
+**動作確認（2026-08-21、kl001のS9で実施）:** 実際にQAが「研究者がアメリカ人
+という指定に反して東アジア系に見え、タブレットも持っていない」という
+MISMATCHを検出し、2回目の自動再生成で解消することを確認した。
+
+`--no-qa` オプションで従来通りQAなしの生成もできる（QA自体もGemini APIの
+追加コストがかかるため、大量の一括再生成で確認目的だけの場合など）。
+QA結果は `~/Desktop/kagaku-life/{episode}/image_qa_result.json` に保存する。
+
 ### エピソードJSONフォーマット（`episodes/kl{NNN}.json`）
 
 SCのフォーマットを土台に、`references`（出典）と `protagonist`（使い捨ての生活者）
