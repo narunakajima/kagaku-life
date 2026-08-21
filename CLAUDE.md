@@ -288,23 +288,30 @@ SCの `sc_video_gen.py` と同じ考え方で、シーンタイプの並びか�
 0始まり）を付けて、どのシーンがどの論文の紹介かを紐づける。単一論文の回では
 `reference_index: 0` で固定でよい。
 
-### 画像スタイル（2026-08確定）
+### 画像スタイル（2026-08-21改訂）
 
 `gemini-3.1-flash-image` で実際に複数テイストを比較検証し、以下2種のBASE_CONTEXTに
 確定した。`kl_image_gen.py`（今後作成）はシーンの `type` に応じて使い分ける。
 
 **物語シーン用（`hook`/`citation`/`context`/`finding`/`impact`/`closing`）:**
 ```
-Rich flat editorial illustration style with dramatic cinematic lighting: strong
-directional light with visible soft light rays, deeper shadow contrast, atmospheric
-depth. Sophisticated cool palette (deep blue, teal, navy shadows) with one warm
-coral/golden accent glowing in the light areas. Moody yet hopeful, magazine-cover
-quality. Not photorealistic, no anime style.
+Rich flat editorial illustration style with soft warm lamp/window lighting and a
+subtle grain/noise texture overlay: naturalistic character proportions and skin
+tones, gentle shading gradients rather than flat cel-shading. Muted, sophisticated
+palette (slate blue, teal, warm gray) with one warm coral/amber accent light
+glowing softly within the scene. Cozy, intimate, magazine-editorial illustration
+quality. Not photorealistic, no anime style, no harsh dramatic light rays.
+Characters have authentically Japanese facial features (this is a
+Japanese-audience channel) — not Western or ambiguous.
 ```
-比較検証では「リッチフラット（無印）」と「シネマティックな光（この案）」が最後まで
-拮抗したが、静かなシーンでも緊張感のあるシーンでも一貫して引き込まれる仕上がりに
-なったため、シネマティックな光を採用した。ミニマル路線・紙工作風・ソフト3D路線は
-比較の結果不採用（それぞれ検討ログとして残すのみ、実装はしない）。
+**改訂の経緯:** 当初は「シネマティックな光（強い指向性の光・深い陰影）」を採用した
+が、実際にkl001本編のシーンで運用してみると演出が強すぎてクセがあると判断し、
+より落ち着いた「暖色グレイン」路線（柔らかいランプ光・粒子感のあるテクスチャ・
+控えめな陰影）に差し替えた。あわせて、以前のテストで日本人ではなく欧米人の
+顔立ちで生成される問題が見つかったため、キャラクターの容姿を明示的に指定する
+一文を追加した。ミニマル路線・紙工作風・ソフト3D路線・完全にフラットで陰影の
+ない「無印リッチフラット」は比較の結果不採用（無印はクセがない一方、単調で
+安っぽく見えたため）。
 
 **`data` タイプ専用（物語シーンとは別トーン）:**
 ```
@@ -320,6 +327,23 @@ text or numerals — convey the difference through bar height/fill only.
 「アート作品」寄りになりすぎて、パッと見て数値の大小が伝わりにくくなる問題が
 確認された（雰囲気重視のスタイルとデータの視認性はトレードオフになりやすい）。
 `data` タイプは意図的に演出を抑え、視認性を最優先したチャート専用スタイルとする。
+
+**`finding` シーン内の「コーナー要素」も視認性を優先する（2026-08-21追加）:**
+`finding` タイプのシーンでナレーションの数値を反映する棒グラフ・比較リング等の
+コーナー要素（上記「finding シーンで成果の数値に触れる場合の画像表現」参照）は、
+シーン全体はBASE_CONTEXTの演出的なスタイルで描きつつ、要素自体は
+`data` タイプに近いシンプルなフラット表現に留める旨をimage_promptに明記する
+（例: "a small simple flat corner graphic, kept plain, contrasting with the
+richer main illustration for legibility"）。演出と視認性のトレードオフは
+`data` タイプ単体だけでなく、`finding` シーンの装飾要素にも同様に起こりうる
+ため。
+
+**時間帯の指定は明示する（2026-08-21追加）:** 「morning」「早朝」等の時間帯を
+言葉で示すだけでは、AI画像生成が誤って夜空（月・星）を描くことがあると
+kl001の検証で判明した。`image_prompt`では時間帯を視覚的に明示する
+（例: "soft morning daylight coming through the window (not night — clearly
+bright dawn light)"、"evening — warm interior lighting with a dusk sky visible
+through the window"）。
 
 ### エピソードJSONフォーマット（`episodes/kl{NNN}.json`）
 
