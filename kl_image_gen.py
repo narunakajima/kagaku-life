@@ -49,8 +49,11 @@ CHART_CONTEXT = (
     "visualization slide, NOT an artistic or abstract illustration. Plain solid flat "
     "colors only, no dramatic lighting, no light rays, no gradients, no texture, no "
     "decorative background shapes. Cool color palette (deep blue, teal) for baseline "
-    "values, one warm coral/orange color for the improved/highlighted value. No legible "
-    "text or numerals — convey the difference through bar height/fill only."
+    "values, one warm coral/orange color for the improved/highlighted value. "
+    "ABSOLUTELY NO TEXT: no letters, no words, no numerals, no dates, no labels "
+    "anywhere in the image — convey all meaning through icon shape, bar height, and "
+    "position only. If you would normally add a caption or axis label, omit it "
+    "entirely and leave that space blank."
 )
 
 

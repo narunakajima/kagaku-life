@@ -319,8 +319,11 @@ Simple, clean, minimalist flat infographic bar chart — like a basic data
 visualization slide, NOT an artistic or abstract illustration. Plain solid flat
 colors only, no dramatic lighting, no light rays, no gradients, no texture, no
 decorative background shapes. Cool color palette (deep blue, teal) for baseline
-values, one warm coral/orange color for the improved/highlighted value. No legible
-text or numerals — convey the difference through bar height/fill only.
+values, one warm coral/orange color for the improved/highlighted value.
+ABSOLUTELY NO TEXT: no letters, no words, no numerals, no dates, no labels
+anywhere in the image — convey all meaning through icon shape, bar height, and
+position only. If you would normally add a caption or axis label, omit it
+entirely and leave that space blank.
 ```
 **なぜ物語シーンと同じ演出的なスタイルを流用しないか:** 検証時、物語シーン用の
 リッチフラット・シネマティックライトのどちらのスタイルでも、比較棒グラフが
@@ -328,13 +331,23 @@ text or numerals — convey the difference through bar height/fill only.
 確認された（雰囲気重視のスタイルとデータの視認性はトレードオフになりやすい）。
 `data` タイプは意図的に演出を抑え、視認性を最優先したチャート専用スタイルとする。
 
+**「no legible text」だけでは不十分、明示的な禁止文が必要（2026-08-21追加）:**
+kl001の実生成テストで、「no legible text or numerals」という控えめな表現では
+AI画像生成が英語のラベル文字（年号・タスク名等）をはっきり描画してしまう
+問題が確認された。「ABSOLUTELY NO TEXT」のように強く明示し、「キャプションを
+入れたくなってもその余白は空白のままにする」旨まで書くことで解消した。
+
 **`finding` シーン内の「コーナー要素」も視認性を優先する（2026-08-21追加）:**
 `finding` タイプのシーンでナレーションの数値を反映する棒グラフ・比較リング等の
 コーナー要素（上記「finding シーンで成果の数値に触れる場合の画像表現」参照）は、
 シーン全体はBASE_CONTEXTの演出的なスタイルで描きつつ、要素自体は
 `data` タイプに近いシンプルなフラット表現に留める旨をimage_promptに明記する
-（例: "a small simple flat corner graphic, kept plain, contrasting with the
-richer main illustration for legibility"）。演出と視認性のトレードオフは
+（例: "a small flat corner graphic — no larger than roughly one-eighth of the
+frame, tucked unobtrusively in a corner, kept plain and contrasting with the
+richer main illustration for legibility, absolutely no text or numerals"）。
+kl001の初回テストでは「small」とだけ書いたコーナー要素が画面の1/4近くを
+占める大きな白いポスターのように浮いてしまったため、「1/8以下」という
+具体的なサイズの目安を明示するよう改訂した。演出と視認性のトレードオフは
 `data` タイプ単体だけでなく、`finding` シーンの装飾要素にも同様に起こりうる
 ため。
 
