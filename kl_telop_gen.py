@@ -1,15 +1,23 @@
 """
 kl_telop_gen.py — くらしを変える科学 テロップ生成・焼き込みスクリプト
 
-lamp-whisperの lw_video_gen.py のテロップ機能と同じ見た目（drawtext焼き込み）を
-踏襲するが、タイミング決定方法は異なる。
+lamp-whisperの lw_video_gen.py のテロップ機能と同じ見た目（drawtext焼き込み）・
+同じタイミング決定方法（Whisperによる音声解析）を踏襲する。
 
-LWとの違い: LWは1本の連続音声＋自由形式の台本のため、Whisperで音声を解析して
-セリフの発話タイミングを推定する必要がある。kagaku-lifeはシーンごとに個別の
-TTS音声ファイルがあり、ナレーション文もエピソードJSONに正確な文字列として
-存在するため、**Whisperは不要**——各シーンのナレーション文を読みやすい長さの
-カード（テロップ表示単位）に分割し、実際のTTS音声の長さに対して文字数比例で
-タイミングを割り当てる。
+**2026-08-21改訂:** 当初「ナレーション文もTTS音声の長さも既知だからWhisperは
+不要、文字数比例でタイミングを割り当てればよい」という設計にしたが、実際に
+生成した動画で確認したところナレーションとテロップのタイミングが大きくズレて
+いた。誤りは「テキストが分かっている＝いつ発話されるかも分かる」という前提
+そのもので、実際の発話は句読点でのポーズ・数字の読み上げ等でペースが不均一
+なため、文字数比例では実際の発話タイミングと一致しない。LWと同じくWhisperで
+実際の音声を解析してタイミングを取得する方式に修正した。
+
+LWとの違い: LWは自由形式の台本のため、Whisperの書き起こしと台本テキストが
+食い違うことを前提にSequenceMatcherで頑健にマッチングする必要がある。
+kagaku-lifeはTTS音声が「エピソードJSONのナレーション文をそのまま読み上げた
+もの」であり、テキストと音声の対応が自明に近いため仕組みは流用しつつも
+より単純なケースとして扱える（ただしWhisperの書き起こし精度・数字表記の
+揺れは依然あるため、LWと同じSequenceMatcherによる頑健なマッチングは踏襲する）。
 
 使い方:
   # 1. シーンごとの telop_cards（テキスト＋シーン内相対タイミング）を生成
@@ -25,11 +33,14 @@ TTS音声ファイルがあり、ナレーション文もエピソードJSONに�
 """
 
 import argparse
+import difflib
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
+import unicodedata
 import wave
 from pathlib import Path
 
@@ -119,19 +130,98 @@ def chunk_narration(text: str, max_chars: int = MAX_LINE_CHARS) -> list:
     return chunks
 
 
-def plan_telop_cards(narration: str, duration: float) -> list:
-    """ナレーション文をチャンクに分割し、文字数比例でシーン内相対タイミングを割り当てる。"""
+def normalize(t: str) -> str:
+    """句読点・記号・空白を除去して純粋な読み文字列にする（lw_video_gen.pyと同じ）。"""
+    return "".join(
+        ch for ch in t
+        if unicodedata.category(ch) not in ("Po", "Ps", "Pe", "Pd", "Zs", "Cc")
+    )
+
+
+_whisper_model = None
+
+
+def _load_whisper():
+    global _whisper_model
+    if _whisper_model is None:
+        import whisper as _whisper
+        print("  Whisperモデル読み込み中（初回はダウンロードあり）...")
+        _whisper_model = _whisper.load_model("small")
+    return _whisper_model
+
+
+def plan_telop_cards(narration: str, wav_path: Path, duration: float) -> list:
+    """ナレーション文をチャンクに分割し、Whisperで実際の音声を解析してタイミングを割り当てる
+    （lw_video_gen.py の generate_telop_from_whisper と同じ考え方: Whisperの書き起こしと
+    既知のナレーション文をSequenceMatcherで対応付け、文字ごとのタイムスタンプを補間する）。
+    """
     chunks = chunk_narration(narration)
-    total_chars = sum(len(c) for c in chunks) or 1
-    cards = []
-    pos = 0.0
-    usable = max(0.0, duration - GAP * (len(chunks) - 1))
+
+    model = _load_whisper()
+    result = model.transcribe(str(wav_path), language="ja", word_timestamps=True)
+
+    all_chars, char_times = "", []
+    for seg in result["segments"]:
+        for w in seg.get("words", []):
+            norm = normalize(w["word"])
+            for ch in norm:
+                all_chars += ch
+                char_times.append((w["start"], w["end"]))
+
+    if not char_times:
+        # Whisperが単語タイムスタンプを取得できなかった場合のみ、文字数比例にフォールバックする
+        print("  ⚠️ word_timestampsが取得できず、文字数比例にフォールバックします")
+        total_chars = sum(len(c) for c in chunks) or 1
+        cards, pos = [], 0.0
+        usable = max(0.0, duration - GAP * (len(chunks) - 1))
+        for chunk in chunks:
+            share = len(chunk) / total_chars * usable
+            start, end = round(pos, 2), round(pos + share, 2)
+            cards.append({"lines": [chunk], "start": start, "end": end})
+            pos = end + GAP
+        return cards
+
+    script_full = normalize(narration)
+    matcher = difflib.SequenceMatcher(None, all_chars, script_full, autojunk=False)
+
+    s2w: dict = {}
+    for w_pos, s_pos, length in matcher.get_matching_blocks():
+        for i in range(length):
+            if s_pos + i not in s2w:
+                s2w[s_pos + i] = w_pos + i
+
+    known = sorted(s2w)
+    if known:
+        for i in range(known[0]):
+            s2w[i] = max(0, s2w[known[0]] - (known[0] - i))
+        for i in range(known[-1] + 1, len(script_full)):
+            s2w[i] = min(len(char_times) - 1, s2w[known[-1]] + (i - known[-1]))
+        for j in range(len(known) - 1):
+            s1, s2 = known[j], known[j + 1]
+            w1, w2 = s2w[s1], s2w[s2]
+            for i in range(s1 + 1, s2):
+                if i not in s2w:
+                    frac = (i - s1) / (s2 - s1)
+                    s2w[i] = round(w1 + frac * (w2 - w1))
+
+    cards, s_pos = [], 0
     for chunk in chunks:
-        share = len(chunk) / total_chars * usable
-        start = round(pos, 2)
-        end = round(pos + share, 2)
-        cards.append({"lines": [chunk], "start": start, "end": end})
-        pos = end + GAP
+        norm_chunk = normalize(chunk)
+        n = len(norm_chunk)
+        if n == 0:
+            continue
+        w_s = min(s2w.get(s_pos, 0), len(char_times) - 1)
+        w_e = min(s2w.get(s_pos + n - 1, len(char_times) - 1), len(char_times) - 1)
+        start_t = round(char_times[w_s][0], 2)
+        end_t = round(char_times[w_e][1], 2)
+        cards.append({"lines": [chunk], "start": start_t, "end": end_t})
+        s_pos += n
+
+    # カード間に最小GAPを確保
+    for i in range(1, len(cards)):
+        if cards[i]["start"] < cards[i - 1]["end"] + GAP:
+            cards[i]["start"] = round(cards[i - 1]["end"] + GAP, 2)
+
     return cards
 
 
@@ -150,7 +240,8 @@ def cmd_plan(episode_id: str, scene_filter: list = None):
             print(f"  ⚠️  S{sid:02d}: 音声ファイルが見つかりません（スキップ）")
             continue
         duration = get_wav_duration(wav_path)
-        cards = plan_telop_cards(scene["narration"], duration)
+        print(f"  S{sid:02d}: Whisperで解析中...")
+        cards = plan_telop_cards(scene["narration"], wav_path, duration)
         scene["telop_cards"] = cards
         updated += 1
         print(f"  S{sid:02d}: {len(cards)}枚のカード（音声長 {duration:.2f}s）")
