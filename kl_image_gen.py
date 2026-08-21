@@ -10,8 +10,10 @@ thumbnail_promptも同様にBASE_CONTEXTを付与して生成する。
   python3 kl_image_gen.py --episode kl001                  # 全シーン+サムネイル生成
   python3 kl_image_gen.py --episode kl001 --scenes 5,6,9    # 指定シーンのみ再生成
   python3 kl_image_gen.py --episode kl001 --thumbnail-only  # サムネイルのみ
+  python3 kl_image_gen.py --episode kl001 --shorts-only     # Shortsのみ（9:16）
 
-出力: ~/Desktop/kagaku-life/{episode}/images/S{NN}.png, thumbnail.png
+出力: ~/Desktop/kagaku-life/{episode}/images/S{NN}.png, thumbnail.png,
+      shorts{M}_S{NN}.png（Shorts、9:16）
 """
 
 import argparse
@@ -61,11 +63,14 @@ def style_for(scene_type: str) -> str:
     return CHART_CONTEXT if scene_type == "data" else BASE_CONTEXT
 
 
-def gen_image(client: genai.Client, prompt: str, out_path: Path) -> bool:
+def gen_image(client: genai.Client, prompt: str, out_path: Path, aspect_ratio: str = None) -> bool:
+    config_kwargs = {"response_modalities": ["IMAGE"]}
+    if aspect_ratio:
+        config_kwargs["image_config"] = types.ImageConfig(aspect_ratio=aspect_ratio)
     resp = client.models.generate_content(
         model=MODEL,
         contents=prompt,
-        config=types.GenerateContentConfig(response_modalities=["IMAGE"]),
+        config=types.GenerateContentConfig(**config_kwargs),
     )
     for part in resp.candidates[0].content.parts:
         if part.inline_data:
@@ -82,6 +87,7 @@ def main():
     parser.add_argument("--scenes", help="生成するscene_idをカンマ区切りで指定（省略時は全シーン）")
     parser.add_argument("--thumbnail-only", action="store_true", help="サムネイルのみ生成")
     parser.add_argument("--no-thumbnail", action="store_true", help="サムネイルを生成しない")
+    parser.add_argument("--shorts-only", action="store_true", help="Shortsのみ生成")
     args = parser.parse_args()
 
     if not API_KEY:
@@ -99,7 +105,7 @@ def main():
 
     client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
 
-    if not args.thumbnail_only:
+    if not args.thumbnail_only and not args.shorts_only:
         target_ids = None
         if args.scenes:
             target_ids = {int(s) for s in args.scenes.split(",")}
@@ -112,9 +118,17 @@ def main():
             out_path = out_dir / f"S{sid:02d}.png"
             gen_image(client, prompt, out_path)
 
-    if not args.no_thumbnail and (args.thumbnail_only or args.scenes is None):
+    if not args.no_thumbnail and not args.shorts_only and (args.thumbnail_only or args.scenes is None):
         thumb_prompt = f"{BASE_CONTEXT}\n\nThumbnail (16:9): {ep['thumbnail_prompt']}"
         gen_image(client, thumb_prompt, out_dir / "thumbnail.png")
+
+    if args.shorts_only or (not args.thumbnail_only and args.scenes is None):
+        for shorts in ep.get("shorts", []):
+            mid = shorts["shorts_id"]
+            for i, s in enumerate(shorts["scenes"], start=1):
+                prompt = f"{BASE_CONTEXT}\n\nScene: {s['image_prompt']}"
+                out_path = out_dir / f"shorts{mid}_S{i:02d}.png"
+                gen_image(client, prompt, out_path, aspect_ratio="9:16")
 
     print(f"\n完了。保存先: {out_dir}")
 

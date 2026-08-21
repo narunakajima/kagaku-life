@@ -10,10 +10,12 @@ narration_voicesが未設定のエピソードは、先にボイス選定（聴�
 episodes/kl{NNN}.jsonに記録すること。
 
 使い方:
-  python3 kl_tts_gen.py --episode kl001                 # 全シーン生成
+  python3 kl_tts_gen.py --episode kl001                 # 全シーン+Shorts生成
   python3 kl_tts_gen.py --episode kl001 --scenes 5,6,9   # 指定シーンのみ再生成
+  python3 kl_tts_gen.py --episode kl001 --shorts-only    # Shortsのみ
 
-出力: ~/Desktop/kagaku-life/{episode}/narration/S{NN}.wav
+出力: ~/Desktop/kagaku-life/{episode}/narration/S{NN}.wav,
+      shorts{M}_S{NN}.wav
 """
 
 import argparse
@@ -63,6 +65,7 @@ def main():
     parser = argparse.ArgumentParser(description="くらしを変える科学 ナレーション音声生成")
     parser.add_argument("--episode", required=True, help="エピソードID（例: kl001）")
     parser.add_argument("--scenes", help="生成するscene_idをカンマ区切りで指定（省略時は全シーン）")
+    parser.add_argument("--shorts-only", action="store_true", help="Shortsのみ生成")
     args = parser.parse_args()
 
     if not API_KEY:
@@ -94,14 +97,23 @@ def main():
     if args.scenes:
         target_ids = {int(s) for s in args.scenes.split(",")}
 
-    for scene in ep["scenes"]:
-        sid = scene["scene_id"]
-        if target_ids is not None and sid not in target_ids:
-            continue
-        narrator = scene["narrator"]
-        voice_name = voices[narrator]
-        out_path = out_dir / f"S{sid:02d}.wav"
-        synth(client, scene["narration"], voice_name, out_path)
+    if not args.shorts_only:
+        for scene in ep["scenes"]:
+            sid = scene["scene_id"]
+            if target_ids is not None and sid not in target_ids:
+                continue
+            narrator = scene["narrator"]
+            voice_name = voices[narrator]
+            out_path = out_dir / f"S{sid:02d}.wav"
+            synth(client, scene["narration"], voice_name, out_path)
+
+    if args.shorts_only or args.scenes is None:
+        for shorts in ep.get("shorts", []):
+            mid = shorts["shorts_id"]
+            for i, s in enumerate(shorts["scenes"], start=1):
+                voice_name = voices[s["narrator"]]
+                out_path = out_dir / f"shorts{mid}_S{i:02d}.wav"
+                synth(client, s["narration"], voice_name, out_path)
 
     print(f"\n完了。保存先: {out_dir}")
 

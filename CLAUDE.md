@@ -426,9 +426,9 @@ through the window"）。
 
 ### エピソードJSONフォーマット（`episodes/kl{NNN}.json`）
 
-SCのフォーマットを土台に、Shorts・ティザー関連フィールド（企画書に記載がないため
-今回は作らない）を削除し、`references`（出典）と `protagonist`（使い捨ての生活者）を
-追加した。
+SCのフォーマットを土台に、`references`（出典）と `protagonist`（使い捨ての生活者）
+を追加した。ティザー（`teaser`シーンタイプ）は上記の通り本編`scenes`に組み込む形。
+Shorts（`shorts`フィールド）は2026-08-21に追加した（経緯は下記）。
 
 ```json
 {
@@ -441,10 +441,20 @@ SCのフォーマットを土台に、Shorts・ティザー関連フィールド
     {"title": "...", "authors": ["...", "..."], "year": 2024, "venue": "...", "url": "..."}
   ],
   "protagonist": {"name": "...", "age": 0, "job": "...", "gender": "female"},
+  "narration_voices": {"persona": "...", "research": "..."},
   "thumbnail_prompt": "...",
   "scenes": [
     {
       "scene_id": 1,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 8,
+      "narration": "...",
+      "image_prompt": "...",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 2,
       "type": "hook",
       "narrator": "persona",
       "duration_seconds": 5,
@@ -453,7 +463,7 @@ SCのフォーマットを土台に、Shorts・ティザー関連フィールド
       "ken_burns": "zoom_in"
     },
     {
-      "scene_id": 3,
+      "scene_id": 4,
       "type": "finding",
       "narrator": "research",
       "reference_index": 0,
@@ -461,6 +471,16 @@ SCのフォーマットを土台に、Shorts・ティザー関連フィールド
       "narration": "...",
       "image_prompt": "...",
       "ken_burns": "zoom_in"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {"narrator": "persona", "narration": "...", "image_prompt": "..."},
+        {"narrator": "research", "narration": "...", "image_prompt": "..."},
+        {"narrator": "persona", "narration": "...", "image_prompt": "..."}
+      ]
     }
   ]
 }
@@ -473,3 +493,22 @@ SCのフォーマットを土台に、Shorts・ティザー関連フィールド
 `topics_queue.json` の該当エントリにSTAGE4で生成済みの値があればそれを引き継ぐ。
 `narrator` は `persona`/`research` の2値、`reference_index` は `finding`/`data`
 シーンにのみ付与する（上記「ストーリー構成と2ナレーターボイス制」参照）。
+
+**Shorts（`shorts`フィールド、2026-08-21追加）:** samurai-chroniclesが販促目的で
+Shortsを別立てで作っているのに倣い追加した。当初は企画書に記載がないという理由で
+除外していたが、離脱防止ティザーと同じ理由（チャンネルの認知拡大）で採用する
+価値があると判断し撤回した。
+
+- **既存の横長(16:9)本編画像からの切り出しは採用しない。** 本編の構図は
+  キャラクターが画面の左右どちらかに寄って配置されることが多く、9:16で中央だけ
+  切り出すと人物やグラフの一部が欠けることを実際の画像で確認したため。
+- 各エピソードにつき `shorts` 配列（通常1本）を持たせ、各Shortsは独立した
+  2〜4シーンの構成（フック→本編のダイジェスト→CTA、程度の短い展開）とし、
+  **`image_prompt` はShorts専用に縦構図を意識して新規に書く**（本編のシーンを
+  流用する場合も、9:16で人物が中央に収まるよう文言を調整する）。
+- `kl_image_gen.py` は `shorts` 配下のシーンを生成する際、
+  `types.ImageConfig(aspect_ratio="9:16")` を指定する（`gemini-3.1-flash-image`は
+  `image_config.aspect_ratio` でアスペクト比を直接制御でき、実際に768×1376
+  （ほぼ9:16）で生成されることを確認済み）。本編・サムネイルは指定なし
+  （モデルのデフォルトの横長比率、実測1408×768）のまま。
+- `narrator`・`narration_voices` は本編と共通のものを使う。
