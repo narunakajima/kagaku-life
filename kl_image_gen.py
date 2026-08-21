@@ -47,13 +47,16 @@ BASE_CONTEXT = (
 )
 
 CHART_CONTEXT = (
-    "Simple, clean, minimalist flat infographic bar chart — like a basic data "
-    "visualization slide, NOT an artistic or abstract illustration. Plain solid flat "
+    "Simple, clean, minimalist flat infographic diagram or chart — like a basic data "
+    "visualization slide, NOT an artistic or abstract illustration. Follow the scene "
+    "description below for the actual diagram type/layout (it may or may not be a bar "
+    "chart — do not default to a bar chart if the scene describes something else, e.g. "
+    "arrows, icons converging on a shared point, a trend line, etc.). Plain solid flat "
     "colors only, no dramatic lighting, no light rays, no gradients, no texture, no "
     "decorative background shapes. Cool color palette (deep blue, teal) for baseline "
-    "values, one warm coral/orange color for the improved/highlighted value. "
+    "elements, one warm coral/orange color for the improved/highlighted element. "
     "ABSOLUTELY NO TEXT: no letters, no words, no numerals, no dates, no labels "
-    "anywhere in the image — convey all meaning through icon shape, bar height, and "
+    "anywhere in the image — convey all meaning through shape, size, and "
     "position only. If you would normally add a caption or axis label, omit it "
     "entirely and leave that space blank."
 )
