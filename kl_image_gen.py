@@ -129,7 +129,8 @@ def main():
         for shorts in ep.get("shorts", []):
             mid = shorts["shorts_id"]
             for i, s in enumerate(shorts["scenes"], start=1):
-                prompt = f"{BASE_CONTEXT}\n\nScene: {s['image_prompt']}"
+                style = CHART_CONTEXT if s.get("style") == "chart" else BASE_CONTEXT
+                prompt = f"{style}\n\nScene: {s['image_prompt']}"
                 out_path = out_dir / f"shorts{mid}_S{i:02d}.png"
                 gen_image(client, prompt, out_path, aspect_ratio="9:16")
 

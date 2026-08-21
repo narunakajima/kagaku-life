@@ -271,18 +271,35 @@
       "scenes": [
         {
           "narrator": "persona",
-          "narration": "コーヒーを飲みながら、ロボットが洗濯物を畳んでくれる朝が来たら?",
-          "image_prompt": "A friendly humanoid robot with realistic human-like body proportions, sleek matte white-and-soft-blue body, a slim head with two small gentle glowing cyan eyes, standing in a Japanese kitchen quietly setting down a neat stack of folded laundry, a Japanese woman sitting nearby calmly enjoying a cup of coffee with a soft smile, bright morning sunlight streaming through a window, composed for a vertical 9:16 frame with the main subjects centered and nothing important near the left/right edges, no text"
+          "narration": "朝、コーヒーを飲みながら",
+          "image_prompt": "a friendly humanoid robot with realistic human-like body proportions, sleek matte white-and-soft-blue body, a slim head with two small gentle glowing cyan eyes, standing in a Japanese kitchen quietly setting down a neat stack of folded laundry, a Japanese woman sitting nearby calmly enjoying a cup of coffee with a soft smile, bright morning sunlight streaming through a window, composed for a vertical 9:16 frame with the main subjects centered and nothing important near the left/right edges, no text"
+        },
+        {
+          "narrator": "persona",
+          "narration": "洗濯物はロボットが畳んでくれる",
+          "image_prompt": "A close-up of a friendly humanoid robot with realistic human-like body proportions, sleek matte white-and-soft-blue body, a slim head with two small gentle glowing cyan eyes's hands neatly folding a piece of clothing on a table, soft warm morning light, composed for a vertical 9:16 frame with the main subjects centered and nothing important near the left/right edges, no text"
         },
         {
           "narrator": "research",
-          "narration": "スタンフォード大学など、世界中の研究室が同時に家事ロボットの壁を崩しつつあります。",
+          "narration": "スタンフォード大学など",
           "image_prompt": "A wheeled household robot with two arms, in a mock-kitchen test rig inside a university research lab, an American researcher wearing a white lab coat beside it observing with a tablet, visible lab equipment and cables, composed for a vertical 9:16 frame with the main subjects centered and nothing important near the left/right edges, no text"
+        },
+        {
+          "narrator": "research",
+          "narration": "世界中の研究室が同時に",
+          "image_prompt": "Flat clean infographic diagram: a single central wall or barrier icon (representing the shared challenge of household chores), with several distinct task icons (a folded clothing icon, a cooking pot icon, a whole-body reaching figure icon) arranged around it, each connected to the wall by a small arrow approaching from its own distinct direction, conveying multiple independent teams tackling the same challenge from different angles at once. Cool color palette (deep blue, teal) with one warm coral/orange accent. Absolutely no text, letters, or numerals. composed for a vertical 9:16 frame with the main subjects centered and nothing important near the left/right edges",
+          "style": "chart"
+        },
+        {
+          "narrator": "research",
+          "narration": "家事ロボットの壁を崩しつつあります",
+          "image_prompt": "Flat clean infographic diagram: a single central wall or barrier icon (representing the shared challenge of household chores), with several distinct task icons (a folded clothing icon, a cooking pot icon, a whole-body reaching figure icon) arranged around it, each connected to the wall by a small arrow approaching from its own distinct direction, conveying multiple independent teams tackling the same challenge from different angles at once. Cool color palette (deep blue, teal) with one warm coral/orange accent. Absolutely no text, letters, or numerals. composed for a vertical 9:16 frame with the main subjects centered and nothing important near the left/right edges",
+          "style": "chart"
         },
         {
           "narrator": "persona",
           "narration": "続きは本編でチェックしてみてください。",
-          "image_prompt": "The same Japanese woman with a thoughtful, hopeful expression, eyes gently closed, a soft dreamy thought bubble above her head containing the glowing outline of a friendly humanoid robot silhouette taking shape, composed for a vertical 9:16 frame with the main subjects centered and nothing important near the left/right edges, no text"
+          "image_prompt": "The same Japanese woman with a thoughtful, hopeful expression, eyes gently closed, a soft dreamy thought bubble above her head containing the glowing outline of a friendly humanoid robot with realistic human-like body proportions, sleek matte white-and-soft-blue body, a slim head with two small gentle glowing cyan eyes, silhouette taking shape, composed for a vertical 9:16 frame with the main subjects centered and nothing important near the left/right edges, no text"
         }
       ]
     }
