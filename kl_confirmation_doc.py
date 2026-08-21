@@ -181,8 +181,9 @@ def main():
     ep = json.loads(ep_path.read_text())
     doc = build_doc(ep)
 
-    DESKTOP_DIR.mkdir(parents=True, exist_ok=True)
-    out_path = DESKTOP_DIR / f"{args.episode}_制作確認書.txt"
+    out_dir = DESKTOP_DIR / args.episode
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_path = out_dir / f"{args.episode}_制作確認書.txt"
     out_path.write_text(doc)
     print(f"✅ 制作確認書を生成しました: {out_path}")
 
