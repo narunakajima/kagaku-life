@@ -270,6 +270,39 @@ SCの `sc_video_gen.py` と同じ考え方で、シーンタイプの並びか�
 0始まり）を付けて、どのシーンがどの論文の紹介かを紐づける。単一論文の回では
 `reference_index: 0` で固定でよい。
 
+### 画像スタイル（2026-08確定）
+
+`gemini-3.1-flash-image` で実際に複数テイストを比較検証し、以下2種のBASE_CONTEXTに
+確定した。`kl_image_gen.py`（今後作成）はシーンの `type` に応じて使い分ける。
+
+**物語シーン用（`hook`/`citation`/`context`/`finding`/`impact`/`closing`）:**
+```
+Rich flat editorial illustration style with dramatic cinematic lighting: strong
+directional light with visible soft light rays, deeper shadow contrast, atmospheric
+depth. Sophisticated cool palette (deep blue, teal, navy shadows) with one warm
+coral/golden accent glowing in the light areas. Moody yet hopeful, magazine-cover
+quality. Not photorealistic, no anime style.
+```
+比較検証では「リッチフラット（無印）」と「シネマティックな光（この案）」が最後まで
+拮抗したが、静かなシーンでも緊張感のあるシーンでも一貫して引き込まれる仕上がりに
+なったため、シネマティックな光を採用した。ミニマル路線・紙工作風・ソフト3D路線は
+比較の結果不採用（それぞれ検討ログとして残すのみ、実装はしない）。
+
+**`data` タイプ専用（物語シーンとは別トーン）:**
+```
+Simple, clean, minimalist flat infographic bar chart — like a basic data
+visualization slide, NOT an artistic or abstract illustration. Plain solid flat
+colors only, no dramatic lighting, no light rays, no gradients, no texture, no
+decorative background shapes. Cool color palette (deep blue, teal) for baseline
+values, one warm coral/orange color for the improved/highlighted value. No legible
+text or numerals — convey the difference through bar height/fill only.
+```
+**なぜ物語シーンと同じ演出的なスタイルを流用しないか:** 検証時、物語シーン用の
+リッチフラット・シネマティックライトのどちらのスタイルでも、比較棒グラフが
+「アート作品」寄りになりすぎて、パッと見て数値の大小が伝わりにくくなる問題が
+確認された（雰囲気重視のスタイルとデータの視認性はトレードオフになりやすい）。
+`data` タイプは意図的に演出を抑え、視認性を最優先したチャート専用スタイルとする。
+
 ### エピソードJSONフォーマット（`episodes/kl{NNN}.json`）
 
 SCのフォーマットを土台に、Shorts・ティザー関連フィールド（企画書に記載がないため
