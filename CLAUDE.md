@@ -259,6 +259,67 @@ SCの `sc_video_gen.py` と同じ考え方で、シーンタイプの並びか�
 `kl_image_gen.py`（今後作成）は `data` タイプの場合、物語調イラストのBASE_CONTEXTではなく
 チャート・フローチャート向けの別プロンプトテンプレートを使う。
 
+### BGMパイプライン（2026-08-21追加）
+
+samurai-chroniclesのBGMパイプライン（Freesound検索→音声QA→ライブラリ管理→
+実音声での最終チェック→CC BYクレジット注入）をkagaku-life向けに移植した。
+動画生成（`kl_video_gen.py`、クロスフェード合成部分）自体は未実装のため、
+現時点では候補選定〜ライブラリ登録までが対象。境界計算・クロスフェードの
+設計はSCの `sc_video_gen.py` と同じ考え方を踏襲する想定（上記「境界計算
+ルール」参照）。
+
+**BGMルール（SCとは異なる、kagaku-life独自のトーン）:**
+- **必ず温かく・希望が持てる・押し付けがましくないトーン**に限定する
+  （SCの「重厚なオーケストラ調」路線はこのチャンネルには合わない —
+  番組の核が「科学が主人公の暮らしにもたらす小さな幸せ」であるため）
+- クエリに `warm` / `gentle` / `hopeful` / `uplifting` / `heartfelt` /
+  `cozy` のいずれかを含めることを推奨する
+- 禁止: epic, battle, war, dark, aggressive, horror, dramatic tension
+  （壮大・攻撃的・悲壮すぎる曲は番組のトーンと合わない）
+- 役割とトーンの対応:
+
+| 役割 | 対象シーン | トーン | クエリ例 |
+|---|---|---|---|
+| intro（序盤） | teaser〜citation | 好奇心・静かな導入 | `"curious piano"` |
+| main（中盤） | context〜data | 共感できる悩み〜研究紹介への高まり | `"warm uplifting"` |
+| outro（終盤） | impact〜closing | 温かい余韻・小さな幸せ | `"heartfelt strings"` |
+
+**構成スクリプト:**
+- `kl_bgm_qa.py` — BGM候補の音声QA（Geminiの音声理解でボーカル・台詞混入を
+  自動検出。SCの `sc_bgm_qa.py` と同じ仕組み）
+- `kl_bgm_library.py` — BGMライブラリ（`bgm_library.json`）管理。新規BGMの
+  登録・エピソードへの紐付け（役割別 `bgm_sources[role]`）
+- `kl_inject_bgm_credit.py` — CC BY曲のクレジットを `youtube_description` に自動注入
+- `kl_bgm_final_check.py` — 選定した3曲の実音声＋制作確認書をGeminiに渡し、
+  トーン適合・3曲の流れ・音質を最終判定（SCの音楽監督プロンプトをkagaku-life
+  向けに書き換え）
+- Freesoundからのダウンロード自体は lamp-whisper由来の共有スクリプト
+  `$HOME/lamp-whisper/freesound_download.py` をそのまま流用する
+  （`--library $HOME/kagaku-life/bgm_library.json` を必ず指定し、
+  kagaku-life独自のライブラリで重複を判定させる）
+
+**実行例:**
+```bash
+mkdir -p "$HOME/Desktop/kagaku-life/{episode}/BGM"
+FREESOUND_API_KEY=$FREESOUND_API_KEY python3 "$HOME/lamp-whisper/freesound_download.py" \
+  "<Q_intro>" "<Q_main>" "<Q_outro>" \
+  "$HOME/Desktop/kagaku-life/{episode}/BGM/" \
+  --round 0 --start-slot 1 \
+  --library "$HOME/kagaku-life/bgm_library.json"
+
+# スロット→役割プレフィックスへのリネーム後
+python3 kl_bgm_qa.py --dir "$HOME/Desktop/kagaku-life/{episode}/BGM"
+```
+
+**動作確認（2026-08-21、kl001で実施）:** 上記の流れで実際に3曲
+（intro/main/outro）をダウンロードし、`kl_bgm_qa.py` で全曲ボーカルなしを
+確認した。1回のクエリで0件になるケースがあり（Freesoundの30〜300秒・
+CC0/Attributionフィルタに合致する曲が少ない）、SCと同様に該当スロットだけ
+`--start-slot` で別クエリに差し替える運用が必要だった。テスト用にダウン
+ロードした音声ファイルはgitにコミットしない（Desktop側で確認用）。
+最終選定・ライブラリ本登録（`kl_bgm_library.py --add`）は、実際に聴いて
+ユーザーの承認を得てから行う。
+
 **`finding` シーンで成果の数値に触れる場合の画像表現（2026-08確定）:** ナレーションで
 具体的な成功率等の数値を紹介する場合、image_promptにも反映して良いが、**AI画像生成は
 数字・文字を正確に描けないため、パーセント等の数字テキストを直接指定しない**
