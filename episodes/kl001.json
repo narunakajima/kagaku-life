@@ -3,11 +3,28 @@
   "episode_title": "家事ロボットの潮流：複数の独立研究が同時に家事の壁を崩しつつある",
   "youtube_title": "洗濯・料理・片付け——世界中の研究室が同時に家事ロボットの壁を崩している",
   "youtube_description": "洗濯物たたみ、両手での調理、壊さない配慮——2024〜2026年に世界中の研究チームが、家事という難題にそれぞれ別の角度から挑んでいます。共働き・子育て中の田中美咲さんの視点から、4つの最新研究が実現した未来の暮らしを描きます。\n\n📚 参考文献:\n1. Jiang, Y. et al. (2025). BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday Household Activities. arXiv (プレプリント・査読前)\n   https://arxiv.org/abs/2503.05652\n2. Su, T. et al. (2026). DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation. arXiv (プレプリント・査読前)\n   https://arxiv.org/abs/2605.31286\n3. Gbagbe, K.F. et al. (2024). Bi-VLA: Vision-Language-Action Model-Based System for Bimanual Robotic Dexterous Manipulations. IEEE International Conference on Systems, Man and Cybernetics.\n   DOI: 10.1109/SMC54092.2024.10831380\n4. Balaji, A. et al. (2026). OopsieVerse: A Safety Benchmark with Damage-Aware Simulation for Robot Manipulation. arXiv (プレプリント・査読前)\n   https://arxiv.org/abs/2606.31993\n\n#AIロボット #家事ロボット #幸せな未来のサイエンスチャンネル",
-  "youtube_tags": ["AIロボット", "家事ロボット", "VLA", "基盤モデル", "ロボティクス", "共働き", "研究紹介", "テクノロジー", "スマートホーム", "幸せな未来のサイエンスチャンネル"],
+  "youtube_tags": [
+    "AIロボット",
+    "家事ロボット",
+    "VLA",
+    "基盤モデル",
+    "ロボティクス",
+    "共働き",
+    "研究紹介",
+    "テクノロジー",
+    "スマートホーム",
+    "幸せな未来のサイエンスチャンネル"
+  ],
   "references": [
     {
       "title": "BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday Household Activities",
-      "authors": ["Yunfan Jiang", "Ruohan Zhang", "Josiah Wong", "Chen Wang", "Yanjie Ze"],
+      "authors": [
+        "Yunfan Jiang",
+        "Ruohan Zhang",
+        "Josiah Wong",
+        "Chen Wang",
+        "Yanjie Ze"
+      ],
       "year": 2025,
       "venue": "arXiv.org",
       "url": "https://arxiv.org/abs/2503.05652",
@@ -18,7 +35,13 @@
     },
     {
       "title": "DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation",
-      "authors": ["Taiyi Su", "Jian Zhu", "Tianjian Wang", "Youzhang He", "Zitai Huang"],
+      "authors": [
+        "Taiyi Su",
+        "Jian Zhu",
+        "Tianjian Wang",
+        "Youzhang He",
+        "Zitai Huang"
+      ],
       "year": 2026,
       "venue": "arXiv.org",
       "url": "https://arxiv.org/abs/2605.31286",
@@ -29,7 +52,14 @@
     },
     {
       "title": "Bi-VLA: Vision-Language-Action Model-Based System for Bimanual Robotic Dexterous Manipulations",
-      "authors": ["Koffivi Fidele Gbagbe", "Miguel Altamirano Cabrera", "Ali Alabbas", "Oussama Alyunes", "Artem Lykov", "Dzmitry Tsetserukou"],
+      "authors": [
+        "Koffivi Fidele Gbagbe",
+        "Miguel Altamirano Cabrera",
+        "Ali Alabbas",
+        "Oussama Alyunes",
+        "Artem Lykov",
+        "Dzmitry Tsetserukou"
+      ],
       "year": 2024,
       "venue": "IEEE International Conference on Systems, Man and Cybernetics",
       "url": "https://arxiv.org/abs/2405.06039",
@@ -40,7 +70,13 @@
     },
     {
       "title": "OopsieVerse: A Safety Benchmark with Damage-Aware Simulation for Robot Manipulation",
-      "authors": ["Arnav Balaji", "Arpit Bahety", "Sriniket Ambatipudi", "Daniel Lam", "Junhong Xu"],
+      "authors": [
+        "Arnav Balaji",
+        "Arpit Bahety",
+        "Sriniket Ambatipudi",
+        "Daniel Lam",
+        "Junhong Xu"
+      ],
       "year": 2026,
       "venue": "arXiv.org",
       "url": "https://arxiv.org/abs/2606.31993",
@@ -50,12 +86,29 @@
       "lead_researcher": "Roberto Martín-Martín"
     }
   ],
-  "protagonist": {"name": "田中 美咲", "age": 34, "job": "IT企業マーケティング職（共働き・3歳の娘）", "gender": "female"},
-  "narration_voices": {"persona": "Leda", "research": "Orus"},
+  "protagonist": {
+    "name": "田中 美咲",
+    "age": 34,
+    "job": "IT企業マーケティング職（共働き・3歳の娘）",
+    "gender": "female"
+  },
+  "narration_voices": {
+    "persona": "Leda",
+    "research": "Orus"
+  },
   "thumbnail_prompt": "A friendly humanoid robot with realistic human-like body proportions — a distinct head, neck, torso, arms, and legs sized and jointed like a person, NOT a stubby toy-like or mascot-like build. Sleek matte white-and-soft-blue body with visible but smooth joint segments, a slim humanoid head with two small gentle glowing cyan eyes and no visible mouth. Approachable in expression but clearly humanoid in build, not cartoonish or toy-like — the same robot design as in every other scene of this episode folding laundry beside a Japanese woman relaxing with a cup of coffee in a warm, softly lit home, four small distinct task icons (folding laundry, cooking, whole-body reaching, a shield icon for safety) arranged subtly around the edges, no photorealism, no text, 16:9",
   "scenes": [
     {
       "scene_id": 1,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 8,
+      "narration": "朝、コーヒーを飲みながら、ロボットが洗濯物を畳んでくれる——そんな未来が、もうすぐそこまで来ているとしたら?",
+      "image_prompt": "A friendly humanoid robot with realistic human-like body proportions — a distinct head, neck, torso, arms, and legs sized and jointed like a person, NOT a stubby toy-like or mascot-like build. Sleek matte white-and-soft-blue body with visible but smooth joint segments, a slim humanoid head with two small gentle glowing cyan eyes and no visible mouth. Approachable in expression but clearly humanoid in build, not cartoonish or toy-like — the same robot design as in every other scene of this episode, in a Japanese kitchen quietly setting down a neat stack of folded laundry, the same Japanese woman sitting nearby calmly enjoying a cup of coffee with a soft smile, bright morning sunlight streaming through a window (clearly daytime, not night), no text",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 2,
       "type": "hook",
       "narrator": "persona",
       "duration_seconds": 14,
@@ -64,7 +117,7 @@
       "ken_burns": "zoom_in"
     },
     {
-      "scene_id": 2,
+      "scene_id": 3,
       "type": "context",
       "narrator": "persona",
       "duration_seconds": 26,
@@ -73,7 +126,7 @@
       "ken_burns": "pan_right"
     },
     {
-      "scene_id": 3,
+      "scene_id": 4,
       "type": "context",
       "narrator": "persona",
       "duration_seconds": 16,
@@ -82,7 +135,7 @@
       "ken_burns": "pan_left"
     },
     {
-      "scene_id": 4,
+      "scene_id": 5,
       "type": "citation",
       "narrator": "research",
       "duration_seconds": 22,
@@ -91,7 +144,7 @@
       "ken_burns": "static"
     },
     {
-      "scene_id": 5,
+      "scene_id": 6,
       "type": "finding",
       "narrator": "research",
       "reference_index": 0,
@@ -101,7 +154,7 @@
       "ken_burns": "zoom_in"
     },
     {
-      "scene_id": 6,
+      "scene_id": 7,
       "type": "finding",
       "narrator": "research",
       "reference_index": 1,
@@ -111,7 +164,7 @@
       "ken_burns": "pan_left"
     },
     {
-      "scene_id": 7,
+      "scene_id": 8,
       "type": "finding",
       "narrator": "research",
       "reference_index": 2,
@@ -121,7 +174,7 @@
       "ken_burns": "zoom_in"
     },
     {
-      "scene_id": 8,
+      "scene_id": 9,
       "type": "data",
       "narrator": "research",
       "duration_seconds": 22,
@@ -130,7 +183,7 @@
       "ken_burns": "static"
     },
     {
-      "scene_id": 9,
+      "scene_id": 10,
       "type": "finding",
       "narrator": "research",
       "reference_index": 3,
@@ -140,7 +193,7 @@
       "ken_burns": "pan_right"
     },
     {
-      "scene_id": 10,
+      "scene_id": 11,
       "type": "impact",
       "narrator": "persona",
       "duration_seconds": 12,
@@ -149,7 +202,7 @@
       "ken_burns": "zoom_in"
     },
     {
-      "scene_id": 11,
+      "scene_id": 12,
       "type": "impact",
       "narrator": "persona",
       "duration_seconds": 45,
@@ -158,7 +211,7 @@
       "ken_burns": "pan_left"
     },
     {
-      "scene_id": 12,
+      "scene_id": 13,
       "type": "impact",
       "narrator": "persona",
       "duration_seconds": 48,
@@ -167,7 +220,7 @@
       "ken_burns": "zoom_in"
     },
     {
-      "scene_id": 13,
+      "scene_id": 14,
       "type": "impact",
       "narrator": "persona",
       "duration_seconds": 48,
@@ -176,7 +229,7 @@
       "ken_burns": "pan_right"
     },
     {
-      "scene_id": 14,
+      "scene_id": 15,
       "type": "closing",
       "narrator": "research",
       "duration_seconds": 20,

@@ -22,6 +22,7 @@ BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 
 BGM_ROLE_BY_TYPE = {
+    "teaser": "intro",
     "hook": "intro",
     "citation": "intro",
     "context": "main",
