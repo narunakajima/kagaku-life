@@ -109,7 +109,16 @@
       "zoom_anchor": {
         "x": 0.66,
         "y": 0.47
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "朝、コーヒーを飲みながら"
+          ],
+          "start": 0.0,
+          "end": 2.42
+        }
+      ]
     },
     {
       "scene_id": 2,
@@ -144,7 +153,16 @@
       "zoom_anchor": {
         "x": 0.35,
         "y": 0.48
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "週末は家族の時間に"
+          ],
+          "start": 0.0,
+          "end": 2.0
+        }
+      ]
     },
     {
       "scene_id": 4,
@@ -157,7 +175,23 @@
       "zoom_anchor": {
         "x": 0.68,
         "y": 0.45
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "そんな未来が、もうすぐそこまで来ていると"
+          ],
+          "start": 0.0,
+          "end": 3.3
+        },
+        {
+          "lines": [
+            "したら?"
+          ],
+          "start": 3.45,
+          "end": 3.64
+        }
+      ]
     },
     {
       "scene_id": 5,
@@ -170,7 +204,72 @@
       "zoom_anchor": {
         "x": 0.66,
         "y": 0.42
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "IT企業でマーケティングの仕事をしながら、"
+          ],
+          "start": 0.0,
+          "end": 2.98
+        },
+        {
+          "lines": [
+            "3歳の娘を育てています。田中美咲、34歳。"
+          ],
+          "start": 3.13,
+          "end": 8.36
+        },
+        {
+          "lines": [
+            "毎朝6時に起きて弁当を作り、"
+          ],
+          "start": 8.51,
+          "end": 11.26
+        },
+        {
+          "lines": [
+            "身支度をさせて保育園に送り届けてから出社する。"
+          ],
+          "start": 11.41,
+          "end": 14.54
+        },
+        {
+          "lines": [
+            "夫と家事を分担しているつもりでも、"
+          ],
+          "start": 15.6,
+          "end": 17.86
+        },
+        {
+          "lines": [
+            "気づけば名もなき家事の大半は私が引き受け"
+          ],
+          "start": 18.14,
+          "end": 21.74
+        },
+        {
+          "lines": [
+            "ている——そんな毎日です。娘が生まれる前"
+          ],
+          "start": 21.89,
+          "end": 25.88
+        },
+        {
+          "lines": [
+            "は当たり前だった『自分の時間』も、"
+          ],
+          "start": 26.03,
+          "end": 28.42
+        },
+        {
+          "lines": [
+            "今ではすっかり遠い記憶になりました。"
+          ],
+          "start": 28.57,
+          "end": 31.42
+        }
+      ]
     },
     {
       "scene_id": 6,
@@ -179,7 +278,93 @@
       "duration_seconds": 26,
       "narration": "仕事から帰れば、畳む間もなく積み上がった洗濯物、品数を増やす余裕のない夕食の支度、そして娘が散らかしたおもちゃの数々が待っています。休日にまとめて片付けようとしても、また月曜には元通り。夜、娘を寝かしつけたあとにようやく洗濯物と向き合う頃には、もうくたくたで、明日のことを考える余力も残っていません。『誰かに片付けてもらえたら』——そう思わずにはいられません。同じような悩みを抱える友人とも、『結局は自分がやるしかないよね』と笑い合うことが増えました。",
       "image_prompt": "A tired Japanese woman standing alone in a living room at night, shoulders slumped in quiet exhaustion, surrounded by a pile of unfolded laundry, simple dinner ingredients on a counter, and toys scattered on the floor, no thought bubble or icons — just her tired posture and the cluttered room conveying the mood, no text",
-      "ken_burns": "pan_right"
+      "ken_burns": "pan_right",
+      "telop_cards": [
+        {
+          "lines": [
+            "仕事から帰れば、畳む間もなく積み上がった洗濯物、"
+          ],
+          "start": 0.38,
+          "end": 4.42
+        },
+        {
+          "lines": [
+            "品数を増やす余裕のない夕食の支度、"
+          ],
+          "start": 5.14,
+          "end": 7.7
+        },
+        {
+          "lines": [
+            "そして娘が散らかしたおもちゃの数々が待っています。"
+          ],
+          "start": 8.72,
+          "end": 12.08
+        },
+        {
+          "lines": [
+            "休日にまとめて片付けようとしても、"
+          ],
+          "start": 12.98,
+          "end": 15.32
+        },
+        {
+          "lines": [
+            "また月曜には元通り。夜、娘を寝かしつけた"
+          ],
+          "start": 15.62,
+          "end": 20.32
+        },
+        {
+          "lines": [
+            "あとにようやく洗濯物と向き合う頃には、"
+          ],
+          "start": 20.47,
+          "end": 22.84
+        },
+        {
+          "lines": [
+            "もうくたくたで、明日のことを考える余力も"
+          ],
+          "start": 23.38,
+          "end": 26.5
+        },
+        {
+          "lines": [
+            "残っていません。『誰かに片付けてもらえた"
+          ],
+          "start": 26.65,
+          "end": 30.0
+        },
+        {
+          "lines": [
+            "ら』——そう思わずにはいられません。"
+          ],
+          "start": 30.15,
+          "end": 32.46
+        },
+        {
+          "lines": [
+            "同じような悩みを抱える友人とも、"
+          ],
+          "start": 33.4,
+          "end": 36.06
+        },
+        {
+          "lines": [
+            "『結局は自分がやるしかないよね』と笑い合"
+          ],
+          "start": 36.38,
+          "end": 39.44
+        },
+        {
+          "lines": [
+            "うことが増えました。"
+          ],
+          "start": 39.59,
+          "end": 40.36
+        }
+      ]
     },
     {
       "scene_id": 7,
@@ -188,7 +373,65 @@
       "duration_seconds": 16,
       "narration": "こうした悩みを抱えているのは、美咲さんだけではありません。共働きで子育てをしながら働く世帯にとって、家事の負担は日々の大きなストレスになっています。仕事と育児の両立に加えて、終わりの見えない家事まで背負う——『誰かが代わりにやってくれたら』という願いは、多くの家庭に共通するものです。",
       "image_prompt": "A realistic Japanese apartment building facade at night seen straight-on from outside — a proper architectural grid of windows, all identical in size and evenly spaced in straight rows and columns like a real apartment block (NOT artistically varied window sizes or irregular placement). Most windows are dark; EXACTLY four of the windows in this regular grid are lit up warmly — no more than four lit windows total, and each of the four must be clearly separated from the others (not adjacent to each other, spread across different rows and columns). Each lit window shows a clearly different household doing similar chores — the four people must look obviously distinct from each other (different hairstyles, builds, and clothing colors — no two windows should show similar-looking people): one lit window shows a woman with a short bob haircut washing dishes; another shows a man with short cropped hair ironing clothes; another shows an older woman with grey hair sweeping the floor; another shows a woman with long hair tied in a bun holding a baby. Visually conveying that many different households quietly share this same struggle, no text",
-      "ken_burns": "pan_left"
+      "ken_burns": "pan_left",
+      "telop_cards": [
+        {
+          "lines": [
+            "こうした悩みを抱えているのは、"
+          ],
+          "start": 0.0,
+          "end": 2.16
+        },
+        {
+          "lines": [
+            "美咲さんだけではありません。"
+          ],
+          "start": 2.52,
+          "end": 3.96
+        },
+        {
+          "lines": [
+            "共働きで子育てをしながら働く世帯にとって、"
+          ],
+          "start": 5.18,
+          "end": 8.32
+        },
+        {
+          "lines": [
+            "家事の負担は日々の大きなストレスになっています。"
+          ],
+          "start": 8.47,
+          "end": 11.44
+        },
+        {
+          "lines": [
+            "仕事と育児の両立に加えて、終わりの見えな"
+          ],
+          "start": 12.38,
+          "end": 15.9
+        },
+        {
+          "lines": [
+            "い家事まで背負う——『誰かが代わりにやっ"
+          ],
+          "start": 16.05,
+          "end": 19.0
+        },
+        {
+          "lines": [
+            "てくれたら』という願いは、多くの家庭に共"
+          ],
+          "start": 19.15,
+          "end": 22.16
+        },
+        {
+          "lines": [
+            "通するものです。"
+          ],
+          "start": 22.31,
+          "end": 23.02
+        }
+      ]
     },
     {
       "scene_id": 8,
@@ -197,7 +440,51 @@
       "duration_seconds": 22,
       "narration": "実はこの数年、世界中の研究チームが、家事という複雑な作業をロボットにやらせるための壁を、少しずつ攻略し始めています。ここから紹介する研究の多くは2024年から2026年にかけて発表されたばかりの最新研究です。",
       "image_prompt": "A stylized world map at night with a handful of soft glowing points of light marking research labs in different countries, each with a small subtle document/paper icon beside it, conveying that similar research is quietly happening simultaneously around the world, no legible text",
-      "ken_burns": "static"
+      "ken_burns": "static",
+      "telop_cards": [
+        {
+          "lines": [
+            "実はこの数年、世界中の研究チームが、"
+          ],
+          "start": 0.0,
+          "end": 3.8
+        },
+        {
+          "lines": [
+            "家事という複雑な作業をロボットにやらせる"
+          ],
+          "start": 4.26,
+          "end": 7.04
+        },
+        {
+          "lines": [
+            "ための壁を、少しずつ攻略し始めています。"
+          ],
+          "start": 7.19,
+          "end": 10.06
+        },
+        {
+          "lines": [
+            "ここから紹介する研究の多くは2024年か"
+          ],
+          "start": 10.84,
+          "end": 14.62
+        },
+        {
+          "lines": [
+            "ら2026年にかけて発表されたばかりの最"
+          ],
+          "start": 14.77,
+          "end": 17.94
+        },
+        {
+          "lines": [
+            "新研究です。"
+          ],
+          "start": 18.09,
+          "end": 18.72
+        }
+      ]
     },
     {
       "scene_id": 9,
@@ -211,7 +498,72 @@
       "zoom_anchor": {
         "x": 0.6,
         "y": 0.55
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "1つ目は、スタンフォード大学の研究チームによる、"
+          ],
+          "start": 0.0,
+          "end": 3.72
+        },
+        {
+          "lines": [
+            "車輪で移動する双腕ロボット。"
+          ],
+          "start": 3.98,
+          "end": 5.92
+        },
+        {
+          "lines": [
+            "狭い場所での作業や、柔らかい物・関節のあ"
+          ],
+          "start": 6.76,
+          "end": 10.42
+        },
+        {
+          "lines": [
+            "る物の扱いなど、家庭内のさまざまな複雑な"
+          ],
+          "start": 10.57,
+          "end": 13.54
+        },
+        {
+          "lines": [
+            "タスクに対応する、全身を使った家事の基盤"
+          ],
+          "start": 13.69,
+          "end": 16.74
+        },
+        {
+          "lines": [
+            "づくりを目指しています。5つの家事タスク"
+          ],
+          "start": 16.89,
+          "end": 19.86
+        },
+        {
+          "lines": [
+            "で検証したところ、平均の成功率は58%、"
+          ],
+          "start": 20.01,
+          "end": 22.96
+        },
+        {
+          "lines": [
+            "既存の代表的な手法と比べて成功率が13倍"
+          ],
+          "start": 24.1,
+          "end": 27.84
+        },
+        {
+          "lines": [
+            "以上に高まったと報告されています。"
+          ],
+          "start": 27.99,
+          "end": 29.6
+        }
+      ]
     },
     {
       "scene_id": 10,
@@ -221,7 +573,79 @@
       "duration_seconds": 24,
       "narration": "2つ目は、中国の大手家電メーカー・美的集団の研究チームによる、洗濯物たたみに特化した研究です。これまでのロボットは服の種類ごとに別々のプログラムが必要でしたが、この研究では約5000時間分の実演データをもとに、素材や形が違うさまざまな衣類にも1つのモデルで対応できることを目指しています。実演データを500時間から5000時間まで増やしていくと、たたみ作業の成功率は55%から100%まで伸びたと報告されています。",
       "image_prompt": "A robot arm on a research lab test bench gently folding a piece of clothing, with a few different clothing types (shirt, towel, sock) laid out for testing, visible lab equipment and cables, a Chinese researcher (East Asian appearance, matching the China-based institution) wearing a white lab coat, nearby taking notes, clearly a lab/testing environment rather than a home. A wall-mounted monitor in the scene displays three simple flat ascending bars of increasing height representing improvement as training data grows. Absolutely no text or numerals anywhere, including on the monitor.",
-      "ken_burns": "pan_left"
+      "ken_burns": "pan_left",
+      "telop_cards": [
+        {
+          "lines": [
+            "2つ目は、中国の大手家電メーカー・美的集"
+          ],
+          "start": 0.0,
+          "end": 4.04
+        },
+        {
+          "lines": [
+            "団の研究チームによる、洗濯物たたみに特化"
+          ],
+          "start": 4.19,
+          "end": 7.16
+        },
+        {
+          "lines": [
+            "した研究です。これまでのロボットは服の種"
+          ],
+          "start": 7.31,
+          "end": 11.02
+        },
+        {
+          "lines": [
+            "類ごとに別々のプログラムが必要でしたが、"
+          ],
+          "start": 11.17,
+          "end": 13.42
+        },
+        {
+          "lines": [
+            "この研究では約5000時間分の実演データをもとに、"
+          ],
+          "start": 13.82,
+          "end": 17.82
+        },
+        {
+          "lines": [
+            "素材や形が違うさまざまな衣類にも1つのモ"
+          ],
+          "start": 17.97,
+          "end": 21.34
+        },
+        {
+          "lines": [
+            "デルで対応できることを目指しています。"
+          ],
+          "start": 21.49,
+          "end": 23.12
+        },
+        {
+          "lines": [
+            "実演データを500時間から5000時間ま"
+          ],
+          "start": 24.24,
+          "end": 26.88
+        },
+        {
+          "lines": [
+            "で増やしていくと、たたみ作業の成功率は"
+          ],
+          "start": 27.03,
+          "end": 29.46
+        },
+        {
+          "lines": [
+            "55%から100%まで伸びたと報告されています。"
+          ],
+          "start": 29.61,
+          "end": 33.14
+        }
+      ]
     },
     {
       "scene_id": 11,
@@ -235,7 +659,58 @@
       "zoom_anchor": {
         "x": 0.51,
         "y": 0.45
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "3つ目は、ロシアのスコルコボ科学技術大学"
+          ],
+          "start": 0.0,
+          "end": 3.6
+        },
+        {
+          "lines": [
+            "の研究室による、両手を使った調理に挑んだ研究です。"
+          ],
+          "start": 3.75,
+          "end": 7.5
+        },
+        {
+          "lines": [
+            "『サラダを作って』という指示を理解し、"
+          ],
+          "start": 8.14,
+          "end": 10.76
+        },
+        {
+          "lines": [
+            "食材を認識して盛り付けるまでを検証したところ、"
+          ],
+          "start": 11.08,
+          "end": 14.1
+        },
+        {
+          "lines": [
+            "指示の理解では100%、食材の認識では"
+          ],
+          "start": 14.66,
+          "end": 18.02
+        },
+        {
+          "lines": [
+            "96.06%、最終的な調理の成功率は83"
+          ],
+          "start": 18.17,
+          "end": 23.4
+        },
+        {
+          "lines": [
+            ".4%という結果が報告されています。"
+          ],
+          "start": 23.94,
+          "end": 26.26
+        }
+      ]
     },
     {
       "scene_id": 12,
@@ -244,7 +719,58 @@
       "duration_seconds": 22,
       "narration": "注目したいのは、これらが1つの企業や研究室だけの主張ではないという点です。2024年から2026年にかけて、家事という同じ壁に、複数の独立したチームがそれぞれ別の角度から挑み、着実に前進している——これは一過性の話題ではなく、確かな潮流と言えそうです。",
       "image_prompt": "Flat clean infographic: a single central wall or barrier icon (representing the shared challenge of household chores), with four distinct task icons (a folded clothing icon, a cooking pot icon, a whole-body reaching figure icon, a safety shield icon) arranged around it at different angles, each connected to the wall by a small arrow approaching from its own distinct direction — visually conveying multiple independent teams tackling the same shared challenge from different angles at the same time, not one single approach. A single subtle upward-trending line arcs behind all four, tying them together as one overall trend rather than isolated efforts. Minimal flat design, no captions, no axis marks, no dates, no legible text.",
-      "ken_burns": "static"
+      "ken_burns": "static",
+      "telop_cards": [
+        {
+          "lines": [
+            "注目したいのは、これらが1つの企業や研究"
+          ],
+          "start": 0.0,
+          "end": 3.84
+        },
+        {
+          "lines": [
+            "室だけの主張ではないという点です。"
+          ],
+          "start": 3.99,
+          "end": 6.02
+        },
+        {
+          "lines": [
+            "2024年から2026年にかけて、"
+          ],
+          "start": 6.62,
+          "end": 9.88
+        },
+        {
+          "lines": [
+            "家事という同じ壁に、複数の独立したチーム"
+          ],
+          "start": 10.03,
+          "end": 13.98
+        },
+        {
+          "lines": [
+            "がそれぞれ別の角度から挑み、"
+          ],
+          "start": 14.13,
+          "end": 16.6
+        },
+        {
+          "lines": [
+            "着実に前進している——これは一過性の話題ではなく、"
+          ],
+          "start": 16.75,
+          "end": 21.28
+        },
+        {
+          "lines": [
+            "確かな潮流と言えそうです。"
+          ],
+          "start": 21.43,
+          "end": 23.48
+        }
+      ]
     },
     {
       "scene_id": 13,
@@ -381,7 +907,23 @@
       "zoom_anchor": {
         "x": 0.65,
         "y": 0.55
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "もしこれらの技術がいつか1つに組み合わさ"
+          ],
+          "start": 0.0,
+          "end": 3.84
+        },
+        {
+          "lines": [
+            "ったら——そんな未来を、少しだけ思い描いてみます。"
+          ],
+          "start": 3.99,
+          "end": 7.92
+        }
+      ]
     },
     {
       "scene_id": 15,
@@ -390,7 +932,79 @@
       "duration_seconds": 45,
       "narration": "朝、目覚まし時計が鳴る前に、なんとなく目が覚めます。キッチンをのぞくと、ロボットが静かに洗濯物を畳んでいるところ。散らかっているはずの部屋が、いつの間にか片付いている。急いで身支度をする必要もなく、娘の髪を結びながら、窓から差し込む朝日をゆっくり眺める余裕さえあります。淹れたてのコーヒーを一口飲んで、『今日はいい一日になりそう』——そう思える朝が、当たり前になっていました。",
       "image_prompt": "A friendly humanoid robot with realistic human-like body proportions — a distinct head, neck, torso, arms, and legs sized and jointed like a person, NOT a stubby toy-like or mascot-like build. Sleek matte white-and-soft-blue body with visible but smooth joint segments, a slim humanoid head with two small gentle glowing cyan eyes and no visible mouth. Approachable in expression but clearly humanoid in build, not cartoonish or toy-like — the same robot design as in every other scene of this episode, in a Japanese kitchen quietly setting down a neat stack of folded laundry, the same Japanese woman sitting nearby calmly enjoying a cup of coffee with a soft smile, bright morning sunlight streaming through a window (clearly daytime, not night), no text",
-      "ken_burns": "pan_left"
+      "ken_burns": "pan_left",
+      "telop_cards": [
+        {
+          "lines": [
+            "朝、目覚まし時計が鳴る前に、"
+          ],
+          "start": 0.0,
+          "end": 2.68
+        },
+        {
+          "lines": [
+            "なんとなく目が覚めます。キッチンをのぞくと、"
+          ],
+          "start": 2.88,
+          "end": 6.18
+        },
+        {
+          "lines": [
+            "ロボットが静かに洗濯物を畳んでいるところ。"
+          ],
+          "start": 6.56,
+          "end": 9.52
+        },
+        {
+          "lines": [
+            "散らかっているはずの部屋が、"
+          ],
+          "start": 10.42,
+          "end": 12.06
+        },
+        {
+          "lines": [
+            "いつの間にか片付いている。急いで身支度を"
+          ],
+          "start": 12.36,
+          "end": 15.92
+        },
+        {
+          "lines": [
+            "する必要もなく、娘の髪を結びながら、"
+          ],
+          "start": 16.07,
+          "end": 19.26
+        },
+        {
+          "lines": [
+            "窓から差し込む朝日をゆっくり眺める余裕さ"
+          ],
+          "start": 19.48,
+          "end": 22.6
+        },
+        {
+          "lines": [
+            "えあります。淹れたてのコーヒーを一口飲んで、"
+          ],
+          "start": 22.75,
+          "end": 25.96
+        },
+        {
+          "lines": [
+            "『今日はいい一日になりそう』——そう思える朝が、"
+          ],
+          "start": 26.58,
+          "end": 30.12
+        },
+        {
+          "lines": [
+            "当たり前になっていました。"
+          ],
+          "start": 30.27,
+          "end": 31.58
+        }
+      ]
     },
     {
       "scene_id": 16,
@@ -403,7 +1017,93 @@
       "zoom_anchor": {
         "x": 0.33,
         "y": 0.5
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "夕方、保育園のお迎えに行き、"
+          ],
+          "start": 0.0,
+          "end": 3.22
+        },
+        {
+          "lines": [
+            "娘と手をつないで帰る道。今日はどんな一日だったか、"
+          ],
+          "start": 3.37,
+          "end": 8.14
+        },
+        {
+          "lines": [
+            "他愛のない話をしながら歩く時間が、"
+          ],
+          "start": 8.48,
+          "end": 10.82
+        },
+        {
+          "lines": [
+            "何よりの楽しみになっています。"
+          ],
+          "start": 11.22,
+          "end": 12.9
+        },
+        {
+          "lines": [
+            "玄関の鍵を開けると、温かい夕食のいい匂い"
+          ],
+          "start": 14.16,
+          "end": 17.78
+        },
+        {
+          "lines": [
+            "がふわりと漂ってきます。『今日は何を作ろ"
+          ],
+          "start": 17.93,
+          "end": 21.58
+        },
+        {
+          "lines": [
+            "う』と頭を悩ませ、疲れた体で台所に立つ必"
+          ],
+          "start": 21.73,
+          "end": 25.18
+        },
+        {
+          "lines": [
+            "要はもうありません。夫も少し早く帰ってきて、"
+          ],
+          "start": 25.33,
+          "end": 29.22
+        },
+        {
+          "lines": [
+            "家族3人、湯気の立つ食卓を囲む。"
+          ],
+          "start": 29.37,
+          "end": 32.28
+        },
+        {
+          "lines": [
+            "他愛のない会話で笑いながら食べる夕食が、"
+          ],
+          "start": 33.14,
+          "end": 35.74
+        },
+        {
+          "lines": [
+            "こんなに贅沢なことだったなんて、"
+          ],
+          "start": 36.2,
+          "end": 37.96
+        },
+        {
+          "lines": [
+            "以前は気づきもしませんでした。"
+          ],
+          "start": 38.42,
+          "end": 39.9
+        }
+      ]
     },
     {
       "scene_id": 17,
@@ -412,7 +1112,93 @@
       "duration_seconds": 48,
       "narration": "休日の朝、娘がリビング一面におもちゃを広げて遊んでいます。以前なら『危ないから』『壊れるから』と、つい口を出してしまっていたところ。でも今は、そばで見守りながら、娘の想像力にまかせて自由に遊ばせてあげられます。散らかった部屋を片付ける段取りを考える代わりに、『今日はどこへ遊びに行こうか』『公園にする?水族館にする?』——そんな会話で、休日の朝が始まるようになりました。掃除に追われていたはずの週末が、家族の時間に変わっていく。それは、想像していた以上に幸せなことでした。",
       "image_prompt": "A Japanese mother and her daughter laughing together on the living room floor surrounded by toys, bright weekend daytime light through the window, a friendly humanoid robot with realistic human-like body proportions — a distinct head, neck, torso, arms, and legs sized and jointed like a person, NOT a stubby toy-like or mascot-like build. Sleek matte white-and-soft-blue body with visible but smooth joint segments, a slim humanoid head with two small gentle glowing cyan eyes and no visible mouth. Approachable in expression but clearly humanoid in build, not cartoonish or toy-like — the same robot design as in every other scene of this episode, calmly tidying in the background without anyone worrying about it, relaxed warm weekend mood, no text",
-      "ken_burns": "pan_right"
+      "ken_burns": "pan_right",
+      "telop_cards": [
+        {
+          "lines": [
+            "休日の朝、娘がリビング一面におもちゃを広"
+          ],
+          "start": 0.0,
+          "end": 4.22
+        },
+        {
+          "lines": [
+            "げて遊んでいます。以前なら『危ないから』"
+          ],
+          "start": 4.37,
+          "end": 7.72
+        },
+        {
+          "lines": [
+            "『壊れるから』と、つい口を出してしまって"
+          ],
+          "start": 8.2,
+          "end": 10.92
+        },
+        {
+          "lines": [
+            "いたところ。でも今は、そばで見守りながら、"
+          ],
+          "start": 11.07,
+          "end": 14.88
+        },
+        {
+          "lines": [
+            "娘の想像力にまかせて自由に遊ばせてあげられます。"
+          ],
+          "start": 15.18,
+          "end": 18.58
+        },
+        {
+          "lines": [
+            "散らかった部屋を片付ける段取りを考える代わりに、"
+          ],
+          "start": 19.56,
+          "end": 22.76
+        },
+        {
+          "lines": [
+            "『今日はどこへ遊びに行こうか』『公園にす"
+          ],
+          "start": 23.26,
+          "end": 26.58
+        },
+        {
+          "lines": [
+            "る?水族館にする?』——そんな会話で、"
+          ],
+          "start": 26.73,
+          "end": 29.66
+        },
+        {
+          "lines": [
+            "休日の朝が始まるようになりました。"
+          ],
+          "start": 29.98,
+          "end": 31.96
+        },
+        {
+          "lines": [
+            "掃除に追われていたはずの週末が、"
+          ],
+          "start": 33.2,
+          "end": 35.16
+        },
+        {
+          "lines": [
+            "家族の時間に変わっていく。それは、"
+          ],
+          "start": 35.58,
+          "end": 38.32
+        },
+        {
+          "lines": [
+            "想像していた以上に幸せなことでした。"
+          ],
+          "start": 38.9,
+          "end": 41.0
+        }
+      ]
     },
     {
       "scene_id": 18,
@@ -425,7 +1211,51 @@
       "zoom_anchor": {
         "x": 0.5,
         "y": 0.5
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "もちろん、これらはまだそれぞれ別々の研究"
+          ],
+          "start": 0.0,
+          "end": 3.34
+        },
+        {
+          "lines": [
+            "段階のプロトタイプで、1つの製品として完"
+          ],
+          "start": 3.49,
+          "end": 6.52
+        },
+        {
+          "lines": [
+            "成しているわけではありません。それでも、"
+          ],
+          "start": 6.67,
+          "end": 9.34
+        },
+        {
+          "lines": [
+            "こうした研究が世界中で進んでいる——美咲"
+          ],
+          "start": 9.49,
+          "end": 13.3
+        },
+        {
+          "lines": [
+            "さんが思い描いた未来に、その歩みが追いつく日は、"
+          ],
+          "start": 13.45,
+          "end": 16.52
+        },
+        {
+          "lines": [
+            "思っているより近いのかもしれません。"
+          ],
+          "start": 16.67,
+          "end": 18.56
+        }
+      ]
     }
   ],
   "shorts": [
