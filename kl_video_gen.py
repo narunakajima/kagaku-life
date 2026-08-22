@@ -81,6 +81,7 @@ OUTRO_LINE2 = "毎週更新・チャンネル登録お願いします"
 TELOP_FONTSIZE = 44
 TELOP_CENTER_Y = 0.88
 TELOP_LINE_SPACING = 64
+TEASER_TELOP_FONTSIZE = 84  # SCのキネティック字幕（110pt@1920幅）を1408幅に換算
 
 # Shorts（縦動画）用
 SHORTS_W = 768
@@ -88,6 +89,8 @@ SHORTS_H = 1376
 SHORTS_XFADE = 0.4
 SHORTS_TELOP_FONTSIZE = 48
 SHORTS_TELOP_CENTER_Y = 0.82
+# 冒頭フックテキスト（SCのshorts_hook_text_filterを1408x768→768x1376比で換算）
+SHORTS_HOOK_CONFIGS = [(114, "h*0.07"), (89, "h*0.16")]
 
 
 def run_cmd(cmd: list, label: str = ""):
@@ -363,12 +366,15 @@ def burn_telop_global(video: Path, all_scenes: list, all_offsets: list, dst: Pat
     """全シーンのtelop_cards（シーン内相対時刻）にシーンのグローバルオフセットを加算し、
     動画全体にdrawtextで焼き込む（kl_telop_gen.pyのburn_telopと同じ仕組み）。
     """
+    shutil.copy(str(FONT_BOLD), str(FONT_TMP_BOLD))
     shutil.copy(str(FONT_REGULAR), str(FONT_TMP_REGULAR))
     font = str(FONT_TMP_REGULAR)
+    font_bold = str(FONT_TMP_BOLD)
     cy = TELOP_CENTER_Y
 
     filter_parts, prev, idx = [], "0:v", 0
     for scene, offset in zip(all_scenes, all_offsets):
+        is_teaser = scene["type"] == "teaser"
         for card in scene.get("telop_cards", []):
             t_start = offset + NARR_DELAY + card["start"]
             t_end = offset + NARR_DELAY + card["end"]
@@ -377,13 +383,23 @@ def burn_telop_global(video: Path, all_scenes: list, all_offsets: list, dst: Pat
             tf.write_text(line.replace("\r", ""), encoding="utf-8")
             enable = f"between(t\\,{t_start:.2f}\\,{t_end:.2f})"
             out = f"dv{idx}"
-            filter_parts.append(
-                f"[{prev}]drawtext=fontfile={font}:textfile={tf}:expansion=none"
-                f":fontcolor=white:fontsize={TELOP_FONTSIZE}"
-                f":borderw=7:bordercolor=black@1.0"
-                f":shadowx=2:shadowy=2:shadowcolor=black@0.75"
-                f":x=(w-text_w)/2:y=(h*{cy}-text_h/2):enable={enable}[{out}]"
-            )
+            if is_teaser:
+                # ティザーはSCのキネティック字幕（画面中央・大型フォント）を踏襲し、
+                # 通常の下部テロップと差別化してフックの強さを出す（2026-08-22追加）。
+                filter_parts.append(
+                    f"[{prev}]drawtext=fontfile={font_bold}:textfile={tf}:expansion=none"
+                    f":fontcolor=white:fontsize={TEASER_TELOP_FONTSIZE}"
+                    f":borderw=9:bordercolor=black@1.0"
+                    f":x=(w-text_w)/2:y=(h*0.5-text_h/2):enable={enable}[{out}]"
+                )
+            else:
+                filter_parts.append(
+                    f"[{prev}]drawtext=fontfile={font}:textfile={tf}:expansion=none"
+                    f":fontcolor=white:fontsize={TELOP_FONTSIZE}"
+                    f":borderw=7:bordercolor=black@1.0"
+                    f":shadowx=2:shadowy=2:shadowcolor=black@0.75"
+                    f":x=(w-text_w)/2:y=(h*{cy}-text_h/2):enable={enable}[{out}]"
+                )
             prev = out
             idx += 1
 
@@ -612,8 +628,30 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
 
         print("\n--- テロップ焼き込み ---")
         shutil.copy(str(FONT_REGULAR), str(FONT_TMP_REGULAR))
+        shutil.copy(str(FONT_BOLD), str(FONT_TMP_BOLD))
         font = str(FONT_TMP_REGULAR)
+        font_bold = str(FONT_TMP_BOLD)
         filter_parts, prev, idx = [], "0:v", 0
+
+        hook_lines = shorts_list[0].get("hook_lines") or []
+        if hook_lines:
+            # 冒頭クリップの間だけ表示する大型フックテキスト（SCのshorts_hook_text_filter踏襲）
+            hook_end = durations[0]
+            for i, text in enumerate(hook_lines[:2]):
+                fs, y = SHORTS_HOOK_CONFIGS[i]
+                tf = tmp / f"hook_{i}.txt"
+                tf.write_text(text.replace("\r", ""), encoding="utf-8")
+                bw = 9 if i == 0 else 7
+                out = f"hook{i}"
+                filter_parts.append(
+                    f"[{prev}]drawtext=fontfile={font_bold}:textfile={tf}:expansion=none"
+                    f":fontcolor=white:fontsize={fs}:borderw={bw}:bordercolor=black@1.0"
+                    f":shadowx=4:shadowy=4:shadowcolor=black@0.75"
+                    f":x=(w-text_w)/2:y={y}:enable=between(t\\,0\\,{hook_end:.2f})[{out}]"
+                )
+                prev = out
+                idx += 1
+
         for i, (scene, offset, dur) in enumerate(zip(scenes, offsets, durations)):
             t_start = offset + NARR_DELAY
             t_end = offset + dur

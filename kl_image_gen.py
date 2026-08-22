@@ -30,6 +30,7 @@ from pathlib import Path
 
 from google import genai
 from google.genai import types
+from PIL import Image, ImageDraw, ImageFont
 
 sys.stdout.reconfigure(line_buffering=True)
 
@@ -41,6 +42,56 @@ MODEL = "gemini-3.1-flash-image"
 QA_MODEL = "gemini-3.6-flash"
 REQUEST_TIMEOUT_MS = 60_000
 MAX_QA_ATTEMPTS = 2  # SCの実績（89話分・3回目のリトライは効果薄）を踏襲し2回に抑える
+
+# サムネイルテキスト合成（2026-08-22追加）。日本語はAI画像生成に任せず、
+# lamp-whisperのmake_thumbnail_gemini.pyと同じ「背景はAI生成（無地）、
+# テキストはPillowで実フォント合成」方式を踏襲する。
+FONT_BOLD = Path("/System/Library/Fonts/ヒラギノ角ゴシック W8.ttc")
+FONT_MEDIUM = Path("/System/Library/Fonts/ヒラギノ角ゴシック W6.ttc")
+THUMB_HEADLINE_COLOR = (255, 255, 255)
+THUMB_SUB_COLOR = (240, 168, 104)  # チャンネル配色の暖色コーラルアクセント
+THUMB_SHADOW_COLOR = (0, 0, 0)
+
+
+def composite_thumbnail_text(image_path: Path, headline: str, sub: str = "") -> None:
+    """サムネイル画像（テキストなしで生成済み）に、下部の暗いグラデーション帯＋
+    日本語テキスト（影付き）をPillowで合成する（lamp-whisperのoverlay_textと同じ考え方）。
+    """
+    img = Image.open(image_path).convert("RGBA")
+    w, h = img.size
+
+    band_h = int(h * 0.38)
+    gradient = Image.new("L", (1, band_h), 0)
+    for y in range(band_h):
+        alpha = int(200 * (y / band_h) ** 1.3)
+        gradient.putpixel((0, y), alpha)
+    gradient = gradient.resize((w, band_h))
+    band = Image.new("RGBA", (w, band_h), (10, 20, 35, 0))
+    band.putalpha(gradient)
+    img.alpha_composite(band, (0, h - band_h))
+
+    draw = ImageDraw.Draw(img)
+    margin_x = int(w * 0.05)
+
+    headline_size = 76
+    font_headline = ImageFont.truetype(str(FONT_BOLD), headline_size)
+    while draw.textbbox((0, 0), headline, font=font_headline)[2] > w - margin_x * 2 and headline_size > 36:
+        headline_size -= 4
+        font_headline = ImageFont.truetype(str(FONT_BOLD), headline_size)
+
+    hy = h - band_h + int(band_h * 0.32)
+    for dx, dy in [(3, 3), (4, 4)]:
+        draw.text((margin_x + dx, hy + dy), headline, font=font_headline, fill=(*THUMB_SHADOW_COLOR, 190))
+    draw.text((margin_x, hy), headline, font=font_headline, fill=(*THUMB_HEADLINE_COLOR, 255))
+
+    if sub:
+        sub_size = 38
+        font_sub = ImageFont.truetype(str(FONT_MEDIUM), sub_size)
+        sy = hy + headline_size + 18
+        draw.text((margin_x + 2, sy + 2), sub, font=font_sub, fill=(*THUMB_SHADOW_COLOR, 170))
+        draw.text((margin_x, sy), sub, font=font_sub, fill=(*THUMB_SUB_COLOR, 255))
+
+    img.convert("RGB").save(image_path, "PNG")
 
 # CLAUDE.md「画像スタイル（2026-08-21改訂）」確定版
 BASE_CONTEXT = (
@@ -273,10 +324,15 @@ def main():
 
     if not args.no_thumbnail and not args.shorts_only and (args.thumbnail_only or args.scenes is None):
         thumb_prompt = f"{BASE_CONTEXT}\n\nThumbnail (16:9): {ep['thumbnail_prompt']}"
-        r = generate_with_qa(client, thumb_prompt, ep["thumbnail_prompt"], out_dir / "thumbnail.png",
+        thumb_path = out_dir / "thumbnail.png"
+        r = generate_with_qa(client, thumb_prompt, ep["thumbnail_prompt"], thumb_path,
                               skip_qa=args.no_qa)
         r["name"] = "thumbnail.png"
         qa_results.append(r)
+        headline = ep.get("thumbnail_headline")
+        if headline and r["ok"]:
+            composite_thumbnail_text(thumb_path, headline, ep.get("thumbnail_subcopy", ""))
+            print(f"   → テキスト合成: 「{headline}」")
 
     if args.shorts_only or (not args.thumbnail_only and args.scenes is None):
         for shorts in ep.get("shorts", []):
