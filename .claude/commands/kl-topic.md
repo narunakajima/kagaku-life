@@ -19,6 +19,13 @@ CLAUDE.md「論文選定ロジック（目利きプロセス）」のSTAGE1〜4�
   `stage1_pool.json` / `stage2_screened.json` / `stage3_hypecheck.json` / `stage4_ranked.json`
 - 許可リスト: `reputable_venues.json`（gitで追跡。STAGE2のコスト最適化用）
 - 確定キュー: `topics_queue.json`（gitで追跡）
+- **最終選考候補リスト: `topics_shortlist.json`（gitで追跡、2026-08-21追加）。**
+  `stage4_ranked.json`はSTAGE1〜4を再実行するたびに上書きされる作業ファイルの
+  ため、STAGE4の上位20件（`stage5_candidates`）は毎回`topics_shortlist.json`に
+  追記して恒久的に残す。今回不採用でも、別のストーリー（他の論文との組み合わせ等）
+  で後日採用されうるため、`status: "available"`のまま蓄積する（採用されたら
+  `status: "used"`・`used_in`にエピソードIDを記録）。既存エントリと
+  `paperId`が重複する場合は追記しない（スコア等は初出時点のものを保持）。
 
 ---
 
@@ -72,6 +79,10 @@ STAGE1〜3は `--category` 指定で特定カテゴリのみの再実行も可�
 その旨を指摘したうえで `all_scored` から他カテゴリの上位候補も参考として示す
 （kl001選定時、上位5件中4件が同一カテゴリに偏っていたため、より幅広い視聴者層を
 意識して家庭内ロボット・働き方カテゴリから比較検討した実例がある）。
+
+提示と同時に、この20件を `topics_shortlist.json` に追記する（`paperId` が既存
+エントリと重複するものは追記しない）。すべて `status: "available"` として記録し、
+STEP5で実際に採用されたものだけ後から `"used"` に更新する。
 
 ---
 
@@ -137,6 +148,10 @@ STEP5ではその決定内容（使用論文・主人公・ストーリーコン
   `category_label` / `venue` / `year` / `doi`または`url` / `semantic_scholar_id` /
   `authors` / `protagonist` / `hook_idea` / `notes`）
 - `pipeline_gap_flag: true` の候補を採用した場合はその旨と根拠を `notes` に明記する
+
+採用した論文について、`topics_shortlist.json` 内の該当エントリ（`paperId` で
+照合）を `status: "used"`・`used_in: "kl00N"` に更新する（不採用のまま残る
+候補は `status: "available"` を維持し、削除しない）。
 
 追記後 `total_topics` と `last_updated` を更新する。コミットメッセージには選定理由
 （スコア・カテゴリバランス・「動画にしやすさ」等の判断根拠）を残す。pushは他の

@@ -1,0 +1,539 @@
+{
+  "_comment": "STAGE4の最終選考候補（20件）を回ごとに蓄積するリスト。statusはavailable(未採用・今後の候補)/used(採用済み)。今回不採用でも別のストーリーで採用しうるため、kl_paper_search.pyの重複排除対象としては使わない（重複排除は既存のtopics_queue.json採用済みpaperIdで行う）。/kl-topicのSTEP2完了時にこのファイルへ追記していく。",
+  "shortlist": [
+    {
+      "paperId": "f8f09403a728c09ece3f98779e63a13ed34a19bb",
+      "title": "DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "doi": "10.48550/arXiv.2605.31286",
+      "authors": [
+        "Taiyi Su",
+        "Jian Zhu",
+        "Tianjian Wang",
+        "Youzhang He",
+        "Zitai Huang"
+      ],
+      "is_preprint": true,
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "overall_score": 4.75,
+      "hook_idea": "たたんでもたたんでも終わらない「洗濯物の山」、もしロボットが代わりに全部たたんでくれたら人生どう変わる？",
+      "example_protagonist": {
+        "name": "佐藤 健太",
+        "age": 35,
+        "job": "共働きのIT企業社員（2児の父）"
+      },
+      "status": "used",
+      "used_in": "kl001",
+      "considered_at": "2026-08-20"
+    },
+    {
+      "paperId": "33eb7a83a37b47417819474832bd3eccb861d501",
+      "title": "Bi-VLA: Vision-Language-Action Model-Based System for Bimanual Robotic Dexterous Manipulations",
+      "year": 2024,
+      "venue": "IEEE International Conference on Systems, Man and Cybernetics",
+      "doi": "10.1109/SMC54092.2024.10831380",
+      "authors": [
+        "Koffivi Fidele Gbagbe",
+        "Miguel Altamirano Cabrera",
+        "Ali Alabbas",
+        "Oussama Alyunes",
+        "Artem Lykov"
+      ],
+      "is_preprint": false,
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "overall_score": 4.75,
+      "hook_idea": "「今日の夕飯、ヘルシーなサラダ作っておいて」と話しかけるだけで、ロボットが両手で料理してくれる未来、見てみたくありませんか？",
+      "example_protagonist": {
+        "name": "佐藤美咲",
+        "age": 34,
+        "job": "IT企業マーケター（共働きで夕食準備に追われる）"
+      },
+      "status": "used",
+      "used_in": "kl001",
+      "considered_at": "2026-08-20"
+    },
+    {
+      "paperId": "1e83f742ad7f75a490bad862fcc7dff8dda1f481",
+      "title": "TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "doi": "10.48550/arXiv.2509.11839",
+      "authors": [
+        "Jiacheng Liu",
+        "Pengxiang Ding",
+        "Qihang Zhou",
+        "Yuxuan Wu",
+        "Da Huang"
+      ],
+      "is_preprint": true,
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "overall_score": 4.75,
+      "hook_idea": "「しゃがんで床の散らかりを片付ける」——人間には当たり前のこの家事が、ロボットにはなぜ不可能なのか知っていますか？",
+      "example_protagonist": {
+        "name": "小林 健太",
+        "age": 38,
+        "job": "共働きで育児と腰痛に悩むシステムエンジニア"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-20"
+    },
+    {
+      "paperId": "4fa98df6385b5019f1f6ae135ad338c2fa7f5677",
+      "title": "Ultra-lightweight robotic hip exoskeleton with anti-phase torque symmetry for enhanced walking efficiency",
+      "year": 2025,
+      "venue": "Scientific Reports",
+      "doi": "10.1038/s41598-025-95599-2",
+      "authors": [
+        "Bokman Lim",
+        "Byungjune Choi",
+        "Changhyun Roh",
+        "Jewoo Lee",
+        "Yong-Jae Kim"
+      ],
+      "is_preprint": false,
+      "category": "mobility",
+      "category_label": "モビリティ・身体拡張",
+      "overall_score": 4.65,
+      "hook_idea": "「最近、歩くのが億劫になった…」その悩み、重いロボットではなく“超軽いギア”1つで変わるかもしれません。",
+      "example_protagonist": {
+        "name": "佐藤 節子",
+        "age": 72,
+        "job": "無職（元・手芸教室講師）"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-20"
+    },
+    {
+      "paperId": "5ab6ea64a3a65efde76e0395c14c49b28f7417a8",
+      "title": "Does Generative AI Narrow Education-Based Productivity Gaps? Evidence from a Randomized Experiment",
+      "year": 2026,
+      "venue": "Social Science Research Network",
+      "doi": "10.2139/ssrn.6246347",
+      "authors": [
+        "Guillermo Cruces",
+        "Diego Fernández Meijide",
+        "Sebastian Galiani",
+        "Ramiro Gálvez",
+        "María Lombardi"
+      ],
+      "is_preprint": true,
+      "category": "work",
+      "category_label": "働き方の変化",
+      "overall_score": 4.65,
+      "hook_idea": "AIを使えば学歴による仕事の成果差は75%消える？最新研究が明かした『格差の正体』とは。",
+      "example_protagonist": {
+        "name": "佐々木拓也",
+        "age": 29,
+        "job": "中小企業の営業事務（専門学校卒）"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-20"
+    },
+    {
+      "paperId": "3859de96b3c95d8c814a6c850df29f1b97d0644d",
+      "title": "World-Gymnast: Training Robots with Reinforcement Learning in a World Model",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "doi": "10.48550/arXiv.2602.02454",
+      "authors": [
+        "Ansh Kumar Sharma",
+        "Yixiang Sun",
+        "Ning Lu",
+        "Yunzhe Zhang",
+        "Jiarao Liu"
+      ],
+      "is_preprint": true,
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "overall_score": 4.5,
+      "hook_idea": "なぜ夢の片付けロボットは、あなたの家の散らかったリビングでは『置物』になってしまうのでしょうか？",
+      "example_protagonist": {
+        "name": "高橋 由香",
+        "age": 38,
+        "job": "IT企業マーケター（共働き・2児の母）"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-20"
+    },
+    {
+      "paperId": "be24b701b1404254d46a7d8d17e057bfc69bfe71",
+      "title": "BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday Household Activities",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "doi": "10.48550/arXiv.2503.05652",
+      "authors": [
+        "Yunfan Jiang",
+        "Ruohan Zhang",
+        "Josiah Wong",
+        "Chen Wang",
+        "Yanjie Ze"
+      ],
+      "is_preprint": true,
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "overall_score": 4.5,
+      "hook_idea": "毎朝のゴミ出しや散らかった服の片付け…もしロボットが全部やってくれたら、あなたの暮らしはどう変わりますか？",
+      "example_protagonist": {
+        "name": "佐藤 美咲",
+        "age": 36,
+        "job": "共働きで2児を育てるWebデザイナー"
+      },
+      "status": "used",
+      "used_in": "kl001",
+      "considered_at": "2026-08-20"
+    },
+    {
+      "paperId": "b4b82368d7a1bcd3bb2e9543c31738a84e8a9dec",
+      "title": "SG-VLA: Learning Spatially-Grounded Vision-Language-Action Models for Mobile Manipulation",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "doi": "10.48550/arXiv.2603.22760",
+      "authors": [
+        "Ruisen Tu",
+        "Arth Shukla",
+        "So-Mi Yoo",
+        "Xuanlin Li",
+        "Junxi Li"
+      ],
+      "is_preprint": true,
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "overall_score": 4.5,
+      "hook_idea": "仕事から帰って足の踏み場もない部屋…もしロボットが自分で考えて散らかったおもちゃを片付けてくれたら？",
+      "example_protagonist": {
+        "name": "佐々木 裕子",
+        "age": 36,
+        "job": "共働きのグラフィックデザイナー（5歳と3歳の子育て中）"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-20"
+    },
+    {
+      "paperId": "7b04ad06498a615f5ddefb56d208c45714c33528",
+      "title": "Grounding Multimodal LLMs to Embodied Agents that Ask for Help with Reinforcement Learning",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "doi": "10.48550/arXiv.2504.00907",
+      "authors": [
+        "Ram Ramrakhya",
+        "Matthew Chang",
+        "Xavi Puig",
+        "Ruta Desai",
+        "Z. Kira"
+      ],
+      "is_preprint": true,
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "overall_score": 4.5,
+      "hook_idea": "「アレ片付けて」で本当に伝わる？指示の曖昧さに「どれですか？」と自分で質問して解決する未来の家事ロボット",
+      "example_protagonist": {
+        "name": "佐々木 健太郎",
+        "age": 38,
+        "job": "IT企業勤務（共働き・子育て中）"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-20"
+    },
+    {
+      "paperId": "bb9d1e2de8d4a982b5c8d0e407abadfe11432246",
+      "title": "Closed-Loop Open-Vocabulary Mobile Manipulation with GPT-4V",
+      "year": 2024,
+      "venue": "IEEE International Conference on Robotics and Automation",
+      "doi": "10.1109/ICRA55743.2025.11127975",
+      "authors": [
+        "Peiyuan Zhi",
+        "Zhiyuan Zhang",
+        "Muzhi Han",
+        "Zeyu Zhang",
+        "Zhitian Li"
+      ],
+      "is_preprint": false,
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "overall_score": 4.5,
+      "hook_idea": "「あれ片付けて」と頼んだロボットが、失敗しても自分で考え直してやり直す時代、来たらどうしますか？",
+      "example_protagonist": {
+        "name": "佐藤由美",
+        "age": 38,
+        "job": "IT企業勤務（フルタイム在宅勤務・2児の母）"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-20"
+    },
+    {
+      "paperId": "e0510d9ffc419054ff523ce2d7afabf145b232a8",
+      "title": "OopsieVerse: A Safety Benchmark with Damage-Aware Simulation for Robot Manipulation",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "doi": "10.48550/arXiv.2606.31993",
+      "authors": [
+        "Arnav Balaji",
+        "Arpit Bahety",
+        "Sriniket Ambatipudi",
+        "Daniel Lam",
+        "Junhong Xu"
+      ],
+      "is_preprint": true,
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "overall_score": 4.5,
+      "hook_idea": "家事をロボットに頼みたい…でも、大事なお皿や高級家具を壊されたらどうしよう？と思ったことはありませんか？",
+      "example_protagonist": {
+        "name": "佐々木由佳",
+        "age": 38,
+        "job": "インテリアデザイナー"
+      },
+      "status": "used",
+      "used_in": "kl001",
+      "considered_at": "2026-08-20"
+    },
+    {
+      "paperId": "47577d006dea269e8f93e9e57c883923f43f82c5",
+      "title": "SERF: Spatiotemporal Environment and Robot Feature Map for Long-Horizon Mobile Manipulation",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "doi": "10.48550/arXiv.2606.12956",
+      "authors": [
+        "Sunghwan Kim",
+        "Byeonghyun Pak",
+        "Kehan Long",
+        "Yulun Tian",
+        "Nikolay Atanasov"
+      ],
+      "is_preprint": true,
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "overall_score": 4.5,
+      "hook_idea": "「片付けて」と頼んだロボットが途中でフリーズする問題...部屋の「過去と今」を丸ごと記憶する新技術が、家事の全自動化を一気に引き寄せます。",
+      "example_protagonist": {
+        "name": "佐藤 健太",
+        "age": 38,
+        "job": "IT企業勤務（共働き・2児の父）"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-20"
+    },
+    {
+      "paperId": "89af06244358072dbbbece4c569512906d48540a",
+      "title": "RoboTidy : A 3D Gaussian Splatting Household Tidying Benchmark for Embodied Navigation and Action",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "doi": "10.48550/arXiv.2511.14161",
+      "authors": [
+        "Xiaoquan Sun",
+        "Ruiji Zhang",
+        "K. Pang",
+        "Bingchen Miao",
+        "Yuxiang Tan"
+      ],
+      "is_preprint": true,
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "overall_score": 4.5,
+      "hook_idea": "「アレ、元の場所に戻しておいて」の一言で、散らかった部屋が勝手に片付く未来、知りたくないですか？",
+      "example_protagonist": {
+        "name": "高橋まゆみ",
+        "age": 35,
+        "job": "IT企業勤務（共働き・5歳児の母）"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-20"
+    },
+    {
+      "paperId": "6b8b27eb6fae769c6249f85905c91ef5b2f2c3f4",
+      "title": "Chronically Stable, High‐Resolution Micro‐Electrocorticographic Brain‐Computer Interfaces for Real‐Time Motor Decoding",
+      "year": 2025,
+      "venue": "Advancement of science",
+      "doi": "10.1002/advs.202506663",
+      "authors": [
+        "Erda Zhou",
+        "Xiner Wang",
+        "Jizhi Liang",
+        "Yang Liu",
+        "Qinrong Yang"
+      ],
+      "is_preprint": false,
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "overall_score": 4.5,
+      "hook_idea": "もし脳に針を刺すことなく、頭で考えるだけでパソコンやゲームを操作できるとしたら？",
+      "example_protagonist": {
+        "name": "佐藤 健太",
+        "age": 42,
+        "job": "事故により身体麻痺となった元Webデザイナー"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-20"
+    },
+    {
+      "paperId": "ba1ed63e269df85fbd4b07d07648005b1bec9dd2",
+      "title": "A Hybrid Brain-Computer Interface based Wearable Exoskeleton System for Fine-Grained Hand Rehabilitation",
+      "year": 2024,
+      "venue": "Biomedical Circuits and Systems Conference",
+      "doi": "10.1109/BioCAS61083.2024.10798270",
+      "authors": [
+        "Yueqi Ma",
+        "Yong Huang",
+        "Cheng Li",
+        "Siyi Chen",
+        "Shuo Yang"
+      ],
+      "is_preprint": false,
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "overall_score": 4.5,
+      "hook_idea": "脳波を読むロボット手袋で、動かなくなった指先が再び『繊細な作業』を取り戻す未来を見たくありませんか？",
+      "example_protagonist": {
+        "name": "佐藤 健一",
+        "age": 52,
+        "job": "脳卒中からの復職を目指す元・和菓子職人"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-20"
+    },
+    {
+      "paperId": "c0ff2d3d452d077e431b1efaf75c1f499afec70c",
+      "title": "SEVO: Semantic-Enhanced Virtual Observation for Robust VLA Manipulation via Active Illumination and Data-Centric Collection",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "doi": "10.48550/arXiv.2605.11114",
+      "authors": [
+        "Tianchonghui Fang",
+        "Zhuang Yuan",
+        "Fei Miao"
+      ],
+      "is_preprint": true,
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "overall_score": 4.4,
+      "hook_idea": "部屋の日当たりが変わっただけでフリーズするお片付けロボット…そんなポンコツロボが、たった『赤いライト』とデータの工夫で一変するとしたら？",
+      "example_protagonist": {
+        "name": "佐藤健太",
+        "age": 38,
+        "job": "IT企業勤務（共働き・2児の父）"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-20"
+    },
+    {
+      "paperId": "edabb21890d8491312c3cf79349cdfdd82a66f6b",
+      "title": "Steering Autoregressive Vision-Language-Action Policies via Action Token Intervention",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "doi": "10.48550/arXiv.2606.15021",
+      "authors": [
+        "J. Chan",
+        "Jonathan C. Kao"
+      ],
+      "is_preprint": true,
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "overall_score": 4.4,
+      "hook_idea": "『あとちょっと右！』AIロボットが人間の直感的な指示を聞いてくれない理由、知っていますか？",
+      "example_protagonist": {
+        "name": "佐藤隆",
+        "age": 42,
+        "job": "事故による手足の麻痺で車椅子生活を送るWebディレクター"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-20"
+    },
+    {
+      "paperId": "e48cd8b29c49098f7160caf2d90f617114279216",
+      "title": "Precise Mobile Manipulation of Small Everyday Objects",
+      "year": 2025,
+      "venue": "IEEE Robotics and Automation Letters",
+      "doi": "10.1109/LRA.2026.3656784",
+      "authors": [
+        "Arjun Gupta",
+        "Rishik Sathua",
+        "Saurabh Gupta"
+      ],
+      "is_preprint": false,
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "overall_score": 4.4,
+      "hook_idea": "「部屋の電気をつける」「棚の小さなつまみを回す」…実はロボットにとって超難関だったこの動作、ついに克服されるかもしれません。",
+      "example_protagonist": {
+        "name": "高橋 さゆり",
+        "age": 42,
+        "job": "車椅子で一人暮らしを送るWebデザイナー"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-20"
+    },
+    {
+      "paperId": "b12747548702099b17f4953e65137b912df99b44",
+      "title": "DM2RM: dual-mode multimodal ranking for target objects and receptacles based on open-vocabulary instructions",
+      "year": 2024,
+      "venue": "Adv. Robotics",
+      "doi": "10.1080/01691864.2025.2469689",
+      "authors": [
+        "Ryosuke Korekata",
+        "Kanta Kaneda",
+        "Shunya Nagashima",
+        "Yuto Imai",
+        "Komei Sugiura"
+      ],
+      "is_preprint": false,
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "overall_score": 4.4,
+      "hook_idea": "「『あのテーブルの上のリモコン、棚に片付けて』…そんな曖昧な一言でロボットが家事をしてくれる未来、知りたくありませんか？」",
+      "example_protagonist": {
+        "name": "佐藤美咲",
+        "age": 35,
+        "job": "共働きで幼い子供を育てるIT企業社員"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-20"
+    },
+    {
+      "paperId": "aefcdb500fed17ddcc2647986908eed7bb073516",
+      "title": "Ultrasound‐Assisted Continence Care Support in an Inpatient Care Setting: A Mixed‐Method Pilot Study",
+      "year": 2025,
+      "venue": "International Journal of Urological Nursing",
+      "doi": "10.1111/ijun.70036",
+      "authors": [
+        "S. Hofstetter",
+        "Madeleine Ritter-Herschbach",
+        "Dominik Behr",
+        "Melina Hager",
+        "Marie‐Luise Turzer"
+      ],
+      "is_preprint": false,
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "overall_score": 4.4,
+      "hook_idea": "おむつ交換のタイミング、毎回『まだ早かった…』とため息をついていませんか？",
+      "example_protagonist": {
+        "name": "佐藤由美",
+        "age": 48,
+        "job": "会社員（要介護の母を在宅介護中）"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-20"
+    }
+  ],
+  "last_updated": "2026-08-22"
+}
