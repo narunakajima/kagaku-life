@@ -40,6 +40,7 @@ BASE_DIR = Path(__file__).parent
 VOCAB_PATH = BASE_DIR / "query_vocabulary.json"
 OUTPUT_PATH = BASE_DIR / "stage1_pool.json"
 TOPICS_QUEUE_PATH = BASE_DIR / "topics_queue.json"
+SHORTLIST_PATH = BASE_DIR / "topics_shortlist.json"
 
 API_URL = "https://api.semanticscholar.org/graph/v1/paper/search/bulk"
 FIELDS = "title,abstract,year,venue,publicationTypes,citationCount,externalIds,authors"
@@ -124,21 +125,52 @@ def search_bulk(ss_query: str, year_from: int, year_to: int) -> dict:
     return http_get_json(url)
 
 
+def _norm_doi(doi: str) -> str:
+    return (doi or "").strip().lower().removeprefix("https://doi.org/")
+
+
 def load_seen_paper_ids() -> set:
-    """topics_queue.jsonに記録済みのSemantic Scholar paperIdを重複排除用に読み込む。
-    ファイルが無い、または該当フィールドが無い場合は空集合を返す（初回実行を想定）。
+    """重複排除用に既知のpaperId・DOIを読み込む（2026-08-21改訂）。
+
+    2つのソースを見る:
+    - topics_queue.json: 採用済みエピソードの references[].doi
+      （このファイルの各エントリはSTAGE1のpaperIdを持たず、doiのみを保持する
+      実際のフォーマットのため、semantic_scholar_idフィールドを見ていた旧実装は
+      機能していなかった）
+    - topics_shortlist.json: 過去のSTAGE4上位候補（採用・未採用問わず）の
+      paperId・doi。未採用（status: "available"）の候補も、検索条件を変えない
+      限りSTAGE1で毎回同じ論文が再浮上してしまうため、重複排除に含める
+      （STAGE2以降の再スクリーニングという無駄なコストを避ける）。
+
+    戻り値はpaperIdとDOI（正規化済み）を区別せず同じsetに入れる
+    （呼び出し側でpaperId・doi両方を同じsetに対してチェックする）。
     """
-    if not TOPICS_QUEUE_PATH.exists():
-        return set()
-    try:
-        data = json.loads(TOPICS_QUEUE_PATH.read_text())
-    except json.JSONDecodeError:
-        return set()
     seen = set()
-    for entry in data.get("queue", []):
-        pid = entry.get("semantic_scholar_id")
-        if pid:
-            seen.add(pid)
+
+    if TOPICS_QUEUE_PATH.exists():
+        try:
+            data = json.loads(TOPICS_QUEUE_PATH.read_text())
+            for entry in data.get("queue", []):
+                for ref in entry.get("references", []):
+                    doi = _norm_doi(ref.get("doi"))
+                    if doi:
+                        seen.add(doi)
+        except json.JSONDecodeError:
+            pass
+
+    if SHORTLIST_PATH.exists():
+        try:
+            data = json.loads(SHORTLIST_PATH.read_text())
+            for entry in data.get("shortlist", []):
+                pid = entry.get("paperId")
+                if pid:
+                    seen.add(pid)
+                doi = _norm_doi(entry.get("doi"))
+                if doi:
+                    seen.add(doi)
+        except json.JSONDecodeError:
+            pass
+
     return seen
 
 
@@ -214,7 +246,8 @@ def run_category(name: str, cat: dict, year_from: int, year_to: int, top_n: int,
     preprint_count = 0
     passing = []
     for pid, paper in all_candidates.items():
-        if pid in seen_ids:
+        doi = _norm_doi((paper.get("externalIds") or {}).get("DOI"))
+        if pid in seen_ids or (doi and doi in seen_ids):
             excluded_dup += 1
             continue
         ok, reason = passes_stage1_prefilter(paper)

@@ -29,6 +29,28 @@ CLAUDE.md「論文選定ロジック（目利きプロセス）」のSTAGE1〜4�
 
 ---
 
+## STEP 0 — 在庫（topics_shortlist.json）を先に確認する（2026-08-21追加）
+
+STAGE1〜4のフル実行はSemantic Scholar検索・Gemini呼び出し（STAGE2〜4）を
+伴うコストのかかる処理であり、かつ**検索条件（`query_vocabulary.json`の
+クエリ・カテゴリweight）を変えずに再実行しても、上位には概ね同じ論文が
+並ぶ**（母集団が短期間でそう変わらないため）。よって、まず
+`topics_shortlist.json` の `status: "available"` 件数を確認する。
+
+- **5件以上残っている場合:** STAGE1〜4のフル実行はスキップし、既存の
+  `available` エントリをそのままSTEP2の「上位候補」として提示する
+  （スコア・フック案・主人公案は生成済みのものを使う）。
+- **5件未満の場合:** 在庫が尽きかけているため、STEP1（STAGE1〜4フル実行）
+  に進む。その際、`kl_paper_search.py` の重複排除は `topics_queue.json`
+  （採用済み）と `topics_shortlist.json`（採用・未採用問わず既出）の両方を
+  見るため、既に見た論文が再スクリーニングされることはない
+  （新規の論文のみがSTAGE2以降に回る）。
+
+この閾値（5件）はSC/LWの「残り◯件以下で補充」に相当する目安で、運用実績を
+見ながら調整してよい。
+
+---
+
 ## STEP 1 — STAGE1・STAGE2を実行し、許可リストを更新する
 
 ```bash
