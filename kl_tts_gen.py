@@ -102,6 +102,7 @@ def main():
     parser.add_argument("--episode", required=True, help="エピソードID（例: kl001）")
     parser.add_argument("--scenes", help="生成するscene_idをカンマ区切りで指定（省略時は全シーン）")
     parser.add_argument("--shorts-only", action="store_true", help="Shortsのみ生成")
+    parser.add_argument("--shorts-scenes", help="Shorts内の生成する番号をカンマ区切りで指定（例: 4）。指定時は自動的に--shorts-only扱い")
     args = parser.parse_args()
 
     if not API_KEY:
@@ -133,7 +134,9 @@ def main():
     if args.scenes:
         target_ids = {int(s) for s in args.scenes.split(",")}
 
-    if not args.shorts_only:
+    shorts_only = args.shorts_only or bool(args.shorts_scenes)
+
+    if not shorts_only:
         for scene in ep["scenes"]:
             sid = scene["scene_id"]
             if target_ids is not None and sid not in target_ids:
@@ -143,15 +146,20 @@ def main():
             out_path = out_dir / f"S{sid:02d}.wav"
             synth(client, scene["narration"], voice_name, out_path, narrator=narrator)
 
-    if args.shorts_only or args.scenes is None:
+    if shorts_only or args.scenes is None:
         # 本編シーンと一言一句同じナレーションなら、別々に生成し直さず本編の
         # 確認済み音声をそのまま流用する（同じテキストでも生成のたびに
         # 声の質が変わりうるため、二重生成は無駄なだけでなく品質のばらつきの
         # 原因にもなる。2026-08-22追加）。
         main_wav_by_text = {scene["narration"]: out_dir / f"S{scene['scene_id']:02d}.wav" for scene in ep["scenes"]}
+        shorts_target_ids = None
+        if args.shorts_scenes:
+            shorts_target_ids = {int(s) for s in args.shorts_scenes.split(",")}
         for shorts in ep.get("shorts", []):
             mid = shorts["shorts_id"]
             for i, s in enumerate(shorts["scenes"], start=1):
+                if shorts_target_ids is not None and i not in shorts_target_ids:
+                    continue
                 out_path = out_dir / f"shorts{mid}_S{i:02d}.wav"
                 reuse_path = main_wav_by_text.get(s["narration"])
                 if reuse_path and reuse_path.exists():

@@ -287,6 +287,7 @@ def main():
     parser.add_argument("--thumbnail-only", action="store_true", help="サムネイルのみ生成")
     parser.add_argument("--no-thumbnail", action="store_true", help="サムネイルを生成しない")
     parser.add_argument("--shorts-only", action="store_true", help="Shortsのみ生成")
+    parser.add_argument("--shorts-scenes", help="Shorts内の生成する番号をカンマ区切りで指定（例: 4）。指定時は自動的に--shorts-only扱い")
     parser.add_argument("--no-qa", action="store_true", help="Gemini Vision QAをスキップ（旧動作）")
     args = parser.parse_args()
 
@@ -307,7 +308,9 @@ def main():
 
     qa_results = []
 
-    if not args.thumbnail_only and not args.shorts_only:
+    shorts_only = args.shorts_only or bool(args.shorts_scenes)
+
+    if not args.thumbnail_only and not shorts_only:
         target_ids = None
         if args.scenes:
             target_ids = {int(s) for s in args.scenes.split(",")}
@@ -322,7 +325,7 @@ def main():
             r["name"] = out_path.name
             qa_results.append(r)
 
-    if not args.no_thumbnail and not args.shorts_only and (args.thumbnail_only or args.scenes is None):
+    if not args.no_thumbnail and not shorts_only and (args.thumbnail_only or args.scenes is None):
         thumb_prompt = f"{BASE_CONTEXT}\n\nThumbnail (16:9): {ep['thumbnail_prompt']}"
         thumb_path = out_dir / "thumbnail.png"
         r = generate_with_qa(client, thumb_prompt, ep["thumbnail_prompt"], thumb_path,
@@ -334,10 +337,15 @@ def main():
             composite_thumbnail_text(thumb_path, headline, ep.get("thumbnail_subcopy", ""))
             print(f"   → テキスト合成: 「{headline}」")
 
-    if args.shorts_only or (not args.thumbnail_only and args.scenes is None):
+    if shorts_only or (not args.thumbnail_only and args.scenes is None):
+        shorts_target_ids = None
+        if args.shorts_scenes:
+            shorts_target_ids = {int(s) for s in args.shorts_scenes.split(",")}
         for shorts in ep.get("shorts", []):
             mid = shorts["shorts_id"]
             for i, s in enumerate(shorts["scenes"], start=1):
+                if shorts_target_ids is not None and i not in shorts_target_ids:
+                    continue
                 style = CHART_CONTEXT if s.get("style") == "chart" else BASE_CONTEXT
                 prompt = f"{style}\n\nScene: {s['image_prompt']}"
                 out_path = out_dir / f"shorts{mid}_S{i:02d}.png"
