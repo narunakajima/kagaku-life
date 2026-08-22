@@ -102,6 +102,12 @@ def main():
     else:
         missing.append(f"output/{vname}")
 
+    shorts_vname = f"{args.episode}_shorts.mp4"
+    if copy_if_exists(desktop_output / shorts_vname, drive_ep_dir / "output" / shorts_vname):
+        copied += 1
+    else:
+        missing.append(f"output/{shorts_vname}")
+
     print(f"\n{copied}件をGoogle Driveに格納しました: {drive_ep_dir}")
     if missing:
         print(f"\n⚠️ 見つからなかったファイル（未生成または未確認の可能性）: {len(missing)}件")

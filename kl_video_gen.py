@@ -55,6 +55,10 @@ CROSSFADE_DURATION = 0.8
 KB_ZOOM_FACTOR = 1.40
 KB_ZOOM_SPEED = 0.0006
 
+# 研究ボイス（Orus）が生活者ボイス（Leda）より聞き取りづらいという指摘のため、
+# ナレーター別に音量を補正する（2026-08-21追加）。
+NARRATOR_VOLUME = {"persona": 1.0, "research": 1.5}
+
 BGM_VOLUME = 0.12
 BGM_FADE_IN = 5
 BGM_FADE_OUT = 6
@@ -77,6 +81,13 @@ TELOP_FONTSIZE = 44
 TELOP_CENTER_Y = 0.88
 TELOP_LINE_SPACING = 64
 
+# Shorts（縦動画）用
+SHORTS_W = 768
+SHORTS_H = 1376
+SHORTS_XFADE = 0.4
+SHORTS_TELOP_FONTSIZE = 48
+SHORTS_TELOP_CENTER_Y = 0.82
+
 
 def run_cmd(cmd: list, label: str = ""):
     print(f"  ▶ {label}")
@@ -94,9 +105,9 @@ def probe_audio_duration(path: Path) -> float:
     return float(json.loads(r.stdout)["format"]["duration"])
 
 
-def make_ken_burns(src: Path, dst: Path, duration: float, effect: str, anchor: tuple = (0.5, 0.5)):
+def make_ken_burns(src: Path, dst: Path, duration: float, effect: str, anchor: tuple = (0.5, 0.5),
+                   w: int = OUTPUT_W, h: int = OUTPUT_H):
     """画像にKen Burnsエフェクトを適用して動画クリップを生成する（SCのmake_ken_burnsと同じ仕組み）。"""
-    w, h = OUTPUT_W, OUTPUT_H
     total_frames = max(1, int(duration * FPS))
     z = KB_ZOOM_FACTOR
     buf_w, buf_h = w * 2, h * 2
@@ -313,7 +324,8 @@ def build_audio_track(all_scenes: list, all_offsets: list, narration_dir: Path,
         idx = len(narr_inputs)
         narr_inputs.append(wav)
         lbl = f"n{i}"
-        narr_filters.append(f"[{idx}:a]adelay={offset_ms}:all=1[{lbl}]")
+        vol = NARRATOR_VOLUME.get(scene.get("narrator"), 1.0)
+        narr_filters.append(f"[{idx}:a]volume={vol},adelay={offset_ms}:all=1[{lbl}]")
         all_labels.append(f"[{lbl}]")
 
     n_narr = len(narr_inputs)
@@ -367,7 +379,7 @@ def burn_telop_global(video: Path, all_scenes: list, all_offsets: list, dst: Pat
             filter_parts.append(
                 f"[{prev}]drawtext=fontfile={font}:textfile={tf}:expansion=none"
                 f":fontcolor=white:fontsize={TELOP_FONTSIZE}"
-                f":borderw=1:bordercolor=white@1.0"
+                f":borderw=7:bordercolor=black@1.0"
                 f":shadowx=2:shadowy=2:shadowcolor=black@0.75"
                 f":x=(w-text_w)/2:y=(h*{cy}-text_h/2):enable={enable}[{out}]"
             )
@@ -493,12 +505,159 @@ def gen_video(episode_id: str, out_dir: Path = None):
           f"  合計尺: {total_dur:.1f}s ({total_dur/60:.1f}分)\n{'━'*60}")
 
 
+def gen_shorts_video(episode_id: str, out_dir: Path = None):
+    """Shorts（9:16縦動画）を1本組み立てる。本編と違いロゴイントロ/アウトロは
+    付けず（短尺のため）、シンプルにシーンをクロスフェード結合するのみ。
+    BGMはbgm_sources.mainを全編通して1トラックのみ使う。
+    """
+    ep_path = BASE_DIR / "episodes" / f"{episode_id}.json"
+    ep = json.loads(ep_path.read_text())
+    shorts_list = ep.get("shorts") or []
+    if not shorts_list:
+        print("⚠️ shortsフィールドがありません。スキップします。")
+        return
+
+    img_dir = DRIVE_BASE / episode_id / "images"
+    narration_dir = DRIVE_BASE / episode_id / "narration"
+
+    if out_dir is None:
+        out_dir = DESKTOP_DIR / episode_id / "output"
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    mid = shorts_list[0]["shorts_id"]
+    scenes = shorts_list[0]["scenes"]
+    print(f"\n{'━'*60}\n  {episode_id} — Shorts動画生成開始（{len(scenes)}シーン）\n{'━'*60}\n")
+
+    with tempfile.TemporaryDirectory() as tmp_str:
+        tmp = Path(tmp_str)
+
+        durations = []
+        for i, scene in enumerate(scenes, start=1):
+            wav = narration_dir / f"shorts{mid}_S{i:02d}.wav"
+            narr_dur = probe_audio_duration(wav) if wav.exists() else 2.0
+            durations.append(max(1.5, narr_dur + NARR_DELAY + 0.3))
+
+        offsets = [0.0]
+        for i in range(1, len(scenes)):
+            offsets.append(offsets[-1] + durations[i - 1] - SHORTS_XFADE)
+        total_dur = offsets[-1] + durations[-1]
+        print(f"  合計尺: {total_dur:.1f}s")
+
+        print("\n--- Ken Burnsクリップ生成 ---")
+        clips = []
+        for i, scene in enumerate(scenes, start=1):
+            img = img_dir / f"shorts{mid}_S{i:02d}.png"
+            dst = tmp / f"kb_shorts_S{i:02d}.mp4"
+            make_ken_burns(img, dst, durations[i - 1], "zoom_in", w=SHORTS_W, h=SHORTS_H)
+            clips.append(dst)
+
+        print("\n--- クロスフェード結合 ---")
+        scenes_video = tmp / "shorts_video.mp4"
+        crossfade_concat_n(clips, durations, scenes_video, xfade_dur=SHORTS_XFADE)
+
+        print("\n--- 音声ミックス ---")
+        narr_inputs, narr_filters, all_labels = [], [], []
+        for i, scene in enumerate(scenes, start=1):
+            wav = narration_dir / f"shorts{mid}_S{i:02d}.wav"
+            if not wav.exists():
+                continue
+            offset_ms = int(offsets[i - 1] * 1000 + NARR_DELAY * 1000)
+            idx = len(narr_inputs)
+            narr_inputs.append(wav)
+            lbl = f"n{i}"
+            vol = NARRATOR_VOLUME.get(scene.get("narrator"), 1.0)
+            narr_filters.append(f"[{idx}:a]volume={vol},adelay={offset_ms}:all=1[{lbl}]")
+            all_labels.append(f"[{lbl}]")
+
+        n_narr = len(narr_inputs)
+        try:
+            bgm_paths = resolve_bgm_paths(ep)
+            bgm_input = bgm_paths["main"]
+            narr_filters.append(_bgm_segment_filter(n_narr, 0.0, total_dur, True, True, "bgm0"))
+            has_bgm = True
+        except FileNotFoundError:
+            print("  ⚠️ BGM未設定のためナレーションのみでミックスします")
+            has_bgm = False
+
+        narr_filters.append(f"{''.join(all_labels)}amix=inputs={n_narr}:duration=longest:normalize=0[narr_mix]")
+        narr_filters.append(f"[narr_mix]apad=whole_dur={total_dur}[narr_padded]")
+        if has_bgm:
+            narr_filters.append(f"[narr_padded][bgm0]amix=inputs=2:duration=first:normalize=0[mix]")
+        else:
+            narr_filters.append(f"[narr_padded]anull[mix]")
+        narr_filters.append(f"[mix]atrim=duration={total_dur:.3f},asetpts=N/SR/TB[aout]")
+
+        inputs_flat = []
+        for wav in narr_inputs:
+            inputs_flat += ["-i", str(wav)]
+        if has_bgm:
+            inputs_flat += ["-i", str(bgm_input)]
+        audio_track = tmp / "audio.aac"
+        run_cmd(
+            [FFMPEG, "-y"] + inputs_flat + [
+                "-filter_complex", ";".join(narr_filters),
+                "-map", "[aout]", "-c:a", "aac", "-b:a", "192k", str(audio_track),
+            ],
+            "音声ミックス",
+        )
+
+        video_with_audio = tmp / "video_with_audio.mp4"
+        run_cmd(
+            [FFMPEG, "-y", "-i", str(scenes_video), "-i", str(audio_track),
+             "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "copy", "-shortest",
+             str(video_with_audio)],
+            "映像+音声結合",
+        )
+
+        print("\n--- テロップ焼き込み ---")
+        shutil.copy(str(FONT_REGULAR), str(FONT_TMP_REGULAR))
+        font = str(FONT_TMP_REGULAR)
+        filter_parts, prev, idx = [], "0:v", 0
+        for i, (scene, offset, dur) in enumerate(zip(scenes, offsets, durations)):
+            t_start = offset + NARR_DELAY
+            t_end = offset + dur
+            tf = tmp / f"telop_{idx}.txt"
+            tf.write_text(scene["narration"].replace("\r", ""), encoding="utf-8")
+            enable = f"between(t\\,{t_start:.2f}\\,{t_end:.2f})"
+            out = f"dv{idx}"
+            filter_parts.append(
+                f"[{prev}]drawtext=fontfile={font}:textfile={tf}:expansion=none"
+                f":fontcolor=white:fontsize={SHORTS_TELOP_FONTSIZE}"
+                f":borderw=7:bordercolor=black@1.0"
+                f":shadowx=2:shadowy=2:shadowcolor=black@0.75"
+                f":x=(w-text_w)/2:y=(h*{SHORTS_TELOP_CENTER_Y}-text_h/2):enable={enable}[{out}]"
+            )
+            prev = out
+            idx += 1
+
+        output_file = out_dir / f"{episode_id}_shorts.mp4"
+        run_cmd(
+            [
+                FFMPEG, "-y", "-i", str(video_with_audio),
+                "-filter_complex", ";".join(filter_parts),
+                "-map", f"[{prev}]", "-map", "0:a",
+                "-c:v", "libx264", "-crf", "18", "-preset", "slow", "-c:a", "copy",
+                str(output_file),
+            ],
+            f"テロップ焼き込み（{idx}枚）",
+        )
+
+    print(f"\n{'━'*60}\n  ✓ Shorts完成: {output_file}\n"
+          f"  合計尺: {total_dur:.1f}s\n{'━'*60}")
+
+
 def main():
     parser = argparse.ArgumentParser(description="くらしを変える科学 動画生成")
     parser.add_argument("--episode", required=True, help="エピソードID（例: kl001）")
     parser.add_argument("--out", help="出力先ディレクトリ（省略時: ~/Desktop/kagaku-life/{episode}/output）")
+    parser.add_argument("--shorts-only", action="store_true", help="Shorts動画のみ生成（本編はスキップ）")
+    parser.add_argument("--no-shorts", action="store_true", help="Shorts動画を生成しない（本編のみ）")
     args = parser.parse_args()
-    gen_video(args.episode, Path(args.out).expanduser() if args.out else None)
+    out_dir = Path(args.out).expanduser() if args.out else None
+    if not args.shorts_only:
+        gen_video(args.episode, out_dir)
+    if not args.no_shorts:
+        gen_shorts_video(args.episode, out_dir)
 
 
 if __name__ == "__main__":

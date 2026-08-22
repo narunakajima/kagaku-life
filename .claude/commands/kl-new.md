@@ -267,13 +267,22 @@ python3 kl_finalize.py --episode kl{NNN}
 python3 kl_video_gen.py --episode kl{NNN}
 ```
 
-完成後、複数箇所（ティザー・ロゴイントロ・本編冒頭・本編中盤・ロゴアウトロ）を
-フレーム抽出して目視確認し、`SendUserFile` でユーザーに送る。フィードバックが
-あれば該当工程（画像/音声/テロップ/動画生成）に戻って修正し、**修正後は必ず
-`kl_finalize.py` でGoogle Driveへ同期してから `kl_video_gen.py` を再実行する**
-（`kl_video_gen.py`はGoogle Drive側の素材を読むため、Desktop側の修正だけでは
-反映されない。kl001制作時に実際にこれが原因で修正が反映されない事故が
-起きている）。
+引数なしで本編（`kl{NNN}.mp4`）とShorts（`kl{NNN}_shorts.mp4`）の両方が
+生成される（Shortsのみ再生成したい場合は `--shorts-only`、本編のみは
+`--no-shorts`）。
+
+完成後、複数箇所（本編: ティザー・ロゴイントロ・本編冒頭・本編中盤・
+ロゴアウトロ、Shorts: 冒頭・中盤・末尾）をフレーム抽出して目視確認し、
+`SendUserFile` でユーザーに送る。フィードバックがあれば該当工程（画像/音声/
+テロップ/動画生成）に戻って修正し、**修正後は必ず `kl_finalize.py` で
+Google Driveへ同期してから `kl_video_gen.py` を再実行する**（`kl_video_gen.py`
+はGoogle Drive側の素材を読むため、Desktop側の修正だけでは反映されない。
+kl001制作時に実際にこれが原因で修正が反映されない事故が起きている）。
+
+**テロップの描画設定（フォント・縁取り太さ・色等）は `kl_telop_gen.py` と
+`kl_video_gen.py` の両方に別々の実装があり、片方だけ直すと反映漏れが起きる
+（kl001制作時に実際に発生）。テロップの見た目を変更する際は両ファイルを
+同時に修正すること。**
 
 ---
 
