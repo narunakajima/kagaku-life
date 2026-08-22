@@ -1,9 +1,9 @@
 {
-  "_comment": "制作キュー。配列の先頭が次に制作するエピソード（SC/LWと同じ並び順規約）。statusはpending(候補)→confirmed(STAGE5ゴーサイン済み・制作パイプライン未着手)→in_production→published。kl_paper_search.pyはsemantic_scholar_idを既出として重複排除に使う。",
+  "_comment": "制作キュー。配列の先頭が次に制作するエピソード（SC/LWと同じ並び順規約）。statusはpending(候補)→confirmed(STAGE5ゴーサイン済み・制作パイプライン未着手)→in_production(制作中)→produced(画像・音声・動画すべて完成、公開待ち。公開前に5本ストックしてから公開する方針のため、この状態のエピソードが複数溜まりうる)→published(YouTube公開済み)。kl_paper_search.pyはsemantic_scholar_idを既出として重複排除に使う。",
   "queue": [
     {
       "episode_id": "kl001",
-      "status": "confirmed",
+      "status": "produced",
       "title": "家事ロボットの潮流：複数の独立研究が同時に家事の壁を崩しつつある",
       "format": "multi_paper",
       "category": "home_robot",
@@ -50,5 +50,5 @@
     }
   ],
   "total_topics": 1,
-  "last_updated": "2026-08-20"
+  "last_updated": "2026-08-22"
 }
