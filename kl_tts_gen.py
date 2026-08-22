@@ -3,7 +3,7 @@ kl_tts_gen.py — くらしを変える科学 ナレーション音声生成ス�
 
 episodes/kl{NNN}.json の各シーンのnarration文を、scene.narrator（persona/research）
 に応じて narration_voices（エピソードごとに選定済みのボイス名）で読み分け、
-gemini-3.1-flash-tts-previewで音声を生成する（CLAUDE.md「ストーリー構成と
+gemini-2.5-pro-preview-ttsで音声を生成する（CLAUDE.md「ストーリー構成と
 2ナレーターボイス制」参照）。
 
 narration_voicesが未設定のエピソードは、先にボイス選定（聴き比べ）を行ってから
@@ -21,6 +21,7 @@ episodes/kl{NNN}.jsonに記録すること。
 import argparse
 import json
 import os
+import shutil
 import sys
 import time
 import wave
@@ -143,11 +144,21 @@ def main():
             synth(client, scene["narration"], voice_name, out_path, narrator=narrator)
 
     if args.shorts_only or args.scenes is None:
+        # 本編シーンと一言一句同じナレーションなら、別々に生成し直さず本編の
+        # 確認済み音声をそのまま流用する（同じテキストでも生成のたびに
+        # 声の質が変わりうるため、二重生成は無駄なだけでなく品質のばらつきの
+        # 原因にもなる。2026-08-22追加）。
+        main_wav_by_text = {scene["narration"]: out_dir / f"S{scene['scene_id']:02d}.wav" for scene in ep["scenes"]}
         for shorts in ep.get("shorts", []):
             mid = shorts["shorts_id"]
             for i, s in enumerate(shorts["scenes"], start=1):
-                voice_name = voices[s["narrator"]]
                 out_path = out_dir / f"shorts{mid}_S{i:02d}.wav"
+                reuse_path = main_wav_by_text.get(s["narration"])
+                if reuse_path and reuse_path.exists():
+                    shutil.copy(reuse_path, out_path)
+                    print(f"✅ {out_path.name}（本編{reuse_path.name}を流用）")
+                    continue
+                voice_name = voices[s["narrator"]]
                 synth(client, s["narration"], voice_name, out_path, narrator=s["narrator"])
 
     print(f"\n完了。保存先: {out_dir}")
