@@ -229,7 +229,14 @@ python3 kl_telop_gen.py --episode kl{NNN} plan
 CLAUDE.md「BGMパイプライン」の手順に従う（トーンは必ず温かく・希望が持てる・
 押し付けがましくない。禁止語: epic/battle/war/dark/aggressive/horror）。
 
-1. Freesoundから役割別（intro/main/outro）に候補をダウンロード:
+**SC/LWと同じく、候補は「Freesound新規ダウンロード」だけでなく「`bgm_library.json`
+の既存曲」も含めて役割ごとに揃える。** 過去エピソードで確認済みの曲は品質・
+トーンの信頼度が高く、新規ダウンロードだけに頼ると同じ探索を毎回繰り返すことになる。
+
+1. `bgm_library.json` を読み、役割のトーン（intro=好奇心・静かな導入、
+   main=研究紹介への高まり、outro=温かい余韻）に近い`tags`を持つ既存曲を
+   役割ごとに1〜2曲ピックアップする（同一エピソードでの重複使用は避ける）。
+2. Freesoundから役割別（intro/main/outro）に新規候補を1曲ずつダウンロード:
    ```bash
    mkdir -p "$HOME/Desktop/kagaku-life/kl{NNN}/BGM"
    FREESOUND_API_KEY=$FREESOUND_API_KEY python3 "$HOME/lamp-whisper/freesound_download.py" \
@@ -238,15 +245,19 @@ CLAUDE.md「BGMパイプライン」の手順に従う（トーンは必ず温�
      --round 0 --start-slot 1 \
      --library "$HOME/kagaku-life/bgm_library.json"
    ```
-2. `kl_bgm_qa.py --dir` でボーカル混入チェック
-3. 役割ごとに複数候補がある場合、Claudeがテキスト情報（曲名・タグ・QAの音の
-   説明）だけで1曲に絞り込む
-4. `kl_bgm_final_check.py --episode kl{NNN}` で実音声+制作確認書をGeminiに渡し、
+3. 新規ダウンロード分のみ `kl_bgm_qa.py --dir` でボーカル混入チェック
+   （ライブラリ曲は過去のQA実績があるため再チェック不要）
+4. 役割ごとに複数候補（ライブラリ+新規）がある場合、Claudeがテキスト情報
+   （曲名・タグ・QAの音の説明）だけで1曲に絞り込む
+5. `kl_bgm_final_check.py --episode kl{NNN}` で実音声+制作確認書をGeminiに渡し、
    最終検証（テキストだけでは質感を見誤ることがあるため省略しない）
-5. 条件付き採用・差し替えが出た場合は該当役割だけ差し替えて再検証する
-6. 承認が得られたら `kl_bgm_library.py --add --episode kl{NNN} --role {role} --file {path} --stem {name}`
-   で本登録（Google Driveへ移動・`bgm_sources`に記録）
-7. CC BYライセンス曲があれば `kl_inject_bgm_credit.py --episode kl{NNN} --credit-file {path}`
+6. 条件付き採用・差し替えが出た場合は該当役割だけ差し替えて再検証する
+7. 承認が得られたら本登録する:
+   - 新規曲の場合: `kl_bgm_library.py --add --episode kl{NNN} --role {role} --file {path} --stem {name}`
+     （Google Driveへ移動・`bgm_sources`に記録・ライブラリに新規追加）
+   - 既存ライブラリ曲を採用した場合: `kl_bgm_library.py --use-library --episode kl{NNN} --role {role} --stem {library_id}`
+     （ダウンロード・移動不要、`bgm_sources`に既存パスを記録・`used_in`を更新）
+8. CC BYライセンス曲があれば `kl_inject_bgm_credit.py --episode kl{NNN} --credit-file {path}`
    でクレジットを概要欄に注入
 
 ---
