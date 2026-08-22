@@ -276,13 +276,14 @@ def resolve_bgm_paths(ep: dict) -> dict:
 
 # CLAUDE.md「シーンタイプ体系とBGM3曲構成の対応」の役割表そのもの。
 # 境界計算はこの役割マッピングに基づいて行う（type名を個別にハードコード
-# しない）ことで、シーンの並び順（例: citationがcontextより後に来る等）に
-# 依存せず「intro役割のtypeがすべてintro扱いになる」ことを保証する
-# （2026-08-22修正: 旧実装はcontext/findingのみを境界1としており、
-# citationがcontextより後にあるとintroから漏れてmain扱いになる不具合があった）。
+# しない）。
+# 2026-08-22改訂: 「自己紹介＋課題の紹介（〜context）」と「研究の紹介
+# （citation〜）」で区切る方が物語上自然、というユーザーの判断により、
+# contextをintro側に、citationをmain側に変更した（旧: context=main,
+# citation=intro）。
 BGM_ROLE_BY_TYPE = {
-    "teaser": "intro", "hook": "intro", "citation": "intro",
-    "context": "main", "finding": "main", "data": "main",
+    "teaser": "intro", "hook": "intro", "context": "intro",
+    "citation": "main", "finding": "main", "data": "main",
     "impact": "outro", "closing": "outro",
 }
 
