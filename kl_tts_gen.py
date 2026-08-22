@@ -34,14 +34,28 @@ BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 
 API_KEY = os.environ.get("GEMINI_API_KEY", "")
-MODEL = "gemini-3.1-flash-tts-preview"
+# gemini-3.1-flash-tts-preview はテキスト先頭に演技指導（スタイル指示）を付けると
+# finish_reason=OTHER で空データが返る不具合がある（lamp-whisperのlw_tts_gen.pyで
+# 発覚・対処済み）。同じ理由でgemini-2.5-pro-preview-ttsに切り替える（2026-08-21）。
+MODEL = "gemini-2.5-pro-preview-tts"
 REQUEST_TIMEOUT_MS = 60_000
 
+# 研究ボイス（Orus）は稀に音程が高く裏返ることがあったため、落ち着いた低めの
+# 音程を保つよう明示的にスタイル指示を付ける。
+STYLE_PREFIX = {
+    "research": (
+        "Say in a calm, composed, professional narrator's voice with a stable, "
+        "moderate-to-low pitch throughout — do not let the pitch rise or break "
+        "upward at any point: "
+    ),
+}
 
-def synth(client: genai.Client, text: str, voice_name: str, out_path: Path) -> bool:
+
+def synth(client: genai.Client, text: str, voice_name: str, out_path: Path, narrator: str = None) -> bool:
+    prefix = STYLE_PREFIX.get(narrator, "")
     resp = client.models.generate_content(
         model=MODEL,
-        contents=text,
+        contents=f"{prefix}{text}" if prefix else text,
         config=types.GenerateContentConfig(
             response_modalities=["AUDIO"],
             speech_config=types.SpeechConfig(
@@ -105,7 +119,7 @@ def main():
             narrator = scene["narrator"]
             voice_name = voices[narrator]
             out_path = out_dir / f"S{sid:02d}.wav"
-            synth(client, scene["narration"], voice_name, out_path)
+            synth(client, scene["narration"], voice_name, out_path, narrator=narrator)
 
     if args.shorts_only or args.scenes is None:
         for shorts in ep.get("shorts", []):
@@ -113,7 +127,7 @@ def main():
             for i, s in enumerate(shorts["scenes"], start=1):
                 voice_name = voices[s["narrator"]]
                 out_path = out_dir / f"shorts{mid}_S{i:02d}.wav"
-                synth(client, s["narration"], voice_name, out_path)
+                synth(client, s["narration"], voice_name, out_path, narrator=s["narrator"])
 
     print(f"\n完了。保存先: {out_dir}")
 

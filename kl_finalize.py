@@ -95,6 +95,13 @@ def main():
             else:
                 missing.append(f"narration/{wname}")
 
+    desktop_output = DESKTOP_DIR / args.episode / "output"
+    vname = f"{args.episode}.mp4"
+    if copy_if_exists(desktop_output / vname, drive_ep_dir / "output" / vname):
+        copied += 1
+    else:
+        missing.append(f"output/{vname}")
+
     print(f"\n{copied}件をGoogle Driveに格納しました: {drive_ep_dir}")
     if missing:
         print(f"\n⚠️ 見つからなかったファイル（未生成または未確認の可能性）: {len(missing)}件")

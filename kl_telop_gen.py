@@ -59,7 +59,24 @@ TELOP_LINE_SPACING = 72
 TELOP_CENTER_Y = 0.85        # 下部寄り（画面下15%付近）に表示
 GAP = 0.15                   # カード間の最小間隔（秒）
 
-BREAK_CHARS = "、。！？　 "
+# 半角?!や閉じ括弧（』」）も区切り候補に含める（2026-08-21追加。
+# 半角の?!がBREAK_CHARSになく、強制分割が単語の途中にかかる問題が
+# 実際の動画で発覚したため）。
+BREAK_CHARS = "、。！？!?　 』」）"
+
+# 句読点が無い長い文でも複合語の途中で切らないよう、助詞の直後を安全な区切り候補にする
+# （例:「取り組む」の途中で切れる事故を防ぐ。長い助詞から先にマッチさせる）
+# 1文字の助詞は「やり遂げる」の「や」のように単語の先頭と偶然一致し、誤検出（本当は
+# 単語の途中なのに区切ってしまう）のリスクが高い。実際に「や」で誤爆する事故が
+# 発生したため、1文字候補は誤爆リスクの低いものだけに絞る
+# （を/が/へ/のは単語の先頭に来ることが稀で比較的安全、は/に/で/と/も/し/やは
+# 「早い」「匂い」「出る」「特に」「もの」「知る」「やり」等、単語の先頭と衝突しやすいため除外）。
+PARTICLES = sorted(
+    ["ながら", "けれど", "けども", "ばかり", "だけど", "ので", "のに", "から",
+     "まで", "より", "だけ", "など", "しか", "こそ", "でも", "たら", "れば",
+     "ても", "つつ", "を", "が", "へ", "の"],
+    key=len, reverse=True,
+)
 
 
 def get_wav_duration(wav_path: Path) -> float:
@@ -119,6 +136,17 @@ def chunk_narration(text: str, max_chars: int = MAX_LINE_CHARS) -> list:
                 if window[i] in BREAK_CHARS:
                     split_pos = i + 1
                     break
+        if split_pos is None:
+            # 句読点が無い場合、助詞の直後を安全な区切りとして探す
+            # （複合語の途中で切れるのを防ぐ。max_charsに近い位置を優先）
+            best = None
+            for i in range(max(0, max_chars - 8), min(len(window), max_chars + 5)):
+                for p in PARTICLES:
+                    if window[i - len(p):i] == p and i - len(p) >= 1:
+                        if best is None or abs(i - max_chars) < abs(best - max_chars):
+                            best = i
+                        break
+            split_pos = best
         if split_pos is None:
             split_pos = max_chars
         split_pos = _nearest_safe_split(remaining, split_pos)
@@ -217,10 +245,18 @@ def plan_telop_cards(narration: str, wav_path: Path, duration: float) -> list:
         cards.append({"lines": [chunk], "start": start_t, "end": end_t})
         s_pos += n
 
-    # カード間に最小GAPを確保
+    # カード間に最小GAPを確保しつつ、各カードの最小表示時間も保証する
+    # （startだけ後ろにずらしてendをそのままにすると、表示時間がほぼ0になり
+    # 「一瞬で消える」カードが発生するため、ずらした分だけendも押す）
+    MIN_CARD_DUR = 0.5
     for i in range(1, len(cards)):
-        if cards[i]["start"] < cards[i - 1]["end"] + GAP:
-            cards[i]["start"] = round(cards[i - 1]["end"] + GAP, 2)
+        min_start = round(cards[i - 1]["end"] + GAP, 2)
+        if cards[i]["start"] < min_start:
+            shift = min_start - cards[i]["start"]
+            cards[i]["start"] = min_start
+            cards[i]["end"] = round(cards[i]["end"] + shift, 2)
+        if cards[i]["end"] - cards[i]["start"] < MIN_CARD_DUR:
+            cards[i]["end"] = round(cards[i]["start"] + MIN_CARD_DUR, 2)
 
     return cards
 
@@ -284,7 +320,7 @@ def burn_telop(video: Path, cards: list, dst: Path, tmp: Path):
                 f":textfile={tf}"
                 f":expansion=none"
                 f":fontcolor=white:fontsize={TELOP_FONTSIZE}"
-                f":borderw=1:bordercolor=white@1.0"
+                f":borderw=4:bordercolor=black@1.0"
                 f":shadowx=2:shadowy=2:shadowcolor=black@0.75"
                 f":x=(w-text_w)/2"
                 f":y=({y_expr})"
