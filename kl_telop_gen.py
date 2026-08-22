@@ -320,7 +320,7 @@ def burn_telop(video: Path, cards: list, dst: Path, tmp: Path):
                 f":textfile={tf}"
                 f":expansion=none"
                 f":fontcolor=white:fontsize={TELOP_FONTSIZE}"
-                f":borderw=4:bordercolor=black@1.0"
+                f":borderw=7:bordercolor=black@1.0"
                 f":shadowx=2:shadowy=2:shadowcolor=black@0.75"
                 f":x=(w-text_w)/2"
                 f":y=({y_expr})"

@@ -74,7 +74,8 @@ FONT_TMP_BOLD = Path("/tmp/kl_font_bold.ttc")
 FONT_TMP_REGULAR = Path("/tmp/kl_font_regular.ttc")
 
 CHANNEL_NAME = "幸せな未来のサイエンス"
-OUTRO_LINE1 = "幸せな未来のサイエンス"
+OFFICIAL_SITE = "kagaku-life.com"
+OUTRO_LINE1 = OFFICIAL_SITE
 OUTRO_LINE2 = "毎週更新・チャンネル登録お願いします"
 
 TELOP_FONTSIZE = 44
