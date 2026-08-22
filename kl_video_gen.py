@@ -28,6 +28,8 @@ import sys
 import tempfile
 from pathlib import Path
 
+from PIL import ImageFont
+
 sys.stdout.reconfigure(line_buffering=True)
 
 BASE_DIR = Path(__file__).parent
@@ -362,6 +364,20 @@ def build_audio_track(all_scenes: list, all_offsets: list, narration_dir: Path,
     )
 
 
+def _fit_font_size(text: str, font_path: Path, max_size: int, max_width: int, min_size: int = 32) -> int:
+    """指定した最大幅に収まるまでフォントサイズを縮小する（2026-08-22追加。
+    ティザーの大型テロップが長い文で画面端からはみ出す問題への対処）。
+    """
+    size = max_size
+    while size > min_size:
+        font = ImageFont.truetype(str(font_path), size)
+        w = font.getbbox(text)[2]
+        if w <= max_width:
+            return size
+        size -= 4
+    return min_size
+
+
 def burn_telop_global(video: Path, all_scenes: list, all_offsets: list, dst: Path, tmp: Path):
     """全シーンのtelop_cards（シーン内相対時刻）にシーンのグローバルオフセットを加算し、
     動画全体にdrawtextで焼き込む（kl_telop_gen.pyのburn_telopと同じ仕組み）。
@@ -386,9 +402,12 @@ def burn_telop_global(video: Path, all_scenes: list, all_offsets: list, dst: Pat
             if is_teaser:
                 # ティザーはSCのキネティック字幕（画面中央・大型フォント）を踏襲し、
                 # 通常の下部テロップと差別化してフックの強さを出す（2026-08-22追加）。
+                # 長い文で画面端からはみ出さないよう、幅に応じてフォントサイズを縮小する
+                # （2026-08-22追加。S04のような長めのフレーズではみ出す事故が実際に発生）。
+                fs = _fit_font_size(line, FONT_BOLD, TEASER_TELOP_FONTSIZE, int(OUTPUT_W * 0.92))
                 filter_parts.append(
                     f"[{prev}]drawtext=fontfile={font_bold}:textfile={tf}:expansion=none"
-                    f":fontcolor=white:fontsize={TEASER_TELOP_FONTSIZE}"
+                    f":fontcolor=white:fontsize={fs}"
                     f":borderw=9:bordercolor=black@1.0"
                     f":x=(w-text_w)/2:y=(h*0.5-text_h/2):enable={enable}[{out}]"
                 )

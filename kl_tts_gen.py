@@ -22,6 +22,7 @@ import argparse
 import json
 import os
 import sys
+import time
 import wave
 from pathlib import Path
 
@@ -36,36 +37,56 @@ DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 API_KEY = os.environ.get("GEMINI_API_KEY", "")
 # gemini-3.1-flash-tts-preview はテキスト先頭に演技指導（スタイル指示）を付けると
 # finish_reason=OTHER で空データが返る不具合がある（lamp-whisperのlw_tts_gen.pyで
-# 発覚・対処済み）。同じ理由でgemini-2.5-pro-preview-ttsに切り替える（2026-08-21）。
+# 発覚・対処済み）。gemini-2.5-pro-preview-ttsに切り替える（2026-08-21）。
+# 2026-08-22追記: gemini-2.5-pro-preview-ttsでも演技指導の有無に関わらず
+# finish_reason=OTHERで空データが返ることが稀にある（一過性の不具合で、
+# 演技指導固有の問題ではない）。lw_tts_gen.pyと同じくリトライで対処する。
 MODEL = "gemini-2.5-pro-preview-tts"
 REQUEST_TIMEOUT_MS = 60_000
+MAX_RETRIES = 5
 
-# 研究ボイス（Orus）は稀に音程が高く裏返ることがあったため、落ち着いた低めの
-# 音程を保つよう明示的にスタイル指示を付ける。
+# 研究ボイス（Orus）は稀に音程が高く裏返ることがあり、また短いフレーズ
+# （Shorts等）では雰囲気が暗く/硬く聞こえがちなため、落ち着いた低めの音程を
+# 保ちつつ、チャンネルの温かいトーンに合う明るさを明示的に指示する。
 STYLE_PREFIX = {
     "research": (
-        "Say in a calm, composed, professional narrator's voice with a stable, "
-        "moderate-to-low pitch throughout — do not let the pitch rise or break "
-        "upward at any point: "
+        "Say in an energetic, warm, upbeat documentary-narrator voice, at a "
+        "brisk and lively speaking pace — enthusiastic and engaging, never "
+        "flat, cold, heavy, or somber. Keep a stable, moderate-to-low pitch "
+        "and do not let it rise or break upward at any point: "
     ),
 }
 
 
 def synth(client: genai.Client, text: str, voice_name: str, out_path: Path, narrator: str = None) -> bool:
     prefix = STYLE_PREFIX.get(narrator, "")
-    resp = client.models.generate_content(
-        model=MODEL,
-        contents=f"{prefix}{text}" if prefix else text,
-        config=types.GenerateContentConfig(
-            response_modalities=["AUDIO"],
-            speech_config=types.SpeechConfig(
-                voice_config=types.VoiceConfig(
-                    prebuilt_voice_config=types.PrebuiltVoiceConfig(voice_name=voice_name)
-                )
-            ),
+    prompt = f"{prefix}{text}" if prefix else text
+    config = types.GenerateContentConfig(
+        response_modalities=["AUDIO"],
+        speech_config=types.SpeechConfig(
+            voice_config=types.VoiceConfig(
+                prebuilt_voice_config=types.PrebuiltVoiceConfig(voice_name=voice_name)
+            )
         ),
     )
-    data = resp.candidates[0].content.parts[0].inline_data.data
+    data = None
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            resp = client.models.generate_content(model=MODEL, contents=prompt, config=config)
+            candidate = resp.candidates[0] if resp.candidates else None
+            parts = candidate.content.parts if (candidate and candidate.content) else None
+            if parts:
+                data = parts[0].inline_data.data
+                break
+            reason = f"空データ（finish_reason={getattr(candidate, 'finish_reason', '?')}）"
+        except Exception as e:
+            reason = f"{type(e).__name__}: {e}"
+        if attempt < MAX_RETRIES:
+            print(f"  ⚠️ {out_path.name}: {reason}（{attempt}回目）、リトライ")
+            time.sleep(2)
+    if data is None:
+        print(f"❌ {out_path.name}: {MAX_RETRIES}回試行して失敗", file=sys.stderr)
+        return False
     with wave.open(str(out_path), "wb") as wf:
         wf.setnchannels(1)
         wf.setsampwidth(2)
