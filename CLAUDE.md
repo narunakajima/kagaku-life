@@ -345,11 +345,23 @@ samurai-chroniclesのBGMパイプライン（Freesound検索→音声QA→ライ
   （壮大・攻撃的・悲壮すぎる曲は番組のトーンと合わない）
 - 役割とトーンの対応:
 
-| 役割 | 対象シーン | トーン | クエリ例 |
+| 役割 | 想定シーン | トーン | クエリ例 |
 |---|---|---|---|
-| intro（序盤） | teaser〜citation | 好奇心・静かな導入 | `"curious piano"` |
-| main（中盤） | context〜data | 共感できる悩み〜研究紹介への高まり | `"warm uplifting"` |
+| intro（序盤） | teaser・hook（・citationが早い位置にある場合はcitationも） | 好奇心・静かな導入 | `"curious piano"` |
+| main（中盤） | context〜data（実際の並び順でcitationがcontextより後にある場合はcitationもここに含まれる） | 共感できる悩み〜研究紹介への高まり | `"warm uplifting"` |
 | outro（終盤） | impact〜closing | 温かい余韻・小さな幸せ | `"heartfelt strings"` |
+
+**2026-08-22訂正:** 当初「intro=teaser〜citation」「main=context〜data」と
+併記していたが、これは矛盾を含んでいた。BGMは連続した3区間しか作れないため、
+実際のシーン並び順で`citation`が`context`より後に来る構成（企画書のストーリー
+構成`hook→context→citation→finding`に従う場合はこちらが標準）では、
+citationは構造上mainの区間に含まれてしまう（introから抜け出してmainに入った
+後、再びintroへ戻ることはできないため）。`kl_video_gen.py`の境界計算は
+シーンtype個別のハードコードではなく、上記の役割マッピング
+（`teaser`/`hook`/`citation`=intro、`context`/`finding`/`data`=main、
+`impact`/`closing`=outro）に基づき「実際の並び順で最初にintro以外の役割に
+なった地点」を境界1とする実装にした。citationを確実にintro区間に含めたい
+場合は、シーンの並び順自体をcontextより前（hookの直後）に配置する必要がある。
 
 **構成スクリプト:**
 - `kl_bgm_qa.py` — BGM候補の音声QA（Geminiの音声理解でボーカル・台詞混入を

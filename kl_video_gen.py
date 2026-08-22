@@ -274,16 +274,29 @@ def resolve_bgm_paths(ep: dict) -> dict:
     raise FileNotFoundError("bgm_sourcesが3役割とも設定されていません（kl_bgm_library.py --add で登録してください）")
 
 
+# CLAUDE.md「シーンタイプ体系とBGM3曲構成の対応」の役割表そのもの。
+# 境界計算はこの役割マッピングに基づいて行う（type名を個別にハードコード
+# しない）ことで、シーンの並び順（例: citationがcontextより後に来る等）に
+# 依存せず「intro役割のtypeがすべてintro扱いになる」ことを保証する
+# （2026-08-22修正: 旧実装はcontext/findingのみを境界1としており、
+# citationがcontextより後にあるとintroから漏れてmain扱いになる不具合があった）。
+BGM_ROLE_BY_TYPE = {
+    "teaser": "intro", "hook": "intro", "citation": "intro",
+    "context": "main", "finding": "main", "data": "main",
+    "impact": "outro", "closing": "outro",
+}
+
+
 def compute_bgm_segments(bgm_paths: dict, main_scenes: list, main_offsets: list,
                          intro_block_dur: float, total_dur: float) -> list:
-    """CLAUDE.md「境界計算ルール」: 境界1=最初のcontext/findingシーン開始、
-    境界2=最初のimpactシーン開始（いずれも本編=main_scenes内でのオフセット、
+    """CLAUDE.md「境界計算ルール」: 境界1=最初のmain役割シーン開始、
+    境界2=最初のoutro役割シーン開始（いずれも本編=main_scenes内でのオフセット、
     intro_block_dur=ティザー+ロゴイントロの尺を加算してグローバル時刻にする）。
     """
-    types = [s.get("type", "") for s in main_scenes]
+    roles = [BGM_ROLE_BY_TYPE.get(s.get("type", ""), "main") for s in main_scenes]
     n = len(main_scenes)
-    b1_idx = next((i for i, t in enumerate(types) if t in ("context", "finding")), n // 3)
-    b2_idx = next((i for i, t in enumerate(types) if t == "impact"), n * 2 // 3)
+    b1_idx = next((i for i, r in enumerate(roles) if r != "intro"), n // 3)
+    b2_idx = next((i for i, r in enumerate(roles) if r == "outro"), n * 2 // 3)
     if b2_idx <= b1_idx:
         b2_idx = min(max(b1_idx + 1, n * 2 // 3), n - 1)
 
@@ -658,6 +671,7 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
             hook_end = durations[0]
             for i, text in enumerate(hook_lines[:2]):
                 fs, y = SHORTS_HOOK_CONFIGS[i]
+                fs = _fit_font_size(text, FONT_BOLD, fs, int(SHORTS_W * 0.92))
                 tf = tmp / f"hook_{i}.txt"
                 tf.write_text(text.replace("\r", ""), encoding="utf-8")
                 bw = 9 if i == 0 else 7
@@ -678,9 +692,10 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
             tf.write_text(scene["narration"].replace("\r", ""), encoding="utf-8")
             enable = f"between(t\\,{t_start:.2f}\\,{t_end:.2f})"
             out = f"dv{idx}"
+            fs = _fit_font_size(scene["narration"], FONT_REGULAR, SHORTS_TELOP_FONTSIZE, int(SHORTS_W * 0.92))
             filter_parts.append(
                 f"[{prev}]drawtext=fontfile={font}:textfile={tf}:expansion=none"
-                f":fontcolor=white:fontsize={SHORTS_TELOP_FONTSIZE}"
+                f":fontcolor=white:fontsize={fs}"
                 f":borderw=7:bordercolor=black@1.0"
                 f":shadowx=2:shadowy=2:shadowcolor=black@0.75"
                 f":x=(w-text_w)/2:y=(h*{SHORTS_TELOP_CENTER_Y}-text_h/2):enable={enable}[{out}]"
