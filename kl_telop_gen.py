@@ -291,18 +291,23 @@ def plan_telop_cards(narration: str, wav_path: Path, duration: float) -> list:
             char_start[i] = s
             char_end[i] = s + avg_pace
 
-        # 末尾（最後のマッチより後）: 既知区間の末尾からペースで順に外挿
-        # （インデックスクランプではなく時刻を積み上げるため、常に単調増加する）。
-        # 音声の実際の長さ（duration）を超えないようクランプする（2026-08-23追加）。
-        # クランプしないと、Whisperが台本末尾を認識できなかった場合に外挿が
-        # 音声の終端を超えてしまい、テロップがクロスフェード先の次シーンの
-        # テロップと同じ時間帯に重なって表示される事故が実際の動画（kl002、
-        # S12→S13境界）で発覚した。
+        # 末尾（最後のマッチより後）: 既知区間の末尾から音声終端（duration）までの
+        # 「実際に残っている時間」を文字数で比例配分する（2026-08-23再改訂）。
+        # 当初は既知区間の平均ペース（avg_pace）で外挿してからdurationで
+        # クランプしていたが、avg_paceがdurationまでの実際の残り時間より
+        # 大きい場合、複数文字がdurationに丸められて同じ時刻に collapse し、
+        # 末尾カードの表示時間がほぼ0秒になる事故が実際の動画（kl002 S07）で
+        # 発覚した。残り時間を残り文字数で単純に割ることで、常にdurationに
+        # ちょうど収まる自然な配分になり、この種のcollapseが起こらない。
+        tail_start = char_end[known[-1]]
+        tail_chars = len(script_full) - known[-1] - 1
+        remaining = max(0.0, duration - tail_start)
+        tail_pace = (remaining / tail_chars) if tail_chars > 0 and remaining > 0 else avg_pace
         for i in range(known[-1] + 1, len(script_full)):
             steps_fwd = i - known[-1]
-            s = min(duration, char_end[known[-1]] + (steps_fwd - 1) * avg_pace)
+            s = min(duration, tail_start + (steps_fwd - 1) * tail_pace)
             char_start[i] = s
-            char_end[i] = min(duration, s + avg_pace)
+            char_end[i] = min(duration, s + tail_pace)
 
         # 既知区間どうしの間（マッチが飛んでいる箇所）を時刻ベースで線形補間
         for j in range(len(known) - 1):
@@ -330,37 +335,46 @@ def plan_telop_cards(narration: str, wav_path: Path, duration: float) -> list:
         cards.append({"lines": [chunk], "start": start_t, "end": end_t})
         s_pos += n
 
-    # カード間に最小GAPを確保しつつ、各カードの最小表示時間も保証する
-    # （startだけ後ろにずらしてendをそのままにすると、表示時間がほぼ0になり
-    # 「一瞬で消える」カードが発生するため、ずらした分だけendも押す）。
+    # カード間に最小GAPを確保しつつ、各カードの最小表示時間も保証する。
     # 最小表示時間は固定0.5秒ではなく文字数に応じて決める（2026-08-23改訂。
     # 0.5秒固定だと6〜9文字程度のカードでも一瞬で消えてしまい、読み切れない
     # という指摘が実際にあったため）。また、従来はcards[0]（先頭カード）が
     # このチェックの対象外だったため、先頭カードにも同様に適用する。
+    def min_dur_of(card) -> float:
+        text_len = len("".join(card["lines"]))
+        return max(MIN_CARD_DUR_FLOOR, text_len * MIN_SEC_PER_CHAR)
+
     MIN_SEC_PER_CHAR = 0.15  # 上限おおよそ6.7文字/秒（読み取れる最低限の速さ）
     MIN_CARD_DUR_FLOOR = 0.6
-    for i, card in enumerate(cards):
-        if i > 0:
-            min_start = round(cards[i - 1]["end"] + GAP, 2)
-            if card["start"] < min_start:
-                shift = min_start - card["start"]
-                card["start"] = min_start
-                card["end"] = round(card["end"] + shift, 2)
-        text_len = len("".join(card["lines"]))
-        min_dur = max(MIN_CARD_DUR_FLOOR, text_len * MIN_SEC_PER_CHAR)
+    hard_end_cap = round(duration + 0.2, 2)
+    prev_end = None
+    for card in cards:
+        min_start = round(prev_end + GAP, 2) if prev_end is not None else 0.0
+        if card["start"] < min_start:
+            shift = min_start - card["start"]
+            card["start"] = min_start
+            card["end"] = round(card["end"] + shift, 2)
+        min_dur = min_dur_of(card)
         if card["end"] - card["start"] < min_dur:
             card["end"] = round(card["start"] + min_dur, 2)
+        prev_end = card["end"]
 
-    # 最終カードの終了時刻は、音声の実長を大きく超えないようにする
-    # （kl_video_gen.py側のクリップはnarr_dur+NARR_DELAY+NARR_TAILの長さで
-    # 作られ、その末尾-CROSSFADE_DURATION秒から次シーンとのクロスフェードが
-    # 始まるため、実測ではdurationを0.2秒超える程度までが安全域）。
-    # 上のMIN_CARD_DUR適用で最終カードが再び音声長を超えるケースがあるため、
-    # 最後にもう一度クランプする。
-    if cards:
-        safe_end = round(duration + 0.2, 2)
-        if cards[-1]["end"] > safe_end:
-            cards[-1]["end"] = safe_end
+    # 末尾から遡って、クロスフェードの安全域（音声実長+0.2秒）を超えている
+    # カードのendを切り詰め、その結果min_durを割り込む場合はstartを前に
+    # 押し出す（2026-08-23再改訂）。これを最終カードだけに限定すると、直前の
+    # カード自体が既にhard_end_capを超えているケース（forward passのmin_dur
+    # 確保で、末尾付近のカードがhard_end_capを意識せず押し出されていたため）
+    # に対応できず、そのカードは超過したまま・最終カードだけ0秒に潰れる事故が
+    # 実際に起きた（kl002 S11/S12/S17）。末尾から連鎖的に遡ることで、
+    # 影響が及ぶ範囲すべてのカードにこの制約を適用する。
+    ceiling = hard_end_cap
+    for card in reversed(cards):
+        if card["end"] > ceiling:
+            card["end"] = round(ceiling, 2)
+        min_dur = min_dur_of(card)
+        if card["end"] - card["start"] < min_dur:
+            card["start"] = round(max(0.0, card["end"] - min_dur), 2)
+        ceiling = round(card["start"] - GAP, 2)
 
     return cards
 
