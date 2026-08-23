@@ -38,9 +38,8 @@ SCOPES = [
     "https://www.googleapis.com/auth/youtube.force-ssl",
 ]
 
-# 初回認証後、表示されたチャンネルIDをここに書き込むと誤チャンネルアップロードを防げる。
-# 未設定（None）の間はチェックをスキップし、認証チャンネル名の表示のみ行う。
-KAGAKU_LIFE_CHANNEL_ID: Optional[str] = None
+# kl001初回アップロード（2026-08-23）時に認証チャンネルとして確認済み: 幸せな未来のサイエンス
+KAGAKU_LIFE_CHANNEL_ID: Optional[str] = "UCj5pDosl_4FiaZ_NdNg7IcA"
 
 CHANNEL_HANDLE_URL = "https://www.youtube.com/@kagaku-life"
 
