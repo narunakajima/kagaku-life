@@ -11,7 +11,13 @@
       "references": [
         {
           "title": "BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday Household Activities",
-          "authors": ["Yunfan Jiang", "Ruohan Zhang", "Josiah Wong", "Chen Wang", "Yanjie Ze"],
+          "authors": [
+            "Yunfan Jiang",
+            "Ruohan Zhang",
+            "Josiah Wong",
+            "Chen Wang",
+            "Yanjie Ze"
+          ],
           "year": 2025,
           "venue": "arXiv.org",
           "url": "https://arxiv.org/abs/2503.05652",
@@ -20,7 +26,13 @@
         },
         {
           "title": "DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation",
-          "authors": ["Taiyi Su", "Jian Zhu", "Tianjian Wang", "Youzhang He", "Zitai Huang"],
+          "authors": [
+            "Taiyi Su",
+            "Jian Zhu",
+            "Tianjian Wang",
+            "Youzhang He",
+            "Zitai Huang"
+          ],
           "year": 2026,
           "venue": "arXiv.org",
           "url": "https://arxiv.org/abs/2605.31286",
@@ -29,7 +41,13 @@
         },
         {
           "title": "Bi-VLA: Vision-Language-Action Model-Based System for Bimanual Robotic Dexterous Manipulations",
-          "authors": ["Koffivi Fidele Gbagbe", "Miguel Altamirano Cabrera", "Ali Alabbas", "Oussama Alyunes", "Artem Lykov"],
+          "authors": [
+            "Koffivi Fidele Gbagbe",
+            "Miguel Altamirano Cabrera",
+            "Ali Alabbas",
+            "Oussama Alyunes",
+            "Artem Lykov"
+          ],
           "year": 2024,
           "venue": "IEEE International Conference on Systems, Man and Cybernetics",
           "doi": "10.1109/SMC54092.2024.10831380",
@@ -37,7 +55,13 @@
         },
         {
           "title": "OopsieVerse: A Safety Benchmark with Damage-Aware Simulation for Robot Manipulation",
-          "authors": ["Arnav Balaji", "Arpit Bahety", "Sriniket Ambatipudi", "Daniel Lam", "Junhong Xu"],
+          "authors": [
+            "Arnav Balaji",
+            "Arpit Bahety",
+            "Sriniket Ambatipudi",
+            "Daniel Lam",
+            "Junhong Xu"
+          ],
           "year": 2026,
           "venue": "arXiv.org",
           "url": "https://arxiv.org/abs/2606.31993",
@@ -45,12 +69,17 @@
           "is_preprint": true
         }
       ],
-      "protagonist": {"name": "田中 美咲", "age": 34, "job": "IT企業マーケティング職（共働き・3歳の娘）", "gender": "female"},
+      "protagonist": {
+        "name": "田中 美咲",
+        "age": 34,
+        "job": "IT企業マーケティング職（共働き・3歳の娘）",
+        "gender": "female"
+      },
       "notes": "STAGE4上位20件のうち家庭内ロボットカテゴリが13/20を占め、内容が似通ったVLA基盤モデル論文群だったため、1本を選ぶのではなく4本を組み合わせた潮流ストーリーとして構成する方針に変更（2026-08-20）。単一研究室の主張ではなく複数の独立研究が同時期に別々の家事タスクを攻略している構図で、STAGE2の「複数の独立研究による追試」的信頼性シグナルにも合致する。構成は4部（自己紹介→課題→研究紹介→未来の暮らし）、ナレーターは主人公（女性）が生活者ボイス、研究紹介パートは男性の研究ボイスで分ける新方式。4本中3本は査読前プレプリント（BEHAVIOR Robot Suite・DeMaVLA・OopsieVerse）、Bi-VLAのみ査読済み。「査読」「プレプリント」は専門用語のためナレーションでは使わず開示は概要欄のみとする（2026-08-20方針改訂）。各論文の所属機関・中心研究者を確認しナレーションに明記: BEHAVIOR Robot Suite=スタンフォード大学(Ruohan Zhang氏)、DeMaVLA=美的集団AIRC/同済大学(Jian Zhu氏、プロジェクトリード)、Bi-VLA=Skoltech(Dzmitry Tsetserukou教授)、OopsieVerse=テキサス大学オースティン校(Roberto Martín-Martín教授)。第1話として確定（2026-08-20、旧kl001のRobi Butler単体案を置き換え）。"
     },
     {
       "episode_id": "kl002",
-      "status": "confirmed",
+      "status": "produced",
       "title": "学歴の壁を消すAI：生成AIが生産性格差を75%縮めた実験の衝撃",
       "format": "single_paper",
       "category": "work",
@@ -58,18 +87,29 @@
       "references": [
         {
           "title": "Does Generative AI Narrow Education-Based Productivity Gaps? Evidence from a Randomized Experiment",
-          "authors": ["Guillermo Cruces", "Diego Fernández Meijide", "Sebastian Galiani", "Ramiro Gálvez", "María Lombardi"],
+          "authors": [
+            "Guillermo Cruces",
+            "Diego Fernández Meijide",
+            "Sebastian Galiani",
+            "Ramiro Gálvez",
+            "María Lombardi"
+          ],
           "year": 2026,
           "venue": "Social Science Research Network",
           "doi": "10.2139/ssrn.6246347",
           "is_preprint": true
         }
       ],
-      "protagonist": {"name": "佐々木 拓也", "age": 29, "job": "中小企業の営業事務（専門学校卒）", "gender": "male"},
+      "protagonist": {
+        "name": "佐々木 拓也",
+        "age": 29,
+        "job": "中小企業の営業事務（専門学校卒）",
+        "gender": "male"
+      },
       "hook_idea": "AIを使えば学歴による仕事の成果差は75%消える？最新研究が明かした『格差の正体』とは。",
       "notes": "STAGE4スコア4.65でworkカテゴリ最上位（STEP2.5提示の6カテゴリ案からユーザーがSTAGE5で選択、2026-08-22）。kl001が家庭内ロボットだったため、直近エピソードとのサブジャンル連続被りを避ける観点でも本カテゴリを推奨した。単一研究（ランダム化比較実験）によるプレプリント（SSRN）のため、動画内で査読前であることを明示する（CLAUDE.md STAGE2方針）。「生成AIの活用で学歴による生産性格差が縮まる」という定量結果（75%）は数字のインパクト・変革ポテンシャルともに高く、生活実感（学歴コンプレックス・キャリア不安）にも直結しやすいと判断。"
     }
   ],
   "total_topics": 2,
-  "last_updated": "2026-08-22"
+  "last_updated": "2026-08-23"
 }

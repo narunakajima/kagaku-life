@@ -43,6 +43,8 @@ import subprocess
 import sys
 import unicodedata
 import wave
+
+from janome.tokenizer import Tokenizer as JanomeTokenizer
 from pathlib import Path
 
 sys.stdout.reconfigure(line_buffering=True)
@@ -65,24 +67,25 @@ GAP = 0.15                   # カード間の最小間隔（秒）
 # 実際の動画で発覚したため）。
 BREAK_CHARS = "、。！？!?　 』」）"
 
-# 句読点が無い長い文でも複合語の途中で切らないよう、助詞の直後を安全な区切り候補にする
-# （例:「取り組む」の途中で切れる事故を防ぐ。長い助詞から先にマッチさせる）
-# 1文字の助詞は「やり遂げる」の「や」のように単語の先頭と偶然一致し、誤検出（本当は
-# 単語の途中なのに区切ってしまう）のリスクが高い。実際に「や」で誤爆する事故が
-# 発生したため、1文字候補は誤爆リスクの低いものだけに絞る
-# （を/が/へ/のは単語の先頭に来ることが稀で比較的安全、は/に/で/と/も/し/やは
-# 「早い」「匂い」「出る」「特に」「もの」「知る」「やり」等、単語の先頭と衝突しやすいため除外）。
-PARTICLES = sorted(
-    ["ながら", "けれど", "けども", "ばかり", "だけど", "ので", "のに", "から",
-     "まで", "より", "だけ", "など", "しか", "こそ", "でも", "たら", "れば",
-     "ても", "つつ", "を", "が", "へ", "の"],
-    key=len, reverse=True,
-)
+# 句読点が無い長い文でも単語・複合語の途中で切らないよう、janome（形態素解析）で
+# 実際の形態素境界を取得し、その境界以外では分割しない（2026-08-23改訂）。
+# 従来は助詞の文字列マッチングによるヒューリスティックだったが、「変わらない」→
+# 「変わ」/「らない」、「消える」→「消」/「える」、「もらう」→「しても」/「らう」等、
+# 助詞マッチが見つからずmax_charsで強制分割される際に単語の途中で切れる事故が
+# 実際の動画（kl002）で複数発覚した。形態素解析で得られる境界は常に単語の切れ目と
+# 一致するため、この種の事故を構造的に防げる。
 
 
 def get_wav_duration(wav_path: Path) -> float:
     with wave.open(str(wav_path)) as wf:
         return wf.getnframes() / wf.getframerate()
+
+
+# janome（IPADIC）が誤って複合語の途中にトークン境界を置く既知の口語表現
+# （例:「なんとかする」を「なんと」+「かする（掠する）」という稀な動詞に
+# 誤analyze する）。形態素境界ベースの分割だけでは防げないため、数字連続と
+# 同じ「保護区間」の仕組みで個別にブロックする（2026-08-23追加、kl002で発覚）。
+PROTECTED_PHRASES = ["なんとか", "なんとなく", "どうにか", "どうにかして", "いつのまにか"]
 
 
 def _in_number_run(text: str, pos: int) -> bool:
@@ -96,27 +99,71 @@ def _in_number_run(text: str, pos: int) -> bool:
     return digit_or_pct(before) and digit_or_pct(after)
 
 
+def _in_protected_phrase(text: str, pos: int) -> bool:
+    """posがPROTECTED_PHRASESのいずれかの途中にあるかどうか判定する。"""
+    if pos <= 0 or pos >= len(text):
+        return False
+    for phrase in PROTECTED_PHRASES:
+        start = max(0, pos - len(phrase) + 1)
+        idx = text.find(phrase, start, pos + len(phrase))
+        while idx != -1 and idx <= pos - 1:
+            if idx < pos < idx + len(phrase):
+                return True
+            idx = text.find(phrase, idx + 1, pos + len(phrase))
+    return False
+
+
+def _in_unsafe_run(text: str, pos: int) -> bool:
+    return _in_number_run(text, pos) or _in_protected_phrase(text, pos)
+
+
 def _nearest_safe_split(text: str, pos: int, floor: int = 1) -> int:
-    """posが数字の途中なら、外側に安全な区切り位置を探す。"""
-    if not _in_number_run(text, pos):
+    """posが数字や保護フレーズの途中なら、外側に安全な区切り位置を探す。"""
+    if not _in_unsafe_run(text, pos):
         return pos
-    # 数字連続の先頭（前方）を探す（例: "92%"の直前まで戻る）
+    # 保護区間の先頭（前方）を探す
     back = pos
-    while back > floor and _in_number_run(text, back):
+    while back > floor and _in_unsafe_run(text, back):
         back -= 1
     if back > floor:
         return back
-    # 戻れない場合は数字連続の直後まで進める
+    # 戻れない場合は保護区間の直後まで進める
     fwd = pos
-    while fwd < len(text) and _in_number_run(text, fwd):
+    while fwd < len(text) and _in_unsafe_run(text, fwd):
         fwd += 1
     return fwd
 
 
+_janome_tokenizer = None
+
+
+def _load_janome() -> JanomeTokenizer:
+    global _janome_tokenizer
+    if _janome_tokenizer is None:
+        _janome_tokenizer = JanomeTokenizer()
+    return _janome_tokenizer
+
+
+def _token_boundaries(text: str) -> list:
+    """形態素解析で得られる各形態素の切れ目（文字オフセット）の一覧を返す
+    （0とlen(text)を含む）。分割候補をこの一覧に限定すれば、単語・複合語の
+    途中で切れることは構造的に起こらない。
+    """
+    boundaries = [0]
+    pos = 0
+    for tok in _load_janome().tokenize(text):
+        pos += len(tok.surface)
+        boundaries.append(pos)
+    if boundaries[-1] != len(text):
+        boundaries.append(len(text))
+    return boundaries
+
+
 def chunk_narration(text: str, max_chars: int = MAX_LINE_CHARS) -> list:
     """長いナレーション文を読みやすい長さのチャンクに分割する。
-    句読点を優先して自然な位置で区切り、句読点が見つからない場合は文字数で強制分割する。
-    どちらの場合も、数字（%等）の途中では絶対に分割しない。
+    句読点を優先して自然な位置で区切り、句読点が見つからない場合は形態素境界
+    （janome）のうちmax_charsに最も近いものを使う。どちらの場合も、数字（%等）
+    の途中では絶対に分割しない。
     """
     chunks = []
     remaining = text
@@ -138,16 +185,14 @@ def chunk_narration(text: str, max_chars: int = MAX_LINE_CHARS) -> list:
                     split_pos = i + 1
                     break
         if split_pos is None:
-            # 句読点が無い場合、助詞の直後を安全な区切りとして探す
-            # （複合語の途中で切れるのを防ぐ。max_charsに近い位置を優先）
-            best = None
-            for i in range(max(0, max_chars - 8), min(len(window), max_chars + 5)):
-                for p in PARTICLES:
-                    if window[i - len(p):i] == p and i - len(p) >= 1:
-                        if best is None or abs(i - max_chars) < abs(best - max_chars):
-                            best = i
-                        break
-            split_pos = best
+            # 句読点が無い場合、形態素境界のうちmax_charsに最も近いものを使う
+            # （単語・複合語の途中で切れるのを構造的に防ぐ）
+            boundaries = [
+                b for b in _token_boundaries(remaining)
+                if 1 <= b < len(remaining)
+            ]
+            if boundaries:
+                split_pos = min(boundaries, key=lambda b: abs(b - max_chars))
         if split_pos is None:
             split_pos = max_chars
         split_pos = _nearest_safe_split(remaining, split_pos)
