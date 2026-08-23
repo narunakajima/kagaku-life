@@ -29,7 +29,8 @@ kagaku-lifeはTTS音声が「エピソードJSONのナレーション文をそ�
 出力:
   plan: episodes/kl{NNN}.json の各シーンに telop_cards を書き込む
         （scene内相対時刻。動画全体でのオフセットは kl_video_gen.py 側で加算する想定）
-  burn-test: ~/Desktop/kagaku-life/{episode}/telop_test_S{NN}.mp4
+  burn-test: ~/Desktop/kagaku-life/telop_test_S{NN}.mp4
+  （Desktopは常に最新1エピソード分の確認用。エピソードIDのサブフォルダは作らない）
 """
 
 import argparse
@@ -264,7 +265,7 @@ def plan_telop_cards(narration: str, wav_path: Path, duration: float) -> list:
 def cmd_plan(episode_id: str, scene_filter: list = None):
     ep_path = BASE_DIR / "episodes" / f"{episode_id}.json"
     ep = json.loads(ep_path.read_text())
-    narration_dir = DESKTOP_DIR / episode_id / "narration"
+    narration_dir = DESKTOP_DIR / "narration"
 
     updated = 0
     for scene in ep["scenes"]:
@@ -364,13 +365,13 @@ def cmd_burn_test(episode_id: str, scene_id: int):
         print("❌ telop_cards がありません。先に `plan` を実行してください", file=sys.stderr)
         sys.exit(1)
 
-    img_path = DESKTOP_DIR / episode_id / "images" / f"S{scene_id:02d}.png"
-    wav_path = DESKTOP_DIR / episode_id / "narration" / f"S{scene_id:02d}.wav"
+    img_path = DESKTOP_DIR / "images" / f"S{scene_id:02d}.png"
+    wav_path = DESKTOP_DIR / "narration" / f"S{scene_id:02d}.wav"
     if not img_path.exists() or not wav_path.exists():
         print(f"❌ 画像またはナレーション音声が見つかりません: {img_path} / {wav_path}", file=sys.stderr)
         sys.exit(1)
 
-    out_dir = DESKTOP_DIR / episode_id
+    out_dir = DESKTOP_DIR
     tmp_dir = out_dir / "_telop_tmp"
     tmp_dir.mkdir(parents=True, exist_ok=True)
 

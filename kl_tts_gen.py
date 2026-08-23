@@ -14,8 +14,9 @@ episodes/kl{NNN}.jsonに記録すること。
   python3 kl_tts_gen.py --episode kl001 --scenes 5,6,9   # 指定シーンのみ再生成
   python3 kl_tts_gen.py --episode kl001 --shorts-only    # Shortsのみ
 
-出力: ~/Desktop/kagaku-life/{episode}/narration/S{NN}.wav,
+出力: ~/Desktop/kagaku-life/narration/S{NN}.wav,
       shorts{M}_S{NN}.wav
+      （Desktopは常に最新1エピソード分の確認用。エピソードIDのサブフォルダは作らない）
 """
 
 import argparse
@@ -125,7 +126,7 @@ def main():
         )
         sys.exit(1)
 
-    out_dir = DESKTOP_DIR / args.episode / "narration"
+    out_dir = DESKTOP_DIR / "narration"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))

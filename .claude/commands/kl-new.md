@@ -238,10 +238,10 @@ CLAUDE.md「BGMパイプライン」の手順に従う（トーンは必ず温�
    役割ごとに1〜2曲ピックアップする（同一エピソードでの重複使用は避ける）。
 2. Freesoundから役割別（intro/main/outro）に新規候補を1曲ずつダウンロード:
    ```bash
-   mkdir -p "$HOME/Desktop/kagaku-life/kl{NNN}/BGM"
+   mkdir -p "$HOME/Desktop/kagaku-life/BGM"
    FREESOUND_API_KEY=$FREESOUND_API_KEY python3 "$HOME/lamp-whisper/freesound_download.py" \
      "<Q_intro>" "<Q_main>" "<Q_outro>" \
-     "$HOME/Desktop/kagaku-life/kl{NNN}/BGM/" \
+     "$HOME/Desktop/kagaku-life/BGM/" \
      --round 0 --start-slot 1 \
      --library "$HOME/kagaku-life/bgm_library.json"
    ```

@@ -21,7 +21,8 @@ Opusは使わない。Geminiのみで完結する（STAGE2/STAGE3と同方針）
 使い方:
   python3 kl_fact_check.py --episode kl001
 
-出力: ~/Desktop/kagaku-life/{episode}/fact_check_result.json
+出力: ~/Desktop/kagaku-life/fact_check_result.json
+（Desktopは常に最新1エピソード分の確認用。エピソードIDのサブフォルダは作らない）
 """
 
 import argparse
@@ -188,9 +189,8 @@ def run(episode_id: str):
     print(f"\n=== 結果: ok={counts.get('ok', 0)} caution={counts.get('caution', 0)} "
           f"high_risk={counts.get('high_risk', 0)} ===")
 
-    out_dir = DESKTOP_DIR / episode_id
-    out_dir.mkdir(parents=True, exist_ok=True)
-    out_path = out_dir / "fact_check_result.json"
+    DESKTOP_DIR.mkdir(parents=True, exist_ok=True)
+    out_path = DESKTOP_DIR / "fact_check_result.json"
     out_path.write_text(
         json.dumps({"counts": counts, "results": results, "jargon_hits": jargon_hits},
                    ensure_ascii=False, indent=2)

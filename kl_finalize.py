@@ -1,10 +1,13 @@
 """
 kl_finalize.py — くらしを変える科学 確認済み素材のGoogle Drive格納スクリプト
 
-~/Desktop/kagaku-life/{episode}/ に生成済みの画像・ナレーション（確認・採用済み）を、
+~/Desktop/kagaku-life/ に生成済みの画像・ナレーション（確認・採用済み）を、
 Google Driveのローカル同期フォルダ Kagaku-Life/KL{NNN}/ へコピーする
 （SC・LWと同じ「Desktopは確認用、Google Driveはコンテンツ格納用」の運用）。
-本編シーン・サムネイルに加え、shortsフィールド（shorts{M}_S{NN}.png/.wav）も格納する。
+Desktopは常に最新1エピソード分の確認用でエピソードIDのサブフォルダを
+持たないが、Google Drive側はエピソードごとの永続格納先のためKL{NNN}/の
+ままとする。本編シーン・サムネイルに加え、shortsフィールド
+（shorts{M}_S{NN}.png/.wav）も格納する。
 
 この環境ではディレクトリ一覧（ls/iterdir）がmacOSの権限制約で失敗することがあるため、
 episodes/kl{NNN}.jsonのscene_idから期待されるファイル名を直接組み立てて処理する
@@ -55,8 +58,8 @@ def main():
     drive_ep_name = args.episode.upper()  # kl001 -> KL001（SC/LWの命名規則に合わせる）
     drive_ep_dir = GDRIVE_ROOT / drive_ep_name
 
-    desktop_images = DESKTOP_DIR / args.episode / "images"
-    desktop_narration = DESKTOP_DIR / args.episode / "narration"
+    desktop_images = DESKTOP_DIR / "images"
+    desktop_narration = DESKTOP_DIR / "narration"
 
     copied = 0
     missing = []
@@ -95,7 +98,7 @@ def main():
             else:
                 missing.append(f"narration/{wname}")
 
-    desktop_output = DESKTOP_DIR / args.episode / "output"
+    desktop_output = DESKTOP_DIR / "output"
     vname = f"{args.episode}.mp4"
     if copy_if_exists(desktop_output / vname, drive_ep_dir / "output" / vname):
         copied += 1

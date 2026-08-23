@@ -16,9 +16,10 @@ thumbnail_promptも同様にBASE_CONTEXTを付与して生成する。
   python3 kl_image_gen.py --episode kl001 --shorts-only     # Shortsのみ（9:16）
   python3 kl_image_gen.py --episode kl001 --no-qa           # QAをスキップ（旧動作）
 
-出力: ~/Desktop/kagaku-life/{episode}/images/S{NN}.png, thumbnail.png,
+出力: ~/Desktop/kagaku-life/images/S{NN}.png, thumbnail.png,
       shorts{M}_S{NN}.png（Shorts、9:16）
-      ~/Desktop/kagaku-life/{episode}/image_qa_result.json（QAレポート）
+      ~/Desktop/kagaku-life/image_qa_result.json（QAレポート）
+      （Desktopは常に最新1エピソード分の確認用。エピソードIDのサブフォルダは作らない）
 """
 
 import argparse
@@ -305,7 +306,7 @@ def main():
         sys.exit(1)
     ep = json.loads(ep_path.read_text())
 
-    out_dir = DESKTOP_DIR / args.episode / "images"
+    out_dir = DESKTOP_DIR / "images"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
