@@ -461,7 +461,7 @@ def gen_video(episode_id: str, out_dir: Path = None):
     bgm_paths = resolve_bgm_paths(ep)
 
     if out_dir is None:
-        out_dir = DESKTOP_DIR / episode_id / "output"
+        out_dir = DESKTOP_DIR / "output"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     scenes = ep["scenes"]
@@ -571,7 +571,7 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
     narration_dir = DRIVE_BASE / episode_id / "narration"
 
     if out_dir is None:
-        out_dir = DESKTOP_DIR / episode_id / "output"
+        out_dir = DESKTOP_DIR / "output"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     mid = shorts_list[0]["shorts_id"]
@@ -723,7 +723,7 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
 def main():
     parser = argparse.ArgumentParser(description="くらしを変える科学 動画生成")
     parser.add_argument("--episode", required=True, help="エピソードID（例: kl001）")
-    parser.add_argument("--out", help="出力先ディレクトリ（省略時: ~/Desktop/kagaku-life/{episode}/output）")
+    parser.add_argument("--out", help="出力先ディレクトリ（省略時: ~/Desktop/kagaku-life/output）")
     parser.add_argument("--shorts-only", action="store_true", help="Shorts動画のみ生成（本編はスキップ）")
     parser.add_argument("--no-shorts", action="store_true", help="Shorts動画を生成しない（本編のみ）")
     args = parser.parse_args()

@@ -21,8 +21,10 @@ YouTubeの動画タイトル・概要欄・タグ・チャンネル名など視�
 
 samurai-chronicles・ランプのひとりごとと同じ運用とする。
 
-- **Desktop（`~/Desktop/kagaku-life/{episode}/`）: 確認用。** `kl_image_gen.py`・
+- **Desktop（`~/Desktop/kagaku-life/`）: 確認用。** `kl_image_gen.py`・
   `kl_tts_gen.py` の生成物はまずここに保存し、内容を確認・採用してから次工程へ進む。
+  **常に最新1エピソード分のみを置く**（確認するのは常に直近着手中のエピソードの
+  ため、エピソードIDのサブフォルダは作らない。2026-08-22改訂）。
 - **Google Drive（`Kagaku-Life/KL{NNN}/`）: コンテンツ格納用。** 確認・採用済みの
   素材を `kl_finalize.py --episode kl{NNN}` でGoogle Driveのローカル同期フォルダへ
   コピーする（Google DriveのフォルダIDは `Kagaku-Life` フォルダ配下、エピソード
@@ -378,15 +380,15 @@ samurai-chroniclesのBGMパイプライン（Freesound検索→音声QA→ライ
 
 **実行例:**
 ```bash
-mkdir -p "$HOME/Desktop/kagaku-life/{episode}/BGM"
+mkdir -p "$HOME/Desktop/kagaku-life/BGM"
 FREESOUND_API_KEY=$FREESOUND_API_KEY python3 "$HOME/lamp-whisper/freesound_download.py" \
   "<Q_intro>" "<Q_main>" "<Q_outro>" \
-  "$HOME/Desktop/kagaku-life/{episode}/BGM/" \
+  "$HOME/Desktop/kagaku-life/BGM/" \
   --round 0 --start-slot 1 \
   --library "$HOME/kagaku-life/bgm_library.json"
 
 # スロット→役割プレフィックスへのリネーム後
-python3 kl_bgm_qa.py --dir "$HOME/Desktop/kagaku-life/{episode}/BGM"
+python3 kl_bgm_qa.py --dir "$HOME/Desktop/kagaku-life/BGM"
 ```
 
 **動作確認（2026-08-21、kl001で実施）:** 上記の流れで実際に3曲
@@ -633,7 +635,7 @@ MISMATCHを検出し、2回目の自動再生成で解消することを確認�
 
 `--no-qa` オプションで従来通りQAなしの生成もできる（QA自体もGemini APIの
 追加コストがかかるため、大量の一括再生成で確認目的だけの場合など）。
-QA結果は `~/Desktop/kagaku-life/{episode}/image_qa_result.json` に保存する。
+QA結果は `~/Desktop/kagaku-life/image_qa_result.json` に保存する。
 
 ### 台本ファクトチェック（`kl_fact_check.py`、2026-08-21追加）
 

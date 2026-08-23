@@ -82,7 +82,7 @@ def run(episode_id: str, scene_filter: list = None):
     with open(ep_json, encoding="utf-8") as f:
         ep = json.load(f)
 
-    images_dir = DESKTOP_DIR / episode_id / "images"
+    images_dir = DESKTOP_DIR / "images"
     client = genai.Client(api_key=API_KEY)
 
     targets = [s for s in ep["scenes"] if is_target_scene(s)]
