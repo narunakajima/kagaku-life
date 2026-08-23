@@ -104,26 +104,18 @@ PUBLISH_WEEKDAY = 5  # 0=月 ... 5=土, 6=日
 
 def find_next_publish_slot() -> str:
     """
-    次の空き「土曜 19:00 JST」スロットを返す（"YYYY-MM-DD HH:MM" JST 形式）。
+    直近の「土曜 19:00 JST」スロットを返す（"YYYY-MM-DD HH:MM" JST 形式）。
 
-    - episodes/kl*.json の scheduled_at を読んで使用済み日付を収集
+    2026-08-23改訂: 従来は1週1本になるよう既に予約済みの土曜を避けて翌週以降に
+    ずらしていたが、「次の土曜19:00までにアップロードされたエピソードは全て
+    その土曜19:00にまとめて公開する」方式に変更した（ユーザー指定）。そのため
+    scheduled_atが既に使われているかどうかは見ず、常に直近の次の土曜を返す
+    （複数エピソードが同じ土曜のスロットを共有してよい）。
+
     - 今日が土曜かつ19:00 JSTがまだ未来 → 今日を候補に
     - それ以外 → 次の土曜を候補に
-    - 使用済み日付を避けて最初の空き土曜を返す
     """
     now_jst = datetime.now(JST)
-
-    used_dates: set = set()
-    for ep_file in (BASE_DIR / "episodes").glob("kl*.json"):
-        if ep_file.stat().st_size == 0:
-            continue
-        try:
-            ep = json.loads(ep_file.read_text(encoding="utf-8"))
-            raw = ep.get("scheduled_at", "")
-            if raw:
-                used_dates.add(datetime.strptime(raw[:10], "%Y-%m-%d").date())
-        except (json.JSONDecodeError, ValueError):
-            continue
 
     candidate = now_jst.replace(hour=PUBLISH_HOUR_JST, minute=0, second=0, microsecond=0)
     if candidate.weekday() != PUBLISH_WEEKDAY or candidate <= now_jst:
@@ -131,9 +123,6 @@ def find_next_publish_slot() -> str:
         if days_ahead == 0:
             days_ahead = 7
         candidate += timedelta(days=days_ahead)
-
-    while candidate.date() in used_dates:
-        candidate += timedelta(days=7)
 
     return candidate.strftime("%Y-%m-%d %H:%M")
 
