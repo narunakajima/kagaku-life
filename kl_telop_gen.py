@@ -292,12 +292,17 @@ def plan_telop_cards(narration: str, wav_path: Path, duration: float) -> list:
             char_end[i] = s + avg_pace
 
         # 末尾（最後のマッチより後）: 既知区間の末尾からペースで順に外挿
-        # （インデックスクランプではなく時刻を積み上げるため、常に単調増加する）
+        # （インデックスクランプではなく時刻を積み上げるため、常に単調増加する）。
+        # 音声の実際の長さ（duration）を超えないようクランプする（2026-08-23追加）。
+        # クランプしないと、Whisperが台本末尾を認識できなかった場合に外挿が
+        # 音声の終端を超えてしまい、テロップがクロスフェード先の次シーンの
+        # テロップと同じ時間帯に重なって表示される事故が実際の動画（kl002、
+        # S12→S13境界）で発覚した。
         for i in range(known[-1] + 1, len(script_full)):
             steps_fwd = i - known[-1]
-            s = char_end[known[-1]] + (steps_fwd - 1) * avg_pace
+            s = min(duration, char_end[known[-1]] + (steps_fwd - 1) * avg_pace)
             char_start[i] = s
-            char_end[i] = s + avg_pace
+            char_end[i] = min(duration, s + avg_pace)
 
         # 既知区間どうしの間（マッチが飛んでいる箇所）を時刻ベースで線形補間
         for j in range(len(known) - 1):
@@ -345,6 +350,17 @@ def plan_telop_cards(narration: str, wav_path: Path, duration: float) -> list:
         min_dur = max(MIN_CARD_DUR_FLOOR, text_len * MIN_SEC_PER_CHAR)
         if card["end"] - card["start"] < min_dur:
             card["end"] = round(card["start"] + min_dur, 2)
+
+    # 最終カードの終了時刻は、音声の実長を大きく超えないようにする
+    # （kl_video_gen.py側のクリップはnarr_dur+NARR_DELAY+NARR_TAILの長さで
+    # 作られ、その末尾-CROSSFADE_DURATION秒から次シーンとのクロスフェードが
+    # 始まるため、実測ではdurationを0.2秒超える程度までが安全域）。
+    # 上のMIN_CARD_DUR適用で最終カードが再び音声長を超えるケースがあるため、
+    # 最後にもう一度クランプする。
+    if cards:
+        safe_end = round(duration + 0.2, 2)
+        if cards[-1]["end"] > safe_end:
+            cards[-1]["end"] = safe_end
 
     return cards
 
