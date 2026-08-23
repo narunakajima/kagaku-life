@@ -103,6 +103,35 @@ git操作（pull / push / status など）の前に必ず `hostname` でマシ�
 
 ---
 
+## YouTube自動アップロード（`kl_sns_up.py`、2026-08-23追加）
+
+samurai-chronicles の `sc_sns_up.py` と同じ設計思想をkagaku-life向けに移植した
+（`/kl-upload` コマンド、`.claude/commands/kl-upload.md` 参照）。SCとの違い:
+プレイリスト自動管理なし（キャラクター概念がないため）、字幕（SRT）アップロードなし
+（テロップを動画に焼き込み済みのため）、公開サイトの自動再ビルドは未実装（サイト自体が
+別タスクとして後日着手予定のため）。
+
+- **公開スケジュール: 毎週土曜 19:00 JST に1本**（2026-08-23確定）。SCの「毎日
+  火〜土曜03:00 JST」とは異なり週1本ペース。`episodes/kl*.json`の`scheduled_at`から
+  使用済み日付を除外し、次の空き土曜へ自動でずらす。
+- **チャンネル: 「幸せな未来のサイエンスチャンネル」（`@kagaku-life`）。** 認証は
+  lamp-whisper / samurai-chronicles と同じOAuthアプリ（`~/.claude/secrets/yt_client_secrets.json`）
+  を共用し、トークンのみ`yt_token_kl.json`でkagaku-life専用に分離する。
+- **チャンネルID未確定（2026-08-23時点）:** `kl_sns_up.py`の`KAGAKU_LIFE_CHANNEL_ID`が
+  `None`のままだと誤チャンネルアップロード防止チェックが働かない。初回実行時にコンソールへ
+  表示される認証チャンネルIDを、この定数に書き込んでおくこと。
+- `categoryId`は「Science & Technology」（28）、`defaultLanguage`は`ja`に設定
+  （SCは`en`/Education（27）だが、kagaku-lifeは日本語視聴者向けの科学解説チャンネルのため）。
+- アップロード完了後、`episodes/kl{NNN}.json`に`youtube_url`/`shorts_url`/`scheduled_at`を
+  書き戻し、自動でgit commit・pushする（`sc_sns_up.py`の`commit_remaining_changes()`と同じ
+  仕組み）。
+
+**サイト構築（後続タスク）:** ユーザーとの合意（2026-08-23）により、samurai-chronicles の
+`sc_build_site.py`相当の公開サイト自動生成は、まずYouTube自動アップロードで公開実績が
+いくつか積み上がってから着手する（サイトのepisodes.html等は実際の公開動画IDに依存するため）。
+
+---
+
 ## 論文選定ロジック（目利きプロセス）
 
 企画書§05「目利きプロセスの役割分担」を、実際に運用できる基準まで具体化したもの。
