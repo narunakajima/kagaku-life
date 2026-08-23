@@ -134,7 +134,11 @@ def gen_image(client: genai.Client, prompt: str, out_path: Path, aspect_ratio: s
         contents=prompt,
         config=types.GenerateContentConfig(**config_kwargs),
     )
-    for part in resp.candidates[0].content.parts:
+    candidate = resp.candidates[0] if resp.candidates else None
+    parts = candidate.content.parts if (candidate and candidate.content) else None
+    if not parts:
+        return False
+    for part in parts:
         if part.inline_data:
             out_path.write_bytes(part.inline_data.data)
             return True

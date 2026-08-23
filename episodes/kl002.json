@@ -1,0 +1,1033 @@
+{
+  "episode_id": "kl002",
+  "episode_title": "学歴の壁を消すAI：生成AIが生産性格差を75%縮めた実験の衝撃",
+  "youtube_title": "学歴による仕事の差は、AIで75%縮まった——最新の実験が明かした格差の正体",
+  "youtube_description": "学歴コンプレックスから、自分の実力を出し切れていない気がする——そんな人は、意外と多いのかもしれません。学歴によって生まれていた仕事の成果差が、生成AIを使うことで大きく縮まる可能性がある——そんな実験結果を、中小企業で営業事務として働く佐々木拓也さん(29歳・専門学校卒)の視点から解説します。\n\n📚 参考文献:\nCruces, G., Fernández Meijide, D., Galiani, S., Gálvez, R., Lombardi, M. (2026). Does Generative AI Narrow Education-Based Productivity Gaps? Evidence from a Randomized Experiment. Social Science Research Network (SSRN・プレプリント、査読前)\nDOI: 10.2139/ssrn.6246347\nhttps://papers.ssrn.com/sol3/papers.cfm?abstract_id=6246347\n\n※本研究はまだ学術誌の査読を経ていない研究段階の結果(プレプリント)です。動画内では研究の主旨を誠実にお伝えすることを心がけていますが、今後の追加検証によって結果が変わる可能性があります。\n\n#生成AI #ChatGPT #AI活用 #働き方 #学歴 #生産性 #経済学 #研究紹介 #くらしを変える科学",
+  "youtube_tags": [
+    "生成AI",
+    "ChatGPT",
+    "AI活用術",
+    "働き方",
+    "学歴",
+    "生産性格差",
+    "経済学研究",
+    "キャリア",
+    "中小企業",
+    "くらしを変える科学"
+  ],
+  "references": [
+    {
+      "title": "Does Generative AI Narrow Education-Based Productivity Gaps? Evidence from a Randomized Experiment",
+      "authors": [
+        "Guillermo Cruces",
+        "Diego Fernández Meijide",
+        "Sebastian Galiani",
+        "Ramiro Gálvez",
+        "María Lombardi"
+      ],
+      "year": 2026,
+      "venue": "Social Science Research Network",
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6246347",
+      "doi": "10.2139/ssrn.6246347",
+      "is_preprint": true,
+      "institution": "Universidad Torcuato Di Tella（アルゼンチン）",
+      "lead_researcher": "Sebastian Galiani"
+    }
+  ],
+  "protagonist": {
+    "name": "佐々木 拓也",
+    "age": 29,
+    "job": "中小企業の営業事務（専門学校卒）",
+    "gender": "male"
+  },
+  "narration_voices": {
+    "persona": "Rasalgethi",
+    "research": "Autonoe"
+  },
+  "thumbnail_prompt": "A Japanese man in his late 20s sitting confidently at an office desk, smiling warmly while looking at a laptop screen showing a faint glowing chat-style AI interface, business casual attire, bright warm office environment with blurred colleagues in the background, a small subtle flat graphic in the corner of two bars far apart transitioning to two bars close together suggesting a narrowing gap, no photorealism, no text, 16:9",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "会議でも、もう怖くない",
+      "image_prompt": "A Japanese man in his late 20s speaking confidently during a business meeting, holding a tablet with a faint glowing chat-style AI interface visible on its screen, colleagues of varying ages listening attentively around a conference table, bright daytime office lighting through windows, no text",
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.36,
+        "y": 0.38
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "会議でも、もう怖くない"
+          ],
+          "start": 0.0,
+          "end": 1.72
+        }
+      ]
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "同期と対等に評価される",
+      "image_prompt": "A Japanese man in his late 20s receiving an approving nod and smile from an older manager during a one-on-one performance review at an office desk, bright daytime office lighting through a window, no text",
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.76,
+        "y": 0.46
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "同期と対等に評価される"
+          ],
+          "start": 0.0,
+          "end": 1.9
+        }
+      ]
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "学歴なんて気にならない夜",
+      "image_prompt": "A Japanese man in his late 20s sitting relaxed on a sofa at home in the evening with a calm, content smile, warm evening interior lighting with a dusk sky visible through a nearby window, no text",
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.68,
+        "y": 0.46
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "学歴なんて気にならない夜"
+          ],
+          "start": 0.0,
+          "end": 1.54
+        }
+      ]
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 4,
+      "narration": "学歴の差は、本当に消えるんでしょうか?",
+      "image_prompt": "A Japanese man in his late 20s looking thoughtfully at a laptop screen with a faint glowing chat-style AI interface visible, contemplative but hopeful expression, soft daytime office lighting through a window, no text, no writing or symbols of any kind on book spines/covers or any background objects",
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.63,
+        "y": 0.4
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "学歴の差は、本当に消えるんでしょうか?"
+          ],
+          "start": 0.0,
+          "end": 2.92
+        }
+      ]
+    },
+    {
+      "scene_id": 5,
+      "type": "hook",
+      "narrator": "persona",
+      "duration_seconds": 5,
+      "narration": "中小企業で営業事務をしています。佐々木拓也、29歳。",
+      "image_prompt": "A Japanese man in his late 20s at a modest office desk doing paperwork in a small company office, business casual attire, a few other desks visible nearby, bright morning daylight through a window, not night, no text",
+      "ken_burns": "static",
+      "telop_cards": [
+        {
+          "lines": [
+            "中小企業で営業事務をしています。"
+          ],
+          "start": 0.0,
+          "end": 2.74
+        },
+        {
+          "lines": [
+            "佐々木拓也、29歳。"
+          ],
+          "start": 3.24,
+          "end": 5.22
+        }
+      ]
+    },
+    {
+      "scene_id": 6,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 48,
+      "narration": "専門学校を卒業して、今の会社に就職しました。同期には大卒の社員が多く、企画書の言葉選びや数字の使い方に、なんとなく引け目を感じることがあります。実力はそんなに変わらないはずだと自分でも思うのに、学歴のことがどこかで引っかかって、力を出し切れていない気がする。就職して6年、その学歴コンプレックスは消えるどころか、少しずつ大きくなっている気がします。",
+      "image_prompt": "A Japanese man in his late 20s sitting at his office desk looking at a spreadsheet on his computer screen with a slightly uncertain expression, colleagues visible working at desks in the background, bright daytime office lighting through windows, no text",
+      "ken_burns": "pan_right",
+      "telop_cards": [
+        {
+          "lines": [
+            "専門学校を卒業して、今の会社に就職しました。"
+          ],
+          "start": 0.0,
+          "end": 3.82
+        },
+        {
+          "lines": [
+            "同期には大卒の社員が多く、企画書の"
+          ],
+          "start": 4.7,
+          "end": 8.26
+        },
+        {
+          "lines": [
+            "言葉選びや数字の使い方に、なんとなく引け目を"
+          ],
+          "start": 8.41,
+          "end": 12.19
+        },
+        {
+          "lines": [
+            "感じることがあります。実力はそんなに変わ"
+          ],
+          "start": 12.34,
+          "end": 15.84
+        },
+        {
+          "lines": [
+            "らないはずだと自分でも思うのに、"
+          ],
+          "start": 15.99,
+          "end": 17.95
+        },
+        {
+          "lines": [
+            "学歴のことがどこかで引っかかって、"
+          ],
+          "start": 18.1,
+          "end": 20.66
+        },
+        {
+          "lines": [
+            "力を出し切れていない気がする。"
+          ],
+          "start": 20.81,
+          "end": 23.01
+        },
+        {
+          "lines": [
+            "就職して6年、その学歴コンプレックスは消"
+          ],
+          "start": 23.16,
+          "end": 26.56
+        },
+        {
+          "lines": [
+            "えるどころか、少しずつ大きくなっている気がします。"
+          ],
+          "start": 26.71,
+          "end": 29.69
+        }
+      ]
+    },
+    {
+      "scene_id": 7,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 46,
+      "narration": "先週、大きな商談の資料作りを任されたとき、結局は経験豊富な大卒の先輩に手を貸してもらうことになりました。自分なりに調べて作ったつもりでしたが、数字の見せ方も、話の組み立て方も、先輩が手を入れた途端に見違えるほど良くなって。『自分一人ではまだ無理なのかもしれない』——そう思うと、次に大事な仕事を任されることが、少しだけ怖くなります。周りに気軽に相談できる相手も少なくて、結局は自己流でなんとかするしかありませんでした。",
+      "image_prompt": "A Japanese man in his late 20s standing beside an older male colleague who is pointing at and correcting a document on a computer screen, the younger man watching with a slightly discouraged expression, ordinary office setting, daytime lighting through windows, no text",
+      "ken_burns": "pan_left",
+      "telop_cards": [
+        {
+          "lines": [
+            "先週、大きな商談の資料作りを任されたとき、"
+          ],
+          "start": 0.0,
+          "end": 3.62
+        },
+        {
+          "lines": [
+            "結局は経験豊富な大卒の先輩に手を貸しても"
+          ],
+          "start": 4.24,
+          "end": 7.94
+        },
+        {
+          "lines": [
+            "らうことになりました。自分なりに調べて作"
+          ],
+          "start": 8.09,
+          "end": 11.19
+        },
+        {
+          "lines": [
+            "ったつもりでしたが、数字の見せ方も、"
+          ],
+          "start": 11.34,
+          "end": 14.02
+        },
+        {
+          "lines": [
+            "話の組み立て方も、先輩が手を"
+          ],
+          "start": 14.17,
+          "end": 17.07
+        },
+        {
+          "lines": [
+            "入れた途端に見違えるほど良くなって。"
+          ],
+          "start": 17.22,
+          "end": 19.66
+        },
+        {
+          "lines": [
+            "『自分一人ではまだ無理なのかもしれない』"
+          ],
+          "start": 19.84,
+          "end": 22.12
+        },
+        {
+          "lines": [
+            "——そう思うと、次に大事な仕事を任されることが、"
+          ],
+          "start": 22.27,
+          "end": 26.49
+        },
+        {
+          "lines": [
+            "少しだけ怖くなります。周りに気軽に相談で"
+          ],
+          "start": 26.64,
+          "end": 30.76
+        },
+        {
+          "lines": [
+            "きる相手も少なくて、結局は自己流でなんと"
+          ],
+          "start": 30.91,
+          "end": 34.67
+        },
+        {
+          "lines": [
+            "かするしかありませんでした。"
+          ],
+          "start": 34.82,
+          "end": 36.12
+        }
+      ]
+    },
+    {
+      "scene_id": 8,
+      "type": "citation",
+      "narrator": "research",
+      "duration_seconds": 29,
+      "narration": "アルゼンチンのトルクアート・ディ・テラ大学の研究チームが、2026年に発表した実験結果があります。これまでの研究の多くは、すでに大卒者が多い企業や職種の中でAIの効果を調べたものでした。この研究は、学歴が大きく異なる人たちを対象に、生成AIが仕事の成果の差にどう影響するのかを、大規模なランダム化実験で確かめたものです。",
+      "image_prompt": "A modern university research office in Argentina with a diverse research team in business casual attire, mixed gender, reviewing charts and data on computer monitors and a wall screen, daytime natural light through large windows, an academic bookshelf visible in the background, no text",
+      "ken_burns": "static",
+      "telop_cards": [
+        {
+          "lines": [
+            "アルゼンチンのトルクアート・ディ・テラ大学の"
+          ],
+          "start": 0.0,
+          "end": 2.38
+        },
+        {
+          "lines": [
+            "研究チームが、2026年に発表した実験結果が"
+          ],
+          "start": 2.53,
+          "end": 6.21
+        },
+        {
+          "lines": [
+            "あります。これまでの研究の多くは、"
+          ],
+          "start": 6.36,
+          "end": 8.82
+        },
+        {
+          "lines": [
+            "すでに大卒者が多い企業や職種の中でAIの"
+          ],
+          "start": 8.97,
+          "end": 12.65
+        },
+        {
+          "lines": [
+            "効果を調べたものでした。この研究は、"
+          ],
+          "start": 12.8,
+          "end": 15.54
+        },
+        {
+          "lines": [
+            "学歴が大きく異なる人たちを対象に、"
+          ],
+          "start": 15.69,
+          "end": 18.51
+        },
+        {
+          "lines": [
+            "生成AIが仕事の成果の差にどう影響するのかを、"
+          ],
+          "start": 18.66,
+          "end": 22.22
+        },
+        {
+          "lines": [
+            "大規模なランダム化実験で確かめたものです。"
+          ],
+          "start": 22.37,
+          "end": 24.93
+        }
+      ]
+    },
+    {
+      "scene_id": 9,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 52,
+      "narration": "実験に参加したのは、25歳から45歳までの成人1,174人。学歴も職業もさまざまな参加者を無作為に2つのグループへ分け、こんな課題に取り組んでもらいました。上司からのメールに返信する形で、いくつかの資料を読み解いて問題の原因を突き止め、解決策を提案するというものです。一方のグループは生成AIアシスタントを使いながら、もう一方は使わずに課題に挑みます。さらにその後、両方のグループにAIを使わない追加の課題にも取り組んでもらい、身についた力がどれだけ残るのかも合わせて調べています。",
+      "image_prompt": "A research testing room set up with rows of computer workstations, showing diverse adult participants of varying ages between 25 and 45 seated individually reading through documents and typing an email reply on their screens as part of a business problem-solving task, some with a simple chat-style assistant window open on screen and others without, a researcher in business casual attire observing from the side with a tablet, bright daytime lighting through windows, a small flat corner graphic showing two simple humanoid icon groups of different sizes, no text, no numerals",
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.62,
+        "y": 0.32
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "実験に参加したのは、25歳から45歳まで"
+          ],
+          "start": 0.0,
+          "end": 3.88
+        },
+        {
+          "lines": [
+            "の成人1,174人。学歴も職業もさまざま"
+          ],
+          "start": 4.03,
+          "end": 8.59
+        },
+        {
+          "lines": [
+            "な参加者を無作為に2つのグループへ分け、"
+          ],
+          "start": 8.74,
+          "end": 11.72
+        },
+        {
+          "lines": [
+            "こんな課題に取り組んでもらいました。"
+          ],
+          "start": 11.87,
+          "end": 13.65
+        },
+        {
+          "lines": [
+            "上司からのメールに返信する形で、"
+          ],
+          "start": 14.42,
+          "end": 17.16
+        },
+        {
+          "lines": [
+            "いくつかの資料を読み解いて問題の原因を突き止め、"
+          ],
+          "start": 17.31,
+          "end": 21.11
+        },
+        {
+          "lines": [
+            "解決策を提案するというものです。"
+          ],
+          "start": 21.26,
+          "end": 23.64
+        },
+        {
+          "lines": [
+            "一方のグループは生成AIアシスタントを使いながら、"
+          ],
+          "start": 24.18,
+          "end": 28.26
+        },
+        {
+          "lines": [
+            "もう一方は使わずに課題に挑みます。"
+          ],
+          "start": 28.41,
+          "end": 31.13
+        },
+        {
+          "lines": [
+            "さらにその後、両方のグループにAIを"
+          ],
+          "start": 31.68,
+          "end": 34.76
+        },
+        {
+          "lines": [
+            "使わない追加の課題にも取り組んでもらい、"
+          ],
+          "start": 34.91,
+          "end": 37.35
+        },
+        {
+          "lines": [
+            "身についた力がどれだけ残るの"
+          ],
+          "start": 37.62,
+          "end": 39.72
+        },
+        {
+          "lines": [
+            "かも合わせて調べています。"
+          ],
+          "start": 39.87,
+          "end": 41.27
+        }
+      ]
+    },
+    {
+      "scene_id": 10,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 52,
+      "narration": "結果は明確でした。AIを使わない場合、大卒者は非大卒者よりも0.548標準偏差、成績が高いという差が見られました。ところが生成AIを使うと、その差はわずか0.139標準偏差まで縮まったのです。これは、学歴による成果差のおよそ4分の3、つまり75%が縮まったことを意味します。しかも生成AIは参加者全員の成果を底上げしていて、特に学歴による差が大きかった層ほど、伸び幅が大きかったと報告されています。",
+      "image_prompt": "A researcher in business casual attire standing and pointing at a large wall-mounted monitor in a modern office research room, another colleague seated nearby taking notes, the monitor displaying a simple flat graphic of two pairs of vertical bars — one pair far apart in height, another pair close together in height — representing a gap that narrows, daytime lighting through windows, absolutely no text or numerals anywhere including on the monitor, convey meaning through bar height and spacing only",
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.58,
+        "y": 0.42
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "結果は明確でした。AIを使わない場合、"
+          ],
+          "start": 0.0,
+          "end": 3.06
+        },
+        {
+          "lines": [
+            "大卒者は非大卒者よりも0.548標準偏差、"
+          ],
+          "start": 3.21,
+          "end": 7.97
+        },
+        {
+          "lines": [
+            "成績が高いという差が見られました。"
+          ],
+          "start": 8.12,
+          "end": 10.54
+        },
+        {
+          "lines": [
+            "ところが生成AIを使うと、その"
+          ],
+          "start": 10.82,
+          "end": 13.66
+        },
+        {
+          "lines": [
+            "差はわずか0.139標準偏差まで縮まったのです。"
+          ],
+          "start": 13.81,
+          "end": 17.87
+        },
+        {
+          "lines": [
+            "これは、学歴による成果差のおよそ4分の3、"
+          ],
+          "start": 18.54,
+          "end": 21.88
+        },
+        {
+          "lines": [
+            "つまり75%が縮まったことを意味します。"
+          ],
+          "start": 22.03,
+          "end": 25.59
+        },
+        {
+          "lines": [
+            "しかも生成AIは参加者全員の成果を底上げしていて、"
+          ],
+          "start": 26.14,
+          "end": 30.54
+        },
+        {
+          "lines": [
+            "特に学歴による差が大きかった層ほど、"
+          ],
+          "start": 30.69,
+          "end": 33.59
+        },
+        {
+          "lines": [
+            "伸び幅が大きかったと報告されています。"
+          ],
+          "start": 33.76,
+          "end": 35.9
+        }
+      ]
+    },
+    {
+      "scene_id": 11,
+      "type": "data",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 48,
+      "narration": "AIを使わなかった場合の差を左に、AIを使った場合の差を右に並べてみると、その縮まり方が一目でわかります。さらに研究チームは、AIを取り上げたあとの追加課題でも、学歴による差が大きかった層の一部の力が引き続き残っていたことを確認しています。ただし、その力がすべて維持されるわけではなく、AIという支えを外した場面では、ある程度の差が再び現れることも報告されています。力が残ったのは、AIを集中的に使いながら、自分自身も粘り強く取り組んでいた人たちに限られていたということです。",
+      "image_prompt": "Flat clean infographic: on the left, two vertical bars spaced far apart in height representing a large performance gap; on the right, two vertical bars nearly equal in height and close together representing a much smaller gap; a subtle horizontal arrow or motion line connecting left to right suggesting the transition; a faint small hourglass icon in a corner suggesting the passage of time and a partial re-emergence of the gap, minimal flat design, no captions, no axis marks, no legible text, no numerals",
+      "ken_burns": "static",
+      "telop_cards": [
+        {
+          "lines": [
+            "AIを使わなかった場合の差を左に、"
+          ],
+          "start": 0.0,
+          "end": 2.62
+        },
+        {
+          "lines": [
+            "AIを使った場合の差を右に並べてみると、"
+          ],
+          "start": 2.77,
+          "end": 6.03
+        },
+        {
+          "lines": [
+            "その縮まり方が一目でわかります。"
+          ],
+          "start": 6.18,
+          "end": 8.66
+        },
+        {
+          "lines": [
+            "さらに研究チームは、AIを取り上げたあとの"
+          ],
+          "start": 8.88,
+          "end": 11.88
+        },
+        {
+          "lines": [
+            "追加課題でも、学歴による差が大きかった層の"
+          ],
+          "start": 12.03,
+          "end": 15.33
+        },
+        {
+          "lines": [
+            "一部の力が引き続き残っていたことを確認しています。"
+          ],
+          "start": 15.48,
+          "end": 18.82
+        },
+        {
+          "lines": [
+            "ただし、その力がすべて維持されるわけではなく、"
+          ],
+          "start": 19.1,
+          "end": 21.94
+        },
+        {
+          "lines": [
+            "AIという支えを外した場面では、"
+          ],
+          "start": 22.09,
+          "end": 24.65
+        },
+        {
+          "lines": [
+            "ある程度の差が再び現れることも報告されています。"
+          ],
+          "start": 24.8,
+          "end": 28.28
+        },
+        {
+          "lines": [
+            "力が残ったのは、AIを集中的に使いながら、"
+          ],
+          "start": 28.52,
+          "end": 32.04
+        },
+        {
+          "lines": [
+            "自分自身も粘り強く取り組んでいた人たちに"
+          ],
+          "start": 32.19,
+          "end": 34.99
+        },
+        {
+          "lines": [
+            "限られていたということです。"
+          ],
+          "start": 35.14,
+          "end": 36.6
+        }
+      ]
+    },
+    {
+      "scene_id": 12,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 8,
+      "narration": "生成AIは、もう誰でも使える時代です。あとは、それを当たり前に使いこなす一歩を踏み出すだけ——その気になれば、明日からでも変わる毎日を、少しだけ思い描いてみます。",
+      "image_prompt": "The same Japanese man in his late 20s with a thoughtful, hopeful expression, eyes gently closed, a soft dreamy thought bubble above his head containing a faint glowing outline of a chat-style AI interface, soft daytime office lighting through a window, no text",
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.55,
+        "y": 0.48
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "生成AIは、もう誰でも使える時代です。"
+          ],
+          "start": 0.0,
+          "end": 3.5
+        },
+        {
+          "lines": [
+            "あとは、それを当たり前に使いこなす一歩を"
+          ],
+          "start": 4.06,
+          "end": 7.28
+        },
+        {
+          "lines": [
+            "踏み出すだけ——その気になれば、"
+          ],
+          "start": 7.43,
+          "end": 9.65
+        },
+        {
+          "lines": [
+            "明日からでも変わる毎日を、少しだけ"
+          ],
+          "start": 9.8,
+          "end": 12.68
+        },
+        {
+          "lines": [
+            "思い描いてみます。"
+          ],
+          "start": 12.83,
+          "end": 13.89
+        }
+      ]
+    },
+    {
+      "scene_id": 13,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 48,
+      "narration": "朝、出社前にその日の商談資料を見直します。以前なら専門用語や数字の使い方を、何度も先輩に確認してもらっていたところを、AIに相談しながら、自分の言葉で整えられるようになりました。提出した企画書に『よくまとまっている』と言われたとき、専門学校卒だからと気後れしていた自分が、少しだけ誇らしく思えました。大事な商談を任されることも、以前より増えてきた気がします。",
+      "image_prompt": "A Japanese man in his late 20s at his office desk in the morning, confidently reviewing a document on his laptop with a faint glowing chat-style AI assistant window visible on screen, calm focused expression, bright morning daylight streaming through office windows, not night, no text",
+      "ken_burns": "pan_left",
+      "telop_cards": [
+        {
+          "lines": [
+            "朝、出社前にその日の商談資料を見直します。"
+          ],
+          "start": 0.0,
+          "end": 3.92
+        },
+        {
+          "lines": [
+            "以前なら専門用語や数字の使い方を、"
+          ],
+          "start": 4.66,
+          "end": 7.84
+        },
+        {
+          "lines": [
+            "何度も先輩に確認してもらっていたところを、"
+          ],
+          "start": 7.99,
+          "end": 11.09
+        },
+        {
+          "lines": [
+            "AIに相談しながら、自分の"
+          ],
+          "start": 11.24,
+          "end": 13.54
+        },
+        {
+          "lines": [
+            "言葉で整えられるようになりました。"
+          ],
+          "start": 13.69,
+          "end": 15.49
+        },
+        {
+          "lines": [
+            "提出した企画書に『よくまとまっている』"
+          ],
+          "start": 16.02,
+          "end": 18.86
+        },
+        {
+          "lines": [
+            "と言われたとき、専門学校卒だから"
+          ],
+          "start": 19.01,
+          "end": 21.91
+        },
+        {
+          "lines": [
+            "と気後れしていた自分が、少しだけ"
+          ],
+          "start": 22.06,
+          "end": 24.48
+        },
+        {
+          "lines": [
+            "誇らしく思えました。大事な商談を任されることも、"
+          ],
+          "start": 24.63,
+          "end": 28.69
+        },
+        {
+          "lines": [
+            "以前より増えてきた気がします。"
+          ],
+          "start": 28.84,
+          "end": 30.78
+        }
+      ]
+    },
+    {
+      "scene_id": 14,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 46,
+      "narration": "夕方、仕事を終えて駅までの帰り道。今日はいつもより少しだけ、足取りが軽い気がします。週末には、以前は学歴のことを気にして諦めていた資格の勉強を、思い切って始めてみようかと考えています。誰かと自分を比べて落ち込む時間が、少しずつ減ってきました。学歴のことを気にして手を伸ばせずにいたことに、一歩ずつ挑戦できるようになった——それだけで、十分すぎるほど幸せなことです。",
+      "image_prompt": "A Japanese man in his late 20s walking along a street toward a train station in the evening, relaxed and slightly smiling expression, warm evening light with a dusk sky visible through the scene, city lights beginning to turn on in the background, not full night, no text",
+      "ken_burns": "pan_right",
+      "telop_cards": [
+        {
+          "lines": [
+            "夕方、仕事を終えて駅までの帰り道。"
+          ],
+          "start": 0.0,
+          "end": 3.24
+        },
+        {
+          "lines": [
+            "今日はいつもより少しだけ、足取りが軽い気がします。"
+          ],
+          "start": 3.82,
+          "end": 7.28
+        },
+        {
+          "lines": [
+            "週末には、以前は学歴のことを"
+          ],
+          "start": 8.02,
+          "end": 10.68
+        },
+        {
+          "lines": [
+            "気にして諦めていた資格の勉強を、"
+          ],
+          "start": 10.83,
+          "end": 13.21
+        },
+        {
+          "lines": [
+            "思い切って始めてみようかと考えています。"
+          ],
+          "start": 13.36,
+          "end": 15.58
+        },
+        {
+          "lines": [
+            "誰かと自分を比べて落ち込む時間が、"
+          ],
+          "start": 16.36,
+          "end": 18.56
+        },
+        {
+          "lines": [
+            "少しずつ減ってきました。学歴のことを"
+          ],
+          "start": 18.71,
+          "end": 22.17
+        },
+        {
+          "lines": [
+            "気にして手を伸ばせずにいたことに、"
+          ],
+          "start": 22.32,
+          "end": 24.44
+        },
+        {
+          "lines": [
+            "一歩ずつ挑戦できるようになった——それだけで、"
+          ],
+          "start": 24.59,
+          "end": 27.73
+        },
+        {
+          "lines": [
+            "十分すぎるほど幸せなことです。"
+          ],
+          "start": 27.88,
+          "end": 29.84
+        }
+      ]
+    },
+    {
+      "scene_id": 15,
+      "type": "closing",
+      "narrator": "research",
+      "duration_seconds": 38,
+      "narration": "この実験はオンライン上で行われたもので、実際の職場でも全く同じ結果になるとは限りません。学歴による差がすべて消えるわけでもなく、AIという支えを外すと一部は再び現れることも報告されています。それでも、生成AIが学歴による成果差を縮める可能性を示したという点で、注目に値する結果と言えそうです。佐々木さんのように、その一歩を踏み出すかどうかは、技術の進歩を待つことではなく、今の私たち自身の選択にかかっているのかもしれません。",
+      "image_prompt": "A calm, quiet research office desk scene with no people visible, showing only a fully closed (shut, screen not visible) laptop, a notebook, and a small potted plant, soft natural daylight through a window, a faint warm glowing silhouette of a home subtly overlaid in the corner suggesting real-world relevance beyond the study, muted hopeful tone, no text",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.43,
+        "y": 0.54
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "この実験はオンライン上で行われたもので、"
+          ],
+          "start": 0.0,
+          "end": 3.16
+        },
+        {
+          "lines": [
+            "実際の職場でも全く同じ結果になるとは限りません。"
+          ],
+          "start": 3.5,
+          "end": 6.88
+        },
+        {
+          "lines": [
+            "学歴による差がすべて消えるわけでもなく、"
+          ],
+          "start": 7.82,
+          "end": 10.28
+        },
+        {
+          "lines": [
+            "AIという支えを外すと一部は再び現れるこ"
+          ],
+          "start": 10.86,
+          "end": 14.52
+        },
+        {
+          "lines": [
+            "とも報告されています。それでも、"
+          ],
+          "start": 14.67,
+          "end": 17.63
+        },
+        {
+          "lines": [
+            "生成AIが学歴による成果差を縮める可能性を"
+          ],
+          "start": 17.78,
+          "end": 21.52
+        },
+        {
+          "lines": [
+            "示したという点で、注目に値する結果と言えそうです。"
+          ],
+          "start": 21.67,
+          "end": 25.19
+        },
+        {
+          "lines": [
+            "佐々木さんのように、その一歩を踏み出すかどうかは、"
+          ],
+          "start": 25.66,
+          "end": 28.82
+        },
+        {
+          "lines": [
+            "技術の進歩を待つことではなく、"
+          ],
+          "start": 29.16,
+          "end": 31.0
+        },
+        {
+          "lines": [
+            "今の私たち自身の選択にかかっているの"
+          ],
+          "start": 31.42,
+          "end": 34.12
+        },
+        {
+          "lines": [
+            "かもしれません。"
+          ],
+          "start": 34.27,
+          "end": 34.87
+        }
+      ]
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "hook_lines": [
+        "学歴の壁は",
+        "AIで消える?"
+      ],
+      "scenes": [
+        {
+          "narrator": "persona",
+          "narration": "会議でも、もう怖くない",
+          "image_prompt": "A Japanese man in his late 20s speaking confidently in a business meeting, a faint glowing chat-style AI interface visible on a tablet he holds, colleagues listening around a table, bright daytime office lighting, composed for a vertical 9:16 frame with the main subject centered and nothing important near the left/right edges, no text"
+        },
+        {
+          "narrator": "persona",
+          "narration": "大卒の同期と、対等に評価される",
+          "image_prompt": "A Japanese man in his late 20s receiving an approving nod from an older manager during a performance review at an office desk, bright daytime lighting, composed for a vertical 9:16 frame with the main subjects centered and nothing important near the left/right edges, no text"
+        },
+        {
+          "narrator": "research",
+          "narration": "アルゼンチンの大学の実験で判明",
+          "image_prompt": "A modern university research office in Argentina with a diverse research team in business casual attire reviewing charts on desktop computer monitors (no laptops anywhere in the scene), daytime natural light through windows, composed for a vertical 9:16 frame with the main subjects centered and nothing important near the left/right edges, no text, no visible brand logos or marks on any device, every person fully and correctly rendered with clearly visible feet and legs (no floating or disembodied limbs)"
+        },
+        {
+          "narrator": "research",
+          "narration": "AIを使うと、学歴の差が縮まった",
+          "image_prompt": "A researcher in business casual attire pointing at a wall-mounted monitor displaying a simple flat graphic of two bars far apart in height next to two bars close together in height, representing a narrowing gap, another colleague observing nearby, daytime office lighting, composed for a vertical 9:16 frame with the main subject centered, absolutely no text or numerals",
+          "style": "chart"
+        },
+        {
+          "narrator": "research",
+          "narration": "差はおよそ4分の3縮小",
+          "image_prompt": "Flat clean infographic: on top, two vertical bars spaced far apart in height representing a large gap; below, two vertical bars nearly equal in height and close together representing a much smaller gap; a subtle arrow connecting them suggesting the transition, minimal flat design, composed for a vertical 9:16 frame, no captions, no axis marks, no legible text, no numerals",
+          "style": "chart"
+        },
+        {
+          "narrator": "persona",
+          "narration": "続きは本編でチェックしてみてください。",
+          "image_prompt": "A Japanese man in his late 20s with a thoughtful, hopeful expression, eyes gently closed, a soft dreamy thought bubble above his head containing a faint glowing outline of a chat-style AI interface, soft daytime lighting, composed for a vertical 9:16 frame with the main subject centered, no text"
+        }
+      ]
+    }
+  ],
+  "bgm_sources": {
+    "intro": "BGM/kl002-BGM-intro.mp3",
+    "main": "BGM/kl002-BGM-main.mp3",
+    "outro": "BGM/kl002-BGM-outro.mp3"
+  }
+}
