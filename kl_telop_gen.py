@@ -264,19 +264,54 @@ def plan_telop_cards(narration: str, wav_path: Path, duration: float) -> list:
             if s_pos + i not in s2w:
                 s2w[s_pos + i] = w_pos + i
 
+    # 各文字の開始・終了時刻を直接計算する（2026-08-23改訂）。
+    # 従来はscript_full上の文字位置をchar_times配列のインデックスに変換してから
+    # 時刻を引いていたが、Whisperの認識文字数が台本より少ない場合（数字の
+    # 聞き取りミス等）、末尾の未マッチ文字がインデックスの上限にクランプされ、
+    # 複数文字が同じ時刻を指してしまい、該当カードの表示時間がほぼ0秒になる
+    # （＝一瞬で消える）事故が実際の動画（kl002）で発覚した。文字インデックスでは
+    # なく時刻そのものを補間することで、この種のクランプを構造的に防ぐ。
     known = sorted(s2w)
+    char_start = [None] * len(script_full)
+    char_end = [None] * len(script_full)
+    for i in known:
+        ci = s2w[i]
+        char_start[i] = char_times[ci][0]
+        char_end[i] = char_times[ci][1]
+
     if known:
-        for i in range(known[0]):
-            s2w[i] = max(0, s2w[known[0]] - (known[0] - i))
+        span = char_end[known[-1]] - char_start[known[0]]
+        n_known_chars = known[-1] - known[0] + 1
+        avg_pace = span / n_known_chars if n_known_chars > 0 and span > 0 else 0.15
+
+        # 先頭（最初のマッチより前）: 既知区間の先頭からペースを遡って外挿
+        for i in range(known[0] - 1, -1, -1):
+            steps_back = known[0] - i
+            s = max(0.0, char_start[known[0]] - steps_back * avg_pace)
+            char_start[i] = s
+            char_end[i] = s + avg_pace
+
+        # 末尾（最後のマッチより後）: 既知区間の末尾からペースで順に外挿
+        # （インデックスクランプではなく時刻を積み上げるため、常に単調増加する）
         for i in range(known[-1] + 1, len(script_full)):
-            s2w[i] = min(len(char_times) - 1, s2w[known[-1]] + (i - known[-1]))
+            steps_fwd = i - known[-1]
+            s = char_end[known[-1]] + (steps_fwd - 1) * avg_pace
+            char_start[i] = s
+            char_end[i] = s + avg_pace
+
+        # 既知区間どうしの間（マッチが飛んでいる箇所）を時刻ベースで線形補間
         for j in range(len(known) - 1):
             s1, s2 = known[j], known[j + 1]
-            w1, w2 = s2w[s1], s2w[s2]
-            for i in range(s1 + 1, s2):
-                if i not in s2w:
-                    frac = (i - s1) / (s2 - s1)
-                    s2w[i] = round(w1 + frac * (w2 - w1))
+            gap_chars = s2 - s1 - 1
+            if gap_chars <= 0:
+                continue
+            t1e, t2s = char_end[s1], char_start[s2]
+            gap_span = t2s - t1e
+            step = gap_span / (gap_chars + 1) if gap_span > 0 else avg_pace
+            for k, i in enumerate(range(s1 + 1, s2), start=1):
+                if char_start[i] is None:
+                    char_start[i] = t1e + step * (k - 1)
+                    char_end[i] = t1e + step * k
 
     cards, s_pos = [], 0
     for chunk in chunks:
@@ -284,25 +319,32 @@ def plan_telop_cards(narration: str, wav_path: Path, duration: float) -> list:
         n = len(norm_chunk)
         if n == 0:
             continue
-        w_s = min(s2w.get(s_pos, 0), len(char_times) - 1)
-        w_e = min(s2w.get(s_pos + n - 1, len(char_times) - 1), len(char_times) - 1)
-        start_t = round(char_times[w_s][0], 2)
-        end_t = round(char_times[w_e][1], 2)
+        start_t = round(max(0.0, char_start[s_pos]), 2) if char_start[s_pos] is not None else 0.0
+        end_idx = s_pos + n - 1
+        end_t = round(char_end[end_idx], 2) if char_end[end_idx] is not None else start_t + 0.5
         cards.append({"lines": [chunk], "start": start_t, "end": end_t})
         s_pos += n
 
     # カード間に最小GAPを確保しつつ、各カードの最小表示時間も保証する
     # （startだけ後ろにずらしてendをそのままにすると、表示時間がほぼ0になり
-    # 「一瞬で消える」カードが発生するため、ずらした分だけendも押す）
-    MIN_CARD_DUR = 0.5
-    for i in range(1, len(cards)):
-        min_start = round(cards[i - 1]["end"] + GAP, 2)
-        if cards[i]["start"] < min_start:
-            shift = min_start - cards[i]["start"]
-            cards[i]["start"] = min_start
-            cards[i]["end"] = round(cards[i]["end"] + shift, 2)
-        if cards[i]["end"] - cards[i]["start"] < MIN_CARD_DUR:
-            cards[i]["end"] = round(cards[i]["start"] + MIN_CARD_DUR, 2)
+    # 「一瞬で消える」カードが発生するため、ずらした分だけendも押す）。
+    # 最小表示時間は固定0.5秒ではなく文字数に応じて決める（2026-08-23改訂。
+    # 0.5秒固定だと6〜9文字程度のカードでも一瞬で消えてしまい、読み切れない
+    # という指摘が実際にあったため）。また、従来はcards[0]（先頭カード）が
+    # このチェックの対象外だったため、先頭カードにも同様に適用する。
+    MIN_SEC_PER_CHAR = 0.15  # 上限おおよそ6.7文字/秒（読み取れる最低限の速さ）
+    MIN_CARD_DUR_FLOOR = 0.6
+    for i, card in enumerate(cards):
+        if i > 0:
+            min_start = round(cards[i - 1]["end"] + GAP, 2)
+            if card["start"] < min_start:
+                shift = min_start - card["start"]
+                card["start"] = min_start
+                card["end"] = round(card["end"] + shift, 2)
+        text_len = len("".join(card["lines"]))
+        min_dur = max(MIN_CARD_DUR_FLOOR, text_len * MIN_SEC_PER_CHAR)
+        if card["end"] - card["start"] < min_dur:
+            card["end"] = round(card["start"] + min_dur, 2)
 
     return cards
 
