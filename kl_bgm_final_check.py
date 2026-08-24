@@ -67,14 +67,14 @@ def main():
         print("❌ GEMINI_API_KEY が設定されていません", file=sys.stderr)
         sys.exit(1)
 
-    review_path = DESKTOP_KL / args.episode / f"{args.episode}_制作確認書.txt"
+    review_path = DESKTOP_KL / f"{args.episode}_制作確認書.txt"
     if not review_path.exists():
         print(f"❌ 制作確認書が見つかりません: {review_path}", file=sys.stderr)
         print("  先に kl_confirmation_doc.py --episode {args.episode} を実行してください", file=sys.stderr)
         sys.exit(1)
     review_text = review_path.read_text(encoding="utf-8")
 
-    bgm_dir = DESKTOP_KL / args.episode / "BGM"
+    bgm_dir = DESKTOP_KL / "BGM"
     tracks = {
         "intro": find_role_file(bgm_dir, "intro"),
         "main": find_role_file(bgm_dir, "main"),

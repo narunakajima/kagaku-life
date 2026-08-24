@@ -167,6 +167,12 @@ Check the image against the intended scene description for these issue types:
 - DUPLICATE_PERSON: if the scene description calls for multiple distinct/different people
   (e.g. different households, different researchers), but two or more of them look like the
   same person (same hairstyle, build, and clothing) in the image
+- COMPOSITION: the spatial arrangement of objects/characters is physically or logically
+  illogical for the real-world scene being depicted, even if each individual element looks
+  fine on its own — e.g. a television or monitor screen facing directly out of the frame
+  toward the viewer instead of naturally facing the people who are supposed to be watching
+  it; a mirror, window, or screen showing a reflection/view that doesn't match its position;
+  furniture or people arranged in a way that couldn't physically coexist in the described room
 
 Scene description: {image_prompt}
 
@@ -238,6 +244,16 @@ def _correction_note(issues: list) -> str:
                 "Every person in this scene must look visibly distinct from "
                 "the others — different hairstyles, builds, ages, and "
                 "clothing colors. Do not repeat the same-looking person."
+            )
+        elif prefix == "COMPOSITION":
+            notes.append(
+                "Fix the spatial arrangement so it is physically and "
+                "logically consistent with a real version of this scene — "
+                "objects like screens/mirrors/windows must be oriented and "
+                "positioned the way they naturally would be relative to the "
+                "people in the room, not artificially turned toward the "
+                "camera. Prioritize a believable, natural composition over "
+                "showing every element head-on."
             )
         seen.add(prefix)
     return " ".join(notes)
