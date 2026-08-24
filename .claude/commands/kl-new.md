@@ -395,22 +395,29 @@ Agentプロンプトには `episodes/kl{NNN}.json` のパスと、以下のチ�
 
 `protagonist.gender` を確認する。
 
-- **persona（生活者ボイス）: 必ず新規選定する。** 女性候補5種
-  （Kore/Leda/Autonoe/Despina/Sulafat）または男性候補5種（Charon/Orus/
-  Iapetus/Rasalgethi/Achird）から、性別に応じて主人公の実ナレーション文
-  （`hook`シーン等）で読み上げ比較のサンプルを`gemini-3.1-flash-tts-preview`で
-  生成する。**サンプルは`~/Desktop/kagaku-life/voice_test/`等、Desktop側に
-  保存する**（スクラッチパッドではなくFinderで確認できる場所に置く、
-  2026-08-24確定）。
-- **推薦を添える（2026-08-24追加）:** サンプルを提示する際、候補ボイスに
-  割り当てられている公式の性格ラベル（例: Charon=Informative、Orus=Firm、
-  Iapetus=Clear、Rasalgethi=Informative、Achird=Friendly、Kore=Firm、
-  Leda=Youthful、Autonoe=Bright、Despina=Smooth、Sulafat=Warm等）と、
-  今回の主人公の年齢・性格・状況を照らし合わせて1つ推薦し、理由を一言添える
-  （例:「推薦: Achird（Friendlyという語感が、親しみやすい主人公像に合いそう
-  です）」）。**ただしこれは実際に聴いて判断しているわけではなく、公開ラベルとの
-  相性を推測した参考情報にすぎない旨を明示し、最終判断は必ずユーザーに聴いて
-  決めてもらう。**
+- **persona（生活者ボイス）: 必ず新規選定する。2段階の推薦プロセスで絞り込む
+  （2026-08-24確定）:**
+  1. **Claudeによる一次絞り込み（ラベル判定）:** 女性候補5種（Kore/Leda/
+     Autonoe/Despina/Sulafat）または男性候補5種（Charon/Orus/Iapetus/
+     Rasalgethi/Achird）のうち、各ボイスに割り当てられている公式の性格ラベル
+     （例: Charon=Informative、Orus=Firm、Iapetus=Clear、Rasalgethi=
+     Informative、Achird=Friendly、Kore=Firm、Leda=Youthful、Autonoe=
+     Bright、Despina=Smooth、Sulafat=Warm等）と、今回の主人公の年齢・性格・
+     状況を照らし合わせて3件程度に絞り込む。
+  2. **Geminiによる実音声ベースの推薦:** 絞り込んだ3候補を`kl_voice_recommend.py`
+     で実際に生成し、その音声を`gemini-3.6-flash`に聴かせて、主人公の設定
+     （`episodes/kl{NNN}.json`の`protagonist`/`notes`）に最も合う声を推薦させる
+     （`kl_bgm_final_check.py`と同じ「実音声+設定文をGeminiに渡す」方式）:
+     ```bash
+     python3 kl_voice_recommend.py --episode kl{NNN} --role persona \
+       --voices {候補1},{候補2},{候補3} \
+       --text "{hookシーン等の主人公の実ナレーション文}"
+     ```
+     音声は`~/Desktop/kagaku-life/voice_test/`に保存される（スクラッチパッド
+     ではなくFinderで確認できる場所に置く）。
+  3. Geminiの推薦とその理由をユーザーに提示し、**最終判断は必ずユーザーが
+     実際に聴いて決める**（Claudeのラベル判定・Geminiの推薦はどちらも一次
+     選定の参考情報であり、人間の最終確認を省略しない）。
 - **research（研究ボイス）: 性別ごとに固定。** 男性=`Orus`（確定済み、
   そのまま使う）。女性=`Autonoe`（確定済み、そのまま使う）。両方確定済みの
   ため、新規選定が必要になるのは今後3人目以降の性別区分が生まれた場合のみ。
