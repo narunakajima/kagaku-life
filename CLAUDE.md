@@ -11,9 +11,9 @@
 YouTubeの動画タイトル・概要欄・タグ・チャンネル名など視聴者が目にする
 対外的な表記はすべて「幸せな未来のサイエンスチャンネル」を使うこと。
 
-> ディレクトリ構成・制作パイプライン（スクリプト・ワークフロー）は今後段階的に整備する。
-> 論文選定（STAGE1〜5）は `/kl-topic` で実行できる（`.claude/commands/kl-topic.md`）。
-> エピソードJSON生成以降の制作パイプラインは未着手。
+> 論文選定（STAGE1〜5）からエピソードJSON生成・動画完成までの制作パイプラインは
+> `/kl-new` で一括実行できる（`.claude/commands/kl-new.md`、2026-08-24に旧`/kl-topic`
+> を統合）。YouTubeアップロードは `/kl-upload` で行う（`.claude/commands/kl-upload.md`）。
 
 ---
 
