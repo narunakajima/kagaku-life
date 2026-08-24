@@ -108,8 +108,29 @@
       },
       "hook_idea": "AIを使えば学歴による仕事の成果差は75%消える？最新研究が明かした『格差の正体』とは。",
       "notes": "STAGE4スコア4.65でworkカテゴリ最上位（STEP2.5提示の6カテゴリ案からユーザーがSTAGE5で選択、2026-08-22）。kl001が家庭内ロボットだったため、直近エピソードとのサブジャンル連続被りを避ける観点でも本カテゴリを推奨した。単一研究（ランダム化比較実験）によるプレプリント（SSRN）のため、動画内で査読前であることを明示する（CLAUDE.md STAGE2方針）。「生成AIの活用で学歴による生産性格差が縮まる」という定量結果（75%）は数字のインパクト・変革ポテンシャルともに高く、生活実感（学歴コンプレックス・キャリア不安）にも直結しやすいと判断。"
+    },
+    {
+      "episode_id": "kl003",
+      "status": "confirmed",
+      "title": "針を刺さないBCI：考えるだけでパソコンを操作する未来",
+      "format": "single_paper",
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "references": [
+        {
+          "title": "Chronically Stable, High‐Resolution Micro‐Electrocorticographic Brain‐Computer Interfaces for Real‐Time Motor Decoding",
+          "authors": ["Erda Zhou", "Xiner Wang", "Jizhi Liang", "Yang Liu", "Qinrong Yang"],
+          "year": 2025,
+          "venue": "Advanced Science",
+          "doi": "10.1002/advs.202506663",
+          "is_preprint": false
+        }
+      ],
+      "protagonist": {"name": "佐藤 健太", "age": 42, "job": "事故により身体麻痺となった元Webデザイナー", "gender": "male"},
+      "hook_idea": "もし脳に針を刺すことなく、頭で考えるだけでパソコンやゲームを操作できるとしたら？",
+      "notes": "STAGE4スコア4.5でmedical_supportカテゴリ最上位（STEP2.5提示の6カテゴリ案からユーザーがSTAGE5で選択、2026-08-24）。kl001=home_robot、kl002=workと続いたため、医療補助技術は未使用カテゴリとしてローテーション上も適切。査読済み（Advanced Science誌）のため信頼性シグナルも強い。BCI（脳-コンピュータインターフェース）で身体麻痺を負った主人公が、機器操作の自由を取り戻すという変革ポテンシャルの高いストーリー。medical_supportカテゴリは在庫が3件のみだったため、本採用で在庫がほぼ枯渇する点に留意（次回/kl-new実行時にSTAGE0で在庫3件未満と判定され、STAGE1が自動実行される見込み）。"
     }
   ],
-  "total_topics": 2,
-  "last_updated": "2026-08-23"
+  "total_topics": 3,
+  "last_updated": "2026-08-24"
 }
