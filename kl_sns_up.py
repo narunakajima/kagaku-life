@@ -2,12 +2,12 @@
 kl_sns_up.py — くらしを変える科学 YouTubeアップロード
 
 使い方:
-  python3 kl_sns_up.py --episode kl001              # 次の空き土曜19:00 JSTに自動予約
+  python3 kl_sns_up.py --episode kl001              # 次の空き土曜21:00 JSTに自動予約
   python3 kl_sns_up.py --episode kl001 --now        # 即時公開
-  python3 kl_sns_up.py --episode kl001 --publish-at "2026-06-06 19:00"  # 日時指定
+  python3 kl_sns_up.py --episode kl001 --publish-at "2026-06-06 21:00"  # 日時指定
 
 デフォルト動作:
-  毎週土曜 19:00 JST に1本公開。
+  毎週土曜 21:00 JST に1本公開。
   すでに予約済みのエピソードがある場合は翌週以降の空きスロットを自動割り当て。
 
 認証: ~/.claude/secrets/yt_client_secrets.json（lamp-whisper / samurai-chronicles と共用）
@@ -98,21 +98,21 @@ def get_youtube_client():
 
 
 JST = ZoneInfo("Asia/Tokyo")
-PUBLISH_HOUR_JST = 19  # 毎週土曜 19:00 JST に公開
+PUBLISH_HOUR_JST = 21  # 毎週土曜 21:00 JST に公開
 PUBLISH_WEEKDAY = 5  # 0=月 ... 5=土, 6=日
 
 
 def find_next_publish_slot() -> str:
     """
-    直近の「土曜 19:00 JST」スロットを返す（"YYYY-MM-DD HH:MM" JST 形式）。
+    直近の「土曜 21:00 JST」スロットを返す（"YYYY-MM-DD HH:MM" JST 形式）。
 
     2026-08-23改訂: 従来は1週1本になるよう既に予約済みの土曜を避けて翌週以降に
-    ずらしていたが、「次の土曜19:00までにアップロードされたエピソードは全て
-    その土曜19:00にまとめて公開する」方式に変更した（ユーザー指定）。そのため
+    ずらしていたが、「次の土曜21:00までにアップロードされたエピソードは全て
+    その土曜21:00にまとめて公開する」方式に変更した（ユーザー指定）。そのため
     scheduled_atが既に使われているかどうかは見ず、常に直近の次の土曜を返す
     （複数エピソードが同じ土曜のスロットを共有してよい）。
 
-    - 今日が土曜かつ19:00 JSTがまだ未来 → 今日を候補に
+    - 今日が土曜かつ21:00 JSTがまだ未来 → 今日を候補に
     - それ以外 → 次の土曜を候補に
     """
     now_jst = datetime.now(JST)
@@ -131,8 +131,8 @@ def parse_publish_at(publish_at_str: str) -> str:
     """
     公開日時文字列を RFC 3339（UTC）に変換して返す。
     入力例:
-      "2026-06-06 19:00"    → JST として解釈
-      "2026-06-06 19:00 JST"
+      "2026-06-06 21:00"    → JST として解釈
+      "2026-06-06 21:00 JST"
       "2026-06-06 10:00 UTC"
     """
     s = publish_at_str.strip()
@@ -153,7 +153,7 @@ def parse_publish_at(publish_at_str: str) -> str:
             continue
     else:
         raise ValueError(f"日時フォーマットが解析できません: {publish_at_str!r}\n"
-                         "例: '2026-06-06 19:00' (JST) または '2026-06-06 10:00 UTC'")
+                         "例: '2026-06-06 21:00' (JST) または '2026-06-06 10:00 UTC'")
 
     dt_aware = dt_naive.replace(tzinfo=tz)
     return dt_aware.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -325,9 +325,9 @@ def cli():
     parser = argparse.ArgumentParser(description="くらしを変える科学 YouTubeアップロード")
     parser.add_argument("--episode", required=True, help="エピソードID（例: kl001）")
     parser.add_argument("--publish-at", metavar="DATETIME",
-                        help="予約公開日時（JST）例: '2026-06-06 19:00' / 省略時は次の土曜19:00 JSTに自動予約")
+                        help="予約公開日時（JST）例: '2026-06-06 21:00' / 省略時は次の土曜21:00 JSTに自動予約")
     parser.add_argument("--now", action="store_true",
-                        help="即時公開（土曜19:00 JST自動予約をスキップ）")
+                        help="即時公開（土曜21:00 JST自動予約をスキップ）")
     args = parser.parse_args()
 
     run(args.episode, publish_at=args.publish_at, publish_now=args.now)
