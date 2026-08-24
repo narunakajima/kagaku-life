@@ -55,7 +55,11 @@
       "duration_seconds": 2,
       "narration": "考えるだけで、画面が動く",
       "image_prompt": "A Japanese man in his early 40s with paralysis sitting in a power wheelchair at a home desk, gazing intently at a computer screen with a faint glowing cursor trail suggesting hands-free control, focused hopeful expression, hands resting still on the armrests, bright daytime indoor lighting, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.72,
+        "y": 0.45
+      }
     },
     {
       "scene_id": 2,
@@ -64,7 +68,11 @@
       "duration_seconds": 2,
       "narration": "もう一度、画面の中でデザインする",
       "image_prompt": "The same Japanese man in his early 40s in a power wheelchair at a home desk, looking with quiet joy at a computer screen displaying a colorful abstract website layout design, hands resting still on the armrests, bright daytime indoor lighting, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.37,
+        "y": 0.36
+      }
     },
     {
       "scene_id": 3,
@@ -72,8 +80,12 @@
       "narrator": "persona",
       "duration_seconds": 2,
       "narration": "息子とゲームで本気の勝負",
-      "image_prompt": "The same Japanese man in his early 40s in a wheelchair beside a Japanese boy around 10 years old on a sofa, both looking excitedly at a television screen with a colorful video game visible, the boy holding a controller while the father's hands rest still on his lap, warm evening indoor lighting, no text",
-      "ken_burns": "zoom_in"
+      "image_prompt": "The same Japanese man in his early 40s in a wheelchair beside a Japanese boy around 10 years old on a sofa, both looking excitedly at a television screen with a colorful video game visible, the boy holding a controller while the father's hands rest still on his lap, warm evening indoor lighting, wide shot composed from an angle that naturally shows both the family and a clear side view of the television screen together in frame (not staged to face the camera head-on, just a natural room layout where the screen happens to be visible), the screen displaying only abstract colorful shapes and patterns with no readable text, no UI elements, no game menu, no score or level indicators, no text anywhere in the image",
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.38,
+        "y": 0.38
+      }
     },
     {
       "scene_id": 4,
@@ -82,7 +94,11 @@
       "duration_seconds": 4,
       "narration": "手が動かなくても、思いのままに操れるとしたら?",
       "image_prompt": "The same Japanese man in his early 40s sitting by a window in a wheelchair, looking down thoughtfully at his own still hands resting on his lap, a soft hopeful expression, gentle morning daylight through the window, not night, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.64,
+        "y": 0.45
+      }
     },
     {
       "scene_id": 5,
@@ -128,7 +144,11 @@
       "duration_seconds": 40,
       "narration": "研究チームが開発したのは、脳の表面に置く、柔らかく薄いシート状の電極です。脳の組織に針を刺し込むのではなく、脳の表面にそっと沿わせるだけで、微弱な電気信号を読み取ります。ただし、取り付けには頭蓋骨を開く手術が必要で、手軽に着けられるものではありません。あくまで、脳の内部を傷つけずに済む、という違いです。電極の密度は、従来の臨床用の電極と比べておよそ64倍。脳の表面からでも、指や手を動かそうとする細かな意図を、これまでにない精度で読み取れるようになりました。",
       "image_prompt": "A researcher wearing a white lab coat in a laboratory in China, carefully holding a thin translucent flexible electrode sheet with a fine grid pattern under bright lab lighting, examining it closely, a monitor in the background showing a simplified brain surface diagram, daytime lighting, a small flat corner graphic showing a sparse dot grid transforming into a much denser dot grid, no text, no numerals",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.63,
+        "y": 0.38
+      }
     },
     {
       "scene_id": 10,
@@ -138,7 +158,11 @@
       "duration_seconds": 40,
       "narration": "この電極は、実際に人の脳でも試されています。てんかんの治療のために手術を受けていた患者さんに、意識のある状態で電極を設置し、そこからわずか7分間データを集めて、AIに学習させました。たったそれだけで、患者さんは頭の中で考えるだけで、画面のゲームを操作できるようになったのです。さらに動物を使った長期の実験では、203日間にわたって、電極が安定して信号を読み取り続けました。長く使い続けても劣化しにくいという、実用化に欠かせない性能です。",
       "image_prompt": "A calm hospital research room in China, a patient with a thin bandage-like cap wearing a discreet flexible electrode connection sits facing a monitor displaying a simple video game, a researcher in a white lab coat standing beside a computer showing a training progress graphic and a small clock-like timer display, focused hopeful atmosphere, bright daytime lighting, a small flat corner graphic of a simple timer icon, no text, no numerals",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.69,
+        "y": 0.45
+      }
     },
     {
       "scene_id": 11,
@@ -147,8 +171,12 @@
       "reference_index": 0,
       "duration_seconds": 32,
       "narration": "およそ20時間の練習を重ねた後には、患者さんは自分の意思だけで、画面のカーソルを思い通りに動かせるようになりました。この操作の速さは、脳の内部に電極を刺し込むタイプのBCIに匹敵する水準だといいます。脳の組織に電極を突き刺さなくても、同じレベルの機器操作に届きうる。研究チームは、柔らかい電極を使ったBCIが実用に一歩近づいたことを示す成果だと位置づけています。ただし、これはまだ、1人の患者さんで確かめられた結果です。",
-      "image_prompt": "A researcher wearing a white lab coat in a laboratory in China, pointing at a monitor showing a simple cursor moving precisely toward a target, a patient seated nearby operating the screen with a calm focused expression and hands resting still, bright daytime lighting, no text",
-      "ken_burns": "zoom_in"
+      "image_prompt": "A researcher wearing a white lab coat in a laboratory in China, pointing at a monitor showing a simple cursor moving precisely toward a target, the researcher's pointing hand rendered with natural, correctly proportioned fingers (no elongated or malformed digits), a patient seated nearby with a calm focused expression, hands resting completely still and empty on their lap or armrests (not holding, touching, or operating any mouse, keyboard, or device), bright daytime lighting, no text",
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.53,
+        "y": 0.45
+      }
     },
     {
       "scene_id": 12,
@@ -167,7 +195,11 @@
       "duration_seconds": 10,
       "narration": "もし、この技術がいつか自分の生活の中でも使えるようになったら——そう考えるだけで、胸の奥が少し温かくなります。まだ研究の途中にある技術ですが、実際に人の脳で動いたという事実に、遠い夢物語ではない手応えを感じました。",
       "image_prompt": "The same Japanese man in his early 40s sitting by a window, eyes closed with a hopeful gentle smile, a soft faint glowing outline of a computer cursor and a simple wheelchair icon subtly overlaid near him suggesting a hopeful daydream, warm daytime indoor lighting, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.58,
+        "y": 0.38
+      }
     },
     {
       "scene_id": 14,
@@ -184,7 +216,7 @@
       "narrator": "persona",
       "duration_seconds": 35,
       "narration": "夕方、リビングで息子とオンラインゲームをする時間が、今のいちばんの楽しみです。コントローラーは握れなくても、頭で考えるだけで自分のキャラクターを動かせる。『お父さん、うまくなったね』と笑う息子の顔を見ていると、ただ一緒に画面を見て笑い合えるこの時間が、何より大切に思えてきます。",
-      "image_prompt": "The same Japanese man in his early 40s in a wheelchair next to a Japanese boy around 10 years old on a sofa in the evening, both laughing and looking at a television screen showing a colorful video game, the boy holding a controller and the father's hands resting still on his lap, warm evening indoor lighting with a dusk sky visible through a window, not full night, no text",
+      "image_prompt": "The same Japanese man in his early 40s in a wheelchair next to a Japanese boy around 10 years old on a sofa in the evening, both laughing and looking at a television screen showing a colorful video game, the boy holding a controller and the father's hands resting still on his lap, warm evening indoor lighting with a dusk sky visible through a window, not full night, wide shot composed from an angle that naturally shows both the family and a clear side view of the television screen together in frame (not staged to face the camera head-on, just a natural room layout where the screen happens to be visible), the screen displaying only abstract colorful shapes and patterns with no readable text, no UI elements, no game menu, no score or level indicators, no text anywhere in the image",
       "ken_burns": "pan_right"
     },
     {
@@ -194,7 +226,11 @@
       "duration_seconds": 25,
       "narration": "週末は、電動車椅子を自分で操作して、庭に出てみます。手を借りるかどうかを、自分で選べる——それだけのことが、こんなにも心を軽くしてくれるとは思いませんでした。小さな自由の積み重ねが、今の暮らしを少しずつ変えています。",
       "image_prompt": "The same Japanese man in his early 40s independently operating a power wheelchair through an open back door into a sunny garden, a content peaceful expression, no one pushing or assisting him, bright daytime outdoor lighting, not night, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.46,
+        "y": 0.38
+      }
     },
     {
       "scene_id": 17,
@@ -203,7 +239,11 @@
       "duration_seconds": 40,
       "narration": "この技術は、まだ研究の段階にあります。人での結果は1人の患者さんによるもので、長期間の安定性が確かめられたのも、動物を使った実験です。日常生活で使い続けるための課題も、これから検証が必要です。それでも、脳の組織を傷つけずに、これほど精密な機器操作ができる可能性を示したことは、大きな一歩といえます。そして、その先にあるのは、技術の性能の高さそのものではなく、佐藤さんがもう一度、朝の画面に向かい、息子さんと笑い合う——そんな小さな時間なのかもしれません。",
       "image_prompt": "A calm quiet home desk scene with no people visible, showing a closed laptop, a folded lightweight electrode sheet resting neatly beside it on a soft cloth, a small potted plant, soft natural daylight through a window, muted hopeful tone, no text",
-      "ken_burns": "zoom_out"
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.33,
+        "y": 0.73
+      }
     }
   ],
   "shorts": [
