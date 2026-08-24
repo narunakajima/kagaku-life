@@ -399,7 +399,18 @@ Agentプロンプトには `episodes/kl{NNN}.json` のパスと、以下のチ�
   （Kore/Leda/Autonoe/Despina/Sulafat）または男性候補5種（Charon/Orus/
   Iapetus/Rasalgethi/Achird）から、性別に応じて主人公の実ナレーション文
   （`hook`シーン等）で読み上げ比較のサンプルを`gemini-3.1-flash-tts-preview`で
-  生成し、ユーザーに聴き比べてもらって決定する。
+  生成する。**サンプルは`~/Desktop/kagaku-life/voice_test/`等、Desktop側に
+  保存する**（スクラッチパッドではなくFinderで確認できる場所に置く、
+  2026-08-24確定）。
+- **推薦を添える（2026-08-24追加）:** サンプルを提示する際、候補ボイスに
+  割り当てられている公式の性格ラベル（例: Charon=Informative、Orus=Firm、
+  Iapetus=Clear、Rasalgethi=Informative、Achird=Friendly、Kore=Firm、
+  Leda=Youthful、Autonoe=Bright、Despina=Smooth、Sulafat=Warm等）と、
+  今回の主人公の年齢・性格・状況を照らし合わせて1つ推薦し、理由を一言添える
+  （例:「推薦: Achird（Friendlyという語感が、親しみやすい主人公像に合いそう
+  です）」）。**ただしこれは実際に聴いて判断しているわけではなく、公開ラベルとの
+  相性を推測した参考情報にすぎない旨を明示し、最終判断は必ずユーザーに聴いて
+  決めてもらう。**
 - **research（研究ボイス）: 性別ごとに固定。** 男性=`Orus`（確定済み、
   そのまま使う）。女性=`Autonoe`（確定済み、そのまま使う）。両方確定済みの
   ため、新規選定が必要になるのは今後3人目以降の性別区分が生まれた場合のみ。
