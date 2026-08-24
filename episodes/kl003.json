@@ -2,7 +2,7 @@
   "episode_id": "kl003",
   "episode_title": "針を刺さないBCI：考えるだけでパソコンを操作する未来",
   "youtube_title": "頭で考えるだけでパソコンを操作――脳に針を刺さない新技術、わずか7分で習得",
-  "youtube_description": "事故で身体が思うように動かせなくなったら、パソコンの操作はどうなるのでしょうか。脳の内部に針を刺し込むのではなく、脳の表面に置いた薄いシート状の電極で、考えるだけで機器を操作できる——そんな研究を、元Webデザイナーの佐藤健太さん(42歳)の視点から解説します。（電極の設置には頭蓋骨を開く手術が必要で、脳の組織を傷つけずに済む点が従来方式との違いです。また本研究は1人の患者での臨床結果と動物での長期実験によるもので、まだ研究段階の技術です。）\n\n📚 参考文献:\nZhou, E., Wang, X., Liang, J., Liu, Y., Yang, Q. (2025). Chronically Stable, High-Resolution Micro-Electrocorticographic Brain-Computer Interfaces for Real-Time Motor Decoding. Advanced Science.\nDOI: 10.1002/advs.202506663\nhttps://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202506663\n\n#BCI #ブレインマシンインターフェース #脳科学 #医療テクノロジー #身体障害 #リハビリ #研究紹介 #くらしを変える科学",
+  "youtube_description": "事故で身体が思うように動かせなくなったら、パソコンの操作はどうなるのでしょうか。脳の内部に針を刺し込むのではなく、脳の表面に置いた薄いシート状の電極で、考えるだけで機器を操作できる——そんな研究を、元Webデザイナーの佐藤健太さん(42歳)の視点から解説します。（電極の設置には頭蓋骨を開く手術が必要で、脳の組織を傷つけずに済む点が従来方式との違いです。また本研究は1人の患者での臨床結果と動物での長期実験によるもので、まだ研究段階の技術です。）\n\n📚 参考文献:\nZhou, E., Wang, X., Liang, J., Liu, Y., Yang, Q. (2025). Chronically Stable, High-Resolution Micro-Electrocorticographic Brain-Computer Interfaces for Real-Time Motor Decoding. Advanced Science.\nDOI: 10.1002/advs.202506663\nhttps://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202506663\n\n\n🎵 Music: Elevated Mood with Acoustic Guitar by ViraMiller (freesound.org) — CC BY 4.0\n\n🎵 Music: Heartfelt Piano and Violin by ViraMiller (freesound.org) — CC BY 4.0\n#BCI #ブレインマシンインターフェース #脳科学 #医療テクノロジー #身体障害 #リハビリ #研究紹介 #くらしを変える科学",
   "youtube_tags": [
     "BCI",
     "脳科学",
@@ -59,7 +59,16 @@
       "zoom_anchor": {
         "x": 0.72,
         "y": 0.45
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "考えるだけで、画面が動く"
+          ],
+          "start": 0.0,
+          "end": 2.81
+        }
+      ]
     },
     {
       "scene_id": 2,
@@ -72,7 +81,16 @@
       "zoom_anchor": {
         "x": 0.37,
         "y": 0.36
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "もう一度、画面の中でデザインする"
+          ],
+          "start": 0.0,
+          "end": 2.52
+        }
+      ]
     },
     {
       "scene_id": 3,
@@ -85,7 +103,16 @@
       "zoom_anchor": {
         "x": 0.38,
         "y": 0.38
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "息子とゲームで本気の勝負"
+          ],
+          "start": 0.0,
+          "end": 2.33
+        }
+      ]
     },
     {
       "scene_id": 4,
@@ -98,7 +125,16 @@
       "zoom_anchor": {
         "x": 0.64,
         "y": 0.45
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "手が動かなくても、思いのままに操れるとしたら?"
+          ],
+          "start": 0.0,
+          "end": 3.6
+        }
+      ]
     },
     {
       "scene_id": 5,
@@ -107,7 +143,23 @@
       "duration_seconds": 5,
       "narration": "ウェブサイトを作る仕事をしていました。佐藤健太、42歳。",
       "image_prompt": "A Japanese man in his early 40s sitting in a power wheelchair at a home office desk with design sketches and a computer visible, calm composed expression, bright morning daylight through a window, not night, no text",
-      "ken_burns": "static"
+      "ken_burns": "static",
+      "telop_cards": [
+        {
+          "lines": [
+            "ウェブサイトを作る仕事をしていました。"
+          ],
+          "start": 0.0,
+          "end": 2.85
+        },
+        {
+          "lines": [
+            "佐藤健太、42歳。"
+          ],
+          "start": 3.0,
+          "end": 4.76
+        }
+      ]
     },
     {
       "scene_id": 6,
@@ -116,7 +168,93 @@
       "duration_seconds": 45,
       "narration": "3年前、事故で首から下を思うように動かせなくなりました。パソコンに向かってウェブサイトのデザインを考える仕事が好きで、以前は一日中、手を動かしていました。今は指先の細かな動きが難しく、思いついたイメージを形にするまでに、ずいぶん時間がかかります。視線でパソコンを操作する装置も試しましたが、細かい作業になるほど、頭の中に浮かぶ速さに操作が追いつきません。好きだった仕事のことを、いつからか思い出さないようにしていた自分にも気づいていました。",
       "image_prompt": "A Japanese man in his early 40s in a power wheelchair, facing a computer screen with a visible eye-tracking sensor bar mounted below the monitor, a strained concentrated expression as he tries to operate the screen, a family member's hand visible adjusting the equipment beside him, bright daytime indoor lighting, no text",
-      "ken_burns": "pan_right"
+      "ken_burns": "pan_right",
+      "telop_cards": [
+        {
+          "lines": [
+            "3年前、事故で首から下を思うように動かせ"
+          ],
+          "start": 0.0,
+          "end": 3.6
+        },
+        {
+          "lines": [
+            "なくなりました。パソコンに向かって"
+          ],
+          "start": 3.75,
+          "end": 6.3
+        },
+        {
+          "lines": [
+            "ウェブサイトのデザインを考える仕事が好きで、"
+          ],
+          "start": 6.45,
+          "end": 9.75
+        },
+        {
+          "lines": [
+            "以前は一日中、手を動かしていました。"
+          ],
+          "start": 9.9,
+          "end": 12.6
+        },
+        {
+          "lines": [
+            "今は指先の細かな動きが難しく、"
+          ],
+          "start": 12.75,
+          "end": 15.0
+        },
+        {
+          "lines": [
+            "思いついたイメージを形にするまでに、"
+          ],
+          "start": 15.15,
+          "end": 17.85
+        },
+        {
+          "lines": [
+            "ずいぶん時間がかかります。視線でパソコン"
+          ],
+          "start": 18.0,
+          "end": 21.0
+        },
+        {
+          "lines": [
+            "を操作する装置も試しましたが、"
+          ],
+          "start": 21.15,
+          "end": 23.4
+        },
+        {
+          "lines": [
+            "細かい作業になるほど、頭の中に浮かぶ速さ"
+          ],
+          "start": 23.55,
+          "end": 26.55
+        },
+        {
+          "lines": [
+            "に操作が追いつきません。好きだった仕事のことを、"
+          ],
+          "start": 26.7,
+          "end": 30.3
+        },
+        {
+          "lines": [
+            "いつからか思い出さないようにしていた自分"
+          ],
+          "start": 30.45,
+          "end": 33.45
+        },
+        {
+          "lines": [
+            "にも気づいていました。"
+          ],
+          "start": 33.6,
+          "end": 35.25
+        }
+      ]
     },
     {
       "scene_id": 7,
@@ -125,7 +263,65 @@
       "duration_seconds": 40,
       "narration": "外に出るときは、妻に車椅子を押してもらいます。支えてもらえることには、本当に感謝しています。それでも、ふと行きたい場所を思いついたときに、自分のタイミングで向かえない。その小さな引っかかりだけは、経験するまで想像もできませんでした。もう一度、自分で何かを動かせる日が来るだろうか。そんな問いを抱えたまま、毎日を過ごしていました。",
       "image_prompt": "A Japanese man in his early 40s seated in a wheelchair near a front door, a middle-aged Japanese woman gently pushing the wheelchair toward the doorway, his expression a mix of gratitude and quiet frustration, bright daytime lighting through the doorway, no text",
-      "ken_burns": "pan_left"
+      "ken_burns": "pan_left",
+      "telop_cards": [
+        {
+          "lines": [
+            "外に出るときは、妻に車椅子を押してもらいます。"
+          ],
+          "start": 0.0,
+          "end": 3.88
+        },
+        {
+          "lines": [
+            "支えてもらえることには、本当に感謝しています。"
+          ],
+          "start": 4.5,
+          "end": 7.95
+        },
+        {
+          "lines": [
+            "それでも、ふと行きたい場所を思いついたときに、"
+          ],
+          "start": 8.64,
+          "end": 12.09
+        },
+        {
+          "lines": [
+            "自分のタイミングで向かえない。"
+          ],
+          "start": 12.24,
+          "end": 14.49
+        },
+        {
+          "lines": [
+            "その小さな引っかかりだけは、"
+          ],
+          "start": 14.64,
+          "end": 17.34
+        },
+        {
+          "lines": [
+            "経験するまで想像もできませんでした。"
+          ],
+          "start": 17.49,
+          "end": 20.25
+        },
+        {
+          "lines": [
+            "もう一度、自分で何かを動かせる日が来るだろうか。"
+          ],
+          "start": 20.74,
+          "end": 24.34
+        },
+        {
+          "lines": [
+            "そんな問いを抱えたまま、毎日を過ごしていました。"
+          ],
+          "start": 24.49,
+          "end": 28.47
+        }
+      ]
     },
     {
       "scene_id": 8,
@@ -134,7 +330,72 @@
       "duration_seconds": 30,
       "narration": "中国科学院の上海マイクロシステム情報技術研究所などの研究チームが、2025年に発表した研究があります。脳と機械をつなぐブレイン・マシン・インターフェース、いわゆるBCIの分野では、これまで、脳の内部に針のような電極を刺し込む方式が、高い性能を出してきました。この研究は、脳の組織を傷つけずに、それに近い性能を目指す新しいタイプの電極を開発したものです。",
       "image_prompt": "A modern research laboratory in China with a diverse research team of East Asian scientists wearing white lab coats, reviewing a thin flexible electrode array displayed on a screen and a physical sample under a lab light, bright daytime lighting through windows, no text",
-      "ken_burns": "static"
+      "ken_burns": "static",
+      "telop_cards": [
+        {
+          "lines": [
+            "中国科学院の上海マイクロシステム情報技術"
+          ],
+          "start": 0.0,
+          "end": 2.53
+        },
+        {
+          "lines": [
+            "研究所などの研究チームが、2025年に"
+          ],
+          "start": 2.68,
+          "end": 5.53
+        },
+        {
+          "lines": [
+            "発表した研究があります。脳と機械をつなぐ"
+          ],
+          "start": 5.68,
+          "end": 8.68
+        },
+        {
+          "lines": [
+            "ブレイン・マシン・インターフェース、"
+          ],
+          "start": 8.83,
+          "end": 11.53
+        },
+        {
+          "lines": [
+            "いわゆるBCIの分野では、これまで、"
+          ],
+          "start": 11.68,
+          "end": 14.38
+        },
+        {
+          "lines": [
+            "脳の内部に針のような電極を刺し込む方式が、"
+          ],
+          "start": 14.53,
+          "end": 17.68
+        },
+        {
+          "lines": [
+            "高い性能を出してきました。この研究は、"
+          ],
+          "start": 17.83,
+          "end": 20.68
+        },
+        {
+          "lines": [
+            "脳の組織を傷つけずに、それに近い性能を"
+          ],
+          "start": 20.83,
+          "end": 23.68
+        },
+        {
+          "lines": [
+            "目指す新しいタイプの電極を開発したものです。"
+          ],
+          "start": 23.83,
+          "end": 27.13
+        }
+      ]
     },
     {
       "scene_id": 9,
@@ -148,7 +409,100 @@
       "zoom_anchor": {
         "x": 0.63,
         "y": 0.38
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "研究チームが開発したのは、脳の表面に置く、"
+          ],
+          "start": 0.0,
+          "end": 3.74
+        },
+        {
+          "lines": [
+            "柔らかく薄いシート状の電極です。"
+          ],
+          "start": 3.89,
+          "end": 6.45
+        },
+        {
+          "lines": [
+            "脳の組織に針を刺し込むのではなく、"
+          ],
+          "start": 7.0,
+          "end": 9.55
+        },
+        {
+          "lines": [
+            "脳の表面にそっと沿わせるだけで、"
+          ],
+          "start": 9.74,
+          "end": 12.2
+        },
+        {
+          "lines": [
+            "微弱な電気信号を読み取ります。ただし、"
+          ],
+          "start": 12.35,
+          "end": 15.79
+        },
+        {
+          "lines": [
+            "取り付けには頭蓋骨を開く手術が必要で、"
+          ],
+          "start": 15.94,
+          "end": 19.02
+        },
+        {
+          "lines": [
+            "手軽に着けられるものではありません。"
+          ],
+          "start": 19.17,
+          "end": 21.87
+        },
+        {
+          "lines": [
+            "あくまで、脳の内部を傷つけずに済む、"
+          ],
+          "start": 22.06,
+          "end": 24.92
+        },
+        {
+          "lines": [
+            "という違いです。電極の密度は、"
+          ],
+          "start": 25.07,
+          "end": 28.07
+        },
+        {
+          "lines": [
+            "従来の臨床用の電極と比べておよそ64倍。"
+          ],
+          "start": 28.22,
+          "end": 31.79
+        },
+        {
+          "lines": [
+            "脳の表面からでも、指や手を動かそうとする"
+          ],
+          "start": 31.94,
+          "end": 34.94
+        },
+        {
+          "lines": [
+            "細かな意図を、これまでにない精度で読み取れる"
+          ],
+          "start": 35.09,
+          "end": 38.39
+        },
+        {
+          "lines": [
+            "ようになりました。"
+          ],
+          "start": 38.54,
+          "end": 39.89
+        }
+      ]
     },
     {
       "scene_id": 10,
@@ -162,7 +516,86 @@
       "zoom_anchor": {
         "x": 0.69,
         "y": 0.45
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "この電極は、実際に人の脳でも試されています。"
+          ],
+          "start": 0.0,
+          "end": 3.44
+        },
+        {
+          "lines": [
+            "てんかんの治療のために手術を受けていた患者さんに、"
+          ],
+          "start": 3.59,
+          "end": 7.71
+        },
+        {
+          "lines": [
+            "意識のある状態で電極を設置し、"
+          ],
+          "start": 7.86,
+          "end": 10.84
+        },
+        {
+          "lines": [
+            "そこからわずか7分間データを集めて、"
+          ],
+          "start": 10.99,
+          "end": 14.01
+        },
+        {
+          "lines": [
+            "AIに学習させました。たったそれだけで、"
+          ],
+          "start": 14.16,
+          "end": 17.78
+        },
+        {
+          "lines": [
+            "患者さんは頭の中で考えるだけで、"
+          ],
+          "start": 17.93,
+          "end": 20.93
+        },
+        {
+          "lines": [
+            "画面のゲームを操作できるようになったのです。"
+          ],
+          "start": 21.08,
+          "end": 24.38
+        },
+        {
+          "lines": [
+            "さらに動物を使った長期の実験では、"
+          ],
+          "start": 24.53,
+          "end": 27.63
+        },
+        {
+          "lines": [
+            "203日間にわたって、電極が安定して信号"
+          ],
+          "start": 27.78,
+          "end": 31.94
+        },
+        {
+          "lines": [
+            "を読み取り続けました。長く使い続けても"
+          ],
+          "start": 32.09,
+          "end": 34.94
+        },
+        {
+          "lines": [
+            "劣化しにくいという、実用化に欠かせない性能です。"
+          ],
+          "start": 35.09,
+          "end": 38.69
+        }
+      ]
     },
     {
       "scene_id": 11,
@@ -176,7 +609,86 @@
       "zoom_anchor": {
         "x": 0.53,
         "y": 0.45
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "およそ20時間の練習を重ねた後には、"
+          ],
+          "start": 0.0,
+          "end": 2.19
+        },
+        {
+          "lines": [
+            "患者さんは自分の意思だけで、"
+          ],
+          "start": 2.34,
+          "end": 4.44
+        },
+        {
+          "lines": [
+            "画面のカーソルを思い通りに動かせるように"
+          ],
+          "start": 4.59,
+          "end": 7.59
+        },
+        {
+          "lines": [
+            "なりました。この操作の速さは、"
+          ],
+          "start": 7.74,
+          "end": 9.99
+        },
+        {
+          "lines": [
+            "脳の内部に電極を刺し込むタイプのBCIに"
+          ],
+          "start": 10.14,
+          "end": 13.14
+        },
+        {
+          "lines": [
+            "匹敵する水準だといいます。脳の組織に電極"
+          ],
+          "start": 13.29,
+          "end": 16.29
+        },
+        {
+          "lines": [
+            "を突き刺さなくても、同じレベルの機器操作"
+          ],
+          "start": 16.44,
+          "end": 19.44
+        },
+        {
+          "lines": [
+            "に届きうる。研究チームは、柔らかい電極を"
+          ],
+          "start": 19.59,
+          "end": 22.59
+        },
+        {
+          "lines": [
+            "使ったBCIが実用に一歩近づいたことを"
+          ],
+          "start": 22.74,
+          "end": 25.59
+        },
+        {
+          "lines": [
+            "示す成果だと位置づけています。ただし、"
+          ],
+          "start": 25.74,
+          "end": 28.59
+        },
+        {
+          "lines": [
+            "これはまだ、1人の患者さんで確かめられた結果です。"
+          ],
+          "start": 28.74,
+          "end": 32.49
+        }
+      ]
     },
     {
       "scene_id": 12,
@@ -186,7 +698,65 @@
       "duration_seconds": 30,
       "narration": "脳の内部に刺し込むタイプの電極と、この新しい、表面に置くタイプの電極を比べてみると、違いがよくわかります。脳の組織を傷つけずに、電極の密度は64倍に高まり、読み取りの精度は刺し込むタイプに匹敵する水準に達しました。安全性と精度を、できるだけ高いレベルで両立させる——それが、この技術が目指す方向です。",
       "image_prompt": "Flat clean infographic comparing two electrode types side by side: on the left, a diagram of thin needle-like probes penetrating downward into a block representing tissue; on the right, a thin flat sheet resting on top of the same block's surface with a much denser fine grid pattern than the needles; a small dial or gauge icon nearby showing the sheet's risk level lower than the needles' risk level, minimal flat design, no captions, no legible text, no numerals",
-      "ken_burns": "static"
+      "ken_burns": "static",
+      "telop_cards": [
+        {
+          "lines": [
+            "脳の内部に刺し込むタイプの電極と、"
+          ],
+          "start": 0.0,
+          "end": 2.55
+        },
+        {
+          "lines": [
+            "この新しい、表面に置くタイプの電極を比べてみると、"
+          ],
+          "start": 2.7,
+          "end": 6.45
+        },
+        {
+          "lines": [
+            "違いがよくわかります。脳の組織を傷つけずに、"
+          ],
+          "start": 6.6,
+          "end": 10.16
+        },
+        {
+          "lines": [
+            "電極の密度は64倍に高まり、"
+          ],
+          "start": 10.46,
+          "end": 12.78
+        },
+        {
+          "lines": [
+            "読み取りの精度は刺し込むタイプに匹敵する"
+          ],
+          "start": 13.08,
+          "end": 16.08
+        },
+        {
+          "lines": [
+            "水準に達しました。安全性と精度を、"
+          ],
+          "start": 16.23,
+          "end": 18.78
+        },
+        {
+          "lines": [
+            "できるだけ高いレベルで両立させる——それが、"
+          ],
+          "start": 18.93,
+          "end": 22.23
+        },
+        {
+          "lines": [
+            "この技術が目指す方向です。"
+          ],
+          "start": 22.38,
+          "end": 24.33
+        }
+      ]
     },
     {
       "scene_id": 13,
@@ -199,7 +769,51 @@
       "zoom_anchor": {
         "x": 0.58,
         "y": 0.38
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "もし、この技術がいつか自分の生活の中でも"
+          ],
+          "start": 0.0,
+          "end": 3.58
+        },
+        {
+          "lines": [
+            "使えるようになったら——そう考えるだけで、"
+          ],
+          "start": 3.73,
+          "end": 6.88
+        },
+        {
+          "lines": [
+            "胸の奥が少し温かくなります。"
+          ],
+          "start": 7.03,
+          "end": 9.55
+        },
+        {
+          "lines": [
+            "まだ研究の途中にある技術ですが、"
+          ],
+          "start": 9.7,
+          "end": 12.2
+        },
+        {
+          "lines": [
+            "実際に人の脳で動いたという事実に、"
+          ],
+          "start": 12.76,
+          "end": 15.44
+        },
+        {
+          "lines": [
+            "遠い夢物語ではない手応えを感じました。"
+          ],
+          "start": 15.9,
+          "end": 18.75
+        }
+      ]
     },
     {
       "scene_id": 14,
@@ -208,7 +822,79 @@
       "duration_seconds": 40,
       "narration": "朝、目が覚めてまず取り組むのは、頭の中でカーソルを動かす練習です。指先を動かせなくても、考えるだけで画面のカーソルが思い通りに動く——それだけで、一日を始める気持ちが違います。事故のあと諦めていたウェブサイトのデザインの仕事に、少しずつまた向き合えるようになりました。画面の中で色や形を選んでいく感覚は、忘れかけていたはずなのに、指先ではなく心の中に、ちゃんと残っていました。",
       "image_prompt": "The same Japanese man in his early 40s in a power wheelchair at a home desk in the morning, looking at a computer screen displaying a colorful website design layout with a faint glowing cursor trail, focused content expression, hands resting still, bright morning daylight through a window, not night, no text",
-      "ken_burns": "pan_left"
+      "ken_burns": "pan_left",
+      "telop_cards": [
+        {
+          "lines": [
+            "朝、目が覚めてまず取り組むのは、"
+          ],
+          "start": 0.0,
+          "end": 2.56
+        },
+        {
+          "lines": [
+            "頭の中でカーソルを動かす練習です。"
+          ],
+          "start": 3.0,
+          "end": 5.78
+        },
+        {
+          "lines": [
+            "指先を動かせなくても、考えるだけで画面の"
+          ],
+          "start": 6.48,
+          "end": 9.9
+        },
+        {
+          "lines": [
+            "カーソルが思い通りに動く——それだけで、"
+          ],
+          "start": 10.05,
+          "end": 13.11
+        },
+        {
+          "lines": [
+            "一日を始める気持ちが違います。"
+          ],
+          "start": 13.26,
+          "end": 15.76
+        },
+        {
+          "lines": [
+            "事故のあと諦めていたウェブサイトのデザイン"
+          ],
+          "start": 16.12,
+          "end": 19.27
+        },
+        {
+          "lines": [
+            "の仕事に、少しずつまた向き合えるようになりました。"
+          ],
+          "start": 19.42,
+          "end": 23.17
+        },
+        {
+          "lines": [
+            "画面の中で色や形を選んでいく感覚は、"
+          ],
+          "start": 23.32,
+          "end": 26.76
+        },
+        {
+          "lines": [
+            "忘れかけていたはずなのに、指先ではなく心の中に、"
+          ],
+          "start": 26.91,
+          "end": 31.38
+        },
+        {
+          "lines": [
+            "ちゃんと残っていました。"
+          ],
+          "start": 31.53,
+          "end": 33.33
+        }
+      ]
     },
     {
       "scene_id": 15,
@@ -217,7 +903,65 @@
       "duration_seconds": 35,
       "narration": "夕方、リビングで息子とオンラインゲームをする時間が、今のいちばんの楽しみです。コントローラーは握れなくても、頭で考えるだけで自分のキャラクターを動かせる。『お父さん、うまくなったね』と笑う息子の顔を見ていると、ただ一緒に画面を見て笑い合えるこの時間が、何より大切に思えてきます。",
       "image_prompt": "The same Japanese man in his early 40s in a wheelchair next to a Japanese boy around 10 years old on a sofa in the evening, both laughing and looking at a television screen showing a colorful video game, the boy holding a controller and the father's hands resting still on his lap, warm evening indoor lighting with a dusk sky visible through a window, not full night, wide shot composed from an angle that naturally shows both the family and a clear side view of the television screen together in frame (not staged to face the camera head-on, just a natural room layout where the screen happens to be visible), the screen displaying only abstract colorful shapes and patterns with no readable text, no UI elements, no game menu, no score or level indicators, no text anywhere in the image",
-      "ken_burns": "pan_right"
+      "ken_burns": "pan_right",
+      "telop_cards": [
+        {
+          "lines": [
+            "夕方、リビングで息子とオンラインゲームを"
+          ],
+          "start": 0.0,
+          "end": 3.0
+        },
+        {
+          "lines": [
+            "する時間が、今のいちばんの楽しみです。"
+          ],
+          "start": 3.15,
+          "end": 6.0
+        },
+        {
+          "lines": [
+            "コントローラーは握れなくても、"
+          ],
+          "start": 6.15,
+          "end": 8.4
+        },
+        {
+          "lines": [
+            "頭で考えるだけで自分のキャラクターを動かせる。"
+          ],
+          "start": 8.55,
+          "end": 12.35
+        },
+        {
+          "lines": [
+            "『お父さん、うまくなったね』"
+          ],
+          "start": 12.5,
+          "end": 14.6
+        },
+        {
+          "lines": [
+            "と笑う息子の顔を見ていると、"
+          ],
+          "start": 14.75,
+          "end": 16.97
+        },
+        {
+          "lines": [
+            "ただ一緒に画面を見て笑い合えるこの時間が、"
+          ],
+          "start": 17.12,
+          "end": 20.27
+        },
+        {
+          "lines": [
+            "何より大切に思えてきます。"
+          ],
+          "start": 20.42,
+          "end": 22.37
+        }
+      ]
     },
     {
       "scene_id": 16,
@@ -230,7 +974,51 @@
       "zoom_anchor": {
         "x": 0.46,
         "y": 0.38
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "週末は、電動車椅子を自分で操作して、"
+          ],
+          "start": 0.0,
+          "end": 3.64
+        },
+        {
+          "lines": [
+            "庭に出てみます。手を借りるかどうかを、"
+          ],
+          "start": 3.79,
+          "end": 7.61
+        },
+        {
+          "lines": [
+            "自分で選べる——それだけのことが、"
+          ],
+          "start": 7.76,
+          "end": 10.78
+        },
+        {
+          "lines": [
+            "こんなにも心を軽くしてくれるとは思いませんでした。"
+          ],
+          "start": 10.93,
+          "end": 14.68
+        },
+        {
+          "lines": [
+            "小さな自由の積み重ねが、今の暮らしを少し"
+          ],
+          "start": 14.83,
+          "end": 18.63
+        },
+        {
+          "lines": [
+            "ずつ変えています。"
+          ],
+          "start": 18.78,
+          "end": 20.13
+        }
+      ]
     },
     {
       "scene_id": 17,
@@ -243,7 +1031,93 @@
       "zoom_anchor": {
         "x": 0.33,
         "y": 0.73
-      }
+      },
+      "telop_cards": [
+        {
+          "lines": [
+            "この技術は、まだ研究の段階にあります。"
+          ],
+          "start": 0.0,
+          "end": 2.98
+        },
+        {
+          "lines": [
+            "人での結果は1人の患者さんによるもので、"
+          ],
+          "start": 3.58,
+          "end": 6.6
+        },
+        {
+          "lines": [
+            "長期間の安定性が確かめられたのも、"
+          ],
+          "start": 6.75,
+          "end": 9.49
+        },
+        {
+          "lines": [
+            "動物を使った実験です。日常生活で使い続ける"
+          ],
+          "start": 9.64,
+          "end": 13.78
+        },
+        {
+          "lines": [
+            "ための課題も、これから検証が必要です。"
+          ],
+          "start": 13.93,
+          "end": 16.78
+        },
+        {
+          "lines": [
+            "それでも、脳の組織を傷つけずに、"
+          ],
+          "start": 16.98,
+          "end": 19.82
+        },
+        {
+          "lines": [
+            "これほど精密な機器操作ができる可能性を"
+          ],
+          "start": 19.97,
+          "end": 22.82
+        },
+        {
+          "lines": [
+            "示したことは、大きな一歩といえます。"
+          ],
+          "start": 22.97,
+          "end": 25.67
+        },
+        {
+          "lines": [
+            "そして、その先にあるのは、技術の性能の高"
+          ],
+          "start": 25.82,
+          "end": 28.82
+        },
+        {
+          "lines": [
+            "さそのものではなく、佐藤さんがもう一度、"
+          ],
+          "start": 28.97,
+          "end": 31.97
+        },
+        {
+          "lines": [
+            "朝の画面に向かい、息子さんと笑い合う——"
+          ],
+          "start": 32.12,
+          "end": 35.12
+        },
+        {
+          "lines": [
+            "そんな小さな時間なのかもしれません。"
+          ],
+          "start": 35.27,
+          "end": 37.97
+        }
+      ]
     }
   ],
   "shorts": [
@@ -287,5 +1161,10 @@
         }
       ]
     }
-  ]
+  ],
+  "bgm_sources": {
+    "intro": "BGM/kl002-BGM-intro.mp3",
+    "main": "BGM/kl001-BGM-main.mp3",
+    "outro": "BGM/kl001-BGM-outro.mp3"
+  }
 }
