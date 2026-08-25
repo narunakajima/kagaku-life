@@ -19,7 +19,10 @@ pan_zoom_out（片側→反対側へパン→ズームアウト）、0人/3人�
 図解等）→zoom_out（中央固定）。static/pan_left/pan_rightは実質使われなく
 なる。
 
-対象シーン: 全シーン（SCと同じ「常に上書き」仕様）。
+対象シーン: 全シーン（SCと同じ「常に上書き」仕様）。ただし`type`が`data`
+（グラフ・比較図）のシーンだけは例外で、人数判定を行わず常に完全静止
+（`ken_burns="static"`）にする（2026-08-25追加。グラフをズーム/パンで
+動かすと数値の位置関係が読み取りにくくなるという指摘のため）。
 kl_video_gen.pyがKen Burnsのズーム焦点・カメラワークとして使う。
 
 使い方:
@@ -133,6 +136,16 @@ def run(episode_id: str, scene_filter: list = None):
         if not img_path.exists():
             print(f"  ⚠️  S{scene_id:02d}: 画像が見つかりません（スキップ）")
             failed.append(scene_id)
+            continue
+        if scene.get("type") == "data":
+            # グラフ・比較図（typeがdata）はズーム/パンで動かすと数値の位置
+            # 関係が読み取りにくくなり不自然という指摘があった（2026-08-25）。
+            # 人数判定に関わらず常に完全な静止（ken_burns="static"）にする
+            # （Gemini Vision呼び出しも不要なためスキップしてコストを節約する）。
+            scene["ken_burns"] = "static"
+            scene.pop("zoom_anchor", None)
+            updated += 1
+            print(f"  S{scene_id:02d}: dataタイプ → ken_burns=static（完全静止、判定スキップ）")
             continue
         try:
             result = determine_zoom_anchor(client, img_path)
