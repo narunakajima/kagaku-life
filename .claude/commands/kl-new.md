@@ -424,6 +424,36 @@ Agentプロンプトには `episodes/kl{NNN}.json` のパスと、以下のチ�
 
 決定したボイス名を `episodes/kl{NNN}.json` の `narration_voices` に書き込む。
 
+**persona_style（演技指導）は主人公の年齢に応じて毎回自動で書く（2026-08-25
+追加、ユーザー確認不要）。** persona（生活者ボイス）は毎回別人格のため、
+声質の選定だけでなく**話し方**も主人公の年齢層に合わせる。ユーザーに
+確認を挟まず、Claudeが以下の要領で `narration_voices.persona_style` に
+英語の演技指導文（`kl_tts_gen.py`の`STYLE_PREFIX`と同じ「Say in ... :」形式の
+命令文）を書き込む:
+
+- **高齢者（目安60代後半〜）:** ゆっくりめで落ち着いた、温かみと静かな誇りの
+  ある話し方。ただし弱々しい・か細い・つっかえるような演技にはしない
+  （kl004で確定した文言を型として使い回してよい: "Say in the voice of a
+  dignified [性別] in their [年代]. Speak at a slightly slower, measured
+  pace with natural warmth and quiet pride in her/his tone — the unhurried
+  cadence of someone who has lived a full life, not a young or brisk
+  delivery. Keep it clear, articulate, and full of life — never frail,
+  weak, mumbling, or shaky: "）。
+- **若年層（目安20代前後）:** テンポの速い、快活でエネルギッシュな話し方
+  （例: "Say in a bright, energetic voice with a slightly quicker,
+  youthful pace and casual warmth — lively and expressive, not overly
+  formal or measured: "）。
+- **中年層（目安30〜50代）等、上記に当てはまらない場合:** `persona_style`
+  自体を省略してよい（`kl_tts_gen.py`はデフォルトのボイス設定のまま生成する。
+  無理に演技指導を捻り出さない）。
+
+`kl_tts_gen.py`は`narration_voices.persona_style`があればpersonaナレーター
+の全シーン（Shorts含む）にその指示を自動適用する（`synth()`の
+`style_override`引数）。書き込み後、1シーンだけ試作して
+（`python3 kl_tts_gen.py --episode kl{NNN} --scenes {hookまたはcontextのscene_id}`）
+`~/Desktop/kagaku-life/narration/`で聴き、意図通りかその場で確認してから
+STEP4以降（全シーンのTTS本生成はSTEP8）に進む。
+
 ---
 
 ## STEP 4 — 台本ファクトチェック

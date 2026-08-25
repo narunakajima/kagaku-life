@@ -58,10 +58,14 @@ STYLE_PREFIX = {
         "and do not let it rise or break upward at any point: "
     ),
 }
+# personaは主人公ごとに毎回声・年齢・性格が変わるため、STYLE_PREFIXのような
+# 固定辞書ではなく episodes/kl{NNN}.json の narration_voices.persona_style
+# （任意フィールド）にエピソードごとの演技指導を記録し、synth()のstyle_overrideで
+# 上書きする方式にする（2026-08-25追加、kl004で高齢者演技指導が必要になったため）。
 
 
-def synth(client: genai.Client, text: str, voice_name: str, out_path: Path, narrator: str = None) -> bool:
-    prefix = STYLE_PREFIX.get(narrator, "")
+def synth(client: genai.Client, text: str, voice_name: str, out_path: Path, narrator: str = None, style_override: str = None) -> bool:
+    prefix = style_override if style_override is not None else STYLE_PREFIX.get(narrator, "")
     prompt = f"{prefix}{text}" if prefix else text
     config = types.GenerateContentConfig(
         response_modalities=["AUDIO"],
@@ -137,6 +141,8 @@ def main():
 
     shorts_only = args.shorts_only or bool(args.shorts_scenes)
 
+    persona_style = voices.get("persona_style")
+
     if not shorts_only:
         for scene in ep["scenes"]:
             sid = scene["scene_id"]
@@ -145,7 +151,8 @@ def main():
             narrator = scene["narrator"]
             voice_name = voices[narrator]
             out_path = out_dir / f"S{sid:02d}.wav"
-            synth(client, scene["narration"], voice_name, out_path, narrator=narrator)
+            style_override = persona_style if narrator == "persona" else None
+            synth(client, scene["narration"], voice_name, out_path, narrator=narrator, style_override=style_override)
 
     if shorts_only or args.scenes is None:
         # 本編シーンと一言一句同じナレーションなら、別々に生成し直さず本編の
@@ -168,7 +175,8 @@ def main():
                     print(f"✅ {out_path.name}（本編{reuse_path.name}を流用）")
                     continue
                 voice_name = voices[s["narrator"]]
-                synth(client, s["narration"], voice_name, out_path, narrator=s["narrator"])
+                style_override = persona_style if s["narrator"] == "persona" else None
+                synth(client, s["narration"], voice_name, out_path, narrator=s["narrator"], style_override=style_override)
 
     print(f"\n完了。保存先: {out_dir}")
 
