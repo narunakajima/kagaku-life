@@ -121,7 +121,7 @@ def main():
   .badge-Shorts1 {{ background: #5d2f8a; color: #fff; }}
   .sid {{ font-weight: 700; color: #fff; }}
   .body {{ display: flex; gap: 16px; align-items: flex-start; }}
-  img {{ width: 320px; max-width: 40vw; border-radius: 8px; flex-shrink: 0; }}
+  img {{ width: 560px; max-width: 60vw; border-radius: 8px; flex-shrink: 0; }}
   .text-col {{ flex: 1; min-width: 0; }}
   .narration {{ font-size: 15px; line-height: 1.7; margin: 0 0 12px; }}
   .narration.sub {{ color: #9aa5b1; font-size: 13px; }}
