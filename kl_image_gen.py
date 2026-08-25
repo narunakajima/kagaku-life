@@ -55,42 +55,66 @@ THUMB_SHADOW_COLOR = (0, 0, 0)
 
 
 def composite_thumbnail_text(image_path: Path, headline: str, sub: str = "") -> None:
-    """サムネイル画像（テキストなしで生成済み）に、下部の暗いグラデーション帯＋
-    日本語テキスト（影付き）をPillowで合成する（lamp-whisperのoverlay_textと同じ考え方）。
+    """サムネイル画像（テキストなしで生成済み）に、大きく太いアウトライン付き見出し
+    （画面上部）と控えめなサブコピー（画面下部）をPillowで合成する。
+
+    2026-08-25改訂: 従来は下部の暗い帯に控えめなドロップシャドウ付きテキストを
+    小さめに配置していたが、ユーザーからSC（samurai-chronicles）のサムネイルの
+    ように「テキストをバーンと出したほうがいい」との指摘があった。見出しを
+    画面上部に大きく・太いアウトライン（stroke）付きで配置する構成に変更した。
     """
     img = Image.open(image_path).convert("RGBA")
     w, h = img.size
 
-    band_h = int(h * 0.38)
-    gradient = Image.new("L", (1, band_h), 0)
-    for y in range(band_h):
-        alpha = int(200 * (y / band_h) ** 1.3)
-        gradient.putpixel((0, y), alpha)
-    gradient = gradient.resize((w, band_h))
-    band = Image.new("RGBA", (w, band_h), (10, 20, 35, 0))
-    band.putalpha(gradient)
-    img.alpha_composite(band, (0, h - band_h))
+    top_band_h = int(h * 0.42)
+    top_gradient = Image.new("L", (1, top_band_h), 0)
+    for y in range(top_band_h):
+        alpha = int(215 * (1 - y / top_band_h) ** 1.2)
+        top_gradient.putpixel((0, y), alpha)
+    top_gradient = top_gradient.resize((w, top_band_h))
+    top_band = Image.new("RGBA", (w, top_band_h), (10, 20, 35, 0))
+    top_band.putalpha(top_gradient)
+    img.alpha_composite(top_band, (0, 0))
 
     draw = ImageDraw.Draw(img)
     margin_x = int(w * 0.05)
 
-    headline_size = 76
+    headline_size = int(h * 0.19)
     font_headline = ImageFont.truetype(str(FONT_BOLD), headline_size)
-    while draw.textbbox((0, 0), headline, font=font_headline)[2] > w - margin_x * 2 and headline_size > 36:
+    stroke_w = max(4, headline_size // 14)
+    while (
+        draw.textbbox((0, 0), headline, font=font_headline, stroke_width=stroke_w)[2] > w - margin_x * 2
+        and headline_size > 48
+    ):
         headline_size -= 4
         font_headline = ImageFont.truetype(str(FONT_BOLD), headline_size)
+        stroke_w = max(4, headline_size // 14)
 
-    hy = h - band_h + int(band_h * 0.32)
-    for dx, dy in [(3, 3), (4, 4)]:
-        draw.text((margin_x + dx, hy + dy), headline, font=font_headline, fill=(*THUMB_SHADOW_COLOR, 190))
-    draw.text((margin_x, hy), headline, font=font_headline, fill=(*THUMB_HEADLINE_COLOR, 255))
+    hy = int(h * 0.06)
+    draw.text(
+        (margin_x, hy + int(headline_size * 0.06)), headline, font=font_headline,
+        fill=THUMB_HEADLINE_COLOR, stroke_width=stroke_w, stroke_fill=THUMB_SHADOW_COLOR,
+    )
 
     if sub:
-        sub_size = 38
+        band_h = int(h * 0.22)
+        gradient = Image.new("L", (1, band_h), 0)
+        for y in range(band_h):
+            alpha = int(190 * (y / band_h) ** 1.3)
+            gradient.putpixel((0, y), alpha)
+        gradient = gradient.resize((w, band_h))
+        band = Image.new("RGBA", (w, band_h), (10, 20, 35, 0))
+        band.putalpha(gradient)
+        img.alpha_composite(band, (0, h - band_h))
+
+        sub_size = int(h * 0.06)
         font_sub = ImageFont.truetype(str(FONT_MEDIUM), sub_size)
-        sy = hy + headline_size + 18
-        draw.text((margin_x + 2, sy + 2), sub, font=font_sub, fill=(*THUMB_SHADOW_COLOR, 170))
-        draw.text((margin_x, sy), sub, font=font_sub, fill=(*THUMB_SUB_COLOR, 255))
+        sub_stroke = max(2, sub_size // 12)
+        sy = h - int(band_h * 0.5) - sub_size // 2
+        draw.text(
+            (margin_x, sy), sub, font=font_sub,
+            fill=THUMB_SUB_COLOR, stroke_width=sub_stroke, stroke_fill=THUMB_SHADOW_COLOR,
+        )
 
     img.convert("RGB").save(image_path, "PNG")
 
