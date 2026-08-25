@@ -150,13 +150,24 @@ def style_for(scene_type: str) -> str:
     return CHART_CONTEXT if scene_type == "data" else BASE_CONTEXT
 
 
-def gen_image(client: genai.Client, prompt: str, out_path: Path, aspect_ratio: str = None) -> bool:
+def gen_image(client: genai.Client, prompt: str, out_path: Path, aspect_ratio: str = None,
+              reference_image_path: Path = None) -> bool:
     config_kwargs = {"response_modalities": ["IMAGE"]}
     if aspect_ratio:
         config_kwargs["image_config"] = types.ImageConfig(aspect_ratio=aspect_ratio)
+    contents = prompt
+    if reference_image_path is not None:
+        # 参照画像を渡して背景（部屋・窓・人物サイズ等）を踏襲させる。複数シーンに
+        # わたって同じ「雲の外側」を独立生成すると細部が毎回ばらつく問題への対処
+        # （2026-08-25追加、kl004 S14〜S16で発覚）。
+        ref_bytes = reference_image_path.read_bytes()
+        contents = [
+            types.Part.from_bytes(data=ref_bytes, mime_type="image/png"),
+            prompt,
+        ]
     resp = client.models.generate_content(
         model=MODEL,
-        contents=prompt,
+        contents=contents,
         config=types.GenerateContentConfig(**config_kwargs),
     )
     candidate = resp.candidates[0] if resp.candidates else None
@@ -298,13 +309,15 @@ def build_retry_prompt(base_prompt: str, issues: list) -> str:
 
 
 def generate_with_qa(client: genai.Client, base_prompt: str, image_prompt_for_qa: str,
-                      out_path: Path, aspect_ratio: str = None, skip_qa: bool = False) -> dict:
+                      out_path: Path, aspect_ratio: str = None, skip_qa: bool = False,
+                      reference_image_path: Path = None) -> dict:
     """生成→QA→（NGなら）修正指示付きで再生成、を最大MAX_QA_ATTEMPTS回試行する。"""
     prompt = base_prompt
     result = {"ok": False, "issues": ["画像生成失敗（QA未実行）"], "attempts": 0}
     for attempt in range(1, MAX_QA_ATTEMPTS + 1):
         suffix = f"（{attempt}回目）" if attempt > 1 else ""
-        ok = gen_image(client, prompt, out_path, aspect_ratio=aspect_ratio)
+        ok = gen_image(client, prompt, out_path, aspect_ratio=aspect_ratio,
+                        reference_image_path=reference_image_path)
         if not ok:
             print(f"⚠️ {out_path.name}: 画像データなし{suffix}", file=sys.stderr)
             result = {"ok": False, "issues": ["画像データなし"], "attempts": attempt}
@@ -334,6 +347,8 @@ def main():
     parser.add_argument("--shorts-only", action="store_true", help="Shortsのみ生成")
     parser.add_argument("--shorts-scenes", help="Shorts内の生成する番号をカンマ区切りで指定（例: 4）。指定時は自動的に--shorts-only扱い")
     parser.add_argument("--no-qa", action="store_true", help="Gemini Vision QAをスキップ（旧動作）")
+    parser.add_argument("--reference-scene", type=int,
+                         help="指定したscene_idの生成済み画像を参照画像として渡し、背景の一貫性を高める（--scenesで対象を絞って使う）")
     args = parser.parse_args()
 
     if not API_KEY:
@@ -360,13 +375,19 @@ def main():
         if args.scenes:
             target_ids = {int(s) for s in args.scenes.split(",")}
 
+        ref_path = (out_dir / f"S{args.reference_scene:02d}.png") if args.reference_scene else None
+        if ref_path is not None and not ref_path.exists():
+            print(f"❌ 参照画像が見つかりません: {ref_path}", file=sys.stderr)
+            sys.exit(1)
+
         for scene in ep["scenes"]:
             sid = scene["scene_id"]
             if target_ids is not None and sid not in target_ids:
                 continue
             prompt = f"{style_for(scene['type'])}\n\nScene: {scene['image_prompt']}"
             out_path = out_dir / f"S{sid:02d}.png"
-            r = generate_with_qa(client, prompt, scene["image_prompt"], out_path, skip_qa=args.no_qa)
+            r = generate_with_qa(client, prompt, scene["image_prompt"], out_path, skip_qa=args.no_qa,
+                                  reference_image_path=ref_path)
             r["name"] = out_path.name
             qa_results.append(r)
 
