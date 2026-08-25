@@ -532,7 +532,16 @@ python3 kl_image_gen.py --episode kl{NNN}
 
 ---
 
-## STEP 7 — zoom_anchor判定（実行タイミングに注意）
+## STEP 7 — zoom_anchor判定・カメラワーク自動決定（実行タイミングに注意）
+
+**このSTEPはSCと完全に同じ仕様で、全シーンの`ken_burns`を判定結果で
+上書きする（2026-08-25確定）。** STEP2でシーンJSONに書いた`ken_burns`
+（`zoom_in`/`zoom_out`/`pan_left`/`pan_right`/`static`）は、このSTEPの
+実行によって必ず以下のいずれかに上書きされる（SCの`infer_zoom_anchor()`が
+`character_ref`の有無だけで機械的に決めるのと同じ）: 1人構図→`zoom_in`、
+2人構図→`pan_zoom_out`、0人/3人以上→`zoom_out`。結果として`static`/
+`pan_left`/`pan_right`は実質使われない。STEP2でのシーン生成時、`ken_burns`
+の値をあまり神経質に選ぶ必要はない（どうせ上書きされるため）。
 
 **このSTEPの実行は、STEP11で画像・ナレーション・BGMのユーザー確認がすべて
 OKになった「後」まで待つこと（2026-08-25改訂）。** zoom_anchorは静止画の

@@ -8,15 +8,18 @@ samurai-chroniclesの sc_zoom_anchor.py と同じ考え方（Gemini Visionへ委
 から構図タイプを機械的に判定するが、kagaku-lifeはcharacter_refの概念が
 なく主人公も毎回変わるため、画像そのものをGemini Visionに見せて判定させる。
 
-判定内容は2つ: (1) 主被写体の重心（1人構図のズーム焦点として使用）、
-(2) 構図タイプ（1人/2人/その他）。SCと同じカメラワークルールをkagaku-life
-にも適用する（2026-08-25追加）: 1人構図はズームイン/ズームアウト（従来通り
-zoom_anchorが焦点）、2人構図は「片側→反対側へパン→ズームアウト」演出に
-自動的に切り替え（scene.ken_burnsを"pan_zoom_out"に上書き）、3人以上/0人
-（チャート図解等）は元のken_burns（zoom_out等）のまま中央基準で扱う。
+判定内容は2つ: (1) 主被写体の重心、(2) 構図タイプ（1人/2人/その他）。
+SCと完全に同じ仕様にする（2026-08-25、ユーザー指示で「SCと同じ仕様に」と
+確定）: SCのinfer_zoom_anchor()は全シーンに対して必ず何らかのeffect
+（pan_zoom_out_lr/rl・zoom_in・zoom_out）を返すため、STEP2でJSON側に
+static/pan_left/pan_rightを書いても実質使われることがない（常に上書き
+される）。kagaku-lifeもこれに合わせ、**全シーンを対象に**scene.ken_burnsを
+判定結果で上書きする: 1人構図→zoom_in（zoom_anchorが焦点）、2人構図→
+pan_zoom_out（片側→反対側へパン→ズームアウト）、0人/3人以上（チャート
+図解等）→zoom_out（中央固定）。static/pan_left/pan_rightは実質使われなく
+なる。
 
-対象シーン: ken_burns が zoom_in / zoom_out のシーンのみ（pan/staticは対象外。
-2人構図と判定された場合はken_burnsをpan_zoom_outに書き換える）。
+対象シーン: 全シーン（SCと同じ「常に上書き」仕様）。
 kl_video_gen.pyがKen Burnsのズーム焦点・カメラワークとして使う。
 
 使い方:
@@ -42,11 +45,14 @@ MODEL = "gemini-3.6-flash"
 BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 
-ZOOM_TYPES = {"zoom_in", "zoom_out"}
-
-
 def is_target_scene(scene: dict) -> bool:
-    return scene.get("ken_burns") in ZOOM_TYPES
+    # SCと同じ仕様にする（2026-08-25改訂）: SCのinfer_zoom_anchor()は
+    # 全シーンに対して必ず何らかのeffect（pan_zoom_out_lr/rl・zoom_in・
+    # zoom_out）を返すため、JSON側でstatic/pan_left/pan_rightを指定しても
+    # 実質使われることがない（常に上書きされる）。kagaku-lifeもこの
+    # 「人数に応じて自動決定」を全シーン一律に適用し、static/pan_left/
+    # pan_rightを廃止する。全シーンが対象（毎回再判定する）。
+    return True
 
 
 def determine_zoom_anchor(client: genai.Client, image_path: Path) -> dict:
@@ -115,8 +121,8 @@ def run(episode_id: str, scene_filter: list = None):
         targets = [s for s in targets if s["scene_id"] in scene_filter]
 
     print(f"\n{'━'*60}")
-    print(f"  {episode_id} — zoom_anchor 判定（Gemini Vision）")
-    print(f"  対象シーン: {len(targets)}/{len(ep['scenes'])}（ken_burns=zoom_in/zoom_out のみ）")
+    print(f"  {episode_id} — zoom_anchor判定・カメラワーク自動決定（Gemini Vision）")
+    print(f"  対象シーン: {len(targets)}/{len(ep['scenes'])}（SCと同じ仕様: 全シーン一律）")
     print(f"{'━'*60}\n")
 
     updated = 0
@@ -139,10 +145,21 @@ def run(episode_id: str, scene_filter: list = None):
                 scene["ken_burns"] = "pan_zoom_out"
                 scene.pop("zoom_anchor", None)
                 print(f"  S{scene_id:02d}: 2人構図と判定 → ken_burns=pan_zoom_out")
-            else:
+            elif result["subject_count"] == "one":
+                # 1人構図（人物・ロボット等の単一主被写体）→ ズームイン
+                # （SCの「character_ref あり→zoom_in」と同じ）
+                scene["ken_burns"] = "zoom_in"
                 anchor = {"x": result["x"], "y": result["y"]}
                 scene["zoom_anchor"] = anchor
-                print(f"  S{scene_id:02d}: x={anchor['x']}, y={anchor['y']}")
+                print(f"  S{scene_id:02d}: 1人構図と判定 → ken_burns=zoom_in x={anchor['x']}, y={anchor['y']}")
+            else:
+                # 0人・3人以上（チャート図解等含む）→ 中央からズームアウト
+                # （SCの「人物なし・3人以上→中央からズームアウト」と同じ、
+                # 焦点は常に中央固定）
+                scene["ken_burns"] = "zoom_out"
+                anchor = {"x": 0.5, "y": 0.5}
+                scene["zoom_anchor"] = anchor
+                print(f"  S{scene_id:02d}: 0人/3人以上と判定 → ken_burns=zoom_out（中央固定）")
         except Exception as e:
             print(f"  ⚠️  S{scene_id:02d}: 判定失敗（{e}）— zoom_anchorはなしのまま")
             failed.append(scene_id)
