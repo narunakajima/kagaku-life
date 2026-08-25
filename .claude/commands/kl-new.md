@@ -37,6 +37,7 @@
 | 静止画生成（QA込み） | `kl_image_gen.py` |
 | zoom_anchor判定 | `kl_zoom_anchor.py` |
 | ナレーション音声生成 | `kl_tts_gen.py` |
+| 画像+ナレーション確認ページ生成 | `kl_review_gen.py` |
 | テロップ生成 | `kl_telop_gen.py` |
 | BGM音声QA | `kl_bgm_qa.py` |
 | BGM最終検証 | `kl_bgm_final_check.py` |
@@ -593,10 +594,23 @@ CLAUDE.md「BGMパイプライン」の手順に従う（トーンは必ず温�
 
 ## STEP 11 — 静止画・ナレーションのユーザー確認 → Google Driveへ格納
 
-**Drive反映前に必ずユーザーの確認を得る。** STEP6〜9で生成した本編静止画・
-Shorts静止画・ナレーション音声を`SendUserFile`で送り、OKが出るまではDesktop
-ローカルのみに留める（Driveへは同期しない）。修正が入った場合は該当工程を
-やり直し、再度確認を得る（kl002で実際にこの順番を求められた運用）。
+**Drive反映前に必ずユーザーの確認を得る。** OKが出るまではDesktopローカルの
+みに留める（Driveへは同期しない）。修正が入った場合は該当工程をやり直し、
+再度確認を得る（kl002で実際にこの順番を求められた運用）。
+
+**確認は`kl_review_gen.py`が生成する確認ページで行う（2026-08-25追加）。**
+画像フォルダとナレーションフォルダを別々に見比べるのは判断しづらいという
+指摘を受け、シーンごとに静止画・ナレーション文・音声プレイヤーを1画面に
+並べたHTMLを生成するようにした（`SendUserFile`で個別ファイルを送るのは
+[[feedback-review-before-drive-sync]]の通りしない）:
+
+```bash
+python3 kl_review_gen.py --episode kl{NNN}
+```
+
+`~/Desktop/kagaku-life/review.html`を生成し、自動でブラウザで開く
+（`--no-open`で無効化可）。ユーザーはこのページ上で画像を見ながら該当の
+ナレーション音声を再生して確認できる。
 
 OKが得られたら、まずSTEP7のzoom_anchor判定を実行してから（このタイミングまで
 待って実行する理由はSTEP7参照）、Google Driveへ格納する:
