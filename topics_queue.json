@@ -140,8 +140,29 @@
       },
       "hook_idea": "もし脳に針を刺すことなく、頭で考えるだけでパソコンやゲームを操作できるとしたら？",
       "notes": "STAGE4スコア4.5でmedical_supportカテゴリ最上位（STEP2.5提示の6カテゴリ案からユーザーがSTAGE5で選択、2026-08-24）。kl001=home_robot、kl002=workと続いたため、医療補助技術は未使用カテゴリとしてローテーション上も適切。査読済み（Advanced Science誌）のため信頼性シグナルも強い。BCI（脳-コンピュータインターフェース）で身体麻痺を負った主人公が、機器操作の自由を取り戻すという変革ポテンシャルの高いストーリー。medical_supportカテゴリは在庫が3件のみだったため、本採用で在庫がほぼ枯渇する点に留意（次回/kl-new実行時にSTAGE0で在庫3件未満と判定され、STAGE1が自動実行される見込み）。"
+    },
+    {
+      "episode_id": "kl004",
+      "status": "confirmed",
+      "title": "超軽量ギア1つで、歩くのがまた楽しみになる",
+      "format": "single_paper",
+      "category": "mobility",
+      "category_label": "モビリティ・身体拡張",
+      "references": [
+        {
+          "title": "Ultra-lightweight robotic hip exoskeleton with anti-phase torque symmetry for enhanced walking efficiency",
+          "authors": ["Bokman Lim", "Byungjune Choi", "Changhyun Roh", "Jewoo Lee", "Yong-Jae Kim"],
+          "year": 2025,
+          "venue": "Scientific Reports",
+          "doi": "10.1038/s41598-025-95599-2",
+          "is_preprint": false
+        }
+      ],
+      "protagonist": {"name": "佐藤 節子", "age": 72, "job": "無職（元・手芸教室講師）", "gender": "female"},
+      "hook_idea": "「最近、歩くのが億劫になった…」その悩み、重いロボットではなく“超軽いギア”1つで変わるかもしれません。",
+      "notes": "STAGE4スコア4.65でmobilityカテゴリ最上位（STEP2.5提示の6カテゴリ案からユーザーがSTAGE5で選択、2026-08-25）。kl001=home_robot、kl002=work、kl003=medical_supportと続いたため、モビリティは未使用カテゴリとしてローテーション上も適切。査読済み（Scientific Reports誌）のため信頼性シグナルも強い。重厚な介護ロボットではなく「超軽量ギア1つ」という意外性のある軽量化アプローチが、高齢者の歩行効率という生活実感に直結するテーマ。"
     }
   ],
-  "total_topics": 3,
-  "last_updated": "2026-08-24"
+  "total_topics": 4,
+  "last_updated": "2026-08-25"
 }

@@ -105,8 +105,8 @@
         "age": 72,
         "job": "無職（元・手芸教室講師）"
       },
-      "status": "available",
-      "used_in": null,
+      "status": "used",
+      "used_in": "kl004",
       "considered_at": "2026-08-20"
     },
     {
@@ -1363,7 +1363,218 @@
       "status": "available",
       "used_in": null,
       "considered_at": "2026-08-22"
+    },
+    {
+      "paperId": "d48bf578b01c7624caa50eec9349778edc94a57c",
+      "title": "Mobile Robotic Balance Assistant (MRBA): a gait assistive and fall intervention robot for daily living",
+      "year": 2023,
+      "venue": "Journal of NeuroEngineering and Rehabilitation",
+      "doi": "10.1186/s12984-023-01149-0",
+      "authors": [
+        "Lei Li",
+        "Ming Jeat Foo",
+        "Jiaye Chen",
+        "Kuan Yuee Tan",
+        "Jiaying Cai"
+      ],
+      "is_preprint": false,
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "overall_score": 4.75,
+      "hook_idea": "「転んで寝たきりになったら…」そんな不安で散歩を諦めた親に、変形するロボットが寄り添う未来とは？",
+      "example_protagonist": {
+        "name": "高橋 恵子",
+        "age": 52,
+        "job": "パート事務（80代の母と同居中）"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-25"
+    },
+    {
+      "paperId": "313851e27ae74af227e68fe46d72847a0a4cb03d",
+      "title": "Effects of a Soft Robotic Exoskeleton for Gait Training on Clinical Outcomes in Patients With Parkinson Disease: Randomized Controlled Pilot Study",
+      "year": 2026,
+      "venue": "Journal of Medical Internet Research",
+      "doi": "10.2196/82629",
+      "authors": [
+        "S. Bu",
+        "Xiaoqing Luo",
+        "Shuangfang Li",
+        "Yuqing Shi",
+        "Lingjing Jin"
+      ],
+      "is_preprint": false,
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "overall_score": 4.4,
+      "hook_idea": "たった4週間で歩幅が15センチ伸びる！？『着るロボット』がパーキンソン病の歩く怖さを無くす未来とは。",
+      "example_protagonist": {
+        "name": "鈴木 敏夫",
+        "age": 68,
+        "job": "元会社員（パーキンソン病当事者）"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-25"
+    },
+    {
+      "paperId": "ebea4fb1674d41db9e3c8ade4c4315aa18c72f7f",
+      "title": "Multi-modal detection of acute fear of falling in older adults: A proof-of-concept study",
+      "year": 2025,
+      "venue": "Open Research Europe",
+      "doi": "10.12688/openreseurope.21691.1",
+      "authors": [
+        "Kamila Kolpashnikova",
+        "Valeriia Yakushko",
+        "L. Harris",
+        "Shital Desai"
+      ],
+      "is_preprint": false,
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "overall_score": 4.4,
+      "hook_idea": "お年寄りが転んでしまう本当の原因は、足の筋力ではなく『一瞬の恐怖』だった？",
+      "example_protagonist": {
+        "name": "高橋よし子",
+        "age": 74,
+        "job": "無職（元・主婦、一人暮らし）"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-25"
+    },
+    {
+      "paperId": "4f699273c1a6905c0019e00c84a29116f88b6799",
+      "title": "Can lower-limb exoskeletons support sit-to-stand motions in frail elderly without crutches? A study combining optimal control and motion capture",
+      "year": 2024,
+      "venue": "Frontiers Neurorobotics",
+      "doi": "10.3389/fnbot.2024.1348029",
+      "authors": [
+        "Jan C. L. Lau",
+        "Katja D. Mombaur"
+      ],
+      "is_preprint": false,
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "overall_score": 4.4,
+      "hook_idea": "「立ち上がるだけで腕が限界…」松葉杖すら持てない高齢者を、ロボットは『手ぶら』で立たせることができるのでしょうか？",
+      "example_protagonist": {
+        "name": "佐藤悦子",
+        "age": 52,
+        "job": "パート事務（80代の母と同居・介護中）"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-25"
+    },
+    {
+      "paperId": "079d39513ff17bee961720a41046078431540c3f",
+      "title": "Vision AI-Based Gamified Cognitive Prosthesis for Executive Function: Feasibility and Usability Study",
+      "year": 2025,
+      "venue": "JMIR Serious Games",
+      "doi": "10.2196/74157",
+      "authors": [
+        "C. Siow",
+        "Yao-Hua Yang",
+        "Cheng-Jui Tsai",
+        "Wan-Wan Yang",
+        "Chaur-Jong Hu"
+      ],
+      "is_preprint": false,
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "overall_score": 4.4,
+      "hook_idea": "「あれ、卵って何分茹でるんだっけ…」長年やってきた料理が急にできなくなる恐怖、AIが変えるかもしれません。",
+      "example_protagonist": {
+        "name": "高橋 順子",
+        "age": 71,
+        "job": "元・料理教室講師（軽度認知症と診断された一人暮らしの女性）"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-25"
+    },
+    {
+      "paperId": "06f876795f245fae801c6e49efbb4a8727180e18",
+      "title": "MIHRaGe: A Mixed-Reality Interface for Human-Robot Interaction via Gaze-Oriented Control",
+      "year": 2025,
+      "venue": "International Conference on Advanced Robotics",
+      "doi": "10.1109/ICAR65334.2025.11338723",
+      "authors": [
+        "Rafael R. Baptista",
+        "Nina R. Gerszberg",
+        "Ricardo V. Godoy",
+        "G. J. Lahr"
+      ],
+      "is_preprint": false,
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "overall_score": 4.25,
+      "hook_idea": "「もし、目線で見るだけで『もう一つの手』が自由に動くとしたら…体の自由を失った家族の日常はどう変わるでしょうか？」",
+      "example_protagonist": {
+        "name": "佐藤健一",
+        "age": 45,
+        "job": "会社員（ALSを患う高齢の父を在宅介護中）"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-25"
+    },
+    {
+      "paperId": "e2488b502b238b44b26c01853763818c8d8cbcb3",
+      "title": "Therapist-exoskeleton-patient interaction for gait therapy",
+      "year": 2025,
+      "venue": "Sci. Robotics",
+      "doi": "10.1126/scirobotics.adz9628",
+      "authors": [
+        "Emek Barış Küçüktabak",
+        "Matthew R. Short",
+        "Lorenzo Vianello",
+        "Daniel Ludvig",
+        "Levi J. Hargrove"
+      ],
+      "is_preprint": false,
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "overall_score": 4.25,
+      "hook_idea": "プロの理学療法士の『感覚』がロボット越しに足へ伝わる？人間と人間をロボットで直結する、全く新しいリハビリのカタチとは！",
+      "example_protagonist": {
+        "name": "佐藤和夫",
+        "age": 56,
+        "job": "脳卒中の後遺症からの社会復帰を目指す元営業職"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-25"
+    },
+    {
+      "paperId": "b91950631a076b63825cd3d6bfdaa3d7b9a3a9f5",
+      "title": "Memory Cueing and Augmented Sensory Feedback in Virtual Reality as an Assistive Technology for Enhancing Hand Motor Performance",
+      "year": 2026,
+      "venue": "Technologies",
+      "doi": "10.3390/technologies14040217",
+      "authors": [
+        "Zachary Marvin",
+        "Sophie Dewil",
+        "Yu Shi",
+        "Noam Y. Harel",
+        "Raviraj Nataraj"
+      ],
+      "is_preprint": false,
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "overall_score": 4.15,
+      "hook_idea": "思い通りに動かなくなった手が、たった9回の練習で劇的に変わる？VRと記憶の仕組みを組み合わせた最新リハビリの驚くべき効果とは。",
+      "example_protagonist": {
+        "name": "佐藤健一",
+        "age": 58,
+        "job": "脳卒中からの復職を目指す喫茶店マスター"
+      },
+      "status": "available",
+      "used_in": null,
+      "considered_at": "2026-08-25"
     }
   ],
-  "last_updated": "2026-08-24"
+  "last_updated": "2026-08-25"
 }
