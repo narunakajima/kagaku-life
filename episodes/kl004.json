@@ -59,7 +59,7 @@
       "ken_burns": "zoom_in",
       "zoom_anchor": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.32
       },
       "telop_cards": [
         {
@@ -81,7 +81,7 @@
       "ken_burns": "zoom_in",
       "zoom_anchor": {
         "x": 0.51,
-        "y": 0.42
+        "y": 0.36
       },
       "telop_cards": [
         {
@@ -100,11 +100,7 @@
       "duration_seconds": 2,
       "narration": "孫と、公園を歩ける",
       "image_prompt": "A Japanese woman in her early 70s, her hair short and neatly styled in silver-gray, walking hand in hand with her young granddaughter (around 7 years old) along a park path, both smiling, wearing a minimalist lightweight hip exoskeleton (a slim fabric waist belt with one small compact motor unit resting at one hip and thin straps running down to both thighs, sleek and unobtrusive like a slim athletic brace, not a bulky robotic suit, worn discreetly over her ordinary clothing), bright afternoon daylight, no text",
-      "ken_burns": "zoom_in",
-      "zoom_anchor": {
-        "x": 0.44,
-        "y": 0.43
-      },
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -125,7 +121,7 @@
       "ken_burns": "zoom_in",
       "zoom_anchor": {
         "x": 0.6,
-        "y": 0.45
+        "y": 0.4
       },
       "telop_cards": [
         {
@@ -384,16 +380,16 @@
         },
         {
           "lines": [
-            "2025年、学術誌サイエンティフィック・リポーツ"
+            "2025年、学術誌サイエンティフィック・リポーツに"
           ],
           "start": 18.97,
-          "end": 22.57
+          "end": 22.72
         },
         {
           "lines": [
-            "に、その効果を検証した研究が発表されています。"
+            "、その効果を検証した研究が発表されています。"
           ],
-          "start": 22.72,
+          "start": 22.87,
           "end": 26.17
         }
       ]
@@ -406,25 +402,21 @@
       "duration_seconds": 47,
       "narration": "この装具の重さは、バッテリーや腰・太もものベルトまで含めても、わずか1.6キログラム。両側にモーターを積む従来のロボット装具とは違い、片側の股関節だけに、モーターとセンサーを1つずつ搭載するという、思い切ったシンプルな設計です。歩くとき、左右の脚の付け根は常に逆向きに動くという体の仕組みを利用し、たった1つのモーターだけで両脚を同時にアシストします。歩く速さが変わっても、装具がリアルタイムで力の加減を調整してくれる仕組みです。",
       "image_prompt": "A Korean researcher in a white lab coat helping an elderly Korean woman put on a minimalist lightweight hip exoskeleton (a slim fabric waist belt with one small compact motor unit resting at one hip and thin straps running down to both thighs, sleek and unobtrusive like a slim athletic brace, not a bulky robotic suit, worn discreetly over her ordinary clothing) in a bright clinical research room, the researcher pointing at the single compact motor unit at her hip, a small flat corner graphic (no larger than roughly one-eighth of the frame, tucked unobtrusively in a corner, plain and simple, kept visually distinct from the richer main scene) showing the device's compact size next to a small water bottle for scale, absolutely no text or numerals, bright daytime lighting, no text elsewhere in the image",
-      "ken_burns": "zoom_in",
-      "zoom_anchor": {
-        "x": 0.35,
-        "y": 0.4
-      },
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
-            "この装具の重さは、バッテリーや腰・太もも"
+            "この装具の重さは、バッテリーや腰・太ももの"
           ],
           "start": 0.0,
           "end": 3.72
         },
         {
           "lines": [
-            "のベルトまで含めても、わずか1.6キログラム。"
+            "ベルトまで含めても、わずか1.6キログラム。"
           ],
           "start": 3.87,
-          "end": 7.32
+          "end": 7.17
         },
         {
           "lines": [
@@ -442,16 +434,16 @@
         },
         {
           "lines": [
-            "1つずつ搭載するという、思い切ったシンプル"
+            "1つずつ搭載するという、思い切ったシンプルな"
           ],
           "start": 14.82,
-          "end": 18.18
+          "end": 18.3
         },
         {
           "lines": [
-            "な設計です。歩くとき、左右の脚の付け根は"
+            "設計です。歩くとき、左右の脚の付け根は"
           ],
-          "start": 18.33,
+          "start": 18.45,
           "end": 22.33
         },
         {
@@ -503,16 +495,16 @@
       "telop_cards": [
         {
           "lines": [
-            "研究チームは、平均78.6歳の高齢者9人"
+            "研究チームは、平均78.6歳の高齢者9"
           ],
           "start": 0.0,
-          "end": 4.14
+          "end": 3.94
         },
         {
           "lines": [
-            "に協力してもらい、韓国・水原市の公園で、"
+            "人に協力してもらい、韓国・水原市の公園で、"
           ],
-          "start": 4.29,
+          "start": 4.09,
           "end": 7.57
         },
         {
@@ -666,7 +658,7 @@
       "ken_burns": "zoom_in",
       "zoom_anchor": {
         "x": 0.5,
-        "y": 0.73
+        "y": 0.5
       },
       "telop_cards": [
         {
@@ -678,65 +670,72 @@
         },
         {
           "lines": [
-            "ペットボトル3本分ほど。それだけの軽さで"
+            "ペットボトル3本分ほど。それだけの軽"
           ],
           "start": 2.85,
-          "end": 5.76
+          "end": 5.45
         },
         {
           "lines": [
-            "ありながら、歩く速さも、立ち座りの機敏さも、"
+            "さでありながら、歩く速さも、"
           ],
-          "start": 5.91,
-          "end": 8.96
+          "start": 5.6,
+          "end": 7.53
         },
         {
           "lines": [
-            "下肢の力も、着実に底上げされていました。"
+            "立ち座りの機敏さも、下肢の力も、"
           ],
-          "start": 9.11,
-          "end": 11.88
+          "start": 7.68,
+          "end": 9.89
         },
         {
           "lines": [
-            "ただし今回は、装具を使わずに同じトレーニング"
+            "着実に底上げされていました。ただし今回は、"
           ],
-          "start": 12.03,
-          "end": 15.08
+          "start": 10.04,
+          "end": 12.94
         },
         {
           "lines": [
-            "をした人たちと比べたわけではありません。"
+            "装具を使わずに同じトレーニングをした人"
           ],
-          "start": 15.23,
-          "end": 18.0
+          "start": 13.09,
+          "end": 15.71
+        },
+        {
+          "lines": [
+            "たちと比べたわけではありません。"
+          ],
+          "start": 15.86,
+          "end": 18.07
         },
         {
           "lines": [
             "どこまでが装具そのものの効果なのかは、"
           ],
-          "start": 18.15,
-          "end": 20.79
+          "start": 18.22,
+          "end": 20.84
         },
         {
           "lines": [
             "これから確かめていく必要があります。"
           ],
-          "start": 20.94,
-          "end": 23.44
+          "start": 20.99,
+          "end": 23.47
         },
         {
           "lines": [
             "それでも、この軽さで暮らしの中に入って"
           ],
-          "start": 23.59,
-          "end": 26.23
+          "start": 23.62,
+          "end": 26.24
         },
         {
           "lines": [
             "いける可能性を示した意味は、"
           ],
-          "start": 26.38,
+          "start": 26.39,
           "end": 28.32
         },
         {
@@ -755,11 +754,7 @@
       "duration_seconds": 30,
       "narration": "もし、この装具が当たり前に使われるようになったら——想像するだけで、心が軽くなります。朝、着替えて玄関を出るときの足取りが、前よりずっと軽い。庭先の花に目を留める余裕も生まれて、散歩に出るのが、また楽しみになりました。今日はどこまで歩こうかと、自然に考えている自分がいます。",
       "image_prompt": "Use the attached reference image exactly as the visual basis for everything outside the thought bubble: the same room, the same tall narrow window with pale sage-green curtains, the same round orange-shaded table lamp, the same tiny woman in the same armchair at the same small size and position in the lower-right corner, the same thought-bubble trail of three small circles, and the same overall size/position of the large cloud-shaped thought bubble filling most of the frame. Do not change any of that. The ONLY thing that changes is the scene illustrated inside the thought bubble: her future self stepping out of her front door into a sunny garden path, pausing with a gentle smile to look at flowers blooming beside the walkway, wearing a minimalist lightweight hip exoskeleton (a slim fabric waist belt with one small compact motor unit resting at one hip and thin straps running down to both thighs, sleek and unobtrusive like a slim athletic brace, not a bulky robotic suit, worn discreetly under a light cardigan), bright soft morning daylight inside the bubble scene, no text",
-      "ken_burns": "zoom_in",
-      "zoom_anchor": {
-        "x": 0.52,
-        "y": 0.38
-      },
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -844,24 +839,24 @@
         },
         {
           "lines": [
-            "息が切れることが減って。断ってばかりだっ"
+            "息が切れることが減って。断ってばかりだった"
           ],
           "start": 8.22,
           "end": 12.32
         },
         {
           "lines": [
-            "たお茶のお誘いにも、『行こうかな』と、"
+            "お茶のお誘いにも、『行こうかな』と、"
           ],
           "start": 12.47,
-          "end": 16.07
+          "end": 15.81
         },
         {
           "lines": [
             "自然に思えるようになったんです。"
           ],
-          "start": 16.22,
-          "end": 18.74
+          "start": 15.96,
+          "end": 18.48
         },
         {
           "lines": [
@@ -886,11 +881,7 @@
       "duration_seconds": 30,
       "narration": "この間の週末、孫と一緒に、あの公園をゆっくり歩けました。途中で休むこともなく、『おばあちゃん、元気になったね』と笑ってくれた顔を見て、涙が出そうになりました。手をつないで、同じ景色を見ながら歩けるだけで、こんなに嬉しいなんて。この時間が、何よりの宝物です。",
       "image_prompt": "A Japanese woman in her early 70s, her hair short and neatly styled in silver-gray, walking hand in hand with her young granddaughter (around 7 years old) along a park path lined with trees, both laughing together, her eyes glistening with emotion, wearing a minimalist lightweight hip exoskeleton (a slim fabric waist belt with one small compact motor unit resting at one hip and thin straps running down to both thighs, sleek and unobtrusive like a slim athletic brace, not a bulky robotic suit) subtly visible, bright afternoon daylight, no text",
-      "ken_burns": "zoom_in",
-      "zoom_anchor": {
-        "x": 0.55,
-        "y": 0.33
-      },
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -1019,8 +1010,8 @@
       "image_prompt": "A bright research lab table with a minimalist lightweight hip exoskeleton (a slim fabric waist belt with one small compact motor unit resting at one hip and thin straps running down to both thighs, sleek and unobtrusive like a slim athletic brace, not a bulky robotic suit) resting neatly on it, morning daylight streaming through a large window, through which a blurred silhouette of an elderly Japanese woman is visible walking cheerfully along a sunny path outside, no text",
       "ken_burns": "zoom_out",
       "zoom_anchor": {
-        "x": 0.6,
-        "y": 0.71
+        "x": 0.66,
+        "y": 0.25
       },
       "telop_cards": [
         {
@@ -1039,23 +1030,23 @@
         },
         {
           "lines": [
-            "的なもので、より多くの人・より長い期間で"
+            "的なもので、より多くの人・より長い期間での"
           ],
           "start": 6.94,
-          "end": 9.94
+          "end": 10.09
         },
         {
           "lines": [
-            "の検証がこれから必要だと、研究チーム自身"
+            "検証がこれから必要だと、研究チーム自身が"
           ],
-          "start": 10.09,
-          "end": 13.09
+          "start": 10.24,
+          "end": 13.24
         },
         {
           "lines": [
-            "が述べています。それでも、たった1.6"
+            "述べています。それでも、たった1.6"
           ],
-          "start": 13.24,
+          "start": 13.39,
           "end": 16.09
         },
         {

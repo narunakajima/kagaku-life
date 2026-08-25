@@ -145,15 +145,26 @@ def _load_janome() -> JanomeTokenizer:
 
 
 def _token_boundaries(text: str) -> list:
-    """形態素解析で得られる各形態素の切れ目（文字オフセット）の一覧を返す
-    （0とlen(text)を含む）。分割候補をこの一覧に限定すれば、単語・複合語の
-    途中で切れることは構造的に起こらない。
+    """形態素解析で得られる「文節」相当の切れ目（文字オフセット）の一覧を返す
+    （0とlen(text)を含む）。janomeの生の形態素境界をそのまま使うと、
+    「だった」「でした」「ません」等の頻出する助動詞・活用語尾がだっ+た、
+    でし+た、ませ+ん…のように複数形態素に割れ、その内部にたまたま
+    max_charsの境界が来ると「〜だっ」「た〜」のような不自然な位置で
+    テロップが分割されてしまう不具合が実際に起きた（2026-08-25、
+    PROTECTED_PHRASESへの個別語追加では際限がないと判明）。助詞・助動詞は
+    単独で行頭に来ることがまず無いため、これらのトークンは直前のトークンへ
+    常に結合してから境界を計算する（＝形態素境界ではなく文節境界に近い
+    ものになる）。
     """
     boundaries = [0]
     pos = 0
     for tok in _load_janome().tokenize(text):
         pos += len(tok.surface)
-        boundaries.append(pos)
+        attach_to_prev = tok.part_of_speech.startswith(("助詞", "助動詞")) and len(boundaries) > 1
+        if not attach_to_prev:
+            boundaries.append(pos)
+        else:
+            boundaries[-1] = pos
     if boundaries[-1] != len(text):
         boundaries.append(len(text))
     return boundaries

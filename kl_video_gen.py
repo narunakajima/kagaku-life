@@ -22,6 +22,7 @@ kl_bgm_library.py --add がすべて完了していること（Google Driveに�
 
 import argparse
 import json
+import random
 import shutil
 import subprocess
 import sys
@@ -56,6 +57,8 @@ CROSSFADE_DURATION = 0.8
 
 KB_ZOOM_FACTOR = 1.40
 KB_ZOOM_SPEED = 0.0006
+STATIC_ZOOM_FACTOR = 1.06  # "static"は完全静止ではなく、クリップ全長にわたる
+                            # ごく控えめな連続ズームにする（下記make_ken_burns参照）
 
 # 研究ボイス（Orus）が生活者ボイス（Leda）より聞き取りづらいという指摘のため、
 # ナレーター別に音量を補正する（2026-08-21追加）。
@@ -114,14 +117,29 @@ def probe_audio_duration(path: Path) -> float:
 def make_ken_burns(src: Path, dst: Path, duration: float, effect: str, anchor: tuple = (0.5, 0.5),
                    w: int = OUTPUT_W, h: int = OUTPUT_H):
     """画像にKen Burnsエフェクトを適用して動画クリップを生成する（SCのmake_ken_burnsと同じ仕組み）。"""
+    if effect == "pan_zoom_out":
+        # 2人構図用の汎用値。左右どちら向きにパンするかはSCと同じくランダムに
+        # 決める（JSON側では方向を固定せず、kl_zoom_anchor.pyが「2人構図」と
+        # 判定したシーンに一律"pan_zoom_out"を書き込む設計）。
+        effect = random.choice(["pan_zoom_out_lr", "pan_zoom_out_rl"])
     total_frames = max(1, int(duration * FPS))
     z = KB_ZOOM_FACTOR
     buf_w, buf_h = w * 2, h * 2
     prescale = f"scale={buf_w}:{buf_h}:flags=lanczos"
     px, py = anchor
 
-    zoom_step = KB_ZOOM_SPEED
-    z_end = round(min(1.0 + zoom_step * total_frames, z), 6)
+    # zoom_inは固定速度(KB_ZOOM_SPEED)だと、クリップが約28秒を超える長さの場合
+    # （kagaku-lifeは1シーンのナレーションが長く、context/findingシーンで
+    # 30〜45秒のクリップになることが多い）最大倍率(KB_ZOOM_FACTOR)に途中で
+    # 到達してしまい、残り時間ずっとズームが完全静止する。これが「カクッと
+    # 止まる」体感の原因だった（2026-08-25発見・修正）。zoom_out は元々
+    # クリップ全長に応じた可変速度（z_step_dn）で最後まで動き続ける設計に
+    # なっていたため、zoom_inも同様に「固定速度」と「クリップ全長で割った
+    # 可変速度」の遅い方を採用するようにし、短いクリップ（ティザー等）は
+    # 従来通りの控えめな速度、長いクリップは最後まで途切れず動き続けるように
+    # 統一した。
+    zoom_step = min(KB_ZOOM_SPEED, (z - 1.0) / max(total_frames, 1))
+    z_end = round(1.0 + zoom_step * total_frames, 6)
     z_step_dn = round((z - 1.0) / max(total_frames, 1), 8)
 
     if effect == "zoom_in":
@@ -154,11 +172,40 @@ def make_ken_burns(src: Path, dst: Path, duration: float, effect: str, anchor: t
             f":y='ih/2-(ih/zoom/2)'"
             f":d={total_frames}:s={w}x{h}:fps={FPS},setsar=1,format=yuv420p"
         )
-    else:  # static
+    elif effect in ("pan_zoom_out_lr", "pan_zoom_out_rl"):
+        # 2人構図用: フェーズ1（60%）で片側→反対側へパン、フェーズ2（40%）で
+        # パン先の位置からズームアウトして全体を見せる（SCのpan_zoom_out_lr/rlと同じ仕組み）。
+        pf = int(total_frames * 0.6)
+        zf = max(total_frames - pf, 1)
+        z_step_dn2 = round((z - 1.0) / zf, 6)
+        pan_range = round(buf_w * (1 - 1 / z), 4)
+        z_expr = (f"if(lt(on\\,{pf})\\,"
+                  f"{z}\\,"
+                  f"max({z}-{z_step_dn2}*(on-{pf})\\,1))")
+        if effect == "pan_zoom_out_lr":
+            x_expr = f"if(lt(on\\,{pf})\\,{pan_range}*on/{pf}\\,iw-iw/zoom)"
+        else:
+            x_expr = f"if(lt(on\\,{pf})\\,{pan_range}*(1-on/{pf})\\,0)"
         vf = (
             f"{prescale},"
-            f"zoompan=z='{z * 0.98}'"
-            f":x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
+            f"zoompan=z='{z_expr}'"
+            f":x='{x_expr}':y='ih/2-(ih/zoom/2)'"
+            f":d={total_frames}:s={w}x{h}:fps={FPS},setsar=1,format=yuv420p"
+        )
+    else:  # static
+        # 従来は完全に静止したフレーム（zが定数）だったが、kagaku-lifeは
+        # 1シーンのナレーションが長く"static"クリップが30秒を超えることも
+        # あるため、完全に動かない画面が長時間続いて不自然だという指摘が
+        # あった（2026-08-25）。KB_ZOOM_FACTORよりずっと控えめな
+        # STATIC_ZOOM_FACTORまで、クリップ全長をかけてごくゆっくり
+        # ズームインする「呼吸するような静止」に変更した（完全に動かないの
+        # ではなく、常にクリップ全体を通して緩やかに動き続ける）。
+        static_step = (STATIC_ZOOM_FACTOR - 1.0) / max(total_frames, 1)
+        static_end = round(1.0 + static_step * total_frames, 6)
+        vf = (
+            f"{prescale},"
+            f"zoompan=z='min(1+{static_step}*on,{static_end})'"
+            f":x='{px}*(iw-iw/zoom)':y='{py}*(ih-ih/zoom)'"
             f":d={total_frames}:s={w}x{h}:fps={FPS},setsar=1,format=yuv420p"
         )
 

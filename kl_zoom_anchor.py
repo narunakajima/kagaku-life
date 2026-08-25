@@ -4,14 +4,20 @@ episode JSONにzoom_anchorを書き込む。
 
 samurai-chroniclesの sc_zoom_anchor.py と同じ考え方（Gemini Visionへ委任し、
 メイン会話のコンテキストとClaude利用枠を圧迫しない）。SCは character_ref
-（固定キャラクター）を前提に「顔〜胸」を対象にするが、kagaku-lifeは
-エピソードごとに主人公が変わり、ロボットやチャート図解が主役になる
-シーンもあるため、「画像内で視線が集まる主被写体（人物・ロボット・
-図解の中心要素等）」を汎用的に判定する。
+（固定キャラクター）とimage_promptのテキスト（"on the left"/"on the right"）
+から構図タイプを機械的に判定するが、kagaku-lifeはcharacter_refの概念が
+なく主人公も毎回変わるため、画像そのものをGemini Visionに見せて判定させる。
+
+判定内容は2つ: (1) 主被写体の重心（1人構図のズーム焦点として使用）、
+(2) 構図タイプ（1人/2人/その他）。SCと同じカメラワークルールをkagaku-life
+にも適用する（2026-08-25追加）: 1人構図はズームイン/ズームアウト（従来通り
+zoom_anchorが焦点）、2人構図は「片側→反対側へパン→ズームアウト」演出に
+自動的に切り替え（scene.ken_burnsを"pan_zoom_out"に上書き）、3人以上/0人
+（チャート図解等）は元のken_burns（zoom_out等）のまま中央基準で扱う。
 
 対象シーン: ken_burns が zoom_in / zoom_out のシーンのみ（pan/staticは対象外。
-将来pan用のズームアンカーが必要になれば別途拡張する）。
-kl_video_gen.py（今後実装）で Ken Burns のズーム焦点として使う想定。
+2人構図と判定された場合はken_burnsをpan_zoom_outに書き換える）。
+kl_video_gen.pyがKen Burnsのズーム焦点・カメラワークとして使う。
 
 使い方:
   python3 kl_zoom_anchor.py --episode kl001
@@ -44,18 +50,33 @@ def is_target_scene(scene: dict) -> bool:
 
 
 def determine_zoom_anchor(client: genai.Client, image_path: Path) -> dict:
-    """Gemini Visionで主被写体の重心を正規化座標で判定する。"""
+    """Gemini Visionで主被写体の重心と構図タイプ（人数）を判定する。
+
+    samurai-chroniclesは character_ref とimage_promptのテキスト（"on the
+    left"/"on the right"）から機械的に構図タイプを判定するが、kagaku-lifeは
+    character_refの概念がなく主人公も毎回変わるため、画像そのものをGemini
+    Visionに見せて判定させる（2026-08-25追加。SCと同じ「1人＝ズームイン、
+    2人＝パン+ズームアウト、0人/3人以上＝中央からズームアウト」という
+    カメラワークのルールをkagaku-lifeにも適用するため）。
+    """
     image = Image.open(image_path)
     prompt = (
         "This is a still illustration from a Japanese YouTube video about AI/robotics "
-        "research and everyday life. Identify the single main visual subject that the "
-        "viewer's eye should be drawn to — this may be a person's face/chest area, a "
-        "robot, or (for infographic/chart scenes) the central diagram element — NOT "
-        "background details or secondary/minor figures. Return its center of mass as "
-        "normalized coordinates where x: 0.0=left edge, 1.0=right edge; "
-        "y: 0.0=top edge, 1.0=bottom edge.\n\n"
+        "research and everyday life.\n\n"
+        "1. Count how many clearly distinct human figures (or a single robot counts as "
+        "one figure) are prominent foreground subjects in this image — ignore tiny, "
+        "blurred, or background/crowd figures. Classify as exactly one of: "
+        "\"one\" (a single clear main subject), \"two\" (exactly two clear subjects, "
+        "roughly positioned on opposite sides of the frame, e.g. facing each other or "
+        "side by side), or \"other\" (zero subjects, three or more subjects, or a "
+        "chart/infographic scene with no clear individual figures).\n"
+        "2. If \"one\", identify that single main visual subject's center of mass "
+        "(face/chest area for a person, the main body for a robot, or the central "
+        "diagram element for an infographic/chart scene) as normalized coordinates "
+        "where x: 0.0=left edge, 1.0=right edge; y: 0.0=top edge, 1.0=bottom edge. If "
+        "not \"one\", just return {\"x\": 0.5, \"y\": 0.5}.\n\n"
         "Respond with ONLY a JSON object, no other text, in this exact format:\n"
-        '{"x": 0.0, "y": 0.0}'
+        '{"subject_count": "one", "x": 0.0, "y": 0.0}'
     )
     response = client.models.generate_content(
         model=MODEL,
@@ -66,7 +87,11 @@ def determine_zoom_anchor(client: genai.Client, image_path: Path) -> dict:
         text = re.sub(r"^```(?:json)?\s*", "", text)
         text = re.sub(r"\s*```$", "", text)
     result = json.loads(text)
-    return {"x": round(float(result["x"]), 2), "y": round(float(result["y"]), 2)}
+    return {
+        "subject_count": result.get("subject_count", "one"),
+        "x": round(float(result.get("x", 0.5)), 2),
+        "y": round(float(result.get("y", 0.5)), 2),
+    }
 
 
 def run(episode_id: str, scene_filter: list = None):
@@ -104,10 +129,20 @@ def run(episode_id: str, scene_filter: list = None):
             failed.append(scene_id)
             continue
         try:
-            anchor = determine_zoom_anchor(client, img_path)
-            scene["zoom_anchor"] = anchor
+            result = determine_zoom_anchor(client, img_path)
             updated += 1
-            print(f"  S{scene_id:02d}: x={anchor['x']}, y={anchor['y']}")
+            if result["subject_count"] == "two":
+                # SCと同じカメラワークルール: 2人構図は単一焦点のズームではなく
+                # 「片側→反対側へパン→ズームアウトで全体を見せる」演出に切り替える
+                # （kl_video_gen.pyのmake_ken_burnsが実際のlr/rl方向をランダムに
+                # 決める）。zoom_anchorは使わないシーンになるため書き込まない。
+                scene["ken_burns"] = "pan_zoom_out"
+                scene.pop("zoom_anchor", None)
+                print(f"  S{scene_id:02d}: 2人構図と判定 → ken_burns=pan_zoom_out")
+            else:
+                anchor = {"x": result["x"], "y": result["y"]}
+                scene["zoom_anchor"] = anchor
+                print(f"  S{scene_id:02d}: x={anchor['x']}, y={anchor['y']}")
         except Exception as e:
             print(f"  ⚠️  S{scene_id:02d}: 判定失敗（{e}）— zoom_anchorはなしのまま")
             failed.append(scene_id)
