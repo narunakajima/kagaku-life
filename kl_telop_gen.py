@@ -347,6 +347,22 @@ def plan_telop_cards(narration: str, wav_path: Path, duration: float) -> list:
     MIN_SEC_PER_CHAR = 0.15  # 上限おおよそ6.7文字/秒（読み取れる最低限の速さ）
     MIN_CARD_DUR_FLOOR = 0.6
     hard_end_cap = round(duration + 0.2, 2)
+
+    # 全カードの最小表示時間の合計が音声実長を超える場合（ナレーションが
+    # 密で全体的に読み上げが速いシーン）、後段の後方パスは必ず先頭カード
+    # （reversed()で最後に処理される＝一番シワ寄せが行く）を犠牲にして
+    # 帳尻を合わせてしまう。実際にkl004 S12（数字を含む冒頭カードが
+    # Whisperの誤タイムスタンプで0.73秒に潰れた）で発覚した。他の全カード
+    # がちょうど最小値ぴったりに収まっていたため、不足分がすべて先頭カード
+    # に集中していた。全カードのmin_dur要求を均等に按分縮小することで、
+    # 特定の1枚だけが極端に犠牲になるのを防ぐ（2026-08-25追加）。
+    available = duration - GAP * max(0, len(cards) - 1)
+    total_min = sum(min_dur_of(c) for c in cards)
+    scale = min(1.0, available / total_min) if total_min > 0 and available > 0 else 1.0
+
+    def min_dur_of_scaled(card) -> float:
+        return max(MIN_CARD_DUR_FLOOR * scale, min_dur_of(card) * scale)
+
     prev_end = None
     for card in cards:
         min_start = round(prev_end + GAP, 2) if prev_end is not None else 0.0
@@ -354,7 +370,7 @@ def plan_telop_cards(narration: str, wav_path: Path, duration: float) -> list:
             shift = min_start - card["start"]
             card["start"] = min_start
             card["end"] = round(card["end"] + shift, 2)
-        min_dur = min_dur_of(card)
+        min_dur = min_dur_of_scaled(card)
         if card["end"] - card["start"] < min_dur:
             card["end"] = round(card["start"] + min_dur, 2)
         prev_end = card["end"]
@@ -371,7 +387,7 @@ def plan_telop_cards(narration: str, wav_path: Path, duration: float) -> list:
     for card in reversed(cards):
         if card["end"] > ceiling:
             card["end"] = round(ceiling, 2)
-        min_dur = min_dur_of(card)
+        min_dur = min_dur_of_scaled(card)
         if card["end"] - card["start"] < min_dur:
             card["start"] = round(max(0.0, card["end"] - min_dur), 2)
         ceiling = round(card["start"] - GAP, 2)
