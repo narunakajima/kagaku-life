@@ -204,11 +204,15 @@ def make_ken_burns(src: Path, dst: Path, duration: float, effect: str, anchor: t
         # 唯一の例外としてtype="data"（グラフ・比較図）のシーンだけ
         # kl_zoom_anchor.pyが明示的にこの値を設定する。グラフはズーム/パンで
         # 動かすと数値の位置関係が読み取りにくくなり不自然という指摘が
-        # あったため（2026-08-25）、意図的に完全な静止（zが定数）にする。
+        # あったため（2026-08-25）、意図的に完全な静止にする。旧実装は
+        # KB_ZOOM_FACTOR*0.98（約1.37倍）にズームインした状態で固定していた
+        # （人物ショット用に「やや寄った構図で保持する」意図の名残）が、
+        # グラフは画像全体が意味を持つため端が見切れて分かりにくくなると
+        # 指摘を受けた。等倍(z=1.0、クロップなし)で完全に静止させる。
         vf = (
             f"{prescale},"
-            f"zoompan=z='{z * 0.98}'"
-            f":x='{px}*(iw-iw/zoom)':y='{py}*(ih-ih/zoom)'"
+            f"zoompan=z='1.0'"
+            f":x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
             f":d={total_frames}:s={w}x{h}:fps={FPS},setsar=1,format=yuv420p"
         )
 
@@ -648,7 +652,11 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
         for i, scene in enumerate(scenes, start=1):
             img = img_dir / f"shorts{mid}_S{i:02d}.png"
             dst = tmp / f"kb_shorts_S{i:02d}.mp4"
-            make_ken_burns(img, dst, durations[i - 1], "zoom_in", w=SHORTS_W, h=SHORTS_H)
+            # チャート系のカット（style="chart"）は本編のdataシーンと同じ理由
+            # （ズームすると数値の位置関係が読み取りにくくなる）で完全静止にする
+            # （2026-08-25追加。本編側の修正時にShortsが対象外だったことに気づいた）。
+            effect = "static" if scene.get("style") == "chart" else "zoom_in"
+            make_ken_burns(img, dst, durations[i - 1], effect, w=SHORTS_W, h=SHORTS_H)
             clips.append(dst)
 
         print("\n--- クロスフェード結合 ---")
