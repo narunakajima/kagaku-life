@@ -508,7 +508,17 @@ python3 kl_image_gen.py --episode kl{NNN}
 
 ---
 
-## STEP 7 — zoom_anchor判定
+## STEP 7 — zoom_anchor判定（実行タイミングに注意）
+
+**このSTEPの実行は、STEP11で画像・ナレーションのユーザー確認がOKになった
+「後」まで待つこと（2026-08-25改訂）。** zoom_anchorは静止画の主被写体位置を
+判定してKen Burnsの焦点をJSONに書き込む処理のため、レビュー段階で画像が
+差し替えになった場合、レビュー前に実行すると無駄になる（差し替えのたびに
+再実行が必要になる）。ユーザーから「画像とナレーションは同じタイミングで
+確認するので、レビュー前のzoom_anchor実行は不要」と明示された。
+
+実行コマンドは以下（STEP11「OKが得られたら」の直後、`kl_finalize.py`より前に
+実行する）:
 
 ```bash
 python3 kl_zoom_anchor.py --episode kl{NNN}
@@ -588,9 +598,11 @@ Shorts静止画・ナレーション音声を`SendUserFile`で送り、OKが出�
 ローカルのみに留める（Driveへは同期しない）。修正が入った場合は該当工程を
 やり直し、再度確認を得る（kl002で実際にこの順番を求められた運用）。
 
-OKが得られたら:
+OKが得られたら、まずSTEP7のzoom_anchor判定を実行してから（このタイミングまで
+待って実行する理由はSTEP7参照）、Google Driveへ格納する:
 
 ```bash
+python3 kl_zoom_anchor.py --episode kl{NNN}
 python3 kl_finalize.py --episode kl{NNN}
 ```
 
