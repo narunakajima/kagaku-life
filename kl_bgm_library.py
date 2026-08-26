@@ -106,7 +106,16 @@ def cmd_add(episode_id: str, bgm_file: Path, stem: str, role: str = None):
         "used_in": [episode_id],
     }
 
+    # freesound_download.py（lamp-whisper由来の共有スクリプト、そのまま流用のため
+    # 変更しない）はクレジットを /tmp/kl_bgm_credits/ ではなく /tmp/lw_bgm_credits/
+    # に、ダウンロード直後のファイル名（stemではなく元のbasename）で書き出す。
+    # このディレクトリ名の不一致により、CC BY曲のクレジットが自動で拾われず
+    # license/creditが常にCC0/Noneのままになる不具合があった（kl005で発覚）。
+    # kl_bgm_credits/{stem} を優先しつつ、lw_bgm_credits/{元のbasename} も
+    # フォールバックとして見る。
     credit_path = Path(f"/tmp/kl_bgm_credits/{stem}.credit.txt")
+    if not credit_path.exists():
+        credit_path = Path(f"/tmp/lw_bgm_credits/{bgm_file.stem}.credit.txt")
     if credit_path.exists():
         entry["license"] = "CC BY"
         entry["credit"] = credit_path.read_text(encoding="utf-8").strip()
