@@ -145,12 +145,14 @@ CHART_CONTEXT = (
     "not omit them. Do NOT invent or add any text, numbers, or labels beyond exactly "
     "what the scene description specifies; if no specific number/percentage is given in "
     "the scene description, do not fabricate one. "
-    "CRITICAL LAYOUT CONSTRAINT: leave the bottom 22% of the frame completely empty "
-    "(plain background, no bars, icons, labels, or any other content down there) — a "
-    "burned-in Japanese subtitle caption is overlaid across that bottom strip in the "
-    "final video and would otherwise collide with and obscure any chart content placed "
-    "there. Keep the title, all bars/icons, and every text label confined to the upper "
-    "78% of the frame."
+    "CRITICAL LAYOUT CONSTRAINT: leave the bottom 22% of the frame completely empty — "
+    "plain flat background color and absolutely NOTHING else there: no bars, no icons, "
+    "no text, no labels, no captions, no decorative elements of any kind, not even a "
+    "single character. Do NOT invent a caption or label to fill that empty space — a "
+    "burned-in Japanese subtitle is overlaid across that exact bottom strip in the final "
+    "video and would collide with and obscure absolutely anything placed there. Keep the "
+    "title, all bars/icons, and every text label confined entirely to the upper 78% of "
+    "the frame; the bottom 22% must render as pure, untouched flat background."
 )
 
 
