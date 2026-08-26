@@ -144,7 +144,13 @@ CHART_CONTEXT = (
     "font as accurately-spelled Japanese text, matching the flat infographic style — do "
     "not omit them. Do NOT invent or add any text, numbers, or labels beyond exactly "
     "what the scene description specifies; if no specific number/percentage is given in "
-    "the scene description, do not fabricate one."
+    "the scene description, do not fabricate one. "
+    "CRITICAL LAYOUT CONSTRAINT: leave the bottom 22% of the frame completely empty "
+    "(plain background, no bars, icons, labels, or any other content down there) — a "
+    "burned-in Japanese subtitle caption is overlaid across that bottom strip in the "
+    "final video and would otherwise collide with and obscure any chart content placed "
+    "there. Keep the title, all bars/icons, and every text label confined to the upper "
+    "78% of the frame."
 )
 
 
