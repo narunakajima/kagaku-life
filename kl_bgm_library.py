@@ -87,24 +87,7 @@ def cmd_add(episode_id: str, bgm_file: Path, stem: str, role: str = None):
         _save_ep(ep_json, ep_data)
         print(f"  ✓ bgm_sources.{role} を設定: {rel_path}")
 
-    existing = next((e for e in library if e["path"] == rel_path), None)
-    if existing:
-        if episode_id not in existing["used_in"]:
-            existing["used_in"].append(episode_id)
-            _save_library(library)
-        print(f"  ✓ ライブラリ更新（既存エントリに {episode_id} を追加）")
-        return
-
     tags = _tags_from_stem(stem)
-    entry = {
-        "id": f"{episode_id}-BGM{suffix}",
-        "path": rel_path,
-        "duration": 0,
-        "license": "CC0",
-        "credit": None,
-        "tags": tags,
-        "used_in": [episode_id],
-    }
 
     # freesound_download.py（lamp-whisper由来の共有スクリプト、そのまま流用のため
     # 変更しない）はクレジットを /tmp/kl_bgm_credits/ ではなく /tmp/lw_bgm_credits/
@@ -116,9 +99,38 @@ def cmd_add(episode_id: str, bgm_file: Path, stem: str, role: str = None):
     credit_path = Path(f"/tmp/kl_bgm_credits/{stem}.credit.txt")
     if not credit_path.exists():
         credit_path = Path(f"/tmp/lw_bgm_credits/{bgm_file.stem}.credit.txt")
-    if credit_path.exists():
-        entry["license"] = "CC BY"
-        entry["credit"] = credit_path.read_text(encoding="utf-8").strip()
+    license_, credit = ("CC BY", credit_path.read_text(encoding="utf-8").strip()) \
+        if credit_path.exists() else ("CC0", None)
+
+    existing = next((e for e in library if e["path"] == rel_path), None)
+    if existing:
+        # dst（Drive上のファイル名）は episode_id+role だけで決まるため、
+        # 同じ役割を同じエピソード内で差し替えると同じpathに新しい曲が
+        # 上書きされる。以前は「既存path＝同一曲」とみなしてtags/license/
+        # creditの更新をスキップしていたため、差し替え後もライブラリの
+        # メタデータが古い曲のまま残る不具合があった（kl005で発覚。この時は
+        # 偶然どちらもCC0だったため実害は出なかったが、CC BY曲を差し替える
+        # ケースでは誤ったクレジット表示につながりかねない）。
+        # --add は常に新しいダウンロード内容を表すため、実体ファイル同様に
+        # メタデータも常に上書きする。
+        existing["tags"] = tags
+        existing["license"] = license_
+        existing["credit"] = credit
+        if episode_id not in existing["used_in"]:
+            existing["used_in"].append(episode_id)
+        _save_library(library)
+        print(f"  ✓ ライブラリ更新（既存エントリのメタデータを新曲の内容で上書き）")
+        return
+
+    entry = {
+        "id": f"{episode_id}-BGM{suffix}",
+        "path": rel_path,
+        "duration": 0,
+        "license": license_,
+        "credit": credit,
+        "tags": tags,
+        "used_in": [episode_id],
+    }
 
     library.append(entry)
     _save_library(library)
