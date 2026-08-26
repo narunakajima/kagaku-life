@@ -92,7 +92,6 @@ def scene_card(kind: str, sid: int, type_label: str, narrator: str, narration: s
           <div class="bgm-row">
             <span class="bgm-label">BGM:{html.escape(bgm_role)}</span>
             <button type="button" class="bgm-play" data-bgm-src="{html.escape(bgm_uri)}">▶ 再生</button>
-            <button type="button" class="bgm-stop">■ 停止</button>
           </div>
         """
     return f"""
@@ -188,12 +187,12 @@ def main():
   audio {{ width: 100%; }}
   .bgm-row {{ display: flex; gap: 8px; align-items: center; margin-top: 10px; }}
   .bgm-label {{ font-size: 12px; color: #9aa5b1; }}
-  .bgm-play, .bgm-stop {{
+  .bgm-play {{
     font-size: 13px; padding: 4px 10px; border-radius: 6px; border: 1px solid #3a4453;
     background: #2f3846; color: #eee; cursor: pointer;
   }}
   .bgm-play.playing {{ background: #2f5d8a; border-color: #2f5d8a; }}
-  .bgm-play:hover, .bgm-stop:hover {{ background: #3a4453; }}
+  .bgm-play:hover {{ background: #3a4453; }}
   @media (max-width: 700px) {{
     .body {{ flex-direction: column; }}
     img {{ width: 100%; max-width: 100%; }}
@@ -205,8 +204,9 @@ def main():
 {''.join(cards)}
 <audio id="bgm-player"></audio>
 <script>
-  // シーンごとのBGM再生/停止ボタン。ページ全体で単一のaudio要素を共有し、
-  // 別カードで再生を押すと自動的に切り替わる（同時に複数BGMが鳴らないように）。
+  // シーンごとのBGM再生ボタン（トグル式）。ページ全体で単一のaudio要素を
+  // 共有し、別カードで再生を押すと自動的に切り替わる（同時に複数BGMが
+  // 鳴らないように）。同じボタンをもう一度押すと停止する。
   const player = document.getElementById('bgm-player');
   const playButtons = document.querySelectorAll('.bgm-play');
   function clearPlayingState() {{
@@ -225,14 +225,7 @@ def main():
       player.currentTime = 0;
       player.play();
       btn.classList.add('playing');
-      btn.textContent = '⏸ 再生中';
-    }});
-  }});
-  document.querySelectorAll('.bgm-stop').forEach(btn => {{
-    btn.addEventListener('click', () => {{
-      player.pause();
-      player.currentTime = 0;
-      clearPlayingState();
+      btn.textContent = '⏸ 停止';
     }});
   }});
   player.addEventListener('ended', clearPlayingState);
