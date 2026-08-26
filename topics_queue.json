@@ -201,8 +201,39 @@
       },
       "hook_idea": "週2回ロボットと遊ぶだけで認知機能スコアが大幅改善？デイケアに通う母の未来を変える最新研究とは。",
       "notes": "STAGE2.5でaging_careカテゴリの候補として2案（A:遊び相手ロボット/PIOのRCT、B:曖昧な言葉を理解する介護ロボットAoECR）を提示し、ユーザーがAを選択（2026-08-26）。kl001〜kl004でaging_care・disaster_safetyの2カテゴリが未使用だったローテーション上の穴を埋める選定。転倒検知系センサー比較（レーダー/サーモ等、スコア4.40）は技術比較に寄りすぎて地味という理由でユーザーが却下し、より感情に直結する孤独・認知症・うつという切り口を優先した。査読済みRCT（PLoS ONE）のため信頼性シグナルも強い。「見守り・監視」ではなく「一緒に楽しむ」relationshipという新しいロボット観が主題。"
+    },
+    {
+      "episode_id": "kl006",
+      "status": "confirmed",
+      "title": "孤立した集落を救うAIドローン：地震で寸断された道の先へ、薬を届ける知恵",
+      "format": "single_paper",
+      "category": "disaster_safety",
+      "category_label": "防災・安全",
+      "references": [
+        {
+          "title": "A Cross-Layered Multi-Drone Coordination for Medical Supply Delivery during Disaster Response Management",
+          "authors": [
+            "Aneesh Calyam",
+            "Subrahmanya Chandra Bhamidipati",
+            "Zack Murry",
+            "Sharan Srinivas"
+          ],
+          "year": 2026,
+          "venue": "arXiv.org",
+          "doi": "10.48550/arXiv.2605.09342",
+          "is_preprint": true
+        }
+      ],
+      "protagonist": {
+        "name": "佐々木 雅人",
+        "age": 42,
+        "job": "地方都市の会社員（持病のある高齢の母と同居）",
+        "gender": "male"
+      },
+      "hook_idea": "大地震で道路が全滅…絶望の孤立集落に、AIドローンは『誰から』薬を届けるべきでしょうか？",
+      "notes": "STAGE2.5でdisaster_safetyカテゴリの候補としてマルチドローン医薬品配送調整の論文を提示し、ユーザーが選択（2026-08-26）。kl001〜kl005の5エピソードでdisaster_safetyだけが未使用だったローテーション上の穴を埋める選定。プレプリント（arXiv, Sharan Srinivas准教授=Univ. of Missouri、災害物流・オペレーションズリサーチの実績あり研究室）のため、STAGE2信頼性シグナル（著者所属機関の実績）で判断。大地震で道路が寸断された孤立集落に、AIが誰から優先して薬を届けるべきか自律判断する、という変革ポテンシャルの高さを優先した。主人公は持病のある高齢の母と同居する地方都市の会社員、離れて暮らす家族の安否・支援という生活実感に直結する設定。"
     }
   ],
-  "total_topics": 5,
+  "total_topics": 6,
   "last_updated": "2026-08-26"
 }
