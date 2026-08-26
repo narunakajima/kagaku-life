@@ -22,7 +22,6 @@ import json
 import sys
 import webbrowser
 from pathlib import Path
-from urllib.parse import quote
 
 BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
@@ -55,21 +54,33 @@ TYPE_TO_BGM_ROLE = {
 }
 
 
-def _bgm_file_uri(bgm_sources: dict, role: str) -> str:
+def _bgm_rel_path(bgm_sources: dict, role: str) -> str:
     """bgm_sources[role]（例: "BGM/kl005-BGM-intro.mp3"、Google Drive基準の
-    相対パス）を、ブラウザで直接再生できるfile:// URIに変換する。
-    レビューページはDesktop側から開くため、Drive側の実ファイルへは
-    絶対パスで参照する必要がある。ファイルが存在しない場合はNoneを返す
+    相対パス）が指す実ファイルを ~/Desktop/kagaku-life/BGM/ にコピーし、
+    review.htmlから images/narration と同じ相対パスで参照できるようにする。
+
+    当初はGoogle Drive上のファイルをfile://の絶対パスで直接参照していたが、
+    ブラウザ（Chrome等）はfile://で開いたページと異なるディレクトリツリー
+    配下のローカルファイルへのアクセスをセキュリティ上ブロックするため、
+    BGMが再生されない不具合が実際に発生した（2026-08-26、kl005で発覚）。
+    画像・ナレーションは既にDesktop配下の相対パスで動いているため、BGMも
+    同じ方式に合わせて解消した。ファイルが存在しない場合はNoneを返す
     （BGM未選定＝STEP10未実行のエピソードでもレビューページ自体は動くように）。
     """
     rel = bgm_sources.get(role)
     if not rel:
         return None
     filename = rel.split("/")[-1]
-    path = DRIVE_BGM_DIR / filename
-    if not path.exists():
+    src = DRIVE_BGM_DIR / filename
+    if not src.exists():
         return None
-    return "file://" + quote(str(path))
+    dst_dir = DESKTOP_DIR / "BGM"
+    dst_dir.mkdir(exist_ok=True)
+    dst = dst_dir / filename
+    if not dst.exists() or dst.stat().st_mtime < src.stat().st_mtime:
+        import shutil
+        shutil.copyfile(src, dst)
+    return f"BGM/{filename}"
 
 
 def scene_card(kind: str, sid: int, type_label: str, narrator: str, narration: str,
@@ -139,7 +150,7 @@ def main():
     for scene in ep["scenes"]:
         sid = scene["scene_id"]
         bgm_role = TYPE_TO_BGM_ROLE.get(scene["type"])
-        bgm_uri = _bgm_file_uri(bgm_sources, bgm_role) if bgm_role else None
+        bgm_uri = _bgm_rel_path(bgm_sources, bgm_role) if bgm_role else None
         cards.append(scene_card(
             "本編", sid, TYPE_LABEL.get(scene["type"], scene["type"]), scene["narrator"],
             scene["narration"], f"images/S{sid:02d}.png", f"narration/S{sid:02d}.wav",
