@@ -632,11 +632,32 @@ visualization slide, NOT an artistic or abstract illustration. Plain solid flat
 colors only, no dramatic lighting, no light rays, no gradients, no texture, no
 decorative background shapes. Cool color palette (deep blue, teal) for baseline
 values, one warm coral/orange color for the improved/highlighted value.
-ABSOLUTELY NO TEXT: no letters, no words, no numerals, no dates, no labels
-anywhere in the image — convey all meaning through icon shape, bar height, and
-position only. If you would normally add a caption or axis label, omit it
-entirely and leave that space blank.
+If the scene description specifies Japanese text labels (e.g. a short title or
+group names), render them directly in the image in a clean, legible sans-serif
+font as accurately-spelled Japanese text — do not omit them. Do NOT invent or
+add any text, numbers, or labels beyond exactly what the scene description
+specifies; if no specific number/percentage is given, do not fabricate one.
 ```
+**「テキストなし」方針は2026-08-26に撤回した（kl005で発覚）。** 当初
+「ABSOLUTELY NO TEXT」としていたのは、AI画像生成が日本語テキストを
+正確に描画できなかったため（下記2026-08-21の記述参照）。しかし
+`gemini-3.1-flash-image`の日本語テキスト描画精度が実用レベルまで
+向上したことを実際にテスト生成で確認した（ユーザー指摘、kl005で
+「グラフですが、やはり文字が入らないと何のことかわからない」との
+フィードバックを受けて検証）。数字（棒グラフの実測値等）は捏造せず、
+**論文本文に実際に記載されている数値のみ**を使うこと（PLOS ONE等の
+オープンアクセス論文であれば、掲載された表・図の実測値をそのまま
+チャートに反映してよい。ただし学術的な表形式をそのまま転載するのではなく、
+チャンネルの視認性重視のフラットインフォグラフィックスタイルで独自に
+描き直す——生の学術表は統計記法が多く読みにくいため）。`kl_image_gen.py`の
+画像QA（Gemini Vision）も、`data`タイプ・`style: "chart"`のシーンでは
+「テキストの存在自体」ではなく「ガーブレ・誤字・シーン記述にない数値の
+捏造」のみをTEXT issueとして扱うよう変更済み（`allow_text`引数）。
+**小さい変化量（例: -0.2 vs -0.7）をそのままバーの高さにすると、絶対値では
+小さな差でも比率が誇張されて見える問題が実際に発生した**（kl005の
+Shorts用抑うつスコアチャート）。この場合は変化量ではなく、介入前後の
+実数値（例: 6.5→6.4 と 5.9→5.2）をペアの棒グラフとして見せる方が、
+誇張なく実態に近い印象になる。
 **なぜ物語シーンと同じ演出的なスタイルを流用しないか:** 検証時、物語シーン用の
 リッチフラット・シネマティックライトのどちらのスタイルでも、比較棒グラフが
 「アート作品」寄りになりすぎて、パッと見て数値の大小が伝わりにくくなる問題が

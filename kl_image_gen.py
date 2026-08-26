@@ -139,10 +139,12 @@ CHART_CONTEXT = (
     "colors only, no dramatic lighting, no light rays, no gradients, no texture, no "
     "decorative background shapes. Cool color palette (deep blue, teal) for baseline "
     "elements, one warm coral/orange color for the improved/highlighted element. "
-    "ABSOLUTELY NO TEXT: no letters, no words, no numerals, no dates, no labels "
-    "anywhere in the image — convey all meaning through shape, size, and "
-    "position only. If you would normally add a caption or axis label, omit it "
-    "entirely and leave that space blank."
+    "If the scene description below specifies Japanese text labels (e.g. a short title "
+    "or group names), render them directly in the image in a clean, legible sans-serif "
+    "font as accurately-spelled Japanese text, matching the flat infographic style — do "
+    "not omit them. Do NOT invent or add any text, numbers, or labels beyond exactly "
+    "what the scene description specifies; if no specific number/percentage is given in "
+    "the scene description, do not fabricate one."
 )
 
 
@@ -192,7 +194,7 @@ description for which applies.
 Check the image against the intended scene description for these issue types:
 - MISMATCH: the image does not match the scene description (wrong subject, action, or setting)
 - DISTORTION: anatomical errors, malformed faces/hands/bodies, broken or warped objects
-- TEXT: any readable text, letters, numerals, captions, watermarks, or logos appear in the image
+- TEXT: {text_rule}
 - STYLE: the rendering does not match the intended house style described above (e.g. an
   artistic/dramatic illustration where a clean flat infographic was called for, or vice versa;
   photorealistic where illustration was called for; anime/manga style)
@@ -218,12 +220,33 @@ or
 """
 
 
-def qa_image_with_gemini(client: genai.Client, image_path: Path, image_prompt: str) -> dict:
-    """生成画像をGemini Visionで自動チェックする。問題があれば issues に格納する。"""
+TEXT_RULE_NO_TEXT = (
+    "any readable text, letters, numerals, captions, watermarks, or logos appear "
+    "in the image"
+)
+TEXT_RULE_ALLOW_LABELS = (
+    "the image contains text that was NOT called for by the scene description, OR "
+    "contains garbled/misspelled/unreadable Japanese text, OR contains fabricated "
+    "numbers/percentages not present in the scene description. Correctly-rendered, "
+    "legible Japanese text labels that match what the scene description explicitly "
+    "asks for (e.g. a short title, group names) are expected and must NOT be flagged."
+)
+
+
+def qa_image_with_gemini(client: genai.Client, image_path: Path, image_prompt: str,
+                          allow_text: bool = False) -> dict:
+    """生成画像をGemini Visionで自動チェックする。問題があれば issues に格納する。
+    allow_text=True の場合（dataタイプ等、意図的に日本語テキストラベルを含める
+    チャート）は、テキストの存在そのものではなく、ガーブレ・誤字・シーン記述に
+    ない数値の捏造のみをTEXT issueとして扱う（2026-08-26追加。以前はdataタイプの
+    チャートに一切テキストを入れない方針だったが、gemini-3.1-flash-imageの日本語
+    テキスト描画精度が実用レベルに達したため、CLAUDE.mdの方針を改訂した）。
+    """
     try:
         from PIL import Image
         image = Image.open(image_path)
-        qa_prompt = QA_PROMPT_TEMPLATE.format(image_prompt=image_prompt)
+        text_rule = TEXT_RULE_ALLOW_LABELS if allow_text else TEXT_RULE_NO_TEXT
+        qa_prompt = QA_PROMPT_TEMPLATE.format(image_prompt=image_prompt, text_rule=text_rule)
         response = client.models.generate_content(
             model=QA_MODEL,
             contents=[qa_prompt, image],
@@ -238,7 +261,7 @@ def qa_image_with_gemini(client: genai.Client, image_path: Path, image_prompt: s
         return {"ok": True, "issues": [], "qa_error": str(e)}
 
 
-def _correction_note(issues: list) -> str:
+def _correction_note(issues: list, allow_text: bool = False) -> str:
     """QAで見つかった issue の種類ごとに、プロンプトへ追記する修正指示を組み立てる。"""
     notes = []
     seen = set()
@@ -247,10 +270,18 @@ def _correction_note(issues: list) -> str:
         if prefix in seen:
             continue
         if prefix == "TEXT":
-            notes.append(
-                "ABSOLUTELY NO readable text, letters, numerals, captions, "
-                "watermarks, or logos anywhere in the image."
-            )
+            if allow_text:
+                notes.append(
+                    "Fix the text: render ONLY correctly-spelled, legible "
+                    "Japanese text exactly matching what the scene description "
+                    "specifies — no garbled characters, no misspellings, no "
+                    "extra text or fabricated numbers beyond what is specified."
+                )
+            else:
+                notes.append(
+                    "ABSOLUTELY NO readable text, letters, numerals, captions, "
+                    "watermarks, or logos anywhere in the image."
+                )
         elif prefix == "DISTORTION":
             notes.append(
                 "Render all hands, faces, and anatomy with correct, natural "
@@ -294,8 +325,8 @@ def _correction_note(issues: list) -> str:
     return " ".join(notes)
 
 
-def build_retry_prompt(base_prompt: str, issues: list) -> str:
-    note = _correction_note(issues)
+def build_retry_prompt(base_prompt: str, issues: list, allow_text: bool = False) -> str:
+    note = _correction_note(issues, allow_text=allow_text)
     prompt = base_prompt
     if note:
         prompt = f"{prompt}\n\nIMPORTANT CORRECTIONS: {note}"
@@ -310,7 +341,7 @@ def build_retry_prompt(base_prompt: str, issues: list) -> str:
 
 def generate_with_qa(client: genai.Client, base_prompt: str, image_prompt_for_qa: str,
                       out_path: Path, aspect_ratio: str = None, skip_qa: bool = False,
-                      reference_image_path: Path = None) -> dict:
+                      reference_image_path: Path = None, allow_text: bool = False) -> dict:
     """生成→QA→（NGなら）修正指示付きで再生成、を最大MAX_QA_ATTEMPTS回試行する。"""
     prompt = base_prompt
     result = {"ok": False, "issues": ["画像生成失敗（QA未実行）"], "attempts": 0}
@@ -325,7 +356,7 @@ def generate_with_qa(client: genai.Client, base_prompt: str, image_prompt_for_qa
         if skip_qa:
             print(f"✅ {out_path.name}")
             return {"ok": True, "issues": [], "attempts": attempt}
-        qa = qa_image_with_gemini(client, out_path, image_prompt_for_qa)
+        qa = qa_image_with_gemini(client, out_path, image_prompt_for_qa, allow_text=allow_text)
         qa["attempts"] = attempt
         if qa["ok"]:
             print(f"✅ {out_path.name}{suffix} [QA: OK]")
@@ -333,7 +364,7 @@ def generate_with_qa(client: genai.Client, base_prompt: str, image_prompt_for_qa
         print(f"⚠️  {out_path.name}{suffix} [QA: {len(qa['issues'])}件] " + "; ".join(qa["issues"]))
         result = qa
         if attempt < MAX_QA_ATTEMPTS:
-            prompt = build_retry_prompt(base_prompt, qa["issues"])
+            prompt = build_retry_prompt(base_prompt, qa["issues"], allow_text=allow_text)
     print(f"   → {MAX_QA_ATTEMPTS}回試行して未解決。目視確認してください: {out_path.name}")
     return result
 
@@ -387,7 +418,7 @@ def main():
             prompt = f"{style_for(scene['type'])}\n\nScene: {scene['image_prompt']}"
             out_path = out_dir / f"S{sid:02d}.png"
             r = generate_with_qa(client, prompt, scene["image_prompt"], out_path, skip_qa=args.no_qa,
-                                  reference_image_path=ref_path)
+                                  reference_image_path=ref_path, allow_text=(scene["type"] == "data"))
             r["name"] = out_path.name
             qa_results.append(r)
 
@@ -412,11 +443,12 @@ def main():
             for i, s in enumerate(shorts["scenes"], start=1):
                 if shorts_target_ids is not None and i not in shorts_target_ids:
                     continue
-                style = CHART_CONTEXT if s.get("style") == "chart" else BASE_CONTEXT
+                is_chart = s.get("style") == "chart"
+                style = CHART_CONTEXT if is_chart else BASE_CONTEXT
                 prompt = f"{style}\n\nScene: {s['image_prompt']}"
                 out_path = out_dir / f"shorts{mid}_S{i:02d}.png"
                 r = generate_with_qa(client, prompt, s["image_prompt"], out_path,
-                                      aspect_ratio="9:16", skip_qa=args.no_qa)
+                                      aspect_ratio="9:16", skip_qa=args.no_qa, allow_text=is_chart)
                 r["name"] = out_path.name
                 qa_results.append(r)
 
