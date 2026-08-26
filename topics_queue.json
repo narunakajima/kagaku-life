@@ -172,8 +172,37 @@
       },
       "hook_idea": "「最近、歩くのが億劫になった…」その悩み、重いロボットではなく“超軽いギア”1つで変わるかもしれません。",
       "notes": "STAGE4スコア4.65でmobilityカテゴリ最上位（STEP2.5提示の6カテゴリ案からユーザーがSTAGE5で選択、2026-08-25）。kl001=home_robot、kl002=work、kl003=medical_supportと続いたため、モビリティは未使用カテゴリとしてローテーション上も適切。査読済み（Scientific Reports誌）のため信頼性シグナルも強い。重厚な介護ロボットではなく「超軽量ギア1つ」という意外性のある軽量化アプローチが、高齢者の歩行効率という生活実感に直結するテーマ。"
+    },
+    {
+      "episode_id": "kl005",
+      "status": "confirmed",
+      "title": "週2回、ロボットと遊ぶだけで。認知症の母に戻った笑顔",
+      "format": "single_paper",
+      "category": "aging_care",
+      "category_label": "高齢化・介護・自立支援",
+      "references": [
+        {
+          "title": "Social robot PIO intervention for improving cognitive function and depression in older adults with mild to moderate dementia in day care centers: A randomized controlled trial",
+          "authors": [
+            "J. Lim",
+            "Hye-Kyung Oh"
+          ],
+          "year": 2025,
+          "venue": "PLoS ONE",
+          "doi": "10.1371/journal.pone.0321745",
+          "is_preprint": false
+        }
+      ],
+      "protagonist": {
+        "name": "高橋 裕子",
+        "age": 52,
+        "job": "会社員（認知症の母をデイケアに通わせている）",
+        "gender": "female"
+      },
+      "hook_idea": "週2回ロボットと遊ぶだけで認知機能スコアが大幅改善？デイケアに通う母の未来を変える最新研究とは。",
+      "notes": "STAGE2.5でaging_careカテゴリの候補として2案（A:遊び相手ロボット/PIOのRCT、B:曖昧な言葉を理解する介護ロボットAoECR）を提示し、ユーザーがAを選択（2026-08-26）。kl001〜kl004でaging_care・disaster_safetyの2カテゴリが未使用だったローテーション上の穴を埋める選定。転倒検知系センサー比較（レーダー/サーモ等、スコア4.40）は技術比較に寄りすぎて地味という理由でユーザーが却下し、より感情に直結する孤独・認知症・うつという切り口を優先した。査読済みRCT（PLoS ONE）のため信頼性シグナルも強い。「見守り・監視」ではなく「一緒に楽しむ」relationshipという新しいロボット観が主題。"
     }
   ],
-  "total_topics": 4,
-  "last_updated": "2026-08-25"
+  "total_topics": 5,
+  "last_updated": "2026-08-26"
 }
