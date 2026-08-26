@@ -155,12 +155,22 @@ def _token_boundaries(text: str) -> list:
     単独で行頭に来ることがまず無いため、これらのトークンは直前のトークンへ
     常に結合してから境界を計算する（＝形態素境界ではなく文節境界に近い
     ものになる）。
+    **「動詞,接尾」「動詞,非自立」も同様に結合する（2026-08-26追加）:**
+    「される」「されている」のような受身・使役・進行形は、janome(IPADIC)の
+    品詞体系では「れる/られる」「ている」の部分が助詞・助動詞ではなく
+    「動詞,接尾」または「動詞,非自立」に分類される（例:
+    「比較され」→「比較(名詞)/さ(動詞,自立)/れ(動詞,接尾)」）。この分類漏れに
+    より「比較さ」「れています」のように活用の途中で分割される不具合が
+    kl005で実際に発生した。助詞・助動詞と同じ理由でこれらも単独で
+    行頭に来ることはまず無いため、直前のトークンへ結合する。
     """
     boundaries = [0]
     pos = 0
     for tok in _load_janome().tokenize(text):
         pos += len(tok.surface)
-        attach_to_prev = tok.part_of_speech.startswith(("助詞", "助動詞")) and len(boundaries) > 1
+        attach_to_prev = tok.part_of_speech.startswith(
+            ("助詞", "助動詞", "動詞,接尾", "動詞,非自立")
+        ) and len(boundaries) > 1
         if not attach_to_prev:
             boundaries.append(pos)
         else:
