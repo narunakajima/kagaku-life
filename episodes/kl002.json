@@ -681,7 +681,7 @@
       "reference_index": 0,
       "duration_seconds": 48,
       "narration": "AIを使わなかった場合の差を左に、AIを使った場合の差を右に並べてみると、その縮まり方が一目でわかります。さらに研究チームは、AIを取り上げたあとの追加課題でも、学歴による差が大きかった層の一部の力が引き続き残っていたことを確認しています。ただし、その力がすべて維持されるわけではなく、AIという支えを外した場面では、ある程度の差が再び現れることも報告されています。力が残ったのは、AIを集中的に使いながら、自分自身も粘り強く取り組んでいた人たちに限られていたということです。",
-      "image_prompt": "Flat clean infographic: on the left, two vertical bars spaced far apart in height representing a large performance gap; on the right, two vertical bars nearly equal in height and close together representing a much smaller gap; a subtle horizontal arrow or motion line connecting left to right suggesting the transition; a faint small hourglass icon in a corner suggesting the passage of time and a partial re-emergence of the gap, minimal flat design, no captions, no axis marks, no legible text, no numerals",
+      "image_prompt": "Flat clean infographic: on the left, two vertical bars spaced far apart in height (one taller labeled below \"大卒\", one much shorter labeled below \"非大卒\") representing a large performance gap, with a small Japanese label above this pair reading \"AIなし\" and the gap size \"差0.548\" marked between the two bars; on the right, two vertical bars nearly equal in height and close together (labeled below \"大卒\" and \"非大卒\") representing a much smaller gap, with a small Japanese label above this pair reading \"AIあり\" and the gap size \"差0.139\" marked between the two bars; a subtle horizontal arrow connecting left to right suggesting the transition; a faint small hourglass icon in a corner suggesting the passage of time and a partial re-emergence of the gap (no text needed on this icon). A small title near the top reads \"学歴による成果の差\". All Japanese text and numerals rendered clearly and accurately exactly as specified above in a clean sans-serif font, minimal flat design, no other text or numbers.",
       "ken_burns": "static",
       "telop_cards": [
         {
@@ -1171,7 +1171,7 @@
         {
           "narrator": "research",
           "narration": "差はおよそ75%縮小",
-          "image_prompt": "Flat clean infographic: on top, two vertical bars spaced far apart in height representing a large gap; below, two vertical bars nearly equal in height and close together representing a much smaller gap; a subtle arrow connecting them suggesting the transition, minimal flat design, composed for a vertical 9:16 frame, no captions, no axis marks, no legible text, no numerals",
+          "image_prompt": "Flat clean infographic for a vertical 9:16 frame: on top, two vertical bars spaced far apart in height (large gap) with a small Japanese label above reading \"AIなし\" and the gap marked \"差0.548\"; below, two vertical bars nearly equal in height and close together (small gap) with a small Japanese label above reading \"AIあり\" and the gap marked \"差0.139\"; a subtle arrow connecting them suggesting the transition. All Japanese text and numerals rendered clearly and accurately exactly as specified, minimal flat design, no other text or numbers.",
           "style": "chart"
         },
         {
