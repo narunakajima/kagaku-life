@@ -22,9 +22,18 @@ import json
 import sys
 import webbrowser
 from pathlib import Path
+from urllib.parse import quote
 
 BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
+DRIVE_BGM_DIR = (
+    Path.home()
+    / "Library/CloudStorage"
+    / "GoogleDrive-naru.nakajima@gmail.com"
+    / "マイドライブ"
+    / "Kagaku-Life"
+    / "BGM"
+)
 
 TYPE_LABEL = {
     "teaser": "ティザー",
@@ -38,9 +47,43 @@ TYPE_LABEL = {
 }
 NARRATOR_LABEL = {"persona": "生活者ボイス", "research": "研究ボイス"}
 
+# シーンtype→BGM役割（CLAUDE.md「シーンタイプ体系とBGM3曲構成の対応」表と同じ）
+TYPE_TO_BGM_ROLE = {
+    "teaser": "intro", "hook": "intro", "context": "intro",
+    "citation": "main", "finding": "main", "data": "main",
+    "impact": "outro", "closing": "outro",
+}
+
+
+def _bgm_file_uri(bgm_sources: dict, role: str) -> str:
+    """bgm_sources[role]（例: "BGM/kl005-BGM-intro.mp3"、Google Drive基準の
+    相対パス）を、ブラウザで直接再生できるfile:// URIに変換する。
+    レビューページはDesktop側から開くため、Drive側の実ファイルへは
+    絶対パスで参照する必要がある。ファイルが存在しない場合はNoneを返す
+    （BGM未選定＝STEP10未実行のエピソードでもレビューページ自体は動くように）。
+    """
+    rel = bgm_sources.get(role)
+    if not rel:
+        return None
+    filename = rel.split("/")[-1]
+    path = DRIVE_BGM_DIR / filename
+    if not path.exists():
+        return None
+    return "file://" + quote(str(path))
+
 
 def scene_card(kind: str, sid: int, type_label: str, narrator: str, narration: str,
-               img_rel: str, audio_rel: str, extra: str = "") -> str:
+               img_rel: str, audio_rel: str, extra: str = "", bgm_role: str = None,
+               bgm_uri: str = None) -> str:
+    bgm_html = ""
+    if bgm_role and bgm_uri:
+        bgm_html = f"""
+          <div class="bgm-row">
+            <span class="bgm-label">BGM:{html.escape(bgm_role)}</span>
+            <button type="button" class="bgm-play" data-bgm-src="{html.escape(bgm_uri)}">▶ 再生</button>
+            <button type="button" class="bgm-stop">■ 停止</button>
+          </div>
+        """
     return f"""
     <section class="card">
       <div class="meta">
@@ -55,6 +98,7 @@ def scene_card(kind: str, sid: int, type_label: str, narrator: str, narration: s
         <div class="text-col">
           <p class="narration">{html.escape(narration)}</p>
           <audio controls preload="none" src="{html.escape(audio_rel)}"></audio>
+          {bgm_html}
         </div>
       </div>
     </section>
@@ -90,11 +134,16 @@ def main():
         </section>
         """)
 
+    bgm_sources = ep.get("bgm_sources", {})
+
     for scene in ep["scenes"]:
         sid = scene["scene_id"]
+        bgm_role = TYPE_TO_BGM_ROLE.get(scene["type"])
+        bgm_uri = _bgm_file_uri(bgm_sources, bgm_role) if bgm_role else None
         cards.append(scene_card(
             "本編", sid, TYPE_LABEL.get(scene["type"], scene["type"]), scene["narrator"],
             scene["narration"], f"images/S{sid:02d}.png", f"narration/S{sid:02d}.wav",
+            bgm_role=bgm_role, bgm_uri=bgm_uri,
         ))
 
     for shorts in ep.get("shorts", []):
@@ -126,6 +175,14 @@ def main():
   .narration {{ font-size: 15px; line-height: 1.7; margin: 0 0 12px; }}
   .narration.sub {{ color: #9aa5b1; font-size: 13px; }}
   audio {{ width: 100%; }}
+  .bgm-row {{ display: flex; gap: 8px; align-items: center; margin-top: 10px; }}
+  .bgm-label {{ font-size: 12px; color: #9aa5b1; }}
+  .bgm-play, .bgm-stop {{
+    font-size: 13px; padding: 4px 10px; border-radius: 6px; border: 1px solid #3a4453;
+    background: #2f3846; color: #eee; cursor: pointer;
+  }}
+  .bgm-play.playing {{ background: #2f5d8a; border-color: #2f5d8a; }}
+  .bgm-play:hover, .bgm-stop:hover {{ background: #3a4453; }}
   @media (max-width: 700px) {{
     .body {{ flex-direction: column; }}
     img {{ width: 100%; max-width: 100%; }}
@@ -135,6 +192,40 @@ def main():
 <body>
 <h1>{html.escape(ep.get('episode_title', args.episode))}（{html.escape(args.episode)}）— 画像+ナレーション確認</h1>
 {''.join(cards)}
+<audio id="bgm-player"></audio>
+<script>
+  // シーンごとのBGM再生/停止ボタン。ページ全体で単一のaudio要素を共有し、
+  // 別カードで再生を押すと自動的に切り替わる（同時に複数BGMが鳴らないように）。
+  const player = document.getElementById('bgm-player');
+  const playButtons = document.querySelectorAll('.bgm-play');
+  function clearPlayingState() {{
+    playButtons.forEach(b => {{ b.classList.remove('playing'); b.textContent = '▶ 再生'; }});
+  }}
+  playButtons.forEach(btn => {{
+    btn.addEventListener('click', () => {{
+      const src = btn.getAttribute('data-bgm-src');
+      if (btn.classList.contains('playing')) {{
+        player.pause();
+        clearPlayingState();
+        return;
+      }}
+      clearPlayingState();
+      player.src = src;
+      player.currentTime = 0;
+      player.play();
+      btn.classList.add('playing');
+      btn.textContent = '⏸ 再生中';
+    }});
+  }});
+  document.querySelectorAll('.bgm-stop').forEach(btn => {{
+    btn.addEventListener('click', () => {{
+      player.pause();
+      player.currentTime = 0;
+      clearPlayingState();
+    }});
+  }});
+  player.addEventListener('ended', clearPlayingState);
+</script>
 </body>
 </html>
 """
