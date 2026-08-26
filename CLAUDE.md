@@ -809,6 +809,20 @@ kagaku-lifeも**全シーンを対象に**`kl_zoom_anchor.py`が`scene.ken_burns
 - **0人・3人以上（チャート図解等）→ `zoom_out`**（焦点は常に中央固定、
   SCと同じ）。
 
+**構図判定は最初からGemini Visionに画像そのものを見せる方式（2026-08-26、
+SC側のバグ修正を受けて確認）。** SCの`infer_zoom_anchor()`は当初
+`character_ref`の有無と`image_prompt`のテキスト（"on the left"/"on the
+right"が両方揃っているか）から機械的に構図タイプを判定していたが、
+「対談」「対面」のように左右の文言を使わずに二人構図を描写したシーンを
+1人構図と誤判定するバグがSC側で発覚し、画像をGemini Visionに直接見せて
+判定する方式に修正された。kagaku-lifeは`character_ref`の概念がなく
+主人公も毎回変わるため、`kl_zoom_anchor.py`は実装当初（2026-08-25）から
+テキスト一致ではなく画像そのものをGemini Visionに渡す方式を採用しており、
+このバグは該当しない（kl005で確認済み）。プロンプトにも「ignore tiny,
+blurred, or background/crowd figures」を明示し、「主役1人＋背景の群衆」と
+「対等な二人」の混同を防いでいる。**今後もこの画像ベース判定の設計を
+維持し、テキストパターン一致に後退させないこと。**
+
 **結果として`pan_left`/`pan_right`は実質使われなくなった。**
 STEP2でのシーンJSON生成時に`ken_burns`へこれらの値を書いても、
 STEP7（`kl_zoom_anchor.py`）で必ず上記3種のいずれかに上書きされる
