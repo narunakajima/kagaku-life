@@ -47,6 +47,11 @@ def copy_if_exists(src: Path, dst: Path) -> bool:
 def main():
     parser = argparse.ArgumentParser(description="確認済み素材をGoogle Driveへ格納")
     parser.add_argument("--episode", required=True, help="エピソードID（例: kl001）")
+    parser.add_argument("--force", action="store_true",
+                         help="Desktopの .current_episode マーカーが対象エピソードと"
+                              "不一致でも、画像・音声・サムネイルの同期を強行する"
+                              "（通常は使わない。マーカー不一致時は自動的にスキップされ、"
+                              "動画ファイルの同期のみ行われる）")
     args = parser.parse_args()
 
     ep_path = BASE_DIR / "episodes" / f"{args.episode}.json"
@@ -61,24 +66,48 @@ def main():
     desktop_images = DESKTOP_DIR / "images"
     desktop_narration = DESKTOP_DIR / "narration"
 
+    # Desktopは「常に最新1エピソード分のみ」の確認用フォルダのため、他エピソードの
+    # 残留ファイルが対象エピソードのDrive格納先へ誤って上書きコピーされる事故が
+    # 実際に起きた（2026-08-27、kl001〜005のGoogle Drive上の画像・音声・サムネイルが
+    # kl006のファイルで上書きされた）。kl_image_gen.py/kl_tts_gen.pyが書き込む
+    # .current_episode マーカーで「今Desktopにあるのはどのエピソードのファイルか」を
+    # 確認し、対象エピソードと一致しない場合は画像・音声・サムネイルの同期をスキップする
+    # （動画ファイルはファイル名自体にepisode_idが入っており誤同期のリスクがないため
+    # マーカーに関わらず常に同期する）。
+    marker_path = DESKTOP_DIR / ".current_episode"
+    desktop_episode = marker_path.read_text(encoding="utf-8").strip() if marker_path.exists() else None
+    assets_safe = args.force or (desktop_episode == args.episode)
+    if not assets_safe:
+        print(
+            f"⚠️  Desktopの画像・音声は現在 {desktop_episode or '不明'} のもので、"
+            f"{args.episode} と一致しません。画像・音声・サムネイルの同期はスキップします"
+            f"（動画ファイルのみ同期します）。意図的に強行する場合は --force を指定してください。"
+        )
+
     copied = 0
     missing = []
+    skipped = 0
 
     for scene in ep["scenes"]:
         sid = scene["scene_id"]
         fname = f"S{sid:02d}.png"
+        wname = f"S{sid:02d}.wav"
+        if not assets_safe:
+            skipped += 2
+            continue
         if copy_if_exists(desktop_images / fname, drive_ep_dir / "images" / fname):
             copied += 1
         else:
             missing.append(f"images/{fname}")
 
-        wname = f"S{sid:02d}.wav"
         if copy_if_exists(desktop_narration / wname, drive_ep_dir / "narration" / wname):
             copied += 1
         else:
             missing.append(f"narration/{wname}")
 
-    if copy_if_exists(desktop_images / "thumbnail.png", drive_ep_dir / "images" / "thumbnail.png"):
+    if not assets_safe:
+        skipped += 1
+    elif copy_if_exists(desktop_images / "thumbnail.png", drive_ep_dir / "images" / "thumbnail.png"):
         copied += 1
     else:
         missing.append("images/thumbnail.png")
@@ -87,12 +116,15 @@ def main():
         mid = shorts["shorts_id"]
         for i in range(1, len(shorts["scenes"]) + 1):
             fname = f"shorts{mid}_S{i:02d}.png"
+            wname = f"shorts{mid}_S{i:02d}.wav"
+            if not assets_safe:
+                skipped += 2
+                continue
             if copy_if_exists(desktop_images / fname, drive_ep_dir / "images" / fname):
                 copied += 1
             else:
                 missing.append(f"images/{fname}")
 
-            wname = f"shorts{mid}_S{i:02d}.wav"
             if copy_if_exists(desktop_narration / wname, drive_ep_dir / "narration" / wname):
                 copied += 1
             else:
@@ -112,6 +144,9 @@ def main():
         missing.append(f"output/{shorts_vname}")
 
     print(f"\n{copied}件をGoogle Driveに格納しました: {drive_ep_dir}")
+    if skipped:
+        print(f"⚠️ マーカー不一致によりスキップした画像・音声・サムネイル: {skipped}件"
+              "（Drive側の既存ファイルはそのまま維持されています）")
     if missing:
         print(f"\n⚠️ 見つからなかったファイル（未生成または未確認の可能性）: {len(missing)}件")
         for m in missing:

@@ -402,6 +402,8 @@ def main():
 
     out_dir = DESKTOP_DIR / "images"
     out_dir.mkdir(parents=True, exist_ok=True)
+    DESKTOP_DIR.mkdir(parents=True, exist_ok=True)
+    (DESKTOP_DIR / ".current_episode").write_text(args.episode, encoding="utf-8")
 
     client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
 
