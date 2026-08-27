@@ -86,6 +86,13 @@ TELOP_CENTER_Y = 0.88
 TELOP_LINE_SPACING = 64
 TEASER_TELOP_FONTSIZE = 84  # SCのキネティック字幕（110pt@1920幅）を1408幅に換算
 
+# シーン単位の左上バッジ（scene.badge_textが設定されたシーンのみ、シーン全体の
+# 表示時間を通して出す。telop_cardsのような発話タイミング追従ではなく、
+# 「これは想像シーンである」等の状態を示す常時表示ラベル用、2026-08-27追加）
+BADGE_FONTSIZE = 30
+BADGE_MARGIN_X = 28
+BADGE_MARGIN_Y = 24
+
 # Shorts（縦動画）用
 SHORTS_W = 768
 SHORTS_H = 1376
@@ -446,9 +453,11 @@ def _fit_font_size(text: str, font_path: Path, max_size: int, max_width: int, mi
     return min_size
 
 
-def burn_telop_global(video: Path, all_scenes: list, all_offsets: list, dst: Path, tmp: Path):
+def burn_telop_global(video: Path, all_scenes: list, all_offsets: list, all_durs: list, dst: Path, tmp: Path):
     """全シーンのtelop_cards（シーン内相対時刻）にシーンのグローバルオフセットを加算し、
     動画全体にdrawtextで焼き込む（kl_telop_gen.pyのburn_telopと同じ仕組み）。
+    あわせて、scene.badge_textが設定されたシーンには、シーン表示時間を通して
+    左上に常時ラベルを焼き込む（telop_cardsとは独立、発話タイミングに追従しない）。
     """
     shutil.copy(str(FONT_BOLD), str(FONT_TMP_BOLD))
     shutil.copy(str(FONT_REGULAR), str(FONT_TMP_REGULAR))
@@ -457,7 +466,21 @@ def burn_telop_global(video: Path, all_scenes: list, all_offsets: list, dst: Pat
     cy = TELOP_CENTER_Y
 
     filter_parts, prev, idx = [], "0:v", 0
-    for scene, offset in zip(all_scenes, all_offsets):
+    for scene, offset, dur in zip(all_scenes, all_offsets, all_durs):
+        badge_text = scene.get("badge_text")
+        if badge_text:
+            tf = tmp / f"badge_{idx}.txt"
+            tf.write_text(badge_text.replace("\r", ""), encoding="utf-8")
+            enable = f"between(t\\,{offset:.2f}\\,{offset + dur:.2f})"
+            out = f"dv{idx}"
+            filter_parts.append(
+                f"[{prev}]drawtext=fontfile={font}:textfile={tf}:expansion=none"
+                f":fontcolor=white:fontsize={BADGE_FONTSIZE}"
+                f":box=1:boxcolor=black@0.45:boxborderw=12"
+                f":x={BADGE_MARGIN_X}:y={BADGE_MARGIN_Y}:enable={enable}[{out}]"
+            )
+            prev = out
+            idx += 1
         is_teaser = scene["type"] == "teaser"
         for card in scene.get("telop_cards", []):
             t_start = offset + NARR_DELAY + card["start"]
@@ -588,6 +611,7 @@ def gen_video(episode_id: str, out_dir: Path = None):
 
         all_scenes = teaser_scenes + main_scenes
         all_offsets = teaser_offsets + [o + intro_block_dur for o in main_offsets]
+        all_durs = teaser_durs + main_durs
 
         print("\n--- 音声ミックス ---")
         bgm_segments = compute_bgm_segments(bgm_paths, main_scenes, main_offsets, intro_block_dur, total_dur)
@@ -603,7 +627,7 @@ def gen_video(episode_id: str, out_dir: Path = None):
             "映像+音声結合",
         )
         output_file = out_dir / f"{episode_id}.mp4"
-        burn_telop_global(video_with_audio, all_scenes, all_offsets, output_file, tmp)
+        burn_telop_global(video_with_audio, all_scenes, all_offsets, all_durs, output_file, tmp)
 
     print(f"\n{'━'*60}\n  ✓ 完成: {output_file}\n"
           f"  合計尺: {total_dur:.1f}s ({total_dur/60:.1f}分)\n{'━'*60}")

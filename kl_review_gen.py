@@ -83,32 +83,36 @@ def _bgm_rel_path(bgm_sources: dict, role: str) -> str:
     return f"BGM/{filename}"
 
 
+def _play_button(src: str, label: str, button_text: str) -> str:
+    return (
+        f'<button type="button" class="media-play" '
+        f'data-src="{html.escape(src)}" data-label="{html.escape(label)}">'
+        f'{html.escape(button_text)}</button>'
+    )
+
+
 def scene_card(kind: str, sid: int, type_label: str, narrator: str, narration: str,
                img_rel: str, audio_rel: str, extra: str = "", bgm_role: str = None,
                bgm_uri: str = None) -> str:
-    bgm_html = ""
+    sid_label = f"S{sid:02d}"
+    buttons = [_play_button(audio_rel, f"{sid_label} ナレーション", "▶ ナレーション再生")]
     if bgm_role and bgm_uri:
-        bgm_html = f"""
-          <div class="bgm-row">
-            <span class="bgm-label">BGM:{html.escape(bgm_role)}</span>
-            <button type="button" class="bgm-play" data-bgm-src="{html.escape(bgm_uri)}">▶ 再生</button>
-          </div>
-        """
+        buttons.append(_play_button(bgm_uri, f"BGM:{bgm_role}", f"▶ BGM:{bgm_role} 再生"))
+    play_row = f'<div class="play-row">{"".join(buttons)}</div>'
     return f"""
     <section class="card">
       <div class="meta">
         <span class="badge badge-{kind}">{html.escape(kind)}</span>
-        <span class="sid">S{sid:02d}</span>
+        <span class="sid">{sid_label}</span>
         <span class="type">{html.escape(type_label)}</span>
         <span class="narrator">{html.escape(NARRATOR_LABEL.get(narrator, narrator))}</span>
         {extra}
       </div>
       <div class="body">
-        <img src="{html.escape(img_rel)}" loading="lazy" alt="S{sid:02d}">
+        <img src="{html.escape(img_rel)}" loading="lazy" alt="{sid_label}">
         <div class="text-col">
           <p class="narration">{html.escape(narration)}</p>
-          <audio controls preload="none" src="{html.escape(audio_rel)}"></audio>
-          {bgm_html}
+          {play_row}
         </div>
       </div>
     </section>
@@ -184,37 +188,52 @@ def main():
   .text-col {{ flex: 1; min-width: 0; }}
   .narration {{ font-size: 15px; line-height: 1.7; margin: 0 0 12px; }}
   .narration.sub {{ color: #9aa5b1; font-size: 13px; }}
-  audio {{ width: 100%; }}
-  .bgm-row {{ display: flex; gap: 8px; align-items: center; margin-top: 10px; }}
-  .bgm-label {{ font-size: 12px; color: #9aa5b1; }}
-  .bgm-play {{
+  .play-row {{ display: flex; gap: 8px; align-items: center; margin-top: 10px; flex-wrap: wrap; }}
+  .media-play {{
     font-size: 13px; padding: 4px 10px; border-radius: 6px; border: 1px solid #3a4453;
     background: #2f3846; color: #eee; cursor: pointer;
   }}
-  .bgm-play.playing {{ background: #2f5d8a; border-color: #2f5d8a; }}
-  .bgm-play:hover {{ background: #3a4453; }}
+  .media-play.playing {{ background: #2f5d8a; border-color: #2f5d8a; }}
+  .media-play:hover {{ background: #3a4453; }}
   @media (max-width: 700px) {{
     .body {{ flex-direction: column; }}
     img {{ width: 100%; max-width: 100%; }}
   }}
+  body {{ padding-bottom: 84px; }}
+  #media-player-bar {{
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+    display: flex; align-items: center; gap: 12px;
+    background: #11151b; border-top: 1px solid #3a4453;
+    padding: 10px 16px;
+  }}
+  #media-player-label {{ font-size: 12px; color: #9aa5b1; white-space: nowrap; flex-shrink: 0; }}
+  #media-player {{ flex: 1; width: 100%; }}
 </style>
 </head>
 <body>
 <h1>{html.escape(ep.get('episode_title', args.episode))}（{html.escape(args.episode)}）— 画像+ナレーション確認</h1>
 {''.join(cards)}
-<audio id="bgm-player"></audio>
+<div id="media-player-bar">
+  <span id="media-player-label">未選択</span>
+  <audio id="media-player" controls preload="none"></audio>
+</div>
 <script>
-  // シーンごとのBGM再生ボタン（トグル式）。ページ全体で単一のaudio要素を
-  // 共有し、別カードで再生を押すと自動的に切り替わる（同時に複数BGMが
-  // 鳴らないように）。同じボタンをもう一度押すと停止する。
-  const player = document.getElementById('bgm-player');
-  const playButtons = document.querySelectorAll('.bgm-play');
+  // ナレーション・BGMどちらの再生ボタンも、ページ下部に固定した単一のaudio
+  // 要素（ネイティブcontrols＝シークバー付き）を共有する（トグル式）。
+  // 別のボタンで再生を押すと自動的に切り替わる（同時に複数音源が鳴らない
+  // ように）。シークバーで任意の位置に早送り・巻き戻しできる。同じボタンを
+  // もう一度押すと停止する。ナレーションとBGMを別々のバーにしても操作感は
+  // 同じなので、1つのバーに統合した（2026-08-27）。
+  const player = document.getElementById('media-player');
+  const playerLabel = document.getElementById('media-player-label');
+  const playButtons = document.querySelectorAll('.media-play');
   function clearPlayingState() {{
-    playButtons.forEach(b => {{ b.classList.remove('playing'); b.textContent = '▶ 再生'; }});
+    playButtons.forEach(b => {{ b.classList.remove('playing'); b.textContent = b.dataset.idleText; }});
   }}
   playButtons.forEach(btn => {{
+    btn.dataset.idleText = btn.textContent;
     btn.addEventListener('click', () => {{
-      const src = btn.getAttribute('data-bgm-src');
+      const src = btn.getAttribute('data-src');
       if (btn.classList.contains('playing')) {{
         player.pause();
         clearPlayingState();
@@ -226,6 +245,7 @@ def main():
       player.play();
       btn.classList.add('playing');
       btn.textContent = '⏸ 停止';
+      playerLabel.textContent = btn.getAttribute('data-label') || '';
     }});
   }});
   player.addEventListener('ended', clearPlayingState);

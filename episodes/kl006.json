@@ -1,0 +1,1214 @@
+{
+  "episode_id": "kl006",
+  "episode_title": "道が寸断されても、薬は届く——AIドローンが判断する、命の優先順位",
+  "youtube_title": "道路が寸断されても、薬は届く——AIが優先順位を判断する災害用ドローン配送の研究",
+  "youtube_description": "道路が寸断され、実家の母と連絡が取れない——そんな不安を抱える、地方都市で働く会社員・佐々木雅人さん(42歳)の視点から解説します。今回紹介するのは、大規模災害の発生後、道路が寸断され孤立した集落へ医薬品を届けるための、複数の自律ドローンによる協調配送に関する研究です。被災地全体の状況——各世帯が抱える症状の深刻さ、道路の通行可否、通信のつながりやすさ、機体側の電池残量や風向きといった制約——を組み合わせて、限られた数のドローンの配送ルートと優先順位を自律的に判断して割り当てるアルゴリズムが提案されています。まだ実験環境で仕組みを検証した段階の研究ですが、離れて暮らす家族の無事を、テクノロジーが少しずつ支えてくれるかもしれない——そんな可能性を紹介します。\n\n📚 参考文献:\nCalyam, A., Bhamidipati, S. C., Murry, Z., Srinivas, S. (2026). A Cross-Layered Multi-Drone Coordination for Medical Supply Delivery during Disaster Response Management. arXiv.org.\n著者所属: ミズーリ大学(University of Missouri)\nDOI: 10.48550/arXiv.2605.09342\nhttps://doi.org/10.48550/arXiv.2605.09342\n\n※本研究はまだ査読を経る前の論文(プレプリント)として公開されている段階の研究です。今後、査読や追加検証を経て内容が更新される可能性があります。動画では研究の主旨を誠実にお伝えすることを心がけていますが、実用化にはまだ時間がかかると考えられます。\n\n\n🎵 Music: Elevated Mood with Acoustic Guitar by ViraMiller (freesound.org) — CC BY 4.0\n🎵 Music: Heartfelt Piano and Violin by ViraMiller (freesound.org) — CC BY 4.0\n#防災 #ドローン #AI #災害医療 #医薬品配送 #ロボティクス #研究紹介 #くらしを変える科学 #幸せな未来のサイエンスチャンネル",
+  "youtube_tags": [
+    "防災",
+    "ドローン",
+    "AI",
+    "災害医療",
+    "医薬品配送",
+    "ロボティクス",
+    "研究紹介",
+    "くらしを変える科学"
+  ],
+  "references": [
+    {
+      "title": "A Cross-Layered Multi-Drone Coordination for Medical Supply Delivery during Disaster Response Management",
+      "authors": [
+        "Aneesh Calyam",
+        "Subrahmanya Chandra Bhamidipati",
+        "Zack Murry",
+        "Sharan Srinivas"
+      ],
+      "year": 2026,
+      "venue": "arXiv.org",
+      "doi": "10.48550/arXiv.2605.09342",
+      "url": "https://doi.org/10.48550/arXiv.2605.09342",
+      "is_preprint": true,
+      "lead_researcher": "Sharan Srinivas (University of Missouri, 災害物流・オペレーションズリサーチ研究室)",
+      "institution": "University of Missouri"
+    }
+  ],
+  "protagonist": {
+    "name": "佐々木 雅人",
+    "age": 42,
+    "job": "地方都市の会社員（持病のある高齢の母が離れた集落で一人暮らし）",
+    "gender": "male"
+  },
+  "thumbnail_prompt": "an elderly Japanese woman in her mid-70s with silver hair, wearing a cardigan, standing at the doorway of a traditional rural Japanese house, smiling with visible relief and warmth, holding a small package just delivered by a small autonomous medical delivery drone (quadcopter-style, matte white and soft teal plastic body, white rotor guard rings around each propeller, a small green cross marking on the underside cargo box, simple clean mechanical design, no human-like features, no visible brand logos or text) hovering just above her, a cracked road with earthquake debris visible in the background showing the village is isolated, bright soft morning daylight, not night, exactly ONE small unobtrusive flat corner graphic (placed only in a single corner of the frame, not repeated anywhere else) showing a simple route line connecting a drone icon to a house icon, absolutely no text, no numerals, 16:9",
+  "thumbnail_headline": "薬を届けたのは、AIドローン",
+  "thumbnail_subcopy": "孤立した集落への医療物資配送を最適化する研究",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "母の薬が、ちゃんと届いた",
+      "image_prompt": "an elderly Japanese woman in her mid-70s with silver hair, wearing a cardigan, standing at the doorway of a rural traditional Japanese house, holding a small package with a relieved warm smile, a small autonomous medical delivery drone (quadcopter-style, matte white and soft teal plastic body, white rotor guard rings around each propeller, a small green cross marking on the underside cargo box, simple clean mechanical design, no human-like features, no visible brand logos or text, the same drone design as in every other scene of this episode) hovering just above her, soft morning daylight, not night, no text",
+      "ken_burns": "pan_zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "母の薬が、ちゃんと届いた"
+          ],
+          "start": 0.0,
+          "end": 2.42
+        }
+      ]
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "『大丈夫だよ』その声にほっとする",
+      "image_prompt": "a Japanese man in his early 40s (Sasaki Masato) with short black hair, wearing a business casual shirt with no tie, sitting on a sofa in his city apartment, holding a smartphone to his ear with a relieved expression, warm evening interior lighting, a dusk sky visible through the window, not night, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "『大丈夫だよ』その声にほっとする"
+          ],
+          "start": 0.0,
+          "end": 3.06
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.33,
+        "y": 0.38
+      }
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "空から、薬を運んでくれる",
+      "image_prompt": "an aerial wide view of a small isolated mountain village after an earthquake, a cracked road with visible debris blocking it, a single small autonomous medical delivery drone (quadcopter-style, matte white and soft teal plastic body, white rotor guard rings around each propeller, a small green cross marking on the underside cargo box, simple clean mechanical design, no human-like features, no visible brand logos or text, the same drone design as in every other scene of this episode) flying above the rooftops toward a house, soft morning daylight, not night, no people visible, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "空から、薬を運んでくれる"
+          ],
+          "start": 0.0,
+          "end": 2.3
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.63,
+        "y": 0.35
+      }
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 4,
+      "narration": "そんな未来が、来るとしたら",
+      "image_prompt": "a Japanese man in his early 40s (Sasaki Masato) with short black hair, wearing a business casual shirt, sitting alone at a kitchen table in his city apartment at night, looking thoughtfully at a small framed photo of his elderly mother, a single warm lamp light illuminating his face, dark evening scene visible through the window, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "そんな未来が、来るとしたら"
+          ],
+          "start": 0.0,
+          "end": 2.06
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.57,
+        "y": 0.42
+      }
+    },
+    {
+      "scene_id": 5,
+      "type": "hook",
+      "narrator": "persona",
+      "duration_seconds": 19,
+      "narration": "42歳、会社員。離れた集落で一人で暮らす母のことが、いつも気がかりです。物静かで気丈な人ですが、月に一度顔を見に帰る以外は、電話で近況を確かめるだけの毎日を送っています。母は毎朝、庭の花に水をやってから電話をくれる人です。声の張り具合だけで、その日の調子が何となくわかる——そんな習慣が、いつの間にか自分たちの間にできていました。",
+      "image_prompt": "a Japanese man in his early 40s (Sasaki Masato) with short black hair, wearing a business casual shirt with no tie, standing in his city apartment looking out the window with a slightly worried expression, soft morning daylight, not night, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "42歳、会社員。離れた集落で一人で暮らす"
+          ],
+          "start": 0.0,
+          "end": 4.3
+        },
+        {
+          "lines": [
+            "母のことが、いつも気がかりです。"
+          ],
+          "start": 4.45,
+          "end": 6.85
+        },
+        {
+          "lines": [
+            "物静かで気丈な人ですが、月に一度顔を見に"
+          ],
+          "start": 7.0,
+          "end": 11.44
+        },
+        {
+          "lines": [
+            "帰る以外は、電話で近況を確かめるだけの"
+          ],
+          "start": 11.59,
+          "end": 14.69
+        },
+        {
+          "lines": [
+            "毎日を送っています。母は毎朝、"
+          ],
+          "start": 14.84,
+          "end": 18.24
+        },
+        {
+          "lines": [
+            "庭の花に水をやってから電話をくれる人です。"
+          ],
+          "start": 18.39,
+          "end": 21.54
+        },
+        {
+          "lines": [
+            "声の張り具合だけで、その日の調子が何となく"
+          ],
+          "start": 21.69,
+          "end": 24.84
+        },
+        {
+          "lines": [
+            "わかる——そんな習慣が、いつの間にか自分"
+          ],
+          "start": 24.99,
+          "end": 27.99
+        },
+        {
+          "lines": [
+            "たちの間にできていました。"
+          ],
+          "start": 28.14,
+          "end": 30.09
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.62,
+        "y": 0.42
+      }
+    },
+    {
+      "scene_id": 6,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 22,
+      "narration": "先週末、大きな地震が母の暮らす集落を襲いました。ニュース速報を見た瞬間、頭が真っ白になりました。何度も電話をかけましたが、呼び出し音すら鳴らない日が続きます。道路は寸断され、電話もほとんど繋がりません。薬をちゃんと飲めているのか、無事でいるのか、確かめる術がありませんでした。",
+      "image_prompt": "a Japanese man in his early 40s (Sasaki Masato) with short black hair, wearing a business casual shirt, sitting at his kitchen table late at night, staring at his smartphone showing a failed-call icon, a worried tense expression, dim warm lamp lighting, dark night visible through the window, a small television faintly glowing in the background, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "先週末、大きな地震が母の暮らす集落を襲いました。"
+          ],
+          "start": 0.0,
+          "end": 4.84
+        },
+        {
+          "lines": [
+            "ニュース速報を見た瞬間、頭が真っ白になりました。"
+          ],
+          "start": 5.8,
+          "end": 9.4
+        },
+        {
+          "lines": [
+            "何度も電話をかけましたが、呼び出し音すら"
+          ],
+          "start": 10.28,
+          "end": 13.36
+        },
+        {
+          "lines": [
+            "鳴らない日が続きます。道路は寸断され、"
+          ],
+          "start": 13.51,
+          "end": 17.17
+        },
+        {
+          "lines": [
+            "電話もほとんど繋がりません。"
+          ],
+          "start": 17.32,
+          "end": 19.42
+        },
+        {
+          "lines": [
+            "薬をちゃんと飲めているのか、"
+          ],
+          "start": 19.98,
+          "end": 22.08
+        },
+        {
+          "lines": [
+            "無事でいるのか、確かめる術がありませんでした。"
+          ],
+          "start": 22.23,
+          "end": 25.68
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.46,
+        "y": 0.42
+      }
+    },
+    {
+      "scene_id": 7,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 53,
+      "narration": "母は数年前から心臓に持病があって、朝と夜、決まった時間に薬を飲み続けています。自分のことは自分で、と日々の管理もきちんとこなしてきた人です。それでも、その薬が何日も途切れてしまったらと考えると、落ち着いてはいられませんでした。集落から一番近い病院までは、車で30分以上かかります。道路が塞がったままでは、薬を届けに行くことも、様子を見に行くこともできません。本当はそばにいたいのに、仕事の都合で実家を離れた自分がいる。母は電話のたびに『大丈夫、大丈夫』と繰り返す人でしたが、その言葉を、今回だけは素直に信じられませんでした。電話がつながるようになるまでの数日間、そのことばかり考えていました。",
+      "image_prompt": "a Japanese man in his early 40s (Sasaki Masato) with short black hair, wearing a business casual shirt, sitting alone at his kitchen table at night, looking at a photo of his elderly mother on his smartphone next to a small medicine organizer box, a worried thoughtful expression, dim warm lamp lighting, dark night visible through the window, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "母は数年前から心臓に持病があって、朝と夜、"
+          ],
+          "start": 0.0,
+          "end": 4.06
+        },
+        {
+          "lines": [
+            "決まった時間に薬を飲み続けています。"
+          ],
+          "start": 4.44,
+          "end": 7.14
+        },
+        {
+          "lines": [
+            "自分のことは自分で、と日々の管理もきちんと"
+          ],
+          "start": 7.38,
+          "end": 10.82
+        },
+        {
+          "lines": [
+            "こなしてきた人です。それでも、"
+          ],
+          "start": 10.97,
+          "end": 13.23
+        },
+        {
+          "lines": [
+            "その薬が何日も途切れてしまったらと考えると、"
+          ],
+          "start": 13.58,
+          "end": 16.88
+        },
+        {
+          "lines": [
+            "落ち着いてはいられませんでした。"
+          ],
+          "start": 17.1,
+          "end": 19.5
+        },
+        {
+          "lines": [
+            "集落から一番近い病院までは、"
+          ],
+          "start": 19.65,
+          "end": 21.75
+        },
+        {
+          "lines": [
+            "車で30分以上かかります。道路が塞がったままでは、"
+          ],
+          "start": 21.96,
+          "end": 26.14
+        },
+        {
+          "lines": [
+            "薬を届けに行くことも、様子を見に行くことも"
+          ],
+          "start": 26.29,
+          "end": 29.89
+        },
+        {
+          "lines": [
+            "できません。本当はそばにいたいのに、"
+          ],
+          "start": 30.04,
+          "end": 33.06
+        },
+        {
+          "lines": [
+            "仕事の都合で実家を離れた自分がいる。"
+          ],
+          "start": 33.21,
+          "end": 35.99
+        },
+        {
+          "lines": [
+            "母は電話のたびに『大丈夫、大丈夫』"
+          ],
+          "start": 36.62,
+          "end": 39.42
+        },
+        {
+          "lines": [
+            "と繰り返す人でしたが、その言葉を、"
+          ],
+          "start": 39.57,
+          "end": 42.59
+        },
+        {
+          "lines": [
+            "今回だけは素直に信じられませんでした。"
+          ],
+          "start": 42.74,
+          "end": 45.59
+        },
+        {
+          "lines": [
+            "電話がつながるようになるまでの数日間、"
+          ],
+          "start": 45.8,
+          "end": 48.65
+        },
+        {
+          "lines": [
+            "そのことばかり考えていました。"
+          ],
+          "start": 48.8,
+          "end": 51.05
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.64,
+        "y": 0.4
+      }
+    },
+    {
+      "scene_id": 8,
+      "type": "citation",
+      "narrator": "research",
+      "duration_seconds": 35,
+      "narration": "この状況に一つの可能性を示すのが、アメリカ・ミズーリ大学の研究チームが発表した、災害時の医薬品配送に関する研究です。道路が寸断されて孤立した集落に、限られた数のドローンをどう振り分け、効率よく物資を届けるか——研究チームは、その難しい課題に正面から取り組んでいます。国内外の防災研究でも、近年注目されているテーマです。",
+      "image_prompt": "the exterior of a modern university research building with a small autonomous medical delivery drone (quadcopter-style, matte white and soft teal plastic body, white rotor guard rings around each propeller, a small green cross marking on the underside cargo box, simple clean mechanical design, no human-like features, no visible brand logos or text, the same drone design as in every other scene of this episode) hovering in the foreground on an open test field, bright daytime lighting, no people, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "この状況に一つの可能性を示すのが、"
+          ],
+          "start": 0.0,
+          "end": 2.7
+        },
+        {
+          "lines": [
+            "アメリカ・ミズーリ大学の研究チームが発表した、"
+          ],
+          "start": 3.0,
+          "end": 6.45
+        },
+        {
+          "lines": [
+            "災害時の医薬品配送に関する研究です。"
+          ],
+          "start": 6.6,
+          "end": 9.96
+        },
+        {
+          "lines": [
+            "道路が寸断されて孤立した集落に、"
+          ],
+          "start": 10.11,
+          "end": 12.67
+        },
+        {
+          "lines": [
+            "限られた数のドローンをどう振り分け、"
+          ],
+          "start": 12.82,
+          "end": 15.52
+        },
+        {
+          "lines": [
+            "効率よく物資を届けるか——研究チームは、"
+          ],
+          "start": 15.67,
+          "end": 18.85
+        },
+        {
+          "lines": [
+            "その難しい課題に正面から取り組んでいます。"
+          ],
+          "start": 19.0,
+          "end": 22.15
+        },
+        {
+          "lines": [
+            "国内外の防災研究でも、近年注目されている"
+          ],
+          "start": 22.6,
+          "end": 26.1
+        },
+        {
+          "lines": [
+            "テーマです。"
+          ],
+          "start": 26.25,
+          "end": 27.15
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.39,
+        "y": 0.57
+      }
+    },
+    {
+      "scene_id": 9,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 51,
+      "narration": "大地震のような大規模災害では、道路の寸断によって救援物資が届かない集落が数多く生まれます。一台のドローンが飛べる距離やバッテリーには限りがあり、しかも同時に多くの集落から助けを求める声が届く中で、どの順番で、どのルートを飛ぶべきかを瞬時に判断するのは簡単ではありません。人手による判断では対応が追いつかない場面も出てきます。研究チームが取り組んだのは、限られた数のドローンをどう連携させ、最も必要としている人から医薬品を届けるか、という資源配分の難題でした。",
+      "image_prompt": "two American researchers (Western appearance, matching the US-based institution), a man and a woman, wearing white lab coats, standing in a robotics research lab looking at a laptop screen, a small flat corner graphic (no larger than roughly one-eighth of the frame, tucked unobtrusively in a corner, plain flat style, kept simple and contrasting with the richer main illustration for legibility, absolutely no text or numerals) representing a simple drone route network shown on the laptop screen, several small autonomous medical delivery drones (quadcopter-style, matte white and soft teal plastic body, white rotor guard rings around each propeller, a small green cross marking on the underside cargo box, simple clean mechanical design, no human-like features, no visible brand logos or text, the same drone design as in every other scene of this episode) lined up on a table nearby, bright indoor lab lighting, no text",
+      "ken_burns": "pan_zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "大地震のような大規模災害では、"
+          ],
+          "start": 0.0,
+          "end": 2.46
+        },
+        {
+          "lines": [
+            "道路の寸断によって救援物資が届かない集落が"
+          ],
+          "start": 2.94,
+          "end": 6.18
+        },
+        {
+          "lines": [
+            "数多く生まれます。一台のドローンが飛べる"
+          ],
+          "start": 6.33,
+          "end": 9.47
+        },
+        {
+          "lines": [
+            "距離やバッテリーには限りがあり、"
+          ],
+          "start": 9.62,
+          "end": 12.02
+        },
+        {
+          "lines": [
+            "しかも同時に多くの集落から助けを求める"
+          ],
+          "start": 12.17,
+          "end": 15.02
+        },
+        {
+          "lines": [
+            "声が届く中で、どの順番で、どのルートを"
+          ],
+          "start": 15.17,
+          "end": 18.02
+        },
+        {
+          "lines": [
+            "飛ぶべきかを瞬時に判断するのは簡単ではありません。"
+          ],
+          "start": 18.17,
+          "end": 21.92
+        },
+        {
+          "lines": [
+            "人手による判断では対応が追いつかない場面も"
+          ],
+          "start": 22.07,
+          "end": 25.22
+        },
+        {
+          "lines": [
+            "出てきます。研究チームが取り組んだのは、"
+          ],
+          "start": 25.37,
+          "end": 28.37
+        },
+        {
+          "lines": [
+            "限られた数のドローンをどう連携させ、"
+          ],
+          "start": 28.52,
+          "end": 31.22
+        },
+        {
+          "lines": [
+            "最も必要としている人から医薬品を届けるか、"
+          ],
+          "start": 31.37,
+          "end": 34.52
+        },
+        {
+          "lines": [
+            "という資源配分の難題でした。"
+          ],
+          "start": 34.67,
+          "end": 36.77
+        }
+      ]
+    },
+    {
+      "scene_id": 10,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 51,
+      "narration": "提案されたのは、『誰に、どれくらい急いで届けるべきか』という緊急度の情報だけでなく、通信のつながりやすさや、電池の残量・風向きといった機体側の制約まで、いくつもの要素を同時に組み合わせて判断する協調アルゴリズムです。地図上の最短ルートを探すだけでなく、複数のドローンの配送ルートと優先順位を自律的に判断して割り当てます。限られた資源であっても、より多くの人に医薬品を届けられることが期待されています。",
+      "image_prompt": "an American researcher (Western appearance, matching the US-based institution) wearing a white lab coat in a robotics test lab, adjusting one small autonomous medical delivery drone (quadcopter-style, matte white and soft teal plastic body, white rotor guard rings around each propeller, a small green cross marking on the underside cargo box, simple clean mechanical design, no human-like features, no visible brand logos or text, the same drone design as in every other scene of this episode) on a workbench, while several identical drones hover together in a netted test flight area in the background demonstrating coordinated flight, bright indoor lab lighting, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "提案されたのは、『誰に、どれくらい急いで"
+          ],
+          "start": 0.0,
+          "end": 3.0
+        },
+        {
+          "lines": [
+            "届けるべきか』という緊急度の情報だけでなく、"
+          ],
+          "start": 3.15,
+          "end": 6.45
+        },
+        {
+          "lines": [
+            "通信のつながりやすさや、電池の残量・"
+          ],
+          "start": 6.6,
+          "end": 9.52
+        },
+        {
+          "lines": [
+            "風向きといった機体側の制約まで、"
+          ],
+          "start": 9.67,
+          "end": 12.11
+        },
+        {
+          "lines": [
+            "いくつもの要素を同時に組み合わせて判断"
+          ],
+          "start": 12.26,
+          "end": 15.12
+        },
+        {
+          "lines": [
+            "する協調アルゴリズムです。地図上の最短"
+          ],
+          "start": 15.27,
+          "end": 18.12
+        },
+        {
+          "lines": [
+            "ルートを探すだけでなく、複数のドローンの"
+          ],
+          "start": 18.27,
+          "end": 21.27
+        },
+        {
+          "lines": [
+            "配送ルートと優先順位を自律的に判断して"
+          ],
+          "start": 21.42,
+          "end": 24.27
+        },
+        {
+          "lines": [
+            "割り当てます。限られた資源であっても、"
+          ],
+          "start": 24.42,
+          "end": 27.27
+        },
+        {
+          "lines": [
+            "より多くの人に医薬品を届けられることが"
+          ],
+          "start": 27.42,
+          "end": 30.27
+        },
+        {
+          "lines": [
+            "期待されています。"
+          ],
+          "start": 30.42,
+          "end": 31.77
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.67,
+        "y": 0.35
+      }
+    },
+    {
+      "scene_id": 11,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 50,
+      "narration": "このシステムのもう一つの特徴は、状況が刻々と変わる中でも、判断を更新し続けられる点にあります。被災地の状況は、一度きりの調査で確定するものではありません。ある集落の道路の状況が新たにわかったり、別の集落からさらに深刻な要請が入ったりすれば、いったん決まっていた配送計画そのものを、その場で組み替えます。一台一台にあらかじめ決めた道順を渡しておくのではなく、限られた台数を、そのときどきの状況に合わせて振り向け直していく。そうした考え方に基づいて設計された仕組みです。",
+      "image_prompt": "two American researchers (Western appearance, matching the US-based institution), a man and a woman, wearing white lab coats, in a robotics research lab looking intently at a large monitor displaying a delivery route map with lines actively being redrawn, one researcher pointing at the screen while the other types on a keyboard, several small autonomous medical delivery drones (quadcopter-style, matte white and soft teal plastic body, white rotor guard rings around each propeller, a small green cross marking on the underside cargo box, simple clean mechanical design, no human-like features, no visible brand logos or text, the same drone design as in every other scene of this episode) visible on a shelf in the background, bright indoor lab lighting, no text",
+      "ken_burns": "pan_zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "このシステムのもう一つの特徴は、"
+          ],
+          "start": 0.0,
+          "end": 2.4
+        },
+        {
+          "lines": [
+            "状況が刻々と変わる中でも、判断を更新"
+          ],
+          "start": 2.58,
+          "end": 6.0
+        },
+        {
+          "lines": [
+            "し続けられる点にあります。被災地の状況は、"
+          ],
+          "start": 6.15,
+          "end": 9.83
+        },
+        {
+          "lines": [
+            "一度きりの調査で確定するものではありません。"
+          ],
+          "start": 9.98,
+          "end": 13.28
+        },
+        {
+          "lines": [
+            "ある集落の道路の状況が新たにわかったり、"
+          ],
+          "start": 13.43,
+          "end": 16.44
+        },
+        {
+          "lines": [
+            "別の集落からさらに深刻な要請が入ったりすれば、"
+          ],
+          "start": 16.59,
+          "end": 20.04
+        },
+        {
+          "lines": [
+            "いったん決まっていた配送計画そのものを、"
+          ],
+          "start": 20.19,
+          "end": 23.19
+        },
+        {
+          "lines": [
+            "その場で組み替えます。一台一台にあらかじめ"
+          ],
+          "start": 23.34,
+          "end": 26.49
+        },
+        {
+          "lines": [
+            "決めた道順を渡しておくのではなく、"
+          ],
+          "start": 26.64,
+          "end": 29.19
+        },
+        {
+          "lines": [
+            "限られた台数を、そのときどきの状況に"
+          ],
+          "start": 29.34,
+          "end": 32.04
+        },
+        {
+          "lines": [
+            "合わせて振り向け直していく。"
+          ],
+          "start": 32.19,
+          "end": 34.29
+        },
+        {
+          "lines": [
+            "そうした考え方に基づいて設計された仕組みです。"
+          ],
+          "start": 34.44,
+          "end": 37.89
+        }
+      ]
+    },
+    {
+      "scene_id": 12,
+      "type": "data",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 50,
+      "narration": "シミュレーションでは、被災地全体を俯瞰しながら、複数のドローンが役割を分担して医薬品を運ぶルートが描き出されました。緊急度の高い世帯から優先的に届くよう、ルート全体がそのつど組み替えられていきます。一台ずつばらばらに飛ばす場合と比べて、全体を見渡しながら連携させることで、限られた台数のドローンでも、より多くの世帯に、より短い時間で薬を届けられる様子が数値の上でも示されました。研究チームは、今後さらに大規模なシナリオでの検証を進めていくとしています。",
+      "image_prompt": "a simple flat infographic map of a disaster-affected area showing a network of roads with some sections marked as blocked, several small flat drone icons connected by route lines to house icons of varying priority, one route highlighted as the highest-priority delivery path, no text",
+      "ken_burns": "static",
+      "telop_cards": [
+        {
+          "lines": [
+            "シミュレーションでは、被災地全体を俯瞰しながら、"
+          ],
+          "start": 0.0,
+          "end": 3.6
+        },
+        {
+          "lines": [
+            "複数のドローンが役割を分担して医薬品を"
+          ],
+          "start": 3.8,
+          "end": 7.04
+        },
+        {
+          "lines": [
+            "運ぶルートが描き出されました。"
+          ],
+          "start": 7.19,
+          "end": 9.44
+        },
+        {
+          "lines": [
+            "緊急度の高い世帯から優先的に届くよう、"
+          ],
+          "start": 9.76,
+          "end": 12.92
+        },
+        {
+          "lines": [
+            "ルート全体がそのつど組み替えられていきます。"
+          ],
+          "start": 13.3,
+          "end": 16.6
+        },
+        {
+          "lines": [
+            "一台ずつばらばらに飛ばす場合と比べて、"
+          ],
+          "start": 17.16,
+          "end": 20.01
+        },
+        {
+          "lines": [
+            "全体を見渡しながら連携させることで、"
+          ],
+          "start": 20.16,
+          "end": 23.12
+        },
+        {
+          "lines": [
+            "限られた台数のドローンでも、"
+          ],
+          "start": 23.27,
+          "end": 25.37
+        },
+        {
+          "lines": [
+            "より多くの世帯に、より短い時間で薬を"
+          ],
+          "start": 25.52,
+          "end": 29.08
+        },
+        {
+          "lines": [
+            "届けられる様子が数値の上でも示されました。"
+          ],
+          "start": 29.23,
+          "end": 32.38
+        },
+        {
+          "lines": [
+            "研究チームは、今後さらに大規模なシナリオでの"
+          ],
+          "start": 32.53,
+          "end": 36.01
+        },
+        {
+          "lines": [
+            "検証を進めていくとしています。"
+          ],
+          "start": 36.16,
+          "end": 38.41
+        }
+      ]
+    },
+    {
+      "scene_id": 13,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 18,
+      "narration": "もしこんな未来が来たら——実家の母のことを、今よりずっと安心して見守れる気がします。母の家の窓の外を、小さなドローンが薬を運んで飛んでいく。そんな光景を思い浮かべます。薬の心配だけでなく、日々のちょっとした変化にも、もっと早く気づいてあげられるかもしれません。",
+      "image_prompt": "a small figure of a Japanese man in his early 40s (Sasaki Masato) sitting in a chair by the window in his real city apartment, a classic comic-style thought bubble (a chain of small circles rising from his head into one large cloud-shaped bubble) above his head, inside the bubble a miniature imagined scene of a small autonomous medical delivery drone (quadcopter-style, matte white and soft teal plastic body, white rotor guard rings around each propeller, a small green cross marking on the underside cargo box, simple clean mechanical design, no human-like features, no visible brand logos or text, the same drone design as in every other scene of this episode) flying toward his mother's rural house at dawn, soft morning daylight in the room, not night, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "もしこんな未来が来たら——実家の母のことを、"
+          ],
+          "start": 0.0,
+          "end": 3.42
+        },
+        {
+          "lines": [
+            "今よりずっと安心して見守れる気がします。"
+          ],
+          "start": 3.57,
+          "end": 6.57
+        },
+        {
+          "lines": [
+            "母の家の窓の外を、小さなドローンが薬を"
+          ],
+          "start": 6.8,
+          "end": 9.65
+        },
+        {
+          "lines": [
+            "運んで飛んでいく。そんな光景を思い浮かべます。"
+          ],
+          "start": 9.8,
+          "end": 13.25
+        },
+        {
+          "lines": [
+            "薬の心配だけでなく、日々のちょっとした変化にも、"
+          ],
+          "start": 13.4,
+          "end": 17.0
+        },
+        {
+          "lines": [
+            "もっと早く気づいてあげられるかもしれません。"
+          ],
+          "start": 17.15,
+          "end": 20.45
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.28,
+        "y": 0.58
+      }
+    },
+    {
+      "scene_id": 14,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 34,
+      "narration": "夕方、電話をすると、母は庭の植物に水をやっているところでした。地震のあとも薬が途切れなかったから、いつもと変わらない毎日が、そのまま続いている。母がずっと大切にしてきた、その何でもない時間。電話の向こうから聞こえる水やりの音と、母の弾んだ声。声の調子だけで、今日も元気なのだとすぐにわかりました。それだけで、こちらまで心があたたかくなる、そんな穏やかな夕暮れです。以前と何も変わらない、そのことがどれほど尊いか、今なら分かる気がします。",
+      "image_prompt": "an elderly Japanese woman in her mid-70s with silver hair (Sasaki Masato's mother), watering potted plants in the small garden of her rural home in the evening, a peaceful contented smile, warm evening light spilling from the house windows behind her, a dusk sky visible, not full night, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "夕方、電話をすると、母は庭の植物に水を"
+          ],
+          "start": 0.0,
+          "end": 3.68
+        },
+        {
+          "lines": [
+            "やっているところでした。地震のあとも薬が"
+          ],
+          "start": 3.83,
+          "end": 7.13
+        },
+        {
+          "lines": [
+            "途切れなかったから、いつもと変わらない毎日が、"
+          ],
+          "start": 7.28,
+          "end": 10.73
+        },
+        {
+          "lines": [
+            "そのまま続いている。母がずっと大切にしてきた、"
+          ],
+          "start": 10.88,
+          "end": 14.92
+        },
+        {
+          "lines": [
+            "その何でもない時間。電話の向こうから"
+          ],
+          "start": 15.07,
+          "end": 18.63
+        },
+        {
+          "lines": [
+            "聞こえる水やりの音と、母の弾んだ声。"
+          ],
+          "start": 18.78,
+          "end": 21.72
+        },
+        {
+          "lines": [
+            "声の調子だけで、今日も元気なのだとすぐに"
+          ],
+          "start": 21.87,
+          "end": 25.09
+        },
+        {
+          "lines": [
+            "わかりました。それだけで、こちらまで心が"
+          ],
+          "start": 25.24,
+          "end": 28.69
+        },
+        {
+          "lines": [
+            "あたたかくなる、そんな穏やかな夕暮れです。"
+          ],
+          "start": 28.84,
+          "end": 31.99
+        },
+        {
+          "lines": [
+            "以前と何も変わらない、そのことがどれほど尊いか、"
+          ],
+          "start": 32.14,
+          "end": 35.74
+        },
+        {
+          "lines": [
+            "今なら分かる気がします。"
+          ],
+          "start": 35.89,
+          "end": 37.69
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.43,
+        "y": 0.32
+      },
+      "badge_text": "幸せな未来を夢想中"
+    },
+    {
+      "scene_id": 15,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 11,
+      "narration": "朝、母から電話がありました。『今日もちゃんと薬、届いたよ』——その一言だけで、肩の力がふっと抜けます。当たり前だったはずのその一言が、今はこんなにも大きな意味を持つようになりました。離れて暮らしていても、心のどこかで、いつも母とつながっていられる——そんな毎日です。",
+      "image_prompt": "an elderly Japanese woman in her mid-70s with silver hair (Sasaki Masato's mother), standing in the doorway of her rural home smiling warmly while holding a smartphone to her ear, a small autonomous medical delivery drone (quadcopter-style, matte white and soft teal plastic body, white rotor guard rings around each propeller, a small green cross marking on the underside cargo box, simple clean mechanical design, no human-like features, no visible brand logos or text, the same drone design as in every other scene of this episode) visible flying away in the background sky, soft morning daylight, not night, no text",
+      "ken_burns": "pan_zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "朝、母から電話がありました。"
+          ],
+          "start": 0.0,
+          "end": 2.04
+        },
+        {
+          "lines": [
+            "『今日もちゃんと薬、届いたよ』"
+          ],
+          "start": 2.39,
+          "end": 4.57
+        },
+        {
+          "lines": [
+            "——その一言だけで、肩の力がふっと抜けます。"
+          ],
+          "start": 4.72,
+          "end": 7.92
+        },
+        {
+          "lines": [
+            "当たり前だったはずのその一言が、"
+          ],
+          "start": 8.07,
+          "end": 10.4
+        },
+        {
+          "lines": [
+            "今はこんなにも大きな意味を持つようになりました。"
+          ],
+          "start": 10.55,
+          "end": 14.04
+        },
+        {
+          "lines": [
+            "離れて暮らしていても、心のどこかで、"
+          ],
+          "start": 14.19,
+          "end": 16.81
+        },
+        {
+          "lines": [
+            "いつも母とつながっていられる——そんな毎日です。"
+          ],
+          "start": 16.96,
+          "end": 20.45
+        }
+      ],
+      "badge_text": "幸せな未来を夢想中"
+    },
+    {
+      "scene_id": 16,
+      "type": "closing",
+      "narrator": "research",
+      "duration_seconds": 50,
+      "narration": "ご紹介したのは、実験環境で仕組みを検証した段階の研究であり、実際の災害現場で使えるようになるには、まだ時間がかかりそうです。それでも、離れて暮らす家族の無事を、テクノロジーが少しずつ支えてくれる——そんな安心こそが、科学が本当に届けたい価値なのかもしれません。詳しい研究内容が気になる方は、概要欄をご確認ください。次はどんな研究が、誰かの『心配』を『安心』に変えるのでしょうか。その瞬間をこれからも一緒に見つけていきたい方は、ぜひチャンネル登録してお待ちください。",
+      "image_prompt": "a single small autonomous medical delivery drone (quadcopter-style, matte white and soft teal plastic body, white rotor guard rings around each propeller, a small green cross marking on the underside cargo box, simple clean mechanical design, no human-like features, no visible brand logos or text, the same drone design as in every other scene of this episode) flying quietly against a soft evening sky over a rural landscape, calm and peaceful mood, dusk sky, warm light, no people, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "ご紹介したのは、実験環境で仕組みを検証"
+          ],
+          "start": 0.0,
+          "end": 3.48
+        },
+        {
+          "lines": [
+            "した段階の研究であり、実際の災害現場で"
+          ],
+          "start": 3.63,
+          "end": 6.85
+        },
+        {
+          "lines": [
+            "使えるようになるには、まだ時間がかかりそうです。"
+          ],
+          "start": 7.0,
+          "end": 10.6
+        },
+        {
+          "lines": [
+            "それでも、離れて暮らす家族の無事を、"
+          ],
+          "start": 10.75,
+          "end": 13.45
+        },
+        {
+          "lines": [
+            "テクノロジーが少しずつ支えてくれる——"
+          ],
+          "start": 13.6,
+          "end": 16.45
+        },
+        {
+          "lines": [
+            "そんな安心こそが、科学が本当に届けたい"
+          ],
+          "start": 16.6,
+          "end": 19.45
+        },
+        {
+          "lines": [
+            "価値なのかもしれません。詳しい研究内容が"
+          ],
+          "start": 19.6,
+          "end": 22.6
+        },
+        {
+          "lines": [
+            "気になる方は、概要欄をご確認ください。"
+          ],
+          "start": 22.75,
+          "end": 25.6
+        },
+        {
+          "lines": [
+            "次はどんな研究が、誰かの『心配』を『安心』"
+          ],
+          "start": 25.75,
+          "end": 28.9
+        },
+        {
+          "lines": [
+            "に変えるのでしょうか。その瞬間をこれからも"
+          ],
+          "start": 29.05,
+          "end": 32.2
+        },
+        {
+          "lines": [
+            "一緒に見つけていきたい方は、"
+          ],
+          "start": 32.35,
+          "end": 34.45
+        },
+        {
+          "lines": [
+            "ぜひチャンネル登録してお待ちください。"
+          ],
+          "start": 34.6,
+          "end": 37.45
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.55,
+        "y": 0.35
+      }
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "persona",
+          "narration": "母と、連絡が取れない",
+          "image_prompt": "a Japanese man in his early 40s (Sasaki Masato) with short black hair, wearing a business casual shirt, sitting alone at a kitchen table at night, staring at his smartphone with a worried expression, dim warm lamp lighting, vertical composition with the subject centered, no text"
+        },
+        {
+          "narrator": "persona",
+          "narration": "動いたのは、AIドローン",
+          "image_prompt": "a small autonomous medical delivery drone (quadcopter-style, matte white and soft teal plastic body, white rotor guard rings around each propeller, a small green cross marking on the underside cargo box, simple clean mechanical design, no human-like features, no visible brand logos or text) taking off from a research facility rooftop at dawn, vertical composition with the drone centered, soft morning daylight, not night, no text"
+        },
+        {
+          "narrator": "research",
+          "narration": "誰から届けるか、AIが判断する",
+          "style": "chart",
+          "image_prompt": "a simple flat infographic vertical diagram showing several small flat drone icons connected by route lines to house icons of varying priority, one route highlighted as the highest-priority delivery path, vertical composition, no text"
+        },
+        {
+          "narrator": "research",
+          "narration": "壊れた道の先まで、空から",
+          "image_prompt": "an aerial view of a small isolated mountain village after an earthquake, a cracked road blocked with debris, a small autonomous medical delivery drone (quadcopter-style, matte white and soft teal plastic body, white rotor guard rings around each propeller, a small green cross marking on the underside cargo box, simple clean mechanical design, no human-like features, no visible brand logos or text) flying over the rooftops toward a house, vertical composition, soft morning daylight, not night, no text"
+        },
+        {
+          "narrator": "persona",
+          "narration": "『ちゃんと届いたよ』、母の声が聞こえた",
+          "image_prompt": "an elderly Japanese woman in her mid-70s with silver hair, standing at the doorway of a rural Japanese house, holding a small package with a relieved warm smile, a small autonomous medical delivery drone (quadcopter-style, matte white and soft teal plastic body, white rotor guard rings around each propeller, a small green cross marking on the underside cargo box, simple clean mechanical design, no human-like features, no visible brand logos or text) hovering just above her, vertical composition with the subject centered, soft morning daylight, not night, no text"
+        },
+        {
+          "narrator": "persona",
+          "narration": "続きは本編でご覧ください",
+          "image_prompt": "a Japanese man in his early 40s (Sasaki Masato) with short black hair, wearing a business casual shirt, standing in his city apartment looking directly toward the camera with a hopeful warm expression, soft morning daylight, vertical composition with the subject centered, no text"
+        }
+      ]
+    }
+  ],
+  "narration_voices": {
+    "persona": "Iapetus",
+    "research": "Autonoe"
+  },
+  "bgm_sources": {
+    "intro": "BGM/kl002-BGM-intro.mp3",
+    "main": "BGM/kl001-BGM-main.mp3",
+    "outro": "BGM/kl001-BGM-outro.mp3"
+  }
+}
