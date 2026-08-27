@@ -2,13 +2,15 @@
 kl_sns_up.py — くらしを変える科学 YouTubeアップロード
 
 使い方:
-  python3 kl_sns_up.py --episode kl001              # 次の空き土曜19:00 JSTに自動予約
+  python3 kl_sns_up.py --episode kl001              # 火・木・土19:00 JSTの最短空きスロットに自動予約
   python3 kl_sns_up.py --episode kl001 --now        # 即時公開
   python3 kl_sns_up.py --episode kl001 --publish-at "2026-06-06 19:00"  # 日時指定
 
-デフォルト動作:
-  毎週土曜 19:00 JST に1本公開。
-  すでに予約済みのエピソードがある場合は翌週以降の空きスロットを自動割り当て。
+デフォルト動作（2026-08-27改訂、週1回→週3回に変更）:
+  火・木・土 19:00 JST の3枠から、他エピソードの episodes/kl*.json の scheduled_at と
+  重複しない最短の未来スロットを自動割り当てる（LWの水・金・日17:00と同じ「最短空きスロット」
+  方式。KLは以前「1週間分をまとめて同じ土曜枠に公開」する方式だったが、週3回化に伴い
+  1エピソード=1スロットの通常の割り当てに戻した）。
 
 認証: ~/.claude/secrets/yt_client_secrets.json（lamp-whisper / samurai-chronicles と共用）
       トークンは ~/.claude/secrets/yt_token_kl.json に保存（kagaku-life専用）。
@@ -98,33 +100,50 @@ def get_youtube_client():
 
 
 JST = ZoneInfo("Asia/Tokyo")
-PUBLISH_HOUR_JST = 19  # 毎週土曜 19:00 JST に公開
-PUBLISH_WEEKDAY = 5  # 0=月 ... 5=土, 6=日
+PUBLISH_HOUR_JST = 19  # 火・木・土 19:00 JST に公開
+PUBLISH_WEEKDAYS = {1, 3, 5}  # 0=月 ... 1=火, 3=木, 5=土
+
+
+def _used_publish_dates() -> set:
+    """全エピソードJSON（episodes/kl*.json）の scheduled_at から、
+    使用済みの公開日（YYYY-MM-DD、JST基準）の集合を返す。
+    LWのdata/scheduled_uploads.jsonのような別トラッキングファイルは持たず、
+    episode JSON自体を正とする（kl_finalize.py等と同じ「JSONが正」の方針）。
+    """
+    used = set()
+    for path in (BASE_DIR / "episodes").glob("kl*.json"):
+        try:
+            ep = json.loads(path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        scheduled_at = ep.get("scheduled_at") or ""
+        if scheduled_at:
+            used.add(scheduled_at.split(" ")[0])
+    return used
 
 
 def find_next_publish_slot() -> str:
     """
-    直近の「土曜 19:00 JST」スロットを返す（"YYYY-MM-DD HH:MM" JST 形式）。
+    火・木・土 19:00 JST のうち、他エピソードと重複しない最短の未来スロットを
+    返す（"YYYY-MM-DD HH:MM" JST 形式）。
 
-    2026-08-23改訂: 従来は1週1本になるよう既に予約済みの土曜を避けて翌週以降に
-    ずらしていたが、「次の土曜19:00までにアップロードされたエピソードは全て
-    その土曜19:00にまとめて公開する」方式に変更した（ユーザー指定）。そのため
-    scheduled_atが既に使われているかどうかは見ず、常に直近の次の土曜を返す
-    （複数エピソードが同じ土曜のスロットを共有してよい）。
-
-    - 今日が土曜かつ19:00 JSTがまだ未来 → 今日を候補に
-    - それ以外 → 次の土曜を候補に
+    2026-08-27改訂: 週1回（土曜19:00にまとめて公開）から週3回（火・木・土19:00、
+    1エピソード=1スロット）に変更したのに伴い、LWのsns_up.py assign_slot()と
+    同じ「使用済み日付を避けて最短の空きスロットを探す」方式に戻した（週1回時代の
+    「複数エピソードが同じ枠を共有してよい」という前提は週3回では不要になったため）。
     """
+    used_dates = _used_publish_dates()
     now_jst = datetime.now(JST)
-
     candidate = now_jst.replace(hour=PUBLISH_HOUR_JST, minute=0, second=0, microsecond=0)
-    if candidate.weekday() != PUBLISH_WEEKDAY or candidate <= now_jst:
-        days_ahead = (PUBLISH_WEEKDAY - candidate.weekday()) % 7
-        if days_ahead == 0:
-            days_ahead = 7
-        candidate += timedelta(days=days_ahead)
 
-    return candidate.strftime("%Y-%m-%d %H:%M")
+    for _ in range(365):
+        if candidate.weekday() in PUBLISH_WEEKDAYS and candidate > now_jst:
+            date_str = candidate.strftime("%Y-%m-%d")
+            if date_str not in used_dates:
+                return candidate.strftime("%Y-%m-%d %H:%M")
+        candidate += timedelta(days=1)
+
+    raise RuntimeError("空きスロットが見つかりません")
 
 
 def parse_publish_at(publish_at_str: str) -> str:
@@ -325,9 +344,9 @@ def cli():
     parser = argparse.ArgumentParser(description="くらしを変える科学 YouTubeアップロード")
     parser.add_argument("--episode", required=True, help="エピソードID（例: kl001）")
     parser.add_argument("--publish-at", metavar="DATETIME",
-                        help="予約公開日時（JST）例: '2026-06-06 19:00' / 省略時は次の土曜19:00 JSTに自動予約")
+                        help="予約公開日時（JST）例: '2026-06-06 19:00' / 省略時は火・木・土19:00 JSTの最短空きスロットに自動予約")
     parser.add_argument("--now", action="store_true",
-                        help="即時公開（土曜19:00 JST自動予約をスキップ）")
+                        help="即時公開（火・木・土19:00 JST自動予約をスキップ）")
     args = parser.parse_args()
 
     run(args.episode, publish_at=args.publish_at, publish_now=args.now)
