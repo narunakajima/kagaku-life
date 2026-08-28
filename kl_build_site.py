@@ -1,5 +1,5 @@
 """
-kl_build_site.py — 幸せな未来のサイエンスチャンネル 公式サイト生成
+kl_build_site.py — 幸せな未来のサイエンス 公式サイト生成
 
 生成ファイル:
   index.html      トップページ（近日公開 or 新着 + About + Subscribe）
@@ -33,7 +33,7 @@ TOPICS_QUEUE_JSON = BASE_DIR / "topics_queue.json"
 CATEGORY_PLAYLISTS_JSON = BASE_DIR / "category_playlists.json"
 CHANNEL_URL = "https://www.youtube.com/@kagaku-life"
 SITE_URL = "https://kagaku-life.com"
-CHANNEL_NAME = "幸せな未来のサイエンスチャンネル"
+CHANNEL_NAME = "幸せな未来のサイエンス"
 TAGLINE = "科学が届ける、くらしの小さな幸せ"
 UPDATE_CADENCE = "週3回更新（火・木・土 19:00）"
 
@@ -482,7 +482,7 @@ def build_index(episodes: list[dict], published: list[dict], categories: list[di
 
     html = head_html(
         f"{CHANNEL_NAME} | AI・ロボティクス研究が変えるくらしの未来",
-        "最新のAI・ロボティクス論文が、10年後のくらしをどう変えるか——幸せな未来のサイエンスチャンネルが分かりやすく解説します。"
+        f"最新のAI・ロボティクス論文が、10年後のくらしをどう変えるか——{CHANNEL_NAME}が分かりやすく解説します。"
     )
     html += nav_html("top")
     html += f"""
