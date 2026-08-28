@@ -4,11 +4,10 @@ kl_build_site.py — 幸せな未来のサイエンス 公式サイト生成
 生成ファイル:
   index.html      トップページ（近日公開 or 新着 + About + Subscribe）
   episodes.html   全動画一覧
-  shorts.html     ショート動画一覧
   playlists.html  カテゴリ別再生リスト（6カテゴリ固定）
 
 データソース:
-  episodes/kl*.json    各エピソードの youtube_url / shorts_url / scheduled_at / タイトル等
+  episodes/kl*.json    各エピソードの youtube_url / scheduled_at / タイトル等
   topics_queue.json    episode_id → category（6カテゴリのどれか）の対応
   category_playlists.json  カテゴリごとのYouTube再生リストID（未作成の間はnull）
 
@@ -254,7 +253,6 @@ COMMON_CSS = """
     .cards-grid {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: 22px;
     }
-    .cards-grid.shorts-grid { grid-template-columns: repeat(auto-fill, minmax(170px,1fr)); }
     .content-card {
       display: block; text-decoration: none;
       background: var(--white); border: 1px solid var(--paper-dim);
@@ -270,7 +268,6 @@ COMMON_CSS = """
       display: flex; align-items: center; justify-content: center;
       position: relative; overflow: hidden;
     }
-    .shorts-grid .card-thumb { aspect-ratio: 9/16; }
     .card-thumb img {
       width: 100%; height: 100%; object-fit: cover; display: block;
       transition: transform .4s;
@@ -345,10 +342,9 @@ COMMON_CSS = """
     /* ── responsive ── */
     @media (max-width: 480px) {
       .cards-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-      .cards-grid.shorts-grid { grid-template-columns: 1fr 1fr; }
       section { padding: 56px 18px; }
     }
-    @media (max-width: 320px) { .cards-grid:not(.shorts-grid) { grid-template-columns: 1fr; } }
+    @media (max-width: 320px) { .cards-grid { grid-template-columns: 1fr; } }
 """
 
 COMMON_FONTS = """
@@ -366,7 +362,7 @@ REVEAL_JS = """
 
 
 def nav_html(active: str) -> str:
-    links = [("/", "top"), ("/episodes", "動画"), ("/shorts", "ショート"), ("/playlists", "プレイリスト")]
+    links = [("/", "top"), ("/episodes", "動画"), ("/playlists", "プレイリスト")]
     items = ""
     for href, label in links:
         cls = ' class="nav-link active"' if label == active else ' class="nav-link"'
@@ -385,7 +381,6 @@ def footer_html() -> str:
     <div class="footer-links">
       <a class="footer-link" href="{CHANNEL_URL}" target="_blank" rel="noopener">YouTube</a>
       <a class="footer-link" href="/episodes">動画一覧</a>
-      <a class="footer-link" href="/shorts">ショート</a>
       <a class="footer-link" href="/playlists">プレイリスト</a>
     </div>
     <p class="footer-copy">&copy; 2026 {CHANNEL_NAME}. All rights reserved.</p>
@@ -631,56 +626,6 @@ def build_episodes(episodes: list[dict], published: list[dict]):
 
 
 # ──────────────────────────────────────────────
-# shorts.html — ショート動画一覧
-# ──────────────────────────────────────────────
-
-def build_shorts(episodes: list[dict], published: list[dict]):
-    launch_label = next_launch_label(episodes)
-    pub_with_shorts = [ep for ep in published if ep.get("shorts_url")]
-    if pub_with_shorts:
-        cards = ""
-        for i, ep in enumerate(pub_with_shorts):
-            num = ep.get("episode_id", "").replace("kl", "")
-            url = ep.get("shorts_url")
-            vid = video_id(url)
-            thumb = f'<img src="https://img.youtube.com/vi/{vid}/mqdefault.jpg" alt="" loading="lazy">' if vid else '<span class="card-thumb-icon">▶</span>'
-            title = ep.get("youtube_title") or ep.get("episode_title", "")
-            delay = f" reveal-delay-{(i % 4) + 1}" if (i % 4) != 0 else ""
-            cards += f"""
-        <a class="content-card reveal{delay}" href="{url}" target="_blank" rel="noopener">
-          <div class="card-thumb">{thumb}</div>
-          <div class="card-info">
-            <p class="card-eyebrow">EPISODE {num}</p>
-            <p class="card-title">{title}</p>
-          </div>
-        </a>"""
-        body = f'<div class="cards-grid shorts-grid">{cards}\n      </div>'
-    else:
-        body = coming_soon_html(launch_label)
-
-    html = head_html(
-        f"ショート | {CHANNEL_NAME}",
-        f"{CHANNEL_NAME}のショート動画一覧。1分でわかる、くらしを変える科学の話。"
-    )
-    html += nav_html("ショート")
-    html += f"""
-
-  <section style="padding-top:60px;">
-    <div class="section-inner">
-      <p class="section-label reveal">Shorts</p>
-      <h1 class="section-heading reveal reveal-delay-1" style="font-size:clamp(1.3rem,4.5vw,1.9rem);">ショート動画</h1>
-      {body}
-    </div>
-  </section>
-"""
-    html += footer_html()
-    html += REVEAL_JS
-    html += "\n</body>\n</html>"
-    (BASE_DIR / "shorts.html").write_text(html, encoding="utf-8")
-    print(f"  ✓ shorts.html（公開{len(pub_with_shorts)}件）")
-
-
-# ──────────────────────────────────────────────
 # playlists.html — カテゴリ別再生リスト（6カテゴリ固定）
 # ──────────────────────────────────────────────
 
@@ -761,7 +706,6 @@ def build():
     print(f"  エピソード: 全{len(episodes)}件 / 公開済み{len(published)}件")
     build_index(episodes, published, CATEGORY_ORDER)
     build_episodes(episodes, published)
-    build_shorts(episodes, published)
     build_playlists(published, category_playlists)
     print("  ✓ サイト生成完了")
 
