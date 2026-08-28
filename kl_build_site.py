@@ -526,7 +526,7 @@ def build_index(episodes: list[dict], published: list[dict], categories: list[di
       <p class="reveal reveal-delay-2" style="text-align:center;font-size:clamp(1rem,3vw,1.1rem);line-height:2;color:#4a5866;max-width:600px;margin:0 auto 48px;">
         世界中のAI・ロボティクスの最新研究から、暮らしを変えるかもしれないテーマを選び、
         <strong style="color:var(--coral-dim);font-weight:700;">ひとりの生活者の物語</strong>
-        として分かりやすく解説します。まだ研究段階の技術も、信頼できる情報として誠実に伝えます。
+        として分かりやすく解説します。まだ研究段階の技術も、出典を明記し、誇張のない言葉でお伝えします。
       </p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;max-width:720px;margin:0 auto;">
         <div class="reveal reveal-delay-1" style="text-align:center;padding:26px 16px;border:1px solid var(--paper-dim);border-radius:12px;background:var(--paper);">
