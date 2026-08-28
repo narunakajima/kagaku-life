@@ -1,0 +1,8 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/episodes", "destination": "/episodes.html" },
+    { "source": "/shorts", "destination": "/shorts.html" },
+    { "source": "/playlists", "destination": "/playlists.html" }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "_comment": "6カテゴリのYouTube再生リストID。episodes配列はkl_build_site.pyがtopics_queue.jsonのcategoryフィールドから毎回動的に計算するため、ここにはIDのみを保持する（SCのcharacter_playlists.jsonと違い、カテゴリは固定6種で毎エピソード1カテゴリに確定するため増分管理が不要）。プレイリストが未作成の間はplaylist_id: nullのままでよい。",
+  "aging_care": { "display_name": "高齢化・介護・自立支援", "playlist_id": null },
+  "home_robot": { "display_name": "家庭内ロボット・家事自動化", "playlist_id": null },
+  "medical_support": { "display_name": "医療補助技術", "playlist_id": null },
+  "mobility": { "display_name": "モビリティ・身体拡張", "playlist_id": null },
+  "work": { "display_name": "働き方の変化", "playlist_id": null },
+  "disaster_safety": { "display_name": "防災・安全", "playlist_id": null }
+}
