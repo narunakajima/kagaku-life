@@ -37,9 +37,9 @@ CHANNEL_NAME = "幸せな未来のサイエンス"
 TAGLINE = "科学が届ける、くらしの小さな幸せ"
 UPDATE_CADENCE = "週3回更新（火・木・土 19:00）"
 
-# CLAUDE.md STAGE1のサブジャンル表と同じ並び順・ラベル
+# サイト表示順（2026-08-28: 家庭内ロボットを先頭に変更。ラベルはCLAUDE.md STAGE1と同じ）
 CATEGORY_ORDER = [
-    "aging_care", "home_robot", "medical_support",
+    "home_robot", "aging_care", "medical_support",
     "mobility", "work", "disaster_safety",
 ]
 CATEGORY_LABELS = {
