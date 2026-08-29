@@ -81,7 +81,11 @@
           "start": 0.0,
           "end": 2.17
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.61,
+        "y": 0.4
+      }
     },
     {
       "scene_id": 2,
@@ -90,7 +94,7 @@
       "duration_seconds": 2,
       "narration": "教え子と、また言葉を交わせる",
       "image_prompt": "a Japanese woman in her early 50s (Nakamura Yumiko), a former elementary school teacher, with shoulder-length black hair in a soft bob (NOT gray, NOT white, NOT graying — consistently solid black hair in every image), seated in a lightweight wheelchair, alert and warm expression at home on a bright weekend afternoon, animatedly talking and laughing with two former students (young Japanese adults in their 20s) seated across from her, small discreet behind-the-ear device barely visible, bright daylight through a window, no text",
-      "ken_burns": "pan_zoom_out",
+      "ken_burns": "zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -99,7 +103,11 @@
           "start": 0.0,
           "end": 2.76
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 3,
@@ -135,7 +143,11 @@
           "start": 0.0,
           "end": 3.1
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.61,
+        "y": 0.44
+      }
     },
     {
       "scene_id": 5,
@@ -181,7 +193,11 @@
           "start": 15.73,
           "end": 19.03
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.31,
+        "y": 0.28
+      }
     },
     {
       "scene_id": 6,
@@ -243,7 +259,7 @@
       "duration_seconds": 45,
       "narration": "今は、視線でパソコンの画面を操作して、文字を一つずつ選んで伝えています。ひとことを伝えるのに、何分もかかることも。家族が待ってくれている間に、言いたかった冗談のタイミングは、とっくに過ぎてしまっています。会話の輪の中にいるのに、いつも少し外側にいるような、そんな寂しさがあります。教師をしていたころは、言葉ひとつで教室の空気を変えられたのに——そう思うと、余計にもどかしくなる日もあります。",
       "image_prompt": "a Japanese woman in her early 50s (Nakamura Yumiko), a former elementary school teacher, with shoulder-length black hair in a soft bob (NOT gray, NOT white, NOT graying — consistently solid black hair in every image), gentle intelligent face, wearing simple comfortable home clothing, seated in a lightweight wheelchair (ALS has weakened her limbs and voice, but she is not gaunt or bedridden — she has an alert, warm presence and expressive eyes), using an eye-tracking communication device (a tablet mounted on a thin adjustable arm clamped to the desk in front of her — there is only ONE wheelchair in the entire image, hers, with no duplicate or extra wheelchair frame anywhere in the scene, the tablet screen clearly angled toward her face so she can look at and use it — the screen must NOT face outward toward the viewer/camera, showing a simple abstract letter grid with no legible text or numerals), her family — her husband (a Japanese man in his mid-50s) and her daughter (a young Japanese woman in her 20s), and no one else — visible slightly out of focus in the background patiently waiting at a dining table, soft warm evening interior lighting, dusk sky faintly visible through a window, not night, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -322,7 +338,11 @@
           "start": 31.86,
           "end": 34.41
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 8,
@@ -403,7 +423,11 @@
           "start": 26.38,
           "end": 29.05
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 9,
@@ -478,7 +502,11 @@
           "start": 26.55,
           "end": 29.25
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 10,
@@ -560,7 +588,11 @@
           "start": 24.89,
           "end": 27.81
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.72,
+        "y": 0.48
+      }
     },
     {
       "scene_id": 11,
@@ -656,7 +688,11 @@
           "start": 37.07,
           "end": 39.77
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 12,
@@ -790,7 +826,11 @@
           "start": 22.78,
           "end": 24.65
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 14,
@@ -910,7 +950,11 @@
           "start": 27.13,
           "end": 28.93
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 16,
@@ -919,7 +963,7 @@
       "duration_seconds": 52,
       "narration": "2023年に生まれた技術は、その1年後には、ふだん使う言葉のほとんどを正しく文字にできるところまで進化しました。まだ、ごく少数の患者を対象にした研究段階の技術であり、家庭で誰もが使えるようになるには、これからも時間がかかると考えられます。それでも、声を失っても、また自分の言葉で語り合える——そんな小さな幸せを取り戻す先に、科学の本当の価値があるのかもしれません。もう一度、誰かに「ありがとう」と伝えられること。それだけで、日々はきっと、少し豊かになります。この研究の詳細が知りたい方は、概要欄をご確認ください。次はどんな研究が、誰かの「声」を取り戻すのでしょうか。その瞬間をこれからも一緒に見つけていきたい方は、ぜひチャンネル登録してお待ちください。",
       "image_prompt": "A quiet university research lab in the late afternoon, no people in the frame, a small pedestal connector and neatly coiled cable resting on a clean lab table beside a computer monitor showing a simple abstract waveform line (no legible text or numbers), soft warm golden-hour daylight through lab windows, calm hopeful mood, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -1040,7 +1084,11 @@
           "start": 47.62,
           "end": 50.41
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     }
   ],
   "shorts": [
