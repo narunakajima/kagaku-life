@@ -91,6 +91,21 @@ git status --short
 `topics_queue.json` の該当エントリの `status` を `produced` → `published`（即時公開の場合）
 または `published`（予約公開でも公開自体は確定しているため同様）に更新し、コミット・pushする。
 
+## STEP 6 — Desktopの残骸を削除する
+
+STEP2のアップロードが成功し、対象素材（画像・音声・動画・BGM）がGoogle Drive
+`Kagaku-Life/KL{NNN}/`に格納済み（`/kl-new` STEP11の`kl_finalize.py`実行分）であることを
+前提に、確認用に使っていた`~/Desktop/kagaku-life/`フォルダ全体を削除する
+（中身だけでなくフォルダ自体を削除する。「常に最新1エピソード分のみを置く」方針のため、
+次エピソードの`/kl-new`実行時にまた新規作成される）。
+
+```bash
+rm -rf ~/Desktop/kagaku-life/
+```
+
+Drive同期前（`kl_finalize.py`未実行、または一部ファイルが見つからないとの警告が出ている状態）
+であればこのSTEPは実行しない——先にDrive同期を完了させること。
+
 ---
 
 ## 今後の拡張予定（未実装）
