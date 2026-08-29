@@ -4,12 +4,24 @@ kl_paper_interest_score.py — くらしを変える科学 STAGE4「面白いか
 stage3_hypecheck.json（kl_paper_hypecheck.pyの出力）のうち overall が high_risk でない
 候補をGeminiに渡し、CLAUDE.md STAGE4の観点（変革ポテンシャル・野心度／生活実感との
 直結度／数字のインパクト／「使い捨ての生活者」ペルソナへの落とし込みやすさ）で判定させる。
-検索は不要な創作寄りの判断のためGoogle Searchグラウンディングは使わない。
 Opusは使わない（STAGE2/3と同方針）。
 
 2026-08〜: 「変革ポテンシャル・野心度」を追加し、最も重く重み付けする（CLAUDE.md
 STAGE4参照）。kl001実制作で「査読済み・安全だが地味」な研究に寄り、企画書の核心
 （信頼できる研究が暮らしを劇的に変える面白さ）を欠く結果になったための改訂。
+
+2026-08-28改訂: クエリ語彙強化後もtransformation_scoreが「既に市販製品で実現している
+体験」に満点をつける問題が発覚した（例: home_robotの"Robi Butler"＝スマホ遠隔操作の
+家事ロボットにtransformation_score=5満点。だがスマホからの遠隔操作自体はロボット
+掃除機で既に一般的）。原因はプロンプトが「実現したら暮らしがどれだけ変わるか」を
+単発で聞くだけで、「現在の市販品と比べて何が新しいか」の比較基準がなかったこと
+（STAGE2/3の「論文の主張 vs 二次報道の誇張」チェックとは別の盲点で、「論文の主張 vs
+市場の現実」は誰も見ていなかった）。対処として、transformation_scoreの判定に限り
+採点前にGoogle検索で類似の市販製品・サービスの有無を確認させる指示を追加し、
+このスコアの判定のみGoogle Searchグラウンディングを有効化した（STAGE2/3と同じ
+`types.Tool(google_search=types.GoogleSearch())`）。あわせて採点根拠を人間が
+検証できるよう`transformation_comparison`フィールド（何と比較して何が新しいと
+判断したか）を出力に追加した。
 
 具体的な主人公プロフィール（名前・年齢・職業）とフック文の叩き台まで生成し、
 STAGE5（人間の最終ゴーサイン）にそのまま渡せる形にする。
@@ -65,8 +77,15 @@ STAGE3での注意点（動画化時に踏まえるべきヘッジ・限界）: 
 
 以下4つの観点で1〜5点評価してください（5が最高）:
 1. transformation_score: 変革ポテンシャル・野心度。この技術が本当に広く実現した場合、
-   暮らしをどれだけ劇的に変えるか。「すでに確立された地味な改善」には低い点を、
-   「まだ実現していないが実現すれば劇的」には高い点をつける。査読済みか未査読かは
+   暮らしをどれだけ劇的に変えるか。**採点前に必ずGoogle検索で「現在すでに市販・
+   実用化されている類似の消費者向け製品・サービス」（スマート家電、ロボット掃除機、
+   既存のAIエージェントサービス等）を確認すること。** そのうえで論文の主張を
+   「今の市場で既に実現していること」と「本当に新しい部分」に切り分け、後者の
+   大きさで採点する。既存製品・サービスと体験がほぼ変わらない（例:
+   スマホからの遠隔操作は既にロボット掃除機で一般的）場合は、アブストラクトの
+   書きぶりが野心的でも低い点をつける。「すでに確立された地味な改善」や
+   「既存製品の焼き直し」には低い点を、既存製品との違いが明確で「まだ実現して
+   いないが実現すれば劇的」なものには高い点をつける。査読済みか未査読かは
    このスコアに影響させない（査読状況の信頼性判断はSTAGE2で既に完了している前提）
 2. life_relevance_score: 生活実感との直結度（視聴者が「自分ごと」として想像できるか）
 3. surprise_score: 数字のインパクト（意外性のある定量的結果があるか）
@@ -77,9 +96,12 @@ STAGE3での注意点（動画化時に踏まえるべきヘッジ・限界）: 
 - example_protagonist: 主人公にふさわしい生活者プロフィール（name, age, job）。
   テーマに応じて対象読者層と重なる人物像を選ぶこと（例: 介護ロボットの回なら高齢の親を持つ世代）
 - hook_idea: 冒頭3〜5秒のフック文の叩き台（日本語、生活実感に直結する問いかけ）
+- transformation_comparison: transformation_scoreの採点時に何と比較したか、
+  何が「今の市場に既にあるもの」で何が「本当に新しい部分」だと判断したかを
+  日本語1〜2文で明記する（STAGE5での人間レビュー時に採点根拠を検証できるように）
 
 出力は次のJSON形式のみで、他のテキスト・Markdown装飾は一切含めないこと:
-{{"transformation_score": 1-5, "life_relevance_score": 1-5, "surprise_score": 1-5, "persona_fit_score": 1-5, "example_protagonist": {{"name": "...", "age": 0, "job": "..."}}, "hook_idea": "...", "reasoning": "..."}}
+{{"transformation_score": 1-5, "life_relevance_score": 1-5, "surprise_score": 1-5, "persona_fit_score": 1-5, "example_protagonist": {{"name": "...", "age": 0, "job": "..."}}, "hook_idea": "...", "transformation_comparison": "...", "reasoning": "..."}}
 """
 
 
@@ -100,7 +122,13 @@ def score_paper(client: genai.Client, paper: dict, retries: int = 3) -> dict:
     )
     for attempt in range(retries):
         try:
-            resp = client.models.generate_content(model=MODEL, contents=prompt)
+            resp = client.models.generate_content(
+                model=MODEL,
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    tools=[types.Tool(google_search=types.GoogleSearch())],
+                ),
+            )
             raw = strip_code_fence(resp.text or "")
             return json.loads(raw)
         except json.JSONDecodeError:
@@ -111,6 +139,7 @@ def score_paper(client: genai.Client, paper: dict, retries: int = 3) -> dict:
                 "persona_fit_score": 1,
                 "example_protagonist": {},
                 "hook_idea": "",
+                "transformation_comparison": "",
                 "reasoning": f"Geminiの応答をJSONとして解析できなかった。生の応答: {raw[:300]}",
             }
         except Exception as e:  # noqa: BLE001
@@ -126,6 +155,7 @@ def score_paper(client: genai.Client, paper: dict, retries: int = 3) -> dict:
                 "persona_fit_score": 1,
                 "example_protagonist": {},
                 "hook_idea": "",
+                "transformation_comparison": "",
                 "reasoning": f"Gemini呼び出しが{retries}回とも失敗: {e}",
             }
 

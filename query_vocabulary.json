@@ -1,5 +1,5 @@
 {
-  "_comment": "kl_paper_search.py（今後作成）がSemantic Scholar Graph APIへのクエリ生成に使う設定。カテゴリはCLAUDE.mdのSTAGE1サブジャンル表と対応。weightはSTAGE1でのカテゴリ登場頻度に使う。最低12話公開されるまでは全カテゴリ均等のまま固定し、アナリティクスによる自動調整は行わない（weight_policy参照）。2026-08〜: RCT/trial/evaluation系のクエリだけだと『既に検証済みだが地味』な研究に偏り、企画書が求める『変革ポテンシャル』を取りこぼすと判明（kl001実制作で発覚）。各カテゴリのqueries末尾に、最先端・野心的な能力実証を狙うクエリを追加した（トップ研究機関・企業の発表を拾いやすいよう研究デザイン語ではなく能力・世代を表す語を使う）。信頼性の担保はSTAGE2（著者機関・技術的厳密さでの判断）とSTAGE3（誇張チェック）に委ねる。",
+  "_comment": "kl_paper_search.py（今後作成）がSemantic Scholar Graph APIへのクエリ生成に使う設定。カテゴリはCLAUDE.mdのSTAGE1サブジャンル表と対応。weightはSTAGE1でのカテゴリ登場頻度に使う。最低12話公開されるまでは全カテゴリ均等のまま固定し、アナリティクスによる自動調整は行わない（weight_policy参照）。2026-08〜: RCT/trial/evaluation系のクエリだけだと『既に検証済みだが地味』な研究に偏り、企画書が求める『変革ポテンシャル』を取りこぼすと判明（kl001実制作で発覚）。各カテゴリのqueries末尾に、最先端・野心的な能力実証を狙うクエリを追加した（トップ研究機関・企業の発表を拾いやすいよう研究デザイン語ではなく能力・世代を表す語を使う）。信頼性の担保はSTAGE2（著者機関・技術的厳密さでの判断）とSTAGE3（誇張チェック）に委ねる。2026-08-28改訂: kl001〜006を一巡した時点でtopics_shortlist.jsonの上位が『査読済み・地味な改善』（転倒検知精度、エクソスケルトンの効率改善%等）ばかりに偏っていることが判明（ユーザー指摘）。原因はtrial/RCT/evaluation系クエリが各カテゴリ7〜10個に対し野心的クエリが1〜2個に留まっていた比率の偏り。各カテゴリに野心的クエリを4〜5個追加し、比率を是正した（既存クエリは信頼性シグナル収集に引き続き有用なため削除しない）。",
   "categories": {
     "aging_care": {
       "label": "高齢化・介護・自立支援",
@@ -13,7 +13,11 @@
         "\"aging in place\" AND \"smart home\" AND independence AND study",
         "\"conversational agent\" AND \"older adults\" AND isolation AND trial",
         "\"humanoid robot\" AND caregiving AND \"foundation model\"",
-        "\"large language model\" AND \"elderly care\" AND autonomous"
+        "\"large language model\" AND \"elderly care\" AND autonomous",
+        "\"autonomous humanoid\" AND \"elder care\" AND deployment",
+        "\"robot caregiver\" AND (\"first demonstration\" OR \"world's first\")",
+        "\"AI agent\" AND \"aging in place\" AND \"fully autonomous\"",
+        "\"predictive health\" AND elderly AND \"early warning\" AND breakthrough"
       ]
     },
     "home_robot": {
@@ -29,7 +33,11 @@
         "\"home robot\" AND (trust OR acceptance) AND survey",
         "\"humanoid robot\" AND \"general-purpose manipulation\" AND home",
         "\"vision-language-action\" AND robot AND household",
-        "\"foundation model\" AND \"mobile manipulation\" AND \"open-vocabulary\""
+        "\"foundation model\" AND \"mobile manipulation\" AND \"open-vocabulary\"",
+        "\"general-purpose robot\" AND household AND \"zero-shot\"",
+        "\"embodied AI\" AND \"unseen task\" AND home AND generalization",
+        "\"humanoid robot\" AND \"learns\" AND \"novel task\" AND (demonstration OR deployment)",
+        "\"robot\" AND household AND \"never seen before\" AND task"
       ]
     },
     "medical_support": {
@@ -44,7 +52,11 @@
         "\"assistive technology\" AND \"activities of daily living\" AND evaluation",
         "\"AI hearing device\" AND clinical AND evaluation",
         "\"brain-computer interface\" AND assistive AND breakthrough",
-        "\"AI-powered prosthetic\" AND \"next generation\""
+        "\"AI-powered prosthetic\" AND \"next generation\"",
+        "\"brain-computer interface\" AND paralysis AND \"restores\"",
+        "\"neural interface\" AND \"restores\" AND (movement OR sensation OR speech)",
+        "\"AI prosthetic\" AND \"sensory feedback\" AND breakthrough",
+        "\"assistive robot\" AND \"first-in-human\" AND deployment"
       ]
     },
     "mobility": {
@@ -57,7 +69,11 @@
         "\"autonomous wheelchair\" AND navigation AND \"user study\"",
         "\"soft exoskeleton\" AND walking AND energy AND study",
         "\"bionic limb\" AND \"neural interface\" AND breakthrough",
-        "\"full-body exoskeleton\" AND \"superhuman\""
+        "\"full-body exoskeleton\" AND \"superhuman\"",
+        "\"bionic limb\" AND sensation AND \"restores\"",
+        "\"robotic leg\" AND (climbs OR runs) AND autonomous AND breakthrough",
+        "\"full-body exoskeleton\" AND paralysis AND \"walk again\"",
+        "\"mind-controlled\" AND (prosthesis OR exoskeleton) AND breakthrough"
       ]
     },
     "work": {
@@ -70,7 +86,11 @@
         "\"human-AI collaboration\" AND workplace AND randomized",
         "\"algorithmic management\" AND worker AND wellbeing AND study",
         "\"autonomous AI agent\" AND \"knowledge work\" AND automation",
-        "\"AI agent\" AND \"software engineering\" AND autonomous"
+        "\"AI agent\" AND \"software engineering\" AND autonomous",
+        "\"autonomous AI agent\" AND \"replaces\" AND (job OR worker)",
+        "\"AI agent\" AND \"runs a business\" AND autonomous",
+        "\"AI scientist\" AND autonomous AND (discovery OR research)",
+        "\"multi-agent AI\" AND \"entire company\" AND automation"
       ]
     },
     "disaster_safety": {
@@ -82,7 +102,11 @@
         "\"swarm robotics\" AND disaster AND field",
         "\"autonomous drone\" AND disaster AND response AND evaluation",
         "\"humanoid robot\" AND \"disaster response\" AND autonomous",
-        "\"quadruped robot\" AND \"search and rescue\" AND autonomous"
+        "\"quadruped robot\" AND \"search and rescue\" AND autonomous",
+        "\"autonomous robot\" AND disaster AND \"no human intervention\"",
+        "\"robot swarm\" AND rescue AND \"self-organizing\"",
+        "\"AI\" AND \"predicts\" AND (earthquake OR wildfire OR flood) AND breakthrough",
+        "\"drone swarm\" AND (wildfire OR earthquake) AND autonomous AND deployment"
       ]
     }
   },

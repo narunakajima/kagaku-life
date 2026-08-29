@@ -232,8 +232,56 @@
       },
       "hook_idea": "大地震で道路が全滅…絶望の孤立集落に、AIドローンは『誰から』薬を届けるべきでしょうか？",
       "notes": "STAGE2.5でdisaster_safetyカテゴリの候補としてマルチドローン医薬品配送調整の論文を提示し、ユーザーが選択（2026-08-26）。kl001〜kl005の5エピソードでdisaster_safetyだけが未使用だったローテーション上の穴を埋める選定。プレプリント（arXiv, Sharan Srinivas准教授=Univ. of Missouri、災害物流・オペレーションズリサーチの実績あり研究室）のため、STAGE2信頼性シグナル（著者所属機関の実績）で判断。大地震で道路が寸断された孤立集落に、AIが誰から優先して薬を届けるべきか自律判断する、という変革ポテンシャルの高さを優先した。主人公は持病のある高齢の母と同居する地方都市の会社員、離れて暮らす家族の安否・支援という生活実感に直結する設定。"
+    },
+    {
+      "episode_id": "kl007",
+      "status": "confirmed",
+      "title": "声を取り戻すBCI：たった1年で「実用速度」に進化した音声神経義肢",
+      "format": "multi_paper",
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "references": [
+        {
+          "title": "A high-performance speech neuroprosthesis",
+          "authors": [
+            "Francis R. Willett",
+            "Erin M. Kunz",
+            "Chaofei Fan",
+            "Donald T. Avansino",
+            "G. Wilson"
+          ],
+          "year": 2023,
+          "venue": "Nature",
+          "doi": "10.1038/s41586-023-06377-x",
+          "is_preprint": false,
+          "lead_researcher": "Francis R. Willett（スタンフォード大学、BrainGate研究コンソーシアム）"
+        },
+        {
+          "title": "An Accurate and Rapidly Calibrating Speech Neuroprosthesis",
+          "authors": [
+            "N. Card",
+            "M. Wairagkar",
+            "Carrina Iacobacci",
+            "Xianda Hou",
+            "Tyler Singer-Clark"
+          ],
+          "year": 2024,
+          "venue": "New England Journal of Medicine",
+          "doi": "10.1056/NEJMoa2314132",
+          "is_preprint": false,
+          "lead_researcher": "Nicholas Card（UCデービス、BrainGate研究コンソーシアム）"
+        }
+      ],
+      "protagonist": {
+        "name": "中村 由美子",
+        "age": 52,
+        "job": "元小学校教師（ALSにより発話が困難に）",
+        "gender": "female"
+      },
+      "hook_idea": "もし明日、突然声を失ったら——大切な人に『ありがとう』とどう伝えますか？脳の信号を読み取るAIが、わずか1年で「実際の会話に迫る速さ」まで進化しています。",
+      "notes": "STAGE4スコア4.75でmedical_supportカテゴリ最上位（2026-08-28〜29に実施したtransformation_score採点ロジック改修後の再選定で確定）。選定経緯: kl001〜006一巡後、topics_shortlist.jsonの上位候補が「査読済みだが地味な改善」（転倒検知精度・エクソスケルトン効率改善等）に偏っているとユーザー指摘があり、query_vocabulary.jsonに野心的クエリを追加してSTAGE1〜4をカテゴリ横断で再実行した。さらに別セッションでtransformation_scoreの採点自体に「現在の市販品との比較なしに満点をつけてしまう」バグが発覚（例: home_robotの遠隔操作ロボットが、スマホでの遠隔操作は既にロボット掃除機で一般的にも関わらず満点評価）。kl_paper_interest_score.pyのtransformation_score判定にGoogle Search groundingを追加し「市販品と比較して何が本当に新しいか」を明記させる改修を行った上で再採点し、本エピソードを含む結果を確定した（詳細はCLAUDE.md STAGE4節・HANDOFF_stage4_scoring.md参照）。本エピソードは改修後も最高スコア（4.75）を維持しており、既存の視線入力・スイッチ式意思伝達装置（毎分数語）との比較でも「脳信号から直接毎分60〜110語を復元」という違いが明確なため、真に変革的と判断。2本の論文はいずれも同じBrainGate研究コンソーシアム（Stanford/UC Davis）による音声BCI研究で、2023年のNature論文（毎分62語の音声デコード実証）から2024年のNEJM論文（キャリブレーション時間を大幅短縮し実用速度を維持）へと『わずか1年での進化』を遂げた点をストーリーの軸にする。kl003（非侵襲的ECoG BCIでのカーソル操作）ともテーマがBCIで近いが、本エピソードは『声を取り戻す』という全く異なる能力・感情的インパクトを扱うため差別化は可能と判断。"
     }
   ],
-  "total_topics": 6,
-  "last_updated": "2026-08-27"
+  "total_topics": 7,
+  "last_updated": "2026-08-29"
 }
