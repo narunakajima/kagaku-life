@@ -142,9 +142,13 @@ samurai-chronicles の `sc_sns_up.py` と同じ設計思想をkagaku-life向け�
   書き戻し、自動でgit commit・pushする（`sc_sns_up.py`の`commit_remaining_changes()`と同じ
   仕組み）。
 
-**サイト構築（後続タスク）:** ユーザーとの合意（2026-08-23）により、samurai-chronicles の
-`sc_build_site.py`相当の公開サイト自動生成は、まずYouTube自動アップロードで公開実績が
-いくつか積み上がってから着手する（サイトのepisodes.html等は実際の公開動画IDに依存するため）。
+**サイト構築（実装済み、2026-08-30着手）:** ユーザーとの合意（2026-08-23）により、
+公開実績がいくつか積み上がってから着手する方針だったが、公開6本の時点で着手した。
+`kl_build_site.py`がsamurai-chroniclesの`sc_build_site.py`相当（`episodes/kl*.json`の
+`youtube_url`/`scheduled_at`から`index.html`/`episodes.html`/`playlists.html`を生成）を担う。
+`/kl-upload`のSTEP6として、アップロード完了ごとに再生成・コミット・pushする運用とした
+（詳細は`.claude/commands/kl-upload.md`参照）。デプロイ（Vercel、`kagaku-life.com`）は
+リポジトリのGitHub連携に委ねており、このコマンド自体はデプロイ完了を待ち受けない。
 
 ---
 
