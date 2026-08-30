@@ -51,7 +51,7 @@
       "duration_seconds": 2,
       "narration": "食器が、勝手に片付いていく",
       "image_prompt": "A close-up shot of a countertop kitchen dish-handling robot: a sleek articulated robotic arm mounted on a compact base clamped beside the kitchen sink, ending in a simple two-pronged gripper, with a small camera sensor module on a short articulated stalk positioned above the arm like a periscope (clearly a mechanical device, NOT humanoid, no face, no eyes, no human-like features), matte white and soft blue-gray plastic finish with a small green indicator light, gently lifting a plate from a sink full of dirty dishes and placing it into an open dishwasher rack, soft warm evening interior lighting, dusk sky faintly visible through a small window, not night, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -69,7 +69,7 @@
       "duration_seconds": 2,
       "narration": "疲れて帰った夜も、ホッとできる",
       "image_prompt": "a Japanese man in his late 30s (Sato Hiroki), short black hair neatly trimmed, average build, wearing simple home clothing, sitting on a sofa in the living room in the evening, completely relaxed with his feet up and a content, relieved expression, a doorway to the kitchen visible in the background where a countertop robotic arm (matte white and soft blue-gray plastic finish) is quietly working at the sink, soft warm evening interior lighting, dusk sky visible through a window, not night, no text",
-      "ken_burns": "zoom_out",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -87,7 +87,7 @@
       "duration_seconds": 2,
       "narration": "週末は、家族の時間に使える",
       "image_prompt": "a Japanese man in his late 30s (Sato Hiroki), short black hair neatly trimmed, wearing casual home clothing, his wife (a Japanese woman in her mid-30s, shoulder-length black hair), his 8-year-old son (a Japanese boy, short black hair), and his 5-year-old daughter (a Japanese girl, black hair in short twin tails) all sitting together at the dining table on a bright weekend afternoon, playing a board game together and laughing warmly, the kitchen visible in the background with a countertop robotic arm quietly tidying dishes at the sink, bright daylight through a window, no text",
-      "ken_burns": "pan_zoom_out",
+      "ken_burns": "zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -96,7 +96,11 @@
           "start": 0.0,
           "end": 2.64
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 4,
@@ -114,7 +118,11 @@
           "start": 0.0,
           "end": 2.42
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.62,
+        "y": 0.4
+      }
     },
     {
       "scene_id": 5,
@@ -167,7 +175,11 @@
           "start": 19.77,
           "end": 22.87
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.65,
+        "y": 0.33
+      }
     },
     {
       "scene_id": 6,
@@ -257,7 +269,7 @@
       "duration_seconds": 20,
       "narration": "床を掃除してくれるロボット掃除機は、もう我が家の必需品です。任せておけば、その間に別のことができる。でも、キッチンの洗い物までは手伝ってくれません。「食器も自動でやってくれたら」——そんな小さな願いを抱きながら、今夜もシンクの前に立っています。",
       "image_prompt": "a Japanese man in his late 30s (Sato Hiroki), short black hair neatly trimmed, average build, wearing simple home clothing, standing alone at the kitchen sink at night, a small round robot vacuum cleaner visible quietly cleaning the floor near his feet, the sink behind him still piled with dishes, his expression a mix of tired and wistful as he glances down at the robot vacuum, warm interior lighting, dark evening visible through the window, no text",
-      "ken_burns": "zoom_out",
+      "ken_burns": "zoom_in",
       "telop_cards": [
         {
           "lines": [
@@ -308,7 +320,11 @@
           "start": 17.93,
           "end": 20.33
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.59,
+        "y": 0.28
+      }
     },
     {
       "scene_id": 8,
@@ -317,7 +333,7 @@
       "duration_seconds": 22,
       "narration": "アメリカのイリノイ大学アーバナ・シャンペーン校と、韓国の金烏工科大学の研究チームが共同で、家庭のキッチンで散らかった食器を自動で認識し、扱うロボットの知覚技術を開発しました。2026年、学術誌『インテリジェント・サービス・ロボティクス』に、その成果が発表されています。人が当たり前にこなしている「片付け」を、ロボットの目でどう捉えるかに焦点を当てた研究です。",
       "image_prompt": "A quiet robotics research lab, no people in the frame, a countertop kitchen dish-handling robot prototype (a sleek articulated robotic arm on a compact base, ending in a simple two-pronged gripper, with a small camera sensor module on a short articulated stalk above the arm, matte white and soft blue-gray plastic finish) mounted beside a stainless steel test sink basin, a nearby monitor displaying a simple abstract 3D wireframe reconstruction of dish-like shapes (no legible text or numbers), bright daytime lighting through lab windows, calm documentary-style framing, no text",
-      "ken_burns": "zoom_out",
+      "ken_burns": "zoom_in",
       "telop_cards": [
         {
           "lines": [
@@ -382,7 +398,11 @@
           "start": 23.88,
           "end": 27.53
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.41,
+        "y": 0.52
+      }
     },
     {
       "scene_id": 9,
@@ -506,7 +526,11 @@
           "start": 41.24,
           "end": 42.61
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 10,
@@ -516,7 +540,7 @@
       "duration_seconds": 62,
       "narration": "性能を確かめるため、食器が重なり合い、一部が影に隠れているような、実際の家庭に近い乱雑な状況を集めた、20場面のキッチンベンチマークを独自に用意し、複数の視覚・立体認識モデルの組み合わせを比較しました。最も精度が高かった組み合わせで、食器の位置と向きを推定する精度は89.12パーセントに達しています。さらに、このシステムを実際のロボットアームに搭載し、環境ごとに新しく学習し直すことなく、シンクの食器を認識して食洗機へ移す作業や、複数のカップを積み重ねる作業に、実際に成功したことも確認されています。まだ研究段階のプロトタイプであり、あらゆる家庭でそのまま動くと断定できる段階ではありませんが、家庭で使える仕組みにつながる可能性を示す結果です。",
       "image_prompt": "close-up of a countertop robotic arm (matte white and soft blue-gray plastic finish, simple two-pronged gripper, a small camera sensor module on a short articulated stalk above the arm, clearly mechanical, no face) gripping a plate and lifting it from a cluttered sink toward an open dishwasher rack beside it, an East Asian male research scientist in his 30s, short black hair, wearing a white lab coat, observing from the side with a satisfied expression, bright clinical daytime lab lighting, a small flat corner graphic showing a single bar filled almost to the top representing a high accuracy percentage, no larger than roughly one-eighth of the frame, kept plain and flat for legibility, no text, no numerals",
-      "ken_burns": "zoom_out",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -721,7 +745,7 @@
       "duration_seconds": 34,
       "narration": "もし、キッチンにもう一人、頼れる存在がいてくれたら——想像するだけで、肩の力がふっと抜けます。玄関を開けた瞬間に、山積みの食器を見て身構える必要がなくなったら——そう思うだけで、少し救われる気持ちになります。",
       "image_prompt": "A small figure of a Japanese man in his late 30s (Sato Hiroki), short black hair neatly trimmed, average build, wearing simple home clothing, seated on a sofa in the living room in the evening, drawn small in the lower corner of the frame, a trail of three small circles rising from his head connecting to a large cloud-shaped thought bubble that fills most of the frame; inside the thought bubble, a miniature scene shows a countertop robotic arm (matte white and soft blue-gray plastic finish, small camera sensor module on a short stalk, clearly mechanical, no face) quietly moving dishes from a cluttered sink into an open dishwasher in the kitchen, soft warm evening lighting outside the bubble, calm bright interior lighting inside the bubble scene, no text",
-      "ken_burns": "zoom_out",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -767,7 +791,7 @@
       "duration_seconds": 56,
       "narration": "朝は特に、時間との勝負です。子どもたちの朝食の後片付けを気にせず、そのまま二人を送り出せる。ロボットが黙々とシンクの食器をより分けてくれている間に、私はキッチンのカウンターに寄りかかって、コーヒーを一杯、ゆっくり味わえます。夜、子どもたちを寝かしつけた後も、シンクの前で肩を落とす必要がありません。ロボットが後片付けを続けてくれている間に、妻と二人、リビングでその日あった出来事を話す時間が増えました。",
       "image_prompt": "a Japanese man in his late 30s (Sato Hiroki), short black hair neatly trimmed, average build, wearing simple home clothing, and his wife (a Japanese woman in her mid-30s, shoulder-length black hair) in the kitchen in the morning helping his 8-year-old son (a Japanese boy, short black hair) and 5-year-old daughter (a Japanese girl, black hair in short twin tails) get ready, breakfast dishes on the table, a countertop robotic arm (matte white and soft blue-gray plastic finish, clearly mechanical, no face) quietly sorting dishes at the sink in the background, Sato holding a cup of coffee with a relaxed, content expression leaning against the counter, soft morning daylight coming through the window, not night, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "badge_text": "幸せな未来を夢想中",
       "telop_cards": [
         {
@@ -847,7 +871,11 @@
           "start": 27.18,
           "end": 28.65
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 14,
@@ -915,7 +943,11 @@
           "start": 20.71,
           "end": 22.61
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 15,
@@ -924,7 +956,7 @@
       "duration_seconds": 66,
       "narration": "この研究が示したのは、乱雑なシンクの中から食器を見分け、つかみ、運ぶという、人にとっては当たり前でもロボットには難しかった作業を、環境ごとの学習をやり直すことなくこなせる知覚の仕組みです。まだ実験室と実機での限られたタスクによる実証であり、あらゆる家庭でそのまま使えるようになるまでには、さらなる検証が必要だと考えられます。それでも、山積みの食器を見てため息をつく夜が、いつか当たり前でなくなるとしたら——科学がもたらす本当の価値は、そんな小さな安心の積み重ねにあるのかもしれません。この研究の詳細が知りたい方は、概要欄をご確認ください。次はどんな研究が、私たちの暮らしを軽くしてくれるのでしょうか。その瞬間をこれからも一緒に見つけていきたい方は、ぜひチャンネル登録してお待ちください。",
       "image_prompt": "A quiet robotics research lab in the late afternoon, no people in the frame, a countertop kitchen dish-handling robot prototype (matte white and soft blue-gray plastic finish, a small camera sensor module on a short articulated stalk above the arm, clearly mechanical, no face) resting beside a clean stainless steel test sink rig, a nearby monitor showing a simple abstract 3D wireframe shape (no legible text or numbers), soft warm golden-hour daylight through lab windows, calm hopeful mood, no text",
-      "ken_burns": "zoom_out",
+      "ken_burns": "zoom_in",
       "telop_cards": [
         {
           "lines": [
@@ -1045,7 +1077,11 @@
           "start": 47.99,
           "end": 50.65
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.49,
+        "y": 0.5
+      }
     }
   ],
   "shorts": [
