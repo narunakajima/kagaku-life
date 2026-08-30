@@ -2,7 +2,7 @@
   "episode_id": "kl008",
   "episode_title": "乱雑なキッチンを片付けるロボットの目",
   "youtube_title": "乱雑なシンクも自動で片付く?食器を認識して食洗機へ運ぶロボットの「目」の正体(2026年最新研究)",
-  "youtube_description": "共働きで、8歳の息子と5歳の娘を育てる会社員・佐藤裕樹さん(38歳)の視点から解説します。今回紹介するのは、乱雑なキッチンのシンクから食器を自動で認識し、食洗機へ移すロボットの「目」となる知覚技術の研究です。2026年、アメリカのイリノイ大学アーバナ・シャンペーン校と韓国の金烏工科大学の共同研究チームが学術誌『インテリジェント・サービス・ロボティクス』(Springer)に発表した研究では、初めて見る食器も検出する技術、複数の角度からの映像を組み合わせる技術、立体的な形を再構成する技術、位置合わせして姿勢を推定する技術を組み合わせた、モジュール型の知覚パイプラインが提案されました。食器が重なり合い、一部が隠れているような、実際の家庭に近い乱雑な20のキッチン場面で検証したところ、食器の位置と向きを推定する精度は89.12パーセントに達しました。さらに、このシステムを実機のロボットアームに搭載し、環境ごとに学習をやり直すことなく、シンクから食洗機への食器の移送や、カップの積み重ねといった作業に実際に成功しています。市販の食洗機は食器を手でセットする必要があり、家庭用の掃除ロボットは床の掃除にとどまっていた中で、キッチンの片付けという新しい領域への一歩を示す研究です。\n\n📚 参考文献:\nJeon, M.-H., Yamsani, S., & Kim, J. (2026). Kitchen robotic manipulation utilizing foundation models. Intelligent Service Robotics.\nDOI: 10.1007/s11370-026-00749-8\nhttps://doi.org/10.1007/s11370-026-00749-8\n\n※本研究は、限られた実験室環境と実機タスクでの実証実験です。論文自身も実用的なフレームワークとしての可能性を示すものだとしており、あらゆる家庭でそのまま使えるようになるまでには、さらなる検証が必要だと考えられます。動画では研究の主旨を誠実にお伝えすることを心がけていますが、今後の追加検証によって結果が変わる可能性があります。\n\n#家庭用ロボット #家事自動化 #ロボット工学 #知覚AI #食洗機 #研究紹介 #くらしを変える科学 #幸せな未来のサイエンス",
+  "youtube_description": "共働きで、8歳の息子と5歳の娘を育てる会社員・佐藤裕樹さん(38歳)の視点から解説します。今回紹介するのは、乱雑なキッチンのシンクから食器を自動で認識し、食洗機へ移すロボットの「目」となる知覚技術の研究です。2026年、アメリカのイリノイ大学アーバナ・シャンペーン校と韓国の金烏工科大学の共同研究チームが学術誌『インテリジェント・サービス・ロボティクス』(Springer)に発表した研究では、名前を伝えるだけで未登録の食器も見つけ出せる検出技術、複数の角度からの映像を組み合わせる技術、立体的な形を再構成する技術、位置合わせして姿勢を推定する技術を組み合わせた、モジュール型の知覚パイプラインが提案されました。食器が重なり合い、一部が隠れているような、実際の家庭に近い乱雑な20のキッチン場面で検証したところ、食器の位置と向きを推定する精度は89.12パーセントに達しました。さらに、このシステムを実機のロボットアームに搭載し、環境ごとに学習をやり直すことなく、シンクから食洗機への食器の移送や、カップの積み重ねといった作業に実際に成功しています。市販の食洗機は食器を手でセットする必要があり、家庭用の掃除ロボットは床の掃除にとどまっていた中で、キッチンの片付けという新しい領域への一歩を示す研究です。\n\n📚 参考文献:\nJeon, M.-H., Yamsani, S., & Kim, J. (2026). Kitchen robotic manipulation utilizing foundation models. Intelligent Service Robotics.\nDOI: 10.1007/s11370-026-00749-8\nhttps://doi.org/10.1007/s11370-026-00749-8\n\n※本研究は、限られた実験室環境と実機タスクでの実証実験です。論文自身も実用的なフレームワークとしての可能性を示すものだとしており、あらゆる家庭でそのまま使えるようになるまでには、さらなる検証が必要だと考えられます。動画では研究の主旨を誠実にお伝えすることを心がけていますが、今後の追加検証によって結果が変わる可能性があります。\n\n\n🎵 Music: Noir: A Minimalist and Emotive Piano Melody for Relaxation by kjartan_abel (freesound.org) — CC BY 4.0\n\n🎵 Music: Heartfelt Piano and Violin by ViraMiller (freesound.org) — CC BY 4.0\n#家庭用ロボット #家事自動化 #ロボット工学 #知覚AI #食洗機 #研究紹介 #くらしを変える科学 #幸せな未来のサイエンス",
   "youtube_tags": [
     "家庭用ロボット",
     "家事自動化",
@@ -94,7 +94,7 @@
             "週末は、家族の時間に使える"
           ],
           "start": 0.0,
-          "end": 2.3
+          "end": 2.64
         }
       ]
     },
@@ -390,8 +390,8 @@
       "narrator": "research",
       "reference_index": 0,
       "duration_seconds": 48,
-      "narration": "研究チームが取り組んだのは、ロボットが乱雑なキッチンで「どの食器が、どこに、どんな向きであるか」を正確に見分けるための知覚の仕組みです。あらかじめ決められた食器だけでなく、初めて見る食器も名前から検出する技術、複数の角度からの映像を組み合わせて死角を補う技術、そこから立体的な形を組み立て直す技術、そして画像と立体データを重ね合わせてつかむ位置と向きを計算する技術——これらを一つのパイプラインとして組み合わせています。研究チームは、こうした要素技術を個別に検証するだけでなく、実際に組み合わせたときにどこまで精度が伸びるかを体系的に比較検証しています。",
-      "image_prompt": "an East Asian male research scientist in his 30s, short black hair, wearing a white lab coat, standing beside a cluttered test kitchen sink rig set up in the lab (various real dishes piled realistically, some overlapping and partially hidden), a countertop robotic arm (matte white and soft blue-gray plastic finish, a small camera sensor module on a short articulated stalk above the arm, clearly mechanical, no face) positioned above the sink, a nearby monitor showing a simple abstract 3D point-cloud wireframe visualization of the dishes (no legible text or numbers), the researcher's expression focused and analytical, bright clinical daytime lab lighting, exactly ONE small flat corner graphic showing a simple grid of overlapping dish outlines highlighted, placed in only a single corner of the frame, no larger than roughly one-eighth of the frame, kept plain and flat for legibility — the other three corners and the rest of the background must remain completely plain with no graphic of any kind, do not repeat or duplicate this graphic anywhere else in the image, no text, no numerals",
+      "narration": "研究チームが取り組んだのは、ロボットが乱雑なキッチンで「どの食器が、どこに、どんな向きであるか」を正確に見分けるための知覚の仕組みです。「お皿」「マグカップ」のように名前を伝えるだけで、あらかじめ登録されていない食器でも見つけ出せる検出技術、複数の角度からの映像を組み合わせて死角を補う技術、そこから立体的な形を組み立て直す技術、そして画像と立体データを重ね合わせてつかむ位置と向きを計算する技術——これらを一つのパイプラインとして組み合わせています。研究チームは、こうした要素技術を個別に検証するだけでなく、実際に組み合わせたときにどこまで精度が伸びるかを体系的に比較検証しています。",
+      "image_prompt": "two research scientists working together in a lab — an East Asian male researcher in his 30s (short black hair) and a white American female researcher in her 30s (light brown hair tied back), both wearing white lab coats, standing beside a cluttered test kitchen sink rig set up in the lab (various real dishes piled realistically, some overlapping and partially hidden), a countertop robotic arm (matte white and soft blue-gray plastic finish, a small camera sensor module on a short articulated stalk above the arm, clearly mechanical, no face) positioned above the sink, a nearby monitor showing a simple abstract 3D point-cloud wireframe visualization of the dishes (no legible text or numbers), both researchers' expressions focused and analytical, discussing the setup together, bright clinical daytime lab lighting, exactly ONE small flat corner graphic showing a simple grid of overlapping dish outlines highlighted, placed in only a single corner of the frame, no larger than roughly one-eighth of the frame, kept plain and flat for legibility — the other three corners and the rest of the background must remain completely plain with no graphic of any kind, do not repeat or duplicate this graphic anywhere else in the image, no text, no numerals",
       "ken_burns": "zoom_out",
       "telop_cards": [
         {
@@ -399,104 +399,111 @@
             "研究チームが取り組んだのは、"
           ],
           "start": 0.0,
-          "end": 2.01
+          "end": 1.89
         },
         {
           "lines": [
             "ロボットが乱雑なキッチンで「どの食器が、"
           ],
-          "start": 2.16,
-          "end": 5.1
+          "start": 2.04,
+          "end": 4.89
         },
         {
           "lines": [
             "どこに、どんな向きであるか」"
           ],
-          "start": 5.25,
-          "end": 7.26
+          "start": 5.04,
+          "end": 6.93
         },
         {
           "lines": [
             "を正確に見分けるための知覚の仕組みです。"
           ],
-          "start": 7.41,
-          "end": 10.28
+          "start": 7.08,
+          "end": 9.78
         },
         {
           "lines": [
-            "あらかじめ決められた食器だけでなく、"
+            "「お皿」「マグカップ」のように名前を伝えるだけで、"
           ],
-          "start": 10.43,
-          "end": 13.11
+          "start": 9.93,
+          "end": 13.31
         },
         {
           "lines": [
-            "初めて見る食器も名前から検出する技術、"
+            "あらかじめ登録されていない食器でも"
           ],
-          "start": 13.26,
-          "end": 15.98
+          "start": 13.46,
+          "end": 15.76
         },
         {
           "lines": [
-            "複数の角度からの映像を組み合わせて死角を補う技術、"
+            "見つけ出せる検出技術、複数の角度からの"
           ],
-          "start": 16.13,
-          "end": 19.76
+          "start": 15.91,
+          "end": 18.48
+        },
+        {
+          "lines": [
+            "映像を組み合わせて死角を補う技術、"
+          ],
+          "start": 18.63,
+          "end": 20.93
         },
         {
           "lines": [
             "そこから立体的な形を組み立て直す技術、"
           ],
-          "start": 19.91,
-          "end": 22.63
+          "start": 21.08,
+          "end": 23.65
         },
         {
           "lines": [
             "そして画像と立体データを重ね合わせてつかむ"
           ],
-          "start": 22.78,
-          "end": 25.79
+          "start": 23.8,
+          "end": 26.64
         },
         {
           "lines": [
             "位置と向きを計算する技術——これらを一つの"
           ],
-          "start": 25.94,
-          "end": 28.95
+          "start": 26.79,
+          "end": 29.63
         },
         {
           "lines": [
             "パイプラインとして組み合わせています。"
           ],
-          "start": 29.1,
-          "end": 31.82
+          "start": 29.78,
+          "end": 32.35
         },
         {
           "lines": [
             "研究チームは、こうした要素技術を個別に"
           ],
-          "start": 31.97,
-          "end": 34.69
+          "start": 32.5,
+          "end": 35.07
         },
         {
           "lines": [
             "検証するだけでなく、実際に組み合わせた"
           ],
-          "start": 34.84,
-          "end": 37.56
+          "start": 35.22,
+          "end": 37.79
         },
         {
           "lines": [
             "ときにどこまで精度が伸びるかを体系的に"
           ],
-          "start": 37.71,
-          "end": 40.43
+          "start": 37.94,
+          "end": 40.51
         },
         {
           "lines": [
             "比較検証しています。"
           ],
-          "start": 40.58,
+          "start": 40.66,
           "end": 42.01
         }
       ]
@@ -638,7 +645,7 @@
       "narrator": "research",
       "reference_index": 0,
       "duration_seconds": 40,
-      "narration": "従来の食洗機は、汚れた食器を人の手で一枚ずつセットする必要があり、家庭用の掃除ロボットも床の掃除にとどまっていました。この研究のシステムが目指すのは、乱雑なシンクから食器を見分け、食洗機へ移すところまでを一続きでこなすことです。その土台となる、食器の位置と向きを推定する精度は、独自に用意した20場面のベンチマークで89.12パーセントでした。人の手が欠かせなかった家事の工程に、研究の側から一歩が踏み出されたところです。",
+      "narration": "従来の食洗機は、汚れた食器を人の手で一枚ずつセットする必要があり、家庭用の掃除ロボットも床の掃除にとどまっていました。その中でこの研究が示したのが、独自に用意した20場面のベンチマークにおける、食器の位置と向きを推定する精度89.12パーセントという数字です。人の手が欠かせなかった家事の工程に、研究の側から一歩が踏み出されたところです。",
       "image_prompt": "Simple, clean, minimalist flat infographic diagram comparing three home appliances' scope of automatic housework coverage, arranged as three columns, like a basic data visualization slide, NOT an artistic or abstract illustration. Left column: a plain flat dishwasher icon with a small hand icon beside it, labeled below \"食洗機（手動セット）\". Middle column: a plain flat robot vacuum icon covering only a small floor area, labeled below \"掃除ロボット（床のみ）\". Right column: a plain flat robotic arm icon reaching from a sink shape to a dishwasher shape, filled in warm coral/orange, with the words \"姿勢推定精度\" and, directly beneath those words, the number \"89.12\" followed by a percent sign, both placed above the icon, and labeled below the icon \"新しい知覚システム\". Plain flat cool-toned background (deep blue, teal) for the left and middle columns, one warm coral/orange color for the highlighted right column, no dramatic lighting, no gradients, no texture, no decorative background shapes, clean legible sans-serif Japanese text and numerals rendered accurately exactly as specified above. Do NOT add a title, heading, or caption of any kind at the top of the image or anywhere else — only the exact labels and numeral specified above may appear, nothing more. Do not invent or add any other text, letters, or numbers beyond what is specified here",
       "ken_burns": "static",
       "telop_cards": [
@@ -647,77 +654,63 @@
             "従来の食洗機は、汚れた食器を人の手で一"
           ],
           "start": 0.0,
-          "end": 3.4
+          "end": 3.24
         },
         {
           "lines": [
             "枚ずつセットする必要があり、"
           ],
-          "start": 3.55,
-          "end": 5.65
+          "start": 3.39,
+          "end": 5.49
         },
         {
           "lines": [
             "家庭用の掃除ロボットも床の掃除に"
           ],
-          "start": 5.8,
-          "end": 8.4
+          "start": 5.64,
+          "end": 8.14
         },
         {
           "lines": [
-            "とどまっていました。この研究のシステムが"
+            "とどまっていました。その中でこの研究が示したのが、"
           ],
-          "start": 8.55,
-          "end": 11.55
+          "start": 8.29,
+          "end": 12.15
         },
         {
           "lines": [
-            "目指すのは、乱雑なシンクから食器を見分け、"
+            "独自に用意した20場面のベンチマークにおける、"
           ],
-          "start": 11.7,
-          "end": 14.85
+          "start": 12.32,
+          "end": 15.77
         },
         {
           "lines": [
-            "食洗機へ移すところまでを一続きでこなすことです。"
+            "食器の位置と向きを推定する精度89.12"
           ],
-          "start": 15.0,
-          "end": 18.6
+          "start": 15.92,
+          "end": 19.68
         },
         {
           "lines": [
-            "その土台となる、食器の位置と向きを推定する精度は、"
+            "パーセントという数字です。人の手が"
           ],
-          "start": 18.75,
-          "end": 22.5
+          "start": 19.83,
+          "end": 22.38
         },
         {
           "lines": [
-            "独自に用意した20場面のベンチマークで"
+            "欠かせなかった家事の工程に、"
           ],
-          "start": 22.65,
-          "end": 25.5
-        },
-        {
-          "lines": [
-            "89.12パーセントでした。"
-          ],
-          "start": 25.65,
-          "end": 27.86
-        },
-        {
-          "lines": [
-            "人の手が欠かせなかった家事の工程に、"
-          ],
-          "start": 28.01,
-          "end": 30.71
+          "start": 22.53,
+          "end": 24.63
         },
         {
           "lines": [
             "研究の側から一歩が踏み出されたところです。"
           ],
-          "start": 30.86,
-          "end": 34.01
+          "start": 24.78,
+          "end": 27.93
         }
       ]
     },
@@ -726,7 +719,7 @@
       "type": "impact",
       "narrator": "persona",
       "duration_seconds": 34,
-      "narration": "もし、キッチンにもう一人、頼れる存在がいてくれたら——想像するだけで、肩の力がふっと抜けます。仕事から帰ると、静かに動くロボットアームが、山積みだった食器をいつの間にか食洗機へ運び終えている。私はソファに腰を下ろして、その様子をただ眺めているだけでいい。玄関を開けた瞬間に身構えなくてすむ夜が、当たり前になったら——そう思うだけで、少し救われる気持ちになります。",
+      "narration": "もし、キッチンにもう一人、頼れる存在がいてくれたら——想像するだけで、肩の力がふっと抜けます。玄関を開けた瞬間に、山積みの食器を見て身構える必要がなくなったら——そう思うだけで、少し救われる気持ちになります。",
       "image_prompt": "A small figure of a Japanese man in his late 30s (Sato Hiroki), short black hair neatly trimmed, average build, wearing simple home clothing, seated on a sofa in the living room in the evening, drawn small in the lower corner of the frame, a trail of three small circles rising from his head connecting to a large cloud-shaped thought bubble that fills most of the frame; inside the thought bubble, a miniature scene shows a countertop robotic arm (matte white and soft blue-gray plastic finish, small camera sensor module on a short stalk, clearly mechanical, no face) quietly moving dishes from a cluttered sink into an open dishwasher in the kitchen, soft warm evening lighting outside the bubble, calm bright interior lighting inside the bubble scene, no text",
       "ken_burns": "zoom_out",
       "telop_cards": [
@@ -735,70 +728,35 @@
             "もし、キッチンにもう一人、頼れる存在が"
           ],
           "start": 0.0,
-          "end": 2.82
+          "end": 2.72
         },
         {
           "lines": [
             "いてくれたら——想像するだけで、"
           ],
-          "start": 2.97,
-          "end": 5.34
+          "start": 2.87,
+          "end": 5.16
         },
         {
           "lines": [
-            "肩の力がふっと抜けます。仕事から帰ると、"
+            "肩の力がふっと抜けます。玄関を開けた瞬間に、"
           ],
-          "start": 5.49,
-          "end": 8.65
+          "start": 5.31,
+          "end": 8.66
         },
         {
           "lines": [
-            "静かに動くロボットアームが、"
+            "山積みの食器を見て身構える必要がなくなったら"
           ],
-          "start": 8.8,
-          "end": 10.87
+          "start": 8.81,
+          "end": 11.96
         },
         {
           "lines": [
-            "山積みだった食器をいつの間にか食洗機へ"
+            "——そう思うだけで、少し救われる気持ちになります。"
           ],
-          "start": 11.02,
-          "end": 13.84
-        },
-        {
-          "lines": [
-            "運び終えている。私はソファに腰を下ろして、"
-          ],
-          "start": 13.99,
-          "end": 17.1
-        },
-        {
-          "lines": [
-            "その様子をただ眺めているだけでいい。"
-          ],
-          "start": 17.25,
-          "end": 19.92
-        },
-        {
-          "lines": [
-            "玄関を開けた瞬間に身構えなくてすむ夜が、"
-          ],
-          "start": 20.07,
-          "end": 23.03
-        },
-        {
-          "lines": [
-            "当たり前になったら——そう思うだけで、"
-          ],
-          "start": 23.18,
-          "end": 26.0
-        },
-        {
-          "lines": [
-            "少し救われる気持ちになります。"
-          ],
-          "start": 26.15,
-          "end": 28.37
+          "start": 12.11,
+          "end": 15.69
         }
       ]
     },
@@ -1133,8 +1091,8 @@
     }
   ],
   "bgm_sources": {
-    "intro": "BGM/kl005-BGM-intro.mp3",
+    "intro": "BGM/kl007-BGM-intro.mp3",
     "main": "BGM/kl005-BGM-main.mp3",
-    "outro": "BGM/kl002-BGM-outro.mp3"
+    "outro": "BGM/kl001-BGM-outro.mp3"
   }
 }
