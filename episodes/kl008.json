@@ -51,7 +51,16 @@
       "duration_seconds": 2,
       "narration": "食器が、勝手に片付いていく",
       "image_prompt": "A close-up shot of a countertop kitchen dish-handling robot: a sleek articulated robotic arm mounted on a compact base clamped beside the kitchen sink, ending in a simple two-pronged gripper, with a small camera sensor module on a short articulated stalk positioned above the arm like a periscope (clearly a mechanical device, NOT humanoid, no face, no eyes, no human-like features), matte white and soft blue-gray plastic finish with a small green indicator light, gently lifting a plate from a sink full of dirty dishes and placing it into an open dishwasher rack, soft warm evening interior lighting, dusk sky faintly visible through a small window, not night, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "食器が、勝手に片付いていく"
+          ],
+          "start": 0.0,
+          "end": 2.04
+        }
+      ]
     },
     {
       "scene_id": 2,
@@ -60,7 +69,16 @@
       "duration_seconds": 2,
       "narration": "疲れて帰った夜も、ホッとできる",
       "image_prompt": "a Japanese man in his late 30s (Sato Hiroki), short black hair neatly trimmed, average build, wearing simple home clothing, sitting on a sofa in the living room in the evening, completely relaxed with his feet up and a content, relieved expression, a doorway to the kitchen visible in the background where a countertop robotic arm (matte white and soft blue-gray plastic finish) is quietly working at the sink, soft warm evening interior lighting, dusk sky visible through a window, not night, no text",
-      "ken_burns": "zoom_out"
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "疲れて帰った夜も、ホッとできる"
+          ],
+          "start": 0.0,
+          "end": 3.4
+        }
+      ]
     },
     {
       "scene_id": 3,
@@ -69,7 +87,16 @@
       "duration_seconds": 2,
       "narration": "週末は、家族の時間に使える",
       "image_prompt": "a Japanese man in his late 30s (Sato Hiroki), short black hair neatly trimmed, wearing casual home clothing, his wife (a Japanese woman in her mid-30s, shoulder-length black hair), his 8-year-old son (a Japanese boy, short black hair), and his 5-year-old daughter (a Japanese girl, black hair in short twin tails) all sitting together at the dining table on a bright weekend afternoon, playing a board game together and laughing warmly, the kitchen visible in the background with a countertop robotic arm quietly tidying dishes at the sink, bright daylight through a window, no text",
-      "ken_burns": "pan_zoom_out"
+      "ken_burns": "pan_zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "週末は、家族の時間に使える"
+          ],
+          "start": 0.0,
+          "end": 2.3
+        }
+      ]
     },
     {
       "scene_id": 4,
@@ -78,7 +105,16 @@
       "duration_seconds": 4,
       "narration": "もし、家事がもっと楽になったら?",
       "image_prompt": "a Japanese man in his late 30s (Sato Hiroki), short black hair neatly trimmed, average build, wearing simple home clothing, standing alone in his kitchen doorway in the evening, looking toward the sink with a quiet, thoughtful expression, one hand resting on the doorframe, calm contemplative mood, soft warm evening interior lighting, dusk sky faintly visible through the window, not night, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "もし、家事がもっと楽になったら?"
+          ],
+          "start": 0.0,
+          "end": 2.42
+        }
+      ]
     },
     {
       "scene_id": 5,
@@ -87,7 +123,51 @@
       "duration_seconds": 20,
       "narration": "佐藤裕樹、38歳。共働きで、8歳の息子と5歳の娘と暮らしています。仕事から帰ると、家族4人分の食器がシンクに山積み。正直、見るだけでどっと疲れます。それでも、誰かがやらなければ、明日の朝も食器が足りません。毎日そんな小さな綱渡りを続けています。",
       "image_prompt": "a Japanese man in his late 30s (Sato Hiroki), short black hair neatly trimmed, average build, wearing simple home clothing, standing in his kitchen doorway in the evening, looking at a sink piled high with dirty dishes (plates, cups, a frying pan, a child's lunch box) with a tired, sighing expression, soft warm evening interior lighting, dusk sky visible through the kitchen window, not night, no robot visible in this scene, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "佐藤裕樹、38歳。共働きで、"
+          ],
+          "start": 0.0,
+          "end": 3.7
+        },
+        {
+          "lines": [
+            "8歳の息子と5歳の娘と暮らしています。"
+          ],
+          "start": 3.85,
+          "end": 6.85
+        },
+        {
+          "lines": [
+            "仕事から帰ると、家族4人分の食器がシンクに山積み。"
+          ],
+          "start": 7.42,
+          "end": 12.16
+        },
+        {
+          "lines": [
+            "正直、見るだけでどっと疲れます。それでも、"
+          ],
+          "start": 12.31,
+          "end": 15.87
+        },
+        {
+          "lines": [
+            "誰かがやらなければ、明日の朝も食器が足りません。"
+          ],
+          "start": 16.02,
+          "end": 19.62
+        },
+        {
+          "lines": [
+            "毎日そんな小さな綱渡りを続けています。"
+          ],
+          "start": 19.77,
+          "end": 22.87
+        }
+      ]
     },
     {
       "scene_id": 6,
@@ -96,7 +176,79 @@
       "duration_seconds": 34,
       "narration": "毎晩、夕食の後片付けは私と妻で分担しています。食洗機はあるけれど、汚れた食器を一枚ずつ手で並べてセットするだけでも一苦労。フライパンも、コップも、子どものお弁当箱も、形も大きさもバラバラで、どう詰めれば全部入るのか、毎回パズルのようです。結局、大きなものは手洗いに回すことになります。気づけば、片付けだけで20分、30分。そのままソファで力尽きてしまう夜も、珍しくありません。",
       "image_prompt": "a Japanese man in his late 30s (Sato Hiroki), short black hair neatly trimmed, average build, wearing simple home clothing, and his wife (a Japanese woman in her mid-30s, shoulder-length black hair, wearing simple home clothing) standing together at the kitchen sink in the evening, both looking mildly exhausted, Sato carefully placing dishes one by one into an open dishwasher rack by hand while his wife hand-washes a frying pan at the sink, various mismatched dishes (plates, cups, a small children's lunch box) cluttering the counter, soft warm evening interior lighting, dusk sky visible through the window, not night, no text",
-      "ken_burns": "pan_zoom_out"
+      "ken_burns": "pan_zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "毎晩、夕食の後片付けは私と妻で分担しています。"
+          ],
+          "start": 0.0,
+          "end": 4.26
+        },
+        {
+          "lines": [
+            "食洗機はあるけれど、汚れた食器を一枚ずつ"
+          ],
+          "start": 4.86,
+          "end": 8.6
+        },
+        {
+          "lines": [
+            "手で並べてセットするだけでも一苦労。"
+          ],
+          "start": 8.75,
+          "end": 11.67
+        },
+        {
+          "lines": [
+            "フライパンも、コップも、子どものお弁当箱も、"
+          ],
+          "start": 11.82,
+          "end": 15.28
+        },
+        {
+          "lines": [
+            "形も大きさもバラバラで、どう詰めれば全部入るのか、"
+          ],
+          "start": 15.43,
+          "end": 19.89
+        },
+        {
+          "lines": [
+            "毎回パズルのようです。結局、"
+          ],
+          "start": 20.04,
+          "end": 23.2
+        },
+        {
+          "lines": [
+            "大きなものは手洗いに回すことになります。"
+          ],
+          "start": 23.35,
+          "end": 26.35
+        },
+        {
+          "lines": [
+            "気づけば、片付けだけで20分、30分。"
+          ],
+          "start": 26.5,
+          "end": 29.58
+        },
+        {
+          "lines": [
+            "そのままソファで力尽きてしまう夜も、"
+          ],
+          "start": 29.73,
+          "end": 32.43
+        },
+        {
+          "lines": [
+            "珍しくありません。"
+          ],
+          "start": 32.58,
+          "end": 33.93
+        }
+      ]
     },
     {
       "scene_id": 7,
@@ -105,7 +257,58 @@
       "duration_seconds": 20,
       "narration": "床を掃除してくれるロボット掃除機は、もう我が家の必需品です。任せておけば、その間に別のことができる。でも、キッチンの洗い物までは手伝ってくれません。「食器も自動でやってくれたら」——そんな小さな願いを抱きながら、今夜もシンクの前に立っています。",
       "image_prompt": "a Japanese man in his late 30s (Sato Hiroki), short black hair neatly trimmed, average build, wearing simple home clothing, standing alone at the kitchen sink at night, a small round robot vacuum cleaner visible quietly cleaning the floor near his feet, the sink behind him still piled with dishes, his expression a mix of tired and wistful as he glances down at the robot vacuum, warm interior lighting, dark evening visible through the window, no text",
-      "ken_burns": "zoom_out"
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "床を掃除してくれるロボット掃除機は、"
+          ],
+          "start": 0.0,
+          "end": 2.7
+        },
+        {
+          "lines": [
+            "もう我が家の必需品です。任せておけば、"
+          ],
+          "start": 2.85,
+          "end": 6.53
+        },
+        {
+          "lines": [
+            "その間に別のことができる。でも、"
+          ],
+          "start": 6.68,
+          "end": 9.38
+        },
+        {
+          "lines": [
+            "キッチンの洗い物までは手伝ってくれません。"
+          ],
+          "start": 9.53,
+          "end": 12.68
+        },
+        {
+          "lines": [
+            "「食器も自動でやってくれたら」"
+          ],
+          "start": 12.83,
+          "end": 15.08
+        },
+        {
+          "lines": [
+            "——そんな小さな願いを抱きながら、"
+          ],
+          "start": 15.23,
+          "end": 17.78
+        },
+        {
+          "lines": [
+            "今夜もシンクの前に立っています。"
+          ],
+          "start": 17.93,
+          "end": 20.33
+        }
+      ]
     },
     {
       "scene_id": 8,
@@ -114,7 +317,72 @@
       "duration_seconds": 22,
       "narration": "アメリカのイリノイ大学アーバナ・シャンペーン校と、韓国の金烏工科大学の研究チームが共同で、家庭のキッチンで散らかった食器を自動で認識し、扱うロボットの知覚技術を開発しました。2026年、学術誌『インテリジェント・サービス・ロボティクス』に、その成果が発表されています。人が当たり前にこなしている「片付け」を、ロボットの目でどう捉えるかに焦点を当てた研究です。",
       "image_prompt": "A quiet robotics research lab, no people in the frame, a countertop kitchen dish-handling robot prototype (a sleek articulated robotic arm on a compact base, ending in a simple two-pronged gripper, with a small camera sensor module on a short articulated stalk above the arm, matte white and soft blue-gray plastic finish) mounted beside a stainless steel test sink basin, a nearby monitor displaying a simple abstract 3D wireframe reconstruction of dish-like shapes (no legible text or numbers), bright daytime lighting through lab windows, calm documentary-style framing, no text",
-      "ken_burns": "zoom_out"
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "アメリカのイリノイ大学アーバナ・シャンペーン校と、"
+          ],
+          "start": 0.0,
+          "end": 3.65
+        },
+        {
+          "lines": [
+            "韓国の金烏工科大学の研究チームが共同で、"
+          ],
+          "start": 3.92,
+          "end": 6.91
+        },
+        {
+          "lines": [
+            "家庭のキッチンで散らかった食器を自動で認識し、"
+          ],
+          "start": 7.06,
+          "end": 10.42
+        },
+        {
+          "lines": [
+            "扱うロボットの知覚技術を開発しました。"
+          ],
+          "start": 10.57,
+          "end": 13.34
+        },
+        {
+          "lines": [
+            "2026年、学術誌『"
+          ],
+          "start": 13.49,
+          "end": 14.95
+        },
+        {
+          "lines": [
+            "インテリジェント・サービス・ロボティクス』"
+          ],
+          "start": 15.1,
+          "end": 18.17
+        },
+        {
+          "lines": [
+            "に、その成果が発表されています。"
+          ],
+          "start": 18.32,
+          "end": 20.66
+        },
+        {
+          "lines": [
+            "人が当たり前にこなしている「片付け」を、"
+          ],
+          "start": 20.81,
+          "end": 23.73
+        },
+        {
+          "lines": [
+            "ロボットの目でどう捉えるかに焦点を当てた研究です。"
+          ],
+          "start": 23.88,
+          "end": 27.53
+        }
+      ]
     },
     {
       "scene_id": 9,
@@ -124,7 +392,114 @@
       "duration_seconds": 48,
       "narration": "研究チームが取り組んだのは、ロボットが乱雑なキッチンで「どの食器が、どこに、どんな向きであるか」を正確に見分けるための知覚の仕組みです。あらかじめ決められた食器だけでなく、初めて見る食器も名前から検出する技術、複数の角度からの映像を組み合わせて死角を補う技術、そこから立体的な形を組み立て直す技術、そして画像と立体データを重ね合わせてつかむ位置と向きを計算する技術——これらを一つのパイプラインとして組み合わせています。研究チームは、こうした要素技術を個別に検証するだけでなく、実際に組み合わせたときにどこまで精度が伸びるかを体系的に比較検証しています。",
       "image_prompt": "an East Asian male research scientist in his 30s, short black hair, wearing a white lab coat, standing beside a cluttered test kitchen sink rig set up in the lab (various real dishes piled realistically, some overlapping and partially hidden), a countertop robotic arm (matte white and soft blue-gray plastic finish, a small camera sensor module on a short articulated stalk above the arm, clearly mechanical, no face) positioned above the sink, a nearby monitor showing a simple abstract 3D point-cloud wireframe visualization of the dishes (no legible text or numbers), the researcher's expression focused and analytical, bright clinical daytime lab lighting, exactly ONE small flat corner graphic showing a simple grid of overlapping dish outlines highlighted, placed in only a single corner of the frame, no larger than roughly one-eighth of the frame, kept plain and flat for legibility — the other three corners and the rest of the background must remain completely plain with no graphic of any kind, do not repeat or duplicate this graphic anywhere else in the image, no text, no numerals",
-      "ken_burns": "zoom_out"
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "研究チームが取り組んだのは、"
+          ],
+          "start": 0.0,
+          "end": 2.01
+        },
+        {
+          "lines": [
+            "ロボットが乱雑なキッチンで「どの食器が、"
+          ],
+          "start": 2.16,
+          "end": 5.1
+        },
+        {
+          "lines": [
+            "どこに、どんな向きであるか」"
+          ],
+          "start": 5.25,
+          "end": 7.26
+        },
+        {
+          "lines": [
+            "を正確に見分けるための知覚の仕組みです。"
+          ],
+          "start": 7.41,
+          "end": 10.28
+        },
+        {
+          "lines": [
+            "あらかじめ決められた食器だけでなく、"
+          ],
+          "start": 10.43,
+          "end": 13.11
+        },
+        {
+          "lines": [
+            "初めて見る食器も名前から検出する技術、"
+          ],
+          "start": 13.26,
+          "end": 15.98
+        },
+        {
+          "lines": [
+            "複数の角度からの映像を組み合わせて死角を補う技術、"
+          ],
+          "start": 16.13,
+          "end": 19.76
+        },
+        {
+          "lines": [
+            "そこから立体的な形を組み立て直す技術、"
+          ],
+          "start": 19.91,
+          "end": 22.63
+        },
+        {
+          "lines": [
+            "そして画像と立体データを重ね合わせてつかむ"
+          ],
+          "start": 22.78,
+          "end": 25.79
+        },
+        {
+          "lines": [
+            "位置と向きを計算する技術——これらを一つの"
+          ],
+          "start": 25.94,
+          "end": 28.95
+        },
+        {
+          "lines": [
+            "パイプラインとして組み合わせています。"
+          ],
+          "start": 29.1,
+          "end": 31.82
+        },
+        {
+          "lines": [
+            "研究チームは、こうした要素技術を個別に"
+          ],
+          "start": 31.97,
+          "end": 34.69
+        },
+        {
+          "lines": [
+            "検証するだけでなく、実際に組み合わせた"
+          ],
+          "start": 34.84,
+          "end": 37.56
+        },
+        {
+          "lines": [
+            "ときにどこまで精度が伸びるかを体系的に"
+          ],
+          "start": 37.71,
+          "end": 40.43
+        },
+        {
+          "lines": [
+            "比較検証しています。"
+          ],
+          "start": 40.58,
+          "end": 42.01
+        }
+      ]
     },
     {
       "scene_id": 10,
@@ -134,7 +509,128 @@
       "duration_seconds": 62,
       "narration": "性能を確かめるため、食器が重なり合い、一部が影に隠れているような、実際の家庭に近い乱雑な状況を集めた、20場面のキッチンベンチマークを独自に用意し、複数の視覚・立体認識モデルの組み合わせを比較しました。最も精度が高かった組み合わせで、食器の位置と向きを推定する精度は89.12パーセントに達しています。さらに、このシステムを実際のロボットアームに搭載し、環境ごとに新しく学習し直すことなく、シンクの食器を認識して食洗機へ移す作業や、複数のカップを積み重ねる作業に、実際に成功したことも確認されています。まだ研究段階のプロトタイプであり、あらゆる家庭でそのまま動くと断定できる段階ではありませんが、家庭で使える仕組みにつながる可能性を示す結果です。",
       "image_prompt": "close-up of a countertop robotic arm (matte white and soft blue-gray plastic finish, simple two-pronged gripper, a small camera sensor module on a short articulated stalk above the arm, clearly mechanical, no face) gripping a plate and lifting it from a cluttered sink toward an open dishwasher rack beside it, an East Asian male research scientist in his 30s, short black hair, wearing a white lab coat, observing from the side with a satisfied expression, bright clinical daytime lab lighting, a small flat corner graphic showing a single bar filled almost to the top representing a high accuracy percentage, no larger than roughly one-eighth of the frame, kept plain and flat for legibility, no text, no numerals",
-      "ken_burns": "zoom_out"
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "性能を確かめるため、食器が重なり合い、"
+          ],
+          "start": 0.0,
+          "end": 3.01
+        },
+        {
+          "lines": [
+            "一部が影に隠れているような、"
+          ],
+          "start": 3.16,
+          "end": 5.23
+        },
+        {
+          "lines": [
+            "実際の家庭に近い乱雑な状況を集めた、"
+          ],
+          "start": 5.38,
+          "end": 8.04
+        },
+        {
+          "lines": [
+            "20場面のキッチンベンチマークを独自に用意し、"
+          ],
+          "start": 8.19,
+          "end": 11.59
+        },
+        {
+          "lines": [
+            "複数の視覚・立体認識モデルの組み合わせを"
+          ],
+          "start": 11.74,
+          "end": 14.7
+        },
+        {
+          "lines": [
+            "比較しました。最も精度が高かった組み合わせで、"
+          ],
+          "start": 14.85,
+          "end": 18.25
+        },
+        {
+          "lines": [
+            "食器の位置と向きを推定する精度は89."
+          ],
+          "start": 18.4,
+          "end": 21.21
+        },
+        {
+          "lines": [
+            "12パーセントに達しています。さらに、"
+          ],
+          "start": 21.36,
+          "end": 24.17
+        },
+        {
+          "lines": [
+            "このシステムを実際のロボットアームに搭載し、"
+          ],
+          "start": 24.32,
+          "end": 27.57
+        },
+        {
+          "lines": [
+            "環境ごとに新しく学習し直すことなく、"
+          ],
+          "start": 27.72,
+          "end": 30.38
+        },
+        {
+          "lines": [
+            "シンクの食器を認識して食洗機へ移す作業や、"
+          ],
+          "start": 30.53,
+          "end": 33.64
+        },
+        {
+          "lines": [
+            "複数のカップを積み重ねる作業に、"
+          ],
+          "start": 33.79,
+          "end": 36.16
+        },
+        {
+          "lines": [
+            "実際に成功したことも確認されています。"
+          ],
+          "start": 36.31,
+          "end": 39.12
+        },
+        {
+          "lines": [
+            "まだ研究段階のプロトタイプであり、"
+          ],
+          "start": 39.27,
+          "end": 41.78
+        },
+        {
+          "lines": [
+            "あらゆる家庭でそのまま動くと断定できる"
+          ],
+          "start": 41.93,
+          "end": 44.74
+        },
+        {
+          "lines": [
+            "段階ではありませんが、家庭で使える仕組みに"
+          ],
+          "start": 44.89,
+          "end": 48.0
+        },
+        {
+          "lines": [
+            "つながる可能性を示す結果です。"
+          ],
+          "start": 48.15,
+          "end": 50.37
+        }
+      ]
     },
     {
       "scene_id": 11,
@@ -144,7 +640,86 @@
       "duration_seconds": 40,
       "narration": "従来の食洗機は、汚れた食器を人の手で一枚ずつセットする必要があり、家庭用の掃除ロボットも床の掃除にとどまっていました。この研究のシステムが目指すのは、乱雑なシンクから食器を見分け、食洗機へ移すところまでを一続きでこなすことです。その土台となる、食器の位置と向きを推定する精度は、独自に用意した20場面のベンチマークで89.12パーセントでした。人の手が欠かせなかった家事の工程に、研究の側から一歩が踏み出されたところです。",
       "image_prompt": "Simple, clean, minimalist flat infographic diagram comparing three home appliances' scope of automatic housework coverage, arranged as three columns, like a basic data visualization slide, NOT an artistic or abstract illustration. Left column: a plain flat dishwasher icon with a small hand icon beside it, labeled below \"食洗機（手動セット）\". Middle column: a plain flat robot vacuum icon covering only a small floor area, labeled below \"掃除ロボット（床のみ）\". Right column: a plain flat robotic arm icon reaching from a sink shape to a dishwasher shape, filled in warm coral/orange, with the words \"姿勢推定精度\" and, directly beneath those words, the number \"89.12\" followed by a percent sign, both placed above the icon, and labeled below the icon \"新しい知覚システム\". Plain flat cool-toned background (deep blue, teal) for the left and middle columns, one warm coral/orange color for the highlighted right column, no dramatic lighting, no gradients, no texture, no decorative background shapes, clean legible sans-serif Japanese text and numerals rendered accurately exactly as specified above. Do NOT add a title, heading, or caption of any kind at the top of the image or anywhere else — only the exact labels and numeral specified above may appear, nothing more. Do not invent or add any other text, letters, or numbers beyond what is specified here",
-      "ken_burns": "static"
+      "ken_burns": "static",
+      "telop_cards": [
+        {
+          "lines": [
+            "従来の食洗機は、汚れた食器を人の手で一"
+          ],
+          "start": 0.0,
+          "end": 3.4
+        },
+        {
+          "lines": [
+            "枚ずつセットする必要があり、"
+          ],
+          "start": 3.55,
+          "end": 5.65
+        },
+        {
+          "lines": [
+            "家庭用の掃除ロボットも床の掃除に"
+          ],
+          "start": 5.8,
+          "end": 8.4
+        },
+        {
+          "lines": [
+            "とどまっていました。この研究のシステムが"
+          ],
+          "start": 8.55,
+          "end": 11.55
+        },
+        {
+          "lines": [
+            "目指すのは、乱雑なシンクから食器を見分け、"
+          ],
+          "start": 11.7,
+          "end": 14.85
+        },
+        {
+          "lines": [
+            "食洗機へ移すところまでを一続きでこなすことです。"
+          ],
+          "start": 15.0,
+          "end": 18.6
+        },
+        {
+          "lines": [
+            "その土台となる、食器の位置と向きを推定する精度は、"
+          ],
+          "start": 18.75,
+          "end": 22.5
+        },
+        {
+          "lines": [
+            "独自に用意した20場面のベンチマークで"
+          ],
+          "start": 22.65,
+          "end": 25.5
+        },
+        {
+          "lines": [
+            "89.12パーセントでした。"
+          ],
+          "start": 25.65,
+          "end": 27.86
+        },
+        {
+          "lines": [
+            "人の手が欠かせなかった家事の工程に、"
+          ],
+          "start": 28.01,
+          "end": 30.71
+        },
+        {
+          "lines": [
+            "研究の側から一歩が踏み出されたところです。"
+          ],
+          "start": 30.86,
+          "end": 34.01
+        }
+      ]
     },
     {
       "scene_id": 12,
@@ -153,7 +728,79 @@
       "duration_seconds": 34,
       "narration": "もし、キッチンにもう一人、頼れる存在がいてくれたら——想像するだけで、肩の力がふっと抜けます。仕事から帰ると、静かに動くロボットアームが、山積みだった食器をいつの間にか食洗機へ運び終えている。私はソファに腰を下ろして、その様子をただ眺めているだけでいい。玄関を開けた瞬間に身構えなくてすむ夜が、当たり前になったら——そう思うだけで、少し救われる気持ちになります。",
       "image_prompt": "A small figure of a Japanese man in his late 30s (Sato Hiroki), short black hair neatly trimmed, average build, wearing simple home clothing, seated on a sofa in the living room in the evening, drawn small in the lower corner of the frame, a trail of three small circles rising from his head connecting to a large cloud-shaped thought bubble that fills most of the frame; inside the thought bubble, a miniature scene shows a countertop robotic arm (matte white and soft blue-gray plastic finish, small camera sensor module on a short stalk, clearly mechanical, no face) quietly moving dishes from a cluttered sink into an open dishwasher in the kitchen, soft warm evening lighting outside the bubble, calm bright interior lighting inside the bubble scene, no text",
-      "ken_burns": "zoom_out"
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "もし、キッチンにもう一人、頼れる存在が"
+          ],
+          "start": 0.0,
+          "end": 2.82
+        },
+        {
+          "lines": [
+            "いてくれたら——想像するだけで、"
+          ],
+          "start": 2.97,
+          "end": 5.34
+        },
+        {
+          "lines": [
+            "肩の力がふっと抜けます。仕事から帰ると、"
+          ],
+          "start": 5.49,
+          "end": 8.65
+        },
+        {
+          "lines": [
+            "静かに動くロボットアームが、"
+          ],
+          "start": 8.8,
+          "end": 10.87
+        },
+        {
+          "lines": [
+            "山積みだった食器をいつの間にか食洗機へ"
+          ],
+          "start": 11.02,
+          "end": 13.84
+        },
+        {
+          "lines": [
+            "運び終えている。私はソファに腰を下ろして、"
+          ],
+          "start": 13.99,
+          "end": 17.1
+        },
+        {
+          "lines": [
+            "その様子をただ眺めているだけでいい。"
+          ],
+          "start": 17.25,
+          "end": 19.92
+        },
+        {
+          "lines": [
+            "玄関を開けた瞬間に身構えなくてすむ夜が、"
+          ],
+          "start": 20.07,
+          "end": 23.03
+        },
+        {
+          "lines": [
+            "当たり前になったら——そう思うだけで、"
+          ],
+          "start": 23.18,
+          "end": 26.0
+        },
+        {
+          "lines": [
+            "少し救われる気持ちになります。"
+          ],
+          "start": 26.15,
+          "end": 28.37
+        }
+      ]
     },
     {
       "scene_id": 13,
@@ -163,7 +810,86 @@
       "narration": "朝は特に、時間との勝負です。子どもたちの朝食の後片付けを気にせず、そのまま二人を送り出せる。ロボットが黙々とシンクの食器をより分けてくれている間に、私はキッチンのカウンターに寄りかかって、コーヒーを一杯、ゆっくり味わえます。夜、子どもたちを寝かしつけた後も、シンクの前で肩を落とす必要がありません。ロボットが後片付けを続けてくれている間に、妻と二人、リビングでその日あった出来事を話す時間が増えました。",
       "image_prompt": "a Japanese man in his late 30s (Sato Hiroki), short black hair neatly trimmed, average build, wearing simple home clothing, and his wife (a Japanese woman in her mid-30s, shoulder-length black hair) in the kitchen in the morning helping his 8-year-old son (a Japanese boy, short black hair) and 5-year-old daughter (a Japanese girl, black hair in short twin tails) get ready, breakfast dishes on the table, a countertop robotic arm (matte white and soft blue-gray plastic finish, clearly mechanical, no face) quietly sorting dishes at the sink in the background, Sato holding a cup of coffee with a relaxed, content expression leaning against the counter, soft morning daylight coming through the window, not night, no text",
       "ken_burns": "zoom_in",
-      "badge_text": "幸せな未来を夢想中"
+      "badge_text": "幸せな未来を夢想中",
+      "telop_cards": [
+        {
+          "lines": [
+            "朝は特に、時間との勝負です。"
+          ],
+          "start": 0.0,
+          "end": 2.08
+        },
+        {
+          "lines": [
+            "子どもたちの朝食の後片付けを気にせず、"
+          ],
+          "start": 2.23,
+          "end": 4.78
+        },
+        {
+          "lines": [
+            "そのまま二人を送り出せる。ロボットが黙々と"
+          ],
+          "start": 4.93,
+          "end": 7.75
+        },
+        {
+          "lines": [
+            "シンクの食器をより分けてくれている間に、"
+          ],
+          "start": 7.9,
+          "end": 10.58
+        },
+        {
+          "lines": [
+            "私はキッチンのカウンターに寄りかかって、"
+          ],
+          "start": 10.73,
+          "end": 13.41
+        },
+        {
+          "lines": [
+            "コーヒーを一杯、ゆっくり味わえます。夜、"
+          ],
+          "start": 13.56,
+          "end": 16.24
+        },
+        {
+          "lines": [
+            "子どもたちを寝かしつけた後も、"
+          ],
+          "start": 16.39,
+          "end": 18.4
+        },
+        {
+          "lines": [
+            "シンクの前で肩を落とす必要がありません。"
+          ],
+          "start": 18.55,
+          "end": 21.23
+        },
+        {
+          "lines": [
+            "ロボットが後片付けを続けてくれている間に、"
+          ],
+          "start": 21.38,
+          "end": 24.2
+        },
+        {
+          "lines": [
+            "妻と二人、リビングでその日あった出来事を"
+          ],
+          "start": 24.35,
+          "end": 27.03
+        },
+        {
+          "lines": [
+            "話す時間が増えました。"
+          ],
+          "start": 27.18,
+          "end": 28.65
+        }
+      ]
     },
     {
       "scene_id": 14,
@@ -173,7 +899,65 @@
       "narration": "週末、家族でホットプレート料理を囲んだ後も、後片付けを気にして誰かが席を立つ必要がありません。子どもたちと一緒に、そのままボードゲームを続けられる——そんな小さな、けれど確かな幸せが増えていきます。洗い物という「見えない負担」が消えるだけで、休日の空気がこんなに軽くなるとは思いませんでした。",
       "image_prompt": "a Japanese man in his late 30s (Sato Hiroki), short black hair neatly trimmed, his wife (a Japanese woman in her mid-30s, shoulder-length black hair), his 8-year-old son (a Japanese boy, short black hair), and his 5-year-old daughter (a Japanese girl, black hair in short twin tails) sitting together at the dining table on a bright weekend afternoon, playing a board game together and laughing, a hot-plate meal's dirty dishes visible on the table, the kitchen visible in the background with a countertop robotic arm quietly tidying dishes at the sink, no one getting up to check on it, bright daylight through a window, no text",
       "ken_burns": "zoom_out",
-      "badge_text": "幸せな未来を夢想中"
+      "badge_text": "幸せな未来を夢想中",
+      "telop_cards": [
+        {
+          "lines": [
+            "週末、家族でホットプレート料理を囲んだ後も、"
+          ],
+          "start": 0.0,
+          "end": 3.3
+        },
+        {
+          "lines": [
+            "後片付けを気にして誰かが席を立つ必要がありません。"
+          ],
+          "start": 3.45,
+          "end": 7.22
+        },
+        {
+          "lines": [
+            "子どもたちと一緒に、そのままボードゲームを"
+          ],
+          "start": 7.37,
+          "end": 10.44
+        },
+        {
+          "lines": [
+            "続けられる——そんな小さな、"
+          ],
+          "start": 10.59,
+          "end": 12.64
+        },
+        {
+          "lines": [
+            "けれど確かな幸せが増えていきます。"
+          ],
+          "start": 12.79,
+          "end": 15.28
+        },
+        {
+          "lines": [
+            "洗い物という「見えない負担」"
+          ],
+          "start": 15.43,
+          "end": 17.48
+        },
+        {
+          "lines": [
+            "が消えるだけで、休日の空気がこんなに軽く"
+          ],
+          "start": 17.63,
+          "end": 20.56
+        },
+        {
+          "lines": [
+            "なるとは思いませんでした。"
+          ],
+          "start": 20.71,
+          "end": 22.61
+        }
+      ]
     },
     {
       "scene_id": 15,
@@ -182,7 +966,128 @@
       "duration_seconds": 66,
       "narration": "この研究が示したのは、乱雑なシンクの中から食器を見分け、つかみ、運ぶという、人にとっては当たり前でもロボットには難しかった作業を、環境ごとの学習をやり直すことなくこなせる知覚の仕組みです。まだ実験室と実機での限られたタスクによる実証であり、あらゆる家庭でそのまま使えるようになるまでには、さらなる検証が必要だと考えられます。それでも、山積みの食器を見てため息をつく夜が、いつか当たり前でなくなるとしたら——科学がもたらす本当の価値は、そんな小さな安心の積み重ねにあるのかもしれません。この研究の詳細が知りたい方は、概要欄をご確認ください。次はどんな研究が、私たちの暮らしを軽くしてくれるのでしょうか。その瞬間をこれからも一緒に見つけていきたい方は、ぜひチャンネル登録してお待ちください。",
       "image_prompt": "A quiet robotics research lab in the late afternoon, no people in the frame, a countertop kitchen dish-handling robot prototype (matte white and soft blue-gray plastic finish, a small camera sensor module on a short articulated stalk above the arm, clearly mechanical, no face) resting beside a clean stainless steel test sink rig, a nearby monitor showing a simple abstract 3D wireframe shape (no legible text or numbers), soft warm golden-hour daylight through lab windows, calm hopeful mood, no text",
-      "ken_burns": "zoom_out"
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "この研究が示したのは、乱雑なシンクの中から"
+          ],
+          "start": 0.0,
+          "end": 3.06
+        },
+        {
+          "lines": [
+            "食器を見分け、つかみ、運ぶという、"
+          ],
+          "start": 3.32,
+          "end": 5.7
+        },
+        {
+          "lines": [
+            "人にとっては当たり前でもロボットには"
+          ],
+          "start": 5.85,
+          "end": 8.37
+        },
+        {
+          "lines": [
+            "難しかった作業を、環境ごとの学習をやり直す"
+          ],
+          "start": 8.52,
+          "end": 11.46
+        },
+        {
+          "lines": [
+            "ことなくこなせる知覚の仕組みです。"
+          ],
+          "start": 11.61,
+          "end": 13.99
+        },
+        {
+          "lines": [
+            "まだ実験室と実機での限られたタスクによる"
+          ],
+          "start": 14.14,
+          "end": 16.94
+        },
+        {
+          "lines": [
+            "実証であり、あらゆる家庭でそのまま使える"
+          ],
+          "start": 17.09,
+          "end": 19.89
+        },
+        {
+          "lines": [
+            "ようになるまでには、さらなる検証が必要だと"
+          ],
+          "start": 20.04,
+          "end": 22.98
+        },
+        {
+          "lines": [
+            "考えられます。それでも、山積みの食器を"
+          ],
+          "start": 23.13,
+          "end": 25.79
+        },
+        {
+          "lines": [
+            "見てため息をつく夜が、いつか当たり前でなく"
+          ],
+          "start": 25.94,
+          "end": 28.88
+        },
+        {
+          "lines": [
+            "なるとしたら——科学がもたらす本当の価値は、"
+          ],
+          "start": 29.03,
+          "end": 32.11
+        },
+        {
+          "lines": [
+            "そんな小さな安心の積み重ねにあるのかもしれません。"
+          ],
+          "start": 32.26,
+          "end": 35.76
+        },
+        {
+          "lines": [
+            "この研究の詳細が知りたい方は、"
+          ],
+          "start": 35.91,
+          "end": 38.01
+        },
+        {
+          "lines": [
+            "概要欄をご確認ください。次はどんな研究が、"
+          ],
+          "start": 38.16,
+          "end": 41.1
+        },
+        {
+          "lines": [
+            "私たちの暮らしを軽くしてくれるのでしょうか。"
+          ],
+          "start": 41.25,
+          "end": 44.33
+        },
+        {
+          "lines": [
+            "その瞬間をこれからも一緒に見つけていきたい方は、"
+          ],
+          "start": 44.48,
+          "end": 47.84
+        },
+        {
+          "lines": [
+            "ぜひチャンネル登録してお待ちください。"
+          ],
+          "start": 47.99,
+          "end": 50.65
+        }
+      ]
     }
   ],
   "shorts": [
