@@ -2177,10 +2177,11 @@
         "age": 38,
         "job": "IT企業勤務（共働き・2児の父）"
       },
-      "status": "available",
+      "status": "used",
       "considered_at": "2026-08-28",
       "transformation_comparison": "市販の食洗機は手動で食器をセットする必要があり、家庭用ロボットも床掃除に限られますが、本研究は追加学習なしで乱雑なシンクから食器を認識し食洗機へ移送する点が本質的に新しいです。",
-      "rescored_at": "2026-08-29"
+      "rescored_at": "2026-08-29",
+      "used_in": "kl008"
     },
     {
       "paperId": "2504329e0b475e5a6d5ee784a31d6732ecea80cf",
@@ -11279,6 +11280,6 @@
       "rescored_at": "2026-08-29"
     }
   ],
-  "last_updated": "2026-08-29",
+  "last_updated": "2026-08-30",
   "total_shortlist": 353
 }

@@ -280,8 +280,38 @@
       },
       "hook_idea": "もし明日、突然声を失ったら——大切な人に『ありがとう』とどう伝えますか？脳の信号を読み取るAIが、わずか1年で「日常で使える正確さ」まで進化しています。",
       "notes": "STAGE4スコア4.75でmedical_supportカテゴリ最上位（2026-08-28〜29に実施したtransformation_score採点ロジック改修後の再選定で確定）。選定経緯: kl001〜006一巡後、topics_shortlist.jsonの上位候補が「査読済みだが地味な改善」（転倒検知精度・エクソスケルトン効率改善等）に偏っているとユーザー指摘があり、query_vocabulary.jsonに野心的クエリを追加してSTAGE1〜4をカテゴリ横断で再実行した。さらに別セッションでtransformation_scoreの採点自体に「現在の市販品との比較なしに満点をつけてしまう」バグが発覚（例: home_robotの遠隔操作ロボットが、スマホでの遠隔操作は既にロボット掃除機で一般的にも関わらず満点評価）。kl_paper_interest_score.pyのtransformation_score判定にGoogle Search groundingを追加し「市販品と比較して何が本当に新しいか」を明記させる改修を行った上で再採点し、本エピソードを含む結果を確定した（詳細はCLAUDE.md STAGE4節・HANDOFF_stage4_scoring.md参照）。本エピソードは改修後も最高スコア（4.75）を維持しており、既存の視線入力・スイッチ式意思伝達装置（毎分5〜10語）との比較でも「脳信号から直接、毎分32〜62語を97.5%の正確さで復元」という違いが明確なため、真に変革的と判断。2本の論文はいずれも同じBrainGate研究コンソーシアム（Stanford/UC Davis）による音声BCI研究で、2023年のNature論文（毎分62語の音声デコード実証。ただし12.5万語語彙での単語誤り率23.8%）から2024年のNEJM論文（30分のキャリブレーションで正確さ97.5%、毎分約32語で248時間超の実会話利用）へと『わずか1年での進化』を遂げた点をストーリーの軸にする。進化したのは速度ではなく“正確さと実用性”である点に注意（2024年の毎分32語は2023年の毎分62語より遅い）。kl003（非侵襲的ECoG BCIでのカーソル操作）ともテーマがBCIで近いが、本エピソードは『声を取り戻す』という全く異なる能力・感情的インパクトを扱うため差別化は可能と判断。"
+    },
+    {
+      "episode_id": "kl008",
+      "status": "confirmed",
+      "title": "乱雑なキッチンを片付けるロボットの目",
+      "format": "single_paper",
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "references": [
+        {
+          "title": "Kitchen robotic manipulation utilizing foundation models",
+          "authors": [
+            "Myung-Hwan Jeon",
+            "Sankalp Yamsani",
+            "Joohyung Kim"
+          ],
+          "year": 2026,
+          "venue": "Intelligent Service Robotics",
+          "doi": "10.1007/s11370-026-00749-8",
+          "is_preprint": false
+        }
+      ],
+      "protagonist": {
+        "name": "佐藤 裕樹",
+        "age": 38,
+        "job": "IT企業勤務（共働き・2児の父）",
+        "gender": "male"
+      },
+      "hook_idea": "「疲れて帰った夜、シンクに溜まった食器を見てぐったりしていませんか？」",
+      "notes": "STAGE4スコア4.75でhome_robotカテゴリ最上位（2026-08-29改訂版のtransformation_score採点＝市場に既にある製品との比較を必須化した後の再スコア）。同カテゴリ最高スコアだった「Adaptive Vision-Language-Action Models for Generalizable Robotic Manipulation」（AIRC 2026）はSTAGE2で著者が短期間に無関係な複数分野の論文を量産している信頼性懸念（flag）が付いていたため除外し、次点のこちらを採用した。kl001以来home_robotカテゴリは未使用（kl002〜007はwork/medical_support/mobility/aging_care/disaster_safety/medical_supportの順）だったためローテーション上も適切。市販の食洗機（手動セット必須）・家庭用ロボット（床掃除止まり）との比較で「追加学習なしで乱雑なシンクから食器を認識し食洗機へ移送」という本質的な新規性を明確化した上でtransformation_score=5と判定されている（shortlistのtransformation_comparison参照）。実機デモで89.12%の精度（20シーンのキッチンベンチマーク、ADI指標）。"
     }
   ],
-  "total_topics": 7,
-  "last_updated": "2026-08-29"
+  "total_topics": 8,
+  "last_updated": "2026-08-30"
 }
