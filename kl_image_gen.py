@@ -110,6 +110,13 @@ def composite_thumbnail_text(image_path: Path, headline: str, sub: str = "") -> 
         sub_size = int(h * 0.06)
         font_sub = ImageFont.truetype(str(FONT_MEDIUM), sub_size)
         sub_stroke = max(2, sub_size // 12)
+        while (
+            draw.textbbox((0, 0), sub, font=font_sub, stroke_width=sub_stroke)[2] > w - margin_x * 2
+            and sub_size > 24
+        ):
+            sub_size -= 2
+            font_sub = ImageFont.truetype(str(FONT_MEDIUM), sub_size)
+            sub_stroke = max(2, sub_size // 12)
         sy = h - int(band_h * 0.5) - sub_size // 2
         draw.text(
             (margin_x, sy), sub, font=font_sub,
