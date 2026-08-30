@@ -716,6 +716,22 @@ STEP9に記載のテロップ不具合（単語途中分割・一瞬で消える
 （kl001制作時に実際に発生）。テロップの見た目を変更する際は両ファイルを
 同時に修正すること。**
 
+**動画の確認が済んだら、`kl_finalize.py` を再実行して完成動画をGoogle Driveへ
+同期する（2026-08-30追加）:**
+
+```bash
+python3 kl_finalize.py --episode kl{NNN}
+```
+
+**このSTEPの実行を忘れないこと。** `kl_video_gen.py`の出力
+（`~/Desktop/kagaku-life/output/kl{NNN}.mp4`・`kl{NNN}_shorts.mp4`）は
+ローカルのDesktopに書き出されるだけで、STEP11で行ったDrive同期には含まれて
+いない（STEP11時点ではまだ動画ファイルが存在しないため）。`/kl-upload`
+（`kl_sns_up.py`）はGoogle Drive `Kagaku-Life/KL{NNN}/output/`から動画を
+読むため、ここでfinalizeを再実行しておかないと、後日`/kl-upload`実行時に
+「本編動画が見つかりません」で失敗し、その場で`kl_finalize.py`を慌てて
+再実行する羽目になる（kl007・kl008で実際に2回連続発生した）。
+
 ---
 
 ## STEP 13 — topics_queue.json / topics_shortlist.json を更新する
