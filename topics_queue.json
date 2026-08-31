@@ -310,8 +310,41 @@
       },
       "hook_idea": "「疲れて帰った夜、シンクに溜まった食器を見てぐったりしていませんか？」",
       "notes": "STAGE4スコア4.75でhome_robotカテゴリ最上位（2026-08-29改訂版のtransformation_score採点＝市場に既にある製品との比較を必須化した後の再スコア）。同カテゴリ最高スコアだった「Adaptive Vision-Language-Action Models for Generalizable Robotic Manipulation」（AIRC 2026）はSTAGE2で著者が短期間に無関係な複数分野の論文を量産している信頼性懸念（flag）が付いていたため除外し、次点のこちらを採用した。kl001以来home_robotカテゴリは未使用（kl002〜007はwork/medical_support/mobility/aging_care/disaster_safety/medical_supportの順）だったためローテーション上も適切。市販の食洗機（手動セット必須）・家庭用ロボット（床掃除止まり）との比較で「追加学習なしで乱雑なシンクから食器を認識し食洗機へ移送」という本質的な新規性を明確化した上でtransformation_score=5と判定されている（shortlistのtransformation_comparison参照）。実機デモで89.12%の精度（20シーンのキッチンベンチマーク、ADI指標）。"
+    },
+    {
+      "episode_id": "kl009",
+      "status": "confirmed",
+      "title": "自分の意思で曲がる義足：骨と神経に直接つながるプロテーゼが「自分の身体」を取り戻す",
+      "format": "single_paper",
+      "category": "mobility",
+      "category_label": "モビリティ・身体拡張",
+      "references": [
+        {
+          "title": "Design and evaluation of a bone-anchored, neurally-controlled knee prosthesis",
+          "authors": [
+            "John A. Mccullough",
+            "Daniel Levine",
+            "Tony Shu",
+            "R. Brånemark",
+            "Matthew J Carty"
+          ],
+          "year": 2026,
+          "venue": "medRxiv",
+          "doi": "10.1186/s12984-026-01921-y",
+          "is_preprint": true,
+          "lead_researcher": "R. Brånemark"
+        }
+      ],
+      "protagonist": {
+        "name": "高橋 健太",
+        "age": 42,
+        "job": "建築設計士",
+        "gender": "male"
+      },
+      "hook_idea": "自分の意思で曲がる足――もし義足が『機械』ではなく『自分の身体』になったら、暮らしはどう変わるでしょうか？",
+      "notes": "STAGE4スコア4.5でmobilityカテゴリ2位タイ（STEP2.5提示の6カテゴリ案からユーザーがSTAGE5で選択、2026-08-31）。直近2話（kl007=medical_support、kl008=home_robot）とは異なるカテゴリで、kl004（モビリティ、外付けの軽量アシストギア）とも切り口が対照的——kl004は「着脱式・外部から補助する道具」だったのに対し、本作は骨に直接固定（osseointegration）し残存筋の神経信号で制御する『身体と一体化するプロテーゼ』で、企画書の核心である『変革ポテンシャル』をより強く押し出せる。著者にR. Brånemark（骨固定式プロテーゼ・骨統合技術の第一人者、MIT Media Lab系研究の実績で著名）を含み、medRxivのプレプリントではあるものの著者所属・技術的検証の観点で信頼性シグナルは強いと判断（STAGE2の査読済み限定ルール撤回方針に基づく）。査読前である旨は概要欄で開示し、ナレーションでは『まだ研究段階』等の一般的な表現でヘッジする。"
     }
   ],
-  "total_topics": 8,
-  "last_updated": "2026-08-30"
+  "total_topics": 9,
+  "last_updated": "2026-08-31"
 }
