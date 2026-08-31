@@ -771,11 +771,12 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
         for i, (scene, offset, dur) in enumerate(zip(scenes, offsets, durations)):
             t_start = offset + NARR_DELAY
             t_end = offset + dur
+            telop_text = scene.get("telop_text", scene["narration"])
             tf = tmp / f"telop_{idx}.txt"
-            tf.write_text(scene["narration"].replace("\r", ""), encoding="utf-8")
+            tf.write_text(telop_text.replace("\r", ""), encoding="utf-8")
             enable = f"between(t\\,{t_start:.2f}\\,{t_end:.2f})"
             out = f"dv{idx}"
-            fs = _fit_font_size(scene["narration"], FONT_REGULAR, SHORTS_TELOP_FONTSIZE, int(SHORTS_W * 0.92))
+            fs = _fit_font_size(telop_text, FONT_REGULAR, SHORTS_TELOP_FONTSIZE, int(SHORTS_W * 0.92))
             filter_parts.append(
                 f"[{prev}]drawtext=fontfile={font}:textfile={tf}:expansion=none"
                 f":fontcolor=white:fontsize={fs}"
