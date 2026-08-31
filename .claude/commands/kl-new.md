@@ -523,10 +523,14 @@ Agentプロンプトには `episodes/kl{NNN}.json` のパスと、以下のチ�
 
 `kl_tts_gen.py`は`narration_voices.persona_style`があればpersonaナレーター
 の全シーン（Shorts含む）にその指示を自動適用する（`synth()`の
-`style_override`引数）。書き込み後、1シーンだけ試作して
-（`python3 kl_tts_gen.py --episode kl{NNN} --scenes {hookまたはcontextのscene_id}`）
-`~/Desktop/kagaku-life/narration/`で聴き、意図通りかその場で確認してから
-STEP4以降（全シーンのTTS本生成はSTEP8）に進む。
+`style_override`引数）。
+
+**選んだ声＋演技指導の試聴確認は不要（2026-09-01改訂）。** 当初は
+`narration_voices`書き込み後に1シーンだけ試作して聴き、意図通りか
+確認してからSTEP4に進む運用だったが、これも人間確認を必須にする必要は
+ないと判断し撤廃した。書き込み後はそのままSTEP4に進んでよい（全シーンの
+TTS本生成はSTEP8）。生成結果に明らかな問題があれば、STEP5の制作確認書
+確認時か、STEP8生成後の実ファイルで気づいた時点で修正すればよい。
 
 ---
 
