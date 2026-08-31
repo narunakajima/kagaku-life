@@ -1,0 +1,230 @@
+{
+  "episode_id": "kl010",
+  "episode_title": "坂道が、怖くなくなる日",
+  "youtube_title": "着るだけで歩行の負担16.4%減?坂道でも効くソフト外骨格(2026年天津理工大学研究)",
+  "youtube_description": "坂道の多い町に住み、若い頃は苦にならなかった上り坂が年々おっくうになってきた元公務員・高橋茂さん(67歳)の視点から解説します。今回紹介するのは、中国・天津理工大学 電気工学・自動化学院と983部隊聯勤保障部隊病院の共同研究チームが開発した、股関節用の布製ソフト外骨格の研究です。2026年、学術誌『Medical & Biological Engineering & Computing』に発表されました。金属製の重厚な外骨格ではなく、腰と両太もものまわりに軽量なストラップとモーターユニットを取り付ける柔らかい構造で、人間の股関節が実際に伸展・屈曲するときの筋力特性を模した2種類のアシストトルクカーブを設計しています。布や紐特有の伸び縮みによる反応の遅れ(ヒステリシス)を補うため、アシストの前後にあらかじめ張力をかけておく「デュアルプリテンション機構」を導入し、さらにガウス重み付き移動平均アルゴリズムで歩行周期の予測精度を高めることで、外骨格の動きを実際の歩行によりリアルタイムで同期させています。6名の被験者を対象に、外骨格を装着した状態としていない状態で歩行中の正味代謝率を比較したところ、時速3kmの平地歩行で平均16.4%、4度の緩やかな上り坂でも平均14.1%の代謝コスト削減が確認されました。\n\n📚 参考文献:\nSun, L., Lu, W., Wang, W., Wang, H., Xue, M., & Zhang, X. (2026). A soft hip exoskeleton biomimetic assistance method incorporating dual-pretension and biomechanics-based force modeling. Medical & Biological Engineering & Computing.\nDOI: 10.1007/s11517-025-03508-6\nhttps://doi.org/10.1007/s11517-025-03508-6\n\n※本研究は6名の被験者による小規模な実験に基づいています。検証は主に室内の平地と緩やかな上り坂の条件で行われており、急な坂道や階段、日常のさまざまな不整地での効果はまだ十分に検証されていません。本研究は査読を経て学術誌に掲載されていますが、実用化には今後さらなる検証が必要と考えられます。動画では研究の主旨を誠実にお伝えすることを心がけていますが、今後の追加検証によって結果が変わる可能性があります。\n\n\n#ソフト外骨格 #歩行アシスト #ウェアラブルロボット #バイオメカニクス #天津理工大学 #ロボティクス #研究紹介 #くらしを変える科学 #幸せな未来のサイエンス",
+  "youtube_tags": [
+    "ソフト外骨格",
+    "歩行アシスト",
+    "ウェアラブルロボット",
+    "バイオメカニクス",
+    "股関節外骨格",
+    "天津理工大学",
+    "研究紹介",
+    "くらしを変える科学"
+  ],
+  "references": [
+    {
+      "title": "A soft hip exoskeleton biomimetic assistance method incorporating dual-pretension and biomechanics-based force modeling",
+      "authors": [
+        "Lei Sun",
+        "Wang Lu",
+        "Wei Wang",
+        "Hao Wang",
+        "Minmin Xue",
+        "Xinyi Zhang"
+      ],
+      "year": 2026,
+      "venue": "Medical & Biological Engineering & Computing",
+      "doi": "10.1007/s11517-025-03508-6",
+      "url": "https://doi.org/10.1007/s11517-025-03508-6",
+      "is_preprint": false,
+      "institution": "Tianjin University of Technology（中国）、983 Hospital of Joint Logistics Support Force, PLA（中国）の共同研究"
+    }
+  ],
+  "protagonist": {
+    "name": "高橋 茂",
+    "age": 67,
+    "job": "元公務員（趣味は散歩）",
+    "gender": "male"
+  },
+  "thumbnail_prompt": "a Japanese man in his late 60s (Takahashi Shigeru), gray hair, slim build, wearing casual outdoor walking clothes with a soft fabric hip exoskeleton (a lightweight fabric belt around the waist, thin straps wrapped around both thighs, and two compact motor units mounted at the hips on either side — entirely fabric-and-strap based, no rigid metal framework, no bulky robotic legs) visible around his waist and thighs, walking confidently up a steep residential slope in bright daytime sunlight with a relaxed, energetic smile, exactly ONE small flat corner graphic showing a single bar noticeably shorter than a faint reference bar behind it (representing reduced energy cost), placed in only a single corner of the frame, no larger than roughly one-eighth of the frame, kept plain and flat for legibility — the other three corners and the rest of the background must remain completely plain with no graphic, chart, or icon of any kind, do not repeat or duplicate this graphic anywhere else in the image, no cane, no walking stick, no walker, no mobility aid, absolutely no text, no numerals, 16:9",
+  "thumbnail_headline": "坂道が、怖くなくなる",
+  "thumbnail_subcopy": "着るだけで歩行の負担16.4%減 ソフト外骨格(天津理工大学・2026)",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "坂道が、怖くなくなる?",
+      "image_prompt": "In a bright entryway of a Japanese house in the morning, a Japanese man in his late 60s (Takahashi Shigeru), gray hair, slim build, wearing casual outdoor walking clothes with a soft fabric hip exoskeleton (a lightweight fabric belt around the waist, thin straps wrapped around both thighs, and two compact motor units mounted at the hips on either side — entirely fabric-and-strap based, no rigid metal framework, no bulky robotic legs) visible around his waist and thighs, tying his shoes with a relaxed, energetic expression, about to step outside, soft morning daylight coming through the door (not night, clearly bright dawn light), no cane, no walking stick, no walker, no mobility aid, no text",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "あの坂も、すいすい上れる",
+      "image_prompt": "On a steep uphill residential street in bright daytime sunlight, a Japanese man in his late 60s (Takahashi Shigeru), gray hair, slim build, wearing casual outdoor walking clothes with a soft fabric hip exoskeleton (a lightweight fabric belt around the waist, thin straps wrapped around both thighs, and two compact motor units mounted at the hips on either side — entirely fabric-and-strap based, no rigid metal framework, no bulky robotic legs) visible around his waist and thighs, walking briskly uphill with a relaxed, unstrained expression, no cane, no walking stick, no walker, no mobility aid, no text",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "行き先も、少しずつ広がる",
+      "image_prompt": "On a long stone stairway leading up to a quiet Japanese shrine, surrounded by green trees, bright daytime sunlight, a Japanese man in his late 60s (Takahashi Shigeru), gray hair, slim build, wearing casual outdoor walking clothes with a soft fabric hip exoskeleton (a lightweight fabric belt around the waist, thin straps wrapped around both thighs, and two compact motor units mounted at the hips on either side — entirely fabric-and-strap based, no rigid metal framework, no bulky robotic legs) visible around his waist and thighs, climbing the stone steps with a content, relaxed smile, enjoying the scenery, no cane, no walking stick, no walker, no mobility aid, no text",
+      "ken_burns": "pan_zoom_out"
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 4,
+      "narration": "もし、坂道が怖くなくなったら?",
+      "image_prompt": "Portrait close-up, head and shoulders only, in a softly lit Japanese-style room in the evening, a Japanese man in his late 60s (Takahashi Shigeru), gray hair, slim build, sitting calmly near a window, looking outside with a thoughtful, hopeful expression, soft warm evening interior lighting, dusk sky faintly visible through the window, not night, no legs or lower body visible in the frame at all — face and upper torso only, no cane, no walking stick, no walker, no mobility aid, no text, single unified scene (not a split-panel or diptych)",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 5,
+      "type": "hook",
+      "narrator": "persona",
+      "duration_seconds": 23,
+      "narration": "高橋茂、67歳。長年勤めた市役所を定年退職してからは、毎日の散歩が何よりの楽しみです。ですが最近、少し坂道にさしかかるだけで息が切れるようになり、以前ほど遠くまで歩くのがおっくうに感じることが増えてきました。",
+      "image_prompt": "On a residential street lined with houses on a gentle slope, bright daytime sunlight, a Japanese man in his late 60s (Takahashi Shigeru), gray hair, slim build, wearing simple casual walking clothes, standing at the bottom of the uphill street looking up at it with a calm but slightly wary expression, no cane, no walking stick, no walker, no mobility aid, no text, exactly one person in the entire scene, no duplicate, mirrored, or double figures.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 6,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 54,
+      "narration": "私の暮らす町は、坂道の多いところです。若い頃は苦にもならなかった上り坂が、今ではひと苦労になりました。少し歩くだけで息が上がり、途中で何度も立ち止まってしまいます。買い物帰りの坂道は特につらく、荷物を提げて上りきる頃には、汗だくで足も重くなっています。以前は毎日1万歩ほど歩けていたのに、この頃はその半分も歩けない日が増えました。そのうち、坂のある方には自然と足が向かなくなり、気づけば平らな道ばかりを選ぶようになっていました。好きだった散歩のコースも、いつのまにか随分と狭くなってしまいました。",
+      "image_prompt": "On a steep uphill residential street in bright daytime sunlight, a Japanese man in his late 60s (Takahashi Shigeru), gray hair, slim build, wearing simple casual clothes, carrying a shopping bag, pausing halfway up the slope with a hand on his knee, visibly out of breath, a strained, tired expression, sweat visible on his brow, no cane, no walking stick, no walker, no mobility aid, no text",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 7,
+      "type": "citation",
+      "narrator": "research",
+      "duration_seconds": 41,
+      "narration": "そんな高橋さんのような悩みに向き合っているのが、中国・天津理工大学の電気工学・自動化学院です。ウェアラブルロボティクスの研究を続けてきたこの研究チームが、983部隊聯勤保障部隊病院との共同研究として、2026年、学術誌『メディカル・アンド・バイオロジカル・エンジニアリング・アンド・コンピューティング』に、歩行をサポートする股関節用のソフト外骨格に関する研究成果を発表しました。",
+      "image_prompt": "An establishing exterior view of a modern biomechanical engineering research building on a Chinese university campus, contemporary architecture, bright daytime sunlight, through large windows a glimpse of a gait-analysis lab inside with a treadmill and monitors showing abstract waveform lines (no readable text or numbers), no people in close-up, no text",
+      "ken_burns": "zoom_out"
+    },
+    {
+      "scene_id": 8,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 85,
+      "narration": "開発されたのは、金属でできた重たい外骨格ではなく、腰と両太もものまわりに軽量なストラップとモーターユニットを取り付ける、布製の柔らかい「ソフト外骨格」です。重い金属フレームを使わないことで、着脱のしやすさと動きやすさを両立させています。人間の股関節が実際に伸びたり曲がったりするときの筋力の特性を模した、伸展用と屈曲用、2種類のアシストトルクカーブを設計しました。ただ、布や紐は伸び縮みするため、力が実際に伝わるまでにわずかな遅れが生じてしまいます。そこで研究チームは、アシストの前後にあらかじめ張力をかけておく「デュアルプリテンション機構」を導入し、この遅れを補正しました。さらに、直近の歩き方のデータにより多くの重みをつけて処理する計算方法を取り入れることで、今どのタイミングで足を踏み出しているかをより正確に予測し、外骨格の動きを実際の歩行にリアルタイムで同期させています。",
+      "image_prompt": "In a research lab with bright clinical daylight through large windows, a Chinese male test subject in athletic wear standing on a treadmill, wearing a soft fabric hip exoskeleton (a lightweight fabric belt around the waist, thin straps wrapped around both thighs, and two compact motor units mounted at the hips on either side — entirely fabric-and-strap based, no rigid metal framework, no bulky robotic legs), a Chinese male researcher in a white lab coat kneeling beside him adjusting one of the thigh straps, a small flat corner graphic showing a simple diagram of two curved torque-curve lines, no larger than roughly one-eighth of the frame, kept plain, absolutely no text or numerals",
+      "ken_burns": "pan_zoom_out"
+    },
+    {
+      "scene_id": 9,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 60,
+      "narration": "この仕組みで歩行の負担がどれだけ減るのかを確かめるため、6人の被験者を対象にした実験が行われました。外骨格を装着した状態としていない状態で、時速3キロほどの平地歩行と、4度の緩やかな上り坂を歩いてもらい、動作解析用のカメラとセンサーで関節の動きを記録しながら、体がどれだけエネルギーを消費しているかを示す代謝コストを比較しました。その結果、平地では代謝コストが平均16.4パーセント減少し、緩やかな上り坂でも14.1パーセント減少することが確認されました。歩行のタイミングをより正確に捉えられるようになったことで、従来のアシスト手法と比べても、大きな省エネ効果が得られたとしています。",
+      "image_prompt": "In a research lab with bright clinical daylight, a Chinese male test subject on a treadmill wearing a soft fabric hip exoskeleton (a lightweight fabric belt around the waist, thin straps wrapped around both thighs, and two compact motor units mounted at the hips on either side — entirely fabric-and-strap based, no rigid metal framework, no bulky robotic legs) and a clear plastic respiratory mask connected by a tube to a portable metabolic analyzer device, walking at a steady pace, a Chinese male researcher in a white lab coat standing nearby monitoring a laptop screen showing abstract waveform lines (no readable text or numbers), focused, professional atmosphere, no text",
+      "ken_burns": "pan_zoom_out"
+    },
+    {
+      "scene_id": 10,
+      "type": "data",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 30,
+      "narration": "平地では16.4パーセント、上り坂でも14.1パーセントの代謝コスト削減です。坂道になっても効果が大きく薄れないことは、起伏のある道を歩く上で、心強い結果だといえます。ただし、この数字は6人の被験者から得られたもので、誰にでも同じ効果が出ると確かめられたわけではありません。",
+      "image_prompt": "Simple, clean, minimalist flat infographic comparing two measurements side by side, like a basic data visualization slide, NOT an artistic or abstract illustration. Left pair of bars, with the label \"平地(時速3km)\" placed above the pair: one taller plain flat bar in cool deep blue/teal labeled \"アシストなし\" below it, next to a shorter bar in warm coral/orange with \"16.4%減\" above it and \"アシストあり\" below it. Right pair of bars, with the label \"上り坂(4度)\" placed above the pair: one taller plain flat bar in cool deep blue/teal labeled \"アシストなし\" below it, next to a shorter bar in warm coral/orange with \"14.1%減\" above it and \"アシストあり\" below it. Bar heights represent relative metabolic cost, with the coral bars roughly 14-16 percent shorter than their paired blue bars. Plain flat background, no gradients, no texture, no decorative shapes, clean legible sans-serif Japanese text and numerals rendered accurately exactly as specified above. Do NOT add a title, heading, caption, legend, or axis of any kind beyond the exact labels specified above. Do not invent or add any other text, letters, or numbers beyond what is specified here",
+      "ken_burns": "static"
+    },
+    {
+      "scene_id": 11,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 9,
+      "narration": "もし、この外骨格が私の毎日にあったら——。縁側に座りながら、そんな想像をしてみます。",
+      "image_prompt": "In a quiet Japanese-style room with a wooden engawa veranda, soft afternoon daylight, a Japanese man in his late 60s (Takahashi Shigeru), gray hair, slim build, drawn small, sitting on the engawa looking out at the garden, head slightly tilted in thought, a classic comic-style thought bubble emerging from his head (a trail of small circles leading to a large cloud-shaped bubble), inside the bubble a small miniature scene depicting him confidently walking up a steep residential slope wearing a soft fabric hip exoskeleton (a lightweight fabric belt around the waist, thin straps wrapped around both thighs, and two compact motor units mounted at the hips on either side — entirely fabric-and-strap based, no rigid metal framework, no bulky robotic legs), no cane, no walking stick, no walker, no mobility aid, no text",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 12,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 21,
+      "narration": "朝、身支度のついでに、軽い布のベルトを腰と太もものまわりに巻きます。重さはほとんど感じません。靴紐を結び終える頃には、もう散歩に出かける準備ができています。迷わず、いつもの散歩道へ足を向けます。",
+      "image_prompt": "In a bright entryway of a Japanese house in the morning, a Japanese man in his late 60s (Takahashi Shigeru), gray hair, slim build, wearing casual outdoor walking clothes, fastening a soft fabric hip exoskeleton around his waist and thighs (lightweight fabric belt, thin straps wrapped around both thighs, two compact motor units mounted at the hips on either side, entirely fabric-and-strap based, no rigid metal framework), a relaxed, content expression, soft morning daylight coming through the door (not night, clearly bright dawn light), no cane, no walking stick, no walker, no mobility aid, no text",
+      "ken_burns": "zoom_in",
+      "badge_text": "幸せな未来を夢想中"
+    },
+    {
+      "scene_id": 13,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 16,
+      "narration": "あれほど息の切れたあの坂道も、今日は苦になりません。太もものあたりがふっと後押ししてくれるようで、呼吸も乱れないまま、気づけば上りきっています。",
+      "image_prompt": "On a steep uphill residential street in bright daytime sunlight, a Japanese man in his late 60s (Takahashi Shigeru), gray hair, slim build, wearing casual outdoor walking clothes with a soft fabric hip exoskeleton (a lightweight fabric belt around the waist, thin straps wrapped around both thighs, and two compact motor units mounted at the hips on either side — entirely fabric-and-strap based, no rigid metal framework, no bulky robotic legs) visible around his waist and thighs, walking up the slope with an easy, relaxed stride and a content smile, no visible strain, no cane, no walking stick, no walker, no mobility aid, no text",
+      "ken_burns": "zoom_in",
+      "badge_text": "幸せな未来を夢想中"
+    },
+    {
+      "scene_id": 14,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 21,
+      "narration": "休みの日は、少し足を延ばして、坂の続く神社の参道まで歩いてみます。険しい石段も怖くありません。汗ばむ心地よさだけを感じながら、参道の緑や、遠くに広がる街並みを、帰り道までゆっくり楽しんでいます。",
+      "image_prompt": "On a long stone stairway leading up to a quiet Japanese shrine surrounded by green trees, bright daytime sunlight, a Japanese man in his late 60s (Takahashi Shigeru), gray hair, slim build, wearing casual outdoor walking clothes with a soft fabric hip exoskeleton (a lightweight fabric belt around the waist, thin straps wrapped around both thighs, and two compact motor units mounted at the hips on either side — entirely fabric-and-strap based, no rigid metal framework, no bulky robotic legs) visible around his waist and thighs, pausing partway up the stairs looking back at the scenery below with a peaceful, satisfied smile, gentle breeze, no cane, no walking stick, no walker, no mobility aid, no text",
+      "ken_burns": "pan_zoom_out",
+      "badge_text": "幸せな未来を夢想中"
+    },
+    {
+      "scene_id": 15,
+      "type": "closing",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 75,
+      "narration": "この股関節用ソフト外骨格は、まだ6人による小規模な実験の段階です。検証も主に室内の平地と緩やかな坂道で行われており、急な坂道や階段、日常のさまざまな地形でどこまで効果があるかや、幅広い年代の人に同じ効果が得られるのかは、これから確かめられていくところです。それでも、着るだけで歩行の負担を減らせるこの技術の先には、坂道を気にせず外に出られる朝や、行き先を少しずつ広げられる休日のような、ささやかな暮らしの幸せがあります。行きたい場所へ歩いていきたい、というその人自身の気持ちはそのままに、踏み出す一歩をそっと後押しする。この技術は、そんな存在になっていくのかもしれません。詳しい研究内容が気になる方は、概要欄をご確認ください。次はどんな研究が、誰かの幸せな未来を運んでくるのでしょうか。その瞬間をこれからも一緒に見つけていきたい方は、ぜひチャンネル登録してお待ちください。",
+      "image_prompt": "A quiet research lab in the late afternoon, no people in the frame, a soft fabric hip exoskeleton device (lightweight fabric belt, thigh straps, and two compact motor units) resting neatly on a clean lab table, a nearby monitor showing a simple abstract waveform (no legible text or numbers), soft warm golden-hour daylight through lab windows, calm hopeful mood, no text",
+      "ken_burns": "zoom_in"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "hook_lines": [
+        "着るだけで",
+        "坂道が怖くなくなる?"
+      ],
+      "scenes": [
+        {
+          "narrator": "persona",
+          "narration": "息が切れて、坂道を避けるように",
+          "image_prompt": "On a steep uphill residential street, bright daytime sunlight, a Japanese man in his late 60s (Takahashi Shigeru), gray hair, slim build, wearing simple casual clothes, pausing halfway up the slope with a hand on his knee, visibly out of breath, a tired expression, composed for a vertical 9:16 frame with the main subject centered and nothing important near the left/right edges, no cane, no walking stick, no walker, no mobility aid, no text"
+        },
+        {
+          "narrator": "research",
+          "narration": "天津理工大学が開発した、布製のソフト外骨格",
+          "image_prompt": "Close-up of a Chinese male test subject in athletic wear wearing a soft fabric hip exoskeleton (a lightweight fabric belt around the waist, thin straps wrapped around both thighs, and two compact motor units mounted at the hips on either side — entirely fabric-and-strap based, no rigid metal framework, no bulky robotic legs), a Chinese male researcher in a white lab coat visible slightly in frame adjusting a thigh strap, bright clinical daylight, composed for a vertical 9:16 frame with the main subject centered and nothing important near the left/right edges, no text"
+        },
+        {
+          "narrator": "research",
+          "narration": "代謝コスト、坂道でも14.1%減",
+          "style": "chart",
+          "image_prompt": "Simple, clean, minimalist flat infographic for a vertical 9:16 frame: two plain flat bars side by side, one taller bar in cool deep blue/teal labeled below it \"アシストなし\", next to a shorter bar in warm coral/orange labeled above it \"14.1%減\" and below it \"アシストあり\", plain flat background, clean legible sans-serif Japanese text and numerals rendered accurately exactly as specified, do not add any other text or numbers"
+        },
+        {
+          "narrator": "persona",
+          "narration": "あの坂も、すいすい上れる",
+          "image_prompt": "On a steep uphill residential street in bright daytime sunlight, a Japanese man in his late 60s (Takahashi Shigeru), gray hair, slim build, wearing casual outdoor walking clothes with a soft fabric hip exoskeleton (a lightweight fabric belt around the waist, thin straps wrapped around both thighs, and two compact motor units mounted at the hips on either side — entirely fabric-and-strap based, no rigid metal framework, no bulky robotic legs) visible around his waist and thighs, walking briskly uphill with a relaxed, unstrained expression, composed for a vertical 9:16 frame with the main subject centered and nothing important near the left/right edges, no cane, no walking stick, no walker, no mobility aid, no text"
+        },
+        {
+          "narrator": "persona",
+          "narration": "散歩の行き先も、少しずつ広がっていく",
+          "image_prompt": "On a long stone stairway leading up to a quiet Japanese shrine surrounded by green trees, bright daytime sunlight, a Japanese man in his late 60s (Takahashi Shigeru), gray hair, slim build, wearing casual outdoor walking clothes with a soft fabric hip exoskeleton (a lightweight fabric belt around the waist, thin straps wrapped around both thighs, and two compact motor units mounted at the hips on either side — entirely fabric-and-strap based, no rigid metal framework, no bulky robotic legs) visible around his waist and thighs, climbing the stone steps with a content, relaxed smile, composed for a vertical 9:16 frame with the main subject centered and nothing important near the left/right edges, no cane, no walking stick, no walker, no mobility aid, no text"
+        },
+        {
+          "narrator": "persona",
+          "narration": "続きは本編でチェックしてみてください。",
+          "image_prompt": "a Japanese man in his late 60s (Takahashi Shigeru), gray hair, slim build, wearing simple casual outdoor clothing, smiling warmly and relaxed, standing on a quiet residential street with a gentle slope softly blurred in the background, bright daylight, composed for a vertical 9:16 frame with the main subject centered, no cane, no walking stick, no walker, no mobility aid, no text"
+        }
+      ]
+    }
+  ]
+}
