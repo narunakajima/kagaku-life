@@ -343,8 +343,42 @@
       },
       "hook_idea": "自分の意思で曲がる足――もし義足が『機械』ではなく『自分の身体』になったら、暮らしはどう変わるでしょうか？",
       "notes": "STAGE4スコア4.5でmobilityカテゴリ2位タイ（STEP2.5提示の6カテゴリ案からユーザーがSTAGE5で選択、2026-08-31）。直近2話（kl007=medical_support、kl008=home_robot）とは異なるカテゴリで、kl004（モビリティ、外付けの軽量アシストギア）とも切り口が対照的——kl004は「着脱式・外部から補助する道具」だったのに対し、本作は骨に直接固定（osseointegration）し残存筋の神経信号で制御する『身体と一体化するプロテーゼ』で、企画書の核心である『変革ポテンシャル』をより強く押し出せる。著者にR. Brånemark（骨固定式プロテーゼ・骨統合技術の第一人者、MIT Media Lab系研究の実績で著名）を含み、medRxivのプレプリントではあるものの著者所属・技術的検証の観点で信頼性シグナルは強いと判断（STAGE2の査読済み限定ルール撤回方針に基づく）。査読前である旨は概要欄で開示し、ナレーションでは『まだ研究段階』等の一般的な表現でヘッジする。 【2026-08-31追記】WebFetchで本文を直接確認したところ、medRxivプレプリント（2026年1月投稿）はその後2026年に本誌（Journal of NeuroEngineering and Rehabilitation、DOI 10.1186/s12984-026-01921-y＝正式出版のDOI）に査読を経て掲載されたことが判明。venue/is_preprintを訂正し、査読前開示は不要と判断。実施機関: MIT K. Lisa Yang Center for Bionics / MIT Media Lab（Hugh M. Herr研究室）、Integrum AB（スウェーデン、骨統合インプラント）、Brigham and Women's Hospital（外科）。単一被験者（60代男性、片側大腿切断、AMI＋eOPRA骨統合インプラント術後3年）のケーススタディ。定量結果: 歩行対称性指数0.93（神経制御）vs 0.59（従来のマイクロプロセッサ膝、Ottobock C-Leg）、階段昇降で従来機では不可能だった自然な『交互step-over-step』歩行を実現、静止立位での荷重対称性0.91 vs 0.77、身体所有感（embodiment）5項目すべてで有意に向上、本人談『自分の脚のように感じた』。限界: 単一被験者ケーススタディであることは概要欄で正直に開示する。"
+    },
+    {
+      "episode_id": "kl010",
+      "status": "confirmed",
+      "title": "坂道が怖くなくなる服：着るだけで歩行の代謝コストを16%減らすソフト外骨格",
+      "format": "single_paper",
+      "category": "mobility",
+      "category_label": "モビリティ・身体拡張",
+      "references": [
+        {
+          "title": "A soft hip exoskeleton biomimetic assistance method incorporating dual-pretension and biomechanics-based force modeling",
+          "authors": [
+            "Lei Sun",
+            "Wang Lu",
+            "Wei Wang",
+            "Hao Wang",
+            "Minmin Xue",
+            "Xinyi Zhang"
+          ],
+          "year": 2026,
+          "venue": "Medical & Biological Engineering & Computing",
+          "doi": "10.1007/s11517-025-03508-6",
+          "is_preprint": false,
+          "institution": "Tianjin University of Technology（中国）、983 Hospital of Joint Logistics Support Force, PLA（中国）の共同研究"
+        }
+      ],
+      "protagonist": {
+        "name": "高橋 茂",
+        "age": 67,
+        "job": "坂道の多い地域に住む元公務員（趣味は散歩）",
+        "gender": "male"
+      },
+      "hook_idea": "坂道や長距離の歩行、最近おっくうになっていませんか？もし『着るだけで歩行エネルギーを16％減らせる服』があったら、あなたの外出はどう変わるでしょうか？",
+      "notes": "STAGE4スコア4.4でmobilityカテゴリ上位（STEP2.5提示の6カテゴリ案から、当初③防災・安全（救助犬の嗅覚模倣ロボット）を検討したが、WebFetchで実際のアブストラクトを確認したところ「one of the first steps」という初期段階の概念実証で定量結果が皆無だったため、ユーザー判断で⑤モビリティに変更、2026-08-31）。kl004（外付け軽量アシストギア）・kl009（骨固定義足）に続き3回連続のモビリティカテゴリとなる点はSTEP2.5で明示したが、ユーザーが承知の上で選択。kl004・kl009とは異なる「ソフト外骨格（布製・柔軟構造）」という切り口で、査読済み論文（Medical & Biological Engineering & Computing、Springer）かつ実際に6名の被験者実験で3km/h歩行時16.4%・4度坂道14.1%の代謝コスト削減という具体的数値を持つ点が信頼性シグナルとして強い。WebFetch+Europe PMC APIで実際のアブストラクト全文を確認済み。"
     }
   ],
-  "total_topics": 9,
+  "total_topics": 10,
   "last_updated": "2026-08-31"
 }
