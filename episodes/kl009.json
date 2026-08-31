@@ -63,7 +63,11 @@
           "start": 0.16,
           "end": 2.38
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.48
+      }
     },
     {
       "scene_id": 2,
@@ -72,7 +76,7 @@
       "duration_seconds": 2,
       "narration": "現場の階段も、迷わず上れる",
       "image_prompt": "At a construction site with steel scaffolding, bright daytime sunlight, a Japanese man in his early 40s (Takahashi Kenta), short black hair, athletic build, wearing a hard hat and work vest, his trouser leg rolled up revealing a slender bionic prosthetic leg with no thigh socket: a small metal abutment protrudes directly from the skin at mid-thigh, connecting to a matte titanium-toned mechanical knee joint with a visible articulated hinge, and a slim black carbon-fiber shin leading to a simple foot module, climbing a steel scaffold staircase in a natural step-over-step alternating pattern, confident expression, no text",
-      "ken_burns": "pan_zoom_out",
+      "ken_burns": "zoom_in",
       "telop_cards": [
         {
           "lines": [
@@ -81,7 +85,11 @@
           "start": 0.0,
           "end": 2.46
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.45,
+        "y": 0.28
+      }
     },
     {
       "scene_id": 3,
@@ -90,7 +98,7 @@
       "duration_seconds": 2,
       "narration": "娘と、山道も歩ける休日",
       "image_prompt": "On a bright, sunny weekend hiking trail with an uneven dirt path and small rock steps, a Japanese man in his early 40s (Takahashi Kenta), short black hair, athletic build, wearing casual outdoor clothing with shorts revealing, on one leg, a slender bionic prosthetic leg with no thigh socket: a small metal abutment protrudes directly from the skin at mid-thigh, connecting to a matte titanium-toned mechanical knee joint with a visible articulated hinge, and a slim black carbon-fiber shin leading to a simple foot module, walking alongside his daughter (a Japanese girl about 11 years old, black hair in a ponytail, casual outdoor clothing), both smiling and chatting, bright daylight, no text",
-      "ken_burns": "zoom_out",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -117,7 +125,11 @@
           "start": 0.0,
           "end": 3.44
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.33,
+        "y": 0.32
+      }
     },
     {
       "scene_id": 5,
@@ -177,7 +189,11 @@
           "start": 20.36,
           "end": 22.01
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.42,
+        "y": 0.35
+      }
     },
     {
       "scene_id": 6,
@@ -186,7 +202,7 @@
       "duration_seconds": 64,
       "narration": "現場に立つ日は、まずソケットに脚を通すところから始まります。ぴったり締め付けないと、歩くたびに脚がズレて、皮膚がすれて痛むこともあります。長時間歩き回った日は、皮膚の赤みやすれが夜まで残ることも珍しくありません。足場を組んだ鉄骨階段では、事故の前のように片足ずつ交互に踏み出すことができず、いつも一段ごとに両足を揃えてから、次の段へ進みます。現場のみんなに合わせて動けるようにはなりましたが、正直、まだ慣れません。義足のおかげで仕事は続けられている。それでも、この脚は今も、自分の体の一部というより、毎朝つけ外しする「道具」のように感じています。",
       "image_prompt": "At a construction site, steel scaffold staircase, bright daytime sunlight, a Japanese man in his early 40s (Takahashi Kenta), short black hair, athletic build, wearing a hard hat and work vest, his trouser leg rolled up revealing a conventional prosthetic leg: a bulky matte gray/black carbon-fiber thigh socket wrapping the upper leg, connected to a mechanical microprocessor knee joint unit and a slim black carbon-fiber shin, carefully climbing the stairs by bringing both feet together on each step before advancing to the next (not alternating feet), a slightly strained, concentrating expression, other construction workers visible working in the background, no text",
-      "ken_burns": "pan_zoom_out",
+      "ken_burns": "zoom_in",
       "telop_cards": [
         {
           "lines": [
@@ -286,7 +302,11 @@
           "start": 44.72,
           "end": 46.37
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.56,
+        "y": 0.35
+      }
     },
     {
       "scene_id": 7,
@@ -381,7 +401,11 @@
           "start": 34.28,
           "end": 37.13
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 8,
@@ -390,7 +414,7 @@
       "duration_seconds": 59,
       "narration": "この研究が開発したのは、従来のソケット式とはまったく違う義足です。太ももの骨に金属製のインプラントを直接埋め込み、皮膚を貫通する接続部を通して、義足本体を骨に直接つなぎます。締め付けるソケットは、もう必要ありません。さらに、切断の際に伸筋と屈筋のペアを外科的に再建し、その筋肉に電極を埋め込みます。本人が膝を曲げよう、伸ばそうと思うと、その筋肉が実際に収縮し、電気信号を義足のモーターが読み取って関節を動かします。骨で体重を支え、筋肉の意思で動かす——義足を、道具ではなく体の続きとして設計し直す試みです。",
       "image_prompt": "In a research lab with bright clinical daylight through large windows, an American man in his 60s, short gray hair, athletic build, missing one leg above the knee, wearing athletic shorts that expose his upper thigh where a small metal abutment protrudes directly from the skin, connecting to a matte titanium-toned mechanical knee joint with a visible articulated hinge and a slim black carbon-fiber shin (no bulky socket), small sensor patches visible on the thigh muscle above the abutment, an American male researcher in a white lab coat kneeling beside him pointing at the connection point, a small flat corner graphic showing a simple diagram of a bone with a small anchor point, no larger than roughly one-eighth of the frame, kept plain, absolutely no text or numerals",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "reference_index": 0,
       "telop_cards": [
         {
@@ -493,7 +517,7 @@
       "duration_seconds": 91,
       "narration": "この技術を実際に使っているのは、太ももから片脚を失った60代の男性です。筋肉を再建する手術と、骨にインプラントを埋め込む手術を受けて、3年が経っています。目を覆った状態でも、本人の意思だけで狙った角度に膝を動かせることが確認されました。視覚に頼らなくても、自分の脚がどこにあるかを感じ取れている。そう考えられる結果です。ふだん使っている市販のマイクロプロセッサ義足と、この骨固定・神経制御義足を、同じ人物で比べる実験が行われました。歩行時の左右対称性を示す指数は、従来の義足で0.59だったのに対し、神経制御義足では0.93まで向上しています。階段の上り方にも大きな違いが出ました。従来の義足では、両足を同じ段に揃えてから進む昇り方しかできませんでしたが、神経制御義足では、手すりを使いながらではあるものの、片足ずつ交互に踏み出す昇り方が初めてできるようになりました。屋外にある26段の階段でも、同じ結果が確認されています。本人は「自分の脚のように感じた」と話しています。",
       "image_prompt": "Outdoors near a modern research building, a wide concrete staircase in bright daytime sunlight, an American man in his 60s, short gray hair, athletic build, missing one leg above the knee, wearing a slender bionic prosthetic leg with no thigh socket: a small metal abutment protrudes directly from the skin at mid-thigh, connecting to a matte titanium-toned mechanical knee joint with a visible articulated hinge, and a slim black carbon-fiber shin leading to a simple foot module, climbing the stairs in a natural step-over-step alternating pattern, an American researcher in a white lab coat standing nearby holding a small handheld tablet-like device with an abstract waveform on its screen (no readable text or numbers), a confident, satisfied expression on the man's face, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "reference_index": 0,
       "telop_cards": [
         {
@@ -748,7 +772,8 @@
       "duration_seconds": 11,
       "narration": "もし、この脚が「自分の脚」になったら——。リビングの椅子に腰かけながら、そんな想像をしてみます。",
       "image_prompt": "In a cozy living room in the evening, a Japanese man in his early 40s (Takahashi Kenta), short black hair, athletic build, drawn small, sitting in a chair by a window, head slightly tilted in thought, a classic comic-style thought bubble emerging from his head (a trail of small circles leading to a large cloud-shaped bubble), inside the bubble a small miniature scene depicting him confidently climbing a steel scaffold staircase in a natural alternating stride, soft warm evening interior lighting, dusk sky faintly visible through the window, not night, no text",
-      "ken_burns": "zoom_out",
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {"x": 0.28, "y": 0.49},
       "telop_cards": [
         {
           "lines": [
@@ -804,7 +829,11 @@
           "start": 6.67,
           "end": 10.12
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.64,
+        "y": 0.32
+      }
     },
     {
       "scene_id": 13,
@@ -837,7 +866,11 @@
           "start": 8.36,
           "end": 11.51
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.28
+      }
     },
     {
       "scene_id": 14,
@@ -1008,7 +1041,11 @@
           "start": 51.28,
           "end": 54.13
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.49,
+        "y": 0.68
+      }
     }
   ],
   "shorts": [
