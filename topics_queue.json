@@ -377,8 +377,36 @@
       },
       "hook_idea": "坂道や長距離の歩行、最近おっくうになっていませんか？もし『着るだけで歩行エネルギーを16％減らせる服』があったら、あなたの外出はどう変わるでしょうか？",
       "notes": "STAGE4スコア4.4でmobilityカテゴリ上位（STEP2.5提示の6カテゴリ案から、当初③防災・安全（救助犬の嗅覚模倣ロボット）を検討したが、WebFetchで実際のアブストラクトを確認したところ「one of the first steps」という初期段階の概念実証で定量結果が皆無だったため、ユーザー判断で⑤モビリティに変更、2026-08-31）。kl004（外付け軽量アシストギア）・kl009（骨固定義足）に続き3回連続のモビリティカテゴリとなる点はSTEP2.5で明示したが、ユーザーが承知の上で選択。kl004・kl009とは異なる「ソフト外骨格（布製・柔軟構造）」という切り口で、査読済み論文（Medical & Biological Engineering & Computing、Springer）かつ実際に6名の被験者実験で3km/h歩行時16.4%・4度坂道14.1%の代謝コスト削減という具体的数値を持つ点が信頼性シグナルとして強い。WebFetch+Europe PMC APIで実際のアブストラクト全文を確認済み。"
+    },
+    {
+      "episode_id": "kl011",
+      "status": "confirmed",
+      "title": "「片付けて」と言うだけで：見たことのない物でも掴んで片付けるロボットアームの衝撃",
+      "format": "single_paper",
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "references": [
+        {
+          "title": "Adaptive Vision-Language-Action Models for Generalizable Robotic Manipulation in Unstructured Environments",
+          "authors": [
+            "Saher Elsayed"
+          ],
+          "year": 2026,
+          "venue": "2026 7th International Conference on Artificial Intelligence, Robotics, and Control (AIRC)",
+          "doi": "10.1109/AIRC69745.2026.11631388",
+          "is_preprint": false
+        }
+      ],
+      "protagonist": {
+        "name": "佐藤 美咲",
+        "age": 34,
+        "job": "IT企業勤務（共働き・2児の母）",
+        "gender": "female"
+      },
+      "hook_idea": "「ルンバを動かすために、まず床のおもちゃを片付ける」…そんな不毛な家事、そろそろロボットに代わってもらいませんか？",
+      "notes": "STAGE0: 6カテゴリとも在庫十分（aging_care17/disaster_safety38/home_robot30/medical_support145/mobility30/work79件）のためSTAGE1新規収集は全カテゴリスキップし、既存topics_shortlist.jsonから選定。STAGE2.5でカテゴリごとに1案ずつ提示した中からユーザーがhome_robot案を選択（2026-09-01）。mobilityはkl009・kl010で2回連続使用済みのため今回は選択肢から除外を推奨し、採用しなかった。採用論文はAIRC 2026（IEEE、査読済み・非プレプリント）の単著論文。transformation_comparison: 現在の市販ロボット掃除機は床の吸引・障害物回避にとどまるが、本研究は未知の物体であっても言葉の指示通り自律で「掴んで片付ける」汎用アーム制御を15Hzで実現した点が決定的に新しい（STAGE4のtransformation_score判定時に市販品比較済み、shortlist記載の通り）。著者Saher ElsayedはSemantic Scholar APIが終始429（レート制限）で詳細取得不可だったため、WebSearchでResearchGateプロフィールを確認し単著・ペンシルベニア大学電気システム工学科の修士課程学生と判明（lead_researcher/institutionはSTEP2のepisode JSON生成時にnarrationでは使わず所属機関名のみimage_prompt等に反映する）。"
     }
   ],
-  "total_topics": 10,
+  "total_topics": 11,
   "last_updated": "2026-09-01"
 }
