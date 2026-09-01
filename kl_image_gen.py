@@ -340,6 +340,73 @@ def _correction_note(issues: list, allow_text: bool = False) -> str:
     return " ".join(notes)
 
 
+# ── シーン間の画風ドリフト検出（2026-09-01追加） ──────────────────────────
+# 上記のQA_PROMPT_TEMPLATEによる単体チェックは「このシーンが文章で書かれた
+# ハウススタイル（BASE_CONTEXT等）に合っているか」しか見ていないため、各シーンが
+# 個別には「物語調イラストらしい」条件を満たしていても、エピソード内の他シーンと
+# 比べて質感（グレインの強さ・線の太さ・陰影のつけ方・彩度）がズレているケースを
+# 見逃す（前回制作で実際に発生）。同一エピソードの物語シーン画像を横並びでGemini
+# Visionに渡し、相対比較で外れ値を検出する専用チェックを追加する。
+STYLE_DRIFT_PROMPT_TEMPLATE = """You are a quality-control reviewer checking VISUAL CONSISTENCY across a set of
+illustrations from the same Japanese YouTube episode. All images below are supposed to
+share one consistent "house style" — a warm editorial illustration touch (soft grain/
+noise texture, gentle gradient shading, muted desaturated palette, similar line weight).
+
+Do NOT evaluate whether each image individually matches that style description in the
+abstract — evaluate whether they are RENDERED CONSISTENTLY WITH EACH OTHER. Compare:
+- grain/noise texture density
+- line weight / edge sharpness
+- shading approach (soft gradient vs flatter cel-shading vs more painterly/photoreal)
+- color saturation and warmth
+- overall rendering technique
+
+Each image is preceded by its label (e.g. "S05"). Identify any image(s) whose rendering
+touch clearly stands out from the consistent majority, even if that image looks fine on
+its own. Minor scene-to-scene variation in lighting/color due to different times of day
+or settings is normal and should NOT be flagged — only flag a genuinely different
+rendering technique/touch.
+
+Images to compare: {labels}
+
+Respond with ONLY a JSON object, no other text, in this exact format:
+{{"consistent": true, "outliers": []}}
+or
+{{"consistent": false, "outliers": [{{"label": "S05", "reason": "brief description of how its touch differs from the rest"}}]}}
+"""
+
+MIN_IMAGES_FOR_STYLE_DRIFT_CHECK = 3  # 比較対象が少なすぎると誤検知しやすいため
+
+
+def check_style_drift(client: genai.Client, entries: list) -> dict:
+    """entries: [{"label": str, "path": Path}, ...]（物語調イラストのみ、dataタイプは
+    意図的にトーンが異なるため対象外）。戻り値: {label: reason} の外れ値マップ。"""
+    if len(entries) < MIN_IMAGES_FOR_STYLE_DRIFT_CHECK:
+        return {}
+    try:
+        from PIL import Image
+        labels = [e["label"] for e in entries]
+        prompt = STYLE_DRIFT_PROMPT_TEMPLATE.format(labels=", ".join(labels))
+        contents = [prompt]
+        for e in entries:
+            contents.append(f"Image labeled {e['label']}:")
+            contents.append(Image.open(e["path"]))
+        response = client.models.generate_content(model=QA_MODEL, contents=contents)
+        text = response.text.strip()
+        if text.startswith("```"):
+            text = re.sub(r"^```(?:json)?\s*", "", text)
+            text = re.sub(r"\s*```$", "", text)
+        result = json.loads(text)
+        outliers = {}
+        for o in result.get("outliers", []):
+            label = o.get("label")
+            if label:
+                outliers[label] = o.get("reason", "")
+        return outliers
+    except Exception as e:
+        print(f"⚠️ 画風ドリフトチェックに失敗（スキップ）: {e}", file=sys.stderr)
+        return {}
+
+
 def build_retry_prompt(base_prompt: str, issues: list, allow_text: bool = False) -> str:
     note = _correction_note(issues, allow_text=allow_text)
     prompt = base_prompt
@@ -438,6 +505,49 @@ def main():
                                   reference_image_path=ref_path, allow_text=(scene["type"] == "data"))
             r["name"] = out_path.name
             qa_results.append(r)
+
+    if not args.thumbnail_only and not shorts_only and not args.no_qa:
+        narrative_entries = []
+        for scene in ep["scenes"]:
+            if scene["type"] == "data":
+                continue
+            p = out_dir / f"S{scene['scene_id']:02d}.png"
+            if p.exists():
+                narrative_entries.append({"label": p.stem, "path": p, "scene": scene})
+
+        outliers = check_style_drift(client, narrative_entries)
+        if outliers:
+            print(f"\n⚠️ 画風ドリフト検出: {len(outliers)}件 " +
+                  "; ".join(f"{label}: {reason}" for label, reason in outliers.items()))
+            ok_entries = [e for e in narrative_entries if e["label"] not in outliers]
+            ref_entry = ok_entries[0] if ok_entries else None
+            for e in narrative_entries:
+                if e["label"] not in outliers:
+                    continue
+                scene = e["scene"]
+                base_prompt = f"{style_for(scene['type'])}\n\nScene: {scene['image_prompt']}"
+                drift_note = (
+                    "\n\nIMPORTANT: A consistency reviewer flagged this image's illustration "
+                    "touch (grain texture, line weight, shading approach, color saturation) as "
+                    f"visibly different from the rest of this episode's images: {outliers[e['label']]}. "
+                    "Match the same rendering technique used across the rest of the episode — "
+                    "the reference image provided shows the correct touch to match."
+                )
+                retry_prompt = base_prompt + drift_note
+                ref_path = ref_entry["path"] if ref_entry else None
+                ok = gen_image(client, retry_prompt, e["path"], reference_image_path=ref_path)
+                if ok:
+                    qa = qa_image_with_gemini(client, e["path"], scene["image_prompt"], allow_text=False)
+                    status = "OK" if qa["ok"] else "; ".join(qa["issues"])
+                    print(f"   → {e['path'].name} 画風修正のうえ再生成 [QA: {status}]")
+                    qa_results.append({"name": f"{e['path'].name}（画風ドリフト修正）",
+                                        "ok": qa["ok"], "issues": qa["issues"]})
+                else:
+                    print(f"   → {e['path'].name} 画風修正の再生成に失敗", file=sys.stderr)
+                    qa_results.append({"name": f"{e['path'].name}（画風ドリフト修正）",
+                                        "ok": False, "issues": ["画像データなし"]})
+        elif narrative_entries:
+            print(f"✅ 画風ドリフトチェック: {len(narrative_entries)}枚 一貫性OK")
 
     if not args.no_thumbnail and not shorts_only and (args.thumbnail_only or args.scenes is None):
         thumb_prompt = f"{BASE_CONTEXT}\n\nThumbnail (16:9): {ep['thumbnail_prompt']}"
