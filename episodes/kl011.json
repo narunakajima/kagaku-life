@@ -49,7 +49,7 @@
       "duration_seconds": 2,
       "narration": "夜、リビングがもう片付いている?",
       "image_prompt": "In a cozy living room in the evening, warm interior lighting, dusk sky faintly visible through a window (not night), a Japanese woman in her mid-30s (Ito Yuki), shoulder-length dark hair, sitting on a sofa with a Japanese girl about 7 years old (hair in twin low ponytails) and a Japanese boy about 4 years old (short hair) on either side of her, an open picture book on her lap, in the background a friendly household robot arm mounted on a small round mobile base, matte white and soft light-gray plastic body with smoothly rounded joints and a three-fingered gripper hand, a single thin glowing soft blue light strip along its base as its only light indicator (no face, no eyes, no mouth, clearly mechanical, not humanoid-looking), gently placing a toy into a storage bin, the floor around them completely clear of toys, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -58,7 +58,11 @@
           "start": 0.0,
           "end": 2.4
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 2,
@@ -67,7 +71,7 @@
       "duration_seconds": 2,
       "narration": "絵本を読む時間が、増えるとしたら",
       "image_prompt": "Close-up in a cozy living room in the evening, warm interior lighting, dusk sky faintly visible through a window (not night), a Japanese woman in her mid-30s (Ito Yuki), shoulder-length dark hair, smiling warmly while reading a picture book aloud, a Japanese girl about 7 years old (hair in twin low ponytails) and a Japanese boy about 4 years old (short hair) leaning in close on either side, all three faces lit softly by a warm lamp, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -76,7 +80,11 @@
           "start": 0.0,
           "end": 2.56
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 3,
@@ -101,7 +109,11 @@
           "start": 2.93,
           "end": 3.68
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.43,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 4,
@@ -119,7 +131,11 @@
           "start": 0.0,
           "end": 2.85
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.38,
+        "y": 0.48
+      }
     },
     {
       "scene_id": 5,
@@ -165,7 +181,11 @@
           "start": 14.88,
           "end": 16.83
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.39,
+        "y": 0.28
+      }
     },
     {
       "scene_id": 6,
@@ -281,7 +301,11 @@
           "start": 41.74,
           "end": 43.49
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.6,
+        "y": 0.35
+      }
     },
     {
       "scene_id": 7,
@@ -290,7 +314,7 @@
       "duration_seconds": 32,
       "narration": "そんな伊藤さんのような悩みに向き合っているのが、アメリカ・ペンシルベニア大学 電気システム工学科です。2026年、国際会議『AIRC(エーアイアールシー、第7回 人工知能・ロボティクス・制御に関する国際会議)』で、視覚と言葉と行動を結びつけた新しいモデルを使い、家庭のような雑然とした環境でも機能する自律ロボットアームに関する研究成果が発表されました。",
       "image_prompt": "An establishing exterior view of a modern electrical and systems engineering building on an American university campus, contemporary architecture, bright daytime sunlight, through large windows a glimpse of a robotics lab inside with a robot arm on a workbench and a monitor showing an abstract interface graphic (no readable text or numbers), no people in close-up, no text",
-      "ken_burns": "zoom_out",
+      "ken_burns": "zoom_in",
       "telop_cards": [
         {
           "lines": [
@@ -355,7 +379,11 @@
           "start": 25.11,
           "end": 27.01
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.27,
+        "y": 0.67
+      }
     },
     {
       "scene_id": 8,
@@ -610,7 +638,7 @@
       "duration_seconds": 10,
       "narration": "もし、このロボットアームが我が家にいたら——。夕方、ソファに座りながら、そんな想像がふと頭に浮かびます。",
       "image_prompt": "In a bright living room in the afternoon, soft daylight through a window, a Japanese woman in her mid-30s (Ito Yuki), shoulder-length dark hair, drawn small, sitting on a sofa with a thoughtful, hopeful expression, a classic comic-style thought bubble emerging from her head (a trail of small circles leading to a large cloud-shaped bubble), inside the bubble a small miniature scene depicting her reading a picture book with two small children on a sofa in a tidy living room while a small robot arm places a toy into a bin nearby, no text",
-      "ken_burns": "pan_zoom_out",
+      "ken_burns": "zoom_in",
       "telop_cards": [
         {
           "lines": [
@@ -633,7 +661,11 @@
           "start": 7.37,
           "end": 8.87
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.66,
+        "y": 0.6
+      }
     },
     {
       "scene_id": 12,
@@ -642,7 +674,7 @@
       "duration_seconds": 28,
       "narration": "夕方、子どもたちが遊び終えると、ロボットアームがそっとブロックを一つずつ拾い上げ、収納ボックスへ運んでいきます。声をかけるのは『片付けてね』のひとことだけ。床にはもう、踏んでしまいそうなおもちゃはありません。二人を両脇に座らせて、絵本を読む時間が戻ってきました。ページをめくるたび笑う二人の声を聞きながら、こんな夜がずっと続けばいいと、心から思います。毎晩の片付けに追われていた頃には、想像もできなかった穏やかな夜です。",
       "image_prompt": "In a cozy living room in the evening, warm interior lighting, dusk sky faintly visible through a window (not night), a friendly household robot arm mounted on a small round mobile base, matte white and soft light-gray plastic body with smoothly rounded joints and a three-fingered gripper hand, a single thin glowing soft blue light strip along its base as its only light indicator (no face, no eyes, no mouth, clearly mechanical, not humanoid-looking), gently placing a toy block into a storage bin, in the foreground a Japanese woman in her mid-30s (Ito Yuki), shoulder-length dark hair, sitting on a sofa with a Japanese girl about 7 years old (hair in twin low ponytails) and a Japanese boy about 4 years old (short hair) on either side of her, an open picture book on her lap, all three smiling warmly, the floor completely clear of toys, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "badge_text": "幸せな未来を夢想中",
       "telop_cards": [
         {
@@ -722,7 +754,11 @@
           "start": 33.34,
           "end": 35.89
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 13,
@@ -731,7 +767,7 @@
       "duration_seconds": 20,
       "narration": "週末の朝は、子どもたちが起きてすぐにブロックや絵本を広げて夢中で遊び始めます。以前なら、その散らかりようを想像するだけで気が重くなっていましたが、今はロボットアームが少しずつ片付けてくれるので、二人の楽しそうな様子を、ただ隣でゆっくり眺めていられます。夕方には、三人で近くの公園まで少し散歩に出かける余裕も生まれました。",
       "image_prompt": "In a bright living room on a weekend morning, soft morning daylight through a window (not night, clearly bright daylight), a Japanese girl about 7 years old (hair in twin low ponytails) and a Japanese boy about 4 years old (short hair) playing joyfully with toy blocks and picture books spread across the floor, a Japanese woman in her mid-30s (Ito Yuki), shoulder-length dark hair, sitting nearby on the sofa watching them with a relaxed, contented smile, in the background a friendly household robot arm mounted on a small round mobile base, matte white and soft light-gray plastic body with smoothly rounded joints and a three-fingered gripper hand, a single thin glowing soft blue light strip along its base as its only light indicator (no face, no eyes, no mouth, clearly mechanical, not humanoid-looking), quietly placing a toy into a storage bin, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "badge_text": "幸せな未来を夢想中",
       "telop_cards": [
         {
@@ -797,17 +833,124 @@
           "start": 23.53,
           "end": 25.01
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 14,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 20,
+      "narration": "平日の朝も、少しずつ変わってきました。以前は仕事を始める前に、散らかった床のブロックや絵本をまず片付けなければならず、それだけで朝の貴重な時間が削られていました。今は前の晩のうちにロボットアームがきれいに整えてくれているので、朝一番、机に向かう前に温かいコーヒーを一杯ゆっくり飲む時間まで生まれました。子どもたちが起きてくる前の、ほんのわずかな一人の時間ですが、それだけで一日を落ち着いて始められる気がします。締め切りに追われる忙しい日でも、この数分間の静かな時間が、小さいけれど大切な支えになっています。",
+      "image_prompt": "In a bright home office corner of the living room in the early morning, soft warm morning daylight through a window (not night, clearly bright dawn light), a Japanese woman in her mid-30s (Ito Yuki), shoulder-length dark hair, sitting at a small desk with a laptop and a graphics drawing tablet, holding a warm cup of coffee with both hands, a calm relaxed expression, the floor behind her completely clear of toys and neatly organized, in the background a friendly household robot arm mounted on a small round mobile base, matte white and soft light-gray plastic body with smoothly rounded joints and a three-fingered gripper hand, a single thin glowing soft blue light strip along its base as its only light indicator (no face, no eyes, no mouth, clearly mechanical, not humanoid-looking), idle and stationary near a tidy toy storage bin, no text",
+      "ken_burns": "pan_zoom_out",
+      "badge_text": "幸せな未来を夢想中",
+      "telop_cards": [
+        {
+          "lines": [
+            "平日の朝も、少しずつ変わってきました。"
+          ],
+          "start": 0.0,
+          "end": 2.98
+        },
+        {
+          "lines": [
+            "以前は仕事を始める前に、散らかった床の"
+          ],
+          "start": 3.56,
+          "end": 7.26
+        },
+        {
+          "lines": [
+            "ブロックや絵本をまず片付けなければならず、"
+          ],
+          "start": 7.41,
+          "end": 10.56
+        },
+        {
+          "lines": [
+            "それだけで朝の貴重な時間が削られていました。"
+          ],
+          "start": 10.71,
+          "end": 14.27
+        },
+        {
+          "lines": [
+            "今は前の晩のうちにロボットアームがきれいに"
+          ],
+          "start": 14.42,
+          "end": 18.54
+        },
+        {
+          "lines": [
+            "整えてくれているので、朝一番、"
+          ],
+          "start": 18.69,
+          "end": 21.29
+        },
+        {
+          "lines": [
+            "机に向かう前に温かいコーヒーを一杯ゆっくり"
+          ],
+          "start": 21.44,
+          "end": 25.54
+        },
+        {
+          "lines": [
+            "飲む時間まで生まれました。子どもたちが"
+          ],
+          "start": 25.69,
+          "end": 28.89
+        },
+        {
+          "lines": [
+            "起きてくる前の、ほんのわずかな一人の時間ですが、"
+          ],
+          "start": 29.04,
+          "end": 32.64
+        },
+        {
+          "lines": [
+            "それだけで一日を落ち着いて始められる気がします。"
+          ],
+          "start": 32.79,
+          "end": 36.57
+        },
+        {
+          "lines": [
+            "締め切りに追われる忙しい日でも、"
+          ],
+          "start": 36.72,
+          "end": 39.12
+        },
+        {
+          "lines": [
+            "この数分間の静かな時間が、小さいけれど"
+          ],
+          "start": 39.27,
+          "end": 42.55
+        },
+        {
+          "lines": [
+            "大切な支えになっています。"
+          ],
+          "start": 42.7,
+          "end": 44.65
+        }
+      ]
+    },
+    {
+      "scene_id": 15,
       "type": "closing",
       "narrator": "research",
       "reference_index": 0,
       "duration_seconds": 68,
       "narration": "この自律ロボットアームは、まだ研究段階のプロトタイプです。家庭にあるあらゆる物や状況に完璧に対応できるかどうかは、これからさらに検証が重ねられていくところです。それでも、『片付けて』のひとことでおもちゃが片付く暮らしの先には、忙しい毎日の中で、子どもと過ごす時間を取り戻せるという、ささやかな幸せがあります。詳しい研究内容が気になる方は、概要欄をご確認ください。次はどんな研究が、誰かの幸せな未来を運んでくるのでしょうか。その瞬間をこれからも一緒に見つけていきたい方は、ぜひチャンネル登録してお待ちください。",
       "image_prompt": "A quiet research lab in the late afternoon, no people in the frame, a robot arm (matte white and soft light-gray plastic body with smoothly rounded joints and a three-fingered gripper hand, a single thin glowing soft blue light strip along its base, no face, no eyes, no mouth, clearly mechanical, not humanoid-looking) resting neatly on a clean lab table, a nearby monitor showing a simple abstract interface graphic (no legible text or numbers), soft warm golden-hour daylight through lab windows, calm hopeful mood, no text",
-      "ken_burns": "zoom_out",
+      "ken_burns": "zoom_in",
       "telop_cards": [
         {
           "lines": [
@@ -900,7 +1043,11 @@
           "start": 38.68,
           "end": 41.53
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.59,
+        "y": 0.5
+      }
     }
   ],
   "shorts": [
