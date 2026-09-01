@@ -2,7 +2,7 @@
   "episode_id": "kl011",
   "episode_title": "『片付けて』のひとことで、暮らしが変わる夜",
   "youtube_title": "『そのおもちゃ片付けて』と言うだけで動く自律ロボットアーム(2026年ペンシルベニア大学・15Hz制御)",
-  "youtube_description": "自宅でフリーランスのグラフィックデザイナーとして働きながら、7歳と4歳の子どもを育てる伊藤真央さん(36歳)の視点から解説します。今回紹介するのは、アメリカ・ペンシルベニア大学 電気システム工学科のSaher Elsayed氏による研究です。2026年、国際会議『AIRC(第7回 人工知能・ロボティクス・制御に関する国際会議)』で発表されました。この研究では、視覚と言語と行動を結びつけたモデル(Vision-Language-Action Model)を用いることで、『そのおもちゃを片付けて』といった人間の自然な言葉の指示だけで、ロボットアームが自ら対象物を認識し、つかんで、指定の場所まで運ぶという汎用的な操作を実現しています。特徴的なのは、あらかじめ登録されていない、初めて見る物体であっても認識・操作できる点と、物が雑然と散らかった、整理されていない現実の環境でも機能するように設計されている点です。さらにこの制御は毎秒15回というリアルタイムに近い頻度で更新され続け、床を吸引するだけの市販の掃除ロボットとは異なり、物を見て・つかんで・動かすという、より高度な作業をこなします。\n\n📚 参考文献:\nElsayed, S. (2026). Adaptive Vision-Language-Action Models for Generalizable Robotic Manipulation in Unstructured Environments. 2026 7th International Conference on Artificial Intelligence, Robotics, and Control (AIRC).\nDOI: 10.1109/AIRC69745.2026.11631388\nhttps://doi.org/10.1109/AIRC69745.2026.11631388\n\n※本研究は実験室環境での検証に基づくものであり、実際の家庭内にあるあらゆる物や状況を完全に再現したものではありません。動画では研究の主旨を誠実にお伝えすることを心がけていますが、実用化にはさらなる検証が必要と考えられます。\n\n#自律ロボットアーム #家庭用ロボット #VLAモデル #ロボットマニピュレーション #ペンシルベニア大学 #ロボティクス #研究紹介 #くらしを変える科学 #幸せな未来のサイエンス",
+  "youtube_description": "自宅でフリーランスのグラフィックデザイナーとして働きながら、7歳と4歳の子どもを育てる伊藤真央さん(36歳)の視点から解説します。今回紹介するのは、アメリカ・ペンシルベニア大学 電気システム工学科のSaher Elsayed氏による研究です。2026年、国際会議『AIRC(第7回 人工知能・ロボティクス・制御に関する国際会議)』で発表されました。この研究では、視覚と言語と行動を結びつけたモデル(Vision-Language-Action Model)を用いることで、『そのおもちゃを片付けて』といった人間の自然な言葉の指示だけで、ロボットアームが自ら対象物を認識し、つかんで、指定の場所まで運ぶという汎用的な操作を実現しています。特徴的なのは、あらかじめ登録されていない、初めて見る物体であっても認識・操作できる点と、物が雑然と散らかった、整理されていない現実の環境でも機能するように設計されている点です。さらにこの制御は毎秒15回というリアルタイムに近い頻度で更新され続け、床を吸引するだけの市販の掃除ロボットとは異なり、物を見て・つかんで・動かすという、より高度な作業をこなします。\n\n📚 参考文献:\nElsayed, S. (2026). Adaptive Vision-Language-Action Models for Generalizable Robotic Manipulation in Unstructured Environments. 2026 7th International Conference on Artificial Intelligence, Robotics, and Control (AIRC).\nDOI: 10.1109/AIRC69745.2026.11631388\nhttps://doi.org/10.1109/AIRC69745.2026.11631388\n\n※本研究は実験室環境での検証に基づくものであり、実際の家庭内にあるあらゆる物や状況を完全に再現したものではありません。動画では研究の主旨を誠実にお伝えすることを心がけていますが、実用化にはさらなる検証が必要と考えられます。\n\n\n🎵 Music: October Rose by StephieQueen (freesound.org) — CC BY 4.0\n#自律ロボットアーム #家庭用ロボット #VLAモデル #ロボットマニピュレーション #ペンシルベニア大学 #ロボティクス #研究紹介 #くらしを変える科学 #幸せな未来のサイエンス",
   "youtube_tags": [
     "自律ロボットアーム",
     "家庭用ロボット",
@@ -49,7 +49,16 @@
       "duration_seconds": 2,
       "narration": "夜、リビングがもう片付いている?",
       "image_prompt": "In a cozy living room in the evening, warm interior lighting, dusk sky faintly visible through a window (not night), a Japanese woman in her mid-30s (Ito Mao), shoulder-length dark hair, sitting on a sofa with a Japanese girl about 7 years old (hair in twin low ponytails) and a Japanese boy about 4 years old (short hair) on either side of her, an open picture book on her lap, in the background a friendly household robot arm mounted on a small round mobile base, matte white and soft light-gray plastic body with smoothly rounded joints and a three-fingered gripper hand, a single thin glowing soft blue light strip along its base as its only light indicator (no face, no eyes, no mouth, clearly mechanical, not humanoid-looking), gently placing a toy into a storage bin, the floor around them completely clear of toys, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "夜、リビングがもう片付いている?"
+          ],
+          "start": 0.0,
+          "end": 2.4
+        }
+      ]
     },
     {
       "scene_id": 2,
@@ -58,7 +67,16 @@
       "duration_seconds": 2,
       "narration": "絵本を読む時間が、増えるとしたら",
       "image_prompt": "Close-up in a cozy living room in the evening, warm interior lighting, dusk sky faintly visible through a window (not night), a Japanese woman in her mid-30s (Ito Mao), shoulder-length dark hair, smiling warmly while reading a picture book aloud, a Japanese girl about 7 years old (hair in twin low ponytails) and a Japanese boy about 4 years old (short hair) leaning in close on either side, all three faces lit softly by a warm lamp, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "絵本を読む時間が、増えるとしたら"
+          ],
+          "start": 0.0,
+          "end": 2.85
+        }
+      ]
     },
     {
       "scene_id": 3,
@@ -67,7 +85,23 @@
       "duration_seconds": 2,
       "narration": "「片付けて」と言うだけで、おもちゃが消えていく",
       "image_prompt": "In a bright living room in the late afternoon, soft daylight through a window, a friendly household robot arm mounted on a small round mobile base, matte white and soft light-gray plastic body with smoothly rounded joints and a three-fingered gripper hand, a single thin glowing soft blue light strip along its base as its only light indicator (no face, no eyes, no mouth, clearly mechanical, not humanoid-looking), picking up a colorful toy block from the floor and placing it into a storage bin, no people in close focus, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "「片付けて」と言うだけで、おもちゃが"
+          ],
+          "start": 0.0,
+          "end": 2.78
+        },
+        {
+          "lines": [
+            "消えていく"
+          ],
+          "start": 2.93,
+          "end": 3.68
+        }
+      ]
     },
     {
       "scene_id": 4,
@@ -76,7 +110,16 @@
       "duration_seconds": 4,
       "narration": "そんな暮らし、想像したことありますか?",
       "image_prompt": "Portrait close-up, head and shoulders only, in a softly lit living room in the evening, a Japanese woman in her mid-30s (Ito Mao), shoulder-length dark hair, sitting calmly near a window, looking outside with a thoughtful, hopeful expression, soft warm evening interior lighting, dusk sky faintly visible through the window, not night, no text, single unified scene (not a split-panel or diptych)",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "そんな暮らし、想像したことありますか?"
+          ],
+          "start": 0.0,
+          "end": 2.85
+        }
+      ]
     },
     {
       "scene_id": 5,
@@ -85,7 +128,44 @@
       "duration_seconds": 18,
       "narration": "伊藤真央、36歳。自宅でフリーランスのグラフィックデザイナーとして働きながら、7歳の娘と4歳の息子を育てています。夫は単身赴任中で、仕事も家事も子育ても、ほぼ一人でこなす毎日です。",
       "image_prompt": "In a modern living room in the early evening, warm interior lighting with a dusk sky faintly visible through a window (not night), a Japanese woman in her mid-30s (Ito Mao), shoulder-length dark hair, wearing casual comfortable home-work clothes, stepping away from a small home desk with a laptop and a graphics drawing tablet visible in the background, standing amid a few scattered toys and a stationary robot vacuum cleaner blocked by a toy block on the floor, a tired but gentle smile, exactly one person in the entire scene, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "伊藤真央、36歳。自宅でフリーランスの"
+          ],
+          "start": 0.0,
+          "end": 4.84
+        },
+        {
+          "lines": [
+            "グラフィックデザイナーとして働きながら、"
+          ],
+          "start": 4.99,
+          "end": 7.99
+        },
+        {
+          "lines": [
+            "7歳の娘と4歳の息子を育てています。"
+          ],
+          "start": 8.14,
+          "end": 11.4
+        },
+        {
+          "lines": [
+            "夫は単身赴任中で、仕事も家事も子育ても、"
+          ],
+          "start": 12.08,
+          "end": 16.18
+        },
+        {
+          "lines": [
+            "ほぼ一人でこなす毎日です。"
+          ],
+          "start": 16.33,
+          "end": 18.53
+        }
+      ]
     },
     {
       "scene_id": 6,
@@ -94,7 +174,114 @@
       "duration_seconds": 62,
       "narration": "夜、二人を寝かしつけたあと、まず取りかかるのは掃除ロボットのための片付けです。娘のブロックや息子のぬいぐるみ、絵本が床のあちこちに散らばっていて、一つひとつ拾って棚に戻さないと、ロボット掃除機はすぐにセンサーで感知して止まってしまいます。この片付けだけで、毎晩十五分から二十分。しゃがんでは拾い、また拾い——終わる頃にはもうくたくたです。だから寝かしつけのときも、早く床を片付けなければと気持ちが急いてしまって、本当は隣に座って読んであげたい絵本を、「今日はなしね」と閉じてしまう夜が増えました。気づけば、一日の終わりに自分のための時間も、ほとんど残っていません。",
       "image_prompt": "In a living room late in the evening, warm lamp lighting, indoors, a Japanese woman in her mid-30s (Ito Mao), shoulder-length dark hair, wearing comfortable homewear, kneeling on the floor picking up scattered toy blocks and a stuffed animal into a basket, a stationary robot vacuum cleaner idle nearby, a visibly tired expression, exactly one person in the entire scene, no duplicate or mirrored figures, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "夜、二人を寝かしつけたあと、"
+          ],
+          "start": 0.0,
+          "end": 2.04
+        },
+        {
+          "lines": [
+            "まず取りかかるのは掃除ロボットのための片付けです。"
+          ],
+          "start": 2.19,
+          "end": 5.89
+        },
+        {
+          "lines": [
+            "娘のブロックや息子のぬいぐるみ、"
+          ],
+          "start": 6.19,
+          "end": 8.53
+        },
+        {
+          "lines": [
+            "絵本が床のあちこちに散らばっていて、"
+          ],
+          "start": 8.68,
+          "end": 11.31
+        },
+        {
+          "lines": [
+            "一つひとつ拾って棚に戻さないと、"
+          ],
+          "start": 11.46,
+          "end": 13.8
+        },
+        {
+          "lines": [
+            "ロボット掃除機はすぐにセンサーで感知して"
+          ],
+          "start": 13.95,
+          "end": 16.87
+        },
+        {
+          "lines": [
+            "止まってしまいます。この片付けだけで、"
+          ],
+          "start": 17.02,
+          "end": 19.8
+        },
+        {
+          "lines": [
+            "毎晩十五分から二十分。しゃがんでは拾い、"
+          ],
+          "start": 19.95,
+          "end": 22.87
+        },
+        {
+          "lines": [
+            "また拾い——終わる頃にはもうくたくたです。"
+          ],
+          "start": 23.02,
+          "end": 26.09
+        },
+        {
+          "lines": [
+            "だから寝かしつけのときも、早く床を"
+          ],
+          "start": 26.24,
+          "end": 28.72
+        },
+        {
+          "lines": [
+            "片付けなければと気持ちが急いてしまって、"
+          ],
+          "start": 28.87,
+          "end": 31.79
+        },
+        {
+          "lines": [
+            "本当は隣に座って読んであげたい絵本を、"
+          ],
+          "start": 31.94,
+          "end": 34.72
+        },
+        {
+          "lines": [
+            "「今日はなしね」と閉じてしまう夜が増えました。"
+          ],
+          "start": 34.87,
+          "end": 38.23
+        },
+        {
+          "lines": [
+            "気づけば、一日の終わりに自分のための時間も、"
+          ],
+          "start": 38.38,
+          "end": 41.59
+        },
+        {
+          "lines": [
+            "ほとんど残っていません。"
+          ],
+          "start": 41.74,
+          "end": 43.49
+        }
+      ]
     },
     {
       "scene_id": 7,
@@ -103,7 +290,72 @@
       "duration_seconds": 32,
       "narration": "そんな伊藤さんのような悩みに向き合っているのが、アメリカ・ペンシルベニア大学 電気システム工学科です。2026年、国際会議『AIRC(エーアイアールシー、第7回 人工知能・ロボティクス・制御に関する国際会議)』で、視覚と言葉と行動を結びつけた新しいモデルを使い、家庭のような雑然とした環境でも機能する自律ロボットアームに関する研究成果が発表されました。",
       "image_prompt": "An establishing exterior view of a modern electrical and systems engineering building on an American university campus, contemporary architecture, bright daytime sunlight, through large windows a glimpse of a robotics lab inside with a robot arm on a workbench and a monitor showing an abstract interface graphic (no readable text or numbers), no people in close-up, no text",
-      "ken_burns": "zoom_out"
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "そんな伊藤さんのような悩みに向き合っているのが、"
+          ],
+          "start": 0.0,
+          "end": 3.51
+        },
+        {
+          "lines": [
+            "アメリカ・ペンシルベニア大学"
+          ],
+          "start": 3.66,
+          "end": 5.71
+        },
+        {
+          "lines": [
+            "電気システム工学科です。2026年、"
+          ],
+          "start": 5.86,
+          "end": 8.69
+        },
+        {
+          "lines": [
+            "国際会議『AIRC(エーアイアールシー、"
+          ],
+          "start": 8.84,
+          "end": 11.77
+        },
+        {
+          "lines": [
+            "第7回 人工知能・ロボティクス・制御に関する"
+          ],
+          "start": 11.92,
+          "end": 15.14
+        },
+        {
+          "lines": [
+            "国際会議)』で、視覚と言葉と行動を結びつけた"
+          ],
+          "start": 15.29,
+          "end": 18.51
+        },
+        {
+          "lines": [
+            "新しいモデルを使い、家庭のような雑然と"
+          ],
+          "start": 18.66,
+          "end": 21.44
+        },
+        {
+          "lines": [
+            "した環境でも機能する自律ロボットアームに関する"
+          ],
+          "start": 21.59,
+          "end": 24.96
+        },
+        {
+          "lines": [
+            "研究成果が発表されました。"
+          ],
+          "start": 25.11,
+          "end": 27.01
+        }
+      ]
     },
     {
       "scene_id": 8,
@@ -113,7 +365,114 @@
       "duration_seconds": 46,
       "narration": "この研究が実現したのは、『そのおもちゃを片付けて』といった人間の自然な言葉の指示だけで、ロボットアームが自ら対象物を見つけ出し、つかんで、指定の場所まで運ぶという操作です。特徴的なのは、あらかじめ登録されていない、初めて見る物体であっても認識できる点と、物が雑然と散らかった、整理されていない現実の環境でも機能するように設計されている点です。研究室のきれいに整えられた台の上だけでなく、実際の暮らしに近い、ある程度散らかった状況を想定してつくられています。研究では、おもちゃやキッチン用品など、種類の異なるさまざまな日用品を使った検証が行われ、これまで見たことのない物であっても安定してつかみ、運べることが確認されています。",
       "image_prompt": "In a research lab with bright daylight through large windows, a robot arm mounted on a workbench (matte white and soft light-gray plastic body with smoothly rounded joints and a three-fingered gripper hand, a single thin glowing soft blue light strip along its base as its only light indicator, no face, no eyes, no mouth, clearly mechanical, not humanoid-looking), in the process of picking up an unfamiliar small household object it has never encountered before, scattered among a few other assorted objects on the workbench, an American researcher at the university lab, diverse ethnicity, wearing a white lab coat, standing beside a laptop displaying an abstract camera-vision overlay (no readable text or numbers), exactly ONE small flat graphic showing a simple speech-bubble icon with a small hand-pointing icon inside it, placed ONLY in the top-right corner of the frame and nowhere else, no larger than roughly one-eighth of the frame, kept plain, the bottom-left corner and all other corners of the frame must remain completely plain with no icon, graphic, or shape of any kind, absolutely no text or numerals, no text",
-      "ken_burns": "pan_zoom_out"
+      "ken_burns": "pan_zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "この研究が実現したのは、『そのおもちゃを片付けて』"
+          ],
+          "start": 0.0,
+          "end": 3.43
+        },
+        {
+          "lines": [
+            "といった人間の自然な言葉の指示だけで、"
+          ],
+          "start": 3.58,
+          "end": 6.28
+        },
+        {
+          "lines": [
+            "ロボットアームが自ら対象物を見つけ出し、"
+          ],
+          "start": 6.43,
+          "end": 9.19
+        },
+        {
+          "lines": [
+            "つかんで、指定の場所まで運ぶという操作です。"
+          ],
+          "start": 9.34,
+          "end": 12.36
+        },
+        {
+          "lines": [
+            "特徴的なのは、あらかじめ登録されていない、"
+          ],
+          "start": 12.58,
+          "end": 15.46
+        },
+        {
+          "lines": [
+            "初めて見る物体であっても認識できる点と、"
+          ],
+          "start": 15.61,
+          "end": 18.35
+        },
+        {
+          "lines": [
+            "物が雑然と散らかった、整理されていない"
+          ],
+          "start": 18.5,
+          "end": 21.11
+        },
+        {
+          "lines": [
+            "現実の環境でも機能するように設計されている点です。"
+          ],
+          "start": 21.26,
+          "end": 24.69
+        },
+        {
+          "lines": [
+            "研究室のきれいに整えられた台の上だけでなく、"
+          ],
+          "start": 24.84,
+          "end": 27.86
+        },
+        {
+          "lines": [
+            "実際の暮らしに近い、ある程度散らかった"
+          ],
+          "start": 28.01,
+          "end": 30.62
+        },
+        {
+          "lines": [
+            "状況を想定してつくられています。研究では、"
+          ],
+          "start": 30.77,
+          "end": 33.65
+        },
+        {
+          "lines": [
+            "おもちゃやキッチン用品など、"
+          ],
+          "start": 33.8,
+          "end": 35.72
+        },
+        {
+          "lines": [
+            "種類の異なるさまざまな日用品を使った検証が行われ、"
+          ],
+          "start": 35.87,
+          "end": 39.3
+        },
+        {
+          "lines": [
+            "これまで見たことのない物であっても安定してつかみ、"
+          ],
+          "start": 39.45,
+          "end": 42.88
+        },
+        {
+          "lines": [
+            "運べることが確認されています。"
+          ],
+          "start": 43.03,
+          "end": 45.09
+        }
+      ]
     },
     {
       "scene_id": 9,
@@ -123,7 +482,65 @@
       "duration_seconds": 34,
       "narration": "さらにこの制御は、一秒間に15回という高い頻度でリアルタイムに更新され続けます。物の位置がずれたり、途中で状況が変わったりしても、動きながら素早く軌道を調整できるということです。あらかじめ決められた手順をなぞるのではなく、その場の状況を見ながら動きを組み立て直していく。物の置き場所が毎日変わる家庭のような環境で働くために、欠かせない仕組みです。",
       "image_prompt": "In the same research lab with bright daylight, a robot arm (matte white and soft light-gray plastic body with smoothly rounded joints and a three-fingered gripper hand, a single thin glowing soft blue light strip along its base, no face, no eyes, no mouth, clearly mechanical, not humanoid-looking) shown mid-motion swiftly moving a small object from one tray to another, a subtle sense of speed and fluid motion, an American researcher at the university lab, different appearance and ethnicity from the researcher in the previous scene, wearing a white lab coat, observing a monitor showing a simple abstract fast-updating waveform graphic (no readable text or numbers), a small flat corner graphic showing two simple plain icons side by side — a small circular vacuum-cleaner icon and a small robotic-arm icon — no larger than roughly one-eighth of the frame, kept plain, absolutely no text or numerals, no text",
-      "ken_burns": "pan_zoom_out"
+      "ken_burns": "pan_zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "さらにこの制御は、一秒間に15回という"
+          ],
+          "start": 0.0,
+          "end": 3.68
+        },
+        {
+          "lines": [
+            "高い頻度でリアルタイムに更新され続けます。"
+          ],
+          "start": 3.83,
+          "end": 7.23
+        },
+        {
+          "lines": [
+            "物の位置がずれたり、途中で状況が変わったりしても、"
+          ],
+          "start": 7.38,
+          "end": 11.68
+        },
+        {
+          "lines": [
+            "動きながら素早く軌道を調整できるということです。"
+          ],
+          "start": 11.83,
+          "end": 16.01
+        },
+        {
+          "lines": [
+            "あらかじめ決められた手順をなぞるのではなく、"
+          ],
+          "start": 16.16,
+          "end": 19.46
+        },
+        {
+          "lines": [
+            "その場の状況を見ながら動きを組み立て直していく。"
+          ],
+          "start": 19.61,
+          "end": 23.37
+        },
+        {
+          "lines": [
+            "物の置き場所が毎日変わる家庭のような環境で"
+          ],
+          "start": 23.52,
+          "end": 26.67
+        },
+        {
+          "lines": [
+            "働くために、欠かせない仕組みです。"
+          ],
+          "start": 26.82,
+          "end": 29.37
+        }
+      ]
     },
     {
       "scene_id": 10,
@@ -133,7 +550,58 @@
       "duration_seconds": 26,
       "narration": "いま家庭で広く使われている掃除ロボットが担うのは、床の吸引です。それに対してこの研究のロボットアームは、初めて見る物であっても、見て、つかんで、決められた場所まで運ぶことができます。同じ『家事を助けるロボット』でも、任せられる仕事の幅が大きく違うということです。",
       "image_prompt": "Simple, clean, minimalist flat infographic comparing two capabilities side by side, like a basic data visualization slide, NOT an artistic or abstract illustration. Left side: a plain flat icon of a robot vacuum cleaner (simple circular disc shape) with the Japanese label \"掃除ロボット（吸引のみ）\" below it. Right side: a plain flat icon of a robotic arm gripping a small object with the Japanese label \"今回のロボットアーム（つかんで運ぶ）\" below it. Plain flat background, no gradients, no texture, no decorative shapes, clean legible sans-serif Japanese text rendered accurately exactly as specified above. Do NOT add a title, heading, caption, legend, or any other text, letters, or numbers beyond what is specified here",
-      "ken_burns": "static"
+      "ken_burns": "static",
+      "telop_cards": [
+        {
+          "lines": [
+            "いま家庭で広く使われている掃除ロボットが担うのは、"
+          ],
+          "start": 0.36,
+          "end": 4.11
+        },
+        {
+          "lines": [
+            "床の吸引です。それに対してこの研究の"
+          ],
+          "start": 4.26,
+          "end": 7.22
+        },
+        {
+          "lines": [
+            "ロボットアームは、初めて見る物であっても、"
+          ],
+          "start": 7.37,
+          "end": 10.52
+        },
+        {
+          "lines": [
+            "見て、つかんで、決められた場所まで運ぶ"
+          ],
+          "start": 10.67,
+          "end": 13.52
+        },
+        {
+          "lines": [
+            "ことができます。同じ『家事を助けるロボット』"
+          ],
+          "start": 13.67,
+          "end": 16.97
+        },
+        {
+          "lines": [
+            "でも、任せられる仕事の幅が大きく違うという"
+          ],
+          "start": 17.12,
+          "end": 20.27
+        },
+        {
+          "lines": [
+            "ことです。"
+          ],
+          "start": 20.42,
+          "end": 21.17
+        }
+      ]
     },
     {
       "scene_id": 11,
@@ -142,7 +610,30 @@
       "duration_seconds": 10,
       "narration": "もし、このロボットアームが我が家にいたら——。夕方、ソファに座りながら、そんな想像がふと頭に浮かびます。",
       "image_prompt": "In a bright living room in the afternoon, soft daylight through a window, a Japanese woman in her mid-30s (Ito Mao), shoulder-length dark hair, drawn small, sitting on a sofa with a thoughtful, hopeful expression, a classic comic-style thought bubble emerging from her head (a trail of small circles leading to a large cloud-shaped bubble), inside the bubble a small miniature scene depicting her reading a picture book with two small children on a sofa in a tidy living room while a small robot arm places a toy into a bin nearby, no text",
-      "ken_burns": "pan_zoom_out"
+      "ken_burns": "pan_zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "もし、このロボットアームが我が家にいたら——。"
+          ],
+          "start": 0.0,
+          "end": 3.54
+        },
+        {
+          "lines": [
+            "夕方、ソファに座りながら、そんな想像が"
+          ],
+          "start": 4.34,
+          "end": 7.22
+        },
+        {
+          "lines": [
+            "ふと頭に浮かびます。"
+          ],
+          "start": 7.37,
+          "end": 8.87
+        }
+      ]
     },
     {
       "scene_id": 12,
@@ -152,7 +643,86 @@
       "narration": "夕方、子どもたちが遊び終えると、ロボットアームがそっとブロックを一つずつ拾い上げ、収納ボックスへ運んでいきます。声をかけるのは『片付けてね』のひとことだけ。床にはもう、踏んでしまいそうなおもちゃはありません。二人を両脇に座らせて、絵本を読む時間が戻ってきました。ページをめくるたび笑う二人の声を聞きながら、こんな夜がずっと続けばいいと、心から思います。毎晩の片付けに追われていた頃には、想像もできなかった穏やかな夜です。",
       "image_prompt": "In a cozy living room in the evening, warm interior lighting, dusk sky faintly visible through a window (not night), a friendly household robot arm mounted on a small round mobile base, matte white and soft light-gray plastic body with smoothly rounded joints and a three-fingered gripper hand, a single thin glowing soft blue light strip along its base as its only light indicator (no face, no eyes, no mouth, clearly mechanical, not humanoid-looking), gently placing a toy block into a storage bin, in the foreground a Japanese woman in her mid-30s (Ito Mao), shoulder-length dark hair, sitting on a sofa with a Japanese girl about 7 years old (hair in twin low ponytails) and a Japanese boy about 4 years old (short hair) on either side of her, an open picture book on her lap, all three smiling warmly, the floor completely clear of toys, no text",
       "ken_burns": "zoom_in",
-      "badge_text": "幸せな未来を夢想中"
+      "badge_text": "幸せな未来を夢想中",
+      "telop_cards": [
+        {
+          "lines": [
+            "夕方、子どもたちが遊び終えると、"
+          ],
+          "start": 0.0,
+          "end": 2.42
+        },
+        {
+          "lines": [
+            "ロボットアームがそっとブロックを一つずつ拾い上げ、"
+          ],
+          "start": 2.57,
+          "end": 6.5
+        },
+        {
+          "lines": [
+            "収納ボックスへ運んでいきます。"
+          ],
+          "start": 6.65,
+          "end": 8.9
+        },
+        {
+          "lines": [
+            "声をかけるのは『片付けてね』"
+          ],
+          "start": 9.26,
+          "end": 11.62
+        },
+        {
+          "lines": [
+            "のひとことだけ。床にはもう、"
+          ],
+          "start": 11.77,
+          "end": 14.53
+        },
+        {
+          "lines": [
+            "踏んでしまいそうなおもちゃはありません。"
+          ],
+          "start": 14.68,
+          "end": 17.68
+        },
+        {
+          "lines": [
+            "二人を両脇に座らせて、絵本を読む時間が"
+          ],
+          "start": 17.83,
+          "end": 21.31
+        },
+        {
+          "lines": [
+            "戻ってきました。ページをめくるたび笑う二"
+          ],
+          "start": 21.46,
+          "end": 24.96
+        },
+        {
+          "lines": [
+            "人の声を聞きながら、こんな夜がずっと続けばいいと、"
+          ],
+          "start": 25.11,
+          "end": 28.95
+        },
+        {
+          "lines": [
+            "心から思います。毎晩の片付けに追われていた頃には、"
+          ],
+          "start": 29.1,
+          "end": 33.19
+        },
+        {
+          "lines": [
+            "想像もできなかった穏やかな夜です。"
+          ],
+          "start": 33.34,
+          "end": 35.89
+        }
+      ]
     },
     {
       "scene_id": 13,
@@ -162,7 +732,72 @@
       "narration": "週末の朝は、子どもたちが起きてすぐにブロックや絵本を広げて夢中で遊び始めます。以前なら、その散らかりようを想像するだけで気が重くなっていましたが、今はロボットアームが少しずつ片付けてくれるので、二人の楽しそうな様子を、ただ隣でゆっくり眺めていられます。夕方には、三人で近くの公園まで少し散歩に出かける余裕も生まれました。",
       "image_prompt": "In a bright living room on a weekend morning, soft morning daylight through a window (not night, clearly bright daylight), a Japanese girl about 7 years old (hair in twin low ponytails) and a Japanese boy about 4 years old (short hair) playing joyfully with toy blocks and picture books spread across the floor, a Japanese woman in her mid-30s (Ito Mao), shoulder-length dark hair, sitting nearby on the sofa watching them with a relaxed, contented smile, in the background a friendly household robot arm mounted on a small round mobile base, matte white and soft light-gray plastic body with smoothly rounded joints and a three-fingered gripper hand, a single thin glowing soft blue light strip along its base as its only light indicator (no face, no eyes, no mouth, clearly mechanical, not humanoid-looking), quietly placing a toy into a storage bin, no text",
       "ken_burns": "zoom_in",
-      "badge_text": "幸せな未来を夢想中"
+      "badge_text": "幸せな未来を夢想中",
+      "telop_cards": [
+        {
+          "lines": [
+            "週末の朝は、子どもたちが起きてすぐに"
+          ],
+          "start": 0.0,
+          "end": 2.85
+        },
+        {
+          "lines": [
+            "ブロックや絵本を広げて夢中で遊び始めます。"
+          ],
+          "start": 3.0,
+          "end": 6.1
+        },
+        {
+          "lines": [
+            "以前なら、その散らかりようを想像するだけで"
+          ],
+          "start": 6.25,
+          "end": 9.35
+        },
+        {
+          "lines": [
+            "気が重くなっていましたが、今はロボット"
+          ],
+          "start": 9.5,
+          "end": 12.3
+        },
+        {
+          "lines": [
+            "アームが少しずつ片付けてくれるので、"
+          ],
+          "start": 12.45,
+          "end": 15.11
+        },
+        {
+          "lines": [
+            "二人の楽しそうな様子を、ただ隣でゆっくり"
+          ],
+          "start": 15.26,
+          "end": 18.21
+        },
+        {
+          "lines": [
+            "眺めていられます。夕方には、"
+          ],
+          "start": 18.36,
+          "end": 20.43
+        },
+        {
+          "lines": [
+            "三人で近くの公園まで少し散歩に出かける"
+          ],
+          "start": 20.58,
+          "end": 23.38
+        },
+        {
+          "lines": [
+            "余裕も生まれました。"
+          ],
+          "start": 23.53,
+          "end": 25.01
+        }
+      ]
     },
     {
       "scene_id": 14,
@@ -172,7 +807,100 @@
       "duration_seconds": 68,
       "narration": "この自律ロボットアームは、まだ研究段階のプロトタイプです。家庭にあるあらゆる物や状況に完璧に対応できるかどうかは、これからさらに検証が重ねられていくところです。それでも、『片付けて』のひとことでおもちゃが片付く暮らしの先には、忙しい毎日の中で、子どもと過ごす時間を取り戻せるという、ささやかな幸せがあります。詳しい研究内容が気になる方は、概要欄をご確認ください。次はどんな研究が、誰かの幸せな未来を運んでくるのでしょうか。その瞬間をこれからも一緒に見つけていきたい方は、ぜひチャンネル登録してお待ちください。",
       "image_prompt": "A quiet research lab in the late afternoon, no people in the frame, a robot arm (matte white and soft light-gray plastic body with smoothly rounded joints and a three-fingered gripper hand, a single thin glowing soft blue light strip along its base, no face, no eyes, no mouth, clearly mechanical, not humanoid-looking) resting neatly on a clean lab table, a nearby monitor showing a simple abstract interface graphic (no legible text or numbers), soft warm golden-hour daylight through lab windows, calm hopeful mood, no text",
-      "ken_burns": "zoom_out"
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "この自律ロボットアームは、まだ研究段階の"
+          ],
+          "start": 0.0,
+          "end": 3.32
+        },
+        {
+          "lines": [
+            "プロトタイプです。家庭にあるあらゆる物や"
+          ],
+          "start": 3.47,
+          "end": 6.67
+        },
+        {
+          "lines": [
+            "状況に完璧に対応できるかどうかは、"
+          ],
+          "start": 6.82,
+          "end": 9.8
+        },
+        {
+          "lines": [
+            "これからさらに検証が重ねられていくところです。"
+          ],
+          "start": 9.95,
+          "end": 13.4
+        },
+        {
+          "lines": [
+            "それでも、『片付けて』のひとことでおもちゃが"
+          ],
+          "start": 13.55,
+          "end": 17.01
+        },
+        {
+          "lines": [
+            "片付く暮らしの先には、忙しい毎日の中で、"
+          ],
+          "start": 17.16,
+          "end": 20.54
+        },
+        {
+          "lines": [
+            "子どもと過ごす時間を取り戻せるという、"
+          ],
+          "start": 20.69,
+          "end": 23.54
+        },
+        {
+          "lines": [
+            "ささやかな幸せがあります。詳しい研究内容が"
+          ],
+          "start": 23.69,
+          "end": 26.98
+        },
+        {
+          "lines": [
+            "気になる方は、概要欄をご確認ください。"
+          ],
+          "start": 27.13,
+          "end": 29.98
+        },
+        {
+          "lines": [
+            "次はどんな研究が、誰かの幸せな未来を"
+          ],
+          "start": 30.13,
+          "end": 32.83
+        },
+        {
+          "lines": [
+            "運んでくるのでしょうか。その瞬間をこれからも"
+          ],
+          "start": 32.98,
+          "end": 36.28
+        },
+        {
+          "lines": [
+            "一緒に見つけていきたい方は、"
+          ],
+          "start": 36.43,
+          "end": 38.53
+        },
+        {
+          "lines": [
+            "ぜひチャンネル登録してお待ちください。"
+          ],
+          "start": 38.68,
+          "end": 41.53
+        }
+      ]
     }
   ],
   "shorts": [
@@ -216,5 +944,10 @@
         }
       ]
     }
-  ]
+  ],
+  "bgm_sources": {
+    "intro": "BGM/kl011-BGM-intro.mp3",
+    "main": "BGM/kl002-BGM-main.mp3",
+    "outro": "BGM/kl002-BGM-outro.mp3"
+  }
 }
