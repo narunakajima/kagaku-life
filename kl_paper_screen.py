@@ -126,6 +126,14 @@ def screen_paper(client: genai.Client, paper: dict, retries: int = 3) -> dict:
             raw = strip_code_fence(resp.text or "")
             return json.loads(raw)
         except json.JSONDecodeError:
+            # 2026-09-04修正: 以前は1回目の解析失敗で即座にフォールバック（flag扱い）
+            # していたが、一過性の応答不良でも即座に候補が沈んでしまうため、
+            # 下のExceptionと同様にリトライしてから諦めるようにする。
+            if attempt < retries - 1:
+                wait = 2 ** (attempt + 1)
+                print(f"    ⚠️ JSON解析失敗、{wait}秒待って再試行: raw={raw[:200]}", file=sys.stderr)
+                time.sleep(wait)
+                continue
             return {
                 "venue_assessment": "unknown",
                 "venue_note": "Geminiの応答をJSONとして解析できなかった",
@@ -133,7 +141,7 @@ def screen_paper(client: genai.Client, paper: dict, retries: int = 3) -> dict:
                 "replication_note": "",
                 "funding_coi_note": "",
                 "overall": "flag",
-                "reasoning": f"パース失敗。生の応答: {raw[:300]}",
+                "reasoning": f"パース失敗（{retries}回試行）。生の応答: {raw[:300]}",
             }
         except Exception as e:  # noqa: BLE001 — API側の一時エラーはリトライして吸収する
             if attempt < retries - 1:

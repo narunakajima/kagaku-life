@@ -132,6 +132,14 @@ def score_paper(client: genai.Client, paper: dict, retries: int = 3) -> dict:
             raw = strip_code_fence(resp.text or "")
             return json.loads(raw)
         except json.JSONDecodeError:
+            # 2026-09-04修正: 以前は1回目の解析失敗で即座にフォールバック（全スコア1）
+            # していたが、一過性の応答不良でも即座に候補が沈んでしまうため、
+            # 下のExceptionと同様にリトライしてから諦めるようにする。
+            if attempt < retries - 1:
+                wait = 2 ** (attempt + 1)
+                print(f"    ⚠️ JSON解析失敗、{wait}秒待って再試行: raw={raw[:200]}", file=sys.stderr)
+                time.sleep(wait)
+                continue
             return {
                 "transformation_score": 1,
                 "life_relevance_score": 1,
@@ -140,7 +148,7 @@ def score_paper(client: genai.Client, paper: dict, retries: int = 3) -> dict:
                 "example_protagonist": {},
                 "hook_idea": "",
                 "transformation_comparison": "",
-                "reasoning": f"Geminiの応答をJSONとして解析できなかった。生の応答: {raw[:300]}",
+                "reasoning": f"Geminiの応答をJSONとして解析できなかった（{retries}回試行）。生の応答: {raw[:300]}",
             }
         except Exception as e:  # noqa: BLE001
             if attempt < retries - 1:

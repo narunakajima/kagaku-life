@@ -106,10 +106,18 @@ def check_reference(client: genai.Client, ref: dict, narrations: list, retries: 
             raw = strip_code_fence(resp.text or "")
             return json.loads(raw)
         except json.JSONDecodeError:
+            # 2026-09-04修正: 以前は1回目の解析失敗で即座にフォールバック（caution扱い）
+            # していたが、一過性の応答不良でも即座にファクトチェックが不確定のまま
+            # 終わってしまうため、下のExceptionと同様にリトライしてから諦めるようにする。
+            if attempt < retries - 1:
+                wait = 2 ** (attempt + 1)
+                print(f"    ⚠️ JSON解析失敗、{wait}秒待って再試行: raw={raw[:200]}", file=sys.stderr)
+                time.sleep(wait)
+                continue
             return {
                 "numbers_match": None, "institution_match": None, "hedging_preserved": None,
                 "scope_exaggerated": None, "issues": [], "overall": "caution",
-                "reasoning": f"Geminiの応答をJSONとして解析できなかった。生の応答: {raw[:300]}",
+                "reasoning": f"Geminiの応答をJSONとして解析できなかった（{retries}回試行）。生の応答: {raw[:300]}",
             }
         except Exception as e:  # noqa: BLE001
             if attempt < retries - 1:
