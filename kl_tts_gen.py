@@ -20,8 +20,10 @@ episodes/kl{NNN}.jsonに記録すること。
 """
 
 import argparse
+import io
 import json
 import os
+import re
 import shutil
 import sys
 import time
@@ -36,7 +38,8 @@ sys.stdout.reconfigure(line_buffering=True)
 BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 
-API_KEY = os.environ.get("GEMINI_API_KEY", "")
+API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
+QA_MODEL = "gemini-flash-latest"  # ナレーション音声が台本通りか判定する用（sc_tts_gen.pyと同じ考え方）
 # gemini-3.1-flash-tts-preview はテキスト先頭に演技指導（スタイル指示）を付けると
 # finish_reason=OTHER で空データが返る不具合がある（lamp-whisperのlw_tts_gen.pyで
 # 発覚・対処済み）。gemini-2.5-pro-preview-ttsに切り替える（2026-08-21）。
@@ -64,6 +67,53 @@ STYLE_PREFIX = {
 # 上書きする方式にする（2026-08-25追加、kl004で高齢者演技指導が必要になったため）。
 
 
+def _to_wav_bytes(pcm_data: bytes, sample_rate: int = 24000) -> bytes:
+    """PCM バイト列を QA 用に WAV バイト列へ変換する。"""
+    buf = io.BytesIO()
+    with wave.open(buf, "wb") as wf:
+        wf.setnchannels(1)
+        wf.setsampwidth(2)
+        wf.setframerate(sample_rate)
+        wf.writeframes(pcm_data)
+    return buf.getvalue()
+
+
+def qa_narration_with_gemini(client: genai.Client, audio_data: bytes, script_text: str) -> dict:
+    """生成されたナレーション音声が台本通りに発話されているかをGeminiに判定させる。
+    samurai-chroniclesのsc_tts_gen.pyと同じ考え方（2026-09-04導入）。"""
+    try:
+        wav_bytes = _to_wav_bytes(audio_data)
+        qa_prompt = (
+            "Listen to this narration audio and compare it against the intended script below.\n\n"
+            "Check for these issues:\n"
+            "- SKIPPED: one or more sentences or phrases from the script are missing from the audio\n"
+            "- ALTERED: the spoken words deviate significantly from the script — not just natural "
+            "reading variation (pauses, emphasis), but substituted, garbled, or materially different wording\n"
+            "- REPEATED: any part of the script is spoken more than once\n"
+            "- CUTOFF: the audio ends abruptly mid-sentence or mid-word instead of completing the script\n\n"
+            f"Script:\n{script_text}\n\n"
+            "Respond with ONLY a JSON object, no other text, in this exact format:\n"
+            '{"ok": true, "issues": []}\n'
+            "or\n"
+            '{"ok": false, "issues": ["ISSUE_TYPE: brief description", ...]}'
+        )
+        response = client.models.generate_content(
+            model=QA_MODEL,
+            contents=[
+                qa_prompt,
+                types.Part.from_bytes(data=wav_bytes, mime_type="audio/wav"),
+            ],
+        )
+        text_resp = response.text.strip()
+        if text_resp.startswith("```"):
+            text_resp = re.sub(r"^```(?:json)?\s*", "", text_resp)
+            text_resp = re.sub(r"\s*```$", "", text_resp)
+        result = json.loads(text_resp)
+        return {"ok": bool(result.get("ok", True)), "issues": result.get("issues", [])}
+    except Exception as e:
+        return {"ok": True, "issues": [], "qa_error": str(e)}
+
+
 def synth(client: genai.Client, text: str, voice_name: str, out_path: Path, narrator: str = None, style_override: str = None) -> bool:
     prefix = style_override if style_override is not None else STYLE_PREFIX.get(narrator, "")
     prompt = f"{prefix}{text}" if prefix else text
@@ -82,9 +132,14 @@ def synth(client: genai.Client, text: str, voice_name: str, out_path: Path, narr
             candidate = resp.candidates[0] if resp.candidates else None
             parts = candidate.content.parts if (candidate and candidate.content) else None
             if parts:
-                data = parts[0].inline_data.data
-                break
-            reason = f"空データ（finish_reason={getattr(candidate, 'finish_reason', '?')}）"
+                candidate_data = parts[0].inline_data.data
+                qa = qa_narration_with_gemini(client, candidate_data, text)
+                if qa["ok"]:
+                    data = candidate_data
+                    break
+                reason = f"台本不一致の疑い（{'; '.join(qa['issues'])}）"
+            else:
+                reason = f"空データ（finish_reason={getattr(candidate, 'finish_reason', '?')}）"
         except Exception as e:
             reason = f"{type(e).__name__}: {e}"
         if attempt < MAX_RETRIES:
