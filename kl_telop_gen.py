@@ -50,6 +50,15 @@ from pathlib import Path
 sys.stdout.reconfigure(line_buffering=True)
 
 BASE_DIR = Path(__file__).parent
+
+
+def atomic_write_json(path: Path, data) -> None:
+    """同じディレクトリに一時ファイルを書いてからos.replaceでアトミックに置き換える。
+    書き込み中にプロセスが落ちても、既存のJSONが壊れた状態で残らないようにする
+    （2026-09-04追加、Fable 5.1監査の指摘）。"""
+    tmp_path = path.with_suffix(path.suffix + ".tmp")
+    tmp_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    os.replace(tmp_path, path)
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 
 FFMPEG = shutil.which("ffmpeg") or "ffmpeg"
@@ -439,7 +448,7 @@ def cmd_plan(episode_id: str, scene_filter: list = None):
         for c in cards:
             print(f"      {c['start']:.2f}〜{c['end']:.2f}  {c['lines'][0]}")
 
-    ep_path.write_text(json.dumps(ep, ensure_ascii=False, indent=2))
+    atomic_write_json(ep_path, ep)
     print(f"\n完了: {updated}シーンに telop_cards を書き込みました")
 
 

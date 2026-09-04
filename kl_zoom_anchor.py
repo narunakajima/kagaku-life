@@ -46,6 +46,15 @@ API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY"
 MODEL = "gemini-3.7-flash"
 
 
+def atomic_write_json(path: Path, data) -> None:
+    """同じディレクトリに一時ファイルを書いてからos.replaceでアトミックに置き換える。
+    書き込み中にプロセスが落ちても、既存のJSONが壊れた状態で残らないようにする
+    （2026-09-04追加、Fable 5.1監査の指摘）。"""
+    tmp_path = path.with_suffix(path.suffix + ".tmp")
+    tmp_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    os.replace(tmp_path, path)
+
+
 def sniff_image_mime(data: bytes) -> str:
     """出力は拡張子が.pngでも実体がJPEGのことがあるため、ファイル先頭バイトから
     実際の画像形式を判定する（拡張子は信用しない。sc_image_gen.pyと同じ関数）。"""
@@ -198,8 +207,7 @@ def run(episode_id: str, scene_filter: list = None):
             print(f"  ⚠️  S{scene_id:02d}: 判定失敗（{e}）— zoom_anchorはなしのまま")
             failed.append(scene_id)
 
-    with open(ep_json, "w", encoding="utf-8") as f:
-        json.dump(ep, f, ensure_ascii=False, indent=2)
+    atomic_write_json(ep_json, ep)
 
     print(f"\n{'━'*60}")
     print(f"  完了: {updated}/{len(targets)} シーンに zoom_anchor を書き込みました")
