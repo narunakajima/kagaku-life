@@ -114,7 +114,9 @@ def qa_narration_with_gemini(client: genai.Client, audio_data: bytes, script_tex
         result = json.loads(text_resp)
         return {"ok": bool(result.get("ok", True)), "issues": result.get("issues", [])}
     except Exception as e:
-        return {"ok": True, "issues": [], "qa_error": str(e)}
+        # QA自体が失敗した場合はサイレントにOK扱いせず、issueとして扱い
+        # 既存のリトライ機構に乗せる（API障害等を「問題なし」と誤認しないため）。
+        return {"ok": False, "issues": [f"QA_ERROR: {e}"]}
 
 
 def synth(client: genai.Client, text: str, voice_name: str, out_path: Path, narrator: str = None, style_override: str = None) -> bool:
