@@ -37,13 +37,31 @@ import re
 import sys
 from pathlib import Path
 
-from PIL import Image
 from google import genai
+from google.genai import types
 
 sys.stdout.reconfigure(line_buffering=True)
 
-API_KEY = os.environ.get("GEMINI_API_KEY", "")
+API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
 MODEL = "gemini-3.7-flash"
+
+
+def sniff_image_mime(data: bytes) -> str:
+    """出力は拡張子が.pngでも実体がJPEGのことがあるため、ファイル先頭バイトから
+    実際の画像形式を判定する（拡張子は信用しない。sc_image_gen.pyと同じ関数）。"""
+    if data[:3] == b"\xff\xd8\xff":
+        return "image/jpeg"
+    if data[:8] == b"\x89PNG\r\n\x1a\n":
+        return "image/png"
+    return "image/png"  # フォールバック
+
+
+def image_part_from_path(path: Path) -> types.Part:
+    """画像ファイルを生バイト列のままPartとして渡す。PIL.Imageオブジェクトを渡すと
+    SDK内部でJPEG q75に再エンコードされてしまうため2026-09-04修正
+    （Fable 5.1監査の指摘、sc_image_gen.pyと同じ対応）。"""
+    data = path.read_bytes()
+    return types.Part.from_bytes(data=data, mime_type=sniff_image_mime(data))
 
 BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
@@ -68,7 +86,7 @@ def determine_zoom_anchor(client: genai.Client, image_path: Path) -> dict:
     2人＝パン+ズームアウト、0人/3人以上＝中央からズームアウト」という
     カメラワークのルールをkagaku-lifeにも適用するため）。
     """
-    image = Image.open(image_path)
+    image = image_part_from_path(image_path)
     prompt = (
         "This is a still illustration from a Japanese YouTube video about AI/robotics "
         "research and everyday life.\n\n"

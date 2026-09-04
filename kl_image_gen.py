@@ -66,6 +66,25 @@ QA_MODEL = "gemini-3.7-flash"
 REQUEST_TIMEOUT_MS = 60_000
 MAX_QA_ATTEMPTS = 2  # SCの実績（89話分・3回目のリトライは効果薄）を踏襲し2回に抑える
 
+
+def sniff_image_mime(data: bytes) -> str:
+    """出力は拡張子が.pngでも実体がJPEGのことがあるため、ファイル先頭バイトから
+    実際の画像形式を判定する（拡張子は信用しない。sc_image_gen.pyと同じ関数）。"""
+    if data[:3] == b"\xff\xd8\xff":
+        return "image/jpeg"
+    if data[:8] == b"\x89PNG\r\n\x1a\n":
+        return "image/png"
+    return "image/png"  # フォールバック
+
+
+def image_part_from_path(path: Path) -> types.Part:
+    """画像ファイルを生バイト列のままPartとして渡す。PIL.Imageオブジェクトを渡すと
+    SDK内部でJPEG q75に再エンコードされてしまうため2026-09-04修正
+    （Fable 5.1監査の指摘、sc_image_gen.pyと同じ対応。QA・画風ドリフトチェック用。
+    サムネイルのテキスト合成(composite_thumbnail_text)はPILでの実編集のため対象外）。"""
+    data = path.read_bytes()
+    return types.Part.from_bytes(data=data, mime_type=sniff_image_mime(data))
+
 # サムネイルテキスト合成（2026-08-22追加）。日本語はAI画像生成に任せず、
 # lamp-whisperのmake_thumbnail_gemini.pyと同じ「背景はAI生成（無地）、
 # テキストはPillowで実フォント合成」方式を踏襲する。
@@ -296,8 +315,7 @@ def qa_image_with_gemini(client: genai.Client, image_path: Path, image_prompt: s
     テキスト描画精度が実用レベルに達したため、CLAUDE.mdの方針を改訂した）。
     """
     try:
-        from PIL import Image
-        image = Image.open(image_path)
+        image = image_part_from_path(image_path)
         text_rule = TEXT_RULE_ALLOW_LABELS if allow_text else TEXT_RULE_NO_TEXT
         qa_prompt = QA_PROMPT_TEMPLATE.format(image_prompt=image_prompt, text_rule=text_rule)
         response = client.models.generate_content(
@@ -426,13 +444,12 @@ def check_style_drift(client: genai.Client, entries: list) -> dict:
     if len(entries) < MIN_IMAGES_FOR_STYLE_DRIFT_CHECK:
         return {}
     try:
-        from PIL import Image
         labels = [e["label"] for e in entries]
         prompt = STYLE_DRIFT_PROMPT_TEMPLATE.format(labels=", ".join(labels))
         contents = [prompt]
         for e in entries:
             contents.append(f"Image labeled {e['label']}:")
-            contents.append(Image.open(e["path"]))
+            contents.append(image_part_from_path(e["path"]))
         response = client.models.generate_content(
             model=QA_MODEL, contents=contents,
             config=types.GenerateContentConfig(
