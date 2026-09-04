@@ -59,7 +59,11 @@
           "start": 0.26,
           "end": 2.96
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.35,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 2,
@@ -68,7 +72,7 @@
       "duration_seconds": 2,
       "narration": "『発見しました』の一報を、まっている。",
       "image_prompt": "A disaster response staging area outdoors in the daytime, several Japanese rescue workers wearing orange safety vests and helmets standing near a folding table with a handheld radio, tense expectant expressions looking toward the radio, bright overcast daytime lighting, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -77,7 +81,11 @@
           "start": 0.0,
           "end": 3.06
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 3,
@@ -86,7 +94,7 @@
       "duration_seconds": 2,
       "narration": "家では、二人の子どもが待っている。",
       "image_prompt": "The entrance of a Japanese home in the evening, a Japanese woman in her mid-40s (Ito Maiko) wearing casual home clothes with practical shoulder-length hair, crouching with open arms, her two children — a Japanese girl about 8 years old and a Japanese boy about 5 years old — running toward her joyfully, warm indoor lighting spilling from the doorway, dusk sky visible outside, not night, no text",
-      "ken_burns": "pan_zoom_out",
+      "ken_burns": "zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -95,7 +103,11 @@
           "start": 0.0,
           "end": 2.55
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 4,
@@ -120,7 +132,11 @@
           "start": 3.8,
           "end": 5.6
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.7,
+        "y": 0.42
+      }
     },
     {
       "scene_id": 5,
@@ -166,7 +182,11 @@
           "start": 12.16,
           "end": 13.81
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.67,
+        "y": 0.48
+      }
     },
     {
       "scene_id": 6,
@@ -247,7 +267,11 @@
           "start": 31.86,
           "end": 35.01
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.51,
+        "y": 0.38
+      }
     },
     {
       "scene_id": 7,
@@ -342,7 +366,11 @@
           "start": 39.92,
           "end": 42.17
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.61,
+        "y": 0.33
+      }
     },
     {
       "scene_id": 8,
@@ -351,7 +379,7 @@
       "duration_seconds": 22,
       "narration": "この課題に一つの糸口を示したのが、ノルウェー・アグデル大学の研究チームが発表した研究です。防災・危機管理分野の国際会議、ISCRAMの2023年の大会で報告されました。研究チームが着目したのは、救助犬が生まれ持つ、あの優れた嗅覚のメカニズムでした。犬たちが積み重ねてきた働きを、機械にも少しだけ担わせられないか——そんな発想から始まった研究です。",
       "image_prompt": "An establishing exterior view of a modern Scandinavian university research building (Norwegian university campus architecture), contemporary academic architecture, bright daytime sunlight, a few small figures walking in the distance, no people in close-up, no text",
-      "ken_burns": "zoom_out",
+      "ken_burns": "zoom_in",
       "telop_cards": [
         {
           "lines": [
@@ -416,7 +444,11 @@
           "start": 28.18,
           "end": 30.13
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.89,
+        "y": 0.8
+      }
     },
     {
       "scene_id": 9,
@@ -426,7 +458,7 @@
       "duration_seconds": 34,
       "narration": "救助犬は、空気中に漂うわずかな匂いの濃淡を頼りに、要救助者のもとへとまっすぐ近づいていきます。研究チームは、この能力を四足歩行ロボットに再現できないかと考えました。ただし、いきなり実物のロボットと本物の匂いセンサーで試すのではなく、まずコンピューター上のシミュレーション環境で、この仕組みが本当に機能するのかを確かめることから始めました。匂いの代わりに、光の明るさの変化を手がかりとして使い、その変化をそのまま足の動きへと直接結びつける、生物模倣型の操舵の仕組みです。まず地図を作り、経路を計画してから動き出す従来の方式とは違い、センサーの反応がそのまま進む向きに変わります。四本の脚で歩く体は揺れやすく、センサーの値も乱れがちですが、こうした単純な仕組みであれば、そうした条件でも働きやすいと考えられています。",
       "image_prompt": "Inside a modern robotics research lab in the daytime, two Scandinavian researchers (Northern European appearance, matching the Norway-based institution) in casual research attire seated at a desk, looking closely at a computer monitor displaying a 3D physics-simulation render (simplified geometric rubble shapes, a glowing light-source point) of a quadruped search-and-rescue robot (four-legged mechanical body with a Boston Dynamics Spot-like silhouette, matte gray-and-orange color scheme, the same robot design as in every other scene of this episode) navigating the virtual environment on screen, one researcher pointing at the screen, a small flat corner graphic (no larger than roughly one-eighth of the frame, tucked unobtrusively in a corner, plain flat style, kept simple and contrasting with the richer main illustration for legibility, showing a simple nose/scent-wave icon converging toward a dot, absolutely no text or numerals), bright daytime indoor lighting, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -571,7 +603,7 @@
       "duration_seconds": 34,
       "narration": "検証では、シミュレーションの中に瓦礫のような障害物のある仮想の空間をつくり、光の発生源を一つ置きました。ロボットは、あらかじめ経路を教わることなく、明るさが増す方向へと少しずつ進路を修正しながら、発生源へと自律的に近づいていく様子が確認されました。まだ実際のロボットや本物の匂いセンサーを使った検証には至っていない、研究のごく初期の段階です。それでも、匂いという手がかりを使えば、カメラの映像だけに頼るよりも、視界の悪い瓦礫の隙間や暗い場所でも捜索を続けられる可能性が期待されています。研究チームは今後、実機での検証や、本物の匂いセンサーへの置き換えを重ねていく方針を示しています。",
       "image_prompt": "A close-up view of a computer monitor in a robotics research lab, displaying a 3D physics-simulation render (simplified geometric rubble-like shapes scattered across a virtual floor, a small glowing light-source point marking the target) of a quadruped search-and-rescue robot (four-legged mechanical body with a Boston Dynamics Spot-like silhouette, matte gray-and-orange color scheme, the same robot design as in every other scene of this episode) autonomously navigating across the virtual debris toward the glowing point, a researcher's hand resting near a keyboard at the edge of frame, soft screen-glow lighting the room, bright daytime ambient lighting, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -776,7 +808,7 @@
       "duration_seconds": 10,
       "narration": "もしこの技術が、被災地の最前線に立つ日が来たら。窓の外を眺めながら、私はつい、そんな未来を思い描いてしまいます。",
       "image_prompt": "A Japanese woman in her mid-40s (Ito Maiko), practical shoulder-length hair, wearing a municipal disaster-prevention department windbreaker, drawn small, sitting in a chair by the window in her real municipal office, a classic comic-style thought bubble (a chain of small circles rising from her head into one large cloud-shaped bubble) above her head, inside the bubble a miniature imagined scene of a quadruped search-and-rescue robot (four-legged mechanical body with a Boston Dynamics Spot-like silhouette, matte gray-and-orange armored plastic shell, jointed articulated legs, a compact sensor head with small round gas-sensor intake ports on the front, no camera-eye or face-like features, friendly but clearly mechanical in appearance, not resembling a human or a dog's face, no visible brand logos or text) searching a rubble field at a disaster site, bright daytime office lighting, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -808,7 +840,7 @@
       "duration_seconds": 18,
       "narration": "あの四本足のロボットが瓦礫の隙間にセンサーを寄せ、かすかな匂いの変化を静かに追っていきます。人の目や手が届きにくい隙間の奥まで、迷いなく進んでいく姿を、少し離れた場所から見守っています。匂いの発生源をとらえた合図が救助隊の無線に届いた瞬間、隊員たちの表情が一斉に変わります。掘り起こした瓦礫の下から、意識のある人の手が差し出されたとき、現場にどっと安心の声が広がります。",
       "image_prompt": "An outdoor disaster site in the daytime, a quadruped search-and-rescue robot (four-legged mechanical body with a Boston Dynamics Spot-like silhouette, matte gray-and-orange armored plastic shell, jointed articulated legs, a compact sensor head with small round gas-sensor intake ports on the front, no camera-eye or face-like features, friendly but clearly mechanical in appearance, not resembling a human or a dog's face, no visible brand logos or text, the same robot design as in every other scene of this episode) with its sensor head lowered near a gap in the rubble, several Japanese rescue workers in orange safety vests and helmets nearby reacting with sudden alertness to a handheld radio signal, one rescue worker's gloved hand reaching into a gap in the rubble where a survivor's hand reaches back, visible relief and emotion on the workers' faces, bright daytime lighting, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "badge_text": "幸せな未来を夢想中",
       "telop_cards": [
         {
@@ -881,7 +913,11 @@
           "start": 31.25,
           "end": 32.45
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 14,
@@ -890,7 +926,7 @@
       "duration_seconds": 15,
       "narration": "長い一日を終えて家に帰ると、二人の子どもが『おかえり』と駆け寄ってきます。今日、誰かを家族のもとへ帰すことができた——そう思うと、いつもの夕食の湯気さえ、少しあたたかく見えます。子どもたちを抱きしめながら、どこかの家でも、無事の知らせを受け取った家族が同じように誰かを抱きしめているはずだと、そっと思いを馳せます。",
       "image_prompt": "The entrance of a Japanese home in the evening, a Japanese woman in her mid-40s (Ito Maiko) wearing casual home clothes with practical shoulder-length hair, arriving home with a warm relieved smile, her two children — a Japanese girl about 8 years old and a Japanese boy about 5 years old — running to greet her at the entrance with open arms, warm interior lighting spilling from the doorway, dusk sky visible outside, not night, no text",
-      "ken_burns": "pan_zoom_out",
+      "ken_burns": "zoom_out",
       "badge_text": "幸せな未来を夢想中",
       "telop_cards": [
         {
@@ -956,7 +992,11 @@
           "start": 27.88,
           "end": 29.53
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 15,
@@ -966,7 +1006,7 @@
       "duration_seconds": 48,
       "narration": "ご紹介したのは、コンピューター上のシミュレーションで、この仕組みが機能することを確かめ始めた段階の研究であり、実際のロボットや本物の匂いセンサーでの検証、そして実際の災害現場で使えるようになるまでには、まだ時間がかかりそうです。それでも、救助犬と隊員たちが支えてきた捜索の現場に、ロボットという新しい仲間が加わるかもしれない——そんな静かな可能性が、少しずつ育まれています。犬と人がこれまで積み重ねてきた力に、機械の手が加わる時代が来れば、一つでも多くの命に、早く手が届くようになるかもしれません。詳しい研究内容が知りたい方は、概要欄をご確認ください。次はどんな研究が、誰かの幸せな未来を運んでくるのでしょうか。その瞬間をこれからも一緒に見つけていきたい方は、ぜひチャンネル登録してお待ちください。",
       "image_prompt": "A quiet outdoor disaster-simulation training field in the late afternoon, a quadruped search-and-rescue robot (four-legged mechanical body with a Boston Dynamics Spot-like silhouette, matte gray-and-orange armored plastic shell, exactly four jointed articulated legs — two front legs and two rear legs, symmetrical left and right, each leg with a clear hip joint and a backward-bending knee joint, anatomically correct quadruped leg count and structure, a compact sensor head with a row of small round gas-sensor intake ports arranged in a flat horizontal line on the front — NOT two large round lens elements, absolutely no camera-eye or face-like features of any kind, friendly but clearly mechanical in appearance, not resembling a human or a dog's face, no visible brand logos or text, the same robot design as in every other scene of this episode) standing calmly at rest among the rubble with its sensor lights dimmed, no people in the frame, soft late-afternoon daylight, calm hopeful mood, no text",
-      "ken_burns": "zoom_out",
+      "ken_burns": "zoom_in",
       "telop_cards": [
         {
           "lines": [
@@ -1087,7 +1127,11 @@
           "start": 51.25,
           "end": 54.05
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.33,
+        "y": 0.52
+      }
     }
   ],
   "shorts": [
