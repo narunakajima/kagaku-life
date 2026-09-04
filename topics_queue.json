@@ -436,8 +436,37 @@
       },
       "hook_idea": "チャットの気配りをやめてAIに仕事丸投げしたら、成果が50%上がった？最新大規模実験が明かすAIチームワークのリアルと『同じような広告ばかりになる』落とし穴とは。",
       "notes": "STAGE0: 6カテゴリとも在庫十分のためSTAGE1新規収集は全カテゴリスキップ。STAGE2.5でカテゴリごとに1案ずつ提示（work/aging_care/medical_support/disaster_safety/mobility/home_robot）した中からユーザーがwork案を選択（2026-09-01）。workはkl002（2026-08、学歴格差を縮める生成AI）以来9話ぶりの起用で、直近連続使用していたmobility（kl009・kl010）・home_robot（kl008・kl011）は今回見送りを推奨し選択肢から除外した。採用論文はarXiv掲載のプレプリントだが、著者Sinan AralはMIT Sloan教授で計算社会科学・AI経済学分野の著名研究者（信頼性シグナルとしてSTAGE2方針に合致）。大規模フィールド実験（実際の広告制作チーム）でAIエージェントを『同僚』として協働させると生産性・パフォーマンスが約50%向上する一方、AIに考えなしに丸投げすると成果物の画一化（同じような広告ばかりになる）という新しい落とし穴が定量的に示された点が、単なる『AIで効率化』を超えた変革ポテンシャルと判断。kl002（個人のスキル格差是正）とは異なる『チーム協働のあり方』という切り口で差別化。査読前である旨は概要欄で開示し、ナレーションでは『まだ研究段階』等の一般的な表現でヘッジする。"
+    },
+    {
+      "episode_id": "kl013",
+      "status": "confirmed",
+      "title": "救助犬の「鼻」を受け継ぐロボット：瓦礫の中の命を、匂いで見つけ出す挑戦",
+      "format": "single_paper",
+      "category": "disaster_safety",
+      "category_label": "防災・安全",
+      "references": [
+        {
+          "title": "Mimicking the Sense of Smell of Search and Rescue (SAR) Dogs: a Bio-inspired Steering Framework for Quadruped Robots",
+          "authors": [
+            "Filippo Sanfilippo",
+            "I. Ra"
+          ],
+          "year": 2023,
+          "venue": "Proceedings of the 20th International Conference on Information Systems for Crisis Response and Management",
+          "doi": "10.59297/fbhp3870",
+          "is_preprint": false
+        }
+      ],
+      "protagonist": {
+        "name": "伊藤 麻衣子",
+        "age": 45,
+        "job": "地方自治体防災課職員（2児の母）",
+        "gender": "female"
+      },
+      "hook_idea": "もし巨大地震の瓦礫に取り残されたら——救助犬の「凄まじい鼻」を受け継いだロボットは、あなたを見つけ出せるでしょうか？",
+      "notes": "STAGE0: 6カテゴリとも在庫十分（aging_care17/disaster_safety38/home_robot29/medical_support145/mobility30/work78件）のためSTAGE1新規収集は全カテゴリスキップ。STAGE2.5でaging_care/medical_support/disaster_safetyの3案を優先提示（home_robot/mobility/workは直近5話でkl008・kl009・kl010・kl011・kl012が使用済みのためローテーション上非推奨と明示）した中からユーザーがdisaster_safety案を選択（2026-09-04）。disaster_safetyはkl006（2026-08-26、マルチドローン医薬品配送）以来6話ぶりの起用。採用論文はISCRAM 2023掲載の査読済み論文、STAGE4スコアは3.85で同カテゴリ内最高値（Bio-inspired CPGチップ4.35、vAccSOL AIビジョンオフロード4.0）ではないが、両者はバッテリー効率・処理オフロードという技術寄りの内容で絵作りが難しいと判断し、瓦礫に閉じ込められた人が救助犬型ロボットに発見される、という感情移入しやすく視覚化しやすいストーリーを優先した（CLAUDE.mdの「動画にしやすさ」観点）。kl006（離れて暮らす家族を心配する会社員が主人公）とは異なる角度として、本作は防災課職員（現場で救助にあたる立場）を主人公に据え、『限られた救助犬・人員では全ての要救助者を見つけきれない』という職業上の歯がゆさから入る構成にする。直近5話（kl008〜kl012）が男性主人公続き（kl011のみ女性）だったため、主人公は女性で設定しジェンダーバランスを取った。"
     }
   ],
-  "total_topics": 12,
-  "last_updated": "2026-09-01"
+  "total_topics": 13,
+  "last_updated": "2026-09-04"
 }
