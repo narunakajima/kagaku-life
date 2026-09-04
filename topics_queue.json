@@ -465,8 +465,43 @@
       },
       "hook_idea": "もし巨大地震の瓦礫に取り残されたら——救助犬の「凄まじい鼻」を受け継いだロボットは、あなたを見つけ出せるでしょうか？",
       "notes": "STAGE0: 6カテゴリとも在庫十分（aging_care17/disaster_safety38/home_robot29/medical_support145/mobility30/work78件）のためSTAGE1新規収集は全カテゴリスキップ。STAGE2.5でaging_care/medical_support/disaster_safetyの3案を優先提示（home_robot/mobility/workは直近5話でkl008・kl009・kl010・kl011・kl012が使用済みのためローテーション上非推奨と明示）した中からユーザーがdisaster_safety案を選択（2026-09-04）。disaster_safetyはkl006（2026-08-26、マルチドローン医薬品配送）以来6話ぶりの起用。採用論文はISCRAM 2023掲載の査読済み論文、STAGE4スコアは3.85で同カテゴリ内最高値（Bio-inspired CPGチップ4.35、vAccSOL AIビジョンオフロード4.0）ではないが、両者はバッテリー効率・処理オフロードという技術寄りの内容で絵作りが難しいと判断し、瓦礫に閉じ込められた人が救助犬型ロボットに発見される、という感情移入しやすく視覚化しやすいストーリーを優先した（CLAUDE.mdの「動画にしやすさ」観点）。kl006（離れて暮らす家族を心配する会社員が主人公）とは異なる角度として、本作は防災課職員（現場で救助にあたる立場）を主人公に据え、『限られた救助犬・人員では全ての要救助者を見つけきれない』という職業上の歯がゆさから入る構成にする。直近5話（kl008〜kl012）が男性主人公続き（kl011のみ女性）だったため、主人公は女性で設定しジェンダーバランスを取った。"
+    },
+    {
+      "episode_id": "kl014",
+      "status": "confirmed",
+      "title": "卵の茹で方を忘れた元・料理教室講師：AIが「実行機能」を肩代わりする認知症ケアの新しい形",
+      "format": "single_paper",
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "references": [
+        {
+          "title": "Vision AI-Based Gamified Cognitive Prosthesis for Executive Function: Feasibility and Usability Study",
+          "authors": [
+            "Co Yih Siow",
+            "Yao-Hua Yang",
+            "Cheng-Jui Tsai",
+            "Wan-Wan Yang",
+            "Chaur-Jong Hu",
+            "Jia-Ying Sung",
+            "Jowy Tani"
+          ],
+          "year": 2025,
+          "venue": "JMIR Serious Games",
+          "doi": "10.2196/74157",
+          "is_preprint": false,
+          "lead_researcher": "Chaur-Jong Hu（台北医科大学）"
+        }
+      ],
+      "protagonist": {
+        "name": "高橋 順子",
+        "age": 71,
+        "job": "元・料理教室講師（軽度認知症と診断された一人暮らしの女性）",
+        "gender": "female"
+      },
+      "hook_idea": "「あれ、卵って何分茹でるんだっけ…」長年やってきた料理が急にできなくなる恐怖に、AIが寄り添う",
+      "notes": "STAGE0: 6カテゴリとも在庫十分（aging_care17/home_robot29/medical_support145/mobility30/work78/disaster_safety37件）のためSTAGE1新規収集は全カテゴリスキップ。STAGE2.5で当初aging_care（レーダー/サーモカメラによる非接触転倒検知の潮流案）とmedical_support（両手タイピング神経義肢、Nature Neuroscience）を優先提示したが、ユーザーから両案とも既視感がある旨の指摘（2026-09-05）。転倒検知は市販の見守り製品と近く、神経義肢はkl003（BCIマウス操作）・kl007（音声BCI）に続く3例目のBCI/神経義肢テーマだったため。代替案としてBCI/神経義肢ではない医療補助技術の切り口（外部ロボットによる転倒介助・恐怖心の検知・認知機能の遂行支援）と、workカテゴリの新サブテーマ（AI科学者による創薬）を再提示し、ユーザーが本論文（AI搭載ゲーム型認知プロテーゼ）を選択。軽度認知症患者が「卵を茹でる」という日常タスクをAIの視覚・音声ガイドで遂行できるようになるという内容で、kl005（コンパニオンロボットによる気分・孤独感のケア）とは異なり「日常タスクの遂行能力そのものを取り戻す」機能的支援がテーマ。台北医科大学附属病院での実施、軽度認知症患者12名・健常対照群7名のパイロット試験（Feasibility and Usability Study）。ガイドありでタスク完了時間が134.75秒→92.00秒（31.7%短縮、P=.03）、実行機能エラースコアが4.25→1.00（76.5%改善、P=.005）に改善、AIの物体認識精度0.93・再現率0.94。JMIR Serious Games掲載の査読済み論文（STAGE2許可リスト該当誌）だが、パイロット試験でサンプルサイズが小さい点（n=12+7）は概要欄で開示する。主人公は論文の実際の被験者像（元・料理教室講師）に寄せて設定、料理という具体的な生活シーンに落とし込みやすい。"
     }
   ],
-  "total_topics": 13,
-  "last_updated": "2026-09-04"
+  "total_topics": 14,
+  "last_updated": "2026-09-05"
 }
