@@ -70,6 +70,9 @@ def qa_audio_with_gemini(client, audio_path: Path) -> dict:
                 QA_PROMPT,
                 genai.types.Part.from_bytes(data=data, mime_type=mime_type),
             ],
+            config=genai.types.GenerateContentConfig(
+                thinking_config=genai.types.ThinkingConfig(thinking_budget=0)
+            ),
         )
         text = response.text.strip()
         if text.startswith("```"):

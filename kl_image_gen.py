@@ -296,6 +296,9 @@ def qa_image_with_gemini(client: genai.Client, image_path: Path, image_prompt: s
         response = client.models.generate_content(
             model=QA_MODEL,
             contents=[qa_prompt, image],
+            config=types.GenerateContentConfig(
+                thinking_config=types.ThinkingConfig(thinking_budget=0)
+            ),
         )
         text = response.text.strip()
         if text.startswith("```"):
@@ -421,7 +424,12 @@ def check_style_drift(client: genai.Client, entries: list) -> dict:
         for e in entries:
             contents.append(f"Image labeled {e['label']}:")
             contents.append(Image.open(e["path"]))
-        response = client.models.generate_content(model=QA_MODEL, contents=contents)
+        response = client.models.generate_content(
+            model=QA_MODEL, contents=contents,
+            config=types.GenerateContentConfig(
+                thinking_config=types.ThinkingConfig(thinking_budget=0)
+            ),
+        )
         text = response.text.strip()
         if text.startswith("```"):
             text = re.sub(r"^```(?:json)?\s*", "", text)

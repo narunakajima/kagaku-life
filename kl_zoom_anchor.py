@@ -90,6 +90,9 @@ def determine_zoom_anchor(client: genai.Client, image_path: Path) -> dict:
     response = client.models.generate_content(
         model=MODEL,
         contents=[prompt, image],
+        config=genai.types.GenerateContentConfig(
+            thinking_config=genai.types.ThinkingConfig(thinking_budget=0)
+        ),
     )
     text = response.text.strip()
     if text.startswith("```"):
