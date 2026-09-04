@@ -2,7 +2,7 @@
   "episode_id": "kl013",
   "episode_title": "瓦礫の下の匂いを追う——救助犬の鼻を受け継いだロボット",
   "youtube_title": "救助犬の鼻をロボットに受け継げるか？——瓦礫の下の要救助者を匂いで捜す研究の第一歩(ノルウェー・アグデル大学)",
-  "youtube_description": "地方自治体の防災課で働き、二人の子どもを育てる伊藤麻衣子さん(45歳)の視点から解説します。大きな地震の被災地対応にあたった経験から、広い被災地に対して瓦礫の下を捜索できる救助犬と隊員には限りがあるという現実に、歯がゆさを感じてきました。今回紹介するのは、そんな限られた資源を補う可能性を示す研究です。ノルウェー・アグデル大学の研究チームが、国際危機管理情報システム学会(ISCRAM)の2023年の大会で発表した、救助犬の優れた嗅覚をヒントにした、四足歩行ロボットのための操舵の仕組みに関する研究です。コンピューター上のシミュレーション環境で、匂いの代わりに光の明るさの変化を手がかりとして使い、複雑な地図情報や事前の経路計画を介さず、その場で足の動きへと直接結びつけることで、発生源——実際の災害現場では要救助者がいる可能性のある場所——へと自律的に近づいていけることを確認した、研究のごく初期段階の成果です。実際のロボットや本物の匂いセンサーでの検証、実際の災害現場で使えるようになるまでにはまだ時間がかかりそうですが、犬と人の力で支えられてきた捜索に、新しい選択肢を加えうる一歩として注目されます。\n\n📚 参考文献:\nSanfilippo, F., & Ra, I. (2023). Mimicking the Sense of Smell of Search and Rescue (SAR) Dogs: a Bio-inspired Steering Framework for Quadruped Robots. Proceedings of the 20th International Conference on Information Systems for Crisis Response and Management (ISCRAM 2023).\n著者所属: ノルウェー・アグデル大学(University of Agder)\nDOI: 10.59297/fbhp3870\nhttps://doi.org/10.59297/fbhp3870\n\n#防災 #災害救助 #ロボティクス #四足歩行ロボット #バイオインスパイアード #AI #研究紹介 #くらしを変える科学 #幸せな未来のサイエンス",
+  "youtube_description": "地方自治体の防災課で働き、二人の子どもを育てる伊藤麻衣子さん(45歳)の視点から解説します。大きな地震の被災地対応にあたった経験から、広い被災地に対して瓦礫の下を捜索できる救助犬と隊員には限りがあるという現実に、歯がゆさを感じてきました。今回紹介するのは、そんな限られた資源を補う可能性を示す研究です。ノルウェー・アグデル大学の研究チームが、国際危機管理情報システム学会(ISCRAM)の2023年の大会で発表した、救助犬の優れた嗅覚をヒントにした、四足歩行ロボットのための操舵の仕組みに関する研究です。コンピューター上のシミュレーション環境で、匂いの代わりに光の明るさの変化を手がかりとして使い、複雑な地図情報や事前の経路計画を介さず、その場で足の動きへと直接結びつけることで、発生源——実際の災害現場では要救助者がいる可能性のある場所——へと自律的に近づいていけることを確認した、研究のごく初期段階の成果です。実際のロボットや本物の匂いセンサーでの検証、実際の災害現場で使えるようになるまでにはまだ時間がかかりそうですが、犬と人の力で支えられてきた捜索に、新しい選択肢を加えうる一歩として注目されます。\n\n📚 参考文献:\nSanfilippo, F., & Ra, I. (2023). Mimicking the Sense of Smell of Search and Rescue (SAR) Dogs: a Bio-inspired Steering Framework for Quadruped Robots. Proceedings of the 20th International Conference on Information Systems for Crisis Response and Management (ISCRAM 2023).\n著者所属: ノルウェー・アグデル大学(University of Agder)\nDOI: 10.59297/fbhp3870\nhttps://doi.org/10.59297/fbhp3870\n\n\n🎵 Music: Brylie Christopher - Alternating Nostrils by brylie (freesound.org) — CC BY 4.0\n#防災 #災害救助 #ロボティクス #四足歩行ロボット #バイオインスパイアード #AI #研究紹介 #くらしを変える科学 #幸せな未来のサイエンス",
   "youtube_tags": [
     "防災",
     "災害救助",
@@ -50,16 +50,34 @@
       "duration_seconds": 2,
       "narration": "瓦礫の下の匂いを、ロボットが追う。",
       "image_prompt": "An outdoor disaster-simulation rubble training field at dusk, a quadruped search-and-rescue robot (four-legged mechanical body with a Boston Dynamics Spot-like silhouette, matte gray-and-orange armored plastic shell, jointed articulated legs, a compact sensor head with small round gas-sensor intake ports on the front, no camera-eye or face-like features, friendly but clearly mechanical in appearance, not resembling a human or a dog's face, no visible brand logos or text, the same robot design as in every other scene of this episode) approaching a pile of collapsed concrete rubble with its sensor head lowered near a gap, small indicator lights glowing softly on its sensor module, evening — warm fading daylight, dusk sky visible, not full night, no people, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "瓦礫の下の匂いを、ロボットが追う。"
+          ],
+          "start": 0.26,
+          "end": 2.96
+        }
+      ]
     },
     {
       "scene_id": 2,
       "type": "teaser",
       "narrator": "persona",
       "duration_seconds": 2,
-      "narration": "『発見しました』の一報を待つ。",
+      "narration": "『発見しました』の一報を、まっている。",
       "image_prompt": "A disaster response staging area outdoors in the daytime, several Japanese rescue workers wearing orange safety vests and helmets standing near a folding table with a handheld radio, tense expectant expressions looking toward the radio, bright overcast daytime lighting, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "『発見しました』の一報を、まっている。"
+          ],
+          "start": 0.0,
+          "end": 3.06
+        }
+      ]
     },
     {
       "scene_id": 3,
@@ -68,7 +86,16 @@
       "duration_seconds": 2,
       "narration": "家では、二人の子どもが待っている。",
       "image_prompt": "The entrance of a Japanese home in the evening, a Japanese woman in her mid-40s (Ito Maiko) wearing casual home clothes with practical shoulder-length hair, crouching with open arms, her two children — a Japanese girl about 8 years old and a Japanese boy about 5 years old — running toward her joyfully, warm indoor lighting spilling from the doorway, dusk sky visible outside, not night, no text",
-      "ken_burns": "pan_zoom_out"
+      "ken_burns": "pan_zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "家では、二人の子どもが待っている。"
+          ],
+          "start": 0.0,
+          "end": 2.55
+        }
+      ]
     },
     {
       "scene_id": 4,
@@ -77,16 +104,62 @@
       "duration_seconds": 4,
       "narration": "もし瓦礫の下に、大切な人がいたら——見つけ出せるでしょうか。",
       "image_prompt": "A Japanese woman in her mid-40s (Ito Maiko), practical shoulder-length hair, wearing a municipal disaster-prevention department windbreaker with a badge (no legible text), standing at the edge of an outdoor disaster-simulation rubble field, looking thoughtfully at the collapsed concrete ahead, overcast daytime lighting, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "もし瓦礫の下に、大切な人がいたら——"
+          ],
+          "start": 0.0,
+          "end": 3.44
+        },
+        {
+          "lines": [
+            "見つけ出せるでしょうか。"
+          ],
+          "start": 3.8,
+          "end": 5.6
+        }
+      ]
     },
     {
       "scene_id": 5,
       "type": "hook",
       "narrator": "persona",
       "duration_seconds": 12,
-      "narration": "伊藤麻衣子、45歳。地方自治体の防災課で働いています。二人の子どもを育てながら、災害が起きたときに困る人を少しでも減らしたくて、この仕事を選びました。",
+      "narration": "伊藤麻衣子、四十五歳。地方自治体の防災課で働いています。二人の子どもを育てながら、災害が起きたときに困る人を少しでも減らしたくて、この仕事を選びました。",
       "image_prompt": "Inside a municipal disaster-prevention department office in the daytime, a Japanese woman in her mid-40s (Ito Maiko), practical shoulder-length hair, wearing a municipal disaster-prevention department windbreaker with a badge (no legible text), standing and looking at a large wall map of the region marked with disaster risk zones (no legible text or numbers on the map), bright daytime office lighting through windows, exactly one person in the entire scene, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "伊藤麻衣子、四十五歳。地方自治体の防災"
+          ],
+          "start": 0.0,
+          "end": 3.94
+        },
+        {
+          "lines": [
+            "課で働いています。二人の子どもを育てながら、"
+          ],
+          "start": 4.09,
+          "end": 7.54
+        },
+        {
+          "lines": [
+            "災害が起きたときに困る人を少しでも減らしたくて、"
+          ],
+          "start": 7.69,
+          "end": 11.29
+        },
+        {
+          "lines": [
+            "この仕事を選びました。"
+          ],
+          "start": 11.44,
+          "end": 13.09
+        }
+      ]
     },
     {
       "scene_id": 6,
@@ -95,25 +168,248 @@
       "duration_seconds": 20,
       "narration": "数年前、大きな地震が起きたとき、防災課の職員として被災地の対応にあたりました。瓦礫の下に取り残された人を捜すため、救助犬と、その相棒である隊員の方々が全国から駆けつけてくれました。それでも被災した範囲はあまりに広く、一頭一頭がどれだけ力を尽くしても、その日のうちに隅々まで手が回るものではありませんでした。一つの現場を終えて次の現場へ移動するだけでも、時間がかかります。",
       "image_prompt": "An outdoor disaster response scene in the daytime, a Japanese woman in her mid-40s (Ito Maiko), practical shoulder-length hair, wearing a municipal disaster-prevention department windbreaker with a badge (no legible text), standing amid a landscape of collapsed buildings and rubble with a worried focused expression, a couple of rescue dogs and their handlers visible working at a distance in the background, overcast daytime lighting, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "数年前、大きな地震が起きたとき、"
+          ],
+          "start": 0.0,
+          "end": 3.11
+        },
+        {
+          "lines": [
+            "防災課の職員として被災地の対応にあたりました。"
+          ],
+          "start": 3.38,
+          "end": 7.08
+        },
+        {
+          "lines": [
+            "瓦礫の下に取り残された人を捜すため、"
+          ],
+          "start": 7.23,
+          "end": 10.93
+        },
+        {
+          "lines": [
+            "救助犬と、その相棒である隊員の方々が"
+          ],
+          "start": 11.08,
+          "end": 15.02
+        },
+        {
+          "lines": [
+            "全国から駆けつけてくれました。"
+          ],
+          "start": 15.17,
+          "end": 17.42
+        },
+        {
+          "lines": [
+            "それでも被災した範囲はあまりに広く、"
+          ],
+          "start": 17.62,
+          "end": 20.96
+        },
+        {
+          "lines": [
+            "一頭一頭がどれだけ力を尽くしても、"
+          ],
+          "start": 21.11,
+          "end": 24.21
+        },
+        {
+          "lines": [
+            "その日のうちに隅々まで手が回るものでは"
+          ],
+          "start": 24.36,
+          "end": 27.82
+        },
+        {
+          "lines": [
+            "ありませんでした。一つの現場を終えて次の"
+          ],
+          "start": 27.97,
+          "end": 31.71
+        },
+        {
+          "lines": [
+            "現場へ移動するだけでも、時間がかかります。"
+          ],
+          "start": 31.86,
+          "end": 35.01
+        }
+      ]
     },
     {
       "scene_id": 7,
       "type": "context",
       "narrator": "persona",
       "duration_seconds": 30,
-      "narration": "一頭の犬が瓦礫の一角を慎重に捜し終えるまでには、何時間もかかることがあります。その間にも、別の現場からは新たな救助要請が次々に届く。順番を待つご家族の前で、『もう少し待ってください』としか言えなかった自分の無力さを、今でも覚えています。地図の上には、まだ確認できていない場所を示す印が、いくつも残ったままでした。駆けつけられる人にも、犬にも、限りがある。あのときの歯がゆさが、ずっと胸の奥に残っていました。もっと早く、もっと多くの場所に手が届いたら——そう思わずにはいられませんでした。",
+      "narration": "一頭の犬が瓦礫の一角を慎重に探し終えるまでには、何時間もかかることがあります。その間にも、別の現場からは新たな救助要請が次々に届く。順番を待つご家族の前で、『もう少し待ってください』としか言えなかった自分の無力さを、今でも覚えています。地図の上には、まだ確認できていない場所を示す印が、いくつも残ったままでした。駆けつけられる人にも、犬にも、限りがある。あのときの歯がゆさが、ずっと胸の奥に残っていました。もっと早く、もっと多くの場所に手が届いたら——そう思わずにはいられませんでした。",
       "image_prompt": "An outdoor disaster response staging area in the daytime, a Japanese woman in her mid-40s (Ito Maiko), practical shoulder-length hair, wearing a municipal disaster-prevention department windbreaker with a badge (no legible text), standing near a folding table with a large paper map marked with several pins (no legible text or numbers on the map), looking down at it with a troubled expression, one rescue dog resting beside its handler nearby, overcast daytime lighting suggesting an ongoing operation, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "一頭の犬が瓦礫の一角を慎重に探し終えるまでには、"
+          ],
+          "start": 0.0,
+          "end": 4.28
+        },
+        {
+          "lines": [
+            "何時間もかかることがあります。その間にも、"
+          ],
+          "start": 4.43,
+          "end": 8.35
+        },
+        {
+          "lines": [
+            "別の現場からは新たな救助要請が次々に届く。"
+          ],
+          "start": 8.5,
+          "end": 13.16
+        },
+        {
+          "lines": [
+            "順番を待つご家族の前で、『もう少し待ってください』"
+          ],
+          "start": 13.31,
+          "end": 17.06
+        },
+        {
+          "lines": [
+            "としか言えなかった自分の無力さを、"
+          ],
+          "start": 17.21,
+          "end": 19.76
+        },
+        {
+          "lines": [
+            "今でも覚えています。地図の上には、"
+          ],
+          "start": 19.91,
+          "end": 23.31
+        },
+        {
+          "lines": [
+            "まだ確認できていない場所を示す印が、"
+          ],
+          "start": 23.46,
+          "end": 26.42
+        },
+        {
+          "lines": [
+            "いくつも残ったままでした。駆けつけられる人にも、"
+          ],
+          "start": 26.57,
+          "end": 30.17
+        },
+        {
+          "lines": [
+            "犬にも、限りがある。あのときの歯がゆさが、"
+          ],
+          "start": 30.32,
+          "end": 33.47
+        },
+        {
+          "lines": [
+            "ずっと胸の奥に残っていました。もっと早く、"
+          ],
+          "start": 33.62,
+          "end": 36.77
+        },
+        {
+          "lines": [
+            "もっと多くの場所に手が届いたら——そう"
+          ],
+          "start": 36.92,
+          "end": 39.77
+        },
+        {
+          "lines": [
+            "思わずにはいられませんでした。"
+          ],
+          "start": 39.92,
+          "end": 42.17
+        }
+      ]
     },
     {
       "scene_id": 8,
       "type": "citation",
       "narrator": "research",
       "duration_seconds": 22,
-      "narration": "この課題に一つの糸口を示したのが、ノルウェー・アグデル大学の研究チームが発表した研究です。国際危機管理情報システム学会、ISCRAMの2023年の大会で報告されました。研究チームが着目したのは、救助犬が生まれ持つ、あの優れた嗅覚のメカニズムでした。犬たちが積み重ねてきた働きを、機械にも少しだけ担わせられないか——そんな発想から始まった研究です。",
+      "narration": "この課題に一つの糸口を示したのが、ノルウェー・アグデル大学の研究チームが発表した研究です。防災・危機管理分野の国際会議、ISCRAMの2023年の大会で報告されました。研究チームが着目したのは、救助犬が生まれ持つ、あの優れた嗅覚のメカニズムでした。犬たちが積み重ねてきた働きを、機械にも少しだけ担わせられないか——そんな発想から始まった研究です。",
       "image_prompt": "An establishing exterior view of a modern Scandinavian university research building (Norwegian university campus architecture), contemporary academic architecture, bright daytime sunlight, a few small figures walking in the distance, no people in close-up, no text",
-      "ken_burns": "zoom_out"
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "この課題に一つの糸口を示したのが、"
+          ],
+          "start": 0.0,
+          "end": 2.8
+        },
+        {
+          "lines": [
+            "ノルウェー・アグデル大学の研究チームが"
+          ],
+          "start": 2.95,
+          "end": 5.8
+        },
+        {
+          "lines": [
+            "発表した研究です。防災・危機管理分野の国際会議、"
+          ],
+          "start": 5.95,
+          "end": 10.21
+        },
+        {
+          "lines": [
+            "ISCRAMの2023年の大会で報告されました。"
+          ],
+          "start": 10.36,
+          "end": 15.06
+        },
+        {
+          "lines": [
+            "研究チームが着目したのは、救助犬が生まれ持つ、"
+          ],
+          "start": 15.28,
+          "end": 19.02
+        },
+        {
+          "lines": [
+            "あの優れた嗅覚のメカニズムでした。"
+          ],
+          "start": 19.17,
+          "end": 21.79
+        },
+        {
+          "lines": [
+            "犬たちが積み重ねてきた働きを、"
+          ],
+          "start": 22.46,
+          "end": 24.71
+        },
+        {
+          "lines": [
+            "機械にも少しだけ担わせられないか——そんな"
+          ],
+          "start": 24.86,
+          "end": 28.03
+        },
+        {
+          "lines": [
+            "発想から始まった研究です。"
+          ],
+          "start": 28.18,
+          "end": 30.13
+        }
+      ]
     },
     {
       "scene_id": 9,
@@ -123,7 +419,142 @@
       "duration_seconds": 34,
       "narration": "救助犬は、空気中に漂うわずかな匂いの濃淡を頼りに、要救助者のもとへとまっすぐ近づいていきます。研究チームは、この能力を四足歩行ロボットに再現できないかと考えました。ただし、いきなり実物のロボットと本物の匂いセンサーで試すのではなく、まずコンピューター上のシミュレーション環境で、この仕組みが本当に機能するのかを確かめることから始めました。匂いの代わりに、光の明るさの変化を手がかりとして使い、その変化をそのまま足の動きへと直接結びつける、生物模倣型の操舵の仕組みです。まず地図を作り、経路を計画してから動き出す従来の方式とは違い、センサーの反応がそのまま進む向きに変わります。四本の脚で歩く体は揺れやすく、センサーの値も乱れがちですが、こうした単純な仕組みであれば、そうした条件でも働きやすいと考えられています。",
       "image_prompt": "Inside a modern robotics research lab in the daytime, two Scandinavian researchers (Northern European appearance, matching the Norway-based institution) in casual research attire seated at a desk, looking closely at a computer monitor displaying a 3D physics-simulation render (simplified geometric rubble shapes, a glowing light-source point) of a quadruped search-and-rescue robot (four-legged mechanical body with a Boston Dynamics Spot-like silhouette, matte gray-and-orange color scheme, the same robot design as in every other scene of this episode) navigating the virtual environment on screen, one researcher pointing at the screen, a small flat corner graphic (no larger than roughly one-eighth of the frame, tucked unobtrusively in a corner, plain flat style, kept simple and contrasting with the richer main illustration for legibility, showing a simple nose/scent-wave icon converging toward a dot, absolutely no text or numerals), bright daytime indoor lighting, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "救助犬は、空気中に漂うわずかな匂いの濃淡を頼りに、"
+          ],
+          "start": 0.0,
+          "end": 3.44
+        },
+        {
+          "lines": [
+            "要救助者のもとへとまっすぐ近づいていきます。"
+          ],
+          "start": 3.59,
+          "end": 6.45
+        },
+        {
+          "lines": [
+            "研究チームは、この能力を四足歩行ロボットに"
+          ],
+          "start": 6.6,
+          "end": 9.33
+        },
+        {
+          "lines": [
+            "再現できないかと考えました。ただし、"
+          ],
+          "start": 9.48,
+          "end": 11.82
+        },
+        {
+          "lines": [
+            "いきなり実物のロボットと本物の匂いセンサーで"
+          ],
+          "start": 11.97,
+          "end": 14.83
+        },
+        {
+          "lines": [
+            "試すのではなく、まずコンピューター上の"
+          ],
+          "start": 14.98,
+          "end": 17.45
+        },
+        {
+          "lines": [
+            "シミュレーション環境で、この仕組みが本当に"
+          ],
+          "start": 17.6,
+          "end": 20.33
+        },
+        {
+          "lines": [
+            "機能するのかを確かめることから始めました。"
+          ],
+          "start": 20.48,
+          "end": 23.21
+        },
+        {
+          "lines": [
+            "匂いの代わりに、光の明るさの変化を"
+          ],
+          "start": 23.36,
+          "end": 25.57
+        },
+        {
+          "lines": [
+            "手がかりとして使い、その変化をそのまま"
+          ],
+          "start": 25.72,
+          "end": 28.19
+        },
+        {
+          "lines": [
+            "足の動きへと直接結びつける、"
+          ],
+          "start": 28.34,
+          "end": 30.16
+        },
+        {
+          "lines": [
+            "生物模倣型の操舵の仕組みです。"
+          ],
+          "start": 30.31,
+          "end": 32.26
+        },
+        {
+          "lines": [
+            "まず地図を作り、経路を計画してから動き出す"
+          ],
+          "start": 32.41,
+          "end": 35.14
+        },
+        {
+          "lines": [
+            "従来の方式とは違い、センサーの反応が"
+          ],
+          "start": 35.29,
+          "end": 37.63
+        },
+        {
+          "lines": [
+            "そのまま進む向きに変わります。"
+          ],
+          "start": 37.78,
+          "end": 39.73
+        },
+        {
+          "lines": [
+            "四本の脚で歩く体は揺れやすく、"
+          ],
+          "start": 39.88,
+          "end": 41.83
+        },
+        {
+          "lines": [
+            "センサーの値も乱れがちですが、"
+          ],
+          "start": 41.98,
+          "end": 43.93
+        },
+        {
+          "lines": [
+            "こうした単純な仕組みであれば、"
+          ],
+          "start": 44.08,
+          "end": 46.03
+        },
+        {
+          "lines": [
+            "そうした条件でも働きやすいと考えられています。"
+          ],
+          "start": 46.18,
+          "end": 49.17
+        }
+      ]
     },
     {
       "scene_id": 10,
@@ -133,7 +564,121 @@
       "duration_seconds": 34,
       "narration": "検証では、シミュレーションの中に瓦礫のような障害物のある仮想の空間をつくり、光の発生源を一つ置きました。ロボットは、あらかじめ経路を教わることなく、明るさが増す方向へと少しずつ進路を修正しながら、発生源へと自律的に近づいていく様子が確認されました。まだ実際のロボットや本物の匂いセンサーを使った検証には至っていない、研究のごく初期の段階です。それでも、匂いという手がかりを使えば、カメラの映像だけに頼るよりも、視界の悪い瓦礫の隙間や暗い場所でも捜索を続けられる可能性が期待されています。研究チームは今後、実機での検証や、本物の匂いセンサーへの置き換えを重ねていく方針を示しています。",
       "image_prompt": "A close-up view of a computer monitor in a robotics research lab, displaying a 3D physics-simulation render (simplified geometric rubble-like shapes scattered across a virtual floor, a small glowing light-source point marking the target) of a quadruped search-and-rescue robot (four-legged mechanical body with a Boston Dynamics Spot-like silhouette, matte gray-and-orange color scheme, the same robot design as in every other scene of this episode) autonomously navigating across the virtual debris toward the glowing point, a researcher's hand resting near a keyboard at the edge of frame, soft screen-glow lighting the room, bright daytime ambient lighting, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "検証では、シミュレーションの中に瓦礫の"
+          ],
+          "start": 0.0,
+          "end": 3.26
+        },
+        {
+          "lines": [
+            "ような障害物のある仮想の空間をつくり、"
+          ],
+          "start": 3.41,
+          "end": 6.37
+        },
+        {
+          "lines": [
+            "光の発生源を一つ置きました。ロボットは、"
+          ],
+          "start": 6.52,
+          "end": 10.19
+        },
+        {
+          "lines": [
+            "あらかじめ経路を教わることなく、"
+          ],
+          "start": 10.34,
+          "end": 12.74
+        },
+        {
+          "lines": [
+            "明るさが増す方向へと少しずつ進路を修正しながら、"
+          ],
+          "start": 12.89,
+          "end": 16.49
+        },
+        {
+          "lines": [
+            "発生源へと自律的に近づいていく様子が確認"
+          ],
+          "start": 16.64,
+          "end": 19.64
+        },
+        {
+          "lines": [
+            "されました。まだ実際のロボットや本物の"
+          ],
+          "start": 19.79,
+          "end": 22.64
+        },
+        {
+          "lines": [
+            "匂いセンサーを使った検証には至っていない、"
+          ],
+          "start": 22.79,
+          "end": 25.94
+        },
+        {
+          "lines": [
+            "研究のごく初期の段階です。それでも、"
+          ],
+          "start": 26.09,
+          "end": 28.79
+        },
+        {
+          "lines": [
+            "匂いという手がかりを使えば、"
+          ],
+          "start": 28.94,
+          "end": 31.04
+        },
+        {
+          "lines": [
+            "カメラの映像だけに頼るよりも、"
+          ],
+          "start": 31.19,
+          "end": 33.44
+        },
+        {
+          "lines": [
+            "視界の悪い瓦礫の隙間や暗い場所でも捜索を"
+          ],
+          "start": 33.59,
+          "end": 36.59
+        },
+        {
+          "lines": [
+            "続けられる可能性が期待されています。"
+          ],
+          "start": 36.74,
+          "end": 39.44
+        },
+        {
+          "lines": [
+            "研究チームは今後、実機での検証や、"
+          ],
+          "start": 39.59,
+          "end": 42.14
+        },
+        {
+          "lines": [
+            "本物の匂いセンサーへの置き換えを重ねていく"
+          ],
+          "start": 42.29,
+          "end": 45.44
+        },
+        {
+          "lines": [
+            "方針を示しています。"
+          ],
+          "start": 45.59,
+          "end": 47.09
+        }
+      ]
     },
     {
       "scene_id": 11,
@@ -143,7 +688,79 @@
       "duration_seconds": 24,
       "narration": "この仕組みの特徴は、地図を作ったり経路を計画したりする段階を、あえて省いている点です。匂いのような手がかり、つまりセンサーの反応がわずかに変化するたびに、ロボットは進む向きをその場で微調整し、発生源に向かって少しずつ軌道を収束させていきます。複雑な計算や事前の地図がなくても、単純な反応の積み重ねだけで、着実に目的地に近づいていける——これが、この研究が示した可能性です。",
       "image_prompt": "Simple, clean, minimalist flat infographic top-down diagram — like a basic data visualization slide, NOT an artistic or abstract illustration. A short Japanese title in clean sans-serif text at the very top reading \"地図なしで発生源に収束する経路\" to explain what the diagram shows. Below it, a single top-down path diagram inside a thin plain rectangle outline: a smooth, gently curving line that starts from one edge and converges directly toward a single small glowing dot near the center (representing the odor/light source), with faint concentric circles radiating from the dot suggesting a gradient field, a Japanese label below reading \"センサーの反応がそのまま進む向きになる\". Plain flat background aside from the described gradient rings, no decorative shapes, clean legible sans-serif Japanese text rendered accurately exactly as specified above, do not add any other text, numbers, or labels beyond what is specified here",
-      "ken_burns": "static"
+      "ken_burns": "static",
+      "telop_cards": [
+        {
+          "lines": [
+            "この仕組みの特徴は、地図を作ったり経路を"
+          ],
+          "start": 0.0,
+          "end": 3.38
+        },
+        {
+          "lines": [
+            "計画したりする段階を、あえて省いている点です。"
+          ],
+          "start": 3.53,
+          "end": 6.98
+        },
+        {
+          "lines": [
+            "匂いのような手がかり、つまりセンサーの"
+          ],
+          "start": 7.28,
+          "end": 10.26
+        },
+        {
+          "lines": [
+            "反応がわずかに変化するたびに、"
+          ],
+          "start": 10.41,
+          "end": 12.66
+        },
+        {
+          "lines": [
+            "ロボットは進む向きをその場で微調整し、"
+          ],
+          "start": 12.81,
+          "end": 15.81
+        },
+        {
+          "lines": [
+            "発生源に向かって少しずつ軌道を収束させていきます。"
+          ],
+          "start": 15.96,
+          "end": 19.71
+        },
+        {
+          "lines": [
+            "複雑な計算や事前の地図がなくても、"
+          ],
+          "start": 19.86,
+          "end": 22.41
+        },
+        {
+          "lines": [
+            "単純な反応の積み重ねだけで、"
+          ],
+          "start": 22.68,
+          "end": 24.78
+        },
+        {
+          "lines": [
+            "着実に目的地に近づいていける——これが、"
+          ],
+          "start": 24.93,
+          "end": 28.13
+        },
+        {
+          "lines": [
+            "この研究が示した可能性です。"
+          ],
+          "start": 28.28,
+          "end": 30.68
+        }
+      ]
     },
     {
       "scene_id": 12,
@@ -152,17 +769,112 @@
       "duration_seconds": 10,
       "narration": "もしこの技術が、被災地の最前線に立つ日が来たら。窓の外を眺めながら、私はつい、そんな未来を思い描いてしまいます。",
       "image_prompt": "A Japanese woman in her mid-40s (Ito Maiko), practical shoulder-length hair, wearing a municipal disaster-prevention department windbreaker, drawn small, sitting in a chair by the window in her real municipal office, a classic comic-style thought bubble (a chain of small circles rising from her head into one large cloud-shaped bubble) above her head, inside the bubble a miniature imagined scene of a quadruped search-and-rescue robot (four-legged mechanical body with a Boston Dynamics Spot-like silhouette, matte gray-and-orange armored plastic shell, jointed articulated legs, a compact sensor head with small round gas-sensor intake ports on the front, no camera-eye or face-like features, friendly but clearly mechanical in appearance, not resembling a human or a dog's face, no visible brand logos or text) searching a rubble field at a disaster site, bright daytime office lighting, no text",
-      "ken_burns": "zoom_in"
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "もしこの技術が、被災地の最前線に立つ日が来たら。"
+          ],
+          "start": 0.0,
+          "end": 4.1
+        },
+        {
+          "lines": [
+            "窓の外を眺めながら、私はつい、"
+          ],
+          "start": 5.08,
+          "end": 7.51
+        },
+        {
+          "lines": [
+            "そんな未来を思い描いてしまいます。"
+          ],
+          "start": 7.66,
+          "end": 10.21
+        }
+      ]
     },
     {
       "scene_id": 13,
       "type": "impact",
       "narrator": "persona",
       "duration_seconds": 18,
-      "narration": "あの四足歩行ロボットが瓦礫の隙間にセンサーを寄せ、かすかな匂いの変化を静かに追っていきます。人の目や手が届きにくい隙間の奥まで、迷いなく進んでいく姿を、少し離れた場所から見守っています。匂いの発生源をとらえた合図が救助隊の無線に届いた瞬間、隊員たちの表情が一斉に変わります。掘り起こした瓦礫の下から、意識のある人の手が差し出されたとき、現場にどっと安堵のどよめきが広がります。",
+      "narration": "あの四本脚のロボットが瓦礫の隙間にセンサーを寄せ、かすかな匂いの変化を静かに追っていきます。人の目や手が届きにくい隙間の奥まで、迷いなく進んでいく姿を、少し離れた場所から見守っています。匂いの発生源をとらえた合図が救助隊の無線に届いた瞬間、隊員たちの表情が一斉に変わります。掘り起こした瓦礫の下から、意識のある人の手が差し出されたとき、現場にどっと安堵のどよめきが広がります。",
       "image_prompt": "An outdoor disaster site in the daytime, a quadruped search-and-rescue robot (four-legged mechanical body with a Boston Dynamics Spot-like silhouette, matte gray-and-orange armored plastic shell, jointed articulated legs, a compact sensor head with small round gas-sensor intake ports on the front, no camera-eye or face-like features, friendly but clearly mechanical in appearance, not resembling a human or a dog's face, no visible brand logos or text, the same robot design as in every other scene of this episode) with its sensor head lowered near a gap in the rubble, several Japanese rescue workers in orange safety vests and helmets nearby reacting with sudden alertness to a handheld radio signal, one rescue worker's gloved hand reaching into a gap in the rubble where a survivor's hand reaches back, visible relief and emotion on the workers' faces, bright daytime lighting, no text",
       "ken_burns": "zoom_in",
-      "badge_text": "幸せな未来を夢想中"
+      "badge_text": "幸せな未来を夢想中",
+      "telop_cards": [
+        {
+          "lines": [
+            "あの四本脚のロボットが瓦礫の隙間にセンサーを寄せ、"
+          ],
+          "start": 0.0,
+          "end": 4.32
+        },
+        {
+          "lines": [
+            "かすかな匂いの変化を静かに追っていきます。"
+          ],
+          "start": 4.47,
+          "end": 7.69
+        },
+        {
+          "lines": [
+            "人の目や手が届きにくい隙間の奥まで、"
+          ],
+          "start": 8.46,
+          "end": 11.22
+        },
+        {
+          "lines": [
+            "迷いなく進んでいく姿を、少し離れた場所から"
+          ],
+          "start": 11.9,
+          "end": 15.12
+        },
+        {
+          "lines": [
+            "見守っています。匂いの発生源をとらえた"
+          ],
+          "start": 15.27,
+          "end": 18.93
+        },
+        {
+          "lines": [
+            "合図が救助隊の無線に届いた瞬間、"
+          ],
+          "start": 19.08,
+          "end": 22.0
+        },
+        {
+          "lines": [
+            "隊員たちの表情が一斉に変わります。"
+          ],
+          "start": 22.15,
+          "end": 25.33
+        },
+        {
+          "lines": [
+            "掘り起こした瓦礫の下から、意識のある人の"
+          ],
+          "start": 25.72,
+          "end": 28.74
+        },
+        {
+          "lines": [
+            "手が差し出されたとき、現場にどっと安堵の"
+          ],
+          "start": 28.89,
+          "end": 32.05
+        },
+        {
+          "lines": [
+            "どよめきが広がります。"
+          ],
+          "start": 32.2,
+          "end": 33.85
+        }
+      ]
     },
     {
       "scene_id": 14,
@@ -172,7 +884,72 @@
       "narration": "長い一日を終えて家に帰ると、二人の子どもが『おかえり』と駆け寄ってきます。今日、誰かを家族のもとへ帰すことができた——そう思うと、いつもの夕食の湯気さえ、少しあたたかく見えます。子どもたちを抱きしめながら、どこかの家でも、無事の知らせを受け取った家族が同じように誰かを抱きしめているはずだと、そっと思いを馳せます。",
       "image_prompt": "The entrance of a Japanese home in the evening, a Japanese woman in her mid-40s (Ito Maiko) wearing casual home clothes with practical shoulder-length hair, arriving home with a warm relieved smile, her two children — a Japanese girl about 8 years old and a Japanese boy about 5 years old — running to greet her at the entrance with open arms, warm interior lighting spilling from the doorway, dusk sky visible outside, not night, no text",
       "ken_burns": "pan_zoom_out",
-      "badge_text": "幸せな未来を夢想中"
+      "badge_text": "幸せな未来を夢想中",
+      "telop_cards": [
+        {
+          "lines": [
+            "長い一日を終えて家に帰ると、"
+          ],
+          "start": 0.0,
+          "end": 3.0
+        },
+        {
+          "lines": [
+            "二人の子どもが『おかえり』と駆け寄ってきます。"
+          ],
+          "start": 3.15,
+          "end": 6.83
+        },
+        {
+          "lines": [
+            "今日、誰かを家族のもとへ帰すことができた"
+          ],
+          "start": 7.98,
+          "end": 11.3
+        },
+        {
+          "lines": [
+            "——そう思うと、いつもの夕食の湯気さえ、"
+          ],
+          "start": 11.45,
+          "end": 15.49
+        },
+        {
+          "lines": [
+            "少しあたたかく見えます。子どもたちを"
+          ],
+          "start": 15.64,
+          "end": 19.5
+        },
+        {
+          "lines": [
+            "抱きしめながら、どこかの家でも、"
+          ],
+          "start": 19.65,
+          "end": 22.11
+        },
+        {
+          "lines": [
+            "無事の知らせを受け取った家族が同じように"
+          ],
+          "start": 22.26,
+          "end": 25.33
+        },
+        {
+          "lines": [
+            "誰かを抱きしめているはずだと、"
+          ],
+          "start": 25.48,
+          "end": 27.73
+        },
+        {
+          "lines": [
+            "そっと思いを馳せます。"
+          ],
+          "start": 27.88,
+          "end": 29.53
+        }
+      ]
     },
     {
       "scene_id": 15,
@@ -182,7 +959,128 @@
       "duration_seconds": 48,
       "narration": "ご紹介したのは、コンピューター上のシミュレーションで、この仕組みが機能することを確かめ始めた段階の研究であり、実際のロボットや本物の匂いセンサーでの検証、そして実際の災害現場で使えるようになるまでには、まだ時間がかかりそうです。それでも、救助犬と隊員たちが支えてきた捜索の現場に、ロボットという新しい仲間が加わるかもしれない——そんな静かな可能性が、少しずつ育まれています。犬と人がこれまで積み重ねてきた力に、機械の手が加わる時代が来れば、一つでも多くの命に、早く手が届くようになるかもしれません。詳しい研究内容が知りたい方は、概要欄をご確認ください。次はどんな研究が、誰かの幸せな未来を運んでくるのでしょうか。その瞬間をこれからも一緒に見つけていきたい方は、ぜひチャンネル登録してお待ちください。",
       "image_prompt": "A quiet outdoor disaster-simulation training field in the late afternoon, a quadruped search-and-rescue robot (four-legged mechanical body with a Boston Dynamics Spot-like silhouette, matte gray-and-orange armored plastic shell, exactly four jointed articulated legs — two front legs and two rear legs, symmetrical left and right, each leg with a clear hip joint and a backward-bending knee joint, anatomically correct quadruped leg count and structure, a compact sensor head with a row of small round gas-sensor intake ports arranged in a flat horizontal line on the front — NOT two large round lens elements, absolutely no camera-eye or face-like features of any kind, friendly but clearly mechanical in appearance, not resembling a human or a dog's face, no visible brand logos or text, the same robot design as in every other scene of this episode) standing calmly at rest among the rubble with its sensor lights dimmed, no people in the frame, soft late-afternoon daylight, calm hopeful mood, no text",
-      "ken_burns": "zoom_out"
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "ご紹介したのは、コンピューター上の"
+          ],
+          "start": 0.0,
+          "end": 2.51
+        },
+        {
+          "lines": [
+            "シミュレーションで、この仕組みが機能する"
+          ],
+          "start": 2.66,
+          "end": 5.61
+        },
+        {
+          "lines": [
+            "ことを確かめ始めた段階の研究であり、"
+          ],
+          "start": 5.76,
+          "end": 8.41
+        },
+        {
+          "lines": [
+            "実際のロボットや本物の匂いセンサーでの検証、"
+          ],
+          "start": 8.56,
+          "end": 11.98
+        },
+        {
+          "lines": [
+            "そして実際の災害現場で使えるようになるまでには、"
+          ],
+          "start": 12.13,
+          "end": 15.67
+        },
+        {
+          "lines": [
+            "まだ時間がかかりそうです。それでも、"
+          ],
+          "start": 15.82,
+          "end": 18.47
+        },
+        {
+          "lines": [
+            "救助犬と隊員たちが支えてきた捜索の現場に、"
+          ],
+          "start": 18.62,
+          "end": 21.72
+        },
+        {
+          "lines": [
+            "ロボットという新しい仲間が加わるかも"
+          ],
+          "start": 21.87,
+          "end": 24.52
+        },
+        {
+          "lines": [
+            "しれない——そんな静かな可能性が、"
+          ],
+          "start": 24.67,
+          "end": 27.18
+        },
+        {
+          "lines": [
+            "少しずつ育まれています。犬と人がこれまで"
+          ],
+          "start": 27.33,
+          "end": 30.28
+        },
+        {
+          "lines": [
+            "積み重ねてきた力に、機械の手が加わる時代が来れば、"
+          ],
+          "start": 30.43,
+          "end": 34.12
+        },
+        {
+          "lines": [
+            "一つでも多くの命に、早く手が届くように"
+          ],
+          "start": 34.27,
+          "end": 37.07
+        },
+        {
+          "lines": [
+            "なるかもしれません。詳しい研究内容が知りたい方は、"
+          ],
+          "start": 37.22,
+          "end": 40.91
+        },
+        {
+          "lines": [
+            "概要欄をご確認ください。次はどんな研究が、"
+          ],
+          "start": 41.06,
+          "end": 44.16
+        },
+        {
+          "lines": [
+            "誰かの幸せな未来を運んでくるのでしょうか。"
+          ],
+          "start": 44.31,
+          "end": 47.41
+        },
+        {
+          "lines": [
+            "その瞬間をこれからも一緒に見つけていきたい方は、"
+          ],
+          "start": 47.56,
+          "end": 51.1
+        },
+        {
+          "lines": [
+            "ぜひチャンネル登録してお待ちください。"
+          ],
+          "start": 51.25,
+          "end": 54.05
+        }
+      ]
     }
   ],
   "shorts": [
@@ -191,7 +1089,7 @@
       "scenes": [
         {
           "narrator": "persona",
-          "narration": "瓦礫の下に、大切な人がいたら",
+          "narration": "瓦礫の下に、大切な人がいたら……",
           "image_prompt": "A Japanese woman in her mid-40s (Ito Maiko), practical shoulder-length hair, wearing a municipal disaster-prevention department windbreaker with a badge (no legible text), standing and looking worriedly toward an outdoor disaster-simulation rubble field, overcast daytime lighting, composed for a vertical 9:16 frame with the main subject centered and nothing important near the left/right edges, no text"
         },
         {
@@ -206,13 +1104,13 @@
         },
         {
           "narrator": "research",
-          "narration": "まずはコンピューターの中で、確かめた",
+          "narration": "まずはコンピューターの中で、確かめました。",
           "style": "chart",
           "image_prompt": "Simple, clean, minimalist flat infographic top-down path diagram for a vertical 9:16 frame. A short Japanese title in clean sans-serif text across the top area reading \"シミュレーションで確かめた経路\" to explain what the diagram shows. Below the title, filling the middle of the frame and horizontally centered: a single top-down path diagram inside a thin plain rectangle outline — a smooth, gently curving deep-blue-to-teal line that starts at the upper-left edge of the rectangle and converges directly into a single small WARM CORAL/ORANGE glowing dot at the center of the rectangle (the odor source), with a few faint concentric circles radiating outward from that coral dot to suggest the spreading odor. The coral dot must clearly be the only warm-colored element, visually distinct from the cool-colored path. The diagram rectangle must be vertically centered in the upper three-quarters of the frame — do not push the drawing into a corner and do not leave the middle of the frame empty. Plain flat background aside from the described concentric rings, no decorative shapes. Render the Japanese title accurately exactly as specified above; do not add any other text, numbers, captions, or labels beyond that single title."
         },
         {
           "narrator": "persona",
-          "narration": "『見つけました』——安堵の声が響く",
+          "narration": "『見つけました』——安堵の声が広がる",
           "image_prompt": "An outdoor disaster site in the daytime, Japanese rescue workers in orange safety vests and helmets with visible relief reaching into a gap in a rubble pile where a survivor's hand reaches back, bright daytime lighting, composed for a vertical 9:16 frame with the main action centered, no text"
         },
         {
@@ -222,5 +1120,10 @@
         }
       ]
     }
-  ]
+  ],
+  "bgm_sources": {
+    "intro": "BGM/kl001-BGM-intro.mp3",
+    "main": "BGM/kl005-BGM-main.mp3",
+    "outro": "BGM/kl013-BGM-outro.mp3"
+  }
 }
