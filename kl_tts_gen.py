@@ -13,10 +13,15 @@ episodes/kl{NNN}.jsonに記録すること。
   python3 kl_tts_gen.py --episode kl001                 # 全シーン+Shorts生成
   python3 kl_tts_gen.py --episode kl001 --scenes 5,6,9   # 指定シーンのみ再生成
   python3 kl_tts_gen.py --episode kl001 --shorts-only    # Shortsのみ
+  python3 kl_tts_gen.py --episode kl001 --force          # 既存ファイルも含め全シーン再生成
 
 出力: ~/Desktop/kagaku-life/narration/S{NN}.wav,
       shorts{M}_S{NN}.wav
       （Desktopは常に最新1エピソード分の確認用。エピソードIDのサブフォルダは作らない）
+
+生成済みならスキップ（2026-09-04〜、sc_tts_gen.pyと同じ考え方）:
+  --scenes未指定のフル実行では、既に音声が存在するシーンは再生成しない。
+  全シーンを強制的に作り直したい場合は --force。
 """
 
 import argparse
@@ -168,6 +173,8 @@ def main():
     parser.add_argument("--scenes", help="生成するscene_idをカンマ区切りで指定（省略時は全シーン）")
     parser.add_argument("--shorts-only", action="store_true", help="Shortsのみ生成")
     parser.add_argument("--shorts-scenes", help="Shorts内の生成する番号をカンマ区切りで指定（例: 4）。指定時は自動的に--shorts-only扱い")
+    parser.add_argument("--force", action="store_true",
+                         help="--scenes未指定のフル実行で、既存ファイルがあっても全シーン再生成する（デフォルトは既存ファイルをスキップ）")
     args = parser.parse_args()
 
     if not API_KEY:
@@ -205,14 +212,21 @@ def main():
 
     persona_style = voices.get("persona_style")
 
+    # 「生成済みならスキップ」（2026-09-04〜、sc_tts_gen.pyと同じ考え方）:
+    # --scenes未指定のフル実行では、既に音声が存在するシーンは再生成しない。
+    skip_existing = target_ids is None and not args.force
+
     if not shorts_only:
         for scene in ep["scenes"]:
             sid = scene["scene_id"]
             if target_ids is not None and sid not in target_ids:
                 continue
+            out_path = out_dir / f"S{sid:02d}.wav"
+            if skip_existing and out_path.exists():
+                print(f"✅ {out_path.name}（既存ファイルをスキップ）")
+                continue
             narrator = scene["narrator"]
             voice_name = voices[narrator]
-            out_path = out_dir / f"S{sid:02d}.wav"
             style_override = persona_style if narrator == "persona" else None
             synth(client, scene["narration"], voice_name, out_path, narrator=narrator, style_override=style_override)
 
@@ -231,6 +245,9 @@ def main():
                 if shorts_target_ids is not None and i not in shorts_target_ids:
                     continue
                 out_path = out_dir / f"shorts{mid}_S{i:02d}.wav"
+                if skip_existing and not args.shorts_scenes and out_path.exists():
+                    print(f"✅ {out_path.name}（既存ファイルをスキップ）")
+                    continue
                 reuse_path = main_wav_by_text.get(s["narration"])
                 if reuse_path and reuse_path.exists():
                     shutil.copy(reuse_path, out_path)

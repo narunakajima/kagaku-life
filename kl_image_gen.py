@@ -23,12 +23,19 @@ Shorts画像について（2026-09-04〜）:
   参照先の本編画像が未生成の場合は、Shorts独自のimage_promptから独立生成する
   旧方式にフォールバックする（kl001〜kl013はscene_id未対応のため）。
 
+生成済みならスキップ（2026-09-04〜、sc_image_gen.pyと同じ考え方）:
+  --scenes未指定のフル実行では、既に画像・サムネイル・Shortsが存在する分は
+  再生成しない（タイムアウト等で中断して同じコマンドを再実行しても、成功済み
+  分を無駄に作り直さない）。--scenes/--thumbnail-only/--shorts-scenesで
+  個別指定した場合は常に再生成する。全て強制的に作り直す場合は --force。
+
 使い方:
   python3 kl_image_gen.py --episode kl001                  # 全シーン+サムネイル生成
   python3 kl_image_gen.py --episode kl001 --scenes 5,6,9    # 指定シーンのみ再生成
   python3 kl_image_gen.py --episode kl001 --thumbnail-only  # サムネイルのみ
   python3 kl_image_gen.py --episode kl001 --shorts-only     # Shortsのみ（9:16）
   python3 kl_image_gen.py --episode kl001 --no-qa           # QAをスキップ（旧動作）
+  python3 kl_image_gen.py --episode kl001 --force           # 既存ファイルも含め全て再生成
 
 出力: ~/Desktop/kagaku-life/images/S{NN}.png, thumbnail.png,
       shorts{M}_S{NN}.png（Shorts、9:16）
@@ -503,7 +510,14 @@ def main():
     parser.add_argument("--no-qa", action="store_true", help="Gemini Vision QAをスキップ（旧動作）")
     parser.add_argument("--reference-scene", type=int,
                          help="指定したscene_idの生成済み画像を参照画像として渡し、背景の一貫性を高める（--scenesで対象を絞って使う）")
+    parser.add_argument("--force", action="store_true",
+                         help="--scenes未指定のフル実行で、既存ファイルがあっても全て再生成する（デフォルトは既存ファイルをスキップ）")
     args = parser.parse_args()
+
+    # 「生成済みならスキップ」（2026-09-04〜、sc_image_gen.pyと同じ考え方）:
+    # --scenes未指定のフル実行では、既に出力ファイルが存在するシーン/サムネ/Shortsは
+    # 再生成しない。--scenesで個別指定した場合は常に再生成する（従来動作を変えない）。
+    skip_existing = args.scenes is None and not args.force
 
     if not API_KEY:
         print("❌ GEMINI_API_KEY が設定されていません", file=sys.stderr)
@@ -544,8 +558,12 @@ def main():
 
         for scene in normal_scenes:
             sid = scene["scene_id"]
-            prompt = f"{style_for(scene['type'])}\n\nScene: {scene['image_prompt']}"
             out_path = out_dir / f"S{sid:02d}.png"
+            if skip_existing and out_path.exists():
+                print(f"✅ {out_path.name}（既存ファイルをスキップ）")
+                qa_results.append({"name": out_path.name, "ok": True, "issues": [], "attempts": 0, "skipped": True})
+                continue
+            prompt = f"{style_for(scene['type'])}\n\nScene: {scene['image_prompt']}"
             r = generate_with_qa(client, prompt, scene["image_prompt"], out_path, skip_qa=args.no_qa,
                                   reference_image_path=ref_path, allow_text=(scene["type"] == "data"))
             r["name"] = out_path.name
@@ -556,6 +574,10 @@ def main():
         for scene in reuse_scenes:
             sid = scene["scene_id"]
             out_path = out_dir / f"S{sid:02d}.png"
+            if skip_existing and out_path.exists():
+                print(f"✅ {out_path.name}（既存ファイルをスキップ）")
+                qa_results.append({"name": out_path.name, "ok": True, "issues": [], "attempts": 0, "skipped": True})
+                continue
             src_id = scene["reuse_scene_id"]
             src_path = out_dir / f"S{src_id:02d}.png"
             if src_path.exists():
@@ -620,16 +642,20 @@ def main():
             print(f"✅ 画風ドリフトチェック: {len(narrative_entries)}枚 一貫性OK")
 
     if not args.no_thumbnail and not shorts_only and (args.thumbnail_only or args.scenes is None):
-        thumb_prompt = f"{BASE_CONTEXT}\n\nThumbnail (16:9): {ep['thumbnail_prompt']}"
         thumb_path = out_dir / "thumbnail.png"
-        r = generate_with_qa(client, thumb_prompt, ep["thumbnail_prompt"], thumb_path,
-                              skip_qa=args.no_qa)
-        r["name"] = "thumbnail.png"
-        qa_results.append(r)
-        headline = ep.get("thumbnail_headline")
-        if headline and r["ok"]:
-            composite_thumbnail_text(thumb_path, headline, ep.get("thumbnail_subcopy", ""))
-            print(f"   → テキスト合成: 「{headline}」")
+        if skip_existing and not args.thumbnail_only and thumb_path.exists():
+            print(f"✅ {thumb_path.name}（既存ファイルをスキップ）")
+            qa_results.append({"name": thumb_path.name, "ok": True, "issues": [], "attempts": 0, "skipped": True})
+        else:
+            thumb_prompt = f"{BASE_CONTEXT}\n\nThumbnail (16:9): {ep['thumbnail_prompt']}"
+            r = generate_with_qa(client, thumb_prompt, ep["thumbnail_prompt"], thumb_path,
+                                  skip_qa=args.no_qa)
+            r["name"] = "thumbnail.png"
+            qa_results.append(r)
+            headline = ep.get("thumbnail_headline")
+            if headline and r["ok"]:
+                composite_thumbnail_text(thumb_path, headline, ep.get("thumbnail_subcopy", ""))
+                print(f"   → テキスト合成: 「{headline}」")
 
     if shorts_only or (not args.thumbnail_only and args.scenes is None):
         scenes_by_id = {sc["scene_id"]: sc for sc in ep["scenes"]}
@@ -642,6 +668,11 @@ def main():
                 if shorts_target_ids is not None and i not in shorts_target_ids:
                     continue
                 out_path = out_dir / f"shorts{mid}_S{i:02d}.png"
+
+                if skip_existing and not args.shorts_scenes and out_path.exists():
+                    print(f"✅ {out_path.name}（既存ファイルをスキップ）")
+                    qa_results.append({"name": out_path.name, "ok": True, "issues": [], "attempts": 0, "skipped": True})
+                    continue
 
                 # scene_idがあれば本編シーンの切り出し（再構成、独立生成しない）。
                 # 無い場合は旧方式（Shorts専用のimage_promptから独立生成）に
