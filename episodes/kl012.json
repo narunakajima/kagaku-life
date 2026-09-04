@@ -1,0 +1,1154 @@
+{
+  "episode_id": "kl012",
+  "narration_voices": {
+    "persona": "Achird",
+    "research": "Autonoe"
+  },
+  "episode_title": "AIに仕事を任せていいのか、と思ったら",
+  "youtube_title": "AIと組むと生産性が50%アップ?MITの大規模実験で分かった意外な落とし穴",
+  "youtube_description": "Web広告代理店でマーケティングディレクターを務める佐藤健太さん(34歳)の視点から解説します。今回紹介するのは、アメリカ・マサチューセッツ工科大学(MIT)経営大学院の研究チームが2025年に発表した、大規模なフィールド実験です。2234人の参加者を、人間同士のペアと、人間とAIエージェントのペアにランダムに割り当て、実在するシンクタンクの年次報告書向け広告キャンペーンの制作(合計1万本を超える広告)を任せるという、実際の労働現場に近い形で検証が行われました。\n\n結果、人間とAIが組んだチームは一人あたりの広告制作数がおよそ50%増加し、広告文の質も向上しました(一方で画像の質は人間同士のチームの方が高いという結果でした)。ただし、AIに仕事を任せる割合が増えるほど、出来上がる広告がお互いに似通う「画一化」が進む傾向も確認されており、生産性向上の裏側に新たな課題があることが示されています。実際に生まれた広告の一部はX(旧Twitter)上で20日間配信され、約500万回の表示を集めるフィールド検証も行われました。\n\n※本研究はarXiv(アーカイブ)に掲載された、まだ研究段階の取り組みです。正式な学術誌への掲載を経ていない点にご留意のうえご覧ください。研究を率いたのは、計算社会科学・AI経済学の分野で知られるMITスローン経営大学院の研究者です。\n\n📚 参考文献:\nJu, H., & Aral, S. (2025). Collaborating with AI Agents: Field Experiments on Teamwork, Productivity, and Performance. arXiv.\nDOI: 10.48550/arXiv.2503.18238\nhttps://arxiv.org/abs/2503.18238\n\n\n🎵 Music: Eventide Song Loop by StephieQueen (freesound.org) — CC BY 4.0\n🎵 Music: Caisa_Piano_Improv_by_DSQT.mp3 by Disquantic (freesound.org) — CC BY 4.0\n#AIエージェント #働き方改革 #生産性向上 #MIT #AI協働 #広告制作 #くらしを変える科学 #幸せな未来のサイエンス",
+  "youtube_tags": [
+    "AIエージェント",
+    "働き方改革",
+    "生産性向上",
+    "MIT",
+    "AI協働",
+    "広告制作",
+    "フィールド実験",
+    "くらしを変える科学"
+  ],
+  "references": [
+    {
+      "title": "Collaborating with AI Agents: Field Experiments on Teamwork, Productivity, and Performance",
+      "authors": [
+        "Harang Ju",
+        "Sinan Aral"
+      ],
+      "year": 2025,
+      "venue": "arXiv.org",
+      "doi": "10.48550/arXiv.2503.18238",
+      "url": "https://arxiv.org/abs/2503.18238",
+      "is_preprint": true,
+      "lead_researcher": "Sinan Aral（MIT Sloan School of Management、計算社会科学・AI経済学の第一人者）",
+      "institution": "MIT Sloan School of Management（アメリカ）"
+    }
+  ],
+  "protagonist": {
+    "name": "佐藤 健太",
+    "age": 34,
+    "job": "Web広告代理店のマーケティングディレクター",
+    "gender": "male"
+  },
+  "thumbnail_prompt": "a Japanese man in his mid-30s (Sato Kenta), short neat business hairstyle, wearing a business casual dress shirt, standing confidently in a modern advertising agency office with a warm satisfied smile, arms crossed, in the background several monitors showing small ad thumbnails arranged in a grid that look subtly similar to each other in color and composition (no legible text or numbers), bright daytime lighting, exactly ONE small flat corner graphic showing a simple upward arrow icon (representing rising productivity), placed in only a single corner of the frame, no larger than roughly one-eighth of the frame, kept plain and flat for legibility — the other three corners and the rest of the background must remain completely plain with no graphic, chart, or icon of any kind, do not repeat or duplicate this graphic anywhere else in the image, absolutely no text, no numerals, 16:9",
+  "thumbnail_headline": "生産性が50%アップ?",
+  "thumbnail_subcopy": "AIとの協働に潜む「画一化」の罠(MIT・2025)",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "AIが下書きを並べている。",
+      "image_prompt": "In a modern advertising agency office in the morning, bright daylight through large windows, a Japanese man in his mid-30s (Sato Kenta), short neat business hairstyle, wearing a business casual dress shirt, sitting at his desk looking at a single computer monitor, viewed from a front-three-quarter angle over his shoulder so the monitor's screen (displaying several small abstract ad-draft thumbnails arranged in a grid, no legible text or numbers) faces him and is angled away from the camera, only one monitor visible in the whole scene, a calm confident expression, exactly one person in the entire scene, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "AIが下書きを並べている。"
+          ],
+          "start": 0.0,
+          "end": 2.18
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.64,
+        "y": 0.45
+      }
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "並ぶ提案は、どれも違う顔をしている。",
+      "image_prompt": "In a bright modern conference room in the daytime, a Japanese man in his mid-30s (Sato Kenta), short neat business hairstyle, business casual attire, standing and gesturing confidently toward a large wall screen displaying several distinctly different, colorful abstract ad-concept mockups (no legible text or numbers), a few Japanese colleagues seated around the table looking engaged, warm daylight, no text",
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "並ぶ提案は、どれも違う顔をしている。"
+          ],
+          "start": 0.0,
+          "end": 3.1
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "定時に、娘を迎えに行ける。",
+      "image_prompt": "Outside a nursery school entrance in the early evening, warm golden-hour light, a Japanese man in his mid-30s (Sato Kenta), short neat business hairstyle, business casual attire, crouching down with open arms and a warm smile, a Japanese girl about 5 years old with a small backpack running toward him joyfully, no text",
+      "ken_burns": "pan_zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "定時に、娘を迎えに行ける。"
+          ],
+          "start": 0.0,
+          "end": 1.95
+        }
+      ]
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 4,
+      "narration": "AIと働く未来、私の仕事はどう変わるんだろう。",
+      "image_prompt": "Portrait close-up, head and shoulders only, of a Japanese man in his mid-30s (Sato Kenta), short neat business hairstyle, sitting near an office window at dusk, warm interior lighting with a dusk sky faintly visible through the window (not night), a thoughtful, contemplative expression looking outside, single unified scene (not a split-panel or diptych), no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "AIと働く未来、私の仕事はどう変わるんだろう。"
+          ],
+          "start": 0.0,
+          "end": 4.3
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.61,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 5,
+      "type": "hook",
+      "narrator": "persona",
+      "duration_seconds": 10,
+      "narration": "佐藤健太、34歳。Web広告代理店でマーケティングディレクターをしています。日々、チームの広告制作を管理する仕事です。",
+      "image_prompt": "In a modern advertising agency office in the daytime, bright daylight through large windows, a Japanese man in his mid-30s (Sato Kenta), short neat business hairstyle, wearing a business casual dress shirt, standing beside his desk with a laptop and scattered printed ad mockups visible (no legible text), a warm confident smile, exactly one person in the entire scene, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "佐藤健太、34歳。Web広告代理店で"
+          ],
+          "start": 0.0,
+          "end": 3.48
+        },
+        {
+          "lines": [
+            "マーケティングディレクターをしています。"
+          ],
+          "start": 3.63,
+          "end": 6.63
+        },
+        {
+          "lines": [
+            "日々、チームの広告制作を管理する仕事です。"
+          ],
+          "start": 6.78,
+          "end": 9.93
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.36,
+        "y": 0.38
+      }
+    },
+    {
+      "scene_id": 6,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 20,
+      "narration": "クライアントからの依頼は増える一方なのに、チームの人数はなかなか増えません。気づけばメンバーも、そして私自身も、広告のコピーや画像づくりを、当たり前のようにAIに任せるようになっていました。",
+      "image_prompt": "In a busy advertising agency office in the daytime, bright daylight through large windows, a Japanese man in his mid-30s (Sato Kenta), short neat business hairstyle, business casual attire, standing in the foreground looking mildly overwhelmed, in the background several Japanese colleagues at their own desks each intently facing their computer monitors, stacks of papers and sticky notes scattered around, a hectic busy atmosphere, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "クライアントからの依頼は増える一方なのに、"
+          ],
+          "start": 0.0,
+          "end": 3.15
+        },
+        {
+          "lines": [
+            "チームの人数はなかなか増えません。"
+          ],
+          "start": 3.3,
+          "end": 5.85
+        },
+        {
+          "lines": [
+            "気づけばメンバーも、そして私自身も、"
+          ],
+          "start": 6.22,
+          "end": 9.4
+        },
+        {
+          "lines": [
+            "広告のコピーや画像づくりを、"
+          ],
+          "start": 9.78,
+          "end": 11.88
+        },
+        {
+          "lines": [
+            "当たり前のようにAIに任せるようになっていました。"
+          ],
+          "start": 12.03,
+          "end": 15.78
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.64,
+        "y": 0.38
+      }
+    },
+    {
+      "scene_id": 7,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 33,
+      "narration": "効率だけを見れば、確かに仕事は速く回るようになりました。それでも案件の数がそれを上回っていて、夜遅くまで会社に残る日が続きます。五歳になる娘のお迎えは、いつも妻に頼りきりでした。おまけに提案書に並ぶ広告案を見比べると、なんだか似たり寄ったりに見えてしまう。このままAIに任せきりでいいのか、正直、心のどこかで引っかかっていました。",
+      "image_prompt": "In an advertising agency office in the evening, warm lamp lighting, a Japanese man in his mid-30s (Sato Kenta), short neat business hairstyle, business casual attire, sitting alone at his desk looking down with a worried, contemplative expression at several printed ad mockups spread on the table that appear strikingly similar to each other in color and composition (abstract shapes, no legible text or numbers), exactly one person in the entire scene, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "効率だけを見れば、確かに仕事は速く回る"
+          ],
+          "start": 0.0,
+          "end": 3.18
+        },
+        {
+          "lines": [
+            "ようになりました。それでも案件の数がそれを"
+          ],
+          "start": 3.33,
+          "end": 6.97
+        },
+        {
+          "lines": [
+            "上回っていて、夜遅くまで会社に残る日が続きます。"
+          ],
+          "start": 7.12,
+          "end": 10.92
+        },
+        {
+          "lines": [
+            "五歳になる娘のお迎えは、いつも妻に頼りきりでした。"
+          ],
+          "start": 11.07,
+          "end": 16.11
+        },
+        {
+          "lines": [
+            "おまけに提案書に並ぶ広告案を見比べると、"
+          ],
+          "start": 16.68,
+          "end": 19.92
+        },
+        {
+          "lines": [
+            "なんだか似たり寄ったりに見えてしまう。"
+          ],
+          "start": 20.6,
+          "end": 23.45
+        },
+        {
+          "lines": [
+            "このままAIに任せきりでいいのか、正直、"
+          ],
+          "start": 24.02,
+          "end": 27.34
+        },
+        {
+          "lines": [
+            "心のどこかで引っかかっていました。"
+          ],
+          "start": 27.49,
+          "end": 30.04
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.51,
+        "y": 0.36
+      }
+    },
+    {
+      "scene_id": 8,
+      "type": "citation",
+      "narrator": "research",
+      "duration_seconds": 26,
+      "narration": "AIに任せきりでいいのか——こうした迷いに、科学的なデータで向き合った研究があります。2025年、アメリカのMIT経営大学院の研究チームが、2000人を超える参加者を集めた大規模なフィールド実験を行いました。まだ研究段階の取り組みですが、その規模の大きさが際立っています。",
+      "image_prompt": "An establishing exterior view of a modern American university business school building (MIT Sloan School of Management style architecture), contemporary campus architecture, bright daytime sunlight, a few small figures walking in the distance, no people in close-up, no text",
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "AIに任せきりでいいのか——こうした迷いに、"
+          ],
+          "start": 0.0,
+          "end": 3.5
+        },
+        {
+          "lines": [
+            "科学的なデータで向き合った研究があります。"
+          ],
+          "start": 3.65,
+          "end": 6.8
+        },
+        {
+          "lines": [
+            "2025年、アメリカのMIT経営大学院の"
+          ],
+          "start": 7.02,
+          "end": 10.02
+        },
+        {
+          "lines": [
+            "研究チームが、2000人を超える参加者を"
+          ],
+          "start": 10.17,
+          "end": 13.17
+        },
+        {
+          "lines": [
+            "集めた大規模なフィールド実験を行いました。"
+          ],
+          "start": 13.32,
+          "end": 16.47
+        },
+        {
+          "lines": [
+            "まだ研究段階の取り組みですが、"
+          ],
+          "start": 16.62,
+          "end": 18.87
+        },
+        {
+          "lines": [
+            "その規模の大きさが際立っています。"
+          ],
+          "start": 19.02,
+          "end": 21.57
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 9,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 40,
+      "narration": "実験では、2234人の参加者を、人間同士のペアと、人間とAIエージェントのペアにランダムに分け、実在するシンクタンクの年次報告書向け広告キャンペーンを制作してもらいました。AIエージェントは、メッセージのやり取りから広告コピーの編集、画像の生成まで、まるで人間のパートナーと同じようにチームの一員として作業を進めます。集まった広告は、実に1万本を超えました。",
+      "image_prompt": "In a bright research lab with large windows, an American researcher, wearing a white lab coat, standing beside a wall of monitors each displaying small abstract paired chat-interface windows (some showing two simple person-icon avatars, others showing a person-icon paired with a simple robot-icon avatar, no legible text or numbers), pointing at one screen with an explaining gesture, bright daylight, exactly ONE small flat corner graphic showing a simple grid icon representing many small ad thumbnails, placed only in one corner, no larger than roughly one-eighth of the frame, kept plain, absolutely no text or numerals, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "実験では、2234人の参加者を、"
+          ],
+          "start": 0.0,
+          "end": 2.68
+        },
+        {
+          "lines": [
+            "人間同士のペアと、人間とAIエージェントの"
+          ],
+          "start": 2.83,
+          "end": 5.98
+        },
+        {
+          "lines": [
+            "ペアにランダムに分け、実在するシンクタンクの"
+          ],
+          "start": 6.13,
+          "end": 9.43
+        },
+        {
+          "lines": [
+            "年次報告書向け広告キャンペーンを制作"
+          ],
+          "start": 9.58,
+          "end": 12.28
+        },
+        {
+          "lines": [
+            "してもらいました。AIエージェントは、"
+          ],
+          "start": 12.43,
+          "end": 15.28
+        },
+        {
+          "lines": [
+            "メッセージのやり取りから広告コピーの編集、"
+          ],
+          "start": 15.43,
+          "end": 18.58
+        },
+        {
+          "lines": [
+            "画像の生成まで、まるで人間のパートナーと"
+          ],
+          "start": 18.73,
+          "end": 21.73
+        },
+        {
+          "lines": [
+            "同じようにチームの一員として作業を進めます。"
+          ],
+          "start": 21.88,
+          "end": 25.18
+        },
+        {
+          "lines": [
+            "集まった広告は、実に1万本を超えました。"
+          ],
+          "start": 25.33,
+          "end": 28.33
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.35,
+        "y": 0.42
+      }
+    },
+    {
+      "scene_id": 10,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 33,
+      "narration": "結果は明快でした。人間とAIが組んだチームは、一人あたりの広告制作数がおよそ50%も多くなったのです。文章の質も、人間同士のチームより高く評価されました。ただし画像の質だけは逆に、人間同士のチームの方が高いという結果でした。AIには、得意なことと苦手なことが、くっきりと分かれているようです。",
+      "image_prompt": "In the same bright research lab, a different American researcher, wearing a white lab coat, standing beside a large monitor displaying two simple ad mockup placeholders side by side — one framed with a subtle bright highlight border (representing higher quality) with dense abstract text-like lines, the other with a plain muted border and a simple abstract picture-frame icon (representing image content), no legible text or numbers, a small flat corner graphic showing two simple plain bar shapes of different heights, no larger than roughly one-eighth of the frame, kept plain, absolutely no text or numerals, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "結果は明快でした。人間とAIが組んだチームは、"
+          ],
+          "start": 0.0,
+          "end": 4.16
+        },
+        {
+          "lines": [
+            "一人あたりの広告制作数がおよそ50%も"
+          ],
+          "start": 4.46,
+          "end": 8.38
+        },
+        {
+          "lines": [
+            "多くなったのです。文章の質も、"
+          ],
+          "start": 8.53,
+          "end": 11.13
+        },
+        {
+          "lines": [
+            "人間同士のチームより高く評価されました。"
+          ],
+          "start": 11.28,
+          "end": 14.28
+        },
+        {
+          "lines": [
+            "ただし画像の質だけは逆に、人間同士の"
+          ],
+          "start": 14.78,
+          "end": 18.27
+        },
+        {
+          "lines": [
+            "チームの方が高いという結果でした。"
+          ],
+          "start": 18.42,
+          "end": 20.97
+        },
+        {
+          "lines": [
+            "AIには、得意なことと苦手なことが、"
+          ],
+          "start": 21.12,
+          "end": 23.82
+        },
+        {
+          "lines": [
+            "くっきりと分かれているようです。"
+          ],
+          "start": 23.97,
+          "end": 26.37
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.75,
+        "y": 0.38
+      }
+    },
+    {
+      "scene_id": 11,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 45,
+      "narration": "ところが、そこには見落とされがちな落とし穴もありました。実は参加者には、パートナーが人間かAIかは知らされていません。それでもAIと組んだ人は、相手が人間だった場合に比べて、作業を任せる割合が17%高くなり、自分の手で広告のコピーを直す回数は62%も少なくなっていたのです。しかも、やり取りの中でパートナーがAIだと気づいた人ほど、任せる傾向はさらに強まりました。やり取りの中身も、雑談は減り、作業の指示が中心になっていきます。そして、その任せ方の違いは、出来上がった広告そのものにも表れていました。",
+      "image_prompt": "In the same bright research lab, an American researcher, wearing a white lab coat, standing with a thoughtful, concerned expression in front of a large screen displaying a dense grid of many small ad thumbnails that look nearly identical to each other (abstract colored rectangles with a subtly repeating pattern of color and composition, no legible text or numbers), bright daylight, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "ところが、そこには見落とされがちな落とし穴も"
+          ],
+          "start": 0.0,
+          "end": 3.3
+        },
+        {
+          "lines": [
+            "ありました。実は参加者には、"
+          ],
+          "start": 3.45,
+          "end": 5.97
+        },
+        {
+          "lines": [
+            "パートナーが人間かAIかは知らされていません。"
+          ],
+          "start": 6.12,
+          "end": 9.57
+        },
+        {
+          "lines": [
+            "それでもAIと組んだ人は、相手が人間だった"
+          ],
+          "start": 9.72,
+          "end": 13.14
+        },
+        {
+          "lines": [
+            "場合に比べて、作業を任せる割合が17%高くなり、"
+          ],
+          "start": 13.29,
+          "end": 17.69
+        },
+        {
+          "lines": [
+            "自分の手で広告のコピーを直す回数は"
+          ],
+          "start": 17.84,
+          "end": 20.71
+        },
+        {
+          "lines": [
+            "62%も少なくなっていたのです。しかも、"
+          ],
+          "start": 20.86,
+          "end": 24.4
+        },
+        {
+          "lines": [
+            "やり取りの中でパートナーがAIだと気づいた人ほど、"
+          ],
+          "start": 24.55,
+          "end": 28.3
+        },
+        {
+          "lines": [
+            "任せる傾向はさらに強まりました。"
+          ],
+          "start": 28.45,
+          "end": 30.85
+        },
+        {
+          "lines": [
+            "やり取りの中身も、雑談は減り、"
+          ],
+          "start": 31.0,
+          "end": 33.25
+        },
+        {
+          "lines": [
+            "作業の指示が中心になっていきます。そして、"
+          ],
+          "start": 33.4,
+          "end": 36.55
+        },
+        {
+          "lines": [
+            "その任せ方の違いは、出来上がった広告"
+          ],
+          "start": 36.7,
+          "end": 39.4
+        },
+        {
+          "lines": [
+            "そのものにも表れていました。"
+          ],
+          "start": 39.55,
+          "end": 41.65
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.69,
+        "y": 0.45
+      }
+    },
+    {
+      "scene_id": 12,
+      "type": "data",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 31,
+      "narration": "ここで、実験の結果を数字で見てみましょう。一人あたりが作り上げた広告の本数は、人だけのチームに比べて、人とAIのチームではおよそ50%多くなりました。しかも、生まれた広告の一部は実際にX(旧Twitter)で20日間配信され、500万回近く表示されるという、実社会での検証も行われています。",
+      "image_prompt": "Simple, clean, minimalist flat infographic bar chart, like a basic data visualization slide, NOT an artistic or abstract illustration. Exactly TWO bars total, side by side, each a single solid rectangle with no internal divisions or segments: the left bar is a single shorter deep-blue rectangle labeled below with the Japanese text \"人だけのチーム\", the right bar is a single taller warm-coral rectangle labeled below with the Japanese text \"人とAIのチーム\" (representing more ads produced per worker), plain solid flat colors only, no gradients, no texture, no decorative background shapes, clean legible sans-serif Japanese text rendered accurately exactly as specified above, do not add any other text, title, caption, numbers, or additional bars beyond what is specified here",
+      "ken_burns": "static",
+      "telop_cards": [
+        {
+          "lines": [
+            "ここで、実験の結果を数字で見てみましょう。"
+          ],
+          "start": 0.0,
+          "end": 3.15
+        },
+        {
+          "lines": [
+            "一人あたりが作り上げた広告の本数は、"
+          ],
+          "start": 3.3,
+          "end": 6.02
+        },
+        {
+          "lines": [
+            "人だけのチームに比べて、人とAIのチームでは"
+          ],
+          "start": 6.17,
+          "end": 9.55
+        },
+        {
+          "lines": [
+            "およそ50%多くなりました。しかも、"
+          ],
+          "start": 9.7,
+          "end": 12.66
+        },
+        {
+          "lines": [
+            "生まれた広告の一部は実際にX(旧Twitter"
+          ],
+          "start": 12.81,
+          "end": 16.26
+        },
+        {
+          "lines": [
+            ")で20日間配信され、500万回近く表示"
+          ],
+          "start": 16.41,
+          "end": 19.41
+        },
+        {
+          "lines": [
+            "されるという、実社会での検証も行われています。"
+          ],
+          "start": 19.56,
+          "end": 23.01
+        }
+      ]
+    },
+    {
+      "scene_id": 13,
+      "type": "data",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 30,
+      "narration": "AIに任せる割合が増えたチームほど、生まれる広告案はお互いに似通っていきました。図にすると、人だけのチームの案が広く散らばるのに対し、人とAIのチームの案は一か所に固まっていきます。効率と引き換えに、個性が薄れていく——それが、この実験が示したもう一つの顔でした。",
+      "image_prompt": "Simple, clean, minimalist flat infographic scatter diagram, like a basic data visualization slide, NOT an artistic or abstract illustration. A short Japanese title in clean sans-serif text at the very top reading \"広告の内容の似かよい度合い\" to explain what the diagram shows. Below it, two separate dot clusters side by side, each inside a thin plain rectangle outline (no axis lines, no axis labels, no tick marks, since this represents relative similarity rather than a named numeric measurement): left cluster — many small dots scattered widely apart in varied positions and slightly varied colors, with the Japanese label \"人だけのチーム\" below it, representing diverse outputs; right cluster — many small dots clustered tightly together near the center in a similar color, with the Japanese label \"人とAIのチーム\" below it, representing more similar, homogeneous outputs. Small Japanese caption text beneath both clusters reading \"点が近いほど、広告の内容が似ている\" to clarify that closer dots mean more similar content. Plain flat background, no gradients, no texture, no decorative shapes, clean legible sans-serif Japanese text rendered accurately exactly as specified above, do not add any other text, numbers, or axis labels beyond what is specified here",
+      "ken_burns": "static",
+      "telop_cards": [
+        {
+          "lines": [
+            "AIに任せる割合が増えたチームほど、"
+          ],
+          "start": 0.0,
+          "end": 2.7
+        },
+        {
+          "lines": [
+            "生まれる広告案はお互いに似通っていきました。"
+          ],
+          "start": 2.9,
+          "end": 6.2
+        },
+        {
+          "lines": [
+            "図にすると、人だけのチームの案が広く"
+          ],
+          "start": 6.98,
+          "end": 9.98
+        },
+        {
+          "lines": [
+            "散らばるのに対し、人とAIのチームの案は"
+          ],
+          "start": 10.13,
+          "end": 13.39
+        },
+        {
+          "lines": [
+            "一か所に固まっていきます。効率と引き換えに、"
+          ],
+          "start": 13.54,
+          "end": 17.52
+        },
+        {
+          "lines": [
+            "個性が薄れていく——それが、"
+          ],
+          "start": 17.67,
+          "end": 20.04
+        },
+        {
+          "lines": [
+            "この実験が示したもう一つの顔でした。"
+          ],
+          "start": 20.19,
+          "end": 22.89
+        }
+      ]
+    },
+    {
+      "scene_id": 14,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 25,
+      "narration": "もしAIを、ただの代筆係ではなく、対等なチームメイトとして迎えられたら。効率も、自分たちらしさも、どちらも手放さずにいられるかもしれない。それは新しい技術を待つ話ではなく、明日からの向き合い方しだい。そんな毎日を、少しだけ想像してみました。",
+      "image_prompt": "In a cozy living room in the evening, warm interior lighting, dusk sky faintly visible through a window (not night), a Japanese man in his mid-30s (Sato Kenta), short neat business hairstyle, drawn small, sitting in an armchair near the window with a thoughtful, hopeful expression, a classic comic-style thought bubble emerging from his head (a trail of small circles leading to a large cloud-shaped bubble), inside the bubble a small miniature scene depicting him confidently gesturing in a bright conference room toward colleagues and a wall screen with varied colorful ad concepts, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "もしAIを、ただの代筆係ではなく、"
+          ],
+          "start": 0.0,
+          "end": 2.88
+        },
+        {
+          "lines": [
+            "対等なチームメイトとして迎えられたら。"
+          ],
+          "start": 3.38,
+          "end": 6.23
+        },
+        {
+          "lines": [
+            "効率も、自分たちらしさも、どちらも手放さずに"
+          ],
+          "start": 6.48,
+          "end": 10.04
+        },
+        {
+          "lines": [
+            "いられるかもしれない。それは新しい技術を"
+          ],
+          "start": 10.19,
+          "end": 14.01
+        },
+        {
+          "lines": [
+            "待つ話ではなく、明日からの向き合い方しだい。"
+          ],
+          "start": 14.16,
+          "end": 17.96
+        },
+        {
+          "lines": [
+            "そんな毎日を、少しだけ想像してみました。"
+          ],
+          "start": 18.11,
+          "end": 21.11
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.31,
+        "y": 0.58
+      }
+    },
+    {
+      "scene_id": 15,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 32,
+      "narration": "AIがいくつもの叩き台を並べてくれる。でも、それをそのまま使うのではなく、最後にひとつひとつ自分の視点で手を入れる。同じテーマでも、あえて違う切り口をAIに出させてみる。会議に並ぶチームの提案は、以前よりずっと個性にあふれていて、AIに頼りながらも、埋もれない自分たちの色が残っています。",
+      "image_prompt": "In a bright modern conference room in the morning, soft daylight through large windows, a Japanese man in his mid-30s (Sato Kenta), short neat business hairstyle, business casual attire, standing and gesturing toward a large wall screen displaying several distinctly different, colorful abstract ad-concept mockups (no legible text or numbers), a few Japanese colleagues seated around the table looking engaged and pleased, an energetic creative mood, no text",
+      "ken_burns": "zoom_out",
+      "badge_text": "幸せな未来を夢想中",
+      "telop_cards": [
+        {
+          "lines": [
+            "AIがいくつもの叩き台を並べてくれる。"
+          ],
+          "start": 0.0,
+          "end": 2.85
+        },
+        {
+          "lines": [
+            "でも、それをそのまま使うのではなく、"
+          ],
+          "start": 3.52,
+          "end": 6.22
+        },
+        {
+          "lines": [
+            "最後にひとつひとつ自分の視点で手を入れる。"
+          ],
+          "start": 6.37,
+          "end": 9.52
+        },
+        {
+          "lines": [
+            "同じテーマでも、あえて違う切り口をAIに"
+          ],
+          "start": 9.67,
+          "end": 12.67
+        },
+        {
+          "lines": [
+            "出させてみる。会議に並ぶチームの提案は、"
+          ],
+          "start": 12.82,
+          "end": 15.82
+        },
+        {
+          "lines": [
+            "以前よりずっと個性にあふれていて、"
+          ],
+          "start": 15.97,
+          "end": 18.52
+        },
+        {
+          "lines": [
+            "AIに頼りながらも、埋もれない自分たちの"
+          ],
+          "start": 18.67,
+          "end": 21.67
+        },
+        {
+          "lines": [
+            "色が残っています。"
+          ],
+          "start": 21.82,
+          "end": 23.17
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 16,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 28,
+      "narration": "似た案ばかりで作り直していた時間が減って、残業続きだった毎日が、定時で終わる日も増えました。下ごしらえはAIに、仕上げは自分の手で——その分担が決まっただけで、仕事の回り方がこんなに変わるなんて。妻に任せきりだった娘のお迎えに、余裕を持って向かえる。それだけで、心がふっと軽くなります。",
+      "image_prompt": "Outside a nursery school entrance in the early evening, warm golden-hour light, a Japanese man in his mid-30s (Sato Kenta), short neat business hairstyle, business casual attire, crouching down with open arms and a warm relieved smile, a Japanese girl about 5 years old with a small backpack running toward him joyfully, no text",
+      "ken_burns": "pan_zoom_out",
+      "badge_text": "幸せな未来を夢想中",
+      "telop_cards": [
+        {
+          "lines": [
+            "似た案ばかりで作り直していた時間が減って、"
+          ],
+          "start": 0.06,
+          "end": 3.21
+        },
+        {
+          "lines": [
+            "残業続きだった毎日が、定時で終わる日も増えました。"
+          ],
+          "start": 3.36,
+          "end": 7.11
+        },
+        {
+          "lines": [
+            "下ごしらえはAIに、仕上げは自分の手で"
+          ],
+          "start": 7.26,
+          "end": 10.52
+        },
+        {
+          "lines": [
+            "——その分担が決まっただけで、"
+          ],
+          "start": 10.67,
+          "end": 12.92
+        },
+        {
+          "lines": [
+            "仕事の回り方がこんなに変わるなんて。"
+          ],
+          "start": 13.07,
+          "end": 15.77
+        },
+        {
+          "lines": [
+            "妻に任せきりだった娘のお迎えに、"
+          ],
+          "start": 15.92,
+          "end": 18.32
+        },
+        {
+          "lines": [
+            "余裕を持って向かえる。それだけで、"
+          ],
+          "start": 18.47,
+          "end": 21.22
+        },
+        {
+          "lines": [
+            "心がふっと軽くなります。"
+          ],
+          "start": 21.37,
+          "end": 23.17
+        }
+      ]
+    },
+    {
+      "scene_id": 17,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 19,
+      "narration": "週末は、仕事のことをすっかり忘れて娘と過ごせます。効率化の先にあったのは、ただの忙しさからの解放ではなく、AIと賢く付き合うことで取り戻せた、こんな穏やかな時間だったんです。",
+      "image_prompt": "In a sunny park on a weekend afternoon, bright daylight, a Japanese man in his mid-30s (Sato Kenta), short neat casual clothing, pushing a Japanese girl about 5 years old gently on a swing, both laughing joyfully, relaxed and carefree mood, both the man's and the girl's hands are anatomically correct with exactly five fingers each, no extra or malformed fingers, no text",
+      "ken_burns": "pan_zoom_out",
+      "badge_text": "幸せな未来を夢想中",
+      "telop_cards": [
+        {
+          "lines": [
+            "週末は、仕事のことをすっかり忘れて娘と過ごせます。"
+          ],
+          "start": 0.0,
+          "end": 4.7
+        },
+        {
+          "lines": [
+            "効率化の先にあったのは、ただの忙しさからの"
+          ],
+          "start": 5.3,
+          "end": 9.02
+        },
+        {
+          "lines": [
+            "解放ではなく、AIと賢く付き合うことで取り戻せた、"
+          ],
+          "start": 9.17,
+          "end": 13.63
+        },
+        {
+          "lines": [
+            "こんな穏やかな時間だったんです。"
+          ],
+          "start": 13.78,
+          "end": 16.18
+        }
+      ]
+    },
+    {
+      "scene_id": 18,
+      "type": "closing",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 48,
+      "narration": "この実験は、実在するシンクタンクの広告制作という特定の仕事を対象にした、まだ研究段階の取り組みです。あらゆる仕事でも同じ結果になるかは、これから確かめられていくところです。それでも、AIに任せきりにせず、下ごしらえは任せて仕上げは自分の目で行うという付き合い方には、似たり寄ったりの案を作り直す手間を減らせる可能性があります。そうして生まれる少しの余白の先には、慌ただしい毎日の中で家族と過ごす時間を取り戻せるという、ささやかな幸せがあるのかもしれません。詳しい研究内容が気になる方は、概要欄をご確認ください。次はどんな研究が、誰かの幸せな未来を運んでくるのでしょうか。その瞬間をこれからも一緒に見つけていきたい方は、ぜひチャンネル登録してお待ちください。",
+      "image_prompt": "A quiet research lab in the late afternoon, no people in the frame, a wall of monitors displaying simple abstract paired chat-interface icons at rest (no legible text or numbers), soft warm golden-hour daylight through lab windows, calm hopeful mood, no text",
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "この実験は、実在するシンクタンクの広告"
+          ],
+          "start": 0.0,
+          "end": 2.9
+        },
+        {
+          "lines": [
+            "制作という特定の仕事を対象にした、"
+          ],
+          "start": 3.05,
+          "end": 5.46
+        },
+        {
+          "lines": [
+            "まだ研究段階の取り組みです。"
+          ],
+          "start": 5.61,
+          "end": 7.59
+        },
+        {
+          "lines": [
+            "あらゆる仕事でも同じ結果になるかは、"
+          ],
+          "start": 7.74,
+          "end": 10.29
+        },
+        {
+          "lines": [
+            "これから確かめられていくところです。"
+          ],
+          "start": 10.44,
+          "end": 12.99
+        },
+        {
+          "lines": [
+            "それでも、AIに任せきりにせず、"
+          ],
+          "start": 13.14,
+          "end": 15.41
+        },
+        {
+          "lines": [
+            "下ごしらえは任せて仕上げは自分の目で"
+          ],
+          "start": 15.56,
+          "end": 18.11
+        },
+        {
+          "lines": [
+            "行うという付き合い方には、似たり寄ったりの"
+          ],
+          "start": 18.26,
+          "end": 21.24
+        },
+        {
+          "lines": [
+            "案を作り直す手間を減らせる可能性があります。"
+          ],
+          "start": 21.39,
+          "end": 24.51
+        },
+        {
+          "lines": [
+            "そうして生まれる少しの余白の先には、"
+          ],
+          "start": 24.66,
+          "end": 27.21
+        },
+        {
+          "lines": [
+            "慌ただしい毎日の中で家族と過ごす時間を"
+          ],
+          "start": 27.36,
+          "end": 30.05
+        },
+        {
+          "lines": [
+            "取り戻せるという、ささやかな幸せがある"
+          ],
+          "start": 30.2,
+          "end": 32.89
+        },
+        {
+          "lines": [
+            "のかもしれません。詳しい研究内容が気になる方は、"
+          ],
+          "start": 33.04,
+          "end": 36.44
+        },
+        {
+          "lines": [
+            "概要欄をご確認ください。次はどんな研究が、"
+          ],
+          "start": 36.59,
+          "end": 39.57
+        },
+        {
+          "lines": [
+            "誰かの幸せな未来を運んでくるのでしょうか。"
+          ],
+          "start": 39.72,
+          "end": 42.7
+        },
+        {
+          "lines": [
+            "その瞬間をこれからも一緒に見つけていきたい方は、"
+          ],
+          "start": 42.85,
+          "end": 46.25
+        },
+        {
+          "lines": [
+            "ぜひチャンネル登録してお待ちください。"
+          ],
+          "start": 46.4,
+          "end": 49.09
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "hook_lines": [
+        "AIに仕事を任せると",
+        "生産性は上がる。でも——"
+      ],
+      "scenes": [
+        {
+          "narrator": "persona",
+          "narration": "AIに、任せきりになっていませんか?",
+          "image_prompt": "In a busy advertising agency office in the daytime, a Japanese man in his mid-30s (Sato Kenta), short neat business hairstyle, business casual attire, sitting at his desk, viewed from a front angle over the top of an open laptop so only the glowing laptop screen faces the camera (the screen shows only soft abstract glowing shapes, no legible UI or text, no app icons), the back of the laptop lid and any logo are not visible from this angle, a mildly overwhelmed expression, blank papers scattered around with no writing or text visible on them, composed for a vertical 9:16 frame with the main subject centered and nothing important near the left/right edges, no text"
+        },
+        {
+          "narrator": "research",
+          "narration": "MITの実験で分かった、生産性50%アップの秘密",
+          "image_prompt": "Close-up in a bright research lab, an American researcher wearing a white lab coat, gesturing toward a monitor displaying a simple upward bar graphic (no legible text or numbers), bright daylight, composed for a vertical 9:16 frame with the main subject centered and nothing important near the left/right edges, no text"
+        },
+        {
+          "narrator": "research",
+          "narration": "でも任せすぎると、広告が「画一化」する",
+          "style": "chart",
+          "image_prompt": "Simple, clean, minimalist flat infographic for a vertical 9:16 frame: a grid of many small ad thumbnail rectangles that look nearly identical to each other in color and composition (abstract shapes, no legible text or numbers), plain flat background. ABSOLUTELY NO TEXT OF ANY KIND anywhere in the image — no title, no caption, no heading, no labels, no numbers, no words in any language. Leave any space where a caption might normally go completely blank instead."
+        },
+        {
+          "narrator": "persona",
+          "narration": "AIは相棒。でも最後は自分の目で仕上げる。",
+          "image_prompt": "In a bright modern conference room, a Japanese man in his mid-30s (Sato Kenta), short neat business hairstyle, business casual attire, standing and gesturing confidently toward a wall screen with varied colorful ad concepts (no legible text or numbers), composed for a vertical 9:16 frame with the main subject centered and nothing important near the left/right edges, no text"
+        },
+        {
+          "narrator": "persona",
+          "narration": "定時に、娘を迎えに行ける毎日に。",
+          "image_prompt": "Outside a modern nursery school building entrance (a contemporary school building with a completely blank plain signboard with no writing on it at all, glass door, and simple modern architecture — NOT a traditional Japanese shop, izakaya, or building with a paper lantern) in the early evening, warm golden-hour light, a Japanese man in his mid-30s (Sato Kenta), short neat business hairstyle, business casual attire, crouching down with both arms open toward the girl (only two arms, two hands, both clearly visible and anatomically correct with exactly five fingers each), a Japanese girl about 5 years old running toward him joyfully with only two arms and two hands, anatomically correct, no extra or duplicated limbs, composed for a vertical 9:16 frame with the main subject centered and nothing important near the left/right edges. ABSOLUTELY NO TEXT OF ANY KIND anywhere in the image — no signboard writing, no title, no caption, no labels. Leave the signboard completely blank instead."
+        },
+        {
+          "narrator": "persona",
+          "narration": "続きは本編でチェックしてみてください。",
+          "image_prompt": "a Japanese man in his mid-30s (Sato Kenta), short neat business hairstyle, business casual attire, smiling warmly and relaxed, standing in a modern office with soft daylight through a window in the background, composed for a vertical 9:16 frame with the main subject centered, no text"
+        }
+      ]
+    }
+  ],
+  "bgm_sources": {
+    "intro": "BGM/kl012-BGM-intro.mp3",
+    "main": "BGM/kl001-BGM-main.mp3",
+    "outro": "BGM/kl012-BGM-outro.mp3"
+  },
+  "youtube_url": "https://youtu.be/KNzsaUo06N0",
+  "shorts_url": "https://youtu.be/olUR_Wk19ss",
+  "scheduled_at": "2026-09-12 19:00"
+}
