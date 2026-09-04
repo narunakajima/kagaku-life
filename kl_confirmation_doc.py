@@ -21,11 +21,14 @@ from pathlib import Path
 BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 
+# CLAUDE.md「BGMパイプライン」2026-08-22確定のマッピング
+# （intro=teaser/hook/context、main=citation/finding/data、outro=impact/closing）。
+# kl_video_gen.py の BGM_ROLE_BY_TYPE と一致させること。
 BGM_ROLE_BY_TYPE = {
     "teaser": "intro",
     "hook": "intro",
-    "citation": "intro",
-    "context": "main",
+    "context": "intro",
+    "citation": "main",
     "finding": "main",
     "data": "main",
     "impact": "outro",
