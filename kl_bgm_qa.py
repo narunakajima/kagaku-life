@@ -21,7 +21,7 @@ from google import genai
 import os
 
 API_KEY = os.environ.get("GEMINI_API_KEY", "")
-QA_MODEL = "gemini-3.6-flash"
+QA_MODEL = "gemini-flash-latest"
 
 QA_PROMPT = (
     "Listen to this audio track. It will be used as instrumental background music (BGM) "

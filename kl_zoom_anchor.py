@@ -43,7 +43,7 @@ from google import genai
 sys.stdout.reconfigure(line_buffering=True)
 
 API_KEY = os.environ.get("GEMINI_API_KEY", "")
-MODEL = "gemini-3.6-flash"
+MODEL = "gemini-flash-latest"
 
 BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"

@@ -28,7 +28,7 @@ from google.genai import types
 
 API_KEY = os.environ.get("GEMINI_API_KEY", "")
 TTS_MODEL = "gemini-3.1-flash-tts-preview"
-RECOMMEND_MODEL = "gemini-3.6-flash"
+RECOMMEND_MODEL = "gemini-flash-latest"
 
 BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
