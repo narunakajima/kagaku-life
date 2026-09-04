@@ -398,15 +398,28 @@ BGMの切り替わりタイミングも壊れる。物語の流れとしても�
 合成がスキップされ、文字なしサムネイルになる事故が実際に起きた。STEP6参照）。
 
 **shorts（1本、5〜6シーン）:** 各カット2〜3秒の短いフレーズに区切る。
-「フック→本編ダイジェスト→CTA」の短い展開。`image_prompt`はShorts専用に
-縦構図を意識して新規に書く。チャート系のカットには `"style": "chart"` を
-付与する。narrator/narration_voicesは本編と共通。
+「フック→本編ダイジェスト→CTA」の短い展開。**各カットが本編`scenes[]`の
+既存シーンと同じ場面（同じ人物・同じ構図の再演）を描く場合は、
+`image_prompt`を新規に書かず、必ず対応する本編`scene_id`を`"scene_id"`
+として指定する**（`kl_image_gen.py`が本編で承認済みの画像を9:16に再構成
+するため、ゼロから独立生成しない — コスト削減・一貫性向上、
+samurai-chroniclesの同じ仕組みを踏襲、2026-09-04導入）。Shorts向けの
+独自構図をわざわざ作る必要はない — フック・ダイジェスト・CTAいずれも
+本編中の最も近いシーンを流用する。本編に対応する場面が無いカット
+（独自のフック演出等）に限り、従来通り`image_prompt`を新規に書く
+（この場合`scene_id`は付与しない）。チャート系のカット（`type: "data"`の
+本編シーンを参照する場合、または独自カットで`"style": "chart"`を付与した
+場合）は自動的にチャートスタイルが適用される。narrator/narration_voicesは
+本編と共通。
 
 **JSONスキーマ:** `episode_id` / `episode_title` / `youtube_title` /
 `youtube_description`（参考文献・査読前開示を含む） / `youtube_tags` /
 `references[]` / `protagonist` / `thumbnail_prompt` / `thumbnail_headline` /
 `thumbnail_subcopy` / `scenes[]`（`scene_id`/`type`/`narrator`/`reference_index`/
-`duration_seconds`/`narration`/`image_prompt`/`ken_burns`） / `shorts[]`。
+`duration_seconds`/`narration`/`image_prompt`/`ken_burns`） / `shorts[]`
+（`shorts_id`/`scenes[]`。各カットは`narrator`/`narration`に加え、本編の
+切り出しなら`scene_id`（`image_prompt`は書かない）、独自カットなら
+`image_prompt`（`scene_id`は付与しない）のどちらか一方を持つ）。
 `narration_voices`はSTEP3で決まるため、この時点では省略してよい。
 
 **想定尺の見積もり（2026-08-23追加）:** シーンJSON生成直後、`scenes`（teaser除く

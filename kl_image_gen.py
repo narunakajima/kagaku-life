@@ -9,6 +9,13 @@ thumbnail_promptも同様にBASE_CONTEXTを付与して生成する。
 生成後、Gemini Visionによる自動QA（sc_image_gen.pyと同じ考え方）を行い、
 問題があれば指摘内容をプロンプトに反映して自動再生成する（最大2回試行）。
 
+Shorts画像について（2026-09-04〜）:
+  Shortsの各カットに"scene_id"（本編scene_idへの参照）があれば、本編(16:9)で
+  既にQA承認済みの画像をGeminiで9:16に再構成する（ゼロから独立生成しない。
+  samurai-chroniclesのsc_image_gen.pyと同じ仕組み）。scene_idが無い、または
+  参照先の本編画像が未生成の場合は、Shorts独自のimage_promptから独立生成する
+  旧方式にフォールバックする（kl001〜kl013はscene_id未対応のため）。
+
 使い方:
   python3 kl_image_gen.py --episode kl001                  # 全シーン+サムネイル生成
   python3 kl_image_gen.py --episode kl001 --scenes 5,6,9    # 指定シーンのみ再生成
@@ -38,7 +45,7 @@ sys.stdout.reconfigure(line_buffering=True)
 BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 
-API_KEY = os.environ.get("GEMINI_API_KEY", "")
+API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
 MODEL = "gemini-3.1-flash-image"
 QA_MODEL = "gemini-flash-latest"
 REQUEST_TIMEOUT_MS = 60_000
@@ -165,6 +172,22 @@ CHART_CONTEXT = (
 
 def style_for(scene_type: str) -> str:
     return CHART_CONTEXT if scene_type == "data" else BASE_CONTEXT
+
+
+def build_shorts_reframe_prompt(scene_prompt: str) -> str:
+    """本編(16:9)で承認済みの画像を9:16に再構成するためのプロンプト。
+    ゼロから独立生成せず、同一内容を縦構図に拡張するだけなのでMISMATCHが
+    起きにくく、コスト面でも新規生成+QAの往復を避けられる
+    （samurai-chroniclesのsc_image_gen.pyと同じ考え方、2026-09-04導入）。"""
+    return (
+        "Reframe this exact reference image into a 9:16 vertical portrait composition for "
+        "mobile short-form video. Keep the same subject, character appearance, setting, "
+        "lighting, and art style exactly as in the reference image — do not change the "
+        "scene content. Extend/recompose the framing so the main subject is centered and "
+        "prominent in a vertical frame, generating plausible additional scene content "
+        "above/below as needed to fill the vertical canvas.\n\n"
+        f"Scene: {scene_prompt}"
+    )
 
 
 def gen_image(client: genai.Client, prompt: str, out_path: Path, aspect_ratio: str = None,
@@ -562,6 +585,7 @@ def main():
             print(f"   → テキスト合成: 「{headline}」")
 
     if shorts_only or (not args.thumbnail_only and args.scenes is None):
+        scenes_by_id = {sc["scene_id"]: sc for sc in ep["scenes"]}
         shorts_target_ids = None
         if args.shorts_scenes:
             shorts_target_ids = {int(s) for s in args.shorts_scenes.split(",")}
@@ -570,12 +594,40 @@ def main():
             for i, s in enumerate(shorts["scenes"], start=1):
                 if shorts_target_ids is not None and i not in shorts_target_ids:
                     continue
-                is_chart = s.get("style") == "chart"
-                style = CHART_CONTEXT if is_chart else BASE_CONTEXT
-                prompt = f"{style}\n\nScene: {s['image_prompt']}"
                 out_path = out_dir / f"shorts{mid}_S{i:02d}.png"
-                r = generate_with_qa(client, prompt, s["image_prompt"], out_path,
-                                      aspect_ratio="9:16", skip_qa=args.no_qa, allow_text=is_chart)
+
+                # scene_idがあれば本編シーンの切り出し（再構成、独立生成しない）。
+                # 無い場合は旧方式（Shorts専用のimage_promptから独立生成）に
+                # フォールバックする（kl001〜kl013はscene_id未対応のため）。
+                ref_scene_id = s.get("scene_id")
+                main_scene = scenes_by_id.get(ref_scene_id) if ref_scene_id else None
+                main_img_path = (out_dir / f"S{ref_scene_id:02d}.png") if ref_scene_id else None
+
+                if main_scene is not None and main_img_path.exists():
+                    image_prompt = main_scene["image_prompt"]
+                    is_chart = main_scene["type"] == "data"
+                    prompt = build_shorts_reframe_prompt(image_prompt)
+                    r = generate_with_qa(client, prompt, image_prompt, out_path,
+                                          aspect_ratio="9:16", skip_qa=args.no_qa,
+                                          reference_image_path=main_img_path, allow_text=is_chart)
+                else:
+                    if ref_scene_id and main_scene is None:
+                        print(f"⚠️  shorts{mid} scene{i}: scene_id={ref_scene_id} が本編scenesに"
+                              f"見つかりません。独立生成にフォールバック", file=sys.stderr)
+                    elif ref_scene_id and main_scene is not None:
+                        print(f"⚠️  S{ref_scene_id:02d}.png が未生成のため独立生成にフォールバック "
+                              f"（本編を先に生成すると再構成でコストを抑えられます）: {out_path.name}",
+                              file=sys.stderr)
+                    image_prompt = s.get("image_prompt") or (main_scene["image_prompt"] if main_scene else None)
+                    if not image_prompt:
+                        print(f"❌ shorts{mid} scene{i}: image_promptもscene_id参照先も"
+                              f"見つかりません", file=sys.stderr)
+                        sys.exit(1)
+                    is_chart = s.get("style") == "chart" or (main_scene and main_scene["type"] == "data")
+                    style = CHART_CONTEXT if is_chart else BASE_CONTEXT
+                    prompt = f"{style}\n\nScene: {image_prompt}"
+                    r = generate_with_qa(client, prompt, image_prompt, out_path,
+                                          aspect_ratio="9:16", skip_qa=args.no_qa, allow_text=is_chart)
                 r["name"] = out_path.name
                 qa_results.append(r)
 
