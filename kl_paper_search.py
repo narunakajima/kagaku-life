@@ -64,7 +64,8 @@ PREPRINT_VENUES = {
     "authorea preprints",
 }
 RATE_LIMIT_SEC = 1.1  # APIキー無しの制限(1 req/s)に余裕を持たせる
-PAGE_LIMIT = 100  # 1クエリあたりの取得件数（totalは常に真の総件数を返す）
+PAGE_LIMIT = 100  # 1ページあたりの取得件数
+MAX_PAGES = 5  # 1クエリあたりの最大ページ数（500件。無制限にすると広すぎるクエリで暴走しうるため上限を設ける）
 
 
 def expand_to_ss_queries(vocab_query: str) -> list:
@@ -98,6 +99,11 @@ def expand_to_ss_queries(vocab_query: str) -> list:
     return [" + ".join(parts)]
 
 
+RETRYABLE_CODES = {429, 500, 502, 503, 504}  # Semantic Scholarの公開API（無認証）は
+# レート制限だけでなく一時的な500系エラーも比較的頻発するため両方リトライ対象にする
+# （2026-09-04追加、pagination実装時の動作確認中に実際に500を複数回観測）。
+
+
 def http_get_json(url: str, retries: int = 4) -> dict:
     for attempt in range(retries):
         req = urllib.request.Request(url, headers={"User-Agent": "kagaku-life-pipeline/0.1"})
@@ -105,24 +111,49 @@ def http_get_json(url: str, retries: int = 4) -> dict:
             with urllib.request.urlopen(req, timeout=30) as resp:
                 return json.loads(resp.read().decode("utf-8"))
         except urllib.error.HTTPError as e:
-            if e.code == 429 and attempt < retries - 1:
+            if e.code in RETRYABLE_CODES and attempt < retries - 1:
                 wait = 2 ** (attempt + 1)
-                print(f"    429 Too Many Requests — {wait}秒待って再試行", file=sys.stderr)
+                print(f"    HTTP {e.code} — {wait}秒待って再試行", file=sys.stderr)
                 time.sleep(wait)
                 continue
             raise RuntimeError(f"HTTP {e.code}: {url}") from e
     raise RuntimeError(f"検索失敗（{retries}回リトライ後）: {url}")
 
 
-def search_bulk(ss_query: str, year_from: int, year_to: int) -> dict:
+def search_bulk(ss_query: str, year_from: int, year_to: int, token: str = None) -> dict:
     params = {
         "query": ss_query,
         "year": f"{year_from}-{year_to}",
         "fields": FIELDS,
         "limit": PAGE_LIMIT,
     }
+    if token:
+        params["token"] = token
     url = API_URL + "?" + urllib.parse.urlencode(params)
     return http_get_json(url)
+
+
+def search_bulk_all_pages(ss_query: str, year_from: int, year_to: int) -> tuple:
+    """bulk searchのtokenページネーションを辿り、最大MAX_PAGES件ぶんの結果を集める。
+    総ヒット件数（total）は常にAPIの真の値をそのまま返すため、ログでは
+    「取得件数 < total」でもそれが仕様（MAX_PAGES到達）なのか1ページで
+    取り切れたのかが分かるようにする（2026-09-04追加、Fable 5.1監査の指摘:
+    以前はtokenを一切辿らず常に先頭ページ（最大100件）のみ取得していた）。
+    """
+    all_papers = []
+    total = 0
+    token = None
+    for page in range(MAX_PAGES):
+        if page > 0:
+            time.sleep(RATE_LIMIT_SEC)
+        result = search_bulk(ss_query, year_from, year_to, token=token)
+        total = result.get("total", 0)
+        papers = result.get("data") or []
+        all_papers.extend(papers)
+        token = result.get("token")
+        if not token or not papers:
+            break
+    return total, all_papers
 
 
 def _norm_doi(doi: str) -> str:
@@ -220,15 +251,14 @@ def run_category(name: str, cat: dict, year_from: int, year_to: int, top_n: int,
 
             time.sleep(RATE_LIMIT_SEC)
             try:
-                result = search_bulk(ss_query, year_from, year_to)
+                total, papers = search_bulk_all_pages(ss_query, year_from, year_to)
             except RuntimeError as e:
                 print(f"  ⚠️ クエリ失敗: {ss_query} ({e})", file=sys.stderr)
                 query_log.append({"vocab_query": vocab_query, "ss_query": ss_query, "total": None, "error": str(e)})
                 continue
 
-            total = result.get("total", 0)
-            papers = result.get("data") or []
-            print(f"  '{ss_query}' → 総ヒット件数 {total}件（取得 {len(papers)}件）")
+            note = "" if len(papers) >= total else f"（MAX_PAGES={MAX_PAGES}到達で打ち切り）"
+            print(f"  '{ss_query}' → 総ヒット件数 {total}件（取得 {len(papers)}件）{note}")
             query_log.append({"vocab_query": vocab_query, "ss_query": ss_query, "total": total, "fetched": len(papers)})
 
             for paper in papers:
