@@ -93,14 +93,14 @@ def _play_button(src: str, label: str, button_text: str) -> str:
 
 def scene_card(kind: str, sid: int, type_label: str, narrator: str, narration: str,
                img_rel: str, audio_rel: str, extra: str = "", bgm_role: str = None,
-               bgm_uri: str = None) -> str:
+               bgm_uri: str = None, layout: str = "main") -> str:
     sid_label = f"S{sid:02d}"
     buttons = [_play_button(audio_rel, f"{sid_label} ナレーション", "▶ ナレーション再生")]
     if bgm_role and bgm_uri:
         buttons.append(_play_button(bgm_uri, f"BGM:{bgm_role}", f"▶ BGM:{bgm_role} 再生"))
     play_row = f'<div class="play-row">{"".join(buttons)}</div>'
     return f"""
-    <section class="card">
+    <section class="card layout-{layout}">
       <div class="meta">
         <span class="badge badge-{kind}">{html.escape(kind)}</span>
         <span class="sid">{sid_label}</span>
@@ -136,7 +136,7 @@ def main():
     thumb_path = DESKTOP_DIR / "images" / "thumbnail.png"
     if thumb_path.exists():
         cards.append(f"""
-        <section class="card thumb-card">
+        <section class="card thumb-card layout-thumb">
           <div class="meta"><span class="badge badge-thumb">サムネイル</span></div>
           <div class="body">
             <img src="images/thumbnail.png" alt="thumbnail">
@@ -150,6 +150,16 @@ def main():
 
     bgm_sources = ep.get("bgm_sources", {})
 
+    # 表示順: サムネイル → Shorts → 本編（samurai-chroniclesのsc_scene_review.pyと統一、2026-09-04〜）
+    for shorts in ep.get("shorts", []):
+        mid = shorts["shorts_id"]
+        for i, s in enumerate(shorts["scenes"], start=1):
+            cards.append(scene_card(
+                f"Shorts{mid}", i, s.get("style", "story"), s["narrator"], s["narration"],
+                f"images/shorts{mid}_S{i:02d}.png", f"narration/shorts{mid}_S{i:02d}.wav",
+                layout="shorts",
+            ))
+
     for scene in ep["scenes"]:
         sid = scene["scene_id"]
         bgm_role = TYPE_TO_BGM_ROLE.get(scene["type"])
@@ -157,16 +167,8 @@ def main():
         cards.append(scene_card(
             "本編", sid, TYPE_LABEL.get(scene["type"], scene["type"]), scene["narrator"],
             scene["narration"], f"images/S{sid:02d}.png", f"narration/S{sid:02d}.wav",
-            bgm_role=bgm_role, bgm_uri=bgm_uri,
+            bgm_role=bgm_role, bgm_uri=bgm_uri, layout="main",
         ))
-
-    for shorts in ep.get("shorts", []):
-        mid = shorts["shorts_id"]
-        for i, s in enumerate(shorts["scenes"], start=1):
-            cards.append(scene_card(
-                f"Shorts{mid}", i, s.get("style", "story"), s["narrator"], s["narration"],
-                f"images/shorts{mid}_S{i:02d}.png", f"narration/shorts{mid}_S{i:02d}.wav",
-            ))
 
     html_doc = f"""<!doctype html>
 <html lang="ja">
@@ -184,8 +186,12 @@ def main():
   .badge-Shorts1 {{ background: #5d2f8a; color: #fff; }}
   .sid {{ font-weight: 700; color: #fff; }}
   .body {{ display: flex; gap: 16px; align-items: flex-start; }}
-  img {{ width: 560px; max-width: 60vw; border-radius: 8px; flex-shrink: 0; }}
+  img {{ border-radius: 8px; flex-shrink: 0; display: block; }}
   .text-col {{ flex: 1; min-width: 0; }}
+  /* サイズ・並び順はsamurai-chroniclesのsc_scene_review.pyと統一（2026-09-04〜） */
+  .layout-main .body, .layout-thumb .body {{ flex-direction: column; }}
+  .layout-main img, .layout-thumb img {{ width: 100%; max-width: 640px; }}
+  .layout-shorts img {{ width: 320px; max-width: 320px; }}
   .narration {{ font-size: 15px; line-height: 1.7; margin: 0 0 12px; }}
   .narration.sub {{ color: #9aa5b1; font-size: 13px; }}
   .play-row {{ display: flex; gap: 8px; align-items: center; margin-top: 10px; flex-wrap: wrap; }}
