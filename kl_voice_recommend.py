@@ -20,15 +20,20 @@ import argparse
 import json
 import os
 import sys
+import time
 import wave
 from pathlib import Path
 
 from google import genai
 from google.genai import types
 
-API_KEY = os.environ.get("GEMINI_API_KEY", "")
-TTS_MODEL = "gemini-3.1-flash-tts-preview"
+API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
+# 2026-09-04修正: 以前は本番のkl_tts_gen.pyと異なるgemini-3.1-flash-tts-previewで
+# 試聴していたため、選定した声が実際の本番生成では違う響きになる不整合があった
+# （Fable 5.1監査の指摘）。本番と同じモデルに統一する。
+TTS_MODEL = "gemini-2.5-pro-preview-tts"
 RECOMMEND_MODEL = "gemini-3.7-flash"
+MAX_RETRIES = 5  # gemini-2.5-pro-preview-ttsは稀にfinish_reason=OTHERで空データを返すことがある
 
 BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
@@ -56,7 +61,10 @@ PROMPT_TEMPLATE = """あなたは「幸せな未来のサイエンスチャン�
 """
 
 
-def synth(client, text: str, voice_name: str, out_path: Path):
+def synth(client, text: str, voice_name: str, out_path: Path) -> bool:
+    """1音声を生成してout_pathに保存する。gemini-2.5-pro-preview-ttsは稀に
+    finish_reason=OTHERで空データを返すことがあるため、kl_tts_gen.pyと同様に
+    リトライで吸収する（2026-09-04追加）。成功すればTrueを返す。"""
     config = types.GenerateContentConfig(
         response_modalities=["AUDIO"],
         speech_config=types.SpeechConfig(
@@ -65,13 +73,30 @@ def synth(client, text: str, voice_name: str, out_path: Path):
             )
         ),
     )
-    resp = client.models.generate_content(model=TTS_MODEL, contents=text, config=config)
-    data = resp.candidates[0].content.parts[0].inline_data.data
+    data = None
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            resp = client.models.generate_content(model=TTS_MODEL, contents=text, config=config)
+            candidate = resp.candidates[0] if resp.candidates else None
+            parts = candidate.content.parts if (candidate and candidate.content) else None
+            if parts:
+                data = parts[0].inline_data.data
+                break
+            reason = f"空データ（finish_reason={getattr(candidate, 'finish_reason', '?')}）"
+        except Exception as e:
+            reason = f"{type(e).__name__}: {e}"
+        if attempt < MAX_RETRIES:
+            print(f"  ⚠️ {voice_name}: {reason}（{attempt}回目）、リトライ")
+            time.sleep(2)
+    if data is None:
+        print(f"❌ {voice_name}: {MAX_RETRIES}回試行して失敗", file=sys.stderr)
+        return False
     with wave.open(str(out_path), "wb") as wf:
         wf.setnchannels(1)
         wf.setsampwidth(2)
         wf.setframerate(24000)
         wf.writeframes(data)
+    return True
 
 
 def main():
@@ -102,9 +127,13 @@ def main():
     sample_paths = []
     for v in voices:
         out_path = out_dir / f"{args.role}_{v}.wav"
-        synth(client, args.text, v, out_path)
-        sample_paths.append((v, out_path))
-        print(f"  ✅ {out_path.name}")
+        if synth(client, args.text, v, out_path):
+            sample_paths.append((v, out_path))
+            print(f"  ✅ {out_path.name}")
+
+    if not sample_paths:
+        print("❌ 全候補の生成に失敗しました", file=sys.stderr)
+        sys.exit(1)
 
     protagonist = json.dumps(ep.get("protagonist", {}), ensure_ascii=False)
     notes = ep.get("notes") or ep.get("episode_title", "")
@@ -121,7 +150,7 @@ def main():
         parts.append(f"\n--- 以下は「{v}」の音声です ---\n")
         parts.append(types.Part.from_bytes(data=path.read_bytes(), mime_type="audio/wav"))
 
-    print(f"\n--- Geminiに{len(voices)}候補を聴かせて推薦を取得中 ---")
+    print(f"\n--- Geminiに{len(sample_paths)}候補を聴かせて推薦を取得中 ---")
     response = client.models.generate_content(model=RECOMMEND_MODEL, contents=parts)
     print(f"\n{'━'*60}")
     print(response.text)
