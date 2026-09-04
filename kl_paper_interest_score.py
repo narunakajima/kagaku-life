@@ -59,7 +59,7 @@ INPUT_PATH = BASE_DIR / "stage3_hypecheck.json"
 OUTPUT_PATH = BASE_DIR / "stage4_ranked.json"
 
 API_KEY = os.environ.get("GEMINI_API_KEY", "")
-MODEL = "models/gemini-flash-latest"
+MODEL = "models/gemini-3.7-flash"
 CALL_DELAY_SEC = 1.0
 REQUEST_TIMEOUT_MS = 60_000  # 2026-08追加: タイムアウト未設定で1件が3時間以上ハングした事故があったため（kl_paper_screen.py参照）
 

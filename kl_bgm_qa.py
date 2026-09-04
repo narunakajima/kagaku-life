@@ -23,7 +23,7 @@ from google import genai
 import os
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-QA_MODEL = "gemini-flash-latest"
+QA_MODEL = "gemini-3.7-flash"
 
 # ボーカル混入は大抵冒頭〜中盤で判別できるため、全尺ではなく先頭 QA_CLIP_SECONDS 秒
 # のみをQAに送る（Gemini音声入力トークンを大幅削減する）。sc_bgm_qa.pyと同じ仕組み。
