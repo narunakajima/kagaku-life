@@ -555,6 +555,7 @@ def main():
         # 参照先の画像が先に存在している必要があるため後回しにする（2026-09-04〜）。
         normal_scenes = [s for s in scenes_to_run if not s.get("reuse_scene_id")]
         reuse_scenes = [s for s in scenes_to_run if s.get("reuse_scene_id")]
+        newly_generated_count = 0  # 画風ドリフトチェックを実行するか判定用（下記参照）
 
         for scene in normal_scenes:
             sid = scene["scene_id"]
@@ -568,6 +569,7 @@ def main():
                                   reference_image_path=ref_path, allow_text=(scene["type"] == "data"))
             r["name"] = out_path.name
             qa_results.append(r)
+            newly_generated_count += 1
 
         if reuse_scenes:
             all_scenes_by_id = {s["scene_id"]: s for s in ep["scenes"]}
@@ -597,8 +599,15 @@ def main():
                                   reference_image_path=ref_path, allow_text=(scene["type"] == "data"))
             r["name"] = out_path.name
             qa_results.append(r)
+            newly_generated_count += 1
 
-    if not args.thumbnail_only and not shorts_only and not args.no_qa:
+    # 画風ドリフトチェック（2026-09-04〜スキップ条件追加）: 今回新規生成したシーンが
+    # 1枚もない（全て既存ファイルのスキップ or 流用コピー）場合、画風が変化する
+    # 要因が無いのでチェック自体を省略する（Fable 5.1監査の「毎回全画像を再送信」
+    # 指摘への対応。何か新規生成があった場合は、従来通り本編画像全体を比較する
+    # ——新規分だけでなく既存分も含めて相対比較する必要があるチェックの性質上、
+    # 対象を絞ると誤検知しやすくなるため、送信対象そのものは変えない）。
+    if not args.thumbnail_only and not shorts_only and not args.no_qa and newly_generated_count > 0:
         narrative_entries = []
         for scene in ep["scenes"]:
             if scene["type"] == "data":
