@@ -296,7 +296,13 @@ BGMの切り替わりタイミングも壊れる。物語の流れとしても�
 **`teaser`（4シーン・各2秒前後）:** `impact`シーンの内容を先出しする複数カットの
 高速フラッシュ構成（1カットのみにしない）。各カットのナレーションは10〜15字程度の
 短いフレーズ。最後のカットだけ問いかけで締める、やや長め（3〜4秒）でもよい。
-ナレーターはpersona。
+ナレーターはpersona。**あるteaserカットが本編（多くはimpact）の特定シーンと
+同じ場面（同じ人物・同じ構図）を先出しする場合は、`image_prompt`を新規に書かず、
+対応する本編`scene_id`を`"reuse_scene_id"`として指定する**（`kl_image_gen.py`が
+その画像をコピーして使い回すため、ゼロから独立生成しない — コスト削減、
+フラッシュフォワード的な演出としても自然。2026-09-04導入）。本編に対応する
+場面が無いカット（オリジナルの導入カット等）のみ、従来通り`image_prompt`を
+新規に書く（`reuse_scene_id`は付与しない）。
 
 **2ナレーターボイス制・語り口:**
 - persona（生活者パート: `teaser`/`hook`/`context`/`impact`）は**一人称の独白調**
@@ -416,7 +422,9 @@ samurai-chroniclesの同じ仕組みを踏襲、2026-09-04導入）。Shorts向�
 `youtube_description`（参考文献・査読前開示を含む） / `youtube_tags` /
 `references[]` / `protagonist` / `thumbnail_prompt` / `thumbnail_headline` /
 `thumbnail_subcopy` / `scenes[]`（`scene_id`/`type`/`narrator`/`reference_index`/
-`duration_seconds`/`narration`/`image_prompt`/`ken_burns`） / `shorts[]`
+`duration_seconds`/`narration`/`image_prompt`/`ken_burns`。teaserシーンが本編の
+別scene_idと同じ場面を先出しする場合は`image_prompt`の代わりに`reuse_scene_id`
+を持たせてよい） / `shorts[]`
 （`shorts_id`/`scenes[]`。各カットは`narrator`/`narration`に加え、本編の
 切り出しなら`scene_id`（`image_prompt`は書かない）、独自カットなら
 `image_prompt`（`scene_id`は付与しない）のどちらか一方を持つ）。

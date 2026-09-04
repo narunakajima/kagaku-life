@@ -9,6 +9,13 @@ thumbnail_promptも同様にBASE_CONTEXTを付与して生成する。
 生成後、Gemini Visionによる自動QA（sc_image_gen.pyと同じ考え方）を行い、
 問題があれば指摘内容をプロンプトに反映して自動再生成する（最大2回試行）。
 
+teaser画像について（2026-09-04〜）:
+  teaser（および他の任意のシーン）に"reuse_scene_id"（同一エピソード内の別scene_id）
+  があれば、その画像が既に存在する場合は再生成せずファイルコピーのみで済ませる
+  （API呼び出しなし）。teaserはimpact等の内容を先出しするため、同じ画像を
+  ティザーと本編の両方で使い回すのは自然な演出でもある。参照先が未生成の場合は
+  独立生成にフォールバックする。
+
 Shorts画像について（2026-09-04〜）:
   Shortsの各カットに"scene_id"（本編scene_idへの参照）があれば、本編(16:9)で
   既にQA承認済みの画像をGeminiで9:16に再構成する（ゼロから独立生成しない。
@@ -33,6 +40,7 @@ import argparse
 import json
 import os
 import re
+import shutil
 import sys
 from pathlib import Path
 
@@ -518,13 +526,42 @@ def main():
             print(f"❌ 参照画像が見つかりません: {ref_path}", file=sys.stderr)
             sys.exit(1)
 
-        for scene in ep["scenes"]:
+        scenes_to_run = [s for s in ep["scenes"] if target_ids is None or s["scene_id"] in target_ids]
+        # reuse_scene_id を持つシーン（teaser等、他シーンと同じ画像を使い回す）は、
+        # 参照先の画像が先に存在している必要があるため後回しにする（2026-09-04〜）。
+        normal_scenes = [s for s in scenes_to_run if not s.get("reuse_scene_id")]
+        reuse_scenes = [s for s in scenes_to_run if s.get("reuse_scene_id")]
+
+        for scene in normal_scenes:
             sid = scene["scene_id"]
-            if target_ids is not None and sid not in target_ids:
-                continue
             prompt = f"{style_for(scene['type'])}\n\nScene: {scene['image_prompt']}"
             out_path = out_dir / f"S{sid:02d}.png"
             r = generate_with_qa(client, prompt, scene["image_prompt"], out_path, skip_qa=args.no_qa,
+                                  reference_image_path=ref_path, allow_text=(scene["type"] == "data"))
+            r["name"] = out_path.name
+            qa_results.append(r)
+
+        if reuse_scenes:
+            all_scenes_by_id = {s["scene_id"]: s for s in ep["scenes"]}
+        for scene in reuse_scenes:
+            sid = scene["scene_id"]
+            out_path = out_dir / f"S{sid:02d}.png"
+            src_id = scene["reuse_scene_id"]
+            src_path = out_dir / f"S{src_id:02d}.png"
+            if src_path.exists():
+                shutil.copy(src_path, out_path)
+                print(f"✅ {out_path.name}（S{src_id:02d}.pngを流用、API呼び出しなし）")
+                qa_results.append({"name": out_path.name, "ok": True, "issues": [], "attempts": 0})
+                continue
+            print(f"⚠️  S{src_id:02d}.png が見つからないため独立生成にフォールバック: {out_path.name}",
+                  file=sys.stderr)
+            src_scene = all_scenes_by_id.get(src_id)
+            image_prompt = scene.get("image_prompt") or (src_scene["image_prompt"] if src_scene else None)
+            if not image_prompt:
+                print(f"❌ S{sid:02d}: image_promptもreuse_scene_id参照先も見つかりません", file=sys.stderr)
+                sys.exit(1)
+            prompt = f"{style_for(scene['type'])}\n\nScene: {image_prompt}"
+            r = generate_with_qa(client, prompt, image_prompt, out_path, skip_qa=args.no_qa,
                                   reference_image_path=ref_path, allow_text=(scene["type"] == "data"))
             r["name"] = out_path.name
             qa_results.append(r)
