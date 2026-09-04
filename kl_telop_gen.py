@@ -425,15 +425,26 @@ def plan_telop_cards(narration: str, wav_path: Path, duration: float) -> list:
     return cards
 
 
-def cmd_plan(episode_id: str, scene_filter: list = None):
+def cmd_plan(episode_id: str, scene_filter: list = None, force: bool = False):
     ep_path = BASE_DIR / "episodes" / f"{episode_id}.json"
     ep = json.loads(ep_path.read_text())
     narration_dir = DESKTOP_DIR / "narration"
+
+    # 「生成済みならスキップ」（2026-09-04〜、sc_image_gen.py等と同じ考え方）:
+    # Whisperはローカル推論のためAPI課金は無いが、全シーン分の音声解析は
+    # 実行時間がかかる。--scenes未指定のフル実行では、既にtelop_cardsが
+    # 設定済みのシーンは再解析しない（Fable 5.1監査の指摘）。個別に
+    # 再生成したい場合は --scenes または --force を使う。
+    skip_existing = scene_filter is None and not force
+    skipped = []
 
     updated = 0
     for scene in ep["scenes"]:
         sid = scene["scene_id"]
         if scene_filter and sid not in scene_filter:
+            continue
+        if skip_existing and scene.get("telop_cards"):
+            skipped.append(sid)
             continue
         wav_path = narration_dir / f"S{sid:02d}.wav"
         if not wav_path.exists():
@@ -447,6 +458,10 @@ def cmd_plan(episode_id: str, scene_filter: list = None):
         print(f"  S{sid:02d}: {len(cards)}枚のカード（音声長 {duration:.2f}s）")
         for c in cards:
             print(f"      {c['start']:.2f}〜{c['end']:.2f}  {c['lines'][0]}")
+
+    if skipped:
+        labels = ", ".join(f"S{s:02d}" for s in skipped)
+        print(f"  スキップ（生成済み）: {labels}")
 
     atomic_write_json(ep_path, ep)
     print(f"\n完了: {updated}シーンに telop_cards を書き込みました")
@@ -563,11 +578,12 @@ def main():
     parser.add_argument("command", choices=["plan", "burn-test"])
     parser.add_argument("--scenes", help="対象scene_idをカンマ区切りで指定（plan用、省略時は全シーン）")
     parser.add_argument("--scene", type=int, help="対象scene_id（burn-test用）")
+    parser.add_argument("--force", action="store_true", help="plan用: 生成済みのtelop_cardsも再解析する")
     args = parser.parse_args()
 
     if args.command == "plan":
         scene_filter = [int(s) for s in args.scenes.split(",")] if args.scenes else None
-        cmd_plan(args.episode, scene_filter)
+        cmd_plan(args.episode, scene_filter, force=args.force)
     elif args.command == "burn-test":
         if not args.scene:
             parser.error("burn-test には --scene が必要です")
