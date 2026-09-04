@@ -62,7 +62,7 @@ DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
 MODEL = "gemini-3.1-flash-image"
-QA_MODEL = "gemini-3.7-flash"
+QA_MODEL = "gemini-flash-latest"
 REQUEST_TIMEOUT_MS = 60_000
 MAX_QA_ATTEMPTS = 2  # SCの実績（89話分・3回目のリトライは効果薄）を踏襲し2回に抑える
 

@@ -45,7 +45,7 @@ VENUE_ALLOWLIST_PATH = BASE_DIR / "reputable_venues.json"
 import os
 
 API_KEY = os.environ.get("GEMINI_API_KEY", "")
-MODEL = "models/gemini-3.7-flash"
+MODEL = "models/gemini-flash-latest"
 CALL_DELAY_SEC = 1.5
 REQUEST_TIMEOUT_MS = 60_000  # 2026-08追加: タイムアウト未設定で1件が3時間以上ハングした事故があったため
 

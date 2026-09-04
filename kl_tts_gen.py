@@ -44,7 +44,7 @@ BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-QA_MODEL = "gemini-3.7-flash"  # ナレーション音声が台本通りか判定する用（sc_tts_gen.pyと同じ考え方）
+QA_MODEL = "gemini-flash-latest"  # ナレーション音声が台本通りか判定する用（sc_tts_gen.pyと同じ考え方）
 # gemini-3.1-flash-tts-preview はテキスト先頭に演技指導（スタイル指示）を付けると
 # finish_reason=OTHER で空データが返る不具合がある（lamp-whisperのlw_tts_gen.pyで
 # 発覚・対処済み）。gemini-2.5-pro-preview-ttsに切り替える（2026-08-21）。

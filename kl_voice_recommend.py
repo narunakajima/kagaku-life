@@ -32,7 +32,7 @@ API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY"
 # 試聴していたため、選定した声が実際の本番生成では違う響きになる不整合があった
 # （Fable 5.1監査の指摘）。本番と同じモデルに統一する。
 TTS_MODEL = "gemini-2.5-pro-preview-tts"
-RECOMMEND_MODEL = "gemini-3.7-flash"
+RECOMMEND_MODEL = "gemini-flash-latest"
 MAX_RETRIES = 5  # gemini-2.5-pro-preview-ttsは稀にfinish_reason=OTHERで空データを返すことがある
 
 BASE_DIR = Path(__file__).parent

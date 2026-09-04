@@ -43,7 +43,7 @@ from google.genai import types
 sys.stdout.reconfigure(line_buffering=True)
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-MODEL = "gemini-3.7-flash"
+MODEL = "gemini-flash-latest"
 
 
 def atomic_write_json(path: Path, data) -> None:
