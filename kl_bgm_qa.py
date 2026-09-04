@@ -13,15 +13,21 @@ BGM候補にナレーションと競合する人の声（歌詞・台詞・ナ�
 import argparse
 import json
 import re
+import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 from google import genai
 
 import os
 
-API_KEY = os.environ.get("GEMINI_API_KEY", "")
+API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
 QA_MODEL = "gemini-flash-latest"
+
+# ボーカル混入は大抵冒頭〜中盤で判別できるため、全尺ではなく先頭 QA_CLIP_SECONDS 秒
+# のみをQAに送る（Gemini音声入力トークンを大幅削減する）。sc_bgm_qa.pyと同じ仕組み。
+QA_CLIP_SECONDS = 60
 
 QA_PROMPT = (
     "Listen to this audio track. It will be used as instrumental background music (BGM) "
@@ -38,10 +44,25 @@ QA_PROMPT = (
 )
 
 
+def _clip_audio_bytes(audio_path: Path, seconds: int = QA_CLIP_SECONDS) -> bytes:
+    """先頭 seconds 秒だけを切り出したバイト列を返す。切り出しに失敗したら全尺を返す。"""
+    suffix = audio_path.suffix or ".mp3"
+    with tempfile.NamedTemporaryFile(suffix=suffix) as tmp:
+        result = subprocess.run(
+            ["ffmpeg", "-y", "-i", str(audio_path), "-t", str(seconds), "-c", "copy", tmp.name],
+            capture_output=True,
+        )
+        if result.returncode == 0:
+            clipped = Path(tmp.name).read_bytes()
+            if clipped:
+                return clipped
+    return audio_path.read_bytes()
+
+
 def qa_audio_with_gemini(client, audio_path: Path) -> dict:
     """音声ファイルをGemini に渡し、ボーカル・台詞混入の有無を判定する。"""
     try:
-        data = audio_path.read_bytes()
+        data = _clip_audio_bytes(audio_path)
         mime_type = "audio/mpeg" if audio_path.suffix.lower() == ".mp3" else "audio/wav"
         response = client.models.generate_content(
             model=QA_MODEL,
