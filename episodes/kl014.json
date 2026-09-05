@@ -1,0 +1,1086 @@
+{
+  "episode_id": "kl014",
+  "episode_title": "「次、何するんだっけ」——AIが取り戻す、料理の“できる”",
+  "youtube_title": "軽度認知症でも“できる”を取り戻す AI調理サポート研究【幸せな未来のサイエンス】",
+  "youtube_description": "71歳、元・料理教室の先生。軽度の認知症と診断されてから、卵を茹でるだけの簡単な作業さえ、次に何をすればいいのかわからなくなることがあります——それは記憶力そのものというより、手順を計画し、順番どおりに進め、間違いに気づいて直す力「実行機能」の低下によるものです。\n\n台北医学大学の研究チームが2025年に発表した研究は、小さなカメラが手元の動きをリアルタイムに認識し、音声と映像で次の一手をやさしく教えてくれるAIシステムを、卵を茹でる手順をゲーム仕立てに再現した模擬課題で試したパイロット試験です。結果、AIガイドがあると作業時間は134.75秒から92.00秒へ31.7%短縮、手順の途中でどれだけ手助けが必要だったかを示すスコアも4.25から1.00へ76.5%改善しました。\n\nまだ少人数を対象にした実験段階で、実用化にはもう少し時間がかかりそうですが、AIが日常のほんの小さな手順にそっと寄り添うことで、「できなくなったこと」が再び「一人でできること」に変わっていく——そんな小さな幸せの可能性を紹介します。\n\n【参考文献】\nSiow CY, Yang YH, Tsai CJ, Yang WW, Hu CJ, Sung JY, Tani J. Vision AI-Based Gamified Cognitive Prosthesis for Executive Function: Feasibility and Usability Study. JMIR Serious Games. 2025. DOI: 10.2196/74157\n\n※本研究は査読を経て学術誌に掲載されたものですが、対象人数が少なく、実際の台所ではなくゲーム仕立ての模擬課題で検証したパイロット試験段階であり、長期的な効果や他の作業への応用については今後のさらなる研究が必要です。\n\n\n🎵 Music: October Rose by StephieQueen (freesound.org) — CC BY 4.0\n\n🎵 Music: Elevated Mood with Acoustic Guitar by ViraMiller (freesound.org) — CC BY 4.0\n#認知症 #AI #高齢化社会 #介護テクノロジー #幸せな未来のサイエンス",
+  "youtube_tags": [
+    "認知症",
+    "軽度認知障害",
+    "AI",
+    "実行機能",
+    "認知プロテーゼ",
+    "介護テクノロジー",
+    "高齢化社会",
+    "コンピュータビジョン",
+    "台北医学大学",
+    "医療補助技術",
+    "幸せな未来のサイエンス",
+    "科学ニュース"
+  ],
+  "references": [
+    {
+      "title": "Vision AI-Based Gamified Cognitive Prosthesis for Executive Function: Feasibility and Usability Study",
+      "authors": [
+        "Co Yih Siow",
+        "Yao-Hua Yang",
+        "Cheng-Jui Tsai",
+        "Wan-Wan Yang",
+        "Chaur-Jong Hu",
+        "Jia-Ying Sung",
+        "Jowy Tani"
+      ],
+      "year": 2025,
+      "venue": "JMIR Serious Games",
+      "doi": "10.2196/74157",
+      "url": "https://doi.org/10.2196/74157",
+      "is_preprint": false,
+      "lead_researcher": "Chaur-Jong Hu（台北医学大学）"
+    }
+  ],
+  "protagonist": {
+    "name": "高橋 順子",
+    "age": 71,
+    "job": "元・料理教室講師（軽度認知症と診断された一人暮らしの女性）",
+    "gender": "female"
+  },
+  "narration_voices": {
+    "persona": "Kore",
+    "research": "Orus",
+    "persona_style": "Say in the voice of a dignified woman in her 70s. Speak at a slightly slower, measured pace with natural warmth and quiet pride in her tone — the unhurried cadence of someone who has lived a full life, not a young or brisk delivery. Keep it clear, articulate, and full of life — never frail, weak, mumbling, or shaky: "
+  },
+  "thumbnail_prompt": "16:9 widescreen editorial illustration: a 71-year-old Japanese woman named Junko Takahashi with short gray hair, wearing a simple cardigan, standing at her home kitchen counter with a warm relieved smile, gently holding a pot near the stove; mounted on the wall above the counter is a small unobtrusive camera-and-speaker device with a soft glowing indicator light (sleek minimal design, not humanoid, not a robot); soft warm morning daylight through a window; no cane, no walking stick, no walker, no mobility aid; leave clear open space in the upper third of the frame for headline text; no text in the image itself",
+  "thumbnail_headline": "「次、何するんだっけ」にAIが答える",
+  "thumbnail_subcopy": "軽度認知症の“できる”を取り戻す調理支援AI",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "あれ、次はどうするんだっけ…",
+      "image_prompt": "A 71-year-old Japanese woman named Junko Takahashi, short gray bob hairstyle, wearing a simple cardigan, standing in her home kitchen, looking down at a pot of water with a confused and worried expression, holding a raw egg in one hand, hesitating, soft morning daylight through a window (clearly bright morning light, not night), no cane, no walking stick, no walker, no mobility aid, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "あれ、次はどうするんだっけ…"
+          ],
+          "start": 0.0,
+          "end": 2.78
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.61,
+        "y": 0.42
+      }
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "AIの声が、そっと導いてくれる",
+      "reuse_scene_id": 13,
+      "telop_cards": [
+        {
+          "lines": [
+            "AIの声が、そっと導いてくれる"
+          ],
+          "start": 0.0,
+          "end": 3.78
+        }
+      ],
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.69,
+        "y": 0.38
+      }
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "また、自分の手で作れる幸せ",
+      "reuse_scene_id": 14,
+      "telop_cards": [
+        {
+          "lines": [
+            "また、自分の手で作れる幸せ"
+          ],
+          "start": 0.0,
+          "end": 3.2
+        }
+      ],
+      "ken_burns": "pan_zoom_out"
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 3.5,
+      "narration": "科学が「できないこと」を、また「できること」に変えてくれるとしたら？",
+      "image_prompt": "Close-up of a 71-year-old Japanese woman named Junko Takahashi (short gray bob hairstyle, same gray hair color throughout the series) gently holding a boiled egg over a small plate with her hands, a soft warm smile forming on her partially visible face, soft warm morning light in a home kitchen, no cane, no walking stick, no walker, no mobility aid, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "科学が「できないこと」を、また「できること」"
+          ],
+          "start": 0.0,
+          "end": 3.4
+        },
+        {
+          "lines": [
+            "に変えてくれるとしたら？"
+          ],
+          "start": 3.55,
+          "end": 5.35
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.77,
+        "y": 0.44
+      }
+    },
+    {
+      "scene_id": 5,
+      "type": "hook",
+      "narrator": "persona",
+      "duration_seconds": 6,
+      "narration": "71歳、高橋順子です。長年、近所の料理教室で先生をしていました。生徒さんたちに手ほどきするくらい、台所のことなら誰にも負けないと思っていたんです。",
+      "image_prompt": "Portrait of a 71-year-old Japanese woman named Junko Takahashi, warm gentle smile, short gray bob hairstyle, wearing a simple cardigan, standing in a cozy home kitchen with cooking utensils and a corkboard on the wall pinned with small note cards suggesting her past as a cooking class teacher — the cards show only abstract squiggly scribble marks and small sketch doodles, absolutely no legible letters, words, or writing of any kind on them, soft morning daylight through a window, no cane, no walking stick, no walker, no mobility aid, no readable text anywhere in the image",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "71歳、高橋順子です。長年、"
+          ],
+          "start": 0.64,
+          "end": 4.38
+        },
+        {
+          "lines": [
+            "近所の料理教室で先生をしていました。"
+          ],
+          "start": 4.53,
+          "end": 7.47
+        },
+        {
+          "lines": [
+            "生徒さんたちに手ほどきするくらい、"
+          ],
+          "start": 7.99,
+          "end": 10.54
+        },
+        {
+          "lines": [
+            "台所のことなら誰にも負けないと思っていたんです。"
+          ],
+          "start": 10.69,
+          "end": 14.29
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.51,
+        "y": 0.38
+      }
+    },
+    {
+      "scene_id": 6,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 22,
+      "narration": "けれど半年前、軽度の認知症だと診断されてから、少しずつ様子が変わってきました。あれほど体に染みついていたはずの料理の手順が、ふとした瞬間に、頭からすっと抜け落ちてしまうことがあるんです。長年、当たり前だと思っていたことが、当たり前でなくなっていくのを感じています。",
+      "image_prompt": "A 71-year-old Japanese woman named Junko Takahashi, short gray bob hairstyle (same hairstyle and gray hair color throughout the series), standing alone in her kitchen, hand raised to her forehead, looking puzzled at a recipe card and a pot on the stove, afternoon daylight through a window, home kitchen setting, no cane, no walking stick, no walker, no mobility aid, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "けれど半年前、軽度の認知症だと診断されてから、"
+          ],
+          "start": 0.0,
+          "end": 4.72
+        },
+        {
+          "lines": [
+            "少しずつ様子が変わってきました。"
+          ],
+          "start": 4.87,
+          "end": 7.75
+        },
+        {
+          "lines": [
+            "あれほど体に染みついていたはずの料理の手順が、"
+          ],
+          "start": 8.64,
+          "end": 12.56
+        },
+        {
+          "lines": [
+            "ふとした瞬間に、頭からすっと抜け落ちてしまう"
+          ],
+          "start": 13.06,
+          "end": 16.86
+        },
+        {
+          "lines": [
+            "ことがあるんです。長年、当たり前だと"
+          ],
+          "start": 17.01,
+          "end": 20.29
+        },
+        {
+          "lines": [
+            "思っていたことが、当たり前でなくなっていく"
+          ],
+          "start": 20.44,
+          "end": 23.59
+        },
+        {
+          "lines": [
+            "のを感じています。"
+          ],
+          "start": 23.74,
+          "end": 25.09
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.54,
+        "y": 0.38
+      }
+    },
+    {
+      "scene_id": 7,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 24,
+      "narration": "この間なんて、卵を茹でるだけの、簡単なはずのことなのに——お湯を沸かしたところで、次に何をすればいいのか、わからなくなってしまって。菜箸を持ったまま、しばらく立ち尽くしてしまいました。教室で何百回と教えてきたはずの手順なのに、いざ自分一人になると、どこから思い出せばいいのかさえわからなくなる。長年立ち続けてきたはずの台所が、急によそよそしく感じられて、少しずつ怖くなっていました。",
+      "image_prompt": "A 71-year-old Japanese woman named Junko Takahashi, short gray bob hairstyle (same hairstyle and gray hair color throughout the series, not long hair, not tied back), standing hesitantly at the stove, staring blankly at a pot of boiling water and a raw egg in her hand, uncertain and slightly anxious expression, softly hunched shoulders, afternoon light in a home kitchen, no cane, no walking stick, no walker, no mobility aid, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "この間なんて、卵を茹でるだけの、"
+          ],
+          "start": 0.0,
+          "end": 3.22
+        },
+        {
+          "lines": [
+            "簡単なはずのことなのに——お湯を沸かしたところで、"
+          ],
+          "start": 3.37,
+          "end": 7.29
+        },
+        {
+          "lines": [
+            "次に何をすればいいのか、わからなくなってしまって。"
+          ],
+          "start": 7.52,
+          "end": 11.27
+        },
+        {
+          "lines": [
+            "菜箸を持ったまま、しばらく立ち尽くしてしまいました"
+          ],
+          "start": 11.42,
+          "end": 15.6
+        },
+        {
+          "lines": [
+            "。教室で何百回と教えてきたはずの手順なのに、"
+          ],
+          "start": 16.52,
+          "end": 20.08
+        },
+        {
+          "lines": [
+            "いざ自分一人になると、どこから思い出せば"
+          ],
+          "start": 20.23,
+          "end": 24.27
+        },
+        {
+          "lines": [
+            "いいのかさえわからなくなる。"
+          ],
+          "start": 24.42,
+          "end": 26.52
+        },
+        {
+          "lines": [
+            "長年立ち続けてきたはずの台所が、"
+          ],
+          "start": 26.8,
+          "end": 29.54
+        },
+        {
+          "lines": [
+            "急によそよそしく感じられて、"
+          ],
+          "start": 29.69,
+          "end": 32.25
+        },
+        {
+          "lines": [
+            "少しずつ怖くなっていました。"
+          ],
+          "start": 32.54,
+          "end": 34.64
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.52,
+        "y": 0.38
+      }
+    },
+    {
+      "scene_id": 8,
+      "type": "citation",
+      "narrator": "research",
+      "duration_seconds": 12,
+      "narration": "台北医学大学の研究チームが、2025年、JMIR Serious Games誌に発表した研究があります。軽度の認知症がある人が抱える、この「次に何をすればいいかわからなくなる」という悩みに、AIというまなざしで寄り添おうという試みです。目指したのは、記憶を肩代わりすることではなく、順序立てて動く力をそっと支える、小さな仕組みでした。",
+      "image_prompt": "Symbolic illustration of a small unobtrusive camera-and-speaker device mounted on the wall above a kitchen counter, sleek minimal design with a soft glowing indicator light, not humanoid, not a robot, warm empty kitchen setting suggesting a research concept, soft daylight, no people, no text, no cane, no walking stick, no walker, no mobility aid",
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "台北医学大学の研究チームが、2025年、"
+          ],
+          "start": 0.19,
+          "end": 2.93
+        },
+        {
+          "lines": [
+            "JMIR Serious Games誌に"
+          ],
+          "start": 3.08,
+          "end": 5.82
+        },
+        {
+          "lines": [
+            "発表した研究があります。軽度の認知症が"
+          ],
+          "start": 5.97,
+          "end": 8.57
+        },
+        {
+          "lines": [
+            "ある人が抱える、この「次に何をすればいいか"
+          ],
+          "start": 8.72,
+          "end": 11.59
+        },
+        {
+          "lines": [
+            "わからなくなる」という悩みに、"
+          ],
+          "start": 11.74,
+          "end": 13.79
+        },
+        {
+          "lines": [
+            "AIというまなざしで寄り添おうという試みです。"
+          ],
+          "start": 13.94,
+          "end": 17.09
+        },
+        {
+          "lines": [
+            "目指したのは、記憶を肩代わりすることではなく、"
+          ],
+          "start": 17.24,
+          "end": 20.39
+        },
+        {
+          "lines": [
+            "順序立てて動く力をそっと支える、"
+          ],
+          "start": 20.54,
+          "end": 22.73
+        },
+        {
+          "lines": [
+            "小さな仕組みでした。"
+          ],
+          "start": 22.88,
+          "end": 24.25
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 9,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 34,
+      "narration": "研究チームが注目したのは、記憶力そのものというより、手順を計画し、順番どおりに進め、間違いに気づいて直す力——「実行機能」でした。実験に使われたのは、本物の台所ではありません。卵を茹でる手順を、ゲーム仕立てに再現した、6つのステップの模擬課題です。これに、軽度認知症のある12人と、健常な対照群7人が取り組みました。まずはAIの助けなしで一度。次に、小さなカメラが手元の動きをリアルタイムに認識し、手順が合っていれば「その調子」と声をかけ、間違えればその場でやさしく正してくれる仕組みを使って、もう一度、この課題に挑戦してもらいました。",
+      "image_prompt": "An East Asian (Taiwanese) male researcher and female researcher, both wearing white lab coats, in a clinical research lab kitchen setup, observing the hands of an elderly Taiwanese female test participant (a different, unrelated woman — NOT Junko Takahashi and not resembling her: distinctly different hairstyle such as short curly white/permed hair, different face shape, different clothing pattern) standing at a stove with a pot and a raw egg; a small unobtrusive camera-and-speaker device is mounted above the counter with a soft glowing indicator light; a monitor screen in the background shows a simple hand-tracking overlay; bright clinical daylight; no text; no cane, no walking stick, no walker, no mobility aid",
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "研究チームが注目したのは、記憶力そのものと"
+          ],
+          "start": 0.0,
+          "end": 3.74
+        },
+        {
+          "lines": [
+            "いうより、手順を計画し、順番どおりに進め、"
+          ],
+          "start": 3.89,
+          "end": 7.73
+        },
+        {
+          "lines": [
+            "間違いに気づいて直す力——「実行機能」"
+          ],
+          "start": 7.88,
+          "end": 11.08
+        },
+        {
+          "lines": [
+            "でした。実験に使われたのは、"
+          ],
+          "start": 11.23,
+          "end": 13.65
+        },
+        {
+          "lines": [
+            "本物の台所ではありません。卵を茹でる手順を、"
+          ],
+          "start": 13.8,
+          "end": 17.98
+        },
+        {
+          "lines": [
+            "ゲーム仕立てに再現した、6つのステップの"
+          ],
+          "start": 18.13,
+          "end": 21.17
+        },
+        {
+          "lines": [
+            "模擬課題です。これに、軽度認知症のある12人と、"
+          ],
+          "start": 21.32,
+          "end": 25.72
+        },
+        {
+          "lines": [
+            "健常な対照群7人が取り組みました。"
+          ],
+          "start": 25.87,
+          "end": 28.42
+        },
+        {
+          "lines": [
+            "まずはAIの助けなしで一度。次に、"
+          ],
+          "start": 28.57,
+          "end": 31.95
+        },
+        {
+          "lines": [
+            "小さなカメラが手元の動きをリアルタイムに認識し、"
+          ],
+          "start": 32.1,
+          "end": 35.7
+        },
+        {
+          "lines": [
+            "手順が合っていれば「その調子」と声をかけ、"
+          ],
+          "start": 35.85,
+          "end": 39.0
+        },
+        {
+          "lines": [
+            "間違えればその場でやさしく正してくれる"
+          ],
+          "start": 39.15,
+          "end": 42.0
+        },
+        {
+          "lines": [
+            "仕組みを使って、もう一度、同じ課題に挑戦"
+          ],
+          "start": 42.15,
+          "end": 45.15
+        },
+        {
+          "lines": [
+            "してもらいました。"
+          ],
+          "start": 45.3,
+          "end": 46.65
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 10,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 32,
+      "narration": "小さな実験ではありましたが、変化ははっきりと表れました。軽度認知症のある人たちの場合、AIガイドがあると、作業にかかる時間は134.75秒から92.00秒に、31.7%短縮。手順の途中でどれだけ助けが必要だったかを示すスコアも、4.25から1.00へと、76.5%も改善したのです。カメラが手元の動きを正しく捉える精度も、適合率0.93、再現率0.94と、9割を超える高さでした。AIが手元を見誤らない、その精度の高さが、このガイドを支えていることがわかります。",
+      "image_prompt": "An East Asian (Taiwanese) male researcher wearing a white lab coat, reviewing a tablet showing simple hand-tracking data, standing beside a research kitchen counter with a small unobtrusive camera-and-speaker device mounted above it, soft glowing indicator light, satisfied expression; a small flat corner graphic in the bottom corner showing a shrinking bar shape suggesting improvement — no larger than roughly one-eighth of the frame, kept plain and simple with absolutely no text or numerals; bright clinical daylight; no cane, no walking stick, no walker, no mobility aid",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "小さな実験ではありましたが、"
+          ],
+          "start": 0.0,
+          "end": 2.1
+        },
+        {
+          "lines": [
+            "変化ははっきりと表れました。"
+          ],
+          "start": 2.28,
+          "end": 4.38
+        },
+        {
+          "lines": [
+            "軽度認知症のある人たちの場合、"
+          ],
+          "start": 4.8,
+          "end": 7.05
+        },
+        {
+          "lines": [
+            "AIガイドがあると、作業にかかる時間は"
+          ],
+          "start": 7.22,
+          "end": 10.07
+        },
+        {
+          "lines": [
+            "134.75秒から92.00秒に、"
+          ],
+          "start": 10.22,
+          "end": 14.52
+        },
+        {
+          "lines": [
+            "31.7%短縮。手順の途中でどれだけ助けが"
+          ],
+          "start": 14.67,
+          "end": 19.43
+        },
+        {
+          "lines": [
+            "必要だったかを示すスコアも、"
+          ],
+          "start": 19.58,
+          "end": 21.68
+        },
+        {
+          "lines": [
+            "4.25から1.00へと、76.5%も"
+          ],
+          "start": 21.83,
+          "end": 26.65
+        },
+        {
+          "lines": [
+            "改善したのです。カメラが手元の動きを正しく"
+          ],
+          "start": 26.8,
+          "end": 30.22
+        },
+        {
+          "lines": [
+            "捉える精度も、適合率0.93、"
+          ],
+          "start": 30.37,
+          "end": 33.06
+        },
+        {
+          "lines": [
+            "再現率0.94と、9割を超える高さでした。"
+          ],
+          "start": 33.21,
+          "end": 36.36
+        },
+        {
+          "lines": [
+            "AIが手元を見誤らない、その精度の高さが、"
+          ],
+          "start": 36.51,
+          "end": 39.66
+        },
+        {
+          "lines": [
+            "このガイドを支えていることがわかります。"
+          ],
+          "start": 39.81,
+          "end": 42.81
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.64,
+        "y": 0.45
+      }
+    },
+    {
+      "scene_id": 11,
+      "type": "data",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 20,
+      "narration": "こうして並べてみると、作業にかかった時間も、途中で必要だった手助けも、ガイドがあるだけで、これだけ違ってきます。手順を新しく覚え直したわけではありません。ただ、次の一手がその場でわかる——それだけで、同じ人の同じ作業が、これほど変わったのです。",
+      "image_prompt": "Clean flat infographic comparison chart, no title, no header, no footer caption, no mascot icon, no decorative background pattern. One single uniform plain off-white background color filling the entire canvas edge to edge — no horizontal band, no floor line, no table surface, no differently-shaded strip along any edge. The background color must be exactly identical in all four corners and along the very bottom edge of the image: absolutely no white footer strip, no slide-deck footer area, no lighter band under the labels, and no visible seam or horizontal dividing line anywhere. The chart itself fills the whole canvas: the bars, group titles and labels are large and spread across the full frame, leaving only a small even margin on all four sides — never shrink the chart into a narrow band with large empty space above or below it. Two groups of bars side by side: left group has a title label directly above it reading exactly 「ガイドなし」, right group has a title label directly above it reading exactly 「AIガイドあり」. Each group contains exactly two bars: one bar labeled directly below it 「作業時間」 and one bar labeled directly below it 「介助の必要さ」 — reuse these exact same two bar labels under both groups. All four bars stand on the same baseline. In the left group both bars are equally tall at full height. In the right group both bars are shorter, but by clearly different amounts: the right 「作業時間」 bar is about two-thirds (roughly 68%) as tall as the left 「作業時間」 bar — visibly shorter, yet still clearly more than half of it — while the right 「介助の必要さ」 bar is only about one-quarter (roughly 24%) as tall as the left 「介助の必要さ」 bar. The contrast between these two right-hand bars must be obvious: the 「介助の必要さ」 bar is far shorter than the 「作業時間」 bar beside it. Cool deep blue/teal color for the 「ガイドなし」 bars, one warm coral/orange color for the 「AIガイドあり」 bars. If this chart is composed in a tall vertical/portrait frame, still keep all four bars in one single horizontal row standing on one shared common baseline, and simply scale the entire chart up so it fills the frame — never stack the 「ガイドなし」 group above the 「AIガイドあり」 group, never split them into two separate charts, and never give the two groups different baselines. Render only these six exact Japanese text strings (2 group titles + 2 bar labels repeated once per group), each spelled correctly and legibly in a clean sans-serif font — absolutely no other text, no numbers, no logos, no icons, no extra caption anywhere in the image. Do not fabricate any numeric values.",
+      "ken_burns": "static",
+      "telop_cards": [
+        {
+          "lines": [
+            "こうして並べてみると、作業にかかった時間も、"
+          ],
+          "start": 0.0,
+          "end": 3.3
+        },
+        {
+          "lines": [
+            "途中で必要だった手助けも、ガイドがあるだけで、"
+          ],
+          "start": 3.45,
+          "end": 6.9
+        },
+        {
+          "lines": [
+            "これだけ違ってきます。手順を新しく覚え直した"
+          ],
+          "start": 7.05,
+          "end": 10.55
+        },
+        {
+          "lines": [
+            "わけではありません。ただ、次の一手がその"
+          ],
+          "start": 10.7,
+          "end": 13.7
+        },
+        {
+          "lines": [
+            "場でわかる——それだけで、同じ人の同じ作業が、"
+          ],
+          "start": 13.85,
+          "end": 17.3
+        },
+        {
+          "lines": [
+            "これほど変わったのです。"
+          ],
+          "start": 17.45,
+          "end": 19.25
+        }
+      ]
+    },
+    {
+      "scene_id": 12,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 14,
+      "narration": "もし、このカメラがうちのキッチンにもあったら——そう想像しただけで、こわばっていた肩から、すっと力が抜けていく気がしました。誰かに気を遣わせるわけでも、急かされるわけでもなく、ただそばで見守ってもらえるだけで、こんなに安心できるものなんですね。",
+      "image_prompt": "A 71-year-old Japanese woman named Junko Takahashi, short gray bob hairstyle (same hairstyle and gray hair color throughout the series), shown small in scale, sitting quietly in an armchair by a window in her living room, soft daylight, a classic comic-style thought bubble (a chain of small circles rising from her head into one large cloud-shaped bubble) above her head containing a miniature preview scene inside it of her happily cooking at her kitchen counter with a small unobtrusive camera-and-speaker device mounted above it, no text, no cane, no walking stick, no walker, no mobility aid",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "もし、このカメラがうちのキッチンにも"
+          ],
+          "start": 0.0,
+          "end": 2.79
+        },
+        {
+          "lines": [
+            "あったら——そう想像しただけで、"
+          ],
+          "start": 2.94,
+          "end": 5.25
+        },
+        {
+          "lines": [
+            "こわばっていた肩から、すっと力が抜けていく"
+          ],
+          "start": 5.4,
+          "end": 8.43
+        },
+        {
+          "lines": [
+            "気がしました。誰かに気を遣わせるわけでも、"
+          ],
+          "start": 8.58,
+          "end": 11.61
+        },
+        {
+          "lines": [
+            "急かされるわけでもなく、ただそばで"
+          ],
+          "start": 11.76,
+          "end": 14.21
+        },
+        {
+          "lines": [
+            "見守ってもらえるだけで、こんなに安心できる"
+          ],
+          "start": 14.36,
+          "end": 17.39
+        },
+        {
+          "lines": [
+            "ものなんですね。"
+          ],
+          "start": 17.54,
+          "end": 18.69
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.35,
+        "y": 0.58
+      }
+    },
+    {
+      "scene_id": 13,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 24,
+      "narration": "朝、キッチンに立つと、小さなカメラが、そっと私の手元を見守ってくれています。「次は火を止めましょう」——静かな声に合わせて、体を動かすだけでいい。焦らなくていいんです。迷わなくていいんです。ちゃんと、自分の手で、湯気の立つ朝ごはんが作れる。それだけのことが、今の私には、何よりの誇りなんです。",
+      "image_prompt": "A 71-year-old Japanese woman named Junko Takahashi, short gray bob hairstyle (same hairstyle and gray hair color throughout the series), standing confidently at her kitchen stove in the morning, calm and happy expression, gently lifting a pot with a boiled egg inside, a small unobtrusive camera-and-speaker device mounted above the counter with a soft glowing indicator light, soft morning daylight through the window (clearly bright morning light, not night), immersive full-frame composition, no text, no cane, no walking stick, no walker, no mobility aid",
+      "ken_burns": "zoom_in",
+      "badge_text": "幸せな未来を夢想中",
+      "telop_cards": [
+        {
+          "lines": [
+            "朝、キッチンに立つと、小さなカメラが、"
+          ],
+          "start": 0.0,
+          "end": 3.6
+        },
+        {
+          "lines": [
+            "そっと私の手元を見守ってくれています。"
+          ],
+          "start": 3.75,
+          "end": 6.6
+        },
+        {
+          "lines": [
+            "「次は火を止めましょう」——静かな声に合わせて、"
+          ],
+          "start": 6.9,
+          "end": 10.6
+        },
+        {
+          "lines": [
+            "体を動かすだけでいい。焦らなくていいんです。"
+          ],
+          "start": 10.75,
+          "end": 14.61
+        },
+        {
+          "lines": [
+            "迷わなくていいんです。ちゃんと、"
+          ],
+          "start": 14.86,
+          "end": 17.26
+        },
+        {
+          "lines": [
+            "自分の手で、湯気の立つ朝ごはんが作れる。"
+          ],
+          "start": 17.41,
+          "end": 20.41
+        },
+        {
+          "lines": [
+            "それだけのことが、今の私には、"
+          ],
+          "start": 20.74,
+          "end": 22.99
+        },
+        {
+          "lines": [
+            "何よりの誇りなんです。"
+          ],
+          "start": 23.14,
+          "end": 24.79
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.69,
+        "y": 0.38
+      }
+    },
+    {
+      "scene_id": 14,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 20,
+      "narration": "週末、久しぶりに孫を招いて、得意だったゆで卵のサラダを振る舞いました。カメラのやさしい声に助けられながら、盛り付けまでひとりでやり遂げて。「おばあちゃんの味、変わらないね」——たったその一言をもらえたことが、涙が出るほど嬉しかったんです。台所に立つことを、また誇りに思えるようになりました。",
+      "image_prompt": "A 71-year-old Japanese woman named Junko Takahashi, short gray bob hairstyle (same hairstyle and gray hair color throughout the series), smiling warmly while serving a homemade egg salad dish to her young grandchild at a dining table in her home, joyful and proud expression on both faces, a small unobtrusive camera-and-speaker device visible mounted above the kitchen counter in the background, warm weekend afternoon daylight through a window, immersive full-frame composition, no text, no cane, no walking stick, no walker, no mobility aid",
+      "ken_burns": "pan_zoom_out",
+      "badge_text": "幸せな未来を夢想中",
+      "telop_cards": [
+        {
+          "lines": [
+            "週末、久しぶりに孫を招いて、"
+          ],
+          "start": 0.0,
+          "end": 2.94
+        },
+        {
+          "lines": [
+            "得意だったゆで卵のサラダを振る舞いました。"
+          ],
+          "start": 3.34,
+          "end": 6.49
+        },
+        {
+          "lines": [
+            "カメラのやさしい声に助けられながら、"
+          ],
+          "start": 7.2,
+          "end": 10.16
+        },
+        {
+          "lines": [
+            "盛り付けまでひとりでやり遂げて。"
+          ],
+          "start": 10.38,
+          "end": 12.78
+        },
+        {
+          "lines": [
+            "「おばあちゃんの味、変わらないね」"
+          ],
+          "start": 13.22,
+          "end": 15.78
+        },
+        {
+          "lines": [
+            "——たったその一言をもらえたことが、"
+          ],
+          "start": 16.62,
+          "end": 19.32
+        },
+        {
+          "lines": [
+            "涙が出るほど嬉しかったんです。"
+          ],
+          "start": 19.54,
+          "end": 21.79
+        },
+        {
+          "lines": [
+            "台所に立つことを、また誇りに思えるように"
+          ],
+          "start": 21.94,
+          "end": 26.2
+        },
+        {
+          "lines": [
+            "なりました。"
+          ],
+          "start": 26.35,
+          "end": 27.25
+        }
+      ]
+    },
+    {
+      "scene_id": 15,
+      "type": "closing",
+      "narrator": "research",
+      "duration_seconds": 52,
+      "narration": "この仕組みは、まだ少人数を対象にした、模擬課題での実験段階で、実用化にはもう少し時間がかかりそうです。本物の台所で同じように働いてくれるかどうかは、これから確かめていくことになります。研究チーム自身も、より多くの人での長期的な検証や、卵を茹でる以外の作業への応用を、今後の課題として挙げています。それでも、AIが日常のほんの小さな手順に、そっと寄り添ってくれることで、「できなくなったこと」が、また「一人でできること」に変わっていく——そこにこそ、この研究の本当の価値があるのだと思います。この研究の詳細が知りたい方は、概要欄をご確認ください。次はどんな研究が、誰かの幸せな未来を運んでくるのでしょうか。その瞬間をこれからも一緒に見つけていきたい方は、ぜひチャンネル登録してお待ちください。",
+      "image_prompt": "Symbolic warm illustration of a small unobtrusive camera-and-speaker device mounted above a kitchen counter with a soft glowing indicator light, a cozy empty home kitchen bathed in golden late-afternoon light, no people, no text",
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "この仕組みは、まだ少人数を対象にした、"
+          ],
+          "start": 0.0,
+          "end": 2.8
+        },
+        {
+          "lines": [
+            "模擬課題での実験段階で、実用化にはもう少し"
+          ],
+          "start": 2.95,
+          "end": 6.08
+        },
+        {
+          "lines": [
+            "時間がかかりそうです。本物の台所で同じ"
+          ],
+          "start": 6.23,
+          "end": 8.96
+        },
+        {
+          "lines": [
+            "ように働いてくれるかどうかは、"
+          ],
+          "start": 9.11,
+          "end": 11.27
+        },
+        {
+          "lines": [
+            "これから確かめていくことになります。"
+          ],
+          "start": 11.42,
+          "end": 14.01
+        },
+        {
+          "lines": [
+            "研究チーム自身も、より多くの人での長期的な検証や、"
+          ],
+          "start": 14.16,
+          "end": 17.75
+        },
+        {
+          "lines": [
+            "卵を茹でる以外の作業への応用を、"
+          ],
+          "start": 17.9,
+          "end": 20.2
+        },
+        {
+          "lines": [
+            "今後の課題として挙げています。それでも、"
+          ],
+          "start": 20.35,
+          "end": 23.22
+        },
+        {
+          "lines": [
+            "AIが日常のほんの小さな手順に、"
+          ],
+          "start": 23.37,
+          "end": 25.67
+        },
+        {
+          "lines": [
+            "そっと寄り添ってくれることで、"
+          ],
+          "start": 25.82,
+          "end": 27.98
+        },
+        {
+          "lines": [
+            "「できなくなったこと」が、また「一人でできること」"
+          ],
+          "start": 28.13,
+          "end": 31.72
+        },
+        {
+          "lines": [
+            "に変わっていく——そこにこそ、"
+          ],
+          "start": 31.87,
+          "end": 34.03
+        },
+        {
+          "lines": [
+            "この研究の本当の価値があるのだと思います。"
+          ],
+          "start": 34.18,
+          "end": 37.2
+        },
+        {
+          "lines": [
+            "この研究の詳細が知りたい方は、"
+          ],
+          "start": 37.35,
+          "end": 39.51
+        },
+        {
+          "lines": [
+            "概要欄をご確認ください。次はどんな研究が、"
+          ],
+          "start": 39.66,
+          "end": 42.68
+        },
+        {
+          "lines": [
+            "誰かの幸せな未来を運んでくるのでしょうか。"
+          ],
+          "start": 42.83,
+          "end": 45.85
+        },
+        {
+          "lines": [
+            "その瞬間をこれからも一緒に見つけていきたい方は、"
+          ],
+          "start": 46.0,
+          "end": 49.45
+        },
+        {
+          "lines": [
+            "ぜひチャンネル登録してお待ちください。"
+          ],
+          "start": 49.6,
+          "end": 52.33
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "persona",
+          "narration": "卵を茹でるだけのことが、急にわからなくなる",
+          "scene_id": 7
+        },
+        {
+          "narrator": "research",
+          "narration": "台北医学大学の研究チームが試した、AIカメラ",
+          "scene_id": 9
+        },
+        {
+          "narrator": "research",
+          "narration": "作業時間も、必要な手助けも、大きく減ったんです",
+          "scene_id": 11
+        },
+        {
+          "narrator": "persona",
+          "narration": "自分の手で、朝ごはんが用意できる",
+          "scene_id": 13
+        },
+        {
+          "narrator": "persona",
+          "narration": "孫に「変わらないね」と言われて",
+          "scene_id": 14
+        },
+        {
+          "narrator": "research",
+          "narration": "続きは本編で。チャンネル登録もお待ちしています。",
+          "image_prompt": "Vertical 9:16 symbolic warm illustration of a small unobtrusive camera-and-speaker device mounted above a kitchen counter with a soft glowing indicator light, cozy warm-toned kitchen background, no people, no text"
+        }
+      ]
+    }
+  ],
+  "bgm_sources": {
+    "intro": "BGM/kl011-BGM-intro.mp3",
+    "main": "BGM/kl001-BGM-main.mp3",
+    "outro": "BGM/kl012-BGM-outro.mp3"
+  }
+}

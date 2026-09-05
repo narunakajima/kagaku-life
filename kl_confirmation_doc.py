@@ -131,13 +131,20 @@ def build_doc(ep: dict) -> str:
         ref_note = ""
         if "reference_index" in s and 0 <= s["reference_index"] < len(refs):
             ref_note = f"  出典[{s['reference_index']}]: {refs[s['reference_index']].get('title', '')[:40]}"
-        add(f"▶ S{s['scene_id']:02d}  [{s['type']} / BGM:{role} / narrator:{narrator}]  文字数: {len(s['narration'])}字（推定実尺: 約{est:.0f}秒）  ken_burns: {s['ken_burns']}{ref_note}")
+        # reuse_scene_id を持つシーン（他シーンの画像を流用するティザー等）は
+        # image_prompt を持たず、ken_burns も STEP7（kl_zoom_anchor.py）で
+        # 後から書き込まれるため、どちらも存在しない前提で組み立てる。
+        kb = s.get("ken_burns", "—（STEP7で自動決定）")
+        add(f"▶ S{s['scene_id']:02d}  [{s['type']} / BGM:{role} / narrator:{narrator}]  文字数: {len(s['narration'])}字（推定実尺: 約{est:.0f}秒）  ken_burns: {kb}{ref_note}")
         add("")
         add(f"  【ナレーション】")
         add(f"  {s['narration']}")
         add("")
         add(f"  【画像プロンプト】")
-        add(f"  {s['image_prompt']}")
+        if s.get("reuse_scene_id") and not s.get("image_prompt"):
+            add(f"  （S{s['reuse_scene_id']:02d}の画像を流用・新規生成なし）")
+        else:
+            add(f"  {s['image_prompt']}")
         add("")
         add("-" * 40)
         add("")
