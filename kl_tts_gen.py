@@ -45,13 +45,16 @@ DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
 QA_MODEL = "gemini-flash-latest"  # ナレーション音声が台本通りか判定する用（sc_tts_gen.pyと同じ考え方）
-# gemini-3.1-flash-tts-preview はテキスト先頭に演技指導（スタイル指示）を付けると
-# finish_reason=OTHER で空データが返る不具合がある（lamp-whisperのlw_tts_gen.pyで
-# 発覚・対処済み）。gemini-2.5-pro-preview-ttsに切り替える（2026-08-21）。
-# 2026-08-22追記: gemini-2.5-pro-preview-ttsでも演技指導の有無に関わらず
-# finish_reason=OTHERで空データが返ることが稀にある（一過性の不具合で、
-# 演技指導固有の問題ではない）。lw_tts_gen.pyと同じくリトライで対処する。
-MODEL = "gemini-2.5-pro-preview-tts"
+# 2026-08-21: gemini-3.1-flash-tts-preview はテキスト先頭に演技指導（スタイル指示）を
+# 付けると finish_reason=OTHER で空データが返る不具合があったため、
+# gemini-2.5-pro-preview-ttsに切り替えていた。2026-08-22時点で「演技指導の有無に
+# 関わらず稀に空データが返る」ことが判明し、演技指導固有の問題ではないと切り分け済み。
+# 2026-09-05再検証: 演技指導あり/なし・複数ボイスで計12回テスト生成し、
+# gemini-3.1-flash-tts-previewでfinish_reason=OTHERは一度も再現しなかった
+# （sc_tts_gen.pyも同モデル+演技指導の組み合わせで問題なく稼働中）。当時の不具合は
+# 解消済みと判断し、より新しいgemini-3.1-flash-tts-previewに戻す。MAX_RETRIESに
+# よるリトライは引き続き安全網として残す。
+MODEL = "gemini-3.1-flash-tts-preview"
 REQUEST_TIMEOUT_MS = 60_000
 MAX_RETRIES = 5
 
