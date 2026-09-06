@@ -98,7 +98,9 @@ SHORTS_W = 768
 SHORTS_H = 1376
 SHORTS_XFADE = 0.4
 SHORTS_TELOP_FONTSIZE = 48
-SHORTS_TELOP_CENTER_Y = 0.82
+# 2026-09-06改訂: 下寄り(0.82)よりSC(shorts_caption_for_clip、y=(h-text_h)/2で
+# 画面中央)の方がインパクトがあるとの指摘を受け、中央寄りに変更。
+SHORTS_TELOP_CENTER_Y = 0.5
 # 冒頭フックテキスト（SCのshorts_hook_text_filterを1408x768→768x1376比で換算）
 SHORTS_HOOK_CONFIGS = [(114, "h*0.07"), (89, "h*0.16")]
 # 顔アップフッククリップの尺（秒）。ナレーションを乗せない無音の「引き」の
