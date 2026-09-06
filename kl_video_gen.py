@@ -101,6 +101,9 @@ SHORTS_TELOP_FONTSIZE = 48
 SHORTS_TELOP_CENTER_Y = 0.82
 # 冒頭フックテキスト（SCのshorts_hook_text_filterを1408x768→768x1376比で換算）
 SHORTS_HOOK_CONFIGS = [(114, "h*0.07"), (89, "h*0.16")]
+# 顔アップフッククリップの尺（秒）。ナレーションを乗せない無音の「引き」の
+# 1カットのため固定値でよい（2026-09-06追加、SCのS00_face.png踏襲）。
+FACE_HOOK_DURATION = 2.0
 
 
 def run_cmd(cmd: list, label: str = ""):
@@ -654,25 +657,44 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
 
     mid = shorts_list[0]["shorts_id"]
     scenes = shorts_list[0]["scenes"]
-    print(f"\n{'━'*60}\n  {episode_id} — Shorts動画生成開始（{len(scenes)}シーン）\n{'━'*60}\n")
+
+    # 顔アップ専用フッククリップ（2026-09-06追加）。samurai-chroniclesの
+    # shorts_face_image_prompt/S00_face.png踏襲。Shortsフィード経由の視聴が
+    # トラフィックの9割以上を占めることが実データ（kl_analytics_report.py）で
+    # 判明し、SC側で既に実証済みの「冒頭0秒目に感情の乗った顔アップ＋大型フック
+    # テキストでスクロールを止める」設計を移植した。存在しない場合は従来通り
+    # 最初のシーン画像にhook_linesを重ねるだけの旧動作にフォールバックする。
+    face_img = img_dir / f"shorts{mid}_S00_face.png"
+    use_face_intro = face_img.exists()
+
+    print(f"\n{'━'*60}\n  {episode_id} — Shorts動画生成開始"
+          f"（{len(scenes)}シーン{'+顔アップフック' if use_face_intro else ''}）\n{'━'*60}\n")
 
     with tempfile.TemporaryDirectory() as tmp_str:
         tmp = Path(tmp_str)
 
         durations = []
+        if use_face_intro:
+            durations.append(FACE_HOOK_DURATION)
         for i, scene in enumerate(scenes, start=1):
             wav = narration_dir / f"shorts{mid}_S{i:02d}.wav"
             narr_dur = probe_audio_duration(wav) if wav.exists() else 2.0
             durations.append(max(1.5, narr_dur + NARR_DELAY + 0.3))
 
         offsets = [0.0]
-        for i in range(1, len(scenes)):
+        for i in range(1, len(durations)):
             offsets.append(offsets[-1] + durations[i - 1] - SHORTS_XFADE)
         total_dur = offsets[-1] + durations[-1]
         print(f"  合計尺: {total_dur:.1f}s")
 
         print("\n--- Ken Burnsクリップ生成 ---")
         clips = []
+        if use_face_intro:
+            dst = tmp / "kb_shorts_S00_face.mp4"
+            # 顔アップは常にゆっくりズームイン（表情への没入感を強めるため）
+            make_ken_burns(face_img, dst, durations[0], "zoom_in", w=SHORTS_W, h=SHORTS_H)
+            clips.append(dst)
+        base_idx = 1 if use_face_intro else 0
         for i, scene in enumerate(scenes, start=1):
             img = img_dir / f"shorts{mid}_S{i:02d}.png"
             dst = tmp / f"kb_shorts_S{i:02d}.mp4"
@@ -680,7 +702,7 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
             # （ズームすると数値の位置関係が読み取りにくくなる）で完全静止にする
             # （2026-08-25追加。本編側の修正時にShortsが対象外だったことに気づいた）。
             effect = "static" if scene.get("style") == "chart" else "zoom_in"
-            make_ken_burns(img, dst, durations[i - 1], effect, w=SHORTS_W, h=SHORTS_H)
+            make_ken_burns(img, dst, durations[base_idx + i - 1], effect, w=SHORTS_W, h=SHORTS_H)
             clips.append(dst)
 
         print("\n--- クロスフェード結合 ---")
@@ -693,7 +715,9 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
             wav = narration_dir / f"shorts{mid}_S{i:02d}.wav"
             if not wav.exists():
                 continue
-            offset_ms = int(offsets[i - 1] * 1000 + NARR_DELAY * 1000)
+            # 顔アップクリップ分だけナレーションの開始オフセットを後ろにずらす
+            # （顔アップクリップ自体はナレーションなし・無音の「引き」の1カット）
+            offset_ms = int(offsets[base_idx + i - 1] * 1000 + NARR_DELAY * 1000)
             idx = len(narr_inputs)
             narr_inputs.append(wav)
             lbl = f"n{i}"
@@ -768,7 +792,10 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
                 prev = out
                 idx += 1
 
-        for i, (scene, offset, dur) in enumerate(zip(scenes, offsets, durations)):
+        # 顔アップクリップ分（先頭1件）を除いた、scenesに対応するoffset/durationのみを使う
+        scene_offsets = offsets[base_idx:]
+        scene_durations = durations[base_idx:]
+        for i, (scene, offset, dur) in enumerate(zip(scenes, scene_offsets, scene_durations)):
             t_start = offset + NARR_DELAY
             t_end = offset + dur
             telop_text = scene.get("telop_text", scene["narration"])

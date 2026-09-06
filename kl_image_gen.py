@@ -23,6 +23,13 @@ Shorts画像について（2026-09-04〜）:
   参照先の本編画像が未生成の場合は、Shorts独自のimage_promptから独立生成する
   旧方式にフォールバックする（kl001〜kl013はscene_id未対応のため）。
 
+Shorts冒頭の顔アップフックについて（2026-09-06〜）:
+  shorts[].face_hook_image_promptがあれば、shorts{M}_S00_face.pngとして
+  専用スタイル（FACE_HOOK_CONTEXT、極端なクローズアップ）で生成する
+  （CLAUDE.md「Shorts冒頭の顔アップフック」参照。samurai-chroniclesの
+  shorts_face_image_prompt/S00_face.pngを踏襲）。kl_video_gen.pyがこの
+  画像を冒頭2秒の無音カットとして自動的に差し込む。
+
 生成済みならスキップ（2026-09-04〜、sc_image_gen.pyと同じ考え方）:
   --scenes未指定のフル実行では、既に画像・サムネイル・Shortsが存在する分は
   再生成しない（タイムアウト等で中断して同じコマンドを再実行しても、成功済み
@@ -38,7 +45,7 @@ Shorts画像について（2026-09-04〜）:
   python3 kl_image_gen.py --episode kl001 --force           # 既存ファイルも含め全て再生成
 
 出力: ~/Desktop/kagaku-life/images/S{NN}.png, thumbnail.png,
-      shorts{M}_S{NN}.png（Shorts、9:16）
+      shorts{M}_S{NN}.png（Shorts、9:16）, shorts{M}_S00_face.png（顔アップフック、任意）
       ~/Desktop/kagaku-life/image_qa_result.json（QAレポート）
       （Desktopは常に最新1エピソード分の確認用。エピソードIDのサブフォルダは作らない）
 """
@@ -201,6 +208,32 @@ CHART_CONTEXT = (
     "video and would collide with and obscure absolutely anything placed there. Keep the "
     "title, all bars/icons, and every text label confined entirely to the upper 78% of "
     "the frame; the bottom 22% must render as pure, untouched flat background."
+)
+
+
+# Shorts冒頭専用「顔アップフック」用スタイル（2026-09-06追加）。
+# samurai-chroniclesのshorts_face_image_prompt/S00_face.pngを踏襲。実データ
+# （kl_analytics_report.py）でチャンネルのトラフィックの9割以上がShortsフィード
+# 経由と判明し、SC側で既に実証済みの「冒頭0秒目の感情の乗った顔アップでスクロール
+# を止める」設計を移植した。BASE_CONTEXTと同じ画風だが、極端なクローズアップ・
+# 縦構図・強い感情表現を追加で指示する。SCの顔アップは「冷徹な計算」のような
+# 硬い表情だったが、このチャンネルの温かいトーン（CLAUDE.md BGMルール参照）に
+# 合わせ、安堵・喜び・驚きといった温かい感情を想定する（シーン記述側で具体的な
+# 感情を指定する）。
+FACE_HOOK_CONTEXT = (
+    "Rich flat editorial illustration style with soft warm lamp/window lighting and a "
+    "subtle grain/noise texture overlay: naturalistic character proportions and skin "
+    "tones, gentle shading gradients rather than flat cel-shading. Muted, sophisticated "
+    "palette (slate blue, teal, warm gray) with one warm coral/amber accent light "
+    "glowing softly within the scene. Not photorealistic, no anime style. "
+    "Character has authentically Japanese facial features (this is a Japanese-audience "
+    "channel) — not Western or ambiguous. "
+    "EXTREME CLOSE-UP of the protagonist's face only (from forehead to chin, filling "
+    "most of the vertical frame) — this is a scroll-stopping opening shot for a short "
+    "vertical video, not a wide establishing shot. Vertical 9:16 portrait composition. "
+    "The expression must convey a strong, genuine, warm emotion (e.g. quiet relief, "
+    "wonder, joy, hope) as specified in the scene description — make the eyes and facial "
+    "muscles clearly readable even at a glance. No text, no captions, no UI elements."
 )
 
 
@@ -690,6 +723,24 @@ def main():
             shorts_target_ids = {int(s) for s in args.shorts_scenes.split(",")}
         for shorts in ep.get("shorts", []):
             mid = shorts["shorts_id"]
+
+            # 顔アップフックカット（2026-09-06追加、CLAUDE.md「Shorts冒頭の
+            # 顔アップフック」参照）。face_hook_image_promptが無いエピソードは
+            # 生成しない（kl_video_gen.py側もこのファイルが無ければ従来通り
+            # 顔アップなしにフォールバックする）。
+            face_prompt = shorts.get("face_hook_image_prompt")
+            if face_prompt and (shorts_target_ids is None or 0 in shorts_target_ids):
+                face_path = out_dir / f"shorts{mid}_S00_face.png"
+                if skip_existing and not args.shorts_scenes and face_path.exists():
+                    print(f"✅ {face_path.name}（既存ファイルをスキップ）")
+                    qa_results.append({"name": face_path.name, "ok": True, "issues": [], "attempts": 0, "skipped": True})
+                else:
+                    prompt = f"{FACE_HOOK_CONTEXT}\n\nScene: {face_prompt}"
+                    r = generate_with_qa(client, prompt, face_prompt, face_path,
+                                          aspect_ratio="9:16", skip_qa=args.no_qa)
+                    r["name"] = face_path.name
+                    qa_results.append(r)
+
             for i, s in enumerate(shorts["scenes"], start=1):
                 if shorts_target_ids is not None and i not in shorts_target_ids:
                     continue

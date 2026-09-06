@@ -328,6 +328,11 @@ Agentに差し戻すか、オーケストレーター自身がscene_idを振り�
 拾われずSTEP11の人間確認で発覚した。指示語の有無を問わずシーン単体で
 完結しているかを見るOpusの観点5とは別に、こちらは単純な文字列包含
 チェックで機械的に検出できるため、Opus任せにせずここで確認する）。**
+**トップレベルの`hook_lines`（2要素配列）と`shorts[].face_hook_image_prompt`
+が設定されているかも同じタイミングで機械的に確認する（2026-09-06追加。
+CLAUDE.mdに記載が無かった期間にkl006・kl013・kl014の3話で`hook_lines`が
+丸ごと欠落する事故が起きており、`face_hook_image_prompt`も同種の見落としが
+起きやすいフィールドのため）。**
 内容の細部レビューはSTEP5の制作確認書で行う。
 
 ### 生成ルール
@@ -488,17 +493,35 @@ samurai-chroniclesの同じ仕組みを踏襲、2026-09-04導入）。Shorts向�
 場合）は自動的にチャートスタイルが適用される。narrator/narration_voicesは
 本編と共通。
 
+**`hook_lines`（トップレベル、2行、必須）:** Shorts冒頭に大きく焼き込まれる
+煽りテキスト（samurai-chroniclesの`shorts_hook_lines`踏襲）。日本語1行あたり
+目安10〜16字程度、短く強いフレーズ2つで「これは何の話か」への好奇心を煽る
+（例: kl001「洗濯物を／ロボットが畳む?」）。**2026-09-06追加。これまで
+CLAUDE.mdに記載が無かったため、kl006・kl013・kl014の3話で設定漏れが発生した
+実績があり、STEP2完了後の機械的チェック項目に追加すること。**
+
+**`shorts[].face_hook_image_prompt`（2026-09-06追加、強く推奨）:** Shorts
+冒頭0秒目専用の、主人公の顔の極端なクローズアップ画像プロンプト
+（samurai-chroniclesの`shorts_face_image_prompt`踏襲。CLAUDE.md「Shorts冒頭の
+顔アップフック」参照）。トラフィックの9割以上がShortsフィード経由という
+実データを踏まえた「スクロールを止める」ための専用ショットで、`kl_image_gen.py`
+が`FACE_HOOK_CONTEXT`スタイルで生成し、`kl_video_gen.py`が冒頭2秒の無音カットと
+して自動的に差し込む（`hook_lines`もこのカットに焼き込まれる）。安堵・喜び・
+驚き等、このエピソードの核となる**温かい**感情を具体的に指定すること（冷徹・
+暗い表情にはしない、CLAUDE.md BGMルールと同じトーン方針）。文字は入れない。
+
 **JSONスキーマ:** `episode_id` / `episode_title` / `youtube_title` /
 `youtube_description`（参考文献・査読前開示を含む） / `youtube_tags` /
 `references[]` / `protagonist` / `thumbnail_prompt` / `thumbnail_headline` /
-`thumbnail_subcopy` / `scenes[]`（`scene_id`/`type`/`narrator`/`reference_index`/
-`duration_seconds`/`narration`/`image_prompt`/`ken_burns`。teaserシーンが本編の
-別scene_idと同じ場面を先出しする場合は`image_prompt`の代わりに`reuse_scene_id`
-を持たせてよい） / `shorts[]`
-（`shorts_id`/`scenes[]`。各カットは`narrator`/`narration`に加え、本編の
-切り出しなら`scene_id`（`image_prompt`は書かない）、独自カットなら
-`image_prompt`（`scene_id`は付与しない）のどちらか一方を持つ）。
-`narration_voices`はSTEP3で決まるため、この時点では省略してよい。
+`thumbnail_subcopy` / `hook_lines`（2行） / `scenes[]`（`scene_id`/`type`/
+`narrator`/`reference_index`/`duration_seconds`/`narration`/`image_prompt`/
+`ken_burns`。teaserシーンが本編の別scene_idと同じ場面を先出しする場合は
+`image_prompt`の代わりに`reuse_scene_id`を持たせてよい） / `shorts[]`
+（`shorts_id`/`face_hook_image_prompt`（推奨）/`scenes[]`。各カットは
+`narrator`/`narration`に加え、本編の切り出しなら`scene_id`（`image_prompt`は
+書かない）、独自カットなら`image_prompt`（`scene_id`は付与しない）の
+どちらか一方を持つ）。`narration_voices`はSTEP3で決まるため、この時点では
+省略してよい。
 
 **想定尺の見積もり（2026-08-23追加）:** シーンJSON生成直後、`scenes`（teaser除く
 本編シーンのみ）の`narration`文字数合計を250〜300字/分（`kl_confirmation_doc.py`

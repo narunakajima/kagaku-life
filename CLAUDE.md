@@ -1106,6 +1106,7 @@ Shorts（`shorts`フィールド）は2026-08-21に追加した（経緯は下�
   "protagonist": {"name": "...", "age": 0, "job": "...", "gender": "female"},
   "narration_voices": {"persona": "...", "research": "..."},
   "thumbnail_prompt": "...",
+  "hook_lines": ["...", "..."],
   "scenes": [
     {
       "scene_id": 1,
@@ -1141,6 +1142,7 @@ Shorts（`shorts`フィールド）は2026-08-21に追加した（経緯は下�
   "shorts": [
     {
       "shorts_id": 1,
+      "face_hook_image_prompt": "...",
       "scenes": [
         {"narrator": "persona", "narration": "...", "image_prompt": "..."},
         {"narrator": "research", "narration": "...", "image_prompt": "...", "style": "chart"},
@@ -1187,3 +1189,36 @@ Shortsを別立てで作っているのに倣い追加した。当初は企画�
   スタイル（部屋の背景等）に埋もれてしまう問題が実際に起きたため、
   `style: "chart"` があればCHART_CONTEXTを使うようにした。
 - `narrator`・`narration_voices` は本編と共通のものを使う。
+
+**Shorts冒頭の「フックテキスト」（`hook_lines`、実装済みだが2026-09-06まで
+無記載だった）。** `episodes/kl{NNN}.json`のトップレベル（`shorts`の外）に
+`hook_lines`（配列、2行）を持たせると、`kl_video_gen.py`のShorts生成が
+冒頭クリップに大型テキスト（ヒラギノ角ゴシックW8相当の白文字・黒縁取り）を
+焼き込む。samurai-chroniclesの`shorts_hook_lines`を踏襲した仕組みで
+kl001〜kl012では実際に使われていたが、CLAUDE.md自体に記載が無かったため
+STEP2生成時にkl006・kl013・kl014の3話で漏れる事故が起きていた（2026-09-06、
+Fable監査の過程で発覚）。**STEP2でのエピソードJSON生成時、`hook_lines`
+（2行、Shortsの冒頭で画面に大きく表示される煽り文。日本語1行あたり目安10〜16字
+程度、短く強いフレーズにする）を必ず含めること。**
+
+**Shorts冒頭の「顔アップフック」（`shorts[].face_hook_image_prompt`、
+2026-09-06追加）。** kl_analytics_report.pyによる実データ分析で、公開済み
+エピソードのトラフィックの9割以上がYouTubeのShortsフィード（おすすめ表示）
+経由であることが判明した。samurai-chroniclesは既にこの前提でShorts設計
+（`shorts_face_image_prompt`：冒頭0秒目専用の顔アップ画像で視聴者の
+スクロールを止める）を確立しており、同じ設計をkagaku-lifeにも移植した。
+
+- `shorts[].face_hook_image_prompt`: 主人公の顔の**極端なクローズアップ**
+  （額から顎まで、画面のほとんどを顔が占める構図）を指定する。感情は
+  安堵・喜び・驚き等、このエピソードの核となる温かい感情を具体的に指定する
+  こと（SCの顔アップは「冷徹な計算」のような硬い表情だったが、kagaku-life
+  のBGMルール「温かく・希望が持てる」トーンに合わせ、そのような硬い・
+  暗い感情は避ける）。文字は入れない（他の`image_prompt`と同じく"no text"）。
+- `kl_image_gen.py`が`shorts{M}_S00_face.png`として生成する（専用の
+  `FACE_HOOK_CONTEXT`スタイルを使用、BASE_CONTEXTと同じ画風だが極端な
+  クローズアップ・強い感情表現を追加指定）。
+- `kl_video_gen.py`のShorts生成は、このファイルが存在すれば冒頭2秒の
+  無音カット（ナレーションなし、ゆっくりズームイン）として自動的に
+  差し込み、その2秒間に`hook_lines`を焼き込む。存在しない場合は従来通り
+  最初のシーン画像にhook_linesを重ねるだけの旧動作にフォールバックする
+  （必須フィールドではない。ただし新規エピソードでは付けることを推奨する）。
