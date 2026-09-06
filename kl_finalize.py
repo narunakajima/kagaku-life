@@ -114,6 +114,16 @@ def main():
 
     for shorts in ep.get("shorts", []):
         mid = shorts["shorts_id"]
+
+        if shorts.get("face_hook_image_prompt"):
+            face_fname = f"shorts{mid}_S00_face.png"
+            if not assets_safe:
+                skipped += 1
+            elif copy_if_exists(desktop_images / face_fname, drive_ep_dir / "images" / face_fname):
+                copied += 1
+            else:
+                missing.append(f"images/{face_fname}")
+
         for i in range(1, len(shorts["scenes"]) + 1):
             fname = f"shorts{mid}_S{i:02d}.png"
             wname = f"shorts{mid}_S{i:02d}.wav"
