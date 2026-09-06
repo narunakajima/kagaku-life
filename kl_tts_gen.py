@@ -61,14 +61,19 @@ MAX_RETRIES = 5
 # 研究ボイス（Orus）は稀に音程が高く裏返ることがあり、また短いフレーズ
 # （Shorts等）では雰囲気が暗く/硬く聞こえがちなため、落ち着いた低めの音程を
 # 保ちつつ、チャンネルの温かいトーンに合う明るさを明示的に指示する。
-# 2026-09-06改訂: 当初の「energetic/brisk and lively/enthusiastic」という
-# 強い指示が、kl015で「異様にテンションが高い」との指摘を受けるほど
+# 2026-09-06改訂（1回目）: 当初の「energetic/brisk and lively/enthusiastic」
+# という強い指示が、kl015で「異様にテンションが高い」との指摘を受けるほど
 # ハイテンションな読み上げになっていたため、テンポと熱量を落とし、
 # 「落ち着いているが温かい」トーンに寄せた。
+# 2026-09-06改訂（2回目）: 落ち着かせすぎた反動で「もう少しテンポアップして
+# ほしい」との指摘を受けたため、熱量（energetic/enthusiastic等の煽り表現）は
+# 追加せず、テンポ（brisk/efficient）だけを穏やかに戻した。「熱量を上げずに
+# テンポだけ上げる」という組み合わせが今回の狙い。
 STYLE_PREFIX = {
     "research": (
         "Say in a warm, clear, calmly confident documentary-narrator voice, "
-        "at a natural, unhurried speaking pace — engaged and thoughtful, "
+        "at a brisk, efficient speaking pace that keeps the explanation "
+        "moving along without ever feeling rushed — engaged and thoughtful, "
         "never flat, cold, heavy, or somber, and never overly excited, "
         "breathless, or hyped-up. Keep a stable, moderate-to-low pitch and "
         "do not let it rise or break upward at any point: "
