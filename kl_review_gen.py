@@ -150,9 +150,30 @@ def main():
 
     bgm_sources = ep.get("bgm_sources", {})
 
-    # 表示順: サムネイル → Shorts → 本編（samurai-chroniclesのsc_scene_review.pyと統一、2026-09-04〜）
+    # 表示順: サムネイル → Shorts（顔アップフック含む） → 本編
+    # （samurai-chroniclesのsc_scene_review.pyと統一、2026-09-04〜）
+    hook_lines = ep.get("hook_lines", [])
     for shorts in ep.get("shorts", []):
         mid = shorts["shorts_id"]
+
+        face_path = DESKTOP_DIR / "images" / f"shorts{mid}_S00_face.png"
+        if shorts.get("face_hook_image_prompt") and face_path.exists():
+            cards.append(f"""
+            <section class="card thumb-card layout-thumb">
+              <div class="meta">
+                <span class="badge badge-Shorts{mid}">Shorts{mid}</span>
+                <span class="sid">S00</span>
+                <span class="type">顔アップフック（冒頭0秒・無音）</span>
+              </div>
+              <div class="body">
+                <img src="images/shorts{mid}_S00_face.png" alt="shorts{mid} face hook">
+                <div class="text-col">
+                  <p class="narration">{"<br>".join(html.escape(l) for l in hook_lines)}</p>
+                </div>
+              </div>
+            </section>
+            """)
+
         for i, s in enumerate(shorts["scenes"], start=1):
             cards.append(scene_card(
                 f"Shorts{mid}", i, s.get("style", "story"), s["narrator"], s["narration"],
