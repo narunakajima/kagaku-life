@@ -42,7 +42,7 @@
     },
     "medical_support": {
       "label": "医療補助技術",
-      "note": "AI/ロボットによる支援技術のみ対象。診断・治療そのものの医学的妥当性を論じる候補はSTAGE2/3で個別に除外判断する（CLAUDE.md参照）。",
+      "note": "AI/ロボットによる支援技術のみ対象。診断・治療そのものの医学的妥当性を論じる候補はSTAGE2/3で個別に除外判断する（CLAUDE.md参照）。2026-09-06改訂: 在庫148件中46件（約3割）がBCI/神経義肢系に偏っていることがFable監査で判明（クエリ12本中4本がBCI/neural interface系で、この分野は元々Semantic Scholar上の論文密度が高いため実際の収集比率がさらに偏った）。kl003・kl007・kl009で既にBCI/神経義肢系を複数回扱っているため、近い意味のクエリを整理し（旧: brain-computer interface×2, neural interface×1 → brain-computer interface×1に統合）、別のサブジャンル（義手の器用さ・服薬管理・慢性疾患の心理的サポート・理学療法）のクエリを追加してプールの多様性を確保した。",
       "weight": 1.0,
       "queries": [
         "\"AI-assisted rehabilitation\" AND stroke AND (trial OR RCT)",
@@ -51,12 +51,13 @@
         "\"fall prevention\" AND wearable AND sensor AND randomized",
         "\"assistive technology\" AND \"activities of daily living\" AND evaluation",
         "\"AI hearing device\" AND clinical AND evaluation",
-        "\"brain-computer interface\" AND assistive AND breakthrough",
+        "\"brain-computer interface\" AND paralysis AND (\"restores\" OR breakthrough)",
         "\"AI-powered prosthetic\" AND \"next generation\"",
-        "\"brain-computer interface\" AND paralysis AND \"restores\"",
-        "\"neural interface\" AND \"restores\" AND (movement OR sensation OR speech)",
-        "\"AI prosthetic\" AND \"sensory feedback\" AND breakthrough",
-        "\"assistive robot\" AND \"first-in-human\" AND deployment"
+        "\"assistive robot\" AND \"first-in-human\" AND deployment",
+        "\"prosthetic hand\" AND grip AND dexterity AND evaluation",
+        "\"AI\" AND \"medication management\" AND elderly AND adherence AND trial",
+        "\"AI companion\" AND \"chronic illness\" AND (wellbeing OR support) AND trial",
+        "\"robotic physical therapy\" AND motion AND feedback AND trial"
       ]
     },
     "mobility": {

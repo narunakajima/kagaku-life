@@ -1,5 +1,5 @@
 {
-  "_comment": "STAGE4の最終選考候補（20件）を回ごとに蓄積するリスト。statusはavailable(未採用・今後の候補)/used(採用済み)。今回不採用でも別のストーリーで採用しうるため、kl_paper_search.pyの重複排除対象としては使わない（重複排除は既存のtopics_queue.json採用済みpaperIdで行う）。/kl-topicのSTEP2完了時にこのファイルへ追記していく。",
+  "_comment": "STAGE4の最終選考候補を回ごとに蓄積するリスト。statusはavailable(未採用・今後の候補)/used(採用済み)/rejected(ユーザーが既視感・面白み不足等の理由で明示的に却下した候補、2026-09-06追加。rejected_reasonに理由を記録し、kl_paper_interest_score.pyのdeja_vu判定コンテキストに含める)。2026-09-06訂正: 旧コメントは『kl_paper_search.pyの重複排除対象としては使わない』としていたが誤りで、実際はkl_paper_search.pyのload_seen_paper_ids()がこのファイル全件のpaperId/doiを重複排除に使っている（status問わず）。/kl-newのSTAGE0〜2で追記・更新していく。",
   "shortlist": [
     {
       "paperId": "f8f09403a728c09ece3f98779e63a13ed34a19bb",
