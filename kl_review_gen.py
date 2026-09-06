@@ -91,6 +91,29 @@ def _play_button(src: str, label: str, button_text: str) -> str:
     )
 
 
+def shorts_tile(label: str, sid_label: str, narration: str, img_rel: str,
+                 audio_rel: str = None) -> str:
+    """Shorts用の横並びタイル（顔アップフック含めて全て同じ幅・同じ見た目に
+    揃える。samurai-chroniclesのsc_scene_review.py `.shorts-tile` と統一、
+    2026-09-06〜）。audio_relが無い場合（顔アップフックは無音カットのため）は
+    再生ボタンを出さない。"""
+    play_row = ""
+    if audio_rel:
+        play_row = (
+            '<div class="play-row">'
+            + _play_button(audio_rel, f"{sid_label} ナレーション", "▶ 再生")
+            + "</div>"
+        )
+    return f"""
+    <div class="shorts-tile">
+      <img src="{html.escape(img_rel)}" loading="lazy" alt="{html.escape(sid_label)}">
+      <div class="shorts-tile-label">{html.escape(label)} {html.escape(sid_label)}</div>
+      <p class="shorts-tile-narration">{html.escape(narration)}</p>
+      {play_row}
+    </div>
+    """
+
+
 def scene_card(kind: str, sid: int, type_label: str, narrator: str, narration: str,
                img_rel: str, audio_rel: str, extra: str = "", bgm_role: str = None,
                bgm_uri: str = None, layout: str = "main") -> str:
@@ -150,36 +173,29 @@ def main():
 
     bgm_sources = ep.get("bgm_sources", {})
 
-    # 表示順: サムネイル → Shorts（顔アップフック含む） → 本編
-    # （samurai-chroniclesのsc_scene_review.pyと統一、2026-09-04〜）
+    # 表示順: サムネイル → Shorts（顔アップフック含む、横並びタイル） → 本編
+    # （samurai-chroniclesのsc_scene_review.pyの.shorts-strip/.shorts-tileと
+    # 統一、2026-09-06改訂: 縦積みカードから横並び同サイズタイルに変更）
     hook_lines = ep.get("hook_lines", [])
     for shorts in ep.get("shorts", []):
         mid = shorts["shorts_id"]
+        tiles = []
 
         face_path = DESKTOP_DIR / "images" / f"shorts{mid}_S00_face.png"
         if shorts.get("face_hook_image_prompt") and face_path.exists():
-            cards.append(f"""
-            <section class="card thumb-card layout-thumb">
-              <div class="meta">
-                <span class="badge badge-Shorts{mid}">Shorts{mid}</span>
-                <span class="sid">S00</span>
-                <span class="type">顔アップフック（冒頭0秒・無音）</span>
-              </div>
-              <div class="body">
-                <img src="images/shorts{mid}_S00_face.png" alt="shorts{mid} face hook">
-                <div class="text-col">
-                  <p class="narration">{"<br>".join(html.escape(l) for l in hook_lines)}</p>
-                </div>
-              </div>
-            </section>
-            """)
+            tiles.append(shorts_tile(
+                f"Shorts{mid}", "S00（顔アップ）", " / ".join(hook_lines),
+                f"images/shorts{mid}_S00_face.png",
+            ))
 
         for i, s in enumerate(shorts["scenes"], start=1):
-            cards.append(scene_card(
-                f"Shorts{mid}", i, s.get("style", "story"), s["narrator"], s["narration"],
-                f"images/shorts{mid}_S{i:02d}.png", f"narration/shorts{mid}_S{i:02d}.wav",
-                layout="shorts",
+            tiles.append(shorts_tile(
+                f"Shorts{mid}", f"S{i:02d}", s["narration"],
+                f"images/shorts{mid}_S{i:02d}.png",
+                f"narration/shorts{mid}_S{i:02d}.wav",
             ))
+
+        cards.append(f'<div class="shorts-strip">{"".join(tiles)}</div>')
 
     for scene in ep["scenes"]:
         sid = scene["scene_id"]
@@ -212,7 +228,19 @@ def main():
   /* サイズ・並び順はsamurai-chroniclesのsc_scene_review.pyと統一（2026-09-04〜） */
   .layout-main .body, .layout-thumb .body {{ flex-direction: column; }}
   .layout-main img, .layout-thumb img {{ width: 100%; max-width: 640px; }}
-  .layout-shorts img {{ width: 320px; max-width: 320px; }}
+  /* Shorts横並びタイル（顔アップフック含め全て同じ幅、3列で折り返す。
+     samurai-chroniclesの.shorts-strip/.shorts-tileと統一、2026-09-06〜） */
+  .shorts-strip {{ display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 16px; }}
+  .shorts-tile {{ flex: 0 0 calc((100% - 28px) / 3); background: #232a35; border-radius: 12px; padding: 12px; box-sizing: border-box; }}
+  .shorts-tile img {{ width: 100%; border-radius: 8px; display: block; margin-bottom: 8px; }}
+  .shorts-tile-label {{ font-size: 12px; font-weight: 600; color: #8ab4f8; margin-bottom: 4px; }}
+  .shorts-tile-narration {{ font-size: 12px; color: #ccc; line-height: 1.5; margin: 0 0 8px; }}
+  @media (max-width: 900px) {{
+    .shorts-tile {{ flex: 0 0 calc((100% - 14px) / 2); }}
+  }}
+  @media (max-width: 560px) {{
+    .shorts-tile {{ flex: 0 0 100%; }}
+  }}
   .narration {{ font-size: 15px; line-height: 1.7; margin: 0 0 12px; }}
   .narration.sub {{ color: #9aa5b1; font-size: 13px; }}
   .play-row {{ display: flex; gap: 8px; align-items: center; margin-top: 10px; flex-wrap: wrap; }}
