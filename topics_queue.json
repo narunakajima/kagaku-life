@@ -642,8 +642,55 @@
           "hook_idea_at_selection": "「あれ、卵って何分茹でるんだっけ…」長年やってきた料理が急にできなくなる恐怖、AIが変えるかもしれません。"
         }
       ]
+    },
+    {
+      "episode_id": "kl015",
+      "status": "confirmed",
+      "title": "義手に蘇る「気持ちいい」：愛犬をなでた指先に戻ってきた、心をほどく感触",
+      "format": "single_paper",
+      "category": "mobility",
+      "category_label": "モビリティ・身体拡張",
+      "references": [
+        {
+          "title": "Neuromorphic Touch Sensors for Pleasantness Encoding via Spike Patterns: A Bio-Inspired Artifical Fingertip for Restoring Affective Sensations",
+          "authors": [
+            "Marian Statache",
+            "Mariangela Filosa",
+            "Sara Ballanti",
+            "G. D'Alesio",
+            "Giulia Di Salvo"
+          ],
+          "year": 2024,
+          "venue": "Italian National Conference on Sensors",
+          "doi": "10.1109/SENSORS60989.2024.10784624",
+          "url": "https://doi.org/10.1109/SENSORS60989.2024.10784624",
+          "is_preprint": false,
+          "lead_researcher": "Marian Statache（Scuola Superiore Sant'Anna、イタリア）"
+        }
+      ],
+      "protagonist": {
+        "name": "白石 薫",
+        "age": 48,
+        "job": "事故で左手を失い義手を使う、愛犬と暮らす生花店店主",
+        "gender": "female"
+      },
+      "hook_idea": "もし義手で愛犬をなでたとき、『ふわふわして気持ちいい』という温かい手ざわりまで指先に蘇るとしたら？",
+      "notes": "STAGE0: 6カテゴリとも在庫十分（aging_care17/home_robot29/medical_support144/mobility30/work78/disaster_safety37件）のためSTAGE1新規収集は全カテゴリスキップ。kl_shortlist_rescore.py --checkで再採点対象0件を確認済み（全件stage4_version=2026-09-06-wonder）。STAGE2でmedical_support上位（BCIで完全麻痺から運動+感覚を再建、総合スコア4.6）が最高評価だったが、直前kl014が同カテゴリであることに加え、kl003（非侵襲BCI）・kl007（音声BCI）・kl009（神経接続義足）に続く『4例目のBCI/神経義肢』となる既視感リスクを踏まえ、ユーザーの判断でmobilityの本候補を採用。本研究はkl009（歩行運動制御・身体所有感）とは異なり、義手で『なでた時の心地よさ（情動的触覚）』をメルケル受容器模倣のニューロモルフィックセンサーで神経様スパイク列に符号化するという、機能ではなく感情に踏み込んだ切り口が新しい。市販の義手・触覚センサーは握力制御や滑り・硬さの検知（機能的認識）に留まっており、本研究は情動的触覚の再現という点で市場に無い新規性（market_status: novel）と評価。イタリアScuola Superiore Sant'Anna発、IEEE Italian National Conference on Sensors（査読済み・非プレプリント）掲載。実験室環境での実証段階（実際の義手ユーザーでの臨床試験ではない）である点はナレーションでヘッジしつつ概要欄で開示する。",
+      "stage4_snapshot": {
+        "paperId": "d8421b43c30e30354a5f085a5908eb4d58b704ed",
+        "overall_score": 3.7,
+        "score_breakdown": {
+          "wonder_score": 4,
+          "transformation_score": 4,
+          "life_relevance_score": 3,
+          "surprise_score": 2,
+          "persona_fit_score": 5
+        },
+        "market_status": "novel",
+        "novel_delta": "従来の触覚フィードバックが把持力や硬さなどの機能的認識に留まっていたのに対し、素材をなでたときの「心地よさ（快感情）」を生体模倣の神経スパイク信号として符号化できる点。"
+      }
     }
   ],
-  "total_topics": 14,
-  "last_updated": "2026-09-05"
+  "total_topics": 15,
+  "last_updated": "2026-09-06"
 }
