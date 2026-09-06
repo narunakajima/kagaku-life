@@ -772,7 +772,11 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
         font_bold = str(FONT_TMP_BOLD)
         filter_parts, prev, idx = [], "0:v", 0
 
-        hook_lines = shorts_list[0].get("hook_lines") or []
+        # hook_linesはshorts[]の要素ではなくエピソードのトップレベルフィールド
+        # （CLAUDE.md「hook_lines（トップレベル、2行、必須）」参照）。
+        # shorts_list[0].get("hook_lines")は常にNoneを返す誤り箇所だった
+        # （2026-09-06発覚、kl015で焼き込みが一度も実行されていなかった）。
+        hook_lines = ep.get("hook_lines") or []
         if hook_lines:
             # 冒頭クリップの間だけ表示する大型フックテキスト（SCのshorts_hook_text_filter踏襲）
             hook_end = durations[0]
