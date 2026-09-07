@@ -370,6 +370,41 @@ def qa_image_with_gemini(client: genai.Client, image_path: Path, image_prompt: s
         return {"ok": False, "issues": [f"QA_ERROR: {e}"]}
 
 
+# 左右（laterality）系のQA指摘は、画像生成モデルが同じ指示に対しても左右を
+# 安定して制御できないことが多く（kl016で繰り返し確認）、プロンプトを直して
+# 作り直しても五分五分でしか直らない。一方、QAが「左右が逆」と指摘した画像は
+# 単純な水平反転で機械的に解決できることが多いため、作り直しの前にまず反転を
+# 試す（2026-09-07追加、kl016での手動対応の反省を踏まえてスクリプト化）。
+LATERALITY_KEYWORDS = [
+    "left leg", "right leg", "left arm", "right arm", "left hand", "right hand",
+    "left foot", "right foot", "left side", "right side", "opposite leg",
+    "opposite side", "opposite foot", "mirrored",
+]
+
+
+def _mentions_laterality(issues: list) -> bool:
+    text = " ".join(issues).lower()
+    return any(kw in text for kw in LATERALITY_KEYWORDS)
+
+
+def _try_flip_fix(client: genai.Client, out_path: Path, image_prompt_for_qa: str,
+                   allow_text: bool = False):
+    """QAが左右系の指摘をした直後に、水平反転だけで解決できないか試す。
+    解決すればQA結果（ok=True）を返し、解決しなければNoneを返して
+    通常の作り直しフローにフォールバックさせる。"""
+    flip_path = out_path.with_name(out_path.stem + ".flip_test" + out_path.suffix)
+    try:
+        Image.open(out_path).transpose(Image.FLIP_LEFT_RIGHT).save(flip_path)
+        flip_qa = qa_image_with_gemini(client, flip_path, image_prompt_for_qa, allow_text=allow_text)
+        if flip_qa["ok"]:
+            shutil.move(str(flip_path), str(out_path))
+            return flip_qa
+        return None
+    finally:
+        if flip_path.exists():
+            flip_path.unlink()
+
+
 def _correction_note(issues: list, allow_text: bool = False) -> str:
     """QAで見つかった issue の種類ごとに、プロンプトへ追記する修正指示を組み立てる。"""
     notes = []
@@ -542,6 +577,13 @@ def generate_with_qa(client: genai.Client, base_prompt: str, image_prompt_for_qa
             print(f"✅ {out_path.name}{suffix} [QA: OK]")
             return qa
         print(f"⚠️  {out_path.name}{suffix} [QA: {len(qa['issues'])}件] " + "; ".join(qa["issues"]))
+        if _mentions_laterality(qa["issues"]):
+            flip_qa = _try_flip_fix(client, out_path, image_prompt_for_qa, allow_text=allow_text)
+            if flip_qa is not None:
+                flip_qa["attempts"] = attempt
+                print(f"   → 左右反転で解決: {out_path.name}")
+                return flip_qa
+            print(f"   → 左右反転を試したが未解決、通常の再生成にフォールバック: {out_path.name}")
         result = qa
         if attempt < MAX_QA_ATTEMPTS:
             prompt = build_retry_prompt(base_prompt, qa["issues"], allow_text=allow_text)
