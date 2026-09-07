@@ -689,8 +689,57 @@
         "market_status": "novel",
         "novel_delta": "従来の触覚フィードバックが把持力や硬さなどの機能的認識に留まっていたのに対し、素材をなでたときの「心地よさ（快感情）」を生体模倣の神経スパイク信号として符号化できる点。"
       }
+    },
+    {
+      "episode_id": "kl016",
+      "status": "confirmed",
+      "title": "先生の一歩が、麻痺した足に伝わる：外骨格でつながる新しい歩行リハビリ",
+      "format": "single_paper",
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "references": [
+        {
+          "title": "Therapist-exoskeleton-patient interaction for gait therapy",
+          "authors": [
+            "Emek Barış Küçüktabak",
+            "Matthew R. Short",
+            "Lorenzo Vianello",
+            "Daniel Ludvig",
+            "Levi J. Hargrove",
+            "Kevin Lynch",
+            "Jose Pons"
+          ],
+          "year": 2025,
+          "venue": "Science Robotics",
+          "doi": "10.1126/scirobotics.adz9628",
+          "url": "https://www.science.org/doi/10.1126/scirobotics.adz9628",
+          "is_preprint": false,
+          "lead_researcher": "Emek Barış Küçüktabak（Northwestern University / Shirley Ryan AbilityLab、米国シカゴ）"
+        }
+      ],
+      "protagonist": {
+        "name": "坂本健一",
+        "age": 58,
+        "job": "脳卒中で右足に麻痺が残り、職場復帰を目指してリハビリに通う元・高校教師",
+        "gender": "male"
+      },
+      "hook_idea": "機械に足を動かされるリハビリはもう終わり？「先生の足の動きが、自分の足にそのまま伝わってくる」最新ロボットが脳卒中リハビリを根本から変えようとしています。",
+      "notes": "STAGE0: 6カテゴリとも在庫3件以上（medical_support144/work78/disaster_safety37/home_robot29/mobility29/aging_care17件）のためSTAGE1新規収集は全カテゴリスキップ。kl_shortlist_rescore.py --checkで再採点対象0件を確認済み（全件stage4_version=2026-09-06-wonder）。STAGE2ではmedical_support上位がBCI/神経義肢系で占められており（最高点overall 4.6のRestoring Cortically Mediated Movement and Sensation等）、kl003（非侵襲BCI）・kl007（音声BCI）・kl009（神経接続義足）・kl015（義手の情動的触覚）に続く5例目のBCI/神経義肢型になる既視感リスクを踏まえてこのクラスタは見送った。代わりに非BCI候補の中で最高評価（overall 3.85, wonder_score 4）だった本候補を採用。kl004（超軽量歩行ギア）・kl010（代謝を減らすソフト外骨格）は単独装着の日常生活支援ギアだが、本研究は「療法士と患者がペアで外骨格を装着し、仮想バネ・ダンパで下肢を連結して力覚を双方向共有する治療介入（Human-Robot-Human）」という異なる型であり、kl_paper_interest_score.pyのdeja_vu_noteも完全な重複ではないと判定している。また直近5話（kl011 home_robot→kl012 work→kl013 disaster_safety→kl014 medical_support→kl015 mobility）と比べ、medical_supportはkl014の1話前止まりで連続被りではない。慢性期脳卒中患者8名によるトレッドミル実験で、従来の人力介助より関節可動域・歩幅歩高が向上し、訓練モチベーションも高かったことが実証されている（demonstrated_capability）。発表元はNorthwestern University／Shirley Ryan AbilityLab（米国シカゴ）、Science Robotics掲載（査読済み・非プレプリント）。",
+      "stage4_snapshot": {
+        "paperId": "e2488b502b238b44b26c01853763818c8d8cbcb3",
+        "overall_score": 3.85,
+        "score_breakdown": {
+          "wonder_score": 4,
+          "transformation_score": 4,
+          "life_relevance_score": 3,
+          "surprise_score": 4,
+          "persona_fit_score": 4
+        },
+        "market_status": "novel",
+        "novel_delta": "患者と理学療法士がそれぞれ外骨格を装着し、仮想的なバネ・ダンパで互いの下肢を連結することで、療法士の自然な足の動きを直感的に患者へ伝えつつ、患者の筋の突っ張りや抵抗をリアルタイムの力覚として療法士が感じ取りながら歩行を同期・再学習できる点。"
+      }
     }
   ],
-  "total_topics": 15,
-  "last_updated": "2026-09-06"
+  "total_topics": 16,
+  "last_updated": "2026-09-07"
 }
