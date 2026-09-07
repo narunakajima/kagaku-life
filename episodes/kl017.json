@@ -1,0 +1,229 @@
+{
+  "episode_id": "kl017",
+  "episode_title": "「見捨てられていなかった」——半年間眠らず難病に挑んだAIの研究チーム",
+  "youtube_title": "「見捨てられていなかった」半年間眠らず難病に挑んだAI研究チーム【幸せな未来のサイエンス】",
+  "youtube_description": "38歳、区立図書館で司書として働く松本遥さん。8歳の娘には、原因も治療法もまだよく分かっていない、とても珍しい病気があります。患者があまりに少なく、新しい薬の開発に乗り出す製薬会社もなかなか現れない——そんな中、ある研究がひとつの光を灯しました。\n\nアメリカ・メイヨークリニックと、研究者たちが立ち上げたスタートアップ企業UViiVE社のチームが2026年に発表した研究は、一問一答で終わる従来の生成AIとは違い、実験の履歴と失敗の経緯を自ら記憶し続ける、持続する「AIの研究チーム」です。約6か月間休むことなく稼働を続け、データを捏造しないという制約のもとで、実在しない結果を思い込んでしまう失敗の割合を91.7%からゼロにまで減らし、積み重ねた知識によって独自のベンチマーク性能を44%からおよそ90%へと向上させました。そして自律的に生み出した仮説は合わせて43件、その中には希少な難病に向けた薬剤の設計案も含まれていました。\n\nまだ研究段階の取り組みで、実際に新しい薬として患者のもとに届くまでには、これから多くの検証が必要です。それでも、患者数が少ないという理由だけで置き去りにされてきた難病に、眠らず向き合い続けるAIの存在が示す、新しい希望の形を紹介します。\n\n【参考文献】\nPatel MS, Wierson W, Ekker SC. A Persistent Fleet of AI Scientists Exhibits Cooperative and Autopoietic Behavior. bioRxiv. 2026. DOI: 10.64898/2026.08.16.745122\n\n※本研究はまだ研究段階の取り組みであり、市販の治療薬として臨床現場に広く普及しているものではありません。\n\n#難病 #AI研究 #希少疾患 #創薬AI #メイヨークリニック #自律型AIエージェント #幸せな未来のサイエンス #科学ニュース",
+  "youtube_tags": [
+    "難病",
+    "AI研究",
+    "希少疾患",
+    "創薬AI",
+    "メイヨークリニック",
+    "自律型AIエージェント",
+    "AIエージェント",
+    "医療補助技術",
+    "幸せな未来のサイエンス",
+    "科学ニュース",
+    "bioRxiv",
+    "AI科学者"
+  ],
+  "references": [
+    {
+      "title": "A Persistent Fleet of AI Scientists Exhibits Cooperative and Autopoietic Behavior",
+      "authors": [
+        "Milit S. Patel",
+        "W. Wierson",
+        "S. C. Ekker"
+      ],
+      "year": 2026,
+      "venue": "bioRxiv",
+      "doi": "10.64898/2026.08.16.745122",
+      "url": "https://doi.org/10.64898/2026.08.16.745122",
+      "is_preprint": true,
+      "lead_researcher": "Stephen C. Ekker（Mayo Clinic / UViiVE Inc.、米国）、Milit S. Patel（UViiVE Inc.共同創業者）"
+    }
+  ],
+  "protagonist": {
+    "name": "松本遥",
+    "age": 38,
+    "job": "希少難病を抱える小学生の娘を持つ、図書館司書",
+    "gender": "female"
+  },
+  "thumbnail_prompt": "16:9 widescreen thumbnail, a 38-year-old Japanese woman with shoulder-length dark hair, warm relieved expression with tears of joy in her eyes, sitting close beside her 8-year-old Japanese daughter in a bright room, holding her daughter's small hand gently with both her own hands. Behind and above them, a soft glowing abstract network of small connected light points and faint data-stream lines (representing a persistent team of AI researchers working quietly through the night) drifts across the upper portion of the frame like gentle constellation light, not literal robots or screens. Warm soft daylight, hopeful and tender mood, leave clear open space in the upper third of the frame for headline text, no text in the image itself.",
+  "thumbnail_headline": "見捨てられていなかった",
+  "thumbnail_subcopy": "半年間、眠らず難病に挑んだAI研究チーム（米メイヨークリニック・2026）",
+  "hook_lines": [
+    "見捨てられていなかった",
+    "半年間、眠らず働いたAI"
+  ],
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "娘の手を握りしめた、あの日",
+      "reuse_scene_id": 13,
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "図書館で、娘と読んだ、絵本",
+      "reuse_scene_id": 14,
+      "ken_burns": "zoom_out"
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "見捨てられていなかった、その言葉",
+      "image_prompt": "A 38-year-old Japanese woman with shoulder-length dark hair, sitting alone on a living room sofa in the evening, holding a smartphone loosely in her lap, looking up with a stunned, tearful but hopeful expression as if she just received unexpected good news, soft warm indoor lamp light (clearly evening indoors, not a dark or gloomy scene), no text.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 4,
+      "narration": "その光を見つけたのは、誰だったのか。",
+      "image_prompt": "Close-up portrait of a 38-year-old Japanese woman's face with shoulder-length dark hair, looking directly and thoughtfully into the distance with a quiet, determined, hopeful expression, soft daytime light from a nearby window, no text.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 5,
+      "type": "hook",
+      "narrator": "persona",
+      "duration_seconds": 6,
+      "narration": "松本遥。38歳。区立図書館で司書として働いています。8歳になる娘のひなたには、生まれつき原因も治療法もまだよく分かっていない、とても珍しい病気があります。同じ病気の子どもがあまりに少なく、治療法を探す研究そのものが、なかなか進んでいません。",
+      "image_prompt": "A 38-year-old Japanese woman with shoulder-length dark hair, wearing a simple cardigan, standing among library bookshelves, gently returning a book to its place, a calm warm expression, soft daytime daylight coming through tall library windows (clearly daytime, not night), no other people, no text.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 6,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 10,
+      "narration": "ひなたの病気は、専門の先生でさえ『前例が少なくて』と言葉を濁すような、珍しい病気です。定期的に大学病院に通っていますが、検査を重ねるたびに『しばらく経過を見ましょう』と言われるだけで、これといった治療法には辿り着けません。同じ病気を持つ子どもが、日本にもほとんどいないと聞かされたときは、目の前が真っ暗になったのを覚えています。それでも、ひなたは学校の友だちのことを楽しそうに話してくれる、元気な女の子です。この子の『これから』のために、何かできることはないのだろうかと、いつも心のどこかで考えていました。",
+      "image_prompt": "A 38-year-old Japanese woman sitting in a pediatric hospital waiting room chair, her 8-year-old Japanese daughter sitting beside her looking reasonably cheerful and healthy (not frail or sickly, just an ordinary child), a Japanese doctor in a white coat crouching down speaking gently to them with a chart in hand, the mother listening with a composed but worried expression, soft daytime clinical lighting through windows, no text.",
+      "ken_burns": "pan_zoom_out"
+    },
+    {
+      "scene_id": 7,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 10,
+      "narration": "インターネットで似た症状の記録を探しても、ほとんど見つかりません。担当の先生には、『患者数があまりに少ないので、新しい薬の開発に乗り出してくれる製薬会社は、なかなか現れないんです』と申し訳なさそうに言われました。誰も悪いわけではないのに、ひなたの病気だけが、静かに置き去りにされているような気がしてなりませんでした。同じ立場の親御さんたちが集まる小さな会に顔を出しても、『うちの子の病気も、研究してくれる人がなかなか見つからなくて』という声ばかりが耳に残ります。夜、眠るひなたの寝顔を見つめながら、この子のために何かできることはないのかと、答えの出ない自問を繰り返す。そんな夜が、幾晩も続いていました。",
+      "image_prompt": "A 38-year-old Japanese woman sitting quietly on the edge of a bed at night, looking down with gentle worry at her sleeping 8-year-old daughter tucked in beside her, soft warm bedside lamp light (a cozy warm night scene, not dark or frightening), no text.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 8,
+      "type": "citation",
+      "narrator": "research",
+      "duration_seconds": 8,
+      "narration": "忘れられがちな難病にも光を当てようとする研究が、2026年に発表されました。取り組んだのは、アメリカ・メイヨークリニックと、研究者たちが立ち上げたスタートアップ企業UViiVE社のチームです。彼らが開発したのは、一問一答で終わる普段のAIチャットとはまったく違う、ある発想に基づいたシステムでした。",
+      "image_prompt": "Modern AI research laboratory interior in the United States, a Western/Caucasian male researcher in a white lab coat standing before a large wall of monitors displaying an abstract grid of many small glowing agent icons (not readable text, just simple abstract icon shapes suggesting many AI agents working at once), bright daytime natural light through large windows, no text, no protagonist.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 9,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 12,
+      "narration": "開発されたのは、単発の指示に答えて終わるのではなく、実験の履歴と、これまでの失敗の経緯までも自ら記憶し続ける、持続するAIの研究チームです。約6か月間、休むことなく稼働を続けたこのAI集団は、データを捏造しないという制約を自らに課すことで、実在しない結果を思い込んでしまう失敗の割合を、91.7%からゼロにまで減らすことに成功しました。既存のチャット型AIのように、一回きりの会話で忘れてしまうのではなく、失敗の記憶を積み重ねながら、自分自身を修正し続けていったのです。",
+      "image_prompt": "Inside a research server room in the United States, a different unnamed Western/Caucasian female researcher in a white lab coat reviewing a tablet showing an abstract flowing timeline of small connected node icons (no readable text or numerals), banks of quietly humming server racks with soft indicator lights in the background, bright daytime lighting through a window, a small flat corner graphic showing a simple circular ring mostly filled with color shrinking to almost empty, tucked in a corner no larger than one eighth of the frame, plain and flat in contrast to the main scene, absolutely no text or numerals anywhere, no protagonist.",
+      "ken_burns": "pan_zoom_out"
+    },
+    {
+      "scene_id": 10,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 12,
+      "narration": "6か月のあいだに積み重ねた組織としての知識によって、独自のベンチマークでの性能は、44%からおよそ90%にまで向上しました。そして、この持続する研究チームが自律的に生み出した仮説は、合わせて43件。その中には、希少な難病に向けた薬剤の設計案も含まれていました。一度きりの会話で完結してしまう従来の生成AIとは違い、眠ることなく学び続けるチームだからこそ、たどり着けた成果です。人間の研究者が休んでいる間も、AIのチームは仮説を立て、検証し、失敗を記録しては、また次の一歩へとつなげていきます。まだ実際に新しい薬として患者のもとに届くまでには、これから多くの検証を重ねる必要がある、研究段階の一歩です。",
+      "image_prompt": "A different unnamed Western/Caucasian male researcher in a white lab coat in a research lab in the United States, examining printed pages showing abstract molecular structure diagrams and simple flowchart shapes spread across a desk (no readable text or numerals on the pages, just abstract diagram shapes), bright daytime lighting through windows, a small flat corner graphic showing a simple bar rising higher than a shorter reference bar beside it, tucked in a corner no larger than one eighth of the frame, plain and flat, absolutely no text or numerals anywhere, no protagonist.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 11,
+      "type": "data",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 10,
+      "narration": "実際の数値を見ると、実在しない結果を思い込んでしまう失敗の割合は、開始時から半年後にかけて大きく下がりました。同時に、独自のベンチマークでの性能は、開始時に比べて半年後には大きく伸びています。時間をかけて経験を積み重ねるほど、このAIチームが自ら賢くなっていったことを、このデータは示しています。",
+      "image_prompt": "Clean flat infographic comparison bar chart, no title, no header, no footer caption, no decorative background pattern. One single uniform plain off-white background color filling the entire canvas edge to edge. The chart fills the whole canvas with only a small even margin on all four sides. Two groups of bars standing side by side on one single shared baseline. Each group has a title label directly above it, reading exactly 「妄想による失敗の割合」 for the left group and 「独自ベンチマーク性能」 for the right group. Each group contains exactly two bars, each labeled directly below it: the left bar of every group labeled 「開始時」 and the right bar of every group labeled 「半年後」 — reuse these exact same two bar labels under both groups. In the left group (妄想による失敗の割合), the 半年後 bar is dramatically shorter than the 開始時 bar, almost disappearing. In the right group (独自ベンチマーク性能), the 半年後 bar is clearly and dramatically taller than the 開始時 bar. Cool deep blue/teal color for all 開始時 bars, one warm coral/orange color for all 半年後 bars. Render only these six exact Japanese text strings (2 group titles + 2 bar labels repeated once per group), each spelled correctly and legibly in a clean sans-serif font — absolutely no other text, no numbers, no axis values, no logos, no icons, no extra caption anywhere in the image. Do not fabricate any numeric values beyond what these labels describe.",
+      "ken_burns": "static"
+    },
+    {
+      "scene_id": 12,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 8,
+      "narration": "もし、こうした研究の先に、ひなたの病気に効く治療のヒントが見つかったら——そんな未来を、窓辺の椅子に座ったまま想像してみました。診察室で先生から、思いがけない言葉を聞かされる、そんな瞬間を。",
+      "image_prompt": "Only ONE single person total in this entire image (do not draw a second body, no duplicate figure): a 38-year-old Japanese woman with shoulder-length dark hair, sitting alone in a small armchair at home by a window, eyes gently closed, a soft hopeful expression, hands resting calmly in her lap. Above and to the side of her head, a classic comic-style thought bubble made of a trail of small circles connecting to a large cloud-shaped bubble floating in the air (a flat 2D graphic overlay, not a physical object). Inside the bubble is a small miniature illustration showing this same woman sitting in a bright clinic exam room, holding her young daughter's hand, while a doctor leans in speaking to them with a hopeful expression. Soft afternoon daylight in the real room (clearly daytime, not night). No text.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 13,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 10,
+      "narration": "先生から、『ひなたちゃんのような珍しい症例にも、AIの研究チームが仮説を立て始めているそうですよ』と聞かされた日のことを、私はきっと一生忘れません。ひなたの小さな手をぎゅっと握りしめながら、『見捨てられていなかったんだ』と、こらえきれずに涙がこぼれました。まだ薬になると決まったわけではない、小さな一歩かもしれません。それでも、その一歩を確かに感じられたことが、何より嬉しかったのです。",
+      "image_prompt": "Full-frame immersive scene, a 38-year-old Japanese woman with shoulder-length dark hair sitting in a bright clinic exam room, holding her 8-year-old daughter's small hand tightly with both hands, warm relieved tears in her eyes and a trembling grateful smile, a Japanese doctor in a white coat sitting nearby leaning in with a gentle encouraging smile, soft daytime light through a clinic window, no text.",
+      "ken_burns": "pan_zoom_out",
+      "badge_text": "幸せな未来を夢想中"
+    },
+    {
+      "scene_id": 14,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 10,
+      "narration": "休みの日、図書館の絵本コーナーでひなたと並んで座り、お気に入りの一冊を一緒に読みます。数か月前までは、その何気ない時間さえ、明日への不安に押しつぶされそうになっていました。今は、ページをめくるひなたの笑い声を聞きながら、この子の未来にも、ちゃんと光が差し込んでいるのだと、静かに信じられるようになりました。",
+      "image_prompt": "Full-frame immersive scene, the same 38-year-old Japanese woman with shoulder-length dark hair sitting together with her 8-year-old daughter on a small bench in a library picture-book corner, the daughter laughing brightly at an open picture book, the mother smiling warmly beside her with an arm around her shoulder, soft daytime light through large library windows, no text.",
+      "ken_burns": "zoom_out",
+      "badge_text": "幸せな未来を夢想中"
+    },
+    {
+      "scene_id": 15,
+      "type": "closing",
+      "narrator": "research",
+      "duration_seconds": 16,
+      "narration": "このAI研究チームは、まだ研究段階の取り組みであり、実際に新しい薬として患者のもとに届くまでには、これから多くの検証を重ねる必要があります。それでも、患者数があまりに少ないという理由だけで置き去りにされてきた難病に、休むことなく向き合い続けるAIの存在は、これまでにはなかった希望の形を示しています。人間の研究者が一人で向き合うには限りある時間の中で、AIのチームは休むことなく仮説を積み重ね続けることができる——それこそが、この研究が示した新しい可能性です。誰かに見捨てられていると感じている人にも、確かに光を当ててくれる研究がある——この研究の詳細が知りたい方は、概要欄をご確認ください。次はどんな研究が、誰かの幸せな未来を運んでくるのでしょうか。その瞬間をこれからも一緒に見つけていきたい方は、ぜひチャンネル登録してお待ちください。",
+      "image_prompt": "Wide shot of a quiet research server room in the United States in the early morning, rows of server racks with soft blue and warm amber indicator lights glowing steadily, a faint warm dawn light beginning to come through a window at the far end of the room (clearly transitioning from night to morning, suggesting continuous overnight work), no people, no text.",
+      "ken_burns": "pan_zoom_out"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "face_hook_image_prompt": "Extreme close-up vertical 9:16 portrait of a 38-year-old Japanese woman with shoulder-length dark hair, her face filling most of the frame with an expression of overwhelming relieved joy, tears of happiness welling in her eyes and a warm trembling smile, soft warm indoor lighting, no text.",
+      "scenes": [
+        {
+          "narrator": "persona",
+          "narration": "娘の病気は珍しすぎて、薬を作る会社が現れませんでした",
+          "scene_id": 7
+        },
+        {
+          "narrator": "research",
+          "narration": "見つかったのは、半年間眠らず学び続けるAIの研究チーム",
+          "scene_id": 9
+        },
+        {
+          "narrator": "research",
+          "narration": "失敗の割合はほぼゼロに、性能は44%から90%に向上",
+          "scene_id": 11
+        },
+        {
+          "narrator": "persona",
+          "narration": "「見捨てられていなかった」——涙がこぼれました",
+          "scene_id": 13
+        },
+        {
+          "narrator": "persona",
+          "narration": "娘の笑い声に、未来への光を感じています",
+          "scene_id": 14
+        },
+        {
+          "narrator": "research",
+          "narration": "続きは本編で。幸せな未来のサイエンス、チャンネル登録もぜひ",
+          "scene_id": 15
+        }
+      ]
+    }
+  ]
+}
