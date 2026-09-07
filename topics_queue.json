@@ -738,8 +738,53 @@
         "market_status": "novel",
         "novel_delta": "患者と理学療法士がそれぞれ外骨格を装着し、仮想的なバネ・ダンパで互いの下肢を連結することで、療法士の自然な足の動きを直感的に患者へ伝えつつ、患者の筋の突っ張りや抵抗をリアルタイムの力覚として療法士が感じ取りながら歩行を同期・再学習できる点。"
       }
+    },
+    {
+      "episode_id": "kl017",
+      "status": "confirmed",
+      "title": "見捨てられていなかった：半年間眠らず働き続けたAI研究チームが見つけた希少難病の光",
+      "format": "single_paper",
+      "category": "work",
+      "category_label": "働き方の変化",
+      "references": [
+        {
+          "title": "A Persistent Fleet of AI Scientists Exhibits Cooperative and Autopoietic Behavior",
+          "authors": [
+            "Milit S. Patel",
+            "W. Wierson",
+            "S. C. Ekker"
+          ],
+          "year": 2026,
+          "venue": "bioRxiv",
+          "doi": "10.64898/2026.08.16.745122",
+          "url": "https://doi.org/10.64898/2026.08.16.745122",
+          "is_preprint": true,
+          "lead_researcher": "Stephen C. Ekker（Mayo Clinic / UViiVE Inc.、米国）、Milit S. Patel（UViiVE Inc.共同創業者）"
+        }
+      ],
+      "protagonist": {
+        "name": "松本遥",
+        "age": 38,
+        "job": "希少難病を抱える小学生の娘を持つ、図書館司書",
+        "gender": "female"
+      },
+      "hook_idea": "患者数が少なすぎて誰も薬を作ってくれない——そんな見落とされてきた難病の光を、半年間眠らず研究し続けた「AIのチーム」が見つけ出しました。",
+      "notes": "STAGE0: 6カテゴリとも在庫3件以上（medical_support143/work78/disaster_safety37/home_robot29/mobility29/aging_care17件）のためSTAGE1新規収集は全カテゴリスキップ。kl_shortlist_rescore.py --checkで再採点対象0件を確認済み（全件stage4_version=2026-09-06-wonder）。STAGE2では直前kl016がmedical_support、kl015がmobilityといずれも連続カテゴリになるためこの2つは見送り、home_robot（在庫上位は片付けロボット系クラスタ、overall 3.6のGrounding Multimodal LLMs論文が最有力）とwork（AI Scientist系クラスタ）を軸に提示。aging_careは直近利用がkl005と11話前でローテーション上は最優先だが、在庫の質が弱く（最高でもoverall 2.85、ほとんどがincremental/existing_product）、ユーザーの判断で今回は見送り、workの本候補を採用。kl012（オフィス業務でのAIチームワーク）とはテーマが「複数AIエージェントの協調」という点で重なるが、あちらが業務効率化であるのに対し、本作は科学研究・創薬を半年間自律継続するバックエンド技術であり構図は異なる（deja_vu_noteでも同様の判定）。希少疾患の子を持つ母親という強い感情軸を持つストーリーで、overall 3.2（wonder_score 3, transformation_score 4）。論文はbioRxivプレプリント（査読前）のため、ナレーションでは「まだ研究段階」等の一般的な表現でヘッジし、概要欄で査読前である旨を開示する。発表元は米国Mayo Clinic（Stephen C. Ekker）およびスタートアップUViiVE Inc.（Milit S. Patel共同創業）。",
+      "stage4_snapshot": {
+        "paperId": "40fdbc5cc9fbd2460dea81c9e5d809745aae2cbb",
+        "overall_score": 3.2,
+        "score_breakdown": {
+          "wonder_score": 3,
+          "transformation_score": 4,
+          "life_relevance_score": 2,
+          "surprise_score": 4,
+          "persona_fit_score": 3
+        },
+        "market_status": "novel",
+        "novel_delta": "AIが単発の指示処理で終わらず、半年間にわたり実験履歴と失敗の来歴を自己修正・蓄積しながら、忘れ去られがちな難病の治療法などの仮説検証を自律的に深め続けられる点。"
+      }
     }
   ],
-  "total_topics": 16,
-  "last_updated": "2026-09-07"
+  "total_topics": 17,
+  "last_updated": "2026-09-08"
 }
