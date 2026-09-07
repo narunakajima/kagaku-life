@@ -91,12 +91,30 @@ def _play_button(src: str, label: str, button_text: str) -> str:
     )
 
 
+def regen_controls(card_id: str, allow_narration: bool = True) -> str:
+    """画像/ナレーションの再生成チェックボックス+理由欄。ページ下部の
+    コピー ボタンを押すとチェック済み項目だけをクリップボードにコピーし、
+    Claudeのデスクトップアプリに貼り付けて再生成を依頼する運用
+    （サーバーを立てずに済ませるための設計、2026-09-07）。"""
+    narration_checkbox = (
+        '<label><input type="checkbox" class="regen-narration"> ナレーションを再生成</label>'
+        if allow_narration else ""
+    )
+    return f"""
+        <div class="regen-controls">
+          <label><input type="checkbox" class="regen-image"> 画像を再生成</label>
+          {narration_checkbox}
+          <input type="text" class="regen-reason" placeholder="理由（例: 時間帯が夜になっている）">
+        </div>
+    """
+
+
 def shorts_tile(label: str, sid_label: str, narration: str, img_rel: str,
-                 audio_rel: str = None) -> str:
+                 audio_rel: str = None, card_id: str = None) -> str:
     """Shorts用の横並びタイル（顔アップフック含めて全て同じ幅・同じ見た目に
     揃える。samurai-chroniclesのsc_scene_review.py `.shorts-tile` と統一、
     2026-09-06〜）。audio_relが無い場合（顔アップフックは無音カットのため）は
-    再生ボタンを出さない。"""
+    再生ボタンを出さない（ナレーション再生成チェックボックスも同様に省く）。"""
     play_row = ""
     if audio_rel:
         play_row = (
@@ -105,25 +123,26 @@ def shorts_tile(label: str, sid_label: str, narration: str, img_rel: str,
             + "</div>"
         )
     return f"""
-    <div class="shorts-tile">
+    <div class="shorts-tile" data-card-id="{html.escape(card_id or sid_label)}">
       <img src="{html.escape(img_rel)}" loading="lazy" alt="{html.escape(sid_label)}">
       <div class="shorts-tile-label">{html.escape(label)} {html.escape(sid_label)}</div>
       <p class="shorts-tile-narration">{html.escape(narration)}</p>
       {play_row}
+      {regen_controls(card_id or sid_label, allow_narration=bool(audio_rel))}
     </div>
     """
 
 
 def scene_card(kind: str, sid: int, type_label: str, narrator: str, narration: str,
                img_rel: str, audio_rel: str, extra: str = "", bgm_role: str = None,
-               bgm_uri: str = None, layout: str = "main") -> str:
+               bgm_uri: str = None, layout: str = "main", card_id: str = None) -> str:
     sid_label = f"S{sid:02d}"
     buttons = [_play_button(audio_rel, f"{sid_label} ナレーション", "▶ ナレーション再生")]
     if bgm_role and bgm_uri:
         buttons.append(_play_button(bgm_uri, f"BGM:{bgm_role}", f"▶ BGM:{bgm_role} 再生"))
     play_row = f'<div class="play-row">{"".join(buttons)}</div>'
     return f"""
-    <section class="card layout-{layout}">
+    <section class="card layout-{layout}" data-card-id="{html.escape(card_id or sid_label)}">
       <div class="meta">
         <span class="badge badge-{kind}">{html.escape(kind)}</span>
         <span class="sid">{sid_label}</span>
@@ -136,6 +155,7 @@ def scene_card(kind: str, sid: int, type_label: str, narrator: str, narration: s
         <div class="text-col">
           <p class="narration">{html.escape(narration)}</p>
           {play_row}
+          {regen_controls(card_id or sid_label)}
         </div>
       </div>
     </section>
@@ -159,13 +179,14 @@ def main():
     thumb_path = DESKTOP_DIR / "images" / "thumbnail.png"
     if thumb_path.exists():
         cards.append(f"""
-        <section class="card thumb-card layout-thumb">
+        <section class="card thumb-card layout-thumb" data-card-id="サムネイル">
           <div class="meta"><span class="badge badge-thumb">サムネイル</span></div>
           <div class="body">
             <img src="images/thumbnail.png" alt="thumbnail">
             <div class="text-col">
               <p class="narration">{html.escape(ep.get('thumbnail_headline', ''))}</p>
               <p class="narration sub">{html.escape(ep.get('thumbnail_subcopy', ''))}</p>
+              {regen_controls("サムネイル", allow_narration=False)}
             </div>
           </div>
         </section>
@@ -186,6 +207,7 @@ def main():
             tiles.append(shorts_tile(
                 f"Shorts{mid}", "S00（顔アップ）", " / ".join(hook_lines),
                 f"images/shorts{mid}_S00_face.png",
+                card_id=f"Shorts{mid} S00",
             ))
 
         for i, s in enumerate(shorts["scenes"], start=1):
@@ -193,6 +215,7 @@ def main():
                 f"Shorts{mid}", f"S{i:02d}", s["narration"],
                 f"images/shorts{mid}_S{i:02d}.png",
                 f"narration/shorts{mid}_S{i:02d}.wav",
+                card_id=f"Shorts{mid} S{i:02d}",
             ))
 
         cards.append(f'<div class="shorts-strip">{"".join(tiles)}</div>')
@@ -204,7 +227,7 @@ def main():
         cards.append(scene_card(
             "本編", sid, TYPE_LABEL.get(scene["type"], scene["type"]), scene["narrator"],
             scene["narration"], f"images/S{sid:02d}.png", f"narration/S{sid:02d}.wav",
-            bgm_role=bgm_role, bgm_uri=bgm_uri, layout="main",
+            bgm_role=bgm_role, bgm_uri=bgm_uri, layout="main", card_id=f"本編 S{sid:02d}",
         ))
 
     html_doc = f"""<!doctype html>
@@ -263,11 +286,37 @@ def main():
   }}
   #media-player-label {{ font-size: 12px; color: #9aa5b1; white-space: nowrap; flex-shrink: 0; }}
   #media-player {{ flex: 1; width: 100%; }}
+  .regen-controls {{
+    display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+    margin-top: 10px; padding-top: 10px; border-top: 1px dashed #3a4453;
+    font-size: 13px; color: #cdd5df;
+  }}
+  .shorts-tile .regen-controls {{ font-size: 11px; gap: 8px; }}
+  .regen-controls label {{ display: flex; gap: 5px; align-items: center; cursor: pointer; white-space: nowrap; }}
+  .regen-reason {{
+    flex: 1; min-width: 120px; background: #1a1f27; border: 1px solid #3a4453;
+    border-radius: 6px; color: #eee; font-size: 13px; padding: 5px 8px;
+  }}
+  #regen-panel {{
+    position: fixed; right: 20px; bottom: 76px; z-index: 11;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
+  }}
+  #regen-copy-btn {{
+    font-size: 14px; font-weight: 600; padding: 10px 18px; border-radius: 8px;
+    border: none; background: #a86b1f; color: #fff; cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }}
+  #regen-copy-btn:hover {{ background: #c17c22; }}
+  #regen-status {{ font-size: 12px; color: #cdd5df; background: #11151b; padding: 4px 10px; border-radius: 6px; }}
 </style>
 </head>
 <body>
 <h1>{html.escape(ep.get('episode_title', args.episode))}（{html.escape(args.episode)}）— 画像+ナレーション確認</h1>
 {''.join(cards)}
+<div id="regen-panel">
+  <span id="regen-status" hidden></span>
+  <button type="button" id="regen-copy-btn">📋 再生成リクエストをコピー</button>
+</div>
 <div id="media-player-bar">
   <span id="media-player-label">未選択</span>
   <audio id="media-player" controls preload="none"></audio>
@@ -304,6 +353,57 @@ def main():
     }});
   }});
   player.addEventListener('ended', clearPlayingState);
+
+  // 再生成リクエストの収集・コピー。チェックした画像/ナレーションと理由を
+  // まとめてクリップボードに書き込み、Claudeのデスクトップアプリ側チャットに
+  // 貼り付けてもらう運用（サーバーを立てずに済ませるための設計、2026-09-07）。
+  const regenStatus = document.getElementById('regen-status');
+  function showRegenStatus(text) {{
+    regenStatus.textContent = text;
+    regenStatus.hidden = false;
+  }}
+  function copyText(text) {{
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    let ok = false;
+    try {{
+      ok = document.execCommand('copy');
+    }} catch (e) {{
+      ok = false;
+    }}
+    document.body.removeChild(ta);
+    return ok;
+  }}
+  document.getElementById('regen-copy-btn').addEventListener('click', () => {{
+    const lines = [];
+    document.querySelectorAll('[data-card-id]').forEach(card => {{
+      const imgBox = card.querySelector('.regen-image');
+      const narBox = card.querySelector('.regen-narration');
+      const imgChecked = imgBox && imgBox.checked;
+      const narChecked = narBox && narBox.checked;
+      if (!imgChecked && !narChecked) return;
+      const targets = [];
+      if (imgChecked) targets.push('画像');
+      if (narChecked) targets.push('ナレーション');
+      const reasonBox = card.querySelector('.regen-reason');
+      const reason = (reasonBox && reasonBox.value.trim()) || '(未記入)';
+      lines.push(`- ${{card.dataset.cardId}}: ${{targets.join('・')}}再生成 / 理由: ${{reason}}`);
+    }});
+    if (lines.length === 0) {{
+      showRegenStatus('チェックされた項目がありません');
+      return;
+    }}
+    const text = `【{html.escape(args.episode)} 再生成リクエスト】\\n` + lines.join('\\n');
+    if (copyText(text)) {{
+      showRegenStatus(`✅ ${{lines.length}}件をコピーしました。Claudeに貼り付けてください`);
+    }} else {{
+      showRegenStatus('❌ コピーに失敗しました');
+    }}
+  }});
 </script>
 </body>
 </html>
