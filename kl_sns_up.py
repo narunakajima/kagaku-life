@@ -180,12 +180,24 @@ def parse_publish_at(publish_at_str: str) -> str:
 
 def upload_video(youtube, video_path: Path, title: str, description: str,
                  tags: list, publish_at: Optional[str] = None) -> str:
+    # 2026-09-08追加（samurai-chroniclesのFable監査対応を移植）:
+    # selfDeclaredMadeForKids・containsSyntheticMediaは従来チャンネル既定値に
+    # 依存しており明示送信していなかった。KLは全編AI生成の画像・ナレーション・
+    # 動画のため、YouTubeの合成/改変コンテンツ開示要件の対象になりうる。
+    # containsSyntheticMediaはあくまで動画下部にラベルが付くだけで、概要欄本文に
+    # 「AI」等の文言を書く義務は生じない。
     if publish_at:
         publish_at_rfc = parse_publish_at(publish_at)
-        status_body = {"privacyStatus": "private", "publishAt": publish_at_rfc}
+        status_body = {
+            "privacyStatus": "private", "publishAt": publish_at_rfc,
+            "selfDeclaredMadeForKids": False, "containsSyntheticMedia": True,
+        }
         print(f"  アップロード中（予約公開: {publish_at}）: {video_path.name} ...")
     else:
-        status_body = {"privacyStatus": "public"}
+        status_body = {
+            "privacyStatus": "public",
+            "selfDeclaredMadeForKids": False, "containsSyntheticMedia": True,
+        }
         print(f"  アップロード中: {video_path.name} ...")
 
     req = youtube.videos().insert(
@@ -197,6 +209,7 @@ def upload_video(youtube, video_path: Path, title: str, description: str,
                 "tags": tags,
                 "categoryId": "28",  # Science & Technology
                 "defaultLanguage": "ja",
+                "defaultAudioLanguage": "ja",
             },
             "status": status_body,
         },

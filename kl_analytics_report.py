@@ -19,12 +19,26 @@ import glob
 import json
 import re
 from collections import defaultdict
+from datetime import date, datetime
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent
 RAW = BASE / "analytics" / "raw"
 EPISODES_DIR = BASE / "episodes"
 TOPICS_QUEUE_JSON = BASE / "topics_queue.json"
+
+# カテゴリ別ロールアップの「経過日数バイアス」対策（2026-09-08追加）。
+# samurai-chroniclesのOpus監査で「累積CTR/維持率の比較は公開時期の違いに
+# よるバイアスを検出できない設計だった」と判明した教訓の移植。全期間の
+# 累積値をそのまま比較すると、たまたま古い話が多いカテゴリが有利になる
+# ため、公開後AGE_WINDOW_DAYS日分だけを切り出して比較する。
+AGE_WINDOW_DAYS = 14
+# カテゴリロールアップで数値をそのまま信頼してよいとみなす最小該当話数。
+# 未満の場合は数値自体は出しつつ「n不足」の注記を付ける
+# （samurai-chroniclesのn<6「測定不能」表示の教訓の移植。KLはまだ話数が
+# 少なくカテゴリ当たりのnがSCの閾値では厳しすぎるため、KLの規模に合わせて
+# 下げている）。
+MIN_CATEGORY_N = 3
 
 TRAFFIC_SRC_NAMES = {
     "0": "YT検索", "1": "関連動画", "3": "外部", "4": "直接/不明",
@@ -65,11 +79,20 @@ def load_episode_map():
         title = d.get("youtube_title") or d.get("episode_title", "")
         category, category_label = cat_map.get(eid, (None, None))
 
+        publish_date = None
+        scheduled_at = d.get("scheduled_at") or ""
+        if scheduled_at:
+            try:
+                publish_date = datetime.strptime(scheduled_at.split(" ")[0], "%Y-%m-%d").date()
+            except ValueError:
+                publish_date = None
+
         main_vid = video_id(d.get("youtube_url", ""))
         if main_vid:
             vid_info[main_vid] = {
                 "ep": eid, "title": title, "is_shorts": False,
                 "category": category, "category_label": category_label,
+                "publish_date": publish_date,
             }
 
         shorts_vid = video_id(d.get("shorts_url", ""))
@@ -77,12 +100,52 @@ def load_episode_map():
             vid_info[shorts_vid] = {
                 "ep": eid, "title": f"{title}（Shorts）", "is_shorts": True,
                 "category": category, "category_label": category_label,
+                "publish_date": publish_date,
             }
 
     return vid_info
 
 
-def aggregate(vid_info, ep_filter=None):
+def _latest_data_date() -> date:
+    """ダウンロード済みCSVのうち一番新しい日付（ファイル名がYYYY-MM-DD）。
+    age-adjusted集計で「測定窓が完了しているか」を判定する基準に使う。"""
+    dates = []
+    for path in glob.glob(str(RAW / "kl-channel_combined_a3" / "*.csv")):
+        try:
+            dates.append(datetime.strptime(Path(path).stem, "%Y-%m-%d").date())
+        except ValueError:
+            continue
+    return max(dates) if dates else date.today()
+
+
+def aggregate(vid_info, ep_filter=None, age_window_days=None):
+    """age_window_days を指定すると、各動画の公開日から window 日分だけを
+    切り出して集計する（経過日数バイアス対策、CLAUDE.md/kl_analytics_report.py
+    コメント参照）。公開日が不明、または最新データがまだ window 日分
+    経過していない（測定窓が未完了の）動画は結果から除外する。
+    """
+    latest_date = _latest_data_date() if age_window_days else None
+
+    def in_window(vid, row_date_str):
+        if age_window_days is None:
+            return True
+        publish_date = vid_info.get(vid, {}).get("publish_date")
+        if publish_date is None:
+            return False
+        try:
+            row_date = datetime.strptime(row_date_str, "%Y-%m-%d").date()
+        except ValueError:
+            return False
+        return 0 <= (row_date - publish_date).days < age_window_days
+
+    def window_complete(vid):
+        if age_window_days is None:
+            return True
+        publish_date = vid_info.get(vid, {}).get("publish_date")
+        if publish_date is None:
+            return False
+        return (latest_date - publish_date).days >= age_window_days
+
     video_stats = defaultdict(lambda: {
         "views": 0, "watch_time_minutes": 0.0, "engaged_views": 0,
         "avg_dur_sum": 0.0, "avg_dur_pct_sum": 0.0,
@@ -92,6 +155,8 @@ def aggregate(vid_info, ep_filter=None):
             for row in csv.DictReader(f):
                 vid = row["video_id"]
                 if ep_filter and not ep_filter(vid_info.get(vid, {}).get("ep")):
+                    continue
+                if not in_window(vid, row["date"]):
                     continue
                 s = video_stats[vid]
                 views = int(row["views"])
@@ -108,6 +173,8 @@ def aggregate(vid_info, ep_filter=None):
                 vid = row["video_id"]
                 if ep_filter and not ep_filter(vid_info.get(vid, {}).get("ep")):
                     continue
+                if not in_window(vid, row["date"]):
+                    continue
                 imp = int(row["video_thumbnail_impressions"])
                 ctr = float(row["video_thumbnail_impressions_ctr"])
                 r = reach_stats[vid]
@@ -121,11 +188,15 @@ def aggregate(vid_info, ep_filter=None):
                 vid = row["video_id"]
                 if ep_filter and not ep_filter(vid_info.get(vid, {}).get("ep")):
                     continue
+                if not in_window(vid, row["date"]):
+                    continue
                 traffic_stats[vid][row["traffic_source_type"]] += int(row["views"])
 
     rows = []
     for vid, s in video_stats.items():
         if s["views"] == 0:
+            continue
+        if not window_complete(vid):
             continue
         info = vid_info.get(vid, {})
         avg_dur = s["avg_dur_sum"] / s["views"]
@@ -152,7 +223,7 @@ def aggregate(vid_info, ep_filter=None):
     return rows, traffic_stats
 
 
-def print_report(rows, traffic_stats, label):
+def print_report(rows, traffic_stats, label, rows_age_adjusted=None):
     print(f"\n{'='*95}\n{label}\n{'='*95}")
     print(f"{'EP':<8}{'Views':>7}{'視聴分':>9}{'平均秒':>8}{'維持率%':>9}{'完了率%':>9}{'imp':>7}{'CTR%':>7}  Title")
     for r in rows:
@@ -176,9 +247,14 @@ def print_report(rows, traffic_stats, label):
         for r in sorted(rows, key=lambda x: x["avg_dur_pct"])[:5]:
             print(f"  {r['ep']} {r['avg_dur_pct']}% ({r['views']}views) {r['title'][:35]}")
 
-    # カテゴリ別ロールアップ（本編のみ対象。Shortsはカテゴリ判断のノイズになりやすいため除外）
+    # カテゴリ別ロールアップ（本編のみ対象。Shortsはカテゴリ判断のノイズになりやすいため除外）。
+    # 全期間の累積値ではなく、公開後AGE_WINDOW_DAYS日分だけを切り出したage-adjusted
+    # 集計を使う（samurai-chroniclesのOpus監査で「累積比較は公開時期の違いによる
+    # バイアスを検出できない」と判明した教訓の移植、2026-09-08）。measurement窓が
+    # 完了していない直近公開分は aggregate() 側で既に除外済み。
+    adj_rows = rows_age_adjusted if rows_age_adjusted is not None else rows
     cat_totals = defaultdict(lambda: {"views": 0, "watch_time_min": 0.0, "retention_sum": 0.0, "n": 0, "impressions": 0, "ctr_sum": 0.0})
-    for r in rows:
+    for r in adj_rows:
         if r["is_shorts"] or not r["category_label"]:
             continue
         c = cat_totals[r["category_label"]]
@@ -189,13 +265,23 @@ def print_report(rows, traffic_stats, label):
         c["impressions"] += r["impressions"]
         c["ctr_sum"] += r["ctr_pct"] * r["impressions"]
 
-    if cat_totals:
-        print("\n--- カテゴリ別ロールアップ（本編のみ、STAGE1 weight見直しの参考用） ---")
-        print(f"{'カテゴリ':<22}{'話数':>5}{'総再生数':>9}{'総視聴分':>9}{'平均維持率%':>12}{'平均CTR%':>10}")
-        for label, c in sorted(cat_totals.items(), key=lambda x: -x[1]["views"]):
-            avg_ret = c["retention_sum"] / c["n"] if c["n"] else 0
-            avg_ctr = (c["ctr_sum"] / c["impressions"]) if c["impressions"] else 0
-            print(f"{label:<22}{c['n']:>5}{c['views']:>9}{c['watch_time_min']:>9.1f}{avg_ret:>12.1f}{avg_ctr:>10.2f}")
+    categorized_eps = {r["ep"] for r in rows if not r["is_shorts"] and r["category_label"]}
+    adj_eps = {r["ep"] for r in adj_rows if not r["is_shorts"] and r["category_label"]}
+    excluded_n = len(categorized_eps - adj_eps)
+
+    if categorized_eps:
+        print(f"\n--- カテゴリ別ロールアップ（本編のみ、公開後{AGE_WINDOW_DAYS}日間で正規化、STAGE1 weight見直しの参考用） ---")
+        if excluded_n:
+            print(f"（公開日不明、または公開後まだ{AGE_WINDOW_DAYS}日経っていない{excluded_n}話は測定窓未完了のため除外）")
+        if not cat_totals:
+            print("（測定窓が完了した話が無いため、まだ算出できません。analytics/raw/を再ダウンロードして日数が経つのを待ってください）")
+        else:
+            print(f"{'カテゴリ':<22}{'話数':>5}{'再生数':>9}{'視聴分':>9}{'平均維持率%':>12}{'平均CTR%':>10}")
+            for label, c in sorted(cat_totals.items(), key=lambda x: -x[1]["views"]):
+                avg_ret = c["retention_sum"] / c["n"] if c["n"] else 0
+                avg_ctr = (c["ctr_sum"] / c["impressions"]) if c["impressions"] else 0
+                n_note = "  ※n不足のため参考程度" if c["n"] < MIN_CATEGORY_N else ""
+                print(f"{label:<22}{c['n']:>5}{c['views']:>9}{c['watch_time_min']:>9.1f}{avg_ret:>12.1f}{avg_ctr:>10.2f}{n_note}")
 
     src_total = defaultdict(int)
     for vid, d in traffic_stats.items():
@@ -242,7 +328,8 @@ def main():
         label = "全期間"
 
     rows, traffic_stats = aggregate(vid_info, ep_filter)
-    print_report(rows, traffic_stats, label)
+    rows_age_adjusted, _ = aggregate(vid_info, ep_filter, age_window_days=AGE_WINDOW_DAYS)
+    print_report(rows, traffic_stats, label, rows_age_adjusted=rows_age_adjusted)
 
 
 if __name__ == "__main__":
