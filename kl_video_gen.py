@@ -458,6 +458,43 @@ def _fit_font_size(text: str, font_path: Path, max_size: int, max_width: int, mi
     return min_size
 
 
+def _fit_or_wrap_shorts_telop(text: str, font_path: Path, max_size: int, max_width: int,
+                               min_size: int = 32) -> tuple:
+    """Shortsのテロップは横幅が本編の約半分（768px）しかなく、_fit_font_sizeの
+    フロア(min_size)まで縮小しても1行に収まらない長いナレーション文で画面端から
+    はみ出す事故が実際に発生した（2026-09-08、kl017 shorts1_S01で発覚）。
+    1行でmin_sizeでも収まらない場合のみ、句読点に近い位置で2行に折り返す
+    （drawtextの改行はテキストファイル中の実改行で表現できる）。
+    戻り値: (drawtextに渡すテキスト, フォントサイズ)。
+    """
+    size = max_size
+    while size >= min_size:
+        font = ImageFont.truetype(str(font_path), size)
+        if font.getbbox(text)[2] <= max_width:
+            return text, size
+        size -= 4
+    # min_sizeでも1行に収まらない → 句読点に近い位置で2行に分割
+    mid = len(text) // 2
+    best = None
+    for i, ch in enumerate(text):
+        if ch in "、。！？":
+            if best is None or abs((i + 1) - mid) < abs(best - mid):
+                best = i + 1
+    if not best or best <= 0 or best >= len(text):
+        best = mid
+    line1, line2 = text[:best], text[best:]
+    longer = line1 if len(line1) >= len(line2) else line2
+    size = max_size
+    while size > min_size:
+        font = ImageFont.truetype(str(font_path), size)
+        if font.getbbox(longer)[2] <= max_width:
+            break
+        size -= 4
+    else:
+        size = min_size
+    return f"{line1}\n{line2}", size
+
+
 def burn_telop_global(video: Path, all_scenes: list, all_offsets: list, all_durs: list, dst: Path, tmp: Path):
     """全シーンのtelop_cards（シーン内相対時刻）にシーンのグローバルオフセットを加算し、
     動画全体にdrawtextで焼き込む（kl_telop_gen.pyのburn_telopと同じ仕組み）。
@@ -805,14 +842,16 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
             t_start = offset + NARR_DELAY
             t_end = offset + dur
             telop_text = scene.get("telop_text", scene["narration"])
+            wrapped_text, fs = _fit_or_wrap_shorts_telop(
+                telop_text, FONT_REGULAR, SHORTS_TELOP_FONTSIZE, int(SHORTS_W * 0.92)
+            )
             tf = tmp / f"telop_{idx}.txt"
-            tf.write_text(telop_text.replace("\r", ""), encoding="utf-8")
+            tf.write_text(wrapped_text.replace("\r", ""), encoding="utf-8")
             enable = f"between(t\\,{t_start:.2f}\\,{t_end:.2f})"
             out = f"dv{idx}"
-            fs = _fit_font_size(telop_text, FONT_REGULAR, SHORTS_TELOP_FONTSIZE, int(SHORTS_W * 0.92))
             filter_parts.append(
                 f"[{prev}]drawtext=fontfile={font}:textfile={tf}:expansion=none"
-                f":fontcolor=white:fontsize={fs}"
+                f":fontcolor=white:fontsize={fs}:line_spacing=14"
                 f":borderw=7:bordercolor=black@1.0"
                 f":shadowx=2:shadowy=2:shadowcolor=black@0.75"
                 f":x=(w-text_w)/2:y=(h*{SHORTS_TELOP_CENTER_Y}-text_h/2):enable={enable}[{out}]"
