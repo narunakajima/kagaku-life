@@ -133,7 +133,7 @@ def aggregate(vid_info, ep_filter=None, age_window_days=None):
         if publish_date is None:
             return False
         try:
-            row_date = datetime.strptime(row_date_str, "%Y-%m-%d").date()
+            row_date = datetime.strptime(row_date_str, "%Y%m%d").date()
         except ValueError:
             return False
         return 0 <= (row_date - publish_date).days < age_window_days
@@ -221,6 +221,36 @@ def aggregate(vid_info, ep_filter=None, age_window_days=None):
         })
     rows.sort(key=lambda x: -x["views"])
     return rows, traffic_stats
+
+
+def monthly_channel_summary():
+    """チャンネル全体（カテゴリ・エピソードで絞り込まない）の月次インプレッション・
+    再生数。個別カテゴリ/動画の優劣を論じる前に、それがチャンネル全体の構造的な
+    露出増減によるものではないかを切り分けるために使う
+    （samurai-chroniclesのOpus監査で追加されたprint_monthly_channel_summaryの
+    移植、2026-09-08）。--after/--beforeによる期間指定の影響を受けない
+    チャンネル全期間のトレンドを常に表示する。
+    """
+    monthly_impr = defaultdict(int)
+    monthly_views = defaultdict(int)
+    for path in glob.glob(str(RAW / "kl-channel_reach_basic_a1" / "*.csv")):
+        with open(path, encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                monthly_impr[row["date"][:6]] += int(row["video_thumbnail_impressions"])
+    for path in glob.glob(str(RAW / "kl-channel_combined_a3" / "*.csv")):
+        with open(path, encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                monthly_views[row["date"][:6]] += int(row["views"])
+    return monthly_impr, monthly_views
+
+
+def print_monthly_channel_summary():
+    monthly_impr, monthly_views = monthly_channel_summary()
+    print(f"\n{'='*95}\nチャンネル全体 月次露出トレンド（カテゴリ別の優劣より先に確認する前提）\n{'='*95}")
+    for ym in sorted(set(monthly_impr) | set(monthly_views)):
+        impr = monthly_impr.get(ym, 0)
+        views = monthly_views.get(ym, 0)
+        print(f"  {ym[:4]}-{ym[4:]}: インプレッション={impr:,}  再生数={views:,}")
 
 
 def print_report(rows, traffic_stats, label, rows_age_adjusted=None):
@@ -326,6 +356,8 @@ def main():
     else:
         ep_filter = None
         label = "全期間"
+
+    print_monthly_channel_summary()
 
     rows, traffic_stats = aggregate(vid_info, ep_filter)
     rows_age_adjusted, _ = aggregate(vid_info, ep_filter, age_window_days=AGE_WINDOW_DAYS)

@@ -88,8 +88,11 @@ git status --short
 
 ## STEP 5 — topics_queue.json のステータス更新
 
-`topics_queue.json` の該当エントリの `status` を `produced` → `published`（即時公開の場合）
-または `published`（予約公開でも公開自体は確定しているため同様）に更新し、コミット・pushする。
+`kl_sns_up.py` は `run()` 内で `update_topics_queue_status()` を実行し、`youtube_url`書き戻しと
+同じタイミングで `topics_queue.json` の該当エントリの `status` を自動的に `published` に更新する
+（2026-09-08自動化。手順書頼みの手動更新だと実行し忘れても誰も気づかないという教訓から、
+STEP4のコミット自動化と同様にコード側に移した）。該当エントリが見つからない場合はコンソールに
+警告が出るので、その場合のみ手動で確認・更新する。
 
 ## STEP 6 — 公式サイトを再生成する
 

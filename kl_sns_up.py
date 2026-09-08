@@ -237,6 +237,29 @@ def upload_thumbnail(youtube, video_id: str, thumbnail_path: Path):
     print(f"  ✓ サムネイル完了")
 
 
+def update_topics_queue_status(episode_id: str):
+    """topics_queue.json の該当エントリの status を published に更新する。
+    従来は kl-upload.md STEP5 として人間/エージェントが手動で行う手順
+    だったが、samurai-chroniclesの監査で「手順書頼みの記録更新は
+    実行し忘れても誰も気づかない」という教訓が出たため、
+    youtube_url書き戻しと同じタイミングでコード側に移した（2026-09-08）。
+    該当エントリが見つからない場合は警告のみ表示し、処理は継続する。
+    """
+    queue_json = BASE_DIR / "topics_queue.json"
+    if not queue_json.exists():
+        return
+    with open(queue_json, encoding="utf-8") as f:
+        data = json.load(f)
+    for item in data.get("queue", []):
+        if item.get("episode_id") == episode_id:
+            item["status"] = "published"
+            with open(queue_json, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+            print(f"  ✓ topics_queue.json の {episode_id} を published に更新しました")
+            return
+    print(f"  ⚠️  topics_queue.json に {episode_id} のエントリが見つかりません（手動確認してください）")
+
+
 def run(episode_id: str, publish_at: Optional[str] = None, publish_now: bool = False):
     ep_json = BASE_DIR / "episodes" / f"{episode_id}.json"
     if not ep_json.exists():
@@ -308,6 +331,8 @@ def run(episode_id: str, publish_at: Optional[str] = None, publish_now: bool = F
     with open(ep_json, "w", encoding="utf-8") as f:
         json.dump(ep, f, ensure_ascii=False, indent=2)
     print(f"  ✓ {episode_id}.json に youtube_url / shorts_url / scheduled_at を保存しました")
+
+    update_topics_queue_status(episode_id)
 
     print(f"\n{'━'*60}")
     print(f"  ✓ アップロード完了（{publish_label}）")
