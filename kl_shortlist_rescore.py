@@ -40,12 +40,26 @@ kl_paper_interest_score.pyからimportして再利用——プロンプト・重
   非ゼロで終了する。`/kl-new` STAGE0がSTAGE2提示前にこれを実行し、新旧スコアの
   混在したまま候補提示を進めることを防ぐゲートとして使う。
 
+2026-09-09追加（Fable監査）: 既視感判定の鮮度切れ検出。
+- STAGE4の既視感（deja_vu_note/deja_vu_level）は採点時点の公開・企画済み
+  エピソード一覧に対してしか判定されない。その後エピソードが増えても
+  STAGE4_VERSIONは変わらないため、在庫のdeja_vu判定は古いまま上位に残る。
+  実際に在庫全件が2026-09-06に再採点された直後にkl015（義手の触覚再建）が
+  公開されたが、在庫上位の触覚再建論文群（「250 Tactile Edges...」等）の
+  deja_vu_noteはkl009にしか触れておらず、kl015との重複が一切反映されていなかった。
+- 各エントリに採点時の最新エピソードIDを`deja_vu_context_upto`として刻印し、
+  `--check`は「バージョンが古い件数」に加え「既視感判定がその後のエピソードを
+  見ていない件数」も出力する（後者は警告のみで非ゼロ終了の条件にはしない——
+  エピソードが1本増えるたびに在庫全件をGeminiで再採点するのはコストが
+  見合わないため。全件再判定したい場合は`--stale-deja-vu`を明示する）。
+
 使い方:
   python3 kl_shortlist_rescore.py --check                # 再採点が必要な件数を確認するだけ（非ゼロ終了=要再採点）
   python3 kl_shortlist_rescore.py                         # 全カテゴリ、古いバージョンのみ再採点
   python3 kl_shortlist_rescore.py --category aging_care   # 特定カテゴリのみ
   python3 kl_shortlist_rescore.py --limit 5               # カテゴリごと先頭N件のみ（動作確認用）
   python3 kl_shortlist_rescore.py --force                 # 既に最新バージョンのエントリも含め全件再採点
+  python3 kl_shortlist_rescore.py --stale-deja-vu         # 既視感判定が最新エピソードを見ていないエントリも対象に含める
 
 対象は必ず status: "available" のみ（"used"/"rejected" は対象外）。
 """
@@ -66,6 +80,7 @@ from kl_paper_interest_score import (
     BASE_DIR,
     STAGE4_VERSION,
     build_past_episodes_context,
+    latest_known_episode_id,
     overall_score,
     score_paper,
 )
@@ -144,12 +159,24 @@ def fetch_abstracts_batch(paper_ids: list, retries: int = 6) -> dict:
     return result
 
 
-def needs_rescore(entry: dict, force: bool) -> bool:
+def is_deja_vu_stale(entry: dict, latest_episode: str) -> bool:
+    """既視感判定が、その後に増えたエピソードを見ていないか（2026-09-09追加）。
+    `deja_vu_context_upto`が無い（刻印導入前に採点された）エントリも古いとみなす。"""
+    if not latest_episode:
+        return False
+    return (entry.get("deja_vu_context_upto") or "") < latest_episode
+
+
+def needs_rescore(entry: dict, force: bool, stale_deja_vu: bool = False, latest_episode: str = "") -> bool:
     if entry.get("status") != "available":
         return False
     if force:
         return True
-    return entry.get("stage4_version") != STAGE4_VERSION
+    if entry.get("stage4_version") != STAGE4_VERSION:
+        return True
+    if stale_deja_vu and is_deja_vu_stale(entry, latest_episode):
+        return True
+    return False
 
 
 def atomic_write(path, data: dict) -> None:
@@ -169,6 +196,11 @@ def main():
         action="store_true",
         help="再採点が必要な件数を確認して終了する（1件でもあれば非ゼロ終了。/kl-new STAGE0のゲート用）",
     )
+    parser.add_argument(
+        "--stale-deja-vu",
+        action="store_true",
+        help="既視感判定が最新エピソードを見ていない（deja_vu_context_uptoが古い）エントリも再採点対象に含める",
+    )
     args = parser.parse_args()
 
     if not SHORTLIST_PATH.exists():
@@ -179,25 +211,40 @@ def main():
 
     data = json.loads(SHORTLIST_PATH.read_text())
     entries = data["shortlist"]
+    latest_episode = latest_known_episode_id()
 
     targets_by_cat: dict = {}
+    stale_by_cat: dict = {}
     for e in entries:
         if args.category and e.get("category") != args.category:
             continue
-        if needs_rescore(e, args.force):
+        if needs_rescore(e, args.force, args.stale_deja_vu, latest_episode):
             targets_by_cat.setdefault(e.get("category", "unknown"), []).append(e)
+        if e.get("status") == "available" and is_deja_vu_stale(e, latest_episode):
+            stale_by_cat.setdefault(e.get("category", "unknown"), []).append(e)
 
     total = sum(len(v) for v in targets_by_cat.values())
+    stale_total = sum(len(v) for v in stale_by_cat.values())
 
     if args.check:
         print(f"再採点が必要なエントリ: 全{total}件（バージョン: {STAGE4_VERSION}）")
         for cat, lst in targets_by_cat.items():
             print(f"  {cat}: {len(lst)}件")
+        if stale_total:
+            print(
+                f"⚠️ 既視感判定が最新エピソード（{latest_episode}）を見ていないエントリ: 全{stale_total}件"
+                "（警告のみ。上位候補の提示時はdeja_vu_noteが最新の公開回を反映していない前提で読むこと。"
+                "再判定するには --stale-deja-vu を付けて再採点する）"
+            )
+            for cat, lst in stale_by_cat.items():
+                print(f"  {cat}: {len(lst)}件")
         sys.exit(1 if total > 0 else 0)
 
-    print(f"=== 再採点対象: 全{total}件（バージョン: {STAGE4_VERSION}） ===")
+    print(f"=== 再採点対象: 全{total}件（バージョン: {STAGE4_VERSION}、既視感コンテキスト: 〜{latest_episode or '（なし）'}） ===")
     for cat, lst in targets_by_cat.items():
         print(f"  {cat}: {len(lst)}件")
+    if stale_total and not args.stale_deja_vu:
+        print(f"  （参考: 既視感判定が{latest_episode}を見ていないエントリが別途{stale_total}件。--stale-deja-vu で対象に含められる）")
 
     if args.dry_run:
         print("\n--dry-run のためAPI呼び出しは行いません")
@@ -283,9 +330,13 @@ def main():
             }
             entry["market_status"] = verdict.get("market_status", "")
             entry["novel_delta"] = verdict.get("novel_delta", "")
+            entry["behavioral_familiarity"] = verdict.get("behavioral_familiarity", "")
+            entry["behavioral_familiarity_note"] = verdict.get("behavioral_familiarity_note", "")
             entry["demonstrated_capability"] = verdict.get("demonstrated_capability", "")
             entry["future_scene_sketch"] = verdict.get("future_scene_sketch", "")
             entry["deja_vu_note"] = verdict.get("deja_vu_note", "")
+            entry["deja_vu_level"] = verdict.get("deja_vu_level", "")
+            entry["deja_vu_context_upto"] = latest_episode
             if abstract_unavailable:
                 entry["abstract_unavailable"] = True
             if verdict.get("hook_idea"):
@@ -299,7 +350,11 @@ def main():
             tags = []
             if abstract_unavailable:
                 tags.append("abstract取得不可")
-            if entry["deja_vu_note"]:
+            if entry["behavioral_familiarity"] == "familiar":
+                tags.append("振る舞い既知")
+            if entry["deja_vu_level"] in ("strong", "partial"):
+                tags.append(f"既視感{entry['deja_vu_level']}: {entry['deja_vu_note'][:30]}")
+            elif entry["deja_vu_note"]:
                 tags.append(f"既視感: {entry['deja_vu_note'][:30]}")
             tag_str = f" ⚠️{' / '.join(tags)}" if tags else ""
             print(f"  [{old_score} → {score}]{tag_str} {entry.get('title', '')[:55]}")

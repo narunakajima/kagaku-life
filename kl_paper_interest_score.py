@@ -66,10 +66,38 @@ STAGE4参照）。
 
 出力: stage4_ranked.json（全カテゴリ横断でスコア順に並べた候補・上位N件のSTAGE5候補リスト）
 
+2026-09-09改訂（behavioral_familiarity導入と、同日のFable独立監査による拡張）:
+在庫最高点の候補「曖昧な指示にロボットが的確な一点だけ聞き返す」に対し、ユーザーから
+「今どきの生成AIは聞き返すことなど簡単にできる。何の驚きもない」と指摘された。
+`market_status`は「ロボット等の実体化手段が市場にあるか」しか見ておらず、
+「AIの振る舞い自体を視聴者がチャットボット等で既に体験済みか」という別軸の
+既視感（隣接体験による既視感）を誰も見ていなかったのが原因。対処として
+`behavioral_familiarity`（`familiar`/`novel`）を新設し、`familiar`ならwonder_scoreを
+キャップする（プロンプト指示＋`overall_score()`のコード側キャップの二重安全策）。
+同日の監査で以下が追加で判明・修正された:
+(1) 発端の候補は再採点前から既にwonder_score=3で、総合3.6の内訳は
+    transformation=4・life_relevance=5だった。wonder_scoreだけをキャップ(3)しても
+    この候補のスコアは1点も動かず、home_robot 1位のままになる。両スコアとも
+    「`novel_delta`（本当に新しい部分）」を採点対象とする定義であり、その
+    `novel_delta`自体が既知の振る舞いなら変革度も頭打ちのはずなので、
+    transformation_scoreにも同じキャップを適用するよう改めた。
+(2) `deja_vu_note`（話の型の既視感）は自由記述のみで、コード側のキャップが
+    無かった。実際の在庫では上位7件がすべてBCI/神経義肢系で、`deja_vu_note`に
+    kl003/kl007/kl009との重複を自ら明記しながらwonder_score 4〜5をつけていた
+    （プロンプトの「厳しめにつけること」は機能していなかった）。構造化した
+    `deja_vu_level`（`none`/`partial`/`strong`）を出力させ、`strong`なら
+    wonder/transformationをコード側でもキャップする。
+(3) 既視感の判定は採点時点の公開済みエピソード一覧に対してしか行われず、
+    その後エピソードが増えても（STAGE4_VERSIONが変わらない限り）再判定されない。
+    実際に在庫全件が2026-09-06に再採点された後にkl015（義手の触覚再建）が公開
+    されたが、在庫上位の触覚再建論文群の`deja_vu_note`はkl015に一切触れていない。
+    採点時に参照した最新エピソードIDを`deja_vu_context_upto`として刻印し、
+    `kl_shortlist_rescore.py --check`が鮮度切れを警告できるようにした。
+
 このファイルの score_paper() / overall_score() / build_past_episodes_context() /
-STAGE4_VERSION は `kl_shortlist_rescore.py`（在庫の再採点）からもそのまま
-import して使う。プロンプト・重み付けの二重管理を避けるため、採点ロジックの
-変更は必ずこのファイル側で行うこと。
+latest_known_episode_id() / STAGE4_VERSION は `kl_shortlist_rescore.py`
+（在庫の再採点）からもそのまま import して使う。プロンプト・重み付けの
+二重管理を避けるため、採点ロジックの変更は必ずこのファイル側で行うこと。
 """
 
 import argparse
@@ -98,7 +126,7 @@ REQUEST_TIMEOUT_MS = 60_000  # 2026-08追加: タイムアウト未設定で1件
 # 各エントリにはこの値が`stage4_version`として刻印され、STAGE0の在庫チェック時に
 # 現行バージョンと異なるエントリを「再採点が必要な古いスコア」として検出するのに使う
 # （2026-09-06導入。それまでは一度スコアがついた在庫が永久に再採点されない問題があった）。
-STAGE4_VERSION = "2026-09-06-wonder"
+STAGE4_VERSION = "2026-09-09-familiarity-dejavu-caps"
 
 PROMPT_TEMPLATE = """あなたは日本語YouTubeチャンネル「くらしを変える科学」の企画担当です。
 AI・ロボティクス分野の学術論文を一般視聴者向けに解説し、「その研究が生活をどう変えるか」を
@@ -116,13 +144,34 @@ STAGE3での注意点（動画化時に踏まえるべきヘッジ・限界）: 
 
 【ステップ0】**採点前に必ずGoogle検索で「現在すでに市販・実用化されている類似の
 消費者向け製品・サービス」（スマート家電、ロボット掃除機、既存のAIエージェント
-サービス等）を確認すること。** そのうえで以下2つを出力する:
+サービス等）を確認すること。** そのうえで以下を出力する:
 - `market_status`: 次のいずれか1つ — `"existing_product"`（市場に既にほぼ同じ体験の
   製品・サービスがある）／`"incremental"`（既存製品はあるが明確な改善がある）／
   `"novel"`（今の市場には存在しない体験）
 - `novel_delta`: 「今の市場で既に実現していること」と切り分けたうえで、**本当に
   新しい部分だけ**を日本語1文で明記する（`market_status`が`existing_product`の
   場合は「新しい部分はほぼない」等、正直に書くこと。ここで新しさを誇張しない）
+- `behavioral_familiarity`: **`market_status`とは別軸の判定。** `novel_delta`の
+  中核が「AIの振る舞い」（例: 曖昧な指示に的確に聞き返す、要約する、翻訳する、
+  感情を読み取って応答する、雑談相手になる等）である場合、その振る舞い
+  そのものを、**ロボット等の実体化手段とは無関係に**、ChatGPT・Claude・Siri・
+  Alexa等のチャットボットや音声アシスタントを通じて視聴者が既に日常的に
+  体験しているかどうかを判定する。次のいずれか1つ:
+  - `"familiar"`: 振る舞い自体は既に馴染みがある。新しいのは実体化の方法
+    （ロボットの身体に載った等）だけ。**判断基準は「視聴者がスマホの
+    チャット・音声アシスタントで今日すぐに同等の体験を再現できるか」**。
+    再現できるなら`familiar`
+  - `"novel"`: 振る舞い自体が視聴者にとって未知。または`novel_delta`の中核が
+    振る舞いではなく**物理的な能力・身体機能・センシング**（物を掴む・洗濯物を
+    たたむ・歩行を助ける・失った感覚を取り戻す・瓦礫の中を進む等、チャット
+    ボットでは原理的に再現できないもの）である場合も`novel`とする
+  **注意: 研究が内部でLLMを使っているかどうかは無関係。判定対象はあくまで
+  視聴者が体験する側の振る舞い。** また`market_status`が`novel`であっても
+  `familiar`になりうる（例: 「ロボットアームが曖昧な指示に聞き返す」製品は
+  市場に無くても、「AIが曖昧な指示に聞き返す」こと自体はチャットボットで
+  日常的に経験済みのため`familiar`）
+- `behavioral_familiarity_note`: 上の判定根拠を日本語1文で。`familiar`の場合は
+  「どの既存サービスで同等の体験ができるか」を具体的に書く（人間が検証するため）
 - `demonstrated_capability`: アブストラクトに実際に書かれている、この研究が
   現時点で実証した内容（サンプル数・実験環境等の条件込み）を日本語1文で要約する。
   この先のステップで空想を広げすぎないための基準line。
@@ -143,6 +192,15 @@ STAGE3での注意点（動画化時に踏まえるべきヘッジ・限界）: 
 （特にwonder_score・transformation_score）を厳しめにつけること。別の論文であっても
 「着るロボットで歩行を助ける」「非接触センサーで転倒を検知する」のように話の型が
 同じなら既視感の対象とする。似た前例がなければ`deja_vu_note`は空文字列でよい。
+あわせて既視感の強さを`deja_vu_level`として次のいずれか1つで出力する:
+- `"strong"`: 問題設定・技術の型・描く未来の情景が前例とほぼ同じで、視聴者が
+  「前にも見た」と感じる（例: 前例が「神経につながる義足で感覚を取り戻す」で、
+  本件が「神経につながる義手で感覚を取り戻す」）。**同じ技術の型で公開済み
+  エピソードが既に2本以上ある場合も原則`strong`**（同じ型の3本目以降は、
+  切り口を変えても視聴者にはシリーズの続きに見える）
+- `"partial"`: 大枠のジャンルや道具立ては重なるが、切り口・体験の中身が
+  明確に違う
+- `"none"`: 似た前例がない
 
 過去の公開・企画済み・却下済みエピソード一覧:
 {past_episodes}
@@ -152,17 +210,30 @@ STAGE3での注意点（動画化時に踏まえるべきヘッジ・限界）: 
    読んだとき、視聴者が心から「幸せな未来だ、こうなったらいいな」とワクワクし
    温かい気持ちになれるか。`market_status`が`existing_product`の場合、新しい
    部分がほぼ無いということなので、この点は必ず2点以下にすること。
+   **`behavioral_familiarity`が`"familiar"`の場合も、この点は必ず3点以下に
+   すること。** 振る舞い自体をチャットボット等で既に知っている視聴者は、
+   それを新しい身体（ロボット等）に載せ替えただけでは「知ってる」以上の
+   驚きを感じない（例: 「ロボットが気を利かせて聞き返してくれた」は、
+   チャットで同じ体験をしたことがある視聴者には『まあそうだよね』で
+   終わり、心が動く『幸せな未来』にはなりにくい）。
+   **`deja_vu_level`が`"strong"`の場合も、この点は必ず3点以下にすること**
+   （このチャンネルで既に見た型の話に、視聴者は新鮮な驚きを感じない）。
    「技術的に野心的か」と「幸せそうに見えるか」は別物である点にも注意すること
    （数値的なインパクトが大きくても、不安の解消・問題の除去に留まり
-   『まあ助かるね』で終わる情景は低い点にする）。ステップ2で酷似した前例が
-   あると判定した場合、新鮮な驚き・幸福感が薄れるためこの点を下げること。
+   『まあ助かるね』で終わる情景は低い点にする）。`deja_vu_level`が`"partial"`の
+   場合も、新鮮な驚き・幸福感が薄れる分だけこの点を下げること。
 2. transformation_score: 変革ポテンシャル・野心度。`novel_delta`が本当に広く
    実現した場合、暮らしをどれだけ劇的に変えるか。`market_status`が
-   `existing_product`の場合はこの点も2点以下にすること。「すでに確立された
-   地味な改善」や「既存製品の焼き直し」には低い点を、既存製品との違いが明確で
-   「まだ実現していないが実現すれば劇的」なものには高い点をつける。査読済みか
-   未査読かはこのスコアに影響させない（査読状況の信頼性判断はSTAGE2で既に
-   完了している前提）
+   `existing_product`の場合はこの点も2点以下にすること。**`behavioral_familiarity`が
+   `"familiar"`の場合、および`deja_vu_level`が`"strong"`の場合も、この点は
+   必ず3点以下にすること**（`novel_delta`自体が既知の振る舞い・既に扱った型で
+   あるなら、それが「広く実現した」ときの暮らしの変化も既に起きている、
+   または既に番組で描いたものであり、変革の余地は小さい。ロボットの身体という
+   実体化手段の技術的な野心度をここで加点しない——それは`novel_delta`ではない）。
+   「すでに確立された地味な改善」や「既存製品の焼き直し」には低い点を、
+   既存製品との違いが明確で「まだ実現していないが実現すれば劇的」なものには
+   高い点をつける。査読済みか未査読かはこのスコアに影響させない（査読状況の
+   信頼性判断はSTAGE2で既に完了している前提）
 3. life_relevance_score: 生活実感との直結度（視聴者が「自分ごと」として想像できるか）
 4. surprise_score: 数字のインパクト（意外性のある定量的結果があるか）
 5. persona_fit_score: 「使い捨ての生活者」ペルソナ（1エピソード限りの具体的な生活者を主人公にする
@@ -174,15 +245,18 @@ STAGE3での注意点（動画化時に踏まえるべきヘッジ・限界）: 
 - hook_idea: 冒頭3〜5秒のフック文の叩き台（日本語、生活実感に直結する問いかけ）
 
 出力は次のJSON形式のみで、他のテキスト・Markdown装飾は一切含めないこと:
-{{"market_status": "existing_product|incremental|novel", "novel_delta": "...", "demonstrated_capability": "...", "future_scene_sketch": "...", "deja_vu_note": "...", "wonder_score": 1-5, "transformation_score": 1-5, "life_relevance_score": 1-5, "surprise_score": 1-5, "persona_fit_score": 1-5, "example_protagonist": {{"name": "...", "age": 0, "job": "..."}}, "hook_idea": "...", "reasoning": "..."}}
+{{"market_status": "existing_product|incremental|novel", "novel_delta": "...", "behavioral_familiarity": "familiar|novel", "behavioral_familiarity_note": "...", "demonstrated_capability": "...", "future_scene_sketch": "...", "deja_vu_note": "...", "deja_vu_level": "none|partial|strong", "wonder_score": 1-5, "transformation_score": 1-5, "life_relevance_score": 1-5, "surprise_score": 1-5, "persona_fit_score": 1-5, "example_protagonist": {{"name": "...", "age": 0, "job": "..."}}, "hook_idea": "...", "reasoning": "..."}}
 """
 
 FALLBACK_VERDICT_TEMPLATE = {
     "market_status": "",
     "novel_delta": "",
+    "behavioral_familiarity": "",
+    "behavioral_familiarity_note": "",
     "demonstrated_capability": "",
     "future_scene_sketch": "",
     "deja_vu_note": "",
+    "deja_vu_level": "",
     "wonder_score": 1,
     "transformation_score": 1,
     "life_relevance_score": 1,
@@ -251,6 +325,27 @@ def build_past_episodes_context(
     return "\n".join(lines) if lines else "（まだ公開・企画済み・却下済みエピソードなし）"
 
 
+def latest_known_episode_id(queue_path: Path = TOPICS_QUEUE_PATH) -> str:
+    """採点時点でtopics_queue.jsonに存在する最大のepisode_id（例: "kl017"）を返す。
+
+    2026-09-09追加（Fable監査）。既視感チェック（deja_vu_note/deja_vu_level）は
+    採点時点の公開・企画済みエピソード一覧に対してしか行われないため、その後
+    エピソードが増えても在庫のdeja_vu判定は古いまま残る（STAGE4_VERSIONは
+    採点ロジックの変更でしか上がらない）。各エントリに「どのエピソードまでを
+    見て既視感を判定したか」を`deja_vu_context_upto`として刻印し、
+    `kl_shortlist_rescore.py --check`が鮮度切れを検出できるようにする。
+    """
+    if not queue_path.exists():
+        return ""
+    try:
+        data = json.loads(queue_path.read_text())
+    except json.JSONDecodeError:
+        return ""
+    ids = [e.get("episode_id") or "" for e in data.get("queue", [])]
+    ids = [i for i in ids if re.fullmatch(r"kl\d{3}", i)]
+    return max(ids) if ids else ""
+
+
 def score_paper(client: genai.Client, paper: dict, past_episodes: str, retries: int = 3) -> dict:
     prompt = PROMPT_TEMPLATE.format(
         title=paper.get("title") or "(不明)",
@@ -305,19 +400,64 @@ def score_paper(client: genai.Client, paper: dict, past_episodes: str, retries: 
 # 二重の安全策にする。
 EXISTING_PRODUCT_SCORE_CAP = 2
 
+# behavioral_familiarityが"familiar"（AIの振る舞い自体はチャットボット等で
+# 視聴者に既知）の場合のwonder_score/transformation_score上限（2026-09-09追加）。
+# 当初案はwonder_scoreのみのキャップだったが、同日のFable監査で、発端の候補
+# （「曖昧な指示にロボットが聞き返す」）は再採点前から既にwonder=3であり、
+# 総合3.6の内訳はtransformation=4・life_relevance=5だったことが判明した。
+# wonderのみキャップしてもこの候補のスコアは1点も動かない。両スコアとも
+# 「novel_delta（本当に新しい部分）」を採点対象とする定義なので、novel_delta
+# 自体が既知の振る舞いなら変革度も頭打ちとし、transformationにも同じ上限を
+# 適用する（実体化手段＝ロボットの身体の技術的野心はnovel_deltaではない）。
+# existing_product（上限2）より一段緩い3にしているのは、「体験そのものが市販品に
+# ある」より「振る舞いは既知だが身体が新しい」の方が新規性が残るため。
+BEHAVIORAL_FAMILIARITY_SCORE_CAP = 3
+
+# deja_vu_levelが"strong"（このチャンネルで既に扱った話の型とほぼ同じ）の場合の
+# wonder_score/transformation_score上限（2026-09-09追加、Fable監査）。それまで
+# 既視感は自由記述のdeja_vu_noteとプロンプトの「厳しめにつけること」だけで、
+# コード側の歯止めが無かった。実際の在庫（2026-09-06再採点後）では上位7件が
+# すべてBCI/神経義肢系で、deja_vu_noteにkl003/kl007/kl009との重複を自ら
+# 明記しながらwonder 4〜5がついていた——market_statusのときと同じ
+# 「プロンプト指示だけでは読み飛ばされる」回帰パターン。
+DEJA_VU_STRONG_SCORE_CAP = 3
+
+
+def _score_value(v: dict, key: str) -> int:
+    """Geminiの出力が文字列（"4"）や範囲外になっていても1〜5の整数に正規化する
+    （2026-09-09追加。min()に文字列が混ざるとTypeErrorで採点全体が落ちるため）。"""
+    raw = v.get(key, 0)
+    try:
+        n = int(round(float(raw)))
+    except (TypeError, ValueError):
+        return 0
+    return max(0, min(5, n))
+
+
+def _label(v: dict, key: str) -> str:
+    """列挙値フィールドを小文字・前後空白除去で正規化する（"Familiar"等の揺れで
+    コード側キャップがすり抜けないようにする、2026-09-09追加）。"""
+    return str(v.get(key) or "").strip().lower()
+
 
 def overall_score(v: dict) -> float:
-    wonder = v.get("wonder_score", 0)
-    transformation = v.get("transformation_score", 0)
-    if v.get("market_status") == "existing_product":
+    wonder = _score_value(v, "wonder_score")
+    transformation = _score_value(v, "transformation_score")
+    if _label(v, "market_status") == "existing_product":
         wonder = min(wonder, EXISTING_PRODUCT_SCORE_CAP)
         transformation = min(transformation, EXISTING_PRODUCT_SCORE_CAP)
+    if _label(v, "behavioral_familiarity") == "familiar":
+        wonder = min(wonder, BEHAVIORAL_FAMILIARITY_SCORE_CAP)
+        transformation = min(transformation, BEHAVIORAL_FAMILIARITY_SCORE_CAP)
+    if _label(v, "deja_vu_level") == "strong":
+        wonder = min(wonder, DEJA_VU_STRONG_SCORE_CAP)
+        transformation = min(transformation, DEJA_VU_STRONG_SCORE_CAP)
     return (
         wonder * 0.45
         + transformation * 0.25
-        + v.get("life_relevance_score", 0) * 0.15
-        + v.get("surprise_score", 0) * 0.10
-        + v.get("persona_fit_score", 0) * 0.05
+        + _score_value(v, "life_relevance_score") * 0.15
+        + _score_value(v, "surprise_score") * 0.10
+        + _score_value(v, "persona_fit_score") * 0.05
     )
 
 
@@ -328,6 +468,7 @@ def run_category(client: genai.Client, name: str, cat: dict, limit: int, past_ep
     targets = eligible[:limit] if limit else eligible
     print(f"\n=== カテゴリ: {label} ({name}) — {len(targets)}件を判定（STAGE3 high_risk除外{excluded}件）===")
 
+    deja_vu_upto = latest_known_episode_id()
     scored = []
     for paper in targets:
         time.sleep(CALL_DELAY_SEC)
@@ -348,6 +489,7 @@ def run_category(client: genai.Client, name: str, cat: dict, limit: int, past_ep
         # （kl_shortlist_rescore.pyのneeds_rescore()はバージョンのみで判定するため）。
         if not verdict.get("_fallback"):
             entry["stage4_version"] = STAGE4_VERSION
+            entry["deja_vu_context_upto"] = deja_vu_upto
         scored.append(entry)
 
     return scored
