@@ -783,8 +783,63 @@
         "market_status": "novel",
         "novel_delta": "AIが単発の指示処理で終わらず、半年間にわたり実験履歴と失敗の来歴を自己修正・蓄積しながら、忘れ去られがちな難病の治療法などの仮説検証を自律的に深め続けられる点。"
       }
+    },
+    {
+      "episode_id": "kl018",
+      "status": "confirmed",
+      "title": "ロボットが「しゃがめる」って、こんなに難しかった：腰痛の父を救う二足歩行ロボットの片付け",
+      "format": "single_paper",
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "references": [
+        {
+          "title": "TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning",
+          "authors": [
+            "Jiacheng Liu",
+            "Pengxiang Ding",
+            "Qihang Zhou",
+            "Yuxuan Wu",
+            "Da Huang",
+            "Zimian Peng",
+            "Wei Xiao",
+            "Weinan Zhang",
+            "Lixin Yang",
+            "Cewu Lu",
+            "Donglin Wang"
+          ],
+          "year": 2025,
+          "venue": "arXiv.org（ICRA 2026 採択）",
+          "doi": "10.48550/arXiv.2509.11839",
+          "url": "https://arxiv.org/abs/2509.11839",
+          "is_preprint": true,
+          "lead_researcher": "Pengxiang Ding / Donglin Wang（Westlake University、中国）、Cewu Lu（Shanghai Jiao Tong University、中国）"
+        }
+      ],
+      "protagonist": {
+        "name": "佐々木健司",
+        "age": 42,
+        "job": "在宅勤務のITコンサルタント（育児中で慢性腰痛に悩む）",
+        "gender": "male"
+      },
+      "hook_idea": "ロボットが家事をする未来――でも、床に落ちたおもちゃを拾うために「しゃがむ」ことが、どれほどロボットにとって絶望的に難しかったかご存じですか？",
+      "notes": "STAGE0: 全カテゴリ在庫3件以上のためSTAGE1新規収集スキップ。kl_shortlist_rescore.py --checkで再採点対象0件（2026-09-09にbehavioral_familiarity/deja_vu_level導入に伴う全体再採点332件を完了済みのため）。STAGE2では直前kl017がworkのため同カテゴリを回避。home_robotの新1位（旧1位「曖昧な指示に聞き返すロボット」はスコアリング改修でbehavioral_familiarity: familiar・deja_vu_level: strongと判定され3.6→圏外に後退——ChatGPT等で聞き返す振る舞い自体は視聴者に既知のため）。本候補は逆にbehavioral_familiarity: novel（チャットボット的な対話ではなく二足歩行ロボットが実際にしゃがんで床の物を扱う物理的身体能力）と正しく判定され、overall 2.8→3.55に上昇。家庭内ロボットの片付けというテーマ自体はkl001/kl008/kl011と既視感partialだが、『車輪型ロボットの操作データを異種のヒューマノイドへわずか10分のデータで転移学習させ、二足歩行の全身動作（しゃがみ込み等）を実現した』という学習転移の切り口と、『腰痛の父親が屈まずに済む』という具体的な身体的恩恵が新しい。発表元はWestlake University・Shanghai Jiao Tong University等（中国）、ICRA 2026採択のarXivプレプリント。",
+      "stage4_snapshot": {
+        "paperId": "1e83f742ad7f75a490bad862fcc7dff8dda1f481",
+        "overall_score": 3.55,
+        "score_breakdown": {
+          "wonder_score": 3,
+          "transformation_score": 4,
+          "life_relevance_score": 4,
+          "surprise_score": 4,
+          "persona_fit_score": 4
+        },
+        "market_status": "novel",
+        "behavioral_familiarity": "novel",
+        "deja_vu_level": "partial",
+        "novel_delta": "車輪型ロボットの豊富な操作データを変換し、わずか10分の実機データ収集で二足歩行ヒューマノイドがしゃがみ込みや高低差のある全身協調作業を自律実行できる点。"
+      }
     }
   ],
-  "total_topics": 17,
-  "last_updated": "2026-09-08"
+  "total_topics": 18,
+  "last_updated": "2026-09-09"
 }
