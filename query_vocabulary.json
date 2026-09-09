@@ -79,6 +79,7 @@
     },
     "work": {
       "label": "働き方の変化",
+      "note": "2026-09-09追加: ユーザーから『ここ2年のAIの超絶進化そのものをネタにしたい』との要望。既存クエリは概ね『AIエージェントが特定の業務タスクに応用された』という適用先行の切り口で、AIの能力向上そのものが主題のクエリが手薄だった。末尾に、AIモデル自体の飛躍的な能力向上（推論・創発・自己改善・フロンティアモデルの世代交代等）を直接狙うクエリを追加した。Semantic Scholarは査読前提の学術DBのため、モデルカードや企業ブログでの発表そのものは拾えず、それが論文化・prints化されるまでのラグは残る点に留意（STAGE1参照）。",
       "weight": 1.0,
       "queries": [
         "\"generative AI\" AND productivity AND workplace AND (\"field experiment\" OR randomized)",
@@ -91,7 +92,13 @@
         "\"autonomous AI agent\" AND \"replaces\" AND (job OR worker)",
         "\"AI agent\" AND \"runs a business\" AND autonomous",
         "\"AI scientist\" AND autonomous AND (discovery OR research)",
-        "\"multi-agent AI\" AND \"entire company\" AND automation"
+        "\"multi-agent AI\" AND \"entire company\" AND automation",
+        "\"large language model\" AND \"emergent capability\" AND breakthrough",
+        "\"frontier model\" AND reasoning AND \"state-of-the-art\"",
+        "\"multimodal\" AND \"foundation model\" AND \"new capability\" AND breakthrough",
+        "\"large language model\" AND \"surpasses human\" AND benchmark",
+        "\"self-improving\" AND (\"AI agent\" OR \"language model\") AND autonomous",
+        "\"AI model\" AND \"generation leap\" AND (capability OR performance)"
       ]
     },
     "disaster_safety": {
