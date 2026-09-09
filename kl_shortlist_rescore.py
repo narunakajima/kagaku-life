@@ -92,7 +92,7 @@ SS_BATCH_SIZE = 500  # Semantic Scholar batch endpointの1リクエストあた�
 RATE_LIMIT_SEC = 1.1
 RETRYABLE_CODES = {429, 500, 502, 503, 504}
 
-API_KEY = os.environ.get("GEMINI_API_KEY", "")
+API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
 
 
 # チャンク全体のリクエスト自体が失敗した（429等、一時的な混雑）ことを示す番兵値。

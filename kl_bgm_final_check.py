@@ -14,7 +14,7 @@ import sys
 from pathlib import Path
 from google import genai
 
-API_KEY = os.environ.get("GEMINI_API_KEY", "")
+API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
 MODEL = "gemini-flash-latest"
 
 DESKTOP_KL = Path(os.path.expanduser("~/Desktop/kagaku-life"))

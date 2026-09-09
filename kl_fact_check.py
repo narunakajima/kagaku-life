@@ -41,7 +41,7 @@ sys.stdout.reconfigure(line_buffering=True)
 BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 
-API_KEY = os.environ.get("GEMINI_API_KEY", "")
+API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
 MODEL = "models/gemini-flash-latest"
 CALL_DELAY_SEC = 1.5
 REQUEST_TIMEOUT_MS = 60_000
