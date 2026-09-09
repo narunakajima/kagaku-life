@@ -355,7 +355,7 @@ def main():
 
     seen_ids = load_seen_paper_ids()
     if seen_ids:
-        print(f"topics_queue.json既出paperIdを{len(seen_ids)}件読み込み、重複排除に使用します")
+        print(f"topics_queue.json+topics_shortlist.json既出のpaperId/DOIを{len(seen_ids)}件読み込み、重複排除に使用します")
 
     results = {}
     for name, cat in categories.items():
