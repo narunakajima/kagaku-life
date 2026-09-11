@@ -59,7 +59,7 @@
       "duration_seconds": 2,
       "narration": "指先ひとつで、息を合わせる。",
       "reuse_scene_id": 14,
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -77,7 +77,7 @@
       "duration_seconds": 2,
       "narration": "まだ、自分の手で支えたい。",
       "reuse_scene_id": 15,
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -95,7 +95,7 @@
       "duration_seconds": 2,
       "narration": "孫の前で、胸を張れる自分に。",
       "reuse_scene_id": 16,
-      "ken_burns": "zoom_out",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -122,7 +122,11 @@
           "start": 0.0,
           "end": 4.04
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.62,
+        "y": 0.45
+      }
     },
     {
       "scene_id": 5,
@@ -161,7 +165,11 @@
           "start": 15.53,
           "end": 18.79
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.61,
+        "y": 0.45
+      }
     },
     {
       "scene_id": 6,
@@ -242,7 +250,11 @@
           "start": 39.53,
           "end": 40.88
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.59,
+        "y": 0.4
+      }
     },
     {
       "scene_id": 7,
@@ -251,7 +263,7 @@
       "duration_seconds": 26,
       "narration": "介護のヘルパーさんにお願いすれば、家事はもっと楽になるはずです。最近では、そうした暮らしを手伝うロボットの研究も進んでいると耳にします。それでも、まだ自分の手で、自分の意思で、この暮らしに関わっていたいという気持ちが、心のどこかにずっとあります。誰かに、あるいは何かに完全に代わってもらうのではなく、少しでも自分の感覚を活かせる方法はないものかと、リハビリの合間にもずっと考えていました。",
       "image_prompt": "The same 68-year-old Japanese man with short graying hair, slender build, no glasses, standing alone in his kitchen with one hand resting on the counter, looking out of the window with a thoughtful, quietly hopeful expression rather than resignation, no robot of any kind visible anywhere in the room, soft daytime interior lighting (clearly daytime, not night), no cane, no walking stick, no walker, no mobility aid, no text.",
-      "ken_burns": "zoom_out",
+      "ken_burns": "zoom_in",
       "telop_cards": [
         {
           "lines": [
@@ -323,7 +335,11 @@
           "start": 34.68,
           "end": 37.68
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.6,
+        "y": 0.45
+      }
     },
     {
       "scene_id": 8,
@@ -362,7 +378,11 @@
           "start": 10.46,
           "end": 11.51
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 9,
@@ -372,7 +392,7 @@
       "duration_seconds": 44,
       "narration": "近年、AI基盤モデルを搭載したロボットアームは、家庭内の物の片付けなど、細かな作業をかなり滑らかにこなせるようになってきました。ただし、あと少しというところで微妙にズレたり、失敗が起きたりしたときに、AIの滑らかな動きを崩さずにその場でそっと手を貸す方法は、まだ多くありませんでした。研究チームが提案したのは、『トークン・ステアリング』という新しい手法です。ロボットを動かすAIモデルをあらためて学習し直すことなく、動作を生み出す内部のわずかな数値情報——アクショントークンと呼ばれる部分に、人間が手元の小さなボタンを押すだけの、ごくわずかな情報を直接注ぎ込みます。",
       "image_prompt": "An anonymous American researcher (Asian-American man in his 30s), wearing a white lab coat, in a university robotics lab, holding a small handheld six-button keypad controller and gesturing toward a robotic arm mounted on a test bench performing an object manipulation task, a computer monitor nearby showing an abstract flat visualization of a robot arm and a simple diagram of a data stream (no text, no numbers), a completely different appearance from the protagonist (younger, no gray hair), bright daytime lab lighting (clearly daytime, not night), no text.",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -564,7 +584,7 @@
       "duration_seconds": 27,
       "narration": "物の位置を認識して、二つの物を入れ替えるという、より複雑な作業でも試されました。AIだけでは16.7%しか成功しなかったこの作業が、人間のほんの小さな手助けが加わることで、93.8%まで成功率が跳ね上がったのです。人間がしたのは、うまくいかなそうな場面で、進んでほしい向きをボタンで少し示すことだけ。腕の細かな動きそのものは、これまで通りAIが受け持ったままです。",
       "image_prompt": "An anonymous American researcher (Black man in his 30s), wearing a white lab coat, observing a robotic arm in a university lab swapping the positions of two objects on a test table, holding a small handheld six-button keypad controller nearby, a small flat corner graphic in the corner of the frame showing a simple bar comparison (no text, no numerals, kept small and plain), a completely different appearance from the protagonist, a completely blank plain-colored wall in the background with absolutely no whiteboard, no writing, no formulas, no diagrams, no charts, and no text of any kind anywhere on any surface in the scene, bright daytime lab lighting (clearly daytime, not night), no text.",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -713,7 +733,7 @@
       "duration_seconds": 13,
       "narration": "もしこの技術が、僕の家にもやってきたら——毎日の暮らしは、こんなふうに変わっていくのかもしれません。",
       "image_prompt": "The same 68-year-old Japanese man with short graying hair, slender build, drawn small sitting in an armchair by a window at home in the present day, a hopeful expression on his face, a large classic comic-style thought bubble rising from his head made of a trail of small connected circles leading to a big cloud-shaped bubble, inside the bubble a small miniature scene showing him at a kitchen counter gently pressing a button on a small keypad controller while a robotic arm nearby smoothly places a mug on a shelf, soft daytime interior lighting outside the bubble (clearly daytime, not night), no cane, no walking stick, no walker, no mobility aid, no text.",
-      "ken_burns": "pan_zoom_out",
+      "ken_burns": "zoom_in",
       "telop_cards": [
         {
           "lines": [
@@ -736,7 +756,11 @@
           "start": 8.97,
           "end": 10.32
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.33,
+        "y": 0.55
+      }
     },
     {
       "scene_id": 14,
@@ -745,7 +769,7 @@
       "duration_seconds": 27,
       "narration": "朝、洗い終えたマグカップを棚にしまおうとするロボットの腕が、少しだけ角度を誤りそうになる。その瞬間、手元の小さなボタンを、ほんの軽く押すと、腕はまるで僕の気持ちを汲み取ったかのように、すっと滑らかに軌道を戻してくれる。指先ひとつで、ロボットと息が合った——そんな感覚に、思わず頬が緩みます。今日も一つ、家事を無事に終えられました。",
       "image_prompt": "The same 68-year-old Japanese man with short graying hair, slender build, standing at his kitchen counter in the morning, holding a small handheld six-button keypad controller in his left hand and gently pressing one of its buttons with his fingertip, a friendly but clearly mechanical robotic arm (matte white and soft blue-gray articulated joints, a compact sensor camera head, a simple mechanical gripper, not a toy) smoothly adjusting its trajectory to place a ceramic mug onto a shelf, a warm satisfied smile on his face, soft morning daylight through a window (clearly morning, not night), no cane, no walking stick, no walker, no mobility aid, no text.",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "badge_text": "幸せな未来を夢想中",
       "telop_cards": [
         {
@@ -820,7 +844,7 @@
       "duration_seconds": 20,
       "narration": "夕方、食卓の後片付けをするロボットの隣に座り、僕もそっと指先を添えます。すべてを任せきりにするのではなく、まだ自分もこの暮らしを支えている——そう思えるだけで、気持ちがふっと軽くなるのです。窓の外が茜色に染まる頃、そんな小さな達成感が、今日一日の疲れをそっとほぐしてくれます。",
       "image_prompt": "The same 68-year-old Japanese man with short graying hair, slender build, sitting beside the same friendly but clearly mechanical robotic arm (matte white and soft blue-gray articulated joints, a compact sensor camera head, a simple mechanical two-finger gripper, not a toy, not a mascot, not a flexible hose or tentacle shape) at the dining table in the evening as it clears dishes, gently resting his left hand near the small keypad controller on the table, a calm contented expression, warm evening interior lighting with a dusk sky visible through the window (clearly evening, not full night), no cane, no walking stick, no walker, no mobility aid, no text.",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "badge_text": "幸せな未来を夢想中",
       "telop_cards": [
         {
@@ -881,7 +905,7 @@
       "duration_seconds": 24,
       "narration": "休日、遊びに来た孫の前で、ロボットと息を合わせておもちゃの片付けをして見せると、孫が目を輝かせて『すごいね、おじいちゃん』と言ってくれました。誰かに助けてもらうだけの存在ではなく、誰かに誇れる自分でまだいられること——それが、何よりも僕を幸せにしてくれるのです。",
       "image_prompt": "The same 68-year-old Japanese man with short graying hair, slender build, sitting at the kitchen table on a weekend afternoon with a young Japanese grandchild (about 6 years old) standing beside him with wide delighted eyes, both watching the same friendly mechanical robotic arm tidy toys into a basket as the man gently guides it by pressing a button on a small handheld keypad controller — the keypad has EXACTLY six buttons arranged in two rows of three, and is held and operated ONLY by his LEFT hand (his right hand is not touching it at all), warm bright daytime lighting (clearly daytime, not night), no cane, no walking stick, no walker, no mobility aid, no text.",
-      "ken_burns": "zoom_out",
+      "ken_burns": "pan_zoom_out",
       "badge_text": "幸せな未来を夢想中",
       "telop_cards": [
         {
@@ -1035,7 +1059,11 @@
           "start": 39.39,
           "end": 42.24
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.46,
+        "y": 0.47
+      }
     }
   ],
   "shorts": [
