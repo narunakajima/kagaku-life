@@ -884,8 +884,51 @@
         "market_status": "incremental",
         "novel_delta": "生物の脊髄神経回路（CPG）を模した専用ニューロモルフィック半導体により、四足歩行ロボットの運動制御プロセッサの電力効率を従来比約600倍に高め、極めて低遅延な反射的歩容生成をオンチップで実現した点。"
       }
+    },
+    {
+      "episode_id": "kl020",
+      "status": "confirmed",
+      "title": "手のリハビリ中の元エンジニアが、ロボットアームと『息を合わせる』片付け",
+      "format": "single_paper",
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "references": [
+        {
+          "title": "Steering Autoregressive Vision-Language-Action Policies via Action Token Intervention",
+          "authors": [
+            "Jason Chan",
+            "Jonathan C. Kao"
+          ],
+          "year": 2026,
+          "venue": "arXiv.org",
+          "doi": "10.48550/arXiv.2606.15021",
+          "is_preprint": true,
+          "lead_researcher": "Jonathan C. Kao（UCLA 准教授）"
+        }
+      ],
+      "protagonist": {
+        "name": "佐々木 健一",
+        "age": 68,
+        "job": "定年退職者（軽度の身体麻痺を抱えながら自宅療養中）",
+        "gender": "male"
+      },
+      "hook_idea": "「ロボットに任せると、最後のひと押しで失敗してヒヤッとする…」そんなとき、指先でちょっと合図するだけで、ロボットと“息を合わせられる”未来が来るとしたらどうでしょうか？",
+      "notes": "STAGE0: 6カテゴリとも在庫3件以上のためSTAGE1新規収集は全カテゴリスキップ。kl_shortlist_rescore.py --checkでstage4_version再採点対象0件を確認。既視感コンテキストがkl017/kl018時点で止まっていたdisaster_safetyのみ--stale-deja-vuで再判定し、kl013/kl019と酷似する2件（Multi-floor danger assessment、Self-organizing Nervous Systems for Robot Swarms）がdeja_vu_level=strongに更新されたことを確認（結果は今回不採用のため直接の影響なし）。medical_supportは上位5件がBCIによる手の運動・感覚再建という同一サブテーマに集中していたため上位2件に絞って提示。workのGALILEO/Kosmos（自律型AI科学者）はkl017と強い既視感のため除外、WorldTravelはbehavioral_familiarity=familiar（既存チャットボットで再現可能）のため優先度を下げた。aging_careは今回候補が弱め（最高でも2.5点、既存製品寄り）のためユーザー判断で見送り。home_robotの採用論文はVLAロボット基盤モデルの完全自動化ではなく、人間がわずかな指先の入力で軌道を微修正する『共有自律・人間協調』という切り口。kl001/kl011（家庭用ロボットアームの片付け）と道具立ては重なるが、『ロボット任せ』ではなく『人とロボットが息を合わせる』という体験の質が異なる点を差別化ポイントとして強調する。主人公はshortlist記載の案（脳梗塞後遺症で軽度麻痺のある68歳男性）をそのまま採用（2026-09-11、ユーザー承認）。",
+      "stage4_snapshot": {
+        "paperId": "edabb21890d8491312c3cf79349cdfdd82a66f6b",
+        "overall_score": 3.55,
+        "score_breakdown": {
+          "wonder_score": 3,
+          "transformation_score": 4,
+          "life_relevance_score": 4,
+          "surprise_score": 4,
+          "persona_fit_score": 4
+        },
+        "market_status": "novel",
+        "novel_delta": "ロボット基盤モデルが自動生成する高度で滑らかな動作を損なうことなく、人間のわずかな低次元入力（指先の傾きなど）を推論中のトークンに直接注入してリアルタイムに軌道を直感誘導できる点。"
+      }
     }
   ],
-  "total_topics": 19,
-  "last_updated": "2026-09-10"
+  "total_topics": 20,
+  "last_updated": "2026-09-11"
 }

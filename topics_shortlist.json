@@ -756,8 +756,8 @@
         "age": 68,
         "job": "定年退職者（軽度の身体麻痺を抱えながら自宅療養中）"
       },
-      "status": "available",
-      "used_in": null,
+      "status": "used",
+      "used_in": "kl020",
       "considered_at": "2026-08-20",
       "score_history": [
         {
@@ -1048,11 +1048,11 @@
       "category": "disaster_safety",
       "category_label": "防災・安全",
       "overall_score": 2.2,
-      "hook_idea": "「バッテリーがすぐ切れる、賢いAIを載せると重くて動かない…」そんな移動ロボットのジレンマを、頭脳を『外注』する新技術が打ち破るかもしれません。",
+      "hook_idea": "見守りロボットが一番見てほしい時にバッテリー切れ…そんな『AIが重すぎて動けない』問題を劇的に変える技術をご存じですか？",
       "example_protagonist": {
-        "name": "坂本 健一",
-        "age": 48,
-        "job": "太陽光発電施設の巡回保守スタッフ"
+        "name": "高橋 聡",
+        "age": 45,
+        "job": "郊外の大型施設で夜間点検を担当する施設管理責任者"
       },
       "status": "available",
       "used_in": null,
@@ -1067,6 +1067,11 @@
           "version": "2026-09-06-wonder",
           "score": 2.1,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 2.2,
+          "rescored_at": "2026-09-11"
         }
       ],
       "score_breakdown": {
@@ -1077,16 +1082,16 @@
         "persona_fit_score": 2
       },
       "market_status": "incremental",
-      "novel_delta": "ロボット側のプログラムを書き換えることなく、重いAI画像認識処理を近くのエッジ機器へ透過的に振り分け、認識速度を最大24倍にしつつロボットの消費電力を最大80%削減する技術。",
-      "demonstrated_capability": "商用四足歩行ロボットと12種類の深層学習モデル（画像分類・動画分類・セマンティックセグメンテーション）を用いた実証実験において、PyTorch比較でロボット消費電力を最大80%削減、エッジ側電力を最大60%削減し、フレームレートを最大24倍向上させた。",
-      "future_scene_sketch": "広大な太陽光発電施設で、四足歩行ロボットが雑草やパネルのひび割れを滑らかな視線で捉え続け、途中で電池切れを起こすことなく夕方の点検を完走し、保守員の男性は日暮れ前にゆとりを持って帰路につく。",
-      "deja_vu_note": "",
+      "novel_delta": "ロボット本体のプログラムを変更することなく、AI画像認識処理を近傍のエッジサーバーへ透過的にオフロードし、消費電力を最大80%抑えて長時間の連続稼働を可能にする点。",
+      "demonstrated_capability": "市販の四足歩行ロボットと12種類の画像・動画認識モデルを用いた実機実験において、PyTorch比でロボット側消費電力を最大80%削減し、映像認識パイプラインの処理速度を最大24倍向上させることを実証した。",
+      "future_scene_sketch": "深夜の広大なビニールハウスで、果樹の病気や水不足を点検する小型移動ロボットが、重いAI画像解析を行っているにもかかわらず夜明けまでバッテリーを切らすことなく隅々まで見回り終え、農家の男性が翌朝安心して作業を始める。",
+      "deja_vu_note": "kl019（ロボット犬による捜索・稼働）などのモビリティ・ロボット系と題材が一部重なるが、本論文はAIビジョンの負荷分散・コンパイル最適化というインフラ層に特化している。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-11",
       "behavioral_familiarity": "novel",
-      "behavioral_familiarity_note": "AIの対人応答や振る舞いではなく、ロボットの画像認識パイプラインをエッジに分散処理する計算インフラ・コンパイラ最適化技術であるため。",
-      "deja_vu_level": "none",
-      "deja_vu_context_upto": "kl017"
+      "behavioral_familiarity_note": "本研究の中核は対話等の振る舞いではなく、計算負荷分散とコンパイラ最適化によるロボット本体の省電力・稼働時間延長というシステム基盤技術であるため。",
+      "deja_vu_level": "partial",
+      "deja_vu_context_upto": "kl019"
     },
     {
       "paperId": "e0231d6a9b9dc681f2d1a03e765a144f9f7293bc",
@@ -1105,11 +1110,11 @@
       "category": "disaster_safety",
       "category_label": "防災・安全",
       "overall_score": 2.95,
-      "hook_idea": "25メートル先からそっと手を挙げるだけ——声も届かない距離にいるロボットが、あなたの合図を完璧に見分けて駆け寄ってくる未来とは？",
+      "hook_idea": "大声を張り上げても届かない25メートル先——もし普通のWebカメラ1台で、遠くのロボットに『指先ひとつの合図』が通じるとしたら？",
       "example_protagonist": {
-        "name": "武田 秀夫",
-        "age": 62,
-        "job": "退職後に広大な市民農園で野菜づくりに励む男性"
+        "name": "坂井 秀行",
+        "age": 58,
+        "job": "果樹園農家"
       },
       "status": "available",
       "used_in": null,
@@ -1124,6 +1129,11 @@
           "version": "2026-09-06-wonder",
           "score": 2.45,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 2.95,
+          "rescored_at": "2026-09-11"
         }
       ],
       "score_breakdown": {
@@ -1134,16 +1144,16 @@
         "persona_fit_score": 3
       },
       "market_status": "incremental",
-      "novel_delta": "特殊なセンサーを使わず一般的な単眼Webカメラの映像のみから、超解像とGraph Vision Transformerを用いて25メートル離れた場所の手のジェスチャーを98%の高精度で認識しロボットを遠隔操作できる点。",
-      "demonstrated_capability": "単眼RGBカメラの静止画1枚から超解像モデル（HQ-Net）とGViT分類器を用いて最大25m離れたジェスチャーを98.1%の精度で認識し、屋内外で自律四足歩行ロボットの誘導実験を行って平均96%の認識率を実証した。",
-      "future_scene_sketch": "広大な市民農園で両手に泥がついたままの武さんが、25メートル先で待機する運搬ロボットに向かって軽く片手を挙げると、ロボットが迷わず足元まで駆け寄り、スマホを取り出す手間も大声を張り上げる気恥ずかしさもなく、作業の手を止めずに済む心地よさを感じる。",
-      "deja_vu_note": "",
+      "novel_delta": "特殊なセンサーや望遠レンズを使わず、普通の安価な単眼Webカメラ1台だけで従来の限界（数メートル）を大きく超える最大25メートル先のハンドジェスチャーを正確に認識できる点。",
+      "demonstrated_capability": "単眼RGBカメラの静止画1枚から超解像とViT分類器を用いて最大25m先のハンドジェスチャーを認識するフレームワークを構築し、テストデータで98.1%、四足歩行ロボットによる屋内外の実証実験で平均96%の認識率を達成した。",
+      "future_scene_sketch": "広い果樹園の奥で剪定作業をする秀行さんが、20メートル先にいる収穫運搬ロボットへ向けて大声を出さずに片手をスッと掲げると、ロボットがその小さな合図に気づいて静かに足元へ近づいてきて、まるで長年連れ添った牧羊犬とアイコンタクトだけで通じ合えたような頼もしさを覚える。",
+      "deja_vu_note": "kl019で四足歩行ロボットが登場しているが、本件はロボットの歩行運動ではなく『超遠距離からのジェスチャー認識インターフェース』が中核であり、体験の切り口は重ならない。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-11",
       "behavioral_familiarity": "novel",
-      "behavioral_familiarity_note": "チャットボットや音声AIでは原理的に再現できない、25m先からの微小な手の形状変化を単眼カメラ映像から復元・識別する高度な視覚センシング技術であるため。",
-      "deja_vu_level": "none",
-      "deja_vu_context_upto": "kl017"
+      "behavioral_familiarity_note": "中核技術は超解像とViTを組み合わせた超遠距離の微小手部ジェスチャー認識という身体的センシング能力の拡張であり、スマホのチャットボットや音声アシスタントでは原理的に代替できないため。",
+      "deja_vu_level": "partial",
+      "deja_vu_context_upto": "kl019"
     },
     {
       "paperId": "a0b6cccc4495dbc64f98ab18f8a26e4349fdd093",
@@ -1208,11 +1218,11 @@
       "category": "disaster_safety",
       "category_label": "防災・安全",
       "overall_score": 2.0,
-      "hook_idea": "足場の悪い山道で大切なペットが迷子になったとき、ロボットが『歩きやすい道』を自分で選びながら見つけ出してくれたら助かりませんか？",
+      "hook_idea": "足場の悪い崖や瓦礫の山で、ロボット犬が『危ない道』を避けながらキョロキョロ見回して人を探せたら、救える命はどう増えるでしょうか？",
       "example_protagonist": {
-        "name": "坂本健一",
-        "age": 58,
-        "job": "中山間地で暮らす兼業農家"
+        "name": "高橋 健一",
+        "age": 42,
+        "job": "山岳遭難救助隊員"
       },
       "status": "available",
       "used_in": null,
@@ -1227,6 +1237,11 @@
           "version": "2026-09-06-wonder",
           "score": 2.1,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 2.0,
+          "rescored_at": "2026-09-11"
         }
       ],
       "score_breakdown": {
@@ -1237,16 +1252,16 @@
         "persona_fit_score": 2
       },
       "market_status": "incremental",
-      "novel_delta": "四足歩行ロボットにおいて、不整地の歩きやすさを計算して電力消費を抑えながら、怪しい方向に能動的にカメラを向けて目的物を素早く発見するナビゲーション制御技術。",
-      "demonstrated_capability": "合成データセット（6,600シーン）と150回のシミュレーション試行において、四足ロボットが衝突ゼロで踏破し、能動的知覚により目標検出率を0.721に高めつつ、地形適応経路により移動エネルギーを約10.9%削減した。",
-      "future_scene_sketch": "大雨のあと足場が悪くなった裏山で飼い犬が迷子になったとき、家庭用四足ロボットが滑りやすい急斜面を賢く迂回しながら、怪しい草むらへ能動的に首を振って探し回り、わずか数分で無事に見つけ出して飼い主を安堵させる。",
-      "deja_vu_note": "kl013『救助犬の「鼻」を受け継ぐロボット：瓦礫の中の命を、匂いで見つけ出す挑戦』と「ロボットが悪路・危険地帯を進んで対象者や目標物を探索・発見する」という道具立てや構図が重なる。kl013が「匂いセンサーによる人命救助」という極めて強い情緒的フックを持つのに対し、本件はシミュレーション上の経路計画と視線走査の工学的改善に留まるため既視感と物足りなさが生じる。",
+      "novel_delta": "荒れた地形の走破負荷を考慮した省エネ経路選択と、未確認の対象へ能動的に視線を向ける首振りセンシングを統合した四足歩行ナビゲーション手法である点。",
+      "demonstrated_capability": "6,600シーンの合成データセットと150回のシミュレーション試行において、衝突ゼロ・移動エネルギー約10.9%削減・目標検出率0.721（受動方式の0.285から向上）を実証した。",
+      "future_scene_sketch": "土砂崩れで寸断された険しい山道で、四足歩行ロボットが自ら転倒しやすい急斜面を避けつつ怪しい岩陰へカメラを向け、日没前に要救助者の姿を捉えた通知を受け取った山岳救助隊員が安堵の息をもらす。",
+      "deja_vu_note": "公開済みエピソードkl019（ロボット犬による山岳遭難捜索・不整地踏破）およびkl013（瓦礫内を捜索するロボット）と設定・道具立て・救助の情景が酷似しており、同じ型の3本目となってしまう。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-11",
       "behavioral_familiarity": "novel",
-      "behavioral_familiarity_note": "起伏のある実空間で足場の安全度を評価しながら移動し、疑わしい地点へ能動的にセンサーを向けて探索する振る舞いは、物理移動体と空間知覚が一体となった能力であり、スマホのAIでは原理的に体験できないため。",
-      "deja_vu_level": "partial",
-      "deja_vu_context_upto": "kl017"
+      "behavioral_familiarity_note": "不整地の踏破安定性や物理的な視線制御を連動させた身体ナビゲーション技術であり、チャットボット等の対話AIでは原理的に再現できないため。",
+      "deja_vu_level": "strong",
+      "deja_vu_context_upto": "kl019"
     },
     {
       "paperId": "05bb6c8685bc821f2fe3986bc114c2f56eb44d3f",
@@ -1264,12 +1279,12 @@
       "is_preprint": false,
       "category": "disaster_safety",
       "category_label": "防災・安全",
-      "overall_score": 2.15,
-      "hook_idea": "もし大地震で崩れたビルに取り残されたら——人間の救助隊が来る前に、階段を駆け上がってあなたの意識を確かめに来るのは『四脚ロボット』かもしれません。",
+      "overall_score": 2.65,
+      "hook_idea": "大地震でビルに閉じ込められたとき、救助隊より先に階段を駆け上がってきてあなたの意識を確かめてくれるのは、人間ではなく『自律するロボット犬』かもしれません。",
       "example_protagonist": {
-        "name": "高橋 健太",
+        "name": "高木 俊介",
         "age": 34,
-        "job": "IT企業勤務（大規模複合ビル勤務）"
+        "job": "都市部の雑居ビルに勤務するIT系オフィスワーカー"
       },
       "status": "available",
       "used_in": null,
@@ -1284,26 +1299,31 @@
           "version": "2026-09-06-wonder",
           "score": 2.4,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 2.15,
+          "rescored_at": "2026-09-11"
         }
       ],
       "score_breakdown": {
         "wonder_score": 2,
-        "transformation_score": 2,
-        "life_relevance_score": 3,
+        "transformation_score": 3,
+        "life_relevance_score": 4,
         "surprise_score": 2,
-        "persona_fit_score": 2
+        "persona_fit_score": 4
       },
       "market_status": "incremental",
-      "novel_delta": "災害直後に人間が立ち入れない複数フロアの建物内へ四脚ロボットが先行進入し、危険箇所のマッピングと要救助者への声かけによる応答性判定（DRABC初期手順）を自律的にこなす点。",
-      "demonstrated_capability": "Boston Dynamics社の四脚ロボットSpotを用い、複数階層の模擬災害環境において広域カバーを優先した自律探索を行い、危険箇所の特定と人の応答性評価（一次トリアージ）を行うソフトウェアを実機検証した。",
-      "future_scene_sketch": "震災直後の暗いオフィスビル上層階で瓦礫に足を挟まれ孤立していた高橋さんが、階段を駆け上がってきた四脚ロボットから「大丈夫ですか」と呼びかけられて声を絞り出すと、ロボットが即座に応答性と居場所を記録して救助本部へ中継し、遠くからサイレンの音が近づくのを聞いて心の底から生への安堵を覚える。",
-      "deja_vu_note": "kl013『救助犬の「鼻」を受け継ぐロボット：瓦礫の中の命を、匂いで見つけ出す挑戦』およびkl006『孤立した集落を救うAIドローン』と「災害現場に取り残された人をロボット・自律マシンが探索して命をつなぐ」という問題設定・道具立て・情景がほぼ完全に重複している。防災・レスキュー枠として同型の企画が実質3本目となるため強い既視感がある。",
+      "novel_delta": "四足歩行ロボットが救助隊到着前の倒壊建築内を自律探索し、建物の危険領域の地図化だけでなく要救助者の意識・応答性評価（DRABC手順）まで自律的に行う点。",
+      "demonstrated_capability": "Boston Dynamics社のSpotロボット実機を用い、複数階層の環境探索と要救助者の意識・応答性評価を行うソフトウェアの動作検証を実施した。",
+      "future_scene_sketch": "大地震直後、崩落の危険がある雑居ビルで足を挟まれ身動きが取れなくなった会社員のもとへ、人間の救助隊より先に自律型の四足ロボットが階段を越えて現れる。ロボットが周囲の倒壊危険をスキャンしつつ呼びかけへの応答を確認し、「隊員へ現在地と意識清明を送信しました」と告げた瞬間、暗闇の中で孤立無援だった恐怖が生き延びる確信へと変わる。",
+      "deja_vu_note": "kl013『救助犬の「鼻」を受け継ぐロボット：瓦礫の中の命を、匂いで見つけ出す挑戦』およびkl019『父は見つかるか：疲れを知らないロボット犬に宿った、生き物の反射』と、「四足歩行ロボット／センサーによる被災者・遭難者捜索」という問題設定および技術の型が酷似しており、同じ型の3本目となるため強い既視感がある。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-11",
       "behavioral_familiarity": "novel",
-      "behavioral_familiarity_note": "チャットボットのような画面内の対話にとどまらず、瓦礫や階段のある実環境を自律巡回して物理的に要救助者のもとへ辿り着き、現場の危険度と生体反応を把握する物理センシングが中核であるため。",
+      "behavioral_familiarity_note": "チャットボットでは再現できない、階段や障害物のある複数フロアの自律踏破と現場での要救助者の身体的反応・危険度センシングが技術の中核であるため。",
       "deja_vu_level": "strong",
-      "deja_vu_context_upto": "kl017"
+      "deja_vu_context_upto": "kl019"
     },
     {
       "paperId": "c5a89bfcfa220638adcc5975592bda8affc4ba93",
@@ -1318,12 +1338,12 @@
       "is_preprint": false,
       "category": "disaster_safety",
       "category_label": "防災・安全",
-      "overall_score": 2.5,
-      "hook_idea": "もし大地震で倒壊した瓦礫の下に閉じ込められたら——あなたを真っ先に救い出すのは、あの『苦手な昆虫』の群れかもしれません。",
+      "overall_score": 2.0,
+      "hook_idea": "もし倒壊した瓦礫に閉じ込められたとき、あなたを最初に見つけ出すのが『サイボーグ昆虫の群れ』だとしたら？",
       "example_protagonist": {
-        "name": "佐々木賢治",
+        "name": "高橋健一",
         "age": 42,
-        "job": "自宅兼事務所で被災した個人事業主"
+        "job": "地方自治体の消防本部・高度救助隊員"
       },
       "status": "available",
       "used_in": null,
@@ -1338,26 +1358,31 @@
           "version": "2026-09-06-wonder",
           "score": 2.15,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 2.5,
+          "rescored_at": "2026-09-11"
         }
       ],
       "score_breakdown": {
         "wonder_score": 2,
-        "transformation_score": 4,
+        "transformation_score": 2,
         "life_relevance_score": 2,
         "surprise_score": 2,
         "persona_fit_score": 2
       },
       "market_status": "novel",
-      "novel_delta": "生きた昆虫の敏捷性と省電力な身体能力に小型電子制御を融合させ、機械ロボットでは入れない極小・複雑な瓦礫空間を群れ（スウォーム）で協調探索できる点。",
-      "demonstrated_capability": "マルチエージェントシミュレーション環境（MARSS）上でサイボーグ昆虫群の分散制御モデルを構築し、個体差による行動のばらつきを課題としつつも従来のロボット群より障害物への柔軟性・適応性が向上することを検証した。",
-      "future_scene_sketch": "震災で倒壊した建物の暗闇に閉じ込められた賢治のもとへ、瓦礫のわずか数ミリの隙間をすり抜けてサイボーグ昆虫の群れが到達し、彼らが中継した電波を通じて救助隊から「位置を特定しました、今から掘り出します」と呼びかけが届き、家族のもとへ生きて帰れる確信と温かい安堵に包まれる。",
-      "deja_vu_note": "kl013（救助犬の「鼻」を受け継ぐロボット：瓦礫の中の命を、匂いで見つけ出す挑戦）と「大地震で瓦礫に閉じ込められた要救助者を小型デバイスが発見する」という防災・救助のシチュエーションおよび話の型が酷似している。",
+      "novel_delta": "生きた昆虫固有の敏捷性と感覚を活かしたバイオハイブリッド群が、小型電子制御によって自律分散的に協調し、極小の瓦礫空間を踏破する点。",
+      "demonstrated_capability": "マルチエージェント群シミュレータ（MARSS）上において、分散制御されるサイボーグ昆虫群が従来のロボット群に比べ環境適応性や作業効率に優れる一方、個体ごとの生物学的ばらつきが群れの行動維持に課題を与えることを計算機上で検証した。",
+      "future_scene_sketch": "大地震で倒壊した自宅の狭い梁の隙間に挟まれ身動きが取れなくなった男性の足元へ、わずかな隙間を潜り抜けてサイボーグ昆虫群が分散到達し、位置情報を救助隊に中継したことで、絶望の暗闇の中で生存限界を迎える前に救出の光が差し込む。",
+      "deja_vu_note": "kl013（瓦礫の中の命を匂いで探すロボット）と災害瓦礫からの要救助者探索という問題設定・救出の型が酷似しており、防災・安全ジャンルとしてもkl006・kl013・kl019に続く4本目となるため強い既視感がある。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-11",
       "behavioral_familiarity": "novel",
-      "behavioral_familiarity_note": "瓦礫の極小隙間を踏破・探索する生体ハイブリッドの物理的身体機能であり、チャットボット等の音声・テキスト対話では再現不可能なため。",
-      "deja_vu_level": "partial",
-      "deja_vu_context_upto": "kl017"
+      "behavioral_familiarity_note": "チャットボットでは原理的に不可能な、昆虫の生物学的身体と小型制御回路が一体となった不整地踏破および物理的センシング能力であるため。",
+      "deja_vu_level": "strong",
+      "deja_vu_context_upto": "kl019"
     },
     {
       "paperId": "a8d0125900d0ec626e6d3d9d47bc0e95088e69c6",
@@ -5652,24 +5677,24 @@
       "is_preprint": false,
       "category": "disaster_safety",
       "category_label": "防災・安全",
-      "overall_score": 3.05,
+      "overall_score": 2.35,
       "score_breakdown": {
-        "wonder_score": 3,
-        "transformation_score": 4,
+        "wonder_score": 2,
+        "transformation_score": 3,
         "life_relevance_score": 2,
         "surprise_score": 3,
         "persona_fit_score": 2
       },
-      "hook_idea": "もし土砂崩れでネットも電話も消えた集落に、空と陸のロボットたちが『自ら作戦を立てて』助けに来てくれるとしたら？",
+      "hook_idea": "携帯の電波も途絶えた孤立集落——中央のサーバーがなくても、ロボットたちが勝手にチームを組んであなたを見つけ出してくれるとしたら？",
       "example_protagonist": {
-        "name": "高橋 健一",
+        "name": "高橋 誠",
         "age": 48,
-        "job": "山間部で果樹園を営みながら高齢の母と暮らす男性"
+        "job": "山間部の地域自主防災組織リーダー（兼 自営業）"
       },
       "status": "available",
       "considered_at": "2026-08-28",
       "transformation_comparison": "既存の市販ロボットやスマート家電はクラウド中央サーバーによる事前設定や簡単な優先度回避にとどまりますが、本研究は通信断絶下でもロボット同士が自律的に動的な神経系（指揮構造）を形成・再構築し、1つの統合システムや複数チームへと自在に分裂・結合する点が真に新しく画期的です。",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-11",
       "score_history": [
         {
           "version": null,
@@ -5680,18 +5705,23 @@
           "version": "2026-09-06-wonder",
           "score": 2.35,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 3.05,
+          "rescored_at": "2026-09-11"
         }
       ],
       "market_status": "novel",
-      "novel_delta": "通信インフラや中央管理サーバーがない環境下でも、空中と地上の複数ロボットが現場で自律的に一時的な指揮役や階層構造を立ち上げ、部隊の分裂・再編を行いながら協調作業を遂行できる点。",
-      "demonstrated_capability": "実機のカスタムクアッドローターと地上ロボットからなる異種ロボット群を用いた意思決定および捜索救助シナリオでの実証に加え、シミュレータ上で最大250台の群れにおけるスケーラビリティと耐故障性を実証した。",
-      "future_scene_sketch": "通信基地局がダウンした大雨の翌朝、空と陸の小型ロボット群が現場で自律的にリーダーを決めて裏山の崩落現場を手分けして探索し、安全な迂回路を特定してくれたことで、主人公は孤立の不安から解放され、高齢の母と無事に温かい朝食を囲むことができる。",
-      "deja_vu_note": "kl006（孤立集落を救うAIドローン）やkl013（瓦礫探索ロボット）と、災害・探索・ドローンという道具立てや問題設定が大枠で重なっている。",
+      "novel_delta": "中央管制サーバーなしに、多数の地上・飛行ロボットが現場で自律的に一時的な司令塔や階層構造を形成・再構成しながら1つのシステムとして協調作業できる点。",
+      "demonstrated_capability": "カスタムドローンと地上ロボットからなる異種スウォーム実機による二値意思決定および捜索救助ミッションの実証、ならびに物理シミュレータ上での最大250台規模のスケーラビリティと耐障害性の実証。",
+      "future_scene_sketch": "通信基地局が途絶した被災地で、上空の小型ドローンと地上の小型ロボットが阿吽の呼吸で中継役と捜索役に役割を分担しながら瓦礫の隙間をくまなく探り当て、孤立した自宅で怯えていた主人公のもとへ的確に救援物資と安否確認を届けてくれた瞬間、主人公が胸をなで下ろして温かいお茶を口にする。",
+      "deja_vu_note": "「孤立集落や災害現場でロボットが自律的に人や物資を届ける・捜索する」という型は、kl006（孤立集落を救うAIドローン）、kl013（瓦礫の中の命を探すロボット）、kl019（遭難救助ロボット犬）と既に3本公開・企画されており、視聴者には同じ防災救助シリーズの焼き直しに見える。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
       "behavioral_familiarity": "novel",
-      "behavioral_familiarity_note": "複数の物理ロボットが現場の状況に応じて自律的に指揮系統を組み替え、分裂・合体しながら物理的に探索・作業を行う協調制御であり、スマホのAIアシスタント等では再現できないため。",
-      "deja_vu_level": "partial",
-      "deja_vu_context_upto": "kl017"
+      "behavioral_familiarity_note": "多数の物理ロボットが現場で動的に役割階層を組み替えて連携行動する体験は、スマホのチャットや音声アシスタントでは再現不可能な物理・集団制御技術であるため。",
+      "deja_vu_level": "strong",
+      "deja_vu_context_upto": "kl019"
     },
     {
       "paperId": "77b74583b6ccf6339de3c7b4c9ccd5bbe8012e2a",
@@ -7474,24 +7504,24 @@
       "is_preprint": false,
       "category": "disaster_safety",
       "category_label": "防災・安全",
-      "overall_score": 2.25,
+      "overall_score": 2.0,
       "score_breakdown": {
         "wonder_score": 2,
-        "transformation_score": 3,
+        "transformation_score": 2,
         "life_relevance_score": 2,
         "surprise_score": 2,
         "persona_fit_score": 2
       },
-      "hook_idea": "「人が入れない狭い隙間や危険な段差の奥…」そんな場所へ、自分で考えて這ったり登ったりして進むロボット犬がいたら、暮らしはどう変わるでしょうか？",
+      "hook_idea": "もし地震で崩れた瓦礫の隙間に、ロボットが自分で『這って進もう』と判断して助けに入ってくれたら？",
       "example_protagonist": {
-        "name": "相原 敏夫",
-        "age": 72,
-        "job": "山あいで家庭菜園を営む無職（元農業）"
+        "name": "高橋 健一",
+        "age": 42,
+        "job": "地方自治体の防災危機管理課職員"
       },
       "status": "available",
       "considered_at": "2026-08-28",
       "transformation_comparison": "現在の市販製品（ロボット掃除機や市販の四足歩行ロボット等）はセンサーによる単なる迂回や事前プログラムの動作にとどまりますが、本研究はVLMの常識推論と失敗履歴を用いて「這う」「よじ登る」「引き返す」といった高次のスキルを自律的に選択・再計画できる点が真に新しい部分です。",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-11",
       "score_history": [
         {
           "version": null,
@@ -7502,18 +7532,23 @@
           "version": "2026-09-06-wonder",
           "score": 2.85,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 2.25,
+          "rescored_at": "2026-09-11"
         }
       ],
-      "market_status": "novel",
-      "novel_delta": "四足歩行ロボットが行き止まりや狭い隙間などの予期せぬ障害物に直面した際、視覚言語モデルの常識推論と直前の失敗履歴をもとに、登る・這う・引き返すといった行動を自律的に切り替えて走破できる点。",
-      "demonstrated_capability": "四足歩行ロボットGo1を用い、行き止まりの脱出や登坂・這い進みが必要な実世界の複数の障害物コースにおいて、VLMが過去の行動履歴と将来計画の再構築により自律走破できることを実証した。",
-      "future_scene_sketch": "足腰が悪く家の裏手の段差や狭い床下には入れない主人公が、迷い込んだ飼い猫を探すためロボット犬を向かわせると、ロボットが崩れた薪の山を自らよじ登り低い縁の下を這って潜り抜け、無事な猫の姿を映像で見せてくれてホッと胸をなで下ろす。",
-      "deja_vu_note": "未知の障害物や難所をロボットが自律的に突破して探索するという枠組みは、kl013（救助犬ロボットが瓦礫の中を進む）やkl006（AIドローンによる孤立集落の探索）と防災・難所移動の文脈で部分的に重複する。",
+      "market_status": "incremental",
+      "novel_delta": "四足歩行ロボットが視覚言語モデルの常識推論に基づき、事前の個別プログラミングなしに「這う」「登る」「引き返す」といった多様な運動スキルを状況に応じて自律的に選択・切り替えて障害物を突破できる点。",
+      "demonstrated_capability": "四足歩行ロボットUnitree Go1を用い、行き止まりや登坂、隙間の這い潜りを含む複数の実世界障害物コースにおいて、VLMによる行動履歴の推論と将来計画（VLM-PC）により、環境固有の設計や人間の介入なしに自律ナビゲーションができることを実証した。",
+      "future_scene_sketch": "地震の後、倒壊した家具が塞ぐ薄暗い隙間の前で、ロボット犬が自ら低く身をかがめて床を這うように潜り込み、奥に取り残されていた愛猫の居場所をカメラで届けてくれた瞬間、飼い主の家族は涙を浮かべて安堵する。",
+      "deja_vu_note": "四足歩行ロボットが瓦礫や過酷な不整地を自律的に乗り越えて捜索・救助を行うという題材は、すでにkl013（匂いで探す瓦礫救助ロボット犬）およびkl019（生き物の反射で山岳遭難者を捜索するロボット犬）として2本公開済みである。VLMによる推論制御という手法の新しさはあるものの、視聴者にとっては「障害物を乗り越えるロボット犬」という同一の型による3本目に見えてしまい、既視感が極めて強い。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
       "behavioral_familiarity": "novel",
-      "behavioral_familiarity_note": "ロボットが身体を低くして隙間を這ったり障害物をよじ登ったりして物理的な難所を走破する能力は、スマートフォンのチャットボットや音声アシスタントでは原理的に再現できないため。",
-      "deja_vu_level": "partial",
-      "deja_vu_context_upto": "kl017"
+      "behavioral_familiarity_note": "視覚言語モデルの推論を四足歩行ロボットの「這う」「よじ登る」といった全身の物理的スキル選択に直結させて障害物を突破する能力であり、スマホ等のチャットボットでは原理的に再現できない身体的挙動であるため。",
+      "deja_vu_level": "strong",
+      "deja_vu_context_upto": "kl019"
     },
     {
       "paperId": "0a96a63bad8dd859e0fe8531fe3f7faad62056d5",
@@ -8145,24 +8180,24 @@
       "is_preprint": false,
       "category": "disaster_safety",
       "category_label": "防災・安全",
-      "overall_score": 1.55,
+      "overall_score": 2.0,
       "score_breakdown": {
-        "wonder_score": 1,
+        "wonder_score": 2,
         "transformation_score": 2,
         "life_relevance_score": 2,
         "surprise_score": 2,
         "persona_fit_score": 2
       },
-      "hook_idea": "もし深い地下やトンネル内でGPSが完全に途絶えたら——AIドローンは自力であなたを見つけ出せるでしょうか？",
+      "hook_idea": "GPSも届かない暗闇の瓦礫の中で、小型ドローンはどうやって自力で生存者を見つけ出すのでしょうか？",
       "example_protagonist": {
-        "name": "坂本 健一",
-        "age": 38,
-        "job": "山岳救助隊員"
+        "name": "佐々木 健一",
+        "age": 44,
+        "job": "消防本部 救助隊員"
       },
       "status": "available",
       "considered_at": "2026-08-28",
       "transformation_comparison": "Skydioなどの市販ドローンで既にカメラやIMUによるGPS非依存の自律飛行・障害物回避技術は実用化されています。本論文の新しい部分は、深層強化学習（TD3）を用いた連続速度制御をRaspberry Piのような小型エッジ環境でリアルタイム動作させたPoC（概念実証）である点です。",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-11",
       "score_history": [
         {
           "version": null,
@@ -8173,18 +8208,23 @@
           "version": "2026-09-06-wonder",
           "score": 2.0,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 1.55,
+          "rescored_at": "2026-09-11"
         }
       ],
       "market_status": "existing_product",
-      "novel_delta": "GPSが受信できない環境でオンボードセンサーを用いて自律飛行し熱源等の対象物を探索するドローン技術はSkydio等の商用機で既に実用化されており、本研究固有の新しい生活体験や技術的飛躍はほぼない。",
-      "demonstrated_capability": "シミュレータ環境で強化学習モデル（TD3）を学習させて90〜95%の航行成功率を達成し、Raspberry Pi・LiDAR・オプティカルフロー・熱センサーを搭載した実機ドローンでGPS非依存の自律航行および特定対象物への接近を実証した。",
-      "future_scene_sketch": "電波の遮断された地下トンネル事故の現場で、取り残された作業員の元へ小型ドローンが瓦礫を避けて自律的に辿り着き、備蓄物資の場所を知らせる熱センサーの合図を見て作業員が安堵のため息をつく。",
-      "deja_vu_note": "kl006「孤立した集落を救うAIドローン」ですでに災害時に自律飛行ドローンが救援を行うテーマを公開済みであり、kl013「救助犬の『鼻』を受け継ぐロボット」とも災害捜索救助の文脈が酷似している。",
+      "novel_delta": "LiDARやオンボードカメラ等を用いてGPSが届かない環境で障害物を自律回避・探索するドローンは既にSkydioやExyn等の商用製品で実用化されており、生活者が体感できる新しい体験はほぼない。",
+      "demonstrated_capability": "シミュレーション環境でのカリキュラム学習（成功率90〜95%）を経て、Raspberry PiとLiDAR・サーマルカメラを搭載した実機マルチロータードローンがGPSなしで自律飛行し目標物体を検知・接近することに成功した。",
+      "future_scene_sketch": "GPS電波が遮断された倒壊家屋の隙間へ、安価な小型ドローンが壁を避けながら滑らかに入り込み、瓦礫の奥で助けを待つ人の熱源を捉えて救助隊へ位置を伝える。",
+      "deja_vu_note": "kl006（孤立集落を救うAIドローン）とドローン×災害対応という枠組みが重複しており、テーマとしての新鮮味に欠ける。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
       "behavioral_familiarity": "novel",
-      "behavioral_familiarity_note": "チャットボット等の対話型AIの振る舞いではなく、GPS遮断下でドローンが自律航行して物体へ接近する物理的センシング・移動制御技術であるため（ただし商用ロボティクス製品としては既存）。",
-      "deja_vu_level": "strong",
-      "deja_vu_context_upto": "kl017"
+      "behavioral_familiarity_note": "ドローンの三次元空間における自律飛行・物理的な物体探索能力であり、チャットボット等の対話AIでは原理的に再現できない物理的能力であるため。",
+      "deja_vu_level": "partial",
+      "deja_vu_context_upto": "kl019"
     },
     {
       "paperId": "4e0db350928a651c0313f41120aa3b019014cc9d",
@@ -26302,6 +26342,6 @@
       "considered_at": "2026-09-10"
     }
   ],
-  "last_updated": "2026-09-10",
+  "last_updated": "2026-09-11",
   "total_shortlist": 512
 }
