@@ -118,6 +118,27 @@
         "\"AI model\" AND \"generation leap\" AND (capability OR performance)"
       ]
     },
+    "pet_health": {
+      "label": "ペット・動物医療",
+      "note": "2026-09-14追加（AI・ロボティクス限定方針撤廃後の新カテゴリ第1号）。犬・猫の寿命延伸薬（rapamycin等）・遺伝子治療・幹細胞治療・AI診断・コンパニオンロボット等、ペットの健康・介護を扱う。kl019（ロボット犬）と近い温かみのあるテーマ性を持つが、ロボットに限定しない。",
+      "weight": 1.0,
+      "queries": [
+        "\"companion robot\" AND pet",
+        "\"companion robot\" AND dog",
+        "\"animal-assisted therapy\" AND trial",
+        "canine AND aging AND intervention AND trial",
+        "rapamycin AND dog AND aging",
+        "\"gene therapy\" AND dog AND trial",
+        "veterinary AND \"gene therapy\"",
+        "veterinary AND \"stem cell therapy\" AND clinical",
+        "feline AND \"chronic kidney disease\" AND trial",
+        "\"canine cognitive dysfunction\" AND treatment",
+        "\"AI\" AND veterinary AND diagnosis AND accuracy",
+        "veterinary AND \"world's first\"",
+        "\"dog longevity\"",
+        "\"gene therapy\" AND canine AND breakthrough"
+      ]
+    },
     "disaster_safety": {
       "label": "防災・安全",
       "weight": 1.0,
