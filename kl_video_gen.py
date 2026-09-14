@@ -465,6 +465,15 @@ def _fit_or_wrap_shorts_telop(text: str, font_path: Path, max_size: int, max_wid
     はみ出す事故が実際に発生した（2026-09-08、kl017 shorts1_S01で発覚）。
     1行でmin_sizeでも収まらない場合のみ、句読点に近い位置で2行に折り返す
     （drawtextの改行はテキストファイル中の実改行で表現できる）。
+
+    2026-09-14改訂（kl021 shorts1_S01で再発）: 句読点が文の片側に偏って分布する
+    文（例:「視野が、少しずつ狭くなっていく——そう言われた日から、ずっと不安でした。」）
+    では、「文字位置としての中央に最も近い句読点」を選ぶ旧ロジックが27字/9字のような
+    極端に不均等な分割を作ってしまい、長い方の行がmin_sizeまで縮めても画面幅に
+    収まらず、はみ出したままフォールバックしていた（while...elseのoff-by-oneで
+    「収まっていないサイズ」を収まったかのように返す不具合もあった）。
+    句読点ベースの分割と、文字数だけで機械的に二等分する分割の両方を試し、
+    「長い方の行の文字数」がより小さい方を採用するよう修正。
     戻り値: (drawtextに渡すテキスト, フォントサイズ)。
     """
     size = max_size
@@ -473,25 +482,65 @@ def _fit_or_wrap_shorts_telop(text: str, font_path: Path, max_size: int, max_wid
         if font.getbbox(text)[2] <= max_width:
             return text, size
         size -= 4
-    # min_sizeでも1行に収まらない → 句読点に近い位置で2行に分割
+
+    # min_sizeでも1行に収まらない → 2行に分割する。句読点ベースと機械的な
+    # 二等分、両方の候補を作り、実際のピクセル幅で長い方が短くなる方を採用する。
+    # 2026-09-14再改訂: 文字数を「長さ」の代用にしていたが、半角文字（数字・
+    # 引用符等）と全角文字（漢字・かな）が混在する文（例:「2026年、目を"若返
+    # らせる"遺伝子治療が、」）では同じ文字数でも実測幅が大きく異なり、文字数
+    # ベースで「短い」と判定した行が実際には画面幅を超えて残っていた
+    # （kl021 shorts1_S03で発覚）。以降は必ずfont.getbbox()の実測幅で判定する。
     mid = len(text) // 2
-    best = None
+    punct_best = None
     for i, ch in enumerate(text):
         if ch in "、。！？":
-            if best is None or abs((i + 1) - mid) < abs(best - mid):
-                best = i + 1
-    if not best or best <= 0 or best >= len(text):
-        best = mid
-    line1, line2 = text[:best], text[best:]
-    longer = line1 if len(line1) >= len(line2) else line2
-    size = max_size
-    while size > min_size:
+            if punct_best is None or abs((i + 1) - mid) < abs(punct_best - mid):
+                punct_best = i + 1
+
+    candidates = []
+    if punct_best and 0 < punct_best < len(text):
+        candidates.append(punct_best)
+    candidates.append(mid)
+
+    ref_font = ImageFont.truetype(str(font_path), max_size)
+
+    def max_line_width(split_at: int) -> int:
+        w1 = ref_font.getbbox(text[:split_at])[2]
+        w2 = ref_font.getbbox(text[split_at:])[2]
+        return max(w1, w2)
+
+    best_split = min(candidates, key=max_line_width)
+    line1, line2 = text[:best_split], text[best_split:]
+
+    def fits_both(l1: str, l2: str, size: int) -> bool:
         font = ImageFont.truetype(str(font_path), size)
-        if font.getbbox(longer)[2] <= max_width:
+        return font.getbbox(l1)[2] <= max_width and font.getbbox(l2)[2] <= max_width
+
+    size = max_size
+    while size >= min_size:
+        if fits_both(line1, line2, size):
             break
         size -= 4
     else:
         size = min_size
+
+    # それでも両方は収まらない場合（非常に長い文）は3行に分割してもう一度縮小を試みる。
+    if not fits_both(line1, line2, size) and len(text) > 2:
+        third = max(1, len(text) // 3)
+        line1, line2, line3 = text[:third], text[third:third * 2], text[third * 2:]
+
+        def fits_all3(size: int) -> bool:
+            font = ImageFont.truetype(str(font_path), size)
+            return all(font.getbbox(l)[2] <= max_width for l in (line1, line2, line3))
+
+        size = max_size
+        while size >= min_size:
+            if fits_all3(size):
+                break
+            size -= 4
+        else:
+            size = min_size
+        return f"{line1}\n{line2}\n{line3}", size
     return f"{line1}\n{line2}", size
 
 
