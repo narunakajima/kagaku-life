@@ -1,5 +1,5 @@
 {
-  "_comment": "kl_paper_search.py（今後作成）がSemantic Scholar Graph APIへのクエリ生成に使う設定。カテゴリはCLAUDE.mdのSTAGE1サブジャンル表と対応。weightはSTAGE1でのカテゴリ登場頻度に使う。最低12話公開されるまでは全カテゴリ均等のまま固定し、アナリティクスによる自動調整は行わない（weight_policy参照）。2026-08〜: RCT/trial/evaluation系のクエリだけだと『既に検証済みだが地味』な研究に偏り、企画書が求める『変革ポテンシャル』を取りこぼすと判明（kl001実制作で発覚）。各カテゴリのqueries末尾に、最先端・野心的な能力実証を狙うクエリを追加した（トップ研究機関・企業の発表を拾いやすいよう研究デザイン語ではなく能力・世代を表す語を使う）。信頼性の担保はSTAGE2（著者機関・技術的厳密さでの判断）とSTAGE3（誇張チェック）に委ねる。2026-08-28改訂: kl001〜006を一巡した時点でtopics_shortlist.jsonの上位が『査読済み・地味な改善』（転倒検知精度、エクソスケルトンの効率改善%等）ばかりに偏っていることが判明（ユーザー指摘）。原因はtrial/RCT/evaluation系クエリが各カテゴリ7〜10個に対し野心的クエリが1〜2個に留まっていた比率の偏り。各カテゴリに野心的クエリを4〜5個追加し、比率を是正した（既存クエリは信頼性シグナル収集に引き続き有用なため削除しない）。",
+  "_comment": "kl_paper_search.py（今後作成）がSemantic Scholar Graph APIへのクエリ生成に使う設定。カテゴリはCLAUDE.mdのSTAGE1サブジャンル表と対応。weightはSTAGE1でのカテゴリ登場頻度に使う。最低12話公開されるまでは全カテゴリ均等のまま固定し、アナリティクスによる自動調整は行わない（weight_policy参照）。2026-08〜: RCT/trial/evaluation系のクエリだけだと『既に検証済みだが地味』な研究に偏り、企画書が求める『変革ポテンシャル』を取りこぼすと判明（kl001実制作で発覚）。各カテゴリのqueries末尾に、最先端・野心的な能力実証を狙うクエリを追加した（トップ研究機関・企業の発表を拾いやすいよう研究デザイン語ではなく能力・世代を表す語を使う）。信頼性の担保はSTAGE2（著者機関・技術的厳密さでの判断）とSTAGE3（誇張チェック）に委ねる。2026-08-28改訂: kl001〜006を一巡した時点でtopics_shortlist.jsonの上位が『査読済み・地味な改善』（転倒検知精度、エクソスケルトンの効率改善%等）ばかりに偏っていることが判明（ユーザー指摘）。原因はtrial/RCT/evaluation系クエリが各カテゴリ7〜10個に対し野心的クエリが1〜2個に留まっていた比率の偏り。各カテゴリに野心的クエリを4〜5個追加し、比率を是正した（既存クエリは信頼性シグナル収集に引き続き有用なため削除しない）。2026-09-14改訂: チャンネルの『AI・ロボティクス分野限定』方針を撤廃したことを受け（CLAUDE.md『論文選定ロジック』節参照、きっかけはkl021=遺伝子治療によるAI・ロボティクス抜きの候補）、aging_care/medical_support/mobility/disaster_safetyに非AI・非ロボティクスの科学クエリ（遺伝子治療・老化生物学・再生医療・気候科学等）を追加した。home_robotとworkはカテゴリの定義自体が『ロボット』『AIエージェントによる働き方の変化』という技術主体を含むため大きくは変更せず、home_robotのみ物理的な自己修復材料等の周辺領域を軽く追加した。カテゴリ体系（6分類）自体の再設計・非AI専用の新カテゴリ追加は今回は行わず、既存カテゴリの探索範囲を広げる形に留めた。",
   "categories": {
     "aging_care": {
       "label": "高齢化・介護・自立支援",
@@ -17,7 +17,12 @@
         "\"autonomous humanoid\" AND \"elder care\" AND deployment",
         "\"robot caregiver\" AND (\"first demonstration\" OR \"world's first\")",
         "\"AI agent\" AND \"aging in place\" AND \"fully autonomous\"",
-        "\"predictive health\" AND elderly AND \"early warning\" AND breakthrough"
+        "\"predictive health\" AND elderly AND \"early warning\" AND breakthrough",
+        "\"epigenetic reprogramming\" AND aging AND (rejuvenation OR reversal)",
+        "\"cellular reprogramming\" AND aging AND breakthrough",
+        "senolytic AND aging AND (\"clinical trial\" OR \"first-in-human\")",
+        "\"biological age\" AND (reversal OR reversed) AND breakthrough",
+        "\"caloric restriction mimetic\" AND longevity AND trial"
       ]
     },
     "home_robot": {
@@ -37,12 +42,14 @@
         "\"general-purpose robot\" AND household AND \"zero-shot\"",
         "\"embodied AI\" AND \"unseen task\" AND home AND generalization",
         "\"humanoid robot\" AND \"learns\" AND \"novel task\" AND (demonstration OR deployment)",
-        "\"robot\" AND household AND \"never seen before\" AND task"
+        "\"robot\" AND household AND \"never seen before\" AND task",
+        "\"self-healing material\" AND household AND breakthrough",
+        "\"smart textile\" AND (stain OR odor OR cleaning) AND breakthrough"
       ]
     },
     "medical_support": {
       "label": "医療補助技術",
-      "note": "AI/ロボットによる支援技術のみ対象。診断・治療そのものの医学的妥当性を論じる候補はSTAGE2/3で個別に除外判断する（CLAUDE.md参照）。2026-09-06改訂: 在庫148件中46件（約3割）がBCI/神経義肢系に偏っていることがFable監査で判明（クエリ12本中4本がBCI/neural interface系で、この分野は元々Semantic Scholar上の論文密度が高いため実際の収集比率がさらに偏った）。kl003・kl007・kl009で既にBCI/神経義肢系を複数回扱っているため、近い意味のクエリを整理し（旧: brain-computer interface×2, neural interface×1 → brain-computer interface×1に統合）、別のサブジャンル（義手の器用さ・服薬管理・慢性疾患の心理的サポート・理学療法）のクエリを追加してプールの多様性を確保した。",
+      "note": "AI/ロボットによる支援技術に加え、2026-09-14のAI・ロボティクス限定方針撤廃以降は遺伝子治療・創薬・再生医療等の医学全般も対象に含む（CLAUDE.md参照。kl021=ER-100/老化細胞若返り遺伝子治療がきっかけ）。診断・治療そのものの医学的妥当性を断定的に論じる候補はSTAGE2/3で個別に除外判断する。2026-09-06改訂: 在庫148件中46件（約3割）がBCI/神経義肢系に偏っていることがFable監査で判明（クエリ12本中4本がBCI/neural interface系で、この分野は元々Semantic Scholar上の論文密度が高いため実際の収集比率がさらに偏った）。kl003・kl007・kl009で既にBCI/神経義肢系を複数回扱っているため、近い意味のクエリを整理し（旧: brain-computer interface×2, neural interface×1 → brain-computer interface×1に統合）、別のサブジャンル（義手の器用さ・服薬管理・慢性疾患の心理的サポート・理学療法）のクエリを追加してプールの多様性を確保した。2026-09-14追加: 遺伝子治療・老化生物学・再生医療系のクエリを追加し、BCI以外の医学的ブレイクスルーも収集できるようにした。",
       "weight": 1.0,
       "queries": [
         "\"AI-assisted rehabilitation\" AND stroke AND (trial OR RCT)",
@@ -57,7 +64,14 @@
         "\"prosthetic hand\" AND grip AND dexterity AND evaluation",
         "\"AI\" AND \"medication management\" AND elderly AND adherence AND trial",
         "\"AI companion\" AND \"chronic illness\" AND (wellbeing OR support) AND trial",
-        "\"robotic physical therapy\" AND motion AND feedback AND trial"
+        "\"robotic physical therapy\" AND motion AND feedback AND trial",
+        "\"gene therapy\" AND \"world's first\"",
+        "CRISPR AND \"world's first\"",
+        "\"partial epigenetic reprogramming\" AND (rejuvenation OR restores)",
+        "immunotherapy AND \"world's first\"",
+        "\"regenerative medicine\" AND \"world's first\"",
+        "\"stem cell therapy\" AND \"world's first\"",
+        "\"mRNA therapeutic\" AND breakthrough"
       ]
     },
     "mobility": {
@@ -74,7 +88,10 @@
         "\"bionic limb\" AND sensation AND \"restores\"",
         "\"robotic leg\" AND (climbs OR runs) AND autonomous AND breakthrough",
         "\"full-body exoskeleton\" AND paralysis AND \"walk again\"",
-        "\"mind-controlled\" AND (prosthesis OR exoskeleton) AND breakthrough"
+        "\"mind-controlled\" AND (prosthesis OR exoskeleton) AND breakthrough",
+        "\"spinal cord injury\" AND regeneration AND breakthrough",
+        "\"gene therapy\" AND paralysis AND (restores OR \"walk again\")",
+        "\"muscle regeneration\" AND therapy AND breakthrough"
       ]
     },
     "work": {
@@ -114,7 +131,10 @@
         "\"autonomous robot\" AND disaster AND \"no human intervention\"",
         "\"robot swarm\" AND rescue AND \"self-organizing\"",
         "\"AI\" AND \"predicts\" AND (earthquake OR wildfire OR flood) AND breakthrough",
-        "\"drone swarm\" AND (wildfire OR earthquake) AND autonomous AND deployment"
+        "\"drone swarm\" AND (wildfire OR earthquake) AND autonomous AND deployment",
+        "\"early warning system\" AND (earthquake OR tsunami OR wildfire) AND breakthrough",
+        "\"fire-resistant material\" AND breakthrough",
+        "\"flood forecasting\" AND breakthrough AND accuracy"
       ]
     }
   },
