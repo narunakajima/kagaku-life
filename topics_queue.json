@@ -974,8 +974,51 @@
       },
       "hook_idea": "「大好きな絵本の読み聞かせも、文字がだんだんかすんで見えるようになってきて……」静かに視野が狭まっていく緑内障の初期診断を受けた元教師に、老いた目の“設計図”を書き換えるという最先端の遺伝子治療が示す希望とは？",
       "notes": "2026-09-14: 通常のSTAGE0〜4パイプラインが提示した候補（6カテゴリ横断、触覚センサー人工皮膚・呼吸補助ソフトロボット・ロボット群自律制御等）をユーザーが全て『面白みに欠ける』として却下（該当8件はtopics_shortlist.jsonにstatus: rejectedとして記録済み）。原因調査のため/consult（Claude×Gemini対話→Opus統合）を実施し、『AI・ロボティクスの派手な速報だけに絞る』方向転換は番組アイデンティティ崩壊のリスクが高く不採用と結論。一方、実測で在庫上位が2〜3年前のBCI系論文に偏っている既視感判定の構造的な穴（deja_vu_level=partial帯にキャップが効かない）が判明（未修正、今後の課題）。2026年発表限定で全カテゴリSTAGE1を再実行したが最高スコア3.2（ほぼ全てlow_quality除外）と有望な候補は得られなかった。\n\nこの直後、ユーザーが通常パイプラインを経由しない『ワイルドカード』としてER-100（老化細胞の若返り遺伝子治療）を持ち込んだ。CLAUDE.mdの『AI・ロボティクス分野の学術論文』『medical_supportはAI/ロボット技術のみ、医学全般は対象外』という方針と直接衝突するため、ユーザーに方針との衝突を明示して確認した結果、『今回は例外として採用』の判断を得た。CLAUDE.mdの「論文選定ロジック」節冒頭に例外運用ルールを追記済み（scope_exception: trueを都度明記し、category: biotech_exceptionとしてローテーション対象外にする運用）。\n\n内容はWebSearchで一次情報を確認済み: Sinclair研究室のLu et al. 2020年Nature論文（マウスの視神経でOSK＝Oct4/Sox2/Klf4によるエピジェネティック若返り、c-Mycは除外）が基礎。Life Biosciences社のER-100が2026年1月28日にFDAからIND（治験許可）を取得し、開放隅角緑内障(OAG)・非動脈炎性前部虚血性視神経症(NAION)を対象に世界初のヒト投与を実施（2026年6月9日、第一号患者への投与完了）。安全機構として2本のAAV2ベクター（rtTAトランス活性化因子＋TRE制御下のOSK）によるドキシサイクリン誘導性のオン/オフスイッチを採用——服薬中のみ若返りが進行し、中止すれば停止する。幹細胞研究者Paul Knoepfler（UCデービス）の懐疑的見解（若返ってもOAGの眼圧自体は下がらず効果が持続しない可能性、NAIONは一度きりの虚血イベントのため微小環境上の懸念が残る）も確認済みで、closing シーンでの両論併記に使う想定。\n\n主人公は緑内障の初期診断を受けた元小学校教師（絵本の読み聞かせという『視覚を大切にしてきた』職業・趣味を持たせ、視野が狭まる恐怖と回復への希望を対比しやすくした）。研究ボイスは主人公が女性のため男性（Orus、確定済み）を使う想定。\n\n2026-09-14追記: エピソードJSON生成（STEP2）完了直後、制作者から「AI・ロボティクス限定という制約自体を今後なくす」という恒久方針の指示があった。理由は『今後あらゆる科学の発展にAI・ロボティクスが深く関わるため、分野で区切る制約自体が意味をなさなくなる』。これにより、kl021が『都度承認の例外』ではなく『AI・ロボティクス限定方針撤廃後の最初の通常エピソード』という位置づけに変わった。CLAUDE.mdの『論文選定ロジック』節冒頭・カテゴリ表（医療補助技術）を撤廃を反映して更新済み。scope_exception/category=biotech_exceptionのフィールド値は歴史的記録としてそのまま残す（以後の新規エピソードでは不要な運用）。"
+    },
+    {
+      "episode_id": "kl022",
+      "status": "confirmed",
+      "title": "愛犬と、もう3年：「余命半年」の腎臓病を覆した、既存薬ひと粒の奇跡",
+      "format": "single_paper",
+      "category": "pet_health",
+      "category_label": "ペット・動物医療",
+      "references": [
+        {
+          "title": "Overall survival with beraprost in dogs with IRIS stage 2 chronic kidney disease",
+          "authors": [
+            "Masayuki Mayumi",
+            "Takumi Matsuura",
+            "Tadashi Sano"
+          ],
+          "year": 2026,
+          "venue": "Frontiers in Veterinary Science",
+          "doi": "10.3389/fvets.2026.1665061",
+          "is_preprint": false
+        }
+      ],
+      "protagonist": {
+        "name": "柴田 直樹",
+        "age": 52,
+        "job": "在宅勤務のグラフィックデザイナー",
+        "gender": "male"
+      },
+      "hook_idea": "もし、動物病院で『余命半年』と告げられた愛犬と、あと3年一緒に散歩できる薬が見つかったとしたら？",
+      "notes": "2026-09-15: STAGE0で全カテゴリ在庫3件以上を確認しSTAGE1は全面スキップ。kl_shortlist_rescore.py --checkはバージョン起因の再採点0件だったが、aging_care上位候補がkl021（老化細胞の若返り遺伝子治療）と技術の型が近いと判断し、同カテゴリのみ--stale-deja-vuで既視感再判定を実施（17件、strongな重複なしと確認）。\n\nSTAGE2でカテゴリ横断の候補を提示した結果、新設カテゴリpet_health（2026-09-14追加、AI・ロボティクス限定方針撤廃後の新カテゴリ第1号）の本論文をユーザーが選定。wonder_score=4/life_relevance_score=5/surprise_score=5/persona_fit_score=5、deja_vu_level=noneで既視感なし、pet_healthカテゴリの実制作は本エピソードが初。\n\n内容: 自然発症のIRISステージ2慢性腎臓病の犬16頭にベラプロスト（ヒト用・猫用として既に市販されている薬剤の犬への適応）を経口投与した前向き観察研究。過去の対照群17頭（生存期間中央値198日）と比較し、生存期間中央値が1,101日へ大幅に延長、病勢進行も有意に遅延した。market_status=incremental（既存薬の犬への新規適応であり、薬剤自体は新規物質ではない）だが、市場に無い部分（novel_delta）は『市販薬を犬の慢性腎臓病に応用し生存期間を大幅に延ばせることを示した臨床エビデンスそのもの』であるため、overall_scoreへの上限キャップ（existing_product時のみ適用）は対象外。\n\nSTAGE2の信頼性チェック観点: n=16（対照群17）という規模は動物臨床研究としては一般的だが小規模の部類に入るため、closingシーンで『まだ限られた頭数での研究段階』である旨のヘッジを必ず入れること。査読済み（Frontiers in Veterinary Science、プレプリントではない）。\n\n主人公は在宅勤務のグラフィックデザイナー（52歳男性、shortlistのexample_protagonistを採用）。研究ボイスは主人公が男性のため女性（Autonoe、確定済み）を使う想定。",
+      "stage4_snapshot": {
+        "paperId": "00b601d994552066f766145e764776ff2ba65e14",
+        "overall_score": 4.3,
+        "score_breakdown": {
+          "wonder_score": 4,
+          "transformation_score": 4,
+          "life_relevance_score": 5,
+          "surprise_score": 5,
+          "persona_fit_score": 5
+        },
+        "market_status": "incremental",
+        "novel_delta": "猫用やヒト用として市販されているベラプロストを犬の初期〜中期慢性腎臓病に適用し、生存期間を大幅に延ばす可能性を示した臨床的エビデンス。"
+      }
     }
   ],
-  "total_topics": 21,
-  "last_updated": "2026-09-14"
+  "total_topics": 22,
+  "last_updated": "2026-09-15"
 }

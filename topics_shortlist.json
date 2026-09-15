@@ -1470,12 +1470,12 @@
       "is_preprint": false,
       "category": "aging_care",
       "category_label": "高齢化・介護・自立支援",
-      "overall_score": 2.5,
-      "hook_idea": "カメラで見張られるのは嫌、時計型センサーは充電を忘れる……一人暮らしの親の「もしもの転倒」、壁のセンサーが電波だけで正確に見抜くとしたら？",
+      "overall_score": 1.95,
+      "hook_idea": "もし夜中に一人暮らしの親が倒れたら——時計型センサーを外して寝ていた場合、誰がその異変に気づけるでしょうか？",
       "example_protagonist": {
-        "name": "高橋修平",
+        "name": "高橋直子",
         "age": 52,
-        "job": "地方公務員（実家で一人暮らしをする80代の母を遠隔で見守る息子）"
+        "job": "会社員（一人暮らしの80歳の母を持つ娘）"
       },
       "status": "available",
       "used_in": null,
@@ -1490,26 +1490,31 @@
           "version": "2026-09-06-wonder",
           "score": 1.9,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 2.5,
+          "rescored_at": "2026-09-15"
         }
       ],
       "score_breakdown": {
-        "wonder_score": 2,
+        "wonder_score": 1,
         "transformation_score": 2,
         "life_relevance_score": 4,
-        "surprise_score": 3,
+        "surprise_score": 2,
         "persona_fit_score": 4
       },
       "market_status": "existing_product",
-      "novel_delta": "壁掛けの電波・ミリ波レーダーによる非接触の転倒検知システムは既に多数市販されており、本研究の新しい部分は安価なCWレーダーから経験的モード分解で自由落下特有の高周波スペクトル急増を捉える信号処理アルゴリズムに限られ、生活者体験としての新しい部分はほぼない。",
-      "demonstrated_capability": "体格の異なる5名の被験者（身長158〜180cm、体重50〜93kg）による1000回以上の試行において、自作の5.8GHz連続波レーダーとEMDアルゴリズムを用いて自由落下時の50Hz超過帯域における平均17.5dBのPSD上昇を捉え、日常動作と高精度に識別できることを実証した。",
-      "future_scene_sketch": "深夜、一人暮らしの高齢者が暗闇の廊下で足を滑らせて転倒した瞬間、壁の小型センサーが激しい落下特有の微細な電波反射の乱れだけを逃さず捉え、シーツを払うなどの日常の素早い動作と誤認することなく、遠隔地の家族へ即座に緊急通報が届く。",
-      "deja_vu_note": "",
+      "novel_delta": "安価なCWレーダー波から経験的モード分解を用いて自由落下特有の50Hz以上の高周波成分を抽出し識別する信号処理アルゴリズムを開発した点だが、非接触・カメラ不要で転倒を検知する生活体験そのものは既に市場製品で確立されており新しい部分はほぼない。",
+      "demonstrated_capability": "体格の異なる5名の被験者（身長158〜180cm、体重50〜93kg）による1000回超の実験において、試作した5.8GHz CWレーダーと経験的モード分解を用い、転倒時に50Hz以上の帯域でPSDが日常動作比平均17.5dB増加することを捉えて体格差に左右されない転倒識別を実証した。",
+      "future_scene_sketch": "一人暮らしの高齢の母が夜間の廊下で足を滑らせた瞬間、壁に設置された安価な電波センサーが自由落下の微細な高周波の揺らぎを捉え、見守り端末を身につけていなくても離れた娘のスマートフォンに即座に通知が届く。",
+      "deja_vu_note": "過去のエピソード一覧に非接触レーダーによる転倒検知の直接の採択・却下歴はないが、見守り・安全分野における『非接触センサーによる転倒検知』は工学研究および市販製品の双方で極めて定番の話の型である。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-15",
       "behavioral_familiarity": "novel",
-      "behavioral_familiarity_note": "技術の中核はチャットボット等の対話的振る舞いではなく、電波による自由落下運動の物理センシングおよび信号分離技術であるため。",
+      "behavioral_familiarity_note": "中核技術が対話AI等の振る舞いではなく、電波のドップラー効果を利用した物理的なセンシングおよび周波数解析技術であるため。",
       "deja_vu_level": "none",
-      "deja_vu_context_upto": "kl017"
+      "deja_vu_context_upto": "kl021"
     },
     {
       "paperId": "04ae9052a9087a6cbb60931f5b8e2fd8cec396a8",
@@ -1524,12 +1529,12 @@
       "is_preprint": false,
       "category": "aging_care",
       "category_label": "高齢化・介護・自立支援",
-      "overall_score": 1.55,
-      "hook_idea": "「部屋にカメラを置かれるのは嫌だ」という親の尊厳を守りながら、真っ暗な夜の転倒を防ぐことはできるのでしょうか？",
+      "overall_score": 1.45,
+      "hook_idea": "部屋にカメラを置かれるのは嫌がる親の夜間転倒を、真っ暗なままAIが察知できる日は本当に来るのでしょうか？",
       "example_protagonist": {
-        "name": "高橋 健一",
+        "name": "相田健一",
         "age": 52,
-        "job": "遠方に住む80代の母親の夜間見守り方法に悩む会社員"
+        "job": "実家で一人暮らしをする80代の母を遠隔で見守る会社員"
       },
       "status": "available",
       "used_in": null,
@@ -1544,26 +1549,31 @@
           "version": "2026-09-06-wonder",
           "score": 1.45,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 1.55,
+          "rescored_at": "2026-09-15"
         }
       ],
       "score_breakdown": {
         "wonder_score": 1,
         "transformation_score": 1,
         "life_relevance_score": 3,
-        "surprise_score": 3,
+        "surprise_score": 2,
         "persona_fit_score": 2
       },
       "market_status": "existing_product",
-      "novel_delta": "プライバシー配慮や暗闇対応のサーマル・ミリ波見守りシステムは既に実用化されており、生活体験として新しい部分はほぼなく、汎用VLMのゼロショット熱画像認識が現状では安全基準を満たせないという限界を示した点にとどまる。",
-      "demonstrated_capability": "975本の熱画像動画（OctoNet）で先端VLM6種を検証し、着座動作は92.8%認識できたものの、よろめきは40%未満、手の合図は20%未満と、ゼロショットVLM単体では介護見守りやHRIに不十分であることを実証した。",
-      "future_scene_sketch": "深夜、真っ暗な寝室で一人暮らしの高齢者がベッドから起き上がってふらついた際、プライバシーに配慮した熱画像だけでロボットが見守り、転倒する前に静かに支えへ駆け寄る。",
-      "deja_vu_note": "介護見守りや家庭内ロボットの文脈（kl005、kl008等）と重なり、また非接触センサーやサーマルカメラによる高齢者の転倒見守りという体験の型自体は介護テック分野で極めて典型的である。",
+      "novel_delta": "新しい部分はほぼなく、既存のサーマル見守り技術に対して汎用VLMをそのまま適用可能か検証した結果、ふらつき検知が40%未満など実用には遠いことを示した評価にとどまる。",
+      "demonstrated_capability": "6種類の主要VLMを975本のサーマル動画で検証し、着席動作は92.8%認識できたものの、ふらつき検知は40%未満、手振りは20%未満と精度が低く、現行VLM単体のゼロショットでは見守りに不十分であることを実証した。",
+      "future_scene_sketch": "真夜中にベッドから起き上がった母が足元をふらつかせた瞬間、真っ暗な寝室のプライバシーを守ったまま熱映像からロボットが異変を察知して駆けつけるが、現状の汎用AIではこの小さなよろめきを見落としてしまう。",
+      "deja_vu_note": "サーマルカメラや赤外線センサーを用いた高齢者のプライバシー配慮型見守り・転倒検知という枠組み自体が、既存製品や先行研究で広く知られた典型的なテーマである。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-15",
       "behavioral_familiarity": "novel",
-      "behavioral_familiarity_note": "研究の中核は熱画像センシングに対するVLMのゼロショット視覚認識精度の評価であり、チャットボット的な対話の振る舞いではないためnovel。",
+      "behavioral_familiarity_note": "中核となるのは暗闇やプライバシー環境下での身体動作・転倒のサーマルセンシングであり、スマホのチャットボットでは原理的に再現できないため。",
       "deja_vu_level": "partial",
-      "deja_vu_context_upto": "kl017"
+      "deja_vu_context_upto": "kl021"
     },
     {
       "paperId": "43bb0169cd8d77f170a1ad8a4603485c6c2fb2ec",
@@ -1578,12 +1588,12 @@
       "is_preprint": true,
       "category": "aging_care",
       "category_label": "高齢化・介護・自立支援",
-      "overall_score": 1.5,
-      "hook_idea": "もし一人暮らしの自宅で突然転び、動けなくなったら……誰があなたを見つけてくれますか？",
+      "overall_score": 1.65,
+      "hook_idea": "「もし一人でいるときに倒れたら…」そんな不安を抱えるシニアを、ウェアラブル端末はどう見守るべきでしょうか？",
       "example_protagonist": {
-        "name": "山内 健一",
-        "age": 72,
-        "job": "一人暮らしの年金生活者（元高校教員）"
+        "name": "佐藤 敏雄",
+        "age": 74,
+        "job": "無職（一人暮らし）"
       },
       "status": "available",
       "used_in": null,
@@ -1598,26 +1608,31 @@
           "version": "2026-09-06-wonder",
           "score": 1.5,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 1.5,
+          "rescored_at": "2026-09-15"
         }
       ],
       "score_breakdown": {
         "wonder_score": 1,
         "transformation_score": 1,
-        "life_relevance_score": 3,
+        "life_relevance_score": 4,
         "surprise_score": 2,
         "persona_fit_score": 3
       },
       "market_status": "existing_product",
-      "novel_delta": "加速度・角速度に加えて4チャネルの生理信号を統合した深層学習モデルにより、シミュレーションデータセット上で誤報を抑えつつ高精度に転倒を検知できる点にとどまり、生活体験として新しい部分はほぼない。",
-      "demonstrated_capability": "高齢者（60〜85歳）の模擬転倒データを含むSisFallデータセットにおいて、加速度・ジャイロ・生理信号を入力とした深層学習モデルによりF1値98.7%およびエッジ端末上で50ミリ秒未満の推論速度を実証した。",
-      "future_scene_sketch": "一人暮らしの自室で足をもつれさせて尻もちをついた際、日常の急な動作と危険な転倒が生体信号と動きの複合解析で見分けられ、誤作動に煩わされることなく真の緊急時だけ即座に通報が届く静かな安心感を得る。",
-      "deja_vu_note": "",
+      "novel_delta": "加速度・ジャイロセンサーに生理信号を組み合わせ、ディープラーニングのモデル構造を工夫してシミュレーションデータでの転倒検知精度と誤報率をわずかに改善した点に留まり、生活者体験として新しい部分はほぼない。",
+      "demonstrated_capability": "高齢者（60〜85歳）の模擬転倒データを含むSisFallデータセットにおいて、加速度・角速度・4チャネル生理信号を統合したCNN-LSTMモデルにより、F1スコア98.7%およびエッジ端末での推論遅延50ms未満を実証した。",
+      "future_scene_sketch": "一人暮らしの高齢者が室内で足をとられて倒れ込んだ際、激しい衝撃のないゆっくりした転倒であっても脈拍などの生体シグナルと連動して誤検知なく速やかに認識され、誤作動を恐れることなく家族へ救援要請が届く。",
+      "deja_vu_note": "kl005などの高齢者ケアや、過去に却下された転倒介入ロボット（MRBA）と『高齢者の転倒・見守り』という大枠の課題意識は重なるが、ウェアラブルによる転倒検知アルゴリズム自体は前例がない。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-15",
       "behavioral_familiarity": "novel",
-      "behavioral_familiarity_note": "ウェアラブルセンサーを用いた転倒判定という身体動作・生体信号センシング技術であり、チャットボット等の会話型AIの振る舞いとは異なる物理センシング領域であるため。",
-      "deja_vu_level": "none",
-      "deja_vu_context_upto": "kl017"
+      "behavioral_familiarity_note": "本研究の中核はAIの対話や振る舞いではなく、加速度計や生理信号から身体の転倒を捉える物理センシング技術であるため。",
+      "deja_vu_level": "partial",
+      "deja_vu_context_upto": "kl021"
     },
     {
       "paperId": "20613985b6ab45cd692898983d55b1288bbfb363",
@@ -1658,12 +1673,12 @@
       "is_preprint": false,
       "category": "aging_care",
       "category_label": "高齢化・介護・自立支援",
-      "overall_score": 1.95,
-      "hook_idea": "一人暮らしの親がもし家の中で倒れたら…高価なスマートウォッチを持たせなくても、命を守る方法は作れるでしょうか？",
+      "overall_score": 1.9,
+      "hook_idea": "一人暮らしの親の転倒が心配だけど、高価なスマートウォッチや月額サービスは契約してくれない……そんな悩みを、たった2,000円の小さなマイコンが解決するかもしれません。",
       "example_protagonist": {
-        "name": "高橋健一",
-        "age": 52,
-        "job": "会社員（一人暮らしの母を遠距離介護中）"
+        "name": "高橋健太",
+        "age": 42,
+        "job": "地方の実家に一人で暮らす高齢の父を気にかける会社員"
       },
       "status": "available",
       "used_in": null,
@@ -1678,6 +1693,11 @@
           "version": "2026-09-06-wonder",
           "score": 1.45,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 1.95,
+          "rescored_at": "2026-09-15"
         }
       ],
       "score_breakdown": {
@@ -1685,19 +1705,19 @@
         "transformation_score": 2,
         "life_relevance_score": 4,
         "surprise_score": 2,
-        "persona_fit_score": 4
+        "persona_fit_score": 3
       },
       "market_status": "existing_product",
-      "novel_delta": "手首の端末が転倒や静止を検知して介助者に知らせる体験自体は市場に確立されており、15ドル以下の低コストマイコンでオフライン処理する実装面を除けば新しい部分はほぼない。",
-      "demonstrated_capability": "構造化された実験環境において、ESP32マイコン上で転倒や手の震えなどの異常動作を誤検知なく検出できることを実証した。",
-      "future_scene_sketch": "離れて暮らす高齢の母が自宅の廊下でふらついて座り込んだ瞬間、手首の安価なバンドがわずかな異変を察知し、近所に住む息子の端末へ即座に状況を伝えて駆けつけを可能にする。",
-      "deja_vu_note": "転倒検知や高齢者の見守りは既存製品（Apple Watch等のスマートウォッチや各種見守り端末）で広く普及しており、研究テーマとしても極めて典型的な定型である。",
+      "novel_delta": "新しい体験としての差分はほぼなく、既存のスマートウォッチ等が行っている転倒検知や異常動作検知を15ドル未満の低コストマイコン上でクラウドを介さず完結させた実装技術である点にとどまる。",
+      "demonstrated_capability": "ESP32を搭載した15ドル未満の試作機を用い、構造化された実験環境下において誤検知なしで転倒イベントおよび行動異常（振戦や長時間静止等）をローカル検知・通知できることを実証した。",
+      "future_scene_sketch": "月額通信費の支払いや複雑なネット契約が難しい山あいの平屋で、祖父が庭先で足を滑らせた瞬間、手首の15ドルの小さなバンドがローカルWi-Fiを通じて母屋の端末へ即座に異変を知らせ、家族が駆けつける。",
+      "deja_vu_note": "kl005やkl014で高齢者介護・自立支援を扱っており、また手首のセンサーによる転倒見守りという体験自体は世間一般的にも既視感が極めて強い。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-15",
       "behavioral_familiarity": "novel",
-      "behavioral_familiarity_note": "チャットボットのような対話の振る舞いではなく、手首のセンサーによる物理的な身体動作・衝撃のセンシングが技術の中核であるためnovel。",
+      "behavioral_familiarity_note": "新規性の核がAIの対話や推論といった振る舞いではなく、慣性センサーによる身体動作の検知・エッジ処理技術であるため。",
       "deja_vu_level": "partial",
-      "deja_vu_context_upto": "kl017"
+      "deja_vu_context_upto": "kl021"
     },
     {
       "paperId": "09bb6e9e6d15e8d8504e4699328e2d1423219300",
@@ -1714,12 +1734,12 @@
       "is_preprint": false,
       "category": "aging_care",
       "category_label": "高齢化・介護・自立支援",
-      "overall_score": 2.2,
-      "hook_idea": "一人暮らしを始めた高齢の親が心配…でも、部屋に監視カメラを置くのはお互い気が引けませんか？",
+      "overall_score": 2.35,
+      "hook_idea": "「一人暮らしの親が心配、でも監視カメラを置くのは嫌がる…」そんな悩みを、家中の“たった13個の小さなセンサー”が解決してくれるかもしれません。",
       "example_protagonist": {
         "name": "高橋 智子",
-        "age": 48,
-        "job": "会社員（一人暮らしの80歳の母を見守る娘）"
+        "age": 52,
+        "job": "地方で一人暮らしをする80歳の母親を見守る会社員"
       },
       "status": "available",
       "used_in": null,
@@ -1734,26 +1754,31 @@
           "version": "2026-09-06-wonder",
           "score": 2.35,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 2.2,
+          "rescored_at": "2026-09-15"
         }
       ],
       "score_breakdown": {
         "wonder_score": 2,
         "transformation_score": 2,
-        "life_relevance_score": 3,
+        "life_relevance_score": 4,
         "surprise_score": 2,
         "persona_fit_score": 3
       },
       "market_status": "incremental",
-      "novel_delta": "身につけるセンサーと家具等の物体センサーを最適に組み合わせ、13個のセンサーで17種類に及ぶ詳細な日常動作を97.88%の高精度で自動判別できる点。",
-      "demonstrated_capability": "家庭環境で30個のセンサーを用いて17種類の日常動作データを収集し、ランダムフォレストを用いてセンサー数を13個に絞り込んでも97.88%の精度で認識できることを実証した。",
-      "future_scene_sketch": "実家で一人暮らしをする母が朝起きて薬を飲みお茶を淹れる一連の動作が、カメラで監視される不快感なく正確に認識され、離れて暮らす娘のスマートフォンへ『いつもの朝の服薬と朝食が完了しました』と静かに通知されて安堵をもたらす。",
-      "deja_vu_note": "企画一覧の直接の重複はないものの、ガイドラインで言及されている『非接触センサーで転倒を検知する』などと同系統のIoT高齢者見守り・生活動作認識（ADL）という古典的な研究の型である。",
+      "novel_delta": "ウェアラブルと日用品に貼るセンサを組み合わせ、センサ数を13個に絞り込みながら17種類の日常活動を97.88%の高精度で識別する最適化手法を確立した点。",
+      "demonstrated_capability": "家庭環境で17種類の日常活動について30個のセンサからデータを収集し、センサ数を13個に削減したランダムフォレスト分類器で97.88%の活動認識精度を実証した。",
+      "future_scene_sketch": "一人暮らしの78歳の女性が朝起きてマグカップを手に取り薬を飲むと、身体と家具に取り付けた最小限のセンサが連動して動作を特定し、遠方で暮らす娘のスマートフォンへ『朝の服薬を完了しました』と静かに通知が届き、見守られている側も監視カメラのような圧迫感を感じずに過ごしている。",
+      "deja_vu_note": "kl005やkl014など高齢者自立支援・介護のジャンルはあるが、IoTセンサ群による日常動作認識・見守りという型自体は過去エピソードにない。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-15",
       "behavioral_familiarity": "novel",
-      "behavioral_familiarity_note": "中核技術が対話等のAIの振る舞いではなく、複数センサーを統合した物理的動作のセンシング・機械学習分類であるため。",
-      "deja_vu_level": "partial",
-      "deja_vu_context_upto": "kl017"
+      "behavioral_familiarity_note": "本研究の中核は身体および物体の物理的モーションセンシングの最適配置であり、チャットボット等の対話的振る舞いではないためnovelと判定する。",
+      "deja_vu_level": "none",
+      "deja_vu_context_upto": "kl021"
     },
     {
       "paperId": "f902f2550f15e1d5ff7b3802d68cc5ee1359bd7a",
@@ -1772,11 +1797,11 @@
       "category": "aging_care",
       "category_label": "高齢化・介護・自立支援",
       "overall_score": 2.4,
-      "hook_idea": "「ちょっと腰が痛いなぁ」…その呟きだけで、ベッドが看護師のように察して動いてくれたら、夜の介護の不安はどう変わるでしょうか？",
+      "hook_idea": "夜中に手探りでリモコンを探す気力もないとき、ベッドに『ちょっと腰が痛い』とつぶやくだけで、まるでベテラン看護師のように優しく姿勢を直してくれるとしたら？",
       "example_protagonist": {
-        "name": "鈴木恵子",
-        "age": 52,
-        "job": "会社員（要介護の母と同居）"
+        "name": "高橋 誠治",
+        "age": 78,
+        "job": "元高校英語教師（要介護認定を受け在宅療養中）"
       },
       "status": "available",
       "used_in": null,
@@ -1791,6 +1816,11 @@
           "version": "2026-09-06-wonder",
           "score": 2.85,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 2.4,
+          "rescored_at": "2026-09-15"
         }
       ],
       "score_breakdown": {
@@ -1801,16 +1831,16 @@
         "persona_fit_score": 4
       },
       "market_status": "incremental",
-      "novel_delta": "患者と看護師の対話データを学習したLLMにより、定型外の曖昧な独り言や訴えから安全チェックを経て介護ベッドの角度調整を自律実行し、気遣い応答を返す点。",
-      "demonstrated_capability": "介護ベッドを対象に、看護対話データで微調整したLLMと安全自己チェック機構を用いて、実機実験でゼロショットの指示理解、安全なベッド制御、個別化された応答を実証した。",
-      "future_scene_sketch": "夜中に腰の違和感で目覚めた80代の母が「なんだか腰が突っ張るなぁ」と呟くだけで、ベッドが「少し背中を起こして楽にしましょうか」と優しく声をかけ、負担のない角度へ静かに動いてくれる。",
-      "deja_vu_note": "高齢者ケアや自立支援というジャンルはkl005やkl014と重なるが、介護ベッドの自律制御と看護対話の統合という道具立ては異なる。",
+      "novel_delta": "患者の曖昧な日常会話から意図を解釈し、安全確認チェーンを経て介護ベッド等の制御コマンドを生成しつつ、看護師のように温かみのある対話応答を返す介護特化型LLMアーキテクチャ。",
+      "demonstrated_capability": "介護ベッドを対象とした患者・看護師対話データセットでLLMをファインチューニングし、実機環境において曖昧な指示の解釈、安全制御コマンドの実行、パーソナライズされた対話応答を実証した。",
+      "future_scene_sketch": "深夜に腰の鈍い痛みに耐えかねた主人公が「ちょっと腰が重くて、楽な体勢になりたいな」と曖昧につぶやくと、ベッドが「腰の負担を減らすために背中をゆっくり15度だけ起こしますね、違和感はありませんか？」と優しく気遣いながら静かに角度を調整してくれる。",
+      "deja_vu_note": "kl005やkl014で高齢者介護・認知症ケアを扱っており、LLMを用いて自然な対話から支援を行うという技術の型にも既視感がある。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-15",
       "behavioral_familiarity": "familiar",
-      "behavioral_familiarity_note": "曖昧な言葉から意図を汲み取って気遣いのある返答をする振る舞い自体は、ChatGPTやスマートスピーカーとの対話で今日すぐに体験できるため。",
+      "behavioral_familiarity_note": "曖昧な指示を汲み取り、安全確認を挟みながら優しく応答して家電・機器を操作する振る舞いは、ChatGPTやスマートホーム連携音声アシスタントで日常的に体験できる。",
       "deja_vu_level": "partial",
-      "deja_vu_context_upto": "kl017"
+      "deja_vu_context_upto": "kl021"
     },
     {
       "paperId": "135012b0175a7bbbdbdc848bdf9f38a62b573324",
@@ -1828,12 +1858,12 @@
       "is_preprint": false,
       "category": "aging_care",
       "category_label": "高齢化・介護・自立支援",
-      "overall_score": 2.25,
-      "hook_idea": "一人暮らしの親の『薬の飲み忘れ』や『ドアの開けっ放し』、スマートホームは本当に防いでくれるのでしょうか？",
+      "overall_score": 1.8,
+      "hook_idea": "「母が玄関の鍵を閉め忘れていないか心配…」そんな見守りアプリ、実際に認知症の家庭で使ってみたら何が起きたと思いますか？",
       "example_protagonist": {
-        "name": "高橋 誠一",
+        "name": "高橋美佐子",
         "age": 52,
-        "job": "都内で働く会社員（実家で一人暮らしのMCIの母親を遠距離介護中）"
+        "job": "パート勤務（別居する70代の軽度認知障害の母を介護中）"
       },
       "status": "available",
       "used_in": null,
@@ -1848,26 +1878,31 @@
           "version": "2026-09-06-wonder",
           "score": 1.55,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 2.25,
+          "rescored_at": "2026-09-15"
         }
       ],
       "score_breakdown": {
-        "wonder_score": 2,
+        "wonder_score": 1,
         "transformation_score": 2,
         "life_relevance_score": 4,
         "surprise_score": 1,
         "persona_fit_score": 3
       },
       "market_status": "existing_product",
-      "novel_delta": "市販のスマートホーム機器とAIアプリを組み合わせた見守り・服薬管理の体験であり、既存の消費者向け製品や見守りサービスと比べて新しい部分はほぼない。",
-      "demonstrated_capability": "MCI当事者と介護者13組の家庭に市販スマートホーム機器とアプリを導入し、数ヶ月間の追跡調査でドア開閉や服薬遵守への有用性と同居人識別ミスなどの課題を質的に確認した。",
-      "future_scene_sketch": "離れて暮らす母親が玄関ドアを開けたまま出かけようとすると、AIアプリが子のスマートフォンへ即座に状況を通知し、徘徊の不安を未然に防ぐ。",
-      "deja_vu_note": "kl005（認知症ケア）やkl014（AIによる認知症の実行機能支援）とテーマが近く、さらにセンサーやスマートホーム機器による見守りという型自体が既存の市販サービス紹介と区別がつかない。",
+      "novel_delta": "新しい技術的要素はほぼなく、市販のスマートホームセンサーと見守りアプリをMCI（軽度認知障害）当事者と介護者の家庭13組に導入した際の受容性や同居形態による使い方の違い、誤検知への不満を定性調査した点に留まる。",
+      "demonstrated_capability": "軽度認知障害（MCI）のある当事者と介護者のペア13組の家庭に市販スマートホーム機器とAI見守りアプリを設置し、複数回の追跡インタビューを通じて、徘徊防止や服薬支援への有用性と居住者の識別失敗などの限界を定性的に実証した。",
+      "future_scene_sketch": "玄関の開閉センサーと連動したアプリから通知を受け取った娘が、市販の見守り機器と同じように母の戸締まり忘れを確認しつつ、同居家族との区別がつかないAIの誤検知通知を苦笑いしながら仕分けている。",
+      "deja_vu_note": "kl014（AIが実行機能を肩代わりする認知症ケア）と認知症・MCI支援という問題設定が重なるうえ、ドアセンサーや服薬見守りという道具立て自体が既存の見守りサービス全般と酷似している。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-15",
       "behavioral_familiarity": "familiar",
-      "behavioral_familiarity_note": "ドアの開閉通知や徘徊検知、服薬リマインドはSwitchBot等の市販センサーやAlexaのリマインダー機能ですでに日常的に再現可能である。",
+      "behavioral_familiarity_note": "ドアの開閉検知や服薬リマインド、異変検知の通知は、SwitchBotやMANOMA、スマートスピーカー等の既存製品で日常的に再現できるため。",
       "deja_vu_level": "partial",
-      "deja_vu_context_upto": "kl017"
+      "deja_vu_context_upto": "kl021"
     },
     {
       "paperId": "c7f47212ef79198ec3e10c31fba87756d9a8d229",
@@ -4511,16 +4546,16 @@
         "surprise_score": 1,
         "persona_fit_score": 3
       },
-      "hook_idea": "一人暮らしの高齢の親を見守るAI——本当に欲しいのは監視カメラではなく、気の利いた『先回りの気配り』ではないでしょうか？",
+      "hook_idea": "遠くに暮らす高齢の親をAIが見守り先回りして気遣ってくれる未来――でもそれって、今のスマートスピーカーと何が違うのでしょうか？",
       "example_protagonist": {
-        "name": "柴田 正雄",
-        "age": 76,
-        "job": "無職（元高校教師）"
+        "name": "佐藤 雅彦",
+        "age": 52,
+        "job": "遠方に一人暮らしの高齢の母を持つ会社員"
       },
       "status": "available",
       "considered_at": "2026-08-28",
       "transformation_comparison": "既存の市販見守り家電やスマートスピーカーは『異常が起きたら通知する』『呼びかけに応答する』受動的製品ですが、論文の新しい部分はLLMを基盤としたAgentic AIがバイタルや生活音から自律的に状況を推論し、問題発生前に予防的な対応やケア調整をプロアクティブに行う点です。",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-15",
       "score_history": [
         {
           "version": null,
@@ -4531,18 +4566,23 @@
           "version": "2026-09-06-wonder",
           "score": 1.75,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 2.25,
+          "rescored_at": "2026-09-15"
         }
       ],
       "market_status": "existing_product",
-      "novel_delta": "総説（サーベイ）論文であり新しいシステムや実証実験の提示はなく、既存のスマートスピーカーや高齢者向け対話ロボットが提供している体験を超える新しい部分はほぼない。",
-      "demonstrated_capability": "独自の被験者実験や新規モデルの定量的実証は行われておらず、LLM基盤エージェントAIの高齢者ケアにおける応用領域や倫理・プライバシー上の課題を網羅的に整理・議論したサーベイである。",
-      "future_scene_sketch": "一人暮らしの柴田さんが朝起きてリビングに入ると、AIが室温と前夜の睡眠傾向をもとにエアコンを微調整し、『柴田さん、昨日は少し寝苦しそうでしたが、今日のお薬はもう飲みましたか？』と先回りして静かに声をかける。",
-      "deja_vu_note": "kl005（高齢者×ロボットによる認知機能ケア）やkl014（認知症ケアにおけるAIの生活実行機能肩代わり）と『高齢者の生活自立を支援する対話型AI』という型が重複しており、さらに本論文は総論的なサーベイのため体験としての新奇性がない。",
+      "novel_delta": "本論文はAgentic AIの高齢者ケアへの応用可能性と倫理的課題を整理したサーベイ・展望論文であり、独自のシステム実装や実証実験による新しい生活体験の差分はほぼない。",
+      "demonstrated_capability": "LLMベースの自律型AIが高齢者ケア（健康追跡、認知ケア、環境管理）にもたらす機会と課題・倫理的懸念を既存文献に基づいて体系的に整理・議論したのみで、新規の実装や被験者を伴う実証実験は行われていない。",
+      "future_scene_sketch": "地方で一人暮らしをする80代の祖母が、AIエージェントに薬の飲み忘れを優しく先回りで注意され、室温の自動調整に守られながら穏やかな朝を過ごすが、その体験は現在市販されているスマートホームや対話AIの枠組みを出ない。",
+      "deja_vu_note": "高齢者の自立生活や認知機能維持をAI・ロボットが支援するという問題設定および体験の型は、kl005（ロボットとの対話による認知機能ケア）やkl014（AIが段取りを支援する認知症ケア）と完全に重複している。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
       "behavioral_familiarity": "familiar",
-      "behavioral_familiarity_note": "体調のヒアリングや雑談相手、予定の促しといった振る舞い自体は、ChatGPTの音声対話機能やElliQ、Amazon Alexa等で今日すでに同等の体験ができる。",
+      "behavioral_familiarity_note": "服薬リマインド、健康アドバイス、雑談による認知的刺激、スマート家電の自動制御といった能動的な振る舞いは、AlexaやSiri、ChatGPTなどの既存アシスタントで今日すでに再現できるため。",
       "deja_vu_level": "strong",
-      "deja_vu_context_upto": "kl017"
+      "deja_vu_context_upto": "kl021"
     },
     {
       "paperId": "d2208698c391e7a17ca590433655cc1f70a2e530",
@@ -6688,24 +6728,24 @@
       "is_preprint": false,
       "category": "aging_care",
       "category_label": "高齢化・介護・自立支援",
-      "overall_score": 2.4,
+      "overall_score": 2.35,
       "score_breakdown": {
         "wonder_score": 2,
         "transformation_score": 2,
         "life_relevance_score": 4,
         "surprise_score": 2,
-        "persona_fit_score": 4
+        "persona_fit_score": 3
       },
-      "hook_idea": "「最近、人の名前がパッと出なくなった…」そんな将来の不安に、スマートウォッチが食事から運動までまるごと寄り添ってくれるとしたら？",
+      "hook_idea": "将来の認知症が不安なあなたへ。スマートウォッチとアプリの指示に従うだけの生活改善で、脳の衰えは本当に食い止められるのでしょうか？",
       "example_protagonist": {
-        "name": "佐藤 啓介",
-        "age": 66,
-        "job": "元高校教師（定年退職後、地域ボランティア活動中）"
+        "name": "高橋信二",
+        "age": 64,
+        "job": "定年退職後の嘱託社員（将来の物忘れや健康に不安を抱える元事務職）"
       },
       "status": "available",
       "considered_at": "2026-08-28",
       "transformation_comparison": "スマートウォッチでの歩数・睡眠トラッキングや単体脳トレアプリは既存製品として広く普及しています。本研究の本当に新しい部分は、認知症予防の標準手法であるFINGERプロトコル（食事・運動・認知訓練・血管管理等）をアプリとウェアラブルのデジタルバイオマーカー収集に統合し、包括的・個別化予防プログラムとしてシステム化した点です。",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-15",
       "score_history": [
         {
           "version": null,
@@ -6716,18 +6756,23 @@
           "version": "2026-09-06-wonder",
           "score": 2.1,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 2.4,
+          "rescored_at": "2026-09-15"
         }
       ],
-      "market_status": "incremental",
-      "novel_delta": "スマートウォッチの受動データ収集と連動し、食事・運動・脳トレなど多領域の認知症予防生活習慣（FINGERモデル）を包括的かつ個別に統合支援する点。",
-      "demonstrated_capability": "認知症リスクのある60〜77歳の高齢者156名を対象に、スマートウォッチとアプリによる多領域生活習慣介入の実施可能性（継続率や参加状況）を評価する国際共同RCTの試験開始と登録完了を実証した。",
-      "future_scene_sketch": "定年退職を迎えた主人公が朝起きると、昨晩の浅い睡眠を検知したアプリが『今日は激しい運動の代わりに、散歩と新しい食材を使った料理に挑戦しましょう』と提案してくれる。物忘れへの漠然とした恐怖が、日々の無理のない生活習慣の楽しみに塗り替えられていくのを感じて微笑む。",
-      "deja_vu_note": "kl005（認知機能改善ロボット）やkl014（認知症生活支援AI）と認知症・高齢者支援という大枠ジャンルは重なるが、未発症リスク層へのマルチモーダルな生活習慣予防介入という切り口は異なる。",
+      "market_status": "existing_product",
+      "novel_delta": "スマートウォッチの生体データと連動してFINGER型生活習慣改善（運動・食事・脳トレ）を1つのアプリで統合支援する点にあるが、生活者が得る体験としては市販の健康管理アプリやウェアラブル端末の組み合わせと大差なく、新しい部分はほぼない。",
+      "demonstrated_capability": "認知機能低下リスクのある60〜77歳の高齢者156名を対象に、アプリとスマートウォッチを用いた2年間の多施設共同ランダム化比較試験を実施し、試験プロトコルと初期の実現可能性・アプリ受容性を確認した。",
+      "future_scene_sketch": "定年を迎えた主人公が、朝起きてスマートウォッチに表示された睡眠スコアとアプリが提案した散歩コースを確認し、無理のない生活リズムが続いていることに小さな安心感を覚える。",
+      "deja_vu_note": "kl005（ロボットを用いた認知機能改善）やkl014（AIによる認知症ケア）で認知症関連テーマを扱っているが、本作は発症予防のための生活習慣指導アプリであり体験の焦点は異なる。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
       "behavioral_familiarity": "familiar",
-      "behavioral_familiarity_note": "スマートウォッチの計測値をもとに運動や睡眠、食事のアドバイスやクイズを受け取る体験は、FitbitやApple Watch、ChatGPTなどのヘルスケア機能で今日すぐに再現できるため。",
+      "behavioral_familiarity_note": "スマートウォッチで睡眠や歩数を記録し、アプリから食事・運動の提案や脳トレのリマインドを受ける体験は、Apple Watch、Fitbit、各種健康管理・脳トレアプリですでに日常的に体験できる。",
       "deja_vu_level": "partial",
-      "deja_vu_context_upto": "kl017"
+      "deja_vu_context_upto": "kl021"
     },
     {
       "paperId": "bfa064f4c3b797a63bdad3f4f02d79ca12f252ab",
@@ -9617,24 +9662,24 @@
       "is_preprint": false,
       "category": "aging_care",
       "category_label": "高齢化・介護・自立支援",
-      "overall_score": 1.4,
+      "overall_score": 1.95,
       "score_breakdown": {
-        "wonder_score": 1,
+        "wonder_score": 2,
         "transformation_score": 1,
         "life_relevance_score": 3,
-        "surprise_score": 1,
+        "surprise_score": 2,
         "persona_fit_score": 3
       },
-      "hook_idea": "一人暮らしの親が一日中誰とも話していない気がする……そんな不安を、おしゃべりするぬいぐるみが本当に救えるのでしょうか？",
+      "hook_idea": "言葉も通じにくい異国の地で一人きり……そんな高齢者の心を救ったのは、AIを積んだ小さな『孫人形』でした。",
       "example_protagonist": {
-        "name": "木村純子（母が海外で一人暮らしをしている設定ならキム・スニ）",
-        "age": 48,
-        "job": "会社員（遠方に住む高齢の母を見守る娘）"
+        "name": "パク・ヨンジャ",
+        "age": 78,
+        "job": "無職（元・個人商店主、米国在住の独居高齢者）"
       },
       "status": "available",
       "considered_at": "2026-08-28",
       "transformation_comparison": "すでに『Hyodol』や『ElliQ』など、服薬支援・対話・脳トレ機能を備えた高齢者向け伴侶ロボットは市販・実用化されている。本研究の本当に新しい部分は技術自体ではなく、言語や文化の壁がある『在米韓国系移民コミュニティ』への適合性と受容性を検証した点である。",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-15",
       "score_history": [
         {
           "version": null,
@@ -9645,18 +9690,23 @@
           "version": "2026-09-06-wonder",
           "score": 1.4,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 1.4,
+          "rescored_at": "2026-09-15"
         }
       ],
       "market_status": "existing_product",
-      "novel_delta": "技術的な新規性はほぼなく、すでに韓国などで実用化・自治体配布されているぬいぐるみ型見守りロボット（Hyodol等）を米国の在米韓国人高齢者コミュニティに配備して受容性を評価した実証研究にとどまる。",
-      "demonstrated_capability": "在米韓国系の一人暮らし高齢者30人にぬいぐるみ型ロボットを3ヶ月間配備し、服薬遵守の向上やうつ・社会的孤立感の低減傾向、自発的対話の受容性を確認した。",
-      "future_scene_sketch": "言葉の壁で地域から孤立していた一人暮らしの高齢者が、母国語で優しく語りかけてくる人形ロボットのクイズに答え、促されるままに朝の薬を忘れず口にして小さく微笑む。",
-      "deja_vu_note": "kl005（週2回ロボットと遊ぶだけで認知症改善）と「ロボットとの触れ合いや会話で高齢者のメンタルや認知機能を支える」という問題設定・道具立て・情景の型が完全に重複している。",
+      "novel_delta": "新しい体験や技術的機能はほぼなく、韓国で既に普及している市販の人形型見守りロボット（Hyodol）を在米韓国系移民の高齢者に試験導入した検証にとどまる。",
+      "demonstrated_capability": "独居の韓国系米国人高齢者30名を対象に人形型ロボットを3か月間配備し、服薬遵守の向上およびうつ症状や社会的孤立感の低減傾向、高い受容性を実証した。",
+      "future_scene_sketch": "異国の地で一人暮らしをする主人公が、孫のような姿のロボットから母国語で温かい励ましと薬の時間を告げられ、日常の静寂の中でふと孤独が和らぐのを感じる。",
+      "deja_vu_note": "kl005（週2回、ロボットと遊ぶだけで。認知症の母に戻った笑顔）と『高齢者×コミュニケーションロボットによる精神的ケア・認知機能維持』という構造や体験が酷似している。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
       "behavioral_familiarity": "familiar",
-      "behavioral_familiarity_note": "服薬リマインド、励ましの声かけ、脳トレクイズといった会話の振る舞いは、スマートスピーカー（Alexa等）やスマホアプリで既に日常的に体験できる。",
+      "behavioral_familiarity_note": "定刻の服薬リマインド、励ましの声掛け、簡単な脳トレクイズといった対話機能は、Amazon AlexaやGoogleアシスタント、スマートフォンの健康管理アプリ等で既に日常的に体験できる。",
       "deja_vu_level": "strong",
-      "deja_vu_context_upto": "kl017"
+      "deja_vu_context_upto": "kl021"
     },
     {
       "paperId": "fb5cc92fd3e93e3f8ee35fa5260a615391501761",
@@ -12903,24 +12953,24 @@
       "is_preprint": false,
       "category": "aging_care",
       "category_label": "高齢化・介護・自立支援",
-      "overall_score": 2.15,
+      "overall_score": 1.7,
       "score_breakdown": {
-        "wonder_score": 2,
+        "wonder_score": 1,
         "transformation_score": 1,
         "life_relevance_score": 4,
         "surprise_score": 2,
         "persona_fit_score": 4
       },
-      "hook_idea": "何十万円もする専用ロボットじゃなくても、1万円ちょっとの『ロボットペット』1匹で、在宅介護の母に笑顔が戻るって本当でしょうか？",
+      "hook_idea": "デイサービスから戻った母が一日中無口で過ごす静けさに、もし1万円台のロボットペットが温かい会話を取り戻してくれるとしたら？",
       "example_protagonist": {
-        "name": "高橋 聡美",
+        "name": "坂井美智子",
         "age": 52,
-        "job": "パート勤務（同居する82歳の母親を在宅介護中）"
+        "job": "パート勤務（同居する80代の母親を在宅介護中）"
       },
       "status": "available",
       "considered_at": "2026-08-28",
       "transformation_comparison": "Joy for Allをはじめとする低価格ロボットペットやaibo・LOVOT等のコミュニケーションロボットはすでに市販・普及しており、提示された体験自体は「既存の市場に既にあるもの」です。本当に新しい部分は、高度なAI技術ではなく安価な市販ロボットであっても、在宅介護環境において高齢者のポジティブ感情を有意に高め、介護者や訪問者との会話を増やす「環境刺激」として機能することをRCTで科学的に実証した点にあります。",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-15",
       "score_history": [
         {
           "version": null,
@@ -12931,18 +12981,23 @@
           "version": "2026-09-06-wonder",
           "score": 1.7,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 2.15,
+          "rescored_at": "2026-09-15"
         }
       ],
       "market_status": "existing_product",
-      "novel_delta": "新しい技術や製品体験そのものはなく、2015年頃から市販されている安価なロボットペット（Joy for All）が在宅介護環境でも高齢者のポジティブ感情を高めるという実証データのみが新しい。",
-      "demonstrated_capability": "在宅で家族介護を受ける高齢者と介護者のペア50組を対象とした4週間の単盲検パイロットRCTにおいて、約100ドルの市販ロボットペット導入により、認知症重症度等を調整後も高齢者のポジティブ感情スコアが7.28ポイント有意に向上し、来客との会話のきっかけになることが実証された。",
-      "future_scene_sketch": "在宅介護で日中一人きりになりがちだった母親が、膝の上で喉を鳴らすロボット猫を撫でながら、訪ねてきたヘルパーや家族に「この子、呼ぶと返事するのよ」と自然に笑顔で話しかけている。",
-      "deja_vu_note": "kl005「週2回、ロボットと遊ぶだけで。認知症の母に戻った笑顔」と、高齢者・認知症ケアにロボットペットを導入して笑顔や情緒的安定を取り戻すという問題設定・道具立て・未来の情景がほぼ完全に重複している。",
+      "novel_delta": "市販の安価なロボットペット（Joy for All）を在宅介護環境に導入し、認知症の有無にかかわらずポジティブ感情を有意に改善させ会話の触媒になる効果をRCTで実証した点に研究の意義があるが、製品や体験自体の新しい部分はほぼない。",
+      "demonstrated_capability": "在宅介護を受ける高齢者と介護者50組を対象とした4週間のパイロットRCTにおいて、安価なロボットペットの導入によりポジティブ感情スコアが7.28ポイント有意に改善し、来客との会話のきっかけになることが実証された。",
+      "future_scene_sketch": "在宅介護で一日中口数が少なくなっていた母親が、膝の上のロボット猫を撫でながら訪ねてきたヘルパーと自然に笑顔で言葉を交わす日常。",
+      "deja_vu_note": "kl005（週2回、ロボットと遊ぶだけで。認知症の母に戻った笑顔）と『ロボットペットとの触れ合いによる高齢者の気分・情動改善』という問題設定・道具立て・体験の型が酷似している。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
       "behavioral_familiarity": "novel",
-      "behavioral_familiarity_note": "チャットボット等の画面・音声では再現できない、毛並みを撫でるとゴロゴロと喉を鳴らして反応するぬいぐるみとしての物理的・触覚的実体に基づいているため。",
+      "behavioral_familiarity_note": "抱き心地や喉を鳴らす振動といった物理的な触覚・動作を伴うインタラクションであり、スマホのチャットボットや音声アシスタントでは原理的に再現できない。",
       "deja_vu_level": "strong",
-      "deja_vu_context_upto": "kl017"
+      "deja_vu_context_upto": "kl021"
     },
     {
       "paperId": "5be30219a562395db0983ea7dc134f22b71bc283",
@@ -12960,24 +13015,24 @@
       "is_preprint": false,
       "category": "aging_care",
       "category_label": "高齢化・介護・自立支援",
-      "overall_score": 1.4,
+      "overall_score": 1.55,
       "score_breakdown": {
         "wonder_score": 1,
         "transformation_score": 1,
-        "life_relevance_score": 3,
+        "life_relevance_score": 4,
         "surprise_score": 1,
         "persona_fit_score": 3
       },
-      "hook_idea": "慢性的な痛みに顔をしかめ、ふさぎ込みがちな認知症の親に、薬ではなく『ロボットを抱く時間』が笑顔を取り戻すとしたら？",
+      "hook_idea": "慢性的な体の痛みに顔をしかめ、ふさぎ込みがちになった認知症の母——膝の上に置かれた小さなロボットを抱きしめた瞬間、何が変わったのでしょうか？",
       "example_protagonist": {
-        "name": "高橋 智子",
+        "name": "佐々木 健一",
         "age": 52,
-        "job": "会社員（施設に入居する認知症の母を介護中）"
+        "job": "会社員（介護施設に入所中の認知症の母を見守る長男）"
       },
       "status": "available",
       "considered_at": "2026-08-28",
       "transformation_comparison": "約20年前から医療・介護現場で市販・導入されているアザラシ型ロボット『パロ』の既存利用に関する研究であり、本論文は新技術や新製品の開発ではなく1施設での質的インタビュー調査に留まるため、現在の市場環境に対する技術的新規性や劇的な変革度は皆無であると判定しました。",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-15",
       "score_history": [
         {
           "version": null,
@@ -12988,18 +13043,23 @@
           "version": "2026-09-06-wonder",
           "score": 1.4,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 1.4,
+          "rescored_at": "2026-09-15"
         }
       ],
       "market_status": "existing_product",
-      "novel_delta": "使用されているアザラシ型ロボットPAROは2005年から市販・医療機器認可されている既存製品であり、技術や製品体験としての新しい部分はほぼない。",
-      "demonstrated_capability": "豪州の介護施設1カ所において、認知症と慢性疼痛を抱える入居者がPAROと触れ合う介入を行い、入居者13名や介護スタッフ・家族らへの半構造化インタビューを通じて疼痛の注意転換やBPSD軽減などの主観的効果があったことを質的に実証した。",
-      "future_scene_sketch": "長年続く体の痛みに眉をひそめていた80代の女性が、膝の上で微かに動くアザラシ型ロボットを撫でるうちに痛みの意識から解放され、穏やかな笑顔で昔飼っていたペットの思い出を語り始める。",
-      "deja_vu_note": "公開済みエピソードkl005「週2回、ロボットと遊ぶだけで。認知症の母に戻った笑顔」と『介護施設で認知症高齢者がロボットと触れ合って精神的安定を得る』という問題設定・技術の型が完全に一致している。",
+      "novel_delta": "新しい技術的要素はほぼなく、20年以上前から市販・臨床導入されているアザラシ型セラピーロボット「PARO」を、豪州の認知症・慢性疼痛高齢者に適用した小規模な質的インタビュー評価にとどまる。",
+      "demonstrated_capability": "豪州の介護施設1施設にて、認知症と慢性疼痛を抱える入所者13名および家族・職員計35名を対象に、PAROとの1回15分の交流を3週間実施し、気晴らしによる疼痛緩和や介護負担軽減などの定性的効果と導入課題をインタビュー調査で確認した。",
+      "future_scene_sketch": "慢性的な関節痛で眉間にしわを寄せていた高齢の女性が、膝の上に載せられた白くて温かいアザラシ型ロボットをそっと撫で、そのつぶらな瞳と甘えるような鳴き声に気を取られて痛みを忘れ、穏やかな笑顔を取り戻す。",
+      "deja_vu_note": "公開済みエピソードkl005（「週2回、ロボットと遊ぶだけで。認知症の母に戻った笑顔」）と『認知症高齢者に対する愛玩ロボットの情動・行動改善』という問題設定・道具立て・未来の情景が完全に酷似しており、視聴者に強い既視感を与える。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
       "behavioral_familiarity": "novel",
-      "behavioral_familiarity_note": "抱き心地や撫でたときの身体的反応といった触覚フィードバックが中核でありスマホのチャットボット等では代替できないが、ロボット自体は長年市場に存在する。",
+      "behavioral_familiarity_note": "ぬいぐるみの毛並みや重みを感じながら撫でて声に応答されるという身体的・感覚的な触れ合い体験そのものはチャットボット等では再現できないが、体験自体は2000年代前半から市販ロボットとして確立されている。",
       "deja_vu_level": "strong",
-      "deja_vu_context_upto": "kl017"
+      "deja_vu_context_upto": "kl021"
     },
     {
       "paperId": "d0cd8b45949b959c316a3ed75a4683d0a70b1aa9",
@@ -13244,24 +13304,24 @@
       "is_preprint": false,
       "category": "aging_care",
       "category_label": "高齢化・介護・自立支援",
-      "overall_score": 1.35,
+      "overall_score": 1.55,
       "score_breakdown": {
         "wonder_score": 1,
         "transformation_score": 1,
-        "life_relevance_score": 3,
+        "life_relevance_score": 4,
         "surprise_score": 1,
-        "persona_fit_score": 2
+        "persona_fit_score": 3
       },
-      "hook_idea": "最近物忘れが増えてきた不安……もしロボットとスマートウォッチが生活に入ってきたら、本当に予防できるのでしょうか？",
+      "hook_idea": "「最近、知人の名前がパッと出てこない…」そんな物忘れの兆候に、ロボットと生活ログが寄り添う研究をご存じですか？",
       "example_protagonist": {
-        "name": "佐藤弘",
+        "name": "佐藤 雅彦",
         "age": 72,
-        "job": "元高校教諭・現在は地域ボランティア"
+        "job": "定年退職した元高校教師"
       },
       "status": "available",
       "considered_at": "2026-08-28",
       "transformation_comparison": "市場には既にロボホンやだいちゃんといった高齢者向け会話ロボットや脳トレアプリが存在します。本研究の新しい部分は、施設でのPepperによる認知セラピーと家庭でのウェアラブル・アプリによる生活習慣管理を専門家の監督下で複合統合し、6ヶ月間の臨床試験（RCT）で科学的に検証する仕組み（engAGE）を構築した点にあります。",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-15",
       "score_history": [
         {
           "version": null,
@@ -13272,18 +13332,23 @@
           "version": "2026-09-06-wonder",
           "score": 1.35,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 1.35,
+          "rescored_at": "2026-09-15"
         }
       ],
       "market_status": "existing_product",
-      "novel_delta": "新しい部分はほぼなく、Pepperを用いた認知リハビリ、活動量計による睡眠・運動記録、スマホの脳トレアプリはいずれも既存製品として既に広く実用化されている。",
-      "demonstrated_capability": "本論文は欧州3カ国で6カ月間のRCTを実施するための研究プロトコル（計画書）であり、実際の効果に関する定量的結果は示されていない。",
-      "future_scene_sketch": "週に一度通うデイケアでPepperとクイズ形式の認知トレーニングを行い、自宅ではスマートウォッチを身につけて睡眠や歩数を記録しながら、日々の生活習慣を淡々と振り返る。",
-      "deja_vu_note": "公開済みエピソードkl005『週2回、ロボットと遊ぶだけで。認知症の母に戻った笑顔』と問題設定（高齢者・認知症予防）、道具立て（ソーシャルロボットによる施設での定期セッション）、体験の型が完全に酷似している。",
+      "novel_delta": "市販のPepperと一般的な活動量計・脳トレアプリを組み合わせた包括的介入プログラムの枠組み自体を提案した点以外に、新しい消費者体験の差分はほぼない。",
+      "demonstrated_capability": "MCI（軽度認知障害）の高齢者49名を対象に、Pepperによる認知刺激と活動量計・アプリを併用する6ヶ月間のRCT介入プロトコルを策定し、データ収集を完了した段階である。",
+      "future_scene_sketch": "週に一度通うデイケアでPepperが出題する記憶パズルに答え、自宅では身につけたトラッカーで睡眠と歩数を見つめ直しながら、物忘れの進行を少しでも遅らせようと日々の習慣を整える。",
+      "deja_vu_note": "公開済みのkl005「週2回、ロボットと遊ぶだけで。認知症の母に戻った笑顔」と、介護・ケア施設でロボットを用いた認知トレーニングを行うという問題設定・道具立て・情景がほぼ完全に重複している。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
       "behavioral_familiarity": "familiar",
-      "behavioral_familiarity_note": "ロボットやアプリとの認知ゲームや対話は、既存のスマホ脳トレアプリやスマートスピーカー（Alexa等）、対話AIで日常的に体験可能であるため。",
+      "behavioral_familiarity_note": "ロボットによるクイズ出題や対話による励ましは、既存のスマートスピーカー（Alexa等）やスマートフォンの脳トレアプリ・対話AIで即座に同等体験が可能である。",
       "deja_vu_level": "strong",
-      "deja_vu_context_upto": "kl017"
+      "deja_vu_context_upto": "kl021"
     },
     {
       "paperId": "eede8741ae4131cfb15038b9bd96c9e655486ba0",
@@ -14914,16 +14979,16 @@
         "surprise_score": 1,
         "persona_fit_score": 3
       },
-      "hook_idea": "もし一人暮らしの親が誰もいない部屋で転んだら、その瞬間に助けを呼ぶ手段はあるでしょうか？",
+      "hook_idea": "一人暮らしの親がもし家の中で倒れてしまったら…そんな不安を解消する見守り技術は、いまどこまで進化しているのでしょうか？",
       "example_protagonist": {
-        "name": "高橋茂雄",
+        "name": "高橋 誠治",
         "age": 78,
-        "job": "無職（一人暮らしの年金生活者）"
+        "job": "一人暮らしの年金生活者（元公務員）"
       },
       "status": "available",
       "considered_at": "2026-08-28",
       "transformation_comparison": "Apple Watchをはじめとする各種スマートウォッチや高齢者・作業員向け見守り端末で、IMUを用いた転倒検知、GPS位置共有、ジオフェンス機能は既に幅広く実用化されています。本論文は固定閾値ベースのシンプルな組み合わせ構成に留まり、現在の市場製品に対する体験的・機能的な新しさはほぼありません。",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-15",
       "score_history": [
         {
           "version": null,
@@ -14934,18 +14999,23 @@
           "version": "2026-09-06-wonder",
           "score": 1.55,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 1.55,
+          "rescored_at": "2026-09-15"
         }
       ],
       "market_status": "existing_product",
-      "novel_delta": "市販のスマートウォッチ（Apple Watch等）や高齢者向け見守り端末がすでに高精度な転倒自動検知・GPS通知・SOSボタンを実現しており、本研究における独自の新しい体験や技術的優位性はほぼない。",
-      "demonstrated_capability": "3軸の加速度計・ジャイロ・磁気センサと固定しきい値アルゴリズムを組み合わせ、リアルタイム環境下の実験において86.67%の精度で転倒検知とGPS座標送信が可能であることを実証した。",
-      "future_scene_sketch": "一人暮らしの高齢者が自宅の庭先でつまづいて倒れた際、腕の小型端末が衝撃を感知して即座に離れて暮らす家族へGPS位置情報付きの救護通知を発信するが、この体験はすでに既存のスマートウォッチで完全に実現されている。",
-      "deja_vu_note": "",
+      "novel_delta": "市販のスマートウォッチや高齢者向け見守り端末（GPS・ジオフェンス・転倒検知・SOSボタン付き）が既に提供している機能と同一であり、生活者の体験として新しい部分はほぼない。",
+      "demonstrated_capability": "加速度計・ジャイロスコープ・磁気計を備えたIMU端末と固定しきい値アルゴリズムを用い、リアルタイム環境下で86.67%の精度で転倒を検出しGPSアラートを送信できることを実証した。",
+      "future_scene_sketch": "庭の手入れ中に足を滑らせて転倒した高齢の主人公が、手首の端末が自動で位置情報付きの救助要請を離れて暮らす娘へ送信したことで速やかに救出されるが、この一連の体験は既存のApple Watch等の市販デバイスと全く変わらない。",
+      "deja_vu_note": "転倒予防・介入に関する過去の候補（MRBA）が面白みに欠けるとして却下されており、高齢者見守りという大枠でも新規性が極めて乏しい。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
       "behavioral_familiarity": "novel",
-      "behavioral_familiarity_note": "転倒検知センシングや位置情報送信という物理的・ハードウェア機能に関する研究であり、チャットボット等で再現可能な振る舞いではないためnovelに分類されるが、体験自体は既存の市販スマートウォッチ等で既に確立されている。",
-      "deja_vu_level": "none",
-      "deja_vu_context_upto": "kl017"
+      "behavioral_familiarity_note": "転倒検知や緊急通報は物理的な慣性センサー（IMU）による身体動態のセンシング技術であり、チャットボット等の言語的振る舞いとは異なるため分類上はnovelだが、ハードウェア製品としては市場で既に確立されている。",
+      "deja_vu_level": "partial",
+      "deja_vu_context_upto": "kl021"
     },
     {
       "paperId": "a1017a216fe42e327d74a3870fd3044de598f0ae",
@@ -16559,24 +16629,24 @@
       "is_preprint": false,
       "category": "aging_care",
       "category_label": "高齢化・介護・自立支援",
-      "overall_score": 1.4,
+      "overall_score": 1.35,
       "score_breakdown": {
         "wonder_score": 1,
         "transformation_score": 1,
         "life_relevance_score": 3,
         "surprise_score": 1,
-        "persona_fit_score": 3
+        "persona_fit_score": 2
       },
-      "hook_idea": "「機械なんて苦手」と思い込んでいた一人暮らしの高齢者が、たった数回の講習でスマート家電を手放せなくなった理由とは？",
+      "hook_idea": "「スマート家電は高齢者の暮らしを本当に救える？」そう思って親にプレゼントしたのに、結局箱に入ったままになっていませんか？",
       "example_protagonist": {
-        "name": "竹内敏子",
-        "age": 76,
-        "job": "無職（一人暮らし）"
+        "name": "タカシ",
+        "age": 48,
+        "job": "離れて暮らす70代の母親の健康と一人暮らしの安全を気にかける会社員"
       },
       "status": "available",
       "considered_at": "2026-08-28",
       "transformation_comparison": "現在市場にはSwitchBotの見守りカメラやスマートスピーカー、ハローライト（見守り電球）など高齢者向けスマートホーム製品がすでに広く普及・市販されている。本論文の提案内容はそれら既存製品の活用にとどまり、技術自体に新しさはない。論文の『新しさ』は技術ではなく『作業療法士による講習介入が高齢者の購買意向や安心感を向上させる』という行動変容の検証にとどまるため、技術的変革度は1点と判断した。",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-15",
       "score_history": [
         {
           "version": null,
@@ -16587,18 +16657,23 @@
           "version": "2026-09-06-wonder",
           "score": 1.5,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 1.4,
+          "rescored_at": "2026-09-15"
         }
       ],
       "market_status": "existing_product",
-      "novel_delta": "新しい技術や未知の体験を提供する部分はほぼ無く、市販の既存スマートホーム製品を作業療法士が教育・紹介することによる心理的受容や購入意向の変化を検証した点に留まる。",
-      "demonstrated_capability": "高齢者39名を対象に作業療法士主導のスマートホーム技術講習を実施し、参加者全員が新たな機器の知識を得て、面接対象14名を含む多くが機器の購入意向や在宅での安心感の向上を示した。",
-      "future_scene_sketch": "一人暮らしの高齢女性が、講習で教わった市販のスマートスピーカーに就寝前の消灯や施錠確認を声で頼み、誰かに見守られているような小さな安心感を抱いてベッドに入る。",
-      "deja_vu_note": "kl005やkl014など高齢者の自立支援・ケアを扱った回があるが、本論文は新規技術の提案ではなく既存の市販スマート家電の活用教育に関する調査であるため、技術的ワクワク感の観点からも既視感以前に企画適性が低い。",
+      "novel_delta": "新しい技術的要素はほぼなく、市販のスマートホーム製品を作業療法士が高齢者に講習で紹介し購入意欲や安心感の変化を調べた教育介入・意識調査である。",
+      "demonstrated_capability": "高齢者39名を対象に作業療法士によるスマートホーム製品の教育セッションを実施したところ、機器への関心が高まり購入者から在宅時の安全性や安心感の実感が得られた。",
+      "future_scene_sketch": "講習で使い方を教わった祖父が、ベッド脇から市販のスマートスピーカーに呼びかけて照明を消すが、その体験は現在量販店で買える既存製品と変わらない。",
+      "deja_vu_note": "高齢者の在宅自立支援や見守りというテーマ自体は既存のスマート家電製品そのものであり、工学的な新規技術の提案でもないため既視感が極めて強い。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
       "behavioral_familiarity": "familiar",
-      "behavioral_familiarity_note": "Amazon Echo（Alexa）やGoogle Home、市販の見守りセンサー等の既存製品で今日すでに同等の体験が可能である。",
-      "deja_vu_level": "partial",
-      "deja_vu_context_upto": "kl017"
+      "behavioral_familiarity_note": "スマートスピーカーによる家電操作や見守りセンサーは、Amazon AlexaやGoogle Home、既存のホームセキュリティ等で今日すでに広く体験可能である。",
+      "deja_vu_level": "strong",
+      "deja_vu_context_upto": "kl021"
     },
     {
       "paperId": "9bde06fee94367b7421f2ef43d9ef0a8818b0117",
@@ -17013,16 +17088,16 @@
         "surprise_score": 1,
         "persona_fit_score": 1
       },
-      "hook_idea": "高齢者向けスマートホーム研究はこの20年でどう変わった？257本の論文を分析して見えた『シニアが技術を受け入れる条件』とは。",
+      "hook_idea": "シニアの暮らしを助けるスマートホームの研究、実は過去20年で急増していることをご存じですか？",
       "example_protagonist": {
-        "name": "吉田健一",
+        "name": "タカシ",
         "age": 72,
-        "job": "一人暮らしの年金生活者"
+        "job": "無職（元公務員）"
       },
       "status": "available",
       "considered_at": "2026-08-28",
       "transformation_comparison": "市場にはSwitchBotの見守りカメラや象印の『みまもりほっとライン』、au HOMEのセンサープラグなど高齢者向け見守り家電が既に多数普及しているが、本論文は新技術の開発や実証実験ではなく過去20年間の論文257件の動向を整理した書誌学的分析に過ぎず、製品や体験を直接変える新しい技術的要素は含まれていない。",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-15",
       "score_history": [
         {
           "version": null,
@@ -17033,18 +17108,23 @@
           "version": "2026-09-06-wonder",
           "score": 1.15,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 1.15,
+          "rescored_at": "2026-09-15"
         }
       ],
       "market_status": "existing_product",
-      "novel_delta": "過去の学術文献の傾向を計量分析したメタ研究であり、生活者に新しい体験をもたらす新規な技術や製品機能の提案は存在しない。",
-      "demonstrated_capability": "Scopusデータベースの257本の学術文献を対象にVOSviewerを用いて、2004年から2023年に至る高齢者のスマートホーム受容に関する研究トレンドや主要国・共著関係を可視化した。",
-      "future_scene_sketch": "本研究独自の新規技術や体験が存在しないため新しい情景は描けず、既存のスマートスピーカーに呼びかけてエアコンを点けたり、センサーで離れて暮らす家族に安否が伝わったりする従来の日常の枠を出ない。",
-      "deja_vu_note": "高齢者の自立支援や見守りというテーマはkl005やkl014など多くの介護・高齢化関連企画と重なり、かつ本論文は文献分析であるため具体的な技術の新鮮さもない。",
+      "novel_delta": "新しい部分はほぼない（本論文は過去20年間の関連学術論文257件の出版傾向やキーワード共起を整理した書誌計量分析であり、新たな技術開発や生活体験の提案は含まれない）。",
+      "demonstrated_capability": "Scopusデータベースに収録された2004〜2023年の高齢者スマートホーム受容に関する論文257件を対象に、VOSviewerを用いて発表件数の推移、主要分野、頻出キーワード、国別論文数などを可視化した。",
+      "future_scene_sketch": "技術開発や生活介入を行わない書誌分析研究であるため、本作独自の新体験シーンは存在せず、一人暮らしの高齢者が既存のスマートスピーカーに話しかけてエアコンをつけるといった、現在すでに実現している日常風景の域を出ない。",
+      "deja_vu_note": "高齢者の自立支援やスマートホーム技術という枠組みは、kl005やkl014などの既存企画と重複しており、しかも本論文は具体的な支援技術の開発ではなくメタ的な文献調査に留まる。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
       "behavioral_familiarity": "familiar",
-      "behavioral_familiarity_note": "高齢者向けスマートホームや見守りシステムは、Amazon AlexaやGoogle Home、既存のIoT見守り家電等ですでに体験可能である。",
+      "behavioral_familiarity_note": "高齢者向けスマート家電や見守りセンサー、音声アシスタント（AlexaやGoogleアシスタント）の操作体験は、すでに市販製品として日常的に利用可能である。",
       "deja_vu_level": "partial",
-      "deja_vu_context_upto": "kl017"
+      "deja_vu_context_upto": "kl021"
     },
     {
       "paperId": "0a0dea85f1ab5848a051b2e87b7c45bf2c0e2ea6",
@@ -17420,16 +17500,16 @@
         "surprise_score": 1,
         "persona_fit_score": 2
       },
-      "hook_idea": "一人暮らしの親の家にスマートスピーカーを置くだけで、本当に生活は安全になるのでしょうか？",
+      "hook_idea": "手すりをつけるだけじゃ足りない？行政が進める『実家のスマートホーム化』が直面した意外な壁とは。",
       "example_protagonist": {
-        "name": "タツ子",
+        "name": "佐藤よし子",
         "age": 78,
-        "job": "年金生活（一人暮らし）"
+        "job": "一人暮らしの無職（年金受給者）"
       },
       "status": "available",
       "considered_at": "2026-08-28",
       "transformation_comparison": "スマートスピーカーやカメラ付きドアベルなど対象機器自体はすでに市場で広く市販されている既存製品であり、本論文の新しい部分は公的住宅改修プログラムへの導入課題や定性的運用基準の整理にとどまるため、技術的変革ポテンシャルは低いと判断しました。",
-      "rescored_at": "2026-09-09",
+      "rescored_at": "2026-09-15",
       "score_history": [
         {
           "version": null,
@@ -17440,18 +17520,23 @@
           "version": "2026-09-06-wonder",
           "score": 1.35,
           "rescored_at": "2026-09-09"
+        },
+        {
+          "version": "2026-09-09-familiarity-dejavu-caps",
+          "score": 1.35,
+          "rescored_at": "2026-09-15"
         }
       ],
       "market_status": "existing_product",
-      "novel_delta": "新しい技術や機能は一切なく、Amazon Echoやドアベルカメラ等の市販スマート家電を高齢者住宅改修プログラムに導入する際の運用課題を整理したに過ぎない。",
-      "demonstrated_capability": "高齢者向け住宅改修プログラムの受託組織スタッフや作業療法士ら11名を対象とした1.5時間のオンラインフォーカスグループにより、既存スマート機器の導入障壁と選定基準（5領域）を質的に整理した。",
-      "future_scene_sketch": "技術的な新体験は存在しないが、福祉専門職の手厚い支援で設置された市販のセンサーライトとスマートスピーカーにより、78歳の女性が夜間の暗い廊下を転倒の不安なく歩き、声だけで消灯してベッドに入る。",
-      "deja_vu_note": "",
+      "novel_delta": "新しい技術や製品の開発はなく、市販のスマートスピーカーや人感センサーライト等を公的住宅改修プログラムに導入する際の運用上の障壁や選定基準を定性的に整理した点にとどまる。",
+      "demonstrated_capability": "米国の高齢者住宅改修プログラム受託3組織の関係者11名を対象にした1.5時間のオンラインフォーカスグループ調査で、導入障壁と選定基準5領域を定性的に抽出・整理した。",
+      "future_scene_sketch": "足腰が弱くなった高齢者が、改修事業者の提案で設置されたスマートスピーカーに声をかけて照明を点灯させるが、その体験自体は量販店で買えるスマート家電を設置した日常の域を出ない。",
+      "deja_vu_note": "高齢者の在宅自立支援という問題設定はkl005やkl014と重なるが、本作は新技術の提案ではなく既存市販デバイスの導入支援プログラムに関する質的調査である。",
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
       "behavioral_familiarity": "familiar",
-      "behavioral_familiarity_note": "スマートスピーカーへの音声操作や見守りカメラ・センサーの利用は、AlexaやGoogle Home等の既存製品で今日すぐに再現できる。",
-      "deja_vu_level": "none",
-      "deja_vu_context_upto": "kl017"
+      "behavioral_familiarity_note": "スマートスピーカーによる音声操作や見守りカメラの通知は、Amazon AlexaやRingなどの市販機器ですでに日常的に体験可能である。",
+      "deja_vu_level": "partial",
+      "deja_vu_context_upto": "kl021"
     },
     {
       "paperId": "4dca651cf483f6f6643bba77401a98c2f2064309",
@@ -31124,8 +31209,8 @@
         "job": "在宅勤務のグラフィックデザイナー"
       },
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
-      "status": "available",
-      "used_in": null,
+      "status": "used",
+      "used_in": "kl022",
       "considered_at": "2026-09-14"
     },
     {
@@ -36749,6 +36834,6 @@
       "considered_at": "2026-09-14"
     }
   ],
-  "last_updated": "2026-09-14",
+  "last_updated": "2026-09-15",
   "total_shortlist": 745
 }
