@@ -97,15 +97,31 @@ def get_wav_duration(wav_path: Path) -> float:
 PROTECTED_PHRASES = ["なんとか", "なんとなく", "どうにか", "どうにかして", "いつのまにか"]
 
 
+# 数字の直後に付く単位・助数詞。ここで挙げた文字の直前が数字の場合、
+# 数字とセットで読まれる一体感が強く、間で分割すると「8」「割」のように
+# 数字だけが取り残されて不自然に見えるため、数字連続の一部として保護する
+# （2026-09-16追加、kl023の「8割」「0.65」分割で発覚）。
+_COUNTER_SUFFIXES = set("割人名歳円位台個回度倍年月日時分秒件本冊匹頭番級")
+
+
 def _in_number_run(text: str, pos: int) -> bool:
-    """posが数字（%含む）の連続の途中にあるかどうか判定する。
-    例: "92%" の "9"と"2"の間、"2"と"%"の間はどちらもTrue。
+    """posが数字（%・小数点含む）の連続や、数字+助数詞の途中にあるかどうか判定する。
+    例: "92%" の "9"と"2"の間、"2"と"%"の間、"0.65"の"0"と"."の間、
+    "8割"の"8"と"割"の間はどれもTrue。
     """
     if pos <= 0 or pos >= len(text):
         return False
     before, after = text[pos - 1], text[pos]
     digit_or_pct = lambda c: c.isdigit() or c == "%"
-    return digit_or_pct(before) and digit_or_pct(after)
+    if digit_or_pct(before) and digit_or_pct(after):
+        return True
+    if before.isdigit() and after in (".", "．"):
+        return True
+    if before in (".", "．") and after.isdigit():
+        return True
+    if before.isdigit() and after in _COUNTER_SUFFIXES:
+        return True
+    return False
 
 
 def _in_protected_phrase(text: str, pos: int) -> bool:

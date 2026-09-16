@@ -1,0 +1,1125 @@
+{
+  "episode_id": "kl023",
+  "episode_title": "脳の\"ゾンビ細胞\"を掃除する飲み薬",
+  "youtube_title": "脳の\"ゾンビ細胞\"を掃除する飲み薬 ― アルツハイマー病治療の最新研究【幸せな未来のサイエンス】",
+  "youtube_description": "最近、知人の名前が急に出てこなくなった――そんな物忘れの裏側にあるかもしれないのが、脳に居座る\"ゾンビ細胞\"です。それを掃除して記憶の霧を晴らそうという最新の研究を紹介します。\n\n脳内に蓄積して慢性炎症や神経変性を引き起こす「老化細胞」を、ダサチニブとケルセチンという2種類の成分を組み合わせた飲み薬（間欠投与、通称D+Q）で選択的に除去し、アルツハイマー病や軽度認知障害の症状に働きかけることを目指した臨床試験です。\n\n※本動画で紹介した治療法は、2つの関連する初期段階の臨床試験（フィジビリティ試験、合わせて17名）の結果であり、偽薬（プラセボ）と比較する対照群を置かない予備的なデータです。まだ研究段階のプロトタイプであり、安全性・有効性が確立され実用化されるまでには、今後さらなる研究が必要です。\n\n【参考文献】\nMiranda E. Orr. \"Clinical Trials of Senolytics in Alzheimer's Disease Treatment and Prevention.\" Innovation in Aging, 2025.（査読済み）\nDOI: 10.1093/geroni/igaf122.1102\n\n\n🎵 Music: Sentimental Piano by ViraMiller (freesound.org) — CC BY 4.0\n#幸せな未来のサイエンス #アルツハイマー病 #老化細胞 #senolytics #認知症",
+  "youtube_tags": [
+    "幸せな未来のサイエンス",
+    "くらしを変える科学",
+    "アルツハイマー病",
+    "認知症",
+    "老化細胞",
+    "senolytics",
+    "脳科学",
+    "介護",
+    "健康寿命",
+    "最新研究"
+  ],
+  "references": [
+    {
+      "title": "Clinical Trials of Senolytics in Alzheimer's Disease Treatment and Prevention",
+      "authors": [
+        "Miranda E. Orr"
+      ],
+      "year": 2025,
+      "venue": "Innovation in Aging",
+      "doi": "10.1093/geroni/igaf122.1102",
+      "lead_researcher": "Miranda E. Orr"
+    }
+  ],
+  "protagonist": {
+    "name": "清水康夫",
+    "age": 74,
+    "job": "元高校教師（現在は地域の家庭菜園仲間と交流）",
+    "gender": "male"
+  },
+  "narration_voices": {
+    "persona": "Charon",
+    "research": "Autonoe",
+    "persona_style": "Say in the voice of a dignified male in his 70s. Speak at a slightly slower, measured pace with natural warmth and quiet pride in his tone — the unhurried cadence of someone who has lived a full life, not a young or brisk delivery. Keep it clear, articulate, and full of life — never frail, weak, mumbling, or shaky: "
+  },
+  "thumbnail_prompt": "A 74-year-old Japanese man with short silver hair, wearing a simple beige cardigan over a collared shirt, warm relieved smile, medium close-up shot, standing independently with no cane, no walking stick, no walker, no mobility aid, in soft bright daylight, with a subtle abstract glowing brain graphic faintly visible in one corner of the background symbolizing a fog clearing from the mind. No text, no numbers.",
+  "thumbnail_headline": "脳の\"ゾンビ細胞\"を薬で掃除",
+  "thumbnail_subcopy": "アルツハイマー病治療の最新研究",
+  "hook_lines": [
+    "名前が出てこない…",
+    "正体は脳の\"ゾンビ細胞\""
+  ],
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "教え子の顔が、迷わず浮かぶ。",
+      "image_prompt": "Immersive close view filling the frame: a 74-year-old Japanese man with short silver hair, a slim upright build and a gentle, kindly face, wearing a simple beige cardigan over a collared shirt, no cane, no walking stick, no walker, no mobility aid, standing on a quiet neighborhood path in clear bright morning daylight, smiling warmly as he meets and greets a former student, a Japanese man in his 40s in casual clothes. No thought bubble or cloud framing. No text.",
+      "ken_burns": "pan_zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "教え子の顔が、迷わず浮かぶ。"
+          ],
+          "start": 0.0,
+          "end": 3.64
+        }
+      ]
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "夕方の畑で、笑い合う声。",
+      "reuse_scene_id": 13,
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "夕方の畑で、笑い合う声。"
+          ],
+          "start": 0.0,
+          "end": 3.76
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "頭の霧が、晴れていく感じ。",
+      "reuse_scene_id": 14,
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "頭の霧が、晴れていく感じ。"
+          ],
+          "start": 0.0,
+          "end": 3.5
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.47,
+        "y": 0.38
+      }
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 4,
+      "narration": "物忘れの正体、脳の\"ゾンビ細胞\"かも。",
+      "image_prompt": "Abstract, dreamlike extreme close-up of a soft, translucent human brain silhouette rendered as gentle glowing light, with small dim reddish-grey cell clusters slowly dissolving and drifting away like fading dust motes. No people, no faces, purely symbolic and gentle. No text, no numbers, no letters.",
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "物忘れの正体、脳の\"ゾンビ細胞\"かも。"
+          ],
+          "start": 0.0,
+          "end": 5.3
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 5,
+      "type": "hook",
+      "narrator": "persona",
+      "duration_seconds": 5,
+      "narration": "清水康夫、74歳。長く高校で理科を教えていました。今は現役を退いて、近所の仲間たちと小さな畑を耕しながら、のんびりした日々を送っています。",
+      "image_prompt": "a 74-year-old Japanese man with short silver hair, a slim upright build and a gentle, kindly face, wearing a simple beige cardigan over a collared shirt, no cane, no walking stick, no walker, no mobility aid, standing in a small home vegetable garden in early morning. Soft morning daylight, clearly bright dawn light, not night. He wears gardening gloves over his cardigan and gently tends to the plants with a calm, content expression. No text.",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "清水康夫、74歳。長く高校で理科を教えていました。"
+          ],
+          "start": 0.0,
+          "end": 7.06
+        },
+        {
+          "lines": [
+            "今は現役を退いて、近所の仲間たちと小さな"
+          ],
+          "start": 8.1,
+          "end": 12.82
+        },
+        {
+          "lines": [
+            "畑を耕しながら、のんびりした日々を送っています。"
+          ],
+          "start": 12.97,
+          "end": 16.71
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.61,
+        "y": 0.43
+      }
+    },
+    {
+      "scene_id": 6,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 16,
+      "narration": "けれど最近、困ったことがあります。よく知っているはずの人の名前が、話している途中でふっと出てこなくなるのです。畑仲間との立ち話でも、言葉を探したまま黙り込んでしまうことが増えました。相手を待たせて、会話の流れを止めてしまうたびに、申し訳ない気持ちになります。長く教壇に立っていた頃は、生徒の名前をすらすら呼べることが、ささやかな誇りでもありました。",
+      "image_prompt": "a 74-year-old Japanese man with short silver hair, a slim upright build and a gentle, kindly face, wearing a simple beige cardigan over a collared shirt, no cane, no walking stick, no walker, no mobility aid, talking with a small group of elderly gardening friends outdoors in daylight. He has a slightly puzzled, searching expression, pausing mid-sentence as if trying to recall a word. Daytime, clear natural daylight. No text.",
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "けれど最近、困ったことがあります。"
+          ],
+          "start": 0.0,
+          "end": 3.46
+        },
+        {
+          "lines": [
+            "よく知っているはずの人の名前が、"
+          ],
+          "start": 4.4,
+          "end": 6.84
+        },
+        {
+          "lines": [
+            "話している途中でふっと出てこなくなるのです。"
+          ],
+          "start": 6.99,
+          "end": 10.97
+        },
+        {
+          "lines": [
+            "畑仲間との立ち話でも、言葉を探したまま"
+          ],
+          "start": 11.96,
+          "end": 15.8
+        },
+        {
+          "lines": [
+            "黙り込んでしまうことが増えました。"
+          ],
+          "start": 15.95,
+          "end": 18.5
+        },
+        {
+          "lines": [
+            "相手を待たせて、会話の流れを止めてしまうたびに、"
+          ],
+          "start": 18.86,
+          "end": 22.54
+        },
+        {
+          "lines": [
+            "申し訳ない気持ちになります。"
+          ],
+          "start": 22.69,
+          "end": 24.79
+        },
+        {
+          "lines": [
+            "長く教壇に立っていた頃は、生徒の名前を"
+          ],
+          "start": 25.46,
+          "end": 29.08
+        },
+        {
+          "lines": [
+            "すらすら呼べることが、ささやかな誇りでも"
+          ],
+          "start": 29.23,
+          "end": 32.23
+        },
+        {
+          "lines": [
+            "ありました。"
+          ],
+          "start": 32.38,
+          "end": 33.28
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 7,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 16,
+      "narration": "堪えるのは、物忘れそのものより、これから少しずつ増えていくかもしれない、という予感の方です。年のせいだと自分に言い聞かせてはいますが、このまま進んでいったらどうなるのだろうと、ふとした拍子に心細くなります。一度病院で検査を受けるべきかとも思うのですが、何か診断がついてしまうのが怖くて、なかなか一歩を踏み出せずにいます。",
+      "image_prompt": "Immersive medium close view: a 74-year-old Japanese man with short silver hair, a slim upright build and a gentle, kindly face, wearing a simple beige cardigan over a collared shirt, no cane, no walking stick, no walker, no mobility aid, sitting alone at a kitchen table late at night under a single warm overhead lamp, an untouched cup of tea in front of him. He rests his chin on one hand, gazing down with a quiet, uneasy, thoughtful expression. The rest of the room falls into soft shadow, and the window behind him is clearly dark night. No text.",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "堪えるのは、物忘れそのものより、"
+          ],
+          "start": 0.32,
+          "end": 3.8
+        },
+        {
+          "lines": [
+            "これから少しずつ増えていくかもしれない、"
+          ],
+          "start": 4.18,
+          "end": 7.18
+        },
+        {
+          "lines": [
+            "という予感の方です。年のせいだと自分に"
+          ],
+          "start": 7.33,
+          "end": 11.89
+        },
+        {
+          "lines": [
+            "言い聞かせてはいますが、このまま進んでいったら"
+          ],
+          "start": 12.04,
+          "end": 15.62
+        },
+        {
+          "lines": [
+            "どうなるのだろうと、ふとした拍子に心細くなります。"
+          ],
+          "start": 15.77,
+          "end": 20.29
+        },
+        {
+          "lines": [
+            "一度病院で検査を受けるべきかとも思うのですが、"
+          ],
+          "start": 20.76,
+          "end": 24.56
+        },
+        {
+          "lines": [
+            "何か診断がついてしまうのが怖くて、"
+          ],
+          "start": 24.84,
+          "end": 28.14
+        },
+        {
+          "lines": [
+            "なかなか一歩を踏み出せずにいます。"
+          ],
+          "start": 28.64,
+          "end": 31.19
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.51,
+        "y": 0.52
+      }
+    },
+    {
+      "scene_id": 8,
+      "type": "citation",
+      "narrator": "research",
+      "duration_seconds": 14,
+      "narration": "アメリカ、ワシントン大学セントルイス校の研究チームが、2025年に学術誌『Innovation in Aging』で発表した、2つの関連する初期段階の臨床試験があります。注目したのは、加齢とともに脳の中にたまっていき、死なずに居座って周囲の細胞に慢性的な炎症を広げてしまう\"老化細胞\"、いわば脳内の\"ゾンビ細胞\"です。老化細胞は本来、体の防御反応の一つですが、それが脳に蓄積し続けると、神経細胞そのものを傷つけていくことがわかってきました。この老化細胞だけを選んで取り除く飲み薬が、記憶や認知の働きに、そして日常の歩行にどんな変化をもたらすのかを確かめる試験でした。",
+      "image_prompt": "Exterior entrance of a modern university medical research building in the United States, daytime, clear daylight. Two researchers in white lab coats, a man in his 40s and a woman in her 30s, both with an American appearance consistent with the US research institution, walking toward the entrance carrying a tablet and a folder. Clean, professional academic campus atmosphere. No text, no signage lettering, no numbers.",
+      "ken_burns": "pan_zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "アメリカ、ワシントン大学セントルイス校の"
+          ],
+          "start": 0.0,
+          "end": 3.0
+        },
+        {
+          "lines": [
+            "研究チームが、2025年に学術誌『"
+          ],
+          "start": 3.15,
+          "end": 6.19
+        },
+        {
+          "lines": [
+            "Innovation in Aging』"
+          ],
+          "start": 6.34,
+          "end": 9.34
+        },
+        {
+          "lines": [
+            "で発表した、2つの関連する初期段階の臨床"
+          ],
+          "start": 9.49,
+          "end": 12.49
+        },
+        {
+          "lines": [
+            "試験があります。注目したのは、"
+          ],
+          "start": 12.64,
+          "end": 14.89
+        },
+        {
+          "lines": [
+            "加齢とともに脳の中にたまっていき、"
+          ],
+          "start": 15.04,
+          "end": 17.59
+        },
+        {
+          "lines": [
+            "死なずに居座って周囲の細胞に慢性的な炎症を"
+          ],
+          "start": 17.74,
+          "end": 20.89
+        },
+        {
+          "lines": [
+            "広げてしまう\"老化細胞\"、いわば脳内の\""
+          ],
+          "start": 21.04,
+          "end": 24.04
+        },
+        {
+          "lines": [
+            "ゾンビ細胞\"です。老化細胞は本来、"
+          ],
+          "start": 24.19,
+          "end": 26.74
+        },
+        {
+          "lines": [
+            "体の防御反応の一つですが、それが脳に蓄積"
+          ],
+          "start": 26.89,
+          "end": 29.89
+        },
+        {
+          "lines": [
+            "し続けると、神経細胞そのものを傷つけていく"
+          ],
+          "start": 30.04,
+          "end": 33.19
+        },
+        {
+          "lines": [
+            "ことがわかってきました。この老化細胞だけを"
+          ],
+          "start": 33.34,
+          "end": 36.49
+        },
+        {
+          "lines": [
+            "選んで取り除く飲み薬が、記憶や認知の働きに、"
+          ],
+          "start": 36.64,
+          "end": 39.94
+        },
+        {
+          "lines": [
+            "そして日常の歩行にどんな変化をもたらす"
+          ],
+          "start": 40.09,
+          "end": 42.94
+        },
+        {
+          "lines": [
+            "のかを確かめる試験でした。"
+          ],
+          "start": 43.09,
+          "end": 45.04
+        }
+      ]
+    },
+    {
+      "scene_id": 9,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 20,
+      "narration": "使われたのは、ダサチニブとケルセチンという、もともと別々の目的で使われてきた2種類の成分を組み合わせた飲み薬です。毎日ではなく数週間に一度だけ服用する\"間欠投与\"という飲み方で、老化した細胞だけを狙って死滅させ、健康な細胞への影響を抑える仕組みになっています。1つ目の試験にはアルツハイマー病の症状がある人5名が、2つ目の試験には軽い物忘れや歩行の衰えが見られる高齢者12名が参加し、合わせて17名。それぞれの体への負担や安全性を、丁寧に確認しながら進められました。",
+      "image_prompt": "Inside a clinical research lab in the United States, daytime with bright indoor lighting. A researcher in a white lab coat, an American woman in her 30s, hands a small pill organizer containing two types of capsules to an elderly test participant seated in a chair. This participant is clearly a different person from the protagonist: a stockier elderly American man in his 70s with a bald head and a full white beard, wearing a plaid shirt. On a nearby lab monitor, a small flat corner graphic (no larger than one-eighth of the frame) shows a simple diagram of dim clustered dots fading away, plain and unobtrusive, absolutely no text or numerals. No protagonist present. No text.",
+      "ken_burns": "pan_zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "使われたのは、ダサチニブとケルセチンという、"
+          ],
+          "start": 0.0,
+          "end": 3.32
+        },
+        {
+          "lines": [
+            "もともと別々の目的で使われてきた2種類の"
+          ],
+          "start": 3.84,
+          "end": 6.84
+        },
+        {
+          "lines": [
+            "成分を組み合わせた飲み薬です。"
+          ],
+          "start": 6.99,
+          "end": 9.24
+        },
+        {
+          "lines": [
+            "毎日ではなく数週間に一度だけ服用する\""
+          ],
+          "start": 9.39,
+          "end": 12.75
+        },
+        {
+          "lines": [
+            "間欠投与\"という飲み方で、老化した細胞だけを"
+          ],
+          "start": 12.9,
+          "end": 16.78
+        },
+        {
+          "lines": [
+            "狙って死滅させ、健康な細胞への影響を抑える"
+          ],
+          "start": 16.93,
+          "end": 20.47
+        },
+        {
+          "lines": [
+            "仕組みになっています。1つ目の試験には"
+          ],
+          "start": 20.62,
+          "end": 23.47
+        },
+        {
+          "lines": [
+            "アルツハイマー病の症状がある人5名が、"
+          ],
+          "start": 23.62,
+          "end": 26.47
+        },
+        {
+          "lines": [
+            "2つ目の試験には軽い物忘れや歩行の衰えが"
+          ],
+          "start": 26.62,
+          "end": 30.38
+        },
+        {
+          "lines": [
+            "見られる高齢者12名が参加し、"
+          ],
+          "start": 30.53,
+          "end": 32.78
+        },
+        {
+          "lines": [
+            "合わせて17名。それぞれの体への負担や安全性を、"
+          ],
+          "start": 32.93,
+          "end": 36.78
+        },
+        {
+          "lines": [
+            "丁寧に確認しながら進められました。"
+          ],
+          "start": 36.93,
+          "end": 39.48
+        }
+      ]
+    },
+    {
+      "scene_id": 10,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 18,
+      "narration": "服用を重ねた結果、2種類の成分のうちダサチニブについては、参加者のおよそ8割で脳の中枢神経にまで実際に届いていることが確認され、血液中の炎症マーカーの値も、どちらの試験でも下がっていました。特に、軽い物忘れや歩行の衰えが見られる高齢者12名が参加した2つ目の試験では、炎症マーカーであるTNFアルファの下がり具合と、認知機能テストの改善度との間に、相関係数マイナス0.65、有意確率0.02という統計的な関連が見られました。老化細胞が引き起こす炎症が鎮まるほど、頭の働きも良くなっていくかもしれない――そんな可能性が、数字の上にも見えてきたのです。ただし今回は、参加者全員が実際に薬を飲む段階の試験で、偽薬と比較する検証はこれからです。",
+      "image_prompt": "Inside the same clinical research lab, daytime bright indoor lighting. A researcher in a white lab coat, an American man in his 50s with glasses, points at a large monitor displaying an abstract brain scan image with a few dim clusters and one brighter, clearer area. A different anonymous elderly American female test participant, in her 70s with short curly gray hair and reading glasses, sits nearby completing a cognitive assessment on a tablet. A small flat corner graphic (no larger than one-eighth of the frame) shows two simple bars, one shrinking and one growing, indicating an inverse relationship, absolutely no text or numerals. No protagonist present. No text.",
+      "ken_burns": "pan_zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "服用を重ねた結果、2種類の成分のうち"
+          ],
+          "start": 0.3,
+          "end": 3.4
+        },
+        {
+          "lines": [
+            "ダサチニブについては、参加者のおよそ"
+          ],
+          "start": 3.84,
+          "end": 6.54
+        },
+        {
+          "lines": [
+            "8割で脳の中枢神経にまで実際に届いている"
+          ],
+          "start": 6.69,
+          "end": 10.37
+        },
+        {
+          "lines": [
+            "ことが確認され、血液中の炎症マーカーの値も、"
+          ],
+          "start": 10.52,
+          "end": 14.12
+        },
+        {
+          "lines": [
+            "どちらの試験でも下がっていました。特に、"
+          ],
+          "start": 14.27,
+          "end": 17.55
+        },
+        {
+          "lines": [
+            "軽い物忘れや歩行の衰えが見られる高齢者"
+          ],
+          "start": 17.7,
+          "end": 21.14
+        },
+        {
+          "lines": [
+            "12名が参加した2つ目の試験では、"
+          ],
+          "start": 21.29,
+          "end": 23.84
+        },
+        {
+          "lines": [
+            "炎症マーカーであるTNFアルファの下がり具合と、"
+          ],
+          "start": 23.99,
+          "end": 27.59
+        },
+        {
+          "lines": [
+            "認知機能テストの改善度との間に、"
+          ],
+          "start": 27.74,
+          "end": 30.2
+        },
+        {
+          "lines": [
+            "相関係数マイナス0.65、有意確率"
+          ],
+          "start": 30.35,
+          "end": 33.67
+        },
+        {
+          "lines": [
+            "0.02という統計的な関連が見られました。"
+          ],
+          "start": 33.82,
+          "end": 37.04
+        },
+        {
+          "lines": [
+            "老化細胞が引き起こす炎症が鎮まるほど、"
+          ],
+          "start": 37.19,
+          "end": 40.04
+        },
+        {
+          "lines": [
+            "頭の働きも良くなっていくかもしれない――"
+          ],
+          "start": 40.19,
+          "end": 43.19
+        },
+        {
+          "lines": [
+            "そんな可能性が、数字の上にも見えてきたのです。"
+          ],
+          "start": 43.34,
+          "end": 46.79
+        },
+        {
+          "lines": [
+            "ただし今回は、参加者全員が実際に薬を飲む"
+          ],
+          "start": 46.94,
+          "end": 50.21
+        },
+        {
+          "lines": [
+            "段階の試験で、偽薬と比較する検証はこれからです。"
+          ],
+          "start": 50.36,
+          "end": 53.96
+        }
+      ]
+    },
+    {
+      "scene_id": 11,
+      "type": "data",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 10,
+      "narration": "炎症マーカーの値が大きく下がった人ほど、認知機能のスコアもより大きく改善する。逆に、炎症マーカーがあまり下がらなかった人は、認知機能の改善も小幅にとどまる。12人という小さな試験の中ではありますが、そんな関係性の傾向が見えてきています。",
+      "image_prompt": "A simple two-panel flat comparison diagram. Left panel: a short Japanese text label \"炎症マーカー\" rendered clearly at the top of the panel, with a bar below it shrinking from tall to short across a few steps. Right panel: a short Japanese text label \"認知機能スコア\" rendered clearly at the top of the panel, with a bar below it growing from short to tall across the same steps, positioned side by side to visually suggest an inverse relationship between the two. Render the two Japanese text labels accurately in a clean, legible sans-serif font — do not distort, garble, or misspell them. Clean flat diagram layout, no photographic elements, no people. Do NOT add any other text, words, numbers, or percentages beyond exactly these two short labels — no specific figures are given in the source data, so do not fabricate any numbers.",
+      "ken_burns": "static",
+      "telop_cards": [
+        {
+          "lines": [
+            "炎症マーカーの値が大きく下がった人ほど、"
+          ],
+          "start": 0.42,
+          "end": 3.42
+        },
+        {
+          "lines": [
+            "認知機能のスコアもより大きく改善する。"
+          ],
+          "start": 3.57,
+          "end": 6.42
+        },
+        {
+          "lines": [
+            "逆に、炎症マーカーがあまり下がらなかった人は、"
+          ],
+          "start": 6.76,
+          "end": 10.21
+        },
+        {
+          "lines": [
+            "認知機能の改善も小幅にとどまる。"
+          ],
+          "start": 10.36,
+          "end": 12.76
+        },
+        {
+          "lines": [
+            "12人という小さな試験の中ではありますが、"
+          ],
+          "start": 12.97,
+          "end": 16.12
+        },
+        {
+          "lines": [
+            "そんな関係性の傾向が見えてきています。"
+          ],
+          "start": 16.27,
+          "end": 19.12
+        }
+      ]
+    },
+    {
+      "scene_id": 12,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 14,
+      "narration": "もし本当にこの飲み薬が実現したら――そう考えるだけで、心がふっと軽くなります。いつもの散歩道で、昔担任していた教え子とばったり顔を合わせる。名前も、一緒に過ごした授業や行事の記憶も、迷うことなくすっと浮かんでくる。相手も驚いた顔をして、それから懐かしそうに笑ってくれる。そんな、ごくありふれた朝を、当たり前のように迎えられたらと思うのです。",
+      "image_prompt": "Wide shot of a cozy home living room in soft daytime light coming through the window. a 74-year-old Japanese man with short silver hair, a slim upright build and a gentle, kindly face, wearing a simple beige cardigan over a collared shirt, no cane, no walking stick, no walker, no mobility aid, is shown small within the frame, sitting quietly in a chair by that window. A classic comic-style thought bubble — a chain of small round bubbles rising from his head into one large cloud-shaped bubble — floats above him. Inside the thought bubble is a small inset illustration: the same man walking on a neighborhood path in clear bright morning daylight, smiling warmly as he recognizes and greets a former student. No text.",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "もし本当にこの飲み薬が実現したら――そう"
+          ],
+          "start": 0.0,
+          "end": 5.8
+        },
+        {
+          "lines": [
+            "考えるだけで、心がふっと軽くなります。"
+          ],
+          "start": 5.95,
+          "end": 9.81
+        },
+        {
+          "lines": [
+            "いつもの散歩道で、昔担任していた教え子と"
+          ],
+          "start": 10.64,
+          "end": 14.86
+        },
+        {
+          "lines": [
+            "ばったり顔を合わせる。名前も、"
+          ],
+          "start": 15.01,
+          "end": 18.47
+        },
+        {
+          "lines": [
+            "一緒に過ごした授業や行事の記憶も、"
+          ],
+          "start": 18.62,
+          "end": 21.84
+        },
+        {
+          "lines": [
+            "迷うことなくすっと浮かんでくる。"
+          ],
+          "start": 21.99,
+          "end": 25.01
+        },
+        {
+          "lines": [
+            "相手も驚いた顔をして、それから懐かしそうに"
+          ],
+          "start": 25.22,
+          "end": 29.14
+        },
+        {
+          "lines": [
+            "笑ってくれる。そんな、ごくありふれた朝を、"
+          ],
+          "start": 29.29,
+          "end": 34.07
+        },
+        {
+          "lines": [
+            "当たり前のように迎えられたらと思うのです。"
+          ],
+          "start": 34.22,
+          "end": 37.56
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.31,
+        "y": 0.66
+      }
+    },
+    {
+      "scene_id": 13,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 13,
+      "narration": "夕方、畑仲間と並んで水やりをしながら、他愛のない世間話で笑い合う。誰の名前も、育てている野菜の話も、すらすらと口をついて出てくる。会話が途切れて気まずくなることもなく、思いついたことをそのまま口にできる。以前なら気にも留めなかったはずのそんな時間が、こんなにも心地よく、かけがえのないものだったんだと、あらためて感じています。",
+      "image_prompt": "Immersive close view filling the frame: a 74-year-old Japanese man with short silver hair, a slim upright build and a gentle, kindly face, wearing a simple beige cardigan over a collared shirt, no cane, no walking stick, no walker, no mobility aid, standing in a home vegetable garden at evening with warm dusk light and a dusk sky visible, watering plants alongside a couple of elderly gardening friends, all laughing together. No thought bubble or cloud framing. No text.",
+      "badge_text": "幸せな未来を夢想中",
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "夕方、畑仲間と並んで水やりをしながら、"
+          ],
+          "start": 0.0,
+          "end": 5.12
+        },
+        {
+          "lines": [
+            "他愛のない世間話で笑い合う。誰の名前も、"
+          ],
+          "start": 5.27,
+          "end": 10.23
+        },
+        {
+          "lines": [
+            "育てている野菜の話も、すらすらと口をついて"
+          ],
+          "start": 10.38,
+          "end": 14.68
+        },
+        {
+          "lines": [
+            "出てくる。会話が途切れて気まずくなることもなく、"
+          ],
+          "start": 14.83,
+          "end": 18.99
+        },
+        {
+          "lines": [
+            "思いついたことをそのまま口にできる。"
+          ],
+          "start": 19.14,
+          "end": 22.62
+        },
+        {
+          "lines": [
+            "以前なら気にも留めなかったはずのそんな時間が、"
+          ],
+          "start": 22.77,
+          "end": 26.67
+        },
+        {
+          "lines": [
+            "こんなにも心地よく、かけがえのないものだった"
+          ],
+          "start": 26.82,
+          "end": 31.02
+        },
+        {
+          "lines": [
+            "んだと、あらためて感じています。"
+          ],
+          "start": 31.17,
+          "end": 33.57
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 14,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 13,
+      "narration": "休みの日、縁側でお茶を飲みながら新聞を広げる。かかっていた薄い霧がすっと晴れて、活字も、頭の中の記憶も、くっきりと見える気がします。読んだ記事のことを、後で誰かに話したくなる。そんな穏やかな休日が、特別なことではなく、これからも当たり前に続いていくとしたら――それだけで、十分に幸せです。",
+      "image_prompt": "Immersive close view filling the frame: a 74-year-old Japanese man with short silver hair, a slim upright build and a gentle, kindly face, wearing a simple beige cardigan over a collared shirt, no cane, no walking stick, no walker, no mobility aid, sitting on a home veranda on a weekend morning, soft bright daylight, holding a cup of tea and reading a newspaper with a calm, clear, contented expression. The newspaper he holds is angled so its printed surface is barely visible or turned mostly away from view; if any part of the page is visible, render it as plain blank grey/white paper or unreadable abstract grey blocks only — absolutely no legible text, no letters, no numerals, no pseudo-characters, no fake headlines of any kind. No thought bubble or cloud framing. No text.",
+      "badge_text": "幸せな未来を夢想中",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "休みの日、縁側でお茶を飲みながら新聞を広げる。"
+          ],
+          "start": 0.0,
+          "end": 6.28
+        },
+        {
+          "lines": [
+            "かかっていた薄い霧がすっと晴れて、活字も、"
+          ],
+          "start": 6.43,
+          "end": 10.93
+        },
+        {
+          "lines": [
+            "頭の中の記憶も、くっきりと見える気がします。"
+          ],
+          "start": 11.08,
+          "end": 15.56
+        },
+        {
+          "lines": [
+            "読んだ記事のことを、後で誰かに話したくなる。"
+          ],
+          "start": 16.22,
+          "end": 19.84
+        },
+        {
+          "lines": [
+            "そんな穏やかな休日が、特別なことではなく、"
+          ],
+          "start": 21.1,
+          "end": 25.14
+        },
+        {
+          "lines": [
+            "これからも当たり前に続いていくとしたら"
+          ],
+          "start": 25.29,
+          "end": 28.99
+        },
+        {
+          "lines": [
+            "――それだけで、十分に幸せです。"
+          ],
+          "start": 29.14,
+          "end": 32.86
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.44,
+        "y": 0.45
+      }
+    },
+    {
+      "scene_id": 15,
+      "type": "closing",
+      "narrator": "research",
+      "duration_seconds": 28,
+      "narration": "これはまだ、2つの関連する試験、合わせて17人規模のごく初期段階の臨床試験の結果です。偽薬と比較する検証もこれからで、安全性や効果を丁寧に確かめていく、研究段階のプロトタイプの一つに過ぎず、実際に治療として広く使われるようになるには、まだ時間がかかりそうです。それでも、脳にたまる老化細胞を掃除するという発想は、症状そのものではなく、その裏にある仕組みに直接働きかけるという点で、これまでにない道筋であり、物忘れに悩む多くの人にとって、小さな希望の灯になるかもしれません。研究チームは今後、より多くの参加者を対象にした試験を重ね、どんな人にどれだけの効果が見込めるのかを、さらに詳しく確かめていく計画だといいます。詳しい研究内容が知りたい方は、概要欄をご確認ください。次はどんな研究が、誰かの幸せな未来を運んでくるのでしょうか。その瞬間をこれからも一緒に見つけていきたい方は、ぜひチャンネル登録してお待ちください。",
+      "image_prompt": "A calm, wide establishing shot of a quiet Japanese neighborhood street at soft golden late-afternoon light, small houses with home vegetable gardens, no people prominently featured, a gentle and hopeful atmosphere. No text.",
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "これはまだ、2つの関連する試験、"
+          ],
+          "start": 0.0,
+          "end": 2.47
+        },
+        {
+          "lines": [
+            "合わせて17人規模のごく初期段階の臨床"
+          ],
+          "start": 2.62,
+          "end": 5.37
+        },
+        {
+          "lines": [
+            "試験の結果です。偽薬と比較する検証もこれからで、"
+          ],
+          "start": 5.52,
+          "end": 8.99
+        },
+        {
+          "lines": [
+            "安全性や効果を丁寧に確かめていく、"
+          ],
+          "start": 9.14,
+          "end": 11.6
+        },
+        {
+          "lines": [
+            "研究段階のプロトタイプの一つに過ぎず、"
+          ],
+          "start": 11.75,
+          "end": 14.5
+        },
+        {
+          "lines": [
+            "実際に治療として広く使われるようになるには、"
+          ],
+          "start": 14.65,
+          "end": 17.83
+        },
+        {
+          "lines": [
+            "まだ時間がかかりそうです。それでも、"
+          ],
+          "start": 17.98,
+          "end": 20.58
+        },
+        {
+          "lines": [
+            "脳にたまる老化細胞を掃除するという発想は、"
+          ],
+          "start": 20.73,
+          "end": 23.77
+        },
+        {
+          "lines": [
+            "症状そのものではなく、その裏にある仕組みに"
+          ],
+          "start": 23.92,
+          "end": 26.96
+        },
+        {
+          "lines": [
+            "直接働きかけるという点で、これまでにない"
+          ],
+          "start": 27.11,
+          "end": 30.0
+        },
+        {
+          "lines": [
+            "道筋であり、物忘れに悩む多くの人にとって、"
+          ],
+          "start": 30.15,
+          "end": 33.19
+        },
+        {
+          "lines": [
+            "小さな希望の灯になるかもしれません。"
+          ],
+          "start": 33.34,
+          "end": 35.94
+        },
+        {
+          "lines": [
+            "研究チームは今後、より多くの参加者を対象に"
+          ],
+          "start": 36.09,
+          "end": 39.13
+        },
+        {
+          "lines": [
+            "した試験を重ね、どんな人にどれだけの効果が"
+          ],
+          "start": 39.28,
+          "end": 42.32
+        },
+        {
+          "lines": [
+            "見込めるのかを、さらに詳しく確かめていく"
+          ],
+          "start": 42.47,
+          "end": 45.36
+        },
+        {
+          "lines": [
+            "計画だといいます。詳しい研究内容が知りたい方は、"
+          ],
+          "start": 45.51,
+          "end": 48.98
+        },
+        {
+          "lines": [
+            "概要欄をご確認ください。次はどんな研究が、"
+          ],
+          "start": 49.13,
+          "end": 52.17
+        },
+        {
+          "lines": [
+            "誰かの幸せな未来を運んでくるのでしょうか。"
+          ],
+          "start": 52.32,
+          "end": 55.36
+        },
+        {
+          "lines": [
+            "その瞬間をこれからも一緒に見つけていきたい方は、"
+          ],
+          "start": 55.51,
+          "end": 58.98
+        },
+        {
+          "lines": [
+            "ぜひチャンネル登録してお待ちください。"
+          ],
+          "start": 59.13,
+          "end": 61.88
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "face_hook_image_prompt": "Extreme close-up of the face of a 74-year-old Japanese man with short silver hair, filling almost the entire frame from forehead to chin, warm daylight, an expression of quiet relief and joyful surprise, eyes slightly widened with a soft warm smile, as if suddenly remembering something precious. No text.",
+      "scenes": [
+        {
+          "narrator": "persona",
+          "narration": "最近、名前がすっと出てこない。",
+          "scene_id": 6
+        },
+        {
+          "narrator": "research",
+          "narration": "アメリカの研究チームが目をつけたのは、脳にたまる\"老化細胞\"。",
+          "scene_id": 9
+        },
+        {
+          "narrator": "research",
+          "narration": "飲み薬で、選んで取り除く。",
+          "image_prompt": "A simple flat vertical diagram in two stacked panels. Top panel: a translucent brain silhouette containing several small reddish-grey cell clusters, where roughly half of the clusters are rendered clearly solid and half are rendered as faint, dissolving, shrinking outlines to visually show them disappearing. Bottom panel, below the brain: two small pill capsule shapes with a soft upward arrow pointing from the capsules directly into the area of the brain where the clusters are dissolving, visually suggesting the capsules cause the clusters to vanish. Clean flat layout, no people, no photographic elements. No text, no numbers, no labels.",
+          "style": "chart"
+        },
+        {
+          "narrator": "persona",
+          "narration": "頭の霧が、晴れていく。",
+          "scene_id": 14
+        },
+        {
+          "narrator": "persona",
+          "narration": "そんな未来が、いつか来るかもしれません。続きは本編で。",
+          "scene_id": 13
+        }
+      ]
+    }
+  ],
+  "bgm_sources": {
+    "intro": "BGM/kl023-BGM-intro.mp3",
+    "main": "BGM/kl023-BGM-main.mp3",
+    "outro": "BGM/kl023-BGM-outro.mp3"
+  }
+}
