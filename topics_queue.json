@@ -1017,8 +1017,49 @@
         "market_status": "incremental",
         "novel_delta": "猫用やヒト用として市販されているベラプロストを犬の初期〜中期慢性腎臓病に適用し、生存期間を大幅に延ばす可能性を示した臨床的エビデンス。"
       }
+    },
+    {
+      "episode_id": "kl023",
+      "status": "confirmed",
+      "title": "記憶の霧が晴れる朝：脳の\"ゾンビ細胞\"を掃除する飲み薬とアルツハイマー病",
+      "format": "single_paper",
+      "category": "aging_care",
+      "category_label": "高齢化・介護・自立支援",
+      "references": [
+        {
+          "title": "Clinical Trials of Senolytics in Alzheimer’s Disease Treatment and Prevention",
+          "authors": [
+            "Miranda E. Orr"
+          ],
+          "year": 2025,
+          "venue": "Innovation in Aging",
+          "doi": "10.1093/geroni/igaf122.1102",
+          "is_preprint": false
+        }
+      ],
+      "protagonist": {
+        "name": "清水康夫",
+        "age": 74,
+        "job": "元高校教師（現在は地域の家庭菜園仲間と交流）",
+        "gender": "male"
+      },
+      "hook_idea": "「最近、知人の名前が急に出てこなくなった…」そんな認知症の始まりに、脳に居座る“ゾンビ細胞”を掃除して記憶の霧を晴らす最新の飲み薬が光を灯しています。",
+      "notes": "2026-09-16: STAGE0で全カテゴリ在庫3件以上を確認しSTAGE1新規実行は全カテゴリでスキップ。kl_shortlist_rescore.py --checkはSTAGE4_VERSION起因の再採点0件だったが、aging_care（在庫74件、直近使用はkl005＝17話前とローテーション上明確に手薄）とpet_health（直近kl022）の上位候補がkl021（老化細胞の若返り遺伝子治療ER-100）・kl022（犬の慢性腎臓病治療薬）と技術の型・題材が近い可能性があったため、この2カテゴリのみ--stale-deja-vuで既視感再判定を実施。pet_healthはSemantic Scholar側のabstract取得が一時的に全滅し130件中0件しか再採点できなかった（次回リトライ対象）。aging_careは74件全件成功。\n\nSTAGE2でaging_care上位を提示した結果、同カテゴリの2トップ候補（本論文と「Osteoarthritis Repair via Epigenetic Reprogramming」、共にoverall_score=4.45）からユーザーが本論文を選定。決め手は、①ラットの動物実験・プレプリント段階だった対抗案に対し、本論文はヒト第1相試験（症候性アルツハイマー病患者5名＋MCI・歩行低下高齢者12名、ダサチニブ＋ケルセチンの間欠投与）まで進んだ査読済み論文であり事実確認がしやすいこと、②kl005（ロボットとの交流）・kl014（AIによる実行機能の肩代わり）が共に認知症ケアを「外部からの行動支援」として描いたのに対し、本論文は老化細胞そのものを除去する内服薬で脳機能を直接底上げする根本治療であり、切り口が明確に対照的であること。\n\n既視感（deja_vu_level=partial, context_upto=kl022）: kl021とは「老化細胞の若返り」という生命科学の道具立てが一部重なるが、対象疾患・治療手段（遺伝子治療 vs 経口創薬）とも異なる。\n\nSTAGE3の信頼性メモ: 第1相のフィジビリティ試験（実質n=17、intermittent dosing）であり、有意な相関（TNF-α低下と認知スコア改善、r=-0.65, p=0.02）は示されたが承認薬ではない。closingシーンで「まだ研究段階のプロトタイプ」相当のヘッジを必ず入れること。査読済み（Innovation in Aging誌、プレプリントではない）。\n\n主人公はshortlistのexample_protagonistをそのまま採用（74歳男性、元高校教師）。研究ボイスは主人公が男性のため女性（Autonoe、確定済み）を使う想定。",
+      "stage4_snapshot": {
+        "overall_score": 4.45,
+        "score_breakdown": {
+          "wonder_score": 4,
+          "transformation_score": 5,
+          "life_relevance_score": 5,
+          "surprise_score": 4,
+          "persona_fit_score": 5
+        },
+        "market_status": "novel",
+        "novel_delta": "脳内に蓄積して慢性炎症と神経変性を引き起こす「老化細胞（ゾンビ細胞）」を選択的に死滅・除去することで、認知機能の低下や歩行障害を食い止め改善する治療法。",
+        "paperId": "d67a1cf97dee06f4ad6e91b716a7668abcc3e68d"
+      }
     }
   ],
-  "total_topics": 22,
-  "last_updated": "2026-09-15"
+  "total_topics": 23,
+  "last_updated": "2026-09-16"
 }
