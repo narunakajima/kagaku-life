@@ -1058,8 +1058,63 @@
         "novel_delta": "脳内に蓄積して慢性炎症と神経変性を引き起こす「老化細胞（ゾンビ細胞）」を選択的に死滅・除去することで、認知機能の低下や歩行障害を食い止め改善する治療法。",
         "paperId": "d67a1cf97dee06f4ad6e91b716a7668abcc3e68d"
       }
+    },
+    {
+      "episode_id": "kl024",
+      "status": "confirmed",
+      "title": "歩ける未来を、生まれる前に：胎児の脊髄を守る幹細胞パッチ治療",
+      "format": "single_paper",
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "references": [
+        {
+          "title": "Feasibility and safety of cellular therapy for in-utero repair of myelomeningocele (CuRe Trial): a first-in-human, phase 1, single-arm study",
+          "authors": [
+            "Diana L. Farmer",
+            "Priyadarsini Kumar",
+            "Elizabeth Reynolds",
+            "Su Yeon Lee",
+            "Amy B. Powne",
+            "Christopher D. Pivetti",
+            "Marike Zwienenberg",
+            "Amelia S. McLennan",
+            "Jan A. Nolta",
+            "Erin G. Brown",
+            "Payam Saadai",
+            "Shinjiro Hirose",
+            "Aijun Wang"
+          ],
+          "year": 2026,
+          "venue": "The Lancet",
+          "doi": "10.1016/S0140-6736(25)02466-3",
+          "is_preprint": false,
+          "lead_researcher": "Diana L. Farmer（UC Davis Health外科主任、CuRe試験共同代表）"
+        }
+      ],
+      "protagonist": {
+        "name": "高橋 綾乃",
+        "age": 32,
+        "job": "グラフィックデザイナー（育児中）",
+        "gender": "female"
+      },
+      "hook_idea": "「お腹の赤ちゃんは、一生歩けないかもしれません」——もし妊娠中の検診でそう告げられたら？胎児の背中に幹細胞を届ける世界初の手術が、生まれながらの重い障害を過去のものにしようとしています。",
+      "pipeline_gap_flag": true,
+      "notes": "2026-09-27: STAGE0で全カテゴリ在庫3件以上を確認しSTAGE1新規実行は全カテゴリでスキップ。kl_shortlist_rescore.py --checkは再採点対象0件だったが、aging_care上位がkl023（脳のゾンビ細胞除去薬・アルツハイマー病）と題材が近い可能性があったため同カテゴリのみ--stale-deja-vuで既視感再判定を実施（73件成功）。\n\nSTAGE2でmedical_support/aging_care/mobility/pet_healthの4カテゴリを提示（home_robot/work/disaster_safetyは上位でも総合3.2以下・wonder_score最大3で今回は案を見送り）。ユーザーは全カテゴリ中最高スコア（overall_score=4.75, wonder_score=5, deja_vu_level=none）の本候補（案1: medical_support）を即決で選定。\n\n【pipeline_gap_flag=trueの経緯】Semantic Scholar上のレコード（paperId: e0f8c10e524344e37ceef4641eed0bc01879adb3）はNature本体の査読論文ではなく、Nature Newsのニュース記事（DOI \"10.1038/d41586-\"はNature News特有のプレフィックス）だったため、STAGE2確定時点でWebSearch/WebFetchにより一次資料を追跡・検証した。実際の一次研究はThe Lancet誌の第1相臨床試験論文（CuRe Trial、UC Davis Health、DOI: 10.1016/S0140-6736(25)02466-3、2026-02-28付、Farmer/Wang共同代表）であり、上記referencesはこちらを正としている（出版元Lancet公式ページ・EurekAlert・UC Davis Health公式プレスリリースの複数ソースで内容を直接確認済み）。\n\n【STAGE3の信頼性・誇張チェックメモ（重要、STEP2/STEP4で厳守）】本試験（n=6、フィージビリティ研究）で実証済みなのは(1)安全性（重篤な感染・異常組織増殖・腫瘍形成なし）、(2)全例で後脳ヘルニア（Chiari II奇形に伴う脳の合併症所見）がMRI上『改善』したこと、(3)退院前のシャント（水頭症治療）留置が0件だったこと、の3点。**歩行能力・運動機能そのものの改善はこの第1相段階ではまだ実証されておらず、6歳までの長期追跡調査が進行中**（未確定）。shortlistのfuture_scene_sketch（3歳の娘が公園を自分の足で駆ける）はSTAGE4の『実現したら』という仮定のimpactシーンとしては使ってよいが、citation/findingシーンでは安全性・後脳ヘルニア改善という実証済みの範囲を正確に語り、closingでは運動機能の長期追跡が現在進行中である旨を必ずヘッジすること（査読済み・プレプリントではないため『査読』『プレプリント』の語自体は不要）。\n\n主人公はshortlistのexample_protagonistをそのまま採用（32歳女性、育児中のグラフィックデザイナー）。研究ボイスは主人公が女性のため男性（Orus、確定済み）を使う想定。",
+      "stage4_snapshot": {
+        "overall_score": 4.75,
+        "score_breakdown": {
+          "wonder_score": 5,
+          "transformation_score": 5,
+          "life_relevance_score": 4,
+          "surprise_score": 4,
+          "persona_fit_score": 5
+        },
+        "market_status": "novel",
+        "novel_delta": "従来の胎内外科手術が脊髄組織の物理的閉鎖にとどまるのに対し、胎盤由来間葉系幹細胞パッチを胎児の露出した脊髄に直接貼り付けることで神経の変性と損傷を保護・再生し、出生後の麻痺を防ぐ点。",
+        "paperId": "e0f8c10e524344e37ceef4641eed0bc01879adb3"
+      }
     }
   ],
-  "total_topics": 23,
-  "last_updated": "2026-09-16"
+  "total_topics": 24,
+  "last_updated": "2026-09-27"
 }
