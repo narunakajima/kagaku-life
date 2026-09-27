@@ -1113,8 +1113,53 @@
         "novel_delta": "従来の胎内外科手術が脊髄組織の物理的閉鎖にとどまるのに対し、胎盤由来間葉系幹細胞パッチを胎児の露出した脊髄に直接貼り付けることで神経の変性と損傷を保護・再生し、出生後の麻痺を防ぐ点。",
         "paperId": "e0f8c10e524344e37ceef4641eed0bc01879adb3"
       }
+    },
+    {
+      "episode_id": "kl025",
+      "status": "confirmed",
+      "title": "きみの名前を呼べば：腸の中の小さな菌たちが連れ戻す、愛犬の記憶",
+      "format": "single_paper",
+      "category": "pet_health",
+      "category_label": "ペット・動物医療",
+      "references": [
+        {
+          "title": "Fecal microbiota transplantation shows promise in slowing or reducing cognitive impairment in aging dogs.",
+          "authors": [
+            "C. W. Dewey",
+            "Connie A. Rojas",
+            "Carly Pomeroy",
+            "J. Gerardi",
+            "Holly H. Ganz"
+          ],
+          "year": 2026,
+          "venue": "Journal of the American Veterinary Medical Association",
+          "doi": "10.2460/javma.26.03.0231",
+          "is_preprint": false
+        }
+      ],
+      "protagonist": {
+        "name": "田村久美子",
+        "age": 58,
+        "job": "学童保育指導員（パート勤務）、夫を亡くし15歳の柴犬「マル」と二人暮らし",
+        "gender": "female"
+      },
+      "hook_idea": "夜中に部屋の隅で立ち往生し、名前を呼んでも反応しなくなった愛犬。もし『腸の中の菌』を入れ替えるだけで、あの頃の表情が戻ってくるとしたら？",
+      "notes": "2026-09-28: STAGE0で全カテゴリ在庫3件以上を確認しSTAGE1は全面スキップ。kl_shortlist_rescore.py --checkはバージョン起因の再採点0件（既視感の鮮度警告はkl024まで反映されていない710件だったが、非ゼロ終了ではないため許容）。\n\nSTAGE2でhome_robot/work/disaster_safetyの3カテゴリはスコアが軒並み弱い（work上位2.4〜3.0、home_robot 2.6〜3.2、disaster_safety 2.1〜3.1、いずれもマニピュレーション・群ロボット系のベンチマーク論文中心でwonder要素が弱い）ことを確認し、この3カテゴリは提案を見送った。aging_care/medical_support/mobility/pet_healthの4カテゴリから各1案（STAGE2.5相当）を提示し、ユーザーがpet_healthのFMT（便微生物移植）案を選定。\n\n選定理由: wonder_score=4/transformation_score=4/life_relevance_score=5/surprise_score=4/persona_fit_score=5、deja_vu_level=none（kl024までの公開回と技術の型の重複なし。犬の腸内細菌移植による認知機能改善という切り口はチャンネル初）。behavioral_familiarity=novel（チャットボット等では再現不可能な生物学的介入）。market_status=incremental（犬の消化器疾患向けの経口FMTカプセル自体は既存技術）だが、novel_deltaは『これまで有効な治療選択肢が乏しかった高齢犬の認知機能低下への応用』であり、既存製品そのものの再現ではないためoverall_scoreへの上限キャップ対象外。\n\nSTAGE2信頼性チェック観点: n=11頭（完了6頭、うち4頭で改善）と非常に小規模な予備的検証（pilot study）のため、closingシーンで『まだ少数の犬での研究段階』である旨のヘッジを必ず入れること。査読済み（JAVMA、プレプリントではない）。\n\nローテーション補足: pet_healthはkl022（3話前）で使用済みだが、aging_care（kl023）・medical_support（kl024）は直近2話で連続使用済みのため、今回は選択肢から除外する判断も踏まえた選定。mobilityのALS/AAV遺伝子治療案（9話ぶりの未使用でローテーション上は最有力）は不採用となったため、次回以降の優先候補として在庫に残す。\n\n主人公は在宅職ではなく学童保育指導員（パート勤務）、夫と死別し愛犬が家族の中心という設定にした（shortlistのexample_protagonist「在宅勤務のグラフィックデザイナー、52歳男性」はkl022の主人公と職業・年代が完全一致していたため、重複回避のため変更）。研究ボイスは主人公が女性のため男性（Orus、確定済み）を使う想定。",
+      "stage4_snapshot": {
+        "paperId": "3a5a7ac3ab4c53cbd88aed8de059e02754497341",
+        "overall_score": 4.2,
+        "score_breakdown": {
+          "wonder_score": 4,
+          "transformation_score": 4,
+          "life_relevance_score": 5,
+          "surprise_score": 4,
+          "persona_fit_score": 5
+        },
+        "market_status": "incremental",
+        "novel_delta": "犬の消化器疾患向け経口カプセル便微生物移植技術を、これまで有効な治療選択肢が極めて乏しかった高齢犬の認知機能低下（認知症様症状）の改善・進行抑制に応用した点。"
+      }
     }
   ],
-  "total_topics": 24,
-  "last_updated": "2026-09-27"
+  "total_topics": 25,
+  "last_updated": "2026-09-28"
 }
