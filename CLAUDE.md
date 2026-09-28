@@ -33,6 +33,9 @@
 > 論文選定（STAGE1〜5）からエピソードJSON生成・動画完成までの制作パイプラインは
 > `/kl-new` で一括実行できる（`.claude/commands/kl-new.md`、2026-08-24に旧`/kl-topic`
 > を統合）。YouTubeアップロードは `/kl-upload` で行う（`.claude/commands/kl-upload.md`）。
+> アナリティクス分析（月1回程度、weight見直しの参考用）は `/kl-analytics` で行う
+> （`.claude/commands/kl-analytics.md`、2026-09-28追加、samurai-chroniclesの
+> `/sc-analytics`を移植）。
 
 ---
 
@@ -272,6 +275,11 @@ CLAUDE.md自体が古い記述（「今後作成」）のまま放置してい�
 `kl_yt_download_reports.py` → `kl_analytics_report.py` の実行のみ**（2026-09-06に
 初回実行し、`analytics/raw/`にレポートを取得済み）。ドキュメントの記述と
 実装状況が食い違っていないか、スクリプトを新規実装するたびに確認すること。
+**この2ステップ＋Opusによる解釈委任までを一括で行うコマンドとして`/kl-analytics`を
+2026-09-28に追加した**（`.claude/commands/kl-analytics.md`、samurai-chroniclesの
+`/sc-analytics`を移植。ただしKLは規模が小さいためSCの`--min-impressions`等の
+足切り閾値・`subscribed_status`ベースの新規視聴者比率は移植していない、詳細は
+コマンド本文参照）。12話到達後のweight見直しはこのコマンドを使う。
 
 **鮮度:** 直近1〜3年を基本とする。
 
