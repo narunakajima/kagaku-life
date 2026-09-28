@@ -5669,7 +5669,7 @@
         "age": 48,
         "job": "元高校教師（頸髄損傷により四肢麻痺で療養中）"
       },
-      "status": "available",
+      "status": "used",
       "considered_at": "2026-08-28",
       "transformation_comparison": "OriHime等の分身ロボット操作や自身の麻痺肢への電気刺激リハビリは既存技術だが、脳インプラント（iBCI）で『他人の身体』の筋肉・脊髄を操作し、相手が触れた触感を自分の脳へ双方向フィードバックする人間アバター化が本研究の全く新しい点である。",
       "rescored_at": "2026-09-09",
@@ -5694,7 +5694,8 @@
       "behavioral_familiarity": "novel",
       "behavioral_familiarity_note": "チャットボット等の振る舞いではなく、他者の肉体を介した遠隔把持と体性感覚野への触覚フィードバックという物理的・身体的機能の拡張であるため。",
       "deja_vu_level": "partial",
-      "deja_vu_context_upto": "kl017"
+      "deja_vu_context_upto": "kl017",
+      "used_in": "kl026"
     },
     {
       "paperId": "4275235e88283376ca1993e265193d6ab3ca1c39",
@@ -37750,6 +37751,6 @@
       "considered_at": "2026-09-14"
     }
   ],
-  "last_updated": "2026-09-28",
+  "last_updated": "2026-09-29",
   "total_shortlist": 745
 }
