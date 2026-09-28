@@ -1,0 +1,213 @@
+{
+  "episode_id": "kl026",
+  "episode_title": "「あったかいね」：動かない手の代わりに、娘の手が湯呑みを包む日",
+  "youtube_title": "動かない手の代わりに、娘の手で湯呑みを包む——脳の意思で「他人の手」を動かす研究",
+  "youtube_description": "事故で手が動かなくなった父が、娘の手を「借りて」湯呑みを包み、その温もりを自分の頭で感じられるとしたら。そんな未来につながるかもしれない、脳とほかの人の手をつなぐ研究を紹介します。\n\nアメリカの研究チームは、脳に電極を埋め込んだ四肢麻痺の参加者1名が、健常な参加者の手を無線の筋肉刺激で「思った通りに」動かして物をつかむ実験を行いました。さらに、目隠しをした状態で、相手の指先が触れた物体の硬さを参加者の脳へ直接返す仕組みを組み合わせ、物体の硬さを64%の精度で見分けられたと報告しています。また、上肢に麻痺のある別の参加者の腕を駆動して二人でボトルに注ぐ共同作業を行い、成功率は94%（単独では39%）でした。\n\nただし、これはごく少数の参加者による初期段階の研究です。誰にでも使える技術になるかどうかは、まだ分かっていません。実用化にはまだ時間がかかりそうです。動画は治療や機器の当否を断定するものではなく、研究の現在地を紹介するものです。\n\n【参考文献】\nCater E, Wandelt S, Jangam A, Elias Z, Ibroci E, et al. \"Cortically Interfaced Human Avatar Enables Remote Volitional Grasp and Shared Discriminative Touch.\" medRxiv (2025). DOI: 10.1101/2025.09.21.25336267\n※本論文は査読前の研究報告（プレプリント）です。査読による検証を経ていない点をお含みおきください。\n\n#幸せな未来のサイエンス #脳コンピュータインターフェース #四肢麻痺 #BCI",
+  "youtube_tags": ["脳コンピュータインターフェース", "BCI", "四肢麻痺", "頸髄損傷", "ヒューマンアバター", "触覚", "リハビリ", "神経科学", "脳科学", "医療技術", "父と娘", "幸せな未来のサイエンス"],
+  "references": [
+    {
+      "title": "Cortically Interfaced Human Avatar Enables Remote Volitional Grasp and Shared Discriminative Touch",
+      "authors": ["E. Cater", "S. Wandelt", "A. Jangam", "Z. Elias", "E. Ibroci"],
+      "year": 2025,
+      "venue": "medRxiv",
+      "doi": "10.1101/2025.09.21.25336267",
+      "url": "https://www.medrxiv.org/content/10.1101/2025.09.21.25336267v1",
+      "is_preprint": true,
+      "lead_researcher": "E. Cater"
+    }
+  ],
+  "protagonist": {
+    "name": "篠原宏明",
+    "age": 48,
+    "job": "元高校教師（頸髄損傷により四肢麻痺で療養中）、小学生の娘と暮らす",
+    "gender": "male"
+  },
+  "thumbnail_prompt": "A warm intimate close-up scene at a wooden kitchen table in soft morning daylight (not night): a small Japanese girl of about 9 years old with shoulder-length black hair, wearing a yellow cardigan, gently wrapping both hands around a ceramic teacup, while across the table her father, a Japanese man of 48 with short black hair sitting in a wheelchair, looks at her hands with a tender, moved smile; a soft coral-amber glow rises from the teacup, cozy hopeful atmosphere, 16:9 composition, no text, no numerals.",
+  "thumbnail_headline": "娘の手で、湯呑みを包む",
+  "thumbnail_subcopy": "脳の意思で「他人の手」を動かす研究",
+  "hook_lines": ["動かない手の代わりに", "娘の手が湯呑みを包む?"],
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "娘の手が、湯呑みを包む。",
+      "reuse_scene_id": 15,
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "そのぬくもりが、頭に届く。",
+      "reuse_scene_id": 17,
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "「あったかいね」と笑い合う。",
+      "reuse_scene_id": 16,
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 4,
+      "narration": "もう一度、大切な人のぬくもりに触れたい——そう願ったことは、ありませんか。",
+      "image_prompt": "A Japanese man of 48 with short black hair, thin build, sitting in a wheelchair by a window in a modest living room, warm soft morning daylight (not night, clearly bright morning light), looking at his own resting hands on his lap with a quiet, hopeful, tender expression, gentle and dignified atmosphere, no text.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 5,
+      "type": "hook",
+      "narrator": "persona",
+      "duration_seconds": 6,
+      "narration": "篠原宏明、48歳。元高校教師です。数年前の事故で首の骨を傷め、いまは手も足も思うように動かせません。9歳になる娘のひなと、二人で暮らしています。教壇に立っていた頃とは違う毎日ですが、娘の笑い声が、いまの私の一番の支えです。",
+      "image_prompt": "A Japanese man of 48 with short black hair and a gentle face, sitting in a wheelchair in a modest sunlit Japanese living room, next to a small Japanese girl of 9 years old with shoulder-length black hair wearing a yellow cardigan who is laughing and leaning against the arm of his wheelchair, warm soft morning daylight through the window (not night), cozy intimate atmosphere, no text.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 6,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 12,
+      "narration": "朝、ひなが学校へ行く前に、私の手をそっと握ってくれます。「お父さん、行ってきます」。小さな手が、私の指を包んでいるのは見えます。でも、そのぬくもりを、私の手は感じ取ることができません。握り返したいのに、指はぴくりとも動かない。見えているのに、届かない。その距離が、毎朝、胸のどこかに小さく引っかかるのです。",
+      "image_prompt": "Morning in a modest Japanese home entrance hall: a Japanese girl of 9 years old with shoulder-length black hair in a yellow cardigan and a red school backpack, gently holding the resting hand of her father, a Japanese man of 48 with short black hair sitting in a wheelchair, she smiles up at him, he looks down at their hands with a bittersweet, longing expression, soft bright morning daylight from the doorway (not night), warm and tender atmosphere, no text.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 7,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 12,
+      "narration": "夕方、台所からお茶の香りがしてくると、ひなが湯呑みを持ってきてくれます。「お父さん、あったかいよ」。そう言われても、湯呑みの熱を、私の手は知りません。ストローで飲ませてもらいながら、娘が笑顔でいてくれることに救われている自分がいます。それでも、あの湯呑みの温もりを自分の手で包んでみたい。そんな願いは、静かに、けれど確かに、消えることがありません。",
+      "image_prompt": "Evening in a modest Japanese kitchen and dining room, warm interior lamp lighting with a dusk sky visible through the window, a Japanese girl of 9 years old with shoulder-length black hair in a yellow cardigan carefully holding a steaming ceramic teacup toward her father, a Japanese man of 48 with short black hair in a wheelchair who smiles gratefully at her while his own hands rest still on his lap, cozy and tender atmosphere, no text.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 8,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 12,
+      "narration": "休みの日には、ひなが庭で摘んだ花を見せに来てくれます。「ほら、やわらかいよ」。私は目で花びらを追いながら、うなずくことしかできません。リハビリは続けています。少しずつ、できることを増やそうと、毎日向き合ってもいます。ただ、触れることそのものが遠くなってしまったことは、まだ、うまく言葉にできないのです。",
+      "image_prompt": "A sunny weekend afternoon on a small Japanese home garden veranda: a Japanese girl of 9 years old with shoulder-length black hair in a yellow cardigan holding out a small pink flower toward her father, a Japanese man of 48 with short black hair sitting in a wheelchair, who looks at the flower with a warm smile tinged with longing, soft warm afternoon sunlight, peaceful gentle atmosphere, no text.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 9,
+      "type": "citation",
+      "narrator": "research",
+      "duration_seconds": 10,
+      "narration": "宏明さんのような人の「触れる」を取り戻す可能性を探る、世界の別の場所での研究があります。アメリカ、ニューヨーク州にある医学研究機関のファインスタイン研究所を中心とした研究チームが、2025年に発表した研究です。脳とほかの人の手をつなぐという、これまでにない試みでした。",
+      "image_prompt": "Interior of a modern neuroscience research laboratory in the United States, daytime, a middle-aged Caucasian American woman researcher in a white lab coat with wavy auburn hair holding a tablet and looking toward a lab bench with electronic equipment and a monitor showing an abstract waveform, professional and objective atmosphere, no text.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 10,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 14,
+      "narration": "研究の中心となったのは、脳に小さな電極を埋め込んだ、四肢麻痺のある参加者1名です。脳の信号を読み取る装置がその意思をとらえ、別の健常な参加者の腕に、無線で筋肉を動かす刺激を送ります。すると、参加者が「つかもう」と思っただけで、相手の手が実際に物をつかんだのです。自分の手ではなく、他人の手を、思った通りに動かすという試みです。",
+      "image_prompt": "Neuroscience research laboratory in the United States, daytime, a Black American man in his mid-30s with a shaved head sitting in a wheelchair with a small connector port on the side of his head, calmly concentrating, while a young Latino man in his late 20s with a short beard, seated across a table, reaches with his hand to grasp a plastic bottle, a researcher in a white lab coat (Caucasian American, middle-aged, glasses) observing a monitor in the background, a small flat corner graphic showing a simple wireless signal icon tucked in a corner, no larger than roughly one-eighth of the frame, absolutely no text or numerals.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 11,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 14,
+      "narration": "さらに研究チームは、触覚を返す仕組みを加えました。相手の指先が物に触れた感覚を、参加者の脳へ直接送り返すのです。目隠しをした状態で、物が硬いか柔らかいかを聞くと、64%の精度で言い当てることができました。目で見ていなくても、他人の指先を通して、物の硬さを感じ取れたことになります。",
+      "image_prompt": "Neuroscience research laboratory in the United States, daytime, a Black American man in his mid-30s with a shaved head, wearing a soft blindfold, sitting in a wheelchair with a small connector port on the side of his head, while a young Latino man in his late 20s with a short beard, seated across, presses his fingertip gently on a soft foam block and a hard block placed on the table, a researcher in a white lab coat observing, a small flat corner graphic showing two plain shapes of different softness tucked in a corner, no larger than roughly one-eighth of the frame, absolutely no text or numerals.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 12,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 14,
+      "narration": "研究はもうひとつ、共同作業も試しました。上肢に麻痺のある別の参加者の腕を、脳の信号で動かし、二人でボトルを持って注ぐ作業に挑戦したのです。ひとりでは、なかなか思うようにいかない動作が、二人だと成功しやすくなることも分かりました。ただ、まだごく少数の参加者による、初期段階の研究です。",
+      "image_prompt": "Rehabilitation research room in the United States, daytime, a Black American man in his mid-30s with a shaved head in a wheelchair with a small connector port on the side of his head, and a middle-aged Caucasian American woman with a gray bob haircut seated beside him, both cooperating to pour water from a bottle into a glass on the table, the woman's arm assisted by thin adhesive electrodes, a researcher in a white lab coat (Asian American, young woman with long black hair) watching nearby, warm clinical daytime lighting, hopeful atmosphere, no text.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 13,
+      "type": "data",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 10,
+      "narration": "ボトルに注ぐ共同作業の成功率は、ひとりでは39%でしたが、二人で行うと94%まで上がりました。人の手と手が協力し合うことで、動作の確かさが大きく変わったことが、数字にも表れています。",
+      "image_prompt": "A simple flat bar chart with exactly two bars side by side on a plain white background. Left bar in cool deep blue, short, with the Japanese label 「ひとりで」 below it and the value 「39%」 above it. Right bar in warm coral, much taller, with the Japanese label 「ふたりで」 below it and the value 「94%」 above it. A small Japanese title above the chart: 「ボトルに注ぐ成功率」. Bar heights proportional to 39 and 94. Render Japanese text accurately in a clean sans-serif font; do not add any other text, numbers, or labels.",
+      "ken_burns": "static"
+    },
+    {
+      "scene_id": 14,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 8,
+      "narration": "もし、この研究が私にも届いたら——。窓辺の車椅子で、ひなの後ろ姿を眺めながら、そんな未来をつい思い描いてしまいます。まだ研究の途中だとわかっていても、思い描くだけで、胸の奥が少し温かくなるのです。",
+      "image_prompt": "A small-scale depiction of a Japanese man of 48 with short black hair sitting in a wheelchair by the window of his real living room, small in frame, watching his daughter, a Japanese girl of 9 with shoulder-length black hair in a yellow cardigan, playing quietly on the floor, with a classic comic-style thought bubble emerging from his head (a chain of small circles leading up to a large cloud-shaped bubble), inside the bubble a miniature warm scene of the same girl's hands wrapped around a steaming ceramic teacup while the father smiles at her across a table, soft morning daylight (not night), gentle hopeful atmosphere, no text.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 15,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 12,
+      "badge_text": "幸せな未来を夢想中",
+      "narration": "朝の食卓で、ひなが言います。「お父さん、貸してあげる」。私が「ありがとう」と目を合わせて頷くと、ひなの小さな手が、私の意思のまま、湯呑みをそっと包み込む。じんわりと、温かさが頭の中に広がっていく。湯気の向こうで、ひなが「あったかいね」と笑う。その一言が、うれしくてたまりません。",
+      "image_prompt": "Morning at a wooden kitchen table in a Japanese home, soft bright morning daylight through the window (not night): a Japanese girl of 9 years old with shoulder-length black hair in a yellow cardigan, smiling proudly, wrapping both her small hands around a steaming ceramic teacup, and across from her her father, a Japanese man of 48 with short black hair in a wheelchair, eyes wide with wonder and moved joy, a soft coral-amber glow rising from the cup, immersive close warm composition, no text.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 16,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 12,
+      "badge_text": "幸せな未来を夢想中",
+      "narration": "夕方、ソファの隣に座ったひなが、自分から手を差し出してくれます。「お父さんの手、触ってみて」。ひなの指先が、動かない私の手のひらにそっと触れる。やわらかくて、あたたかい。自分の手に、娘の手が重なっている——そのことを、初めて、自分の頭で感じることができたのです。二人で目を合わせて、ただ、笑いました。",
+      "image_prompt": "Evening on a sofa in a cozy Japanese living room, warm interior lamp lighting with a dusk sky visible through the window: a Japanese man of 48 with short black hair, seated in his wheelchair beside a sofa, and beside him a Japanese girl of 9 years old with shoulder-length black hair in a yellow cardigan, gently placing her small fingertips on his resting palm, both looking into each other's eyes and smiling with tearful joy, intimate warm composition, no text.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 17,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 12,
+      "badge_text": "幸せな未来を夢想中",
+      "narration": "休みの日、庭の花の前で、ひなが私を見上げます。「お父さん、この花、さわってみよう」。ひなの指先が、ピンクの花びらにそっと触れる。その感触が、私の頭にふわりと届く。やわらかくて、少しひんやりして。「やわらかいね」と言うと、ひなが嬉しそうに、何度も頷きました。この時間が、宝物になっていきます。",
+      "image_prompt": "A sunny weekend afternoon in a small Japanese home garden, soft warm afternoon sunlight: a Japanese girl of 9 years old with shoulder-length black hair in a yellow cardigan crouching and gently touching a pink flower petal with her fingertips while smiling up at her father, a Japanese man of 48 with short black hair in a wheelchair beside her, his face lit with wonder and tender joy as if feeling the petal himself, immersive warm composition, no text.",
+      "ken_burns": "zoom_in"
+    },
+    {
+      "scene_id": 18,
+      "type": "closing",
+      "narrator": "research",
+      "duration_seconds": 25,
+      "ken_burns": "zoom_out",
+      "narration": "この研究は、まだ、ごく少数の参加者による初期段階の結果です。誰にでも使える技術になるかどうかは、これから、さらに多くの人での検証が必要です。それでも、脳の意思でほかの人の手を動かし、その手ざわりを感じるという、これまでにない可能性が、ここから見えてきました。宏明さんとひなさんのように、大切な人と手ざわりを分かち合う何気ない毎日を守る、小さな一歩になるかもしれません。この研究の詳細が知りたい方は、概要欄をご確認ください。次はどんな研究が、誰かの幸せな未来を運んでくるのでしょうか。その瞬間をこれからも一緒に見つけていきたい方は、ぜひチャンネル登録してお待ちください。",
+      "image_prompt": "A soft warm image of morning sunlight streaming through a window onto a wooden table where a plain ceramic teacup sits with a gentle curl of steam, faint warm coral-amber glow, symbolizing quiet hope for the future, no people, no text."
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {"narrator": "persona", "narration": "娘の手を、握り返せない。", "scene_id": 6},
+        {"narrator": "persona", "narration": "湯呑みの温もりも、知らない。", "scene_id": 7},
+        {"narrator": "research", "narration": "脳の意思で、他人の手を動かす。", "scene_id": 10},
+        {"narrator": "research", "narration": "共同作業、94%成功。", "scene_id": 13},
+        {"narrator": "persona", "narration": "「あったかいね」と、娘が笑う。", "scene_id": 15},
+        {"narrator": "persona", "narration": "続きは本編で。チャンネル登録して待っていてください。", "scene_id": 16}
+      ]
+    }
+  ]
+}

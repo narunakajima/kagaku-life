@@ -851,7 +851,7 @@
         "age": 68,
         "job": "関節リウマチを患い自宅で暮らす元建具職人"
       },
-      "status": "available",
+      "status": "rejected",
       "used_in": null,
       "considered_at": "2026-08-20",
       "score_history": [
@@ -893,7 +893,8 @@
       "behavioral_familiarity": "novel",
       "behavioral_familiarity_note": "本技術の中核はロボット手先の遮蔽をAI補完しながら小さな対象物を物理的に操作するビジュアルサーボ制御であり、チャットボットや音声AIでは原理的に代替できない身体的機能であるため。",
       "deja_vu_level": "strong",
-      "deja_vu_context_upto": "kl020"
+      "deja_vu_context_upto": "kl020",
+      "rejected_reason": "2026-09-29 kl026選定時、ユーザーが最初の提示候補群を「どれもパッとしない」と却下（感動的なストーリーを求めた）"
     },
     {
       "paperId": "b12747548702099b17f4953e65137b912df99b44",
@@ -1166,7 +1167,7 @@
         "age": 54,
         "job": "週末に実家の果樹園を手伝う兼業農家"
       },
-      "status": "available",
+      "status": "rejected",
       "used_in": null,
       "considered_at": "2026-08-22",
       "score_history": [
@@ -1208,7 +1209,8 @@
       "behavioral_familiarity": "novel",
       "behavioral_familiarity_note": "25m離れた位置からの低解像度な手の動きを単眼カメラで視覚的に捉える長距離センシング技術であり、チャットボットや音声アシスタントでは原理的に代替できない身体的・空間的な知覚機能であるため。",
       "deja_vu_level": "partial",
-      "deja_vu_context_upto": "kl020"
+      "deja_vu_context_upto": "kl020",
+      "rejected_reason": "2026-09-29 kl026選定時、ユーザーが最初の提示候補群を「どれもパッとしない」と却下（感動的なストーリーを求めた）"
     },
     {
       "paperId": "a0b6cccc4495dbc64f98ab18f8a26e4349fdd093",
@@ -9709,7 +9711,7 @@
         "age": 42,
         "job": "築古戸建てのメンテナンスに悩む会社員"
       },
-      "status": "available",
+      "status": "rejected",
       "considered_at": "2026-08-28",
       "transformation_comparison": "市場には既に10〜15cm程度の手のひらサイズでAI障害物回避や自動追尾ができる小型ドローン（DJI Neo等）が存在しています。本論文の新しい点は、体長100mm未満というさらに極小のロボットにおいて、昆虫のように最小限のセンサーと超軽量な計算資源だけで自律移動を可能にする設計フレームワークを提案している点です。",
       "rescored_at": "2026-09-14",
@@ -9739,7 +9741,8 @@
       "behavioral_familiarity": "novel",
       "behavioral_familiarity_note": "本作の中核は体長100mm未満の極小ロボットが自律的に空間をセンシングして進む物理的な移動能力であり、チャットボット等の対話では再現できないため。",
       "deja_vu_level": "partial",
-      "deja_vu_context_upto": "kl020"
+      "deja_vu_context_upto": "kl020",
+      "rejected_reason": "2026-09-29 kl026選定時、ユーザーが最初の提示候補群を「どれもパッとしない」と却下（感動的なストーリーを求めた）"
     },
     {
       "paperId": "68e536de99a04c6980b2b2782d854202b44bc749",
@@ -14384,7 +14387,7 @@
         "age": 48,
         "job": "河川近くで工務店を営む自営業"
       },
-      "status": "available",
+      "status": "rejected",
       "considered_at": "2026-08-28",
       "transformation_comparison": "既存の群ドローンや搬送ロボットはGPSや事前マップ、中央司令塔による幾何学的制御に依存していますが、本技術は外部マップなしで局所的な密度計算のみから不定形・動的ターゲットに自律適合して柔軟に包囲する点が新しい要素です。",
       "rescored_at": "2026-09-14",
@@ -14414,7 +14417,8 @@
       "behavioral_familiarity": "novel",
       "behavioral_familiarity_note": "複数のロボットが物理的に群れをなし、未知の輪郭に合わせて柔軟に包囲網を形成する物理的協調行動であり、チャットボット等の画面内対話では再現できないため。",
       "deja_vu_level": "none",
-      "deja_vu_context_upto": "kl020"
+      "deja_vu_context_upto": "kl020",
+      "rejected_reason": "2026-09-29 kl026選定時、ユーザーが最初の提示候補群を「どれもパッとしない」と却下（感動的なストーリーを求めた）"
     },
     {
       "paperId": "d02b81659227fb085e89bc38c6d9139f6928a659",
@@ -20139,9 +20143,10 @@
         "job": "文具メーカー商品開発担当（小学生の双子を育てる父親）"
       },
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
-      "status": "available",
+      "status": "rejected",
       "used_in": null,
-      "considered_at": "2026-09-10"
+      "considered_at": "2026-09-10",
+      "rejected_reason": "2026-09-29 kl026選定時、ユーザーが最初の提示候補群を「どれもパッとしない」と却下（感動的なストーリーを求めた）"
     },
     {
       "paperId": "763fdb72349b19b12abb1dd6e81fc40c44a48713",
@@ -20183,9 +20188,10 @@
         "job": "共働きで家事の効率化を模索するインテリアデザイナー"
       },
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
-      "status": "available",
+      "status": "rejected",
       "used_in": null,
-      "considered_at": "2026-09-10"
+      "considered_at": "2026-09-10",
+      "rejected_reason": "2026-09-29 kl026選定時、ユーザーが最初の提示候補群を「どれもパッとしない」と却下（感動的なストーリーを求めた）"
     },
     {
       "paperId": "d89251bb3a8b81a59dbae68a1005352b8fe70b6c",
@@ -26999,9 +27005,10 @@
         "job": "元家具職人"
       },
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
-      "status": "available",
+      "status": "rejected",
       "used_in": null,
-      "considered_at": "2026-09-14"
+      "considered_at": "2026-09-14",
+      "rejected_reason": "2026-09-29 kl026選定時、ユーザーが最初の提示候補群を「どれもパッとしない」と却下（感動的なストーリーを求めた）"
     },
     {
       "paperId": "069dcdd5eac894c5de5015b31675b775853d580d",
@@ -28349,7 +28356,7 @@
         "job": "自宅で教えるピアノ講師"
       },
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
-      "status": "available",
+      "status": "rejected",
       "used_in": null,
       "considered_at": "2026-09-14",
       "score_history": [
@@ -28364,7 +28371,8 @@
           "rescored_at": "2026-09-27"
         }
       ],
-      "rescored_at": "2026-09-27"
+      "rescored_at": "2026-09-27",
+      "rejected_reason": "2026-09-29 kl026選定時、ユーザーが最初の提示候補群を「どれもパッとしない」と却下（感動的なストーリーを求めた）"
     },
     {
       "paperId": "2ee79748e0e0d4899ab78f5e67ab81ad82b3928f",
@@ -31388,9 +31396,10 @@
         "job": "工務店経営・元大工"
       },
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
-      "status": "available",
+      "status": "rejected",
       "used_in": null,
-      "considered_at": "2026-09-14"
+      "considered_at": "2026-09-14",
+      "rejected_reason": "2026-09-29 kl026選定時、ユーザーが最初の提示候補群を「どれもパッとしない」と却下（感動的なストーリーを求めた）"
     },
     {
       "paperId": "582ec3426d4b686a8fbc5501d4211b7002b35779",
@@ -32214,9 +32223,10 @@
         "job": "在宅グラフィックデザイナー"
       },
       "stage4_version": "2026-09-09-familiarity-dejavu-caps",
-      "status": "available",
+      "status": "rejected",
       "used_in": null,
-      "considered_at": "2026-09-14"
+      "considered_at": "2026-09-14",
+      "rejected_reason": "2026-09-29 kl026選定時、ユーザーが最初の提示候補群を「どれもパッとしない」と却下（感動的なストーリーを求めた）"
     },
     {
       "paperId": "fbc96fbcad35835bb30ac46a75e153d51aa0bd92",
