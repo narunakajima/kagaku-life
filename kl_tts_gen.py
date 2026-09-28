@@ -25,6 +25,7 @@ episodes/kl{NNN}.jsonに記録すること。
 """
 
 import argparse
+import base64
 import io
 import json
 import os
@@ -32,6 +33,8 @@ import re
 import shutil
 import sys
 import time
+import urllib.error
+import urllib.request
 import wave
 from pathlib import Path
 
@@ -48,12 +51,22 @@ QA_MODEL = "gemini-flash-latest"  # ナレーション音声が台本通りか�
 # 2026-09-28: gemini-3.1-flash-tts-preview → gemini-3.8-flash-tts（正式版）に移行。
 # 3.8は入力テキストを「読み上げ原稿そのもの」として扱うため、演技指導（STYLE_PREFIX・
 # persona_style）をテキスト先頭に付けると指示文まで読み上げられてしまう。演技指導は
-# Part.speech_metadata.style で本文と分けて渡す（build_contents参照）。また出力が
+# speech_metadata.style で本文と分けて渡す（_tts_rest_call参照）。また出力が
 # ヘッダーなしPCMからヘッダー付きWAVに変わったため、RIFF判定でどちらにも対応する。
 # （経緯: 2026-08-21に3.1で演技指導付きだとfinish_reason=OTHERになる不具合があり
 # 一時gemini-2.5-pro-preview-ttsに切り替え、2026-09-05に解消を確認して3.1に戻していた。
 # MAX_RETRIESによるリトライは引き続き安全網として残す。）
+#
+# ⚠️ speech_metadata は2026-09-28時点のgoogle-genai最新版（PyPI 1.47.0）の
+# types.Part にまだ型定義されておらず、SDK経由で呼ぶとPydanticに拒否される
+# （samurai-chronicles側の実機検証で確認済み。同じgoogle-genaiパッケージを
+# 使っているためKL側でも同様に失敗する）。そのためTTS生成のみ生のREST APIを
+# 直接叩く（_tts_rest_call）。QA用の音声読み込み（qa_narration_with_gemini）は
+# speech_metadataを使わないためSDKのままでよい。SDKがspeech_metadataに
+# 対応したら synth() 内の _tts_rest_call 呼び出しを
+# client.models.generate_content に戻してよい。
 MODEL = "gemini-3.8-flash-tts"
+MODEL_REST_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}"
 REQUEST_TIMEOUT_MS = 60_000
 MAX_RETRIES = 5
 
@@ -97,13 +110,46 @@ def _to_wav_bytes(audio_data: bytes, sample_rate: int = 24000) -> bytes:
     return buf.getvalue()
 
 
-def build_contents(text: str, style: str = "") -> types.Content:
-    """読み上げ原稿（text）と演技指導（speech_metadata.style）を分けてリクエストを
-    構築する。既存のSTYLE_PREFIX/persona_styleは「〜: 」で本文に続ける前提の書式の
-    ため、末尾のコロン・空白を落としてから渡す。"""
+def _tts_rest_call(text: str, style: str, voice_name: str) -> bytes:
+    """gemini-3.8-flash-tts を speech_metadata.style 付きで呼び出す（生REST）。
+    google-genai SDK（PyPI最新1.47.0時点）が speech_metadata を型定義しておらず
+    Pydanticに拒否されるための回避策（ファイル冒頭のコメント参照）。
+    既存のSTYLE_PREFIX/persona_styleは「〜: 」で本文に続ける前提の書式のため、
+    末尾のコロン・空白を落としてから渡す。"""
     style = style.strip().rstrip(":").strip()
-    metadata = types.SpeechMetadata(style=style) if style else None
-    return types.Content(role="user", parts=[types.Part(text=text, speech_metadata=metadata)])
+    part = {"text": text}
+    if style:
+        part["speech_metadata"] = {"style": style}
+    url = MODEL_REST_URL.format(model=MODEL, key=API_KEY)
+    body = {
+        "contents": [{"role": "user", "parts": [part]}],
+        "generationConfig": {
+            "responseModalities": ["AUDIO"],
+            "speechConfig": {
+                "voiceConfig": {
+                    "prebuiltVoiceConfig": {"voiceName": voice_name}
+                }
+            },
+        },
+    }
+    req = urllib.request.Request(
+        url,
+        data=json.dumps(body).encode("utf-8"),
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT_MS / 1000) as resp:
+        data = json.loads(resp.read())
+    candidates = data.get("candidates") or []
+    if not candidates:
+        raise RuntimeError(f"レスポンスにcandidatesがありません: {data}")
+    parts = candidates[0].get("content", {}).get("parts") or []
+    for p in parts:
+        inline = p.get("inlineData")
+        if inline and inline.get("data"):
+            return base64.b64decode(inline["data"])
+    finish_reason = candidates[0].get("finishReason", "?")
+    raise RuntimeError(f"空データ（finish_reason={finish_reason}）")
 
 
 def qa_narration_with_gemini(client: genai.Client, audio_data: bytes, script_text: str) -> dict:
@@ -149,30 +195,15 @@ def qa_narration_with_gemini(client: genai.Client, audio_data: bytes, script_tex
 
 def synth(client: genai.Client, text: str, voice_name: str, out_path: Path, narrator: str = None, style_override: str = None) -> bool:
     style = style_override if style_override is not None else STYLE_PREFIX.get(narrator, "")
-    contents = build_contents(text, style)
-    config = types.GenerateContentConfig(
-        response_modalities=["AUDIO"],
-        speech_config=types.SpeechConfig(
-            voice_config=types.VoiceConfig(
-                prebuilt_voice_config=types.PrebuiltVoiceConfig(voice_name=voice_name)
-            )
-        ),
-    )
     data = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            resp = client.models.generate_content(model=MODEL, contents=contents, config=config)
-            candidate = resp.candidates[0] if resp.candidates else None
-            parts = candidate.content.parts if (candidate and candidate.content) else None
-            if parts:
-                candidate_data = parts[0].inline_data.data
-                qa = qa_narration_with_gemini(client, candidate_data, text)
-                if qa["ok"]:
-                    data = candidate_data
-                    break
-                reason = f"台本不一致の疑い（{'; '.join(qa['issues'])}）"
-            else:
-                reason = f"空データ（finish_reason={getattr(candidate, 'finish_reason', '?')}）"
+            candidate_data = _tts_rest_call(text, style, voice_name)
+            qa = qa_narration_with_gemini(client, candidate_data, text)
+            if qa["ok"]:
+                data = candidate_data
+                break
+            reason = f"台本不一致の疑い（{'; '.join(qa['issues'])}）"
         except Exception as e:
             reason = f"{type(e).__name__}: {e}"
         if attempt < MAX_RETRIES:

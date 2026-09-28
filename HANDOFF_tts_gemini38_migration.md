@@ -49,37 +49,48 @@
   - RIFF 判定付きで保存
 - `CLAUDE.md`「ボイス選定方針」のモデル名を更新
 
-## 検証状況
+## 検証状況（2026-09-28 Macで実施・更新）
 
-- ✅ オフライン検証（google-genai 2.25.0）: 本文と `speech_metadata.style` が分離されたリクエストに
-  組み立てられること、WAV形式の返答をダミーで流して保存したファイルのヘッダーが二重にならず
-  フレーム数が正しいことを確認
-- ❌ **実APIでの生成は未実施**（クラウド環境にAPIキーがないため）
+- ❌ **「google-genai 2.25.0でオフライン検証済み」という当初の記述は誤り。** PyPIに
+  存在する最新版は 1.47.0 が上限で、2.25.0 というバージョンは存在しない。
+- ❌ **`types.Part.speech_metadata` は google-genai 1.47.0（2026-09-28時点のPyPI最新）に
+  型定義されていない。** `pip install -U google-genai` しても 1.47.0 のまま
+  （最新）。SDK経由で `types.Part(text=..., speech_metadata=types.SpeechMetadata(...))`
+  を呼ぶと `AttributeError: module 'google.genai.types' has no attribute
+  'SpeechMetadata'` で失敗することを実機で確認した（samurai-chronicles側で先に確認、
+  同じgoogle-genaiパッケージを使うKL側でも同様の失敗を確認済み）。
+- ✅ **APIモデル自体（`gemini-3.8-flash-tts`）は実在し、`speech_metadata` は
+  生のREST API（`generateContent` エンドポイントへ直接POST）経由なら正しく
+  機能することを実機検証済み。** persona/research 両ボイスで実際に音声生成し、
+  Geminiによる文字起こしでSTYLE_PREFIXの英文が読み上げに漏れていないこと、
+  台本と完全一致すること、WAVヘッダーが二重化していないこと（RIFF出現1回のみ）を
+  確認した。
+- ✅ **`kl_tts_gen.py` を修正済み・push済み。** `build_contents()` を
+  `_tts_rest_call()`（生REST）に置き換え、`synth()` から呼び出す形に変更した
+  （QA用の音声読み込み `qa_narration_with_gemini` は speech_metadata を使わない
+  ためSDKのままで問題ない）。使い捨てのテストエピソードで persona/research
+  両方の音声生成→QA通過→ファイル整合性確認まで完了している。
+- `kl_voice_recommend.py` は `contents=text`（プレーン文字列）で呼んでおり
+  speech_metadata を使っていないため、このSDK制約の影響を受けない（修正不要）。
 
-## 次にやること（Macで）
+## 次にやること
 
-1. ブランチを取得: `git fetch origin && git checkout claude/gemini-flash-tts-google-api-02xfsb`（両リポジトリ）
-2. SDK更新（`speech_metadata` は新しめのSDKが必要）: `pip install -U google-genai`
-3. 1シーンだけ生成して聴く:
-   ```bash
-   python3 sc_tts_gen.py --episode <ep> --scenes 1
-   python3 kl_tts_gen.py --episode <kl> --scenes 1
-   ```
-4. 確認ポイント
-   - 演技指導の英文が読み上げられていないか
-   - トーン・速さが指示どおりか（KLの研究ボイスは「落ち着いているがテンポよく」、SCは重厚なドキュメンタリー調）
-   - 冒頭にノイズ（ヘッダー二重化）がないか
-   - 既存のQA（台本不一致チェック・SCの繰り返し検知 `MAIN_EXPECTED_WPM` 等）が誤検知を連発しないか
-     （話速が変わっていれば WPM 閾値の見直しが必要になる可能性あり）
-5. 問題なければ main へマージ（PRは未作成）
+1. **samurai-chronicles: 完了。** `sc_tts_gen.py` は生REST方式で動作確認済み。
+2. **kagaku-life: 完了。** `kl_tts_gen.py` も生REST方式で動作確認済み。
+3. 両リポジトリとも実エピソードでの通し生成（複数シーン・複数話）はまだ
+   試していないため、本番投入時は最初の1話分は特に注意して確認するとよい。
+4. mainへのマージはユーザー判断で（PRは未作成のまま、両リポジトリとも
+   ブランチ `claude/gemini-flash-tts-google-api-02xfsb` に留まっている）。
 
 ## うまくいかなかった場合
 
-- `speech_metadata` 関連のエラー → SDK バージョンを確認。
-- 3.8 の品質・挙動に問題があれば、`TTS_MODEL` / `MODEL` を `gemini-3.1-flash-tts-preview` に戻せばよい。
-  ただし `build_contents()` のまま 3.1 に戻すと演技指導が効くかは未確認なので、
-  その場合はコミットごと revert するのが確実。
-- コスト優先にしたくなったら `gemini-3.8-flash-lite-tts` への差し替えも可（コード上はモデル名の変更のみ）。
+- `speech_metadata` 関連のエラー → SDKではなく生RESTを使っているか確認
+  （`_tts_rest_call` 経由になっているか）。
+- 3.8 の品質・挙動に問題があれば、`MODEL` を `gemini-3.1-flash-tts-preview` に戻し、
+  `_tts_rest_call` ではなく従来のテキスト先頭埋め込み方式（演技指導をtextに
+  連結してSDK経由で呼ぶ）に戻す必要がある。その場合はこのコミットごと revert するのが確実。
+- コスト優先にしたくなったら `gemini-3.8-flash-lite-tts` への差し替えも可
+  （`MODEL` の変更のみ、`_tts_rest_call` はそのまま使える）。
 
 ## 参考
 - https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash-tts
