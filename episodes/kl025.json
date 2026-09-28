@@ -1,0 +1,1221 @@
+{
+  "episode_id": "kl025",
+  "episode_title": "きみの名前を呼べば：腸の中の小さな菌たちが連れ戻す、愛犬の記憶",
+  "youtube_title": "名前を呼んでも振り向かない愛犬に、腸内細菌の\"移植\"という選択肢",
+  "youtube_description": "夜中に部屋の隅で立ち尽くし、名前を呼んでも振り向かなくなった愛犬。そんな高齢犬の認知機能低下(いわゆる犬の認知症)に、便微生物移植(FMT)という腸内細菌を届ける治療法が新しい可能性を示しています。\n\n認知機能の低下が疑われる高齢犬11頭に、健康な腸内細菌を含む経口カプセルを90日間、1日2回投与する試みが行われました(体調の変化や記録の都合で数頭が最後まで評価を受けられず)。最終的に評価できた6頭のうち4頭で飼い主評価による認知スコアが平均8.25点改善した一方、残り2頭では平均7点悪化しています。腸内細菌の多様性は6頭中4頭で向上しました。\n\nまだ11頭という少数の高齢犬を対象にした、比較対象を置かない研究段階の結果であり、すべての犬に効果があったわけではありません。実用化にはまだ時間がかかりそうです。動画の内容は治療の当否を断定するものではなく、研究の現在地を紹介するものです。\n\n※本研究には、ペットの腸内細菌研究を専門とする企業AnimalBiomeの研究者が参加しています（企業が関わる研究である点をお含みおきください）。\n\n【参考文献】\nDewey CW, Rojas CA, Pomeroy C, Gerardi J, Ganz HH. \"Fecal microbiota transplantation shows promise in slowing or reducing cognitive impairment in aging dogs.\" Journal of the American Veterinary Medical Association, 2026.\nDOI: 10.2460/javma.26.03.0231\n\n#犬の認知症 #便微生物移植 #腸内細菌 #高齢犬 #幸せな未来のサイエンス",
+  "youtube_tags": [
+    "犬の認知症",
+    "認知機能不全症候群",
+    "便微生物移植",
+    "FMT",
+    "腸内細菌",
+    "高齢犬",
+    "柴犬",
+    "ペットの健康",
+    "獣医学研究",
+    "幸せな未来のサイエンス"
+  ],
+  "references": [
+    {
+      "title": "Fecal microbiota transplantation shows promise in slowing or reducing cognitive impairment in aging dogs.",
+      "authors": [
+        "C. W. Dewey",
+        "Connie A. Rojas",
+        "Carly Pomeroy",
+        "J. Gerardi",
+        "Holly H. Ganz"
+      ],
+      "year": 2026,
+      "venue": "Journal of the American Veterinary Medical Association",
+      "doi": "10.2460/javma.26.03.0231",
+      "is_preprint": false,
+      "lead_researcher": "C. W. Dewey",
+      "url": "https://doi.org/10.2460/javma.26.03.0231"
+    }
+  ],
+  "protagonist": {
+    "name": "田村久美子",
+    "age": 58,
+    "job": "学童保育指導員（パート勤務）",
+    "gender": "female"
+  },
+  "narration_voices": {
+    "persona": "Sulafat",
+    "research": "Orus"
+  },
+  "thumbnail_prompt": "A close-up of an elderly Shiba Inu with a reddish-tan and cream coat (NOT gray, NOT sesame-colored — classic warm orange-tan fur with white markings around the muzzle and chest) and a white-graying muzzle from old age, warm bright eyes looking directly at camera with a gentle alert expression, soft warm morning daylight, cozy warm home background softly blurred, no text, no numerals.",
+  "thumbnail_headline": "振り向かない愛犬に、光を",
+  "thumbnail_subcopy": "腸内細菌を届ける、高齢犬の新しい研究",
+  "hook_lines": [
+    "名前を呼んでも振り向かない",
+    "腸の菌が記憶を連れ戻す?"
+  ],
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "また、名前に応えてくれる。",
+      "reuse_scene_id": 15,
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "また、名前に応えてくれる。"
+          ],
+          "start": 0.0,
+          "end": 2.04
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.69,
+        "y": 0.36
+      }
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "隣で、ぐっすり眠る夜。",
+      "reuse_scene_id": 18,
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "隣で、ぐっすり眠る夜。"
+          ],
+          "start": 0.0,
+          "end": 2.64
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.35,
+        "y": 0.6
+      }
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "鍵は、腸の中の小さな菌たち。",
+      "image_prompt": "Extreme close-up of an elderly Shiba Inu's face at dawn, reddish-tan and cream Shiba Inu coat (NOT gray, NOT sesame-colored — classic warm orange-tan fur with white markings around the muzzle and chest), clear bright warm brown eyes with a gentle alert expression, white-graying muzzle fur from old age, soft morning daylight coming through a window (not night — clearly bright dawn light), warm golden light on the fur, gentle intimate atmosphere, no text.",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "鍵は、腸の中の小さな菌たち。"
+          ],
+          "start": 0.0,
+          "end": 3.12
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.55,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 4,
+      "narration": "もう一度、あの目で見つめてほしい——そう願ったことは、ありませんか。",
+      "image_prompt": "A Japanese woman in her late 50s with short graying hair, wearing a soft knit cardigan, sitting by a window in a modest living room with warm morning light, looking hopeful and quietly emotional, gazing into the distance as if wondering, no text.",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "もう一度、あの目で見つめてほしい——そう"
+          ],
+          "start": 0.0,
+          "end": 4.84
+        },
+        {
+          "lines": [
+            "願ったことは、ありませんか。"
+          ],
+          "start": 4.99,
+          "end": 7.09
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.61,
+        "y": 0.42
+      }
+    },
+    {
+      "scene_id": 5,
+      "type": "hook",
+      "narrator": "persona",
+      "duration_seconds": 6,
+      "narration": "田村久美子、58歳。学童保育の指導員として、放課後の子どもたちを見守っています。家では、15歳になる柴犬のマルと二人暮らし。朝晩の散歩が、私たちの小さな日課です。夫を見送ってから、この子が私の家族そのものです。",
+      "image_prompt": "A Japanese woman in her late 50s with short graying hair, wearing a simple cardigan, sitting on the floor of a modest Japanese apartment living room, gently petting an elderly Shiba Inu with a white-graying muzzle, warm soft morning daylight coming through a window, cozy intimate atmosphere, no text.",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "田村久美子、58歳。学童保育の指導員として、"
+          ],
+          "start": 0.0,
+          "end": 5.28
+        },
+        {
+          "lines": [
+            "放課後の子どもたちを見守っています。"
+          ],
+          "start": 5.43,
+          "end": 8.13
+        },
+        {
+          "lines": [
+            "家では、15歳になる柴犬のマルと二人暮らし。"
+          ],
+          "start": 8.46,
+          "end": 12.64
+        },
+        {
+          "lines": [
+            "朝晩の散歩が、私たちの小さな日課です。"
+          ],
+          "start": 12.79,
+          "end": 16.61
+        },
+        {
+          "lines": [
+            "夫を見送ってから、この子が私の家族そのものです。"
+          ],
+          "start": 16.76,
+          "end": 21.34
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.63,
+        "y": 0.35
+      }
+    },
+    {
+      "scene_id": 6,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 12,
+      "narration": "仕事を終えて家に帰ると、玄関の扉を開ける前から、マルが尻尾を振って待っていてくれる。それが、ずっと当たり前の毎日でした。ところがこの一年ほどで、帰ってきても奥の部屋から出てこない日が増えました。名前を呼んでも、きょとんとした顔のまま、ぼんやりと壁のほうを見つめているのです。最初は疲れているだけだろうと思っていましたが、同じことが何度も続くうちに、歳のせいだけでは片づけられないのかもしれないと思うようになりました。",
+      "image_prompt": "Evening in a modest Japanese apartment: a Japanese woman in her late 50s with short graying hair, still wearing her coat and carrying a canvas tote bag, standing just inside the genkan entrance and looking down the hallway with a puzzled, slightly worried expression; at the far end of the hallway an elderly Shiba Inu with a reddish-tan and cream coat (NOT gray, NOT sesame-colored) and a white-graying muzzle sits still, gazing blankly at the wall instead of coming to greet her, warm interior lighting with a dusk sky visible through a small window, no text.",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "仕事を終えて家に帰ると、玄関の扉を開ける前から、"
+          ],
+          "start": 0.0,
+          "end": 4.56
+        },
+        {
+          "lines": [
+            "マルが尻尾を振って待っていてくれる。"
+          ],
+          "start": 4.71,
+          "end": 7.41
+        },
+        {
+          "lines": [
+            "それが、ずっと当たり前の毎日でした。"
+          ],
+          "start": 7.6,
+          "end": 10.3
+        },
+        {
+          "lines": [
+            "ところがこの一年ほどで、帰ってきても奥の"
+          ],
+          "start": 11.44,
+          "end": 15.5
+        },
+        {
+          "lines": [
+            "部屋から出てこない日が増えました。"
+          ],
+          "start": 15.65,
+          "end": 18.2
+        },
+        {
+          "lines": [
+            "名前を呼んでも、きょとんとした顔のまま、"
+          ],
+          "start": 18.44,
+          "end": 21.44
+        },
+        {
+          "lines": [
+            "ぼんやりと壁のほうを見つめているのです。"
+          ],
+          "start": 21.59,
+          "end": 24.59
+        },
+        {
+          "lines": [
+            "最初は疲れているだけだろうと思っていましたが、"
+          ],
+          "start": 24.74,
+          "end": 28.19
+        },
+        {
+          "lines": [
+            "同じことが何度も続くうちに、"
+          ],
+          "start": 28.34,
+          "end": 30.44
+        },
+        {
+          "lines": [
+            "歳のせいだけでは片づけられないのかも"
+          ],
+          "start": 30.59,
+          "end": 33.29
+        },
+        {
+          "lines": [
+            "しれないと思うようになりました。"
+          ],
+          "start": 33.44,
+          "end": 35.84
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.38,
+        "y": 0.32
+      }
+    },
+    {
+      "scene_id": 7,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 12,
+      "narration": "夜中にも、変化がありました。ふと目が覚めると、マルが部屋の隅でじっと立ち尽くしている。同じ場所を行ったり来たりしながら、落ち着かずに鳴き続ける夜もあります。そんなときは布団から抜け出して、そっと背中をなでながら、朝が来るのを一緒に待つのです。眠い目をこすりながらも、この子のぬくもりに触れていると、不思議と私のほうが落ち着いてきます。",
+      "image_prompt": "A Japanese woman in her late 50s with short graying hair, in a nightgown, worried expression, kneeling in a dim hallway at night near an elderly Shiba Inu with a reddish-tan and cream coat (NOT gray, NOT sesame-colored) and a white-graying muzzle who stands motionless facing the corner of a room in a confused posture, soft warm lamp light in the hallway contrasted with dark nighttime shadows and a hint of moonlight through a window, no text.",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "夜中にも、変化がありました。"
+          ],
+          "start": 0.0,
+          "end": 2.1
+        },
+        {
+          "lines": [
+            "ふと目が覚めると、マルが部屋の隅でじっと"
+          ],
+          "start": 2.25,
+          "end": 6.53
+        },
+        {
+          "lines": [
+            "立ち尽くしている。同じ場所を行ったり来たり"
+          ],
+          "start": 6.68,
+          "end": 10.3
+        },
+        {
+          "lines": [
+            "しながら、落ち着かずに鳴き続ける夜もあります。"
+          ],
+          "start": 10.45,
+          "end": 13.9
+        },
+        {
+          "lines": [
+            "そんなときは布団から抜け出して、"
+          ],
+          "start": 14.16,
+          "end": 16.56
+        },
+        {
+          "lines": [
+            "そっと背中をなでながら、朝が来るのを一緒に"
+          ],
+          "start": 16.94,
+          "end": 20.28
+        },
+        {
+          "lines": [
+            "待つのです。眠い目をこすりながらも、"
+          ],
+          "start": 20.43,
+          "end": 23.65
+        },
+        {
+          "lines": [
+            "この子のぬくもりに触れていると、"
+          ],
+          "start": 23.83,
+          "end": 26.23
+        },
+        {
+          "lines": [
+            "不思議と私のほうが落ち着いてきます。"
+          ],
+          "start": 26.38,
+          "end": 29.08
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.41,
+        "y": 0.38
+      }
+    },
+    {
+      "scene_id": 8,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 12,
+      "narration": "獣医さんに診てもらうと、年齢による認知機能の衰え、いわゆる認知症のような症状だと言われました。生活のリズムを整えたり、食事を工夫したり、できることを一つずつ試しています。それでも、夫を見送ってからずっと支えてくれたこの子との時間が、少しずつ遠くなっていくようで、ふと心細くなるのです。インターネットで調べても、はっきりとした治療法はまだ見つからず、今できることを一つずつ続けるしかないのだと、自分に言い聞かせる日もあります。",
+      "image_prompt": "Daytime in a modest Japanese living room: a Japanese woman in her late 50s with short graying hair sitting on the floor beside an elderly Shiba Inu with a reddish-tan and cream coat (NOT gray, NOT sesame-colored) and a white-graying muzzle that lies quietly on a cushion, gently stroking its back, a small bowl of dog food and a notebook on the low table nearby, soft afternoon daylight through the window, her expression tender with a hint of quiet worry, no text.",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "獣医さんに診てもらうと、年齢による認知機能の衰え、"
+          ],
+          "start": 0.45,
+          "end": 4.48
+        },
+        {
+          "lines": [
+            "いわゆる認知症のような症状だと言われました。"
+          ],
+          "start": 4.74,
+          "end": 8.04
+        },
+        {
+          "lines": [
+            "生活のリズムを整えたり、食事を工夫したり、"
+          ],
+          "start": 8.82,
+          "end": 12.2
+        },
+        {
+          "lines": [
+            "できることを一つずつ試しています。"
+          ],
+          "start": 12.74,
+          "end": 15.29
+        },
+        {
+          "lines": [
+            "それでも、夫を見送ってからずっと支えてくれた"
+          ],
+          "start": 15.68,
+          "end": 19.22
+        },
+        {
+          "lines": [
+            "この子との時間が、少しずつ遠くなっていくようで、"
+          ],
+          "start": 19.37,
+          "end": 23.07
+        },
+        {
+          "lines": [
+            "ふと心細くなるのです。インターネットで調べても、"
+          ],
+          "start": 23.22,
+          "end": 26.96
+        },
+        {
+          "lines": [
+            "はっきりとした治療法はまだ見つからず、"
+          ],
+          "start": 27.11,
+          "end": 29.96
+        },
+        {
+          "lines": [
+            "今できることを一つずつ続けるしかないのだと、"
+          ],
+          "start": 30.11,
+          "end": 33.41
+        },
+        {
+          "lines": [
+            "自分に言い聞かせる日もあります。"
+          ],
+          "start": 33.56,
+          "end": 35.96
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.6,
+        "y": 0.42
+      }
+    },
+    {
+      "scene_id": 9,
+      "type": "citation",
+      "narrator": "research",
+      "duration_seconds": 10,
+      "narration": "マルのような高齢犬の認知機能の低下に、意外な場所から光を当てようとする研究があります。アメリカの動物病院で診療にあたる獣医神経科医と、ペットの腸内細菌研究を専門とする企業AnimalBiomeの共同研究チームが注目したのは、おなかの中に棲む細菌でした。2026年、アメリカ獣医師会雑誌に発表された研究です。",
+      "image_prompt": "Interior of a veterinary research clinic in the United States, a veterinary researcher in a white lab coat (a middle-aged Caucasian American man), calmly examining a senior dog on an exam table — a golden retriever with a graying face, clearly different in breed and coloring from a Shiba Inu — clinical but warm daytime indoor lighting, professional and objective atmosphere, no text.",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "マルのような高齢犬の認知機能の低下に、"
+          ],
+          "start": 0.15,
+          "end": 3.0
+        },
+        {
+          "lines": [
+            "意外な場所から光を当てようとする研究があります。"
+          ],
+          "start": 3.38,
+          "end": 6.98
+        },
+        {
+          "lines": [
+            "アメリカの動物病院で診療にあたる獣医神経科医と、"
+          ],
+          "start": 7.13,
+          "end": 10.73
+        },
+        {
+          "lines": [
+            "ペットの腸内細菌研究を専門とする企業"
+          ],
+          "start": 10.88,
+          "end": 13.96
+        },
+        {
+          "lines": [
+            "AnimalBiomeの共同研究チームが"
+          ],
+          "start": 14.11,
+          "end": 17.11
+        },
+        {
+          "lines": [
+            "注目したのは、おなかの中に棲む細菌でした。"
+          ],
+          "start": 17.26,
+          "end": 20.41
+        },
+        {
+          "lines": [
+            "2026年、アメリカ獣医師会雑誌に発表"
+          ],
+          "start": 20.56,
+          "end": 23.41
+        },
+        {
+          "lines": [
+            "された研究です。"
+          ],
+          "start": 23.56,
+          "end": 24.76
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.46,
+        "y": 0.38
+      }
+    },
+    {
+      "scene_id": 10,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 14,
+      "narration": "認知機能の低下が疑われる11頭の高齢犬に、便微生物移植のカプセルを90日間、1日2回飲んでもらう試みが行われました。腸に棲む健康な菌を、カプセルの形で届ける治療法です。体調の変化や記録の都合で数頭が最後まで評価を受けられず、最終的に評価できたのは6頭でした。",
+      "image_prompt": "Laboratory setting inside a veterinary research clinic, a veterinary researcher in a white lab coat (Caucasian American, middle-aged) holding a small capsule bottle, a calm senior dog — a golden retriever with a graying face, clearly different from a Shiba Inu — sitting on an exam table, clinical daytime lighting, a small flat corner graphic showing a simple capsule icon tucked in the corner, no larger than roughly one-eighth of the frame, absolutely no text or numerals.",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "認知機能の低下が疑われる11頭の高齢犬に、"
+          ],
+          "start": 0.0,
+          "end": 3.84
+        },
+        {
+          "lines": [
+            "便微生物移植のカプセルを90日間、"
+          ],
+          "start": 3.99,
+          "end": 7.09
+        },
+        {
+          "lines": [
+            "1日2回飲んでもらう試みが行われました。"
+          ],
+          "start": 7.24,
+          "end": 10.24
+        },
+        {
+          "lines": [
+            "腸に棲む健康な菌を、カプセルの形で届ける"
+          ],
+          "start": 10.39,
+          "end": 13.82
+        },
+        {
+          "lines": [
+            "治療法です。体調の変化や記録の都合で数"
+          ],
+          "start": 13.97,
+          "end": 16.82
+        },
+        {
+          "lines": [
+            "頭が最後まで評価を受けられず、"
+          ],
+          "start": 16.97,
+          "end": 19.22
+        },
+        {
+          "lines": [
+            "最終的に評価できたのは6頭でした。"
+          ],
+          "start": 19.37,
+          "end": 21.92
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.35,
+        "y": 0.38
+      }
+    },
+    {
+      "scene_id": 11,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 14,
+      "narration": "そのうち4頭で、飼い主による認知機能の評価スコアが大きく改善しました。一方で、残りの2頭では逆に数値が悪化するという結果も見られています。腸内に棲む菌の多様性は、6頭中4頭で豊かになっていました。腸内環境と脳の働きが結びついているという考え方は、近年、人でも動物でも注目され始めています。今回の結果は、その可能性を示す一歩だといえます。",
+      "image_prompt": "Veterinary research clinic interior, the same researcher in a white lab coat reviewing an assessment chart on a tablet, a senior golden retriever with a graying face lying calmly nearby on an exam table, daytime clinical lighting, a small flat corner graphic showing a simple bar comparison tucked in the corner, no larger than roughly one-eighth of the frame, absolutely no text or numerals.",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "そのうち4頭で、飼い主による認知機能の"
+          ],
+          "start": 0.0,
+          "end": 3.38
+        },
+        {
+          "lines": [
+            "評価スコアが大きく改善しました。一方で、"
+          ],
+          "start": 3.53,
+          "end": 7.13
+        },
+        {
+          "lines": [
+            "残りの2頭では逆に数値が悪化するという"
+          ],
+          "start": 7.28,
+          "end": 10.24
+        },
+        {
+          "lines": [
+            "結果も見られています。腸内に棲む菌の多様性は、"
+          ],
+          "start": 10.39,
+          "end": 14.35
+        },
+        {
+          "lines": [
+            "6頭中4頭で豊かになっていました。"
+          ],
+          "start": 14.5,
+          "end": 17.05
+        },
+        {
+          "lines": [
+            "腸内環境と脳の働きが結びついているという考え方は、"
+          ],
+          "start": 17.2,
+          "end": 21.94
+        },
+        {
+          "lines": [
+            "近年、人でも動物でも注目され始めています。"
+          ],
+          "start": 22.09,
+          "end": 25.39
+        },
+        {
+          "lines": [
+            "今回の結果は、その可能性を示す一歩だといえます。"
+          ],
+          "start": 25.7,
+          "end": 29.3
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.63,
+        "y": 0.42
+      }
+    },
+    {
+      "scene_id": 12,
+      "type": "finding",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 10,
+      "narration": "高齢犬の認知機能低下には、これまで治療の選択肢が限られていました。口から飲むカプセルで、おなかの中の菌のバランスに働きかける——そんなアプローチが、新しい可能性を示しています。",
+      "image_prompt": "Veterinary research clinic interior, a researcher in a white lab coat gently examining the face of a senior golden retriever with a graying muzzle, warm but clinical daytime lighting, calm and hopeful atmosphere, no text.",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "高齢犬の認知機能低下には、これまで治療の"
+          ],
+          "start": 0.0,
+          "end": 3.11
+        },
+        {
+          "lines": [
+            "選択肢が限られていました。口から飲むカプセルで、"
+          ],
+          "start": 3.26,
+          "end": 6.76
+        },
+        {
+          "lines": [
+            "おなかの中の菌のバランスに働きかける——"
+          ],
+          "start": 6.91,
+          "end": 9.83
+        },
+        {
+          "lines": [
+            "そんなアプローチが、新しい可能性を示しています。"
+          ],
+          "start": 9.98,
+          "end": 13.48
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.62,
+        "y": 0.45
+      }
+    },
+    {
+      "scene_id": 13,
+      "type": "data",
+      "narrator": "research",
+      "reference_index": 0,
+      "duration_seconds": 10,
+      "narration": "治療の前後で、腸内に棲む菌の種類がどう変わったか——評価できた6頭のうち4頭で、菌の顔ぶれがより多様になりました。多様性が増えた犬たちに、認知機能の改善が見られる傾向がうかがえます。",
+      "image_prompt": "A simple flat infographic diagram illustrating gut microbiota diversity before and after treatment, using two abstract dot clusters side by side — the left cluster sparse and uniform in color representing low diversity, the right cluster dense and varied in color representing high diversity — clean minimalist chart layout, no text, no numerals.",
+      "ken_burns": "static",
+      "telop_cards": [
+        {
+          "lines": [
+            "治療の前後で、腸内に棲む菌の種類がどう"
+          ],
+          "start": 0.0,
+          "end": 3.44
+        },
+        {
+          "lines": [
+            "変わったか——評価できた6頭のうち4頭で、"
+          ],
+          "start": 3.59,
+          "end": 7.13
+        },
+        {
+          "lines": [
+            "菌の顔ぶれがより多様になりました。"
+          ],
+          "start": 7.28,
+          "end": 9.83
+        },
+        {
+          "lines": [
+            "多様性が増えた犬たちに、認知機能の改善が"
+          ],
+          "start": 10.43,
+          "end": 13.43
+        },
+        {
+          "lines": [
+            "見られる傾向がうかがえます。"
+          ],
+          "start": 13.58,
+          "end": 15.68
+        }
+      ]
+    },
+    {
+      "scene_id": 14,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 8,
+      "narration": "もし、この治療がマルにも届いたら——。窓辺の椅子に腰かけて、マルの寝顔を眺めながら、そんな未来をつい思い描いてしまいます。まだ研究の途中だとわかっていても、思い描くだけで、胸の奥が少し温かくなるのです。",
+      "image_prompt": "A small-scale depiction of a Japanese woman in her late 50s with short graying hair sitting in a chair by the window in her real living room, small in frame, an elderly Shiba Inu with a reddish-tan and cream coat (NOT gray, NOT sesame-colored) and a white-graying muzzle dozing on a cushion at her feet, with a classic comic-style thought bubble emerging from her head (a chain of small circles leading up to a large cloud-shaped bubble), inside the bubble a miniature warm scene of the same reddish-tan Shiba Inu wagging its tail happily at a front door in bright morning light, the outer room rendered in the same soft narrative illustration style, no text.",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "もし、この治療がマルにも届いたら——。"
+          ],
+          "start": 0.0,
+          "end": 3.28
+        },
+        {
+          "lines": [
+            "窓辺の椅子に腰かけて、マルの寝顔を眺めながら、"
+          ],
+          "start": 3.8,
+          "end": 8.3
+        },
+        {
+          "lines": [
+            "そんな未来をつい思い描いてしまいます。"
+          ],
+          "start": 8.46,
+          "end": 11.31
+        },
+        {
+          "lines": [
+            "まだ研究の途中だとわかっていても、"
+          ],
+          "start": 12.46,
+          "end": 15.01
+        },
+        {
+          "lines": [
+            "思い描くだけで、胸の奥が少し温かくなるのです。"
+          ],
+          "start": 15.46,
+          "end": 19.34
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.35,
+        "y": 0.42
+      }
+    },
+    {
+      "scene_id": 15,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 12,
+      "badge_text": "幸せな未来を夢想中",
+      "narration": "「マル、お散歩行こうか」。そう声をかけると、耳をぴんと立てて、まっすぐこちらを振り向いてくれる。玄関では尻尾を大きく振りながら、早く早くと私を待っている。名前を呼べば、ちゃんと目を見つめ返してくれる——そんな朝が、うれしくてたまりません。",
+      "image_prompt": "An elderly Shiba Inu with a reddish-tan and cream coat (NOT gray, NOT sesame-colored — classic warm orange-tan fur with white markings on chest, face, and paws) and a white-graying muzzle from old age, otherwise healthy-looking, standing at a genkan entrance, tail wagging brightly, ears perked up, looking straight up at a Japanese woman in her late 50s with short graying hair who kneels holding a red leash to greet it with a joyful expression, bright warm morning sunlight streaming in through the open door (clearly bright morning daylight, not night), joyful intimate atmosphere, no text.",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "「マル、お散歩行こうか」。そう声をかけると、"
+          ],
+          "start": 0.13,
+          "end": 4.02
+        },
+        {
+          "lines": [
+            "耳をぴんと立てて、まっすぐこちらを"
+          ],
+          "start": 4.17,
+          "end": 7.33
+        },
+        {
+          "lines": [
+            "振り向いてくれる。玄関では尻尾を大きく振りながら、"
+          ],
+          "start": 7.48,
+          "end": 12.02
+        },
+        {
+          "lines": [
+            "早く早くと私を待っている。名前を呼べば、"
+          ],
+          "start": 12.17,
+          "end": 16.43
+        },
+        {
+          "lines": [
+            "ちゃんと目を見つめ返してくれる——そんな朝が、"
+          ],
+          "start": 16.58,
+          "end": 20.17
+        },
+        {
+          "lines": [
+            "うれしくてたまりません。"
+          ],
+          "start": 20.32,
+          "end": 22.12
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.68,
+        "y": 0.35
+      }
+    },
+    {
+      "scene_id": 16,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 12,
+      "badge_text": "幸せな未来を夢想中",
+      "narration": "ゆうがた、学童から帰って玄関の鍵を開けると、扉の向こうからマルの足音が聞こえてくる。「ただいま」と言うより先に、体ごと尻尾を振って出迎えてくれる。今日あった子どもたちの話をすると、マルは首をかしげながら、最後までちゃんと聞いてくれるのです。ほんのささいなことなのに、一日の疲れがふっとほどけていきます。何気ない世間話に付き合ってくれるその姿は、まるで昔から変わらない、あのマルのままなのです。",
+      "image_prompt": "Evening at the genkan of a modest Japanese apartment: a Japanese woman in her late 50s with short graying hair, wearing a coat and carrying a canvas tote bag, just stepping inside and laughing with delight as an elderly Shiba Inu greets her — the dog has a reddish-tan and cream coat (NOT gray, NOT white, NOT sesame-colored — classic warm orange-tan fur with white markings on chest, face, and paws) with only its muzzle graying from old age — its whole body wiggling with a wagging tail, warm interior light and a dusk sky visible through the open door, joyful homecoming atmosphere, no text.",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "ゆうがた、学童から帰って玄関の鍵を開けると、"
+          ],
+          "start": 0.54,
+          "end": 4.16
+        },
+        {
+          "lines": [
+            "扉の向こうからマルの足音が聞こえてくる。"
+          ],
+          "start": 4.68,
+          "end": 7.9
+        },
+        {
+          "lines": [
+            "「ただいま」と言うより先に、"
+          ],
+          "start": 8.22,
+          "end": 10.44
+        },
+        {
+          "lines": [
+            "体ごと尻尾を振って出迎えてくれる。"
+          ],
+          "start": 10.59,
+          "end": 13.14
+        },
+        {
+          "lines": [
+            "今日あった子どもたちの話をすると、"
+          ],
+          "start": 13.9,
+          "end": 16.45
+        },
+        {
+          "lines": [
+            "マルは首をかしげながら、最後までちゃんと"
+          ],
+          "start": 16.6,
+          "end": 20.14
+        },
+        {
+          "lines": [
+            "聞いてくれるのです。ほんのささいなことなのに、"
+          ],
+          "start": 20.29,
+          "end": 23.83
+        },
+        {
+          "lines": [
+            "一日の疲れがふっとほどけていきます。"
+          ],
+          "start": 23.98,
+          "end": 26.68
+        },
+        {
+          "lines": [
+            "何気ない世間話に付き合ってくれるその姿は、"
+          ],
+          "start": 27.08,
+          "end": 30.32
+        },
+        {
+          "lines": [
+            "まるで昔から変わらない、あのマルのままなのです。"
+          ],
+          "start": 30.72,
+          "end": 34.32
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.63,
+        "y": 0.28
+      }
+    },
+    {
+      "scene_id": 17,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 12,
+      "badge_text": "幸せな未来を夢想中",
+      "narration": "休みの日には、夫と三人でよく歩いた川沿いの道を、マルとゆっくり散歩します。ときどき立ち止まっては、草の匂いを確かめるマル。「あの人も、この道が好きだったね」と話しかけると、マルが振り返って、私の顔を見上げてくれる。一緒に歩いてきた思い出が、今もここにあります。",
+      "image_prompt": "A sunny weekend afternoon on a quiet grassy riverside path in Japan: a Japanese woman in her late 50s with short graying hair walking slowly with an elderly Shiba Inu with a reddish-tan and cream coat (NOT gray, NOT sesame-colored) and a white-graying muzzle on a red leash, the dog pausing to look back up at her face affectionately, her gentle nostalgic smile, soft warm afternoon sunlight, peaceful and tender atmosphere, no text.",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "休みの日には、夫と三人でよく歩いた川沿いの道を、"
+          ],
+          "start": 0.0,
+          "end": 5.18
+        },
+        {
+          "lines": [
+            "マルとゆっくり散歩します。ときどき立ち止まっては、"
+          ],
+          "start": 5.33,
+          "end": 9.97
+        },
+        {
+          "lines": [
+            "草の匂いを確かめるマル。「あの人も、"
+          ],
+          "start": 10.12,
+          "end": 14.46
+        },
+        {
+          "lines": [
+            "この道が好きだったね」と話しかけると、"
+          ],
+          "start": 14.61,
+          "end": 17.79
+        },
+        {
+          "lines": [
+            "マルが振り返って、私の顔を見上げてくれる。"
+          ],
+          "start": 17.94,
+          "end": 21.84
+        },
+        {
+          "lines": [
+            "一緒に歩いてきた思い出が、今もここにあります。"
+          ],
+          "start": 22.98,
+          "end": 26.43
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.39,
+        "y": 0.32
+      }
+    },
+    {
+      "scene_id": 18,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 10,
+      "badge_text": "幸せな未来を夢想中",
+      "narration": "夜は、あの隅で立ち尽くすこともなく、私の布団の隣で丸くなって、静かな寝息を立てている。その温もりを感じながら、私も朝までぐっすり眠れる。ただそれだけのことで、こんなに心が安らぐとは思いませんでした。",
+      "image_prompt": "Night in a cozy Japanese bedroom: a Japanese woman in her late 50s with short graying hair sleeping peacefully on a futon, an elderly Shiba Inu with a reddish-tan and cream coat (NOT gray, NOT sesame-colored) and a white-graying muzzle curled up asleep right beside her, calm and without restlessness, soft dim warm bedside lamp light, gentle moonlight through the window, tranquil safe nighttime atmosphere, no text.",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "夜は、あの隅で立ち尽くすこともなく、"
+          ],
+          "start": 0.0,
+          "end": 3.12
+        },
+        {
+          "lines": [
+            "私の布団の隣で丸くなって、静かな寝息を立てている。"
+          ],
+          "start": 3.48,
+          "end": 7.76
+        },
+        {
+          "lines": [
+            "その温もりを感じながら、私も朝までぐっすり眠れる。"
+          ],
+          "start": 8.5,
+          "end": 12.76
+        },
+        {
+          "lines": [
+            "ただそれだけのことで、こんなに心が安らぐとは"
+          ],
+          "start": 13.56,
+          "end": 17.6
+        },
+        {
+          "lines": [
+            "思いませんでした。"
+          ],
+          "start": 17.75,
+          "end": 19.1
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.35,
+        "y": 0.59
+      }
+    },
+    {
+      "scene_id": 19,
+      "type": "closing",
+      "narrator": "research",
+      "duration_seconds": 25,
+      "ken_burns": "zoom_out",
+      "narration": "この治療はまだ、11頭という少数の高齢犬を対象にした、比較のための対象を置かない研究段階の結果です。すべての犬に効果があったわけではなく、実用化までには、さらに多くの犬での検証が必要です。それでも、これまで治療の選択肢が限られていた高齢犬の認知機能低下に、新しい選択肢の芽が見えてきました。久美子さんとマルのように、愛犬と過ごす何気ない毎日を守る、小さな一歩になるかもしれません。この研究の詳細が知りたい方は、概要欄をご確認ください。次はどんな研究が、誰かの幸せな未来を運んでくるのでしょうか。その瞬間をこれからも一緒に見つけていきたい方は、ぜひチャンネル登録してお待ちください。",
+      "image_prompt": "A soft warm image of morning sunlight streaming through a window, gentle paw print motif faintly visible in the light on the floor, symbolizing quiet hope for the future, no people, no text.",
+      "telop_cards": [
+        {
+          "lines": [
+            "この治療はまだ、11頭という少数の高齢"
+          ],
+          "start": 0.0,
+          "end": 2.88
+        },
+        {
+          "lines": [
+            "犬を対象にした、比較のための対象を置かない"
+          ],
+          "start": 3.03,
+          "end": 6.01
+        },
+        {
+          "lines": [
+            "研究段階の結果です。すべての犬に効果が"
+          ],
+          "start": 6.16,
+          "end": 8.85
+        },
+        {
+          "lines": [
+            "あったわけではなく、実用化までには、"
+          ],
+          "start": 9.0,
+          "end": 11.55
+        },
+        {
+          "lines": [
+            "さらに多くの犬での検証が必要です。"
+          ],
+          "start": 11.7,
+          "end": 14.11
+        },
+        {
+          "lines": [
+            "それでも、これまで治療の選択肢が限られていた"
+          ],
+          "start": 14.26,
+          "end": 17.38
+        },
+        {
+          "lines": [
+            "高齢犬の認知機能低下に、新しい選択肢の"
+          ],
+          "start": 17.53,
+          "end": 20.22
+        },
+        {
+          "lines": [
+            "芽が見えてきました。久美子さんとマルのように、"
+          ],
+          "start": 20.37,
+          "end": 23.63
+        },
+        {
+          "lines": [
+            "愛犬と過ごす何気ない毎日を守る、"
+          ],
+          "start": 23.78,
+          "end": 26.05
+        },
+        {
+          "lines": [
+            "小さな一歩になるかもしれません。"
+          ],
+          "start": 26.2,
+          "end": 28.47
+        },
+        {
+          "lines": [
+            "この研究の詳細が知りたい方は、"
+          ],
+          "start": 28.62,
+          "end": 30.75
+        },
+        {
+          "lines": [
+            "概要欄をご確認ください。次はどんな研究が、"
+          ],
+          "start": 30.9,
+          "end": 33.88
+        },
+        {
+          "lines": [
+            "誰かの幸せな未来を運んでくるのでしょうか。"
+          ],
+          "start": 34.03,
+          "end": 37.01
+        },
+        {
+          "lines": [
+            "その瞬間をこれからも一緒に見つけていきたい方は、"
+          ],
+          "start": 37.16,
+          "end": 40.56
+        },
+        {
+          "lines": [
+            "ぜひチャンネル登録してお待ちください。"
+          ],
+          "start": 40.71,
+          "end": 43.4
+        }
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "face_hook_image_prompt": "Extreme close-up of a Japanese woman in her late 50s with short graying hair, warm relieved and joyful expression, eyes slightly glistening with happy tears, soft warm morning light on her face, no text.",
+      "scenes": [
+        {
+          "narrator": "persona",
+          "narration": "夜中、部屋の隅で固まる愛犬。",
+          "scene_id": 7
+        },
+        {
+          "narrator": "persona",
+          "narration": "名前を呼んでも、振り向かない。",
+          "scene_id": 6
+        },
+        {
+          "narrator": "research",
+          "narration": "便微生物移植のカプセルを、90日間。",
+          "scene_id": 10
+        },
+        {
+          "narrator": "research",
+          "narration": "6頭中4頭で改善、2頭は悪化も。",
+          "style": "chart",
+          "image_prompt": "A simple flat infographic in vertical layout: six plain dog silhouette icons arranged in a grid, four of them in warm coral/orange each with a small upward arrow, two of them in cool gray-blue each with a small downward arrow, clean minimalist chart style, plain background, no text, no numerals."
+        },
+        {
+          "narrator": "persona",
+          "narration": "また、あの目で見つめてくれる日を。",
+          "scene_id": 15
+        },
+        {
+          "narrator": "persona",
+          "narration": "続きは本編で。チャンネル登録して待っていてください。",
+          "image_prompt": "A Japanese woman in her late 50s with short graying hair (bob-length, silver-gray, NOT dark black or dark brown), gently smiling and embracing an elderly Shiba Inu with a reddish-tan and cream coat (NOT gray, NOT sesame-colored — classic warm orange-tan fur with white markings) and a white-graying muzzle from old age, both looking warmly toward the camera, soft warm indoor lighting, vertical portrait composition, no text."
+        }
+      ]
+    }
+  ],
+  "bgm_sources": {
+    "intro": "BGM/kl023-BGM-intro.mp3",
+    "main": "BGM/kl025-BGM-main.mp3",
+    "outro": "BGM/kl025-BGM-outro.mp3"
+  }
+}
