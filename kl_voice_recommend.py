@@ -31,9 +31,10 @@ API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY"
 # 2026-09-04修正: 以前は本番のkl_tts_gen.pyと異なるgemini-3.1-flash-tts-previewで
 # 試聴していたため、選定した声が実際の本番生成では違う響きになる不整合があった
 # （Fable 5.1監査の指摘）。本番と同じモデルに統一する。
-TTS_MODEL = "gemini-2.5-pro-preview-tts"
+# 2026-09-28: kl_tts_gen.pyのgemini-3.8-flash-tts移行に合わせて更新（本番と同一モデルを維持）。
+TTS_MODEL = "gemini-3.8-flash-tts"
 RECOMMEND_MODEL = "gemini-flash-latest"
-MAX_RETRIES = 5  # gemini-2.5-pro-preview-ttsは稀にfinish_reason=OTHERで空データを返すことがある
+MAX_RETRIES = 5  # TTSは稀にfinish_reason=OTHERで空データを返すことがある
 
 BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
@@ -62,7 +63,7 @@ PROMPT_TEMPLATE = """あなたは「幸せな未来のサイエンスチャン�
 
 
 def synth(client, text: str, voice_name: str, out_path: Path) -> bool:
-    """1音声を生成してout_pathに保存する。gemini-2.5-pro-preview-ttsは稀に
+    """1音声を生成してout_pathに保存する。TTSは稀に
     finish_reason=OTHERで空データを返すことがあるため、kl_tts_gen.pyと同様に
     リトライで吸収する（2026-09-04追加）。成功すればTrueを返す。"""
     config = types.GenerateContentConfig(
@@ -91,6 +92,9 @@ def synth(client, text: str, voice_name: str, out_path: Path) -> bool:
     if data is None:
         print(f"❌ {voice_name}: {MAX_RETRIES}回試行して失敗", file=sys.stderr)
         return False
+    if data[:4] == b"RIFF":  # gemini-3.8-flash-ttsはヘッダー付きWAVを返す
+        out_path.write_bytes(data)
+        return True
     with wave.open(str(out_path), "wb") as wf:
         wf.setnchannels(1)
         wf.setsampwidth(2)

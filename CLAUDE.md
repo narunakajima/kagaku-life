@@ -883,7 +883,7 @@ kl004 S13〜S16で実装・QA確認済み（[episodes/kl004.json](episodes/kl004
 `kl_tts_gen.py`（今後作成）が `scene.narrator` を見てGemini TTSのボイス名を
 切り替える想定。
 
-**ボイス選定方針（2026-08確定）:** モデルは `gemini-3.1-flash-tts-preview`。
+**ボイス選定方針（2026-08確定）:** モデルは `gemini-3.8-flash-tts`（2026-09-28に `gemini-3.1-flash-tts-preview` から移行。3.8は入力テキストをそのまま読み上げるため、演技指導は本文に混ぜず `speech_metadata.style` で渡す）。
 生活者ボイスと研究ボイスで扱いが異なる。
 
 - **生活者ボイス（persona）: 毎回選び直す。** 主人公は毎回別人であり、同じ

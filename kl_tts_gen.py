@@ -3,7 +3,7 @@ kl_tts_gen.py — くらしを変える科学 ナレーション音声生成ス�
 
 episodes/kl{NNN}.json の各シーンのnarration文を、scene.narrator（persona/research）
 に応じて narration_voices（エピソードごとに選定済みのボイス名）で読み分け、
-gemini-2.5-pro-preview-ttsで音声を生成する（CLAUDE.md「ストーリー構成と
+gemini-3.8-flash-ttsで音声を生成する（CLAUDE.md「ストーリー構成と
 2ナレーターボイス制」参照）。
 
 narration_voicesが未設定のエピソードは、先にボイス選定（聴き比べ）を行ってから
@@ -45,16 +45,15 @@ DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
 QA_MODEL = "gemini-flash-latest"  # ナレーション音声が台本通りか判定する用（sc_tts_gen.pyと同じ考え方）
-# 2026-08-21: gemini-3.1-flash-tts-preview はテキスト先頭に演技指導（スタイル指示）を
-# 付けると finish_reason=OTHER で空データが返る不具合があったため、
-# gemini-2.5-pro-preview-ttsに切り替えていた。2026-08-22時点で「演技指導の有無に
-# 関わらず稀に空データが返る」ことが判明し、演技指導固有の問題ではないと切り分け済み。
-# 2026-09-05再検証: 演技指導あり/なし・複数ボイスで計12回テスト生成し、
-# gemini-3.1-flash-tts-previewでfinish_reason=OTHERは一度も再現しなかった
-# （sc_tts_gen.pyも同モデル+演技指導の組み合わせで問題なく稼働中）。当時の不具合は
-# 解消済みと判断し、より新しいgemini-3.1-flash-tts-previewに戻す。MAX_RETRIESに
-# よるリトライは引き続き安全網として残す。
-MODEL = "gemini-3.1-flash-tts-preview"
+# 2026-09-28: gemini-3.1-flash-tts-preview → gemini-3.8-flash-tts（正式版）に移行。
+# 3.8は入力テキストを「読み上げ原稿そのもの」として扱うため、演技指導（STYLE_PREFIX・
+# persona_style）をテキスト先頭に付けると指示文まで読み上げられてしまう。演技指導は
+# Part.speech_metadata.style で本文と分けて渡す（build_contents参照）。また出力が
+# ヘッダーなしPCMからヘッダー付きWAVに変わったため、RIFF判定でどちらにも対応する。
+# （経緯: 2026-08-21に3.1で演技指導付きだとfinish_reason=OTHERになる不具合があり
+# 一時gemini-2.5-pro-preview-ttsに切り替え、2026-09-05に解消を確認して3.1に戻していた。
+# MAX_RETRIESによるリトライは引き続き安全網として残す。）
+MODEL = "gemini-3.8-flash-tts"
 REQUEST_TIMEOUT_MS = 60_000
 MAX_RETRIES = 5
 
@@ -85,15 +84,26 @@ STYLE_PREFIX = {
 # 上書きする方式にする（2026-08-25追加、kl004で高齢者演技指導が必要になったため）。
 
 
-def _to_wav_bytes(pcm_data: bytes, sample_rate: int = 24000) -> bytes:
-    """PCM バイト列を QA 用に WAV バイト列へ変換する。"""
+def _to_wav_bytes(audio_data: bytes, sample_rate: int = 24000) -> bytes:
+    """WAV/PCMいずれのバイト列でも WAV バイト列へ正規化する（3.8はWAVで返す）。"""
+    if audio_data[:4] == b"RIFF":
+        return audio_data
     buf = io.BytesIO()
     with wave.open(buf, "wb") as wf:
         wf.setnchannels(1)
         wf.setsampwidth(2)
         wf.setframerate(sample_rate)
-        wf.writeframes(pcm_data)
+        wf.writeframes(audio_data)
     return buf.getvalue()
+
+
+def build_contents(text: str, style: str = "") -> types.Content:
+    """読み上げ原稿（text）と演技指導（speech_metadata.style）を分けてリクエストを
+    構築する。既存のSTYLE_PREFIX/persona_styleは「〜: 」で本文に続ける前提の書式の
+    ため、末尾のコロン・空白を落としてから渡す。"""
+    style = style.strip().rstrip(":").strip()
+    metadata = types.SpeechMetadata(style=style) if style else None
+    return types.Content(role="user", parts=[types.Part(text=text, speech_metadata=metadata)])
 
 
 def qa_narration_with_gemini(client: genai.Client, audio_data: bytes, script_text: str) -> dict:
@@ -138,8 +148,8 @@ def qa_narration_with_gemini(client: genai.Client, audio_data: bytes, script_tex
 
 
 def synth(client: genai.Client, text: str, voice_name: str, out_path: Path, narrator: str = None, style_override: str = None) -> bool:
-    prefix = style_override if style_override is not None else STYLE_PREFIX.get(narrator, "")
-    prompt = f"{prefix}{text}" if prefix else text
+    style = style_override if style_override is not None else STYLE_PREFIX.get(narrator, "")
+    contents = build_contents(text, style)
     config = types.GenerateContentConfig(
         response_modalities=["AUDIO"],
         speech_config=types.SpeechConfig(
@@ -151,7 +161,7 @@ def synth(client: genai.Client, text: str, voice_name: str, out_path: Path, narr
     data = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            resp = client.models.generate_content(model=MODEL, contents=prompt, config=config)
+            resp = client.models.generate_content(model=MODEL, contents=contents, config=config)
             candidate = resp.candidates[0] if resp.candidates else None
             parts = candidate.content.parts if (candidate and candidate.content) else None
             if parts:
@@ -171,11 +181,7 @@ def synth(client: genai.Client, text: str, voice_name: str, out_path: Path, narr
     if data is None:
         print(f"❌ {out_path.name}: {MAX_RETRIES}回試行して失敗", file=sys.stderr)
         return False
-    with wave.open(str(out_path), "wb") as wf:
-        wf.setnchannels(1)
-        wf.setsampwidth(2)
-        wf.setframerate(24000)
-        wf.writeframes(data)
+    out_path.write_bytes(_to_wav_bytes(data))
     print(f"✅ {out_path.name} ({voice_name})")
     return True
 
