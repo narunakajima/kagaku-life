@@ -558,6 +558,14 @@ CLAUDE.mdに記載が無かったため、kl006・kl013・kl014の3話で設定�
 驚き等、このエピソードの核となる**温かい**感情を具体的に指定すること（冷徹・
 暗い表情にはしない、CLAUDE.md BGMルールと同じトーン方針）。文字は入れない。
 
+**⚠️ kl026〜kl029はA/Bテスト対象（CLAUDE.md「顔アップフックのオン/オフを
+kl026〜kl029でA/Bテストする」参照、2026-09-28追加）。** kl016〜kl018で
+Shortsのエンゲージ率が急落した仮説を検証するため、**kl026・kl028は
+`face_hook_image_prompt`を意図的に省略**し、**kl027・kl029は通常どおり付ける**。
+この4話に該当する場合は必ずCLAUDE.mdの該当節を確認し、指定どおりの
+オン/オフで生成すること（この範囲を外れる通常のエピソードは従来どおり
+「強く推奨」のまま）。
+
 **JSONスキーマ:** `episode_id` / `episode_title` / `youtube_title` /
 `youtube_description`（参考文献・査読前開示を含む） / `youtube_tags` /
 `references[]` / `protagonist` / `thumbnail_prompt` / `thumbnail_headline` /
