@@ -40,11 +40,21 @@ AGE_WINDOW_DAYS = 14
 # 下げている）。
 MIN_CATEGORY_N = 3
 
+# YouTube Reporting API公式定義（developers.google.com/youtube/reporting/v1/
+# reports/dimensions#traffic_source_type）と照合して修正した（2026-09-28、
+# /kl-analytics初回実行時にOpusサブエージェントの監査で誤りが発覚。旧定義は
+# ほぼ全コードが1〜2個ずれていた——例えば実際は「外部」を指すコード9を
+# 「通知」と表示していた等——ため、流入経路の解釈が実態と食い違っていた）。
 TRAFFIC_SRC_NAMES = {
-    "0": "YT検索", "1": "関連動画", "3": "外部", "4": "直接/不明",
-    "5": "登録者フィード", "9": "通知", "14": "プレイリスト",
-    "17": "ブラウズ機能", "18": "ショート/フィード", "20": "検索(ショート)",
-    "24": "ショートフィード",
+    "0": "直接/不明", "1": "YouTube広告", "3": "ブラウズ機能",
+    "4": "チャンネルページ", "5": "YT検索", "7": "関連動画",
+    "8": "その他のYT機能", "9": "外部", "11": "カード/注釈",
+    "14": "プレイリスト", "17": "通知", "18": "再生リストページ",
+    "19": "申告済みコンテンツ", "20": "終了画面", "23": "Stories",
+    "24": "Shorts", "25": "商品ページ", "26": "ハッシュタグページ",
+    "27": "サウンドページ", "28": "ライブリダイレクト", "29": "Podcasts",
+    "30": "リミックス動画", "31": "縦型ライブフィード",
+    "32": "Shorts内関連動画",
 }
 
 
@@ -192,16 +202,26 @@ def aggregate(vid_info, ep_filter=None, age_window_days=None):
                     continue
                 traffic_stats[vid][row["traffic_source_type"]] += int(row["views"])
 
+    # 以前は video_stats（channel_combined_a3由来）だけをループしており、
+    # 再生数が0日でこのレポートに一切行を持たない動画（例: kl006本編。
+    # 再生0のため combined_a3 に該当日の行自体が生成されないが、
+    # reach_basic_a1 にはインプレッションの行がある）が集計から丸ごと
+    # 消えていた（2026-09-28、/kl-analytics初回実行時にOpusサブエージェントの
+    # 監査で発覚）。combined_a3/reach_basic_a1どちらかにでも行があれば
+    # 拾えるよう、両方のキー集合の和でループするよう修正した。
     rows = []
-    for vid, s in video_stats.items():
-        if s["views"] == 0:
-            continue
+    for vid in set(video_stats) | set(reach_stats):
         if not window_complete(vid):
             continue
+        s = video_stats.get(vid, {
+            "views": 0, "watch_time_minutes": 0.0, "engaged_views": 0,
+            "avg_dur_sum": 0.0, "avg_dur_pct_sum": 0.0,
+        })
         info = vid_info.get(vid, {})
-        avg_dur = s["avg_dur_sum"] / s["views"]
-        avg_dur_pct = s["avg_dur_pct_sum"] / s["views"]
-        engaged_rate = s["engaged_views"] / s["views"] * 100
+        views = s["views"]
+        avg_dur = s["avg_dur_sum"] / views if views else 0.0
+        avg_dur_pct = s["avg_dur_pct_sum"] / views if views else 0.0
+        engaged_rate = s["engaged_views"] / views * 100 if views else 0.0
         r = reach_stats.get(vid, {"impressions": 0, "ctr_sum": 0})
         ctr = (r["ctr_sum"] / r["impressions"] * 100) if r["impressions"] else 0
         rows.append({
@@ -255,11 +275,14 @@ def print_monthly_channel_summary():
 
 def print_report(rows, traffic_stats, label, rows_age_adjusted=None):
     print(f"\n{'='*95}\n{label}\n{'='*95}")
-    print(f"{'EP':<8}{'Views':>7}{'視聴分':>9}{'平均秒':>8}{'維持率%':>9}{'完了率%':>9}{'imp':>7}{'CTR%':>7}  Title")
+    # 「完了率%」は実際には engaged_views/views（エンゲージ率、Shorts的には
+    # 「スワイプで飛ばされずに見られた率」）であり、視聴完了率ではなかった
+    # （2026-09-28、Opusサブエージェントの監査で発覚。ラベルのみ修正）。
+    print(f"{'EP':<8}{'Views':>7}{'視聴分':>9}{'平均秒':>8}{'維持率%':>9}{'エンゲージ率%':>12}{'imp':>7}{'CTR%':>7}  Title")
     for r in rows:
         ep_label = r["ep"] + ("*" if r["is_shorts"] else "")
         print(f"{ep_label:<8}{r['views']:>7}{r['watch_time_min']:>9}{r['avg_dur_sec']:>8}"
-              f"{r['avg_dur_pct']:>9}{r['engaged_rate']:>9}{r['impressions']:>7}{r['ctr_pct']:>7}  {r['title'][:40]}")
+              f"{r['avg_dur_pct']:>9}{r['engaged_rate']:>12}{r['impressions']:>7}{r['ctr_pct']:>7}  {r['title'][:40]}")
     print("（* = Shorts）")
 
     n = len(rows)
@@ -268,13 +291,21 @@ def print_report(rows, traffic_stats, label, rows_age_adjusted=None):
     avg_retention = sum(r["avg_dur_pct"] for r in rows) / n if n else 0
     print(f"\n動画数: {n} / 総再生数: {total_views} / 総インプレッション: {total_imp} / 平均維持率: {avg_retention:.1f}%")
 
-    if rows:
-        print("\n--- 視聴維持率トップ5 ---")
-        for r in sorted(rows, key=lambda x: -x["avg_dur_pct"])[:5]:
+    # Shortsはループ再生のため維持率が100%を超えうる（例: kl005*105%）。
+    # 本編と同じ物差しで比べられないため、本編・Shortsを分けて表示する
+    # （2026-09-28、Opusサブエージェントの監査で「混在させると比較にならない」
+    # と指摘され対応）。
+    main_rows = [r for r in rows if not r["is_shorts"]]
+    shorts_rows = [r for r in rows if r["is_shorts"]]
+    for group_label, group_rows in (("本編", main_rows), ("Shorts", shorts_rows)):
+        if not group_rows:
+            continue
+        print(f"\n--- 視聴維持率トップ5（{group_label}） ---")
+        for r in sorted(group_rows, key=lambda x: -x["avg_dur_pct"])[:5]:
             print(f"  {r['ep']} {r['avg_dur_pct']}% ({r['views']}views) {r['title'][:35]}")
 
-        print("\n--- 視聴維持率ワースト5 ---")
-        for r in sorted(rows, key=lambda x: x["avg_dur_pct"])[:5]:
+        print(f"\n--- 視聴維持率ワースト5（{group_label}） ---")
+        for r in sorted(group_rows, key=lambda x: x["avg_dur_pct"])[:5]:
             print(f"  {r['ep']} {r['avg_dur_pct']}% ({r['views']}views) {r['title'][:35]}")
 
     # カテゴリ別ロールアップ（本編のみ対象。Shortsはカテゴリ判断のノイズになりやすいため除外）。
@@ -283,7 +314,10 @@ def print_report(rows, traffic_stats, label, rows_age_adjusted=None):
     # バイアスを検出できない」と判明した教訓の移植、2026-09-08）。measurement窓が
     # 完了していない直近公開分は aggregate() 側で既に除外済み。
     adj_rows = rows_age_adjusted if rows_age_adjusted is not None else rows
-    cat_totals = defaultdict(lambda: {"views": 0, "watch_time_min": 0.0, "retention_sum": 0.0, "n": 0, "impressions": 0, "ctr_sum": 0.0})
+    cat_totals = defaultdict(lambda: {
+        "views": 0, "watch_time_min": 0.0, "retention_sum": 0.0, "n": 0,
+        "impressions": 0, "ctr_sum": 0.0, "episodes": [],
+    })
     for r in adj_rows:
         if r["is_shorts"] or not r["category_label"]:
             continue
@@ -294,6 +328,7 @@ def print_report(rows, traffic_stats, label, rows_age_adjusted=None):
         c["n"] += 1
         c["impressions"] += r["impressions"]
         c["ctr_sum"] += r["ctr_pct"] * r["impressions"]
+        c["episodes"].append((r["ep"], r["views"]))
 
     categorized_eps = {r["ep"] for r in rows if not r["is_shorts"] and r["category_label"]}
     adj_eps = {r["ep"] for r in adj_rows if not r["is_shorts"] and r["category_label"]}
@@ -312,6 +347,16 @@ def print_report(rows, traffic_stats, label, rows_age_adjusted=None):
                 avg_ctr = (c["ctr_sum"] / c["impressions"]) if c["impressions"] else 0
                 n_note = "  ※n不足のため参考程度" if c["n"] < MIN_CATEGORY_N else ""
                 print(f"{label:<22}{c['n']:>5}{c['views']:>9}{c['watch_time_min']:>9.1f}{avg_ret:>12.1f}{avg_ctr:>10.2f}{n_note}")
+                # 内訳を併記する（2026-09-28追加）。カテゴリ合計が実質1本の
+                # 外れ値で決まっているケースをその場で見分けられるように、
+                # samurai-chroniclesの監査で「1本の外れ値だけで順位が決まって
+                # いる状態を機械的に見分けられるようにすべき」と指摘された対応。
+                breakdown = ", ".join(f"{ep}:{v}" for ep, v in sorted(c["episodes"], key=lambda x: -x[1]))
+                dominant_ep, dominant_views = max(c["episodes"], key=lambda x: x[1])
+                dominant_note = ""
+                if c["views"] and dominant_views / c["views"] >= 0.7:
+                    dominant_note = f"  ※{dominant_ep}1本で{dominant_views/c['views']*100:.0f}%を占める"
+                print(f"    内訳: {breakdown}{dominant_note}")
 
     src_total = defaultdict(int)
     for vid, d in traffic_stats.items():
