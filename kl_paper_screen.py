@@ -46,6 +46,12 @@ import os
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
 MODEL = "models/gemini-flash-latest"
+# 2026-09追加: コスト削減のため、STAGE2のGemini審査ではデフォルトでGoogle Search
+# グラウンディングを使わない（アブストラクト・掲載誌・著者名・被引用数のみで判断）。
+# 検索課金は1クエリ約¥2.2で、STAGE2の全件個別審査では月数千円規模になっていた。
+# ただしプレプリントで pass にならなかったものだけ検索付きで再判定する（screen_paper参照）。
+# 最初から全件検索付きにしたい場合のみ `--search` を付ける。
+USE_SEARCH = False
 CALL_DELAY_SEC = 1.5
 REQUEST_TIMEOUT_MS = 60_000  # 2026-08追加: タイムアウト未設定で1件が3時間以上ハングした事故があったため
 
@@ -65,7 +71,7 @@ def is_reputable_venue(venue: str) -> bool:
     return any(kw in v for kw in REPUTABLE_VENUE_KEYWORDS)
 
 PROMPT_TEMPLATE = """あなたは懐疑的な査読担当者です。以下の論文候補について、
-必要なら検索して信頼性を確認してください。
+{search_hint}信頼性を確認してください。
 
 タイトル: {title}
 掲載誌: {venue}
@@ -87,7 +93,7 @@ PROMPT_TEMPLATE = """あなたは懐疑的な査読担当者です。以下の�
     場合は信頼性を下げて判断する）
   - 技術的検証の厳密さ（定量的なベンチマーク・比較評価が示されているか、単なる宣伝や
     コンセプト提案に留まらないか）
-  - 著者・研究室の過去実績（同分野で既発表の実績があるか検索で確認できるか）
+  - 著者・研究室の過去実績（同分野で既発表の実績があるか。{track_record_hint}）
   - 動画化する場合は「査読前の研究」であることを必ず明示する前提で判断してよい
     （査読前であること自体は除外理由にしない）
 - アブストラクトからサンプルサイズ（参加者数・実験規模）が読み取れるか、
@@ -107,7 +113,26 @@ def strip_code_fence(text: str) -> str:
 
 
 def screen_paper(client: genai.Client, paper: dict, retries: int = 3) -> dict:
+    """検索なしで審査し、プレプリントで pass にならなかったものだけ検索付きで再確認する。
+
+    2026-09検証: 8/22分の38件で検索なしと検索付きの判定は30件一致。差異8件はすべて
+    「検索付きpass→検索なしflag/exclude」の厳しい側で、緩くなったものは無かった
+    （うち7件がプレプリント）。プレプリントは著者・研究室の実績確認に検索が効くため、
+    検索なしで pass 以外になったものに限り検索付きで再判定する。
+    --search 指定時は最初から全件検索付き。
+    """
+    verdict = _screen_paper_once(client, paper, USE_SEARCH, retries)
+    if not USE_SEARCH and paper.get("is_preprint") and verdict.get("overall") != "pass":
+        rechecked = _screen_paper_once(client, paper, True, retries)
+        rechecked["reasoning"] = "[検索付き再判定] " + str(rechecked.get("reasoning", ""))
+        return rechecked
+    return verdict
+
+
+def _screen_paper_once(client: genai.Client, paper: dict, use_search: bool, retries: int = 3) -> dict:
     prompt = PROMPT_TEMPLATE.format(
+        search_hint="必要なら検索して" if use_search else "与えられた情報（検索は使えない）と、あなたが知っている範囲の知識で",
+        track_record_hint="検索で確認できるか" if use_search else "あなたが知っている範囲で判断し、確認できない場合はその旨をreasoningに書く",
         title=paper.get("title") or "(不明)",
         venue=paper.get("venue") or "(不明)",
         preprint_label="プレプリント（査読前）" if paper.get("is_preprint") else "査読済み想定",
@@ -122,7 +147,7 @@ def screen_paper(client: genai.Client, paper: dict, retries: int = 3) -> dict:
                 model=MODEL,
                 contents=prompt,
                 config=types.GenerateContentConfig(
-                    tools=[types.Tool(google_search=types.GoogleSearch())],
+                    tools=[types.Tool(google_search=types.GoogleSearch())] if use_search else None,
                 ),
             )
             raw = strip_code_fence(resp.text or "")
@@ -211,10 +236,14 @@ def run_category(client: genai.Client, name: str, cat: dict, limit: int) -> dict
 
 
 def main():
-    parser = argparse.ArgumentParser(description="STAGE2信頼性チェック（Gemini + Google Search）")
+    parser = argparse.ArgumentParser(description="STAGE2信頼性チェック（Gemini。検索は --search 指定時のみ）")
     parser.add_argument("--category", help="特定カテゴリのみ実行（stage1_pool.jsonのキー）")
     parser.add_argument("--limit", type=int, default=0, help="カテゴリごとに先頭N件のみ処理（0=全件）")
+    parser.add_argument("--search", action="store_true", help="Google Searchグラウンディングを有効にする（課金増。デフォルトOFF）")
     args = parser.parse_args()
+
+    global USE_SEARCH
+    USE_SEARCH = args.search
 
     if not API_KEY:
         print("❌ GEMINI_API_KEY が設定されていません", file=sys.stderr)
