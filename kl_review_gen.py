@@ -67,6 +67,9 @@ def _bgm_rel_path(bgm_sources: dict, role: str) -> str:
     同じ方式に合わせて解消した。ファイルが存在しない場合はNoneを返す
     （BGM未選定＝STEP10未実行のエピソードでもレビューページ自体は動くように）。
     """
+    pending = sorted((DESKTOP_DIR / "BGM").glob(f"{role}_*.mp3"))
+    if pending:
+        return f"BGM/{pending[0].name}"
     rel = bgm_sources.get(role)
     if not rel:
         return None
