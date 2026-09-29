@@ -68,7 +68,6 @@ BGM_FADE_OUT = 6
 BGM_CROSSFADE = 4.0
 BGM_ROLES = ["intro", "main", "outro"]
 
-INTRO_DURATION = 4.0
 OUTRO_DURATION = 7.0
 LOGO_PATH = DRIVE_BASE / "LOGO.PNG"
 FONT_BOLD = Path("/System/Library/Fonts/ヒラギノ角ゴシック W8.ttc")
@@ -76,7 +75,6 @@ FONT_REGULAR = Path("/System/Library/Fonts/ヒラギノ角ゴシック W6.ttc")
 FONT_TMP_BOLD = Path("/tmp/kl_font_bold.ttc")
 FONT_TMP_REGULAR = Path("/tmp/kl_font_regular.ttc")
 
-CHANNEL_NAME = "幸せな未来のサイエンス"
 OFFICIAL_SITE = "kagaku-life.com"
 OUTRO_LINE1 = OFFICIAL_SITE
 OUTRO_LINE2 = "週3回更新・チャンネル登録お願いします"
@@ -103,9 +101,12 @@ SHORTS_TELOP_FONTSIZE = 48
 SHORTS_TELOP_CENTER_Y = 0.5
 # 冒頭フックテキスト（SCのshorts_hook_text_filterを1408x768→768x1376比で換算）
 SHORTS_HOOK_CONFIGS = [(114, "h*0.07"), (89, "h*0.16")]
-# 顔アップフッククリップの尺（秒）。ナレーションを乗せない無音の「引き」の
-# 1カットのため固定値でよい（2026-09-06追加、SCのS00_face.png踏襲）。
-FACE_HOOK_DURATION = 2.0
+# Shortsの最後のカットに重ねる本編への誘導（2026-09-29追加）。YouTube公式ブログの助言
+# 「Shortsの最後の5秒で、言葉と画面の両方で関連動画（本編）へ誘導する」に対応。
+# ナレーション側の誘導はSTEP2の生成ルール（最後のカットで「本編」に触れる）が担う。
+SHORTS_END_CTA_TEXT = "↓ 続きは本編で"
+SHORTS_END_CTA_FONTSIZE = 64
+SHORTS_END_CTA_Y = "h*0.80"
 
 
 def run_cmd(cmd: list, label: str = ""):
@@ -680,24 +681,25 @@ def gen_video(episode_id: str, out_dir: Path = None):
             crossfade_concat_n(teaser_clips, teaser_durs, teaser_video)
         crossfade_concat_n(main_clips, main_durs, main_video)
 
-        print("\n--- ロゴクリップ生成 ---")
-        intro_logo = tmp / "intro_logo.mp4"
+        # 本編冒頭のロゴイントロ（4秒）は2026-09-29に廃止した。YouTube公式の助言
+        # 「長尺動画は冒頭5〜10秒で約束した話題に入る。冒頭にもたつくロゴを置かない」と、
+        # 本編の平均視聴が17〜73秒で冒頭に離脱が集中していた実データに基づく
+        # （PIPELINE_REDESIGN.md §9）。ティザーの直後に本編（hook）が続く。
+        print("\n--- ロゴクリップ生成（アウトロのみ） ---")
         outro_logo = tmp / "outro_logo.mp4"
-        make_logo_clip(intro_logo, INTRO_DURATION,
-                        [(CHANNEL_NAME, str(FONT_TMP_BOLD), 44, "white")], tmp)
         make_logo_clip(outro_logo, OUTRO_DURATION,
                         [(OUTRO_LINE1, str(FONT_TMP_BOLD), 40, "0xf0a868"),
                          (OUTRO_LINE2, str(FONT_TMP_REGULAR), 26, "white")], tmp)
 
         print("\n--- 映像全結合 ---")
-        video_parts = ([teaser_video] if teaser_scenes else []) + [intro_logo, main_video, outro_logo]
+        video_parts = ([teaser_video] if teaser_scenes else []) + [main_video, outro_logo]
         full_video = tmp / "full_video.mp4"
         concat_video_clips(video_parts, full_video)
 
-        intro_block_dur = teaser_block_dur + INTRO_DURATION
+        intro_block_dur = teaser_block_dur
         total_dur = intro_block_dur + main_block_dur + OUTRO_DURATION
         print(f"\n  合計尺: {total_dur:.1f}s ({total_dur/60:.1f}分)"
-              f"（ティザー{teaser_block_dur:.1f}s + ロゴ{INTRO_DURATION:.0f}s"
+              f"（ティザー{teaser_block_dur:.1f}s"
               f" + 本編{main_block_dur:.1f}s + ロゴ{OUTRO_DURATION:.0f}s）")
 
         all_scenes = teaser_scenes + main_scenes
@@ -746,24 +748,16 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
     mid = shorts_list[0]["shorts_id"]
     scenes = shorts_list[0]["scenes"]
 
-    # 顔アップ専用フッククリップ（2026-09-06追加）。samurai-chroniclesの
-    # shorts_face_image_prompt/S00_face.png踏襲。Shortsフィード経由の視聴が
-    # トラフィックの9割以上を占めることが実データ（kl_analytics_report.py）で
-    # 判明し、SC側で既に実証済みの「冒頭0秒目に感情の乗った顔アップ＋大型フック
-    # テキストでスクロールを止める」設計を移植した。存在しない場合は従来通り
-    # 最初のシーン画像にhook_linesを重ねるだけの旧動作にフォールバックする。
-    face_img = img_dir / f"shorts{mid}_S00_face.png"
-    use_face_intro = face_img.exists()
-
-    print(f"\n{'━'*60}\n  {episode_id} — Shorts動画生成開始"
-          f"（{len(scenes)}シーン{'+顔アップフック' if use_face_intro else ''}）\n{'━'*60}\n")
+    # 冒頭2秒の無音の顔アップカット（2026-09-06導入）は2026-09-29に廃止した。
+    # 導入後のkl016〜018でShortsのエンゲージ率が急落していたことと、YouTube公式ブログの
+    # 「Shortsのフックに使えるのは1秒」を踏まえ、1カット目のナレーション（問い・驚き）から
+    # 始める（CLAUDE.md「冒頭2秒の無音はやめる」、PIPELINE_REDESIGN.md §9）。
+    print(f"\n{'━'*60}\n  {episode_id} — Shorts動画生成開始（{len(scenes)}シーン）\n{'━'*60}\n")
 
     with tempfile.TemporaryDirectory() as tmp_str:
         tmp = Path(tmp_str)
 
         durations = []
-        if use_face_intro:
-            durations.append(FACE_HOOK_DURATION)
         for i, scene in enumerate(scenes, start=1):
             wav = narration_dir / f"shorts{mid}_S{i:02d}.wav"
             narr_dur = probe_audio_duration(wav) if wav.exists() else 2.0
@@ -777,12 +771,6 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
 
         print("\n--- Ken Burnsクリップ生成 ---")
         clips = []
-        if use_face_intro:
-            dst = tmp / "kb_shorts_S00_face.mp4"
-            # 顔アップは常にゆっくりズームイン（表情への没入感を強めるため）
-            make_ken_burns(face_img, dst, durations[0], "zoom_in", w=SHORTS_W, h=SHORTS_H)
-            clips.append(dst)
-        base_idx = 1 if use_face_intro else 0
         for i, scene in enumerate(scenes, start=1):
             img = img_dir / f"shorts{mid}_S{i:02d}.png"
             dst = tmp / f"kb_shorts_S{i:02d}.mp4"
@@ -790,7 +778,7 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
             # （ズームすると数値の位置関係が読み取りにくくなる）で完全静止にする
             # （2026-08-25追加。本編側の修正時にShortsが対象外だったことに気づいた）。
             effect = "static" if scene.get("style") == "chart" else "zoom_in"
-            make_ken_burns(img, dst, durations[base_idx + i - 1], effect, w=SHORTS_W, h=SHORTS_H)
+            make_ken_burns(img, dst, durations[i - 1], effect, w=SHORTS_W, h=SHORTS_H)
             clips.append(dst)
 
         print("\n--- クロスフェード結合 ---")
@@ -803,9 +791,7 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
             wav = narration_dir / f"shorts{mid}_S{i:02d}.wav"
             if not wav.exists():
                 continue
-            # 顔アップクリップ分だけナレーションの開始オフセットを後ろにずらす
-            # （顔アップクリップ自体はナレーションなし・無音の「引き」の1カット）
-            offset_ms = int(offsets[base_idx + i - 1] * 1000 + NARR_DELAY * 1000)
+            offset_ms = int(offsets[i - 1] * 1000 + NARR_DELAY * 1000)
             idx = len(narr_inputs)
             narr_inputs.append(wav)
             lbl = f"n{i}"
@@ -866,7 +852,8 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
         # （2026-09-06発覚、kl015で焼き込みが一度も実行されていなかった）。
         hook_lines = ep.get("hook_lines") or []
         if hook_lines:
-            # 冒頭クリップの間だけ表示する大型フックテキスト（SCのshorts_hook_text_filter踏襲）
+            # 1カット目の間だけ表示する大型フックテキスト（SCのshorts_hook_text_filter踏襲）。
+            # 2026-09-29〜: 無音の顔アップカットを廃止したため、1カット目のナレーションと同時に出る
             hook_end = durations[0]
             for i, text in enumerate(hook_lines[:2]):
                 fs, y = SHORTS_HOOK_CONFIGS[i]
@@ -884,10 +871,7 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
                 prev = out
                 idx += 1
 
-        # 顔アップクリップ分（先頭1件）を除いた、scenesに対応するoffset/durationのみを使う
-        scene_offsets = offsets[base_idx:]
-        scene_durations = durations[base_idx:]
-        for i, (scene, offset, dur) in enumerate(zip(scenes, scene_offsets, scene_durations)):
+        for i, (scene, offset, dur) in enumerate(zip(scenes, offsets, durations)):
             t_start = offset + NARR_DELAY
             t_end = offset + dur
             telop_text = scene.get("telop_text", scene["narration"])
@@ -907,6 +891,19 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
             )
             prev = out
             idx += 1
+
+        # 最後のカットに本編への誘導を重ねる（2026-09-29追加）
+        cta_tf = tmp / "end_cta.txt"
+        cta_tf.write_text(SHORTS_END_CTA_TEXT, encoding="utf-8")
+        cta_start = offsets[-1]
+        filter_parts.append(
+            f"[{prev}]drawtext=fontfile={font_bold}:textfile={cta_tf}:expansion=none"
+            f":fontcolor=0xf0a868:fontsize={SHORTS_END_CTA_FONTSIZE}:borderw=7:bordercolor=black@1.0"
+            f":shadowx=3:shadowy=3:shadowcolor=black@0.75"
+            f":x=(w-text_w)/2:y={SHORTS_END_CTA_Y}:enable=between(t\\,{cta_start:.2f}\\,{total_dur:.2f})[endcta]"
+        )
+        prev = "endcta"
+        idx += 1
 
         output_file = out_dir / f"{episode_id}_shorts.mp4"
         run_cmd(

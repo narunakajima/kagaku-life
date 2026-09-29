@@ -116,6 +116,8 @@ BASE_DIR = Path(__file__).parent
 INPUT_PATH = BASE_DIR / "stage3_hypecheck.json"
 OUTPUT_PATH = BASE_DIR / "stage4_ranked.json"
 TOPICS_QUEUE_PATH = BASE_DIR / "topics_queue.json"
+CONCERNS_PATH = BASE_DIR / "viewer_concerns.json"
+LEGACY_SHORTLIST_PATH = BASE_DIR / "topics_shortlist_legacy.json"
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
 MODEL = "models/gemini-flash-latest"
@@ -137,7 +139,7 @@ REQUEST_TIMEOUT_MS = 60_000  # 2026-08追加: タイムアウト未設定で1件
 # 在庫全件の再採点という高コストな処理を強制しないためSTAGE4_VERSIONは据え置いた。
 # 新しい定義は以降に新規採点する候補にのみ適用される。在庫にも反映したい場合は
 # STAGE4_VERSIONを更新して `kl_shortlist_rescore.py` を実行すること。
-STAGE4_VERSION = "2026-09-09-familiarity-dejavu-caps"
+STAGE4_VERSION = "2026-09-29-concern-first"
 
 PROMPT_TEMPLATE = """あなたは日本語YouTubeチャンネル「くらしを変える科学」の企画担当です。
 科学技術分野の学術論文を一般視聴者向けに解説し、「その研究が生活をどう変えるか」を
@@ -152,7 +154,7 @@ PROMPT_TEMPLATE = """あなたは日本語YouTubeチャンネル「くらしを�
 発表年: {year}
 アブストラクト: {abstract}
 STAGE3での注意点（動画化時に踏まえるべきヘッジ・限界）: {hedging_notes}
-
+{concern_block}
 このチャンネルが最も大切にしているのは、技術そのもののすごさではなく、それが実現した
 未来が主人公の暮らしにもたらす「小さいけれど確かな幸せ」です。以下の手順で評価してください。
 
@@ -190,7 +192,7 @@ STAGE3での注意点（動画化時に踏まえるべきヘッジ・限界）: 
   現時点で実証した内容（サンプル数・実験環境等の条件込み）を日本語1文で要約する。
   この先のステップで空想を広げすぎないための基準line。
 
-【ステップ1】この技術が実際に実現した場合、主人公がある日常のワンシーンでそれを
+{concern_step}【ステップ1】この技術が実際に実現した場合、主人公がある日常のワンシーンでそれを
 体験している様子を1〜2文で具体的に描写してください（`future_scene_sketch`）。
 番組の`impact`シーンに相当するもので、「誰が」「いつ」「何をしていて」「何を感じるか」が
 伝わる具体的な情景にすること（抽象的な機能説明にしない）。**この情景は`novel_delta`
@@ -219,7 +221,7 @@ STAGE3での注意点（動画化時に踏まえるべきヘッジ・限界）: 
 過去の公開・企画済み・却下済みエピソード一覧:
 {past_episodes}
 
-【ステップ3】以下5つの観点で1〜5点評価してください（5が最高）:
+【ステップ3】以下の観点で1〜5点評価してください（5が最高）:
 1. wonder_score【最重要指標】: ステップ1で描いた情景（＝`novel_delta`の情景）を
    読んだとき、視聴者が心から「幸せな未来だ、こうなったらいいな」とワクワクし
    温かい気持ちになれるか。ここでの「温かい気持ち」には、技術のすごさへの高揚だけでなく、
@@ -253,8 +255,7 @@ STAGE3での注意点（動画化時に踏まえるべきヘッジ・限界）: 
    既存製品との違いが明確で「まだ実現していないが実現すれば劇的」なものには
    高い点をつける。査読済みか未査読かはこのスコアに影響させない（査読状況の
    信頼性判断はSTAGE2で既に完了している前提）
-3. life_relevance_score: 生活実感との直結度（視聴者が「自分ごと」として想像できるか）
-4. surprise_score: 数字のインパクト（意外性のある定量的結果があるか）
+{relevance_items}4. surprise_score: 数字のインパクト（意外性のある定量的結果があるか）
 5. persona_fit_score: 「使い捨ての生活者」ペルソナ（1エピソード限りの具体的な生活者を主人公にする
    演出）に、具体的な生活シーンとして落とし込みやすいか
 
@@ -264,8 +265,96 @@ STAGE3での注意点（動画化時に踏まえるべきヘッジ・限界）: 
 - hook_idea: 冒頭3〜5秒のフック文の叩き台（日本語、生活実感に直結する問いかけ）
 
 出力は次のJSON形式のみで、他のテキスト・Markdown装飾は一切含めないこと:
-{{"market_status": "existing_product|incremental|novel", "novel_delta": "...", "behavioral_familiarity": "familiar|novel", "behavioral_familiarity_note": "...", "demonstrated_capability": "...", "future_scene_sketch": "...", "deja_vu_note": "...", "deja_vu_level": "none|partial|strong", "wonder_score": 1-5, "transformation_score": 1-5, "life_relevance_score": 1-5, "surprise_score": 1-5, "persona_fit_score": 1-5, "example_protagonist": {{"name": "...", "age": 0, "job": "..."}}, "hook_idea": "...", "reasoning": "..."}}
+{output_format}
 """
+
+# 関心ごと起点の回（2026-09-29〜、PIPELINE_REDESIGN.md）でだけ PROMPT_TEMPLATE に差し込む部分。
+# ワイルドカード回（関心ごとを持たない、意外性で選ぶ回。旧在庫や制作者の直感から選ぶ）は
+# 従来どおり life_relevance_score で採点する。
+CONCERN_BLOCK_TEMPLATE = """
+【この回の企画意図】このエピソードは、視聴者の関心ごと「{label}」に答える回として企画しています。
+視聴者の問いの例: {questions}
+この関心ごとの当事者の規模: {breadth}
+"""
+
+CONCERN_STEP = """【ステップ0.5】この論文が、上の関心ごとを持つ一般の人（特定の患者群や専門家ではない、ふつうの
+視聴者やその家族）への答えになっているかを確かめ、次を出力してください。
+- `evidence_level`: この研究の根拠の種類を次のいずれか1つで。`"human_rct"`（ヒトのランダム化比較試験）／
+  `"human_study"`（ヒトの観察研究・大規模な追跡研究）／`"human_pilot"`（ヒトの小規模な試験・初期の臨床試験）／
+  `"animal"`（動物実験のみ）／`"cell_or_sim"`（細胞・シミュレーション・計算のみ）／
+  `"real_world_tech"`（技術を想定利用者が実環境で使った検証）／`"lab_demo"`（技術の研究室内の実演のみ）
+- `entry_question`: この論文が答える「視聴者側の問い」を、視聴者の言葉で1つ。「なぜ〜？」「〜は本当？」
+  「〜できる日は来る？」のような形にする。**論文が実際に示した範囲を超えて一般化しないこと**
+  （例: 特定の患者で確かめた結果を「あなたの〜が治る」と言い換えない）。
+
+"""
+
+RELEVANCE_ITEMS_CONCERN = """3. answer_fit_score: 答えの適合度。この論文が、関心ごと「{label}」を持つ一般の人に本当に答えているか。
+   5: ヒトで確かめた結果（大規模な試験・追跡研究）が、関心ごとの中心的な人にそのまま当てはまる。
+      技術なら、想定利用者を相手に実環境で試している
+   3: ヒトでの小規模な試験や、条件の限られた結果。技術なら研究室での実演
+   1: 動物実験・細胞・シミュレーションだけ、または関心ごととのつながりが間接的
+   `evidence_level`が`"animal"`・`"cell_or_sim"`の場合は必ず2点以下にすること。
+3b. applicable_breadth_score: 当てはまる人の広さ。関心ごと「{label}」の当事者のうち、この論文の結果が
+   当てはまる割合。
+   5: 関心ごとの当事者のほぼ全員に当てはまる
+   3: かなりの割合（特定の年代・症状の人など）に当てはまる
+   1: ごく一部（特定の病気の患者・希少な条件の人など）にしか当てはまらない
+"""
+
+RELEVANCE_ITEMS_WILDCARD = """3. life_relevance_score: 生活実感との直結度（視聴者が「自分ごと」として想像できるか）
+"""
+
+OUTPUT_FORMAT_CONCERN = (
+    '{"market_status": "existing_product|incremental|novel", "novel_delta": "...", '
+    '"behavioral_familiarity": "familiar|novel", "behavioral_familiarity_note": "...", '
+    '"demonstrated_capability": "...", "evidence_level": "human_rct|human_study|human_pilot|animal|cell_or_sim|real_world_tech|lab_demo", '
+    '"entry_question": "...", "future_scene_sketch": "...", "deja_vu_note": "...", "deja_vu_level": "none|partial|strong", '
+    '"wonder_score": 1-5, "transformation_score": 1-5, "answer_fit_score": 1-5, "applicable_breadth_score": 1-5, '
+    '"surprise_score": 1-5, "persona_fit_score": 1-5, '
+    '"example_protagonist": {"name": "...", "age": 0, "job": "..."}, "hook_idea": "...", "reasoning": "..."}'
+)
+
+OUTPUT_FORMAT_WILDCARD = (
+    '{"market_status": "existing_product|incremental|novel", "novel_delta": "...", '
+    '"behavioral_familiarity": "familiar|novel", "behavioral_familiarity_note": "...", '
+    '"demonstrated_capability": "...", "future_scene_sketch": "...", "deja_vu_note": "...", '
+    '"deja_vu_level": "none|partial|strong", "wonder_score": 1-5, "transformation_score": 1-5, '
+    '"life_relevance_score": 1-5, "surprise_score": 1-5, "persona_fit_score": 1-5, '
+    '"example_protagonist": {"name": "...", "age": 0, "job": "..."}, "hook_idea": "...", "reasoning": "..."}'
+)
+
+
+def build_prompt(paper: dict, past_episodes: str, concern: dict = None) -> str:
+    """concernを渡すと関心ごと起点の採点、Noneならワイルドカードの採点になる。"""
+    if concern:
+        concern_block = CONCERN_BLOCK_TEMPLATE.format(
+            label=concern["label"],
+            questions=" / ".join(concern.get("questions", [])),
+            breadth=(concern.get("breadth") or {}).get("summary", "（未記載）"),
+        )
+        concern_step = CONCERN_STEP
+        relevance_items = RELEVANCE_ITEMS_CONCERN.format(label=concern["label"])
+        output_format = OUTPUT_FORMAT_CONCERN
+    else:
+        concern_block = ""
+        concern_step = ""
+        relevance_items = RELEVANCE_ITEMS_WILDCARD
+        output_format = OUTPUT_FORMAT_WILDCARD
+    return PROMPT_TEMPLATE.format(
+        title=paper.get("title") or "(不明)",
+        venue=paper.get("venue") or "(不明)",
+        preprint_label="プレプリント（査読前）" if paper.get("is_preprint") else "査読済み想定",
+        year=paper.get("year") or "(不明)",
+        abstract=(paper.get("abstract") or "(アブストラクトなし)")[:2000],
+        hedging_notes=(paper.get("stage3") or {}).get("hedging_notes") or "(特になし)",
+        past_episodes=past_episodes,
+        concern_block=concern_block,
+        concern_step=concern_step,
+        relevance_items=relevance_items,
+        output_format=output_format,
+    )
+
 
 FALLBACK_VERDICT_TEMPLATE = {
     "market_status": "",
@@ -300,20 +389,37 @@ def strip_code_fence(text: str) -> str:
 
 def build_past_episodes_context(
     queue_path: Path = TOPICS_QUEUE_PATH,
-    shortlist_path: Path = None,
+    shortlist_paths: list = None,
 ) -> str:
-    """topics_queue.json（公開・企画済み）と topics_shortlist.json（却下済み）の
-    一覧を、既視感チェック用のコンテキスト文字列に整形する（paperId単位の重複
-    排除では検出できない『話の型』の重複をGeminiに判定させるため、2026-09-06追加）。
+    """topics_queue.json（公開・企画済み）と在庫の却下済み候補の一覧を、既視感チェック用の
+    コンテキスト文字列に整形する（paperId単位の重複排除では検出できない『話の型』の重複を
+    Geminiに判定させるため、2026-09-06追加）。
 
     2026-09-06改訂（Fable監査で指摘）: 当初はtopics_queue.json（公開・企画済み
     14話）のみを渡していたが、これでは「候補として検討したが既視感・面白み
     不足で却下したテーマ」（例: 転倒検知レーダー）が一切コンテキストに
     含まれず、同じテーマが翌回もdeja_vu判定なしで再浮上する欠陥があった。
     status: "rejected"のshortlistエントリも却下理由付きで含めるようにした。
+
+    2026-09-29改訂（ネタ選定パイプライン作り直し）: 在庫を新在庫（topics_shortlist.json）と
+    旧在庫（topics_shortlist_legacy.json）に分けたため、却下済みは両方から読む。
+    各エピソードの分類表示は関心ごと（concern_id）を優先し、無ければ旧カテゴリを使う。
     """
-    if shortlist_path is None:
-        shortlist_path = BASE_DIR / "topics_shortlist.json"
+    if shortlist_paths is None:
+        shortlist_paths = [BASE_DIR / "topics_shortlist.json", LEGACY_SHORTLIST_PATH]
+
+    concern_labels = {}
+    if CONCERNS_PATH.exists():
+        try:
+            concern_labels = {c["id"]: c["label"] for c in json.loads(CONCERNS_PATH.read_text())["concerns"]}
+        except (json.JSONDecodeError, KeyError):
+            pass
+
+    def group_label(e: dict) -> str:
+        cid = e.get("concern_id")
+        if cid:
+            return concern_labels.get(cid, cid)
+        return e.get("concern_label") or e.get("category_label") or e.get("category") or ""
 
     lines = []
 
@@ -322,22 +428,22 @@ def build_past_episodes_context(
             data = json.loads(queue_path.read_text())
             for e in data.get("queue", []):
                 title = e.get("title") or ""
-                hook = e.get("hook_idea") or ""
-                cat_label = e.get("category_label") or e.get("category") or ""
-                lines.append(f"- {e.get('episode_id', '?')} [{cat_label}] {title}（フック: {hook}）")
+                hook = e.get("entry_question") or e.get("hook_idea") or ""
+                lines.append(f"- {e.get('episode_id', '?')} [{group_label(e)}] {title}（フック: {hook}）")
         except json.JSONDecodeError:
             pass
 
-    if shortlist_path.exists():
+    for path in shortlist_paths:
+        if not path.exists():
+            continue
         try:
-            data = json.loads(shortlist_path.read_text())
+            data = json.loads(path.read_text())
             for e in data.get("shortlist", []):
                 if e.get("status") != "rejected":
                     continue
                 title = e.get("title") or ""
-                cat_label = e.get("category_label") or e.get("category") or ""
                 reason = e.get("rejected_reason") or "（理由未記録）"
-                lines.append(f"- [却下] [{cat_label}] {title}（却下理由: {reason}）")
+                lines.append(f"- [却下] [{group_label(e)}] {title}（却下理由: {reason}）")
         except json.JSONDecodeError:
             pass
 
@@ -365,16 +471,8 @@ def latest_known_episode_id(queue_path: Path = TOPICS_QUEUE_PATH) -> str:
     return max(ids) if ids else ""
 
 
-def score_paper(client: genai.Client, paper: dict, past_episodes: str, retries: int = 3) -> dict:
-    prompt = PROMPT_TEMPLATE.format(
-        title=paper.get("title") or "(不明)",
-        venue=paper.get("venue") or "(不明)",
-        preprint_label="プレプリント（査読前）" if paper.get("is_preprint") else "査読済み想定",
-        year=paper.get("year") or "(不明)",
-        abstract=(paper.get("abstract") or "(アブストラクトなし)")[:2000],
-        hedging_notes=(paper.get("stage3") or {}).get("hedging_notes") or "(特になし)",
-        past_episodes=past_episodes,
-    )
+def score_paper(client: genai.Client, paper: dict, past_episodes: str, concern: dict = None, retries: int = 3) -> dict:
+    prompt = build_prompt(paper, past_episodes, concern)
     for attempt in range(retries):
         try:
             resp = client.models.generate_content(
@@ -459,6 +557,19 @@ def _label(v: dict, key: str) -> str:
     return str(v.get(key) or "").strip().lower()
 
 
+# evidence_levelが動物実験・細胞/シミュレーションのみの場合の answer_fit_score の上限
+# （2026-09-29追加）。プロンプトでも指示しているが、market_statusのとき同様、指示だけに
+# 頼らずコード側でも機械的に上限をかける。
+WEAK_EVIDENCE_LEVELS = {"animal", "cell_or_sim"}
+WEAK_EVIDENCE_ANSWER_FIT_CAP = 2
+
+
+def is_concern_verdict(v: dict) -> bool:
+    """関心ごと起点で採点された結果か（answer_fit_scoreを持つか）。
+    ワイルドカード（関心ごとを持たない回）の採点結果は life_relevance_score を持つ。"""
+    return "answer_fit_score" in v or "applicable_breadth_score" in v
+
+
 def overall_score(v: dict) -> float:
     wonder = _score_value(v, "wonder_score")
     transformation = _score_value(v, "transformation_score")
@@ -471,6 +582,25 @@ def overall_score(v: dict) -> float:
     if _label(v, "deja_vu_level") == "strong":
         wonder = min(wonder, DEJA_VU_STRONG_SCORE_CAP)
         transformation = min(transformation, DEJA_VU_STRONG_SCORE_CAP)
+
+    if is_concern_verdict(v):
+        # 関心ごと起点の重み（2026-09-29〜、PIPELINE_REDESIGN.md §7）。旧来の最重視指標
+        # （wonder 0.45・transformation 0.25）は「暮らしがどれだけ劇的に変わるか」を重く見る
+        # ため、重い病気・障害ほど高得点になり、当事者の限られる題材に偏る原因になっていた。
+        # life_relevanceを廃止し、「その悩みに本当に答えているか」と「当てはまる人の広さ」を入れた。
+        answer_fit = _score_value(v, "answer_fit_score")
+        if _label(v, "evidence_level") in WEAK_EVIDENCE_LEVELS:
+            answer_fit = min(answer_fit, WEAK_EVIDENCE_ANSWER_FIT_CAP)
+        return (
+            wonder * 0.35
+            + answer_fit * 0.20
+            + _score_value(v, "applicable_breadth_score") * 0.15
+            + transformation * 0.15
+            + _score_value(v, "surprise_score") * 0.10
+            + _score_value(v, "persona_fit_score") * 0.05
+        )
+
+    # ワイルドカード（関心ごとを持たない回）は従来の重み
     return (
         wonder * 0.45
         + transformation * 0.25
@@ -480,25 +610,37 @@ def overall_score(v: dict) -> float:
     )
 
 
-def run_category(client: genai.Client, name: str, cat: dict, limit: int, past_episodes: str) -> list:
-    label = cat["label"]
-    eligible = [p for p in cat["papers"] if p.get("stage3", {}).get("overall") != "high_risk"]
-    excluded = len(cat["papers"]) - len(eligible)
+def score_breakdown(v: dict) -> dict:
+    """在庫（topics_shortlist.json）に保存するスコア内訳。kl_shortlist_add.py・
+    kl_shortlist_rescore.pyの両方がこれを使う（フィールドの二重管理を避けるため）。"""
+    keys = ["wonder_score", "transformation_score"]
+    if is_concern_verdict(v):
+        keys += ["answer_fit_score", "applicable_breadth_score"]
+    else:
+        keys += ["life_relevance_score"]
+    keys += ["surprise_score", "persona_fit_score"]
+    return {k: v.get(k, 0) for k in keys}
+
+
+def run_concern(client: genai.Client, name: str, group: dict, concern: dict, limit: int, past_episodes: str) -> list:
+    eligible = [p for p in group["papers"] if p.get("stage3", {}).get("overall") != "high_risk"]
+    excluded = len(group["papers"]) - len(eligible)
     targets = eligible[:limit] if limit else eligible
-    print(f"\n=== カテゴリ: {label} ({name}) — {len(targets)}件を判定（STAGE3 high_risk除外{excluded}件）===")
+    print(f"\n=== 関心ごと: {concern['label']} ({name}) — {len(targets)}件を判定（STAGE3 high_risk除外{excluded}件）===")
 
     deja_vu_upto = latest_known_episode_id()
     scored = []
     for paper in targets:
         time.sleep(CALL_DELAY_SEC)
-        verdict = score_paper(client, paper, past_episodes)
+        verdict = score_paper(client, paper, past_episodes, concern)
         score = round(overall_score(verdict), 2)
         fallback_tag = " [FALLBACK]" if verdict.get("_fallback") else ""
         print(f"  [{score}]{fallback_tag} {paper.get('title')[:70]}")
+        print(f"      問い: {verdict.get('entry_question', '')}")
         entry = {
             **paper,
-            "category": name,
-            "category_label": label,
+            "concern_id": name,
+            "concern_label": concern["label"],
             "stage4": verdict,
             "overall_score": score,
         }
@@ -514,11 +656,15 @@ def run_category(client: genai.Client, name: str, cat: dict, limit: int, past_ep
     return scored
 
 
+def load_concerns() -> dict:
+    return {c["id"]: c for c in json.loads(CONCERNS_PATH.read_text())["concerns"]}
+
+
 def main():
     parser = argparse.ArgumentParser(description="STAGE4「面白いか」一次判定（Gemini）")
-    parser.add_argument("--category", help="特定カテゴリのみ実行（stage3_hypecheck.jsonのキー）")
-    parser.add_argument("--limit", type=int, default=0, help="カテゴリごとに先頭N件のみ処理（0=全件）")
-    parser.add_argument("--top", type=int, default=20, help="全体上位N件をSTAGE5候補として出力（デフォルト20）")
+    parser.add_argument("--concern", help="特定の関心ごとのみ実行（stage3_hypecheck.jsonのキー）")
+    parser.add_argument("--limit", type=int, default=0, help="先頭N件のみ処理（0=全件）")
+    parser.add_argument("--top", type=int, default=10, help="上位N件をSTAGE5候補として出力（デフォルト10）")
     args = parser.parse_args()
 
     if not API_KEY:
@@ -532,20 +678,21 @@ def main():
     sys.stdout.reconfigure(line_buffering=True)  # ファイルにリダイレクトしても進捗が都度見えるように
 
     checked = json.loads(INPUT_PATH.read_text())
-    categories = checked["categories"]
-    if args.category:
-        if args.category not in categories:
-            print(f"未知のカテゴリ: {args.category}（候補: {', '.join(categories)}）", file=sys.stderr)
+    groups = checked["concerns"]
+    if args.concern:
+        if args.concern not in groups:
+            print(f"未知の関心ごと: {args.concern}（候補: {', '.join(groups)}）", file=sys.stderr)
             sys.exit(1)
-        categories = {args.category: categories[args.category]}
+        groups = {args.concern: groups[args.concern]}
+    concerns = load_concerns()
 
     client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
     past_episodes = build_past_episodes_context()
 
     all_scored = []
-    for name, cat in categories.items():
-        all_scored.extend(run_category(client, name, cat, args.limit, past_episodes))
-        # カテゴリ完了ごとに書き出す（2026-08追加: 1件のハングで全進捗を失った事故を受けて）
+    for name, group in groups.items():
+        all_scored.extend(run_concern(client, name, group, concerns[name], args.limit, past_episodes))
+        # 関心ごと完了ごとに書き出す（2026-08追加: 1件のハングで全進捗を失った事故を受けて）
         OUTPUT_PATH.write_text(json.dumps(
             {"generated_at": datetime.now().isoformat(timespec="seconds"), "complete": False, "all_scored": all_scored},
             ensure_ascii=False, indent=2,
@@ -555,10 +702,10 @@ def main():
     all_scored.sort(key=lambda p: p["overall_score"], reverse=True)
     top_n = all_scored[: args.top]
 
-    print(f"\n=== STAGE4 全体ランキング 上位{len(top_n)}件（STAGE5候補） ===")
+    print(f"\n=== STAGE4 上位{len(top_n)}件（STAGE5候補） ===")
     for i, p in enumerate(top_n, 1):
-        print(f"  {i}. [{p['overall_score']}] {p['category_label']} — {p['title'][:60]}")
-        print(f"     フック案: {p['stage4'].get('hook_idea', '')}")
+        print(f"  {i}. [{p['overall_score']}] {p['concern_label']} — {p['title'][:60]}")
+        print(f"     問い: {p['stage4'].get('entry_question', '')}")
 
     output = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),

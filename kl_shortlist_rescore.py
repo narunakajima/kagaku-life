@@ -53,11 +53,18 @@ kl_paper_interest_score.pyからimportして再利用——プロンプト・重
   エピソードが1本増えるたびに在庫全件をGeminiで再採点するのはコストが
   見合わないため。全件再判定したい場合は`--stale-deja-vu`を明示する）。
 
+2026-09-29〜（ネタ選定パイプライン作り直し、PIPELINE_REDESIGN.md）: 在庫を関心ごと起点の
+新在庫（topics_shortlist.json）と旧在庫（topics_shortlist_legacy.json）に分けた。通常の
+再採点は新在庫だけを関心ごと単位で行う（採点時に viewer_concerns.json の関心ごとを渡す）。
+旧在庫は一括では再採点しない。ワイルドカード枠で使うと決めた候補だけを
+`--legacy-paper-id` で1件ずつ、関心ごとなし（ワイルドカード）の採点で採点し直す。
+
 使い方:
   python3 kl_shortlist_rescore.py --check                # 再採点が必要な件数を確認するだけ（非ゼロ終了=要再採点）
-  python3 kl_shortlist_rescore.py                         # 全カテゴリ、古いバージョンのみ再採点
-  python3 kl_shortlist_rescore.py --category aging_care   # 特定カテゴリのみ
-  python3 kl_shortlist_rescore.py --limit 5               # カテゴリごと先頭N件のみ（動作確認用）
+  python3 kl_shortlist_rescore.py                         # 新在庫の全関心ごと、古いバージョンのみ再採点
+  python3 kl_shortlist_rescore.py --concern sleep         # 特定の関心ごとのみ
+  python3 kl_shortlist_rescore.py --limit 5               # 関心ごとごと先頭N件のみ（動作確認用）
+  python3 kl_shortlist_rescore.py --legacy-paper-id <paperId>   # 旧在庫の1件をワイルドカードとして採点し直す
   python3 kl_shortlist_rescore.py --force                 # 既に最新バージョンのエントリも含め全件再採点
   python3 kl_shortlist_rescore.py --stale-deja-vu         # 既視感判定が最新エピソードを見ていないエントリも対象に含める
 
@@ -78,10 +85,13 @@ from google.genai import types
 
 from kl_paper_interest_score import (
     BASE_DIR,
+    LEGACY_SHORTLIST_PATH,
     STAGE4_VERSION,
     build_past_episodes_context,
     latest_known_episode_id,
+    load_concerns,
     overall_score,
+    score_breakdown,
     score_paper,
 )
 
@@ -185,10 +195,62 @@ def atomic_write(path, data: dict) -> None:
     os.replace(tmp, path)
 
 
+def rescore_legacy_one(paper_id: str) -> None:
+    """旧在庫の1件を、関心ごとなし（ワイルドカード）の採点で採点し直す（2026-09-29追加）。
+    ワイルドカード枠で使う候補を決めたときにだけ使う。旧在庫全件の再採点はしない
+    （旧在庫は旧方式で集めた候補で、ワイルドカード枠は5話に1話しか使わないため）。"""
+    if not API_KEY:
+        print("❌ GEMINI_API_KEY が設定されていません", file=sys.stderr)
+        sys.exit(1)
+    data = json.loads(LEGACY_SHORTLIST_PATH.read_text())
+    entry = next((e for e in data["shortlist"] if e.get("paperId") == paper_id), None)
+    if entry is None:
+        print(f"❌ 旧在庫に paperId {paper_id} がありません", file=sys.stderr)
+        sys.exit(1)
+
+    abstract = fetch_abstracts_batch([paper_id]).get(paper_id)
+    if abstract is CHUNK_REQUEST_FAILED:
+        print("❌ abstractの取得が一時的に失敗しました。時間をおいて再実行してください", file=sys.stderr)
+        sys.exit(1)
+    paper = {
+        "title": entry.get("title"),
+        "venue": entry.get("venue"),
+        "is_preprint": entry.get("is_preprint"),
+        "year": entry.get("year"),
+        "abstract": abstract or "",
+        "stage3": {},
+    }
+    client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=60_000))
+    verdict = score_paper(client, paper, build_past_episodes_context(), None)
+    if verdict.get("_fallback"):
+        print(f"❌ Gemini採点に失敗しました: {verdict.get('reasoning')}", file=sys.stderr)
+        sys.exit(1)
+
+    today = date.today().isoformat()
+    old_score = entry.get("overall_score")
+    entry.setdefault("score_history", []).append({
+        "version": entry.get("stage4_version"), "score": old_score, "rescored_at": today,
+    })
+    entry["overall_score"] = round(overall_score(verdict), 2)
+    entry["score_breakdown"] = score_breakdown(verdict)
+    for key in ("market_status", "novel_delta", "behavioral_familiarity", "behavioral_familiarity_note",
+                "demonstrated_capability", "future_scene_sketch", "deja_vu_note", "deja_vu_level",
+                "hook_idea", "example_protagonist"):
+        if verdict.get(key) not in (None, ""):
+            entry[key] = verdict[key]
+    entry["deja_vu_context_upto"] = latest_known_episode_id()
+    entry["stage4_version"] = STAGE4_VERSION
+    entry["rescored_at"] = today
+    atomic_write(LEGACY_SHORTLIST_PATH, data)
+    print(f"✅ [{old_score} → {entry['overall_score']}] {entry.get('title', '')[:70]}")
+    print(f"   既視感: {entry.get('deja_vu_level')} {entry.get('deja_vu_note', '')[:80]}")
+
+
 def main():
     parser = argparse.ArgumentParser(description="topics_shortlist.jsonの在庫を最新STAGE4ロジックで再採点する")
-    parser.add_argument("--category", help="特定カテゴリのみ再採点")
-    parser.add_argument("--limit", type=int, default=0, help="カテゴリごと先頭N件のみ（0=全件、動作確認用）")
+    parser.add_argument("--concern", help="特定の関心ごとのみ再採点")
+    parser.add_argument("--limit", type=int, default=0, help="関心ごとごと先頭N件のみ（0=全件、動作確認用）")
+    parser.add_argument("--legacy-paper-id", help="旧在庫（topics_shortlist_legacy.json）の1件をワイルドカードとして採点し直す")
     parser.add_argument("--force", action="store_true", help="既に最新バージョンのエントリも含め全件再採点する")
     parser.add_argument("--dry-run", action="store_true", help="対象件数の確認のみ、API呼び出しをしない")
     parser.add_argument(
@@ -203,6 +265,10 @@ def main():
     )
     args = parser.parse_args()
 
+    if args.legacy_paper_id:
+        rescore_legacy_one(args.legacy_paper_id)
+        return
+
     if not SHORTLIST_PATH.exists():
         print(f"❌ {SHORTLIST_PATH} がありません", file=sys.stderr)
         sys.exit(1)
@@ -216,12 +282,12 @@ def main():
     targets_by_cat: dict = {}
     stale_by_cat: dict = {}
     for e in entries:
-        if args.category and e.get("category") != args.category:
+        if args.concern and e.get("concern_id") != args.concern:
             continue
         if needs_rescore(e, args.force, args.stale_deja_vu, latest_episode):
-            targets_by_cat.setdefault(e.get("category", "unknown"), []).append(e)
+            targets_by_cat.setdefault(e.get("concern_id", "unknown"), []).append(e)
         if e.get("status") == "available" and is_deja_vu_stale(e, latest_episode):
-            stale_by_cat.setdefault(e.get("category", "unknown"), []).append(e)
+            stale_by_cat.setdefault(e.get("concern_id", "unknown"), []).append(e)
 
     total = sum(len(v) for v in targets_by_cat.values())
     stale_total = sum(len(v) for v in stale_by_cat.values())
@@ -261,12 +327,18 @@ def main():
     client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=60_000))
     past_episodes = build_past_episodes_context()
     today = date.today().isoformat()
+    concerns = load_concerns()
 
     rescored_count = 0
     skipped_count = 0
     for cat, lst in targets_by_cat.items():
         targets = lst[: args.limit] if args.limit else lst
-        print(f"\n=== カテゴリ: {cat} — {len(targets)}件を再採点 ===")
+        concern = concerns.get(cat)
+        if concern is None:
+            print(f"\n⚠️ 関心ごと {cat} が viewer_concerns.json にありません。{len(lst)}件をスキップします")
+            skipped_count += len(lst)
+            continue
+        print(f"\n=== 関心ごと: {concern['label']} ({cat}) — {len(targets)}件を再採点 ===")
 
         print(f"  abstractを一括取得中（batch API、{len(targets)}件）...")
         abstracts = fetch_abstracts_batch([e["paperId"] for e in targets])
@@ -302,7 +374,7 @@ def main():
             }
 
             time.sleep(1.0)  # Gemini呼び出し間隔
-            verdict = score_paper(client, paper, past_episodes)
+            verdict = score_paper(client, paper, past_episodes, concern)
 
             if verdict.get("_fallback"):
                 # 2026-09-06: Gemini呼び出しが全滅した場合、stage4_versionを更新せず
@@ -321,13 +393,9 @@ def main():
             })
 
             entry["overall_score"] = score
-            entry["score_breakdown"] = {
-                "wonder_score": verdict.get("wonder_score", 0),
-                "transformation_score": verdict.get("transformation_score", 0),
-                "life_relevance_score": verdict.get("life_relevance_score", 0),
-                "surprise_score": verdict.get("surprise_score", 0),
-                "persona_fit_score": verdict.get("persona_fit_score", 0),
-            }
+            entry["score_breakdown"] = score_breakdown(verdict)
+            entry["entry_question"] = verdict.get("entry_question", "")
+            entry["evidence_level"] = verdict.get("evidence_level", "")
             entry["market_status"] = verdict.get("market_status", "")
             entry["novel_delta"] = verdict.get("novel_delta", "")
             entry["behavioral_familiarity"] = verdict.get("behavioral_familiarity", "")
@@ -359,7 +427,7 @@ def main():
             tag_str = f" ⚠️{' / '.join(tags)}" if tags else ""
             print(f"  [{old_score} → {score}]{tag_str} {entry.get('title', '')[:55]}")
 
-        # カテゴリ完了ごとにアトミック書き出す（Gemini呼び出しのハングで
+        # 関心ごと完了ごとにアトミック書き出す（Gemini呼び出しのハングで
         # 全進捗を失わないため。tmp+os.replaceで書き込み中断による破損も防ぐ）。
         atomic_write(SHORTLIST_PATH, data)
         print(f"  [保存済み] 累計 再採点{rescored_count}件 / スキップ{skipped_count}件 / 全{total}件")

@@ -173,6 +173,53 @@ def composite_thumbnail_text(image_path: Path, headline: str, sub: str = "") -> 
 
     img.convert("RGB").save(image_path, "PNG")
 
+
+THUMB_KEYWORD_COLOR = (255, 214, 0)  # B案のキーワード（黄）
+
+
+def composite_thumbnail_keyword(image_path: Path, keyword: str, line: str = "") -> None:
+    """サムネイルのB案（2026-09-29追加、PIPELINE_REDESIGN.md §9）。競合調査で伸びていた型
+    （濃い地に極太文字10〜15字、キーワード1語を最大）に合わせ、画面全体を暗く落として
+    キーワード1語を黄色で最大に、残りを白で1行に出す。A案（composite_thumbnail_text）と
+    YouTube Studioの「テストと比較」で比べるために作る（本編のみ対象、Shortsは対象外）。"""
+    img = Image.open(image_path).convert("RGBA")
+    w, h = img.size
+
+    # 左から右へ薄くなる暗幕（文字側を濃く、絵の見どころは右側に残す）
+    shade = Image.new("L", (w, 1), 0)
+    for x in range(w):
+        t = x / w
+        shade.putpixel((x, 0), int(150 if t < 0.5 else 150 - (t - 0.5) * 2 * 110))
+    shade = shade.resize((w, h))
+    dark = Image.new("RGBA", (w, h), (8, 14, 26, 0))
+    dark.putalpha(shade)
+    img.alpha_composite(dark, (0, 0))
+
+    draw = ImageDraw.Draw(img)
+    margin_x = int(w * 0.05)
+    max_w = int(w * 0.62)
+
+    def fit(text: str, size: int, min_size: int):
+        font = ImageFont.truetype(str(FONT_BOLD), size)
+        stroke = max(4, size // 12)
+        while draw.textbbox((0, 0), text, font=font, stroke_width=stroke)[2] > max_w and size > min_size:
+            size -= 4
+            font = ImageFont.truetype(str(FONT_BOLD), size)
+            stroke = max(4, size // 12)
+        return font, stroke, size
+
+    kw_font, kw_stroke, kw_size = fit(keyword, int(h * 0.34), 60)
+    line_font, line_stroke, line_size = fit(line, int(h * 0.13), 36) if line else (None, 0, 0)
+    block_h = kw_size + (int(line_size * 1.3) if line else 0)
+    y = (h - block_h) // 2
+    draw.text((margin_x, y), keyword, font=kw_font, fill=THUMB_KEYWORD_COLOR,
+              stroke_width=kw_stroke, stroke_fill=THUMB_SHADOW_COLOR)
+    if line:
+        draw.text((margin_x, y + int(kw_size * 1.1)), line, font=line_font, fill=THUMB_HEADLINE_COLOR,
+                  stroke_width=line_stroke, stroke_fill=THUMB_SHADOW_COLOR)
+
+    img.convert("RGB").save(image_path, "PNG")
+
 # CLAUDE.md「画像スタイル（2026-08-21改訂）」確定版
 BASE_CONTEXT = (
     "Rich flat editorial illustration style with soft warm lamp/window lighting and a "
@@ -754,6 +801,13 @@ def main():
             r["name"] = "thumbnail.png"
             qa_results.append(r)
             headline = ep.get("thumbnail_headline")
+            thumb_b = ep.get("thumbnail_b") or {}
+            if thumb_b.get("keyword") and r["ok"]:
+                # B案はA案の文字を合成する前の背景から作る（2026-09-29追加）
+                thumb_b_path = out_dir / "thumbnail_b.png"
+                shutil.copyfile(thumb_path, thumb_b_path)
+                composite_thumbnail_keyword(thumb_b_path, thumb_b["keyword"], thumb_b.get("line", ""))
+                print(f"   → B案: 「{thumb_b['keyword']}」{thumb_b.get('line', '')}（{thumb_b_path.name}）")
             if headline and r["ok"]:
                 composite_thumbnail_text(thumb_path, headline, ep.get("thumbnail_subcopy", ""))
                 print(f"   → テキスト合成: 「{headline}」")

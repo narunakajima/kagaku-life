@@ -4,12 +4,16 @@ kl_build_site.py — 幸せな未来のサイエンス 公式サイト生成
 生成ファイル:
   index.html      トップページ（近日公開 or 新着 + About + Subscribe）
   episodes.html   全動画一覧
-  playlists.html  カテゴリ別再生リスト（6カテゴリ固定）
+  playlists.html  テーマ別再生リスト（関心ごとの4領域）
 
 データソース:
   episodes/kl*.json    各エピソードの youtube_url / scheduled_at / タイトル等
-  topics_queue.json    episode_id → category（6カテゴリのどれか）の対応
-  category_playlists.json  カテゴリごとのYouTube再生リストID（未作成の間はnull）
+  topics_queue.json    episode_id → domain（関心ごとの4領域: life/daily/body/disease）の対応
+  viewer_concerns.json 4領域の表示名
+  theme_playlists.json 領域ごとのYouTube再生リストID（未作成の間はnull）
+
+2026-09-29〜: 分類を旧6カテゴリから関心ごとの4領域に変えた（ネタ選定パイプライン作り直し、
+PIPELINE_REDESIGN.md §8）。
 
 「公開済み」の判定は youtube_url が設定済み、かつ scheduled_at が過去（JST）であること。
 scheduled_at が未来（予約公開待ち）の場合は「近日公開」として扱い、タイトル等は出さない。
@@ -29,33 +33,24 @@ from pathlib import Path
 BASE_DIR = Path(__file__).parent
 EPISODES_DIR = BASE_DIR / "episodes"
 TOPICS_QUEUE_JSON = BASE_DIR / "topics_queue.json"
-CATEGORY_PLAYLISTS_JSON = BASE_DIR / "category_playlists.json"
+THEME_PLAYLISTS_JSON = BASE_DIR / "theme_playlists.json"
+CONCERNS_JSON = BASE_DIR / "viewer_concerns.json"
 CHANNEL_URL = "https://www.youtube.com/@kagaku-life"
 SITE_URL = "https://kagaku-life.com"
 CHANNEL_NAME = "幸せな未来のサイエンス"
 TAGLINE = "科学が届ける、くらしの小さな幸せ"
 UPDATE_CADENCE = "週3回更新（火・木・土 19:00）"
 
-# サイト表示順（2026-08-28: 家庭内ロボットを先頭に変更。ラベルはCLAUDE.md STAGE1と同じ）
-CATEGORY_ORDER = [
-    "home_robot", "aging_care", "medical_support",
-    "mobility", "work", "disaster_safety",
-]
-CATEGORY_LABELS = {
-    "aging_care": "高齢化・介護・自立支援",
-    "home_robot": "家庭内ロボット・家事自動化",
-    "medical_support": "医療補助技術",
-    "mobility": "モビリティ・身体拡張",
-    "work": "働き方の変化",
-    "disaster_safety": "防災・安全",
-}
-CATEGORY_ICONS = {
-    "aging_care": "🤝",
-    "home_robot": "🏠",
-    "medical_support": "🩺",
-    "mobility": "🦾",
-    "work": "💼",
-    "disaster_safety": "🚨",
+# サイト表示順（2026-09-29: 関心ごとの4領域に変更。暮らしを先頭にする——健康系は
+# 5話に2話までという選定ルールのため、暮らしが最も本数の多いテーマになる）。
+# 表示名は viewer_concerns.json の domains から読む（二重管理を避けるため）。
+THEME_ORDER = ["life", "daily", "body", "disease"]
+THEME_LABELS = {k: v["label"] for k, v in json.loads(CONCERNS_JSON.read_text(encoding="utf-8"))["domains"].items()}
+THEME_ICONS = {
+    "life": "🏠",
+    "daily": "☀️",
+    "body": "🦾",
+    "disease": "🩺",
 }
 WEEKDAY_JA = ["月", "火", "水", "木", "金", "土", "日"]
 
@@ -88,22 +83,22 @@ def is_published(ep: dict) -> bool:
     return datetime.now(timezone.utc) >= dt_utc
 
 
-def load_category_map() -> dict:
-    """episode_id -> category(key) の対応。topics_queue.json の queue から作る。"""
+def load_theme_map() -> dict:
+    """episode_id -> domain（テーマ）の対応。topics_queue.json の queue から作る。"""
     if not TOPICS_QUEUE_JSON.exists():
         return {}
     data = json.loads(TOPICS_QUEUE_JSON.read_text(encoding="utf-8"))
     m = {}
     for item in data.get("queue", []):
         eid = item.get("episode_id")
-        cat = item.get("category")
-        if eid and cat:
-            m[eid] = cat
+        theme = item.get("domain")
+        if eid and theme:
+            m[eid] = theme
     return m
 
 
 def load_episodes() -> list[dict]:
-    cat_map = load_category_map()
+    theme_map = load_theme_map()
     eps = []
     for p in sorted(EPISODES_DIR.glob("kl[0-9]*.json")):
         if p.stat().st_size == 0:
@@ -114,17 +109,17 @@ def load_episodes() -> list[dict]:
             continue
         if not (d.get("youtube_title") or d.get("episode_title")):
             continue
-        d["_category"] = cat_map.get(d.get("episode_id", ""))
+        d["_theme"] = theme_map.get(d.get("episode_id", ""))
         d["_published"] = is_published(d)
         eps.append(d)
     eps.reverse()  # 最新（kl番号が大きい順）
     return eps
 
 
-def load_category_playlists() -> dict:
-    if not CATEGORY_PLAYLISTS_JSON.exists():
+def load_theme_playlists() -> dict:
+    if not THEME_PLAYLISTS_JSON.exists():
         return {}
-    data = json.loads(CATEGORY_PLAYLISTS_JSON.read_text(encoding="utf-8"))
+    data = json.loads(THEME_PLAYLISTS_JSON.read_text(encoding="utf-8"))
     return {k: v for k, v in data.items() if not k.startswith("_")}
 
 
@@ -421,7 +416,7 @@ def coming_soon_html(launch_label: str, extra_note: str = "") -> str:
 
 def build_index(episodes: list[dict], published: list[dict], categories: list[dict]):
     ep_count = len(published)
-    cat_count = len(CATEGORY_ORDER)
+    cat_count = len(THEME_ORDER)
     launch_label = next_launch_label(episodes)
 
     if published:
@@ -504,7 +499,7 @@ def build_index(episodes: list[dict], published: list[dict], categories: list[di
   <div class="stats-strip reveal">
     <div class="stats-inner">
       <div class="stat-item"><p class="stat-num">{stat_ep}</p><p class="stat-label">{stat_ep_label}</p></div>
-      <div class="stat-item"><p class="stat-num">{cat_count}</p><p class="stat-label">カテゴリ</p></div>
+      <div class="stat-item"><p class="stat-num">{cat_count}</p><p class="stat-label">テーマ</p></div>
       <div class="stat-item"><p class="stat-num">週3回</p><p class="stat-label">火・木・土 19時更新</p></div>
     </div>
   </div>
@@ -593,8 +588,8 @@ def build_episodes(episodes: list[dict], published: list[dict]):
             vid = video_id(url)
             thumb = f'<img src="https://img.youtube.com/vi/{vid}/mqdefault.jpg" alt="" loading="lazy">' if vid else '<span class="card-thumb-icon">▶</span>'
             title = ep.get("youtube_title") or ep.get("episode_title", "")
-            cat = ep.get("_category")
-            cat_label = CATEGORY_LABELS.get(cat, "")
+            cat = ep.get("_theme")
+            cat_label = THEME_LABELS.get(cat, "")
             delay = f" reveal-delay-{(i % 4) + 1}" if (i % 4) != 0 else ""
             cards += f"""
         <a class="content-card reveal{delay}" href="{url}" target="_blank" rel="noopener">
@@ -631,22 +626,22 @@ def build_episodes(episodes: list[dict], published: list[dict]):
 
 
 # ──────────────────────────────────────────────
-# playlists.html — カテゴリ別再生リスト（6カテゴリ固定）
+# playlists.html — テーマ別再生リスト（関心ごとの4領域）
 # ──────────────────────────────────────────────
 
-def build_playlists(published: list[dict], category_playlists: dict):
+def build_playlists(published: list[dict], theme_playlists: dict):
     by_cat = {}
     for ep in published:
-        cat = ep.get("_category")
+        cat = ep.get("_theme")
         if cat:
             by_cat.setdefault(cat, []).append(ep)
 
     cards = ""
-    for i, cat in enumerate(CATEGORY_ORDER):
-        label = CATEGORY_LABELS[cat]
-        icon = CATEGORY_ICONS.get(cat, "🔬")
+    for i, cat in enumerate(THEME_ORDER):
+        label = THEME_LABELS[cat]
+        icon = THEME_ICONS.get(cat, "🔬")
         eps = by_cat.get(cat, [])
-        pl_info = category_playlists.get(cat, {})
+        pl_info = theme_playlists.get(cat, {})
         pl_id = pl_info.get("playlist_id")
         delay = f" reveal-delay-{(i % 3) + 1}" if (i % 3) != 0 else ""
 
@@ -672,15 +667,15 @@ def build_playlists(published: list[dict], category_playlists: dict):
 
     html = head_html(
         f"プレイリスト | {CHANNEL_NAME}",
-        f"{CHANNEL_NAME}をカテゴリ別に見る——高齢化・介護、家庭内ロボット、医療補助技術、モビリティ、働き方、防災・安全の6カテゴリ。"
+        f"{CHANNEL_NAME}をテーマ別に見る——暮らし、毎日の調子、体の不調、病気の予防の4テーマ。"
     )
     html += nav_html("プレイリスト")
     html += f"""
 
   <section style="padding-top:60px;">
     <div class="section-inner">
-      <p class="section-label reveal">By Category</p>
-      <h1 class="section-heading reveal reveal-delay-1" style="font-size:clamp(1.3rem,4.5vw,1.9rem);">カテゴリで選ぶ</h1>
+      <p class="section-label reveal">By Theme</p>
+      <h1 class="section-heading reveal reveal-delay-1" style="font-size:clamp(1.3rem,4.5vw,1.9rem);">テーマで選ぶ</h1>
       <p class="reveal reveal-delay-2" style="text-align:center;color:#4a5866;line-height:1.9;margin-bottom:48px;max-width:520px;margin-left:auto;margin-right:auto;">
         気になるテーマから、くらしを変える研究をまとめて見られます。
       </p>
@@ -693,7 +688,7 @@ def build_playlists(published: list[dict], category_playlists: dict):
     html += REVEAL_JS
     html += "\n</body>\n</html>"
     (BASE_DIR / "playlists.html").write_text(html, encoding="utf-8")
-    print(f"  ✓ playlists.html（{len(CATEGORY_ORDER)}カテゴリ）")
+    print(f"  ✓ playlists.html（{len(THEME_ORDER)}テーマ）")
 
 
 # ──────────────────────────────────────────────
@@ -706,12 +701,12 @@ def build():
         print("❌ エピソードが見つかりませんでした")
         sys.exit(1)
     published = [ep for ep in episodes if ep.get("_published")]
-    category_playlists = load_category_playlists()
+    theme_playlists = load_theme_playlists()
 
     print(f"  エピソード: 全{len(episodes)}件 / 公開済み{len(published)}件")
-    build_index(episodes, published, CATEGORY_ORDER)
+    build_index(episodes, published, THEME_ORDER)
     build_episodes(episodes, published)
-    build_playlists(published, category_playlists)
+    build_playlists(published, theme_playlists)
     print("  ✓ サイト生成完了")
 
 

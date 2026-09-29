@@ -16,6 +16,15 @@ episodes/kl{NNN}.json の reference_index 付きシーン（finding/data）を�
 「査読」「プレプリント」語のナレーション内混入チェックは検索不要の単純な
 文字列チェックのため、Gemini呼び出しとは別にPythonで直接行う。
 
+2026-09-29追加: 健康の話題の語り方のチェック（検索なし、エピソード全体で1回）。
+YouTubeは2026年7月、AIの語り手が専門家を装って健康・医療の助言をする内容を
+収益化の対象外にした（YouTubeヘルプ「不自然なコンテンツ」）。一方、特定の医学研究の
+結果を紹介・議論すること自体は医療に関する誤情報ポリシーの例外として明記されている。
+そこで台本が「研究結果の紹介」にとどまり、①視聴者への健康上の助言（「〜しましょう」
+「〜すれば治る」、薬・サプリの勧め等）、②語り手が医師・専門家を名乗る、
+③研究段階の結果を確立した治療法のように語る、のいずれにもなっていないかを確認する
+（ネタ選定パイプライン作り直し、PIPELINE_REDESIGN.md §9）。
+
 Opusは使わない。Geminiのみで完結する（STAGE2/STAGE3と同方針）。
 
 使い方:
@@ -74,6 +83,30 @@ DOI/URL: {doi_url}
 {{"numbers_match": true|false, "institution_match": true|false, "hedging_preserved": true|false,
 "scope_exaggerated": true|false, "issues": ["具体的な問題点", ...], "overall": "ok|caution|high_risk",
 "reasoning": "..."}}
+"""
+
+
+HEALTH_TONE_PROMPT = """あなたはYouTubeのポリシーに詳しい台本チェック担当です。以下は、学術研究を一般向けに
+紹介する日本語チャンネルの台本（ナレーション全文・タイトル・概要欄）です。語り手の声はAIで
+合成しています。登場する主人公は架空の生活者です。
+
+このチャンネルは「研究結果を紹介する」番組であり、視聴者に健康上の助言をする番組ではありません。
+次のいずれかに当たる箇所がないか確認してください。
+1. 視聴者への健康・医療上の助言や指示（例:「〜しましょう」「〜を試してみてください」
+   「〜すれば治ります」、薬・サプリ・治療法を勧める、用量を示す）。主人公が自分の体験として
+   語る独白や、研究内容の説明は助言に当たらない
+2. 語り手が医師・専門家・研究者本人を名乗る、またはそう装う
+3. 研究段階の結果（動物実験・小規模試験・承認前の治療など）を、すでに確立した治療法や
+   誰にでも効く方法のように語っている
+
+【タイトル】{title}
+【概要欄】{description}
+【ナレーション】
+{narrations}
+
+出力は次のJSON形式のみで、他のテキスト・Markdown装飾は一切含めないこと。該当がなければ issues は空配列:
+{{"issues": [{{"where": "S05 など場所", "type": "advice|expert_claim|overclaim", "text": "該当箇所の引用", "fix": "直し方の案"}}],
+"overall": "ok|caution|high_risk", "reasoning": "..."}}
 """
 
 
@@ -142,6 +175,28 @@ def check_jargon(scenes: list) -> list:
     return hits
 
 
+def check_health_tone(client: genai.Client, ep: dict, retries: int = 3) -> dict:
+    """健康の話題の語り方（助言・専門家の名乗り・言い過ぎ）をエピソード全体で1回チェックする。"""
+    lines = [f"S{s['scene_id']:02d}（{s.get('type')}）: {s.get('narration', '')}" for s in ep.get("scenes", [])]
+    for sh in ep.get("shorts", []):
+        for i, sc in enumerate(sh.get("scenes", []), start=1):
+            lines.append(f"Shorts{sh.get('shorts_id')} S{i:02d}: {sc.get('narration', '')}")
+    prompt = HEALTH_TONE_PROMPT.format(
+        title=ep.get("youtube_title") or ep.get("episode_title") or "",
+        description=(ep.get("youtube_description") or "")[:1500],
+        narrations="\n".join(lines),
+    )
+    for attempt in range(retries):
+        try:
+            resp = client.models.generate_content(model=MODEL, contents=prompt)
+            return json.loads(strip_code_fence(resp.text or ""))
+        except Exception as e:  # noqa: BLE001
+            if attempt < retries - 1:
+                time.sleep(2 ** (attempt + 1))
+                continue
+            return {"issues": [], "overall": "caution", "reasoning": f"チェックに失敗（{retries}回試行）: {e}"}
+
+
 def run(episode_id: str):
     if not API_KEY:
         print("❌ GEMINI_API_KEY が設定されていません", file=sys.stderr)
@@ -194,13 +249,21 @@ def run(episode_id: str):
     else:
         print("\n✓ 「査読」「プレプリント」語の混入なし")
 
+    print("\n健康の話題の語り方をチェック中（助言・専門家の名乗り・言い過ぎ）... ", end="", flush=True)
+    time.sleep(CALL_DELAY_SEC)
+    health_tone = check_health_tone(client, ep)
+    tone_overall = health_tone.get("overall", "caution")
+    print({"ok": "✅", "caution": "⚠️", "high_risk": "❌"}.get(tone_overall, "❓"), tone_overall)
+    for issue in health_tone.get("issues", []):
+        print(f"    - [{issue.get('where')}/{issue.get('type')}] {issue.get('text')} → {issue.get('fix')}")
+
     print(f"\n=== 結果: ok={counts.get('ok', 0)} caution={counts.get('caution', 0)} "
-          f"high_risk={counts.get('high_risk', 0)} ===")
+          f"high_risk={counts.get('high_risk', 0)} / 健康の語り方: {tone_overall} ===")
 
     DESKTOP_DIR.mkdir(parents=True, exist_ok=True)
     out_path = DESKTOP_DIR / "fact_check_result.json"
     out_path.write_text(
-        json.dumps({"counts": counts, "results": results, "jargon_hits": jargon_hits},
+        json.dumps({"counts": counts, "results": results, "jargon_hits": jargon_hits, "health_tone": health_tone},
                    ensure_ascii=False, indent=2)
     )
     print(f"\n結果を保存しました: {out_path}")

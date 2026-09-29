@@ -112,6 +112,13 @@ def main():
     else:
         missing.append("images/thumbnail.png")
 
+    # サムネイルB案（2026-09-29追加。YouTube Studioの「テストと比較」でA案と比べる用）
+    if assets_safe and (ep.get("thumbnail_b") or {}).get("keyword"):
+        if copy_if_exists(desktop_images / "thumbnail_b.png", drive_ep_dir / "images" / "thumbnail_b.png"):
+            copied += 1
+        else:
+            missing.append("images/thumbnail_b.png")
+
     for shorts in ep.get("shorts", []):
         mid = shorts["shorts_id"]
 

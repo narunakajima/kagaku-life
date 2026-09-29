@@ -20,10 +20,10 @@ Opusは使わない（コスト・利用枠の都合。2026-08確定）。Gemini
 
 使い方:
   python3 kl_paper_screen.py                        # stage1_pool.json全件をスクリーニング
-  python3 kl_paper_screen.py --category aging_care   # 特定カテゴリのみ
-  python3 kl_paper_screen.py --limit 3               # 各カテゴリ上位N件のみ（動作確認用）
+  python3 kl_paper_screen.py --concern sleep          # 特定の関心ごとのみ
+  python3 kl_paper_screen.py --limit 3               # 先頭N件のみ（動作確認用）
 
-出力: stage2_screened.json（カテゴリ別: pass/flag/exclude件数・各論文の判定理由）
+出力: stage2_screened.json（関心ごと別: pass/flag/exclude件数・各論文の判定理由）
 """
 
 import argparse
@@ -187,10 +187,10 @@ def _screen_paper_once(client: genai.Client, paper: dict, use_search: bool, retr
             }
 
 
-def run_category(client: genai.Client, name: str, cat: dict, limit: int) -> dict:
+def run_group(client: genai.Client, name: str, cat: dict, limit: int) -> dict:
     label = cat["label"]
     candidates = cat["candidates"][:limit] if limit else cat["candidates"]
-    print(f"\n=== カテゴリ: {label} ({name}) — {len(candidates)}件をスクリーニング ===")
+    print(f"\n=== 関心ごと: {label} ({name}) — {len(candidates)}件をスクリーニング ===")
 
     results = []
     counts = {"pass": 0, "flag": 0, "exclude": 0}
@@ -223,7 +223,7 @@ def run_category(client: genai.Client, name: str, cat: dict, limit: int) -> dict
         results.append({**paper, "stage2": verdict})
 
     print(
-        f"  カテゴリ集計: pass={counts['pass']}（うち許可リスト自動pass{auto_passed}）"
+        f"  集計: pass={counts['pass']}（うち許可リスト自動pass{auto_passed}）"
         f" flag={counts['flag']} exclude={counts['exclude']}"
     )
 
@@ -237,8 +237,8 @@ def run_category(client: genai.Client, name: str, cat: dict, limit: int) -> dict
 
 def main():
     parser = argparse.ArgumentParser(description="STAGE2信頼性チェック（Gemini。検索は --search 指定時のみ）")
-    parser.add_argument("--category", help="特定カテゴリのみ実行（stage1_pool.jsonのキー）")
-    parser.add_argument("--limit", type=int, default=0, help="カテゴリごとに先頭N件のみ処理（0=全件）")
+    parser.add_argument("--concern", help="特定の関心ごとのみ実行（stage1_pool.jsonのキー）")
+    parser.add_argument("--limit", type=int, default=0, help="関心ごとごとに先頭N件のみ処理（0=全件）")
     parser.add_argument("--search", action="store_true", help="Google Searchグラウンディングを有効にする（課金増。デフォルトOFF）")
     args = parser.parse_args()
 
@@ -256,12 +256,12 @@ def main():
     sys.stdout.reconfigure(line_buffering=True)  # ファイルにリダイレクトしても進捗が都度見えるように
 
     pool = json.loads(INPUT_PATH.read_text())
-    categories = pool["categories"]
-    if args.category:
-        if args.category not in categories:
-            print(f"未知のカテゴリ: {args.category}（候補: {', '.join(categories)}）", file=sys.stderr)
+    groups = pool["concerns"]
+    if args.concern:
+        if args.concern not in groups:
+            print(f"未知の関心ごと: {args.concern}（候補: {', '.join(groups)}）", file=sys.stderr)
             sys.exit(1)
-        categories = {args.category: categories[args.category]}
+        groups = {args.concern: groups[args.concern]}
 
     client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
 
@@ -278,15 +278,15 @@ def main():
             "complete": done,
             "total_counts": total_counts,
             "total_auto_passed": total_auto_passed,
-            "categories": results,
+            "concerns": results,
         }
         OUTPUT_PATH.write_text(json.dumps(output, ensure_ascii=False, indent=2))
         return total_counts | {"auto_passed": total_auto_passed}
 
     results = {}
-    for name, cat in categories.items():
-        results[name] = run_category(client, name, cat, args.limit)
-        # カテゴリ完了ごとに書き出す（2026-08追加: 1件のハングで全進捗を失った事故を受けて）
+    for name, cat in groups.items():
+        results[name] = run_group(client, name, cat, args.limit)
+        # 関心ごと完了ごとに書き出す（2026-08追加: 1件のハングで全進捗を失った事故を受けて）
         totals = write_checkpoint(results, done=False)
         print(f"  [チェックポイント保存済み] 累計 pass={totals['pass']} flag={totals['flag']} exclude={totals['exclude']}")
 

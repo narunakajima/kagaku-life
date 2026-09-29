@@ -11,10 +11,10 @@ Opusは使わない。Geminiのみで完結する（STAGE2と同方針）。
 
 使い方:
   python3 kl_paper_hypecheck.py                        # STAGE2通過分すべてを検証
-  python3 kl_paper_hypecheck.py --category aging_care   # 特定カテゴリのみ
-  python3 kl_paper_hypecheck.py --limit 3               # 各カテゴリ先頭N件のみ（動作確認用）
+  python3 kl_paper_hypecheck.py --concern sleep          # 特定の関心ごとのみ
+  python3 kl_paper_hypecheck.py --limit 3               # 先頭N件のみ（動作確認用）
 
-出力: stage3_hypecheck.json（カテゴリ別: ok/caution/high_riskの内訳・各論文の検証結果）
+出力: stage3_hypecheck.json（関心ごと別: ok/caution/high_riskの内訳・各論文の検証結果）
 """
 
 import argparse
@@ -120,13 +120,13 @@ def check_paper(client: genai.Client, paper: dict, retries: int = 3) -> dict:
             }
 
 
-def run_category(client: genai.Client, name: str, cat: dict, limit: int) -> dict:
+def run_group(client: genai.Client, name: str, cat: dict, limit: int) -> dict:
     label = cat["label"]
     eligible = [p for p in cat["papers"] if p.get("stage2", {}).get("overall") in ("pass", "flag")]
     excluded_at_stage2 = len(cat["papers"]) - len(eligible)
     targets = eligible[:limit] if limit else eligible
     print(
-        f"\n=== カテゴリ: {label} ({name}) — "
+        f"\n=== 関心ごと: {label} ({name}) — "
         f"STAGE2通過{len(eligible)}件中{len(targets)}件を検証（STAGE2除外済み{excluded_at_stage2}件はスキップ）==="
     )
 
@@ -144,7 +144,7 @@ def run_category(client: genai.Client, name: str, cat: dict, limit: int) -> dict
         print(f"  {mark} [{overall}/{coverage}] {paper.get('title')[:70]}")
         results.append({**paper, "stage3": verdict})
 
-    print(f"  カテゴリ集計: ok={counts['ok']} caution={counts['caution']} high_risk={counts['high_risk']}")
+    print(f"  集計: ok={counts['ok']} caution={counts['caution']} high_risk={counts['high_risk']}")
 
     return {
         "label": label,
@@ -155,8 +155,8 @@ def run_category(client: genai.Client, name: str, cat: dict, limit: int) -> dict
 
 def main():
     parser = argparse.ArgumentParser(description="STAGE3誇張表現検出（Gemini + Google Search）")
-    parser.add_argument("--category", help="特定カテゴリのみ実行（stage2_screened.jsonのキー）")
-    parser.add_argument("--limit", type=int, default=0, help="カテゴリごとに先頭N件のみ処理（0=全件）")
+    parser.add_argument("--concern", help="特定の関心ごとのみ実行（stage2_screened.jsonのキー）")
+    parser.add_argument("--limit", type=int, default=0, help="関心ごとごとに先頭N件のみ処理（0=全件）")
     args = parser.parse_args()
 
     if not API_KEY:
@@ -170,12 +170,12 @@ def main():
     sys.stdout.reconfigure(line_buffering=True)  # ファイルにリダイレクトしても進捗が都度見えるように
 
     screened = json.loads(INPUT_PATH.read_text())
-    categories = screened["categories"]
-    if args.category:
-        if args.category not in categories:
-            print(f"未知のカテゴリ: {args.category}（候補: {', '.join(categories)}）", file=sys.stderr)
+    groups = screened["concerns"]
+    if args.concern:
+        if args.concern not in groups:
+            print(f"未知の関心ごと: {args.concern}（候補: {', '.join(groups)}）", file=sys.stderr)
             sys.exit(1)
-        categories = {args.category: categories[args.category]}
+        groups = {args.concern: groups[args.concern]}
 
     client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
 
@@ -189,14 +189,14 @@ def main():
             "source": str(INPUT_PATH.name),
             "complete": done,
             "total_counts": total_counts,
-            "categories": results,
+            "concerns": results,
         }
         OUTPUT_PATH.write_text(json.dumps(output, ensure_ascii=False, indent=2))
         return total_counts
 
     results = {}
-    for name, cat in categories.items():
-        results[name] = run_category(client, name, cat, args.limit)
+    for name, cat in groups.items():
+        results[name] = run_group(client, name, cat, args.limit)
         totals = write_checkpoint(results, done=False)
         print(f"  [チェックポイント保存済み] 累計 ok={totals['ok']} caution={totals['caution']} high_risk={totals['high_risk']}")
 

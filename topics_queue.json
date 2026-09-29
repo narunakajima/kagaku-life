@@ -1,5 +1,5 @@
 {
-  "_comment": "制作キュー。配列の先頭が次に制作するエピソード（SC/LWと同じ並び順規約）。statusはpending(候補)→confirmed(STAGE5ゴーサイン済み・制作パイプライン未着手)→in_production(制作中)→produced(画像・音声・動画すべて完成、公開待ち。公開前に5本ストックしてから公開する方針のため、この状態のエピソードが複数溜まりうる)→published(YouTube公開済み)。kl_paper_search.pyはsemantic_scholar_idを既出として重複排除に使う。",
+  "_comment": "制作キュー。配列の先頭が次に制作するエピソード（SC/LWと同じ並び順規約）。statusはpending(候補)→confirmed(STAGE5ゴーサイン済み・制作パイプライン未着手)→in_production(制作中)→produced(画像・音声・動画すべて完成、公開待ち。公開前に5本ストックしてから公開する方針のため、この状態のエピソードが複数溜まりうる)→published(YouTube公開済み)。kl_paper_search.pyはsemantic_scholar_idを既出として重複排除に使う。 2026-09-29〜: 各エントリに slot_type（concern/wildcard/legacy）・concern_id（viewer_concerns.jsonのid。関心ごとに対応しない回はnull）・domain（body/disease/daily/life、公式サイトの分類と健康系の上限の判定に使う）・entry_question（視聴者側の問い）を持たせる。kl001〜kl026は旧方式（legacy）で選んだ回で、concern_id・domainは後から付けた。",
   "queue": [
     {
       "episode_id": "kl001",
@@ -97,7 +97,10 @@
           "overall_score": 4.5,
           "hook_idea_at_selection": "家事をロボットに頼みたい…でも、大事なお皿や高級家具を壊されたらどうしよう？と思ったことはありませんか？"
         }
-      ]
+      ],
+      "slot_type": "legacy",
+      "concern_id": "housework",
+      "domain": "life"
     },
     {
       "episode_id": "kl002",
@@ -136,7 +139,10 @@
           "overall_score": 4.65,
           "hook_idea_at_selection": "AIを使えば学歴による仕事の成果差は75%消える？最新研究が明かした『格差の正体』とは。"
         }
-      ]
+      ],
+      "slot_type": "legacy",
+      "concern_id": "work_ai",
+      "domain": "life"
     },
     {
       "episode_id": "kl003",
@@ -175,7 +181,10 @@
           "overall_score": 4.5,
           "hook_idea_at_selection": "もし脳に針を刺すことなく、頭で考えるだけでパソコンやゲームを操作できるとしたら？"
         }
-      ]
+      ],
+      "slot_type": "legacy",
+      "concern_id": null,
+      "domain": "body"
     },
     {
       "episode_id": "kl004",
@@ -214,7 +223,10 @@
           "overall_score": 4.65,
           "hook_idea_at_selection": "「最近、歩くのが億劫になった…」その悩み、重いロボットではなく“超軽いギア”1つで変わるかもしれません。"
         }
-      ]
+      ],
+      "slot_type": "legacy",
+      "concern_id": "bone_muscle",
+      "domain": "body"
     },
     {
       "episode_id": "kl005",
@@ -250,7 +262,10 @@
           "overall_score": 4.05,
           "hook_idea_at_selection": "週2回ロボットと遊ぶだけで認知機能スコアが大幅改善？デイケアに通う親の未来を変える最新研究とは。"
         }
-      ]
+      ],
+      "slot_type": "legacy",
+      "concern_id": "dementia",
+      "domain": "disease"
     },
     {
       "episode_id": "kl006",
@@ -288,7 +303,10 @@
           "overall_score": 3.9,
           "hook_idea_at_selection": "大地震で道路が全滅…絶望の孤立集落に、AIドローンは『誰から』薬を届けるべきでしょうか？"
         }
-      ]
+      ],
+      "slot_type": "legacy",
+      "concern_id": "disaster",
+      "domain": "life"
     },
     {
       "episode_id": "kl007",
@@ -360,7 +378,10 @@
           },
           "hook_idea_at_selection": "もし明日、大切な人の『声』が失われたら……脳の信号をAIで解読し、わずか1時間半の学習で元の声を取り戻す最新科学とは？"
         }
-      ]
+      ],
+      "slot_type": "legacy",
+      "concern_id": null,
+      "domain": "body"
     },
     {
       "episode_id": "kl008",
@@ -403,7 +424,10 @@
           },
           "hook_idea_at_selection": "「疲れて帰った夜、シンクに溜まった食器を見てぐったりしていませんか？」"
         }
-      ]
+      ],
+      "slot_type": "legacy",
+      "concern_id": "housework",
+      "domain": "life"
     },
     {
       "episode_id": "kl009",
@@ -443,7 +467,10 @@
           "overall_score": 4.5,
           "hook_idea_at_selection": "自分の意思で曲がる足――もし義足が『機械』ではなく『自分の身体』になったら、暮らしはどう変わるでしょうか？"
         }
-      ]
+      ],
+      "slot_type": "legacy",
+      "concern_id": null,
+      "domain": "body"
     },
     {
       "episode_id": "kl010",
@@ -484,7 +511,10 @@
           "overall_score": 4.4,
           "hook_idea_at_selection": "坂道や長距離の歩行、最近おっくうになっていませんか？もし『着るだけで歩行エネルギーを16％減らせる服』があったら、あなたの外出はどう変わるでしょうか？"
         }
-      ]
+      ],
+      "slot_type": "legacy",
+      "concern_id": "bone_muscle",
+      "domain": "body"
     },
     {
       "episode_id": "kl011",
@@ -525,7 +555,10 @@
           },
           "hook_idea_at_selection": "「ルンバを動かすために、まず床のおもちゃを片付ける」…そんな不毛な家事、そろそろロボットに代わってもらいませんか？"
         }
-      ]
+      ],
+      "slot_type": "legacy",
+      "concern_id": "housework",
+      "domain": "life"
     },
     {
       "episode_id": "kl012",
@@ -563,7 +596,10 @@
           "overall_score": 4.4,
           "hook_idea_at_selection": "チャットの気配りをやめてAIに仕事丸投げしたら、成果が50%上がった？最新大規模実験が明かすAIチームワークのリアルと『同じような広告ばかりになる』落とし穴とは。"
         }
-      ]
+      ],
+      "slot_type": "legacy",
+      "concern_id": "work_ai",
+      "domain": "life"
     },
     {
       "episode_id": "kl013",
@@ -599,7 +635,10 @@
           "overall_score": 3.85,
           "hook_idea_at_selection": "もし巨大地震の瓦礫に取り残されたら……救助犬の「凄まじい鼻」を持つロボットは、あなたを見つけ出せるでしょうか？"
         }
-      ]
+      ],
+      "slot_type": "legacy",
+      "concern_id": "disaster",
+      "domain": "life"
     },
     {
       "episode_id": "kl014",
@@ -641,7 +680,10 @@
           "overall_score": 4.4,
           "hook_idea_at_selection": "「あれ、卵って何分茹でるんだっけ…」長年やってきた料理が急にできなくなる恐怖、AIが変えるかもしれません。"
         }
-      ]
+      ],
+      "slot_type": "legacy",
+      "concern_id": "dementia",
+      "domain": "disease"
     },
     {
       "episode_id": "kl015",
@@ -688,7 +730,10 @@
         },
         "market_status": "novel",
         "novel_delta": "従来の触覚フィードバックが把持力や硬さなどの機能的認識に留まっていたのに対し、素材をなでたときの「心地よさ（快感情）」を生体模倣の神経スパイク信号として符号化できる点。"
-      }
+      },
+      "slot_type": "legacy",
+      "concern_id": null,
+      "domain": "body"
     },
     {
       "episode_id": "kl016",
@@ -737,7 +782,10 @@
         },
         "market_status": "novel",
         "novel_delta": "患者と理学療法士がそれぞれ外骨格を装着し、仮想的なバネ・ダンパで互いの下肢を連結することで、療法士の自然な足の動きを直感的に患者へ伝えつつ、患者の筋の突っ張りや抵抗をリアルタイムの力覚として療法士が感じ取りながら歩行を同期・再学習できる点。"
-      }
+      },
+      "slot_type": "legacy",
+      "concern_id": "bp_stroke_heart",
+      "domain": "disease"
     },
     {
       "episode_id": "kl017",
@@ -782,7 +830,10 @@
         },
         "market_status": "novel",
         "novel_delta": "AIが単発の指示処理で終わらず、半年間にわたり実験履歴と失敗の来歴を自己修正・蓄積しながら、忘れ去られがちな難病の治療法などの仮説検証を自律的に深め続けられる点。"
-      }
+      },
+      "slot_type": "legacy",
+      "concern_id": null,
+      "domain": "disease"
     },
     {
       "episode_id": "kl018",
@@ -837,7 +888,10 @@
         "behavioral_familiarity": "novel",
         "deja_vu_level": "partial",
         "novel_delta": "車輪型ロボットの豊富な操作データを変換し、わずか10分の実機データ収集で二足歩行ヒューマノイドがしゃがみ込みや高低差のある全身協調作業を自律実行できる点。"
-      }
+      },
+      "slot_type": "legacy",
+      "concern_id": "housework",
+      "domain": "life"
     },
     {
       "episode_id": "kl019",
@@ -883,7 +937,10 @@
         },
         "market_status": "incremental",
         "novel_delta": "生物の脊髄神経回路（CPG）を模した専用ニューロモルフィック半導体により、四足歩行ロボットの運動制御プロセッサの電力効率を従来比約600倍に高め、極めて低遅延な反射的歩容生成をオンチップで実現した点。"
-      }
+      },
+      "slot_type": "legacy",
+      "concern_id": "disaster",
+      "domain": "life"
     },
     {
       "episode_id": "kl020",
@@ -926,7 +983,10 @@
         },
         "market_status": "novel",
         "novel_delta": "ロボット基盤モデルが自動生成する高度で滑らかな動作を損なうことなく、人間のわずかな低次元入力（指先の傾きなど）を推論中のトークンに直接注入してリアルタイムに軌道を直感誘導できる点。"
-      }
+      },
+      "slot_type": "legacy",
+      "concern_id": "housework",
+      "domain": "life"
     },
     {
       "episode_id": "kl021",
@@ -973,7 +1033,10 @@
         "gender": "female"
       },
       "hook_idea": "「大好きな絵本の読み聞かせも、文字がだんだんかすんで見えるようになってきて……」静かに視野が狭まっていく緑内障の初期診断を受けた元教師に、老いた目の“設計図”を書き換えるという最先端の遺伝子治療が示す希望とは？",
-      "notes": "2026-09-14: 通常のSTAGE0〜4パイプラインが提示した候補（6カテゴリ横断、触覚センサー人工皮膚・呼吸補助ソフトロボット・ロボット群自律制御等）をユーザーが全て『面白みに欠ける』として却下（該当8件はtopics_shortlist.jsonにstatus: rejectedとして記録済み）。原因調査のため/consult（Claude×Gemini対話→Opus統合）を実施し、『AI・ロボティクスの派手な速報だけに絞る』方向転換は番組アイデンティティ崩壊のリスクが高く不採用と結論。一方、実測で在庫上位が2〜3年前のBCI系論文に偏っている既視感判定の構造的な穴（deja_vu_level=partial帯にキャップが効かない）が判明（未修正、今後の課題）。2026年発表限定で全カテゴリSTAGE1を再実行したが最高スコア3.2（ほぼ全てlow_quality除外）と有望な候補は得られなかった。\n\nこの直後、ユーザーが通常パイプラインを経由しない『ワイルドカード』としてER-100（老化細胞の若返り遺伝子治療）を持ち込んだ。CLAUDE.mdの『AI・ロボティクス分野の学術論文』『medical_supportはAI/ロボット技術のみ、医学全般は対象外』という方針と直接衝突するため、ユーザーに方針との衝突を明示して確認した結果、『今回は例外として採用』の判断を得た。CLAUDE.mdの「論文選定ロジック」節冒頭に例外運用ルールを追記済み（scope_exception: trueを都度明記し、category: biotech_exceptionとしてローテーション対象外にする運用）。\n\n内容はWebSearchで一次情報を確認済み: Sinclair研究室のLu et al. 2020年Nature論文（マウスの視神経でOSK＝Oct4/Sox2/Klf4によるエピジェネティック若返り、c-Mycは除外）が基礎。Life Biosciences社のER-100が2026年1月28日にFDAからIND（治験許可）を取得し、開放隅角緑内障(OAG)・非動脈炎性前部虚血性視神経症(NAION)を対象に世界初のヒト投与を実施（2026年6月9日、第一号患者への投与完了）。安全機構として2本のAAV2ベクター（rtTAトランス活性化因子＋TRE制御下のOSK）によるドキシサイクリン誘導性のオン/オフスイッチを採用——服薬中のみ若返りが進行し、中止すれば停止する。幹細胞研究者Paul Knoepfler（UCデービス）の懐疑的見解（若返ってもOAGの眼圧自体は下がらず効果が持続しない可能性、NAIONは一度きりの虚血イベントのため微小環境上の懸念が残る）も確認済みで、closing シーンでの両論併記に使う想定。\n\n主人公は緑内障の初期診断を受けた元小学校教師（絵本の読み聞かせという『視覚を大切にしてきた』職業・趣味を持たせ、視野が狭まる恐怖と回復への希望を対比しやすくした）。研究ボイスは主人公が女性のため男性（Orus、確定済み）を使う想定。\n\n2026-09-14追記: エピソードJSON生成（STEP2）完了直後、制作者から「AI・ロボティクス限定という制約自体を今後なくす」という恒久方針の指示があった。理由は『今後あらゆる科学の発展にAI・ロボティクスが深く関わるため、分野で区切る制約自体が意味をなさなくなる』。これにより、kl021が『都度承認の例外』ではなく『AI・ロボティクス限定方針撤廃後の最初の通常エピソード』という位置づけに変わった。CLAUDE.mdの『論文選定ロジック』節冒頭・カテゴリ表（医療補助技術）を撤廃を反映して更新済み。scope_exception/category=biotech_exceptionのフィールド値は歴史的記録としてそのまま残す（以後の新規エピソードでは不要な運用）。"
+      "notes": "2026-09-14: 通常のSTAGE0〜4パイプラインが提示した候補（6カテゴリ横断、触覚センサー人工皮膚・呼吸補助ソフトロボット・ロボット群自律制御等）をユーザーが全て『面白みに欠ける』として却下（該当8件はtopics_shortlist.jsonにstatus: rejectedとして記録済み）。原因調査のため/consult（Claude×Gemini対話→Opus統合）を実施し、『AI・ロボティクスの派手な速報だけに絞る』方向転換は番組アイデンティティ崩壊のリスクが高く不採用と結論。一方、実測で在庫上位が2〜3年前のBCI系論文に偏っている既視感判定の構造的な穴（deja_vu_level=partial帯にキャップが効かない）が判明（未修正、今後の課題）。2026年発表限定で全カテゴリSTAGE1を再実行したが最高スコア3.2（ほぼ全てlow_quality除外）と有望な候補は得られなかった。\n\nこの直後、ユーザーが通常パイプラインを経由しない『ワイルドカード』としてER-100（老化細胞の若返り遺伝子治療）を持ち込んだ。CLAUDE.mdの『AI・ロボティクス分野の学術論文』『medical_supportはAI/ロボット技術のみ、医学全般は対象外』という方針と直接衝突するため、ユーザーに方針との衝突を明示して確認した結果、『今回は例外として採用』の判断を得た。CLAUDE.mdの「論文選定ロジック」節冒頭に例外運用ルールを追記済み（scope_exception: trueを都度明記し、category: biotech_exceptionとしてローテーション対象外にする運用）。\n\n内容はWebSearchで一次情報を確認済み: Sinclair研究室のLu et al. 2020年Nature論文（マウスの視神経でOSK＝Oct4/Sox2/Klf4によるエピジェネティック若返り、c-Mycは除外）が基礎。Life Biosciences社のER-100が2026年1月28日にFDAからIND（治験許可）を取得し、開放隅角緑内障(OAG)・非動脈炎性前部虚血性視神経症(NAION)を対象に世界初のヒト投与を実施（2026年6月9日、第一号患者への投与完了）。安全機構として2本のAAV2ベクター（rtTAトランス活性化因子＋TRE制御下のOSK）によるドキシサイクリン誘導性のオン/オフスイッチを採用——服薬中のみ若返りが進行し、中止すれば停止する。幹細胞研究者Paul Knoepfler（UCデービス）の懐疑的見解（若返ってもOAGの眼圧自体は下がらず効果が持続しない可能性、NAIONは一度きりの虚血イベントのため微小環境上の懸念が残る）も確認済みで、closing シーンでの両論併記に使う想定。\n\n主人公は緑内障の初期診断を受けた元小学校教師（絵本の読み聞かせという『視覚を大切にしてきた』職業・趣味を持たせ、視野が狭まる恐怖と回復への希望を対比しやすくした）。研究ボイスは主人公が女性のため男性（Orus、確定済み）を使う想定。\n\n2026-09-14追記: エピソードJSON生成（STEP2）完了直後、制作者から「AI・ロボティクス限定という制約自体を今後なくす」という恒久方針の指示があった。理由は『今後あらゆる科学の発展にAI・ロボティクスが深く関わるため、分野で区切る制約自体が意味をなさなくなる』。これにより、kl021が『都度承認の例外』ではなく『AI・ロボティクス限定方針撤廃後の最初の通常エピソード』という位置づけに変わった。CLAUDE.mdの『論文選定ロジック』節冒頭・カテゴリ表（医療補助技術）を撤廃を反映して更新済み。scope_exception/category=biotech_exceptionのフィールド値は歴史的記録としてそのまま残す（以後の新規エピソードでは不要な運用）。",
+      "slot_type": "legacy",
+      "concern_id": "eyes",
+      "domain": "body"
     },
     {
       "episode_id": "kl022",
@@ -1016,7 +1079,10 @@
         },
         "market_status": "incremental",
         "novel_delta": "猫用やヒト用として市販されているベラプロストを犬の初期〜中期慢性腎臓病に適用し、生存期間を大幅に延ばす可能性を示した臨床的エビデンス。"
-      }
+      },
+      "slot_type": "legacy",
+      "concern_id": "pets",
+      "domain": "life"
     },
     {
       "episode_id": "kl023",
@@ -1057,7 +1123,10 @@
         "market_status": "novel",
         "novel_delta": "脳内に蓄積して慢性炎症と神経変性を引き起こす「老化細胞（ゾンビ細胞）」を選択的に死滅・除去することで、認知機能の低下や歩行障害を食い止め改善する治療法。",
         "paperId": "d67a1cf97dee06f4ad6e91b716a7668abcc3e68d"
-      }
+      },
+      "slot_type": "legacy",
+      "concern_id": "dementia",
+      "domain": "disease"
     },
     {
       "episode_id": "kl024",
@@ -1112,7 +1181,10 @@
         "market_status": "novel",
         "novel_delta": "従来の胎内外科手術が脊髄組織の物理的閉鎖にとどまるのに対し、胎盤由来間葉系幹細胞パッチを胎児の露出した脊髄に直接貼り付けることで神経の変性と損傷を保護・再生し、出生後の麻痺を防ぐ点。",
         "paperId": "e0f8c10e524344e37ceef4641eed0bc01879adb3"
-      }
+      },
+      "slot_type": "legacy",
+      "concern_id": null,
+      "domain": "disease"
     },
     {
       "episode_id": "kl025",
@@ -1157,7 +1229,10 @@
         },
         "market_status": "incremental",
         "novel_delta": "犬の消化器疾患向け経口カプセル便微生物移植技術を、これまで有効な治療選択肢が極めて乏しかった高齢犬の認知機能低下（認知症様症状）の改善・進行抑制に応用した点。"
-      }
+      },
+      "slot_type": "legacy",
+      "concern_id": "pets",
+      "domain": "life"
     },
     {
       "episode_id": "kl026",
@@ -1203,7 +1278,10 @@
         },
         "market_status": "novel",
         "novel_delta": "麻痺患者の脳の意図でワイヤレスに他人の手を動かし、相手の指先が触れた硬さの触覚を患者の脳へ直接フィードバックして人間同士で運動と感覚を双方向共有できる点。"
-      }
+      },
+      "slot_type": "legacy",
+      "concern_id": null,
+      "domain": "body"
     }
   ],
   "total_topics": 26,

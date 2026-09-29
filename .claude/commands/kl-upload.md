@@ -69,6 +69,18 @@ python3 $HOME/kagaku-life/kl_sns_up.py --episode kl{NNN} --publish-at "2026-08-2
   ※ 指定日時まで非公開状態です。YouTube Studio で確認できます。
 ```
 
+**あわせて、ユーザーにShortsの「関連動画」設定を依頼する（2026-09-29追加）。**
+YouTube Studio で Shorts の編集画面を開き、「関連動画」に本編を設定してもらう。
+Shortsの最後のカットは「↓ 続きは本編で」と誘導しているので、これが無いと誘導先がない
+（YouTube公式ブログ: Shortsの最後の5秒で言葉と画面の両方で関連動画へ誘導する）。
+`kl_sns_up.py` からは設定していない（YouTube Data APIで設定できるかは未確認）。
+
+**サムネイルB案がある回（`episodes/kl{NNN}.json` に `thumbnail_b` がある回）は、
+「テストと比較」の設定も依頼する（2026-09-29追加）。** `kl_sns_up.py` はA案（`thumbnail.png`）を
+アップロードする。YouTube Studio の本編の編集画面で「テストと比較」を開き、A案と
+Google Drive `Kagaku-Life/KL{NNN}/images/thumbnail_b.png`（B案）を登録してもらう。
+判定は総再生時間で行われ、Shortsは対象外。結果は `/kl-analytics` で記録する。
+
 ## STEP 4 — コミット・プッシュ確認
 
 `kl_sns_up.py` は `run()` の末尾で `commit_remaining_changes()` を実行し、

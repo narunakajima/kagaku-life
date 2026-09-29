@@ -1,0 +1,19 @@
+{
+  "_comment": "公式サイトのテーマ（関心ごとの4領域）ごとのYouTube再生リストID。2026-09-29にcategory_playlists.json（旧6カテゴリ、再生リストは1つも未作成だった）から置き換えた。episodes配列はkl_build_site.pyがtopics_queue.jsonのdomainから毎回計算するため、ここにはIDのみを保持する。再生リストが未作成の間はplaylist_id: nullのままでよい。",
+  "life": {
+    "display_name": "暮らし",
+    "playlist_id": null
+  },
+  "daily": {
+    "display_name": "毎日の調子",
+    "playlist_id": null
+  },
+  "body": {
+    "display_name": "体の不調",
+    "playlist_id": null
+  },
+  "disease": {
+    "display_name": "病気の予防",
+    "playlist_id": null
+  }
+}

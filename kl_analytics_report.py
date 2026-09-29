@@ -26,19 +26,23 @@ BASE = Path(__file__).resolve().parent
 RAW = BASE / "analytics" / "raw"
 EPISODES_DIR = BASE / "episodes"
 TOPICS_QUEUE_JSON = BASE / "topics_queue.json"
+CONCERNS_JSON = BASE / "viewer_concerns.json"
 
-# カテゴリ別ロールアップの「経過日数バイアス」対策（2026-09-08追加）。
+# 分類別ロールアップの「経過日数バイアス」対策（2026-09-08追加）。
 # samurai-chroniclesのOpus監査で「累積CTR/維持率の比較は公開時期の違いに
 # よるバイアスを検出できない設計だった」と判明した教訓の移植。全期間の
 # 累積値をそのまま比較すると、たまたま古い話が多いカテゴリが有利になる
 # ため、公開後AGE_WINDOW_DAYS日分だけを切り出して比較する。
 AGE_WINDOW_DAYS = 14
-# カテゴリロールアップで数値をそのまま信頼してよいとみなす最小該当話数。
+# 分類別ロールアップで数値をそのまま信頼してよいとみなす最小該当話数。
 # 未満の場合は数値自体は出しつつ「n不足」の注記を付ける
 # （samurai-chroniclesのn<6「測定不能」表示の教訓の移植。KLはまだ話数が
 # 少なくカテゴリ当たりのnがSCの閾値では厳しすぎるため、KLの規模に合わせて
 # 下げている）。
-MIN_CATEGORY_N = 3
+MIN_GROUP_N = 3
+# Shortsの比較に使う測定窓（日）。Shortsの再生は公開当日〜翌日に集中するため、本編の
+# 14日より短い3日で比べる（2026-09-29追加、PIPELINE_REDESIGN.md §11）。
+SHORTS_WINDOW_DAYS = 3
 
 # YouTube Reporting API公式定義（developers.google.com/youtube/reporting/v1/
 # reports/dimensions#traffic_source_type）と照合して修正した（2026-09-28、
@@ -63,19 +67,37 @@ def video_id(url: str) -> str:
     return m.group(1) if m else ""
 
 
+SLOT_LABELS = {"concern": "関心ごと起点", "wildcard": "ワイルドカード", "legacy": "旧方式"}
+
+
 def load_episode_map():
-    """video_id -> (episode_id, title, is_shorts, category, category_label) を作る。
+    """video_id -> エピソード情報（episode_id・タイトル・本編/Shorts・分類・公開日）を作る。
 
     本編とShorts、両方のvideo_idを対象にする（analytics上はどちらも同じ
     video_idの列で報告されるため）。
+
+    2026-09-29〜（ネタ選定パイプライン作り直し）: 分類は旧カテゴリではなく、
+    topics_queue.json の domain（領域）・concern_id（関心ごと）・slot_type（選び方）で持つ。
     """
-    cat_map = {}
+    domain_labels, concern_labels = {}, {}
+    if CONCERNS_JSON.exists():
+        vc = json.loads(CONCERNS_JSON.read_text(encoding="utf-8"))
+        domain_labels = {k: v["label"] for k, v in vc.get("domains", {}).items()}
+        concern_labels = {c["id"]: c["label"] for c in vc.get("concerns", [])}
+
+    group_map = {}
     if TOPICS_QUEUE_JSON.exists():
         queue = json.loads(TOPICS_QUEUE_JSON.read_text(encoding="utf-8")).get("queue", [])
         for item in queue:
             eid = item.get("episode_id")
             if eid:
-                cat_map[eid] = (item.get("category"), item.get("category_label"))
+                cid = item.get("concern_id")
+                group_map[eid] = {
+                    "domain_label": domain_labels.get(item.get("domain") or "", None),
+                    "concern_label": concern_labels.get(cid, "（関心ごとなし）") if cid else "（関心ごとなし）",
+                    "slot_label": SLOT_LABELS.get(item.get("slot_type") or "", None),
+                }
+    empty = {"domain_label": None, "concern_label": None, "slot_label": None}
 
     vid_info = {}
     for p in sorted(EPISODES_DIR.glob("kl[0-9]*.json")):
@@ -87,7 +109,7 @@ def load_episode_map():
             continue
         eid = d.get("episode_id", p.stem)
         title = d.get("youtube_title") or d.get("episode_title", "")
-        category, category_label = cat_map.get(eid, (None, None))
+        groups = group_map.get(eid, empty)
 
         publish_date = None
         scheduled_at = d.get("scheduled_at") or ""
@@ -101,16 +123,14 @@ def load_episode_map():
         if main_vid:
             vid_info[main_vid] = {
                 "ep": eid, "title": title, "is_shorts": False,
-                "category": category, "category_label": category_label,
-                "publish_date": publish_date,
+                **groups, "publish_date": publish_date,
             }
 
         shorts_vid = video_id(d.get("shorts_url", ""))
         if shorts_vid:
             vid_info[shorts_vid] = {
                 "ep": eid, "title": f"{title}（Shorts）", "is_shorts": True,
-                "category": category, "category_label": category_label,
-                "publish_date": publish_date,
+                **groups, "publish_date": publish_date,
             }
 
     return vid_info
@@ -227,8 +247,9 @@ def aggregate(vid_info, ep_filter=None, age_window_days=None):
         rows.append({
             "ep": info.get("ep", "?"),
             "title": info.get("title", "?"),
-            "category": info.get("category"),
-            "category_label": info.get("category_label"),
+            "domain_label": info.get("domain_label"),
+            "concern_label": info.get("concern_label"),
+            "slot_label": info.get("slot_label"),
             "is_shorts": info.get("is_shorts", False),
             "vid": vid,
             "views": s["views"],
@@ -273,7 +294,76 @@ def print_monthly_channel_summary():
         print(f"  {ym[:4]}-{ym[4:]}: インプレッション={impr:,}  再生数={views:,}")
 
 
-def print_report(rows, traffic_stats, label, rows_age_adjusted=None):
+def print_main_rollup(rows: list, adj_rows: list, key: str, title: str) -> None:
+    totals = defaultdict(lambda: {
+        "views": 0, "watch_time_min": 0.0, "retention_sum": 0.0, "n": 0,
+        "impressions": 0, "ctr_sum": 0.0, "episodes": [],
+    })
+    for r in adj_rows:
+        if r["is_shorts"] or not r.get(key):
+            continue
+        c = totals[r[key]]
+        c["views"] += r["views"]
+        c["watch_time_min"] += r["watch_time_min"]
+        c["retention_sum"] += r["avg_dur_pct"]
+        c["n"] += 1
+        c["impressions"] += r["impressions"]
+        c["ctr_sum"] += r["ctr_pct"] * r["impressions"]
+        c["episodes"].append((r["ep"], r["views"]))
+
+    grouped_eps = {r["ep"] for r in rows if not r["is_shorts"] and r.get(key)}
+    adj_eps = {r["ep"] for r in adj_rows if not r["is_shorts"] and r.get(key)}
+    excluded_n = len(grouped_eps - adj_eps)
+    if not grouped_eps:
+        return
+
+    print(f"\n--- 本編 {title}（公開後{AGE_WINDOW_DAYS}日間で正規化） ---")
+    if excluded_n:
+        print(f"（公開日不明、または公開後まだ{AGE_WINDOW_DAYS}日経っていない{excluded_n}話は測定窓未完了のため除外）")
+    if not totals:
+        print("（測定窓が完了した話が無いため、まだ算出できません）")
+        return
+    print(f"{'分類':<22}{'話数':>5}{'再生数':>9}{'視聴分':>9}{'平均維持率%':>12}{'平均CTR%':>10}")
+    for label, c in sorted(totals.items(), key=lambda x: -x[1]["views"]):
+        avg_ret = c["retention_sum"] / c["n"] if c["n"] else 0
+        avg_ctr = (c["ctr_sum"] / c["impressions"]) if c["impressions"] else 0
+        n_note = "  ※n不足のため参考程度" if c["n"] < MIN_GROUP_N else ""
+        print(f"{label:<22}{c['n']:>5}{c['views']:>9}{c['watch_time_min']:>9.1f}{avg_ret:>12.1f}{avg_ctr:>10.2f}{n_note}")
+        # 内訳を併記する（2026-09-28追加）。合計が実質1本の外れ値で決まっているケースを
+        # その場で見分けられるように（samurai-chroniclesの監査で指摘された対応）。
+        breakdown = ", ".join(f"{ep}:{v}" for ep, v in sorted(c["episodes"], key=lambda x: -x[1]))
+        dominant_ep, dominant_views = max(c["episodes"], key=lambda x: x[1])
+        dominant_note = ""
+        if c["views"] and dominant_views / c["views"] >= 0.7 and c["n"] > 1:
+            dominant_note = f"  ※{dominant_ep}1本で{dominant_views/c['views']*100:.0f}%を占める"
+        print(f"    内訳: {breakdown}{dominant_note}")
+
+
+def print_shorts_rollup(shorts_rows: list, key: str, title: str) -> None:
+    """Shortsを公開後SHORTS_WINDOW_DAYS日の再生数とエンゲージ率で比べる（2026-09-29追加）。
+    流入の大半がShortsフィード経由で、Shortsの再生は公開直後に集中するため、題材の選び方の
+    効果はまずここに出る。1本の外れ値に引っ張られないよう、再生数は中央値も併記する。"""
+    groups = defaultdict(list)
+    for r in shorts_rows:
+        if r["is_shorts"] and r.get(key):
+            groups[r[key]].append(r)
+    if not groups:
+        return
+    print(f"\n--- Shorts {title}（公開後{SHORTS_WINDOW_DAYS}日間） ---")
+    print(f"{'分類':<22}{'話数':>5}{'再生数計':>9}{'中央値':>8}{'エンゲージ率%':>13}")
+    for label, lst in sorted(groups.items(), key=lambda x: -sum(r["views"] for r in x[1])):
+        views = sorted(r["views"] for r in lst)
+        median = views[len(views) // 2] if len(views) % 2 else (views[len(views) // 2 - 1] + views[len(views) // 2]) / 2
+        total_views = sum(views)
+        # エンゲージ率は再生数で重み付けした平均（engaged_views合計 / views合計）
+        engaged = sum(r["engaged_rate"] * r["views"] for r in lst) / total_views if total_views else 0
+        n_note = "  ※n不足のため参考程度" if len(lst) < MIN_GROUP_N else ""
+        print(f"{label:<22}{len(lst):>5}{total_views:>9}{median:>8}{engaged:>13.1f}{n_note}")
+        breakdown = ", ".join(f"{r['ep']}:{r['views']}" for r in sorted(lst, key=lambda x: -x["views"]))
+        print(f"    内訳: {breakdown}")
+
+
+def print_report(rows, traffic_stats, label, rows_age_adjusted=None, rows_shorts=None):
     print(f"\n{'='*95}\n{label}\n{'='*95}")
     # 「完了率%」は実際には engaged_views/views（エンゲージ率、Shorts的には
     # 「スワイプで飛ばされずに見られた率」）であり、視聴完了率ではなかった
@@ -308,55 +398,19 @@ def print_report(rows, traffic_stats, label, rows_age_adjusted=None):
         for r in sorted(group_rows, key=lambda x: x["avg_dur_pct"])[:5]:
             print(f"  {r['ep']} {r['avg_dur_pct']}% ({r['views']}views) {r['title'][:35]}")
 
-    # カテゴリ別ロールアップ（本編のみ対象。Shortsはカテゴリ判断のノイズになりやすいため除外）。
-    # 全期間の累積値ではなく、公開後AGE_WINDOW_DAYS日分だけを切り出したage-adjusted
-    # 集計を使う（samurai-chroniclesのOpus監査で「累積比較は公開時期の違いによる
-    # バイアスを検出できない」と判明した教訓の移植、2026-09-08）。measurement窓が
+    # 分類別ロールアップ（本編）。全期間の累積値ではなく、公開後AGE_WINDOW_DAYS日分だけを
+    # 切り出したage-adjusted集計を使う（samurai-chroniclesのOpus監査で「累積比較は公開時期の
+    # 違いによるバイアスを検出できない」と判明した教訓の移植、2026-09-08）。測定窓が
     # 完了していない直近公開分は aggregate() 側で既に除外済み。
+    # 2026-09-29〜: 分類を旧カテゴリから、領域・関心ごと・選び方（関心ごと起点／ワイルドカード／
+    # 旧方式）に変えた（ネタ選定パイプライン作り直し、PIPELINE_REDESIGN.md §11）。
     adj_rows = rows_age_adjusted if rows_age_adjusted is not None else rows
-    cat_totals = defaultdict(lambda: {
-        "views": 0, "watch_time_min": 0.0, "retention_sum": 0.0, "n": 0,
-        "impressions": 0, "ctr_sum": 0.0, "episodes": [],
-    })
-    for r in adj_rows:
-        if r["is_shorts"] or not r["category_label"]:
-            continue
-        c = cat_totals[r["category_label"]]
-        c["views"] += r["views"]
-        c["watch_time_min"] += r["watch_time_min"]
-        c["retention_sum"] += r["avg_dur_pct"]
-        c["n"] += 1
-        c["impressions"] += r["impressions"]
-        c["ctr_sum"] += r["ctr_pct"] * r["impressions"]
-        c["episodes"].append((r["ep"], r["views"]))
+    for key, title in (("slot_label", "選び方別"), ("domain_label", "領域別"), ("concern_label", "関心ごと別")):
+        print_main_rollup(rows, adj_rows, key, title)
 
-    categorized_eps = {r["ep"] for r in rows if not r["is_shorts"] and r["category_label"]}
-    adj_eps = {r["ep"] for r in adj_rows if not r["is_shorts"] and r["category_label"]}
-    excluded_n = len(categorized_eps - adj_eps)
-
-    if categorized_eps:
-        print(f"\n--- カテゴリ別ロールアップ（本編のみ、公開後{AGE_WINDOW_DAYS}日間で正規化、STAGE1 weight見直しの参考用） ---")
-        if excluded_n:
-            print(f"（公開日不明、または公開後まだ{AGE_WINDOW_DAYS}日経っていない{excluded_n}話は測定窓未完了のため除外）")
-        if not cat_totals:
-            print("（測定窓が完了した話が無いため、まだ算出できません。analytics/raw/を再ダウンロードして日数が経つのを待ってください）")
-        else:
-            print(f"{'カテゴリ':<22}{'話数':>5}{'再生数':>9}{'視聴分':>9}{'平均維持率%':>12}{'平均CTR%':>10}")
-            for label, c in sorted(cat_totals.items(), key=lambda x: -x[1]["views"]):
-                avg_ret = c["retention_sum"] / c["n"] if c["n"] else 0
-                avg_ctr = (c["ctr_sum"] / c["impressions"]) if c["impressions"] else 0
-                n_note = "  ※n不足のため参考程度" if c["n"] < MIN_CATEGORY_N else ""
-                print(f"{label:<22}{c['n']:>5}{c['views']:>9}{c['watch_time_min']:>9.1f}{avg_ret:>12.1f}{avg_ctr:>10.2f}{n_note}")
-                # 内訳を併記する（2026-09-28追加）。カテゴリ合計が実質1本の
-                # 外れ値で決まっているケースをその場で見分けられるように、
-                # samurai-chroniclesの監査で「1本の外れ値だけで順位が決まって
-                # いる状態を機械的に見分けられるようにすべき」と指摘された対応。
-                breakdown = ", ".join(f"{ep}:{v}" for ep, v in sorted(c["episodes"], key=lambda x: -x[1]))
-                dominant_ep, dominant_views = max(c["episodes"], key=lambda x: x[1])
-                dominant_note = ""
-                if c["views"] and dominant_views / c["views"] >= 0.7:
-                    dominant_note = f"  ※{dominant_ep}1本で{dominant_views/c['views']*100:.0f}%を占める"
-                print(f"    内訳: {breakdown}{dominant_note}")
+    if rows_shorts is not None:
+        for key, title in (("slot_label", "選び方別"), ("domain_label", "領域別")):
+            print_shorts_rollup(rows_shorts, key, title)
 
     src_total = defaultdict(int)
     for vid, d in traffic_stats.items():
@@ -406,7 +460,8 @@ def main():
 
     rows, traffic_stats = aggregate(vid_info, ep_filter)
     rows_age_adjusted, _ = aggregate(vid_info, ep_filter, age_window_days=AGE_WINDOW_DAYS)
-    print_report(rows, traffic_stats, label, rows_age_adjusted=rows_age_adjusted)
+    rows_shorts, _ = aggregate(vid_info, ep_filter, age_window_days=SHORTS_WINDOW_DAYS)
+    print_report(rows, traffic_stats, label, rows_age_adjusted=rows_age_adjusted, rows_shorts=rows_shorts)
 
 
 if __name__ == "__main__":

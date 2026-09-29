@@ -12,6 +12,10 @@ kl_shortlist_add.py — stage4_ranked.json の採点結果を topics_shortlist.j
 機械的に`topics_shortlist.json`のスキーマへ変換して追記する。フィールドの
 取りこぼしをコード側で固定することで、今後同じ種類の漏れが起きないようにする。
 
+2026-09-29〜: 新在庫は関心ごと起点（concern_id・entry_question・evidence_level・
+answer_fit_score・applicable_breadth_score を持つ）。スコア内訳のキーは
+kl_paper_interest_score.score_breakdown() に一本化した。
+
 使い方:
   python3 kl_shortlist_add.py                 # stage4_ranked.json の all_scored 全件を追記
   python3 kl_shortlist_add.py --top-only       # stage5_candidates（上位N件）のみ追記
@@ -28,6 +32,8 @@ import os
 import sys
 from datetime import date
 from pathlib import Path
+
+from kl_paper_interest_score import score_breakdown
 
 BASE_DIR = Path(__file__).parent
 STAGE4_PATH = BASE_DIR / "stage4_ranked.json"
@@ -50,16 +56,12 @@ def to_shortlist_entry(scored: dict, today: str) -> dict:
         "doi": scored.get("doi"),
         "authors": scored.get("authors"),
         "is_preprint": scored.get("is_preprint"),
-        "category": scored.get("category"),
-        "category_label": scored.get("category_label"),
+        "concern_id": scored.get("concern_id"),
+        "concern_label": scored.get("concern_label"),
         "overall_score": scored.get("overall_score"),
-        "score_breakdown": {
-            "wonder_score": stage4.get("wonder_score", 0),
-            "transformation_score": stage4.get("transformation_score", 0),
-            "life_relevance_score": stage4.get("life_relevance_score", 0),
-            "surprise_score": stage4.get("surprise_score", 0),
-            "persona_fit_score": stage4.get("persona_fit_score", 0),
-        },
+        "score_breakdown": score_breakdown(stage4),
+        "entry_question": stage4.get("entry_question", ""),
+        "evidence_level": stage4.get("evidence_level", ""),
         "market_status": stage4.get("market_status", ""),
         "novel_delta": stage4.get("novel_delta", ""),
         "behavioral_familiarity": stage4.get("behavioral_familiarity", ""),
@@ -71,6 +73,7 @@ def to_shortlist_entry(scored: dict, today: str) -> dict:
         "deja_vu_context_upto": scored.get("deja_vu_context_upto", ""),
         "hook_idea": stage4.get("hook_idea", ""),
         "example_protagonist": stage4.get("example_protagonist", {}),
+        "triage": scored.get("triage"),
         "stage4_version": scored.get("stage4_version"),
         "status": "available",
         "used_in": None,
@@ -122,7 +125,7 @@ def main():
 
     print(f"追記対象: {len(to_add)}件（重複でスキップ: {skipped_dup}件、stage4失敗でスキップ: {skipped_failed}件）")
     for e in to_add:
-        print(f"  [{e['overall_score']}] {e['category_label']} — {e['title'][:60]}")
+        print(f"  [{e['overall_score']}] {e['concern_label']} — {e['title'][:60]}")
 
     if args.dry_run:
         print("\n--dry-run のため書き込みは行いません")

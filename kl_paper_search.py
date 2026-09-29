@@ -1,10 +1,16 @@
 """
 kl_paper_search.py — くらしを変える科学 STAGE1論文検索スクリプト
 
-Semantic Scholar Graph API（bulk search）を使い、query_vocabulary.json のカテゴリ別
-クエリでSTAGE1（一次収集）を実行する。実際の総ヒット件数（total）を必ずログに残し、
+Semantic Scholar Graph API（bulk search）を使い、viewer_concerns.json の関心ごとの
+検索語でSTAGE1（一次収集）を実行する。実際の総ヒット件数（total）を必ずログに残し、
 CLAUDE.md STAGE1の自動プレフィルタ（鮮度・publicationTypes除外・重複排除）を適用したうえで、
 機械的フィルタを通過した全件を stage1_pool.json に出力する。
+
+2026-09-29〜（ネタ選定パイプライン作り直し、PIPELINE_REDESIGN.md）: 検索の単位を
+query_vocabulary.jsonのカテゴリから viewer_concerns.json の「視聴者の関心ごと」に変えた。
+次に扱う関心ごとが決まった時点で、その関心ごとだけを検索する（全関心ごとを一斉に
+集めない）。医療・健康系の関心ごとは旧カテゴリよりヒット件数が桁違いに多いため、
+STAGE2の前に kl_paper_triage.py で「関心ごとへの答えになっているか」の簡易判定を挟む。
 
 2026-08〜: プレプリント（arXiv等）は自動除外しない。信頼性の判断（著者所属機関・
 技術的厳密さ等）はSTAGE2（kl_paper_screen.py）のGeminiに委ねる方針に変更した
@@ -16,13 +22,11 @@ CLAUDE.md STAGE1の自動プレフィルタ（鮮度・publicationTypes除外・
 （CLAUDE.md STAGE1参照）。`--top-n` で明示的に上限を指定した場合のみ足切りする。
 
 使い方:
-  python3 kl_paper_search.py                        # 全カテゴリ実行
-  python3 kl_paper_search.py --category aging_care   # 特定カテゴリのみ
-  python3 kl_paper_search.py --years 3               # 鮮度基準（年数）を上書き
-  python3 kl_paper_search.py --top-n 8               # カテゴリごとの上限件数（省略時は無制限。全件STAGE2へ）
-  python3 kl_paper_search.py --dry-run               # API呼び出しをせず生成クエリのみ表示
+  python3 kl_paper_search.py --concern sleep            # 関心ごと1つを検索
+  python3 kl_paper_search.py --concern sleep --years 3  # 鮮度基準（年数）を上書き
+  python3 kl_paper_search.py --concern sleep --dry-run  # API呼び出しをせず生成クエリのみ表示
 
-出力先: stage1_pool.json（カテゴリ別: 実ヒット件数ログ・採用候補・除外理由の内訳）
+出力先: stage1_pool.json（関心ごと別: 実ヒット件数ログ・採用候補・除外理由の内訳）
 """
 
 import argparse
@@ -37,10 +41,11 @@ from datetime import datetime
 from pathlib import Path
 
 BASE_DIR = Path(__file__).parent
-VOCAB_PATH = BASE_DIR / "query_vocabulary.json"
+CONCERNS_PATH = BASE_DIR / "viewer_concerns.json"
 OUTPUT_PATH = BASE_DIR / "stage1_pool.json"
 TOPICS_QUEUE_PATH = BASE_DIR / "topics_queue.json"
 SHORTLIST_PATH = BASE_DIR / "topics_shortlist.json"
+LEGACY_SHORTLIST_PATH = BASE_DIR / "topics_shortlist_legacy.json"
 
 API_URL = "https://api.semanticscholar.org/graph/v1/paper/search/bulk"
 FIELDS = "title,abstract,year,venue,publicationTypes,citationCount,externalIds,authors"
@@ -69,7 +74,7 @@ MAX_PAGES = 5  # 1クエリあたりの最大ページ数（500件。無制限�
 
 
 def expand_to_ss_queries(vocab_query: str) -> list:
-    """query_vocabulary.jsonの ' AND '/' OR '/括弧記法を、Semantic Scholar bulk search
+    """viewer_concerns.jsonの検索語（' AND '/' OR '/括弧記法）を、Semantic Scholar bulk search
     が実際に受け付ける構文（"フレーズ" + 必須語）に変換する。
 
     1階層の括弧内ORは、括弧を展開して複数のクエリ文字列に分岐させる
@@ -168,10 +173,11 @@ def load_seen_paper_ids() -> set:
       （このファイルの各エントリはSTAGE1のpaperIdを持たず、doiのみを保持する
       実際のフォーマットのため、semantic_scholar_idフィールドを見ていた旧実装は
       機能していなかった）
-    - topics_shortlist.json: 過去のSTAGE4上位候補（採用・未採用問わず）の
+    - topics_shortlist.json: 新在庫の候補（採用・未採用問わず）の
       paperId・doi。未採用（status: "available"）の候補も、検索条件を変えない
       限りSTAGE1で毎回同じ論文が再浮上してしまうため、重複排除に含める
       （STAGE2以降の再スクリーニングという無駄なコストを避ける）。
+    - topics_shortlist_legacy.json: 旧在庫の使用済み・却下済みのみ（下記コメント参照）
 
     戻り値はpaperIdとDOI（正規化済み）を区別せず同じsetに入れる
     （呼び出し側でpaperId・doi両方を同じsetに対してチェックする）。
@@ -189,16 +195,29 @@ def load_seen_paper_ids() -> set:
         except json.JSONDecodeError:
             pass
 
+    def add_entry(entry: dict) -> None:
+        pid = entry.get("paperId")
+        if pid:
+            seen.add(pid)
+        doi = _norm_doi(entry.get("doi"))
+        if doi:
+            seen.add(doi)
+
     if SHORTLIST_PATH.exists():
         try:
-            data = json.loads(SHORTLIST_PATH.read_text())
-            for entry in data.get("shortlist", []):
-                pid = entry.get("paperId")
-                if pid:
-                    seen.add(pid)
-                doi = _norm_doi(entry.get("doi"))
-                if doi:
-                    seen.add(doi)
+            for entry in json.loads(SHORTLIST_PATH.read_text()).get("shortlist", []):
+                add_entry(entry)
+        except json.JSONDecodeError:
+            pass
+
+    # 旧在庫は「使用済み」「却下済み」だけを重複排除に使う（2026-09-29〜）。旧在庫の
+    # 未使用分は旧方式（カテゴリ起点・旧採点）で評価されただけなので、関心ごとの検索で
+    # 再び見つかった場合は、関心ごとへの答えとして評価し直す価値がある。
+    if LEGACY_SHORTLIST_PATH.exists():
+        try:
+            for entry in json.loads(LEGACY_SHORTLIST_PATH.read_text()).get("shortlist", []):
+                if entry.get("status") in ("used", "rejected"):
+                    add_entry(entry)
         except json.JSONDecodeError:
             pass
 
@@ -236,8 +255,8 @@ def passes_stage1_prefilter(paper: dict) -> tuple:
     return True, None
 
 
-def run_category(name: str, cat: dict, year_from: int, year_to: int, top_n: int, seen_ids: set, dry_run: bool) -> dict:
-    print(f"\n=== カテゴリ: {cat['label']} ({name}) ===")
+def run_concern(name: str, cat: dict, year_from: int, year_to: int, top_n: int, seen_ids: set, dry_run: bool) -> dict:
+    print(f"\n=== 関心ごと: {cat['label']} ({name}) ===")
     all_candidates = {}
     query_log = []
 
@@ -299,7 +318,7 @@ def run_category(name: str, cat: dict, year_from: int, year_to: int, top_n: int,
     top = passing[:top_n] if top_n else passing
 
     print(
-        f"  カテゴリ集計: 収集{len(all_candidates)}件 → "
+        f"  集計: 収集{len(all_candidates)}件 → "
         f"重複排除-{excluded_dup} → レビュー等除外-{excluded_review} → "
         f"venue不明除外-{excluded_no_venue} → "
         f"通過{len(passing)}件（うちプレプリント{preprint_count}件） → STAGE2へ{len(top)}件を送付"
@@ -335,19 +354,17 @@ def run_category(name: str, cat: dict, year_from: int, year_to: int, top_n: int,
 
 def main():
     parser = argparse.ArgumentParser(description="STAGE1論文検索（Semantic Scholar Graph API）")
-    parser.add_argument("--category", help="特定カテゴリのみ実行（query_vocabulary.jsonのキー）")
+    parser.add_argument("--concern", required=True, help="検索する関心ごと（viewer_concerns.jsonのid）")
     parser.add_argument("--years", type=int, default=3, help="鮮度基準（年数、デフォルト3）")
-    parser.add_argument("--top-n", type=int, default=0, help="カテゴリごとの上限件数（0=無制限、デフォルト。STAGE1のスコアで足切りせず全件STAGE2へ送る）")
+    parser.add_argument("--top-n", type=int, default=0, help="上限件数（0=無制限、デフォルト。STAGE1のスコアで足切りせず全件次へ送る）")
     parser.add_argument("--dry-run", action="store_true", help="API呼び出しをせず生成クエリのみ表示")
     args = parser.parse_args()
 
-    vocab = json.loads(VOCAB_PATH.read_text())
-    categories = vocab["categories"]
-    if args.category:
-        if args.category not in categories:
-            print(f"未知のカテゴリ: {args.category}（候補: {', '.join(categories)}）", file=sys.stderr)
-            sys.exit(1)
-        categories = {args.category: categories[args.category]}
+    concerns = {c["id"]: c for c in json.loads(CONCERNS_PATH.read_text())["concerns"]}
+    if args.concern not in concerns:
+        print(f"未知の関心ごと: {args.concern}（候補: {', '.join(concerns)}）", file=sys.stderr)
+        sys.exit(1)
+    concern = concerns[args.concern]
 
     current_year = datetime.now().year
     year_from = current_year - args.years
@@ -355,11 +372,9 @@ def main():
 
     seen_ids = load_seen_paper_ids()
     if seen_ids:
-        print(f"topics_queue.json+topics_shortlist.json既出のpaperId/DOIを{len(seen_ids)}件読み込み、重複排除に使用します")
+        print(f"topics_queue.json・在庫の既出paperId/DOIを{len(seen_ids)}件読み込み、重複排除に使用します")
 
-    results = {}
-    for name, cat in categories.items():
-        results[name] = run_category(name, cat, year_from, year_to, args.top_n, seen_ids, args.dry_run)
+    result = run_concern(args.concern, concern, year_from, year_to, args.top_n, seen_ids, args.dry_run)
 
     if args.dry_run:
         print("\n[dry-run] API呼び出しは行っていません。stage1_pool.jsonへの書き込みもスキップします。")
@@ -368,11 +383,11 @@ def main():
     output = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "year_range": f"{year_from}-{year_to}",
-        "top_n_per_category": args.top_n,
-        "categories": results,
+        "top_n": args.top_n,
+        "concerns": {args.concern: result},
     }
     OUTPUT_PATH.write_text(json.dumps(output, ensure_ascii=False, indent=2))
-    print(f"\n✅ STAGE1完了。{OUTPUT_PATH} に保存しました。")
+    print(f"\n✅ STAGE1完了。{OUTPUT_PATH} に保存しました。次は kl_paper_triage.py --concern {args.concern}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,516 @@
+{
+  "_comment": "視聴者の関心ごとリスト（ネタ選定パイプラインの起点。2026-09-29作成、PIPELINE_REDESIGN.md参照）。query_vocabulary.json（廃止、legacy/へ移動）の役割を引き継ぐ。breadth_rankは当事者の広さの目安（5=ほぼ全員が当事者、1=ごく一部）で、kl_concern_select.pyの提案順に使う。最後に扱った回はここに持たず、topics_queue.jsonのconcern_idから毎回計算する（状態の二重管理を避けるため）。queriesはkl_paper_search.py用の英語の検索語（' AND '・' OR '・1階層の括弧が使える。query_vocabulary.jsonと同じ記法）。",
+  "rules": {
+    "window": 5,
+    "max_health_per_window": 2,
+    "wildcard_per_window": 1,
+    "min_gap_same_concern": 8
+  },
+  "domains": {
+    "body": {"label": "体の不調", "is_health": true},
+    "disease": {"label": "病気の予防", "is_health": true},
+    "daily": {"label": "毎日の調子", "is_health": true},
+    "life": {"label": "暮らし", "is_health": false}
+  },
+  "concerns": [
+    {
+      "id": "back_joint",
+      "label": "腰痛・膝・関節の痛み",
+      "domain": "body",
+      "breadth_rank": 5,
+      "breadth": {
+        "summary": "腰痛の自覚は男女とも1位（人口千人あたり93.6人）、「足腰に痛み」120.6、関節症212.6万人",
+        "sources": ["国民生活基礎調査2025 有訴者率", "患者調査 令和5年"]
+      },
+      "questions": ["腰痛は治らないもの？", "膝の軟骨はもう再生できない？"],
+      "queries": [
+        "\"low back pain\" AND (randomized OR trial) AND (novel OR new)",
+        "\"chronic low back pain\" AND (\"digital therapeutic\" OR app OR wearable) AND trial",
+        "\"knee osteoarthritis\" AND (cartilage OR regeneration) AND (\"first-in-human\" OR trial)",
+        "\"knee osteoarthritis\" AND (\"gene therapy\" OR \"cell therapy\" OR injection) AND randomized",
+        "\"back pain\" AND (mechanism OR cause) AND (cohort OR \"large-scale\")",
+        "\"joint pain\" AND (exoskeleton OR \"wearable robot\") AND older AND trial"
+      ],
+      "active": true
+    },
+    {
+      "id": "eyes",
+      "label": "目の衰え（老眼・緑内障・白内障）",
+      "domain": "body",
+      "breadth_rank": 5,
+      "breadth": {
+        "summary": "目のかすみ41.8、物を見づらい36.6（人口千人あたり）、緑内障262.3万人・白内障170.6万人",
+        "sources": ["国民生活基礎調査2025 有訴者率", "患者調査 令和5年"]
+      },
+      "questions": ["老眼は回復する？", "緑内障は防げるようになる？"],
+      "queries": [
+        "presbyopia AND (\"eye drops\" OR treatment) AND (randomized OR trial)",
+        "glaucoma AND (neuroprotection OR regeneration OR \"optic nerve\") AND (trial OR \"first-in-human\")",
+        "glaucoma AND (\"artificial intelligence\" OR \"deep learning\") AND (screening OR detection) AND \"real-world\"",
+        "cataract AND (\"eye drops\" OR non-surgical OR pharmacological) AND treatment",
+        "\"age-related macular degeneration\" AND (\"gene therapy\" OR \"cell therapy\") AND trial",
+        "\"retinal imaging\" AND (\"cardiovascular\" OR dementia OR \"systemic disease\") AND prediction"
+      ],
+      "active": true
+    },
+    {
+      "id": "hearing",
+      "label": "聞こえ・耳鳴り",
+      "domain": "body",
+      "breadth_rank": 3,
+      "breadth": {
+        "summary": "きこえにくい34.8、耳なり29.3（人口千人あたり）",
+        "sources": ["国民生活基礎調査2025 有訴者率"]
+      },
+      "questions": ["聞こえにくさは認知症と関係ある？", "耳鳴りは消せるようになる？"],
+      "queries": [
+        "\"hearing loss\" AND (\"hearing aid\" OR intervention) AND (dementia OR \"cognitive decline\") AND randomized",
+        "\"hearing loss\" AND (\"gene therapy\" OR regeneration OR \"hair cell\") AND (trial OR \"first-in-human\")",
+        "tinnitus AND (\"bimodal stimulation\" OR neuromodulation OR treatment) AND randomized",
+        "\"hearing aids\" AND (\"artificial intelligence\" OR \"deep learning\") AND (speech OR noise) AND users"
+      ],
+      "active": true
+    },
+    {
+      "id": "teeth",
+      "label": "歯と歯周病",
+      "domain": "body",
+      "breadth_rank": 5,
+      "breadth": {
+        "summary": "歯肉炎・歯周疾患の総患者1,135.4万人（高血圧に次ぐ）、歯の病気の通院54.9（人口千人あたり）",
+        "sources": ["患者調査 令和5年", "国民生活基礎調査2025 通院者率"]
+      },
+      "questions": ["歯周病は全身の病気とつながる？", "失った歯は生えてくるようになる？"],
+      "queries": [
+        "periodontitis AND (\"cardiovascular\" OR diabetes OR dementia OR Alzheimer) AND (cohort OR \"mendelian randomization\")",
+        "\"tooth regeneration\" AND (\"anti-USAG-1\" OR antibody OR \"first-in-human\" OR trial)",
+        "periodontal AND regeneration AND (\"stem cell\" OR biomaterial) AND (trial OR randomized)",
+        "\"dental caries\" AND (prevention OR \"new\") AND (randomized OR trial)",
+        "\"oral microbiome\" AND (systemic OR \"whole-body\") AND health AND cohort"
+      ],
+      "active": true
+    },
+    {
+      "id": "urinary",
+      "label": "頻尿・尿もれ",
+      "domain": "body",
+      "breadth_rank": 3,
+      "breadth": {
+        "summary": "頻尿42.2（男性2位50.1）、尿失禁15.1（人口千人あたり）、前立腺肥大122.1万人",
+        "sources": ["国民生活基礎調査2025 有訴者率", "患者調査 令和5年"]
+      },
+      "questions": ["夜中のトイレの回数は減らせる？", "尿もれは治せるようになる？"],
+      "queries": [
+        "nocturia AND (treatment OR intervention) AND (randomized OR trial)",
+        "\"overactive bladder\" AND (neuromodulation OR \"tibial nerve\" OR implant) AND trial",
+        "\"urinary incontinence\" AND (\"pelvic floor\" AND (app OR device OR \"digital\")) AND randomized",
+        "\"stress urinary incontinence\" AND (\"cell therapy\" OR regenerative) AND trial"
+      ],
+      "active": true
+    },
+    {
+      "id": "bone_muscle",
+      "label": "骨・筋肉の衰え（フレイル）",
+      "domain": "body",
+      "breadth_rank": 4,
+      "breadth": {
+        "summary": "骨粗しょう症138.7万人・骨折109.7万人、骨粗しょう症は女性の通院7位（人口千人あたり40.1）",
+        "sources": ["患者調査 令和5年", "国民生活基礎調査2025 通院者率"]
+      },
+      "questions": ["骨は何歳からでも強くなる？", "年をとっても筋肉は取り戻せる？"],
+      "queries": [
+        "sarcopenia AND (treatment OR intervention OR drug) AND (randomized OR trial)",
+        "frailty AND older AND (exercise OR \"resistance training\" OR nutrition) AND randomized",
+        "osteoporosis AND (\"new drug\" OR anabolic OR \"bone formation\") AND trial",
+        "\"hip fracture\" AND prevention AND (\"wearable\" OR airbag OR \"fall prevention\") AND older",
+        "\"muscle aging\" AND (mechanism OR reversal) AND (human OR \"older adults\")",
+        "\"exoskeleton\" AND \"older adults\" AND (walking OR gait) AND trial"
+      ],
+      "active": true
+    },
+    {
+      "id": "bp_stroke_heart",
+      "label": "高血圧・脳卒中・心臓",
+      "domain": "disease",
+      "breadth_rank": 5,
+      "breadth": {
+        "summary": "高血圧性疾患の総患者1,617.3万人（最多）、死因2位が心疾患・4位が脳血管疾患",
+        "sources": ["患者調査 令和5年", "人口動態統計 令和7年"]
+      },
+      "questions": ["脳梗塞の前兆はわかるようになる？", "血圧は薬なしで下げられる？"],
+      "queries": [
+        "hypertension AND (\"twice-yearly\" OR \"siRNA\" OR zilebesiran OR \"renal denervation\") AND trial",
+        "\"blood pressure\" AND (cuffless OR wearable OR smartwatch) AND (validation OR monitoring)",
+        "stroke AND (\"early warning\" OR prediction OR prodromal) AND (\"machine learning\" OR \"artificial intelligence\")",
+        "\"atrial fibrillation\" AND (smartwatch OR wearable) AND (screening OR detection) AND \"large-scale\"",
+        "\"heart failure\" AND (\"artificial intelligence\" OR ECG) AND (detection OR prediction) AND \"real-world\"",
+        "\"blood pressure\" AND (salt OR \"salt substitute\" OR diet) AND randomized AND stroke"
+      ],
+      "active": true
+    },
+    {
+      "id": "blood_sugar",
+      "label": "血糖値・糖尿病",
+      "domain": "disease",
+      "breadth_rank": 4,
+      "breadth": {
+        "summary": "糖尿病の総患者552.3万人、「糖尿病が強く疑われる者」男性16.8%・女性8.9%",
+        "sources": ["患者調査 令和5年", "国民健康・栄養調査 令和5年"]
+      },
+      "questions": ["血糖値スパイクは何が悪い？", "糖尿病は治る病気になる？"],
+      "queries": [
+        "\"type 2 diabetes\" AND (remission OR reversal) AND (randomized OR trial)",
+        "\"continuous glucose monitoring\" AND (\"non-diabetic\" OR \"postprandial\" OR \"glucose spikes\") AND cohort",
+        "diabetes AND (\"islet\" OR \"stem cell\") AND transplantation AND (trial OR \"first-in-human\")",
+        "\"GLP-1\" AND (oral OR \"once-weekly\" OR new) AND (weight OR glucose) AND trial",
+        "\"non-invasive\" AND glucose AND (monitoring OR sensor) AND (validation OR accuracy)"
+      ],
+      "active": true
+    },
+    {
+      "id": "cancer",
+      "label": "がん",
+      "domain": "disease",
+      "breadth_rank": 5,
+      "breadth": {
+        "summary": "死因1位（37.9万人）、総患者393.9万人",
+        "sources": ["人口動態統計 令和7年", "患者調査 令和5年"]
+      },
+      "questions": ["がんは血液1滴で見つけられるようになる？", "がんを防ぐ生活って本当にある？"],
+      "queries": [
+        "\"multi-cancer early detection\" AND (blood OR \"liquid biopsy\") AND (prospective OR trial)",
+        "cancer AND screening AND (\"artificial intelligence\" OR \"deep learning\") AND (randomized OR \"real-world\")",
+        "\"cancer vaccine\" AND (mRNA OR personalized) AND trial",
+        "cancer AND prevention AND (lifestyle OR diet OR exercise) AND (\"large cohort\" OR randomized)",
+        "\"cancer risk\" AND (breath OR urine) AND (test OR detection) AND validation"
+      ],
+      "active": true
+    },
+    {
+      "id": "dementia",
+      "label": "認知症・もの忘れ",
+      "domain": "disease",
+      "breadth_rank": 5,
+      "breadth": {
+        "summary": "認知症約443万人＋軽度認知障害（MCI）約559万人（2022年推計）、「もの忘れする」30.2（人口千人あたり）",
+        "sources": ["厚労省資料（二宮研究班推計）", "国民生活基礎調査2025 有訴者率"]
+      },
+      "questions": ["もの忘れと認知症はどう違う？", "認知症は防げるようになる？"],
+      "queries": [
+        "dementia AND prevention AND (lifestyle OR \"multidomain\" OR \"hearing\") AND randomized",
+        "Alzheimer AND (\"blood test\" OR \"plasma p-tau\" OR biomarker) AND (early OR diagnosis) AND validation",
+        "dementia AND (\"early detection\" OR prediction) AND (speech OR \"digital biomarker\" OR smartphone)",
+        "\"mild cognitive impairment\" AND (intervention OR training OR exercise) AND randomized",
+        "dementia AND (\"shingles vaccine\" OR vaccination) AND risk",
+        "\"brain aging\" AND (reversal OR rejuvenation) AND (human OR trial)"
+      ],
+      "active": true
+    },
+    {
+      "id": "sleep",
+      "label": "睡眠",
+      "domain": "daily",
+      "breadth_rank": 5,
+      "breadth": {
+        "summary": "平均睡眠6時間未満 男性38.5%・女性43.6%、睡眠で休養がとれていない約25%、「眠れない」29.7（人口千人あたり）",
+        "sources": ["国民健康・栄養調査 令和5年", "国民生活基礎調査2025 有訴者率"]
+      },
+      "questions": ["夜中に何度も目が覚めるのはなぜ？", "睡眠の質は上げられる？"],
+      "queries": [
+        "insomnia AND (\"digital cognitive behavioral therapy\" OR \"digital CBT-I\" OR app) AND randomized",
+        "\"sleep quality\" AND (intervention OR stimulation OR \"acoustic stimulation\") AND randomized",
+        "\"deep sleep\" AND (\"closed-loop\" OR \"slow-wave\") AND (stimulation OR enhancement) AND (older OR memory)",
+        "\"sleep apnea\" AND (drug OR pill OR \"new treatment\") AND trial",
+        "\"sleep\" AND (\"glymphatic\" OR \"brain clearance\") AND human",
+        "\"sleep duration\" AND (mortality OR dementia OR health) AND \"large cohort\""
+      ],
+      "active": true
+    },
+    {
+      "id": "fatigue",
+      "label": "疲れ・だるさ",
+      "domain": "daily",
+      "breadth_rank": 4,
+      "breadth": {
+        "summary": "「体がだるい」40.9（女性4位46.2、人口千人あたり）",
+        "sources": ["国民生活基礎調査2025 有訴者率"]
+      },
+      "questions": ["寝ても疲れが取れないのはなぜ？", "疲れは数値で測れるようになる？"],
+      "queries": [
+        "fatigue AND (biomarker OR \"objective measurement\") AND (wearable OR blood)",
+        "\"chronic fatigue\" AND (mechanism OR cause) AND (cohort OR \"multi-omics\")",
+        "fatigue AND (intervention OR treatment) AND \"healthy adults\" AND randomized",
+        "\"mental fatigue\" AND (brain OR \"glutamate\" OR mechanism) AND human"
+      ],
+      "active": true
+    },
+    {
+      "id": "stress_mind",
+      "label": "ストレス・こころ",
+      "domain": "daily",
+      "breadth_rank": 5,
+      "breadth": {
+        "summary": "悩みやストレスがある人44.8%（4,338万人）、気分障害159.3万人",
+        "sources": ["国民生活基礎調査2025", "患者調査 令和5年"]
+      },
+      "questions": ["ストレスは体に何をする？", "うつは脳で何が起きている？"],
+      "queries": [
+        "depression AND (\"digital therapeutic\" OR app OR chatbot) AND randomized",
+        "stress AND (wearable OR \"heart rate variability\") AND (detection OR intervention) AND \"real-world\"",
+        "depression AND (\"brain stimulation\" OR \"accelerated TMS\" OR \"home-based\") AND trial",
+        "\"chronic stress\" AND (aging OR inflammation OR immune) AND human AND cohort",
+        "\"psychological stress\" AND (mechanism OR brain) AND (reversal OR resilience) AND human"
+      ],
+      "active": true
+    },
+    {
+      "id": "gut",
+      "label": "腸・便秘",
+      "domain": "daily",
+      "breadth_rank": 4,
+      "breadth": {
+        "summary": "便秘32.7（女性10位39.1、人口千人あたり）",
+        "sources": ["国民生活基礎調査2025 有訴者率"]
+      },
+      "questions": ["腸内細菌はどこまで健康を左右する？", "便秘は治せるようになる？"],
+      "queries": [
+        "\"gut microbiome\" AND (health OR aging OR mood) AND (cohort OR \"large-scale\") AND human",
+        "constipation AND (\"vibrating capsule\" OR probiotic OR treatment) AND randomized",
+        "\"gut microbiota\" AND (\"fiber\" OR diet) AND intervention AND randomized",
+        "\"gut-brain axis\" AND human AND (trial OR cohort)",
+        "\"fecal microbiota transplantation\" AND (new OR indication) AND randomized"
+      ],
+      "active": true
+    },
+    {
+      "id": "aging",
+      "label": "老化・若返り",
+      "domain": "daily",
+      "breadth_rank": 5,
+      "breadth": {
+        "summary": "65歳以上の者のいる世帯が全世帯の50.2%。YouTube検索候補の上位に「老化細胞除去」「老化を防ぐ」",
+        "sources": ["国民生活基礎調査2025 世帯", "YouTube検索候補 2026-09-29"]
+      },
+      "questions": ["老化は止められる？", "体の年齢は若返らせられる？"],
+      "queries": [
+        "\"biological age\" AND (reversal OR slowing OR intervention) AND (human OR randomized)",
+        "senolytic AND (human OR \"clinical trial\" OR \"first-in-human\")",
+        "\"aging clock\" AND (organ OR proteomic OR epigenetic) AND (human OR cohort)",
+        "\"healthy aging\" AND (intervention OR drug OR metformin OR rapamycin) AND trial",
+        "\"epigenetic reprogramming\" AND (rejuvenation OR aging) AND (human OR primate)",
+        "longevity AND (\"centenarians\" OR \"healthy lifespan\") AND (genetic OR cohort) AND human"
+      ],
+      "active": true
+    },
+    {
+      "id": "work_ai",
+      "label": "仕事とAI",
+      "domain": "life",
+      "breadth_rank": 5,
+      "breadth": {
+        "summary": "悩みやストレスの原因1位「自分の仕事」34.8%（30〜69歳46.2%）。YouTube検索候補「AI 仕事がなくなる」",
+        "sources": ["国民生活基礎調査2025 悩みやストレスの原因", "YouTube検索候補 2026-09-29"]
+      },
+      "questions": ["AIで自分の仕事はどう変わる？", "AIと組むと働き方はラクになる？"],
+      "queries": [
+        "\"generative AI\" AND (productivity OR workers) AND (\"field experiment\" OR randomized)",
+        "\"large language model\" AND (workplace OR employees) AND (wellbeing OR stress OR workload) AND study",
+        "\"AI agents\" AND (collaboration OR teamwork) AND (experiment OR \"field study\")",
+        "automation AND (jobs OR employment) AND (\"generative AI\" OR LLM) AND (evidence OR \"natural experiment\")",
+        "\"AI assistance\" AND (skill OR learning OR deskilling) AND experiment"
+      ],
+      "active": true
+    },
+    {
+      "id": "housework",
+      "label": "家事と自由な時間",
+      "domain": "life",
+      "breadth_rank": 5,
+      "breadth": {
+        "summary": "悩みやストレスの原因に「家事」7.3%（女性10.3%）、「自由にできる時間がない」8.7%",
+        "sources": ["国民生活基礎調査2025 悩みやストレスの原因"]
+      },
+      "questions": ["家事はどこまで機械に任せられる？", "洗濯物をたたむロボットはいつ家に来る？"],
+      "queries": [
+        "\"household robot\" AND (tasks OR chores) AND (\"real home\" OR \"in-home\" OR deployment)",
+        "\"laundry folding\" AND robot AND (learning OR \"foundation model\")",
+        "\"mobile manipulation\" AND home AND (\"vision-language-action\" OR \"foundation model\")",
+        "\"domestic robot\" AND (\"long-horizon\" OR autonomous) AND (household OR kitchen)",
+        "\"cooking robot\" AND (autonomous OR learning) AND (kitchen OR recipe)"
+      ],
+      "active": true
+    },
+    {
+      "id": "family_care",
+      "label": "親の介護",
+      "domain": "life",
+      "breadth_rank": 4,
+      "breadth": {
+        "summary": "日常の悩み「家族の健康」51.2%（70歳以上58.5%）、悩みやストレスの原因「家族の病気や介護」17.4%",
+        "sources": ["国民生活に関する世論調査 令和7年", "国民生活基礎調査2025"]
+      },
+      "questions": ["介護を技術はどう助けてくれる？", "離れて暮らす親の変化に気づけるようになる？"],
+      "queries": [
+        "caregiver AND burden AND (robot OR \"assistive technology\" OR AI) AND (trial OR evaluation)",
+        "\"remote monitoring\" AND \"older adults\" AND (home OR \"living alone\") AND (sensor OR AI) AND study",
+        "(\"transfer assist\" OR \"lifting robot\") AND caregiver AND evaluation",
+        "\"socially assistive robot\" AND (\"nursing home\" OR \"care home\") AND randomized",
+        "dementia AND caregivers AND (\"digital intervention\" OR app) AND randomized"
+      ],
+      "active": true
+    },
+    {
+      "id": "parenting",
+      "label": "子育て・子どもの発達",
+      "domain": "life",
+      "breadth_rank": 3,
+      "breadth": {
+        "summary": "児童のいる世帯917.4万世帯（16.7%）。30〜40代の悩み「家族の生活上の問題（子育て等）」41.7〜45.8%",
+        "sources": ["国民生活基礎調査2025 世帯", "国民生活に関する世論調査 令和7年"]
+      },
+      "questions": ["子どもの脳は何で育つ？", "スマホは子どもの発達にどう影響する？"],
+      "queries": [
+        "\"child development\" AND (brain OR language) AND (\"parent-child interaction\" OR conversation) AND study",
+        "\"screen time\" AND children AND (development OR brain) AND (cohort OR longitudinal)",
+        "infant AND (sleep OR crying) AND intervention AND randomized",
+        "\"early childhood\" AND (intervention OR program) AND (\"long-term\" OR outcomes) AND randomized",
+        "autism AND (\"early detection\" OR screening) AND (\"artificial intelligence\" OR \"eye tracking\") AND infants"
+      ],
+      "active": true
+    },
+    {
+      "id": "pets",
+      "label": "犬猫の健康と寿命",
+      "domain": "life",
+      "breadth_rank": 3,
+      "breadth": {
+        "summary": "犬の飼育世帯約501万（8.50%）・猫約496万（8.42%）、犬猫合計約1,567万頭",
+        "sources": ["ペットフード協会 2025年全国犬猫飼育実態調査"]
+      },
+      "questions": ["犬や猫の寿命は延ばせる？", "ペットの病気に早く気づけるようになる？"],
+      "queries": [
+        "dogs AND (lifespan OR longevity OR aging) AND (drug OR trial OR \"Dog Aging Project\")",
+        "cats AND (\"chronic kidney disease\" OR kidney) AND (treatment OR new) AND study",
+        "(dogs OR cats) AND (\"artificial intelligence\" OR wearable) AND (health OR disease) AND detection",
+        "(canine OR feline) AND (\"gene therapy\" OR \"stem cell\" OR vaccine) AND trial",
+        "(dogs OR cats) AND (pain OR osteoarthritis) AND (\"monoclonal antibody\" OR treatment) AND randomized"
+      ],
+      "active": true
+    },
+    {
+      "id": "disaster",
+      "label": "災害への備え",
+      "domain": "life",
+      "breadth_rank": 5,
+      "breadth": {
+        "summary": "公的な当事者数は未確認。YouTube検索候補で「地震 予知」「熱中症 対策」が上位",
+        "sources": ["YouTube検索候補 2026-09-29"]
+      },
+      "questions": ["地震は予知できるようになる？", "災害のとき、技術はどう命を守ってくれる？"],
+      "queries": [
+        "earthquake AND (\"early warning\" OR forecasting OR prediction) AND (\"machine learning\" OR smartphone)",
+        "(rescue OR \"search and rescue\") AND (robot OR drone) AND (disaster OR earthquake) AND (field OR deployment)",
+        "(\"heat stroke\" OR \"heat-related illness\") AND (prevention OR wearable OR warning) AND study",
+        "flood AND (forecasting OR \"early warning\") AND (\"artificial intelligence\" OR \"deep learning\")",
+        "disaster AND evacuation AND (\"older adults\" OR vulnerable) AND (technology OR app)"
+      ],
+      "active": true
+    },
+    {
+      "id": "later_life",
+      "label": "老後の暮らし（健康寿命・一人暮らし）",
+      "domain": "life",
+      "breadth_rank": 5,
+      "breadth": {
+        "summary": "日常の悩み1位「老後の生活設計」63.9%、単独世帯1,947.7万（35.4%）、高齢者世帯1,754.6万（31.9%）。お金の話は扱わない",
+        "sources": ["国民生活に関する世論調査 令和7年", "国民生活基礎調査2025 世帯"]
+      },
+      "questions": ["一人暮らしの老後を、技術はどう支えてくれる？", "元気に長く暮らす秘訣は科学でわかった？"],
+      "queries": [
+        "\"older adults\" AND \"living alone\" AND (technology OR robot OR AI) AND (wellbeing OR independence) AND study",
+        "(\"healthy life expectancy\" OR healthspan) AND (lifestyle OR intervention) AND cohort",
+        "\"aging in place\" AND (\"smart home\" OR sensors OR AI) AND (evaluation OR trial)",
+        "\"older adults\" AND (\"social participation\" OR volunteering OR hobbies) AND (mortality OR dementia) AND cohort",
+        "(\"conversational agent\" OR \"companion robot\") AND \"older adults\" AND (loneliness OR wellbeing) AND randomized"
+      ],
+      "active": true
+    },
+    {
+      "id": "relationships",
+      "label": "人間関係・孤独",
+      "domain": "life",
+      "breadth_rank": 4,
+      "breadth": {
+        "summary": "悩みやストレスの原因「家族以外との人間関係」17.1%・「家族との人間関係」17.0%",
+        "sources": ["国民生活基礎調査2025 悩みやストレスの原因"]
+      },
+      "questions": ["孤独は体に悪いって本当？", "人と仲良くなるのに科学的なコツはある？"],
+      "queries": [
+        "loneliness AND (health OR mortality OR inflammation OR proteins) AND (cohort OR \"UK Biobank\")",
+        "loneliness AND intervention AND randomized",
+        "\"social connection\" AND (brain OR health) AND human AND study",
+        "(friendship OR \"social bonding\") AND (conversation OR synchrony) AND experiment",
+        "(\"AI companion\" OR chatbot) AND loneliness AND (study OR trial)"
+      ],
+      "active": true
+    },
+    {
+      "id": "purpose",
+      "label": "生きがい・幸福感",
+      "domain": "life",
+      "breadth_rank": 4,
+      "breadth": {
+        "summary": "悩みやストレスの原因「生きがいに関すること」12.8%",
+        "sources": ["国民生活基礎調査2025 悩みやストレスの原因"]
+      },
+      "questions": ["幸せを感じやすい人は何が違う？", "生きがいは長生きにつながる？"],
+      "queries": [
+        "(\"purpose in life\" OR ikigai) AND (mortality OR health OR dementia) AND cohort",
+        "(happiness OR \"subjective well-being\") AND intervention AND randomized",
+        "\"well-being\" AND (brain OR biology OR genetic) AND human AND \"large-scale\"",
+        "(gratitude OR kindness) AND intervention AND (well-being OR happiness) AND randomized",
+        "\"meaning in life\" AND (older OR aging) AND study"
+      ],
+      "active": true
+    },
+    {
+      "id": "mobility",
+      "label": "移動・運転",
+      "domain": "life",
+      "breadth_rank": 4,
+      "breadth": {
+        "summary": "高齢者世帯1,754.6万（31.9%）。免許返納・自動運転・移動手段",
+        "sources": ["国民生活基礎調査2025 世帯"]
+      },
+      "questions": ["免許を返しても自由に出かけられる？", "自動運転はいつ身近になる？"],
+      "queries": [
+        "\"autonomous vehicle\" AND (\"older adults\" OR elderly) AND (acceptance OR mobility OR trial)",
+        "\"driving cessation\" AND (older OR elderly) AND (health OR alternatives)",
+        "\"automated driving\" AND (safety OR crashes) AND (\"real-world\" OR \"naturalistic\") AND data",
+        "(\"on-demand transport\" OR \"ride-hailing\" OR \"mobility service\") AND (rural OR older) AND evaluation",
+        "(wheelchair OR \"personal mobility\") AND autonomous AND (evaluation OR users)"
+      ],
+      "active": true
+    },
+    {
+      "id": "food",
+      "label": "食と料理",
+      "domain": "life",
+      "breadth_rank": 5,
+      "breadth": {
+        "summary": "公的な当事者数は未確認（食は全員が当事者）",
+        "sources": []
+      },
+      "questions": ["体にいい食べ物の「本当」は？", "未来の食卓はどう変わる？"],
+      "queries": [
+        "\"ultra-processed food\" AND (health OR mortality OR brain) AND (cohort OR randomized)",
+        "(\"time-restricted eating\" OR \"intermittent fasting\") AND randomized AND (weight OR health)",
+        "(\"cultivated meat\" OR \"cultured meat\") AND (production OR consumer OR safety)",
+        "(diet OR food) AND \"personalized nutrition\" AND (glucose OR response) AND study",
+        "\"food allergy\" AND (prevention OR \"oral immunotherapy\") AND randomized",
+        "(coffee OR tea OR chocolate OR eggs) AND health AND (\"large cohort\" OR randomized)"
+      ],
+      "active": true
+    }
+  ]
+}
