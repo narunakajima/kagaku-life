@@ -1282,8 +1282,58 @@
       "slot_type": "legacy",
       "concern_id": null,
       "domain": "body"
+    },
+    {
+      "episode_id": "kl027",
+      "status": "confirmed",
+      "slot_type": "concern",
+      "concern_id": "later_life",
+      "domain": "life",
+      "entry_question": "一人暮らしの老後でも、毎日の「心の持ちよう」だけで認知症の予防につながるって本当？",
+      "title": "「今日もみんな、無事に帰れますように」：思いやる気持ちが、脳の衰えを55%遅らせる",
+      "format": "single_paper",
+      "references": [
+        {
+          "title": "Prosocial Intentions and Subsequent Cognitive Health: A Prospective Cohort Study.",
+          "authors": [
+            "Justin G. Farmer",
+            "Lucía Macchia",
+            "Fei-Fei Bu",
+            "Jessica Gong",
+            "Andrew Steptoe"
+          ],
+          "year": 2025,
+          "venue": "The journals of gerontology. Series B, Psychological sciences and social sciences",
+          "doi": "10.1093/geronb/gbaf004",
+          "is_preprint": false,
+          "lead_researcher": "Justin G. Farmer"
+        }
+      ],
+      "protagonist": {
+        "name": "坂本修一",
+        "age": 71,
+        "job": "元高校教師（定年退職後、一人暮らし）",
+        "gender": "male"
+      },
+      "hook_idea": "「他人のために何かしたい」という優しい気持ちが、あなたの脳の衰えを55%も遅らせるかもしれません。",
+      "notes": "2026-09-30: STAGE0でlater_life（老後の暮らし・健康寿命）を選定。健康系枠は直近5話で埋まっていたが、later_lifeはdomain=lifeのため対象外。新在庫0件のためSTAGE1〜4をこの関心ごとで新規実行し、許可リストに15誌を追加（Journals of Gerontology B等の査読誌）。\n\nSTAGE2では同型の疫学追跡調査（社会参加・ボランティアと健康長寿の関連、市場的には既知の知見の再確認、market_status=existing_product、wonder=2）が上位に複数集中していたため上位2件のみ提示し、個別に目立つ技術系候補（振動センサー見守り、家具の転倒危険可視化、咳音AI、認知症興奮予兆検知）も併記。ユーザーは総合最高点（3.5）かつwonder最高（3）・market_status=novelの案Aを選定: 『思いやる気持ち自体が認知機能低下を抑える』という、技術不要で誰でも今日から実践できる意外性のある知見。\n\n内容: 50歳以上7,844人の英国コホートを11年追跡。向社会的意図（実際の行動でなく心構え）が高い群は、実行機能低下が55%緩やか、言語記憶低下が24%緩やか、認知症発症ハザードが35%低い。closingで『まだ関連を示した段階で因果関係は未確定』のヘッジを入れる。査読済み（The Journals of Gerontology Series B）。deja_vu_level=none。",
+      "stage4_snapshot": {
+        "paperId": "20b1b7a45d099817bf5b73375f742dab2addd27a",
+        "overall_score": 3.5,
+        "score_breakdown": {
+          "wonder_score": 3,
+          "transformation_score": 2,
+          "answer_fit_score": 4,
+          "applicable_breadth_score": 5,
+          "surprise_score": 4,
+          "persona_fit_score": 4
+        },
+        "evidence_level": "human_study",
+        "market_status": "novel",
+        "novel_delta": "ボランティアなどの実際の行動を起こさずとも、心の中で「他者の役に立ちたい・思いやりたい」と意識する姿勢そのものが、11年後の実行機能低下や認知症リスク低下と強く関連することを示した点。"
+      }
     }
   ],
-  "total_topics": 26,
-  "last_updated": "2026-09-29"
+  "total_topics": 27,
+  "last_updated": "2026-09-30"
 }

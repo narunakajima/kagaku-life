@@ -55,8 +55,8 @@ def main():
 
     # venue -> {"pass_count": N, "flag_count": N, "titles": [...]}
     candidates = {}
-    for cat in screened["categories"].values():
-        for paper in cat["papers"]:
+    for concern in screened["concerns"].values():
+        for paper in concern["papers"]:
             if paper.get("is_preprint"):
                 continue
             venue = (paper.get("venue") or "").strip()
