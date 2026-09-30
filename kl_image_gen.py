@@ -765,7 +765,17 @@ def main():
                 if e["label"] not in outliers:
                     continue
                 scene = e["scene"]
-                base_prompt = f"{style_for(scene['type'])}\n\nScene: {scene['image_prompt']}"
+                image_prompt = scene.get("image_prompt")
+                if not image_prompt and scene.get("reuse_scene_id"):
+                    src_scene = next((s for s in ep["scenes"] if s["scene_id"] == scene["reuse_scene_id"]), None)
+                    image_prompt = src_scene.get("image_prompt") if src_scene else None
+                if not image_prompt:
+                    # reuse_scene_id経由のシーンで参照先にもimage_promptが無い場合、
+                    # このシーン単体では再生成しようがない（流用元S{src}.pngを直接
+                    # 差し替える必要があるため、ここではスキップし警告のみ出す）
+                    print(f"   → {e['path'].name} image_promptが見つからないため画風修正をスキップ", file=sys.stderr)
+                    continue
+                base_prompt = f"{style_for(scene['type'])}\n\nScene: {image_prompt}"
                 drift_note = (
                     "\n\nIMPORTANT: A consistency reviewer flagged this image's illustration "
                     "touch (grain texture, line weight, shading approach, color saturation) as "
@@ -777,7 +787,7 @@ def main():
                 ref_path = ref_entry["path"] if ref_entry else None
                 ok = gen_image(client, retry_prompt, e["path"], reference_image_path=ref_path)
                 if ok:
-                    qa = qa_image_with_gemini(client, e["path"], scene["image_prompt"], allow_text=False)
+                    qa = qa_image_with_gemini(client, e["path"], image_prompt, allow_text=False)
                     status = "OK" if qa["ok"] else "; ".join(qa["issues"])
                     print(f"   → {e['path'].name} 画風修正のうえ再生成 [QA: {status}]")
                     qa_results.append({"name": f"{e['path'].name}（画風ドリフト修正）",
