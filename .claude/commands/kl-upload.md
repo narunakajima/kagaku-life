@@ -75,11 +75,14 @@ Shortsの最後のカットは「↓ 続きは本編で」と誘導している�
 （YouTube公式ブログ: Shortsの最後の5秒で言葉と画面の両方で関連動画へ誘導する）。
 `kl_sns_up.py` からは設定していない（YouTube Data APIで設定できるかは未確認）。
 
-**サムネイルB案がある回（`episodes/kl{NNN}.json` に `thumbnail_b` がある回）は、
-「テストと比較」の設定も依頼する（2026-09-29追加）。** `kl_sns_up.py` はA案（`thumbnail.png`）を
-アップロードする。YouTube Studio の本編の編集画面で「テストと比較」を開き、A案と
-Google Drive `Kagaku-Life/KL{NNN}/images/thumbnail_b.png`（B案）を登録してもらう。
-判定は総再生時間で行われ、Shortsは対象外。結果は `/kl-analytics` で記録する。
+**サムネイルの「テストと比較」（A案 vs B案）は2026-10-01から一時中止中。依頼しない。**
+構成を大きく変えた（ロゴイントロ廃止・タイトルの付け方・Shortsの冒頭）直後で、サムネイルの差か
+構成の差かを切り分けられないため。`kl_sns_up.py` はA案（`thumbnail.png`）のみアップロードする。
+`thumbnail_b.png` がDriveにある回もあるが、使わなくてよい。再開の目安は、新構成のエピソードが
+数話積み上がって構成が安定してから（CLAUDE.md「サムネイルのA/Bテストの一時中止」参照）。
+再開する場合の手順（旧）: YouTube Studio の本編の編集画面で「テストと比較」を開き、A案と
+Drive `Kagaku-Life/KL{NNN}/images/thumbnail_b.png`（B案）を登録してもらう。判定は総再生時間で
+行われ、Shortsは対象外。結果は `/kl-analytics` で記録する。
 
 ## STEP 4 — コミット・プッシュ確認
 
