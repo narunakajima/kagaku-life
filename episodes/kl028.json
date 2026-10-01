@@ -80,7 +80,11 @@
           "start": 0.0,
           "end": 3.86
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.44,
+        "y": 0.45
+      }
     },
     {
       "scene_id": 2,
@@ -89,7 +93,7 @@
       "duration_seconds": 2,
       "narration": "AIなしでも、自分の言葉で話せる——",
       "reuse_scene_id": 14,
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -107,7 +111,7 @@
       "duration_seconds": 2,
       "narration": "そんな使い方が、あるのかもしれない。",
       "reuse_scene_id": 15,
-      "ken_burns": "pan_zoom_out",
+      "ken_burns": "zoom_in",
       "telop_cards": [
         {
           "lines": [
@@ -116,7 +120,11 @@
           "start": 0.0,
           "end": 3.1
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.42
+      }
     },
     {
       "scene_id": 4,
@@ -134,7 +142,11 @@
           "start": 0.25,
           "end": 2.35
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.45
+      }
     },
     {
       "scene_id": 5,
@@ -166,7 +178,11 @@
           "start": 8.21,
           "end": 11.25
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.45,
+        "y": 0.45
+      }
     },
     {
       "scene_id": 6,
@@ -240,7 +256,11 @@
           "start": 28.01,
           "end": 29.36
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.63,
+        "y": 0.45
+      }
     },
     {
       "scene_id": 7,
@@ -314,7 +334,11 @@
           "start": 28.67,
           "end": 32.12
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.54,
+        "y": 0.45
+      }
     },
     {
       "scene_id": 8,
@@ -374,7 +398,11 @@
           "start": 18.01,
           "end": 20.76
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 9,
@@ -384,7 +412,7 @@
       "narration": "一つ目は、論理パズルを使った実験です。参加者はパズルを解く途中で、AIに助けを求められます。ただし、AIを呼び出すのにかかる手間には、違いがつけられていました。その手間が小さいほど、AIの利用は増えました。そして、AIに推論そのものを任せた参加者は、AIが使えなくなった後のパズルの成績が下がったのです。一方で、自分で推論に費やした努力の量が多いほど、本人の実力の伸びも大きい傾向が示されました。AIが手軽になるほど頼る回数が増え、自分で考える機会が減ってしまう——そんな流れがうかがえます。",
       "image_prompt": "A bright university research lab in California, USA: several American participants of varied appearance (a Black man in his twenties with short curly hair in a gray hoodie, a white woman in her fifties with a gray bob haircut, a Hispanic man in his thirties with a beard) each sitting at a computer solving puzzles, while a North American researcher in a white lab coat (a Caucasian man in his forties, short brown hair, glasses) observes with a clipboard, the back wall has a corkboard pinned only with printed logic-puzzle sheets (simple grid puzzles and abstract shape-sequence diagrams) and plain paper notes — absolutely no anatomy charts, no human body diagrams, no organ illustrations, no medical or biology posters, soft daytime light, a small flat corner graphic of two simple bars no larger than one-eighth of the frame, tucked in a corner, no text",
       "reference_index": 0,
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -484,7 +512,11 @@
           "start": 38.5,
           "end": 40.0
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 10,
@@ -494,7 +526,7 @@
       "narration": "二つ目は、AI企業アンスロピックの研究チームによる、プログラマーを対象にした実験です。参加者は、AIを使えるグループと使えないグループに、ランダムに分けられました。そして、初めて触るプログラミング用のライブラリを使い、35分ほどの課題に取り組みました。AIの支援を受けたグループは、その直後の理解度テストの平均点が、AIなしのグループより、およそ17%低くなりました。AIの助けで作業は進んでも、中身を身につけるところまでは届いていなかった、ということです。",
       "image_prompt": "A bright office-like research room in the USA with several American programmers working on laptops at tables, split into two groups: one group has a chat assistant window on screen (no readable text), the other group works with only documentation pages; participants of varied appearance (a bearded white man in his late twenties with short wavy brown hair and a full brown beard, wearing an olive-gray cable-knit sweater — the same man who appears in the next scene, a Black woman in her thirties with braids, a Hispanic man in his twenties), while a North American researcher in a white lab coat (a Black woman in her thirties, hair in a neat bun) observes with a tablet, soft daytime light, a small flat corner graphic of two simple bars no larger than one-eighth of the frame, tucked in a corner, every laptop lid is completely plain with no logo, no apple or fruit emblem, no brand mark of any kind, no text",
       "reference_index": 1,
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -580,7 +612,11 @@
           "start": 34.85,
           "end": 36.04
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 11,
@@ -590,7 +626,7 @@
       "narration": "ただし、AIを使った人たちが皆、同じ結果だったわけではありません。研究チームは、参加者のAIとのやりとりを、使い方のパターンごとに分けて分析しました。すると、AIにコードの解説を求めたり、概念について質問したりと、自分で考える関わり方を保った3つのパターンでは、学習の成果が保たれていたのです。同じAIを使っても、丸ごと任せるのか、質問しながら自分も考えるのかで、結果が分かれたのです。",
       "image_prompt": "A bright research room in the USA: a white man in his late twenties with short wavy brown hair and a full brown beard, wearing an olive-gray cable-knit sweater, sitting at a laptop with a chat window on screen (no readable text) and an open paper notebook with handwritten notes beside it, leaning forward in thought, while a North American researcher in a white lab coat (a Black woman in her thirties, hair in a neat bun) watches from a few steps away; soft daytime light, every laptop lid is completely plain with no logo, no apple or fruit emblem, no brand mark of any kind, no text",
       "reference_index": 1,
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -746,7 +782,7 @@
       "duration_seconds": 24,
       "narration": "もし、AIとそんなふうに付き合えたら。朝の机で、私はAIに答えを聞くのではなく、自分の仮説をぶつけてみます。「この結論、反論するとしたら？」。返ってきた指摘を読みながら、自分のノートに考えを書き足していく。そんな朝を思い浮かべるだけで、肩の力がすっと抜けるのを感じます。",
       "image_prompt": "A small figure of a Japanese woman, 32 years old, with straight shoulder-length black hair and side-swept bangs, a slender face, wearing a light gray knit cardigan over a white blouse sitting in an armchair in her cozy living room at night, warm lamp light; any window in the room shows a dark navy night sky (clearly nighttime outside, not daylight) — the only bright daylight in the image is inside the thought bubble, a classic comic-style thought bubble rising from her head (a chain of small round clouds leading up to one large cloud-shaped bubble), inside the thought bubble a miniature warm scene of the same woman (same black shoulder-length hair, same light gray cardigan over a white blouse) at an office desk in bright morning daylight, writing in a paper notebook with a pen while a laptop with a chat window sits beside it, wide shot, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -807,7 +843,7 @@
       "narration": "午後のクライアントとの打ち合わせ。資料を見なくても、レポートの結論を自分の言葉で語れます。質問されても慌てません。だって、この結論に辿り着いたのは、ほかでもない私自身ですから。相手がうなずいてくれた瞬間、胸の奥がじんわり温かくなります。AIがそばにいても、最後に語るのは私。その手応えが、仕事への自信をそっと取り戻してくれます。",
       "image_prompt": "a Japanese woman, 32 years old, with straight shoulder-length black hair and side-swept bangs, a slender face, wearing a light gray knit cardigan over a white blouse, standing in a bright meeting room in the afternoon, speaking confidently with a warm smile toward a client; across the table sits a Japanese client: a man in his forties with short black hair and black-rimmed glasses, wearing a navy suit; a large window with soft afternoon sunlight (clearly bright daytime, not night); she holds nothing in her hands; medium shot, no text",
       "badge_text": "幸せな未来を夢想中",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -961,7 +997,11 @@
           "start": 30.6,
           "end": 31.8
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.42
+      }
     },
     {
       "scene_id": 16,
@@ -1098,7 +1138,11 @@
           "start": 49.51,
           "end": 52.2
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.49,
+        "y": 0.55
+      }
     }
   ],
   "shorts": [
