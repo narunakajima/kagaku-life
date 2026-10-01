@@ -1,0 +1,1151 @@
+{
+  "episode_id": "kl028",
+  "episode_title": "AIに丸投げすると頭は鈍るのか——2つの実験が示した「鈍らせない使い方」",
+  "youtube_title": "AIに丸投げすると頭は鈍る？2つの実験が見せた「鈍らない使い方」",
+  "youtube_description": "「AIに任せっきりだと、自分の考える力は衰えてしまうの？ 鈍らせない使い方はある？」——そんな疑問に、2つの実験が手がかりを示していました。\n\nレポート作成担当の谷口彩さん（32歳）は、資料の構成も文章のたたき台もAIに頼る毎日の中で、「自分一人で書けるのかな」という不安を抱えています。そんな彼女の毎日を変えるかもしれない研究を、アメリカの2つの研究チームが行っていました。\n\n■ ご紹介する研究\n1つ目は、論理パズルを使った実験です。AIを呼び出す手間が小さいほど利用が増え、AIに推論を代替させた参加者は、AIが使えなくなった後の課題成績が低下しました。また、自分で推論に費やした努力の量が多いほど、本人の実力の向上と関連していました。\n2つ目は、Pythonプログラマーを対象にした無作為化実験です。初めて扱うライブラリの35分ほどの課題で、AI支援を受けたグループは直後の理解度テストの平均が約17%低く、一方で解説を求めるなど認知的関与を保った3つの対話パターンでは学習成果が維持されていました。\n\n※いずれもパズルやプログラミングという限られた課題での結果であり、すべての仕事や人に当てはまるとは限りません。また、特定の使い方を推奨するものではありません。研究段階の知見としてご紹介しています。\n\n■ 参考文献\n[1] Wu, S., Belém, C. G., Fu, S.-C., Steyvers, M., Smyth, P. (2026). How AI Assistance Affects Human Skill Development: A Study of Learning with Logic Puzzles. Proceedings of the 2026 ACM Conference on Human-AI Complementarity and Alignment. DOI: 10.1145/3834580.3838741\n[2] Shen, J., Tamkin, A. (2026). How AI Impacts Skill Formation. arXiv:2601.20245. https://arxiv.org/abs/2601.20245 （※学術誌での査読を受ける前に公開された論文です。AIを開発する企業の研究チームによる研究である点にもご留意ください。）\n\n\n🎵 Music: Reflective Piano - \"From Tonight to Tomorrow\" by matthew_c_wright (freesound.org) — CC BY 4.0\n\n🎵 Music: Guitar Journey by ViraMiller (freesound.org) — CC BY 4.0\n#AI #仕事 #科学ニュース #幸せな未来のサイエンス",
+  "youtube_tags": [
+    "AI",
+    "仕事",
+    "生成AI",
+    "思考力",
+    "スキル",
+    "学習",
+    "リスキリング",
+    "科学ニュース",
+    "幸せな未来のサイエンス",
+    "働き方"
+  ],
+  "references": [
+    {
+      "title": "How AI Assistance Affects Human Skill Development: A Study of Learning with Logic Puzzles",
+      "authors": [
+        "Shanglin Wu",
+        "Catarina G. Belém",
+        "Shu-Chin Fu",
+        "M. Steyvers",
+        "Padhraic Smyth"
+      ],
+      "year": 2026,
+      "venue": "Proceedings of the 2026 ACM Conference on Human-AI Complementarity and Alignment",
+      "doi": "10.1145/3834580.3838741",
+      "url": "https://doi.org/10.1145/3834580.3838741",
+      "is_preprint": false,
+      "lead_researcher": "Shanglin Wu"
+    },
+    {
+      "title": "How AI Impacts Skill Formation",
+      "authors": [
+        "J. Shen",
+        "Alex Tamkin"
+      ],
+      "year": 2026,
+      "venue": "arXiv.org",
+      "doi": "10.48550/arXiv.2601.20245",
+      "url": "https://arxiv.org/abs/2601.20245",
+      "is_preprint": true,
+      "lead_researcher": "J. Shen"
+    }
+  ],
+  "protagonist": {
+    "name": "谷口彩",
+    "age": 32,
+    "job": "Webマーケティング会社のレポート作成担当",
+    "gender": "female"
+  },
+  "thumbnail_prompt": "a Japanese woman, 32 years old, with straight shoulder-length black hair and side-swept bangs, a slender face, wearing a light gray knit cardigan over a white blouse, in the right half of the frame, looking at a laptop with a thoughtful yet hopeful expression, one hand holding a pen over a paper notebook, soft warm morning daylight in a bright office, plenty of empty plain space on the left side of the frame for text overlay, medium shot, no text.",
+  "thumbnail_headline": "AIで頭は鈍る？",
+  "thumbnail_subcopy": "2つの実験が示した答え",
+  "thumbnail_b": {
+    "keyword": "約17%低下",
+    "line": "AI支援で理解度が"
+  },
+  "hook_lines": [
+    "AIで頭は鈍る?",
+    "2つの実験が示した答え"
+  ],
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 3,
+      "narration": "AIに任せきりで、私の頭は鈍りますか。",
+      "image_prompt": "Close-up of a Japanese woman, 32 years old, with straight shoulder-length black hair and side-swept bangs, a slender face, wearing a light gray knit cardigan over a white blouse, sitting at a desk in a modern office in the evening, gazing uneasily at a laptop screen with a slightly worried expression, warm desk lamp light with a dusk sky visible through the office window, close-up on face and shoulders, every laptop lid is completely plain with no logo, no apple or fruit emblem, no brand mark of any kind, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "AIに任せきりで、私の頭は鈍りますか。"
+          ],
+          "start": 0.0,
+          "end": 3.86
+        }
+      ]
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "AIなしでも、自分の言葉で話せる——",
+      "reuse_scene_id": 14,
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "AIなしでも、自分の言葉で話せる——"
+          ],
+          "start": 0.0,
+          "end": 3.22
+        }
+      ]
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 2,
+      "narration": "そんな使い方が、あるのかもしれない。",
+      "reuse_scene_id": 15,
+      "ken_burns": "pan_zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "そんな使い方が、あるのかもしれない。"
+          ],
+          "start": 0.0,
+          "end": 3.1
+        }
+      ]
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "narrator": "persona",
+      "duration_seconds": 3,
+      "narration": "二つの実験を、見ていきます。",
+      "image_prompt": "a Japanese woman, 32 years old, with straight shoulder-length black hair and side-swept bangs, a slender face, wearing a light gray knit cardigan over a white blouse, standing by a window in a bright office meeting corner holding a coffee cup, looking out with a calm, curious expression, soft morning daylight (clearly bright daytime, not night), waist-up shot, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "二つの実験を、見ていきます。"
+          ],
+          "start": 0.25,
+          "end": 2.35
+        }
+      ]
+    },
+    {
+      "scene_id": 5,
+      "type": "hook",
+      "narrator": "persona",
+      "duration_seconds": 10,
+      "narration": "谷口彩、32歳。Webマーケティング会社で、クライアント向けのレポートを作る仕事をしています。毎日の作業のお供は、すっかりAIです。",
+      "image_prompt": "a Japanese woman, 32 years old, with straight shoulder-length black hair and side-swept bangs, a slender face, wearing a light gray knit cardigan over a white blouse, sitting at her desk in a modern open-plan Japanese office with a laptop open, a small potted plant beside it, soft morning daylight through a window (clearly bright daytime, not night), calm neutral friendly expression, medium shot, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "谷口彩、32歳。Webマーケティング会社で、"
+          ],
+          "start": 0.0,
+          "end": 4.16
+        },
+        {
+          "lines": [
+            "クライアント向けのレポートを作る仕事をしています。"
+          ],
+          "start": 4.31,
+          "end": 8.06
+        },
+        {
+          "lines": [
+            "毎日の作業のお供は、すっかりAIです。"
+          ],
+          "start": 8.21,
+          "end": 11.25
+        }
+      ]
+    },
+    {
+      "scene_id": 6,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 30,
+      "narration": "資料の構成も、文章のたたき台も、データの読み解きも、気づけばほとんどAIに頼っています。おかげで仕事は驚くほど速く終わります。ただ、その便利さに慣れるほど、ふと不安になる瞬間があるんです。「これ、AIがなかったら、私一人で書けるのかな」って。レポートの結論を自分の言葉で説明しようとして、言葉が出てこなかったことが、先週もありました。",
+      "image_prompt": "a Japanese woman, 32 years old, with straight shoulder-length black hair and side-swept bangs, a slender face, wearing a light gray knit cardigan over a white blouse, at her office desk in the afternoon with a laptop showing a chat window (no readable text), resting her chin on her hand with a pensive, slightly uneasy expression, a stack of printed reports and a notebook beside the laptop, warm afternoon sunlight through the window, medium shot, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "資料の構成も、文章のたたき台も、"
+          ],
+          "start": 0.0,
+          "end": 3.44
+        },
+        {
+          "lines": [
+            "データの読み解きも、気づけばほとんどAIに"
+          ],
+          "start": 3.59,
+          "end": 7.01
+        },
+        {
+          "lines": [
+            "頼っています。おかげで仕事は驚くほど速く"
+          ],
+          "start": 7.16,
+          "end": 11.0
+        },
+        {
+          "lines": [
+            "終わります。ただ、その便利さに慣れるほど、"
+          ],
+          "start": 11.15,
+          "end": 14.69
+        },
+        {
+          "lines": [
+            "ふと不安になる瞬間があるんです。「これ、"
+          ],
+          "start": 14.84,
+          "end": 18.41
+        },
+        {
+          "lines": [
+            "AIがなかったら、私一人で書けるのかな」"
+          ],
+          "start": 18.56,
+          "end": 21.56
+        },
+        {
+          "lines": [
+            "って。レポートの結論を自分の言葉で説明"
+          ],
+          "start": 21.71,
+          "end": 24.56
+        },
+        {
+          "lines": [
+            "しようとして、言葉が出てこなかったことが、"
+          ],
+          "start": 24.71,
+          "end": 27.86
+        },
+        {
+          "lines": [
+            "先週もありました。"
+          ],
+          "start": 28.01,
+          "end": 29.36
+        }
+      ]
+    },
+    {
+      "scene_id": 7,
+      "type": "context",
+      "narrator": "persona",
+      "duration_seconds": 24,
+      "narration": "便利なのは間違いありません。でも、考えることまで手放してしまっていたら、私の頭は少しずつ鈍っていくんじゃないか。そんな心配を、誰にも言えずにいます。かといって、AIを使うのをやめるのは、今さら現実的ではありません。「頼りながら、考える力も保つ」。そんなことが、本当にできるのでしょうか。同じ悩みを抱えている人は、きっと私だけではないはずです。",
+      "image_prompt": "a Japanese woman, 32 years old, with straight shoulder-length black hair and side-swept bangs, a slender face, wearing a light gray knit cardigan over a white blouse, walking alone along an office corridor in the early evening holding a laptop against her chest, a thoughtful, worried expression, warm interior lights with a dusk sky visible through the corridor windows, medium shot, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "便利なのは間違いありません。でも、"
+          ],
+          "start": 0.0,
+          "end": 3.34
+        },
+        {
+          "lines": [
+            "考えることまで手放してしまっていたら、"
+          ],
+          "start": 3.49,
+          "end": 6.34
+        },
+        {
+          "lines": [
+            "私の頭は少しずつ鈍っていくんじゃないか。"
+          ],
+          "start": 6.49,
+          "end": 10.41
+        },
+        {
+          "lines": [
+            "そんな心配を、誰にも言えずにいます。"
+          ],
+          "start": 10.68,
+          "end": 13.38
+        },
+        {
+          "lines": [
+            "かといって、AIを使うのをやめるのは、"
+          ],
+          "start": 13.96,
+          "end": 17.14
+        },
+        {
+          "lines": [
+            "今さら現実的ではありません。「頼りながら、"
+          ],
+          "start": 17.29,
+          "end": 21.47
+        },
+        {
+          "lines": [
+            "考える力も保つ」。そんなことが、"
+          ],
+          "start": 21.62,
+          "end": 24.88
+        },
+        {
+          "lines": [
+            "本当にできるのでしょうか。同じ悩みを"
+          ],
+          "start": 25.03,
+          "end": 28.52
+        },
+        {
+          "lines": [
+            "抱えている人は、きっと私だけではないはずです。"
+          ],
+          "start": 28.67,
+          "end": 32.12
+        }
+      ]
+    },
+    {
+      "scene_id": 8,
+      "type": "citation",
+      "narrator": "research",
+      "duration_seconds": 18,
+      "narration": "アメリカのカリフォルニア大学アーバイン校の研究チームが2026年に発表した実験と、AIを開発するアメリカの企業、アンスロピックの研究チームが2026年に公表した実験。課題はまったく別のものですが、どちらも、AIを使うことが人の力の身につき方をどう変えるのかを調べています。",
+      "image_prompt": "A bright modern American university campus building with glass and concrete architecture under a clear daytime sky, trees and a lawn in front, viewed from outside, no people in the foreground, no close-up of any individual, no text",
+      "ken_burns": "zoom_out",
+      "telop_cards": [
+        {
+          "lines": [
+            "アメリカのカリフォルニア大学アーバイン"
+          ],
+          "start": 0.0,
+          "end": 2.75
+        },
+        {
+          "lines": [
+            "校の研究チームが2026年に発表した実験と、"
+          ],
+          "start": 2.9,
+          "end": 6.26
+        },
+        {
+          "lines": [
+            "AIを開発するアメリカの企業、"
+          ],
+          "start": 6.42,
+          "end": 8.59
+        },
+        {
+          "lines": [
+            "アンスロピックの研究チームが2026年に"
+          ],
+          "start": 8.74,
+          "end": 11.63
+        },
+        {
+          "lines": [
+            "公表した実験。課題はまったく別のものですが、"
+          ],
+          "start": 11.78,
+          "end": 14.96
+        },
+        {
+          "lines": [
+            "どちらも、AIを使うことが人の力の身に"
+          ],
+          "start": 15.11,
+          "end": 17.86
+        },
+        {
+          "lines": [
+            "つき方をどう変えるのかを調べています。"
+          ],
+          "start": 18.01,
+          "end": 20.76
+        }
+      ]
+    },
+    {
+      "scene_id": 9,
+      "type": "finding",
+      "narrator": "research",
+      "duration_seconds": 40,
+      "narration": "一つ目は、論理パズルを使った実験です。参加者はパズルを解く途中で、AIに助けを求められます。ただし、AIを呼び出すのにかかる手間には、違いがつけられていました。その手間が小さいほど、AIの利用は増えました。そして、AIに推論そのものを任せた参加者は、AIが使えなくなった後のパズルの成績が下がったのです。一方で、自分で推論に費やした努力の量が多いほど、本人の実力の伸びも大きい傾向が示されました。AIが手軽になるほど頼る回数が増え、自分で考える機会が減ってしまう——そんな流れがうかがえます。",
+      "image_prompt": "A bright university research lab in California, USA: several American participants of varied appearance (a Black man in his twenties with short curly hair in a gray hoodie, a white woman in her fifties with a gray bob haircut, a Hispanic man in his thirties with a beard) each sitting at a computer solving puzzles, while a North American researcher in a white lab coat (a Caucasian man in his forties, short brown hair, glasses) observes with a clipboard, the back wall has a corkboard pinned only with printed logic-puzzle sheets (simple grid puzzles and abstract shape-sequence diagrams) and plain paper notes — absolutely no anatomy charts, no human body diagrams, no organ illustrations, no medical or biology posters, soft daytime light, a small flat corner graphic of two simple bars no larger than one-eighth of the frame, tucked in a corner, no text",
+      "reference_index": 0,
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "一つ目は、論理パズルを使った実験です。"
+          ],
+          "start": 0.0,
+          "end": 2.85
+        },
+        {
+          "lines": [
+            "参加者はパズルを解く途中で、"
+          ],
+          "start": 3.58,
+          "end": 5.74
+        },
+        {
+          "lines": [
+            "AIに助けを求められます。ただし、"
+          ],
+          "start": 5.89,
+          "end": 8.95
+        },
+        {
+          "lines": [
+            "AIを呼び出すのにかかる手間には、"
+          ],
+          "start": 9.1,
+          "end": 11.65
+        },
+        {
+          "lines": [
+            "違いがつけられていました。その手間が小さいほど、"
+          ],
+          "start": 11.8,
+          "end": 15.4
+        },
+        {
+          "lines": [
+            "AIの利用は増えました。そして、"
+          ],
+          "start": 15.55,
+          "end": 17.95
+        },
+        {
+          "lines": [
+            "AIに推論そのものを任せた参加者は、"
+          ],
+          "start": 18.1,
+          "end": 20.8
+        },
+        {
+          "lines": [
+            "AIが使えなくなった後のパズルの成績が"
+          ],
+          "start": 20.95,
+          "end": 23.8
+        },
+        {
+          "lines": [
+            "下がったのです。一方で、自分で推論に"
+          ],
+          "start": 23.95,
+          "end": 26.65
+        },
+        {
+          "lines": [
+            "費やした努力の量が多いほど、"
+          ],
+          "start": 26.8,
+          "end": 28.9
+        },
+        {
+          "lines": [
+            "本人の実力の伸びも大きい傾向が示されました。"
+          ],
+          "start": 29.05,
+          "end": 32.35
+        },
+        {
+          "lines": [
+            "AIが手軽になるほど頼る回数が増え、"
+          ],
+          "start": 32.5,
+          "end": 35.2
+        },
+        {
+          "lines": [
+            "自分で考える機会が減ってしまう——そんな"
+          ],
+          "start": 35.35,
+          "end": 38.35
+        },
+        {
+          "lines": [
+            "流れがうかがえます。"
+          ],
+          "start": 38.5,
+          "end": 40.0
+        }
+      ]
+    },
+    {
+      "scene_id": 10,
+      "type": "finding",
+      "narrator": "research",
+      "duration_seconds": 36,
+      "narration": "二つ目は、AI企業アンスロピックの研究チームによる、プログラマーを対象にした実験です。参加者は、AIを使えるグループと使えないグループに、ランダムに分けられました。そして、初めて触るプログラミング用のライブラリを使い、35分ほどの課題に取り組みました。AIの支援を受けたグループは、その直後の理解度テストの平均点が、AIなしのグループより、およそ17%低くなりました。AIの助けで作業は進んでも、中身を身につけるところまでは届いていなかった、ということです。",
+      "image_prompt": "A bright office-like research room in the USA with several American programmers working on laptops at tables, split into two groups: one group has a chat assistant window on screen (no readable text), the other group works with only documentation pages; participants of varied appearance (a bearded white man in his late twenties with short wavy brown hair and a full brown beard, wearing an olive-gray cable-knit sweater — the same man who appears in the next scene, a Black woman in her thirties with braids, a Hispanic man in his twenties), while a North American researcher in a white lab coat (a Black woman in her thirties, hair in a neat bun) observes with a tablet, soft daytime light, a small flat corner graphic of two simple bars no larger than one-eighth of the frame, tucked in a corner, every laptop lid is completely plain with no logo, no apple or fruit emblem, no brand mark of any kind, no text",
+      "reference_index": 1,
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "二つ目は、AI企業アンスロピックの研究"
+          ],
+          "start": 0.19,
+          "end": 3.03
+        },
+        {
+          "lines": [
+            "チームによる、プログラマーを対象にした実験です。"
+          ],
+          "start": 3.18,
+          "end": 6.76
+        },
+        {
+          "lines": [
+            "参加者は、AIを使えるグループと使えない"
+          ],
+          "start": 6.91,
+          "end": 9.9
+        },
+        {
+          "lines": [
+            "グループに、ランダムに分けられました。"
+          ],
+          "start": 10.05,
+          "end": 12.89
+        },
+        {
+          "lines": [
+            "そして、初めて触るプログラミング用の"
+          ],
+          "start": 13.04,
+          "end": 15.73
+        },
+        {
+          "lines": [
+            "ライブラリを使い、35分ほどの課題に"
+          ],
+          "start": 15.88,
+          "end": 18.57
+        },
+        {
+          "lines": [
+            "取り組みました。AIの支援を受けたグループは、"
+          ],
+          "start": 18.72,
+          "end": 22.15
+        },
+        {
+          "lines": [
+            "その直後の理解度テストの平均点が、"
+          ],
+          "start": 22.3,
+          "end": 24.84
+        },
+        {
+          "lines": [
+            "AIなしのグループより、およそ17%低く"
+          ],
+          "start": 24.99,
+          "end": 27.98
+        },
+        {
+          "lines": [
+            "なりました。AIの助けで作業は進んでも、"
+          ],
+          "start": 28.13,
+          "end": 31.12
+        },
+        {
+          "lines": [
+            "中身を身につけるところまでは届いていなかった、"
+          ],
+          "start": 31.27,
+          "end": 34.7
+        },
+        {
+          "lines": [
+            "ということです。"
+          ],
+          "start": 34.85,
+          "end": 36.04
+        }
+      ]
+    },
+    {
+      "scene_id": 11,
+      "type": "finding",
+      "narrator": "research",
+      "duration_seconds": 32,
+      "narration": "ただし、AIを使った人たちが皆、同じ結果だったわけではありません。研究チームは、参加者のAIとのやりとりを、使い方のパターンごとに分けて分析しました。すると、AIにコードの解説を求めたり、概念について質問したりと、自分で考える関わり方を保った3つのパターンでは、学習の成果が保たれていたのです。同じAIを使っても、丸ごと任せるのか、質問しながら自分も考えるのかで、結果が分かれたのです。",
+      "image_prompt": "A bright research room in the USA: a white man in his late twenties with short wavy brown hair and a full brown beard, wearing an olive-gray cable-knit sweater, sitting at a laptop with a chat window on screen (no readable text) and an open paper notebook with handwritten notes beside it, leaning forward in thought, while a North American researcher in a white lab coat (a Black woman in her thirties, hair in a neat bun) watches from a few steps away; soft daytime light, every laptop lid is completely plain with no logo, no apple or fruit emblem, no brand mark of any kind, no text",
+      "reference_index": 1,
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "ただし、AIを使った人たちが皆、"
+          ],
+          "start": 0.0,
+          "end": 2.56
+        },
+        {
+          "lines": [
+            "同じ結果だったわけではありません。"
+          ],
+          "start": 2.71,
+          "end": 5.21
+        },
+        {
+          "lines": [
+            "研究チームは、参加者のAIとのやりとりを、"
+          ],
+          "start": 5.36,
+          "end": 8.45
+        },
+        {
+          "lines": [
+            "使い方のパターンごとに分けて分析しました。"
+          ],
+          "start": 8.6,
+          "end": 11.69
+        },
+        {
+          "lines": [
+            "すると、AIにコードの解説を求めたり、"
+          ],
+          "start": 11.84,
+          "end": 14.63
+        },
+        {
+          "lines": [
+            "概念について質問したりと、自分で考える"
+          ],
+          "start": 14.78,
+          "end": 17.57
+        },
+        {
+          "lines": [
+            "関わり方を保った3つのパターンでは、"
+          ],
+          "start": 17.72,
+          "end": 20.37
+        },
+        {
+          "lines": [
+            "学習の成果が保たれていたのです。"
+          ],
+          "start": 20.52,
+          "end": 22.87
+        },
+        {
+          "lines": [
+            "同じAIを使っても、丸ごと任せるのか、"
+          ],
+          "start": 23.02,
+          "end": 25.81
+        },
+        {
+          "lines": [
+            "質問しながら自分も考えるのかで、"
+          ],
+          "start": 25.96,
+          "end": 28.31
+        },
+        {
+          "lines": [
+            "結果が分かれたのです。"
+          ],
+          "start": 28.46,
+          "end": 30.08
+        }
+      ]
+    },
+    {
+      "scene_id": 12,
+      "type": "data",
+      "narrator": "research",
+      "duration_seconds": 24,
+      "narration": "AIを使ったグループは、全体として理解度テストが、AIなしより、およそ17%低い結果でした。一方、解説を求めるなど、考えながらAIを使った人たちは、学習の成果が保たれていました。二つの別々の課題で、同じ方向の結果が出たことになります。ただし、対象はパズルとプログラミングという限られた課題で、すべての仕事にそのまま当てはまるとは限りません。",
+      "image_prompt": "A simple full-frame flat infographic. At the top, a short Japanese title reading 「AIの使い方と理解度」. Below it, three vertical bars side by side with Japanese labels underneath: 「AIなしで取り組んだグループ」 (a tall blue/teal bar), 「AIを使ったグループ全体」 (a coral/orange bar that is only modestly shorter — about 83% of the height of the first bar, do not exaggerate the gap, with a small Japanese label 「約17%低下」 above it), and 「考えながら使った人たち」 (a tall blue/teal bar almost as tall as the first). No axis numbers and no other numbers anywhere; the only number in the image is 「17%」 inside the label 「約17%低下」, no text",
+      "reference_index": 1,
+      "ken_burns": "static",
+      "telop_cards": [
+        {
+          "lines": [
+            "AIを使ったグループは、全体として理解度テストが、"
+          ],
+          "start": 0.0,
+          "end": 3.82
+        },
+        {
+          "lines": [
+            "AIなしより、およそ17%低い結果でした。"
+          ],
+          "start": 3.97,
+          "end": 7.69
+        },
+        {
+          "lines": [
+            "一方、解説を求めるなど、考えながらAIを"
+          ],
+          "start": 8.34,
+          "end": 12.04
+        },
+        {
+          "lines": [
+            "使った人たちは、学習の成果が保たれていました。"
+          ],
+          "start": 12.19,
+          "end": 15.64
+        },
+        {
+          "lines": [
+            "二つの別々の課題で、同じ方向の結果が出た"
+          ],
+          "start": 15.79,
+          "end": 19.48
+        },
+        {
+          "lines": [
+            "ことになります。ただし、対象はパズルと"
+          ],
+          "start": 19.63,
+          "end": 22.48
+        },
+        {
+          "lines": [
+            "プログラミングという限られた課題で、"
+          ],
+          "start": 22.63,
+          "end": 25.33
+        },
+        {
+          "lines": [
+            "すべての仕事にそのまま当てはまるとは限りません。"
+          ],
+          "start": 25.48,
+          "end": 29.08
+        }
+      ]
+    },
+    {
+      "scene_id": 13,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 24,
+      "narration": "もし、AIとそんなふうに付き合えたら。朝の机で、私はAIに答えを聞くのではなく、自分の仮説をぶつけてみます。「この結論、反論するとしたら？」。返ってきた指摘を読みながら、自分のノートに考えを書き足していく。そんな朝を思い浮かべるだけで、肩の力がすっと抜けるのを感じます。",
+      "image_prompt": "A small figure of a Japanese woman, 32 years old, with straight shoulder-length black hair and side-swept bangs, a slender face, wearing a light gray knit cardigan over a white blouse sitting in an armchair in her cozy living room at night, warm lamp light; any window in the room shows a dark navy night sky (clearly nighttime outside, not daylight) — the only bright daylight in the image is inside the thought bubble, a classic comic-style thought bubble rising from her head (a chain of small round clouds leading up to one large cloud-shaped bubble), inside the thought bubble a miniature warm scene of the same woman (same black shoulder-length hair, same light gray cardigan over a white blouse) at an office desk in bright morning daylight, writing in a paper notebook with a pen while a laptop with a chat window sits beside it, wide shot, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "もし、AIとそんなふうに付き合えたら。"
+          ],
+          "start": 0.82,
+          "end": 3.67
+        },
+        {
+          "lines": [
+            "朝の机で、私はAIに答えを聞くのではなく、"
+          ],
+          "start": 4.28,
+          "end": 8.42
+        },
+        {
+          "lines": [
+            "自分の仮説をぶつけてみます。「この結論、"
+          ],
+          "start": 8.82,
+          "end": 12.74
+        },
+        {
+          "lines": [
+            "反論するとしたら？」。返ってきた指摘を読みながら、"
+          ],
+          "start": 13.18,
+          "end": 17.72
+        },
+        {
+          "lines": [
+            "自分のノートに考えを書き足していく。"
+          ],
+          "start": 17.87,
+          "end": 20.57
+        },
+        {
+          "lines": [
+            "そんな朝を思い浮かべるだけで、"
+          ],
+          "start": 21.72,
+          "end": 23.97
+        },
+        {
+          "lines": [
+            "肩の力がすっと抜けるのを感じます。"
+          ],
+          "start": 24.12,
+          "end": 26.67
+        }
+      ]
+    },
+    {
+      "scene_id": 14,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 26,
+      "narration": "午後のクライアントとの打ち合わせ。資料を見なくても、レポートの結論を自分の言葉で語れます。質問されても慌てません。だって、この結論に辿り着いたのは、ほかでもない私自身ですから。相手がうなずいてくれた瞬間、胸の奥がじんわり温かくなります。AIがそばにいても、最後に語るのは私。その手応えが、仕事への自信をそっと取り戻してくれます。",
+      "image_prompt": "a Japanese woman, 32 years old, with straight shoulder-length black hair and side-swept bangs, a slender face, wearing a light gray knit cardigan over a white blouse, standing in a bright meeting room in the afternoon, speaking confidently with a warm smile toward a client; across the table sits a Japanese client: a man in his forties with short black hair and black-rimmed glasses, wearing a navy suit; a large window with soft afternoon sunlight (clearly bright daytime, not night); she holds nothing in her hands; medium shot, no text",
+      "badge_text": "幸せな未来を夢想中",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "午後のクライアントとの打ち合わせ。"
+          ],
+          "start": 0.0,
+          "end": 2.55
+        },
+        {
+          "lines": [
+            "資料を見なくても、レポートの結論を自分の"
+          ],
+          "start": 2.7,
+          "end": 5.7
+        },
+        {
+          "lines": [
+            "言葉で語れます。質問されても慌てません。"
+          ],
+          "start": 5.85,
+          "end": 8.85
+        },
+        {
+          "lines": [
+            "だって、この結論に辿り着いたのは、"
+          ],
+          "start": 9.0,
+          "end": 11.84
+        },
+        {
+          "lines": [
+            "ほかでもない私自身ですから。"
+          ],
+          "start": 11.99,
+          "end": 14.09
+        },
+        {
+          "lines": [
+            "相手がうなずいてくれた瞬間、"
+          ],
+          "start": 14.24,
+          "end": 16.34
+        },
+        {
+          "lines": [
+            "胸の奥がじんわり温かくなります。"
+          ],
+          "start": 16.49,
+          "end": 18.89
+        },
+        {
+          "lines": [
+            "AIがそばにいても、最後に語るのは私。"
+          ],
+          "start": 19.24,
+          "end": 22.22
+        },
+        {
+          "lines": [
+            "その手応えが、仕事への自信をそっと"
+          ],
+          "start": 22.37,
+          "end": 25.75
+        },
+        {
+          "lines": [
+            "取り戻してくれます。"
+          ],
+          "start": 25.9,
+          "end": 27.4
+        }
+      ]
+    },
+    {
+      "scene_id": 15,
+      "type": "impact",
+      "narrator": "persona",
+      "duration_seconds": 28,
+      "narration": "休日は、お気に入りのカフェの窓際で、ノートに考えごとを書き出します。思いついたことを一通り書いたあとで、AIに「抜けている視点はある？」と聞いてみる。返事を読んで、また自分で考える。AIは、私の考えを置き換える相手じゃなくて、一緒に考えてくれる相棒。そう思えるのが、うれしくてたまりません。ノートに残る自分の字が、日に日に愛おしくなっていきます。",
+      "image_prompt": "a Japanese woman, 32 years old, with straight shoulder-length black hair and side-swept bangs, a slender face, wearing a light gray knit cardigan over a white blouse, sitting at a window seat of a cozy Japanese café on a weekend morning, writing in a paper notebook with a pen, a laptop with a chat window (no readable text) open to the side, a cup of coffee, soft bright morning daylight (clearly daytime, not night), warm gentle smile, medium shot, no text",
+      "badge_text": "幸せな未来を夢想中",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "休日は、お気に入りのカフェの窓際で、"
+          ],
+          "start": 0.0,
+          "end": 3.24
+        },
+        {
+          "lines": [
+            "ノートに考えごとを書き出します。"
+          ],
+          "start": 3.39,
+          "end": 5.79
+        },
+        {
+          "lines": [
+            "思いついたことを一通り書いたあとで、"
+          ],
+          "start": 6.2,
+          "end": 8.98
+        },
+        {
+          "lines": [
+            "AIに「抜けている視点はある？」"
+          ],
+          "start": 9.13,
+          "end": 11.73
+        },
+        {
+          "lines": [
+            "と聞いてみる。返事を読んで、"
+          ],
+          "start": 11.88,
+          "end": 14.38
+        },
+        {
+          "lines": [
+            "また自分で考える。AIは、私の考えを"
+          ],
+          "start": 14.53,
+          "end": 19.43
+        },
+        {
+          "lines": [
+            "置き換える相手じゃなくて、一緒に考えてくれる相棒。"
+          ],
+          "start": 19.58,
+          "end": 23.33
+        },
+        {
+          "lines": [
+            "そう思えるのが、うれしくてたまりません。"
+          ],
+          "start": 23.58,
+          "end": 26.58
+        },
+        {
+          "lines": [
+            "ノートに残る自分の字が、日に日に愛おしく"
+          ],
+          "start": 27.0,
+          "end": 30.45
+        },
+        {
+          "lines": [
+            "なっていきます。"
+          ],
+          "start": 30.6,
+          "end": 31.8
+        }
+      ]
+    },
+    {
+      "scene_id": 16,
+      "type": "closing",
+      "narrator": "research",
+      "duration_seconds": 56,
+      "narration": "今回紹介した二つの実験が示したのは、AIに推論を任せきりにしたときには、後の成績や理解度が下がり、考えながら関わったときには、その差が小さかったという傾向です。対象はパズルとプログラミングの課題で、すべての仕事や人に当てはまるとは言えません。それでも、AIをどう使うかで、自分で考える力の残り方が変わるかもしれない、という手がかりは見えてきました。便利さに身をゆだねながら、自分の言葉で考える時間も、きちんと手元に残しておける。AIとのそんな付き合い方への道筋を、研究が少しずつ照らし始めています。詳しい研究内容が知りたい方は、概要欄をご確認ください。次はどんな研究が、誰かの幸せな未来を運んでくるのでしょうか。その瞬間をこれからも一緒に見つけていきたい方は、ぜひチャンネル登録してお待ちください。",
+      "image_prompt": "a Japanese woman, 32 years old, with straight shoulder-length black hair and side-swept bangs, a slender face, wearing a light gray knit cardigan over a white blouse, walking calmly along a quiet riverside path at dusk on her way home, warm golden hour lighting, a content, peaceful expression, a tote bag over her shoulder, houses and greenery around her, wide shot, no text",
+      "ken_burns": "zoom_in",
+      "telop_cards": [
+        {
+          "lines": [
+            "今回紹介した二つの実験が示したのは、"
+          ],
+          "start": 0.0,
+          "end": 2.6
+        },
+        {
+          "lines": [
+            "AIに推論を任せきりにしたときには、"
+          ],
+          "start": 2.75,
+          "end": 5.42
+        },
+        {
+          "lines": [
+            "後の成績や理解度が下がり、考えながら"
+          ],
+          "start": 5.57,
+          "end": 8.12
+        },
+        {
+          "lines": [
+            "関わったときには、その差が小さかったという"
+          ],
+          "start": 8.27,
+          "end": 11.25
+        },
+        {
+          "lines": [
+            "傾向です。対象はパズルとプログラミングの課題で、"
+          ],
+          "start": 11.4,
+          "end": 14.8
+        },
+        {
+          "lines": [
+            "すべての仕事や人に当てはまるとは言えません。"
+          ],
+          "start": 14.95,
+          "end": 18.07
+        },
+        {
+          "lines": [
+            "それでも、AIをどう使うかで、"
+          ],
+          "start": 18.22,
+          "end": 20.35
+        },
+        {
+          "lines": [
+            "自分で考える力の残り方が変わるかもしれない、"
+          ],
+          "start": 20.5,
+          "end": 23.62
+        },
+        {
+          "lines": [
+            "という手がかりは見えてきました。"
+          ],
+          "start": 23.77,
+          "end": 26.04
+        },
+        {
+          "lines": [
+            "便利さに身をゆだねながら、自分の言葉で"
+          ],
+          "start": 26.19,
+          "end": 28.88
+        },
+        {
+          "lines": [
+            "考える時間も、きちんと手元に残しておける。"
+          ],
+          "start": 29.03,
+          "end": 32.01
+        },
+        {
+          "lines": [
+            "AIとのそんな付き合い方への道筋を、"
+          ],
+          "start": 32.16,
+          "end": 34.71
+        },
+        {
+          "lines": [
+            "研究が少しずつ照らし始めています。"
+          ],
+          "start": 34.86,
+          "end": 37.27
+        },
+        {
+          "lines": [
+            "詳しい研究内容が知りたい方は、"
+          ],
+          "start": 37.42,
+          "end": 39.55
+        },
+        {
+          "lines": [
+            "概要欄をご確認ください。次はどんな研究が、"
+          ],
+          "start": 39.7,
+          "end": 42.68
+        },
+        {
+          "lines": [
+            "誰かの幸せな未来を運んでくるのでしょうか。"
+          ],
+          "start": 42.83,
+          "end": 45.81
+        },
+        {
+          "lines": [
+            "その瞬間をこれからも一緒に見つけていきたい方は、"
+          ],
+          "start": 45.96,
+          "end": 49.36
+        },
+        {
+          "lines": [
+            "ぜひチャンネル登録してお待ちください。"
+          ],
+          "start": 49.51,
+          "end": 52.2
+        }
+      ]
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "persona",
+          "narration": "AIで、頭は鈍る？",
+          "scene_id": 1
+        },
+        {
+          "narrator": "research",
+          "narration": "別々の二つの実験で、同じ傾向が出ました。",
+          "scene_id": 9
+        },
+        {
+          "narrator": "research",
+          "narration": "プログラミング実験で、AI組は理解度が約17%低下。",
+          "scene_id": 12
+        },
+        {
+          "narrator": "research",
+          "narration": "でも、考えながら使った人は、学びが保たれました。",
+          "scene_id": 11
+        },
+        {
+          "narrator": "persona",
+          "narration": "AIが相棒なら、きっと温かい未来。",
+          "scene_id": 14
+        },
+        {
+          "narrator": "persona",
+          "narration": "鈍らせない使い方は、本編で。",
+          "scene_id": 15
+        }
+      ]
+    }
+  ],
+  "narration_voices": {
+    "persona": "Kore",
+    "research": "Orus"
+  },
+  "notes": "ボイス: persona=Kore（Gemini推薦: 32歳の中堅社会人としての内省的なリアリティ。Despinaは平坦、Sulafatは若すぎ）、research=Orus（男性固定）。",
+  "bgm_sources": {
+    "intro": "BGM/kl028-BGM-intro.mp3",
+    "main": "BGM/kl028-BGM-main.mp3",
+    "outro": "BGM/kl025-BGM-outro.mp3"
+  }
+}
