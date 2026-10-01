@@ -1332,8 +1332,88 @@
         "market_status": "novel",
         "novel_delta": "ボランティアなどの実際の行動を起こさずとも、心の中で「他者の役に立ちたい・思いやりたい」と意識する姿勢そのものが、11年後の実行機能低下や認知症リスク低下と強く関連することを示した点。"
       }
+    },
+    {
+      "episode_id": "kl028",
+      "status": "confirmed",
+      "slot_type": "concern",
+      "concern_id": "work_ai",
+      "domain": "life",
+      "entry_question": "AIに仕事を任せっきりにしていると、自分の考える力は本当に衰えてしまうの？ 鈍らせない使い方はある？",
+      "title": "AIに丸投げすると、頭は鈍るのか：2つの実験が示した「鈍らせない使い方」",
+      "format": "multi_paper",
+      "references": [
+        {
+          "title": "How AI Assistance Affects Human Skill Development: A Study of Learning with Logic Puzzles",
+          "authors": [
+            "Shanglin Wu",
+            "Catarina G. Belém",
+            "Shu-Chin Fu",
+            "M. Steyvers",
+            "Padhraic Smyth"
+          ],
+          "year": 2026,
+          "venue": "Proceedings of the 2026 ACM Conference on Human-AI Complementarity and Alignment",
+          "doi": "10.1145/3834580.3838741",
+          "is_preprint": false,
+          "lead_researcher": "Shanglin Wu"
+        },
+        {
+          "title": "How AI Impacts Skill Formation",
+          "authors": [
+            "J. Shen",
+            "Alex Tamkin"
+          ],
+          "year": 2026,
+          "venue": "arXiv.org",
+          "doi": "10.48550/arXiv.2601.20245",
+          "url": "https://arxiv.org/abs/2601.20245",
+          "is_preprint": true,
+          "lead_researcher": "J. Shen"
+        }
+      ],
+      "protagonist": {
+        "name": "谷口彩",
+        "age": 32,
+        "job": "Webマーケティング会社のレポート作成担当",
+        "gender": "female"
+      },
+      "hook_idea": "「最近AIに頼りきりで、自分で考えなくなった気がする…」その不安を、2つの実験が数字で確かめました。",
+      "notes": "2026-10-01: STAGE0でwork_ai（仕事とAI）を選定（健康系枠0・ワイルドカード枠1の回に、domain=lifeかつ当事者の広さ5の関心ごと）。新在庫0件のためSTAGE1〜4を新規実行（収集258→通過191→トリアージ40→pass23→採点31件）。ユーザーは案A「AIに任せっきりだと頭は鈍る？鈍らせない使い方は？」を選定。\n\n使用論文2本（どちらもヒトのRCT）: (1) ACM 2026（ロジックパズル。AIに推論を代替させた群はAI停止後の成績が低下、自力推論の努力量が能力向上と関連）。(2) arXiv 2026・未査読（Python初見ライブラリのRCT。AI支援群は直後の理解度が平均17%低下、説明を求める等の認知的関与を保った対話パターンでは維持）。『丸投げ→鈍る／考えながら使う→鈍らない』を別課題の2実験で裏付ける構成。(2)は未査読のためナレーションでは『研究段階』のヘッジのみ、開示は概要欄。\n\n注意: wonder低め（2）、behavioral_familiarity=familiar、deja_vu strong/partial（kl012・kl002と『AIと仕事・能力』で近い）。『どう使えば鈍らないか』の具体的な答えを軸に差別化する。STAGE3誇張チェックは両論文caution→kl_fact_check.pyで数値（17%）・スコープを厳密に照合。被験者はパズル課題・プログラマーで、一般の全業務に一般化しない。使い方の助言口調（〜しましょう）は避け研究結果の紹介にとどめる。内容の型は直近5話の治療・健康系から変わる（行動実験）。",
+      "stage4_snapshot": [
+        {
+          "paperId": "b42f28cd1ee8930a3da953bc5f89a0af4f6aaf37",
+          "overall_score": 3.05,
+          "score_breakdown": {
+            "wonder_score": 2,
+            "transformation_score": 2,
+            "answer_fit_score": 4,
+            "applicable_breadth_score": 5,
+            "surprise_score": 3,
+            "persona_fit_score": 4
+          },
+          "evidence_level": "human_rct",
+          "market_status": "existing_product",
+          "novel_delta": "新たな製品や技術の提案ではなく、手軽なAI支援が自力推論を代替することでAI除去後のスキル習得が阻害され、実力を過大評価してしまう認知メカニズムを実験とベイズモデルで定量化した知見である点。"
+        },
+        {
+          "paperId": "97925dff599f2ac34aa06c388b98d1886bbd3296",
+          "overall_score": 3.0,
+          "score_breakdown": {
+            "wonder_score": 2,
+            "transformation_score": 2,
+            "answer_fit_score": 4,
+            "applicable_breadth_score": 4,
+            "surprise_score": 4,
+            "persona_fit_score": 4
+          },
+          "evidence_level": "human_rct",
+          "market_status": "existing_product",
+          "novel_delta": "既存のチャット型AIを使う際、タスクを全丸投げすると理解度やデバッグ力が17%低下する一方で、理由や概念を質問する認知的関与を保てばスキル形成を損なわずに済むという実証的知見。"
+        }
+      ]
     }
   ],
-  "total_topics": 27,
-  "last_updated": "2026-09-30"
+  "total_topics": 28,
+  "last_updated": "2026-10-01"
 }
