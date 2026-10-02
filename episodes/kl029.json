@@ -67,7 +67,11 @@
           "start": 0.19,
           "end": 3.36
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.53,
+        "y": 0.48
+      }
     },
     {
       "scene_id": 2,
@@ -94,7 +98,7 @@
       "duration_seconds": 2,
       "narration": "妻と、せんべいをぱりっと。",
       "reuse_scene_id": 15,
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -121,7 +125,11 @@
           "start": 0.4,
           "end": 2.5
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.4,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 5,
@@ -160,7 +168,11 @@
           "start": 14.09,
           "end": 15.51
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.58,
+        "y": 0.45
+      }
     },
     {
       "scene_id": 6,
@@ -169,7 +181,7 @@
       "duration_seconds": 26,
       "narration": "そんな私が今、いちばん気にしているのは、奥歯です。重度の歯周病で、一本がグラグラしてきました。歯医者さんには、歯ぐきを切開する手術か、抜歯が必要だと言われています。好物は、厚切りのたくあん。あの歯ごたえが、最近はもう噛めません。三十年、ミクロン単位で金属を削ってきた手には、自信があります。それなのに、自分の口の中の小さな骨のことは、どうにもできません。柔らかいものばかり選んでいる自分に、気づいてしまいます。歯は一度失えば戻らない。頭ではわかっていても、決断できずにいます。",
       "image_prompt": "a Japanese man, 52 years old, with short neat black hair, a sturdy medium build and a weathered, kind face, wearing a navy-blue work jacket over a gray T-shirt, sitting in a dental clinic consultation room across from a dentist in a light blue uniform who is pointing gently at a model of teeth, he looks serious and a little anxious, a hand lightly on his jaw, bright clinic lighting in the afternoon, medium shot, calm non-graphic mood, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -271,7 +283,7 @@
       "duration_seconds": 24,
       "narration": "仕事帰りの夕飯でも、噛むのは反対側ばかり。家族には「柔らかいものでいいよ」と言われますが、本当は、昔みたいに噛みしめて味わいたい。妻は何も言いません。でも、私が反対側ばかりで噛んでいることに、気づいているはずです。切るのは怖いし、抜いてしまうのも、やっぱり惜しい。大がかりな手術をしなくても、溶けてしまった歯のまわりの骨が戻る日は、来るのでしょうか。この先の十年、好きなものを好きなように食べられるのか。ふとした夜に、そんなことを考えます。",
       "image_prompt": "a Japanese man, 52 years old, with short neat black hair, a sturdy medium build and a weathered, kind face, wearing a navy-blue work jacket over a gray T-shirt, sitting at a dinner table in the evening with a Japanese woman, 50 years old, with shoulder-length brown hair, wearing a cream cardigan, a bowl of soft rice porridge and a plate of thickly sliced yellow pickled radish untouched in front of him, he looks longingly at the pickles while chewing carefully on one side, warm interior lamp light with a dusk sky visible through the window, medium shot, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -410,7 +422,11 @@
           "start": 16.93,
           "end": 18.28
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 9,
@@ -419,7 +435,7 @@
       "duration_seconds": 26,
       "narration": "歯周病は、歯を支える骨や歯ぐきを少しずつ壊していく病気です。従来の再生治療は、歯ぐきを切開する外科的な処置が中心でした。そこで研究チームは、他人から提供された歯の中の組織、歯髄に含まれる幹細胞を、骨が失われた部分に注射する方法を試しました。対象は、慢性歯周炎の患者百三十二人、歯の数にして百五十八本です。試験は二つの段階で行われました。最初は、注射する細胞の量を変えて、ちょうどよい量を探っています。次に、注射を一回だけ受ける群、二回受ける群、生理食塩水の群に、同じ人数ずつ振り分けて比べました。",
       "image_prompt": "A clean Chinese dental research laboratory, East Asian (Chinese) researchers in white lab coats and gloves examining small culture dishes under a microscope and holding a test tube of clear liquid, soft laboratory daylight, a small flat plain corner graphic of a tooth cross-section no larger than one-eighth of the frame, medium shot, no protagonist, no text or numerals",
-      "ken_burns": "zoom_out",
+      "ken_burns": "pan_zoom_out",
       "reference_index": 0,
       "telop_cards": [
         {
@@ -522,7 +538,7 @@
       "duration_seconds": 26,
       "narration": "参加者は、まず歯ぐきの奥の歯石まで取り除く通常の清掃を受け、そのあとで、幹細胞か、生理食塩水のどちらかが注射されました。六か月後に、歯ぐきの付着の失われ具合、歯周ポケットの深さ、歯ぐきの下がり、歯のぐらつき、そして骨が欠けた部分の深さを調べています。もっとも重視された評価項目は、付着の失われ具合でした。その結果、骨が欠けた部分の深さの改善は、幹細胞の注射で平均〇・三〇ミリ、生理食塩水では〇・〇四ミリでした。",
       "image_prompt": "A bright Chinese dental clinic treatment room, a female Chinese dentist in a white coat and mask calmly preparing a small syringe beside a dental chair, an anonymous patient, an elderly woman with long silver hair tied back and a round plump build, seated calmly in the chair with eyes relaxed, cheerful gentle mood, no close-up of the mouth, daytime light, medium shot, no protagonist, no text",
-      "ken_burns": "zoom_out",
+      "ken_burns": "pan_zoom_out",
       "reference_index": 0,
       "telop_cards": [
         {
@@ -819,7 +835,11 @@
           "start": 27.35,
           "end": 29.15
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.4,
+        "y": 0.55
+      }
     },
     {
       "scene_id": 14,
@@ -904,7 +924,7 @@
       "narration": "休日は、妻と温泉街を歩きます。名物の堅焼きせんべいを、迷わず一枚。ぱりっと噛み砕いた瞬間、思わず笑ってしまいました。妻と半分こにしようとして、「これは私の」と、二人で笑い合います。噛めるって、こんなに楽しいことだったんだ。好きなものを、好きなだけ味わえる。そんな毎日が、何よりの宝物です。帰りの電車でも、つい鼻歌が出てしまいました。",
       "image_prompt": "a Japanese man, 52 years old, with short neat black hair, a sturdy medium build and a weathered, kind face, wearing a navy-blue work jacket over a gray T-shirt, walking along a charming Japanese hot-spring town street on a sunny weekend afternoon with a Japanese woman, 50 years old, with shoulder-length brown hair, wearing a cream cardigan, HE (the man in the navy-blue work jacket, not the woman) is the one biting into a large round hard rice cracker held in his own hand, crunching it with a delighted laughing expression, while his wife walks beside him smiling warmly at him (she is not eating), wooden storefronts with blank, unlettered signboards and gentle steam rising in the background, medium shot, no text",
       "badge_text": "幸せな未来を夢想中",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -1085,7 +1105,11 @@
           "start": 49.87,
           "end": 52.72
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.58,
+        "y": 0.45
+      }
     }
   ],
   "shorts": [
@@ -1094,7 +1118,7 @@
       "scenes": [
         {
           "narrator": "persona",
-          "narration": "歯周病、注射で再生できる？",
+          "narration": "ししゅうびょう、注射で再生できる？",
           "scene_id": 1
         },
         {
