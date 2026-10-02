@@ -471,8 +471,8 @@ def build_index(episodes: list[dict], published: list[dict], categories: list[di
     stat_ep_label = "公開動画" if ep_count else "公開予定"
 
     html = head_html(
-        f"{CHANNEL_NAME} | AI・ロボティクス研究が変えるくらしの未来",
-        f"最新のAI・ロボティクス研究が、これからのくらしをどう変えるか——{CHANNEL_NAME}が分かりやすく解説します。"
+        f"{CHANNEL_NAME} | 最新研究が変えるくらしの未来",
+        f"最新の研究が、これからのくらしをどう変えるか——{CHANNEL_NAME}が分かりやすく解説します。"
     )
     html += nav_html("top")
     html += f"""
@@ -519,13 +519,13 @@ def build_index(episodes: list[dict], published: list[dict], categories: list[di
       <p class="section-label reveal">About</p>
       <h2 class="section-heading reveal reveal-delay-1">最新研究が、あなたの暮らしを変える。</h2>
       <p class="reveal reveal-delay-2" style="text-align:left;font-size:clamp(1rem,3vw,1.1rem);line-height:2;color:#4a5866;max-width:640px;margin:0 auto 20px;">
-        テクノロジー分野の最新研究論文を、専門知識がなくてもわかりやすく、かつ誠実に解説するチャンネルです。<br>
+        睡眠や老化、仕事とAI、親の介護——誰もが抱える身近な悩みや疑問に、最新の研究論文がどう答えるのかを、分野を問わず、専門知識がなくてもわかりやすく、かつ誠実に解説するチャンネルです。<br>
         量産型のAI雑学ではなく、根拠に忠実な<strong style="color:var(--coral-dim);font-weight:700;">「信頼できる先取り」</strong>をお届けします。
       </p>
       <p class="reveal reveal-delay-2" style="text-align:left;font-size:clamp(.9rem,2.6vw,1rem);line-height:2;color:#5c6b78;max-width:680px;margin:0 auto 48px;">
-        家庭の中の家事支援、高齢の親の見守りや介護、歩行や身体機能を助けるロボット、災害時の捜索・救助、<br>
-        そして働き方を変えるAIエージェントまで——<strong style="color:var(--teal);font-weight:700;">架空の生活者を主人公にした物語</strong>を通して、<br>
-        まだ研究段階の技術が実現したとき、暮らしにどんな変化が訪れるのかを描きます。<br>
+        体の不調や病気の予防、毎日の調子、家事や子育て、ペットの健康、<br>
+        そして働き方を変えるAIまで——<strong style="color:var(--teal);font-weight:700;">架空の生活者を主人公にした物語</strong>を通して、<br>
+        まだ研究段階の科学が実現したとき、暮らしにどんな変化が訪れるのかを描きます。<br>
         最新の研究論文の裏付けに忠実に、誠実な解説を大切にしています。
       </p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;max-width:720px;margin:0 auto;">
@@ -605,7 +605,7 @@ def build_episodes(episodes: list[dict], published: list[dict]):
 
     html = head_html(
         f"動画一覧 | {CHANNEL_NAME}",
-        f"{CHANNEL_NAME}の全エピソード一覧。AI・ロボティクス研究が変えるくらしの未来を、生活者の物語として解説します。"
+        f"{CHANNEL_NAME}の全エピソード一覧。最新研究が変えるくらしの未来を、生活者の物語として解説します。"
     )
     html += nav_html("動画")
     html += f"""
