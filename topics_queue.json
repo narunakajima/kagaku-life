@@ -1412,8 +1412,60 @@
           "novel_delta": "既存のチャット型AIを使う際、タスクを全丸投げすると理解度やデバッグ力が17%低下する一方で、理由や概念を質問する認知的関与を保てばスキル形成を損なわずに済むという実証的知見。"
         }
       ]
+    },
+    {
+      "episode_id": "kl029",
+      "status": "confirmed",
+      "slot_type": "concern",
+      "concern_id": "teeth",
+      "domain": "body",
+      "entry_question": "歯周病で溶けてしまった歯のまわりの骨や歯ぐきは、大がかりな手術なしに、注射で再生できる日が来る？",
+      "title": "歯周病で溶けた骨は、注射で戻せる日が来るのか：幹細胞治療の最新の臨床試験",
+      "format": "single_paper",
+      "references": [
+        {
+          "title": "Impact of allogeneic dental pulp stem cell injection on tissue regeneration in periodontitis: a multicenter randomized clinical trial",
+          "authors": [
+            "Yi Liu",
+            "Yi-Tong Liu",
+            "Jingchao Hu",
+            "Jian-Hui Han",
+            "Lin Song"
+          ],
+          "year": 2025,
+          "venue": "Signal Transduction and Targeted Therapy",
+          "doi": "10.1038/s41392-025-02320-w",
+          "is_preprint": false,
+          "lead_researcher": "Yi Liu"
+        }
+      ],
+      "protagonist": {
+        "name": "高橋誠一",
+        "age": 52,
+        "job": "精密機器メーカーの金型職人",
+        "gender": "male"
+      },
+      "hook_idea": "「重度の歯周病ですね、切開手術か抜歯が必要です」——そう宣告された歯を、たった1本の注射で救える未来が来るかもしれません。",
+      "notes": "2026-10-02: STAGE0でteeth（歯と歯周病）を選定（健康系の最後の1枠）。新在庫0件のためSTAGE1〜4を新規実行（収集838→通過460→トリアージ40→pass29→採点38件）。ユーザーは案A「歯周病で溶けた骨は注射で戻せる日が来る？」を選定。許可リストに26誌を追加。\n\n使用論文: Signal Transduction and Targeted Therapy 2025、他家歯髄幹細胞（DPSC）注射の多施設RCT（中国2施設、132人158歯、NCT05924373）。主評価項目はAL（付着喪失）。骨欠損深さは生理食塩水群との差が約0.26mm、目立つ効果はStage III（AL≥5mm）を対象とした事後解析（AL改善1.67mm vs 1.03mm、群間差約0.64mm）。『Larger trials are warranted』と論文自身がヘッジ。\n\n注意（STAGE3 caution）: 『切らずに注射だけで骨が元通り』と断定しない。事後解析であること、改善幅は小さいこと、大規模試験が必要なことを正直に伝える。承認前の研究段階であり、スケーリング等の通常治療に代わるものではない。健康助言口調（〜しましょう、受けてください）は避け、研究結果の紹介にとどめる。研究者は中国の機関（白衣・東アジア系）で描く。COIはアブストラクトでは確認できない点に留意（fact_checkで確認）。\n\n内容の型: 幹細胞系はkl024（胎児の幹細胞パッチ）と近いため、『注射で歯周組織を再生』という日常の歯科の悩みに寄せて差別化。",
+      "stage4_snapshot": [
+        {
+          "paperId": "e3b4d59a384a6d5888a4cff66ac61dadb7068909",
+          "overall_score": 3.95,
+          "score_breakdown": {
+            "wonder_score": 4,
+            "transformation_score": 4,
+            "answer_fit_score": 4,
+            "applicable_breadth_score": 4,
+            "surprise_score": 3,
+            "persona_fit_score": 5
+          },
+          "evidence_level": "human_rct",
+          "market_status": "novel",
+          "novel_delta": "メスで歯ぐきを切開・剥離する外科手術を伴わず、他家歯髄幹細胞の局所注射という低侵襲な処置のみで歯周組織（骨・付着組織）の再生を促せる点"
+        }
+      ]
     }
   ],
-  "total_topics": 28,
-  "last_updated": "2026-10-01"
+  "total_topics": 29,
+  "last_updated": "2026-10-02"
 }
