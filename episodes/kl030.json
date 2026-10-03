@@ -77,7 +77,11 @@
           "start": 0.0,
           "end": 3.56
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.6,
+        "y": 0.49
+      }
     },
     {
       "scene_id": 2,
@@ -85,7 +89,7 @@
       "narrator": "persona",
       "duration_seconds": 2,
       "narration": "焼き肉の香りが、食卓に戻る。",
-      "ken_burns": "pan_zoom_out",
+      "ken_burns": "zoom_out",
       "reuse_scene_id": 14,
       "telop_cards": [
         {
@@ -95,7 +99,11 @@
           "start": 0.0,
           "end": 2.64
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 3,
@@ -121,7 +129,7 @@
       "narrator": "persona",
       "duration_seconds": 3,
       "narration": "そんな日は、来るのだろうか。",
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "reuse_scene_id": 13,
       "telop_cards": [
         {
@@ -131,7 +139,11 @@
           "start": 0.0,
           "end": 2.1
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 5,
@@ -170,7 +182,11 @@
           "start": 12.99,
           "end": 14.79
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.58,
+        "y": 0.42
+      }
     },
     {
       "scene_id": 6,
@@ -251,7 +267,11 @@
           "start": 30.04,
           "end": 32.89
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.66,
+        "y": 0.45
+      }
     },
     {
       "scene_id": 7,
@@ -260,7 +280,7 @@
       "duration_seconds": 26,
       "narration": "家の食卓には、私だけ蒸し野菜と豆腐が並びます。妻と二十四歳の息子は、気を遣って、私の前では肉を控えめにしてくれます。でも、台所から消えた香ばしい匂いが、家の中を少し静かにしてしまった気がするのです。好きなものを我慢しなくても、食卓の幸せは守れないものか。肉の味も、あの匂いも、諦めなくていい日は来るのでしょうか。そんなことを、箸を動かしながら考えています。",
       "image_prompt": "a Japanese man, 54 years old, with short neat black hair graying slightly at the temples, a slightly stocky medium build and a kind, tired face, wearing a light gray dress shirt with the sleeves rolled up and no tie, no glasses sitting at a dinner table in the evening with a Japanese woman, 51 years old, with shoulder-length dark brown hair, wearing a soft beige cardigan and a Japanese young man, 24 years old, tall and slim, with short black hair, wearing a navy hoodie, in front of him a plain plate of steamed vegetables and tofu, his wife and son have small modest dishes and glance at him kindly, he smiles faintly but looks wistful, warm lamp light with a dusk sky visible through the window, medium shot, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -325,7 +345,11 @@
           "start": 27.06,
           "end": 30.36
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 8,
@@ -392,7 +416,11 @@
           "start": 22.55,
           "end": 24.2
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 9,
@@ -401,7 +429,7 @@
       "duration_seconds": 24,
       "narration": "一つ目は、スタンフォード大学の研究です。研究チームは、二千二百十六件のレシピから、人がどんな組み合わせをおいしいと感じるのかを、生成AIに学ばせました。するとAIは、教えていないのに、ビッグマックの配合を自力で見つけ出したそうです。そのうえで、おいしさ、環境への負荷、栄養という三つの条件を同時に考えながら、新しいバーガーの配合を設計しました。",
       "image_prompt": "A bright American university food-science laboratory, American researchers in white lab coats, a woman in her forties with blonde hair and a Black man in his thirties, looking at a large computer monitor showing colorful network diagrams of ingredients, small burger patties on a lab table beside the keyboard, a small flat plain corner graphic of a burger no larger than one-eighth of the frame, soft daylight, medium shot, no protagonist, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "reference_index": 0,
       "telop_cards": [
         {
@@ -476,7 +504,7 @@
       "duration_seconds": 28,
       "narration": "この配合をもとに作られたバーガーを、レストランで百一人に食べてもらう、盲検の味覚評価が行われました。どのバーガーか知らされない状態で、総合的な好み、風味、食感を答えてもらっています。その結果、おいしさを重視してAIが設計したバーガーは、ビッグマックと同等か、それ以上の評価でした。同じ手法で設計されたキノコのバーガーは、環境への影響の点数が一桁以上低く、豆のバーガーは、栄養の点数が二倍近くになったとのことです。",
       "image_prompt": "A cozy American restaurant dining area in the afternoon, anonymous diners at tables tasting burgers wrapped in plain paper without branding, including a young Black woman in her twenties with braids and an older Caucasian man with a gray beard and round glasses, a researcher in a white lab coat holding a clipboard standing nearby, daytime light, medium shot, no protagonist, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "reference_index": 0,
       "telop_cards": [
         {
@@ -556,7 +584,11 @@
           "start": 31.72,
           "end": 35.04
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 11,
@@ -565,7 +597,7 @@
       "duration_seconds": 30,
       "narration": "二つ目は、香りの研究です。肉らしさは、味だけでなく、立ちのぼる香りでも決まります。研究チームは、二千二百八十二件の香りの処方から、食べものの香りを決める主要な分子、八百九十六種を整理し、地図のようにまとめました。この地図をもとに、生成AIが、植物由来の香り成分だけを組み合わせて、肉のような香りを再現する処方を設計しました。どの香りか知らされていない人による評価で、この原理が確かめられています。ただし、まだ実験室での原理実証の段階で、食卓に並ぶ製品の話ではありません。",
       "image_prompt": "A clean Chinese food-chemistry research laboratory, East Asian (Chinese) researchers in white lab coats, a woman in her thirties with a ponytail operating an analytical instrument and a man in his forties with glasses holding small glass vials, in the foreground an anonymous young East Asian woman with a short bob haircut sniffing an unlabeled paper scent strip, soft laboratory daylight, medium shot, no protagonist, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "reference_index": 1,
       "telop_cards": [
         {
@@ -652,7 +684,11 @@
           "start": 36.89,
           "end": 39.44
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 12,
@@ -729,7 +765,7 @@
       "duration_seconds": 18,
       "narration": "もし、この技術が実用になったら。夕方の台所に、香ばしい匂いが戻ってくる。そう思うだけで、胸の奥がふっと温かくなります。お肉を控えながらでも、好きな味と香りのまま、食卓を囲める。あの匂いに、また家族と包まれたい。ずっと、そう思っていたのです。",
       "image_prompt": "a Japanese man, 54 years old, with short neat black hair graying slightly at the temples, a slightly stocky medium build and a kind, tired face, wearing a light gray dress shirt with the sleeves rolled up and no tie, no glasses, small in the frame, sitting relaxed in an armchair by a window in his living room in the evening, a classic comic-style thought bubble rising from his head as a chain of small circles into a large cloud-shaped bubble, inside the bubble a small warm scene of a Japanese woman, 51 years old, with shoulder-length dark brown hair, wearing a soft beige cardigan and a Japanese young man, 24 years old, tall and slim, with short black hair, wearing a navy hoodie and himself gathered around a dining table with a sizzling grilled dish and rising fragrant steam, the bubble takes about half of the frame, dusk sky visible through the window, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "telop_cards": [
         {
           "lines": [
@@ -773,7 +809,11 @@
           "start": 22.64,
           "end": 25.44
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 14,
@@ -782,7 +822,7 @@
       "duration_seconds": 22,
       "narration": "夕方の食卓。香ばしい匂いが、台所いっぱいに広がっています。植物から作られた、こんがり焼けた一皿を、ひと口。この味、この香り。ずっと待っていました。うれしくてたまりません。妻が「いい匂いね」と笑い、息子が「父さん、焼き加減うまいな」と、箸を伸ばします。気兼ねなく囲む食卓が、こんなに幸せだったなんて。",
       "image_prompt": "a Japanese man, 54 years old, with short neat black hair graying slightly at the temples, a slightly stocky medium build and a kind, tired face, wearing a light gray dress shirt with the sleeves rolled up and no tie, no glasses sitting at a dinner table in the evening with a Japanese woman, 51 years old, with shoulder-length dark brown hair, wearing a soft beige cardigan and a Japanese young man, 24 years old, tall and slim, with short black hair, wearing a navy hoodie, the table has plates of nicely grilled sizzling meat with fragrant steam rising, he happily takes a bite with a deeply satisfied smile, his wife laughs warmly and his son reaches for a piece, warm lamp light with a dusk sky visible through the window, medium shot, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "badge_text": "幸せな未来を夢想中",
       "telop_cards": [
         {
@@ -841,7 +881,11 @@
           "start": 27.61,
           "end": 29.56
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 15,
@@ -850,7 +894,7 @@
       "duration_seconds": 24,
       "narration": "休日のお昼は、息子と二人で、公園のベンチへ。それぞれ、大きなハンバーガーです。包み紙を開けると、植物から作られたはずなのに、あの肉の香りがふわりと立ちのぼります。ひと口かじって、思わず笑ってしまいました。息子と顔を見合わせて、「うまい」と、声がそろいます。好きなものを、好きな人と、気兼ねなく味わえる。何でもない休日が、宝物みたいです。",
       "image_prompt": "a Japanese man, 54 years old, with short neat black hair graying slightly at the temples, a slightly stocky medium build and a kind, tired face, wearing a light gray dress shirt with the sleeves rolled up and no tie, no glasses sitting on a park bench on a sunny weekend afternoon next to a Japanese young man, 24 years old, tall and slim, with short black hair, wearing a navy hoodie, both holding large hamburgers in paper wrappers, HE (the man in the light gray dress shirt, not the young man) is the one just biting into the burger with a delighted smile while the young man grins at him, green trees and bright daylight, medium shot, no text",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "badge_text": "幸せな未来を夢想中",
       "telop_cards": [
         {
@@ -1025,7 +1069,11 @@
           "start": 40.94,
           "end": 43.76
         }
-      ]
+      ],
+      "zoom_anchor": {
+        "x": 0.61,
+        "y": 0.45
+      }
     }
   ],
   "shorts": [
