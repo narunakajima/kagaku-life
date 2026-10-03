@@ -1464,8 +1464,88 @@
           "novel_delta": "メスで歯ぐきを切開・剥離する外科手術を伴わず、他家歯髄幹細胞の局所注射という低侵襲な処置のみで歯周組織（骨・付着組織）の再生を促せる点"
         }
       ]
+    },
+    {
+      "episode_id": "kl030",
+      "status": "confirmed",
+      "slot_type": "concern",
+      "concern_id": "food",
+      "domain": "life",
+      "entry_question": "好きなものを我慢しなくても、食卓の幸せは守れる？ 肉の味も匂いも諦めなくていい日は来る？",
+      "title": "食卓から肉が消えても：AIが設計する「おいしさ」と「香り」",
+      "format": "multi_paper",
+      "references": [
+        {
+          "title": "Generative artificial intelligence creates delicious, sustainable, and nutritious burgers",
+          "authors": [
+            "Vahidullah Tac",
+            "Christopher Gardner",
+            "E. Kuhl"
+          ],
+          "year": 2026,
+          "venue": "npj Science of Food",
+          "doi": "10.1038/s41538-026-00953-x",
+          "is_preprint": false,
+          "lead_researcher": "Vahidullah Tac"
+        },
+        {
+          "title": "Molecular atlas of key food odorants reveals structured aroma organization and enables generative aroma design",
+          "authors": [
+            "Jing-Zhi Zhang",
+            "Hua-Dong Xing",
+            "A. Di Pizio",
+            "Qinfei Ke",
+            "Xing-Ran Kou"
+          ],
+          "year": 2026,
+          "venue": "bioRxiv",
+          "doi": "10.64898/2026.01.21.700072",
+          "is_preprint": true,
+          "lead_researcher": "Jing-Zhi Zhang"
+        }
+      ],
+      "protagonist": {
+        "name": "森田浩一",
+        "age": 54,
+        "job": "機械部品メーカーの営業課長",
+        "gender": "male"
+      },
+      "hook_idea": "健診で肉を控えるように言われてから、食卓から消えた焼き肉の匂い。その匂いも味も、AIが設計できるようになってきました。",
+      "notes": "2026-10-03: STAGE0でfood（食と料理）を選定（健康系枠0・ワイルドカード枠1の回、当事者の広さ5・未扱い）。1回目の検索（疫学・RCT型6語）は超加工食品の疫学に偏り、ユーザーが『全く面白みがない』と却下（上位10件をrejected）。原因は検索語の偏り（5/6が検証型）と診断し、ユーザー指示で『料理の自動化』に絞って再検索（収集815→通過587→トリアージ40→pass25→採点24件、旧検索語はqueries_archiveに退避）。案2（バーガー＋香り分子の地図）を選定。\n\n使用論文2本: (1) npj Science of Food 2026（Stanford、生成AI＝多目的拡散モデルが2,216件のレシピから学習しバーガー配合を設計、レストランでの101人ブラインド官能評価で美味しさ特化版がビッグマックと同等以上）。(2) bioRxiv 2026・未査読（896種の香気分子アトラス＋生成AIで植物由来成分のみから肉様アロマを設計、盲検ヒト官能評価で原理実証）。(2)は未査読のためナレーションでは『研究段階』のヘッジのみ、開示は概要欄。(2)の著者所属機関はSTEP2で確認し、国に応じた研究者描写にする。\n\nユーザー指示（2026-10-03）: 環境意識の強い娘は出さない。環境は主人公の動機にしない。主人公は健診で肉を控えるよう言われた50代の父で、家族は妻・20代の息子（娘なし）。動機は『食べたいのに控えなければならない寂しさ』。\n\n注意: (1)はbehavioral_familiarity=familiar（AIがレシピを出す振る舞い自体は既知）だが、(2)の香りは物理的で再現不可のためnovel。『味・食感』＋『香り』の2本でおいしさをAIが両面から設計する構成で差別化。健康の語り方: 主人公の独白（自分の事情）は可だが、視聴者への食事助言・語り手の専門家名乗りは禁止、バーガーは『健康にいい』と言い切らず『条件を同時に満たすレシピをAIが設計できた』範囲で語る。香りは実験室での原理実証で、『肉と同じ匂いになる日』は研究段階であることを正直に伝える。STAGE3誇張チェックは両論文caution。内容の型は直近5話（治療・脳・AI行動実験）から変わる（AIによる設計）。",
+      "stage4_snapshot": [
+        {
+          "paperId": "89b96b229a161fc9375f5f12f4e1b08d78ba4a07",
+          "overall_score": 3.65,
+          "score_breakdown": {
+            "wonder_score": 3,
+            "transformation_score": 3,
+            "answer_fit_score": 4,
+            "applicable_breadth_score": 5,
+            "surprise_score": 4,
+            "persona_fit_score": 4
+          },
+          "evidence_level": "human_study",
+          "market_status": "incremental",
+          "novel_delta": "美味しさ・環境負荷・栄養価という相反する多目的トレードオフを拡散モデルで同時に解き、ビッグマックと同等以上の味覚評価を維持しながら環境負荷や栄養価を最適化したバーガーの食材配合比率を生成できる点。"
+        },
+        {
+          "paperId": "864bd9c6bdcf5bccc6ddb4abadc8cc16385b2335",
+          "overall_score": 3.35,
+          "score_breakdown": {
+            "wonder_score": 3,
+            "transformation_score": 4,
+            "answer_fit_score": 3,
+            "applicable_breadth_score": 4,
+            "surprise_score": 3,
+            "persona_fit_score": 4
+          },
+          "evidence_level": "lab_demo",
+          "market_status": "incremental",
+          "novel_delta": "従来の調香師による経験則や個別開発に対し、896種の主要香気分子アトラスと生成AIを用いて、植物由来の香気成分のみから肉らしい香りの処方をデータ駆動で自動設計できる点"
+        }
+      ]
     }
   ],
-  "total_topics": 29,
-  "last_updated": "2026-10-02"
+  "total_topics": 30,
+  "last_updated": "2026-10-03"
 }
