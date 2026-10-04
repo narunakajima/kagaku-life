@@ -52,6 +52,7 @@ FPS = 24
 
 NARR_DELAY = 0.5
 NARR_TAIL = 1.0
+INTRO_CARD_SECONDS = 3.5  # 掛け合い形式の冒頭の自己紹介カード（音声なし）の長さ
 MIN_CLIP_FLOOR = 3.0
 CROSSFADE_DURATION = 0.8
 
@@ -77,7 +78,8 @@ FONT_TMP_REGULAR = Path("/tmp/kl_font_regular.ttc")
 
 OFFICIAL_SITE = "kagaku-life.com"
 OUTRO_LINE1 = OFFICIAL_SITE
-OUTRO_LINE2 = "週3回更新・チャンネル登録お願いします"
+# 2026-10-05: 「週3回更新」は外した（制作ペースを週1〜2本に落とすため。なるさんの指示）
+OUTRO_LINE2 = "チャンネル登録お願いします"
 
 TELOP_FONTSIZE = 44
 TELOP_CENTER_Y = 0.88
@@ -408,7 +410,7 @@ def build_audio_track(all_scenes: list, all_offsets: list, narration_dir: Path,
         wav = narration_dir / f"S{sid:02d}.wav"
         if not wav.exists():
             continue
-        offset_ms = int(all_offsets[i] * 1000 + NARR_DELAY * 1000)
+        offset_ms = int(all_offsets[i] * 1000 + (NARR_DELAY + scene.get("_lead_in", 0.0)) * 1000)
         idx = len(narr_inputs)
         narr_inputs.append(wav)
         lbl = f"n{i}"
@@ -643,6 +645,10 @@ def gen_video(episode_id: str, out_dir: Path = None):
             raise RuntimeError(f"台詞が音声生成後に変わっています: S{stale}。kl_tts_gen.py --scenes で作り直してください")
     teaser_scenes = [s for s in scenes if s["type"] == "teaser"]
     main_scenes = [s for s in scenes if s["type"] != "teaser"]
+    if ep.get("format") == "dialogue" and ep.get("intro_card", True) and main_scenes:
+        # 掛け合い形式: ティザーの直後に、二人の自己紹介の吹き出しを音声なしで数秒出す
+        # （2026-10-05、「誰？」とならないように。尺が気になる回は episodes の intro_card: false で外せる）
+        main_scenes[0]["_lead_in"] = INTRO_CARD_SECONDS
 
     print(f"\n{'━'*60}\n  {episode_id} — 動画生成開始\n"
           f"  ティザー{len(teaser_scenes)}シーン + 本編{len(main_scenes)}シーン\n{'━'*60}\n")
@@ -652,7 +658,7 @@ def gen_video(episode_id: str, out_dir: Path = None):
         for scene in group:
             wav = narration_dir / f"S{scene['scene_id']:02d}.wav"
             narr_dur = probe_audio_duration(wav) if wav.exists() else 3.0
-            durations.append(round(max(MIN_CLIP_FLOOR, narr_dur + NARR_DELAY + NARR_TAIL), 2))
+            durations.append(round(max(MIN_CLIP_FLOOR, narr_dur + NARR_DELAY + scene.get("_lead_in", 0.0) + NARR_TAIL), 2))
         offsets = [0.0]
         for i in range(1, len(group)):
             offsets.append(round(offsets[-1] + durations[i - 1] - CROSSFADE_DURATION, 3))

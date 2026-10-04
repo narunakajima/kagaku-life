@@ -74,6 +74,25 @@ REQUEST_TIMEOUT_MS = 60_000
 MAX_QA_ATTEMPTS = 2  # SCの実績（89話分・3回目のリトライは効果薄）を踏襲し2回に抑える
 
 
+def guard_desktop_episode(desktop_dir: Path, episode: str) -> None:
+    """Desktopに別エピソードの素材が残っているまま生成を始めると、.current_episode が新しいエピソードに
+    書き換わり、kl_finalize.py の取り違え防止（マーカー照合）をすり抜けて、残っていた素材が新しい
+    エピソードのDriveフォルダへ上書きコピーされる（2026-10-05、kl032の素材がKL031へ上書きされた事故）。
+    マーカーと違うエピソードの素材（images/narration）が残っていたら、生成を止める。"""
+    marker = desktop_dir / ".current_episode"
+    current = marker.read_text(encoding="utf-8").strip() if marker.exists() else None
+    if current is None or current == episode:
+        return
+    leftovers = [d for d in ("images", "narration", "output") if (desktop_dir / d).exists()
+                 and any((desktop_dir / d).iterdir())]
+    if leftovers:
+        print(f"❌ Desktopには {current} の素材（{', '.join(leftovers)}）が残っています。{episode} の生成を始めると "
+              f"kl_finalize.py の取り違え防止をすり抜けて上書きされるため止めます。\n"
+              f"   {current} がDriveへ同期済みなら、{desktop_dir}/{{images,narration,output}} を片付けてから実行してください。",
+              file=sys.stderr)
+        sys.exit(1)
+
+
 def sniff_image_mime(data: bytes) -> str:
     """出力は拡張子が.pngでも実体がJPEGのことがあるため、ファイル先頭バイトから
     実際の画像形式を判定する（拡張子は信用しない。sc_image_gen.pyと同じ関数）。"""
@@ -686,6 +705,9 @@ def main():
     parser.add_argument("--no-thumbnail", action="store_true", help="サムネイルを生成しない")
     parser.add_argument("--shorts-only", action="store_true", help="Shortsのみ生成")
     parser.add_argument("--shorts-scenes", help="Shorts内の生成する番号をカンマ区切りで指定（例: 4）。指定時は自動的に--shorts-only扱い")
+    parser.add_argument("--recomposite-thumbnail", action="store_true",
+                         help="掛け合い形式: 保存済みの背景（thumbnail_bg.png）に見出し・立ち絵・判定ラベルを合成し直す"
+                              "（画像は生成しない。キャラクターの名前や判定を変えたときに使う）")
     parser.add_argument("--no-qa", action="store_true", help="Gemini Vision QAをスキップ（旧動作）")
     parser.add_argument("--reference-scene", type=int,
                          help="指定したscene_idの生成済み画像を参照画像として渡し、背景の一貫性を高める（--scenesで対象を絞って使う）")
@@ -709,9 +731,27 @@ def main():
     ep = json.loads(ep_path.read_text())
 
     out_dir = DESKTOP_DIR / "images"
-    out_dir.mkdir(parents=True, exist_ok=True)
     DESKTOP_DIR.mkdir(parents=True, exist_ok=True)
+    guard_desktop_episode(DESKTOP_DIR, args.episode)
+    out_dir.mkdir(parents=True, exist_ok=True)
     (DESKTOP_DIR / ".current_episode").write_text(args.episode, encoding="utf-8")
+
+    if args.recomposite_thumbnail:
+        # Desktopに背景が無ければ、Driveに保存済みの背景（kl_finalize.pyが格納）を使う
+        bg = out_dir / "thumbnail_bg.png"
+        drive_bg = (Path.home() / "Library/CloudStorage/GoogleDrive-naru.nakajima@gmail.com/マイドライブ/Kagaku-Life"
+                    / args.episode.upper() / "images" / "thumbnail_bg.png")
+        if not bg.exists() and drive_bg.exists():
+            shutil.copyfile(drive_bg, bg)
+        if not bg.exists():
+            print(f"❌ サムネイルの背景（thumbnail_bg.png）が見つかりません: {bg} / {drive_bg}\n"
+                  "   --thumbnail-only で背景から作り直してください", file=sys.stderr)
+            sys.exit(1)
+        import kl_dialogue
+        shutil.copyfile(bg, out_dir / "thumbnail.png")
+        kl_dialogue.composite_thumbnail_dialogue(out_dir / "thumbnail.png", ep)
+        print(f"✅ サムネイルを合成し直しました: {out_dir / 'thumbnail.png'}")
+        return
 
     client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
 

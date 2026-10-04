@@ -1,15 +1,19 @@
 {
-  "_comment": "掛け合い形式（2026-10-04〜）の固定の二人。name/full_name は画面の名札にだけ使い、ナレーション（台詞）には入れない（名前を変えても音声を作り直さずに済むように）。名前は仮置き（候補A）で、なるさんの決定待ち。voice/style は kl_tts_gen.py が使う。expressions は kl_cast_gen.py が立ち絵の差分を作るときの指示で、台本の lines[].expression はこのキーから選ぶ。",
+  "_comment": "掛け合い形式（2026-10-04〜）の固定の二人。name/full_name/role_short は画面の名札と判定ラベルにだけ使い、ナレーション（台詞）には入れない（名前を変えても音声を作り直さずに済むように）。名前は2026-10-05に、「日本で一般的な名前に」というなるさんの指示で変えた（旧: ソウ・リツ）。過去の回の主人公の名前（田中美咲、佐藤健太、森田浩一など）と重ならないようにしてある。intro は本編の冒頭（ティザーの直後）に数秒だけ出す自己紹介の吹き出し、relationship は二人の関係の一文（kl_dialogue.render_layer）。voice/style は kl_tts_gen.py が使う。expressions は kl_cast_gen.py が立ち絵の差分を作るときの指示で、台本の lines[].expression はこのキーから選ぶ。",
   "name_status": "provisional",
   "dreamer": {
-    "name": "ソウ",
-    "full_name": "日向ソウ",
+    "name": "大輔",
+    "full_name": "山本大輔",
     "role_label": "夢語り担当",
     "gender": "male",
     "profile": "元エンジニア（機械設計）。論文を読むと「これが暮らしに来たら」と具体的な生活の場面を描かずにいられない。技術の仕組みには詳しく、熱が入ると早口になる。口癖は「想像してみてよ」。",
     "faces": "right",
     "screen_side": "left",
-    "color": [240, 168, 104],
+    "color": [
+      240,
+      168,
+      104
+    ],
     "voice": "Orus",
     "style": "Say as an enthusiastic former engineer in his late thirties who gets genuinely excited about research — warm, animated, a bit fast when he gets carried away, smiling while he talks, playful and natural like chatting with an old friend, not like a narrator",
     "appearance": "Japanese man in his late thirties, former mechanical engineer. Short, slightly tousled black hair with a soft side sweep, no glasses, clean-shaven, warm friendly eyes, lively face. Wears a mustard-yellow knit cardigan over a light gray-blue collared shirt, sleeves pushed up a little. Slim-average build.",
@@ -20,17 +24,28 @@
       "thinking": "looking slightly upward, lips pressed, one hand on his chin, pondering",
       "deflated": "sheepish wry smile, eyebrows tilted down, one hand scratching the back of his head, caught out but good-natured",
       "convinced": "calm satisfied smile, eyes softly closed or half-closed, nodding gently"
-    }
+    },
+    "role_short": "元エンジニア",
+    "intro": [
+      "大輔です。",
+      "元エンジニアで、論文を読むと",
+      "未来の暮らしを想像せずに",
+      "いられない人。"
+    ]
   },
   "skeptic": {
-    "name": "リツ",
-    "full_name": "霧島リツ",
+    "name": "沙織",
+    "full_name": "小林沙織",
     "role_label": "ツッコミ担当",
     "gender": "female",
     "profile": "臨床研究・統計の専門家（研究支援の仕事）。数字の裏を必ず確かめる。否定したいのではなく、本物なら一番に使いたいからこそ厳しい。冷静だがユーモアがあり、少し皮肉っぽい。口癖は「で、それ何人で試したの？」。",
     "faces": "left",
     "screen_side": "right",
-    "color": [110, 205, 210],
+    "color": [
+      110,
+      205,
+      210
+    ],
     "voice": "Autonoe",
     "style": "Say as a calm, sharp clinical-research statistician in her late thirties chatting with an old friend — relaxed and dry, a little wry and teasing, with a hint of amusement in her voice; unhurried and confident, natural conversation, not like a narrator",
     "appearance": "Japanese woman in her late thirties, clinical-research statistician. Straight dark-brown chin-length bob with a side part, thin dark rectangular-frame glasses, intelligent calm eyes. Wears a deep navy blazer over a plain teal crew-neck top, small silver stud earrings. Slim build.",
@@ -41,16 +56,56 @@
       "thinking": "eyes looking down to the side, pushing her glasses up with one finger, analytical",
       "amused": "laughing lightly with eyes crinkled, one hand near her mouth, warm and teasing",
       "convinced": "small approving nod with a genuine satisfied smile, arms loosely crossed"
-    }
+    },
+    "role_short": "臨床研究・統計",
+    "intro": [
+      "沙織です。",
+      "臨床研究と統計が専門。",
+      "数字の裏は、必ず確かめます。"
+    ]
   },
   "name_candidates": [
-    {"dreamer": "日向ソウ（ひなた・そう）", "skeptic": "霧島リツ（きりしま・りつ）", "why": "日向は陽だまり＝夢を語る温かさ、律は規律＝確かめる厳しさ。どちらも2音で呼びやすい"},
-    {"dreamer": "明石カナタ（あかし・かなた）", "skeptic": "白石ケイ（しらいし・けい）", "why": "彼方＝遠い未来を見る人、計＝数えて確かめる人。名字の「石」がそろい同期らしさが出る"},
-    {"dreamer": "星野ハルキ（ほしの・はるき）", "skeptic": "真田ナギ（さなだ・なぎ）", "why": "星＝夢、真＝本当か確かめる、凪＝冷静。名前だけで役割が想像できる"}
+    {
+      "dreamer": "山本大輔（やまもと・だいすけ）",
+      "skeptic": "小林沙織（こばやし・さおり）",
+      "why": "採用中（仮）。どちらも30代後半の世代に多い、聞き慣れた名前"
+    },
+    {
+      "dreamer": "鈴木雄太（すずき・ゆうた）",
+      "skeptic": "藤田千尋（ふじた・ちひろ）",
+      "why": "呼びやすく、男女どちらにも読み違えのない名前"
+    },
+    {
+      "dreamer": "渡辺慎吾（わたなべ・しんご）",
+      "skeptic": "石井由香（いしい・ゆか）",
+      "why": "落ち着いた響きで、ツッコミ役の知的な印象に合う"
+    }
   ],
   "verdicts": {
-    "soon": {"label": "もうすぐ来る", "color": [64, 176, 140]},
-    "decade": {"label": "10年はかかる", "color": [232, 160, 64]},
-    "dubious": {"label": "まだ眉唾", "color": [150, 120, 190]}
-  }
+    "soon": {
+      "label": "もうすぐ来る",
+      "color": [
+        64,
+        176,
+        140
+      ]
+    },
+    "decade": {
+      "label": "10年はかかる",
+      "color": [
+        232,
+        160,
+        64
+      ]
+    },
+    "dubious": {
+      "label": "まだ眉唾",
+      "color": [
+        150,
+        120,
+        190
+      ]
+    }
+  },
+  "relationship": "大学の研究室の同期。気になる論文を持ち寄って、語り合っています。"
 }

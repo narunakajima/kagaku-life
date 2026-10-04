@@ -470,7 +470,7 @@ def draw_stamp(label: str, color, scale: float = 1.0, header: str = "判定") ->
 
 def verdict_stamps(cast: dict, verdict: dict, scale: float = 1.0) -> list:
     """verdict = {"dreamer": key, "skeptic": key}。二人の判定が同じなら1枚、割れたら2枚
-    （それぞれ「ソウの判定」「リツの判定」）を返す。"""
+    （それぞれ「大輔の判定」「沙織の判定」）を返す。"""
     vd = cast["verdicts"]
     if verdict.get("dreamer") == verdict.get("skeptic"):
         k = verdict["dreamer"]
@@ -479,10 +479,52 @@ def verdict_stamps(cast: dict, verdict: dict, scale: float = 1.0) -> list:
                        header=f"{speaker_name(cast, r)}の判定") for r in ROLES]
 
 
+def _draw_intro(im: Image.Image, dr: ImageDraw.ImageDraw, W: int, H: int, cast: dict, sprite_pos: dict) -> None:
+    """二人の自己紹介: 上部に関係の一文、立ち絵の上にそれぞれの吹き出し（尻尾は立ち絵の頭を指す）。
+    音声は付けず、画面の文字だけで見せる（2026-10-05、なるさんの指示: 「誰？」とならないように）。"""
+    rel = cast.get("relationship", "")
+    if rel:
+        fb = _font(FONT_BOLD, 34)
+        bw = _text_w(dr, rel, fb)
+        x0 = (W - bw) // 2 - 24
+        dr.rounded_rectangle((x0, 26, x0 + bw + 48, 26 + 62), radius=14, fill=(10, 22, 38, 215),
+                             outline=(240, 168, 104, 235), width=3)
+        dr.text(((W - bw) // 2, 26 + 11), rel, font=fb, fill=(255, 255, 255))
+    ft = _font(FONT_BOLD, 28)
+    line_h, pad = 38, 22
+    for role in ROLES:
+        lines = cast[role].get("intro") or []
+        if not lines or role not in sprite_pos:
+            continue
+        sx, sw, sy = sprite_pos[role]
+        bw = max(_text_w(dr, ln, ft) for ln in lines) + pad * 2
+        bh = line_h * len(lines) + pad * 2 - 6
+        bottom = sy - 26
+        if cast[role]["screen_side"] == "left":
+            bx = max(16, sx + 6)
+        else:
+            bx = min(W - 16 - bw, sx + sw - bw - 6)
+        by = bottom - bh
+        col = tuple(cast[role]["color"])
+        # 尻尾（吹き出しの下辺から立ち絵の頭へ）
+        tx = sx + sw // 2
+        tx = min(max(tx, bx + 40), bx + bw - 40)
+        dr.polygon([(tx - 18, bottom - 2), (tx + 18, bottom - 2), (tx + (6 if cast[role]["screen_side"] == "left" else -6), sy + 34)],
+                   fill=(255, 255, 255, 245), outline=col + (255,))
+        dr.rounded_rectangle((bx, by, bx + bw, bottom), radius=20, fill=(255, 255, 255, 245),
+                             outline=col + (255,), width=4)
+        # 尻尾の付け根の枠線を白で消して、吹き出しとつなげる
+        dr.line((tx - 15, bottom, tx + 15, bottom), fill=(255, 255, 255, 255), width=5)
+        for i, ln in enumerate(lines):
+            dr.text((bx + pad, by + pad - 4 + i * line_h), ln, font=ft,
+                    fill=(30, 40, 62) if i else tuple(int(c * 0.62) for c in col))
+
+
 def render_layer(state: dict, layout: dict, cast: dict, bank: SpriteBank) -> Image.Image:
     """1つの画面状態（誰が話しているか・表情・字幕・ラベル）を透明PNGに描く。
     state のキー: mode('normal'|'teaser'|'blank'), speaker, exprs{role: expr}, text,
-                  chart(bool), badge(str|None), stamps(list[Image]|None), cta(str|None)"""
+                  chart(bool), badge(str|None), stamps(list[Image]|None), cta(str|None),
+                  intro(bool: 本編の冒頭に出す二人の自己紹介の吹き出しと関係の一文)"""
     W, H = layout["W"], layout["H"]
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     if state.get("mode") == "blank":
@@ -499,6 +541,7 @@ def render_layer(state: dict, layout: dict, cast: dict, bank: SpriteBank) -> Ima
 
     # 立ち絵（話している方は明るく大きく、聞いている方は少し暗く小さく）
     sprite_w = 0
+    sprite_pos = {}
     for role in ROLES:
         active = state.get("speaker") == role or state.get("speaker") == "both"
         expr = (state.get("exprs") or {}).get(role, "neutral")
@@ -509,15 +552,25 @@ def render_layer(state: dict, layout: dict, cast: dict, bank: SpriteBank) -> Ima
         else:
             x = W - sp.width - layout["sprite_margin"]
         im.alpha_composite(sp, (x, H - sp.height))
-        # 名札
+        sprite_pos[role] = (x, sp.width, H - sp.height)
+        # 名札（名前＋肩書き。初めて見た人が「この人は誰か」を分かるように肩書きを常に添える）
         fn = _font(FONT_BOLD, 24 if W > 1000 else 28)
-        name = cast[role]["name"]
-        nw = _text_w(dr, name, fn)
-        px = x + (sp.width - nw) // 2 - 14
+        fr = _font(FONT_MEDIUM, 17 if W > 1000 else 21)
+        name, role_short = cast[role]["name"], cast[role].get("role_short", "")
+        nw, rw = _text_w(dr, name, fn), (_text_w(dr, role_short, fr) if role_short else 0)
+        gap = 10 if role_short else 0
+        tw = nw + gap + rw
+        px = x + (sp.width - tw) // 2 - 14
         py = H - 46
         col = tuple(cast[role]["color"]) if active else (110, 118, 130)
-        dr.rounded_rectangle((px, py, px + nw + 28, py + 38), radius=19, fill=col + (235,))
+        dr.rounded_rectangle((px, py, px + tw + 28, py + 38), radius=19, fill=col + (235,))
         dr.text((px + 14, py + 4), name, font=fn, fill=(255, 255, 255))
+        if role_short:
+            dr.text((px + 14 + nw + gap, py + 10), role_short, font=fr, fill=(255, 255, 255, 235))
+
+    # 自己紹介（本編の冒頭の数秒だけ。二人の関係の一文と、それぞれの吹き出し）
+    if state.get("intro"):
+        _draw_intro(im, dr, W, H, cast, sprite_pos)
 
     # バッジ（左上、夢語りの場面などで常時表示）
     if state.get("badge"):
@@ -586,7 +639,12 @@ def main_timeline(ep: dict, scenes: list, offsets: list, durs: list, narr_delay:
         badge = scene.get("badge_text")
         base = {"mode": "teaser" if teaser else "normal", "chart": chart, "badge": badge,
                 "speaker": None, "exprs": {"dreamer": "neutral", "skeptic": "neutral"}, "text": None}
-        events.append((off, dict(base)))
+        lead = scene.get("_lead_in", 0.0)  # 冒頭の自己紹介カードの分だけ、台詞の開始を遅らせる（kl_video_gen.py が設定）
+        if lead > 0:
+            events.append((off, dict(base, intro=True, speaker="both")))
+        else:
+            events.append((off, dict(base)))
+        narr_delay_s = narr_delay + lead
         lines = scene.get("lines") or []
         v_from = scene.get("verdict_from_line") if scene["type"] == "verdict" else None
         for li, line in enumerate(lines):
@@ -602,7 +660,7 @@ def main_timeline(ep: dict, scenes: list, offsets: list, durs: list, narr_delay:
                 st = stamps
             cards = line.get("cards") or [{"text": line_display(line), "start": 0.0, "end": line["dur"]}]
             for c in cards:
-                t = off + narr_delay + line["t0"] + c["start"]
+                t = off + narr_delay_s + line["t0"] + c["start"]
                 events.append((round(t, 3), dict(base, speaker=sp, exprs=exprs, text=c["text"],
                                                  stamps=st)))
         # シーンの終わり（次のシーンの開始）まで最後の状態を保つ。後続シーンの開始で切り替わる

@@ -217,6 +217,25 @@ def synth(client: genai.Client, text: str, voice_name: str, out_path: Path, narr
     return True
 
 
+def guard_desktop_episode(desktop_dir: Path, episode: str) -> None:
+    """Desktopに別エピソードの素材が残っているまま生成を始めると、.current_episode が新しいエピソードに
+    書き換わり、kl_finalize.py の取り違え防止（マーカー照合）をすり抜けて、残っていた素材が新しい
+    エピソードのDriveフォルダへ上書きコピーされる（2026-10-05、kl032の素材がKL031へ上書きされた事故）。
+    マーカーと違うエピソードの素材（images/narration）が残っていたら、生成を止める。"""
+    marker = desktop_dir / ".current_episode"
+    current = marker.read_text(encoding="utf-8").strip() if marker.exists() else None
+    if current is None or current == episode:
+        return
+    leftovers = [d for d in ("images", "narration", "output") if (desktop_dir / d).exists()
+                 and any((desktop_dir / d).iterdir())]
+    if leftovers:
+        print(f"❌ Desktopには {current} の素材（{', '.join(leftovers)}）が残っています。{episode} の生成を始めると "
+              f"kl_finalize.py の取り違え防止をすり抜けて上書きされるため止めます。\n"
+              f"   {current} がDriveへ同期済みなら、{desktop_dir}/{{images,narration,output}} を片付けてから実行してください。",
+              file=sys.stderr)
+        sys.exit(1)
+
+
 def _atomic_write_json(path: Path, data) -> None:
     tmp = path.with_suffix(path.suffix + ".tmp")
     tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -324,6 +343,8 @@ def main():
 
     if ep.get("format") == "dialogue":
         out_dir = DESKTOP_DIR / "narration"
+        DESKTOP_DIR.mkdir(parents=True, exist_ok=True)
+        guard_desktop_episode(DESKTOP_DIR, args.episode)
         out_dir.mkdir(parents=True, exist_ok=True)
         (DESKTOP_DIR / ".current_episode").write_text(args.episode, encoding="utf-8")
         client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
@@ -341,8 +362,9 @@ def main():
         sys.exit(1)
 
     out_dir = DESKTOP_DIR / "narration"
-    out_dir.mkdir(parents=True, exist_ok=True)
     DESKTOP_DIR.mkdir(parents=True, exist_ok=True)
+    guard_desktop_episode(DESKTOP_DIR, args.episode)
+    out_dir.mkdir(parents=True, exist_ok=True)
     (DESKTOP_DIR / ".current_episode").write_text(args.episode, encoding="utf-8")
 
     client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))

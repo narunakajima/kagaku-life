@@ -112,6 +112,12 @@ def main():
     else:
         missing.append("images/thumbnail.png")
 
+    # 掛け合い形式のサムネイルの背景（2026-10-05追加。名前や判定を変えたとき、背景を作り直さず
+    # kl_image_gen.py --recomposite-thumbnail で合成だけやり直せるように）
+    if assets_safe and ep.get("format") == "dialogue":
+        if copy_if_exists(desktop_images / "thumbnail_bg.png", drive_ep_dir / "images" / "thumbnail_bg.png"):
+            copied += 1
+
     # サムネイルB案（2026-09-29追加。YouTube Studioの「テストと比較」でA案と比べる用）
     if assets_safe and (ep.get("thumbnail_b") or {}).get("keyword"):
         if copy_if_exists(desktop_images / "thumbnail_b.png", drive_ep_dir / "images" / "thumbnail_b.png"):
