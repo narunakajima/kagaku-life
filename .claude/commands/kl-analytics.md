@@ -28,8 +28,11 @@ named 'google'`になる。`kl_sns_up.py`・`kl_yt_download_reports.py`・
 `kl_analytics_report.py`（Google API呼び出しはしないが一貫性のため）はいずれも
 `/usr/bin/python3`で実行すること。
 
-**注意:** `analytics/raw/`は`.gitignore`対象のため、他端末（MacBook/iMac）からの
-`git pull`後はローカルのCSVが消えていることがある。分析前は必ず実行して最新化すること。
+**保存先はGoogle Driveの同期フォルダ（`~/Library/CloudStorage/GoogleDrive-naru.nakajima@gmail.com/マイドライブ/Kagaku-Life/analytics/raw/`、2026-10-04〜）。**
+以前はリポジトリ内の`analytics/raw/`（`.gitignore`対象）に置いていたため、MacBookとiMacで
+取得済みのCSVがばらばらになっていた。Driveに移したことで両端末から同じデータを読める。
+Reporting APIは古いレポートを一定期間で消すため、取得済みの過去分を残す意味もある。
+新しいレポートは毎日作られるので、分析前は必ず実行して最新化すること。
 
 ## STEP 2 — 基本集計
 
@@ -81,7 +84,7 @@ STEP2の出力だけで判断がつかない場合、以下を人手で深掘り
 - **カテゴリ単位のシグナル**（同一カテゴリの複数話が揃って強い/弱いか）。
   `topics_queue.json`の`queue`配列でカテゴリごとにepisode_idを拾い、STEP2の
   per-episode表と突き合わせる
-- **`analytics/raw/`の生CSVを直接読む。** `kl_analytics_report.py`の集計に
+- **Drive `Kagaku-Life/analytics/raw/`の生CSVを直接読む。** `kl_analytics_report.py`の集計に
   疑問がある場合（外れ値1本に引っ張られていないか等）は生データで検算する
 
 ## STEP 4 — 解釈・提言をOpusサブエージェントに委任
@@ -119,7 +122,7 @@ Agentプロンプト:
 以下を行ってください（日本語で）：
 1. 各指標について、サンプルサイズ・外れ値の影響を踏まえて統計的に妥当な解釈かを
    検証する（小さいnでの早合点、外れ値1本への依存がないか。必要ならこの集計結果
-   だけでなく`analytics/raw/`の生CSVを直接読んで検算してよい）
+   だけでなく`~/Library/CloudStorage/GoogleDrive-naru.nakajima@gmail.com/マイドライブ/Kagaku-Life/analytics/raw/`の生CSVを直接読んで検算してよい）
 2. 複数指標を横断した傾向を統合的に解釈する
 3. 具体的なアクション提言（優先度つき）— `query_vocabulary.json`のカテゴリweight・
    `.claude/commands/kl-new.md`の選定基準・BGMトーン等、制作ルールに反映すべき変更

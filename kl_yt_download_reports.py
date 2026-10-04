@@ -6,8 +6,8 @@ kl_yt_download_reports.py — YouTube Reporting API の全レポートを一括�
   python3 kl_yt_download_reports.py            # 全ジョブの未取得レポートを差分DL
   python3 kl_yt_download_reports.py --force    # 既存ファイルも上書き再DL
 
-保存先: analytics/raw/{job_name}/{date}.csv
-  例: analytics/raw/kl-channel_combined_a3/2026-08-29.csv
+保存先: Google Drive Kagaku-Life/analytics/raw/{job_name}/{date}.csv
+  例: Kagaku-Life/analytics/raw/kl-channel_combined_a3/2026-08-29.csv
 
 登録済みジョブは API から動的に取得する（ジョブIDのハードコード不要）。
 """
@@ -32,7 +32,17 @@ SCOPES = [
     "https://www.googleapis.com/auth/yt-analytics.readonly",
 ]
 
-OUTPUT_DIR = Path(__file__).parent / "analytics" / "raw"
+# 2026-10-04: 保存先をGoogle Driveの同期フォルダに移した（MacBook・iMacで共有するため。
+# Reporting APIは古いレポートを一定期間で消すので、どちらの端末で取得した分も1か所に残す）
+GDRIVE_ROOT = (
+    Path.home()
+    / "Library"
+    / "CloudStorage"
+    / "GoogleDrive-naru.nakajima@gmail.com"
+    / "マイドライブ"
+    / "Kagaku-Life"
+)
+OUTPUT_DIR = GDRIVE_ROOT / "analytics" / "raw"
 
 
 def get_creds():
@@ -103,6 +113,10 @@ def download_all(force: bool):
 
 
 def main():
+    if not GDRIVE_ROOT.exists():
+        print(f"❌ Google Driveの同期フォルダが見つかりません: {GDRIVE_ROOT}")
+        print("   Google Drive for desktopが起動・ログイン済みか確認してください。")
+        sys.exit(1)
     parser = argparse.ArgumentParser(description="YouTube Reporting API 全レポート一括DL")
     parser.add_argument("--force", action="store_true", help="既存ファイルも上書き再DL")
     args = parser.parse_args()

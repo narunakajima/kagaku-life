@@ -141,6 +141,14 @@ samurai-chronicles・ランプのひとりごとと同じ運用とする。
 `episodes/kl{NNN}.json` の `scene_id` から期待されるファイル名を組み立てて
 1件ずつ処理する設計にしている。
 
+- **アナリティクスの生データ（YouTube Reporting APIのCSV）もGoogle Driveに置く
+  （`Kagaku-Life/analytics/raw/{ジョブ名}/{日付}.csv`、2026-10-04〜）。** 以前は
+  リポジトリ内の`analytics/raw/`（`.gitignore`対象）だったため、MacBookとiMacで
+  データがばらばらになっていた。`kl_yt_download_reports.py`・`kl_analytics_report.py`は
+  Driveのパスを直接読み書きし、同期フォルダが無ければ止まる（ローカルに偽のフォルダを
+  作らないため）。`kl_analytics_report.py`はCSVの一覧取得（`glob`）を使うため、
+  上記のTCC権限問題が出ると失敗する。その場合は再起動で解消するか確認する。
+
 ---
 
 ## チャンネルロゴ（2026-08-21確定）
@@ -458,7 +466,8 @@ SEO・話題性ベースで返すだけで、世界の論文母集団（arXivだ
 CLAUDE.md自体が古い記述（「今後作成」）のまま放置していたためユーザー・監査の
 双方が「未実装」と誤認する事故があった。**実際に必要なのは新規実装ではなく
 `kl_yt_download_reports.py` → `kl_analytics_report.py` の実行のみ**（2026-09-06に
-初回実行し、`analytics/raw/`にレポートを取得済み）。ドキュメントの記述と
+初回実行し、レポートを取得済み。保存先は2026-10-04にリポジトリ内の`analytics/raw/`から
+Google Drive `Kagaku-Life/analytics/raw/`へ移した。MacBook・iMacで共有するため）。ドキュメントの記述と
 実装状況が食い違っていないか、スクリプトを新規実装するたびに確認すること。
 **この2ステップ＋Opusによる解釈委任までを一括で行うコマンドとして`/kl-analytics`を
 2026-09-28に追加した**（`.claude/commands/kl-analytics.md`、samurai-chroniclesの

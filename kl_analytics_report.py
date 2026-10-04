@@ -2,7 +2,7 @@
 """
 kl_analytics_report.py — アナリティクスCSVを集計してエピソード別・カテゴリ別レポートを出力する。
 
-前提: kl_yt_download_reports.py で analytics/raw/ にCSVをダウンロード済みであること。
+前提: kl_yt_download_reports.py で Google Drive Kagaku-Life/analytics/raw/ にCSVをダウンロード済みであること。
 
 カテゴリ別集計は、CLAUDE.md STAGE1の「12話到達後にkl_analytics_report.pyの分析結果を
 踏まえてweightとクエリ語彙を見直す」運用のために追加した（LWのエピソード別レポートには
@@ -18,12 +18,23 @@ import csv
 import glob
 import json
 import re
+import sys
 from collections import defaultdict
 from datetime import date, datetime
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent
-RAW = BASE / "analytics" / "raw"
+# 2026-10-04: 保存先をGoogle Driveの同期フォルダに移した（MacBook・iMacで共有するため。
+# Reporting APIは古いレポートを一定期間で消すので、どちらの端末で取得した分も1か所に残す）
+GDRIVE_ROOT = (
+    Path.home()
+    / "Library"
+    / "CloudStorage"
+    / "GoogleDrive-naru.nakajima@gmail.com"
+    / "マイドライブ"
+    / "Kagaku-Life"
+)
+RAW = GDRIVE_ROOT / "analytics" / "raw"
 EPISODES_DIR = BASE / "episodes"
 TOPICS_QUEUE_JSON = BASE / "topics_queue.json"
 CONCERNS_JSON = BASE / "viewer_concerns.json"
@@ -429,6 +440,11 @@ def main():
     parser.add_argument("--after", help="このエピソード番号以降のみ集計（例: kl004）")
     parser.add_argument("--before", help="このエピソード番号未満のみ集計")
     args = parser.parse_args()
+
+    if not GDRIVE_ROOT.exists():
+        print(f"❌ Google Driveの同期フォルダが見つかりません: {GDRIVE_ROOT}")
+        print("   Google Drive for desktopが起動・ログイン済みか確認してください。")
+        sys.exit(1)
 
     vid_info = load_episode_map()
 
