@@ -1,6 +1,6 @@
 {
   "_comment": "掛け合い形式（2026-10-04〜）の固定の二人。name/full_name/role_short は画面の名札と判定ラベルにだけ使い、ナレーション（台詞）には入れない（名前を変えても音声を作り直さずに済むように）。名前は2026-10-05に、「日本で一般的な名前に」というなるさんの指示で変えた（旧: ソウ・リツ）。過去の回の主人公の名前（田中美咲、佐藤健太、森田浩一など）と重ならないようにしてある。intro は本編の冒頭（ティザーの直後）に数秒だけ出す自己紹介の吹き出し、relationship は二人の関係の一文（kl_dialogue.render_layer）。voice/style は kl_tts_gen.py が使う。expressions は kl_cast_gen.py が立ち絵の差分を作るときの指示で、台本の lines[].expression はこのキーから選ぶ。",
-  "name_status": "provisional",
+  "name_status": "confirmed",
   "dreamer": {
     "name": "大輔",
     "full_name": "山本大輔",

@@ -39,7 +39,7 @@ CHANNEL_URL = "https://www.youtube.com/@kagaku-life"
 SITE_URL = "https://kagaku-life.com"
 CHANNEL_NAME = "幸せな未来のサイエンス"
 TAGLINE = "科学が届ける、くらしの小さな幸せ"
-UPDATE_CADENCE = "週3回更新（火・木・土 19:00）"
+# 2026-10-05: 更新頻度の表記はサイトから外した（週何回更新かは未定。なるさんの指示）。決まるまで書かない
 
 # サイト表示順（2026-09-29: 関心ごとの4領域に変更。暮らしを先頭にする——健康系は
 # 5話に2話までという選定ルールのため、暮らしが最も本数の多いテーマになる）。
@@ -504,7 +504,6 @@ def build_index(episodes: list[dict], published: list[dict], categories: list[di
     <div class="stats-inner">
       <div class="stat-item"><p class="stat-num">{stat_ep}</p><p class="stat-label">{stat_ep_label}</p></div>
       <div class="stat-item"><p class="stat-num">{cat_count}</p><p class="stat-label">テーマ</p></div>
-      <div class="stat-item"><p class="stat-num">週3回</p><p class="stat-label">火・木・土 19時更新</p></div>
     </div>
   </div>
 
@@ -557,7 +556,7 @@ def build_index(episodes: list[dict], published: list[dict], categories: list[di
     <div class="section-inner" style="text-align:center;">
       <p class="section-label reveal">Subscribe</p>
       <h2 class="section-heading reveal reveal-delay-1">見逃さないために</h2>
-      <p class="reveal reveal-delay-2" style="color:#4a5866;line-height:1.9;margin-bottom:32px;">{UPDATE_CADENCE}。チャンネル登録して新着をお見逃しなく。</p>
+      <p class="reveal reveal-delay-2" style="color:#4a5866;line-height:1.9;margin-bottom:32px;">チャンネル登録して新着をお見逃しなく。</p>
       <div class="reveal reveal-delay-3">
         <a class="btn-primary" href="{CHANNEL_URL}" target="_blank" rel="noopener">
           YouTubeでチャンネル登録 &rarr;

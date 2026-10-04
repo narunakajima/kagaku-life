@@ -319,7 +319,7 @@ def run(episode_id: str, publish_at: Optional[str] = None, publish_now: bool = F
     shorts_description = (
         f"{hook_text}\n\n"
         f"▶ 本編はこちら: https://youtu.be/{main_id}\n\n"
-        f"毎週更新中！チャンネル登録はこちら:\n{CHANNEL_HANDLE_URL}"
+        f"チャンネル登録はこちら:\n{CHANNEL_HANDLE_URL}"
     )
     shorts_id = upload_video(youtube, shorts_video,
                              f"{title} #Shorts", shorts_description, tags + ["shorts"],
