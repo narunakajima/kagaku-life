@@ -1,0 +1,670 @@
+{
+  "_comment": "kl_news_scan.py score の結果。status: available / used / rejected（却下は rejected_reason を残す）",
+  "items": [
+    {
+      "title": "This protective enzyme could help stop fatty liver disease from getting worse",
+      "url": "https://www.sciencedaily.com/releases/2026/10/261002080020.htm",
+      "published": "2026-10-03",
+      "source": "ScienceDaily Health",
+      "source_kind": "press",
+      "summary": "Scientists have identified an enzyme that may act as a natural defense against the worsening of fatty liver disease, which affects an estimated 100 million Americans. The enzyme, called UBE2N, helps liver cells clear away damaged mitochondria and break down fat, potentially preventing the inflammation, scarring, and cell damage associated with the more dangerous condition MASH.",
+      "id": "685a0642af",
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1038/s42255-026-01590-0",
+          "what_it_states": "Nature Metabolism（2026年9月4日オンライン掲載）の原著論文。ヒトMASH（代謝機能障害関連脂肪肝炎）患者の肝組織およびマウスモデルにおいて、転写抑制因子THAP11の結合によりユビキチン結合酵素UBE2Nの発現が低下していることを解明。肝細胞特異的にUBE2Nを欠損させたマウスでは西洋食によるミトファジー不全・細胞死（PANoptosis）・肝線維化が悪化した一方、UBE2Nを過剰発現させるとミトコンドリアの品質管理が回復し、脂肪蓄積・炎症・線維化が抑制された。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.cedars-sinai.org/newsroom/study-enzyme-may-help-protect-against-severe-liver-disease/",
+          "what_it_states": "Cedars-Sinai（2026年9月23日発表）。米国で約1億人が罹患するMASLDから、約20〜25%が移行する重症肝疾患MASHへの進行を防ぐ酵素UBE2Nを特定した前臨床研究。マウスの肝臓でUBE2Nを正常レベルに戻すことで、損傷したミトコンドリアの除去と脂肪分解が促され、炎症や瘢痕組織の形成が減少したと報告。"
+        }
+      ],
+      "announced_on": "2026-09-04",
+      "headline_claim": "脂肪肝から肝硬変や肝不全への悪化を防ぐ防御酵素「UBE2N」が特定され、脂肪肝の進行を食い止める新治療の扉が開かれた。",
+      "actual_content": "Cedars-Sinaiや忠北大学などの国際共同チームが、ヒト肝組織解析と遺伝子改変マウスを用いて行った基礎研究（前臨床段階）である。肝細胞内のUBE2Nを遺伝子操作で補うと、損傷したミトコンドリアの除去（ミトファジー）が促されてマウスの肝炎や線維化が軽減することを示した。しかし、UBE2Nは全身の免疫受容体シグナルや皮膚の維持にも深く関与しているため、全身投与による標的外の副作用リスクが高く、肝臓特異的な送達技術や創薬化合物はまだ存在しない。",
+      "buzz_jp": 2,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 4,
+      "concern_id": "blood_sugar",
+      "entry_question": "健診で引っかかる「脂肪肝」、細胞の壊れた発電所を掃除する酵素を補えば悪化を防げるって本当？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "「酵素が見つかった」と言っても、マウスの遺伝子を組み換えて肝臓で作らせただけの超基礎研究！しかもこの酵素は免疫など全身で必須の働きをしているため、肝臓だけに安全に届けるドラッグデリバリーの手段すら手つかずで、薬になるかもまだ未知数です。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "freshness": 2,
+      "overall_score": 3.35,
+      "scan_version": "2026-10-04-news-first",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-04"
+    },
+    {
+      "title": "Leucine does more than build muscle. It powers up your cells",
+      "url": "https://www.sciencedaily.com/releases/2026/10/261001095319.htm",
+      "published": "2026-10-03",
+      "source": "ScienceDaily Health",
+      "source_kind": "press",
+      "summary": "The essential amino acid leucine can boost cellular energy production by protecting key proteins on mitochondria from being destroyed. The discovery reveals a new connection between nutrition and metabolism that could eventually lead to new approaches for metabolic disorders and cancer.",
+      "id": "a13eaa4abe",
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1038/s41556-025-01799-3",
+          "what_it_states": "線虫（C. elegans）およびヒト肺がん細胞株において、ロイシンがアミノ酸センサーGCN2を阻害し、E3リガーゼ補助因子SEL1Lを減少させることでミトコンドリア外膜タンパク質（TOMM40やSAMM50など）のユビキチン依存性分解を抑制し、呼吸能（細胞エネルギー産生）を向上させる分子機構（ロイシン-GCN2-SEL1L軸）を解明した。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.eurekalert.org/news-releases/1063345",
+          "what_it_states": "ケルン大学の研究チームが、必須アミノ酸ロイシンがミトコンドリアの重要タンパク質を分解から保護し、細胞のエネルギー産生を適応・向上させる新たな経路を発見したと発表。代謝疾患やがん研究への応用可能性に言及。"
+        }
+      ],
+      "announced_on": "2025-10-31",
+      "headline_claim": "必須アミノ酸ロイシンは筋肉を作るだけでなく、ミトコンドリアの重要タンパク質を保護して細胞のエネルギー産生を高める。",
+      "actual_content": "ケルン大学の基礎研究チームが、線虫やヒト培養細胞を用いて、ロイシンがGCN2センサーとSEL1Lタンパク質を介してミトコンドリア外膜の輸送タンパク質分解を抑え、呼吸能を適応的に高めるシグナル経路を同定した。ただし、これは細胞内シグナル伝達機構を解明した基礎生物学の実験であり、ヒトが生体内でロイシンをサプリ等で追加摂取して疲労回復や活力向上につながるかを検証した臨床試験ではない。さらに研究内では、がん細胞がこの仕組みを利用して生存を高めるリスクも指摘されている。",
+      "buzz_jp": 2,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 3,
+      "concern_id": "fatigue",
+      "entry_question": "ロイシンやBCAAのサプリを飲めば、ミトコンドリアがパワーアップして疲れが吹き飛ぶって本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "実験は線虫と培養がん細胞のレベルに留まっており、人がロイシンを飲んで細胞が元気になるという臨床データはない。それどころか、がん細胞にとっても生き残りのエネルギー源になり得るため、安易なサプリでの大量摂取はむしろ慎重になるべき。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "freshness": 1,
+      "overall_score": 2.9,
+      "scan_version": "2026-10-04-news-first",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-04"
+    },
+    {
+      "title": "Your gut may be making a molecule that raises Alzheimer’s risk",
+      "url": "https://www.sciencedaily.com/releases/2026/09/260930225459.htm",
+      "published": "2026-10-03",
+      "source": "ScienceDaily Health",
+      "source_kind": "press",
+      "summary": "Scientists have linked a gut bacterial compound called ImP to greater Alzheimer’s risk, harmful brain protein buildup, and faster cognitive decline. The finding raises the possibility that reducing ImP in the blood could one day help slow or prevent dementia.",
+      "id": "a5391f26c2",
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1038/s41467-026-74744-z",
+          "what_it_states": "認知機能が正常な成人1,196人を対象とした縦断・横断コホート解析で、腸内細菌代謝産物イミダゾールプロピオン酸（ImP）の血漿中濃度が高い群でアルツハイマー病バイオマーカー悪化および認知機能低下が有意に相関。マウスへの慢性投与で血液脳関門の透過性上昇とアミロイドβ・タウ病理の増悪を確認。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://news.wisc.edu/researchers-identify-new-target-in-the-gut-for-reducing-alzheimers-risk/",
+          "what_it_states": "ウィスコンシン大学マディソン校のBarbara Bendlin教授およびFederico Rey教授らによる発表。腸内細菌がヒスチジン等から産生するImPが脳に達しアルツハイマー病の病態進行を促すメカニズムを示し、将来的なImP低減治療の標的となり得ることを提示。"
+        }
+      ],
+      "announced_on": "2026-06-26",
+      "headline_claim": "腸内細菌が作る分子「ImP」がアルツハイマー病リスクを高め認知機能低下を早めることが判明し、これを減らすことで認知症を予防できる可能性が開けた。",
+      "actual_content": "ウィスコンシン大学マディソン校などのチームが、認知機能正常な成人1,196人の血漿分析から、腸内細菌由来のイミダゾールプロピオン酸（ImP）濃度が高い人ほど認知スコアの低下が早く、病態バイオマーカーも悪化していることを突き止めた。マウス実験や培養内皮細胞の解析で、ImPが血液脳関門を破りアミロイドβやタウの病理を促進する機構も確認された。しかし、現時点でヒトにおいてImPを安全に減らす実証済みの食事法や薬剤はなく、予防・治療介入の有効性検証はこれからの段階である。",
+      "buzz_jp": 3,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 5,
+      "concern_id": "dementia",
+      "entry_question": "腸内細菌が作る物質を減らせば、アルツハイマー病を予防できるって本当？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「ImPを減らせば認知症を防げる」と期待させるが、どの腸内細菌をどう制御すればImPが下がるのか、食事や薬で安全に減らせるかのヒト介入試験はまだ影も形もない点。",
+      "investment_related": false,
+      "deja_vu_note": "アルツハイマー病の創薬標的を扱ったkl023や、腸内環境と認知機能の連関を扱ったkl025（愛犬の腸内細菌）と重なる。今回はヒトの大規模コホートと動物モデルで腸内代謝物ImPの悪影響を分子同定した点での差別化が必要。",
+      "freshness": 1,
+      "overall_score": 3.35,
+      "scan_version": "2026-10-04-news-first",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-04"
+    },
+    {
+      "title": "Vitamin C linked to fewer deaths in blood disorder trial",
+      "url": "https://www.sciencedaily.com/releases/2026/09/260930225454.htm",
+      "published": "2026-10-03",
+      "source": "ScienceDaily Health",
+      "source_kind": "press",
+      "summary": "Vitamin C may do more than support the immune system. In a phase 2 trial of people with precancerous or low risk blood cancers, daily vitamin C did not slow abnormal cell growth, but it was linked to favorable changes in inflammation and fewer serious complications. An exploratory follow up also found fewer deaths among participants taking vitamin C than among those receiving placebo.",
+      "id": "12211de857",
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1002/cncr.70549",
+          "what_it_states": "前がん状態（CCUS）または低リスク骨髄性悪性腫瘍の成人患者109人を対象とした二重盲検第2相臨床試験（EVITA試験）。1日1,000 mgの経口ビタミンC投与（55人）とプラセボ（54人）を12か月比較した結果、主要評価項目である異常細胞のクローン増殖速度に有意差は認められなかった。一方、約3年の探索的追跡でビタミンC群の死亡数がプラセボ群より有意に少なく、炎症マーカーや重篤な合併症の改善が観察された。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://newsroom.wiley.com/press-releases/press-release-details/2026/Can-vitamin-C-improve-outcomes-in-people-with-pre-cancer-blood-disorders/default.aspx",
+          "what_it_states": "研究チーム（ヴァン・アンデル研究所およびコペンハーゲン大学等）は、ビタミンCが白血病の発症に関わるTET酵素を活性化する仮説を検証。主要目的である異常細胞増殖の抑制は示せなかったものの、生存期間の延長傾向という予期せぬ探索的シグナルが得られたとし、推奨を出すには大規模な第3相臨床試験での確認が必須と発表した。"
+        }
+      ],
+      "announced_on": "2026-09-21",
+      "headline_claim": "血液がんの予備群や初期患者において、毎日のビタミンC摂取が死亡率の低下と合併症の減少につながることが臨床試験で示された。",
+      "actual_content": "デンマークと米国の患者109人を対象にした第2相二重盲検試験（EVITA試験）において、ビタミンC（1日1,000 mg）を12か月投与したところ、主要評価項目である「前がん細胞の増殖抑制」はプラセボ群と差がなく目標未達に終わった。一方で、炎症性サイトカインの改善や重篤な有害事象の減少が見られ、約3年間の追跡調査ではビタミンC群の死亡数が有意に少ないという探索的結果が得られた。ただし研究者自身が強調するように、生存利益は事前設定された主要評価項目ではなく小規模な探索的解析に過ぎず、日常的なサプリ摂取を推奨するには大規模な第3相試験での検証が不可欠である。",
+      "buzz_jp": 3,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "concern_id": "cancer",
+      "entry_question": "ビタミンCサプリを毎日飲むと、血液の病気の悪化を防いで長生きできるって本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "試験の一番の目的だった『異常な血液細胞の増殖を抑える』という主要評価項目はプラセボと全く差が出ず失敗している。死亡数が少なかったという結果は、わずか109人を対象にした後付けの探索的解析に過ぎず、これで『ビタミンCで寿命が延びる』と飛びつくのは明らかなフライング。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "freshness": 4,
+      "overall_score": 3.65,
+      "scan_version": "2026-10-04-news-first",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-04"
+    },
+    {
+      "title": "Toward provably private learning from federated data",
+      "url": "https://research.google/blog/toward-provably-private-learning-from-federated-data/",
+      "published": "2026-10-02",
+      "source": "Google Research",
+      "source_kind": "official",
+      "summary": "Mobile Systems",
+      "id": "b9b18411de",
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://research.google/blog/toward-provably-private-learning-from-federated-data/",
+          "what_it_states": "2026年10月2日発表。従来のスマホ端末側で計算する連合学習から、TEE（信頼実行環境）を備えたサーバー側へ計算を移す次世代FLシステムを発表。公開透明性ログによる外部検証可能な差分プライバシー保証を実現し、Gboardの英語および日本語の次単語予測モデルですでに本番運用中と記載。"
+        },
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/abs/2609.31494",
+          "what_it_states": "2026年9月25日投稿論文『Toward verifiably private learning from federated data』。端末からTEEホストのKMS鍵で暗号化してアップロードしたデータを、厳密に許可されたPythonプログラムのみが復号処理する仕組みを詳述。端末の稼働状況に制約されず、より小さなプライバシー予算（厳格なDP）で高精度・高速な学習を達成。"
+        }
+      ],
+      "announced_on": "2026-10-02",
+      "headline_claim": "スマホのプライバシーを数式とハードウェアで完全に守りながら、AIを高速かつ高精度に育てる次世代連合学習を開発した。",
+      "actual_content": "従来の「端末上で計算し生データは絶対にサーバーへ送らない」という連合学習の前提を変更し、暗号化したデータをGoogleサーバー上のTEE（信頼実行環境）へ送信して計算させるアーキテクチャへ移行した。公開監査ログとTEE内の暗号ポリシーによって外部からプライバシー保証を検証可能にし、端末側のバッテリーや処理能力への負荷を大幅に削減している。AndroidのGboard（日本語・英語の次単語予測）ですでに本番導入されており、従来システムより厳しいプライバシー予算で精度向上と学習高速化が確認されている。",
+      "buzz_jp": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 3,
+      "concern_id": "work_ai",
+      "entry_question": "スマホの文字入力AIは、個人情報を盗み見ずに本当に賢くなれるの？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "soon"
+      },
+      "tsukkomi_material": "『生データを端末の外に出さない』のが連合学習の最大の安心ポイントだったのに、結局暗号化してGoogleのサーバー（TEE）に送って計算させており、ハードウェア安全領域の安全神話に依存する形へ方針転換している点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "freshness": 5,
+      "overall_score": 3.35,
+      "scan_version": "2026-10-04-news-first",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-04"
+    },
+    {
+      "title": "Computational tools for society’s most complex challenges",
+      "url": "https://news.mit.edu/2026/computational-tools-for-societys-most-complex-challenges-cathy-wu-1002",
+      "published": "2026-10-02",
+      "source": "MIT News AI",
+      "source_kind": "press",
+      "summary": "Associate Professor Cathy Wu uses reinforcement learning to help map out improvements to transportation and other multifaceted systems.",
+      "id": "84b251b19c",
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://news.mit.edu/2026/computational-tools-for-societys-most-complex-challenges-cathy-wu-1002",
+          "what_it_states": "MITのCathy Wu准教授による交通・社会インフラの最適化研究を紹介する公式特集記事。強化学習（RL）を用いて、自動運転車と手動運転車の混在交通流、ラストワンマイル配送の経路選択、ボストン・ノース駅などの鉄道発着番線割り当てといった複雑な組み合わせ問題に取り組んでいる背景とビジョンを解説しているが、特定の新規実験データや単一の劇的ブレイクスルーの報告ではない。"
+        }
+      ],
+      "announced_on": "2026-10-02",
+      "headline_claim": "強化学習を活用した計算ツールによって、交通渋滞や都市物流など社会の最も複雑なインフラ課題を最適化・解決できる。",
+      "actual_content": "MIT公式ニュースによるCathy Wu准教授の研究活動を総括した人物・研究プロファイル記事です。深層強化学習を活用して自動運転車の挙動による渋滞緩和、配送トラックの経路最適化（learning-to-delegate手法）、駅のプラットフォーム割り当てといった交通・物流シミュレーションの研究成果が紹介されています。ただし、新しい単一の論文発表や実社会での大規模実証データが示されたわけではなく、都市インフラへの本格導入や現実の道路網での渋滞解消効果は依然として長期的な研究段階にあります。",
+      "buzz_jp": 1,
+      "verifiability": 3,
+      "hype_gap": 4,
+      "debate": 2,
+      "wonder": 2,
+      "life_relevance": 3,
+      "concern_id": "mobility",
+      "entry_question": "AIが交通渋滞や配達の遅れをまるごと解消してくれる未来はもうすぐ来る？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "新発見の論文発表ではなく、研究者のこれまでの歩みを紹介する広報インタビュー記事です。シミュレーション上でAIが綺麗に交通を捌けても、現実の道路には路上駐車や無理な割り込みが溢れており、社会インフラ全体をつなぐ実装には膨大な時間とコストがかかります。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "freshness": 5,
+      "overall_score": 2.85,
+      "scan_version": "2026-10-04-news-first",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-04"
+    },
+    {
+      "title": "Weak sunlight can still damage your DNA, scientists warn",
+      "url": "https://www.sciencedaily.com/releases/2026/09/260930020324.htm",
+      "published": "2026-10-02",
+      "source": "ScienceDaily Health",
+      "source_kind": "press",
+      "summary": "Weak sunlight can still damage skin DNA if you spend enough time outdoors, according to a landmark Australian study. Even UV doses too low to cause visible redness triggered cellular damage that could accumulate over time and contribute to skin cancer risk.",
+      "id": "c0e32b3f8a",
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1111/php.70120",
+          "what_it_states": "肌タイプI〜IIIの成人58人の背中に、UVインデックス2.8（弱）または8.0（強）で低線量紫外線（0.7および1.6 SED）を反復照射したところ、皮膚の目に見える紅斑（赤み）が生じない線量であっても、照射15分〜72時間後の生検で有意なDNA損傷とp53等のがん抑制遺伝子の発現増加が確認された。損傷の程度は照射強度ではなく積算された総UV量に依存していた。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.qimrb.edu.au/whats-on/news/new-research-challenges-beliefs-about-%27safe%27-times-to-be-in-the-sun",
+          "what_it_states": "豪QIMRバーグホーファー医学研究所による発表。「UVインデックス3未満なら紫外線対策は不要」とされてきた従来の認識に疑問を投げかけ、早朝や夕方など弱い日差しでも長時間屋外にいれば強い日差しを短時間浴びたのと同じ細胞損傷が生じることを実証。ただし日光の完全回避を求めるものではなく、日常的なサンスクリーン使用の見直しを促すものと説明。"
+        }
+      ],
+      "announced_on": "2026-06-29",
+      "headline_claim": "肌が赤くならないような弱い日光でも、屋外に長くいるとDNAが傷つき皮膚がんリスクになる。",
+      "actual_content": "豪QIMRバーグホーファー研究所が成人58人（肌タイプI〜III）を対象に、UVインデックス2.8（対策不要とされるレベル）と8.0の紫外線を有害反応（赤み）が出ない低線量（0.7〜1.6 SED）で照射する臨床実験を実施しました。生検の結果、日焼けの自覚症状がなくても細胞レベルでDNA損傷とがん抑制遺伝子p53の発現増加が確認され、その損傷度は光の強弱ではなく浴びた「総線量」で決まることが示されました。ただし、実験は短期的な分子マーカーの測定であり実際にがんが発症したわけではなく、ビタミンD生成など日光の健康利点を否定するものでもありません。",
+      "buzz_jp": 3,
+      "verifiability": 5,
+      "hype_gap": 2,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "concern_id": "cancer",
+      "entry_question": "肌が赤くならなければ、朝や夕方の弱い日差しは浴びても肌に害はないって本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "soon"
+      },
+      "tsukkomi_material": "赤くならなくてもDNAが傷つくのは事実だが、人体の修復機構がそれをどこまでリカバリーできるかや実際のがん化リスクの上昇幅は示されていない。日差しを過剰に恐れて完全遮光すると、今度はビタミンD不足になるジレンマをどう解決するのかが抜け落ちている。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "freshness": 1,
+      "overall_score": 2.9,
+      "scan_version": "2026-10-04-news-first",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-04"
+    },
+    {
+      "title": "Cancer stem cells have an “energy addiction” scientists may be able to exploit",
+      "url": "https://www.sciencedaily.com/releases/2026/09/260930020319.htm",
+      "published": "2026-10-02",
+      "source": "ScienceDaily Health",
+      "source_kind": "press",
+      "summary": "High-risk MDS stem cells appear to have an unexpected “energy addiction,” relying far more heavily than healthy blood-forming cells on a molecule called NAD. Disrupting this energy pathway selectively weakened the cancer-driving cells, revealing a potential new target for treatment.",
+      "id": "161544d017",
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1158/2643-3230.BCD-25-0498",
+          "what_it_states": "高リスク骨髄異形成症候群（HR-MDS）の造血幹・前駆細胞（HSPC）がニコチンアミド・サルベージ経路（NAMPT酵素）に過度に依存していることを特定。NAMPT阻害剤（OT-82 100 nmol/L 24時間処理など）によりATPおよびNADを枯渇させると、正常幹細胞は代償機構で耐えるのに対し、HR-MDS幹細胞が選択的に機能不全・死滅することを患者由来検体および前臨床モデルで実証した。"
+        }
+      ],
+      "announced_on": "2026-07-21",
+      "headline_claim": "がん幹細胞が抱える「エネルギー中毒」の弱点を突くことで、正常細胞を傷つけずがんの根源だけを選択的に攻撃できる治療標的が見つかった。",
+      "actual_content": "米コロラド大学などの研究チームが、白血病へと進行しやすい高リスク骨髄異形成症候群（HR-MDS）の患者由来幹細胞を解析した。HR-MDS幹細胞は正常な造血幹細胞と異なり、エネルギー産生に関わる分子NADの合成経路（NAMPT）に強く依存しており、この経路を阻害することでがん幹細胞だけを選択的に兵糧攻めできることを示した。ただし、本研究は患者検体を用いた生体外実験やマウス等の前臨床モデルによる基礎研究段階であり、ヒトを対象とした安全性・有効性の臨床試験はこれからである。",
+      "buzz_jp": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 3,
+      "concern_id": "cancer",
+      "entry_question": "がんの親玉細胞だけを兵糧攻めにして消す新薬は、もうすぐ使えるの？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "患者検体やモデル動物を使った基礎研究の段階であり、人での治験はこれから。さらにNAMPT阻害剤は過去の創薬でも全身毒性（血小板減少など）がハードルになってきた歴史があり、安全な薬として実用化されるまでは長い道のりが必要。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "freshness": 1,
+      "overall_score": 2.9,
+      "scan_version": "2026-10-04-news-first",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-04"
+    },
+    {
+      "title": "Even one strength training session a week could make a difference",
+      "url": "https://www.sciencedaily.com/releases/2026/09/260930020317.htm",
+      "published": "2026-10-02",
+      "source": "ScienceDaily Health",
+      "source_kind": "press",
+      "summary": "Strength training may be one of the most powerful tools for staying independent as you age. Age related muscle loss, known as sarcopenia, can make everyday tasks harder while increasing the risk of falls, fractures, and loss of mobility. Research shows that resistance exercises such as squats, weights, resistance bands, and even body weight movements can preserve or rebuild strength, and surprisin",
+      "id": "5b1e0146a0",
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1093/ageing/afac003",
+          "what_it_states": "サルコペニア（筋肉減弱症）高齢者に対するレジスタンストレーニングの処方ガイドライン。高負荷（最大筋力の80%程度で8〜10回）だけでなく、低負荷（最大筋力の30〜50%）でも20〜25回反復して疲労限界近くまで行えば同等の効果が得られること、運動未経験者や虚弱高齢者では週1回でも有意義な筋力向上が見込めること、複合疾患（マルチモビディティ）を有する人への安全な運動導入手順を提示。"
+        },
+        {
+          "kind": "official_blog",
+          "url": "https://theconversation.com",
+          "what_it_states": "英ニューカッスル大学のクリストファー・ハースト上級研究員による解説記事。自立した生活維持（立ち座りや買い物袋の運搬）には有酸素運動だけでなく筋トレが不可欠であり、ジムに行かず自重やバンドを使って週1回始めるだけでも高齢者の機能維持に効果があることを説明。"
+        }
+      ],
+      "announced_on": "2026-10-02",
+      "headline_claim": "週にたった1回の筋力トレーニングでも、高齢者の筋肉の衰えを防ぎ自立した生活を維持するのに十分な効果がある。",
+      "actual_content": "英ニューカッスル大学のクリストファー・ハースト博士らのサルコペニア運動処方ガイドラインに基づく解説。重いバーベルを使わなくても、軽い負荷（20〜25回の反復）や自重スクワットで疲労近くまで行えば、重い負荷と同等の筋力向上が得られることや、運動未経験の高齢者であれば週1回のセッションでも日常生活動作（歩行速度や椅子からの立ち上がり）に有意義な改善が見られることを示している。ただし、これは運動習慣のない高齢者のハードルを下げるための啓発的知見であり、新たな画期的治療法や新薬の発見ではなく、より高い維持効果には十分なタンパク質摂取や週2〜3回の継続が依然として推奨される。",
+      "buzz_jp": 2,
+      "verifiability": 4,
+      "hype_gap": 3,
+      "debate": 2,
+      "wonder": 2,
+      "life_relevance": 5,
+      "concern_id": "bone_muscle",
+      "entry_question": "週1回だけの筋トレでも、高齢者の筋肉の衰えや転倒・寝たきりを防げるって本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "soon"
+      },
+      "tsukkomi_material": "最新の実験で新事実が発覚したわけではなく、運動生理学者が『週2〜3回ジム通いと言われて挫折するくらいなら、家で週1回スクワットするだけでもやらないより遥かにマシ』と運動のハードルを下げるためにまとめた啓発コラム。週1回で成果が出るのは主に運動習慣ゼロの初心者や虚弱な高齢者であり、公式ガイドラインの基本が週2〜3回である事実は変わっていない点。",
+      "investment_related": false,
+      "deja_vu_note": "老化や介護予防のテーマはあるが、筋肉の衰え（サルコペニア）・筋トレそのものを扱った過去回はない。",
+      "freshness": 5,
+      "overall_score": 3.25,
+      "scan_version": "2026-10-04-news-first",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-04"
+    },
+    {
+      "title": "Scientists may have found a “unifying theory” of chronic fatigue",
+      "url": "https://www.sciencedaily.com/releases/2026/09/260929053543.htm",
+      "published": "2026-10-02",
+      "source": "ScienceDaily Health",
+      "source_kind": "press",
+      "summary": "Scientists found that five seemingly unrelated conditions, including long Covid, ME/CFS, and PTSD, may disrupt many of the same biological networks involved in immunity, metabolism, and cellular energy. The findings could help explain their shared symptoms and may open the door to new blood tests and treatments.",
+      "id": "3c1c18b6ce",
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1186/s12967-026-08874-9",
+          "what_it_states": "ME/CFS（552箇所の3Dゲノムアンカー、567遺伝子）と、Long COVID、PTSD、関節リウマチ、多発性硬化症の既存GWASデータをEpiSwitchプラットフォームで比較解析。個々の遺伝子自体の重複はごくわずかだったが、3次元ゲノム構造に基づくタンパク質間相互作用ネットワーク上で免疫シグナル、ミトコンドリア機能、細胞エネルギー代謝などの共通ハブ経路を同定した計算科学的仮説生成研究。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.uea.ac.uk/about/news/article/scientists-uncover-shared-biology-behind-profound-fatigue-in-five-major-illnesses",
+          "what_it_states": "イースト・アングリア大学とOxford BioDynamicsの研究チームが、ウイルス感染、心理的トラウマ、自己免疫など異なる引き金を持つ5疾患に共通する疲労の生物学的基盤を発見したと発表。将来的な診断血液検査や標的治療法の開発につながる可能性に言及。"
+        }
+      ],
+      "announced_on": "2026-08-22",
+      "headline_claim": "長引くコロナ後遺症や慢性疲労症候群、PTSDなどに共通する「慢性疲労の大統一理論」がついに発見され、新たな血液検査や治療への扉が開かれた。",
+      "actual_content": "本研究は新たな患者の生体サンプルを臨床検証した実験ではなく、過去の大規模GWAS等の公開遺伝データを民間企業の独自ツール「EpiSwitch Orion」で再解析した計算機シミュレーションである。5つの疾患間で個々の直接重複する原因遺伝子はほぼ見当たらなかったものの、遺伝子の立体配置や相互作用ネットワークを辿ると免疫応答やミトコンドリアのエネルギー産生といった共通の経路に集約されることが示された。しかし、これらが症状の直接の原因（因果関係）であることは証明されておらず、外部の専門家からは解析アルゴリズムが非公開な点や対照群との比較不足が指摘されている。",
+      "buzz_jp": 3,
+      "verifiability": 4,
+      "hype_gap": 4,
+      "debate": 4,
+      "wonder": 4,
+      "life_relevance": 4,
+      "concern_id": "fatigue",
+      "entry_question": "コロナ後遺症や慢性の激しいだるさは、心の傷や自己免疫と同じ仕組みで起きていて血液で測れるようになるって本当？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "「大統一理論」とぶち上げているが、新規患者の生体検証ではなく既存データの計算機モデリングにすぎず、解析に使われた企業独自のアルゴリズムも非公開でブラックボックスな点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "freshness": 1,
+      "overall_score": 3.4,
+      "scan_version": "2026-10-04-news-first",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-04"
+    },
+    {
+      "title": "Inside Omron’s next-generation LD mobile robots",
+      "url": "https://www.therobotreport.com/inside-omrons-next-generation-ld-mobile-robots/",
+      "published": "2026-10-02",
+      "source": "The Robot Report",
+      "source_kind": "media",
+      "summary": "In mobile robotics, software, safety, and fleet management are becoming just as important as the robot itself, according to an OMROM project manager. The post Inside Omron’s next-generation LD mobile robots appeared first on The Robot Report .",
+      "id": "71461f9591",
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://robotics.omron.com/wp-content/uploads/2026/06/Automate-2026-Press-Release-Hero-Website.webp",
+          "what_it_states": "オムロンの次世代AMR『LD-150』（車幅500mm、可搬150kg）および『LD-300』（車幅580mm、可搬300kg）を発表。最高速度2.1m/s、30分以内の非接触急速充電、5度勾配対応、ISO 3691-4:2023準拠の360度安全スキャナー、群管理ソフトFLOW Core対応を明記。2026年第4四半期出荷予定。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://robotics.omron.com",
+          "what_it_states": "新LDシリーズ製品概要。従来型AGVのような磁気テープ不要の自然特徴量ナビゲーション、狭小通路での高スループット搬送、異種ロボット混在フリート管理（FLOW Core）の仕様を提示。"
+        }
+      ],
+      "announced_on": "2026-06-09",
+      "headline_claim": "オムロンが次世代の自律走行搬送ロボット（LDシリーズ）の内部設計を公開し、ソフトウェア・安全性・群管理が機体そのものと同等に重要になると発表した。",
+      "actual_content": "メディアのポッドキャストで紹介されたのは、2026年6月の展示会で発表済みの産業用AMR『LD-150』『LD-300』の仕様と運用方針です。機体自体は幅500〜580mmのコンパクト設計ながら最大150〜300kgの可搬重量、最高速度2.1m/s、30分以内の非接触急速充電に対応しています。単体の走行性能よりも、他社機を含む複数台の走行管理（FLOW Core）やISO 3691-4準拠の360度安全センサなど、工場全体の稼働率を高める仕組みに主眼が置かれています。",
+      "buzz_jp": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 1,
+      "wonder": 2,
+      "life_relevance": 2,
+      "concern_id": "work_ai",
+      "entry_question": "工場を走り回るオムロンの次世代ロボットは、一般の職場や街中にももうすぐ来る？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "soon"
+      },
+      "tsukkomi_material": "暮らしを変える未来のAIロボットの話かと思いきや、工場の狭い通路で重量物をせっせと運ぶ純然たる産業用台車ロボット（AMR）の着実なマイナー〜メジャー刷新。技術として信頼性は抜群で今年Q4に出荷されますが、一般の暮らしに直接やってくるものではありません。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "freshness": 1,
+      "overall_score": 2.15,
+      "scan_version": "2026-10-04-news-first",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-04"
+    },
+    {
+      "title": "Runway introduces Praxis-1 world action model for robotics",
+      "url": "https://www.therobotreport.com/runway-introduces-praxis-1-world-action-model-robotics/",
+      "published": "2026-10-02",
+      "source": "The Robot Report",
+      "source_kind": "media",
+      "summary": "When Runway does release Praxis-1 publicly, it plans to ship it with open weights rather than as a closed model. The post Runway introduces Praxis-1 world action model for robotics appeared first on The Robot Report .",
+      "id": "013398c4f7",
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://runwayml.com/research/praxis-1",
+          "what_it_states": "Web上の三人称動画データを用いた事前学習により、人手によるロボット遠隔操作データ（配置誤差16.0cm）とほぼ同等となる配置誤差16.1cmを達成。世界モデル内のシミュレーション結果と実機テストの相関は0.95。双腕・6軸アーム・移動台車で再学習なしの汎用動作をテスト済みで、モデルの重みは数カ月以内にオープンウェイトで公開予定。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://www.youtube.com/watch?v=sXiLq_3TaAI",
+          "what_it_states": "2026年9月30日公開のPraxis-1公式発表動画。Noble Machines、Standard Bots、Ultraなどのロボット企業と実機テスト中であり、数カ月以内の重み公開に向けて早期アクセス申請を受け付けていると公表。"
+        }
+      ],
+      "announced_on": "2026-09-30",
+      "headline_claim": "動画生成AI大手のRunwayが、ネット上の大量動画から物理法則を学んでロボットを動かす世界行動モデル「Praxis-1」をオープンウェイトで無料公開へ。",
+      "actual_content": "ロボットの実機教示データ不足を解消するため、同社の動画生成技術をロボットの行動ポリシーに転用した基礎モデルです。Web動画で事前学習したモデルの目標配置誤差は16.1cmで、人間が遠隔操作で教え込んだデータの16.0cmとほぼ互角の精度を示し、シミュレーションと実機の相関は0.95と報告されています。ただし、現時点では早期パートナーへのテスト段階でモデル重み自体は未配布（数カ月以内を予告）であり、16cmの誤差は精密な実作業にはまだ粗い水準です。",
+      "buzz_jp": 3,
+      "verifiability": 4,
+      "hype_gap": 4,
+      "debate": 4,
+      "wonder": 4,
+      "life_relevance": 3,
+      "concern_id": "housework",
+      "entry_question": "ネット動画を見るだけでロボットが片付けや家事を覚える時代は、もうすぐ来る？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "人手の教示データと同等と言っても、配置誤差16cmはコップを置いたら机から落ちるレベルの大雑把さ。しかも映像には『触った時の重みや摩擦』が映っていないため、動画学習だけで壊れやすい食器や柔らかい洗濯物を扱えるようになるには程遠い。",
+      "investment_related": false,
+      "deja_vu_note": "kl011（未知の物体を掴んで片付けるロボットアーム）とロボットの片付けという点で似ているが、kl011がロボット専用データによる把持だったのに対し、本作は動画生成AIがネット動画から物理行動を直接学習してオープン化するというデータボトルネック打破のパラダイムシフトが焦点。",
+      "freshness": 5,
+      "overall_score": 3.85,
+      "scan_version": "2026-10-04-news-first",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-04"
+    },
+    {
+      "title": "New tool lets users repair AI-generated 3D models, then fabricate them just the way they want",
+      "url": "https://news.mit.edu/2026/instructmesh-tool-lets-users-repair-ai-3d-models-then-fabricate-them-1001",
+      "published": "2026-10-01",
+      "source": "MIT News AI",
+      "source_kind": "press",
+      "summary": "“InstructMesh” can generate designs for everyday objects that are easy to edit and fabricate for both experts and newcomers to 3D modeling.",
+      "id": "487a3c06f8",
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://news.mit.edu/2026/instructmesh-tool-lets-users-repair-ai-3d-models-then-fabricate-them-1001",
+          "what_it_states": "MIT CSAIL、Google、ノースイースタン大学の研究チームが開発したInstructMeshを発表。Microsoftの3D生成ツールTRELLISとGPT-4を統合し、自然言語やスライダー操作で特定領域の形状を修正可能。Thingiverseモデルの再現検証では、AI生成モデルの約80%に構造的欠陥があったが、初心者ユーザーが本ツールを用いて約90%の欠陥を特定・修正できたと報告。"
+        },
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/abs/2608.28534",
+          "what_it_states": "ACM UIST 2026採択論文「InstructMesh: Selective Refinement of Generative 3D Models for Fabrication」。生成AIによる3Dメッシュの物理的欠陥（穴の閉塞や厚み不足など）に対し、選択領域の潜在空間編集とテキストプロンプトで対話的に修正する手法を提案。対象は静的ジオメトリに限定されており、落下衝撃や材料特性などの物理シミュレーション検証は今後の課題と明記。"
+        }
+      ],
+      "announced_on": "2026-10-01",
+      "headline_claim": "AIが生成した3Dモデルの欠陥を言葉で指示して直し、初心者でも日常品や小物を思い通りに3Dプリントできる新ツールInstructMeshが登場した。",
+      "actual_content": "MITやGoogleの研究チームが開発したInstructMeshは、3D生成モデル（TRELLIS）とLLM（GPT-4）を組み合わせ、3Dメッシュの特定部位を選択して自然言語やスライダーで直感的に形状修正・補修できるインターフェースです。実験では、既存AIが生成した3Dモデルの約80%に実用上・構造上の欠陥（カップの底が塞がっている等）が存在した一方、初心者が本ツールを使うことでその約90%を特定・修正することに成功しました。ただし、本システムは静的な外形ジオメトリの編集に特化しており、落下時の強度や素材特性を評価する物理シミュレーション機能は未実装で今後の課題とされています。",
+      "buzz_jp": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "concern_id": "work_ai",
+      "entry_question": "言葉で指示するだけでAIの3Dデータを直して日用品をプリントできるツールは、もう使える？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "AIが生成した3Dモデルの8割に欠陥があり、結局人間が目視で見つけて言葉で指示して直す必要がある点。また、プリントしたものが壊れないかという強度計算や物理シミュレーションはまだ未実装な点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "freshness": 5,
+      "overall_score": 3.2,
+      "scan_version": "2026-10-04-news-first",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-04"
+    },
+    {
+      "title": "This light-powered AI can spot deepfakes with nearly 98% accuracy",
+      "url": "https://www.sciencedaily.com/releases/2026/09/260929053534.htm",
+      "published": "2026-10-01",
+      "source": "ScienceDaily AI",
+      "source_kind": "press",
+      "summary": "UCLA researchers built an AI system that uses light to analyze more than a dozen videos simultaneously, detecting deepfakes with nearly 98% accuracy. Its speed, low energy demands, and resistance to attacks could make it a powerful tool for screening the growing flood of AI-generated video.",
+      "id": "948beaea7c",
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1186/s43593-026-00143-y",
+          "what_it_states": "UCLAの研究チームが開発した光学・ニューラル混成プロセッサ。Celeb-DFデータセットを用いた可視光実験で、15本の動画ストリームを単一の光学パスで同時判定し、平均正解率97.79%、感度99.86%、特異度95.72%を達成した。18本同時判定では正解率96.13%、Google Veo 3生成動画に対しては微小な追加学習後に正解率94.80%、感度97.61%を記録した。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.eurekalert.org/news-releases/1058914",
+          "what_it_states": "光の回折現象を利用して複数動画を並列処理する光学ディープフェイク検出システムを発表。本システムは従来のデジタル検出器を完全に置き換えるものではなく、膨大なアップロード動画を低消費電力でふるい落とす高感度な『一次スクリーニング層』として位置付けられている。"
+        },
+        {
+          "kind": "tech_report",
+          "url": "https://arxiv.org/abs/2605.19360",
+          "what_it_states": "軽量なデジタル前段エンコーダで動画特徴を抽出し、空間光変調器（SLM）で光パターンへ変換後、受動的な回折層（光学デコーダ）を通すハイブリッド構成。回折層を2層追加することで推論時の電力消費を増やさずに検出精度を約6.8ポイント改善できることや、重みが光学ハードウェアに物理的に埋め込まれているため敵対的攻撃への耐性があることを記述。"
+        }
+      ],
+      "announced_on": "2026-09-23",
+      "headline_claim": "光の力で計算するAIにより、動画15本以上を同時に解析して約98%の超高精度でディープフェイク偽動画を見破ることができる。",
+      "actual_content": "UCLAの研究チームは、動画から特徴量を抽出する軽量デジタル前段と、光の回折を利用して計算を行う受動的光学デコーダを組み合わせたハイブリッド検出器を開発した。公開データセット（Celeb-DF）を用いた実験室環境で、15本の動画を1回の光伝搬で同時解析し、正解率97.79%（見逃しを防ぐ感度99.86%、特異度95.72%）を達成、Google Veo 3生成動画に対しても94.80%の正解率を示した。しかし、偽動画でないものを誤検知する確率が4%強あるため単体での最終判定には向かず、後段に精密なデジタル検証器を控えた『大量動画の一次ふるい分け（スクリーニング）』に特化した構成である。",
+      "buzz_jp": 3,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "debate": 4,
+      "wonder": 4,
+      "life_relevance": 2,
+      "concern_id": null,
+      "entry_question": "「光の力で偽動画を98%見破るAI」ができたら、SNSのディープフェイク詐欺はもう全部なくなるの？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「光で瞬時に判定」と謳いながら動画から特徴を抽出する前処理は普通のデジタル計算機頼みであり、誤検知が4%強あるため結局後ろに重いデジタルAIを構えなければならず、物理的な光学素子を大量生産・配備して次々現れる新生成AIに追従させるにはまだ大きな壁がある。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "freshness": 4,
+      "overall_score": 3.65,
+      "scan_version": "2026-10-04-news-first",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-04"
+    },
+    {
+      "title": "This diet may slow brain aging by 2.5 years",
+      "url": "https://www.sciencedaily.com/releases/2026/09/260930225503.htm",
+      "published": "2026-10-01",
+      "source": "ScienceDaily Health",
+      "source_kind": "press",
+      "summary": "People who followed the MIND diet more closely showed slower brain shrinkage and less grey matter loss over time, with the strongest differences equivalent to about 2.5 years of delayed brain aging. Berries and poultry were linked with healthier brain changes, while sweets and fried fast foods were associated with greater tissue loss.",
+      "id": "c0723ecdb4",
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1136/jnnp-2025-336957",
+          "what_it_states": "フラミンガム心臓研究子孫コホートの成人1,647人（平均年齢約60歳、追跡期間中央値12.3年）を対象にMRIを複数回撮影し解析した結果、MIND食スコアが3点高いごとに総灰白質体積の減少速度が年間0.279cm³緩やかになり（加齢変化の20.1%減、約2.5年分の脳構造老化遅延に換算）、側脳室の拡大も年間0.071cm³抑制（約1年分遅延に換算）された。一方で全粒穀物の摂取量が多いと脳萎縮が速まり、チーズ摂取が多いと抑制されるなど推奨と矛盾する相関も認められた。"
+        }
+      ],
+      "announced_on": "2026-03-17",
+      "headline_claim": "MIND食を忠実に実践すると、脳の萎縮が遅まり脳の老化を約2.5年遅らせることができる。",
+      "actual_content": "フラミンガム心臓研究の成人1,647人を対象に、12年以上にわたり食事頻度調査と複数回の脳MRI検査を実施した観察研究です。MIND食（ベリー類、葉物野菜、鶏肉などを多く摂り、揚げ物やお菓子を控える食事法）の遵守スコアが3点高くなるごとに、灰白質の萎縮が20.1%（脳年齢約2.5年分相当）抑えられる相関が示されました。ただし因果関係を実証した介入試験ではなく、被験者の大半が白人で高学歴・運動習慣ありなど交絡因子の影響が強いこと、さらに全粒穀物で萎縮が加速しチーズで抑制されるといった不可解なデータも含まれる探索的結果にとどまります。",
+      "buzz_jp": 3,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 5,
+      "concern_id": "dementia",
+      "entry_question": "食事を変えるだけで脳の老化を2.5年遅らせられるって本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "あくまでアンケート調査による観察研究で因果関係は証明されておらず、推奨されているはずの全粒穀物で脳萎縮が進み、控えるべきチーズで守られるという謎の結果まで出ており、食事単独の効果とは言い切れない。",
+      "investment_related": false,
+      "deja_vu_note": "kl027（思いやる気持ちが、脳の衰えを55%遅らせる）と「生活習慣で脳の萎縮・老化を遅らせる」というテーマ性がやや重複する。",
+      "freshness": 1,
+      "overall_score": 3.2,
+      "scan_version": "2026-10-04-news-first",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-04"
+    }
+  ]
+}

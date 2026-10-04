@@ -291,9 +291,10 @@ CHART_TYPES = ("data", "check")
 # （kl031の初回で発生）。重ね合わせの話は書かず、空けておく場所を「無地の背景」として指示する。
 DIALOGUE_NARRATIVE_LAYOUT = (
     "\n\nCOMPOSITION: place the main subject and all important details in the upper and central "
-    "part of the frame (the central 70% of the width, the top 75% of the height). Let the lower-left "
-    "corner, the lower-right corner and the bottom fifth of the frame show only plain, uncluttered "
-    "background such as floor, table surface or wall. The image is one single continuous scene: "
+    "part of the frame (the central 70% of the width, the top 75% of the height). In the lower-left "
+    "corner, the lower-right corner and the bottom fifth of the frame, simply continue the same scene's "
+    "floor, rug, table surface or wall naturally, with no important objects there — never leave it blank, "
+    "white, empty or cut out. The image is one single continuous, fully painted scene edge to edge: "
     "no borders, no frames, no inset pictures, no panels, no bars, no captions."
 )
 DIALOGUE_CHART_LAYOUT = (
@@ -302,7 +303,8 @@ DIALOGUE_CHART_LAYOUT = (
 )
 DIALOGUE_THUMB_LAYOUT = (
     "\n\nCOMPOSITION: put the visual subject in the middle band of the frame, centered horizontally. "
-    "The top 30%, the lower-left corner and the lower-right corner show only soft, plain background. "
+    "In the top 30%, the lower-left corner and the lower-right corner, simply continue the same scene's "
+    "background naturally (softly out of focus, never blank, white or cut out). Fully painted edge to edge. "
     "One single continuous image: no people other than those described, no borders, no inset pictures, "
     "no text."
 )
@@ -926,7 +928,8 @@ def main():
                     prompt = build_shorts_reframe_prompt(image_prompt)
                     if ep.get("format") == "dialogue":
                         prompt += ("\n\nCOMPOSITION: keep the main subject in the upper half of the vertical "
-                                   "frame; the bottom 30% shows only plain, uncluttered background. One single "
+                                   "frame; in the bottom 30%, continue the same scene's floor or wall naturally with no important objects "
+                                   "(never blank, white or cut out). One single "
                                    "continuous image: no borders, no inset pictures, no bars, no captions.")
                     r = generate_with_qa(client, prompt, image_prompt, out_path,
                                           aspect_ratio="9:16", skip_qa=args.no_qa,

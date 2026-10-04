@@ -1,0 +1,16 @@
+{
+  "_comment": "ニュース起点のネタ選定（2026-10-04〜、kl-new.md STEP1 ケースC）で kl_news_scan.py collect が読むRSS。kind: official=企業・研究機関の公式発表（そのまま一次資料になりうる）、journal=学術誌のニュース・論文、press=大学のプレスリリース集約、media=専門報道（何が発表されたかを知る手がかり。台本の根拠にはしない）。2026-10-04に取得できることを確認した。EurekAlert・Stanford HAI・arXivのRSSは取得できなかった（または空）ため外した。",
+  "feeds": [
+    {"name": "OpenAI", "url": "https://openai.com/news/rss.xml", "kind": "official"},
+    {"name": "Google DeepMind", "url": "https://deepmind.google/blog/rss.xml", "kind": "official"},
+    {"name": "Google Research", "url": "https://research.google/blog/rss/", "kind": "official"},
+    {"name": "NVIDIA Blog", "url": "https://blogs.nvidia.com/feed/", "kind": "official"},
+    {"name": "MIT News AI", "url": "https://news.mit.edu/topic/mitartificial-intelligence2-rss.xml", "kind": "press"},
+    {"name": "Nature", "url": "https://www.nature.com/nature.rss", "kind": "journal"},
+    {"name": "Science News", "url": "https://www.science.org/rss/news_current.xml", "kind": "journal"},
+    {"name": "ScienceDaily AI", "url": "https://www.sciencedaily.com/rss/computers_math/artificial_intelligence.xml", "kind": "press"},
+    {"name": "ScienceDaily Health", "url": "https://www.sciencedaily.com/rss/top/health.xml", "kind": "press"},
+    {"name": "The Robot Report", "url": "https://www.therobotreport.com/feed/", "kind": "media"},
+    {"name": "IEEE Spectrum Robotics", "url": "https://spectrum.ieee.org/feeds/topic/robotics.rss", "kind": "media"}
+  ]
+}

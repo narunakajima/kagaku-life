@@ -125,10 +125,24 @@ def http_get_json(url: str, retries: int = 4) -> dict:
     raise RuntimeError(f"検索失敗（{retries}回リトライ後）: {url}")
 
 
+# 2026-10-04: 鮮度の基準を「直近3年」から「直近6か月」に変えた（なるさんの判断: 関心ごと起点で見つかる論文が
+# 1年〜数年前のものになりがちで、AI分野の進み方から見て古めかしく既視感がある）。DATE_FROM が設定されていれば
+# 年ではなく公開日（publicationDateOrYear）で絞る。--months 0 で旧来の --years の年単位に戻せる。
+DATE_FROM = None
+
+
 def search_bulk(ss_query: str, year_from: int, year_to: int, token: str = None) -> dict:
     params = {
         "query": ss_query,
-        "year": f"{year_from}-{year_to}",
+        "fields": FIELDS,
+        "limit": PAGE_LIMIT,
+    }
+    if DATE_FROM:
+        params["publicationDateOrYear"] = f"{DATE_FROM}:"
+    else:
+        params["year"] = f"{year_from}-{year_to}"
+    params = {
+        **params,
         "fields": FIELDS,
         "limit": PAGE_LIMIT,
     }
@@ -355,7 +369,8 @@ def run_concern(name: str, cat: dict, year_from: int, year_to: int, top_n: int, 
 def main():
     parser = argparse.ArgumentParser(description="STAGE1論文検索（Semantic Scholar Graph API）")
     parser.add_argument("--concern", required=True, help="検索する関心ごと（viewer_concerns.jsonのid）")
-    parser.add_argument("--years", type=int, default=3, help="鮮度基準（年数、デフォルト3）")
+    parser.add_argument("--years", type=int, default=3, help="鮮度基準（年数、--months 0 のときだけ使う）")
+    parser.add_argument("--months", type=int, default=6, help="鮮度基準（直近何か月の公開日か、デフォルト6。0で --years を使う）")
     parser.add_argument("--top-n", type=int, default=0, help="上限件数（0=無制限、デフォルト。STAGE1のスコアで足切りせず全件次へ送る）")
     parser.add_argument("--dry-run", action="store_true", help="API呼び出しをせず生成クエリのみ表示")
     args = parser.parse_args()
@@ -369,6 +384,11 @@ def main():
     current_year = datetime.now().year
     year_from = current_year - args.years
     year_to = current_year
+    global DATE_FROM
+    if args.months > 0:
+        from datetime import timedelta
+        DATE_FROM = (datetime.now() - timedelta(days=int(args.months * 30.5))).date().isoformat()
+        print(f"鮮度基準: {DATE_FROM} 以降に公開された論文（直近{args.months}か月）")
 
     seen_ids = load_seen_paper_ids()
     if seen_ids:

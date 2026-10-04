@@ -68,6 +68,12 @@ CLOSING_CTA = [
     ("skeptic", "それが本物かどうか、また一緒に確かめましょう。論文は概要欄に載せています。チャンネル登録して、待っていてください。"),
 ]
 
+# ニュース起点の回（source_type: "news"、2026-10-04〜）は論文ではなく公式発表を扱うので、2行目だけ言い換える
+CLOSING_CTA_NEWS = [
+    CLOSING_CTA[0],
+    ("skeptic", "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。"),
+]
+
 # 常套句の禁止リスト（2026-10-04、診断レポートで旧形式の30話に繰り返し出ていた言い回し）。
 # 値は1話あたりの上限回数。
 PHRASE_LIMITS = {
@@ -249,8 +255,9 @@ def validate_episode(ep: dict, cast: dict = None) -> list:
     # 締めの固定CTA
     closing_lines = scenes[-1].get("lines") or []
     tail = [(l.get("speaker"), l.get("text")) for l in closing_lines[-len(CLOSING_CTA):]]
-    if tail != CLOSING_CTA:
-        errs.append("closing の最後の2行が固定のCTA（kl_dialogue.CLOSING_CTA）と一致しません")
+    cta = CLOSING_CTA_NEWS if ep.get("source_type") == "news" else CLOSING_CTA
+    if tail != cta:
+        errs.append("closing の最後の2行が固定のCTA（kl_dialogue.CLOSING_CTA、ニュース回は CLOSING_CTA_NEWS）と一致しません")
 
     # タイトル・フック・Shorts
     title = ep.get("youtube_title", "")
