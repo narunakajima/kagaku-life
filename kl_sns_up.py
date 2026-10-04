@@ -2,7 +2,7 @@
 kl_sns_up.py — くらしを変える科学 YouTubeアップロード
 
 使い方:
-  python3 kl_sns_up.py --episode kl001              # 火・木・土19:00 JSTの最短空きスロットに自動予約
+  python3 kl_sns_up.py --episode kl001              # 毎日19:00 JST（1日1本）の最短空きスロットに自動予約
   python3 kl_sns_up.py --episode kl001 --now        # 即時公開
   python3 kl_sns_up.py --episode kl001 --publish-at "2026-06-06 19:00"  # 日時指定
 
@@ -100,8 +100,9 @@ def get_youtube_client():
 
 
 JST = ZoneInfo("Asia/Tokyo")
-PUBLISH_HOUR_JST = 19  # 火・木・土 19:00 JST に公開
-PUBLISH_WEEKDAYS = {1, 3, 5}  # 0=月 ... 1=火, 3=木, 5=土
+PUBLISH_HOUR_JST = 19  # 毎日 19:00 JST の枠（1日1本）
+# 2026-10-05: 公開枠を「火・木・土」から「毎日1本」に変更（なるさんの指示。枠に溜まりすぎないよう制作側で調整する）
+PUBLISH_WEEKDAYS = {0, 1, 2, 3, 4, 5, 6}  # 0=月 ... 6=日
 
 
 def _used_publish_dates() -> set:
@@ -382,9 +383,9 @@ def cli():
     parser = argparse.ArgumentParser(description="くらしを変える科学 YouTubeアップロード")
     parser.add_argument("--episode", required=True, help="エピソードID（例: kl001）")
     parser.add_argument("--publish-at", metavar="DATETIME",
-                        help="予約公開日時（JST）例: '2026-06-06 19:00' / 省略時は火・木・土19:00 JSTの最短空きスロットに自動予約")
+                        help="予約公開日時（JST）例: '2026-06-06 19:00' / 省略時は毎日19:00 JST（1日1本）の最短空きスロットに自動予約")
     parser.add_argument("--now", action="store_true",
-                        help="即時公開（火・木・土19:00 JST自動予約をスキップ）")
+                        help="即時公開（19:00 JST自動予約をスキップ）")
     args = parser.parse_args()
 
     run(args.episode, publish_at=args.publish_at, publish_now=args.now)

@@ -10,7 +10,7 @@ episodes/kl{NNN}.json の scheduled_at を同時に書き換える。公開済�
   python3 kl_reschedule.py list
   python3 kl_reschedule.py move --episode kl026 --to "2026-10-27 19:00"
   python3 kl_reschedule.py bump --episode kl033 --at "2026-10-08 19:00"
-     → kl033 を 10/8 19:00 に入れ、その枠にいた回から順に、空いている次の枠（火・木・土 19:00）へ1つずつ後ろへずらす
+     → kl033 を 10/8 19:00 に入れ、その枠にいた回から順に、空いている次の枠（毎日 19:00、1日1本）へ1つずつ後ろへずらす
 
 変更後は kl_build_site.py を実行してコミットする（/kl-upload STEP6 と同じ）。
 """
