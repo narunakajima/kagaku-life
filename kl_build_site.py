@@ -475,8 +475,9 @@ def build_index(episodes: list[dict], published: list[dict], categories: list[di
     stat_ep_label = "公開動画" if ep_count else "公開予定"
 
     html = head_html(
-        f"{CHANNEL_NAME} | 最新研究が変えるくらしの未来",
-        f"最新の研究が、これからのくらしをどう変えるか——{CHANNEL_NAME}が分かりやすく解説します。"
+        f"{CHANNEL_NAME} | 話題の科学は、本当にくらしに来る？",
+        "AI・ロボット・医療・食べもの——話題の科学を、夢を語る大輔と数字の裏を確かめる沙織の二人が、発表元の資料で確かめて"
+        "「もうすぐ来る／10年はかかる／まだ眉唾」と判定します。"
     )
     html += nav_html("top")
     html += f"""
@@ -520,32 +521,31 @@ def build_index(episodes: list[dict], published: list[dict], categories: list[di
   <section style="background:var(--white);border-top:1px solid var(--paper-dim);border-bottom:1px solid var(--paper-dim);">
     <div class="section-inner">
       <p class="section-label reveal">About</p>
-      <h2 class="section-heading reveal reveal-delay-1">最新研究が、あなたの暮らしを変える。</h2>
-      <p class="reveal reveal-delay-2" style="text-align:left;font-size:clamp(1rem,3vw,1.1rem);line-height:2;color:#4a5866;max-width:640px;margin:0 auto 20px;">
-        睡眠や老化、仕事とAI、親の介護——誰もが抱える身近な悩みや疑問に、最新の研究論文がどう答えるのかを、分野を問わず、専門知識がなくてもわかりやすく、かつ誠実に解説するチャンネルです。<br>
+      <h2 class="section-heading reveal reveal-delay-1">その話題、くらしに来るのはいつ？</h2>
+      <p class="reveal reveal-delay-2" style="text-align:left;line-break:strict;font-size:clamp(1rem,3vw,1.1rem);line-height:2;color:#4a5866;max-width:640px;margin:0 auto 20px;">
+        AI、ロボット、医療、食べもの——話題になった科学は、本当に私たちのくらしに届くのか。<strong style="color:var(--teal);font-weight:700;">夢を語る大輔</strong>と、<strong style="color:var(--teal);font-weight:700;">数字の裏を確かめる沙織</strong>の二人が、発表元の論文や公式資料で中身を確かめ、最後に判定を出すチャンネルです。<br>
         量産型のAI雑学ではなく、根拠に忠実な<strong style="color:var(--coral-dim);font-weight:700;">「信頼できる先取り」</strong>をお届けします。
       </p>
-      <p class="reveal reveal-delay-2" style="text-align:left;font-size:clamp(.9rem,2.6vw,1rem);line-height:2;color:#5c6b78;max-width:680px;margin:0 auto 48px;">
-        体の不調や病気の予防、毎日の調子、家事や子育て、ペットの健康、<br>
-        そして働き方を変えるAIまで——<strong style="color:var(--teal);font-weight:700;">架空の生活者を主人公にした物語</strong>を通して、<br>
-        まだ研究段階の科学が実現したとき、暮らしにどんな変化が訪れるのかを描きます。<br>
-        最新の研究論文の裏付けに忠実に、誠実な解説を大切にしています。
+      <p class="reveal reveal-delay-2" style="text-align:left;line-break:strict;font-size:clamp(.9rem,2.6vw,1rem);line-height:2;color:#5c6b78;max-width:680px;margin:0 auto 48px;">
+        判定は<strong style="color:var(--teal);font-weight:700;">「もうすぐ来る」「10年はかかる」「まだ眉唾」</strong>の3つ。二人の意見が割れる回もあります。<br>
+        論文や発表の範囲を超えて言い切らず、まだ研究段階のものは、そのとおりに伝えます。<br>
+        ※登場する二人は架空のキャラクターで、声はAIで合成しています。これまでの動画は、架空の生活者を主人公にした物語形式です。
       </p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;max-width:720px;margin:0 auto;">
         <div class="reveal reveal-delay-1" style="text-align:center;padding:26px 16px;border:1px solid var(--paper-dim);border-radius:12px;background:var(--paper);">
           <div style="font-size:1.8rem;margin-bottom:12px;">📄</div>
           <p style="font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:.82rem;color:var(--teal);">確かな出典</p>
-          <p style="font-size:.85rem;color:#5c6b78;line-height:1.7;margin-top:8px;">大学・研究機関の実際の最新研究にもとづく解説</p>
+          <p style="font-size:.85rem;color:#5c6b78;line-height:1.7;margin-top:8px;">論文や公式発表など、発表元の資料で中身を確かめる</p>
         </div>
         <div class="reveal reveal-delay-2" style="text-align:center;padding:26px 16px;border:1px solid var(--paper-dim);border-radius:12px;background:var(--paper);">
-          <div style="font-size:1.8rem;margin-bottom:12px;">🏡</div>
-          <p style="font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:.82rem;color:var(--teal);">くらしの物語</p>
-          <p style="font-size:.85rem;color:#5c6b78;line-height:1.7;margin-top:8px;">ひとりの生活者の日常を通して、技術の意味を伝える</p>
+          <div style="font-size:1.8rem;margin-bottom:12px;">💬</div>
+          <p style="font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:.82rem;color:var(--teal);">二人の掛け合い</p>
+          <p style="font-size:.85rem;color:#5c6b78;line-height:1.7;margin-top:8px;">夢を語る大輔に、沙織が「何人で試したの？」と切り込む</p>
         </div>
         <div class="reveal reveal-delay-3" style="text-align:center;padding:26px 16px;border:1px solid var(--paper-dim);border-radius:12px;background:var(--paper);">
-          <div style="font-size:1.8rem;margin-bottom:12px;">✨</div>
-          <p style="font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:.82rem;color:var(--teal);">小さな幸せ</p>
-          <p style="font-size:.85rem;color:#5c6b78;line-height:1.7;margin-top:8px;">科学がもたらす、日々のささやかな喜びに光を当てる</p>
+          <div style="font-size:1.8rem;margin-bottom:12px;">🔍</div>
+          <p style="font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:.82rem;color:var(--teal);">三つの判定</p>
+          <p style="font-size:.85rem;color:#5c6b78;line-height:1.7;margin-top:8px;">毎回、くらしに来る時期についての二人の見立てを出す</p>
         </div>
       </div>
     </div>
@@ -608,7 +608,7 @@ def build_episodes(episodes: list[dict], published: list[dict]):
 
     html = head_html(
         f"動画一覧 | {CHANNEL_NAME}",
-        f"{CHANNEL_NAME}の全エピソード一覧。最新研究が変えるくらしの未来を、生活者の物語として解説します。"
+        f"{CHANNEL_NAME}の全エピソード一覧。話題の科学や最新研究が、いつ・どうくらしに届くのかを確かめます。"
     )
     html += nav_html("動画")
     html += f"""
@@ -680,7 +680,7 @@ def build_playlists(published: list[dict], theme_playlists: dict):
       <p class="section-label reveal">By Theme</p>
       <h1 class="section-heading reveal reveal-delay-1" style="font-size:clamp(1.3rem,4.5vw,1.9rem);">テーマで選ぶ</h1>
       <p class="reveal reveal-delay-2" style="text-align:center;color:#4a5866;line-height:1.9;margin-bottom:48px;max-width:520px;margin-left:auto;margin-right:auto;">
-        気になるテーマから、くらしを変える研究をまとめて見られます。
+        気になるテーマから、くらしに関わる科学の動画をまとめて見られます。
       </p>
       <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr));">{cards}
       </div>
