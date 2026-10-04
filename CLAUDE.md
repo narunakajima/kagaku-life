@@ -90,9 +90,17 @@ kl030の作り直し、基本構成、判定は割れ）と kl032（車輪ロボ
 旧方式の kl022〜kl026 より先に公開する（kl027 10/6、kl028 10/8、kl029 10/10、kl030 10/13、kl022 10/15、kl023 10/17、
 kl024 10/20、kl025 10/22、kl026 10/24）。新方式の効果を早く計測するため。
 
-**計測:** Reporting API のトークン（`~/.claude/secrets/yt_token_kl_reporting.json`）と `analytics/raw/` が iMac に無い
-（2026-10-04確認）。`/kl-analytics` を回すには、なるさんがブラウザ認証付きで `kl_yt_reporting_auth.py` を実行するか、
-データのある端末から `analytics/raw/` をコピーする必要がある。合成コンテンツの開示（`containsSyntheticMedia`）は、
+**計測:** Reporting API のトークン（`~/.claude/secrets/yt_token_kl_reporting.json`）は iMac に無い（2026-10-04確認）。
+生データ（`analytics/raw/`、7/31〜10/2）はなるさんが Google Drive の `Kagaku-Life/analytics/raw/` に置いたので、
+iMac ではそこからリポジトリの `analytics/raw/`（.gitignore済み）へコピーして `kl_analytics_report.py` を回す。
+新しい日のレポートを取るには、トークンのある端末で `kl_yt_download_reports.py` を実行して Drive に置き直すか、
+iMac で `kl_yt_reporting_auth.py`（ブラウザ認証）を実行する。
+
+**2026-10-04時点のデータで分かったこと（掛け合い形式に変える判断の裏付け）:** 本編は「露出が無い」のではなく、
+YouTubeの試し出しに落ちていた。9/1〜9/7に1日1,000〜4,400回のインプレッションが出たが、本編のクリック率は0.2〜1.2%、
+平均視聴は5〜73秒（6〜8分の動画の1〜19%）で、9月下旬には1日40〜50回まで絞られた。Shortsは視聴の8割を占めるが、
+エンゲージ率（スワイプされずに見られた率）は平均11%で、9割近くが冒頭でスワイプされている。見るべき指標の順は
+本編のクリック率（サムネイル・タイトル）と冒頭30秒の維持、Shortsの1秒目。合成コンテンツの開示（`containsSyntheticMedia`）は、
 YouTubeの方針では写実的な内容が対象でイラストの動画は不要だが、`kl_sns_up.py` は2026-09-08以降の
 アップロードで常に true を送っている（kl001〜kl021の公開済み分は未設定のまま。変更していない）。
 
