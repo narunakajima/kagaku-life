@@ -217,6 +217,91 @@ def synth(client: genai.Client, text: str, voice_name: str, out_path: Path, narr
     return True
 
 
+def _atomic_write_json(path: Path, data) -> None:
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    tmp.replace(path)
+
+
+def run_dialogue(args, ep: dict, ep_path: Path, client) -> None:
+    """掛け合い形式（format: dialogue、2026-10-04〜）の音声生成。
+    台詞を1行ずつ、話者の声（cast.json の voice）と演技指導（cast.json の style＋行ごとの tone）で
+    生成し、話者に応じた間を入れて連結してシーン音声 S{NN}.wav にする。各行のシーン内の開始時刻と
+    長さを lines[].t0 / dur に書き込む（kl_telop_gen.py と kl_video_gen.py が使う）。
+
+    行ごとの音声は narration/S{NN}_L{KK}.wav に残し、同じ台詞・同じ演技指導なら再生成しない
+    （台詞を直した行だけが作り直される。L{KK}.txt に生成時の台詞と指導を記録して比較する）。"""
+    import kl_dialogue as D
+
+    cast = D.load_cast()
+    out_dir = DESKTOP_DIR / "narration"
+    target_ids = {int(s) for s in args.scenes.split(",")} if args.scenes else None
+    shorts_only = args.shorts_only or bool(args.shorts_scenes)
+
+    def style_for_line(line: dict) -> str:
+        base = cast[line["speaker"]]["style"]
+        if line.get("tone"):
+            base += f". For this line specifically: {line['tone']}"
+        return base
+
+    def synth_line(text: str, speaker: str, style: str, out_path: Path) -> bool:
+        stamp = out_path.with_suffix(".txt")
+        sig = json.dumps({"text": text, "speaker": speaker, "style": style,
+                          "voice": cast[speaker]["voice"]}, ensure_ascii=False)
+        if not args.force and out_path.exists() and stamp.exists() and stamp.read_text(encoding="utf-8") == sig:
+            return True
+        ok = synth(client, text, cast[speaker]["voice"], out_path, style_override=style)
+        if ok:
+            stamp.write_text(sig, encoding="utf-8")
+        return ok
+
+    failed = []
+    if not shorts_only:
+        for scene in ep["scenes"]:
+            sid = scene["scene_id"]
+            if target_ids is not None and sid not in target_ids:
+                continue
+            wavs = []
+            for k, line in enumerate(scene["lines"], start=1):
+                p = out_dir / f"S{sid:02d}_L{k:02d}.wav"
+                if not synth_line(line["text"], line["speaker"], style_for_line(line), p):
+                    failed.append(p.name)
+                wavs.append(p)
+            if any(not p.exists() for p in wavs):
+                print(f"❌ S{sid:02d}: 失敗した行があるためシーン音声を作れません", file=sys.stderr)
+                continue
+            timings = D.concat_line_wavs(wavs, scene["lines"], out_dir / f"S{sid:02d}.wav")
+            for line, (t0, dur) in zip(scene["lines"], timings):
+                line["t0"], line["dur"] = t0, dur
+            scene["lines_hash"] = D.lines_hash(scene)
+            print(f"   → S{sid:02d}.wav（{len(wavs)}行、{timings[-1][0] + timings[-1][1]:.1f}秒）")
+            _atomic_write_json(ep_path, ep)
+
+    if shorts_only or args.scenes is None:
+        main_line_wav = {}
+        for scene in ep["scenes"]:
+            for k, line in enumerate(scene["lines"], start=1):
+                main_line_wav[(line["speaker"], line["text"])] = out_dir / f"S{scene['scene_id']:02d}_L{k:02d}.wav"
+        shorts_target_ids = {int(s) for s in args.shorts_scenes.split(",")} if args.shorts_scenes else None
+        for shorts in ep.get("shorts", []):
+            mid = shorts["shorts_id"]
+            for i, s in enumerate(shorts["scenes"], start=1):
+                if shorts_target_ids is not None and i not in shorts_target_ids:
+                    continue
+                out_path = out_dir / f"shorts{mid}_S{i:02d}.wav"
+                reuse = main_line_wav.get((s["narrator"], s["narration"]))
+                if reuse and reuse.exists():
+                    shutil.copy(reuse, out_path)
+                    print(f"✅ {out_path.name}（本編{reuse.name}を流用）")
+                    continue
+                style = cast[s["narrator"]]["style"] + (f". For this line specifically: {s['tone']}" if s.get("tone") else "")
+                if not synth_line(s["narration"], s["narrator"], style, out_path):
+                    failed.append(out_path.name)
+    if failed:
+        print(f"\n⚠️ 失敗: {', '.join(failed)}", file=sys.stderr)
+    print(f"\n完了。保存先: {out_dir}")
+
+
 def main():
     parser = argparse.ArgumentParser(description="くらしを変える科学 ナレーション音声生成")
     parser.add_argument("--episode", required=True, help="エピソードID（例: kl001）")
@@ -236,6 +321,14 @@ def main():
         print(f"❌ {ep_path} がありません", file=sys.stderr)
         sys.exit(1)
     ep = json.loads(ep_path.read_text())
+
+    if ep.get("format") == "dialogue":
+        out_dir = DESKTOP_DIR / "narration"
+        out_dir.mkdir(parents=True, exist_ok=True)
+        (DESKTOP_DIR / ".current_episode").write_text(args.episode, encoding="utf-8")
+        client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
+        run_dialogue(args, ep, ep_path, client)
+        return
 
     voices = ep.get("narration_voices")
     if not voices or "persona" not in voices or "research" not in voices:

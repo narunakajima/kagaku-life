@@ -284,8 +284,46 @@ FACE_HOOK_CONTEXT = (
 )
 
 
+# 掛け合い形式（2026-10-04〜）: 画面の左下・右下に二人の立ち絵、下部に字幕帯を重ねるため、
+# その位置に主題を置かない構図にする。check（答え合わせ）はチャート調。
+CHART_TYPES = ("data", "check")
+# 注意: 「立ち絵や字幕が重なる」と書くと、画像生成AIがその字幕帯や人物の小窓を描き込んでしまう
+# （kl031の初回で発生）。重ね合わせの話は書かず、空けておく場所を「無地の背景」として指示する。
+DIALOGUE_NARRATIVE_LAYOUT = (
+    "\n\nCOMPOSITION: place the main subject and all important details in the upper and central "
+    "part of the frame (the central 70% of the width, the top 75% of the height). Let the lower-left "
+    "corner, the lower-right corner and the bottom fifth of the frame show only plain, uncluttered "
+    "background such as floor, table surface or wall. The image is one single continuous scene: "
+    "no borders, no frames, no inset pictures, no panels, no bars, no captions."
+)
+DIALOGUE_CHART_LAYOUT = (
+    "\n\nADDITIONAL LAYOUT: keep every bar, icon, label and the title within the central 70% of the "
+    "width; the leftmost 15% and rightmost 15% of the frame are plain background."
+)
+DIALOGUE_THUMB_LAYOUT = (
+    "\n\nCOMPOSITION: put the visual subject in the middle band of the frame, centered horizontally. "
+    "The top 30%, the lower-left corner and the lower-right corner show only soft, plain background. "
+    "One single continuous image: no people other than those described, no borders, no inset pictures, "
+    "no text."
+)
+
+
+# 固定素材（assets/*.png）の説明。Shortsで9:16に再構成するときのプロンプトに使う
+ASSET_DESCRIPTIONS = {
+    "base_cafe": ("A cozy small café table by a large window in the early evening: two ceramic coffee cups, "
+                  "printed research papers, a tablet and a small potted plant on a wooden table, two empty chairs, "
+                  "warm pendant lamp light, blurred dusk city lights outside. No people."),
+}
+
+
 def style_for(scene_type: str) -> str:
-    return CHART_CONTEXT if scene_type == "data" else BASE_CONTEXT
+    return CHART_CONTEXT if scene_type in CHART_TYPES else BASE_CONTEXT
+
+
+def layout_note(ep: dict, scene_type: str) -> str:
+    if ep.get("format") != "dialogue":
+        return ""
+    return DIALOGUE_CHART_LAYOUT if scene_type in CHART_TYPES else DIALOGUE_NARRATIVE_LAYOUT
 
 
 def build_shorts_reframe_prompt(scene_prompt: str) -> str:
@@ -703,9 +741,16 @@ def main():
                 print(f"✅ {out_path.name}（既存ファイルをスキップ）")
                 qa_results.append({"name": out_path.name, "ok": True, "issues": [], "attempts": 0, "skipped": True})
                 continue
-            prompt = f"{style_for(scene['type'])}\n\nScene: {scene['image_prompt']}"
+            if scene.get("image_asset"):
+                # 毎回同じ背景（掛け合いの二人の「いつもの場所」など）は固定素材をコピーする
+                asset = BASE_DIR / "assets" / f"{scene['image_asset']}.png"
+                shutil.copy(asset, out_path)
+                print(f"✅ {out_path.name}（固定素材 {asset.name} をコピー）")
+                qa_results.append({"name": out_path.name, "ok": True, "issues": [], "attempts": 0})
+                continue
+            prompt = f"{style_for(scene['type'])}\n\nScene: {scene['image_prompt']}{layout_note(ep, scene['type'])}"
             r = generate_with_qa(client, prompt, scene["image_prompt"], out_path, skip_qa=args.no_qa,
-                                  reference_image_path=ref_path, allow_text=(scene["type"] == "data"))
+                                  reference_image_path=ref_path, allow_text=(scene["type"] in CHART_TYPES))
             r["name"] = out_path.name
             qa_results.append(r)
             newly_generated_count += 1
@@ -733,9 +778,9 @@ def main():
             if not image_prompt:
                 print(f"❌ S{sid:02d}: image_promptもreuse_scene_id参照先も見つかりません", file=sys.stderr)
                 sys.exit(1)
-            prompt = f"{style_for(scene['type'])}\n\nScene: {image_prompt}"
+            prompt = f"{style_for(scene['type'])}\n\nScene: {image_prompt}{layout_note(ep, scene['type'])}"
             r = generate_with_qa(client, prompt, image_prompt, out_path, skip_qa=args.no_qa,
-                                  reference_image_path=ref_path, allow_text=(scene["type"] == "data"))
+                                  reference_image_path=ref_path, allow_text=(scene["type"] in CHART_TYPES))
             r["name"] = out_path.name
             qa_results.append(r)
             newly_generated_count += 1
@@ -749,7 +794,7 @@ def main():
     if not args.thumbnail_only and not shorts_only and not args.no_qa and newly_generated_count > 0:
         narrative_entries = []
         for scene in ep["scenes"]:
-            if scene["type"] == "data":
+            if scene["type"] in CHART_TYPES or scene.get("image_asset"):
                 continue
             p = out_dir / f"S{scene['scene_id']:02d}.png"
             if p.exists():
@@ -775,7 +820,7 @@ def main():
                     # 差し替える必要があるため、ここではスキップし警告のみ出す）
                     print(f"   → {e['path'].name} image_promptが見つからないため画風修正をスキップ", file=sys.stderr)
                     continue
-                base_prompt = f"{style_for(scene['type'])}\n\nScene: {image_prompt}"
+                base_prompt = f"{style_for(scene['type'])}\n\nScene: {image_prompt}{layout_note(ep, scene['type'])}"
                 drift_note = (
                     "\n\nIMPORTANT: A consistency reviewer flagged this image's illustration "
                     "touch (grain texture, line weight, shading approach, color saturation) as "
@@ -806,6 +851,8 @@ def main():
             qa_results.append({"name": thumb_path.name, "ok": True, "issues": [], "attempts": 0, "skipped": True})
         else:
             thumb_prompt = f"{BASE_CONTEXT}\n\nThumbnail (16:9): {ep['thumbnail_prompt']}"
+            if ep.get("format") == "dialogue":
+                thumb_prompt += DIALOGUE_THUMB_LAYOUT
             r = generate_with_qa(client, thumb_prompt, ep["thumbnail_prompt"], thumb_path,
                                   skip_qa=args.no_qa)
             r["name"] = "thumbnail.png"
@@ -818,7 +865,14 @@ def main():
                 shutil.copyfile(thumb_path, thumb_b_path)
                 composite_thumbnail_keyword(thumb_b_path, thumb_b["keyword"], thumb_b.get("line", ""))
                 print(f"   → B案: 「{thumb_b['keyword']}」{thumb_b.get('line', '')}（{thumb_b_path.name}）")
-            if headline and r["ok"]:
+            if ep.get("format") == "dialogue" and r["ok"]:
+                # 掛け合い形式: 見出し＋二人の立ち絵＋判定ラベル（kl_dialogue.composite_thumbnail_dialogue）。
+                # 背景だけの画像も残しておく（判定や名前を変えたときに合成だけやり直せるように）
+                import kl_dialogue
+                shutil.copyfile(thumb_path, out_dir / "thumbnail_bg.png")
+                kl_dialogue.composite_thumbnail_dialogue(thumb_path, ep)
+                print(f"   → 掛け合い形式のサムネイルを合成: 「{headline}」")
+            elif headline and r["ok"]:
                 composite_thumbnail_text(thumb_path, headline, ep.get("thumbnail_subcopy", ""))
                 print(f"   → テキスト合成: 「{headline}」")
 
@@ -865,9 +919,15 @@ def main():
                 main_img_path = (out_dir / f"S{ref_scene_id:02d}.png") if ref_scene_id else None
 
                 if main_scene is not None and main_img_path.exists():
-                    image_prompt = main_scene["image_prompt"]
-                    is_chart = main_scene["type"] == "data"
+                    # 固定素材（image_asset）のシーンには image_prompt が無いので、素材の説明で代用する
+                    image_prompt = main_scene.get("image_prompt") or ASSET_DESCRIPTIONS.get(
+                        main_scene.get("image_asset"), "the same scene as the reference image")
+                    is_chart = main_scene["type"] in CHART_TYPES
                     prompt = build_shorts_reframe_prompt(image_prompt)
+                    if ep.get("format") == "dialogue":
+                        prompt += ("\n\nCOMPOSITION: keep the main subject in the upper half of the vertical "
+                                   "frame; the bottom 30% shows only plain, uncluttered background. One single "
+                                   "continuous image: no borders, no inset pictures, no bars, no captions.")
                     r = generate_with_qa(client, prompt, image_prompt, out_path,
                                           aspect_ratio="9:16", skip_qa=args.no_qa,
                                           reference_image_path=main_img_path, allow_text=is_chart)
@@ -884,7 +944,7 @@ def main():
                         print(f"❌ shorts{mid} scene{i}: image_promptもscene_id参照先も"
                               f"見つかりません", file=sys.stderr)
                         sys.exit(1)
-                    is_chart = s.get("style") == "chart" or (main_scene and main_scene["type"] == "data")
+                    is_chart = s.get("style") == "chart" or (main_scene and main_scene["type"] in CHART_TYPES)
                     style = CHART_CONTEXT if is_chart else BASE_CONTEXT
                     prompt = f"{style}\n\nScene: {image_prompt}"
                     r = generate_with_qa(client, prompt, image_prompt, out_path,

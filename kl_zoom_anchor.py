@@ -167,7 +167,7 @@ def run(episode_id: str, scene_filter: list = None):
             print(f"  ⚠️  S{scene_id:02d}: 画像が見つかりません（スキップ）")
             failed.append(scene_id)
             continue
-        if scene.get("type") == "data":
+        if scene.get("type") in ("data", "check"):  # check=掛け合い形式の答え合わせ（チャート）
             # グラフ・比較図（typeがdata）はズーム/パンで動かすと数値の位置
             # 関係が読み取りにくくなり不自然という指摘があった（2026-08-25）。
             # 人数判定に関わらず常に完全な静止（ken_burns="static"）にする

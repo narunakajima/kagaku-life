@@ -139,7 +139,13 @@ REQUEST_TIMEOUT_MS = 60_000  # 2026-08追加: タイムアウト未設定で1件
 # 在庫全件の再採点という高コストな処理を強制しないためSTAGE4_VERSIONは据え置いた。
 # 新しい定義は以降に新規採点する候補にのみ適用される。在庫にも反映したい場合は
 # STAGE4_VERSIONを更新して `kl_shortlist_rescore.py` を実行すること。
-STAGE4_VERSION = "2026-09-29-concern-first"
+# 2026-10-04: 番組を固定の二人の掛け合い形式に変えたのに合わせ、採点を見直した
+# （KL_diagnosis_2026-10-04.md、kl-new.md STEP2）。(1) wonder_scoreの「不安の解消・問題の除去に留まる情景は
+# 低い点」をやめ、「本当に？と身を乗り出す知的な驚き」も加点対象にした。(2)「使い捨ての生活者」に落とし込み
+# やすいかを見る persona_fit_score を廃止し、debate_score（議論を呼ぶか・通説との距離・二人の判定が割れそうか）
+# を新設した。ツッコミの材料になる研究（効果が条件付き、結果が割れている、通説と逆）を拾えるようにするため。
+# (3) 主人公の叩き台（example_protagonist）の代わりに、予想される二人の判定とツッコミの材料を出力させる。
+STAGE4_VERSION = "2026-10-04-dialogue-debate"
 
 PROMPT_TEMPLATE = """あなたは日本語YouTubeチャンネル「くらしを変える科学」の企画担当です。
 科学技術分野の学術論文を一般視聴者向けに解説し、「その研究が生活をどう変えるか」を
@@ -239,9 +245,10 @@ STAGE3での注意点（動画化時に踏まえるべきヘッジ・限界）: 
    終わり、心が動く『幸せな未来』にはなりにくい）。
    **`deja_vu_level`が`"strong"`の場合も、この点は必ず3点以下にすること**
    （このチャンネルで既に見た型の話に、視聴者は新鮮な驚きを感じない）。
-   「技術的に野心的か」と「幸せそうに見えるか」は別物である点にも注意すること
-   （数値的なインパクトが大きくても、不安の解消・問題の除去に留まり
-   『まあ助かるね』で終わる情景は低い点にする）。`deja_vu_level`が`"partial"`の
+   「技術的に野心的か」と「幸せそうに見えるか」は別物である点にも注意すること。
+   ただし、温かい感動だけが加点の理由ではない。「え、本当に？」と身を乗り出すような知的な驚き
+   （常識と逆の結果、想像より近い・遠い未来）も同じように加点する。逆に、機能改善の説明に
+   終わり、驚きも感情の動きもない情景は低い点にする。`deja_vu_level`が`"partial"`の
    場合も、新鮮な驚き・幸福感が薄れる分だけこの点を下げること。
 2. transformation_score: 変革ポテンシャル・野心度。`novel_delta`が本当に広く
    実現した場合、暮らしをどれだけ劇的に変えるか。`market_status`が
@@ -256,13 +263,17 @@ STAGE3での注意点（動画化時に踏まえるべきヘッジ・限界）: 
    高い点をつける。査読済みか未査読かはこのスコアに影響させない（査読状況の
    信頼性判断はSTAGE2で既に完了している前提）
 {relevance_items}4. surprise_score: 数字のインパクト（意外性のある定量的結果があるか）
-5. persona_fit_score: 「使い捨ての生活者」ペルソナ（1エピソード限りの具体的な生活者を主人公にする
-   演出）に、具体的な生活シーンとして落とし込みやすいか
+5. debate_score: 議論を呼ぶか。番組は「夢語り担当」と「ツッコミ担当」の二人の掛け合いで、最後に
+   「もうすぐ来る／10年はかかる／まだ眉唾」を判定する。夢語りが語りたくなる夢と、ツッコミが数字で
+   突ける具体的な弱点（被験者数・試行回数・条件の狭さ・計算値か実測か・比較相手）の両方がある研究、
+   常識や通説と逆の結果、効果が条件によって分かれる結果、二人の判定が割れそうな研究に高い点をつける。
+   誰が見ても「良かったね」で終わり、突く所も意見が割れる所もない研究は低い点にする
 
 さらに、実際にこの論文を扱うとしたら:
-- example_protagonist: 主人公にふさわしい生活者プロフィール（name, age, job）。
-  テーマに応じて対象読者層と重なる人物像を選ぶこと（例: 介護ロボットの回なら高齢の親を持つ世代）
-- hook_idea: 冒頭3〜5秒のフック文の叩き台（日本語、生活実感に直結する問いかけ）
+- expected_verdicts: 予想される二人の判定 {{"dreamer": "soon|decade|dubious", "skeptic": "soon|decade|dubious"}}
+- tsukkomi_material: ツッコミ担当が突ける具体的な弱点・限界を、アブストラクトから読み取れる範囲で1〜2文
+  （読み取れなければ「本文で要確認」と書く）
+- hook_idea: 冒頭3〜5秒のフック文の叩き台（日本語、視聴者の問いか一番の驚き）
 
 出力は次のJSON形式のみで、他のテキスト・Markdown装飾は一切含めないこと:
 {output_format}
@@ -311,8 +322,9 @@ OUTPUT_FORMAT_CONCERN = (
     '"demonstrated_capability": "...", "evidence_level": "human_rct|human_study|human_pilot|animal|cell_or_sim|real_world_tech|lab_demo", '
     '"entry_question": "...", "future_scene_sketch": "...", "deja_vu_note": "...", "deja_vu_level": "none|partial|strong", '
     '"wonder_score": 1-5, "transformation_score": 1-5, "answer_fit_score": 1-5, "applicable_breadth_score": 1-5, '
-    '"surprise_score": 1-5, "persona_fit_score": 1-5, '
-    '"example_protagonist": {"name": "...", "age": 0, "job": "..."}, "hook_idea": "...", "reasoning": "..."}'
+    '"surprise_score": 1-5, "debate_score": 1-5, '
+    '"expected_verdicts": {"dreamer": "soon|decade|dubious", "skeptic": "soon|decade|dubious"}, '
+    '"tsukkomi_material": "...", "hook_idea": "...", "reasoning": "..."}'
 )
 
 OUTPUT_FORMAT_WILDCARD = (
@@ -320,8 +332,9 @@ OUTPUT_FORMAT_WILDCARD = (
     '"behavioral_familiarity": "familiar|novel", "behavioral_familiarity_note": "...", '
     '"demonstrated_capability": "...", "future_scene_sketch": "...", "deja_vu_note": "...", '
     '"deja_vu_level": "none|partial|strong", "wonder_score": 1-5, "transformation_score": 1-5, '
-    '"life_relevance_score": 1-5, "surprise_score": 1-5, "persona_fit_score": 1-5, '
-    '"example_protagonist": {"name": "...", "age": 0, "job": "..."}, "hook_idea": "...", "reasoning": "..."}'
+    '"life_relevance_score": 1-5, "surprise_score": 1-5, "debate_score": 1-5, '
+    '"expected_verdicts": {"dreamer": "soon|decade|dubious", "skeptic": "soon|decade|dubious"}, '
+    '"tsukkomi_material": "...", "hook_idea": "...", "reasoning": "..."}'
 )
 
 
@@ -369,7 +382,7 @@ FALLBACK_VERDICT_TEMPLATE = {
     "transformation_score": 1,
     "life_relevance_score": 1,
     "surprise_score": 1,
-    "persona_fit_score": 1,
+    "debate_score": 1,
     "example_protagonist": {},
     "hook_idea": "",
     # 2026-09-06追加: このフラグが立った採点結果（JSON解析失敗・Gemini呼び出し全滅）を
@@ -583,6 +596,31 @@ def overall_score(v: dict) -> float:
         wonder = min(wonder, DEJA_VU_STRONG_SCORE_CAP)
         transformation = min(transformation, DEJA_VU_STRONG_SCORE_CAP)
 
+    has_debate = "debate_score" in v  # 2026-10-04以降の採点。旧採点（persona_fit_score）は旧来の重みで計算する
+    if is_concern_verdict(v) and has_debate:
+        # 掛け合い形式（2026-10-04〜）の関心ごと起点の重み。persona_fit（0.05）を廃止して debate（0.15）を入れ、
+        # wonder と transformation から少しずつ移した
+        answer_fit = _score_value(v, "answer_fit_score")
+        if _label(v, "evidence_level") in WEAK_EVIDENCE_LEVELS:
+            answer_fit = min(answer_fit, WEAK_EVIDENCE_ANSWER_FIT_CAP)
+        return (
+            wonder * 0.30
+            + answer_fit * 0.20
+            + _score_value(v, "applicable_breadth_score") * 0.15
+            + _score_value(v, "debate_score") * 0.15
+            + transformation * 0.10
+            + _score_value(v, "surprise_score") * 0.10
+        )
+    if has_debate:
+        # 掛け合い形式（2026-10-04〜）のワイルドカードの重み
+        return (
+            wonder * 0.40
+            + transformation * 0.20
+            + _score_value(v, "life_relevance_score") * 0.15
+            + _score_value(v, "debate_score") * 0.15
+            + _score_value(v, "surprise_score") * 0.10
+        )
+
     if is_concern_verdict(v):
         # 関心ごと起点の重み（2026-09-29〜、PIPELINE_REDESIGN.md §7）。旧来の最重視指標
         # （wonder 0.45・transformation 0.25）は「暮らしがどれだけ劇的に変わるか」を重く見る
@@ -618,7 +656,7 @@ def score_breakdown(v: dict) -> dict:
         keys += ["answer_fit_score", "applicable_breadth_score"]
     else:
         keys += ["life_relevance_score"]
-    keys += ["surprise_score", "persona_fit_score"]
+    keys += ["surprise_score", "debate_score" if "debate_score" in v else "persona_fit_score"]
     return {k: v.get(k, 0) for k in keys}
 
 

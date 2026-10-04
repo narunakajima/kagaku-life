@@ -235,7 +235,7 @@ def rescore_legacy_one(paper_id: str) -> None:
     entry["score_breakdown"] = score_breakdown(verdict)
     for key in ("market_status", "novel_delta", "behavioral_familiarity", "behavioral_familiarity_note",
                 "demonstrated_capability", "future_scene_sketch", "deja_vu_note", "deja_vu_level",
-                "hook_idea", "example_protagonist"):
+                "hook_idea", "example_protagonist", "expected_verdicts", "tsukkomi_material"):
         if verdict.get(key) not in (None, ""):
             entry[key] = verdict[key]
     entry["deja_vu_context_upto"] = latest_known_episode_id()

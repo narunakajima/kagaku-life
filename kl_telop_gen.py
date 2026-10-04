@@ -270,12 +270,12 @@ def _load_whisper():
     return _whisper_model
 
 
-def plan_telop_cards(narration: str, wav_path: Path, duration: float) -> list:
+def plan_telop_cards(narration: str, wav_path: Path, duration: float, max_chars: int = MAX_LINE_CHARS) -> list:
     """ナレーション文をチャンクに分割し、Whisperで実際の音声を解析してタイミングを割り当てる
     （lw_video_gen.py の generate_telop_from_whisper と同じ考え方: Whisperの書き起こしと
     既知のナレーション文をSequenceMatcherで対応付け、文字ごとのタイムスタンプを補間する）。
     """
-    chunks = chunk_narration(narration)
+    chunks = chunk_narration(narration, max_chars)
 
     model = _load_whisper()
     result = model.transcribe(str(wav_path), language="ja", word_timestamps=True)
@@ -588,6 +588,45 @@ def cmd_burn_test(episode_id: str, scene_id: int):
     print(f"✅ テスト動画を保存しました: {out_path}")
 
 
+# 掛け合い形式（2026-10-04〜）の字幕: 1枚の字幕は最大2行（1行おおよそ20字）まで。
+DIALOGUE_CARD_MAX = 38
+
+
+def cmd_plan_dialogue(episode_id: str, scene_filter: list = None, force: bool = False):
+    """掛け合い形式の字幕計画。台詞1行ごとに、短い行（DIALOGUE_CARD_MAX字以下）は1枚の字幕を
+    行の音声全体に出し、長い行だけWhisperで行ごとの音声を解析して複数枚に分ける。
+    lines[].cards に行内の相対時刻で書き込む（kl_video_gen.py が lines[].t0 を足して使う）。
+    行ごとの音声（narration/S{NN}_L{KK}.wav）は kl_tts_gen.py が作る。"""
+    ep_path = BASE_DIR / "episodes" / f"{episode_id}.json"
+    ep = json.loads(ep_path.read_text())
+    narration_dir = DESKTOP_DIR / "narration"
+    n_split = 0
+    for scene in ep["scenes"]:
+        sid = scene["scene_id"]
+        if scene_filter and sid not in scene_filter:
+            continue
+        for k, line in enumerate(scene["lines"], start=1):
+            if line.get("cards") and not force and not scene_filter:
+                continue
+            dur = line.get("dur")
+            if dur is None:
+                print(f"  ⚠️ S{sid:02d} 行{k}: dur がありません（kl_tts_gen.py を先に実行）")
+                continue
+            text = line.get("display") or line["text"]
+            if len(text) <= DIALOGUE_CARD_MAX or line.get("display"):
+                line["cards"] = [{"text": text, "start": 0.0, "end": round(dur, 2)}]
+                continue
+            wav = narration_dir / f"S{sid:02d}_L{k:02d}.wav"
+            cards = plan_telop_cards(text, wav, dur, max_chars=DIALOGUE_CARD_MAX)
+            line["cards"] = [{"text": c["lines"][0], "start": c["start"], "end": c["end"]} for c in cards]
+            n_split += 1
+            print(f"  S{sid:02d} 行{k}: {len(cards)}枚に分割")
+            for c in line["cards"]:
+                print(f"      {c['start']:.2f}〜{c['end']:.2f}  {c['text']}")
+    atomic_write_json(ep_path, ep)
+    print(f"\n完了: 字幕を書き込みました（Whisperで分割した行: {n_split}）")
+
+
 def main():
     parser = argparse.ArgumentParser(description="くらしを変える科学 テロップ生成・焼き込み")
     parser.add_argument("--episode", required=True, help="エピソードID（例: kl001）")
@@ -599,7 +638,11 @@ def main():
 
     if args.command == "plan":
         scene_filter = [int(s) for s in args.scenes.split(",")] if args.scenes else None
-        cmd_plan(args.episode, scene_filter, force=args.force)
+        ep = json.loads((BASE_DIR / "episodes" / f"{args.episode}.json").read_text())
+        if ep.get("format") == "dialogue":
+            cmd_plan_dialogue(args.episode, scene_filter, force=args.force)
+        else:
+            cmd_plan(args.episode, scene_filter, force=args.force)
     elif args.command == "burn-test":
         if not args.scene:
             parser.error("burn-test には --scene が必要です")

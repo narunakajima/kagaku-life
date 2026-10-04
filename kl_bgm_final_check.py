@@ -48,6 +48,33 @@ PROMPT = """あなたは「幸せな未来のサイエンスチャンネル」�
 """
 
 
+# 掛け合い形式（2026-10-04〜）用。制作確認書の代わりに台本（シーンごとの役割と台詞）を渡す。
+# main（ツッコミ・答え合わせ）は軽い緊張感を許可している（CLAUDE.md「掛け合い形式への転換」）。
+DIALOGUE_PROMPT = """あなたは日本語の科学解説YouTubeチャンネル「幸せな未来のサイエンス」の音楽監督です。
+番組は、夢語り担当（元エンジニアの男性）とツッコミ担当（統計に強い女性）の二人が、論文を持ち寄って
+「それは本当に暮らしに来るのか」を掛け合いで確かめ、最後に「もうすぐ来る／10年はかかる／まだ眉唾」を判定する形式です。
+以下は{episode}の台本（シーンごとのBGMの役割と台詞）と、選んだBGM3曲の実音声です（intro→main→outroの順に
+クロスフェードでつながります）。
+
+【台本】
+{review_doc}
+
+【各曲の役割】
+1. intro: 冒頭の問い〜研究紹介〜夢語り（好奇心・期待・少しワクワク）
+2. main: ツッコミ・答え合わせ（軽い緊張感や遊び心があってよい。考えごとをしているような、
+   少しとぼけた、ピチカートなど。重い・暗い・攻撃的・ホラー調は不可）
+3. outro: 判定〜締め（余韻。判定が割れる・厳しい回もあるので、甘すぎず落ち着いたもの）
+
+以下を実際に聴いた上で判定してください：
+1. 各曲が役割に合っているか。台詞（二人の会話）の邪魔にならないか（ボーカル・強い主旋律・派手な展開は不可）
+2. 3曲を通したときの流れに破綻がないか（調性・音圧・テンポの急な落差）
+3. 音質面（ループノイズ、フェードの唐突さ、ラウドネスの差）
+4. 総合判定: このまま採用してよいか、どれを差し替えるべきか
+
+日本語で、各曲ごとの評価→総合判定の順に、簡潔に（600字程度）回答してください。
+"""
+
+
 def find_role_file(bgm_dir: Path, role: str) -> Path:
     matches = sorted(bgm_dir.glob(f"{role}_*.mp3"))
     if not matches:
@@ -67,12 +94,24 @@ def main():
         print("❌ GEMINI_API_KEY が設定されていません", file=sys.stderr)
         sys.exit(1)
 
+    import json
+    ep_path = Path(__file__).parent / "episodes" / f"{args.episode}.json"
+    ep = json.loads(ep_path.read_text(encoding="utf-8")) if ep_path.exists() else {}
+    prompt_template = PROMPT
     review_path = DESKTOP_KL / f"{args.episode}_制作確認書.txt"
-    if not review_path.exists():
+    if ep.get("format") == "dialogue":
+        import kl_dialogue as D
+        cast = D.load_cast()
+        review_text = "\n\n".join(
+            f"S{s['scene_id']:02d} [{s['type']} / BGM:{D.scene_bgm_role(s)}]\n{D.scene_text(s, cast)}"
+            for s in ep["scenes"])
+        prompt_template = DIALOGUE_PROMPT
+    elif not review_path.exists():
         print(f"❌ 制作確認書が見つかりません: {review_path}", file=sys.stderr)
         print("  先に kl_confirmation_doc.py --episode {args.episode} を実行してください", file=sys.stderr)
         sys.exit(1)
-    review_text = review_path.read_text(encoding="utf-8")
+    else:
+        review_text = review_path.read_text(encoding="utf-8")
 
     bgm_dir = DESKTOP_KL / "BGM"
     tracks = {
@@ -83,7 +122,7 @@ def main():
 
     client = genai.Client(api_key=API_KEY)
 
-    parts = [PROMPT.format(episode=args.episode, review_doc=review_text)]
+    parts = [prompt_template.format(episode=args.episode, review_doc=review_text)]
     for role, path in tracks.items():
         data = path.read_bytes()
         parts.append(f"\n--- 以下は「{role}」用の音声（{path.name}）です ---\n")

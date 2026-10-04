@@ -1,0 +1,56 @@
+{
+  "_comment": "掛け合い形式（2026-10-04〜）の固定の二人。name/full_name は画面の名札にだけ使い、ナレーション（台詞）には入れない（名前を変えても音声を作り直さずに済むように）。名前は仮置き（候補A）で、なるさんの決定待ち。voice/style は kl_tts_gen.py が使う。expressions は kl_cast_gen.py が立ち絵の差分を作るときの指示で、台本の lines[].expression はこのキーから選ぶ。",
+  "name_status": "provisional",
+  "dreamer": {
+    "name": "ソウ",
+    "full_name": "日向ソウ",
+    "role_label": "夢語り担当",
+    "gender": "male",
+    "profile": "元エンジニア（機械設計）。論文を読むと「これが暮らしに来たら」と具体的な生活の場面を描かずにいられない。技術の仕組みには詳しく、熱が入ると早口になる。口癖は「想像してみてよ」。",
+    "faces": "right",
+    "screen_side": "left",
+    "color": [240, 168, 104],
+    "voice": "Orus",
+    "style": "Say as an enthusiastic former engineer in his late thirties who gets genuinely excited about research — warm, animated, a bit fast when he gets carried away, smiling while he talks, playful and natural like chatting with an old friend, not like a narrator",
+    "appearance": "Japanese man in his late thirties, former mechanical engineer. Short, slightly tousled black hair with a soft side sweep, no glasses, clean-shaven, warm friendly eyes, lively face. Wears a mustard-yellow knit cardigan over a light gray-blue collared shirt, sleeves pushed up a little. Slim-average build.",
+    "expressions": {
+      "neutral": "relaxed, friendly half-smile, attentive eyes, hands out of frame",
+      "excited": "eyes bright and wide, big open-mouthed enthusiastic smile, leaning slightly forward, one hand raised palm-up at chest height as if painting a picture in the air",
+      "surprised": "eyebrows raised high, eyes wide, mouth slightly open in a pleasant 'oh!' of surprise",
+      "thinking": "looking slightly upward, lips pressed, one hand on his chin, pondering",
+      "deflated": "sheepish wry smile, eyebrows tilted down, one hand scratching the back of his head, caught out but good-natured",
+      "convinced": "calm satisfied smile, eyes softly closed or half-closed, nodding gently"
+    }
+  },
+  "skeptic": {
+    "name": "リツ",
+    "full_name": "霧島リツ",
+    "role_label": "ツッコミ担当",
+    "gender": "female",
+    "profile": "臨床研究・統計の専門家（研究支援の仕事）。数字の裏を必ず確かめる。否定したいのではなく、本物なら一番に使いたいからこそ厳しい。冷静だがユーモアがあり、少し皮肉っぽい。口癖は「で、それ何人で試したの？」。",
+    "faces": "left",
+    "screen_side": "right",
+    "color": [110, 205, 210],
+    "voice": "Autonoe",
+    "style": "Say as a calm, sharp clinical-research statistician in her late thirties chatting with an old friend — relaxed and dry, a little wry and teasing, with a hint of amusement in her voice; unhurried and confident, natural conversation, not like a narrator",
+    "appearance": "Japanese woman in her late thirties, clinical-research statistician. Straight dark-brown chin-length bob with a side part, thin dark rectangular-frame glasses, intelligent calm eyes. Wears a deep navy blazer over a plain teal crew-neck top, small silver stud earrings. Slim build.",
+    "expressions": {
+      "neutral": "calm composed expression with a faint knowing smile, hands out of frame",
+      "doubt": "one eyebrow raised skeptically, slight wry smirk, index finger raised as if making a pointed question",
+      "surprised": "eyebrows up, eyes widened behind her glasses, genuinely impressed 'huh!' expression",
+      "thinking": "eyes looking down to the side, pushing her glasses up with one finger, analytical",
+      "amused": "laughing lightly with eyes crinkled, one hand near her mouth, warm and teasing",
+      "convinced": "small approving nod with a genuine satisfied smile, arms loosely crossed"
+    }
+  },
+  "name_candidates": [
+    {"dreamer": "日向ソウ（ひなた・そう）", "skeptic": "霧島リツ（きりしま・りつ）", "why": "日向は陽だまり＝夢を語る温かさ、律は規律＝確かめる厳しさ。どちらも2音で呼びやすい"},
+    {"dreamer": "明石カナタ（あかし・かなた）", "skeptic": "白石ケイ（しらいし・けい）", "why": "彼方＝遠い未来を見る人、計＝数えて確かめる人。名字の「石」がそろい同期らしさが出る"},
+    {"dreamer": "星野ハルキ（ほしの・はるき）", "skeptic": "真田ナギ（さなだ・なぎ）", "why": "星＝夢、真＝本当か確かめる、凪＝冷静。名前だけで役割が想像できる"}
+  ],
+  "verdicts": {
+    "soon": {"label": "もうすぐ来る", "color": [64, 176, 140]},
+    "decade": {"label": "10年はかかる", "color": [232, 160, 64]},
+    "dubious": {"label": "まだ眉唾", "color": [150, 120, 190]}
+  }
+}

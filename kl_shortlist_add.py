@@ -73,6 +73,8 @@ def to_shortlist_entry(scored: dict, today: str) -> dict:
         "deja_vu_context_upto": scored.get("deja_vu_context_upto", ""),
         "hook_idea": stage4.get("hook_idea", ""),
         "example_protagonist": stage4.get("example_protagonist", {}),
+        "expected_verdicts": stage4.get("expected_verdicts", {}),
+        "tsukkomi_material": stage4.get("tsukkomi_material", ""),
         "triage": scored.get("triage"),
         "stage4_version": scored.get("stage4_version"),
         "status": "available",

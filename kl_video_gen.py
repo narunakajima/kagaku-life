@@ -361,7 +361,8 @@ def compute_bgm_segments(bgm_paths: dict, main_scenes: list, main_offsets: list,
     境界2=最初のoutro役割シーン開始（いずれも本編=main_scenes内でのオフセット、
     intro_block_dur=ティザー+ロゴイントロの尺を加算してグローバル時刻にする）。
     """
-    roles = [BGM_ROLE_BY_TYPE.get(s.get("type", ""), "main") for s in main_scenes]
+    # 掛け合い形式（2026-10-04〜）はシーンの並びを固定しないため、type ではなく scene.bgm_role で決める
+    roles = [s.get("bgm_role") or BGM_ROLE_BY_TYPE.get(s.get("type", ""), "main") for s in main_scenes]
     n = len(main_scenes)
     b1_idx = next((i for i, r in enumerate(roles) if r != "intro"), n // 3)
     b2_idx = next((i for i, r in enumerate(roles) if r == "outro"), n * 2 // 3)
@@ -634,6 +635,12 @@ def gen_video(episode_id: str, out_dir: Path = None):
     out_dir.mkdir(parents=True, exist_ok=True)
 
     scenes = ep["scenes"]
+    if ep.get("format") == "dialogue":
+        # 台詞を直したのに音声を作り直していない事故を止める（lines_hash は kl_tts_gen.py が記録）
+        import kl_dialogue as D
+        stale = [s["scene_id"] for s in scenes if s.get("lines_hash") != D.lines_hash(s)]
+        if stale:
+            raise RuntimeError(f"台詞が音声生成後に変わっています: S{stale}。kl_tts_gen.py --scenes で作り直してください")
     teaser_scenes = [s for s in scenes if s["type"] == "teaser"]
     main_scenes = [s for s in scenes if s["type"] != "teaser"]
 
@@ -720,7 +727,23 @@ def gen_video(episode_id: str, out_dir: Path = None):
             "映像+音声結合",
         )
         output_file = out_dir / f"{episode_id}.mp4"
-        burn_telop_global(video_with_audio, all_scenes, all_offsets, all_durs, output_file, tmp)
+        if ep.get("format") == "dialogue":
+            # 掛け合い形式: 字幕・立ち絵・名札・判定ラベル・バッジを1本の透明な重ね合わせ動画にして重ねる
+            import kl_dialogue as D
+            cast = D.load_cast()
+            events = D.main_timeline(ep, all_scenes, all_offsets, all_durs, NARR_DELAY, total_dur, cast)
+            overlay = tmp / "overlay.mov"
+            D.build_overlay_track(events, total_dur, D.MAIN_LAYOUT, cast, tmp, overlay, FPS, FFMPEG,
+                                  blank_after=intro_block_dur + main_block_dur)
+            run_cmd(
+                [FFMPEG, "-y", "-i", str(video_with_audio), "-i", str(overlay),
+                 "-filter_complex", "[0:v][1:v]overlay=0:0:eof_action=pass,format=yuv420p[v]",
+                 "-map", "[v]", "-map", "0:a", "-c:v", "libx264", "-crf", "18", "-preset", "slow",
+                 "-c:a", "copy", str(output_file)],
+                "字幕・立ち絵の重ね合わせ",
+            )
+        else:
+            burn_telop_global(video_with_audio, all_scenes, all_offsets, all_durs, output_file, tmp)
 
     print(f"\n{'━'*60}\n  ✓ 完成: {output_file}\n"
           f"  合計尺: {total_dur:.1f}s ({total_dur/60:.1f}分)\n{'━'*60}")
@@ -839,6 +862,24 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
             "映像+音声結合",
         )
 
+        if ep.get("format") == "dialogue":
+            # 掛け合い形式のShorts: 字幕・立ち絵・「判定は本編で」ラベルを重ね合わせ動画で載せ、
+            # その上にフック文字（hook_lines）だけ drawtext で焼き込む
+            import kl_dialogue as D
+            cast = D.load_cast()
+            events = D.shorts_timeline(ep, scenes, offsets, durations, NARR_DELAY, cast)
+            overlay = tmp / "overlay.mov"
+            D.build_overlay_track(events, total_dur, D.SHORTS_LAYOUT, cast, tmp, overlay, FPS, FFMPEG)
+            layered = tmp / "layered.mp4"
+            run_cmd(
+                [FFMPEG, "-y", "-i", str(video_with_audio), "-i", str(overlay),
+                 "-filter_complex", "[0:v][1:v]overlay=0:0:eof_action=pass,format=yuv420p[v]",
+                 "-map", "[v]", "-map", "0:a", "-c:v", "libx264", "-crf", "18", "-preset", "slow",
+                 "-c:a", "copy", str(layered)],
+                "字幕・立ち絵の重ね合わせ",
+            )
+            video_with_audio = layered
+
         print("\n--- テロップ焼き込み ---")
         shutil.copy(str(FONT_REGULAR), str(FONT_TMP_REGULAR))
         shutil.copy(str(FONT_BOLD), str(FONT_TMP_BOLD))
@@ -872,6 +913,8 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
                 idx += 1
 
         for i, (scene, offset, dur) in enumerate(zip(scenes, offsets, durations)):
+            if ep.get("format") == "dialogue":
+                break  # 字幕は重ね合わせ動画に含めた
             t_start = offset + NARR_DELAY
             t_end = offset + dur
             telop_text = scene.get("telop_text", scene["narration"])
@@ -892,18 +935,19 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
             prev = out
             idx += 1
 
-        # 最後のカットに本編への誘導を重ねる（2026-09-29追加）
+        # 最後のカットに本編への誘導を重ねる（2026-09-29追加。掛け合い形式は重ね合わせ動画に含めた）
         cta_tf = tmp / "end_cta.txt"
         cta_tf.write_text(SHORTS_END_CTA_TEXT, encoding="utf-8")
         cta_start = offsets[-1]
-        filter_parts.append(
-            f"[{prev}]drawtext=fontfile={font_bold}:textfile={cta_tf}:expansion=none"
-            f":fontcolor=0xf0a868:fontsize={SHORTS_END_CTA_FONTSIZE}:borderw=7:bordercolor=black@1.0"
-            f":shadowx=3:shadowy=3:shadowcolor=black@0.75"
-            f":x=(w-text_w)/2:y={SHORTS_END_CTA_Y}:enable=between(t\\,{cta_start:.2f}\\,{total_dur:.2f})[endcta]"
-        )
-        prev = "endcta"
-        idx += 1
+        if ep.get("format") != "dialogue":
+            filter_parts.append(
+                f"[{prev}]drawtext=fontfile={font_bold}:textfile={cta_tf}:expansion=none"
+                f":fontcolor=0xf0a868:fontsize={SHORTS_END_CTA_FONTSIZE}:borderw=7:bordercolor=black@1.0"
+                f":shadowx=3:shadowy=3:shadowcolor=black@0.75"
+                f":x=(w-text_w)/2:y={SHORTS_END_CTA_Y}:enable=between(t\\,{cta_start:.2f}\\,{total_dur:.2f})[endcta]"
+            )
+            prev = "endcta"
+            idx += 1
 
         output_file = out_dir / f"{episode_id}_shorts.mp4"
         run_cmd(

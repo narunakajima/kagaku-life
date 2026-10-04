@@ -1,0 +1,559 @@
+{
+  "episode_id": "kl032",
+  "format": "dialogue",
+  "template": "verdict_first",
+  "pilot": true,
+  "remake_of": "kl018",
+  "episode_title": "床のおもちゃを拾う人型ロボット、家に来るのは何年後？",
+  "youtube_title": "床のおもちゃを拾う人型ロボット、家に来るのは何年後？",
+  "entry_question": "床に散らばったおもちゃを、しゃがんで拾って片付けてくれるロボットは、家に来る？",
+  "verdict": {
+    "dreamer": "decade",
+    "skeptic": "decade"
+  },
+  "hook_lines": [
+    "しゃがんで拾う",
+    "ロボは家に来る？"
+  ],
+  "thumbnail_headline": "しゃがんで拾うロボ\n家に来る？",
+  "thumbnail_exprs": {
+    "dreamer": "excited",
+    "skeptic": "doubt"
+  },
+  "thumbnail_prompt": "A living room floor at night scattered with colorful toy blocks and a plush toy, centered in the middle band of the frame: a sleek home humanoid robot with soft white and warm-gray panels, adult human proportions, and a smooth mechanical head with a dark glossy visor (no human face) crouches deeply and picks up a toy block with simple gentle robotic hands. Warm lamp light. No people, no text.",
+  "youtube_tags": [
+    "ロボット",
+    "人型ロボット",
+    "ヒューマノイド",
+    "家事ロボット",
+    "片付け",
+    "AI",
+    "論文解説",
+    "科学ニュース"
+  ],
+  "references": [
+    {
+      "title": "TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning",
+      "authors": [
+        "Jiacheng Liu",
+        "Pengxiang Ding",
+        "Qihang Zhou",
+        "Yuxuan Wu",
+        "Da Huang",
+        "Zimian Peng",
+        "Wei Xiao",
+        "Weinan Zhang",
+        "Lixin Yang",
+        "Cewu Lu",
+        "Donglin Wang"
+      ],
+      "year": 2025,
+      "venue": "arXiv（ICRA 2026 採択）",
+      "doi": "10.48550/arXiv.2509.11839",
+      "url": "https://arxiv.org/abs/2509.11839",
+      "is_preprint": true,
+      "institution": "西湖大学・上海交通大学・浙江大学ほか（中国）",
+      "lead_researcher": "Pengxiang Ding / Donglin Wang / Cewu Lu"
+    }
+  ],
+  "youtube_description": "床に散らばったおもちゃを、しゃがんで拾って片付けてくれる人型ロボット。家に来るのはいつ？ 今回は先に判定を言ってから、夢語り担当のソウと、ツッコミ担当のリツが、その理由を論文で確かめます。\n\n■ この回の判定\nソウ: 10年はかかる\nリツ: 10年はかかる\n\n■ ご紹介した研究\n中国の西湖大学・上海交通大学などのチーム。車輪で動くロボットが家事のような作業をした公開データ（全体で100万件以上の動作記録）の一部を使い、手の先の動きだけを取り出して、シミュレーションの中で2本足の人型ロボットが全身でなぞれる動きに変換しました。実機の人型ロボットには、人が遠隔操縦したお手本を約10分（28回分）だけ追加で学ばせています。\n実機での4つの作業（各10回）の成功率は、高さ39cmの台からぬいぐるみを取る作業が10回中10回、おもちゃの片付けとテーブルの片付け（55cm）が10回中7回、76cmの台にオレンジを置く作業が10回中1回でした。車輪ロボットのデータを使わず同じ量だけ学習させたロボットは、4つとも成功しませんでした（学習を3倍以上に増やすと、ぬいぐるみを取る作業は10回中8回成功）。お手本を見せていない「水を手渡す」動作も実機でこなしています。\n論文自身が、手の構造上つまんで置く程度の単純な作業に限られること、歩き回りながら片付けるような動作のデータが乏しく、主にその場で行う作業にとどまることを限界として挙げています。\n\n※この論文はarXivに公開された査読前の論文（プレプリント）で、国際会議ICRA 2026に採択されています。実験室での実機1台による実証の段階で、家庭用の製品ではありません。\n\n■ 参考文献\nJiacheng Liu, Pengxiang Ding, Qihang Zhou, Yuxuan Wu, Da Huang, Zimian Peng, Wei Xiao, Weinan Zhang, Lixin Yang, Cewu Lu, Donglin Wang. TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning. arXiv (2025)（ICRA 2026 採択）. https://arxiv.org/abs/2509.11839\n\n※登場する二人は架空のキャラクターで、声はAIで合成しています。\n#ロボット #人型ロボット #論文解説",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 9,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "床のおもちゃを拾うロボット、家に来る？",
+          "expression": "thinking",
+          "tag": "question",
+          "tone": "calm, curious"
+        }
+      ],
+      "narration": "リツ「床のおもちゃを拾うロボット、家に来る？」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 8,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "10分の練習で、しゃがんで拾えた。",
+          "expression": "excited",
+          "tone": "excited, punchy"
+        }
+      ],
+      "narration": "ソウ「10分の練習で、しゃがんで拾えた。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "image_asset": "base_cafe",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "判定は先に言う。10年はかかる。",
+          "expression": "doubt",
+          "react": "surprised",
+          "tone": "dry, matter-of-fact"
+        }
+      ],
+      "narration": "リツ「判定は先に言う。10年はかかる。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 14,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "でも、面白いのはそこじゃない。",
+          "expression": "excited",
+          "tone": "playful, a little mysterious"
+        }
+      ],
+      "narration": "ソウ「でも、面白いのはそこじゃない。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 5,
+      "type": "setup",
+      "bgm_role": "intro",
+      "image_prompt": "A Japanese living room at night. A Japanese man in his early 40s (short black hair, light stubble, gray hoodie and jeans) bends down stiffly to pick up colorful toy blocks and a plush toy scattered across the floor, one hand pressed on his lower back with a pained wince. Children's drawings on the wall, warm lamp light, dark window. No children visible.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "今日は、先に結論から言うね。床の物を拾って片付ける人型ロボットが家に来るのは、10年はかかる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ちょっと待って。まだ何も話してない。",
+          "expression": "surprised",
+          "tone": "flustered, laughing"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "だから、なぜそうなるかを、今から話そう。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、困りごとから。小さい子がいる家って、床にブロックやぬいぐるみが散らばるでしょ。拾うたびにしゃがむ。腰にくる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ロボット掃除機は床を走れても、物は拾えないしね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そう。拾うには、腕と、しゃがめる脚がいる。",
+          "expression": "excited"
+        }
+      ],
+      "narration": "リツ「今日は、先に結論から言うね。床の物を拾って片付ける人型ロボットが家に来るのは、10年はかかる。」\nソウ「ちょっと待って。まだ何も話してない。」\nリツ「だから、なぜそうなるかを、今から話そう。」\nソウ「じゃあ、困りごとから。小さい子がいる家って、床にブロックやぬいぐるみが散らばるでしょ。拾うたびにしゃがむ。腰にくる。」\nリツ「ロボット掃除機は床を走れても、物は拾えないしね。」\nソウ「そう。拾うには、腕と、しゃがめる脚がいる。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 6,
+      "type": "paper",
+      "bgm_role": "intro",
+      "reference_index": 0,
+      "image_prompt": "A robotics laboratory in China. Two Chinese researchers in white lab coats — a man in his 30s with short black hair and glasses and a woman in her 20s with a black ponytail — stand beside a compact dark-gray bipedal research humanoid robot about 1.3 meters tall (visible joint motors, small mechanical head with camera sensors and no face, simple three-fingered robotic hands). Behind them, a monitor shows a 3D simulation of a wheeled robot's two arms with glowing motion trails being mapped onto a walking humanoid figure. No readable text.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "中国の西湖大学や上海交通大学などのチームが、2025年に発表した研究。2本足の人型ロボットに、しゃがんで物を取る動作を覚えさせた。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "2本足でしゃがむのは、バランスを崩しやすくて難しいんだよね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そう。そこで使ったのが、車輪で動くロボットのデータ。家事みたいな作業をした記録が、100万件以上も公開されてる。その一部を使ったんだ。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "でも、車輪のロボットはしゃがまないでしょ。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そこが面白いところ。手の先がどう動いたかだけを取り出して、シミュレーションの中で、2本足のロボットが全身を使ってその動きをなぞれるように作り変えた。体の形が違っても、手の動きの経験は引き継げるってこと。",
+          "expression": "excited",
+          "tone": "enthusiastic, fast, carried away"
+        }
+      ],
+      "narration": "ソウ「中国の西湖大学や上海交通大学などのチームが、2025年に発表した研究。2本足の人型ロボットに、しゃがんで物を取る動作を覚えさせた。」\nリツ「2本足でしゃがむのは、バランスを崩しやすくて難しいんだよね。」\nソウ「そう。そこで使ったのが、車輪で動くロボットのデータ。家事みたいな作業をした記録が、100万件以上も公開されてる。その一部を使ったんだ。」\nリツ「でも、車輪のロボットはしゃがまないでしょ。」\nソウ「そこが面白いところ。手の先がどう動いたかだけを取り出して、シミュレーションの中で、2本足のロボットが全身を使ってその動きをなぞれるように作り変えた。体の形が違っても、手の動きの経験は引き継げるってこと。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 7,
+      "type": "paper",
+      "bgm_role": "intro",
+      "reference_index": 0,
+      "image_prompt": "A robotics lab late in the evening. A Chinese researcher in a white lab coat (a man in his 30s with short black hair) wears a VR headset and holds hand controllers, patiently teleoperating the compact dark-gray bipedal research humanoid robot (small mechanical head with camera sensors and no face, simple three-fingered robotic hands) through the same pick-up motion again and again. A wall clock shows late hours, cups of coffee pile up on a desk. Slightly tired but determined mood. No readable text.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "そもそも、なんでわざわざ別のロボットのデータを使うの？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "人型ロボットに動きを教えるお手本は、主に、人が遠隔で操縦して一回ずつ集めるんだ。時間もお金もかかる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "文章を学ぶAIなら、ネットに文章がいくらでもあるけど。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ロボットの動きには、それがない。だから、もうある記録を、体の違うロボットに使い回せたら大きいんだ。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "なるほど。データの使い回しの話なのね。",
+          "expression": "convinced"
+        }
+      ],
+      "narration": "リツ「そもそも、なんでわざわざ別のロボットのデータを使うの？」\nソウ「人型ロボットに動きを教えるお手本は、主に、人が遠隔で操縦して一回ずつ集めるんだ。時間もお金もかかる。」\nリツ「文章を学ぶAIなら、ネットに文章がいくらでもあるけど。」\nソウ「ロボットの動きには、それがない。だから、もうある記録を、体の違うロボットに使い回せたら大きいんだ。」\nリツ「なるほど。データの使い回しの話なのね。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 8,
+      "type": "paper",
+      "bgm_role": "intro",
+      "reference_index": 0,
+      "image_prompt": "In a robotics lab, the compact dark-gray bipedal research humanoid robot (about 1.3 m tall, visible joint motors, small mechanical head with camera sensors and no face, simple three-fingered robotic hands) crouches deeply with bent knees to grab a small plush toy from a low table about knee height. In the background a Chinese researcher in a white lab coat wears a VR headset and holds hand controllers, teleoperating. No readable text.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "そのうえで、本物のロボットには、人が遠隔で操縦したお手本を、たった10分、28回分だけ見せた。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "10分？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "10分。それで、高さ39センチの台からぬいぐるみを取る作業は、10回やって10回成功。",
+          "expression": "excited",
+          "tone": "proud"
+        }
+      ],
+      "narration": "ソウ「そのうえで、本物のロボットには、人が遠隔で操縦したお手本を、たった10分、28回分だけ見せた。」\nリツ「10分？」\nソウ「10分。それで、高さ39センチの台からぬいぐるみを取る作業は、10回やって10回成功。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 9,
+      "type": "dream",
+      "bgm_role": "intro",
+      "reference_index": 0,
+      "badge_text": "幸せな未来を夢想中",
+      "image_prompt": "A Japanese living room at night, nine o'clock, children's drawings on the wall. A sleek home humanoid robot with soft white and warm-gray panels, adult human proportions (head, neck, torso, two arms, two legs), a smooth mechanical head with a dark glossy visor and no human face, and simple gentle robotic hands crouches on the floor and puts colorful toy blocks one by one into a toy box. In the background on the sofa, a Japanese couple in their late 30s relax with cups of tea and smile: the man (short black hair, light stubble, gray hoodie) and the woman (long dark hair in a loose bun, cream sweater). Warm lamp light, dark window.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "想像してみてよ。共働きの家の、夜9時。子どもが寝たあと、リビングの床にブロックが散らばってる。ロボットがしゃがんで、一つずつ箱に戻していく。親は腰をかがめずに、ソファでお茶を飲める。",
+          "expression": "excited",
+          "tag": "life_scene",
+          "tone": "warm, animated, painting a picture"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "いい場面。で、それ何回試したの？",
+          "expression": "doubt",
+          "tone": "her signature line, dry"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "……作業ごとに、10回。",
+          "expression": "deflated",
+          "pause": 0.5,
+          "tone": "sheepish"
+        }
+      ],
+      "narration": "ソウ「想像してみてよ。共働きの家の、夜9時。子どもが寝たあと、リビングの床にブロックが散らばってる。ロボットがしゃがんで、一つずつ箱に戻していく。親は腰をかがめずに、ソファでお茶を飲める。」\nリツ「いい場面。で、それ何回試したの？」\nソウ「……作業ごとに、10回。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 10,
+      "type": "tsukkomi",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "image_prompt": "In a robotics lab, the compact dark-gray bipedal research humanoid robot (about 1.3 m tall, visible joint motors, small mechanical head with camera sensors and no face, simple three-fingered robotic hands) stands and reaches toward a tall table about waist height, but the orange it was trying to place has rolled off and is falling toward the floor. Slightly comic moment. No people, no readable text.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "4つの作業を10回ずつ。ロボットは1台で、場所は実験室。散らかった本物のリビングとは、だいぶ違う。",
+          "expression": "doubt",
+          "tag": "weakness"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それは、そう。",
+          "expression": "deflated"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、一番高い76センチの台に、おもちゃのオレンジを置く作業は、10回中1回しか成功してない。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そこは正直、伸びしろだね。",
+          "expression": "thinking"
+        }
+      ],
+      "narration": "リツ「4つの作業を10回ずつ。ロボットは1台で、場所は実験室。散らかった本物のリビングとは、だいぶ違う。」\nソウ「それは、そう。」\nリツ「それに、一番高い76センチの台に、おもちゃのオレンジを置く作業は、10回中1回しか成功してない。」\nソウ「そこは正直、伸びしろだね。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 11,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "image_prompt": "A simple horizontal bar chart with a short title at the top reading exactly 「作業ごとの成功率（各10回）」. Four horizontal bars, each with its label to the left and its value at the bar end: 「ぬいぐるみを取る（39cm）」 100%, 「おもちゃを片付ける（55cm）」 70%, 「テーブルを片付ける（55cm）」 70%, 「オレンジを置く（76cm）」 10%. All four bars in coral; the scale runs from 0% to 100% so bar lengths are proportional. Below the four bars, one thin gray bar line with the label 「車輪ロボのデータなし（同じ練習量）」 and value 「4つとも0%」. Plain light background. Do not add any other text or numbers.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "並べるとこう。一番低い39センチが、一番うまくいってる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "意外だよね。深くしゃがむ方が難しそうなのに。",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "76センチのオレンジは、軽いおもちゃで、動くときの揺れで落ちやすかったと論文は書いてる。でも、39センチがなぜ一番うまくいったかの説明はない。そこは分からない、で止めておこう。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "大事なのはこっち。車輪のロボットのデータを使わずに、同じだけ練習させたロボットは、4つとも成功ゼロ。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、練習を3倍以上に増やすと、データなしでも、ぬいぐるみは10回中8回取れてる。",
+          "expression": "doubt",
+          "tag": "weakness"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "つまり、魔法じゃなくて、覚えるまでの近道なんだ。作業によっては、たくさん練習させたロボットより上だったけど。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "うん、その言い方なら正確。",
+          "expression": "convinced"
+        }
+      ],
+      "narration": "リツ「並べるとこう。一番低い39センチが、一番うまくいってる。」\nソウ「意外だよね。深くしゃがむ方が難しそうなのに。」\nリツ「76センチのオレンジは、軽いおもちゃで、動くときの揺れで落ちやすかったと論文は書いてる。でも、39センチがなぜ一番うまくいったかの説明はない。そこは分からない、で止めておこう。」\nソウ「大事なのはこっち。車輪のロボットのデータを使わずに、同じだけ練習させたロボットは、4つとも成功ゼロ。」\nリツ「ただ、練習を3倍以上に増やすと、データなしでも、ぬいぐるみは10回中8回取れてる。」\nソウ「つまり、魔法じゃなくて、覚えるまでの近道なんだ。作業によっては、たくさん練習させたロボットより上だったけど。」\nリツ「うん、その言い方なら正確。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 12,
+      "type": "paper",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "image_prompt": "In a robotics lab, the compact dark-gray bipedal research humanoid robot (about 1.3 m tall, visible joint motors, small mechanical head with camera sensors and no face, simple three-fingered robotic hands) carefully hands a clear cup of water to a smiling Chinese researcher in a white lab coat (a woman in her 30s with short bob hair). Bright, hopeful moment. No readable text.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "もう一つ。お手本を一度も見せていない「水を手渡す」動作も、本物のロボットでこなしたんだ。車輪のロボットのデータには入っていた動作だけど。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それは、正直おもしろい。",
+          "expression": "surprised"
+        }
+      ],
+      "narration": "ソウ「もう一つ。お手本を一度も見せていない「水を手渡す」動作も、本物のロボットでこなしたんだ。車輪のロボットのデータには入っていた動作だけど。」\nリツ「それは、正直おもしろい。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 13,
+      "type": "tsukkomi",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "image_prompt": "A split composition: on the left half, a tidy robotics lab with the compact dark-gray bipedal research humanoid robot (small mechanical head with camera sensors and no face, simple three-fingered robotic hands) standing still at a single table; on the right half, a messy real Japanese living room with toys scattered across a large floor, sofa and stairs. A clear contrast between the controlled lab and the chaotic home. No people, no readable text.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、壁の話。このロボットの手は、つまんで置くくらいの単純な作業しかできない。それに実験は、ほとんどその場から動かない作業。歩き回りながら片付けるデータは、まだほとんどないって、論文自身が書いてる。",
+          "expression": "thinking",
+          "tag": "barrier"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "家の中を歩き回れないと、片付けにならないもんな。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "あとは値段と安全。小さい子がいる部屋で、人型のロボットがしゃがむんだから。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そこは研究の外の話だけど、家に来るなら避けて通れないね。",
+          "expression": "neutral"
+        }
+      ],
+      "narration": "リツ「じゃあ、壁の話。このロボットの手は、つまんで置くくらいの単純な作業しかできない。それに実験は、ほとんどその場から動かない作業。歩き回りながら片付けるデータは、まだほとんどないって、論文自身が書いてる。」\nソウ「家の中を歩き回れないと、片付けにならないもんな。」\nリツ「あとは値段と安全。小さい子がいる部屋で、人型のロボットがしゃがむんだから。」\nソウ「そこは研究の外の話だけど、家に来るなら避けて通れないね。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 14,
+      "type": "dream",
+      "bgm_role": "main",
+      "badge_text": "幸せな未来を夢想中",
+      "image_prompt": "A warm, slightly magical illustration: on the left, a wheeled service robot with two arms on a mobile base; on the right, a bipedal humanoid robot with a smooth mechanical head and no face. Glowing golden ribbons of motion trails flow from the wheeled robot's hands across the space into the humanoid's hands, as if experience is being handed over. Soft gradient background of a home-like space at dusk. No people, no text.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "でも、想像してみてよ。車輪のロボットが積み上げた経験が、別の体に引き継がれる。ロボットの体が新しくなるたびに、一から教え直さなくていい。家に来るロボットがどんな形でも、経験は持ってこられる。",
+          "expression": "excited",
+          "tone": "warm and passionate"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "最初に言ってた「面白いところ」って、これね。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そう。これ。",
+          "expression": "convinced"
+        }
+      ],
+      "narration": "ソウ「でも、想像してみてよ。車輪のロボットが積み上げた経験が、別の体に引き継がれる。ロボットの体が新しくなるたびに、一から教え直さなくていい。家に来るロボットがどんな形でも、経験は持ってこられる。」\nリツ「最初に言ってた「面白いところ」って、これね。」\nソウ「そう。これ。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 15,
+      "type": "verdict",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "verdict_from_line": 3,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "改めて、判定。床の物を拾う人型ロボットが家に来るのは、10年はかかる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "理由は3つ。実験はロボット1台で、ほとんどその場の作業だけ。手は、つまんで置くくらいまで。歩き回って片付けるためのデータは、まだほとんどない。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕も、今回は10年。経験を引き継ぐ仕組みは、思ったより早く広がると思うけど。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "珍しく、意見が合ったね。",
+          "expression": "amused"
+        }
+      ],
+      "narration": "リツ「改めて、判定。床の物を拾う人型ロボットが家に来るのは、10年はかかる。」\nリツ「理由は3つ。実験はロボット1台で、ほとんどその場の作業だけ。手は、つまんで置くくらいまで。歩き回って片付けるためのデータは、まだほとんどない。」\nソウ「僕も、今回は10年。経験を引き継ぐ仕組みは、思ったより早く広がると思うけど。」\nリツ「珍しく、意見が合ったね。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 16,
+      "type": "closing",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "次に見たいのは、歩き回りながら片付けるロボットだな。家の中を動き回る経験も、別の体に引き継げるのかどうか。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そのときも、何回試したかから聞くからね。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。論文は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "amused"
+        }
+      ],
+      "narration": "ソウ「次に見たいのは、歩き回りながら片付けるロボットだな。家の中を動き回る経験も、別の体に引き継げるのかどうか。」\nリツ「そのときも、何回試したかから聞くからね。」\nソウ「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\nリツ「それが本物かどうか、また一緒に確かめましょう。論文は概要欄に載せています。チャンネル登録して、待っていてください。」",
+      "narrator": "dialogue"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "skeptic",
+          "narration": "床のおもちゃ、ロボが拾う？",
+          "expression": "doubt",
+          "scene_id": 9
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "10分の練習で、10回中10回成功。",
+          "expression": "excited",
+          "scene_id": 8
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "一番高い台は、10回中1回だけど。",
+          "expression": "doubt",
+          "react": "deflated",
+          "scene_id": 10
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "でも本当にすごいのは、別のところ。",
+          "expression": "excited",
+          "scene_id": 14
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "判定と理由は、本編で。",
+          "expression": "amused",
+          "scene_id": 6
+        }
+      ]
+    }
+  ]
+}
