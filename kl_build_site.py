@@ -442,9 +442,6 @@ def cast_section_html() -> str:
       <p class="reveal reveal-delay-2" style="text-align:center;color:#4a5866;line-height:1.9;margin-bottom:36px;">{cast.get('relationship', '')}</p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;max-width:720px;margin:0 auto;">{cards}
       </div>
-      <p class="reveal" style="text-align:center;font-size:.8rem;line-height:1.8;color:#7a8794;margin-top:28px;">
-        ※登場する二人は架空のキャラクターで、声はAIで合成しています。<br>これまでの動画は、架空の生活者を主人公にした物語形式です。
-      </p>
     </div>
   </section>
 """
