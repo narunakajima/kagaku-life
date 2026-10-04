@@ -252,6 +252,19 @@ def validate_episode(ep: dict, cast: dict = None) -> list:
         if not isinstance(k, int) or not (1 <= k <= len(vs.get("lines") or [])):
             errs.append("verdict シーンに verdict_from_line（判定ラベルを出し始める行番号、1始まり）を付けてください")
 
+    # 実在の製品・機体を絵に描く回（ニュース等）は、実物と違う姿を本物のように見せないよう「イメージ図」の表示を必須にする
+    # （2026-10-05、kl032でFlourish 1の外観を想像で描いて実物と大きく違っていたとの指摘を受けて追加）
+    if ep.get("depicts_real_product"):
+        for s in scenes:
+            if s.get("shows_product") and "イメージ" not in (s.get("badge_text") or ""):
+                errs.append(f"S{s['scene_id']}: 実在の製品を描いたシーン（shows_product）には badge_text に「イメージ図」を入れてください")
+        if "イメージ図" not in ep.get("youtube_description", ""):
+            errs.append("実在の製品を描く回は、概要欄に「イメージ図」の注記を入れてください")
+        for i, c in enumerate(shorts if False else (ep.get("shorts") or [{}])[0].get("scenes") or [], start=1):
+            ref = next((s for s in scenes if s.get("scene_id") == c.get("scene_id")), None)
+            if ref and ref.get("shows_product") and "イメージ" not in (c.get("badge_text") or ""):
+                errs.append(f"Shorts {i}カット目: 製品を描いた場面には badge_text（イメージ図）を付けてください")
+
     # 締めの固定CTA
     closing_lines = scenes[-1].get("lines") or []
     tail = [(l.get("speaker"), l.get("text")) for l in closing_lines[-len(CLOSING_CTA):]]
@@ -362,6 +375,15 @@ SHORTS_LAYOUT = {
     "bar_h": 0, "font": 48, "rows": 3, "teaser_font": 64,
     "text_cy": 0.56,
 }
+
+# 自己紹介カードの出し方（2026-10-05、なるさんの指示: 両方同時だと読み切れないので、大輔→沙織の順に出す）。
+# 大輔の吹き出しを0〜4秒、沙織の吹き出しを3〜7秒（1秒だけ重なる）。二人の関係の一文は7秒間ずっと出す。
+# 台詞は吹き出しと関係なくシーンの頭から始まる（なるさんの指示。無音の間は作らない）。吹き出しは台詞・字幕に重ねて出す。
+# 時刻は最初の本編シーンの開始からの秒数
+INTRO_FIRST_SECONDS = 4.0
+INTRO_SECOND_AT = 3.0
+INTRO_SECOND_SECONDS = 4.0
+INTRO_CARD_SECONDS = INTRO_SECOND_AT + INTRO_SECOND_SECONDS  # 7.0
 
 BAR_COLOR = (10, 22, 38, 205)
 INACTIVE_BRIGHTNESS = 0.55
@@ -479,7 +501,8 @@ def verdict_stamps(cast: dict, verdict: dict, scale: float = 1.0) -> list:
                        header=f"{speaker_name(cast, r)}の判定") for r in ROLES]
 
 
-def _draw_intro(im: Image.Image, dr: ImageDraw.ImageDraw, W: int, H: int, cast: dict, sprite_pos: dict) -> None:
+def _draw_intro(im: Image.Image, dr: ImageDraw.ImageDraw, W: int, H: int, cast: dict, sprite_pos: dict,
+                roles=ROLES) -> None:
     """二人の自己紹介: 上部に関係の一文、立ち絵の上にそれぞれの吹き出し（尻尾は立ち絵の頭を指す）。
     音声は付けず、画面の文字だけで見せる（2026-10-05、なるさんの指示: 「誰？」とならないように）。"""
     rel = cast.get("relationship", "")
@@ -494,7 +517,7 @@ def _draw_intro(im: Image.Image, dr: ImageDraw.ImageDraw, W: int, H: int, cast: 
     line_h, pad = 38, 22
     for role in ROLES:
         lines = cast[role].get("intro") or []
-        if not lines or role not in sprite_pos:
+        if not lines or role not in sprite_pos or role not in roles:
             continue
         sx, sw, sy = sprite_pos[role]
         bw = max(_text_w(dr, ln, ft) for ln in lines) + pad * 2
@@ -570,7 +593,8 @@ def render_layer(state: dict, layout: dict, cast: dict, bank: SpriteBank) -> Ima
 
     # 自己紹介（本編の冒頭の数秒だけ。二人の関係の一文と、それぞれの吹き出し）
     if state.get("intro"):
-        _draw_intro(im, dr, W, H, cast, sprite_pos)
+        intro_roles = state["intro"] if isinstance(state["intro"], (list, tuple)) else ROLES
+        _draw_intro(im, dr, W, H, cast, sprite_pos, roles=intro_roles)
 
     # バッジ（左上、夢語りの場面などで常時表示）
     if state.get("badge"):
@@ -633,18 +657,19 @@ def main_timeline(ep: dict, scenes: list, offsets: list, durs: list, narr_delay:
     """本編の重ね合わせの時刻表 [(t_start, state), ...] を作る（時刻はグローバル秒）。"""
     events = []
     stamps = None
+    intro_windows = []  # (開始, 終了, 吹き出しを出す人) 自己紹介カード。台詞の状態に重ねて後で付ける
     for scene, off, dur in zip(scenes, offsets, durs):
         teaser = scene["type"] == "teaser"
         chart = scene_style(scene) == "chart"
         badge = scene.get("badge_text")
         base = {"mode": "teaser" if teaser else "normal", "chart": chart, "badge": badge,
                 "speaker": None, "exprs": {"dreamer": "neutral", "skeptic": "neutral"}, "text": None}
-        lead = scene.get("_lead_in", 0.0)  # 冒頭の自己紹介カードの分だけ、台詞の開始を遅らせる（kl_video_gen.py が設定）
-        if lead > 0:
-            events.append((off, dict(base, intro=True, speaker="both")))
-        else:
-            events.append((off, dict(base)))
+        lead = scene.get("_lead_in", 0.0)  # 台詞の開始を遅らせたいときだけ使う（通常は0。自己紹介カードでは遅らせない）
+        events.append((off, dict(base)))
         narr_delay_s = narr_delay + lead
+        if scene.get("_intro_card"):
+            intro_windows.append((off, off + INTRO_FIRST_SECONDS, "dreamer"))
+            intro_windows.append((off + INTRO_SECOND_AT, off + INTRO_CARD_SECONDS, "skeptic"))
         lines = scene.get("lines") or []
         v_from = scene.get("verdict_from_line") if scene["type"] == "verdict" else None
         for li, line in enumerate(lines):
@@ -665,6 +690,27 @@ def main_timeline(ep: dict, scenes: list, offsets: list, durs: list, narr_delay:
                                                  stamps=st)))
         # シーンの終わり（次のシーンの開始）まで最後の状態を保つ。後続シーンの開始で切り替わる
     events.sort(key=lambda e: e[0])
+    if intro_windows:
+        # 自己紹介の吹き出しの出入りの時刻にも、その時点の台詞の状態を複製して切り替え点を作り、
+        # 各状態に「その時刻に出ている吹き出し」を付ける
+        times = {t for (s, e, _r) in intro_windows for t in (s, e)}
+        orig = list(events)  # 時刻順。複製元はここだけから選ぶ（複製を足しながら探すと順序が崩れる）
+        have = {round(t, 3) for t, _ in orig}
+        for b in sorted(times):
+            b = round(b, 3)
+            if b in have:
+                continue
+            prev = [st for t, st in orig if t <= b]
+            if prev:
+                events.append((b, dict(prev[-1])))
+        events.sort(key=lambda e: e[0])
+        out = []
+        for t, st in events:
+            roles = [r for (s, e, r) in intro_windows if s <= t < e]
+            if roles:
+                st = dict(st, intro=roles)
+            out.append((t, st))
+        events = out
     return events
 
 
@@ -681,11 +727,12 @@ def shorts_timeline(ep: dict, cuts: list, offsets: list, durs: list, narr_delay:
         exprs = {sp: cut.get("expression", "neutral"), other: cut.get("react", "neutral")}
         events.append((round(off, 3), {"mode": "normal", "speaker": sp, "exprs": exprs,
                                        "text": None, "chart": cut.get("style") == "chart",
-                                       "stamps": st, "cta": None}))
+                                       "stamps": st, "cta": None, "badge": cut.get("badge_text")}))
         events.append((round(off + narr_delay, 3), {"mode": "normal", "speaker": sp, "exprs": exprs,
                                                     "text": cut.get("telop_text", cut["narration"]),
                                                     "chart": cut.get("style") == "chart",
-                                                    "stamps": st, "cta": "↓ 続きは本編で" if last else None}))
+                                                    "stamps": st, "cta": "↓ 続きは本編で" if last else None,
+                                                    "badge": cut.get("badge_text")}))
     events.sort(key=lambda e: e[0])
     return events
 

@@ -52,7 +52,7 @@ FPS = 24
 
 NARR_DELAY = 0.5
 NARR_TAIL = 1.0
-INTRO_CARD_SECONDS = 3.5  # 掛け合い形式の冒頭の自己紹介カード（音声なし）の長さ
+# 掛け合い形式の冒頭の自己紹介カードの出し方は kl_dialogue.INTRO_*（大輔0〜4秒、沙織3〜7秒。台詞は遅らせない）
 MIN_CLIP_FLOOR = 3.0
 CROSSFADE_DURATION = 0.8
 
@@ -646,9 +646,10 @@ def gen_video(episode_id: str, out_dir: Path = None):
     teaser_scenes = [s for s in scenes if s["type"] == "teaser"]
     main_scenes = [s for s in scenes if s["type"] != "teaser"]
     if ep.get("format") == "dialogue" and ep.get("intro_card", True) and main_scenes:
-        # 掛け合い形式: ティザーの直後に、二人の自己紹介の吹き出しを音声なしで数秒出す
-        # （2026-10-05、「誰？」とならないように。尺が気になる回は episodes の intro_card: false で外せる）
-        main_scenes[0]["_lead_in"] = INTRO_CARD_SECONDS
+        # 掛け合い形式: ティザーの直後（最初の本編シーンの頭）に、二人の自己紹介の吹き出しを出す
+        # （2026-10-05、「誰？」とならないように。大輔→沙織の順。台詞は吹き出しと関係なく頭から始まる。
+        #  episodes の intro_card: false で外せる）
+        main_scenes[0]["_intro_card"] = True
 
     print(f"\n{'━'*60}\n  {episode_id} — 動画生成開始\n"
           f"  ティザー{len(teaser_scenes)}シーン + 本編{len(main_scenes)}シーン\n{'━'*60}\n")
