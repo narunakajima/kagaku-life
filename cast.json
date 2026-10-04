@@ -1,5 +1,5 @@
 {
-  "_comment": "掛け合い形式（2026-10-04〜）の固定の二人。name/full_name/role_short は画面の名札と判定ラベルにだけ使い、ナレーション（台詞）には入れない（名前を変えても音声を作り直さずに済むように）。名前は2026-10-05に、「日本で一般的な名前に」というなるさんの指示で変えた（旧: ソウ・リツ）。過去の回の主人公の名前（田中美咲、佐藤健太、森田浩一など）と重ならないようにしてある。intro は本編の冒頭（ティザーの直後）に数秒だけ出す自己紹介の吹き出し、relationship は二人の関係の一文（kl_dialogue.render_layer）。voice/style は kl_tts_gen.py が使う。expressions は kl_cast_gen.py が立ち絵の差分を作るときの指示で、台本の lines[].expression はこのキーから選ぶ。",
+  "_comment": "掛け合い形式（2026-10-04〜）の固定の二人。name/full_name/role_short は画面の名札と判定ラベルにだけ使い、ナレーション（台詞）には入れない（名前を変えても音声を作り直さずに済むように）。名前は2026-10-05に、「日本で一般的な名前に」というなるさんの指示で変えた（旧: ソウ・リツ）。過去の回の主人公の名前（田中美咲、佐藤健太、森田浩一など）と重ならないようにしてある。intro は本編の冒頭（ティザーの直後）に数秒だけ出す自己紹介の吹き出し、relationship は二人の関係の一文（kl_dialogue.render_layer）。voice/style は kl_tts_gen.py が使う。expressions は kl_cast_gen.py が立ち絵の差分を作るときの指示で、台本の lines[].expression はこのキーから選ぶ。 話速は2026-10-05にそろえた: 実測で沙織が1秒4.5文字、大輔が5.7文字と沙織が約20%遅かったため、沙織のstyleを「brisk・fast, snappy pace」に変えた（変更後5.8文字/秒）。",
   "name_status": "confirmed",
   "dreamer": {
     "name": "大輔",
@@ -31,7 +31,9 @@
       "元エンジニアで、論文を読むと",
       "未来の暮らしを想像せずに",
       "いられない人。"
-    ]
+    ],
+    "catchphrase": "想像してみてよ",
+    "site_profile": "元エンジニア。論文を読むと、「これが暮らしに来たら」という具体的な場面を思い描かずにいられない。技術の仕組みには詳しく、熱が入ると早口になる。"
   },
   "skeptic": {
     "name": "沙織",
@@ -47,7 +49,7 @@
       210
     ],
     "voice": "Autonoe",
-    "style": "Say as a calm, sharp clinical-research statistician in her late thirties chatting with an old friend — relaxed and dry, a little wry and teasing, with a hint of amusement in her voice; unhurried and confident, natural conversation, not like a narrator",
+    "style": "Say as a sharp, quick-witted clinical-research statistician in her late thirties chatting with an old friend — brisk and lively, speaking at a fast, snappy conversational pace on par with an enthusiastic friend, never slow, drawn out or deliberate; dry and a little wry and teasing, with a hint of amusement in her voice; confident, natural conversation, not like a narrator",
     "appearance": "Japanese woman in her late thirties, clinical-research statistician. Straight dark-brown chin-length bob with a side part, thin dark rectangular-frame glasses, intelligent calm eyes. Wears a deep navy blazer over a plain teal crew-neck top, small silver stud earrings. Slim build.",
     "expressions": {
       "neutral": "calm composed expression with a faint knowing smile, hands out of frame",
@@ -62,7 +64,9 @@
       "沙織です。",
       "臨床研究と統計が専門。",
       "数字の裏は、必ず確かめます。"
-    ]
+    ],
+    "catchphrase": "で、それ何人で試したの？",
+    "site_profile": "臨床研究と統計が専門。数字の裏を必ず確かめる。否定したいのではなく、本物なら一番に使いたいからこそ厳しい。冷静で、少し皮肉っぽく、ユーモアもある。"
   },
   "name_candidates": [
     {

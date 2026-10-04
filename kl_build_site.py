@@ -35,6 +35,7 @@ EPISODES_DIR = BASE_DIR / "episodes"
 TOPICS_QUEUE_JSON = BASE_DIR / "topics_queue.json"
 THEME_PLAYLISTS_JSON = BASE_DIR / "theme_playlists.json"
 CONCERNS_JSON = BASE_DIR / "viewer_concerns.json"
+CAST_JSON = BASE_DIR / "cast.json"
 CHANNEL_URL = "https://www.youtube.com/@kagaku-life"
 SITE_URL = "https://kagaku-life.com"
 CHANNEL_NAME = "幸せな未来のサイエンス"
@@ -414,6 +415,41 @@ def coming_soon_html(launch_label: str, extra_note: str = "") -> str:
       </div>"""
 
 
+def cast_section_html() -> str:
+    """「登場する二人」の紹介（2026-10-05追加）。名前・肩書き・紹介文・口癖は cast.json が元データ
+    （動画の名札・自己紹介の吹き出しと同じ名前を使うため、サイト側で二重管理しない）。"""
+    if not CAST_JSON.exists():
+        return ""
+    cast = json.loads(CAST_JSON.read_text(encoding="utf-8"))
+    cards = ""
+    for role, img, delay in (("dreamer", "cast_daisuke.png", 1), ("skeptic", "cast_saori.png", 2)):
+        c = cast[role]
+        r, g, b = c["color"]
+        cards += f"""
+        <div class="reveal reveal-delay-{delay}" style="background:var(--white);border:1px solid var(--paper-dim);border-top:5px solid rgb({r},{g},{b});border-radius:12px;padding:24px 20px 26px;text-align:center;box-shadow:0 2px 10px rgba(15,36,56,.05);">
+          <img src="/{img}" alt="{c['name']}" width="179" height="240" loading="lazy" style="height:220px;width:auto;margin:0 auto 14px;display:block;">
+          <p style="font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:1.35rem;color:var(--navy);line-height:1.3;">{c['name']}</p>
+          <p style="font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:.8rem;color:var(--teal);margin:6px 0 14px;">{c['role_label']}（{c['role_short']}）</p>
+          <p style="font-size:.9rem;line-height:1.9;color:#4a5866;text-align:left;line-break:strict;">{c['site_profile']}</p>
+          <p style="margin-top:16px;font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:.95rem;color:var(--coral-dim);">「{c['catchphrase']}」</p>
+        </div>"""
+    return f"""
+  <!-- ── CAST ── -->
+  <section style="background:var(--paper);">
+    <div class="section-inner">
+      <p class="section-label reveal">Cast</p>
+      <h2 class="section-heading reveal reveal-delay-1">登場する二人</h2>
+      <p class="reveal reveal-delay-2" style="text-align:center;color:#4a5866;line-height:1.9;margin-bottom:36px;">{cast.get('relationship', '')}</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;max-width:720px;margin:0 auto;">{cards}
+      </div>
+      <p class="reveal" style="text-align:center;font-size:.8rem;line-height:1.8;color:#7a8794;margin-top:28px;">
+        ※登場する二人は架空のキャラクターで、声はAIで合成しています。<br>これまでの動画は、架空の生活者を主人公にした物語形式です。
+      </p>
+    </div>
+  </section>
+"""
+
+
 # ──────────────────────────────────────────────
 # index.html — トップ
 # ──────────────────────────────────────────────
@@ -528,8 +564,7 @@ def build_index(episodes: list[dict], published: list[dict], categories: list[di
       </p>
       <p class="reveal reveal-delay-2" style="text-align:left;line-break:strict;font-size:clamp(.9rem,2.6vw,1rem);line-height:2;color:#5c6b78;max-width:680px;margin:0 auto 48px;">
         判定は<strong style="color:var(--teal);font-weight:700;">「もうすぐ来る」「10年はかかる」「まだ眉唾」</strong>の3つ。二人の意見が割れる回もあります。<br>
-        論文や発表の範囲を超えて言い切らず、まだ研究段階のものは、そのとおりに伝えます。<br>
-        ※登場する二人は架空のキャラクターで、声はAIで合成しています。これまでの動画は、架空の生活者を主人公にした物語形式です。
+        論文や発表の範囲を超えて言い切らず、まだ研究段階のものは、そのとおりに伝えます。
       </p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;max-width:720px;margin:0 auto;">
         <div class="reveal reveal-delay-1" style="text-align:center;padding:26px 16px;border:1px solid var(--paper-dim);border-radius:12px;background:var(--paper);">
@@ -551,8 +586,9 @@ def build_index(episodes: list[dict], published: list[dict], categories: list[di
     </div>
   </section>
 
+  {cast_section_html()}
   <!-- ── SUBSCRIBE ── -->
-  <section style="background:var(--paper);">
+  <section style="background:var(--white);">
     <div class="section-inner" style="text-align:center;">
       <p class="section-label reveal">Subscribe</p>
       <h2 class="section-heading reveal reveal-delay-1">見逃さないために</h2>
