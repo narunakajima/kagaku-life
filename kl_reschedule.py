@@ -55,6 +55,7 @@ def set_publish(yt, ep_id, when: str):
         st["publishAt"] = parse_publish_at(when)
         yt.videos().update(part="status", body={"id": vid, "status": st}).execute()
     ep["scheduled_at"] = when
+    ep.pop("publish_hold", None)  # 保留中の回に日時を入れたら、保留を解く
     p.write_text(json.dumps(ep, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"  ✓ {ep_id}: {when}")
 

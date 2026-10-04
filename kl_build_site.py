@@ -74,6 +74,10 @@ def is_published(ep: dict) -> bool:
     scheduled_at が空なら即時公開扱い。youtube_url がなければ未公開（アップロード前）。"""
     if not ep.get("youtube_url"):
         return False
+    if ep.get("publish_hold"):
+        # 公開予約を取り消した回（2026-10-05〜）。YouTubeには非公開でアップロード済みだが公開しない。
+        # scheduled_at が空でも「即時公開扱い」にしない（サイトに公開済みとして載せないため）
+        return False
     s = ep.get("scheduled_at") or ""
     if not s:
         return True
@@ -132,7 +136,7 @@ def next_launch_label(episodes: list[dict]) -> str:
     """未公開だがアップロード済み（scheduled_at待ち）の中で最も早い日時を日本語表記に。"""
     candidates = []
     for ep in episodes:
-        if ep.get("_published") or not ep.get("youtube_url"):
+        if ep.get("_published") or not ep.get("youtube_url") or ep.get("publish_hold"):
             continue
         dt_utc = parse_scheduled_at(ep.get("scheduled_at") or "")
         if dt_utc:
