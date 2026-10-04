@@ -91,10 +91,9 @@ kl030の作り直し、基本構成、判定は割れ）と kl032（車輪ロボ
 kl024 10/20、kl025 10/22、kl026 10/24）。新方式の効果を早く計測するため。
 
 **計測:** Reporting API のトークン（`~/.claude/secrets/yt_token_kl_reporting.json`）は iMac に無い（2026-10-04確認）。
-生データ（`analytics/raw/`、7/31〜10/2）はなるさんが Google Drive の `Kagaku-Life/analytics/raw/` に置いたので、
-iMac ではそこからリポジトリの `analytics/raw/`（.gitignore済み）へコピーして `kl_analytics_report.py` を回す。
-新しい日のレポートを取るには、トークンのある端末で `kl_yt_download_reports.py` を実行して Drive に置き直すか、
-iMac で `kl_yt_reporting_auth.py`（ブラウザ認証）を実行する。
+生データは Google Drive の `Kagaku-Life/analytics/raw/` に置き、`kl_yt_download_reports.py`・`kl_analytics_report.py` は
+そこを直接読み書きする（2026-10-04、MacBook・iMacで共有。リポジトリ内にコピーしない）。iMac で新しい日のレポートを
+取るには、`kl_yt_reporting_auth.py`（ブラウザ認証）でトークンを作るか、トークンのある端末で取得する。
 
 **2026-10-04時点のデータで分かったこと（掛け合い形式に変える判断の裏付け）:** 本編は「露出が無い」のではなく、
 YouTubeの試し出しに落ちていた。9/1〜9/7に1日1,000〜4,400回のインプレッションが出たが、本編のクリック率は0.2〜1.2%、
