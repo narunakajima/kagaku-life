@@ -1553,8 +1553,33 @@
         }
       ],
       "publish_hold": true
+    },
+    {
+      "episode_id": "kl033",
+      "status": "published",
+      "slot_type": "wildcard",
+      "concern_id": null,
+      "domain": "life",
+      "entry_question": "人型ロボットの手は、人間のまねをして5本指でなくていいの？",
+      "title": "人型ロボの手から小指が消えた（ボストン・ダイナミクス Atlas の新しい手）",
+      "format": "news",
+      "references": [
+        {
+          "title": "Robot Hands for Modern AI and Real Work（公式ブログ）",
+          "authors": [
+            "Boston Dynamics"
+          ],
+          "year": 2026,
+          "venue": "公式ブログ",
+          "url": "https://bostondynamics.com/blog/robot-hands-for-modern-ai-and-real-work/",
+          "is_preprint": false,
+          "institution": "Boston Dynamics"
+        }
+      ],
+      "hook_idea": "人型ロボの手から小指が消えた。決め手は、社員が指をテープで縛った1日。",
+      "notes": "2026-10-05: ニュース起点（news_date 2026-10-01、一次資料=公式ブログ）。構成=myth_buster。予想判定=夢語り:もうすぐ来る／ツッコミ:3年はかかる。ツッコミ材料=成功率の数字がない・根拠は人がテープで縛った1日・長期の賭け。"
     }
   ],
-  "total_topics": 30,
+  "total_topics": 31,
   "last_updated": "2026-10-04"
 }

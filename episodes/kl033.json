@@ -1,0 +1,1470 @@
+{
+  "episode_id": "kl033",
+  "format": "dialogue",
+  "template": "myth_buster",
+  "source_type": "news",
+  "news_date": "2026-10-01",
+  "verdict_as_of": "2026-10-05",
+  "episode_title": "人型ロボの手に小指がない。本当に困らない？（10月1日報道）",
+  "youtube_title": "人型ロボの手に小指がない。本当に困らない？（10月1日報道）",
+  "entry_question": "人型ロボットの手は、人間のまねをして5本指でなくていいの？",
+  "verdict": {
+    "dreamer": "soon",
+    "skeptic": "decade"
+  },
+  "hook_lines": [
+    "ロボの手から",
+    "小指が消えた"
+  ],
+  "thumbnail_headline": "ロボの手から\n小指が消えた",
+  "thumbnail_exprs": {
+    "dreamer": "surprised",
+    "skeptic": "doubt"
+  },
+  "thumbnail_prompt": "Bright, high-key daylight editorial illustration of an endless, perfectly plain light-gray space: a soft light wall that fades smoothly and gradually into a light floor across the FULL width of the image, like infinite soft fog - no edges, no corners, no walls on the sides, no vertical or horizontal lines, no seams, no stripes, no bands, no windows, no shelves, no lighting fixtures. STRICT COMPOSITION: the left 35% and the right 35% of the frame and the top 38% of the frame contain NOTHING but this plain smooth light space (completely empty, evenly lit, no foreground objects, no blurred shapes, no plants). In the exact horizontal center, occupying ONLY the vertical band between 38% and 80% of the frame height, a single robotic hand stands upright on a short simple wrist, palm facing the viewer, fingers straight up and slightly spread. THE HAND HAS EXACTLY FOUR DIGITS IN TOTAL, NOT FIVE: (1) a thumb sticking out to the side, (2) an index finger, (3) a middle finger, (4) a ring finger - and nothing after the ring finger; where a human little finger would be, the outer edge of the palm is a smooth straight flat edge with an obvious empty gap. The hand is drawn to match the real Boston Dynamics Atlas hand: a boxy silver-gray palm block, slim dark finger segments with silver joints and tiny blue indicator lights. A small roll of blue masking tape lies on the floor right next to the base of the wrist. Nothing else in the image: no people, no robot body, no machines, no tables, no boxes, no tools, no lamps, no logos, no text, no numbers.",
+  "youtube_tags": [
+    "ロボット",
+    "人型ロボット",
+    "Atlas",
+    "ボストン・ダイナミクス",
+    "ロボットハンド",
+    "AI",
+    "テクノロジーニュース",
+    "科学ニュース"
+  ],
+  "references": [
+    {
+      "title": "Robot Hands for Modern AI and Real Work（公式ブログ）",
+      "authors": [
+        "Boston Dynamics"
+      ],
+      "year": 2026,
+      "venue": "Boston Dynamics 公式ブログ（2026年10月5日閲覧）",
+      "url": "https://bostondynamics.com/blog/robot-hands-for-modern-ai-and-real-work/",
+      "is_preprint": false,
+      "institution": "Boston Dynamics",
+      "source_kind": "official_blog"
+    }
+  ],
+  "youtube_description": "人型ロボットAtlasの新しい手には、小指がありません。親指を入れて4本、動かせる関節は前の世代の7から13へ。小指を外した決め手は、技術のトップが「小指と薬指をテープでくっつけて1日過ごして」とチームに頼んだ実験でした。ボストン・ダイナミクスの公式ブログを読んで、夢語り担当の大輔と、ツッコミ担当の沙織が判定します。\n\n■ この回の判定（2026年10月5日時点の、二人の見立て）\n大輔: もうすぐ来る\n沙織: 3年はかかる\n\n■ 確認した一次資料\n・ボストン・ダイナミクスの公式ブログ「Robot Hands for Modern AI and Real Work」: 新しい手は親指を入れて4本・自由度13（前の世代は7）、親指は4つ・ほかの指は3つずつの関節、指先と手のひらの圧力センサー、小指を外した理由（部品が3つ増えるコスト・大きさ・故障の確率）、CTOが頼んだ「小指と薬指をテープでくっつけて1日過ごす」実験、シミュレーションでの強化学習と「有望な初期結果」、「長期の賭け」という記述\n\n※動画内のロボットの絵は、公式ブログで確認できる外観の特徴をもとに描いたイメージ図で、実物とは細部が異なる場合があります。\n※この回の元になったのは査読された論文ではなく、会社の技術ブログです。ブログには成功率などの実測値は載っていません。自由度の数字は設計の数字で、できることの数字ではありません。\n※特定の製品の購入や、企業への投資を勧めるものではありません。\n\n■ 参考（一次資料）\n[1] Boston Dynamics「Robot Hands for Modern AI and Real Work」 https://bostondynamics.com/blog/robot-hands-for-modern-ai-and-real-work/\n\n#ロボット #人型ロボット #Atlas #テクノロジーニュース",
+  "depicts_real_product": true,
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 6,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "shows_product": true,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "人型ロボットの手から、小指が消えた。",
+          "expression": "excited",
+          "tone": "excited, like breaking news",
+          "t0": 0.0,
+          "dur": 3.44,
+          "cards": [
+            {
+              "text": "人型ロボットの手から、小指が消えた。",
+              "start": 0.0,
+              "end": 3.44
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「人型ロボットの手から、小指が消えた。」",
+      "narrator": "dialogue",
+      "lines_hash": "ce3a01d9ae16",
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.61,
+        "y": 0.48
+      }
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 7,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "小指がなくて、本当に困らない？",
+          "expression": "doubt",
+          "tag": "question",
+          "t0": 0.0,
+          "dur": 2.4,
+          "cards": [
+            {
+              "text": "小指がなくて、本当に困らない？",
+              "start": 0.0,
+              "end": 2.4
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「小指がなくて、本当に困らない？」",
+      "narrator": "dialogue",
+      "lines_hash": "6266443acaf2",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 8,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "指は減ったのに、関節は7から13に。",
+          "expression": "surprised",
+          "t0": 0.0,
+          "dur": 3.72,
+          "cards": [
+            {
+              "text": "指は減ったのに、関節は7から13に。",
+              "start": 0.0,
+              "end": 3.72
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「指は減ったのに、関節は7から13に。」",
+      "narrator": "dialogue",
+      "lines_hash": "7ba3506cd3a4",
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.64,
+        "y": 0.45
+      }
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 7,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "決め手は、社員が指をテープで縛った1日。",
+          "expression": "amused",
+          "t0": 0.0,
+          "dur": 3.64,
+          "cards": [
+            {
+              "text": "決め手は、社員が指をテープで縛った1日。",
+              "start": 0.0,
+              "end": 3.64
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「決め手は、社員が指をテープで縛った1日。」",
+      "narrator": "dialogue",
+      "lines_hash": "5ccc8dc99506",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 5,
+      "type": "setup",
+      "bgm_role": "intro",
+      "reference_index": 0,
+      "image_prompt": "A bright showroom-like robotics lab. Four generic humanoid robots stand in a row, each with a smooth featureless mechanical head: a plain dark glossy visor with NO eyes, NO nose, NO mouth and absolutely no human face or skin; matte gray bodies. Each holds out one open mechanical hand, simplified and small in the frame. In the foreground a table with one plastic anatomical model of a human hand showing exactly five fingers. Not any specific product. No people, no readable text.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "人型ロボットの手って、人間そっくりの5本指で作るのが当たり前だと思ってない？",
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 5.52,
+          "cards": [
+            {
+              "text": "人型ロボットの手って、人間そっくりの5本指で作るのが当たり前だと思ってない？",
+              "start": 0.0,
+              "end": 5.52
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "道具は人の手に合わせて作ってあるしね。そうじゃないの？",
+          "expression": "doubt",
+          "t0": 5.8,
+          "dur": 3.4,
+          "cards": [
+            {
+              "text": "道具は人の手に合わせて作ってあるしね。そうじゃないの？",
+              "start": 0.0,
+              "end": 3.4
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ボストン・ダイナミクスが、人型ロボットAtlas用の新しい手を公開した。その手は4本指。小指がない。",
+          "expression": "excited",
+          "t0": 9.48,
+          "dur": 8.2,
+          "cards": [
+            {
+              "text": "ボストン・ダイナミクスが、人型ロボットAtlas用の新しい手を公開した。",
+              "start": 0.0,
+              "end": 5.4
+            },
+            {
+              "text": "その手は4本指。小指がない。",
+              "start": 5.55,
+              "end": 8.4
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "小指が、ない。足りなくなったんじゃなくて、わざと？",
+          "expression": "surprised",
+          "t0": 17.96,
+          "dur": 5.84,
+          "cards": [
+            {
+              "text": "小指が、ない。足りなくなったんじゃなくて、わざと？",
+              "start": 0.0,
+              "end": 5.84
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "わざと。しかも決め手が、ちょっと笑える。",
+          "expression": "excited",
+          "t0": 24.08,
+          "dur": 4.0,
+          "cards": [
+            {
+              "text": "わざと。しかも決め手が、ちょっと笑える。",
+              "start": 0.0,
+              "end": 4.0
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「人型ロボットの手って、人間そっくりの5本指で作るのが当たり前だと思ってない？」\n沙織「道具は人の手に合わせて作ってあるしね。そうじゃないの？」\n大輔「ボストン・ダイナミクスが、人型ロボットAtlas用の新しい手を公開した。その手は4本指。小指がない。」\n沙織「小指が、ない。足りなくなったんじゃなくて、わざと？」\n大輔「わざと。しかも決め手が、ちょっと笑える。」",
+      "narrator": "dialogue",
+      "lines_hash": "484ed7414467",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 6,
+      "type": "paper",
+      "bgm_role": "intro",
+      "reference_index": 0,
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "image_prompt": "Medium close-up, waist-up view inside a robotics test cell with a bright yellow safety cage in the background. Atlas, the real humanoid robot by Boston Dynamics, drawn to match the real product: a dark charcoal-black torso, light-gray armor-shell arms, and a round head that is a glowing warm-white ring light around a black circular face disc (no human face, no eyes, no mouth). The robot stands slightly turned, holding up ONE large robotic hand beside its head, palm facing the viewer, fingers straight up and slightly spread, drawn big and in sharp focus so every digit can be counted at a glance. THE HAND HAS EXACTLY FOUR DIGITS IN TOTAL, NOT FIVE: (1) a thumb sticking out to the side, (2) an index finger, (3) a middle finger, (4) a ring finger - and nothing after the ring finger. Where a human little finger would be, the outer edge of the palm is a smooth straight flat edge with no finger at all, so the empty space is obvious. The back of the hand is a boxy silver-gray block with a flat rectangular panel; each of the three slim fingers is made of dark segments with silver joints and a tiny blue indicator light. The robot's other arm and hand are completely out of frame (cropped off at the frame edge), so only this one hand is visible. On a workbench in the lower background: a threaded metal rod and a cordless drill. No people, no text, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "元の発表は、会社の公式ブログ。Atlasの新しい手は、親指を入れて4本。動かせる関節の数、自由度は13。",
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 9.28,
+          "cards": [
+            {
+              "text": "元の発表は、会社の公式ブログ。Atlasの新しい手は、親指を入れて4本。",
+              "start": 0.0,
+              "end": 5.88
+            },
+            {
+              "text": "動かせる関節の数、自由度は13。",
+              "start": 6.03,
+              "end": 8.81
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "前の手は？",
+          "expression": "neutral",
+          "t0": 9.56,
+          "dur": 1.32,
+          "cards": [
+            {
+              "text": "前の手は？",
+              "start": 0.0,
+              "end": 1.32
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "7。ほぼ倍になってる。親指は4つ、ほかの指は3つずつ関節がある。大きさは、平均的な人の手より大きい。",
+          "expression": "excited",
+          "t0": 11.16,
+          "dur": 9.68,
+          "cards": [
+            {
+              "text": "7。ほぼ倍になってる。親指は4つ、ほかの指は3つずつ関節がある。大きさは、",
+              "start": 1.21,
+              "end": 7.6
+            },
+            {
+              "text": "平均的な人の手より大きい。",
+              "start": 7.9,
+              "end": 9.85
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "4たす3が3本で、13。計算は合ってる。センサーは？",
+          "expression": "thinking",
+          "t0": 21.12,
+          "dur": 4.6,
+          "cards": [
+            {
+              "text": "4たす3が3本で、13。計算は合ってる。センサーは？",
+              "start": 0.0,
+              "end": 4.6
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "指先と手のひらに、小さな接触まで拾う圧力センサーがびっしり。関節をまたぐ切れやすいケーブルもない。",
+          "expression": "neutral",
+          "t0": 26.0,
+          "dur": 7.4,
+          "cards": [
+            {
+              "text": "指先と手のひらに、小さな接触まで拾う圧力センサーがびっしり。関節をまたぐ切れ",
+              "start": 0.0,
+              "end": 5.82
+            },
+            {
+              "text": "やすいケーブルもない。",
+              "start": 5.97,
+              "end": 7.6
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "しかも力もある。前の手と同じくらいの力を保っていて、100ポンド以上、約45キロの荷物を積んだミニ冷蔵庫を運べる、と書いてある。",
+          "expression": "excited",
+          "t0": 33.62,
+          "dur": 10.04,
+          "cards": [
+            {
+              "text": "しかも力もある。前の手と同じくらいの力を保っていて、100ポンド以上、",
+              "start": 0.0,
+              "end": 5.32
+            },
+            {
+              "text": "約45キロの荷物を積んだミニ冷蔵庫を運べる、と書いてある。",
+              "start": 5.47,
+              "end": 9.82
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "大きめなのは、人の道具を使うためか。",
+          "expression": "thinking",
+          "t0": 43.94,
+          "dur": 3.52,
+          "cards": [
+            {
+              "text": "大きめなのは、人の道具を使うためか。",
+              "start": 0.0,
+              "end": 3.52
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そう。Atlasは、人のための道具や空間で働く前提だから、人の手に近い大きさにしたんだって。",
+          "expression": "neutral",
+          "t0": 47.74,
+          "dur": 7.64,
+          "cards": [
+            {
+              "text": "そう。Atlasは、人のための道具や空間で働く前提だから、人の手に近い大き",
+              "start": 0.0,
+              "end": 6.34
+            },
+            {
+              "text": "さにしたんだって。",
+              "start": 6.49,
+              "end": 7.84
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「元の発表は、会社の公式ブログ。Atlasの新しい手は、親指を入れて4本。動かせる関節の数、自由度は13。」\n沙織「前の手は？」\n大輔「7。ほぼ倍になってる。親指は4つ、ほかの指は3つずつ関節がある。大きさは、平均的な人の手より大きい。」\n沙織「4たす3が3本で、13。計算は合ってる。センサーは？」\n大輔「指先と手のひらに、小さな接触まで拾う圧力センサーがびっしり。関節をまたぐ切れやすいケーブルもない。」\n大輔「しかも力もある。前の手と同じくらいの力を保っていて、100ポンド以上、約45キロの荷物を積んだミニ冷蔵庫を運べる、と書いてある。」\n沙織「大きめなのは、人の道具を使うためか。」\n大輔「そう。Atlasは、人のための道具や空間で働く前提だから、人の手に近い大きさにしたんだって。」",
+      "narrator": "dialogue",
+      "lines_hash": "5d6cf44a5a9b",
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.61,
+        "y": 0.52
+      }
+    },
+    {
+      "scene_id": 7,
+      "type": "paper",
+      "bgm_role": "intro",
+      "reference_index": 0,
+      "image_prompt": "Three engineers in white lab coats, a mixed American team: a Black man in his forties, a white woman in her thirties with a ponytail, and a Latino man in his fifties with glasses; clearly distinct faces. They stand at a long workbench in a bright workshop. Each one has the ring finger and little finger of the SAME hand pressed side by side and bound together by a single wide strip of blue masking tape, so the two fingers move as one; the woman holds a cordless drill awkwardly with that hand, the older man pinches a small screwdriver and frowns, the third looks ruefully at his taped hand. A plain whiteboard behind with no writing. Friendly, slightly comic editorial illustration. No readable text.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "で、小指を外した理由は？",
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 2.36,
+          "cards": [
+            {
+              "text": "で、小指を外した理由は？",
+              "start": 0.0,
+              "end": 2.36
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "動かすための部品が3つ増える。そのぶんコストも大きさも増えるし、壊れる確率も上がる。",
+          "expression": "thinking",
+          "t0": 2.64,
+          "dur": 5.72,
+          "cards": [
+            {
+              "text": "動かすための部品が3つ増える。そのぶんコストも大きさも増えるし、",
+              "start": 0.0,
+              "end": 4.24
+            },
+            {
+              "text": "壊れる確率も上がる。",
+              "start": 4.39,
+              "end": 5.81
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それだけ？ 小指がなくても困らないって、どうやって確かめたの。",
+          "expression": "doubt",
+          "t0": 8.64,
+          "dur": 4.32,
+          "cards": [
+            {
+              "text": "それだけ？ 小指がなくても困らないって、どうやって確かめたの。",
+              "start": 0.0,
+              "end": 4.32
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "技術のトップのCTOが、チームに頼んだんだ。小指と薬指をテープでくっつけて1日過ごして、できなかったことを報告して、って。",
+          "expression": "excited",
+          "t0": 13.24,
+          "dur": 9.24,
+          "cards": [
+            {
+              "text": "技術のトップのCTOが、チームに頼んだんだ。小指と薬指をテープでくっつけて",
+              "start": 0.0,
+              "end": 5.71
+            },
+            {
+              "text": "1日過ごして、できなかったことを報告して、って。",
+              "start": 5.86,
+              "end": 9.44
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "1日だけ？ 実験っていうか、罰ゲームじゃない？",
+          "expression": "amused",
+          "t0": 22.76,
+          "dur": 3.8,
+          "cards": [
+            {
+              "text": "1日だけ？ 実験っていうか、罰ゲームじゃない？",
+              "start": 0.0,
+              "end": 3.8
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でも1日たって、チームの意見はそろった。小指はいらない。ブログにはこう書いてある。最高の部品は、部品がないこと。",
+          "expression": "convinced",
+          "t0": 26.84,
+          "dur": 10.08,
+          "cards": [
+            {
+              "text": "でも1日たって、チームの意見はそろった。小指はいらない。ブログにはこう書いてある。",
+              "start": 0.0,
+              "end": 6.44
+            },
+            {
+              "text": "最高の部品は、部品がないこと。",
+              "start": 6.59,
+              "end": 9.67
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "かっこいい決め台詞だけど、それ、数字じゃないよね。",
+          "expression": "doubt",
+          "t0": 37.2,
+          "dur": 3.2,
+          "cards": [
+            {
+              "text": "かっこいい決め台詞だけど、それ、数字じゃないよね。",
+              "start": 0.0,
+              "end": 3.2
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「で、小指を外した理由は？」\n大輔「動かすための部品が3つ増える。そのぶんコストも大きさも増えるし、壊れる確率も上がる。」\n沙織「それだけ？ 小指がなくても困らないって、どうやって確かめたの。」\n大輔「技術のトップのCTOが、チームに頼んだんだ。小指と薬指をテープでくっつけて1日過ごして、できなかったことを報告して、って。」\n沙織「1日だけ？ 実験っていうか、罰ゲームじゃない？」\n大輔「でも1日たって、チームの意見はそろった。小指はいらない。ブログにはこう書いてある。最高の部品は、部品がないこと。」\n沙織「かっこいい決め台詞だけど、それ、数字じゃないよね。」",
+      "narrator": "dialogue",
+      "lines_hash": "6589baf78097",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 8,
+      "type": "dream",
+      "bgm_role": "intro",
+      "reference_index": 0,
+      "image_prompt": "A sunny Sunday-morning Japanese living room (clearly bright daylight, not night), a half-assembled flat-pack wooden bookshelf on the floor, a generic humanoid helper robot (matte dark gray, round head with a plain dark visor, no human face, not any specific product) whose hands each have exactly four digits: a thumb and three fingers kneeling and tightening a screw with a cordless electric screwdriver, a cup of coffee steaming on a low table. No people, no readable text.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "想像してみてよ。日曜の朝、組み立て式の本棚がバラバラで届く。ロボットが電動ドライバーを持って、ねじを次々に締めていく。僕はコーヒーを飲んでるだけ。",
+          "expression": "excited",
+          "tag": "life_scene",
+          "t0": 0.0,
+          "dur": 11.36,
+          "cards": [
+            {
+              "text": "想像してみてよ。日曜の朝、組み立て式の本棚がバラバラで届く。ロボットが電動",
+              "start": 0.46,
+              "end": 6.01
+            },
+            {
+              "text": "ドライバーを持って、ねじを次々に締めていく。僕はコーヒーを飲んでるだけ。",
+              "start": 6.16,
+              "end": 11.56
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それ、4本指だから、できる話なの？",
+          "expression": "doubt",
+          "t0": 11.64,
+          "dur": 2.96,
+          "cards": [
+            {
+              "text": "それ、4本指だから、できる話なの？",
+              "start": 0.0,
+              "end": 2.96
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ブログによると、4本指でも、持ち替えや握り直し、ドリルの引き金を引く操作までできる。",
+          "expression": "neutral",
+          "t0": 14.88,
+          "dur": 6.72,
+          "cards": [
+            {
+              "text": "ブログによると、4本指でも、持ち替えや握り直し、ドリルの引き金を引く操作までできる。",
+              "start": 0.0,
+              "end": 6.44
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "『できる』って書いてあるのと、『できた』は別だよ。",
+          "expression": "doubt",
+          "t0": 21.88,
+          "dur": 3.56,
+          "cards": [
+            {
+              "text": "『できる』って書いてあるのと、『できた』は別だよ。",
+              "start": 0.0,
+              "end": 3.56
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「想像してみてよ。日曜の朝、組み立て式の本棚がバラバラで届く。ロボットが電動ドライバーを持って、ねじを次々に締めていく。僕はコーヒーを飲んでるだけ。」\n沙織「それ、4本指だから、できる話なの？」\n大輔「ブログによると、4本指でも、持ち替えや握り直し、ドリルの引き金を引く操作までできる。」\n沙織「『できる』って書いてあるのと、『できた』は別だよ。」",
+      "narrator": "dialogue",
+      "lines_hash": "bbc4866defb4",
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.64,
+        "y": 0.42
+      }
+    },
+    {
+      "scene_id": 9,
+      "type": "tsukkomi",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "image_prompt": "A neat engineer's desk in a bright office with a laptop open to a blank document, a robotic hand model, a magnifying glass resting on a printed page full of blurred text lines, and a sticky note with a large question mark. Thoughtful skeptical mood. No people, no readable text.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、そこを突っ込む。私が読んだ範囲では、このブログに成功率の数字が見当たらない。何回やって何回握れたか、が書いてない。",
+          "expression": "doubt",
+          "tag": "weakness",
+          "t0": 0.0,
+          "dur": 7.72,
+          "cards": [
+            {
+              "text": "じゃあ、そこを突っ込む。私が読んだ範囲では、このブログに成功率の数字が見当たらない。",
+              "start": 0.0,
+              "end": 5.21
+            },
+            {
+              "text": "何回やって何回握れたか、が書いてない。",
+              "start": 5.36,
+              "end": 7.72
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "……ない、のか。",
+          "expression": "deflated",
+          "t0": 8.0,
+          "dur": 2.16,
+          "cards": [
+            {
+              "text": "……ない、のか。",
+              "start": 0.0,
+              "end": 2.16
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "小指がいらない根拠も、人がテープで指を縛った1日。ロボットで5本指と比べた結果じゃない。で、それ何人で試したの？ チームで、としか書いてない。",
+          "expression": "neutral",
+          "t0": 10.44,
+          "dur": 10.76,
+          "cards": [
+            {
+              "text": "小指がいらない根拠も、人がテープで指を縛った1日。ロボットで5本指と比べた",
+              "start": 0.0,
+              "end": 5.73
+            },
+            {
+              "text": "結果じゃない。で、それ何人で試したの？ チームで、としか書いてない。",
+              "start": 5.88,
+              "end": 10.96
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "うーん。でも、人の手で先に試すのは、ロボットを作る前にできる一番早い確かめ方でもあるよ。",
+          "expression": "thinking",
+          "t0": 21.48,
+          "dur": 6.64,
+          "cards": [
+            {
+              "text": "うーん。でも、人の手で先に試すのは、ロボットを作る前にできる一番早い確かめ",
+              "start": 0.0,
+              "end": 5.66
+            },
+            {
+              "text": "方でもあるよ。",
+              "start": 5.81,
+              "end": 6.84
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それは、そう。反論しにくい。",
+          "expression": "convinced",
+          "t0": 28.4,
+          "dur": 2.68,
+          "cards": [
+            {
+              "text": "それは、そう。反論しにくい。",
+              "start": 0.0,
+              "end": 2.68
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「じゃあ、そこを突っ込む。私が読んだ範囲では、このブログに成功率の数字が見当たらない。何回やって何回握れたか、が書いてない。」\n大輔「……ない、のか。」\n沙織「小指がいらない根拠も、人がテープで指を縛った1日。ロボットで5本指と比べた結果じゃない。で、それ何人で試したの？ チームで、としか書いてない。」\n大輔「うーん。でも、人の手で先に試すのは、ロボットを作る前にできる一番早い確かめ方でもあるよ。」\n沙織「それは、そう。反論しにくい。」",
+      "narrator": "dialogue",
+      "lines_hash": "70a9ebdc06cd",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 10,
+      "type": "paper",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "image_prompt": "A robotics research lab desk with two monitors showing a 3D computer simulation of a dark robotic hand regrasping many differently shaped objects with random colors and surfaces; below the monitors a small real robotic hand prototype lies palm-up on the desk. No people, no readable text.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "それで、この手で何ができるの？",
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 2.24,
+          "cards": [
+            {
+              "text": "それで、この手で何ができるの？",
+              "start": 0.0,
+              "end": 2.24
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "小さな物をつまんで、親指でころがす。3本の指で握って動かす。工具の持ち手を握って、引き金を引く。ドリルや電動ドライバー、グラインダーが例に挙がってる。",
+          "expression": "excited",
+          "t0": 2.52,
+          "dur": 12.52,
+          "cards": [
+            {
+              "text": "小さな物をつまんで、親指でころがす。3本の指で握って動かす。工具の持ち手を握って、",
+              "start": 0.0,
+              "end": 7.22
+            },
+            {
+              "text": "引き金を引く。ドリルや電動ドライバー、グラインダーが例に挙がってる。",
+              "start": 7.37,
+              "end": 12.47
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ブログは、工具を使えることを最優先の課題に挙げてるんだ。",
+          "expression": "thinking",
+          "t0": 15.32,
+          "dur": 4.08,
+          "cards": [
+            {
+              "text": "ブログは、工具を使えることを最優先の課題に挙げてるんだ。",
+              "start": 0.0,
+              "end": 4.08
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "手は道具の道具だ、ってギリシャの哲学者の言葉まで引いてる。道具を使えれば、手の足りない分は道具が補ってくれる、って考え方。",
+          "expression": "neutral",
+          "t0": 19.68,
+          "dur": 8.96,
+          "cards": [
+            {
+              "text": "手は道具の道具だ、ってギリシャの哲学者の言葉まで引いてる。道具を使えれば、",
+              "start": 0.0,
+              "end": 5.54
+            },
+            {
+              "text": "手の足りない分は道具が補ってくれる、って考え方。",
+              "start": 5.69,
+              "end": 9.16
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "もうひとつ書いてあった。環境から手にかかる力が、そのまま関節に伝わる作りで、ぶつけても関節が逃げるから、壊れにくいって。",
+          "expression": "neutral",
+          "t0": 28.92,
+          "dur": 8.32,
+          "cards": [
+            {
+              "text": "もうひとつ書いてあった。環境から手にかかる力が、そのまま関節に伝わる作りで、",
+              "start": 0.0,
+              "end": 5.26
+            },
+            {
+              "text": "ぶつけても関節が逃げるから、壊れにくいって。",
+              "start": 5.41,
+              "end": 8.41
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それは強みだね。",
+          "expression": "convinced",
+          "t0": 37.52,
+          "dur": 2.08,
+          "cards": [
+            {
+              "text": "それは強みだね。",
+              "start": 0.0,
+              "end": 2.08
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "もうひとつ面白いのは、学ばせ方。人が手袋みたいな装置をつけて動きを見せても、ロボットの手を動かすのに本当に必要な信号までは取れない、って書いてある。",
+          "expression": "neutral",
+          "t0": 39.82,
+          "dur": 10.4,
+          "cards": [
+            {
+              "text": "もうひとつ面白いのは、学ばせ方。人が手袋みたいな装置をつけて動きを見せても、",
+              "start": 0.0,
+              "end": 5.46
+            },
+            {
+              "text": "ロボットの手を動かすのに本当に必要な信号までは取れない、って書いてある。",
+              "start": 5.61,
+              "end": 10.6
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "だから？",
+          "expression": "neutral",
+          "t0": 50.5,
+          "dur": 1.4,
+          "cards": [
+            {
+              "text": "だから？",
+              "start": 0.0,
+              "end": 1.4
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "コンピューターの中のシミュレーションで、試行錯誤させて覚えさせる。強化学習っていうやり方。物の表面の摩擦や形をわざとバラバラにして、何度も練習させる。",
+          "expression": "excited",
+          "t0": 52.18,
+          "dur": 10.68,
+          "cards": [
+            {
+              "text": "コンピューターの中のシミュレーションで、試行錯誤させて覚えさせる。",
+              "start": 0.0,
+              "end": 4.57
+            },
+            {
+              "text": "強化学習っていうやり方。物の表面の摩擦や形をわざとバラバラにして、",
+              "start": 4.72,
+              "end": 9.48
+            },
+            {
+              "text": "何度も練習させる。",
+              "start": 9.63,
+              "end": 10.88
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それで、本物の手でも動くの？",
+          "expression": "thinking",
+          "t0": 63.14,
+          "dur": 2.24,
+          "cards": [
+            {
+              "text": "それで、本物の手でも動くの？",
+              "start": 0.0,
+              "end": 2.24
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "素早い作業で、シミュレーションから実機へ移すのに、有望な初期結果が出ている、と書いてある。",
+          "expression": "neutral",
+          "t0": 65.66,
+          "dur": 5.6,
+          "cards": [
+            {
+              "text": "素早い作業で、シミュレーションから実機へ移すのに、有望な初期結果が出ている、",
+              "start": 0.2,
+              "end": 4.8
+            },
+            {
+              "text": "と書いてある。",
+              "start": 4.95,
+              "end": 5.8
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "『初期結果』って、自分で書いてるんだ。",
+          "expression": "surprised",
+          "t0": 71.54,
+          "dur": 3.32,
+          "cards": [
+            {
+              "text": "『初期結果』って、自分で書いてるんだ。",
+              "start": 0.0,
+              "end": 3.32
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "しかもね、万能の手は作れない、とも書いてる。手は、何かを諦める設計の連続だって。",
+          "expression": "thinking",
+          "t0": 75.14,
+          "dur": 6.8,
+          "cards": [
+            {
+              "text": "しかもね、万能の手は作れない、とも書いてる。手は、何かを諦める設計の連続だって。",
+              "start": 0.0,
+              "end": 6.32
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それは意外と正直。盛った発表なら、全部できます、って書くところ。",
+          "expression": "convinced",
+          "t0": 82.22,
+          "dur": 5.12,
+          "cards": [
+            {
+              "text": "それは意外と正直。盛った発表なら、全部できます、って書くところ。",
+              "start": 0.0,
+              "end": 5.12
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「それで、この手で何ができるの？」\n大輔「小さな物をつまんで、親指でころがす。3本の指で握って動かす。工具の持ち手を握って、引き金を引く。ドリルや電動ドライバー、グラインダーが例に挙がってる。」\n沙織「ブログは、工具を使えることを最優先の課題に挙げてるんだ。」\n大輔「手は道具の道具だ、ってギリシャの哲学者の言葉まで引いてる。道具を使えれば、手の足りない分は道具が補ってくれる、って考え方。」\n沙織「もうひとつ書いてあった。環境から手にかかる力が、そのまま関節に伝わる作りで、ぶつけても関節が逃げるから、壊れにくいって。」\n大輔「それは強みだね。」\n大輔「もうひとつ面白いのは、学ばせ方。人が手袋みたいな装置をつけて動きを見せても、ロボットの手を動かすのに本当に必要な信号までは取れない、って書いてある。」\n沙織「だから？」\n大輔「コンピューターの中のシミュレーションで、試行錯誤させて覚えさせる。強化学習っていうやり方。物の表面の摩擦や形をわざとバラバラにして、何度も練習させる。」\n沙織「それで、本物の手でも動くの？」\n大輔「素早い作業で、シミュレーションから実機へ移すのに、有望な初期結果が出ている、と書いてある。」\n沙織「『初期結果』って、自分で書いてるんだ。」\n大輔「しかもね、万能の手は作れない、とも書いてる。手は、何かを諦める設計の連続だって。」\n沙織「それは意外と正直。盛った発表なら、全部できます、って書くところ。」",
+      "narrator": "dialogue",
+      "lines_hash": "77e193a78e58",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 11,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "image_prompt": "A simple vertical bar chart with exactly two bars and a short title at the top reading exactly 「手の自由度（動かせる関節の数）」. Bars from left to right, each with its label directly below it and its value directly above it: 「前の世代の手」 7 (teal), 「新しい手」 13 (coral, highlighted). The y-axis runs from 0 to 14 so bar heights are proportional. Plain light background. Do not add any other text or numbers.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "数字で見ると、こう。前の世代の手が7、新しい手が13。",
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 4.6,
+          "cards": [
+            {
+              "text": "数字で見ると、こう。前の世代の手が7、新しい手が13。",
+              "start": 0.0,
+              "end": 4.6
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "小指をなくした手のほうが、関節はほぼ倍。",
+          "expression": "surprised",
+          "t0": 4.88,
+          "dur": 3.64,
+          "cards": [
+            {
+              "text": "小指をなくした手のほうが、関節はほぼ倍。",
+              "start": 0.0,
+              "end": 3.64
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "指を減らして、1本ごとの動きを増やした。ただし、これは設計の数字。できることの数字じゃない。",
+          "expression": "doubt",
+          "tag": "weakness",
+          "t0": 8.8,
+          "dur": 6.92,
+          "cards": [
+            {
+              "text": "指を減らして、1本ごとの動きを増やした。ただし、これは設計の数字。",
+              "start": 0.0,
+              "end": 4.94
+            },
+            {
+              "text": "できることの数字じゃない。",
+              "start": 5.09,
+              "end": 7.0
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「数字で見ると、こう。前の世代の手が7、新しい手が13。」\n大輔「小指をなくした手のほうが、関節はほぼ倍。」\n沙織「指を減らして、1本ごとの動きを増やした。ただし、これは設計の数字。できることの数字じゃない。」",
+      "narrator": "dialogue",
+      "lines_hash": "7c754f48ace1",
+      "ken_burns": "static"
+    },
+    {
+      "scene_id": 12,
+      "type": "tsukkomi",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "image_prompt": "A bright engineer's workbench in a robotics workshop: many tiny motors, gears, small circuit boards and metal brackets laid out in neat rows as if a robot hand had been taken apart for repair, plus a screwdriver and tweezers. No assembled hand, no fingers, no human or robot figure on the bench - only loose parts. In the soft-focus background a large logistics warehouse with tall shelves and cardboard boxes. No people, no readable text.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "次に壁。ブログ自身が、この手は長期の賭けだと書いてる。信頼できる部品を、たくさん、安く作る戦いが、これからだって。",
+          "expression": "neutral",
+          "tag": "barrier",
+          "t0": 0.0,
+          "dur": 8.6,
+          "cards": [
+            {
+              "text": "次に壁。ブログ自身が、この手は長期の賭けだと書いてる。信頼できる部品を、",
+              "start": 0.0,
+              "end": 5.48
+            },
+            {
+              "text": "たくさん、安く作る戦いが、これからだって。",
+              "start": 5.63,
+              "end": 8.74
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "作って終わりじゃないのか。",
+          "expression": "deflated",
+          "t0": 8.88,
+          "dur": 2.16,
+          "cards": [
+            {
+              "text": "作って終わりじゃないのか。",
+              "start": 0.0,
+              "end": 2.16
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "開発者も、手は小さなロボットが丸ごと入っているようなものだと言ってる。関節もモーターも多い。部品が多いほど壊れやすいのは、小指を外した理由そのもの。",
+          "expression": "thinking",
+          "t0": 11.32,
+          "dur": 10.08,
+          "cards": [
+            {
+              "text": "開発者も、手は小さなロボットが丸ごと入っているようなものだと言ってる。",
+              "start": 0.0,
+              "end": 4.7
+            },
+            {
+              "text": "関節もモーターも多い。部品が多いほど壊れやすいのは、小指を外した理由そのもの。",
+              "start": 4.85,
+              "end": 10.28
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、ブログが想定してるのは工場や物流の現場。家の話はブログに出てこないけど、物も人も予測できないぶん、もっと難しいと思う。",
+          "expression": "doubt",
+          "t0": 21.62,
+          "dur": 10.2,
+          "cards": [
+            {
+              "text": "それに、ブログが想定してるのは工場や物流の現場。家の話はブログに出てこないけど、",
+              "start": 0.0,
+              "end": 6.6
+            },
+            {
+              "text": "物も人も予測できないぶん、もっと難しいと思う。",
+              "start": 6.78,
+              "end": 10.23
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "日曜の本棚は、先送りか。",
+          "expression": "deflated",
+          "t0": 32.1,
+          "dur": 2.92,
+          "cards": [
+            {
+              "text": "日曜の本棚は、先送りか。",
+              "start": 0.0,
+              "end": 2.92
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「次に壁。ブログ自身が、この手は長期の賭けだと書いてる。信頼できる部品を、たくさん、安く作る戦いが、これからだって。」\n大輔「作って終わりじゃないのか。」\n沙織「開発者も、手は小さなロボットが丸ごと入っているようなものだと言ってる。関節もモーターも多い。部品が多いほど壊れやすいのは、小指を外した理由そのもの。」\n沙織「それに、ブログが想定してるのは工場や物流の現場。家の話はブログに出てこないけど、物も人も予測できないぶん、もっと難しいと思う。」\n大輔「日曜の本棚は、先送りか。」",
+      "narrator": "dialogue",
+      "lines_hash": "04cce749bc1f",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 13,
+      "type": "dream",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "image_prompt": "A tidy bright factory workstation during the night shift (dark night sky visible through large windows, warm overhead lights): a generic humanoid helper robot (matte dark gray, round head with a plain dark visor, no human face, not any specific product) whose hands each have exactly four digits: a thumb and three fingers using a cordless drill to fasten a part on an assembly jig, clean industrial setting, no people. No readable text.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、言い直す。先に来るのは、家じゃなくて工場や倉庫。決まった作業台で、電動工具を持って、毎日同じ組み立てをこなすロボット。",
+          "expression": "thinking",
+          "t0": 0.0,
+          "dur": 9.76,
+          "cards": [
+            {
+              "text": "じゃあ、言い直す。先に来るのは、家じゃなくて工場や倉庫。決まった作業台で、",
+              "start": 0.0,
+              "end": 5.68
+            },
+            {
+              "text": "電動工具を持って、毎日同じ組み立てをこなすロボット。",
+              "start": 5.83,
+              "end": 9.73
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "想像してみてよ。人が一日中、同じ姿勢で続けてる組み立てを、ロボットが夜通し引き受けてる。",
+          "expression": "excited",
+          "t0": 9.98,
+          "dur": 6.6,
+          "cards": [
+            {
+              "text": "想像してみてよ。人が一日中、同じ姿勢で続けてる組み立てを、ロボットが夜通し",
+              "start": 0.0,
+              "end": 5.44
+            },
+            {
+              "text": "引き受けてる。",
+              "start": 5.59,
+              "end": 6.62
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それなら、ありそう。工具を使う仕事に絞った手だし。",
+          "expression": "amused",
+          "t0": 16.86,
+          "dur": 4.24,
+          "cards": [
+            {
+              "text": "それなら、ありそう。工具を使う仕事に絞った手だし。",
+              "start": 0.0,
+              "end": 4.24
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "で、時期はどのくらいだと思う？",
+          "expression": "neutral",
+          "t0": 21.38,
+          "dur": 2.6,
+          "cards": [
+            {
+              "text": "で、時期はどのくらいだと思う？",
+              "start": 0.0,
+              "end": 2.6
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「じゃあ、言い直す。先に来るのは、家じゃなくて工場や倉庫。決まった作業台で、電動工具を持って、毎日同じ組み立てをこなすロボット。」\n大輔「想像してみてよ。人が一日中、同じ姿勢で続けてる組み立てを、ロボットが夜通し引き受けてる。」\n沙織「それなら、ありそう。工具を使う仕事に絞った手だし。」\n大輔「で、時期はどのくらいだと思う？」",
+      "narrator": "dialogue",
+      "lines_hash": "1b9ca8fbd42e",
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.49,
+        "y": 0.45
+      }
+    },
+    {
+      "scene_id": 14,
+      "type": "verdict",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "verdict_from_line": 4,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、判定。お題は、小指のないこの手が、工場や倉庫で働き出すのはいつか。",
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 6.16,
+          "cards": [
+            {
+              "text": "じゃあ、判定。お題は、小指のないこの手が、工場や倉庫で働き出すのはいつか。",
+              "start": 0.0,
+              "end": 6.16
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕は「もうすぐ来る」。設計の筋は通ってるし、ドリルの引き金を引けるところまで来てる。電動工具を使う現場なら、近いよ。",
+          "expression": "excited",
+          "t0": 6.44,
+          "dur": 8.4,
+          "cards": [
+            {
+              "text": "僕は「もうすぐ来る」。設計の筋は通ってるし、ドリルの引き金を引けるところまで来てる。",
+              "start": 0.0,
+              "end": 5.97
+            },
+            {
+              "text": "電動工具を使う現場なら、近いよ。",
+              "start": 6.12,
+              "end": 8.48
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は「3年はかかる」。成功率も、何時間動かしたかも、まだ出てない。作り方は筋が通ってるけど、安く、たくさん作る壁が残ってる。3年より先のことは、今の材料じゃ言えない。",
+          "expression": "doubt",
+          "tone": "calm, firm",
+          "t0": 15.12,
+          "dur": 12.2,
+          "cards": [
+            {
+              "text": "私は「3年はかかる」。成功率も、何時間動かしたかも、まだ出てない。",
+              "start": 0.0,
+              "end": 4.88
+            },
+            {
+              "text": "作り方は筋が通ってるけど、安く、たくさん作る壁が残ってる。3年より先のことは、",
+              "start": 5.08,
+              "end": 10.67
+            },
+            {
+              "text": "今の材料じゃ言えない。",
+              "start": 10.82,
+              "end": 12.4
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "割れたね。3年か。",
+          "expression": "convinced",
+          "t0": 27.6,
+          "dur": 2.8,
+          "cards": [
+            {
+              "text": "割れたね。3年か。",
+              "start": 0.0,
+              "end": 2.8
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "数字が出たら、また判定しよう。",
+          "expression": "amused",
+          "t0": 30.68,
+          "dur": 2.0,
+          "cards": [
+            {
+              "text": "数字が出たら、また判定しよう。",
+              "start": 0.0,
+              "end": 2.0
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「じゃあ、判定。お題は、小指のないこの手が、工場や倉庫で働き出すのはいつか。」\n大輔「僕は「もうすぐ来る」。設計の筋は通ってるし、ドリルの引き金を引けるところまで来てる。電動工具を使う現場なら、近いよ。」\n沙織「私は「3年はかかる」。成功率も、何時間動かしたかも、まだ出てない。作り方は筋が通ってるけど、安く、たくさん作る壁が残ってる。3年より先のことは、今の材料じゃ言えない。」\n大輔「割れたね。3年か。」\n沙織「数字が出たら、また判定しよう。」",
+      "narrator": "dialogue",
+      "lines_hash": "97c9a1b330d1",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 15,
+      "type": "closing",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "小指一本で、ここまで話せるとは思わなかった。",
+          "expression": "excited",
+          "t0": 0.0,
+          "dur": 3.6,
+          "cards": [
+            {
+              "text": "小指一本で、ここまで話せるとは思わなかった。",
+              "start": 0.0,
+              "end": 3.6
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "会社の発表でも、書いてあることと、書いてないことを分けて読む。今日の判定は、10月5日時点の、私たち二人の見立てです。",
+          "expression": "neutral",
+          "t0": 3.88,
+          "dur": 8.68,
+          "cards": [
+            {
+              "text": "会社の発表でも、書いてあることと、書いてないことを分けて読む。今日の判定は、",
+              "start": 0.0,
+              "end": 5.49
+            },
+            {
+              "text": "10月5日時点の、私たち二人の見立てです。",
+              "start": 5.64,
+              "end": 8.68
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "excited",
+          "t0": 12.84,
+          "dur": 4.88,
+          "cards": [
+            {
+              "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+              "start": 0.0,
+              "end": 4.88
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "amused",
+          "t0": 18.0,
+          "dur": 7.0,
+          "cards": [
+            {
+              "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。",
+              "start": 0.0,
+              "end": 4.73
+            },
+            {
+              "text": "チャンネル登録して、待っていてください。",
+              "start": 4.88,
+              "end": 7.2
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「小指一本で、ここまで話せるとは思わなかった。」\n沙織「会社の発表でも、書いてあることと、書いてないことを分けて読む。今日の判定は、10月5日時点の、私たち二人の見立てです。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」",
+      "narrator": "dialogue",
+      "lines_hash": "f92d429ee6a0",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "skeptic",
+          "narration": "ロボの手から、小指が消えた。",
+          "expression": "surprised",
+          "scene_id": 6,
+          "badge_text": "イメージ図（実物と異なる場合があります）"
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "決め手は、社員が指をテープで縛った1日。",
+          "expression": "excited",
+          "scene_id": 7
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "ロボットの試験じゃなくて、人の実験。",
+          "expression": "doubt",
+          "scene_id": 10
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "でも指は減って、関節は7から13に。",
+          "expression": "surprised",
+          "scene_id": 11
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "成功率の数字は、見当たらない。",
+          "expression": "doubt",
+          "react": "deflated",
+          "scene_id": 12
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "判定は割れた。続きは本編で。",
+          "expression": "excited",
+          "scene_id": 13
+        }
+      ]
+    }
+  ],
+  "bgm_sources": {
+    "intro": "BGM/kl030-BGM-intro.mp3",
+    "main": "BGM/kl031-BGM-main.mp3",
+    "outro": "BGM/kl025-BGM-outro.mp3"
+  },
+  "youtube_url": "https://youtu.be/JnlCbKnby2c",
+  "shorts_url": "https://youtu.be/4pjMayP68SI",
+  "scheduled_at": "2026-10-07 19:00"
+}

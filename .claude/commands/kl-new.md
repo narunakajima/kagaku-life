@@ -372,8 +372,9 @@ python3 kl_dialogue.py check --episode kl{NNN}
 
 **判定（チャンネルの看板）:**
 
-- トップレベルの `verdict: {"dreamer": key, "skeptic": key}`。key は `soon`（もうすぐ来る）／`decade`（10年はかかる）／
+- トップレベルの `verdict: {"dreamer": key, "skeptic": key}`。key は `soon`（もうすぐ来る）／`decade`（3年はかかる）／
   `dubious`（まだ眉唾）。ラベルの文言と色は `cast.json` の `verdicts`
+- **年数の見通しは3年先までにする（2026-10-05、なるさんの指示）。** AIの発達で研究の進みが速く、10年先は予測できない。「10年」「十年後」を台詞に書かない。3年を超えそうなら、期間を言い切らず「そこまでは分からない」と言い、判定は `dubious` か、3年先までの話に絞る。
 - 判定は毎回変わること。**二人の判定が割れる回もあってよい**（kl031は割れ、kl032は一致）。直近の回と同じ判定が
   続いていないかをSTEP5で見る
 - `verdict` シーンの `verdict_from_line`（1始まり）の行から、画面に判定ラベルが出る（割れたら二人分）。

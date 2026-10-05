@@ -225,7 +225,8 @@ def main():
 
     for scene in ep["scenes"]:
         sid = scene["scene_id"]
-        bgm_role = TYPE_TO_BGM_ROLE.get(scene["type"])
+        # 掛け合い形式（2026-10-04〜）は各シーンの bgm_role が正。旧形式だけ type から決める
+        bgm_role = scene.get("bgm_role") or TYPE_TO_BGM_ROLE.get(scene["type"])
         bgm_uri = _bgm_rel_path(bgm_sources, bgm_role) if bgm_role else None
         cards.append(scene_card(
             "本編", sid, TYPE_LABEL.get(scene["type"], scene["type"]), scene["narrator"],
