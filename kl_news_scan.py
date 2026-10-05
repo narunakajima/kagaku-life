@@ -42,6 +42,7 @@ POOL_JSON = BASE_DIR / "news_pool.json"            # collect の結果（作業�
 CANDIDATES_JSON = BASE_DIR / "news_candidates.json"  # score の結果（gitで追跡）
 CONCERNS_JSON = BASE_DIR / "viewer_concerns.json"
 QUEUE_JSON = BASE_DIR / "topics_queue.json"
+GENRES_JSON = BASE_DIR / "genres.json"            # 2026-10-06: 5ジャンル（再生リスト・提案の分類）
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
 MODEL = "gemini-flash-latest"
@@ -49,7 +50,7 @@ UA = {"User-Agent": "Mozilla/5.0 (kagaku-life news scan)"}
 
 # 一次資料が確認できない候補は採用しない（追記メモ §3）。検証可能性がこの点以下なら除外する
 MIN_VERIFIABILITY = 3
-SCAN_VERSION = "2026-10-04-news-first"
+SCAN_VERSION = "2026-10-06-genres"
 
 # 採点の重み（追記メモ §4）。検証可能性は足切り（MIN_VERIFIABILITY）にも使う
 WEIGHTS = {
@@ -197,6 +198,13 @@ def cmd_collect(days: int):
     print(f"\n収集 {len(uniq)}件 → 番組で扱える分野 {len(keep)}件（{POOL_JSON.name}）")
 
 
+def genres_brief() -> str:
+    g = json.loads(GENRES_JSON.read_text(encoding="utf-8"))
+    lines = [f"- {k}: {g['genres'][k]['label']} — {g['genres'][k]['definition']}（含める: {g['genres'][k]['include']}／含めない: {g['genres'][k]['exclude']}）"
+             for k in g["order"]]
+    return "\n".join(lines) + "\n分類の規則: " + g["rules"]["classify"] + "\nhealth: " + g["rules"]["health"]
+
+
 def freshness_score(published: str) -> int:
     try:
         d = (datetime.now().date() - datetime.fromisoformat(published[:10]).date()).days
@@ -249,11 +257,14 @@ Google検索で調べ、次を出力してください。
 9. tsukkomi_material: ツッコミが突ける具体的な点（1〜2文）
 10. investment_related: 株価・投資判断の話が中心なら true
 11. deja_vu_note: 過去の回と似ていれば、どの回か
+12. genre: 次の5ジャンルのどれか1つ（id）。
+{genres}
+13. health: 健康系の回として数えるか（true/false）。上の health の規則に従う
 
 JSONオブジェクトのみで出力（他の文章は書かない）:
 {{"primary_sources": [], "announced_on": "", "headline_claim": "", "actual_content": "", "buzz_jp": 0, "verifiability": 0,
 "hype_gap": 0, "debate": 0, "wonder": 0, "life_relevance": 0, "concern_id": null, "entry_question": "",
-"expected_verdicts": {{}}, "tsukkomi_material": "", "investment_related": false, "deja_vu_note": ""}}
+"expected_verdicts": {{}}, "tsukkomi_material": "", "investment_related": false, "deja_vu_note": "", "genre": "", "health": false}}
 """
 
 
@@ -261,7 +272,7 @@ def score_item(client, types, item: dict, past: str, concerns: str) -> dict:
     prompt = SCORE_PROMPT.format(title=item["title"], published=item.get("published", ""),
                                  source=item.get("source", ""), source_kind=item.get("source_kind", ""),
                                  url=item.get("url", ""), summary=item.get("summary", ""),
-                                 past=past or "（なし）", concerns=concerns)
+                                 past=past or "（なし）", concerns=concerns, genres=genres_brief())
     for attempt in range(3):
         try:
             resp = client.models.generate_content(
@@ -330,6 +341,59 @@ def cmd_score(top: int):
     print(f"\n{len(todo)}件を採点して {CANDIDATES_JSON.name} に追記しました")
 
 
+def cmd_tag():
+    """採点済みでジャンルが未付与の候補に、5ジャンルと health を付ける（検索なし・テキストのみの1回の呼び出し）。"""
+    cands = load_candidates()
+    todo = [c for c in cands["items"] if not c.get("genre")]
+    if not todo:
+        print("ジャンル未付与の候補はありません")
+        return
+    client, types = _gemini()
+    rows = "\n".join(f"{i}. {c['title']} / {c.get('entry_question', '')} / {(c.get('actual_content') or c.get('summary') or '')[:160]}"
+                     for i, c in enumerate(todo))
+    prompt = (f"科学解説番組のニュース候補を5ジャンルに分類してください。\n{genres_brief()}\n\n候補:\n{rows}\n\n"
+              'JSON配列のみ出力: [{"i": 0, "genre": "id", "health": false}, ...]（全候補分）')
+    resp = client.models.generate_content(model=MODEL, contents=prompt)
+    out = _json_from(resp.text)
+    valid = set(json.loads(GENRES_JSON.read_text(encoding="utf-8"))["order"])
+    n = 0
+    for r in out:
+        c = todo[int(r["i"])]
+        if r.get("genre") in valid:
+            c["genre"], c["health"] = r["genre"], bool(r.get("health"))
+            n += 1
+    CANDIDATES_JSON.write_text(json.dumps(cands, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"{n}/{len(todo)}件にジャンルを付けました")
+
+
+def _print_candidate(c: dict):
+    print(f"[{c['overall_score']:.2f}] {c['title'][:80]}（{c.get('announced_on') or c.get('published')}）"
+          + ("  ※健康系" if c.get("health") else ""))
+    print(f"   問い: {c.get('entry_question')}")
+    print(f"   見出し: {c.get('headline_claim')}")
+    print(f"   実際: {c.get('actual_content')}")
+    print(f"   ツッコミ: {c.get('tsukkomi_material')}  予想判定: {c.get('expected_verdicts')}")
+    print(f"   一次資料: " + ", ".join(s.get('url', '') for s in c.get('primary_sources', [])))
+    if c.get("deja_vu_note"):
+        print(f"   既視感: {c['deja_vu_note']}")
+
+
+def cmd_list_by_genre(per: int):
+    """5ジャンルごとに上位 per 件を出す。ジャンルが薄いときは薄いと表示する（無理に埋めない）。"""
+    g = json.loads(GENRES_JSON.read_text(encoding="utf-8"))
+    cands = load_candidates()["items"]
+    avail = [c for c in cands if c.get("status") == "available"]
+    for c in avail:
+        c["overall_score"], c["freshness"] = overall(c, c.get("published", ""))
+    for key in g["order"]:
+        mine = sorted((c for c in avail if c.get("genre") == key), key=lambda c: c["overall_score"], reverse=True)
+        print(f"\n==== {g['genres'][key]['label']}（{key}）— 採点済み{len(mine)}件 ====")
+        if not mine:
+            print("   （採点済みの候補なし。collect/score を増やす必要あり）")
+        for c in mine[:per]:
+            _print_candidate(c)
+
+
 def cmd_list(top: int):
     cands = load_candidates()["items"]
     avail = [c for c in cands if c.get("status") == "available"]
@@ -338,26 +402,24 @@ def cmd_list(top: int):
         c["overall_score"], c["freshness"] = overall(c, c.get("published", ""))
     avail.sort(key=lambda c: c["overall_score"], reverse=True)
     for c in avail[:top]:
-        print(f"[{c['overall_score']:.2f}] {c['title'][:80]}（{c.get('announced_on') or c.get('published')}）")
-        print(f"   問い: {c.get('entry_question')}")
-        print(f"   見出し: {c.get('headline_claim')}")
-        print(f"   実際: {c.get('actual_content')}")
-        print(f"   ツッコミ: {c.get('tsukkomi_material')}  予想判定: {c.get('expected_verdicts')}")
-        print(f"   一次資料: " + ", ".join(s.get('url', '') for s in c.get('primary_sources', [])))
-        if c.get("deja_vu_note"):
-            print(f"   既視感: {c['deja_vu_note']}")
+        _print_candidate(c)
 
 
 def main():
     ap = argparse.ArgumentParser(description="ニュース起点のネタ選定")
-    ap.add_argument("command", choices=["collect", "score", "list"])
+    ap.add_argument("command", choices=["collect", "score", "list", "tag"])
     ap.add_argument("--days", type=int, default=21)
     ap.add_argument("--top", type=int, default=15)
+    ap.add_argument("--by-genre", action="store_true", help="list: 5ジャンルごとに上位を出す（--top はジャンルあたりの件数）")
     args = ap.parse_args()
     if args.command == "collect":
         cmd_collect(args.days)
     elif args.command == "score":
         cmd_score(args.top)
+    elif args.command == "tag":
+        cmd_tag()
+    elif args.by_genre:
+        cmd_list_by_genre(args.top)
     else:
         cmd_list(args.top)
 

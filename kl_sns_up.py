@@ -335,6 +335,13 @@ def run(episode_id: str, publish_at: Optional[str] = None, publish_now: bool = F
 
     update_topics_queue_status(episode_id)
 
+    # 2026-10-06: 本編を該当ジャンルの再生リストに入れる（genre は topics_queue.json。無ければスキップして警告）
+    try:
+        from kl_playlists import add_episode_to_playlist
+        add_episode_to_playlist(youtube, episode_id)
+    except Exception as e:  # 再生リストの失敗でアップロード自体は止めない
+        print(f"  ⚠️  再生リストへの追加に失敗（後で python3 kl_playlists.py --episode {episode_id}）: {e}")
+
     print(f"\n{'━'*60}")
     print(f"  ✓ アップロード完了（{publish_label}）")
     print(f"  本編:   https://youtu.be/{main_id}")

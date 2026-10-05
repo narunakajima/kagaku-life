@@ -248,3 +248,10 @@ Drive同期前（`kl_finalize.py`未実行、または一部ファイルが見�
 `episodes/kl*.json`と`topics_queue.json`のみを読むローカル処理で、
 生成後のGit push以降の実際のデプロイ反映（Vercel）はリポジトリ側のCI連携に
 委ねている（このコマンド自体はデプロイの完了を待ち受けない）。
+
+
+---
+
+## 再生リスト（2026-10-06〜）
+
+`kl_sns_up.py` は本編のアップロード直後に、`topics_queue.json` の `genre` に対応する再生リスト（`theme_playlists.json`、5ジャンル）へ本編を自動で追加する（`kl_playlists.py`）。`genre` が未設定だとスキップして警告が出るので、`/kl-new` STAGE5で必ず `genre`/`health` を入れておくこと。失敗してもアップロード自体は止まらない。後から入れ直すときは `python3 kl_playlists.py --episode kl{NNN}`。Shortsは再生リストに入れない。

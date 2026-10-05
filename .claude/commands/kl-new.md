@@ -191,7 +191,9 @@ WebSearchで補助的に探してよい。査読済み掲載であることを�
 - `episode_id`: 既存の最大値+1（`kl{NNN}`）、`status`: `"confirmed"`
 - `slot_type`: `"concern"`（関心ごと起点）／`"wildcard"`（ワイルドカード回）
 - `concern_id`: 関心ごとのid（ワイルドカード回は近いものがあれば記入、無ければ `null`）
-- `domain`: 関心ごとの領域（`body`/`disease`/`daily`/`life`）。ワイルドカード回も内容に近い領域を
+- `genre`: 5ジャンルのどれか（`ai`/`humanoid`/`medical`/`food_health`/`life_tech`、定義は `genres.json`）。**再生リスト・公式サイト・ニュース提案の分類の正**（2026-10-06〜）。迷ったら `genres.json` の `rules.classify`（驚きの中心がAIの能力ならai、成果が薬・食品なら medical/food_health、ロボットは人の形かだけで humanoid/life_tech）
+- `health`: 健康系の回として数えるか（true/false）。ヒトの体・病気・毎日の調子・老化・食と健康の研究紹介なら true。動物の医療・食の技術・ロボットやAIの能力が主役の回は false（`genres.json` の `rules.health`）。5話に2話までの上限はこの印で数える
+- `domain`: 関心ごとの領域（`body`/`disease`/`daily`/`life`、履歴・分析用。分類には使わない）。ワイルドカード回も内容に近い領域を
   1つ入れる（健康系の上限の判定と公式サイトの分類に使う）
 - `entry_question`: 視聴者側の問い
 - `title` / `format` / `references[]`（`title`/`authors`/`year`/`venue`/`url`または`doi`/`is_preprint`/`institution`） /
@@ -223,14 +225,16 @@ WebSearchで補助的に探してよい。査読済み掲載であることを�
 ```bash
 /usr/bin/python3 kl_news_scan.py collect --days 21   # RSS（news_sources.json）＋Gemini検索で直近の発表を集める
 /usr/bin/python3 kl_news_scan.py score --top 15      # 一次資料を探させて採点（検索つき、1件ずつ課金）
-/usr/bin/python3 kl_news_scan.py list --top 10       # 上位を表示（鮮度は表示時点で計算し直す）
+/usr/bin/python3 kl_news_scan.py tag                  # ジャンル未付与の採点済み候補に5ジャンルを付ける（score は自動で付ける）
+/usr/bin/python3 kl_news_scan.py list --by-genre --top 3   # 5ジャンルごとに上位3件を表示（既定の提案の形）
+/usr/bin/python3 kl_news_scan.py list --top 10       # 全体の上位を表示（鮮度は表示時点で計算し直す）
 ```
 
 - **採点の軸（重み）:** 鮮度0.15（一次資料の発表日から。7日以内5点〜1か月超1点）／話題性（日本語圏）0.15／
   誇張度（見出しと中身の差）0.15／議論を呼ぶか0.15／驚き0.15／暮らしとの関わり0.15（`viewer_concerns.json` を参照）／
   検証可能性0.10。**検証可能性が3点未満、または一次資料が1つも見つからない候補は除外**（噂・リーク・出典不明は採用しない）。
   株価・投資が中心の話題も除外
-- **提示:** 上位5件程度を、問い・見出しで言われていること・一次資料に実際に書いてあること・ツッコミの材料・予想される判定・
+- **提示（2026-10-06〜）:** ニュースは**5ジャンル（AIの進化／ヒューマノイド／医療の最前線／食と健康／暮らしの技術）ごとに**提案する（`list --by-genre`）。ジャンルの採点済み候補が薄い（0〜2件）ときは薄いと明記し、`news_pool.json` の未採点分を `score` で足すか、`news_sources.json` の収集源を増やすことを提案する（無理にほかのジャンルの候補で埋めない）。直近の回と同じジャンルが続かないよう `kl_concern_select.py` のジャンルの間隔を見て推奨を決める。1ジャンルあたり、問い・見出しで言われていること・一次資料に実際に書いてあること・ツッコミの材料・予想される判定・
   一次資料のURLと一緒に見せる。健康系の上限（5話に2話）・同じ関心ごとの間隔は `concern_id` で従来どおり確認する
 - **一次資料を自分で読む（必須）:** 採点の要約を鵜呑みにせず、台本を書く前に一次資料（発表元の論文・公式ブログ・
   技術レポート・プレスリリース・製品ページ）を WebFetch で読む。報道記事は「何が発表されたか」を知る手がかりにだけ使い、

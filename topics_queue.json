@@ -100,7 +100,9 @@
       ],
       "slot_type": "legacy",
       "concern_id": "housework",
-      "domain": "life"
+      "domain": "life",
+      "genre": "life_tech",
+      "health": false
     },
     {
       "episode_id": "kl002",
@@ -142,7 +144,9 @@
       ],
       "slot_type": "legacy",
       "concern_id": "work_ai",
-      "domain": "life"
+      "domain": "life",
+      "genre": "ai",
+      "health": false
     },
     {
       "episode_id": "kl003",
@@ -184,7 +188,9 @@
       ],
       "slot_type": "legacy",
       "concern_id": null,
-      "domain": "body"
+      "domain": "body",
+      "genre": "medical",
+      "health": true
     },
     {
       "episode_id": "kl004",
@@ -226,7 +232,9 @@
       ],
       "slot_type": "legacy",
       "concern_id": "bone_muscle",
-      "domain": "body"
+      "domain": "body",
+      "genre": "life_tech",
+      "health": true
     },
     {
       "episode_id": "kl005",
@@ -265,7 +273,9 @@
       ],
       "slot_type": "legacy",
       "concern_id": "dementia",
-      "domain": "disease"
+      "domain": "disease",
+      "genre": "medical",
+      "health": true
     },
     {
       "episode_id": "kl006",
@@ -306,7 +316,9 @@
       ],
       "slot_type": "legacy",
       "concern_id": "disaster",
-      "domain": "life"
+      "domain": "life",
+      "genre": "life_tech",
+      "health": false
     },
     {
       "episode_id": "kl007",
@@ -381,7 +393,9 @@
       ],
       "slot_type": "legacy",
       "concern_id": null,
-      "domain": "body"
+      "domain": "body",
+      "genre": "medical",
+      "health": true
     },
     {
       "episode_id": "kl008",
@@ -427,7 +441,9 @@
       ],
       "slot_type": "legacy",
       "concern_id": "housework",
-      "domain": "life"
+      "domain": "life",
+      "genre": "life_tech",
+      "health": false
     },
     {
       "episode_id": "kl009",
@@ -470,7 +486,9 @@
       ],
       "slot_type": "legacy",
       "concern_id": null,
-      "domain": "body"
+      "domain": "body",
+      "genre": "medical",
+      "health": true
     },
     {
       "episode_id": "kl010",
@@ -514,7 +532,9 @@
       ],
       "slot_type": "legacy",
       "concern_id": "bone_muscle",
-      "domain": "body"
+      "domain": "body",
+      "genre": "life_tech",
+      "health": true
     },
     {
       "episode_id": "kl011",
@@ -558,7 +578,9 @@
       ],
       "slot_type": "legacy",
       "concern_id": "housework",
-      "domain": "life"
+      "domain": "life",
+      "genre": "life_tech",
+      "health": false
     },
     {
       "episode_id": "kl012",
@@ -599,7 +621,9 @@
       ],
       "slot_type": "legacy",
       "concern_id": "work_ai",
-      "domain": "life"
+      "domain": "life",
+      "genre": "ai",
+      "health": false
     },
     {
       "episode_id": "kl013",
@@ -638,7 +662,9 @@
       ],
       "slot_type": "legacy",
       "concern_id": "disaster",
-      "domain": "life"
+      "domain": "life",
+      "genre": "life_tech",
+      "health": false
     },
     {
       "episode_id": "kl014",
@@ -683,7 +709,9 @@
       ],
       "slot_type": "legacy",
       "concern_id": "dementia",
-      "domain": "disease"
+      "domain": "disease",
+      "genre": "medical",
+      "health": true
     },
     {
       "episode_id": "kl015",
@@ -733,7 +761,9 @@
       },
       "slot_type": "legacy",
       "concern_id": null,
-      "domain": "body"
+      "domain": "body",
+      "genre": "medical",
+      "health": true
     },
     {
       "episode_id": "kl016",
@@ -785,7 +815,9 @@
       },
       "slot_type": "legacy",
       "concern_id": "bp_stroke_heart",
-      "domain": "disease"
+      "domain": "disease",
+      "genre": "medical",
+      "health": true
     },
     {
       "episode_id": "kl017",
@@ -833,7 +865,9 @@
       },
       "slot_type": "legacy",
       "concern_id": null,
-      "domain": "disease"
+      "domain": "disease",
+      "genre": "ai",
+      "health": true
     },
     {
       "episode_id": "kl018",
@@ -891,7 +925,9 @@
       },
       "slot_type": "legacy",
       "concern_id": "housework",
-      "domain": "life"
+      "domain": "life",
+      "genre": "humanoid",
+      "health": false
     },
     {
       "episode_id": "kl019",
@@ -940,7 +976,9 @@
       },
       "slot_type": "legacy",
       "concern_id": "disaster",
-      "domain": "life"
+      "domain": "life",
+      "genre": "life_tech",
+      "health": false
     },
     {
       "episode_id": "kl020",
@@ -986,7 +1024,9 @@
       },
       "slot_type": "legacy",
       "concern_id": "housework",
-      "domain": "life"
+      "domain": "life",
+      "genre": "life_tech",
+      "health": false
     },
     {
       "episode_id": "kl021",
@@ -1036,7 +1076,9 @@
       "notes": "2026-09-14: 通常のSTAGE0〜4パイプラインが提示した候補（6カテゴリ横断、触覚センサー人工皮膚・呼吸補助ソフトロボット・ロボット群自律制御等）をユーザーが全て『面白みに欠ける』として却下（該当8件はtopics_shortlist.jsonにstatus: rejectedとして記録済み）。原因調査のため/consult（Claude×Gemini対話→Opus統合）を実施し、『AI・ロボティクスの派手な速報だけに絞る』方向転換は番組アイデンティティ崩壊のリスクが高く不採用と結論。一方、実測で在庫上位が2〜3年前のBCI系論文に偏っている既視感判定の構造的な穴（deja_vu_level=partial帯にキャップが効かない）が判明（未修正、今後の課題）。2026年発表限定で全カテゴリSTAGE1を再実行したが最高スコア3.2（ほぼ全てlow_quality除外）と有望な候補は得られなかった。\n\nこの直後、ユーザーが通常パイプラインを経由しない『ワイルドカード』としてER-100（老化細胞の若返り遺伝子治療）を持ち込んだ。CLAUDE.mdの『AI・ロボティクス分野の学術論文』『medical_supportはAI/ロボット技術のみ、医学全般は対象外』という方針と直接衝突するため、ユーザーに方針との衝突を明示して確認した結果、『今回は例外として採用』の判断を得た。CLAUDE.mdの「論文選定ロジック」節冒頭に例外運用ルールを追記済み（scope_exception: trueを都度明記し、category: biotech_exceptionとしてローテーション対象外にする運用）。\n\n内容はWebSearchで一次情報を確認済み: Sinclair研究室のLu et al. 2020年Nature論文（マウスの視神経でOSK＝Oct4/Sox2/Klf4によるエピジェネティック若返り、c-Mycは除外）が基礎。Life Biosciences社のER-100が2026年1月28日にFDAからIND（治験許可）を取得し、開放隅角緑内障(OAG)・非動脈炎性前部虚血性視神経症(NAION)を対象に世界初のヒト投与を実施（2026年6月9日、第一号患者への投与完了）。安全機構として2本のAAV2ベクター（rtTAトランス活性化因子＋TRE制御下のOSK）によるドキシサイクリン誘導性のオン/オフスイッチを採用——服薬中のみ若返りが進行し、中止すれば停止する。幹細胞研究者Paul Knoepfler（UCデービス）の懐疑的見解（若返ってもOAGの眼圧自体は下がらず効果が持続しない可能性、NAIONは一度きりの虚血イベントのため微小環境上の懸念が残る）も確認済みで、closing シーンでの両論併記に使う想定。\n\n主人公は緑内障の初期診断を受けた元小学校教師（絵本の読み聞かせという『視覚を大切にしてきた』職業・趣味を持たせ、視野が狭まる恐怖と回復への希望を対比しやすくした）。研究ボイスは主人公が女性のため男性（Orus、確定済み）を使う想定。\n\n2026-09-14追記: エピソードJSON生成（STEP2）完了直後、制作者から「AI・ロボティクス限定という制約自体を今後なくす」という恒久方針の指示があった。理由は『今後あらゆる科学の発展にAI・ロボティクスが深く関わるため、分野で区切る制約自体が意味をなさなくなる』。これにより、kl021が『都度承認の例外』ではなく『AI・ロボティクス限定方針撤廃後の最初の通常エピソード』という位置づけに変わった。CLAUDE.mdの『論文選定ロジック』節冒頭・カテゴリ表（医療補助技術）を撤廃を反映して更新済み。scope_exception/category=biotech_exceptionのフィールド値は歴史的記録としてそのまま残す（以後の新規エピソードでは不要な運用）。",
       "slot_type": "legacy",
       "concern_id": "eyes",
-      "domain": "body"
+      "domain": "body",
+      "genre": "medical",
+      "health": true
     },
     {
       "episode_id": "kl022",
@@ -1083,7 +1125,9 @@
       "slot_type": "legacy",
       "concern_id": "pets",
       "domain": "life",
-      "publish_hold": true
+      "publish_hold": true,
+      "genre": "medical",
+      "health": false
     },
     {
       "episode_id": "kl023",
@@ -1128,7 +1172,9 @@
       "slot_type": "legacy",
       "concern_id": "dementia",
       "domain": "disease",
-      "publish_hold": true
+      "publish_hold": true,
+      "genre": "medical",
+      "health": true
     },
     {
       "episode_id": "kl024",
@@ -1187,7 +1233,9 @@
       "slot_type": "legacy",
       "concern_id": null,
       "domain": "disease",
-      "publish_hold": true
+      "publish_hold": true,
+      "genre": "medical",
+      "health": true
     },
     {
       "episode_id": "kl025",
@@ -1236,7 +1284,9 @@
       "slot_type": "legacy",
       "concern_id": "pets",
       "domain": "life",
-      "publish_hold": true
+      "publish_hold": true,
+      "genre": "medical",
+      "health": false
     },
     {
       "episode_id": "kl026",
@@ -1286,7 +1336,9 @@
       "slot_type": "legacy",
       "concern_id": null,
       "domain": "body",
-      "publish_hold": true
+      "publish_hold": true,
+      "genre": "medical",
+      "health": true
     },
     {
       "episode_id": "kl027",
@@ -1337,7 +1389,9 @@
         "market_status": "novel",
         "novel_delta": "ボランティアなどの実際の行動を起こさずとも、心の中で「他者の役に立ちたい・思いやりたい」と意識する姿勢そのものが、11年後の実行機能低下や認知症リスク低下と強く関連することを示した点。"
       },
-      "publish_hold": true
+      "publish_hold": true,
+      "genre": "food_health",
+      "health": false
     },
     {
       "episode_id": "kl028",
@@ -1418,7 +1472,9 @@
           "novel_delta": "既存のチャット型AIを使う際、タスクを全丸投げすると理解度やデバッグ力が17%低下する一方で、理由や概念を質問する認知的関与を保てばスキル形成を損なわずに済むという実証的知見。"
         }
       ],
-      "publish_hold": true
+      "publish_hold": true,
+      "genre": "ai",
+      "health": false
     },
     {
       "episode_id": "kl029",
@@ -1471,7 +1527,9 @@
           "novel_delta": "メスで歯ぐきを切開・剥離する外科手術を伴わず、他家歯髄幹細胞の局所注射という低侵襲な処置のみで歯周組織（骨・付着組織）の再生を促せる点"
         }
       ],
-      "publish_hold": true
+      "publish_hold": true,
+      "genre": "medical",
+      "health": true
     },
     {
       "episode_id": "kl030",
@@ -1552,7 +1610,33 @@
           "novel_delta": "従来の調香師による経験則や個別開発に対し、896種の主要香気分子アトラスと生成AIを用いて、植物由来の香気成分のみから肉らしい香りの処方をデータ駆動で自動設計できる点"
         }
       ],
-      "publish_hold": true
+      "publish_hold": true,
+      "genre": "food_health",
+      "health": false
+    },
+    {
+      "episode_id": "kl031",
+      "status": "produced",
+      "slot_type": "pilot",
+      "domain": "life",
+      "concern_id": "food",
+      "title": "AIのバーガーはビッグマックに勝った。で、体にいい方は？",
+      "entry_question": "お肉を控えるように言われても、おいしいものを我慢しなくていい日は来る？",
+      "notes": "パイロット（掛け合い形式）。genre/health付与のため2026-10-06に追記",
+      "genre": "food_health",
+      "health": false
+    },
+    {
+      "episode_id": "kl032",
+      "status": "produced",
+      "slot_type": "news",
+      "domain": "life",
+      "concern_id": "housework",
+      "title": "3555ドルの家事ロボ、成功率8割は本物？（9月29日発表）",
+      "entry_question": "家事を任せられるロボット、もう買える？",
+      "notes": "パイロット（掛け合い形式）。genre/health付与のため2026-10-06に追記",
+      "genre": "life_tech",
+      "health": false
     },
     {
       "episode_id": "kl033",
@@ -1577,9 +1661,11 @@
         }
       ],
       "hook_idea": "人型ロボの手から小指が消えた。決め手は、社員が指をテープで縛った1日。",
-      "notes": "2026-10-05: ニュース起点（news_date 2026-10-01、一次資料=公式ブログ）。構成=myth_buster。予想判定=夢語り:もうすぐ来る／ツッコミ:3年はかかる。ツッコミ材料=成功率の数字がない・根拠は人がテープで縛った1日・長期の賭け。"
+      "notes": "2026-10-05: ニュース起点（news_date 2026-10-01、一次資料=公式ブログ）。構成=myth_buster。予想判定=夢語り:もうすぐ来る／ツッコミ:3年はかかる。ツッコミ材料=成功率の数字がない・根拠は人がテープで縛った1日・長期の賭け。",
+      "genre": "humanoid",
+      "health": false
     }
   ],
-  "total_topics": 31,
-  "last_updated": "2026-10-04"
+  "total_topics": 33,
+  "last_updated": "2026-10-06"
 }

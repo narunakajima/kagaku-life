@@ -4,16 +4,18 @@ kl_build_site.py — 幸せな未来のサイエンス 公式サイト生成
 生成ファイル:
   index.html      トップページ（近日公開 or 新着 + About + Subscribe）
   episodes.html   全動画一覧
-  playlists.html  テーマ別再生リスト（関心ごとの4領域）
+  playlists.html  ジャンル別再生リスト（世間の関心が高い5ジャンル）
 
 データソース:
   episodes/kl*.json    各エピソードの youtube_url / scheduled_at / タイトル等
-  topics_queue.json    episode_id → domain（関心ごとの4領域: life/daily/body/disease）の対応
-  viewer_concerns.json 4領域の表示名
-  theme_playlists.json 領域ごとのYouTube再生リストID（未作成の間はnull）
+  topics_queue.json    episode_id → genre（5ジャンル）の対応
+  genres.json          5ジャンルの表示名・アイコン・表示順
+  theme_playlists.json ジャンルごとのYouTube再生リストID（未作成の間はnull）
 
 2026-09-29〜: 分類を旧6カテゴリから関心ごとの4領域に変えた（ネタ選定パイプライン作り直し、
 PIPELINE_REDESIGN.md §8）。
+2026-10-06〜: さらに世間の関心が高い5ジャンル（AIの進化／ヒューマノイド／医療の最前線／食と健康／暮らしの技術、
+genres.json）に変えた。domain は履歴として topics_queue.json に残るが、サイトの分類には使わない。
 
 「公開済み」の判定は youtube_url が設定済み、かつ scheduled_at が過去（JST）であること。
 scheduled_at が未来（予約公開待ち）の場合は「近日公開」として扱い、タイトル等は出さない。
@@ -34,7 +36,7 @@ BASE_DIR = Path(__file__).parent
 EPISODES_DIR = BASE_DIR / "episodes"
 TOPICS_QUEUE_JSON = BASE_DIR / "topics_queue.json"
 THEME_PLAYLISTS_JSON = BASE_DIR / "theme_playlists.json"
-CONCERNS_JSON = BASE_DIR / "viewer_concerns.json"
+GENRES_JSON = BASE_DIR / "genres.json"
 CAST_JSON = BASE_DIR / "cast.json"
 CHANNEL_URL = "https://www.youtube.com/@kagaku-life"
 SITE_URL = "https://kagaku-life.com"
@@ -42,17 +44,11 @@ CHANNEL_NAME = "幸せな未来のサイエンス"
 TAGLINE = "科学が届ける、くらしの小さな幸せ"
 # 2026-10-05: 更新頻度の表記はサイトから外した（週何回更新かは未定。なるさんの指示）。決まるまで書かない
 
-# サイト表示順（2026-09-29: 関心ごとの4領域に変更。暮らしを先頭にする——健康系は
-# 5話に2話までという選定ルールのため、暮らしが最も本数の多いテーマになる）。
-# 表示名は viewer_concerns.json の domains から読む（二重管理を避けるため）。
-THEME_ORDER = ["life", "daily", "body", "disease"]
-THEME_LABELS = {k: v["label"] for k, v in json.loads(CONCERNS_JSON.read_text(encoding="utf-8"))["domains"].items()}
-THEME_ICONS = {
-    "life": "🏠",
-    "daily": "☀️",
-    "body": "🦾",
-    "disease": "🩺",
-}
+# サイト表示順・表示名・アイコンは genres.json から読む（二重管理を避けるため。2026-10-06〜5ジャンル）。
+_GENRES = json.loads(GENRES_JSON.read_text(encoding="utf-8"))
+THEME_ORDER = _GENRES["order"]
+THEME_LABELS = {k: v["label"] for k, v in _GENRES["genres"].items()}
+THEME_ICONS = {k: v["icon"] for k, v in _GENRES["genres"].items()}
 WEEKDAY_JA = ["月", "火", "水", "木", "金", "土", "日"]
 
 # ──────────────────────────────────────────────
@@ -89,14 +85,14 @@ def is_published(ep: dict) -> bool:
 
 
 def load_theme_map() -> dict:
-    """episode_id -> domain（テーマ）の対応。topics_queue.json の queue から作る。"""
+    """episode_id -> genre（ジャンル）の対応。topics_queue.json の queue から作る。"""
     if not TOPICS_QUEUE_JSON.exists():
         return {}
     data = json.loads(TOPICS_QUEUE_JSON.read_text(encoding="utf-8"))
     m = {}
     for item in data.get("queue", []):
         eid = item.get("episode_id")
-        theme = item.get("domain")
+        theme = item.get("genre")
         if eid and theme:
             m[eid] = theme
     return m
@@ -537,7 +533,7 @@ def build_index(episodes: list[dict], published: list[dict], categories: list[di
   <div class="stats-strip reveal">
     <div class="stats-inner">
       <div class="stat-item"><p class="stat-num">{stat_ep}</p><p class="stat-label">{stat_ep_label}</p></div>
-      <div class="stat-item"><p class="stat-num">{cat_count}</p><p class="stat-label">テーマ</p></div>
+      <div class="stat-item"><p class="stat-num">{cat_count}</p><p class="stat-label">ジャンル</p></div>
     </div>
   </div>
 
@@ -662,7 +658,7 @@ def build_episodes(episodes: list[dict], published: list[dict]):
 
 
 # ──────────────────────────────────────────────
-# playlists.html — テーマ別再生リスト（関心ごとの4領域）
+# playlists.html — ジャンル別再生リスト（5ジャンル）
 # ──────────────────────────────────────────────
 
 def build_playlists(published: list[dict], theme_playlists: dict):
@@ -703,7 +699,7 @@ def build_playlists(published: list[dict], theme_playlists: dict):
 
     html = head_html(
         f"プレイリスト | {CHANNEL_NAME}",
-        f"{CHANNEL_NAME}をテーマ別に見る——暮らし、毎日の調子、体の不調、病気の予防の4テーマ。"
+        f"{CHANNEL_NAME}をジャンル別に見る——AIの進化、ヒューマノイド、医療の最前線、食と健康、暮らしの技術の5ジャンル。"
     )
     html += nav_html("プレイリスト")
     html += f"""
@@ -711,9 +707,9 @@ def build_playlists(published: list[dict], theme_playlists: dict):
   <section style="padding-top:60px;">
     <div class="section-inner">
       <p class="section-label reveal">By Theme</p>
-      <h1 class="section-heading reveal reveal-delay-1" style="font-size:clamp(1.3rem,4.5vw,1.9rem);">テーマで選ぶ</h1>
+      <h1 class="section-heading reveal reveal-delay-1" style="font-size:clamp(1.3rem,4.5vw,1.9rem);">ジャンルで選ぶ</h1>
       <p class="reveal reveal-delay-2" style="text-align:center;color:#4a5866;line-height:1.9;margin-bottom:48px;max-width:520px;margin-left:auto;margin-right:auto;">
-        気になるテーマから、くらしに関わる科学の動画をまとめて見られます。
+        気になるジャンルから、科学の動画をまとめて見られます。
       </p>
       <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr));">{cards}
       </div>
@@ -724,7 +720,7 @@ def build_playlists(published: list[dict], theme_playlists: dict):
     html += REVEAL_JS
     html += "\n</body>\n</html>"
     (BASE_DIR / "playlists.html").write_text(html, encoding="utf-8")
-    print(f"  ✓ playlists.html（{len(THEME_ORDER)}テーマ）")
+    print(f"  ✓ playlists.html（{len(THEME_ORDER)}ジャンル）")
 
 
 # ──────────────────────────────────────────────

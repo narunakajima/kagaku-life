@@ -1,19 +1,23 @@
 {
-  "_comment": "公式サイトのテーマ（関心ごとの4領域）ごとのYouTube再生リストID。2026-09-29にcategory_playlists.json（旧6カテゴリ、再生リストは1つも未作成だった）から置き換えた。episodes配列はkl_build_site.pyがtopics_queue.jsonのdomainから毎回計算するため、ここにはIDのみを保持する。再生リストが未作成の間はplaylist_id: nullのままでよい。",
-  "life": {
-    "display_name": "暮らし",
-    "playlist_id": null
+  "_comment": "ジャンルごとのYouTube再生リストID。2026-10-06に関心ごとの4領域から世間の関心が高い5ジャンル（genres.json）に置き換えた。episodes配列はkl_build_site.pyがtopics_queue.jsonのgenreから毎回計算するため、ここにはIDのみを保持する。再生リストが未作成の間はplaylist_id: nullのままでよい。旧4領域(life/daily/body/disease)は未作成のまま廃止。",
+  "ai": {
+    "display_name": "AIの進化",
+    "playlist_id": "PLKt-UOjN23oE"
   },
-  "daily": {
-    "display_name": "毎日の調子",
-    "playlist_id": null
+  "humanoid": {
+    "display_name": "ヒューマノイド",
+    "playlist_id": "PLJJ25ZY25-NA"
   },
-  "body": {
-    "display_name": "体の不調",
-    "playlist_id": null
+  "medical": {
+    "display_name": "医療の最前線",
+    "playlist_id": "PLVYfajPg4iFE"
   },
-  "disease": {
-    "display_name": "病気の予防",
-    "playlist_id": null
+  "food_health": {
+    "display_name": "食と健康",
+    "playlist_id": "PLTcxmm0NYpUA"
+  },
+  "life_tech": {
+    "display_name": "暮らしの技術",
+    "playlist_id": "PLU5hNXhr1TEM"
   }
 }

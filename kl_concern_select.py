@@ -61,6 +61,10 @@ def main():
         print(f"⚠️ domain が未設定のエピソードがあります（健康系の数を正しく数えられません）: {', '.join(missing)}", file=sys.stderr)
 
     def is_health(e: dict) -> bool:
+        # 2026-10-06〜: 回ごとの health 印を正とする（5ジャンルは健康系かどうかを持たないため）。
+        # 印が無い古い回だけ、従来どおり domain の is_health で数える
+        if "health" in e:
+            return bool(e["health"])
         return bool(domains.get(e.get("domain") or "", {}).get("is_health"))
 
     window = rules["window"]
@@ -88,6 +92,15 @@ def main():
         f"{'・ワイルドカード' if e.get('slot_type') == 'wildcard' else ''}]"
         for e in recent
     )
+    genres = json.loads((BASE_DIR / "genres.json").read_text())
+    last_genre = {}
+    for e in queue:
+        if e.get("genre"):
+            last_genre[e["genre"]] = episode_number(e["episode_id"])
+    genre_desc = " / ".join(
+        f"{genres['genres'][g]['label']}:{('直近' + str(next_num - last_genre[g]) + '話前') if g in last_genre else '未'}"
+        for g in genres["order"])
+    print(f"ジャンルの間隔（最近出ていないものを優先）: {genre_desc}")
     print(f"次の回: {next_id}")
     print(f"直近{len(recent)}話: {recent_desc}")
     print(f"この回で使える枠: 健康系 あと{max(health_left, 0)}話 / ワイルドカード あと{max(wildcard_left, 0)}話"
