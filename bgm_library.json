@@ -2,13 +2,13 @@
   {
     "id": "kl001-BGM-intro",
     "path": "BGM/kl001-BGM-intro.mp3",
-    "duration": 0,
+    "duration": 45.9,
     "license": "CC BY",
     "credit": "🎵 Music: Soft Piano and Acoustic Guitar by ViraMiller (freesound.org) — CC BY 4.0",
     "tags": [
-      "soft",
-      "piano",
-      "acoustic"
+      "acoustic-guitar",
+      "calm",
+      "emotional"
     ],
     "used_in": [
       "kl001",
@@ -18,16 +18,40 @@
       "kl017",
       "kl019",
       "kl022"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "calm",
+      "emotional"
+    ],
+    "instruments": [
+      "acoustic-guitar"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "穏やかで少し切ないアコギのアルペジオ。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl001-BGM-main",
     "path": "BGM/kl001-BGM-main.mp3",
-    "duration": 0,
+    "duration": 100.1,
     "license": "CC BY",
     "credit": "🎵 Music: Elevated Mood with Acoustic Guitar by ViraMiller (freesound.org) — CC BY 4.0",
     "tags": [
-      "acoustic"
+      "acoustic-guitar",
+      "bass",
+      "bright",
+      "calm",
+      "drums",
+      "piano",
+      "synth"
     ],
     "used_in": [
       "kl001",
@@ -36,17 +60,43 @@
       "kl012",
       "kl014",
       "kl017"
-    ]
+    ],
+    "bpm": 120,
+    "mood": [
+      "bright",
+      "calm"
+    ],
+    "instruments": [
+      "acoustic-guitar",
+      "bass",
+      "drums",
+      "piano",
+      "synth"
+    ],
+    "has_beat": true,
+    "has_vocals": false,
+    "era": "dialogue",
+    "role_fit": [
+      "intro"
+    ],
+    "tag_note": "穏やかで明るいアコギとピアノのポップス",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl001-BGM-outro",
     "path": "BGM/kl001-BGM-outro.mp3",
-    "duration": 0,
+    "duration": 38.5,
     "license": "CC BY",
     "credit": "🎵 Music: Heartfelt Piano and Violin by ViraMiller (freesound.org) — CC BY 4.0",
     "tags": [
-      "heartfelt",
-      "piano"
+      "emotional",
+      "piano",
+      "sad",
+      "strings"
     ],
     "used_in": [
       "kl001",
@@ -56,16 +106,38 @@
       "kl010",
       "kl019",
       "kl020"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "emotional",
+      "sad"
+    ],
+    "instruments": [
+      "piano",
+      "strings"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "ピアノと弦楽器による物悲しく静かな曲",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl002-BGM-intro",
     "path": "BGM/kl002-BGM-intro.mp3",
-    "duration": 0,
+    "duration": 115.8,
     "license": "CC0",
     "credit": null,
     "tags": [
-      "piano"
+      "calm",
+      "emotional",
+      "piano",
+      "sad"
     ],
     "used_in": [
       "kl002",
@@ -73,17 +145,40 @@
       "kl005",
       "kl006",
       "kl010"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "calm",
+      "emotional",
+      "sad"
+    ],
+    "instruments": [
+      "piano"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "静かで物悲しい雰囲気のピアノソロ曲。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl002-BGM-main",
     "path": "BGM/kl002-BGM-main.mp3",
-    "duration": 0,
+    "duration": 30.3,
     "license": "CC0",
     "credit": null,
     "tags": [
-      "warm",
-      "gentle"
+      "bells",
+      "calm",
+      "curious",
+      "dreamy",
+      "piano",
+      "synth"
     ],
     "used_in": [
       "kl002",
@@ -95,17 +190,43 @@
       "kl018",
       "kl020",
       "kl022"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "calm",
+      "curious",
+      "dreamy"
+    ],
+    "instruments": [
+      "bells",
+      "piano",
+      "synth"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "ピアノのアルペジオが響く静かで美しい曲。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl002-BGM-outro",
     "path": "BGM/kl002-BGM-outro.mp3",
-    "duration": 0,
+    "duration": 206.4,
     "license": "CC0",
     "credit": null,
     "tags": [
-      "warm",
-      "gentle"
+      "bells",
+      "dark",
+      "drums",
+      "pads",
+      "piano",
+      "synth",
+      "tense"
     ],
     "used_in": [
       "kl002",
@@ -114,49 +235,119 @@
       "kl011",
       "kl017",
       "kl021"
-    ]
+    ],
+    "bpm": 60,
+    "mood": [
+      "dark",
+      "tense"
+    ],
+    "instruments": [
+      "bells",
+      "drums",
+      "pads",
+      "piano",
+      "synth"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "不穏な雰囲気のパッドと静かなピアノの曲",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": true,
+    "ear_check_reason": "ビート有無が割れた、mood が dark/tense（温かい曲として使われてきた曲は判定を疑う）",
+    "short_for_role": []
   },
   {
     "id": "kl005-BGM-intro",
     "path": "BGM/kl005-BGM-intro.mp3",
-    "duration": 0,
+    "duration": 44.5,
     "license": "CC0",
     "credit": null,
     "tags": [
-      "warm",
-      "gentle"
+      "bells",
+      "calm",
+      "dreamy",
+      "pads",
+      "synth"
     ],
     "used_in": [
       "kl006",
       "kl008"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "calm",
+      "dreamy"
+    ],
+    "instruments": [
+      "bells",
+      "pads",
+      "synth"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "静かで幻想的なシンセサイザーのアルペジオ。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl005-BGM-outro",
     "path": "BGM/kl005-BGM-outro.mp3",
-    "duration": 0,
+    "duration": 100.5,
     "license": "CC BY",
     "credit": "🎵 Music: Regretful Guitar Melodies by ViraMiller (freesound.org) — CC BY 4.0",
     "tags": [
-      "warm",
-      "gentle"
+      "acoustic-guitar",
+      "calm",
+      "dreamy",
+      "pads",
+      "synth"
     ],
     "used_in": [
       "kl005",
       "kl007",
       "kl009",
       "kl015"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "calm",
+      "dreamy"
+    ],
+    "instruments": [
+      "acoustic-guitar",
+      "pads",
+      "synth"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "静かで幻想的なアンビエントギター曲。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl005-BGM-main",
     "path": "BGM/kl005-BGM-main.mp3",
-    "duration": 0,
+    "duration": 50.3,
     "license": "CC0",
     "credit": null,
     "tags": [
-      "warm",
-      "gentle"
+      "calm",
+      "emotional",
+      "piano",
+      "sad"
     ],
     "used_in": [
       "kl005",
@@ -166,369 +357,949 @@
       "kl016",
       "kl019",
       "kl021"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "calm",
+      "emotional",
+      "sad"
+    ],
+    "instruments": [
+      "piano"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "静かで哀愁漂うピアノのソロ演奏。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl007-BGM-intro",
     "path": "BGM/kl007-BGM-intro.mp3",
-    "duration": 0,
+    "duration": 63.7,
     "license": "CC BY",
     "credit": "🎵 Music: Noir: A Minimalist and Emotive Piano Melody for Relaxation by kjartan_abel (freesound.org) — CC BY 4.0",
     "tags": [
-      "warm",
-      "gentle"
+      "calm",
+      "emotional",
+      "pads",
+      "piano",
+      "sad",
+      "strings"
     ],
     "used_in": [
       "kl007",
       "kl008",
       "kl015",
       "kl021"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "calm",
+      "emotional",
+      "sad"
+    ],
+    "instruments": [
+      "pads",
+      "piano",
+      "strings"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "静かで少し切ないピアノのアンビエント曲",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl011-BGM-intro",
     "path": "BGM/kl011-BGM-intro.mp3",
-    "duration": 0,
+    "duration": 63.0,
     "license": "CC BY",
     "credit": "🎵 Music: October Rose by StephieQueen (freesound.org) — CC BY 4.0",
     "tags": [
-      "warm",
-      "gentle"
+      "emotional",
+      "piano",
+      "sad"
     ],
     "used_in": [
       "kl011",
       "kl014",
       "kl016"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "emotional",
+      "sad"
+    ],
+    "instruments": [
+      "piano"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "悲しげで感情的なピアノのソロ演奏。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl012-BGM-intro",
     "path": "BGM/kl012-BGM-intro.mp3",
-    "duration": 0,
+    "duration": 74.8,
     "license": "CC0",
     "credit": null,
     "tags": [
-      "warm",
-      "gentle"
+      "calm",
+      "piano",
+      "sad",
+      "strings"
     ],
     "used_in": [
       "kl012",
       "kl018",
       "kl032"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "calm",
+      "sad"
+    ],
+    "instruments": [
+      "piano",
+      "strings"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "ピアノと弦楽器による静かで少し悲しげな曲",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl012-BGM-outro",
     "path": "BGM/kl012-BGM-outro.mp3",
-    "duration": 0,
+    "duration": 237.9,
     "license": "CC0",
     "credit": null,
     "tags": [
-      "warm",
-      "gentle"
+      "calm",
+      "emotional",
+      "piano",
+      "strings"
     ],
     "used_in": [
       "kl012",
       "kl014",
       "kl018"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "calm",
+      "emotional"
+    ],
+    "instruments": [
+      "piano",
+      "strings"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "静かで感情的なピアノとストリングスの曲",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl013-BGM-outro",
     "path": "BGM/kl013-BGM-outro.mp3",
-    "duration": 0,
+    "duration": 210.4,
     "license": "CC BY",
     "credit": "🎵 Music: Brylie Christopher - Alternating Nostrils by brylie (freesound.org) — CC BY 4.0",
     "tags": [
-      "warm",
-      "gentle"
+      "calm",
+      "emotional",
+      "piano",
+      "sad"
     ],
     "used_in": [
       "kl013",
       "kl016",
       "kl022",
       "kl027"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "calm",
+      "emotional",
+      "sad"
+    ],
+    "instruments": [
+      "piano"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "穏やかで少し切ないピアノのソロ演奏。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl020-BGM-intro",
     "path": "BGM/kl020-BGM-intro.mp3",
-    "duration": 0,
+    "duration": 108.5,
     "license": "CC0",
     "credit": null,
     "tags": [
-      "warm",
-      "gentle"
+      "dark",
+      "piano",
+      "tense"
     ],
     "used_in": [
       "kl020",
       "kl026"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "dark",
+      "tense"
+    ],
+    "instruments": [
+      "piano"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "暗く緊張感のある不気味なピアノ独奏曲",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": true,
+    "ear_check_reason": "mood が dark/tense（温かい曲として使われてきた曲は判定を疑う）",
+    "short_for_role": []
   },
   {
     "id": "kl023-BGM-intro",
     "path": "BGM/kl023-BGM-intro.mp3",
-    "duration": 0,
+    "duration": 70.2,
     "license": "CC0",
     "credit": null,
     "tags": [
-      "warm",
-      "gentle"
+      "calm",
+      "curious",
+      "neutral",
+      "piano"
     ],
     "used_in": [
       "kl023",
       "kl025",
       "kl029"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "calm",
+      "curious",
+      "neutral"
+    ],
+    "instruments": [
+      "piano"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "不規則なピアノの単音が響く静かで不思議な曲",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl023-BGM-main",
     "path": "BGM/kl023-BGM-main.mp3",
-    "duration": 0,
+    "duration": 65.7,
     "license": "CC0",
     "credit": null,
     "tags": [
-      "warm",
-      "gentle"
+      "emotional",
+      "piano",
+      "sad",
+      "strings"
     ],
     "used_in": [
       "kl023",
       "kl024",
       "kl027"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "emotional",
+      "sad"
+    ],
+    "instruments": [
+      "piano",
+      "strings"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "物悲しいピアノとストリングスの静かな曲",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl023-BGM-outro",
     "path": "BGM/kl023-BGM-outro.mp3",
-    "duration": 0,
+    "duration": 51.1,
     "license": "CC0",
     "credit": null,
     "tags": [
-      "warm",
-      "gentle"
+      "calm",
+      "emotional",
+      "piano",
+      "strings"
     ],
     "used_in": [
       "kl023",
       "kl024"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "calm",
+      "emotional"
+    ],
+    "instruments": [
+      "piano",
+      "strings"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "ピアノと弦楽器による穏やかで感情的な楽曲。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl024-BGM-intro",
     "path": "BGM/kl024-BGM-intro.mp3",
-    "duration": 0,
+    "duration": 278.0,
     "license": "CC BY",
     "credit": "🎵 Music: \"Faded Expressions\" music for your project by theoctopus559 (freesound.org) — CC BY 4.0",
     "tags": [
-      "warm",
-      "gentle"
+      "calm",
+      "piano",
+      "sad"
     ],
     "used_in": [
       "kl024",
       "kl027"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "calm",
+      "sad"
+    ],
+    "instruments": [
+      "piano"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "落ち着いた物悲しいピアノのソロ演奏。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl025-BGM-main",
     "path": "BGM/kl025-BGM-main.mp3",
-    "duration": 0,
+    "duration": 84.2,
     "license": "CC0",
     "credit": null,
     "tags": [
-      "warm",
-      "gentle"
+      "bass",
+      "calm",
+      "dark",
+      "dreamy",
+      "pads",
+      "synth"
     ],
     "used_in": [
       "kl025",
       "kl026"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "calm",
+      "dark",
+      "dreamy"
+    ],
+    "instruments": [
+      "bass",
+      "pads",
+      "synth"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "深海や宇宙を思わせる静かで神秘的な曲。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": true,
+    "ear_check_reason": "mood が dark/tense（温かい曲として使われてきた曲は判定を疑う）",
+    "short_for_role": []
   },
   {
     "id": "kl025-BGM-outro",
     "path": "BGM/kl025-BGM-outro.mp3",
-    "duration": 0,
+    "duration": 70.2,
     "license": "CC0",
     "credit": null,
     "tags": [
-      "warm",
-      "gentle"
+      "calm",
+      "emotional",
+      "piano",
+      "sad",
+      "strings"
     ],
     "used_in": [
       "kl025",
       "kl028",
       "kl033"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "calm",
+      "emotional",
+      "sad"
+    ],
+    "instruments": [
+      "piano",
+      "strings"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "ピアノと弦楽器による静かで落ち着いた楽曲。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl026-BGM-outro",
     "path": "BGM/kl026-BGM-outro.mp3",
-    "duration": 0,
+    "duration": 147.1,
     "license": "CC BY",
     "credit": "🎵 Music: Cinematic Emotion by Gustavo_Alivera (freesound.org) — CC BY 4.0",
     "tags": [
-      "warm",
-      "gentle"
+      "calm",
+      "emotional",
+      "piano",
+      "strings"
     ],
     "used_in": [
       "kl026",
       "kl030",
       "kl032"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "calm",
+      "emotional"
+    ],
+    "instruments": [
+      "piano",
+      "strings"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "ピアノと弦楽器による静かで叙情的な曲",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl028-BGM-intro",
     "path": "BGM/kl028-BGM-intro.mp3",
-    "duration": 0,
+    "duration": 254.0,
     "license": "CC BY",
     "credit": "🎵 Music: Reflective Piano - \"From Tonight to Tomorrow\" by matthew_c_wright (freesound.org) — CC BY 4.0",
     "tags": [
-      "warm",
-      "gentle"
+      "calm",
+      "piano",
+      "sad"
     ],
     "used_in": [
       "kl028",
       "kl031"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "calm",
+      "sad"
+    ],
+    "instruments": [
+      "piano"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "穏やかで哀愁漂うピアノの独奏曲。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl028-BGM-main",
     "path": "BGM/kl028-BGM-main.mp3",
-    "duration": 0,
+    "duration": 60.1,
     "license": "CC BY",
     "credit": "🎵 Music: Guitar Journey by ViraMiller (freesound.org) — CC BY 4.0",
     "tags": [
-      "warm",
-      "gentle"
+      "bass",
+      "brass",
+      "bright",
+      "drums",
+      "electric-guitar",
+      "electric-piano",
+      "playful",
+      "synth"
     ],
     "used_in": [
       "kl028"
-    ]
+    ],
+    "bpm": 112,
+    "mood": [
+      "bright",
+      "playful"
+    ],
+    "instruments": [
+      "bass",
+      "brass",
+      "drums",
+      "electric-guitar",
+      "electric-piano",
+      "synth"
+    ],
+    "has_beat": true,
+    "has_vocals": true,
+    "era": "",
+    "role_fit": [],
+    "tag_note": "ボーカルチョップが特徴的な明るいダンス曲",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": true,
+    "ear_check_reason": "声の判定",
+    "short_for_role": []
   },
   {
     "id": "kl029-BGM-main",
     "path": "BGM/kl029-BGM-main.mp3",
-    "duration": 0,
+    "duration": 187.3,
     "license": "CC0",
     "credit": null,
     "tags": [
-      "warm",
-      "gentle"
+      "calm",
+      "emotional",
+      "piano",
+      "sad"
     ],
     "used_in": [
       "kl029"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "calm",
+      "emotional",
+      "sad"
+    ],
+    "instruments": [
+      "piano"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "穏やかで少し切ない雰囲気のピアノ独奏曲。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl029-BGM-outro",
     "path": "BGM/kl029-BGM-outro.mp3",
-    "duration": 0,
+    "duration": 128.0,
     "license": "CC BY",
     "credit": "🎵 Music: Piano by Migfus20 (freesound.org) — CC BY 4.0",
     "tags": [
-      "warm",
-      "gentle"
+      "acoustic-guitar",
+      "bass",
+      "calm",
+      "drums",
+      "emotional",
+      "piano",
+      "strings"
     ],
     "used_in": [
       "kl029",
       "kl031"
-    ]
+    ],
+    "bpm": 75,
+    "mood": [
+      "calm",
+      "emotional"
+    ],
+    "instruments": [
+      "acoustic-guitar",
+      "bass",
+      "drums",
+      "piano",
+      "strings"
+    ],
+    "has_beat": true,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "穏やかなピアノ独奏からバンド編成へ展開する",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl030-BGM-intro",
     "path": "BGM/kl030-BGM-intro.mp3",
-    "duration": 0,
+    "duration": 170.3,
     "license": "CC0",
     "credit": null,
     "tags": [
-      "warm",
-      "gentle"
+      "calm",
+      "dreamy",
+      "electric-guitar"
     ],
     "used_in": [
       "kl030",
       "kl033"
-    ]
+    ],
+    "bpm": null,
+    "mood": [
+      "calm",
+      "dreamy"
+    ],
+    "instruments": [
+      "electric-guitar"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "legacy_monologue",
+    "role_fit": [],
+    "tag_note": "環境音とエレキギターの静かで幻想的な曲。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl030-BGM-main",
     "path": "BGM/kl030-BGM-main.mp3",
-    "duration": 0,
+    "duration": 127.0,
     "license": "CC BY",
     "credit": "🎵 Music: Bright Beginnings (Uplifting Piano and Energetic Drums) by Gustavo_Alivera (freesound.org) — CC BY 4.0",
     "tags": [
-      "warm",
-      "gentle"
+      "bass",
+      "bright",
+      "drums",
+      "piano",
+      "playful",
+      "strings",
+      "synth"
     ],
     "used_in": [
       "kl030"
-    ]
+    ],
+    "bpm": 128,
+    "mood": [
+      "bright",
+      "playful"
+    ],
+    "instruments": [
+      "bass",
+      "drums",
+      "piano",
+      "strings",
+      "synth"
+    ],
+    "has_beat": true,
+    "has_vocals": false,
+    "era": "dialogue",
+    "role_fit": [
+      "intro"
+    ],
+    "tag_note": "明るく軽快なテンポのダンスポップBGM。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl031-BGM-main",
     "path": "BGM/kl031-BGM-main.mp3",
-    "duration": 0,
+    "duration": 34.8,
     "license": "CC0",
     "credit": null,
     "tags": [
-      "warm",
-      "gentle"
+      "bells",
+      "curious",
+      "flute",
+      "pizzicato",
+      "playful"
     ],
     "used_in": [
       "kl031",
       "kl033"
+    ],
+    "bpm": null,
+    "mood": [
+      "curious",
+      "playful"
+    ],
+    "instruments": [
+      "bells",
+      "flute",
+      "pizzicato"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "dialogue",
+    "role_fit": [
+      "main"
+    ],
+    "tag_note": "ピチカートとフルートのコミカルな曲。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": [
+      "main"
     ]
   },
   {
     "id": "kl032-BGM-main",
     "path": "BGM/kl032-BGM-main.mp3",
-    "duration": 0,
+    "duration": 35.7,
     "license": "CC0",
     "credit": null,
     "tags": [
-      "warm",
-      "gentle"
+      "bassoon",
+      "bells",
+      "curious",
+      "oboe",
+      "playful",
+      "tuba"
     ],
     "used_in": [
       "kl032"
+    ],
+    "bpm": null,
+    "mood": [
+      "curious",
+      "playful"
+    ],
+    "instruments": [
+      "bassoon",
+      "bells",
+      "oboe",
+      "tuba"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "dialogue",
+    "role_fit": [
+      "main"
+    ],
+    "tag_note": "チューバとベルによるコミカルで不思議な曲。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": [
+      "main"
     ]
   },
   {
     "id": "kl034-BGM-intro",
     "path": "BGM/kl034-BGM-intro.mp3",
-    "duration": 0,
+    "duration": 157.2,
     "license": "CC BY",
     "credit": "🎵 Music: Vibrant Positivity by ViraMiller (freesound.org) — CC BY 4.0",
     "tags": [
-      "warm",
-      "gentle"
+      "acoustic-guitar",
+      "bass",
+      "bright",
+      "calm",
+      "drums",
+      "piano",
+      "strings"
     ],
     "used_in": [
       "kl034"
-    ]
+    ],
+    "bpm": 120,
+    "mood": [
+      "bright",
+      "calm"
+    ],
+    "instruments": [
+      "acoustic-guitar",
+      "bass",
+      "drums",
+      "piano",
+      "strings"
+    ],
+    "has_beat": true,
+    "has_vocals": false,
+    "era": "dialogue",
+    "role_fit": [
+      "intro"
+    ],
+    "tag_note": "明るく穏やかなアコースティック調の曲。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": []
   },
   {
     "id": "kl034-BGM-main",
     "path": "BGM/kl034-BGM-main.mp3",
-    "duration": 0,
+    "duration": 31.9,
     "license": "CC0",
     "credit": null,
     "tags": [
-      "warm",
-      "gentle"
+      "bass",
+      "calm",
+      "electric-piano",
+      "lofi-beat",
+      "neutral"
     ],
     "used_in": [
       "kl034"
+    ],
+    "bpm": 80,
+    "mood": [
+      "calm",
+      "neutral"
+    ],
+    "instruments": [
+      "bass",
+      "electric-piano",
+      "lofi-beat"
+    ],
+    "has_beat": true,
+    "has_vocals": false,
+    "era": "dialogue",
+    "role_fit": [
+      "main",
+      "outro"
+    ],
+    "tag_note": "リラックスできるローファイヒップホップ。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": [
+      "main",
+      "outro"
     ]
   },
   {
     "id": "kl034-BGM-outro",
     "path": "BGM/kl034-BGM-outro.mp3",
-    "duration": 0,
+    "duration": 72.0,
     "license": "CC0",
     "credit": null,
     "tags": [
-      "light"
+      "curious",
+      "piano",
+      "pizzicato",
+      "playful"
     ],
     "used_in": [
       "kl034"
+    ],
+    "bpm": null,
+    "mood": [
+      "curious",
+      "playful"
+    ],
+    "instruments": [
+      "piano",
+      "pizzicato"
+    ],
+    "has_beat": false,
+    "has_vocals": false,
+    "era": "dialogue",
+    "role_fit": [
+      "main"
+    ],
+    "tag_note": "ピアノとピチカートによる不思議で軽快な楽曲。",
+    "tagged_by": "gemini-pro-latest x2",
+    "tagged_at": "2026-10-06",
+    "needs_ear_check": false,
+    "ear_check_reason": "",
+    "short_for_role": [
+      "main"
     ]
   }
 ]
