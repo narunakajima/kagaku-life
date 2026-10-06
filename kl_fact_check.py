@@ -215,6 +215,17 @@ def run(episode_id: str):
     by_ref = {}
     for s in scenes:
         idx = s.get("reference_index")
+        lines = s.get("lines") or []
+        # 2026-10-06: 掛け合い形式では、1シーンに複数の資料の事実が混じることがある（kl034で、同じシーンに
+        # ヘルプセンターと発表ブログの内容があり、行ごとの reference_index を無視して誤指摘が出た）。
+        # 行ごとの reference_index があれば、行単位でその資料に振り分ける。無い行はシーンの値を使う。
+        if any(l.get("reference_index") is not None for l in lines):
+            for l in lines:
+                li = l.get("reference_index", idx)
+                if li is None:
+                    continue
+                by_ref.setdefault(li, []).append(l["text"])
+            continue
         if idx is None:
             continue
         by_ref.setdefault(idx, []).append(s["narration"])

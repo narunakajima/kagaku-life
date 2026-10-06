@@ -1664,8 +1664,44 @@
       "notes": "2026-10-05: ニュース起点（news_date 2026-10-01、一次資料=公式ブログ）。構成=myth_buster。予想判定=夢語り:もうすぐ来る／ツッコミ:3年はかかる。ツッコミ材料=成功率の数字がない・根拠は人がテープで縛った1日・長期の賭け。",
       "genre": "humanoid",
       "health": false
+    },
+    {
+      "episode_id": "kl034",
+      "status": "confirmed",
+      "slot_type": "news",
+      "genre": "ai",
+      "health": false,
+      "domain": "life",
+      "concern_id": "work_ai",
+      "entry_question": "PCを閉じても24時間勝手に働いてくれるAIは、本当に仕事を肩代わりしてくれる？",
+      "title": "「PCを閉じても、AIが仕事を終わらせている」は本当か（OpenAI dots、9月29日発表）",
+      "format": "dialogue",
+      "references": [
+        {
+          "title": "dots のご紹介",
+          "authors": [],
+          "year": 2026,
+          "venue": "OpenAI 公式ブログ（2026-09-29）",
+          "url": "https://openai.com/ja-JP/index/introducing-dots/",
+          "is_preprint": false,
+          "institution": "OpenAI",
+          "source_kind": "official_blog"
+        },
+        {
+          "title": "dot スタートガイド",
+          "authors": [],
+          "year": 2026,
+          "venue": "OpenAI Help Center",
+          "url": "https://help.openai.com/ja-jp/articles/20001530-getting-started-with-your-dot",
+          "is_preprint": false,
+          "institution": "OpenAI",
+          "source_kind": "company_website"
+        }
+      ],
+      "hook_idea": "寝ている間にAIが仕事を終わらせている。ただし、送信ボタンは押せない。",
+      "notes": "構成=basic。予想判定: 夢語り=もうすぐ来る（発表日の時点で提供開始済み）、ツッコミ=まだ眉唾（成功率・時間短縮の数字が発表に無い）。ツッコミの材料: 先回り調査は読み取り専用で送信・変更・ブラウザ操作はできない／重要な操作は承認が要る／OpenAI自身が「dotは間違えることもある」と書く／発表に数字（成功率・削減時間）が無く事例は初期テスター1件／モバイルで作成不可・専用メール無し・電話不可。2026-10-06にニュース候補(最高4.45点)から選定。一次資料はブラウザで直接読んで確認済み（WebFetch/curlは403）。"
     }
   ],
-  "total_topics": 33,
+  "total_topics": 34,
   "last_updated": "2026-10-06"
 }
