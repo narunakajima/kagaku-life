@@ -892,8 +892,23 @@ def composite_thumbnail_dialogue(image_path: Path, ep: dict, cast: dict = None) 
 
     dr = ImageDraw.Draw(img)
     headline = ep.get("thumbnail_headline", "")
+    # thumbnail_badge: 製品名などを見出しの上に大きく目立たせる（2026-10-06、kl034「Dots」。なるさんの指示）
+    badge = ep.get("thumbnail_badge", "")
+    badge_h = 0
+    if badge:
+        bsize = int(h * 0.24)
+        while bsize > 60:
+            bf = _font(FONT_BOLD, bsize)
+            bstroke = max(6, bsize // 10)
+            if _text_w(dr, badge, bf, bstroke) <= w - int(w * 0.08) * 2:
+                break
+            bsize -= 4
+        bw = _text_w(dr, badge, bf, bstroke)
+        dr.text(((w - bw) // 2, int(h * 0.02)), badge, font=bf, fill=(255, 214, 10),
+                stroke_width=bstroke, stroke_fill=(20, 20, 20))
+        badge_h = int(bsize * 1.12)
     if headline:
-        size = int(h * 0.15)
+        size = int(h * (0.13 if badge else 0.15))
         margin = int(w * 0.04)
         while size > 40:
             f = _font(FONT_BOLD, size)
@@ -902,7 +917,7 @@ def composite_thumbnail_dialogue(image_path: Path, ep: dict, cast: dict = None) 
             if all(_text_w(dr, r, f, stroke) <= w - margin * 2 for r in rows):
                 break
             size -= 4
-        y = int(h * 0.05)
+        y = int(h * 0.05) + (badge_h if badge else 0)
         for r in headline.split("\n"):
             rw = _text_w(dr, r, f, stroke)
             dr.text(((w - rw) // 2, y), r, font=f, fill=(255, 255, 255), stroke_width=stroke,
