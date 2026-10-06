@@ -415,7 +415,7 @@
       "type": "paper",
       "bgm_role": "intro",
       "reference_index": 0,
-      "image_prompt": "A bright, tidy 'first day at work' desk in a clean office during daytime (clear daylight through the window). No people. On the desk: a blank white employee ID card on a lanyard (completely blank, no photo, no text), a neat paper invoice-style document with only blurred gray lines and no readable text, and a fountain pen resting beside it. Above the desk floats a translucent, softly glowing outline of a computer and a browser-like window frame made of light, drawn as a simple abstract shape with nothing inside, as if a colleague who lives in the cloud were sitting there. No logos, no interface, no readable text, no numbers.",
+      "image_prompt": "A bright, tidy 'first day at work' desk in a clean office during daytime (clear daylight through the window). No people. On the desk: a blank white employee ID card on a lanyard (completely blank, no photo, no text), a neat paper invoice-style document with only blurred gray lines and no readable text, and a fountain pen resting beside it. In the middle of the desk sits one ordinary, completely solid and opaque silver laptop, closed, drawn as a normal physical object with a clear shadow (nothing see-through, no outlines, no ghost shapes). Directly above the closed laptop a soft, warm, cloud-shaped glow of light floats, as if a colleague who lives in the cloud were working there. No logos, no interface, no readable text, no numbers.",
       "ken_burns": "zoom_in",
       "lines": [
         {
@@ -581,7 +581,7 @@
       "type": "tsukkomi",
       "bgm_role": "main",
       "reference_index": 0,
-      "image_prompt": "A calm, bright daytime desk scene (clear daylight): a large magnifying glass rests on several stacks of documents covered only in blurred gray lines; next to them, a sealed blank paper envelope sits under a clear glass dome, set apart and not yet sent. A small brass desk bell beside the dome. Thoughtful, slightly wry mood. No people, no logos, no interface, no readable text, no numbers.",
+      "image_prompt": "A calm, bright daytime desk scene (clear daylight): on the left, a large magnifying glass held in place over a stack of documents covered only in blurred gray lines (reading is allowed). On the right, a small wooden outgoing mailbox with its flap closed and a heavy brass padlock clearly hanging on the flap (sending is locked); a plain blank sealed envelope lies on the desk beside the mailbox, outside it, not yet sent. Thoughtful, slightly wry mood. No people, no glass domes, no logos, no interface, no readable text, no numbers.",
       "ken_burns": "zoom_out",
       "lines": [
         {
@@ -731,14 +731,14 @@
         },
         {
           "speaker": "skeptic",
-          "text": "それ、肩代わりっていうより、上司の役が1つ増えただけじゃない？",
+          "text": "それ、肩代わりっていうより、ボスの役が1つ増えただけじゃない？",
           "expression": "doubt",
           "pause": 0.4,
           "t0": 15.38,
-          "dur": 4.36,
+          "dur": 4.44,
           "cards": [
             {
-              "text": "それ、肩代わりっていうより、上司の役が1つ増えただけじゃない？",
+              "text": "それ、肩代わりっていうより、ボスの役が1つ増えただけじゃない？",
               "start": 0.0,
               "end": 4.36
             }
@@ -746,22 +746,22 @@
         },
         {
           "speaker": "dreamer",
-          "text": "上司？",
+          "text": "ボス？",
           "expression": "surprised",
-          "t0": 20.02,
-          "dur": 1.24,
+          "t0": 20.1,
+          "dur": 1.0,
           "cards": [
             {
-              "text": "上司？",
+              "text": "ボス？",
               "start": 0.0,
               "end": 1.24
             }
           ]
         }
       ],
-      "narration": "大輔「じゃあ、言い直す。月曜の朝、パソコンを開くと、請求書が下書きで待ってる。あとは目を通して、承認するだけ。」\n大輔「想像してみてよ。自分が忘れてたことを、向こうが先に思い出してくれる朝。」\n沙織「それ、肩代わりっていうより、上司の役が1つ増えただけじゃない？」\n大輔「上司？」",
+      "narration": "大輔「じゃあ、言い直す。月曜の朝、パソコンを開くと、請求書が下書きで待ってる。あとは目を通して、承認するだけ。」\n大輔「想像してみてよ。自分が忘れてたことを、向こうが先に思い出してくれる朝。」\n沙織「それ、肩代わりっていうより、ボスの役が1つ増えただけじゃない？」\n大輔「ボス？」",
       "narrator": "dialogue",
-      "lines_hash": "ed349b8ebb2d"
+      "lines_hash": "1007067dd4a3"
     },
     {
       "scene_id": 11,
@@ -811,10 +811,10 @@
         },
         {
           "speaker": "dreamer",
-          "text": "自分が忘れてることは、自分では確認しようがない。そこを拾うなら、上司とは違うよ。",
+          "text": "自分が忘れてることは、自分では確認しようがない。そこを拾うなら、ボスとは違うよ。",
           "expression": "excited",
           "t0": 13.98,
-          "dur": 6.48,
+          "dur": 6.24,
           "cards": [
             {
               "text": "自分が忘れてることは、自分では確認しようがない。そこを拾うなら、",
@@ -822,7 +822,7 @@
               "end": 4.8
             },
             {
-              "text": "上司とは違うよ。",
+              "text": "ボスとは違うよ。",
               "start": 4.95,
               "end": 6.27
             }
@@ -834,7 +834,7 @@
           "expression": "convinced",
           "react": "convinced",
           "pause": 0.5,
-          "t0": 20.96,
+          "t0": 20.72,
           "dur": 4.52,
           "cards": [
             {
@@ -849,7 +849,7 @@
           "text": "ただ、ヘルプセンターを読むと、承認なしで進める設定もある。",
           "expression": "thinking",
           "reference_index": 1,
-          "t0": 25.7,
+          "t0": 25.46,
           "dur": 4.04,
           "cards": [
             {
@@ -863,7 +863,7 @@
           "speaker": "dreamer",
           "text": "え、あるの？",
           "expression": "surprised",
-          "t0": 30.02,
+          "t0": 29.78,
           "dur": 1.8,
           "cards": [
             {
@@ -874,9 +874,9 @@
           ]
         }
       ],
-      "narration": "沙織「AIが下書きを出して、人が毎回見て、ハンコを押す。仕事が減ったのか、チェック係に変わっただけなのか。」\n大輔「でもさ、請求書の例のすごさは、作ったことじゃない。忘れてることに、気づいたことなんだ。」\n大輔「自分が忘れてることは、自分では確認しようがない。そこを拾うなら、上司とは違うよ。」\n沙織「……それは、認める。気づく役は、人が一番苦手なところだね。」\n沙織「ただ、ヘルプセンターを読むと、承認なしで進める設定もある。」\n大輔「え、あるの？」",
+      "narration": "沙織「AIが下書きを出して、人が毎回見て、ハンコを押す。仕事が減ったのか、チェック係に変わっただけなのか。」\n大輔「でもさ、請求書の例のすごさは、作ったことじゃない。忘れてることに、気づいたことなんだ。」\n大輔「自分が忘れてることは、自分では確認しようがない。そこを拾うなら、ボスとは違うよ。」\n沙織「……それは、認める。気づく役は、人が一番苦手なところだね。」\n沙織「ただ、ヘルプセンターを読むと、承認なしで進める設定もある。」\n大輔「え、あるの？」",
       "narrator": "dialogue",
-      "lines_hash": "1a5339f53e91"
+      "lines_hash": "a690546921ba"
     },
     {
       "scene_id": 12,
@@ -1034,7 +1034,7 @@
       "type": "tsukkomi",
       "bgm_role": "main",
       "reference_index": 1,
-      "image_prompt": "A neat desk in soft afternoon daylight: a smartphone lying face down, a desktop computer monitor turned off showing only a dark blank screen, and in the foreground an unplugged cable whose plug lies apart from its socket, next to a small glass jar that still holds a few glowing paper notes inside even though the cable is disconnected. A small pause button-shaped plain round token (no symbol drawn) rests beside it. Thoughtful mood. No people, no logos, no interface, no readable text, no numbers.",
+      "image_prompt": "A neat desk in soft afternoon daylight, seen from the front. On the left, an electrical cable has been pulled out and lies apart from its socket (disconnected). In the center, an open archive box is still full of neatly stacked documents covered only in blurred gray lines (the collected information remains even though the cable is disconnected). On the right, one large plain round red push-button sits alone on the desk, with no symbol on it (the only way to wipe everything). Thoughtful mood. No people, no jars, no logos, no interface, no readable text, no numbers.",
       "ken_burns": "zoom_out",
       "lines": [
         {
@@ -1463,7 +1463,7 @@
         },
         {
           "narrator": "skeptic",
-          "narration": "それ、上司の役が1つ増えただけじゃない？",
+          "narration": "それ、ボスの役が1つ増えただけじゃない？",
           "expression": "amused",
           "react": "surprised",
           "scene_id": 11
