@@ -68,6 +68,12 @@ BGM_FADE_IN = 5
 BGM_FADE_OUT = 6
 BGM_CROSSFADE = 4.0
 BGM_ROLES = ["intro", "main", "outro"]
+# 曲が区間より短いときのループのつなぎ目（2026-10-06）。以前は aloop で曲の末尾から頭へ
+# いきなり戻していたため、30秒前後の main 曲（掛け合い形式の main 区間は160〜200秒）で
+# 5〜6回つなぎ目が出ていた。曲の頭と末尾の無音を落とし、BGM_LOOP_XFADE 秒のクロスフェードで
+# 前のコピーの末尾と次のコピーの頭を重ねた「つなぎ済みの長い曲」を先に作ってから使う。
+BGM_LOOP_XFADE = 1.5
+BGM_SILENCE_THRESHOLD = "-50dB"
 
 OUTRO_DURATION = 7.0
 LOGO_PATH = DRIVE_BASE / "LOGO.PNG"
@@ -400,9 +406,67 @@ def _bgm_segment_filter(in_idx: int, start: float, end: float, is_first: bool, i
     )
 
 
+def make_seamless_bgm(src: Path, need_dur: float, work_dir: Path, label: str = "bgm") -> Path:
+    """曲が need_dur 秒より短いとき、つなぎ目をクロスフェードでならした長い曲を作って返す。
+
+    曲の頭と末尾の無音（フェードアウト後の余白など）を落としてから、同じ曲を必要な回数だけ
+    並べ、隣どうしを BGM_LOOP_XFADE 秒の acrossfade でつなぐ。曲が十分長ければ src をそのまま返す
+    （既存の長い曲の音は変わらない）。失敗したら src を返し、従来どおり aloop に任せる。
+    """
+    try:
+        src_dur = probe_audio_duration(src)
+    except Exception:
+        return src
+    if src_dur >= need_dur:
+        return src
+
+    work_dir.mkdir(parents=True, exist_ok=True)
+    trimmed = work_dir / f"{label}_trimmed.wav"
+    th = BGM_SILENCE_THRESHOLD
+    try:
+        run_cmd(
+            [FFMPEG, "-y", "-i", str(src), "-af",
+             f"silenceremove=start_periods=1:start_threshold={th},"
+             f"areverse,silenceremove=start_periods=1:start_threshold={th},areverse",
+             "-ar", "44100", "-ac", "2", str(trimmed)],
+            f"BGMの前後の無音を除去 ({label})",
+        )
+        one = probe_audio_duration(trimmed)
+    except Exception:
+        return src
+    xf = min(BGM_LOOP_XFADE, one / 4)
+    if one <= xf * 2:
+        return src
+    # n 本並べると n*one - (n-1)*xf 秒になる
+    n = 2
+    while n * one - (n - 1) * xf < need_dur + 1.0:
+        n += 1
+    inputs = []
+    for _ in range(n):
+        inputs += ["-i", str(trimmed)]
+    chain, prev = [], "[0:a]"
+    for k in range(1, n):
+        out = f"[x{k}]" if k < n - 1 else "[out]"
+        chain.append(f"{prev}[{k}:a]acrossfade=d={xf:.3f}:c1=qsin:c2=qsin{out}")
+        prev = out
+    looped = work_dir / f"{label}_looped.wav"
+    try:
+        run_cmd(
+            [FFMPEG, "-y"] + inputs + ["-filter_complex", ";".join(chain), "-map", "[out]", str(looped)],
+            f"BGMをつなぎ目なしでループ ({label}: {src_dur:.1f}s × {n} → {need_dur:.1f}s)",
+        )
+    except Exception:
+        return src
+    return looped
+
+
 def build_audio_track(all_scenes: list, all_offsets: list, narration_dir: Path,
                       total_dur: float, bgm_segments: list, dst: Path):
     """全シーンのナレーション（テイザー+本編、グローバルオフセット）とBGM3曲をミックスする。"""
+    bgm_segments = [
+        (make_seamless_bgm(p, end - start, dst.parent / "bgm_loops", f"seg{si}"), start, end)
+        for si, (p, start, end) in enumerate(bgm_segments)
+    ]
     narr_inputs, narr_filters, all_labels = [], [], []
 
     for i, scene in enumerate(all_scenes):
@@ -832,7 +896,7 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None):
         n_narr = len(narr_inputs)
         try:
             bgm_paths = resolve_bgm_paths(ep)
-            bgm_input = bgm_paths["main"]
+            bgm_input = make_seamless_bgm(bgm_paths["main"], total_dur, tmp / "bgm_loops", "shorts_main")
             narr_filters.append(_bgm_segment_filter(n_narr, 0.0, total_dur, True, True, "bgm0"))
             has_bgm = True
         except FileNotFoundError:

@@ -366,13 +366,13 @@ def concat_line_wavs(line_wavs: list, lines: list, out_path: Path) -> list:
 MAIN_LAYOUT = {
     "W": 1408, "H": 768,
     "sprite_h": 330, "sprite_h_chart": 240, "sprite_margin": 6,
-    "bar_h": 150, "font": 40, "rows": 2, "teaser_font": 80,
+    "bar_h": 150, "font": 40, "rows": 1, "teaser_font": 80,  # 2026-10-06: 字幕は1枚1行（2行にすると文字が縮んで読みにくい。なるさんの指示）
     "text_cy": None,  # None: 字幕帯の中央
 }
 SHORTS_LAYOUT = {
     "W": 768, "H": 1376,
     "sprite_h": 400, "sprite_h_chart": 400, "sprite_margin": 0,
-    "bar_h": 0, "font": 48, "rows": 3, "teaser_font": 64,
+    "bar_h": 0, "font": 48, "rows": 1, "teaser_font": 64,  # 2026-10-06: 1枚1行（長いカットは shorts_timeline で複数の字幕に分ける）
     "text_cy": 0.56,
 }
 
@@ -714,6 +714,79 @@ def main_timeline(ep: dict, scenes: list, offsets: list, durs: list, narr_delay:
     return events
 
 
+_SUB_MAXW_CACHE = {}
+
+
+def subtitle_max_w(layout: dict, cast: dict = None) -> int:
+    """字幕1行の最大幅（px）。render_layer と同じ式（立ち絵を避ける幅、立ち絵なしなら画面の9割）。"""
+    key = (layout["W"], layout["bar_h"], layout["sprite_h"])
+    if key not in _SUB_MAXW_CACHE:
+        if layout["bar_h"]:
+            cast = cast or load_cast()
+            bank = SpriteBank(cast)
+            sw = max(bank.get(r, "neutral", layout["sprite_h"], a).width for r in ROLES for a in (True, False))
+            _SUB_MAXW_CACHE[key] = layout["W"] - 2 * (sw + 24)
+        else:
+            _SUB_MAXW_CACHE[key] = int(layout["W"] * 0.9)
+    return _SUB_MAXW_CACHE[key]
+
+
+def split_to_width(text: str, layout: dict, cast: dict = None) -> list:
+    """字幕を、実際の描画幅で1行に収まる最少の枚数に分ける（2026-10-06、なるさんの指示: 2行にすると
+    文字が縮んで読みにくいので、1行で次の字幕に切り替える）。分け目は句読点・文節の境界を優先し、
+    枚数が同じなら幅がそろう分け方を選ぶ。行頭に句読点・閉じ括弧などが来る分け方はしない。"""
+    d = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+    f = _font(FONT_MEDIUM, layout["font"])
+    max_w = subtitle_max_w(layout, cast)
+    stroke = 6
+    if _text_w(d, text, f, stroke) <= max_w:
+        return [text]
+    n = len(text)
+    no_head = set("、。，．！？!?」』）)…ーゃゅょっぁぃぅぇぉャュョッァィゥェォ ")
+    try:
+        from kl_telop_gen import _token_boundaries
+        cands = {b for b in _token_boundaries(text) if 0 < b < n}
+    except Exception:  # janome が無い環境
+        cands = set(range(1, n))
+    cands |= {i + 1 for i, ch in enumerate(text) if ch in "、。！？!?" and i + 1 < n}
+    cands = {b for b in cands if text[b] not in no_head}
+    pts = sorted(cands | {0, n})
+
+    def solve(points):
+        INF = (10 ** 9, 0.0)
+        best = {0: ((0, 0.0), None)}
+        for j in points[1:]:
+            cur = None
+            for i in points:
+                if i >= j or i not in best:
+                    continue
+                w = _text_w(d, text[i:j], f, stroke)
+                if w > max_w:
+                    continue
+                pc, pen = best[i][0]
+                bonus = 40.0 if text[j - 1] in "、。！？!?" else 0.0
+                cost = (pc + 1, pen + (w / 100.0) ** 2 - bonus)
+                if cur is None or cost < cur[0]:
+                    cur = (cost, i)
+            if cur:
+                best[j] = cur
+        return best
+
+    best = solve(pts)
+    if n not in best:  # 文節単位では収まらない → 文字単位で分ける
+        best = solve(list(range(0, n + 1)))
+    out, j = [], n
+    while j > 0:
+        i = best[j][1]
+        out.append(text[i:j])
+        j = i
+    return out[::-1]
+
+
+def split_for_one_row(text: str, layout: dict) -> list:
+    return split_to_width(text, layout)
+
+
 def shorts_timeline(ep: dict, cuts: list, offsets: list, durs: list, narr_delay: float,
                     cast: dict) -> list:
     events = []
@@ -728,11 +801,21 @@ def shorts_timeline(ep: dict, cuts: list, offsets: list, durs: list, narr_delay:
         events.append((round(off, 3), {"mode": "normal", "speaker": sp, "exprs": exprs,
                                        "text": None, "chart": cut.get("style") == "chart",
                                        "stamps": st, "cta": None, "badge": cut.get("badge_text")}))
-        events.append((round(off + narr_delay, 3), {"mode": "normal", "speaker": sp, "exprs": exprs,
-                                                    "text": cut.get("telop_text", cut["narration"]),
-                                                    "chart": cut.get("style") == "chart",
-                                                    "stamps": st, "cta": "↓ 続きは本編で" if last else None,
-                                                    "badge": cut.get("badge_text")}))
+        # 2026-10-06: 字幕は1枚1行（2行にすると文字が縮んで読みにくい）。長いカットは句読点・文節で
+        # SHORTS_CARD_MAX 字以内に分け、カットの発話区間（遅延後〜カット終わり）を文字数に比例して配分する
+        text = cut.get("telop_text", cut["narration"])
+        chunks = split_for_one_row(text, SHORTS_LAYOUT)
+        t0 = off + narr_delay
+        span = max(0.1, (off + dur) - t0)
+        total_chars = sum(len(c) for c in chunks) or 1
+        pos = 0
+        for ci, chunk in enumerate(chunks):
+            events.append((round(t0 + span * pos / total_chars, 3),
+                           {"mode": "normal", "speaker": sp, "exprs": exprs, "text": chunk,
+                            "chart": cut.get("style") == "chart",
+                            "stamps": st, "cta": "↓ 続きは本編で" if last else None,
+                            "badge": cut.get("badge_text")}))
+            pos += len(chunk)
     events.sort(key=lambda e: e[0])
     return events
 

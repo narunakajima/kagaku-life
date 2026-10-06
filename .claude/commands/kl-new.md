@@ -56,7 +56,7 @@
 | BGMクレジット注入 | `kl_inject_bgm_credit.py` |
 | Google Drive格納 | `kl_finalize.py` |
 | 動画生成 | `kl_video_gen.py` |
-| Freesoundダウンロード（LW共有） | `$HOME/lamp-whisper/freesound_download.py` |
+| Freesoundダウンロード（KL専用、2026-10-06〜） | `kl_freesound_download.py`（LW共有の `$HOME/lamp-whisper/freesound_download.py` は使わない） |
 
 ---
 
@@ -793,41 +793,54 @@ python3 kl_telop_gen.py --episode kl{NNN} plan
 
 ## STEP 10 — BGM選定
 
-**掛け合い形式（2026-10-04〜）では役割の中身が変わった。** intro=冒頭〜夢（好奇心・期待）、main=ツッコミ・答え合わせ
-（**軽い緊張感を許可**。遊び心のあるピチカート、考えごとをしているような軽いリズムなど）、outro=判定〜締め（余韻）。
-どこで切り替わるかは各シーンの `bgm_role`。禁止は従来どおり epic/battle/war/horror と、重い・攻撃的な曲。
-main は新しい曲を優先して探す（旧形式で同じ曲が9話に使い回されていた。CLAUDE.md「新規候補を実績曲より優先」）。
-`kl_bgm_final_check.py` の判定も、main に軽い緊張感があることを減点しない。
+**方針（2026-10-06作り直し。正は CLAUDE.md「BGMパイプライン」→「掛け合い形式のBGM方針」）: BGMは二人の会話のテンポを支える
+リズム。感情を語るのは台詞。** ジャンルや判定で曲調は変えない。禁止は epic/battle/war/horror、重い・攻撃的な曲、ボーカル、
+泣きのストリングス、オルゴールや遅いソロピアノ。どこで切り替わるかは各シーンの `bgm_role`。
 
-CLAUDE.md「BGMパイプライン」の手順に従う（トーンは必ず温かく・希望が持てる・
-押し付けがましくない。禁止語: epic/battle/war/dark/aggressive/horror）。
+| 役割 | 主なシーン | 狙い | テンポ・楽器 |
+|---|---|---|---|
+| intro | teaser〜dream | ニュースの引き・「何それ？」のワクワク | 105〜125 BPM。シンセのアルペジオ／プラック＋軽いビート、明るい長調、頭2〜4小節で立ち上がる |
+| main | tsukkomi・check | 考える・確かめるときの軽い緊張と遊び | 80〜100 BPM。lo-fi／ヒップホップのビート、ピチカート、薄いメロディ |
+| outro | verdict・closing | 判定の決着感と軽い余韻 | 85〜100 BPM。intro と同系統を少し落ち着かせたもの（エレピ／ピアノ＋軽いビート） |
 
-**SC/LWと同じく、候補は「Freesound新規ダウンロード」だけでなく「`bgm_library.json`
-の既存曲」も含めて役割ごとに揃える。** 過去エピソードで確認済みの曲は品質・
-トーンの信頼度が高く、新規ダウンロードだけに頼ると同じ探索を毎回繰り返すことになる。
+**長さ: 区間の長さ×0.7以上が目安。main は120秒以上**（掛け合い形式の main 区間は160〜200秒）。短い曲は `kl_video_gen.py` が
+つなぎ目をクロスフェードでならしてループするが、つなぎ目を必ず聴いて確認する（`kl_bgm_final_check.py` がつなぎ目の前後を聴かせる）。
 
-1. `bgm_library.json` を読み、役割のトーン（intro=好奇心・静かな導入、
-   main=研究紹介への高まり、outro=温かい余韻）に近い`tags`を持つ既存曲を
-   役割ごとに1〜2曲ピックアップする（同一エピソードでの重複使用は避ける）。
-2. Freesoundから役割別（intro/main/outro）に新規候補を1曲ずつダウンロード:
+**ライブラリの使い方のルール:** 同じ曲は直近5話で1回まで。各話で3役割のうち最低1曲は新曲（main を優先）。
+`used_in` が6話以上の曲は使わない（kl002-BGM-main・kl001-BGM-intro・kl001-BGM-outro・kl005-BGM-main・kl001-BGM-main・
+kl002-BGM-outro）。旧形式向きの曲（ピアノのバラード・泣きのストリングス等、`era: legacy_monologue`）も使わない。
+
+1. `bgm_library.json` を読み、上のルールを満たし、役割の狙いに合う既存曲を役割ごとに0〜1曲選ぶ（`era: dialogue`・`role_fit`・
+   `bpm`・`has_beat` が記録されていればそれを使う。記録が無い旧い曲は、曲名・クレジットから判断できるものだけ）。
+2. Freesoundから役割別に新規候補をダウンロードする（クエリは2語まで。例と避ける語は CLAUDE.md の表）:
    ```bash
    mkdir -p "$HOME/Desktop/kagaku-life/BGM"
-   FREESOUND_API_KEY=$FREESOUND_API_KEY python3 "$HOME/lamp-whisper/freesound_download.py" \
+   FREESOUND_API_KEY=$FREESOUND_API_KEY python3 kl_freesound_download.py \
      "<Q_intro>" "<Q_main>" "<Q_outro>" \
      "$HOME/Desktop/kagaku-life/BGM/" \
-     --round 0 --start-slot 1 \
+     --count 2 --round 0 --start-slot 1 \
      --library "$HOME/kagaku-life/bgm_library.json"
    ```
-3. 新規ダウンロード分のみ `kl_bgm_qa.py --dir` でボーカル混入チェック
-   （ライブラリ曲は過去のQA実績があるため再チェック不要）
-4. 役割ごとに複数候補（ライブラリ+新規）がある場合、Claudeがテキスト情報
-   （曲名・タグ・QAの音の説明）だけで1曲に絞り込む
-5. `kl_bgm_final_check.py --episode kl{NNN}` で実音声+制作確認書をGeminiに渡し、
-   最終検証（テキストだけでは質感を見誤ることがあるため省略しない）
-6. 条件付き採用・差し替えが出た場合は該当役割だけ差し替えて再検証する
-7. 承認が得られたら本登録する:
-   - 新規曲の場合: `kl_bgm_library.py --add --episode kl{NNN} --role {role} --file {path} --stem {name}`
-     （Google Driveへ移動・`bgm_sources`に記録・ライブラリに新規追加）
+   - 3クエリを渡すと intro/main/outro の順に役割が付き、長さの下限（intro 90秒・main 120秒・outro 45秒）が決まる。1役割だけ
+     探し直すときは `--role main` を付ける。下限を満たす候補が無いと30秒以上に緩めて探し直し「短い曲」と表示する
+   - score 順の1位が良い曲とは限らないので `--count 2〜3` で複数取る。候補だけ見るなら `--list 10`
+   - 0件・候補不足なら `--round 1` で次のページへ進むか、語を変える
+3. 新規ダウンロード分を `kl_bgm_qa.py --dir` でボーカル混入チェックする（3回の多数決。1回でも「あり」なら不合格）。
+   **判定が割れた曲**は、表示された時刻の前後5秒を聴いて確かめるか、`--model gemini-pro-latest` で取り直す
+   （flash はソロピアノに「男性ボーカル」と答えるなど、判定が割れやすい。pro は実測で6曲×3回すべて一致した）。
+   ライブラリ曲は再チェック不要
+4. 役割ごとに、ライブラリ＋新規の候補から1曲に絞り、`~/Desktop/kagaku-life/BGM/` に `intro_*.mp3`／`main_*.mp3`／`outro_*.mp3`
+   としてコピーする（役割ごとに1ファイルだけ置く。**元のファイル名（`BGM_candidate_NN_{FreesoundのID}_...`）を
+   残すと、`kl_bgm_library.py --add` がクレジットと `source_id` を自動で拾える**。例: `main_BGM_candidate_02_668377_Lofi....mp3`）
+5. `kl_bgm_final_check.py --episode kl{NNN}` で最終検証する（温度0で3回の中央値。最終行が「最終判定: 合格」か
+   「最終判定: 要差し替え（main など）」）。狙いを伝えずに曲単体を聴き取り、その結果と、台詞＋BGMの簡易ミックス、ループの
+   つなぎ目で、役割ごとに5項目を1〜5点で採点する。合格は役割ごとに全項目3点以上かつ平均3.5以上
+6. 「要差し替え」の役割だけ差し替えて再検証する（2回続けて不合格なら CLAUDE.md の Opus へのエスカレーション条件に当たる）
+7. 合格したら本登録する（新規曲は曲調も記録する）:
+   - 新規曲の場合: `kl_bgm_library.py --add --episode kl{NNN} --role {role} --file {path} --stem {name}
+     --bpm {BPM} --mood {bright,playful 等} --instruments {synth,lofi-beat 等} --has-beat yes --era dialogue`
+     （Google Driveへ移動・`bgm_sources`に記録・ライブラリに新規追加。`duration` は自動で実測。ファイル名から
+     FreesoundのIDが分からないときは `--source-id {ID}`）
    - 既存ライブラリ曲を採用した場合: `kl_bgm_library.py --use-library --episode kl{NNN} --role {role} --stem {library_id}`
      （ダウンロード・移動不要、`bgm_sources`に既存パスを記録・`used_in`を更新）
 8. CC BYライセンス曲があれば `kl_inject_bgm_credit.py --episode kl{NNN} --credit-file {path}`

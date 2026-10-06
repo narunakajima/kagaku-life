@@ -589,7 +589,7 @@ def cmd_burn_test(episode_id: str, scene_id: int):
 
 
 # 掛け合い形式（2026-10-04〜）の字幕: 1枚の字幕は最大2行（1行おおよそ20字）まで。
-DIALOGUE_CARD_MAX = 38
+DIALOGUE_CARD_MAX = 20   # 2026-10-06: 38→20。字幕は1枚1行（40px・立ち絵を避けた幅868pxに全角20字=806pxが収まる）。2行だと文字が縮んで読みにくい
 
 
 def cmd_plan_dialogue(episode_id: str, scene_filter: list = None, force: bool = False):
@@ -613,8 +613,22 @@ def cmd_plan_dialogue(episode_id: str, scene_filter: list = None, force: bool = 
                 print(f"  ⚠️ S{sid:02d} 行{k}: dur がありません（kl_tts_gen.py を先に実行）")
                 continue
             text = line.get("display") or line["text"]
-            if len(text) <= DIALOGUE_CARD_MAX or line.get("display"):
+            if len(text) <= DIALOGUE_CARD_MAX:
                 line["cards"] = [{"text": text, "start": 0.0, "end": round(dur, 2)}]
+                continue
+            if line.get("display"):
+                # 字幕だけ別表記（display）の行は、音声と字幕の文字が一致せずWhisperの突き合わせができない。
+                # 字幕を1行の長さに分け、行の音声の長さを文字数に比例して配分する（2026-10-06）
+                chunks = chunk_narration(text, DIALOGUE_CARD_MAX)
+                total = sum(len(c) for c in chunks) or 1
+                pos, cards_ = 0, []
+                for c in chunks:
+                    st = dur * pos / total
+                    pos += len(c)
+                    cards_.append({"text": c, "start": round(st, 2), "end": round(dur * pos / total, 2)})
+                line["cards"] = cards_
+                n_split += 1
+                print(f"  S{sid:02d} 行{k}: {len(cards_)}枚に分割（display行・文字数比例）")
                 continue
             wav = narration_dir / f"S{sid:02d}_L{k:02d}.wav"
             cards = plan_telop_cards(text, wav, dur, max_chars=DIALOGUE_CARD_MAX)
@@ -623,8 +637,44 @@ def cmd_plan_dialogue(episode_id: str, scene_filter: list = None, force: bool = 
             print(f"  S{sid:02d} 行{k}: {len(cards)}枚に分割")
             for c in line["cards"]:
                 print(f"      {c['start']:.2f}〜{c['end']:.2f}  {c['text']}")
+    # 2026-10-06: 仕上げに、1行（描画幅）に収まらないカードを実測幅でさらに分ける。字幕は1枚1行（2行だと
+    # 文字が縮んで読みにくい）。分けた枚数ぶん、元のカードの区間を文字数に比例して配分する
+    import kl_dialogue as D
+    n_refined = 0
+    for scene in ep["scenes"]:
+        if scene.get("type") == "teaser" or (scene_filter and scene["scene_id"] not in scene_filter):
+            continue
+        for line in scene["lines"]:
+            new_cards = []
+            for c in line.get("cards") or []:
+                parts = D.split_to_width(c["text"], D.MAIN_LAYOUT)
+                if len(parts) == 1:
+                    new_cards.append(c)
+                    continue
+                total = sum(len(x) for x in parts) or 1
+                pos = 0
+                for x in parts:
+                    st = c["start"] + (c["end"] - c["start"]) * pos / total
+                    pos += len(x)
+                    new_cards.append({"text": x, "start": round(st, 2),
+                                      "end": round(c["start"] + (c["end"] - c["start"]) * pos / total, 2)})
+                n_refined += 1
+            # 「ない？」のような極端に短い断片が出た行は、行全体を幅で分け直して均等にする（時間は文字数比例）
+            if len(new_cards) > 1 and any(len(c["text"]) <= 3 for c in new_cards) and line.get("dur"):
+                full = "".join(c["text"] for c in new_cards)
+                parts = D.split_to_width(full, D.MAIN_LAYOUT)
+                if len(parts) >= 2 and all(len(x) > 3 for x in parts):
+                    total = sum(len(x) for x in parts) or 1
+                    pos, rebuilt = 0, []
+                    for x in parts:
+                        st = line["dur"] * pos / total
+                        pos += len(x)
+                        rebuilt.append({"text": x, "start": round(st, 2), "end": round(line["dur"] * pos / total, 2)})
+                    new_cards = rebuilt
+            if line.get("cards"):
+                line["cards"] = new_cards
     atomic_write_json(ep_path, ep)
-    print(f"\n完了: 字幕を書き込みました（Whisperで分割した行: {n_split}）")
+    print(f"\n完了: 字幕を書き込みました（Whisperで分割した行: {n_split}、実測幅でさらに分けたカード: {n_refined}）")
 
 
 def main():
