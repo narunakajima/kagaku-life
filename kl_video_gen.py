@@ -144,7 +144,11 @@ def make_ken_burns(src: Path, dst: Path, duration: float, effect: str, anchor: t
     total_frames = max(1, int(duration * FPS))
     z = KB_ZOOM_FACTOR
     buf_w, buf_h = w * 2, h * 2
-    prescale = f"scale={buf_w}:{buf_h}:flags=lanczos"
+    # 縦横比が出力と違う画像（gemini-nano-banana-2.1の横長は1376×768で、旧モデルの
+    # 1408×768と幅が違う）を引き伸ばさないよう、拡大して覆ってから中央で切り抜く
+    # （SCのsc_video_gen.pyと同じ方式。2026-10-07追加）。
+    prescale = (f"scale={buf_w}:{buf_h}:flags=lanczos:force_original_aspect_ratio=increase,"
+                f"crop={buf_w}:{buf_h}")
     px, py = anchor
 
     # zoom_inは固定速度(KB_ZOOM_SPEED)だと、クリップが約28秒を超える長さの場合

@@ -3,7 +3,7 @@ kl_image_gen.py — くらしを変える科学 静止画生成スクリプト
 
 episodes/kl{NNN}.json の各シーンのimage_promptに、シーンtypeに応じた
 BASE_CONTEXT（物語シーン用）またはCHART_CONTEXT（dataタイプ用）を付与して
-gemini-3.1-flash-imageで静止画を生成する（CLAUDE.md「画像スタイル」参照）。
+gemini-nano-banana-2.1（Nano Banana 2.1）で静止画を生成する（CLAUDE.md「画像スタイル」参照）。
 thumbnail_promptも同様にBASE_CONTEXTを付与して生成する。
 
 生成後、Gemini Visionによる自動QA（sc_image_gen.pyと同じ考え方）を行い、
@@ -68,7 +68,7 @@ BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-MODEL = "gemini-3.1-flash-image"
+MODEL = "gemini-nano-banana-2.1"
 QA_MODEL = "gemini-flash-latest"
 REQUEST_TIMEOUT_MS = 60_000
 MAX_QA_ATTEMPTS = 2  # SCの実績（89話分・3回目のリトライは効果薄）を踏襲し2回に抑える

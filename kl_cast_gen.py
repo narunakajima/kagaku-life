@@ -39,7 +39,7 @@ OUT_DIR = BASE_DIR / "assets" / "cast"
 RAW_DIR = OUT_DIR / "raw"
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-MODEL = "gemini-3.1-flash-image"
+MODEL = "gemini-nano-banana-2.1"
 
 KEY_COLOR = (255, 0, 255)
 # 立ち絵の最終サイズ（高さ固定、幅は内容に合わせて切り詰める）

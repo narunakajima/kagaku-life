@@ -574,7 +574,7 @@ def cmd_burn_test(episode_id: str, scene_id: int):
     subprocess.run(
         [
             FFMPEG, "-y", "-loop", "1", "-i", str(img_path), "-i", str(wav_path),
-            "-t", str(duration), "-vf", "scale=1408:768",
+            "-t", str(duration), "-vf", "scale=1408:768:force_original_aspect_ratio=increase,crop=1408:768",
             "-c:v", "libx264", "-crf", "18", "-preset", "fast",
             "-c:a", "aac", "-b:a", "192k", "-shortest",
             str(silent_clip),
