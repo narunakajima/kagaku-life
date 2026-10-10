@@ -1700,8 +1700,53 @@
       ],
       "hook_idea": "寝ている間にAIが仕事を終わらせている。ただし、送信ボタンは押せない。",
       "notes": "構成=basic。予想判定: 夢語り=もうすぐ来る（発表日の時点で提供開始済み）、ツッコミ=まだ眉唾（成功率・時間短縮の数字が発表に無い）。ツッコミの材料: 先回り調査は読み取り専用で送信・変更・ブラウザ操作はできない／重要な操作は承認が要る／OpenAI自身が「dotは間違えることもある」と書く／発表に数字（成功率・削減時間）が無く事例は初期テスター1件／モバイルで作成不可・専用メール無し・電話不可。2026-10-06にニュース候補(最高4.45点)から選定。一次資料はブラウザで直接読んで確認済み（WebFetch/curlは403）。"
+    },
+    {
+      "episode_id": "kl035",
+      "status": "confirmed",
+      "slot_type": "news",
+      "genre": "food_health",
+      "health": true,
+      "domain": "daily",
+      "concern_id": "food",
+      "entry_question": "ゼロカロリーのダイエット飲料は、水を飲むのと本当に変わらないの？",
+      "title": "ダイエット飲料は水と同じ、は本当か（9月29日発表、2年間の試験）",
+      "format": "dialogue",
+      "references": [
+        {
+          "title": "Effect of non-nutritive sweetened beverages versus water on body weight: long-term results of a randomised controlled trial",
+          "authors": [],
+          "year": 2026,
+          "venue": "British Journal of Nutrition",
+          "url": "https://doi.org/10.1017/S0007114526108150",
+          "is_preprint": false,
+          "institution": "リバプール大学（イギリス）",
+          "source_kind": "paper"
+        },
+        {
+          "title": "Major trial examines no sugar sweetened soft drinks（プレスリリース）",
+          "authors": [],
+          "year": 2026,
+          "venue": "リバプール大学ニュース（2026-09-29）",
+          "url": "https://news.liverpool.ac.uk/2026/09/29/major-trial-examines-no-sugar-sweetened-soft-drinks/",
+          "is_preprint": false,
+          "institution": "リバプール大学",
+          "source_kind": "press_release"
+        }
+      ],
+      "hook_idea": "ダイエット飲料は水と同じ、と2年間の試験が言った。その試験のお金を出したのは飲料業界だった。",
+      "notes": "構成=basic か myth_buster。予想判定: 夢語り=もうすぐ来る（甘味料飲料は今日から使える、という読み）、ツッコミ=まだ眉唾（資金元・脱落・非盲検）。ただし『研究結果の紹介にとどめる』ので助言にしない。ツッコミの材料（論文本文で確認済み）: 資金は米国飲料協会（ABA）、協会は原稿を査読して医療ライターの費用も出し、複数の著者にコカ・コーラの博士課程資金や業界コンサルの記載／非盲検（どちらを飲むか本人が知っている）／無作為化749人、開始時493人、104週まで残ったのは220人（完了44.6%、水117人・ダイエット飲料103人）で計画の最小248人を下回る／最後の52週は希望者のみ・COVIDで自己申告の体重・オンライン診察あり／単一施設、イギリス／同等性の幅（何kgまで同じとみなすか）が本文に明記されておらず、検出力は1.5kg差で計算／群差1.1kg（ダイエット飲料の方が-4.8kg、水が-3.7kg）で有意差なし=『同等』と『差が見つからなかった』は別／摂取量は1日330ml×2本以上、体重管理プログラム（栄養士の面談）付きで、飲料だけの効果ではない／甘味料はアスパルテーム・アセスルファムK・スクラロース。中盤で裏切れる数字: 水の方がやせた、ではなくダイエット飲料の方が1.1kg多くやせた（有意差なし）。論文が見ていないこと: 甘味料の長期の健康影響、WHOの推奨との関係は『論文自身が観察研究への反論として位置づけている』に留める。2026-10-11にニュース候補(4.10点、id 126402604b)から選定。一次資料は論文ページ（Cambridge）とリリースを直接読んで確認済み。発表から12日経過のため制作〜公開は3日以内を目安。",
+      "stage4_snapshot": {
+        "overall_score": 4.25,
+        "freshness": 5,
+        "verifiability": 5,
+        "hype_gap": 3,
+        "debate": 5
+      },
+      "source_type": "news",
+      "news_date": "2026-09-29"
     }
   ],
-  "total_topics": 34,
-  "last_updated": "2026-10-06"
+  "total_topics": 35,
+  "last_updated": "2026-10-11"
 }
