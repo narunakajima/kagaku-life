@@ -1,0 +1,767 @@
+{
+  "episode_id": "kl035",
+  "format": "dialogue",
+  "template": "myth_buster",
+  "source_type": "news",
+  "news_date": "2026-09-29",
+  "verdict_as_of": "2026-10-11",
+  "genre": "food_health",
+  "health": true,
+  "episode_title": "ダイエット飲料は水と同じ、は本当か（9月29日発表、2年間の試験）",
+  "youtube_title": "ダイエット飲料は水と同じ？2年の試験を読む（9月29日発表）",
+  "entry_question": "ゼロカロリーのダイエット飲料は、水を飲むのと本当に変わらないの？",
+  "verdict": {
+    "dreamer": "soon",
+    "skeptic": "dubious"
+  },
+  "hook_lines": [
+    "ダイエット飲料の方が",
+    "1.1キロ多くやせた？"
+  ],
+  "thumbnail_headline": "ダイエット飲料は\n水と同じ？",
+  "thumbnail_exprs": {
+    "dreamer": "excited",
+    "skeptic": "doubt"
+  },
+  "thumbnail_prompt": "Calm, bright daytime editorial illustration of a kitchen counter seen from the front: a light wood countertop running the full width of the frame, a soft pale teal tiled wall behind it, a window with gentle daylight at the far left and a potted green herb at the far right, all continuous across the whole frame with no panels, boxes, borders or abrupt colour changes. Keep the left 30%, the right 30% and the top 35% of the frame quiet and uncluttered (soft gradient only), but the counter and wall must visibly continue unbroken behind them. In the horizontal center, in the vertical band between 38% and 80% of the frame height: a tall clear glass of still water on the left and a plain unbranded silver aluminium can with a few fizzy bubbles rising in a glass next to it on the right, side by side at equal height, with a small old-fashioned brass balance scale between them, perfectly level. No people, no hands, no labels, no logos, no brand marks, no readable text, no letters, no numbers.",
+  "youtube_tags": [
+    "ダイエット飲料",
+    "人工甘味料",
+    "低カロリー甘味料",
+    "ゼロカロリー",
+    "ダイエット",
+    "体重",
+    "栄養",
+    "リバプール大学",
+    "食と健康",
+    "科学ニュース"
+  ],
+  "depicts_real_product": false,
+  "references": [
+    {
+      "title": "Effect of non-nutritive sweetened beverages versus water on body weight: long-term results of a randomised controlled trial",
+      "authors": [],
+      "year": 2026,
+      "venue": "British Journal of Nutrition",
+      "url": "https://doi.org/10.1017/S0007114526108150",
+      "is_preprint": false,
+      "institution": "リバプール大学（イギリス）",
+      "source_kind": "paper"
+    },
+    {
+      "title": "Major trial examines no sugar sweetened soft drinks（プレスリリース）",
+      "authors": [],
+      "year": 2026,
+      "venue": "リバプール大学ニュース（2026-09-29）",
+      "url": "https://news.liverpool.ac.uk/2026/09/29/major-trial-examines-no-sugar-sweetened-soft-drinks/",
+      "is_preprint": false,
+      "institution": "リバプール大学",
+      "source_kind": "press_release"
+    }
+  ],
+  "youtube_description": "2026年9月29日、リバプール大学（イギリス）が、ダイエット飲料（低カロリー甘味料入りの飲み物）と水を2年間比べた試験の結果を発表しました。2年後の体重の変化は、水のグループがマイナス3.7kg、ダイエット飲料のグループがマイナス4.8kg。差は1.1kgで、統計的に意味のある差はなく、論文は「同等」と結論しています。では、ダイエット飲料は本当に水と同じなのか。夢語り担当の大輔と、ツッコミ担当の沙織が、論文とリリースを読んで判定します。\n\n■ この回の判定（2026年10月11日時点の、二人の見立て）\n大輔: もうすぐ来る（甘味料入りの飲み物が、体重管理の場で水と並べて語られる日は近い、という見立て。リリースは、この結果が今後のWHOの指針に役立ちうると書いています）\n沙織: まだ眉唾（「甘味料入りはかえって太る」はこの試験では見えなかった。ただ、2年後まで残ったのは開始した493人中220人で、何kgまでの差なら同じとみなすかの幅が本文に明記されておらず、どちらを飲んでいるか本人が知っている試験で、資金は飲料業界の団体。「水と同じ」とまでは言い切れない）\n\n■ 研究の要約\n・無作為化の同等性試験。非盲検（どちらを飲むか本人が知っている）、イギリスの単一施設\n・749人が無作為化され、開始前に256人が外れ、493人が開始（水246人・ダイエット飲料247人）\n・最初の12週は栄養士との毎週の面談で減量、次の40週は月1回の面談で体重を維持、その後、希望者のみ面談なしで52週延長。最終は104週（2年）\n・飲み物は1日330mlを2本以上。水のグループは甘味料入りの飲み物を避け、ダイエット飲料のグループは水も飲んでよい。どちらも砂糖入りの飲み物は禁止されておらず、砂糖を減らす助言を受けた。甘味料は主にアスパルテーム・アセスルファムK・スクラロース\n・残った人数: 12週で383人、52週で262人、104週で220人（水117人・ダイエット飲料103人）。完了率44.6%で、計画で必要とした最小人数248人を下回った。脱落は水129人／246人（52.4%）、ダイエット飲料144人／247人（58.3%）\n・104週の体重の変化（完了者）: 水 −3.7kg、ダイエット飲料 −4.8kg。差1.1kg、有意差なし。抜けた人の値を推定して補う方法（多重補完）や最後に測った値を使う方法でも、有意差なし\n・同等とみなす幅は本文に明記されておらず、必要な人数は1.5kgの差を見つける前提で計算されている\n・腹囲・腰回りは両群で減少。総コレステロール・HbA1c・拡張期血圧は群間で差があったが、著者は臨床的に意味のある差ではないと判断\n・著者が挙げる限界: 単一施設、人種・民族のデータなし、104週の完了率の低さ（COVID-19、2年という長さ、最後の期間が希望制だったこと）、COVID-19の時期は体重が自己申告・面談がオンラインの回があった、飲み物の銘柄は本人が選べる、飲んだ量は自己記録\n・52週時点の中間結果は2023年に別の学術誌で発表済み\n\n■ 資金と利益相反（論文の記載）\n・試験の資金は米国飲料協会（American Beverage Association）。論文は、資金元は試験の設計・実施・解析・解釈に関与していないと書く一方、資金元は出版前の原稿に目を通しています。医療ライターの費用も同協会\n・複数の著者が同協会からの資金（大学宛）を報告し、コカ・コーラからの博士課程の資金や、業界からの相談料・謝礼を報告している著者もいます\n\n■ この研究が見ていないこと\n・甘味料を長く飲んだときの体への影響（体重以外）\n・日本人での結果\n・体重管理のプログラム（栄養士の面談）なしで飲むだけの効果\n・砂糖入りの飲み物との直接の比較（比べた相手は水）\n\n■ 確認した一次資料\n・British Journal of Nutrition 掲載の論文（リバプール大学ほか）: 試験の設計、人数と脱落、飲み物の条件、主要結果と感度分析、副次的な結果、限界、資金と利益相反\n・リバプール大学のプレスリリース（2026年9月29日）: 試験の位置づけ（WHOの「体重管理に非砂糖甘味料を使わない」という推奨のもとになった観察研究への不確かさに答える試験）、今後のWHOの指針に役立ちうるという見通し\n\n※この動画は研究結果の紹介で、健康上の助言ではありません。飲み物の選び方を勧めるものでも、特定の製品の購入を勧めるものでもありません。\n※この回の元になった論文は、専門家の審査を経て学術誌に掲載されたものです。\n\n■ 参考（一次資料）\n[1] Effect of non-nutritive sweetened beverages versus water on body weight: long-term results of a randomised controlled trial. British Journal of Nutrition (2026). https://doi.org/10.1017/S0007114526108150\n[2] University of Liverpool「Major trial examines no sugar sweetened soft drinks」(2026-09-29) https://news.liverpool.ac.uk/2026/09/29/major-trial-examines-no-sugar-sweetened-soft-drinks/\n\n#ダイエット飲料 #人工甘味料 #科学ニュース",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 5,
+      "ken_burns": "zoom_in",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "ゼロカロリーの飲み物って、水と本当に変わらない？",
+          "expression": "doubt",
+          "tag": "question"
+        }
+      ],
+      "narration": "沙織「ゼロカロリーの飲み物って、水と本当に変わらない？」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 8,
+      "ken_burns": "static",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "2年の試験で、ダイエット飲料の方が多くやせた！",
+          "expression": "excited",
+          "tone": "excited, like breaking news",
+          "reference_index": 0
+        }
+      ],
+      "narration": "大輔「2年の試験で、ダイエット飲料の方が多くやせた！」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 11,
+      "ken_burns": "zoom_in",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "で、お金を出したのは、飲料業界の団体。",
+          "expression": "doubt",
+          "tone": "dry",
+          "reference_index": 0
+        }
+      ],
+      "narration": "沙織「で、お金を出したのは、飲料業界の団体。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 10,
+      "ken_burns": "static",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "判定は割れた。決め手は、220人という数字。",
+          "expression": "thinking",
+          "reference_index": 0
+        }
+      ],
+      "narration": "大輔「判定は割れた。決め手は、220人という数字。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 5,
+      "type": "setup",
+      "bgm_role": "intro",
+      "reference_index": 1,
+      "image_prompt": "Early evening inside a bright Japanese convenience store (warm interior lighting, a dusk sky visible through the glass front). A Japanese man in his mid-forties with short neatly cut black hair slightly graying at the temples, no glasses, wearing a light blue office shirt with the sleeves rolled up, stands in front of a glass-door drinks refrigerator, holding a plain clear bottle of water in one hand and a plain unbranded silver aluminium can in the other, looking from one to the other, undecided. The refrigerator shelves are filled with rows of plain unbranded cans and bottles in soft solid colours with no labels. No logos, no brand marks, no price tags, no readable text, no numbers.",
+      "ken_burns": "zoom_in",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "甘い炭酸が好きな人って、ダイエット中はどうしてる？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "水かお茶でしょ。よく聞くよね、甘味料入りは、かえって太るって話。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "WHOも、体重を管理するために、砂糖じゃない甘味料を使わないよう勧めてる。",
+          "expression": "thinking",
+          "reference_index": 1
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、リリースによると、そのもとになったのは観察研究。飲んでる人と飲んでない人を、あとから比べたもの。",
+          "expression": "doubt",
+          "reference_index": 1
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そこで、くじ引きで飲み物を決めて、2年追いかけた試験が出た。9月29日、リバプール大学の発表。",
+          "expression": "excited",
+          "reference_index": 1
+        },
+        {
+          "speaker": "skeptic",
+          "text": "イギリスね。で、水とどっちがやせたの？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それは、中身を見てから。たぶん驚くよ。",
+          "expression": "excited",
+          "tone": "teasing, playful"
+        }
+      ],
+      "narration": "大輔「甘い炭酸が好きな人って、ダイエット中はどうしてる？」\n沙織「水かお茶でしょ。よく聞くよね、甘味料入りは、かえって太るって話。」\n大輔「WHOも、体重を管理するために、砂糖じゃない甘味料を使わないよう勧めてる。」\n沙織「ただ、リリースによると、そのもとになったのは観察研究。飲んでる人と飲んでない人を、あとから比べたもの。」\n大輔「そこで、くじ引きで飲み物を決めて、2年追いかけた試験が出た。9月29日、リバプール大学の発表。」\n沙織「イギリスね。で、水とどっちがやせたの？」\n大輔「それは、中身を見てから。たぶん驚くよ。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 6,
+      "type": "paper",
+      "bgm_role": "intro",
+      "reference_index": 0,
+      "image_prompt": "A bright consultation room at a university research clinic in Liverpool, England, during the daytime (clear daylight through a window). A white British woman dietitian-researcher in her forties with short wavy auburn hair, wearing a white lab coat, sits at a desk talking with a study participant: a middle-aged white British man with a shaved head and a short gray beard, wearing a dark green fleece jacket, seen mostly from the side. On the desk: a plain clear bottle of water, a plain unbranded silver aluminium can, and a blank notepad; a digital weighing scale with a blank display stands on the floor near the wall. Calm, professional mood. No logos, no brand marks, no readable text, no numbers.",
+      "ken_burns": "zoom_in",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "載ったのは、ブリティッシュ・ジャーナル・オブ・ニュートリション。体重を減らしたい人を、水のグループとダイエット飲料のグループに、くじ引きで分けた。",
+          "expression": "neutral",
+          "reference_index": 0,
+          "display": "載ったのは、British Journal of Nutrition。体重を減らしたい人を、水のグループとダイエット飲料のグループに、くじ引きで分けた。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、それ何人で始めたの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "493人。水とダイエット飲料に、ほぼ半分ずつ。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "飲む量は？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "1日330ミリリットルを、2本以上。",
+          "expression": "neutral",
+          "reference_index": 0,
+          "display": "1日330mlを、2本以上。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "砂糖入りは？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "どっちも禁止はされてない。砂糖を減らすように、助言は受けてる。",
+          "expression": "neutral",
+          "reference_index": 0
+        }
+      ],
+      "narration": "大輔「載ったのは、ブリティッシュ・ジャーナル・オブ・ニュートリション。体重を減らしたい人を、水のグループとダイエット飲料のグループに、くじ引きで分けた。」\n沙織「で、それ何人で始めたの？」\n大輔「493人。水とダイエット飲料に、ほぼ半分ずつ。」\n沙織「飲む量は？」\n大輔「1日330ミリリットルを、2本以上。」\n沙織「砂糖入りは？」\n大輔「どっちも禁止はされてない。砂糖を減らすように、助言は受けてる。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 7,
+      "type": "paper",
+      "bgm_role": "intro",
+      "reference_index": 0,
+      "image_prompt": "A clean, bright university research kitchen during the daytime (clear daylight through a window). On a long white table, two neat rows of drinks: on the left, a row of plain clear bottles of still water; on the right, a row of plain unbranded silver aluminium cans with no labels. Beside them, a small desk calendar with completely blank pages and a digital bathroom scale with a blank display. In the background, a white lab coat hangs on a wall hook. No people, no logos, no brand marks, no readable text, no numbers.",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "しかも、飲み物だけじゃない。最初の12週は、栄養士と毎週面談して、体重を減らす。",
+          "expression": "excited",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次の40週は、月1回の面談で、減った体重を保つ。ここまでで1年。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "さらに希望した人だけ、面談なしでもう1年。最後は104週、つまり2年後の体重を比べた。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "2年は長いね。で、結果は？",
+          "expression": "neutral"
+        }
+      ],
+      "narration": "大輔「しかも、飲み物だけじゃない。最初の12週は、栄養士と毎週面談して、体重を減らす。」\n大輔「次の40週は、月1回の面談で、減った体重を保つ。ここまでで1年。」\n大輔「さらに希望した人だけ、面談なしでもう1年。最後は104週、つまり2年後の体重を比べた。」\n沙織「2年は長いね。で、結果は？」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 8,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "image_prompt": "A simple, clean flat infographic bar chart with exactly two bars hanging downward from a horizontal zero baseline near the top, and a short title at the very top reading exactly 「2年後の体重の変化（最後まで残った人）」. The vertical axis starts at 0 at the baseline and runs downward to -5kg, so bar lengths are proportional. Bars from left to right, each with its label directly above the baseline and its value directly below the bottom end of the bar: 「水」 −3.7kg (teal), 「ダイエット飲料」 −4.8kg (coral, highlighted). Plain light background. Do not add any other text, numbers, ticks labels, icons or logos.",
+      "ken_burns": "static",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "2年後、水のグループは、マイナス3.7キロ。",
+          "expression": "neutral",
+          "reference_index": 0,
+          "display": "2年後、水のグループは、−3.7kg。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ダイエット飲料のグループは、マイナス4.8キロ！",
+          "expression": "excited",
+          "reference_index": 0,
+          "display": "ダイエット飲料のグループは、−4.8kg！"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "水より1.1キロ多くやせてる。かえって太るどころか、逆だよ！",
+          "expression": "excited",
+          "tone": "excited, fast, getting carried away",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ちょっと待って。その1.1キロ、偶然でも出る範囲。論文も、意味のある差はなかった、と書いてる。",
+          "expression": "doubt",
+          "react": "surprised",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ引き分けか。水と同じ、ってことだね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "論文の結論は、まさにそれ。水と同等。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "やっぱり！",
+          "expression": "excited"
+        }
+      ],
+      "narration": "大輔「2年後、水のグループは、マイナス3.7キロ。」\n大輔「ダイエット飲料のグループは、マイナス4.8キロ！」\n大輔「水より1.1キロ多くやせてる。かえって太るどころか、逆だよ！」\n沙織「ちょっと待って。その1.1キロ、偶然でも出る範囲。論文も、意味のある差はなかった、と書いてる。」\n大輔「じゃあ引き分けか。水と同じ、ってことだね。」\n沙織「論文の結論は、まさにそれ。水と同等。」\n大輔「やっぱり！」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 9,
+      "type": "tsukkomi",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "image_prompt": "A simple old-fashioned brass balance scale on a plain wooden desk in a quiet study during the daytime (soft daylight from a window). On the left pan, a plain clear bottle of water; on the right pan, a plain unbranded silver aluminium can. The scale is almost level but the beam is blurred with a faint motion haze, as if it is still wobbling and has not settled. A pair of reading glasses lies next to it. No people, no logos, no brand marks, no readable text, no numbers.",
+      "ken_burns": "zoom_in",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "でも、そこが引っかかる。『同じ』と『差が見つからなかった』は、別の話。",
+          "expression": "doubt",
+          "pause": 0.5
+        },
+        {
+          "speaker": "dreamer",
+          "text": "え、どう違うの？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "同じだと言うなら、先に『何キロの差までなら同じとみなす』って幅を決めておくの。その幅が、本文にははっきり書いてない。",
+          "expression": "thinking",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、人数の計算は、1.5キロの差を見つける前提。ここからは私の推測だけど、1.1キロくらいの差なら、見逃したのかもしれない。",
+          "expression": "doubt",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "つまり、どっちかが少し有利な可能性は、まだ消えてない？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう。私は、『同じ』とまでは言い切れないと思う。",
+          "expression": "neutral"
+        }
+      ],
+      "narration": "沙織「でも、そこが引っかかる。『同じ』と『差が見つからなかった』は、別の話。」\n大輔「え、どう違うの？」\n沙織「同じだと言うなら、先に『何キロの差までなら同じとみなす』って幅を決めておくの。その幅が、本文にははっきり書いてない。」\n沙織「それに、人数の計算は、1.5キロの差を見つける前提。ここからは私の推測だけど、1.1キロくらいの差なら、見逃したのかもしれない。」\n大輔「つまり、どっちかが少し有利な可能性は、まだ消えてない？」\n沙織「そう。私は、『同じ』とまでは言い切れないと思う。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 10,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "image_prompt": "A simple, clean flat infographic vertical bar chart with exactly four bars and a short title at the top reading exactly 「試験に残った人数」. Bars from left to right, each with its label directly below it and its value directly above it: 「開始」 493人 (deep teal), 「12週」 383人 (teal), 「52週」 262人 (light teal), 「104週」 220人 (coral, highlighted). The y-axis runs from 0 to 500 so bar heights are proportional. Plain light background. Do not add any other text or numbers.",
+      "ken_burns": "static",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "で、もっと大きいのがこっち。何人が最後まで残ったか。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "始めたのは493人。1年後には262人。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "104週、つまり2年後の時点では220人。",
+          "expression": "neutral",
+          "reference_index": 0,
+          "pause": 0.4
+        },
+        {
+          "speaker": "skeptic",
+          "text": "残ったのは半分以下の44.6%。しかも、計画で最低限必要とした248人に、届いてない。",
+          "expression": "doubt",
+          "tag": "weakness",
+          "reference_index": 0,
+          "display": "残ったのは半分以下の44.6%。しかも、計画で最低限必要とした248人に、届いてない。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "半分以上が、途中でいなくなったの？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "抜けたのは、水のグループで129人、ダイエット飲料のグループで144人。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "さっきの2年の結果って、残った220人だけの話か……",
+          "expression": "deflated",
+          "pause": 0.4
+        },
+        {
+          "speaker": "skeptic",
+          "text": "著者は、コロナの時期と重なったことも理由に挙げてる。",
+          "expression": "thinking",
+          "reference_index": 0
+        }
+      ],
+      "narration": "沙織「で、もっと大きいのがこっち。何人が最後まで残ったか。」\n沙織「始めたのは493人。1年後には262人。」\n沙織「104週、つまり2年後の時点では220人。」\n沙織「残ったのは半分以下の44.6%。しかも、計画で最低限必要とした248人に、届いてない。」\n大輔「半分以上が、途中でいなくなったの？」\n沙織「抜けたのは、水のグループで129人、ダイエット飲料のグループで144人。」\n大輔「さっきの2年の結果って、残った220人だけの話か……」\n沙織「著者は、コロナの時期と重なったことも理由に挙げてる。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 11,
+      "type": "tsukkomi",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "image_prompt": "A tidy office desk during the daytime (soft daylight through a window): a neat stack of blank printed manuscript pages, a magnifying glass resting on top of the stack, a fountain pen, and a plain unbranded silver aluminium can standing beside the pages. Behind the desk, a closed briefcase on a chair. Calm, slightly investigative mood. No people, no logos, no brand marks, no readable text, no numbers.",
+      "ken_burns": "zoom_in",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "あと、お金の話。この試験の資金は、米国飲料協会。",
+          "expression": "doubt",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "飲料業界の団体？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "論文には、資金元は設計にも解析にも関わっていない、とある。ただ、出版前の原稿には目を通してる。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "医療ライターの費用も、同じ協会。著者には、コカ・コーラから博士課程の資金を受けた人や、業界から謝礼を受けた人もいる。",
+          "expression": "doubt",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それって、結果が都合よく……",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう決めつけるのは早い。でも、もう1つ。これは、どっちを飲んでるか、本人が知ってる試験なの。",
+          "expression": "thinking",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "くじ引きで分けたのに？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "くじで分けても、水か甘い飲み物かは、飲めば分かるからね。コロナの時期は、体重が自己申告、面談もオンラインの回があった。",
+          "expression": "neutral",
+          "reference_index": 0
+        }
+      ],
+      "narration": "沙織「あと、お金の話。この試験の資金は、米国飲料協会。」\n大輔「飲料業界の団体？」\n沙織「論文には、資金元は設計にも解析にも関わっていない、とある。ただ、出版前の原稿には目を通してる。」\n沙織「医療ライターの費用も、同じ協会。著者には、コカ・コーラから博士課程の資金を受けた人や、業界から謝礼を受けた人もいる。」\n大輔「それって、結果が都合よく……」\n沙織「そう決めつけるのは早い。でも、もう1つ。これは、どっちを飲んでるか、本人が知ってる試験なの。」\n大輔「くじ引きで分けたのに？」\n沙織「くじで分けても、水か甘い飲み物かは、飲めば分かるからね。コロナの時期は、体重が自己申告、面談もオンラインの回があった。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 12,
+      "type": "tsukkomi",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "image_prompt": "A quiet meeting room at a British university during the daytime (soft daylight through tall windows). A large whiteboard on the wall shows three plain hand-drawn curved lines in different marker colours (teal, coral and gray) that start at different points on the left and all end at about the same level on the right, with no axes labels, no letters and no numbers. Markers rest on the whiteboard ledge; an empty chair and a closed laptop on the table. No people, no logos, no readable text, no numbers.",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、この試験はあてにならないってこと？",
+          "expression": "deflated"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そこまでは言わない。ここは認める。",
+          "expression": "thinking",
+          "pause": 0.5
+        },
+        {
+          "speaker": "skeptic",
+          "text": "途中で抜けた人の体重を推定して補う方法でも、最後に測った体重をそのまま使う方法でも、計算し直してる。どれも、差はなし。",
+          "expression": "surprised",
+          "react": "surprised",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、お金の出どころも、業界とのつながりも、論文が自分で書いてる。隠してたわけじゃない。",
+          "expression": "convinced",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "抜けた人を数に入れ直しても、結果はひっくり返らなかったんだ。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "計算の上ではね。補った数字は、あくまで推定だけど。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "少なくとも、『甘味料入りは、かえって太る』は、この試験では見えなかった。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "この条件では、ね。栄養士の面談つき、っていう条件。",
+          "expression": "neutral",
+          "reference_index": 0
+        }
+      ],
+      "narration": "大輔「じゃあ、この試験はあてにならないってこと？」\n沙織「そこまでは言わない。ここは認める。」\n沙織「途中で抜けた人の体重を推定して補う方法でも、最後に測った体重をそのまま使う方法でも、計算し直してる。どれも、差はなし。」\n沙織「それに、お金の出どころも、業界とのつながりも、論文が自分で書いてる。隠してたわけじゃない。」\n大輔「抜けた人を数に入れ直しても、結果はひっくり返らなかったんだ。」\n沙織「計算の上ではね。補った数字は、あくまで推定だけど。」\n大輔「少なくとも、『甘味料入りは、かえって太る』は、この試験では見えなかった。」\n沙織「この条件では、ね。栄養士の面談つき、っていう条件。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 13,
+      "type": "dream",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "image_prompt": "A cozy Japanese apartment dining table in the evening (warm interior lamp light, a dusk sky visible through the window). A Japanese man in his mid-forties with short neatly cut black hair slightly graying at the temples, no glasses, wearing a light blue office shirt with the sleeves rolled up, sits relaxed and smiling, writing in a small notebook with completely blank pages; beside the notebook stand a glass of a fizzy drink with bubbles and a plain unbranded silver aluminium can, next to a simple home-cooked dinner of grilled fish, vegetables and rice. On the table, a smartphone lies face down. No logos, no brand marks, no readable text, no numbers.",
+      "ken_burns": "zoom_in",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、想像してみてよ。",
+          "expression": "excited",
+          "pause": 0.4
+        },
+        {
+          "speaker": "dreamer",
+          "text": "健診で体重を指摘された、40代の会社員。毎週の面談で、栄養士と食事を見直してる。でも、夕方の甘い炭酸だけは、どうしてもやめられない。",
+          "expression": "excited",
+          "tag": "life_scene"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "この試験の形なら、栄養士が、水とダイエット飲料を同じ選択肢として並べて話せる。好きな味を残したまま、面談を続けられる。",
+          "expression": "excited",
+          "tone": "warm, a bit fast, getting carried away"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それは面談つきの話ね。飲むだけでやせる、とはどこにも書いてない。",
+          "expression": "doubt",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "分かってる。主役は面談。飲み物は、続けるための脇役。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "脇役なら、まあ。",
+          "expression": "amused"
+        }
+      ],
+      "narration": "大輔「じゃあ、想像してみてよ。」\n大輔「健診で体重を指摘された、40代の会社員。毎週の面談で、栄養士と食事を見直してる。でも、夕方の甘い炭酸だけは、どうしてもやめられない。」\n大輔「この試験の形なら、栄養士が、水とダイエット飲料を同じ選択肢として並べて話せる。好きな味を残したまま、面談を続けられる。」\n沙織「それは面談つきの話ね。飲むだけでやせる、とはどこにも書いてない。」\n大輔「分かってる。主役は面談。飲み物は、続けるための脇役。」\n沙織「脇役なら、まあ。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 14,
+      "type": "tsukkomi",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "image_prompt": "A calm study desk in the evening (warm desk lamp light, a dark blue dusk sky through the window). A small world globe turned so that Great Britain faces the viewer, with a magnifying glass leaning against it; next to it a plain clear glass of water and a plain unbranded silver aluminium can. Quiet, thoughtful mood. No people, no logos, no brand marks, no readable text, no letters, no numbers, no country names.",
+      "ken_burns": "zoom_in",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "ただ、この試験が見たのは体重。甘味料を長く飲んだときの体への影響は、この試験の範囲の外。そこは分からない、で止めておく。",
+          "expression": "thinking",
+          "tag": "barrier",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、イギリスの1か所だけの試験。人種や民族の記録もなくて、日本人で同じ結果になるかも分からない。",
+          "expression": "doubt",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "砂糖入りと比べたわけでもないしね。比べた相手は、あくまで水。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう。そこを混ぜると、話が大きくなる。",
+          "expression": "neutral"
+        }
+      ],
+      "narration": "沙織「ただ、この試験が見たのは体重。甘味料を長く飲んだときの体への影響は、この試験の範囲の外。そこは分からない、で止めておく。」\n沙織「それに、イギリスの1か所だけの試験。人種や民族の記録もなくて、日本人で同じ結果になるかも分からない。」\n大輔「砂糖入りと比べたわけでもないしね。比べた相手は、あくまで水。」\n沙織「そう。そこを混ぜると、話が大きくなる。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 15,
+      "type": "verdict",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "verdict_from_line": 6,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、判定。お題は、ダイエット飲料は水と同じと言えるか。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕は「もうすぐ来る」。新しい製品の話じゃなくて、甘味料入りの飲み物が、体重管理の場で水と並べて語られる日は近い、って見立て。",
+          "expression": "convinced",
+          "tone": "confident, warm"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "リリースは、この結果がWHOの今後の指針に役立ちうる、と書いてる。くじ引きで2年比べた試験は、それだけで重いよ。",
+          "expression": "excited",
+          "reference_index": 1
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それは、指針がこの先どう動くかの予想でしょ。私が判定するのは、この結果が確かかどうか。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "残ったのは半分以下。同じとみなす幅も、はっきり書いてない。",
+          "expression": "doubt",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "だから私は「まだ眉唾」。かえって太る、に待ったをかけた点は認める。でも、『水と同じ』のはんこは、まだ押せない。",
+          "expression": "convinced",
+          "tone": "calm, with a hint of mischief",
+          "display": "だから私は「まだ眉唾」。かえって太る、に待ったをかけた点は認める。でも、『水と同じ』の判子は、まだ押せない。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "割れたね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "はんこは、別の人たちで確かめた試験が出るまで、預かっとく。",
+          "expression": "amused",
+          "display": "判子は、別の人たちで確かめた試験が出るまで、預かっとく。"
+        }
+      ],
+      "narration": "沙織「じゃあ、判定。お題は、ダイエット飲料は水と同じと言えるか。」\n大輔「僕は「もうすぐ来る」。新しい製品の話じゃなくて、甘味料入りの飲み物が、体重管理の場で水と並べて語られる日は近い、って見立て。」\n大輔「リリースは、この結果がWHOの今後の指針に役立ちうる、と書いてる。くじ引きで2年比べた試験は、それだけで重いよ。」\n沙織「それは、指針がこの先どう動くかの予想でしょ。私が判定するのは、この結果が確かかどうか。」\n沙織「残ったのは半分以下。同じとみなす幅も、はっきり書いてない。」\n沙織「だから私は「まだ眉唾」。かえって太る、に待ったをかけた点は認める。でも、『水と同じ』のはんこは、まだ押せない。」\n大輔「割れたね。」\n沙織「はんこは、別の人たちで確かめた試験が出るまで、預かっとく。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 16,
+      "type": "closing",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "かえって太る、はこの試験では見えなかった。水と同じかは、まだ宿題だね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "今日の判定は、10月11日時点の、私たち二人の見立て。体重の話で、健康のお墨付きじゃないからね。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "amused"
+        }
+      ],
+      "narration": "大輔「かえって太る、はこの試験では見えなかった。水と同じかは、まだ宿題だね。」\n沙織「今日の判定は、10月11日時点の、私たち二人の見立て。体重の話で、健康のお墨付きじゃないからね。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」",
+      "narrator": "dialogue"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "dreamer",
+          "narration": "甘味料入りの方が、やせた？",
+          "expression": "excited",
+          "scene_id": 8
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "2年後、水はマイナス3.7キロ。ダイエット飲料はマイナス4.8キロ！",
+          "expression": "excited",
+          "scene_id": 8,
+          "telop_text": "2年後、水は−3.7kg。ダイエット飲料は−4.8kg！"
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "その1.1キロ、偶然でも出る差。",
+          "expression": "doubt",
+          "react": "surprised",
+          "scene_id": 9
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "しかも、2年後まで残ったのは493人中220人。",
+          "expression": "doubt",
+          "react": "deflated",
+          "scene_id": 10
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "資金は飲料業界の団体。論文が自分で書いてる。",
+          "expression": "doubt",
+          "react": "surprised",
+          "scene_id": 11
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "判定は割れた。続きは本編で。",
+          "expression": "thinking",
+          "scene_id": 13
+        }
+      ]
+    }
+  ]
+}
