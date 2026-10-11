@@ -72,64 +72,120 @@
           "speaker": "skeptic",
           "text": "ゼロカロリーの飲み物って、水と本当に変わらない？",
           "expression": "doubt",
-          "tag": "question"
+          "tag": "question",
+          "t0": 0.0,
+          "dur": 3.64,
+          "cards": [
+            {
+              "text": "ゼロカロリーの飲み物って、水と本当に変わらない？",
+              "start": 0.24,
+              "end": 3.84
+            }
+          ]
         }
       ],
       "narration": "沙織「ゼロカロリーの飲み物って、水と本当に変わらない？」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "76c0a1a68511",
+      "zoom_anchor": {
+        "x": 0.61,
+        "y": 0.45
+      }
     },
     {
       "scene_id": 2,
       "type": "teaser",
       "bgm_role": "intro",
       "reuse_scene_id": 8,
-      "ken_burns": "static",
+      "ken_burns": "zoom_out",
       "lines": [
         {
           "speaker": "dreamer",
           "text": "2年の試験で、ダイエット飲料の方が多くやせた！",
           "expression": "excited",
           "tone": "excited, like breaking news",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 0.0,
+          "dur": 3.72,
+          "cards": [
+            {
+              "text": "2年の試験で、ダイエット飲料の方が多くやせた！",
+              "start": 0.0,
+              "end": 3.45
+            }
+          ]
         }
       ],
       "narration": "大輔「2年の試験で、ダイエット飲料の方が多くやせた！」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "c6f3a313812b",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 3,
       "type": "teaser",
       "bgm_role": "intro",
       "reuse_scene_id": 11,
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "lines": [
         {
           "speaker": "skeptic",
           "text": "で、お金を出したのは、飲料業界の団体。",
           "expression": "doubt",
           "tone": "dry",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 0.0,
+          "dur": 3.52,
+          "cards": [
+            {
+              "text": "で、お金を出したのは、飲料業界の団体。",
+              "start": 0.0,
+              "end": 3.52
+            }
+          ]
         }
       ],
       "narration": "沙織「で、お金を出したのは、飲料業界の団体。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "498bb3c39cb9",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 4,
       "type": "teaser",
       "bgm_role": "intro",
       "reuse_scene_id": 10,
-      "ken_burns": "static",
+      "ken_burns": "zoom_out",
       "lines": [
         {
           "speaker": "dreamer",
           "text": "判定は割れた。決め手は、220人という数字。",
           "expression": "thinking",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 0.0,
+          "dur": 5.12,
+          "cards": [
+            {
+              "text": "判定は割れた。決め手は、220人という数字。",
+              "start": 0.0,
+              "end": 4.74
+            }
+          ]
         }
       ],
       "narration": "大輔「判定は割れた。決め手は、220人という数字。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "9f75fe0c7a49",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 5,
@@ -142,45 +198,148 @@
         {
           "speaker": "dreamer",
           "text": "甘い炭酸が好きな人って、ダイエット中はどうしてる？",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 3.6,
+          "cards": [
+            {
+              "text": "甘い炭酸が好きな人って、",
+              "start": 0.2,
+              "end": 1.93
+            },
+            {
+              "text": "ダイエット中はどうしてる？",
+              "start": 1.93,
+              "end": 3.8
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "水かお茶でしょ。よく聞くよね、甘味料入りは、かえって太るって話。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 3.88,
+          "dur": 5.36,
+          "cards": [
+            {
+              "text": "水かお茶でしょ。よく聞くよね、",
+              "start": 0.36,
+              "end": 2.74
+            },
+            {
+              "text": "甘味料入りは、かえって太るって話。",
+              "start": 2.89,
+              "end": 5.44
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "WHOも、体重を管理するために、砂糖じゃない甘味料を使わないよう勧めてる。",
           "expression": "thinking",
-          "reference_index": 1
+          "reference_index": 1,
+          "t0": 9.52,
+          "dur": 5.8,
+          "cards": [
+            {
+              "text": "WHOも、体重を管理するために、",
+              "start": 0.0,
+              "end": 2.7
+            },
+            {
+              "text": "砂糖じゃない甘味料を使わないよう勧めてる。",
+              "start": 2.85,
+              "end": 6.0
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "ただ、リリースによると、そのもとになったのは観察研究。飲んでる人と飲んでない人を、あとから比べたもの。",
           "expression": "doubt",
-          "reference_index": 1
+          "reference_index": 1,
+          "t0": 15.6,
+          "dur": 6.88,
+          "cards": [
+            {
+              "text": "ただ、リリースによると、そのもとになった",
+              "start": 0.0,
+              "end": 2.58
+            },
+            {
+              "text": "のは観察研究。飲んでる人と飲んでない人を、",
+              "start": 2.73,
+              "end": 5.63
+            },
+            {
+              "text": "あとから比べたもの。",
+              "start": 5.78,
+              "end": 7.07
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "そこで、くじ引きで飲み物を決めて、2年追いかけた試験が出た。9月29日、リバプール大学の発表。",
           "expression": "excited",
-          "reference_index": 1
+          "reference_index": 1,
+          "t0": 22.76,
+          "dur": 8.68,
+          "cards": [
+            {
+              "text": "そこで、くじ引きで飲み物を決めて、",
+              "start": 0.0,
+              "end": 2.64
+            },
+            {
+              "text": "2年追いかけた試験が出た。9月29日、",
+              "start": 2.88,
+              "end": 6.66
+            },
+            {
+              "text": "リバプール大学の発表。",
+              "start": 6.96,
+              "end": 8.61
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "イギリスね。で、水とどっちがやせたの？",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 31.72,
+          "dur": 2.64,
+          "cards": [
+            {
+              "text": "イギリスね。で、水とどっちがやせたの？",
+              "start": 0.0,
+              "end": 2.64
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "それは、中身を見てから。たぶん驚くよ。",
           "expression": "excited",
-          "tone": "teasing, playful"
+          "tone": "teasing, playful",
+          "t0": 34.64,
+          "dur": 3.88,
+          "cards": [
+            {
+              "text": "それは、中身を見てから。たぶん驚くよ。",
+              "start": 0.0,
+              "end": 3.88
+            }
+          ]
         }
       ],
       "narration": "大輔「甘い炭酸が好きな人って、ダイエット中はどうしてる？」\n沙織「水かお茶でしょ。よく聞くよね、甘味料入りは、かえって太るって話。」\n大輔「WHOも、体重を管理するために、砂糖じゃない甘味料を使わないよう勧めてる。」\n沙織「ただ、リリースによると、そのもとになったのは観察研究。飲んでる人と飲んでない人を、あとから比べたもの。」\n大輔「そこで、くじ引きで飲み物を決めて、2年追いかけた試験が出た。9月29日、リバプール大学の発表。」\n沙織「イギリスね。で、水とどっちがやせたの？」\n大輔「それは、中身を見てから。たぶん驚くよ。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "450fbe0a0044",
+      "zoom_anchor": {
+        "x": 0.61,
+        "y": 0.45
+      }
     },
     {
       "scene_id": 6,
@@ -188,52 +347,151 @@
       "bgm_role": "intro",
       "reference_index": 0,
       "image_prompt": "A bright consultation room at a university research clinic in Liverpool, England, during the daytime (clear daylight through a window). A white British woman dietitian-researcher in her forties with short wavy auburn hair, wearing a white lab coat, sits at a desk talking with a study participant: a middle-aged white British man with a shaved head and a short gray beard, wearing a dark green fleece jacket, seen mostly from the side. On the desk: a plain clear bottle of water, a plain unbranded silver aluminium can, and a blank notepad; a digital weighing scale with a blank display stands on the floor near the wall. Calm, professional mood. No logos, no brand marks, no readable text, no numbers.",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "lines": [
         {
           "speaker": "dreamer",
           "text": "載ったのは、ブリティッシュ・ジャーナル・オブ・ニュートリション。体重を減らしたい人を、水のグループとダイエット飲料のグループに、くじ引きで分けた。",
           "expression": "neutral",
           "reference_index": 0,
-          "display": "載ったのは、British Journal of Nutrition。体重を減らしたい人を、水のグループとダイエット飲料のグループに、くじ引きで分けた。"
+          "display": "載ったのは、British Journal of Nutrition。体重を減らしたい人を、水のグループとダイエット飲料のグループに、くじ引きで分けた。",
+          "t0": 0.0,
+          "dur": 8.96,
+          "cards": [
+            {
+              "text": "載ったのは、British",
+              "start": 0.0,
+              "end": 1.55
+            },
+            {
+              "text": "Journal of Nutrition。",
+              "start": 1.55,
+              "end": 4.06
+            },
+            {
+              "text": "体重を減らしたい人を、水のグループと",
+              "start": 4.06,
+              "end": 6.21
+            },
+            {
+              "text": "ダイエット飲料のグループに、",
+              "start": 6.21,
+              "end": 7.88
+            },
+            {
+              "text": "くじ引きで分けた。",
+              "start": 7.88,
+              "end": 8.96
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "で、それ何人で始めたの？",
-          "expression": "doubt"
+          "expression": "doubt",
+          "t0": 9.24,
+          "dur": 1.96,
+          "cards": [
+            {
+              "text": "で、それ何人で始めたの？",
+              "start": 0.0,
+              "end": 1.96
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "493人。水とダイエット飲料に、ほぼ半分ずつ。",
           "expression": "neutral",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 11.48,
+          "dur": 5.28,
+          "cards": [
+            {
+              "text": "493人。水とダイエット飲料に、",
+              "start": 0.0,
+              "end": 3.88
+            },
+            {
+              "text": "ほぼ半分ずつ。",
+              "start": 4.03,
+              "end": 5.09
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "飲む量は？",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 17.04,
+          "dur": 1.4,
+          "cards": [
+            {
+              "text": "飲む量は？",
+              "start": 0.0,
+              "end": 1.4
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "1日330ミリリットルを、2本以上。",
           "expression": "neutral",
           "reference_index": 0,
-          "display": "1日330mlを、2本以上。"
+          "display": "1日330mlを、2本以上。",
+          "t0": 18.72,
+          "dur": 3.92,
+          "cards": [
+            {
+              "text": "1日330mlを、2本以上。",
+              "start": 0.0,
+              "end": 3.92
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "砂糖入りは？",
-          "expression": "doubt"
+          "expression": "doubt",
+          "t0": 22.92,
+          "dur": 1.28,
+          "cards": [
+            {
+              "text": "砂糖入りは？",
+              "start": 0.0,
+              "end": 1.28
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "どっちも禁止はされてない。砂糖を減らすように、助言は受けてる。",
           "expression": "neutral",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 24.48,
+          "dur": 4.48,
+          "cards": [
+            {
+              "text": "どっちも禁止はされてない。",
+              "start": 0.0,
+              "end": 1.84
+            },
+            {
+              "text": "砂糖を減らすように、",
+              "start": 1.84,
+              "end": 3.26
+            },
+            {
+              "text": "助言は受けてる。",
+              "start": 3.41,
+              "end": 4.53
+            }
+          ]
         }
       ],
       "narration": "大輔「載ったのは、ブリティッシュ・ジャーナル・オブ・ニュートリション。体重を減らしたい人を、水のグループとダイエット飲料のグループに、くじ引きで分けた。」\n沙織「で、それ何人で始めたの？」\n大輔「493人。水とダイエット飲料に、ほぼ半分ずつ。」\n沙織「飲む量は？」\n大輔「1日330ミリリットルを、2本以上。」\n沙織「砂糖入りは？」\n大輔「どっちも禁止はされてない。砂糖を減らすように、助言は受けてる。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "9be4da4f02ab"
     },
     {
       "scene_id": 7,
@@ -247,28 +505,89 @@
           "speaker": "dreamer",
           "text": "しかも、飲み物だけじゃない。最初の12週は、栄養士と毎週面談して、体重を減らす。",
           "expression": "excited",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 0.0,
+          "dur": 7.04,
+          "cards": [
+            {
+              "text": "しかも、飲み物だけじゃない。",
+              "start": 0.0,
+              "end": 2.1
+            },
+            {
+              "text": "最初の12週は、栄養士と毎週面談して、",
+              "start": 2.25,
+              "end": 5.87
+            },
+            {
+              "text": "体重を減らす。",
+              "start": 6.02,
+              "end": 7.1
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "次の40週は、月1回の面談で、減った体重を保つ。ここまでで1年。",
           "expression": "neutral",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 7.26,
+          "dur": 5.96,
+          "cards": [
+            {
+              "text": "次の40週は、月1回の面談で、",
+              "start": 0.0,
+              "end": 2.68
+            },
+            {
+              "text": "減った体重を保つ。ここまでで1年。",
+              "start": 2.83,
+              "end": 5.71
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "さらに希望した人だけ、面談なしでもう1年。最後は104週、つまり2年後の体重を比べた。",
           "expression": "neutral",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 13.44,
+          "dur": 8.08,
+          "cards": [
+            {
+              "text": "さらに希望した人だけ、面談なしでもう1年。",
+              "start": 0.0,
+              "end": 3.74
+            },
+            {
+              "text": "最後は104週、つまり2年後の体重を比べた。",
+              "start": 4.24,
+              "end": 7.58
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "2年は長いね。で、結果は？",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 21.8,
+          "dur": 3.0,
+          "cards": [
+            {
+              "text": "2年は長いね。で、結果は？",
+              "start": 0.0,
+              "end": 3.0
+            }
+          ]
         }
       ],
       "narration": "大輔「しかも、飲み物だけじゃない。最初の12週は、栄養士と毎週面談して、体重を減らす。」\n大輔「次の40週は、月1回の面談で、減った体重を保つ。ここまでで1年。」\n大輔「さらに希望した人だけ、面談なしでもう1年。最後は104週、つまり2年後の体重を比べた。」\n沙織「2年は長いね。で、結果は？」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "4cab29369f08",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 8,
@@ -283,48 +602,132 @@
           "text": "2年後、水のグループは、マイナス3.7キロ。",
           "expression": "neutral",
           "reference_index": 0,
-          "display": "2年後、水のグループは、−3.7kg。"
+          "display": "2年後、水のグループは、−3.7kg。",
+          "t0": 0.0,
+          "dur": 4.16,
+          "cards": [
+            {
+              "text": "2年後、水のグループは、−3.7kg。",
+              "start": 0.0,
+              "end": 4.16
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "ダイエット飲料のグループは、マイナス4.8キロ！",
           "expression": "excited",
           "reference_index": 0,
-          "display": "ダイエット飲料のグループは、−4.8kg！"
+          "display": "ダイエット飲料のグループは、−4.8kg！",
+          "t0": 4.38,
+          "dur": 3.8,
+          "cards": [
+            {
+              "text": "ダイエット飲料のグループは、−4.8kg！",
+              "start": 0.0,
+              "end": 3.8
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "水より1.1キロ多くやせてる。かえって太るどころか、逆だよ！",
           "expression": "excited",
           "tone": "excited, fast, getting carried away",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 8.4,
+          "dur": 5.8,
+          "cards": [
+            {
+              "text": "水より1.1キロ多くやせてる。",
+              "start": 0.0,
+              "end": 2.62
+            },
+            {
+              "text": "かえって太るどころか、逆だよ！",
+              "start": 2.77,
+              "end": 5.49
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "ちょっと待って。その1.1キロ、偶然でも出る範囲。論文も、意味のある差はなかった、と書いてる。",
           "expression": "doubt",
           "react": "surprised",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 14.48,
+          "dur": 6.32,
+          "cards": [
+            {
+              "text": "ちょっと待って。その1.1キロ、",
+              "start": 0.0,
+              "end": 2.05
+            },
+            {
+              "text": "偶然でも出る範囲。論文も、",
+              "start": 2.2,
+              "end": 3.97
+            },
+            {
+              "text": "意味のある差はなかった、",
+              "start": 3.97,
+              "end": 5.6
+            },
+            {
+              "text": "と書いてる。",
+              "start": 5.75,
+              "end": 6.52
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "じゃあ引き分けか。水と同じ、ってことだね。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 21.08,
+          "dur": 3.36,
+          "cards": [
+            {
+              "text": "じゃあ引き分けか。水と同じ、ってことだね。",
+              "start": 0.0,
+              "end": 3.15
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "論文の結論は、まさにそれ。水と同等。",
           "expression": "neutral",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 24.72,
+          "dur": 3.72,
+          "cards": [
+            {
+              "text": "論文の結論は、まさにそれ。水と同等。",
+              "start": 0.0,
+              "end": 3.72
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "やっぱり！",
-          "expression": "excited"
+          "expression": "excited",
+          "t0": 28.72,
+          "dur": 1.44,
+          "cards": [
+            {
+              "text": "やっぱり！",
+              "start": 0.0,
+              "end": 1.44
+            }
+          ]
         }
       ],
       "narration": "大輔「2年後、水のグループは、マイナス3.7キロ。」\n大輔「ダイエット飲料のグループは、マイナス4.8キロ！」\n大輔「水より1.1キロ多くやせてる。かえって太るどころか、逆だよ！」\n沙織「ちょっと待って。その1.1キロ、偶然でも出る範囲。論文も、意味のある差はなかった、と書いてる。」\n大輔「じゃあ引き分けか。水と同じ、ってことだね。」\n沙織「論文の結論は、まさにそれ。水と同等。」\n大輔「やっぱり！」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "ef8e091bc7ae"
     },
     {
       "scene_id": 9,
@@ -332,44 +735,143 @@
       "bgm_role": "main",
       "reference_index": 0,
       "image_prompt": "A simple old-fashioned brass balance scale on a plain wooden desk in a quiet study during the daytime (soft daylight from a window). On the left pan, a plain clear bottle of water; on the right pan, a plain unbranded silver aluminium can. The scale is almost level but the beam is blurred with a faint motion haze, as if it is still wobbling and has not settled. A pair of reading glasses lies next to it. No people, no logos, no brand marks, no readable text, no numbers.",
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "lines": [
         {
           "speaker": "skeptic",
           "text": "でも、そこが引っかかる。『同じ』と『差が見つからなかった』は、別の話。",
           "expression": "doubt",
-          "pause": 0.5
+          "pause": 0.5,
+          "t0": 0.0,
+          "dur": 5.24,
+          "cards": [
+            {
+              "text": "でも、そこが引っかかる。『同じ』",
+              "start": 0.0,
+              "end": 2.53
+            },
+            {
+              "text": "と『差が見つからなかった』は、別の話。",
+              "start": 2.68,
+              "end": 5.44
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "え、どう違うの？",
-          "expression": "surprised"
+          "expression": "surprised",
+          "t0": 5.52,
+          "dur": 1.32,
+          "cards": [
+            {
+              "text": "え、どう違うの？",
+              "start": 0.0,
+              "end": 1.32
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "同じだと言うなら、先に『何キロの差までなら同じとみなす』って幅を決めておくの。その幅が、本文にははっきり書いてない。",
           "expression": "thinking",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 7.12,
+          "dur": 8.32,
+          "cards": [
+            {
+              "text": "同じだと言うなら、先に『何キロの差までなら",
+              "start": 0.0,
+              "end": 3.1
+            },
+            {
+              "text": "同じとみなす』って幅を決めておくの。",
+              "start": 3.25,
+              "end": 5.74
+            },
+            {
+              "text": "その幅が、本文にははっきり書いてない。",
+              "start": 5.89,
+              "end": 8.52
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それに、人数の計算は、1.5キロの差を見つける前提。ここからは私の推測だけど、1.1キロくらいの差なら、見逃したのかもしれない。",
           "expression": "doubt",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 15.66,
+          "dur": 9.48,
+          "cards": [
+            {
+              "text": "それに、人数の計算は、1.5キロの差を",
+              "start": 0.0,
+              "end": 2.92
+            },
+            {
+              "text": "見つける前提。ここからは私の推測だけど、",
+              "start": 3.07,
+              "end": 5.94
+            },
+            {
+              "text": "1.1キロくらいの差なら、",
+              "start": 6.09,
+              "end": 7.96
+            },
+            {
+              "text": "見逃したのかもしれない。",
+              "start": 7.96,
+              "end": 9.68
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "つまり、どっちかが少し有利な可能性は、まだ消えてない？",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 25.42,
+          "dur": 4.84,
+          "cards": [
+            {
+              "text": "つまり、どっちかが少し有利な可能性は、",
+              "start": 0.0,
+              "end": 3.32
+            },
+            {
+              "text": "まだ消えてない？",
+              "start": 3.47,
+              "end": 4.67
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "そう。私は、『同じ』とまでは言い切れないと思う。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 30.54,
+          "dur": 3.48,
+          "cards": [
+            {
+              "text": "そう。私は、",
+              "start": 0.0,
+              "end": 0.87
+            },
+            {
+              "text": "『同じ』とまでは言い切れないと思う。",
+              "start": 0.87,
+              "end": 3.48
+            }
+          ]
         }
       ],
       "narration": "沙織「でも、そこが引っかかる。『同じ』と『差が見つからなかった』は、別の話。」\n大輔「え、どう違うの？」\n沙織「同じだと言うなら、先に『何キロの差までなら同じとみなす』って幅を決めておくの。その幅が、本文にははっきり書いてない。」\n沙織「それに、人数の計算は、1.5キロの差を見つける前提。ここからは私の推測だけど、1.1キロくらいの差なら、見逃したのかもしれない。」\n大輔「つまり、どっちかが少し有利な可能性は、まだ消えてない？」\n沙織「そう。私は、『同じ』とまでは言い切れないと思う。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "4724ee83e60e",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 10,
@@ -382,20 +884,52 @@
         {
           "speaker": "skeptic",
           "text": "で、もっと大きいのがこっち。何人が最後まで残ったか。",
-          "expression": "doubt"
+          "expression": "doubt",
+          "t0": 0.0,
+          "dur": 3.6,
+          "cards": [
+            {
+              "text": "で、もっと大きいのがこっち。",
+              "start": 0.0,
+              "end": 1.86
+            },
+            {
+              "text": "何人が最後まで残ったか。",
+              "start": 2.01,
+              "end": 3.6
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "始めたのは493人。1年後には262人。",
           "expression": "neutral",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 3.82,
+          "dur": 4.4,
+          "cards": [
+            {
+              "text": "始めたのは493人。1年後には262人。",
+              "start": 0.0,
+              "end": 4.4
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "104週、つまり2年後の時点では220人。",
           "expression": "neutral",
           "reference_index": 0,
-          "pause": 0.4
+          "pause": 0.4,
+          "t0": 8.62,
+          "dur": 3.68,
+          "cards": [
+            {
+              "text": "104週、つまり2年後の時点では220人。",
+              "start": 0.0,
+              "end": 3.36
+            }
+          ]
         },
         {
           "speaker": "skeptic",
@@ -403,34 +937,105 @@
           "expression": "doubt",
           "tag": "weakness",
           "reference_index": 0,
-          "display": "残ったのは半分以下の44.6%。しかも、計画で最低限必要とした248人に、届いてない。"
+          "display": "残ったのは半分以下の44.6%。しかも、計画で最低限必要とした248人に、届いてない。",
+          "t0": 12.52,
+          "dur": 9.52,
+          "cards": [
+            {
+              "text": "残ったのは半分以下の44.6%。しかも、",
+              "start": 0.0,
+              "end": 4.43
+            },
+            {
+              "text": "計画で最低限必要とした248人に、",
+              "start": 4.43,
+              "end": 8.19
+            },
+            {
+              "text": "届いてない。",
+              "start": 8.19,
+              "end": 9.52
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "半分以上が、途中でいなくなったの？",
-          "expression": "surprised"
+          "expression": "surprised",
+          "t0": 22.32,
+          "dur": 2.88,
+          "cards": [
+            {
+              "text": "半分以上が、途中でいなくなったの？",
+              "start": 0.0,
+              "end": 2.88
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "抜けたのは、水のグループで129人、ダイエット飲料のグループで144人。",
           "expression": "neutral",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 25.48,
+          "dur": 5.48,
+          "cards": [
+            {
+              "text": "抜けたのは、水のグループで129人、",
+              "start": 0.0,
+              "end": 2.86
+            },
+            {
+              "text": "ダイエット飲料のグループで144人。",
+              "start": 3.01,
+              "end": 5.68
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "さっきの2年の結果って、残った220人だけの話か……",
           "expression": "deflated",
-          "pause": 0.4
+          "pause": 0.4,
+          "t0": 31.36,
+          "dur": 4.48,
+          "cards": [
+            {
+              "text": "さっきの2年の結果って、残った",
+              "start": 0.0,
+              "end": 2.42
+            },
+            {
+              "text": "220人だけの話か……",
+              "start": 2.57,
+              "end": 4.22
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "著者は、コロナの時期と重なったことも理由に挙げてる。",
           "expression": "thinking",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 36.12,
+          "dur": 3.2,
+          "cards": [
+            {
+              "text": "著者は、コロナの時期と重なったことも理由に",
+              "start": 0.2,
+              "end": 2.66
+            },
+            {
+              "text": "挙げてる。",
+              "start": 2.81,
+              "end": 3.4
+            }
+          ]
         }
       ],
       "narration": "沙織「で、もっと大きいのがこっち。何人が最後まで残ったか。」\n沙織「始めたのは493人。1年後には262人。」\n沙織「104週、つまり2年後の時点では220人。」\n沙織「残ったのは半分以下の44.6%。しかも、計画で最低限必要とした248人に、届いてない。」\n大輔「半分以上が、途中でいなくなったの？」\n沙織「抜けたのは、水のグループで129人、ダイエット飲料のグループで144人。」\n大輔「さっきの2年の結果って、残った220人だけの話か……」\n沙織「著者は、コロナの時期と重なったことも理由に挙げてる。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "2de04cdf26b4"
     },
     {
       "scene_id": 11,
@@ -438,56 +1043,193 @@
       "bgm_role": "main",
       "reference_index": 0,
       "image_prompt": "A tidy office desk during the daytime (soft daylight through a window): a neat stack of blank printed manuscript pages, a magnifying glass resting on top of the stack, a fountain pen, and a plain unbranded silver aluminium can standing beside the pages. Behind the desk, a closed briefcase on a chair. Calm, slightly investigative mood. No people, no logos, no brand marks, no readable text, no numbers.",
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "lines": [
         {
           "speaker": "skeptic",
           "text": "あと、お金の話。この試験の資金は、米国飲料協会。",
           "expression": "doubt",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 0.0,
+          "dur": 4.44,
+          "cards": [
+            {
+              "text": "あと、お金の話。この試験の資金は、",
+              "start": 0.0,
+              "end": 2.55
+            },
+            {
+              "text": "米国飲料協会。",
+              "start": 2.72,
+              "end": 4.08
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "飲料業界の団体？",
-          "expression": "surprised"
+          "expression": "surprised",
+          "t0": 4.72,
+          "dur": 2.04,
+          "cards": [
+            {
+              "text": "飲料業界の団体？",
+              "start": 0.0,
+              "end": 2.04
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "論文には、資金元は設計にも解析にも関わっていない、とある。ただ、出版前の原稿には目を通してる。",
           "expression": "neutral",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 7.04,
+          "dur": 7.6,
+          "cards": [
+            {
+              "text": "論文には、",
+              "start": 0.0,
+              "end": 0.86
+            },
+            {
+              "text": "資金元は設計にも解析にも関わっていない、",
+              "start": 0.86,
+              "end": 4.32
+            },
+            {
+              "text": "とある。ただ、",
+              "start": 4.47,
+              "end": 5.52
+            },
+            {
+              "text": "出版前の原稿には目を通してる。",
+              "start": 5.52,
+              "end": 7.77
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "医療ライターの費用も、同じ協会。著者には、コカ・コーラから博士課程の資金を受けた人や、業界から謝礼を受けた人もいる。",
           "expression": "doubt",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 14.86,
+          "dur": 7.8,
+          "cards": [
+            {
+              "text": "医療ライターの費用も、同じ協会。著者には、",
+              "start": 0.0,
+              "end": 2.92
+            },
+            {
+              "text": "コカ・コーラから博士",
+              "start": 3.07,
+              "end": 4.36
+            },
+            {
+              "text": "課程の資金を受けた人や、",
+              "start": 4.36,
+              "end": 5.91
+            },
+            {
+              "text": "業界から謝礼を受けた人もいる。",
+              "start": 6.06,
+              "end": 8.0
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "それって、結果が都合よく……",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 22.94,
+          "dur": 2.4,
+          "cards": [
+            {
+              "text": "それって、結果が都合よく……",
+              "start": 0.0,
+              "end": 2.4
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "そう決めつけるのは早い。でも、もう1つ。これは、どっちを飲んでるか、本人が知ってる試験なの。",
           "expression": "thinking",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 25.62,
+          "dur": 5.84,
+          "cards": [
+            {
+              "text": "そう決めつけるのは早い。でも、もう1つ。",
+              "start": 0.0,
+              "end": 2.44
+            },
+            {
+              "text": "これは、どっちを飲んでるか、",
+              "start": 2.59,
+              "end": 4.37
+            },
+            {
+              "text": "本人が知ってる試験なの。",
+              "start": 4.52,
+              "end": 5.97
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "くじ引きで分けたのに？",
-          "expression": "surprised"
+          "expression": "surprised",
+          "t0": 31.74,
+          "dur": 1.92,
+          "cards": [
+            {
+              "text": "くじ引きで分けたのに？",
+              "start": 0.0,
+              "end": 1.92
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "くじで分けても、水か甘い飲み物かは、飲めば分かるからね。コロナの時期は、体重が自己申告、面談もオンラインの回があった。",
           "expression": "neutral",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 33.94,
+          "dur": 8.6,
+          "cards": [
+            {
+              "text": "くじで分けても、水か甘い飲み物かは、",
+              "start": 0.16,
+              "end": 2.73
+            },
+            {
+              "text": "飲めば分かるからね。コロナの時期は、",
+              "start": 2.88,
+              "end": 5.41
+            },
+            {
+              "text": "体重が自己申告、",
+              "start": 5.56,
+              "end": 6.69
+            },
+            {
+              "text": "面談もオンラインの回があった。",
+              "start": 6.69,
+              "end": 8.8
+            }
+          ]
         }
       ],
       "narration": "沙織「あと、お金の話。この試験の資金は、米国飲料協会。」\n大輔「飲料業界の団体？」\n沙織「論文には、資金元は設計にも解析にも関わっていない、とある。ただ、出版前の原稿には目を通してる。」\n沙織「医療ライターの費用も、同じ協会。著者には、コカ・コーラから博士課程の資金を受けた人や、業界から謝礼を受けた人もいる。」\n大輔「それって、結果が都合よく……」\n沙織「そう決めつけるのは早い。でも、もう1つ。これは、どっちを飲んでるか、本人が知ってる試験なの。」\n大輔「くじ引きで分けたのに？」\n沙織「くじで分けても、水か甘い飲み物かは、飲めば分かるからね。コロナの時期は、体重が自己申告、面談もオンラインの回があった。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "3daac3f5e93f",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 12,
@@ -500,51 +1242,178 @@
         {
           "speaker": "dreamer",
           "text": "じゃあ、この試験はあてにならないってこと？",
-          "expression": "deflated"
+          "expression": "deflated",
+          "t0": 0.0,
+          "dur": 3.2,
+          "cards": [
+            {
+              "text": "じゃあ、この試験はあてにならないってこと？",
+              "start": 0.0,
+              "end": 3.15
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "そこまでは言わない。ここは認める。",
           "expression": "thinking",
-          "pause": 0.5
+          "pause": 0.5,
+          "t0": 3.7,
+          "dur": 2.84,
+          "cards": [
+            {
+              "text": "そこまでは言わない。ここは認める。",
+              "start": 0.0,
+              "end": 2.84
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "途中で抜けた人の体重を推定して補う方法でも、最後に測った体重をそのまま使う方法でも、計算し直してる。どれも、差はなし。",
           "expression": "surprised",
           "react": "surprised",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 6.76,
+          "dur": 8.76,
+          "cards": [
+            {
+              "text": "途中で抜けた人の体重を",
+              "start": 0.0,
+              "end": 1.6
+            },
+            {
+              "text": "推定して補う方法でも、",
+              "start": 1.6,
+              "end": 3.2
+            },
+            {
+              "text": "最後に測った体重をそのまま使う方法でも、",
+              "start": 3.5,
+              "end": 6.37
+            },
+            {
+              "text": "計算し直してる。どれも、差はなし。",
+              "start": 6.52,
+              "end": 8.96
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それに、お金の出どころも、業界とのつながりも、論文が自分で書いてる。隠してたわけじゃない。",
           "expression": "convinced",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 15.74,
+          "dur": 6.0,
+          "cards": [
+            {
+              "text": "それに、お金の出どころも、",
+              "start": 0.0,
+              "end": 1.69
+            },
+            {
+              "text": "業界とのつながりも、",
+              "start": 1.69,
+              "end": 2.99
+            },
+            {
+              "text": "論文が自分で書いてる。",
+              "start": 3.14,
+              "end": 4.57
+            },
+            {
+              "text": "隠してたわけじゃない。",
+              "start": 4.57,
+              "end": 6.0
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "抜けた人を数に入れ直しても、結果はひっくり返らなかったんだ。",
-          "expression": "convinced"
+          "expression": "convinced",
+          "t0": 22.02,
+          "dur": 4.52,
+          "cards": [
+            {
+              "text": "抜けた人を数に入れ直しても、",
+              "start": 0.2,
+              "end": 2.24
+            },
+            {
+              "text": "結果はひっくり返らなかったんだ。",
+              "start": 2.39,
+              "end": 4.72
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "計算の上ではね。補った数字は、あくまで推定だけど。",
-          "expression": "amused"
+          "expression": "amused",
+          "t0": 26.82,
+          "dur": 4.68,
+          "cards": [
+            {
+              "text": "計算の上ではね。補った数字は、",
+              "start": 0.0,
+              "end": 3.06
+            },
+            {
+              "text": "あくまで推定だけど。",
+              "start": 3.21,
+              "end": 4.71
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "少なくとも、『甘味料入りは、かえって太る』は、この試験では見えなかった。",
-          "expression": "excited"
+          "expression": "excited",
+          "t0": 31.78,
+          "dur": 5.8,
+          "cards": [
+            {
+              "text": "少なくとも、『甘味料入りは、かえって太る』",
+              "start": 0.0,
+              "end": 3.5
+            },
+            {
+              "text": "は、この試験では見えなかった。",
+              "start": 3.65,
+              "end": 5.9
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "この条件では、ね。栄養士の面談つき、っていう条件。",
           "expression": "neutral",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 37.86,
+          "dur": 3.96,
+          "cards": [
+            {
+              "text": "この条件では、ね。栄養士の面談つき、",
+              "start": 0.0,
+              "end": 2.96
+            },
+            {
+              "text": "っていう条件。",
+              "start": 3.11,
+              "end": 4.16
+            }
+          ]
         }
       ],
       "narration": "大輔「じゃあ、この試験はあてにならないってこと？」\n沙織「そこまでは言わない。ここは認める。」\n沙織「途中で抜けた人の体重を推定して補う方法でも、最後に測った体重をそのまま使う方法でも、計算し直してる。どれも、差はなし。」\n沙織「それに、お金の出どころも、業界とのつながりも、論文が自分で書いてる。隠してたわけじゃない。」\n大輔「抜けた人を数に入れ直しても、結果はひっくり返らなかったんだ。」\n沙織「計算の上ではね。補った数字は、あくまで推定だけど。」\n大輔「少なくとも、『甘味料入りは、かえって太る』は、この試験では見えなかった。」\n沙織「この条件では、ね。栄養士の面談つき、っていう条件。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "57936722d9dd",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 13,
@@ -558,39 +1427,138 @@
           "speaker": "dreamer",
           "text": "じゃあ、想像してみてよ。",
           "expression": "excited",
-          "pause": 0.4
+          "pause": 0.4,
+          "t0": 0.0,
+          "dur": 1.68,
+          "cards": [
+            {
+              "text": "じゃあ、想像してみてよ。",
+              "start": 0.0,
+              "end": 1.68
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "健診で体重を指摘された、40代の会社員。毎週の面談で、栄養士と食事を見直してる。でも、夕方の甘い炭酸だけは、どうしてもやめられない。",
           "expression": "excited",
-          "tag": "life_scene"
+          "tag": "life_scene",
+          "t0": 1.9,
+          "dur": 10.96,
+          "cards": [
+            {
+              "text": "健診で体重を指摘された、40代の会社員。",
+              "start": 0.0,
+              "end": 3.12
+            },
+            {
+              "text": "毎週の面談で、栄養士と食事を見直してる。",
+              "start": 3.72,
+              "end": 6.72
+            },
+            {
+              "text": "でも、夕方の甘い炭酸だけは、",
+              "start": 7.11,
+              "end": 9.21
+            },
+            {
+              "text": "どうしてもやめられない。",
+              "start": 9.36,
+              "end": 11.16
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "この試験の形なら、栄養士が、水とダイエット飲料を同じ選択肢として並べて話せる。好きな味を残したまま、面談を続けられる。",
           "expression": "excited",
-          "tone": "warm, a bit fast, getting carried away"
+          "tone": "warm, a bit fast, getting carried away",
+          "t0": 13.08,
+          "dur": 9.8,
+          "cards": [
+            {
+              "text": "この試験の形なら、栄養士が、",
+              "start": 0.0,
+              "end": 2.48
+            },
+            {
+              "text": "水とダイエット飲料を同じ",
+              "start": 2.63,
+              "end": 4.48
+            },
+            {
+              "text": "選択肢として並べて話せる。",
+              "start": 4.48,
+              "end": 6.49
+            },
+            {
+              "text": "好きな味を残したまま、面談を続けられる。",
+              "start": 6.64,
+              "end": 9.66
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それは面談つきの話ね。飲むだけでやせる、とはどこにも書いてない。",
           "expression": "doubt",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 23.16,
+          "dur": 5.16,
+          "cards": [
+            {
+              "text": "それは面談つきの話ね。飲むだけでやせる、",
+              "start": 0.41,
+              "end": 3.41
+            },
+            {
+              "text": "とはどこにも書いてない。",
+              "start": 3.56,
+              "end": 5.36
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "分かってる。主役は面談。飲み物は、続けるための脇役。",
-          "expression": "convinced"
+          "expression": "convinced",
+          "t0": 28.6,
+          "dur": 5.44,
+          "cards": [
+            {
+              "text": "分かってる。主役は面談。飲み物は、",
+              "start": 0.0,
+              "end": 3.14
+            },
+            {
+              "text": "続けるための脇役。",
+              "start": 3.29,
+              "end": 4.95
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "脇役なら、まあ。",
-          "expression": "amused"
+          "expression": "amused",
+          "t0": 34.32,
+          "dur": 2.6,
+          "cards": [
+            {
+              "text": "脇役なら、まあ。",
+              "start": 0.0,
+              "end": 2.6
+            }
+          ]
         }
       ],
       "narration": "大輔「じゃあ、想像してみてよ。」\n大輔「健診で体重を指摘された、40代の会社員。毎週の面談で、栄養士と食事を見直してる。でも、夕方の甘い炭酸だけは、どうしてもやめられない。」\n大輔「この試験の形なら、栄養士が、水とダイエット飲料を同じ選択肢として並べて話せる。好きな味を残したまま、面談を続けられる。」\n沙織「それは面談つきの話ね。飲むだけでやせる、とはどこにも書いてない。」\n大輔「分かってる。主役は面談。飲み物は、続けるための脇役。」\n沙織「脇役なら、まあ。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "258a39a2dc19",
+      "zoom_anchor": {
+        "x": 0.36,
+        "y": 0.38
+      }
     },
     {
       "scene_id": 14,
@@ -598,34 +1566,105 @@
       "bgm_role": "main",
       "reference_index": 0,
       "image_prompt": "A calm study desk in the evening (warm desk lamp light, a dark blue dusk sky through the window). A small world globe turned so that Great Britain faces the viewer, with a magnifying glass leaning against it; next to it a plain clear glass of water and a plain unbranded silver aluminium can. Quiet, thoughtful mood. No people, no logos, no brand marks, no readable text, no letters, no numbers, no country names.",
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "lines": [
         {
           "speaker": "skeptic",
           "text": "ただ、この試験が見たのは体重。甘味料を長く飲んだときの体への影響は、この試験の範囲の外。そこは分からない、で止めておく。",
           "expression": "thinking",
           "tag": "barrier",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 0.0,
+          "dur": 9.6,
+          "cards": [
+            {
+              "text": "ただ、この試験が見たのは体重。",
+              "start": 0.0,
+              "end": 2.25
+            },
+            {
+              "text": "甘味料を長く飲んだときの体への影響は、",
+              "start": 2.4,
+              "end": 5.6
+            },
+            {
+              "text": "この試験の範囲の外。そこは分からない、",
+              "start": 5.75,
+              "end": 8.6
+            },
+            {
+              "text": "で止めておく。",
+              "start": 8.75,
+              "end": 9.8
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それに、イギリスの1か所だけの試験。人種や民族の記録もなくて、日本人で同じ結果になるかも分からない。",
           "expression": "doubt",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 9.82,
+          "dur": 6.72,
+          "cards": [
+            {
+              "text": "それに、イギリスの1か所だけの試験。",
+              "start": 0.0,
+              "end": 2.34
+            },
+            {
+              "text": "人種や民族の記録もなくて、日本人で同じ",
+              "start": 2.66,
+              "end": 5.1
+            },
+            {
+              "text": "結果になるかも分からない。",
+              "start": 5.25,
+              "end": 6.92
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "砂糖入りと比べたわけでもないしね。比べた相手は、あくまで水。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 16.82,
+          "dur": 5.04,
+          "cards": [
+            {
+              "text": "砂糖入りと比べたわけでもないしね。",
+              "start": 0.0,
+              "end": 2.55
+            },
+            {
+              "text": "比べた相手は、あくまで水。",
+              "start": 2.7,
+              "end": 4.65
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "そう。そこを混ぜると、話が大きくなる。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 22.14,
+          "dur": 3.2,
+          "cards": [
+            {
+              "text": "そう。そこを混ぜると、話が大きくなる。",
+              "start": 0.0,
+              "end": 3.2
+            }
+          ]
         }
       ],
       "narration": "沙織「ただ、この試験が見たのは体重。甘味料を長く飲んだときの体への影響は、この試験の範囲の外。そこは分からない、で止めておく。」\n沙織「それに、イギリスの1か所だけの試験。人種や民族の記録もなくて、日本人で同じ結果になるかも分からない。」\n大輔「砂糖入りと比べたわけでもないしね。比べた相手は、あくまで水。」\n沙織「そう。そこを混ぜると、話が大きくなる。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "e936d7d1adf8",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 15,
@@ -638,52 +1677,194 @@
         {
           "speaker": "skeptic",
           "text": "じゃあ、判定。お題は、ダイエット飲料は水と同じと言えるか。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 5.72,
+          "cards": [
+            {
+              "text": "じゃあ、判定。お題は、ダイエット飲料は",
+              "start": 0.0,
+              "end": 3.42
+            },
+            {
+              "text": "水と同じと言えるか。",
+              "start": 3.57,
+              "end": 5.57
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "僕は「もうすぐ来る」。新しい製品の話じゃなくて、甘味料入りの飲み物が、体重管理の場で水と並べて語られる日は近い、って見立て。",
           "expression": "convinced",
-          "tone": "confident, warm"
+          "tone": "confident, warm",
+          "t0": 6.0,
+          "dur": 9.64,
+          "cards": [
+            {
+              "text": "僕は「もうすぐ来る」。",
+              "start": 0.0,
+              "end": 1.74
+            },
+            {
+              "text": "新しい製品の話じゃなくて、",
+              "start": 1.74,
+              "end": 3.8
+            },
+            {
+              "text": "甘味料入りの飲み物が、体重管理の場で水と",
+              "start": 3.95,
+              "end": 6.99
+            },
+            {
+              "text": "並べて語られる日は近い、って見立て。",
+              "start": 7.14,
+              "end": 9.84
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "リリースは、この結果がWHOの今後の指針に役立ちうる、と書いてる。くじ引きで2年比べた試験は、それだけで重いよ。",
           "expression": "excited",
-          "reference_index": 1
+          "reference_index": 1,
+          "t0": 15.86,
+          "dur": 9.16,
+          "cards": [
+            {
+              "text": "リリースは、この結果がWHOの今後の指針に",
+              "start": 0.38,
+              "end": 3.81
+            },
+            {
+              "text": "役立ちうる、と書いてる。くじ引きで2年",
+              "start": 3.96,
+              "end": 6.81
+            },
+            {
+              "text": "比べた試験は、それだけで重いよ。",
+              "start": 6.96,
+              "end": 9.36
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それは、指針がこの先どう動くかの予想でしょ。私が判定するのは、この結果が確かかどうか。",
-          "expression": "doubt"
+          "expression": "doubt",
+          "t0": 25.3,
+          "dur": 6.84,
+          "cards": [
+            {
+              "text": "それは、",
+              "start": 0.0,
+              "end": 0.6
+            },
+            {
+              "text": "指針がこの先どう動くかの予想でしょ。",
+              "start": 0.6,
+              "end": 3.3
+            },
+            {
+              "text": "私が判定するのは、この結果が確かかどうか。",
+              "start": 3.68,
+              "end": 6.83
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "残ったのは半分以下。同じとみなす幅も、はっきり書いてない。",
           "expression": "doubt",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 32.36,
+          "dur": 5.24,
+          "cards": [
+            {
+              "text": "残ったのは半分以下。同じとみなす幅も、",
+              "start": 0.0,
+              "end": 3.79
+            },
+            {
+              "text": "はっきり書いてない。",
+              "start": 3.94,
+              "end": 5.44
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "だから私は「まだ眉唾」。かえって太る、に待ったをかけた点は認める。でも、『水と同じ』のはんこは、まだ押せない。",
           "expression": "convinced",
           "tone": "calm, with a hint of mischief",
-          "display": "だから私は「まだ眉唾」。かえって太る、に待ったをかけた点は認める。でも、『水と同じ』の判子は、まだ押せない。"
+          "display": "だから私は「まだ眉唾」。かえって太る、に待ったをかけた点は認める。でも、『水と同じ』の判子は、まだ押せない。",
+          "t0": 37.82,
+          "dur": 9.12,
+          "cards": [
+            {
+              "text": "だから私は「まだ眉唾」。かえって太る、",
+              "start": 0.0,
+              "end": 3.21
+            },
+            {
+              "text": "に待ったをかけた点は認める。でも、",
+              "start": 3.21,
+              "end": 6.08
+            },
+            {
+              "text": "『水と同じ』の判子は、まだ押せない。",
+              "start": 6.08,
+              "end": 9.12
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "割れたね。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 47.22,
+          "dur": 1.24,
+          "cards": [
+            {
+              "text": "割れたね。",
+              "start": 0.0,
+              "end": 1.24
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "はんこは、別の人たちで確かめた試験が出るまで、預かっとく。",
           "expression": "amused",
-          "display": "判子は、別の人たちで確かめた試験が出るまで、預かっとく。"
+          "display": "判子は、別の人たちで確かめた試験が出るまで、預かっとく。",
+          "t0": 48.74,
+          "dur": 4.2,
+          "cards": [
+            {
+              "text": "判子は、",
+              "start": 0.0,
+              "end": 0.6
+            },
+            {
+              "text": "別の人たちで確かめた試験が出るまで、",
+              "start": 0.6,
+              "end": 3.3
+            },
+            {
+              "text": "預かっとく。",
+              "start": 3.3,
+              "end": 4.2
+            }
+          ]
         }
       ],
       "narration": "沙織「じゃあ、判定。お題は、ダイエット飲料は水と同じと言えるか。」\n大輔「僕は「もうすぐ来る」。新しい製品の話じゃなくて、甘味料入りの飲み物が、体重管理の場で水と並べて語られる日は近い、って見立て。」\n大輔「リリースは、この結果がWHOの今後の指針に役立ちうる、と書いてる。くじ引きで2年比べた試験は、それだけで重いよ。」\n沙織「それは、指針がこの先どう動くかの予想でしょ。私が判定するのは、この結果が確かかどうか。」\n沙織「残ったのは半分以下。同じとみなす幅も、はっきり書いてない。」\n沙織「だから私は「まだ眉唾」。かえって太る、に待ったをかけた点は認める。でも、『水と同じ』のはんこは、まだ押せない。」\n大輔「割れたね。」\n沙織「はんこは、別の人たちで確かめた試験が出るまで、預かっとく。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "6705c23bb30a",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 16,
@@ -695,26 +1876,102 @@
         {
           "speaker": "dreamer",
           "text": "かえって太る、はこの試験では見えなかった。水と同じかは、まだ宿題だね。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 0.0,
+          "dur": 5.76,
+          "cards": [
+            {
+              "text": "かえって太る、はこの試験では見えなかった。",
+              "start": 0.16,
+              "end": 3.31
+            },
+            {
+              "text": "水と同じかは、まだ宿題だね。",
+              "start": 3.46,
+              "end": 5.58
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "今日の判定は、10月11日時点の、私たち二人の見立て。体重の話で、健康のお墨付きじゃないからね。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 6.04,
+          "dur": 7.72,
+          "cards": [
+            {
+              "text": "今日の判定は、10月11日時点の、",
+              "start": 0.0,
+              "end": 2.86
+            },
+            {
+              "text": "私たち二人の見立て。体重の話で、",
+              "start": 3.08,
+              "end": 5.52
+            },
+            {
+              "text": "健康のお墨付きじゃないからね。",
+              "start": 5.67,
+              "end": 7.92
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
-          "expression": "excited"
+          "expression": "excited",
+          "t0": 14.04,
+          "dur": 4.92,
+          "cards": [
+            {
+              "text": "次はどんな研究が、誰かの幸せな未来を",
+              "start": 0.0,
+              "end": 3.7
+            },
+            {
+              "text": "運んでくるのか。",
+              "start": 3.85,
+              "end": 5.05
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
-          "expression": "amused"
+          "expression": "amused",
+          "t0": 19.24,
+          "dur": 6.88,
+          "cards": [
+            {
+              "text": "それが本物かどうか、",
+              "start": 0.0,
+              "end": 1.12
+            },
+            {
+              "text": "また一緒に確かめましょう。",
+              "start": 1.12,
+              "end": 2.57
+            },
+            {
+              "text": "元の発表は概要欄に載せています。",
+              "start": 2.8,
+              "end": 4.68
+            },
+            {
+              "text": "チャンネル登録して、待っていてください。",
+              "start": 4.83,
+              "end": 7.06
+            }
+          ]
         }
       ],
       "narration": "大輔「かえって太る、はこの試験では見えなかった。水と同じかは、まだ宿題だね。」\n沙織「今日の判定は、10月11日時点の、私たち二人の見立て。体重の話で、健康のお墨付きじゃないからね。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "dec2215fb2b9",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     }
   ],
   "shorts": [
@@ -763,5 +2020,10 @@
         }
       ]
     }
-  ]
+  ],
+  "bgm_sources": {
+    "intro": "BGM/kl035-BGM-intro.mp3",
+    "main": "BGM/kl035-BGM-main.mp3",
+    "outro": "BGM/kl035-BGM-outro.mp3"
+  }
 }
