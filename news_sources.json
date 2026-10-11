@@ -1,5 +1,5 @@
 {
-  "_comment": "ニュース起点のネタ選定（2026-10-04〜、kl-new.md STEP1 ケースC）で kl_news_scan.py collect が読むRSS。kind: official=企業・研究機関の公式発表（そのまま一次資料になりうる）、journal=学術誌のニュース・論文、press=大学のプレスリリース集約、media=専門報道（何が発表されたかを知る手がかり。台本の根拠にはしない）。2026-10-04に取得できることを確認した。EurekAlert・Stanford HAI・arXivのRSSは取得できなかった（または空）ため外した。",
+  "_comment": "ニュース起点のネタ選定（2026-10-04〜、kl-new.md STEP1 ケースC）で kl_news_scan.py collect が読むRSS。kind: official=企業・研究機関の公式発表（そのまま一次資料になりうる）、journal=学術誌のニュース・論文、press=大学のプレスリリース集約・科学ニュースの集約（ScienceDaily・Medical Xpress・Phys.org・JSTサイエンスポータル）、media=報道（何が発表されたかを知る手がかり。台本の根拠にはしない）。max_items（任意）=取り込む件数の上限（新しい順）。件数の多いフィードが候補を占めないようにかける。2026-10-04に取得できることを確認した。EurekAlert・Stanford HAI・arXivのRSSは取得できなかった（または空）ため外した。2026-10-11に日本語メディア・英語の科学/医療/AI/暮らしのフィードを追加した（ヒューマノイド・暮らしの技術・食と健康が薄く、日本語の媒体が0だったため）。日本語メディアのうち GIGAZINE は娯楽寄り、ナゾロジーは見出しの誇張が多い。どちらも手がかりに限り、一次資料は score が探す。2026-10-11に取得できなかったため入れていないもの: ロボスタ、Figure、1X、Agility Robotics、Anthropic、NIH（403）、Harvard Gazette、日刊工業新聞、マイナビニュース。",
   "feeds": [
     {"name": "OpenAI", "url": "https://openai.com/news/rss.xml", "kind": "official"},
     {"name": "Google DeepMind", "url": "https://deepmind.google/blog/rss.xml", "kind": "official"},
@@ -9,8 +9,37 @@
     {"name": "Nature", "url": "https://www.nature.com/nature.rss", "kind": "journal"},
     {"name": "Science News", "url": "https://www.science.org/rss/news_current.xml", "kind": "journal"},
     {"name": "ScienceDaily AI", "url": "https://www.sciencedaily.com/rss/computers_math/artificial_intelligence.xml", "kind": "press"},
-    {"name": "ScienceDaily Health", "url": "https://www.sciencedaily.com/rss/top/health.xml", "kind": "press"},
+    {"name": "ScienceDaily Health", "url": "https://www.sciencedaily.com/rss/top/health.xml", "kind": "press", "max_items": 20},
     {"name": "The Robot Report", "url": "https://www.therobotreport.com/feed/", "kind": "media"},
-    {"name": "IEEE Spectrum Robotics", "url": "https://spectrum.ieee.org/feeds/topic/robotics.rss", "kind": "media"}
+    {"name": "IEEE Spectrum Robotics", "url": "https://spectrum.ieee.org/feeds/topic/robotics.rss", "kind": "media"},
+
+    {"name": "ITmedia AI+", "url": "https://rss.itmedia.co.jp/rss/2.0/aiplus.xml", "kind": "media"},
+    {"name": "ITmedia NEWS", "url": "https://rss.itmedia.co.jp/rss/2.0/news_bursts.xml", "kind": "media", "max_items": 30},
+    {"name": "NHK 科学・文化", "url": "https://www.nhk.or.jp/rss/news/cat6.xml", "kind": "media", "max_items": 40},
+    {"name": "GIGAZINE", "url": "https://gigazine.net/news/rss_2.0/", "kind": "media"},
+    {"name": "ナゾロジー", "url": "https://nazology.net/feed", "kind": "media"},
+    {"name": "JST サイエンスポータル", "url": "https://scienceportal.jst.go.jp/feed/", "kind": "press"},
+
+    {"name": "Medical Xpress", "url": "https://medicalxpress.com/rss-feed/", "kind": "press", "max_items": 20},
+    {"name": "Phys.org", "url": "https://phys.org/rss-feed/", "kind": "press", "max_items": 20},
+    {"name": "New Scientist", "url": "https://www.newscientist.com/feed/home/", "kind": "media"},
+    {"name": "MIT Technology Review", "url": "https://www.technologyreview.com/feed/", "kind": "media"},
+    {"name": "The Verge AI", "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "kind": "media"},
+    {"name": "TechCrunch AI", "url": "https://techcrunch.com/category/artificial-intelligence/feed/", "kind": "media"},
+    {"name": "Electrek", "url": "https://electrek.co/feed/", "kind": "media", "max_items": 30}
+  ],
+  "_gnews_comment": "Google ニュースのキーワード検索フィード（2026-10-11）。collect が https://news.google.com/rss/search?q={検索語}+when:7d&hl=ja&gl=JP&ceid=JP:ja を検索語ごとに1回取得する（間隔2.5秒、1回の collect で15件まで、ブラウザ風UA）。取得物は報道（二次情報）なので source_kind は media、url は空にして Google のリダイレクトURLは gnews_link に参考として残す。一次資料は score が探す。429・同意画面・0件は警告して次へ進む（他のフィードには影響しない）。Google ニュースのRSSは公式APIではないので、取得は少数・低頻度に留める。2026-10-11の試験で件数が少なかった「治験 新薬 発表」（4件）「防災 技術 新開発」（2件）は使わない。gnews_max_per_query: 検索語ごとに取り込む上限（新しい順）。",
+  "gnews_max_per_query": 30,
+  "gnews_queries": [
+    {"genre": "humanoid", "q": "ヒューマノイド"},
+    {"genre": "humanoid", "q": "人型ロボット"},
+    {"genre": "ai", "q": "生成AI 新モデル"},
+    {"genre": "ai", "q": "OpenAI 発表"},
+    {"genre": "medical", "q": "iPS細胞 研究 成果"},
+    {"genre": "medical", "q": "がん 新しい治療 研究"},
+    {"genre": "food_health", "q": "研究 食事 健康 効果"},
+    {"genre": "food_health", "q": "腸内細菌 研究"},
+    {"genre": "life_tech", "q": "家庭用ロボット"},
+    {"genre": "life_tech", "q": "全固体電池"}
   ]
 }

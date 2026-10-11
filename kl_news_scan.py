@@ -24,7 +24,7 @@ kl_news_scan.py — ニュース起点のネタ選定（2026-10-04〜）
   - list は「本命／ニッチ／速報（再計測待ち）」の3枠で出す（Gemini の推定 buzz_jp_est は予備）
 
 使い方（collect → score → tag → enrich → buzz → list）:
-  python3 kl_news_scan.py collect [--days 21]
+  python3 kl_news_scan.py collect [--days 21]   # RSS＋Googleニュースのキーワード検索（gnews_queries）＋Gemini検索、重複排除
   python3 kl_news_scan.py score [--top 15]      # 検索つき、1件ずつ課金
   python3 kl_news_scan.py tag                   # ジャンル未付与に5ジャンル（テキストのみ）
   python3 kl_news_scan.py enrich                # ゲート通過分に検索語・見出しの語・発表の種類・系列（テキストのみ）
@@ -89,7 +89,7 @@ TOPIC_FILTER = (
 
 
 def _text(el, tag):
-    for t in (tag, "{http://www.w3.org/2005/Atom}" + tag):
+    for t in (tag, "{http://www.w3.org/2005/Atom}" + tag, "{http://purl.org/rss/1.0/}" + tag):
         x = el.find(t)
         if x is not None:
             return (x.text or x.get("href") or "").strip()
@@ -109,10 +109,31 @@ def _parse_date(s: str):
         return None
 
 
+RSS1_NS = "{http://purl.org/rss/1.0/}"
+
+
+def _get(url: str, timeout: int = 20) -> bytes:
+    """RSSの取得。既定のUAで403/406ならブラウザ風UAで1回だけ取り直す（取得物はパースするだけ）。
+    頼んでいないのに gzip で返すサーバーがある（Google DeepMind、2026-10-11に発覚。以前から0件だった）ので展開する。"""
+    try:
+        raw = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout).read()
+    except urllib.error.HTTPError as e:
+        if e.code not in (403, 406):
+            raise
+        raw = urllib.request.urlopen(urllib.request.Request(url, headers=BROWSER_UA), timeout=timeout).read()
+    if raw[:2] == b"\x1f\x8b":
+        import gzip
+        raw = gzip.decompress(raw)
+    return raw
+
+
 def fetch_feed(feed: dict, since: datetime) -> list:
-    raw = urllib.request.urlopen(urllib.request.Request(feed["url"], headers=UA), timeout=20).read()
+    """1つのRSS/Atomを取得して、since 以降の記事を返す。
+    feed["max_items"] があれば、新しい順にその件数までにする（2026-10-11、件数の多いフィードが候補を占めないように）。"""
+    raw = _get(feed["url"])
     root = ET.fromstring(raw)
-    items = root.findall(".//item") or root.findall(".//{http://www.w3.org/2005/Atom}entry")
+    items = (root.findall(".//item") or root.findall(".//{http://www.w3.org/2005/Atom}entry")
+             or root.findall(f".//{RSS1_NS}item"))
     out = []
     for it in items:
         title = _text(it, "title")
@@ -128,7 +149,127 @@ def fetch_feed(feed: dict, since: datetime) -> list:
         out.append({"title": title, "url": link, "published": date.date().isoformat(),
                     "source": feed["name"], "source_kind": feed["kind"],
                     "summary": re.sub(r"\s+", " ", desc).strip()[:400]})
+    if feed.get("max_items"):
+        out = sorted(out, key=lambda x: x["published"], reverse=True)[: int(feed["max_items"])]
     return out
+
+
+# ============================================================
+# Google ニュースのキーワード検索フィード（kind: gnews、2026-10-11）
+# ジャンルごとの検索語で、日本語の報道を拾う。報道は手がかり（二次情報）で、一次資料は score が探す
+# ============================================================
+
+GNEWS_COLLECT_WINDOW = 7       # 日。検索語に when:7d を付ける
+GNEWS_COLLECT_MAX_REQ = 15     # 1回の collect で Google ニュースに送る上限
+
+
+def collect_gnews(queries: list, since: datetime, per_query: int) -> list:
+    """news_sources.json の gnews_queries（[{"genre": "...", "q": "..."}]）を順に1回ずつ取得する。
+    リクエスト間隔は GNEWS_INTERVAL（2秒以上）。失敗（429・同意画面・0件）は警告して次へ進む。"""
+    out = []
+    for n, gq in enumerate(queries[:GNEWS_COLLECT_MAX_REQ]):
+        if n:
+            time.sleep(GNEWS_INTERVAL)
+        q = gq.get("q", "").strip()
+        try:
+            items = fetch_gnews(q, window_days=GNEWS_COLLECT_WINDOW)
+        except GNewsError as e:
+            print(f"  ⚠️ Googleニュース「{q}」: 取得失敗 {e}")
+            continue
+        got = []
+        for it in sorted(items, key=lambda x: x["date"], reverse=True):
+            if not it["date"] or it["date"] < since.date().isoformat():
+                continue
+            outlet = it["outlet"] or it["host"]
+            got.append({"title": it["title"], "url": "", "gnews_link": it.get("link", ""),
+                        "published": it["date"],
+                        "source": f"Googleニュース（{q}）／{outlet}", "source_kind": "media",
+                        "outlet": outlet, "outlet_host": it.get("host", ""), "genre_hint": gq.get("genre", ""),
+                        "summary": f"{it['title']}（{outlet}）"})
+            if len(got) >= per_query:
+                break
+        print(f"  Googleニュース「{q}」({gq.get('genre', '')}): {len(got)}件（取得 {len(items)}件）")
+        out += got
+    if len(queries) > GNEWS_COLLECT_MAX_REQ:
+        print(f"  ⚠️ gnews_queries が{len(queries)}件あるため、先頭の{GNEWS_COLLECT_MAX_REQ}件だけ取得しました")
+    return out
+
+
+# ============================================================
+# 同じ発表の重複排除（2026-10-11）。見出しの語（英語は単語、日本語は2文字ずつ）の Jaccard 類似度でまとめる
+# ============================================================
+
+DEDUP_JACCARD = 0.5
+_EN_STOP = {"the", "and", "for", "with", "from", "that", "this", "into", "how", "new", "its", "are", "can",
+            "will", "has", "have", "was", "were", "you", "your", "our", "about", "after", "more", "than",
+            "what", "why", "who", "when", "study", "research", "researchers", "scientists", "finds", "shows"}
+KIND_PRIORITY = {"official": 0, "journal": 1, "press": 2, "search": 3, "media": 4}
+
+
+def _title_tokens(title: str) -> set:
+    s = re.sub(r"[【\[](画像|動画|写真)[】\]]", " ", _nfkc(title))
+    s = re.sub(r"[「」『』【】（）()\[\]<>《》、。・,.:;!?！？\"'“”‘’…―—–\-|/]", " ", s)
+    toks = {w for w in re.findall(r"[a-z0-9][a-z0-9+.%]*", s) if len(w) >= 3 and w not in _EN_STOP}
+    for run in re.findall(r"[^\x00-\x7f\s]+", s):
+        if len(run) == 1:
+            toks.add(run)
+        toks |= {run[i:i + 2] for i in range(len(run) - 1)}
+    return toks
+
+
+def dedup_similar(items: list, known_ids: set) -> tuple:
+    """見出しが似た記事（同じ発表）を1件にまとめる。代表は news_candidates.json に既にある id を優先
+    （既存の重複判定を崩さないため）、次に一次資料に近い kind（official > journal > press > search > media）。
+    代表には sources（まとめた記事のフィード名・媒体名、代表を含む）と dup_ids を残す。戻り値は (まとめた後, まとめた組)。"""
+    toks = [_title_tokens(it["title"]) for it in items]
+    nums = [set(re.findall(r"\d+(?:\.\d+)?", _nfkc(it["title"]))) for it in items]
+    parent = list(range(len(items)))
+
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+    for i in range(len(items)):
+        if len(toks[i]) < 4:
+            continue
+        for j in range(i + 1, len(items)):
+            if len(toks[j]) < 4:
+                continue
+            if (nums[i] - nums[j]) and (nums[j] - nums[i]):
+                continue            # 互いに相手に無い数字がある（日付・版・数値の違う別の記事。例: NHK の「10月8日の動き」と「10月9日の動き」）
+            inter = len(toks[i] & toks[j])
+            if inter and inter / len(toks[i] | toks[j]) >= DEDUP_JACCARD:
+                parent[find(j)] = find(i)
+    groups = {}
+    for i in range(len(items)):
+        groups.setdefault(find(i), []).append(items[i])
+    out, merged = [], []
+    for members in groups.values():
+        rep = min(members, key=lambda m: (m["id"] not in known_ids, KIND_PRIORITY.get(m.get("source_kind"), 9),
+                                          bool(m.get("gnews_link")), m.get("published", "")))
+        names = []
+        for m in members:
+            nm = m.get("outlet") or m.get("source", "")
+            if nm and nm not in names:
+                names.append(nm)
+        rep["sources"] = names
+        if len(members) > 1:
+            rep["dup_ids"] = [m["id"] for m in members if m is not rep]
+            rep["genre_hint"] = rep.get("genre_hint") or next((m["genre_hint"] for m in members if m.get("genre_hint")), "")
+            merged.append(members)
+        out.append(rep)
+    return out, merged
+
+
+def prescore_exclusions(it: dict, used: dict) -> str:
+    """プールの段階で外す理由（score の課金を避ける）。使用済み・却下済みと同じ一次資料のURL、顧客の導入事例（宣伝）。"""
+    u = _norm_url(it.get("url", ""))
+    if u and u in used:
+        return f"使用済みと同じ資料（{used[u]}）"
+    if is_customer_case(it):
+        return "顧客の導入事例（宣伝）"
+    return ""
 
 
 def _gemini():
@@ -171,23 +312,27 @@ def _id(item: dict) -> str:
     return hashlib.sha1((item.get("url") or item["title"]).encode("utf-8")).hexdigest()[:10]
 
 
-def cmd_collect(days: int):
+def cmd_collect(days: int, sources_path: Path = None, no_gemini: bool = False):
     since = datetime.now(timezone.utc) - timedelta(days=days)
-    feeds = json.loads(SOURCES_JSON.read_text(encoding="utf-8"))["feeds"]
+    cfg = json.loads((sources_path or SOURCES_JSON).read_text(encoding="utf-8"))
+    feeds = cfg["feeds"]
     pool = []
     for f in feeds:
         try:
             got = fetch_feed(f, since)
             pool += got
-            print(f"  {f['name']}: {len(got)}件")
+            print(f"  {f['name']}: {len(got)}件" + (f"（上限{f['max_items']}）" if f.get("max_items") else ""))
         except Exception as e:  # noqa: BLE001
-            print(f"  ⚠️ {f['name']}: 取得失敗 {e}")
-    try:
-        trend = gemini_trending(days)
-        pool += trend
-        print(f"  Gemini検索（日本語圏で話題）: {len(trend)}件")
-    except Exception as e:  # noqa: BLE001
-        print(f"  ⚠️ Gemini検索に失敗: {e}")
+            print(f"  ⚠️ {f['name']}: 取得失敗 {type(e).__name__}: {str(e)[:100]}")
+    if cfg.get("gnews_queries"):
+        pool += collect_gnews(cfg["gnews_queries"], since, int(cfg.get("gnews_max_per_query", 30)))
+    if not no_gemini:
+        try:
+            trend = gemini_trending(days)
+            pool += trend
+            print(f"  Gemini検索（日本語圏で話題）: {len(trend)}件")
+        except Exception as e:  # noqa: BLE001
+            print(f"  ⚠️ Gemini検索に失敗: {e}")
     seen, uniq = set(), []
     for it in pool:
         it["id"] = _id(it)
@@ -196,11 +341,43 @@ def cmd_collect(days: int):
         seen.add(it["id"])
         uniq.append(it)
 
+    # 同じ発表の重複排除（複数のフィード・検索語・Googleニュースで見出しが似た記事を1件に）
+    cands = load_candidates()["items"]
+    known = {c["id"] for c in cands}
+    n_before = len(uniq)
+    uniq, merged = dedup_similar(uniq, known)
+    print(f"\n重複排除: {n_before}件 → {len(uniq)}件（{len(merged)}組をまとめた）")
+    for g in sorted(merged, key=len, reverse=True)[:8]:
+        print(f"  ・{len(g)}件: " + " ｜ ".join(m["title"][:40] for m in g[:3]))
+
+    # score の前に外す（課金を避ける）: 使用済みと同じ資料・顧客の導入事例（宣伝）
+    used = used_source_urls(cands)
+    dropped = []
+    for it in list(uniq):
+        why = prescore_exclusions(it, used)
+        if why:
+            dropped.append((it, why))
+            uniq.remove(it)
+    if dropped:
+        print(f"プールの段階で除外: {len(dropped)}件")
+        for it, why in dropped[:10]:
+            print(f"  × {it['title'][:60]}（{why}）")
+
+    if no_gemini:
+        keep = uniq
+        POOL_JSON.write_text(json.dumps({"collected_at": datetime.now().isoformat(timespec="seconds"),
+                                         "days": days, "items": keep}, ensure_ascii=False, indent=2),
+                             encoding="utf-8")
+        print(f"\n収集 {len(uniq)}件（--no-gemini: 分野の絞り込みなし、{POOL_JSON.name}）")
+        return
+
     # 話題の絞り込み（タイトルと要約だけで、番組で扱える分野かをまとめて判定する。検索なし）
     client, types = _gemini()
     keep = []
+    n_calls = 0
     for i in range(0, len(uniq), 60):
         batch = uniq[i:i + 60]
+        n_calls += 1
         listing = "\n".join(f"{j}. {b['title']} — {b['summary'][:160]}" for j, b in enumerate(batch))
         prompt = (f"次のニュースのうち、{TOPIC_FILTER} に当てはまるものの番号だけを選んでください。"
                   "製品の値下げ・人事・決算・株価・資金調達だけの話題、イベント告知は除きます。\n"
@@ -214,7 +391,7 @@ def cmd_collect(days: int):
     POOL_JSON.write_text(json.dumps({"collected_at": datetime.now().isoformat(timespec="seconds"),
                                      "days": days, "items": keep}, ensure_ascii=False, indent=2),
                          encoding="utf-8")
-    print(f"\n収集 {len(uniq)}件 → 番組で扱える分野 {len(keep)}件（{POOL_JSON.name}）")
+    print(f"\n収集 {len(uniq)}件 → 番組で扱える分野 {len(keep)}件（{POOL_JSON.name}。分野の判定 {n_calls}回の呼び出し、検索なし）")
 
 
 def genres_brief() -> str:
@@ -353,14 +530,166 @@ def load_candidates() -> dict:
             "items": []}
 
 
-def cmd_score(top: int):
+# score の対象選び（2026-10-11、なるさんの方針「旬と注目度を最重視」）:
+# ジャンルごとに分け、採点済みの本命候補（available かつゲート通過）が少ないジャンルから1件ずつ順に選ぶ。
+# ジャンル内は 報じた媒体の数（sources＋dup_ids）→ 新しい順 → kind（公式・学術誌・プレス > 報道 > 娯楽寄りの報道）
+GENRE_ORDER = ("humanoid", "life_tech", "food_health", "medical", "ai")
+UNKNOWN_GENRE = "不明"
+GENRE_RULES = [   # 見出しの簡易分類（genre_hint が無いときだけ使う。上から順に最初に当たったもの）
+    ("humanoid", r"ヒューマノイド|人型ロボ|humanoid|optimus|unitree|二足歩行"),
+    ("medical", r"がん|癌|cancer|ips細胞|治療|therap|患者|patient|新薬|薬剤|治療薬|drug|疾患|disease|alzheimer|認知症|遺伝子治療|gene therapy|clinical|治験|tumor|再生医療|stem cell"
+                r"|眼科|眼の|網膜|視力|retina|\beyes?\b|感染症|infection|ウイルス|virus|(?<!頭)脳|\bbrains?\b|神経|neuro"),
+    ("food_health", r"食事|食べ|食品|diet|food|腸内|gut|睡眠|sleep|運動|exercise|栄養|nutri|肥満|obes|健康|血糖|blood sugar|メンタル|mental health"
+                    r"|関節|膝|knee|arthritis|肝臓|\bliver|脂肪|\bfat|サプリ|supplement|オリーブ|olive|コーヒー|coffee"),
+    ("life_tech", r"ロボット|robot|電池|battery|電気自動車|\bev\b|自動運転|autonomous|self-driving|ドローン|drone|家電|住宅|防災|地震|太陽光|solar|エネルギー|energy|充電|charging"),
+    ("ai", r"\bai\b|ai[^a-z]|生成ai|llm|gpt|openai|gemini|claude|chatgpt|deepmind|機械学習|machine learning|language model|エージェント|agent"),
+]
+ENTERTAINMENT_SOURCES = ("GIGAZINE", "ナゾロジー")
+
+
+def pool_genre(p: dict) -> str:
+    """見出し・要約の簡易分類で決まればそれ、決まらないときだけ genre_hint（Googleニュースの検索語のジャンル）。
+    検索語には別の話題も引っかかるため（例: 「がん 新しい治療 研究」で拾った「AI『思考』過程は信用できず」）、見出しを優先する。"""
+    t = _nfkc(p.get("title", "") + " " + (p.get("summary") or "")[:120])
+    for g, rx in GENRE_RULES:
+        if re.search(rx, t):
+            return g
+    if p.get("genre_hint") in GENRE_ORDER:
+        return p["genre_hint"]
+    return UNKNOWN_GENRE
+
+
+def outlet_count(p: dict) -> int:
+    """報じた独立した媒体の数（重複排除でまとめた sources から数える。最低1）。
+    buzz と同じく、転載・まとめ（Yahoo!ニュース・ライブドア・BigGo 等、AGGREGATOR_NAMES）と PR配信は数えない。
+    同じ媒体の別の版（【画像】版・「ITmedia」と「ITmedia NEWS」のような表記ゆれ）は1つと数える。dup_ids の数は使わない
+    （同じ媒体の【画像】版も dup_ids に入るため）。"""
+    names = []
+    for n in p.get("sources") or []:
+        low = _nfkc(n)
+        if not low or any(_nfkc(a) in low for a in AGGREGATOR_NAMES + PR_WIRE_NAMES):
+            continue
+        if any(low.startswith(x) or x.startswith(low) for x in names):
+            continue
+        names.append(low)
+    return max(len(names), 1)
+
+
+def _is_entertainment(p: dict) -> bool:
+    return any(p.get("source", "").startswith(n) or p.get("outlet") == n for n in ENTERTAINMENT_SOURCES)
+
+
+# 日本語フィード（news_sources.json の feeds のうち日本語の媒体）。Googleニュース由来は見出しが日本語なら日本語媒体とみなす
+JP_FEEDS = ("ITmedia AI+", "ITmedia NEWS", "NHK 科学・文化", "GIGAZINE", "ナゾロジー", "JST サイエンスポータル")
+HANGUL = re.compile(r"[가-힣]")
+FOREIGN_OUTLET_NAMES = ("vietnam.vn",)   # 見出しを日本語に訳して載せる外国の媒体（Googleニュースに出てくる）
+
+
+def jp_outlet_count(p: dict) -> int:
+    """この記事を報じた独立した日本語の媒体の数（2026-10-11、日本での注目度の先行指標）。
+    見出しが日本語で、日本語フィード由来か Googleニュース由来のものだけ。転載・まとめ・PR配信、同じ媒体の別版、
+    外国の媒体（韓国語の媒体名・FOREIGN_OUTLET_NAMES・外国のドメイン）、Gemini検索の補完は数えない。
+    重複排除は見出しの語で似たものをまとめるので、日本語の見出しの代表のまとまりは日本語の記事どうし。"""
+    if p.get("source_kind") == "search":
+        return 0
+    if not (KANA.search(p.get("title", "")) or KANJI.search(p.get("title", ""))):
+        return 0
+    if not (p.get("gnews_link") or p.get("outlet") or p.get("source") in JP_FEEDS):
+        return 0
+    if _host_in(p.get("outlet_host", ""), FOREIGN_HOSTS) or (p.get("outlet_host") or "").endswith(FOREIGN_TLDS):
+        return 0
+    names = []
+    for n in p.get("sources") or [p.get("outlet") or p.get("source", "")]:
+        low = _nfkc(n)
+        if not low or HANGUL.search(n) or any(f in low for f in FOREIGN_OUTLET_NAMES):
+            continue
+        if any(_nfkc(a) in low for a in AGGREGATOR_NAMES + PR_WIRE_NAMES):
+            continue
+        if any(low.startswith(x) or x.startswith(low) for x in names):
+            continue
+        names.append(low)
+    return len(names)
+
+
+def scoring_priority(p: dict) -> tuple:
+    """ジャンル内の並び（小さいほど先）。区分: 0=日本語の媒体が報じている（多いほど先）、1=公式・プレス・学術誌、2=その他の報道。
+    各区分の中で娯楽寄り（GIGAZINE・ナゾロジー）は最後、残りは新しい順。"""
+    jp = jp_outlet_count(p)
+    tier = 0 if jp >= 1 else 1 if p.get("source_kind") in ("official", "press", "journal") else 2
+    return (tier, _is_entertainment(p), -jp, _neg_date(p.get("published", "")))
+
+
+def select_for_scoring(todo: list, cands: list, top: int, verbose: bool = True) -> list:
+    used = used_source_urls(cands)
+    have = {g: 0 for g in GENRE_ORDER}
+    for c in cands:
+        if c.get("status") == "available" and c.get("genre") in have and not gate_reasons(c, used):
+            have[c["genre"]] += 1
+    # 「不明」は巡回に入れず、ジャンルの候補で top に満たないときだけ空き枠を埋める
+    order = sorted(GENRE_ORDER, key=lambda g: (have[g], GENRE_ORDER.index(g)))
+    groups = {g: [] for g in order + [UNKNOWN_GENRE]}
+    for p in todo:
+        groups[pool_genre(p)].append(p)
+    for g in groups:
+        groups[g].sort(key=scoring_priority)
+    picked, idx = [], {g: 0 for g in order}
+    while len(picked) < top and any(idx[g] < len(groups[g]) for g in order):
+        for g in order:
+            if len(picked) >= top:
+                break
+            if idx[g] < len(groups[g]):
+                picked.append((g, groups[g][idx[g]]))
+                idx[g] += 1
+    for p in groups[UNKNOWN_GENRE][: max(0, top - len(picked))]:
+        picked.append((UNKNOWN_GENRE, p))
+    if verbose:
+        print("採点済みの本命候補（available・ゲート通過）の数: " + "、".join(f"{g} {have[g]}" for g in GENRE_ORDER))
+        print("回す順: " + " → ".join(order) + f"（{UNKNOWN_GENRE}は空き枠だけ）")
+        print("未採点の候補（ジャンル別）: " + "、".join(f"{g} {len(groups[g])}" for g in order + [UNKNOWN_GENRE]))
+        cnt = {}
+        for g, _ in picked:
+            cnt[g] = cnt.get(g, 0) + 1
+        print(f"選んだ {len(picked)}件: " + "、".join(f"{g} {n}" for g, n in cnt.items()))
+        for n, (g, p) in enumerate(picked, 1):
+            print(f"  {n:2d}. [{g}] {p.get('published', '')} 日本語媒体{jp_outlet_count(p)} {p.get('source_kind', '')}"
+                  f" ｜ {p['title'][:60]} ｜ {p.get('source', '')[:40]}")
+    return [p for _, p in picked]
+
+
+def _neg_date(d: str) -> int:
+    try:
+        return -datetime.fromisoformat(d[:10]).toordinal()
+    except Exception:  # noqa: BLE001
+        return 0
+
+
+SCORE_MAX_AGE_DAYS = 21       # ゲートの鮮度（freshness_score 3以上＝21日以内）と同じ
+
+
+def _pool_age(p: dict):
+    try:
+        return (datetime.now().date() - datetime.fromisoformat((p.get("published") or "")[:10]).date()).days
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def cmd_score(top: int, dry_run: bool = False):
     pool = json.loads(POOL_JSON.read_text(encoding="utf-8"))["items"]
     cands = load_candidates()
     known = {c["id"] for c in cands["items"]}
-    todo = [p for p in pool if p["id"] not in known]
-    # 新しい順に、最大 top 件だけ採点する（検索つきの呼び出しは1件ずつ課金されるため）
-    todo.sort(key=lambda p: p.get("published", ""), reverse=True)
-    todo = todo[:top]
+    todo = [p for p in pool if p["id"] not in known and not (set(p.get("dup_ids") or []) & known)]
+    # 鮮度の簡易ゲート（2026-10-11）: 記事の日付から SCORE_MAX_AGE_DAYS 日を超えたものは採点しない（ゲートで落ちるため）。
+    # 日付の無いもの（Gemini検索で日付が取れなかった等）は残す
+    stale = [p for p in todo if _pool_age(p) is not None and _pool_age(p) > SCORE_MAX_AGE_DAYS]
+    if stale:
+        print(f"  発表から{SCORE_MAX_AGE_DAYS}日を超えた {len(stale)}件は採点しません")
+    todo = [p for p in todo if p not in stale]
+    # ジャンルを順に回して最大 top 件だけ採点する（検索つきの呼び出しは1件ずつ課金されるため）。2026-10-11:
+    # 以前は新しい順だけで、その日の ScienceDaily・GIGAZINE などで埋まっていた
+    todo = select_for_scoring(todo, cands["items"], top)
+    if dry_run:
+        print("\n--dry-run: 採点せずに終了します")
+        return
     concerns = json.loads(CONCERNS_JSON.read_text(encoding="utf-8"))["concerns"]
     concerns_txt = "\n".join(f"- {c['id']}: {c['label']}" for c in concerns)
     client, types = _gemini()
@@ -613,10 +942,10 @@ def _nfkc(s: str) -> str:
     return unicodedata.normalize("NFKC", s or "").lower()
 
 
-def fetch_gnews(query: str, timeout: int = 20) -> list:
+def fetch_gnews(query: str, timeout: int = 20, window_days: int = None) -> list:
     """Google ニュース RSS（日本語）を1回取得する。取得物はXMLとしてパースするだけ。
-    失敗（HTTPエラー・同意画面・XMLでない・0件）は GNewsError。"""
-    url = GNEWS_URL + urllib.parse.urlencode({"q": f"{query} when:{GNEWS_WINDOW_DAYS}d",
+    失敗（HTTPエラー・同意画面・XMLでない・0件）は GNewsError。window_days は collect 用（既定は buzz の14日窓）。"""
+    url = GNEWS_URL + urllib.parse.urlencode({"q": f"{query} when:{window_days or GNEWS_WINDOW_DAYS}d",
                                               "hl": "ja", "gl": "JP", "ceid": "JP:ja"})
     try:
         raw = urllib.request.urlopen(urllib.request.Request(url, headers=BROWSER_UA), timeout=timeout).read()
@@ -638,7 +967,7 @@ def fetch_gnews(query: str, timeout: int = 20) -> list:
         if name and title.endswith(" - " + name):     # 見出しの末尾の「 - 媒体名」を落とす
             title = title[: -len(" - " + name)].strip()
         d = _parse_date(it.findtext("pubDate") or "")
-        items.append({"title": title, "outlet": name,
+        items.append({"title": title, "outlet": name, "link": (it.findtext("link") or "").strip(),
                       "host": _host((src.get("url") if src is not None else "") or ""),
                       "date": d.date().isoformat() if d else ""})
     if not items:
@@ -1121,12 +1450,14 @@ def main():
     ap.add_argument("--id", nargs="*", default=[], help="buzz / check-urls: 対象の候補ID（指定するとゲートに関係なく測る・確かめる）")
     ap.add_argument("--force", action="store_true", help="enrich: 付与済みも付け直す / buzz: 最近測った候補も測り直す")
     ap.add_argument("--remeasure-hours", type=float, default=24, help="buzz: これより最近に測った候補は飛ばす（既定24時間）")
-    ap.add_argument("--dry-run", action="store_true", help="buzz: 測るが保存しない")
+    ap.add_argument("--dry-run", action="store_true", help="buzz: 測るが保存しない / score: 採点する候補を表示するだけ（課金なし）")
+    ap.add_argument("--sources", type=Path, default=None, help="collect: news_sources.json の代わりに使う設定（試験用）")
+    ap.add_argument("--no-gemini", action="store_true", help="collect: Gemini（話題の補完・分野の絞り込み）を呼ばない（試験用）")
     args = ap.parse_args()
     if args.command == "collect":
-        cmd_collect(args.days)
+        cmd_collect(args.days, args.sources, args.no_gemini)
     elif args.command == "score":
-        cmd_score(args.top)
+        cmd_score(args.top, args.dry_run)
     elif args.command == "tag":
         cmd_tag()
     elif args.command == "enrich":
