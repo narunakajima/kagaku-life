@@ -1,0 +1,796 @@
+{
+  "episode_id": "kl036",
+  "format": "dialogue",
+  "template": "verdict_first",
+  "source_type": "news",
+  "news_date": "2026-09-29",
+  "verdict_as_of": "2026-10-11",
+  "genre": "humanoid",
+  "health": false,
+  "episode_title": "1時間ノーカットで洗濯を終えたロボは、家に来るのか（DYNA 2.1、9月29日発表）",
+  "youtube_title": "洗濯から棚まで全部やるロボ、もうすぐ家に来る？（9月29日発表）",
+  "entry_question": "洗濯から畳んで棚にしまうまで、全部やってくれるロボットは、もうすぐ家に来る？",
+  "verdict": {
+    "dreamer": "soon",
+    "skeptic": "decade"
+  },
+  "hook_lines": [
+    "洗濯から棚まで全部やる",
+    "ロボ、もうすぐ家に来る？"
+  ],
+  "thumbnail_headline": "洗濯を全部やるロボ\n成功率は書いてない？",
+  "thumbnail_exprs": {
+    "dreamer": "excited",
+    "skeptic": "doubt"
+  },
+  "thumbnail_prompt": "Bright daytime editorial illustration of a clean commercial laundry room seen from the front: a row of large stainless-steel front-loading washing machines and dryers running the full width of the frame, soft white overhead light, pale gray tiled floor, all continuous across the whole frame with no panels, boxes, borders or abrupt colour changes. Keep the left 30%, the right 30% and the top 35% of the frame quiet and uncluttered (soft gradient only), but the room must visibly continue unbroken behind them. In the horizontal center, in the vertical band between 38% and 80% of the frame height: a tall, slightly leaning tower of neatly folded fluffy white towels on a folding table, next to an open dryer door with a few towels spilling out. No people, no robots, no hands. No logos, no brand marks, no readable text, no letters, no numbers.",
+  "youtube_tags": [
+    "洗濯ロボット",
+    "ヒューマノイド",
+    "家事ロボット",
+    "DYNA Robotics",
+    "Taku",
+    "物理AI",
+    "ロボット",
+    "洗濯",
+    "自律ロボット",
+    "科学ニュース"
+  ],
+  "depicts_real_product": true,
+  "references": [
+    {
+      "title": "Dyna-2.1: A Physical Agent for End-to-End Workflows",
+      "authors": [],
+      "year": 2026,
+      "venue": "DYNA Robotics 研究ブログ（2026-09-29）",
+      "url": "https://www.dyna.co/dyna-2.1",
+      "is_preprint": false,
+      "institution": "DYNA Robotics（米国）",
+      "source_kind": "tech_report"
+    },
+    {
+      "title": "DYNA Robotics Launches DYNA 2.1 Physical Agent, a Semi-humanoid Robot that Completes Full Workflows such as a Commercial Laundry Shift",
+      "authors": [],
+      "year": 2026,
+      "venue": "PR Newswire（2026-09-29）",
+      "url": "https://www.prnewswire.com/news-releases/dyna-robotics-launches-dyna-2-1-physical-agent-a-semi-humanoid-robot-that-completes-full-workflows-such-as-a-commercial-laundry-shift-302892411.html",
+      "is_preprint": false,
+      "institution": "DYNA Robotics（米国）",
+      "source_kind": "press_release"
+    }
+  ],
+  "youtube_description": "2026年9月29日、アメリカのロボット企業DYNA Roboticsが、「物理エージェント」DYNA 2.1と、半人型ロボットTakuを発表しました。ホテルの洗濯室を想定した場所で、洗濯機・乾燥機への出し入れから、タオルを畳んで棚にしまうまでを、1時間ノーカットで自律で行ったとしています。洗濯から棚まで全部やってくれるロボットは、もうすぐ家に来るのか。夢語り担当の大輔と、ツッコミ担当の沙織が、会社の研究ページとプレスリリースを読んで判定します。\n\n■ この回の判定（2026年10月11日時点の、二人の見立て）\n大輔: もうすぐ来る（リリースによると、業務用の洗濯の現場ではすでに導入が進んでいる。家庭はその次、というのは大輔の見立てで、発表には書かれていません）\n沙織: 3年はかかる（発表は家庭を対象にしていない。実演はタオルなどで、形も素材もばらばらな家庭の衣類ではない。車輪で動くので段差や階段は壁になる（研究の外の一般論）。人の手なしで何分働けるかの数字もまだ示されていない。3年より先のことは分からない）\n\n■ 発表の要点（研究ページ「Dyna-2.1: A Physical Agent for End-to-End Workflows」より）\n・DYNA 2.1は、全身制御、動作を決めるモデル（Dyna-2）、視覚言語モデルの司令塔の3つで構成。Takuはそれが動く新しい半人型ロボットで、名前は日本語の「匠（たくみ）」から\n・腰から上は平均的な人の大きさの人型、低い所にも高い所にも届く折りたためる下半身、4つの操舵輪の台座、2本の腕（平行グリッパーか器用な手を付けられる）。この仕事には脚より腕の届く範囲と精度が要るため車輪にした、としています\n・実演: ホテルの洗濯室を想定し、1時間ノーカットで自律で作業（遠隔操作は学習用データの収集にだけ使い、実演には使っていないと記載）。洗濯機・乾燥機への出し入れ、タオルやカゴの運搬、畳んで積む、棚に収める、扉やボタンの操作。機械どうしは数メートル離れている\n・動作モデルは100万時間分の人の動画にロボットのデータを混ぜて事前学習\n・失敗からの立ち直り: 人にグリッパーを押しのけられても戻って正しい洗濯を終える、タオルが2枚重なった場面から立ち直る、といった動画を公開。司令塔が、やり直す・別のやり方にする・計画を変える、を決める\n・「我々の知る限り、1時間の非線形な全身器用操作の仕事を行った最初の物理エージェント」は会社の主張です\n\n■ この回の山場: 成功率95%でも1.7%（説明用の試算で、実測値ではありません）\n・研究ページは、1サイクルを約79ステップと見積もったうえで、サブタスクの成功率が95%でも、1サイクルを助けなしで終える確率は1.7%になる、という試算を載せています\n・同じ試算の前提は、24時間に約48サイクル（1サイクル約30分）で、その場合、人の介入は約8分に1回（24時間で約190回）\n・著者は、実際の数字はもっと悪い（失敗は連鎖する）と書き、ベンチマーク型の成功率ではなく、人の手なしで動ける仕事の長さを測ることを提案しています\n\n■ 発表に書かれていないこと\n・実演の成功率、介入の回数、何回試したうちの1回か\n・リリースの言う「介入までの平均時間（MTBI）」の具体的な数字\n・導入先の顧客名・台数（リリースは、ホテル・コインランドリー・レストランで導入が進んでいるとしています。研究ページは、次の目標を実際の顧客先への導入としており、今回の実演は顧客先ではありません）\n・家庭・個人向けの話、価格、提供時期\n・第三者による検証\n\n■ 研究ページが挙げる限界\n・1つ1つの失敗が、長い仕事の中で積み重なる\n・ハードウェアを変えると、コントローラを学習し直す必要がある\n・著者自身、「まだ始まりにすぎない」としています\n\n※動画内のロボットの絵は、公式ページの写真で確認できる外観の特徴をもとに描いたイメージ図で、実際の製品とは細部が異なる場合があります。\n※この回の元は企業の研究ブログとプレスリリースで、専門家の審査を経て学術誌に掲載された論文ではありません。数値・性能はすべて会社自身の発表です。\n※特定の製品の購入や、企業への投資を勧めるものではありません。\n※報道では価格などの情報も伝えられていますが、この回では一次資料で確認できた内容だけを扱いました。\n\n■ 参考（一次資料）\n[1] DYNA Robotics「Dyna-2.1: A Physical Agent for End-to-End Workflows」研究ブログ（2026年9月29日） https://www.dyna.co/dyna-2.1\n[2] DYNA Robotics プレスリリース（PR Newswire、2026年9月29日） https://www.prnewswire.com/news-releases/dyna-robotics-launches-dyna-2-1-physical-agent-a-semi-humanoid-robot-that-completes-full-workflows-such-as-a-commercial-laundry-shift-302892411.html\n\n#洗濯ロボット #ヒューマノイド #科学ニュース",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 7,
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "ken_burns": "zoom_in",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "いちじかんノーカットで、洗濯を全部やったロボット。",
+          "expression": "excited",
+          "display": "1時間ノーカットで、洗濯を全部やったロボット。",
+          "tone": "excited, like breaking news",
+          "reference_index": 0
+        }
+      ],
+      "narration": "大輔「いちじかんノーカットで、洗濯を全部やったロボット。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 9,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "で、成功率は、どこにも書いてない。",
+          "expression": "doubt",
+          "tone": "dry",
+          "reference_index": 0
+        }
+      ],
+      "narration": "沙織「で、成功率は、どこにも書いてない。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 10,
+      "ken_burns": "static",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "しかも会社の試算だと、通しで終わるのは1.7パーセント。",
+          "expression": "surprised",
+          "display": "しかも会社の試算だと、通しで終わるのは1.7%。",
+          "reference_index": 0
+        }
+      ],
+      "narration": "大輔「しかも会社の試算だと、通しで終わるのは1.7パーセント。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 12,
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "洗濯から棚まで全部やるロボ、もうすぐ家に来る？",
+          "expression": "doubt",
+          "tag": "question"
+        }
+      ],
+      "narration": "沙織「洗濯から棚まで全部やるロボ、もうすぐ家に来る？」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 5,
+      "type": "setup",
+      "bgm_role": "intro",
+      "reference_index": 1,
+      "ken_burns": "zoom_in",
+      "image_prompt": "Evening in a small Japanese apartment (warm interior lamp light, a dusk sky visible through the window). A compact laundry corner with a white front-loading washing machine; next to it, a sofa piled high with a heap of unfolded, freshly dried laundry — towels, shirts, socks and small children's clothes — and an empty laundry basket on the floor. A tidy but busy home atmosphere. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "洗濯って、回すのはボタン1つなのに、そのあとが長いよね。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "干して、取り込んで、畳んで、しまう。うちは、畳むところでだいたい止まる。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "その全部をロボットが自分でやる、っていう発表が出た。9月29日、アメリカのダイナ・ロボティクス。",
+          "expression": "excited",
+          "display": "その全部をロボットが自分でやる、っていう発表が出た。9月29日、アメリカのDYNA Robotics。",
+          "reference_index": 1
+        },
+        {
+          "speaker": "skeptic",
+          "text": "見たよ。で、今日は先に判定を言っちゃうんでしょ。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "うん。割れた。僕は「もうすぐ来る」。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は「3年はかかる」。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でも、面白いのはそこじゃない。会社が自分のページに載せてた、ある試算なんだ。",
+          "expression": "excited",
+          "tone": "teasing, playful",
+          "pause": 0.4
+        },
+        {
+          "speaker": "skeptic",
+          "text": "あれね。あれは、ちゃんと見せたい。",
+          "expression": "amused"
+        }
+      ],
+      "narration": "大輔「洗濯って、回すのはボタン1つなのに、そのあとが長いよね。」\n沙織「干して、取り込んで、畳んで、しまう。うちは、畳むところでだいたい止まる。」\n大輔「その全部をロボットが自分でやる、っていう発表が出た。9月29日、アメリカのダイナ・ロボティクス。」\n沙織「見たよ。で、今日は先に判定を言っちゃうんでしょ。」\n大輔「うん。割れた。僕は「もうすぐ来る」。」\n沙織「私は「3年はかかる」。」\n大輔「でも、面白いのはそこじゃない。会社が自分のページに載せてた、ある試算なんだ。」\n沙織「あれね。あれは、ちゃんと見せたい。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 6,
+      "type": "paper",
+      "bgm_role": "intro",
+      "reference_index": 0,
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "ken_burns": "zoom_in",
+      "image_prompt": "Bright daytime in a clean, modern commercial laundry room (clear white overhead light and daylight from a high window). The DYNA Taku semi-humanoid robot, drawn to match the real product (do not invent a different design): a smooth, glossy white, rounded human-like upper body about the size of an average adult from the waist up; a small round egg-shaped head in pale cream with no facial features at all (no eyes, no mouth, no visor, no screen); a small soft blue glowing dot on the chest (no letters, no logo text); two slender white arms with gray-to-black covers over the shoulder, elbow and wrist joints, each arm ending in a simple parallel two-finger gripper whose fingers glow soft green; at the waist a foldable white lower body that can bend down low or extend up tall, standing on a round white base with four wheels (no legs, no feet). Clean, sleek, minimal matte-and-gloss white design. The robot stands upright, fully extended, in the center of the room, seen from a three-quarter front angle, next to a row of large stainless-steel front-loading washing machines and dryers. Clean product-launch feeling. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "発表されたのは、ダイナ2.1。会社は、物理エージェントと呼んでる。",
+          "expression": "neutral",
+          "display": "発表されたのは、DYNA 2.1。会社は、物理エージェントと呼んでる。",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "物理エージェント？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "体を動かして、仕事を最後までやるAI、って意味だと思う。中身は3つ。全身を動かす制御、動作を決めるモデル、目で見て、言葉で考える司令塔。",
+          "expression": "excited",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、体は？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "新しいロボットの、タク。名前は、日本語の「たくみ」から。",
+          "expression": "excited",
+          "display": "新しいロボットの、Taku。名前は、日本語の「たくみ」から。",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "腰から上は、大人くらいの大きさの、人に似た姿。手は、物をはさむつかみ手。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "腰から下は折りたためて、低い所にも、高い所にも届く。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "足は？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ない。4つの車輪で動く。この仕事には、脚より、腕の届く範囲と正確さが大事だから、だって。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "車輪ね。覚えとく。",
+          "expression": "thinking"
+        }
+      ],
+      "narration": "大輔「発表されたのは、ダイナ2.1。会社は、物理エージェントと呼んでる。」\n沙織「物理エージェント？」\n大輔「体を動かして、仕事を最後までやるAI、って意味だと思う。中身は3つ。全身を動かす制御、動作を決めるモデル、目で見て、言葉で考える司令塔。」\n沙織「で、体は？」\n大輔「新しいロボットの、タク。名前は、日本語の「たくみ」から。」\n大輔「腰から上は、大人くらいの大きさの、人に似た姿。手は、物をはさむつかみ手。」\n大輔「腰から下は折りたためて、低い所にも、高い所にも届く。」\n沙織「足は？」\n大輔「ない。4つの車輪で動く。この仕事には、脚より、腕の届く範囲と正確さが大事だから、だって。」\n沙織「車輪ね。覚えとく。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 7,
+      "type": "paper",
+      "bgm_role": "intro",
+      "reference_index": 0,
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "ken_burns": "zoom_in",
+      "image_prompt": "Daytime in a commercial laundry room (bright white overhead light). The DYNA Taku semi-humanoid robot, drawn to match the real product (do not invent a different design): a smooth, glossy white, rounded human-like upper body about the size of an average adult from the waist up; a small round egg-shaped head in pale cream with no facial features at all (no eyes, no mouth, no visor, no screen); a small soft blue glowing dot on the chest (no letters, no logo text); two slender white arms with gray-to-black covers over the shoulder, elbow and wrist joints, each arm ending in a simple parallel two-finger gripper whose fingers glow soft green; at the waist a foldable white lower body that can bend down low or extend up tall, standing on a round white base with four wheels (no legs, no feet). Clean, sleek, minimal matte-and-gloss white design. The robot leans forward deeply from its folded waist, reaching an arm's length into the open round door of a large stainless-steel dryer and pulling out a bundle of white towels with its green-glowing gripper; a gray laundry cart stands beside it, and a few meters behind it are a folding table with neat stacks of folded white towels and tall metal storage shelves. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "で、見せたのがこれ。会社によると、ホテルの洗濯室を想定して、いちじかんノーカットで、人の手を借りずに働いた。",
+          "expression": "excited",
+          "display": "で、見せたのがこれ。会社によると、ホテルの洗濯室を想定して、1時間ノーカットで、人の手を借りずに働いた。",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "洗濯機に入れて、乾燥機に移して、タオルを畳んで積んで、棚にしまう。扉もボタンも、自分で操作する。",
+          "expression": "excited",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "機械どうしは近いの？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "数メートルずつ離れてる。だから、カゴを持って移動する。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "乾燥機の奥には、腕の長さくらい身を乗り出す。一番下の棚にはしゃがんで、頭より上の棚には手を伸ばす。",
+          "expression": "excited",
+          "tone": "a bit fast, getting carried away",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "遠隔操作で動かしてない？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "遠隔操作は、学習用のデータを集めるのに使う。この実演は、ロボットが自分で動いた、と書いてある。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "書いてある、ね。会社の説明として聞いとく。",
+          "expression": "thinking"
+        }
+      ],
+      "narration": "大輔「で、見せたのがこれ。会社によると、ホテルの洗濯室を想定して、いちじかんノーカットで、人の手を借りずに働いた。」\n大輔「洗濯機に入れて、乾燥機に移して、タオルを畳んで積んで、棚にしまう。扉もボタンも、自分で操作する。」\n沙織「機械どうしは近いの？」\n大輔「数メートルずつ離れてる。だから、カゴを持って移動する。」\n大輔「乾燥機の奥には、腕の長さくらい身を乗り出す。一番下の棚にはしゃがんで、頭より上の棚には手を伸ばす。」\n沙織「遠隔操作で動かしてない？」\n大輔「遠隔操作は、学習用のデータを集めるのに使う。この実演は、ロボットが自分で動いた、と書いてある。」\n沙織「書いてある、ね。会社の説明として聞いとく。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 8,
+      "type": "dream",
+      "bgm_role": "intro",
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "ken_burns": "zoom_in",
+      "image_prompt": "Early morning in a hotel laundry room in Japan (pale dawn light through a small high window, soft overhead light). a Japanese woman in her fifties with short graying hair tucked behind her ears, wearing a navy hotel staff polo shirt and a plain white apron has just walked in through the door and pauses, pleasantly surprised, looking at tall metal shelves filled with neat stacks of folded white towels. The DYNA Taku semi-humanoid robot, drawn to match the real product (do not invent a different design): a smooth, glossy white, rounded human-like upper body about the size of an average adult from the waist up; a small round egg-shaped head in pale cream with no facial features at all (no eyes, no mouth, no visor, no screen); a small soft blue glowing dot on the chest (no letters, no logo text); two slender white arms with gray-to-black covers over the shoulder, elbow and wrist joints, each arm ending in a simple parallel two-finger gripper whose fingers glow soft green; at the waist a foldable white lower body that can bend down low or extend up tall, standing on a round white base with four wheels (no legs, no feet). Clean, sleek, minimal matte-and-gloss white design. In the background, the robot quietly places one more folded towel on a shelf. A calm, hopeful mood. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "想像してみてよ。",
+          "expression": "excited",
+          "pause": 0.4
+        },
+        {
+          "speaker": "dreamer",
+          "text": "夜のホテル。最後のスタッフが帰ったあとも、洗濯室では、タクが乾燥機からタオルを出して、畳んで、棚に並べてる。",
+          "expression": "excited",
+          "tag": "life_scene",
+          "display": "夜のホテル。最後のスタッフが帰ったあとも、洗濯室では、Takuが乾燥機からタオルを出して、畳んで、棚に並べてる。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "朝番の人が来たら、タオルはもう棚に積んである。その分、朝はお客さんのほうに手を回せる。",
+          "expression": "convinced",
+          "tone": "warm, dreamy"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "いい絵ね。で、その夜、何回止まると思う？",
+          "expression": "doubt",
+          "react": "deflated"
+        }
+      ],
+      "narration": "大輔「想像してみてよ。」\n大輔「夜のホテル。最後のスタッフが帰ったあとも、洗濯室では、タクが乾燥機からタオルを出して、畳んで、棚に並べてる。」\n大輔「朝番の人が来たら、タオルはもう棚に積んである。その分、朝はお客さんのほうに手を回せる。」\n沙織「いい絵ね。で、その夜、何回止まると思う？」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 9,
+      "type": "tsukkomi",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "ken_burns": "zoom_out",
+      "image_prompt": "Late at night in an empty commercial laundry room (dim blue-gray overhead light, a dark night sky through a small high window). The round doors of the washing machines and dryers are closed and still. On a folding table, a clipboard with a completely blank sheet of paper and a pen; on the wall, a plain round clock with only tick marks and no numerals. A quiet, slightly suspenseful mood. No people, no robots. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "ちょっと待って。成功率は？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "……書いてない。",
+          "expression": "deflated",
+          "pause": 0.5
+        },
+        {
+          "speaker": "skeptic",
+          "text": "人が手を貸した回数も、実演については書いてない。いちじかんのノーカットが、何回やったうちの1回なのかも、分からない。",
+          "expression": "doubt",
+          "tag": "weakness",
+          "reference_index": 0,
+          "display": "人が手を貸した回数も、実演については書いてない。1時間のノーカットが、何回やったうちの1回なのかも、分からない。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でも、ノーカットだよ？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ノーカットは、その1本が途中で止まらなかった、って意味。毎晩そうなる、って意味じゃない。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それは、そうか。",
+          "expression": "deflated"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、面白いのはここから。その難しさを、会社が自分のページで計算して見せてるの。",
+          "expression": "amused",
+          "pause": 0.4
+        }
+      ],
+      "narration": "沙織「ちょっと待って。成功率は？」\n大輔「……書いてない。」\n沙織「人が手を貸した回数も、実演については書いてない。いちじかんのノーカットが、何回やったうちの1回なのかも、分からない。」\n大輔「でも、ノーカットだよ？」\n沙織「ノーカットは、その1本が途中で止まらなかった、って意味。毎晩そうなる、って意味じゃない。」\n大輔「それは、そうか。」\n沙織「で、面白いのはここから。その難しさを、会社が自分のページで計算して見せてるの。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 10,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "ken_burns": "static",
+      "image_prompt": "A simple, clean flat infographic vertical bar chart with exactly two bars and a short title at the very top reading exactly 「長い仕事の成功率（試算）」. The vertical axis runs from 0% at the bottom to 100% at the top so bar heights are proportional. Bars from left to right, each with its label directly below it and its value directly above it: 「サブタスク成功率」 95% (teal, a tall bar), 「1サイクルを助けなしで終える確率」 1.7% (coral, highlighted, a very short bar barely above the baseline). Plain light background. Do not add any other text, numbers, tick labels, icons or logos.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "先に言っとく。これは説明のための試算で、実際に測った数字じゃない。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "洗濯の1サイクルは、およそ79の手順でできてる。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "1つ1つの手順の成功率が、95パーセントだとする。",
+          "expression": "neutral",
+          "display": "1つ1つの手順の成功率が、95%だとする。",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "95パーセントなら、ほぼ完璧じゃない？",
+          "expression": "surprised",
+          "display": "95%なら、ほぼ完璧じゃない？"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "1回ならね。でも、助けなしで1サイクルを通して終える確率は、1.7パーセント。",
+          "expression": "doubt",
+          "react": "surprised",
+          "display": "1回ならね。でも、助けなしで1サイクルを通して終える確率は、1.7%。",
+          "reference_index": 0,
+          "pause": 0.4
+        },
+        {
+          "speaker": "dreamer",
+          "text": "1.7パーセント！？",
+          "expression": "surprised",
+          "display": "1.7%！？",
+          "tone": "shocked, loud"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "同じ試算は、24時間に約48サイクル回す前提。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "すると、人が手を貸すのは、およそ8ふんに1回。",
+          "expression": "doubt",
+          "display": "すると、人が手を貸すのは、およそ8分に1回。",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それじゃ、ずっと誰かが付いてないと。",
+          "expression": "deflated"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "しかも会社は、実際の数字はもっと悪い、と自分で書いてる。1つの失敗が、次の失敗を呼ぶから。",
+          "expression": "thinking",
+          "reference_index": 0
+        }
+      ],
+      "narration": "沙織「先に言っとく。これは説明のための試算で、実際に測った数字じゃない。」\n沙織「洗濯の1サイクルは、およそ79の手順でできてる。」\n沙織「1つ1つの手順の成功率が、95パーセントだとする。」\n大輔「95パーセントなら、ほぼ完璧じゃない？」\n沙織「1回ならね。でも、助けなしで1サイクルを通して終える確率は、1.7パーセント。」\n大輔「1.7パーセント！？」\n沙織「同じ試算は、24時間に約48サイクル回す前提。」\n沙織「すると、人が手を貸すのは、およそ8ふんに1回。」\n大輔「それじゃ、ずっと誰かが付いてないと。」\n沙織「しかも会社は、実際の数字はもっと悪い、と自分で書いてる。1つの失敗が、次の失敗を呼ぶから。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 11,
+      "type": "tsukkomi",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "ken_burns": "zoom_in",
+      "image_prompt": "Daytime in a commercial laundry room (bright white overhead light). The DYNA Taku semi-humanoid robot, drawn to match the real product (do not invent a different design): a smooth, glossy white, rounded human-like upper body about the size of an average adult from the waist up; a small round egg-shaped head in pale cream with no facial features at all (no eyes, no mouth, no visor, no screen); a small soft blue glowing dot on the chest (no letters, no logo text); two slender white arms with gray-to-black covers over the shoulder, elbow and wrist joints, each arm ending in a simple parallel two-finger gripper whose fingers glow soft green; at the waist a foldable white lower body that can bend down low or extend up tall, standing on a round white base with four wheels (no legs, no feet). Clean, sleek, minimal matte-and-gloss white design. The robot reaches toward the control panel of a large stainless-steel front-loading washing machine, while an anonymous person's hand and forearm in a plain gray sleeve enters from the edge of the frame and gently pushes the robot's green-glowing gripper aside. The person's face is not shown. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、この発表は大げさってこと？",
+          "expression": "deflated"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "逆。ここは認める。",
+          "expression": "thinking",
+          "pause": 0.5
+        },
+        {
+          "speaker": "skeptic",
+          "text": "成功率が高くても長い仕事は終わらない、と自分で書いた会社なの。",
+          "expression": "convinced",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "だから、成功率じゃなくて、人の手なしでどれだけ長く働けるかを測ろう、と言ってる。",
+          "expression": "convinced",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "人の手なしで、どれだけ続けられるか、か。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、失敗から立ち直る動画もある。人がつかみ手をボタンから引きはがしても、パネルに戻って、正しいコースを設定し直す。",
+          "expression": "surprised",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "タオルが2枚重なっても、ちゃんとやり直してた。",
+          "expression": "convinced",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "やり直すか、別のやり方にするか、計画を変えるか。それを、司令塔が決めてる。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でしょ！",
+          "expression": "excited"
+        }
+      ],
+      "narration": "大輔「じゃあ、この発表は大げさってこと？」\n沙織「逆。ここは認める。」\n沙織「成功率が高くても長い仕事は終わらない、と自分で書いた会社なの。」\n沙織「だから、成功率じゃなくて、人の手なしでどれだけ長く働けるかを測ろう、と言ってる。」\n大輔「人の手なしで、どれだけ続けられるか、か。」\n沙織「それに、失敗から立ち直る動画もある。人がつかみ手をボタンから引きはがしても、パネルに戻って、正しいコースを設定し直す。」\n大輔「タオルが2枚重なっても、ちゃんとやり直してた。」\n沙織「やり直すか、別のやり方にするか、計画を変えるか。それを、司令塔が決めてる。」\n大輔「でしょ！」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 12,
+      "type": "dream",
+      "bgm_role": "main",
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "ken_burns": "zoom_in",
+      "image_prompt": "Early morning in a Japanese apartment bedroom (soft bright morning daylight through lace curtains, clearly dawn, not night). a Japanese woman in her late thirties with shoulder-length black hair tied in a loose low ponytail, wearing a light beige knit cardigan over a white T-shirt opens a wooden chest of drawers and smiles, finding small children's clothes already neatly folded inside. The DYNA Taku semi-humanoid robot, drawn to match the real product (do not invent a different design): a smooth, glossy white, rounded human-like upper body about the size of an average adult from the waist up; a small round egg-shaped head in pale cream with no facial features at all (no eyes, no mouth, no visor, no screen); a small soft blue glowing dot on the chest (no letters, no logo text); two slender white arms with gray-to-black covers over the shoulder, elbow and wrist joints, each arm ending in a simple parallel two-finger gripper whose fingers glow soft green; at the waist a foldable white lower body that can bend down low or extend up tall, standing on a round white base with four wheels (no legs, no feet). Clean, sleek, minimal matte-and-gloss white design. In the background by the doorway, the robot holds a small stack of folded towels. A warm, imagined-future mood. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、家の話で、もう1回想像してみてよ。",
+          "expression": "excited",
+          "pause": 0.4
+        },
+        {
+          "speaker": "dreamer",
+          "text": "共働きの家。夜に回した洗濯が、朝にはもう畳まれて、子どもの服はタンスの引き出しに入ってる。",
+          "expression": "excited",
+          "tag": "life_scene",
+          "tone": "warm, a bit fast"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それ、どこに書いてあるの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そこは、僕の想像。",
+          "expression": "deflated"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "でしょ。リリースに出てくる導入先は、ホテル、コインランドリー、レストラン。研究のページの例は、ホテルの洗濯室。",
+          "expression": "neutral",
+          "reference_index": 1
+        },
+        {
+          "speaker": "skeptic",
+          "text": "家庭の話は、どっちにも一言もない。",
+          "expression": "doubt",
+          "tag": "barrier",
+          "reference_index": 1
+        }
+      ],
+      "narration": "大輔「じゃあ、家の話で、もう1回想像してみてよ。」\n大輔「共働きの家。夜に回した洗濯が、朝にはもう畳まれて、子どもの服はタンスの引き出しに入ってる。」\n沙織「それ、どこに書いてあるの？」\n大輔「そこは、僕の想像。」\n沙織「でしょ。リリースに出てくる導入先は、ホテル、コインランドリー、レストラン。研究のページの例は、ホテルの洗濯室。」\n沙織「家庭の話は、どっちにも一言もない。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 13,
+      "type": "tsukkomi",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "ken_burns": "zoom_out",
+      "image_prompt": "Daytime inside the entrance of a Japanese house (soft daylight from a small window). A raised wooden step at the genkan entrance and, just beyond it, a steep narrow wooden staircase going up to the second floor. At the foot of the stairs sits a laundry basket overflowing with mixed clothes: shirts, socks, a sweater, a child's small dress and towels, in different shapes and fabrics. No people, no robots. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "それに、畳んでたのはタオル。シャツや靴下、子どもの服とは、形も素材も違う。",
+          "expression": "doubt",
+          "tag": "barrier",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ここからは研究の外の話だけど、家には玄関の段差や階段がある。車輪で動くロボットには、そこが壁になる。",
+          "expression": "thinking",
+          "tag": "barrier"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "業務用の洗濯室なら、床は平らで、機械の場所も決まってるもんね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "研究のページも、限界を書いてる。1つの失敗が長い仕事の中で積み重なること。体の作りを変えたら、制御の学習をやり直すこと。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "次の目標は、実際のお客さんの現場への導入、とある。今回の実演は、お客さんの現場じゃない。",
+          "expression": "doubt",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "リリースは、導入が進んでる、とは書くけど、どこで何台かは書いてない。",
+          "expression": "doubt",
+          "reference_index": 1
+        },
+        {
+          "speaker": "dreamer",
+          "text": "値段も、いつ買えるかも、書いてないしね。",
+          "expression": "deflated"
+        }
+      ],
+      "narration": "沙織「それに、畳んでたのはタオル。シャツや靴下、子どもの服とは、形も素材も違う。」\n沙織「ここからは研究の外の話だけど、家には玄関の段差や階段がある。車輪で動くロボットには、そこが壁になる。」\n大輔「業務用の洗濯室なら、床は平らで、機械の場所も決まってるもんね。」\n沙織「研究のページも、限界を書いてる。1つの失敗が長い仕事の中で積み重なること。体の作りを変えたら、制御の学習をやり直すこと。」\n沙織「次の目標は、実際のお客さんの現場への導入、とある。今回の実演は、お客さんの現場じゃない。」\n沙織「リリースは、導入が進んでる、とは書くけど、どこで何台かは書いてない。」\n大輔「値段も、いつ買えるかも、書いてないしね。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 14,
+      "type": "verdict",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "verdict_from_line": 5,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、判定。お題は、洗濯から棚まで全部やるロボ、もうすぐ家に来る？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕は「もうすぐ来る」。リリースによると、ホテルやコインランドリーの現場では、導入が進んでる。",
+          "expression": "convinced",
+          "tone": "confident, warm",
+          "reference_index": 1
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それは、業務用の判定でしょ。お題は、家。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "家は、その次。そこは、僕の見立て。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は「3年はかかる」。家庭は、発表の対象に入ってない。タオル以外の服、段差のある家、それに、人の手なしで何分働けるかの数字も、まだ出てない。",
+          "expression": "doubt",
+          "tone": "calm, firm"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "早くても3年。その先は、正直分からない。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "割れたね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "人の手なしで何分働けたか。その数字が出たら、もう一回判定しよう。",
+          "expression": "amused"
+        }
+      ],
+      "narration": "沙織「じゃあ、判定。お題は、洗濯から棚まで全部やるロボ、もうすぐ家に来る？」\n大輔「僕は「もうすぐ来る」。リリースによると、ホテルやコインランドリーの現場では、導入が進んでる。」\n沙織「それは、業務用の判定でしょ。お題は、家。」\n大輔「家は、その次。そこは、僕の見立て。」\n沙織「私は「3年はかかる」。家庭は、発表の対象に入ってない。タオル以外の服、段差のある家、それに、人の手なしで何分働けるかの数字も、まだ出てない。」\n沙織「早くても3年。その先は、正直分からない。」\n大輔「割れたね。」\n沙織「人の手なしで何分働けたか。その数字が出たら、もう一回判定しよう。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 15,
+      "type": "closing",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "ノーカットの動画より、会社が自分で出した試算のほうが、ずっと面白かった。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "95パーセントでも、長い仕事は終わらない。だから次は、何分ひとりで働けたかを見る。今日の判定は、10月11日時点の、私たち二人の見立てです。",
+          "expression": "neutral",
+          "display": "95%でも、長い仕事は終わらない。だから次は、何分ひとりで働けたかを見る。今日の判定は、10月11日時点の、私たち二人の見立てです。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "amused"
+        }
+      ],
+      "narration": "大輔「ノーカットの動画より、会社が自分で出した試算のほうが、ずっと面白かった。」\n沙織「95パーセントでも、長い仕事は終わらない。だから次は、何分ひとりで働けたかを見る。今日の判定は、10月11日時点の、私たち二人の見立てです。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」",
+      "narrator": "dialogue"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "skeptic",
+          "narration": "洗濯ロボ、もう家に来る？",
+          "expression": "doubt",
+          "scene_id": 7,
+          "badge_text": "イメージ図（実物と異なる場合があります）"
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "いちじかんノーカットで、洗濯から棚まで全部やった！",
+          "expression": "excited",
+          "scene_id": 7,
+          "badge_text": "イメージ図（実物と異なる場合があります）",
+          "telop_text": "1時間ノーカットで、洗濯から棚まで全部やった！"
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "で、成功率は、どこにも書いてない。",
+          "expression": "doubt",
+          "react": "deflated",
+          "scene_id": 9
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "1つの手順が95パーセント成功でも、通しで終わるのは1.7パーセント。会社の試算ね。",
+          "expression": "doubt",
+          "react": "surprised",
+          "scene_id": 10,
+          "style": "chart",
+          "telop_text": "1つの手順が95%成功でも、通しで終わるのは1.7%。会社の試算ね。"
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "家に来るかは、判定が割れた。続きは本編で。",
+          "expression": "thinking",
+          "scene_id": 12,
+          "badge_text": "イメージ図（実物と異なる場合があります）"
+        }
+      ]
+    }
+  ]
+}
