@@ -47,7 +47,7 @@
 | 静止画生成（QA込み） | `kl_image_gen.py` |
 | 二人の立ち絵（一度だけ、作り直すときのみ） | `kl_cast_gen.py` |
 | zoom_anchor判定 | `kl_zoom_anchor.py` |
-| ナレーション音声生成 | `kl_tts_gen.py` |
+| ナレーション音声生成 | `kl_tts_gen.py`（読み照合QAは `kl_reading_qa.py`） |
 | 画像+ナレーション確認ページ生成 | `kl_review_gen.py` |
 | テロップ生成 | `kl_telop_gen.py` |
 | BGM音声QA | `kl_bgm_qa.py` |
@@ -766,6 +766,19 @@ python3 kl_tts_gen.py --episode kl{NNN}
 音量をそろえ、シーン音声 `S{NN}.wav` に連結する。各行の位置（`lines[].t0`/`dur`）とシーンの `lines_hash` を
 エピソードJSONに書き込む。台詞を直した行だけが作り直される（`S{NN}_L{KK}.txt` に生成時の台詞と演技指導を記録）。
 **台詞を直したら必ずそのシーンの音声を作り直す**（`kl_video_gen.py` は `lines_hash` が合わないと止まる）。
+
+**読み照合QA（2026-10-11追加、`kl_reading_qa.py`）:** 既存の Gemini QA（台本どおりか）を通った各行を、言語モデルを持たない
+音素認識（`prj-beatrice/japanese-hubert-base-phoneme-ctc-v4`、初回に約380MBを `~/.cache/kl_reading_qa_hf` へ取得）で
+「聞こえたとおりの音」にし、台本の期待する読み（Gemini Pro がテキストから文脈込みで決めたカタカナ。台詞のハッシュで
+`~/.cache/kl_reading_qa/readings.json` にキャッシュ）と行内の局所的な差ごとに照合する。数字（年齢・人数・割合など）の
+範囲にかかる差は低いしきい値で別枠に判定する。長音・「おう/おー」「いう/ゆう」・数字の促音便（イチテン/イッテン）は
+ゆれとして無視する。**不一致の行だけ作り直し（最大3回）、残ったら一番ましな音声で続行**し、結果を
+`narration/reading_qa.json` に行ごとに残して最後にまとめて表示する。表示された行は STEP 11 で必ず耳で確認し、
+誤読なら台本の語を言い換える（作り直しで直らない誤読は、語の言い換えが確実）。`--no-reading-qa` で無効化。
+既存の音声だけを照合するときは `python3 kl_reading_qa.py --episode kl{NNN} --narration-dir <S{NN}.wavのフォルダ>`
+（音声もJSONも書き換えない）。**限界:** 長音の脱落（どうして→どして）は検出しない。非常に速い発話では認識が音を
+落とすことがあり、大きな抜けだけの差は「不確か」として不一致にしない（読み飛ばしは Gemini QA が見る）。期待する読みは
+LLM が決めるため、2通りに読める語で LLM が片方しか挙げないと誤検知になる。旧形式（独白）には未対応。
 
 ---
 

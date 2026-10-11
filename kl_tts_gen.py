@@ -14,10 +14,17 @@ episodes/kl{NNN}.jsonに記録すること。
   python3 kl_tts_gen.py --episode kl001 --scenes 5,6,9   # 指定シーンのみ再生成
   python3 kl_tts_gen.py --episode kl001 --shorts-only    # Shortsのみ
   python3 kl_tts_gen.py --episode kl001 --force          # 既存ファイルも含め全シーン再生成
+  python3 kl_tts_gen.py --episode kl035 --no-reading-qa  # 読み照合QA（掛け合い形式のみ）を使わない
 
 出力: ~/Desktop/kagaku-life/narration/S{NN}.wav,
       shorts{M}_S{NN}.wav
       （Desktopは常に最新1エピソード分の確認用。エピソードIDのサブフォルダは作らない）
+
+読み照合QA（掛け合い形式、2026-10-11〜。kl_reading_qa.py）:
+  Gemini QA を通った台詞を、音素認識（言語モデルなしの CTC）で「聞こえたとおりの音」にして、
+  台本の期待する読み（Gemini Pro がテキストから決めたカタカナ）と行内の局所的な差で照合する。
+  不一致の行だけ作り直し（最大 READING_QA_MAX_REGEN 回）、残ったら一番ましな音声で続行して
+  narration/reading_qa.json に記録し、最後にまとめて表示する。
 
 生成済みならスキップ（2026-09-04〜、sc_tts_gen.pyと同じ考え方）:
   --scenes未指定のフル実行では、既に音声が存在するシーンは再生成しない。
@@ -69,6 +76,7 @@ MODEL = "gemini-3.8-flash-tts"
 MODEL_REST_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}"
 REQUEST_TIMEOUT_MS = 60_000
 MAX_RETRIES = 5
+READING_QA_MAX_REGEN = 3  # 読みの不一致で作り直す上限（Gemini QA・API失敗の MAX_RETRIES とは別に数える）
 
 # 研究ボイス（Orus）は稀に音程が高く裏返ることがあり、また短いフレーズ
 # （Shorts等）では雰囲気が暗く/硬く聞こえがちなため、落ち着いた低めの音程を
@@ -193,27 +201,68 @@ def qa_narration_with_gemini(client: genai.Client, audio_data: bytes, script_tex
         return {"ok": False, "issues": [f"QA_ERROR: {e}"]}
 
 
-def synth(client: genai.Client, text: str, voice_name: str, out_path: Path, narrator: str = None, style_override: str = None) -> bool:
+def synth(client: genai.Client, text: str, voice_name: str, out_path: Path, narrator: str = None,
+          style_override: str = None, reading_qa=None, reading_log: dict = None) -> bool:
+    """1本の音声を生成し、Gemini QA（台本どおりか）を通ったら保存する。
+    reading_qa（kl_reading_qa.ReadingQA）を渡すと、さらに読み照合を行い、不一致なら作り直す
+    （最大 READING_QA_MAX_REGEN 回。上限後は不一致が一番小さい音声を採用して警告する）。
+    結果は reading_log[out_path.name] に入れる。"""
     style = style_override if style_override is not None else STYLE_PREFIX.get(narrator, "")
     data = None
-    for attempt in range(1, MAX_RETRIES + 1):
+    fails = 0
+    regen = 0
+    best = None  # (不一致の大きさ, 音声, 照合結果)
+    final_rq = None
+    while True:
         try:
             candidate_data = _tts_rest_call(text, style, voice_name)
             qa = qa_narration_with_gemini(client, candidate_data, text)
-            if qa["ok"]:
-                data = candidate_data
-                break
             reason = f"台本不一致の疑い（{'; '.join(qa['issues'])}）"
         except Exception as e:
+            qa = None
             reason = f"{type(e).__name__}: {e}"
-        if attempt < MAX_RETRIES:
-            print(f"  ⚠️ {out_path.name}: {reason}（{attempt}回目）、リトライ")
-            time.sleep(2)
+        if qa and qa["ok"]:
+            if reading_qa is None:
+                data = candidate_data
+                break
+            try:
+                rq = reading_qa.check(candidate_data, text)
+            except Exception as e:
+                print(f"  ⚠️ {out_path.name}: 読み照合を実行できませんでした（{type(e).__name__}: {e}）。照合なしで採用します")
+                data, final_rq = candidate_data, {"ok": True, "skipped": f"照合エラー: {e}", "text": text}
+                break
+            rq["attempt"] = regen + 1
+            if rq["ok"]:
+                data, final_rq = candidate_data, rq
+                break
+            size = sum(d["delta"] for d in rq["mismatches"])
+            if best is None or size < best[0]:
+                best = (size, candidate_data, rq)
+            desc = "; ".join(f"{d['expected']}→{d['heard'] or '（なし）'}" for d in rq["mismatches"])
+            regen += 1
+            if regen > READING_QA_MAX_REGEN:
+                data, final_rq = best[1], best[2]
+                print(f"  ⚠️ {out_path.name}: 読みの不一致が{READING_QA_MAX_REGEN}回作り直しても解消しないため、"
+                      f"不一致が一番小さい音声（{final_rq['attempt']}回目）を採用します")
+                break
+            print(f"  ⚠️ {out_path.name}: 読みの不一致の疑い（{desc}）、作り直し（{regen}/{READING_QA_MAX_REGEN}）")
+            continue
+        fails += 1
+        if fails >= MAX_RETRIES:
+            break
+        print(f"  ⚠️ {out_path.name}: {reason}（{fails}回目）、リトライ")
+        time.sleep(2)
+    if data is None and best is not None:
+        # 読み照合で作り直している途中に API・Gemini QA の失敗が上限に達した場合
+        data, final_rq = best[1], best[2]
     if data is None:
         print(f"❌ {out_path.name}: {MAX_RETRIES}回試行して失敗", file=sys.stderr)
         return False
     out_path.write_bytes(_to_wav_bytes(data))
-    print(f"✅ {out_path.name} ({voice_name})")
+    if reading_log is not None and final_rq is not None:
+        final_rq["regenerated"] = regen
+        reading_log[out_path.name] = final_rq
+    print(f"✅ {out_path.name} ({voice_name})" + ("" if final_rq is None or final_rq.get("ok") else " ⚠️読みの不一致あり"))
     return True
 
 
@@ -256,6 +305,7 @@ def run_dialogue(args, ep: dict, ep_path: Path, client) -> None:
     out_dir = DESKTOP_DIR / "narration"
     target_ids = {int(s) for s in args.scenes.split(",")} if args.scenes else None
     shorts_only = args.shorts_only or bool(args.shorts_scenes)
+    shorts_target_ids = {int(s) for s in args.shorts_scenes.split(",")} if args.shorts_scenes else None
 
     def style_for_line(line: dict) -> str:
         base = cast[line["speaker"]]["style"]
@@ -263,15 +313,65 @@ def run_dialogue(args, ep: dict, ep_path: Path, client) -> None:
             base += f". For this line specifically: {line['tone']}"
         return base
 
-    def synth_line(text: str, speaker: str, style: str, out_path: Path) -> bool:
+    def line_sig(text: str, speaker: str, style: str) -> str:
+        return json.dumps({"text": text, "speaker": speaker, "style": style,
+                           "voice": cast[speaker]["voice"]}, ensure_ascii=False)
+
+    def is_cached(text: str, speaker: str, style: str, out_path: Path) -> bool:
         stamp = out_path.with_suffix(".txt")
-        sig = json.dumps({"text": text, "speaker": speaker, "style": style,
-                          "voice": cast[speaker]["voice"]}, ensure_ascii=False)
-        if not args.force and out_path.exists() and stamp.exists() and stamp.read_text(encoding="utf-8") == sig:
+        return (not args.force and out_path.exists() and stamp.exists()
+                and stamp.read_text(encoding="utf-8") == line_sig(text, speaker, style))
+
+    # 読み照合QA（kl_reading_qa.py）。今回生成する行の「期待する読み」を、音声生成と並行して取得しておく。
+    # 結果は narration/reading_qa.json に行ごとに残す（作り直さなかった行は前回の結果を引き継ぐ）。
+    reading_qa = None
+    reading_log_path = out_dir / "reading_qa.json"
+    try:
+        reading_log = json.loads(reading_log_path.read_text(encoding="utf-8"))
+    except Exception:
+        reading_log = {}
+    if not args.no_reading_qa:
+        todo = []
+        if not shorts_only:
+            for scene in ep["scenes"]:
+                if target_ids is not None and scene["scene_id"] not in target_ids:
+                    continue
+                for k, line in enumerate(scene["lines"], start=1):
+                    p = out_dir / f"S{scene['scene_id']:02d}_L{k:02d}.wav"
+                    if not is_cached(line["text"], line["speaker"], style_for_line(line), p):
+                        todo.append(line["text"])
+        if shorts_only or args.scenes is None:
+            main_texts = {(l["speaker"], l["text"]) for sc in ep["scenes"] for l in sc["lines"]}
+            for shorts in ep.get("shorts", []):
+                for i, s in enumerate(shorts["scenes"], start=1):
+                    if shorts_target_ids is not None and i not in shorts_target_ids:
+                        continue
+                    if (s["narrator"], s["narration"]) in main_texts:
+                        continue  # 本編の行を流用する
+                    todo.append(s["narration"])
+        if todo:
+            try:
+                import kl_reading_qa
+                import torch  # noqa: F401（音素認識に必要。無ければ ImportError で照合なしに切り替える）
+                import transformers  # noqa: F401
+                reading_qa = kl_reading_qa.ReadingQA(genai.Client(api_key=API_KEY))
+                reading_qa.prefetch_async(todo)
+            except ImportError as e:
+                print(f"⚠️ 読み照合QAを使えません（{e}）。pip3 install --user transformers で入ります。"
+                      "今回は照合なしで続行します（--no-reading-qa で、この警告を消せます）")
+
+    def save_reading_log():
+        if reading_qa is not None:
+            _atomic_write_json(reading_log_path, reading_log)
+
+    def synth_line(text: str, speaker: str, style: str, out_path: Path) -> bool:
+        if is_cached(text, speaker, style, out_path):
             return True
-        ok = synth(client, text, cast[speaker]["voice"], out_path, style_override=style)
+        ok = synth(client, text, cast[speaker]["voice"], out_path, style_override=style,
+                   reading_qa=reading_qa, reading_log=reading_log)
         if ok:
-            stamp.write_text(sig, encoding="utf-8")
+            out_path.with_suffix(".txt").write_text(line_sig(text, speaker, style), encoding="utf-8")
+            save_reading_log()
         return ok
 
     failed = []
@@ -301,7 +401,6 @@ def run_dialogue(args, ep: dict, ep_path: Path, client) -> None:
         for scene in ep["scenes"]:
             for k, line in enumerate(scene["lines"], start=1):
                 main_line_wav[(line["speaker"], line["text"])] = out_dir / f"S{scene['scene_id']:02d}_L{k:02d}.wav"
-        shorts_target_ids = {int(s) for s in args.shorts_scenes.split(",")} if args.shorts_scenes else None
         for shorts in ep.get("shorts", []):
             mid = shorts["shorts_id"]
             for i, s in enumerate(shorts["scenes"], start=1):
@@ -311,6 +410,8 @@ def run_dialogue(args, ep: dict, ep_path: Path, client) -> None:
                 reuse = main_line_wav.get((s["narrator"], s["narration"]))
                 if reuse and reuse.exists():
                     shutil.copy(reuse, out_path)
+                    if reuse.name in reading_log:
+                        reading_log[out_path.name] = dict(reading_log[reuse.name], copied_from=reuse.name)
                     print(f"✅ {out_path.name}（本編{reuse.name}を流用）")
                     continue
                 style = cast[s["narrator"]]["style"] + (f". For this line specifically: {s['tone']}" if s.get("tone") else "")
@@ -318,6 +419,13 @@ def run_dialogue(args, ep: dict, ep_path: Path, client) -> None:
                     failed.append(out_path.name)
     if failed:
         print(f"\n⚠️ 失敗: {', '.join(failed)}", file=sys.stderr)
+    if reading_qa is not None:
+        save_reading_log()
+        import kl_reading_qa
+        n = kl_reading_qa.print_summary(reading_log, header="読みの不一致が残った行（作り直し上限後に採用）")
+        print(f"\n読み照合QA: {len(reading_log)}行の記録 → {reading_log_path}"
+              + (f"（不一致が残った行 {n}）" if n else "（不一致なし）")
+              + f"、読みの取得 {reading_qa.llm_calls}回")
     print(f"\n完了。保存先: {out_dir}")
 
 
@@ -329,6 +437,8 @@ def main():
     parser.add_argument("--shorts-scenes", help="Shorts内の生成する番号をカンマ区切りで指定（例: 4）。指定時は自動的に--shorts-only扱い")
     parser.add_argument("--force", action="store_true",
                          help="--scenes未指定のフル実行で、既存ファイルがあっても全シーン再生成する（デフォルトは既存ファイルをスキップ）")
+    parser.add_argument("--no-reading-qa", action="store_true",
+                         help="読み照合QA（音素認識で台本の読みと照合し、不一致の行を作り直す。掛け合い形式のみ）を使わない")
     args = parser.parse_args()
 
     if not API_KEY:
