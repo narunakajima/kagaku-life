@@ -90,7 +90,11 @@
       ],
       "narration": "大輔「いちじかんノーカットで、洗濯を全部やったロボット。」",
       "narrator": "dialogue",
-      "lines_hash": "8edaf14f19bc"
+      "lines_hash": "8edaf14f19bc",
+      "zoom_anchor": {
+        "x": 0.58,
+        "y": 0.32
+      }
     },
     {
       "scene_id": 2,
@@ -118,14 +122,18 @@
       ],
       "narration": "沙織「で、成功率は、どこにも書いてない。」",
       "narrator": "dialogue",
-      "lines_hash": "e7623df6d2a9"
+      "lines_hash": "e7623df6d2a9",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 3,
       "type": "teaser",
       "bgm_role": "intro",
       "reuse_scene_id": 10,
-      "ken_burns": "static",
+      "ken_burns": "zoom_out",
       "lines": [
         {
           "speaker": "dreamer",
@@ -146,7 +154,11 @@
       ],
       "narration": "大輔「しかも会社の試算だと、通しで終わるのは1.7パーセント。」",
       "narrator": "dialogue",
-      "lines_hash": "87588dc0f324"
+      "lines_hash": "87588dc0f324",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 4,
@@ -155,7 +167,7 @@
       "reuse_scene_id": 12,
       "shows_product": true,
       "badge_text": "イメージ図（実物と異なる場合があります）",
-      "ken_burns": "zoom_out",
+      "ken_burns": "pan_zoom_out",
       "lines": [
         {
           "speaker": "skeptic",
@@ -187,7 +199,7 @@
       "type": "setup",
       "bgm_role": "intro",
       "reference_index": 1,
-      "ken_burns": "zoom_in",
+      "ken_burns": "zoom_out",
       "image_prompt": "Evening in a small Japanese apartment (warm interior lamp light, a dusk sky visible through the window). A compact laundry corner with a white front-loading washing machine; next to it, a sofa piled high with a heap of unfolded, freshly dried laundry — towels, shirts, socks and small children's clothes — and an empty laundry basket on the floor. A tidy but busy home atmosphere. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
       "lines": [
         {
@@ -344,7 +356,11 @@
       ],
       "narration": "大輔「洗濯って、回すのはボタン1つなのに、そのあとが長いよね。」\n沙織「干して、取り込んで、畳んで、しまう。うちは、畳むところでだいたい止まる。」\n大輔「その全部をロボットが自分でやる、っていう発表が出た。9月29日、アメリカのダイナ・ロボティクス。」\n沙織「見たよ。で、今日は先に判定を言っちゃうんでしょ。」\n大輔「うん。割れた。僕は「もうすぐ来る」。」\n沙織「私は「3年はかかる」。」\n大輔「でも、面白いのはそこじゃない。会社が自分のページに載せてた、ある試算なんだ。」\n沙織「あれね。あれは、ちゃんと見せたい。」",
       "narrator": "dialogue",
-      "lines_hash": "a461c64f6ae9"
+      "lines_hash": "a461c64f6ae9",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 6,
@@ -552,7 +568,11 @@
       ],
       "narration": "大輔「発表されたのは、ダイナ2.1。会社は、物理エージェントと呼んでる。」\n沙織「物理エージェント？」\n大輔「体を動かして、仕事を最後までやるAI、って意味だと思う。中身は3つ。全身を動かす制御、動作を決めるモデル、目で見て、言葉で考える司令塔。」\n沙織「で、体は？」\n大輔「新しいロボットの、タク。名前は、日本語の「たくみ」から。」\n大輔「腰から上は、大人くらいの大きさの、人に似た姿。手は、物をはさむつかみ手。」\n大輔「腰から下は折りたためて、低い所にも、高い所にも届く。」\n沙織「足は？」\n大輔「ない。4つの車輪で動く。この仕事には、脚より、腕の届く範囲と正確さが大事だから、だって。」\n沙織「車輪ね。覚えとく。」",
       "narrator": "dialogue",
-      "lines_hash": "0ac89fca3375"
+      "lines_hash": "0ac89fca3375",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.32
+      }
     },
     {
       "scene_id": 7,
@@ -746,7 +766,11 @@
       ],
       "narration": "大輔「で、見せたのがこれ。会社によると、ホテルの洗濯室を想定して、いちじかんノーカットで、人の手を借りずに働いた。」\n大輔「洗濯機に入れて、乾燥機に移して、タオルを畳んで積んで、棚にしまう。扉もボタンも、自分で操作する。」\n沙織「機械どうしは近いの？」\n大輔「数メートルずつ離れてる。だから、カゴを持って移動する。」\n大輔「乾燥機の奥には、腕の長さくらい身を乗り出す。一番下の棚にはしゃがんで、頭より上の棚には手を伸ばす。」\n沙織「遠隔操作で動かしてない？」\n大輔「遠隔操作は、学習用のデータを集めるのに使う。この実演は、ロボットが自分で動いた、と書いてある。」\n沙織「書いてある、ね。会社の説明として聞いとく。」",
       "narrator": "dialogue",
-      "lines_hash": "effd16bc33eb"
+      "lines_hash": "effd16bc33eb",
+      "zoom_anchor": {
+        "x": 0.57,
+        "y": 0.33
+      }
     },
     {
       "scene_id": 8,
@@ -754,7 +778,7 @@
       "bgm_role": "intro",
       "shows_product": true,
       "badge_text": "イメージ図（実物と異なる場合があります）",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "image_prompt": "Early morning in a hotel laundry room in Japan (pale dawn light through a small high window, soft overhead light). a Japanese woman in her fifties with short graying hair tucked behind her ears, wearing a navy hotel staff polo shirt and a plain white apron has just walked in through the door and pauses, pleasantly surprised, looking at tall metal shelves filled with neat stacks of folded white towels. The DYNA Taku semi-humanoid robot, drawn to match the real product (do not invent a different design): a smooth, glossy white, rounded human-like upper body about the size of an average adult from the waist up; a small round egg-shaped head in pale cream with no facial features at all (no eyes, no mouth, no visor, no screen); a small soft blue glowing dot on the chest (no letters, no logo text); two slender white arms with gray-to-black covers over the shoulder, elbow and wrist joints, each arm ending NOT in a human-like hand but in a simple robotic clamp: two flat, straight, parallel jaws (like a pair of tongs or a bird's beak) that close toward each other and glow soft green, with no fingers, no thumb, no knuckles and no palm (never a five-fingered hand); at the waist a foldable white lower body that can bend down low or extend up tall, standing on a round white base with four wheels (no legs, no feet). Clean, sleek, minimal matte-and-gloss white design. In the background, the robot quietly places one more folded towel on a shelf. A calm, hopeful mood. No logos, no brand marks, no readable text, no letters, no numbers.",
       "lines": [
         {
@@ -992,7 +1016,11 @@
       ],
       "narration": "沙織「ちょっと待って。成功率は？」\n大輔「……書いてない。」\n沙織「人が手を貸した回数も、実演については書いてない。いちじかんのノーカットが、何回やったうちの1回なのかも、分からない。」\n大輔「でも、ノーカットだよ？」\n沙織「ノーカットは、その1本が途中で止まらなかった、って意味。毎晩そうなる、って意味じゃない。」\n大輔「それは、そうか。」\n沙織「で、面白いのはここから。その難しさを、会社が自分のページで計算して見せてるの。」",
       "narrator": "dialogue",
-      "lines_hash": "f361e652a1ba"
+      "lines_hash": "f361e652a1ba",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 10,
@@ -1000,7 +1028,7 @@
       "bgm_role": "main",
       "reference_index": 0,
       "ken_burns": "static",
-      "image_prompt": "A simple, clean flat infographic vertical bar chart with exactly two bars and a short title at the very top reading exactly 「長い仕事の成功率（試算）」. The vertical axis runs from 0% at the bottom to 100% at the top so bar heights are proportional. Bars from left to right, each with its label directly below it and its value directly above it: 「サブタスク成功率」 95% (teal, a tall bar), 「1サイクルを助けなしで終える確率」 1.7% (coral, highlighted, a very short bar barely above the baseline). Plain light background. Do not add any other text, numbers, tick labels, icons or logos.",
+      "image_prompt": "A simple, clean flat infographic vertical bar chart with exactly two bars and a short title at the very top reading exactly 「長い仕事の成功率（試算）」. The vertical axis runs from 0% at the bottom to 100% at the top so bar heights are proportional. Bars from left to right, each with its label directly below it and its value directly above it: 「サブタスク成功率」 95% (teal, a tall bar), 「1サイクルを助けなしで終える確率」 1.7% (coral, highlighted, a very short bar barely above the baseline). Make the whole chart compact so that everything, including both two-line labels under the bars, sits within the top 70 percent of the picture, with a large empty light area at the bottom (the lower 30 percent of the picture must be completely empty). Plain light background. Do not add any other text, numbers, tick labels, icons or logos.",
       "lines": [
         {
           "speaker": "skeptic",
@@ -1367,7 +1395,11 @@
       ],
       "narration": "大輔「じゃあ、この発表は大げさってこと？」\n沙織「逆。ここは認める。」\n沙織「成功率が高くても長い仕事は終わらない、と自分で書いた会社なの。」\n沙織「だから、成功率じゃなくて、人の手なしでどれだけ長く働けるかを測ろう、と言ってる。」\n大輔「人の手なしで、どれだけ続けられるか、か。」\n沙織「それに、失敗から立ち直る動画もある。人がつかみ手をボタンから引きはがしても、パネルに戻って、正しいコースを設定し直す。」\n大輔「タオルが2枚重なっても、ちゃんとやり直してた。」\n沙織「やり直すか、別のやり方にするか、計画を変えるか。それを、司令塔が決めてる。」\n大輔「でしょ！」",
       "narrator": "dialogue",
-      "lines_hash": "8769eaa077ea"
+      "lines_hash": "8769eaa077ea",
+      "zoom_anchor": {
+        "x": 0.51,
+        "y": 0.32
+      }
     },
     {
       "scene_id": 12,
@@ -1375,7 +1407,7 @@
       "bgm_role": "main",
       "shows_product": true,
       "badge_text": "イメージ図（実物と異なる場合があります）",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "image_prompt": "Early morning in a Japanese apartment bedroom (soft bright morning daylight through lace curtains, clearly dawn, not night). a Japanese woman in her late thirties with shoulder-length black hair tied in a loose low ponytail, wearing a light beige knit cardigan over a white T-shirt opens a wooden chest of drawers placed in the upper-middle of the frame and smiles, finding small children's clothes already neatly folded inside (the open drawer and the clothes are at about eye level, well above the bottom of the picture). The DYNA Taku semi-humanoid robot, drawn to match the real product (do not invent a different design): a smooth, glossy white, rounded human-like upper body about the size of an average adult from the waist up; a small round egg-shaped head in pale cream with no facial features at all (no eyes, no mouth, no visor, no screen); a small soft blue glowing dot on the chest (no letters, no logo text); two slender white arms with gray-to-black covers over the shoulder, elbow and wrist joints, each arm ending NOT in a human-like hand but in a simple robotic clamp: two flat, straight, parallel jaws (like a pair of tongs or a bird's beak) that close toward each other and glow soft green, with no fingers, no thumb, no knuckles and no palm (never a five-fingered hand); at the waist a foldable white lower body that can bend down low or extend up tall, standing on a round white base with four wheels (no legs, no feet). Clean, sleek, minimal matte-and-gloss white design. In the background by the doorway, the robot carries a small stack of folded towels pinched between the two straight green-glowing jaws of one clamp (one jaw under the stack, one jaw on top of it), its other arm hanging at its side with its clamp visible; the clamps are tong-like two-jaw clamps, never hands with fingers. A warm, imagined-future mood. No logos, no brand marks, no readable text, no letters, no numbers.",
       "lines": [
         {
@@ -1658,7 +1690,11 @@
       ],
       "narration": "沙織「それに、畳んでたのはタオル。シャツや靴下、子どもの服とは、形も素材も違う。」\n沙織「ここからは研究の外の話だけど、家には玄関の段差や階段がある。車輪で動くロボットには、そこが壁になる。」\n大輔「業務用の洗濯室なら、床は平らで、機械の場所も決まってるもんね。」\n沙織「研究のページも、限界を書いてる。1つの失敗が長い仕事の中で積み重なること。体の作りを変えたら、制御の学習をやり直すこと。」\n沙織「次の目標は、実際のお客さんの現場への導入、とある。今回の実演は、お客さんの現場じゃない。」\n沙織「リリースは、導入が進んでる、とは書くけど、どこで何台かは書いてない。」\n大輔「値段も、いつ買えるかも、書いてないしね。」",
       "narrator": "dialogue",
-      "lines_hash": "2d5e0ca9fe58"
+      "lines_hash": "2d5e0ca9fe58",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 14,
@@ -1831,7 +1867,11 @@
       ],
       "narration": "沙織「じゃあ、判定。お題は、洗濯から棚まで全部やるロボ、もうすぐ家に来る？」\n大輔「僕は「もうすぐ来る」。リリースによると、ホテルやコインランドリーの現場では、導入が進んでる。」\n沙織「それは、業務用の判定でしょ。お題は、家。」\n大輔「家は、その次。そこは、僕の見立て。」\n沙織「私は「3年はかかる」。家庭は、発表の対象に入ってない。タオル以外の服、段差のある家、それに、人の手なしで何分働けるかの数字も、まだ出てない。」\n沙織「早くても3年。その先は、正直分からない。」\n大輔「割れたね。」\n沙織「人の手なしで何分働けたか。その数字が出たら、もう一回判定しよう。」",
       "narrator": "dialogue",
-      "lines_hash": "4e169ea3bbc8"
+      "lines_hash": "4e169ea3bbc8",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 15,
@@ -1940,7 +1980,11 @@
       ],
       "narration": "大輔「ノーカットの動画より、会社が自分で出した試算のほうが、ずっと面白かった。」\n沙織「95パーセントでも、長い仕事は終わらない。だから次は、何分ひとりで働けたかを見る。今日の判定は、10月11日時点の、私たち二人の見立てです。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」",
       "narrator": "dialogue",
-      "lines_hash": "093373f49404"
+      "lines_hash": "093373f49404",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     }
   ],
   "shorts": [
@@ -1987,5 +2031,10 @@
         }
       ]
     }
-  ]
+  ],
+  "bgm_sources": {
+    "intro": "BGM/kl036-BGM-intro.mp3",
+    "main": "BGM/kl036-BGM-main.mp3",
+    "outro": "BGM/kl036-BGM-outro.mp3"
+  }
 }
