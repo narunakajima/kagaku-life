@@ -1745,8 +1745,53 @@
       },
       "source_type": "news",
       "news_date": "2026-09-29"
+    },
+    {
+      "episode_id": "kl036",
+      "status": "confirmed",
+      "slot_type": "news",
+      "genre": "humanoid",
+      "health": false,
+      "domain": "life",
+      "concern_id": "housework",
+      "entry_question": "洗濯から畳んで棚にしまうまで、全部やってくれるロボットは、もうすぐ家に来る？",
+      "title": "1時間ノーカットで洗濯を終えたロボは、家に来るのか（DYNA 2.1、9月29日発表）",
+      "format": "dialogue",
+      "references": [
+        {
+          "title": "Dyna-2.1: A Physical Agent for End-to-End Workflows",
+          "authors": [],
+          "year": 2026,
+          "venue": "DYNA Robotics 研究ブログ（2026-09-29）",
+          "url": "https://www.dyna.co/dyna-2.1",
+          "is_preprint": false,
+          "institution": "DYNA Robotics（米国）",
+          "source_kind": "tech_report"
+        },
+        {
+          "title": "DYNA Robotics Launches DYNA 2.1 Physical Agent, a Semi-humanoid Robot that Completes Full Workflows such as a Commercial Laundry Shift",
+          "authors": [],
+          "year": 2026,
+          "venue": "PR Newswire（2026-09-29）",
+          "url": "https://www.prnewswire.com/news-releases/dyna-robotics-launches-dyna-2-1-physical-agent-a-semi-humanoid-robot-that-completes-full-workflows-such-as-a-commercial-laundry-shift-302892411.html",
+          "is_preprint": false,
+          "institution": "DYNA Robotics（米国）",
+          "source_kind": "press_release"
+        }
+      ],
+      "hook_idea": "1時間ノーカットで洗濯を終えたロボット。ただし、その成功率はどこにも書いていない。",
+      "notes": "構成=verdict_first か basic（直近は myth_buster→basic→myth_buster）。予想判定: 夢語り=もうすぐ来る（業務用の洗濯室ではもう導入が始まっている、という読み）、ツッコミ=3年はかかる（家庭は発表の対象外、物理の壁）。ツッコミの材料（公式ページと発表で確認済み）: 発表の動画は『ホテルの洗濯室』『1時間ノーカット・自律』とされるが、成功率・介入回数の実測値は書いていない／ページ自身が『ベンチマーク型の成功率では、無人で動けるかが分からない』として、介入までの平均時間（MTBI）を指標に提案しているが、リリースにもMTBIの数字は無い／ページの図は『サブタスク成功率95%でも、約79ステップの1サイクルを助けなしで終える確率は1.7%』という説明用の試算で、実測ではない。同じ試算の前提は『1日約48サイクル、約8分に1回の人の介入』／現実はもっと悪い（失敗は連鎖する）と著者が自分で書いている／実演はタオルなど均一なリネン（約52回のピック＆プレース、約12回の畳み、約3回のスタック移動の推定）／移動は4輪の操舵で、段差のある家は想定外（リリースは家庭に一切触れない）／学習データは100万時間分の人の動画とロボットのデータ。遠隔操作は訓練データ用で、実演は自律と書いてある（会社の主張、第三者の検証なし）／ハードを変えるとコントローラを学習し直す／次のマイルストーンは『実際の顧客先への導入』（実演は顧客先ではない）／ホテル・コインランドリー・レストランに導入中とあるが顧客名・台数なし／価格・提供時期の記載なし（他媒体の価格は推定で、台本に使わない）。『世界初の1時間の非線形な全身器用操作』は著者の『我々の知る限り』の主張。中盤で裏切れる数字: 95%で1.7%（成功率が高くても、長い仕事は終わらない）。ロボットの外観（想像で描かない。公式ページの写真で確認）: 白くつるんとした人型の上半身、小さな丸い頭（顔なし）、胸に青いDYNAのロゴ、緑に光る平行グリッパーの手、折りたためる下半身、白い台座に4つの操舵輪。実在の製品を描くので depicts_real_product: true、イメージ図の注記を付ける。2026-10-11にニュース候補（3.8点、id ceab546626）から選定。一次資料は公式ページ（dyna.co/dyna-2.1）とリリース（PR Newswire）を直接読んで確認済み。スキャンが取り込んだ一次資料のURL（dyna.co/research/dyna-2-1とリリースの旧URL）は404だったので、正しいURLに直した。",
+      "stage4_snapshot": {
+        "overall_score": 3.8,
+        "freshness": 5,
+        "verifiability": 5,
+        "hype_gap": 3,
+        "debate": 4
+      },
+      "source_type": "news",
+      "news_date": "2026-09-29"
     }
   ],
-  "total_topics": 35,
+  "total_topics": 36,
   "last_updated": "2026-10-11"
 }
