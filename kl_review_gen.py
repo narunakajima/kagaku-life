@@ -113,11 +113,13 @@ def regen_controls(card_id: str, allow_narration: bool = True) -> str:
 
 
 def shorts_tile(label: str, sid_label: str, narration: str, img_rel: str,
-                 audio_rel: str = None, card_id: str = None) -> str:
+                 audio_rel: str = None, card_id: str = None, caption: str = None) -> str:
     """Shorts用の横並びタイル（顔アップフック含めて全て同じ幅・同じ見た目に
     揃える。samurai-chroniclesのsc_scene_review.py `.shorts-tile` と統一、
     2026-09-06〜）。audio_relが無い場合（顔アップフックは無音カットのため）は
     再生ボタンを出さない（ナレーション再生成チェックボックスも同様に省く）。"""
+    caption_html = (f'<p class="shorts-tile-narration">字幕: {html.escape(caption)}</p>'
+                    if caption and caption != narration else "")
     play_row = ""
     if audio_rel:
         play_row = (
@@ -130,6 +132,7 @@ def shorts_tile(label: str, sid_label: str, narration: str, img_rel: str,
       <img src="{html.escape(img_rel)}" loading="lazy" alt="{html.escape(sid_label)}">
       <div class="shorts-tile-label">{html.escape(label)} {html.escape(sid_label)}</div>
       <p class="shorts-tile-narration">{html.escape(narration)}</p>
+      {caption_html}
       {play_row}
       {regen_controls(card_id or sid_label, allow_narration=bool(audio_rel))}
     </div>
@@ -138,8 +141,12 @@ def shorts_tile(label: str, sid_label: str, narration: str, img_rel: str,
 
 def scene_card(kind: str, sid: int, type_label: str, narrator: str, narration: str,
                img_rel: str, audio_rel: str, extra: str = "", bgm_role: str = None,
-               bgm_uri: str = None, layout: str = "main", card_id: str = None) -> str:
+               bgm_uri: str = None, layout: str = "main", card_id: str = None,
+               caption: str = None) -> str:
     sid_label = f"S{sid:02d}"
+    # 字幕の表記が読み上げ用の台詞と違うとき（display）だけ、画面に出る字幕を併記する
+    caption_html = (f'<p class="narration sub">字幕（画面の表記）: {html.escape(caption)}</p>'
+                    if caption and caption != narration else "")
     buttons = [_play_button(audio_rel, f"{sid_label} ナレーション", "▶ ナレーション再生")]
     if bgm_role and bgm_uri:
         buttons.append(_play_button(bgm_uri, f"BGM:{bgm_role}", f"▶ BGM:{bgm_role} 再生"))
@@ -157,6 +164,7 @@ def scene_card(kind: str, sid: int, type_label: str, narrator: str, narration: s
         <img src="{html.escape(img_rel)}" loading="lazy" alt="{sid_label}">
         <div class="text-col">
           <p class="narration">{html.escape(narration)}</p>
+          {caption_html}
           {play_row}
           {regen_controls(card_id or sid_label)}
         </div>
@@ -219,6 +227,7 @@ def main():
                 f"images/shorts{mid}_S{i:02d}.png",
                 f"narration/shorts{mid}_S{i:02d}.wav",
                 card_id=f"Shorts{mid} S{i:02d}",
+                caption=s.get("telop_text"),
             ))
 
         cards.append(f'<div class="shorts-strip">{"".join(tiles)}</div>')
@@ -228,10 +237,16 @@ def main():
         # 掛け合い形式（2026-10-04〜）は各シーンの bgm_role が正。旧形式だけ type から決める
         bgm_role = scene.get("bgm_role") or TYPE_TO_BGM_ROLE.get(scene["type"])
         bgm_uri = _bgm_rel_path(bgm_sources, bgm_role) if bgm_role else None
+        # 掛け合い形式: display のある行は、画面の字幕の表記に差し替えた台詞全文を作る
+        caption = scene["narration"]
+        for line in scene.get("lines", []):
+            if line.get("display") and line["display"] != line["text"]:
+                caption = caption.replace(line["text"], line["display"])
         cards.append(scene_card(
             "本編", sid, TYPE_LABEL.get(scene["type"], scene["type"]), scene["narrator"],
             scene["narration"], f"images/S{sid:02d}.png", f"narration/S{sid:02d}.wav",
             bgm_role=bgm_role, bgm_uri=bgm_uri, layout="main", card_id=f"本編 S{sid:02d}",
+            caption=caption,
         ))
 
     html_doc = f"""<!doctype html>
