@@ -50,16 +50,16 @@ UA = {"User-Agent": "Mozilla/5.0 (kagaku-life news scan)"}
 
 # 一次資料が確認できない候補は採用しない（追記メモ §3）。検証可能性がこの点以下なら除外する
 MIN_VERIFIABILITY = 3
-SCAN_VERSION = "2026-10-06-genres"
+SCAN_VERSION = "2026-10-11-fresh-buzz"
 
 # 採点の重み（追記メモ §4）。検証可能性は足切り（MIN_VERIFIABILITY）にも使う
 WEIGHTS = {
-    "freshness": 0.15,       # 発表からの日数（コードで計算）
-    "buzz_jp": 0.15,         # 日本語圏で話題か、今後なりそうか
-    "hype_gap": 0.15,        # 見出しと中身の差（大きいほどツッコミの材料）
-    "debate": 0.15,          # 議論を呼ぶか・二人の判定が割れそうか
-    "wonder": 0.15,          # 驚き・ワクワク（温かい感動だけでなく知的な驚きも）
-    "life_relevance": 0.15,  # 暮らしにどう関わるか（viewer_concerns.json を参照）
+    "freshness": 0.25,       # 発表からの日数（コードで計算）。最重視（2026-10-11、なるさんの指示: 旬の話題）
+    "buzz_jp": 0.25,         # 日本語圏で話題か、今後なりそうか。最重視（同: 注目度の高い話題）
+    "hype_gap": 0.10,        # 見出しと中身の差（大きいほどツッコミの材料）
+    "debate": 0.10,          # 議論を呼ぶか・二人の判定が割れそうか
+    "wonder": 0.10,          # 驚き・ワクワク（温かい感動だけでなく知的な驚きも）
+    "life_relevance": 0.10,  # 暮らしにどう関わるか（viewer_concerns.json を参照）
     "verifiability": 0.10,   # 一次資料で答え合わせできるか
 }
 
