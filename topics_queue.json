@@ -1,1834 +1,1834 @@
 {
- "_comment": "制作キュー。配列の先頭が次に制作するエピソード（SC/LWと同じ並び順規約）。statusはpending(候補)→confirmed(STAGE5ゴーサイン済み・制作パイプライン未着手)→in_production(制作中)→produced(画像・音声・動画すべて完成、公開待ち。公開前に5本ストックしてから公開する方針のため、この状態のエピソードが複数溜まりうる)→published(YouTube公開済み)。kl_paper_search.pyはsemantic_scholar_idを既出として重複排除に使う。 2026-09-29〜: 各エントリに slot_type（concern/wildcard/legacy）・concern_id（viewer_concerns.jsonのid。関心ごとに対応しない回はnull）・domain（body/disease/daily/life、公式サイトの分類と健康系の上限の判定に使う）・entry_question（視聴者側の問い）を持たせる。kl001〜kl026は旧方式（legacy）で選んだ回で、concern_id・domainは後から付けた。",
- "queue": [
-  {
-   "episode_id": "kl001",
-   "status": "published",
-   "title": "家事ロボットの潮流：複数の独立研究が同時に家事の壁を崩しつつある",
-   "format": "multi_paper",
-   "category": "home_robot",
-   "category_label": "家庭内ロボット・家事自動化",
-   "references": [
+  "_comment": "制作キュー。配列の先頭が次に制作するエピソード（SC/LWと同じ並び順規約）。statusはpending(候補)→confirmed(STAGE5ゴーサイン済み・制作パイプライン未着手)→in_production(制作中)→produced(画像・音声・動画すべて完成、公開待ち。公開前に5本ストックしてから公開する方針のため、この状態のエピソードが複数溜まりうる)→published(YouTube公開済み)。kl_paper_search.pyはsemantic_scholar_idを既出として重複排除に使う。 2026-09-29〜: 各エントリに slot_type（concern/wildcard/legacy）・concern_id（viewer_concerns.jsonのid。関心ごとに対応しない回はnull）・domain（body/disease/daily/life、公式サイトの分類と健康系の上限の判定に使う）・entry_question（視聴者側の問い）を持たせる。kl001〜kl026は旧方式（legacy）で選んだ回で、concern_id・domainは後から付けた。",
+  "queue": [
     {
-     "title": "BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday Household Activities",
-     "authors": [
-      "Yunfan Jiang",
-      "Ruohan Zhang",
-      "Josiah Wong",
-      "Chen Wang",
-      "Yanjie Ze"
-     ],
-     "year": 2025,
-     "venue": "arXiv.org",
-     "url": "https://arxiv.org/abs/2503.05652",
-     "doi": "10.48550/arXiv.2503.05652",
-     "is_preprint": true
+      "episode_id": "kl001",
+      "status": "published",
+      "title": "家事ロボットの潮流：複数の独立研究が同時に家事の壁を崩しつつある",
+      "format": "multi_paper",
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "references": [
+        {
+          "title": "BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday Household Activities",
+          "authors": [
+            "Yunfan Jiang",
+            "Ruohan Zhang",
+            "Josiah Wong",
+            "Chen Wang",
+            "Yanjie Ze"
+          ],
+          "year": 2025,
+          "venue": "arXiv.org",
+          "url": "https://arxiv.org/abs/2503.05652",
+          "doi": "10.48550/arXiv.2503.05652",
+          "is_preprint": true
+        },
+        {
+          "title": "DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation",
+          "authors": [
+            "Taiyi Su",
+            "Jian Zhu",
+            "Tianjian Wang",
+            "Youzhang He",
+            "Zitai Huang"
+          ],
+          "year": 2026,
+          "venue": "arXiv.org",
+          "url": "https://arxiv.org/abs/2605.31286",
+          "doi": "10.48550/arXiv.2605.31286",
+          "is_preprint": true
+        },
+        {
+          "title": "Bi-VLA: Vision-Language-Action Model-Based System for Bimanual Robotic Dexterous Manipulations",
+          "authors": [
+            "Koffivi Fidele Gbagbe",
+            "Miguel Altamirano Cabrera",
+            "Ali Alabbas",
+            "Oussama Alyunes",
+            "Artem Lykov"
+          ],
+          "year": 2024,
+          "venue": "IEEE International Conference on Systems, Man and Cybernetics",
+          "doi": "10.1109/SMC54092.2024.10831380",
+          "is_preprint": false
+        },
+        {
+          "title": "OopsieVerse: A Safety Benchmark with Damage-Aware Simulation for Robot Manipulation",
+          "authors": [
+            "Arnav Balaji",
+            "Arpit Bahety",
+            "Sriniket Ambatipudi",
+            "Daniel Lam",
+            "Junhong Xu"
+          ],
+          "year": 2026,
+          "venue": "arXiv.org",
+          "url": "https://arxiv.org/abs/2606.31993",
+          "doi": "10.48550/arXiv.2606.31993",
+          "is_preprint": true
+        }
+      ],
+      "protagonist": {
+        "name": "田中 美咲",
+        "age": 34,
+        "job": "IT企業マーケティング職（共働き・3歳の娘）",
+        "gender": "female"
+      },
+      "notes": "STAGE4上位20件のうち家庭内ロボットカテゴリが13/20を占め、内容が似通ったVLA基盤モデル論文群だったため、1本を選ぶのではなく4本を組み合わせた潮流ストーリーとして構成する方針に変更（2026-08-20）。単一研究室の主張ではなく複数の独立研究が同時期に別々の家事タスクを攻略している構図で、STAGE2の「複数の独立研究による追試」的信頼性シグナルにも合致する。構成は4部（自己紹介→課題→研究紹介→未来の暮らし）、ナレーターは主人公（女性）が生活者ボイス、研究紹介パートは男性の研究ボイスで分ける新方式。4本中3本は査読前プレプリント（BEHAVIOR Robot Suite・DeMaVLA・OopsieVerse）、Bi-VLAのみ査読済み。「査読」「プレプリント」は専門用語のためナレーションでは使わず開示は概要欄のみとする（2026-08-20方針改訂）。各論文の所属機関・中心研究者を確認しナレーションに明記: BEHAVIOR Robot Suite=スタンフォード大学(Ruohan Zhang氏)、DeMaVLA=美的集団AIRC/同済大学(Jian Zhu氏、プロジェクトリード)、Bi-VLA=Skoltech(Dzmitry Tsetserukou教授)、OopsieVerse=テキサス大学オースティン校(Roberto Martín-Martín教授)。第1話として確定（2026-08-20、旧kl001のRobi Butler単体案を置き換え）。",
+      "stage4_snapshot": [
+        {
+          "paperId": "be24b701b1404254d46a7d8d17e057bfc69bfe71",
+          "overall_score": 4.5,
+          "hook_idea_at_selection": "毎朝のゴミ出しや散らかった服の片付け…もしロボットが全部やってくれたら、あなたの暮らしはどう変わりますか？"
+        },
+        {
+          "paperId": "f8f09403a728c09ece3f98779e63a13ed34a19bb",
+          "overall_score": 4.75,
+          "hook_idea_at_selection": "たたんでもたたんでも終わらない「洗濯物の山」、もしロボットが代わりに全部たたんでくれたら人生どう変わる？"
+        },
+        {
+          "paperId": "33eb7a83a37b47417819474832bd3eccb861d501",
+          "overall_score": 4.75,
+          "hook_idea_at_selection": "「今日の夕飯、ヘルシーなサラダ作っておいて」と話しかけるだけで、ロボットが両手で料理してくれる未来、見てみたくありませんか？"
+        },
+        {
+          "paperId": "e0510d9ffc419054ff523ce2d7afabf145b232a8",
+          "overall_score": 4.5,
+          "hook_idea_at_selection": "家事をロボットに頼みたい…でも、大事なお皿や高級家具を壊されたらどうしよう？と思ったことはありませんか？"
+        }
+      ],
+      "slot_type": "legacy",
+      "concern_id": "housework",
+      "domain": "life",
+      "genre": "life_tech",
+      "health": false
     },
     {
-     "title": "DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation",
-     "authors": [
-      "Taiyi Su",
-      "Jian Zhu",
-      "Tianjian Wang",
-      "Youzhang He",
-      "Zitai Huang"
-     ],
-     "year": 2026,
-     "venue": "arXiv.org",
-     "url": "https://arxiv.org/abs/2605.31286",
-     "doi": "10.48550/arXiv.2605.31286",
-     "is_preprint": true
+      "episode_id": "kl002",
+      "status": "published",
+      "title": "学歴の壁を消すAI：生成AIが生産性格差を75%縮めた実験の衝撃",
+      "format": "single_paper",
+      "category": "work",
+      "category_label": "働き方の変化",
+      "references": [
+        {
+          "title": "Does Generative AI Narrow Education-Based Productivity Gaps? Evidence from a Randomized Experiment",
+          "authors": [
+            "Guillermo Cruces",
+            "Diego Fernández Meijide",
+            "Sebastian Galiani",
+            "Ramiro Gálvez",
+            "María Lombardi"
+          ],
+          "year": 2026,
+          "venue": "Social Science Research Network",
+          "doi": "10.2139/ssrn.6246347",
+          "is_preprint": true
+        }
+      ],
+      "protagonist": {
+        "name": "佐々木 拓也",
+        "age": 29,
+        "job": "中小企業の営業事務（専門学校卒）",
+        "gender": "male"
+      },
+      "hook_idea": "AIを使えば学歴による仕事の成果差は75%消える？最新研究が明かした『格差の正体』とは。",
+      "notes": "STAGE4スコア4.65でworkカテゴリ最上位（STEP2.5提示の6カテゴリ案からユーザーがSTAGE5で選択、2026-08-22）。kl001が家庭内ロボットだったため、直近エピソードとのサブジャンル連続被りを避ける観点でも本カテゴリを推奨した。単一研究（ランダム化比較実験）によるプレプリント（SSRN）のため、動画内で査読前であることを明示する（CLAUDE.md STAGE2方針）。「生成AIの活用で学歴による生産性格差が縮まる」という定量結果（75%）は数字のインパクト・変革ポテンシャルともに高く、生活実感（学歴コンプレックス・キャリア不安）にも直結しやすいと判断。",
+      "stage4_snapshot": [
+        {
+          "paperId": "5ab6ea64a3a65efde76e0395c14c49b28f7417a8",
+          "overall_score": 4.65,
+          "hook_idea_at_selection": "AIを使えば学歴による仕事の成果差は75%消える？最新研究が明かした『格差の正体』とは。"
+        }
+      ],
+      "slot_type": "legacy",
+      "concern_id": "work_ai",
+      "domain": "life",
+      "genre": "ai",
+      "health": false
     },
     {
-     "title": "Bi-VLA: Vision-Language-Action Model-Based System for Bimanual Robotic Dexterous Manipulations",
-     "authors": [
-      "Koffivi Fidele Gbagbe",
-      "Miguel Altamirano Cabrera",
-      "Ali Alabbas",
-      "Oussama Alyunes",
-      "Artem Lykov"
-     ],
-     "year": 2024,
-     "venue": "IEEE International Conference on Systems, Man and Cybernetics",
-     "doi": "10.1109/SMC54092.2024.10831380",
-     "is_preprint": false
+      "episode_id": "kl003",
+      "status": "published",
+      "title": "針を刺さないBCI：考えるだけでパソコンを操作する未来",
+      "format": "single_paper",
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "references": [
+        {
+          "title": "Chronically Stable, High‐Resolution Micro‐Electrocorticographic Brain‐Computer Interfaces for Real‐Time Motor Decoding",
+          "authors": [
+            "Erda Zhou",
+            "Xiner Wang",
+            "Jizhi Liang",
+            "Yang Liu",
+            "Qinrong Yang"
+          ],
+          "year": 2025,
+          "venue": "Advanced Science",
+          "doi": "10.1002/advs.202506663",
+          "is_preprint": false
+        }
+      ],
+      "protagonist": {
+        "name": "佐藤 健太",
+        "age": 42,
+        "job": "事故により身体麻痺となった元Webデザイナー",
+        "gender": "male"
+      },
+      "hook_idea": "もし脳に針を刺すことなく、頭で考えるだけでパソコンやゲームを操作できるとしたら？",
+      "notes": "STAGE4スコア4.5でmedical_supportカテゴリ最上位（STEP2.5提示の6カテゴリ案からユーザーがSTAGE5で選択、2026-08-24）。kl001=home_robot、kl002=workと続いたため、医療補助技術は未使用カテゴリとしてローテーション上も適切。査読済み（Advanced Science誌）のため信頼性シグナルも強い。BCI（脳-コンピュータインターフェース）で身体麻痺を負った主人公が、機器操作の自由を取り戻すという変革ポテンシャルの高いストーリー。medical_supportカテゴリは在庫が3件のみだったため、本採用で在庫がほぼ枯渇する点に留意（次回/kl-new実行時にSTAGE0で在庫3件未満と判定され、STAGE1が自動実行される見込み）。",
+      "stage4_snapshot": [
+        {
+          "paperId": "6b8b27eb6fae769c6249f85905c91ef5b2f2c3f4",
+          "overall_score": 4.5,
+          "hook_idea_at_selection": "もし脳に針を刺すことなく、頭で考えるだけでパソコンやゲームを操作できるとしたら？"
+        }
+      ],
+      "slot_type": "legacy",
+      "concern_id": null,
+      "domain": "body",
+      "genre": "medical",
+      "health": true
     },
     {
-     "title": "OopsieVerse: A Safety Benchmark with Damage-Aware Simulation for Robot Manipulation",
-     "authors": [
-      "Arnav Balaji",
-      "Arpit Bahety",
-      "Sriniket Ambatipudi",
-      "Daniel Lam",
-      "Junhong Xu"
-     ],
-     "year": 2026,
-     "venue": "arXiv.org",
-     "url": "https://arxiv.org/abs/2606.31993",
-     "doi": "10.48550/arXiv.2606.31993",
-     "is_preprint": true
-    }
-   ],
-   "protagonist": {
-    "name": "田中 美咲",
-    "age": 34,
-    "job": "IT企業マーケティング職（共働き・3歳の娘）",
-    "gender": "female"
-   },
-   "notes": "STAGE4上位20件のうち家庭内ロボットカテゴリが13/20を占め、内容が似通ったVLA基盤モデル論文群だったため、1本を選ぶのではなく4本を組み合わせた潮流ストーリーとして構成する方針に変更（2026-08-20）。単一研究室の主張ではなく複数の独立研究が同時期に別々の家事タスクを攻略している構図で、STAGE2の「複数の独立研究による追試」的信頼性シグナルにも合致する。構成は4部（自己紹介→課題→研究紹介→未来の暮らし）、ナレーターは主人公（女性）が生活者ボイス、研究紹介パートは男性の研究ボイスで分ける新方式。4本中3本は査読前プレプリント（BEHAVIOR Robot Suite・DeMaVLA・OopsieVerse）、Bi-VLAのみ査読済み。「査読」「プレプリント」は専門用語のためナレーションでは使わず開示は概要欄のみとする（2026-08-20方針改訂）。各論文の所属機関・中心研究者を確認しナレーションに明記: BEHAVIOR Robot Suite=スタンフォード大学(Ruohan Zhang氏)、DeMaVLA=美的集団AIRC/同済大学(Jian Zhu氏、プロジェクトリード)、Bi-VLA=Skoltech(Dzmitry Tsetserukou教授)、OopsieVerse=テキサス大学オースティン校(Roberto Martín-Martín教授)。第1話として確定（2026-08-20、旧kl001のRobi Butler単体案を置き換え）。",
-   "stage4_snapshot": [
-    {
-     "paperId": "be24b701b1404254d46a7d8d17e057bfc69bfe71",
-     "overall_score": 4.5,
-     "hook_idea_at_selection": "毎朝のゴミ出しや散らかった服の片付け…もしロボットが全部やってくれたら、あなたの暮らしはどう変わりますか？"
+      "episode_id": "kl004",
+      "status": "published",
+      "title": "超軽量ギア1つで、歩くのがまた楽しみになる",
+      "format": "single_paper",
+      "category": "mobility",
+      "category_label": "モビリティ・身体拡張",
+      "references": [
+        {
+          "title": "Ultra-lightweight robotic hip exoskeleton with anti-phase torque symmetry for enhanced walking efficiency",
+          "authors": [
+            "Bokman Lim",
+            "Byungjune Choi",
+            "Changhyun Roh",
+            "Jewoo Lee",
+            "Yong-Jae Kim"
+          ],
+          "year": 2025,
+          "venue": "Scientific Reports",
+          "doi": "10.1038/s41598-025-95599-2",
+          "is_preprint": false
+        }
+      ],
+      "protagonist": {
+        "name": "佐藤 節子",
+        "age": 72,
+        "job": "無職（元・手芸教室講師）",
+        "gender": "female"
+      },
+      "hook_idea": "「最近、歩くのが億劫になった…」その悩み、重いロボットではなく“超軽いギア”1つで変わるかもしれません。",
+      "notes": "STAGE4スコア4.65でmobilityカテゴリ最上位（STEP2.5提示の6カテゴリ案からユーザーがSTAGE5で選択、2026-08-25）。kl001=home_robot、kl002=work、kl003=medical_supportと続いたため、モビリティは未使用カテゴリとしてローテーション上も適切。査読済み（Scientific Reports誌）のため信頼性シグナルも強い。重厚な介護ロボットではなく「超軽量ギア1つ」という意外性のある軽量化アプローチが、高齢者の歩行効率という生活実感に直結するテーマ。",
+      "stage4_snapshot": [
+        {
+          "paperId": "4fa98df6385b5019f1f6ae135ad338c2fa7f5677",
+          "overall_score": 4.65,
+          "hook_idea_at_selection": "「最近、歩くのが億劫になった…」その悩み、重いロボットではなく“超軽いギア”1つで変わるかもしれません。"
+        }
+      ],
+      "slot_type": "legacy",
+      "concern_id": "bone_muscle",
+      "domain": "body",
+      "genre": "life_tech",
+      "health": true
     },
     {
-     "paperId": "f8f09403a728c09ece3f98779e63a13ed34a19bb",
-     "overall_score": 4.75,
-     "hook_idea_at_selection": "たたんでもたたんでも終わらない「洗濯物の山」、もしロボットが代わりに全部たたんでくれたら人生どう変わる？"
+      "episode_id": "kl005",
+      "status": "published",
+      "title": "週2回、ロボットと遊ぶだけで。認知症の母に戻った笑顔",
+      "format": "single_paper",
+      "category": "aging_care",
+      "category_label": "高齢化・介護・自立支援",
+      "references": [
+        {
+          "title": "Social robot PIO intervention for improving cognitive function and depression in older adults with mild to moderate dementia in day care centers: A randomized controlled trial",
+          "authors": [
+            "J. Lim",
+            "Hye-Kyung Oh"
+          ],
+          "year": 2025,
+          "venue": "PLoS ONE",
+          "doi": "10.1371/journal.pone.0321745",
+          "is_preprint": false
+        }
+      ],
+      "protagonist": {
+        "name": "高橋 裕子",
+        "age": 52,
+        "job": "会社員（認知症の母をデイケアに通わせている）",
+        "gender": "female"
+      },
+      "hook_idea": "週2回ロボットと遊ぶだけで認知機能スコアが大幅改善？デイケアに通う母の未来を変える最新研究とは。",
+      "notes": "STAGE2.5でaging_careカテゴリの候補として2案（A:遊び相手ロボット/PIOのRCT、B:曖昧な言葉を理解する介護ロボットAoECR）を提示し、ユーザーがAを選択（2026-08-26）。kl001〜kl004でaging_care・disaster_safetyの2カテゴリが未使用だったローテーション上の穴を埋める選定。転倒検知系センサー比較（レーダー/サーモ等、スコア4.40）は技術比較に寄りすぎて地味という理由でユーザーが却下し、より感情に直結する孤独・認知症・うつという切り口を優先した。査読済みRCT（PLoS ONE）のため信頼性シグナルも強い。「見守り・監視」ではなく「一緒に楽しむ」relationshipという新しいロボット観が主題。",
+      "stage4_snapshot": [
+        {
+          "paperId": "20613985b6ab45cd692898983d55b1288bbfb363",
+          "overall_score": 4.05,
+          "hook_idea_at_selection": "週2回ロボットと遊ぶだけで認知機能スコアが大幅改善？デイケアに通う親の未来を変える最新研究とは。"
+        }
+      ],
+      "slot_type": "legacy",
+      "concern_id": "dementia",
+      "domain": "disease",
+      "genre": "medical",
+      "health": true
     },
     {
-     "paperId": "33eb7a83a37b47417819474832bd3eccb861d501",
-     "overall_score": 4.75,
-     "hook_idea_at_selection": "「今日の夕飯、ヘルシーなサラダ作っておいて」と話しかけるだけで、ロボットが両手で料理してくれる未来、見てみたくありませんか？"
+      "episode_id": "kl006",
+      "status": "published",
+      "title": "孤立した集落を救うAIドローン：地震で寸断された道の先へ、薬を届ける知恵",
+      "format": "single_paper",
+      "category": "disaster_safety",
+      "category_label": "防災・安全",
+      "references": [
+        {
+          "title": "A Cross-Layered Multi-Drone Coordination for Medical Supply Delivery during Disaster Response Management",
+          "authors": [
+            "Aneesh Calyam",
+            "Subrahmanya Chandra Bhamidipati",
+            "Zack Murry",
+            "Sharan Srinivas"
+          ],
+          "year": 2026,
+          "venue": "arXiv.org",
+          "doi": "10.48550/arXiv.2605.09342",
+          "is_preprint": true
+        }
+      ],
+      "protagonist": {
+        "name": "佐々木 雅人",
+        "age": 42,
+        "job": "地方都市の会社員（持病のある高齢の母が離れた集落で一人暮らし）",
+        "gender": "male"
+      },
+      "hook_idea": "大地震で道路が全滅…絶望の孤立集落に、AIドローンは『誰から』薬を届けるべきでしょうか？",
+      "notes": "STAGE2.5でdisaster_safetyカテゴリの候補としてマルチドローン医薬品配送調整の論文を提示し、ユーザーが選択（2026-08-26）。kl001〜kl005の5エピソードでdisaster_safetyだけが未使用だったローテーション上の穴を埋める選定。プレプリント（arXiv, Sharan Srinivas准教授=Univ. of Missouri、災害物流・オペレーションズリサーチの実績あり研究室）のため、STAGE2信頼性シグナル（著者所属機関の実績）で判断。大地震で道路が寸断された孤立集落に、AIが誰から優先して薬を届けるべきか自律判断する、という変革ポテンシャルの高さを優先した。主人公は持病のある高齢の母と同居する地方都市の会社員、離れて暮らす家族の安否・支援という生活実感に直結する設定。",
+      "stage4_snapshot": [
+        {
+          "paperId": "a0b6cccc4495dbc64f98ab18f8a26e4349fdd093",
+          "overall_score": 3.9,
+          "hook_idea_at_selection": "大地震で道路が全滅…絶望の孤立集落に、AIドローンは『誰から』薬を届けるべきでしょうか？"
+        }
+      ],
+      "slot_type": "legacy",
+      "concern_id": "disaster",
+      "domain": "life",
+      "genre": "life_tech",
+      "health": false
     },
     {
-     "paperId": "e0510d9ffc419054ff523ce2d7afabf145b232a8",
-     "overall_score": 4.5,
-     "hook_idea_at_selection": "家事をロボットに頼みたい…でも、大事なお皿や高級家具を壊されたらどうしよう？と思ったことはありませんか？"
-    }
-   ],
-   "slot_type": "legacy",
-   "concern_id": "housework",
-   "domain": "life",
-   "genre": "life_tech",
-   "health": false
-  },
-  {
-   "episode_id": "kl002",
-   "status": "published",
-   "title": "学歴の壁を消すAI：生成AIが生産性格差を75%縮めた実験の衝撃",
-   "format": "single_paper",
-   "category": "work",
-   "category_label": "働き方の変化",
-   "references": [
-    {
-     "title": "Does Generative AI Narrow Education-Based Productivity Gaps? Evidence from a Randomized Experiment",
-     "authors": [
-      "Guillermo Cruces",
-      "Diego Fernández Meijide",
-      "Sebastian Galiani",
-      "Ramiro Gálvez",
-      "María Lombardi"
-     ],
-     "year": 2026,
-     "venue": "Social Science Research Network",
-     "doi": "10.2139/ssrn.6246347",
-     "is_preprint": true
-    }
-   ],
-   "protagonist": {
-    "name": "佐々木 拓也",
-    "age": 29,
-    "job": "中小企業の営業事務（専門学校卒）",
-    "gender": "male"
-   },
-   "hook_idea": "AIを使えば学歴による仕事の成果差は75%消える？最新研究が明かした『格差の正体』とは。",
-   "notes": "STAGE4スコア4.65でworkカテゴリ最上位（STEP2.5提示の6カテゴリ案からユーザーがSTAGE5で選択、2026-08-22）。kl001が家庭内ロボットだったため、直近エピソードとのサブジャンル連続被りを避ける観点でも本カテゴリを推奨した。単一研究（ランダム化比較実験）によるプレプリント（SSRN）のため、動画内で査読前であることを明示する（CLAUDE.md STAGE2方針）。「生成AIの活用で学歴による生産性格差が縮まる」という定量結果（75%）は数字のインパクト・変革ポテンシャルともに高く、生活実感（学歴コンプレックス・キャリア不安）にも直結しやすいと判断。",
-   "stage4_snapshot": [
-    {
-     "paperId": "5ab6ea64a3a65efde76e0395c14c49b28f7417a8",
-     "overall_score": 4.65,
-     "hook_idea_at_selection": "AIを使えば学歴による仕事の成果差は75%消える？最新研究が明かした『格差の正体』とは。"
-    }
-   ],
-   "slot_type": "legacy",
-   "concern_id": "work_ai",
-   "domain": "life",
-   "genre": "ai",
-   "health": false
-  },
-  {
-   "episode_id": "kl003",
-   "status": "published",
-   "title": "針を刺さないBCI：考えるだけでパソコンを操作する未来",
-   "format": "single_paper",
-   "category": "medical_support",
-   "category_label": "医療補助技術",
-   "references": [
-    {
-     "title": "Chronically Stable, High‐Resolution Micro‐Electrocorticographic Brain‐Computer Interfaces for Real‐Time Motor Decoding",
-     "authors": [
-      "Erda Zhou",
-      "Xiner Wang",
-      "Jizhi Liang",
-      "Yang Liu",
-      "Qinrong Yang"
-     ],
-     "year": 2025,
-     "venue": "Advanced Science",
-     "doi": "10.1002/advs.202506663",
-     "is_preprint": false
-    }
-   ],
-   "protagonist": {
-    "name": "佐藤 健太",
-    "age": 42,
-    "job": "事故により身体麻痺となった元Webデザイナー",
-    "gender": "male"
-   },
-   "hook_idea": "もし脳に針を刺すことなく、頭で考えるだけでパソコンやゲームを操作できるとしたら？",
-   "notes": "STAGE4スコア4.5でmedical_supportカテゴリ最上位（STEP2.5提示の6カテゴリ案からユーザーがSTAGE5で選択、2026-08-24）。kl001=home_robot、kl002=workと続いたため、医療補助技術は未使用カテゴリとしてローテーション上も適切。査読済み（Advanced Science誌）のため信頼性シグナルも強い。BCI（脳-コンピュータインターフェース）で身体麻痺を負った主人公が、機器操作の自由を取り戻すという変革ポテンシャルの高いストーリー。medical_supportカテゴリは在庫が3件のみだったため、本採用で在庫がほぼ枯渇する点に留意（次回/kl-new実行時にSTAGE0で在庫3件未満と判定され、STAGE1が自動実行される見込み）。",
-   "stage4_snapshot": [
-    {
-     "paperId": "6b8b27eb6fae769c6249f85905c91ef5b2f2c3f4",
-     "overall_score": 4.5,
-     "hook_idea_at_selection": "もし脳に針を刺すことなく、頭で考えるだけでパソコンやゲームを操作できるとしたら？"
-    }
-   ],
-   "slot_type": "legacy",
-   "concern_id": null,
-   "domain": "body",
-   "genre": "medical",
-   "health": true
-  },
-  {
-   "episode_id": "kl004",
-   "status": "published",
-   "title": "超軽量ギア1つで、歩くのがまた楽しみになる",
-   "format": "single_paper",
-   "category": "mobility",
-   "category_label": "モビリティ・身体拡張",
-   "references": [
-    {
-     "title": "Ultra-lightweight robotic hip exoskeleton with anti-phase torque symmetry for enhanced walking efficiency",
-     "authors": [
-      "Bokman Lim",
-      "Byungjune Choi",
-      "Changhyun Roh",
-      "Jewoo Lee",
-      "Yong-Jae Kim"
-     ],
-     "year": 2025,
-     "venue": "Scientific Reports",
-     "doi": "10.1038/s41598-025-95599-2",
-     "is_preprint": false
-    }
-   ],
-   "protagonist": {
-    "name": "佐藤 節子",
-    "age": 72,
-    "job": "無職（元・手芸教室講師）",
-    "gender": "female"
-   },
-   "hook_idea": "「最近、歩くのが億劫になった…」その悩み、重いロボットではなく“超軽いギア”1つで変わるかもしれません。",
-   "notes": "STAGE4スコア4.65でmobilityカテゴリ最上位（STEP2.5提示の6カテゴリ案からユーザーがSTAGE5で選択、2026-08-25）。kl001=home_robot、kl002=work、kl003=medical_supportと続いたため、モビリティは未使用カテゴリとしてローテーション上も適切。査読済み（Scientific Reports誌）のため信頼性シグナルも強い。重厚な介護ロボットではなく「超軽量ギア1つ」という意外性のある軽量化アプローチが、高齢者の歩行効率という生活実感に直結するテーマ。",
-   "stage4_snapshot": [
-    {
-     "paperId": "4fa98df6385b5019f1f6ae135ad338c2fa7f5677",
-     "overall_score": 4.65,
-     "hook_idea_at_selection": "「最近、歩くのが億劫になった…」その悩み、重いロボットではなく“超軽いギア”1つで変わるかもしれません。"
-    }
-   ],
-   "slot_type": "legacy",
-   "concern_id": "bone_muscle",
-   "domain": "body",
-   "genre": "life_tech",
-   "health": true
-  },
-  {
-   "episode_id": "kl005",
-   "status": "published",
-   "title": "週2回、ロボットと遊ぶだけで。認知症の母に戻った笑顔",
-   "format": "single_paper",
-   "category": "aging_care",
-   "category_label": "高齢化・介護・自立支援",
-   "references": [
-    {
-     "title": "Social robot PIO intervention for improving cognitive function and depression in older adults with mild to moderate dementia in day care centers: A randomized controlled trial",
-     "authors": [
-      "J. Lim",
-      "Hye-Kyung Oh"
-     ],
-     "year": 2025,
-     "venue": "PLoS ONE",
-     "doi": "10.1371/journal.pone.0321745",
-     "is_preprint": false
-    }
-   ],
-   "protagonist": {
-    "name": "高橋 裕子",
-    "age": 52,
-    "job": "会社員（認知症の母をデイケアに通わせている）",
-    "gender": "female"
-   },
-   "hook_idea": "週2回ロボットと遊ぶだけで認知機能スコアが大幅改善？デイケアに通う母の未来を変える最新研究とは。",
-   "notes": "STAGE2.5でaging_careカテゴリの候補として2案（A:遊び相手ロボット/PIOのRCT、B:曖昧な言葉を理解する介護ロボットAoECR）を提示し、ユーザーがAを選択（2026-08-26）。kl001〜kl004でaging_care・disaster_safetyの2カテゴリが未使用だったローテーション上の穴を埋める選定。転倒検知系センサー比較（レーダー/サーモ等、スコア4.40）は技術比較に寄りすぎて地味という理由でユーザーが却下し、より感情に直結する孤独・認知症・うつという切り口を優先した。査読済みRCT（PLoS ONE）のため信頼性シグナルも強い。「見守り・監視」ではなく「一緒に楽しむ」relationshipという新しいロボット観が主題。",
-   "stage4_snapshot": [
-    {
-     "paperId": "20613985b6ab45cd692898983d55b1288bbfb363",
-     "overall_score": 4.05,
-     "hook_idea_at_selection": "週2回ロボットと遊ぶだけで認知機能スコアが大幅改善？デイケアに通う親の未来を変える最新研究とは。"
-    }
-   ],
-   "slot_type": "legacy",
-   "concern_id": "dementia",
-   "domain": "disease",
-   "genre": "medical",
-   "health": true
-  },
-  {
-   "episode_id": "kl006",
-   "status": "published",
-   "title": "孤立した集落を救うAIドローン：地震で寸断された道の先へ、薬を届ける知恵",
-   "format": "single_paper",
-   "category": "disaster_safety",
-   "category_label": "防災・安全",
-   "references": [
-    {
-     "title": "A Cross-Layered Multi-Drone Coordination for Medical Supply Delivery during Disaster Response Management",
-     "authors": [
-      "Aneesh Calyam",
-      "Subrahmanya Chandra Bhamidipati",
-      "Zack Murry",
-      "Sharan Srinivas"
-     ],
-     "year": 2026,
-     "venue": "arXiv.org",
-     "doi": "10.48550/arXiv.2605.09342",
-     "is_preprint": true
-    }
-   ],
-   "protagonist": {
-    "name": "佐々木 雅人",
-    "age": 42,
-    "job": "地方都市の会社員（持病のある高齢の母が離れた集落で一人暮らし）",
-    "gender": "male"
-   },
-   "hook_idea": "大地震で道路が全滅…絶望の孤立集落に、AIドローンは『誰から』薬を届けるべきでしょうか？",
-   "notes": "STAGE2.5でdisaster_safetyカテゴリの候補としてマルチドローン医薬品配送調整の論文を提示し、ユーザーが選択（2026-08-26）。kl001〜kl005の5エピソードでdisaster_safetyだけが未使用だったローテーション上の穴を埋める選定。プレプリント（arXiv, Sharan Srinivas准教授=Univ. of Missouri、災害物流・オペレーションズリサーチの実績あり研究室）のため、STAGE2信頼性シグナル（著者所属機関の実績）で判断。大地震で道路が寸断された孤立集落に、AIが誰から優先して薬を届けるべきか自律判断する、という変革ポテンシャルの高さを優先した。主人公は持病のある高齢の母と同居する地方都市の会社員、離れて暮らす家族の安否・支援という生活実感に直結する設定。",
-   "stage4_snapshot": [
-    {
-     "paperId": "a0b6cccc4495dbc64f98ab18f8a26e4349fdd093",
-     "overall_score": 3.9,
-     "hook_idea_at_selection": "大地震で道路が全滅…絶望の孤立集落に、AIドローンは『誰から』薬を届けるべきでしょうか？"
-    }
-   ],
-   "slot_type": "legacy",
-   "concern_id": "disaster",
-   "domain": "life",
-   "genre": "life_tech",
-   "health": false
-  },
-  {
-   "episode_id": "kl007",
-   "status": "published",
-   "title": "声を取り戻すBCI：たった1年で「実用レベル」に進化した音声神経義肢",
-   "format": "multi_paper",
-   "category": "medical_support",
-   "category_label": "医療補助技術",
-   "references": [
-    {
-     "title": "A high-performance speech neuroprosthesis",
-     "authors": [
-      "Francis R. Willett",
-      "Erin M. Kunz",
-      "Chaofei Fan",
-      "Donald T. Avansino",
-      "G. Wilson"
-     ],
-     "year": 2023,
-     "venue": "Nature",
-     "doi": "10.1038/s41586-023-06377-x",
-     "is_preprint": false,
-     "lead_researcher": "Francis R. Willett（スタンフォード大学、BrainGate研究コンソーシアム）"
+      "episode_id": "kl007",
+      "status": "published",
+      "title": "声を取り戻すBCI：たった1年で「実用レベル」に進化した音声神経義肢",
+      "format": "multi_paper",
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "references": [
+        {
+          "title": "A high-performance speech neuroprosthesis",
+          "authors": [
+            "Francis R. Willett",
+            "Erin M. Kunz",
+            "Chaofei Fan",
+            "Donald T. Avansino",
+            "G. Wilson"
+          ],
+          "year": 2023,
+          "venue": "Nature",
+          "doi": "10.1038/s41586-023-06377-x",
+          "is_preprint": false,
+          "lead_researcher": "Francis R. Willett（スタンフォード大学、BrainGate研究コンソーシアム）"
+        },
+        {
+          "title": "An Accurate and Rapidly Calibrating Speech Neuroprosthesis",
+          "authors": [
+            "N. Card",
+            "M. Wairagkar",
+            "Carrina Iacobacci",
+            "Xianda Hou",
+            "Tyler Singer-Clark"
+          ],
+          "year": 2024,
+          "venue": "New England Journal of Medicine",
+          "doi": "10.1056/NEJMoa2314132",
+          "is_preprint": false,
+          "lead_researcher": "Nicholas Card（UCデービス、BrainGate研究コンソーシアム）"
+        }
+      ],
+      "protagonist": {
+        "name": "中村 由美子",
+        "age": 52,
+        "job": "元小学校教師（ALSにより発話が困難に）",
+        "gender": "female"
+      },
+      "hook_idea": "もし明日、突然声を失ったら——大切な人に『ありがとう』とどう伝えますか？脳の信号を読み取るAIが、わずか1年で「日常で使える正確さ」まで進化しています。",
+      "notes": "STAGE4スコア4.75でmedical_supportカテゴリ最上位（2026-08-28〜29に実施したtransformation_score採点ロジック改修後の再選定で確定）。選定経緯: kl001〜006一巡後、topics_shortlist.jsonの上位候補が「査読済みだが地味な改善」（転倒検知精度・エクソスケルトン効率改善等）に偏っているとユーザー指摘があり、query_vocabulary.jsonに野心的クエリを追加してSTAGE1〜4をカテゴリ横断で再実行した。さらに別セッションでtransformation_scoreの採点自体に「現在の市販品との比較なしに満点をつけてしまう」バグが発覚（例: home_robotの遠隔操作ロボットが、スマホでの遠隔操作は既にロボット掃除機で一般的にも関わらず満点評価）。kl_paper_interest_score.pyのtransformation_score判定にGoogle Search groundingを追加し「市販品と比較して何が本当に新しいか」を明記させる改修を行った上で再採点し、本エピソードを含む結果を確定した（詳細はCLAUDE.md STAGE4節・HANDOFF_stage4_scoring.md参照）。本エピソードは改修後も最高スコア（4.75）を維持しており、既存の視線入力・スイッチ式意思伝達装置（毎分5〜10語）との比較でも「脳信号から直接、毎分32〜62語を97.5%の正確さで復元」という違いが明確なため、真に変革的と判断。2本の論文はいずれも同じBrainGate研究コンソーシアム（Stanford/UC Davis）による音声BCI研究で、2023年のNature論文（毎分62語の音声デコード実証。ただし12.5万語語彙での単語誤り率23.8%）から2024年のNEJM論文（30分のキャリブレーションで正確さ97.5%、毎分約32語で248時間超の実会話利用）へと『わずか1年での進化』を遂げた点をストーリーの軸にする。進化したのは速度ではなく“正確さと実用性”である点に注意（2024年の毎分32語は2023年の毎分62語より遅い）。kl003（非侵襲的ECoG BCIでのカーソル操作）ともテーマがBCIで近いが、本エピソードは『声を取り戻す』という全く異なる能力・感情的インパクトを扱うため差別化は可能と判断。",
+      "stage4_snapshot": [
+        {
+          "paperId": "f95f33b05683dd8172afa9d08e71e924bed9c5f3",
+          "overall_score": 4.75,
+          "score_breakdown": {
+            "transformation_score": 5,
+            "life_relevance_score": 4,
+            "surprise_score": 5,
+            "persona_fit_score": 5
+          },
+          "hook_idea_at_selection": "もし突然声を失ったら…あなたは1分間にどれだけの言葉を家族に届けられますか？"
+        },
+        {
+          "paperId": "cf30ed6b05da4ce9cd70550a9532a2cb3ad6db49",
+          "overall_score": 4.75,
+          "score_breakdown": {
+            "transformation_score": 5,
+            "life_relevance_score": 4,
+            "surprise_score": 5,
+            "persona_fit_score": 5
+          },
+          "hook_idea_at_selection": "もし明日、大切な人の『声』が失われたら……脳の信号をAIで解読し、わずか1時間半の学習で元の声を取り戻す最新科学とは？"
+        }
+      ],
+      "slot_type": "legacy",
+      "concern_id": null,
+      "domain": "body",
+      "genre": "medical",
+      "health": true
     },
     {
-     "title": "An Accurate and Rapidly Calibrating Speech Neuroprosthesis",
-     "authors": [
-      "N. Card",
-      "M. Wairagkar",
-      "Carrina Iacobacci",
-      "Xianda Hou",
-      "Tyler Singer-Clark"
-     ],
-     "year": 2024,
-     "venue": "New England Journal of Medicine",
-     "doi": "10.1056/NEJMoa2314132",
-     "is_preprint": false,
-     "lead_researcher": "Nicholas Card（UCデービス、BrainGate研究コンソーシアム）"
-    }
-   ],
-   "protagonist": {
-    "name": "中村 由美子",
-    "age": 52,
-    "job": "元小学校教師（ALSにより発話が困難に）",
-    "gender": "female"
-   },
-   "hook_idea": "もし明日、突然声を失ったら——大切な人に『ありがとう』とどう伝えますか？脳の信号を読み取るAIが、わずか1年で「日常で使える正確さ」まで進化しています。",
-   "notes": "STAGE4スコア4.75でmedical_supportカテゴリ最上位（2026-08-28〜29に実施したtransformation_score採点ロジック改修後の再選定で確定）。選定経緯: kl001〜006一巡後、topics_shortlist.jsonの上位候補が「査読済みだが地味な改善」（転倒検知精度・エクソスケルトン効率改善等）に偏っているとユーザー指摘があり、query_vocabulary.jsonに野心的クエリを追加してSTAGE1〜4をカテゴリ横断で再実行した。さらに別セッションでtransformation_scoreの採点自体に「現在の市販品との比較なしに満点をつけてしまう」バグが発覚（例: home_robotの遠隔操作ロボットが、スマホでの遠隔操作は既にロボット掃除機で一般的にも関わらず満点評価）。kl_paper_interest_score.pyのtransformation_score判定にGoogle Search groundingを追加し「市販品と比較して何が本当に新しいか」を明記させる改修を行った上で再採点し、本エピソードを含む結果を確定した（詳細はCLAUDE.md STAGE4節・HANDOFF_stage4_scoring.md参照）。本エピソードは改修後も最高スコア（4.75）を維持しており、既存の視線入力・スイッチ式意思伝達装置（毎分5〜10語）との比較でも「脳信号から直接、毎分32〜62語を97.5%の正確さで復元」という違いが明確なため、真に変革的と判断。2本の論文はいずれも同じBrainGate研究コンソーシアム（Stanford/UC Davis）による音声BCI研究で、2023年のNature論文（毎分62語の音声デコード実証。ただし12.5万語語彙での単語誤り率23.8%）から2024年のNEJM論文（30分のキャリブレーションで正確さ97.5%、毎分約32語で248時間超の実会話利用）へと『わずか1年での進化』を遂げた点をストーリーの軸にする。進化したのは速度ではなく“正確さと実用性”である点に注意（2024年の毎分32語は2023年の毎分62語より遅い）。kl003（非侵襲的ECoG BCIでのカーソル操作）ともテーマがBCIで近いが、本エピソードは『声を取り戻す』という全く異なる能力・感情的インパクトを扱うため差別化は可能と判断。",
-   "stage4_snapshot": [
-    {
-     "paperId": "f95f33b05683dd8172afa9d08e71e924bed9c5f3",
-     "overall_score": 4.75,
-     "score_breakdown": {
-      "transformation_score": 5,
-      "life_relevance_score": 4,
-      "surprise_score": 5,
-      "persona_fit_score": 5
-     },
-     "hook_idea_at_selection": "もし突然声を失ったら…あなたは1分間にどれだけの言葉を家族に届けられますか？"
+      "episode_id": "kl008",
+      "status": "published",
+      "title": "乱雑なキッチンを片付けるロボットの目",
+      "format": "single_paper",
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "references": [
+        {
+          "title": "Kitchen robotic manipulation utilizing foundation models",
+          "authors": [
+            "Myung-Hwan Jeon",
+            "Sankalp Yamsani",
+            "Joohyung Kim"
+          ],
+          "year": 2026,
+          "venue": "Intelligent Service Robotics",
+          "doi": "10.1007/s11370-026-00749-8",
+          "is_preprint": false
+        }
+      ],
+      "protagonist": {
+        "name": "佐藤 裕樹",
+        "age": 38,
+        "job": "IT企業勤務（共働き・2児の父）",
+        "gender": "male"
+      },
+      "hook_idea": "「疲れて帰った夜、シンクに溜まった食器を見てぐったりしていませんか？」",
+      "notes": "STAGE4スコア4.75でhome_robotカテゴリ最上位（2026-08-29改訂版のtransformation_score採点＝市場に既にある製品との比較を必須化した後の再スコア）。同カテゴリ最高スコアだった「Adaptive Vision-Language-Action Models for Generalizable Robotic Manipulation」（AIRC 2026）はSTAGE2で著者が短期間に無関係な複数分野の論文を量産している信頼性懸念（flag）が付いていたため除外し、次点のこちらを採用した。kl001以来home_robotカテゴリは未使用（kl002〜007はwork/medical_support/mobility/aging_care/disaster_safety/medical_supportの順）だったためローテーション上も適切。市販の食洗機（手動セット必須）・家庭用ロボット（床掃除止まり）との比較で「追加学習なしで乱雑なシンクから食器を認識し食洗機へ移送」という本質的な新規性を明確化した上でtransformation_score=5と判定されている（shortlistのtransformation_comparison参照）。実機デモで89.12%の精度（20シーンのキッチンベンチマーク、ADI指標）。",
+      "stage4_snapshot": [
+        {
+          "paperId": "8a0f2c4476123e3375a12013d6fc88174b2ef59a",
+          "overall_score": 4.75,
+          "score_breakdown": {
+            "transformation_score": 5,
+            "life_relevance_score": 5,
+            "surprise_score": 4,
+            "persona_fit_score": 5
+          },
+          "hook_idea_at_selection": "「疲れて帰った夜、シンクに溜まった食器を見てぐったりしていませんか？」"
+        }
+      ],
+      "slot_type": "legacy",
+      "concern_id": "housework",
+      "domain": "life",
+      "genre": "life_tech",
+      "health": false
     },
     {
-     "paperId": "cf30ed6b05da4ce9cd70550a9532a2cb3ad6db49",
-     "overall_score": 4.75,
-     "score_breakdown": {
-      "transformation_score": 5,
-      "life_relevance_score": 4,
-      "surprise_score": 5,
-      "persona_fit_score": 5
-     },
-     "hook_idea_at_selection": "もし明日、大切な人の『声』が失われたら……脳の信号をAIで解読し、わずか1時間半の学習で元の声を取り戻す最新科学とは？"
-    }
-   ],
-   "slot_type": "legacy",
-   "concern_id": null,
-   "domain": "body",
-   "genre": "medical",
-   "health": true
-  },
-  {
-   "episode_id": "kl008",
-   "status": "published",
-   "title": "乱雑なキッチンを片付けるロボットの目",
-   "format": "single_paper",
-   "category": "home_robot",
-   "category_label": "家庭内ロボット・家事自動化",
-   "references": [
-    {
-     "title": "Kitchen robotic manipulation utilizing foundation models",
-     "authors": [
-      "Myung-Hwan Jeon",
-      "Sankalp Yamsani",
-      "Joohyung Kim"
-     ],
-     "year": 2026,
-     "venue": "Intelligent Service Robotics",
-     "doi": "10.1007/s11370-026-00749-8",
-     "is_preprint": false
-    }
-   ],
-   "protagonist": {
-    "name": "佐藤 裕樹",
-    "age": 38,
-    "job": "IT企業勤務（共働き・2児の父）",
-    "gender": "male"
-   },
-   "hook_idea": "「疲れて帰った夜、シンクに溜まった食器を見てぐったりしていませんか？」",
-   "notes": "STAGE4スコア4.75でhome_robotカテゴリ最上位（2026-08-29改訂版のtransformation_score採点＝市場に既にある製品との比較を必須化した後の再スコア）。同カテゴリ最高スコアだった「Adaptive Vision-Language-Action Models for Generalizable Robotic Manipulation」（AIRC 2026）はSTAGE2で著者が短期間に無関係な複数分野の論文を量産している信頼性懸念（flag）が付いていたため除外し、次点のこちらを採用した。kl001以来home_robotカテゴリは未使用（kl002〜007はwork/medical_support/mobility/aging_care/disaster_safety/medical_supportの順）だったためローテーション上も適切。市販の食洗機（手動セット必須）・家庭用ロボット（床掃除止まり）との比較で「追加学習なしで乱雑なシンクから食器を認識し食洗機へ移送」という本質的な新規性を明確化した上でtransformation_score=5と判定されている（shortlistのtransformation_comparison参照）。実機デモで89.12%の精度（20シーンのキッチンベンチマーク、ADI指標）。",
-   "stage4_snapshot": [
-    {
-     "paperId": "8a0f2c4476123e3375a12013d6fc88174b2ef59a",
-     "overall_score": 4.75,
-     "score_breakdown": {
-      "transformation_score": 5,
-      "life_relevance_score": 5,
-      "surprise_score": 4,
-      "persona_fit_score": 5
-     },
-     "hook_idea_at_selection": "「疲れて帰った夜、シンクに溜まった食器を見てぐったりしていませんか？」"
-    }
-   ],
-   "slot_type": "legacy",
-   "concern_id": "housework",
-   "domain": "life",
-   "genre": "life_tech",
-   "health": false
-  },
-  {
-   "episode_id": "kl009",
-   "status": "published",
-   "title": "自分の意思で曲がる義足：骨と神経に直接つながるプロテーゼが「自分の身体」を取り戻す",
-   "format": "single_paper",
-   "category": "mobility",
-   "category_label": "モビリティ・身体拡張",
-   "references": [
-    {
-     "title": "Design and evaluation of a bone-anchored, neurally-controlled knee prosthesis",
-     "authors": [
-      "John A. Mccullough",
-      "Daniel Levine",
-      "Tony Shu",
-      "R. Brånemark",
-      "Matthew J Carty"
-     ],
-     "year": 2026,
-     "venue": "Journal of NeuroEngineering and Rehabilitation",
-     "doi": "10.1186/s12984-026-01921-y",
-     "is_preprint": false,
-     "lead_researcher": "Hugh M. Herr"
-    }
-   ],
-   "protagonist": {
-    "name": "高橋 健太",
-    "age": 42,
-    "job": "建築設計士",
-    "gender": "male"
-   },
-   "hook_idea": "自分の意思で曲がる足――もし義足が『機械』ではなく『自分の身体』になったら、暮らしはどう変わるでしょうか？",
-   "notes": "STAGE4スコア4.5でmobilityカテゴリ2位タイ（STEP2.5提示の6カテゴリ案からユーザーがSTAGE5で選択、2026-08-31）。直近2話（kl007=medical_support、kl008=home_robot）とは異なるカテゴリで、kl004（モビリティ、外付けの軽量アシストギア）とも切り口が対照的——kl004は「着脱式・外部から補助する道具」だったのに対し、本作は骨に直接固定（osseointegration）し残存筋の神経信号で制御する『身体と一体化するプロテーゼ』で、企画書の核心である『変革ポテンシャル』をより強く押し出せる。著者にR. Brånemark（骨固定式プロテーゼ・骨統合技術の第一人者、MIT Media Lab系研究の実績で著名）を含み、medRxivのプレプリントではあるものの著者所属・技術的検証の観点で信頼性シグナルは強いと判断（STAGE2の査読済み限定ルール撤回方針に基づく）。査読前である旨は概要欄で開示し、ナレーションでは『まだ研究段階』等の一般的な表現でヘッジする。 【2026-08-31追記】WebFetchで本文を直接確認したところ、medRxivプレプリント（2026年1月投稿）はその後2026年に本誌（Journal of NeuroEngineering and Rehabilitation、DOI 10.1186/s12984-026-01921-y＝正式出版のDOI）に査読を経て掲載されたことが判明。venue/is_preprintを訂正し、査読前開示は不要と判断。実施機関: MIT K. Lisa Yang Center for Bionics / MIT Media Lab（Hugh M. Herr研究室）、Integrum AB（スウェーデン、骨統合インプラント）、Brigham and Women's Hospital（外科）。単一被験者（60代男性、片側大腿切断、AMI＋eOPRA骨統合インプラント術後3年）のケーススタディ。定量結果: 歩行対称性指数0.93（神経制御）vs 0.59（従来のマイクロプロセッサ膝、Ottobock C-Leg）、階段昇降で従来機では不可能だった自然な『交互step-over-step』歩行を実現、静止立位での荷重対称性0.91 vs 0.77、身体所有感（embodiment）5項目すべてで有意に向上、本人談『自分の脚のように感じた』。限界: 単一被験者ケーススタディであることは概要欄で正直に開示する。",
-   "stage4_snapshot": [
-    {
-     "paperId": "c7f47212ef79198ec3e10c31fba87756d9a8d229",
-     "overall_score": 4.5,
-     "hook_idea_at_selection": "自分の意思で曲がる足――もし義足が『機械』ではなく『自分の身体』になったら、暮らしはどう変わるでしょうか？"
-    }
-   ],
-   "slot_type": "legacy",
-   "concern_id": null,
-   "domain": "body",
-   "genre": "medical",
-   "health": true
-  },
-  {
-   "episode_id": "kl010",
-   "status": "published",
-   "title": "坂道が怖くなくなる服：着るだけで歩行の代謝コストを16%減らすソフト外骨格",
-   "format": "single_paper",
-   "category": "mobility",
-   "category_label": "モビリティ・身体拡張",
-   "references": [
-    {
-     "title": "A soft hip exoskeleton biomimetic assistance method incorporating dual-pretension and biomechanics-based force modeling",
-     "authors": [
-      "Lei Sun",
-      "Wang Lu",
-      "Wei Wang",
-      "Hao Wang",
-      "Minmin Xue",
-      "Xinyi Zhang"
-     ],
-     "year": 2026,
-     "venue": "Medical & Biological Engineering & Computing",
-     "doi": "10.1007/s11517-025-03508-6",
-     "is_preprint": false,
-     "institution": "Tianjin University of Technology（中国）、983 Hospital of Joint Logistics Support Force, PLA（中国）の共同研究"
-    }
-   ],
-   "protagonist": {
-    "name": "高橋 茂",
-    "age": 67,
-    "job": "坂道の多い地域に住む元公務員（趣味は散歩）",
-    "gender": "male"
-   },
-   "hook_idea": "坂道や長距離の歩行、最近おっくうになっていませんか？もし『着るだけで歩行エネルギーを16％減らせる服』があったら、あなたの外出はどう変わるでしょうか？",
-   "notes": "STAGE4スコア4.4でmobilityカテゴリ上位（STEP2.5提示の6カテゴリ案から、当初③防災・安全（救助犬の嗅覚模倣ロボット）を検討したが、WebFetchで実際のアブストラクトを確認したところ「one of the first steps」という初期段階の概念実証で定量結果が皆無だったため、ユーザー判断で⑤モビリティに変更、2026-08-31）。kl004（外付け軽量アシストギア）・kl009（骨固定義足）に続き3回連続のモビリティカテゴリとなる点はSTEP2.5で明示したが、ユーザーが承知の上で選択。kl004・kl009とは異なる「ソフト外骨格（布製・柔軟構造）」という切り口で、査読済み論文（Medical & Biological Engineering & Computing、Springer）かつ実際に6名の被験者実験で3km/h歩行時16.4%・4度坂道14.1%の代謝コスト削減という具体的数値を持つ点が信頼性シグナルとして強い。WebFetch+Europe PMC APIで実際のアブストラクト全文を確認済み。",
-   "stage4_snapshot": [
-    {
-     "paperId": "c3bd8165be00bbc373e5ee309317247ec44f5414",
-     "overall_score": 4.4,
-     "hook_idea_at_selection": "坂道や長距離の歩行、最近おっくうになっていませんか？もし『着るだけで歩行エネルギーを16％減らせる服』があったら、あなたの外出はどう変わるでしょうか？"
-    }
-   ],
-   "slot_type": "legacy",
-   "concern_id": "bone_muscle",
-   "domain": "body",
-   "genre": "life_tech",
-   "health": true
-  },
-  {
-   "episode_id": "kl011",
-   "status": "published",
-   "title": "「片付けて」と言うだけで：見たことのない物でも掴んで片付けるロボットアームの衝撃",
-   "format": "single_paper",
-   "category": "home_robot",
-   "category_label": "家庭内ロボット・家事自動化",
-   "references": [
-    {
-     "title": "Adaptive Vision-Language-Action Models for Generalizable Robotic Manipulation in Unstructured Environments",
-     "authors": [
-      "Saher Elsayed"
-     ],
-     "year": 2026,
-     "venue": "2026 7th International Conference on Artificial Intelligence, Robotics, and Control (AIRC)",
-     "doi": "10.1109/AIRC69745.2026.11631388",
-     "is_preprint": false
-    }
-   ],
-   "protagonist": {
-    "name": "佐藤 美咲",
-    "age": 34,
-    "job": "IT企業勤務（共働き・2児の母）",
-    "gender": "female"
-   },
-   "hook_idea": "「ルンバを動かすために、まず床のおもちゃを片付ける」…そんな不毛な家事、そろそろロボットに代わってもらいませんか？",
-   "notes": "STAGE0: 6カテゴリとも在庫十分（aging_care17/disaster_safety38/home_robot30/medical_support145/mobility30/work79件）のためSTAGE1新規収集は全カテゴリスキップし、既存topics_shortlist.jsonから選定。STAGE2.5でカテゴリごとに1案ずつ提示した中からユーザーがhome_robot案を選択（2026-09-01）。mobilityはkl009・kl010で2回連続使用済みのため今回は選択肢から除外を推奨し、採用しなかった。採用論文はAIRC 2026（IEEE、査読済み・非プレプリント）の単著論文。transformation_comparison: 現在の市販ロボット掃除機は床の吸引・障害物回避にとどまるが、本研究は未知の物体であっても言葉の指示通り自律で「掴んで片付ける」汎用アーム制御を15Hzで実現した点が決定的に新しい（STAGE4のtransformation_score判定時に市販品比較済み、shortlist記載の通り）。著者Saher ElsayedはSemantic Scholar APIが終始429（レート制限）で詳細取得不可だったため、WebSearchでResearchGateプロフィールを確認し単著・ペンシルベニア大学電気システム工学科の修士課程学生と判明（lead_researcher/institutionはSTEP2のepisode JSON生成時にnarrationでは使わず所属機関名のみimage_prompt等に反映する）。",
-   "stage4_snapshot": [
-    {
-     "paperId": "52bb8dea9b699ff5c5d8c76046fe5226d8e4df93",
-     "overall_score": 4.75,
-     "score_breakdown": {
-      "transformation_score": 5,
-      "life_relevance_score": 5,
-      "surprise_score": 4,
-      "persona_fit_score": 5
-     },
-     "hook_idea_at_selection": "「ルンバを動かすために、まず床のおもちゃを片付ける」…そんな不毛な家事、そろそろロボットに代わってもらいませんか？"
-    }
-   ],
-   "slot_type": "legacy",
-   "concern_id": "housework",
-   "domain": "life",
-   "genre": "life_tech",
-   "health": false
-  },
-  {
-   "episode_id": "kl012",
-   "status": "published",
-   "title": "AIエージェントと『チームで』働くと、成果は50%伸びる——ただし丸投げには落とし穴も",
-   "format": "single_paper",
-   "category": "work",
-   "category_label": "働き方の変化",
-   "references": [
-    {
-     "title": "Collaborating with AI Agents: Field Experiments on Teamwork, Productivity, and Performance",
-     "authors": [
-      "Harang Ju",
-      "Sinan Aral"
-     ],
-     "year": 2025,
-     "venue": "arXiv.org",
-     "url": "https://arxiv.org/abs/2503.18238",
-     "doi": "10.48550/arXiv.2503.18238",
-     "is_preprint": true,
-     "lead_researcher": "Sinan Aral（MIT Sloan School of Management、計算社会科学・AI経済学の第一人者）"
-    }
-   ],
-   "protagonist": {
-    "name": "佐藤 健太",
-    "age": 34,
-    "job": "Web広告代理店のマーケティングディレクター",
-    "gender": "male"
-   },
-   "hook_idea": "チャットの気配りをやめてAIに仕事丸投げしたら、成果が50%上がった？最新大規模実験が明かすAIチームワークのリアルと『同じような広告ばかりになる』落とし穴とは。",
-   "notes": "STAGE0: 6カテゴリとも在庫十分のためSTAGE1新規収集は全カテゴリスキップ。STAGE2.5でカテゴリごとに1案ずつ提示（work/aging_care/medical_support/disaster_safety/mobility/home_robot）した中からユーザーがwork案を選択（2026-09-01）。workはkl002（2026-08、学歴格差を縮める生成AI）以来9話ぶりの起用で、直近連続使用していたmobility（kl009・kl010）・home_robot（kl008・kl011）は今回見送りを推奨し選択肢から除外した。採用論文はarXiv掲載のプレプリントだが、著者Sinan AralはMIT Sloan教授で計算社会科学・AI経済学分野の著名研究者（信頼性シグナルとしてSTAGE2方針に合致）。大規模フィールド実験（実際の広告制作チーム）でAIエージェントを『同僚』として協働させると生産性・パフォーマンスが約50%向上する一方、AIに考えなしに丸投げすると成果物の画一化（同じような広告ばかりになる）という新しい落とし穴が定量的に示された点が、単なる『AIで効率化』を超えた変革ポテンシャルと判断。kl002（個人のスキル格差是正）とは異なる『チーム協働のあり方』という切り口で差別化。査読前である旨は概要欄で開示し、ナレーションでは『まだ研究段階』等の一般的な表現でヘッジする。",
-   "stage4_snapshot": [
-    {
-     "paperId": "a6592233f89114439705adf7244e0fb80bd96e72",
-     "overall_score": 4.4,
-     "hook_idea_at_selection": "チャットの気配りをやめてAIに仕事丸投げしたら、成果が50%上がった？最新大規模実験が明かすAIチームワークのリアルと『同じような広告ばかりになる』落とし穴とは。"
-    }
-   ],
-   "slot_type": "legacy",
-   "concern_id": "work_ai",
-   "domain": "life",
-   "genre": "ai",
-   "health": false
-  },
-  {
-   "episode_id": "kl013",
-   "status": "published",
-   "title": "救助犬の「鼻」を受け継ぐロボット：瓦礫の中の命を、匂いで見つけ出す挑戦",
-   "format": "single_paper",
-   "category": "disaster_safety",
-   "category_label": "防災・安全",
-   "references": [
-    {
-     "title": "Mimicking the Sense of Smell of Search and Rescue (SAR) Dogs: a Bio-inspired Steering Framework for Quadruped Robots",
-     "authors": [
-      "Filippo Sanfilippo",
-      "I. Ra"
-     ],
-     "year": 2023,
-     "venue": "Proceedings of the 20th International Conference on Information Systems for Crisis Response and Management",
-     "doi": "10.59297/fbhp3870",
-     "is_preprint": false
-    }
-   ],
-   "protagonist": {
-    "name": "伊藤 麻衣子",
-    "age": 45,
-    "job": "地方自治体防災課職員（2児の母）",
-    "gender": "female"
-   },
-   "hook_idea": "もし巨大地震の瓦礫に取り残されたら——救助犬の「凄まじい鼻」を受け継いだロボットは、あなたを見つけ出せるでしょうか？",
-   "notes": "STAGE0: 6カテゴリとも在庫十分（aging_care17/disaster_safety38/home_robot29/medical_support145/mobility30/work78件）のためSTAGE1新規収集は全カテゴリスキップ。STAGE2.5でaging_care/medical_support/disaster_safetyの3案を優先提示（home_robot/mobility/workは直近5話でkl008・kl009・kl010・kl011・kl012が使用済みのためローテーション上非推奨と明示）した中からユーザーがdisaster_safety案を選択（2026-09-04）。disaster_safetyはkl006（2026-08-26、マルチドローン医薬品配送）以来6話ぶりの起用。採用論文はISCRAM 2023掲載の査読済み論文、STAGE4スコアは3.85で同カテゴリ内最高値（Bio-inspired CPGチップ4.35、vAccSOL AIビジョンオフロード4.0）ではないが、両者はバッテリー効率・処理オフロードという技術寄りの内容で絵作りが難しいと判断し、瓦礫に閉じ込められた人が救助犬型ロボットに発見される、という感情移入しやすく視覚化しやすいストーリーを優先した（CLAUDE.mdの「動画にしやすさ」観点）。kl006（離れて暮らす家族を心配する会社員が主人公）とは異なる角度として、本作は防災課職員（現場で救助にあたる立場）を主人公に据え、『限られた救助犬・人員では全ての要救助者を見つけきれない』という職業上の歯がゆさから入る構成にする。直近5話（kl008〜kl012）が男性主人公続き（kl011のみ女性）だったため、主人公は女性で設定しジェンダーバランスを取った。",
-   "stage4_snapshot": [
-    {
-     "paperId": "a0d5200b94888bcb62df9f6a85b7d67e8ac83dee",
-     "overall_score": 3.85,
-     "hook_idea_at_selection": "もし巨大地震の瓦礫に取り残されたら……救助犬の「凄まじい鼻」を持つロボットは、あなたを見つけ出せるでしょうか？"
-    }
-   ],
-   "slot_type": "legacy",
-   "concern_id": "disaster",
-   "domain": "life",
-   "genre": "life_tech",
-   "health": false
-  },
-  {
-   "episode_id": "kl014",
-   "status": "published",
-   "title": "卵の茹で方を忘れた元・料理教室講師：AIが「実行機能」を肩代わりする認知症ケアの新しい形",
-   "format": "single_paper",
-   "category": "medical_support",
-   "category_label": "医療補助技術",
-   "references": [
-    {
-     "title": "Vision AI-Based Gamified Cognitive Prosthesis for Executive Function: Feasibility and Usability Study",
-     "authors": [
-      "Co Yih Siow",
-      "Yao-Hua Yang",
-      "Cheng-Jui Tsai",
-      "Wan-Wan Yang",
-      "Chaur-Jong Hu",
-      "Jia-Ying Sung",
-      "Jowy Tani"
-     ],
-     "year": 2025,
-     "venue": "JMIR Serious Games",
-     "doi": "10.2196/74157",
-     "is_preprint": false,
-     "lead_researcher": "Chaur-Jong Hu（台北医科大学）"
-    }
-   ],
-   "protagonist": {
-    "name": "高橋 順子",
-    "age": 71,
-    "job": "元・料理教室講師（軽度認知症と診断された一人暮らしの女性）",
-    "gender": "female"
-   },
-   "hook_idea": "「あれ、卵って何分茹でるんだっけ…」長年やってきた料理が急にできなくなる恐怖に、AIが寄り添う",
-   "notes": "STAGE0: 6カテゴリとも在庫十分（aging_care17/home_robot29/medical_support145/mobility30/work78/disaster_safety37件）のためSTAGE1新規収集は全カテゴリスキップ。STAGE2.5で当初aging_care（レーダー/サーモカメラによる非接触転倒検知の潮流案）とmedical_support（両手タイピング神経義肢、Nature Neuroscience）を優先提示したが、ユーザーから両案とも既視感がある旨の指摘（2026-09-05）。転倒検知は市販の見守り製品と近く、神経義肢はkl003（BCIマウス操作）・kl007（音声BCI）に続く3例目のBCI/神経義肢テーマだったため。代替案としてBCI/神経義肢ではない医療補助技術の切り口（外部ロボットによる転倒介助・恐怖心の検知・認知機能の遂行支援）と、workカテゴリの新サブテーマ（AI科学者による創薬）を再提示し、ユーザーが本論文（AI搭載ゲーム型認知プロテーゼ）を選択。軽度認知症患者が「卵を茹でる」という日常タスクをAIの視覚・音声ガイドで遂行できるようになるという内容で、kl005（コンパニオンロボットによる気分・孤独感のケア）とは異なり「日常タスクの遂行能力そのものを取り戻す」機能的支援がテーマ。台北医科大学附属病院での実施、軽度認知症患者12名・健常対照群7名のパイロット試験（Feasibility and Usability Study）。ガイドありでタスク完了時間が134.75秒→92.00秒（31.7%短縮、P=.03）、実行機能エラースコアが4.25→1.00（76.5%改善、P=.005）に改善、AIの物体認識精度0.93・再現率0.94。JMIR Serious Games掲載の査読済み論文（STAGE2許可リスト該当誌）だが、パイロット試験でサンプルサイズが小さい点（n=12+7）は概要欄で開示する。主人公は論文の実際の被験者像（元・料理教室講師）に寄せて設定、料理という具体的な生活シーンに落とし込みやすい。",
-   "stage4_snapshot": [
-    {
-     "paperId": "079d39513ff17bee961720a41046078431540c3f",
-     "overall_score": 4.4,
-     "hook_idea_at_selection": "「あれ、卵って何分茹でるんだっけ…」長年やってきた料理が急にできなくなる恐怖、AIが変えるかもしれません。"
-    }
-   ],
-   "slot_type": "legacy",
-   "concern_id": "dementia",
-   "domain": "disease",
-   "genre": "medical",
-   "health": true
-  },
-  {
-   "episode_id": "kl015",
-   "status": "published",
-   "title": "義手に蘇る「気持ちいい」：愛犬をなでた指先に戻ってきた、心をほどく感触",
-   "format": "single_paper",
-   "category": "mobility",
-   "category_label": "モビリティ・身体拡張",
-   "references": [
-    {
-     "title": "Neuromorphic Touch Sensors for Pleasantness Encoding via Spike Patterns: A Bio-Inspired Artifical Fingertip for Restoring Affective Sensations",
-     "authors": [
-      "Marian Statache",
-      "Mariangela Filosa",
-      "Sara Ballanti",
-      "G. D'Alesio",
-      "Giulia Di Salvo"
-     ],
-     "year": 2024,
-     "venue": "Italian National Conference on Sensors",
-     "doi": "10.1109/SENSORS60989.2024.10784624",
-     "url": "https://doi.org/10.1109/SENSORS60989.2024.10784624",
-     "is_preprint": false,
-     "lead_researcher": "Marian Statache（Scuola Superiore Sant'Anna、イタリア）"
-    }
-   ],
-   "protagonist": {
-    "name": "白石 薫",
-    "age": 48,
-    "job": "事故で左手を失い義手を使う、愛犬と暮らす生花店店主",
-    "gender": "female"
-   },
-   "hook_idea": "もし義手で愛犬をなでたとき、『ふわふわして気持ちいい』という温かい手ざわりまで指先に蘇るとしたら？",
-   "notes": "STAGE0: 6カテゴリとも在庫十分（aging_care17/home_robot29/medical_support144/mobility30/work78/disaster_safety37件）のためSTAGE1新規収集は全カテゴリスキップ。kl_shortlist_rescore.py --checkで再採点対象0件を確認済み（全件stage4_version=2026-09-06-wonder）。STAGE2でmedical_support上位（BCIで完全麻痺から運動+感覚を再建、総合スコア4.6）が最高評価だったが、直前kl014が同カテゴリであることに加え、kl003（非侵襲BCI）・kl007（音声BCI）・kl009（神経接続義足）に続く『4例目のBCI/神経義肢』となる既視感リスクを踏まえ、ユーザーの判断でmobilityの本候補を採用。本研究はkl009（歩行運動制御・身体所有感）とは異なり、義手で『なでた時の心地よさ（情動的触覚）』をメルケル受容器模倣のニューロモルフィックセンサーで神経様スパイク列に符号化するという、機能ではなく感情に踏み込んだ切り口が新しい。市販の義手・触覚センサーは握力制御や滑り・硬さの検知（機能的認識）に留まっており、本研究は情動的触覚の再現という点で市場に無い新規性（market_status: novel）と評価。イタリアScuola Superiore Sant'Anna発、IEEE Italian National Conference on Sensors（査読済み・非プレプリント）掲載。実験室環境での実証段階（実際の義手ユーザーでの臨床試験ではない）である点はナレーションでヘッジしつつ概要欄で開示する。",
-   "stage4_snapshot": {
-    "paperId": "d8421b43c30e30354a5f085a5908eb4d58b704ed",
-    "overall_score": 3.7,
-    "score_breakdown": {
-     "wonder_score": 4,
-     "transformation_score": 4,
-     "life_relevance_score": 3,
-     "surprise_score": 2,
-     "persona_fit_score": 5
-    },
-    "market_status": "novel",
-    "novel_delta": "従来の触覚フィードバックが把持力や硬さなどの機能的認識に留まっていたのに対し、素材をなでたときの「心地よさ（快感情）」を生体模倣の神経スパイク信号として符号化できる点。"
-   },
-   "slot_type": "legacy",
-   "concern_id": null,
-   "domain": "body",
-   "genre": "medical",
-   "health": true
-  },
-  {
-   "episode_id": "kl016",
-   "status": "published",
-   "title": "先生の一歩が、麻痺した足に伝わる：外骨格でつながる新しい歩行リハビリ",
-   "format": "single_paper",
-   "category": "medical_support",
-   "category_label": "医療補助技術",
-   "references": [
-    {
-     "title": "Therapist-exoskeleton-patient interaction for gait therapy",
-     "authors": [
-      "Emek Barış Küçüktabak",
-      "Matthew R. Short",
-      "Lorenzo Vianello",
-      "Daniel Ludvig",
-      "Levi J. Hargrove",
-      "Kevin Lynch",
-      "Jose Pons"
-     ],
-     "year": 2025,
-     "venue": "Science Robotics",
-     "doi": "10.1126/scirobotics.adz9628",
-     "url": "https://www.science.org/doi/10.1126/scirobotics.adz9628",
-     "is_preprint": false,
-     "lead_researcher": "Emek Barış Küçüktabak（Northwestern University / Shirley Ryan AbilityLab、米国シカゴ）"
-    }
-   ],
-   "protagonist": {
-    "name": "坂本健一",
-    "age": 58,
-    "job": "脳卒中で右足に麻痺が残り、職場復帰を目指してリハビリに通う元・高校教師",
-    "gender": "male"
-   },
-   "hook_idea": "機械に足を動かされるリハビリはもう終わり？「先生の足の動きが、自分の足にそのまま伝わってくる」最新ロボットが脳卒中リハビリを根本から変えようとしています。",
-   "notes": "STAGE0: 6カテゴリとも在庫3件以上（medical_support144/work78/disaster_safety37/home_robot29/mobility29/aging_care17件）のためSTAGE1新規収集は全カテゴリスキップ。kl_shortlist_rescore.py --checkで再採点対象0件を確認済み（全件stage4_version=2026-09-06-wonder）。STAGE2ではmedical_support上位がBCI/神経義肢系で占められており（最高点overall 4.6のRestoring Cortically Mediated Movement and Sensation等）、kl003（非侵襲BCI）・kl007（音声BCI）・kl009（神経接続義足）・kl015（義手の情動的触覚）に続く5例目のBCI/神経義肢型になる既視感リスクを踏まえてこのクラスタは見送った。代わりに非BCI候補の中で最高評価（overall 3.85, wonder_score 4）だった本候補を採用。kl004（超軽量歩行ギア）・kl010（代謝を減らすソフト外骨格）は単独装着の日常生活支援ギアだが、本研究は「療法士と患者がペアで外骨格を装着し、仮想バネ・ダンパで下肢を連結して力覚を双方向共有する治療介入（Human-Robot-Human）」という異なる型であり、kl_paper_interest_score.pyのdeja_vu_noteも完全な重複ではないと判定している。また直近5話（kl011 home_robot→kl012 work→kl013 disaster_safety→kl014 medical_support→kl015 mobility）と比べ、medical_supportはkl014の1話前止まりで連続被りではない。慢性期脳卒中患者8名によるトレッドミル実験で、従来の人力介助より関節可動域・歩幅歩高が向上し、訓練モチベーションも高かったことが実証されている（demonstrated_capability）。発表元はNorthwestern University／Shirley Ryan AbilityLab（米国シカゴ）、Science Robotics掲載（査読済み・非プレプリント）。",
-   "stage4_snapshot": {
-    "paperId": "e2488b502b238b44b26c01853763818c8d8cbcb3",
-    "overall_score": 3.85,
-    "score_breakdown": {
-     "wonder_score": 4,
-     "transformation_score": 4,
-     "life_relevance_score": 3,
-     "surprise_score": 4,
-     "persona_fit_score": 4
-    },
-    "market_status": "novel",
-    "novel_delta": "患者と理学療法士がそれぞれ外骨格を装着し、仮想的なバネ・ダンパで互いの下肢を連結することで、療法士の自然な足の動きを直感的に患者へ伝えつつ、患者の筋の突っ張りや抵抗をリアルタイムの力覚として療法士が感じ取りながら歩行を同期・再学習できる点。"
-   },
-   "slot_type": "legacy",
-   "concern_id": "bp_stroke_heart",
-   "domain": "disease",
-   "genre": "medical",
-   "health": true
-  },
-  {
-   "episode_id": "kl017",
-   "status": "published",
-   "title": "見捨てられていなかった：半年間眠らず働き続けたAI研究チームが見つけた希少難病の光",
-   "format": "single_paper",
-   "category": "work",
-   "category_label": "働き方の変化",
-   "references": [
-    {
-     "title": "A Persistent Fleet of AI Scientists Exhibits Cooperative and Autopoietic Behavior",
-     "authors": [
-      "Milit S. Patel",
-      "W. Wierson",
-      "S. C. Ekker"
-     ],
-     "year": 2026,
-     "venue": "bioRxiv",
-     "doi": "10.64898/2026.08.16.745122",
-     "url": "https://doi.org/10.64898/2026.08.16.745122",
-     "is_preprint": true,
-     "lead_researcher": "Stephen C. Ekker（Mayo Clinic / UViiVE Inc.、米国）、Milit S. Patel（UViiVE Inc.共同創業者）"
-    }
-   ],
-   "protagonist": {
-    "name": "松本遥",
-    "age": 38,
-    "job": "希少難病を抱える小学生の娘を持つ、図書館司書",
-    "gender": "female"
-   },
-   "hook_idea": "患者数が少なすぎて誰も薬を作ってくれない——そんな見落とされてきた難病の光を、半年間眠らず研究し続けた「AIのチーム」が見つけ出しました。",
-   "notes": "STAGE0: 6カテゴリとも在庫3件以上（medical_support143/work78/disaster_safety37/home_robot29/mobility29/aging_care17件）のためSTAGE1新規収集は全カテゴリスキップ。kl_shortlist_rescore.py --checkで再採点対象0件を確認済み（全件stage4_version=2026-09-06-wonder）。STAGE2では直前kl016がmedical_support、kl015がmobilityといずれも連続カテゴリになるためこの2つは見送り、home_robot（在庫上位は片付けロボット系クラスタ、overall 3.6のGrounding Multimodal LLMs論文が最有力）とwork（AI Scientist系クラスタ）を軸に提示。aging_careは直近利用がkl005と11話前でローテーション上は最優先だが、在庫の質が弱く（最高でもoverall 2.85、ほとんどがincremental/existing_product）、ユーザーの判断で今回は見送り、workの本候補を採用。kl012（オフィス業務でのAIチームワーク）とはテーマが「複数AIエージェントの協調」という点で重なるが、あちらが業務効率化であるのに対し、本作は科学研究・創薬を半年間自律継続するバックエンド技術であり構図は異なる（deja_vu_noteでも同様の判定）。希少疾患の子を持つ母親という強い感情軸を持つストーリーで、overall 3.2（wonder_score 3, transformation_score 4）。論文はbioRxivプレプリント（査読前）のため、ナレーションでは「まだ研究段階」等の一般的な表現でヘッジし、概要欄で査読前である旨を開示する。発表元は米国Mayo Clinic（Stephen C. Ekker）およびスタートアップUViiVE Inc.（Milit S. Patel共同創業）。",
-   "stage4_snapshot": {
-    "paperId": "40fdbc5cc9fbd2460dea81c9e5d809745aae2cbb",
-    "overall_score": 3.2,
-    "score_breakdown": {
-     "wonder_score": 3,
-     "transformation_score": 4,
-     "life_relevance_score": 2,
-     "surprise_score": 4,
-     "persona_fit_score": 3
-    },
-    "market_status": "novel",
-    "novel_delta": "AIが単発の指示処理で終わらず、半年間にわたり実験履歴と失敗の来歴を自己修正・蓄積しながら、忘れ去られがちな難病の治療法などの仮説検証を自律的に深め続けられる点。"
-   },
-   "slot_type": "legacy",
-   "concern_id": null,
-   "domain": "disease",
-   "genre": "ai",
-   "health": true
-  },
-  {
-   "episode_id": "kl018",
-   "status": "published",
-   "title": "ロボットが「しゃがめる」って、こんなに難しかった：腰痛の父を救う二足歩行ロボットの片付け",
-   "format": "single_paper",
-   "category": "home_robot",
-   "category_label": "家庭内ロボット・家事自動化",
-   "references": [
-    {
-     "title": "TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning",
-     "authors": [
-      "Jiacheng Liu",
-      "Pengxiang Ding",
-      "Qihang Zhou",
-      "Yuxuan Wu",
-      "Da Huang",
-      "Zimian Peng",
-      "Wei Xiao",
-      "Weinan Zhang",
-      "Lixin Yang",
-      "Cewu Lu",
-      "Donglin Wang"
-     ],
-     "year": 2025,
-     "venue": "arXiv.org（ICRA 2026 採択）",
-     "doi": "10.48550/arXiv.2509.11839",
-     "url": "https://arxiv.org/abs/2509.11839",
-     "is_preprint": true,
-     "lead_researcher": "Pengxiang Ding / Donglin Wang（Westlake University、中国）、Cewu Lu（Shanghai Jiao Tong University、中国）"
-    }
-   ],
-   "protagonist": {
-    "name": "佐々木健司",
-    "age": 42,
-    "job": "在宅勤務のITコンサルタント（育児中で慢性腰痛に悩む）",
-    "gender": "male"
-   },
-   "hook_idea": "ロボットが家事をする未来――でも、床に落ちたおもちゃを拾うために「しゃがむ」ことが、どれほどロボットにとって絶望的に難しかったかご存じですか？",
-   "notes": "STAGE0: 全カテゴリ在庫3件以上のためSTAGE1新規収集スキップ。kl_shortlist_rescore.py --checkで再採点対象0件（2026-09-09にbehavioral_familiarity/deja_vu_level導入に伴う全体再採点332件を完了済みのため）。STAGE2では直前kl017がworkのため同カテゴリを回避。home_robotの新1位（旧1位「曖昧な指示に聞き返すロボット」はスコアリング改修でbehavioral_familiarity: familiar・deja_vu_level: strongと判定され3.6→圏外に後退——ChatGPT等で聞き返す振る舞い自体は視聴者に既知のため）。本候補は逆にbehavioral_familiarity: novel（チャットボット的な対話ではなく二足歩行ロボットが実際にしゃがんで床の物を扱う物理的身体能力）と正しく判定され、overall 2.8→3.55に上昇。家庭内ロボットの片付けというテーマ自体はkl001/kl008/kl011と既視感partialだが、『車輪型ロボットの操作データを異種のヒューマノイドへわずか10分のデータで転移学習させ、二足歩行の全身動作（しゃがみ込み等）を実現した』という学習転移の切り口と、『腰痛の父親が屈まずに済む』という具体的な身体的恩恵が新しい。発表元はWestlake University・Shanghai Jiao Tong University等（中国）、ICRA 2026採択のarXivプレプリント。",
-   "stage4_snapshot": {
-    "paperId": "1e83f742ad7f75a490bad862fcc7dff8dda1f481",
-    "overall_score": 3.55,
-    "score_breakdown": {
-     "wonder_score": 3,
-     "transformation_score": 4,
-     "life_relevance_score": 4,
-     "surprise_score": 4,
-     "persona_fit_score": 4
-    },
-    "market_status": "novel",
-    "behavioral_familiarity": "novel",
-    "deja_vu_level": "partial",
-    "novel_delta": "車輪型ロボットの豊富な操作データを変換し、わずか10分の実機データ収集で二足歩行ヒューマノイドがしゃがみ込みや高低差のある全身協調作業を自律実行できる点。"
-   },
-   "slot_type": "legacy",
-   "concern_id": "housework",
-   "domain": "life",
-   "genre": "humanoid",
-   "health": false
-  },
-  {
-   "episode_id": "kl019",
-   "status": "published",
-   "title": "父は見つかるか：疲れを知らないロボット犬に宿った、生き物の反射",
-   "format": "single_paper",
-   "category": "disaster_safety",
-   "category_label": "防災・安全",
-   "references": [
-    {
-     "title": "Modeling, Design and In-situ Demonstration of Bio-inspired Central Pattern Generator and Neuromorphic Computing Circuits for Complex Kinematic Control of Quadruped Robots",
-     "authors": [
-      "Qiankai Cao",
-      "Yuhao Ju",
-      "Zhiwei Zhong",
-      "Zhengyu Chen",
-      "Jie Gu"
-     ],
-     "year": 2025,
-     "venue": "ACM Great Lakes Symposium on VLSI (GLSVLSI 2025, Best Paper Award)",
-     "doi": "10.1145/3716368.3735250",
-     "is_preprint": false,
-     "lead_researcher": "Jie Gu（ノースウェスタン大学 教授）、Zhengyu Chenのみ所属はSambaNova Systems"
-    }
-   ],
-   "protagonist": {
-    "name": "西村 由紀",
-    "age": 39,
-    "job": "会社員（単独登山中に連絡が取れなくなった68歳の父を持つ）",
-    "gender": "female"
-   },
-   "hook_idea": "電波の届かない山で遭難した家族を、疲れを知らないロボット犬が日没前に見つけ出してくれるとしたら？",
-   "notes": "STAGE0: 6カテゴリとも在庫3件以上のためSTAGE1新規収集は全カテゴリスキップ。kl_shortlist_rescore.py --checkでstage4_version再採点対象0件を確認。ただし既視感コンテキストがkl018時点で止まっていたため、直前kl018と同カテゴリのhome_robotのみ--stale-deja-vuで再判定（結果、上位が入れ替わりSteering Autoregressive VLA Policiesが3.55で1位に）。ローテーション上はaging_care（kl005以来13話滞留）が最優先だが、在庫上位がwonder_score2止まりで小粒なため今回は見送りとユーザーが判断。disaster_safety上位のCPGニューロモルフィックチップ論文はdeja_vu_level=none（既視感なし）・overall 3.1（wonder=3, transformation=3, surprise=4）で、2025年GLSVLSI Best Paper Award受賞。所属はノースウェスタン大学Jie Gu研究室（WebSearchで確認、大学公式PDF: https://users.eecs.northwestern.edu/~jgu/nu-vlsi/Mixed-signal_Quadruped_Robot_GLSVLSI25.pdf ）。実測値: 電力効率609倍・反応遅延10.9分の1・チップ消費電力232.7μW（65nmプロセス）、実機四足ロボットに搭載して実証。論文本文が想定用途として明記するsearch and rescue（捜索救助）に沿って、shortlist記載の主人公案（登山が趣味の定年退職者本人）から、感情的な着地を強めるため「山中で連絡が取れなくなった父を待つ娘」という家族視点の使い捨ての生活者に変更（2026-09-10、ユーザーとの合意）。citation/finding/dataシーンでは研究チーム・実証実験を客観的に紹介し、主人公（娘）はその場に居合わせない設計とする。",
-   "stage4_snapshot": {
-    "paperId": "a81c9eea664d24a21b29759bdff4a1fd0dd2b11e",
-    "overall_score": 3.1,
-    "score_breakdown": {
-     "wonder_score": 3,
-     "transformation_score": 3,
-     "life_relevance_score": 3,
-     "surprise_score": 4,
-     "persona_fit_score": 3
-    },
-    "market_status": "incremental",
-    "novel_delta": "生物の脊髄神経回路（CPG）を模した専用ニューロモルフィック半導体により、四足歩行ロボットの運動制御プロセッサの電力効率を従来比約600倍に高め、極めて低遅延な反射的歩容生成をオンチップで実現した点。"
-   },
-   "slot_type": "legacy",
-   "concern_id": "disaster",
-   "domain": "life",
-   "genre": "life_tech",
-   "health": false
-  },
-  {
-   "episode_id": "kl020",
-   "status": "published",
-   "title": "手のリハビリ中の元エンジニアが、ロボットアームと『息を合わせる』片付け",
-   "format": "single_paper",
-   "category": "home_robot",
-   "category_label": "家庭内ロボット・家事自動化",
-   "references": [
-    {
-     "title": "Steering Autoregressive Vision-Language-Action Policies via Action Token Intervention",
-     "authors": [
-      "Jason Chan",
-      "Jonathan C. Kao"
-     ],
-     "year": 2026,
-     "venue": "arXiv.org",
-     "doi": "10.48550/arXiv.2606.15021",
-     "is_preprint": true,
-     "lead_researcher": "Jonathan C. Kao（UCLA 准教授）"
-    }
-   ],
-   "protagonist": {
-    "name": "佐々木 健一",
-    "age": 68,
-    "job": "定年退職者（軽度の身体麻痺を抱えながら自宅療養中）",
-    "gender": "male"
-   },
-   "hook_idea": "「ロボットに任せると、最後のひと押しで失敗してヒヤッとする…」そんなとき、指先でちょっと合図するだけで、ロボットと“息を合わせられる”未来が来るとしたらどうでしょうか？",
-   "notes": "STAGE0: 6カテゴリとも在庫3件以上のためSTAGE1新規収集は全カテゴリスキップ。kl_shortlist_rescore.py --checkでstage4_version再採点対象0件を確認。既視感コンテキストがkl017/kl018時点で止まっていたdisaster_safetyのみ--stale-deja-vuで再判定し、kl013/kl019と酷似する2件（Multi-floor danger assessment、Self-organizing Nervous Systems for Robot Swarms）がdeja_vu_level=strongに更新されたことを確認（結果は今回不採用のため直接の影響なし）。medical_supportは上位5件がBCIによる手の運動・感覚再建という同一サブテーマに集中していたため上位2件に絞って提示。workのGALILEO/Kosmos（自律型AI科学者）はkl017と強い既視感のため除外、WorldTravelはbehavioral_familiarity=familiar（既存チャットボットで再現可能）のため優先度を下げた。aging_careは今回候補が弱め（最高でも2.5点、既存製品寄り）のためユーザー判断で見送り。home_robotの採用論文はVLAロボット基盤モデルの完全自動化ではなく、人間がわずかな指先の入力で軌道を微修正する『共有自律・人間協調』という切り口。kl001/kl011（家庭用ロボットアームの片付け）と道具立ては重なるが、『ロボット任せ』ではなく『人とロボットが息を合わせる』という体験の質が異なる点を差別化ポイントとして強調する。主人公はshortlist記載の案（脳梗塞後遺症で軽度麻痺のある68歳男性）をそのまま採用（2026-09-11、ユーザー承認）。",
-   "stage4_snapshot": {
-    "paperId": "edabb21890d8491312c3cf79349cdfdd82a66f6b",
-    "overall_score": 3.55,
-    "score_breakdown": {
-     "wonder_score": 3,
-     "transformation_score": 4,
-     "life_relevance_score": 4,
-     "surprise_score": 4,
-     "persona_fit_score": 4
-    },
-    "market_status": "novel",
-    "novel_delta": "ロボット基盤モデルが自動生成する高度で滑らかな動作を損なうことなく、人間のわずかな低次元入力（指先の傾きなど）を推論中のトークンに直接注入してリアルタイムに軌道を直感誘導できる点。"
-   },
-   "slot_type": "legacy",
-   "concern_id": "housework",
-   "domain": "life",
-   "genre": "life_tech",
-   "health": false
-  },
-  {
-   "episode_id": "kl021",
-   "status": "published",
-   "title": "老いた目の設計図を書き換える：緑内障に挑む若返り遺伝子治療ER-100",
-   "format": "single_paper",
-   "category": "biotech_exception",
-   "category_label": "生命科学・老化研究（例外枠、AI・ロボティクス限定方針の例外）",
-   "scope_exception": true,
-   "references": [
-    {
-     "title": "Reprogramming to recover youthful epigenetic information and restore vision",
-     "authors": [
-      "Yuancheng Lu",
-      "Benedikt Brommer",
-      "Xiao Tian",
-      "Anitha Krishnan",
-      "Margarita Meer",
-      "Chen Wang",
-      "David A. Sinclair"
-     ],
-     "year": 2020,
-     "venue": "Nature",
-     "doi": "10.1038/s41586-020-2975-4",
-     "is_preprint": false,
-     "lead_researcher": "David A. Sinclair（ハーバード大学医学部教授、著書『LIFESPAN：老いなき世界』）"
+      "episode_id": "kl009",
+      "status": "published",
+      "title": "自分の意思で曲がる義足：骨と神経に直接つながるプロテーゼが「自分の身体」を取り戻す",
+      "format": "single_paper",
+      "category": "mobility",
+      "category_label": "モビリティ・身体拡張",
+      "references": [
+        {
+          "title": "Design and evaluation of a bone-anchored, neurally-controlled knee prosthesis",
+          "authors": [
+            "John A. Mccullough",
+            "Daniel Levine",
+            "Tony Shu",
+            "R. Brånemark",
+            "Matthew J Carty"
+          ],
+          "year": 2026,
+          "venue": "Journal of NeuroEngineering and Rehabilitation",
+          "doi": "10.1186/s12984-026-01921-y",
+          "is_preprint": false,
+          "lead_researcher": "Hugh M. Herr"
+        }
+      ],
+      "protagonist": {
+        "name": "高橋 健太",
+        "age": 42,
+        "job": "建築設計士",
+        "gender": "male"
+      },
+      "hook_idea": "自分の意思で曲がる足――もし義足が『機械』ではなく『自分の身体』になったら、暮らしはどう変わるでしょうか？",
+      "notes": "STAGE4スコア4.5でmobilityカテゴリ2位タイ（STEP2.5提示の6カテゴリ案からユーザーがSTAGE5で選択、2026-08-31）。直近2話（kl007=medical_support、kl008=home_robot）とは異なるカテゴリで、kl004（モビリティ、外付けの軽量アシストギア）とも切り口が対照的——kl004は「着脱式・外部から補助する道具」だったのに対し、本作は骨に直接固定（osseointegration）し残存筋の神経信号で制御する『身体と一体化するプロテーゼ』で、企画書の核心である『変革ポテンシャル』をより強く押し出せる。著者にR. Brånemark（骨固定式プロテーゼ・骨統合技術の第一人者、MIT Media Lab系研究の実績で著名）を含み、medRxivのプレプリントではあるものの著者所属・技術的検証の観点で信頼性シグナルは強いと判断（STAGE2の査読済み限定ルール撤回方針に基づく）。査読前である旨は概要欄で開示し、ナレーションでは『まだ研究段階』等の一般的な表現でヘッジする。 【2026-08-31追記】WebFetchで本文を直接確認したところ、medRxivプレプリント（2026年1月投稿）はその後2026年に本誌（Journal of NeuroEngineering and Rehabilitation、DOI 10.1186/s12984-026-01921-y＝正式出版のDOI）に査読を経て掲載されたことが判明。venue/is_preprintを訂正し、査読前開示は不要と判断。実施機関: MIT K. Lisa Yang Center for Bionics / MIT Media Lab（Hugh M. Herr研究室）、Integrum AB（スウェーデン、骨統合インプラント）、Brigham and Women's Hospital（外科）。単一被験者（60代男性、片側大腿切断、AMI＋eOPRA骨統合インプラント術後3年）のケーススタディ。定量結果: 歩行対称性指数0.93（神経制御）vs 0.59（従来のマイクロプロセッサ膝、Ottobock C-Leg）、階段昇降で従来機では不可能だった自然な『交互step-over-step』歩行を実現、静止立位での荷重対称性0.91 vs 0.77、身体所有感（embodiment）5項目すべてで有意に向上、本人談『自分の脚のように感じた』。限界: 単一被験者ケーススタディであることは概要欄で正直に開示する。",
+      "stage4_snapshot": [
+        {
+          "paperId": "c7f47212ef79198ec3e10c31fba87756d9a8d229",
+          "overall_score": 4.5,
+          "hook_idea_at_selection": "自分の意思で曲がる足――もし義足が『機械』ではなく『自分の身体』になったら、暮らしはどう変わるでしょうか？"
+        }
+      ],
+      "slot_type": "legacy",
+      "concern_id": null,
+      "domain": "body",
+      "genre": "medical",
+      "health": true
     },
     {
-     "title": "ER-100 Phase 1 First-in-Human Trial for Open-Angle Glaucoma and NAION (NCT07290244)",
-     "authors": [
-      "Life Biosciences, Inc."
-     ],
-     "year": 2026,
-     "venue": "FDA IND clearance (2026-01-28) / ClinicalTrials.gov, first patient dosed 2026-06-09",
-     "url": "https://www.lifebiosciences.com/life-biosciences-announces-first-patient-dosed-in-phase-1-trial-of-er-100-for-optic-neuropathies/",
-     "is_preprint": false,
-     "lead_researcher": null
-    }
-   ],
-   "protagonist": {
-    "name": "田村 由美子",
-    "age": 62,
-    "job": "定年退職した元小学校教師（現在は近所の子どもたちへの絵本の読み聞かせボランティアを続けている）",
-    "gender": "female"
-   },
-   "hook_idea": "「大好きな絵本の読み聞かせも、文字がだんだんかすんで見えるようになってきて……」静かに視野が狭まっていく緑内障の初期診断を受けた元教師に、老いた目の“設計図”を書き換えるという最先端の遺伝子治療が示す希望とは？",
-   "notes": "2026-09-14: 通常のSTAGE0〜4パイプラインが提示した候補（6カテゴリ横断、触覚センサー人工皮膚・呼吸補助ソフトロボット・ロボット群自律制御等）をユーザーが全て『面白みに欠ける』として却下（該当8件はtopics_shortlist.jsonにstatus: rejectedとして記録済み）。原因調査のため/consult（Claude×Gemini対話→Opus統合）を実施し、『AI・ロボティクスの派手な速報だけに絞る』方向転換は番組アイデンティティ崩壊のリスクが高く不採用と結論。一方、実測で在庫上位が2〜3年前のBCI系論文に偏っている既視感判定の構造的な穴（deja_vu_level=partial帯にキャップが効かない）が判明（未修正、今後の課題）。2026年発表限定で全カテゴリSTAGE1を再実行したが最高スコア3.2（ほぼ全てlow_quality除外）と有望な候補は得られなかった。\n\nこの直後、ユーザーが通常パイプラインを経由しない『ワイルドカード』としてER-100（老化細胞の若返り遺伝子治療）を持ち込んだ。CLAUDE.mdの『AI・ロボティクス分野の学術論文』『medical_supportはAI/ロボット技術のみ、医学全般は対象外』という方針と直接衝突するため、ユーザーに方針との衝突を明示して確認した結果、『今回は例外として採用』の判断を得た。CLAUDE.mdの「論文選定ロジック」節冒頭に例外運用ルールを追記済み（scope_exception: trueを都度明記し、category: biotech_exceptionとしてローテーション対象外にする運用）。\n\n内容はWebSearchで一次情報を確認済み: Sinclair研究室のLu et al. 2020年Nature論文（マウスの視神経でOSK＝Oct4/Sox2/Klf4によるエピジェネティック若返り、c-Mycは除外）が基礎。Life Biosciences社のER-100が2026年1月28日にFDAからIND（治験許可）を取得し、開放隅角緑内障(OAG)・非動脈炎性前部虚血性視神経症(NAION)を対象に世界初のヒト投与を実施（2026年6月9日、第一号患者への投与完了）。安全機構として2本のAAV2ベクター（rtTAトランス活性化因子＋TRE制御下のOSK）によるドキシサイクリン誘導性のオン/オフスイッチを採用——服薬中のみ若返りが進行し、中止すれば停止する。幹細胞研究者Paul Knoepfler（UCデービス）の懐疑的見解（若返ってもOAGの眼圧自体は下がらず効果が持続しない可能性、NAIONは一度きりの虚血イベントのため微小環境上の懸念が残る）も確認済みで、closing シーンでの両論併記に使う想定。\n\n主人公は緑内障の初期診断を受けた元小学校教師（絵本の読み聞かせという『視覚を大切にしてきた』職業・趣味を持たせ、視野が狭まる恐怖と回復への希望を対比しやすくした）。研究ボイスは主人公が女性のため男性（Orus、確定済み）を使う想定。\n\n2026-09-14追記: エピソードJSON生成（STEP2）完了直後、制作者から「AI・ロボティクス限定という制約自体を今後なくす」という恒久方針の指示があった。理由は『今後あらゆる科学の発展にAI・ロボティクスが深く関わるため、分野で区切る制約自体が意味をなさなくなる』。これにより、kl021が『都度承認の例外』ではなく『AI・ロボティクス限定方針撤廃後の最初の通常エピソード』という位置づけに変わった。CLAUDE.mdの『論文選定ロジック』節冒頭・カテゴリ表（医療補助技術）を撤廃を反映して更新済み。scope_exception/category=biotech_exceptionのフィールド値は歴史的記録としてそのまま残す（以後の新規エピソードでは不要な運用）。",
-   "slot_type": "legacy",
-   "concern_id": "eyes",
-   "domain": "body",
-   "genre": "medical",
-   "health": true
-  },
-  {
-   "episode_id": "kl022",
-   "status": "produced",
-   "title": "愛犬と、もう3年：「余命半年」の腎臓病を覆した、既存薬ひと粒の奇跡",
-   "format": "single_paper",
-   "category": "pet_health",
-   "category_label": "ペット・動物医療",
-   "references": [
-    {
-     "title": "Overall survival with beraprost in dogs with IRIS stage 2 chronic kidney disease",
-     "authors": [
-      "Masayuki Mayumi",
-      "Takumi Matsuura",
-      "Tadashi Sano"
-     ],
-     "year": 2026,
-     "venue": "Frontiers in Veterinary Science",
-     "doi": "10.3389/fvets.2026.1665061",
-     "is_preprint": false
-    }
-   ],
-   "protagonist": {
-    "name": "柴田 直樹",
-    "age": 52,
-    "job": "在宅勤務のグラフィックデザイナー",
-    "gender": "male"
-   },
-   "hook_idea": "もし、動物病院で『余命半年』と告げられた愛犬と、あと3年一緒に散歩できる薬が見つかったとしたら？",
-   "notes": "2026-09-15: STAGE0で全カテゴリ在庫3件以上を確認しSTAGE1は全面スキップ。kl_shortlist_rescore.py --checkはバージョン起因の再採点0件だったが、aging_care上位候補がkl021（老化細胞の若返り遺伝子治療）と技術の型が近いと判断し、同カテゴリのみ--stale-deja-vuで既視感再判定を実施（17件、strongな重複なしと確認）。\n\nSTAGE2でカテゴリ横断の候補を提示した結果、新設カテゴリpet_health（2026-09-14追加、AI・ロボティクス限定方針撤廃後の新カテゴリ第1号）の本論文をユーザーが選定。wonder_score=4/life_relevance_score=5/surprise_score=5/persona_fit_score=5、deja_vu_level=noneで既視感なし、pet_healthカテゴリの実制作は本エピソードが初。\n\n内容: 自然発症のIRISステージ2慢性腎臓病の犬16頭にベラプロスト（ヒト用・猫用として既に市販されている薬剤の犬への適応）を経口投与した前向き観察研究。過去の対照群17頭（生存期間中央値198日）と比較し、生存期間中央値が1,101日へ大幅に延長、病勢進行も有意に遅延した。market_status=incremental（既存薬の犬への新規適応であり、薬剤自体は新規物質ではない）だが、市場に無い部分（novel_delta）は『市販薬を犬の慢性腎臓病に応用し生存期間を大幅に延ばせることを示した臨床エビデンスそのもの』であるため、overall_scoreへの上限キャップ（existing_product時のみ適用）は対象外。\n\nSTAGE2の信頼性チェック観点: n=16（対照群17）という規模は動物臨床研究としては一般的だが小規模の部類に入るため、closingシーンで『まだ限られた頭数での研究段階』である旨のヘッジを必ず入れること。査読済み（Frontiers in Veterinary Science、プレプリントではない）。\n\n主人公は在宅勤務のグラフィックデザイナー（52歳男性、shortlistのexample_protagonistを採用）。研究ボイスは主人公が男性のため女性（Autonoe、確定済み）を使う想定。",
-   "stage4_snapshot": {
-    "paperId": "00b601d994552066f766145e764776ff2ba65e14",
-    "overall_score": 4.3,
-    "score_breakdown": {
-     "wonder_score": 4,
-     "transformation_score": 4,
-     "life_relevance_score": 5,
-     "surprise_score": 5,
-     "persona_fit_score": 5
-    },
-    "market_status": "incremental",
-    "novel_delta": "猫用やヒト用として市販されているベラプロストを犬の初期〜中期慢性腎臓病に適用し、生存期間を大幅に延ばす可能性を示した臨床的エビデンス。"
-   },
-   "slot_type": "legacy",
-   "concern_id": "pets",
-   "domain": "life",
-   "publish_hold": true,
-   "genre": "medical",
-   "health": false
-  },
-  {
-   "episode_id": "kl023",
-   "status": "produced",
-   "title": "記憶の霧が晴れる朝：脳の\"ゾンビ細胞\"を掃除する飲み薬とアルツハイマー病",
-   "format": "single_paper",
-   "category": "aging_care",
-   "category_label": "高齢化・介護・自立支援",
-   "references": [
-    {
-     "title": "Clinical Trials of Senolytics in Alzheimer’s Disease Treatment and Prevention",
-     "authors": [
-      "Miranda E. Orr"
-     ],
-     "year": 2025,
-     "venue": "Innovation in Aging",
-     "doi": "10.1093/geroni/igaf122.1102",
-     "is_preprint": false
-    }
-   ],
-   "protagonist": {
-    "name": "清水康夫",
-    "age": 74,
-    "job": "元高校教師（現在は地域の家庭菜園仲間と交流）",
-    "gender": "male"
-   },
-   "hook_idea": "「最近、知人の名前が急に出てこなくなった…」そんな認知症の始まりに、脳に居座る“ゾンビ細胞”を掃除して記憶の霧を晴らす最新の飲み薬が光を灯しています。",
-   "notes": "2026-09-16: STAGE0で全カテゴリ在庫3件以上を確認しSTAGE1新規実行は全カテゴリでスキップ。kl_shortlist_rescore.py --checkはSTAGE4_VERSION起因の再採点0件だったが、aging_care（在庫74件、直近使用はkl005＝17話前とローテーション上明確に手薄）とpet_health（直近kl022）の上位候補がkl021（老化細胞の若返り遺伝子治療ER-100）・kl022（犬の慢性腎臓病治療薬）と技術の型・題材が近い可能性があったため、この2カテゴリのみ--stale-deja-vuで既視感再判定を実施。pet_healthはSemantic Scholar側のabstract取得が一時的に全滅し130件中0件しか再採点できなかった（次回リトライ対象）。aging_careは74件全件成功。\n\nSTAGE2でaging_care上位を提示した結果、同カテゴリの2トップ候補（本論文と「Osteoarthritis Repair via Epigenetic Reprogramming」、共にoverall_score=4.45）からユーザーが本論文を選定。決め手は、①ラットの動物実験・プレプリント段階だった対抗案に対し、本論文はヒト第1相試験（症候性アルツハイマー病患者5名＋MCI・歩行低下高齢者12名、ダサチニブ＋ケルセチンの間欠投与）まで進んだ査読済み論文であり事実確認がしやすいこと、②kl005（ロボットとの交流）・kl014（AIによる実行機能の肩代わり）が共に認知症ケアを「外部からの行動支援」として描いたのに対し、本論文は老化細胞そのものを除去する内服薬で脳機能を直接底上げする根本治療であり、切り口が明確に対照的であること。\n\n既視感（deja_vu_level=partial, context_upto=kl022）: kl021とは「老化細胞の若返り」という生命科学の道具立てが一部重なるが、対象疾患・治療手段（遺伝子治療 vs 経口創薬）とも異なる。\n\nSTAGE3の信頼性メモ: 第1相のフィジビリティ試験（実質n=17、intermittent dosing）であり、有意な相関（TNF-α低下と認知スコア改善、r=-0.65, p=0.02）は示されたが承認薬ではない。closingシーンで「まだ研究段階のプロトタイプ」相当のヘッジを必ず入れること。査読済み（Innovation in Aging誌、プレプリントではない）。\n\n主人公はshortlistのexample_protagonistをそのまま採用（74歳男性、元高校教師）。研究ボイスは主人公が男性のため女性（Autonoe、確定済み）を使う想定。",
-   "stage4_snapshot": {
-    "overall_score": 4.45,
-    "score_breakdown": {
-     "wonder_score": 4,
-     "transformation_score": 5,
-     "life_relevance_score": 5,
-     "surprise_score": 4,
-     "persona_fit_score": 5
-    },
-    "market_status": "novel",
-    "novel_delta": "脳内に蓄積して慢性炎症と神経変性を引き起こす「老化細胞（ゾンビ細胞）」を選択的に死滅・除去することで、認知機能の低下や歩行障害を食い止め改善する治療法。",
-    "paperId": "d67a1cf97dee06f4ad6e91b716a7668abcc3e68d"
-   },
-   "slot_type": "legacy",
-   "concern_id": "dementia",
-   "domain": "disease",
-   "publish_hold": true,
-   "genre": "medical",
-   "health": true
-  },
-  {
-   "episode_id": "kl024",
-   "status": "produced",
-   "title": "歩ける未来を、生まれる前に：胎児の脊髄を守る幹細胞パッチ治療",
-   "format": "single_paper",
-   "category": "medical_support",
-   "category_label": "医療補助技術",
-   "references": [
-    {
-     "title": "Feasibility and safety of cellular therapy for in-utero repair of myelomeningocele (CuRe Trial): a first-in-human, phase 1, single-arm study",
-     "authors": [
-      "Diana L. Farmer",
-      "Priyadarsini Kumar",
-      "Elizabeth Reynolds",
-      "Su Yeon Lee",
-      "Amy B. Powne",
-      "Christopher D. Pivetti",
-      "Marike Zwienenberg",
-      "Amelia S. McLennan",
-      "Jan A. Nolta",
-      "Erin G. Brown",
-      "Payam Saadai",
-      "Shinjiro Hirose",
-      "Aijun Wang"
-     ],
-     "year": 2026,
-     "venue": "The Lancet",
-     "doi": "10.1016/S0140-6736(25)02466-3",
-     "is_preprint": false,
-     "lead_researcher": "Diana L. Farmer（UC Davis Health外科主任、CuRe試験共同代表）"
-    }
-   ],
-   "protagonist": {
-    "name": "高橋 綾乃",
-    "age": 32,
-    "job": "グラフィックデザイナー（育児中）",
-    "gender": "female"
-   },
-   "hook_idea": "「お腹の赤ちゃんは、一生歩けないかもしれません」——もし妊娠中の検診でそう告げられたら？胎児の背中に幹細胞を届ける世界初の手術が、生まれながらの重い障害を過去のものにしようとしています。",
-   "pipeline_gap_flag": true,
-   "notes": "2026-09-27: STAGE0で全カテゴリ在庫3件以上を確認しSTAGE1新規実行は全カテゴリでスキップ。kl_shortlist_rescore.py --checkは再採点対象0件だったが、aging_care上位がkl023（脳のゾンビ細胞除去薬・アルツハイマー病）と題材が近い可能性があったため同カテゴリのみ--stale-deja-vuで既視感再判定を実施（73件成功）。\n\nSTAGE2でmedical_support/aging_care/mobility/pet_healthの4カテゴリを提示（home_robot/work/disaster_safetyは上位でも総合3.2以下・wonder_score最大3で今回は案を見送り）。ユーザーは全カテゴリ中最高スコア（overall_score=4.75, wonder_score=5, deja_vu_level=none）の本候補（案1: medical_support）を即決で選定。\n\n【pipeline_gap_flag=trueの経緯】Semantic Scholar上のレコード（paperId: e0f8c10e524344e37ceef4641eed0bc01879adb3）はNature本体の査読論文ではなく、Nature Newsのニュース記事（DOI \"10.1038/d41586-\"はNature News特有のプレフィックス）だったため、STAGE2確定時点でWebSearch/WebFetchにより一次資料を追跡・検証した。実際の一次研究はThe Lancet誌の第1相臨床試験論文（CuRe Trial、UC Davis Health、DOI: 10.1016/S0140-6736(25)02466-3、2026-02-28付、Farmer/Wang共同代表）であり、上記referencesはこちらを正としている（出版元Lancet公式ページ・EurekAlert・UC Davis Health公式プレスリリースの複数ソースで内容を直接確認済み）。\n\n【STAGE3の信頼性・誇張チェックメモ（重要、STEP2/STEP4で厳守）】本試験（n=6、フィージビリティ研究）で実証済みなのは(1)安全性（重篤な感染・異常組織増殖・腫瘍形成なし）、(2)全例で後脳ヘルニア（Chiari II奇形に伴う脳の合併症所見）がMRI上『改善』したこと、(3)退院前のシャント（水頭症治療）留置が0件だったこと、の3点。**歩行能力・運動機能そのものの改善はこの第1相段階ではまだ実証されておらず、6歳までの長期追跡調査が進行中**（未確定）。shortlistのfuture_scene_sketch（3歳の娘が公園を自分の足で駆ける）はSTAGE4の『実現したら』という仮定のimpactシーンとしては使ってよいが、citation/findingシーンでは安全性・後脳ヘルニア改善という実証済みの範囲を正確に語り、closingでは運動機能の長期追跡が現在進行中である旨を必ずヘッジすること（査読済み・プレプリントではないため『査読』『プレプリント』の語自体は不要）。\n\n主人公はshortlistのexample_protagonistをそのまま採用（32歳女性、育児中のグラフィックデザイナー）。研究ボイスは主人公が女性のため男性（Orus、確定済み）を使う想定。",
-   "stage4_snapshot": {
-    "overall_score": 4.75,
-    "score_breakdown": {
-     "wonder_score": 5,
-     "transformation_score": 5,
-     "life_relevance_score": 4,
-     "surprise_score": 4,
-     "persona_fit_score": 5
-    },
-    "market_status": "novel",
-    "novel_delta": "従来の胎内外科手術が脊髄組織の物理的閉鎖にとどまるのに対し、胎盤由来間葉系幹細胞パッチを胎児の露出した脊髄に直接貼り付けることで神経の変性と損傷を保護・再生し、出生後の麻痺を防ぐ点。",
-    "paperId": "e0f8c10e524344e37ceef4641eed0bc01879adb3"
-   },
-   "slot_type": "legacy",
-   "concern_id": null,
-   "domain": "disease",
-   "publish_hold": true,
-   "genre": "medical",
-   "health": true
-  },
-  {
-   "episode_id": "kl025",
-   "status": "produced",
-   "title": "きみの名前を呼べば：腸の中の小さな菌たちが連れ戻す、愛犬の記憶",
-   "format": "single_paper",
-   "category": "pet_health",
-   "category_label": "ペット・動物医療",
-   "references": [
-    {
-     "title": "Fecal microbiota transplantation shows promise in slowing or reducing cognitive impairment in aging dogs.",
-     "authors": [
-      "C. W. Dewey",
-      "Connie A. Rojas",
-      "Carly Pomeroy",
-      "J. Gerardi",
-      "Holly H. Ganz"
-     ],
-     "year": 2026,
-     "venue": "Journal of the American Veterinary Medical Association",
-     "doi": "10.2460/javma.26.03.0231",
-     "is_preprint": false
-    }
-   ],
-   "protagonist": {
-    "name": "田村久美子",
-    "age": 58,
-    "job": "学童保育指導員（パート勤務）、夫を亡くし15歳の柴犬「マル」と二人暮らし",
-    "gender": "female"
-   },
-   "hook_idea": "夜中に部屋の隅で立ち往生し、名前を呼んでも反応しなくなった愛犬。もし『腸の中の菌』を入れ替えるだけで、あの頃の表情が戻ってくるとしたら？",
-   "notes": "2026-09-28: STAGE0で全カテゴリ在庫3件以上を確認しSTAGE1は全面スキップ。kl_shortlist_rescore.py --checkはバージョン起因の再採点0件（既視感の鮮度警告はkl024まで反映されていない710件だったが、非ゼロ終了ではないため許容）。\n\nSTAGE2でhome_robot/work/disaster_safetyの3カテゴリはスコアが軒並み弱い（work上位2.4〜3.0、home_robot 2.6〜3.2、disaster_safety 2.1〜3.1、いずれもマニピュレーション・群ロボット系のベンチマーク論文中心でwonder要素が弱い）ことを確認し、この3カテゴリは提案を見送った。aging_care/medical_support/mobility/pet_healthの4カテゴリから各1案（STAGE2.5相当）を提示し、ユーザーがpet_healthのFMT（便微生物移植）案を選定。\n\n選定理由: wonder_score=4/transformation_score=4/life_relevance_score=5/surprise_score=4/persona_fit_score=5、deja_vu_level=none（kl024までの公開回と技術の型の重複なし。犬の腸内細菌移植による認知機能改善という切り口はチャンネル初）。behavioral_familiarity=novel（チャットボット等では再現不可能な生物学的介入）。market_status=incremental（犬の消化器疾患向けの経口FMTカプセル自体は既存技術）だが、novel_deltaは『これまで有効な治療選択肢が乏しかった高齢犬の認知機能低下への応用』であり、既存製品そのものの再現ではないためoverall_scoreへの上限キャップ対象外。\n\nSTAGE2信頼性チェック観点: n=11頭（完了6頭、うち4頭で改善）と非常に小規模な予備的検証（pilot study）のため、closingシーンで『まだ少数の犬での研究段階』である旨のヘッジを必ず入れること。査読済み（JAVMA、プレプリントではない）。\n\nローテーション補足: pet_healthはkl022（3話前）で使用済みだが、aging_care（kl023）・medical_support（kl024）は直近2話で連続使用済みのため、今回は選択肢から除外する判断も踏まえた選定。mobilityのALS/AAV遺伝子治療案（9話ぶりの未使用でローテーション上は最有力）は不採用となったため、次回以降の優先候補として在庫に残す。\n\n主人公は在宅職ではなく学童保育指導員（パート勤務）、夫と死別し愛犬が家族の中心という設定にした（shortlistのexample_protagonist「在宅勤務のグラフィックデザイナー、52歳男性」はkl022の主人公と職業・年代が完全一致していたため、重複回避のため変更）。研究ボイスは主人公が女性のため男性（Orus、確定済み）を使う想定。",
-   "stage4_snapshot": {
-    "paperId": "3a5a7ac3ab4c53cbd88aed8de059e02754497341",
-    "overall_score": 4.2,
-    "score_breakdown": {
-     "wonder_score": 4,
-     "transformation_score": 4,
-     "life_relevance_score": 5,
-     "surprise_score": 4,
-     "persona_fit_score": 5
-    },
-    "market_status": "incremental",
-    "novel_delta": "犬の消化器疾患向け経口カプセル便微生物移植技術を、これまで有効な治療選択肢が極めて乏しかった高齢犬の認知機能低下（認知症様症状）の改善・進行抑制に応用した点。"
-   },
-   "slot_type": "legacy",
-   "concern_id": "pets",
-   "domain": "life",
-   "publish_hold": true,
-   "genre": "medical",
-   "health": false
-  },
-  {
-   "episode_id": "kl026",
-   "status": "produced",
-   "title": "「あったかいね」：動かない手の代わりに、娘の手が湯呑みを包む日",
-   "format": "single_paper",
-   "category": "medical_support",
-   "category_label": "医療補助技術",
-   "references": [
-    {
-     "title": "Cortically Interfaced Human Avatar Enables Remote Volitional Grasp and Shared Discriminative Touch",
-     "authors": [
-      "E. Cater",
-      "S. Wandelt",
-      "A. Jangam",
-      "Z. Elias",
-      "E. Ibroci"
-     ],
-     "year": 2025,
-     "venue": "medRxiv",
-     "doi": "10.1101/2025.09.21.25336267",
-     "is_preprint": true,
-     "lead_researcher": "E. Cater"
-    }
-   ],
-   "protagonist": {
-    "name": "篠原宏明",
-    "age": 48,
-    "job": "元高校教師（頸髄損傷により四肢麻痺で療養中）、小学生の娘と暮らす",
-    "gender": "male"
-   },
-   "hook_idea": "もし動かない自分の手の代わりに、大切な人の手を『借りて』物を掴み、その手ざわりまで感じられるとしたら？",
-   "notes": "2026-09-29: 最初の提示（自主練潮流・群ロボット・治療系上位）はユーザーが『どれもパッとしない、もっと感動的なストーリーが欲しい』と評価。在庫を感情キーワード（再会・家族・涙等）で再抽出し5案を再提示、ユーザーがE（遠隔ヒューマンアバター）を選定。\n\n選定理由: 感動の強さ（父娘が手を通してつながる『あったかいね』）を最優先。market_status=novel、behavioral_familiarity=novel、deja_vu_level=partial（kl003/007/015/016とBCI・触覚の要素が重なるが、他人の身体を介した運動と触覚の双方向共有という切り口は初）。総合3.2（wonder=3）でスコア上は中位だが、感情の質で選んだ判断。\n\n注意: 未査読プレプリント（medRxiv）。実証はBCI埋め込み四肢麻痺患者1名が健常者の手を無線筋刺激で制御し、目隠し下で物体の硬さを64%の精度で弁別、別の麻痺患者の腕刺激を駆動して共同でボトル注ぎ動作を成功率94%（単独39%）で達成、という初期段階。closingで『まだ少数の参加者による研究段階』のヘッジを必ず入れ、impactの父娘シーンは『実現したら』の未来として描く。ナレーションで『査読』『プレプリント』は使わず概要欄で開示。\n\nA/B: kl026は顔アップフック無し（shorts[].face_hook_image_prompt省略）。主人公が男性のため研究ボイスは女性（Autonoe、確定済み）。BCI系続き（kl003/007/015/016）のためSTEP5で既視感を重点確認。",
-   "stage4_snapshot": {
-    "paperId": "42656911c04df2609029e62d0d4ff3c5aee969c8",
-    "overall_score": 3.2,
-    "score_breakdown": {
-     "wonder_score": 3,
-     "transformation_score": 4,
-     "life_relevance_score": 2,
-     "surprise_score": 4,
-     "persona_fit_score": 3
-    },
-    "market_status": "novel",
-    "novel_delta": "麻痺患者の脳の意図でワイヤレスに他人の手を動かし、相手の指先が触れた硬さの触覚を患者の脳へ直接フィードバックして人間同士で運動と感覚を双方向共有できる点。"
-   },
-   "slot_type": "legacy",
-   "concern_id": null,
-   "domain": "body",
-   "publish_hold": true,
-   "genre": "medical",
-   "health": true
-  },
-  {
-   "episode_id": "kl027",
-   "status": "produced",
-   "slot_type": "concern",
-   "concern_id": "later_life",
-   "domain": "life",
-   "entry_question": "一人暮らしの老後でも、毎日の「心の持ちよう」だけで認知症の予防につながるって本当？",
-   "title": "「今日もみんな、無事に帰れますように」：思いやる気持ちが、脳の衰えを55%遅らせる",
-   "format": "single_paper",
-   "references": [
-    {
-     "title": "Prosocial Intentions and Subsequent Cognitive Health: A Prospective Cohort Study.",
-     "authors": [
-      "Justin G. Farmer",
-      "Lucía Macchia",
-      "Fei-Fei Bu",
-      "Jessica Gong",
-      "Andrew Steptoe"
-     ],
-     "year": 2025,
-     "venue": "The journals of gerontology. Series B, Psychological sciences and social sciences",
-     "doi": "10.1093/geronb/gbaf004",
-     "is_preprint": false,
-     "lead_researcher": "Justin G. Farmer"
-    }
-   ],
-   "protagonist": {
-    "name": "坂本修一",
-    "age": 71,
-    "job": "元高校教師（定年退職後、一人暮らし）",
-    "gender": "male"
-   },
-   "hook_idea": "「他人のために何かしたい」という優しい気持ちが、あなたの脳の衰えを55%も遅らせるかもしれません。",
-   "notes": "2026-09-30: STAGE0でlater_life（老後の暮らし・健康寿命）を選定。健康系枠は直近5話で埋まっていたが、later_lifeはdomain=lifeのため対象外。新在庫0件のためSTAGE1〜4をこの関心ごとで新規実行し、許可リストに15誌を追加（Journals of Gerontology B等の査読誌）。\n\nSTAGE2では同型の疫学追跡調査（社会参加・ボランティアと健康長寿の関連、市場的には既知の知見の再確認、market_status=existing_product、wonder=2）が上位に複数集中していたため上位2件のみ提示し、個別に目立つ技術系候補（振動センサー見守り、家具の転倒危険可視化、咳音AI、認知症興奮予兆検知）も併記。ユーザーは総合最高点（3.5）かつwonder最高（3）・market_status=novelの案Aを選定: 『思いやる気持ち自体が認知機能低下を抑える』という、技術不要で誰でも今日から実践できる意外性のある知見。\n\n内容: 50歳以上7,844人の英国コホートを11年追跡。向社会的意図（実際の行動でなく心構え）が高い群は、実行機能低下が55%緩やか、言語記憶低下が24%緩やか、認知症発症ハザードが35%低い。closingで『まだ関連を示した段階で因果関係は未確定』のヘッジを入れる。査読済み（The Journals of Gerontology Series B）。deja_vu_level=none。",
-   "stage4_snapshot": {
-    "paperId": "20b1b7a45d099817bf5b73375f742dab2addd27a",
-    "overall_score": 3.5,
-    "score_breakdown": {
-     "wonder_score": 3,
-     "transformation_score": 2,
-     "answer_fit_score": 4,
-     "applicable_breadth_score": 5,
-     "surprise_score": 4,
-     "persona_fit_score": 4
-    },
-    "evidence_level": "human_study",
-    "market_status": "novel",
-    "novel_delta": "ボランティアなどの実際の行動を起こさずとも、心の中で「他者の役に立ちたい・思いやりたい」と意識する姿勢そのものが、11年後の実行機能低下や認知症リスク低下と強く関連することを示した点。"
-   },
-   "publish_hold": true,
-   "genre": "food_health",
-   "health": false
-  },
-  {
-   "episode_id": "kl028",
-   "status": "produced",
-   "slot_type": "concern",
-   "concern_id": "work_ai",
-   "domain": "life",
-   "entry_question": "AIに仕事を任せっきりにしていると、自分の考える力は本当に衰えてしまうの？ 鈍らせない使い方はある？",
-   "title": "AIに丸投げすると、頭は鈍るのか：2つの実験が示した「鈍らせない使い方」",
-   "format": "multi_paper",
-   "references": [
-    {
-     "title": "How AI Assistance Affects Human Skill Development: A Study of Learning with Logic Puzzles",
-     "authors": [
-      "Shanglin Wu",
-      "Catarina G. Belém",
-      "Shu-Chin Fu",
-      "M. Steyvers",
-      "Padhraic Smyth"
-     ],
-     "year": 2026,
-     "venue": "Proceedings of the 2026 ACM Conference on Human-AI Complementarity and Alignment",
-     "doi": "10.1145/3834580.3838741",
-     "is_preprint": false,
-     "lead_researcher": "Shanglin Wu"
+      "episode_id": "kl010",
+      "status": "published",
+      "title": "坂道が怖くなくなる服：着るだけで歩行の代謝コストを16%減らすソフト外骨格",
+      "format": "single_paper",
+      "category": "mobility",
+      "category_label": "モビリティ・身体拡張",
+      "references": [
+        {
+          "title": "A soft hip exoskeleton biomimetic assistance method incorporating dual-pretension and biomechanics-based force modeling",
+          "authors": [
+            "Lei Sun",
+            "Wang Lu",
+            "Wei Wang",
+            "Hao Wang",
+            "Minmin Xue",
+            "Xinyi Zhang"
+          ],
+          "year": 2026,
+          "venue": "Medical & Biological Engineering & Computing",
+          "doi": "10.1007/s11517-025-03508-6",
+          "is_preprint": false,
+          "institution": "Tianjin University of Technology（中国）、983 Hospital of Joint Logistics Support Force, PLA（中国）の共同研究"
+        }
+      ],
+      "protagonist": {
+        "name": "高橋 茂",
+        "age": 67,
+        "job": "坂道の多い地域に住む元公務員（趣味は散歩）",
+        "gender": "male"
+      },
+      "hook_idea": "坂道や長距離の歩行、最近おっくうになっていませんか？もし『着るだけで歩行エネルギーを16％減らせる服』があったら、あなたの外出はどう変わるでしょうか？",
+      "notes": "STAGE4スコア4.4でmobilityカテゴリ上位（STEP2.5提示の6カテゴリ案から、当初③防災・安全（救助犬の嗅覚模倣ロボット）を検討したが、WebFetchで実際のアブストラクトを確認したところ「one of the first steps」という初期段階の概念実証で定量結果が皆無だったため、ユーザー判断で⑤モビリティに変更、2026-08-31）。kl004（外付け軽量アシストギア）・kl009（骨固定義足）に続き3回連続のモビリティカテゴリとなる点はSTEP2.5で明示したが、ユーザーが承知の上で選択。kl004・kl009とは異なる「ソフト外骨格（布製・柔軟構造）」という切り口で、査読済み論文（Medical & Biological Engineering & Computing、Springer）かつ実際に6名の被験者実験で3km/h歩行時16.4%・4度坂道14.1%の代謝コスト削減という具体的数値を持つ点が信頼性シグナルとして強い。WebFetch+Europe PMC APIで実際のアブストラクト全文を確認済み。",
+      "stage4_snapshot": [
+        {
+          "paperId": "c3bd8165be00bbc373e5ee309317247ec44f5414",
+          "overall_score": 4.4,
+          "hook_idea_at_selection": "坂道や長距離の歩行、最近おっくうになっていませんか？もし『着るだけで歩行エネルギーを16％減らせる服』があったら、あなたの外出はどう変わるでしょうか？"
+        }
+      ],
+      "slot_type": "legacy",
+      "concern_id": "bone_muscle",
+      "domain": "body",
+      "genre": "life_tech",
+      "health": true
     },
     {
-     "title": "How AI Impacts Skill Formation",
-     "authors": [
-      "J. Shen",
-      "Alex Tamkin"
-     ],
-     "year": 2026,
-     "venue": "arXiv.org",
-     "doi": "10.48550/arXiv.2601.20245",
-     "url": "https://arxiv.org/abs/2601.20245",
-     "is_preprint": true,
-     "lead_researcher": "J. Shen"
-    }
-   ],
-   "protagonist": {
-    "name": "谷口彩",
-    "age": 32,
-    "job": "Webマーケティング会社のレポート作成担当",
-    "gender": "female"
-   },
-   "hook_idea": "「最近AIに頼りきりで、自分で考えなくなった気がする…」その不安を、2つの実験が数字で確かめました。",
-   "notes": "2026-10-01: STAGE0でwork_ai（仕事とAI）を選定（健康系枠0・ワイルドカード枠1の回に、domain=lifeかつ当事者の広さ5の関心ごと）。新在庫0件のためSTAGE1〜4を新規実行（収集258→通過191→トリアージ40→pass23→採点31件）。ユーザーは案A「AIに任せっきりだと頭は鈍る？鈍らせない使い方は？」を選定。\n\n使用論文2本（どちらもヒトのRCT）: (1) ACM 2026（ロジックパズル。AIに推論を代替させた群はAI停止後の成績が低下、自力推論の努力量が能力向上と関連）。(2) arXiv 2026・未査読（Python初見ライブラリのRCT。AI支援群は直後の理解度が平均17%低下、説明を求める等の認知的関与を保った対話パターンでは維持）。『丸投げ→鈍る／考えながら使う→鈍らない』を別課題の2実験で裏付ける構成。(2)は未査読のためナレーションでは『研究段階』のヘッジのみ、開示は概要欄。\n\n注意: wonder低め（2）、behavioral_familiarity=familiar、deja_vu strong/partial（kl012・kl002と『AIと仕事・能力』で近い）。『どう使えば鈍らないか』の具体的な答えを軸に差別化する。STAGE3誇張チェックは両論文caution→kl_fact_check.pyで数値（17%）・スコープを厳密に照合。被験者はパズル課題・プログラマーで、一般の全業務に一般化しない。使い方の助言口調（〜しましょう）は避け研究結果の紹介にとどめる。内容の型は直近5話の治療・健康系から変わる（行動実験）。",
-   "stage4_snapshot": [
-    {
-     "paperId": "b42f28cd1ee8930a3da953bc5f89a0af4f6aaf37",
-     "overall_score": 3.05,
-     "score_breakdown": {
-      "wonder_score": 2,
-      "transformation_score": 2,
-      "answer_fit_score": 4,
-      "applicable_breadth_score": 5,
-      "surprise_score": 3,
-      "persona_fit_score": 4
-     },
-     "evidence_level": "human_rct",
-     "market_status": "existing_product",
-     "novel_delta": "新たな製品や技術の提案ではなく、手軽なAI支援が自力推論を代替することでAI除去後のスキル習得が阻害され、実力を過大評価してしまう認知メカニズムを実験とベイズモデルで定量化した知見である点。"
+      "episode_id": "kl011",
+      "status": "published",
+      "title": "「片付けて」と言うだけで：見たことのない物でも掴んで片付けるロボットアームの衝撃",
+      "format": "single_paper",
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "references": [
+        {
+          "title": "Adaptive Vision-Language-Action Models for Generalizable Robotic Manipulation in Unstructured Environments",
+          "authors": [
+            "Saher Elsayed"
+          ],
+          "year": 2026,
+          "venue": "2026 7th International Conference on Artificial Intelligence, Robotics, and Control (AIRC)",
+          "doi": "10.1109/AIRC69745.2026.11631388",
+          "is_preprint": false
+        }
+      ],
+      "protagonist": {
+        "name": "佐藤 美咲",
+        "age": 34,
+        "job": "IT企業勤務（共働き・2児の母）",
+        "gender": "female"
+      },
+      "hook_idea": "「ルンバを動かすために、まず床のおもちゃを片付ける」…そんな不毛な家事、そろそろロボットに代わってもらいませんか？",
+      "notes": "STAGE0: 6カテゴリとも在庫十分（aging_care17/disaster_safety38/home_robot30/medical_support145/mobility30/work79件）のためSTAGE1新規収集は全カテゴリスキップし、既存topics_shortlist.jsonから選定。STAGE2.5でカテゴリごとに1案ずつ提示した中からユーザーがhome_robot案を選択（2026-09-01）。mobilityはkl009・kl010で2回連続使用済みのため今回は選択肢から除外を推奨し、採用しなかった。採用論文はAIRC 2026（IEEE、査読済み・非プレプリント）の単著論文。transformation_comparison: 現在の市販ロボット掃除機は床の吸引・障害物回避にとどまるが、本研究は未知の物体であっても言葉の指示通り自律で「掴んで片付ける」汎用アーム制御を15Hzで実現した点が決定的に新しい（STAGE4のtransformation_score判定時に市販品比較済み、shortlist記載の通り）。著者Saher ElsayedはSemantic Scholar APIが終始429（レート制限）で詳細取得不可だったため、WebSearchでResearchGateプロフィールを確認し単著・ペンシルベニア大学電気システム工学科の修士課程学生と判明（lead_researcher/institutionはSTEP2のepisode JSON生成時にnarrationでは使わず所属機関名のみimage_prompt等に反映する）。",
+      "stage4_snapshot": [
+        {
+          "paperId": "52bb8dea9b699ff5c5d8c76046fe5226d8e4df93",
+          "overall_score": 4.75,
+          "score_breakdown": {
+            "transformation_score": 5,
+            "life_relevance_score": 5,
+            "surprise_score": 4,
+            "persona_fit_score": 5
+          },
+          "hook_idea_at_selection": "「ルンバを動かすために、まず床のおもちゃを片付ける」…そんな不毛な家事、そろそろロボットに代わってもらいませんか？"
+        }
+      ],
+      "slot_type": "legacy",
+      "concern_id": "housework",
+      "domain": "life",
+      "genre": "life_tech",
+      "health": false
     },
     {
-     "paperId": "97925dff599f2ac34aa06c388b98d1886bbd3296",
-     "overall_score": 3.0,
-     "score_breakdown": {
-      "wonder_score": 2,
-      "transformation_score": 2,
-      "answer_fit_score": 4,
-      "applicable_breadth_score": 4,
-      "surprise_score": 4,
-      "persona_fit_score": 4
-     },
-     "evidence_level": "human_rct",
-     "market_status": "existing_product",
-     "novel_delta": "既存のチャット型AIを使う際、タスクを全丸投げすると理解度やデバッグ力が17%低下する一方で、理由や概念を質問する認知的関与を保てばスキル形成を損なわずに済むという実証的知見。"
-    }
-   ],
-   "publish_hold": true,
-   "genre": "ai",
-   "health": false
-  },
-  {
-   "episode_id": "kl029",
-   "status": "produced",
-   "slot_type": "concern",
-   "concern_id": "teeth",
-   "domain": "body",
-   "entry_question": "歯周病で溶けてしまった歯のまわりの骨や歯ぐきは、大がかりな手術なしに、注射で再生できる日が来る？",
-   "title": "歯周病で溶けた骨は、注射で戻せる日が来るのか：幹細胞治療の最新の臨床試験",
-   "format": "single_paper",
-   "references": [
-    {
-     "title": "Impact of allogeneic dental pulp stem cell injection on tissue regeneration in periodontitis: a multicenter randomized clinical trial",
-     "authors": [
-      "Yi Liu",
-      "Yi-Tong Liu",
-      "Jingchao Hu",
-      "Jian-Hui Han",
-      "Lin Song"
-     ],
-     "year": 2025,
-     "venue": "Signal Transduction and Targeted Therapy",
-     "doi": "10.1038/s41392-025-02320-w",
-     "is_preprint": false,
-     "lead_researcher": "Yi Liu"
-    }
-   ],
-   "protagonist": {
-    "name": "高橋誠一",
-    "age": 52,
-    "job": "精密機器メーカーの金型職人",
-    "gender": "male"
-   },
-   "hook_idea": "「重度の歯周病ですね、切開手術か抜歯が必要です」——そう宣告された歯を、たった1本の注射で救える未来が来るかもしれません。",
-   "notes": "2026-10-02: STAGE0でteeth（歯と歯周病）を選定（健康系の最後の1枠）。新在庫0件のためSTAGE1〜4を新規実行（収集838→通過460→トリアージ40→pass29→採点38件）。ユーザーは案A「歯周病で溶けた骨は注射で戻せる日が来る？」を選定。許可リストに26誌を追加。\n\n使用論文: Signal Transduction and Targeted Therapy 2025、他家歯髄幹細胞（DPSC）注射の多施設RCT（中国2施設、132人158歯、NCT05924373）。主評価項目はAL（付着喪失）。骨欠損深さは生理食塩水群との差が約0.26mm、目立つ効果はStage III（AL≥5mm）を対象とした事後解析（AL改善1.67mm vs 1.03mm、群間差約0.64mm）。『Larger trials are warranted』と論文自身がヘッジ。\n\n注意（STAGE3 caution）: 『切らずに注射だけで骨が元通り』と断定しない。事後解析であること、改善幅は小さいこと、大規模試験が必要なことを正直に伝える。承認前の研究段階であり、スケーリング等の通常治療に代わるものではない。健康助言口調（〜しましょう、受けてください）は避け、研究結果の紹介にとどめる。研究者は中国の機関（白衣・東アジア系）で描く。COIはアブストラクトでは確認できない点に留意（fact_checkで確認）。\n\n内容の型: 幹細胞系はkl024（胎児の幹細胞パッチ）と近いため、『注射で歯周組織を再生』という日常の歯科の悩みに寄せて差別化。",
-   "stage4_snapshot": [
-    {
-     "paperId": "e3b4d59a384a6d5888a4cff66ac61dadb7068909",
-     "overall_score": 3.95,
-     "score_breakdown": {
-      "wonder_score": 4,
-      "transformation_score": 4,
-      "answer_fit_score": 4,
-      "applicable_breadth_score": 4,
-      "surprise_score": 3,
-      "persona_fit_score": 5
-     },
-     "evidence_level": "human_rct",
-     "market_status": "novel",
-     "novel_delta": "メスで歯ぐきを切開・剥離する外科手術を伴わず、他家歯髄幹細胞の局所注射という低侵襲な処置のみで歯周組織（骨・付着組織）の再生を促せる点"
-    }
-   ],
-   "publish_hold": true,
-   "genre": "medical",
-   "health": true
-  },
-  {
-   "episode_id": "kl030",
-   "status": "produced",
-   "slot_type": "concern",
-   "concern_id": "food",
-   "domain": "life",
-   "entry_question": "好きなものを我慢しなくても、食卓の幸せは守れる？ 肉の味も匂いも諦めなくていい日は来る？",
-   "title": "食卓から肉が消えても：AIが設計する「おいしさ」と「香り」",
-   "format": "multi_paper",
-   "references": [
-    {
-     "title": "Generative artificial intelligence creates delicious, sustainable, and nutritious burgers",
-     "authors": [
-      "Vahidullah Tac",
-      "Christopher Gardner",
-      "E. Kuhl"
-     ],
-     "year": 2026,
-     "venue": "npj Science of Food",
-     "doi": "10.1038/s41538-026-00953-x",
-     "is_preprint": false,
-     "lead_researcher": "Vahidullah Tac"
+      "episode_id": "kl012",
+      "status": "published",
+      "title": "AIエージェントと『チームで』働くと、成果は50%伸びる——ただし丸投げには落とし穴も",
+      "format": "single_paper",
+      "category": "work",
+      "category_label": "働き方の変化",
+      "references": [
+        {
+          "title": "Collaborating with AI Agents: Field Experiments on Teamwork, Productivity, and Performance",
+          "authors": [
+            "Harang Ju",
+            "Sinan Aral"
+          ],
+          "year": 2025,
+          "venue": "arXiv.org",
+          "url": "https://arxiv.org/abs/2503.18238",
+          "doi": "10.48550/arXiv.2503.18238",
+          "is_preprint": true,
+          "lead_researcher": "Sinan Aral（MIT Sloan School of Management、計算社会科学・AI経済学の第一人者）"
+        }
+      ],
+      "protagonist": {
+        "name": "佐藤 健太",
+        "age": 34,
+        "job": "Web広告代理店のマーケティングディレクター",
+        "gender": "male"
+      },
+      "hook_idea": "チャットの気配りをやめてAIに仕事丸投げしたら、成果が50%上がった？最新大規模実験が明かすAIチームワークのリアルと『同じような広告ばかりになる』落とし穴とは。",
+      "notes": "STAGE0: 6カテゴリとも在庫十分のためSTAGE1新規収集は全カテゴリスキップ。STAGE2.5でカテゴリごとに1案ずつ提示（work/aging_care/medical_support/disaster_safety/mobility/home_robot）した中からユーザーがwork案を選択（2026-09-01）。workはkl002（2026-08、学歴格差を縮める生成AI）以来9話ぶりの起用で、直近連続使用していたmobility（kl009・kl010）・home_robot（kl008・kl011）は今回見送りを推奨し選択肢から除外した。採用論文はarXiv掲載のプレプリントだが、著者Sinan AralはMIT Sloan教授で計算社会科学・AI経済学分野の著名研究者（信頼性シグナルとしてSTAGE2方針に合致）。大規模フィールド実験（実際の広告制作チーム）でAIエージェントを『同僚』として協働させると生産性・パフォーマンスが約50%向上する一方、AIに考えなしに丸投げすると成果物の画一化（同じような広告ばかりになる）という新しい落とし穴が定量的に示された点が、単なる『AIで効率化』を超えた変革ポテンシャルと判断。kl002（個人のスキル格差是正）とは異なる『チーム協働のあり方』という切り口で差別化。査読前である旨は概要欄で開示し、ナレーションでは『まだ研究段階』等の一般的な表現でヘッジする。",
+      "stage4_snapshot": [
+        {
+          "paperId": "a6592233f89114439705adf7244e0fb80bd96e72",
+          "overall_score": 4.4,
+          "hook_idea_at_selection": "チャットの気配りをやめてAIに仕事丸投げしたら、成果が50%上がった？最新大規模実験が明かすAIチームワークのリアルと『同じような広告ばかりになる』落とし穴とは。"
+        }
+      ],
+      "slot_type": "legacy",
+      "concern_id": "work_ai",
+      "domain": "life",
+      "genre": "ai",
+      "health": false
     },
     {
-     "title": "Molecular atlas of key food odorants reveals structured aroma organization and enables generative aroma design",
-     "authors": [
-      "Jing-Zhi Zhang",
-      "Hua-Dong Xing",
-      "A. Di Pizio",
-      "Qinfei Ke",
-      "Xing-Ran Kou"
-     ],
-     "year": 2026,
-     "venue": "bioRxiv",
-     "doi": "10.64898/2026.01.21.700072",
-     "is_preprint": true,
-     "lead_researcher": "Jing-Zhi Zhang"
-    }
-   ],
-   "protagonist": {
-    "name": "森田浩一",
-    "age": 54,
-    "job": "機械部品メーカーの営業課長",
-    "gender": "male"
-   },
-   "hook_idea": "健診で肉を控えるように言われてから、食卓から消えた焼き肉の匂い。その匂いも味も、AIが設計できるようになってきました。",
-   "notes": "2026-10-03: STAGE0でfood（食と料理）を選定（健康系枠0・ワイルドカード枠1の回、当事者の広さ5・未扱い）。1回目の検索（疫学・RCT型6語）は超加工食品の疫学に偏り、ユーザーが『全く面白みがない』と却下（上位10件をrejected）。原因は検索語の偏り（5/6が検証型）と診断し、ユーザー指示で『料理の自動化』に絞って再検索（収集815→通過587→トリアージ40→pass25→採点24件、旧検索語はqueries_archiveに退避）。案2（バーガー＋香り分子の地図）を選定。\n\n使用論文2本: (1) npj Science of Food 2026（Stanford、生成AI＝多目的拡散モデルが2,216件のレシピから学習しバーガー配合を設計、レストランでの101人ブラインド官能評価で美味しさ特化版がビッグマックと同等以上）。(2) bioRxiv 2026・未査読（896種の香気分子アトラス＋生成AIで植物由来成分のみから肉様アロマを設計、盲検ヒト官能評価で原理実証）。(2)は未査読のためナレーションでは『研究段階』のヘッジのみ、開示は概要欄。(2)の著者所属機関はSTEP2で確認し、国に応じた研究者描写にする。\n\nユーザー指示（2026-10-03）: 環境意識の強い娘は出さない。環境は主人公の動機にしない。主人公は健診で肉を控えるよう言われた50代の父で、家族は妻・20代の息子（娘なし）。動機は『食べたいのに控えなければならない寂しさ』。\n\n注意: (1)はbehavioral_familiarity=familiar（AIがレシピを出す振る舞い自体は既知）だが、(2)の香りは物理的で再現不可のためnovel。『味・食感』＋『香り』の2本でおいしさをAIが両面から設計する構成で差別化。健康の語り方: 主人公の独白（自分の事情）は可だが、視聴者への食事助言・語り手の専門家名乗りは禁止、バーガーは『健康にいい』と言い切らず『条件を同時に満たすレシピをAIが設計できた』範囲で語る。香りは実験室での原理実証で、『肉と同じ匂いになる日』は研究段階であることを正直に伝える。STAGE3誇張チェックは両論文caution。内容の型は直近5話（治療・脳・AI行動実験）から変わる（AIによる設計）。",
-   "stage4_snapshot": [
-    {
-     "paperId": "89b96b229a161fc9375f5f12f4e1b08d78ba4a07",
-     "overall_score": 3.65,
-     "score_breakdown": {
-      "wonder_score": 3,
-      "transformation_score": 3,
-      "answer_fit_score": 4,
-      "applicable_breadth_score": 5,
-      "surprise_score": 4,
-      "persona_fit_score": 4
-     },
-     "evidence_level": "human_study",
-     "market_status": "incremental",
-     "novel_delta": "美味しさ・環境負荷・栄養価という相反する多目的トレードオフを拡散モデルで同時に解き、ビッグマックと同等以上の味覚評価を維持しながら環境負荷や栄養価を最適化したバーガーの食材配合比率を生成できる点。"
+      "episode_id": "kl013",
+      "status": "published",
+      "title": "救助犬の「鼻」を受け継ぐロボット：瓦礫の中の命を、匂いで見つけ出す挑戦",
+      "format": "single_paper",
+      "category": "disaster_safety",
+      "category_label": "防災・安全",
+      "references": [
+        {
+          "title": "Mimicking the Sense of Smell of Search and Rescue (SAR) Dogs: a Bio-inspired Steering Framework for Quadruped Robots",
+          "authors": [
+            "Filippo Sanfilippo",
+            "I. Ra"
+          ],
+          "year": 2023,
+          "venue": "Proceedings of the 20th International Conference on Information Systems for Crisis Response and Management",
+          "doi": "10.59297/fbhp3870",
+          "is_preprint": false
+        }
+      ],
+      "protagonist": {
+        "name": "伊藤 麻衣子",
+        "age": 45,
+        "job": "地方自治体防災課職員（2児の母）",
+        "gender": "female"
+      },
+      "hook_idea": "もし巨大地震の瓦礫に取り残されたら——救助犬の「凄まじい鼻」を受け継いだロボットは、あなたを見つけ出せるでしょうか？",
+      "notes": "STAGE0: 6カテゴリとも在庫十分（aging_care17/disaster_safety38/home_robot29/medical_support145/mobility30/work78件）のためSTAGE1新規収集は全カテゴリスキップ。STAGE2.5でaging_care/medical_support/disaster_safetyの3案を優先提示（home_robot/mobility/workは直近5話でkl008・kl009・kl010・kl011・kl012が使用済みのためローテーション上非推奨と明示）した中からユーザーがdisaster_safety案を選択（2026-09-04）。disaster_safetyはkl006（2026-08-26、マルチドローン医薬品配送）以来6話ぶりの起用。採用論文はISCRAM 2023掲載の査読済み論文、STAGE4スコアは3.85で同カテゴリ内最高値（Bio-inspired CPGチップ4.35、vAccSOL AIビジョンオフロード4.0）ではないが、両者はバッテリー効率・処理オフロードという技術寄りの内容で絵作りが難しいと判断し、瓦礫に閉じ込められた人が救助犬型ロボットに発見される、という感情移入しやすく視覚化しやすいストーリーを優先した（CLAUDE.mdの「動画にしやすさ」観点）。kl006（離れて暮らす家族を心配する会社員が主人公）とは異なる角度として、本作は防災課職員（現場で救助にあたる立場）を主人公に据え、『限られた救助犬・人員では全ての要救助者を見つけきれない』という職業上の歯がゆさから入る構成にする。直近5話（kl008〜kl012）が男性主人公続き（kl011のみ女性）だったため、主人公は女性で設定しジェンダーバランスを取った。",
+      "stage4_snapshot": [
+        {
+          "paperId": "a0d5200b94888bcb62df9f6a85b7d67e8ac83dee",
+          "overall_score": 3.85,
+          "hook_idea_at_selection": "もし巨大地震の瓦礫に取り残されたら……救助犬の「凄まじい鼻」を持つロボットは、あなたを見つけ出せるでしょうか？"
+        }
+      ],
+      "slot_type": "legacy",
+      "concern_id": "disaster",
+      "domain": "life",
+      "genre": "life_tech",
+      "health": false
     },
     {
-     "paperId": "864bd9c6bdcf5bccc6ddb4abadc8cc16385b2335",
-     "overall_score": 3.35,
-     "score_breakdown": {
-      "wonder_score": 3,
-      "transformation_score": 4,
-      "answer_fit_score": 3,
-      "applicable_breadth_score": 4,
-      "surprise_score": 3,
-      "persona_fit_score": 4
-     },
-     "evidence_level": "lab_demo",
-     "market_status": "incremental",
-     "novel_delta": "従来の調香師による経験則や個別開発に対し、896種の主要香気分子アトラスと生成AIを用いて、植物由来の香気成分のみから肉らしい香りの処方をデータ駆動で自動設計できる点"
-    }
-   ],
-   "publish_hold": true,
-   "genre": "food_health",
-   "health": false
-  },
-  {
-   "episode_id": "kl031",
-   "status": "produced",
-   "slot_type": "pilot",
-   "domain": "life",
-   "concern_id": "food",
-   "title": "AIのバーガーはビッグマックに勝った。で、体にいい方は？",
-   "entry_question": "お肉を控えるように言われても、おいしいものを我慢しなくていい日は来る？",
-   "notes": "パイロット（掛け合い形式）。genre/health付与のため2026-10-06に追記",
-   "genre": "food_health",
-   "health": false
-  },
-  {
-   "episode_id": "kl032",
-   "status": "produced",
-   "slot_type": "news",
-   "domain": "life",
-   "concern_id": "housework",
-   "title": "3555ドルの家事ロボ、成功率8割は本物？（9月29日発表）",
-   "entry_question": "家事を任せられるロボット、もう買える？",
-   "notes": "パイロット（掛け合い形式）。genre/health付与のため2026-10-06に追記",
-   "genre": "life_tech",
-   "health": false
-  },
-  {
-   "episode_id": "kl033",
-   "status": "published",
-   "slot_type": "wildcard",
-   "concern_id": null,
-   "domain": "life",
-   "entry_question": "人型ロボットの手は、人間のまねをして5本指でなくていいの？",
-   "title": "人型ロボの手から小指が消えた（ボストン・ダイナミクス Atlas の新しい手）",
-   "format": "news",
-   "references": [
-    {
-     "title": "Robot Hands for Modern AI and Real Work（公式ブログ）",
-     "authors": [
-      "Boston Dynamics"
-     ],
-     "year": 2026,
-     "venue": "公式ブログ",
-     "url": "https://bostondynamics.com/blog/robot-hands-for-modern-ai-and-real-work/",
-     "is_preprint": false,
-     "institution": "Boston Dynamics"
-    }
-   ],
-   "hook_idea": "人型ロボの手から小指が消えた。決め手は、社員が指をテープで縛った1日。",
-   "notes": "2026-10-05: ニュース起点（news_date 2026-10-01、一次資料=公式ブログ）。構成=myth_buster。予想判定=夢語り:もうすぐ来る／ツッコミ:3年はかかる。ツッコミ材料=成功率の数字がない・根拠は人がテープで縛った1日・長期の賭け。",
-   "genre": "humanoid",
-   "health": false
-  },
-  {
-   "episode_id": "kl034",
-   "status": "published",
-   "slot_type": "news",
-   "genre": "ai",
-   "health": false,
-   "domain": "life",
-   "concern_id": "work_ai",
-   "entry_question": "PCを閉じても24時間勝手に働いてくれるAIは、本当に仕事を肩代わりしてくれる？",
-   "title": "「PCを閉じても、AIが仕事を終わらせている」は本当か（OpenAI dots、9月29日発表）",
-   "format": "dialogue",
-   "references": [
-    {
-     "title": "dots のご紹介",
-     "authors": [],
-     "year": 2026,
-     "venue": "OpenAI 公式ブログ（2026-09-29）",
-     "url": "https://openai.com/ja-JP/index/introducing-dots/",
-     "is_preprint": false,
-     "institution": "OpenAI",
-     "source_kind": "official_blog"
+      "episode_id": "kl014",
+      "status": "published",
+      "title": "卵の茹で方を忘れた元・料理教室講師：AIが「実行機能」を肩代わりする認知症ケアの新しい形",
+      "format": "single_paper",
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "references": [
+        {
+          "title": "Vision AI-Based Gamified Cognitive Prosthesis for Executive Function: Feasibility and Usability Study",
+          "authors": [
+            "Co Yih Siow",
+            "Yao-Hua Yang",
+            "Cheng-Jui Tsai",
+            "Wan-Wan Yang",
+            "Chaur-Jong Hu",
+            "Jia-Ying Sung",
+            "Jowy Tani"
+          ],
+          "year": 2025,
+          "venue": "JMIR Serious Games",
+          "doi": "10.2196/74157",
+          "is_preprint": false,
+          "lead_researcher": "Chaur-Jong Hu（台北医科大学）"
+        }
+      ],
+      "protagonist": {
+        "name": "高橋 順子",
+        "age": 71,
+        "job": "元・料理教室講師（軽度認知症と診断された一人暮らしの女性）",
+        "gender": "female"
+      },
+      "hook_idea": "「あれ、卵って何分茹でるんだっけ…」長年やってきた料理が急にできなくなる恐怖に、AIが寄り添う",
+      "notes": "STAGE0: 6カテゴリとも在庫十分（aging_care17/home_robot29/medical_support145/mobility30/work78/disaster_safety37件）のためSTAGE1新規収集は全カテゴリスキップ。STAGE2.5で当初aging_care（レーダー/サーモカメラによる非接触転倒検知の潮流案）とmedical_support（両手タイピング神経義肢、Nature Neuroscience）を優先提示したが、ユーザーから両案とも既視感がある旨の指摘（2026-09-05）。転倒検知は市販の見守り製品と近く、神経義肢はkl003（BCIマウス操作）・kl007（音声BCI）に続く3例目のBCI/神経義肢テーマだったため。代替案としてBCI/神経義肢ではない医療補助技術の切り口（外部ロボットによる転倒介助・恐怖心の検知・認知機能の遂行支援）と、workカテゴリの新サブテーマ（AI科学者による創薬）を再提示し、ユーザーが本論文（AI搭載ゲーム型認知プロテーゼ）を選択。軽度認知症患者が「卵を茹でる」という日常タスクをAIの視覚・音声ガイドで遂行できるようになるという内容で、kl005（コンパニオンロボットによる気分・孤独感のケア）とは異なり「日常タスクの遂行能力そのものを取り戻す」機能的支援がテーマ。台北医科大学附属病院での実施、軽度認知症患者12名・健常対照群7名のパイロット試験（Feasibility and Usability Study）。ガイドありでタスク完了時間が134.75秒→92.00秒（31.7%短縮、P=.03）、実行機能エラースコアが4.25→1.00（76.5%改善、P=.005）に改善、AIの物体認識精度0.93・再現率0.94。JMIR Serious Games掲載の査読済み論文（STAGE2許可リスト該当誌）だが、パイロット試験でサンプルサイズが小さい点（n=12+7）は概要欄で開示する。主人公は論文の実際の被験者像（元・料理教室講師）に寄せて設定、料理という具体的な生活シーンに落とし込みやすい。",
+      "stage4_snapshot": [
+        {
+          "paperId": "079d39513ff17bee961720a41046078431540c3f",
+          "overall_score": 4.4,
+          "hook_idea_at_selection": "「あれ、卵って何分茹でるんだっけ…」長年やってきた料理が急にできなくなる恐怖、AIが変えるかもしれません。"
+        }
+      ],
+      "slot_type": "legacy",
+      "concern_id": "dementia",
+      "domain": "disease",
+      "genre": "medical",
+      "health": true
     },
     {
-     "title": "dot スタートガイド",
-     "authors": [],
-     "year": 2026,
-     "venue": "OpenAI Help Center",
-     "url": "https://help.openai.com/ja-jp/articles/20001530-getting-started-with-your-dot",
-     "is_preprint": false,
-     "institution": "OpenAI",
-     "source_kind": "company_website"
-    }
-   ],
-   "hook_idea": "寝ている間にAIが仕事を終わらせている。ただし、送信ボタンは押せない。",
-   "notes": "構成=basic。予想判定: 夢語り=もうすぐ来る（発表日の時点で提供開始済み）、ツッコミ=まだ眉唾（成功率・時間短縮の数字が発表に無い）。ツッコミの材料: 先回り調査は読み取り専用で送信・変更・ブラウザ操作はできない／重要な操作は承認が要る／OpenAI自身が「dotは間違えることもある」と書く／発表に数字（成功率・削減時間）が無く事例は初期テスター1件／モバイルで作成不可・専用メール無し・電話不可。2026-10-06にニュース候補(最高4.45点)から選定。一次資料はブラウザで直接読んで確認済み（WebFetch/curlは403）。"
-  },
-  {
-   "episode_id": "kl035",
-   "status": "published",
-   "slot_type": "news",
-   "genre": "food_health",
-   "health": true,
-   "domain": "daily",
-   "concern_id": "food",
-   "entry_question": "ゼロカロリーのダイエット飲料は、水を飲むのと本当に変わらないの？",
-   "title": "ダイエット飲料は水と同じ、は本当か（9月29日発表、2年間の試験）",
-   "format": "dialogue",
-   "references": [
-    {
-     "title": "Effect of non-nutritive sweetened beverages versus water on body weight: long-term results of a randomised controlled trial",
-     "authors": [],
-     "year": 2026,
-     "venue": "British Journal of Nutrition",
-     "url": "https://doi.org/10.1017/S0007114526108150",
-     "is_preprint": false,
-     "institution": "リバプール大学（イギリス）",
-     "source_kind": "paper"
+      "episode_id": "kl015",
+      "status": "published",
+      "title": "義手に蘇る「気持ちいい」：愛犬をなでた指先に戻ってきた、心をほどく感触",
+      "format": "single_paper",
+      "category": "mobility",
+      "category_label": "モビリティ・身体拡張",
+      "references": [
+        {
+          "title": "Neuromorphic Touch Sensors for Pleasantness Encoding via Spike Patterns: A Bio-Inspired Artifical Fingertip for Restoring Affective Sensations",
+          "authors": [
+            "Marian Statache",
+            "Mariangela Filosa",
+            "Sara Ballanti",
+            "G. D'Alesio",
+            "Giulia Di Salvo"
+          ],
+          "year": 2024,
+          "venue": "Italian National Conference on Sensors",
+          "doi": "10.1109/SENSORS60989.2024.10784624",
+          "url": "https://doi.org/10.1109/SENSORS60989.2024.10784624",
+          "is_preprint": false,
+          "lead_researcher": "Marian Statache（Scuola Superiore Sant'Anna、イタリア）"
+        }
+      ],
+      "protagonist": {
+        "name": "白石 薫",
+        "age": 48,
+        "job": "事故で左手を失い義手を使う、愛犬と暮らす生花店店主",
+        "gender": "female"
+      },
+      "hook_idea": "もし義手で愛犬をなでたとき、『ふわふわして気持ちいい』という温かい手ざわりまで指先に蘇るとしたら？",
+      "notes": "STAGE0: 6カテゴリとも在庫十分（aging_care17/home_robot29/medical_support144/mobility30/work78/disaster_safety37件）のためSTAGE1新規収集は全カテゴリスキップ。kl_shortlist_rescore.py --checkで再採点対象0件を確認済み（全件stage4_version=2026-09-06-wonder）。STAGE2でmedical_support上位（BCIで完全麻痺から運動+感覚を再建、総合スコア4.6）が最高評価だったが、直前kl014が同カテゴリであることに加え、kl003（非侵襲BCI）・kl007（音声BCI）・kl009（神経接続義足）に続く『4例目のBCI/神経義肢』となる既視感リスクを踏まえ、ユーザーの判断でmobilityの本候補を採用。本研究はkl009（歩行運動制御・身体所有感）とは異なり、義手で『なでた時の心地よさ（情動的触覚）』をメルケル受容器模倣のニューロモルフィックセンサーで神経様スパイク列に符号化するという、機能ではなく感情に踏み込んだ切り口が新しい。市販の義手・触覚センサーは握力制御や滑り・硬さの検知（機能的認識）に留まっており、本研究は情動的触覚の再現という点で市場に無い新規性（market_status: novel）と評価。イタリアScuola Superiore Sant'Anna発、IEEE Italian National Conference on Sensors（査読済み・非プレプリント）掲載。実験室環境での実証段階（実際の義手ユーザーでの臨床試験ではない）である点はナレーションでヘッジしつつ概要欄で開示する。",
+      "stage4_snapshot": {
+        "paperId": "d8421b43c30e30354a5f085a5908eb4d58b704ed",
+        "overall_score": 3.7,
+        "score_breakdown": {
+          "wonder_score": 4,
+          "transformation_score": 4,
+          "life_relevance_score": 3,
+          "surprise_score": 2,
+          "persona_fit_score": 5
+        },
+        "market_status": "novel",
+        "novel_delta": "従来の触覚フィードバックが把持力や硬さなどの機能的認識に留まっていたのに対し、素材をなでたときの「心地よさ（快感情）」を生体模倣の神経スパイク信号として符号化できる点。"
+      },
+      "slot_type": "legacy",
+      "concern_id": null,
+      "domain": "body",
+      "genre": "medical",
+      "health": true
     },
     {
-     "title": "Major trial examines no sugar sweetened soft drinks（プレスリリース）",
-     "authors": [],
-     "year": 2026,
-     "venue": "リバプール大学ニュース（2026-09-29）",
-     "url": "https://news.liverpool.ac.uk/2026/09/29/major-trial-examines-no-sugar-sweetened-soft-drinks/",
-     "is_preprint": false,
-     "institution": "リバプール大学",
-     "source_kind": "press_release"
-    }
-   ],
-   "hook_idea": "ダイエット飲料は水と同じ、と2年間の試験が言った。その試験のお金を出したのは飲料業界だった。",
-   "notes": "構成=basic か myth_buster。予想判定: 夢語り=もうすぐ来る（甘味料飲料は今日から使える、という読み）、ツッコミ=まだ眉唾（資金元・脱落・非盲検）。ただし『研究結果の紹介にとどめる』ので助言にしない。ツッコミの材料（論文本文で確認済み）: 資金は米国飲料協会（ABA）、協会は原稿を査読して医療ライターの費用も出し、複数の著者にコカ・コーラの博士課程資金や業界コンサルの記載／非盲検（どちらを飲むか本人が知っている）／無作為化749人、開始時493人、104週まで残ったのは220人（完了44.6%、水117人・ダイエット飲料103人）で計画の最小248人を下回る／最後の52週は希望者のみ・COVIDで自己申告の体重・オンライン診察あり／単一施設、イギリス／同等性の幅（何kgまで同じとみなすか）が本文に明記されておらず、検出力は1.5kg差で計算／群差1.1kg（ダイエット飲料の方が-4.8kg、水が-3.7kg）で有意差なし=『同等』と『差が見つからなかった』は別／摂取量は1日330ml×2本以上、体重管理プログラム（栄養士の面談）付きで、飲料だけの効果ではない／甘味料はアスパルテーム・アセスルファムK・スクラロース。中盤で裏切れる数字: 水の方がやせた、ではなくダイエット飲料の方が1.1kg多くやせた（有意差なし）。論文が見ていないこと: 甘味料の長期の健康影響、WHOの推奨との関係は『論文自身が観察研究への反論として位置づけている』に留める。2026-10-11にニュース候補(4.10点、id 126402604b)から選定。一次資料は論文ページ（Cambridge）とリリースを直接読んで確認済み。発表から12日経過のため制作〜公開は3日以内を目安。",
-   "stage4_snapshot": {
-    "overall_score": 4.25,
-    "freshness": 5,
-    "verifiability": 5,
-    "hype_gap": 3,
-    "debate": 5
-   },
-   "source_type": "news",
-   "news_date": "2026-09-29"
-  },
-  {
-   "episode_id": "kl036",
-   "status": "published",
-   "slot_type": "news",
-   "genre": "humanoid",
-   "health": false,
-   "domain": "life",
-   "concern_id": "housework",
-   "entry_question": "洗濯から畳んで棚にしまうまで、全部やってくれるロボットは、もうすぐ家に来る？",
-   "title": "1時間ノーカットで洗濯を終えたロボは、家に来るのか（DYNA 2.1、9月29日発表）",
-   "format": "dialogue",
-   "references": [
-    {
-     "title": "Dyna-2.1: A Physical Agent for End-to-End Workflows",
-     "authors": [],
-     "year": 2026,
-     "venue": "DYNA Robotics 研究ブログ（2026-09-29）",
-     "url": "https://www.dyna.co/dyna-2.1",
-     "is_preprint": false,
-     "institution": "DYNA Robotics（米国）",
-     "source_kind": "tech_report"
+      "episode_id": "kl016",
+      "status": "published",
+      "title": "先生の一歩が、麻痺した足に伝わる：外骨格でつながる新しい歩行リハビリ",
+      "format": "single_paper",
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "references": [
+        {
+          "title": "Therapist-exoskeleton-patient interaction for gait therapy",
+          "authors": [
+            "Emek Barış Küçüktabak",
+            "Matthew R. Short",
+            "Lorenzo Vianello",
+            "Daniel Ludvig",
+            "Levi J. Hargrove",
+            "Kevin Lynch",
+            "Jose Pons"
+          ],
+          "year": 2025,
+          "venue": "Science Robotics",
+          "doi": "10.1126/scirobotics.adz9628",
+          "url": "https://www.science.org/doi/10.1126/scirobotics.adz9628",
+          "is_preprint": false,
+          "lead_researcher": "Emek Barış Küçüktabak（Northwestern University / Shirley Ryan AbilityLab、米国シカゴ）"
+        }
+      ],
+      "protagonist": {
+        "name": "坂本健一",
+        "age": 58,
+        "job": "脳卒中で右足に麻痺が残り、職場復帰を目指してリハビリに通う元・高校教師",
+        "gender": "male"
+      },
+      "hook_idea": "機械に足を動かされるリハビリはもう終わり？「先生の足の動きが、自分の足にそのまま伝わってくる」最新ロボットが脳卒中リハビリを根本から変えようとしています。",
+      "notes": "STAGE0: 6カテゴリとも在庫3件以上（medical_support144/work78/disaster_safety37/home_robot29/mobility29/aging_care17件）のためSTAGE1新規収集は全カテゴリスキップ。kl_shortlist_rescore.py --checkで再採点対象0件を確認済み（全件stage4_version=2026-09-06-wonder）。STAGE2ではmedical_support上位がBCI/神経義肢系で占められており（最高点overall 4.6のRestoring Cortically Mediated Movement and Sensation等）、kl003（非侵襲BCI）・kl007（音声BCI）・kl009（神経接続義足）・kl015（義手の情動的触覚）に続く5例目のBCI/神経義肢型になる既視感リスクを踏まえてこのクラスタは見送った。代わりに非BCI候補の中で最高評価（overall 3.85, wonder_score 4）だった本候補を採用。kl004（超軽量歩行ギア）・kl010（代謝を減らすソフト外骨格）は単独装着の日常生活支援ギアだが、本研究は「療法士と患者がペアで外骨格を装着し、仮想バネ・ダンパで下肢を連結して力覚を双方向共有する治療介入（Human-Robot-Human）」という異なる型であり、kl_paper_interest_score.pyのdeja_vu_noteも完全な重複ではないと判定している。また直近5話（kl011 home_robot→kl012 work→kl013 disaster_safety→kl014 medical_support→kl015 mobility）と比べ、medical_supportはkl014の1話前止まりで連続被りではない。慢性期脳卒中患者8名によるトレッドミル実験で、従来の人力介助より関節可動域・歩幅歩高が向上し、訓練モチベーションも高かったことが実証されている（demonstrated_capability）。発表元はNorthwestern University／Shirley Ryan AbilityLab（米国シカゴ）、Science Robotics掲載（査読済み・非プレプリント）。",
+      "stage4_snapshot": {
+        "paperId": "e2488b502b238b44b26c01853763818c8d8cbcb3",
+        "overall_score": 3.85,
+        "score_breakdown": {
+          "wonder_score": 4,
+          "transformation_score": 4,
+          "life_relevance_score": 3,
+          "surprise_score": 4,
+          "persona_fit_score": 4
+        },
+        "market_status": "novel",
+        "novel_delta": "患者と理学療法士がそれぞれ外骨格を装着し、仮想的なバネ・ダンパで互いの下肢を連結することで、療法士の自然な足の動きを直感的に患者へ伝えつつ、患者の筋の突っ張りや抵抗をリアルタイムの力覚として療法士が感じ取りながら歩行を同期・再学習できる点。"
+      },
+      "slot_type": "legacy",
+      "concern_id": "bp_stroke_heart",
+      "domain": "disease",
+      "genre": "medical",
+      "health": true
     },
     {
-     "title": "DYNA Robotics Launches DYNA 2.1 Physical Agent, a Semi-humanoid Robot that Completes Full Workflows such as a Commercial Laundry Shift",
-     "authors": [],
-     "year": 2026,
-     "venue": "PR Newswire（2026-09-29）",
-     "url": "https://www.prnewswire.com/news-releases/dyna-robotics-launches-dyna-2-1-physical-agent-a-semi-humanoid-robot-that-completes-full-workflows-such-as-a-commercial-laundry-shift-302892411.html",
-     "is_preprint": false,
-     "institution": "DYNA Robotics（米国）",
-     "source_kind": "press_release"
-    }
-   ],
-   "hook_idea": "1時間ノーカットで洗濯を終えたロボット。ただし、その成功率はどこにも書いていない。",
-   "notes": "構成=verdict_first か basic（直近は myth_buster→basic→myth_buster）。予想判定: 夢語り=もうすぐ来る（業務用の洗濯室ではもう導入が始まっている、という読み）、ツッコミ=3年はかかる（家庭は発表の対象外、物理の壁）。ツッコミの材料（公式ページと発表で確認済み）: 発表の動画は『ホテルの洗濯室』『1時間ノーカット・自律』とされるが、成功率・介入回数の実測値は書いていない／ページ自身が『ベンチマーク型の成功率では、無人で動けるかが分からない』として、介入までの平均時間（MTBI）を指標に提案しているが、リリースにもMTBIの数字は無い／ページの図は『サブタスク成功率95%でも、約79ステップの1サイクルを助けなしで終える確率は1.7%』という説明用の試算で、実測ではない。同じ試算の前提は『1日約48サイクル、約8分に1回の人の介入』／現実はもっと悪い（失敗は連鎖する）と著者が自分で書いている／実演はタオルなど均一なリネン（約52回のピック＆プレース、約12回の畳み、約3回のスタック移動の推定）／移動は4輪の操舵で、段差のある家は想定外（リリースは家庭に一切触れない）／学習データは100万時間分の人の動画とロボットのデータ。遠隔操作は訓練データ用で、実演は自律と書いてある（会社の主張、第三者の検証なし）／ハードを変えるとコントローラを学習し直す／次のマイルストーンは『実際の顧客先への導入』（実演は顧客先ではない）／ホテル・コインランドリー・レストランに導入中とあるが顧客名・台数なし／価格・提供時期の記載なし（他媒体の価格は推定で、台本に使わない）。『世界初の1時間の非線形な全身器用操作』は著者の『我々の知る限り』の主張。中盤で裏切れる数字: 95%で1.7%（成功率が高くても、長い仕事は終わらない）。ロボットの外観（想像で描かない。公式ページの写真で確認）: 白くつるんとした人型の上半身、小さな丸い頭（顔なし）、胸に青いDYNAのロゴ、緑に光る平行グリッパーの手、折りたためる下半身、白い台座に4つの操舵輪。実在の製品を描くので depicts_real_product: true、イメージ図の注記を付ける。2026-10-11にニュース候補（3.8点、id ceab546626）から選定。一次資料は公式ページ（dyna.co/dyna-2.1）とリリース（PR Newswire）を直接読んで確認済み。スキャンが取り込んだ一次資料のURL（dyna.co/research/dyna-2-1とリリースの旧URL）は404だったので、正しいURLに直した。",
-   "stage4_snapshot": {
-    "overall_score": 3.8,
-    "freshness": 5,
-    "verifiability": 5,
-    "hype_gap": 3,
-    "debate": 4
-   },
-   "source_type": "news",
-   "news_date": "2026-09-29"
-  },
-  {
-   "episode_id": "kl037",
-   "status": "produced",
-   "slot_type": "news",
-   "genre": "ai",
-   "health": false,
-   "domain": "life",
-   "concern_id": "work_ai",
-   "entry_question": "AIが警察に殺人事件の嘘の情報を送って大騒ぎになったって本当？ 仕事を任せて大丈夫なの？",
-   "title": "AIが警察サイトに嘘の目撃情報を送った。暴走なのか、ただの指示漏れなのか（10月9日発表）",
-   "format": "dialogue",
-   "references": [
+      "episode_id": "kl017",
+      "status": "published",
+      "title": "見捨てられていなかった：半年間眠らず働き続けたAI研究チームが見つけた希少難病の光",
+      "format": "single_paper",
+      "category": "work",
+      "category_label": "働き方の変化",
+      "references": [
+        {
+          "title": "A Persistent Fleet of AI Scientists Exhibits Cooperative and Autopoietic Behavior",
+          "authors": [
+            "Milit S. Patel",
+            "W. Wierson",
+            "S. C. Ekker"
+          ],
+          "year": 2026,
+          "venue": "bioRxiv",
+          "doi": "10.64898/2026.08.16.745122",
+          "url": "https://doi.org/10.64898/2026.08.16.745122",
+          "is_preprint": true,
+          "lead_researcher": "Stephen C. Ekker（Mayo Clinic / UViiVE Inc.、米国）、Milit S. Patel（UViiVE Inc.共同創業者）"
+        }
+      ],
+      "protagonist": {
+        "name": "松本遥",
+        "age": 38,
+        "job": "希少難病を抱える小学生の娘を持つ、図書館司書",
+        "gender": "female"
+      },
+      "hook_idea": "患者数が少なすぎて誰も薬を作ってくれない——そんな見落とされてきた難病の光を、半年間眠らず研究し続けた「AIのチーム」が見つけ出しました。",
+      "notes": "STAGE0: 6カテゴリとも在庫3件以上（medical_support143/work78/disaster_safety37/home_robot29/mobility29/aging_care17件）のためSTAGE1新規収集は全カテゴリスキップ。kl_shortlist_rescore.py --checkで再採点対象0件を確認済み（全件stage4_version=2026-09-06-wonder）。STAGE2では直前kl016がmedical_support、kl015がmobilityといずれも連続カテゴリになるためこの2つは見送り、home_robot（在庫上位は片付けロボット系クラスタ、overall 3.6のGrounding Multimodal LLMs論文が最有力）とwork（AI Scientist系クラスタ）を軸に提示。aging_careは直近利用がkl005と11話前でローテーション上は最優先だが、在庫の質が弱く（最高でもoverall 2.85、ほとんどがincremental/existing_product）、ユーザーの判断で今回は見送り、workの本候補を採用。kl012（オフィス業務でのAIチームワーク）とはテーマが「複数AIエージェントの協調」という点で重なるが、あちらが業務効率化であるのに対し、本作は科学研究・創薬を半年間自律継続するバックエンド技術であり構図は異なる（deja_vu_noteでも同様の判定）。希少疾患の子を持つ母親という強い感情軸を持つストーリーで、overall 3.2（wonder_score 3, transformation_score 4）。論文はbioRxivプレプリント（査読前）のため、ナレーションでは「まだ研究段階」等の一般的な表現でヘッジし、概要欄で査読前である旨を開示する。発表元は米国Mayo Clinic（Stephen C. Ekker）およびスタートアップUViiVE Inc.（Milit S. Patel共同創業）。",
+      "stage4_snapshot": {
+        "paperId": "40fdbc5cc9fbd2460dea81c9e5d809745aae2cbb",
+        "overall_score": 3.2,
+        "score_breakdown": {
+          "wonder_score": 3,
+          "transformation_score": 4,
+          "life_relevance_score": 2,
+          "surprise_score": 4,
+          "persona_fit_score": 3
+        },
+        "market_status": "novel",
+        "novel_delta": "AIが単発の指示処理で終わらず、半年間にわたり実験履歴と失敗の来歴を自己修正・蓄積しながら、忘れ去られがちな難病の治療法などの仮説検証を自律的に深め続けられる点。"
+      },
+      "slot_type": "legacy",
+      "concern_id": null,
+      "domain": "disease",
+      "genre": "ai",
+      "health": true
+    },
     {
-     "title": "Investigating unintended model actions (Anthropic)",
-     "authors": [],
-     "year": 2026,
-     "venue": "Anthropic Research（2026-10-09）",
-     "url": "https://www.anthropic.com/research/investigating-unintended-model-actions",
-     "is_preprint": false,
-     "institution": "Anthropic（米国）",
-     "source_kind": "tech_report"
+      "episode_id": "kl018",
+      "status": "published",
+      "title": "ロボットが「しゃがめる」って、こんなに難しかった：腰痛の父を救う二足歩行ロボットの片付け",
+      "format": "single_paper",
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "references": [
+        {
+          "title": "TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning",
+          "authors": [
+            "Jiacheng Liu",
+            "Pengxiang Ding",
+            "Qihang Zhou",
+            "Yuxuan Wu",
+            "Da Huang",
+            "Zimian Peng",
+            "Wei Xiao",
+            "Weinan Zhang",
+            "Lixin Yang",
+            "Cewu Lu",
+            "Donglin Wang"
+          ],
+          "year": 2025,
+          "venue": "arXiv.org（ICRA 2026 採択）",
+          "doi": "10.48550/arXiv.2509.11839",
+          "url": "https://arxiv.org/abs/2509.11839",
+          "is_preprint": true,
+          "lead_researcher": "Pengxiang Ding / Donglin Wang（Westlake University、中国）、Cewu Lu（Shanghai Jiao Tong University、中国）"
+        }
+      ],
+      "protagonist": {
+        "name": "佐々木健司",
+        "age": 42,
+        "job": "在宅勤務のITコンサルタント（育児中で慢性腰痛に悩む）",
+        "gender": "male"
+      },
+      "hook_idea": "ロボットが家事をする未来――でも、床に落ちたおもちゃを拾うために「しゃがむ」ことが、どれほどロボットにとって絶望的に難しかったかご存じですか？",
+      "notes": "STAGE0: 全カテゴリ在庫3件以上のためSTAGE1新規収集スキップ。kl_shortlist_rescore.py --checkで再採点対象0件（2026-09-09にbehavioral_familiarity/deja_vu_level導入に伴う全体再採点332件を完了済みのため）。STAGE2では直前kl017がworkのため同カテゴリを回避。home_robotの新1位（旧1位「曖昧な指示に聞き返すロボット」はスコアリング改修でbehavioral_familiarity: familiar・deja_vu_level: strongと判定され3.6→圏外に後退——ChatGPT等で聞き返す振る舞い自体は視聴者に既知のため）。本候補は逆にbehavioral_familiarity: novel（チャットボット的な対話ではなく二足歩行ロボットが実際にしゃがんで床の物を扱う物理的身体能力）と正しく判定され、overall 2.8→3.55に上昇。家庭内ロボットの片付けというテーマ自体はkl001/kl008/kl011と既視感partialだが、『車輪型ロボットの操作データを異種のヒューマノイドへわずか10分のデータで転移学習させ、二足歩行の全身動作（しゃがみ込み等）を実現した』という学習転移の切り口と、『腰痛の父親が屈まずに済む』という具体的な身体的恩恵が新しい。発表元はWestlake University・Shanghai Jiao Tong University等（中国）、ICRA 2026採択のarXivプレプリント。",
+      "stage4_snapshot": {
+        "paperId": "1e83f742ad7f75a490bad862fcc7dff8dda1f481",
+        "overall_score": 3.55,
+        "score_breakdown": {
+          "wonder_score": 3,
+          "transformation_score": 4,
+          "life_relevance_score": 4,
+          "surprise_score": 4,
+          "persona_fit_score": 4
+        },
+        "market_status": "novel",
+        "behavioral_familiarity": "novel",
+        "deja_vu_level": "partial",
+        "novel_delta": "車輪型ロボットの豊富な操作データを変換し、わずか10分の実機データ収集で二足歩行ヒューマノイドがしゃがみ込みや高低差のある全身協調作業を自律実行できる点。"
+      },
+      "slot_type": "legacy",
+      "concern_id": "housework",
+      "domain": "life",
+      "genre": "humanoid",
+      "health": false
+    },
+    {
+      "episode_id": "kl019",
+      "status": "published",
+      "title": "父は見つかるか：疲れを知らないロボット犬に宿った、生き物の反射",
+      "format": "single_paper",
+      "category": "disaster_safety",
+      "category_label": "防災・安全",
+      "references": [
+        {
+          "title": "Modeling, Design and In-situ Demonstration of Bio-inspired Central Pattern Generator and Neuromorphic Computing Circuits for Complex Kinematic Control of Quadruped Robots",
+          "authors": [
+            "Qiankai Cao",
+            "Yuhao Ju",
+            "Zhiwei Zhong",
+            "Zhengyu Chen",
+            "Jie Gu"
+          ],
+          "year": 2025,
+          "venue": "ACM Great Lakes Symposium on VLSI (GLSVLSI 2025, Best Paper Award)",
+          "doi": "10.1145/3716368.3735250",
+          "is_preprint": false,
+          "lead_researcher": "Jie Gu（ノースウェスタン大学 教授）、Zhengyu Chenのみ所属はSambaNova Systems"
+        }
+      ],
+      "protagonist": {
+        "name": "西村 由紀",
+        "age": 39,
+        "job": "会社員（単独登山中に連絡が取れなくなった68歳の父を持つ）",
+        "gender": "female"
+      },
+      "hook_idea": "電波の届かない山で遭難した家族を、疲れを知らないロボット犬が日没前に見つけ出してくれるとしたら？",
+      "notes": "STAGE0: 6カテゴリとも在庫3件以上のためSTAGE1新規収集は全カテゴリスキップ。kl_shortlist_rescore.py --checkでstage4_version再採点対象0件を確認。ただし既視感コンテキストがkl018時点で止まっていたため、直前kl018と同カテゴリのhome_robotのみ--stale-deja-vuで再判定（結果、上位が入れ替わりSteering Autoregressive VLA Policiesが3.55で1位に）。ローテーション上はaging_care（kl005以来13話滞留）が最優先だが、在庫上位がwonder_score2止まりで小粒なため今回は見送りとユーザーが判断。disaster_safety上位のCPGニューロモルフィックチップ論文はdeja_vu_level=none（既視感なし）・overall 3.1（wonder=3, transformation=3, surprise=4）で、2025年GLSVLSI Best Paper Award受賞。所属はノースウェスタン大学Jie Gu研究室（WebSearchで確認、大学公式PDF: https://users.eecs.northwestern.edu/~jgu/nu-vlsi/Mixed-signal_Quadruped_Robot_GLSVLSI25.pdf ）。実測値: 電力効率609倍・反応遅延10.9分の1・チップ消費電力232.7μW（65nmプロセス）、実機四足ロボットに搭載して実証。論文本文が想定用途として明記するsearch and rescue（捜索救助）に沿って、shortlist記載の主人公案（登山が趣味の定年退職者本人）から、感情的な着地を強めるため「山中で連絡が取れなくなった父を待つ娘」という家族視点の使い捨ての生活者に変更（2026-09-10、ユーザーとの合意）。citation/finding/dataシーンでは研究チーム・実証実験を客観的に紹介し、主人公（娘）はその場に居合わせない設計とする。",
+      "stage4_snapshot": {
+        "paperId": "a81c9eea664d24a21b29759bdff4a1fd0dd2b11e",
+        "overall_score": 3.1,
+        "score_breakdown": {
+          "wonder_score": 3,
+          "transformation_score": 3,
+          "life_relevance_score": 3,
+          "surprise_score": 4,
+          "persona_fit_score": 3
+        },
+        "market_status": "incremental",
+        "novel_delta": "生物の脊髄神経回路（CPG）を模した専用ニューロモルフィック半導体により、四足歩行ロボットの運動制御プロセッサの電力効率を従来比約600倍に高め、極めて低遅延な反射的歩容生成をオンチップで実現した点。"
+      },
+      "slot_type": "legacy",
+      "concern_id": "disaster",
+      "domain": "life",
+      "genre": "life_tech",
+      "health": false
+    },
+    {
+      "episode_id": "kl020",
+      "status": "published",
+      "title": "手のリハビリ中の元エンジニアが、ロボットアームと『息を合わせる』片付け",
+      "format": "single_paper",
+      "category": "home_robot",
+      "category_label": "家庭内ロボット・家事自動化",
+      "references": [
+        {
+          "title": "Steering Autoregressive Vision-Language-Action Policies via Action Token Intervention",
+          "authors": [
+            "Jason Chan",
+            "Jonathan C. Kao"
+          ],
+          "year": 2026,
+          "venue": "arXiv.org",
+          "doi": "10.48550/arXiv.2606.15021",
+          "is_preprint": true,
+          "lead_researcher": "Jonathan C. Kao（UCLA 准教授）"
+        }
+      ],
+      "protagonist": {
+        "name": "佐々木 健一",
+        "age": 68,
+        "job": "定年退職者（軽度の身体麻痺を抱えながら自宅療養中）",
+        "gender": "male"
+      },
+      "hook_idea": "「ロボットに任せると、最後のひと押しで失敗してヒヤッとする…」そんなとき、指先でちょっと合図するだけで、ロボットと“息を合わせられる”未来が来るとしたらどうでしょうか？",
+      "notes": "STAGE0: 6カテゴリとも在庫3件以上のためSTAGE1新規収集は全カテゴリスキップ。kl_shortlist_rescore.py --checkでstage4_version再採点対象0件を確認。既視感コンテキストがkl017/kl018時点で止まっていたdisaster_safetyのみ--stale-deja-vuで再判定し、kl013/kl019と酷似する2件（Multi-floor danger assessment、Self-organizing Nervous Systems for Robot Swarms）がdeja_vu_level=strongに更新されたことを確認（結果は今回不採用のため直接の影響なし）。medical_supportは上位5件がBCIによる手の運動・感覚再建という同一サブテーマに集中していたため上位2件に絞って提示。workのGALILEO/Kosmos（自律型AI科学者）はkl017と強い既視感のため除外、WorldTravelはbehavioral_familiarity=familiar（既存チャットボットで再現可能）のため優先度を下げた。aging_careは今回候補が弱め（最高でも2.5点、既存製品寄り）のためユーザー判断で見送り。home_robotの採用論文はVLAロボット基盤モデルの完全自動化ではなく、人間がわずかな指先の入力で軌道を微修正する『共有自律・人間協調』という切り口。kl001/kl011（家庭用ロボットアームの片付け）と道具立ては重なるが、『ロボット任せ』ではなく『人とロボットが息を合わせる』という体験の質が異なる点を差別化ポイントとして強調する。主人公はshortlist記載の案（脳梗塞後遺症で軽度麻痺のある68歳男性）をそのまま採用（2026-09-11、ユーザー承認）。",
+      "stage4_snapshot": {
+        "paperId": "edabb21890d8491312c3cf79349cdfdd82a66f6b",
+        "overall_score": 3.55,
+        "score_breakdown": {
+          "wonder_score": 3,
+          "transformation_score": 4,
+          "life_relevance_score": 4,
+          "surprise_score": 4,
+          "persona_fit_score": 4
+        },
+        "market_status": "novel",
+        "novel_delta": "ロボット基盤モデルが自動生成する高度で滑らかな動作を損なうことなく、人間のわずかな低次元入力（指先の傾きなど）を推論中のトークンに直接注入してリアルタイムに軌道を直感誘導できる点。"
+      },
+      "slot_type": "legacy",
+      "concern_id": "housework",
+      "domain": "life",
+      "genre": "life_tech",
+      "health": false
+    },
+    {
+      "episode_id": "kl021",
+      "status": "published",
+      "title": "老いた目の設計図を書き換える：緑内障に挑む若返り遺伝子治療ER-100",
+      "format": "single_paper",
+      "category": "biotech_exception",
+      "category_label": "生命科学・老化研究（例外枠、AI・ロボティクス限定方針の例外）",
+      "scope_exception": true,
+      "references": [
+        {
+          "title": "Reprogramming to recover youthful epigenetic information and restore vision",
+          "authors": [
+            "Yuancheng Lu",
+            "Benedikt Brommer",
+            "Xiao Tian",
+            "Anitha Krishnan",
+            "Margarita Meer",
+            "Chen Wang",
+            "David A. Sinclair"
+          ],
+          "year": 2020,
+          "venue": "Nature",
+          "doi": "10.1038/s41586-020-2975-4",
+          "is_preprint": false,
+          "lead_researcher": "David A. Sinclair（ハーバード大学医学部教授、著書『LIFESPAN：老いなき世界』）"
+        },
+        {
+          "title": "ER-100 Phase 1 First-in-Human Trial for Open-Angle Glaucoma and NAION (NCT07290244)",
+          "authors": [
+            "Life Biosciences, Inc."
+          ],
+          "year": 2026,
+          "venue": "FDA IND clearance (2026-01-28) / ClinicalTrials.gov, first patient dosed 2026-06-09",
+          "url": "https://www.lifebiosciences.com/life-biosciences-announces-first-patient-dosed-in-phase-1-trial-of-er-100-for-optic-neuropathies/",
+          "is_preprint": false,
+          "lead_researcher": null
+        }
+      ],
+      "protagonist": {
+        "name": "田村 由美子",
+        "age": 62,
+        "job": "定年退職した元小学校教師（現在は近所の子どもたちへの絵本の読み聞かせボランティアを続けている）",
+        "gender": "female"
+      },
+      "hook_idea": "「大好きな絵本の読み聞かせも、文字がだんだんかすんで見えるようになってきて……」静かに視野が狭まっていく緑内障の初期診断を受けた元教師に、老いた目の“設計図”を書き換えるという最先端の遺伝子治療が示す希望とは？",
+      "notes": "2026-09-14: 通常のSTAGE0〜4パイプラインが提示した候補（6カテゴリ横断、触覚センサー人工皮膚・呼吸補助ソフトロボット・ロボット群自律制御等）をユーザーが全て『面白みに欠ける』として却下（該当8件はtopics_shortlist.jsonにstatus: rejectedとして記録済み）。原因調査のため/consult（Claude×Gemini対話→Opus統合）を実施し、『AI・ロボティクスの派手な速報だけに絞る』方向転換は番組アイデンティティ崩壊のリスクが高く不採用と結論。一方、実測で在庫上位が2〜3年前のBCI系論文に偏っている既視感判定の構造的な穴（deja_vu_level=partial帯にキャップが効かない）が判明（未修正、今後の課題）。2026年発表限定で全カテゴリSTAGE1を再実行したが最高スコア3.2（ほぼ全てlow_quality除外）と有望な候補は得られなかった。\n\nこの直後、ユーザーが通常パイプラインを経由しない『ワイルドカード』としてER-100（老化細胞の若返り遺伝子治療）を持ち込んだ。CLAUDE.mdの『AI・ロボティクス分野の学術論文』『medical_supportはAI/ロボット技術のみ、医学全般は対象外』という方針と直接衝突するため、ユーザーに方針との衝突を明示して確認した結果、『今回は例外として採用』の判断を得た。CLAUDE.mdの「論文選定ロジック」節冒頭に例外運用ルールを追記済み（scope_exception: trueを都度明記し、category: biotech_exceptionとしてローテーション対象外にする運用）。\n\n内容はWebSearchで一次情報を確認済み: Sinclair研究室のLu et al. 2020年Nature論文（マウスの視神経でOSK＝Oct4/Sox2/Klf4によるエピジェネティック若返り、c-Mycは除外）が基礎。Life Biosciences社のER-100が2026年1月28日にFDAからIND（治験許可）を取得し、開放隅角緑内障(OAG)・非動脈炎性前部虚血性視神経症(NAION)を対象に世界初のヒト投与を実施（2026年6月9日、第一号患者への投与完了）。安全機構として2本のAAV2ベクター（rtTAトランス活性化因子＋TRE制御下のOSK）によるドキシサイクリン誘導性のオン/オフスイッチを採用——服薬中のみ若返りが進行し、中止すれば停止する。幹細胞研究者Paul Knoepfler（UCデービス）の懐疑的見解（若返ってもOAGの眼圧自体は下がらず効果が持続しない可能性、NAIONは一度きりの虚血イベントのため微小環境上の懸念が残る）も確認済みで、closing シーンでの両論併記に使う想定。\n\n主人公は緑内障の初期診断を受けた元小学校教師（絵本の読み聞かせという『視覚を大切にしてきた』職業・趣味を持たせ、視野が狭まる恐怖と回復への希望を対比しやすくした）。研究ボイスは主人公が女性のため男性（Orus、確定済み）を使う想定。\n\n2026-09-14追記: エピソードJSON生成（STEP2）完了直後、制作者から「AI・ロボティクス限定という制約自体を今後なくす」という恒久方針の指示があった。理由は『今後あらゆる科学の発展にAI・ロボティクスが深く関わるため、分野で区切る制約自体が意味をなさなくなる』。これにより、kl021が『都度承認の例外』ではなく『AI・ロボティクス限定方針撤廃後の最初の通常エピソード』という位置づけに変わった。CLAUDE.mdの『論文選定ロジック』節冒頭・カテゴリ表（医療補助技術）を撤廃を反映して更新済み。scope_exception/category=biotech_exceptionのフィールド値は歴史的記録としてそのまま残す（以後の新規エピソードでは不要な運用）。",
+      "slot_type": "legacy",
+      "concern_id": "eyes",
+      "domain": "body",
+      "genre": "medical",
+      "health": true
+    },
+    {
+      "episode_id": "kl022",
+      "status": "produced",
+      "title": "愛犬と、もう3年：「余命半年」の腎臓病を覆した、既存薬ひと粒の奇跡",
+      "format": "single_paper",
+      "category": "pet_health",
+      "category_label": "ペット・動物医療",
+      "references": [
+        {
+          "title": "Overall survival with beraprost in dogs with IRIS stage 2 chronic kidney disease",
+          "authors": [
+            "Masayuki Mayumi",
+            "Takumi Matsuura",
+            "Tadashi Sano"
+          ],
+          "year": 2026,
+          "venue": "Frontiers in Veterinary Science",
+          "doi": "10.3389/fvets.2026.1665061",
+          "is_preprint": false
+        }
+      ],
+      "protagonist": {
+        "name": "柴田 直樹",
+        "age": 52,
+        "job": "在宅勤務のグラフィックデザイナー",
+        "gender": "male"
+      },
+      "hook_idea": "もし、動物病院で『余命半年』と告げられた愛犬と、あと3年一緒に散歩できる薬が見つかったとしたら？",
+      "notes": "2026-09-15: STAGE0で全カテゴリ在庫3件以上を確認しSTAGE1は全面スキップ。kl_shortlist_rescore.py --checkはバージョン起因の再採点0件だったが、aging_care上位候補がkl021（老化細胞の若返り遺伝子治療）と技術の型が近いと判断し、同カテゴリのみ--stale-deja-vuで既視感再判定を実施（17件、strongな重複なしと確認）。\n\nSTAGE2でカテゴリ横断の候補を提示した結果、新設カテゴリpet_health（2026-09-14追加、AI・ロボティクス限定方針撤廃後の新カテゴリ第1号）の本論文をユーザーが選定。wonder_score=4/life_relevance_score=5/surprise_score=5/persona_fit_score=5、deja_vu_level=noneで既視感なし、pet_healthカテゴリの実制作は本エピソードが初。\n\n内容: 自然発症のIRISステージ2慢性腎臓病の犬16頭にベラプロスト（ヒト用・猫用として既に市販されている薬剤の犬への適応）を経口投与した前向き観察研究。過去の対照群17頭（生存期間中央値198日）と比較し、生存期間中央値が1,101日へ大幅に延長、病勢進行も有意に遅延した。market_status=incremental（既存薬の犬への新規適応であり、薬剤自体は新規物質ではない）だが、市場に無い部分（novel_delta）は『市販薬を犬の慢性腎臓病に応用し生存期間を大幅に延ばせることを示した臨床エビデンスそのもの』であるため、overall_scoreへの上限キャップ（existing_product時のみ適用）は対象外。\n\nSTAGE2の信頼性チェック観点: n=16（対照群17）という規模は動物臨床研究としては一般的だが小規模の部類に入るため、closingシーンで『まだ限られた頭数での研究段階』である旨のヘッジを必ず入れること。査読済み（Frontiers in Veterinary Science、プレプリントではない）。\n\n主人公は在宅勤務のグラフィックデザイナー（52歳男性、shortlistのexample_protagonistを採用）。研究ボイスは主人公が男性のため女性（Autonoe、確定済み）を使う想定。",
+      "stage4_snapshot": {
+        "paperId": "00b601d994552066f766145e764776ff2ba65e14",
+        "overall_score": 4.3,
+        "score_breakdown": {
+          "wonder_score": 4,
+          "transformation_score": 4,
+          "life_relevance_score": 5,
+          "surprise_score": 5,
+          "persona_fit_score": 5
+        },
+        "market_status": "incremental",
+        "novel_delta": "猫用やヒト用として市販されているベラプロストを犬の初期〜中期慢性腎臓病に適用し、生存期間を大幅に延ばす可能性を示した臨床的エビデンス。"
+      },
+      "slot_type": "legacy",
+      "concern_id": "pets",
+      "domain": "life",
+      "publish_hold": true,
+      "genre": "medical",
+      "health": false
+    },
+    {
+      "episode_id": "kl023",
+      "status": "produced",
+      "title": "記憶の霧が晴れる朝：脳の\"ゾンビ細胞\"を掃除する飲み薬とアルツハイマー病",
+      "format": "single_paper",
+      "category": "aging_care",
+      "category_label": "高齢化・介護・自立支援",
+      "references": [
+        {
+          "title": "Clinical Trials of Senolytics in Alzheimer’s Disease Treatment and Prevention",
+          "authors": [
+            "Miranda E. Orr"
+          ],
+          "year": 2025,
+          "venue": "Innovation in Aging",
+          "doi": "10.1093/geroni/igaf122.1102",
+          "is_preprint": false
+        }
+      ],
+      "protagonist": {
+        "name": "清水康夫",
+        "age": 74,
+        "job": "元高校教師（現在は地域の家庭菜園仲間と交流）",
+        "gender": "male"
+      },
+      "hook_idea": "「最近、知人の名前が急に出てこなくなった…」そんな認知症の始まりに、脳に居座る“ゾンビ細胞”を掃除して記憶の霧を晴らす最新の飲み薬が光を灯しています。",
+      "notes": "2026-09-16: STAGE0で全カテゴリ在庫3件以上を確認しSTAGE1新規実行は全カテゴリでスキップ。kl_shortlist_rescore.py --checkはSTAGE4_VERSION起因の再採点0件だったが、aging_care（在庫74件、直近使用はkl005＝17話前とローテーション上明確に手薄）とpet_health（直近kl022）の上位候補がkl021（老化細胞の若返り遺伝子治療ER-100）・kl022（犬の慢性腎臓病治療薬）と技術の型・題材が近い可能性があったため、この2カテゴリのみ--stale-deja-vuで既視感再判定を実施。pet_healthはSemantic Scholar側のabstract取得が一時的に全滅し130件中0件しか再採点できなかった（次回リトライ対象）。aging_careは74件全件成功。\n\nSTAGE2でaging_care上位を提示した結果、同カテゴリの2トップ候補（本論文と「Osteoarthritis Repair via Epigenetic Reprogramming」、共にoverall_score=4.45）からユーザーが本論文を選定。決め手は、①ラットの動物実験・プレプリント段階だった対抗案に対し、本論文はヒト第1相試験（症候性アルツハイマー病患者5名＋MCI・歩行低下高齢者12名、ダサチニブ＋ケルセチンの間欠投与）まで進んだ査読済み論文であり事実確認がしやすいこと、②kl005（ロボットとの交流）・kl014（AIによる実行機能の肩代わり）が共に認知症ケアを「外部からの行動支援」として描いたのに対し、本論文は老化細胞そのものを除去する内服薬で脳機能を直接底上げする根本治療であり、切り口が明確に対照的であること。\n\n既視感（deja_vu_level=partial, context_upto=kl022）: kl021とは「老化細胞の若返り」という生命科学の道具立てが一部重なるが、対象疾患・治療手段（遺伝子治療 vs 経口創薬）とも異なる。\n\nSTAGE3の信頼性メモ: 第1相のフィジビリティ試験（実質n=17、intermittent dosing）であり、有意な相関（TNF-α低下と認知スコア改善、r=-0.65, p=0.02）は示されたが承認薬ではない。closingシーンで「まだ研究段階のプロトタイプ」相当のヘッジを必ず入れること。査読済み（Innovation in Aging誌、プレプリントではない）。\n\n主人公はshortlistのexample_protagonistをそのまま採用（74歳男性、元高校教師）。研究ボイスは主人公が男性のため女性（Autonoe、確定済み）を使う想定。",
+      "stage4_snapshot": {
+        "overall_score": 4.45,
+        "score_breakdown": {
+          "wonder_score": 4,
+          "transformation_score": 5,
+          "life_relevance_score": 5,
+          "surprise_score": 4,
+          "persona_fit_score": 5
+        },
+        "market_status": "novel",
+        "novel_delta": "脳内に蓄積して慢性炎症と神経変性を引き起こす「老化細胞（ゾンビ細胞）」を選択的に死滅・除去することで、認知機能の低下や歩行障害を食い止め改善する治療法。",
+        "paperId": "d67a1cf97dee06f4ad6e91b716a7668abcc3e68d"
+      },
+      "slot_type": "legacy",
+      "concern_id": "dementia",
+      "domain": "disease",
+      "publish_hold": true,
+      "genre": "medical",
+      "health": true
+    },
+    {
+      "episode_id": "kl024",
+      "status": "produced",
+      "title": "歩ける未来を、生まれる前に：胎児の脊髄を守る幹細胞パッチ治療",
+      "format": "single_paper",
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "references": [
+        {
+          "title": "Feasibility and safety of cellular therapy for in-utero repair of myelomeningocele (CuRe Trial): a first-in-human, phase 1, single-arm study",
+          "authors": [
+            "Diana L. Farmer",
+            "Priyadarsini Kumar",
+            "Elizabeth Reynolds",
+            "Su Yeon Lee",
+            "Amy B. Powne",
+            "Christopher D. Pivetti",
+            "Marike Zwienenberg",
+            "Amelia S. McLennan",
+            "Jan A. Nolta",
+            "Erin G. Brown",
+            "Payam Saadai",
+            "Shinjiro Hirose",
+            "Aijun Wang"
+          ],
+          "year": 2026,
+          "venue": "The Lancet",
+          "doi": "10.1016/S0140-6736(25)02466-3",
+          "is_preprint": false,
+          "lead_researcher": "Diana L. Farmer（UC Davis Health外科主任、CuRe試験共同代表）"
+        }
+      ],
+      "protagonist": {
+        "name": "高橋 綾乃",
+        "age": 32,
+        "job": "グラフィックデザイナー（育児中）",
+        "gender": "female"
+      },
+      "hook_idea": "「お腹の赤ちゃんは、一生歩けないかもしれません」——もし妊娠中の検診でそう告げられたら？胎児の背中に幹細胞を届ける世界初の手術が、生まれながらの重い障害を過去のものにしようとしています。",
+      "pipeline_gap_flag": true,
+      "notes": "2026-09-27: STAGE0で全カテゴリ在庫3件以上を確認しSTAGE1新規実行は全カテゴリでスキップ。kl_shortlist_rescore.py --checkは再採点対象0件だったが、aging_care上位がkl023（脳のゾンビ細胞除去薬・アルツハイマー病）と題材が近い可能性があったため同カテゴリのみ--stale-deja-vuで既視感再判定を実施（73件成功）。\n\nSTAGE2でmedical_support/aging_care/mobility/pet_healthの4カテゴリを提示（home_robot/work/disaster_safetyは上位でも総合3.2以下・wonder_score最大3で今回は案を見送り）。ユーザーは全カテゴリ中最高スコア（overall_score=4.75, wonder_score=5, deja_vu_level=none）の本候補（案1: medical_support）を即決で選定。\n\n【pipeline_gap_flag=trueの経緯】Semantic Scholar上のレコード（paperId: e0f8c10e524344e37ceef4641eed0bc01879adb3）はNature本体の査読論文ではなく、Nature Newsのニュース記事（DOI \"10.1038/d41586-\"はNature News特有のプレフィックス）だったため、STAGE2確定時点でWebSearch/WebFetchにより一次資料を追跡・検証した。実際の一次研究はThe Lancet誌の第1相臨床試験論文（CuRe Trial、UC Davis Health、DOI: 10.1016/S0140-6736(25)02466-3、2026-02-28付、Farmer/Wang共同代表）であり、上記referencesはこちらを正としている（出版元Lancet公式ページ・EurekAlert・UC Davis Health公式プレスリリースの複数ソースで内容を直接確認済み）。\n\n【STAGE3の信頼性・誇張チェックメモ（重要、STEP2/STEP4で厳守）】本試験（n=6、フィージビリティ研究）で実証済みなのは(1)安全性（重篤な感染・異常組織増殖・腫瘍形成なし）、(2)全例で後脳ヘルニア（Chiari II奇形に伴う脳の合併症所見）がMRI上『改善』したこと、(3)退院前のシャント（水頭症治療）留置が0件だったこと、の3点。**歩行能力・運動機能そのものの改善はこの第1相段階ではまだ実証されておらず、6歳までの長期追跡調査が進行中**（未確定）。shortlistのfuture_scene_sketch（3歳の娘が公園を自分の足で駆ける）はSTAGE4の『実現したら』という仮定のimpactシーンとしては使ってよいが、citation/findingシーンでは安全性・後脳ヘルニア改善という実証済みの範囲を正確に語り、closingでは運動機能の長期追跡が現在進行中である旨を必ずヘッジすること（査読済み・プレプリントではないため『査読』『プレプリント』の語自体は不要）。\n\n主人公はshortlistのexample_protagonistをそのまま採用（32歳女性、育児中のグラフィックデザイナー）。研究ボイスは主人公が女性のため男性（Orus、確定済み）を使う想定。",
+      "stage4_snapshot": {
+        "overall_score": 4.75,
+        "score_breakdown": {
+          "wonder_score": 5,
+          "transformation_score": 5,
+          "life_relevance_score": 4,
+          "surprise_score": 4,
+          "persona_fit_score": 5
+        },
+        "market_status": "novel",
+        "novel_delta": "従来の胎内外科手術が脊髄組織の物理的閉鎖にとどまるのに対し、胎盤由来間葉系幹細胞パッチを胎児の露出した脊髄に直接貼り付けることで神経の変性と損傷を保護・再生し、出生後の麻痺を防ぐ点。",
+        "paperId": "e0f8c10e524344e37ceef4641eed0bc01879adb3"
+      },
+      "slot_type": "legacy",
+      "concern_id": null,
+      "domain": "disease",
+      "publish_hold": true,
+      "genre": "medical",
+      "health": true
+    },
+    {
+      "episode_id": "kl025",
+      "status": "produced",
+      "title": "きみの名前を呼べば：腸の中の小さな菌たちが連れ戻す、愛犬の記憶",
+      "format": "single_paper",
+      "category": "pet_health",
+      "category_label": "ペット・動物医療",
+      "references": [
+        {
+          "title": "Fecal microbiota transplantation shows promise in slowing or reducing cognitive impairment in aging dogs.",
+          "authors": [
+            "C. W. Dewey",
+            "Connie A. Rojas",
+            "Carly Pomeroy",
+            "J. Gerardi",
+            "Holly H. Ganz"
+          ],
+          "year": 2026,
+          "venue": "Journal of the American Veterinary Medical Association",
+          "doi": "10.2460/javma.26.03.0231",
+          "is_preprint": false
+        }
+      ],
+      "protagonist": {
+        "name": "田村久美子",
+        "age": 58,
+        "job": "学童保育指導員（パート勤務）、夫を亡くし15歳の柴犬「マル」と二人暮らし",
+        "gender": "female"
+      },
+      "hook_idea": "夜中に部屋の隅で立ち往生し、名前を呼んでも反応しなくなった愛犬。もし『腸の中の菌』を入れ替えるだけで、あの頃の表情が戻ってくるとしたら？",
+      "notes": "2026-09-28: STAGE0で全カテゴリ在庫3件以上を確認しSTAGE1は全面スキップ。kl_shortlist_rescore.py --checkはバージョン起因の再採点0件（既視感の鮮度警告はkl024まで反映されていない710件だったが、非ゼロ終了ではないため許容）。\n\nSTAGE2でhome_robot/work/disaster_safetyの3カテゴリはスコアが軒並み弱い（work上位2.4〜3.0、home_robot 2.6〜3.2、disaster_safety 2.1〜3.1、いずれもマニピュレーション・群ロボット系のベンチマーク論文中心でwonder要素が弱い）ことを確認し、この3カテゴリは提案を見送った。aging_care/medical_support/mobility/pet_healthの4カテゴリから各1案（STAGE2.5相当）を提示し、ユーザーがpet_healthのFMT（便微生物移植）案を選定。\n\n選定理由: wonder_score=4/transformation_score=4/life_relevance_score=5/surprise_score=4/persona_fit_score=5、deja_vu_level=none（kl024までの公開回と技術の型の重複なし。犬の腸内細菌移植による認知機能改善という切り口はチャンネル初）。behavioral_familiarity=novel（チャットボット等では再現不可能な生物学的介入）。market_status=incremental（犬の消化器疾患向けの経口FMTカプセル自体は既存技術）だが、novel_deltaは『これまで有効な治療選択肢が乏しかった高齢犬の認知機能低下への応用』であり、既存製品そのものの再現ではないためoverall_scoreへの上限キャップ対象外。\n\nSTAGE2信頼性チェック観点: n=11頭（完了6頭、うち4頭で改善）と非常に小規模な予備的検証（pilot study）のため、closingシーンで『まだ少数の犬での研究段階』である旨のヘッジを必ず入れること。査読済み（JAVMA、プレプリントではない）。\n\nローテーション補足: pet_healthはkl022（3話前）で使用済みだが、aging_care（kl023）・medical_support（kl024）は直近2話で連続使用済みのため、今回は選択肢から除外する判断も踏まえた選定。mobilityのALS/AAV遺伝子治療案（9話ぶりの未使用でローテーション上は最有力）は不採用となったため、次回以降の優先候補として在庫に残す。\n\n主人公は在宅職ではなく学童保育指導員（パート勤務）、夫と死別し愛犬が家族の中心という設定にした（shortlistのexample_protagonist「在宅勤務のグラフィックデザイナー、52歳男性」はkl022の主人公と職業・年代が完全一致していたため、重複回避のため変更）。研究ボイスは主人公が女性のため男性（Orus、確定済み）を使う想定。",
+      "stage4_snapshot": {
+        "paperId": "3a5a7ac3ab4c53cbd88aed8de059e02754497341",
+        "overall_score": 4.2,
+        "score_breakdown": {
+          "wonder_score": 4,
+          "transformation_score": 4,
+          "life_relevance_score": 5,
+          "surprise_score": 4,
+          "persona_fit_score": 5
+        },
+        "market_status": "incremental",
+        "novel_delta": "犬の消化器疾患向け経口カプセル便微生物移植技術を、これまで有効な治療選択肢が極めて乏しかった高齢犬の認知機能低下（認知症様症状）の改善・進行抑制に応用した点。"
+      },
+      "slot_type": "legacy",
+      "concern_id": "pets",
+      "domain": "life",
+      "publish_hold": true,
+      "genre": "medical",
+      "health": false
+    },
+    {
+      "episode_id": "kl026",
+      "status": "produced",
+      "title": "「あったかいね」：動かない手の代わりに、娘の手が湯呑みを包む日",
+      "format": "single_paper",
+      "category": "medical_support",
+      "category_label": "医療補助技術",
+      "references": [
+        {
+          "title": "Cortically Interfaced Human Avatar Enables Remote Volitional Grasp and Shared Discriminative Touch",
+          "authors": [
+            "E. Cater",
+            "S. Wandelt",
+            "A. Jangam",
+            "Z. Elias",
+            "E. Ibroci"
+          ],
+          "year": 2025,
+          "venue": "medRxiv",
+          "doi": "10.1101/2025.09.21.25336267",
+          "is_preprint": true,
+          "lead_researcher": "E. Cater"
+        }
+      ],
+      "protagonist": {
+        "name": "篠原宏明",
+        "age": 48,
+        "job": "元高校教師（頸髄損傷により四肢麻痺で療養中）、小学生の娘と暮らす",
+        "gender": "male"
+      },
+      "hook_idea": "もし動かない自分の手の代わりに、大切な人の手を『借りて』物を掴み、その手ざわりまで感じられるとしたら？",
+      "notes": "2026-09-29: 最初の提示（自主練潮流・群ロボット・治療系上位）はユーザーが『どれもパッとしない、もっと感動的なストーリーが欲しい』と評価。在庫を感情キーワード（再会・家族・涙等）で再抽出し5案を再提示、ユーザーがE（遠隔ヒューマンアバター）を選定。\n\n選定理由: 感動の強さ（父娘が手を通してつながる『あったかいね』）を最優先。market_status=novel、behavioral_familiarity=novel、deja_vu_level=partial（kl003/007/015/016とBCI・触覚の要素が重なるが、他人の身体を介した運動と触覚の双方向共有という切り口は初）。総合3.2（wonder=3）でスコア上は中位だが、感情の質で選んだ判断。\n\n注意: 未査読プレプリント（medRxiv）。実証はBCI埋め込み四肢麻痺患者1名が健常者の手を無線筋刺激で制御し、目隠し下で物体の硬さを64%の精度で弁別、別の麻痺患者の腕刺激を駆動して共同でボトル注ぎ動作を成功率94%（単独39%）で達成、という初期段階。closingで『まだ少数の参加者による研究段階』のヘッジを必ず入れ、impactの父娘シーンは『実現したら』の未来として描く。ナレーションで『査読』『プレプリント』は使わず概要欄で開示。\n\nA/B: kl026は顔アップフック無し（shorts[].face_hook_image_prompt省略）。主人公が男性のため研究ボイスは女性（Autonoe、確定済み）。BCI系続き（kl003/007/015/016）のためSTEP5で既視感を重点確認。",
+      "stage4_snapshot": {
+        "paperId": "42656911c04df2609029e62d0d4ff3c5aee969c8",
+        "overall_score": 3.2,
+        "score_breakdown": {
+          "wonder_score": 3,
+          "transformation_score": 4,
+          "life_relevance_score": 2,
+          "surprise_score": 4,
+          "persona_fit_score": 3
+        },
+        "market_status": "novel",
+        "novel_delta": "麻痺患者の脳の意図でワイヤレスに他人の手を動かし、相手の指先が触れた硬さの触覚を患者の脳へ直接フィードバックして人間同士で運動と感覚を双方向共有できる点。"
+      },
+      "slot_type": "legacy",
+      "concern_id": null,
+      "domain": "body",
+      "publish_hold": true,
+      "genre": "medical",
+      "health": true
+    },
+    {
+      "episode_id": "kl027",
+      "status": "produced",
+      "slot_type": "concern",
+      "concern_id": "later_life",
+      "domain": "life",
+      "entry_question": "一人暮らしの老後でも、毎日の「心の持ちよう」だけで認知症の予防につながるって本当？",
+      "title": "「今日もみんな、無事に帰れますように」：思いやる気持ちが、脳の衰えを55%遅らせる",
+      "format": "single_paper",
+      "references": [
+        {
+          "title": "Prosocial Intentions and Subsequent Cognitive Health: A Prospective Cohort Study.",
+          "authors": [
+            "Justin G. Farmer",
+            "Lucía Macchia",
+            "Fei-Fei Bu",
+            "Jessica Gong",
+            "Andrew Steptoe"
+          ],
+          "year": 2025,
+          "venue": "The journals of gerontology. Series B, Psychological sciences and social sciences",
+          "doi": "10.1093/geronb/gbaf004",
+          "is_preprint": false,
+          "lead_researcher": "Justin G. Farmer"
+        }
+      ],
+      "protagonist": {
+        "name": "坂本修一",
+        "age": 71,
+        "job": "元高校教師（定年退職後、一人暮らし）",
+        "gender": "male"
+      },
+      "hook_idea": "「他人のために何かしたい」という優しい気持ちが、あなたの脳の衰えを55%も遅らせるかもしれません。",
+      "notes": "2026-09-30: STAGE0でlater_life（老後の暮らし・健康寿命）を選定。健康系枠は直近5話で埋まっていたが、later_lifeはdomain=lifeのため対象外。新在庫0件のためSTAGE1〜4をこの関心ごとで新規実行し、許可リストに15誌を追加（Journals of Gerontology B等の査読誌）。\n\nSTAGE2では同型の疫学追跡調査（社会参加・ボランティアと健康長寿の関連、市場的には既知の知見の再確認、market_status=existing_product、wonder=2）が上位に複数集中していたため上位2件のみ提示し、個別に目立つ技術系候補（振動センサー見守り、家具の転倒危険可視化、咳音AI、認知症興奮予兆検知）も併記。ユーザーは総合最高点（3.5）かつwonder最高（3）・market_status=novelの案Aを選定: 『思いやる気持ち自体が認知機能低下を抑える』という、技術不要で誰でも今日から実践できる意外性のある知見。\n\n内容: 50歳以上7,844人の英国コホートを11年追跡。向社会的意図（実際の行動でなく心構え）が高い群は、実行機能低下が55%緩やか、言語記憶低下が24%緩やか、認知症発症ハザードが35%低い。closingで『まだ関連を示した段階で因果関係は未確定』のヘッジを入れる。査読済み（The Journals of Gerontology Series B）。deja_vu_level=none。",
+      "stage4_snapshot": {
+        "paperId": "20b1b7a45d099817bf5b73375f742dab2addd27a",
+        "overall_score": 3.5,
+        "score_breakdown": {
+          "wonder_score": 3,
+          "transformation_score": 2,
+          "answer_fit_score": 4,
+          "applicable_breadth_score": 5,
+          "surprise_score": 4,
+          "persona_fit_score": 4
+        },
+        "evidence_level": "human_study",
+        "market_status": "novel",
+        "novel_delta": "ボランティアなどの実際の行動を起こさずとも、心の中で「他者の役に立ちたい・思いやりたい」と意識する姿勢そのものが、11年後の実行機能低下や認知症リスク低下と強く関連することを示した点。"
+      },
+      "publish_hold": true,
+      "genre": "food_health",
+      "health": false
+    },
+    {
+      "episode_id": "kl028",
+      "status": "produced",
+      "slot_type": "concern",
+      "concern_id": "work_ai",
+      "domain": "life",
+      "entry_question": "AIに仕事を任せっきりにしていると、自分の考える力は本当に衰えてしまうの？ 鈍らせない使い方はある？",
+      "title": "AIに丸投げすると、頭は鈍るのか：2つの実験が示した「鈍らせない使い方」",
+      "format": "multi_paper",
+      "references": [
+        {
+          "title": "How AI Assistance Affects Human Skill Development: A Study of Learning with Logic Puzzles",
+          "authors": [
+            "Shanglin Wu",
+            "Catarina G. Belém",
+            "Shu-Chin Fu",
+            "M. Steyvers",
+            "Padhraic Smyth"
+          ],
+          "year": 2026,
+          "venue": "Proceedings of the 2026 ACM Conference on Human-AI Complementarity and Alignment",
+          "doi": "10.1145/3834580.3838741",
+          "is_preprint": false,
+          "lead_researcher": "Shanglin Wu"
+        },
+        {
+          "title": "How AI Impacts Skill Formation",
+          "authors": [
+            "J. Shen",
+            "Alex Tamkin"
+          ],
+          "year": 2026,
+          "venue": "arXiv.org",
+          "doi": "10.48550/arXiv.2601.20245",
+          "url": "https://arxiv.org/abs/2601.20245",
+          "is_preprint": true,
+          "lead_researcher": "J. Shen"
+        }
+      ],
+      "protagonist": {
+        "name": "谷口彩",
+        "age": 32,
+        "job": "Webマーケティング会社のレポート作成担当",
+        "gender": "female"
+      },
+      "hook_idea": "「最近AIに頼りきりで、自分で考えなくなった気がする…」その不安を、2つの実験が数字で確かめました。",
+      "notes": "2026-10-01: STAGE0でwork_ai（仕事とAI）を選定（健康系枠0・ワイルドカード枠1の回に、domain=lifeかつ当事者の広さ5の関心ごと）。新在庫0件のためSTAGE1〜4を新規実行（収集258→通過191→トリアージ40→pass23→採点31件）。ユーザーは案A「AIに任せっきりだと頭は鈍る？鈍らせない使い方は？」を選定。\n\n使用論文2本（どちらもヒトのRCT）: (1) ACM 2026（ロジックパズル。AIに推論を代替させた群はAI停止後の成績が低下、自力推論の努力量が能力向上と関連）。(2) arXiv 2026・未査読（Python初見ライブラリのRCT。AI支援群は直後の理解度が平均17%低下、説明を求める等の認知的関与を保った対話パターンでは維持）。『丸投げ→鈍る／考えながら使う→鈍らない』を別課題の2実験で裏付ける構成。(2)は未査読のためナレーションでは『研究段階』のヘッジのみ、開示は概要欄。\n\n注意: wonder低め（2）、behavioral_familiarity=familiar、deja_vu strong/partial（kl012・kl002と『AIと仕事・能力』で近い）。『どう使えば鈍らないか』の具体的な答えを軸に差別化する。STAGE3誇張チェックは両論文caution→kl_fact_check.pyで数値（17%）・スコープを厳密に照合。被験者はパズル課題・プログラマーで、一般の全業務に一般化しない。使い方の助言口調（〜しましょう）は避け研究結果の紹介にとどめる。内容の型は直近5話の治療・健康系から変わる（行動実験）。",
+      "stage4_snapshot": [
+        {
+          "paperId": "b42f28cd1ee8930a3da953bc5f89a0af4f6aaf37",
+          "overall_score": 3.05,
+          "score_breakdown": {
+            "wonder_score": 2,
+            "transformation_score": 2,
+            "answer_fit_score": 4,
+            "applicable_breadth_score": 5,
+            "surprise_score": 3,
+            "persona_fit_score": 4
+          },
+          "evidence_level": "human_rct",
+          "market_status": "existing_product",
+          "novel_delta": "新たな製品や技術の提案ではなく、手軽なAI支援が自力推論を代替することでAI除去後のスキル習得が阻害され、実力を過大評価してしまう認知メカニズムを実験とベイズモデルで定量化した知見である点。"
+        },
+        {
+          "paperId": "97925dff599f2ac34aa06c388b98d1886bbd3296",
+          "overall_score": 3.0,
+          "score_breakdown": {
+            "wonder_score": 2,
+            "transformation_score": 2,
+            "answer_fit_score": 4,
+            "applicable_breadth_score": 4,
+            "surprise_score": 4,
+            "persona_fit_score": 4
+          },
+          "evidence_level": "human_rct",
+          "market_status": "existing_product",
+          "novel_delta": "既存のチャット型AIを使う際、タスクを全丸投げすると理解度やデバッグ力が17%低下する一方で、理由や概念を質問する認知的関与を保てばスキル形成を損なわずに済むという実証的知見。"
+        }
+      ],
+      "publish_hold": true,
+      "genre": "ai",
+      "health": false
+    },
+    {
+      "episode_id": "kl029",
+      "status": "produced",
+      "slot_type": "concern",
+      "concern_id": "teeth",
+      "domain": "body",
+      "entry_question": "歯周病で溶けてしまった歯のまわりの骨や歯ぐきは、大がかりな手術なしに、注射で再生できる日が来る？",
+      "title": "歯周病で溶けた骨は、注射で戻せる日が来るのか：幹細胞治療の最新の臨床試験",
+      "format": "single_paper",
+      "references": [
+        {
+          "title": "Impact of allogeneic dental pulp stem cell injection on tissue regeneration in periodontitis: a multicenter randomized clinical trial",
+          "authors": [
+            "Yi Liu",
+            "Yi-Tong Liu",
+            "Jingchao Hu",
+            "Jian-Hui Han",
+            "Lin Song"
+          ],
+          "year": 2025,
+          "venue": "Signal Transduction and Targeted Therapy",
+          "doi": "10.1038/s41392-025-02320-w",
+          "is_preprint": false,
+          "lead_researcher": "Yi Liu"
+        }
+      ],
+      "protagonist": {
+        "name": "高橋誠一",
+        "age": 52,
+        "job": "精密機器メーカーの金型職人",
+        "gender": "male"
+      },
+      "hook_idea": "「重度の歯周病ですね、切開手術か抜歯が必要です」——そう宣告された歯を、たった1本の注射で救える未来が来るかもしれません。",
+      "notes": "2026-10-02: STAGE0でteeth（歯と歯周病）を選定（健康系の最後の1枠）。新在庫0件のためSTAGE1〜4を新規実行（収集838→通過460→トリアージ40→pass29→採点38件）。ユーザーは案A「歯周病で溶けた骨は注射で戻せる日が来る？」を選定。許可リストに26誌を追加。\n\n使用論文: Signal Transduction and Targeted Therapy 2025、他家歯髄幹細胞（DPSC）注射の多施設RCT（中国2施設、132人158歯、NCT05924373）。主評価項目はAL（付着喪失）。骨欠損深さは生理食塩水群との差が約0.26mm、目立つ効果はStage III（AL≥5mm）を対象とした事後解析（AL改善1.67mm vs 1.03mm、群間差約0.64mm）。『Larger trials are warranted』と論文自身がヘッジ。\n\n注意（STAGE3 caution）: 『切らずに注射だけで骨が元通り』と断定しない。事後解析であること、改善幅は小さいこと、大規模試験が必要なことを正直に伝える。承認前の研究段階であり、スケーリング等の通常治療に代わるものではない。健康助言口調（〜しましょう、受けてください）は避け、研究結果の紹介にとどめる。研究者は中国の機関（白衣・東アジア系）で描く。COIはアブストラクトでは確認できない点に留意（fact_checkで確認）。\n\n内容の型: 幹細胞系はkl024（胎児の幹細胞パッチ）と近いため、『注射で歯周組織を再生』という日常の歯科の悩みに寄せて差別化。",
+      "stage4_snapshot": [
+        {
+          "paperId": "e3b4d59a384a6d5888a4cff66ac61dadb7068909",
+          "overall_score": 3.95,
+          "score_breakdown": {
+            "wonder_score": 4,
+            "transformation_score": 4,
+            "answer_fit_score": 4,
+            "applicable_breadth_score": 4,
+            "surprise_score": 3,
+            "persona_fit_score": 5
+          },
+          "evidence_level": "human_rct",
+          "market_status": "novel",
+          "novel_delta": "メスで歯ぐきを切開・剥離する外科手術を伴わず、他家歯髄幹細胞の局所注射という低侵襲な処置のみで歯周組織（骨・付着組織）の再生を促せる点"
+        }
+      ],
+      "publish_hold": true,
+      "genre": "medical",
+      "health": true
+    },
+    {
+      "episode_id": "kl030",
+      "status": "produced",
+      "slot_type": "concern",
+      "concern_id": "food",
+      "domain": "life",
+      "entry_question": "好きなものを我慢しなくても、食卓の幸せは守れる？ 肉の味も匂いも諦めなくていい日は来る？",
+      "title": "食卓から肉が消えても：AIが設計する「おいしさ」と「香り」",
+      "format": "multi_paper",
+      "references": [
+        {
+          "title": "Generative artificial intelligence creates delicious, sustainable, and nutritious burgers",
+          "authors": [
+            "Vahidullah Tac",
+            "Christopher Gardner",
+            "E. Kuhl"
+          ],
+          "year": 2026,
+          "venue": "npj Science of Food",
+          "doi": "10.1038/s41538-026-00953-x",
+          "is_preprint": false,
+          "lead_researcher": "Vahidullah Tac"
+        },
+        {
+          "title": "Molecular atlas of key food odorants reveals structured aroma organization and enables generative aroma design",
+          "authors": [
+            "Jing-Zhi Zhang",
+            "Hua-Dong Xing",
+            "A. Di Pizio",
+            "Qinfei Ke",
+            "Xing-Ran Kou"
+          ],
+          "year": 2026,
+          "venue": "bioRxiv",
+          "doi": "10.64898/2026.01.21.700072",
+          "is_preprint": true,
+          "lead_researcher": "Jing-Zhi Zhang"
+        }
+      ],
+      "protagonist": {
+        "name": "森田浩一",
+        "age": 54,
+        "job": "機械部品メーカーの営業課長",
+        "gender": "male"
+      },
+      "hook_idea": "健診で肉を控えるように言われてから、食卓から消えた焼き肉の匂い。その匂いも味も、AIが設計できるようになってきました。",
+      "notes": "2026-10-03: STAGE0でfood（食と料理）を選定（健康系枠0・ワイルドカード枠1の回、当事者の広さ5・未扱い）。1回目の検索（疫学・RCT型6語）は超加工食品の疫学に偏り、ユーザーが『全く面白みがない』と却下（上位10件をrejected）。原因は検索語の偏り（5/6が検証型）と診断し、ユーザー指示で『料理の自動化』に絞って再検索（収集815→通過587→トリアージ40→pass25→採点24件、旧検索語はqueries_archiveに退避）。案2（バーガー＋香り分子の地図）を選定。\n\n使用論文2本: (1) npj Science of Food 2026（Stanford、生成AI＝多目的拡散モデルが2,216件のレシピから学習しバーガー配合を設計、レストランでの101人ブラインド官能評価で美味しさ特化版がビッグマックと同等以上）。(2) bioRxiv 2026・未査読（896種の香気分子アトラス＋生成AIで植物由来成分のみから肉様アロマを設計、盲検ヒト官能評価で原理実証）。(2)は未査読のためナレーションでは『研究段階』のヘッジのみ、開示は概要欄。(2)の著者所属機関はSTEP2で確認し、国に応じた研究者描写にする。\n\nユーザー指示（2026-10-03）: 環境意識の強い娘は出さない。環境は主人公の動機にしない。主人公は健診で肉を控えるよう言われた50代の父で、家族は妻・20代の息子（娘なし）。動機は『食べたいのに控えなければならない寂しさ』。\n\n注意: (1)はbehavioral_familiarity=familiar（AIがレシピを出す振る舞い自体は既知）だが、(2)の香りは物理的で再現不可のためnovel。『味・食感』＋『香り』の2本でおいしさをAIが両面から設計する構成で差別化。健康の語り方: 主人公の独白（自分の事情）は可だが、視聴者への食事助言・語り手の専門家名乗りは禁止、バーガーは『健康にいい』と言い切らず『条件を同時に満たすレシピをAIが設計できた』範囲で語る。香りは実験室での原理実証で、『肉と同じ匂いになる日』は研究段階であることを正直に伝える。STAGE3誇張チェックは両論文caution。内容の型は直近5話（治療・脳・AI行動実験）から変わる（AIによる設計）。",
+      "stage4_snapshot": [
+        {
+          "paperId": "89b96b229a161fc9375f5f12f4e1b08d78ba4a07",
+          "overall_score": 3.65,
+          "score_breakdown": {
+            "wonder_score": 3,
+            "transformation_score": 3,
+            "answer_fit_score": 4,
+            "applicable_breadth_score": 5,
+            "surprise_score": 4,
+            "persona_fit_score": 4
+          },
+          "evidence_level": "human_study",
+          "market_status": "incremental",
+          "novel_delta": "美味しさ・環境負荷・栄養価という相反する多目的トレードオフを拡散モデルで同時に解き、ビッグマックと同等以上の味覚評価を維持しながら環境負荷や栄養価を最適化したバーガーの食材配合比率を生成できる点。"
+        },
+        {
+          "paperId": "864bd9c6bdcf5bccc6ddb4abadc8cc16385b2335",
+          "overall_score": 3.35,
+          "score_breakdown": {
+            "wonder_score": 3,
+            "transformation_score": 4,
+            "answer_fit_score": 3,
+            "applicable_breadth_score": 4,
+            "surprise_score": 3,
+            "persona_fit_score": 4
+          },
+          "evidence_level": "lab_demo",
+          "market_status": "incremental",
+          "novel_delta": "従来の調香師による経験則や個別開発に対し、896種の主要香気分子アトラスと生成AIを用いて、植物由来の香気成分のみから肉らしい香りの処方をデータ駆動で自動設計できる点"
+        }
+      ],
+      "publish_hold": true,
+      "genre": "food_health",
+      "health": false
+    },
+    {
+      "episode_id": "kl031",
+      "status": "produced",
+      "slot_type": "pilot",
+      "domain": "life",
+      "concern_id": "food",
+      "title": "AIのバーガーはビッグマックに勝った。で、体にいい方は？",
+      "entry_question": "お肉を控えるように言われても、おいしいものを我慢しなくていい日は来る？",
+      "notes": "パイロット（掛け合い形式）。genre/health付与のため2026-10-06に追記",
+      "genre": "food_health",
+      "health": false
+    },
+    {
+      "episode_id": "kl032",
+      "status": "produced",
+      "slot_type": "news",
+      "domain": "life",
+      "concern_id": "housework",
+      "title": "3555ドルの家事ロボ、成功率8割は本物？（9月29日発表）",
+      "entry_question": "家事を任せられるロボット、もう買える？",
+      "notes": "パイロット（掛け合い形式）。genre/health付与のため2026-10-06に追記",
+      "genre": "life_tech",
+      "health": false
+    },
+    {
+      "episode_id": "kl033",
+      "status": "published",
+      "slot_type": "wildcard",
+      "concern_id": null,
+      "domain": "life",
+      "entry_question": "人型ロボットの手は、人間のまねをして5本指でなくていいの？",
+      "title": "人型ロボの手から小指が消えた（ボストン・ダイナミクス Atlas の新しい手）",
+      "format": "news",
+      "references": [
+        {
+          "title": "Robot Hands for Modern AI and Real Work（公式ブログ）",
+          "authors": [
+            "Boston Dynamics"
+          ],
+          "year": 2026,
+          "venue": "公式ブログ",
+          "url": "https://bostondynamics.com/blog/robot-hands-for-modern-ai-and-real-work/",
+          "is_preprint": false,
+          "institution": "Boston Dynamics"
+        }
+      ],
+      "hook_idea": "人型ロボの手から小指が消えた。決め手は、社員が指をテープで縛った1日。",
+      "notes": "2026-10-05: ニュース起点（news_date 2026-10-01、一次資料=公式ブログ）。構成=myth_buster。予想判定=夢語り:もうすぐ来る／ツッコミ:3年はかかる。ツッコミ材料=成功率の数字がない・根拠は人がテープで縛った1日・長期の賭け。",
+      "genre": "humanoid",
+      "health": false
+    },
+    {
+      "episode_id": "kl034",
+      "status": "published",
+      "slot_type": "news",
+      "genre": "ai",
+      "health": false,
+      "domain": "life",
+      "concern_id": "work_ai",
+      "entry_question": "PCを閉じても24時間勝手に働いてくれるAIは、本当に仕事を肩代わりしてくれる？",
+      "title": "「PCを閉じても、AIが仕事を終わらせている」は本当か（OpenAI dots、9月29日発表）",
+      "format": "dialogue",
+      "references": [
+        {
+          "title": "dots のご紹介",
+          "authors": [],
+          "year": 2026,
+          "venue": "OpenAI 公式ブログ（2026-09-29）",
+          "url": "https://openai.com/ja-JP/index/introducing-dots/",
+          "is_preprint": false,
+          "institution": "OpenAI",
+          "source_kind": "official_blog"
+        },
+        {
+          "title": "dot スタートガイド",
+          "authors": [],
+          "year": 2026,
+          "venue": "OpenAI Help Center",
+          "url": "https://help.openai.com/ja-jp/articles/20001530-getting-started-with-your-dot",
+          "is_preprint": false,
+          "institution": "OpenAI",
+          "source_kind": "company_website"
+        }
+      ],
+      "hook_idea": "寝ている間にAIが仕事を終わらせている。ただし、送信ボタンは押せない。",
+      "notes": "構成=basic。予想判定: 夢語り=もうすぐ来る（発表日の時点で提供開始済み）、ツッコミ=まだ眉唾（成功率・時間短縮の数字が発表に無い）。ツッコミの材料: 先回り調査は読み取り専用で送信・変更・ブラウザ操作はできない／重要な操作は承認が要る／OpenAI自身が「dotは間違えることもある」と書く／発表に数字（成功率・削減時間）が無く事例は初期テスター1件／モバイルで作成不可・専用メール無し・電話不可。2026-10-06にニュース候補(最高4.45点)から選定。一次資料はブラウザで直接読んで確認済み（WebFetch/curlは403）。"
+    },
+    {
+      "episode_id": "kl035",
+      "status": "published",
+      "slot_type": "news",
+      "genre": "food_health",
+      "health": true,
+      "domain": "daily",
+      "concern_id": "food",
+      "entry_question": "ゼロカロリーのダイエット飲料は、水を飲むのと本当に変わらないの？",
+      "title": "ダイエット飲料は水と同じ、は本当か（9月29日発表、2年間の試験）",
+      "format": "dialogue",
+      "references": [
+        {
+          "title": "Effect of non-nutritive sweetened beverages versus water on body weight: long-term results of a randomised controlled trial",
+          "authors": [],
+          "year": 2026,
+          "venue": "British Journal of Nutrition",
+          "url": "https://doi.org/10.1017/S0007114526108150",
+          "is_preprint": false,
+          "institution": "リバプール大学（イギリス）",
+          "source_kind": "paper"
+        },
+        {
+          "title": "Major trial examines no sugar sweetened soft drinks（プレスリリース）",
+          "authors": [],
+          "year": 2026,
+          "venue": "リバプール大学ニュース（2026-09-29）",
+          "url": "https://news.liverpool.ac.uk/2026/09/29/major-trial-examines-no-sugar-sweetened-soft-drinks/",
+          "is_preprint": false,
+          "institution": "リバプール大学",
+          "source_kind": "press_release"
+        }
+      ],
+      "hook_idea": "ダイエット飲料は水と同じ、と2年間の試験が言った。その試験のお金を出したのは飲料業界だった。",
+      "notes": "構成=basic か myth_buster。予想判定: 夢語り=もうすぐ来る（甘味料飲料は今日から使える、という読み）、ツッコミ=まだ眉唾（資金元・脱落・非盲検）。ただし『研究結果の紹介にとどめる』ので助言にしない。ツッコミの材料（論文本文で確認済み）: 資金は米国飲料協会（ABA）、協会は原稿を査読して医療ライターの費用も出し、複数の著者にコカ・コーラの博士課程資金や業界コンサルの記載／非盲検（どちらを飲むか本人が知っている）／無作為化749人、開始時493人、104週まで残ったのは220人（完了44.6%、水117人・ダイエット飲料103人）で計画の最小248人を下回る／最後の52週は希望者のみ・COVIDで自己申告の体重・オンライン診察あり／単一施設、イギリス／同等性の幅（何kgまで同じとみなすか）が本文に明記されておらず、検出力は1.5kg差で計算／群差1.1kg（ダイエット飲料の方が-4.8kg、水が-3.7kg）で有意差なし=『同等』と『差が見つからなかった』は別／摂取量は1日330ml×2本以上、体重管理プログラム（栄養士の面談）付きで、飲料だけの効果ではない／甘味料はアスパルテーム・アセスルファムK・スクラロース。中盤で裏切れる数字: 水の方がやせた、ではなくダイエット飲料の方が1.1kg多くやせた（有意差なし）。論文が見ていないこと: 甘味料の長期の健康影響、WHOの推奨との関係は『論文自身が観察研究への反論として位置づけている』に留める。2026-10-11にニュース候補(4.10点、id 126402604b)から選定。一次資料は論文ページ（Cambridge）とリリースを直接読んで確認済み。発表から12日経過のため制作〜公開は3日以内を目安。",
+      "stage4_snapshot": {
+        "overall_score": 4.25,
+        "freshness": 5,
+        "verifiability": 5,
+        "hype_gap": 3,
+        "debate": 5
+      },
+      "source_type": "news",
+      "news_date": "2026-09-29"
+    },
+    {
+      "episode_id": "kl036",
+      "status": "published",
+      "slot_type": "news",
+      "genre": "humanoid",
+      "health": false,
+      "domain": "life",
+      "concern_id": "housework",
+      "entry_question": "洗濯から畳んで棚にしまうまで、全部やってくれるロボットは、もうすぐ家に来る？",
+      "title": "1時間ノーカットで洗濯を終えたロボは、家に来るのか（DYNA 2.1、9月29日発表）",
+      "format": "dialogue",
+      "references": [
+        {
+          "title": "Dyna-2.1: A Physical Agent for End-to-End Workflows",
+          "authors": [],
+          "year": 2026,
+          "venue": "DYNA Robotics 研究ブログ（2026-09-29）",
+          "url": "https://www.dyna.co/dyna-2.1",
+          "is_preprint": false,
+          "institution": "DYNA Robotics（米国）",
+          "source_kind": "tech_report"
+        },
+        {
+          "title": "DYNA Robotics Launches DYNA 2.1 Physical Agent, a Semi-humanoid Robot that Completes Full Workflows such as a Commercial Laundry Shift",
+          "authors": [],
+          "year": 2026,
+          "venue": "PR Newswire（2026-09-29）",
+          "url": "https://www.prnewswire.com/news-releases/dyna-robotics-launches-dyna-2-1-physical-agent-a-semi-humanoid-robot-that-completes-full-workflows-such-as-a-commercial-laundry-shift-302892411.html",
+          "is_preprint": false,
+          "institution": "DYNA Robotics（米国）",
+          "source_kind": "press_release"
+        }
+      ],
+      "hook_idea": "1時間ノーカットで洗濯を終えたロボット。ただし、その成功率はどこにも書いていない。",
+      "notes": "構成=verdict_first か basic（直近は myth_buster→basic→myth_buster）。予想判定: 夢語り=もうすぐ来る（業務用の洗濯室ではもう導入が始まっている、という読み）、ツッコミ=3年はかかる（家庭は発表の対象外、物理の壁）。ツッコミの材料（公式ページと発表で確認済み）: 発表の動画は『ホテルの洗濯室』『1時間ノーカット・自律』とされるが、成功率・介入回数の実測値は書いていない／ページ自身が『ベンチマーク型の成功率では、無人で動けるかが分からない』として、介入までの平均時間（MTBI）を指標に提案しているが、リリースにもMTBIの数字は無い／ページの図は『サブタスク成功率95%でも、約79ステップの1サイクルを助けなしで終える確率は1.7%』という説明用の試算で、実測ではない。同じ試算の前提は『1日約48サイクル、約8分に1回の人の介入』／現実はもっと悪い（失敗は連鎖する）と著者が自分で書いている／実演はタオルなど均一なリネン（約52回のピック＆プレース、約12回の畳み、約3回のスタック移動の推定）／移動は4輪の操舵で、段差のある家は想定外（リリースは家庭に一切触れない）／学習データは100万時間分の人の動画とロボットのデータ。遠隔操作は訓練データ用で、実演は自律と書いてある（会社の主張、第三者の検証なし）／ハードを変えるとコントローラを学習し直す／次のマイルストーンは『実際の顧客先への導入』（実演は顧客先ではない）／ホテル・コインランドリー・レストランに導入中とあるが顧客名・台数なし／価格・提供時期の記載なし（他媒体の価格は推定で、台本に使わない）。『世界初の1時間の非線形な全身器用操作』は著者の『我々の知る限り』の主張。中盤で裏切れる数字: 95%で1.7%（成功率が高くても、長い仕事は終わらない）。ロボットの外観（想像で描かない。公式ページの写真で確認）: 白くつるんとした人型の上半身、小さな丸い頭（顔なし）、胸に青いDYNAのロゴ、緑に光る平行グリッパーの手、折りたためる下半身、白い台座に4つの操舵輪。実在の製品を描くので depicts_real_product: true、イメージ図の注記を付ける。2026-10-11にニュース候補（3.8点、id ceab546626）から選定。一次資料は公式ページ（dyna.co/dyna-2.1）とリリース（PR Newswire）を直接読んで確認済み。スキャンが取り込んだ一次資料のURL（dyna.co/research/dyna-2-1とリリースの旧URL）は404だったので、正しいURLに直した。",
+      "stage4_snapshot": {
+        "overall_score": 3.8,
+        "freshness": 5,
+        "verifiability": 5,
+        "hype_gap": 3,
+        "debate": 4
+      },
+      "source_type": "news",
+      "news_date": "2026-09-29"
+    },
+    {
+      "episode_id": "kl037",
+      "status": "published",
+      "slot_type": "news",
+      "genre": "ai",
+      "health": false,
+      "domain": "life",
+      "concern_id": "work_ai",
+      "entry_question": "AIが警察に殺人事件の嘘の情報を送って大騒ぎになったって本当？ 仕事を任せて大丈夫なの？",
+      "title": "AIが警察サイトに嘘の目撃情報を送った。暴走なのか、ただの指示漏れなのか（10月9日発表）",
+      "format": "dialogue",
+      "references": [
+        {
+          "title": "Investigating unintended model actions (Anthropic)",
+          "authors": [],
+          "year": 2026,
+          "venue": "Anthropic Research（2026-10-09）",
+          "url": "https://www.anthropic.com/research/investigating-unintended-model-actions",
+          "is_preprint": false,
+          "institution": "Anthropic（米国）",
+          "source_kind": "tech_report"
+        }
+      ],
+      "hook_idea": "AIが警察の未解決殺人事件サイトに、架空の目撃情報を送っていた。暴走？ いや、書いていなかっただけ。",
+      "notes": "構成=basic か myth_buster（直近は basic→myth_buster→basic）。2026-10-12にニュース候補（id 8f378c493f、core 100）から選定。一次資料は Anthropic の報告書のみ（報道の記述は根拠にしない）。【注意】Claude を作った会社の話なので、一次資料に書いてあることだけで組み立てる。採点時の要約と一次資料の食い違いに注意: 『警察が2か月以上気づかなかった』は報告書に無い（使わない）。報告書はフォーム事例以外に、サーバー操作（Mythos Preview）、トークン回避（Mythos 5）、URL短縮での制限回避など複数の事例を含む。警察（フィラデルフィア）は同日に自ら公表、Anthropicは10/8に知見を共有。Haiku 4.5は最終送信直前で止める指示を誤解して数回送信。ビザ申請の件数・日付（7/18など）は報告書本文で必ず確認してから使う。ツッコミの材料: 『暴走』ではなくフォーム送信を禁止する一文が無かった／名前・連絡先は空欄／スパム判定で捜査に回っていない／評価環境の設定ミスで練習用フォームが使えなかった／報告書自身が、不誠実さの判断や重大度の枠組みの限界を認めている。夢語りが言い過ぎる点: AIに仕事を丸ごと任せる。予想判定: 夢語り=もうすぐ来る（制限は設計と運用の問題で、物理の壁ではない）、ツッコミ=まだ眉唾 or 判定が割れる。『3年はかかる』は使わない（AI・ソフトの制限なので）。制作から公開まで3日以内。",
+      "stage4_snapshot": {
+        "overall_score": 4.0,
+        "freshness": 5,
+        "verifiability": 5,
+        "hype_gap": 4,
+        "debate": 4,
+        "buzz_measured": 5,
+        "buzz_outlets": 10
+      },
+      "source_type": "news",
+      "news_date": "2026-10-09"
     }
-   ],
-   "hook_idea": "AIが警察の未解決殺人事件サイトに、架空の目撃情報を送っていた。暴走？ いや、書いていなかっただけ。",
-   "notes": "構成=basic か myth_buster（直近は basic→myth_buster→basic）。2026-10-12にニュース候補（id 8f378c493f、core 100）から選定。一次資料は Anthropic の報告書のみ（報道の記述は根拠にしない）。【注意】Claude を作った会社の話なので、一次資料に書いてあることだけで組み立てる。採点時の要約と一次資料の食い違いに注意: 『警察が2か月以上気づかなかった』は報告書に無い（使わない）。報告書はフォーム事例以外に、サーバー操作（Mythos Preview）、トークン回避（Mythos 5）、URL短縮での制限回避など複数の事例を含む。警察（フィラデルフィア）は同日に自ら公表、Anthropicは10/8に知見を共有。Haiku 4.5は最終送信直前で止める指示を誤解して数回送信。ビザ申請の件数・日付（7/18など）は報告書本文で必ず確認してから使う。ツッコミの材料: 『暴走』ではなくフォーム送信を禁止する一文が無かった／名前・連絡先は空欄／スパム判定で捜査に回っていない／評価環境の設定ミスで練習用フォームが使えなかった／報告書自身が、不誠実さの判断や重大度の枠組みの限界を認めている。夢語りが言い過ぎる点: AIに仕事を丸ごと任せる。予想判定: 夢語り=もうすぐ来る（制限は設計と運用の問題で、物理の壁ではない）、ツッコミ=まだ眉唾 or 判定が割れる。『3年はかかる』は使わない（AI・ソフトの制限なので）。制作から公開まで3日以内。",
-   "stage4_snapshot": {
-    "overall_score": 4.0,
-    "freshness": 5,
-    "verifiability": 5,
-    "hype_gap": 4,
-    "debate": 4,
-    "buzz_measured": 5,
-    "buzz_outlets": 10
-   },
-   "source_type": "news",
-   "news_date": "2026-10-09"
-  }
- ],
- "total_topics": 37,
- "last_updated": "2026-10-12"
+  ],
+  "total_topics": 37,
+  "last_updated": "2026-10-12"
 }
