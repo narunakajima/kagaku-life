@@ -1,0 +1,965 @@
+{
+  "episode_id": "kl038",
+  "format": "dialogue",
+  "template": "news_roundup",
+  "source_type": "news",
+  "news_date": "2026-10-12",
+  "verdict_as_of": "2026-10-13",
+  "genre": "ai",
+  "health": false,
+  "episode_title": "パーソナルAIは主流になるか。検索とAI、AIに頼む買い物（Meta Muse・OpenAI dots・米国の数字、10月13日時点）",
+  "youtube_title": "AIに頼んで買う時代は来る？ Museと米国の数字（10月13日時点）",
+  "entry_question": "検索から『AIに聞く・調べてもらう』へ移るなら、AIに頼んで買う時代が来て、パーソナルAIが主流になるの？",
+  "verdict": {
+    "dreamer": "dubious",
+    "skeptic": "soon"
+  },
+  "hook_lines": [
+    "あなた専属のAI",
+    "買い物まで任せる？"
+  ],
+  "thumbnail_prompt": "Bright Saturday morning, a cozy Japanese living room seen from the front, all continuous across the whole frame with no panels, boxes, borders or abrupt colour changes. Keep the left 30%, the right 30% and the top 35% of the frame quiet and uncluttered (soft warm gradient only), but the room must visibly continue unbroken behind them. In the horizontal center, in the vertical band between 38% and 80% of the frame height: a smartphone lying on a wooden table, and floating above it the AI agent shown only as an abstract, softly glowing cloud of small teal and warm amber light particles hovering in the air (no face, no eyes, no head, no body, no humanoid or robot shape), surrounded by a few small blank parcel-box shapes and a small blank shopping-bag shape orbiting it. No people, no robots. No logos, no emblems, no badges, no brand marks, no app icons, no store names, no readable text, no letters, no numbers.",
+  "thumbnail_headline": "AIに頼んで買う？\n判定が逆に割れた",
+  "thumbnail_exprs": {
+    "dreamer": "deflated",
+    "skeptic": "convinced"
+  },
+  "youtube_tags": [
+    "AI",
+    "パーソナルAI",
+    "AIエージェント",
+    "Meta",
+    "Muse",
+    "OpenAI",
+    "dots",
+    "生成AI",
+    "ネットショッピング",
+    "テクノロジーニュース",
+    "科学ニュース"
+  ],
+  "references": [
+    {
+      "title": "Introducing Muse（パーソナルAIエージェント）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Meta Newsroom（2026年9月8日公開、9月30日更新、2026年10月13日閲覧）",
+      "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+      "is_preprint": false,
+      "institution": "Meta（米国）",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "Security and safety for AI agents: our approach with Muse",
+      "authors": [],
+      "year": 2026,
+      "venue": "Meta AI Research Blog（2026年9月8日）",
+      "url": "https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse",
+      "is_preprint": false,
+      "institution": "Meta（米国）",
+      "source_kind": "tech_report"
+    },
+    {
+      "title": "Muse Wonder: A Frontier Model For Personal & Professional AI Agents",
+      "authors": [],
+      "year": 2026,
+      "venue": "Meta AI Research Blog（2026年10月12日）",
+      "url": "https://research.meta.ai/blog/muse-wonder",
+      "is_preprint": false,
+      "institution": "Meta（米国）",
+      "source_kind": "tech_report"
+    },
+    {
+      "title": "The Biggest News From Connect 2026",
+      "authors": [],
+      "year": 2026,
+      "venue": "Meta Newsroom（2026年9月24日）",
+      "url": "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/",
+      "is_preprint": false,
+      "institution": "Meta（米国）",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "dots のご紹介（公式ブログ）",
+      "authors": [],
+      "year": 2026,
+      "venue": "OpenAI 公式ブログ（2026年9月29日発表、2026年10月6日閲覧。kl034で確認）",
+      "url": "https://openai.com/ja-JP/index/introducing-dots/",
+      "is_preprint": false,
+      "institution": "OpenAI（米国）",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "Meta's AI agent Muse is now the No. 2 app in the US（数字は Sensor Tower の推計）",
+      "authors": [],
+      "year": 2026,
+      "venue": "TechCrunch（2026年9月10日）",
+      "url": "https://techcrunch.com/2026/09/10/metas-ai-agent-muse-is-now-the-no-2-app-in-the-us/",
+      "is_preprint": false,
+      "institution": "TechCrunch",
+      "source_kind": "media"
+    },
+    {
+      "title": "Meta's Muse is outpacing ChatGPT's early mobile launch（数字は Apptopia・Appfigures の推計）",
+      "authors": [],
+      "year": 2026,
+      "venue": "TechCrunch（2026年9月21日）",
+      "url": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/",
+      "is_preprint": false,
+      "institution": "TechCrunch",
+      "source_kind": "media"
+    },
+    {
+      "title": "Meta's Muse Is Taking Aim at E-Commerce, But Amazon Isn't Playing Along",
+      "authors": [],
+      "year": 2026,
+      "venue": "MarketBeat（Yahoo Finance 転載、2026年9月29日）",
+      "url": "https://finance.yahoo.com/technology/ai/articles/meta-muse-taking-aim-e-142000400.html",
+      "is_preprint": false,
+      "institution": "MarketBeat",
+      "source_kind": "media"
+    },
+    {
+      "title": "Americans and AI 2026: Chatbots, Smart Devices, and Views on Impact",
+      "authors": [],
+      "year": 2026,
+      "venue": "Pew Research Center（2026年6月17日公開、調査は2026年2月17〜23日、米国成人5,119人）",
+      "url": "https://www.pewresearch.org/internet/2026/06/17/americans-and-ai-2026-chatbots-smart-devices-and-views-on-impact/",
+      "is_preprint": false,
+      "institution": "Pew Research Center（米国）",
+      "source_kind": "tech_report"
+    },
+    {
+      "title": "Is AI Replacing Search? What the 2026 Numbers Reveal",
+      "authors": [],
+      "year": 2026,
+      "venue": "Similarweb ブログ（2026年8月4日、同社のトラッキングデータ）",
+      "url": "https://aisearch.similarweb.com/blog/is-ai-replacing-search/",
+      "is_preprint": false,
+      "institution": "Similarweb",
+      "source_kind": "company_website"
+    },
+    {
+      "title": "Adobe: AI-referral traffic spending, converting more than counterparts（Adobe Analytics のデータ）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Digital Commerce 360（2026年8月19日）",
+      "url": "https://www.digitalcommerce360.com/2026/08/19/adobe-ai-referral-traffic-data-july-2026/",
+      "is_preprint": false,
+      "institution": "Digital Commerce 360（Adobe Analytics のデータを報じる）",
+      "source_kind": "media"
+    }
+  ],
+  "youtube_description": "2026年9月8日、MetaがパーソナルAIエージェント「Muse」を発表しました。質問に答えるだけでなく、メールの送信や旅行の予約、買い物まで代わりにこなすといいます。9月29日にはOpenAIも、同じく専用のクラウドのコンピューターで動く「dots」を発表。アメリカではMuseがアプリのランキング上位に入ったと報じられ、ネット通販の店との連携も進む一方、Amazonは締め出したと報じられています。検索からAIへ、そしてAIに頼んで買う時代へ。これからのAIは、一人ひとりに付く「パーソナルAI」が主流になるのか。夢語り担当の大輔と、ツッコミ担当の沙織が、発表と数字を確かめて判定します。\n\n■ この回の判定（2026年10月13日時点の、二人の見立て）\nお題: これからのAIは、あなた専属のパーソナルAIが主流になる？\n大輔: まだ眉唾（「頼んだら買うところまで終わる」という意味の主流なら。AIが自分で買った実績の数字はどこにもなく、Amazonは締め出したと報じられている）\n沙織: もうすぐ来る（「調べる入口」としてなら。アメリカの大人の49%がAIチャットボットを使い、24%は毎日使っている。最後は人が確認して買う形が1年ほどで普通になる、というのは沙織の見立てで、資料には書かれていません）\n\n■ 確認した一次資料（会社自身の発表。第三者による検証はありません）\n・Meta「Introducing Muse」（9月8日公開、9月30日更新）: 質問に答えるだけでなく作業をする「パーソナルAIエージェント」。メール送信・旅行の予約・ブラウザでのフォーム入力・交渉の代行。アプリを閉じても働き続け、変化があったときや承認が必要なときに戻ってくる。専用のコンピューター（Muse Secure VM）で動き、別の見張り役のエージェント（Sentinel）が承認しない限りインターネットに何も出ていかない。メール送信や購入の前には本人に確認する。アメリカで提供開始（iOS・Android・muse.ai、WhatsAppからも利用可）。ほとんどの用途は無料で、有料プランもある（金額の記載なし）\n・Meta「Security and safety for AI agents: our approach with Muse」（9月8日）: 購入のたびに人の承認を挟み、店とその金額に限った一回きりのカード番号を渡す。Museは攻撃と無縁ではなく、ときどき間違えると明記。承認の加減は実際の利用者との経験を踏まえて調整していく。Meta社員でも中を見られない「Muse Confidential VM」は今年後半の予定で、現在は運用上のポリシーで社員のアクセスを制限。Museの使い方が表示される広告に影響する場面もあると記載\n・Meta「Muse Wonder」（10月12日）: Muse向けの新しいモデル。近くMuseに組み込まれ、まず有料の利用者から。本文に性能の数値はなく（図のみ）、安全性の詳しい報告は近日公開\n・Meta「The Biggest News From Connect 2026」（9月24日）: 買い物の提携先として Walmart、Best Buy、American Eagle Outfitters、DICK'S Sporting Goods、Fanatics、Gap、Michael Kors、Sephora、Ulta、Wayfair を追加、支払いは Shop Pay と PayPal。ローンチ時から数十社の提携先と Shopify のカタログ全体に対応\n・OpenAI「dots のご紹介」（9月29日、第34話で確認済み）: 専用のクラウドのコンピューターで常時稼働するエージェント。紹介されている例は仕事が中心。対象地域の Pro と Business Premium から順次提供\n・いずれの発表にも、利用者数・継続率・作業の成功率の数字はありません\n\n■ 調査会社のデータ・推計（数字は各社の推計・測定で、MetaやOpenAIの公表値ではありません）\n・Pew Research Center（2026年2月17〜23日、米国成人5,119人）: AIチャットボットを使う人49%、毎日使う人24%、調べものに使う人42%（いずれも米国成人全体に対する割合）。2024年の33%とは質問の条件が一部異なる。買い物での利用は報告のページに記載なし\n・Similarweb（8月4日、同社のトラッキングデータ）: ChatGPTの利用者の95%がGoogleも利用（2025年9月・2026年5月とも）。「AIは検索を置き換えておらず、重なっている」との結論。AIのAPI・デスクトップアプリ・アプリ内のAI機能は含まないと、筆者自身が限界として記載。「従来型の検索が2026年までに25%減る」はGartnerの2024年の予測で、実績ではない\n・Sensor Tower（TechCrunch 9月10日の報道）: 発表2日後の時点で、米国のiOSでのダウンロードが8万3,000件超、米国App Storeで2位\n・Apptopia（TechCrunch 9月21日の報道）: 米国とカナダのiOSで最初の12日間のダウンロードがMuse 180万件、ChatGPT（2023年）130万件。Museの利用者の95%以上がFacebookも利用。米国のApp Storeで1位になったとの報道（Business Insider）にも触れている\n・Adobe Analytics（Digital Commerce 360 の8月19日の報道）: 2026年7月、AI経由で米国の小売サイトに来た訪問は前年同月比62%増。AI経由の訪問はそれ以外より購入に至る率が60%高く、訪問1回あたりの売上が53%多い。これは「AIで調べた人が店のサイトで自分で買った」訪問の数字で、AIエージェントが自分で購入した数ではありません。全訪問に占めるAI経由の割合と「AI経由」の定義は記事に記載がなく、AdobeはAIからの見え方を測るツールを提供する会社です\n\n■ 報道で伝えられていること（一次資料では確認していません）\n・MarketBeat（Yahoo Finance、9月29日）: AmazonがMuseによる自社サイトへのアクセスをブロック（理由はプライバシーとセキュリティの懸念と報じられていますが、Amazonの発言の引用はありません）。Amazonは2025年の米国のネット通販の40.5%を占めると記載。MetaのZuckerberg CEOがConnectで、利用者に無料でAIを使ってもらい、時間をかけて取引から少額の手数料を得て利益を上げることを期待していると述べたと報道\n・Museの累計ダウンロード数については、調査会社ごとに数字が大きく異なる報道があるため、この回では扱いませんでした\n\n※この回の元は企業の発表と調査会社のデータ・報道で、専門家の審査を経て学術誌に掲載された論文ではありません。\n※「主流になるか」は二人の見立て（予測）で、資料に書かれていることではありません。\n※特定の企業・製品・サービスの利用や、投資を勧めるものではありません。Museは2026年10月13日時点でアメリカなどで提供されており、日本での提供は発表されていません。\n\n■ 参考\n[1] Meta「Introducing Muse」 https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/\n[2] Meta「Security and safety for AI agents: our approach with Muse」 https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse\n[3] Meta「Muse Wonder」 https://research.meta.ai/blog/muse-wonder\n[4] Meta「The Biggest News From Connect 2026」 https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/\n[5] OpenAI「dots のご紹介」 https://openai.com/ja-JP/index/introducing-dots/\n[6] TechCrunch（9月10日） https://techcrunch.com/2026/09/10/metas-ai-agent-muse-is-now-the-no-2-app-in-the-us/\n[7] TechCrunch（9月21日） https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/\n[8] MarketBeat（Yahoo Finance、9月29日） https://finance.yahoo.com/technology/ai/articles/meta-muse-taking-aim-e-142000400.html\n[9] Pew Research Center（6月17日） https://www.pewresearch.org/internet/2026/06/17/americans-and-ai-2026-chatbots-smart-devices-and-views-on-impact/\n[10] Similarweb（8月4日） https://aisearch.similarweb.com/blog/is-ai-replacing-search/\n[11] Digital Commerce 360（8月19日） https://www.digitalcommerce360.com/2026/08/19/adobe-ai-referral-traffic-data-july-2026/\n\n#AI #パーソナルAI #科学ニュース",
+  "scenes": [
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 7,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "MetaとOpenAIが、同じ形のAIを出した。",
+          "expression": "excited",
+          "tone": "like breaking news",
+          "reference_index": 0
+        }
+      ],
+      "scene_id": 1,
+      "narration": "大輔「MetaとOpenAIが、同じ形のAIを出した。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 11,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "アメリカでアプリ1位と報道。ただ、推計は割れる。",
+          "expression": "surprised",
+          "reference_index": 6
+        }
+      ],
+      "scene_id": 2,
+      "narration": "沙織「アメリカでアプリ1位と報道。ただ、推計は割れる。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 12,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "でも、アマゾンは締め出したと報道。",
+          "expression": "thinking",
+          "reference_index": 7,
+          "display": "でも、Amazonは締め出したと報道。"
+        }
+      ],
+      "scene_id": 3,
+      "narration": "大輔「でも、アマゾンは締め出したと報道。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 8,
+      "ken_burns": "zoom_in",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "あなた専属のAI、主流になる？",
+          "expression": "doubt",
+          "tag": "question"
+        }
+      ],
+      "scene_id": 4,
+      "narration": "沙織「あなた専属のAI、主流になる？」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "setup",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_out",
+      "image_prompt": "Saturday morning in a small Japanese kitchen (bright morning sunlight through the window, clearly daytime). On the wooden table, a smartphone lies face-up next to a coffee mug, and above the phone screen hovers the AI agent shown only as an abstract, softly glowing cloud of small teal and warm amber light particles hovering in the air (no face, no eyes, no head, no body, no humanoid or robot shape), while a faint, half-transparent old-fashioned search bar shape (a blank rounded rectangle with a small magnifying-glass icon) floats behind it, slightly faded. A curious, light mood. No people. No logos, no emblems, no badges, no brand marks, no app icons, no store names, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "最近、何か調べるとき、検索より先にAIに聞いてない？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "聞いてる。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕の仮説はこう。検索が減って、AIに聞く時代になる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次は、AIに頼んで買うのが当たり前になる。入口は、一人ひとりに付くパーソナルAI。",
+          "expression": "excited",
+          "tone": "a bit fast, enthusiastic"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "面白い。じゃあ、数字で確かめよう。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "材料は、Metaのミューズ、前に取り上げたドッツ、アメリカの数字。",
+          "expression": "neutral",
+          "display": "材料は、MetaのMuse、前に取り上げたdots、アメリカの数字。"
+        }
+      ],
+      "scene_id": 5,
+      "narration": "大輔「最近、何か調べるとき、検索より先にAIに聞いてない？」\n沙織「聞いてる。」\n大輔「僕の仮説はこう。検索が減って、AIに聞く時代になる。」\n大輔「次は、AIに頼んで買うのが当たり前になる。入口は、一人ひとりに付くパーソナルAI。」\n沙織「面白い。じゃあ、数字で確かめよう。」\n大輔「材料は、Metaのミューズ、前に取り上げたドッツ、アメリカの数字。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "intro",
+      "reference_index": 0,
+      "ken_burns": "pan_zoom_out",
+      "image_prompt": "Daytime, a bright, modern technology office in the United States (clear daylight through tall windows). In the center, a large glass-walled server room glows softly; inside one rack-sized glass compartment floats the AI agent shown only as an abstract, softly glowing cloud of small teal and warm amber light particles hovering in the air (no face, no eyes, no head, no body, no humanoid or robot shape), and right beside it, separated by a thin transparent glass wall, stands a second, smaller, cooler-blue glowing light cluster like a quiet gatekeeper, with thin streams of light passing through a small gate between them before leaving the room. Two engineers in white lab coats, seen from behind, an American man with short brown hair and an American woman with curly dark hair, watch from outside the glass. No logos, no emblems, no badges, no brand marks, no app icons, no store names, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "まずミューズ。Metaが9月8日に発表した、パーソナルAIエージェント。",
+          "expression": "neutral",
+          "reference_index": 0,
+          "display": "まずMuse。Metaが9月8日に発表した、パーソナルAIエージェント。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "質問に答えるだけじゃなく、作業をする。メール、旅行の予約、フォーム入力、交渉まで。",
+          "expression": "excited",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、どこで動いてるの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "専用のコンピューターで、アプリを閉じても働き続ける。承認が要るときだけ戻ってくる。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "隣の見張り役のAIが許可しないと、ネットには何も出ていかない。",
+          "expression": "excited",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "お値段は？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ほとんどは無料で、有料プランもある。提供はアメリカから。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "10月12日には、ミューズ用の新しいモデルも発表された。",
+          "expression": "neutral",
+          "reference_index": 2,
+          "display": "10月12日には、Muse用の新しいモデルも発表された。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "性能の数字は？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "……本文には無い。図だけ。",
+          "expression": "deflated",
+          "reference_index": 2
+        }
+      ],
+      "scene_id": 6,
+      "narration": "大輔「まずミューズ。Metaが9月8日に発表した、パーソナルAIエージェント。」\n大輔「質問に答えるだけじゃなく、作業をする。メール、旅行の予約、フォーム入力、交渉まで。」\n沙織「で、どこで動いてるの？」\n大輔「専用のコンピューターで、アプリを閉じても働き続ける。承認が要るときだけ戻ってくる。」\n大輔「隣の見張り役のAIが許可しないと、ネットには何も出ていかない。」\n沙織「お値段は？」\n大輔「ほとんどは無料で、有料プランもある。提供はアメリカから。」\n大輔「10月12日には、ミューズ用の新しいモデルも発表された。」\n沙織「性能の数字は？」\n大輔「……本文には無い。図だけ。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "intro",
+      "reference_index": 4,
+      "ken_burns": "pan_zoom_out",
+      "image_prompt": "A stylized, clean illustration in soft daylight colors: two softly glowing light-particle clouds float side by side above two different scenes. On the left, the cloud hovers over a tidy office desk with a closed laptop and stacks of blank papers; on the right, an identical cloud hovers over a cozy living room with a shopping bag, a small suitcase and a smartphone on a sofa. Both clouds are the same: the AI agent shown only as an abstract, softly glowing cloud of small teal and warm amber light particles hovering in the air (no face, no eyes, no head, no body, no humanoid or robot shape). A thin dotted line of light connects the two clouds. Calm, comparative mood. No people. No logos, no emblems, no badges, no brand marks, no app icons, no store names, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "で、ドッツと何が違うの？",
+          "expression": "neutral",
+          "display": "で、dotsと何が違うの？"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "形は同じ。どっちも専用のクラウドのコンピューターで動く。",
+          "expression": "neutral",
+          "reference_index": 4
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ドッツの例は仕事が中心で、有料プランから配る。",
+          "expression": "neutral",
+          "reference_index": 4,
+          "display": "dotsの例は仕事が中心で、有料プランから配る。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ミューズは、ほぼ無料で、買い物まで暮らしに寄せてきた。",
+          "expression": "excited",
+          "reference_index": 0,
+          "display": "Museは、ほぼ無料で、買い物まで暮らしに寄せてきた。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "2社が、同じ月に、同じ形か。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でしょ。だから僕は、これが次の主流だと思う。",
+          "expression": "convinced"
+        }
+      ],
+      "scene_id": 7,
+      "narration": "沙織「で、ドッツと何が違うの？」\n大輔「形は同じ。どっちも専用のクラウドのコンピューターで動く。」\n大輔「ドッツの例は仕事が中心で、有料プランから配る。」\n大輔「ミューズは、ほぼ無料で、買い物まで暮らしに寄せてきた。」\n沙織「2社が、同じ月に、同じ形か。」\n大輔「でしょ。だから僕は、これが次の主流だと思う。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "dream",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_in",
+      "image_prompt": "Saturday morning in a Japanese family home entryway (bright morning sunlight, clearly daytime). a Japanese woman in her late thirties with shoulder-length wavy black hair tied in a low ponytail, no glasses, wearing a sage-green hooded sweatshirt kneels by the shoe rack holding up a pair of small children's soccer cleats that are clearly too small, looking at them with a wry smile, her smartphone in her other hand. Above her shoulder floats the AI agent shown only as an abstract, softly glowing cloud of small teal and warm amber light particles hovering in the air (no face, no eyes, no head, no body, no humanoid or robot shape), from which three small blank parcel-box shapes and a blank calendar-page shape drift outward, glowing. A cheerful, busy-weekend mood. No logos, no emblems, no badges, no brand marks, no app icons, no store names, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "想像してみてよ。",
+          "expression": "excited",
+          "pause": 0.4
+        },
+        {
+          "speaker": "dreamer",
+          "text": "土曜の朝。子どものサッカーのスパイクが、もう小さい。スマホに一言、来週の試合までに、1つ上のサイズを。",
+          "expression": "excited",
+          "tag": "life_scene",
+          "tone": "dreamy, a bit fast"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "AIが店を比べて、注文して、届く日をカレンダーに入れておく。こっちは、何もしない。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "人生の事務は、全部AIに。検索なんて、もう開かなくなる。",
+          "expression": "excited",
+          "tone": "carried away"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ちょっと待って。2つ、言い過ぎてる。",
+          "expression": "doubt",
+          "react": "surprised",
+          "pause": 0.4
+        }
+      ],
+      "scene_id": 8,
+      "narration": "大輔「想像してみてよ。」\n大輔「土曜の朝。子どものサッカーのスパイクが、もう小さい。スマホに一言、来週の試合までに、1つ上のサイズを。」\n大輔「AIが店を比べて、注文して、届く日をカレンダーに入れておく。こっちは、何もしない。」\n大輔「人生の事務は、全部AIに。検索なんて、もう開かなくなる。」\n沙織「ちょっと待って。2つ、言い過ぎてる。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "tsukkomi",
+      "bgm_role": "main",
+      "reference_index": 9,
+      "ken_burns": "zoom_out",
+      "image_prompt": "Daytime, a simple stylized illustration: two wide, translucent glowing paths, one teal and one amber, run side by side and then overlap into one broad shared road that continues toward a bright horizon, with many tiny anonymous pedestrians shown only as small simple silhouettes walking on both paths at once. Clear blue sky. A thoughtful mood. No logos, no emblems, no badges, no brand marks, no app icons, no store names, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "1つ目。検索が減ってる、は本当？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "調査会社のシミラーウェブによると、ChatGPTを使う人の95%が、グーグルも使ってる。去年の9月も今年の5月も。",
+          "expression": "neutral",
+          "reference_index": 9,
+          "display": "調査会社のSimilarwebによると、ChatGPTを使う人の95%が、Googleも使ってる。去年の9月も今年の5月も。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "……減ってない？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "置き換わったんじゃなくて、重なってる。それが向こうの結論。",
+          "expression": "neutral",
+          "reference_index": 9
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、このデータはアプリのAIを数えてない。そこは書いた本人も認めてる。",
+          "expression": "neutral",
+          "reference_index": 9
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、AIに聞く人は？",
+          "expression": "thinking"
+        }
+      ],
+      "scene_id": 9,
+      "narration": "沙織「1つ目。検索が減ってる、は本当？」\n沙織「調査会社のシミラーウェブによると、ChatGPTを使う人の95%が、グーグルも使ってる。去年の9月も今年の5月も。」\n大輔「……減ってない？」\n沙織「置き換わったんじゃなくて、重なってる。それが向こうの結論。」\n沙織「ただ、このデータはアプリのAIを数えてない。そこは書いた本人も認めてる。」\n大輔「じゃあ、AIに聞く人は？」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 8,
+      "ken_burns": "static",
+      "image_prompt": "A simple, clean flat infographic horizontal bar chart on a plain light background. Title at the very top reading exactly 「アメリカの大人（2026年2月の調査）」. Three horizontal bars on a shared axis that starts at 0 and ends at 100, with the bar lengths exactly proportional to the values, each with a label on the left and its value at the bar's end: 「AIチャットボットを使う」 49%, 「調べものに使う」 42%, 「毎日使う」 24%. Teal bars, with the top bar in warm coral. Small axis tick labels 0 and 100 only. Make the whole chart compact so that everything sits within the top 70 percent of the picture, with a large empty light area at the bottom (the lower 30 percent of the picture must be completely empty). Do not add any other text, numbers, icons or logos.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "そっちは多い。ピューの調査、アメリカの大人5119人。",
+          "expression": "neutral",
+          "reference_index": 8,
+          "display": "そっちは多い。Pewの調査、アメリカの大人5119人。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "AIチャットボットを使う人が49%。毎日使う人が24%。",
+          "expression": "neutral",
+          "reference_index": 8
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ほぼ半分！ 4人に1人近くは毎日！",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "使い道で一番多いのは、調べもの。大人全体の42%。",
+          "expression": "neutral",
+          "reference_index": 8
+        },
+        {
+          "speaker": "dreamer",
+          "text": "AIに聞く、は僕の勝ちだ。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そこは認める。ただ、このページに、買い物の話は出てこない。",
+          "expression": "doubt",
+          "react": "deflated",
+          "reference_index": 8
+        }
+      ],
+      "scene_id": 10,
+      "narration": "沙織「そっちは多い。ピューの調査、アメリカの大人5119人。」\n沙織「AIチャットボットを使う人が49%。毎日使う人が24%。」\n大輔「ほぼ半分！ 4人に1人近くは毎日！」\n沙織「使い道で一番多いのは、調べもの。大人全体の42%。」\n大輔「AIに聞く、は僕の勝ちだ。」\n沙織「そこは認める。ただ、このページに、買い物の話は出てこない。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "reference_index": 5,
+      "ken_burns": "zoom_out",
+      "image_prompt": "Evening in an American suburban street (dusk sky with warm streetlights, clearly evening). Through the windows of several houses, many small glowing smartphone screens are visible, and from each of them a tiny glowing light-particle cloud rises like a firefly and drifts upward, forming a soft river of light toward the sky; a few of the tiny clouds fade out halfway up. Each tiny cloud is a miniature of the AI agent shown only as an abstract, softly glowing cloud of small teal and warm amber light particles hovering in the air (no face, no eyes, no head, no body, no humanoid or robot shape). Wonder mixed with a hint of doubt. No people visible. No logos, no emblems, no badges, no brand marks, no app icons, no store names, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "それに、ミューズはアメリカで、ランキングを駆け上がってる。",
+          "expression": "excited",
+          "display": "それに、Museはアメリカで、ランキングを駆け上がってる。",
+          "reference_index": 5
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、その数字、どこから？",
+          "expression": "doubt",
+          "reference_index": 5
+        },
+        {
+          "speaker": "dreamer",
+          "text": "Metaは出してない。テッククランチの記事で、調査会社のセンサータワーの推計。発表の2日後、アメリカのアイフォーンで8万3000件超え、アップストアの2位。",
+          "expression": "neutral",
+          "reference_index": 5,
+          "display": "Metaは出してない。TechCrunchの記事で、調査会社のSensor Towerの推計。発表の2日後、アメリカのiPhoneで8万3000件超え、App Storeの2位。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "その記事は、ChatGPTの出だしより遅い、好調とは限らない、とも書いてる。",
+          "expression": "doubt",
+          "reference_index": 5
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でも、そのあと1位になったと報じられた。同じテッククランチの続報で、調査会社のアプトピアの推計だと、アメリカとカナダのアイフォーンで、最初の12日に180万件。",
+          "expression": "excited",
+          "reference_index": 6,
+          "display": "でも、そのあと1位になったと報じられた。同じTechCrunchの続報で、調査会社のApptopiaの推計だと、アメリカとカナダのiPhoneで、最初の12日に180万件。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "比べた相手は、2023年のChatGPTで130万件。速いか遅いかは、推計で割れてるってこと。",
+          "expression": "thinking",
+          "reference_index": 6
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それと、同じ推計で、ミューズを使う人の95%以上が、フェイスブックも使ってる。",
+          "expression": "neutral",
+          "reference_index": 6,
+          "display": "それと、同じ推計で、Museを使う人の95%以上が、Facebookも使ってる。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "Metaのお客さんが、そのまま来てるのか。",
+          "expression": "thinking",
+          "reference_index": 5
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、一番の弱点。ダウンロードは、入れた数。使い続けるかは別。",
+          "expression": "doubt",
+          "pause": 0.4,
+          "reference_index": 5
+        },
+        {
+          "speaker": "skeptic",
+          "text": "MetaもOpenAIも、何人が使い続けてるか、頼んだ仕事が何回うまくいったか、発表に数字は1つもない。",
+          "expression": "doubt",
+          "tag": "weakness",
+          "reference_index": 0
+        }
+      ],
+      "scene_id": 11,
+      "narration": "大輔「それに、ミューズはアメリカで、ランキングを駆け上がってる。」\n沙織「で、その数字、どこから？」\n大輔「Metaは出してない。テッククランチの記事で、調査会社のセンサータワーの推計。発表の2日後、アメリカのアイフォーンで8万3000件超え、アップストアの2位。」\n沙織「その記事は、ChatGPTの出だしより遅い、好調とは限らない、とも書いてる。」\n大輔「でも、そのあと1位になったと報じられた。同じテッククランチの続報で、調査会社のアプトピアの推計だと、アメリカとカナダのアイフォーンで、最初の12日に180万件。」\n沙織「比べた相手は、2023年のChatGPTで130万件。速いか遅いかは、推計で割れてるってこと。」\n沙織「それと、同じ推計で、ミューズを使う人の95%以上が、フェイスブックも使ってる。」\n大輔「Metaのお客さんが、そのまま来てるのか。」\n沙織「で、一番の弱点。ダウンロードは、入れた数。使い続けるかは別。」\n沙織「MetaもOpenAIも、何人が使い続けてるか、頼んだ仕事が何回うまくいったか、発表に数字は1つもない。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "reference_index": 3,
+      "ken_burns": "pan_zoom_out",
+      "image_prompt": "Daytime, a stylized illustration of a long shopping street seen in perspective, with many generic storefronts that have blank awnings and blank signboards. Most shop doors are wide open and glowing warmly, with the AI agent shown only as an abstract, softly glowing cloud of small teal and warm amber light particles hovering in the air (no face, no eyes, no head, no body, no humanoid or robot shape) flowing in and out of them along a ribbon of light; but the single largest storefront in the middle has its tall gate firmly closed, and the ribbon of light stops in front of it. Clear blue sky. A lively but tense mood. No people. No logos, no emblems, no badges, no brand marks, no app icons, no store names, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "買い物も動いてる。Metaの発表では、ウォルマート、ベストバイ、セフォラなどの店を追加。",
+          "expression": "excited",
+          "reference_index": 3
+        },
+        {
+          "speaker": "dreamer",
+          "text": "最初から数十社と、ショッピファイの商品全部。",
+          "expression": "neutral",
+          "reference_index": 3,
+          "display": "最初から数十社と、Shopifyの商品全部。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、アマゾンは？",
+          "expression": "doubt",
+          "pause": 0.3,
+          "display": "で、Amazonは？",
+          "reference_index": 7
+        },
+        {
+          "speaker": "dreamer",
+          "text": "……報道では、ミューズがアマゾンのサイトに入るのを、ブロックした。",
+          "expression": "deflated",
+          "reference_index": 7,
+          "display": "……報道では、MuseがAmazonのサイトに入るのを、ブロックした。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "記事によると、アマゾンは去年、アメリカのネット通販の40.5%。一番大きな店が閉めた。",
+          "expression": "neutral",
+          "reference_index": 7,
+          "display": "記事によると、Amazonは去年、アメリカのネット通販の40.5%。一番大きな店が閉めた。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それと、Metaのトップは、取引から少しずつ手数料を取って稼ぐつもりだ、と話したと報じられてる。",
+          "expression": "doubt",
+          "reference_index": 7
+        },
+        {
+          "speaker": "dreamer",
+          "text": "AIが買うほど、Metaが得をするのか。",
+          "expression": "thinking",
+          "reference_index": 7
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが使う人の得と一致するかは、別の話ね。",
+          "expression": "doubt",
+          "reference_index": 7
+        }
+      ],
+      "scene_id": 12,
+      "narration": "大輔「買い物も動いてる。Metaの発表では、ウォルマート、ベストバイ、セフォラなどの店を追加。」\n大輔「最初から数十社と、ショッピファイの商品全部。」\n沙織「で、アマゾンは？」\n大輔「……報道では、ミューズがアマゾンのサイトに入るのを、ブロックした。」\n沙織「記事によると、アマゾンは去年、アメリカのネット通販の40.5%。一番大きな店が閉めた。」\n沙織「それと、Metaのトップは、取引から少しずつ手数料を取って稼ぐつもりだ、と話したと報じられてる。」\n大輔「AIが買うほど、Metaが得をするのか。」\n沙織「それが使う人の得と一致するかは、別の話ね。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 10,
+      "ken_burns": "static",
+      "image_prompt": "A simple, clean flat infographic on a plain light background. Title at the very top reading exactly 「AI経由でアメリカの小売サイトに来た訪問（2026年7月）」. Below it, three rounded rectangular cards in one horizontal row, each with one large value and a short label underneath, exactly: left card 「+62%」 with label 「訪問の数（前の年の同じ月と比べて）」, middle card 「+60%」 with label 「買うまで進む率（AI経由でない訪問と比べて）」, right card 「+53%」 with label 「1回の訪問あたりの売上（同）」. Under the cards, one small line reading exactly 「AIが自分で買った数ではありません」 in warm coral. Teal cards. No bars, no axes. Make the whole graphic compact so that everything sits within the top 70 percent of the picture, with a large empty light area at the bottom (the lower 30 percent of the picture must be completely empty). Do not add any other text, numbers, icons or logos.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "で、言い過ぎの2つ目。買うところまでAI、の方。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "アドビのデータを報じた記事だと、今年7月、AIから来たアメリカの小売サイトへの訪問は、前の年より62%増。",
+          "expression": "neutral",
+          "reference_index": 10
+        },
+        {
+          "speaker": "skeptic",
+          "text": "しかも、買うまで進む率が、ほかの訪問より60%高い。",
+          "expression": "neutral",
+          "reference_index": 10
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ほら！ 仮説の後半も当たりだ！",
+          "expression": "excited",
+          "tone": "triumphant"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "待って。これは、AIで調べた人が、店で自分で買った話。AIが買った数じゃない。",
+          "expression": "doubt",
+          "react": "deflated",
+          "pause": 0.4
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、全訪問のうちAI経由が何%かは書いてない。もともと買う気の強い人かもしれないし。",
+          "expression": "thinking",
+          "reference_index": 10
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、AIが買った数は？",
+          "expression": "deflated"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ミューズにもドッツにも、無い。どこにも無い。",
+          "expression": "doubt",
+          "display": "Museにもdotsにも、無い。どこにも無い。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "……調べる入口と、買うまで任せる、の間には、まだ距離があるんだ。",
+          "expression": "deflated",
+          "pause": 0.5
+        }
+      ],
+      "scene_id": 13,
+      "narration": "沙織「で、言い過ぎの2つ目。買うところまでAI、の方。」\n沙織「アドビのデータを報じた記事だと、今年7月、AIから来たアメリカの小売サイトへの訪問は、前の年より62%増。」\n沙織「しかも、買うまで進む率が、ほかの訪問より60%高い。」\n大輔「ほら！ 仮説の後半も当たりだ！」\n沙織「待って。これは、AIで調べた人が、店で自分で買った話。AIが買った数じゃない。」\n沙織「それに、全訪問のうちAI経由が何%かは書いてない。もともと買う気の強い人かもしれないし。」\n大輔「じゃあ、AIが買った数は？」\n沙織「ミューズにもドッツにも、無い。どこにも無い。」\n大輔「……調べる入口と、買うまで任せる、の間には、まだ距離があるんだ。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "dream",
+      "bgm_role": "main",
+      "ken_burns": "zoom_in",
+      "image_prompt": "Saturday morning in the same Japanese family home (bright morning sunlight, clearly daytime). a Japanese woman in her late thirties with shoulder-length wavy black hair tied in a low ponytail, no glasses, wearing a sage-green hooded sweatshirt sits on the living room sofa holding her smartphone; floating in front of her, the AI agent shown only as an abstract, softly glowing cloud of small teal and warm amber light particles hovering in the air (no face, no eyes, no head, no body, no humanoid or robot shape) has laid out three blank product cards side by side, each showing only a simple drawing of a small soccer cleat and a blank calendar square. She is reaching out with one fingertip to choose one of the three cards, comparing them with a thoughtful smile. The children's small old cleats sit on the floor nearby. A calm, reassuring mood. No logos, no emblems, no badges, no brand marks, no app icons, no store names, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、夢を一歩手前で止める。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "土曜の朝、サイズを一言伝えると、AIが店を比べて、候補を3つと届く日を並べて待ってる。どれにするかは、こっちが選ぶ。",
+          "expression": "excited",
+          "tag": "life_scene"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それなら、ミューズの設計とも合う。買う前には本人に確認する、と書いてある。",
+          "expression": "convinced",
+          "reference_index": 0,
+          "display": "それなら、Museの設計とも合う。買う前には本人に確認する、と書いてある。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "カード番号も、その店とその金額だけに使える、一回きりの番号。",
+          "expression": "neutral",
+          "reference_index": 1
+        },
+        {
+          "speaker": "dreamer",
+          "text": "これだけで、土曜の朝はだいぶ軽くなる。",
+          "expression": "convinced"
+        }
+      ],
+      "scene_id": 14,
+      "narration": "大輔「じゃあ、夢を一歩手前で止める。」\n大輔「土曜の朝、サイズを一言伝えると、AIが店を比べて、候補を3つと届く日を並べて待ってる。どれにするかは、こっちが選ぶ。」\n沙織「それなら、ミューズの設計とも合う。買う前には本人に確認する、と書いてある。」\n沙織「カード番号も、その店とその金額だけに使える、一回きりの番号。」\n大輔「これだけで、土曜の朝はだいぶ軽くなる。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "tsukkomi",
+      "bgm_role": "main",
+      "reference_index": 1,
+      "ken_burns": "zoom_out",
+      "image_prompt": "Night in a quiet room (dark window with city lights, a single warm desk lamp). On the desk, a small open safe-like box holds a few blank envelopes, a blank calendar card and a blank payment card, and the AI agent shown only as an abstract, softly glowing cloud of small teal and warm amber light particles hovering in the air (no face, no eyes, no head, no body, no humanoid or robot shape) hovers just above the open box, reaching toward them with thin streams of light. Beside it, a half-built, translucent second box with a heavy lock is still under construction, surrounded by small scaffolding. A careful, watchful mood. No people. No logos, no emblems, no badges, no brand marks, no app icons, no store names, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "ただ、主流までの壁はある。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "1つ目は店。つなぐ店と閉める店が、同時に出てきた。どこで買えるかは店が決める。",
+          "expression": "doubt",
+          "tag": "barrier",
+          "reference_index": 7
+        },
+        {
+          "speaker": "skeptic",
+          "text": "2つ目は、渡すもの。専属にするなら、メールも予定も支払いも預ける。",
+          "expression": "doubt",
+          "tag": "barrier"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "Meta自身が、ミューズは攻撃と無縁じゃない、ときどき間違える、と書いてる。",
+          "expression": "neutral",
+          "reference_index": 1,
+          "display": "Meta自身が、Museは攻撃と無縁じゃない、ときどき間違える、と書いてる。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "社員でも中を見られない仕組みは、今年後半の予定。今は社内ルールで制限してるだけ。",
+          "expression": "thinking",
+          "reference_index": 1
+        },
+        {
+          "speaker": "dreamer",
+          "text": "承認を減らせば便利、増やせば安心。その加減は、使われながら調整する、ってMetaも書いてる。",
+          "expression": "thinking",
+          "reference_index": 1
+        }
+      ],
+      "scene_id": 15,
+      "narration": "沙織「ただ、主流までの壁はある。」\n沙織「1つ目は店。つなぐ店と閉める店が、同時に出てきた。どこで買えるかは店が決める。」\n沙織「2つ目は、渡すもの。専属にするなら、メールも予定も支払いも預ける。」\n沙織「Meta自身が、ミューズは攻撃と無縁じゃない、ときどき間違える、と書いてる。」\n沙織「社員でも中を見られない仕組みは、今年後半の予定。今は社内ルールで制限してるだけ。」\n大輔「承認を減らせば便利、増やせば安心。その加減は、使われながら調整する、ってMetaも書いてる。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "verdict",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "ken_burns": "zoom_out",
+      "verdict_from_line": 6,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ判定。お題は、これからのAIは、パーソナルAIが主流になる？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "……僕は、「まだ眉唾」。",
+          "expression": "deflated",
+          "pause": 0.5,
+          "tone": "reluctant, slower"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "え、そっちが？",
+          "expression": "surprised",
+          "react": "deflated"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕が見たかった主流は、頼んだら買うまで終わる世界。その数字は、どこにも無かった。",
+          "expression": "thinking",
+          "reference_index": 7
+        },
+        {
+          "speaker": "dreamer",
+          "text": "一番大きな店も閉めてる。入口だけなら、それは検索の便利版でしょ。僕の夢の大きさで測ると、今日は眉唾。悔しいけど。",
+          "expression": "deflated"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ私は、「もうすぐ来る」。調べる入口としてなら。",
+          "expression": "convinced",
+          "react": "surprised",
+          "tone": "calm, confident"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "アメリカの大人のほぼ半分がもうAIを使ってて、4人に1人近くは毎日。そこに、自分を知ってる専属が付く。数字のある方向。",
+          "expression": "neutral",
+          "reference_index": 8
+        },
+        {
+          "speaker": "skeptic",
+          "text": "調べて、候補を並べるところまでなら、来年の今ごろには普通になってる。ここからは、私の見立て。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "いつもと逆に割れたね。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "主流の意味が違うだけ。調べる入口なのか、買うまで任せるのか。",
+          "expression": "amused"
+        }
+      ],
+      "scene_id": 16,
+      "narration": "沙織「じゃあ判定。お題は、これからのAIは、パーソナルAIが主流になる？」\n大輔「……僕は、「まだ眉唾」。」\n沙織「え、そっちが？」\n大輔「僕が見たかった主流は、頼んだら買うまで終わる世界。その数字は、どこにも無かった。」\n大輔「一番大きな店も閉めてる。入口だけなら、それは検索の便利版でしょ。僕の夢の大きさで測ると、今日は眉唾。悔しいけど。」\n沙織「じゃあ私は、「もうすぐ来る」。調べる入口としてなら。」\n沙織「アメリカの大人のほぼ半分がもうAIを使ってて、4人に1人近くは毎日。そこに、自分を知ってる専属が付く。数字のある方向。」\n沙織「調べて、候補を並べるところまでなら、来年の今ごろには普通になってる。ここからは、私の見立て。」\n大輔「いつもと逆に割れたね。」\n沙織「主流の意味が違うだけ。調べる入口なのか、買うまで任せるのか。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "closing",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "検索がAIに置き換わる、じゃなくて、重なっていく。そこが今日の発見だった。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "次に見るのは、使い続けた人の数と、任せてうまくいった回数。今日の判定は、10月13日時点の、私たち二人の見立てです。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "amused"
+        }
+      ],
+      "scene_id": 17,
+      "narration": "大輔「検索がAIに置き換わる、じゃなくて、重なっていく。そこが今日の発見だった。」\n沙織「次に見るのは、使い続けた人の数と、任せてうまくいった回数。今日の判定は、10月13日時点の、私たち二人の見立てです。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」",
+      "narrator": "dialogue"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "skeptic",
+          "narration": "AIに頼んで買う時代？",
+          "expression": "doubt",
+          "scene_id": 8
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "AIが店を比べて、注文して、届く日をカレンダーに入れておく。",
+          "expression": "excited",
+          "scene_id": 8
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "でも、検索は減ってない。同じ人が、両方使ってる。",
+          "expression": "doubt",
+          "scene_id": 9
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "AI経由の訪問は62%増。でも、AIが自分で買った数じゃない。",
+          "expression": "doubt",
+          "react": "deflated",
+          "scene_id": 13,
+          "style": "chart"
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "しかも、アマゾンは締め出したと報じられた。",
+          "expression": "deflated",
+          "scene_id": 12
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "主流になるか。判定は、いつもと逆に割れた。続きは本編で。",
+          "expression": "amused",
+          "scene_id": 14
+        }
+      ]
+    }
+  ]
+}
