@@ -68,6 +68,7 @@ SCAN_VERSION = "2026-10-11-buzz-measured"
 
 # ベスト3・本命枠に入れる条件（2026-10-11、P0）。一覧そのものの足切りは MIN_VERIFIABILITY のまま
 GATE_MIN_VERIFIABILITY = 4
+GATE_MIN_LIFE = 4            # 暮らし（life_relevance）と仕事・ビジネス（work_relevance）の高い方が3以下なら本命に入れない（2026-10-12）
 GATE_MIN_FRESHNESS = 3       # freshness_score で3以上＝発表から21日以内
 
 # 互換用の加重和（overall_score）。list の並び順の主役は core（= 鮮度 × 実測の注目度）で、こちらは参考表示のみ。
@@ -455,6 +456,8 @@ Google検索で調べ、次を出力してください。
    - debate: 議論を呼ぶか・二人の判定が割れそうか
    - wonder: 驚き・ワクワク（温かい感動だけでなく「え、本当に？」という知的な驚きも）
    - life_relevance: 暮らしにどう関わるか（関心ごとのどれかに具体的につながるほど高い）
+   - work_relevance: 仕事・ビジネスにどう関わるか（働く人・経営者・個人事業主が今日の仕事や判断で使える、または影響を受けるほど高い。
+     開発者・研究者しか使わない専用品は低い）
 6. concern_id: いちばん近い関心ごとのid（無ければ null）
 7. entry_question: 視聴者側の問い（「〜は本当？」「〜はもう買える？」「〜はいつ来る？」の形。一次資料の範囲を超えない）
 8. expected_verdicts: {{"dreamer": "soon|decade|dubious", "skeptic": "soon|decade|dubious"}}
@@ -472,7 +475,7 @@ Google検索で調べ、次を出力してください。
 
 JSONオブジェクトのみで出力（他の文章は書かない）:
 {{"primary_sources": [], "announced_on": "", "headline_claim": "", "actual_content": "", "buzz_jp_est": 0, "verifiability": 0,
-"hype_gap": 0, "debate": 0, "wonder": 0, "life_relevance": 0, "concern_id": null, "entry_question": "",
+"hype_gap": 0, "debate": 0, "wonder": 0, "life_relevance": 0, "work_relevance": 0, "concern_id": null, "entry_question": "",
 "expected_verdicts": {{}}, "tsukkomi_material": "", "investment_related": false, "deja_vu_note": "", "genre": "", "health": false,
 "jp_news_query": "", "jp_title_anchor": [], "announcement_type": ""}}
 """
@@ -493,6 +496,11 @@ def score_item(client, types, item: dict, past: str, concerns: str) -> dict:
             if attempt == 2:
                 return {"_error": str(e)}
             time.sleep(2 ** (attempt + 1))
+
+
+def stake(c: dict) -> int:
+    """視聴者との関わり＝暮らし（life_relevance）と仕事・ビジネス（work_relevance）の高い方。ゲートと core に使う。"""
+    return max(_clamp5(c.get("life_relevance")), _clamp5(c.get("work_relevance")))
 
 
 def _clamp5(v) -> int:
@@ -843,6 +851,8 @@ def gate_reasons(c: dict, used: dict) -> list:
         r.append(f"検証<{GATE_MIN_VERIFIABILITY}")
     if freshness_score(c.get("announced_on") or c.get("published", "")) < GATE_MIN_FRESHNESS:
         r.append(f"鮮度<{GATE_MIN_FRESHNESS}")
+    if stake(c) < GATE_MIN_LIFE:
+        r.append(f"暮らし・仕事<{GATE_MIN_LIFE}")
     hit = [used[u] for u in (_norm_url(s.get("url", "")) for s in c.get("primary_sources", []) or []) if u in used]
     if hit:
         r.append(f"使用済みと同じ一次資料（{hit[0]}）")
@@ -1099,8 +1109,43 @@ def _gate_pool(cands: list) -> list:
     return [c for c in cands if c.get("status") == "available" and not gate_reasons(c, used)]
 
 
+def backfill_work(cands: list, force: bool = False):
+    """ゲート以外を通過した候補のうち work_relevance が無いものに、仕事・ビジネスへの関わり（1〜5）を付ける（テキストのみ）。"""
+    used = used_source_urls(cands)
+    todo = [c for c in cands if c.get("status") == "available" and (force or c.get("work_relevance") is None)
+            and not [x for x in gate_reasons(c, used) if not x.startswith("暮らし")]]
+    if not todo:
+        return
+    client, types = _gemini()
+    for k in range(0, len(todo), ENRICH_BATCH):
+        batch = todo[k:k + ENRICH_BATCH]
+        rows = "\n".join(
+            f"{i}. タイトル: {c['title']} / 見出し: {c.get('headline_claim', '')} / "
+            f"中身: {(c.get('actual_content') or c.get('summary') or '')[:300]}" for i, c in enumerate(batch))
+        prompt = (
+            "日本の一般視聴者向けの科学ニュース解説番組のネタ候補です。各候補について work_relevance（1〜5）を付けてください。\n"
+            "仕事・ビジネスにどう関わるか。働く人・経営者・個人事業主が今日の仕事や判断で使える、または自分の仕事・業界が影響を受けるほど高い。"
+            "開発者・研究者・特定の専門職しか使わない専用品や、基礎研究で仕事への影響が見えないものは低い。"
+            "言語対応や提供地域は無関係。迷ったら低い方を付ける。\n\n"
+            f"候補:\n{rows}\n\n"
+            'JSON配列のみ出力: [{"i": 0, "work_relevance": 0}, ...]（全候補分）')
+        try:
+            out = _json_from(client.models.generate_content(model=MODEL, contents=prompt).text)
+        except Exception as e:  # noqa: BLE001
+            print(f"  ⚠️ work_relevance の付与に失敗（{k}〜{k + len(batch) - 1}件目）: {e}")
+            continue
+        for r in out:
+            try:
+                batch[int(r["i"])]["work_relevance"] = _clamp5(r["work_relevance"])
+            except (KeyError, ValueError, IndexError, TypeError):
+                continue
+    print(f"work_relevance を {len(todo)}件に付与しました")
+
+
 def cmd_enrich(force: bool):
     cands = load_candidates()
+    backfill_work(cands["items"], force)
+    _save_candidates(cands)
     pool = _gate_pool(cands["items"])
     todo = [c for c in pool if force or not c.get("jp_news_query")]
     if not todo:
@@ -1243,8 +1288,8 @@ def classify(cands: list) -> list:
         else:
             lane = "注目度低"
         rows.append({"c": c, "fresh": fresh, "gate": gate, "lane": lane,
-                     "core": fresh * bm if bm is not None else None,
-                     "core_est": fresh * buzz_value(c)[0], "tb": tie_break(c),
+                     "core": fresh * bm * stake(c) if bm is not None else None,
+                     "core_est": fresh * buzz_value(c)[0] * stake(c), "tb": tie_break(c),
                      "old": overall(c, c.get("published", ""))[0]})
     ser = assign_series([r["c"] for r in rows if not r["gate"]])
     for r in rows:
@@ -1302,7 +1347,7 @@ def _buzz_line(c: dict) -> str:
 
 def _print_candidate(r: dict, short: bool = False):
     c = r["c"]
-    core = f"core {r['core']:2d}＝鮮度{r['fresh']}×注目{c['buzz_measured']}" if r["core"] is not None \
+    core = f"core {r['core']:3d}＝鮮度{r['fresh']}×注目{c['buzz_measured']}×関わり{stake(c)}" if r["core"] is not None \
         else f"core —（鮮度{r['fresh']}、推定なら{r['core_est']}）"
     print(f"[{core}｜誇張+議論+暮らし {r['tb']}｜旧加重和 {r['old']:.2f}] {c['title'][:76]}"
           f"（{c.get('announced_on') or c.get('published')}、{c.get('genre', '?')}）" + ("  ※健康系" if c.get("health") else ""))
