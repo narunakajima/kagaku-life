@@ -149,7 +149,7 @@
       "source_kind": "media"
     }
   ],
-  "youtube_description": "2026年9月8日、MetaがパーソナルAIエージェント「Muse」を発表しました。質問に答えるだけでなく、メールの送信や旅行の予約、買い物まで代わりにこなすといいます。9月29日にはOpenAIも、同じく専用のクラウドのコンピューターで動く「dots」を発表。アメリカではMuseがアプリのランキング上位に入ったと報じられ、ネット通販の店との連携も進む一方、Amazonは締め出したと報じられています。検索からAIへ、そしてAIに頼んで買う時代へ。これからのAIは、一人ひとりに付く「パーソナルAI」が主流になるのか。夢語り担当の大輔と、ツッコミ担当の沙織が、発表と数字を確かめて判定します。\n\n■ この回の判定（2026年10月13日時点の、二人の見立て）\nお題: これからのAIは、あなた専属のパーソナルAIが主流になる？\n大輔: まだ眉唾（「頼んだら買うところまで終わる」という意味の主流なら。AIが自分で買った実績の数字はどこにもなく、Amazonは締め出したと報じられている）\n沙織: もうすぐ来る（「調べる入口」としてなら。アメリカの大人の49%がAIチャットボットを使い、24%は毎日使っている。最後は人が確認して買う形が1年ほどで普通になる、というのは沙織の見立てで、資料には書かれていません）\n\n■ 確認した一次資料（会社自身の発表。第三者による検証はありません）\n・Meta「Introducing Muse」（9月8日公開、9月30日更新）: 質問に答えるだけでなく作業をする「パーソナルAIエージェント」。メール送信・旅行の予約・ブラウザでのフォーム入力・交渉の代行。アプリを閉じても働き続け、変化があったときや承認が必要なときに戻ってくる。専用のコンピューター（Muse Secure VM）で動き、別の見張り役のエージェント（Sentinel）が承認しない限りインターネットに何も出ていかない。メール送信や購入の前には本人に確認する。アメリカで提供開始（iOS・Android・muse.ai、WhatsAppからも利用可）。ほとんどの用途は無料で、有料プランもある（金額の記載なし）\n・Meta「Security and safety for AI agents: our approach with Muse」（9月8日）: 購入のたびに人の承認を挟み、店とその金額に限った一回きりのカード番号を渡す。Museは攻撃と無縁ではなく、ときどき間違えると明記。承認の加減は実際の利用者との経験を踏まえて調整していく。Meta社員でも中を見られない「Muse Confidential VM」は今年後半の予定で、現在は運用上のポリシーで社員のアクセスを制限。Museの使い方が表示される広告に影響する場面もあると記載\n・Meta「Muse Wonder」（10月12日）: Muse向けの新しいモデル。近くMuseに組み込まれ、まず有料の利用者から。本文に性能の数値はなく（図のみ）、安全性の詳しい報告は近日公開\n・Meta「The Biggest News From Connect 2026」（9月24日）: 買い物の提携先として Walmart、Best Buy、American Eagle Outfitters、DICK'S Sporting Goods、Fanatics、Gap、Michael Kors、Sephora、Ulta、Wayfair を追加、支払いは Shop Pay と PayPal。ローンチ時から数十社の提携先と Shopify のカタログ全体に対応\n・OpenAI「dots のご紹介」（9月29日、第34話で確認済み）: 専用のクラウドのコンピューターで常時稼働するエージェント。紹介されている例は仕事が中心。対象地域の Pro と Business Premium から順次提供\n・いずれの発表にも、利用者数・継続率・作業の成功率の数字はありません\n\n■ 調査会社のデータ・推計（数字は各社の推計・測定で、MetaやOpenAIの公表値ではありません）\n・Pew Research Center（2026年2月17〜23日、米国成人5,119人）: AIチャットボットを使う人49%、毎日使う人24%、調べものに使う人42%（いずれも米国成人全体に対する割合）。2024年の33%とは質問の条件が一部異なる。買い物での利用は報告のページに記載なし\n・Similarweb（8月4日、同社のトラッキングデータ）: ChatGPTの利用者の95%がGoogleも利用（2025年9月・2026年5月とも）。「AIは検索を置き換えておらず、重なっている」との結論。AIのAPI・デスクトップアプリ・アプリ内のAI機能は含まないと、筆者自身が限界として記載。「従来型の検索が2026年までに25%減る」はGartnerの2024年の予測で、実績ではない\n・Sensor Tower（TechCrunch 9月10日の報道）: 発表2日後の時点で、米国のiOSでのダウンロードが8万3,000件超、米国App Storeで2位\n・Apptopia（TechCrunch 9月21日の報道）: 米国とカナダのiOSで最初の12日間のダウンロードがMuse 180万件、ChatGPT（2023年）130万件。Museの利用者の95%以上がFacebookも利用。米国のApp Storeで1位になったとの報道（Business Insider）にも触れている\n・Adobe Analytics（Digital Commerce 360 の8月19日の報道）: 2026年7月、AI経由で米国の小売サイトに来た訪問は前年同月比62%増。AI経由の訪問はそれ以外より購入に至る率が60%高く、訪問1回あたりの売上が53%多い。これは「AIで調べた人が店のサイトで自分で買った」訪問の数字で、AIエージェントが自分で購入した数ではありません。全訪問に占めるAI経由の割合と「AI経由」の定義は記事に記載がなく、AdobeはAIからの見え方を測るツールを提供する会社です\n\n■ 報道で伝えられていること（一次資料では確認していません）\n・MarketBeat（Yahoo Finance、9月29日）: AmazonがMuseによる自社サイトへのアクセスをブロック（理由はプライバシーとセキュリティの懸念と報じられていますが、Amazonの発言の引用はありません）。Amazonは2025年の米国のネット通販の40.5%を占めると記載。MetaのZuckerberg CEOがConnectで、利用者に無料でAIを使ってもらい、時間をかけて取引から少額の手数料を得て利益を上げることを期待していると述べたと報道\n・Museの累計ダウンロード数については、調査会社ごとに数字が大きく異なる報道があるため、この回では扱いませんでした\n\n※この回の元は企業の発表と調査会社のデータ・報道で、専門家の審査を経て学術誌に掲載された論文ではありません。\n※「主流になるか」は二人の見立て（予測）で、資料に書かれていることではありません。\n※特定の企業・製品・サービスの利用や、投資を勧めるものではありません。Museは2026年10月13日時点でアメリカなどで提供されており、日本での提供は発表されていません。\n\n■ 参考\n[1] Meta「Introducing Muse」 https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/\n[2] Meta「Security and safety for AI agents: our approach with Muse」 https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse\n[3] Meta「Muse Wonder」 https://research.meta.ai/blog/muse-wonder\n[4] Meta「The Biggest News From Connect 2026」 https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/\n[5] OpenAI「dots のご紹介」 https://openai.com/ja-JP/index/introducing-dots/\n[6] TechCrunch（9月10日） https://techcrunch.com/2026/09/10/metas-ai-agent-muse-is-now-the-no-2-app-in-the-us/\n[7] TechCrunch（9月21日） https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/\n[8] MarketBeat（Yahoo Finance、9月29日） https://finance.yahoo.com/technology/ai/articles/meta-muse-taking-aim-e-142000400.html\n[9] Pew Research Center（6月17日） https://www.pewresearch.org/internet/2026/06/17/americans-and-ai-2026-chatbots-smart-devices-and-views-on-impact/\n[10] Similarweb（8月4日） https://aisearch.similarweb.com/blog/is-ai-replacing-search/\n[11] Digital Commerce 360（8月19日） https://www.digitalcommerce360.com/2026/08/19/adobe-ai-referral-traffic-data-july-2026/\n\n#AI #パーソナルAI #科学ニュース",
+  "youtube_description": "2026年9月8日、MetaがパーソナルAIエージェント「Muse」を発表しました。質問に答えるだけでなく、メールの送信や旅行の予約、買い物まで代わりにこなすといいます。9月29日にはOpenAIも、同じく専用のクラウドのコンピューターで動く「dots」を発表。アメリカではMuseがアプリのランキング上位に入ったと報じられ、ネット通販の店との連携も進む一方、Amazonは締め出したと報じられています。検索からAIへ、そしてAIに頼んで買う時代へ。これからのAIは、一人ひとりに付く「パーソナルAI」が主流になるのか。夢語り担当の大輔と、ツッコミ担当の沙織が、発表と数字を確かめて判定します。\n\n■ この回の判定（2026年10月13日時点の、二人の見立て）\nお題: これからのAIは、あなた専属のパーソナルAIが主流になる？\n大輔: まだ眉唾（「頼んだら買うところまで終わる」という意味の主流なら。AIが自分で買った実績の数字はどこにもなく、Amazonは締め出したと報じられている）\n沙織: もうすぐ来る（「調べる入口」としてなら。アメリカの大人の49%がAIチャットボットを使い、24%は毎日使っている。最後は人が確認して買う形が1年ほどで普通になる、というのは沙織の見立てで、資料には書かれていません）\n\n■ 確認した一次資料（会社自身の発表。第三者による検証はありません）\n・Meta「Introducing Muse」（9月8日公開、9月30日更新）: 質問に答えるだけでなく作業をする「パーソナルAIエージェント」。メール送信・旅行の予約・ブラウザでのフォーム入力・交渉の代行。アプリを閉じても働き続け、変化があったときや承認が必要なときに戻ってくる。専用のコンピューター（Muse Secure VM）で動き、別の見張り役のエージェント（Sentinel）が承認しない限りインターネットに何も出ていかない。メール送信や購入の前には本人に確認する。アメリカで提供開始（iOS・Android・muse.ai、WhatsAppからも利用可）。ほとんどの用途は無料で、有料プランもある（金額の記載なし）\n・Meta「Security and safety for AI agents: our approach with Muse」（9月8日）: 購入のたびに人の承認を挟み、店とその金額に限った一回きりのカード番号を渡す。Museは攻撃と無縁ではなく、ときどき間違えると明記。承認の加減は実際の利用者との経験を踏まえて調整していく。Meta社員でも中を見られない「Muse Confidential VM」は今年後半の予定で、現在は運用上のポリシーで社員のアクセスを制限。Museの使い方が表示される広告に影響する場面もあると記載\n・Meta「Muse Wonder」（10月12日）: Muse向けの新しいモデル。近くMuseに組み込まれ、まず有料の利用者から。本文に性能の数値はなく（図のみ）、安全性の詳しい報告は近日公開\n・Meta「The Biggest News From Connect 2026」（9月24日）: 買い物の提携先として Walmart、Best Buy、American Eagle Outfitters、DICK'S Sporting Goods、Fanatics、Gap、Michael Kors、Sephora、Ulta、Wayfair を追加、支払いは Shop Pay と PayPal。ローンチ時から数十社の提携先と Shopify のカタログ全体に対応\n・OpenAI「dots のご紹介」（9月29日、第34話で確認済み）: 専用のクラウドのコンピューターで常時稼働するエージェント。紹介されている例は仕事が中心。対象地域の Pro と Business Premium から順次提供\n・いずれの発表にも、利用者数・継続率・作業の成功率の数字はありません\n\n■ 調査会社のデータ・推計（数字は各社の推計・測定で、MetaやOpenAIの公表値ではありません）\n・Pew Research Center（2026年2月17〜23日、米国成人5,119人）: AIチャットボットを使う人49%、毎日使う人24%、調べものに使う人42%（いずれも米国成人全体に対する割合）。2024年の33%とは質問の条件が一部異なる。買い物での利用は報告のページに記載なし\n・Similarweb（8月4日、同社のトラッキングデータ）: ChatGPTの利用者の95%がGoogleも利用（2025年9月・2026年5月とも）。「AIは検索を置き換えておらず、重なっている」との結論。AIのAPI・デスクトップアプリ・アプリ内のAI機能は含まないと、筆者自身が限界として記載。「従来型の検索が2026年までに25%減る」はGartnerの2024年の予測で、実績ではない\n・Sensor Tower（TechCrunch 9月10日の報道）: 発表2日後の時点で、米国のiOSでのダウンロードが8万3,000件超、米国App Storeで2位\n・Apptopia（TechCrunch 9月21日の報道）: 米国とカナダのiOSで最初の12日間のダウンロードがMuse 180万件、ChatGPT（2023年）130万件。Museの利用者の95%以上がFacebookも利用。米国のApp Storeで1位になったとの報道（Business Insider）にも触れている\n・Adobe Analytics（Digital Commerce 360 の8月19日の報道）: 2026年7月、AI経由で米国の小売サイトに来た訪問は前年同月比62%増。AI経由の訪問はそれ以外より購入に至る率が60%高く、訪問1回あたりの売上が53%多い。これは「AIで調べた人が店のサイトで自分で買った」訪問の数字で、AIエージェントが自分で購入した数ではありません。全訪問に占めるAI経由の割合と「AI経由」の定義は記事に記載がなく、AdobeはAIからの見え方を測るツールを提供する会社です\n\n■ 報道で伝えられていること（一次資料では確認していません）\n・MarketBeat（Yahoo Finance、9月29日）: AmazonがMuseによる自社サイトへのアクセスをブロック（理由はプライバシーとセキュリティの懸念と報じられていますが、Amazonの発言の引用はありません）。Amazonは2025年の米国のネット通販の40.5%を占めると記載。MetaのZuckerberg CEOがConnectで、利用者に無料でAIを使ってもらい、時間をかけて取引から少額の手数料を得て利益を上げることを期待していると述べたと報道\n・Museの累計ダウンロード数については、調査会社ごとに数字が大きく異なる報道があるため、この回では扱いませんでした\n\n※この回の元は企業の発表と調査会社のデータ・報道で、専門家の審査を経て学術誌に掲載された論文ではありません。\n※「主流になるか」は二人の見立て（予測）で、資料に書かれていることではありません。\n※特定の企業・製品・サービスの利用や、投資を勧めるものではありません。Museは2026年10月13日時点でアメリカなどで提供されており、日本での提供は発表されていません。\n\n■ 参考\n[1] Meta「Introducing Muse」 https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/\n[2] Meta「Security and safety for AI agents: our approach with Muse」 https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse\n[3] Meta「Muse Wonder」 https://research.meta.ai/blog/muse-wonder\n[4] Meta「The Biggest News From Connect 2026」 https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/\n[5] OpenAI「dots のご紹介」 https://openai.com/ja-JP/index/introducing-dots/\n[6] TechCrunch（9月10日） https://techcrunch.com/2026/09/10/metas-ai-agent-muse-is-now-the-no-2-app-in-the-us/\n[7] TechCrunch（9月21日） https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/\n[8] MarketBeat（Yahoo Finance、9月29日） https://finance.yahoo.com/technology/ai/articles/meta-muse-taking-aim-e-142000400.html\n[9] Pew Research Center（6月17日） https://www.pewresearch.org/internet/2026/06/17/americans-and-ai-2026-chatbots-smart-devices-and-views-on-impact/\n[10] Similarweb（8月4日） https://aisearch.similarweb.com/blog/is-ai-replacing-search/\n[11] Digital Commerce 360（8月19日） https://www.digitalcommerce360.com/2026/08/19/adobe-ai-referral-traffic-data-july-2026/\n\n\n🎵 Music: laser_Retro_Arcade_Disco_110BPM_Am_Korg by fonoskop (freesound.org) — CC BY 4.0\n#AI #パーソナルAI #科学ニュース",
   "scenes": [
     {
       "type": "teaser",
@@ -177,7 +177,11 @@
       "scene_id": 1,
       "narration": "大輔「MetaとOpenAIが、同じ形のAIを出した。」",
       "narrator": "dialogue",
-      "lines_hash": "fd9d0df29d5c"
+      "lines_hash": "fd9d0df29d5c",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "teaser",
@@ -209,7 +213,11 @@
       "scene_id": 2,
       "narration": "沙織「アメリカでアプリ1位と報道。ただ、推計は割れる。」",
       "narrator": "dialogue",
-      "lines_hash": "256db994d449"
+      "lines_hash": "256db994d449",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "teaser",
@@ -237,7 +245,11 @@
       "scene_id": 3,
       "narration": "大輔「でも、アマゾンは締め出したと報道。」",
       "narrator": "dialogue",
-      "lines_hash": "a8e46c8cf40b"
+      "lines_hash": "a8e46c8cf40b",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "teaser",
@@ -264,7 +276,11 @@
       "scene_id": 4,
       "narration": "沙織「あなた専属のAI、主流になる？」",
       "narrator": "dialogue",
-      "lines_hash": "6609dd14b87e"
+      "lines_hash": "6609dd14b87e",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.4
+      }
     },
     {
       "type": "setup",
@@ -382,7 +398,11 @@
       "scene_id": 5,
       "narration": "大輔「最近、何か調べるとき、検索より先にAIに聞いてない？」\n沙織「聞いてる。」\n大輔「僕の仮説はこう。検索が減って、AIに聞く時代になる。」\n大輔「次は、AIに頼んで買うのが当たり前になる。入口は、一人ひとりに付くパーソナルAI。」\n沙織「面白い。じゃあ、数字で確かめよう。」\n大輔「材料は、Metaのミューズ、前に取り上げたドッツ、アメリカの数字。」",
       "narrator": "dialogue",
-      "lines_hash": "37e8ed6a0f37"
+      "lines_hash": "37e8ed6a0f37",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "paper",
@@ -590,7 +610,7 @@
       "type": "paper",
       "bgm_role": "intro",
       "reference_index": 4,
-      "ken_burns": "pan_zoom_out",
+      "ken_burns": "zoom_out",
       "image_prompt": "A stylized, clean illustration in soft daylight colors: two softly glowing light-particle clouds float side by side above two different scenes. On the left, the cloud hovers over a tidy office desk with a closed laptop and stacks of blank papers; on the right, an identical cloud hovers over a cozy living room with a shopping bag, a small suitcase and a smartphone on a sofa. Both clouds are the same: the AI agent shown only as an abstract, softly glowing cloud of small teal and warm amber light particles hovering in the air (no face, no eyes, no head, no body, no humanoid or robot shape). A thin dotted line of light connects the two clouds. Calm, comparative mood. No people. No logos, no emblems, no badges, no brand marks, no app icons, no store names, no readable text, no letters, no numbers.",
       "lines": [
         {
@@ -707,7 +727,11 @@
       "scene_id": 7,
       "narration": "沙織「で、ドッツと何が違うの？」\n大輔「形は同じ。どっちも専用のクラウドのコンピューターで動く。」\n大輔「ドッツの例は仕事が中心で、有料プランから配る。」\n大輔「ミューズは、ほぼ無料で、買い物まで暮らしに寄せてきた。」\n沙織「2社が、同じ月に、同じ形か。」\n大輔「でしょ。だから僕は、これが次の主流だと思う。」",
       "narrator": "dialogue",
-      "lines_hash": "e752c65ce5c2"
+      "lines_hash": "e752c65ce5c2",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "dream",
@@ -825,7 +849,11 @@
       "scene_id": 8,
       "narration": "大輔「想像してみてよ。」\n大輔「土曜の朝。子どものサッカーのスパイクが、もう小さい。スマホに一言、来週の試合までに、1つ上のサイズを。」\n大輔「AIが店を比べて、注文して、届く日をカレンダーに入れておく。こっちは、何もしない。」\n大輔「人生の事務は、全部AIに。検索なんて、もう開かなくなる。」\n沙織「ちょっと待って。2つ、言い過ぎてる。」",
       "narrator": "dialogue",
-      "lines_hash": "418156e09420"
+      "lines_hash": "418156e09420",
+      "zoom_anchor": {
+        "x": 0.49,
+        "y": 0.4
+      }
     },
     {
       "type": "tsukkomi",
@@ -951,7 +979,11 @@
       "scene_id": 9,
       "narration": "沙織「1つ目。検索が減ってる、は本当？」\n沙織「調査会社のシミラーウェブによると、ChatGPTを使う人の95%が、グーグルも使ってる。去年の9月も今年の5月も。」\n大輔「……減ってない？」\n沙織「置き換わったんじゃなくて、重なってる。それが向こうの結論。」\n沙織「ただ、このデータはアプリのAIを数えてない。そこは書いた本人も認めてる。」\n大輔「じゃあ、AIに聞く人は？」",
       "narrator": "dialogue",
-      "lines_hash": "9cc181962a49"
+      "lines_hash": "9cc181962a49",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "check",
@@ -1323,13 +1355,17 @@
       "scene_id": 11,
       "narration": "大輔「それに、ミューズはアメリカで、ランキングを駆け上がってる。」\n沙織「で、その数字、どこから？」\n大輔「Metaは出してない。テッククランチの記事で、調査会社のセンサータワーの推計。発表の2日後、アメリカのアイフォーンで8万3000件超え、アップストアの2位。」\n沙織「その記事は、ChatGPTの出だしより遅い、好調とは限らない、とも書いてる。」\n大輔「でも、そのあと1位になったと報じられた。同じテッククランチの続報で、調査会社のアプトピアの推計だと、アメリカとカナダのアイフォーンで、最初の12日に180万件。」\n沙織「比べた相手は、2023年のChatGPTで130万件。速いか遅いかは、推計で割れてるってこと。」\n沙織「それと、同じ推計で、ミューズを使う人の95%以上が、フェイスブックも使ってる。」\n大輔「Metaのお客さんが、そのまま来てるのか。」\n沙織「で、一番の弱点。ダウンロードは、入れた数。使い続けるかは別。」\n沙織「MetaもOpenAIも、何人が使い続けてるか、頼んだ仕事が何回うまくいったか、発表に数字は1つもない。」",
       "narrator": "dialogue",
-      "lines_hash": "51c8fee88270"
+      "lines_hash": "51c8fee88270",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "paper",
       "bgm_role": "main",
       "reference_index": 3,
-      "ken_burns": "pan_zoom_out",
+      "ken_burns": "zoom_out",
       "image_prompt": "Daytime, a stylized illustration of a long American-style downtown shopping street seen in perspective (wide sidewalks, brick and glass storefronts, no utility poles, no Japanese noren curtains), with many generic storefronts that have blank awnings and blank signboards. Most shop doors are wide open and glowing warmly, with the AI agent shown only as an abstract, softly glowing cloud of small teal and warm amber light particles hovering in the air (no face, no eyes, no head, no body, no humanoid or robot shape) flowing in and out of them along a ribbon of light; but the single largest storefront in the middle has its tall gate firmly closed, and the ribbon of light stops in front of it. Clear blue sky. A lively but tense mood. No people. No logos, no emblems, no badges, no brand marks, no app icons, no store names, no readable text, no letters, no numbers.",
       "lines": [
         {
@@ -1501,7 +1537,11 @@
       "scene_id": 12,
       "narration": "大輔「買い物も動いてる。Metaの発表では、ウォルマート、ベストバイ、セフォラなどの店を追加。」\n大輔「最初から数十社と、ショッピファイの商品全部。」\n沙織「で、アマゾンは？」\n大輔「……報道では、ミューズがアマゾンのサイトに入るのを、ブロックした。」\n沙織「記事によると、アマゾンは去年、アメリカのネット通販の40.5%。一番大きな店が閉めた。」\n沙織「それと、Metaのトップは、取引から少しずつ手数料を取って稼ぐつもりだ、と話したと報じられてる。」\n大輔「AIが買うほど、Metaが得をするのか。」\n沙織「それが使う人の得と一致するかは、別の話ね。」",
       "narrator": "dialogue",
-      "lines_hash": "db077827e7e9"
+      "lines_hash": "db077827e7e9",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "check",
@@ -1809,7 +1849,11 @@
       "scene_id": 14,
       "narration": "大輔「じゃあ、夢を一歩手前で止める。」\n大輔「土曜の朝、サイズを一言伝えると、AIが店を比べて、候補を3つと届く日を並べて待ってる。どれにするかは、こっちが選ぶ。」\n沙織「それなら、ミューズの設計とも合う。買う前には本人に確認する、と書いてある。」\n沙織「カード番号も、その店とその金額だけに使える、一回きりの番号。」\n大輔「これだけで、土曜の朝はだいぶ軽くなる。」",
       "narrator": "dialogue",
-      "lines_hash": "2563da924009"
+      "lines_hash": "2563da924009",
+      "zoom_anchor": {
+        "x": 0.65,
+        "y": 0.36
+      }
     },
     {
       "type": "tsukkomi",
@@ -1953,7 +1997,11 @@
       "scene_id": 15,
       "narration": "沙織「ただ、主流までの壁はある。」\n沙織「1つ目は店。つなぐ店と閉める店が、同時に出てきた。どこで買えるかは店が決める。」\n沙織「2つ目は、渡すもの。専属にするなら、メールも予定も支払いも預ける。」\n沙織「Meta自身が、ミューズは攻撃と無縁じゃない、ときどき間違える、と書いてる。」\n沙織「社員でも中を見られない仕組みは、今年後半の予定。今は社内ルールで制限してるだけ。」\n大輔「承認を減らせば便利、増やせば安心。その加減は、使われながら調整する、ってMetaも書いてる。」",
       "narrator": "dialogue",
-      "lines_hash": "336d0eb404a2"
+      "lines_hash": "336d0eb404a2",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "verdict",
@@ -2178,7 +2226,11 @@
       "scene_id": 16,
       "narration": "沙織「じゃあ判定。お題は、これからのAIは、パーソナルAIが主流になる？」\n大輔「……僕は、「まだ眉唾」。」\n沙織「え、そっちが？」\n大輔「僕が見たかった主流は、頼んだら買うまで終わる世界。その数字は、どこにも無かった。」\n大輔「一番大きな店も閉めてる。入口だけなら、それは検索の便利版でしょ。僕の夢の大きさで測ると、今日は眉唾。悔しいけど。」\n沙織「じゃあ私は、「もうすぐ来る」。調べる入口としてなら。」\n沙織「アメリカの大人のほぼ半分がもうAIを使ってて、4人に1人近くは毎日。そこに、自分を知ってる専属が付く。数字のある方向。」\n沙織「調べて、候補を並べるところまでなら、来年の今ごろには普通になってる。ここからは、私の見立て。」\n大輔「いつもと逆に割れたね。」\n沙織「主流の意味が違うだけ。調べる入口なのか、買うまで任せるのか。」",
       "narrator": "dialogue",
-      "lines_hash": "322f0f56bf1b"
+      "lines_hash": "322f0f56bf1b",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "closing",
@@ -2281,7 +2333,11 @@
       "scene_id": 17,
       "narration": "大輔「検索がAIに置き換わる、じゃなくて、重なっていく。そこが今日の発見だった。」\n沙織「次に見るのは、使い続けた人の数と、任せてうまくいった回数。今日の判定は、10月13日時点の、私たち二人の見立てです。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」",
       "narrator": "dialogue",
-      "lines_hash": "6d88bdd39797"
+      "lines_hash": "6d88bdd39797",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     }
   ],
   "shorts": [
@@ -2328,5 +2384,10 @@
         }
       ]
     }
-  ]
+  ],
+  "bgm_sources": {
+    "intro": "BGM/kl038-BGM-intro.mp3",
+    "main": "BGM/kl038-BGM-main.mp3",
+    "outro": "BGM/kl038-BGM-outro.mp3"
+  }
 }
