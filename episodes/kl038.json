@@ -162,12 +162,22 @@
           "text": "MetaとOpenAIが、同じ形のAIを出した。",
           "expression": "excited",
           "tone": "like breaking news",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 0.0,
+          "dur": 4.12,
+          "cards": [
+            {
+              "text": "MetaとOpenAIが、同じ形のAIを出した。",
+              "start": 0.0,
+              "end": 3.6
+            }
+          ]
         }
       ],
       "scene_id": 1,
       "narration": "大輔「MetaとOpenAIが、同じ形のAIを出した。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "fd9d0df29d5c"
     },
     {
       "type": "teaser",
@@ -179,12 +189,27 @@
           "speaker": "skeptic",
           "text": "アメリカでアプリ1位と報道。ただ、推計は割れる。",
           "expression": "surprised",
-          "reference_index": 6
+          "reference_index": 6,
+          "t0": 0.0,
+          "dur": 3.56,
+          "cards": [
+            {
+              "text": "アメリカでアプリ1位と報道。ただ、",
+              "start": 0.0,
+              "end": 2.42
+            },
+            {
+              "text": "推計は割れる。",
+              "start": 2.57,
+              "end": 3.56
+            }
+          ]
         }
       ],
       "scene_id": 2,
       "narration": "沙織「アメリカでアプリ1位と報道。ただ、推計は割れる。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "256db994d449"
     },
     {
       "type": "teaser",
@@ -197,12 +222,22 @@
           "text": "でも、アマゾンは締め出したと報道。",
           "expression": "thinking",
           "reference_index": 7,
-          "display": "でも、Amazonは締め出したと報道。"
+          "display": "でも、Amazonは締め出したと報道。",
+          "t0": 0.0,
+          "dur": 2.92,
+          "cards": [
+            {
+              "text": "でも、Amazonは締め出したと報道。",
+              "start": 0.0,
+              "end": 2.92
+            }
+          ]
         }
       ],
       "scene_id": 3,
       "narration": "大輔「でも、アマゾンは締め出したと報道。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "a8e46c8cf40b"
     },
     {
       "type": "teaser",
@@ -214,12 +249,22 @@
           "speaker": "skeptic",
           "text": "あなた専属のAI、主流になる？",
           "expression": "doubt",
-          "tag": "question"
+          "tag": "question",
+          "t0": 0.0,
+          "dur": 2.76,
+          "cards": [
+            {
+              "text": "あなた専属のAI、主流になる？",
+              "start": 0.0,
+              "end": 2.76
+            }
+          ]
         }
       ],
       "scene_id": 4,
       "narration": "沙織「あなた専属のAI、主流になる？」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "6609dd14b87e"
     },
     {
       "type": "setup",
@@ -230,39 +275,114 @@
         {
           "speaker": "dreamer",
           "text": "最近、何か調べるとき、検索より先にAIに聞いてない？",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 4.28,
+          "cards": [
+            {
+              "text": "最近、何か調べるとき、検索より先にAIに",
+              "start": 0.0,
+              "end": 3.43
+            },
+            {
+              "text": "聞いてない？",
+              "start": 3.58,
+              "end": 4.48
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "聞いてる。",
-          "expression": "amused"
+          "expression": "amused",
+          "t0": 4.56,
+          "dur": 1.16,
+          "cards": [
+            {
+              "text": "聞いてる。",
+              "start": 0.0,
+              "end": 1.16
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "僕の仮説はこう。検索が減って、AIに聞く時代になる。",
-          "expression": "excited"
+          "expression": "excited",
+          "t0": 6.0,
+          "dur": 4.8,
+          "cards": [
+            {
+              "text": "僕の仮説はこう。検索が減って、",
+              "start": 0.0,
+              "end": 2.66
+            },
+            {
+              "text": "AIに聞く時代になる。",
+              "start": 2.81,
+              "end": 4.69
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "次は、AIに頼んで買うのが当たり前になる。入口は、一人ひとりに付くパーソナルAI。",
           "expression": "excited",
-          "tone": "a bit fast, enthusiastic"
+          "tone": "a bit fast, enthusiastic",
+          "t0": 11.02,
+          "dur": 6.52,
+          "cards": [
+            {
+              "text": "次は、AIに頼んで買うのが当たり前になる。",
+              "start": 0.0,
+              "end": 3.15
+            },
+            {
+              "text": "入口は、一人ひとりに付くパーソナルAI。",
+              "start": 3.3,
+              "end": 6.3
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "面白い。じゃあ、数字で確かめよう。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 17.82,
+          "dur": 2.84,
+          "cards": [
+            {
+              "text": "面白い。じゃあ、数字で確かめよう。",
+              "start": 0.0,
+              "end": 2.84
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "材料は、Metaのミューズ、前に取り上げたドッツ、アメリカの数字。",
           "expression": "neutral",
-          "display": "材料は、MetaのMuse、前に取り上げたdots、アメリカの数字。"
+          "display": "材料は、MetaのMuse、前に取り上げたdots、アメリカの数字。",
+          "t0": 20.94,
+          "dur": 4.88,
+          "cards": [
+            {
+              "text": "材料は、MetaのMuse、",
+              "start": 0.0,
+              "end": 2.01
+            },
+            {
+              "text": "前に取り上げたdots、アメリカの数字。",
+              "start": 2.01,
+              "end": 4.88
+            }
+          ]
         }
       ],
       "scene_id": 5,
       "narration": "大輔「最近、何か調べるとき、検索より先にAIに聞いてない？」\n沙織「聞いてる。」\n大輔「僕の仮説はこう。検索が減って、AIに聞く時代になる。」\n大輔「次は、AIに頼んで買うのが当たり前になる。入口は、一人ひとりに付くパーソナルAI。」\n沙織「面白い。じゃあ、数字で確かめよう。」\n大輔「材料は、Metaのミューズ、前に取り上げたドッツ、アメリカの数字。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "37e8ed6a0f37"
     },
     {
       "type": "paper",
@@ -276,64 +396,195 @@
           "text": "まずミューズ。Metaが9月8日に発表した、パーソナルAIエージェント。",
           "expression": "neutral",
           "reference_index": 0,
-          "display": "まずMuse。Metaが9月8日に発表した、パーソナルAIエージェント。"
+          "display": "まずMuse。Metaが9月8日に発表した、パーソナルAIエージェント。",
+          "t0": 0.0,
+          "dur": 4.76,
+          "cards": [
+            {
+              "text": "まずMuse。Metaが9月8日に発表した、",
+              "start": 0.0,
+              "end": 2.91
+            },
+            {
+              "text": "パーソナルAIエージェント。",
+              "start": 2.91,
+              "end": 4.76
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "質問に答えるだけじゃなく、作業をする。メール、旅行の予約、フォーム入力、交渉まで。",
           "expression": "excited",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 4.98,
+          "dur": 7.56,
+          "cards": [
+            {
+              "text": "質問に答えるだけじゃなく、作業をする。",
+              "start": 0.0,
+              "end": 2.96
+            },
+            {
+              "text": "メール、旅行の予約、フォーム入力、",
+              "start": 3.11,
+              "end": 6.07
+            },
+            {
+              "text": "交渉まで。",
+              "start": 6.28,
+              "end": 7.06
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "で、どこで動いてるの？",
-          "expression": "doubt"
+          "expression": "doubt",
+          "t0": 12.82,
+          "dur": 1.68,
+          "cards": [
+            {
+              "text": "で、どこで動いてるの？",
+              "start": 0.0,
+              "end": 1.68
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "専用のコンピューターで、アプリを閉じても働き続ける。承認が要るときだけ戻ってくる。",
           "expression": "neutral",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 14.78,
+          "dur": 5.6,
+          "cards": [
+            {
+              "text": "専用のコンピューターで、アプリを閉じても",
+              "start": 0.0,
+              "end": 2.7
+            },
+            {
+              "text": "働き続ける。承認が要るときだけ戻ってくる。",
+              "start": 2.85,
+              "end": 5.64
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "隣の見張り役のAIが許可しないと、ネットには何も出ていかない。",
           "expression": "excited",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 20.6,
+          "dur": 4.32,
+          "cards": [
+            {
+              "text": "隣の見張り役のAIが許可しないと、",
+              "start": 0.0,
+              "end": 2.29
+            },
+            {
+              "text": "ネットには何も出ていかない。",
+              "start": 2.44,
+              "end": 4.32
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "お値段は？",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 25.2,
+          "dur": 1.36,
+          "cards": [
+            {
+              "text": "お値段は？",
+              "start": 0.0,
+              "end": 1.36
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "ほとんどは無料で、有料プランもある。提供はアメリカから。",
           "expression": "neutral",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 26.84,
+          "dur": 4.08,
+          "cards": [
+            {
+              "text": "ほとんどは無料で、有料プランもある。",
+              "start": 0.0,
+              "end": 2.53
+            },
+            {
+              "text": "提供はアメリカから。",
+              "start": 2.68,
+              "end": 4.08
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "10月12日には、ミューズ用の新しいモデルも発表された。",
           "expression": "neutral",
           "reference_index": 2,
-          "display": "10月12日には、Muse用の新しいモデルも発表された。"
+          "display": "10月12日には、Muse用の新しいモデルも発表された。",
+          "t0": 31.14,
+          "dur": 4.36,
+          "cards": [
+            {
+              "text": "10月12日には、Muse用の新しい",
+              "start": 0.0,
+              "end": 2.8
+            },
+            {
+              "text": "モデルも発表された。",
+              "start": 2.8,
+              "end": 4.36
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "性能の数字は？",
-          "expression": "doubt"
+          "expression": "doubt",
+          "t0": 35.78,
+          "dur": 1.52,
+          "cards": [
+            {
+              "text": "性能の数字は？",
+              "start": 0.0,
+              "end": 1.52
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "……発表の文章には、数字が無い。グラフだけ。",
           "expression": "deflated",
-          "reference_index": 2
+          "reference_index": 2,
+          "t0": 37.58,
+          "dur": 3.44,
+          "cards": [
+            {
+              "text": "……発表の文章には、数字が無い。",
+              "start": 0.0,
+              "end": 2.39
+            },
+            {
+              "text": "グラフだけ。",
+              "start": 2.54,
+              "end": 3.44
+            }
+          ]
         }
       ],
       "scene_id": 6,
       "narration": "大輔「まずミューズ。Metaが9月8日に発表した、パーソナルAIエージェント。」\n大輔「質問に答えるだけじゃなく、作業をする。メール、旅行の予約、フォーム入力、交渉まで。」\n沙織「で、どこで動いてるの？」\n大輔「専用のコンピューターで、アプリを閉じても働き続ける。承認が要るときだけ戻ってくる。」\n大輔「隣の見張り役のAIが許可しないと、ネットには何も出ていかない。」\n沙織「お値段は？」\n大輔「ほとんどは無料で、有料プランもある。提供はアメリカから。」\n大輔「10月12日には、ミューズ用の新しいモデルも発表された。」\n沙織「性能の数字は？」\n大輔「……発表の文章には、数字が無い。グラフだけ。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "60dabf836249"
     },
     {
       "type": "paper",
@@ -346,130 +597,361 @@
           "speaker": "skeptic",
           "text": "で、ドッツと何が違うの？",
           "expression": "neutral",
-          "display": "で、dotsと何が違うの？"
+          "display": "で、dotsと何が違うの？",
+          "t0": 0.0,
+          "dur": 2.24,
+          "cards": [
+            {
+              "text": "で、dotsと何が違うの？",
+              "start": 0.0,
+              "end": 2.24
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "形は同じ。どっちも専用のクラウドのコンピューターで動く。",
           "expression": "neutral",
-          "reference_index": 4
+          "reference_index": 4,
+          "t0": 2.52,
+          "dur": 3.92,
+          "cards": [
+            {
+              "text": "形は同じ。どっちも専用のクラウドの",
+              "start": 0.0,
+              "end": 2.49
+            },
+            {
+              "text": "コンピューターで動く。",
+              "start": 2.64,
+              "end": 4.12
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "ドッツの例は仕事が中心で、有料プランから配る。",
           "expression": "neutral",
           "reference_index": 4,
-          "display": "dotsの例は仕事が中心で、有料プランから配る。"
+          "display": "dotsの例は仕事が中心で、有料プランから配る。",
+          "t0": 6.66,
+          "dur": 4.32,
+          "cards": [
+            {
+              "text": "dotsの例は仕事が中心で、",
+              "start": 0.0,
+              "end": 2.52
+            },
+            {
+              "text": "有料プランから配る。",
+              "start": 2.52,
+              "end": 4.32
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "ミューズは、ほぼ無料で、買い物まで暮らしに寄せてきた。",
           "expression": "excited",
           "reference_index": 0,
-          "display": "Museは、ほぼ無料で、買い物まで暮らしに寄せてきた。"
+          "display": "Museは、ほぼ無料で、買い物まで暮らしに寄せてきた。",
+          "t0": 11.2,
+          "dur": 4.32,
+          "cards": [
+            {
+              "text": "Museは、ほぼ無料で、買い物まで暮らしに",
+              "start": 0.0,
+              "end": 3.36
+            },
+            {
+              "text": "寄せてきた。",
+              "start": 3.36,
+              "end": 4.32
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "2社が、同じ月に、同じ形か。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 15.8,
+          "dur": 3.4,
+          "cards": [
+            {
+              "text": "2社が、同じ月に、同じ形か。",
+              "start": 0.0,
+              "end": 3.4
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "でしょ。だから僕は、これが次の主流だと思う。",
-          "expression": "convinced"
+          "expression": "convinced",
+          "t0": 19.48,
+          "dur": 4.4,
+          "cards": [
+            {
+              "text": "でしょ。だから僕は、",
+              "start": 0.0,
+              "end": 1.82
+            },
+            {
+              "text": "これが次の主流だと思う。",
+              "start": 1.82,
+              "end": 4.0
+            }
+          ]
         }
       ],
       "scene_id": 7,
       "narration": "沙織「で、ドッツと何が違うの？」\n大輔「形は同じ。どっちも専用のクラウドのコンピューターで動く。」\n大輔「ドッツの例は仕事が中心で、有料プランから配る。」\n大輔「ミューズは、ほぼ無料で、買い物まで暮らしに寄せてきた。」\n沙織「2社が、同じ月に、同じ形か。」\n大輔「でしょ。だから僕は、これが次の主流だと思う。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "e752c65ce5c2"
     },
     {
       "type": "dream",
       "bgm_role": "intro",
       "ken_burns": "zoom_in",
-      "image_prompt": "Saturday morning in a Japanese family home entryway (bright morning sunlight, clearly daytime). a Japanese woman in her late thirties with shoulder-length wavy black hair tied in a low ponytail, no glasses, wearing a sage-green hooded sweatshirt kneels by the shoe rack holding up a pair of small children's soccer cleats that are clearly too small, looking at them with a wry smile, her smartphone in her other hand. Above her shoulder floats the AI agent shown only as an abstract, softly glowing cloud of small teal and warm amber light particles hovering in the air (no face, no eyes, no head, no body, no humanoid or robot shape), from which three small blank parcel-box shapes and a blank calendar-page shape drift outward, glowing. A cheerful, busy-weekend mood. No logos, no emblems, no badges, no brand marks, no app icons, no store names, no readable text, no letters, no numbers.",
+      "image_prompt": "Saturday morning in a Japanese family home entryway (bright morning sunlight, clearly daytime). a Japanese woman in her late thirties with shoulder-length wavy black hair tied in a low ponytail, no glasses, wearing a sage-green hooded sweatshirt kneels by the shoe rack holding up a pair of small children's soccer cleats that are clearly too small, looking at them with a wry smile, her smartphone in her other hand. Above her shoulder floats the AI agent shown only as an abstract, softly glowing cloud of small teal and warm amber light particles hovering in the air (no face, no eyes, no head, no body, no humanoid or robot shape): an evenly scattered, loose, round haze of tiny same-sized dots with no brighter spots, no pair of glowing points, no hollow loops or rings, and nothing that could read as eyes, a ghost, an animal or a creature, from which three small blank parcel-box shapes and a blank calendar-page shape drift outward, glowing. A cheerful, busy-weekend mood. No logos, no emblems, no badges, no brand marks, no app icons, no store names, no readable text, no letters, no numbers.",
       "lines": [
         {
           "speaker": "dreamer",
           "text": "想像してみてよ。",
           "expression": "excited",
-          "pause": 0.4
+          "pause": 0.4,
+          "t0": 0.0,
+          "dur": 1.68,
+          "cards": [
+            {
+              "text": "想像してみてよ。",
+              "start": 0.0,
+              "end": 1.68
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "土曜の朝。子どものサッカーのスパイクが、もう小さい。スマホに一言、来週の試合までに、1つ上のサイズを。",
           "expression": "excited",
           "tag": "life_scene",
-          "tone": "dreamy, a bit fast"
+          "tone": "dreamy, a bit fast",
+          "t0": 1.9,
+          "dur": 8.92,
+          "cards": [
+            {
+              "text": "土曜の朝。子どものサッカーのスパイクが、",
+              "start": 0.0,
+              "end": 3.0
+            },
+            {
+              "text": "もう小さい。スマホに一言、",
+              "start": 3.15,
+              "end": 5.55
+            },
+            {
+              "text": "来週の試合までに、",
+              "start": 5.55,
+              "end": 7.21
+            },
+            {
+              "text": "1つ上のサイズを。",
+              "start": 7.36,
+              "end": 8.94
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "AIが店を比べて、注文して、届く日をカレンダーに入れておく。こっちは、何もしない。",
-          "expression": "excited"
+          "expression": "excited",
+          "t0": 11.04,
+          "dur": 6.36,
+          "cards": [
+            {
+              "text": "AIが店を比べて、注文して、",
+              "start": 0.0,
+              "end": 2.27
+            },
+            {
+              "text": "届く日をカレンダーに入れておく。こっちは、",
+              "start": 2.42,
+              "end": 5.52
+            },
+            {
+              "text": "何もしない。",
+              "start": 5.67,
+              "end": 6.56
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "人生の事務は、全部AIに。検索なんて、もう開かなくなる。",
           "expression": "excited",
-          "tone": "carried away"
+          "tone": "carried away",
+          "t0": 17.62,
+          "dur": 5.2,
+          "cards": [
+            {
+              "text": "人生の事務は、全部AIに。検索なんて、",
+              "start": 0.0,
+              "end": 3.7
+            },
+            {
+              "text": "もう開かなくなる。",
+              "start": 3.85,
+              "end": 5.2
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "ちょっと待って。2つ、言い過ぎてる。",
           "expression": "doubt",
           "react": "surprised",
-          "pause": 0.4
+          "pause": 0.4,
+          "t0": 23.22,
+          "dur": 2.72,
+          "cards": [
+            {
+              "text": "ちょっと待って。2つ、言い過ぎてる。",
+              "start": 0.0,
+              "end": 2.72
+            }
+          ]
         }
       ],
       "scene_id": 8,
       "narration": "大輔「想像してみてよ。」\n大輔「土曜の朝。子どものサッカーのスパイクが、もう小さい。スマホに一言、来週の試合までに、1つ上のサイズを。」\n大輔「AIが店を比べて、注文して、届く日をカレンダーに入れておく。こっちは、何もしない。」\n大輔「人生の事務は、全部AIに。検索なんて、もう開かなくなる。」\n沙織「ちょっと待って。2つ、言い過ぎてる。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "418156e09420"
     },
     {
       "type": "tsukkomi",
       "bgm_role": "main",
       "reference_index": 9,
       "ken_burns": "zoom_out",
-      "image_prompt": "Daytime, a simple stylized illustration: two wide, translucent glowing paths, one teal and one amber, run side by side and then overlap into one broad shared road that continues toward a bright horizon, with many tiny anonymous pedestrians shown only as small simple silhouettes walking on both paths at once. Clear blue sky. A thoughtful mood. No logos, no emblems, no badges, no brand marks, no app icons, no store names, no readable text, no letters, no numbers.",
+      "image_prompt": "Daytime, a simple stylized landscape illustration seen from a high viewpoint: in the lower part of the picture two wide, translucent glowing paths, one teal coming from the left and one amber coming from the right, gently curve toward the center and merge into one single broad shared road (half teal, half amber, blended) that continues straight up toward a bright horizon; the paths never cross each other and never split again. On the paths and on the shared road walk many tiny anonymous pedestrians drawn only as small, simple dark silhouettes (no facial features, no detailed clothing), all of them small and far away; no large or detailed people anywhere, and nobody in the foreground. Clear blue sky. A thoughtful mood. No logos, no emblems, no badges, no brand marks, no app icons, no store names, no readable text, no letters, no numbers.",
       "lines": [
         {
           "speaker": "skeptic",
           "text": "1つ目。検索が減ってる、は本当？",
-          "expression": "doubt"
+          "expression": "doubt",
+          "t0": 0.0,
+          "dur": 3.48,
+          "cards": [
+            {
+              "text": "1つ目。検索が減ってる、は本当？",
+              "start": 0.0,
+              "end": 3.48
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "調査会社のシミラーウェブによると、ChatGPTを使う人の95%が、グーグルも使ってる。去年の9月も今年の5月も。",
           "expression": "neutral",
           "reference_index": 9,
-          "display": "調査会社のSimilarwebによると、ChatGPTを使う人の95%が、Googleも使ってる。去年の9月も今年の5月も。"
+          "display": "調査会社のSimilarwebによると、ChatGPTを使う人の95%が、Googleも使ってる。去年の9月も今年の5月も。",
+          "t0": 3.7,
+          "dur": 7.72,
+          "cards": [
+            {
+              "text": "調査会社のSimilarwebによると、",
+              "start": 0.0,
+              "end": 2.49
+            },
+            {
+              "text": "ChatGPTを使う人の95%が、",
+              "start": 2.49,
+              "end": 4.61
+            },
+            {
+              "text": "Googleも使ってる。",
+              "start": 4.61,
+              "end": 6.1
+            },
+            {
+              "text": "去年の9月も今年の5月も。",
+              "start": 6.1,
+              "end": 7.72
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "……減ってない？",
-          "expression": "surprised"
+          "expression": "surprised",
+          "t0": 11.7,
+          "dur": 1.32,
+          "cards": [
+            {
+              "text": "……減ってない？",
+              "start": 0.0,
+              "end": 1.32
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "置き換わったんじゃなくて、重なってる。それが向こうの結論。",
           "expression": "neutral",
-          "reference_index": 9
+          "reference_index": 9,
+          "t0": 13.3,
+          "dur": 3.44,
+          "cards": [
+            {
+              "text": "置き換わったんじゃなくて、重なってる。",
+              "start": 0.13,
+              "end": 2.29
+            },
+            {
+              "text": "それが向こうの結論。",
+              "start": 2.44,
+              "end": 3.57
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "ただ、このデータはアプリのAIを数えてない。そこは書いた本人も認めてる。",
           "expression": "neutral",
-          "reference_index": 9
+          "reference_index": 9,
+          "t0": 16.96,
+          "dur": 4.56,
+          "cards": [
+            {
+              "text": "ただ、このデータはアプリのAIを数えてない。",
+              "start": 0.0,
+              "end": 2.68
+            },
+            {
+              "text": "そこは書いた本人も認めてる。",
+              "start": 2.83,
+              "end": 4.55
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "じゃあ、AIに聞く人は？",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 21.8,
+          "dur": 2.24,
+          "cards": [
+            {
+              "text": "じゃあ、AIに聞く人は？",
+              "start": 0.0,
+              "end": 2.24
+            }
+          ]
         }
       ],
       "scene_id": 9,
       "narration": "沙織「1つ目。検索が減ってる、は本当？」\n沙織「調査会社のシミラーウェブによると、ChatGPTを使う人の95%が、グーグルも使ってる。去年の9月も今年の5月も。」\n大輔「……減ってない？」\n沙織「置き換わったんじゃなくて、重なってる。それが向こうの結論。」\n沙織「ただ、このデータはアプリのAIを数えてない。そこは書いた本人も認めてる。」\n大輔「じゃあ、AIに聞く人は？」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "9cc181962a49"
     },
     {
       "type": "check",
@@ -483,41 +965,116 @@
           "text": "そっちは多い。ピューの調査、アメリカの大人5119人。",
           "expression": "neutral",
           "reference_index": 8,
-          "display": "そっちは多い。Pewの調査、アメリカの大人5119人。"
+          "display": "そっちは多い。Pewの調査、アメリカの大人5119人。",
+          "t0": 0.0,
+          "dur": 4.76,
+          "cards": [
+            {
+              "text": "そっちは多い。Pewの調査、",
+              "start": 0.0,
+              "end": 2.47
+            },
+            {
+              "text": "アメリカの大人5119人。",
+              "start": 2.47,
+              "end": 4.76
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "AIチャットボットを使う人が49%。毎日使う人が24%。",
           "expression": "neutral",
-          "reference_index": 8
+          "reference_index": 8,
+          "t0": 4.98,
+          "dur": 5.56,
+          "cards": [
+            {
+              "text": "AIチャットボットを使う人が49%。",
+              "start": 0.0,
+              "end": 2.7
+            },
+            {
+              "text": "毎日使う人が24%。",
+              "start": 2.98,
+              "end": 4.5
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "ほぼ半分！ 4人に1人近くは毎日！",
-          "expression": "excited"
+          "expression": "excited",
+          "t0": 10.82,
+          "dur": 3.96,
+          "cards": [
+            {
+              "text": "ほぼ半分！ 4人に1人近くは毎日！",
+              "start": 0.0,
+              "end": 3.96
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "使い道で一番多いのは、調べもの。大人全体の42%。",
           "expression": "neutral",
-          "reference_index": 8
+          "reference_index": 8,
+          "t0": 15.06,
+          "dur": 4.92,
+          "cards": [
+            {
+              "text": "使い道で一番多いのは、調べもの。",
+              "start": 0.0,
+              "end": 2.54
+            },
+            {
+              "text": "大人全体の42%。",
+              "start": 2.69,
+              "end": 4.09
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "AIに聞く、は僕の勝ちだ。",
-          "expression": "convinced"
+          "expression": "convinced",
+          "t0": 20.26,
+          "dur": 2.28,
+          "cards": [
+            {
+              "text": "AIに聞く、は僕の勝ちだ。",
+              "start": 0.0,
+              "end": 2.28
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "そこは認める。ただ、このページに、買い物の話は出てこない。",
           "expression": "doubt",
           "react": "deflated",
-          "reference_index": 8
+          "reference_index": 8,
+          "t0": 22.82,
+          "dur": 4.48,
+          "cards": [
+            {
+              "text": "そこは認める。ただ、このページに、",
+              "start": 0.0,
+              "end": 2.54
+            },
+            {
+              "text": "買い物の話は出てこない。",
+              "start": 2.69,
+              "end": 4.48
+            }
+          ]
         }
       ],
       "scene_id": 10,
       "narration": "沙織「そっちは多い。ピューの調査、アメリカの大人5119人。」\n沙織「AIチャットボットを使う人が49%。毎日使う人が24%。」\n大輔「ほぼ半分！ 4人に1人近くは毎日！」\n沙織「使い道で一番多いのは、調べもの。大人全体の42%。」\n大輔「AIに聞く、は僕の勝ちだ。」\n沙織「そこは認める。ただ、このページに、買い物の話は出てこない。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "c50a38138027"
     },
     {
       "type": "paper",
@@ -531,91 +1088,290 @@
           "text": "それに、ミューズはアメリカで、ランキングを駆け上がってる。",
           "expression": "excited",
           "display": "それに、Museはアメリカで、ランキングを駆け上がってる。",
-          "reference_index": 5
+          "reference_index": 5,
+          "t0": 0.0,
+          "dur": 4.6,
+          "cards": [
+            {
+              "text": "それに、Museはアメリカで、",
+              "start": 0.0,
+              "end": 2.38
+            },
+            {
+              "text": "ランキングを駆け上がってる。",
+              "start": 2.38,
+              "end": 4.6
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "で、その数字、どこから？",
           "expression": "doubt",
-          "reference_index": 5
+          "reference_index": 5,
+          "t0": 4.88,
+          "dur": 2.08,
+          "cards": [
+            {
+              "text": "で、その数字、どこから？",
+              "start": 0.0,
+              "end": 2.08
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "Metaは出してない。テッククランチの記事で、調査会社のセンサータワーの推計。発表の2日後、アメリカのアイフォーンで8万3000件超え、アップストアの2位。",
           "expression": "neutral",
           "reference_index": 5,
-          "display": "Metaは出してない。TechCrunchの記事で、調査会社のSensor Towerの推計。発表の2日後、アメリカのiPhoneで8万3000件超え、App Storeの2位。"
+          "display": "Metaは出してない。TechCrunchの記事で、調査会社のSensor Towerの推計。発表の2日後、アメリカのiPhoneで8万3000件超え、App Storeの2位。",
+          "t0": 7.24,
+          "dur": 11.56,
+          "cards": [
+            {
+              "text": "Metaは出してない。TechCrunchの",
+              "start": 0.0,
+              "end": 2.89
+            },
+            {
+              "text": "記事で、調査会社のSensor",
+              "start": 2.89,
+              "end": 4.86
+            },
+            {
+              "text": "Towerの推計。発表の2日後、",
+              "start": 4.86,
+              "end": 6.96
+            },
+            {
+              "text": "アメリカのiPhoneで8万3000件超え、",
+              "start": 6.96,
+              "end": 9.85
+            },
+            {
+              "text": "App Storeの2位。",
+              "start": 9.85,
+              "end": 11.56
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "その記事は、ChatGPTの出だしより遅い、好調とは限らない、とも書いてる。",
           "expression": "doubt",
-          "reference_index": 5
+          "reference_index": 5,
+          "t0": 19.08,
+          "dur": 5.04,
+          "cards": [
+            {
+              "text": "その記事は、ChatGPTの出だしより遅い、",
+              "start": 0.0,
+              "end": 2.83
+            },
+            {
+              "text": "好調とは限らない、とも書いてる。",
+              "start": 2.98,
+              "end": 5.04
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "でも、そのあと1位になったと報じられた。同じテッククランチの続報で、調査会社のアプトピアの推計だと、アメリカとカナダのアイフォーンで、最初の12日に180万件。",
           "expression": "excited",
           "reference_index": 6,
-          "display": "でも、そのあと1位になったと報じられた。同じTechCrunchの続報で、調査会社のApptopiaの推計だと、アメリカとカナダのiPhoneで、最初の12日に180万件。"
+          "display": "でも、そのあと1位になったと報じられた。同じTechCrunchの続報で、調査会社のApptopiaの推計だと、アメリカとカナダのiPhoneで、最初の12日に180万件。",
+          "t0": 24.4,
+          "dur": 11.56,
+          "cards": [
+            {
+              "text": "でも、そのあと1位になったと報じられた。",
+              "start": 0.0,
+              "end": 2.69
+            },
+            {
+              "text": "同じTechCrunchの続報で、",
+              "start": 2.69,
+              "end": 4.97
+            },
+            {
+              "text": "調査会社のApptopiaの推計だと、",
+              "start": 4.97,
+              "end": 7.53
+            },
+            {
+              "text": "アメリカとカナダのiPhoneで、",
+              "start": 7.53,
+              "end": 9.81
+            },
+            {
+              "text": "最初の12日に180万件。",
+              "start": 9.81,
+              "end": 11.56
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "比べた相手は、2023年のChatGPTで130万件。速いか遅いかは、推計で割れてるってこと。",
           "expression": "thinking",
-          "reference_index": 6
+          "reference_index": 6,
+          "t0": 36.24,
+          "dur": 7.8,
+          "cards": [
+            {
+              "text": "比べた相手は、2023年のChatGPTで",
+              "start": 0.0,
+              "end": 3.15
+            },
+            {
+              "text": "130万件。速いか遅いかは、",
+              "start": 3.3,
+              "end": 6.05
+            },
+            {
+              "text": "推計で割れてるってこと。",
+              "start": 6.2,
+              "end": 8.0
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それと、同じ推計で、ミューズを使う人の95%以上が、フェイスブックも使ってる。",
           "expression": "neutral",
           "reference_index": 6,
-          "display": "それと、同じ推計で、Museを使う人の95%以上が、Facebookも使ってる。"
+          "display": "それと、同じ推計で、Museを使う人の95%以上が、Facebookも使ってる。",
+          "t0": 44.26,
+          "dur": 5.32,
+          "cards": [
+            {
+              "text": "それと、同じ推計で、Museを使う人の",
+              "start": 0.0,
+              "end": 2.53
+            },
+            {
+              "text": "95%以上が、Facebookも使ってる。",
+              "start": 2.53,
+              "end": 5.32
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "Metaのお客さんが、そのまま来てるのか。",
           "expression": "thinking",
-          "reference_index": 5
+          "reference_index": 5,
+          "t0": 49.86,
+          "dur": 2.88,
+          "cards": [
+            {
+              "text": "Metaのお客さんが、そのまま来てるのか。",
+              "start": 0.01,
+              "end": 2.89
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "で、一番の弱点。ダウンロードは、入れた数。使い続けるかは別。",
           "expression": "doubt",
           "pause": 0.4,
-          "reference_index": 5
+          "reference_index": 5,
+          "t0": 53.14,
+          "dur": 5.72,
+          "cards": [
+            {
+              "text": "で、一番の弱点。ダウンロードは、入れた数。",
+              "start": 0.0,
+              "end": 3.74
+            },
+            {
+              "text": "使い続けるかは別。",
+              "start": 3.89,
+              "end": 5.41
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "MetaもOpenAIも、何人が使い続けてるか、頼んだ仕事が何回うまくいったか、発表に数字は1つもない。",
           "expression": "doubt",
           "tag": "weakness",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 59.08,
+          "dur": 7.0,
+          "cards": [
+            {
+              "text": "MetaもOpenAIも、何人が使い続けてるか、",
+              "start": 0.01,
+              "end": 3.1
+            },
+            {
+              "text": "頼んだ仕事が何回うまくいったか、",
+              "start": 3.25,
+              "end": 5.31
+            },
+            {
+              "text": "発表に数字は1つもない。",
+              "start": 5.46,
+              "end": 7.14
+            }
+          ]
         }
       ],
       "scene_id": 11,
       "narration": "大輔「それに、ミューズはアメリカで、ランキングを駆け上がってる。」\n沙織「で、その数字、どこから？」\n大輔「Metaは出してない。テッククランチの記事で、調査会社のセンサータワーの推計。発表の2日後、アメリカのアイフォーンで8万3000件超え、アップストアの2位。」\n沙織「その記事は、ChatGPTの出だしより遅い、好調とは限らない、とも書いてる。」\n大輔「でも、そのあと1位になったと報じられた。同じテッククランチの続報で、調査会社のアプトピアの推計だと、アメリカとカナダのアイフォーンで、最初の12日に180万件。」\n沙織「比べた相手は、2023年のChatGPTで130万件。速いか遅いかは、推計で割れてるってこと。」\n沙織「それと、同じ推計で、ミューズを使う人の95%以上が、フェイスブックも使ってる。」\n大輔「Metaのお客さんが、そのまま来てるのか。」\n沙織「で、一番の弱点。ダウンロードは、入れた数。使い続けるかは別。」\n沙織「MetaもOpenAIも、何人が使い続けてるか、頼んだ仕事が何回うまくいったか、発表に数字は1つもない。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "51c8fee88270"
     },
     {
       "type": "paper",
       "bgm_role": "main",
       "reference_index": 3,
       "ken_burns": "pan_zoom_out",
-      "image_prompt": "Daytime, a stylized illustration of a long shopping street seen in perspective, with many generic storefronts that have blank awnings and blank signboards. Most shop doors are wide open and glowing warmly, with the AI agent shown only as an abstract, softly glowing cloud of small teal and warm amber light particles hovering in the air (no face, no eyes, no head, no body, no humanoid or robot shape) flowing in and out of them along a ribbon of light; but the single largest storefront in the middle has its tall gate firmly closed, and the ribbon of light stops in front of it. Clear blue sky. A lively but tense mood. No people. No logos, no emblems, no badges, no brand marks, no app icons, no store names, no readable text, no letters, no numbers.",
+      "image_prompt": "Daytime, a stylized illustration of a long American-style downtown shopping street seen in perspective (wide sidewalks, brick and glass storefronts, no utility poles, no Japanese noren curtains), with many generic storefronts that have blank awnings and blank signboards. Most shop doors are wide open and glowing warmly, with the AI agent shown only as an abstract, softly glowing cloud of small teal and warm amber light particles hovering in the air (no face, no eyes, no head, no body, no humanoid or robot shape) flowing in and out of them along a ribbon of light; but the single largest storefront in the middle has its tall gate firmly closed, and the ribbon of light stops in front of it. Clear blue sky. A lively but tense mood. No people. No logos, no emblems, no badges, no brand marks, no app icons, no store names, no readable text, no letters, no numbers.",
       "lines": [
         {
           "speaker": "dreamer",
           "text": "買い物も動いてる。Metaの発表では、ウォルマート、ベストバイ、セフォラなどの店を追加。",
           "expression": "excited",
-          "reference_index": 3
+          "reference_index": 3,
+          "t0": 0.0,
+          "dur": 6.08,
+          "cards": [
+            {
+              "text": "買い物も動いてる。Metaの発表では、",
+              "start": 0.0,
+              "end": 2.56
+            },
+            {
+              "text": "ウォルマート、ベストバイ、",
+              "start": 2.71,
+              "end": 4.46
+            },
+            {
+              "text": "セフォラなどの店を追加。",
+              "start": 4.46,
+              "end": 6.08
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "最初から数十社と、ショッピファイの商品全部。",
           "expression": "neutral",
           "reference_index": 3,
-          "display": "最初から数十社と、Shopifyの商品全部。"
+          "display": "最初から数十社と、Shopifyの商品全部。",
+          "t0": 6.3,
+          "dur": 3.96,
+          "cards": [
+            {
+              "text": "最初から数十社と、Shopifyの商品全部。",
+              "start": 0.0,
+              "end": 3.96
+            }
+          ]
         },
         {
           "speaker": "skeptic",
@@ -623,44 +1379,129 @@
           "expression": "doubt",
           "pause": 0.3,
           "display": "で、Amazonは？",
-          "reference_index": 7
+          "reference_index": 7,
+          "t0": 10.56,
+          "dur": 1.52,
+          "cards": [
+            {
+              "text": "で、Amazonは？",
+              "start": 0.0,
+              "end": 1.52
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "……報道では、ミューズがアマゾンのサイトに入るのを、ブロックした。",
           "expression": "deflated",
           "reference_index": 7,
-          "display": "……報道では、MuseがAmazonのサイトに入るのを、ブロックした。"
+          "display": "……報道では、MuseがAmazonのサイトに入るのを、ブロックした。",
+          "t0": 12.36,
+          "dur": 5.0,
+          "cards": [
+            {
+              "text": "……報道では、MuseがAmazonの",
+              "start": 0.0,
+              "end": 2.71
+            },
+            {
+              "text": "サイトに入るのを、ブロックした。",
+              "start": 2.71,
+              "end": 5.0
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "記事によると、アマゾンは去年、アメリカのネット通販の40.5%。一番大きな店が閉めた。",
           "expression": "neutral",
           "reference_index": 7,
-          "display": "記事によると、Amazonは去年、アメリカのネット通販の40.5%。一番大きな店が閉めた。"
+          "display": "記事によると、Amazonは去年、アメリカのネット通販の40.5%。一番大きな店が閉めた。",
+          "t0": 17.64,
+          "dur": 6.72,
+          "cards": [
+            {
+              "text": "記事によると、Amazonは去年、",
+              "start": 0.0,
+              "end": 2.54
+            },
+            {
+              "text": "アメリカのネット通販の40.5%。",
+              "start": 2.54,
+              "end": 5.08
+            },
+            {
+              "text": "一番大きな店が閉めた。",
+              "start": 5.08,
+              "end": 6.72
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それと、Metaのトップは、取引から少しずつ手数料を取って稼ぐつもりだ、と話したと報じられてる。",
           "expression": "doubt",
-          "reference_index": 7
+          "reference_index": 7,
+          "t0": 24.58,
+          "dur": 6.0,
+          "cards": [
+            {
+              "text": "それと、Metaのトップは、",
+              "start": 0.0,
+              "end": 1.66
+            },
+            {
+              "text": "取引から少しずつ手数料を",
+              "start": 1.81,
+              "end": 3.35
+            },
+            {
+              "text": "取って稼ぐつもりだ、",
+              "start": 3.35,
+              "end": 4.63
+            },
+            {
+              "text": "と話したと報じられてる。",
+              "start": 4.78,
+              "end": 6.2
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "AIが買うほど、Metaが得をするのか。",
           "expression": "thinking",
-          "reference_index": 7
+          "reference_index": 7,
+          "t0": 30.86,
+          "dur": 3.32,
+          "cards": [
+            {
+              "text": "AIが買うほど、Metaが得をするのか。",
+              "start": 0.0,
+              "end": 3.32
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それが使う人の得と一致するかは、別の話ね。",
           "expression": "doubt",
-          "reference_index": 7
+          "reference_index": 7,
+          "t0": 34.46,
+          "dur": 3.4,
+          "cards": [
+            {
+              "text": "それが使う人の得と一致するかは、別の話ね。",
+              "start": 0.0,
+              "end": 3.15
+            }
+          ]
         }
       ],
       "scene_id": 12,
       "narration": "大輔「買い物も動いてる。Metaの発表では、ウォルマート、ベストバイ、セフォラなどの店を追加。」\n大輔「最初から数十社と、ショッピファイの商品全部。」\n沙織「で、アマゾンは？」\n大輔「……報道では、ミューズがアマゾンのサイトに入るのを、ブロックした。」\n沙織「記事によると、アマゾンは去年、アメリカのネット通販の40.5%。一番大きな店が閉めた。」\n沙織「それと、Metaのトップは、取引から少しずつ手数料を取って稼ぐつもりだ、と話したと報じられてる。」\n大輔「AIが買うほど、Metaが得をするのか。」\n沙織「それが使う人の得と一致するかは、別の話ね。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "db077827e7e9"
     },
     {
       "type": "check",
@@ -672,60 +1513,187 @@
         {
           "speaker": "skeptic",
           "text": "で、言い過ぎの2つ目。買うところまでAI、の方。",
-          "expression": "doubt"
+          "expression": "doubt",
+          "t0": 0.0,
+          "dur": 3.96,
+          "cards": [
+            {
+              "text": "で、言い過ぎの2つ目。",
+              "start": 0.0,
+              "end": 1.82
+            },
+            {
+              "text": "買うところまでAI、の方。",
+              "start": 1.82,
+              "end": 3.96
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "アドビのデータを報じた記事だと、今年7月、AIから来たアメリカの小売サイトへの訪問は、前の年より62%増。",
           "expression": "neutral",
-          "reference_index": 10
+          "reference_index": 10,
+          "t0": 4.18,
+          "dur": 8.68,
+          "cards": [
+            {
+              "text": "アドビのデータを報じた記事だと、今年7月、",
+              "start": 0.0,
+              "end": 3.15
+            },
+            {
+              "text": "AIから来たアメリカの小売サイトへの訪問は、",
+              "start": 3.3,
+              "end": 6.6
+            },
+            {
+              "text": "前の年より62%増。",
+              "start": 6.75,
+              "end": 8.88
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "しかも、買うまで進む率が、ほかの訪問より60%高い。",
           "expression": "neutral",
-          "reference_index": 10
+          "reference_index": 10,
+          "t0": 13.08,
+          "dur": 4.44,
+          "cards": [
+            {
+              "text": "しかも、買うまで進む率が、ほかの訪問より",
+              "start": 0.0,
+              "end": 3.1
+            },
+            {
+              "text": "60%高い。",
+              "start": 3.25,
+              "end": 4.31
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "ほら！ 仮説の後半も当たりだ！",
           "expression": "excited",
-          "tone": "triumphant"
+          "tone": "triumphant",
+          "t0": 17.8,
+          "dur": 2.64,
+          "cards": [
+            {
+              "text": "ほら！ 仮説の後半も当たりだ！",
+              "start": 0.0,
+              "end": 2.64
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "待って。これは、AIで調べた人が、店で自分で買った話。AIが買った数じゃない。",
           "expression": "doubt",
           "react": "deflated",
-          "pause": 0.4
+          "pause": 0.4,
+          "t0": 20.84,
+          "dur": 6.72,
+          "cards": [
+            {
+              "text": "待って。これは、AIで調べた人が、",
+              "start": 0.0,
+              "end": 3.24
+            },
+            {
+              "text": "店で自分で買った話。AIが買った数じゃない。",
+              "start": 3.39,
+              "end": 6.69
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それに、全訪問のうちAI経由が何%かは書いてない。もともと買う気の強い人かもしれないし。",
           "expression": "thinking",
-          "reference_index": 10
+          "reference_index": 10,
+          "t0": 27.78,
+          "dur": 6.68,
+          "cards": [
+            {
+              "text": "それに、",
+              "start": 0.0,
+              "end": 0.63
+            },
+            {
+              "text": "全訪問のうちAI経由が何%かは書いてない。",
+              "start": 0.63,
+              "end": 3.91
+            },
+            {
+              "text": "もともと買う気の強い人かもしれないし。",
+              "start": 4.06,
+              "end": 6.88
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "じゃあ、AIが買った数は？",
-          "expression": "deflated"
+          "expression": "deflated",
+          "t0": 34.74,
+          "dur": 2.12,
+          "cards": [
+            {
+              "text": "じゃあ、AIが買った数は？",
+              "start": 0.0,
+              "end": 2.12
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "ミューズにもドッツにも、無い。どこにも無い。",
           "expression": "doubt",
-          "display": "Museにもdotsにも、無い。どこにも無い。"
+          "display": "Museにもdotsにも、無い。どこにも無い。",
+          "t0": 37.14,
+          "dur": 3.24,
+          "cards": [
+            {
+              "text": "Museにもdotsにも、無い。",
+              "start": 0.0,
+              "end": 2.25
+            },
+            {
+              "text": "どこにも無い。",
+              "start": 2.25,
+              "end": 3.24
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "……調べる入口と、買うまで任せる、の間には、まだ距離があるんだ。",
           "expression": "deflated",
-          "pause": 0.5
+          "pause": 0.5,
+          "t0": 40.88,
+          "dur": 5.48,
+          "cards": [
+            {
+              "text": "……調べる入口と、買うまで任せる、",
+              "start": 0.0,
+              "end": 2.9
+            },
+            {
+              "text": "の間には、まだ距離があるんだ。",
+              "start": 3.05,
+              "end": 5.3
+            }
+          ]
         }
       ],
       "scene_id": 13,
       "narration": "沙織「で、言い過ぎの2つ目。買うところまでAI、の方。」\n沙織「アドビのデータを報じた記事だと、今年7月、AIから来たアメリカの小売サイトへの訪問は、前の年より62%増。」\n沙織「しかも、買うまで進む率が、ほかの訪問より60%高い。」\n大輔「ほら！ 仮説の後半も当たりだ！」\n沙織「待って。これは、AIで調べた人が、店で自分で買った話。AIが買った数じゃない。」\n沙織「それに、全訪問のうちAI経由が何%かは書いてない。もともと買う気の強い人かもしれないし。」\n大輔「じゃあ、AIが買った数は？」\n沙織「ミューズにもドッツにも、無い。どこにも無い。」\n大輔「……調べる入口と、買うまで任せる、の間には、まだ距離があるんだ。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "7a000755b7b1"
     },
     {
       "type": "dream",
@@ -736,36 +1704,112 @@
         {
           "speaker": "dreamer",
           "text": "じゃあ、夢を一歩手前で止める。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 0.0,
+          "dur": 2.96,
+          "cards": [
+            {
+              "text": "じゃあ、夢を一歩手前で止める。",
+              "start": 0.0,
+              "end": 2.96
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "土曜の朝、サイズを一言伝えると、AIが店を比べて、候補を3つと届く日を並べて待ってる。どれにするかは、こっちが選ぶ。",
           "expression": "excited",
-          "tag": "life_scene"
+          "tag": "life_scene",
+          "t0": 3.18,
+          "dur": 9.52,
+          "cards": [
+            {
+              "text": "土曜の朝、サイズを一言伝えると、",
+              "start": 0.0,
+              "end": 2.62
+            },
+            {
+              "text": "AIが店を比べて、候補を3つと届く日を",
+              "start": 2.77,
+              "end": 5.97
+            },
+            {
+              "text": "並べて待ってる。どれにするかは、",
+              "start": 6.12,
+              "end": 8.52
+            },
+            {
+              "text": "こっちが選ぶ。",
+              "start": 8.67,
+              "end": 9.72
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それなら、ミューズの設計とも合う。買う前には本人に確認する、と書いてある。",
           "expression": "convinced",
           "reference_index": 0,
-          "display": "それなら、Museの設計とも合う。買う前には本人に確認する、と書いてある。"
+          "display": "それなら、Museの設計とも合う。買う前には本人に確認する、と書いてある。",
+          "t0": 12.98,
+          "dur": 5.6,
+          "cards": [
+            {
+              "text": "それなら、Museの設計とも合う。",
+              "start": 0.0,
+              "end": 2.57
+            },
+            {
+              "text": "買う前には本人に確認する、と書いてある。",
+              "start": 2.57,
+              "end": 5.6
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "カード番号も、その店とその金額だけに使える、一回きりの番号。",
           "expression": "neutral",
-          "reference_index": 1
+          "reference_index": 1,
+          "t0": 18.8,
+          "dur": 4.64,
+          "cards": [
+            {
+              "text": "カード番号も、",
+              "start": 0.0,
+              "end": 1.05
+            },
+            {
+              "text": "その店とその金額だけに使える、",
+              "start": 1.05,
+              "end": 3.29
+            },
+            {
+              "text": "一回きりの番号。",
+              "start": 3.44,
+              "end": 4.72
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "これだけで、土曜の朝はだいぶ軽くなる。",
-          "expression": "convinced"
+          "expression": "convinced",
+          "t0": 23.72,
+          "dur": 3.32,
+          "cards": [
+            {
+              "text": "これだけで、土曜の朝はだいぶ軽くなる。",
+              "start": 0.0,
+              "end": 3.32
+            }
+          ]
         }
       ],
       "scene_id": 14,
       "narration": "大輔「じゃあ、夢を一歩手前で止める。」\n大輔「土曜の朝、サイズを一言伝えると、AIが店を比べて、候補を3つと届く日を並べて待ってる。どれにするかは、こっちが選ぶ。」\n沙織「それなら、ミューズの設計とも合う。買う前には本人に確認する、と書いてある。」\n沙織「カード番号も、その店とその金額だけに使える、一回きりの番号。」\n大輔「これだけで、土曜の朝はだいぶ軽くなる。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "2563da924009"
     },
     {
       "type": "tsukkomi",
@@ -777,44 +1821,139 @@
         {
           "speaker": "skeptic",
           "text": "ただ、主流までの壁はある。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 1.96,
+          "cards": [
+            {
+              "text": "ただ、主流までの壁はある。",
+              "start": 0.0,
+              "end": 1.96
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "1つ目は店。つなぐ店と閉める店が、同時に出てきた。どこで買えるかは店が決める。",
           "expression": "doubt",
           "tag": "barrier",
-          "reference_index": 7
+          "reference_index": 7,
+          "t0": 2.18,
+          "dur": 6.04,
+          "cards": [
+            {
+              "text": "1つ目は店。つなぐ店と閉める店が、",
+              "start": 0.22,
+              "end": 2.79
+            },
+            {
+              "text": "同時に出てきた。",
+              "start": 2.94,
+              "end": 4.14
+            },
+            {
+              "text": "どこで買えるかは店が決める。",
+              "start": 4.14,
+              "end": 6.24
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "2つ目は、渡すもの。専属にするなら、メールも予定も支払いも預ける。",
           "expression": "doubt",
-          "tag": "barrier"
+          "tag": "barrier",
+          "t0": 8.44,
+          "dur": 5.96,
+          "cards": [
+            {
+              "text": "2つ目は、渡すもの。専属にするなら、",
+              "start": 0.0,
+              "end": 3.1
+            },
+            {
+              "text": "メールも予定も支払いも預ける。",
+              "start": 3.25,
+              "end": 5.73
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "Meta自身が、ミューズは攻撃と無縁じゃない、ときどき間違える、と書いてる。",
           "expression": "neutral",
           "reference_index": 1,
-          "display": "Meta自身が、Museは攻撃と無縁じゃない、ときどき間違える、と書いてる。"
+          "display": "Meta自身が、Museは攻撃と無縁じゃない、ときどき間違える、と書いてる。",
+          "t0": 14.62,
+          "dur": 5.44,
+          "cards": [
+            {
+              "text": "Meta自身が、Museは攻撃と無縁じゃない、",
+              "start": 0.0,
+              "end": 3.29
+            },
+            {
+              "text": "ときどき間違える、と書いてる。",
+              "start": 3.29,
+              "end": 5.44
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "社員でも中を見られない仕組みは、今年後半の予定。今は社内ルールで制限してるだけ。",
           "expression": "thinking",
-          "reference_index": 1
+          "reference_index": 1,
+          "t0": 20.28,
+          "dur": 6.4,
+          "cards": [
+            {
+              "text": "社員でも中を見られない仕組みは、",
+              "start": 0.0,
+              "end": 2.4
+            },
+            {
+              "text": "今年後半の予定。",
+              "start": 2.55,
+              "end": 3.82
+            },
+            {
+              "text": "今は社内ルールで制限してるだけ。",
+              "start": 3.82,
+              "end": 6.37
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "承認を減らせば便利、増やせば安心。その加減は、使われながら調整する、ってMetaも書いてる。",
           "expression": "thinking",
-          "reference_index": 1
+          "reference_index": 1,
+          "t0": 26.96,
+          "dur": 6.88,
+          "cards": [
+            {
+              "text": "承認を減らせば便利、増やせば安心。",
+              "start": 0.0,
+              "end": 2.63
+            },
+            {
+              "text": "その加減は、使われながら調整する、",
+              "start": 2.78,
+              "end": 5.21
+            },
+            {
+              "text": "ってMetaも書いてる。",
+              "start": 5.36,
+              "end": 7.08
+            }
+          ]
         }
       ],
       "scene_id": 15,
       "narration": "沙織「ただ、主流までの壁はある。」\n沙織「1つ目は店。つなぐ店と閉める店が、同時に出てきた。どこで買えるかは店が決める。」\n沙織「2つ目は、渡すもの。専属にするなら、メールも予定も支払いも預ける。」\n沙織「Meta自身が、ミューズは攻撃と無縁じゃない、ときどき間違える、と書いてる。」\n沙織「社員でも中を見られない仕組みは、今年後半の予定。今は社内ルールで制限してるだけ。」\n大輔「承認を減らせば便利、増やせば安心。その加減は、使われながら調整する、ってMetaも書いてる。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "336d0eb404a2"
     },
     {
       "type": "verdict",
@@ -826,64 +1965,220 @@
         {
           "speaker": "skeptic",
           "text": "じゃあ判定。お題は、これからのAIは、パーソナルAIが主流になる？",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 6.16,
+          "cards": [
+            {
+              "text": "じゃあ判定。お題は、これからのAIは、",
+              "start": 0.0,
+              "end": 3.58
+            },
+            {
+              "text": "パーソナルAIが主流になる？",
+              "start": 3.73,
+              "end": 6.05
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "……僕は、「まだ眉唾」。",
           "expression": "deflated",
           "pause": 0.5,
-          "tone": "reluctant, slower"
+          "tone": "reluctant, slower",
+          "t0": 6.66,
+          "dur": 3.4,
+          "cards": [
+            {
+              "text": "……僕は、「まだ眉唾」。",
+              "start": 0.0,
+              "end": 3.4
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "え、そっちが？",
           "expression": "surprised",
-          "react": "deflated"
+          "react": "deflated",
+          "t0": 10.34,
+          "dur": 1.76,
+          "cards": [
+            {
+              "text": "え、そっちが？",
+              "start": 0.0,
+              "end": 1.76
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "僕が見たかった主流は、頼んだら買うまで終わる世界。その数字は、どこにも無かった。",
           "expression": "thinking",
-          "reference_index": 7
+          "reference_index": 7,
+          "t0": 12.38,
+          "dur": 6.6,
+          "cards": [
+            {
+              "text": "僕が見たかった主流は、",
+              "start": 0.0,
+              "end": 1.65
+            },
+            {
+              "text": "頼んだら買うまで終わる世界。",
+              "start": 1.65,
+              "end": 3.75
+            },
+            {
+              "text": "その数字は、どこにも無かった。",
+              "start": 4.16,
+              "end": 6.41
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "一番大きな店も閉めてる。入口だけなら、それは検索の便利版でしょ。僕の夢の大きさで測ると、今日は眉唾。悔しいけど。",
-          "expression": "deflated"
+          "expression": "deflated",
+          "t0": 19.2,
+          "dur": 9.92,
+          "cards": [
+            {
+              "text": "一番大きな店も閉めてる。入口だけなら、",
+              "start": 0.0,
+              "end": 3.34
+            },
+            {
+              "text": "それは検索の便利版でしょ。",
+              "start": 3.49,
+              "end": 5.58
+            },
+            {
+              "text": "僕の夢の大きさで測ると、",
+              "start": 5.58,
+              "end": 7.51
+            },
+            {
+              "text": "今日は眉唾。悔しいけど。",
+              "start": 7.66,
+              "end": 9.9
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "じゃあ私は、「もうすぐ来る」。調べる入口としてなら。",
           "expression": "convinced",
           "react": "surprised",
-          "tone": "calm, confident"
+          "tone": "calm, confident",
+          "t0": 29.4,
+          "dur": 3.76,
+          "cards": [
+            {
+              "text": "じゃあ私は、「もうすぐ来る」。",
+              "start": 0.0,
+              "end": 2.08
+            },
+            {
+              "text": "調べる入口としてなら。",
+              "start": 2.23,
+              "end": 3.76
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "アメリカの大人のほぼ半分がもうAIを使ってて、4人に1人近くは毎日。そこに、自分を知ってる専属が付く。数字のある方向。",
           "expression": "neutral",
-          "reference_index": 8
+          "reference_index": 8,
+          "t0": 33.38,
+          "dur": 10.32,
+          "cards": [
+            {
+              "text": "アメリカの大人のほぼ",
+              "start": 0.0,
+              "end": 1.5
+            },
+            {
+              "text": "半分がもうAIを使ってて、",
+              "start": 1.5,
+              "end": 3.45
+            },
+            {
+              "text": "4人に1人近くは毎日。そこに、",
+              "start": 3.6,
+              "end": 6.42
+            },
+            {
+              "text": "自分を知ってる専属が付く。数字のある方向。",
+              "start": 6.57,
+              "end": 10.31
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "調べて、候補を並べるところまでなら、来年の今ごろには普通になってる。ここからは、私の見立て。",
-          "expression": "convinced"
+          "expression": "convinced",
+          "t0": 43.92,
+          "dur": 8.04,
+          "cards": [
+            {
+              "text": "調べて、候補を並べるところまでなら、",
+              "start": 0.0,
+              "end": 2.76
+            },
+            {
+              "text": "来年の今ごろには普通になってる。",
+              "start": 2.91,
+              "end": 5.31
+            },
+            {
+              "text": "ここからは、私の見立て。",
+              "start": 5.46,
+              "end": 8.24
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "いつもと逆に割れたね。",
-          "expression": "convinced"
+          "expression": "convinced",
+          "t0": 52.24,
+          "dur": 2.28,
+          "cards": [
+            {
+              "text": "いつもと逆に割れたね。",
+              "start": 0.0,
+              "end": 2.28
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "主流の意味が違うだけ。調べる入口なのか、買うまで任せるのか。",
-          "expression": "amused"
+          "expression": "amused",
+          "t0": 54.8,
+          "dur": 4.68,
+          "cards": [
+            {
+              "text": "主流の意味が違うだけ。調べる入口なのか、",
+              "start": 0.23,
+              "end": 3.23
+            },
+            {
+              "text": "買うまで任せるのか。",
+              "start": 3.38,
+              "end": 4.88
+            }
+          ]
         }
       ],
       "scene_id": 16,
       "narration": "沙織「じゃあ判定。お題は、これからのAIは、パーソナルAIが主流になる？」\n大輔「……僕は、「まだ眉唾」。」\n沙織「え、そっちが？」\n大輔「僕が見たかった主流は、頼んだら買うまで終わる世界。その数字は、どこにも無かった。」\n大輔「一番大きな店も閉めてる。入口だけなら、それは検索の便利版でしょ。僕の夢の大きさで測ると、今日は眉唾。悔しいけど。」\n沙織「じゃあ私は、「もうすぐ来る」。調べる入口としてなら。」\n沙織「アメリカの大人のほぼ半分がもうAIを使ってて、4人に1人近くは毎日。そこに、自分を知ってる専属が付く。数字のある方向。」\n沙織「調べて、候補を並べるところまでなら、来年の今ごろには普通になってる。ここからは、私の見立て。」\n大輔「いつもと逆に割れたね。」\n沙織「主流の意味が違うだけ。調べる入口なのか、買うまで任せるのか。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "322f0f56bf1b"
     },
     {
       "type": "closing",
@@ -894,27 +2189,99 @@
         {
           "speaker": "dreamer",
           "text": "検索がAIに置き換わる、じゃなくて、重なっていく。そこが今日の発見だった。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 0.0,
+          "dur": 5.8,
+          "cards": [
+            {
+              "text": "検索がAIに置き換わる、じゃなくて、",
+              "start": 0.0,
+              "end": 2.7
+            },
+            {
+              "text": "重なっていく。そこが今日の発見だった。",
+              "start": 2.85,
+              "end": 5.7
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "次に見るのは、使い続けた人の数と、任せてうまくいった回数。今日の判定は、10月13日時点の、私たち二人の見立てです。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 6.08,
+          "dur": 9.28,
+          "cards": [
+            {
+              "text": "次に見るのは、使い続けた人の数と、",
+              "start": 0.0,
+              "end": 2.74
+            },
+            {
+              "text": "任せてうまくいった回数。今日の判定は、",
+              "start": 2.98,
+              "end": 5.83
+            },
+            {
+              "text": "10月13日時点の、私たち二人の見立てです。",
+              "start": 5.98,
+              "end": 9.28
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
-          "expression": "excited"
+          "expression": "excited",
+          "t0": 15.64,
+          "dur": 5.0,
+          "cards": [
+            {
+              "text": "次はどんな研究が、誰かの幸せな未来を",
+              "start": 0.0,
+              "end": 3.7
+            },
+            {
+              "text": "運んでくるのか。",
+              "start": 3.85,
+              "end": 5.05
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
-          "expression": "amused"
+          "expression": "amused",
+          "t0": 20.92,
+          "dur": 7.08,
+          "cards": [
+            {
+              "text": "それが本物かどうか、",
+              "start": 0.0,
+              "end": 1.19
+            },
+            {
+              "text": "また一緒に確かめましょう。",
+              "start": 1.19,
+              "end": 2.74
+            },
+            {
+              "text": "元の発表は概要欄に載せています。",
+              "start": 2.89,
+              "end": 4.83
+            },
+            {
+              "text": "チャンネル登録して、待っていてください。",
+              "start": 4.98,
+              "end": 7.28
+            }
+          ]
         }
       ],
       "scene_id": 17,
       "narration": "大輔「検索がAIに置き換わる、じゃなくて、重なっていく。そこが今日の発見だった。」\n沙織「次に見るのは、使い続けた人の数と、任せてうまくいった回数。今日の判定は、10月13日時点の、私たち二人の見立てです。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "6d88bdd39797"
     }
   ],
   "shorts": [
@@ -931,7 +2298,7 @@
           "narrator": "dreamer",
           "narration": "AIが店を比べて、注文して、届く日をカレンダーに入れておく。",
           "expression": "excited",
-          "scene_id": 8
+          "scene_id": 14
         },
         {
           "narrator": "skeptic",
@@ -957,7 +2324,7 @@
           "narrator": "skeptic",
           "narration": "主流になるか。判定は、いつもと逆に割れた。続きは本編で。",
           "expression": "amused",
-          "scene_id": 14
+          "scene_id": 16
         }
       ]
     }
