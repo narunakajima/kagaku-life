@@ -67,20 +67,9 @@ jobs:
         if: always()
         run: |
           if [ -z "$SLACK_WEBHOOK_URL_KL" ]; then echo "Webhook 未設定"; exit 0; fi
-          {
-            echo "*KL ニュース ベスト3の下書き（$(date '+%Y-%m-%d %H:%M') JST）*"
-            echo "朝の /kl-new で仕上げます。"
-            echo
-            grep -h "ジャンルの間隔\|この回で使える枠" nightly_concern.txt 2>/dev/null || true
-            echo
-            if [ -f nightly_list.txt ]; then
-              awk '/^==== ベスト3の下書き/{f=1} /^==== 本命/{f=0} f' nightly_list.txt
-              echo "--- ニッチ・速報（要点のみ）---"
-              grep -E "^\[core|^==== (ニッチ|速報|未計測)" nightly_list.txt | tail -n +4
-            else
-              echo "（list の出力がありません。Actions のログを確認してください）"
-            fi
-          } > slack_body.txt
-          head -c 3500 slack_body.txt > slack_trim.txt
-          jq -n --rawfile t slack_trim.txt '{text: $t}' \
-            | curl -sS -X POST -H 'Content-type: application/json' --data @- "$SLACK_WEBHOOK_URL_KL"
+          if python3 kl_news_scan.py slack --note nightly_concern.txt > slack_payload.json; then
+            :
+          else
+            jq -n '{text: "KL ネタ ベスト3: 整形に失敗しました。Actions のログを確認してください。"}' > slack_payload.json
+          fi
+          curl -sS -X POST -H 'Content-type: application/json' --data @slack_payload.json "$SLACK_WEBHOOK_URL_KL"

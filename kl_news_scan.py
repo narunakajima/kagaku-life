@@ -1461,6 +1461,74 @@ def cmd_list(top: int, check_urls: bool):
     print(f"\n（ゲート通過だが注目度が低くニッチ・速報の条件も満たさない候補: {len(low)}件）")
 
 
+def cmd_slack(note_path: str):
+    """夜間実行用: ベスト3の下書きをスマホで読める Slack の Block Kit にして標準出力へ JSON で出す（2026-10-14）。"""
+    g = json.loads(GENRES_JSON.read_text(encoding="utf-8"))
+    gen = {k: v for k, v in g["genres"]} if isinstance(g["genres"], list) else dict(g["genres"])
+    vname = {"soon": "もうすぐ", "decade": "3年", "dubious": "眉唾"}
+    rows = classify(load_candidates()["items"])
+    picks, niche = best3(rows)
+    nums = "①②③"
+
+    def esc(t):
+        return (t or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+    def clip(t, n):
+        t = esc(t or "")
+        return t if len(t) <= n else t[:n - 1] + "…"
+
+    def day(c):
+        d = (c.get("announced_on") or c.get("published") or "")[:10]
+        return f"{int(d[5:7])}/{int(d[8:10])}発表" if len(d) >= 10 else ""
+
+    def card(i, r):
+        c = r["c"]
+        gi = gen.get(c.get("genre"), {})
+        title = esc(c["title"])
+        title = title if len(title) <= 60 else title[:59] + "…"
+        buzz = (f"注目{c['buzz_measured']}（{c.get('buzz_outlets', 0)}媒体"
+                f"{'・Yahoo!' if c.get('yahoo') else ''}）") if c.get("buzz_measured") is not None else "注目 未計測"
+        meta = " ・ ".join(x for x in [f"{gi.get('icon', '')}{gi.get('label', c.get('genre', '?'))}", day(c), buzz,
+                                       "健康系" if c.get("health") else ""] if x)
+        mark = {True: "✅", False: "❌", None: "⚠️"}[c.get("url_ok")] if c.get("url_status") else "⚠️"
+        label = {True: "OK", False: "リンク切れ", None: "要確認"}[c.get("url_ok")] if c.get("url_status") else "未確認"
+        src = (c.get("primary_sources") or [{}])[0].get("url", "")
+        link = f"<{src}|一次資料 {label}>" if src else f"一次資料 {label}"
+        ev = c.get("expected_verdicts") or {}
+        verdict = (f"大輔 {vname.get(ev.get('dreamer'), '?')} ／ 沙織 {vname.get(ev.get('skeptic'), '?')}") if ev else ""
+        lines = [f"*{nums[i]} {title}*", meta, f"💬 {esc(c.get('entry_question'))}",
+                 f"🔎 ツッコミ: {clip(c.get('tsukkomi_material'), 90)}"]
+        if verdict:
+            lines.append(f"⚖️ 予想判定: {verdict}")
+        if c.get("deja_vu_note"):
+            lines.append(f"⚠️ 既視感: {clip(c['deja_vu_note'], 80)}")
+        lines.append(f"{mark} {link}")
+        return {"type": "section", "text": {"type": "mrkdwn", "text": "\n".join(lines)[:2900]}}
+
+    blocks = [{"type": "header", "text": {"type": "plain_text", "text": f"KL ネタ ベスト3の下書き　{datetime.now().strftime('%-m/%-d')}"}}]
+    note = Path(note_path) if note_path else None
+    if note and note.exists():
+        keep = [ln.strip() for ln in note.read_text(encoding="utf-8").splitlines()
+                if ln.startswith(("ジャンルの間隔", "この回で使える枠", "次の回"))]
+        if keep:
+            blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": esc("\n".join(keep))[:1900]}]})
+    if not picks:
+        blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": "今夜は本命なし（実測の注目度3以上でゲートを通った候補がありません）。"}})
+    for i, r in enumerate(picks):
+        blocks.append({"type": "divider"})
+        blocks.append(card(i, r))
+    if len(picks) < 3 and picks:
+        blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": f"本命が{len(picks)}件のみ（3件に満たないまま出しています）"}]})
+    if niche:
+        blocks.append({"type": "divider"})
+        blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": "ニッチ（注目度は低い）: " + esc(niche["c"]["title"][:60])}]})
+    brk = [r for r in rows if r["lane"] == "速報"][:3]
+    if brk:
+        blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": "速報（48時間後に再計測）: " + " ／ ".join(esc(r["c"]["title"][:28]) for r in brk)}]})
+    blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": "朝の /kl-new で仕上げます（既視感・競合動画・一次資料の確認）"}]})
+    print(json.dumps({"text": "KL ネタ ベスト3の下書き", "blocks": blocks}, ensure_ascii=False))
+
+
 LANE_ORDER = {"本命": 0, "速報": 1, "ニッチ": 2, "注目度低": 3, "未計測": 4}
 
 
@@ -1486,7 +1554,7 @@ def cmd_list_by_genre(per: int):
 
 def main():
     ap = argparse.ArgumentParser(description="ニュース起点のネタ選定（collect → score → tag → enrich → buzz → list）")
-    ap.add_argument("command", choices=["collect", "score", "list", "tag", "enrich", "buzz", "check-urls"])
+    ap.add_argument("command", choices=["collect", "score", "list", "tag", "enrich", "buzz", "check-urls", "slack"])
     ap.add_argument("--days", type=int, default=21)
     ap.add_argument("--top", type=int, default=15)
     ap.add_argument("--by-genre", action="store_true", help="list: 5ジャンルごとに上位を出す（--top はジャンルあたりの件数）")
@@ -1498,8 +1566,11 @@ def main():
     ap.add_argument("--dry-run", action="store_true", help="buzz: 測るが保存しない / score: 採点する候補を表示するだけ（課金なし）")
     ap.add_argument("--sources", type=Path, default=None, help="collect: news_sources.json の代わりに使う設定（試験用）")
     ap.add_argument("--no-gemini", action="store_true", help="collect: Gemini（話題の補完・分野の絞り込み）を呼ばない（試験用）")
+    ap.add_argument("--note", default="", help="slack: ジャンルの間隔などを拾うテキスト（kl_concern_select.py の出力）")
     args = ap.parse_args()
-    if args.command == "collect":
+    if args.command == "slack":
+        cmd_slack(args.note)
+    elif args.command == "collect":
         cmd_collect(args.days, args.sources, args.no_gemini)
     elif args.command == "score":
         cmd_score(args.top, args.dry_run)
