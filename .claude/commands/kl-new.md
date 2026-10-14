@@ -401,7 +401,9 @@ python3 kl_dialogue.py check --episode kl{NNN}
   （type の既定値と違う並びにするときは、各シーンに `bgm_role` を明示する。例: ツッコミの後の2本目の `paper` は main、
   後半の `dream` は main か outro）。intro=好奇心・導入、main=軽い緊張感（ツッコミ・答え合わせ）、outro=判定と余韻
 - `verdict` と `closing` は `"image_asset": "base_cafe"`（二人がいつも論文を持ち寄るカフェの固定背景、`assets/base_cafe.png`）
-  を使う。毎回同じ場所に戻ってくることで、番組の「ホーム」を作る
+  を使う。毎回同じ場所に戻ってくることで、番組の「ホーム」を作る。**固定背景は2種類（2026-10-14〜）:** `verdict` は `base_cafe`
+  （窓側の席）、`closing` は `base_cafe_b`（同じカフェをカウンター側から見た別角度、`assets/base_cafe_b.png`）。判定と締めで
+  約75秒同じ絵が続くのを避けるため（なるさんの指摘）。`closing` に `"image_asset": "base_cafe_b"` を書く
 
 **構成テンプレート（`template` に記録する。直近の回と同じテンプレートが3回続かないようにする）:**
 

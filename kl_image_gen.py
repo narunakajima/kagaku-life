@@ -334,6 +334,9 @@ ASSET_DESCRIPTIONS = {
     "base_cafe": ("A cozy small café table by a large window in the early evening: two ceramic coffee cups, "
                   "printed research papers, a tablet and a small potted plant on a wooden table, two empty chairs, "
                   "warm pendant lamp light, blurred dusk city lights outside. No people."),
+    "base_cafe_b": ("The same café seen from the counter side in the early evening: an espresso machine and a coffee grinder on a "
+                    "wooden counter, shelves with cups and coffee jars, a warm pendant lamp, two ceramic coffee cups and printed "
+                    "research papers on the wooden table in front, blurred dusk city lights in the window at the edges. No people."),
 }
 
 
