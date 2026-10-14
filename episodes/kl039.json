@@ -1,0 +1,2062 @@
+{
+  "episode_id": "kl039",
+  "format": "dialogue",
+  "template": "basic",
+  "source_type": "news",
+  "news_date": "2026-10-08",
+  "verdict_as_of": "2026-10-14",
+  "genre": "food_health",
+  "health": true,
+  "episode_title": "ご飯の前に油を摂ると血糖値が上がりにくい、は本当か（10月8日発表、京大ほか・マウス）",
+  "youtube_title": "ご飯の前に油で血糖値が上がりにくい？ 京大のマウス研究を読む（10月8日発表）",
+  "entry_question": "ご飯の前に油を摂ると、血糖値は上がりにくくなるって本当？",
+  "verdict": {
+    "dreamer": "decade",
+    "skeptic": "dubious"
+  },
+  "hook_lines": [
+    "ご飯の前にオリーブ油",
+    "血糖値は上がりにくい？"
+  ],
+  "thumbnail_headline": "ご飯の前に油で\n血糖値が緩やか？",
+  "thumbnail_exprs": {
+    "dreamer": "excited",
+    "skeptic": "doubt"
+  },
+  "thumbnail_prompt": "Calm, bright midday editorial illustration of a Japanese home dining table seen from the front: a light wood tabletop running the full width of the frame, a soft pale cream wall behind it, a window with gentle daylight at the far left and a small potted green plant at the far right, all continuous across the whole frame with no panels, boxes, borders or abrupt colour changes. Keep the left 30%, the right 30% and the top 35% of the frame quiet and uncluttered (soft gradient only), but the table and wall must visibly continue unbroken behind them. In the horizontal center, in the vertical band between 38% and 80% of the frame height: a small clear glass dish of golden olive oil with a silver spoon resting beside it on the left, and a white bowl of steaming white rice on the right, with a plain wooden pair of chopsticks between them. No people, no hands, no labels, no logos, no brand marks, no readable text, no letters, no numbers.",
+  "youtube_tags": [
+    "食べる順番",
+    "血糖値",
+    "食後血糖",
+    "オリーブ油",
+    "脂質",
+    "胃排出",
+    "GLP-1",
+    "グルカゴン",
+    "京都大学",
+    "マウス研究",
+    "食と健康",
+    "科学ニュース"
+  ],
+  "depicts_real_product": false,
+  "references": [
+    {
+      "title": "Olive Oil Before Oral Glucose Delays Gastric Emptying and Lowers Glycemia Through Partially Redundant Glucagon and GLP-1 Signaling in Mice",
+      "authors": [],
+      "year": 2026,
+      "venue": "Diabetes（2026-10-08オンライン掲載）",
+      "url": "https://doi.org/10.2337/db26-0531",
+      "is_preprint": false,
+      "institution": "京都大学（日本）ほかの共同研究グループ",
+      "source_kind": "paper"
+    },
+    {
+      "title": "「食べる順番」が食後血糖を左右する仕組みを解明（京都大学 研究成果・発表資料PDF）",
+      "authors": [],
+      "year": 2026,
+      "venue": "京都大学ニュース（2026-10-09）",
+      "url": "https://www.kyoto-u.ac.jp/ja/research-news/2026-10-09",
+      "is_preprint": false,
+      "institution": "京都大学",
+      "source_kind": "press_release"
+    }
+  ],
+  "youtube_description": "2026年10月8日（米国東部時間）、京都大学などの共同研究グループの論文が、国際学術誌『Diabetes』にオンライン掲載されました（京都大学の発表は10月9日）。マウスで、オリーブ油をブドウ糖より先に与えると、胃から腸への移動（胃排出）が遅くなり、糖をとった後の早い時間の血糖値の上がり方が抑えられた、という研究です。では、「ご飯の前に油を摂ると、血糖値は上がりにくくなる」は本当なのか。夢語り担当の大輔と、ツッコミ担当の沙織が、京都大学の発表資料を読んで判定します。\n\n■ この回の判定（2026年10月14日時点の、二人の見立て）\nお題: ご飯の前に油を摂ると、血糖値は上がりにくくなるのか\n大輔: 3年はかかる（仕組みはマウスで見えたが、普通の食事をとるヒトで同じかは試験をしないと分からない。暮らしの中で語れるようになるまで3年はかかる、というのは大輔の見立てで、発表資料には書かれていません）\n沙織: まだ眉唾（研究が眉唾なのではなく、「油を先に摂れば血糖値が上がりにくい」という言い方が、まだ眉唾。マウスの実験で、低くなったのは早い時間の血糖値で、0〜120分の曲線下面積には差がなかった。ヒトでの検証はこれから、と発表資料自身が書いています）\n\n■ 研究の要約（京都大学の発表資料の記載に基づく）\n・絶食させた、糖尿病のないマウスで、口からブドウ糖を与える試験を3つの条件で比較: (1)水を与え、15分後にブドウ糖（コントロール） (2)オリーブ油（体重1kgあたり5mL）を与え、15分後にブドウ糖（前負荷） (3)ブドウ糖を与え、15分後にオリーブ油（後負荷）\n・血糖値、インスリン、グルカゴン、GIP、GLP-1、胃排出を評価。胃排出は、アセトアミノフェンが血中に現れる速さを指標にした\n・前負荷では、コントロール・後負荷と比べて、ブドウ糖15分後と30分後の血糖値、0〜60分の血糖曲線下面積（AUC）が低下し、胃排出も遅くなった。一方、0〜120分の血糖AUCには差がなく、主に食後早期の急な血糖上昇を緩やかにする効果とされる\n・前負荷で、早い時間のグルカゴン・GIP・GLP-1の分泌が増えた\n・グルカゴンとGLP-1をともに作れないマウス（Gcg欠損）では、効果と胃排出の遅れが見られなくなった。GLP-1受容体の欠損や、どちらか一方の受容体だけの遮断では効果はおおむね保たれ、両方を同時に遮断すると効果は弱まり、胃排出の遅れは検出されなくなった（両経路が部分的に補い合うことを示唆）\n・両側の横隔膜下迷走神経を結紮すると、グルカゴンとGLP-1の分泌は保たれ、むしろ増える場合もあったが、効果は弱まり、胃排出の遅れは検出されなくなった（迷走神経がホルモンの合図を胃の動きにつなぐ可能性）\n・2型糖尿病のモデルマウス（NSY）と、インスリン分泌を著しく低下させたモデルマウス（STZ）でも、早い時間の血糖上昇の抑制と胃排出の遅れが見られた\n・アマニ油とラードでも同様の効果、ココナッツ油でも抑える傾向\n・「食べる順番」で食後血糖の上昇が抑えられること自体は、これまでの研究で示されてきた。今回新しいのは、脂質を先に摂ったときの仕組み\n\n■ 発表資料が書いている限界と今後\n・マウスに脂質とブドウ糖を投与した実験であり、通常の食事をとるヒトで同じ仕組みや効果が認められるかは、今後の検証が必要\n・現在、たんぱく質の前投与の影響も検討中\n・使ったマウスの数は発表資料に記載がありません\n・資金: 日本学術振興会 科学研究費助成事業、日本糖尿病協会 研究助成、鈴木謙三記念医科学応用研究財団 研究助成、日本医療研究開発機構（AMED）\n\n■ 動画の中で「研究の外の話」として触れたこと\n・マウスの油の量（体重1kgあたり5mL）は、動物とヒトで単純に換算できないため、ヒトでの量には言い換えていません\n・先に摂っても、油のカロリーがなくなるわけではありません\n\n■ 確認した一次資料\n・京都大学の研究成果の発表資料（2026年10月9日）: 研究の方法（3つの条件、油の量、使ったモデルマウス、胃排出の測り方）、結果、仕組み、限界と今後の展開、資金。この動画の数字と事実は、発表資料の記載に基づきます\n・論文（Diabetes、2026年10月8日オンライン掲載、DOI: 10.2337/db26-0531）\n\n※この動画は研究結果の紹介で、健康上の助言ではありません。食べ方や油の摂り方を勧めるものではありません。\n※この回の元になった論文は、専門家の審査を経て学術誌に掲載されたものです。\n\n■ 参考（一次資料）\n[1] Olive Oil Before Oral Glucose Delays Gastric Emptying and Lowers Glycemia Through Partially Redundant Glucagon and GLP-1 Signaling in Mice. Diabetes (2026). https://doi.org/10.2337/db26-0531\n[2] 京都大学「『食べる順番』が食後血糖を左右する仕組みを解明」(2026-10-09) https://www.kyoto-u.ac.jp/ja/research-news/2026-10-09\n\n#食べる順番 #血糖値 #科学ニュース",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 5,
+      "ken_burns": "zoom_in",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "ご飯の前に油を摂ると、血糖値は上がりにくくなるって本当？",
+          "expression": "doubt",
+          "tag": "question",
+          "t0": 0.0,
+          "dur": 4.08,
+          "cards": [
+            {
+              "text": "ご飯の前に油を摂ると、血糖値は上がりにくく",
+              "start": 0.0,
+              "end": 3.0
+            },
+            {
+              "text": "なるって本当？",
+              "start": 3.15,
+              "end": 4.13
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「ご飯の前に油を摂ると、血糖値は上がりにくくなるって本当？」",
+      "narrator": "dialogue",
+      "lines_hash": "1eedaebc40f9"
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 6,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "京都大学の研究。油を先にしたら、上がり方が緩やかに！",
+          "expression": "excited",
+          "tone": "excited, like breaking news",
+          "reference_index": 1,
+          "t0": 0.0,
+          "dur": 4.76,
+          "cards": [
+            {
+              "text": "京都大学の研究。油を先にしたら、",
+              "start": 0.0,
+              "end": 2.84
+            },
+            {
+              "text": "上がり方が緩やかに！",
+              "start": 2.99,
+              "end": 4.53
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「京都大学の研究。油を先にしたら、上がり方が緩やかに！」",
+      "narrator": "dialogue",
+      "lines_hash": "5e0a3d133bc1"
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 12,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "ただしマウス。2時間全体で見ると、差はなかった。",
+          "expression": "doubt",
+          "tone": "dry",
+          "reference_index": 1,
+          "t0": 0.0,
+          "dur": 3.96,
+          "cards": [
+            {
+              "text": "ただしマウス。2時間全体で見ると、",
+              "start": 0.0,
+              "end": 2.82
+            },
+            {
+              "text": "差はなかった。",
+              "start": 2.97,
+              "end": 4.02
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「ただしマウス。2時間全体で見ると、差はなかった。」",
+      "narrator": "dialogue",
+      "lines_hash": "18f0bf4fdcc4"
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 13,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "判定は割れた。カギは、油を摂る『順番』。",
+          "expression": "thinking",
+          "t0": 0.0,
+          "dur": 4.52,
+          "cards": [
+            {
+              "text": "判定は割れた。カギは、油を摂る『順番』。",
+              "start": 0.0,
+              "end": 4.52
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「判定は割れた。カギは、油を摂る『順番』。」",
+      "narrator": "dialogue",
+      "lines_hash": "05a2a566f015"
+    },
+    {
+      "scene_id": 5,
+      "type": "setup",
+      "bgm_role": "intro",
+      "reference_index": 1,
+      "image_prompt": "Midday inside a bright Japanese home dining room (clear daylight through a window, a blue sky visible outside). A Japanese woman in her early fifties with shoulder-length black hair lightly streaked with gray, loosely tied at the nape, no glasses, wearing a soft oatmeal-beige knit sweater, sits at a light wood dining table in front of a simple home-style lunch: a bowl of white rice, a bowl of miso soup, a small plate of green salad and a small clear glass dish of golden olive oil. She looks at the rice bowl and the salad plate thoughtfully, chopsticks resting on a holder, as if deciding what to eat first. No logos, no brand marks, no readable text, no numbers.",
+      "ken_burns": "zoom_in",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "健診で血糖値が高めって言われて、食べ方を気にしてる人、周りにいない？",
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 4.88,
+          "cards": [
+            {
+              "text": "健診で血糖値が高めって言われて、",
+              "start": 0.0,
+              "end": 2.23
+            },
+            {
+              "text": "食べ方を気にしてる人、周りにいない？",
+              "start": 2.4,
+              "end": 4.9
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "いるね。で、よく聞くのが、野菜から先に食べる、っていう話。",
+          "expression": "neutral",
+          "t0": 5.16,
+          "dur": 3.96,
+          "cards": [
+            {
+              "text": "いるね。で、よく聞くのが、",
+              "start": 0.0,
+              "end": 1.82
+            },
+            {
+              "text": "野菜から先に食べる、",
+              "start": 1.82,
+              "end": 3.22
+            },
+            {
+              "text": "っていう話。",
+              "start": 3.37,
+              "end": 4.16
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それ、『食べる順番』の話。",
+          "expression": "neutral",
+          "reference_index": 1,
+          "t0": 9.4,
+          "dur": 2.16,
+          "cards": [
+            {
+              "text": "それ、『食べる順番』の話。",
+              "start": 0.0,
+              "end": 2.16
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "京都大学の発表資料によると、野菜やたんぱく質、脂質を炭水化物より先に摂ると、食後の血糖値の上がり方が抑えられることは、これまでの研究で示されてきた。",
+          "expression": "thinking",
+          "reference_index": 1,
+          "t0": 11.78,
+          "dur": 11.88,
+          "cards": [
+            {
+              "text": "京都大学の発表資料によると、",
+              "start": 0.0,
+              "end": 2.1
+            },
+            {
+              "text": "野菜やたんぱく質、",
+              "start": 2.32,
+              "end": 3.84
+            },
+            {
+              "text": "脂質を炭水化物より先に摂ると、",
+              "start": 3.84,
+              "end": 6.38
+            },
+            {
+              "text": "食後の血糖値の上がり方が抑えられることは、",
+              "start": 6.53,
+              "end": 9.68
+            },
+            {
+              "text": "これまでの研究で示されてきた。",
+              "start": 9.83,
+              "end": 12.08
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "前の研究の中身は、今日の資料には出てこないね。じゃあ、今回は何が新しいの？",
+          "expression": "doubt",
+          "t0": 23.94,
+          "dur": 5.64,
+          "cards": [
+            {
+              "text": "前の研究の中身は、",
+              "start": 0.0,
+              "end": 1.33
+            },
+            {
+              "text": "今日の資料には出てこないね。",
+              "start": 1.33,
+              "end": 3.41
+            },
+            {
+              "text": "じゃあ、今回は何が新しいの？",
+              "start": 3.56,
+              "end": 5.7
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "脂質を先に摂ると、なぜ効くのか。その仕組みを、マウスで解いた。",
+          "expression": "excited",
+          "reference_index": 1,
+          "t0": 29.86,
+          "dur": 4.88,
+          "cards": [
+            {
+              "text": "脂質を先に摂ると、なぜ効くのか。",
+              "start": 0.28,
+              "end": 2.68
+            },
+            {
+              "text": "その仕組みを、マウスで解いた。",
+              "start": 2.83,
+              "end": 5.08
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "マウスね。先に言っとく。そこ、あとで突っつくから。",
+          "expression": "amused",
+          "tone": "teasing, wry",
+          "t0": 35.02,
+          "dur": 3.84,
+          "cards": [
+            {
+              "text": "マウスね。先に言っとく。そこ、",
+              "start": 0.0,
+              "end": 2.4
+            },
+            {
+              "text": "あとで突っつくから。",
+              "start": 2.55,
+              "end": 4.03
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "どうぞ。載ったのは、ダイアビーティーズという国際学術誌。10月8日の掲載。",
+          "expression": "neutral",
+          "reference_index": 1,
+          "display": "どうぞ。載ったのは、『Diabetes』という国際学術誌。10月8日の掲載。",
+          "t0": 39.14,
+          "dur": 6.12,
+          "cards": [
+            {
+              "text": "どうぞ。載ったのは、『Diabetes』",
+              "start": 0.0,
+              "end": 3.22
+            },
+            {
+              "text": "という国際学術誌。10月8日の掲載。",
+              "start": 3.22,
+              "end": 6.12
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「健診で血糖値が高めって言われて、食べ方を気にしてる人、周りにいない？」\n沙織「いるね。で、よく聞くのが、野菜から先に食べる、っていう話。」\n大輔「それ、『食べる順番』の話。」\n大輔「京都大学の発表資料によると、野菜やたんぱく質、脂質を炭水化物より先に摂ると、食後の血糖値の上がり方が抑えられることは、これまでの研究で示されてきた。」\n沙織「前の研究の中身は、今日の資料には出てこないね。じゃあ、今回は何が新しいの？」\n大輔「脂質を先に摂ると、なぜ効くのか。その仕組みを、マウスで解いた。」\n沙織「マウスね。先に言っとく。そこ、あとで突っつくから。」\n大輔「どうぞ。載ったのは、ダイアビーティーズという国際学術誌。10月8日の掲載。」",
+      "narrator": "dialogue",
+      "lines_hash": "087e4b198ef3"
+    },
+    {
+      "scene_id": 6,
+      "type": "paper",
+      "bgm_role": "intro",
+      "reference_index": 1,
+      "image_prompt": "A bright, clean university research laboratory in Kyoto, Japan, during the daytime (clear daylight through large windows). Two Japanese researchers in white lab coats and blue nitrile gloves work at a clean lab bench: a man in his forties with short black hair and rimless glasses, and a woman in her thirties with black hair tied back in a low ponytail. On the bench: several small clear plastic cages each holding a white laboratory mouse, a small clear glass vial of golden olive oil, a small beaker of clear water, a small beaker of clear glucose solution, and a handheld blood glucose meter with a blank display. Calm, careful, professional mood. No readable text, no numbers, no logos.",
+      "ken_burns": "pan_zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "研究は、京都大学を中心にした共同研究グループ。",
+          "expression": "neutral",
+          "reference_index": 1,
+          "t0": 0.0,
+          "dur": 4.08,
+          "cards": [
+            {
+              "text": "研究は、",
+              "start": 0.0,
+              "end": 0.63
+            },
+            {
+              "text": "京都大学を中心にした共同研究グループ。",
+              "start": 0.63,
+              "end": 3.62
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "絶食させた、糖尿病のないマウスに、口から飲ませる順番を、3通りで比べた。",
+          "expression": "neutral",
+          "reference_index": 1,
+          "t0": 4.3,
+          "dur": 6.04,
+          "cards": [
+            {
+              "text": "絶食させた、糖尿病のないマウスに、",
+              "start": 0.0,
+              "end": 2.58
+            },
+            {
+              "text": "口から飲ませる順番を、3通りで比べた。",
+              "start": 2.73,
+              "end": 5.79
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "1つ目は、水を飲ませて、15分後にブドウ糖。これが基準。",
+          "expression": "neutral",
+          "reference_index": 1,
+          "t0": 10.56,
+          "dur": 4.68,
+          "cards": [
+            {
+              "text": "1つ目は、水を飲ませて、15分後にブドウ糖。",
+              "start": 0.17,
+              "end": 3.47
+            },
+            {
+              "text": "これが基準。",
+              "start": 3.62,
+              "end": 4.52
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "2つ目は、オリーブ油を先に飲ませて、15分後にブドウ糖。",
+          "expression": "neutral",
+          "reference_index": 1,
+          "t0": 15.46,
+          "dur": 4.92,
+          "cards": [
+            {
+              "text": "2つ目は、オリーブ油を先に飲ませて、",
+              "start": 0.0,
+              "end": 2.92
+            },
+            {
+              "text": "15分後にブドウ糖。",
+              "start": 3.07,
+              "end": 5.07
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "3つ目は逆。ブドウ糖が先で、15分後にオリーブ油。",
+          "expression": "neutral",
+          "reference_index": 1,
+          "t0": 20.6,
+          "dur": 4.16,
+          "cards": [
+            {
+              "text": "3つ目は逆。ブドウ糖が先で、",
+              "start": 0.0,
+              "end": 2.24
+            },
+            {
+              "text": "15分後にオリーブ油。",
+              "start": 2.39,
+              "end": 4.04
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "順番だけを入れ替えたわけね。で、何を測ったの？",
+          "expression": "thinking",
+          "t0": 25.04,
+          "dur": 3.36,
+          "cards": [
+            {
+              "text": "順番だけを入れ替えたわけね。で、",
+              "start": 0.0,
+              "end": 2.23
+            },
+            {
+              "text": "何を測ったの？",
+              "start": 2.38,
+              "end": 3.36
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "血糖値とホルモン。それから、胃の中身が腸へ送り出される速さ。",
+          "expression": "neutral",
+          "reference_index": 1,
+          "t0": 28.68,
+          "dur": 5.0,
+          "cards": [
+            {
+              "text": "血糖値とホルモン。それから、",
+              "start": 0.0,
+              "end": 2.1
+            },
+            {
+              "text": "胃の中身が腸へ送り出される速さ。",
+              "start": 2.25,
+              "end": 4.81
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "胃の中身なんて、どうやって測るの？",
+          "expression": "surprised",
+          "t0": 33.96,
+          "dur": 2.72,
+          "cards": [
+            {
+              "text": "胃の中身なんて、どうやって測るの？",
+              "start": 0.0,
+              "end": 2.72
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "アセトアミノフェンっていう薬が、血液に現れる速さを目印にしてる。",
+          "expression": "neutral",
+          "reference_index": 1,
+          "t0": 36.96,
+          "dur": 4.72,
+          "cards": [
+            {
+              "text": "アセトアミノフェンっていう薬が、",
+              "start": 0.0,
+              "end": 2.28
+            },
+            {
+              "text": "血液に現れる速さを目印にしてる。",
+              "start": 2.43,
+              "end": 4.92
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "なるほど。胃の出口の渋滞を、間接的に見るわけね。",
+          "expression": "amused",
+          "t0": 41.96,
+          "dur": 4.48,
+          "cards": [
+            {
+              "text": "なるほど。胃の出口の渋滞を、",
+              "start": 0.48,
+              "end": 2.74
+            },
+            {
+              "text": "間接的に見るわけね。",
+              "start": 2.89,
+              "end": 4.39
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「研究は、京都大学を中心にした共同研究グループ。」\n大輔「絶食させた、糖尿病のないマウスに、口から飲ませる順番を、3通りで比べた。」\n大輔「1つ目は、水を飲ませて、15分後にブドウ糖。これが基準。」\n大輔「2つ目は、オリーブ油を先に飲ませて、15分後にブドウ糖。」\n大輔「3つ目は逆。ブドウ糖が先で、15分後にオリーブ油。」\n沙織「順番だけを入れ替えたわけね。で、何を測ったの？」\n大輔「血糖値とホルモン。それから、胃の中身が腸へ送り出される速さ。」\n沙織「胃の中身なんて、どうやって測るの？」\n大輔「アセトアミノフェンっていう薬が、血液に現れる速さを目印にしてる。」\n沙織「なるほど。胃の出口の渋滞を、間接的に見るわけね。」",
+      "narrator": "dialogue",
+      "lines_hash": "72b68c3a57f7"
+    },
+    {
+      "scene_id": 7,
+      "type": "dream",
+      "bgm_role": "intro",
+      "reference_index": 1,
+      "image_prompt": "A bright Japanese home dining table at noon (strong clear midday daylight through the window, blue sky outside). A Japanese woman in her early fifties with shoulder-length black hair lightly streaked with gray, loosely tied at the nape, no glasses, wearing a soft oatmeal-beige knit sweater, sits relaxed and smiling, holding a small silver spoon above a small clear glass dish of golden olive oil, before a simple home-style lunch of a bowl of white rice, miso soup and a small plate of green salad. Warm, cheerful, slightly idealized mood. No logos, no brand marks, no readable text, no numbers.",
+      "ken_burns": "zoom_in",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "結果。油が先だと、ブドウ糖のあとの上がり方が抑えられた。",
+          "expression": "excited",
+          "reference_index": 1,
+          "t0": 0.0,
+          "dur": 5.24,
+          "cards": [
+            {
+              "text": "結果。油が先だと、ブドウ糖のあとの上がり",
+              "start": 0.0,
+              "end": 3.82
+            },
+            {
+              "text": "方が抑えられた。",
+              "start": 3.97,
+              "end": 5.17
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "想像してみてよ。",
+          "expression": "excited",
+          "pause": 0.4,
+          "t0": 5.64,
+          "dur": 1.88,
+          "cards": [
+            {
+              "text": "想像してみてよ。",
+              "start": 0.0,
+              "end": 1.88
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "もしヒトでも同じなら。食後の血糖値が気になる50代の人が、昼ご飯の前に、オリーブ油をひと口。それだけで、食後の血糖値がまるごと低くなる。",
+          "expression": "excited",
+          "tag": "life_scene",
+          "tone": "fast, getting carried away",
+          "t0": 7.74,
+          "dur": 10.52,
+          "cards": [
+            {
+              "text": "もしヒトでも同じなら。食後の血糖値が気に",
+              "start": 0.0,
+              "end": 3.16
+            },
+            {
+              "text": "なる50代の人が、昼ご飯の前に、",
+              "start": 3.31,
+              "end": 5.68
+            },
+            {
+              "text": "オリーブ油をひと口。それだけで、",
+              "start": 5.83,
+              "end": 8.2
+            },
+            {
+              "text": "食後の血糖値がまるごと低くなる。",
+              "start": 8.35,
+              "end": 10.72
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "薬じゃなくて、台所にあるもので、だよ！",
+          "expression": "excited",
+          "tone": "excited, fast",
+          "t0": 18.48,
+          "dur": 3.4,
+          "cards": [
+            {
+              "text": "薬じゃなくて、台所にあるもので、だよ！",
+              "start": 0.0,
+              "end": 3.4
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ちょっと待って。今、『まるごと』って言った？",
+          "expression": "doubt",
+          "react": "surprised",
+          "pause": 0.4,
+          "t0": 22.28,
+          "dur": 2.88,
+          "cards": [
+            {
+              "text": "ちょっと待って。今、『まるごと』",
+              "start": 0.0,
+              "end": 2.06
+            },
+            {
+              "text": "って言った？",
+              "start": 2.21,
+              "end": 2.95
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、何が下がったのか、ちゃんと見よう。",
+          "expression": "doubt",
+          "t0": 25.38,
+          "dur": 2.44,
+          "cards": [
+            {
+              "text": "じゃあ、何が下がったのか、ちゃんと見よう。",
+              "start": 0.0,
+              "end": 2.44
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「結果。油が先だと、ブドウ糖のあとの上がり方が抑えられた。」\n大輔「想像してみてよ。」\n大輔「もしヒトでも同じなら。食後の血糖値が気になる50代の人が、昼ご飯の前に、オリーブ油をひと口。それだけで、食後の血糖値がまるごと低くなる。」\n大輔「薬じゃなくて、台所にあるもので、だよ！」\n沙織「ちょっと待って。今、『まるごと』って言った？」\n沙織「じゃあ、何が下がったのか、ちゃんと見よう。」",
+      "narrator": "dialogue",
+      "lines_hash": "65f8216114ab"
+    },
+    {
+      "scene_id": 8,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 1,
+      "image_prompt": "A simple, clean flat infographic on a plain light background with a short title at the very top reading exactly 「油を先にした場合（ほかの2つの順番と比べて）」. Below the title, three rounded horizontal rows stacked vertically, each with a label on the left and a result badge on the right, in this order: row 1 label 「ブドウ糖15分後・30分後の血糖値」 with a warm coral badge 「低下」; row 2 label 「0〜60分の曲線下面積」 with a warm coral badge 「低下」; row 3 label 「0〜120分の曲線下面積」 with a plain gray badge 「差なし」. Teal row backgrounds, coral only for the two 「低下」 badges, gray for the 「差なし」 badge. No bars, no graphs, no axes. Make the whole chart compact so that everything sits within the top 70 percent of the picture, with a large empty light area at the bottom (the lower 30 percent of the picture must be completely empty). Do not add any other text, numbers, icons or logos.",
+      "ken_burns": "static",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "油が先で下がったのは、ブドウ糖の15分後と30分後の血糖値。",
+          "expression": "neutral",
+          "reference_index": 1,
+          "t0": 0.0,
+          "dur": 4.88,
+          "cards": [
+            {
+              "text": "油が先で下がったのは、ブドウ糖の15分",
+              "start": 0.0,
+              "end": 3.08
+            },
+            {
+              "text": "後と30分後の血糖値。",
+              "start": 3.23,
+              "end": 5.03
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それから、最初の60分の曲線下面積。その間の血糖値の高さの、合計みたいなもの。",
+          "expression": "neutral",
+          "reference_index": 1,
+          "t0": 5.1,
+          "dur": 6.64,
+          "cards": [
+            {
+              "text": "それから、最初の60分の曲線下面積。",
+              "start": 0.0,
+              "end": 3.34
+            },
+            {
+              "text": "その間の血糖値の高さの、合計みたいなもの。",
+              "start": 3.49,
+              "end": 6.64
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ほら、ちゃんと下がってる！",
+          "expression": "excited",
+          "t0": 12.02,
+          "dur": 2.32,
+          "cards": [
+            {
+              "text": "ほら、ちゃんと下がってる！",
+              "start": 0.0,
+              "end": 2.32
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、120分まで広げると？",
+          "expression": "doubt",
+          "pause": 0.5,
+          "t0": 14.84,
+          "dur": 2.52,
+          "cards": [
+            {
+              "text": "で、120分まで広げると？",
+              "start": 0.0,
+              "end": 2.52
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "0分から120分の曲線下面積は、差なし。",
+          "expression": "doubt",
+          "reference_index": 1,
+          "display": "0〜120分の曲線下面積は、差なし。",
+          "t0": 17.58,
+          "dur": 3.64,
+          "cards": [
+            {
+              "text": "0〜120分の曲線下面積は、差なし。",
+              "start": 0.0,
+              "end": 3.64
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "え……じゃあ、2時間全体では同じ？",
+          "expression": "surprised",
+          "pause": 0.4,
+          "t0": 21.62,
+          "dur": 3.08,
+          "cards": [
+            {
+              "text": "え……じゃあ、2時間全体では同じ？",
+              "start": 0.0,
+              "end": 3.08
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "発表資料の言葉だと、早い時間の急な上昇を、緩やかにする効果。山はなだらかでも、2時間の合計には差がなかった。",
+          "expression": "neutral",
+          "reference_index": 1,
+          "t0": 24.98,
+          "dur": 9.4,
+          "cards": [
+            {
+              "text": "発表資料の言葉だと、早い時間の急な上昇を、",
+              "start": 0.0,
+              "end": 4.02
+            },
+            {
+              "text": "緩やかにする効果。山はなだらかでも、",
+              "start": 4.17,
+              "end": 6.87
+            },
+            {
+              "text": "2時間の合計には差がなかった。",
+              "start": 7.02,
+              "end": 9.27
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "『まるごと低く』は、言い過ぎだったか……",
+          "expression": "deflated",
+          "tone": "sheepish, slower",
+          "pause": 0.4,
+          "t0": 34.78,
+          "dur": 3.32,
+          "cards": [
+            {
+              "text": "『まるごと低く』は、言い過ぎだったか……",
+              "start": 0.0,
+              "end": 3.32
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "急な山がなだらかになる、だけでも十分面白いけどね。",
+          "expression": "amused",
+          "t0": 38.38,
+          "dur": 3.96,
+          "cards": [
+            {
+              "text": "急な山がなだらかになる、",
+              "start": 0.0,
+              "end": 1.8
+            },
+            {
+              "text": "だけでも十分面白いけどね。",
+              "start": 1.8,
+              "end": 3.75
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「油が先で下がったのは、ブドウ糖の15分後と30分後の血糖値。」\n沙織「それから、最初の60分の曲線下面積。その間の血糖値の高さの、合計みたいなもの。」\n大輔「ほら、ちゃんと下がってる！」\n沙織「で、120分まで広げると？」\n沙織「0分から120分の曲線下面積は、差なし。」\n大輔「え……じゃあ、2時間全体では同じ？」\n沙織「発表資料の言葉だと、早い時間の急な上昇を、緩やかにする効果。山はなだらかでも、2時間の合計には差がなかった。」\n大輔「『まるごと低く』は、言い過ぎだったか……」\n沙織「急な山がなだらかになる、だけでも十分面白いけどね。」",
+      "narrator": "dialogue",
+      "lines_hash": "b044b0bcdbb2"
+    },
+    {
+      "scene_id": 9,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 1,
+      "image_prompt": "A simple, clean flat infographic on a plain light background with a short title at the very top reading exactly 「飲ませた順番（マウス）」. Below the title, three horizontal rows stacked vertically, each a simple left-to-right timeline. Row 1: label 「コントロール」 on the left, then a small rounded box 「水」, a right-pointing arrow with the small label 「15分」 above it, then a small rounded box 「ブドウ糖」. Row 2: label 「前負荷」, then 「オリーブ油」, an arrow labelled 「15分」, then 「ブドウ糖」; this whole row is highlighted in warm coral and has a coral badge at its right end reading exactly 「早い時間の血糖値が低い」. Row 3: label 「後負荷」, then 「ブドウ糖」, an arrow labelled 「15分」, then 「オリーブ油」. Rows 1 and 3 in teal and gray, coral only for row 2. Make the whole chart compact so that everything sits within the top 70 percent of the picture, with a large empty light area at the bottom (the lower 30 percent of the picture must be completely empty). Do not add any other text, numbers, icons or logos.",
+      "ken_burns": "static",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "ただ、いちばん効いてる事実は、こっち。順番。",
+          "expression": "thinking",
+          "t0": 0.0,
+          "dur": 3.84,
+          "cards": [
+            {
+              "text": "ただ、いちばん効いてる事実は、",
+              "start": 0.0,
+              "end": 2.62
+            },
+            {
+              "text": "こっち。順番。",
+              "start": 2.62,
+              "end": 3.84
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "油を後から飲ませた3つ目と比べても、油が先の方が、早い時間の血糖値は低かった。",
+          "expression": "neutral",
+          "reference_index": 1,
+          "t0": 4.06,
+          "dur": 6.28,
+          "cards": [
+            {
+              "text": "油を後から飲ませた3つ目と比べても、",
+              "start": 0.0,
+              "end": 2.7
+            },
+            {
+              "text": "油が先の方が、早い時間の血糖値は低かった。",
+              "start": 2.85,
+              "end": 6.0
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "同じオリーブ油なのに？",
+          "expression": "surprised",
+          "t0": 10.62,
+          "dur": 2.12,
+          "cards": [
+            {
+              "text": "同じオリーブ油なのに？",
+              "start": 0.0,
+              "end": 2.12
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう。胃の出口がゆっくりになったのも、油が先のとき。油が入るかどうかじゃなくて、いつ入るか。",
+          "expression": "neutral",
+          "reference_index": 1,
+          "t0": 13.02,
+          "dur": 6.72,
+          "cards": [
+            {
+              "text": "そう。胃の出口がゆっくりになったのも、",
+              "start": 0.0,
+              "end": 2.65
+            },
+            {
+              "text": "油が先のとき。油が入るかどうかじゃなくて、",
+              "start": 2.8,
+              "end": 5.73
+            },
+            {
+              "text": "いつ入るか。",
+              "start": 5.88,
+              "end": 6.72
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "順番そのものが、この話の本体なんだ。",
+          "expression": "convinced",
+          "t0": 20.02,
+          "dur": 3.32,
+          "cards": [
+            {
+              "text": "順番そのものが、この話の本体なんだ。",
+              "start": 0.0,
+              "end": 3.32
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「ただ、いちばん効いてる事実は、こっち。順番。」\n沙織「油を後から飲ませた3つ目と比べても、油が先の方が、早い時間の血糖値は低かった。」\n大輔「同じオリーブ油なのに？」\n沙織「そう。胃の出口がゆっくりになったのも、油が先のとき。油が入るかどうかじゃなくて、いつ入るか。」\n大輔「順番そのものが、この話の本体なんだ。」",
+      "narrator": "dialogue",
+      "lines_hash": "a4cbeb729120"
+    },
+    {
+      "scene_id": 10,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 1,
+      "image_prompt": "A simple, clean flat infographic flow diagram on a plain light background with a short title at the very top reading exactly 「油を先にしたとき（マウス）」. Below the title, five rounded boxes connected by downward-pointing arrows in a single vertical column, in this order: 「オリーブ油が先」, 「グルカゴン・GLP-1が増える」, 「迷走神経（つなぐ可能性）」, 「胃排出が遅くなる」, 「早い時間の血糖上昇が緩やかに」. Teal boxes, with the last box highlighted in warm coral. Each box contains only its label and one simple flat icon (an oil drop, two small hormone dots, a thin nerve line, a simple stomach outline, a gentle curve). Make the whole chart compact so that everything sits within the top 70 percent of the picture, with a large empty light area at the bottom (the lower 30 percent of the picture must be completely empty). Do not add any other text, numbers, icons or logos.",
+      "ken_burns": "static",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "実は私、ここを疑ってた。油が胃に入って、物理的に出口が詰まるだけじゃないの？",
+          "expression": "doubt",
+          "t0": 0.0,
+          "dur": 5.48,
+          "cards": [
+            {
+              "text": "実は私、ここを疑ってた。油が胃に入って、",
+              "start": 0.0,
+              "end": 3.01
+            },
+            {
+              "text": "物理的に出口が詰まるだけじゃないの？",
+              "start": 3.16,
+              "end": 5.68
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そこが本題。",
+          "expression": "excited",
+          "t0": 5.76,
+          "dur": 1.8,
+          "cards": [
+            {
+              "text": "そこが本題。",
+              "start": 0.0,
+              "end": 1.8
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "油が先だと、早い時間に、グルカゴンやジーエルピーワンといったホルモンが多く出てた。",
+          "expression": "excited",
+          "reference_index": 1,
+          "display": "油が先だと、早い時間に、グルカゴンやGLP-1といったホルモンが多く出てた。",
+          "t0": 7.78,
+          "dur": 6.0,
+          "cards": [
+            {
+              "text": "油が先だと、早い時間に、グルカゴンやGLP",
+              "start": 0.0,
+              "end": 3.32
+            },
+            {
+              "text": "-1といったホルモンが多く出てた。",
+              "start": 3.32,
+              "end": 6.0
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ホルモンが出てただけなら、関係があるとは限らない。",
+          "expression": "doubt",
+          "t0": 14.06,
+          "dur": 3.4,
+          "cards": [
+            {
+              "text": "ホルモンが出てただけなら、",
+              "start": 0.0,
+              "end": 1.77
+            },
+            {
+              "text": "関係があるとは限らない。",
+              "start": 1.77,
+              "end": 3.4
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だから、作れなくしたマウスで確かめてる。グルカゴンもジーエルピーワンも作れないと、効果も胃の出口の遅れも、消えた。",
+          "expression": "neutral",
+          "reference_index": 1,
+          "display": "だから、作れなくしたマウスで確かめてる。グルカゴンもGLP-1も作れないと、効果も胃の出口の遅れも、消えた。",
+          "t0": 17.74,
+          "dur": 9.12,
+          "cards": [
+            {
+              "text": "だから、作れなくしたマウスで確かめてる。",
+              "start": 0.0,
+              "end": 3.38
+            },
+            {
+              "text": "グルカゴンもGLP-1も作れないと、",
+              "start": 3.38,
+              "end": 6.42
+            },
+            {
+              "text": "効果も胃の出口の遅れも、消えた。",
+              "start": 6.42,
+              "end": 9.12
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "片方だけ止めたら？",
+          "expression": "thinking",
+          "t0": 27.14,
+          "dur": 1.52,
+          "cards": [
+            {
+              "text": "片方だけ止めたら？",
+              "start": 0.0,
+              "end": 1.52
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "片方の受容体だけを止めても、効果はおおむね残った。両方を同時に止めると、弱まった。",
+          "expression": "neutral",
+          "reference_index": 1,
+          "t0": 28.94,
+          "dur": 6.64,
+          "cards": [
+            {
+              "text": "片方の受容体だけを止めても、",
+              "start": 0.0,
+              "end": 2.1
+            },
+            {
+              "text": "効果はおおむね残った。",
+              "start": 2.25,
+              "end": 3.9
+            },
+            {
+              "text": "両方を同時に止めると、",
+              "start": 3.9,
+              "end": 5.55
+            },
+            {
+              "text": "弱まった。",
+              "start": 5.7,
+              "end": 6.64
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "2つが、補い合ってるわけね。",
+          "expression": "thinking",
+          "reference_index": 1,
+          "t0": 35.86,
+          "dur": 2.0,
+          "cards": [
+            {
+              "text": "2つが、補い合ってるわけね。",
+              "start": 0.0,
+              "end": 2.0
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "まだある。お腹の迷走神経っていう神経を、しばったマウス。",
+          "expression": "excited",
+          "reference_index": 1,
+          "t0": 38.14,
+          "dur": 4.52,
+          "cards": [
+            {
+              "text": "まだある。お腹の迷走神経っていう神経を、",
+              "start": 0.0,
+              "end": 3.14
+            },
+            {
+              "text": "しばったマウス。",
+              "start": 3.29,
+              "end": 4.49
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ホルモンは出てる。むしろ増えることもあった。なのに、効果は弱まって、胃の出口の遅れは消えた。",
+          "expression": "excited",
+          "reference_index": 1,
+          "tone": "fast, animated",
+          "t0": 42.88,
+          "dur": 7.28,
+          "cards": [
+            {
+              "text": "ホルモンは出てる。",
+              "start": 0.0,
+              "end": 1.35
+            },
+            {
+              "text": "むしろ増えることもあった。",
+              "start": 1.35,
+              "end": 3.3
+            },
+            {
+              "text": "なのに、効果は弱まって、",
+              "start": 3.45,
+              "end": 5.44
+            },
+            {
+              "text": "胃の出口の遅れは消えた。",
+              "start": 5.44,
+              "end": 7.43
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "……ただ詰まってるだけなら、神経をしばっても、出口は遅れるはずだよね。",
+          "expression": "surprised",
+          "pause": 0.5,
+          "t0": 50.66,
+          "dur": 4.16,
+          "cards": [
+            {
+              "text": "……ただ詰まってるだけなら、",
+              "start": 0.0,
+              "end": 1.6
+            },
+            {
+              "text": "神経をしばっても、出口は遅れるはずだよね。",
+              "start": 1.75,
+              "end": 4.16
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "発表資料は、神経がつなぐ『可能性』と慎重に書いてる。でも、ただの渋滞説は苦しい。ここは私の負け。",
+          "expression": "convinced",
+          "react": "excited",
+          "reference_index": 1,
+          "t0": 55.04,
+          "dur": 8.32,
+          "cards": [
+            {
+              "text": "発表資料は、神経がつなぐ『可能性』",
+              "start": 0.0,
+              "end": 3.12
+            },
+            {
+              "text": "と慎重に書いてる。でも、",
+              "start": 3.27,
+              "end": 5.18
+            },
+            {
+              "text": "ただの渋滞説は苦しい。",
+              "start": 5.18,
+              "end": 6.93
+            },
+            {
+              "text": "ここは私の負け。",
+              "start": 7.14,
+              "end": 8.34
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「実は私、ここを疑ってた。油が胃に入って、物理的に出口が詰まるだけじゃないの？」\n大輔「そこが本題。」\n大輔「油が先だと、早い時間に、グルカゴンやジーエルピーワンといったホルモンが多く出てた。」\n沙織「ホルモンが出てただけなら、関係があるとは限らない。」\n大輔「だから、作れなくしたマウスで確かめてる。グルカゴンもジーエルピーワンも作れないと、効果も胃の出口の遅れも、消えた。」\n沙織「片方だけ止めたら？」\n大輔「片方の受容体だけを止めても、効果はおおむね残った。両方を同時に止めると、弱まった。」\n沙織「2つが、補い合ってるわけね。」\n大輔「まだある。お腹の迷走神経っていう神経を、しばったマウス。」\n大輔「ホルモンは出てる。むしろ増えることもあった。なのに、効果は弱まって、胃の出口の遅れは消えた。」\n沙織「……ただ詰まってるだけなら、神経をしばっても、出口は遅れるはずだよね。」\n沙織「発表資料は、神経がつなぐ『可能性』と慎重に書いてる。でも、ただの渋滞説は苦しい。ここは私の負け。」",
+      "narrator": "dialogue",
+      "lines_hash": "e6253c61af4c"
+    },
+    {
+      "scene_id": 11,
+      "type": "paper",
+      "bgm_role": "main",
+      "reference_index": 1,
+      "image_prompt": "A bright, clean university research laboratory in Kyoto, Japan, during the daytime (clear daylight through large windows). On a white lab bench, four small unlabeled glass containers stand in a neat row: a vial of golden olive oil, a vial of pale yellow flaxseed oil, a small dish of soft white lard, and a small jar of solid white coconut oil. Behind them, two small clear plastic cages each with a white laboratory mouse. A Japanese woman researcher in her thirties with black hair tied back in a low ponytail, wearing a white lab coat and blue nitrile gloves, examines the containers. No readable text, no numbers, no logos.",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "それに、2型糖尿病のモデルマウスでも、インスリンの出が著しく落ちたモデルマウスでも、同じように効いた。",
+          "expression": "excited",
+          "reference_index": 1,
+          "t0": 0.0,
+          "dur": 6.56,
+          "cards": [
+            {
+              "text": "それに、2型糖尿病のモデルマウスでも、",
+              "start": 0.0,
+              "end": 2.46
+            },
+            {
+              "text": "インスリンの出が著しく",
+              "start": 2.61,
+              "end": 3.96
+            },
+            {
+              "text": "落ちたモデルマウスでも、",
+              "start": 3.96,
+              "end": 5.43
+            },
+            {
+              "text": "同じように効いた。",
+              "start": 5.58,
+              "end": 6.74
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "あくまでモデルマウスね。糖尿病の人に効く、とは別の話。",
+          "expression": "doubt",
+          "t0": 6.84,
+          "dur": 4.4,
+          "cards": [
+            {
+              "text": "あくまでモデルマウスね。糖尿病の人に効く、",
+              "start": 0.0,
+              "end": 3.24
+            },
+            {
+              "text": "とは別の話。",
+              "start": 3.39,
+              "end": 4.29
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "分かってる。油も、オリーブ油だけじゃない。アマニ油でも、ラードでも効いた。",
+          "expression": "excited",
+          "reference_index": 1,
+          "t0": 11.52,
+          "dur": 5.0,
+          "cards": [
+            {
+              "text": "分かってる。油も、オリーブ油だけじゃない。",
+              "start": 0.0,
+              "end": 2.75
+            },
+            {
+              "text": "アマニ油でも、ラードでも効いた。",
+              "start": 2.9,
+              "end": 5.0
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ココナッツ油は、抑える傾向まで。",
+          "expression": "neutral",
+          "reference_index": 1,
+          "t0": 16.74,
+          "dur": 2.8,
+          "cards": [
+            {
+              "text": "ココナッツ油は、抑える傾向まで。",
+              "start": 0.0,
+              "end": 2.8
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ラードでも、ね。少なくとも試した油では、オリーブ油が特別って話じゃない。",
+          "expression": "amused",
+          "reference_index": 1,
+          "t0": 19.82,
+          "dur": 5.44,
+          "cards": [
+            {
+              "text": "ラードでも、ね。少なくとも試した油では、",
+              "start": 0.0,
+              "end": 3.08
+            },
+            {
+              "text": "オリーブ油が特別って話じゃない。",
+              "start": 3.23,
+              "end": 5.58
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「それに、2型糖尿病のモデルマウスでも、インスリンの出が著しく落ちたモデルマウスでも、同じように効いた。」\n沙織「あくまでモデルマウスね。糖尿病の人に効く、とは別の話。」\n大輔「分かってる。油も、オリーブ油だけじゃない。アマニ油でも、ラードでも効いた。」\n大輔「ココナッツ油は、抑える傾向まで。」\n沙織「ラードでも、ね。少なくとも試した油では、オリーブ油が特別って話じゃない。」",
+      "narrator": "dialogue",
+      "lines_hash": "9786c64e67d2"
+    },
+    {
+      "scene_id": 12,
+      "type": "tsukkomi",
+      "bgm_role": "main",
+      "reference_index": 1,
+      "image_prompt": "A quiet corner of a university laboratory in the late afternoon (warm low sunlight through a window, an orange-tinged sky outside). On a white lab bench, a single small clear plastic cage with one white laboratory mouse and a tiny glass vial of golden olive oil sits on the left; on the right side of the same bench, a complete Japanese home-style meal on a tray (a bowl of white rice, miso soup, grilled fish, a small salad), as if comparing the two. A closed notebook and a pen lie between them. Thoughtful mood. No people, no readable text, no numbers, no logos.",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、一番の弱点。",
+          "expression": "doubt",
+          "pause": 0.4,
+          "t0": 0.0,
+          "dur": 1.76,
+          "cards": [
+            {
+              "text": "じゃあ、一番の弱点。",
+              "start": 0.0,
+              "end": 1.76
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "これは、絶食させたマウスに、油とブドウ糖を口から飲ませた実験。ご飯を食べたわけじゃない。",
+          "expression": "doubt",
+          "tag": "weakness",
+          "reference_index": 1,
+          "t0": 1.98,
+          "dur": 6.2,
+          "cards": [
+            {
+              "text": "これは、絶食させたマウスに、",
+              "start": 0.0,
+              "end": 2.08
+            },
+            {
+              "text": "油とブドウ糖を口から飲ませた実験。",
+              "start": 2.23,
+              "end": 4.51
+            },
+            {
+              "text": "ご飯を食べたわけじゃない。",
+              "start": 4.66,
+              "end": 6.4
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、それ何匹で試したの？",
+          "expression": "doubt",
+          "t0": 8.4,
+          "dur": 1.92,
+          "cards": [
+            {
+              "text": "で、それ何匹で試したの？",
+              "start": 0.0,
+              "end": 1.92
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それが……発表資料には、匹数が書いてない。",
+          "expression": "deflated",
+          "t0": 10.6,
+          "dur": 3.84,
+          "cards": [
+            {
+              "text": "それが……発表資料には、匹数が書いてない。",
+              "start": 0.0,
+              "end": 3.4
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、そこは分からない、で止めておこう。",
+          "expression": "neutral",
+          "t0": 14.72,
+          "dur": 2.56,
+          "cards": [
+            {
+              "text": "じゃあ、そこは分からない、で止めておこう。",
+              "start": 0.0,
+              "end": 2.56
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、発表資料自身が書いてる。普通の食事をとるヒトで、同じ仕組みや効果があるかは、今後の検証が必要。",
+          "expression": "thinking",
+          "tag": "barrier",
+          "reference_index": 1,
+          "t0": 17.5,
+          "dur": 7.44,
+          "cards": [
+            {
+              "text": "それに、発表資料自身が書いてる。",
+              "start": 0.0,
+              "end": 2.44
+            },
+            {
+              "text": "普通の食事をとるヒトで、同じ仕組みや効果が",
+              "start": 2.59,
+              "end": 5.53
+            },
+            {
+              "text": "あるかは、今後の検証が必要。",
+              "start": 5.68,
+              "end": 7.64
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "研究グループは、次にたんぱく質を先に与える実験も進めてる、って。",
+          "expression": "neutral",
+          "reference_index": 1,
+          "t0": 25.22,
+          "dur": 4.72,
+          "cards": [
+            {
+              "text": "研究グループは、次にたんぱく質を先に与える",
+              "start": 0.0,
+              "end": 3.2
+            },
+            {
+              "text": "実験も進めてる、って。",
+              "start": 3.35,
+              "end": 4.92
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "あと、研究の外の話を2つ。油の量は、マウスで体重1キロあたり5ミリリットル。",
+          "expression": "thinking",
+          "reference_index": 1,
+          "display": "あと、研究の外の話を2つ。油の量は、マウスで体重1kgあたり5mL。",
+          "t0": 30.22,
+          "dur": 6.24,
+          "cards": [
+            {
+              "text": "あと、研究の外の話を2つ。油の量は、",
+              "start": 0.0,
+              "end": 3.3
+            },
+            {
+              "text": "マウスで体重1kgあたり5mL。",
+              "start": 3.3,
+              "end": 6.24
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ヒトの体重で掛け算したくなるけど、動物とヒトは、単純に置き換えられない。数字は言わないでおく。",
+          "expression": "neutral",
+          "t0": 36.68,
+          "dur": 6.56,
+          "cards": [
+            {
+              "text": "ヒトの体重で掛け算したくなるけど、",
+              "start": 0.2,
+              "end": 2.46
+            },
+            {
+              "text": "動物とヒトは、単純に置き換えられない。",
+              "start": 2.61,
+              "end": 5.14
+            },
+            {
+              "text": "数字は言わないでおく。",
+              "start": 5.29,
+              "end": 6.76
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "もう1つ。先に摂っても、油のカロリーがなくなるわけじゃない。",
+          "expression": "amused",
+          "t0": 43.46,
+          "dur": 3.88,
+          "cards": [
+            {
+              "text": "もう1つ。先に摂っても、油のカロリーが",
+              "start": 0.0,
+              "end": 2.56
+            },
+            {
+              "text": "なくなるわけじゃない。",
+              "start": 2.71,
+              "end": 4.08
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「じゃあ、一番の弱点。」\n沙織「これは、絶食させたマウスに、油とブドウ糖を口から飲ませた実験。ご飯を食べたわけじゃない。」\n沙織「で、それ何匹で試したの？」\n大輔「それが……発表資料には、匹数が書いてない。」\n沙織「じゃあ、そこは分からない、で止めておこう。」\n沙織「それに、発表資料自身が書いてる。普通の食事をとるヒトで、同じ仕組みや効果があるかは、今後の検証が必要。」\n大輔「研究グループは、次にたんぱく質を先に与える実験も進めてる、って。」\n沙織「あと、研究の外の話を2つ。油の量は、マウスで体重1キロあたり5ミリリットル。」\n沙織「ヒトの体重で掛け算したくなるけど、動物とヒトは、単純に置き換えられない。数字は言わないでおく。」\n沙織「もう1つ。先に摂っても、油のカロリーがなくなるわけじゃない。」",
+      "narrator": "dialogue",
+      "lines_hash": "6aee80cbd79a"
+    },
+    {
+      "scene_id": 13,
+      "type": "dream",
+      "bgm_role": "main",
+      "reference_index": 1,
+      "image_prompt": "A calm Japanese home dining table at noon, clearly midday (bright, clear daylight pouring through the window, a blue sky visible outside, sunlit room; table lamp switched off — not evening, not overcast). A Japanese woman in her early fifties with shoulder-length black hair lightly streaked with gray, loosely tied at the nape, no glasses, wearing a soft, plain (not cable-knit) oatmeal-beige crew-neck knit sweater, the same woman as in the reference image, eats an ordinary home-style lunch at an unhurried pace: a bowl of white rice still untouched on the right, while she eats from a small plate of green salad lightly dressed with olive oil on the left. Relaxed, everyday, unglamorous mood. No logos, no brand marks, no readable text, no numbers.",
+      "ken_burns": "zoom_in",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、言い直す。想像してみてよ。",
+          "expression": "thinking",
+          "pause": 0.4,
+          "t0": 0.0,
+          "dur": 2.72,
+          "cards": [
+            {
+              "text": "じゃあ、言い直す。想像してみてよ。",
+              "start": 0.0,
+              "end": 2.72
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "もしヒトでも同じ仕組みなら。50代の人が、いつもの昼ご飯を、同じ量だけ食べる。変えるのは順番だけ。",
+          "expression": "excited",
+          "tag": "life_scene",
+          "t0": 2.94,
+          "dur": 7.68,
+          "cards": [
+            {
+              "text": "もしヒトでも同じ仕組みなら。50代の人が、",
+              "start": 0.0,
+              "end": 3.15
+            },
+            {
+              "text": "いつもの昼ご飯を、同じ量だけ食べる。",
+              "start": 3.3,
+              "end": 6.0
+            },
+            {
+              "text": "変えるのは順番だけ。",
+              "start": 6.15,
+              "end": 7.67
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "2時間の合計に差はなくても、食べてすぐの急な山が、なだらかになる。",
+          "expression": "excited",
+          "tone": "warm, a bit fast",
+          "t0": 10.84,
+          "dur": 5.08,
+          "cards": [
+            {
+              "text": "2時間の合計に差はなくても、",
+              "start": 0.0,
+              "end": 2.09
+            },
+            {
+              "text": "食べてすぐの急な山が、なだらかになる。",
+              "start": 2.24,
+              "end": 5.28
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それはヒトで確かめてから。山がなだらかになることが体にとって何を意味するかも、今日の発表資料には出てこない。",
+          "expression": "doubt",
+          "reference_index": 1,
+          "t0": 16.2,
+          "dur": 7.36,
+          "cards": [
+            {
+              "text": "それはヒトで確かめてから。山がなだらかに",
+              "start": 0.0,
+              "end": 2.82
+            },
+            {
+              "text": "なることが体にとって何を意味するかも、",
+              "start": 2.97,
+              "end": 5.45
+            },
+            {
+              "text": "今日の発表資料には出てこない。",
+              "start": 5.6,
+              "end": 7.56
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "分かってる。今日の時点では、マウスの胃の出口の話。",
+          "expression": "convinced",
+          "t0": 23.84,
+          "dur": 4.28,
+          "cards": [
+            {
+              "text": "分かってる。今日の時点では、",
+              "start": 0.0,
+              "end": 2.1
+            },
+            {
+              "text": "マウスの胃の出口の話。",
+              "start": 2.25,
+              "end": 4.13
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そこまで言えたら、合格。",
+          "expression": "amused",
+          "t0": 28.4,
+          "dur": 1.76,
+          "cards": [
+            {
+              "text": "そこまで言えたら、合格。",
+              "start": 0.0,
+              "end": 1.76
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「じゃあ、言い直す。想像してみてよ。」\n大輔「もしヒトでも同じ仕組みなら。50代の人が、いつもの昼ご飯を、同じ量だけ食べる。変えるのは順番だけ。」\n大輔「2時間の合計に差はなくても、食べてすぐの急な山が、なだらかになる。」\n沙織「それはヒトで確かめてから。山がなだらかになることが体にとって何を意味するかも、今日の発表資料には出てこない。」\n大輔「分かってる。今日の時点では、マウスの胃の出口の話。」\n沙織「そこまで言えたら、合格。」",
+      "narrator": "dialogue",
+      "lines_hash": "a23bd63b4f25"
+    },
+    {
+      "scene_id": 14,
+      "type": "verdict",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "verdict_from_line": 7,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、判定。お題は、ご飯の前に油を摂ると、血糖値は上がりにくくなるのか。",
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 6.08,
+          "cards": [
+            {
+              "text": "じゃあ、判定。お題は、",
+              "start": 0.0,
+              "end": 1.92
+            },
+            {
+              "text": "ご飯の前に油を摂ると、",
+              "start": 1.92,
+              "end": 3.84
+            },
+            {
+              "text": "血糖値は上がりにくくなるのか。",
+              "start": 3.99,
+              "end": 6.24
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕は「3年はかかる」。仕組みは見えた。でも、普通の食事のヒトで同じかは、試験をしないと分からない。",
+          "expression": "convinced",
+          "tone": "calm, confident",
+          "t0": 6.36,
+          "dur": 8.2,
+          "cards": [
+            {
+              "text": "僕は「3年はかかる」。仕組みは見えた。",
+              "start": 0.0,
+              "end": 3.5
+            },
+            {
+              "text": "でも、普通の食事のヒトで同じかは、",
+              "start": 3.65,
+              "end": 6.3
+            },
+            {
+              "text": "試験をしないと分からない。",
+              "start": 6.45,
+              "end": 8.4
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "暮らしで語れるようになるまで、3年はかかる。それが僕の見立て。",
+          "expression": "thinking",
+          "t0": 14.78,
+          "dur": 4.64,
+          "cards": [
+            {
+              "text": "暮らしで語れるようになるまで、",
+              "start": 0.0,
+              "end": 2.17
+            },
+            {
+              "text": "3年はかかる。それが僕の見立て。",
+              "start": 2.32,
+              "end": 4.84
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "珍しく慎重だね。",
+          "expression": "amused",
+          "react": "deflated",
+          "t0": 19.7,
+          "dur": 1.96,
+          "cards": [
+            {
+              "text": "珍しく慎重だね。",
+              "start": 0.0,
+              "end": 1.96
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "さっき『まるごと』で、痛い目を見たからね。",
+          "expression": "deflated",
+          "tone": "sheepish, playful",
+          "t0": 21.94,
+          "dur": 3.4,
+          "cards": [
+            {
+              "text": "さっき『まるごと』で、痛い目を見たからね。",
+              "start": 0.45,
+              "end": 3.6
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は「まだ眉唾」。研究じゃなくて、今日のマウスの研究から『油を先に摂れば上がりにくい』と言い切るのが、まだ眉唾。",
+          "expression": "doubt",
+          "t0": 25.62,
+          "dur": 9.12,
+          "cards": [
+            {
+              "text": "私は「まだ眉唾」。研究じゃなくて、",
+              "start": 0.48,
+              "end": 3.17
+            },
+            {
+              "text": "今日のマウスの研究から『油を先に摂れば",
+              "start": 3.32,
+              "end": 6.17
+            },
+            {
+              "text": "上がりにくい』と言い切るのが、まだ眉唾。",
+              "start": 6.32,
+              "end": 9.32
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "マウスで、低くなったのは早い時間だけ。ただ、順番の裏に、ホルモンと神経の仕組みがある。そこはデータが強い。",
+          "expression": "convinced",
+          "reference_index": 1,
+          "t0": 34.96,
+          "dur": 7.6,
+          "cards": [
+            {
+              "text": "マウスで、低くなったのは早い時間だけ。",
+              "start": 0.0,
+              "end": 2.62
+            },
+            {
+              "text": "ただ、順番の裏に、",
+              "start": 2.96,
+              "end": 4.2
+            },
+            {
+              "text": "ホルモンと神経の仕組みがある。",
+              "start": 4.2,
+              "end": 6.27
+            },
+            {
+              "text": "そこはデータが強い。",
+              "start": 6.42,
+              "end": 7.8
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "割れたね。でも、順番が本体、ってところは一致。",
+          "expression": "convinced",
+          "t0": 42.84,
+          "dur": 4.12,
+          "cards": [
+            {
+              "text": "割れたね。でも、順番が本体、",
+              "start": 0.2,
+              "end": 2.82
+            },
+            {
+              "text": "ってところは一致。",
+              "start": 2.97,
+              "end": 4.32
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そこは、はんこを押してもいい。",
+          "expression": "amused",
+          "display": "そこは、判子を押してもいい。",
+          "t0": 47.24,
+          "dur": 2.24,
+          "cards": [
+            {
+              "text": "そこは、判子を押してもいい。",
+              "start": 0.0,
+              "end": 2.24
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「じゃあ、判定。お題は、ご飯の前に油を摂ると、血糖値は上がりにくくなるのか。」\n大輔「僕は「3年はかかる」。仕組みは見えた。でも、普通の食事のヒトで同じかは、試験をしないと分からない。」\n大輔「暮らしで語れるようになるまで、3年はかかる。それが僕の見立て。」\n沙織「珍しく慎重だね。」\n大輔「さっき『まるごと』で、痛い目を見たからね。」\n沙織「私は「まだ眉唾」。研究じゃなくて、今日のマウスの研究から『油を先に摂れば上がりにくい』と言い切るのが、まだ眉唾。」\n沙織「マウスで、低くなったのは早い時間だけ。ただ、順番の裏に、ホルモンと神経の仕組みがある。そこはデータが強い。」\n大輔「割れたね。でも、順番が本体、ってところは一致。」\n沙織「そこは、はんこを押してもいい。」",
+      "narrator": "dialogue",
+      "lines_hash": "fae876d15a6c"
+    },
+    {
+      "scene_id": 15,
+      "type": "closing",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "早い時間の山はなだらかに。でも2時間の合計に差はなくて、まだマウスの話。",
+          "expression": "thinking",
+          "t0": 0.0,
+          "dur": 5.68,
+          "cards": [
+            {
+              "text": "早い時間の山はなだらかに。でも2時間の",
+              "start": 0.0,
+              "end": 3.06
+            },
+            {
+              "text": "合計に差はなくて、まだマウスの話。",
+              "start": 3.21,
+              "end": 5.76
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "今日の判定は、10月14日時点の、私たち二人の見立て。研究の紹介で、食べ方のおすすめじゃないからね。",
+          "expression": "neutral",
+          "t0": 5.96,
+          "dur": 7.28,
+          "cards": [
+            {
+              "text": "今日の判定は、10月14日時点の、",
+              "start": 0.0,
+              "end": 2.58
+            },
+            {
+              "text": "私たち二人の見立て。研究の紹介で、",
+              "start": 2.73,
+              "end": 5.1
+            },
+            {
+              "text": "食べ方のおすすめじゃないからね。",
+              "start": 5.25,
+              "end": 7.48
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "excited",
+          "t0": 13.52,
+          "dur": 5.0,
+          "cards": [
+            {
+              "text": "次はどんな研究が、誰かの幸せな未来を",
+              "start": 0.0,
+              "end": 3.64
+            },
+            {
+              "text": "運んでくるのか。",
+              "start": 3.79,
+              "end": 4.99
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "amused",
+          "t0": 18.8,
+          "dur": 7.2,
+          "cards": [
+            {
+              "text": "それが本物かどうか、",
+              "start": 0.0,
+              "end": 1.17
+            },
+            {
+              "text": "また一緒に確かめましょう。",
+              "start": 1.17,
+              "end": 2.69
+            },
+            {
+              "text": "元の発表は概要欄に載せています。",
+              "start": 2.84,
+              "end": 4.86
+            },
+            {
+              "text": "チャンネル登録して、待っていてください。",
+              "start": 5.01,
+              "end": 7.35
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「早い時間の山はなだらかに。でも2時間の合計に差はなくて、まだマウスの話。」\n沙織「今日の判定は、10月14日時点の、私たち二人の見立て。研究の紹介で、食べ方のおすすめじゃないからね。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」",
+      "narrator": "dialogue",
+      "lines_hash": "972ad2d32674"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "dreamer",
+          "narration": "油が先なら、血糖値が緩やか？",
+          "expression": "excited",
+          "scene_id": 7
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "京都大学の研究。油を先にしたら、上がり方が緩やかに！",
+          "expression": "excited",
+          "scene_id": 6
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "ただしマウス。2時間全体で見ると、差はなかった。",
+          "expression": "doubt",
+          "react": "surprised",
+          "scene_id": 8
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "しかも、油を後から飲ませると、先のときほど抑えられない。",
+          "expression": "doubt",
+          "react": "surprised",
+          "scene_id": 9
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "カギは順番。判定は割れた。続きは本編で。",
+          "expression": "thinking",
+          "scene_id": 14
+        }
+      ]
+    }
+  ]
+}
