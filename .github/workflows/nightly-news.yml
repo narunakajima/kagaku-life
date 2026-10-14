@@ -1,0 +1,86 @@
+# 毎晩、ニュース起点のネタ候補（ベスト3の下書き）を集めて Slack に送る（2026-10-14）。
+# 収集〜注目度の実測までは Python だけで動かし、Claude は使わない。
+# 既視感・競合動画・ジャンルの間隔などの仕上げは、朝の /kl-new で行う。
+#
+# 必要な Secrets（値はチャット・ファイルに書かない。gh secret set で登録）:
+#   GEMINI_API_KEY_KL    … Gemini の API キー
+#   SLACK_WEBHOOK_URL_KL … Slack の Incoming Webhook URL（KL News アプリ）
+name: nightly-news
+
+on:
+  schedule:
+    - cron: "0 19 * * *"   # 毎日 04:00 JST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nightly-news
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GEMINI_API_KEY_KL: ${{ secrets.GEMINI_API_KEY_KL }}
+      SLACK_WEBHOOK_URL_KL: ${{ secrets.SLACK_WEBHOOK_URL_KL }}
+      TZ: Asia/Tokyo
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install google-genai
+
+      - name: Scan news
+        run: |
+          set -o pipefail
+          python3 kl_news_scan.py collect --days 21
+          python3 kl_news_scan.py score --top 15
+          python3 kl_news_scan.py tag
+          python3 kl_news_scan.py enrich
+          python3 kl_news_scan.py buzz
+          python3 kl_news_scan.py list --top 10 --check-urls > nightly_list.txt
+          python3 kl_concern_select.py > nightly_concern.txt || true
+
+      - name: Commit news_candidates.json
+        run: |
+          git config user.name "kl-nightly-bot"
+          git config user.email "kl-nightly-bot@users.noreply.github.com"
+          git add news_candidates.json
+          if git diff --cached --quiet; then
+            echo "変更なし"
+          else
+            git commit -m "data: 夜間ニュース採点を更新 [skip ci]"
+            for attempt in 1 2 3; do
+              if git push; then break; fi
+              git pull --rebase
+            done
+          fi
+
+      - name: Post to Slack
+        if: always()
+        run: |
+          if [ -z "$SLACK_WEBHOOK_URL_KL" ]; then echo "Webhook 未設定"; exit 0; fi
+          {
+            echo "*KL ニュース ベスト3の下書き（$(date '+%Y-%m-%d %H:%M') JST）*"
+            echo "朝の /kl-new で仕上げます。"
+            echo
+            grep -h "ジャンルの間隔\|この回で使える枠" nightly_concern.txt 2>/dev/null || true
+            echo
+            if [ -f nightly_list.txt ]; then
+              awk '/^==== ベスト3の下書き/{f=1} /^==== 本命/{f=0} f' nightly_list.txt
+              echo "--- ニッチ・速報（要点のみ）---"
+              grep -E "^\[core|^==== (ニッチ|速報|未計測)" nightly_list.txt | tail -n +4
+            else
+              echo "（list の出力がありません。Actions のログを確認してください）"
+            fi
+          } > slack_body.txt
+          head -c 3500 slack_body.txt > slack_trim.txt
+          jq -n --rawfile t slack_trim.txt '{text: $t}' \
+            | curl -sS -X POST -H 'Content-type: application/json' --data @- "$SLACK_WEBHOOK_URL_KL"
