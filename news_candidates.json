@@ -3326,7 +3326,7 @@
       "enriched_version": "2026-10-11-buzz-measured",
       "buzz_jp_est": 2,
       "buzz_error": "0件（検索語が合っていない可能性）",
-      "buzz_error_at": "2026-10-14T07:49:00",
+      "buzz_error_at": "2026-10-14T09:31:27",
       "jp_usable": 2,
       "work_relevance": 3
     },
@@ -4695,7 +4695,7 @@
       "enriched_version": "2026-10-11-buzz-measured",
       "buzz_jp_est": 3,
       "buzz_error": "0件（検索語が合っていない可能性）",
-      "buzz_error_at": "2026-10-14T07:49:00",
+      "buzz_error_at": "2026-10-14T09:31:27",
       "jp_usable": 1,
       "work_relevance": 2
     },
@@ -8455,7 +8455,7 @@
       ],
       "url_ok": null,
       "url_status": "help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
-      "url_checked_at": "2026-10-14T07:50:45"
+      "url_checked_at": "2026-10-14T09:31:57"
     },
     {
       "title": "「我々が世界市場を作っていく」…万博が示した「未来の医療」を先導する関西は世界３位の位置付け、涙から乳がんのリスクを調べる技術も",
@@ -9138,7 +9138,7 @@
       ],
       "url_ok": null,
       "url_status": "kyoto-u.ac.jp: HTTP 200「「食べる順番」が食後血糖を左右する仕組みを解明―脂質を糖質よ」 ／ diabetesjournals.org: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
-      "url_checked_at": "2026-10-14T07:50:36"
+      "url_checked_at": "2026-10-14T09:31:49"
     },
     {
       "title": "KAIST、ヒューマノイドを超えた「フィジカルAI」プラットフォーム戦略を公開",
@@ -10146,7 +10146,7 @@
       ],
       "url_ok": false,
       "url_status": "yaskawa.co.jp: HTTP 404",
-      "url_checked_at": "2026-10-14T07:50:32"
+      "url_checked_at": "2026-10-14T09:31:43"
     },
     {
       "title": "可搬重量100kgで既存の台車や棚を運搬可能 最新AMR「カチャカEvo」のデモを披露：CEATEC 2026",
@@ -10247,7 +10247,7 @@
       ],
       "url_ok": false,
       "url_status": "kachaka.life: HTTP 404 ／ kachaka.life: HTTP 200「自律搬送ロボット &quot;カチャカEvo&quot; ｜」",
-      "url_checked_at": "2026-10-14T07:50:49"
+      "url_checked_at": "2026-10-14T09:32:02"
     },
     {
       "title": "慢性腎臓病を「治る病」に 新規の透析患者ゼロへ新薬を研究 埼玉医大",
@@ -10402,7 +10402,7 @@
       ],
       "url_ok": true,
       "url_status": "cloud.google.com: HTTP 200「Gemini at Work 2026: Introduci」 ／ cloud.google.com: HTTP 200「Google Cloud Blog」",
-      "url_checked_at": "2026-10-14T07:50:30"
+      "url_checked_at": "2026-10-14T09:31:40"
     },
     {
       "title": "新生児の免疫システムは生後7日間で決まる",
@@ -10750,7 +10750,7 @@
       ],
       "url_ok": true,
       "url_status": "sbintuitions.co.jp: HTTP 200「国産生成AI「Sarashina」を利用できる「Sarash」 ／ sarashina.ai: HTTP 200「Sarashina」",
-      "url_checked_at": "2026-10-14T07:50:41"
+      "url_checked_at": "2026-10-14T09:31:53"
     },
     {
       "title": "ロンドンとベルファストの研究者たちは、ケフィアを通して腸と筋肉がどのように情報伝達を行うかを研究している。",
@@ -10822,6 +10822,890 @@
       "buzz_raw_items": 3,
       "buzz_query": "ケフィア 腸",
       "buzz_measured_at": "2026-10-14T07:50:23"
+    },
+    {
+      "title": "川重・松尾研、ヒューマノイドで22.7キロ運搬",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFA3N29UV3BjRks5WDhPUnFXbTFTT0ZuNUVpZ2J0dmljaDRjenRVSDJuY1VEal83LURtc0JfMFZHUVI5Q2EybGhtTmVR?oc=5",
+      "published": "2026-10-13",
+      "source": "Googleニュース（ヒューマノイド）／LOGISTICS TODAY",
+      "source_kind": "media",
+      "outlet": "LOGISTICS TODAY",
+      "outlet_host": "logi-today.com",
+      "genre_hint": "humanoid",
+      "summary": "川重・松尾研、ヒューマノイドで22.7キロ運搬（LOGISTICS TODAY）",
+      "id": "306cb7cbf9",
+      "sources": [
+        "LOGISTICS TODAY"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000000041.000113160.html",
+          "what_it_states": "松尾研究所と川崎重工業が共同開発し、NVIDIAシミュレータを活用した強化学習（Sim2Real）を着手から6週間で実機推論まで構築。2026年5月21日の米国サンノゼ新拠点開所式にて、ヒューマノイド『Kaleido9』が合計約50ポンド（約22.7kg）のカゴを両手で持ち上げ机上に配置する重量物運搬デモを成功させたこと"
+        }
+      ],
+      "announced_on": "2026-10-13",
+      "headline_claim": "川崎重工と松尾研究所の共同開発により、人型ロボット「Kaleido9」が約22.7キロの重量物を運搬するデモに成功した。",
+      "actual_content": "松尾研究所と川崎重工業による共同プロジェクトの成果発表で、NVIDIAのシミュレータ環境を用いた強化学習（Sim2Real）により、開発着手から6週間で実機推論フローを確立したとされる。2026年5月の米国サンノゼ拠点の開所式で、ヒューマノイドロボット『Kaleido9』が約50ポンド（約22.7kg）のカゴを両手で持ち上げて机上に置く一連の制御動作を披露した。ただし、示されたのは整った展示環境下での特定デモ（カゴ配置）であり、実際の物流・医療現場のような不定形環境での自律移動や連続搬送の成功率・耐久性データまでは公表されていない。",
+      "buzz_jp_est": 3,
+      "verifiability": 4,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 3,
+      "concern_id": null,
+      "entry_question": "人型ロボットが23キロの荷物を運べるようになったって本当？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「重量物を運搬」という見出しだが、実際は開所式で「目の前にあるカゴを持ち上げて机に置いた」単発デモであり、現場で自律歩行しながら荷物を運び続ける実用段階にはまだ遠い点。",
+      "investment_related": false,
+      "deja_vu_note": "kl033（Atlasの手の構造）などでヒューマノイドを扱ったが、日本企業の大型ヒューマノイドによる重量物把持・Sim2Real制御の検証は初。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "Kaleido9 松尾研究所",
+      "jp_title_anchor": [
+        "Kaleido9",
+        "松尾研究所",
+        "川崎重工"
+      ],
+      "announcement_type": "press_release",
+      "freshness": 5,
+      "overall_score": 3.5,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "なぜBYDら中国勢は「全固体電池」に動くのか？ 車載電池で「7割超」の存在感！ 次世代電池をめぐって何が起きているのか――世界市場で変わる競争の形とは",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1tQmdyWU45THloaFphQ09QR3poVVFITmt2YTFYOVp2SmZVLUpnRF9SQnhjM2ZQSURxdVVseHRkM1V0NDBlZ2hrdk9n?oc=5",
+      "published": "2026-10-09",
+      "source": "Googleニュース（全固体電池）／Merkmal",
+      "source_kind": "media",
+      "outlet": "Merkmal",
+      "outlet_host": "merkmal-biz.jp",
+      "genre_hint": "life_tech",
+      "summary": "なぜBYDら中国勢は「全固体電池」に動くのか？ 車載電池で「7割超」の存在感！ 次世代電池をめぐって何が起きているのか――世界市場で変わる競争の形とは（Merkmal）",
+      "id": "5fda497903",
+      "sources": [
+        "Merkmal",
+        "Yahoo!ニュース",
+        "carview!"
+      ],
+      "dup_ids": [
+        "bddeb3983a",
+        "df099fa8b9"
+      ],
+      "primary_sources": [],
+      "announced_on": "",
+      "headline_claim": "車載電池世界シェアで7割超を握る中国勢が、航続距離1000km超や充電時間3分の1を可能にする「全固体電池」の量産と国際規格獲得へ本格参戦している。",
+      "actual_content": "本記事は単一の論文や新製品の公式リリースではなく、日中欧米の電池覇権争いをまとめたメディアによる業界動向解説である。記事内では全固体電池の理論性能（エネルギー密度350〜500Wh/kg以上、放電温度マイナス50度〜125度）が示されているが、BYD自身の公表ロードマップでも車両実証は2027年、大規模量産は2030年頃とされており、界面抵抗や製造コストといった量産の壁を突破した具体的データは示されていない。",
+      "buzz_jp_est": 2,
+      "verifiability": 1,
+      "hype_gap": 4,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 3,
+      "work_relevance": 2,
+      "concern_id": "mobility",
+      "entry_question": "中国勢の全固体電池EVは、本当に航続距離1000kmでいつ乗れる？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "一次資料に基づく新たな技術的ブレークスルーの発表ではなくコラム記事にすぎず、メーカー側も大規模量産は2030年目標としており実用化の具体的ハードル（コスト・界面剥離）はまだ未解決な点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "BYD 全固体電池",
+      "jp_title_anchor": [
+        "BYD",
+        "全固体電池"
+      ],
+      "announcement_type": "other",
+      "freshness": 5,
+      "overall_score": 3.05,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "excluded",
+      "excluded_reason": "一次資料で確認できない",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "ヒトゲノムの未解明領域「セントロメア」の大規模解析が実現―世界中に蓄積されたゲノムデータを活用し、がんなどの疾患研究を加速",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5lZjl3RzVvRVd6c0NfYXluV29zUEZObERmeFZNTHhHbkhNTkJiVEN5QXJjNEZYaVFNVURGY3VHTC1xZzc0OEJHRVFuVHFHb0x6TnJWc0tfV0V1LWlwYjluUnVjOA?oc=5",
+      "published": "2026-10-14",
+      "source": "Googleニュース（iPS細胞 研究 成果）／京都大学",
+      "source_kind": "media",
+      "outlet": "京都大学",
+      "outlet_host": "kyoto-u.ac.jp",
+      "genre_hint": "medical",
+      "summary": "ヒトゲノムの未解明領域「セントロメア」の大規模解析が実現―世界中に蓄積されたゲノムデータを活用し、がんなどの疾患研究を加速（京都大学）",
+      "id": "e3df6810b7",
+      "sources": [
+        "京都大学"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1016/j.cell.2026.08.053",
+          "what_it_states": "反復配列のため解析が困難だったヒト染色体のセントロメア領域に対し、稀な短い配列（rare k-mer）を目印にして既存のショートリードWGSデータからハプログループを推定するツール「ascairn」を開発。世界3,332人のゲノムデータから集団ごとの構造多様性を解明し、さらに脳腫瘍（乏突起膠腫）142例の解析から1p/19q共欠失の切断点がセントロメアの個人差と関連することを示した。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.ncc.go.jp/jp/information/pr_release/2026/1014/index.html",
+          "what_it_states": "国立がん研究センター、京都大学、名古屋大学の共同研究グループが、ショートリード全ゲノム解析データからセントロメアのタイプを推定するソフトウェア「ascairn」を開発。世界3,332人のデータ解析により集団ごとの多様性を確認し、脳腫瘍に特徴的な染色体異常の形成にセントロメアの個人差が関連することを発表した。"
+        }
+      ],
+      "announced_on": "2026-10-13",
+      "headline_claim": "ヒトゲノムの未解明領域「セントロメア」の大規模解析手法が開発され、世界中の蓄積ゲノムデータを活用してがんなどの疾患研究が加速する。",
+      "actual_content": "反復配列が多いため一般的な全ゲノム解析（ショートリードWGS）では読み解けなかったセントロメアについて、タイプごとに固有の短い配列（rare k-mer）を目印にして個人ごとのタイプを推定するソフトウェア「ascairn」を開発した。世界3,332人の既存データを再解析して集団ごとの多様性を明らかにし、さらに脳腫瘍（乏突起膠腫）142例のデータから特定の染色体異常（1p/19q共欠失）の生じやすさにセントロメアの構造差が関与することを突き止めた。ただし、本成果は疾患のメカニズムを解明するためのバイオインフォマティクス基盤の構築であり、がんの新しい診断法や治療薬が直ちに実用化されたわけではない。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 2,
+      "work_relevance": 1,
+      "concern_id": "cancer",
+      "entry_question": "未解明だったゲノムの暗黒領域が読めるようになると、がんの早期発見や治療はすぐ変わるの？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "今回開発されたのは『過去に世界中で蓄積されたゲノムデータを再解析できる計算ソフト（ascairn）』であり、がんが治る薬や新しい臨床検査ができたわけではない。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "セントロメア 国立がん研究センター",
+      "jp_title_anchor": [
+        "セントロメア",
+        "国立がん研究センター",
+        "ascairn"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.45,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "Microsoft、Copilotなどを自社開発チップで稼働　新チップでNVIDIA依存から脱却狙いか",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2610/13/2000002207/",
+      "published": "2026-10-13",
+      "source": "ITmedia AI+",
+      "source_kind": "media",
+      "summary": "Microsoftが自社AIアクセラレータの第3世代「Maia 300」を発表。本番配備は2027年開始で、Maiaファミリーをマルチギガワット規模に拡大する計画。GPUベース比で電力当たり生成トークン数40％増を見込むという。",
+      "id": "f4a8589159",
+      "sources": [
+        "ITmedia AI+"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://blogs.microsoft.com/blog/2026/10/12/microsoft-to-expand-azure-maia-system-to-multi-gigawatt-deployments/",
+          "what_it_states": "第3世代AIアクセラレータ「Maia 300」を発表。本番配備は2027年開始でマルチギガワット規模へ拡大予定。主要GPUシステム比でメガワットあたり40%増のトークン処理を見込み、96基構成ラックでMaia 200比最大7倍のスループットを実現すると記載。"
+        },
+        {
+          "kind": "official_blog",
+          "url": "https://azure.microsoft.com/en-us/blog/deep-dive-into-azure-maia-300-architecture/",
+          "what_it_states": "Maia 300のアーキテクチャ詳細。TSMC N2P（2nm級）プロセスの演算ダイ、HBM4（288GB・帯域18TB/s）、TDP 950W、低精度MXFP4対応、ラックあたり96基（167kW枠）で集約帯域1.7PB/sなどを記載。"
+        }
+      ],
+      "announced_on": "2026-10-12",
+      "headline_claim": "Microsoftが第3世代の自社製AIチップ「Maia 300」を発表し、NVIDIA依存から脱却してCopilotなどの主力推論基盤として2027年からマルチギガワット規模で配備すると報じられている。",
+      "actual_content": "公式発表によると、現在Microsoft Copilotなどの本番ワークロードを動かしているのは第2世代の「Maia 200」であり、今回発表された「Maia 300」の本番環境への配備は2027年開始とされている。Maia 300はTSMCの2nm（N2P）プロセスと288GBのHBM4を採用し、主要GPUシステム比で電力あたり40％増のトークン処理を見込むとするが、これは自社の推計値であり比較対象のGPU製品名や測定条件の詳細は開示されていない。また外部のAzure顧客向けに計算リソースとして貸し出す予定はなく、自社サービス専用の推論基盤として使われる計画である。",
+      "buzz_jp_est": 3,
+      "verifiability": 4,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 2,
+      "concern_id": "work_ai",
+      "entry_question": "Copilotを動かす自社製チップ「Maia 300」で、仕事のAIはもっと速く安くなる？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「Copilotが動いている」のは現行のMaia 200で、今回発表されたMaia 300の配備は2027年以降とまだ先。さらに「GPU比で電力効率40％増」も比較対象のGPU型番や検証条件が明かされていない自社試算に過ぎない点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "Maia 300 Microsoft",
+      "jp_title_anchor": [
+        "Maia 300",
+        "Maia"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.5,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "総説：認知機能の低下抑制におけるオリーブオイルの役割を探る",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQU09rVENDd1Qya1p4QTU4Q1NyNjhKNk9KNGNHOGlLMF9ieEwwNl9VaGlRN0dSVDR1WmpMMEQ1VWFaS1pwQW1ySjB1LWhDajhwMFJBZVFkNUlIWnRuU3oxZDloRzZCWkptZ2N3Y3FiQjI3SlR6MkcydzJ0X2xhOE9sVnlMeFV6MktFNEZnNkJGNmZSVGFCM2ZCbkZEWVA1bFk0QlYtVWlOWWF0cy1QZWlfQml1NA?oc=5",
+      "published": "2026-10-13",
+      "source": "Googleニュース（研究 食事 健康 効果）／Olive Oil Times",
+      "source_kind": "media",
+      "outlet": "Olive Oil Times",
+      "outlet_host": "oliveoiltimes.com",
+      "genre_hint": "food_health",
+      "summary": "総説：認知機能の低下抑制におけるオリーブオイルの役割を探る（Olive Oil Times）",
+      "id": "cf600c2998",
+      "sources": [
+        "Olive Oil Times"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.3390/medicina62040696",
+          "what_it_states": "過去25年間の研究や73万人規模のメタアナリシス等の既存知見をまとめた総説。エキストラバージンオリーブオイルに含まれるポリフェノールや地中海食が、血圧・脂質・血糖の改善や抗炎症・抗酸化作用を通じて血管リスクと認知機能低下を緩和するメカニズムを整理。一方で高齢者の加齢性認知低下に対する栄養的効果を確立するには、さらなるプラセボ対照臨床試験が必要であると結論づけている。"
+        }
+      ],
+      "announced_on": "2026-04-04",
+      "headline_claim": "オリーブオイルと地中海食の継続的な摂取により、アルツハイマー病や血管性認知症などの認知機能低下を抑制できる。",
+      "actual_content": "バスク大学などの研究グループによる過去25年間の研究（計73万人規模のメタアナリシスを含む）をまとめたナラティブレビュー（総説）であり、新規の臨床試験を行ったわけではない。エキストラバージンオリーブオイルに含まれるポリフェノール類が血管リスク因子を低減し神経保護的に働く機序を概説している。ただし、著者自身も高齢者の加齢性認知機能低下に対するオリーブオイルの直接的な予防効果を立証するには、質の高いプラセボ対照臨床試験がまだ不足していると明記している。",
+      "buzz_jp_est": 1,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 4,
+      "work_relevance": 1,
+      "concern_id": "dementia",
+      "entry_question": "オリーブオイルを料理に使い続ければ、認知症や物忘れを予防できるって本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "新しい臨床試験の成果ではなく既存論文を整理した総説に過ぎず、論文内でも『認知機能低下への明確な効果を証明するには、プラセボ対照試験による検証がまだ必要』と自ら認めている点。",
+      "investment_related": false,
+      "deja_vu_note": "認知症予防や脳の健康に関する回（kl023、kl025）と関心領域が重なるが、オリーブオイルを主軸にした回は過去にない。",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "バスク大学 オリーブオイル",
+      "jp_title_anchor": [
+        "オリーブオイル",
+        "地中海食"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.2,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "GMO AIR、センシング・対話機能を強化したUnitree製ヒューマノイド「G1+」の国内取り扱いを開始",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9xVzRITTVXUmE3a01ibHktUklCdnlGdWJPaDNhY3NJWjBYaXo0aUVtT2NqVGdsczBIaHBQMHJtb1pURHpIQ0pSTl9jN2M4MWo5MmxtVU9BVloxMFU?oc=5",
+      "published": "2026-10-13",
+      "source": "Googleニュース（ヒューマノイド）／DRONE.jp",
+      "source_kind": "media",
+      "outlet": "DRONE.jp",
+      "outlet_host": "drone.jp",
+      "genre_hint": "humanoid",
+      "summary": "GMO AIR、センシング・対話機能を強化したUnitree製ヒューマノイド「G1+」の国内取り扱いを開始（DRONE.jp）",
+      "id": "fe230307b9",
+      "sources": [
+        "DRONE.jp",
+        "PR TIMES"
+      ],
+      "dup_ids": [
+        "b0959e82ec"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000004586.000000136.html",
+          "what_it_states": "全高約134cm・重量約35kgのヒューマノイド『G1+』の国内取り扱いと先行予約を開始。上下左右に動く2自由度の首を追加（全身25自由度）、肩・腰のピークトルクを従来比+110%、腕を+43%強化し腕の最大可搬重量を約3kgに向上。双眼カメラ・胸部広角カメラ・3D LiDAR、音源方向を推定する6マイクアレイ、頭部タッチセンサー、外部給電ポートを搭載。価格と納期は構成により個別案内。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://www.unitree.com/g1",
+          "what_it_states": "G1+の仕様として、首の可動域がPitch -25°〜36°、Yaw ±110°。同一トルク時の発熱低減（肩・腰72%、腕30%、大腿部28%）。外部給電ポート（DC 54.6V/5.7A）対応、バッテリー駆動は約2時間。"
+        }
+      ],
+      "announced_on": "2026-10-13",
+      "headline_claim": "GMO AIRがUnitree製ヒューマノイドの上位版「G1+」の国内取り扱いを開始し、受付や展示など対面コミュニケーション現場での活用を見込むと発表した。",
+      "actual_content": "発表された『G1+』は、低価格帯ヒューマノイドとして知られるUnitree G1のハードウェア改良版です。首の関節（2自由度）が追加されて周囲を見回せるようになり、モーター出力向上（肩・腰2.1倍）、双眼カメラや6マイクアレイ、外部給電への対応が図られました。ただし自律的に業務をこなすAIがパッケージされているわけではなく、価格や納期も構成別の個別見積もりで、主な想定用途は研究開発や展示・イベント実証となっています。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 3,
+      "concern_id": "work_ai",
+      "entry_question": "首を振って話す人型ロボが受付や店に来る日は、もうすぐ来る？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "首が動いてマイクやカメラが増えたとはいえ、中身は法人・研究向けの開発プラットフォームです。勝手に空気を読んで受付業務をこなしてくれる知能が載っているわけではありません。",
+      "investment_related": false,
+      "deja_vu_note": "kl032（3555ドルの家事ロボの成功率）、kl033（Atlasの手の構造）など人型ロボットの機体スペック・実用性を扱った回",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "GMO AIR G1+",
+      "jp_title_anchor": [
+        "G1+",
+        "GMO AIR",
+        "Unitree"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.6,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "【動画】4体のアヒル型ロボット「Microduck」が魅せる即興合唱 Hugging Face傘下Pollen Robotics",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9VaTlsYXYtcUI3aUc1eXJUQS1rXzRKdkI5cHRQNDlud0lMT3hQSjZNYkg3OGhMeGVsVlFqN2pVSVY3RHB1YlBTelgxS0tCSktidEVKRFYyTWFiZG9UbkhKX19Wc1g?oc=5",
+      "published": "2026-10-13",
+      "source": "Googleニュース（家庭用ロボット）／ロボスタ",
+      "source_kind": "media",
+      "outlet": "ロボスタ",
+      "outlet_host": "robotstart.info",
+      "genre_hint": "life_tech",
+      "summary": "【動画】4体のアヒル型ロボット「Microduck」が魅せる即興合唱 Hugging Face傘下Pollen Robotics（ロボスタ）",
+      "id": "1c3a8ff0bd",
+      "sources": [
+        "ロボスタ"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://pollen-robotics.com/microduck/",
+          "what_it_states": "高さ25cm、重量780g、15自由度、カメラ・LiDAR・IMU・スピーカー搭載。価格399ドル、取り外し可能なNP-F550バッテリーで稼働約1時間、2026年クリスマス前の初回出荷を予定。"
+        },
+        {
+          "kind": "tech_report",
+          "url": "https://github.com/pollen-robotics/microduck",
+          "what_it_states": "オープンソースコードとドキュメント。合唱機能（chorale）は各機体がBluetooth経由で近隣個体と同期し、4声部パートを割り振って頭部・嘴の動きと同期して歌う仕様や、途中で離脱した機体のパートは欠席として無音になる動作仕様を記載。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://www.youtube.com/watch?v=RAtzEyGBGFU",
+          "what_it_states": "Pollen Robotics公式チャンネルにて、4体のMicroduckが指揮者や楽譜なしでBluetooth同期し、即興でハモりながら歌う合唱デモ動画を公開。"
+        }
+      ],
+      "announced_on": "2026-10-12",
+      "headline_claim": "Hugging Face傘下のPollen Roboticsが開発したアヒル型二足歩行ロボ「Microduck」4体が、指揮者や楽譜なしにBluetoothで同期して即興合唱を披露した。",
+      "actual_content": "公開された合唱機能（chorale）は、各Microduckが近隣の機体とBluetoothメッシュで同期し、嘴や頭部の物理動作を合わせながら4声部のパートを分担してリアルタイム生成・演奏する仕組みである。完全なAIの気まぐれではなく、あらかじめ定義された音楽生成ルールに則って協調動作しており、演奏中に1体が抜けると該当パートが無音のまま進行する仕様となっている。本体は高さ25cm・重量780gの399ドルの開発・学習向けロボットで、バッテリー持続時間は約1時間にとどまる。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 1,
+      "work_relevance": 1,
+      "concern_id": null,
+      "entry_question": "アヒル型ロボットが仲間と集まって「即興で合唱する」って本当？ いつ家に来る？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "「即興合唱」と言っても、Bluetoothで通信して4声部の生成コードを分担再生しているだけで、1体でも電池が切れるとそのパートがすっぽ抜けて無音になる。バッテリーはわずか1時間しか持たず、家事は何もできないホビー・研究用のオモチャである点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "Microduck ロボスタ",
+      "jp_title_anchor": [
+        "Microduck",
+        "Pollen Robotics"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.35,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "健康と「食」の新たな関係 エピジェネティクス研究で見えてきた免疫・炎症・がん予防",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPZUhfZk9FSktUNkJtUXpFazhFVjB2cjVzd1hiUkpKQWNNTmpHS2NPa2pzN1pGT0gxdklDQmRrdWIwT2kyRUtIT1JjYVBnN1BGdFZSZ3ltdVVJZVdSMThlNXhZUEo3Zi1YbVNRbElOVkJxQkdsYW5FcGh0M3hsRXUxbklpYkxsN3dL?oc=5",
+      "published": "2026-10-13",
+      "source": "Googleニュース（研究 食事 健康 効果）／JAPAN Forward",
+      "source_kind": "media",
+      "outlet": "JAPAN Forward",
+      "outlet_host": "japan-forward.com",
+      "genre_hint": "food_health",
+      "summary": "健康と「食」の新たな関係 エピジェネティクス研究で見えてきた免疫・炎症・がん予防（JAPAN Forward）",
+      "id": "0e8df915ac",
+      "sources": [
+        "JAPAN Forward"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.3390/cimb48040368",
+          "what_it_states": "シイタケ菌糸体抽出物（AHCC）で前処理した間葉系幹細胞由来の細胞外小胞（EV）が、乳がん細胞株（MCF-7）由来の幹細胞において発がん性miR-155を抑制し、がん抑制性miR-34aやmiR-let7aを上昇させ、がん幹細胞の増殖を阻害したとするin vitro（試験管内）実験データ。"
+        },
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1155/tbj/2122220",
+          "what_it_states": "思春期BALB/cマウス（各群複数匹）にLPSで免疫ストレスを与えたモデルにおいて、AHCC（2g/kg/日）の投与が乳腺のDNAメチル化変化（対照比5%以上の差）やmiR-184上昇などエピジェネティックな調整に関与したとする動物実験データ。"
+        }
+      ],
+      "announced_on": "2026-04-01",
+      "headline_claim": "日々の食事や食品成分が遺伝子のオン・オフを制御するエピジェネティクスを介して炎症を抑え、乳がん幹細胞を抑制してがん予防や再発防止に役立つ可能性がある。",
+      "actual_content": "オタワ大学の研究チームが2026年4月に発表した論文等では、シイタケ菌糸体抽出物（AHCC）で処理した細胞外小胞（EV）が、培養乳がん幹細胞（MCF-7等）においてがん抑制性マイクロRNAを増やし細胞増殖を抑えることや、マウスモデルでの炎症性マイクロRNAの変化を検証しています。しかし、得られた知見はすべて試験管内の細胞実験やマウス実験による基礎段階の分子生物学的データにとどまります。ヒトが生体内でサプリメントや食品を経口摂取した場合に、同様のエピジェネティック変化やがん予防効果が得られるかは臨床試験で確認されていません。",
+      "buzz_jp_est": 1,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 1,
+      "concern_id": "cancer",
+      "entry_question": "キノコ菌糸体のサプリで『がんの遺伝子スイッチ』をオフにできるって本当？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "記事の元ネタは特定サプリ原料（AHCC）を製造するメーカーによるスポンサード記事（記事広告）であり、研究自体も試験管内の培養細胞やマウスの基礎実験にすぎません。ヒトの食生活でがん予防ができると一般化するにはエビデンスが飛躍しすぎています。",
+      "investment_related": false,
+      "deja_vu_note": "kl021（老いた目の設計図を書き換える：若返り遺伝子治療ER-100＝エピジェネティクス関連）、kl035（ダイエット飲料は水と同じ、は本当か＝食と健康のエビデンス検証）",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "アミノアップ エピジェネティクス",
+      "jp_title_anchor": [
+        "エピジェネティクス",
+        "アミノアップ"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.3,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "Anthropic、自己複製AIの「兆し」を指摘　55ドルのTVボックス15台で26Bモデルが稼働",
+      "url": "https://www.itmedia.co.jp/news/article/2610/13/2000002204/",
+      "published": "2026-10-13",
+      "source": "ITmedia AI+",
+      "source_kind": "media",
+      "summary": "Anthropicは、小型AIモデルがデータセンターを介さず安価な市販IoT機器上で自律的に自己複製する「重みベースの複製体」になるリスクを警告した。実験ではAndroid TVボックス上での分散推論や環境構築を確認。拡散ペースは遅いものの停止が難しいため、早期の防御策が必要と指摘した。",
+      "id": "acd88cd2d7",
+      "sources": [
+        "ITmedia AI+"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://www.anthropic.com/research/self-replicating-ai-without-datacenter",
+          "what_it_states": "約55ドルのノーブランドAndroid TVボックス（RAM 4GB）15台でGemma4-26B-A4B（4bit量子化）を分散推論させ、0.39 tokens/secで動作することを確認。またQwen3.5-9Bが9種類中8種類のハードウェアで推論環境の自動構築に成功。一方、無認証ADBポートを用いた簡易環境での自律複製実験で完遂できたのは巨大モデル（GLM-5.2が5回中4回成功）のみで、30B以下の小型モデルは単体での一連の複製を完遂できておらず、年内到達は能力指数の伸びを外挿した推計としている"
+        }
+      ],
+      "announced_on": "2026-10-12",
+      "headline_claim": "データセンターを介さず、家庭の安価なTVボックス等のIoT機器上でAIが自律的に自己増殖する脅威が数カ月で現実化する可能性がある。",
+      "actual_content": "Anthropicのレッドチームは、15台の安価なTVボックスを束ねて26Bモデルを分散実行できること（速度は0.39トークン/秒と極めて低速）を実証した。未知のハードウェア上で推論環境を自動構築する能力なども確認されたが、認証なしADBという大幅に簡略化された実験環境でも、自律的な自己複製プロセスを完遂できたのは巨大モデル（GLM-5.2）のみだった。30B以下の小型モデル単体ではまだ一連の自己複製を完遂できておらず、「数カ月〜2026年末までに自律複製の水準に達する」という主張は過去の能力指数の向上ペースを直線的に外挿した予測である。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "debate": 4,
+      "wonder": 4,
+      "life_relevance": 3,
+      "work_relevance": 2,
+      "concern_id": null,
+      "entry_question": "うちのスマートテレビや家電が、勝手にAIに乗っ取られて増殖するって本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "15台束ねても生成速度は毎秒0.39トークンと超激遅で、自律複製に成功したのもパスワード認証を外した実験室のガバガバ環境かつ巨大モデルだけの話。小型モデルが数カ月で自律増殖するという警告は、グラフの線を未来へ伸ばしただけの外挿予測です。",
+      "investment_related": false,
+      "deja_vu_note": "kl037（AIの暴走・指示漏れリスクの回）やkl038（エッジAI・端末での分散運用の議論）と一部テーマが重なる",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "Anthropic 自己複製",
+      "jp_title_anchor": [
+        "自己複製",
+        "TVボックス",
+        "Anthropic"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 4.0,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "「善玉菌を増やす」腸活は時代遅れ？ 最新研究で変わった腸活の新常識 Gas Stations (3fX8lTUY6Z)",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE83czd6X1haMTdrcjJiTEd3Mm9XVG5SV0hkdTNDZzhRQUpTb0tzb2JiVlk4ZG1LcmtsWFFZdzY5djBVZW0ybGpPa1A0MnZzVkpDLWo5UEYwMmVOLV96aVl2U05xaklwZw?oc=5",
+      "published": "2026-10-13",
+      "source": "Googleニュース（腸内細菌 研究）／Unisba Media",
+      "source_kind": "media",
+      "outlet": "Unisba Media",
+      "outlet_host": "media.unisba.ac.id",
+      "genre_hint": "food_health",
+      "summary": "「善玉菌を増やす」腸活は時代遅れ？ 最新研究で変わった腸活の新常識 Gas Stations (3fX8lTUY6Z)（Unisba Media）",
+      "id": "3adaf81b40",
+      "sources": [
+        "Unisba Media"
+      ],
+      "primary_sources": [],
+      "announced_on": "",
+      "headline_claim": "従来のヨーグルトなどで「善玉菌を増やす」腸活はすでに時代遅れであり、最新研究によって腸活の新常識が明らかになったと主張している。",
+      "actual_content": "本件は特定の研究機関や学会による新規論文・公式プレスリリースの発表ではなく、YouTube上の健康解説動画を海外のまとめサイトが自動収集・転載したコンテンツである。動画内で紹介されている内容も、善玉菌・悪玉菌という単純な二元論から腸内細菌叢の多様性や短鎖脂肪酸などの代謝産物重視へ移行しているという、近年一般に知られている概論をまとめたものにとどまる。新規の臨床試験や検証可能な数値データなど、一次資料となる研究成果は存在しない。",
+      "buzz_jp_est": 1,
+      "verifiability": 1,
+      "hype_gap": 3,
+      "debate": 2,
+      "wonder": 2,
+      "life_relevance": 4,
+      "work_relevance": 1,
+      "concern_id": "gut",
+      "entry_question": "「善玉菌を増やす」だけの腸活はもう時代遅れって本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "特定の新規論文や研究成果の発表ではなく、健康解説動画のタイトルを拾っただけの転載記事で一次資料が存在しません。語られている『多様性や代謝物が大事』という話自体も数年前からある一般的な知見です。",
+      "investment_related": false,
+      "deja_vu_note": "kl025（犬の腸内細菌と認知機能）と腸内細菌というテーマが共通するが、本件は人間の一般的な健康習慣に関する話題。",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "腸活 善玉菌",
+      "jp_title_anchor": [
+        "腸活",
+        "善玉菌"
+      ],
+      "announcement_type": "other",
+      "freshness": 5,
+      "overall_score": 2.7,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "excluded",
+      "excluded_reason": "一次資料で確認できない",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "1時間1200個、夜通し働く 中国のヒューマノイド、物流現場でベテラン作業員に迫った",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiO0FVX3lxTFA5SGFacGRyQ0dXYTl2Q0N2bktDeXIxakstaHNjSkY1d2hOX05NWldHaGNVMlFSQTE3aGRJ?oc=5",
+      "published": "2026-10-13",
+      "source": "Googleニュース（ヒューマノイド）／36Kr Japan",
+      "source_kind": "media",
+      "outlet": "36Kr Japan",
+      "outlet_host": "36kr.jp",
+      "genre_hint": "humanoid",
+      "summary": "1時間1200個、夜通し働く 中国のヒューマノイド、物流現場でベテラン作業員に迫った（36Kr Japan）",
+      "id": "19c5b23c6b",
+      "sources": [
+        "36Kr Japan"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.robotera.com/",
+          "what_it_states": "星動紀元（RobotEra）が中国郵政（広州郵区中心など）の荷物供給・仕分け工程に自研ロボット「星動M7」を正式導入したと発表。自研の五指ハンドXHAND1と具身モデルERA-42を搭載し、作業効率は人手の85%以上、1時間あたり最大1200個の荷物処理能力を達成したと公表。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://www.worldrobotconference.com/",
+          "what_it_states": "世界ロボット大会（WRC 2026）における星動紀元の実機展示仕様。物流専用モデルM7は固定工位向けに設計された半身＋立柱構造で、20自由度（腕7＋手12等）、0.5〜20kgの荷物に対応し、現場安定稼働で800件/時、ピーク時1200件/時と公表。"
+        }
+      ],
+      "announced_on": "2026-05-13",
+      "headline_claim": "中国の人型ロボットが物流拠点で夜通し稼働し、1時間あたり1200個の荷物を仕分けてベテラン作業員に迫る作業効率を達成したとされる。",
+      "actual_content": "中国・清華大学発のスタートアップ「星動紀元（RobotEra）」が中国郵政などの物流現場に導入した「星動M7」の運用実績。1時間あたり1200個はピーク時の処理能力であり、通常時の安定処理速度は約800個/時で、熟練作業員の約85%程度にとどまる。また、二足歩行ロボットではなく、作業安定性とコスト削減（約3分の1）を目的に下半身を省いた「半身＋固定立柱」の設計となっており、導入初期は現場の照明反射や不定形な荷物（テープ巻きの刃物や石など）で処理数が時速100個まで激減するなどの課題を経て調整された事例である。",
+      "buzz_jp_est": 2,
+      "verifiability": 4,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 4,
+      "concern_id": "work_ai",
+      "entry_question": "人型ロボが夜通し荷物を仕分ける時代は、もうすぐ来る？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "人型ロボットと謳いながら現場で動いているのは脚を捨てた「半身固定マシン」であり、時速1200個もピーク値で平時は時速800個程度。ただし二足歩行のロマンを捨ててコストを3分の1に抑え、手先と目玉だけに絞った割り切りこそが泥臭い現場で生き残った理由である点。",
+      "investment_related": false,
+      "deja_vu_note": "kl033（ボストン・ダイナミクスAtlasの新しい手）、kl032（家事ロボの成功率）",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "星動紀元 物流",
+      "jp_title_anchor": [
+        "星動紀元",
+        "RobotEra",
+        "1200個"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 1,
+      "overall_score": 2.25,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "全固体電池と500psを搭載。プジョー「RCZ ビジョン」が示す次世代EVクーペの狂気",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE0wUV96SFpHTks5VmdTdC15MkpkVXhPZ1ZmcG0zQlcwWXlpX0k0akwzcHlINEZxcGRNVkkxYWtkcW1rSzFOQjk0aVRSNA?oc=5",
+      "published": "2026-10-12",
+      "source": "Googleニュース（全固体電池）／トップギア・ジャパン",
+      "source_kind": "media",
+      "outlet": "トップギア・ジャパン",
+      "outlet_host": "topgear.tokyo",
+      "genre_hint": "life_tech",
+      "summary": "全固体電池と500psを搭載。プジョー「RCZ ビジョン」が示す次世代EVクーペの狂気（トップギア・ジャパン）",
+      "id": "c7fe9e62db",
+      "sources": [
+        "トップギア・ジャパン"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.media.stellantis.com/em-en/peugeot/press/peugeot-rcz-vision-emotion-at-the-heart-of-the-future-of-peugeot",
+          "what_it_states": "2026年パリモーターショーにてコンセプトカー『RCZ Vision』を発表。米Factorial Energyと共同開発した厚さ110mmの全固体電池と1,000Vアーキテクチャを搭載し、最高出力500hp、航続距離最大600km（目標電費11.5kWh/100km）、10%から80%まで10分での急速充電を想定。ただし市販化・量産の計画や時期は明記されていないブランドマニフェスト（コンセプト）である。"
+        }
+      ],
+      "announced_on": "2026-10-11",
+      "headline_claim": "プジョーが全固体電池と500馬力を搭載した伝説のクーペ後継EV「RCZ ビジョン」を発表し、10分で急速充電できる次世代スポーツカーが登場すると報じられている。",
+      "actual_content": "ステランティス傘下のプジョーが2026年パリモーターショーで世界初公開した「RCZ Vision」は、将来のデザイン言語と技術方向性を示すコンセプトカー（ブランドマニフェスト）である。Factorial Energyと共同開発した厚さ110mmの全固体電池と1,000Vシステムを想定し、最高出力500hp、航続距離600km、10%から80%充電10分などの目標値を掲げているが、バッテリー容量や実証データは非公表である。市販化の予定や発売時期は一切決まっておらず、現時点では走行可能な量産モデルの約束はない。",
+      "buzz_jp_est": 3,
+      "verifiability": 4,
+      "hype_gap": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 1,
+      "concern_id": "mobility",
+      "entry_question": "全固体電池で10分充電できる500馬力のプジョーEVクーペは、本当に市販される？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "モーターショー展示用のコンセプトカーにすぎず、市販化の予定や時期は一切発表されていない。全固体電池のセル容量やコスト、実走データも明かされておらず、理想のスペックを並べたデザインスタディにとどまる。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "プジョー RCZビジョン",
+      "jp_title_anchor": [
+        "RCZ",
+        "RCZビジョン",
+        "プジョー"
+      ],
+      "announcement_type": "event",
+      "freshness": 5,
+      "overall_score": 3.6,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "アレルギー性皮膚炎で症状繰り返す仕組み、マウスで発見 京大など",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1rd1hzVWpfNmQ3RlJZWTVXekxoNlJpUzNDemVrVkEyRWpTcEp6VHZONXkyY3hhRjc4QloxeFZWLXdxS2ZXLU03RmFEQjc1enVMNGh1ZU5tN1BKTWh3R2JlSmxQUVVsdldfM29OSw?oc=5",
+      "published": "2026-10-12",
+      "source": "Googleニュース（iPS細胞 研究 成果）／日本経済新聞",
+      "source_kind": "media",
+      "outlet": "日本経済新聞",
+      "outlet_host": "nikkei.com",
+      "genre_hint": "medical",
+      "summary": "アレルギー性皮膚炎で症状繰り返す仕組み、マウスで発見 京大など（日本経済新聞）",
+      "id": "ebe0bc09c4",
+      "sources": [
+        "日本経済新聞"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1016/j.immuni.2026.09.010",
+          "what_it_states": "アレルギー性皮膚炎が治まったマウス皮膚の血管周囲で、CXCR6陽性のCD4+組織常在性記憶T細胞（TRM）が樹状細胞とクラスターを形成し、CXCL16を介して維持されて再燃の火種となることを解明。ヒトのアトピー性皮膚炎患者の寛解皮膚組織でも同様のクラスター残存を確認した。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.kyoto-u.ac.jp/ja/research-news/2026-10-13",
+          "what_it_states": "京都大学と岐阜大学の研究グループが、皮膚炎沈静化後も皮膚に残る「再燃の火種」となる免疫細胞（CXCR6陽性記憶T細胞）と樹状細胞が形成する「免疫細胞の拠点」の仕組みを特定したと発表。"
+        }
+      ],
+      "announced_on": "2026-10-12",
+      "headline_claim": "アレルギー性皮膚炎が治まった後も症状をぶり返す「火種」となる免疫細胞と維持の仕組みをマウス実験で解明し、再燃を防ぐ新治療への道を開いた。",
+      "actual_content": "炎症が治まった後のマウス皮膚を解析し、真皮の血管周囲に潜むCXCR6陽性の記憶T細胞が樹状細胞とクラスター（免疫細胞の拠点）を形成し、CXCL16シグナルを介して維持されることで皮膚炎の再燃を引き起こすことを突き止めた。さらにヒトのアトピー性皮膚炎患者の改善後の皮膚組織生検でも同様のクラスター残存を確認している。ただし、本研究は再燃の病態メカニズムを分子レベルで特定した基礎研究であり、この拠点を標的とした治療薬の探索や臨床試験はこれからの段階である。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 2,
+      "wonder": 4,
+      "life_relevance": 2,
+      "work_relevance": 1,
+      "concern_id": null,
+      "entry_question": "皮膚炎がぶり返す「火種」を消す薬はいつ来る？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "見た目がきれいに治った皮膚の奥に免疫細胞が『秘密基地』を作って待ち構えているというメカニズムの解明は見事だが、今回は仕組みを突き止めた基礎研究段階。拠点を安全に壊す薬の開発やヒトでの治験は始まっておらず、治療薬として手元に届くには10年はかかる。",
+      "investment_related": false,
+      "deja_vu_note": "なし（過去回に皮膚アレルギーや再燃の免疫メカニズムを扱った回はない）",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "京大 アレルギー性皮膚炎",
+      "jp_title_anchor": [
+        "アレルギー性皮膚炎",
+        "再燃",
+        "京大"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.35,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "Microsoft、第3世代AIチップ「Maia 300」を2027年に投入　GPU比で電力効率4割向上、自社サービスの主力推論基盤に",
+      "url": "https://www.itmedia.co.jp/news/article/2610/13/2000002200/",
+      "published": "2026-10-13",
+      "source": "ITmedia AI+",
+      "source_kind": "media",
+      "summary": "Microsoftは、自社設計AIアクセラレータ「Maia 300」を発表した。TSMCの2nmプロセスを採用し、HBM4を288GB搭載。推論処理に特化し、GPU基盤比で電力効率を向上させて前世代比最大7倍の処理能力を実現した。数ギガワット規模で展開し、自社サービスの中核に据える。",
+      "id": "6a5fdf2767",
+      "sources": [
+        "ITmedia AI+"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://blogs.microsoft.com/blog/2026/10/12/microsoft-to-expand-azure-maia-system-to-multi-gigawatt-deployments/",
+          "what_it_states": "2027年よりAzure Maiaシリーズを数ギガワット規模で配備し、自社サービスの主要推論基盤とする計画。主要GPU基盤比でメガワットあたり40%多くのトークンを生成見込みで、96基構成のフルラックでMaia 200比最大7倍のラック単位トークンスループットを達成予定。"
+        },
+        {
+          "kind": "official_blog",
+          "url": "https://azure.microsoft.com/blog/deep-dive-into-azure-maia-300-architecture/",
+          "what_it_states": "TSMC N2Pプロセスを採用したコンピュートダイと3nmのI/O・メモリ制御ダイを組み合わせたチップレット設計。HBM4を288GB（帯域18TB/s）搭載し、ラックあたり96基（約167kW）、最大12,288基のスーパーポッド構成をサポート。"
+        }
+      ],
+      "announced_on": "2026-10-12",
+      "headline_claim": "Microsoftが2027年に投入する第3世代AIチップ「Maia 300」を発表し、GPU比で電力効率が4割向上、自社サービスの主力推論基盤になると報じられている。",
+      "actual_content": "Microsoft公式発表によると、Maia 300はTSMC 2nm級（N2P）プロセスと288GBのHBM4メモリを採用した自社製AI推論アクセラレータである。主要GPU基盤比でメガワットあたり40%のトークン処理効率向上、ラック単位で前世代比最大7倍の処理能力を謳うが、これは社内のシミュレーションに基づく見込み数値であり比較対象のGPU型番や生成品質の条件は公表されていない。また、一般ユーザーや外部企業が購入可能なチップではなく、自社データセンターの内部インフラとして2027年以降に段階展開される計画である。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 2,
+      "wonder": 3,
+      "life_relevance": 1,
+      "work_relevance": 2,
+      "concern_id": "work_ai",
+      "entry_question": "Microsoftの自社AIチップで、Copilotは安く速くなるの？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「GPU比で4割効率的」と謳うものの比較対象のGPU型番は非公開で、実配備は2027年以降の計画段階。さらに自社データセンターの裏方インフラであり、一般企業が買えるわけでも手元のAI料金が明日下がるわけでもない。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "Maia 300 マイクロソフト",
+      "jp_title_anchor": [
+        "Maia 300",
+        "マイクロソフト"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.4,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "不規則な食事時間が老化を早める!?｜CareNet.com",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5QSlZDbC1rbE14VWtZeEE4QmVHWnN4TExXN19rV0ZPRlk5QzJlb0Etb0JBUFU4ZWNOR2JsMUlLd1JkWEJhNFJCMlBKSThEeGVHT3Q5OUNkZkJYQUh6ejhZ?oc=5",
+      "published": "2026-10-10",
+      "source": "Googleニュース（研究 食事 健康 効果）／CareNet.com",
+      "source_kind": "media",
+      "outlet": "CareNet.com",
+      "outlet_host": "carenet.com",
+      "genre_hint": "food_health",
+      "summary": "不規則な食事時間が老化を早める!?｜CareNet.com（CareNet.com）",
+      "id": "4b7ce76f9c",
+      "sources": [
+        "CareNet.com"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1007/s41999-026-01524-9",
+          "what_it_states": "地域在住の高齢者378名（65歳以上）を対象にした横断研究において、食事時間が不規則な群は規則的な群より実年齢が有意に若い（平均73.3歳 vs 75.1歳）にもかかわらず、生物学的老化のバイオマーカーとされる血清GDF-15値が有意に高値（平均1161.4 pg/mL vs 1028 pg/mL）を示し、媒介分析によりその関連の約15%は食事の質（栄養素密度）の低さによって説明された。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.ncgg.go.jp/ri/news/20260626-1.html",
+          "what_it_states": "国立長寿医療研究センターによる研究成果発表。東浦研究のデータから食事時間の不規則性と血清GDF-15高値の関連を示し、魚介類等の摂取不足による食事の質の低さが一部媒介していることを報告した。"
+        }
+      ],
+      "announced_on": "2026-06-16",
+      "headline_claim": "食事の時間が不規則だと細胞レベルで老化が早まる可能性がある。",
+      "actual_content": "国立長寿医療研究センターが65歳以上の地域高齢者378名を対象に実施した横断研究である。食事時間が不規則な群は、規則的な群より実年齢が約1.8歳若いにもかかわらず、細胞ストレスや老化の指標とされる血清GDF-15濃度が有意に高かった。媒介分析により、この差の約15%は魚介類などの摂取不足による「食事の質の低さ」で説明された。ただし横断的な観察研究であり因果関係は証明されておらず、食事時間そのものの影響を立証するには今後の介入試験が必要とされている。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 3,
+      "concern_id": "aging",
+      "entry_question": "食事の時間がバラバラだと、本当に老化が早まるの？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "高齢者378人を1回調べただけの横断研究であり、食事時間が乱れたから老けたのか、別の不調で生活が乱れたから不規則なのか因果関係は不明。しかもマーカー上昇の15%は単に魚や野菜を食べていない栄養不足が原因とされており、時間のせいと決めつけるのは早計。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "国立長寿医療研究センター 食事時間",
+      "jp_title_anchor": [
+        "不規則な食事",
+        "食事時間",
+        "GDF-15"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.8,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
     }
   ]
 }
