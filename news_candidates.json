@@ -3326,7 +3326,7 @@
       "enriched_version": "2026-10-11-buzz-measured",
       "buzz_jp_est": 2,
       "buzz_error": "0件（検索語が合っていない可能性）",
-      "buzz_error_at": "2026-10-14T09:31:27",
+      "buzz_error_at": "2026-10-14T09:57:18",
       "jp_usable": 2,
       "work_relevance": 3
     },
@@ -4695,7 +4695,7 @@
       "enriched_version": "2026-10-11-buzz-measured",
       "buzz_jp_est": 3,
       "buzz_error": "0件（検索語が合っていない可能性）",
-      "buzz_error_at": "2026-10-14T09:31:27",
+      "buzz_error_at": "2026-10-14T09:57:18",
       "jp_usable": 1,
       "work_relevance": 2
     },
@@ -8455,7 +8455,7 @@
       ],
       "url_ok": null,
       "url_status": "help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
-      "url_checked_at": "2026-10-14T09:31:57"
+      "url_checked_at": "2026-10-14T09:57:59"
     },
     {
       "title": "「我々が世界市場を作っていく」…万博が示した「未来の医療」を先導する関西は世界３位の位置付け、涙から乳がんのリスクを調べる技術も",
@@ -9138,7 +9138,7 @@
       ],
       "url_ok": null,
       "url_status": "kyoto-u.ac.jp: HTTP 200「「食べる順番」が食後血糖を左右する仕組みを解明―脂質を糖質よ」 ／ diabetesjournals.org: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
-      "url_checked_at": "2026-10-14T09:31:49"
+      "url_checked_at": "2026-10-14T09:57:45"
     },
     {
       "title": "KAIST、ヒューマノイドを超えた「フィジカルAI」プラットフォーム戦略を公開",
@@ -10146,7 +10146,7 @@
       ],
       "url_ok": false,
       "url_status": "yaskawa.co.jp: HTTP 404",
-      "url_checked_at": "2026-10-14T09:31:43"
+      "url_checked_at": "2026-10-14T09:57:40"
     },
     {
       "title": "可搬重量100kgで既存の台車や棚を運搬可能 最新AMR「カチャカEvo」のデモを披露：CEATEC 2026",
@@ -10247,7 +10247,7 @@
       ],
       "url_ok": false,
       "url_status": "kachaka.life: HTTP 404 ／ kachaka.life: HTTP 200「自律搬送ロボット &quot;カチャカEvo&quot; ｜」",
-      "url_checked_at": "2026-10-14T09:32:02"
+      "url_checked_at": "2026-10-14T09:58:04"
     },
     {
       "title": "慢性腎臓病を「治る病」に 新規の透析患者ゼロへ新薬を研究 埼玉医大",
@@ -10402,7 +10402,7 @@
       ],
       "url_ok": true,
       "url_status": "cloud.google.com: HTTP 200「Gemini at Work 2026: Introduci」 ／ cloud.google.com: HTTP 200「Google Cloud Blog」",
-      "url_checked_at": "2026-10-14T09:31:40"
+      "url_checked_at": "2026-10-14T09:57:50"
     },
     {
       "title": "新生児の免疫システムは生後7日間で決まる",
@@ -10750,7 +10750,7 @@
       ],
       "url_ok": true,
       "url_status": "sbintuitions.co.jp: HTTP 200「国産生成AI「Sarashina」を利用できる「Sarash」 ／ sarashina.ai: HTTP 200「Sarashina」",
-      "url_checked_at": "2026-10-14T09:31:53"
+      "url_checked_at": "2026-10-14T09:57:55"
     },
     {
       "title": "ロンドンとベルファストの研究者たちは、ケフィアを通して腸と筋肉がどのように情報伝達を行うかを研究している。",
@@ -11702,6 +11702,935 @@
       "announcement_type": "research",
       "freshness": 1,
       "overall_score": 2.8,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "国産ヒューマノイド「N」の量産試作機をCEATEC 2026に展示、HighlandersがAWSブース内で動作デモを実施",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5OTWc4YTV3WG13cl8yUU9xSUlHT28wTGZJVmpidGJfTXVuVHlBX3R6cG9wNjNSY1hENVNfWDRpS29GSmlPc3Z2bmRMU3pKeUtEUUY1NlQtTnZ0aEU5dnFQbDZSNF8?oc=5",
+      "published": "2026-10-13",
+      "source": "Googleニュース（ヒューマノイド）／ロボスタ",
+      "source_kind": "media",
+      "outlet": "ロボスタ",
+      "outlet_host": "robotstart.info",
+      "genre_hint": "humanoid",
+      "summary": "国産ヒューマノイド「N」の量産試作機をCEATEC 2026に展示、HighlandersがAWSブース内で動作デモを実施（ロボスタ）",
+      "id": "805f84e5c0",
+      "sources": [
+        "ロボスタ",
+        "Infoseek"
+      ],
+      "dup_ids": [
+        "c09c9d35c3",
+        "8f9ec91c9d"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000000010.000156831.html",
+          "what_it_states": "HighlandersがCEATEC 2026のAWSブース（10月13日・14日）で国産ヒューマノイド『N』の量産試作機の実機展示と動作デモを実施。垂直統合開発で可搬重量は片腕8kg・両腕12kg。三菱自動車との協業のもと2027年の出荷開始を目指す。"
+        }
+      ],
+      "announced_on": "2026-10-13",
+      "headline_claim": "東大発ベンチャーのHighlandersが、国産ヒューマノイド「N」の量産試作機をCEATEC 2026で展示し動作デモを披露した。",
+      "actual_content": "自社開発の国産ヒューマノイド「N」の量産試作機を、CEATEC 2026会場内のAWSブースで2日間展示・実演デモを行うという出展告知である。機体スペックとして片腕8kg・両腕12kgの可搬重量が公表され、三菱自動車との協業による2027年出荷開始目標が再掲されている。ただし今回の発表は展示会での動作デモの案内であり、実製造ラインでの作業成功率やタスク完了時間などの検証データは含まれていない。",
+      "buzz_jp_est": 2,
+      "verifiability": 4,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 1,
+      "work_relevance": 2,
+      "concern_id": "work_ai",
+      "entry_question": "国産ヒューマノイド「N」は、本当に2027年に工場で働き始める？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「量産試作機の展示」とはいえ、今回は展示会ブース内での動作デモにとどまる。自動車製造の位置合わせ作業に向けた基盤モデル開発（GENIAC）は始まったばかりで、実際の製造現場で使える水準に達しているかのデータはまだ示されていない。",
+      "investment_related": false,
+      "deja_vu_note": "kl033（ボストン・ダイナミクス Atlas）など海外ヒューマノイドの回はあるが、国内スタートアップによる製造業向け量産試作機の発表は初。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "Highlanders ヒューマノイド",
+      "jp_title_anchor": [
+        "Highlanders",
+        "ヒューマノイド",
+        "CEATEC"
+      ],
+      "announcement_type": "event",
+      "freshness": 5,
+      "overall_score": 3.15,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "プジョーRCZビジョン、全固体電池と1000V技術を提示",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNV3JaSWNSYnBtakpONzdsNFdndE9wX0x2a1paX3NsSWhybFhBQ2Q1OW9JTWpuY09QZENpcXlmS3BNWXBxeWJOUFM4ZDJfeXd0Z3hEUzgxU09neXRhTDJGaC1wc0tiNV82Z2RTc0hvZEg1MjN1clI5WHNMNmZNNHVXTk1DbkJNTkFpQ3ZqZ0VCcE9aOWszZy1HMVR6VzFsNnBrRUtOczJ30gGqAUFVX3lxTE9MZTRnWEpJMVA3eVBRWWJxVHVUYUV6M0NaT2FOVDNHNnF3aFp0R0VNeW9LTXNXRkRQZ1FRYnFMVnNESThhb21PNDhEMjY0X3M4djgtdUpBXzF2OHBqNnpIX3VHS2puUDB6STE2SG1KeHI0a05JVXZKbEN1VnZLTmF0QWhWOWszd3FPWDdoalBjZEJoU3FGeFhheHRQQjhIbTdYZVllYUprcGtR?oc=5",
+      "published": "2026-10-12",
+      "source": "Googleニュース（全固体電池）／SpeedMe.ru",
+      "source_kind": "media",
+      "outlet": "SpeedMe.ru",
+      "outlet_host": "speedme.ru",
+      "genre_hint": "life_tech",
+      "summary": "プジョーRCZビジョン、全固体電池と1000V技術を提示（SpeedMe.ru）",
+      "id": "0ff3e00e4a",
+      "sources": [
+        "SpeedMe.ru"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.media.stellantis.com/em-en/peugeot/press/peugeot-rcz-vision-emotion-at-the-heart-of-the-future-of-peugeot",
+          "what_it_states": "STLA Oneプラットフォームに基づくEVコンセプトカー。米Factorial Energyと共同開発した厚さ110mmの全固体電池と1000V電気アーキテクチャを採用し、最高出力500hp、航続距離最大600km、10%〜80%充電10分、目標電費11.5kWh/100km（WLTP暫定目標）を提示。ステア・バイ・ワイヤやHypersquareステアリング等を搭載するが、量産・市販化の予定は未定のブランドマニフェストである。"
+        }
+      ],
+      "announced_on": "2026-10-11",
+      "headline_claim": "プジョーが全固体電池と1000V技術を搭載し、10分で80%充電できる500馬力のスポーツEV「RCZビジョン」を発表した。",
+      "actual_content": "パリモーターショー2026に合わせて公開されたデザイン・技術提示用のコンセプトカー（ブランドマニフェスト）の発表です。Factorial Energyと共同開発した厚さ110mmの全固体電池セルと1000Vシステムを想定し、航続600kmや10分充電（10〜80%）を掲げていますが、数値は暫定の設計目標（pending confirmation）にとどまります。角型操作系「Hypersquare」の一部要素が次世代市販車に採用予定とされる以外、RCZ自体の量産化や発売時期は一切確定していません。",
+      "buzz_jp_est": 3,
+      "verifiability": 4,
+      "hype_gap": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 2,
+      "concern_id": "mobility",
+      "entry_question": "10分で80%まで充電できる全固体電池のEVは、もうすぐ買える？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "10分充電や航続600kmはあくまでショーカーとしての目標スペック（未確認の暫定値）にすぎず、そもそもRCZビジョン自体の量産・市販化予定すら決まっていない点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "RCZビジョン プジョー",
+      "jp_title_anchor": [
+        "RCZビジョン",
+        "RCZ Vision"
+      ],
+      "announcement_type": "event",
+      "freshness": 5,
+      "overall_score": 3.6,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "Eli Lilly社が肥満治療薬候補retatrutideの2件の第3相で好結果、BLAを準備",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9vdDNpVXl2SFh5UVN3bXRUd2V1SmNKMmpja0kzWExWNUJVQl9ETW1tQUZiMktXZnMyekI2bHlYZGJINkpYeTBzTWJIV0tOLUdtZjlYa1VmWEZxamtZY242eWJyUWFadw?oc=5",
+      "published": "2026-10-12",
+      "source": "Googleニュース（iPS細胞 研究 成果）／日経バイオテクONLINE",
+      "source_kind": "media",
+      "outlet": "日経バイオテクONLINE",
+      "outlet_host": "bio.nikkeibp.co.jp",
+      "genre_hint": "medical",
+      "summary": "Eli Lilly社が肥満治療薬候補retatrutideの2件の第3相で好結果、BLAを準備（日経バイオテクONLINE）",
+      "id": "69550c628f",
+      "sources": [
+        "日経バイオテクONLINE"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-substantial-weight",
+          "what_it_states": "2型糖尿病を伴う肥満・過体重成人1,152人を対象とした第3相TRIUMPH-2試験において、80週時点でレタトルチド12mg群は平均20.8%の体重減少（プラセボは4.0%減）、HbA1cは1.5%低下を達成。12mg群の34.9%が25%以上の体重減少に到達。リリーは2027年第1四半期に米FDAへ生物学的製剤承認申請（BLA）を提出予定と発表"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-successful-two-additional",
+          "what_it_states": "第3相試験TRIUMPH-2（1,152人）およびTRIUMPH-3（心血管疾患を伴う重度肥満1,949人）の主要評価項目を達成。TRIUMPH-3の80週時点での体重減少率は最大22.6%を記録"
+        }
+      ],
+      "announced_on": "2026-09-29",
+      "headline_claim": "米イーライリリーの次世代肥満症治療薬候補レタトルチドが2件の第3相試験で良好な結果を示し、2027年初頭の承認申請に向けて準備中であること",
+      "actual_content": "GIP、GLP-1、グルカゴンの3つの受容体に同時作用するトリプル作動薬レタトルチドの第3相試験（TRIUMPH-2：1,152人、TRIUMPH-3：1,949人）で、80週間の投与により最高用量群（12mg）で20.8%〜22.6%の体重減少を達成した。TRIUMPH-2では最高用量群の約35%が25%以上の減量に達し、糖尿病指標のHbA1cも1.5%改善した。米イーライリリーは2027年第1四半期に米FDAへBLA（生物学的製剤承認申請）を提出する計画だが、本剤を生物学的製剤とみなすか否かを巡りFDAと法廷闘争が続いている。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 4,
+      "work_relevance": 1,
+      "concern_id": "blood_sugar",
+      "entry_question": "外科手術並みに痩せると話題の『第3世代の肥満薬』は、いつ日本に来る？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "米国での申請自体が早くても2027年第1四半期予定で、しかも生物製剤の指定基準（アミノ酸数の解釈）を巡ってFDAと係争中。米国で承認されてから日本の治験・保険適用を経ることを考えると、実際に処方されるまでには3年以上はかかる。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "retatrutide 第3相",
+      "jp_title_anchor": [
+        "retatrutide",
+        "レタトルチド",
+        "第3相"
+      ],
+      "announcement_type": "research",
+      "freshness": 3,
+      "overall_score": 3.15,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14",
+      "buzz_measured": 1,
+      "buzz_outlets": 0,
+      "yahoo": false,
+      "buzz_evidence": [],
+      "buzz_trend": null,
+      "buzz_articles_14d": 0,
+      "buzz_raw_items": 3,
+      "buzz_query": "retatrutide 第3相",
+      "buzz_measured_at": "2026-10-14T09:57:33"
+    },
+    {
+      "title": "「Google Play」、AI Studioで作った自作アプリを自分の端末で実行可能に　AIでゲームを探す機能も",
+      "url": "https://www.itmedia.co.jp/news/article/2610/14/2000002240/",
+      "published": "2026-10-14",
+      "source": "ITmedia NEWS",
+      "source_kind": "media",
+      "summary": "Google Playに複数の新機能が追加された。「Google AI Studio」でバイブコーディングした自作Androidアプリを開発者登録なしで自分の端末上で起動・実行できる機能のほか、AIによるアプリ比較「Ask Play」、プレイスタイルを分析して好みの作品を推薦する「Game Finder」などを順次提供する。",
+      "id": "9c17d3cb2d",
+      "sources": [
+        "ITmedia NEWS"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://android-developers.googleblog.com/2026/10/discovery-engagement-growth-google-play.html",
+          "what_it_states": "Google AI Studioで生成（バイブコーディング）したAndroidアプリを、有料の開発者アカウント不要でGoogle Playの『Personal library』経由で自身の端末に直接配信・起動できる機能を18歳以上の米国等のユーザー向けに提供開始。アプリは一般検索・ストア一覧には載らない非公開仕様で、今後数か月で親しい家族・友人への限定共有に対応し、将来的に正式な開発者審査を経て公開版へ移行可能とする方針。併せてアプリ同士の比較を行う『Ask Play』やプレイスタイル分析に基づく『Game Finder』の提供開始を発表。"
+        }
+      ],
+      "announced_on": "2026-10-13",
+      "headline_claim": "Google Playで、AI Studioを使って自然言語で作った自作Androidアプリを、開発者登録なしで自分のスマホに入れて直接動かせるようになった。",
+      "actual_content": "Googleの公式発表によると、Google AI Studioで指示文（プロンプト）から生成したAndroidアプリを、有料の開発者登録を行わずに通常のGoogleアカウントを使って自端末（Personal library）へ配備・起動できる機能が米国などの18歳以上向けに提供開始された。これまでのADB等を使った手動サイドロードの手間を省くものだが、アプリは一般のPlayストア一覧や検索結果には掲載されず、作成者本人の端末のみで動く完全非公開枠となる。親しい家族や友人への限定共有は今後数か月以内の実装予定にとどまり、一般に広く配布・公開するには従来通り有料の開発者アカウント登録とセキュリティ審査が必要とされる。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 3,
+      "work_relevance": 3,
+      "concern_id": "work_ai",
+      "entry_question": "プログラミング知識ゼロでも、AIに頼めば自分専用のスマホアプリがすぐ手に入るって本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「Google Playで配信できる」と言っても、まずは『自分1人の端末でしか動かせない非公開枠』にすぎない。AIが自動生成したコードはセキュリティ上の脆弱性を抱えやすく、家族や同僚に安全に配る機能もまだ実装待ちのため、現時点では完全な個人のお試しにとどまる点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "Google Play AI Studio",
+      "jp_title_anchor": [
+        "Google Play",
+        "AI Studio"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.55,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "キンモクセイの香りには食欲を抑える効果が？",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE44bUpjZVlsUlY1dHZ3bWMtdWZ0a2tvcTY5YUt6X25vZ1drV1IwRG1VcTg1Z2VoNkUzMmUyVXVob05URGV1bmdiNFpLWlJod0c0SVlyUURKckxPUmlQbF9PbEZLd0VUYWp1d2x6N21kTDBTdE1KMG4wTFVyempRdw?oc=5",
+      "published": "2026-10-14",
+      "source": "Googleニュース（研究 食事 健康 効果）／UQライフ",
+      "source_kind": "media",
+      "outlet": "UQライフ",
+      "outlet_host": "portal.uqmobile.jp",
+      "genre_hint": "food_health",
+      "summary": "キンモクセイの香りには食欲を抑える効果が？（UQライフ）",
+      "id": "d5eefc391b",
+      "sources": [
+        "UQライフ"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1038/srep01518",
+          "what_it_states": "ラットを用いた実験において、キンモクセイ（Osmanthus fragrans）の香気暴露により視床下部の食欲増進ペプチド（オレキシンなど）の発現低下と摂食行動の抑制、体重増加抑制が確認された。嗅覚障害を誘発させたラットでは同効果が見られず、嗅覚経路を介した作用であることが示された。"
+        }
+      ],
+      "announced_on": "2013-04-08",
+      "headline_claim": "キンモクセイの甘い香りを嗅ぐだけで脳の満腹中枢が刺激されて食欲が抑えられ、秋の食べ過ぎやダイエットに効果がある。",
+      "actual_content": "科学的根拠の主軸となっているのは2013年にScientific Reports誌に発表されたラット中心の基礎研究である。香りを嗅がせることで視床下部におけるオレキシンなどの摂食関連ペプチド発現が変動し摂食量が減るメカニズムが示されたものの、ヒトでの実験はごく少人数（学生や女性数名〜数十人）を対象にマスク裏に香りを塗布して短時間のクッキー摂取量を測るパイロット試験レベルにとどまる。市販の芳香剤や香水を日常使いして持続的な減量効果や体脂肪減少が得られるかを検証した大規模な臨床試験は存在しない。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "debate": 2,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 1,
+      "concern_id": "food",
+      "entry_question": "キンモクセイの香りを嗅ぐだけで食欲が抑えられるって本当？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "毎年秋になると『秋太り防止』として掘り返される定番ネタだが、根拠は2013年のラット実験とごく小規模な実験止まり。『部屋に芳香剤を置くだけで痩せる』かのように語られているが、香りに慣れてしまえば効果が薄れる可能性や、ヒトでの長期的なダイエット効果は全く裏付けられていない。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "キンモクセイ 食欲抑制",
+      "jp_title_anchor": [
+        "キンモクセイ",
+        "食欲"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.45,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "D1:日本の屋内環境に最適化された準国産ヒューマノイド",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1GOGJXcnJRTHFpSVZKVGZsMm9XVnBMSW9YX0JMSEJ0WUItYTZNRzliS3pGVk9FeG5GMFlzVGowWjdaRldmTU1JTzhQbw?oc=5",
+      "published": "2026-10-13",
+      "source": "Googleニュース（ヒューマノイド）／知財図鑑",
+      "source_kind": "media",
+      "outlet": "知財図鑑",
+      "outlet_host": "chizaizukan.com",
+      "genre_hint": "humanoid",
+      "summary": "D1:日本の屋内環境に最適化された準国産ヒューマノイド（知財図鑑）",
+      "id": "b56779c47c",
+      "sources": [
+        "知財図鑑"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000000206.000019209.html",
+          "what_it_states": "株式会社ZEALSが2026年8月5日に発表した『D1』の仕様。全高129.3cm〜159.3cm、台車幅48cm、総重量110kg、7自由度×2の双腕（片腕可搬重量5kg）、足回りは二足ではなく自律移動台車（AMR）。連続稼働8時間。価格は本体500万円（税別）からで、OS利用料と保守で別途月額計20万円が必要。2026年度内に100台量産、累計1万時間の現場稼働を目指すとしている。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://omakaserobotics.ai/",
+          "what_it_states": "公式製品ページ。屋内狭小空間への適合を重視し、アクチュエータやハンド、バッテリーなどの主要部品は海外製（中国等）を採用しつつ、国内で設計・組み立て・制御ソフト開発を行う『準国産』方式を明記。"
+        }
+      ],
+      "announced_on": "2026-08-05",
+      "headline_claim": "日本の狭い屋内や病院・介護現場に最適化した、1体500万円からの準国産ヒューマノイド「D1」が登場した。",
+      "actual_content": "ZEALSが発表したD1は、二足歩行ではなく車輪型台車（AMR）の上に双腕と頭部を備えたセミヒューマノイドである。全幅48cmと狭い通路を通れる一方、段差踏破性能は1cm以下に制限される。『準国産』と称するものの、ハンドやモーター、バッテリーなどの主要部品は中国や米国からの調達で、国内オフィスでの組み立てとソフト開発を担う構成である。価格は本体500万円に加えて月額20万円（年240万円）の運用・保守費がかかり、病院等での実証はエンジニア常駐体制で行われている。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 4,
+      "concern_id": "family_care",
+      "entry_question": "日本の病院や介護施設に、500万円の人型ロボは本当にやってくる？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "人型と呼びつつ足はなく車輪台車なので1cm以上の段差で止まる点や、『準国産』と言いつつ駆動部や手などの心臓部は中国製部品の調達であること。本体500万円に加えて毎年240万円の維持費がかかり、現状の実証も技術者の見守り前提である点。",
+      "investment_related": false,
+      "deja_vu_note": "kl032（家事ロボの成功率・価格検証）、kl033（人型ロボの手の構造）",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "ZEALS D1 ヒューマノイド",
+      "jp_title_anchor": [
+        "ZEALS",
+        "D1",
+        "準国産ヒューマノイド"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 1,
+      "overall_score": 2.6,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "プジョー RCZビジョン発表、全固体電池のEVクーペ｜パリモーターショー",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBESkNINTRHNUwyUDV2Qlp3MExmajJTeS0wbkxzNlY0a1hLUHhLVVRZZlBTNnNXM2I4Q2RDeERWemVUV21WaTYtVi03S3c0cWNtS1lkMmpSN1VGMDFlTERiTjl5cWNWTlU?oc=5",
+      "published": "2026-10-12",
+      "source": "Googleニュース（全固体電池）／https://transcarweb.com/",
+      "source_kind": "media",
+      "outlet": "https://transcarweb.com/",
+      "outlet_host": "transcarweb.com",
+      "genre_hint": "life_tech",
+      "summary": "プジョー RCZビジョン発表、全固体電池のEVクーペ｜パリモーターショー（https://transcarweb.com/）",
+      "id": "f77dfcc005",
+      "sources": [
+        "https://transcarweb.com/"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.media.stellantis.com/em-en/peugeot/press/peugeot-rcz-vision-emotion-at-the-heart-of-the-future-of-peugeot",
+          "what_it_states": "STLA Oneベースの車体にFactorial Energyと共同開発した厚さ110mmの全固体電池と1000V電気システムを組み合わせ、最高出力500hp、航続距離最大600km（電費11.5kWh/100km）、10%から80%までの充電10分を掲げるEVコンセプトカー。ブランドの将来のデザインと思想を示すマニフェストと位置付けられており、量産化や市販化の計画は記載されていない。"
+        }
+      ],
+      "announced_on": "2026-10-11",
+      "headline_claim": "プジョーの名車RCZが、全固体電池と超急速充電を備えた500馬力の電動クーペ『RCZビジョン』として復活した。",
+      "actual_content": "パリモーターショー2026で公開された『RCZ Vision』は、ブランドの次世代デザイン思想『Feline Future』やステア・バイ・ワイヤ技術を提示するためのコンセプトカーである。Factorial Energyと開発した110mm厚の全固体電池により、最大600kmの航続距離や10分での急速充電（10〜80%）、500馬力という高い目標値が示されている。しかし、これらは設計目標値であり充放電耐久性や量産技術の実証データは含まれておらず、車両自体の市販化予定も明らかにされていない。",
+      "buzz_jp_est": 3,
+      "verifiability": 4,
+      "hype_gap": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 2,
+      "concern_id": "mobility",
+      "entry_question": "全固体電池で10分充電の電動クーペ『RCZビジョン』は、本当に市販される？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "公開されたのは将来の技術スタディを示すコンセプトカーに過ぎず、市販化の予定は一切公表されていない。10分充電や航続600kmという全固体電池の性能も目標スペックの提示にとどまり、量産の目処が立ったわけではない。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "RCZビジョン プジョー",
+      "jp_title_anchor": [
+        "RCZビジョン",
+        "プジョー"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.6,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "がん患者に発症したNTM症では、8割が治療の変更を要する",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPMVpEMi1EUFZReTZVZXQyTWlScjYxaTdONzlrRUhRQk1fNk1jZ00zTG5neV81LXZxb1E2X1BNNThTNWVyZ0V1RVNRMlZNRWs2LVFOa3NSUTFoMHk3S2ZUVjNaZl9rZnMzSExBQjV1ODR6cVhqSHpuUUpvMVlOeVZ5SVdtQ1g?oc=5",
+      "published": "2026-10-12",
+      "source": "Googleニュース（がん 新しい治療 研究）／日経メディカル",
+      "source_kind": "media",
+      "outlet": "日経メディカル",
+      "outlet_host": "medical.nikkeibp.co.jp",
+      "genre_hint": "medical",
+      "summary": "がん患者に発症したNTM症では、8割が治療の変更を要する（日経メディカル）",
+      "id": "53c0cd7417",
+      "sources": [
+        "日経メディカル"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1093/ofid/ofag467",
+          "what_it_states": "米国フロリダ州のがんセンターで2020〜2023年にNTM感染が確認された成人93例（80%が過去または活動性のがん罹患）を解析したところ、NTM治療を受けた49例中39例（80%）が副作用や効果不足・最適化のために初期治療レジメンの変更を要した。73%で自覚症状の改善が見られた一方、画像改善は37%、培養陰性化は39%にとどまり、27%が死亡または追跡不能となった。"
+        }
+      ],
+      "announced_on": "2026-07-29",
+      "headline_claim": "がん患者が非結核性抗酸菌（NTM）症を発症した場合、8割が治療薬の変更を迫られる。",
+      "actual_content": "米モフィットがんセンターの後ろ向きコホート研究において、NTM感染が確認された成人93例中、治療を開始した49例の80%（39例）が副作用や忍容性低下、効果最適化により初期抗菌薬レジメンの変更を強いられていた。治療者の73%で自覚症状は改善したものの、持続的な培養陰性化は39%にとどまり、27%が死亡または追跡不能となっていた。単一施設の後ろ向き観察研究であり、対象患者数が治療群49例と限られている点やがん種・菌種のばらつきが限界として挙げられる。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 2,
+      "debate": 2,
+      "wonder": 2,
+      "life_relevance": 3,
+      "work_relevance": 1,
+      "concern_id": "cancer",
+      "entry_question": "がん治療中に肺の菌（NTM）が見つかったら、治療法の変更は避けられないって本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "8割が変更を要したのは「がんの抗がん剤治療」ではなく「NTMに対する抗菌薬の組み合わせ」であり、米国の単一施設で実際に治療を受けたわずか49例の後ろ向き観察データにすぎない点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "日経メディカル NTM症",
+      "jp_title_anchor": [
+        "NTM症",
+        "治療の変更"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.15,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "Apple、「Welcome home」イベントで発表されたことまとめ　日本でも2製品予約開始",
+      "url": "https://www.itmedia.co.jp/news/article/2610/14/2000002235/",
+      "published": "2026-10-13",
+      "source": "ITmedia NEWS",
+      "source_kind": "media",
+      "summary": "Appleはスマートホーム関連の新製品を発表した。7インチのディスプレイと「Siri AI」を搭載する「HomeView」のほか、「A19」搭載「Apple TV 4K」、音に同期して発光する「HomePod mini 2」、LGらと共同開発したスマートホーム製品群を公開。日本でも一部製品を順次発売する。",
+      "id": "39876262e8",
+      "sources": [
+        "ITmedia NEWS"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.apple.com/jp/newsroom/2026/10/meet-apple-homeview-a-new-way-to-enjoy-entertainment-and-manage-the-home/",
+          "what_it_states": "7インチLiquid Retinaディスプレイ（1088×1088ピクセル、輝度0.3〜500ニト）、A18チップ、顔認識で最大6人を識別するスマートハブ『Apple HomeView』を発表。価格は299ドルで米国など6カ国で11月13日発売。日本向け発売日や日本語対応時期についての記載はない。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.apple.com/jp/newsroom/2026/10/apple-unveils-the-new-apple-tv-4k-supercharged-by-siri-ai/",
+          "what_it_states": "A19チップ（前世代比CPU最大50%高速化、GPU最大2倍）とハンズフリー用マイク、探す機能対応リモコンを備えた第4世代『Apple TV 4K』を発表。米国299ドル、日本では4万9800円で11月13日発売。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.apple.com/jp/newsroom/2026/10/introducing-apple-home-collection-a-new-lineup-of-smart-home-accessories/",
+          "what_it_states": "LGおよびSchneider Electricと共同開発したカメラ4種、ビデオドアベル、スマートロック、サーモスタットなどを含む『Apple Home Collection』を発表。12月より順次発売。"
+        }
+      ],
+      "announced_on": "2026-10-13",
+      "headline_claim": "Appleが7インチ画面とSiri AIを搭載した新ハブ「HomeView」や新型Apple TVなどを発表し、日本でも予約が開始された。",
+      "actual_content": "一次資料によると、Apple初となる画面付きスマートホームハブ『HomeView』（299ドル）は米国など6カ国での販売にとどまり、日本での発売予定は示されていない。また、目玉機能である会話型AI『Siri AI』も英語のみ対応で対象は米英など8カ国に限定されている。日本で予約開始された2製品についても、Apple TV 4Kが4万9800円、HomePod mini 2が2万4800円と前世代から大幅に値上げされており、HomePod mini 2のSiri AI機能は将来のアップデート待ちとなっている。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 2,
+      "concern_id": "housework",
+      "entry_question": "Appleの画面付きAIハブ『HomeView』は日本でもすぐ買える？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "目玉のHomeViewは日本発売未定で、Siri AIも英語圏8カ国のみの対応。日本で買えるApple TVやHomePod mini 2は価格が大幅に引き上げられたうえ、AI機能は将来アップデート待ちという二重のお預け状態。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "HomeView Apple",
+      "jp_title_anchor": [
+        "HomeView",
+        "Apple TV 4K",
+        "Welcome home"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.8,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "バターを植物油に置き換えると死亡リスクは低下する｜CareNet.com",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE15ankxNmFXZEZ6U3JIUC1sdkRRbjNMUjl4SDJsQVdFZGE0cEdxRmZTWUFydi1Vb0c4UWZTNTBkNlZvVWlRc3lPRTBEMDRZdkMwWFZsV3ltWFc1QQ?oc=5",
+      "published": "2026-10-10",
+      "source": "Googleニュース（研究 食事 健康 効果）／CareNet.com",
+      "source_kind": "media",
+      "outlet": "CareNet.com",
+      "outlet_host": "carenet.com",
+      "genre_hint": "food_health",
+      "summary": "バターを植物油に置き換えると死亡リスクは低下する｜CareNet.com（CareNet.com）",
+      "id": "7294992374",
+      "sources": [
+        "CareNet.com"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1001/jamainternmed.2025.0205",
+          "what_it_states": "米国成人22万1,054人を最長33年間追跡したコホート研究で、バター摂取最多群は最少群に比べ全死亡リスクが15%高かった（HR 1.15）。統計的な置換モデルにおいて、1日10gのバターを植物油（大豆油・キャノーラ油・オリーブ油等）に置き換えた場合、全死亡およびがん死亡リスクが17%低下（HR 0.83）と推計された。"
+        }
+      ],
+      "announced_on": "2025-03-06",
+      "headline_claim": "日々の食事でバターを植物油に置き換えるだけで早期死亡リスクが17%低下する。",
+      "actual_content": "米国の3大コホート（看護師健康調査など計22万1,054人）を最長33年間追跡した前向き観察研究で、バター摂取量が最も多い群は最も少ない群に比べ全死亡リスクが15%高い関連が示された。統計的な置換モデルで1日10gのバターを植物油（オリーブ油、大豆油、キャノーラ油など）に置き換えた場合、全死亡リスクが17%低下すると推計された。ただし、本研究は4年ごとの自己申告アンケートに基づく観察研究であり因果関係を直接実証した介入試験ではなく、対象者も米国の医療従事者に偏っている点に限界がある。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 5,
+      "work_relevance": 1,
+      "concern_id": "food",
+      "entry_question": "料理のバターを植物油に変えるだけで長生きできるって本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "実際に油を替えて寿命を延ばした介入試験ではなく、アンケート結果から統計モデル上で『もし10g置き換えたら』と仮想計算した観察研究にすぎない。バターを多く食べる人の炭水化物・肉の摂取量や生活習慣といった交絡因子を完全に排除し切れていない可能性がある。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "JAMA バター 植物油",
+      "jp_title_anchor": [
+        "バター",
+        "植物油"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.9,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "三菱が「人型ロボット」を作る!? 動くほど賢くなる人型ロボットがスゴい!! 2027年に京都工場で生産開始へ",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFA1REhuUURTbkMxUTB2U0RJOWlWUlJIeml5bW1iMGxEZlNmNFhRQlVYc0tucTZNYWk1Rk9wSzVobGFFM0NYM1BYQ1BRYWJ2d1BfZlhlc3I0NA?oc=5",
+      "published": "2026-10-13",
+      "source": "Googleニュース（ヒューマノイド）／ベストカーWeb",
+      "source_kind": "media",
+      "outlet": "ベストカーWeb",
+      "outlet_host": "bestcarweb.jp",
+      "genre_hint": "humanoid",
+      "summary": "三菱が「人型ロボット」を作る!? 動くほど賢くなる人型ロボットがスゴい!! 2027年に京都工場で生産開始へ（ベストカーWeb）",
+      "id": "7e67b3be15",
+      "sources": [
+        "ベストカーWeb",
+        "Yahoo!ニュース"
+      ],
+      "dup_ids": [
+        "abf4a22f5c"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.mitsubishi-motors.com/jp/sustainability/sustainabilitynews/2026/07/09/",
+          "what_it_states": "三菱自動車工業と東大発スタートアップHighlandersが基本合意書（MOU）を締結。三菱自動車の京都製作所京都工場の遊休建屋を活用し、Highlandersが開発するヒューマノイドロボットを2027年の早いタイミングで生産開始すること、および月産1000台規模の生産体制構築を検討・協議すると発表。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000000010.000156831.html",
+          "what_it_states": "HighlandersがCEATEC 2026にて国産ヒューマノイド『N』の量産試作機を実機展示・デモ実施。可搬重量は片腕8kg・両腕12kg、機構・電子回路・組み込みソフト・AIを垂直統合で自社開発し、2027年の出荷開始に向けて量産準備中であることを公表。"
+        }
+      ],
+      "announced_on": "2026-07-09",
+      "headline_claim": "三菱自動車が東大発スタートアップと組み、動くほど賢くなる国産人型ロボットを2027年から京都工場で月1000台量産する。",
+      "actual_content": "両社が締結したのは法的拘束力のない基本合意書（MOU）であり、京都工場の遊休建屋を使った2027年の生産開始や月産1000台体制は『協議・検討を進める』段階である。対象ロボット『N』は身長175cm、体重75kg、可搬重量片腕8kgでバッテリー稼働時間は約2時間となっており、まずは三菱自のエンジン組み立てなど限定的な工程での試験導入から検証される。世界全体の人型ロボット年間出荷数が数千台規模にとどまるなか、月産1000台（年1.2万台）という大量生産に見合う外部需要の裏付けや採算性はまだ確定していない。",
+      "buzz_jp_est": 5,
+      "verifiability": 4,
+      "hype_gap": 4,
+      "debate": 4,
+      "wonder": 4,
+      "life_relevance": 2,
+      "work_relevance": 4,
+      "concern_id": "work_ai",
+      "entry_question": "三菱が作る人型ロボットは、本当に2027年に月1000台も現場に来るの？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "発表されたのは法的拘束力のない基本合意（MOU）にすぎず正式契約ではない点。また機体の連続稼働時間は約2時間で作業検証もこれからであり、世界でも年数千台の市場規模で『月1000台』を誰が買うのか買い手の裏付けがまだない点。",
+      "investment_related": false,
+      "deja_vu_note": "人型ロボットとしてはkl033（Atlasの手）を扱ったが、国産ヒューマノイドの自動車工場での量産化計画は初。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "三菱自動車 Highlanders",
+      "jp_title_anchor": [
+        "Highlanders",
+        "三菱自動車"
+      ],
+      "announcement_type": "other",
+      "freshness": 1,
+      "overall_score": 3.3,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "プジョーの名車「RCZ」が500馬力＋固体電池搭載EVとして提示される。あのリアウインドウを持つ「RCZ Vision」が世界初公開",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5ZSFRLcVdSSFVfeFFtVmtYblJXalg5TnV0SzZSRnI5OUNZRWhhUklQRlBpd2JCc1ZUOGZnendkQ190V2pOYkpDZmlSb2lTaWo3OHpWNkhPa20wTkY2Q0xFQUFvM0Vsc1E?oc=5",
+      "published": "2026-10-12",
+      "source": "Googleニュース（全固体電池）／https://intensive911.com/",
+      "source_kind": "media",
+      "outlet": "https://intensive911.com/",
+      "outlet_host": "intensive911.com",
+      "genre_hint": "life_tech",
+      "summary": "プジョーの名車「RCZ」が500馬力＋固体電池搭載EVとして提示される。あのリアウインドウを持つ「RCZ Vision」が世界初公開（https://intensive911.com/）",
+      "id": "3739feac2c",
+      "sources": [
+        "https://intensive911.com/"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.media.stellantis.com/",
+          "what_it_states": "STLA Oneプラットフォームをベースにしたコンセプトカー（ブランドマニフェスト）。Factorial Energy社と共同開発した厚さ110mmの全固体電池と1000V電圧システムにより、最高出力500hp、航続距離最大600km、10%から80%への充電10分、目標電費11.5kWh/100kmを提示。ステア・バイ・ワイヤの『Hypersquare』ステアリングを搭載するが、車両自体の市販予定は未定。"
+        }
+      ],
+      "announced_on": "2026-10-11",
+      "headline_claim": "プジョーの名車『RCZ』が500馬力の全固体電池搭載EV『RCZ Vision』として世界初公開され、劇的な復活を果たした。",
+      "actual_content": "ステランティス傘下のプジョーがパリモーターショー2026に合わせて発表した『RCZ Vision』は、将来のデザイン言語や技術方針を示すコンセプトカー（マニフェスト）である。Factorial Energy社と共同開発する全固体電池や1,000Vシステムによる500馬力・航続600km・10分充電といった目標性能を提示しているが、このクーペ自体の市販計画は公表されていない。角型ステアリング『Hypersquare』などの要素技術は次期E-208等に導入される予定だが、500馬力の全固体電池スポーツカーが発売されるわけではない。",
+      "buzz_jp_est": 2,
+      "verifiability": 4,
+      "hype_gap": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 1,
+      "concern_id": "mobility",
+      "entry_question": "プジョーの全固体電池500馬力EVは、本当に発売される？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "公式発表のどこを読んでも『ブランドの未来を示すコンセプトカー』であり市販予定は未定。全固体電池の10分充電や500馬力という数字もショーカー用の開発目標スペックに過ぎない。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "RCZ Vision プジョー",
+      "jp_title_anchor": [
+        "RCZ Vision",
+        "プジョー",
+        "RCZ"
+      ],
+      "announcement_type": "event",
+      "freshness": 5,
+      "overall_score": 3.35,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "不妊治療経験者のがん罹患率は一般女性とほぼ同程度｜CareNet.com",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5ibXBQamZVYlVGLTEwQnkxZzV5YUlzT3hkMS1FYjFTVktxcjI1cWU4T0xqRERkMjZtWWE0Tl9nMFZnNUplSVBuNFdYbDRBTEV5cVA5dVJLLTBIQQ?oc=5",
+      "published": "2026-10-10",
+      "source": "Googleニュース（がん 新しい治療 研究）／CareNet.com",
+      "source_kind": "media",
+      "outlet": "CareNet.com",
+      "outlet_host": "carenet.com",
+      "genre_hint": "medical",
+      "summary": "不妊治療経験者のがん罹患率は一般女性とほぼ同程度｜CareNet.com（CareNet.com）",
+      "id": "856b3c7cc1",
+      "sources": [
+        "CareNet.com"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1001/jamanetworkopen.2026.1332",
+          "what_it_states": "オーストラリアで1991〜2018年に不妊治療（生殖補助医療ART 27万4,676人、排卵刺激併用人工授精IUI/OS 12万739人、クロミフェン単独17万5,510人）を受けた18〜55歳の女性41万7,984人を中央値約9.4〜11.7年追跡。浸潤がん全体の標準化罹患比（SIR）はARTで1.00（95%CI 0.98-1.02）、IUI/OSで0.99（0.97-1.02）と一般女性と同等、クロミフェンで1.04（1.00-1.07）。一方で子宮がん（SIR 1.23-1.83）や卵巣がん（SIR 1.18-1.23）はわずかに上昇し、子宮頸がん（SIR 0.52-0.61）や肺がん（SIR 0.62-0.70）は有意に低かった。"
+        }
+      ],
+      "announced_on": "2026-03-10",
+      "headline_claim": "不妊治療を受けても女性の全体的ながん罹患率は一般女性とほぼ同程度であり、がんリスク上昇の懸念は少ないとされた。",
+      "actual_content": "約41.8万人の女性の大規模レセプト・登録データ解析により、体外受精などの生殖補助医療を受けた女性の浸潤がん全体の発生率は同年代の一般女性とほぼ一致することが確認された。ただし、子宮がんや卵巣がん、悪性黒色腫などの罹患率は1〜2割から最大8割ほど高かった一方、子宮頸がんや肺がんは3〜5割低く、全体として相殺されていた。著者らは、治療薬そのものの影響だけでなく、不妊の原因疾患（子宮内膜症など）や受診率の高さ、喫煙率の低さといった生活背景の偏りが結果に影響している可能性を指摘している。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 1,
+      "concern_id": "cancer",
+      "entry_question": "「不妊治療のホルモン剤で将来がんが増える」って本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "soon"
+      },
+      "tsukkomi_material": "「全体のがんリスクは同じ」と安心させているが、子宮がんや卵巣がんは微増している一方、肺がんや子宮頸がんが大幅に低くてトータルが相殺されているだけ。不妊治療を受ける層の喫煙率の低さや検診受診の多さといった交絡要因を無視して『治療薬は完全に無関係』と受け止めるのは早計。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "JAMA 不妊治療 がん罹患率",
+      "jp_title_anchor": [
+        "不妊治療",
+        "がん罹患率"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.55,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14"
+    },
+    {
+      "title": "「Gemini 4 Argon」が一般提供開始 ～満を持して登場した最強の「Gemini」モデル",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9QSXBUeVFOZGE0YTBDM29Jb3BNSWd5RUNHQXlNUzlvMmw1cEtiTFlzdGZ5YkY3VGUxcERHLWlmQ0sxdkxsWDJndEdpTlAxc0kzcEktXzVXUGlzUmpBWGJjRWF1Yl9DZkJL?oc=5",
+      "published": "2026-10-13",
+      "source": "Googleニュース（生成AI 新モデル）／窓の杜",
+      "source_kind": "media",
+      "outlet": "窓の杜",
+      "outlet_host": "forest.watch.impress.co.jp",
+      "genre_hint": "ai",
+      "summary": "「Gemini 4 Argon」が一般提供開始 ～満を持して登場した最強の「Gemini」モデル（窓の杜）",
+      "id": "61464d3964",
+      "sources": [
+        "窓の杜"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon-available-globally/",
+          "what_it_states": "2026年10月13日にGemini 4 Argonを開発者・企業・Google AI Pro/Ultra加入者へ一般提供開始。経済関連タスクを測るVals Indexで1位、入出力ともに最大100万トークン対応。導入価格は100万トークンあたり入力2ドル・出力10ドル（2026年11月30日まで、以降は入力4ドル・出力20ドル）。Google社内のChromiumリファクタリングで数カ月の作業を数週間に短縮し、エージェントによるコード提出を35%増加、ロールバックを約3分の1削減したと報告。"
+        },
+        {
+          "kind": "official_blog",
+          "url": "https://blog.google/technology/safety-security/gemini-4-argon-responsible-deployment/",
+          "what_it_states": "サイバー防御プログラムFairwindを通じて先行検証され、病院ソフトウェアの重大脆弱性を発見。不可逆な操作を行う前の確認や、悪用・間接プロンプトインジェクションに対する多層防御ガードレールを実装。"
+        }
+      ],
+      "announced_on": "2026-10-13",
+      "headline_claim": "Googleが最先端の推論モデル「Gemini 4 Argon」の一般提供を開始し、最大100万トークンの入出力と金融・法務・コーディング等の実務評価で首位を獲得したと発表した。",
+      "actual_content": "入出力合わせて最大100万トークンを処理できる最上位推論モデルとして、有料プラン（Google AI Pro/Ultra）およびAPI有料枠向けに提供が開始された。Google社内ではChromeの数百万行に及ぶレガシーコードの整理を数週間に短縮し、エージェントによるコード提出が35%増、ロールバックが約3割減、データセンターのメモリを300TiB以上節約した実績が示されている。一方で一般の無償版Geminiアプリでは利用できず、API料金も2026年12月以降は倍額（入力4ドル/出力20ドル）になるほか、重要な判断では人間の確認を挟む安全設計が前提となっている。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 2,
+      "work_relevance": 5,
+      "concern_id": "work_ai",
+      "entry_question": "最強のGemini 4 Argonで、仕事の面倒な作業は本当に丸投げできるようになる？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "一般提供とは言っても無償版ユーザーは対象外で、月額20ドル以上の有料プランかAPI課金が必須。さらに100万トークン級の長文処理を調子に乗って連発すると、12月以降の料金倍増も相まってコストが跳ね上がる点に注意が必要。",
+      "investment_related": false,
+      "deja_vu_note": "kl034（PCを閉じても、AIが仕事を終わらせている：OpenAI dots）",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "Gemini 4 Argon",
+      "jp_title_anchor": [
+        "Gemini 4 Argon"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.7,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-14",
+      "buzz_measured": 5,
+      "buzz_outlets": 43,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "「Gemini 4 Argon」が一般提供開始 ～満を持して登場した最強の「Gemini」モデル",
+          "outlet": "窓の杜",
+          "date": "2026-10-13"
+        },
+        {
+          "title": "待ってた。Geminiで強力なフロンティアAI「Gemini 4 Argon」が使えるように",
+          "outlet": "Gizmodo",
+          "date": "2026-10-13"
+        },
+        {
+          "title": "Google、最先端AIモデル「Gemini 4 Argon」提供開始",
+          "outlet": "Jetstream",
+          "date": "2026-10-13"
+        }
+      ],
+      "buzz_trend": 0.3,
+      "buzz_articles_14d": 63,
+      "buzz_raw_items": 100,
+      "buzz_query": "Gemini 4",
+      "buzz_measured_at": "2026-10-14T09:57:19",
+      "url_check": [
+        {
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon-available-globally/",
+          "ok": false,
+          "status": "HTTP 404"
+        },
+        {
+          "url": "https://blog.google/technology/safety-security/gemini-4-argon-responsible-deployment/",
+          "ok": false,
+          "status": "HTTP 404"
+        }
+      ],
+      "url_ok": false,
+      "url_status": "blog.google: HTTP 404 ／ blog.google: HTTP 404",
+      "url_checked_at": "2026-10-14T09:57:36"
+    },
+    {
+      "title": "夜間の食事でストレスによる腸の不調が悪化｜CareNet.com",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9ndVF4cUUxV0pDOFIzUkdUSzEtSHlYTUZTZmhNQmE0UmJYaUJXYjc3ZDcwSXFlVW9nRDNpXzlRMktzWWQ5R3IyOGd2a3Rjd0VETEZQZWxmUE9rZw?oc=5",
+      "published": "2026-10-10",
+      "source": "Googleニュース（研究 食事 健康 効果）／CareNet.com",
+      "source_kind": "media",
+      "outlet": "CareNet.com",
+      "outlet_host": "carenet.com",
+      "genre_hint": "food_health",
+      "summary": "夜間の食事でストレスによる腸の不調が悪化｜CareNet.com（CareNet.com）",
+      "id": "836229157f",
+      "sources": [
+        "CareNet.com"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.eurekalert.org/news-releases/1042316",
+          "what_it_states": "消化器疾患週間（DDW 2026、演題Mo1769）の公式発表。米国NHANES（11,149人）およびAmerican Gut Project（4,157人）を解析した結果、慢性ストレス（高アロスタティック負荷）を抱え、かつ1日の総カロリーの25%以上を夜9時以降に摂取する人は、低ストレス・通常食事群と比べ便秘や下痢などの異常排便リスクが1.7倍〜2.5倍高く、腸内細菌叢の多様性（Shannon index）が有意に低下していた。観察研究であり因果関係の証明ではない。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://www.nymc.edu/news-and-events/news-archives/late-night-snacking-may-affect-gut-health.php",
+          "what_it_states": "研究を主導したニューヨーク医科大学／セントメアリーズ病院のHarika Dadigiri医師らによる発表解説。高ストレスかつ夜遅く食べる群では39.3%に排便異常がみられ（低ストレス・通常食事群は23.2%）、時間栄養学とストレスの相互作用（二重の打撃）が示唆されたと説明。"
+        }
+      ],
+      "announced_on": "2026-04-23",
+      "headline_claim": "夜9時以降の遅い時間の食事は、ストレスによる便秘や下痢などの腸の不調を大幅に悪化させ、腸内細菌のバランスを崩す可能性がある。",
+      "actual_content": "米国のNHANES調査（11,149人）とAmerican Gut Project（4,157人）の大規模データを分析した横断的観察研究である。血圧やBMI等のアロスタティック負荷スコアが高い慢性ストレス状態で、1日の摂取カロリーの25%以上を午後9時以降に摂取した人は、低ストレスで夜遅くに食べない人に比べて便秘や下痢のリスクが1.7倍（39.3% vs 23.2%）、自己申告データでは2.5倍高く、腸内細菌の多様性（Shannon index）も有意に低下していた。ただし過去データを用いた観察研究のため「夜食が原因なのか、夜遅くに食べざるを得ない激務や睡眠不足が原因なのか」という因果関係は証明されておらず、査読付き医学誌の論文ではなく学会発表抄録の段階である。",
+      "buzz_jp_est": 2,
+      "verifiability": 4,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 5,
+      "work_relevance": 4,
+      "concern_id": "gut",
+      "entry_question": "夜9時過ぎの夜食は、ストレスで弱ったお腹を本当に悪化させるの？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "査読前の学会抄録かつ過去データの観察研究にすぎず、夜食が悪いのか、夜9時過ぎに過食せざるを得ない激務や睡眠不足のせいなのか因果関係が不明。また問題とされているのは『夜9時以降に1日カロリーの25%以上を食べるドカ食い』であり、軽い間食まで直ちに有害と決まったわけではない。",
+      "investment_related": false,
+      "deja_vu_note": "kl025で腸内細菌の話題を扱っているが、今回はヒトの時間栄養学（体内時計と夜食）およびストレス性の排便障害（下痢・便秘）に焦点を当てている。",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "Harika Dadigiri 夜間",
+      "jp_title_anchor": [
+        "夜間の食事",
+        "夜遅くの食事"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.55,
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
