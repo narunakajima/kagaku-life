@@ -3326,7 +3326,7 @@
       "enriched_version": "2026-10-11-buzz-measured",
       "buzz_jp_est": 2,
       "buzz_error": "0件（検索語が合っていない可能性）",
-      "buzz_error_at": "2026-10-14T09:57:18",
+      "buzz_error_at": "2026-10-15T07:10:56",
       "jp_usable": 2,
       "work_relevance": 3
     },
@@ -8456,7 +8456,7 @@
       ],
       "url_ok": null,
       "url_status": "help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
-      "url_checked_at": "2026-10-14T10:33:40"
+      "url_checked_at": "2026-10-15T07:11:34"
     },
     {
       "title": "「我々が世界市場を作っていく」…万博が示した「未来の医療」を先導する関西は世界３位の位置付け、涙から乳がんのリスクを調べる技術も",
@@ -10148,7 +10148,7 @@
       ],
       "url_ok": false,
       "url_status": "yaskawa.co.jp: HTTP 404",
-      "url_checked_at": "2026-10-14T10:33:21"
+      "url_checked_at": "2026-10-15T07:11:15"
     },
     {
       "title": "可搬重量100kgで既存の台車や棚を運搬可能 最新AMR「カチャカEvo」のデモを披露：CEATEC 2026",
@@ -10249,7 +10249,7 @@
       ],
       "url_ok": false,
       "url_status": "kachaka.life: HTTP 404 ／ kachaka.life: HTTP 200「自律搬送ロボット &quot;カチャカEvo&quot; ｜」",
-      "url_checked_at": "2026-10-14T10:33:45"
+      "url_checked_at": "2026-10-15T07:11:38"
     },
     {
       "title": "慢性腎臓病を「治る病」に 新規の透析患者ゼロへ新薬を研究 埼玉医大",
@@ -10404,7 +10404,7 @@
       ],
       "url_ok": true,
       "url_status": "cloud.google.com: HTTP 200「Gemini at Work 2026: Introduci」 ／ cloud.google.com: HTTP 200「Google Cloud Blog」",
-      "url_checked_at": "2026-10-14T10:33:32"
+      "url_checked_at": "2026-10-15T07:11:25"
     },
     {
       "title": "新生児の免疫システムは生後7日間で決まる",
@@ -10752,7 +10752,7 @@
       ],
       "url_ok": true,
       "url_status": "sbintuitions.co.jp: HTTP 200「国産生成AI「Sarashina」を利用できる「Sarash」 ／ sarashina.ai: HTTP 200「Sarashina」",
-      "url_checked_at": "2026-10-14T10:33:36"
+      "url_checked_at": "2026-10-15T07:11:29"
     },
     {
       "title": "ロンドンとベルファストの研究者たちは、ケフィアを通して腸と筋肉がどのように情報伝達を行うかを研究している。",
@@ -12575,7 +12575,7 @@
       ],
       "url_ok": false,
       "url_status": "blog.google: HTTP 404 ／ blog.google: HTTP 404",
-      "url_checked_at": "2026-10-14T10:33:18"
+      "url_checked_at": "2026-10-15T07:11:11"
     },
     {
       "title": "夜間の食事でストレスによる腸の不調が悪化｜CareNet.com",
@@ -12637,6 +12637,963 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-14"
+    },
+    {
+      "title": "ｕｇｏ、国産セミヒューマノイド「ugo Nova」発表。フィジカルAIのロボット基盤モデル開発に活用可能",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9TbjJJVWVuS1g3NWZWV0l5eW5rNzNEeHlzbDFMYXUwTU1jV0tkaGNyYmFDSGtwc1V3QlFCamwzYkN1V3A2eVFHWWVmVHZBUWhQUVlMWS1RUFFMMnFQc1FKcmtvWQ?oc=5",
+      "published": "2026-10-14",
+      "source": "Googleニュース（ヒューマノイド）／AIsmiley",
+      "source_kind": "media",
+      "outlet": "AIsmiley",
+      "outlet_host": "aismiley.co.jp",
+      "genre_hint": "humanoid",
+      "summary": "ｕｇｏ、国産セミヒューマノイド「ugo Nova」発表。フィジカルAIのロボット基盤モデル開発に活用可能（AIsmiley）",
+      "id": "2f8fa76e81",
+      "sources": [
+        "AIsmiley"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://ugo.plus/ai/ugo-nova/",
+          "what_it_states": "身長126〜162cm（伸縮時）、幅56cm・奥行き65cm、重量約100kg。全身22自由度（腕7×2、ハンド1×2、頭部2、腰4）。可搬重量は片腕4kg・双腕10kg。メカナムホイールによる全方向移動、連続稼働最大6時間。頭部・ハンド部にカメラ標準搭載、100Hzのアーム制御周期、NVIDIA Jetson Thor搭載"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000000078.000034305.html",
+          "what_it_states": "国内設計・国内製造の双腕セミヒューマノイドで2027年に量産開始予定。NEDO委託事業の一環であるAIロボット協会の国産汎用ロボット開発コンペティションにおいて試作機評価審査を通過し、改良機開発フェーズへ選定"
+        }
+      ],
+      "announced_on": "2026-09-16",
+      "headline_claim": "国産セミヒューマノイド「ugo Nova」が登場し、人と同じ空間で作業をデータ化してフィジカルAI基盤モデルを即座に開発・実装できると発表された。",
+      "actual_content": "ugoが発表した「ugo Nova」は、メカナムホイール台座に7軸双腕と腰関節を備えた産業向けセミヒューマノイドである。頭部・手先カメラと100Hz制御により、VRやバイラテラルコントローラーを通じた人の遠隔操作動作をそのまま教師データとして記録し、車載のNVIDIA Jetson ThorでAI推論を動かす構成をとる。ただし、自律動作AIが初めから組み上がっているわけではなく、現在はNEDO関連事業の試作機審査を通過して改良機開発に進んだ段階であり、量産予定は2027年とされている。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 1,
+      "work_relevance": 3,
+      "concern_id": "work_ai",
+      "entry_question": "国産の双腕ロボ「ugo Nova」は、工場の作業をすぐAIに肩代わりさせられる？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「フィジカルAIで作業」と聞くと勝手に考えて動く即戦力に見えるが、実態は人間が遠隔操作して動作データを集めるための開発用ハードウェアである。自律動作させるための基盤モデル学習はこれから各現場で回す必要があり、量産開始も2027年予定とまだ先である。",
+      "investment_related": false,
+      "deja_vu_note": "人型ロボットの制御・動作データを巡る議論としてはkl033（Atlasの手）、kl036（家事ロボDYNA 2.1）と文脈が近い",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "ugo Nova",
+      "jp_title_anchor": [
+        "ugo Nova",
+        "セミヒューマノイド"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 2,
+      "overall_score": 2.75,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-15"
+    },
+    {
+      "title": "【あの「RCZ」がEVで復活へ】プジョー「RCZ ビジョン」公開！ 500馬力＆600km、全固体電池で10→80％を10分",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPUkhpckdqRnJIS0U3UWZDTGFTQVNOVFlMU1JzN21Sblg1MzVTbkRzdDUzcjBqd1VHeDZab1N6azlkRGN3ZzJqQWFLaWhmazNic25qVWhlZjM2dUNRVUVLWVZDU19pcDNGTFE4cGNxUEFRLUV1THJ2dnFZOG9sb1M1UEwwZ2RFQTc2Mm1zXw?oc=5",
+      "published": "2026-10-14",
+      "source": "Googleニュース（全固体電池）／carview!",
+      "source_kind": "media",
+      "outlet": "carview!",
+      "outlet_host": "carview.yahoo.co.jp",
+      "genre_hint": "life_tech",
+      "summary": "【あの「RCZ」がEVで復活へ】プジョー「RCZ ビジョン」公開！ 500馬力＆600km、全固体電池で10→80％を10分（carview!）",
+      "id": "421f31d683",
+      "sources": [
+        "carview!"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.media.stellantis.com/em-en/peugeot/press/peugeot-rcz-vision-emotion-at-the-heart-of-the-future-of-peugeot",
+          "what_it_states": "パリモーターショー2026に向けて発表されたブランドマニフェスト（コンセプトカー）。STLA OneベースにFactorial Energy社と共同開発した厚さ110mmの全固体電池と1000V電気アーキテクチャを搭載し、最高出力500hp、航続距離最大600km、10%から80%まで10分以内の急速充電、目標電費11.5kWh/100km、ステア・バイ・ワイヤを提示。市販化予定や発売時期・価格に関する言及はない。"
+        }
+      ],
+      "announced_on": "2026-10-11",
+      "headline_claim": "往年の名クーペ「RCZ」がEVで復活し、全固体電池によって500馬力・航続600km・10分で80％充電を実現する。",
+      "actual_content": "発表された「RCZ Vision」は将来のデザイン言語と電動技術を示すコンセプトカー（ブランドマニフェスト）であり、市販化の決定や発売時期、価格は一切公表されていない。Factorial Energy社と共同開発中の全固体電池セルや1000Vアーキテクチャの採用を想定したスペック（500hp、航続600km、10分で10→80%充電、目標電費11.5kWh/100km）を掲げているが、いずれも目標値や技術実証の提示にとどまる。内装のステア・バイ・ワイヤ式「Hypersquare」ステアリングなど一部要素は次期型量産車への採用が予告されているものの、車両自体の市販計画はない。",
+      "buzz_jp_est": 3,
+      "verifiability": 4,
+      "hype_gap": 5,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 1,
+      "concern_id": "mobility",
+      "entry_question": "全固体電池で10分充電できるプジョーの新型クーペは、本当に買えるようになる？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "記事見出しは「復活へ」と銘打っているが、実態は市販予定すらないパリモーターショー向けのショーカー（コンセプトモデル）。「全固体電池で10分充電・航続600km」という派手な数字もすべて将来の目標スペックに過ぎない。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "プジョー RCZ ビジョン",
+      "jp_title_anchor": [
+        "RCZ",
+        "プジョー"
+      ],
+      "announcement_type": "event",
+      "freshness": 5,
+      "overall_score": 3.7,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-15"
+    },
+    {
+      "title": "コーヒーの効果はカフェインだけではない？ 腸内細菌との関係が明らかに",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1DMkt4TVFYSjBJYkNaX3hCRDFpUk1MZjJGNlNNUE1fbzNENXJQRTN2dkc2YTM3b3JGLW1aSS1Zc2h2TXNWWXF4S3hfTFgzNGl3MGVUNmNOMFE4dw?oc=5",
+      "published": "2026-10-14",
+      "source": "Googleニュース（腸内細菌 研究）／ニューズウィーク日本版",
+      "source_kind": "media",
+      "outlet": "ニューズウィーク日本版",
+      "outlet_host": "newsweekjapan.jp",
+      "genre_hint": "food_health",
+      "summary": "コーヒーの効果はカフェインだけではない？ 腸内細菌との関係が明らかに（ニューズウィーク日本版）",
+      "id": "4cf947cd03",
+      "sources": [
+        "ニューズウィーク日本版"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1038/s41467-026-71264-8",
+          "what_it_states": "健常成人62人（習慣的飲用者31人、非飲用者31人）を対象に、2週間の禁飲後にカフェイン入り（16人）またはデカフェ（15人）を1日4包（各1.8g）3週間摂取させる二重盲検介入を実施。再開群ではカフェインの有無にかかわらず主観的ストレスや抑うつスコアが低下した一方、常飲者ではCryptobacterium属やEggerthella属が増加し、抑制性神経伝達物質GABA生成経路や抗炎症性代謝物（インドール-3-プロピオン酸）が有意に低下。認知課題では常飲者の方が衝動性が高く記憶課題成績が劣っていた。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.ucc.ie/en/news/2026/new-research-reveals-mechanisms-behind-coffees-positive-effects-on-the-gut-brain-axis.html",
+          "what_it_states": "ユニバーシティ・カレッジ・コーク（UCC）のAPC Microbiome Irelandが発表。カフェイン入り・デカフェを問わずコーヒーの定期摂取が腸内細菌叢と腸脳軸を介して気分や代謝に影響を及ぼすメカニズムを成人62人の試験で検証したと報告。"
+        }
+      ],
+      "announced_on": "2026-04-21",
+      "headline_claim": "コーヒーの健康効果はカフェインだけでなく、デカフェでも腸内細菌を変化させてストレスや抑うつ、衝動性を抑える効果がある。",
+      "actual_content": "アイルランドの健康な成人62人（習慣群31人・非飲用群31人）を対象に、2週間のコーヒー断ちのあとカフェイン入りまたはデカフェを3週間飲ませる二重盲検介入試験を行いました。コーヒーの再開によってカフェインの有無にかかわらず主観的なストレスや抑うつスコアの改善が見られた一方、常飲者は非飲用者に比べて衝動性が高く記憶課題の成績が低い傾向が示されました。腸内環境でも特定の細菌が増加した反面、脳を落ち着かせる神経伝達物質GABAの生成経路や抗炎症代謝物が低下しており、単純に「腸と体に良い」と言い切れる結果ではありません。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "debate": 4,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 2,
+      "concern_id": "gut",
+      "entry_question": "デカフェのコーヒーでも腸内環境やメンタルが整うって本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "被験者はわずか62人で、報道では「デカフェでもメンタル改善」と良い面ばかり強調されているが、論文本文ではコーヒー常飲者は記憶力テストの成績が劣り、腸内のGABAや抗炎症物質が減っていたという不都合な副作用が記録されている。",
+      "investment_related": false,
+      "deja_vu_note": "kl025（愛犬と腸内細菌）、kl039（オリーブ油と血糖値）",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "コーク大学 コーヒー",
+      "jp_title_anchor": [
+        "コーヒー",
+        "腸内細菌"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 3.0,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-15"
+    },
+    {
+      "title": "ペット向けのがん放射線治療やロボット手術、鳥取大に高度医療の動物医療拠点を整備へ",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBLNHlXNHJkU1lzVDJJV1NraVlkRFVPWVEyZWFEMGpVdGhhYWQyYVNPT0d1bDRIQzRiLUpSQWhhRDhET0pDaDZidTI2SmlxRUF3TFBkTEdLdVB0TjNvRWY3ZjJXU3RMU2JvdjM5Qi1Ca2pNVFBQZnFHWDV6d2xJT3M?oc=5",
+      "published": "2026-10-14",
+      "source": "Googleニュース（がん 新しい治療 研究）／読売新聞",
+      "source_kind": "media",
+      "outlet": "読売新聞",
+      "outlet_host": "yomiuri.co.jp",
+      "genre_hint": "medical",
+      "summary": "ペット向けのがん放射線治療やロボット手術、鳥取大に高度医療の動物医療拠点を整備へ（読売新聞）",
+      "id": "f24c719cfc",
+      "sources": [
+        "読売新聞"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.tottori-u.ac.jp/item/23472.htm",
+          "what_it_states": "鳥取大学が2026年10月6日に『獣医学教育医療センター（仮称）』の新棟整備構想を発表。2028年度の岐阜大学との共同獣医学部化を見据え、既存の動物医療センターの老朽化に対応して犬猫・小動物を扱う新棟を計画。がん放射線治療や国立大学初となるロボット手術設備を導入し、鳥取市の動物愛護センターを併設・連携して2028年度着工、2029年秋の開所を目指すとしている。"
+        }
+      ],
+      "announced_on": "2026-10-06",
+      "headline_claim": "ペット向けのがん放射線治療やロボット手術設備を備えた高度動物医療拠点が鳥取大学に整備される。",
+      "actual_content": "鳥取大学が老朽化した動物医療センターの機能を刷新し、岐阜大学との「共同獣医学部」設置構想（2028年度）に合わせて新施設「獣医学教育医療センター（仮称）」を整備する構想を発表した。新棟は犬や猫などの伴侶動物を対象とし、がん放射線治療やロボット支援手術などの先端医療機器を導入する方針だが、現時点では構想段階であり、2028年度着工・2029年秋（約3年後）の開所を目指している。また、同敷地内には鳥取市が計画する動物愛護センターも併設される予定である。",
+      "buzz_jp_est": 4,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 2,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 2,
+      "concern_id": "pets",
+      "entry_question": "ペットのがん放射線治療やロボット手術の拠点はいつ来る？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "まだ建物すら建っておらず着工は2028年度、開所予定は2029年秋と3年先の構想段階である。また、全額自己負担となるペットの高度医療で、放射線やロボット手術の費用が一般の飼い主にとって現実的な水準になるかは未知数である。",
+      "investment_related": false,
+      "deja_vu_note": "kl022（犬の腎臓病薬）、kl025（愛犬の腸内細菌と認知機能）などペット医療を扱った回はあるが、本件は外科手術ロボットや放射線治療を含む高度医療施設の建設計画。",
+      "genre": "medical",
+      "health": false,
+      "jp_news_query": "鳥取大 獣医学教育医療センター",
+      "jp_title_anchor": [
+        "獣医学教育医療センター",
+        "鳥取大"
+      ],
+      "announcement_type": "policy",
+      "freshness": 4,
+      "overall_score": 3.7,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-15",
+      "buzz_measured": 5,
+      "buzz_outlets": 9,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "ペット向けのがん放射線治療やロボット手術、鳥取大に高度医療の動物医療拠点を整備へ",
+          "outlet": "読売新聞",
+          "date": "2026-10-14"
+        },
+        {
+          "title": "ペット向けのがん放射線治療・ロボット手術、鳥取大が29年秋導入へ",
+          "outlet": "朝日新聞",
+          "date": "2026-10-14"
+        },
+        {
+          "title": "鳥取市でペットのロボット手術やがん治療が可能に 鳥取大学が最先端の医療拠点構想",
+          "outlet": "47NEWS",
+          "date": "2026-10-08"
+        }
+      ],
+      "buzz_trend": 0.42,
+      "buzz_articles_14d": 12,
+      "buzz_raw_items": 27,
+      "buzz_query": "鳥取大 獣医学教育医療センター",
+      "buzz_measured_at": "2026-10-15T07:11:02",
+      "url_check": [
+        {
+          "url": "https://www.tottori-u.ac.jp/item/23472.htm",
+          "ok": false,
+          "status": "HTTP 404"
+        }
+      ],
+      "url_ok": false,
+      "url_status": "tottori-u.ac.jp: HTTP 404",
+      "url_checked_at": "2026-10-15T07:11:19"
+    },
+    {
+      "title": "デジハリ大、「Claude」を全学導入へ──国内初、“回数気にせず”使い放題に",
+      "url": "https://www.itmedia.co.jp/news/article/2610/14/2000002278/",
+      "published": "2026-10-14",
+      "source": "ITmedia AI+",
+      "source_kind": "media",
+      "summary": "デジタルハリウッド大学は10月14日、米Anthropicの生成AI「Claude」を全学に導入し、11月から全学生・全教職員に提供すると発表した。Claudeの全学導入は国内の大学で初という。",
+      "id": "5d9e3a3db8",
+      "sources": [
+        "ITmedia AI+"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000002598.000000496.html",
+          "what_it_states": "デジタルハリウッド大学が米Anthropicの生成AI「Claude」を2026年11月より全学導入すると発表。対象は全学生および専任教員・全職員で、大学発行アカウントを通じて費用負担なく十分な利用枠で利用可能。同大学の調査によれば国内大学で初のClaude全学導入事例であり、9月に運用開始した全学AI基盤・教育プラットフォームの一環として課題設計や利用規程の整備とともに進められる。"
+        }
+      ],
+      "announced_on": "2026-10-14",
+      "headline_claim": "デジタルハリウッド大学が国内大学で初めて米AnthropicのClaudeを全学導入し、学生や教職員が費用や回数を気にせず使い放題になる。",
+      "actual_content": "デジタルハリウッド大学は2026年11月より、全学生および専任教員・全職員を対象に米Anthropicの生成AI「Claude」の提供を開始すると発表した。9月に開始した複数の生成AI基盤や教育ポータル連携の一環であり、学生は大学発行アカウントを通じて個人負担なしで利用できる。報道等では「回数を気にせず使い放題」と表現されているが、公式リリース上の表現は「学生が費用を気にすることなく十分な利用枠で利用できる環境」であり、API等の組織枠内での運用およびAI利用申告や著作権遵守などの学内規程に沿った利用となる。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 2,
+      "debate": 2,
+      "wonder": 2,
+      "life_relevance": 2,
+      "work_relevance": 3,
+      "concern_id": "work_ai",
+      "entry_question": "大学でClaudeが全学導入されると、学生の学びはどう変わる？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "soon"
+      },
+      "tsukkomi_material": "「使い放題」と報じられているが、実際は完全無制限ではなく大学側が用意した「十分な利用枠」内での提供。また、ツールを配るだけでなく、単なるレポートの丸投げを防ぎつつ制作力へつなげる課題設計やコスト負担の持続性が問われる。",
+      "investment_related": false,
+      "deja_vu_note": "kl028（AIに丸投げすると、頭は鈍るのか：2つの実験が示した「鈍らせない使い方」）と、教育現場におけるAI活用と思考力の関係という点でテーマが近接。",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "デジハリ Claude",
+      "jp_title_anchor": [
+        "デジタルハリウッド大学",
+        "Claude"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 5,
+      "overall_score": 3.3,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-15"
+    },
+    {
+      "title": "浙江省杭州の自動車部品工場、人型ロボット約20台を導入",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5SLTV6UG1JX3hfY0tDTUY0UTAtQlB2eUhzM2MtZngtbkhPOXNlcVVXTGp2Mk1IRTJ2eUhSbzdmR1FGSTV6dFFkYnhqRQ?oc=5",
+      "published": "2026-10-14",
+      "source": "Googleニュース（人型ロボット）／中国経済新聞",
+      "source_kind": "media",
+      "outlet": "中国経済新聞",
+      "outlet_host": "chinanews.jp",
+      "genre_hint": "humanoid",
+      "summary": "浙江省杭州の自動車部品工場、人型ロボット約20台を導入（中国経済新聞）",
+      "id": "3f2e734d9d",
+      "sources": [
+        "中国経済新聞"
+      ],
+      "primary_sources": [],
+      "announced_on": "2026-10-14",
+      "headline_claim": "中国・浙江省杭州市の自動車部品工場が約20台の人型ロボットを導入し、既存の生産ラインに組み込んで稼働させている。",
+      "actual_content": "中国新聞社（中新社）等の現地取材報道によると、杭州市蕭山区の自動車部品工場で約20台の人型ロボットが部品の投入・取り出し作業（上下料）を担当している。自社ラインと計算資源で1万回以上のトレーニングを実施し、10数種類の部品に対応するが、1サイクルあたりの作業時間は20〜25秒と人間の熟練工や産業用ロボットアームに比べても緩やかである。導入企業名やロボット本体の正式な型番・仕様、成功率の統計などは公式プレスリリースとして開示されていない。",
+      "buzz_jp_est": 2,
+      "verifiability": 2,
+      "hype_gap": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 1,
+      "work_relevance": 3,
+      "concern_id": "work_ai",
+      "entry_question": "自動車工場で20台の人型ロボットが働く時代はもう来たの？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "部品を1個運ぶのに20〜25秒もかかっており、既存の産業用ロボットアームのほうが圧倒的に高速かつ安価なはずです。導入企業名もロボットのメーカー名も公式発表されておらず、宣伝目的のPoC（概念実証）の域を出ていません。",
+      "investment_related": false,
+      "deja_vu_note": "kl033（ボストン・ダイナミクスAtlasの手の進化）やkl032（家事ロボットの作業成功率）など、ロボットの実用性を検証する回とテーマが近接。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "杭州 人型ロボット",
+      "jp_title_anchor": [
+        "杭州",
+        "自動車部品"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 5,
+      "overall_score": 3.05,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "excluded",
+      "excluded_reason": "一次資料で確認できない",
+      "scored_at": "2026-10-15"
+    },
+    {
+      "title": "マクセル、「全固体電池バックアップモジュール」の量産を開始",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9JeG4yME9DM25KSy1KczhneDZlNng5X1YxVHBrVEIwUm5LSldMU1JzdXhWc1B3UGl2YUxXTjdZaUxtNHd1dHhjLVpBb1d1dGlBVGsxM3gwT2dNLUNPdTFqRi0tWVZwMllvOVpTZHo5Wk9HOGFfOHc4alRvQQ?oc=5",
+      "published": "2026-10-14",
+      "source": "Googleニュース（全固体電池）／産経ニュース",
+      "source_kind": "media",
+      "outlet": "産経ニュース",
+      "outlet_host": "sankei.com",
+      "genre_hint": "life_tech",
+      "summary": "マクセル、「全固体電池バックアップモジュール」の量産を開始（産経ニュース）",
+      "id": "0547879671",
+      "sources": [
+        "産経ニュース"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://ssl4.eir-parts.net/doc/6810/ir_material21/287507/00.pdf",
+          "what_it_states": "セラミックパッケージ型全固体電池「PSB401010H」を搭載した全固体電池バックアップモジュール計4機種の量産を2026年11月上旬より開始し産業機器向けに販売。ER電池（3.6V）およびCR電池（3.0V）に対応し、想定耐用年数10年以上、85℃までの耐熱性を備え、FA機器の電池交換工数を削減する"
+        }
+      ],
+      "announced_on": "2026-10-14",
+      "headline_claim": "マクセルが産業機器向けの「全固体電池バックアップモジュール」の量産を11月上旬に開始すると発表した",
+      "actual_content": "発表されたのは産業用ロボットやプログラマブルロジックコントローラー（PLC）のメモリや時計（RTC）を停電時に維持するためのバックアップ用電源モジュールです。既存の一次電池（ER電池3.6V／CR電池3.0V）と互換性のある電圧に対応した2容量・計4機種を展開し、想定耐用年数は10年以上、耐熱温度は85℃とされています。2024年から実施された顧客工場の製造設備でのテスト運用を経て製品化され、2026年11月上旬から国内量産販売が始まります。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 1,
+      "work_relevance": 2,
+      "concern_id": null,
+      "entry_question": "全固体電池がついに量産開始、スマホやEVにももうすぐ来る？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「ついに全固体電池が量産」と聞くとEVやスマホを想像しがちですが、実態は工場の制御盤でメモリや時計を停電時に保持する数mAh規模の超小型バックアップ電源であり、生活機器やEV向けとは規模も用途も全く異なります。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "マクセル 全固体電池",
+      "jp_title_anchor": [
+        "マクセル",
+        "全固体電池",
+        "バックアップモジュール"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.35,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-15"
+    },
+    {
+      "title": "ヤクルト、継続飲用で死亡リスク低減を確認",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBsWEtyaTZDcEFNTFJubWZrMEwwa29WQVZXR1pIMzdNemV2cFJTVVJ1S3V2dUszSkprQnd1cDNGbDI3VnJUZUlnNkxvb2Y?oc=5",
+      "published": "2026-10-14",
+      "source": "Googleニュース（腸内細菌 研究）／酪農乳業速報",
+      "source_kind": "media",
+      "outlet": "酪農乳業速報",
+      "outlet_host": "dailydairynews.jp",
+      "genre_hint": "food_health",
+      "summary": "ヤクルト、継続飲用で死亡リスク低減を確認（酪農乳業速報）",
+      "id": "ba286f7b42",
+      "sources": [
+        "酪農乳業速報"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.yakult.co.jp/company/news/article.php?num=1646",
+          "what_it_states": "ヤクルト本社と東京都健康長寿医療センターが中之条研究（群馬県中之条町の65歳以上住民1,280人、男性519人・女性761人）を平均9.3年追跡した結果、シロタ株を含む乳製品を過去5年間で週3日以上摂取していた男性高齢者は、週3日未満の群に比べ全死亡リスクが有意に低下（ハザード比0.648、p=0.030、生存期間9.8カ月延伸）したと発表。一方、女性高齢者では有意な関連は認められなかった。"
+        },
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1016/j.jnha.2024.100037",
+          "what_it_states": "The Journal of Nutrition, Health and Aging（2026年8月18日電子版）掲載論文『Association between habitual intake of fermented milk products containing lactic acid bacteria and all-cause mortality: a community-based cohort prospective study』。男性高齢者においてLcS含有発酵乳の週3日以上の習慣的摂取が全死亡リスク低下（HR 0.648, 95% CI 0.438–0.958）と関連することを示した前向きコホート研究。"
+        }
+      ],
+      "announced_on": "2026-09-11",
+      "headline_claim": "ヤクルト（乳酸菌シロタ株）を週3日以上継続飲用することで、死亡リスクが約35%低減することを確認した。",
+      "actual_content": "群馬県中之条町の65歳以上の高齢者1,280人を平均9.3年間追跡した観察疫学研究（中之条研究）の解析結果です。過去5年間に乳酸菌シロタ株を含む乳製品を「週3日以上」摂取していた男性高齢者（118人）は、「週3日未満」（401人）と比較して全死亡ハザード比が0.648（約35%低下、生存期間が約9.8カ月延伸）と統計的に有意な低下がみられました。ただし女性（761人）では同様の有意差は認められておらず、前向き介入試験（RCT）ではなく過去の自己申告に基づく観察研究であるため、健康意識の高い人が飲んでいたことによる交絡因子の限界が残ります。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 1,
+      "concern_id": "gut",
+      "entry_question": "ヤクルトを飲み続けると本当に長生きできるの？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "有意差が確認されたのは『男性高齢者』だけで女性では差が出ていない点。さらに介入試験ではなく過去の習慣を尋ねた観察研究なので、『そもそも健康に気を配って定期的に乳製品を飲んでいた人たち』の生活習慣バイアスが抜けていない可能性がある点。",
+      "investment_related": false,
+      "deja_vu_note": "腸内細菌を扱った回にはkl025（愛犬の記憶と腸内細菌）があるが、ヒトを対象にしたヤクルト・プロバイオティクスの長期寿命コホート研究は初。",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "ヤクルト シロタ株",
+      "jp_title_anchor": [
+        "ヤクルト",
+        "シロタ株"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.9,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-15"
+    },
+    {
+      "title": "千葉大、神経性過食症に対する認知行動療法のメカニズムの解明",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBGTWE2NlkxNDJUdE01RE1NLWtTWWlkVms1QlRwNUZUZW0wQlZ3UGI0czZOdEFxbXIxaTc5QWlETnotT25mM0VKU3k2cF9vS1h4SUJr?oc=5",
+      "published": "2026-10-14",
+      "source": "Googleニュース（研究 食事 健康 効果）／認知症ねっと",
+      "source_kind": "media",
+      "outlet": "認知症ねっと",
+      "outlet_host": "info.ninchisho.net",
+      "genre_hint": "food_health",
+      "summary": "千葉大、神経性過食症に対する認知行動療法のメカニズムの解明（認知症ねっと）",
+      "id": "5e54627a17",
+      "sources": [
+        "認知症ねっと"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.chiba-u.jp/news/files/images/0925_hirano_2.png",
+          "what_it_states": "千葉大学など全国6機関の共同研究。神経性過食症に対する認知行動療法（CBT）前後の全脳142領域間の安静時機能的結合性（rsFC）を世界で初めて縦断的にfMRI解析し、治療効果に関わる4領域間の脳機能変化と、治療前に身体知覚や認知制御の機能が保たれているほど効果が出やすい可能性を報告"
+        },
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1186/s40337-026-01754-z",
+          "what_it_states": "学術誌Journal of Eating Disorders掲載論文。神経性過食症患者30名を対象にCBT前後の安静時脳結合を測定し、EDE-Q質問紙の改善度との相関を探索。対照群のない探索的小規模研究であり、厳格な多重比較補正を通過した所見ではない予備的結果と明記"
+        }
+      ],
+      "announced_on": "2026-09-25",
+      "headline_claim": "千葉大などが世界で初めて、神経性過食症に対する認知行動療法の治療メカニズムと効果を予測する脳機能を解明したと発表した。",
+      "actual_content": "神経性過食症患者30名を対象に、認知行動療法（CBT）の前後にfMRIで安静時脳機能結合を測定した探索的な縦断研究である。EDE-Qによる症状改善度は眼窩前頭皮質と縁上回など4領域間の結合変化と相関し、治療前に身体知覚や認知制御に関わる結合が強いほど効果が高い傾向が示された。ただし健常対照群が置かれておらず、厳格な多重比較補正を通過した有意差ではないため、直ちに臨床応用できる段階ではなく、治療改良に向けた予備的な基礎知見にとどまる。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 1,
+      "concern_id": "stress_mind",
+      "entry_question": "過食症を治すカウンセリングで脳の回路が変わるって本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「メカニズム解明」と謳うものの、被験者はわずか30名で健康な人の対照群もなく、統計的な多重比較補正すら通過していない探索的・予備的な段階に過ぎない点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "千葉大学 神経性過食症",
+      "jp_title_anchor": [
+        "神経性過食症",
+        "認知行動療法",
+        "千葉大"
+      ],
+      "announcement_type": "research",
+      "freshness": 3,
+      "overall_score": 2.95,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-15"
+    },
+    {
+      "title": "Googleの新モデル「Gemini 4 Argon」一般提供開始　使えるプラン、価格",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2610/14/2000002241/",
+      "published": "2026-10-14",
+      "source": "ITmedia AI+",
+      "source_kind": "media",
+      "summary": "Googleは同社最先端のモデル「Gemini 4 Argon」の一般提供を開始した。Geminiアプリや検索のAIモード、Google Antigravity、APIなどで利用できる。",
+      "id": "9c83062f1d",
+      "sources": [
+        "ITmedia AI+"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+          "what_it_states": "Gemini 4 Argonの一般提供開始を発表。金融・法務・税務・コーディングなどを測るベンチマーク『Vals Index』で1位を獲得し、APIの初期価格（11月30日まで）を入力100万トークン2ドル／出力10ドル（キャッシュ入力95%引き）で提供。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://developers.googleblog.com/en/gemini-4-argon-for-robotics/",
+          "what_it_states": "3D環境での空間・物理課題を解くEmbodied Reasoning（ERQA）ベンチマークで87%を記録したこと、Spotロボットによるペダル式ゴミ箱の操作デモなどを紹介。"
+        },
+        {
+          "kind": "tech_report",
+          "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-4-argon",
+          "what_it_states": "コンテキスト窓は入力・出力ともに最大100万トークン対応。API価格は2026年12月1日以降、入力4ドル／出力20ドルへ改定予定と記載。"
+        }
+      ],
+      "announced_on": "2026-10-13",
+      "headline_claim": "Googleの最先端AI「Gemini 4 Argon」が一般提供され、Geminiアプリや検索AIモード、APIで利用可能になった。",
+      "actual_content": "Googleは長文推論や複雑なエージェント作業に特化した最先端モデル『Gemini 4 Argon』の一般提供を開始した。入力・出力ともに最大100万トークンに対応し、実務ベンチマーク『Vals Index』で首位を獲得している。ただし一般利用には月額2,900円以上の有料プラン（Google AI Pro/Ultra）が必要で、APIの割安な初期価格（入力2ドル／出力10ドル）も2026年11月30日までの期間限定であり、12月以降は倍額に改定される。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 4,
+      "concern_id": "work_ai",
+      "entry_question": "Google最新AI「Gemini 4 Argon」は、仕事の相棒として今すぐ乗り換える価値がある？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "3年はかかる"
+      },
+      "tsukkomi_material": "「一般提供」とアピールされているものの無料枠では使えず月額2,900円以上の有料プランが必要な上、APIの安さも11月末までの導入キャンペーンで12月には価格が倍になる点。",
+      "investment_related": false,
+      "deja_vu_note": "kl034（PCを閉じてもAIが仕事を終わらせているか：OpenAI dots）やkl038（AIは『一人に一台』の時代になるのか）と同じく、生成AIの最先端モデルの発表とエージェント機能の回。",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "Gemini 4 Argon",
+      "jp_title_anchor": [
+        "Gemini 4 Argon",
+        "Argon"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.6,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-15",
+      "buzz_measured": 5,
+      "buzz_outlets": 38,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "Googleの新モデル「Gemini 4 Argon」一般提供開始 使えるプラン、価格",
+          "outlet": "ITmedia",
+          "date": "2026-10-14"
+        },
+        {
+          "title": "Google、最上位AI「Gemini 4 Argon」を一般提供開始",
+          "outlet": "PC Watch",
+          "date": "2026-10-14"
+        },
+        {
+          "title": "Google、「Gemini 4 Argon」を一般公開 ChatGPTやClaudeの上位モデルに対抗",
+          "outlet": "CNET Japan",
+          "date": "2026-10-14"
+        }
+      ],
+      "buzz_trend": 0.51,
+      "buzz_articles_14d": 63,
+      "buzz_raw_items": 100,
+      "buzz_query": "Gemini 4",
+      "buzz_measured_at": "2026-10-15T07:10:57"
+    },
+    {
+      "title": "1万台規模の人型ロボット用力制御アーム、山東省鄒城市で納入―中国",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5ROWxvQVVTZGkzYk5MRjVKcFhxNExxMzRsQnRCb2dTSFR5Z1JRZi1KdDVlSjFfeEN6WFN4WVMyYkk4eXdqUXhpcUNUN3Z6Sjh4dTFnV0F3b0UwR280UGJESk9wWElfQQ?oc=5",
+      "published": "2026-10-14",
+      "source": "Googleニュース（人型ロボット）／Record China",
+      "source_kind": "media",
+      "outlet": "Record China",
+      "outlet_host": "recordchina.co.jp",
+      "genre_hint": "humanoid",
+      "summary": "1万台規模の人型ロボット用力制御アーム、山東省鄒城市で納入―中国（Record China）",
+      "id": "610672b557",
+      "sources": [
+        "Record China"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.rokae.com/news-detail/1130.html",
+          "what_it_states": "珞石ロボット（ROKAE）が山東省鄒城市の工場で累計10,000台目となる人型力制御アーム（太白ARシリーズ、可搬重量3〜20kg、7自由度設計）をラインオフ・納入したと発表。全関節にトルクセンサーを内蔵した力制御技術を採用し、80社以上の産業パートナーおよび70社以上の具身智能（エンボディドAI）企業へ供給しているとしている。"
+        }
+      ],
+      "announced_on": "2026-09-29",
+      "headline_claim": "中国・山東省で1万台規模の人型ロボット用力制御アームが納入され、人型ロボットの本格的な量産・普及段階に入ったと報じられている。",
+      "actual_content": "珞石ロボット（ROKAE）の香港証券取引所向け公告および公式発表によると、納入されたのは「人型ロボット本体」ではなく、ロボットの腕部ユニットである「太白ARシリーズ」などの人型力制御アーム単体の累計生産・出荷数が1万台に達したという報告である。同製品はエンボディドAI開発企業や研究機関に向けたBtoBの構成部品であり、1万台の人型ロボットが実社会や家庭に配備されて稼働し始めたわけではない。",
+      "buzz_jp_est": 2,
+      "verifiability": 4,
+      "hype_gap": 4,
+      "debate": 2,
+      "wonder": 3,
+      "life_relevance": 1,
+      "work_relevance": 2,
+      "concern_id": null,
+      "entry_question": "人型ロボットの腕が1万台納入されたって、もうロボットが街や家庭にやってくるの？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "人型ロボットが1万台出荷されたのではなく、ロボット開発企業向けに販売した『腕の部品』が累計1万本ラインオフしたという話。両腕ロボットなら最大5,000体分にすぎず、頭脳や脚部と統合されて家事をしてくれる未来はまだ先。",
+      "investment_related": false,
+      "deja_vu_note": "kl032（家事ロボの成功率検証）、kl033（Atlasの手の構造変化）",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "珞石ロボット 力制御アーム",
+      "jp_title_anchor": [
+        "珞石",
+        "力制御アーム",
+        "鄒城"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 3,
+      "overall_score": 2.65,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-15"
+    },
+    {
+      "title": "耐用年数10年以上、マクセルが全固体電池モジュール量産でFA機器の保守負荷を低減",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5Ma0dWXzI1c0RtXzQzV000d0ZmelA1bDB2T0J1OEE1OWl3NkRITDliN09tdjM2UTlWOVIwMndTeTdjM0FSTENVd0ozVnpiRUVYX2JV?oc=5",
+      "published": "2026-10-14",
+      "source": "Googleニュース（全固体電池）／ニュースメディアVOIX",
+      "source_kind": "media",
+      "outlet": "ニュースメディアVOIX",
+      "outlet_host": "voix.jp",
+      "genre_hint": "life_tech",
+      "summary": "耐用年数10年以上、マクセルが全固体電池モジュール量産でFA機器の保守負荷を低減（ニュースメディアVOIX）",
+      "id": "90a842d656",
+      "sources": [
+        "ニュースメディアVOIX"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000000266.000075608.html",
+          "what_it_states": "セラミックパッケージ型全固体電池「PSB401010H」を搭載した全固体電池バックアップモジュール（計4機種）の量産を2026年11月上旬より開始。産業用ロボットやPLCのメモリ・RTC保持用で、一次電池（ER電池3.6V／CR電池3.0V）と互換の出力電圧、85℃耐熱性、想定耐用年数10年以上を備える。"
+        }
+      ],
+      "announced_on": "2026-10-14",
+      "headline_claim": "耐用年数10年以上の全固体電池モジュールをマクセルが量産し、工場設備の電池交換や保守負荷を低減する。",
+      "actual_content": "マクセルが量産を開始するのは、EVやスマホなどの主電源ではなく、工場の産業用ロボットやPLC（制御装置）内部で停電時にメモリや時計データを保持するための「小型バックアップ電源モジュール（4機種）」です。自社製のセラミックパッケージ型全固体電池「PSB401010H」を搭載し、従来の使い切り一次電池（3.6V ER電池／3.0V CR電池）と置き換え可能な回路構成で、85℃の耐熱性と10年以上の耐用年数を想定しています。2024年からの顧客工場でのテスト運用を経て、2026年11月上旬から量産・国内出荷を開始します。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 2,
+      "wonder": 2,
+      "life_relevance": 1,
+      "work_relevance": 3,
+      "concern_id": null,
+      "entry_question": "工場ロボットの電池交換を10年不要にする全固体電池モジュールは、本当にすぐ実用化される？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "soon"
+      },
+      "tsukkomi_material": "「全固体電池がついに量産」と聞くとEVやスマートフォンの大容量バッテリーを期待しがちだが、実際は工場の基板上で時計やメモリを消さないための極小容量バックアップ電源であり、一般消費者の生活に直接届く話ではない点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "マクセル 全固体電池",
+      "jp_title_anchor": [
+        "全固体電池",
+        "マクセル"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.05,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-15"
+    },
+    {
+      "title": "中年期の健康的な食事は認知機能低下リスクを抑制する？｜CareNet.com",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5tMTJUSWY1MDZvdzVLTFQwLTRSSDlJQ3p4OEFRbWtrWEZQQWhQMjBWR2J3YU1SNWxWVi1OaWhoV0ZBZUdhQXdEVlJsVDdBeEZQZWpkQVhaODhKdw?oc=5",
+      "published": "2026-10-10",
+      "source": "Googleニュース（研究 食事 健康 効果）／CareNet.com",
+      "source_kind": "media",
+      "outlet": "CareNet.com",
+      "outlet_host": "carenet.com",
+      "genre_hint": "food_health",
+      "summary": "中年期の健康的な食事は認知機能低下リスクを抑制する？｜CareNet.com（CareNet.com）",
+      "id": "fff866d5d3",
+      "sources": [
+        "CareNet.com"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://jamanetwork.com/journals/jamaneurology/fullarticle/10.1001/jamaneurol.2026.0062",
+          "what_it_states": "米国の大規模追跡調査3件（NHS、NHS II、HPFS）の参加者15万9,347人（平均年齢44.3歳、女性82.6%）を最長30年間追跡。6つの健康的な食事パターンのうち高血圧予防のDASH食を最も忠実に実践した群（上位10%）は、下位10%と比べて主観的認知機能低下（SCD）のリスクが41%低く（RR 0.59、95%信頼区間 0.57-0.62）、45〜54歳の中年期の食生活で特に関連が強かった。一方、客観的な全般的認知テストの差はzスコアで0.05（95%信頼区間 0.02-0.09）のわずかな差にとどまる"
+        }
+      ],
+      "announced_on": "2026-02-23",
+      "headline_claim": "中年期に野菜や魚中心の健康的な食事（特にDASH食）を続けると、高齢期の認知機能低下リスクが4割下がる",
+      "actual_content": "ハーバードT.H.チャン公衆衛生大学院などの研究チームが、医療従事者約16万人を対象に中年期の食事パターンと将来の認知機能との関連を調査した観察研究です。血圧対策のDASH食をはじめとする心臓に良い6つの食事法がいずれも主観的なもの忘れ自覚症状の低下と関連し、特に45〜54歳の実践で強い傾向が見られました。ただし評価の多くは7項目の自己申告アンケートに基づいており、客観的な認知テストによる得点差はごくわずかで、観察研究のため直接の因果関係が証明されたわけではありません。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 1,
+      "concern_id": "dementia",
+      "entry_question": "中年期から食事に気をつければ将来の認知症を防げるって本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「認知機能低下リスク4割減」という劇的な数字はあくまで本人の「最近物忘れが増えた気がする」という自覚症状アンケートの結果であり、客観的なテストの差はわずか0.05点差にすぎない点",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "DASH食 認知機能",
+      "jp_title_anchor": [
+        "DASH食",
+        "認知機能"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.55,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-15"
+    },
+    {
+      "title": "ヒトゲノムの未解明領域「セントロメア」の大規模解析が実現",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9UTEVkMVFPOGtRTmpWS1kxZVdNTFlyU1Z5aHdnaHpsRWc2Z19NUDYweGRqTTl5OXBheExyYWtyYjBYMEpXeWdxMWJkS3A2RnBrV0pWUl9OS0NSV01wUjREQ1M4T1lOUURkeDVrdnhzbmRRTmxEYnR3?oc=5",
+      "published": "2026-10-13",
+      "source": "Googleニュース（iPS細胞 研究 成果）／国立がん研究センター",
+      "source_kind": "media",
+      "outlet": "国立がん研究センター",
+      "outlet_host": "ncc.go.jp",
+      "genre_hint": "medical",
+      "summary": "ヒトゲノムの未解明領域「セントロメア」の大規模解析が実現（国立がん研究センター）",
+      "id": "a02efb33b1",
+      "sources": [
+        "国立がん研究センター"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.ncc.go.jp/jp/information/pr_release/2026/1013/index.html",
+          "what_it_states": "ショートリードWGSデータからセントロメアの型を推定するソフトウェア『ascairn』を開発。染色体ごとの推定精度は80.7～100%（中央値92.7%）。世界3,332人のゲノムデータ解析と、乏突起膠腫142例の解析によりセントロメアの個人差が染色体異常（1p/19q共欠失）の形成に関与する可能性を示した。"
+        },
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1016/j.cell.2026.08.053",
+          "what_it_states": "Cell誌に掲載された原著論文。レアk-merマーカーを用いて既存のショートリードWGSデータからセントロメアのハプログループを同定するアルゴリズムの妥当性を検証し、集団遺伝学的多様性とがんにおける転座ブレークポイントとの関連を報告。"
+        }
+      ],
+      "announced_on": "2026-10-13",
+      "headline_claim": "ヒトゲノム最後の未解明領域「セントロメア」の大規模解析手法が開発され、がんなどの疾患発生の仕組み解明へ道が開かれた。",
+      "actual_content": "国立がん研究センターや京都大学などの共同研究チームが、反復配列が多く従来は高コストなロングリードが必要だったセントロメアの型を、世界中に蓄積された既存のショートリード全ゲノム解析（WGS）データから推計するソフトウェア「ascairn」を開発した。世界各地の3,332人のゲノムデータを解析して型推定の中央値92.7%の精度を確認し、脳腫瘍（乏突起膠腫）142例の解析からセントロメアの個人差が「1p/19q共欠失」という染色体異常の発生に関係する可能性を提示した。ただし本成果はバイオインフォマティクスの解析基盤の確立であり、直ちに臨床現場でがんの診断や治療法が実用化されるわけではない。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 2,
+      "work_relevance": 2,
+      "concern_id": "cancer",
+      "entry_question": "「ゲノムの未解明領域が解析できるようになったら、がんのリスクは事前にわかるようになる？」",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "今回できたのは『既存のゲノムデータからセントロメアの型を推定する解析ソフト』であって、がんの新薬や確定診断法ではない。脳腫瘍との関連も特定の染色体異常に関与する可能性が示された基礎研究の段階。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "セントロメア 国立がん研究センター",
+      "jp_title_anchor": [
+        "セントロメア",
+        "国立がん"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.7,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-15"
+    },
+    {
+      "title": "Google、待望の新AIモデル「Gemini 4 Argon」一般提供を開始　推論の継続力を強化　一部ベンチでトップに",
+      "url": "https://www.itmedia.co.jp/news/article/2610/14/2000002265/",
+      "published": "2026-10-14",
+      "source": "ITmedia NEWS",
+      "source_kind": "media",
+      "summary": "米Googleは10月13日（現地時間）、AIモデル「Gemini 4 Argon」の一般提供を開始した。ソフトウェア開発や金融、法律、科学などの分野で、複数の手順を伴う複雑な作業に対応するモデル。有料プラン「Google AI Pro」「Google AI Ultra」の加入者は、GeminiアプリやGoogle検索の「AIモード」で利用できる。",
+      "id": "e345ef443a",
+      "sources": [
+        "ITmedia NEWS",
+        "Yahoo!ニュース",
+        "Infoseek"
+      ],
+      "dup_ids": [
+        "b9d5d4cc2e",
+        "1cafdb477e"
+      ],
+      "genre_hint": "ai",
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+          "what_it_states": "2026年10月13日に一般提供開始。金融・コーディング・法律・税務などの経済指標ベンチマーク『Vals Index』で1位。Google社内検証ではエージェントによるコード提出が35%以上増加しロールバックが約3分の1減少、Chromeの約600万行のレガシーコード分離作業を数カ月から数週間に短縮。最大100万トークンの出力に対応し、導入価格は入力2ドル／出力10ドル（100万トークンあたり、11月30日以降は4ドル／20ドル）。"
+        },
+        {
+          "kind": "official_blog",
+          "url": "https://developers.googleblog.com/en/gemini-4-argon-for-robotics/",
+          "what_it_states": "3次元空間推論ベンチマークERQAで87%を記録。MuJoCo物理シミュレーションと連動し、四足歩行ロボットSpotがペダル式ゴミ箱に缶を捨てる動作を自律学習したほか、人型ロボットApolloでコーンホール（的当て）を7回連続成功させた。"
+        }
+      ],
+      "announced_on": "2026-10-13",
+      "headline_claim": "Googleが複雑な多段階推論をこなす新AIモデル「Gemini 4 Argon」の一般提供を開始し、主要ベンチマークで首位を獲得したと発表した。",
+      "actual_content": "Googleは2026年10月13日、最大100万トークンの出力に対応し、ソフトウェア開発や法務・金融などの複合工程を自律的に継続処理するモデル「Gemini 4 Argon」をAPIおよび有料プラン向けに公開した。Google社内の運用ではAIエージェントによるコード提出が35%以上増加し差し戻しが約3分の1削減されたほか、Chromeの約600万行に及ぶコード分離を数週間で完了したと報告されている。さらにロボティクス分野ではシミュレーション環境と連携してロボットの複雑動作を自律生成できたとしているが、高度な自律実行には専用の検証環境が必要であり、API利用料も11月末以降は倍額に改定される。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 2,
+      "work_relevance": 5,
+      "concern_id": "work_ai",
+      "entry_question": "「Gemini 4 Argon」は、本当に複雑な仕事の丸投げに耐えられる？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "600万行のコード分離やロボット制御などの劇的な成果はGoogle社内の整備されたシミュレーション環境や専門基盤があってこそで、一般ユーザーが使えるアプリ版は日常タスク連携が中心にとどまり、11月末以降はAPI利用料が2倍に跳ね上がる点もシビア。",
+      "investment_related": false,
+      "deja_vu_note": "kl034（OpenAI dotsによるPC操作の自律化）とエージェント自律実行の文脈が近いが、今回はGoogleのフロンティアモデルGemini 4 Argonの推論継続力・企業導入実績・ロボット連携が焦点。",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "Gemini 4 Argon",
+      "jp_title_anchor": [
+        "Gemini 4 Argon",
+        "Gemini 4"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.45,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-15",
+      "buzz_measured": 5,
+      "buzz_outlets": 38,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "Googleの新モデル「Gemini 4 Argon」一般提供開始 使えるプラン、価格",
+          "outlet": "ITmedia",
+          "date": "2026-10-14"
+        },
+        {
+          "title": "Google、最上位AI「Gemini 4 Argon」を一般提供開始",
+          "outlet": "PC Watch",
+          "date": "2026-10-14"
+        },
+        {
+          "title": "Google、「Gemini 4 Argon」を一般公開 ChatGPTやClaudeの上位モデルに対抗",
+          "outlet": "CNET Japan",
+          "date": "2026-10-14"
+        }
+      ],
+      "buzz_trend": 0.51,
+      "buzz_articles_14d": 65,
+      "buzz_raw_items": 100,
+      "buzz_query": "Gemini 4",
+      "buzz_measured_at": "2026-10-15T07:10:59"
     }
   ]
 }
