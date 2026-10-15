@@ -232,6 +232,7 @@ WebSearchで補助的に探してよい。査読済み掲載であることを�
 /usr/bin/python3 kl_news_scan.py collect --days 21   # RSS（news_sources.json）＋Gemini検索で直近の発表を集める
 /usr/bin/python3 kl_news_scan.py score --top 15      # 一次資料を探させて採点（検索つき、1件ずつ課金）
 /usr/bin/python3 kl_news_scan.py verify               # 一次資料URLの実在確認（HTTPだけ・無料。DOIはハンドルAPI。2026-10-15〜）
+/usr/bin/python3 kl_news_scan.py repair [--id ID ...] [--force]   # 404の一次資料の正しいURLを探す（HTTPだけ・無料。2026-10-15〜）
 /usr/bin/python3 kl_news_scan.py tag                  # ジャンル未付与の採点済み候補に5ジャンルを付ける（score は自動で付ける）
 /usr/bin/python3 kl_news_scan.py enrich               # ゲート通過分に検索語・見出しの語・発表の種類・系列を付ける（テキストのみ、数回の呼び出し）
 /usr/bin/python3 kl_news_scan.py buzz                 # Google ニュース RSS で注目度を実測（1候補1回、2.5秒間隔、1回50件まで）
@@ -248,6 +249,17 @@ WebSearchで補助的に探してよい。査読済み掲載であることを�
     **false**＝全URLが404・ソフト404（またはURLが無い）→ **ゲートで除外**（`list` の除外一覧に理由つきで出る。削除はしない）／
     **null**＝403・429・タイムアウト、開けたが固有の語が無い・トップページへの転送 →「要確認」（ベスト3には残るが ⚠️ を付ける）。
     URLごとの結果は `primary_check`、時刻は `primary_verified_at`。`check-urls`・`list --check-urls` も同じ判定で更新する
+  - **`repair`（404のURLの自動修復、夜間は `verify` の直後）:** `primary_verified: false` の候補について、正しいURLを無料のHTTPだけで探す。
+    順に (1) 発表元サイトを辿る（404のURLの親ディレクトリ・トップ・RSS・sitemap・ニュース/IRの一覧から、固有の語・`what_it_states` の語・
+    発表日が合うリンク。PDFも）、(2) `news_pool.json` の同じ話題の公式・学術誌の記事（発表日±3日）、(3) 同じ話題の報道記事にある発表元への
+    リンク（**報道記事そのものは採用しない**）。見つけたURLは「開ける・ソフト404でない・見出しに固有の語・公開日が発表日±3日」で確かめ、
+    合ったものだけを `primary_sources[].repaired_url`（元の `url` は残す。`repair_method`・`repair_from`・`repaired_at`）に記録して
+    `primary_verified` を true に戻す。PDFは本文を読めない（pdftotext が無い環境）ので、リンク文の語と発表日の両方が合うときだけ採用する。
+    見つからなければ false のまま（`repair_tried_at` から7日は再試行しない。`--force` で再試行）。`list` には「URLを自動で修復」、Slack には
+    「確認済み（URLを自動で修復）」と「🔧 資料の実在は確認。見出しの主張が書いてあるかは、台本前に資料で確かめる」が出る。
+    **修復は「資料が実在し、語が合う」までしか保証しない。** ベスト3に修復した候補があれば、手順4で修復後のURLを開き、見出しの主張
+    （数字・年など）がその資料に書いてあるかを確かめてから提示する（例: 安川電機は決算補足説明資料のPDF、Gemini 4 Argon は blog.google の
+    10/13の記事に修復された）。
   - **`topic_age`（話題の初出）:** 鮮度は `topic_first_date`（同じ話題の候補の発表日・記事の日付、`news_pool.json` の記事、`buzz_evidence` の
     うち最も古い日）から数える（以前は `announced_on`＝最新の出来事の日）。記事を同じ話題とみなすのは、見出しが候補の固有の語を
     **すべて**含むか、見出しの語がよく似ているときだけ。根拠は `topic_first_source` に残り、`list` に「話題の初出」として出る。
@@ -326,7 +338,8 @@ WebSearchで補助的に探してよい。査読済み掲載であることを�
   3. **ベスト3に残った候補だけ、YouTube で競合を1分確認する**（同じ発表をすでに日本語で解説した動画がどれだけあるか。
      多ければ「切り口で差をつけられるか」を懸念に書く）。**数えた本数は `yt --id ID --count N --query 検索語` で記録する**
      （話題の初出以降に公開され、タイトルにその発表の固有の語を含む日本語の動画だけを数える）
-  4. **提示前に一次資料のURLを確認する**（`list --check-urls` か `check-urls --id ID`。夜間は `verify` 済み）。
+  4. **提示前に一次資料のURLを確認する**（`list --check-urls` か `check-urls --id ID`。夜間は `verify`・`repair` 済み）。
+     「URLを自動で修復」と出た候補は、修復後のURLを開いて見出しの主張が書いてあるかを確かめる（repair は資料の実在までしか見ていない）。
      「要確認」（`primary_verified: null`）の候補は、ブラウザか WebFetch で開いて中身（固有の語・発表日）が合うか確かめてから出す。HTTPコードだけでなく、
      本文の `<title>` が「404」「ページが見つかりません」等のソフト404も検出する（例: ALS の CiRA のURLは HTTP 200 で中身が「エラー 404」。
      kl036 の DYNA 2.1 は公式ページとリリースの両方が旧URLで404だった）。NG の候補は、サイト内の一覧や検索で正しいURLを見つけ直すか、

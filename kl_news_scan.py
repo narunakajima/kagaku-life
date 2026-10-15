@@ -818,8 +818,9 @@ def used_source_urls(cands: list) -> dict:
         if c.get("status") in ("used", "rejected"):
             label = c.get("used_in") or ("却下済み" if c["status"] == "rejected" else "使用済み")
             for s in c.get("primary_sources", []) or []:
-                if s.get("url"):
-                    out.setdefault(_norm_url(s["url"]), f"{label}: {c['title'][:30]}")
+                for u in (s.get("url"), s.get("repaired_url")):
+                    if u:
+                        out.setdefault(_norm_url(u), f"{label}: {c['title'][:30]}")
     out.pop("", None)
     return out
 
@@ -870,7 +871,8 @@ def gate_reasons(c: dict, used: dict) -> list:
         r.append("一次資料URLが実在しない（" + (c.get("primary_verified_note") or "全URLが404・ソフト404") + "）")
     if stake(c) < GATE_MIN_LIFE:
         r.append(f"暮らし・仕事<{GATE_MIN_LIFE}")
-    hit = [used[u] for u in (_norm_url(s.get("url", "")) for s in c.get("primary_sources", []) or []) if u in used]
+    hit = [used[u] for u in (_norm_url(x) for s in c.get("primary_sources", []) or []
+                             for x in (s.get("url", ""), s.get("repaired_url", "")) if x) if u in used]
     if hit:
         r.append(f"使用済みと同じ一次資料（{hit[0]}）")
     if is_customer_case(c):
@@ -1051,7 +1053,7 @@ def verify_candidate(c: dict, pacer: "_HostPacer") -> list:
     anchors = _verify_anchors(c)
     res = []
     for s in (c.get("primary_sources") or [])[:VERIFY_MAX_URLS]:
-        url = (s.get("url") or "").strip()
+        url = (s.get("repaired_url") or s.get("url") or "").strip()    # repair で修復したURLがあればそちらを確かめる
         if not url:
             continue
         pacer.wait(url)
@@ -1064,6 +1066,13 @@ def verify_candidate(c: dict, pacer: "_HostPacer") -> list:
         r.pop("transient", None)
         r.pop("http", None)
         r["kind"] = s.get("kind", "")
+        if s.get("repaired_url"):
+            if r.get("ok") and _is_pdf(url) and s.get("repair_pdf_text_checked") is False:
+                # PDFの本文は標準ライブラリで読めない（check_primary_url の語の照合は当てにならない）。repair の採用時の照合を引き継ぐ
+                r.pop("anchor_hit", None)
+                r["status"] += "・PDF（本文の語は未確認。repair の採用時にリンク文の語と発表日で照合）"
+            r.update(repaired=True, orig_url=s.get("url", ""), repair_method=s.get("repair_method", ""),
+                     repair_from=s.get("repair_from", ""))
         res.append(r)
     now = datetime.now().isoformat(timespec="seconds")
     c["primary_verified"] = primary_verdict(res)
@@ -1087,12 +1096,20 @@ def _primary_line(c: dict) -> str:
         return "一次資料の実在: 未確認（verify 未実行）"
     pv = c["primary_verified"]
     parts = []
+    repaired = False
     for x in c.get("primary_check") or []:
         hit = {True: "・固有語あり", False: "・固有語なし（別ページの可能性）"}.get(x.get("anchor_hit"), "")
-        parts.append(f"{_host(x['url'])}: {x['status']}{hit}")
+        if x.get("repaired"):
+            repaired = True
+            parts.append(f"{x['url']}: {x['status']}{hit}（URLを自動で修復: {REPAIR_METHOD_LABEL.get(x.get('repair_method'), x.get('repair_method', ''))}、"
+                         f"元のURL {x.get('orig_url', '')} は404）")
+        else:
+            parts.append(f"{_host(x['url'])}: {x['status']}{hit}")
     body = " ／ ".join(parts) or c.get("primary_verified_note", "")
+    if pv is False and c.get("repair_tried"):
+        body += f"（自動修復も見つからず、{(c.get('repair_tried_at') or '')[:10]}）"
     return f"一次資料の実在: {PRIMARY_LABEL[pv]}{'（ブラウザで開いて確かめる）' if pv is None else ''} — {body}" \
-           f"（{(c.get('primary_verified_at') or '')[:16]}確認）"
+           f"（{(c.get('primary_verified_at') or '')[:16]}確認）" + (f"\n   ⚠️ {REPAIR_CAUTION}" if repaired else "")
 
 
 # ============================================================
@@ -1881,7 +1898,8 @@ def _print_candidate(r: dict, short: bool = False):
     print(f"   見出し: {c.get('headline_claim')}")
     print(f"   実際: {c.get('actual_content')}")
     print(f"   ツッコミ: {c.get('tsukkomi_material')}  予想判定: {c.get('expected_verdicts')}")
-    print(f"   一次資料: " + ", ".join(s.get('url', '') for s in c.get('primary_sources', [])))
+    print(f"   一次資料: " + ", ".join((s["repaired_url"] + "（URLを自動で修復）") if s.get("repaired_url") else s.get("url", "")
+                                  for s in c.get('primary_sources', [])))
     if c.get("deja_vu_note"):
         print(f"   既視感: {c['deja_vu_note']}")
 
@@ -1939,6 +1957,639 @@ def cmd_verify(ids: list, all_: bool, max_n: int):
         return
     t = run_url_checks(targets, cands)
     print(f"\n確認済み {t[True]}・実在しない {t[False]}（ゲートで除外）・要確認 {t[None]}（{CANDIDATES_JSON.name} に保存）")
+
+
+# ============================================================
+# repair: 一次資料URLの自動修復（2026-10-15、NEWS_REDESIGN_2026-10-15.md §3.8「2週目の前倒し」）
+# verify で primary_verified が false（全URLが404・ソフト404）の候補について、正しいURLを無料のHTTPだけで探す。
+#   1. site-crawl   … 元の（404の）URLの発表元サイトを辿る（親ディレクトリ・トップ・RSS/Atom・robots.txt の sitemap、
+#                     トップから「ニュース・お知らせ・IR」等の一覧へ1段）。リンク文と前後の文・URLに、候補の固有の語・
+#                     what_it_states の語・発表日が合うリンク（PDFも）を拾う
+#   2. pool-official… news_pool.json の同じ話題の記事のうち、公式・学術誌のフィード（news_sources.json で人が選んだ発表元）の
+#                     もので、発表日が±3日のもの
+#   3. media-link   … 同じ話題の報道記事（プールの記事・候補の gnews_link。Googleニュースのリダイレクトで本文が取れなければ飛ばす）の
+#                     外向きのリンクのうち、発表元のドメインに向かうもの。**報道記事そのものは採用しない**（手がかりとしてだけ使う）
+# 見つけたURLは verify と同じ判定（開ける・ソフト404でない・固有の語がある。DOIはハンドルAPI）に加えて、
+# 「サイト共通でない語（what_it_states・見出しの語）か発表日」がページにあることを確かめ、確認できたものだけ採用する。
+# PDFは本文の語を確かめられない（標準ライブラリに抽出手段がない。pdftotext があれば使う）ので、リンク文・前後の文に
+# 固有でない語だけでなく what_it_states の語と発表日の両方が合うときだけ採用し、「本文は未確認」と記録する。
+# primary_sources の元のURLは書き換えず、repaired_url 等を足す。repair が保証するのは「資料が実在し、語が合う」まで
+# （見出しの主張が資料に書いてあるかは台本前のファクトチェックの役目）。
+# ============================================================
+
+REPAIR_DEFAULT_MAX = 12          # 1回の repair で扱う候補の上限
+REPAIR_RETRY_DAYS = 7            # 前回の試行からこの日数以内は飛ばす（--force で再試行）
+REPAIR_MAX_FETCH = 18            # 1候補あたりのHTTP取得の上限（ページ・robots・sitemap・確認を含む。一次資料が複数でも共通）
+REPAIR_MAX_VERIFY = 4            # 1候補あたり、見つけたURLを確かめる上限
+REPAIR_TIME_BUDGET = 300.0       # 秒。repair 全体の上限（夜間の所要時間を数分に収める）
+REPAIR_DATE_WINDOW = 3           # 日。pool-official で発表日と比べる幅
+REPAIR_MIN_LINK_SCORE = 4
+REPAIR_NAV_WORDS = ("ニュース", "お知らせ", "プレスリリース", "報道", "トピックス", "新着", "ir", "news", "press",
+                    "release", "topics", "newsroom", "blog", "決算", "投資家")
+REPAIR_SECOND_LEVEL = ("co", "ac", "or", "go", "ne", "ed", "lg", "gr", "com", "org", "net", "gov", "edu")
+REPAIR_STOP_TERMS = {"発表", "開始", "提供", "研究", "開発", "公開", "について", "お知らせ", "ニュース", "プレスリリース",
+                     "with", "from", "this", "that", "their", "about", "release", "news"}
+REPAIR_CAUTION = "資料の実在は確認。見出しの主張が書いてあるかは、台本前に資料で確かめる"
+REPAIR_METHOD_LABEL = {"site-crawl": "発表元サイトを辿って", "pool-official": "プールの公式記事から",
+                       "media-link": "報道記事のリンクを辿って"}
+
+
+def _reg_domain(host: str) -> str:
+    """登録ドメイン（簡易）。yaskawa.co.jp・tottori-u.ac.jp・blog.google・example.com"""
+    parts = [p for p in (host or "").lower().split(".") if p]
+    if len(parts) >= 3 and parts[-2] in REPAIR_SECOND_LEVEL and len(parts[-1]) == 2:
+        return ".".join(parts[-3:])
+    return ".".join(parts[-2:])
+
+
+def _date_variants(days) -> list:
+    out = []
+    for d in days:
+        y, m, dd = d.year, d.month, d.day
+        out += [f"{y}{m:02d}{dd:02d}", f"{y}/{m:02d}/{dd:02d}", f"{y}-{m:02d}-{dd:02d}", f"{y}.{m:02d}.{dd:02d}",
+                f"{y}/{m}/{dd}", f"{y}.{m}.{dd}", f"{y}年{m}月{dd}日", f"{m}月{dd}日"]
+    return list(dict.fromkeys(_nfkc(x) for x in out))
+
+
+def _repair_terms(c: dict, src: dict) -> dict:
+    """リンクを探す語。anchors（jp_title_anchor）・what（what_it_states の語）・title（見出しの語）・dates（発表日の表記）。"""
+    what = _nfkc(src.get("what_it_states") or "")
+    terms = set()
+    for q in re.findall(r"[『「]([^』」]{3,30})[』」]", what):
+        terms.add(q)
+    terms |= set(re.findall(r"[ァ-ヶー]{4,}", what)) | set(re.findall(r"[一-鿿々]{3,}", what))
+    terms |= {w for w in re.findall(r"[a-z][a-z0-9-]{3,}", what)}
+    title_terms = set(re.findall(r"[ァ-ヶー]{4,}|[一-鿿々]{3,}|[a-z][a-z0-9-]{3,}", _nfkc(c.get("title", ""))))
+    anchors = _verify_anchors(c)
+    stop = REPAIR_STOP_TERMS | set(anchors)
+    days = set()
+    for fld in ("announced_on", "published"):
+        d = _valid_day(c.get(fld))
+        if d:
+            days.add(d)
+    for y, m, dd in re.findall(r"(20\d\d)年(\d{1,2})月(\d{1,2})日", what):
+        try:
+            days.add(datetime(int(y), int(m), int(dd)).date())
+        except ValueError:
+            pass
+    return {"anchors": anchors, "what": sorted(t for t in terms if t not in stop),
+            "title": sorted(t for t in title_terms if t not in stop and t not in terms),
+            "dates": _date_variants(sorted(days)), "days": sorted(days),
+            "slugs": [re.sub(r"[^a-z0-9]+", "-", a).strip("-") for a in anchors if re.fullmatch(r"[a-z0-9 .\-]+", a) and len(a) >= 4]}
+
+
+class _RepairFetcher:
+    """repair 用の取得（間隔は verify と同じ _HostPacer、robots.txt を守る、1候補あたりの取得回数に上限）。"""
+
+    def __init__(self, pacer):
+        self.pacer = pacer
+        self.robots = {}
+        self.sitemaps = {}
+        self.count = 0
+        self.log = []
+
+    def _robots(self, base: str):
+        if base in self.robots:
+            return self.robots[base]
+        import urllib.robotparser
+        rp = urllib.robotparser.RobotFileParser()
+        sm = []
+        try:
+            self.pacer.wait(base)
+            self.count += 1
+            raw = urllib.request.urlopen(urllib.request.Request(base + "/robots.txt", headers=BROWSER_UA), timeout=15).read(300_000)
+            lines = raw.decode("utf-8", "replace").splitlines()
+            rp.parse(lines)
+            sm = [ln.split(":", 1)[1].strip() for ln in lines if ln.lower().startswith("sitemap:")]
+        except urllib.error.HTTPError as e:
+            # 4xx（robots.txt が無い等）は制限なし、5xx は一時的に全面禁止とみなす（Google の robots.txt の扱いと同じ）
+            rp.parse(["User-agent: *", "Disallow: /"] if e.code >= 500 else [])
+        except Exception:  # noqa: BLE001
+            rp.parse([])
+        self.robots[base] = rp
+        self.sitemaps[base] = sm
+        return rp
+
+    def allowed(self, url: str) -> bool:
+        sp = urllib.parse.urlsplit(url)
+        return self._robots(f"{sp.scheme}://{sp.netloc}").can_fetch(BROWSER_UA["User-Agent"], url)
+
+    def get(self, url: str, max_bytes: int = 1_500_000):
+        """(最終URL, Content-Type, 本文の文字列) か None。PDFは取得しない（呼び出し側が判断する）。"""
+        if self.count >= REPAIR_MAX_FETCH or not url.startswith("http"):
+            return None
+        if not self.allowed(url):
+            self.log.append(f"robots.txt で禁止: {url}")
+            return None
+        self.pacer.wait(url)
+        self.count += 1
+        try:
+            resp = _open(url, timeout=15)
+            ctype = resp.headers.get("Content-Type", "")
+            if "pdf" in ctype.lower():
+                return resp.geturl() or url, ctype, ""
+            raw = resp.read(max_bytes)
+            if (resp.headers.get("Content-Encoding") or "").lower() == "gzip" or raw[:2] == b"\x1f\x8b":
+                import gzip
+                try:
+                    raw = gzip.decompress(raw)
+                except Exception:  # noqa: BLE001
+                    pass
+            return resp.geturl() or url, ctype, _decode(raw, ctype)
+        except Exception as e:  # noqa: BLE001
+            self.log.append(f"取得失敗 {url}: {type(e).__name__}")
+            return None
+
+
+def _open(url: str, timeout: int = 15):
+    """urlopen。Python 3.9 の urllib は 308（恒久的な転送）をたどらないので、1回だけ自分でたどる（3.11 以降は不要）。"""
+    try:
+        return urllib.request.urlopen(urllib.request.Request(url, headers=BROWSER_UA), timeout=timeout)
+    except urllib.error.HTTPError as e:
+        loc = e.headers.get("Location") if e.code == 308 else None
+        if not loc:
+            raise
+        return urllib.request.urlopen(urllib.request.Request(urllib.parse.urljoin(url, loc), headers=BROWSER_UA), timeout=timeout)
+
+
+A_TAG = re.compile(r"<a\b[^>]*?href\s*=\s*[\"']([^\"'#]+)[\"'][^>]*>(.*?)</a>", re.I | re.S)
+
+
+def _strip(html: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html)).strip()
+
+
+def _links(page_url: str, html: str) -> list:
+    """[(絶対URL, リンク文, 前後の文)]。script・style は除く。"""
+    html = re.sub(r"<script.*?</script>|<style.*?</style>", " ", html, flags=re.I | re.S)
+    out = []
+    for m in A_TAG.finditer(html):
+        href = m.group(1).strip()
+        if href.startswith(("mailto:", "javascript:", "tel:")):
+            continue
+        url = urllib.parse.urljoin(page_url, href.replace("&amp;", "&"))
+        text = _strip(m.group(2))
+        ctx = _strip(html[max(0, m.start() - 500):m.start()])[-120:] + " " + _strip(html[m.end():m.end() + 300])[:80]
+        out.append((url, text, ctx))
+    return out
+
+
+def _feed_links(xml_text: str) -> list:
+    """RSS/Atom から [(URL, 見出し, 日付・要約)]"""
+    out = []
+    for it in re.findall(r"<(?:item|entry)\b.*?</(?:item|entry)>", xml_text, re.S | re.I):
+        t = re.search(r"<title[^>]*>(.*?)</title>", it, re.S | re.I)
+        ln = re.search(r"<link[^>]*>(.*?)</link>", it, re.S | re.I) or re.search(r"<link[^>]*href=[\"']([^\"']+)", it, re.I)
+        d = re.search(r"<(?:pubDate|updated|published|dc:date)[^>]*>(.*?)</", it, re.S | re.I)
+        if t and ln:
+            title = _strip(re.sub(r"<!\[CDATA\[|\]\]>", "", t.group(1)))
+            url = re.sub(r"<!\[CDATA\[|\]\]>", "", ln.group(1)).strip()
+            out.append((url, title, d.group(1) if d else ""))
+    return out
+
+
+def _score_link(url: str, text: str, ctx: str, terms: dict, common: set) -> tuple:
+    """(点, 当たった語)。サイト共通の語（common。サイトのトップ等の多くのリンクに出る語）は数えない。"""
+    t = _nfkc(text + " " + ctx)
+    u = _nfkc(urllib.parse.unquote(url))
+    hits, score = [], 0
+    for a in terms["anchors"]:
+        if a in t and a not in common:
+            score += 3
+            hits.append(a)
+    for w in terms["what"]:
+        if w in t and w not in common:
+            score += 2
+            hits.append(w)
+    tt = [w for w in terms["title"] if w in t and w not in common]
+    score += min(len(tt), 2)
+    hits += tt
+    for s in terms["slugs"]:
+        if s and s in u:
+            score += 4
+            hits.append(s)
+    date_hit = any(d in t or d in u for d in terms["dates"])
+    if date_hit:
+        score += 2
+        hits.append("発表日")
+    return score, hits, date_hit
+
+
+def _common_terms(links: list, terms: dict) -> set:
+    """ページの多くのリンク（25%超）の文に出る語は、そのサイト共通の語（会社名など）として数えない。"""
+    if len(links) < 8:
+        return set()
+    out = set()
+    texts = [_nfkc(x[1] + " " + x[2]) for x in links]
+    for w in terms["anchors"] + terms["what"] + terms["title"]:
+        if sum(1 for t in texts if w in t) > 0.25 * len(texts):
+            out.add(w)
+    return out
+
+
+def _is_pdf(url: str) -> bool:
+    return urllib.parse.urlsplit(url).path.lower().endswith(".pdf")
+
+
+def _pdf_text(raw: bytes) -> str:
+    """pdftotext（poppler）があれば本文を取り出す。無ければ空（GitHub Actions の Ubuntu には標準では無い）。"""
+    import shutil
+    import subprocess
+    if not shutil.which("pdftotext"):
+        return ""
+    try:
+        p = subprocess.run(["pdftotext", "-l", "40", "-", "-"], input=raw, capture_output=True, timeout=30)
+        return p.stdout.decode("utf-8", "replace")
+    except Exception:  # noqa: BLE001
+        return ""
+
+
+PAGE_DATE_PATTERNS = (
+    re.compile(r"<meta[^>]+(?:property|name)=[\"'](?:article:published_time|og:published_time|pubdate|publishdate|date|dc\.date)[\"'][^>]*content=[\"'](\d{4}-\d{2}-\d{2})", re.I),
+    re.compile(r"<meta[^>]+content=[\"'](\d{4}-\d{2}-\d{2})[^\"']*[\"'][^>]*(?:property|name)=[\"'](?:article:published_time|og:published_time|pubdate|date)[\"']", re.I),
+    re.compile(r"[\"']datePublished[\"']\s*:\s*[\"'](\d{4}-\d{2}-\d{2})"),
+)
+
+
+def _page_date(html: str):
+    """ページの公開日（メタデータ・構造化データにあれば）。無ければ None。"""
+    for pat in PAGE_DATE_PATTERNS:
+        m = pat.search(html[:300_000])
+        if m:
+            return _valid_day(m.group(1))
+    return None
+
+
+def _claim_terms(c: dict, text: str) -> dict:
+    """任意: 見出しの主張の語（固有の語・見出しの数字や年）が資料の本文に含まれるかを数える（参考。判定には使わない）。"""
+    t = _nfkc(text)
+    want = list(dict.fromkeys(_verify_anchors(c) + re.findall(r"\d{2,}(?:\.\d+)?%?", _nfkc(
+        (c.get("title") or "") + " " + (c.get("headline_claim") or "")))))
+    return {"checked": want, "found": [w for w in want if w in t]}
+
+
+def _confirm_found(url: str, link_info: dict, c: dict, terms: dict, common: set, fx: _RepairFetcher) -> dict:
+    """見つけたURLを確かめる。採用なら ok=True の結果、そうでなければ ok を False/None にした結果を返す。"""
+    anchors = terms["anchors"]
+    if fx.count >= REPAIR_MAX_FETCH:
+        return {"url": url, "ok": None, "status": "取得上限に達したため未確認"}
+    if not fx.allowed(url):
+        return {"url": url, "ok": None, "status": "robots.txt で禁止"}
+    fx.pacer.wait(url)
+    fx.count += 1
+    if _is_pdf(url):
+        try:
+            resp = _open(url, timeout=20)
+            raw = resp.read(8_000_000)
+        except urllib.error.HTTPError as e:
+            return {"url": url, "ok": False if e.code in (404, 410) else None, "status": f"HTTP {e.code}"}
+        except Exception as e:  # noqa: BLE001
+            return {"url": url, "ok": None, "status": f"取得失敗（{type(e).__name__}）"}
+        if not raw.startswith(b"%PDF"):
+            return {"url": url, "ok": False, "status": "PDFではない（ソフト404の可能性）"}
+        text = _pdf_text(raw)
+        r = {"url": url, "ok": True, "status": f"HTTP {resp.status}・PDF", "method": "http", "pdf": True}
+        if text:
+            r["anchor_hit"] = any(a in _nfkc(text) for a in anchors)
+            r["claim_terms"] = _claim_terms(c, text)
+            if not r["anchor_hit"]:
+                r["ok"] = None
+                r["status"] += "（本文に固有の語なし）"
+            return r
+        # 本文を読めないので、リンク文・前後の文に what_it_states の語と発表日の両方が合うときだけ採用する
+        what_hit = [w for w in terms["what"] if w in link_info.get("hits", [])]
+        r["pdf_text_checked"] = False
+        if what_hit and link_info.get("date_hit"):
+            r["status"] += f"（本文は未確認。リンク文の語「{what_hit[0]}」と発表日が一致）"
+        else:
+            r["ok"] = None
+            r["status"] += "（本文は未確認。リンク文の語と発表日の両方は合わない）"
+        return r
+    doi = extract_doi(url)
+    if doi and _host(url) in ("doi.org", "dx.doi.org"):
+        return dict(check_doi(doi), url=url, method="doi_handle")
+    try:
+        resp = _open(url, timeout=15)
+        raw = resp.read(400_000)
+        html = _decode(raw, resp.headers.get("Content-Type", ""))
+    except urllib.error.HTTPError as e:
+        return {"url": url, "ok": False if e.code in (404, 410) else None, "status": f"HTTP {e.code}"}
+    except Exception as e:  # noqa: BLE001
+        return {"url": url, "ok": None, "status": f"取得失敗（{type(e).__name__}）"}
+    m = re.search(r"<title[^>]*>(.*?)</title>", html, re.I | re.S)
+    title = re.sub(r"\s+", " ", m.group(1)).strip() if m else ""
+    if title and SOFT404_TITLE.search(title):
+        return {"url": url, "ok": False, "status": f"ソフト404（title「{title[:40]}」）"}
+    final = resp.geturl() or url
+    if final != url and urllib.parse.urlsplit(final).path in ("", "/"):
+        return {"url": url, "ok": None, "status": f"トップページへ転送（{final[:60]}）"}
+    body = re.sub(r"<script.*?</script>|<style.*?</style>", " ", html[:400_000], flags=re.I | re.S)
+    text = _nfkc(title + " " + _strip(body)[:60_000])
+    head = text[:30_000]
+    r = {"url": url, "ok": True, "status": f"HTTP {resp.status}" + (f"「{title[:30]}」" if title else ""),
+         "page_title": title[:120], "method": "http", "anchor_hit": any(a in head for a in anchors) if anchors else None}
+    specific = [w for w in terms["what"] + terms["title"] + terms["slugs"] if w not in common and w in text]
+    date_hit = any(d in text or d in _nfkc(url) for d in terms["dates"])
+    h1 = " ".join(_strip(x) for x in re.findall(r"<h1[^>]*>(.*?)</h1>", body, re.I | re.S)[:2])
+    heading = _nfkc(title + " " + h1)
+    strong = [a for a in anchors if a not in common and a in heading] + \
+             [w for w in terms["what"] + terms["title"] if w not in common and len(w) >= 4 and w in heading]
+    r["claim_terms"] = _claim_terms(c, text)
+    pdate = _page_date(html)
+    if pdate:
+        r["page_date"] = pdate.isoformat()
+    if r["anchor_hit"] is False:
+        r["ok"] = None
+        r["status"] += "（固有の語なし）"
+    elif pdate and terms["days"] and min(abs((pdate - d).days) for d in terms["days"]) > REPAIR_DATE_WINDOW:
+        # 例: Gemini 4 Argon の一般提供（10/13）の候補で、9/30 のプレビューの記事を拾った（同じ製品の別の発表）
+        r["ok"] = None
+        r["status"] += f"（ページの公開日 {pdate.isoformat()} が発表日と{REPAIR_DATE_WINDOW}日以上ずれる。別の発表の可能性）"
+    elif not strong:
+        r["ok"] = None
+        r["status"] += "（見出しに候補の固有の語がない。一覧ページ・別の資料の可能性）"
+    elif not specific and not date_hit:
+        r["ok"] = None
+        r["status"] += "（サイト共通の語しか合わない）"
+    else:
+        r["status"] += "（" + "・".join((specific[:3]) + (["発表日"] if date_hit else [])) + "が一致）"
+    return r
+
+
+def _issuer_domains(c: dict, src: dict, pool_official: list) -> set:
+    doms = {_reg_domain(_host(src.get("url", "")))}
+    doms |= {_reg_domain(_host(s.get("url", ""))) for s in c.get("primary_sources") or [] if s.get("url")}
+    doms |= {_reg_domain(_host(p.get("url", ""))) for p in pool_official}
+    return {d for d in doms if d and d not in ("doi.org",)}
+
+
+def _same_topic_pool(c: dict, pool: list) -> list:
+    """プールのうち、この候補と同じ話題の記事（固有の語をすべて含む・見出しの語の Jaccard・同じID）"""
+    anchors = _topic_anchors(c)
+    toks = _title_tokens(c.get("title", ""))
+    ids = {c["id"]} | set(c.get("dup_ids") or [])
+    out = []
+    for p in pool:
+        tn = _nfkc(p.get("title", ""))
+        tk = _title_tokens(p.get("title", ""))
+        if p.get("id") in ids or (anchors and all(a in tn for a in anchors)) or \
+                (len(toks) >= 4 and len(tk) >= 4 and len(toks & tk) / len(toks | tk) >= DEDUP_JACCARD):
+            out.append(p)
+    return out
+
+
+def repair_source(c: dict, src: dict, pool: list, fx: _RepairFetcher, deadline: float) -> dict:
+    """1つの404のURLについて正しいURLを探す。見つかれば {url, method, from, check}、無ければ {tried: [...]}"""
+    terms = _repair_terms(c, src)
+    orig = (src.get("url") or "").strip()
+    tried = []
+    sp = urllib.parse.urlsplit(orig if "://" in orig else "https://" + orig)
+    base = f"{sp.scheme or 'https'}://{sp.netloc}"
+    same_topic = _same_topic_pool(c, pool)
+    day0 = _valid_day(c.get("announced_on") or c.get("published"))
+
+    def near(p, days):
+        d = _valid_day(p.get("published"))
+        return d is not None and day0 is not None and abs((d - day0).days) <= days
+
+    pool_official = [p for p in same_topic if p.get("source_kind") in ("official", "journal") and p.get("url")
+                     and near(p, REPAIR_DATE_WINDOW)]
+    issuers = _issuer_domains(c, src, pool_official)
+
+    def try_found(found: list, method: str):
+        """found: [(点, URL, info)] を点の順に確かめる"""
+        seen = set()
+        n = 0
+        for sc, url, info in sorted(found, key=lambda x: -x[0]):
+            if url in seen or _norm_url(url) == _norm_url(orig) or n >= REPAIR_MAX_VERIFY or time.monotonic() > deadline:
+                continue
+            seen.add(url)
+            n += 1
+            r = _confirm_found(url, info, c, terms, info.get("common", set()), fx)
+            tried.append(f"{method}: {url[:90]} → {r['status']}")
+            if r.get("ok") is True:
+                return {"url": url, "method": method, "from": info.get("from", ""), "check": r, "tried": list(tried)}
+        return None
+
+    # 1. site-crawl
+    if sp.netloc and orig:
+        fx._robots(base)
+        seeds = []
+        parts = [p for p in sp.path.split("/") if p]
+        for k in range(len(parts) - 1, max(len(parts) - 3, 0) - 1, -1):    # 親ディレクトリ（深い方から2段まで）
+            seeds.append(base + "/" + "/".join(parts[:k]) + ("/" if k else ""))
+        if base + "/" not in seeds:
+            seeds.append(base + "/")
+        seeds = list(dict.fromkeys(seeds))
+        found, nav, pages, feeds = [], [], 0, []
+        crawled = []          # (ページのURL, リンク, ページの <title>)
+        queue = list(seeds)
+        visited = set()
+        page_cap = fx.count + 8      # 1つのURLについて見るページは8枚まで
+        while queue and fx.count < page_cap and time.monotonic() < deadline and fx.count < REPAIR_MAX_FETCH - REPAIR_MAX_VERIFY:
+            page = queue.pop(0)
+            if page in visited:
+                continue
+            visited.add(page)
+            got = fx.get(page)
+            pages += 1
+            if not got or not got[2]:
+                tried.append(f"site-crawl: {page[:80]} を開けない")
+                continue
+            final, ctype, html = got
+            visited.add(final)
+            head = html.lstrip()[:600].lower()
+            ptitle = ""
+            if "<sitemapindex" in html[:3000]:
+                # sitemap index: URLに今年（無ければ発表年）を含む子のうち最後の1つ、無ければ先頭の1つだけ足す
+                locs = re.findall(r"<loc>\s*(.*?)\s*</loc>", html)
+                yr = str((day0 or datetime.now().date()).year)
+                pick = [u for u in locs if yr in u][-1:] or locs[:1]
+                queue = pick + queue
+                continue
+            if "<urlset" in html[:3000]:
+                links = [(u, "", "") for u in re.findall(r"<loc>\s*(.*?)\s*</loc>", html)]
+            elif "rss" in ctype.lower() or "atom" in ctype.lower() or (head.startswith("<?xml") and ("<rss" in head or "<feed" in head)):
+                links = [(u, t, d) for u, t, d in _feed_links(html)]
+            else:
+                links = _links(final, html)
+                m = re.search(r"<title[^>]*>(.*?)</title>", html, re.I | re.S)
+                ptitle = _nfkc(m.group(1)) if m else ""
+                for fm in re.finditer(r"<link[^>]+type=[\"']application/(?:rss|atom)\+xml[\"'][^>]*>", html, re.I):
+                    h = re.search(r"href=[\"']([^\"']+)", fm.group(0))
+                    if h:
+                        feeds.append(urllib.parse.urljoin(final, h.group(1)))
+            crawled.append((final, links, ptitle))
+            if page in seeds:
+                for u, t, _ in links:
+                    nt = _nfkc(t + " " + urllib.parse.urlsplit(u).path)
+                    if _host(u) == _host(final) and not _is_pdf(u) and any(w in nt for w in REPAIR_NAV_WORDS) \
+                            and u not in nav and len(nav) < 6:
+                        nav.append(u)
+            if page == seeds[-1]:      # トップを読んだら、RSS/Atom → sitemap（固有の英語の語がURLにある場合） → 一覧ページの順に足す
+                queue = list(dict.fromkeys(feeds[:2])) + queue
+                if terms["slugs"]:
+                    queue += [s for s in fx.sitemaps.get(base, [])[:1]]
+                queue += [u for u in nav if u not in visited]
+        # サイト共通の語: トップページの <title>、または2ページ以上の <title> にある語（会社名・大学名など）
+        all_terms = terms["anchors"] + terms["what"] + terms["title"]
+        titles = [t for _, _, t in crawled if t]
+        top_title = next((t for u, _, t in crawled if urllib.parse.urlsplit(u).path in ("", "/")), "")
+        site_common = {w for w in all_terms if w in top_title or sum(1 for t in titles if w in t) >= 2}
+        exclude = visited | set(nav) | {_norm_url(x) for x in seeds}
+        for final, links, _ in crawled:
+            common = _common_terms(links, terms) | site_common
+            for u, t, ctx in links:
+                if _reg_domain(_host(u)) not in issuers or u in exclude or _norm_url(u) in exclude:
+                    continue
+                sc, hits, dh = _score_link(u, t, ctx, terms, common)
+                if sc >= REPAIR_MIN_LINK_SCORE and any(h != "発表日" for h in hits):
+                    found.append((sc, u, {"from": final, "hits": hits, "date_hit": dh, "common": common}))
+        hit = try_found(found, "site-crawl")
+        if hit:
+            return hit
+        if not found:
+            tried.append(f"site-crawl: {pages}ページを見たが、語の合うリンクなし")
+
+    # 2. pool-official（人が選んだ公式・学術誌のフィードの、同じ話題・発表日±3日の記事）
+    if pool_official and time.monotonic() < deadline:
+        hit = try_found([(10 + _score_link(p["url"], p.get("title", "") + " " + (p.get("summary") or ""), "", terms, set())[0],
+                          p["url"], {"from": f"news_pool.json（{p.get('source', '')}）", "hits": [], "date_hit": True})
+                         for p in pool_official], "pool-official")
+        if hit:
+            return hit
+    elif not pool_official:
+        tried.append("pool-official: 同じ話題の公式・学術誌の記事（発表日±3日）がプールにない")
+
+    # 3. media-link（報道記事の外向きのリンクで、発表元のドメインに向かうもの。報道記事そのものは採用しない）
+    media = [p.get("url") for p in same_topic if p.get("source_kind") == "media" and p.get("url") and near(p, 7)]
+    media += [x for x in [c.get("gnews_link")] if x]
+    media = list(dict.fromkeys(m for m in media if m))[:3]
+    found = []
+    for mu in media:
+        if time.monotonic() > deadline or fx.count >= REPAIR_MAX_FETCH - 2:
+            break
+        got = fx.get(mu)
+        if not got or not got[2]:
+            tried.append(f"media-link: {mu[:70]} を開けない")
+            continue
+        final, _, html = got
+        if _host(final) == "news.google.com":
+            tried.append("media-link: Googleニュースのリダイレクトで本文が取れない（飛ばした）")
+            continue
+        media_dom = _reg_domain(_host(final))
+        links = [x for x in _links(final, html) if _reg_domain(_host(x[0])) in issuers and _reg_domain(_host(x[0])) != media_dom]
+        for u, t, ctx in links:
+            sc, hits, dh = _score_link(u, t, ctx, terms, set())
+            found.append((sc + 3, u, {"from": final, "hits": hits, "date_hit": dh, "common": set()}))
+        if not links:
+            tried.append(f"media-link: {_host(final)} の記事に発表元（{'・'.join(sorted(issuers))}）へのリンクなし")
+    if found:
+        hit = try_found(found, "media-link")
+        if hit:
+            return hit
+    return {"tried": tried}
+
+
+def repair_candidate(c: dict, pool: list, pacer, deadline: float) -> bool:
+    """候補の404の一次資料を修復する。1件でも修復できれば primary_verified を true にする。"""
+    now = datetime.now().isoformat(timespec="seconds")
+    checks = {x.get("url"): x for x in c.get("primary_check") or []}
+    srcs = [s for s in (c.get("primary_sources") or [])[:VERIFY_MAX_URLS] if s.get("url")]
+    bad = [s for s in srcs if not s.get("repaired_url") and checks.get(s["url"], {}).get("ok") is False]
+    log, fixed = [], []
+    fx = _RepairFetcher(pacer)      # 取得回数の上限（REPAIR_MAX_FETCH）は候補ごと（一次資料が複数でも共通）
+    for s in bad:
+        if time.monotonic() > deadline:
+            log.append("時間の上限に達したため中断")
+            break
+        if fx.count >= REPAIR_MAX_FETCH:
+            log.append(f"{_host(s['url'])}: 取得の上限（候補あたり{REPAIR_MAX_FETCH}回）に達したため試していない")
+            continue
+        n_log = len(fx.log)
+        r = repair_source(c, s, pool, fx, deadline)
+        log += r.get("tried", []) + fx.log[n_log:n_log + 5]
+        if r.get("url"):
+            s["repaired_url"] = r["url"]
+            s["repair_method"] = r["method"]
+            s["repair_from"] = r["from"]
+            s["repaired_at"] = now
+            if r["check"].get("claim_terms"):
+                s["repair_claim_terms"] = r["check"]["claim_terms"]
+            if r["check"].get("pdf_text_checked") is False:
+                s["repair_pdf_text_checked"] = False
+            fixed.append((s, r))
+    c["repair_tried"] = True
+    c["repair_tried_at"] = now
+    c["repair_log"] = log[-12:]
+    if not fixed:
+        c["repair_result"] = "見つからない"
+        return False
+    for s, r in fixed:
+        new = dict(r["check"], kind=s.get("kind", ""), repaired=True, orig_url=s["url"], orig_status=checks.get(s["url"], {}).get("status", ""),
+                   repair_method=r["method"], repair_from=r["from"])
+        new.pop("claim_terms", None)
+        new.pop("transient", None)
+        new.pop("http", None)
+        c["primary_check"] = [new if x.get("url") == s["url"] else x for x in c.get("primary_check") or []]
+    c["primary_verified"] = primary_verdict(c["primary_check"])
+    c["primary_verified_at"] = now
+    c["primary_verified_note"] = "URLを自動で修復（repair）: " + " ／ ".join(
+        f"{_host(s['url'])} → {s['repaired_url'][:80]}（{s['repair_method']}）" for s, _ in fixed)
+    c["repair_result"] = "修復"
+    oks = [x.get("ok") for x in c["primary_check"]]
+    c["url_check"] = [{"url": x["url"], "ok": x.get("ok"), "status": x.get("status", "")} for x in c["primary_check"]]
+    c["url_ok"] = False if False in oks else (True if all(oks) else None)
+    c["url_status"] = " ／ ".join(f"{_host(x['url'])}: {x.get('status', '')}" for x in c["primary_check"])
+    return c["primary_verified"] is True
+
+
+def cmd_repair(ids: list, all_: bool, force: bool, max_n: int):
+    """verify で一次資料URLが実在しない（primary_verified: false）候補の、正しいURLを無料のHTTPだけで探す（2026-10-15）。
+    既定は false で一次資料以外のゲートを通る available な候補のうち、前回の試行から REPAIR_RETRY_DAYS 日を過ぎたもの。
+    --all はゲートに関係なく false の候補すべて、--id は指定の候補、--force は最近試した候補も試す。"""
+    cands = load_candidates()
+    items = cands["items"]
+    if ids:
+        targets = [c for c in items if c["id"] in ids]
+    else:
+        used = used_source_urls(items)
+        targets = [c for c in items if c.get("primary_verified") is False and c.get("status") == "available"
+                   and (all_ or not [g for g in gate_reasons(c, used) if not g.startswith("一次資料")])]
+    if not force:
+        cutoff = datetime.now() - timedelta(days=REPAIR_RETRY_DAYS)
+        skip = [c for c in targets if c.get("repair_tried_at") and datetime.fromisoformat(c["repair_tried_at"]) > cutoff]
+        if skip:
+            print(f"  前回の試行から{REPAIR_RETRY_DAYS}日以内のため飛ばす: {len(skip)}件（--force で再試行）")
+        targets = [c for c in targets if c not in skip]
+    targets.sort(key=lambda c: (-freshness_score(fresh_date(c)), -(c.get("buzz_measured") or buzz_value(c)[0])))
+    if len(targets) > max_n:
+        print(f"  対象が{len(targets)}件あるため、{max_n}件だけ試します（残りは次回）")
+        targets = targets[:max_n]
+    print(f"一次資料URLの自動修復: {len(targets)}件（発表元サイト → プールの公式記事 → 報道記事のリンク。HTTPのみ、"
+          f"間隔{URL_CHECK_INTERVAL}秒・同じホスト{VERIFY_SAME_HOST_INTERVAL}秒、robots.txt を守る）")
+    if not targets:
+        return
+    pool = _load_pool_items()
+    pacer = _HostPacer()
+    deadline = time.monotonic() + REPAIR_TIME_BUDGET
+    n_ok = 0
+    for c in targets:
+        t0 = time.monotonic()
+        ok = repair_candidate(c, pool, pacer, deadline)
+        n_ok += ok
+        dt = time.monotonic() - t0
+        if ok:
+            for s in c.get("primary_sources") or []:
+                if s.get("repaired_url") and s.get("repaired_at") == c["repair_tried_at"]:
+                    print(f"  [修復] {c['id']} {c['title'][:44]}（{dt:.0f}秒）\n         {s['url']}\n      → {s['repaired_url']}"
+                          f"（{s['repair_method']}、{s['repair_from'][:70]}）")
+        else:
+            print(f"  [見つからない] {c['id']} {c['title'][:44]}（{dt:.0f}秒）")
+            for ln in c.get("repair_log", [])[-6:]:
+                print(f"         - {ln}")
+    _save_candidates(cands)
+    print(f"\n修復 {n_ok}件・見つからない {len(targets) - n_ok}件（{CANDIDATES_JSON.name} に保存）。{REPAIR_CAUTION}")
 
 
 def cmd_yt(ids: list, count, query: str):
@@ -2071,18 +2722,24 @@ def cmd_slack(note_path: str):
         buzz = (f"注目{c['buzz_measured']}（{c.get('buzz_outlets', 0)}媒体"
                 f"{'・Yahoo!' if c.get('yahoo') else ''}{f'・直近{nwin}回の最大' if nwin > 1 else ''}）") \
             if c.get("buzz_measured") is not None else "注目 未計測"
+        repaired_note = ""
         meta = " ・ ".join(x for x in [f"{gi.get('icon', '')}{gi.get('label', c.get('genre', '?'))}", day(c), first(c), buzz,
                                        "健康系" if c.get("health") else ""] if x)
         if "primary_verified" in c:     # 2026-10-15: verify の結果（1件でも開ければ確認済み）
             pv = c["primary_verified"]
             mark, label = {True: ("✅", "確認済み"), False: ("❌", "実在しない"), None: ("⚠️", "要確認")}[pv]
-            ok_src = [x["url"] for x in c.get("primary_check") or [] if x.get("ok")]
-            src = ok_src[0] if ok_src else (c.get("primary_sources") or [{}])[0].get("url", "")
+            ok_src = [x for x in c.get("primary_check") or [] if x.get("ok")]
+            src = ok_src[0]["url"] if ok_src else (c.get("primary_sources") or [{}])[0].get("url", "")
+            if ok_src and ok_src[0].get("repaired"):      # 2026-10-15: repair で修復したURL
+                label += "（URLを自動で修復）"
+                repaired_note = f"🔧 {REPAIR_CAUTION}"
         else:
             mark = {True: "✅", False: "❌", None: "⚠️"}[c.get("url_ok")] if c.get("url_status") else "⚠️"
             label = {True: "OK", False: "リンク切れ", None: "要確認"}[c.get("url_ok")] if c.get("url_status") else "未確認"
             src = (c.get("primary_sources") or [{}])[0].get("url", "")
         link = f"<{src}|一次資料 {label}>" if src else f"一次資料 {label}"
+        if repaired_note:
+            link += "\n" + repaired_note
         ev = c.get("expected_verdicts") or {}
         verdict = (f"大輔 {vname.get(ev.get('dreamer'), '?')} ／ 沙織 {vname.get(ev.get('skeptic'), '?')}") if ev else ""
         lines = [f"*{nums[i]} 〈{r.get('slot', SLOT_HONMEI)}〉{title}*", meta]
@@ -2132,7 +2789,9 @@ def cmd_slack(note_path: str):
                                                        + " ／ ".join(esc(r["c"]["title"][:28]) for r in wait)}]})
     n_false = sum(1 for r in rows if r["c"].get("primary_verified") is False)
     if n_false:
-        blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": f"一次資料URLが実在しない（全URLが404）ため除外: {n_false}件"}]})
+        n_tried = sum(1 for r in rows if r["c"].get("primary_verified") is False and r["c"].get("repair_tried"))
+        blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": f"一次資料URLが実在しない（全URLが404）ため除外: {n_false}件"
+                                                       + (f"（うち自動修復でも見つからず {n_tried}件）" if n_tried else "")}]})
     brk = [r for r in rows if r["lane"] == "速報"][:3]
     if brk:
         blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": "速報（48時間後に再計測）: " + " ／ ".join(esc(r["c"]["title"][:28]) for r in brk)}]})
@@ -2166,20 +2825,21 @@ def cmd_list_by_genre(per: int):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="ニュース起点のネタ選定（collect → score → tag → enrich → buzz → list）")
-    ap.add_argument("command", choices=["collect", "score", "verify", "list", "tag", "enrich", "buzz", "check-urls", "slack", "yt"])
+    ap = argparse.ArgumentParser(description="ニュース起点のネタ選定（collect → score → verify → repair → tag → enrich → buzz → list）")
+    ap.add_argument("command", choices=["collect", "score", "verify", "repair", "list", "tag", "enrich", "buzz", "check-urls", "slack", "yt"])
     ap.add_argument("--days", type=int, default=21)
     ap.add_argument("--top", type=int, default=15)
     ap.add_argument("--by-genre", action="store_true", help="list: 5ジャンルごとに上位を出す（--top はジャンルあたりの件数）")
     ap.add_argument("--check-urls", action="store_true", help="list: ベスト3・本命枠の一次資料URLを確認してから出す（ソフト404も検出）")
     ap.add_argument("--max", type=int, default=None,
-                    help=f"buzz: 1回で測る上限（既定・最大{GNEWS_MAX_PER_RUN}） / verify: 確かめる候補の上限（既定{VERIFY_DEFAULT_MAX}）")
+                    help=f"buzz: 1回で測る上限（既定・最大{GNEWS_MAX_PER_RUN}） / verify: 確かめる候補の上限（既定{VERIFY_DEFAULT_MAX}）"
+                         f" / repair: 修復を試す候補の上限（既定{REPAIR_DEFAULT_MAX}）")
     ap.add_argument("--id", nargs="*", default=[],
-                    help="buzz / check-urls / verify / yt: 対象の候補ID（指定するとゲートに関係なく測る・確かめる）")
-    ap.add_argument("--all", action="store_true", help="verify: 確認済みの候補も確かめ直す（既定は未確認だけ）")
+                    help="buzz / check-urls / verify / repair / yt: 対象の候補ID（指定するとゲートに関係なく測る・確かめる）")
+    ap.add_argument("--all", action="store_true", help="verify: 確認済みの候補も確かめ直す（既定は未確認だけ） / repair: ゲートに関係なく false の候補すべて")
     ap.add_argument("--count", type=int, default=None, help="yt: 日本語の解説動画の本数（手で数えた値）")
     ap.add_argument("--query", default="", help="yt: YouTube で検索した語（任意、記録用）")
-    ap.add_argument("--force", action="store_true", help="enrich: 付与済みも付け直す / buzz: 最近測った候補も測り直す")
+    ap.add_argument("--force", action="store_true", help="enrich: 付与済みも付け直す / buzz: 最近測った候補も測り直す / repair: 7日以内に試した候補も試す")
     ap.add_argument("--remeasure-hours", type=float, default=24, help="buzz: これより最近に測った候補は飛ばす（既定24時間）")
     ap.add_argument("--dry-run", action="store_true", help="buzz: 測るが保存しない / score: 採点する候補を表示するだけ（課金なし）")
     ap.add_argument("--sources", type=Path, default=None, help="collect: news_sources.json の代わりに使う設定（試験用）")
@@ -2200,6 +2860,8 @@ def main():
         cmd_buzz(args.max or GNEWS_MAX_PER_RUN, args.force, args.remeasure_hours, args.id, args.dry_run)
     elif args.command == "verify":
         cmd_verify(args.id, args.all, args.max or VERIFY_DEFAULT_MAX)
+    elif args.command == "repair":
+        cmd_repair(args.id, args.all, args.force, args.max or REPAIR_DEFAULT_MAX)
     elif args.command == "yt":
         cmd_yt(args.id, args.count, args.query)
     elif args.command == "check-urls":

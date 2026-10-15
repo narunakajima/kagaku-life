@@ -5,7 +5,8 @@
 # 必要な Secrets（値はチャット・ファイルに書かない。gh secret set で登録）:
 #   GEMINI_API_KEY_KL    … Gemini の API キー
 #   SLACK_WEBHOOK_URL_KL … Slack の Incoming Webhook URL（KL News アプリ）
-# 手順: collect → score → verify（一次資料URLの実在確認、2026-10-15）→ tag → enrich → buzz → list。verify は Secrets 不要
+# 手順: collect → score → verify（一次資料URLの実在確認、2026-10-15）→ repair（404のURLの自動修復、2026-10-15）→ tag → enrich → buzz → list。
+# verify・repair は Secrets 不要（HTTPのみ）
 name: nightly-news
 
 on:
@@ -46,6 +47,9 @@ jobs:
           # 一次資料URLの実在確認（2026-10-15、NEWS_REDESIGN_2026-10-15.md §3.5。HTTPだけで Gemini 不要）。
           # 全URLが404の候補はゲートで落ち、後の enrich・buzz の対象にもならない。失敗しても後の工程は止めない
           python3 kl_news_scan.py verify --max 60 || echo "verify に失敗（続行）"
+          # 404の一次資料の正しいURLを、発表元サイト・プールの公式記事・報道記事のリンクから探す（HTTPのみ、Gemini 不要。
+          # 1候補あたり1分前後、全体で最大5分。前回の試行から7日以内の候補は飛ばす）。見つかれば primary_verified が true に戻る
+          python3 kl_news_scan.py repair --max 12 || echo "repair に失敗（続行）"
           python3 kl_news_scan.py tag
           python3 kl_news_scan.py enrich
           python3 kl_news_scan.py buzz

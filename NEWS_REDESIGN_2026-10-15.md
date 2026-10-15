@@ -281,6 +281,28 @@
   採用した測定の時刻は `buzz_adopted_at`、比べた件数は `buzz_adopted_n`。履歴の無い旧データは読み込み時に現在の値を1件目（`seeded: true`）にする。
   過去の測定は git の履歴にしか残っていない（カチャカEvo の3媒体は 37faa61 まで）。履歴への遡っての追加はしていない
 
+**`repair`（2週目の前倒し、2026-10-15）:** なるさんの指示「404のとき、候補を外すのではなく、正しいURLを探せないか」。
+Gemini が書く `what_it_states` は当たっていてURLだけが違う例がある（安川電機: `/ir/materials/financial` は404だが、IRトップから
+10/9付の決算補足説明資料のPDFに辿れた）。§3.5 の「朝: 発表元サイトの一覧・検索で正しいURLを探す」を夜間に機械化した。
+- `kl_news_scan.py repair`（夜間は `verify` の直後、`--max 12`、全体で最大5分）。無料のHTTPのみ（Gemini・YouTube API・Google ニュースRSSは使わない）。
+  順に (1) **site-crawl**: 404のURLの親ディレクトリ（2段）・トップ・RSS/Atom・robots.txt の sitemap（URLに英字の固有の語がある候補だけ）・
+  トップからニュース/IR等の一覧へ1段。1つのURLにつき8ページ、1候補あたり取得18回まで。リンク文・前後の文・URLに、固有の語・`what_it_states` の語・
+  発表日の表記が合うリンク（PDFも）を拾う。サイト共通の語（トップの `<title>` や多くのリンクに出る会社名・大学名）は数えない。
+  (2) **pool-official**: `news_pool.json` の同じ話題の公式・学術誌のフィードの記事（発表日±3日）。(3) **media-link**: 同じ話題の報道記事
+  （プールの記事・候補の `gnews_link`）の、発表元のドメインへの外向きリンク。報道記事そのものは採用しない。
+- 確認: 開ける・ソフト404でない・本文に固有の語・**`<title>`/`<h1>` に候補固有の語**（一覧ページを拾わないため）・**ページの公開日（メタデータ）が
+  発表日±3日**（Gemini 4 Argon で 9/30 のプレビュー記事を拾ったため）。PDFは標準ライブラリで本文を読めないので、`pdftotext` があれば本文の
+  固有の語を見て、無ければリンク文の `what_it_states` の語と発表日の**両方**が合うときだけ採用（`repair_pdf_text_checked: false`）。
+- 記録: `primary_sources[]` の元の `url` は変えず `repaired_url`・`repair_method`・`repair_from`・`repaired_at`（任意で `repair_claim_terms`
+  ＝見出しの数字・固有の語のうち本文にあったもの）。`primary_check` の該当エントリを修復後の結果に（`repaired`・`orig_url`）、`primary_verified` を再判定。
+  候補に `repair_tried`・`repair_tried_at`・`repair_result`・`repair_log`。7日以内は再試行しない（`--force`）。以後の `verify`・`check-urls` は
+  `repaired_url` を確かめる。使用済みの一次資料の照合も `repaired_url` を含める。
+- 表示: `list` は「URLを自動で修復」、Slack は「確認済み（URLを自動で修復）」と「資料の実在は確認。見出しの主張が書いてあるかは、台本前に資料で確かめる」。
+- 初回（10/15、false の3件）: 安川電機 → `wp-content/uploads/2026/10/20261009_haifu.pdf`（IRトップから、PDFのためリンク文と日付で照合）、
+  Gemini 4 Argon → blog.google の10/13の記事2本（親ディレクトリの一覧から）、鳥取大 → 見つからず（お知らせ一覧がJavaScriptで描画され、
+  静的なHTMLにリンクが無い。Googleニュースのリダイレクトは robots.txt で禁止）。所要は1候補45〜75秒、計3分。
+- 第3段階（grounding metadata のURL）は未実装。JavaScriptで一覧を描くサイト・報道しか無い発表は、第3段階か朝の手作業に回る。
+
 **2週目**: 採点の指示文に `availability` と「推測でURLを書かない」を追加し、grounding metadata のURLを保存する。YouTube API の飽和測定を夜間に入れる。
 **3週目**: L2 の証拠の件数（HN・Zenn・Qiita・Google ニュースのレビュー検索）と L2 の並びを入れる。ベスト3をレーンをまたいで選ぶ形にする。
 **4週目以降**: L3（続報の巡回）。持ち込みの `add` コマンド。段階の数字の見直し。
