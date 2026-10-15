@@ -27,7 +27,10 @@ kl_news_scan.py — ニュース起点のネタ選定（2026-10-04〜）
   - verify: 採点の直後に一次資料URLの実在を確かめる（HTTP・ソフト404、DOIは doi.org のハンドルAPI）。
     primary_verified が False（全URLが404）の候補はゲートで落とし、None（403等で判断不能）は「要確認」で残す
   - topic_age: 鮮度を「系列の最初の日付」（同じ系列の候補・news_pool.json の記事・buzz_evidence の最古）から数える
-  - 答え合わせ候補: 製品発表・日本語10媒体以上・初出から2日以上は、本命・ベスト3ではなく別の枠に出す（2日未満は再評価待ち）
+  - 答え合わせ候補: 製品発表・日本語10媒体以上・初出から2日以上は、本命とは別の枠に出す（2日未満は再評価待ち）
+  - ベスト3は混成（同日の追加）: 本命の上位を優先し、空きを答え合わせ候補で埋める（〈本命〉〈答え合わせ〉）。
+    3件に満たないときだけ同じジャンルを2件まで許し、一次資料が「要確認」の候補は最後の補欠
+  - buzz の履歴（同日の追加）: 測り直しても上書きせず buzz_history に残し、同じ検索語の直近3回（7日以内）の最大を採用
   - yt: 朝に手で数えた日本語の解説動画の本数を記録する
 
 使い方（collect → score → verify → tag → enrich → buzz → list）:
@@ -542,7 +545,10 @@ def overall(v: dict, published: str) -> float:
 
 def load_candidates() -> dict:
     if CANDIDATES_JSON.exists():
-        return json.loads(CANDIDATES_JSON.read_text(encoding="utf-8"))
+        d = json.loads(CANDIDATES_JSON.read_text(encoding="utf-8"))
+        for c in d.get("items", []):
+            ensure_buzz_history(c)      # 2026-10-15: 履歴の無い実測済みは、現在の値を履歴の1件目にする（既存の欄は変えない）
+        return d
     return {"_comment": "kl_news_scan.py score の結果。status: available / used / rejected（却下は rejected_reason を残す）",
             "items": []}
 
@@ -1407,6 +1413,89 @@ def measure_buzz(c: dict, query: str = None) -> dict:
     return r
 
 
+# 注目度の測定の履歴（2026-10-15、1週目の追加）: 同じ話題でも Google ニュース RSS の取得結果は測るたびにぶれる
+# （カチャカEvo が3媒体→2媒体で本命から外れた）。そこで測り直しても上書きせず buzz_history に残し、
+# 採用する値は「最新と同じ検索語」の測定のうち、最新から BUZZ_ADOPT_DAYS 日以内・直近 BUZZ_ADOPT_LAST 回の最大にする。
+# 採用した測定の根拠（見出し・媒体・日付）・Yahoo!・勢いも同じ測定のものを使う（媒体数と根拠がちぐはぐにならないように）。
+# 検索語が違う測定どうしは比べない（別の検索語は拾う記事の集合が違うため）。buzz_measured_at は最新の測定の時刻のまま
+# （buzz の測り直しの間隔 --remeasure-hours はこれで判定する。動きは変えない）
+BUZZ_ADOPT_LAST = 3
+BUZZ_ADOPT_DAYS = 7
+BUZZ_HISTORY_MAX = 10        # 履歴に残す件数（古いものから捨てる）
+BUZZ_ENTRY_KEYS = ("buzz_measured", "buzz_outlets", "yahoo", "buzz_evidence", "buzz_trend",
+                   "buzz_articles_14d", "buzz_raw_items", "buzz_query")
+
+
+def _buzz_entry(r: dict, at: str, seeded: bool = False) -> dict:
+    e = {"at": at, "query": r.get("buzz_query", ""), "measured": r.get("buzz_measured"),
+         "outlets": r.get("buzz_outlets", 0), "yahoo": bool(r.get("yahoo")),
+         "evidence": r.get("buzz_evidence") or [], "trend": r.get("buzz_trend"),
+         "articles_14d": r.get("buzz_articles_14d"), "raw_items": r.get("buzz_raw_items")}
+    if seeded:
+        e["seeded"] = True       # 履歴を持つ前の測定（読み込み時に現在の値から作った1件目）
+    return e
+
+
+def ensure_buzz_history(c: dict) -> bool:
+    """履歴の無い実測済みの候補に、現在の値を履歴の1件目として持たせる（既存の欄は変えない）。足したら True。"""
+    if c.get("buzz_history") or c.get("buzz_measured") is None:
+        return False
+    c["buzz_history"] = [_buzz_entry(c, c.get("buzz_measured_at") or "", seeded=True)]
+    return True
+
+
+def _at(e: dict):
+    try:
+        return datetime.fromisoformat(e.get("at") or "")
+    except ValueError:
+        return None
+
+
+def buzz_window(hist: list) -> list:
+    """採用の比較対象: 最新と同じ検索語、最新から BUZZ_ADOPT_DAYS 日以内、直近 BUZZ_ADOPT_LAST 回（新しい順）。"""
+    if not hist:
+        return []
+    latest = hist[-1]
+    lt = _at(latest)
+    out = []
+    for e in reversed(hist):
+        if e.get("query") != latest.get("query"):
+            continue
+        t = _at(e)
+        if lt and t and (lt - t).total_seconds() > BUZZ_ADOPT_DAYS * 86400:
+            continue
+        out.append(e)
+        if len(out) == BUZZ_ADOPT_LAST:
+            break
+    return out
+
+
+def adopt_buzz(c: dict) -> dict:
+    """履歴から採用する測定を選び、既存の欄（buzz_measured・buzz_outlets・yahoo・buzz_evidence・buzz_trend 等）に書く。
+    最大は 実測の段階 → 媒体数 → 関連記事の数 → 新しさ の順で比べる。採用した測定を返す。"""
+    win = buzz_window(c.get("buzz_history") or [])
+    if not win:
+        return {}
+    best = max(win, key=lambda e: (e.get("measured") or 0, e.get("outlets") or 0, e.get("articles_14d") or 0, e.get("at") or ""))
+    c.update({"buzz_measured": best["measured"], "buzz_outlets": best["outlets"], "yahoo": best["yahoo"],
+              "buzz_evidence": best["evidence"], "buzz_trend": best["trend"],
+              "buzz_articles_14d": best["articles_14d"], "buzz_raw_items": best["raw_items"], "buzz_query": best["query"]})
+    c["buzz_adopted_at"] = best.get("at", "")
+    c["buzz_adopted_n"] = len(win)
+    return best
+
+
+def record_buzz(c: dict, r: dict, at: str = None) -> dict:
+    """measure_buzz の結果 r を履歴に足し、採用する値を決め直す（上書きしない）。採用した測定を返す。"""
+    at = at or datetime.now().isoformat(timespec="seconds")
+    ensure_buzz_history(c)
+    hist = c.setdefault("buzz_history", [])
+    hist.append(_buzz_entry(r, at))
+    del hist[:-BUZZ_HISTORY_MAX]
+    c["buzz_measured_at"] = at
+    return adopt_buzz(c)
+
+
 # ============================================================
 # 同じ発表の系列（series）。明示の series が同じか、発表元のホストが重なり見出しの語が重なる候補を1つにまとめる
 # ============================================================
@@ -1581,11 +1670,13 @@ def cmd_buzz(max_n: int, force: bool, remeasure_hours: float, ids: list, dry_run
             print(f"  ⚠️ {c['id']} 実測失敗（{e}）→ 推定 {buzz_value(c)[0]} で代用  {c['title'][:40]}")
             continue
         ok += 1
-        c.update(r, buzz_measured_at=datetime.now().isoformat(timespec="seconds"))
+        record_buzz(c, r)       # 2026-10-15: 上書きせず履歴に足し、直近の最大を採用する
         c.pop("buzz_error", None)
         c.pop("buzz_error_at", None)
+        adopt = (f" → 採用 実測{c['buzz_measured']}（{c['buzz_outlets']}媒体、直近{c.get('buzz_adopted_n', 1)}回の最大）"
+                 if c.get("buzz_adopted_at") != c.get("buzz_measured_at") else "")
         print(f"  {c['id']} 実測{r['buzz_measured']}（{r['buzz_outlets']}媒体{'・Yahoo!あり' if r['yahoo'] else ''}、"
-              f"関連{r['buzz_articles_14d']}/取得{r['buzz_raw_items']}件）{r['buzz_query']!r}  {c['title'][:40]}")
+              f"関連{r['buzz_articles_14d']}/取得{r['buzz_raw_items']}件）{r['buzz_query']!r}{adopt}  {c['title'][:40]}")
     if dry_run:
         print(f"\n（--dry-run のため保存しません）成功{ok}・失敗{fail}")
         return
@@ -1604,9 +1695,10 @@ NICHE_MIN_HYPE_DEBATE = 7
 
 # 答え合わせ候補（L2候補、2026-10-15、NEWS_REDESIGN_2026-10-15.md §3.2・§4.1 決定4=(a)）:
 # 大手の製品発表は、日本語の報道が当日〜翌日に出そろう。発表の時点で速報にはせず、数日たってから
-# 「発表の盛り vs 使った人の声・第三者の検証」で扱う。条件を満たす候補は本命・ベスト3に入れない。
+# 「発表の盛り vs 使った人の声・第三者の検証」で扱う。条件を満たす候補は本命枠に入れない
+# （同日の追加で、ベスト3の空きには〈答え合わせ〉として入る。best3 参照）。
 #   製品発表 かつ 日本語の独立媒体が L2_MIN_JP_OUTLETS 以上 かつ 話題の初出から L2_MIN_TOPIC_AGE_DAYS 日以上 → 「答え合わせ候補」
-#   同じ条件で初出から L2_MIN_TOPIC_AGE_DAYS 日未満 → 「再評価待ち」（ベスト3に入れない）
+#   同じ条件で初出から L2_MIN_TOPIC_AGE_DAYS 日未満 → 「再評価待ち」（ベスト3に入れない。これは変えない）
 # 並びの式（core）は変えない（表示の枠を分けるだけ）。段階の数字は暫定
 L2_TYPES = ("product_release",)
 L2_MIN_JP_OUTLETS = 10
@@ -1679,26 +1771,83 @@ def collapse_series(rows: list) -> list:
     return out
 
 
+BEST3_RELAXED_GENRE_MAX = 2     # 3件に満たないときだけ、同じジャンルをここまで許す
+SLOT_HONMEI, SLOT_L2 = "本命", "答え合わせ"
+
+
+def _primary_ok(c: dict) -> bool:
+    """一次資料が確認済み（verify で True）。None（要確認）と未確認（primary_verified が無い）は補欠に回す。
+    False（実在しない）はゲートで既に落ちている。"""
+    return c.get("primary_verified") is True
+
+
 def best3(rows: list):
-    """ベスト3の機械的な下書き: 本命枠から core の順に、ジャンルと系列が重ならないように選ぶ。
-    足りなければ満たないまま返し、ニッチ枠の先頭を別に添える。"""
-    picks, genres, series = [], set(), set()
-    for r in _sorted_core([r for r in rows if r["lane"] == "本命"]):
-        if r["c"].get("genre") in genres or r["series"] in series:
-            continue
-        picks.append(r)
-        genres.add(r["c"].get("genre"))
-        series.add(r["series"])
-        if len(picks) == 3:
-            break
+    """ベスト3の機械的な下書き（2026-10-15、混成）: 本命（core の順）→ 答え合わせ候補（実測の注目度→媒体数の順）を
+    1列に並べ、本命の上位を優先して、ジャンルと系列が重ならないように選ぶ。
+      1. 一次資料が確認済みの候補から、ジャンルが重ならないように
+      2. 3件に満たなければ、同じジャンルを BEST3_RELAXED_GENRE_MAX 件まで許して補う（r['relaxed']）
+      3. それでも満たなければ、一次資料が「要確認」・未確認の候補を最後の補欠に（r['reserve']、ジャンルは2件まで）
+    それでも満たなければ満たないまま返し（注目度の低い候補で埋めない）、ニッチ枠の先頭を別に添える。
+    再評価待ち（大手の製品発表で初出から2日未満）は入れない（決定4=(a)）。各行に r['slot']（〈本命〉／〈答え合わせ〉）を付ける。"""
+    honmei = [dict(r, slot=SLOT_HONMEI) for r in _sorted_core([r for r in rows if r["lane"] == "本命"])]
+    l2 = [dict(r, slot=SLOT_L2) for r in sorted(
+        [r for r in rows if r["lane"] == L2_LANE],
+        key=lambda r: (r["core"] if r["core"] is not None else -1, r["c"].get("buzz_measured") or 0,
+                       r["c"].get("buzz_outlets") or 0, r["tb"]), reverse=True)]
+    order = honmei + l2
+    picks, series = [], set()
+    from collections import Counter
+    genres = Counter()
+
+    def take(pool, genre_max, **flags):
+        for r in pool:
+            if len(picks) == 3:
+                return
+            g = r["c"].get("genre")
+            if r["series"] in series or genres[g] >= genre_max:
+                continue
+            picks.append(dict(r, relaxed=genres[g] > 0, **flags))
+            genres[g] += 1
+            series.add(r["series"])
+
+    ok = [r for r in order if _primary_ok(r["c"])]
+    take(ok, 1)
+    if len(picks) < 3:
+        take(ok, BEST3_RELAXED_GENRE_MAX)
+    if len(picks) < 3:
+        unv = [r for r in order if not _primary_ok(r["c"])]
+        take(unv, 1, reserve=True)
+        take(unv, BEST3_RELAXED_GENRE_MAX, reserve=True)
+    # 表示は本命の上位を先に（選んだ順のまま。補欠は最後）
     niche = _sorted_core([r for r in rows if r["lane"] == "ニッチ"])
     return picks, (niche[0] if niche and len(picks) < 3 else None)
+
+
+def _slot_lines(r: dict) -> list:
+    """ベスト3の各候補に付ける枠の注記（list・slack 共通）。"""
+    c = r["c"]
+    out = []
+    if r.get("slot") == SLOT_L2:
+        out.append("証拠: 未確認（第三者の検証・使った人の声を探す）")
+        out.append(f"発表（初出）から{topic_age_days(c)}日")
+    if r.get("relaxed"):
+        out.append("ジャンルを緩めて補いました")
+    if r.get("reserve"):
+        out.append("補欠（一次資料が要確認。確認済みの候補で埋まらなかったため）")
+    return out
 
 
 def _buzz_line(c: dict) -> str:
     if c.get("buzz_measured") is not None:
         t = c.get("buzz_trend")
-        return (f"注目度: 実測{c['buzz_measured']}（{c.get('buzz_outlets', 0)}媒体"
+        win = buzz_window(c.get("buzz_history") or [])
+        if len(win) > 1:     # 2026-10-15: 測り直した候補は、直近の最大を採用している
+            lat = win[0]
+            hist = (f"直近{len(win)}回の最大、最新は実測{lat.get('measured')}・{lat.get('outlets', 0)}媒体"
+                    + (f"、採用は{(c.get('buzz_adopted_at') or '')[:16]}計測" if c.get("buzz_adopted_at") != lat.get("at") else "") + "。")
+        else:
+            hist = ""
+        return (f"注目度: 実測{c['buzz_measured']}（{hist}{c.get('buzz_outlets', 0)}媒体"
                 f"{'・Yahoo!あり' if c.get('yahoo') else '・Yahoo!なし'}"
                 + (f"、勢い{t:.2f}" if t is not None else "")
                 + f"、{(c.get('buzz_measured_at') or '')[:16]}計測、検索語 {c.get('buzz_query', '')!r}）")
@@ -1837,11 +1986,16 @@ def cmd_list(top: int, check_urls: bool):
     _print_exclusions(rows)
 
     picks, niche_extra = best3(rows)
-    print(f"\n==== ベスト3の下書き（本命枠から core の順、ジャンルと系列が重ならないように）: {len(picks)}件 ====")
+    print(f"\n==== ベスト3の下書き（本命 core の順 → 答え合わせ候補、ジャンルと系列が重ならないように）: {len(picks)}件 ====")
+    if any(r.get("relaxed") for r in picks):
+        print(f"   ※ ジャンルを緩めて補いました（同じジャンルは{BEST3_RELAXED_GENRE_MAX}件まで）")
     if len(picks) < 3:
-        print(f"   ※ 本命枠の条件を満たす候補が{len(picks)}件しかない（3件に満たないまま出す）")
+        print(f"   ※ 条件を満たす候補が{len(picks)}件しかない（3件に満たないまま出す）")
     for r in picks:
+        print(f"〈{r['slot']}〉", end="")
         _print_candidate(r, short=True)
+        for ln in _slot_lines(r):
+            print(f"   {ln}")
     unv = [r for r in picks if r["c"].get("primary_verified", "未") is None or "primary_verified" not in r["c"]]
     if unv:
         print(f"   ⚠️ 一次資料が「要確認」または未確認の候補が{len(unv)}件: ブラウザか WebFetch で開いて確かめてから提示する")
@@ -1856,7 +2010,7 @@ def cmd_list(top: int, check_urls: bool):
     l2 = collapse_series(_sorted_core([r for r in rows if r["lane"] == L2_LANE]))
     print(f"\n==== {L2_HEADING}: {len(l2)}系列 ====")
     print(f"   条件: 製品発表・日本語の独立媒体{L2_MIN_JP_OUTLETS}以上・話題の初出から{L2_MIN_TOPIC_AGE_DAYS}日以上。"
-          "本命・ベスト3には入れない（発表の紹介ではなく、発表の盛り vs 使った人の声・第三者の検証で扱う）")
+          "本命の枠ではなく、ベスト3の空きに〈答え合わせ〉として入る（発表の紹介ではなく、発表の盛り vs 使った人の声・第三者の検証で扱う）")
     for r in l2[:top]:
         _print_candidate(r)
     wait = collapse_series(_sorted_core([r for r in rows if r["lane"] == L2_WAIT_LANE]))
@@ -1913,8 +2067,10 @@ def cmd_slack(note_path: str):
         gi = gen.get(c.get("genre"), {})
         title = esc(c["title"])
         title = title if len(title) <= 60 else title[:59] + "…"
+        nwin = len(buzz_window(c.get("buzz_history") or []))
         buzz = (f"注目{c['buzz_measured']}（{c.get('buzz_outlets', 0)}媒体"
-                f"{'・Yahoo!' if c.get('yahoo') else ''}）") if c.get("buzz_measured") is not None else "注目 未計測"
+                f"{'・Yahoo!' if c.get('yahoo') else ''}{f'・直近{nwin}回の最大' if nwin > 1 else ''}）") \
+            if c.get("buzz_measured") is not None else "注目 未計測"
         meta = " ・ ".join(x for x in [f"{gi.get('icon', '')}{gi.get('label', c.get('genre', '?'))}", day(c), first(c), buzz,
                                        "健康系" if c.get("health") else ""] if x)
         if "primary_verified" in c:     # 2026-10-15: verify の結果（1件でも開ければ確認済み）
@@ -1929,8 +2085,9 @@ def cmd_slack(note_path: str):
         link = f"<{src}|一次資料 {label}>" if src else f"一次資料 {label}"
         ev = c.get("expected_verdicts") or {}
         verdict = (f"大輔 {vname.get(ev.get('dreamer'), '?')} ／ 沙織 {vname.get(ev.get('skeptic'), '?')}") if ev else ""
-        lines = [f"*{nums[i]} {title}*", meta, f"💬 {esc(c.get('entry_question'))}",
-                 f"🔎 ツッコミ: {clip(c.get('tsukkomi_material'), 90)}"]
+        lines = [f"*{nums[i]} 〈{r.get('slot', SLOT_HONMEI)}〉{title}*", meta]
+        lines += [esc(x) for x in _slot_lines(r)]
+        lines += [f"💬 {esc(c.get('entry_question'))}", f"🔎 ツッコミ: {clip(c.get('tsukkomi_material'), 90)}"]
         if verdict:
             lines.append(f"⚖️ 予想判定: {verdict}")
         if c.get("deja_vu_note"):
@@ -1946,16 +2103,23 @@ def cmd_slack(note_path: str):
         if keep:
             blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": esc("\n".join(keep))[:1900]}]})
     if not picks:
-        blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": "今夜は本命なし（実測の注目度3以上でゲートを通った候補がありません）。"}})
+        blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": "今夜はベスト3なし（ゲートを通った本命・答え合わせ候補がありません）。"}})
     for i, r in enumerate(picks):
         blocks.append({"type": "divider"})
         blocks.append(card(i, r))
+    notes = []
+    if any(r.get("relaxed") for r in picks):
+        notes.append(f"ジャンルを緩めて補いました（同じジャンルは{BEST3_RELAXED_GENRE_MAX}件まで）")
     if len(picks) < 3 and picks:
-        blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": f"本命が{len(picks)}件のみ（3件に満たないまま出しています）"}]})
+        notes.append(f"ベスト3が{len(picks)}件のみ（3件に満たないまま出しています）")
+    if notes:
+        blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": "／".join(notes)}]})
     if niche:
         blocks.append({"type": "divider"})
         blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": "ニッチ（注目度は低い）: " + esc(niche["c"]["title"][:60])}]})
-    l2 = collapse_series(_sorted_core([r for r in rows if r["lane"] == L2_LANE]))[:3]
+    # ベスト3に入った答え合わせ候補（と同じ系列）は、別枠に重ねて出さない
+    in_best = {r["series"] for r in picks}
+    l2 = [r for r in collapse_series(_sorted_core([r for r in rows if r["lane"] == L2_LANE])) if r["series"] not in in_best][:3]
     if l2:
         blocks.append({"type": "divider"})
         blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": (
