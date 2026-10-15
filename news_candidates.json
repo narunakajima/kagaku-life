@@ -12365,7 +12365,7 @@
       "freshness": 5,
       "overall_score": 3.6,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "used",
       "excluded_reason": "",
       "scored_at": "2026-10-14",
       "buzz_measured": 5,
@@ -12464,7 +12464,8 @@
       "repair_log": [
         "site-crawl: https://www.yaskawa.co.jp/wp-content/uploads/2026/10/20261009_haifu.pdf → HTTP 200・PDF（本文は未確認。リンク文の語「四半期業績概要」と発表日が一致）"
       ],
-      "repair_result": "修復"
+      "repair_result": "修復",
+      "used_in": "kl040"
     },
     {
       "title": "可搬重量100kgで既存の台車や棚を運搬可能 最新AMR「カチャカEvo」のデモを披露：CEATEC 2026",
