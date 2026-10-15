@@ -1193,7 +1193,8 @@
       "strings"
     ],
     "used_in": [
-      "kl034"
+      "kl034",
+      "kl040"
     ],
     "bpm": 120,
     "mood": [
@@ -1724,6 +1725,64 @@
       "guitar",
       "synth",
       "lofi-beat"
+    ],
+    "has_beat": true,
+    "era": "dialogue",
+    "role_fit": [
+      "outro"
+    ]
+  },
+  {
+    "id": "kl040-BGM-main",
+    "path": "BGM/kl040-BGM-main.mp3",
+    "license": "CC0",
+    "credit": null,
+    "tags": [],
+    "used_in": [
+      "kl040"
+    ],
+    "duration": 67.76,
+    "source_id": "395925",
+    "source_name": "LOOPS SET 1.wav",
+    "source_url": "https://freesound.org/s/395925/",
+    "bpm": 88.0,
+    "mood": [
+      "chill",
+      "calm"
+    ],
+    "instruments": [
+      "drums",
+      "bass",
+      "keys"
+    ],
+    "has_beat": true,
+    "era": "dialogue",
+    "role_fit": [
+      "main"
+    ]
+  },
+  {
+    "id": "kl040-BGM-outro",
+    "path": "BGM/kl040-BGM-outro.mp3",
+    "license": "CC BY",
+    "credit": "🎵 Music: Laid Back Band Track by TheoJT (freesound.org) — CC BY 4.0",
+    "tags": [],
+    "used_in": [
+      "kl040"
+    ],
+    "duration": 48.31,
+    "source_id": "698757",
+    "source_name": "Laid Back Band Track",
+    "source_url": "https://freesound.org/s/698757/",
+    "bpm": 88.0,
+    "mood": [
+      "chill",
+      "mellow"
+    ],
+    "instruments": [
+      "electric-piano",
+      "bass",
+      "drums"
     ],
     "has_beat": true,
     "era": "dialogue",
