@@ -60,6 +60,24 @@
 
 ---
 
+## STEP 0 — 最新の状態にする（2026-10-16〜、毎回最初に実行）
+
+夜間のニュース採点（GitHub Actions、毎日04:00 JST）が `news_candidates.json` を main に push しているので、作業の前に必ず取り込む。
+会話が長くなっているときは、先にユーザーに **`/clear` を勧める**（`/clear` はコマンドの中から実行できない。会話の経緯は
+`CLAUDE.md`・この手順書・`MEMORY.md`・`topics_queue.json`・エピソードのJSONにあるので、消しても制作は続けられる）。
+
+```bash
+hostname                      # マシン判定（CLAUDE.md「マシン判定ルール」）
+git status --short            # 未コミットの変更が残っていないか確認（あれば内容を見てから進める）
+git pull --rebase             # 夜間の採点・他のマシンの変更を取り込む
+git log --oneline -5          # 直近の変更を一目で確認
+```
+
+- 競合したら、無理に解消せずユーザーに状況を報告する（夜間の自動コミットは `news_candidates.json` だけを書き換える）
+- 夜間の採点が今朝分まで入っているかは、ケースCの冒頭の手順（`buzz_measured_at` が直近24時間以内か）で確かめる
+
+---
+
 ## STEP 1 — トピックを確定する
 
 `topics_queue.json` の `queue` 配列に、先頭に `status: "confirmed"` のエントリがあるか確認する。
@@ -1105,4 +1123,5 @@ python3 kl_finalize.py --episode kl{NNN}
 ## 完了後: YouTubeアップロード
 
 制作が完了（`status: "produced"`）したら `/kl-upload` でYouTubeへアップロードする
-（詳細は `.claude/commands/kl-upload.md` 参照）。
+（詳細は `.claude/commands/kl-upload.md` 参照）。**次の制作を始めるときは、先に `/clear` で会話を整理することを
+ユーザーに勧める**（STEP 0 参照）。
