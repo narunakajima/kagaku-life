@@ -85,11 +85,21 @@
           "speaker": "dreamer",
           "text": "報道によると、安川電機が2030年までに人型ロボ！",
           "expression": "excited",
-          "tone": "excited, like breaking news"
+          "tone": "excited, like breaking news",
+          "t0": 0.0,
+          "dur": 4.4,
+          "cards": [
+            {
+              "text": "報道によると、安川電機が2030年までに人型ロボ！",
+              "start": 0.0,
+              "end": 4.4
+            }
+          ]
         }
       ],
       "narration": "大輔「報道によると、安川電機が2030年までに人型ロボ！」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "7efc0e7a9115"
     },
     {
       "scene_id": 2,
@@ -102,11 +112,26 @@
           "speaker": "skeptic",
           "text": "公表資料のどこにも、2030年に出すとは書いてない。",
           "expression": "doubt",
-          "tone": "dry"
+          "tone": "dry",
+          "t0": 0.0,
+          "dur": 3.92,
+          "cards": [
+            {
+              "text": "公表資料のどこにも、2030年に出すとは",
+              "start": 0.0,
+              "end": 3.1
+            },
+            {
+              "text": "書いてない。",
+              "start": 3.25,
+              "end": 4.12
+            }
+          ]
         }
       ],
       "narration": "沙織「公表資料のどこにも、2030年に出すとは書いてない。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "0b4af54921e4"
     },
     {
       "scene_id": 3,
@@ -118,11 +143,21 @@
         {
           "speaker": "dreamer",
           "text": "しかも同じ発言が、記事ごとに違う形で伝わってる。",
-          "expression": "surprised"
+          "expression": "surprised",
+          "t0": 0.0,
+          "dur": 4.12,
+          "cards": [
+            {
+              "text": "しかも同じ発言が、記事ごとに違う形で伝わってる。",
+              "start": 0.0,
+              "end": 3.76
+            }
+          ]
         }
       ],
       "narration": "大輔「しかも同じ発言が、記事ごとに違う形で伝わってる。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "87d9ba29fd1a"
     },
     {
       "scene_id": 4,
@@ -137,11 +172,21 @@
           "speaker": "skeptic",
           "text": "「2030年までに人型」、本当にそう書いてある？",
           "expression": "doubt",
-          "tag": "question"
+          "tag": "question",
+          "t0": 0.0,
+          "dur": 4.2,
+          "cards": [
+            {
+              "text": "「2030年までに人型」、本当にそう書いてある？",
+              "start": 0.0,
+              "end": 3.78
+            }
+          ]
         }
       ],
       "narration": "沙織「「2030年までに人型」、本当にそう書いてある？」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "9db89e42e628"
     },
     {
       "scene_id": 5,
@@ -153,48 +198,146 @@
         {
           "speaker": "dreamer",
           "text": "安川電機が、2030年までにヒューマノイドを市場に出す。そう報じられたの、見た？",
-          "expression": "excited"
+          "expression": "excited",
+          "t0": 0.0,
+          "dur": 6.52,
+          "cards": [
+            {
+              "text": "安川電機が、2030年までにヒューマノイドを",
+              "start": 0.0,
+              "end": 3.48
+            },
+            {
+              "text": "市場に出す。そう報じられたの、見た？",
+              "start": 3.63,
+              "end": 6.33
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "見た。10月9日の決算説明会での発言、っていう記事ね。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 6.8,
+          "dur": 4.44,
+          "cards": [
+            {
+              "text": "見た。10月9日の決算説明会での発言、",
+              "start": 0.0,
+              "end": 3.29
+            },
+            {
+              "text": "っていう記事ね。",
+              "start": 3.44,
+              "end": 4.64
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "で、今日は先に判定を言っちゃう回。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 11.46,
+          "dur": 2.44,
+          "cards": [
+            {
+              "text": "で、今日は先に判定を言っちゃう回。",
+              "start": 0.0,
+              "end": 2.44
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "うん。割れた。僕は「3年はかかる」。",
-          "expression": "convinced"
+          "expression": "convinced",
+          "t0": 14.18,
+          "dur": 3.32,
+          "cards": [
+            {
+              "text": "うん。割れた。僕は「3年はかかる」。",
+              "start": 0.0,
+              "end": 3.32
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "私は「まだ眉唾」。それと、会社が公表した資料のどこにも、2030年までに出す、とは書いてない。",
-          "expression": "doubt"
+          "expression": "doubt",
+          "t0": 17.78,
+          "dur": 7.48,
+          "cards": [
+            {
+              "text": "私は「まだ眉唾」。それと、会社が公表した",
+              "start": 0.33,
+              "end": 3.33
+            },
+            {
+              "text": "資料のどこにも、2030年までに出す、",
+              "start": 3.48,
+              "end": 6.33
+            },
+            {
+              "text": "とは書いてない。",
+              "start": 6.48,
+              "end": 7.68
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "でも、面白いのはそこじゃない。",
           "expression": "excited",
           "tone": "teasing, playful",
-          "pause": 0.4
+          "pause": 0.4,
+          "t0": 25.66,
+          "dur": 2.28,
+          "cards": [
+            {
+              "text": "でも、面白いのはそこじゃない。",
+              "start": 0.0,
+              "end": 2.28
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "同じ説明会の話が、記事によって、違う形で伝わってるんだ。",
-          "expression": "excited"
+          "expression": "excited",
+          "t0": 28.16,
+          "dur": 4.92,
+          "cards": [
+            {
+              "text": "同じ説明会の話が、記事によって、",
+              "start": 0.0,
+              "end": 2.86
+            },
+            {
+              "text": "違う形で伝わってるんだ。",
+              "start": 3.01,
+              "end": 4.81
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それは、あとで全部並べて見せる。",
-          "expression": "amused"
+          "expression": "amused",
+          "t0": 33.36,
+          "dur": 2.76,
+          "cards": [
+            {
+              "text": "それは、あとで全部並べて見せる。",
+              "start": 0.0,
+              "end": 2.76
+            }
+          ]
         }
       ],
       "narration": "大輔「安川電機が、2030年までにヒューマノイドを市場に出す。そう報じられたの、見た？」\n沙織「見た。10月9日の決算説明会での発言、っていう記事ね。」\n沙織「で、今日は先に判定を言っちゃう回。」\n大輔「うん。割れた。僕は「3年はかかる」。」\n沙織「私は「まだ眉唾」。それと、会社が公表した資料のどこにも、2030年までに出す、とは書いてない。」\n大輔「でも、面白いのはそこじゃない。」\n大輔「同じ説明会の話が、記事によって、違う形で伝わってるんだ。」\n沙織「それは、あとで全部並べて見せる。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "210469680647"
     },
     {
       "scene_id": 6,
@@ -208,42 +351,137 @@
           "speaker": "dreamer",
           "text": "まず元の資料。10月9日に安川電機が出した、決算の補足説明資料。",
           "expression": "neutral",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 0.0,
+          "dur": 5.8,
+          "cards": [
+            {
+              "text": "まず元の資料。10月9日に安川電機が出した、",
+              "start": 0.0,
+              "end": 3.52
+            },
+            {
+              "text": "決算の補足説明資料。",
+              "start": 3.67,
+              "end": 5.55
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "30ページを超える資料で、中身はほとんど業績の話ね。",
           "expression": "neutral",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 6.08,
+          "dur": 4.28,
+          "cards": [
+            {
+              "text": "30ページを超える資料で、中身はほとんど",
+              "start": 0.34,
+              "end": 3.34
+            },
+            {
+              "text": "業績の話ね。",
+              "start": 3.49,
+              "end": 4.39
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "ヒューマノイドが出てくるのは、下期の取り組みの「その他トピック」。",
           "expression": "excited",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 10.64,
+          "dur": 3.96,
+          "cards": [
+            {
+              "text": "ヒューマノイドが出てくるのは、",
+              "start": 0.0,
+              "end": 1.73
+            },
+            {
+              "text": "下期の取り組みの「その他トピック」。",
+              "start": 1.88,
+              "end": 3.96
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "ヒューマノイドロボットの事業化に向けた、現場実証を通じた、データ蓄積と機体設計の加速。",
           "expression": "excited",
           "reference_index": 0,
-          "tone": "reading aloud, a bit proud"
+          "tone": "reading aloud, a bit proud",
+          "t0": 14.82,
+          "dur": 6.92,
+          "cards": [
+            {
+              "text": "ヒューマノイドロボットの事業化に向けた、",
+              "start": 0.0,
+              "end": 3.0
+            },
+            {
+              "text": "現場実証を通じた、",
+              "start": 3.15,
+              "end": 4.7
+            },
+            {
+              "text": "データ蓄積と機体設計の加速。",
+              "start": 4.7,
+              "end": 7.12
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "同じ欄に並んでるのは、いちごの選果の自動化ね。",
           "expression": "amused",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 22.02,
+          "dur": 3.68,
+          "cards": [
+            {
+              "text": "同じ欄に並んでるのは、",
+              "start": 0.0,
+              "end": 1.65
+            },
+            {
+              "text": "いちごの選果の自動化ね。",
+              "start": 1.65,
+              "end": 3.45
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "それと写真が1枚。ヒューマノイドロボット用アクチュエータ、開発中。関節を動かす、ロボットの筋肉みたいな部品。",
           "expression": "neutral",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 25.98,
+          "dur": 8.64,
+          "cards": [
+            {
+              "text": "それと写真が1枚。ヒューマノイドロボット",
+              "start": 0.0,
+              "end": 3.12
+            },
+            {
+              "text": "用アクチュエータ、開発中。関節を動かす、",
+              "start": 3.27,
+              "end": 6.59
+            },
+            {
+              "text": "ロボットの筋肉みたいな部品。",
+              "start": 6.74,
+              "end": 8.84
+            }
+          ]
         }
       ],
       "narration": "大輔「まず元の資料。10月9日に安川電機が出した、決算の補足説明資料。」\n沙織「30ページを超える資料で、中身はほとんど業績の話ね。」\n大輔「ヒューマノイドが出てくるのは、下期の取り組みの「その他トピック」。」\n大輔「ヒューマノイドロボットの事業化に向けた、現場実証を通じた、データ蓄積と機体設計の加速。」\n沙織「同じ欄に並んでるのは、いちごの選果の自動化ね。」\n大輔「それと写真が1枚。ヒューマノイドロボット用アクチュエータ、開発中。関節を動かす、ロボットの筋肉みたいな部品。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "b6b0379b3d05"
     },
     {
       "scene_id": 7,
@@ -256,41 +494,111 @@
         {
           "speaker": "skeptic",
           "text": "ちょっと待って。ヒューマノイドの話は、その1行と、写真1枚だけ？",
-          "expression": "doubt"
+          "expression": "doubt",
+          "t0": 0.0,
+          "dur": 4.72,
+          "cards": [
+            {
+              "text": "ちょっと待って。ヒューマノイドの話は、",
+              "start": 0.0,
+              "end": 2.71
+            },
+            {
+              "text": "その1行と、写真1枚だけ？",
+              "start": 2.86,
+              "end": 4.72
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "……まあ、そう。",
           "expression": "deflated",
-          "pause": 0.5
+          "pause": 0.5,
+          "t0": 5.22,
+          "dur": 1.2,
+          "cards": [
+            {
+              "text": "……まあ、そう。",
+              "start": 0.0,
+              "end": 1.2
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "しかも書いてあるのは、事業化に「向けた」現場実証。市場に出す、とは書いてない。",
           "expression": "doubt",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 6.7,
+          "dur": 6.12,
+          "cards": [
+            {
+              "text": "しかも書いてあるのは、事業化に「向けた」",
+              "start": 0.0,
+              "end": 3.0
+            },
+            {
+              "text": "現場実証。市場に出す、とは書いてない。",
+              "start": 3.15,
+              "end": 6.23
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "で、2030年は、どの資料に書いてあるの？",
           "expression": "doubt",
-          "tone": "dry, teasing"
+          "tone": "dry, teasing",
+          "t0": 13.04,
+          "dur": 3.48,
+          "cards": [
+            {
+              "text": "で、2030年は、どの資料に書いてあるの？",
+              "start": 0.0,
+              "end": 3.15
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "決算の資料には……ない。",
           "expression": "deflated",
-          "pause": 0.4
+          "pause": 0.4,
+          "t0": 16.92,
+          "dur": 3.84,
+          "cards": [
+            {
+              "text": "決算の資料には……ない。",
+              "start": 0.0,
+              "end": 3.84
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "でも待って。ヒューマノイドの話は、この資料が初めてじゃないんだ。",
           "expression": "excited",
-          "pause": 0.4
+          "pause": 0.4,
+          "t0": 21.16,
+          "dur": 4.72,
+          "cards": [
+            {
+              "text": "でも待って。ヒューマノイドの話は、",
+              "start": 0.0,
+              "end": 2.43
+            },
+            {
+              "text": "この資料が初めてじゃないんだ。",
+              "start": 2.58,
+              "end": 4.72
+            }
+          ]
         }
       ],
       "narration": "沙織「ちょっと待って。ヒューマノイドの話は、その1行と、写真1枚だけ？」\n大輔「……まあ、そう。」\n沙織「しかも書いてあるのは、事業化に「向けた」現場実証。市場に出す、とは書いてない。」\n沙織「で、2030年は、どの資料に書いてあるの？」\n大輔「決算の資料には……ない。」\n大輔「でも待って。ヒューマノイドの話は、この資料が初めてじゃないんだ。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "06b934b86cb3"
     },
     {
       "scene_id": 8,
@@ -305,13 +613,46 @@
           "text": "5月22日に出た、中期経営計画の「ダッシュ35」。2026年度から2029年度までの計画。",
           "expression": "excited",
           "display": "5月22日に出た、中期経営計画の「Dash 35」。2026年度から2029年度までの計画。",
-          "reference_index": 1
+          "reference_index": 1,
+          "t0": 0.0,
+          "dur": 8.44,
+          "cards": [
+            {
+              "text": "5月22日に出た、中期経営計画の「Dash",
+              "start": 0.0,
+              "end": 3.94
+            },
+            {
+              "text": "35」。2026年度から2029年度までの計画。",
+              "start": 3.94,
+              "end": 8.44
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "ここに、「ヒューマノイドロボット取り組み加速」って言葉が出てくる。",
           "expression": "excited",
-          "reference_index": 1
+          "reference_index": 1,
+          "t0": 8.66,
+          "dur": 4.48,
+          "cards": [
+            {
+              "text": "ここに、",
+              "start": 0.0,
+              "end": 0.56
+            },
+            {
+              "text": "「ヒューマノイドロボット取り組み加速」",
+              "start": 0.56,
+              "end": 3.22
+            },
+            {
+              "text": "って言葉が出てくる。",
+              "start": 3.37,
+              "end": 4.68
+            }
+          ]
         },
         {
           "speaker": "dreamer",
@@ -319,40 +660,140 @@
           "expression": "excited",
           "display": "役割分担の図もある。工場の中は、AIロボットの「MOTOMAN NEXT」。製造現場以外は、ヒューマノイド。",
           "reference_index": 1,
-          "tone": "a bit fast, getting carried away"
+          "tone": "a bit fast, getting carried away",
+          "t0": 13.36,
+          "dur": 7.56,
+          "cards": [
+            {
+              "text": "役割分担の図もある。工場の中は、",
+              "start": 0.0,
+              "end": 2.24
+            },
+            {
+              "text": "AIロボットの「MOTOMAN NEXT」",
+              "start": 2.24,
+              "end": 5.18
+            },
+            {
+              "text": "。製造現場以外は、ヒューマノイド。",
+              "start": 5.18,
+              "end": 7.56
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "製造現場以外？",
-          "expression": "surprised"
+          "expression": "surprised",
+          "t0": 21.2,
+          "dur": 1.96,
+          "cards": [
+            {
+              "text": "製造現場以外？",
+              "start": 0.0,
+              "end": 1.96
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "そう。「人と同一環境の自動化」って書いてある。それに、同じ日の「2035年ビジョン」では、基幹コンポーネントに、モートマン・ネクストと並べて、ヒューマノイド。",
           "expression": "excited",
           "display": "そう。「人と同一環境の自動化」って書いてある。それに、同じ日の「2035年ビジョン」では、基幹コンポーネントに、MOTOMAN NEXTと並べて、ヒューマノイド。",
-          "reference_index": 2
+          "reference_index": 2,
+          "t0": 23.44,
+          "dur": 11.8,
+          "cards": [
+            {
+              "text": "そう。「人と同一環境の自動化」",
+              "start": 0.0,
+              "end": 2.19
+            },
+            {
+              "text": "って書いてある。それに、同じ日の「",
+              "start": 2.19,
+              "end": 4.66
+            },
+            {
+              "text": "2035年ビジョン」では、",
+              "start": 4.66,
+              "end": 6.56
+            },
+            {
+              "text": "基幹コンポーネントに、",
+              "start": 6.56,
+              "end": 8.16
+            },
+            {
+              "text": "MOTOMAN NEXTと並べて、",
+              "start": 8.16,
+              "end": 10.63
+            },
+            {
+              "text": "ヒューマノイド。",
+              "start": 10.63,
+              "end": 11.8
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "……看板のAIロボットと、同じ列なのね。",
           "expression": "surprised",
-          "pause": 0.5
+          "pause": 0.5,
+          "t0": 35.74,
+          "dur": 3.28,
+          "cards": [
+            {
+              "text": "……看板のAIロボットと、同じ列なのね。",
+              "start": 0.0,
+              "end": 3.28
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "1行どころじゃなかった。会社として本気なのは、資料から分かる。そこは認める。",
           "expression": "convinced",
-          "react": "excited"
+          "react": "excited",
+          "t0": 39.24,
+          "dur": 4.92,
+          "cards": [
+            {
+              "text": "1行どころじゃなかった。",
+              "start": 0.2,
+              "end": 1.71
+            },
+            {
+              "text": "会社として本気なのは、",
+              "start": 1.71,
+              "end": 3.09
+            },
+            {
+              "text": "資料から分かる。そこは認める。",
+              "start": 3.24,
+              "end": 5.12
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "でしょ！",
-          "expression": "excited"
+          "expression": "excited",
+          "t0": 44.44,
+          "dur": 1.04,
+          "cards": [
+            {
+              "text": "でしょ！",
+              "start": 0.0,
+              "end": 1.04
+            }
+          ]
         }
       ],
       "narration": "大輔「5月22日に出た、中期経営計画の「ダッシュ35」。2026年度から2029年度までの計画。」\n大輔「ここに、「ヒューマノイドロボット取り組み加速」って言葉が出てくる。」\n大輔「役割分担の図もある。工場の中は、AIロボットの「モートマン・ネクスト」。製造現場以外は、ヒューマノイド。」\n沙織「製造現場以外？」\n大輔「そう。「人と同一環境の自動化」って書いてある。それに、同じ日の「2035年ビジョン」では、基幹コンポーネントに、モートマン・ネクストと並べて、ヒューマノイド。」\n沙織「……看板のAIロボットと、同じ列なのね。」\n沙織「1行どころじゃなかった。会社として本気なのは、資料から分かる。そこは認める。」\n大輔「でしょ！」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "04c83a09fb30"
     },
     {
       "scene_id": 9,
@@ -367,53 +808,156 @@
           "speaker": "dreamer",
           "text": "じゃあ、想像してみてよ。",
           "expression": "excited",
-          "pause": 0.4
+          "pause": 0.4,
+          "t0": 0.0,
+          "dur": 1.96,
+          "cards": [
+            {
+              "text": "じゃあ、想像してみてよ。",
+              "start": 0.0,
+              "end": 1.96
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "計画の図には、物流や建築、医療、農業みたいな分野が並んでる。",
           "expression": "excited",
-          "reference_index": 1
+          "reference_index": 1,
+          "t0": 2.18,
+          "dur": 5.12,
+          "cards": [
+            {
+              "text": "計画の図には、物流や建築、医療、",
+              "start": 0.0,
+              "end": 3.07
+            },
+            {
+              "text": "農業みたいな分野が並んでる。",
+              "start": 3.22,
+              "end": 5.32
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "夜の物流センター。人と同じ棚、同じ台車で、ヒューマノイドが重い箱を一番上の段に上げていく。夜勤の人は、腰をかがめずに検品に回れる。",
           "expression": "excited",
           "tag": "life_scene",
-          "tone": "fast, getting carried away"
+          "tone": "fast, getting carried away",
+          "t0": 7.52,
+          "dur": 10.0,
+          "cards": [
+            {
+              "text": "夜の物流センター。人と同じ棚、同じ台車で、",
+              "start": 0.0,
+              "end": 3.34
+            },
+            {
+              "text": "ヒューマノイドが重い箱を",
+              "start": 3.49,
+              "end": 5.28
+            },
+            {
+              "text": "一番上の段に上げていく。",
+              "start": 5.28,
+              "end": 7.07
+            },
+            {
+              "text": "夜勤の人は、腰をかがめずに検品に回れる。",
+              "start": 7.22,
+              "end": 10.2
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "しかも報道によると、2030年までに！",
           "expression": "excited",
-          "tone": "excited, fast"
+          "tone": "excited, fast",
+          "t0": 17.74,
+          "dur": 3.4,
+          "cards": [
+            {
+              "text": "しかも報道によると、2030年までに！",
+              "start": 0.0,
+              "end": 3.4
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "はい、そこ。",
           "expression": "doubt",
           "react": "surprised",
-          "pause": 0.4
+          "pause": 0.4,
+          "t0": 21.54,
+          "dur": 1.16,
+          "cards": [
+            {
+              "text": "はい、そこ。",
+              "start": 0.0,
+              "end": 1.16
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "分野が並んでるだけで、どこで何をするかは書いてない。それに、その「2030年」は、どの資料？",
           "expression": "doubt",
-          "reference_index": 1
+          "reference_index": 1,
+          "t0": 22.92,
+          "dur": 7.04,
+          "cards": [
+            {
+              "text": "分野が並んでるだけで、どこで何をするかは",
+              "start": 0.0,
+              "end": 2.98
+            },
+            {
+              "text": "書いてない。それに、その「2030年」は、",
+              "start": 3.13,
+              "end": 6.29
+            },
+            {
+              "text": "どの資料？",
+              "start": 6.44,
+              "end": 7.17
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "……中期計画の、どこかに。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 30.24,
+          "dur": 3.0,
+          "cards": [
+            {
+              "text": "……中期計画の、どこかに。",
+              "start": 0.0,
+              "end": 3.0
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "じゃあ、並べて確かめよう。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 33.52,
+          "dur": 1.36,
+          "cards": [
+            {
+              "text": "じゃあ、並べて確かめよう。",
+              "start": 0.0,
+              "end": 1.36
+            }
+          ]
         }
       ],
       "narration": "大輔「じゃあ、想像してみてよ。」\n大輔「計画の図には、物流や建築、医療、農業みたいな分野が並んでる。」\n大輔「夜の物流センター。人と同じ棚、同じ台車で、ヒューマノイドが重い箱を一番上の段に上げていく。夜勤の人は、腰をかがめずに検品に回れる。」\n大輔「しかも報道によると、2030年までに！」\n沙織「はい、そこ。」\n沙織「分野が並んでるだけで、どこで何をするかは書いてない。それに、その「2030年」は、どの資料？」\n大輔「……中期計画の、どこかに。」\n沙織「じゃあ、並べて確かめよう。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "77d257217657"
     },
     {
       "scene_id": 10,
@@ -426,29 +970,91 @@
           "speaker": "skeptic",
           "text": "資料に書いてあるのは、現場実証、機体設計の加速、開発中のアクチュエータ、製造現場以外の市場開拓。",
           "expression": "neutral",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 0.0,
+          "dur": 8.6,
+          "cards": [
+            {
+              "text": "資料に書いてあるのは、現場実証、",
+              "start": 0.0,
+              "end": 2.66
+            },
+            {
+              "text": "機体設計の加速、開発中のアクチュエータ、",
+              "start": 2.81,
+              "end": 6.13
+            },
+            {
+              "text": "製造現場以外の市場開拓。",
+              "start": 6.38,
+              "end": 8.18
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "書いていないのは、2030年までに市場投入。台数、値段、性能。それに、機体の写真。",
           "expression": "doubt",
           "tag": "weakness",
-          "react": "surprised"
+          "react": "surprised",
+          "t0": 8.82,
+          "dur": 7.32,
+          "cards": [
+            {
+              "text": "書いていないのは、2030年までに市場投入。",
+              "start": 0.0,
+              "end": 3.32
+            },
+            {
+              "text": "台数、値段、性能。それに、機体の写真。",
+              "start": 3.64,
+              "end": 6.96
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "機体の写真もないの？",
-          "expression": "surprised"
+          "expression": "surprised",
+          "t0": 16.42,
+          "dur": 2.0,
+          "cards": [
+            {
+              "text": "機体の写真もないの？",
+              "start": 0.0,
+              "end": 2.0
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "写真は関節の部品だけ。どんな姿かは分からない。だから今日の絵は、全部イメージ図。",
           "expression": "neutral",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 18.7,
+          "dur": 5.92,
+          "cards": [
+            {
+              "text": "写真は関節の部品だけ。",
+              "start": 0.0,
+              "end": 1.68
+            },
+            {
+              "text": "どんな姿かは分からない。",
+              "start": 1.68,
+              "end": 3.52
+            },
+            {
+              "text": "だから今日の絵は、全部イメージ図。",
+              "start": 3.67,
+              "end": 6.12
+            }
+          ]
         }
       ],
       "narration": "沙織「資料に書いてあるのは、現場実証、機体設計の加速、開発中のアクチュエータ、製造現場以外の市場開拓。」\n沙織「書いていないのは、2030年までに市場投入。台数、値段、性能。それに、機体の写真。」\n大輔「機体の写真もないの？」\n沙織「写真は関節の部品だけ。どんな姿かは分からない。だから今日の絵は、全部イメージ図。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "0bdf88a3db0e"
     },
     {
       "scene_id": 11,
@@ -461,49 +1067,143 @@
         {
           "speaker": "dreamer",
           "text": "でも、2030って数字は、どこから出てきたんだろう。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 0.0,
+          "dur": 3.68,
+          "cards": [
+            {
+              "text": "でも、2030って数字は、どこから出てきた",
+              "start": 0.0,
+              "end": 3.05
+            },
+            {
+              "text": "んだろう。",
+              "start": 3.2,
+              "end": 3.88
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "ヒントは、計画の区切り。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 3.96,
+          "dur": 3.04,
+          "cards": [
+            {
+              "text": "ヒントは、計画の区切り。",
+              "start": 0.0,
+              "end": 3.04
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "今の「ダッシュ35」が、2029年度まで。",
           "expression": "neutral",
           "display": "今の「Dash 35」が、2029年度まで。",
-          "reference_index": 1
+          "reference_index": 1,
+          "t0": 7.22,
+          "dur": 3.36,
+          "cards": [
+            {
+              "text": "今の「Dash 35」が、2029年度まで。",
+              "start": 0.0,
+              "end": 3.36
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "次の「チャレンジ35」が、2030から2032。",
           "expression": "neutral",
           "display": "次の「Challenge 35」が、2030〜2032。",
-          "reference_index": 1
+          "reference_index": 1,
+          "t0": 10.8,
+          "dur": 4.04,
+          "cards": [
+            {
+              "text": "次の「Challenge 35」が、",
+              "start": 0.0,
+              "end": 2.6
+            },
+            {
+              "text": "2030〜2032。",
+              "start": 2.6,
+              "end": 4.04
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "最後の「リアライズ35」が、2033から2035。",
           "expression": "neutral",
           "display": "最後の「Realize 35」が、2033〜2035。",
-          "reference_index": 1
+          "reference_index": 1,
+          "t0": 15.06,
+          "dur": 4.04,
+          "cards": [
+            {
+              "text": "最後の「Realize 35」が、",
+              "start": 0.0,
+              "end": 2.54
+            },
+            {
+              "text": "2033〜2035。",
+              "start": 2.54,
+              "end": 4.04
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "あ。2030は、次の計画が始まる年だ。",
           "expression": "surprised",
-          "pause": 0.4
+          "pause": 0.4,
+          "t0": 19.5,
+          "dur": 4.08,
+          "cards": [
+            {
+              "text": "あ。2030は、次の計画が始まる年だ。",
+              "start": 0.0,
+              "end": 4.08
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "そう。資料の上では、それだけ。説明会で、会長兼社長が2030年と話したのかもしれない。でも、それを確かめる資料は、まだ出てない。",
           "expression": "thinking",
-          "reference_index": 1
+          "reference_index": 1,
+          "t0": 23.86,
+          "dur": 8.96,
+          "cards": [
+            {
+              "text": "そう。資料の上では、それだけ。説明会で、",
+              "start": 0.0,
+              "end": 2.91
+            },
+            {
+              "text": "会長兼社長が2030年と",
+              "start": 3.06,
+              "end": 4.68
+            },
+            {
+              "text": "話したのかもしれない。",
+              "start": 4.68,
+              "end": 6.17
+            },
+            {
+              "text": "でも、それを確かめる資料は、まだ出てない。",
+              "start": 6.32,
+              "end": 9.16
+            }
+          ]
         }
       ],
       "narration": "大輔「でも、2030って数字は、どこから出てきたんだろう。」\n沙織「ヒントは、計画の区切り。」\n沙織「今の「ダッシュ35」が、2029年度まで。」\n沙織「次の「チャレンジ35」が、2030から2032。」\n沙織「最後の「リアライズ35」が、2033から2035。」\n大輔「あ。2030は、次の計画が始まる年だ。」\n沙織「そう。資料の上では、それだけ。説明会で、会長兼社長が2030年と話したのかもしれない。でも、それを確かめる資料は、まだ出てない。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "a5d634a47630"
     },
     {
       "scene_id": 12,
@@ -516,57 +1216,184 @@
           "speaker": "dreamer",
           "text": "でも、日経は「1年か2年のうちに」って見出しだったよ。",
           "expression": "excited",
-          "display": "でも、日経は「1〜2年のうちに」って見出しだったよ。"
+          "display": "でも、日経は「1〜2年のうちに」って見出しだったよ。",
+          "t0": 0.0,
+          "dur": 4.2,
+          "cards": [
+            {
+              "text": "でも、日経は「1〜2年のうちに」",
+              "start": 0.0,
+              "end": 2.58
+            },
+            {
+              "text": "って見出しだったよ。",
+              "start": 2.58,
+              "end": 4.2
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それも報道。並べてみよう。",
           "expression": "doubt",
-          "react": "deflated"
+          "react": "deflated",
+          "t0": 4.48,
+          "dur": 2.68,
+          "cards": [
+            {
+              "text": "それも報道。並べてみよう。",
+              "start": 0.0,
+              "end": 2.68
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "ロボット・ダイジェストは、2030年までに市場投入。",
           "expression": "neutral",
-          "display": "robot digestは、2030年までに市場投入。"
+          "display": "robot digestは、2030年までに市場投入。",
+          "t0": 7.38,
+          "dur": 3.6,
+          "cards": [
+            {
+              "text": "robot digestは、",
+              "start": 0.0,
+              "end": 1.87
+            },
+            {
+              "text": "2030年までに市場投入。",
+              "start": 1.87,
+              "end": 3.6
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "日刊工業新聞は、ここ1、2年である程度のものを出しながら、30年目安で進める。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 11.2,
+          "dur": 5.44,
+          "cards": [
+            {
+              "text": "日刊工業新聞は、ここ1、2年である程度の",
+              "start": 0.0,
+              "end": 2.91
+            },
+            {
+              "text": "ものを出しながら、30年目安で進める。",
+              "start": 3.06,
+              "end": 5.64
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "日経の見出しは、1年か2年のうちに。西日本新聞は、2030年にも。下半身は台車型。",
           "expression": "neutral",
-          "display": "日経の見出しは、1〜2年のうちに。西日本新聞は、2030年にも。下半身は台車型。"
+          "display": "日経の見出しは、1〜2年のうちに。西日本新聞は、2030年にも。下半身は台車型。",
+          "t0": 16.86,
+          "dur": 7.16,
+          "cards": [
+            {
+              "text": "日経の見出しは、1〜2年のうちに。",
+              "start": 0.0,
+              "end": 3.04
+            },
+            {
+              "text": "西日本新聞は、2030年にも。",
+              "start": 3.04,
+              "end": 5.73
+            },
+            {
+              "text": "下半身は台車型。",
+              "start": 5.73,
+              "end": 7.16
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "全部、同じ説明会の話なのに？",
           "expression": "surprised",
-          "pause": 0.4
+          "pause": 0.4,
+          "t0": 24.42,
+          "dur": 2.6,
+          "cards": [
+            {
+              "text": "全部、同じ説明会の話なのに？",
+              "start": 0.0,
+              "end": 2.6
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "1、2年で何かを出して、2030年ごろに本番、ってことなら、つながるけど……",
           "expression": "thinking",
-          "tone": "slower, musing"
+          "tone": "slower, musing",
+          "t0": 27.24,
+          "dur": 6.32,
+          "cards": [
+            {
+              "text": "1、2年で何かを出して、2030年ごろに本番、",
+              "start": 0.0,
+              "end": 4.12
+            },
+            {
+              "text": "ってことなら、つながるけど……",
+              "start": 4.27,
+              "end": 6.52
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それは推理。日刊工業新聞の「30年目安」が何を指すかも、記事からは分からない。",
-          "expression": "doubt"
+          "expression": "doubt",
+          "t0": 33.84,
+          "dur": 6.36,
+          "cards": [
+            {
+              "text": "それは推理。日刊工業新聞の「30年目安」",
+              "start": 0.0,
+              "end": 3.56
+            },
+            {
+              "text": "が何を指すかも、記事からは分からない。",
+              "start": 3.71,
+              "end": 6.56
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "報道が間違ってる、と言いたいんじゃない。発言を確かめる、説明会の質疑応答の要旨が、10月15日の時点で、まだ公開されてないの。",
           "expression": "neutral",
-          "tone": "calm, fair"
+          "tone": "calm, fair",
+          "t0": 40.42,
+          "dur": 10.08,
+          "cards": [
+            {
+              "text": "報道が間違ってる、と言いたいんじゃない。",
+              "start": 0.0,
+              "end": 3.0
+            },
+            {
+              "text": "発言を確かめる、説明会の質疑応答の要旨が、",
+              "start": 3.15,
+              "end": 6.83
+            },
+            {
+              "text": "10月15日の時点で、まだ公開されてないの。",
+              "start": 6.98,
+              "end": 10.28
+            }
+          ]
         }
       ],
       "narration": "大輔「でも、日経は「1年か2年のうちに」って見出しだったよ。」\n沙織「それも報道。並べてみよう。」\n沙織「ロボット・ダイジェストは、2030年までに市場投入。」\n沙織「日刊工業新聞は、ここ1、2年である程度のものを出しながら、30年目安で進める。」\n沙織「日経の見出しは、1年か2年のうちに。西日本新聞は、2030年にも。下半身は台車型。」\n大輔「全部、同じ説明会の話なのに？」\n大輔「1、2年で何かを出して、2030年ごろに本番、ってことなら、つながるけど……」\n沙織「それは推理。日刊工業新聞の「30年目安」が何を指すかも、記事からは分からない。」\n沙織「報道が間違ってる、と言いたいんじゃない。発言を確かめる、説明会の質疑応答の要旨が、10月15日の時点で、まだ公開されてないの。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "ddc9fbbb9e68"
     },
     {
       "scene_id": 13,
@@ -579,30 +1406,97 @@
         {
           "speaker": "skeptic",
           "text": "それに、資料の言葉そのものが、まだ手前なの。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 0.0,
+          "dur": 4.04,
+          "cards": [
+            {
+              "text": "それに、資料の言葉そのものが、",
+              "start": 0.0,
+              "end": 2.3
+            },
+            {
+              "text": "まだ手前なの。",
+              "start": 2.45,
+              "end": 3.79
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "機体設計の加速、ってことは、設計はまだ続いてる。関節の部品も開発中。データは、これから現場で貯める。",
           "expression": "doubt",
           "tag": "barrier",
-          "reference_index": 0
+          "reference_index": 0,
+          "t0": 4.26,
+          "dur": 7.88,
+          "cards": [
+            {
+              "text": "機体設計の加速、ってことは、",
+              "start": 0.23,
+              "end": 2.33
+            },
+            {
+              "text": "設計はまだ続いてる。関節の部品も開発中。",
+              "start": 2.48,
+              "end": 5.48
+            },
+            {
+              "text": "データは、これから現場で貯める。",
+              "start": 5.63,
+              "end": 8.03
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "計画の図には「安心感」って言葉もあった。人のすぐ隣で動くなら、それをどう確かめるかは、まだ書いてない。",
           "expression": "thinking",
           "tag": "barrier",
-          "reference_index": 1
+          "reference_index": 1,
+          "t0": 12.36,
+          "dur": 7.04,
+          "cards": [
+            {
+              "text": "計画の図には「安心感」って言葉もあった。",
+              "start": 0.0,
+              "end": 2.82
+            },
+            {
+              "text": "人のすぐ隣で動くなら、",
+              "start": 2.97,
+              "end": 4.43
+            },
+            {
+              "text": "それをどう確かめるかは、",
+              "start": 4.43,
+              "end": 6.03
+            },
+            {
+              "text": "まだ書いてない。",
+              "start": 6.18,
+              "end": 7.24
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "そこは、現場実証で見えてくるところだね。",
-          "expression": "convinced"
+          "expression": "convinced",
+          "t0": 19.68,
+          "dur": 3.4,
+          "cards": [
+            {
+              "text": "そこは、現場実証で見えてくるところだね。",
+              "start": 0.0,
+              "end": 3.4
+            }
+          ]
         }
       ],
       "narration": "沙織「それに、資料の言葉そのものが、まだ手前なの。」\n沙織「機体設計の加速、ってことは、設計はまだ続いてる。関節の部品も開発中。データは、これから現場で貯める。」\n沙織「計画の図には「安心感」って言葉もあった。人のすぐ隣で動くなら、それをどう確かめるかは、まだ書いてない。」\n大輔「そこは、現場実証で見えてくるところだね。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "4e943ea9649b"
     },
     {
       "scene_id": 14,
@@ -617,29 +1511,106 @@
           "speaker": "dreamer",
           "text": "じゃあ、3年先までの話で言い直す。想像してみてよ。",
           "expression": "thinking",
-          "pause": 0.4
+          "pause": 0.4,
+          "t0": 0.0,
+          "dur": 4.12,
+          "cards": [
+            {
+              "text": "じゃあ、3年先までの話で言い直す。",
+              "start": 0.0,
+              "end": 2.56
+            },
+            {
+              "text": "想像してみてよ。",
+              "start": 2.71,
+              "end": 3.91
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "工事中のビル。職人さんが壁を仕上げてる隣で、試作のヒューマノイドが、重い石こうボードを運んでくる。重い物はロボット、仕上げは人。",
           "expression": "excited",
           "tag": "life_scene",
-          "tone": "warm, a bit fast"
+          "tone": "warm, a bit fast",
+          "t0": 4.34,
+          "dur": 9.68,
+          "cards": [
+            {
+              "text": "工事中のビル。",
+              "start": 0.0,
+              "end": 1.08
+            },
+            {
+              "text": "職人さんが壁を仕上げてる隣で、",
+              "start": 1.08,
+              "end": 3.38
+            },
+            {
+              "text": "試作のヒューマノイドが、重い石こうボードを",
+              "start": 3.53,
+              "end": 6.61
+            },
+            {
+              "text": "運んでくる。重い物はロボット、仕上げは人。",
+              "start": 6.76,
+              "end": 9.84
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "建築は図に並んでた分野の1つね。どの現場で試すかは書いてないけど、実証が進んでるかは、次の決算資料を見れば、ある程度は分かる。",
           "expression": "doubt",
-          "reference_index": 1
+          "reference_index": 1,
+          "t0": 14.3,
+          "dur": 8.64,
+          "cards": [
+            {
+              "text": "建築は図に並んでた分野の1つね。",
+              "start": 0.0,
+              "end": 2.22
+            },
+            {
+              "text": "どの現場で試すかは書いてないけど、",
+              "start": 2.37,
+              "end": 4.63
+            },
+            {
+              "text": "実証が進んでるかは、次の決算資料を見れば、",
+              "start": 4.78,
+              "end": 7.52
+            },
+            {
+              "text": "ある程度は分かる。",
+              "start": 7.67,
+              "end": 8.84
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "でしょ。答え合わせの材料が、決算のたびに出てくる。",
-          "expression": "convinced"
+          "expression": "convinced",
+          "t0": 23.22,
+          "dur": 4.92,
+          "cards": [
+            {
+              "text": "でしょ。答え合わせの材料が、",
+              "start": 0.0,
+              "end": 2.62
+            },
+            {
+              "text": "決算のたびに出てくる。",
+              "start": 2.77,
+              "end": 4.73
+            }
+          ]
         }
       ],
       "narration": "大輔「じゃあ、3年先までの話で言い直す。想像してみてよ。」\n大輔「工事中のビル。職人さんが壁を仕上げてる隣で、試作のヒューマノイドが、重い石こうボードを運んでくる。重い物はロボット、仕上げは人。」\n沙織「建築は図に並んでた分野の1つね。どの現場で試すかは書いてないけど、実証が進んでるかは、次の決算資料を見れば、ある程度は分かる。」\n大輔「でしょ。答え合わせの材料が、決算のたびに出てくる。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "0d18d881b003"
     },
     {
       "scene_id": 15,
@@ -652,51 +1623,204 @@
         {
           "speaker": "skeptic",
           "text": "じゃあ、判定。お題は、「2030年までに人型ロボ」は本当か。そして、工場の外の現場に来るのか。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 7.68,
+          "cards": [
+            {
+              "text": "じゃあ、判定。お題は、",
+              "start": 0.0,
+              "end": 1.94
+            },
+            {
+              "text": "「2030年までに人型ロボ」",
+              "start": 1.94,
+              "end": 4.4
+            },
+            {
+              "text": "は本当か。そして、",
+              "start": 4.55,
+              "end": 5.9
+            },
+            {
+              "text": "工場の外の現場に来るのか。",
+              "start": 5.9,
+              "end": 7.85
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "僕は「3年はかかる」。現場実証と機体設計の加速、開発中の関節。計画では、製造現場以外を開拓する、と書いてある。",
           "expression": "convinced",
           "tone": "calm, confident",
-          "reference_index": 1
+          "reference_index": 1,
+          "t0": 7.96,
+          "dur": 10.08,
+          "cards": [
+            {
+              "text": "僕は「3年はかかる」。",
+              "start": 0.0,
+              "end": 1.95
+            },
+            {
+              "text": "現場実証と機体設計の加速、",
+              "start": 1.95,
+              "end": 4.25
+            },
+            {
+              "text": "開発中の関節。計画では、",
+              "start": 4.52,
+              "end": 6.8
+            },
+            {
+              "text": "製造現場以外を開拓する、",
+              "start": 6.8,
+              "end": 9.08
+            },
+            {
+              "text": "と書いてある。",
+              "start": 9.23,
+              "end": 10.28
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "働く姿が見られるまで、早くて3年。これは僕の見立て。2030年は3年より先だから、そこまでは分からない。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 18.26,
+          "dur": 8.48,
+          "cards": [
+            {
+              "text": "働く姿が見られるまで、早くて3年。",
+              "start": 0.0,
+              "end": 2.76
+            },
+            {
+              "text": "これは僕の見立て。",
+              "start": 2.91,
+              "end": 4.38
+            },
+            {
+              "text": "2030年は3年より先だから、",
+              "start": 4.38,
+              "end": 6.83
+            },
+            {
+              "text": "そこまでは分からない。",
+              "start": 6.98,
+              "end": 8.63
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "珍しく、2030年って言い切らないね。",
           "expression": "amused",
-          "react": "deflated"
+          "react": "deflated",
+          "t0": 27.02,
+          "dur": 2.84,
+          "cards": [
+            {
+              "text": "珍しく、2030年って言い切らないね。",
+              "start": 0.0,
+              "end": 2.84
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "資料に無い年を、資料の話みたいには言えないでしょ。",
           "expression": "deflated",
-          "tone": "sheepish, playful"
+          "tone": "sheepish, playful",
+          "t0": 30.14,
+          "dur": 4.0,
+          "cards": [
+            {
+              "text": "資料に無い年を、",
+              "start": 0.0,
+              "end": 1.2
+            },
+            {
+              "text": "資料の話みたいには言えないでしょ。",
+              "start": 1.2,
+              "end": 3.75
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "私は「まだ眉唾」。会社の本気は分かった。でも、いつ工場の外に来るかの根拠は、資料のどこにも無い。",
-          "expression": "doubt"
+          "expression": "doubt",
+          "t0": 34.42,
+          "dur": 7.2,
+          "cards": [
+            {
+              "text": "私は「まだ眉唾」。会社の本気は分かった。",
+              "start": 0.0,
+              "end": 3.07
+            },
+            {
+              "text": "でも、いつ工場の外に来るかの根拠は、",
+              "start": 3.22,
+              "end": 5.81
+            },
+            {
+              "text": "資料のどこにも無い。",
+              "start": 5.96,
+              "end": 7.4
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "「2030年までに市場投入」は報道の言い方で、その報道も割れてる。発言を確かめる資料は、まだ出てない。",
           "expression": "doubt",
-          "tone": "calm, firm"
+          "tone": "calm, firm",
+          "t0": 41.84,
+          "dur": 7.72,
+          "cards": [
+            {
+              "text": "「2030年までに市場投入」",
+              "start": 0.0,
+              "end": 2.2
+            },
+            {
+              "text": "は報道の言い方で、その報道も割れてる。",
+              "start": 2.35,
+              "end": 5.13
+            },
+            {
+              "text": "発言を確かめる資料は、まだ出てない。",
+              "start": 5.3,
+              "end": 7.92
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "質疑応答の要旨が出たら、もう一回判定しよう。",
-          "expression": "amused"
+          "expression": "amused",
+          "t0": 49.78,
+          "dur": 3.04,
+          "cards": [
+            {
+              "text": "質疑応答の要旨が出たら、",
+              "start": 0.0,
+              "end": 1.66
+            },
+            {
+              "text": "もう一回判定しよう。",
+              "start": 1.66,
+              "end": 3.04
+            }
+          ]
         }
       ],
       "narration": "沙織「じゃあ、判定。お題は、「2030年までに人型ロボ」は本当か。そして、工場の外の現場に来るのか。」\n大輔「僕は「3年はかかる」。現場実証と機体設計の加速、開発中の関節。計画では、製造現場以外を開拓する、と書いてある。」\n大輔「働く姿が見られるまで、早くて3年。これは僕の見立て。2030年は3年より先だから、そこまでは分からない。」\n沙織「珍しく、2030年って言い切らないね。」\n大輔「資料に無い年を、資料の話みたいには言えないでしょ。」\n沙織「私は「まだ眉唾」。会社の本気は分かった。でも、いつ工場の外に来るかの根拠は、資料のどこにも無い。」\n沙織「「2030年までに市場投入」は報道の言い方で、その報道も割れてる。発言を確かめる資料は、まだ出てない。」\n沙織「質疑応答の要旨が出たら、もう一回判定しよう。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "2bc9141c707e"
     },
     {
       "scene_id": 16,
@@ -708,26 +1832,108 @@
         {
           "speaker": "dreamer",
           "text": "2030年を探しに行ったら、見つかったのは、資料の1行と、関節の写真1枚だった。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 0.0,
+          "dur": 6.76,
+          "cards": [
+            {
+              "text": "2030年を探しに行ったら、",
+              "start": 0.0,
+              "end": 2.26
+            },
+            {
+              "text": "見つかったのは、資料の1行と、",
+              "start": 2.48,
+              "end": 4.73
+            },
+            {
+              "text": "関節の写真1枚だった。",
+              "start": 4.88,
+              "end": 6.62
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "でも、5月の計画まで読むと、その1行の重さが分かる。今日の判定は、10月15日時点の、私たち二人の見立て。投資のおすすめでもないからね。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 7.04,
+          "dur": 10.08,
+          "cards": [
+            {
+              "text": "でも、5月の計画まで読むと、",
+              "start": 0.0,
+              "end": 1.98
+            },
+            {
+              "text": "その1行の重さが分かる。今日の判定は、",
+              "start": 2.13,
+              "end": 5.03
+            },
+            {
+              "text": "10月15日時点の、私たち二人の見立て。",
+              "start": 5.18,
+              "end": 8.01
+            },
+            {
+              "text": "投資のおすすめでもないからね。",
+              "start": 8.16,
+              "end": 10.28
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
-          "expression": "excited"
+          "expression": "excited",
+          "t0": 17.4,
+          "dur": 4.8,
+          "cards": [
+            {
+              "text": "次はどんな研究が、誰かの幸せな未来を",
+              "start": 0.0,
+              "end": 3.48
+            },
+            {
+              "text": "運んでくるのか。",
+              "start": 3.63,
+              "end": 4.83
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
-          "expression": "amused"
+          "expression": "amused",
+          "t0": 22.48,
+          "dur": 7.52,
+          "cards": [
+            {
+              "text": "それが本物かどうか、",
+              "start": 0.0,
+              "end": 1.22
+            },
+            {
+              "text": "また一緒に確かめましょう。",
+              "start": 1.22,
+              "end": 2.81
+            },
+            {
+              "text": "元の発表は概要欄に載せています。",
+              "start": 2.96,
+              "end": 5.12
+            },
+            {
+              "text": "チャンネル登録して、待っていてください。",
+              "start": 5.27,
+              "end": 7.72
+            }
+          ]
         }
       ],
       "narration": "大輔「2030年を探しに行ったら、見つかったのは、資料の1行と、関節の写真1枚だった。」\n沙織「でも、5月の計画まで読むと、その1行の重さが分かる。今日の判定は、10月15日時点の、私たち二人の見立て。投資のおすすめでもないからね。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」",
-      "narrator": "dialogue"
+      "narrator": "dialogue",
+      "lines_hash": "cda70a38ab59"
     }
   ],
   "shorts": [
