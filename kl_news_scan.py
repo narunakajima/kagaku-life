@@ -23,14 +23,23 @@ kl_news_scan.py — ニュース起点のネタ選定（2026-10-04〜）
     buzz_measured（1〜5）にする。並び順は core = 鮮度 × buzz_measured（同点は 誇張＋議論＋暮らし）
   - list は「本命／ニッチ／速報（再計測待ち）」の3枠で出す（Gemini の推定 buzz_jp_est は予備）
 
-使い方（collect → score → tag → enrich → buzz → list）:
+2026-10-15（NEWS_REDESIGN_2026-10-15.md の1週目）:
+  - verify: 採点の直後に一次資料URLの実在を確かめる（HTTP・ソフト404、DOIは doi.org のハンドルAPI）。
+    primary_verified が False（全URLが404）の候補はゲートで落とし、None（403等で判断不能）は「要確認」で残す
+  - topic_age: 鮮度を「系列の最初の日付」（同じ系列の候補・news_pool.json の記事・buzz_evidence の最古）から数える
+  - 答え合わせ候補: 製品発表・日本語10媒体以上・初出から2日以上は、本命・ベスト3ではなく別の枠に出す（2日未満は再評価待ち）
+  - yt: 朝に手で数えた日本語の解説動画の本数を記録する
+
+使い方（collect → score → verify → tag → enrich → buzz → list）:
   python3 kl_news_scan.py collect [--days 21]   # RSS＋Googleニュースのキーワード検索（gnews_queries）＋Gemini検索、重複排除
   python3 kl_news_scan.py score [--top 15]      # 検索つき、1件ずつ課金
+  python3 kl_news_scan.py verify [--id ID ...] [--all] [--max 60]   # 一次資料URLの実在確認（無料。HTTPだけ）
   python3 kl_news_scan.py tag                   # ジャンル未付与に5ジャンル（テキストのみ）
   python3 kl_news_scan.py enrich                # ゲート通過分に検索語・見出しの語・発表の種類・系列（テキストのみ）
   python3 kl_news_scan.py buzz [--max 50]       # Google ニュース RSS で注目度を実測（1候補1回、2秒以上の間隔）
   python3 kl_news_scan.py list [--top 10] [--by-genre] [--check-urls]
-  python3 kl_news_scan.py check-urls [--id ID ...]   # 一次資料のURL（ソフト404も）を確認
+  python3 kl_news_scan.py check-urls [--id ID ...]   # ベスト3・本命・答え合わせ候補（または指定）の一次資料URLを確認し直す
+  python3 kl_news_scan.py yt --id ID --count N [--query 検索語]   # 日本語の解説動画の本数を記録（手入力）
 """
 
 import argparse
@@ -849,8 +858,10 @@ def gate_reasons(c: dict, used: dict) -> list:
     r = []
     if _clamp5(c.get("verifiability")) < GATE_MIN_VERIFIABILITY:
         r.append(f"検証<{GATE_MIN_VERIFIABILITY}")
-    if freshness_score(c.get("announced_on") or c.get("published", "")) < GATE_MIN_FRESHNESS:
+    if freshness_score(fresh_date(c)) < GATE_MIN_FRESHNESS:
         r.append(f"鮮度<{GATE_MIN_FRESHNESS}")
+    if c.get("primary_verified") is False:     # 2026-10-15: 一次資料のURLが全部404・ソフト404（verify）。None（要確認）は通す
+        r.append("一次資料URLが実在しない（" + (c.get("primary_verified_note") or "全URLが404・ソフト404") + "）")
     if stake(c) < GATE_MIN_LIFE:
         r.append(f"暮らし・仕事<{GATE_MIN_LIFE}")
     hit = [used[u] for u in (_norm_url(s.get("url", "")) for s in c.get("primary_sources", []) or []) if u in used]
@@ -883,9 +894,10 @@ def _decode(raw: bytes, content_type: str) -> str:
         return raw.decode("utf-8", errors="replace")
 
 
-def check_primary_url(url: str, timeout: int = 15) -> dict:
-    """一次資料のURLを開いて確かめる（標準ライブラリのみ。取得したHTMLは <title> を読むだけで実行しない）。
-    ok: True=開ける / False=404・ソフト404 / None=判断できない（403・429等。ボット拒否の可能性があり人が確認）"""
+def check_primary_url(url: str, timeout: int = 15, anchors: list = None) -> dict:
+    """一次資料のURLを開いて確かめる（標準ライブラリのみ。取得したHTMLは <title> と本文の先頭を文字列として読むだけで実行しない）。
+    ok: True=開ける / False=404・ソフト404 / None=判断できない（403・429等。ボット拒否の可能性があり人が確認）
+    anchors（候補の固有の語）を渡すと、<title>＋本文の先頭にどれかが含まれるかを anchor_hit に入れる（参考表示。判定には使わない）"""
     try:
         resp = urllib.request.urlopen(urllib.request.Request(url, headers=BROWSER_UA), timeout=timeout)
         raw = resp.read(400_000)
@@ -894,13 +906,341 @@ def check_primary_url(url: str, timeout: int = 15) -> dict:
         title = re.sub(r"\s+", " ", m.group(1)).strip() if m else ""
         if title and SOFT404_TITLE.search(title):
             return {"url": url, "ok": False, "status": f"ソフト404（HTTP {resp.status}、title「{title[:40]}」）"}
-        return {"url": url, "ok": True, "status": f"HTTP {resp.status}" + (f"「{title[:30]}」" if title else "")}
+        out = {"url": url, "ok": True, "status": f"HTTP {resp.status}" + (f"「{title[:30]}」" if title else ""),
+               "page_title": title[:120]}
+        final = resp.geturl() or url
+        if final != url and urllib.parse.urlsplit(final).path in ("", "/") and urllib.parse.urlsplit(url).path not in ("", "/"):
+            out["redirected_to_top"] = True      # 記事のURLがトップページに転送された（記事が無い可能性）
+            out["status"] += f"（トップページへ転送: {final[:60]}）"
+        if anchors:
+            body = re.sub(r"<script.*?</script>|<style.*?</style>", " ", html[:200_000], flags=re.I | re.S)
+            head = _nfkc(title + " " + re.sub(r"<[^>]+>", " ", body)[:30_000])
+            out["anchor_hit"] = any(a in head for a in anchors)
+        return out
     except urllib.error.HTTPError as e:
         if e.code in (404, 410):
             return {"url": url, "ok": False, "status": f"HTTP {e.code}"}
-        return {"url": url, "ok": None, "status": f"HTTP {e.code}（ボット拒否の可能性。ブラウザで確認）"}
+        return {"url": url, "ok": None, "status": f"HTTP {e.code}（ボット拒否の可能性。ブラウザで確認）", "http": e.code}
     except Exception as e:  # noqa: BLE001
-        return {"url": url, "ok": None, "status": f"取得失敗（{type(e).__name__}: {str(e)[:60]}）"}
+        return {"url": url, "ok": None, "status": f"取得失敗（{type(e).__name__}: {str(e)[:60]}）", "transient": True}
+
+
+# ============================================================
+# verify: 一次資料の実在確認（2026-10-15、NEWS_REDESIGN_2026-10-15.md §3.5 の第1段階）
+# score の直後に、primary_sources のURLを開いて確かめる（Gemini不要・無料）。
+# primary_verified: True＝1件でも開けた（HTTP 200・ソフト404でない、DOIはハンドルAPIで実在）／
+#                   False＝全URLが404・ソフト404（またはURLが無い）→ ゲートで落とす（削除はしない）／
+#                   None＝403・429・タイムアウト等で判断できない（要確認。ベスト3には残すが目立たせる）
+# ============================================================
+
+DOI_HANDLE_API = "https://doi.org/api/handles/"
+DOI_IN_URL = re.compile(r"(10\.\d{4,9}/[^\s?#&]+)", re.I)
+VERIFY_MAX_URLS = 4              # 1候補あたり確かめるURLの上限
+VERIFY_SAME_HOST_INTERVAL = 5.0  # 秒。同じホストへの連続アクセスはこれ以上あける（doi.org など）
+VERIFY_RETRY_WAIT = 5.0          # 秒。タイムアウト・429・5xx のときだけ1回だけ取り直す
+VERIFY_DEFAULT_MAX = 60          # verify の既定の上限（候補の数）
+PRIMARY_LABEL = {True: "確認済み", False: "実在しない", None: "要確認"}
+
+
+def extract_doi(url: str) -> str:
+    """URLからDOIを取り出す（doi.org/10.xxx、出版社の /doi/10.xxx/... など）。無ければ空。"""
+    try:
+        sp = urllib.parse.urlsplit(url or "")
+    except ValueError:
+        return ""
+    path = urllib.parse.unquote(sp.path or "")
+    if _host(url) in ("doi.org", "dx.doi.org"):
+        m = DOI_IN_URL.search(path)
+        return m.group(1).rstrip("/.") if m else ""
+    m = re.search(r"/doi/(?:abs/|full/|pdf/|epdf/|epub/)?(10\.\d{4,9}/[^\s?#&]+)", path, re.I)
+    return m.group(1).rstrip("/.") if m else ""
+
+
+def check_doi(doi: str, timeout: int = 15) -> dict:
+    """doi.org のハンドルAPI（無料・認証なし。出版社に行かないのでボット拒否を受けない）でDOIの実在を確かめる。
+    HTTP 200 で responseCode 1 → 実在。responseCode 100（HTTP 404）→ 実在しない。"""
+    api = DOI_HANDLE_API + urllib.parse.quote(doi, safe="/")
+    try:
+        body = urllib.request.urlopen(urllib.request.Request(api, headers=UA), timeout=timeout).read(200_000)
+        code = None
+    except urllib.error.HTTPError as e:
+        code = e.code
+        try:
+            body = e.read(200_000)
+        except Exception:  # noqa: BLE001
+            body = b""
+    except Exception as e:  # noqa: BLE001
+        return {"ok": None, "status": f"DOI確認の取得失敗（{type(e).__name__}）", "transient": True}
+    try:
+        rc = json.loads(body.decode("utf-8", "replace")).get("responseCode")
+    except Exception:  # noqa: BLE001
+        rc = None
+    if rc == 1:
+        return {"ok": True, "status": f"DOI実在（ハンドルAPI、{doi}）"}
+    if rc == 100 or code == 404:
+        return {"ok": False, "status": f"DOIが存在しない（ハンドルAPI、{doi}）"}
+    return {"ok": None, "status": f"DOI確認で判断できない（HTTP {code}、responseCode {rc}）",
+            "transient": code is not None and (code == 429 or code >= 500)}
+
+
+def _verify_anchors(c: dict) -> list:
+    """ページに含まれるかを見る固有の語（参考表示用）。jp_title_anchor のうち組織名・略語だけでないもの。"""
+    a = c.get("jp_title_anchor") or []
+    a = [a] if isinstance(a, str) else a
+    return [x for x in (_nfkc(v) for v in a if v and v.strip()) if x not in GENERIC_ANCHORS]
+
+
+def verify_one_url(url: str, anchors: list) -> dict:
+    """1つのURLを確かめる。doi.org はハンドルAPIだけ。出版社のURLで判断できない（403等）ときは、URL中のDOIをハンドルAPIで確かめる。"""
+    doi = extract_doi(url)
+    if doi and _host(url) in ("doi.org", "dx.doi.org"):
+        r = dict(check_doi(doi), url=url, method="doi_handle")
+        return r
+    r = dict(check_primary_url(url, anchors=anchors), method="http")
+    if r["ok"] is None and doi:
+        d = check_doi(doi)
+        if d["ok"] is not None:
+            r = dict(r, ok=d["ok"], status=f"{r['status']} → {d['status']}", method="http+doi_handle")
+    return r
+
+
+class _HostPacer:
+    """全体で URL_CHECK_INTERVAL、同じホストには VERIFY_SAME_HOST_INTERVAL 以上の間隔をあける。"""
+
+    def __init__(self):
+        self.last_any = 0.0
+        self.last_host = {}
+
+    def wait(self, url: str):
+        h = "doi.org" if extract_doi(url) else _host(url)
+        now = time.monotonic()
+        need = max(self.last_any + URL_CHECK_INTERVAL, self.last_host.get(h, 0.0) + VERIFY_SAME_HOST_INTERVAL) - now
+        if self.last_any and need > 0:
+            time.sleep(need)
+        self.last_any = self.last_host[h] = time.monotonic()
+
+
+def effective_ok(x: dict):
+    """URL1件の判定。開けても、トップページへの転送か、候補の固有の語がページに無いときは「要確認」（別のページの可能性）。
+    固有の語は jp_title_anchor（日本語の見出し向けの語）なので、英語のページでは当たらないことがある。そのときも要確認に倒す
+    （ゲートで落とすのは全URLが404のときだけなので、要確認が増えても候補は消えない）。"""
+    if x.get("ok") and (x.get("redirected_to_top") or x.get("anchor_hit") is False):
+        return None
+    return x.get("ok")
+
+
+def primary_verdict(results: list):
+    """URLごとの判定（effective_ok）から primary_verified を決める。1件でも True → True、全部 False（またはURLなし）→ False、
+    それ以外 → None（403・429・開けたが固有の語が無い など）。"""
+    oks = [effective_ok(x) for x in results]
+    if True in oks:
+        return True
+    if not oks or all(o is False for o in oks):
+        return False
+    return None
+
+
+def verify_candidate(c: dict, pacer: "_HostPacer") -> list:
+    """候補の一次資料URLを確かめて、primary_verified 等を c に書く（url_ok・url_status など既存の欄も同じ結果で更新する）。"""
+    anchors = _verify_anchors(c)
+    res = []
+    for s in (c.get("primary_sources") or [])[:VERIFY_MAX_URLS]:
+        url = (s.get("url") or "").strip()
+        if not url:
+            continue
+        pacer.wait(url)
+        r = verify_one_url(url, anchors)
+        if r["ok"] is None and (r.get("transient") or r.get("http") == 429 or (r.get("http") or 0) >= 500):
+            time.sleep(VERIFY_RETRY_WAIT)
+            pacer.wait(url)
+            r2 = verify_one_url(url, anchors)
+            r = dict(r2, status=r2["status"] + "（再試行）")
+        r.pop("transient", None)
+        r.pop("http", None)
+        r["kind"] = s.get("kind", "")
+        res.append(r)
+    now = datetime.now().isoformat(timespec="seconds")
+    c["primary_verified"] = primary_verdict(res)
+    c["primary_check"] = res
+    c["primary_verified_at"] = now
+    if not res:
+        c["primary_verified_note"] = "一次資料のURLが無い"
+    else:
+        c.pop("primary_verified_note", None)
+        # 既存の欄（check-urls・旧 list --check-urls の表示用）。url_ok は「1件でもNGなら False」のまま
+        oks = [x["ok"] for x in res]
+        c["url_check"] = [{"url": x["url"], "ok": x["ok"], "status": x["status"]} for x in res]
+        c["url_ok"] = False if False in oks else (True if all(oks) else None)
+        c["url_status"] = " ／ ".join(f"{_host(x['url'])}: {x['status']}" for x in res)
+        c["url_checked_at"] = now
+    return res
+
+
+def _primary_line(c: dict) -> str:
+    if "primary_verified" not in c:
+        return "一次資料の実在: 未確認（verify 未実行）"
+    pv = c["primary_verified"]
+    parts = []
+    for x in c.get("primary_check") or []:
+        hit = {True: "・固有語あり", False: "・固有語なし（別ページの可能性）"}.get(x.get("anchor_hit"), "")
+        parts.append(f"{_host(x['url'])}: {x['status']}{hit}")
+    body = " ／ ".join(parts) or c.get("primary_verified_note", "")
+    return f"一次資料の実在: {PRIMARY_LABEL[pv]}{'（ブラウザで開いて確かめる）' if pv is None else ''} — {body}" \
+           f"（{(c.get('primary_verified_at') or '')[:16]}確認）"
+
+
+# ============================================================
+# topic_age（話題の年齢、2026-10-15、NEWS_REDESIGN_2026-10-15.md §3.3）
+# 系列の最初の日付＝同じ系列の候補の発表日・記事の日付／news_pool.json の同じ系列の記事／buzz_evidence のうち最も古いもの。
+# 鮮度（freshness）はこの日から数える（以前は announced_on＝最新の出来事の発表日から）。
+# プール・buzz_evidence の記事を同じ系列とみなすのは、見出しが候補の固有の語（jp_title_anchor のうち組織名・略語だけでないもの）を
+# **すべて**含むか、候補の見出しと語の Jaccard 類似度が DEDUP_JACCARD 以上のときだけ（「安川電機」だけを含む別の記事を拾わないため）。
+# プールは毎晩作り直され21日より前の記事が消えるので、プール由来の最古の記事は候補に残しておき、次回以降も使う。
+# ============================================================
+
+def _topic_anchors(c: dict) -> list:
+    a = _verify_anchors(c)
+    return [x for x in a if not any(x != y and x in y for y in a)]   # 「gemini 4」と「gemini 4 argon」は長い方だけ
+
+
+def _valid_day(d: str):
+    try:
+        day = datetime.fromisoformat((d or "")[:10]).date()
+    except Exception:  # noqa: BLE001
+        return None
+    if day > datetime.now().date() + timedelta(days=1):   # 未来の日付（誤り）は使わない。古い日付はそのまま使う（古い論文の再報道を新しく見せないため）
+        return None
+    return day
+
+
+def _load_pool_items() -> list:
+    try:
+        return json.loads(POOL_JSON.read_text(encoding="utf-8")).get("items", [])
+    except Exception:  # noqa: BLE001
+        return []
+
+
+def _distinct_numbers(a: str, b: str) -> bool:
+    """互いに相手に無い数字がある（版・日付の違う別の発表。dedup_similar と同じ考え方）"""
+    na, nb = set(re.findall(r"\d+(?:\.\d+)?", _nfkc(a))), set(re.findall(r"\d+(?:\.\d+)?", _nfkc(b)))
+    return bool((na - nb) and (nb - na))
+
+
+def topic_groups(cands: list) -> dict:
+    """話題の初出を数えるための系列（id → 系列のキー）。表示用の assign_series（発表元のホスト＋見出しの語の部分一致）より厳しくする:
+    明示の series が同じ／一方の固有の語（_topic_anchors）が**すべて**他方の見出しに含まれる／見出しの語の Jaccard が DEDUP_JACCARD 以上
+    （互いに相手に無い数字があればまとめない）。assign_series を全候補に使うと、組織名や「人型ロボット」のような語で
+    別の発表がつながり、7月の記事まで同じ系列になった（2026-10-15の実データで確認）。"""
+    parent = {c["id"]: c["id"] for c in cands}
+
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+    info = [(c, _nfkc(c.get("title", "")), _topic_anchors(c), _title_tokens(c.get("title", ""))) for c in cands]
+    for i, (a, ta, aa, ka) in enumerate(info):
+        for b, tb, ab, kb in info[i + 1:]:
+            if _distinct_numbers(a.get("title", ""), b.get("title", "")):
+                same = bool(a.get("series")) and a.get("series") == b.get("series")
+            else:
+                same = (bool(a.get("series")) and a.get("series") == b.get("series")) \
+                    or (aa and all(x in tb for x in aa)) or (ab and all(x in ta for x in ab)) \
+                    or (len(ka) >= 4 and len(kb) >= 4 and len(ka & kb) / len(ka | kb) >= DEDUP_JACCARD) \
+                    or b["id"] in (a.get("dup_ids") or []) or a["id"] in (b.get("dup_ids") or [])
+            if same:
+                parent[find(a["id"])] = find(b["id"])
+    by_id = {c["id"]: c for c in cands}
+    return {c["id"]: (by_id[find(c["id"])].get("series") or find(c["id"])) for c in cands}
+
+
+def refresh_topic_ages(cands: list, pool: list = None):
+    """各候補に topic_first_date（系列の最初の日付）・topic_first_source（その根拠）・topic_series を付ける（メモリ上。保存は呼び出し側）。"""
+    if pool is None:
+        pool = _load_pool_items()
+    pool_tok = [(p, _nfkc(p.get("title", "")), _title_tokens(p.get("title", ""))) for p in pool]
+    ser = topic_groups(cands)
+    groups = {}
+    for c in cands:
+        groups.setdefault(ser[c["id"]], []).append(c)
+    for key, members in groups.items():
+        ev = []   # (date, source の説明)
+        ids = set()
+        for m in members:
+            ids.add(m["id"])
+            ids.update(m.get("dup_ids") or [])
+            for fld in ("announced_on", "published"):
+                d = _valid_day(m.get(fld))
+                if d:
+                    ev.append((d, f"候補 {m['id']} の{fld}（{m['title'][:30]}）"))
+        anchor_sets = [a for a in (_topic_anchors(m) for m in members) if a]
+        mtoks = [t for t in (_title_tokens(m.get("title", "")) for m in members) if len(t) >= 4]
+
+        def same_topic(title_n, toks):
+            if any(all(a in title_n for a in aset) for aset in anchor_sets):
+                return True
+            return len(toks) >= 4 and any(len(toks & t) / len(toks | t) >= DEDUP_JACCARD for t in mtoks)
+
+        for m in members:
+            for e in m.get("buzz_evidence") or []:
+                d = _valid_day(e.get("date"))
+                if d and same_topic(_nfkc(e.get("title", "")), _title_tokens(e.get("title", ""))):
+                    ev.append((d, f"日本語記事（{e.get('outlet', '')}「{e.get('title', '')[:30]}」）"))
+            kept = m.get("topic_pool_first")      # 以前のプールで見つけた最古の記事（プールから消えても使う）
+            if kept and _valid_day(kept.get("date")):
+                ev.append((_valid_day(kept["date"]), f"プールの記事（{kept.get('title', '')[:40]}）"))
+        pool_hits = []
+        for p, tn, tk in pool_tok:
+            d = _valid_day(p.get("published"))
+            if not d:
+                continue
+            if p.get("id") in ids or set(p.get("dup_ids") or []) & ids or same_topic(tn, tk):
+                pool_hits.append((d, p))
+        if pool_hits:
+            d, p = min(pool_hits, key=lambda x: x[0])
+            ev.append((d, f"プールの記事（{p.get('title', '')[:40]}）"))
+            pf = {"date": d.isoformat(), "title": p.get("title", "")[:120], "id": p.get("id", ""),
+                  "source": (p.get("source") or "")[:60]}
+        else:
+            pf = None
+        if not ev:
+            continue
+        first_d, first_src = min(ev, key=lambda x: x[0])
+        for m in members:
+            m["topic_first_date"] = first_d.isoformat()
+            m["topic_first_source"] = first_src
+            m["topic_series"] = key
+            m["freshness_basis"] = "topic_first_date"
+            if pf and (not m.get("topic_pool_first") or pf["date"] < m["topic_pool_first"].get("date", "9999")):
+                m["topic_pool_first"] = pf
+
+
+def fresh_date(c: dict) -> str:
+    """鮮度を数える日。topic_first_date（話題の初出）があればそれ、無ければ従来どおり announced_on → published。"""
+    return c.get("topic_first_date") or c.get("announced_on") or c.get("published", "")
+
+
+def topic_age_days(c: dict) -> int:
+    try:
+        return (datetime.now().date() - datetime.fromisoformat(fresh_date(c)[:10]).date()).days
+    except Exception:  # noqa: BLE001
+        return 999
+
+
+def _topic_line(c: dict) -> str:
+    ann = (c.get("announced_on") or c.get("published") or "")[:10]
+    if not c.get("topic_first_date"):
+        return f"話題の初出: 未計算（鮮度は発表日 {ann} から）"
+    first = c["topic_first_date"]
+    same = "＝発表日" if first == ann else f"、一次資料の発表日 {ann}"
+    return f"話題の初出: {first}（{topic_age_days(c)}日前{same}。根拠: {c.get('topic_first_source', '')}）。鮮度は初出から数える"
+
+
+def _yt_line(c: dict) -> str:
+    if c.get("yt_competitors") is None:
+        return "競合（日本語の解説動画）: 未記録"
+    q = f"、検索語 {c['yt_competitors_query']!r}" if c.get("yt_competitors_query") else ""
+    return f"競合（日本語の解説動画）: {c['yt_competitors']}本（{(c.get('yt_competitors_checked_at') or '')[:16]}記録{q}）"
 
 
 # ============================================================
@@ -1144,6 +1484,7 @@ def backfill_work(cands: list, force: bool = False):
 
 def cmd_enrich(force: bool):
     cands = load_candidates()
+    refresh_topic_ages(cands["items"])
     backfill_work(cands["items"], force)
     _save_candidates(cands)
     pool = _gate_pool(cands["items"])
@@ -1208,6 +1549,7 @@ def cmd_enrich(force: bool):
 
 def cmd_buzz(max_n: int, force: bool, remeasure_hours: float, ids: list, dry_run: bool):
     cands = load_candidates()
+    refresh_topic_ages(cands["items"])
     if ids:
         pool = [c for c in cands["items"] if c["id"] in ids]
     else:
@@ -1222,7 +1564,7 @@ def cmd_buzz(max_n: int, force: bool, remeasure_hours: float, ids: list, dry_run
 
     no_q = [c for c in pool if not c.get("jp_news_query")]
     todo = [c for c in pool if c.get("jp_news_query") and (force or ids or not recent(c))]
-    todo.sort(key=lambda c: (-freshness_score(c.get("announced_on") or c.get("published", "")), -buzz_value(c)[0]))
+    todo.sort(key=lambda c: (-freshness_score(fresh_date(c)), -buzz_value(c)[0]))
     todo = todo[:min(max_n, GNEWS_MAX_PER_RUN)]
     if no_q:
         print(f"  ※ jp_news_query が無い {len(no_q)}件は測れません（先に enrich）")
@@ -1260,28 +1602,49 @@ BREAKING_TYPES = ("research", "product_release")
 NICHE_MIN_FRESHNESS = 4
 NICHE_MIN_HYPE_DEBATE = 7
 
+# 答え合わせ候補（L2候補、2026-10-15、NEWS_REDESIGN_2026-10-15.md §3.2・§4.1 決定4=(a)）:
+# 大手の製品発表は、日本語の報道が当日〜翌日に出そろう。発表の時点で速報にはせず、数日たってから
+# 「発表の盛り vs 使った人の声・第三者の検証」で扱う。条件を満たす候補は本命・ベスト3に入れない。
+#   製品発表 かつ 日本語の独立媒体が L2_MIN_JP_OUTLETS 以上 かつ 話題の初出から L2_MIN_TOPIC_AGE_DAYS 日以上 → 「答え合わせ候補」
+#   同じ条件で初出から L2_MIN_TOPIC_AGE_DAYS 日未満 → 「再評価待ち」（ベスト3に入れない）
+# 並びの式（core）は変えない（表示の枠を分けるだけ）。段階の数字は暫定
+L2_TYPES = ("product_release",)
+L2_MIN_JP_OUTLETS = 10
+L2_MIN_TOPIC_AGE_DAYS = 2
+L2_LANE = "答え合わせ候補"
+L2_WAIT_LANE = "再評価待ち"
+L2_HEADING = "答え合わせ候補（発表から数日。使った人の声・第三者の検証を探す価値あり）"
+
+
+def is_l2_type(c: dict) -> bool:
+    return c.get("announcement_type") in L2_TYPES and (c.get("buzz_outlets") or 0) >= L2_MIN_JP_OUTLETS
+
 
 def tie_break(c: dict) -> int:
     return sum(_clamp5(c.get(k)) for k in ("hype_gap", "debate", "life_relevance"))
 
 
 def classify(cands: list) -> list:
-    """available な候補に、鮮度・core・枠（lane）・ゲートの理由・系列を付けて返す（データは書き換えない）。"""
+    """available な候補に、鮮度・core・枠（lane）・ゲートの理由・系列を付けて返す。
+    話題の初出（topic_first_date）はメモリ上で計算し直す（保存は呼び出し側。verify・buzz・check-urls が保存する）。"""
+    refresh_topic_ages(cands)
     used = used_source_urls(cands)
     rows = []
     for c in cands:
         if c.get("status") != "available":
             continue
-        fresh = freshness_score(c.get("announced_on") or c.get("published", ""))
+        fresh = freshness_score(fresh_date(c))
         gate = gate_reasons(c, used)
         bm = c.get("buzz_measured")
         if gate:
             lane = "除外"
         elif bm is None:
             lane = "未計測"
+        elif is_l2_type(c):
+            lane = L2_LANE if topic_age_days(c) >= L2_MIN_TOPIC_AGE_DAYS else L2_WAIT_LANE
         elif bm >= 3:
             lane = "本命"
-        elif age_days(c) * 24 <= BREAKING_HOURS and c.get("announcement_type") in BREAKING_TYPES:
+        elif topic_age_days(c) * 24 <= BREAKING_HOURS and c.get("announcement_type") in BREAKING_TYPES:
             lane = "速報"
         elif fresh >= NICHE_MIN_FRESHNESS and _clamp5(c.get("hype_gap")) + _clamp5(c.get("debate")) >= NICHE_MIN_HYPE_DEBATE:
             lane = "ニッチ"
@@ -1349,14 +1712,18 @@ def _print_candidate(r: dict, short: bool = False):
     c = r["c"]
     core = f"core {r['core']:3d}＝鮮度{r['fresh']}×注目{c['buzz_measured']}×関わり{stake(c)}" if r["core"] is not None \
         else f"core —（鮮度{r['fresh']}、推定なら{r['core_est']}）"
+    warn = "  ⚠️一次資料 要確認" if c.get("primary_verified", "未") is None else \
+        ("  ⚠️一次資料 未確認" if "primary_verified" not in c else "")
     print(f"[{core}｜誇張+議論+暮らし {r['tb']}｜旧加重和 {r['old']:.2f}] {c['title'][:76]}"
-          f"（{c.get('announced_on') or c.get('published')}、{c.get('genre', '?')}）" + ("  ※健康系" if c.get("health") else ""))
+          f"（{c.get('announced_on') or c.get('published')}、{c.get('genre', '?')}）" + ("  ※健康系" if c.get("health") else "")
+          + warn)
+    print(f"   {_topic_line(c)}")
     print(f"   {_buzz_line(c)}")
     for e in c.get("buzz_evidence") or []:
         print(f"     - {e['title']}（{e['outlet']}、{e['date']}）")
-    if c.get("url_status"):
-        mark = {True: "OK", False: "NG", None: "要確認"}[c.get("url_ok")]
-        print(f"   一次資料URL: {mark} — {c['url_status']}（{(c.get('url_checked_at') or '')[:10]}確認）")
+    print(f"   {_primary_line(c)}")
+    if c.get("yt_competitors") is not None or not short:
+        print(f"   {_yt_line(c)}")
     if r.get("same_series"):
         print(f"   同じ系列の候補 他{len(r['same_series'])}件: " + " ／ ".join(x['c']['title'][:40] for x in r["same_series"]))
     if short:
@@ -1374,34 +1741,73 @@ def _print_exclusions(rows: list):
     ex = [r for r in rows if r["gate"]]
     from collections import Counter
     cnt = Counter(g.split("（")[0] for r in ex for g in r["gate"])
-    print(f"ゲート（検証≥{GATE_MIN_VERIFIABILITY}・鮮度≥{GATE_MIN_FRESHNESS}・使用済み/宣伝でない）で外した候補: {len(ex)}件 "
+    print(f"ゲート（検証≥{GATE_MIN_VERIFIABILITY}・鮮度≥{GATE_MIN_FRESHNESS}（話題の初出から）・使用済み/宣伝でない・"
+          f"一次資料URLが実在しないでない）で外した候補: {len(ex)}件 "
           + "／".join(f"{k} {v}" for k, v in cnt.items()))
     for r in ex:
-        named = [g for g in r["gate"] if g.startswith(("使用済み", "宣伝"))]
+        named = [g for g in r["gate"] if g.startswith(("使用済み", "宣伝", "一次資料"))]
         if named:
             print(f"   × {r['c']['title'][:60]} — {'・'.join(named)}")
 
 
-def run_url_checks(targets: list, cands: dict):
-    """一次資料のURLを確かめて候補に保存する（1候補あたり最大3つ、2秒以上の間隔）。"""
-    first = True
+def run_url_checks(targets: list, cands: dict) -> dict:
+    """一次資料のURLを確かめて候補に保存する（verify と check-urls の共通部分。1候補あたり最大 VERIFY_MAX_URLS、
+    全体で2秒以上・同じホストには5秒以上の間隔）。primary_verified と、既存の url_ok・url_status の両方を更新する。"""
+    pacer = _HostPacer()
+    tally = {True: 0, False: 0, None: 0}
     for c in targets:
-        res = []
-        for s in (c.get("primary_sources") or [])[:3]:
-            if not s.get("url"):
-                continue
-            if not first:
-                time.sleep(URL_CHECK_INTERVAL)
-            first = False
-            res.append(check_primary_url(s["url"]))
-        if not res:
-            continue
-        oks = [x["ok"] for x in res]
-        c["url_check"] = res
-        c["url_ok"] = False if False in oks else (True if all(oks) else None)
-        c["url_status"] = " ／ ".join(f"{_host(x['url'])}: {x['status']}" for x in res)
-        c["url_checked_at"] = datetime.now().isoformat(timespec="seconds")
-        print(f"  [{ {True: 'OK', False: 'NG', None: '要確認'}[c['url_ok']] }] {c['title'][:50]} — {c['url_status']}")
+        verify_candidate(c, pacer)
+        pv = c["primary_verified"]
+        tally[pv] += 1
+        mark = {True: "OK", False: "NG", None: "要確認"}[pv]
+        print(f"  [{mark}] {c['id']} {c['title'][:50]} — {c.get('url_status') or c.get('primary_verified_note', '')}")
+    _save_candidates(cands)
+    return tally
+
+
+def cmd_verify(ids: list, all_: bool, max_n: int):
+    """score の直後に、一次資料のURLの実在を確かめる（2026-10-15）。既定は「未確認」で、一次資料以外のゲートを通る候補だけ。
+    --all は確認済みも確かめ直す。--id は指定の候補だけ（ゲートに関係なく）。話題の初出（topic_first_date）もここで計算して保存する。"""
+    cands = load_candidates()
+    refresh_topic_ages(cands["items"])
+    if ids:
+        targets = [c for c in cands["items"] if c["id"] in ids]
+        why = "指定のID"
+    else:
+        used = used_source_urls(cands["items"])
+        pool = [c for c in cands["items"] if c.get("status") == "available"
+                and not [g for g in gate_reasons(c, used) if not g.startswith("一次資料")]]
+        targets = pool if all_ else [c for c in pool if "primary_verified" not in c]
+        targets.sort(key=lambda c: (-freshness_score(fresh_date(c)), -buzz_value(c)[0]))
+        why = "一次資料以外のゲートを通る候補" + ("（確認済みも含む）" if all_ else "のうち未確認")
+        if len(targets) > max_n:
+            print(f"  対象が{len(targets)}件あるため、新しい順に{max_n}件だけ確かめます（残りは次回）")
+            targets = targets[:max_n]
+    n_url = sum(min(len([s for s in c.get("primary_sources") or [] if s.get("url")]), VERIFY_MAX_URLS) for c in targets)
+    print(f"一次資料の実在確認: {len(targets)}件・URL {n_url}件（{why}。間隔{URL_CHECK_INTERVAL}秒、同じホストは{VERIFY_SAME_HOST_INTERVAL}秒）")
+    if not targets:
+        _save_candidates(cands)
+        return
+    t = run_url_checks(targets, cands)
+    print(f"\n確認済み {t[True]}・実在しない {t[False]}（ゲートで除外）・要確認 {t[None]}（{CANDIDATES_JSON.name} に保存）")
+
+
+def cmd_yt(ids: list, count, query: str):
+    """朝の YouTube 確認（ケースC）で数えた、日本語の解説動画の本数を記録する（手入力、2026-10-15）。YouTube API は使わない。"""
+    if not ids or count is None:
+        sys.exit("yt: --id ID と --count N（日本語の解説動画の本数。分からなければ記録しない）を指定してください")
+    if count < 0:
+        sys.exit("yt: --count は0以上")
+    cands = load_candidates()
+    hit = [c for c in cands["items"] if c["id"] in ids]
+    if not hit:
+        sys.exit(f"yt: 候補が見つかりません: {ids}")
+    now = datetime.now().isoformat(timespec="seconds")
+    for c in hit:
+        c["yt_competitors"], c["yt_competitors_checked_at"] = int(count), now
+        if query:
+            c["yt_competitors_query"] = query
+        print(f"  {c['id']} 競合 {count}本を記録  {c['title'][:50]}")
     _save_candidates(cands)
 
 
@@ -1413,12 +1819,13 @@ def cmd_check_urls(ids: list, top: int):
         rows = classify(cands["items"])
         picks, _ = best3(rows)
         honmei = collapse_series(_sorted_core([r for r in rows if r["lane"] == "本命"]))[:top]
+        l2 = collapse_series(_sorted_core([r for r in rows if r["lane"] == L2_LANE]))[:3]
         seen, targets = set(), []
-        for r in picks + honmei:
+        for r in picks + honmei + l2:
             if r["c"]["id"] not in seen:
                 seen.add(r["c"]["id"])
                 targets.append(r["c"])
-    print(f"一次資料のURLを確認: {len(targets)}件（" + ("指定のID" if ids else "ベスト3・本命枠") + "）")
+    print(f"一次資料のURLを確認: {len(targets)}件（" + ("指定のID" if ids else "ベスト3・本命枠・答え合わせ候補") + "）")
     run_url_checks(targets, cands)
 
 
@@ -1435,6 +1842,9 @@ def cmd_list(top: int, check_urls: bool):
         print(f"   ※ 本命枠の条件を満たす候補が{len(picks)}件しかない（3件に満たないまま出す）")
     for r in picks:
         _print_candidate(r, short=True)
+    unv = [r for r in picks if r["c"].get("primary_verified", "未") is None or "primary_verified" not in r["c"]]
+    if unv:
+        print(f"   ⚠️ 一次資料が「要確認」または未確認の候補が{len(unv)}件: ブラウザか WebFetch で開いて確かめてから提示する")
     if niche_extra:
         print("   ＋ ニッチ枠から入れるならこの1件（注目度は低い）:")
         _print_candidate(niche_extra, short=True)
@@ -1443,6 +1853,18 @@ def cmd_list(top: int, check_urls: bool):
     print(f"\n==== 本命（ゲート通過・実測の注目度≥3、core の順）: {len(honmei)}系列 ====")
     for r in honmei[:top]:
         _print_candidate(r)
+    l2 = collapse_series(_sorted_core([r for r in rows if r["lane"] == L2_LANE]))
+    print(f"\n==== {L2_HEADING}: {len(l2)}系列 ====")
+    print(f"   条件: 製品発表・日本語の独立媒体{L2_MIN_JP_OUTLETS}以上・話題の初出から{L2_MIN_TOPIC_AGE_DAYS}日以上。"
+          "本命・ベスト3には入れない（発表の紹介ではなく、発表の盛り vs 使った人の声・第三者の検証で扱う）")
+    for r in l2[:top]:
+        _print_candidate(r)
+    wait = collapse_series(_sorted_core([r for r in rows if r["lane"] == L2_WAIT_LANE]))
+    if wait:
+        print(f"\n==== {L2_WAIT_LANE}（大手の製品発表、初出から{L2_MIN_TOPIC_AGE_DAYS}日未満。速報にせず、"
+              f"{L2_MIN_TOPIC_AGE_DAYS}日後に答え合わせ候補として見直す）: {len(wait)}系列 ====")
+        for r in wait[:top]:
+            _print_candidate(r, short=True)
     niche = collapse_series(_sorted_core([r for r in rows if r["lane"] == "ニッチ"]))
     print(f"\n==== ニッチ（鮮度≥{NICHE_MIN_FRESHNESS}・実測1〜2・誇張+議論≥{NICHE_MIN_HYPE_DEBATE}。注目度は低い）: {len(niche)}件 ====")
     for r in niche[:top]:
@@ -1481,6 +1903,11 @@ def cmd_slack(note_path: str):
         d = (c.get("announced_on") or c.get("published") or "")[:10]
         return f"{int(d[5:7])}/{int(d[8:10])}発表" if len(d) >= 10 else ""
 
+    def first(c):
+        f = c.get("topic_first_date") or ""
+        d = (c.get("announced_on") or c.get("published") or "")[:10]
+        return f"初出{int(f[5:7])}/{int(f[8:10])}" if len(f) >= 10 and f != d else ""
+
     def card(i, r):
         c = r["c"]
         gi = gen.get(c.get("genre"), {})
@@ -1488,11 +1915,17 @@ def cmd_slack(note_path: str):
         title = title if len(title) <= 60 else title[:59] + "…"
         buzz = (f"注目{c['buzz_measured']}（{c.get('buzz_outlets', 0)}媒体"
                 f"{'・Yahoo!' if c.get('yahoo') else ''}）") if c.get("buzz_measured") is not None else "注目 未計測"
-        meta = " ・ ".join(x for x in [f"{gi.get('icon', '')}{gi.get('label', c.get('genre', '?'))}", day(c), buzz,
+        meta = " ・ ".join(x for x in [f"{gi.get('icon', '')}{gi.get('label', c.get('genre', '?'))}", day(c), first(c), buzz,
                                        "健康系" if c.get("health") else ""] if x)
-        mark = {True: "✅", False: "❌", None: "⚠️"}[c.get("url_ok")] if c.get("url_status") else "⚠️"
-        label = {True: "OK", False: "リンク切れ", None: "要確認"}[c.get("url_ok")] if c.get("url_status") else "未確認"
-        src = (c.get("primary_sources") or [{}])[0].get("url", "")
+        if "primary_verified" in c:     # 2026-10-15: verify の結果（1件でも開ければ確認済み）
+            pv = c["primary_verified"]
+            mark, label = {True: ("✅", "確認済み"), False: ("❌", "実在しない"), None: ("⚠️", "要確認")}[pv]
+            ok_src = [x["url"] for x in c.get("primary_check") or [] if x.get("ok")]
+            src = ok_src[0] if ok_src else (c.get("primary_sources") or [{}])[0].get("url", "")
+        else:
+            mark = {True: "✅", False: "❌", None: "⚠️"}[c.get("url_ok")] if c.get("url_status") else "⚠️"
+            label = {True: "OK", False: "リンク切れ", None: "要確認"}[c.get("url_ok")] if c.get("url_status") else "未確認"
+            src = (c.get("primary_sources") or [{}])[0].get("url", "")
         link = f"<{src}|一次資料 {label}>" if src else f"一次資料 {label}"
         ev = c.get("expected_verdicts") or {}
         verdict = (f"大輔 {vname.get(ev.get('dreamer'), '?')} ／ 沙織 {vname.get(ev.get('skeptic'), '?')}") if ev else ""
@@ -1522,6 +1955,20 @@ def cmd_slack(note_path: str):
     if niche:
         blocks.append({"type": "divider"})
         blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": "ニッチ（注目度は低い）: " + esc(niche["c"]["title"][:60])}]})
+    l2 = collapse_series(_sorted_core([r for r in rows if r["lane"] == L2_LANE]))[:3]
+    if l2:
+        blocks.append({"type": "divider"})
+        blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": (
+            f"*{L2_HEADING}*\n" + "\n".join(
+                f"・{esc(r['c']['title'][:40])}（{first(r['c']) or day(r['c'])}、{r['c'].get('buzz_outlets', 0)}媒体"
+                + ("、⚠️一次資料 要確認" if r["c"].get("primary_verified", "未") is None else "") + "）" for r in l2))[:2900]}]})
+    wait = [r for r in rows if r["lane"] == L2_WAIT_LANE][:3]
+    if wait:
+        blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": f"再評価待ち（大手の製品発表、{L2_MIN_TOPIC_AGE_DAYS}日後に答え合わせ候補へ）: "
+                                                       + " ／ ".join(esc(r["c"]["title"][:28]) for r in wait)}]})
+    n_false = sum(1 for r in rows if r["c"].get("primary_verified") is False)
+    if n_false:
+        blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": f"一次資料URLが実在しない（全URLが404）ため除外: {n_false}件"}]})
     brk = [r for r in rows if r["lane"] == "速報"][:3]
     if brk:
         blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": "速報（48時間後に再計測）: " + " ／ ".join(esc(r["c"]["title"][:28]) for r in brk)}]})
@@ -1529,7 +1976,7 @@ def cmd_slack(note_path: str):
     print(json.dumps({"text": "KL ネタ ベスト3の下書き", "blocks": blocks}, ensure_ascii=False))
 
 
-LANE_ORDER = {"本命": 0, "速報": 1, "ニッチ": 2, "注目度低": 3, "未計測": 4}
+LANE_ORDER = {"本命": 0, L2_LANE: 1, "速報": 2, L2_WAIT_LANE: 3, "ニッチ": 4, "注目度低": 5, "未計測": 6}
 
 
 def cmd_list_by_genre(per: int):
@@ -1542,7 +1989,9 @@ def cmd_list_by_genre(per: int):
                                                              r["c"].get("buzz_outlets") or 0),
                                       reverse=True))
         nh = sum(1 for r in mine if r["lane"] == "本命")
-        print(f"\n==== {g['genres'][key]['label']}（{key}）— ゲート通過{len(mine)}系列（うち本命{nh}） ====")
+        nl2 = sum(1 for r in mine if r["lane"] == L2_LANE)
+        print(f"\n==== {g['genres'][key]['label']}（{key}）— ゲート通過{len(mine)}系列（うち本命{nh}"
+              + (f"、{L2_LANE}{nl2}" if nl2 else "") + "） ====")
         if not mine:
             print("   （ゲートを通る候補なし。collect/score を増やす必要あり）")
         elif nh == 0:
@@ -1554,13 +2003,18 @@ def cmd_list_by_genre(per: int):
 
 def main():
     ap = argparse.ArgumentParser(description="ニュース起点のネタ選定（collect → score → tag → enrich → buzz → list）")
-    ap.add_argument("command", choices=["collect", "score", "list", "tag", "enrich", "buzz", "check-urls", "slack"])
+    ap.add_argument("command", choices=["collect", "score", "verify", "list", "tag", "enrich", "buzz", "check-urls", "slack", "yt"])
     ap.add_argument("--days", type=int, default=21)
     ap.add_argument("--top", type=int, default=15)
     ap.add_argument("--by-genre", action="store_true", help="list: 5ジャンルごとに上位を出す（--top はジャンルあたりの件数）")
     ap.add_argument("--check-urls", action="store_true", help="list: ベスト3・本命枠の一次資料URLを確認してから出す（ソフト404も検出）")
-    ap.add_argument("--max", type=int, default=GNEWS_MAX_PER_RUN, help=f"buzz: 1回で測る上限（最大{GNEWS_MAX_PER_RUN}）")
-    ap.add_argument("--id", nargs="*", default=[], help="buzz / check-urls: 対象の候補ID（指定するとゲートに関係なく測る・確かめる）")
+    ap.add_argument("--max", type=int, default=None,
+                    help=f"buzz: 1回で測る上限（既定・最大{GNEWS_MAX_PER_RUN}） / verify: 確かめる候補の上限（既定{VERIFY_DEFAULT_MAX}）")
+    ap.add_argument("--id", nargs="*", default=[],
+                    help="buzz / check-urls / verify / yt: 対象の候補ID（指定するとゲートに関係なく測る・確かめる）")
+    ap.add_argument("--all", action="store_true", help="verify: 確認済みの候補も確かめ直す（既定は未確認だけ）")
+    ap.add_argument("--count", type=int, default=None, help="yt: 日本語の解説動画の本数（手で数えた値）")
+    ap.add_argument("--query", default="", help="yt: YouTube で検索した語（任意、記録用）")
     ap.add_argument("--force", action="store_true", help="enrich: 付与済みも付け直す / buzz: 最近測った候補も測り直す")
     ap.add_argument("--remeasure-hours", type=float, default=24, help="buzz: これより最近に測った候補は飛ばす（既定24時間）")
     ap.add_argument("--dry-run", action="store_true", help="buzz: 測るが保存しない / score: 採点する候補を表示するだけ（課金なし）")
@@ -1579,7 +2033,11 @@ def main():
     elif args.command == "enrich":
         cmd_enrich(args.force)
     elif args.command == "buzz":
-        cmd_buzz(args.max, args.force, args.remeasure_hours, args.id, args.dry_run)
+        cmd_buzz(args.max or GNEWS_MAX_PER_RUN, args.force, args.remeasure_hours, args.id, args.dry_run)
+    elif args.command == "verify":
+        cmd_verify(args.id, args.all, args.max or VERIFY_DEFAULT_MAX)
+    elif args.command == "yt":
+        cmd_yt(args.id, args.count, args.query)
     elif args.command == "check-urls":
         cmd_check_urls(args.id, args.top)
     elif args.by_genre:

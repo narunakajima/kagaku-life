@@ -47,7 +47,11 @@
       "scored_at": "2026-10-04",
       "genre": "medical",
       "health": true,
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-09-04",
+      "topic_first_source": "候補 685a0642af のannounced_on（This protective enzyme could h）",
+      "topic_series": "685a0642af",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Leucine does more than build muscle. It powers up your cells",
@@ -95,7 +99,11 @@
       "scored_at": "2026-10-04",
       "genre": "food_health",
       "health": true,
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2025-10-31",
+      "topic_first_source": "候補 a13eaa4abe のannounced_on（Leucine does more than build m）",
+      "topic_series": "a13eaa4abe",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Your gut may be making a molecule that raises Alzheimer’s risk",
@@ -143,7 +151,11 @@
       "scored_at": "2026-10-04",
       "genre": "food_health",
       "health": true,
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-06-26",
+      "topic_first_source": "候補 a5391f26c2 のannounced_on（Your gut may be making a molec）",
+      "topic_series": "a5391f26c2",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Vitamin C linked to fewer deaths in blood disorder trial",
@@ -203,7 +215,11 @@
       "buzz_error": "0件（検索語が合っていない可能性）",
       "buzz_error_at": "2026-10-12T09:00:04",
       "jp_usable": 2,
-      "work_relevance": 1
+      "work_relevance": 1,
+      "topic_first_date": "2026-09-21",
+      "topic_first_source": "候補 12211de857 のannounced_on（Vitamin C linked to fewer deat）",
+      "topic_series": "evita-vitaminc",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Toward provably private learning from federated data",
@@ -276,7 +292,11 @@
       "buzz_query": "Google 連合学習",
       "buzz_measured_at": "2026-10-12T08:12:38",
       "jp_usable": 4,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-10-02",
+      "topic_first_source": "候補 b9b18411de のannounced_on（Toward provably private learni）",
+      "topic_series": "google-federated-tee",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Computational tools for society’s most complex challenges",
@@ -319,7 +339,17 @@
       "scored_at": "2026-10-04",
       "genre": "ai",
       "health": false,
-      "buzz_jp_est": 1
+      "buzz_jp_est": 1,
+      "topic_first_date": "2026-10-02",
+      "topic_first_source": "候補 84b251b19c のannounced_on（Computational tools for societ）",
+      "topic_series": "84b251b19c",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-02",
+        "title": "Computational tools for society’s most complex challenges",
+        "id": "84b251b19c",
+        "source": "MIT News AI"
+      }
     },
     {
       "title": "Weak sunlight can still damage your DNA, scientists warn",
@@ -367,7 +397,11 @@
       "scored_at": "2026-10-04",
       "genre": "food_health",
       "health": true,
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-06-29",
+      "topic_first_source": "候補 c0e32b3f8a のannounced_on（Weak sunlight can still damage）",
+      "topic_series": "c0e32b3f8a",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Cancer stem cells have an “energy addiction” scientists may be able to exploit",
@@ -410,7 +444,11 @@
       "scored_at": "2026-10-04",
       "genre": "medical",
       "health": true,
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-07-21",
+      "topic_first_source": "候補 161544d017 のannounced_on（Cancer stem cells have an “ene）",
+      "topic_series": "161544d017",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Even one strength training session a week could make a difference",
@@ -484,7 +522,46 @@
       "buzz_measured_at": "2026-10-14T07:49:40",
       "buzz_query": "ニューカッスル大学 筋トレ",
       "jp_usable": 5,
-      "work_relevance": 1
+      "work_relevance": 1,
+      "topic_first_date": "2026-10-02",
+      "topic_first_source": "候補 5b1e0146a0 のannounced_on（Even one strength training ses）",
+      "topic_series": "newcastle-strength-training",
+      "freshness_basis": "topic_first_date",
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "ok": true,
+          "status": "DOI実在（ハンドルAPI、10.1093/ageing/afac003）",
+          "url": "https://doi.org/10.1093/ageing/afac003",
+          "method": "doi_handle",
+          "kind": "paper"
+        },
+        {
+          "url": "https://theconversation.com",
+          "ok": true,
+          "status": "HTTP 200「The Conversation: In-depth ana」",
+          "page_title": "The Conversation: In-depth analysis, research, news and ideas from leading academics and researchers.",
+          "anchor_hit": false,
+          "method": "http",
+          "kind": "official_blog"
+        }
+      ],
+      "primary_verified_at": "2026-10-15T11:03:58",
+      "url_check": [
+        {
+          "url": "https://doi.org/10.1093/ageing/afac003",
+          "ok": true,
+          "status": "DOI実在（ハンドルAPI、10.1093/ageing/afac003）"
+        },
+        {
+          "url": "https://theconversation.com",
+          "ok": true,
+          "status": "HTTP 200「The Conversation: In-depth ana」"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "doi.org: DOI実在（ハンドルAPI、10.1093/ageing/afac003） ／ theconversation.com: HTTP 200「The Conversation: In-depth ana」",
+      "url_checked_at": "2026-10-15T11:03:58"
     },
     {
       "title": "Scientists may have found a “unifying theory” of chronic fatigue",
@@ -532,7 +609,11 @@
       "scored_at": "2026-10-04",
       "genre": "medical",
       "health": true,
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-08-22",
+      "topic_first_source": "候補 3c1c18b6ce のannounced_on（Scientists may have found a “u）",
+      "topic_series": "3c1c18b6ce",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Inside Omron’s next-generation LD mobile robots",
@@ -580,7 +661,11 @@
       "scored_at": "2026-10-04",
       "genre": "life_tech",
       "health": false,
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-06-09",
+      "topic_first_source": "候補 71461f9591 のannounced_on（Inside Omron’s next-generation）",
+      "topic_series": "71461f9591",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Runway introduces Praxis-1 world action model for robotics",
@@ -640,7 +725,11 @@
       "buzz_error": "0件（検索語が合っていない可能性）",
       "buzz_error_at": "2026-10-12T08:12:11",
       "jp_usable": 1,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-09-30",
+      "topic_first_source": "候補 013398c4f7 のannounced_on（Runway introduces Praxis-1 wor）",
+      "topic_series": "runway-praxis-1",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "New tool lets users repair AI-generated 3D models, then fabricate them just the way they want",
@@ -699,7 +788,17 @@
       "buzz_error": "0件（検索語が合っていない可能性）",
       "buzz_error_at": "2026-10-12T08:12:11",
       "jp_usable": 2,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-10-01",
+      "topic_first_source": "候補 487a3c06f8 のannounced_on（New tool lets users repair AI-）",
+      "topic_series": "mit-instructmesh",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-01",
+        "title": "New tool lets users repair AI-generated 3D models, then fabricate them just the way they want",
+        "id": "487a3c06f8",
+        "source": "MIT News AI"
+      }
     },
     {
       "title": "This light-powered AI can spot deepfakes with nearly 98% accuracy",
@@ -772,7 +871,17 @@
       "buzz_measured_at": "2026-10-11T20:44:15",
       "buzz_query": "UCLA ディープフェイク 光",
       "jp_usable": 1,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-09-23",
+      "topic_first_source": "候補 948beaea7c のannounced_on（This light-powered AI can spot）",
+      "topic_series": "ucla-optical-deepfake",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-01",
+        "title": "This light-powered AI can spot deepfakes with nearly 98% accuracy",
+        "id": "948beaea7c",
+        "source": "ScienceDaily AI"
+      }
     },
     {
       "title": "This diet may slow brain aging by 2.5 years",
@@ -815,7 +924,11 @@
       "scored_at": "2026-10-04",
       "genre": "food_health",
       "health": true,
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-03-17",
+      "topic_first_source": "候補 c0723ecdb4 のannounced_on（This diet may slow brain aging）",
+      "topic_series": "c0723ecdb4",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Diet drinks work as well as water for weight loss, major trial finds",
@@ -864,7 +977,11 @@
       "genre": "food_health",
       "health": true,
       "used_in": "kl035",
-      "buzz_jp_est": 4
+      "buzz_jp_est": 4,
+      "topic_first_date": "2026-09-29",
+      "topic_first_source": "候補 126402604b のannounced_on（Diet drinks work as well as wa）",
+      "topic_series": "126402604b",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Your gut bacteria may reveal how fast your brain is aging",
@@ -907,7 +1024,11 @@
       "scored_at": "2026-10-05",
       "genre": "food_health",
       "health": true,
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-09-09",
+      "topic_first_source": "候補 2387d0cbec のannounced_on（Your gut bacteria may reveal h）",
+      "topic_series": "2387d0cbec",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "This common vitamin could help fight one of the deadliest brain cancers",
@@ -955,7 +1076,11 @@
       "scored_at": "2026-10-05",
       "genre": "medical",
       "health": true,
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2025-11-28",
+      "topic_first_source": "候補 43b71f5b01 のannounced_on（This common vitamin could help）",
+      "topic_series": "43b71f5b01",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Vitamin D drug may help crack pancreatic cancer’s protective shield",
@@ -1003,7 +1128,11 @@
       "scored_at": "2026-10-05",
       "genre": "medical",
       "health": true,
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-05-25",
+      "topic_first_source": "候補 45b720c006 のannounced_on（Vitamin D drug may help crack ）",
+      "topic_series": "45b720c006",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Chatham scales its capital markets expertise with OpenAI",
@@ -1046,7 +1175,11 @@
       "scored_at": "2026-10-05",
       "genre": "ai",
       "health": false,
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-10-02",
+      "topic_first_source": "候補 a97398f76e のannounced_on（Chatham scales its capital mar）",
+      "topic_series": "a97398f76e",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "NVIDIA DGX Spark 64GB Gives Developers More Ways to Build and Scale Local AI",
@@ -1143,7 +1276,11 @@
       "url_status": "blogs.nvidia.com: HTTP 200「NVIDIA DGX Spark 64GB Gives De」 ／ nvidia.com: HTTP 200「Personal AI Supercomputer Powe」",
       "url_checked_at": "2026-10-12T08:14:21",
       "jp_usable": 1,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-10-02",
+      "topic_first_source": "候補 1f284fec3a のannounced_on（NVIDIA DGX Spark 64GB Gives De）",
+      "topic_series": "nvidia-dgx-spark",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Nearly 6 in 10 people with high blood pressure don’t know they have it",
@@ -1210,7 +1347,11 @@
       "buzz_query": "Our Future Health",
       "buzz_measured_at": "2026-10-14T07:50:09",
       "jp_usable": 4,
-      "work_relevance": 1
+      "work_relevance": 1,
+      "topic_first_date": "2026-09-23",
+      "topic_first_source": "候補 b6eec4889a のannounced_on（Nearly 6 in 10 people with hig）",
+      "topic_series": "oxford-hypertension",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "How Albertsons Companies is reimagining retail from the inside out",
@@ -1253,7 +1394,11 @@
       "scored_at": "2026-10-05",
       "genre": "ai",
       "health": false,
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-10-01",
+      "topic_first_source": "候補 a80484c2d5 のannounced_on（How Albertsons Companies is re）",
+      "topic_series": "a80484c2d5",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "The Den frees up 10-15 hours a week to grow with ChatGPT Work",
@@ -1296,7 +1441,11 @@
       "scored_at": "2026-10-05",
       "genre": "ai",
       "health": false,
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-10-01",
+      "topic_first_source": "候補 3bba527585 のannounced_on（The Den frees up 10-15 hours a）",
+      "topic_series": "3bba527585",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Alzheimer’s risk gene APOE4 may have a reversible weakness",
@@ -1363,7 +1512,11 @@
       "buzz_query": "マウントサイナイ",
       "buzz_measured_at": "2026-10-14T07:50:14",
       "jp_usable": 2,
-      "work_relevance": 1
+      "work_relevance": 1,
+      "topic_first_date": "2026-09-24",
+      "topic_first_source": "候補 c5a8a7cd74 のannounced_on（Alzheimer’s risk gene APOE4 ma）",
+      "topic_series": "mountsinai-apoe4",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Could quitting ultra-processed food boost your mental health?",
@@ -1431,7 +1584,11 @@
       "buzz_measured_at": "2026-10-14T07:50:17",
       "buzz_query": "UCSF 超加工食品",
       "jp_usable": 3,
-      "work_relevance": 1
+      "work_relevance": 1,
+      "topic_first_date": "2026-09-23",
+      "topic_first_source": "候補 4967563e17 のannounced_on（Could quitting ultra-processed）",
+      "topic_series": "ucsf-upf-depression",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "1 in 13 adults under 30 already had hidden artery plaque",
@@ -1479,7 +1636,11 @@
       "scored_at": "2026-10-05",
       "genre": "food_health",
       "health": true,
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-08-29",
+      "topic_first_source": "候補 70e8a6a275 のannounced_on（1 in 13 adults under 30 alread）",
+      "topic_series": "70e8a6a275",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "This common mistake can add nearly 7 points to your blood pressure reading",
@@ -1527,7 +1688,11 @@
       "scored_at": "2026-10-05",
       "genre": "food_health",
       "health": true,
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2024-10-07",
+      "topic_first_source": "候補 a27cc8bd52 のannounced_on（This common mistake can add ne）",
+      "topic_series": "a27cc8bd52",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Boston Dynamics drops pinkie on new humanoid hand",
@@ -1571,7 +1736,11 @@
       "used_in": "kl033",
       "genre": "humanoid",
       "health": false,
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-10-01",
+      "topic_first_source": "候補 147d35dd51 のannounced_on（Boston Dynamics drops pinkie o）",
+      "topic_series": "147d35dd51",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "ANYbotics launches Shift to streamline robot fleet operations, scale inspections",
@@ -1639,7 +1808,11 @@
       "buzz_query": "ANYbotics",
       "buzz_measured_at": "2026-10-12T08:13:10",
       "jp_usable": 1,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-10-01",
+      "topic_first_source": "候補 7d547966b7 のannounced_on（ANYbotics launches Shift to st）",
+      "topic_series": "anybotics-shift",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "From Scan to Treatment Plan, AI Helps Close Breast Cancer’s Deadliest Gaps",
@@ -1708,7 +1881,17 @@
       "buzz_measured_at": "2026-10-14T07:49:43",
       "buzz_query": "NVIDIA 乳がん",
       "jp_usable": 1,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-10-05",
+      "topic_first_source": "候補 c2f51f56b8 のannounced_on（From Scan to Treatment Plan, A）",
+      "topic_series": "nvidia-breast-cancer-ai",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-05",
+        "title": "From Scan to Treatment Plan, AI Helps Close Breast Cancer’s Deadliest Gaps",
+        "id": "c2f51f56b8",
+        "source": "NVIDIA Blog"
+      }
     },
     {
       "title": "Scientists reveal what seven days of fasting does to the human body",
@@ -1756,7 +1939,11 @@
       "scored_at": "2026-10-06",
       "genre": "food_health",
       "health": true,
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2024-03-01",
+      "topic_first_source": "候補 ed6df4348f のannounced_on（Scientists reveal what seven d）",
+      "topic_series": "ed6df4348f",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Vagus Nerve Stimulation Could Help New Skills Stick",
@@ -1804,7 +1991,11 @@
       "scored_at": "2026-10-06",
       "genre": "food_health",
       "health": true,
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-08-25",
+      "topic_first_source": "候補 3f4cf9f981 のannounced_on（Vagus Nerve Stimulation Could ）",
+      "topic_series": "3f4cf9f981",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Scientists just found a way to fight lung cancer and muscle wasting at the same time",
@@ -1847,7 +2038,11 @@
       "scored_at": "2026-10-06",
       "genre": "medical",
       "health": true,
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-03-26",
+      "topic_first_source": "候補 c71270c620 のannounced_on（Scientists just found a way to）",
+      "topic_series": "c71270c620",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Cancer-fighting t cells burn out. Scientists may have found a fix",
@@ -1895,7 +2090,11 @@
       "scored_at": "2026-10-06",
       "genre": "medical",
       "health": true,
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-07-21",
+      "topic_first_source": "候補 a71812dfb0 のannounced_on（Cancer-fighting t cells burn o）",
+      "topic_series": "a71812dfb0",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Easing constipation: A 20-minute walk can get your gut moving almost immediately",
@@ -1938,7 +2137,11 @@
       "scored_at": "2026-10-06",
       "genre": "food_health",
       "health": true,
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2025-09-29",
+      "topic_first_source": "候補 845ab2feb1 のannounced_on（Easing constipation: A 20-minu）",
+      "topic_series": "845ab2feb1",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "テレビとAIを活用した「介護向けAIトレーナー」の特別養護老人ホーム実証開始",
@@ -2016,7 +2219,11 @@
       "url_status": "corporate.jp.sharp: HTTP 200「AIとテレビを活用した「介護向けAIトレーナー」の実証を介護」",
       "url_checked_at": "2026-10-12T09:01:06",
       "jp_usable": 3,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-10-05",
+      "topic_first_source": "候補 84aa43a0dc のannounced_on（テレビとAIを活用した「介護向けAIトレーナー」の特別養護老）",
+      "topic_series": "sharp-nursing-ai",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "スマートペイロードがロボットやUAVの自律飛行・任務を誘導する特許技術を取得",
@@ -2084,7 +2291,11 @@
       "buzz_measured_at": "2026-10-11T20:43:24",
       "buzz_query": "XTEND スマートペイロード",
       "jp_usable": 1,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-10-05",
+      "topic_first_source": "候補 847e3410e7 のannounced_on（スマートペイロードがロボットやUAVの自律飛行・任務を誘導す）",
+      "topic_series": "xtend-smart-payload",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Atlas Robot’s New Hand May Outperform Humanlike Designs",
@@ -2132,7 +2343,17 @@
       "scored_at": "2026-10-06",
       "genre": "humanoid",
       "health": false,
-      "buzz_jp_est": 4
+      "buzz_jp_est": 4,
+      "topic_first_date": "2026-10-01",
+      "topic_first_source": "候補 73878f3795 のannounced_on（Atlas Robot’s New Hand May Out）",
+      "topic_series": "73878f3795",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-01",
+        "title": "Atlas Robot’s New Hand May Outperform Humanlike Designs",
+        "id": "73878f3795",
+        "source": "IEEE Spectrum Robotics"
+      }
     },
     {
       "title": "人型ロボット「Atlas」向け新世代高器用ハンド（13自由度・4本指）の発表",
@@ -2180,7 +2401,11 @@
       "scored_at": "2026-10-06",
       "genre": "humanoid",
       "health": false,
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-10-01",
+      "topic_first_source": "候補 9f1befcf7a のannounced_on（人型ロボット「Atlas」向け新世代高器用ハンド（13自由度）",
+      "topic_series": "9f1befcf7a",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "臨床・医療音声に特化した高精度音声認識モデル「Scribe v2 Medical」正式提供開始",
@@ -2258,7 +2483,11 @@
       "buzz_measured_at": "2026-10-11T20:44:33",
       "buzz_query": "ElevenLabs Scribe v2 Medical",
       "jp_usable": 1,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-09-22",
+      "topic_first_source": "候補 6454cb3c43 のannounced_on（臨床・医療音声に特化した高精度音声認識モデル「Scribe ）",
+      "topic_series": "elevenlabs-scribe-v2",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "初診予約専用「AI電話システム」の本格運用開始",
@@ -2301,7 +2530,11 @@
       "scored_at": "2026-10-06",
       "genre": "ai",
       "health": false,
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-08-31",
+      "topic_first_source": "候補 3a5b7fcd52 のannounced_on（初診予約専用「AI電話システム」の本格運用開始）",
+      "topic_series": "3a5b7fcd52",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "MIT Transit Lab to develop an AI platform for public transit agencies",
@@ -2356,7 +2589,17 @@
       "buzz_error": "0件（検索語が合っていない可能性）",
       "buzz_error_at": "2026-10-12T08:12:11",
       "jp_usable": 1,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-09-30",
+      "topic_first_source": "候補 9f49b513f8 のannounced_on（MIT Transit Lab to develop an ）",
+      "topic_series": "mit-transit-lab-ptiq",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-09-30",
+        "title": "MIT Transit Lab to develop an AI platform for public transit agencies",
+        "id": "9f49b513f8",
+        "source": "MIT News AI"
+      }
     },
     {
       "title": "This game-playing AI is the new champ at Stratego",
@@ -2429,7 +2672,17 @@
       "buzz_measured_at": "2026-10-11T20:43:52",
       "buzz_query": "Ataraxos ストラテゴ",
       "jp_usable": 1,
-      "work_relevance": 1
+      "work_relevance": 1,
+      "topic_first_date": "2026-09-30",
+      "topic_first_source": "候補 ea039df066 のannounced_on（This game-playing AI is the ne）",
+      "topic_series": "mit-ataraxos-stratego",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-09-30",
+        "title": "This game-playing AI is the new champ at Stratego",
+        "id": "ea039df066",
+        "source": "MIT News AI"
+      }
     },
     {
       "title": "Cannabis users were twice as likely to commit violence, review finds",
@@ -2497,7 +2750,11 @@
       "buzz_query": "キングス・カレッジ・ロンドン",
       "buzz_measured_at": "2026-10-12T08:13:35",
       "jp_usable": 2,
-      "work_relevance": 1
+      "work_relevance": 1,
+      "topic_first_date": "2026-09-24",
+      "topic_first_source": "候補 1314630024 のannounced_on（Cannabis users were twice as l）",
+      "topic_series": "kcl-cannabis-violence",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Mulberry may reshape gut bacteria and influence metabolism",
@@ -2540,7 +2797,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-06-29",
+      "topic_first_source": "候補 4df944036d のannounced_on（Mulberry may reshape gut bacte）",
+      "topic_series": "4df944036d",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Creatine may help build muscle even without exercise, researchers find",
@@ -2601,7 +2862,11 @@
       "buzz_measured_at": "2026-10-14T07:50:20",
       "buzz_query": "クレアチン 筋肉",
       "jp_usable": 3,
-      "work_relevance": 1
+      "work_relevance": 1,
+      "topic_first_date": "2026-09-29",
+      "topic_first_source": "候補 b4b81bbd5c のannounced_on（Creatine may help build muscle）",
+      "topic_series": "creatine-muscle-no-exercise",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "院内閉域で会話からカルテ・看護記録の下書きを自動作成する「Kairion Scribe for medicine」発売",
@@ -2644,7 +2909,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-09-30",
+      "topic_first_source": "候補 f2e83a73e6 のannounced_on（院内閉域で会話からカルテ・看護記録の下書きを自動作成する「K）",
+      "topic_series": "f2e83a73e6",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Introducing GPT-6.1 Sol",
@@ -2742,7 +3011,17 @@
       "url_status": "openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ developers.openai.com: HTTP 200「GPT-6.1 Sol Model | OpenAI API」",
       "url_checked_at": "2026-10-12T08:14:16",
       "jp_usable": 1,
-      "work_relevance": 3
+      "work_relevance": 3,
+      "topic_first_date": "2026-09-29",
+      "topic_first_source": "候補 dd66acaed2 のannounced_on（Introducing GPT-6.1 Sol）",
+      "topic_series": "90995f7dbc",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-09-29",
+        "title": "Introducing GPT-6.1 Sol",
+        "id": "dd66acaed2",
+        "source": "OpenAI"
+      }
     },
     {
       "title": "Introducing dots",
@@ -2786,7 +3065,11 @@
       "excluded_reason": "",
       "scored_at": "2026-10-06",
       "used_in": "kl034",
-      "buzz_jp_est": 5
+      "buzz_jp_est": 5,
+      "topic_first_date": "2026-09-29",
+      "topic_first_source": "候補 884977ecb8 のannounced_on（Introducing dots）",
+      "topic_series": "884977ecb8",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "How Diffusion Controller unifies and simplifies AI image generation",
@@ -2847,7 +3130,17 @@
       "buzz_query": "Google Diffusion",
       "buzz_measured_at": "2026-10-12T08:12:52",
       "jp_usable": 1,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-09-29",
+      "topic_first_source": "候補 105e76d8cd のannounced_on（How Diffusion Controller unifi）",
+      "topic_series": "google-diffusion-controller",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-09-29",
+        "title": "How Diffusion Controller unifies and simplifies AI image generation",
+        "id": "105e76d8cd",
+        "source": "Google Research"
+      }
     },
     {
       "title": "The effects of an “algorithmic monoculture” depend on the details",
@@ -2946,7 +3239,17 @@
       "url_status": "news.mit.edu: HTTP 200「The effects of an “algorithmic」 ／ doi.org: HTTP 200「[2604.06047] Algorithmic Monoc」",
       "url_checked_at": "2026-10-12T08:14:12",
       "jp_usable": 1,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-09-29",
+      "topic_first_source": "候補 7912342139 のannounced_on（The effects of an “algorithmic）",
+      "topic_series": "mit-algorithmic-monoculture",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-09-29",
+        "title": "The effects of an “algorithmic monoculture” depend on the details",
+        "id": "7912342139",
+        "source": "MIT News AI"
+      }
     },
     {
       "title": "Brain scans reveal which disorders are linked to faster brain aging",
@@ -2989,7 +3292,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-07-21",
+      "topic_first_source": "候補 2653173791 のannounced_on（Brain scans reveal which disor）",
+      "topic_series": "2653173791",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Scientists find new virus behind mysterious tick illness",
@@ -3032,7 +3339,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-09-02",
+      "topic_first_source": "候補 d903823128 のannounced_on（Scientists find new virus behi）",
+      "topic_series": "d903823128",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Children at risk for depression get “stuck” on sad faces",
@@ -3080,7 +3391,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-05-07",
+      "topic_first_source": "候補 24e337ac68 のannounced_on（Children at risk for depressio）",
+      "topic_series": "24e337ac68",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Hidden stem cells may be fueling spinal stenosis",
@@ -3128,7 +3443,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-09-07",
+      "topic_first_source": "候補 effe532415 のannounced_on（Hidden stem cells may be fueli）",
+      "topic_series": "effe532415",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Forget LASIK: Safer, cheaper vision correction without lasers or incisions",
@@ -3176,7 +3495,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2025-08-18",
+      "topic_first_source": "候補 316b20fe31 のannounced_on（Forget LASIK: Safer, cheaper v）",
+      "topic_series": "316b20fe31",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "製造現場の自律化に向けたAIロボティクス「頭脳」開発の協創パートナーシップ締結",
@@ -3219,7 +3542,11 @@
       "status": "excluded",
       "excluded_reason": "一次資料で確認できない",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-09-29",
+      "topic_first_source": "候補 22627de47b のannounced_on（製造現場の自律化に向けたAIロボティクス「頭脳」開発の協創パ）",
+      "topic_series": "22627de47b",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "業務用洗濯作業の全工程を自律遂行するセミヒューマノイドロボット「DYNA 2.1」発表",
@@ -3268,7 +3595,11 @@
       "excluded_reason": "",
       "scored_at": "2026-10-06",
       "used_in": "kl036",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-09-29",
+      "topic_first_source": "候補 ceab546626 のannounced_on（業務用洗濯作業の全工程を自律遂行するセミヒューマノイドロボッ）",
+      "topic_series": "ceab546626",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "精神科・心療内科の複雑な診断書・申請書類をAIが自動作成する新機能の提供開始",
@@ -3328,7 +3659,11 @@
       "buzz_error": "0件（検索語が合っていない可能性）",
       "buzz_error_at": "2026-10-15T07:10:56",
       "jp_usable": 2,
-      "work_relevance": 3
+      "work_relevance": 3,
+      "topic_first_date": "2026-09-29",
+      "topic_first_source": "候補 46e6ba18cb のannounced_on（精神科・心療内科の複雑な診断書・申請書類をAIが自動作成する）",
+      "topic_series": "mentra-medical-records-ai",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "New formulation helps RNA vaccines withstand high temperatures",
@@ -3407,7 +3742,17 @@
       "buzz_query": "mRNAワクチン",
       "buzz_measured_at": "2026-10-12T08:12:32",
       "jp_usable": 2,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-09-28",
+      "topic_first_source": "候補 875cad4e1e のannounced_on（New formulation helps RNA vacc）",
+      "topic_series": "mit-thermostable-mrna",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-09-28",
+        "title": "New formulation helps RNA vaccines withstand high temperatures",
+        "id": "875cad4e1e",
+        "source": "MIT News AI"
+      }
     },
     {
       "title": "Diabetes study finds keeping blood sugar too steady may come at a price",
@@ -3450,7 +3795,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-09-11",
+      "topic_first_source": "候補 f80d5a1c98 のannounced_on（Diabetes study finds keeping b）",
+      "topic_series": "f80d5a1c98",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Scientists just discovered what coffee really does to your gut and brain",
@@ -3498,7 +3847,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 4
+      "buzz_jp_est": 4,
+      "topic_first_date": "2026-04-21",
+      "topic_first_source": "候補 b68efaec29 のannounced_on（Scientists just discovered wha）",
+      "topic_series": "b68efaec29",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Pomegranate compound improves heart function by up to 80% in study",
@@ -3546,7 +3899,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-08-20",
+      "topic_first_source": "候補 a61753947f のannounced_on（Pomegranate compound improves ）",
+      "topic_series": "a61753947f",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "160-million-year-old proteins show surprising power against superbugs",
@@ -3594,7 +3951,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-08-25",
+      "topic_first_source": "候補 d8a4aeed41 のannounced_on（160-million-year-old proteins ）",
+      "topic_series": "d8a4aeed41",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Scientists found a surprising driver of Alzheimer’s outside the brain",
@@ -3642,7 +4003,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-09-03",
+      "topic_first_source": "候補 af912848dc のannounced_on（Scientists found a surprising ）",
+      "topic_series": "af912848dc",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Resetting the body clock could help the brain recover after stroke",
@@ -3685,7 +4050,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-06-15",
+      "topic_first_source": "候補 77bdfeed96 のannounced_on（Resetting the body clock could）",
+      "topic_series": "77bdfeed96",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Glucosamine, a popular joint supplement, linked to faster Alzheimer’s progression",
@@ -3733,7 +4102,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 4
+      "buzz_jp_est": 4,
+      "topic_first_date": "2026-06-09",
+      "topic_first_source": "候補 e494205209 のannounced_on（Glucosamine, a popular joint s）",
+      "topic_series": "e494205209",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Why rheumatoid arthritis pain may persist even when inflammation is under control",
@@ -3781,7 +4154,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-05-26",
+      "topic_first_source": "候補 cae410fa3d のannounced_on（Why rheumatoid arthritis pain ）",
+      "topic_series": "cae410fa3d",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Atrial fibrillation patients saw 69% lower risk with common blood thinners",
@@ -3824,7 +4201,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-08-28",
+      "topic_first_source": "候補 f115df9ffa のannounced_on（Atrial fibrillation patients s）",
+      "topic_series": "f115df9ffa",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "One CRISPR treatment cut “bad” cholesterol in half for a full year",
@@ -3872,7 +4253,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-08-28",
+      "topic_first_source": "候補 0635bd733f のannounced_on（One CRISPR treatment cut “bad”）",
+      "topic_series": "0635bd733f",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Scientists say house cats could help unlock better cancer treatments for humans",
@@ -3920,7 +4305,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-02-19",
+      "topic_first_source": "候補 4083a0cd11 のannounced_on（Scientists say house cats coul）",
+      "topic_series": "4083a0cd11",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Zepbound and Mounjaro may turn on the body’s calorie-burning brown fat",
@@ -3968,7 +4357,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 4
+      "buzz_jp_est": 4,
+      "topic_first_date": "2026-01-26",
+      "topic_first_source": "候補 f73faed17d のannounced_on（Zepbound and Mounjaro may turn）",
+      "topic_series": "f73faed17d",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "That fresh cleaning smell could be filling your home with nanoparticles",
@@ -4016,7 +4409,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-08-27",
+      "topic_first_source": "候補 bedab8f601 のannounced_on（That fresh cleaning smell coul）",
+      "topic_series": "bedab8f601",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Don’t toss cannabis leaves: They may contain rare compounds with medical potential",
@@ -4064,7 +4461,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2025-05-05",
+      "topic_first_source": "候補 c601948a91 のannounced_on（Don’t toss cannabis leaves: Th）",
+      "topic_series": "c601948a91",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "A major risk of breast cancer screening may have been overestimated for decades",
@@ -4112,7 +4513,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-09-14",
+      "topic_first_source": "候補 6914fecf32 のannounced_on（A major risk of breast cancer ）",
+      "topic_series": "6914fecf32",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "CRISPR could help doctors attack blood cancer without destroying healthy cells",
@@ -4160,7 +4565,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-05-12",
+      "topic_first_source": "候補 50ddfccdc3 のannounced_on（CRISPR could help doctors atta）",
+      "topic_series": "50ddfccdc3",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "This “rare” autism-linked genetic disorder may be far more common than scientists thought",
@@ -4208,7 +4617,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-06-28",
+      "topic_first_source": "候補 30b88a902a のannounced_on（This “rare” autism-linked gene）",
+      "topic_series": "30b88a902a",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Scientists gave worms magnetic bacteria. They lived 43% longer",
@@ -4251,7 +4664,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-06-26",
+      "topic_first_source": "候補 8f1d69be4e のannounced_on（Scientists gave worms magnetic）",
+      "topic_series": "8f1d69be4e",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Scientists discover an “impossible” cellular survival pathway that could help fight cancer",
@@ -4299,7 +4716,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-05-21",
+      "topic_first_source": "候補 851cb6a685 のannounced_on（Scientists discover an “imposs）",
+      "topic_series": "851cb6a685",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Automating coherent long-form video generation",
@@ -4365,7 +4786,17 @@
       "buzz_query": "Google AI",
       "buzz_measured_at": "2026-10-12T08:13:24",
       "jp_usable": 1,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-09-24",
+      "topic_first_source": "候補 da79314d1c のannounced_on（Automating coherent long-form ）",
+      "topic_series": "google-ai-video-co-director",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-09-24",
+        "title": "Automating coherent long-form video generation",
+        "id": "da79314d1c",
+        "source": "Google Research"
+      }
     },
     {
       "title": "Estimating suicide risk from text",
@@ -4443,7 +4874,17 @@
       "buzz_query": "自殺リスク",
       "buzz_measured_at": "2026-10-14T07:50:03",
       "jp_usable": 1,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-09-24",
+      "topic_first_source": "候補 2d3921d846 のannounced_on（Estimating suicide risk from t）",
+      "topic_series": "mit-suicide-risk",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-09-24",
+        "title": "Estimating suicide risk from text",
+        "id": "2d3921d846",
+        "source": "MIT News AI"
+      }
     },
     {
       "title": "Scientists thought they knew how this 70-year-old leukemia drug worked",
@@ -4486,7 +4927,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 1
+      "buzz_jp_est": 1,
+      "topic_first_date": "2026-06-30",
+      "topic_first_source": "候補 4654b34d89 のannounced_on（Scientists thought they knew h）",
+      "topic_series": "4654b34d89",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "More REM sleep linked to lower risk of 83 diseases",
@@ -4534,7 +4979,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-09-17",
+      "topic_first_source": "候補 4fbfa5e112 のannounced_on（More REM sleep linked to lower）",
+      "topic_series": "4fbfa5e112",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "GLP-1 weight loss and diabetes drugs linked to nutritional deficiencies in nearly 1 in 6 children",
@@ -4582,7 +5031,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-09-17",
+      "topic_first_source": "候補 f7ba175003 のannounced_on（GLP-1 weight loss and diabetes）",
+      "topic_series": "f7ba175003",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Aging muscles may be losing strength for a reason scientists missed",
@@ -4643,7 +5096,11 @@
       "buzz_error": "0件（検索語が合っていない可能性）",
       "buzz_error_at": "2026-10-12T09:00:04",
       "jp_usable": 2,
-      "work_relevance": 1
+      "work_relevance": 1,
+      "topic_first_date": "2026-09-22",
+      "topic_first_source": "候補 7c4d8cb48f のannounced_on（Aging muscles may be losing st）",
+      "topic_series": "missouri-muscle-aging",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Introducing MentalHealthBench",
@@ -4697,7 +5154,17 @@
       "buzz_error": "0件（検索語が合っていない可能性）",
       "buzz_error_at": "2026-10-14T09:57:18",
       "jp_usable": 1,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-09-23",
+      "topic_first_source": "候補 1d5a9cc2d9 のannounced_on（Introducing MentalHealthBench）",
+      "topic_series": "mentalhealthbench",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-09-23",
+        "title": "Introducing MentalHealthBench",
+        "id": "1d5a9cc2d9",
+        "source": "OpenAI"
+      }
     },
     {
       "title": "Breakthrough drug reverses skin aging and dramatically speeds healing",
@@ -4740,7 +5207,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2024-12-03",
+      "topic_first_source": "候補 40c092d539 のannounced_on（Breakthrough drug reverses ski）",
+      "topic_series": "40c092d539",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Introducing GPT-6 Sol and Luna",
@@ -4828,7 +5299,17 @@
       ],
       "url_ok": null,
       "url_status": "openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
-      "url_checked_at": "2026-10-12T09:01:08"
+      "url_checked_at": "2026-10-12T09:01:08",
+      "topic_first_date": "2026-09-22",
+      "topic_first_source": "候補 3d48e529ad のannounced_on（Introducing GPT-6 Sol and Luna）",
+      "topic_series": "gpt-6",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-08",
+        "title": "【ChatGPT】自治体AI zevoにて「GPT-6 Sol」「GPT-6 Luna」「GPT-6.1 Sol」の3モデルを2026年10月8日木曜日より提供開始！",
+        "id": "265bec6cf0",
+        "source": "Googleニュース（生成AI 新モデル）／PR TIMES"
+      }
     },
     {
       "title": "NVIDIA Isaac ROS 5.0 Advances Agentic, Open Source Robotics Development",
@@ -4895,7 +5376,11 @@
       "buzz_measured_at": "2026-10-11T20:44:44",
       "buzz_query": "NVIDIA Isaac ROS",
       "jp_usable": 1,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-09-22",
+      "topic_first_source": "候補 193bdb306b のannounced_on（NVIDIA Isaac ROS 5.0 Advances ）",
+      "topic_series": "isaac-ros",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "MIT’s tiny flying robot gets 450% faster with AI",
@@ -4943,7 +5428,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2025-12-03",
+      "topic_first_source": "候補 4d9089295d のannounced_on（MIT’s tiny flying robot gets 4）",
+      "topic_series": "4d9089295d",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "5 Companies Using NVIDIA AI for Clean Energy",
@@ -4993,7 +5482,11 @@
       "announcement_type": "customer_case",
       "series": "nvidia-clean-energy",
       "enriched_version": "2026-10-11-buzz-measured",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-09-21",
+      "topic_first_source": "候補 405872456e のannounced_on（5 Companies Using NVIDIA AI fo）",
+      "topic_series": "nvidia-clean-energy",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "MilleMiglia: A realistic instance generator for middle-mile logistics",
@@ -5036,7 +5529,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 1
+      "buzz_jp_est": 1,
+      "topic_first_date": "2026-09-18",
+      "topic_first_source": "候補 90801afbca のannounced_on（MilleMiglia: A realistic insta）",
+      "topic_series": "90801afbca",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Introducing Astra for Law",
@@ -5079,7 +5576,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-09-17",
+      "topic_first_source": "候補 363bbead77 のannounced_on（Introducing Astra for Law）",
+      "topic_series": "363bbead77",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "The future of practice: Enabling teachers to create learning interactives with generative UI",
@@ -5127,7 +5628,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-09-17",
+      "topic_first_source": "候補 26cb68725f のannounced_on（The future of practice: Enabli）",
+      "topic_series": "26cb68725f",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "How workers are unlocking new ways of working",
@@ -5175,7 +5680,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-09-16",
+      "topic_first_source": "候補 71646fffd9 のannounced_on（How workers are unlocking new ）",
+      "topic_series": "71646fffd9",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "New AI technique could make minimally invasive surgeries safer and more precise",
@@ -5223,7 +5732,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-09-16",
+      "topic_first_source": "候補 3a5713cd1d のannounced_on（New AI technique could make mi）",
+      "topic_series": "3a5713cd1d",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Digit 5 May Be the First Humanoid Robot Worker That’s Truly Safe",
@@ -5271,7 +5784,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-06",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-09-15",
+      "topic_first_source": "候補 1429865f57 のannounced_on（Digit 5 May Be the First Human）",
+      "topic_series": "1429865f57",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Bowel cancer “melted away” after immunotherapy, then stayed away",
@@ -5314,7 +5831,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-04-21",
+      "topic_first_source": "候補 d6294c7d3a のannounced_on（Bowel cancer “melted away” aft）",
+      "topic_series": "d6294c7d3a",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Scientists may have found why diabetic wounds refuse to heal",
@@ -5357,7 +5878,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2025-12-15",
+      "topic_first_source": "候補 009b810356 のannounced_on（Scientists may have found why ）",
+      "topic_series": "009b810356",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Loneliness may steal nearly 6 years of good health",
@@ -5400,7 +5925,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-08-20",
+      "topic_first_source": "候補 a8cc9636a0 のannounced_on（Loneliness may steal nearly 6 ）",
+      "topic_series": "a8cc9636a0",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Why dexterity is physical AI’s real bottleneck",
@@ -5437,7 +5966,17 @@
       "status": "excluded",
       "excluded_reason": "一次資料で確認できない",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 1
+      "buzz_jp_est": 1,
+      "topic_first_date": "2026-10-10",
+      "topic_first_source": "候補 43778d416f のannounced_on（Why dexterity is physical AI’s）",
+      "topic_series": "43778d416f",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-10",
+        "title": "Why dexterity is physical AI’s real bottleneck",
+        "id": "43778d416f",
+        "source": "The Robot Report"
+      }
     },
     {
       "title": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak",
@@ -5480,7 +6019,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-10-09",
+      "topic_first_source": "候補 edd58468d5 のannounced_on（Sophos cuts threat investigati）",
+      "topic_series": "edd58468d5",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
@@ -5523,7 +6066,17 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-09-29",
+      "topic_first_source": "候補 dd66acaed2 のannounced_on（Introducing GPT-6.1 Sol）",
+      "topic_series": "90995f7dbc",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-09-29",
+        "title": "Introducing GPT-6.1 Sol",
+        "id": "dd66acaed2",
+        "source": "OpenAI"
+      }
     },
     {
       "title": "Scientists discover 5 hidden brain patterns behind depression",
@@ -5571,7 +6124,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-08-31",
+      "topic_first_source": "候補 ddb51a0050 のannounced_on（Scientists discover 5 hidden b）",
+      "topic_series": "ddb51a0050",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Only one workout helped older adults lose fat and keep muscle",
@@ -5619,7 +6176,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2025-10-30",
+      "topic_first_source": "候補 fd38771abd のannounced_on（Only one workout helped older ）",
+      "topic_series": "fd38771abd",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Scientists tested 5 natural compounds on cancer cells. One stood out",
@@ -5662,7 +6223,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-06-02",
+      "topic_first_source": "候補 340f2b6927 のannounced_on（Scientists tested 5 natural co）",
+      "topic_series": "340f2b6927",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Nearly 30,000 people tested quit-smoking methods. One stood out",
@@ -5705,7 +6270,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-08-26",
+      "topic_first_source": "候補 e88fa71497 のannounced_on（Nearly 30,000 people tested qu）",
+      "topic_series": "e88fa71497",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Why humanoid robot demos still fail the generalization test",
@@ -5742,7 +6311,17 @@
       "status": "excluded",
       "excluded_reason": "一次資料で確認できない",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-10-09",
+      "topic_first_source": "候補 0698575e49 のannounced_on（Why humanoid robot demos still）",
+      "topic_series": "0698575e49",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-09",
+        "title": "Why humanoid robot demos still fail the generalization test",
+        "id": "0698575e49",
+        "source": "The Robot Report"
+      }
     },
     {
       "title": "Boston Dynamics gives more insight into its redesigned humanoid hand",
@@ -5785,7 +6364,17 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-10-01",
+      "topic_first_source": "候補 5c8e51244a のannounced_on（Boston Dynamics gives more ins）",
+      "topic_series": "5c8e51244a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-09",
+        "title": "Boston Dynamics gives more insight into its redesigned humanoid hand",
+        "id": "5c8e51244a",
+        "source": "The Robot Report"
+      }
     },
     {
       "title": "Groceryshop 2026 shows that retail robots are ready to scale, use AI",
@@ -5840,7 +6429,17 @@
       "buzz_error": "0件（検索語が合っていない可能性）",
       "buzz_error_at": "2026-10-12T08:12:11",
       "jp_usable": 1,
-      "work_relevance": 3
+      "work_relevance": 3,
+      "topic_first_date": "2026-09-21",
+      "topic_first_source": "候補 590d79c7e1 のannounced_on（Groceryshop 2026 shows that re）",
+      "topic_series": "groceryshop-2026",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-09",
+        "title": "Groceryshop 2026 shows that retail robots are ready to scale, use AI",
+        "id": "590d79c7e1",
+        "source": "The Robot Report"
+      }
     },
     {
       "title": "クリーン水素製造や電池性能を高める新材料「β-BiVO4」など中間相材料の発見",
@@ -5888,7 +6487,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 1
+      "buzz_jp_est": 1,
+      "topic_first_date": "2026-04-30",
+      "topic_first_source": "候補 72270e7047 のannounced_on（クリーン水素製造や電池性能を高める新材料「β-BiVO4」な）",
+      "topic_series": "72270e7047",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "How Oracle turns days of work into minutes with ChatGPT and Codex",
@@ -5931,7 +6534,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-10-08",
+      "topic_first_source": "候補 112b5f0087 のannounced_on（How Oracle turns days of work ）",
+      "topic_series": "112b5f0087",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Bacteria turn a virus’ own weapon against it",
@@ -5991,7 +6598,11 @@
       "buzz_error": "0件（検索語が合っていない可能性）",
       "buzz_error_at": "2026-10-12T08:12:11",
       "jp_usable": 1,
-      "work_relevance": 1
+      "work_relevance": 1,
+      "topic_first_date": "2026-10-01",
+      "topic_first_source": "候補 b5cc9b4f9b のannounced_on（Bacteria turn a virus’ own wea）",
+      "topic_series": "utah-cbass-phage",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "家族性ALS原因遺伝子変異を一塩基単位で修正するゲノム編集技術をiPS細胞で実証",
@@ -6074,7 +6685,11 @@
       "url_status": "cira.kyoto-u.ac.jp: ソフト404（HTTP 200、title「エラー 404｜ 京都大学iPS細胞研究所 CiRA（サイラ）」） ／ doi.org: HTTP 200「Mutation-specific correction o」",
       "url_checked_at": "2026-10-11T20:46:55",
       "jp_usable": 1,
-      "work_relevance": 1
+      "work_relevance": 1,
+      "topic_first_date": "2026-10-09",
+      "topic_first_source": "候補 343f0453bf のannounced_on（家族性ALS原因遺伝子変異を一塩基単位で修正するゲノム編集技）",
+      "topic_series": "cira-als-prime-editing",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "政府職員18万人規模への展開を進めるガバメントAI「源内」の最新施策を公表",
@@ -6157,7 +6772,11 @@
       "url_status": "digital.go.jp: HTTP 200「ガバメントAI「源内」｜デジタル庁」",
       "url_checked_at": "2026-10-12T08:14:30",
       "jp_usable": 2,
-      "work_relevance": 3
+      "work_relevance": 3,
+      "topic_first_date": "2026-10-05",
+      "topic_first_source": "日本語記事（日経クロステック（xTECH）「ガバメントAI基盤「源内」、職員は専門知識不要でAIエージェ」）",
+      "topic_series": "digital-agency-gennai",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "創薬・分子ツール開発を自律化・加速する「AIパワード自律型ラボ」の設立を発表",
@@ -6231,7 +6850,11 @@
       "buzz_measured_at": "2026-10-11T20:43:15",
       "buzz_query": "ダナハー 自律型ラボ",
       "jp_usable": 1,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-10-07",
+      "topic_first_source": "候補 276bdc4dfd のannounced_on（創薬・分子ツール開発を自律化・加速する「AIパワード自律型ラ）",
+      "topic_series": "danaher-autonomous-lab",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Pollo AI turns creative ideas into campaigns with OpenAI",
@@ -6274,7 +6897,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-10-08",
+      "topic_first_source": "候補 ca1ec6c6a1 のannounced_on（Pollo AI turns creative ideas ）",
+      "topic_series": "ca1ec6c6a1",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents",
@@ -6317,7 +6944,17 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-10-08",
+      "topic_first_source": "候補 baf7193e75 のannounced_on（Into the Omniverse: How Develo）",
+      "topic_series": "baf7193e75",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-08",
+        "title": "Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents",
+        "id": "baf7193e75",
+        "source": "NVIDIA Blog"
+      }
     },
     {
       "title": "Using AI to mitigate the growing environmental threat of data centers",
@@ -6389,7 +7026,17 @@
       "buzz_measured_at": "2026-10-11T20:43:18",
       "buzz_query": "MIT データセンター 電力",
       "jp_usable": 1,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-10-08",
+      "topic_first_source": "候補 4c75baed55 のannounced_on（Using AI to mitigate the growi）",
+      "topic_series": "mit-datacenter-efficiency",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-08",
+        "title": "Using AI to mitigate the growing environmental threat of data centers",
+        "id": "4c75baed55",
+        "source": "MIT News AI"
+      }
     },
     {
       "title": "Scientists warn a popular vitamin D supplement may have a hidden downside",
@@ -6437,7 +7084,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2025-09-18",
+      "topic_first_source": "候補 ed67f5df6f のannounced_on（Scientists warn a popular vita）",
+      "topic_series": "ed67f5df6f",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "FDA-approved epilepsy drug may help reverse osteoarthritis damage",
@@ -6485,7 +7136,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-02-26",
+      "topic_first_source": "候補 2f058269d4 のannounced_on（FDA-approved epilepsy drug may）",
+      "topic_series": "2f058269d4",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Just 7 days of strength training started shrinking fat cells in mice",
@@ -6533,7 +7188,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-06-23",
+      "topic_first_source": "候補 387bebe3df のannounced_on（Just 7 days of strength traini）",
+      "topic_series": "387bebe3df",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Not all trans fats are bad, major review finds",
@@ -6581,7 +7240,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-03-27",
+      "topic_first_source": "候補 70e1189595 のannounced_on（Not all trans fats are bad, ma）",
+      "topic_series": "70e1189595",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Stanford scientists turn a cancer driver into a kill switch",
@@ -6629,7 +7292,11 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 3
+      "buzz_jp_est": 3,
+      "topic_first_date": "2026-07-20",
+      "topic_first_source": "候補 a51bd1d282 のannounced_on（Stanford scientists turn a can）",
+      "topic_series": "a51bd1d282",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "SafeWorld emerges from stealth to build, deploy robot safety simulation technologies",
@@ -6677,7 +7344,17 @@
       "status": "excluded",
       "excluded_reason": "一次資料で確認できない・投資・株価が中心",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 1
+      "buzz_jp_est": 1,
+      "topic_first_date": "2026-10-05",
+      "topic_first_source": "候補 81813e545f のannounced_on（SafeWorld emerges from stealth）",
+      "topic_series": "81813e545f",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-08",
+        "title": "SafeWorld emerges from stealth to build, deploy robot safety simulation technologies",
+        "id": "81813e545f",
+        "source": "The Robot Report"
+      }
     },
     {
       "title": "Jabil discusses the pace of humanoid robot development and production",
@@ -6725,7 +7402,17 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-11",
-      "buzz_jp_est": 2
+      "buzz_jp_est": 2,
+      "topic_first_date": "2026-10-08",
+      "topic_first_source": "候補 bcb1ebbc55 のannounced_on（Jabil discusses the pace of hu）",
+      "topic_series": "bcb1ebbc55",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-08",
+        "title": "Jabil discusses the pace of humanoid robot development and production",
+        "id": "bcb1ebbc55",
+        "source": "The Robot Report"
+      }
     },
     {
       "title": "AWS launches open-source Physical AI Toolchain for robotics",
@@ -6798,7 +7485,17 @@
       "buzz_measured_at": "2026-10-11T20:43:21",
       "buzz_query": "AWS Physical AI",
       "jp_usable": 1,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-10-07",
+      "topic_first_source": "候補 6b2f68612d のannounced_on（AWS launches open-source Physi）",
+      "topic_series": "aws-physical-ai-toolchain",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-08",
+        "title": "AWS launches open-source Physical AI Toolchain for robotics",
+        "id": "6b2f68612d",
+        "source": "The Robot Report"
+      }
     },
     {
       "title": "BYD、自社開発初のヒューマノイドロボットのデザインを発表",
@@ -6853,7 +7550,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-10-09",
+      "topic_first_source": "候補 d3b663897b のannounced_on（BYD、自社開発初のヒューマノイドロボットのデザインを発表）",
+      "topic_series": "a3d5ffaacc",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "＜画像1 / 7＞家庭用ロボット最前線！価格、機能、その進化に迫る",
@@ -6901,7 +7602,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "excluded",
       "excluded_reason": "一次資料で確認できない",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2015-11-14",
+      "topic_first_source": "候補 6d57535a95 のannounced_on（＜画像1 / 7＞家庭用ロボット最前線！価格、機能、その進化）",
+      "topic_series": "6d57535a95",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "腸の健康とアルツハイマー病の新たな関連性",
@@ -6961,7 +7666,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-06-26",
+      "topic_first_source": "候補 675af4e278 のannounced_on（腸の健康とアルツハイマー病の新たな関連性）",
+      "topic_series": "675af4e278",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-11",
+        "title": "腸の健康とアルツハイマー病の新たな関連性",
+        "id": "675af4e278",
+        "source": "Googleニュース（腸内細菌 研究）／WIRED.jp"
+      }
     },
     {
       "title": "医師でリスクの低いがんは？～日本人の職業とがんリスクの大規模研究｜CareNet.com",
@@ -7016,7 +7731,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-04-14",
+      "topic_first_source": "候補 6a6c3bec8a のannounced_on（医師でリスクの低いがんは？～日本人の職業とがんリスクの大規模）",
+      "topic_series": "6a6c3bec8a",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "ChatGPTの電子透かしを言語別に公開、OpenAIが検出率を発表、日本語はテスト対象外",
@@ -7128,7 +7847,17 @@
       "url_status": "openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
       "url_checked_at": "2026-10-12T08:14:00",
       "jp_usable": 1,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-10-05",
+      "topic_first_source": "候補 61e2ee972a のannounced_on（ChatGPTの電子透かしを言語別に公開、OpenAIが検出）",
+      "topic_series": "61e2ee972a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-08",
+        "title": "OpenAI、文章の電子透かし「textGrain」を発表　ChatGPTとCodexはEUで順次導入",
+        "id": "d64368e32f",
+        "source": "Googleニュース（OpenAI 発表）／財経新聞"
+      }
     },
     {
       "title": "Figure Helix 2.5、ヒューマノイドロボットの家事成功率は56%",
@@ -7183,7 +7912,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-09-17",
+      "topic_first_source": "候補 302ee587eb のannounced_on（Figure Helix 2.5、ヒューマノイドロボットの家）",
+      "topic_series": "302ee587eb",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "お知らせ｜ugo Nova、国産汎用ロボット開発コンペティションの改良機開発フェーズに進出",
@@ -7286,7 +8019,11 @@
       "url_status": "corp.ugo.plus: HTTP 200「ｕｇｏ株式会社 | 人とロボティクスの融合で、人間の可能性の」 ／ airoa.or.jp: 取得失敗（URLError: <urlopen error [Errno 8] nodename nor servname provided, or ）",
       "url_checked_at": "2026-10-12T08:14:07",
       "jp_usable": 2,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-10-09",
+      "topic_first_source": "候補 1c1485dd41 のannounced_on（お知らせ｜ugo Nova、国産汎用ロボット開発コンペティシ）",
+      "topic_series": "1c1485dd41",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "尿検査で自閉症をスクリーニングできる可能性｜CareNet.com",
@@ -7346,7 +8083,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-05-26",
+      "topic_first_source": "候補 515a2d95c6 のannounced_on（尿検査で自閉症をスクリーニングできる可能性｜CareNet.）",
+      "topic_series": "515a2d95c6",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-10",
+        "title": "尿検査で自閉症をスクリーニングできる可能性｜CareNet.com",
+        "id": "515a2d95c6",
+        "source": "Googleニュース（腸内細菌 研究）／CareNet.com"
+      }
     },
     {
       "title": "異常タンパク質が「形」を波及 アルツハイマーの仕組み解明 東京都医学総合研究所副所長ら",
@@ -7423,7 +8170,11 @@
       "buzz_query": "東京都医学総合研究所 タウ",
       "buzz_measured_at": "2026-10-14T07:49:46",
       "jp_usable": 2,
-      "work_relevance": 1
+      "work_relevance": 1,
+      "topic_first_date": "2026-09-30",
+      "topic_first_source": "候補 6319acd60a のannounced_on（異常タンパク質が「形」を波及 アルツハイマーの仕組み解明 東）",
+      "topic_series": "6319acd60a",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "OpenAI「722本の数学論文発表します」数学者「AI使うのやめろおおおおおおお！」",
@@ -7525,7 +8276,17 @@
       "url_status": "openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ github.com: HTTP 200「GitHub - openai/math · GitHub」",
       "url_checked_at": "2026-10-12T08:14:25",
       "jp_usable": 1,
-      "work_relevance": 2
+      "work_relevance": 2,
+      "topic_first_date": "2026-10-06",
+      "topic_first_source": "候補 c0ec547deb のannounced_on（OpenAI「722本の数学論文発表します」数学者「AI使う）",
+      "topic_series": "c0ec547deb",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-08",
+        "title": "OpenAI、AIが生成した数学論文722本を一挙公開",
+        "id": "19bf915889",
+        "source": "Googleニュース（OpenAI 発表）／株式会社エクサウィザーズ"
+      }
     },
     {
       "title": "LutechがヒューマノイドロボットL.u.c.a.を発表、EUの機械規則とイタリアの工場",
@@ -7580,7 +8341,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "excluded",
       "excluded_reason": "一次資料で確認できない",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-10-08",
+      "topic_first_source": "候補 debc47cefb のannounced_on（LutechがヒューマノイドロボットL.u.c.a.を発表、）",
+      "topic_series": "debc47cefb",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "軽EV向け、国内生産視野…AESCが提案する「次世代リン酸鉄リチウムイオン電池」の性能",
@@ -7629,7 +8394,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "excluded",
       "excluded_reason": "一次資料で確認できない",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-10-09",
+      "topic_first_source": "候補 04adce5992 のpublished（軽EV向け、国内生産視野…AESCが提案する「次世代リン酸鉄）",
+      "topic_series": "04adce5992",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-09",
+        "title": "軽EV向け、国内生産視野…AESCが提案する「次世代リン酸鉄リチウムイオン電池」の性能",
+        "id": "04adce5992",
+        "source": "Googleニュース（全固体電池）／ニュースイッチ by 日刊工業新聞社"
+      }
     },
     {
       "title": "関節炎を抑える新たな化合物を発見",
@@ -7700,7 +8475,11 @@
       "buzz_query": "ナルディライジン 岐阜大学",
       "buzz_measured_at": "2026-10-14T07:49:26",
       "jp_usable": 1,
-      "work_relevance": 1
+      "work_relevance": 1,
+      "topic_first_date": "2026-10-09",
+      "topic_first_source": "候補 2f8892b3a0 のannounced_on（関節炎を抑える新たな化合物を発見）",
+      "topic_series": "2f8892b3a0",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "日本人の大腸がん、約半数に“腸内細菌の毒素”が関与　40歳以下の発症は7割　東大・阪大が200人を全ゲノム解析",
@@ -7761,7 +8540,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-08-10",
+      "topic_first_source": "候補 181a5dbd0a のannounced_on（日本人の大腸がん、約半数に“腸内細菌の毒素”が関与　40歳以）",
+      "topic_series": "181a5dbd0a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-10",
+        "title": "日本人の大腸がん、約半数に“腸内細菌の毒素”が関与　40歳以下の発症は7割　東大・阪大が200人を全ゲノム解析",
+        "id": "181a5dbd0a",
+        "source": "ITmedia NEWS"
+      }
     },
     {
       "title": "AI「思考」過程は信用できず、暴走リスク高まる",
@@ -7822,7 +8611,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-09-06",
+      "topic_first_source": "候補 97a414cd21 のannounced_on（AI「思考」過程は信用できず、暴走リスク高まる）",
+      "topic_series": "97a414cd21",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "ヒューマノイドがデータグローブと21自由度ロボットハンドの組み合わせで本領発揮 SharpaがIROS 2026で示した高度な遠隔操作",
@@ -7883,7 +8676,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-09-28",
+      "topic_first_source": "候補 f5ea012994 のannounced_on（ヒューマノイドがデータグローブと21自由度ロボットハンドの組）",
+      "topic_series": "f5ea012994",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "米QuantumScape、全固体電池をAIデータセンター用ラック蓄電に展開 電力変動対応へリファレンス設計発表",
@@ -7940,7 +8737,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "excluded",
       "excluded_reason": "投資・株価が中心",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-10-08",
+      "topic_first_source": "候補 9558ceb554 のannounced_on（米QuantumScape、全固体電池をAIデータセンター用）",
+      "topic_series": "9558ceb554",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-09",
+        "title": "米QuantumScape、全固体電池をAIデータセンター用ラック蓄電に展開 電力変動対応へリファレンス設計発表",
+        "id": "9558ceb554",
+        "source": "Googleニュース（全固体電池）／千葉テレビ放送株式会社"
+      }
     },
     {
       "title": "健康な若年女性が「1日5回の分割食」＋「食べる順序に配慮」すると、血糖変動が平坦化する",
@@ -7996,7 +8803,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2025-10-10",
+      "topic_first_source": "候補 d8542d99a8 のannounced_on（健康な若年女性が「1日5回の分割食」＋「食べる順序に配慮」す）",
+      "topic_series": "d8542d99a8",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "米アンソロピック AIが警察に殺人事件の架空情報送信",
@@ -8085,7 +8896,11 @@
       "url_ok": true,
       "url_status": "anthropic.com: HTTP 200「Investigating unintended model」",
       "url_checked_at": "2026-10-12T09:00:51",
-      "used_in": "kl037"
+      "used_in": "kl037",
+      "topic_first_date": "2026-10-09",
+      "topic_first_source": "候補 8f378c493f のannounced_on（米アンソロピック AIが警察に殺人事件の架空情報送信）",
+      "topic_series": "8f378c493f",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "SOD1遺伝子変異を一塩基単位で修正",
@@ -8146,7 +8961,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-10-09",
+      "topic_first_source": "候補 68dcc6e158 のannounced_on（SOD1遺伝子変異を一塩基単位で修正）",
+      "topic_series": "68dcc6e158",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-09",
+        "title": "SOD1遺伝子変異を一塩基単位で修正",
+        "id": "68dcc6e158",
+        "source": "Googleニュース（iPS細胞 研究 成果）／Kobe University"
+      }
     },
     {
       "title": "国産セミヒューマノイドugo Nova、AIロボット協会の試作機評価審査を通過し改良機開発フェーズに進出",
@@ -8207,7 +9032,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-09-16",
+      "topic_first_source": "候補 2f8fa76e81 のannounced_on（ｕｇｏ、国産セミヒューマノイド「ugo Nova」発表。フィ）",
+      "topic_series": "2f8fa76e81",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "置き配と床下収納を直結、住宅内物流を自動化",
@@ -8278,7 +9107,48 @@
       "buzz_articles_14d": 0,
       "buzz_raw_items": 2,
       "buzz_query": "ゼロキョリ ENNOSHITA",
-      "buzz_measured_at": "2026-10-14T07:49:29"
+      "buzz_measured_at": "2026-10-14T07:49:29",
+      "topic_first_date": "2026-10-08",
+      "topic_first_source": "候補 2a3f21cb19 のannounced_on（置き配と床下収納を直結、住宅内物流を自動化）",
+      "topic_series": "2a3f21cb19",
+      "freshness_basis": "topic_first_date",
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://prtimes.jp/main/html/rd/p/000000003.000188346.html",
+          "ok": true,
+          "status": "HTTP 200「家を小さく、収納を大きく。新型ロボット床下収納「ENNOSH」",
+          "page_title": "家を小さく、収納を大きく。新型ロボット床下収納「ENNOSHITA 350」を発表 | 株式会社ゼロキョリのプレスリリース",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "press_release"
+        },
+        {
+          "url": "https://www.rdcc-pre.org/product/001/",
+          "ok": true,
+          "status": "HTTP 200「住宅デバイス・工法一覧 &#8211; 住宅デバイス共創機構」",
+          "page_title": "住宅デバイス・工法一覧 &#8211; 住宅デバイス共創機構byゼロキョリ",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-10-15T11:04:45",
+      "url_check": [
+        {
+          "url": "https://prtimes.jp/main/html/rd/p/000000003.000188346.html",
+          "ok": true,
+          "status": "HTTP 200「家を小さく、収納を大きく。新型ロボット床下収納「ENNOSH」"
+        },
+        {
+          "url": "https://www.rdcc-pre.org/product/001/",
+          "ok": true,
+          "status": "HTTP 200「住宅デバイス・工法一覧 &#8211; 住宅デバイス共創機構」"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "prtimes.jp: HTTP 200「家を小さく、収納を大きく。新型ロボット床下収納「ENNOSH」 ／ rdcc-pre.org: HTTP 200「住宅デバイス・工法一覧 &#8211; 住宅デバイス共創機構」",
+      "url_checked_at": "2026-10-15T11:04:45"
     },
     {
       "title": "「食べる順番」で血糖値の上昇が抑えられるのはなぜ? 「オリーブ油」を先に食べると◎!?京大などの研究グループがを用いたマウス実験で仕組みを解明",
@@ -8359,7 +9229,11 @@
       "buzz_raw_items": 8,
       "buzz_query": "京都大学 オリーブ油",
       "buzz_measured_at": "2026-10-14T07:49:17",
-      "used_in": "kl039"
+      "used_in": "kl039",
+      "topic_first_date": "2026-10-08",
+      "topic_first_source": "候補 73bb56c60a のannounced_on（「食べる順番」で血糖値の上昇が抑えられるのはなぜ? 「オリー）",
+      "topic_series": "73bb56c60a",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "ChatGPT、ついに音声ファイルに対応　文字起こしや要約などが可能に　有料ユーザー向け",
@@ -8456,7 +9330,29 @@
       ],
       "url_ok": null,
       "url_status": "help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
-      "url_checked_at": "2026-10-15T07:11:34"
+      "url_checked_at": "2026-10-15T11:02:33",
+      "topic_first_date": "2026-10-06",
+      "topic_first_source": "候補 d60f64ecab のannounced_on（ChatGPT、ついに音声ファイルに対応　文字起こしや要約な）",
+      "topic_series": "d60f64ecab",
+      "freshness_basis": "topic_first_date",
+      "primary_verified": null,
+      "primary_check": [
+        {
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+          "method": "http",
+          "kind": "official_page"
+        },
+        {
+          "url": "https://help.openai.com/en/articles/8555545-uploading-files-and-audio-to-chatgpt",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+          "method": "http",
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-10-15T11:02:33"
     },
     {
       "title": "「我々が世界市場を作っていく」…万博が示した「未来の医療」を先導する関西は世界３位の位置付け、涙から乳がんのリスクを調べる技術も",
@@ -8518,7 +9414,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2020-03-10",
+      "topic_first_source": "候補 401a40e938 のannounced_on（「我々が世界市場を作っていく」…万博が示した「未来の医療」を）",
+      "topic_series": "401a40e938",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-09",
+        "title": "「我々が世界市場を作っていく」…万博が示した「未来の医療」を先導する関西は世界３位の位置付け、涙から乳がんのリスクを調べる技術も",
+        "id": "401a40e938",
+        "source": "Googleニュース（iPS細胞 研究 成果）／読売新聞"
+      }
     },
     {
       "title": "韓国サムスン・LGもヒューマノイド競争加速…中国勢は卓球やサッカーを実演（KOREA WAVE）",
@@ -8584,7 +9490,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "excluded",
       "excluded_reason": "一次資料で確認できない",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-10-03",
+      "topic_first_source": "候補 06cddd73d1 のannounced_on（韓国サムスン・LGもヒューマノイド競争加速…中国勢は卓球やサ）",
+      "topic_series": "06cddd73d1",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "スペースデータが公開した「RobotBrain」導入前検証デモ7種の魅力と活用法",
@@ -8645,7 +9555,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-10-08",
+      "topic_first_source": "候補 7257e5d357 のannounced_on（スペースデータが公開した「RobotBrain」導入前検証デ）",
+      "topic_series": "7257e5d357",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "フレイルのリスクに関わるEAT-Lancet食の代謝シグネチャ：前向きコホート研究",
@@ -8702,7 +9616,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2025-11-26",
+      "topic_first_source": "候補 70159de24e のannounced_on（フレイルのリスクに関わるEAT-Lancet食の代謝シグネチ）",
+      "topic_series": "70159de24e",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "“AIキャラチャット”に没頭した人の予後、スタンフォード大などが1年の追跡調査　依存強まる傾向に",
@@ -8754,7 +9672,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-09-07",
+      "topic_first_source": "候補 f6e0fd8ead のannounced_on（“AIキャラチャット”に没頭した人の予後、スタンフォード大な）",
+      "topic_series": "f6e0fd8ead",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "【最新研究】「大腸ポリープ」を取った後の内視鏡、3年後と5年後で大腸がんの発生に差なし？ 受診を急ぐサインも医師が解説",
@@ -8810,7 +9732,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-09-17",
+      "topic_first_source": "候補 04383afd11 のannounced_on（【最新研究】「大腸ポリープ」を取った後の内視鏡、3年後と5年）",
+      "topic_series": "04383afd11",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Figure AIが人型ロボットをターミネーターのように自己破壊するように訓練した理由",
@@ -8867,7 +9793,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-09-30",
+      "topic_first_source": "候補 fa05b422c3 のannounced_on（Figure AIが人型ロボットをターミネーターのように自己）",
+      "topic_series": "fa05b422c3",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "全固体電池に新たな突破口か？日本の研究チームが従来比46%軽い固体電解質の可能性を発見",
@@ -8929,7 +9859,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-10-06",
+      "topic_first_source": "候補 1c6deb690e のannounced_on（全固体電池に新たな突破口か？日本の研究チームが従来比46%軽）",
+      "topic_series": "1c6deb690e",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "プラネタリー・ヘルス食と健康的な加齢",
@@ -8985,7 +9919,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2025-12-29",
+      "topic_first_source": "候補 da16648bab のannounced_on（プラネタリー・ヘルス食と健康的な加齢）",
+      "topic_series": "da16648bab",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "履歴書100通に1通「AIだけが読める文字」　20万件調査でわかった“就活ハック”の手口　米研究",
@@ -9042,7 +9980,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-05-27",
+      "topic_first_source": "候補 0aa9771817 のannounced_on（履歴書100通に1通「AIだけが読める文字」　20万件調査で）",
+      "topic_series": "0aa9771817",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "「食べる順番」が食後血糖を左右する仕組みを解明―脂質を糖質より先に摂ると、食後の血糖上昇が緩やかに―グルカゴン・GLP-1・迷走神経が連携する胃排出調節機構をマウスで解明",
@@ -9140,7 +10082,17 @@
       "url_ok": null,
       "url_status": "kyoto-u.ac.jp: HTTP 200「「食べる順番」が食後血糖を左右する仕組みを解明―脂質を糖質よ」 ／ diabetesjournals.org: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
       "url_checked_at": "2026-10-14T10:33:25",
-      "used_in": "kl039"
+      "used_in": "kl039",
+      "topic_first_date": "2026-10-09",
+      "topic_first_source": "候補 7edb42445b のannounced_on（「食べる順番」が食後血糖を左右する仕組みを解明―脂質を糖質よ）",
+      "topic_series": "7edb42445b",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-09",
+        "title": "「食べる順番」が食後血糖を左右する仕組みを解明―脂質を糖質より先に摂ると、食後の血糖上昇が緩やかに―グルカゴン・GLP-1・迷走神経が連携する胃排出調節機構をマウスで解明",
+        "id": "7edb42445b",
+        "source": "Googleニュース（研究 食事 健康 効果）／京都大学"
+      }
     },
     {
       "title": "KAIST、ヒューマノイドを超えた「フィジカルAI」プラットフォーム戦略を公開",
@@ -9196,7 +10148,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-10-11",
+      "topic_first_source": "候補 bbaa43bef5 のannounced_on（KAIST、ヒューマノイドを超えた「フィジカルAI」プラット）",
+      "topic_series": "bbaa43bef5",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "アップルとLG、スマートホーム機器を共同開発か ドアベルやスマートロックなど",
@@ -9246,7 +10202,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "excluded",
       "excluded_reason": "一次資料で確認できない",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-10-07",
+      "topic_first_source": "候補 0f3cc3265e のpublished（アップルとLG、スマートホーム機器を共同開発か ドアベルやス）",
+      "topic_series": "0f3cc3265e",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "プラントベース食と認知機能アウトカム システマティックレビューとメタアナリシス",
@@ -9302,7 +10262,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2025-10-16",
+      "topic_first_source": "候補 0ec3368a6f のannounced_on（プラントベース食と認知機能アウトカム システマティックレビュ）",
+      "topic_series": "0ec3368a6f",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Google「Gemini」新サービスで「Claude」利用可能に　他モデルも今後追加予定",
@@ -9390,7 +10354,24 @@
       ],
       "url_ok": true,
       "url_status": "cloud.google.com: HTTP 200「Google Cloud Blog」",
-      "url_checked_at": "2026-10-12T09:00:59"
+      "url_checked_at": "2026-10-15T11:04:02",
+      "topic_first_date": "2026-10-08",
+      "topic_first_source": "候補 3842feda39 のannounced_on（Google「Gemini」新サービスで「Claude」利用）",
+      "topic_series": "3842feda39",
+      "freshness_basis": "topic_first_date",
+      "primary_verified": null,
+      "primary_check": [
+        {
+          "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-agent-announcement",
+          "ok": true,
+          "status": "HTTP 200「Google Cloud Blog」",
+          "page_title": "Google Cloud Blog",
+          "anchor_hit": false,
+          "method": "http",
+          "kind": "official_blog"
+        }
+      ],
+      "primary_verified_at": "2026-10-15T11:04:02"
     },
     {
       "title": "エピゲノム創薬はがんを対象に低分子薬が続々登場、固形がんへの応用や新規作用機序も",
@@ -9440,7 +10421,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "excluded",
       "excluded_reason": "一次資料で確認できない",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-10-08",
+      "topic_first_source": "候補 550ef177a5 のannounced_on（エピゲノム創薬はがんを対象に低分子薬が続々登場、固形がんへの）",
+      "topic_series": "550ef177a5",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "「電気自動車の次はロボット」··· BYD、初の自社開発ヒューマノイド特許を電撃公開",
@@ -9496,7 +10481,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-10-09",
+      "topic_first_source": "候補 d3b663897b のannounced_on（BYD、自社開発初のヒューマノイドロボットのデザインを発表）",
+      "topic_series": "a3d5ffaacc",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "ヘルスケア分野向けソーシャルロボット「Home LEO」の試作機が完成",
@@ -9552,7 +10541,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-10-06",
+      "topic_first_source": "候補 52a88894aa のannounced_on（ヘルスケア分野向けソーシャルロボット「Home LEO」の試）",
+      "topic_series": "52a88894aa",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "3歳時の腸内細菌叢、5歳時の問題行動リスクと関連－京大",
@@ -9613,7 +10606,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-09-09",
+      "topic_first_source": "候補 5517f4c17e のannounced_on（3歳時の腸内細菌叢、5歳時の問題行動リスクと関連－京大）",
+      "topic_series": "5517f4c17e",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "山中で遭難の16歳少年、登山計画に生成AI「Claude」利用　救助隊は「ルートの妄信」警鐘",
@@ -9666,7 +10663,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-10-04",
+      "topic_first_source": "候補 5c25c20a0f のannounced_on（山中で遭難の16歳少年、登山計画に生成AI「Claude」利）",
+      "topic_series": "5c25c20a0f",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "京都創薬研究所、ATP分解酵素の阻害薬を網膜動脈閉塞症に対して開発中",
@@ -9733,7 +10734,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-12"
+      "scored_at": "2026-10-12",
+      "topic_first_date": "2026-09-18",
+      "topic_first_source": "候補 88c0412e90 のannounced_on（京都創薬研究所、ATP分解酵素の阻害薬を網膜動脈閉塞症に対し）",
+      "topic_series": "88c0412e90",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "ヒューマノイド「Unitree G1+」の国内取り扱いをGMO AIRが開始 首の自由度や対話機能などが強化された上位モデル",
@@ -9797,7 +10802,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-13",
+      "topic_first_source": "候補 df184ef77f のannounced_on（ヒューマノイド「Unitree G1+」の国内取り扱いをGM）",
+      "topic_series": "fe230307b9",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "ヒューマノイド「Unitree G1+」の国内取り扱いをGMO AIRが開始 首の自由度や対話機能などが強化された上位モデル",
+        "id": "df184ef77f",
+        "source": "Googleニュース（ヒューマノイド）／ロボスタ"
+      }
     },
     {
       "title": "四足歩行ロボットの背中にドローンを載せて点検・巡視 puerisomniaが空陸連携プラットフォームの提供を開始 5枚目の写真・画像",
@@ -9856,7 +10871,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "excluded",
       "excluded_reason": "一次資料で確認できない",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-09",
+      "topic_first_source": "候補 ab91b96f2b のannounced_on（四足歩行ロボットの背中にドローンを載せて点検・巡視 puer）",
+      "topic_series": "ab91b96f2b",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "四足歩行ロボットの背中にドローンを載せて点検・巡視 puerisomniaが空陸連携プラットフォームの提供を開始 5枚目の写真・画像",
+        "id": "ab91b96f2b",
+        "source": "Googleニュース（ヒューマノイド）／ロボスタ"
+      }
     },
     {
       "title": "TDKがCEATEC出展　映像を網膜に直接投影するミラー、スマートグラスに鮮明な映像",
@@ -9909,7 +10934,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-02",
+      "topic_first_source": "候補 d27d84d0b9 のannounced_on（TDKがCEATEC出展　映像を網膜に直接投影するミラー、ス）",
+      "topic_series": "d27d84d0b9",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "TDKがCEATEC出展　映像を網膜に直接投影するミラー、スマートグラスに鮮明な映像",
+        "id": "d27d84d0b9",
+        "source": "ITmedia NEWS"
+      }
     },
     {
       "title": "国産AI「Sarashina」が無料で試せるWebサイト、ソフトバンク子会社が公開　6つのAIモデルが呼び出せるAPIも",
@@ -9981,7 +11016,54 @@
       "buzz_articles_14d": 1,
       "buzz_raw_items": 3,
       "buzz_query": "Sarashina SBIntuitions",
-      "buzz_measured_at": "2026-10-14T07:49:06"
+      "buzz_measured_at": "2026-10-14T07:49:06",
+      "topic_first_date": "2026-10-13",
+      "topic_first_source": "候補 517faf0747 のannounced_on（国産AI「Sarashina」が無料で試せるWebサイト、ソ）",
+      "topic_series": "517faf0747",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "国産AI「Sarashina」が無料で試せるWebサイト、ソフトバンク子会社が公開　6つのAIモデルが呼び出せるAPIも",
+        "id": "517faf0747",
+        "source": "ITmedia AI+"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://www.sbintuitions.co.jp/news/press/20261013_01/",
+          "ok": true,
+          "status": "HTTP 200「国産生成AI「Sarashina」を利用できる「Sarash」",
+          "page_title": "国産生成AI「Sarashina」を利用できる「Sarashinaサービス」の無償ベータ版を提供開始 | プレスリリース | SB Intuitions株式会社",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "press_release"
+        },
+        {
+          "url": "https://sarashina.ai",
+          "ok": true,
+          "status": "HTTP 200「Sarashina」",
+          "page_title": "Sarashina",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-10-15T11:04:50",
+      "url_check": [
+        {
+          "url": "https://www.sbintuitions.co.jp/news/press/20261013_01/",
+          "ok": true,
+          "status": "HTTP 200「国産生成AI「Sarashina」を利用できる「Sarash」"
+        },
+        {
+          "url": "https://sarashina.ai",
+          "ok": true,
+          "status": "HTTP 200「Sarashina」"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "sbintuitions.co.jp: HTTP 200「国産生成AI「Sarashina」を利用できる「Sarash」 ／ sarashina.ai: HTTP 200「Sarashina」",
+      "url_checked_at": "2026-10-15T11:04:50"
     },
     {
       "title": "レジスタンス運動の休息時間の違いは脂質代謝に影響するのか？",
@@ -10057,7 +11139,52 @@
       "buzz_articles_14d": 1,
       "buzz_raw_items": 2,
       "buzz_query": "早稲田大学 レジスタンス運動",
-      "buzz_measured_at": "2026-10-14T07:49:20"
+      "buzz_measured_at": "2026-10-14T07:49:20",
+      "topic_first_date": "2026-10-13",
+      "topic_first_source": "候補 32d1342208 のannounced_on（レジスタンス運動の休息時間の違いは脂質代謝に影響するのか？）",
+      "topic_series": "32d1342208",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "レジスタンス運動の休息時間の違いは脂質代謝に影響するのか？",
+        "id": "32d1342208",
+        "source": "Googleニュース（研究 食事 健康 効果）／早稲田大学"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://www.waseda.jp/inst/research/news/86252",
+          "ok": true,
+          "status": "HTTP 200「レジスタンス運動の休息時間の違いは脂質代謝に影響するのか？ 」",
+          "page_title": "レジスタンス運動の休息時間の違いは脂質代謝に影響するのか？ &#8211; Global Research Center (GRC) 早稲田大学 研究活動",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "press_release"
+        },
+        {
+          "ok": true,
+          "status": "DOI実在（ハンドルAPI、10.1038/s41430-026-01819-x）",
+          "url": "https://doi.org/10.1038/s41430-026-01819-x",
+          "method": "doi_handle",
+          "kind": "paper"
+        }
+      ],
+      "primary_verified_at": "2026-10-15T11:02:39",
+      "url_check": [
+        {
+          "url": "https://www.waseda.jp/inst/research/news/86252",
+          "ok": true,
+          "status": "HTTP 200「レジスタンス運動の休息時間の違いは脂質代謝に影響するのか？ 」"
+        },
+        {
+          "url": "https://doi.org/10.1038/s41430-026-01819-x",
+          "ok": true,
+          "status": "DOI実在（ハンドルAPI、10.1038/s41430-026-01819-x）"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "waseda.jp: HTTP 200「レジスタンス運動の休息時間の違いは脂質代謝に影響するのか？ 」 ／ doi.org: DOI実在（ハンドルAPI、10.1038/s41430-026-01819-x）",
+      "url_checked_at": "2026-10-15T11:02:39"
     },
     {
       "title": "2030年までにAI搭載のヒューマノイドロボットを市場投入／安川電機",
@@ -10148,7 +11275,28 @@
       ],
       "url_ok": false,
       "url_status": "yaskawa.co.jp: HTTP 404",
-      "url_checked_at": "2026-10-15T07:11:15"
+      "url_checked_at": "2026-10-15T11:02:41",
+      "topic_first_date": "2026-10-09",
+      "topic_first_source": "候補 943628176b のannounced_on（2030年までにAI搭載のヒューマノイドロボットを市場投入／）",
+      "topic_series": "943628176b",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "2030年までにAI搭載のヒューマノイドロボットを市場投入／安川電機",
+        "id": "943628176b",
+        "source": "Googleニュース（ヒューマノイド）／robot digest"
+      },
+      "primary_verified": false,
+      "primary_check": [
+        {
+          "url": "https://www.yaskawa.co.jp/ir/materials/financial",
+          "ok": false,
+          "status": "HTTP 404",
+          "method": "http",
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-10-15T11:02:41"
     },
     {
       "title": "可搬重量100kgで既存の台車や棚を運搬可能 最新AMR「カチャカEvo」のデモを披露：CEATEC 2026",
@@ -10249,7 +11397,37 @@
       ],
       "url_ok": false,
       "url_status": "kachaka.life: HTTP 404 ／ kachaka.life: HTTP 200「自律搬送ロボット &quot;カチャカEvo&quot; ｜」",
-      "url_checked_at": "2026-10-15T07:11:38"
+      "url_checked_at": "2026-10-15T11:02:48",
+      "topic_first_date": "2026-09-30",
+      "topic_first_source": "候補 2aea90dee7 のannounced_on（可搬重量100kgで既存の台車や棚を運搬可能 最新AMR「カ）",
+      "topic_series": "2aea90dee7",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "可搬重量100kgで既存の台車や棚を運搬可能 最新AMR「カチャカEvo」のデモを披露：CEATEC 2026",
+        "id": "2aea90dee7",
+        "source": "Googleニュース（家庭用ロボット）／MONOist"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://kachaka.life/blogs/press-release-evo-official-launch/",
+          "ok": false,
+          "status": "HTTP 404",
+          "method": "http",
+          "kind": "press_release"
+        },
+        {
+          "url": "https://kachaka.life/evo/",
+          "ok": true,
+          "status": "HTTP 200「自律搬送ロボット &quot;カチャカEvo&quot; ｜」",
+          "page_title": "自律搬送ロボット &quot;カチャカEvo&quot; ｜ 小型で100kgまで可搬できるAMRで搬送業務を自動化",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-10-15T11:02:48"
     },
     {
       "title": "慢性腎臓病を「治る病」に 新規の透析患者ゼロへ新薬を研究 埼玉医大",
@@ -10307,7 +11485,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-03-30",
+      "topic_first_source": "候補 58336efc88 のannounced_on（慢性腎臓病を「治る病」に 新規の透析患者ゼロへ新薬を研究 埼）",
+      "topic_series": "58336efc88",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "慢性腎臓病を「治る病」に 新規の透析患者ゼロへ新薬を研究 埼玉医大",
+        "id": "58336efc88",
+        "source": "JST サイエンスポータル"
+      }
     },
     {
       "title": "新サービス「Gemini agent」は企業向け、「Gemini Enterprise」加入者は追加料金なし　日本提供時期は未定",
@@ -10404,7 +11592,39 @@
       ],
       "url_ok": true,
       "url_status": "cloud.google.com: HTTP 200「Gemini at Work 2026: Introduci」 ／ cloud.google.com: HTTP 200「Google Cloud Blog」",
-      "url_checked_at": "2026-10-15T07:11:25"
+      "url_checked_at": "2026-10-15T11:04:12",
+      "topic_first_date": "2026-10-08",
+      "topic_first_source": "候補 79d0885d3e のannounced_on（新サービス「Gemini agent」は企業向け、「Gemi）",
+      "topic_series": "79d0885d3e",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "新サービス「Gemini agent」は企業向け、「Gemini Enterprise」加入者は追加料金なし　日本提供時期は未定",
+        "id": "79d0885d3e",
+        "source": "ITmedia AI+"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026/",
+          "ok": true,
+          "status": "HTTP 200「Gemini at Work 2026: Introduci」",
+          "page_title": "Gemini at Work 2026: Introducing Gemini agent | Google Cloud Blog",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_blog"
+        },
+        {
+          "url": "https://cloud.google.com/blog/products/ai-machine-learning/how-to-grow-your-small-business-using-google-gemini/",
+          "ok": true,
+          "status": "HTTP 200「Google Cloud Blog」",
+          "page_title": "Google Cloud Blog",
+          "anchor_hit": false,
+          "method": "http",
+          "kind": "official_blog"
+        }
+      ],
+      "primary_verified_at": "2026-10-15T11:04:12"
     },
     {
       "title": "新生児の免疫システムは生後7日間で決まる",
@@ -10461,7 +11681,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-04-16",
+      "topic_first_source": "候補 c19fde929f のannounced_on（新生児の免疫システムは生後7日間で決まる）",
+      "topic_series": "c19fde929f",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "新生児の免疫システムは生後7日間で決まる",
+        "id": "c19fde929f",
+        "source": "Googleニュース（腸内細菌 研究）／Futuro Prossimo"
+      }
     },
     {
       "title": "松尾研究所と川崎重工、ヒューマノイド「Kaleido9」の重量物運搬デモに成功",
@@ -10522,7 +11752,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-13",
+      "topic_first_source": "候補 32870bcf1a のannounced_on（松尾研究所と川崎重工、ヒューマノイド「Kaleido9」の重）",
+      "topic_series": "32870bcf1a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "松尾研究所と川崎重工、ヒューマノイド「Kaleido9」の重量物運搬デモに成功",
+        "id": "32870bcf1a",
+        "source": "Googleニュース（ヒューマノイド）／PR TIMES"
+      }
     },
     {
       "title": "中国のスマート工場はどこまで進んだ？HONORとUBTECHから見えた製造業の変化",
@@ -10584,7 +11824,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-09-12",
+      "topic_first_source": "候補 9a7c53e291 のannounced_on（中国のスマート工場はどこまで進んだ？HONORとUBTECH）",
+      "topic_series": "9a7c53e291",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-12",
+        "title": "中国のスマート工場はどこまで進んだ？HONORとUBTECHから見えた製造業の変化",
+        "id": "9a7c53e291",
+        "source": "Googleニュース（家庭用ロボット）／theLetter"
+      }
     },
     {
       "title": "慢性腎臓病患者のたんぱく質摂取量と血中尿素窒素の関連に食物繊維摂取量が影響する可能性",
@@ -10655,7 +11905,52 @@
       "buzz_articles_14d": 0,
       "buzz_raw_items": 8,
       "buzz_query": "東京科学大学 食物繊維",
-      "buzz_measured_at": "2026-10-14T07:49:23"
+      "buzz_measured_at": "2026-10-14T07:49:23",
+      "topic_first_date": "2026-10-13",
+      "topic_first_source": "候補 879b885c6c のannounced_on（慢性腎臓病患者のたんぱく質摂取量と血中尿素窒素の関連に食物繊）",
+      "topic_series": "879b885c6c",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "慢性腎臓病患者のたんぱく質摂取量と血中尿素窒素の関連に食物繊維摂取量が影響する可能性",
+        "id": "879b885c6c",
+        "source": "Googleニュース（研究 食事 健康 効果）／Science Tokyo"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://www.isct.ac.jp/ja/news/ob86c242h0ke",
+          "ok": true,
+          "status": "HTTP 200「慢性腎臓病患者のたんぱく質摂取量と血中尿素窒素の関連に食物繊」",
+          "page_title": "慢性腎臓病患者のたんぱく質摂取量と血中尿素窒素の関連に食物繊維摂取量が影響する可能性 | Science Tokyo - 東京科学大学",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "press_release"
+        },
+        {
+          "ok": true,
+          "status": "DOI実在（ハンドルAPI、10.34067/KID.0000001350）",
+          "url": "https://doi.org/10.34067/KID.0000001350",
+          "method": "doi_handle",
+          "kind": "paper"
+        }
+      ],
+      "primary_verified_at": "2026-10-15T11:02:59",
+      "url_check": [
+        {
+          "url": "https://www.isct.ac.jp/ja/news/ob86c242h0ke",
+          "ok": true,
+          "status": "HTTP 200「慢性腎臓病患者のたんぱく質摂取量と血中尿素窒素の関連に食物繊」"
+        },
+        {
+          "url": "https://doi.org/10.34067/KID.0000001350",
+          "ok": true,
+          "status": "DOI実在（ハンドルAPI、10.34067/KID.0000001350）"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "isct.ac.jp: HTTP 200「慢性腎臓病患者のたんぱく質摂取量と血中尿素窒素の関連に食物繊」 ／ doi.org: DOI実在（ハンドルAPI、10.34067/KID.0000001350）",
+      "url_checked_at": "2026-10-15T11:02:59"
     },
     {
       "title": "国産AI「Sarashina」を無料で試せる　ソフトバンク傘下が新サービスβ版　API・チャットに対応",
@@ -10752,7 +12047,39 @@
       ],
       "url_ok": true,
       "url_status": "sbintuitions.co.jp: HTTP 200「国産生成AI「Sarashina」を利用できる「Sarash」 ／ sarashina.ai: HTTP 200「Sarashina」",
-      "url_checked_at": "2026-10-15T07:11:29"
+      "url_checked_at": "2026-10-15T11:03:03",
+      "topic_first_date": "2026-10-13",
+      "topic_first_source": "候補 630403055e のannounced_on（国産AI「Sarashina」を無料で試せる　ソフトバンク傘）",
+      "topic_series": "630403055e",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "国産AI「Sarashina」を無料で試せる　ソフトバンク傘下が新サービスβ版　API・チャットに対応",
+        "id": "630403055e",
+        "source": "ITmedia AI+"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://www.sbintuitions.co.jp/news/press/20261013_01/",
+          "ok": true,
+          "status": "HTTP 200「国産生成AI「Sarashina」を利用できる「Sarash」",
+          "page_title": "国産生成AI「Sarashina」を利用できる「Sarashinaサービス」の無償ベータ版を提供開始 | プレスリリース | SB Intuitions株式会社",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "press_release"
+        },
+        {
+          "url": "https://sarashina.ai/",
+          "ok": true,
+          "status": "HTTP 200「Sarashina」",
+          "page_title": "Sarashina",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-10-15T11:03:03"
     },
     {
       "title": "ロンドンとベルファストの研究者たちは、ケフィアを通して腸と筋肉がどのように情報伝達を行うかを研究している。",
@@ -10823,7 +12150,17 @@
       "buzz_articles_14d": 1,
       "buzz_raw_items": 3,
       "buzz_query": "ケフィア 腸",
-      "buzz_measured_at": "2026-10-14T07:50:23"
+      "buzz_measured_at": "2026-10-14T07:50:23",
+      "topic_first_date": "2026-09-25",
+      "topic_first_source": "候補 663c1fe39f のannounced_on（ロンドンとベルファストの研究者たちは、ケフィアを通して腸と筋）",
+      "topic_series": "663c1fe39f",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-12",
+        "title": "ロンドンとベルファストの研究者たちは、ケフィアを通して腸と筋肉がどのように情報伝達を行うかを研究している。",
+        "id": "663c1fe39f",
+        "source": "Googleニュース（腸内細菌 研究）／Futuro Prossimo"
+      }
     },
     {
       "title": "川重・松尾研、ヒューマノイドで22.7キロ運搬",
@@ -10880,7 +12217,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-13",
+      "topic_first_source": "候補 306cb7cbf9 のannounced_on（川重・松尾研、ヒューマノイドで22.7キロ運搬）",
+      "topic_series": "306cb7cbf9",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "松尾研究所と川崎重工、ヒューマノイド「Kaleido9」の重量物運搬デモに成功",
+        "id": "32870bcf1a",
+        "source": "Googleニュース（ヒューマノイド）／PR TIMES"
+      }
     },
     {
       "title": "なぜBYDら中国勢は「全固体電池」に動くのか？ 車載電池で「7割超」の存在感！ 次世代電池をめぐって何が起きているのか――世界市場で変わる競争の形とは",
@@ -10936,7 +12283,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "excluded",
       "excluded_reason": "一次資料で確認できない",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-09",
+      "topic_first_source": "候補 5fda497903 のpublished（なぜBYDら中国勢は「全固体電池」に動くのか？ 車載電池で「）",
+      "topic_series": "5fda497903",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-09",
+        "title": "全固体電池の産業化が加速：奇瑞が設備入札開始、BYDは2027年搭載を正式表明",
+        "id": "e717b55eb1",
+        "source": "Googleニュース（全固体電池）／BigGo ファイナンス"
+      }
     },
     {
       "title": "ヒトゲノムの未解明領域「セントロメア」の大規模解析が実現―世界中に蓄積されたゲノムデータを活用し、がんなどの疾患研究を加速",
@@ -10998,7 +12355,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-13",
+      "topic_first_source": "候補 e3df6810b7 のannounced_on（ヒトゲノムの未解明領域「セントロメア」の大規模解析が実現―世）",
+      "topic_series": "e3df6810b7",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Microsoft、Copilotなどを自社開発チップで稼働　新チップでNVIDIA依存から脱却狙いか",
@@ -11055,7 +12416,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-12",
+      "topic_first_source": "候補 f4a8589159 のannounced_on（Microsoft、Copilotなどを自社開発チップで稼働）",
+      "topic_series": "6a5fdf2767",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "Microsoft、Copilotなどを自社開発チップで稼働　新チップでNVIDIA依存から脱却狙いか",
+        "id": "f4a8589159",
+        "source": "ITmedia AI+"
+      }
     },
     {
       "title": "総説：認知機能の低下抑制におけるオリーブオイルの役割を探る",
@@ -11111,7 +12482,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-04-04",
+      "topic_first_source": "候補 cf600c2998 のannounced_on（総説：認知機能の低下抑制におけるオリーブオイルの役割を探る）",
+      "topic_series": "cf600c2998",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "GMO AIR、センシング・対話機能を強化したUnitree製ヒューマノイド「G1+」の国内取り扱いを開始",
@@ -11177,7 +12552,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-13",
+      "topic_first_source": "候補 df184ef77f のannounced_on（ヒューマノイド「Unitree G1+」の国内取り扱いをGM）",
+      "topic_series": "fe230307b9",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "ヒューマノイド「Unitree G1+」の国内取り扱いをGMO AIRが開始 首の自由度や対話機能などが強化された上位モデル",
+        "id": "df184ef77f",
+        "source": "Googleニュース（ヒューマノイド）／ロボスタ"
+      }
     },
     {
       "title": "【動画】4体のアヒル型ロボット「Microduck」が魅せる即興合唱 Hugging Face傘下Pollen Robotics",
@@ -11243,7 +12628,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-12",
+      "topic_first_source": "候補 1c3a8ff0bd のannounced_on（【動画】4体のアヒル型ロボット「Microduck」が魅せる）",
+      "topic_series": "1c3a8ff0bd",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "健康と「食」の新たな関係 エピジェネティクス研究で見えてきた免疫・炎症・がん予防",
@@ -11304,7 +12693,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-04-01",
+      "topic_first_source": "候補 0e8df915ac のannounced_on（健康と「食」の新たな関係 エピジェネティクス研究で見えてきた）",
+      "topic_series": "0e8df915ac",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Anthropic、自己複製AIの「兆し」を指摘　55ドルのTVボックス15台で26Bモデルが稼働",
@@ -11357,7 +12750,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-12",
+      "topic_first_source": "候補 acd88cd2d7 のannounced_on（Anthropic、自己複製AIの「兆し」を指摘　55ドルの）",
+      "topic_series": "acd88cd2d7",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "Anthropic、自己複製AIの「兆し」を指摘　55ドルのTVボックス15台で26Bモデルが稼働",
+        "id": "acd88cd2d7",
+        "source": "ITmedia AI+"
+      }
     },
     {
       "title": "「善玉菌を増やす」腸活は時代遅れ？ 最新研究で変わった腸活の新常識 Gas Stations (3fX8lTUY6Z)",
@@ -11407,7 +12810,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "excluded",
       "excluded_reason": "一次資料で確認できない",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-13",
+      "topic_first_source": "候補 3adaf81b40 のpublished（「善玉菌を増やす」腸活は時代遅れ？ 最新研究で変わった腸活の）",
+      "topic_series": "3adaf81b40",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "1時間1200個、夜通し働く 中国のヒューマノイド、物流現場でベテラン作業員に迫った",
@@ -11469,7 +12876,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-05-13",
+      "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
+      "topic_series": "19c5b23c6b",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "1時間1200個、夜通し働く 中国のヒューマノイド、物流現場でベテラン作業員に迫った",
+        "id": "19c5b23c6b",
+        "source": "Googleニュース（ヒューマノイド）／36Kr Japan"
+      }
     },
     {
       "title": "全固体電池と500psを搭載。プジョー「RCZ ビジョン」が示す次世代EVクーペの狂気",
@@ -11526,7 +12943,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-11",
+      "topic_first_source": "候補 c7fe9e62db のannounced_on（全固体電池と500psを搭載。プジョー「RCZ ビジョン」が）",
+      "topic_series": "421f31d683",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-12",
+        "title": "全固体電池と500psを搭載。プジョー「RCZ ビジョン」が示す次世代EVクーペの狂気",
+        "id": "c7fe9e62db",
+        "source": "Googleニュース（全固体電池）／トップギア・ジャパン"
+      }
     },
     {
       "title": "アレルギー性皮膚炎で症状繰り返す仕組み、マウスで発見 京大など",
@@ -11588,7 +13015,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-12",
+      "topic_first_source": "候補 ebe0bc09c4 のannounced_on（アレルギー性皮膚炎で症状繰り返す仕組み、マウスで発見 京大な）",
+      "topic_series": "ebe0bc09c4",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-12",
+        "title": "アレルギー性皮膚炎で症状繰り返す仕組み、マウスで発見 京大など",
+        "id": "ebe0bc09c4",
+        "source": "Googleニュース（iPS細胞 研究 成果）／日本経済新聞"
+      }
     },
     {
       "title": "Microsoft、第3世代AIチップ「Maia 300」を2027年に投入　GPU比で電力効率4割向上、自社サービスの主力推論基盤に",
@@ -11645,7 +13082,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-12",
+      "topic_first_source": "候補 f4a8589159 のannounced_on（Microsoft、Copilotなどを自社開発チップで稼働）",
+      "topic_series": "6a5fdf2767",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "Microsoft、Copilotなどを自社開発チップで稼働　新チップでNVIDIA依存から脱却狙いか",
+        "id": "f4a8589159",
+        "source": "ITmedia AI+"
+      }
     },
     {
       "title": "不規則な食事時間が老化を早める!?｜CareNet.com",
@@ -11707,7 +13154,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-06-16",
+      "topic_first_source": "候補 4b7ce76f9c のannounced_on（不規則な食事時間が老化を早める!?｜CareNet.com）",
+      "topic_series": "4b7ce76f9c",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-10",
+        "title": "不規則な食事時間が老化を早める!?｜CareNet.com",
+        "id": "4b7ce76f9c",
+        "source": "Googleニュース（研究 食事 健康 効果）／CareNet.com"
+      }
     },
     {
       "title": "国産ヒューマノイド「N」の量産試作機をCEATEC 2026に展示、HighlandersがAWSブース内で動作デモを実施",
@@ -11769,7 +13226,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-13",
+      "topic_first_source": "候補 805f84e5c0 のannounced_on（国産ヒューマノイド「N」の量産試作機をCEATEC 2026）",
+      "topic_series": "805f84e5c0",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "国産ヒューマノイドロボット「N」の量産試作機をCEATEC 2026で初公開",
+        "id": "823d24ac89",
+        "source": "Gemini検索（株式会社Highlanders）"
+      }
     },
     {
       "title": "プジョーRCZビジョン、全固体電池と1000V技術を提示",
@@ -11825,7 +13292,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-11",
+      "topic_first_source": "候補 c7fe9e62db のannounced_on（全固体電池と500psを搭載。プジョー「RCZ ビジョン」が）",
+      "topic_series": "421f31d683",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-12",
+        "title": "全固体電池と500psを搭載。プジョー「RCZ ビジョン」が示す次世代EVクーペの狂気",
+        "id": "c7fe9e62db",
+        "source": "Googleニュース（全固体電池）／トップギア・ジャパン"
+      }
     },
     {
       "title": "Eli Lilly社が肥満治療薬候補retatrutideの2件の第3相で好結果、BLAを準備",
@@ -11896,7 +13373,11 @@
       "buzz_articles_14d": 0,
       "buzz_raw_items": 3,
       "buzz_query": "retatrutide 第3相",
-      "buzz_measured_at": "2026-10-14T09:57:33"
+      "buzz_measured_at": "2026-10-14T09:57:33",
+      "topic_first_date": "2026-09-29",
+      "topic_first_source": "候補 69550c628f のannounced_on（Eli Lilly社が肥満治療薬候補retatrutideの）",
+      "topic_series": "69550c628f",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "「Google Play」、AI Studioで作った自作アプリを自分の端末で実行可能に　AIでゲームを探す機能も",
@@ -11948,7 +13429,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-13",
+      "topic_first_source": "候補 9c17d3cb2d のannounced_on（「Google Play」、AI Studioで作った自作ア）",
+      "topic_series": "9c17d3cb2d",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "キンモクセイの香りには食欲を抑える効果が？",
@@ -12004,7 +13489,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2013-04-08",
+      "topic_first_source": "候補 d5eefc391b のannounced_on（キンモクセイの香りには食欲を抑える効果が？）",
+      "topic_series": "d5eefc391b",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "D1:日本の屋内環境に最適化された準国産ヒューマノイド",
@@ -12066,7 +13555,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-08-05",
+      "topic_first_source": "候補 b56779c47c のannounced_on（D1:日本の屋内環境に最適化された準国産ヒューマノイド）",
+      "topic_series": "b56779c47c",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "プジョー RCZビジョン発表、全固体電池のEVクーペ｜パリモーターショー",
@@ -12122,7 +13615,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-11",
+      "topic_first_source": "候補 c7fe9e62db のannounced_on（全固体電池と500psを搭載。プジョー「RCZ ビジョン」が）",
+      "topic_series": "421f31d683",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-12",
+        "title": "全固体電池と500psを搭載。プジョー「RCZ ビジョン」が示す次世代EVクーペの狂気",
+        "id": "c7fe9e62db",
+        "source": "Googleニュース（全固体電池）／トップギア・ジャパン"
+      }
     },
     {
       "title": "がん患者に発症したNTM症では、8割が治療の変更を要する",
@@ -12178,7 +13681,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-07-29",
+      "topic_first_source": "候補 53c0cd7417 のannounced_on（がん患者に発症したNTM症では、8割が治療の変更を要する）",
+      "topic_series": "53c0cd7417",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Apple、「Welcome home」イベントで発表されたことまとめ　日本でも2製品予約開始",
@@ -12241,7 +13748,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-13",
+      "topic_first_source": "候補 39876262e8 のannounced_on（Apple、「Welcome home」イベントで発表された）",
+      "topic_series": "39876262e8",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "Apple、「Welcome home」イベントで発表されたことまとめ　日本でも2製品予約開始",
+        "id": "39876262e8",
+        "source": "ITmedia NEWS"
+      }
     },
     {
       "title": "バターを植物油に置き換えると死亡リスクは低下する｜CareNet.com",
@@ -12297,7 +13814,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2025-03-06",
+      "topic_first_source": "候補 7294992374 のannounced_on（バターを植物油に置き換えると死亡リスクは低下する｜CareN）",
+      "topic_series": "7294992374",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-10",
+        "title": "バターを植物油に置き換えると死亡リスクは低下する｜CareNet.com",
+        "id": "7294992374",
+        "source": "Googleニュース（研究 食事 健康 効果）／CareNet.com"
+      }
     },
     {
       "title": "三菱が「人型ロボット」を作る!? 動くほど賢くなる人型ロボットがスゴい!! 2027年に京都工場で生産開始へ",
@@ -12362,7 +13889,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-07-09",
+      "topic_first_source": "候補 7e67b3be15 のannounced_on（三菱が「人型ロボット」を作る!? 動くほど賢くなる人型ロボッ）",
+      "topic_series": "7e67b3be15",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "三菱が「人型ロボット」を作る!? 動くほど賢くなる人型ロボットがスゴい!! 2027年に京都工場で生産開始へ",
+        "id": "7e67b3be15",
+        "source": "Googleニュース（ヒューマノイド）／ベストカーWeb"
+      }
     },
     {
       "title": "プジョーの名車「RCZ」が500馬力＋固体電池搭載EVとして提示される。あのリアウインドウを持つ「RCZ Vision」が世界初公開",
@@ -12419,7 +13956,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-10-11",
+      "topic_first_source": "候補 c7fe9e62db のannounced_on（全固体電池と500psを搭載。プジョー「RCZ ビジョン」が）",
+      "topic_series": "421f31d683",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-12",
+        "title": "全固体電池と500psを搭載。プジョー「RCZ ビジョン」が示す次世代EVクーペの狂気",
+        "id": "c7fe9e62db",
+        "source": "Googleニュース（全固体電池）／トップギア・ジャパン"
+      }
     },
     {
       "title": "不妊治療経験者のがん罹患率は一般女性とほぼ同程度｜CareNet.com",
@@ -12475,7 +14022,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-03-10",
+      "topic_first_source": "候補 856b3c7cc1 のannounced_on（不妊治療経験者のがん罹患率は一般女性とほぼ同程度｜CareN）",
+      "topic_series": "856b3c7cc1",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "「Gemini 4 Argon」が一般提供開始 ～満を持して登場した最強の「Gemini」モデル",
@@ -12575,7 +14126,35 @@
       ],
       "url_ok": false,
       "url_status": "blog.google: HTTP 404 ／ blog.google: HTTP 404",
-      "url_checked_at": "2026-10-15T07:11:11"
+      "url_checked_at": "2026-10-15T11:03:11",
+      "topic_first_date": "2026-09-30",
+      "topic_first_source": "プールの記事（Gemini 4 Argon: our next era of frontier）",
+      "topic_series": "e345ef443a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-09-30",
+        "title": "Gemini 4 Argon: our next era of frontier intelligence",
+        "id": "15e70ee5e4",
+        "source": "Google DeepMind"
+      },
+      "primary_verified": false,
+      "primary_check": [
+        {
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon-available-globally/",
+          "ok": false,
+          "status": "HTTP 404",
+          "method": "http",
+          "kind": "official_blog"
+        },
+        {
+          "url": "https://blog.google/technology/safety-security/gemini-4-argon-responsible-deployment/",
+          "ok": false,
+          "status": "HTTP 404",
+          "method": "http",
+          "kind": "official_blog"
+        }
+      ],
+      "primary_verified_at": "2026-10-15T11:03:11"
     },
     {
       "title": "夜間の食事でストレスによる腸の不調が悪化｜CareNet.com",
@@ -12636,7 +14215,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-14"
+      "scored_at": "2026-10-14",
+      "topic_first_date": "2026-04-23",
+      "topic_first_source": "候補 836229157f のannounced_on（夜間の食事でストレスによる腸の不調が悪化｜CareNet.c）",
+      "topic_series": "836229157f",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-10",
+        "title": "夜間の食事でストレスによる腸の不調が悪化｜CareNet.com",
+        "id": "836229157f",
+        "source": "Googleニュース（研究 食事 健康 効果）／CareNet.com"
+      }
     },
     {
       "title": "ｕｇｏ、国産セミヒューマノイド「ugo Nova」発表。フィジカルAIのロボット基盤モデル開発に活用可能",
@@ -12697,7 +14286,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-15"
+      "scored_at": "2026-10-15",
+      "topic_first_date": "2026-09-16",
+      "topic_first_source": "候補 2f8fa76e81 のannounced_on（ｕｇｏ、国産セミヒューマノイド「ugo Nova」発表。フィ）",
+      "topic_series": "2f8fa76e81",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "【あの「RCZ」がEVで復活へ】プジョー「RCZ ビジョン」公開！ 500馬力＆600km、全固体電池で10→80％を10分",
@@ -12753,7 +14346,17 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-15"
+      "scored_at": "2026-10-15",
+      "topic_first_date": "2026-10-11",
+      "topic_first_source": "候補 c7fe9e62db のannounced_on（全固体電池と500psを搭載。プジョー「RCZ ビジョン」が）",
+      "topic_series": "421f31d683",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-12",
+        "title": "全固体電池と500psを搭載。プジョー「RCZ ビジョン」が示す次世代EVクーペの狂気",
+        "id": "c7fe9e62db",
+        "source": "Googleニュース（全固体電池）／トップギア・ジャパン"
+      }
     },
     {
       "title": "コーヒーの効果はカフェインだけではない？ 腸内細菌との関係が明らかに",
@@ -12814,7 +14417,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-15"
+      "scored_at": "2026-10-15",
+      "topic_first_date": "2026-04-21",
+      "topic_first_source": "候補 4cf947cd03 のannounced_on（コーヒーの効果はカフェインだけではない？ 腸内細菌との関係が）",
+      "topic_series": "4cf947cd03",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "ペット向けのがん放射線治療やロボット手術、鳥取大に高度医療の動物医療拠点を整備へ",
@@ -12905,7 +14512,22 @@
       ],
       "url_ok": false,
       "url_status": "tottori-u.ac.jp: HTTP 404",
-      "url_checked_at": "2026-10-15T07:11:19"
+      "url_checked_at": "2026-10-15T11:03:12",
+      "topic_first_date": "2026-10-06",
+      "topic_first_source": "候補 f24c719cfc のannounced_on（ペット向けのがん放射線治療やロボット手術、鳥取大に高度医療の）",
+      "topic_series": "f24c719cfc",
+      "freshness_basis": "topic_first_date",
+      "primary_verified": false,
+      "primary_check": [
+        {
+          "url": "https://www.tottori-u.ac.jp/item/23472.htm",
+          "ok": false,
+          "status": "HTTP 404",
+          "method": "http",
+          "kind": "press_release"
+        }
+      ],
+      "primary_verified_at": "2026-10-15T11:03:12"
     },
     {
       "title": "デジハリ大、「Claude」を全学導入へ──国内初、“回数気にせず”使い放題に",
@@ -12957,7 +14579,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-15"
+      "scored_at": "2026-10-15",
+      "topic_first_date": "2026-10-14",
+      "topic_first_source": "候補 5d9e3a3db8 のannounced_on（デジハリ大、「Claude」を全学導入へ──国内初、“回数気）",
+      "topic_series": "5d9e3a3db8",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "浙江省杭州の自動車部品工場、人型ロボット約20台を導入",
@@ -13007,7 +14633,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "excluded",
       "excluded_reason": "一次資料で確認できない",
-      "scored_at": "2026-10-15"
+      "scored_at": "2026-10-15",
+      "topic_first_date": "2026-10-14",
+      "topic_first_source": "候補 3f2e734d9d のannounced_on（浙江省杭州の自動車部品工場、人型ロボット約20台を導入）",
+      "topic_series": "3f2e734d9d",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "マクセル、「全固体電池バックアップモジュール」の量産を開始",
@@ -13064,7 +14694,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-15"
+      "scored_at": "2026-10-15",
+      "topic_first_date": "2026-10-14",
+      "topic_first_source": "候補 0547879671 のannounced_on（マクセル、「全固体電池バックアップモジュール」の量産を開始）",
+      "topic_series": "90a842d656",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "ヤクルト、継続飲用で死亡リスク低減を確認",
@@ -13125,7 +14759,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-15"
+      "scored_at": "2026-10-15",
+      "topic_first_date": "2026-09-11",
+      "topic_first_source": "候補 ba286f7b42 のannounced_on（ヤクルト、継続飲用で死亡リスク低減を確認）",
+      "topic_series": "ba286f7b42",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "千葉大、神経性過食症に対する認知行動療法のメカニズムの解明",
@@ -13187,7 +14825,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-15"
+      "scored_at": "2026-10-15",
+      "topic_first_date": "2026-09-25",
+      "topic_first_source": "候補 5e54627a17 のannounced_on（千葉大、神経性過食症に対する認知行動療法のメカニズムの解明）",
+      "topic_series": "5e54627a17",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Googleの新モデル「Gemini 4 Argon」一般提供開始　使えるプラン、価格",
@@ -13274,7 +14916,68 @@
       "buzz_articles_14d": 63,
       "buzz_raw_items": 100,
       "buzz_query": "Gemini 4",
-      "buzz_measured_at": "2026-10-15T07:10:57"
+      "buzz_measured_at": "2026-10-15T07:10:57",
+      "topic_first_date": "2026-09-30",
+      "topic_first_source": "プールの記事（Gemini 4 Argon: our next era of frontier）",
+      "topic_series": "e345ef443a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-09-30",
+        "title": "Gemini 4 Argon: our next era of frontier intelligence",
+        "id": "15e70ee5e4",
+        "source": "Google DeepMind"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+          "ok": true,
+          "status": "HTTP 200「Gemini 4 Argon is now availabl」",
+          "page_title": "Gemini 4 Argon is now available for everyone",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_blog"
+        },
+        {
+          "url": "https://developers.googleblog.com/en/gemini-4-argon-for-robotics/",
+          "ok": true,
+          "status": "HTTP 200「Gemini 4 Argon for Robotics - 」",
+          "page_title": "Gemini 4 Argon for Robotics - Google Developers Blog",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_page"
+        },
+        {
+          "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-4-argon",
+          "ok": true,
+          "status": "HTTP 200「Gemini 4 Argon のデベロッパー ガイド &nb」",
+          "page_title": "Gemini 4 Argon のデベロッパー ガイド &nbsp;|&nbsp; Gemini Enterprise Agent Platform &nbsp;|&nbsp; Google Cloud Documentation",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "tech_report"
+        }
+      ],
+      "primary_verified_at": "2026-10-15T11:03:21",
+      "url_check": [
+        {
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+          "ok": true,
+          "status": "HTTP 200「Gemini 4 Argon is now availabl」"
+        },
+        {
+          "url": "https://developers.googleblog.com/en/gemini-4-argon-for-robotics/",
+          "ok": true,
+          "status": "HTTP 200「Gemini 4 Argon for Robotics - 」"
+        },
+        {
+          "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-4-argon",
+          "ok": true,
+          "status": "HTTP 200「Gemini 4 Argon のデベロッパー ガイド &nb」"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "blog.google: HTTP 200「Gemini 4 Argon is now availabl」 ／ developers.googleblog.com: HTTP 200「Gemini 4 Argon for Robotics - 」 ／ docs.cloud.google.com: HTTP 200「Gemini 4 Argon のデベロッパー ガイド &nb」",
+      "url_checked_at": "2026-10-15T11:03:21"
     },
     {
       "title": "1万台規模の人型ロボット用力制御アーム、山東省鄒城市で納入―中国",
@@ -13331,7 +15034,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-15"
+      "scored_at": "2026-10-15",
+      "topic_first_date": "2026-09-29",
+      "topic_first_source": "候補 610672b557 のannounced_on（1万台規模の人型ロボット用力制御アーム、山東省鄒城市で納入―）",
+      "topic_series": "610672b557",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "耐用年数10年以上、マクセルが全固体電池モジュール量産でFA機器の保守負荷を低減",
@@ -13387,7 +15094,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-15"
+      "scored_at": "2026-10-15",
+      "topic_first_date": "2026-10-14",
+      "topic_first_source": "候補 0547879671 のannounced_on（マクセル、「全固体電池バックアップモジュール」の量産を開始）",
+      "topic_series": "90a842d656",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "中年期の健康的な食事は認知機能低下リスクを抑制する？｜CareNet.com",
@@ -13443,7 +15154,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-15"
+      "scored_at": "2026-10-15",
+      "topic_first_date": "2026-02-23",
+      "topic_first_source": "候補 fff866d5d3 のannounced_on（中年期の健康的な食事は認知機能低下リスクを抑制する？｜Car）",
+      "topic_series": "fff866d5d3",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "ヒトゲノムの未解明領域「セントロメア」の大規模解析が実現",
@@ -13504,7 +15219,11 @@
       "scan_version": "2026-10-11-buzz-measured",
       "status": "available",
       "excluded_reason": "",
-      "scored_at": "2026-10-15"
+      "scored_at": "2026-10-15",
+      "topic_first_date": "2026-10-13",
+      "topic_first_source": "候補 a02efb33b1 のannounced_on（ヒトゲノムの未解明領域「セントロメア」の大規模解析が実現）",
+      "topic_series": "a02efb33b1",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Google、待望の新AIモデル「Gemini 4 Argon」一般提供を開始　推論の継続力を強化　一部ベンチでトップに",
@@ -13593,7 +15312,54 @@
       "buzz_articles_14d": 65,
       "buzz_raw_items": 100,
       "buzz_query": "Gemini 4",
-      "buzz_measured_at": "2026-10-15T07:10:59"
+      "buzz_measured_at": "2026-10-15T07:10:59",
+      "topic_first_date": "2026-09-30",
+      "topic_first_source": "プールの記事（Gemini 4 Argon: our next era of frontier）",
+      "topic_series": "e345ef443a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-09-30",
+        "title": "Gemini 4 Argon: our next era of frontier intelligence",
+        "id": "15e70ee5e4",
+        "source": "Google DeepMind"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+          "ok": true,
+          "status": "HTTP 200「Gemini 4 Argon is now availabl」",
+          "page_title": "Gemini 4 Argon is now available for everyone",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_blog"
+        },
+        {
+          "url": "https://developers.googleblog.com/en/gemini-4-argon-for-robotics/",
+          "ok": true,
+          "status": "HTTP 200「Gemini 4 Argon for Robotics - 」",
+          "page_title": "Gemini 4 Argon for Robotics - Google Developers Blog",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_blog"
+        }
+      ],
+      "primary_verified_at": "2026-10-15T11:03:25",
+      "url_check": [
+        {
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+          "ok": true,
+          "status": "HTTP 200「Gemini 4 Argon is now availabl」"
+        },
+        {
+          "url": "https://developers.googleblog.com/en/gemini-4-argon-for-robotics/",
+          "ok": true,
+          "status": "HTTP 200「Gemini 4 Argon for Robotics - 」"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "blog.google: HTTP 200「Gemini 4 Argon is now availabl」 ／ developers.googleblog.com: HTTP 200「Gemini 4 Argon for Robotics - 」",
+      "url_checked_at": "2026-10-15T11:03:25"
     }
   ]
 }

@@ -231,13 +231,33 @@ WebSearchで補助的に探してよい。査読済み掲載であることを�
 ```bash
 /usr/bin/python3 kl_news_scan.py collect --days 21   # RSS（news_sources.json）＋Gemini検索で直近の発表を集める
 /usr/bin/python3 kl_news_scan.py score --top 15      # 一次資料を探させて採点（検索つき、1件ずつ課金）
+/usr/bin/python3 kl_news_scan.py verify               # 一次資料URLの実在確認（HTTPだけ・無料。DOIはハンドルAPI。2026-10-15〜）
 /usr/bin/python3 kl_news_scan.py tag                  # ジャンル未付与の採点済み候補に5ジャンルを付ける（score は自動で付ける）
 /usr/bin/python3 kl_news_scan.py enrich               # ゲート通過分に検索語・見出しの語・発表の種類・系列を付ける（テキストのみ、数回の呼び出し）
 /usr/bin/python3 kl_news_scan.py buzz                 # Google ニュース RSS で注目度を実測（1候補1回、2.5秒間隔、1回50件まで）
 /usr/bin/python3 kl_news_scan.py list --top 10 --check-urls   # ベスト3の下書き＋本命／ニッチ／速報の3枠（ベスト3・本命の一次資料URLも確認）
 /usr/bin/python3 kl_news_scan.py list --by-genre --top 3      # 5ジャンルごとに、同じゲート・同じ並びで上位3件
 /usr/bin/python3 kl_news_scan.py check-urls [--id ID ...]     # 一次資料のURLだけを確認（HTTPコードに加えソフト404も検出）
+/usr/bin/python3 kl_news_scan.py yt --id ID --count N [--query 検索語]   # 手で数えた日本語の解説動画の本数を記録
 ```
+
+- **2026-10-15の変更（`NEWS_REDESIGN_2026-10-15.md` §3.8 の1週目。きっかけ: Gemini 4 Argon を一次報道の型で組みかけた件）:**
+  - **`verify`（一次資料の実在確認）:** `score` の直後に `primary_sources` のURLを開く（2秒間隔・同じホストは5秒、タイムアウト・429・5xxは1回だけ再試行）。
+    DOI（`doi.org/10.…`、出版社の `/doi/10.…`）は doi.org のハンドルAPIで実在を確かめる。結果は `primary_verified`:
+    **true**＝1件でも開けて、候補の固有の語（`jp_title_anchor`）がページにある（固有の語が無い候補は開けただけで true）／
+    **false**＝全URLが404・ソフト404（またはURLが無い）→ **ゲートで除外**（`list` の除外一覧に理由つきで出る。削除はしない）／
+    **null**＝403・429・タイムアウト、開けたが固有の語が無い・トップページへの転送 →「要確認」（ベスト3には残るが ⚠️ を付ける）。
+    URLごとの結果は `primary_check`、時刻は `primary_verified_at`。`check-urls`・`list --check-urls` も同じ判定で更新する
+  - **`topic_age`（話題の初出）:** 鮮度は `topic_first_date`（同じ話題の候補の発表日・記事の日付、`news_pool.json` の記事、`buzz_evidence` の
+    うち最も古い日）から数える（以前は `announced_on`＝最新の出来事の日）。記事を同じ話題とみなすのは、見出しが候補の固有の語を
+    **すべて**含むか、見出しの語がよく似ているときだけ。根拠は `topic_first_source` に残り、`list` に「話題の初出」として出る。
+    例: Gemini 4 Argon は10/13の一般提供ではなく9/30の発表から数え、鮮度5→3
+  - **答え合わせ候補（L2候補）:** 製品発表（`announcement_type: product_release`）で日本語の独立媒体10以上の候補は、
+    **本命・ベスト3に入れない**（決定4=(a): 大手の製品発表は発表の時点で速報にしない）。初出から2日以上なら「答え合わせ候補」の枠
+    （`list`・`list --by-genre`・Slack）に、2日未満なら「再評価待ち」に出す。扱うときは「発表の盛り vs 使った人の声・第三者の検証」で組む
+    （使った人の声は匿名の傾向としてだけ。根拠の主は一次資料と、方法の分かる第三者の検証）
+  - **`yt`（競合の記録）:** 手順3で YouTube を確認したら、日本語の解説動画の本数を `yt --id ID --count N` で記録する（`yt_competitors`）。
+    2週分たまったら飽和の段階を決める。YouTube API での自動測定はまだしない
 
 - **収集源（2026-10-11に増強）:** 公式・学術誌・プレスリリース集約に加え、日本語メディア（ITmedia AI+／NEWS、NHK 科学・文化、
   GIGAZINE、ナゾロジー、JST サイエンスポータル）と英語の科学・医療・AI・暮らしの媒体（Medical Xpress、Phys.org、New Scientist、
@@ -286,13 +306,17 @@ WebSearchで補助的に探してよい。査読済み掲載であることを�
   収集・採点・タグ付け・enrich・buzz のあと、`list` の冒頭に出る「ベスト3の下書き」を土台にする。進め方:
   1. **本命枠から選ぶ。** core の順に、**異なるジャンル**（同じジャンルは最大1件）・**同じ系列は1件**で3件まで。
      本命枠が3件に満たなければ**満たないまま出す**（注目度の低い候補で埋めない）。ニッチ枠から入れるなら、ベスト3とは別に
-     「注目度は低いが」と断って1件だけ添える。速報枠は「48時間後に測り直す」と添えるだけで、ベスト3には入れない
+     「注目度は低いが」と断って1件だけ添える。速報枠は「48時間後に測り直す」と添えるだけで、ベスト3には入れない。
+     **一次資料が実在しない（`primary_verified: false`）候補は本命・ベスト3に出てこない。** 「答え合わせ候補」は本命とは別に、
+     「答え合わせ型で扱うなら」と断って添える（ベスト3の代わりに選ぶかは、なるさんが決める）
   2. **人が追加で外すもの:** `deja_vu_note` が「完全重複」「同一ニュース」のもの、直近3話と同じ型で `deja_vu_level: strong` のもの。
      健康系は、5話に2話の枠が残っていなければ除外し、残り1なら健康系はベスト3のうち1件まで。
      ジャンルの間隔（`kl_concern_select.py`）で直前の回と同じジャンルは下げる
   3. **ベスト3に残った候補だけ、YouTube で競合を1分確認する**（同じ発表をすでに日本語で解説した動画がどれだけあるか。
-     多ければ「切り口で差をつけられるか」を懸念に書く）
-  4. **提示前に一次資料のURLを確認する**（`list --check-urls` か `check-urls --id ID`）。HTTPコードだけでなく、
+     多ければ「切り口で差をつけられるか」を懸念に書く）。**数えた本数は `yt --id ID --count N --query 検索語` で記録する**
+     （話題の初出以降に公開され、タイトルにその発表の固有の語を含む日本語の動画だけを数える）
+  4. **提示前に一次資料のURLを確認する**（`list --check-urls` か `check-urls --id ID`。夜間は `verify` 済み）。
+     「要確認」（`primary_verified: null`）の候補は、ブラウザか WebFetch で開いて中身（固有の語・発表日）が合うか確かめてから出す。HTTPコードだけでなく、
      本文の `<title>` が「404」「ページが見つかりません」等のソフト404も検出する（例: ALS の CiRA のURLは HTTP 200 で中身が「エラー 404」。
      kl036 の DYNA 2.1 は公式ページとリリースの両方が旧URLで404だった）。NG の候補は、サイト内の一覧や検索で正しいURLを見つけ直すか、
      ベスト3から外して次点に入れ替える。「要確認」（403 等、ボット拒否の可能性）はブラウザか WebFetch で開いて確かめる
