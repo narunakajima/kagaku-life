@@ -2104,8 +2104,8 @@
       "health": false,
       "domain": "life",
       "concern_id": null,
-      "entry_question": "Googleの新AI Gemini 4 Argon。公式ブログが書く『Vals Indexで1位』は、第三者の評価でも本当？",
-      "title": "Googleの新AI「Gemini 4 Argon」は本当に1位？ 発表の数字を答え合わせ（10月13日発表）",
+      "entry_question": "Googleの新AI Gemini 4 Argon。公式ブログが書く『Vals Indexで1位』は、別の独立評価や、使った人の声でも本当？",
+      "title": "Gemini 4 Argonの「1位」はどの評価で？独立評価2つで確認（10月13日発表）",
       "format": "dialogue",
       "references": [
         {
@@ -2147,10 +2147,40 @@
           "is_preprint": false,
           "institution": "Vals AI",
           "source_kind": "tech_report"
+        },
+        {
+          "title": "LLM Leaderboard（Artificial Analysis Intelligence Index）",
+          "authors": [],
+          "year": 2026,
+          "venue": "Artificial Analysis（2026-10-16に確認。評価日の記載なし）",
+          "url": "https://artificialanalysis.ai/leaderboards/models",
+          "is_preprint": false,
+          "institution": "Artificial Analysis",
+          "source_kind": "tech_report"
+        },
+        {
+          "title": "Gemini 4 Argon（Artificial Analysisのモデルページ）",
+          "authors": [],
+          "year": 2026,
+          "venue": "Artificial Analysis（2026-10-16に確認）",
+          "url": "https://artificialanalysis.ai/models/gemini-4-argon",
+          "is_preprint": false,
+          "institution": "Artificial Analysis",
+          "source_kind": "tech_report"
+        },
+        {
+          "title": "Hacker News のスレッド（Gemini 4 Argon）",
+          "authors": [],
+          "year": 2026,
+          "venue": "コミュニティの議論（匿名のコメントの傾向。読めた範囲。2026-10-16に確認）",
+          "url": "https://news.ycombinator.com/item?id=50073879",
+          "is_preprint": false,
+          "institution": "Hacker News（Y Combinator）",
+          "source_kind": "tech_report"
         }
       ],
       "hook_idea": "Googleの発表に出てくる『1位』には、数字も他社名もない。第三者のVals AIで確かめると、本当に1位。ただし差は1.9ポイント。",
-      "notes": "構成=basic(論点ラウンド v2)。直近: kl039 basic／kl040 verdict_first／kl041 myth_buster。判定の履歴は ツッコミ=眉唾 が続いているので、今回は事実が許す範囲で変える(下記の材料では『1位は本物だが差は小さい』なので、ツッコミが認める展開もあり得る)。AI・ソフトの制限は『3年』を機械的に付けない。ロボティクスの実機デモだけ物理の壁として別扱い。kl034(dots)・kl038(パーソナルAI)と同じ『エージェントの丸投げ』の話に寄せない: 今回の軸は『発表の数字を独立の評価で答え合わせする』。\n【一次資料の事実(2026-10-16に自分で読んだ)】公式ブログ introducing-gemini-4-argon(2026-10-13): 一般提供。Vals Indexで『ranking #1』と書くが具体スコア・他社名は記事に無い。入力100万トークン/出力100万トークン上限(統一)。導入価格 入力$2/出力$10(11/30まで)、12/1以降 入力$4/出力$20(脚注)。提供はAPI有料tier、Google AI Ultra/Pro(Gemini app・検索AIモード)。Chrome: 4,000万行のコードベース中の約600万行のレガシーフォルダからwebページ処理のコアを分離、数か月→数週間(ただしクラッシュ削減などは『見込み』)。『Argon in Antigravity has helped teams increase agentic code submissions by more than 35% while reducing code rollbacks』(測定期間はthe past few weeks、母数・比較条件なし)。ERQA 87%『outperforms all other frontier models』(他モデルの数字・名前なし。Argonはpure reasoningと記載)。ロボット: 人のコーンホール動画からシミュレーションを自律構築し、Apptronik Apolloで『the robot quickly sank seven consecutive shots in a real-world trial』。Gamow Labs(希少疾患)のRareBench57%等は外部団体の非公開評価と脚注。ロボティクス記事(developers.googleblog.com): Spotのペダル式ゴミ箱デモは試行回数・成功率・人の介入の記載なし。『Sketch to Simulation』のApollo球投げは『verify 6/6 target knockdown in closed-loop physics』=シミュレーション内。実機の自己改善SO-101ピック&プレースは成功率56%→75%(シミュレーションで4,500エピソード生成)。プロンプトは『representative prompts』。\n【独立評価(Vals.ai、2026-10-13更新、Vals Index v2.1)】Gemini 4 Argon 68.90%(±0.97)で1位、次いでClaude Sonnet 5.5 67.04%、Claude Opus 5.5 66.97%、Claude Fable 5.1 65.83%、GPT-6 Astra 63.13%。差は約1.9ポイントで信頼区間に近い。Vals Indexは金融(Finance Agent v2・Excel Modeling)・コーディング(Terminal-Bench 4.0・Vibe Code Bench・Code Migration)・法務・税務のベンチを、米GDPに占める分野の割合で重み付けした指標(金融8.0/コーディング5.6/法務1.2/税務0.5)。同じVals上でArgonは CUA-bench(パソコン操作)4.83%で9モデル中8位、Robo-bench 0.83%で7モデル中6位、Vibe Code Bench 1-100で25モデル中8位、Terminal-Bench 4.0で6位。Finance Agent v2は1位(65.40%)。注意: Valsのページ内で母数や順位が一部食い違う(Vals Indexは48中/41中)ので台詞では『1位』と点差だけを使う。Vals上のArgonの評価設定は reasoning effort high、1テスト$15.68。\n【ツッコミの材料】Googleの記事に数字が出ない(Vals Index #1だけ)→独立評価では本当に1位だが2位との差は約1.9pt／パソコン操作(CUA-bench)とロボット(Robo-bench)では上位でない／35%・Chromeの数字は社内・測定条件なし／ロボットの実機7連続は『試行回数・失敗は?』／『一般提供』だが無料では使えず導入価格は11/30まで／Gamowは非公開データ。【夢語りの材料】Chrome 600万行を数か月→数週間、100万トークンで長い作業を続ける、科学・研究者に6か月無償(1万人)、希少疾患の診断支援。\n【懸念】AIジャンルが続く(kl037・kl038・kl041)。YouTube競合は未確認(日本語の解説動画が多い見込み、切り口=独立評価で答え合わせ、で差をつける)。報道は手がかりのみ、台本の根拠は上の一次資料とVals.ai。2026-10-16、なるさん指示(Gemini 4 Argonの答え合わせ)で選定。",
+      "notes": "構成=basic(論点ラウンド v2)。直近: kl039 basic／kl040 verdict_first／kl041 myth_buster。判定の履歴は ツッコミ=眉唾 が続いているので、今回は事実が許す範囲で変える(下記の材料では『1位は本物だが差は小さい』なので、ツッコミが認める展開もあり得る)。AI・ソフトの制限は『3年』を機械的に付けない。ロボティクスの実機デモだけ物理の壁として別扱い。kl034(dots)・kl038(パーソナルAI)と同じ『エージェントの丸投げ』の話に寄せない: 今回の軸は『発表の数字を独立の評価で答え合わせする』。\n【一次資料の事実(2026-10-16に自分で読んだ)】公式ブログ introducing-gemini-4-argon(2026-10-13): 一般提供。Vals Indexで『ranking #1』と書くが具体スコア・他社名は記事に無い。入力100万トークン/出力100万トークン上限(統一)。導入価格 入力$2/出力$10(11/30まで)、12/1以降 入力$4/出力$20(脚注)。提供はAPI有料tier、Google AI Ultra/Pro(Gemini app・検索AIモード)。Chrome: 4,000万行のコードベース中の約600万行のレガシーフォルダからwebページ処理のコアを分離、数か月→数週間(ただしクラッシュ削減などは『見込み』)。『Argon in Antigravity has helped teams increase agentic code submissions by more than 35% while reducing code rollbacks』(測定期間はthe past few weeks、母数・比較条件なし)。ERQA 87%『outperforms all other frontier models』(他モデルの数字・名前なし。Argonはpure reasoningと記載)。ロボット: 人のコーンホール動画からシミュレーションを自律構築し、Apptronik Apolloで『the robot quickly sank seven consecutive shots in a real-world trial』。Gamow Labs(希少疾患)のRareBench57%等は外部団体の非公開評価と脚注。ロボティクス記事(developers.googleblog.com): Spotのペダル式ゴミ箱デモは試行回数・成功率・人の介入の記載なし。『Sketch to Simulation』のApollo球投げは『verify 6/6 target knockdown in closed-loop physics』=シミュレーション内。実機の自己改善SO-101ピック&プレースは成功率56%→75%(シミュレーションで4,500エピソード生成)。プロンプトは『representative prompts』。\n【独立評価(Vals.ai、2026-10-13更新、Vals Index v2.1)】Gemini 4 Argon 68.90%(±0.97)で1位、次いでClaude Sonnet 5.5 67.04%、Claude Opus 5.5 66.97%、Claude Fable 5.1 65.83%、GPT-6 Astra 63.13%。差は約1.9ポイントで信頼区間に近い。Vals Indexは金融(Finance Agent v2・Excel Modeling)・コーディング(Terminal-Bench 4.0・Vibe Code Bench・Code Migration)・法務・税務のベンチを、米GDPに占める分野の割合で重み付けした指標(金融8.0/コーディング5.6/法務1.2/税務0.5)。同じVals上でArgonは CUA-bench(パソコン操作)4.83%で9モデル中8位、Robo-bench 0.83%で7モデル中6位、Vibe Code Bench 1-100で25モデル中8位、Terminal-Bench 4.0で6位。Finance Agent v2は1位(65.40%)。注意: Valsのページ内で母数や順位が一部食い違う(Vals Indexは48中/41中)ので台詞では『1位』と点差だけを使う。Vals上のArgonの評価設定は reasoning effort high、1テスト$15.68。\n【ツッコミの材料】Googleの記事に数字が出ない(Vals Index #1だけ)→独立評価では本当に1位だが2位との差は約1.9pt／パソコン操作(CUA-bench)とロボット(Robo-bench)では上位でない／35%・Chromeの数字は社内・測定条件なし／ロボットの実機7連続は『試行回数・失敗は?』／『一般提供』だが無料では使えず導入価格は11/30まで／Gamowは非公開データ。【夢語りの材料】Chrome 600万行を数か月→数週間、100万トークンで長い作業を続ける、科学・研究者に6か月無償(1万人)、希少疾患の診断支援。\n【懸念】AIジャンルが続く(kl037・kl038・kl041)。YouTube競合は未確認(日本語の解説動画が多い見込み、切り口=独立評価で答え合わせ、で差をつける)。報道は手がかりのみ、台本の根拠は上の一次資料とVals.ai。2026-10-16、なるさん指示(Gemini 4 Argonの答え合わせ)で選定。\n【2026-10-16 追記: 答え合わせの改稿】なるさんの指摘『答え合わせなら使った人の声も検討するのでは』を受けて調べ直し、台本を改稿。別の独立評価 Artificial Analysis（leaderboards/models）では Argon(high) 53点、Claude Opus 5.5(max) 58点・Sonnet 5.5(max) 56点・GPT-6 Astra(max) 53点で首位ではない(各社で推論の強さの設定が違う)。Vals では1位(68.90%)。測り方で順位が変わる→論点1を『「1位」は、どの評価で？』に。使った人の声は Hacker News スレッド(公開2日で1,000件超、読めたのは先頭約4分の1)の傾向だけを匿名で使用(好評: 文章が簡潔・説明/科学に強い・速い、割れる: コーディング・速さ、報告: 推論ループ)。YouTube は日本語の解説動画が直近約2週間に18本以上(飽和)。個別の動画の中身は未確認のため台詞に使わない。",
       "stage4_snapshot": {
         "overall_score": 3.6,
         "news_candidate_id": "9c83062f1d"

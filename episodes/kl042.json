@@ -8,19 +8,19 @@
   "verdict_as_of": "2026-10-16",
   "genre": "ai",
   "health": false,
-  "episode_title": "Googleの新AI「Gemini 4 Argon」は本当に1位か（10月13日発表、公式ブログ2本とVals AIの独立評価で答え合わせ）",
-  "youtube_title": "Gemini 4 Argonは本当に1位？第三者の評価で確認（10月13日発表）",
-  "entry_question": "Googleの新AI Gemini 4 Argon。公式ブログが書く『Vals Indexで1位』は、第三者の評価でも本当？",
+  "episode_title": "Googleの新AI「Gemini 4 Argon」の「1位」はどの評価で？（10月13日発表、公式ブログ2本・独立評価2つ・使った人の声で答え合わせ）",
+  "youtube_title": "Gemini 4 Argonの「1位」はどの評価で？独立評価2つで確認（10月13日発表）",
+  "entry_question": "Googleの新AI Gemini 4 Argon。公式ブログが書く『Vals Indexで1位』は、別の独立評価や、使った人の声でも本当？",
   "verdict": {
     "dreamer": "soon",
     "skeptic": "soon"
   },
   "hook_lines": [
     "Googleの新AI「1位」",
-    "第三者の評価でも本当？"
+    "どの評価での1位？"
   ],
   "thumbnail_prompt": "Calm, bright daytime editorial illustration of a minimal, modern stage seen from the front: a soft pale blue-gray backdrop wall and a light gray floor running the full width of the frame, continuous across the whole frame with no panels, boxes, borders or abrupt colour changes. Keep the left 30%, the right 30% and the top 35% of the frame quiet and uncluttered (soft gradient only), but the wall and floor must visibly continue unbroken behind them. In the horizontal center, in the vertical band between 38% and 80% of the frame height: a row of five plain, smooth pedestal blocks of almost the same height standing side by side, the middle one only very slightly taller than the others and glowing with a soft warm coral light, the other four in calm teal and slate tones. A spotlight falls softly on the slightly taller block. No people, no robots, no trophies. No logos, no brand marks, no readable text, no letters, no numbers.",
-  "thumbnail_headline": "Googleの「1位」\n第三者の評価で本当？",
+  "thumbnail_headline": "Googleの「1位」\nどの評価で？",
   "thumbnail_exprs": {
     "dreamer": "excited",
     "skeptic": "doubt"
@@ -30,6 +30,7 @@
     "Gemini",
     "Google",
     "Vals AI",
+    "Artificial Analysis",
     "Vals Index",
     "生成AI",
     "AIベンチマーク",
@@ -79,15 +80,44 @@
       "is_preprint": false,
       "institution": "Vals AI",
       "source_kind": "tech_report"
+    },
+    {
+      "title": "LLM Leaderboard（Artificial Analysis Intelligence Index）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Artificial Analysis（2026-10-16に確認。評価日の記載なし）",
+      "url": "https://artificialanalysis.ai/leaderboards/models",
+      "is_preprint": false,
+      "institution": "Artificial Analysis",
+      "source_kind": "tech_report"
+    },
+    {
+      "title": "Gemini 4 Argon（Artificial Analysisのモデルページ）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Artificial Analysis（2026-10-16に確認）",
+      "url": "https://artificialanalysis.ai/models/gemini-4-argon",
+      "is_preprint": false,
+      "institution": "Artificial Analysis",
+      "source_kind": "tech_report"
+    },
+    {
+      "title": "Hacker News のスレッド（Gemini 4 Argon）",
+      "authors": [],
+      "year": 2026,
+      "venue": "コミュニティの議論（匿名のコメントの傾向。読めた範囲。2026-10-16に確認）",
+      "url": "https://news.ycombinator.com/item?id=50073879",
+      "is_preprint": false,
+      "institution": "Hacker News（Y Combinator）",
+      "source_kind": "tech_report"
     }
   ],
-  "youtube_description": "2026年10月13日、Googleが新しいAIモデル「Gemini 4 Argon」の一般提供を始めました。公式ブログには、Vals Index という評価で「1位」と書かれています。ただし、その記事には点数も、比べた他社のモデル名も書かれていません。では、その「1位」は、Googleと関係のない第三者の評価でも本当なのか。夢語り担当の大輔と、ツッコミ担当の沙織が、Googleの公式ブログ2本と、独立した評価会社 Vals AI のページを読んで確かめます。\n\n■ この回の判定（2026年10月16日時点の、二人の見立て）\nお題: Gemini 4 Argon に仕事を任せる日は、もうすぐ来るか\n大輔: もうすぐ来る（ただし、表を作る・古いプログラムを読むといった、Vals Index の総合点で測っている種類の机の仕事に絞って。Vals Index では1位。パソコンを自分で操作する仕事は同じ Vals 上で上位ではなかったが、そこは1年もすれば変わりうる、というのが大輔の見立て。ロボットのように体を動かす仕事は、実機の数字が少なく、3年はかかる、とこれは判定とは別に見立てた）\n沙織: もうすぐ来る（予想は「1位は宣伝の数字で、まだ眉唾」だったが、外れた。Vals AI の評価でも1位で、もう有料で使える。ただし2位との差は約1.9ポイントで大差ではない。Googleが自分で出した「35%以上」「7回連続」は、測り方が書かれていないので、判定の根拠には数えていない）\n\n■ 一次資料に書いてあること\n・Google 公式ブログ（2026年10月13日）: Gemini 4 Argon の一般提供。Vals Index で「ranking #1」（点数・他社のモデル名は記載なし）。Chrome の約4,000万行のコードのうち、約600万行の古いフォルダから、ウェブページを処理する中心部分を切り離す作業を、数か月から数週間に（クラッシュの削減などは見込みとして記載）。開発ツール Antigravity で、ここ数週間にチームのAIによるコード提出が35%以上増え、やり直し（ロールバック）が減った（何チーム・何人か、何と比べたかは記載なし）。人がコーンホールをする動画からシミュレーションを組み立て、Apptronik の人型ロボット Apollo に移して、実環境の試しで7回連続で成功（試行の総数・失敗の数は記載なし）。導入価格は100万トークンあたり入力2ドル・出力10ドルで11月30日まで、12月1日からは入力4ドル・出力20ドル。提供はAPIの有料枠と、Google AI Ultra／Pro\n・Google Developers Blog「Gemini 4 Argon for Robotics」（2026年10月13日）: Apollo の球投げで、積んだ的の箱6個をすべて倒す検証（「6/6」）は、物理シミュレーションの中での確認。Boston Dynamics の Spot がペダル式のゴミ箱を開けるデモは、試行回数・成功率の記載なし。机の上の二本腕ロボットで、シミュレーションで作った4,500本以上のデータを学習させると、実機の評価で成功率が56%から75%に向上\n・Vals AI「Vals Index」（2026年10月13日更新）: Gemini 4 Argon 68.90%（±0.97）で1位。次いで Claude Sonnet 5.5 67.04%、Claude Opus 5.5 66.97%、Claude Fable 5.1 65.83%、GPT-6 Astra 63.13%。Vals Index は、金融・コーディング・法務・税務の評価を、米国の経済に占める分野の大きさで重み付けした指標\n・Vals AI の Gemini 4 Argon のページ: 金融の評価（Finance Agent v2）は1位で65.40%。パソコン操作の評価（CUA-bench）は4.83%、ロボットの評価（Robo-bench）は0.83%で、どちらも下位（Vals のページ内で母数の表記が一部食い違うため、順位の数字は使っていない）。評価の設定は reasoning effort high\n\n■ 一次資料に書いていないこと\n・Google の公式ブログに、Vals Index の点数と、比べた他社のモデル名\n・「35%以上」の母数（何チーム・何人か）と比較の条件\n・ロボットの実環境の試しの総数と失敗の数\n\n■ 使わなかった情報\n・報道で伝えられた数字や評価は、この動画の根拠にしていません。台詞の数字は、上の一次資料と Vals AI のページにあるものだけです\n・Google の公式ブログにある、外部団体の非公開の評価（希少疾患の診断支援など）の数字は、第三者が確かめられないため扱っていません\n\n※この回の元は企業の発表と、評価会社の公開データで、専門家の審査を経た学術論文ではありません。Vals AI の点数は更新で変わることがあります。\n※特定のサービスの利用や、企業への投資を勧めるものではありません。\n\n■ 参考（一次資料）\n[1] Google「Gemini 4 Argon is now available globally」(2026-10-13) https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\n[2] Google Developers Blog「Gemini 4 Argon for Robotics」(2026-10-13) https://developers.googleblog.com/en/gemini-4-argon-for-robotics/\n[3] Vals AI「Vals Index」(2026-10-13更新) https://www.vals.ai/benchmarks/vals_index\n[4] Vals AI「Gemini 4 Argon」 https://www.vals.ai/models/google_gemini-4-argon\n",
+  "youtube_description": "2026年10月13日、Googleが新しいAIモデル「Gemini 4 Argon」の一般提供を始めました。公式ブログには、Vals Index という評価で「1位」と書かれています。ただし、その記事には点数も、比べた他社のモデル名も書かれていません。では、その「1位」は、どの評価での1位なのか。夢語り担当の大輔と、ツッコミ担当の沙織が、Googleの公式ブログ2本と、2つの独立した評価（Vals AI と Artificial Analysis）、そして実際に使った人の声（Hacker News の議論）を読んで確かめます。\n\n■ この回の判定（2026年10月16日時点の、二人の見立て）\nお題: Gemini 4 Argon に仕事を任せる日は、もうすぐ来るか\n大輔: もうすぐ来る（ただし、文章の下書きや古いプログラムを読むといった机の仕事に絞って。使った人の評判も、文章や説明の分かりやすさは良かった。パソコンを自分で操作する仕事は Vals 上で下位だったが、1年もすれば変わりうる、ロボットのように体を動かす仕事は3年はかかる、というのが大輔の見立て）\n沙織: もうすぐ来る（条件付き。予想は「1位は宣伝の数字で、まだ眉唾」で、半分当たり、半分外れ。Vals AI の評価では確かに1位だが、Artificial Analysis の総合点では首位ではない。どちらの総合点でも上位で、もう有料で使える。条件は、結果を確かめながら使うこと。Googleが自分で出した「35%以上」「7回連続」は、測り方が書かれていないので、判定の根拠には数えていない）\n\n■ 一次資料・独立評価に書いてあること\n・Google 公式ブログ（2026年10月13日）: Gemini 4 Argon の一般提供。Vals Index で「ranking #1」（点数・他社のモデル名は記載なし）。Chrome の約4,000万行のコードのうち、約600万行の古いフォルダから、ウェブページを処理する中心部分を切り離す作業を、数か月から数週間に（クラッシュの削減などは見込みとして記載）。開発ツール Antigravity で、ここ数週間にチームのAIによるコード提出が35%以上増え、やり直し（ロールバック）が減った（何チーム・何人か、何と比べたかは記載なし）。人がコーンホールをする動画からシミュレーションを組み立て、Apptronik の人型ロボット Apollo に移して、実環境の試しで7回連続で成功（試行の総数・失敗の数は記載なし）。導入価格は100万トークンあたり入力2ドル・出力10ドルで11月30日まで、12月1日からは入力4ドル・出力20ドル。提供はAPIの有料枠と、Google AI Ultra／Pro\n・Google Developers Blog「Gemini 4 Argon for Robotics」（2026年10月13日）: Apollo の球投げで、積んだ的の箱6個をすべて倒す検証（「6/6」）は、物理シミュレーションの中での確認。Boston Dynamics の Spot がペダル式のゴミ箱を開けるデモは、試行回数・成功率の記載なし。机の上の二本腕ロボットで、シミュレーションで作った4,500本以上のデータを学習させると、実機の評価で成功率が56%から75%に向上\n・Vals AI「Vals Index」（2026年10月13日更新）: Gemini 4 Argon 68.90%（±0.97）で1位。次いで Claude Sonnet 5.5 67.04%、Claude Opus 5.5 66.97%、Claude Fable 5.1 65.83%、GPT-6 Astra 63.13%。Vals Index は、金融・コーディング・法務・税務の評価を、米国の経済に占める分野の大きさで重み付けした指標\n・Vals AI の Gemini 4 Argon のページ: 金融の評価（Finance Agent v2）は1位で65.40%。パソコン操作の評価（CUA-bench）は4.83%、ロボットの評価（Robo-bench）は0.83%で、どちらも下位（Vals のページ内で母数の表記が一部食い違うため、順位の数字は使っていない）。評価の設定は reasoning effort high\n・Artificial Analysis（2026年10月16日に確認）: 10種類の評価をまとめた Intelligence Index で、Claude Opus 5.5（max）58、Claude Sonnet 5.5（max）56、Gemini 4 Argon（high）53、GPT-6 Astra（max）53。（ ）内は推論の強さの設定で、各社で異なるため、完全に同じ条件の比較ではない。ページに評価日の記載はなく、ページ内の順位の表記が一覧とモデルのページで1つ食い違うため、順位の数字は使っていない\n・Hacker News のスレッド（2026年10月16日に確認）: 公開から2日でコメント1,000件超。読めたのは先頭の約4分の1で、以下はその範囲の匿名のコメントの傾向（個人の評価で、測定ではない）。文章が簡潔で読みやすい、説明や科学の質問に強い、という声が多い。コーディングは Claude Opus 5.5 と同等という声と劣るという声で割れ、速さも速い・遅いの両方。推論がループして終わらない例の報告が複数\n\n■ 一次資料に書いていないこと\n・Google の公式ブログに、Vals Index の点数と、比べた他社のモデル名\n・「35%以上」の母数（何チーム・何人か）と比較の条件\n・ロボットの実環境の試しの総数と失敗の数\n\n■ 使わなかった情報\n・報道で伝えられた数字や評価は、この動画の根拠にしていません。台詞の数字は、上の一次資料と、Vals AI・Artificial Analysis のページにあるものだけです\n・Google の公式ブログにある、外部団体の非公開の評価（希少疾患の診断支援など）の数字は、第三者が確かめられないため扱っていません\n・動画サイト上の個人の感想動画は、中身を確かめていないため扱っていません\n\n※この回の元は企業の発表と、評価会社の公開データ、コミュニティの議論で、専門家の審査を経た学術論文ではありません。評価会社の点数・順位は更新で変わることがあります。\n※特定のサービスの利用や、企業への投資を勧めるものではありません。\n\n■ 参考（一次資料・独立評価・議論）\n[1] Google「Gemini 4 Argon is now available globally」(2026-10-13) https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\n[2] Google Developers Blog「Gemini 4 Argon for Robotics」(2026-10-13) https://developers.googleblog.com/en/gemini-4-argon-for-robotics/\n[3] Vals AI「Vals Index」(2026-10-13更新) https://www.vals.ai/benchmarks/vals_index\n[4] Vals AI「Gemini 4 Argon」 https://www.vals.ai/models/google_gemini-4-argon\n[5] Artificial Analysis「LLM Leaderboard」(2026-10-16に確認) https://artificialanalysis.ai/leaderboards/models\n[6] Artificial Analysis「Gemini 4 Argon」(2026-10-16に確認) https://artificialanalysis.ai/models/gemini-4-argon\n[7] Hacker News のスレッド（コミュニティの議論、2026-10-16に確認） https://news.ycombinator.com/item?id=50073879\n",
   "scenes": [
     {
       "scene_id": 1,
       "type": "teaser",
       "bgm_role": "intro",
-      "reuse_scene_id": 10,
       "lines": [
         {
           "speaker": "dreamer",
@@ -108,7 +138,8 @@
       ],
       "narration": "大輔「グーグルの新AIが、一般提供になった！」",
       "narrator": "dialogue",
-      "lines_hash": "dca971cf0797"
+      "lines_hash": "dca971cf0797",
+      "image_prompt": "Bright daytime in a modern, airy software engineering office (soft natural daylight through large windows, clearly daytime). Seen from behind a row of empty desks: several large monitors showing only blurred, unreadable columns of colorful code-like lines, and one big central monitor displaying a softly glowing abstract diagram of a huge branching tree of folders, with one large branch highlighted in warm coral being neatly separated from the rest. Potted plants, coffee mugs, notebooks. No people. No logos, no brand marks, no readable text, no letters, no numbers."
     },
     {
       "scene_id": 2,
@@ -144,20 +175,11 @@
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "ところが、外の評価会社のページを見たら……",
-          "expression": "surprised",
-          "t0": 0.0,
-          "dur": 3.68,
-          "cards": [
-            {
-              "text": "ところが、外の評価会社のページを見たら…",
-              "start": 0.4,
-              "end": 3.4
-            }
-          ]
+          "text": "外の評価会社のページでも、確かに1位！",
+          "expression": "excited"
         }
       ],
-      "narration": "大輔「ところが、外の評価会社のページを見たら……」",
+      "narration": "大輔「外の評価会社のページでも、確かに1位！」",
       "narrator": "dialogue",
       "lines_hash": "28447d5197ad"
     },
@@ -169,22 +191,13 @@
       "lines": [
         {
           "speaker": "skeptic",
-          "text": "その1位、第三者の評価でも本当？",
-          "display": "その「1位」、第三者の評価でも本当？",
+          "text": "でも別の評価だと……その1位、どの評価で？",
           "expression": "doubt",
-          "tag": "question",
-          "t0": 0.0,
-          "dur": 3.2,
-          "cards": [
-            {
-              "text": "その「1位」、第三者の評価でも本当？",
-              "start": 0.0,
-              "end": 3.2
-            }
-          ]
+          "display": "でも別の評価だと…その「1位」、どの評価で？",
+          "tag": "question"
         }
       ],
-      "narration": "沙織「その1位、第三者の評価でも本当？」",
+      "narration": "沙織「でも別の評価だと……その1位、どの評価で？」",
       "narrator": "dialogue",
       "lines_hash": "33a7b01b6316"
     },
@@ -349,7 +362,7 @@
       "bgm_role": "main",
       "reference_index": 0,
       "round": 1,
-      "round_title": "Googleの「1位」は、本当？",
+      "round_title": "「1位」は、どの評価で？",
       "source_card": {
         "kind": "blog",
         "source": "Google 公式ブログ（2026年10月13日）",
@@ -547,55 +560,16 @@
         },
         {
           "speaker": "skeptic",
-          "text": "……本当に1位だ。宣伝の数字、は私の思い込みだった。",
+          "text": "……ここでは、本当に1位だ。",
           "expression": "surprised",
           "react": "excited",
-          "pause": 0.5,
-          "tag": "turn",
-          "t0": 14.38,
-          "dur": 4.92,
-          "cards": [
-            {
-              "text": "……本当に1位だ。宣伝の数字、",
-              "start": 0.56,
-              "end": 2.81
-            },
-            {
-              "text": "は私の思い込みだった。",
-              "start": 2.96,
-              "end": 4.76
-            }
-          ]
+          "pause": 0.5
         },
         {
           "speaker": "dreamer",
-          "text": "でしょ！ この評価は、金融、プログラミング、法律、税金の問題を、アメリカの経済での大きさで重みづけして、1つの点にしてる。",
+          "text": "でしょ！ この評価は、金融、プログラミング、法律、税金の問題を、経済での大きさで重みづけしてる。",
           "expression": "excited",
-          "tone": "fast, getting carried away",
-          "t0": 19.58,
-          "dur": 9.68,
-          "cards": [
-            {
-              "text": "でしょ！ この評価は、金融、",
-              "start": 0.0,
-              "end": 2.38
-            },
-            {
-              "text": "プログラミング、法律、税金の問題を、",
-              "start": 2.53,
-              "end": 5.23
-            },
-            {
-              "text": "アメリカの経済での大きさで重みづけして、",
-              "start": 5.38,
-              "end": 8.38
-            },
-            {
-              "text": "1つの点にしてる。",
-              "start": 8.53,
-              "end": 9.88
-            }
-          ]
+          "tone": "fast, getting carried away"
         },
         {
           "speaker": "skeptic",
@@ -618,55 +592,12 @@
         },
         {
           "speaker": "skeptic",
-          "text": "アルゴンの点には、プラスマイナス0.97の幅も書いてある。",
-          "display": "Argonの点には、±0.97の幅も書いてある。",
-          "expression": "thinking",
-          "t0": 35.92,
-          "dur": 3.76,
-          "cards": [
-            {
-              "text": "Argonの点には、±0.97の幅も書いてある。",
-              "start": 0.0,
-              "end": 3.76
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "幅って？",
-          "expression": "thinking",
-          "t0": 39.96,
-          "dur": 1.72,
-          "cards": [
-            {
-              "text": "幅って？",
-              "start": 0.0,
-              "end": 1.72
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "点数のぶれの目安。1位は1位。でも、大差じゃない。",
+          "text": "1位は1位。でも、大差じゃない。",
           "expression": "convinced",
-          "react": "convinced",
-          "t0": 41.96,
-          "dur": 4.4,
-          "cards": [
-            {
-              "text": "点数のぶれの目安。1位は1位。でも、",
-              "start": 0.0,
-              "end": 3.22
-            },
-            {
-              "text": "大差じゃない。",
-              "start": 3.37,
-              "end": 4.42
-            }
-          ]
+          "react": "convinced"
         }
       ],
-      "narration": "沙織「ヴァルズ・エーアイのページ。10月13日の更新。」\n大輔「アルゴンは、68.9%で1位！」\n沙織「2位は？」\n大輔「クロード・ソネット5.5で、67.04%。」\n沙織「……本当に1位だ。宣伝の数字、は私の思い込みだった。」\n大輔「でしょ！ この評価は、金融、プログラミング、法律、税金の問題を、アメリカの経済での大きさで重みづけして、1つの点にしてる。」\n沙織「お金とコードの仕事が重い、ってことね。で、2位との差は約1.9ポイント。」\n沙織「アルゴンの点には、プラスマイナス0.97の幅も書いてある。」\n大輔「幅って？」\n沙織「点数のぶれの目安。1位は1位。でも、大差じゃない。」",
+      "narration": "沙織「ヴァルズ・エーアイのページ。10月13日の更新。」\n大輔「アルゴンは、68.9%で1位！」\n沙織「2位は？」\n大輔「クロード・ソネット5.5で、67.04%。」\n沙織「……ここでは、本当に1位だ。」\n大輔「でしょ！ この評価は、金融、プログラミング、法律、税金の問題を、経済での大きさで重みづけしてる。」\n沙織「お金とコードの仕事が重い、ってことね。で、2位との差は約1.9ポイント。」\n沙織「1位は1位。でも、大差じゃない。」",
       "narrator": "dialogue",
       "lines_hash": "2b2069c6f61e"
     },
@@ -782,173 +713,135 @@
               "end": 3.72
             }
           ]
-        }
-      ],
-      "narration": "大輔「じゃあ、想像してみてよ。」\n大輔「たとえば僕が、小さな会社で経理を一人でやってたとする。月末にアルゴンに頼む。請求書の画面を開いて、数字を表に写して、送っておいて、って。」\n沙織「はい、そこ。画面を開いて、写して、送る。それは、パソコンの操作ね。」\n大輔「そう。総合1位なんだから、それも得意でしょ。」\n沙織「同じヴァルズのページに、パソコン操作のテストの結果もある。」",
-      "narrator": "dialogue",
-      "lines_hash": "3f114110f638"
-    },
-    {
-      "scene_id": 9,
-      "type": "check",
-      "bgm_role": "main",
-      "reference_index": 3,
-      "round": 1,
-      "source_card": {
-        "kind": "report",
-        "source": "Vals AI「Gemini 4 Argon」のページ（2026年10月13日更新）",
-        "quote_type": "要約",
-        "items": [
-          "Vals Index（総合）: 1位 68.90%",
-          "Finance Agent v2（金融）: 1位 65.40%",
-          "CUA-bench（パソコン操作）: 4.83%（下位）",
-          "Robo-bench（ロボット）: 0.83%（下位）",
-          "評価の設定: reasoning effort high"
-        ],
-        "reference_index": 3
-      },
-      "lines": [
-        {
-          "speaker": "skeptic",
-          "text": "パソコン操作のテストは、4.83%。上位とは言えない。",
-          "expression": "doubt",
-          "t0": 0.0,
-          "dur": 4.92,
-          "cards": [
-            {
-              "text": "パソコン操作のテストは、4.83%。",
-              "start": 0.0,
-              "end": 2.7
-            },
-            {
-              "text": "上位とは言えない。",
-              "start": 3.52,
-              "end": 4.87
-            }
-          ]
         },
         {
           "speaker": "dreamer",
-          "text": "……上位じゃないの？ 総合1位なのに？",
-          "expression": "surprised",
-          "pause": 0.4,
-          "t0": 5.32,
-          "dur": 3.28,
-          "cards": [
-            {
-              "text": "……上位じゃないの？ 総合1位なのに？",
-              "start": 0.0,
-              "end": 3.28
-            }
-          ]
+          "text": "どうだった？",
+          "expression": "thinking"
         },
         {
           "speaker": "skeptic",
-          "text": "ロボットのテストも、0.83%。こっちも下の方。",
-          "expression": "thinking",
-          "t0": 8.88,
-          "dur": 4.48,
-          "cards": [
-            {
-              "text": "ロボットのテストも、0.83%。",
-              "start": 0.0,
-              "end": 2.48
-            },
-            {
-              "text": "こっちも下の方。",
-              "start": 2.88,
-              "end": 4.08
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "逆に、金融のテストは1位。65.4%。",
-          "display": "逆に、金融のテストは1位。65.40%。",
-          "expression": "neutral",
-          "t0": 13.58,
-          "dur": 3.96,
-          "cards": [
-            {
-              "text": "逆に、金融のテストは1位。65.40%。",
-              "start": 0.0,
-              "end": 3.96
-            }
-          ]
+          "text": "パソコン操作は4.83%。ロボットのテストも0.83%。どっちも下位。",
+          "expression": "doubt",
+          "react": "surprised"
         },
         {
           "speaker": "dreamer",
           "text": "総合1位でも、全部で1位じゃないんだ。全部任せられる、は言い過ぎだった。",
           "expression": "deflated",
-          "tag": "turn",
-          "t0": 17.82,
-          "dur": 5.64,
-          "cards": [
-            {
-              "text": "総合1位でも、全部で1位じゃないんだ。",
-              "start": 0.0,
-              "end": 2.85
-            },
-            {
-              "text": "全部任せられる、は言い過ぎだった。",
-              "start": 3.14,
-              "end": 5.69
-            }
-          ]
+          "tag": "turn"
+        }
+      ],
+      "narration": "大輔「じゃあ、想像してみてよ。」\n大輔「たとえば僕が、小さな会社で経理を一人でやってたとする。月末にアルゴンに頼む。請求書の画面を開いて、数字を表に写して、送っておいて、って。」\n沙織「はい、そこ。画面を開いて、写して、送る。それは、パソコンの操作ね。」\n大輔「そう。総合1位なんだから、それも得意でしょ。」\n沙織「同じヴァルズのページに、パソコン操作のテストの結果もある。」\n大輔「どうだった？」\n沙織「パソコン操作は4.83%。ロボットのテストも0.83%。どっちも下位。」\n大輔「総合1位でも、全部で1位じゃないんだ。全部任せられる、は言い過ぎだった。」",
+      "narrator": "dialogue",
+      "lines_hash": "3f114110f638",
+      "reference_index": 3
+    },
+    {
+      "scene_id": 9,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 4,
+      "round": 1,
+      "source_card": {
+        "kind": "report",
+        "source": "Artificial Analysis（2026年10月16日に確認）",
+        "quote_type": "要約",
+        "items": [
+          "Claude Opus 5.5（max）: 58",
+          "Claude Sonnet 5.5（max）: 56",
+          "Gemini 4 Argon（high）: 53",
+          "GPT-6 Astra（max）: 53",
+          "（ ）は推論の強さの設定。各社で違う"
+        ],
+        "note": "Intelligence Index（10種の評価の総合）",
+        "reference_index": 4
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "別の独立評価も見た。アーティフィシャル・アナリシス。",
+          "expression": "neutral",
+          "display": "別の独立評価も見た。Artificial Analysis。"
         },
         {
           "speaker": "dreamer",
-          "text": "じゃあ月末の作業は、画面の操作は自分でやって、表を作るところだけ頼む。",
-          "expression": "thinking",
-          "t0": 23.68,
-          "dur": 5.52,
-          "cards": [
-            {
-              "text": "じゃあ月末の作業は、",
-              "start": 0.0,
-              "end": 1.5
-            },
-            {
-              "text": "画面の操作は自分でやって、",
-              "start": 1.5,
-              "end": 3.45
-            },
-            {
-              "text": "表を作るところだけ頼む。",
-              "start": 3.68,
-              "end": 5.48
-            }
-          ]
+          "text": "そっちでも1位でしょ？",
+          "expression": "excited"
         },
         {
           "speaker": "skeptic",
-          "text": "それなら、得意な側の仕事ね。",
+          "text": "別の評価だと、アルゴンは53点。首位じゃない。",
+          "expression": "doubt",
+          "react": "surprised",
+          "display": "別の評価だと、Argonは53点。首位じゃない。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "……え？ じゃあ首位は？",
+          "expression": "surprised",
+          "pause": 0.4
+        },
+        {
+          "speaker": "skeptic",
+          "text": "クロード・オーパス5.5の、58点。",
+          "expression": "neutral",
+          "display": "Claude Opus 5.5の、58点。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ヴァルズでは1位だったのに。どっちが本当？",
+          "expression": "surprised",
+          "display": "Valsでは1位だったのに。どっちが本当？"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "どっちも本当。こっちは10種類の評価で、ヴァルズより範囲が広い。",
+          "expression": "thinking",
+          "display": "どっちも本当。こっちは10種類の評価で、Valsより範囲が広い。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、推論の強さの設定も、各社で違う。同じ条件の勝負じゃない。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "測り方で、順位が入れ替わるのか。じゃあ、グーグルの1位は、うそ？",
+          "expression": "thinking",
+          "display": "測り方で、順位が入れ替わるのか。じゃあ、Googleの1位は、うそ？"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "うそじゃない。でも、どの評価でも1位、とは言えない。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "で、宣伝の数字、って予想は？",
+          "expression": "excited",
+          "react": "amused"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "半分当たりで、半分外れ。",
           "expression": "amused",
-          "react": "convinced",
-          "t0": 29.48,
-          "dur": 2.12,
-          "cards": [
-            {
-              "text": "それなら、得意な側の仕事ね。",
-              "start": 0.0,
-              "end": 2.12
-            }
-          ]
+          "react": "excited",
+          "tag": "turn"
         }
       ],
       "image_asset": "cards/kl042_S09",
-      "narration": "沙織「パソコン操作のテストは、4.83%。上位とは言えない。」\n大輔「……上位じゃないの？ 総合1位なのに？」\n沙織「ロボットのテストも、0.83%。こっちも下の方。」\n沙織「逆に、金融のテストは1位。65.4%。」\n大輔「総合1位でも、全部で1位じゃないんだ。全部任せられる、は言い過ぎだった。」\n大輔「じゃあ月末の作業は、画面の操作は自分でやって、表を作るところだけ頼む。」\n沙織「それなら、得意な側の仕事ね。」\n［画面の資料カード］Vals AI「Gemini 4 Argon」のページ（2026年10月13日更新） ・Vals Index（総合）: 1位 68.90% ・Finance Agent v2（金融）: 1位 65.40% ・CUA-bench（パソコン操作）: 4.83%（下位） ・Robo-bench（ロボット）: 0.83%（下位） ・評価の設定: reasoning effort high",
+      "narration": "沙織「別の独立評価も見た。アーティフィシャル・アナリシス。」\n大輔「そっちでも1位でしょ？」\n沙織「別の評価だと、アルゴンは53点。首位じゃない。」\n大輔「……え？ じゃあ首位は？」\n沙織「クロード・オーパス5.5の、58点。」\n大輔「ヴァルズでは1位だったのに。どっちが本当？」\n沙織「どっちも本当。こっちは10種類の評価で、ヴァルズより範囲が広い。」\n沙織「それに、推論の強さの設定も、各社で違う。同じ条件の勝負じゃない。」\n大輔「測り方で、順位が入れ替わるのか。じゃあ、グーグルの1位は、うそ？」\n沙織「うそじゃない。でも、どの評価でも1位、とは言えない。」\n大輔「で、宣伝の数字、って予想は？」\n沙織「半分当たりで、半分外れ。」\n［画面の資料カード］Artificial Analysis（2026年10月16日に確認） ・Claude Opus 5.5（max）: 58 ・Claude Sonnet 5.5（max）: 56 ・Gemini 4 Argon（high）: 53 ・GPT-6 Astra（max）: 53 ・（ ）は推論の強さの設定。各社で違う ※Intelligence Index（10種の評価の総合）",
       "narrator": "dialogue",
       "lines_hash": "7e0643f58a14"
     },
     {
       "scene_id": 10,
-      "type": "paper",
+      "type": "check",
       "bgm_role": "main",
       "reference_index": 0,
       "round": 2,
-      "round_title": "Googleが出した数字は、確かめられる？",
-      "image_prompt": "Bright daytime in a modern, airy software engineering office (soft natural daylight through large windows, clearly daytime). Seen from behind a row of empty desks: several large monitors showing only blurred, unreadable columns of colorful code-like lines, and one big central monitor displaying a softly glowing abstract diagram of a huge branching tree of folders, with one large branch highlighted in warm coral being neatly separated from the rest. Potted plants, coffee mugs, notebooks. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "round_title": "公式の数字と、使った人の声",
       "lines": [
         {
           "speaker": "dreamer",
@@ -1049,30 +942,33 @@
         },
         {
           "speaker": "skeptic",
-          "text": "……その35%、原文を見せて。",
+          "text": "……原文は、ここ数週間で35%以上増えた、まで。",
           "expression": "doubt",
+          "pause": 0.4
+        },
+        {
+          "speaker": "skeptic",
+          "text": "何チームで、何人で、何と比べたのか。どこにも書いてない。クロームのクラッシュ削減も、まだ見込み。",
+          "expression": "doubt",
+          "display": "何チームで、何人で、何と比べたのか。どこにも書いてない。Chromeのクラッシュ削減も、まだ見込み。",
+          "tag": "weakness"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "……数か月が数週間、も、グーグル自身の言い方か。",
+          "expression": "deflated",
           "pause": 0.4,
-          "t0": 29.96,
-          "dur": 3.12,
-          "cards": [
-            {
-              "text": "……その35%、原文を見せて。",
-              "start": 0.0,
-              "end": 3.12
-            }
-          ]
+          "display": "……数か月が数週間、も、Google自身の言い方か。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、外で実際に使った人の声は？",
+          "expression": "thinking"
         }
       ],
-      "narration": "大輔「プログラムの仕事なら、公式ブログにもっとすごい話があるんだ。」\n沙織「クロームの話ね。4,000万行のプログラムのうち、600万行の古いフォルダ。」\n大輔「そこから、ウェブページを処理する中心の部分を切り離した。数か月の仕事が、数週間。」\n沙織「数か月って、誰が、何と比べて？」\n大輔「それに、開発ツールのアンチグラビティでは、AIが出すコードの提出が35%以上増えて、やり直しも減ったって。」\n沙織「……その35%、原文を見せて。」",
+      "narration": "大輔「プログラムの仕事なら、公式ブログにもっとすごい話があるんだ。」\n沙織「クロームの話ね。4,000万行のプログラムのうち、600万行の古いフォルダ。」\n大輔「そこから、ウェブページを処理する中心の部分を切り離した。数か月の仕事が、数週間。」\n沙織「数か月って、誰が、何と比べて？」\n大輔「それに、開発ツールのアンチグラビティでは、AIが出すコードの提出が35%以上増えて、やり直しも減ったって。」\n沙織「……原文は、ここ数週間で35%以上増えた、まで。」\n沙織「何チームで、何人で、何と比べたのか。どこにも書いてない。クロームのクラッシュ削減も、まだ見込み。」\n大輔「……数か月が数週間、も、グーグル自身の言い方か。」\n大輔「じゃあ、外で実際に使った人の声は？」\n［画面の資料カード］Google 公式ブログ（2026年10月13日） 「helped teams increase agentic code submissions by more than 35%」（原文） ・測った期間: ここ数週間 ・何チーム・何人か: 記載なし ・何と比べて35%か: 記載なし ・Chromeのクラッシュ削減: 見込み",
       "narrator": "dialogue",
-      "lines_hash": "09b9170daffc"
-    },
-    {
-      "scene_id": 11,
-      "type": "check",
-      "bgm_role": "main",
-      "reference_index": 0,
-      "round": 2,
+      "lines_hash": "09b9170daffc",
       "source_card": {
         "kind": "blog",
         "source": "Google 公式ブログ（2026年10月13日）",
@@ -1087,141 +983,88 @@
         ],
         "reference_index": 0
       },
+      "image_asset": "cards/kl042_S10"
+    },
+    {
+      "scene_id": 11,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 6,
+      "round": 2,
+      "source_card": {
+        "kind": "report",
+        "source": "Hacker News のスレッド（2026年10月16日に確認）",
+        "quote_type": "要約",
+        "items": [
+          "公開2日でコメント1,000件超",
+          "読めたのは先頭の約4分の1",
+          "好評: 文章が簡潔、説明・科学の質問に強い",
+          "割れる: コーディング、速さ",
+          "報告: 推論がループして終わらない例"
+        ],
+        "note": "匿名のコメントの傾向（読めた範囲）",
+        "reference_index": 6
+      },
       "lines": [
         {
-          "speaker": "skeptic",
-          "text": "書いてあるのは、ここ数週間で、35%以上増えた、まで。",
-          "expression": "neutral",
-          "t0": 0.0,
-          "dur": 4.56,
-          "cards": [
-            {
-              "text": "書いてあるのは、ここ数週間で、",
-              "start": 0.0,
-              "end": 2.25
-            },
-            {
-              "text": "35%以上増えた、まで。",
-              "start": 2.4,
-              "end": 4.4
-            }
-          ]
+          "speaker": "dreamer",
+          "text": "僕も見たよ。海外の掲示板、ハッカーニュース。公開2日で、コメントが1,000件超え。",
+          "expression": "excited",
+          "display": "僕も見たよ。海外の掲示板、Hacker News。公開2日で、コメントが1,000件超え。"
         },
         {
           "speaker": "skeptic",
-          "text": "何チームで、何人で、何と比べて35%なのか。どこにも書いてない。クロームの方も、クラッシュが減るのは、まだ見込み。",
-          "display": "何チームで、何人で、何と比べて35%なのか。どこにも書いてない。Chromeの方も、クラッシュが減るのは、まだ見込み。",
-          "expression": "doubt",
-          "tag": "weakness",
-          "t0": 4.78,
-          "dur": 8.84,
-          "cards": [
-            {
-              "text": "何チームで、何人で、何と比べて35%なのか。",
-              "start": 0.0,
-              "end": 3.3
-            },
-            {
-              "text": "どこにも書いてない。Chromeの方も、",
-              "start": 3.3,
-              "end": 6.29
-            },
-            {
-              "text": "クラッシュが減るのは、まだ見込み。",
-              "start": 6.29,
-              "end": 8.84
-            }
-          ]
+          "text": "全部読んだ？",
+          "expression": "doubt"
         },
         {
           "speaker": "dreamer",
-          "text": "……数か月が数週間、も、グーグル自身の言い方か。",
-          "display": "……数か月が数週間、も、Google自身の言い方か。",
+          "text": "……先頭の4分の1くらい。",
           "expression": "deflated",
-          "pause": 0.4,
-          "tag": "turn",
-          "t0": 14.02,
-          "dur": 4.56,
-          "cards": [
-            {
-              "text": "……数か月が数週間、も、Google自身の",
-              "start": 0.0,
-              "end": 3.68
-            },
-            {
-              "text": "言い方か。",
-              "start": 3.68,
-              "end": 4.56
-            }
-          ]
+          "pause": 0.4
         },
         {
           "speaker": "skeptic",
-          "text": "うそだとは言わない。でも、外の誰かが測った数字じゃない。",
-          "expression": "neutral",
-          "t0": 18.86,
-          "dur": 4.32,
-          "cards": [
-            {
-              "text": "うそだとは言わない。でも、外の誰かが測った",
-              "start": 0.2,
-              "end": 3.33
-            },
-            {
-              "text": "数字じゃない。",
-              "start": 3.48,
-              "end": 4.52
-            }
-          ]
+          "text": "じゃあ、読めた範囲の傾向として聞く。",
+          "expression": "amused"
         },
         {
           "speaker": "dreamer",
-          "text": "1位は、外の評価で確かめられた。でも35%は、外からは確かめようがない、ってことか。",
-          "expression": "thinking",
-          "t0": 23.46,
-          "dur": 7.72,
-          "cards": [
-            {
-              "text": "1位は、外の評価で確かめられた。",
-              "start": 0.0,
-              "end": 2.4
-            },
-            {
-              "text": "でも35%は、外からは確かめようがない、",
-              "start": 2.55,
-              "end": 6.45
-            },
-            {
-              "text": "ってことか。",
-              "start": 6.6,
-              "end": 7.54
-            }
-          ]
+          "text": "文章が簡潔で読みやすい、説明や科学の質問に強い、って声が多いんだ。",
+          "expression": "excited"
         },
         {
           "speaker": "skeptic",
-          "text": "今は、グーグル社内の話、として聞いておこう。",
-          "display": "今は、Google社内の話、として聞いておこう。",
+          "text": "それは私も見た。でも、プログラムを書く力は、オーパスと同じって声と、劣るって声で割れてる。",
+          "expression": "thinking",
+          "display": "それは私も見た。でも、プログラムを書く力は、Opusと同じって声と、劣るって声で割れてる。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "速いって声もあったよ。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "遅いって声もね。推論が終わらずに回り続ける例も、いくつかある。",
+          "expression": "doubt",
+          "react": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "……評判も、1位一色じゃないんだ。",
+          "expression": "deflated",
+          "pause": 0.4
+        },
+        {
+          "speaker": "skeptic",
+          "text": "使い道で割れてる。点数の順位と同じね。",
           "expression": "convinced",
-          "react": "convinced",
-          "t0": 31.46,
-          "dur": 3.24,
-          "cards": [
-            {
-              "text": "今は、Google社内の話、",
-              "start": 0.0,
-              "end": 1.89
-            },
-            {
-              "text": "として聞いておこう。",
-              "start": 1.89,
-              "end": 3.24
-            }
-          ]
+          "react": "convinced"
         }
       ],
       "image_asset": "cards/kl042_S11",
-      "narration": "沙織「書いてあるのは、ここ数週間で、35%以上増えた、まで。」\n沙織「何チームで、何人で、何と比べて35%なのか。どこにも書いてない。クロームの方も、クラッシュが減るのは、まだ見込み。」\n大輔「……数か月が数週間、も、グーグル自身の言い方か。」\n沙織「うそだとは言わない。でも、外の誰かが測った数字じゃない。」\n大輔「1位は、外の評価で確かめられた。でも35%は、外からは確かめようがない、ってことか。」\n沙織「今は、グーグル社内の話、として聞いておこう。」\n［画面の資料カード］Google 公式ブログ（2026年10月13日） 「helped teams increase agentic code submissions by more than 35%」（原文） ・測った期間: ここ数週間 ・何チーム・何人か: 記載なし ・何と比べて35%か: 記載なし ・Chromeのクラッシュ削減: 見込み",
+      "narration": "大輔「僕も見たよ。海外の掲示板、ハッカーニュース。公開2日で、コメントが1,000件超え。」\n沙織「全部読んだ？」\n大輔「……先頭の4分の1くらい。」\n沙織「じゃあ、読めた範囲の傾向として聞く。」\n大輔「文章が簡潔で読みやすい、説明や科学の質問に強い、って声が多いんだ。」\n沙織「それは私も見た。でも、プログラムを書く力は、オーパスと同じって声と、劣るって声で割れてる。」\n大輔「速いって声もあったよ。」\n沙織「遅いって声もね。推論が終わらずに回り続ける例も、いくつかある。」\n大輔「……評判も、1位一色じゃないんだ。」\n沙織「使い道で割れてる。点数の順位と同じね。」\n［画面の資料カード］Hacker News のスレッド（2026年10月16日に確認） ・公開2日でコメント1,000件超 ・読めたのは先頭の約4分の1 ・好評: 文章が簡潔、説明・科学の質問に強い ・割れる: コーディング、速さ ・報告: 推論がループして終わらない例 ※匿名のコメントの傾向（読めた範囲）",
       "narrator": "dialogue",
       "lines_hash": "9a616ad6c0e4"
     },
@@ -1389,38 +1232,10 @@
         },
         {
           "speaker": "dreamer",
-          "text": "まあ聞いてよ。人がコーンホールっていう、袋を板の穴に投げ入れる遊びをする動画。アルゴンはそれを見て、練習用のシミュレーションを自分で組んだ。",
+          "text": "まあ聞いてよ。人がコーンホールっていう遊びをする動画から、アルゴンが練習用のシミュレーションを自分で組んだ。",
           "expression": "excited",
           "tone": "fast, getting carried away",
-          "t0": 7.16,
-          "dur": 9.96,
-          "cards": [
-            {
-              "text": "まあ聞いてよ。人がコーンホールっていう、",
-              "start": 0.0,
-              "end": 2.72
-            },
-            {
-              "text": "袋を板の穴に投げ入れる遊びをする動画。",
-              "start": 2.87,
-              "end": 5.65
-            },
-            {
-              "text": "アルゴンはそれを見て、",
-              "start": 5.8,
-              "end": 7.29
-            },
-            {
-              "text": "練習用のシミュレーションを",
-              "start": 7.29,
-              "end": 9.06
-            },
-            {
-              "text": "自分で組んだ。",
-              "start": 9.21,
-              "end": 10.16
-            }
-          ]
+          "display": "まあ聞いてよ。人がコーンホールっていう遊びをする動画から、Argonが練習用のシミュレーションを自分で組んだ。"
         },
         {
           "speaker": "skeptic",
@@ -1482,7 +1297,7 @@
           ]
         }
       ],
-      "narration": "大輔「もう1つ。僕が一番わくわくしたのが、ロボット。」\n沙織「ロボットのテストは、下の方だったけど。」\n大輔「まあ聞いてよ。人がコーンホールっていう、袋を板の穴に投げ入れる遊びをする動画。アルゴンはそれを見て、練習用のシミュレーションを自分で組んだ。」\n沙織「動画から、練習場を作ったのね。で？」\n大輔「それを、アプトロニックの人型ロボット、アポロに移したら、本物の環境で、7回連続で入れた。」\n沙織「7回連続、ね。で、それ何回試したの？ 原文を見よう。」",
+      "narration": "大輔「もう1つ。僕が一番わくわくしたのが、ロボット。」\n沙織「ロボットのテストは、下の方だったけど。」\n大輔「まあ聞いてよ。人がコーンホールっていう遊びをする動画から、アルゴンが練習用のシミュレーションを自分で組んだ。」\n沙織「動画から、練習場を作ったのね。で？」\n大輔「それを、アプトロニックの人型ロボット、アポロに移したら、本物の環境で、7回連続で入れた。」\n沙織「7回連続、ね。で、それ何回試したの？ 原文を見よう。」",
       "narrator": "dialogue",
       "lines_hash": "70c0077888bd"
     },
@@ -1507,53 +1322,15 @@
       "lines": [
         {
           "speaker": "skeptic",
-          "text": "公式ブログは、本物の環境で7回連続、とだけ。何回挑戦して、何回失敗したかは、書いてない。",
-          "expression": "doubt",
-          "t0": 0.0,
-          "dur": 7.6,
-          "cards": [
-            {
-              "text": "公式ブログは、本物の環境で7回連続、",
-              "start": 0.0,
-              "end": 3.26
-            },
-            {
-              "text": "とだけ。何回挑戦して、何回失敗したかは、",
-              "start": 3.41,
-              "end": 6.75
-            },
-            {
-              "text": "書いてない。",
-              "start": 6.9,
-              "end": 7.8
-            }
-          ]
+          "text": "公式ブログは、7回連続、とだけ。何回挑戦して、何回失敗したかは、書いてない。",
+          "expression": "doubt"
         },
         {
           "speaker": "dreamer",
-          "text": "でも、開発者向けのブログだと、アポロが球を投げて、的の箱6個を全部倒したって。",
+          "text": "でも、開発者向けのブログだと、アポロが球で、的の箱6個を全部倒したって。",
           "expression": "excited",
-          "display": "でも、開発者向けのブログだと、Apolloが球を投げて、的の箱6個を全部倒したって。",
-          "reference_index": 1,
-          "t0": 7.88,
-          "dur": 6.4,
-          "cards": [
-            {
-              "text": "でも、開発者向けのブログだと、",
-              "start": 0.0,
-              "end": 2.29
-            },
-            {
-              "text": "Apolloが球を投げて、的の箱6個を",
-              "start": 2.29,
-              "end": 5.18
-            },
-            {
-              "text": "全部倒したって。",
-              "start": 5.18,
-              "end": 6.4
-            }
-          ]
+          "display": "でも、開発者向けのブログだと、Apolloが球で、的の箱6個を全部倒したって。",
+          "reference_index": 1
         },
         {
           "speaker": "skeptic",
@@ -1591,28 +1368,9 @@
         },
         {
           "speaker": "skeptic",
-          "text": "1つある。机の上の二本腕のロボットで、シミュレーションで作ったデータを学習させる実験。",
+          "text": "1つある。机の上の二本腕ロボットに、シミュレーションのデータを学習させた実験。",
           "expression": "neutral",
-          "reference_index": 1,
-          "t0": 21.04,
-          "dur": 6.36,
-          "cards": [
-            {
-              "text": "1つある。机の上の二本腕のロボットで、",
-              "start": 0.12,
-              "end": 2.94
-            },
-            {
-              "text": "シミュレーションで作った",
-              "start": 3.09,
-              "end": 4.83
-            },
-            {
-              "text": "データを学習させる実験。",
-              "start": 4.83,
-              "end": 6.56
-            }
-          ]
+          "reference_index": 1
         },
         {
           "speaker": "dreamer",
@@ -1672,7 +1430,7 @@
         }
       ],
       "image_asset": "cards/kl042_S14",
-      "narration": "沙織「公式ブログは、本物の環境で7回連続、とだけ。何回挑戦して、何回失敗したかは、書いてない。」\n大輔「でも、開発者向けのブログだと、アポロが球を投げて、的の箱6個を全部倒したって。」\n沙織「それは、物理のシミュレーションの中で確かめた数字。」\n大輔「実機の数字は、1つもないの？」\n沙織「1つある。机の上の二本腕のロボットで、シミュレーションで作ったデータを学習させる実験。」\n大輔「成功率が、56%から75%に！ 実機で伸びてる。」\n沙織「伸びてる。でも75%なら、4回に1回は失敗する。体を動かす方は、計算の中だけでは越えられない壁が残ってる。」\n［画面の資料カード］Google 公式ブログ（2026年10月13日） 「the robot quickly sank seven consecutive shots in a real-world trial」（原文） ・試した回数の合計: 記載なし ・失敗の数: 記載なし",
+      "narration": "沙織「公式ブログは、7回連続、とだけ。何回挑戦して、何回失敗したかは、書いてない。」\n大輔「でも、開発者向けのブログだと、アポロが球で、的の箱6個を全部倒したって。」\n沙織「それは、物理のシミュレーションの中で確かめた数字。」\n大輔「実機の数字は、1つもないの？」\n沙織「1つある。机の上の二本腕ロボットに、シミュレーションのデータを学習させた実験。」\n大輔「成功率が、56%から75%に！ 実機で伸びてる。」\n沙織「伸びてる。でも75%なら、4回に1回は失敗する。体を動かす方は、計算の中だけでは越えられない壁が残ってる。」\n［画面の資料カード］Google 公式ブログ（2026年10月13日） 「the robot quickly sank seven consecutive shots in a real-world trial」（原文） ・試した回数の合計: 記載なし ・失敗の数: 記載なし",
       "narrator": "dialogue",
       "lines_hash": "110213e044e0"
     },
@@ -1699,22 +1457,8 @@
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "じゃあ、机の仕事の方は、今日から誰でも使えるんだよね。一般提供だし。",
-          "expression": "excited",
-          "t0": 0.0,
-          "dur": 4.56,
-          "cards": [
-            {
-              "text": "じゃあ、机の仕事の方は、今日から誰でも",
-              "start": 0.0,
-              "end": 2.52
-            },
-            {
-              "text": "使えるんだよね。一般提供だし。",
-              "start": 2.67,
-              "end": 4.62
-            }
-          ]
+          "text": "じゃあ、机の仕事なら、今日から誰でも使えるよね。一般提供だし。",
+          "expression": "excited"
         },
         {
           "speaker": "skeptic",
@@ -1758,78 +1502,17 @@
         },
         {
           "speaker": "skeptic",
-          "text": "100万トークンあたり、入力2ドル、出力10ドル。",
-          "expression": "neutral",
-          "t0": 12.64,
-          "dur": 4.28,
-          "cards": [
-            {
-              "text": "100万トークンあたり、入力2ドル、",
-              "start": 0.0,
-              "end": 2.7
-            },
-            {
-              "text": "出力10ドル。",
-              "start": 2.85,
-              "end": 4.01
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "それ、ずっと？",
-          "expression": "thinking",
-          "t0": 17.2,
-          "dur": 1.76,
-          "cards": [
-            {
-              "text": "それ、ずっと？",
-              "start": 0.0,
-              "end": 1.76
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "11月30日までの導入価格。12月1日からは、ちょうど倍になる。",
-          "expression": "doubt",
-          "t0": 19.24,
-          "dur": 5.36,
-          "cards": [
-            {
-              "text": "11月30日までの導入価格。",
-              "start": 0.0,
-              "end": 2.44
-            },
-            {
-              "text": "12月1日からは、ちょうど倍になる。",
-              "start": 2.59,
-              "end": 5.29
-            }
-          ]
+          "text": "画面の値段は、11月30日まで。12月1日からは、ちょうど倍になる。",
+          "expression": "doubt"
         },
         {
           "speaker": "dreamer",
           "text": "試すなら、値段が変わる日も見ておかないとね。",
-          "expression": "thinking",
-          "t0": 24.88,
-          "dur": 3.52,
-          "cards": [
-            {
-              "text": "試すなら、",
-              "start": 0.0,
-              "end": 0.75
-            },
-            {
-              "text": "値段が変わる日も見ておかないとね。",
-              "start": 0.75,
-              "end": 3.3
-            }
-          ]
+          "expression": "thinking"
         }
       ],
       "image_asset": "cards/kl042_S15",
-      "narration": "大輔「じゃあ、机の仕事の方は、今日から誰でも使えるんだよね。一般提供だし。」\n沙織「一般提供は、無料って意味じゃない。使えるのは、APIの有料の枠と、グーグルの有料プラン。」\n大輔「お値段は？」\n沙織「100万トークンあたり、入力2ドル、出力10ドル。」\n大輔「それ、ずっと？」\n沙織「11月30日までの導入価格。12月1日からは、ちょうど倍になる。」\n大輔「試すなら、値段が変わる日も見ておかないとね。」\n［画面の資料カード］Google 公式ブログ（2026年10月13日） 「an introductory price of $2 per million input tokens and $10 per million output tokens」（原文） ・導入価格は11月30日まで ・12月1日から: 入力$4・出力$20 ・（どちらも100万トークンあたり） ・提供: APIの有料枠、Google AI Ultra／Pro",
+      "narration": "大輔「じゃあ、机の仕事なら、今日から誰でも使えるよね。一般提供だし。」\n沙織「一般提供は、無料って意味じゃない。使えるのは、APIの有料の枠と、グーグルの有料プラン。」\n大輔「お値段は？」\n沙織「画面の値段は、11月30日まで。12月1日からは、ちょうど倍になる。」\n大輔「試すなら、値段が変わる日も見ておかないとね。」\n［画面の資料カード］Google 公式ブログ（2026年10月13日） 「an introductory price of $2 per million input tokens and $10 per million output tokens」（原文） ・導入価格は11月30日まで ・12月1日から: 入力$4・出力$20 ・（どちらも100万トークンあたり） ・提供: APIの有料枠、Google AI Ultra／Pro",
       "narrator": "dialogue",
       "lines_hash": "b08ca3f03236"
     },
@@ -1862,129 +1545,29 @@
         },
         {
           "speaker": "dreamer",
-          "text": "僕は「もうすぐ来る」。ただし、表を作る、古いプログラムを読む、みたいな机の仕事。総合も金融も、外の評価で1位だから。",
-          "display": "僕は「もうすぐ来る」。ただし、表を作る、古いプログラムを読む、みたいな机の仕事。総合も金融も、外の評価で1位だから。",
-          "expression": "convinced",
-          "tone": "calm, confident",
-          "reference_index": 2,
-          "t0": 4.64,
-          "dur": 10.16,
-          "cards": [
-            {
-              "text": "僕は「もうすぐ来る」。ただし、表を作る、",
-              "start": 0.0,
-              "end": 3.5
-            },
-            {
-              "text": "古いプログラムを読む、みたいな机の仕事。",
-              "start": 3.5,
-              "end": 7.01
-            },
-            {
-              "text": "総合も金融も、外の評価で1位だから。",
-              "start": 7.01,
-              "end": 10.16
-            }
-          ]
+          "text": "僕は「もうすぐ来る」。ただし、文章の下書きや、古いプログラムを読む机の仕事。評判も、そこは良かった。",
+          "expression": "convinced"
         },
         {
           "speaker": "skeptic",
-          "text": "私も「もうすぐ来る」。",
-          "expression": "convinced",
-          "pause": 0.4,
-          "t0": 15.2,
-          "dur": 2.04,
-          "cards": [
-            {
-              "text": "私も「もうすぐ来る」。",
-              "start": 0.0,
-              "end": 2.04
-            }
-          ]
+          "text": "私も「もうすぐ来る」。ただし、条件付き。",
+          "expression": "convinced"
         },
         {
           "speaker": "skeptic",
-          "text": "1位は、グーグルと関係のない評価でも本物だった。差は小さいけど、もう有料で使える。",
-          "display": "1位は、Googleと関係のない評価でも本物だった。差は小さいけど、もう有料で使える。",
+          "text": "総合点なら、どちらの独立評価でも上位。もう有料で使える。",
           "expression": "convinced",
-          "reference_index": 2,
-          "t0": 17.46,
-          "dur": 5.36,
-          "cards": [
-            {
-              "text": "1位は、Googleと関係のない評価でも",
-              "start": 0.0,
-              "end": 2.49
-            },
-            {
-              "text": "本物だった。差は小さいけど、",
-              "start": 2.49,
-              "end": 4.24
-            },
-            {
-              "text": "もう有料で使える。",
-              "start": 4.24,
-              "end": 5.36
-            }
-          ]
+          "react": "convinced"
         },
         {
           "speaker": "skeptic",
-          "text": "ただ、68.9%は満点にはまだ遠い。任せるなら、確かめながら。35%と7回連続は、測り方が書いてないから、私は数えない。",
-          "expression": "doubt",
-          "t0": 23.04,
-          "dur": 10.64,
-          "cards": [
-            {
-              "text": "ただ、68.9%は満点にはまだ遠い。",
-              "start": 0.0,
-              "end": 3.14
-            },
-            {
-              "text": "任せるなら、確かめながら。",
-              "start": 3.29,
-              "end": 5.86
-            },
-            {
-              "text": "35%と7回連続は、",
-              "start": 5.86,
-              "end": 7.84
-            },
-            {
-              "text": "測り方が書いてないから、私は数えない。",
-              "start": 7.99,
-              "end": 10.84
-            }
-          ]
+          "text": "条件は、確かめながら使うこと。35%と7回連続は、測り方が書いてないから数えない。",
+          "expression": "doubt"
         },
         {
           "speaker": "dreamer",
-          "text": "パソコンの操作は、今は上位じゃないけど、1年もすれば変わると思う。ロボットは、実機の数字が少ないから3年はかかる。これは判定とは別の見立て。",
-          "expression": "thinking",
-          "t0": 33.96,
-          "dur": 11.36,
-          "cards": [
-            {
-              "text": "パソコンの操作は、今は上位じゃないけど、",
-              "start": 0.0,
-              "end": 3.0
-            },
-            {
-              "text": "1年もすれば変わると思う。ロボットは、",
-              "start": 3.15,
-              "end": 6.61
-            },
-            {
-              "text": "実機の数字が少ないから3年はかかる。",
-              "start": 6.76,
-              "end": 9.46
-            },
-            {
-              "text": "これは判定とは別の見立て。",
-              "start": 9.61,
-              "end": 11.56
-            }
-          ]
+          "text": "パソコン操作は、1年もすれば変わると思う。体を動かすロボットは、3年はかかる。",
+          "expression": "thinking"
         },
         {
           "speaker": "dreamer",
@@ -2014,32 +1597,12 @@
         },
         {
           "speaker": "skeptic",
-          "text": "私の予想は、1位は宣伝で、まだ眉唾。そこは外れ。外の会社が測っても1位だった。眉唾から、もうすぐに変えた。",
+          "text": "私の予想は、宣伝の数字で眉唾。結果は半分当たり、半分外れ。眉唾から、条件付きのもうすぐ、に変えた。",
           "expression": "amused",
-          "react": "convinced",
-          "tag": "vs_prediction",
-          "t0": 52.5,
-          "dur": 9.76,
-          "cards": [
-            {
-              "text": "私の予想は、1位は宣伝で、まだ眉唾。",
-              "start": 0.0,
-              "end": 3.59
-            },
-            {
-              "text": "そこは外れ。外の会社が測っても1位だった。",
-              "start": 3.82,
-              "end": 7.28
-            },
-            {
-              "text": "眉唾から、もうすぐに変えた。",
-              "start": 7.43,
-              "end": 9.57
-            }
-          ]
+          "tag": "vs_prediction"
         }
       ],
-      "narration": "沙織「じゃあ、判定。お題は、アルゴンに仕事を任せる日は、もうすぐ来るか。」\n大輔「僕は「もうすぐ来る」。ただし、表を作る、古いプログラムを読む、みたいな机の仕事。総合も金融も、外の評価で1位だから。」\n沙織「私も「もうすぐ来る」。」\n沙織「1位は、グーグルと関係のない評価でも本物だった。差は小さいけど、もう有料で使える。」\n沙織「ただ、68.9%は満点にはまだ遠い。任せるなら、確かめながら。35%と7回連続は、測り方が書いてないから、私は数えない。」\n大輔「パソコンの操作は、今は上位じゃないけど、1年もすれば変わると思う。ロボットは、実機の数字が少ないから3年はかかる。これは判定とは別の見立て。」\n大輔「僕の予想は、全部もう来てる、だった。判定は同じ向きだけど、範囲を机の仕事に絞った。」\n沙織「私の予想は、1位は宣伝で、まだ眉唾。そこは外れ。外の会社が測っても1位だった。眉唾から、もうすぐに変えた。」",
+      "narration": "沙織「じゃあ、判定。お題は、アルゴンに仕事を任せる日は、もうすぐ来るか。」\n大輔「僕は「もうすぐ来る」。ただし、文章の下書きや、古いプログラムを読む机の仕事。評判も、そこは良かった。」\n沙織「私も「もうすぐ来る」。ただし、条件付き。」\n沙織「総合点なら、どちらの独立評価でも上位。もう有料で使える。」\n沙織「条件は、確かめながら使うこと。35%と7回連続は、測り方が書いてないから数えない。」\n大輔「パソコン操作は、1年もすれば変わると思う。体を動かすロボットは、3年はかかる。」\n大輔「僕の予想は、全部もう来てる、だった。判定は同じ向きだけど、範囲を机の仕事に絞った。」\n沙織「私の予想は、宣伝の数字で眉唾。結果は半分当たり、半分外れ。眉唾から、条件付きのもうすぐ、に変えた。」",
       "narrator": "dialogue",
       "lines_hash": "453a45374c4c"
     },
@@ -2051,52 +1614,13 @@
       "lines": [
         {
           "speaker": "skeptic",
-          "text": "今日の決め手は、外の会社の評価。発表の1位を、自分たちで確かめられた。判定は、10月16日時点の、二人の見立て。",
-          "expression": "neutral",
-          "t0": 0.0,
-          "dur": 8.32,
-          "cards": [
-            {
-              "text": "今日の決め手は、外の会社の評価。",
-              "start": 0.0,
-              "end": 2.46
-            },
-            {
-              "text": "発表の1位を、自分たちで確かめられた。",
-              "start": 2.61,
-              "end": 5.33
-            },
-            {
-              "text": "判定は、10月16日時点の、二人の見立て。",
-              "start": 5.48,
-              "end": 8.52
-            }
-          ]
+          "text": "今日の決め手は、物差しを並べたこと。判定は、10月16日時点の、二人の見立て。",
+          "expression": "neutral"
         },
         {
           "speaker": "dreamer",
-          "text": "ヴァルズの順位は、新しいモデルが出れば入れ替わるかも。値段が変わる12月に、また見よう。",
-          "display": "Vals AIの順位は、新しいモデルが出れば入れ替わるかも。値段が変わる12月に、また見よう。",
-          "expression": "excited",
-          "t0": 8.6,
-          "dur": 5.32,
-          "cards": [
-            {
-              "text": "Vals AIの順位は、新しいモデルが",
-              "start": 0.0,
-              "end": 2.15
-            },
-            {
-              "text": "出れば入れ替わるかも。値段が変わる12月に、",
-              "start": 2.15,
-              "end": 4.64
-            },
-            {
-              "text": "また見よう。",
-              "start": 4.64,
-              "end": 5.32
-            }
-          ]
+          "text": "順位は、新しいモデルが出れば入れ替わるかも。値段が変わる12月に、また見よう。",
+          "expression": "excited"
         },
         {
           "speaker": "dreamer",
@@ -2147,7 +1671,7 @@
           ]
         }
       ],
-      "narration": "沙織「今日の決め手は、外の会社の評価。発表の1位を、自分たちで確かめられた。判定は、10月16日時点の、二人の見立て。」\n大輔「ヴァルズの順位は、新しいモデルが出れば入れ替わるかも。値段が変わる12月に、また見よう。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」",
+      "narration": "沙織「今日の決め手は、物差しを並べたこと。判定は、10月16日時点の、二人の見立て。」\n大輔「順位は、新しいモデルが出れば入れ替わるかも。値段が変わる12月に、また見よう。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」",
       "narrator": "dialogue",
       "lines_hash": "9044110cd507"
     }
@@ -2158,10 +1682,10 @@
       "scenes": [
         {
           "narrator": "skeptic",
-          "narration": "グーグルの1位、本当？",
-          "telop_text": "Googleの「1位」、本当？",
+          "narration": "グーグルの1位、どの評価で？",
+          "telop_text": "Googleの「1位」、どの評価で？",
           "expression": "doubt",
-          "scene_id": 10
+          "scene_id": 1
         },
         {
           "narrator": "dreamer",
@@ -2188,7 +1712,8 @@
         },
         {
           "narrator": "skeptic",
-          "narration": "でも、パソコン操作のテストは、4.83%で下の方。",
+          "narration": "別の評価だと、アルゴンは53点。首位じゃない。",
+          "telop_text": "別の評価だと、Argonは53点。首位じゃない。",
           "expression": "doubt",
           "react": "surprised",
           "scene_id": 8

@@ -1177,8 +1177,10 @@ def _wrap_chars(text: str, font, max_w: int) -> list:
         good = {b for b in _token_boundaries(text) if 0 < b < n}
     except Exception:  # janome が無い環境
         good = set()
-    good |= {i + 1 for i, ch in enumerate(text) if ch in "、。，．）」』・"}
-    alnum = lambda c: c.isascii() and (c.isalnum() or c in ".-")
+    good |= {i + 1 for i, ch in enumerate(text) if ch in "、。，．）」』・ "}
+    alnum = lambda c: c.isascii() and (c.isalnum() or c in ".-%")
+    # 形態素解析が英単語の途中に切れ目を付けることがある（"cod|e"）。英数字どうしの間は切れ目にしない
+    good = {b for b in good if not (alnum(text[b - 1]) and alnum(text[b]))}
     rows, i = [], 0
     while i < n:
         j = i + 1
@@ -1192,7 +1194,9 @@ def _wrap_chars(text: str, font, max_w: int) -> list:
             else:
                 while j - i > 1 and alnum(text[j - 1]) and alnum(text[j]):
                     j -= 1
-            while j < n and text[j] in _NO_HEAD and j - i > 1:  # 次の行頭に句読点を置かない
+            while j < n and text[j] == " ":  # 行頭の空白は読み飛ばす（戻ると英単語の途中で切れる）
+                j += 1
+            while j < n and text[j] in _NO_HEAD and text[j] != " " and j - i > 1:  # 次の行頭に句読点を置かない
                 j -= 1
         rows.append((i, j))
         i = j
