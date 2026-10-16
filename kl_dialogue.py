@@ -52,7 +52,7 @@ SCENE_TYPES = {
     "teaser":   {"style": "narrative", "bgm_role": "intro"},   # 冒頭の問い（数カットの先出し）
     "setup":    {"style": "narrative", "bgm_role": "intro"},   # 今日の問い・身近な困りごと・通説
     "paper":    {"style": "narrative", "bgm_role": "intro"},   # どんな研究か（出典・方法・結果）
-    "dream":    {"style": "narrative", "bgm_role": "intro"},   # 夢語り: それが来た暮らしの一場面
+    "dream":    {"style": "narrative", "bgm_role": "intro"},   # 未来の一場面（v3 では任意・1つまで。現物がまだ無い回など）
     "tsukkomi": {"style": "narrative", "bgm_role": "main"},    # ツッコミ: 弱点・実用化の壁
     "check":    {"style": "chart",     "bgm_role": "main"},    # 答え合わせ: データで確かめる
     "verdict":  {"style": "narrative", "bgm_role": "outro"},   # 判定
@@ -118,6 +118,26 @@ CARD_KINDS = {  # 資料カードの種類 → 見出しの色
 }
 CARD_DIR = BASE_DIR / "assets" / "cards"
 
+# ── 構成 v3「使い道ラウンド」（2026-10-17、kl043 以降。CLAUDE.md「構成 v3」） ──────────────
+# "structure": "rounds_v3" の回は、v2 の規則（validate_rounds_v2）をすべて引き継いだうえで、
+#   - life_scene を必須から外し、dream シーンを任意・1つまでにする
+#     （v2 までは「言い過ぎる→崩される→言い直す」の dream が12話中9話で型になっていた）
+#   - use_case（大輔が論点の中で置く具体的な使い道。同じ論点の check で一次資料に当てる）を必須
+#   - takeaway（verdict で「誰が・何に・どんな条件で／いつ」使えるかを言う行）を必須
+#   - 「言い直」0回・「想像してみて」1回まで
+# kl041・kl042（rounds_v2）と kl031〜kl040（structure なし）は従来の規則のまま。
+STRUCTURE_V3 = "rounds_v3"
+ROUND_STRUCTURES = (STRUCTURE_V2, STRUCTURE_V3)
+V3_TAGS = {
+    "use_case": "大輔（dreamer）が論点の中で置く具体的な使い道。同じ論点の check で一次資料に当てる",
+    "takeaway": "verdict で言う「誰が・何に・どんな条件で／いつ」使えるか（どちらが言ってもよい）",
+}
+V3_PHRASE_LIMITS = {
+    "言い直": 0,          # 「言い直す」「言い直し」。崩された夢を言い直す型をやめる
+    "想像してみて": 1,    # 旧口癖。使うなら1回まで（dream を置く回だけ）
+}
+V3_MAX_DREAM = 1
+
 VERDICT_KEYS = ("soon", "decade", "dubious")
 REQUIRED_TAGS = {
     "question": "冒頭の問い（teaser内）",
@@ -125,6 +145,22 @@ REQUIRED_TAGS = {
     "weakness": "ツッコミが言う、この研究の一番の弱点",
     "barrier": "ツッコミが言う、実用化までの壁",
 }
+
+
+def required_tags(ep: dict) -> dict:
+    """構成ごとの必須タグ。v3 は life_scene を外し、use_case・takeaway を足す。"""
+    if ep.get("structure") == STRUCTURE_V3:
+        tags = {k: v for k, v in REQUIRED_TAGS.items() if k != "life_scene"}
+        tags.update(V3_TAGS)
+        return tags
+    return dict(REQUIRED_TAGS)
+
+
+def phrase_limits(ep: dict) -> dict:
+    limits = dict(PHRASE_LIMITS)
+    if ep.get("structure") == STRUCTURE_V3:
+        limits.update(V3_PHRASE_LIMITS)
+    return limits
 
 
 def load_cast() -> dict:
@@ -224,12 +260,22 @@ def validate_episode(ep: dict, cast: dict = None) -> list:
     first_main = next((i for i, t in enumerate(types_) if t != "teaser"), len(types_))
     if any(t == "teaser" for t in types_[first_main:]):
         errs.append("teaser は冒頭にまとめてください")
-    v2 = ep.get("structure") == STRUCTURE_V2
+    v3 = ep.get("structure") == STRUCTURE_V3
+    v2 = ep.get("structure") in ROUND_STRUCTURES   # v3 は v2 の規則をすべて引き継ぐ
     # v2 ではツッコミを資料カードの答え合わせ（check）の中で言ってよいので、tsukkomi シーンは必須にしない
-    need = (("paper", 1), ("dream", 1), ("check", 2)) if v2 else (("paper", 1), ("dream", 1), ("tsukkomi", 1), ("check", 1))
+    # v3 では dream も必須にしない（任意・1つまで。下で上限を確認）
+    if v3:
+        need = (("check", 2),)
+    elif v2:
+        need = (("paper", 1), ("dream", 1), ("check", 2))
+    else:
+        need = (("paper", 1), ("dream", 1), ("tsukkomi", 1), ("check", 1))
     for t, n_min in need:
         if types_.count(t) < n_min:
             errs.append(f"{t} シーンが{n_min}つ以上必要です")
+    if v3 and types_.count("dream") > V3_MAX_DREAM:
+        errs.append(f"v3: dream シーンは任意で{V3_MAX_DREAM}つまでです（今は{types_.count('dream')}）。"
+                    "未来の場面は、現物がまだ無い回など絵に価値があるときだけ")
     if types_.count("verdict") != 1:
         errs.append("verdict シーンはちょうど1つにしてください")
 
@@ -275,7 +321,7 @@ def validate_episode(ep: dict, cast: dict = None) -> list:
     teaser_tags = {l.get("tag") for s in scenes[:first_main] for l in (s.get("lines") or [])}
     if "question" not in teaser_tags:
         errs.append("teaser のどこかに tag: 'question'（視聴者側の問い）の行を置いてください")
-    for tag, label in REQUIRED_TAGS.items():
+    for tag, label in required_tags(ep).items():
         if tag not in tags_found:
             errs.append(f"tag '{tag}' の行がありません: {label}")
     for s in scenes:
@@ -285,7 +331,7 @@ def validate_episode(ep: dict, cast: dict = None) -> list:
             if l.get("tag") == "life_scene" and l.get("speaker") != "dreamer":
                 errs.append(f"S{s['scene_id']}: tag 'life_scene' は夢語り担当（dreamer）の台詞に付けてください")
 
-    for phrase, limit in PHRASE_LIMITS.items():
+    for phrase, limit in phrase_limits(ep).items():
         n = _count(all_text, phrase)
         if n > limit:
             errs.append(f"常套句「{phrase}」が{n}回あります（上限{limit}回）")
@@ -340,6 +386,8 @@ def validate_episode(ep: dict, cast: dict = None) -> list:
                 errs.append(f"Shorts {i}カット目: narrator は dreamer/skeptic にしてください")
     if v2:
         errs += validate_rounds_v2(ep)
+    if v3:
+        errs += validate_rounds_v3(ep)
     return errs
 
 
@@ -347,8 +395,48 @@ def _card_asset_name(ep: dict, scene: dict) -> str:
     return f"cards/{ep.get('episode_id', 'klXXX')}_S{scene['scene_id']:02d}"
 
 
+def validate_rounds_v3(ep: dict) -> list:
+    """構成 v3（使い道ラウンド）の追加チェック。v2 の規則（validate_rounds_v2）は別に通す。"""
+    errs = []
+    scenes = ep["scenes"]
+    for s in scenes:
+        for i, l in enumerate(s.get("lines") or []):
+            tag = l.get("tag")
+            where = f"v3: S{s['scene_id']} 行{i + 1}"
+            if tag == "use_case":
+                if l.get("speaker") != "dreamer":
+                    errs.append(f"{where}: tag 'use_case' は大輔（dreamer）の台詞に付けてください（使い道を置くのは期待担当）")
+                n = s.get("round")
+                if not isinstance(n, int):
+                    errs.append(f"{where}: use_case は論点ラウンドの中（round のあるシーン）に置いてください")
+                else:
+                    # 同じ論点の、このシーン以降に check（資料・データで答え合わせ）があること
+                    later = [t for t in scenes if t.get("round") == n and t["scene_id"] >= s["scene_id"]
+                             and t.get("type") == "check"]
+                    if not later:
+                        errs.append(f"{where}: use_case を置いた論点{n}に、その後で資料に当てる check シーンがありません")
+            elif tag == "takeaway" and s.get("type") != "verdict":
+                errs.append(f"{where}: tag 'takeaway' は verdict シーンの台詞に付けてください")
+            elif tag == "life_scene":
+                # v3 では必須ではないが、使うなら dream の中だけ（未来の場面を論点に混ぜない）
+                if s.get("type") != "dream":
+                    errs.append(f"{where}: v3 では life_scene は dream シーンの中だけで使えます（使い道は use_case で）")
+    return errs
+
+
+def episode_warnings(ep: dict) -> list:
+    """不合格にはしないが、STEP5で見てほしいこと（⚠ として表示する）。"""
+    warns = []
+    if ep.get("structure") == STRUCTURE_V3:
+        # 大輔が正しかった論点（沙織が譲る turn）が1つ以上あるか。毎回大輔が論破されるだけの型を避ける
+        if not any(l.get("tag") == "turn" and l.get("speaker") == "skeptic"
+                   for s in ep["scenes"] for l in s.get("lines") or []):
+            warns.append("v3: 沙織が譲る turn（大輔が正しかった論点）がありません。大輔が論破されるだけの回になっていないか、STEP5で確認")
+    return warns
+
+
 def validate_rounds_v2(ep: dict) -> list:
-    """構成 v2（論点ラウンド）の追加チェック。"structure": "rounds_v2" の回だけ。"""
+    """構成 v2（論点ラウンド）の追加チェック。"structure": "rounds_v2" の回と、それを引き継ぐ rounds_v3 の回。"""
     errs = []
     scenes = ep["scenes"]
     by_id = {s["scene_id"]: s for s in scenes}
@@ -1329,8 +1417,9 @@ def main():
     ap.add_argument("command", choices=["check", "cards"],
                     help="check: 構造チェック（narration を同期）／cards: 資料カード（source_card）を描いて image_asset を書き込む")
     ap.add_argument("--episode", required=True)
+    ap.add_argument("--path", help="episodes/ 以外のJSONを確認するとき（試し書き・テスト用）。指定したファイルに narration を同期する")
     args = ap.parse_args()
-    path = BASE_DIR / "episodes" / f"{args.episode}.json"
+    path = Path(args.path) if args.path else BASE_DIR / "episodes" / f"{args.episode}.json"
     ep = json.loads(path.read_text(encoding="utf-8"))
     cast = load_cast()
     if args.command == "cards":
@@ -1356,6 +1445,18 @@ def main():
             if l.get("tag"):
                 tags.setdefault(l["tag"], []).append(f"S{s['scene_id']:02d}")
     print("タグ:", ", ".join(f"{k}={v}" for k, v in tags.items()))
+    st = ep.get("structure")
+    if st == STRUCTURE_V3:
+        print("構成: rounds_v3（使い道ラウンド。v2 の規則＋下記）")
+        print(f"  必須タグ: {', '.join(required_tags(ep))}（life_scene は不要）")
+        print(f"  dream: 任意・{V3_MAX_DREAM}つまで／use_case は大輔・論点の中・その後に同じ論点の check／takeaway は verdict")
+        print(f"  常套句の上限（v3 追加）: " + "、".join(f"「{k}」{v}回" for k, v in V3_PHRASE_LIMITS.items()))
+    elif st == STRUCTURE_V2:
+        print("構成: rounds_v2（論点ラウンド。kl041・kl042。新しい回は rounds_v3）")
+    else:
+        print("構成: 従来（structure なし。kl031〜kl040）")
+    for w in episode_warnings(ep):
+        print("⚠ " + w)
     if errs:
         print(f"❌ {len(errs)}件の問題:")
         for e in errs:
