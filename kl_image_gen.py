@@ -969,7 +969,14 @@ def main():
                         main_scene.get("image_asset"), "the same scene as the reference image")
                     is_chart = main_scene["type"] in CHART_TYPES
                     prompt = build_shorts_reframe_prompt(image_prompt)
-                    if ep.get("format") == "dialogue":
+                    if ep.get("format") == "dialogue" and is_chart:
+                        # 2026-10-16: Shorts の字幕は画面の56%の高さに出る（kl_dialogue.SHORTS_LAYOUT）。図が縦の中央に
+                        # 広がると字幕が棒・ラベルに重なった（kl041 shorts1_S04/S05）ので、図を上半分より上に収める
+                        prompt += ("\n\nCOMPOSITION: place the ENTIRE chart (title, every row/bar, every label and value) "
+                                   "within the TOP 45% of the vertical frame, scaled down as needed. Everything below 48% "
+                                   "of the frame height must be the same plain light background only — no chart elements, "
+                                   "no text, no decorations. One single image: no borders, no inset pictures.")
+                    elif ep.get("format") == "dialogue":
                         prompt += ("\n\nCOMPOSITION: keep the main subject in the upper half of the vertical "
                                    "frame; in the bottom 30%, continue the same scene's floor or wall naturally with no important objects "
                                    "(never blank, white or cut out). One single "

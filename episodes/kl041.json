@@ -1,0 +1,2195 @@
+{
+  "episode_id": "kl041",
+  "format": "dialogue",
+  "structure": "rounds_v2",
+  "template": "myth_buster",
+  "source_type": "news",
+  "news_date": "2026-10-13",
+  "verdict_as_of": "2026-10-16",
+  "genre": "ai",
+  "health": false,
+  "episode_title": "国産AI「Sarashina」無償ベータ版は、ChatGPTの代わりになるか（10月13日発表、発表資料・技術ブログ・説明書・利用規約を読む）",
+  "youtube_title": "国産AI「Sarashina」はChatGPTの代わり？（10月13日発表）",
+  "entry_question": "ソフトバンクの国産AI「Sarashina」が無料で試せるようになった。ChatGPTの代わりになる？",
+  "verdict": {
+    "dreamer": "soon",
+    "skeptic": "dubious"
+  },
+  "hook_lines": [
+    "国産AIが無料で使える",
+    "ChatGPTの代わり？"
+  ],
+  "thumbnail_prompt": "Calm, bright morning editorial illustration of a tidy Japanese home desk seen from the front: a light wood desktop running the full width of the frame, a soft pale blue-gray wall behind it, a window with gentle morning daylight at the far left and a small potted green plant at the far right, all continuous across the whole frame with no panels, boxes, borders or abrupt colour changes. Keep the left 30%, the right 30% and the top 35% of the frame quiet and uncluttered (soft gradient only), but the desk and wall must visibly continue unbroken behind them. In the horizontal center, in the vertical band between 38% and 80% of the frame height: an open laptop whose screen shows only soft, out-of-focus pale rounded speech-bubble shapes (no recognizable app), with a small red-and-white paper Japanese flag-shaped sticky note and a bright yellow price-tag-shaped card that is blank, leaning against the laptop. No people, no hands. No logos, no brand marks, no readable text, no letters, no numbers.",
+  "thumbnail_headline": "無料の国産AI\nChatGPTの代わり？",
+  "thumbnail_exprs": {
+    "dreamer": "excited",
+    "skeptic": "doubt"
+  },
+  "youtube_tags": [
+    "Sarashina",
+    "SB Intuitions",
+    "ソフトバンク",
+    "国産AI",
+    "生成AI",
+    "ChatGPT",
+    "大規模言語モデル",
+    "LLM",
+    "無料AI",
+    "利用規約",
+    "AIの進化",
+    "科学ニュース"
+  ],
+  "references": [
+    {
+      "title": "国産生成AI「Sarashina」を利用できる「Sarashinaサービス」の無償ベータ版を提供開始",
+      "authors": [],
+      "year": 2026,
+      "venue": "SB Intuitions プレスリリース（2026-10-13）",
+      "url": "https://www.sbintuitions.co.jp/news/press/20261013_01/",
+      "is_preprint": false,
+      "institution": "SB Intuitions",
+      "source_kind": "press_release"
+    },
+    {
+      "title": "Sarashina サービス利用規約（v1.00、2026年9月28日制定）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Sarashinaサービス（sarashina.ai）",
+      "url": "https://sarashina.ai/terms",
+      "is_preprint": false,
+      "institution": "SB Intuitions",
+      "source_kind": "company_website"
+    },
+    {
+      "title": "Sarashina3 mini / Sarashina3 nano: フルスクラッチで開発した最新の国産LLM",
+      "authors": [],
+      "year": 2026,
+      "venue": "SB Intuitions TECH BLOG（2026-06-30、2026-10-13追記）",
+      "url": "https://www.sbintuitions.co.jp/blog/entry/2026/06/30/100000",
+      "is_preprint": false,
+      "institution": "SB Intuitions",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "Sarashina API Docs「レート制限」",
+      "authors": [],
+      "year": 2026,
+      "venue": "Sarashina API Docs",
+      "url": "https://docs.sarashina.ai/rate-limits",
+      "is_preprint": false,
+      "institution": "SB Intuitions",
+      "source_kind": "company_website"
+    },
+    {
+      "title": "Sarashina API Docs「モデル一覧」",
+      "authors": [],
+      "year": 2026,
+      "venue": "Sarashina API Docs",
+      "url": "https://docs.sarashina.ai/models",
+      "is_preprint": false,
+      "institution": "SB Intuitions",
+      "source_kind": "company_website"
+    }
+  ],
+  "youtube_description": "2026年10月13日、ソフトバンクの子会社 SB Intuitions が、国産の生成AI「Sarashina」を無料で試せる「Sarashinaサービス」の無償ベータ版を公開しました。では、Sarashina は ChatGPT の代わりになるのか。発表資料には、ChatGPT と比べた数字は書かれていません。夢語り担当の大輔と、ツッコミ担当の沙織が、発表資料・同社の技術ブログ・APIの説明書・利用規約を読んで確かめます。\n\n■ この回の判定（2026年10月16日時点の、二人の見立て）\nお題: 国産AIの「Sarashina」は、ChatGPTの代わりになるか\n大輔: もうすぐ来る（日本のことを日本語で聞く、日英・英日に訳す、という使い方なら、同社の技術ブログに、比較したモデル（GPT-4.1・GPT-5.4 mini（non-reasoning）ほか）と「全体的に同程度」、日本文化・社会常識のQA（JamC-QA）では「上回って」いると書かれている。しかも今日、無料で試せる。代わりの1本になるのはもうすぐ、というのが大輔の見立て）\n沙織: まだ眉唾（眉唾なのは「代わり」という言い方。比較の相手は推論（じっくり考える）モードを使わないモデルだけで、同じ記事で同社自身が「エージェント能力などで求められる性能水準にはまだ達していない点もある」と書いている。無償ベータは、APIのSarashina3 miniが1分あたり6リクエスト、入力・出力データは学習に利用されうる（学習利用を断れるのは規約上、有償プランのみ）、提供終了時期は未定。ただし、これらは技術の壁ではなく運用の決まりで、1年もすれば変わりうる、というのが沙織の見立てで、変わったらもう一度判定します）\n\n■ 一次資料に書いてあること\n・発表資料（2026年10月13日）: 無償ベータ版の提供開始。Googleアカウントでログインでき、事前の申し込みは不要。チャット機能（AIとの対話によるウェブ検索や文章作成、日英・英日翻訳）と、6つのAIモデルのAPI機能（Sarashina3 mini／nano／embedding／rerank／guard／translate）。利用料金は無料、レート制限（一定時間あたりのリクエスト数の制限）あり、提供終了時期は未定、品質向上・改善のため利用データを活用する場合がある。会社紹介に「国産の大規模言語モデルで日本語性能No.1を目指しています」\n・技術ブログ「Sarashina3 mini / Sarashina3 nano: フルスクラッチで開発した最新の国産LLM」（2026年6月30日、10月13日追記）: 日本語・英語を中心に30Tトークンのデータで事前学習。8つのベンチマーク（日本語対話・日本文化QA・数学・コーディング・指示追従・ツール呼び出し・エージェント・安全性）で、Qwen3シリーズ、GPT-4.1、GPT-5.4 mini（non-reasoning）と比較し、「全体的に同程度」、JamC-QAでは「これらを上回って」いる。同時に「Reasoningモデルがすでに広く普及した現在においては、エージェント能力などで求められる性能水準にはまだ達していない点もある」。評価は τ²-bench・BFCL v3 が公式の実装、それ以外は社内で実装した評価コード。スコアは0〜1に正規化した図で示されている\n・API の説明書「レート制限」: 1分あたりの最大リクエスト数は Sarashina3 mini 6、nano 60、guard 6、embedding 60、rerank 60、translate 6。上限に達すると次の1分まで待ち。制限値は利用状況などに応じて変更される場合がある\n・API の説明書「モデル一覧」: Sarashina3 mini・nano の最大コンテキストは128kトークン、translate は5,000文字\n・利用規約（2026年9月28日制定）: 有償プラン・無償プランを問わず、入力データ・出力データをモデルの学習・新規サービス開発等に利用できる（第11条）。学習利用の拒否（オプトアウト）は有償プランの場合（同）。学習に利用したデータの遡った削除義務は負わない（第9条・第11条）。個人を識別できる情報の入力は禁止（第10条）。利用は日本国内に居住する個人・日本国内に本店がある法人に限る（第3条）。無償プランの契約者に生じた損害には責任を負わない（第24条）。得られる情報の正確性などは保証しない（第25条）\n\n■ 一次資料に書いていないこと\n・ChatGPT（サービス）との直接の比較。技術ブログの比較は、モデル名（GPT-4.1、GPT-5.4 mini（non-reasoning））でのもの\n・チャット機能でどのモデルが動いているか\n・チャット機能の回数の上限\n・パラメータ数（モデルの大きさ）\n・商用利用の可否について、発表資料に記載はありません\n・有料プランの料金・開始時期\n\n■ 使わなかった情報\n・報道で伝えられた数字や評価は、この動画の根拠にしていません。台詞の数字は、上の一次資料にあるものだけです\n・技術ブログには「デジタル庁が推進するガバメントAIの試用モデルとしても採択」とありますが、リンク先のデジタル庁の公募結果（2026年3月6日）に記載のモデル名は「Sarashina2 mini」で、Sarashina3 との関係を一次資料で確かめきれなかったため、台詞では扱っていません\n・技術ブログの図の、他社モデルの棒の高さ（正規化スコア）は数字が記載されていないため、読み取った値は使っていません\n\n※動画内のパソコン・スマートフォンの画面は、特定のサービスの画面ではないイメージです。\n※この回の元は企業の発表資料・技術ブログ・説明書・利用規約で、専門家の審査を経た学術論文ではありません。\n※特定のサービスの利用や、企業への投資を勧めるものではありません。\n\n■ 参考（一次資料）\n[1] SB Intuitions「国産生成AI『Sarashina』を利用できる『Sarashinaサービス』の無償ベータ版を提供開始」(2026-10-13) https://www.sbintuitions.co.jp/news/press/20261013_01/\n[2] Sarashina サービス利用規約 (2026-09-28制定) https://sarashina.ai/terms\n[3] SB Intuitions TECH BLOG「Sarashina3 mini / Sarashina3 nano: フルスクラッチで開発した最新の国産LLM」(2026-06-30) https://www.sbintuitions.co.jp/blog/entry/2026/06/30/100000\n[4] Sarashina API Docs「レート制限」 https://docs.sarashina.ai/rate-limits\n[5] Sarashina API Docs「モデル一覧」 https://docs.sarashina.ai/models\n",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 12,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "国産AIのサラシナが、無料で試せるようになった！",
+          "expression": "excited",
+          "display": "国産AIの「Sarashina」が、無料で試せるようになった！",
+          "tone": "excited, like breaking news",
+          "t0": 0.0,
+          "dur": 3.68,
+          "cards": [
+            {
+              "text": "国産AIの「Sarashina」が、",
+              "start": 0.0,
+              "end": 2.14
+            },
+            {
+              "text": "無料で試せるようになった！",
+              "start": 2.14,
+              "end": 3.68
+            }
+          ]
+        }
+      ],
+      "lines_hash": "79ab1830d052",
+      "narration": "大輔「国産AIのサラシナが、無料で試せるようになった！」",
+      "narrator": "dialogue",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 5,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "でも発表資料に、ChatGPTと比べた数字は無い。",
+          "expression": "doubt",
+          "tone": "dry",
+          "t0": 0.0,
+          "dur": 4.08,
+          "cards": [
+            {
+              "text": "でも発表資料に、ChatGPTと比べた数字は無い。",
+              "start": 0.0,
+              "end": 3.75
+            }
+          ]
+        }
+      ],
+      "lines_hash": "5a0bce5463c4",
+      "narration": "沙織「でも発表資料に、ChatGPTと比べた数字は無い。」",
+      "narrator": "dialogue",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 7,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "ところが、別の公式資料に比べた結果があった。",
+          "expression": "surprised",
+          "t0": 0.0,
+          "dur": 3.76,
+          "cards": [
+            {
+              "text": "ところが、別の公式資料に比べた結果があった。",
+              "start": 0.0,
+              "end": 3.38
+            }
+          ]
+        }
+      ],
+      "lines_hash": "21745dff7c36",
+      "narration": "大輔「ところが、別の公式資料に比べた結果があった。」",
+      "narrator": "dialogue",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 13,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "で、サラシナはChatGPTの代わりになる？",
+          "expression": "doubt",
+          "tag": "question",
+          "display": "で、SarashinaはChatGPTの代わりになる？",
+          "t0": 0.0,
+          "dur": 3.4,
+          "cards": [
+            {
+              "text": "で、SarashinaはChatGPTの",
+              "start": 0.0,
+              "end": 2.52
+            },
+            {
+              "text": "代わりになる？",
+              "start": 2.52,
+              "end": 3.4
+            }
+          ]
+        }
+      ],
+      "lines_hash": "d022e00ad9e4",
+      "narration": "沙織「で、サラシナはChatGPTの代わりになる？」",
+      "narrator": "dialogue",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 5,
+      "type": "setup",
+      "bgm_role": "intro",
+      "image_asset": "base_cafe_b",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "ソフトバンクの子会社、エスビー・インテュイションズが、国産の生成AI、サラシナを無料で使えるようにした。10月13日。",
+          "expression": "excited",
+          "t0": 0.0,
+          "dur": 8.24,
+          "cards": [
+            {
+              "text": "ソフトバンクの子会社、",
+              "start": 0.0,
+              "end": 1.48
+            },
+            {
+              "text": "エスビー・インテュイションズが、",
+              "start": 1.48,
+              "end": 3.5
+            },
+            {
+              "text": "国産の生成AI、サラシナを無料で使える",
+              "start": 3.65,
+              "end": 6.54
+            },
+            {
+              "text": "ようにした。10月13日。",
+              "start": 6.69,
+              "end": 8.44
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "見た。グーグルのアカウントでログインするだけで、申し込みもいらない、ってやつね。",
+          "expression": "neutral",
+          "t0": 8.52,
+          "dur": 4.44,
+          "cards": [
+            {
+              "text": "見た。",
+              "start": 0.0,
+              "end": 0.33
+            },
+            {
+              "text": "グーグルのアカウントでログインするだけで、",
+              "start": 0.33,
+              "end": 2.62
+            },
+            {
+              "text": "申し込みもいらない、ってやつね。",
+              "start": 2.77,
+              "end": 4.49
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そう。だから今日のお題は、これがChatGPTの代わりになるか。",
+          "expression": "excited",
+          "t0": 13.24,
+          "dur": 4.56,
+          "cards": [
+            {
+              "text": "そう。だから今日のお題は、これが",
+              "start": 0.0,
+              "end": 2.41
+            },
+            {
+              "text": "ChatGPTの代わりになるか。",
+              "start": 2.56,
+              "end": 4.76
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "先に、予想を言っておこうか。",
+          "expression": "thinking",
+          "t0": 18.08,
+          "dur": 2.36,
+          "cards": [
+            {
+              "text": "先に、予想を言っておこうか。",
+              "start": 0.0,
+              "end": 2.36
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕は、なる。国産で、しかも無料。日本語で使うなら、十分でしょ。",
+          "expression": "excited",
+          "react": "doubt",
+          "tag": "prediction",
+          "t0": 20.72,
+          "dur": 5.72,
+          "cards": [
+            {
+              "text": "僕は、なる。国産で、しかも無料。",
+              "start": 0.0,
+              "end": 2.9
+            },
+            {
+              "text": "日本語で使うなら、十分でしょ。",
+              "start": 3.05,
+              "end": 5.41
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は、ならない。よく聞くのは、国産のAIは、海外のAIにまだまだ追いついてない、って話。",
+          "expression": "doubt",
+          "tag": "prediction",
+          "t0": 26.72,
+          "dur": 7.36,
+          "cards": [
+            {
+              "text": "私は、ならない。よく聞くのは、",
+              "start": 0.0,
+              "end": 2.91
+            },
+            {
+              "text": "国産のAIは、",
+              "start": 3.06,
+              "end": 4.11
+            },
+            {
+              "text": "海外のAIにまだまだ追いついてない、",
+              "start": 4.11,
+              "end": 6.81
+            },
+            {
+              "text": "って話。",
+              "start": 6.96,
+              "end": 7.56
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "実際、発表資料を読んでも、ChatGPTと比べた数字は1つも出てこない。比べられたら困るんじゃないの？",
+          "expression": "doubt",
+          "t0": 34.3,
+          "dur": 6.68,
+          "cards": [
+            {
+              "text": "実際、発表資料を読んでも、ChatGPTと",
+              "start": 0.0,
+              "end": 2.64
+            },
+            {
+              "text": "比べた数字は1つも出てこない。",
+              "start": 2.79,
+              "end": 4.67
+            },
+            {
+              "text": "比べられたら困るんじゃないの？",
+              "start": 4.82,
+              "end": 6.7
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "その思い込み、今日ひっくり返るよ。",
+          "expression": "excited",
+          "react": "amused",
+          "t0": 41.26,
+          "dur": 3.12,
+          "cards": [
+            {
+              "text": "その思い込み、今日ひっくり返るよ。",
+              "start": 0.0,
+              "end": 3.12
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「ソフトバンクの子会社、エスビー・インテュイションズが、国産の生成AI、サラシナを無料で使えるようにした。10月13日。」\n沙織「見た。グーグルのアカウントでログインするだけで、申し込みもいらない、ってやつね。」\n大輔「そう。だから今日のお題は、これがChatGPTの代わりになるか。」\n沙織「先に、予想を言っておこうか。」\n大輔「僕は、なる。国産で、しかも無料。日本語で使うなら、十分でしょ。」\n沙織「私は、ならない。よく聞くのは、国産のAIは、海外のAIにまだまだ追いついてない、って話。」\n沙織「実際、発表資料を読んでも、ChatGPTと比べた数字は1つも出てこない。比べられたら困るんじゃないの？」\n大輔「その思い込み、今日ひっくり返るよ。」",
+      "narrator": "dialogue",
+      "lines_hash": "3dff8c031743",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 6,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "round": 1,
+      "round_title": "ChatGPTと比べた数字はある？",
+      "source_card": {
+        "kind": "press",
+        "source": "SB Intuitions 発表資料（2026年10月13日）",
+        "quote": "国産の大規模言語モデルで日本語性能No.1を目指しています",
+        "quote_type": "原文",
+        "highlight": "目指しています",
+        "items": [
+          "チャット: ウェブ検索・文章作成・日英／英日翻訳",
+          "API: 6つのAIモデル",
+          "利用料金は無料。レート制限あり",
+          "提供終了時期は未定",
+          "ChatGPTとの比較: 記載なし"
+        ]
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、発表資料から。使えるのは2つ。ブラウザで話せるチャットと、ほかのシステムに組み込めるAPI。",
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 7.2,
+          "cards": [
+            {
+              "text": "じゃあ、発表資料から。使えるのは2つ。",
+              "start": 0.0,
+              "end": 2.62
+            },
+            {
+              "text": "ブラウザで話せるチャットと、",
+              "start": 2.92,
+              "end": 4.85
+            },
+            {
+              "text": "ほかのシステムに組み込めるAPI。",
+              "start": 5.0,
+              "end": 7.35
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "チャットは、ウェブ検索や文章づくりの対話と、日本語と英語の翻訳。APIは6つのモデル。",
+          "expression": "excited",
+          "t0": 7.48,
+          "dur": 7.92,
+          "cards": [
+            {
+              "text": "チャットは、",
+              "start": 0.0,
+              "end": 0.9
+            },
+            {
+              "text": "ウェブ検索や文章づくりの対話と、",
+              "start": 0.9,
+              "end": 3.3
+            },
+            {
+              "text": "日本語と英語の翻訳。APIは6つのモデル。",
+              "start": 3.46,
+              "end": 7.54
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "文章を作るミニ、大量の単純作業向けのナノ、翻訳専用のトランスレート、ほかに検索用と安全チェック用。",
+          "expression": "neutral",
+          "t0": 15.68,
+          "dur": 8.0,
+          "cards": [
+            {
+              "text": "文章を作るミニ、大量の単純作業向けのナノ、",
+              "start": 0.0,
+              "end": 3.65
+            },
+            {
+              "text": "翻訳専用のトランスレート、ほかに検索用と",
+              "start": 3.85,
+              "end": 6.85
+            },
+            {
+              "text": "安全チェック用。",
+              "start": 7.0,
+              "end": 8.2
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "で、料金は？",
+          "expression": "thinking",
+          "t0": 23.96,
+          "dur": 1.6,
+          "cards": [
+            {
+              "text": "で、料金は？",
+              "start": 0.0,
+              "end": 1.6
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "無料。ただし、一定時間あたりの回数に制限あり。無料ベータが終わる時期は、未定。",
+          "expression": "neutral",
+          "t0": 25.84,
+          "dur": 5.64,
+          "cards": [
+            {
+              "text": "無料。ただし、",
+              "start": 0.0,
+              "end": 0.99
+            },
+            {
+              "text": "一定時間あたりの回数に制限あり。",
+              "start": 0.99,
+              "end": 3.24
+            },
+            {
+              "text": "無料ベータが終わる時期は、未定。",
+              "start": 3.56,
+              "end": 5.81
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、書いてないもの。モデルの大きさ、テストの点数、それにChatGPTとの比較。",
+          "expression": "doubt",
+          "t0": 31.7,
+          "dur": 5.96,
+          "cards": [
+            {
+              "text": "で、書いてないもの。モデルの大きさ、",
+              "start": 0.0,
+              "end": 2.61
+            },
+            {
+              "text": "テストの点数、それにChatGPTとの比較。",
+              "start": 2.76,
+              "end": 5.96
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "会社紹介の欄には、国産の言語モデルで、日本語性能ナンバーワンを目指しています、って書いてある。",
+          "expression": "excited",
+          "t0": 37.94,
+          "dur": 6.72,
+          "cards": [
+            {
+              "text": "会社紹介の欄には、国産の言語モデルで、",
+              "start": 0.0,
+              "end": 2.8
+            },
+            {
+              "text": "日本語性能ナンバーワンを目指しています、",
+              "start": 2.95,
+              "end": 5.68
+            },
+            {
+              "text": "って書いてある。",
+              "start": 5.83,
+              "end": 6.92
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "目指してる、ね。なったとは書いてない。",
+          "expression": "amused",
+          "react": "deflated",
+          "t0": 44.94,
+          "dur": 3.48,
+          "cards": [
+            {
+              "text": "目指してる、ね。なったとは書いてない。",
+              "start": 0.0,
+              "end": 3.48
+            }
+          ]
+        }
+      ],
+      "image_asset": "cards/kl041_S06",
+      "narration": "沙織「じゃあ、発表資料から。使えるのは2つ。ブラウザで話せるチャットと、ほかのシステムに組み込めるAPI。」\n大輔「チャットは、ウェブ検索や文章づくりの対話と、日本語と英語の翻訳。APIは6つのモデル。」\n沙織「文章を作るミニ、大量の単純作業向けのナノ、翻訳専用のトランスレート、ほかに検索用と安全チェック用。」\n大輔「で、料金は？」\n沙織「無料。ただし、一定時間あたりの回数に制限あり。無料ベータが終わる時期は、未定。」\n沙織「で、書いてないもの。モデルの大きさ、テストの点数、それにChatGPTとの比較。」\n大輔「会社紹介の欄には、国産の言語モデルで、日本語性能ナンバーワンを目指しています、って書いてある。」\n沙織「目指してる、ね。なったとは書いてない。」\n［画面の資料カード］SB Intuitions 発表資料（2026年10月13日） 「国産の大規模言語モデルで日本語性能No.1を目指しています」（原文） ・チャット: ウェブ検索・文章作成・日英／英日翻訳 ・API: 6つのAIモデル ・利用料金は無料。レート制限あり ・提供終了時期は未定 ・ChatGPTとの比較: 記載なし",
+      "narrator": "dialogue",
+      "lines_hash": "5908bc0dcb2c",
+      "ken_burns": "static"
+    },
+    {
+      "scene_id": 7,
+      "type": "paper",
+      "bgm_role": "main",
+      "reference_index": 2,
+      "round": 1,
+      "image_prompt": "Bright daytime, a clean wooden table seen slightly from above (soft natural daylight from a window, clearly daytime). Familiar items of Japanese everyday culture and customs are laid out in a neat row across the upper-middle of the frame, each item resting on its own pale rounded card like a set of quiz cards: a New Year kagami-mochi, a pair of chopsticks on a small chopstick rest, a folded paper Obon lantern, a furoshiki-wrapped gift box, a small shrine omamori charm, and a blank seasonal greeting postcard with a cherry-blossom pattern. Above the row, a softly glowing, abstract rounded speech-bubble shape floats as a symbol of an AI assistant. A curious, quietly impressive mood. No people, no hands. No logos, no brand marks, no readable text, no letters, no numbers, no question marks.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "でもね、同じ会社の技術ブログを読みに行ったら、あったんだ。比べた結果が。",
+          "expression": "excited",
+          "t0": 0.0,
+          "dur": 5.4,
+          "cards": [
+            {
+              "text": "でもね、",
+              "start": 0.0,
+              "end": 0.58
+            },
+            {
+              "text": "同じ会社の技術ブログを読みに行ったら、",
+              "start": 0.58,
+              "end": 3.35
+            },
+            {
+              "text": "あったんだ。比べた結果が。",
+              "start": 3.5,
+              "end": 5.48
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "……技術ブログ？ ちょっと見せて。",
+          "expression": "surprised",
+          "t0": 5.68,
+          "dur": 2.16,
+          "cards": [
+            {
+              "text": "……技術ブログ？ ちょっと見せて。",
+              "start": 0.0,
+              "end": 2.16
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "6月30日の記事。主力のミニは、日本語と英語を中心に、30兆トークンのデータで学習した、って。",
+          "expression": "excited",
+          "t0": 8.12,
+          "dur": 8.24,
+          "display": "6月30日の記事。主力の「mini」は、日本語と英語を中心に、30兆トークンのデータで学習した、って。",
+          "cards": [
+            {
+              "text": "6月30日の記事。主力の「mini」は、",
+              "start": 0.0,
+              "end": 3.23
+            },
+            {
+              "text": "日本語と英語を中心に、30兆トークンの",
+              "start": 3.23,
+              "end": 6.3
+            },
+            {
+              "text": "データで学習した、って。",
+              "start": 6.3,
+              "end": 8.24
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "比べた相手は、オープンエーアイのジーピーティー4.1と、ジーピーティー5.4ミニ。ほかのモデルとも並べてる。",
+          "expression": "thinking",
+          "t0": 16.64,
+          "dur": 6.88,
+          "cards": [
+            {
+              "text": "比べた相手は、",
+              "start": 0.0,
+              "end": 0.85
+            },
+            {
+              "text": "オープンエーアイのジーピーティー4.1と、",
+              "start": 0.85,
+              "end": 2.8
+            },
+            {
+              "text": "ジーピーティー5.4ミニ。",
+              "start": 2.95,
+              "end": 5.17
+            },
+            {
+              "text": "ほかのモデルとも並べてる。",
+              "start": 5.32,
+              "end": 6.96
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "日本語の対話、数学、プログラミング、安全性とか、8種類のテストで。",
+          "expression": "excited",
+          "t0": 23.8,
+          "dur": 5.76,
+          "cards": [
+            {
+              "text": "日本語の対話、数学、プログラミング、",
+              "start": 0.0,
+              "end": 2.94
+            },
+            {
+              "text": "安全性とか、8種類のテストで。",
+              "start": 3.14,
+              "end": 5.46
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "結果は、会社自身の言葉で、全体的に同程度。日本の文化や常識を問うテストでは、上回った。",
+          "expression": "surprised",
+          "react": "convinced",
+          "t0": 29.84,
+          "dur": 6.76,
+          "cards": [
+            {
+              "text": "結果は、会社自身の言葉で、全体的に同程度。",
+              "start": 0.0,
+              "end": 3.36
+            },
+            {
+              "text": "日本の文化や常識を問うテストでは、",
+              "start": 3.51,
+              "end": 6.06
+            },
+            {
+              "text": "上回った。",
+              "start": 6.21,
+              "end": 6.96
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「でもね、同じ会社の技術ブログを読みに行ったら、あったんだ。比べた結果が。」\n沙織「……技術ブログ？ ちょっと見せて。」\n大輔「6月30日の記事。主力のミニは、日本語と英語を中心に、30兆トークンのデータで学習した、って。」\n沙織「比べた相手は、オープンエーアイのジーピーティー4.1と、ジーピーティー5.4ミニ。ほかのモデルとも並べてる。」\n大輔「日本語の対話、数学、プログラミング、安全性とか、8種類のテストで。」\n沙織「結果は、会社自身の言葉で、全体的に同程度。日本の文化や常識を問うテストでは、上回った。」",
+      "narrator": "dialogue",
+      "lines_hash": "fbbbd42d740f",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 8,
+      "type": "check",
+      "bgm_role": "main",
+      "ken_burns": "static",
+      "reference_index": 2,
+      "image_prompt": "A simple, clean flat infographic on a plain light background with a short title at the very top reading exactly 「ChatGPTとの比較、公式の資料には？」. Below the title, three rounded horizontal rows stacked vertically, each with a small tag on the left and a short result on the right, in this order: row 1 tag 「発表資料（10月13日）」 with 「比較の記載なし」 in a plain gray row; row 2 tag 「技術ブログ（6月30日）」 with 「GPT-4.1・GPT-5.4 mini（non-reasoning）と全体的に同程度」 in a teal row; row 3 tag 「日本文化QA（JamC-QA）」 with 「これらを上回る」 in a warm coral row. Gray for row 1, teal for row 2, coral only for row 3. No bars, no graphs, no axes, no icons. Make the whole chart compact so that everything sits within the central 70 percent of the picture width and within the top 70 percent of the picture height, with a large empty light area at the bottom (the lower 30 percent of the picture must be completely empty). Do not add any other text, numbers, icons or logos.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "……比べられたら困る、は、私の思い込みだった。",
+          "expression": "convinced",
+          "react": "excited",
+          "pause": 0.4,
+          "tag": "turn",
+          "t0": 0.0,
+          "dur": 3.52,
+          "cards": [
+            {
+              "text": "……比べられたら困る、",
+              "start": 0.0,
+              "end": 1.65
+            },
+            {
+              "text": "は、私の思い込みだった。",
+              "start": 1.65,
+              "end": 3.45
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "発表資料には無い。でも、技術ブログにはある。そこは認める。",
+          "expression": "convinced",
+          "t0": 3.74,
+          "dur": 4.24,
+          "cards": [
+            {
+              "text": "発表資料には無い。でも、",
+              "start": 0.0,
+              "end": 1.69
+            },
+            {
+              "text": "技術ブログにはある。",
+              "start": 1.69,
+              "end": 3.1
+            },
+            {
+              "text": "そこは認める。",
+              "start": 3.25,
+              "end": 4.24
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でしょ！",
+          "expression": "excited",
+          "t0": 8.26,
+          "dur": 1.2,
+          "cards": [
+            {
+              "text": "でしょ！",
+              "start": 0.0,
+              "end": 1.2
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、ChatGPTと比べた、とは書いてない。比べた相手は、モデルの名前で書いてある。",
+          "expression": "thinking",
+          "reference_index": 2,
+          "t0": 9.74,
+          "dur": 5.48,
+          "cards": [
+            {
+              "text": "ただ、ChatGPTと比べた、",
+              "start": 0.0,
+              "end": 1.94
+            },
+            {
+              "text": "とは書いてない。比べた相手は、",
+              "start": 2.09,
+              "end": 3.96
+            },
+            {
+              "text": "モデルの名前で書いてある。",
+              "start": 4.11,
+              "end": 5.68
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ChatGPTっていうサービスじゃなくて、中のモデルと比べたってことか。どのモデルと比べたかを見ないと、話がずれる。",
+          "expression": "thinking",
+          "t0": 15.5,
+          "dur": 8.72,
+          "cards": [
+            {
+              "text": "ChatGPTっていうサービスじゃなくて、",
+              "start": 0.0,
+              "end": 2.99
+            },
+            {
+              "text": "中のモデルと比べたってことか。",
+              "start": 3.14,
+              "end": 5.3
+            },
+            {
+              "text": "どのモデルと比べたかを見ないと、",
+              "start": 5.45,
+              "end": 7.87
+            },
+            {
+              "text": "話がずれる。",
+              "start": 8.02,
+              "end": 8.92
+            }
+          ]
+        }
+      ],
+      "round": 1,
+      "narration": "沙織「……比べられたら困る、は、私の思い込みだった。」\n沙織「発表資料には無い。でも、技術ブログにはある。そこは認める。」\n大輔「でしょ！」\n沙織「ただ、ChatGPTと比べた、とは書いてない。比べた相手は、モデルの名前で書いてある。」\n大輔「ChatGPTっていうサービスじゃなくて、中のモデルと比べたってことか。どのモデルと比べたかを見ないと、話がずれる。」",
+      "narrator": "dialogue",
+      "lines_hash": "dbd8e363e23a"
+    },
+    {
+      "scene_id": 9,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 2,
+      "round": 2,
+      "round_title": "その比べ方は、公平？",
+      "source_card": {
+        "kind": "blog",
+        "source": "SB Intuitions 技術ブログ（2026年6月30日、10月13日追記）",
+        "quote": "Reasoningモデルがすでに広く普及した現在においては、エージェント能力などで求められる性能水準にはまだ達していない点もある",
+        "quote_type": "原文",
+        "highlight": "まだ達していない点もある",
+        "items": [
+          "GPT-5.4 miniはnon-reasoning設定",
+          "8つのうち6つは社内で実装した評価コード"
+        ]
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "で、比べた相手をよく見て。ジーピーティーゴーテンヨンミニは、じっくり考えるモードを使わない設定。",
+          "expression": "doubt",
+          "t0": 0.0,
+          "dur": 6.72,
+          "display": "で、比べた相手をよく見て。ジーピーティー5.4ミニは、じっくり考えるモードを使わない設定。",
+          "cards": [
+            {
+              "text": "で、比べた相手をよく見て。",
+              "start": 0.0,
+              "end": 1.6
+            },
+            {
+              "text": "ジーピーティー5.4ミニは、",
+              "start": 1.65,
+              "end": 4.03
+            },
+            {
+              "text": "じっくり考えるモードを使わない設定。",
+              "start": 4.03,
+              "end": 6.72
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "サラシナのミニも考えない型だから、同じ型どうしで比べたんだよ。そこは公平でしょ。",
+          "expression": "convinced",
+          "t0": 7.0,
+          "dur": 5.52,
+          "display": "Sarashinaの「mini」も考えない型だから、同じ型どうしで比べたんだよ。そこは公平でしょ。",
+          "cards": [
+            {
+              "text": "Sarashinaの「mini」も",
+              "start": 0.0,
+              "end": 1.8
+            },
+            {
+              "text": "考えない型だから、",
+              "start": 1.8,
+              "end": 2.93
+            },
+            {
+              "text": "同じ型どうしで比べたんだよ。",
+              "start": 2.93,
+              "end": 4.51
+            },
+            {
+              "text": "そこは公平でしょ。",
+              "start": 4.51,
+              "end": 5.52
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "公平ね。でも、ブログの最後に、会社自身がこう書いてる。",
+          "expression": "thinking",
+          "t0": 12.8,
+          "dur": 4.92,
+          "cards": [
+            {
+              "text": "公平ね。でも、ブログの最後に、",
+              "start": 0.36,
+              "end": 2.88
+            },
+            {
+              "text": "会社自身がこう書いてる。",
+              "start": 3.03,
+              "end": 4.83
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "じっくり考える型のモデルが広く普及した今、エージェントの能力などでは、求められる水準にまだ達していない点もある。",
+          "expression": "doubt",
+          "tag": "weakness",
+          "t0": 17.94,
+          "dur": 8.12,
+          "cards": [
+            {
+              "text": "じっくり考える型のモデルが広く普及した今、",
+              "start": 0.0,
+              "end": 2.93
+            },
+            {
+              "text": "エージェントの能力などでは、",
+              "start": 3.18,
+              "end": 5.14
+            },
+            {
+              "text": "求められる水準にまだ達していない点もある。",
+              "start": 5.29,
+              "end": 8.22
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "……自分で書いてるんだ。そこは正直だね。",
+          "expression": "deflated",
+          "t0": 26.34,
+          "dur": 4.12,
+          "cards": [
+            {
+              "text": "……自分で書いてるんだ。そこは正直だね。",
+              "start": 0.0,
+              "end": 4.12
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、8つのうち6つは、社内で作った評価の仕組みで測ってる。他社の点数は、0から1に直した棒グラフの図にしか出てこない。",
+          "expression": "doubt",
+          "t0": 30.74,
+          "dur": 8.56,
+          "cards": [
+            {
+              "text": "それに、8つのうち6つは、社内で作った",
+              "start": 0.0,
+              "end": 2.68
+            },
+            {
+              "text": "評価の仕組みで測ってる。他社の点数は、",
+              "start": 2.83,
+              "end": 5.49
+            },
+            {
+              "text": "0から1に直した棒グラフの",
+              "start": 5.64,
+              "end": 7.4
+            },
+            {
+              "text": "図にしか出てこない。",
+              "start": 7.4,
+              "end": 8.75
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "あと、チャットの裏で動いてるのがこのミニなのかも、発表資料には書いてない。",
+          "expression": "thinking",
+          "t0": 39.52,
+          "dur": 4.4,
+          "cards": [
+            {
+              "text": "あと、チャットの裏で動いてる",
+              "start": 0.0,
+              "end": 1.61
+            },
+            {
+              "text": "のがこのミニなのかも、",
+              "start": 1.61,
+              "end": 2.87
+            },
+            {
+              "text": "発表資料には書いてない。",
+              "start": 3.02,
+              "end": 4.4
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、チャットの中身は、分からない、で止めておこう。言えるのは、考えない型どうしなら、同程度ってところまで。",
+          "expression": "thinking",
+          "react": "convinced",
+          "t0": 44.2,
+          "dur": 8.76,
+          "cards": [
+            {
+              "text": "じゃあ、チャットの中身は、分からない、",
+              "start": 0.0,
+              "end": 3.0
+            },
+            {
+              "text": "で止めておこう。言えるのは、",
+              "start": 3.15,
+              "end": 5.25
+            },
+            {
+              "text": "考えない型どうしなら、",
+              "start": 5.4,
+              "end": 7.05
+            },
+            {
+              "text": "同程度ってところまで。",
+              "start": 7.05,
+              "end": 8.7
+            }
+          ]
+        }
+      ],
+      "image_asset": "cards/kl041_S09",
+      "narration": "沙織「で、比べた相手をよく見て。ジーピーティーゴーテンヨンミニは、じっくり考えるモードを使わない設定。」\n大輔「サラシナのミニも考えない型だから、同じ型どうしで比べたんだよ。そこは公平でしょ。」\n沙織「公平ね。でも、ブログの最後に、会社自身がこう書いてる。」\n沙織「じっくり考える型のモデルが広く普及した今、エージェントの能力などでは、求められる水準にまだ達していない点もある。」\n大輔「……自分で書いてるんだ。そこは正直だね。」\n沙織「それに、8つのうち6つは、社内で作った評価の仕組みで測ってる。他社の点数は、0から1に直した棒グラフの図にしか出てこない。」\n沙織「あと、チャットの裏で動いてるのがこのミニなのかも、発表資料には書いてない。」\n大輔「じゃあ、チャットの中身は、分からない、で止めておこう。言えるのは、考えない型どうしなら、同程度ってところまで。」\n［画面の資料カード］SB Intuitions 技術ブログ（2026年6月30日、10月13日追記） 「Reasoningモデルがすでに広く普及した現在においては、エージェント能力などで求められる性能水準にはまだ達していない点もある」（原文） ・GPT-5.4 miniはnon-reasoning設定 ・8つのうち6つは社内で実装した評価コード",
+      "narrator": "dialogue",
+      "lines_hash": "5cc1941a7fa3",
+      "ken_burns": "static"
+    },
+    {
+      "scene_id": 10,
+      "type": "check",
+      "bgm_role": "main",
+      "ken_burns": "static",
+      "reference_index": 3,
+      "image_prompt": "A simple, clean flat infographic vertical bar chart on a plain light background with a short title at the very top reading exactly 「1分あたりの最大リクエスト数（API）」. Six bars side by side from left to right, each with its label directly below it and its value directly above it: 「Sarashina3 mini」 value 「6」, 「Sarashina3 nano」 value 「60」, 「Sarashina3 guard」 value 「6」, 「Sarashina3 embedding」 value 「60」, 「Sarashina3 rerank」 value 「60」, 「Sarashina3 translate」 value 「6」. The vertical axis starts at 0 and bar heights are exactly proportional to the values (the 60 bars are ten times as tall as the 6 bars). The 「Sarashina3 mini」 bar is warm coral; all other bars are teal. Make the whole chart compact so that everything sits within the central 70 percent of the picture width and within the top 70 percent of the picture height, with a large empty light area at the bottom (the lower 30 percent of the picture must be completely empty). Do not add any other text, numbers, icons or logos.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "でもさ、制限の回数が書いてないのは困るよね。何回使えるか分からない。",
+          "expression": "thinking",
+          "t0": 0.0,
+          "dur": 5.44,
+          "cards": [
+            {
+              "text": "でもさ、",
+              "start": 0.0,
+              "end": 0.6
+            },
+            {
+              "text": "制限の回数が書いてないのは困るよね。",
+              "start": 0.6,
+              "end": 3.3
+            },
+            {
+              "text": "何回使えるか分からない。",
+              "start": 3.54,
+              "end": 5.34
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが、あった。APIの説明書に。",
+          "expression": "amused",
+          "react": "surprised",
+          "reference_index": 3,
+          "t0": 5.72,
+          "dur": 3.08,
+          "cards": [
+            {
+              "text": "それが、あった。APIの説明書に。",
+              "start": 0.0,
+              "end": 3.08
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "1分間に送れる回数。文章を作るミニは、6回。",
+          "expression": "neutral",
+          "display": "1分間に送れる回数。文章を作る「mini」は、6回。",
+          "reference_index": 3,
+          "t0": 9.02,
+          "dur": 3.28,
+          "cards": [
+            {
+              "text": "1分間に送れる回数。",
+              "start": 0.0,
+              "end": 1.3
+            },
+            {
+              "text": "文章を作る「mini」は、6回。",
+              "start": 1.35,
+              "end": 3.28
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "6回？ 1分に？",
+          "expression": "surprised",
+          "pause": 0.4,
+          "t0": 12.7,
+          "dur": 2.16,
+          "cards": [
+            {
+              "text": "6回？ 1分に？",
+              "start": 0.0,
+              "end": 2.16
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう。軽いナノは60回だけど、翻訳も6回。",
+          "expression": "neutral",
+          "display": "そう。軽い「nano」は60回だけど、翻訳も6回。",
+          "reference_index": 3,
+          "t0": 15.14,
+          "dur": 3.6,
+          "cards": [
+            {
+              "text": "そう。軽い「nano」は60回だけど、",
+              "start": 0.0,
+              "end": 2.74
+            },
+            {
+              "text": "翻訳も6回。",
+              "start": 2.74,
+              "end": 3.6
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "使い切ったら、次の1分まで待ち。この数字は、利用状況で変わることがある、とも書いてある。",
+          "expression": "neutral",
+          "reference_index": 3,
+          "t0": 18.96,
+          "dur": 6.56,
+          "cards": [
+            {
+              "text": "使い切ったら、次の1分まで待ち。",
+              "start": 0.0,
+              "end": 2.28
+            },
+            {
+              "text": "この数字は、利用状況で変わることがある、",
+              "start": 2.43,
+              "end": 5.47
+            },
+            {
+              "text": "とも書いてある。",
+              "start": 5.62,
+              "end": 6.76
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "チャットの方の回数は、どこにも書いてない。",
+          "expression": "doubt",
+          "reference_index": 0,
+          "t0": 25.74,
+          "dur": 2.64,
+          "cards": [
+            {
+              "text": "チャットの方の回数は、どこにも書いてない。",
+              "start": 0.0,
+              "end": 2.64
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "APIを一人で試すなら足りそうだけど、会社のシステムに組み込むには、きついね。",
+          "expression": "thinking",
+          "t0": 28.66,
+          "dur": 6.6,
+          "cards": [
+            {
+              "text": "APIを一人で試すなら足りそうだけど、",
+              "start": 0.4,
+              "end": 3.25
+            },
+            {
+              "text": "会社のシステムに組み込むには、きついね。",
+              "start": 3.4,
+              "end": 6.42
+            }
+          ]
+        }
+      ],
+      "round": 3,
+      "round_title": "無料で、どこまで使える？",
+      "narration": "大輔「でもさ、制限の回数が書いてないのは困るよね。何回使えるか分からない。」\n沙織「それが、あった。APIの説明書に。」\n沙織「1分間に送れる回数。文章を作るミニは、6回。」\n大輔「6回？ 1分に？」\n沙織「そう。軽いナノは60回だけど、翻訳も6回。」\n沙織「使い切ったら、次の1分まで待ち。この数字は、利用状況で変わることがある、とも書いてある。」\n沙織「チャットの方の回数は、どこにも書いてない。」\n大輔「APIを一人で試すなら足りそうだけど、会社のシステムに組み込むには、きついね。」",
+      "narrator": "dialogue",
+      "lines_hash": "47ae2e70d870"
+    },
+    {
+      "scene_id": 11,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 1,
+      "round": 3,
+      "source_card": {
+        "kind": "terms",
+        "source": "Sarashina サービス利用規約（v1.00、2026年9月28日制定）",
+        "items": [
+          "有料・無料とも、入力と出力を学習に利用可（第11条）",
+          "学習利用を断れるのは有償プラン（第11条）",
+          "遡った削除の義務は負わない（第9条・第11条）",
+          "個人を識別できる情報の入力は禁止（第10条）",
+          "無償プランの損害には責任を負わない（第24条）"
+        ]
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "でも、一番大事なのはこっち。利用規約。",
+          "expression": "doubt",
+          "t0": 0.0,
+          "dur": 3.28,
+          "cards": [
+            {
+              "text": "でも、一番大事なのはこっち。利用規約。",
+              "start": 0.0,
+              "end": 3.28
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "有料でも無料でも、入力した文章とAIの答えを、会社のモデルの学習に使える、と書いてある。",
+          "expression": "doubt",
+          "t0": 3.5,
+          "dur": 7.08,
+          "cards": [
+            {
+              "text": "有料でも無料でも、",
+              "start": 0.0,
+              "end": 1.4
+            },
+            {
+              "text": "入力した文章とAIの答えを、",
+              "start": 1.4,
+              "end": 3.58
+            },
+            {
+              "text": "会社のモデルの学習に使える、と書いてある。",
+              "start": 3.94,
+              "end": 7.09
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "有料でも？ 無料だから、の話じゃないんだ。じゃあ、断る方法は？",
+          "expression": "surprised",
+          "t0": 10.86,
+          "dur": 5.84,
+          "cards": [
+            {
+              "text": "有料でも？ 無料だから、の話じゃないんだ。",
+              "start": 0.0,
+              "end": 3.46
+            },
+            {
+              "text": "じゃあ、断る方法は？",
+              "start": 3.78,
+              "end": 5.52
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "学習に使わないで、と断れるのは、規約の上では有料プランだけ。一度学習に使った分は、さかのぼって消す義務も負わない。",
+          "expression": "doubt",
+          "tag": "barrier",
+          "t0": 16.98,
+          "dur": 8.28,
+          "cards": [
+            {
+              "text": "学習に使わないで、と断れるのは、",
+              "start": 0.0,
+              "end": 2.28
+            },
+            {
+              "text": "規約の上では有料プランだけ。",
+              "start": 2.43,
+              "end": 4.35
+            },
+            {
+              "text": "一度学習に使った分は、さかのぼって消す",
+              "start": 4.62,
+              "end": 7.23
+            },
+            {
+              "text": "義務も負わない。",
+              "start": 7.38,
+              "end": 8.48
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "無料の代わりに、入れたものは材料になる、ってことか。",
+          "expression": "thinking",
+          "t0": 25.54,
+          "dur": 3.8,
+          "cards": [
+            {
+              "text": "無料の代わりに、入れたものは材料になる、",
+              "start": 0.2,
+              "end": 3.01
+            },
+            {
+              "text": "ってことか。",
+              "start": 3.16,
+              "end": 4.0
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、無料プランで損が出ても、会社は責任を負わない。答えの正確さも保証しない。そう書いてある。",
+          "expression": "neutral",
+          "tag": "barrier",
+          "t0": 29.62,
+          "dur": 7.12,
+          "cards": [
+            {
+              "text": "それに、無料プランで損が出ても、",
+              "start": 0.0,
+              "end": 2.27
+            },
+            {
+              "text": "会社は責任を負わない。",
+              "start": 2.42,
+              "end": 4.07
+            },
+            {
+              "text": "答えの正確さも保証しない。",
+              "start": 4.07,
+              "end": 6.03
+            },
+            {
+              "text": "そう書いてある。",
+              "start": 6.18,
+              "end": 7.32
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "仕事に使うなら、何を入れるか、決めてからだね。",
+          "expression": "thinking",
+          "react": "convinced",
+          "t0": 37.02,
+          "dur": 4.6,
+          "cards": [
+            {
+              "text": "仕事に使うなら、何を入れるか、",
+              "start": 0.0,
+              "end": 2.92
+            },
+            {
+              "text": "決めてからだね。",
+              "start": 3.07,
+              "end": 4.37
+            }
+          ]
+        }
+      ],
+      "image_asset": "cards/kl041_S11",
+      "narration": "沙織「でも、一番大事なのはこっち。利用規約。」\n沙織「有料でも無料でも、入力した文章とAIの答えを、会社のモデルの学習に使える、と書いてある。」\n大輔「有料でも？ 無料だから、の話じゃないんだ。じゃあ、断る方法は？」\n沙織「学習に使わないで、と断れるのは、規約の上では有料プランだけ。一度学習に使った分は、さかのぼって消す義務も負わない。」\n大輔「無料の代わりに、入れたものは材料になる、ってことか。」\n沙織「それに、無料プランで損が出ても、会社は責任を負わない。答えの正確さも保証しない。そう書いてある。」\n大輔「仕事に使うなら、何を入れるか、決めてからだね。」\n［画面の資料カード］Sarashina サービス利用規約（v1.00、2026年9月28日制定） ・有料・無料とも、入力と出力を学習に利用可（第11条） ・学習利用を断れるのは有償プラン（第11条） ・遡った削除の義務は負わない（第9条・第11条） ・個人を識別できる情報の入力は禁止（第10条） ・無償プランの損害には責任を負わない（第24条）",
+      "narrator": "dialogue",
+      "lines_hash": "b8f6727f1223",
+      "ken_burns": "static"
+    },
+    {
+      "scene_id": 12,
+      "type": "dream",
+      "bgm_role": "main",
+      "image_prompt": "Night at the small front desk of a traditional Japanese ryokan inn (warm paper-lantern light, a dark night sky and a garden visible through a sliding glass door). Seen over the shoulder from just behind the desk: only a pair of hands in the sleeves of a dark indigo work jacket is visible, resting on the keyboard of a laptop whose screen shows only soft, blurred pale text blocks split into two columns (no recognizable app, no logo). A small vase of flowers, a guest ledger book and a cup of green tea sit on the wooden desk. A warm, hopeful imagined-future mood. No faces, no full figures. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、想像してみてよ。",
+          "expression": "excited",
+          "pause": 0.4,
+          "t0": 0.0,
+          "dur": 1.6,
+          "cards": [
+            {
+              "text": "じゃあ、想像してみてよ。",
+              "start": 0.0,
+              "end": 1.6
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "地方の小さな旅館。夜、海外のお客さんから英語の問い合わせが届く。おかみさんが翻訳にかけて、日本語で読んで、英語で返事を作る。利用料はゼロ。",
+          "expression": "excited",
+          "tag": "life_scene",
+          "tone": "fast, getting carried away",
+          "t0": 1.82,
+          "dur": 10.12,
+          "cards": [
+            {
+              "text": "地方の小さな旅館。夜、海外のお客さんから",
+              "start": 0.21,
+              "end": 3.01
+            },
+            {
+              "text": "英語の問い合わせが届く。",
+              "start": 3.16,
+              "end": 4.84
+            },
+            {
+              "text": "おかみさんが翻訳にかけて、",
+              "start": 4.84,
+              "end": 6.66
+            },
+            {
+              "text": "日本語で読んで、英語で返事を作る。",
+              "start": 6.81,
+              "end": 9.19
+            },
+            {
+              "text": "利用料はゼロ。",
+              "start": 9.34,
+              "end": 10.32
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "はい、そこ。そのメール、お客さんの名前とアドレスが入ってるでしょ。",
+          "expression": "doubt",
+          "react": "surprised",
+          "pause": 0.4,
+          "t0": 12.34,
+          "dur": 4.08,
+          "cards": [
+            {
+              "text": "はい、そこ。そのメール、お客さんの名前と",
+              "start": 0.0,
+              "end": 2.58
+            },
+            {
+              "text": "アドレスが入ってるでしょ。",
+              "start": 2.73,
+              "end": 4.28
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "規約では、特定の個人が分かる情報を入力すること自体が禁止。",
+          "expression": "doubt",
+          "reference_index": 1,
+          "t0": 16.64,
+          "dur": 4.96,
+          "cards": [
+            {
+              "text": "規約では、特定の個人が分かる情報を入力",
+              "start": 0.36,
+              "end": 3.21
+            },
+            {
+              "text": "すること自体が禁止。",
+              "start": 3.36,
+              "end": 4.86
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "……名前とアドレスを消してから、入れる。",
+          "expression": "deflated",
+          "pause": 0.4,
+          "t0": 22.0,
+          "dur": 2.72,
+          "cards": [
+            {
+              "text": "……名前とアドレスを消してから、入れる。",
+              "start": 0.0,
+              "end": 2.72
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それなら規約の内側ね。",
+          "expression": "amused",
+          "reference_index": 1,
+          "t0": 25.0,
+          "dur": 2.2,
+          "cards": [
+            {
+              "text": "それなら規約の内側ね。",
+              "start": 0.0,
+              "end": 2.2
+            }
+          ]
+        }
+      ],
+      "round": 3,
+      "narration": "大輔「じゃあ、想像してみてよ。」\n大輔「地方の小さな旅館。夜、海外のお客さんから英語の問い合わせが届く。おかみさんが翻訳にかけて、日本語で読んで、英語で返事を作る。利用料はゼロ。」\n沙織「はい、そこ。そのメール、お客さんの名前とアドレスが入ってるでしょ。」\n沙織「規約では、特定の個人が分かる情報を入力すること自体が禁止。」\n大輔「……名前とアドレスを消してから、入れる。」\n沙織「それなら規約の内側ね。」",
+      "narrator": "dialogue",
+      "lines_hash": "eed24bdb5daf",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 13,
+      "type": "dream",
+      "bgm_role": "main",
+      "round": 3,
+      "image_prompt": "Bright summer afternoon in a Japanese family home (clear daylight through an open engawa veranda, a green garden and a blue summer sky outside, clearly daytime). On the tatami room's far side, a small Buddhist family altar with fresh flowers, fruit offerings and paper lanterns for the Obon season, beside a low wooden table. In the foreground, seen from the viewer's own point of view, one hand holds a smartphone whose screen shows only soft, blurred pale speech-bubble shapes (no recognizable app, no logo). A gentle, hopeful imagined-future mood. No faces, no full figures. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "言い直す。想像してみてよ。",
+          "expression": "thinking",
+          "t0": 0.0,
+          "dur": 2.68,
+          "cards": [
+            {
+              "text": "言い直す。想像してみてよ。",
+              "start": 0.0,
+              "end": 2.68
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "たとえば僕が、来年のお盆に、初めて実家の法要を仕切ることになったとする。スマホで、日本語で聞くんだ。お供え物って地域で違うの？って。名前も住所も入れずに。",
+          "expression": "excited",
+          "tag": "life_scene",
+          "t0": 2.9,
+          "dur": 12.36,
+          "cards": [
+            {
+              "text": "たとえば僕が、来年のお盆に、",
+              "start": 0.0,
+              "end": 2.1
+            },
+            {
+              "text": "初めて実家の法要を仕切る",
+              "start": 2.25,
+              "end": 4.05
+            },
+            {
+              "text": "ことになったとする。",
+              "start": 4.05,
+              "end": 5.55
+            },
+            {
+              "text": "スマホで、日本語で聞くんだ。",
+              "start": 5.7,
+              "end": 7.8
+            },
+            {
+              "text": "お供え物って地域で違うの？って。",
+              "start": 7.95,
+              "end": 10.35
+            },
+            {
+              "text": "名前も住所も入れずに。",
+              "start": 10.5,
+              "end": 12.42
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "日本の文化のテストで上回った、っていう強みが、そのまま効く場面でしょ。",
+          "expression": "convinced",
+          "t0": 15.48,
+          "dur": 4.64,
+          "cards": [
+            {
+              "text": "日本の文化のテストで上回った、",
+              "start": 0.0,
+              "end": 2.1
+            },
+            {
+              "text": "っていう強みが、そのまま効く場面でしょ。",
+              "start": 2.25,
+              "end": 4.82
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "チャットの裏がミニかは、分からないって話だったでしょ。それに、その土地の決まりまで正しいかは、テストの点では分からない。",
+          "expression": "thinking",
+          "t0": 20.4,
+          "dur": 8.04,
+          "cards": [
+            {
+              "text": "チャットの裏がミニかは、分からないって",
+              "start": 0.0,
+              "end": 2.46
+            },
+            {
+              "text": "話だったでしょ。それに、",
+              "start": 2.61,
+              "end": 4.26
+            },
+            {
+              "text": "その土地の決まりまで",
+              "start": 4.26,
+              "end": 5.64
+            },
+            {
+              "text": "正しいかは、テストの点では分からない。",
+              "start": 5.79,
+              "end": 8.24
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そこは、お寺さんに確かめる。",
+          "expression": "convinced",
+          "react": "amused",
+          "t0": 28.72,
+          "dur": 1.88,
+          "cards": [
+            {
+              "text": "そこは、お寺さんに確かめる。",
+              "start": 0.0,
+              "end": 1.88
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "じゃあAIは、お寺さんに聞くことのリストを作る係ね。",
+          "expression": "amused",
+          "t0": 30.88,
+          "dur": 3.44,
+          "cards": [
+            {
+              "text": "じゃあAIは、お寺さんに聞くことのリストを",
+              "start": 0.0,
+              "end": 2.66
+            },
+            {
+              "text": "作る係ね。",
+              "start": 2.81,
+              "end": 3.44
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「言い直す。想像してみてよ。」\n大輔「たとえば僕が、来年のお盆に、初めて実家の法要を仕切ることになったとする。スマホで、日本語で聞くんだ。お供え物って地域で違うの？って。名前も住所も入れずに。」\n大輔「日本の文化のテストで上回った、っていう強みが、そのまま効く場面でしょ。」\n沙織「チャットの裏がミニかは、分からないって話だったでしょ。それに、その土地の決まりまで正しいかは、テストの点では分からない。」\n大輔「そこは、お寺さんに確かめる。」\n沙織「じゃあAIは、お寺さんに聞くことのリストを作る係ね。」",
+      "narrator": "dialogue",
+      "lines_hash": "7e3a62abe9db",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 14,
+      "type": "verdict",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "verdict_from_line": 4,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、判定。お題は、国産AIのサラシナは、ChatGPTの代わりになるか。",
+          "expression": "neutral",
+          "display": "じゃあ、判定。お題は、国産AIの「Sarashina」は、ChatGPTの代わりになるか。",
+          "t0": 0.0,
+          "dur": 5.6,
+          "cards": [
+            {
+              "text": "じゃあ、判定。お題は、国産AIの",
+              "start": 0.0,
+              "end": 2.12
+            },
+            {
+              "text": "「Sarashina」は、ChatGPTの",
+              "start": 2.12,
+              "end": 4.6
+            },
+            {
+              "text": "代わりになるか。",
+              "start": 4.6,
+              "end": 5.6
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕は「もうすぐ来る」。日本のことを日本語で聞く、日本語と英語を訳す。この使い方なら、技術ブログに、比べたモデルと全体的に同程度、日本の文化では上回った、とある。",
+          "expression": "convinced",
+          "tone": "calm, confident",
+          "reference_index": 2,
+          "t0": 5.88,
+          "dur": 13.72,
+          "cards": [
+            {
+              "text": "僕は「もうすぐ来る」。",
+              "start": 0.0,
+              "end": 1.89
+            },
+            {
+              "text": "日本のことを日本語で聞く、",
+              "start": 1.89,
+              "end": 4.12
+            },
+            {
+              "text": "日本語と英語を訳す。この使い方なら、",
+              "start": 4.27,
+              "end": 7.45
+            },
+            {
+              "text": "技術ブログに、",
+              "start": 7.6,
+              "end": 8.75
+            },
+            {
+              "text": "比べたモデルと全体的に同程度、",
+              "start": 8.75,
+              "end": 11.22
+            },
+            {
+              "text": "日本の文化では上回った、とある。",
+              "start": 11.37,
+              "end": 13.77
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "しかも今日、無料で試せる。代わりの1本になるのは、もうすぐ。これは僕の見立て。",
+          "expression": "excited",
+          "t0": 19.82,
+          "dur": 6.04,
+          "cards": [
+            {
+              "text": "しかも今日、無料で試せる。",
+              "start": 0.0,
+              "end": 1.95
+            },
+            {
+              "text": "代わりの1本になるのは、",
+              "start": 1.95,
+              "end": 3.75
+            },
+            {
+              "text": "もうすぐ。これは僕の見立て。",
+              "start": 3.9,
+              "end": 6.22
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は「まだ眉唾」。",
+          "expression": "doubt",
+          "pause": 0.4,
+          "t0": 26.26,
+          "dur": 2.28,
+          "cards": [
+            {
+              "text": "私は「まだ眉唾」。",
+              "start": 0.0,
+              "end": 2.28
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "眉唾なのは、代わり、という言い方。比べた相手は、じっくり考えない型だけで、届いていない点もある、と会社自身が書いてる。",
+          "expression": "doubt",
+          "reference_index": 2,
+          "t0": 28.76,
+          "dur": 9.24,
+          "cards": [
+            {
+              "text": "眉唾なのは、代わり、という言い方。",
+              "start": 0.29,
+              "end": 2.84
+            },
+            {
+              "text": "比べた相手は、じっくり考えない型だけで、",
+              "start": 2.99,
+              "end": 5.99
+            },
+            {
+              "text": "届いていない点もある、",
+              "start": 6.14,
+              "end": 7.79
+            },
+            {
+              "text": "と会社自身が書いてる。",
+              "start": 7.79,
+              "end": 9.44
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに今の無料ベータは、APIのミニが1分に6回、入力は学習に使われうる、終わる時期は未定。ここまでは、資料に書いてあること。",
+          "expression": "neutral",
+          "display": "それに今の無料ベータは、APIのminiが1分に6回、入力は学習に使われうる、終わる時期は未定。ここまでは、資料に書いてあること。",
+          "reference_index": 1,
+          "t0": 38.22,
+          "dur": 9.12,
+          "cards": [
+            {
+              "text": "それに今の無料ベータは、APIのminiが",
+              "start": 0.0,
+              "end": 2.95
+            },
+            {
+              "text": "1分に6回、入力は学習に使われうる、",
+              "start": 2.95,
+              "end": 5.47
+            },
+            {
+              "text": "終わる時期は未定。ここまでは、",
+              "start": 5.47,
+              "end": 7.58
+            },
+            {
+              "text": "資料に書いてあること。",
+              "start": 7.58,
+              "end": 9.12
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、この3つは、技術の壁じゃなくて運用の決まり。1年もすれば変わってると思う。これは私の見立て。変わったら、もう一回判定しよう。",
+          "expression": "amused",
+          "tone": "calm, fair",
+          "t0": 47.56,
+          "dur": 9.0,
+          "cards": [
+            {
+              "text": "ただ、この3つは、",
+              "start": 0.0,
+              "end": 1.26
+            },
+            {
+              "text": "技術の壁じゃなくて運用の決まり。",
+              "start": 1.26,
+              "end": 3.49
+            },
+            {
+              "text": "1年もすれば変わってると思う。",
+              "start": 3.64,
+              "end": 5.61
+            },
+            {
+              "text": "これは私の見立て。変わったら、",
+              "start": 5.76,
+              "end": 7.73
+            },
+            {
+              "text": "もう一回判定しよう。",
+              "start": 7.88,
+              "end": 9.2
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想は、なる、だった。判定は同じ向きだけど、何でもの代わりじゃなくて、日本語で日本のことを聞く、に絞った。",
+          "expression": "thinking",
+          "tag": "vs_prediction",
+          "t0": 56.84,
+          "dur": 8.28,
+          "cards": [
+            {
+              "text": "僕の予想は、なる、だった。",
+              "start": 0.0,
+              "end": 1.89
+            },
+            {
+              "text": "判定は同じ向きだけど、",
+              "start": 1.89,
+              "end": 3.48
+            },
+            {
+              "text": "何でもの代わりじゃなくて、",
+              "start": 3.76,
+              "end": 5.26
+            },
+            {
+              "text": "日本語で日本のことを聞く、に絞った。",
+              "start": 5.31,
+              "end": 8.41
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は、比べられたら困るから数字を出さない、と思ってた。そこは外れ。判定は眉唾のままだけど、理由が変わった。",
+          "expression": "convinced",
+          "react": "convinced",
+          "tag": "vs_prediction",
+          "t0": 65.4,
+          "dur": 7.68,
+          "cards": [
+            {
+              "text": "私は、比べられたら困るから数字を出さない、",
+              "start": 0.0,
+              "end": 2.92
+            },
+            {
+              "text": "と思ってた。そこは外れ。",
+              "start": 3.07,
+              "end": 4.84
+            },
+            {
+              "text": "判定は眉唾のままだけど、",
+              "start": 4.84,
+              "end": 6.62
+            },
+            {
+              "text": "理由が変わった。",
+              "start": 6.77,
+              "end": 7.88
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「じゃあ、判定。お題は、国産AIのサラシナは、ChatGPTの代わりになるか。」\n大輔「僕は「もうすぐ来る」。日本のことを日本語で聞く、日本語と英語を訳す。この使い方なら、技術ブログに、比べたモデルと全体的に同程度、日本の文化では上回った、とある。」\n大輔「しかも今日、無料で試せる。代わりの1本になるのは、もうすぐ。これは僕の見立て。」\n沙織「私は「まだ眉唾」。」\n沙織「眉唾なのは、代わり、という言い方。比べた相手は、じっくり考えない型だけで、届いていない点もある、と会社自身が書いてる。」\n沙織「それに今の無料ベータは、APIのミニが1分に6回、入力は学習に使われうる、終わる時期は未定。ここまでは、資料に書いてあること。」\n沙織「ただ、この3つは、技術の壁じゃなくて運用の決まり。1年もすれば変わってると思う。これは私の見立て。変わったら、もう一回判定しよう。」\n大輔「僕の予想は、なる、だった。判定は同じ向きだけど、何でもの代わりじゃなくて、日本語で日本のことを聞く、に絞った。」\n沙織「私は、比べられたら困るから数字を出さない、と思ってた。そこは外れ。判定は眉唾のままだけど、理由が変わった。」",
+      "narrator": "dialogue",
+      "lines_hash": "89aa857771c6",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 15,
+      "type": "closing",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe_b",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "でも、一番効いたのは、規約と説明書の方。1分に6回と、学習に使われうる、ね。今日の判定は、10月16日時点の、私たち二人の見立て。",
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 11.96,
+          "cards": [
+            {
+              "text": "でも、一番効いたのは、規約と説明書の方。",
+              "start": 0.0,
+              "end": 3.06
+            },
+            {
+              "text": "1分に6回と、学習に使われうる、ね。",
+              "start": 3.64,
+              "end": 6.96
+            },
+            {
+              "text": "今日の判定は、10月16日時点の、",
+              "start": 7.6,
+              "end": 10.22
+            },
+            {
+              "text": "私たち二人の見立て。",
+              "start": 10.37,
+              "end": 11.87
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "excited",
+          "t0": 12.24,
+          "dur": 4.72,
+          "cards": [
+            {
+              "text": "次はどんな研究が、誰かの幸せな未来を",
+              "start": 0.0,
+              "end": 3.46
+            },
+            {
+              "text": "運んでくるのか。",
+              "start": 3.61,
+              "end": 4.81
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "amused",
+          "t0": 17.24,
+          "dur": 8.04,
+          "cards": [
+            {
+              "text": "それが本物かどうか、",
+              "start": 0.0,
+              "end": 1.4
+            },
+            {
+              "text": "また一緒に確かめましょう。",
+              "start": 1.4,
+              "end": 3.22
+            },
+            {
+              "text": "元の発表は概要欄に載せています。",
+              "start": 3.37,
+              "end": 5.47
+            },
+            {
+              "text": "チャンネル登録して、待っていてください。",
+              "start": 5.62,
+              "end": 8.24
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「でも、一番効いたのは、規約と説明書の方。1分に6回と、学習に使われうる、ね。今日の判定は、10月16日時点の、私たち二人の見立て。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」",
+      "narrator": "dialogue",
+      "lines_hash": "e9dfc593f461",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "skeptic",
+          "narration": "ChatGPTの代わりになる？",
+          "expression": "doubt",
+          "scene_id": 13
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "国産AIのサラシナが、無料で試せるようになった！",
+          "expression": "excited",
+          "scene_id": 12,
+          "telop_text": "国産AIの「Sarashina」が、無料で試せるようになった！"
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "でも発表資料に、ChatGPTと比べた数字は無い。",
+          "expression": "doubt",
+          "react": "deflated",
+          "scene_id": 7
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "ところが技術ブログに、全体的に同程度、とあった。",
+          "expression": "excited",
+          "react": "surprised",
+          "scene_id": 8,
+          "style": "chart"
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "でも無料ベータは、1分に6回。入力は学習に使われうる。",
+          "expression": "doubt",
+          "react": "surprised",
+          "scene_id": 10,
+          "style": "chart"
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "判定は割れた。続きは本編で。",
+          "expression": "thinking",
+          "scene_id": 14
+        }
+      ]
+    }
+  ],
+  "bgm_sources": {
+    "intro": "BGM/kl035-BGM-intro.mp3",
+    "main": "BGM/kl035-BGM-main.mp3",
+    "outro": "BGM/kl041-BGM-outro.mp3"
+  }
+}

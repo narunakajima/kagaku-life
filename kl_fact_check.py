@@ -70,7 +70,7 @@ DOI/URL: {doi_url}
 
 【この論文について書かれたナレーション原稿（複数シーンをまとめて表示）】
 {narration_block}
-
+{card_block}
 確認すること:
 - ナレーション内の具体的な数値（成功率・人数・統計的有意差の有無等）が、論文本文の
   実際の記載と一致しているか
@@ -78,23 +78,23 @@ DOI/URL: {doi_url}
 - 論文側のヘッジ表現（「予備的な結果」「限定的な条件下」等）や研究段階であることが、
   ナレーションで断定的な表現に変わっていないか
 - ナレーションが、論文が実際には扱っていない範囲にまで話を広げていないか（誇張）
-
+{card_instructions}
 出力は次のJSON形式のみで、他のテキスト・Markdown装飾は一切含めないこと:
 {{"numbers_match": true|false, "institution_match": true|false, "hedging_preserved": true|false,
-"scope_exaggerated": true|false, "issues": ["具体的な問題点", ...], "overall": "ok|caution|high_risk",
+"scope_exaggerated": true|false, {card_json}"issues": ["具体的な問題点", ...], "overall": "ok|caution|high_risk",
 "reasoning": "..."}}
 """
 
 
 HEALTH_TONE_PROMPT = """あなたはYouTubeのポリシーに詳しい台本チェック担当です。以下は、学術研究を一般向けに
 紹介する日本語チャンネルの台本（ナレーション全文・タイトル・概要欄）です。語り手の声はAIで
-合成しています。登場する主人公は架空の生活者です。
+合成しています。登場するのは固定の二人（架空の人物、声はAI）です。
 
 このチャンネルは「研究結果を紹介する」番組であり、視聴者に健康上の助言をする番組ではありません。
 次のいずれかに当たる箇所がないか確認してください。
 1. 視聴者への健康・医療上の助言や指示（例:「〜しましょう」「〜を試してみてください」
-   「〜すれば治ります」、薬・サプリ・治療法を勧める、用量を示す）。主人公が自分の体験として
-   語る独白や、研究内容の説明は助言に当たらない
+   「〜すれば治ります」、薬・サプリ・治療法を勧める、用量を示す）。二人が自分のこととして
+   語る仮定の話や、研究内容の説明は助言に当たらない
 2. 語り手が医師・専門家・研究者本人を名乗る、またはそう装う
 3. 研究段階の結果（動物実験・小規模試験・承認前の治療など）を、すでに確立した治療法や
    誰にでも効く方法のように語っている
@@ -110,15 +110,52 @@ HEALTH_TONE_PROMPT = """あなたはYouTubeのポリシーに詳しい台本チ�
 """
 
 
+# 2026-10-16: 構成 v2 の資料カード（scene.source_card）を資料ごとの照合に入れる。
+# カードは画面に「原文」として出るので、quote_type が「原文」の引用は一字一句の一致まで確かめる。
+CARD_MARKER = "［画面の資料カード］"
+
+CARD_BLOCK_TEMPLATE = """
+【この資料について画面に出す「資料カード」（一次資料の該当箇所を文字で見せるカード）】
+{cards}
+"""
+
+CARD_INSTRUCTIONS = """- 資料カードの「原文の引用」（quote_type: 原文）が、この資料の本文と一字一句同じか（句読点・英数字・
+  かな漢字の表記まで）。原文の1文から連続した一部を抜き出したもの（前後を切っただけ）は一致とみなす。
+  途中の語の言い換え・抜け・語順の違いがあれば不一致。「要約」の行は、内容・数字・条文番号が
+  資料の記載と合っているか
+"""
+
+
+def card_entries(scene: dict) -> list:
+    """シーンの source_card を、照合用の文字列にする（reference_index, 文字列）のリスト。"""
+    card = scene.get("source_card")
+    if not card:
+        return []
+    idx = card.get("reference_index", scene.get("reference_index"))
+    if idx is None:
+        return []
+    parts = [f"S{scene['scene_id']:02d} 出典表示: {card.get('source', '')}"]
+    if card.get("quote"):
+        parts.append(f"  引用（{card.get('quote_type', '原文')}）: 「{card['quote']}」")
+    for it in card.get("items") or []:
+        parts.append(f"  要約: {it}")
+    return [(idx, "\n".join(parts))]
+
+
 def strip_code_fence(text: str) -> str:
     text = text.strip()
     m = re.match(r"^```(?:json)?\s*(.*?)\s*```$", text, re.DOTALL)
     return m.group(1) if m else text
 
 
-def check_reference(client: genai.Client, ref: dict, narrations: list, retries: int = 3) -> dict:
-    narration_block = "\n\n".join(f"- {n}" for n in narrations)
+def check_reference(client: genai.Client, ref: dict, narrations: list, retries: int = 3,
+                    cards: "list | None" = None) -> dict:
+    narration_block = "\n\n".join(f"- {n}" for n in narrations) or "（台詞なし。資料カードのみ）"
+    cards = cards or []
     prompt = PROMPT_TEMPLATE.format(
+        card_block=CARD_BLOCK_TEMPLATE.format(cards="\n".join(cards)) if cards else "",
+        card_instructions=CARD_INSTRUCTIONS if cards else "",
+        card_json='"card_quote_exact": true|false|null, ' if cards else "",
         title=ref.get("title") or "(不明)",
         authors=", ".join(ref.get("authors", [])) or "(不明)",
         venue=ref.get("venue") or "(不明)",
@@ -228,7 +265,13 @@ def run(episode_id: str):
             continue
         if idx is None:
             continue
-        by_ref.setdefault(idx, []).append(s["narration"])
+        by_ref.setdefault(idx, []).append(s["narration"].split("\n" + CARD_MARKER)[0])
+
+    cards_by_ref = {}
+    for s in scenes:
+        for ci, text in card_entries(s):
+            cards_by_ref.setdefault(ci, []).append(text)
+            by_ref.setdefault(ci, [])
 
     client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
 
@@ -240,14 +283,20 @@ def run(episode_id: str):
         ref = references[idx]
         print(f"検証中: [{idx}] {ref.get('title', '')[:50]}... ", end="", flush=True)
         time.sleep(CALL_DELAY_SEC)
-        verdict = check_reference(client, ref, narrations)
+        verdict = check_reference(client, ref, narrations, cards=cards_by_ref.get(idx))
+        if cards_by_ref.get(idx) and verdict.get("card_quote_exact") is False and verdict.get("overall") == "ok":
+            verdict["overall"] = "caution"
+            verdict.setdefault("issues", []).append("資料カードの原文の引用が一次資料と一字一句一致していない")
         verdict["reference_index"] = idx
         verdict["title"] = ref.get("title")
         results.append(verdict)
         overall = verdict.get("overall", "caution")
         counts[overall] = counts.get(overall, 0) + 1
         icon = {"ok": "✅", "caution": "⚠️", "high_risk": "❌"}.get(overall, "❓")
-        print(f"{icon} {overall}")
+        card_note = ""
+        if cards_by_ref.get(idx):
+            card_note = f"（資料カード{len(cards_by_ref[idx])}枚、原文一致: {verdict.get('card_quote_exact')}）"
+        print(f"{icon} {overall}{card_note}")
         if verdict.get("issues"):
             for issue in verdict["issues"]:
                 print(f"    - {issue}")

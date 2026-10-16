@@ -1310,7 +1310,8 @@
     "credit": null,
     "tags": [],
     "used_in": [
-      "kl035"
+      "kl035",
+      "kl041"
     ],
     "duration": 258.75,
     "source_id": "505287",
@@ -1338,7 +1339,8 @@
     "credit": null,
     "tags": [],
     "used_in": [
-      "kl035"
+      "kl035",
+      "kl041"
     ],
     "duration": 55.86,
     "source_id": "659451",
@@ -1783,6 +1785,35 @@
       "electric-piano",
       "bass",
       "drums"
+    ],
+    "has_beat": true,
+    "era": "dialogue",
+    "role_fit": [
+      "outro"
+    ]
+  },
+  {
+    "id": "kl041-BGM-outro",
+    "path": "BGM/kl041-BGM-outro.mp3",
+    "license": "CC0",
+    "credit": null,
+    "tags": [],
+    "used_in": [
+      "kl041"
+    ],
+    "duration": 119.06,
+    "source_id": "728685",
+    "source_name": "Upbeat downtempo cool lofi ish",
+    "source_url": "https://freesound.org/s/728685/",
+    "bpm": 80.0,
+    "mood": [
+      "chill",
+      "groovy"
+    ],
+    "instruments": [
+      "electric-piano",
+      "synth",
+      "hiphop-drums"
     ],
     "has_beat": true,
     "era": "dialogue",

@@ -86,6 +86,38 @@ PHRASE_LIMITS = {
     "かもしれません": 2,
 }
 
+# ── 構成 v2「論点ラウンド」（2026-10-16、DIALOGUE_REDESIGN_2026-10-16.md） ──────────────
+# エピソードJSONのトップレベルに "structure": "rounds_v2" がある回だけ、下の追加ルールで確認する
+# （kl031〜kl040 は旧来のチェックのまま。作り直さない）。
+#   teaser → setup（お題と二人の予想、固定背景）→ 論点ラウンド2〜3 → verdict（予想からどう変わったか）→ closing
+#   各ラウンドの最初のシーンに round_title、ラウンド内の全シーンに round（1始まり）。
+#   一次資料の該当箇所は source_card（資料カード、Pillowで描く。正確な文字）で見せる。
+STRUCTURE_V2 = "rounds_v2"
+V2_TAGS = {
+    "prediction": "setup で二人がそれぞれ言う、最初の予想（二人とも必要）",
+    "turn": "予想・主張がひっくり返る／どちらかが譲る行（1話に1つ以上）",
+    "vs_prediction": "verdict で、最初の予想からどう変わったかを言う行（二人とも必要）",
+}
+ROUND_TITLE_MAX = 22          # 論点の見出しの最大文字数（画面の帯に1行で出す）
+ROUND_TITLE_SECONDS = 2.8     # ラウンドの頭に論点の見出しを出す秒数（台詞は遅らせない）
+MAX_SAME_SPEAKER_RUN = 3      # 同じ人が続けて話す行数の上限（verdict は +1）
+MAX_SPEAKER_SHARE = 0.70      # 1シーンで一人が話す文字数の割合の上限（4行以上のシーン。closing は除く）
+# dream に年齢・容姿を固定した人物を描かない（旧形式の「主人公」の名残）。手元・後ろ姿・遠景はよい
+import re as _re
+_PERSONA_RE = _re.compile(r"\bin (his|her|their) (early |mid-|mid |late )?(teens|twenties|thirties|forties|fifties|sixties|seventies|eighties|[1-9]0s)\b"
+                          r"|\b(a|an) (young |elderly |middle-aged )?(Japanese )?(man|woman|boy|girl) (in|with) ", _re.I)
+# 意味を運ばない「比喩の小道具」だけの挿絵（虫めがね・南京錠・天秤）は使わない（kl033〜kl041で多用）
+STOCK_METAPHORS = ("magnifying glass", "padlock", "balance scale")
+CARD_KINDS = {  # 資料カードの種類 → 見出しの色
+    "press":  ("発表資料", (64, 120, 176)),
+    "blog":   ("技術ブログ", (48, 150, 140)),
+    "terms":  ("利用規約", (150, 110, 70)),
+    "docs":   ("説明書", (90, 100, 150)),
+    "paper":  ("論文", (110, 80, 150)),
+    "report": ("報告書", (120, 120, 120)),
+}
+CARD_DIR = BASE_DIR / "assets" / "cards"
+
 VERDICT_KEYS = ("soon", "decade", "dubious")
 REQUIRED_TAGS = {
     "question": "冒頭の問い（teaser内）",
@@ -115,13 +147,27 @@ def speaker_name(cast: dict, role: str) -> str:
     return cast.get(role, {}).get("name", role)
 
 
+def card_text(card: dict) -> str:
+    """資料カードに画面で出す文字の全文（ファクトチェック・レビュー用）。"""
+    parts = [card.get("source", "")]
+    if card.get("quote"):
+        parts.append(f"「{card['quote']}」（{card.get('quote_type', '原文')}）")
+    parts += [f"・{it}" for it in card.get("items") or []]
+    if card.get("note"):
+        parts.append(f"※{card['note']}")
+    return " ".join(p for p in parts if p)
+
+
 def scene_text(scene: dict, cast: dict = None) -> str:
     """シーンの台詞の全文（話者名つき）。ファクトチェック・確認書・レビューで使う。
-    旧形式のシーンは narration をそのまま返す。"""
+    旧形式のシーンは narration をそのまま返す。資料カードがあれば、画面の文字も末尾に付ける。"""
     if "lines" not in scene:
         return scene.get("narration", "")
     cast = cast or load_cast()
-    return "\n".join(f"{speaker_name(cast, l['speaker'])}「{l['text']}」" for l in scene["lines"])
+    out = "\n".join(f"{speaker_name(cast, l['speaker'])}「{l['text']}」" for l in scene["lines"])
+    if scene.get("source_card"):
+        out += "\n［画面の資料カード］" + card_text(scene["source_card"])
+    return out
 
 
 def scene_char_count(scene: dict) -> int:
@@ -178,7 +224,10 @@ def validate_episode(ep: dict, cast: dict = None) -> list:
     first_main = next((i for i, t in enumerate(types_) if t != "teaser"), len(types_))
     if any(t == "teaser" for t in types_[first_main:]):
         errs.append("teaser は冒頭にまとめてください")
-    for t, n_min in (("paper", 1), ("dream", 1), ("tsukkomi", 1), ("check", 1)):
+    v2 = ep.get("structure") == STRUCTURE_V2
+    # v2 ではツッコミを資料カードの答え合わせ（check）の中で言ってよいので、tsukkomi シーンは必須にしない
+    need = (("paper", 1), ("dream", 1), ("check", 2)) if v2 else (("paper", 1), ("dream", 1), ("tsukkomi", 1), ("check", 1))
+    for t, n_min in need:
         if types_.count(t) < n_min:
             errs.append(f"{t} シーンが{n_min}つ以上必要です")
     if types_.count("verdict") != 1:
@@ -289,6 +338,144 @@ def validate_episode(ep: dict, cast: dict = None) -> list:
         for i, c in enumerate(shorts, start=1):
             if c.get("narrator") not in ROLES:
                 errs.append(f"Shorts {i}カット目: narrator は dreamer/skeptic にしてください")
+    if v2:
+        errs += validate_rounds_v2(ep)
+    return errs
+
+
+def _card_asset_name(ep: dict, scene: dict) -> str:
+    return f"cards/{ep.get('episode_id', 'klXXX')}_S{scene['scene_id']:02d}"
+
+
+def validate_rounds_v2(ep: dict) -> list:
+    """構成 v2（論点ラウンド）の追加チェック。"structure": "rounds_v2" の回だけ。"""
+    errs = []
+    scenes = ep["scenes"]
+    by_id = {s["scene_id"]: s for s in scenes}
+    main = [s for s in scenes if s.get("type") != "teaser"]
+    if not main:
+        return errs
+    # 1) 冒頭は「お題と予想」: 最初の本編シーンは setup、二人とも prediction を言う
+    if main[0].get("type") != "setup":
+        errs.append("v2: 最初の本編シーンは setup（お題と二人の予想）にしてください")
+    else:
+        who = {l.get("speaker") for l in main[0].get("lines", []) if l.get("tag") == "prediction"}
+        for r in ROLES:
+            if r not in who:
+                errs.append(f"v2: setup に {r} の予想（tag: 'prediction'）がありません")
+    # 2) ラウンド: setup と verdict の間の全シーンに round、2〜3ラウンド、順に増える、頭に round_title
+    vi = next((i for i, s in enumerate(main) if s.get("type") == "verdict"), len(main))
+    body = main[1:vi]
+    prev = 0
+    rounds = {}
+    for s in body:
+        n = s.get("round")
+        where = f"S{s['scene_id']}"
+        if not isinstance(n, int) or n < 1:
+            errs.append(f"v2: {where}: round（1始まりの論点の番号）がありません")
+            continue
+        if n < prev or n > prev + 1:
+            errs.append(f"v2: {where}: round が {prev} → {n} です（1から順に、戻らずに）")
+        if n != prev:
+            t = s.get("round_title", "")
+            if not t:
+                errs.append(f"v2: {where}: 論点{n}の最初のシーンに round_title（見出し）がありません")
+            elif len(t) > ROUND_TITLE_MAX:
+                errs.append(f"v2: {where}: round_title は{ROUND_TITLE_MAX}字以内に（{len(t)}字）")
+        elif s.get("round_title"):
+            errs.append(f"v2: {where}: round_title は各論点の最初のシーンだけに付けてください")
+        prev = max(prev, n)
+        rounds.setdefault(n, []).append(s)
+    for s in [main[0]] + main[vi:]:
+        if s.get("round") or s.get("round_title"):
+            errs.append(f"v2: S{s['scene_id']}: setup/verdict/closing に round を付けないでください")
+    if not 2 <= len(rounds) <= 3:
+        errs.append(f"v2: 論点ラウンドは2〜3にしてください（今は{len(rounds)}）")
+    for n, ss in rounds.items():
+        sp = {l.get("speaker") for s in ss for l in s.get("lines", [])}
+        if sp != set(ROLES):
+            errs.append(f"v2: 論点{n}: 二人とも話していません")
+        if not any(s.get("type") == "check" for s in ss):
+            errs.append(f"v2: 論点{n}: 資料・データで確かめる check シーンがありません")
+    # 3) 予想からの変化・裏切り
+    tags = [(s, l) for s in scenes for l in s.get("lines", []) if l.get("tag")]
+    if not any(l["tag"] == "turn" for _, l in tags):
+        errs.append("v2: tag 'turn'（予想・主張がひっくり返る／譲る行）がありません")
+    vs = {l.get("speaker") for s, l in tags if l["tag"] == "vs_prediction" and s.get("type") == "verdict"}
+    for r in ROLES:
+        if r not in vs:
+            errs.append(f"v2: verdict に {r} の「最初の予想からどう変わったか」（tag: 'vs_prediction'）がありません")
+    # 4) 説明の分担にしない: 同じ人の連続・一人語りの割合
+    for s in main:
+        lines = s.get("lines") or []
+        limit = MAX_SAME_SPEAKER_RUN + (1 if s.get("type") == "verdict" else 0)
+        run, p = 0, None
+        for l in lines:
+            run = run + 1 if l.get("speaker") == p else 1
+            p = l.get("speaker")
+            if run > limit:
+                errs.append(f"v2: S{s['scene_id']}: 同じ人が{run}行続いています（上限{limit}。相手の反応を挟む）")
+                break
+        if len(lines) >= 4 and s.get("type") not in ("closing",):
+            cnt = {}
+            for l in lines:
+                cnt[l.get("speaker")] = cnt.get(l.get("speaker"), 0) + len(l.get("text", ""))
+            tot = sum(cnt.values()) or 1
+            top = max(cnt.items(), key=lambda kv: kv[1])
+            if top[1] / tot > MAX_SPEAKER_SHARE:
+                errs.append(f"v2: S{s['scene_id']}: {top[0]} が台詞の{top[1] / tot:.0%}を話しています"
+                            f"（上限{MAX_SPEAKER_SHARE:.0%}。資料を持ってきた側が読み、相手が割って入る）")
+    # 5) 画像: dream に固定の人物を描かない、比喩の小道具だけの挿絵にしない
+    for s in scenes:
+        p = s.get("image_prompt") or ""
+        if s.get("type") == "dream" and _PERSONA_RE.search(p):
+            errs.append(f"v2: S{s['scene_id']}: dream の絵に年齢・容姿を決めた人物がいます（旧形式の主人公の名残）。"
+                        "手元・後ろ姿・遠景、または人のいない場面にする")
+        for m in STOCK_METAPHORS:
+            if m in p.lower():
+                errs.append(f"v2: S{s['scene_id']}: 比喩の小道具「{m}」の挿絵は使わない。資料カード（source_card）か、話題の実物を描く")
+    # 6) 資料カード
+    card_ids = set()
+    for s in scenes:
+        c = s.get("source_card")
+        if not c:
+            continue
+        card_ids.add(s["scene_id"])
+        where = f"S{s['scene_id']}"
+        if s.get("type") != "check":
+            errs.append(f"v2: {where}: source_card は check シーンに置いてください（静止表示になるのは check だけ）")
+        if c.get("kind") not in CARD_KINDS:
+            errs.append(f"v2: {where}: source_card.kind は {tuple(CARD_KINDS)} のどれか")
+        if not c.get("source"):
+            errs.append(f"v2: {where}: source_card.source（資料名と日付）がありません")
+        if not c.get("quote") and not c.get("items"):
+            errs.append(f"v2: {where}: source_card に quote か items が必要です")
+        if c.get("quote") and c.get("quote_type", "原文") not in ("原文", "要約"):
+            errs.append(f"v2: {where}: source_card.quote_type は 原文 / 要約")
+        if c.get("quote") and len(c["quote"]) > 90:
+            errs.append(f"v2: {where}: source_card.quote は90字以内（{len(c['quote'])}字）")
+        if c.get("highlight") and c["highlight"] not in (c.get("quote") or ""):
+            errs.append(f"v2: {where}: source_card.highlight は quote の中の文字列にしてください")
+        for it in c.get("items") or []:
+            if sum(0.5 if ch.isascii() else 1 for ch in it) > 26:
+                errs.append(f"v2: {where}: source_card.items の1行は26字以内（半角は0.5字）（{it[:12]}…）")
+        if len(c.get("items") or []) > 5:
+            errs.append(f"v2: {where}: source_card.items は5行まで")
+        ri = c.get("reference_index", s.get("reference_index"))
+        if not isinstance(ri, int) or not (0 <= ri < len(ep.get("references") or [])):
+            errs.append(f"v2: {where}: source_card の reference_index が references にありません")
+        want = _card_asset_name(ep, s)
+        if s.get("image_asset") != want or not (BASE_DIR / "assets" / f"{want}.png").exists():
+            errs.append(f"v2: {where}: 資料カードの画像がありません（python3 kl_dialogue.py cards --episode {ep.get('episode_id')}）")
+        if s.get("image_prompt"):
+            errs.append(f"v2: {where}: source_card のシーンに image_prompt は書かない（カードを使う）")
+    # ティザー（ズームする）と Shorts（AIで縦に描き直す）では、文字のカードを使わない
+    for s in scenes:
+        if s.get("type") == "teaser" and s.get("reuse_scene_id") in card_ids:
+            errs.append(f"v2: S{s['scene_id']}: ティザーで資料カードのシーン（S{s['reuse_scene_id']}）を流用しない（ズームで文字が切れる）")
+    for i, c in enumerate((ep.get("shorts") or [{}])[0].get("scenes") or [], start=1):
+        if c.get("scene_id") in card_ids:
+            errs.append(f"v2: Shorts {i}カット目: 資料カードのシーンは使わない（縦に描き直すと文字が崩れる）")
     return errs
 
 
@@ -603,6 +790,29 @@ def render_layer(state: dict, layout: dict, cast: dict, bank: SpriteBank) -> Ima
         dr.rounded_rectangle((24, 22, 24 + bw + 28, 22 + 48), radius=10, fill=(0, 0, 0, 120))
         dr.text((38, 29), state["badge"], font=fb, fill=(255, 255, 255))
 
+    # 論点の見出し（構成 v2。ラウンドの頭の数秒だけ、画面の中ほどに帯で出す。台詞は止めない）
+    if state.get("round_title"):
+        n, title = state["round_title"]
+        big = W > 1000
+        fl = _font(FONT_BOLD, 30 if big else 32)
+        ft = _font(FONT_BOLD, 52 if big else 44)
+        label = f"論点{n}"
+        lw, tw = _text_w(dr, label, fl), _text_w(dr, title, ft, 4)
+        if tw > W * 0.86:  # 長い見出しは縮める
+            size = 52 if big else 44
+            while size > 28 and _text_w(dr, title, _font(FONT_BOLD, size), 4) > W * 0.86:
+                size -= 2
+            ft = _font(FONT_BOLD, size)
+            tw = _text_w(dr, title, ft, 4)
+        band_h = (ft.size + fl.size) + 54
+        y0 = int(H * (0.30 if big else 0.30)) - band_h // 2
+        dr.rectangle((0, y0, W, y0 + band_h), fill=(10, 22, 38, 215))
+        dr.line((0, y0, W, y0), fill=(240, 168, 104, 230), width=3)
+        dr.line((0, y0 + band_h, W, y0 + band_h), fill=(240, 168, 104, 230), width=3)
+        dr.text(((W - lw) // 2, y0 + 14), label, font=fl, fill=(240, 168, 104))
+        dr.text(((W - tw) // 2, y0 + 14 + fl.size + 12), title, font=ft, fill=(255, 255, 255),
+                stroke_width=4, stroke_fill=(0, 0, 0))
+
     # 判定ラベル
     stamps = state.get("stamps") or []
     if stamps:
@@ -670,6 +880,10 @@ def main_timeline(ep: dict, scenes: list, offsets: list, durs: list, narr_delay:
         if scene.get("_intro_card"):
             intro_windows.append((off, off + INTRO_FIRST_SECONDS, "dreamer"))
             intro_windows.append((off + INTRO_SECOND_AT, off + INTRO_CARD_SECONDS, "skeptic"))
+        if scene.get("round_title") and not teaser:
+            # 構成 v2: 論点の見出し。自己紹介カードと同じ仕組みで、台詞の状態に重ねて出す
+            intro_windows.append((off, off + ROUND_TITLE_SECONDS,
+                                  ("round", scene.get("round"), scene["round_title"])))
         lines = scene.get("lines") or []
         v_from = scene.get("verdict_from_line") if scene["type"] == "verdict" else None
         for li, line in enumerate(lines):
@@ -706,9 +920,13 @@ def main_timeline(ep: dict, scenes: list, offsets: list, durs: list, narr_delay:
         events.sort(key=lambda e: e[0])
         out = []
         for t, st in events:
-            roles = [r for (s, e, r) in intro_windows if s <= t < e]
+            active = [r for (s, e, r) in intro_windows if s <= t < e]
+            roles = [r for r in active if r in ROLES]
+            rounds = [r for r in active if isinstance(r, tuple) and r[0] == "round"]
             if roles:
                 st = dict(st, intro=roles)
+            if rounds:
+                st = dict(st, round_title=[rounds[-1][1], rounds[-1][2]])
             out.append((t, st))
         events = out
     return events
@@ -750,6 +968,8 @@ def split_to_width(text: str, layout: dict, cast: dict = None) -> list:
         cands = set(range(1, n))
     cands |= {i + 1 for i, ch in enumerate(text) if ch in "、。！？!?" and i + 1 < n}
     cands = {b for b in cands if text[b] not in no_head}
+    # 2026-10-16: 数字の直後では分けない（kl041 Shorts で「1分に6／回。」と数字と助数詞が分かれた）
+    cands = {b for b in cands if not (text[b - 1].isdigit() or (text[b].isdigit() and text[b - 1] in ".．"))}
     pts = sorted(cands | {0, n})
 
     def solve(points):
@@ -940,6 +1160,151 @@ def composite_thumbnail_dialogue(image_path: Path, ep: dict, cast: dict = None) 
     img.convert("RGB").save(image_path, "PNG")
 
 
+# ── 資料カード（構成 v2） ────────────────────────────────────────────
+
+CARD_BG_ASSET = BASE_DIR / "assets" / "base_cafe.png"
+CARD_BOX = (196, 34, 1212, 592)   # 1408×768 上の位置。左右の立ち絵（check では高さ240・幅約180）と下の字幕帯（618〜）を避ける
+_NO_HEAD = set("、。，．！？!?」』）)…ーゃゅょっぁぃぅぇぉャュョッァィゥェォ ")
+
+
+def _wrap_chars(text: str, font, max_w: int) -> list:
+    """折り返し（行頭禁則つき）。文節の切れ目（kl_telop_gen の形態素境界）と句読点を優先し、
+    数字・英単語の途中では切らない。[(start, end), ...] を返す。"""
+    d = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+    n = len(text)
+    try:
+        from kl_telop_gen import _token_boundaries
+        good = {b for b in _token_boundaries(text) if 0 < b < n}
+    except Exception:  # janome が無い環境
+        good = set()
+    good |= {i + 1 for i, ch in enumerate(text) if ch in "、。，．）」』・"}
+    alnum = lambda c: c.isascii() and (c.isalnum() or c in ".-")
+    rows, i = [], 0
+    while i < n:
+        j = i + 1
+        while j < n and d.textlength(text[i:j + 1], font=font) <= max_w:
+            j += 1
+        if j < n:
+            # 行の後ろ1/3以内に文節の切れ目があればそこで切る
+            cands = [b for b in good if i + (j - i) * 2 // 3 <= b <= j]
+            if cands:
+                j = max(cands)
+            else:
+                while j - i > 1 and alnum(text[j - 1]) and alnum(text[j]):
+                    j -= 1
+            while j < n and text[j] in _NO_HEAD and j - i > 1:  # 次の行頭に句読点を置かない
+                j -= 1
+        rows.append((i, j))
+        i = j
+    return rows
+
+
+def render_source_card(card: dict, out_path: Path, W: int = 1408, H: int = 768) -> None:
+    """一次資料の該当箇所を、いつものカフェ（ぼかし）の上に置いた紙の資料として描く。
+    文字はAIに描かせず、実フォントで正確に描く（数字・引用の捏造・誤字を防ぐ）。
+    card: {kind, source, quote?, quote_type(原文/要約)?, highlight?, items?[], note?}"""
+    bg = Image.open(CARD_BG_ASSET).convert("RGB").resize((W, H), Image.LANCZOS)
+    from PIL import ImageFilter
+    bg = ImageEnhance.Brightness(bg.filter(ImageFilter.GaussianBlur(14))).enhance(0.62).convert("RGBA")
+    x0, y0, x1, y1 = CARD_BOX
+    # 影と紙
+    shadow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ImageDraw.Draw(shadow).rounded_rectangle((x0 + 8, y0 + 10, x1 + 8, y1 + 10), radius=18, fill=(0, 0, 0, 110))
+    bg.alpha_composite(shadow.filter(ImageFilter.GaussianBlur(8)))
+    dr = ImageDraw.Draw(bg)
+    dr.rounded_rectangle((x0, y0, x1, y1), radius=18, fill=(252, 250, 245, 255))
+    kind_label, kcol = CARD_KINDS.get(card.get("kind"), ("資料", (110, 118, 130)))
+    # 見出し: 種類のチップ＋資料名
+    fk, fs = _font(FONT_BOLD, 28), _font(FONT_MEDIUM, 26)
+    pad = 36
+    kw = _text_w(dr, kind_label, fk)
+    dr.rounded_rectangle((x0 + pad, y0 + 26, x0 + pad + kw + 32, y0 + 26 + 46), radius=10, fill=kcol)
+    dr.text((x0 + pad + 16, y0 + 31), kind_label, font=fk, fill=(255, 255, 255))
+    src = card.get("source", "")
+    sx = x0 + pad + kw + 32 + 18
+    ss = 26
+    while ss > 19 and _text_w(dr, src, _font(FONT_MEDIUM, ss)) > x1 - pad - sx:  # 資料名は1行に収める
+        ss -= 1
+    dr.text((sx, y0 + 34 + (26 - ss) // 2), src, font=_font(FONT_MEDIUM, ss), fill=(70, 78, 92))
+    top = y0 + 26 + 46 + 26
+    dr.line((x0 + pad, top - 12, x1 - pad, top - 12), fill=kcol + (255,), width=3)
+    # 本文の大きさを決めてから描く（大きい字から試し、箇条書きは1項目1行に収まるまで縮める）
+    max_w = (x1 - x0) - pad * 2
+    footer_h = 40
+    avail = (y1 - 22 - footer_h) - top
+    quote, items = card.get("quote", ""), card.get("items") or []
+    size_q, size_i = 50, 42
+    while True:
+        fq, fi = _font(FONT_MEDIUM, size_q), _font(FONT_MEDIUM, size_i)
+        q_rows = _wrap_chars(f"「{quote}」", fq, max_w) if quote else []
+        i_rows = [_wrap_chars(it, fi, max_w - 34) for it in items]
+        h = len(q_rows) * int(size_q * 1.45) + (18 if quote and items else 0) + sum(len(r) for r in i_rows) * int(size_i * 1.42)
+        if (h <= avail and all(len(r) == 1 for r in i_rows)) or size_q <= 28:
+            break
+        if any(len(r) > 1 for r in i_rows) and size_i > 26:
+            size_i -= 1
+        elif h > avail:
+            size_q -= 2
+            size_i = max(26, min(size_i, size_q - 6))
+        else:
+            break
+    # 箇条書きだけのカードで余白が大きいときは、行の間を広げて紙面に散らす
+    i_lh = int(size_i * 1.42)
+    n_i = sum(len(r) for r in i_rows)
+    if not quote and n_i and h < avail * 0.7:
+        i_lh = min(int(size_i * 2.0), int(avail * 0.8 / n_i))
+        h = n_i * i_lh
+    y = top + max(0, (avail - h) // 2)
+    if quote:
+        qt = f"「{quote}」"
+        hl = card.get("highlight")
+        hs = qt.find(hl) if hl else -1
+        he = hs + len(hl) if hs >= 0 else -1
+        lh = int(size_q * 1.45)
+        for a, b in q_rows:
+            row = qt[a:b]
+            if hs >= 0 and a < he and b > hs:
+                s0, s1 = max(a, hs), min(b, he)
+                hx0 = x0 + pad + dr.textlength(qt[a:s0], font=fq)
+                hx1 = x0 + pad + dr.textlength(qt[a:s1], font=fq)
+                dr.rectangle((hx0 - 2, y + int(size_q * 0.55), hx1 + 2, y + int(size_q * 1.18)), fill=(255, 214, 90))
+            dr.text((x0 + pad, y), row, font=fq, fill=(28, 34, 46))
+            y += lh
+        y += 18
+    for rows, it in zip(i_rows, items):
+        lh = i_lh
+        dr.ellipse((x0 + pad + 4, y + size_i // 2 - 6, x0 + pad + 16, y + size_i // 2 + 6), fill=kcol)
+        for a, b in rows:
+            dr.text((x0 + pad + 34, y), it[a:b], font=fi, fill=(28, 34, 46))
+            y += lh
+    # 足元: 原文か要約か、注記
+    ff = _font(FONT_MEDIUM, 22)
+    q_orig = quote and card.get("quote_type", "原文") == "原文"
+    if quote and items:
+        tag = "「…」は原文から引用、・は要約" if q_orig else "要約"
+    else:
+        tag = "原文から引用" if q_orig else "要約"
+    foot = tag + (f"　{card['note']}" if card.get("note") else "")
+    fw = _text_w(dr, foot, ff)
+    dr.text((x1 - pad - fw, y1 - 22 - 28), foot, font=ff, fill=(120, 126, 138))
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    bg.convert("RGB").save(out_path, "PNG")
+
+
+def render_episode_cards(ep: dict) -> list:
+    """source_card を持つシーンのカードを assets/cards/{episode}_S{NN}.png に描き、image_asset を書き込む。"""
+    done = []
+    for s in ep.get("scenes", []):
+        if not s.get("source_card"):
+            continue
+        name = _card_asset_name(ep, s)
+        render_source_card(s["source_card"], BASE_DIR / "assets" / f"{name}.png")
+        s["image_asset"] = name
+        s.pop("image_prompt", None)
+        done.append((s["scene_id"], BASE_DIR / "assets" / f"{name}.png"))
+    return done
+
+
 # ── コマンドライン ────────────────────────────────────────────────
 
 def sync_derived(ep: dict, cast: dict = None) -> None:
@@ -956,13 +1321,24 @@ def sync_derived(ep: dict, cast: dict = None) -> None:
 def main():
     import argparse
     import sys
-    ap = argparse.ArgumentParser(description="掛け合い形式の台本チェック")
-    ap.add_argument("command", choices=["check"])
+    ap = argparse.ArgumentParser(description="掛け合い形式の台本チェック／資料カードの描画")
+    ap.add_argument("command", choices=["check", "cards"],
+                    help="check: 構造チェック（narration を同期）／cards: 資料カード（source_card）を描いて image_asset を書き込む")
     ap.add_argument("--episode", required=True)
     args = ap.parse_args()
     path = BASE_DIR / "episodes" / f"{args.episode}.json"
     ep = json.loads(path.read_text(encoding="utf-8"))
     cast = load_cast()
+    if args.command == "cards":
+        done = render_episode_cards(ep)
+        tmp = path.with_suffix(".json.tmp")
+        tmp.write_text(json.dumps(ep, ensure_ascii=False, indent=2), encoding="utf-8")
+        tmp.replace(path)
+        for sid, p in done:
+            print(f"✅ S{sid:02d}: {p}")
+        print(f"資料カード {len(done)}枚。kl_image_gen.py が image_asset としてコピーする"
+              f"（Desktop に古い S{{NN}}.png があるときは --scenes で指定して上書きする）")
+        return
     errs = validate_episode(ep, cast)
     sync_derived(ep, cast)
     tmp = path.with_suffix(".json.tmp")

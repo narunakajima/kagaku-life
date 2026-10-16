@@ -2053,8 +2053,50 @@
       },
       "source_type": "news",
       "news_date": "2026-10-09"
+    },
+    {
+      "episode_id": "kl041",
+      "status": "produced",
+      "slot_type": "news",
+      "genre": "ai",
+      "health": false,
+      "domain": "life",
+      "concern_id": null,
+      "entry_question": "ソフトバンクの国産AI「Sarashina」が無料で試せるようになった。ChatGPTの代わりになる？",
+      "title": "国産AI「Sarashina」が無料開放。ChatGPTの代わりになる？（10月13日発表）",
+      "format": "dialogue",
+      "references": [
+        {
+          "title": "「Sarashinaサービス」無償ベータ版の提供開始",
+          "authors": [],
+          "year": 2026,
+          "venue": "SB Intuitions プレスリリース（2026-10-13）",
+          "url": "https://www.sbintuitions.co.jp/news/press/20261013_01/",
+          "is_preprint": false,
+          "institution": "SB Intuitions",
+          "source_kind": "press_release"
+        },
+        {
+          "title": "Sarashinaサービス",
+          "authors": [],
+          "year": 2026,
+          "venue": "SB Intuitions 公式ポータル",
+          "url": "https://sarashina.ai/",
+          "is_preprint": false,
+          "institution": "SB Intuitions",
+          "source_kind": "company_website"
+        }
+      ],
+      "hook_idea": "無料で使える国産AI。でも公式の発表に、ChatGPTと比べた数字は1つも出てこない。",
+      "notes": "構成=myth_buster か basic（直近: kl039 basic／kl040 verdict_first。kl038 news_roundup）。予想判定: 夢語り=もうすぐ来る／ツッコミ=3年はかかる or まだ眉唾（AIなので『3年』は機械的に付けない）。【一次資料の事実】プレスリリース(2026-10-13): SB Intuitions(ソフトバンク子会社)。Googleアカウントでログイン、事前申込不要。ブラウザのチャット（対話・ウェブ検索や文章作成・日英翻訳）と、6モデルのAPI(Sarashina3 mini=文章生成・対話／nano=単純タスクの大量高速処理／embedding=検索(RAG)／rerank=検索精度向上／guard=入力の安全性判定／translate=日英翻訳)。レート制限あり(具体値の記載なし)、提供終了時期は未定、品質向上のため利用データを活用する場合がある。料金は無料、今後の有料プランの記載なし、商用利用可否の記載なし。パラメータ数・コンテキスト長・ベンチマークはプレスリリースに記載なし。sarashina.ai は本文が取得できず。【要確認】Sarashina3は2026-06-30提供開始(報道: 日英約30兆トークン学習、デジタル庁Government AIトライアルに採用)。報道経由の数字なので、SB Intuitions TECH BLOG等の公式で確認してから台詞に使う。利用規約(入力データの扱い)は原文を確認。【ツッコミの材料】データが改善に使われうる／レート制限の数値なし／ベータで終了時期未定／ChatGPTと比べた数字が公式に無い／商用利用の記載なし。報道は手がかりだけ。2026-10-16に夜間ベスト3の1位(本命 core100)から選定。YouTube競合は未確認。直近4話でai2本(kl037・kl038)なのが懸念。",
+      "stage4_snapshot": {
+        "overall_score": 3.6,
+        "news_candidate_id": "630403055e"
+      },
+      "source_type": "news",
+      "news_date": "2026-10-13"
     }
   ],
-  "total_topics": 40,
+  "total_topics": 41,
   "last_updated": "2026-10-15"
 }
