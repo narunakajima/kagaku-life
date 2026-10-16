@@ -122,7 +122,7 @@
       "source_kind": "tech_report"
     }
   ],
-  "youtube_description": "2026年10月13日、Googleが新しいAIモデル「Gemini 4 Argon」の一般提供を始めました。公式ブログには、Vals Index という評価で「1位」と書かれています。ただし、その記事には点数も、比べた他社のモデル名も書かれていません。では、その「1位」は、どの評価での1位なのか。夢語り担当の大輔と、ツッコミ担当の沙織が、Googleの公式ブログ2本と、2つの独立した評価（Vals AI と Artificial Analysis）、そして実際に使った人の声（Hacker News の議論と、YouTube の検証動画7本）で確かめます。\n\n■ この回の判定（2026年10月16日時点の、二人の見立て）\nお題: Gemini 4 Argon に仕事を任せる日は、もうすぐ来るか\n大輔: もうすぐ来る（ただし、長い資料や動画を読み解いて下書きを作るといった机の仕事に絞って。使った人の声でも、動画の理解や指示を守る力は評判が良かった。経理の画面操作のような事務作業は、今回の評価からは分からない。ロボットのように体を動かす仕事は3年はかかる、というのが大輔の見立て）\n沙織: もうすぐ来る（条件付き。予想は「1位は宣伝の数字で、まだ眉唾」で、半分当たり、半分外れ。Vals AI の評価では確かに1位だが、Artificial Analysis の総合点では首位ではない。どちらの総合点でも上位で、もう有料で使える。条件は、結果を確かめながら使うことと、利用の上限の壁（使った人の声では、上限にすぐ達する・使えるまでの手間への不満が多い）。Googleが自分で出した「35%以上」「7回連続」は、測り方が書かれていないので、判定の根拠には数えていない）\n\n■ 一次資料・独立評価に書いてあること\n・Google 公式ブログ（2026年10月13日）: Gemini 4 Argon の一般提供。Vals Index で「ranking #1」（点数・他社のモデル名は記載なし）。Chrome の約4,000万行のコードのうち、約600万行の古いフォルダから、ウェブページを処理する中心部分を切り離す作業を、数か月から数週間に（クラッシュの削減などは見込みとして記載）。開発ツール Antigravity で、ここ数週間にチームのAIによるコード提出が35%以上増え、やり直し（ロールバック）が減った（何チーム・何人か、何と比べたかは記載なし）。人がコーンホールをする動画からシミュレーションを組み立て、Apptronik の人型ロボット Apollo に移して、実環境の試しで7回連続で成功（試行の総数・失敗の数は記載なし）。導入価格は100万トークンあたり入力2ドル・出力10ドルで11月30日まで、12月1日からは入力4ドル・出力20ドル。提供はAPIの有料枠と、Google AI Ultra／Pro\n・Google Developers Blog「Gemini 4 Argon for Robotics」（2026年10月13日）: Apollo の球投げで、積んだ的の箱6個をすべて倒す検証（「6/6」）は、物理シミュレーションの中での確認。Boston Dynamics の Spot がペダル式のゴミ箱を開けるデモは、試行回数・成功率の記載なし。机の上の二本腕ロボットで、シミュレーションで作った4,500本以上のデータを学習させると、実機の評価で成功率が56%から75%に向上\n・Vals AI「Vals Index」（2026年10月13日更新）: Gemini 4 Argon 68.90%（±0.97）で1位。次いで Claude Sonnet 5.5 67.04%、Claude Opus 5.5 66.97%、Claude Fable 5.1 65.83%、GPT-6 Astra 63.13%。Vals Index は、金融・コーディング・法務・税務の評価を、米国の経済に占める分野の大きさで重み付けした指標\n・Vals AI の Gemini 4 Argon のページ: 金融の評価（Finance Agent v2）は1位で65.40%。CUA-bench は4.83%。CUA-bench は、AIが画面・キーボード・マウスだけで市販のパソコンゲームを遊べるかを測る試験で、どのモデルも20点未満（試験の中身と他モデルの結果は報道による）。事務作業の試験ではない。Robo-bench（0.83%）は、何を測る試験か確認できなかったため扱っていない。評価の設定は reasoning effort high\n・Artificial Analysis（2026年10月16日に確認）: 10種類の評価をまとめた Intelligence Index で、Claude Opus 5.5（max）58、Claude Sonnet 5.5（max）56、Gemini 4 Argon（high）53、GPT-6 Astra（max）53。（ ）内は推論の強さの設定で、各社で異なるため、完全に同じ条件の比較ではない。ページに評価日の記載はない\n・Hacker News のスレッド（2026年10月16日に確認）: 公開から2日でコメント1,000件超。スレッド全体を読んだうえでの、匿名のコメントの傾向（個人の感想で測定ではなく、割合は言えない）。最も共通して多いのは提供体制への不満（すぐに使えない、Ultra のみの表示、利用枠・料金の分かりにくさ）。良い評価: 文章が簡潔で読みやすい、長い推論が要る難問に強い、画像からの HTML/SVG の再現など（具体的な検証に基づくものは少数）。悪い評価・不具合: 推論のループや途中のエラー、思考に使う量が多く時間と費用がかさむ、少し遅いという声が多い。コーディングは OpenAI のモデルを上とする意見が多く、Claude Opus 5.5 と同等・劣るの意見も混在して割れている。ベンチマークへの過剰適合を疑う声もある\n・YouTube の検証動画7本（2026年10月16日に確認）: 各動画の内容は、動画をAI（Gemini）で要約して確認した傾向で、投稿者の個人の検証であり測定ではない。複数の動画に共通: 利用の上限にすぐ達する・使えるまでの手間が大きい（Antigravity は Ultra のみ、など）。コーディングは Claude Opus 5.5 などのトップに及ばないという検証が複数。長い動画・音声の理解、ゲーム・SVG・3D など動くものを一度に作る力、複雑な指示を守る力は強いという検証が複数。1本の検証のみ: 事実確認の問題で、分からない問題は「分からない」と答えて誤答は0だったが、正答数は他社より少なかった。別の1本では、古い推計データを現在の数字として書いた。速さは、速いという検証と遅いという検証の両方がある。公式の見せ方（Vals Index の扱いなど）を疑問視する動画もある。結論は「即戦力」から「使うな」まで割れている。多くの動画は、投稿者自身の有料サービスの宣伝を含む\n\n■ 一次資料に書いていないこと\n・Google の公式ブログに、Vals Index の点数と、比べた他社のモデル名\n・「35%以上」の母数（何チーム・何人か）と比較の条件\n・ロボットの実環境の試しの総数と失敗の数\n\n■ 使わなかった情報\n・報道で伝えられた数字や評価は、この動画の根拠にしていません。台詞の数字は、上の一次資料と、Vals AI・Artificial Analysis のページにあるものだけです\n・Google の公式ブログにある、外部団体の非公開の評価（希少疾患の診断支援など）の数字は、第三者が確かめられないため扱っていません\n\n※この回の元は企業の発表と、評価会社の公開データ、コミュニティの議論、個人の検証動画で、専門家の審査を経た学術論文ではありません。評価会社の点数・順位は更新で変わることがあります。\n※特定のサービスの利用や、企業への投資を勧めるものではありません。\n\n■ 参考（一次資料・独立評価・議論・検証動画）\n[1] Google「Gemini 4 Argon is now available globally」(2026-10-13) https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\n[2] Google Developers Blog「Gemini 4 Argon for Robotics」(2026-10-13) https://developers.googleblog.com/en/gemini-4-argon-for-robotics/\n[3] Vals AI「Vals Index」(2026-10-13更新) https://www.vals.ai/benchmarks/vals_index\n[4] Vals AI「Gemini 4 Argon」 https://www.vals.ai/models/google_gemini-4-argon\n[5] Artificial Analysis「LLM Leaderboard」(2026-10-16に確認) https://artificialanalysis.ai/leaderboards/models\n[6] Artificial Analysis「Gemini 4 Argon」(2026-10-16に確認) https://artificialanalysis.ai/models/gemini-4-argon\n[7] Hacker News のスレッド（コミュニティの議論、全体を読了、2026-10-16に確認） https://news.ycombinator.com/item?id=50073879\n[8] YouTube の検証動画（投稿者の個人の検証。内容はAIで要約して確認）\n　・「【使うな危険⚠️】Gemini4 Argonを使ったら仕事が一気に進まなくなりました。…」 TAKAは今日もGemiってる https://www.youtube.com/watch?v=KWaWz98v8jM\n　・「ついにキタ『Gemini 4 Argon』徹底解説&検証！Opus 5.5やGPT-6と比べてみた」 KEITO【AI&WEB ch】 https://www.youtube.com/watch?v=uNSx7NCNbzw\n　・「【速報】Gemini 4 Argon登場！3大AI比較検証と使ってみた私の正直な結論」 社長のAI実践チャンネル -眼から鱗 長島- https://www.youtube.com/watch?v=dJPgj1BG2IY\n　・「新型Gemini 4 Argonを23のコーディングプロンプトで試してみた」 AI Coding Daily https://www.youtube.com/watch?v=e_GBFt-o_FY\n　・「【ガチ良い】『Gemini 4 Argon』を徹底的に使い込んだので解説！…」 まさおAIじっくり解説ch https://www.youtube.com/watch?v=eyRBhpuc5Yw\n　・「【ついに解禁！】Google最強AI「Gemini 4 Argon」の実力を徹底検証！…」 じゅりん│AIビジネス活用塾 https://www.youtube.com/watch?v=vaiBgpDCIQI\n　・「【Googleの逆襲】Gemini 4 Argon、ガチで最強だった。…」 Claude Code業務自動化の教科書 https://www.youtube.com/watch?v=kKYJ2CuZiSo\n",
+  "youtube_description": "2026年10月13日、Googleが新しいAIモデル「Gemini 4 Argon」の一般提供を始めました。公式ブログには、Vals Index という評価で「1位」と書かれています。ただし、その記事には点数も、比べた他社のモデル名も書かれていません。では、その「1位」は、どの評価での1位なのか。夢語り担当の大輔と、ツッコミ担当の沙織が、Googleの公式ブログ2本と、2つの独立した評価（Vals AI と Artificial Analysis）、そして実際に使った人の声（Hacker News の議論と、YouTube の検証動画7本）で確かめます。\n\n■ この回の判定（2026年10月16日時点の、二人の見立て）\nお題: Gemini 4 Argon に仕事を任せる日は、もうすぐ来るか\n大輔: もうすぐ来る（ただし、長い資料や動画を読み解いて下書きを作るといった机の仕事に絞って。使った人の声でも、動画の理解や指示を守る力は評判が良かった。経理の画面操作のような事務作業は、今回の評価からは分からない。ロボットのように体を動かす仕事は3年はかかる、というのが大輔の見立て）\n沙織: もうすぐ来る（条件付き。予想は「1位は宣伝の数字で、まだ眉唾」で、半分当たり、半分外れ。Vals AI の評価では確かに1位だが、Artificial Analysis の総合点では首位ではない。どちらの総合点でも上位で、もう有料で使える。条件は、結果を確かめながら使うことと、利用の上限の壁（使った人の声では、上限にすぐ達する・使えるまでの手間への不満が多い）。Googleが自分で出した「35%以上」「7回連続」は、測り方が書かれていないので、判定の根拠には数えていない）\n\n■ 一次資料・独立評価に書いてあること\n・Google 公式ブログ（2026年10月13日）: Gemini 4 Argon の一般提供。Vals Index で「ranking #1」（点数・他社のモデル名は記載なし）。Chrome の約4,000万行のコードのうち、約600万行の古いフォルダから、ウェブページを処理する中心部分を切り離す作業を、数か月から数週間に（クラッシュの削減などは見込みとして記載）。開発ツール Antigravity で、ここ数週間にチームのAIによるコード提出が35%以上増え、やり直し（ロールバック）が減った（何チーム・何人か、何と比べたかは記載なし）。人がコーンホールをする動画からシミュレーションを組み立て、Apptronik の人型ロボット Apollo に移して、実環境の試しで7回連続で成功（試行の総数・失敗の数は記載なし）。導入価格は100万トークンあたり入力2ドル・出力10ドルで11月30日まで、12月1日からは入力4ドル・出力20ドル。提供はAPIの有料枠と、Google AI Ultra／Pro\n・Google Developers Blog「Gemini 4 Argon for Robotics」（2026年10月13日）: Apollo の球投げで、積んだ的の箱6個をすべて倒す検証（「6/6」）は、物理シミュレーションの中での確認。Boston Dynamics の Spot がペダル式のゴミ箱を開けるデモは、試行回数・成功率の記載なし。机の上の二本腕ロボットで、シミュレーションで作った4,500本以上のデータを学習させると、実機の評価で成功率が56%から75%に向上\n・Vals AI「Vals Index」（2026年10月13日更新）: Gemini 4 Argon 68.90%（±0.97）で1位。次いで Claude Sonnet 5.5 67.04%、Claude Opus 5.5 66.97%、Claude Fable 5.1 65.83%、GPT-6 Astra 63.13%。Vals Index は、金融・コーディング・法務・税務の評価を、米国の経済に占める分野の大きさで重み付けした指標\n・Vals AI の Gemini 4 Argon のページ: 金融の評価（Finance Agent v2）は1位で65.40%。CUA-bench は4.83%。CUA-bench は、AIが画面・キーボード・マウスだけで市販のパソコンゲームを遊べるかを測る試験で、どのモデルも20点未満（試験の中身と他モデルの結果は報道による）。事務作業の試験ではない。Robo-bench（0.83%）は、何を測る試験か確認できなかったため扱っていない。評価の設定は reasoning effort high\n・Artificial Analysis（2026年10月16日に確認）: 10種類の評価をまとめた Intelligence Index で、Claude Opus 5.5（max）58、Claude Sonnet 5.5（max）56、Gemini 4 Argon（high）53、GPT-6 Astra（max）53。（ ）内は推論の強さの設定で、各社で異なるため、完全に同じ条件の比較ではない。ページに評価日の記載はない\n・Hacker News のスレッド（2026年10月16日に確認）: 公開から2日でコメント1,000件超。スレッド全体を読んだうえでの、匿名のコメントの傾向（個人の感想で測定ではなく、割合は言えない）。最も共通して多いのは提供体制への不満（すぐに使えない、Ultra のみの表示、利用枠・料金の分かりにくさ）。良い評価: 文章が簡潔で読みやすい、長い推論が要る難問に強い、画像からの HTML/SVG の再現など（具体的な検証に基づくものは少数）。悪い評価・不具合: 推論のループや途中のエラー、思考に使う量が多く時間と費用がかさむ、少し遅いという声が多い。コーディングは OpenAI のモデルを上とする意見が多く、Claude Opus 5.5 と同等・劣るの意見も混在して割れている。ベンチマークへの過剰適合を疑う声もある\n・YouTube の検証動画7本（2026年10月16日に確認）: 各動画の内容は、動画をAI（Gemini）で要約して確認した傾向で、投稿者の個人の検証であり測定ではない。複数の動画に共通: 利用の上限にすぐ達する・使えるまでの手間が大きい（Antigravity は Ultra のみ、など）。コーディングは Claude Opus 5.5 などのトップに及ばないという検証が複数。長い動画・音声の理解、ゲーム・SVG・3D など動くものを一度に作る力、複雑な指示を守る力は強いという検証が複数。1本の検証のみ: 事実確認の問題で、分からない問題は「分からない」と答えて誤答は0だったが、正答数は他社より少なかった。別の1本では、古い推計データを現在の数字として書いた。速さは、速いという検証と遅いという検証の両方がある。公式の見せ方（Vals Index の扱いなど）を疑問視する動画もある。結論は「即戦力」から「使うな」まで割れている。多くの動画は、投稿者自身の有料サービスの宣伝を含む\n\n■ 一次資料に書いていないこと\n・Google の公式ブログに、Vals Index の点数と、比べた他社のモデル名\n・「35%以上」の母数（何チーム・何人か）と比較の条件\n・ロボットの実環境の試しの総数と失敗の数\n\n■ 使わなかった情報\n・報道で伝えられた数字や評価は、この動画の根拠にしていません。台詞の数字は、上の一次資料と、Vals AI・Artificial Analysis のページにあるものだけです\n・Google の公式ブログにある、外部団体の非公開の評価（希少疾患の診断支援など）の数字は、第三者が確かめられないため扱っていません\n\n※この回の元は企業の発表と、評価会社の公開データ、コミュニティの議論、個人の検証動画で、専門家の審査を経た学術論文ではありません。評価会社の点数・順位は更新で変わることがあります。\n※特定のサービスの利用や、企業への投資を勧めるものではありません。\n\n■ 参考（一次資料・独立評価・議論・検証動画）\n[1] Google「Gemini 4 Argon is now available globally」(2026-10-13) https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\n[2] Google Developers Blog「Gemini 4 Argon for Robotics」(2026-10-13) https://developers.googleblog.com/en/gemini-4-argon-for-robotics/\n[3] Vals AI「Vals Index」(2026-10-13更新) https://www.vals.ai/benchmarks/vals_index\n[4] Vals AI「Gemini 4 Argon」 https://www.vals.ai/models/google_gemini-4-argon\n[5] Artificial Analysis「LLM Leaderboard」(2026-10-16に確認) https://artificialanalysis.ai/leaderboards/models\n[6] Artificial Analysis「Gemini 4 Argon」(2026-10-16に確認) https://artificialanalysis.ai/models/gemini-4-argon\n[7] Hacker News のスレッド（コミュニティの議論、全体を読了、2026-10-16に確認） https://news.ycombinator.com/item?id=50073879\n[8] YouTube の検証動画（投稿者の個人の検証。内容はAIで要約して確認）\n　・「【使うな危険⚠️】Gemini4 Argonを使ったら仕事が一気に進まなくなりました。…」 TAKAは今日もGemiってる https://youtu.be/KWaWz98v8jM\n　・「ついにキタ『Gemini 4 Argon』徹底解説&検証！Opus 5.5やGPT-6と比べてみた」 KEITO【AI&WEB ch】 https://youtu.be/uNSx7NCNbzw\n　・「【速報】Gemini 4 Argon登場！3大AI比較検証と使ってみた私の正直な結論」 社長のAI実践チャンネル -眼から鱗 長島- https://youtu.be/dJPgj1BG2IY\n　・「新型Gemini 4 Argonを23のコーディングプロンプトで試してみた」 AI Coding Daily https://youtu.be/e_GBFt-o_FY\n　・「【ガチ良い】『Gemini 4 Argon』を徹底的に使い込んだので解説！…」 まさおAIじっくり解説ch https://youtu.be/eyRBhpuc5Yw\n　・「【ついに解禁！】Google最強AI「Gemini 4 Argon」の実力を徹底検証！…」 じゅりん│AIビジネス活用塾 https://youtu.be/vaiBgpDCIQI\n　・「【Googleの逆襲】Gemini 4 Argon、ガチで最強だった。…」 Claude Code業務自動化の教科書 https://youtu.be/kKYJ2CuZiSo\n\n🎵 Music: Mystery Solved (loop).wav by X3nus (freesound.org) — CC BY 4.0",
   "scenes": [
     {
       "scene_id": 1,
@@ -149,7 +149,12 @@
       "narration": "大輔「グーグルの新AIが、一般提供になった！」",
       "narrator": "dialogue",
       "lines_hash": "dca971cf0797",
-      "image_prompt": "Bright daytime in a modern, airy software engineering office (soft natural daylight through large windows, clearly daytime). Seen from behind a row of empty desks: several large monitors showing only blurred, unreadable columns of colorful code-like lines, and one big central monitor displaying a softly glowing abstract diagram of a huge branching tree of folders, with one large branch highlighted in warm coral being neatly separated from the rest. Potted plants, coffee mugs, notebooks. No people. No logos, no brand marks, no readable text, no letters, no numbers."
+      "image_prompt": "Bright daytime in a modern, airy software engineering office (soft natural daylight through large windows, clearly daytime). Seen from behind a row of empty desks: several large monitors showing only blurred, unreadable columns of colorful code-like lines, and one big central monitor displaying a softly glowing abstract diagram of a huge branching tree of folders, with one large branch highlighted in warm coral being neatly separated from the rest. Potted plants, coffee mugs, notebooks. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 2,
@@ -175,7 +180,12 @@
       ],
       "narration": "沙織「でも発表の「1位」には、点数も他社の名前も無い。」",
       "narrator": "dialogue",
-      "lines_hash": "169970d9612d"
+      "lines_hash": "169970d9612d",
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.65,
+        "y": 74.0
+      }
     },
     {
       "scene_id": 3,
@@ -200,7 +210,12 @@
       ],
       "narration": "大輔「外の評価会社のページでも、確かに1位！」",
       "narrator": "dialogue",
-      "lines_hash": "f50f79a3c4d4"
+      "lines_hash": "f50f79a3c4d4",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 4,
@@ -232,7 +247,12 @@
       ],
       "narration": "沙織「でも別の評価だと……その1位、どの評価で？」",
       "narrator": "dialogue",
-      "lines_hash": "ce6ef83d7067"
+      "lines_hash": "ce6ef83d7067",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 5,
@@ -387,7 +407,12 @@
       ],
       "narration": "大輔「グーグルの新しいAI、ジェミニ4アルゴンが、10月13日に一般提供になった。」\n沙織「見た。公式ブログに、ある評価で1位、って書いてあるやつね。」\n大輔「そう。だから今日のお題は、アルゴンに仕事を任せる日は、もうすぐ来るか。」\n沙織「じゃあ、先に予想ね。」\n大輔「僕は、もう来てる。1位なんだから、パソコン仕事も、ロボットも、全部任せられる。」\n沙織「私は、まだ眉唾。自分に都合のいいテストで1位、って話でしょ。宣伝の数字だと思う。」\n大輔「言うね。じゃあ、その1位から確かめよう。」",
       "narrator": "dialogue",
-      "lines_hash": "cf963b8bfb7e"
+      "lines_hash": "cf963b8bfb7e",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 6,
@@ -517,7 +542,8 @@
       "image_asset": "cards/kl042_S06",
       "narration": "沙織「まず公式ブログ。英語で、ヴァルズ・インデックスで1位、とだけ書いてある。」\n大輔「ほら、1位！」\n沙織「点数は？ 2位は？ どれも書いてない。」\n大輔「そのヴァルズって、グーグルの評価？」\n沙織「違う。ヴァルズ・エーアイっていう、外の会社の評価。」\n大輔「なら、そっちで答え合わせできる。見に行こう。」\n［画面の資料カード］Google 公式ブログ（2026年10月13日） 「ranking #1 on the Vals Index」（原文） ・Vals Indexの点数: 記載なし ・比べた他社のモデル名: 記載なし ・Vals Index: 経済の重要な分野で性能を測る指標",
       "narrator": "dialogue",
-      "lines_hash": "36ae79185d66"
+      "lines_hash": "36ae79185d66",
+      "ken_burns": "static"
     },
     {
       "scene_id": 7,
@@ -669,7 +695,8 @@
       ],
       "narration": "沙織「ヴァルズ・エーアイのページ。10月13日の更新。」\n大輔「アルゴンは、68.9%で1位！」\n沙織「2位は？」\n大輔「クロード・ソネット5.5で、67.04%。」\n沙織「……ここでは、本当に1位だ。」\n大輔「でしょ！ この評価は、金融、プログラミング、法律、税金の問題を、経済での大きさで重みづけしてる。」\n沙織「お金とコードの仕事が重い、ってことね。で、2位との差は約1.9ポイント。」\n沙織「1位は1位。でも、大差じゃない。」",
       "narrator": "dialogue",
-      "lines_hash": "78db57ff6957"
+      "lines_hash": "78db57ff6957",
+      "ken_burns": "static"
     },
     {
       "scene_id": 8,
@@ -891,7 +918,12 @@
       "narration": "大輔「じゃあ、想像してみてよ。」\n大輔「たとえば僕が、小さな会社で経理を一人でやってたとする。月末にアルゴンに頼む。請求書の画面を開いて、数字を表に写して、送っておいて、って。」\n沙織「はい、そこ。画面を開いて、写して、送る。それは、パソコンの操作ね。」\n大輔「そう。総合1位なんだから、それも得意でしょ。」\n沙織「ヴァルズのページには、画面とキーボードとマウスだけで、ゲームを遊ぶテストもある。」\n大輔「結果は？」\n沙織「どのモデルも20点未満。アルゴンは4.83%で、トップでもない。」\n大輔「でもそれ、ゲームでしょ。経理とは別じゃない？」\n沙織「別。だから経理の画面操作は、この点数では分からない。任せる範囲は、1位だった評価の中身で決めよう。」\n大輔「総合1位だから全部任せられる、は言い過ぎだったか。」",
       "narrator": "dialogue",
       "lines_hash": "35d57586a973",
-      "reference_index": 3
+      "reference_index": 3,
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 9,
@@ -1121,7 +1153,8 @@
       "image_asset": "cards/kl042_S09",
       "narration": "沙織「別の独立評価も見た。アーティフィシャル・アナリシス。」\n大輔「そっちでも1位でしょ？」\n沙織「別の評価だと、アルゴンは53点。首位じゃない。」\n大輔「……え？ じゃあ首位は？」\n沙織「クロード・オーパス5.5の、58点。」\n大輔「ヴァルズでは1位だったのに。どっちが本当？」\n沙織「どっちも本当。こっちは10種類の評価で、範囲が広い。」\n沙織「それに、推論の強さの設定も各社で違う。同じ条件じゃない。」\n大輔「じゃあ、グーグルの1位は、うそ？」\n沙織「うそじゃない。でも、どの評価でも1位、とは言えない。」\n大輔「で、宣伝の数字、って予想は？」\n沙織「半分当たりで、半分外れ。」\n［画面の資料カード］Artificial Analysis（2026年10月16日に確認） ・Claude Opus 5.5（max）: 58 ・Claude Sonnet 5.5（max）: 56 ・Gemini 4 Argon（high）: 53 ・GPT-6 Astra（max）: 53 ・（ ）は推論の強さの設定。各社で違う ※Intelligence Index（10種の評価の総合）",
       "narrator": "dialogue",
-      "lines_hash": "ff041947a7c3"
+      "lines_hash": "ff041947a7c3",
+      "ken_burns": "static"
     },
     {
       "scene_id": 10,
@@ -1300,7 +1333,8 @@
         ],
         "reference_index": 0
       },
-      "image_asset": "cards/kl042_S10"
+      "image_asset": "cards/kl042_S10",
+      "ken_burns": "static"
     },
     {
       "scene_id": 11,
@@ -1536,7 +1570,8 @@
       "image_asset": "cards/kl042_S11",
       "narration": "大輔「海外の掲示板、ハッカーニュース。公開2日で、コメントが1,000件超え。」\n沙織「全部読んだ？」\n大輔「全部。それと、日本の検証動画も7本見た。」\n沙織「じゃあ、全体の傾向として聞く。」\n大輔「長い動画の理解、ゲームや3Dみたいな動くものを作る、指示を守る。複数の検証で強いって。」\n沙織「でも、コードはトップに及ばない、って検証が複数。調べものが不正確だった、って検証もある。」\n大輔「とはいえ、使えれば強いんでしょ？」\n沙織「使えれば、ね。推論が回り続ける、途中でエラーになる、って報告が複数。遅い、って声も多い。」\n沙織「一番多い不満は、使える量。上限にすぐ達して、仕事が止まった、って検証もある。」\n大輔「……評判も、1位一色じゃないんだ。」\n沙織「結論も、即戦力から、使うな、まで割れてる。点数の順位と同じね。」\n［画面の資料カード］Hacker News と YouTube の検証動画（2026年10月16日に確認） ・強い: 動画の理解・動くもの作り・指示順守 ・弱い: コードはトップ未満、調べものの正確さ ・共通の不満: 上限にすぐ達する・使えるまでの壁 ・割れる: 速さ、結論（即戦力〜使うな） ・出どころ: 匿名の声と投稿者の検証 ※AIで要約した個人の検証の傾向（測定ではない）",
       "narrator": "dialogue",
-      "lines_hash": "9b57f6b33905"
+      "lines_hash": "9b57f6b33905",
+      "ken_burns": "static"
     },
     {
       "scene_id": 12,
@@ -1656,7 +1691,12 @@
       ],
       "narration": "大輔「言い直す。想像してみてよ。」\n大輔「たとえば小さな会社に、20年前から誰も触れない古い受発注のプログラムがあるとする。アルゴンに読ませて、どこから切り分けるか、下書きを作らせる。」\n沙織「下書きなら、その会社で何%速くなったか、自分たちで測れるね。」\n大輔「そう。35%を信じなくても、自分で確かめればいい。」\n沙織「切り分けるかを決めるのは、人。そこを外さなければね。」",
       "narrator": "dialogue",
-      "lines_hash": "28da40e6fa47"
+      "lines_hash": "28da40e6fa47",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 13,
@@ -1793,7 +1833,12 @@
       ],
       "narration": "大輔「もう1つ。僕が一番わくわくしたのが、ロボット。」\n沙織「体を動かす方ね。公式ブログで、一番派手な話。」\n大輔「まあ聞いてよ。人がコーンホールっていう遊びをする動画から、アルゴンが練習用のシミュレーションを自分で組んだ。」\n沙織「動画から、練習場を作ったのね。で？」\n大輔「それを、アプトロニックの人型ロボット、アポロに移したら、本物の環境で、7回連続で入れた。」\n沙織「7回連続、ね。で、それ何回試したの？ 原文を見よう。」",
       "narrator": "dialogue",
-      "lines_hash": "62116b2de318"
+      "lines_hash": "62116b2de318",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 14,
@@ -1965,7 +2010,8 @@
       "image_asset": "cards/kl042_S14",
       "narration": "沙織「公式ブログは、7回連続、とだけ。何回挑戦したかは、書いてない。」\n大輔「でも、開発者向けのブログには、シミュレーションの中で、的の箱6個を全部倒す検証もあるよ。」\n沙織「計算の中の話、ね。」\n大輔「実機の数字は、1つもないの？」\n沙織「1つある。机の上の二本腕ロボットに、シミュレーションのデータを学習させた実験。」\n大輔「成功率が、56%から75%に！ 実機で伸びてる。」\n沙織「伸びてる。でも75%なら、4回に1回は失敗する。体を動かす方は、計算の中だけでは越えられない壁が残ってる。」\n［画面の資料カード］Google 公式ブログ（2026年10月13日） 「the robot quickly sank seven consecutive shots in a real-world trial」（原文） ・試した回数の合計: 記載なし ・失敗の数: 記載なし",
       "narrator": "dialogue",
-      "lines_hash": "f12db4c0498e"
+      "lines_hash": "f12db4c0498e",
+      "ken_burns": "static"
     },
     {
       "scene_id": 15,
@@ -2075,7 +2121,8 @@
       "image_asset": "cards/kl042_S15",
       "narration": "大輔「じゃあ、机の仕事なら、今日から誰でも使えるよね。一般提供だし。」\n沙織「一般提供は、無料って意味じゃない。使えるのは、APIの有料の枠と、グーグルの有料プラン。」\n大輔「お値段は？」\n沙織「画面の値段は、11月30日まで。12月1日からは、ちょうど倍。」\n［画面の資料カード］Google 公式ブログ（2026年10月13日） 「an introductory price of $2 per million input tokens and $10 per million output tokens」（原文） ・導入価格は11月30日まで ・12月1日から: 入力$4・出力$20 ・（どちらも100万トークンあたり） ・提供: APIの有料枠、Google AI Ultra／Pro",
       "narrator": "dialogue",
-      "lines_hash": "ca79906d43b6"
+      "lines_hash": "ca79906d43b6",
+      "ken_burns": "static"
     },
     {
       "scene_id": 16,
@@ -2254,7 +2301,12 @@
       ],
       "narration": "沙織「じゃあ、判定。お題は、アルゴンに仕事を任せる日は、もうすぐ来るか。」\n大輔「僕は「もうすぐ来る」。ただし、長い資料や動画を読み解いて、下書きを作る机の仕事。評判も、そこは良かった。」\n沙織「私も「もうすぐ来る」。ただし、条件付き。」\n沙織「総合点なら、どちらの独立評価でも上位。もう有料で使える。」\n沙織「条件は、確かめながら使うことと、上限の壁。35%と7回連続は数えない。」\n大輔「体を動かすロボットは、3年はかかると思う。」\n大輔「僕の予想は、全部もう来てる、だった。判定は同じ向きだけど、範囲を机の仕事に絞った。」\n沙織「私の予想は、宣伝の数字で眉唾。結果は半分当たり、半分外れ。眉唾から、条件付きのもうすぐ、に変えた。」",
       "narrator": "dialogue",
-      "lines_hash": "9a0c1b3165e5"
+      "lines_hash": "9a0c1b3165e5",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 17,
@@ -2356,7 +2408,12 @@
       ],
       "narration": "沙織「今日の決め手は、物差しを並べたこと。判定は、10月16日時点の、二人の見立て。」\n大輔「順位は、新しいモデルが出れば入れ替わるかも。値段が変わる12月に、また見よう。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」",
       "narrator": "dialogue",
-      "lines_hash": "0ae953d5a883"
+      "lines_hash": "0ae953d5a883",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     }
   ],
   "shorts": [
@@ -2409,5 +2466,10 @@
         }
       ]
     }
-  ]
+  ],
+  "bgm_sources": {
+    "intro": "BGM/kl042-BGM-intro.mp3",
+    "main": "BGM/kl042-BGM-main.mp3",
+    "outro": "BGM/kl042-BGM-outro.mp3"
+  }
 }
