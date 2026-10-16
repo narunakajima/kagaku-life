@@ -539,7 +539,7 @@
       "buzz_trend": 1.0,
       "buzz_articles_14d": 1,
       "buzz_raw_items": 1,
-      "buzz_measured_at": "2026-10-15T11:33:33",
+      "buzz_measured_at": "2026-10-17T07:05:48",
       "buzz_query": "ニューカッスル大学 筋トレ",
       "jp_usable": 5,
       "work_relevance": 1,
@@ -600,8 +600,27 @@
           "articles_14d": 1,
           "raw_items": 1,
           "seeded": true
+        },
+        {
+          "at": "2026-10-17T07:05:48",
+          "query": "ニューカッスル大学 筋トレ",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "筋トレは週1回でも意味がある？研究でわかった“ちょうどいい量”",
+              "outlet": "フロントロウ",
+              "date": "2026-10-09"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 1
         }
-      ]
+      ],
+      "buzz_adopted_at": "2026-10-17T07:05:48",
+      "buzz_adopted_n": 2
     },
     {
       "title": "Scientists may have found a “unifying theory” of chronic fatigue",
@@ -1364,7 +1383,13 @@
           "raw_items": 31,
           "seeded": true
         }
-      ]
+      ],
+      "topic_pool_first": {
+        "date": "2026-10-02",
+        "title": "NVIDIA DGX Spark 64GB Gives Developers More Ways to Build and Scale Local AI",
+        "id": "1f284fec3a",
+        "source": "NVIDIA Blog"
+      }
     },
     {
       "title": "Nearly 6 in 10 people with high blood pressure don’t know they have it",
@@ -2051,7 +2076,7 @@
       "buzz_trend": 0.0,
       "buzz_articles_14d": 1,
       "buzz_raw_items": 1,
-      "buzz_measured_at": "2026-10-15T11:33:35",
+      "buzz_measured_at": "2026-10-17T07:05:37",
       "buzz_query": "NVIDIA 乳がん",
       "jp_usable": 1,
       "work_relevance": 2,
@@ -2106,8 +2131,27 @@
           "articles_14d": 1,
           "raw_items": 1,
           "seeded": true
+        },
+        {
+          "at": "2026-10-17T07:05:37",
+          "query": "NVIDIA 乳がん",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "乳がん医療に広がるAI活用 撮像、乳房密度評価から治療反応予測まで",
+              "outlet": "千葉テレビ放送株式会社",
+              "date": "2026-10-06"
+            }
+          ],
+          "trend": 0.0,
+          "articles_14d": 1,
+          "raw_items": 1
         }
-      ]
+      ],
+      "buzz_adopted_at": "2026-10-17T07:05:37",
+      "buzz_adopted_n": 2
     },
     {
       "title": "Scientists reveal what seven days of fasting does to the human body",
@@ -2427,7 +2471,7 @@
       "buzz_trend": 0.5,
       "buzz_articles_14d": 2,
       "buzz_raw_items": 4,
-      "buzz_measured_at": "2026-10-15T11:33:38",
+      "buzz_measured_at": "2026-10-17T07:05:40",
       "buzz_query": "シャープ 介護AIトレーナー",
       "url_check": [
         {
@@ -2481,8 +2525,32 @@
           "articles_14d": 2,
           "raw_items": 4,
           "seeded": true
+        },
+        {
+          "at": "2026-10-17T07:05:40",
+          "query": "シャープ 介護AIトレーナー",
+          "measured": 2,
+          "outlets": 2,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "シャープ・パナソニック：人材不足の介護現場、ＡＩで業務効率化…訓練や健康管理担いスタッフの負担軽減へ",
+              "outlet": "読売新聞",
+              "date": "2026-10-10"
+            },
+            {
+              "title": "シャープが介護向けAIトレーナーの実証を特養フロース東糀谷で開始",
+              "outlet": "Dellows News",
+              "date": "2026-10-05"
+            }
+          ],
+          "trend": 0.5,
+          "articles_14d": 2,
+          "raw_items": 4
         }
-      ]
+      ],
+      "buzz_adopted_at": "2026-10-17T07:05:40",
+      "buzz_adopted_n": 2
     },
     {
       "title": "スマートペイロードがロボットやUAVの自律飛行・任務を誘導する特許技術を取得",
@@ -3202,8 +3270,8 @@
       "buzz_evidence": [],
       "buzz_trend": null,
       "buzz_articles_14d": 0,
-      "buzz_raw_items": 8,
-      "buzz_measured_at": "2026-10-15T11:34:05",
+      "buzz_raw_items": 6,
+      "buzz_measured_at": "2026-10-17T07:06:02",
       "buzz_query": "クレアチン 筋肉",
       "jp_usable": 3,
       "work_relevance": 1,
@@ -3244,8 +3312,21 @@
           "articles_14d": 0,
           "raw_items": 8,
           "seeded": true
+        },
+        {
+          "at": "2026-10-17T07:06:02",
+          "query": "クレアチン 筋肉",
+          "measured": 1,
+          "outlets": 0,
+          "yahoo": false,
+          "evidence": [],
+          "trend": null,
+          "articles_14d": 0,
+          "raw_items": 6
         }
-      ]
+      ],
+      "buzz_adopted_at": "2026-10-17T07:06:02",
+      "buzz_adopted_n": 2
     },
     {
       "title": "院内閉域で会話からカルテ・看護記録の下書きを自動作成する「Kairion Scribe for medicine」発売",
@@ -4110,7 +4191,7 @@
       "enriched_version": "2026-10-11-buzz-measured",
       "buzz_jp_est": 2,
       "buzz_error": "0件（検索語が合っていない可能性）",
-      "buzz_error_at": "2026-10-16T07:07:27",
+      "buzz_error_at": "2026-10-17T07:05:20",
       "jp_usable": 2,
       "work_relevance": 3,
       "topic_first_date": "2026-09-29",
@@ -8969,15 +9050,21 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-10-12",
-      "buzz_measured": 1,
-      "buzz_outlets": 0,
+      "buzz_measured": 2,
+      "buzz_outlets": 1,
       "yahoo": false,
-      "buzz_evidence": [],
-      "buzz_trend": null,
-      "buzz_articles_14d": 0,
-      "buzz_raw_items": 2,
+      "buzz_evidence": [
+        {
+          "title": "異常タンパク質が「形」を波及 アルツハイマーの仕組み解明 東京都医学総合研究所副所長ら",
+          "outlet": "静岡新聞DIGITAL",
+          "date": "2026-10-11"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 1,
+      "buzz_raw_items": 1,
       "buzz_query": "東京都医学総合研究所 タウ",
-      "buzz_measured_at": "2026-10-15T11:33:54",
+      "buzz_measured_at": "2026-10-17T07:06:05",
       "jp_usable": 2,
       "work_relevance": 1,
       "topic_first_date": "2026-09-30",
@@ -9035,8 +9122,27 @@
           "articles_14d": 0,
           "raw_items": 2,
           "seeded": true
+        },
+        {
+          "at": "2026-10-17T07:06:05",
+          "query": "東京都医学総合研究所 タウ",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "異常タンパク質が「形」を波及 アルツハイマーの仕組み解明 東京都医学総合研究所副所長ら",
+              "outlet": "静岡新聞DIGITAL",
+              "date": "2026-10-11"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 1
         }
-      ]
+      ],
+      "buzz_adopted_at": "2026-10-17T07:06:05",
+      "buzz_adopted_n": 2
     },
     {
       "title": "OpenAI「722本の数学論文発表します」数学者「AI使うのやめろおおおおおおお！」",
@@ -9365,7 +9471,7 @@
       "buzz_articles_14d": 0,
       "buzz_raw_items": 2,
       "buzz_query": "ナルディライジン 岐阜大学",
-      "buzz_measured_at": "2026-10-15T11:33:21",
+      "buzz_measured_at": "2026-10-17T07:05:43",
       "jp_usable": 1,
       "work_relevance": 1,
       "topic_first_date": "2026-10-09",
@@ -9417,8 +9523,21 @@
           "articles_14d": 0,
           "raw_items": 2,
           "seeded": true
+        },
+        {
+          "at": "2026-10-17T07:05:43",
+          "query": "ナルディライジン 岐阜大学",
+          "measured": 1,
+          "outlets": 0,
+          "yahoo": false,
+          "evidence": [],
+          "trend": null,
+          "articles_14d": 0,
+          "raw_items": 2
         }
-      ]
+      ],
+      "buzz_adopted_at": "2026-10-17T07:05:43",
+      "buzz_adopted_n": 2
     },
     {
       "title": "日本人の大腸がん、約半数に“腸内細菌の毒素”が関与　40歳以下の発症は7割　東大・阪大が200人を全ゲノム解析",
@@ -10082,7 +10201,7 @@
       "buzz_articles_14d": 0,
       "buzz_raw_items": 2,
       "buzz_query": "ゼロキョリ ENNOSHITA",
-      "buzz_measured_at": "2026-10-15T11:33:24",
+      "buzz_measured_at": "2026-10-17T07:05:45",
       "topic_first_date": "2026-10-08",
       "topic_first_source": "候補 2a3f21cb19 のannounced_on（置き配と床下収納を直結、住宅内物流を自動化）",
       "topic_series": "2a3f21cb19",
@@ -10136,8 +10255,21 @@
           "articles_14d": 0,
           "raw_items": 2,
           "seeded": true
+        },
+        {
+          "at": "2026-10-17T07:05:45",
+          "query": "ゼロキョリ ENNOSHITA",
+          "measured": 1,
+          "outlets": 0,
+          "yahoo": false,
+          "evidence": [],
+          "trend": null,
+          "articles_14d": 0,
+          "raw_items": 2
         }
-      ]
+      ],
+      "buzz_adopted_at": "2026-10-17T07:05:45",
+      "buzz_adopted_n": 2
     },
     {
       "title": "「食べる順番」で血糖値の上昇が抑えられるのはなぜ? 「オリーブ油」を先に食べると◎!?京大などの研究グループがを用いたマウス実験で仕組みを解明",
@@ -10305,9 +10437,9 @@
       "yahoo": true,
       "buzz_evidence": [
         {
-          "title": "ChatGPTが音声アップロードに対応 文字起こしから議事録作成まで効率化",
-          "outlet": "PlusWeb3",
-          "date": "2026-10-14"
+          "title": "ナレッジセンスのNotebook AIが音声ファイル対応、会議内容をAIで簡単確認する時代へ",
+          "outlet": "ニュースメディアVOIX",
+          "date": "2026-10-16"
         },
         {
           "title": "OpenAI、ChatGPTが音声ファイルの添付に対応 有料ユーザー向け、文字起こし・要約からメール下書きまで",
@@ -10322,9 +10454,9 @@
       ],
       "buzz_trend": 0.83,
       "buzz_articles_14d": 6,
-      "buzz_raw_items": 42,
+      "buzz_raw_items": 41,
       "buzz_query": "ChatGPT 音声ファイル",
-      "buzz_measured_at": "2026-10-15T11:33:30",
+      "buzz_measured_at": "2026-10-17T07:05:29",
       "url_check": [
         {
           "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
@@ -10339,7 +10471,7 @@
       ],
       "url_ok": null,
       "url_status": "help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
-      "url_checked_at": "2026-10-16T07:08:01",
+      "url_checked_at": "2026-10-17T07:06:25",
       "topic_first_date": "2026-10-06",
       "topic_first_source": "候補 d60f64ecab のannounced_on（ChatGPT、ついに音声ファイルに対応　文字起こしや要約な）",
       "topic_series": "d60f64ecab",
@@ -10361,7 +10493,7 @@
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-10-16T07:08:01",
+      "primary_verified_at": "2026-10-17T07:06:25",
       "buzz_history": [
         {
           "at": "2026-10-15T11:33:30",
@@ -10390,8 +10522,37 @@
           "articles_14d": 6,
           "raw_items": 42,
           "seeded": true
+        },
+        {
+          "at": "2026-10-17T07:05:29",
+          "query": "ChatGPT 音声ファイル",
+          "measured": 5,
+          "outlets": 6,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "ナレッジセンスのNotebook AIが音声ファイル対応、会議内容をAIで簡単確認する時代へ",
+              "outlet": "ニュースメディアVOIX",
+              "date": "2026-10-16"
+            },
+            {
+              "title": "OpenAI、ChatGPTが音声ファイルの添付に対応 有料ユーザー向け、文字起こし・要約からメール下書きまで",
+              "outlet": "Ledge.ai",
+              "date": "2026-10-13"
+            },
+            {
+              "title": "ChatGPT、音声アップロードに対応 文字起こし・要約が可能に",
+              "outlet": "Impress Watch",
+              "date": "2026-10-09"
+            }
+          ],
+          "trend": 0.83,
+          "articles_14d": 6,
+          "raw_items": 41
         }
-      ]
+      ],
+      "buzz_adopted_at": "2026-10-17T07:05:29",
+      "buzz_adopted_n": 2
     },
     {
       "title": "「我々が世界市場を作っていく」…万博が示した「未来の医療」を先導する関西は世界３位の位置付け、涙から乳がんのリスクを調べる技術も",
@@ -10597,8 +10758,14 @@
       "scored_at": "2026-10-12",
       "topic_first_date": "2026-10-08",
       "topic_first_source": "候補 7257e5d357 のannounced_on（スペースデータが公開した「RobotBrain」導入前検証デ）",
-      "topic_series": "7257e5d357",
-      "freshness_basis": "topic_first_date"
+      "topic_series": "55d2ba8af2",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "スペースデータ、物流ロボットの導入前検証を支援",
+        "id": "55d2ba8af2",
+        "source": "Googleニュース（人型ロボット）／LOGISTICS TODAY"
+      }
     },
     {
       "title": "フレイルのリスクに関わるEAT-Lancet食の代謝シグネチャ：前向きコホート研究",
@@ -11408,7 +11575,7 @@
       "buzz_articles_14d": 25,
       "buzz_raw_items": 51,
       "buzz_query": "Gemini agent",
-      "buzz_measured_at": "2026-10-15T11:33:08",
+      "buzz_measured_at": "2026-10-17T07:05:32",
       "url_check": [
         {
           "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-agent-announcement",
@@ -11464,8 +11631,37 @@
           "articles_14d": 25,
           "raw_items": 51,
           "seeded": true
+        },
+        {
+          "at": "2026-10-17T07:05:32",
+          "query": "Gemini agent",
+          "measured": 5,
+          "outlets": 17,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "Google Cloudが「Gemini agent」を発表｜専用メール・カレンダーを持つ「AIコワーカー」が長時間タスクを自律遂行、ルーティング先にはClau",
+              "outlet": "https://ai-hikari-ai.com/",
+              "date": "2026-10-16"
+            },
+            {
+              "title": "Geminiエージェント、数日続く業務に対応 提供は限定プレビュー",
+              "outlet": "quasa.io",
+              "date": "2026-10-15"
+            },
+            {
+              "title": "Google Cloud、業務向け汎用AI「Geminiエージェント」発表。Google Workspaceの内部で直接機能",
+              "outlet": "AIsmiley",
+              "date": "2026-10-14"
+            }
+          ],
+          "trend": 0.91,
+          "articles_14d": 23,
+          "raw_items": 51
         }
-      ]
+      ],
+      "buzz_adopted_at": "2026-10-15T11:33:08",
+      "buzz_adopted_n": 2
     },
     {
       "title": "エピゲノム創薬はがんを対象に低分子薬が続々登場、固形がんへの応用や新規作用機序も",
@@ -12253,7 +12449,7 @@
       "buzz_articles_14d": 1,
       "buzz_raw_items": 2,
       "buzz_query": "早稲田大学 レジスタンス運動",
-      "buzz_measured_at": "2026-10-15T11:33:19",
+      "buzz_measured_at": "2026-10-17T07:05:20",
       "topic_first_date": "2026-10-13",
       "topic_first_source": "候補 32d1342208 のannounced_on（レジスタンス運動の休息時間の違いは脂質代謝に影響するのか？）",
       "topic_series": "32d1342208",
@@ -12317,8 +12513,27 @@
           "articles_14d": 1,
           "raw_items": 2,
           "seeded": true
+        },
+        {
+          "at": "2026-10-17T07:05:20",
+          "query": "早稲田大学 レジスタンス運動",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "レジスタンス運動の休息時間の違いは脂質代謝に影響するのか？",
+              "outlet": "秋田魁新報電子版",
+              "date": "2026-10-13"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 2
         }
-      ]
+      ],
+      "buzz_adopted_at": "2026-10-17T07:05:20",
+      "buzz_adopted_n": 2
     },
     {
       "title": "2030年までにAI搭載のヒューマノイドロボットを市場投入／安川電機",
@@ -12544,21 +12759,21 @@
       "yahoo": false,
       "buzz_evidence": [
         {
+          "title": "国産LLM「PLaMo」搬送ロボット「カチャカEvo」などをCEATEC2026ブースで解説 Preferred Networks",
+          "outlet": "ロボスタ",
+          "date": "2026-10-16"
+        },
+        {
           "title": "可搬重量100kgで既存の台車や棚を運搬可能 最新AMR「カチャカEvo」のデモを披露：CEATEC 2026",
           "outlet": "MONOist",
           "date": "2026-10-13"
-        },
-        {
-          "title": "Preferred Robotics、100キロ可搬AMRを正式販売",
-          "outlet": "LOGISTICS TODAY",
-          "date": "2026-10-02"
         }
       ],
-      "buzz_trend": 0.5,
-      "buzz_articles_14d": 2,
-      "buzz_raw_items": 6,
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 3,
+      "buzz_raw_items": 7,
       "buzz_query": "カチャカEvo AMR",
-      "buzz_measured_at": "2026-10-15T11:33:41",
+      "buzz_measured_at": "2026-10-17T07:05:56",
       "url_check": [
         {
           "url": "https://kachaka.life/blogs/press-release-evo-official-launch/",
@@ -12627,8 +12842,32 @@
           "articles_14d": 2,
           "raw_items": 6,
           "seeded": true
+        },
+        {
+          "at": "2026-10-17T07:05:56",
+          "query": "カチャカEvo AMR",
+          "measured": 2,
+          "outlets": 2,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "国産LLM「PLaMo」搬送ロボット「カチャカEvo」などをCEATEC2026ブースで解説 Preferred Networks",
+              "outlet": "ロボスタ",
+              "date": "2026-10-16"
+            },
+            {
+              "title": "可搬重量100kgで既存の台車や棚を運搬可能 最新AMR「カチャカEvo」のデモを披露：CEATEC 2026",
+              "outlet": "MONOist",
+              "date": "2026-10-13"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 3,
+          "raw_items": 7
         }
-      ]
+      ],
+      "buzz_adopted_at": "2026-10-17T07:05:56",
+      "buzz_adopted_n": 2
     },
     {
       "title": "慢性腎臓病を「治る病」に 新規の透析患者ゼロへ新薬を研究 埼玉医大",
@@ -12778,7 +13017,7 @@
       "buzz_articles_14d": 20,
       "buzz_raw_items": 51,
       "buzz_query": "Gemini agent",
-      "buzz_measured_at": "2026-10-15T11:33:10",
+      "buzz_measured_at": "2026-10-17T07:05:34",
       "url_check": [
         {
           "url": "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026/",
@@ -12793,7 +13032,7 @@
       ],
       "url_ok": true,
       "url_status": "cloud.google.com: HTTP 200「Gemini at Work 2026: Introduci」 ／ cloud.google.com: HTTP 200「Google Cloud Blog」",
-      "url_checked_at": "2026-10-16T07:07:55",
+      "url_checked_at": "2026-10-17T07:06:19",
       "topic_first_date": "2026-10-08",
       "topic_first_source": "候補 79d0885d3e のannounced_on（新サービス「Gemini agent」は企業向け、「Gemi）",
       "topic_series": "79d0885d3e",
@@ -12825,7 +13064,7 @@
           "kind": "official_blog"
         }
       ],
-      "primary_verified_at": "2026-10-16T07:07:55",
+      "primary_verified_at": "2026-10-17T07:06:19",
       "buzz_history": [
         {
           "at": "2026-10-15T11:33:10",
@@ -12854,8 +13093,37 @@
           "articles_14d": 20,
           "raw_items": 51,
           "seeded": true
+        },
+        {
+          "at": "2026-10-17T07:05:34",
+          "query": "Gemini agent",
+          "measured": 5,
+          "outlets": 11,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "Google Cloudが「Gemini agent」を発表｜専用メール・カレンダーを持つ「AIコワーカー」が長時間タスクを自律遂行、ルーティング先にはClau",
+              "outlet": "https://ai-hikari-ai.com/",
+              "date": "2026-10-16"
+            },
+            {
+              "title": "OpenAI「Dots」に追随なるか Google「Gemini Agent」参戦で過熱するパーソナルAI競争（1/2 ページ）",
+              "outlet": "ITmedia",
+              "date": "2026-10-14"
+            },
+            {
+              "title": "グーグルがGemini agent発表 企業向けAI競争の主導権を握れるか？",
+              "outlet": "Moomoo",
+              "date": "2026-10-12"
+            }
+          ],
+          "trend": 0.88,
+          "articles_14d": 17,
+          "raw_items": 51
         }
-      ]
+      ],
+      "buzz_adopted_at": "2026-10-15T11:33:10",
+      "buzz_adopted_n": 2
     },
     {
       "title": "新生児の免疫システムは生後7日間で決まる",
@@ -13136,7 +13404,7 @@
       "buzz_articles_14d": 0,
       "buzz_raw_items": 4,
       "buzz_query": "東京科学大学 食物繊維",
-      "buzz_measured_at": "2026-10-15T11:33:27",
+      "buzz_measured_at": "2026-10-17T07:05:26",
       "topic_first_date": "2026-10-13",
       "topic_first_source": "候補 879b885c6c のannounced_on（慢性腎臓病患者のたんぱく質摂取量と血中尿素窒素の関連に食物繊）",
       "topic_series": "879b885c6c",
@@ -13194,8 +13462,21 @@
           "articles_14d": 0,
           "raw_items": 4,
           "seeded": true
+        },
+        {
+          "at": "2026-10-17T07:05:26",
+          "query": "東京科学大学 食物繊維",
+          "measured": 1,
+          "outlets": 0,
+          "yahoo": false,
+          "evidence": [],
+          "trend": null,
+          "articles_14d": 0,
+          "raw_items": 4
         }
-      ]
+      ],
+      "buzz_adopted_at": "2026-10-17T07:05:26",
+      "buzz_adopted_n": 2
     },
     {
       "title": "国産AI「Sarashina」を無料で試せる　ソフトバンク傘下が新サービスβ版　API・チャットに対応",
@@ -14700,9 +14981,9 @@
       ],
       "buzz_trend": 1.0,
       "buzz_articles_14d": 1,
-      "buzz_raw_items": 4,
+      "buzz_raw_items": 5,
       "buzz_query": "retatrutide 第3相",
-      "buzz_measured_at": "2026-10-15T11:34:08",
+      "buzz_measured_at": "2026-10-17T07:05:59",
       "topic_first_date": "2026-09-29",
       "topic_first_source": "候補 69550c628f のannounced_on（Eli Lilly社が肥満治療薬候補retatrutideの）",
       "topic_series": "69550c628f",
@@ -14764,8 +15045,27 @@
           "articles_14d": 1,
           "raw_items": 4,
           "seeded": true
+        },
+        {
+          "at": "2026-10-17T07:05:59",
+          "query": "retatrutide 第3相",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "Eli Lilly社が肥満治療薬候補retatrutideの2件の第3相で好結果、BLAを準備",
+              "outlet": "日経バイオテクONLINE",
+              "date": "2026-10-12"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 5
         }
-      ]
+      ],
+      "buzz_adopted_at": "2026-10-17T07:05:59",
+      "buzz_adopted_n": 2
     },
     {
       "title": "「Google Play」、AI Studioで作った自作アプリを自分の端末で実行可能に　AIでゲームを探す機能も",
@@ -18125,7 +18425,7 @@
       "scored_at": "2026-10-16",
       "topic_first_date": "2026-10-15",
       "topic_first_source": "候補 2048184946 のannounced_on（ZOZO NEXTとAVITA、ヒューマノイド向け衣服の共同）",
-      "topic_series": "7a69f42ca5",
+      "topic_series": "c96ce3e9a9",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-15",
@@ -18801,7 +19101,7 @@
       "scored_at": "2026-10-16",
       "topic_first_date": "2026-10-15",
       "topic_first_source": "候補 2048184946 のannounced_on（ZOZO NEXTとAVITA、ヒューマノイド向け衣服の共同）",
-      "topic_series": "7a69f42ca5",
+      "topic_series": "c96ce3e9a9",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-15",
@@ -19103,7 +19403,7 @@
           "kind": "press_release"
         }
       ],
-      "primary_verified_at": "2026-10-16T07:07:47",
+      "primary_verified_at": "2026-10-17T07:06:11",
       "url_check": [
         {
           "url": "https://prtimes.jp/main/html/rd/p/000000076.000083531.html",
@@ -19118,7 +19418,7 @@
       ],
       "url_ok": false,
       "url_status": "prtimes.jp: HTTP 200「燈とオリエンタル白石、吊り足場上での四足歩行ロボットの自律歩」 ／ prtimes.jp: HTTP 404",
-      "url_checked_at": "2026-10-16T07:07:47",
+      "url_checked_at": "2026-10-17T07:06:11",
       "buzz_history": [
         {
           "at": "2026-10-16T07:07:27",
@@ -19175,6 +19475,1123 @@
       "buzz_query": "燈 オリエンタル白石",
       "buzz_adopted_at": "2026-10-16T07:07:27",
       "buzz_adopted_n": 1
+    },
+    {
+      "title": "ヒューマノイドにも衣服を、ZOZO NEXTがフィジカルAIスタートアップと共同研究：ロボット開発ニュース",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1vZGhmbTNZZHBpeWdIMEtXbWdSb09TOWd1RzFuMFFrRlo5X2lYaUVPR3M5WnJaWUk3bC02YWE2dDVzR29JOE1DMDRvRzFGdjdiOGJBMXVDdkY1cjVWc3ZpckNFWWxhNVFBUHFvWHVmQQ?oc=5",
+      "published": "2026-10-16",
+      "source": "Googleニュース（ヒューマノイド）／MONOist",
+      "source_kind": "media",
+      "outlet": "MONOist",
+      "outlet_host": "monoist.itmedia.co.jp",
+      "genre_hint": "humanoid",
+      "summary": "ヒューマノイドにも衣服を、ZOZO NEXTがフィジカルAIスタートアップと共同研究：ロボット開発ニュース（MONOist）",
+      "id": "c96ce3e9a9",
+      "sources": [
+        "MONOist"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://zozonext.com/",
+          "what_it_states": "ZOZO NEXTとAVITAが2026年10月15日にヒューマノイドロボットに特化した衣服に関する共同研究に向けた基本合意書（MOU）を締結し、研究テーマ詳細を協議の上で2027年1月の研究開始を目指すとしている。具体的な製品や実証実験の数値データは未掲載。"
+        }
+      ],
+      "announced_on": "2026-10-15",
+      "headline_claim": "ZOZO NEXTがフィジカルAIスタートアップと共同で、ヒューマノイドロボット専用の衣服の開発・共同研究に乗り出す。",
+      "actual_content": "今回の発表は共同研究の開始や試作品の公開ではなく、研究テーマの詳細を協議するための基本合意書（MOU）を締結した段階である。共同研究そのものの開始目標は2027年1月とされており、現時点で完成した衣服や素材の実験データ、試作回数などの数値は存在しない。ロボットは人間と異なり自ら着崩れを直せず、発熱や関節構造の制約があることから、接触検知や意思伝達機能を備えた衣服の設計手法確立を目指す構想段階にとどまる。",
+      "buzz_jp_est": 3,
+      "verifiability": 3,
+      "hype_gap": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 2,
+      "concern_id": null,
+      "entry_question": "人型ロボット専用の服がZOZOから登場する、は本当？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "まだ服が1着も完成しておらず、研究テーマの詳細すらこれから協議して2027年1月に研究を始めるという「基本合意書（MOU）」を結んだだけの段階である点。",
+      "investment_related": false,
+      "deja_vu_note": "kl040（ヒューマノイド普及目標に関する発表）",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "ZOZO NEXT AVITA",
+      "jp_title_anchor": [
+        "ZOZO NEXT",
+        "AVITA"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.5,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-17",
+      "topic_first_date": "2026-10-15",
+      "topic_first_source": "候補 2048184946 のannounced_on（ZOZO NEXTとAVITA、ヒューマノイド向け衣服の共同）",
+      "topic_series": "c96ce3e9a9",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-15",
+        "title": "ZOZO NEXTとAVITA、ヒューマノイド向け衣服の共同研究へ",
+        "id": "2048184946",
+        "source": "Googleニュース（ヒューマノイド）／Impress Watch"
+      }
+    },
+    {
+      "title": "「カレー作りたい」と注文→ロボが野菜をピックする「未来の八百屋」　AWS×安川電機が披露",
+      "url": "https://www.itmedia.co.jp/news/article/2610/16/2000002326/",
+      "published": "2026-10-16",
+      "source": "ITmedia NEWS",
+      "source_kind": "media",
+      "summary": "幕張メッセで開催中の「CEATEC 2026」で、米Amazon Web Services（AWS）と安川電機が「未来の八百屋」と題したデモを共同で展示している。マイクに向かって作りたい料理を話すと生成AIが具材を提案し、AIロボットが棚から野菜を取り出す。",
+      "id": "295f7451e8",
+      "sources": [
+        "ITmedia NEWS"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://aws.amazon.com/jp/blogs/news/monthly-aws-mfg-2026-10/",
+          "what_it_states": "CEATEC 2026（10月13〜16日開催）のAWS Japanブースにて、『日本の担い手と、フィジカルAI社会を実現するAWS Japan』をテーマに、安川電機と共同開発したフィジカルAIデモなどを展示すると告知。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://www.ceatec.com/ja/exhibition/detail.html?id=143",
+          "what_it_states": "アマゾン ウェブ サービス ジャパンのブース概要にて、実機ロボットを動かすフィジカルAIの実装例として安川電機との共同展示『未来の八百屋』を出展していると紹介。"
+        }
+      ],
+      "announced_on": "2026-10-13",
+      "headline_claim": "マイクに向かって作りたい料理を話すと生成AIが具材を提案し、AIロボットが棚から野菜を取り出してくれる「未来の八百屋」が公開された。",
+      "actual_content": "展示会「CEATEC 2026」のAWSブースで披露されたコンセプト実証デモ。安川電機の産業用AIロボット「MOTOMAN NEXT」の手首にアクティブステレオ方式の3Dカメラを搭載し、2D画像による品種識別と3Dデータによる把持位置推定をロボット側のエッジで自律処理して野菜をつかみ、かごに入れる。店舗実用化の計画があるわけではなく、製造や物流現場などで専門プログラミングを行わずに不定形物を扱うためのフィジカルAI技術をアピールする展示である。",
+      "buzz_jp_est": 4,
+      "verifiability": 3,
+      "hype_gap": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 3,
+      "concern_id": "food",
+      "entry_question": "献立を言うと野菜を選んでくれる『未来の八百屋』ロボは、いつスーパーに来る？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "産業用ロボットアームがざるの上の野菜を1個ずつ慎重につかむ展示会向けの演出であり、生鮮食品の傷つきやすさやコストを考慮した店舗向け製品ではない。本質は八百屋ではなく、製造・物流のピッキング工程を会話と視覚AIで自動化する技術デモにすぎない。",
+      "investment_related": false,
+      "deja_vu_note": "kl040（安川電機「2030年までにヒューマノイド」は本当か）で安川電機のロボット戦略を直近で取り上げたばかり。",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "安川電機 未来の八百屋",
+      "jp_title_anchor": [
+        "未来の八百屋",
+        "安川電機"
+      ],
+      "announcement_type": "event",
+      "freshness": 5,
+      "overall_score": 3.75,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-17",
+      "topic_first_date": "2026-10-13",
+      "topic_first_source": "候補 295f7451e8 のannounced_on（「カレー作りたい」と注文→ロボが野菜をピックする「未来の八百）",
+      "topic_series": "295f7451e8",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "「カレー作りたい」と注文→ロボが野菜をピックする「未来の八百屋」　AWS×安川電機が披露",
+        "id": "295f7451e8",
+        "source": "ITmedia NEWS"
+      }
+    },
+    {
+      "title": "高温加熱でタンパク質の消化・吸収性が低下？ 大豆タンパク質を用いた研究で新知見",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1BN04zRklOcm0zb0tsU2IxamZyRXNNbDRKUkVPcEp6NHQ0M3VLS3VjdG9fWnV4aHpObERIdGtzX3drVUp4ajVmaF9pbw?oc=5",
+      "published": "2026-10-16",
+      "source": "Googleニュース（研究 食事 健康 効果）／スポーツ栄養Web",
+      "source_kind": "media",
+      "outlet": "スポーツ栄養Web",
+      "outlet_host": "sndj-web.jp",
+      "genre_hint": "food_health",
+      "summary": "高温加熱でタンパク質の消化・吸収性が低下？ 大豆タンパク質を用いた研究で新知見（スポーツ栄養Web）",
+      "id": "f8bdf95838",
+      "sources": [
+        "スポーツ栄養Web"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1038/s41538-026-01091-0",
+          "what_it_states": "分離大豆タンパク質（SPI）の10%水溶液をレトルト加工条件（121℃・20分）で加熱処理したところ、総アミノ酸量が約10%低下し不溶性画分や難消化ペプチドが増加した。マウスへの単回経口投与試験では投与60分後の血中遊離アミノ酸量が未加熱群比で約25%低下し、6週間継続投与したマウスでは新奇個体への探索行動の変化および末梢血中セロトニン濃度の有意な低下が確認された。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.kyoto-u.ac.jp/ja/research-news/2026-09-15-1",
+          "what_it_states": "京都大学大学院農学研究科などの共同研究グループによる発表。高温加熱殺菌によるタンパク質の変質と消化吸収性への影響、マウスの社会行動やセロトニンへの影響を解明したとしつつ、実際の複合食品中での変化やヒトへの影響検証は今後の課題としている。"
+        }
+      ],
+      "announced_on": "2026-09-03",
+      "headline_claim": "レトルト食品のような高温加熱殺菌処理によって大豆タンパク質の消化・吸収性が低下し、生体に悪影響を及ぼす可能性がある。",
+      "actual_content": "京都大学などの研究グループが、分離大豆タンパク質の水溶液（10%）をレトルト殺菌条件（121℃、20分）で加熱したところ、アミノ酸の化学修飾等により消化されにくいタンパク質やペプチドが増加しました。この加熱タンパク質をマウスに単回投与した実験では、摂取60分後の血中遊離アミノ酸量が未加熱群と比べて約25%低下しました。さらに6週間継続給餌したマウスでは末梢血中セロトニン濃度の低下と社会的新奇性行動の変化が観察されましたが、単離タンパク質水溶液を用いたマウス実験であり、他の食材成分が共存する実際の食品やヒト体内での影響は未検証です。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 4,
+      "work_relevance": 2,
+      "concern_id": "food",
+      "entry_question": "レトルト加熱でタンパク質が吸収されにくくなるって本当？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "大豆タンパク質だけを水に溶かして121℃で煮詰めた特殊な水溶液をマウスに飲ませた実験にすぎず、具材や油が混ざった普段のレトルト食品でヒトの体に同じことが起きるかは全く分かっていない点。",
+      "investment_related": false,
+      "deja_vu_note": "なし（食と健康の回はあるが、加熱殺菌によるタンパク質変性や吸収低下を扱った過去回はない）",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "大豆タンパク質 高温加熱",
+      "jp_title_anchor": [
+        "大豆タンパク質",
+        "高温加熱"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.65,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-17",
+      "topic_first_date": "2026-09-03",
+      "topic_first_source": "候補 f8bdf95838 のannounced_on（高温加熱でタンパク質の消化・吸収性が低下？ 大豆タンパク質を）",
+      "topic_series": "f8bdf95838",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "高温加熱でタンパク質の消化・吸収性が低下？ 大豆タンパク質を用いた研究で新知見",
+        "id": "f8bdf95838",
+        "source": "Googleニュース（研究 食事 健康 効果）／スポーツ栄養Web"
+      }
+    },
+    {
+      "title": "世界初、ケモカインCCL28による肝臓保護機構を解明 特殊IgA細胞の動員で慢性肝炎の抑制、新規治療法開発に期待",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE8zQy1KT3MwbFJJd2VlRzFHeHB0SWFpWnFOa3hMU3pwUkdQM0FiRDYxaG1kNmZsb3lpZHBRUmZjY01pSVlaaHRFTS1BalJraEk?oc=5",
+      "published": "2026-10-16",
+      "source": "Googleニュース（がん 新しい治療 研究）／アットプレス",
+      "source_kind": "media",
+      "outlet": "アットプレス",
+      "outlet_host": "atpress.ne.jp",
+      "genre_hint": "medical",
+      "summary": "世界初、ケモカインCCL28による肝臓保護機構を解明 特殊IgA細胞の動員で慢性肝炎の抑制、新規治療法開発に期待（アットプレス）",
+      "id": "d6a2ae6d37",
+      "sources": [
+        "アットプレス"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.kindai.ac.jp/news-pr/news-release/2026/10/043818.html",
+          "what_it_states": "近畿大学薬学部が2026年10月16日に発表。ケモカインCCL28が免疫制御性IgA抗体産生細胞を肝臓に誘導し、肝星細胞に作用して慢性肝炎や線維化を抑制するメカニズムを世界で初めて解明したと公表"
+        },
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1016/j.lfs.2026.124615",
+          "what_it_states": "国際学術誌『Life Sciences』第403巻（2026年10月15日付）。四塩化炭素（CCl4）誘発肝障害モデルにおいて、CCL28欠損マウスは野生型に比べ血清ALT上昇・肝線維化悪化を示し、肝臓内のIgA抗体産生細胞が減少。この細胞がIL-10やFasLを発現して肝星細胞死を促す機序をin vivoおよびin vitroで実証"
+        }
+      ],
+      "announced_on": "2026-10-16",
+      "headline_claim": "ケモカインCCL28が特殊なIgA細胞を集めて慢性肝炎や線維化を抑える肝保護機構を世界で初めて解明し、新規治療法の開発につながると期待される。",
+      "actual_content": "四塩化炭素で慢性肝障害を起こしたマウスおよびCCL28遺伝子欠損マウスを用いた基礎研究である。CCL28欠損マウスでは肝臓への特殊な免疫制御性IgA細胞の集積が減り、肝機能障害（ALT値）や線維化が悪化することを確認した。この細胞がIL-10やFasLを介して線維化の原因となる肝星細胞に細胞死を誘導する機構を明らかにしたが、検証はマウスと培養細胞にとどまり、新薬候補化合物の投与実験やヒトでの臨床的効果は未検証である。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 1,
+      "concern_id": "cancer",
+      "entry_question": "肝臓の炎症や線維化を抑える新たな仕組みが見つかったって本当？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "四塩化炭素で肝障害を起こしたマウスで病態の仕組みを調べた基礎研究であり、新薬としての治療薬投与実験ですらないため、人に届く薬になるかはまだ未知数。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "CCL28 近畿大学",
+      "jp_title_anchor": [
+        "CCL28",
+        "肝臓保護機構",
+        "特殊IgA細胞"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.45,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-17",
+      "topic_first_date": "2026-10-16",
+      "topic_first_source": "候補 d6a2ae6d37 のannounced_on（世界初、ケモカインCCL28による肝臓保護機構を解明 特殊I）",
+      "topic_series": "66bbf8b1f7",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "世界初、ケモカインCCL28による肝臓保護機構を解明 特殊IgA細胞の動員で慢性肝炎の抑制、新規治療法開発に期待",
+        "id": "d6a2ae6d37",
+        "source": "Googleニュース（がん 新しい治療 研究）／アットプレス"
+      }
+    },
+    {
+      "title": "Microsoft、社内エンジニア数万人を対象に「Claude Code」「Copilot CLI」導入の影響を分析　生産性どう変わる",
+      "url": "https://www.itmedia.co.jp/news/article/2610/16/2000002277/",
+      "published": "2026-10-16",
+      "source": "ITmedia AI+",
+      "source_kind": "media",
+      "summary": "米Microsoftに所属する研究者らが発表した論文「Adoption and Impact of Command-Line AI Coding Agents: A Study of Microsoft’s Early 2026 Rollout of Claude Code and GitHub Copilot CLI」は、社内の数万人のソフトウェアエンジニアを対象に、コマンドライン上で動くAIコーディングツール（Anthropicの「Claude Code」やGitHubの「Copilot CLI」）の利用状況と、それが生産性に与える影響について調査した研究報告だ。",
+      "id": "316912d44d",
+      "sources": [
+        "ITmedia AI+"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/abs/2607.01418",
+          "what_it_states": "Microsoft社内の数万人のエンジニアを対象に2026年1月〜4月の4か月間調査した結果、CLIコーディングツール導入者は反実仮想推計比でマージされたPR数が約24%増加（Copilot CLIで24.9%増、Claude Codeで11.4%増）し効果が持続した。一方でPR数はアウトプットの代理指標にすぎず価値の保証ではない点や、定着はエンジニアの日常的なコーディング活動量に強く依存すること、高額なトークン費用へのROI考慮が不可欠であることなどを指摘している。"
+        }
+      ],
+      "announced_on": "2026-07-01",
+      "headline_claim": "Microsoftが社内エンジニア数万人にCLIコーディングAIを導入した結果、生産性が約24％向上したと分析した。",
+      "actual_content": "Microsoftの研究者らが社内エンジニア数万人を対象に2026年1月から4月までの4か月間、Claude CodeとGitHub Copilot CLIの利用状況を追跡した。ツールを採用した開発者は、非採用時の推計値と比較してマージされたプルリクエスト（PR）数が約24%（Copilot CLIで24.9%、Claude Codeで11.4%）増加し、その差は4か月間持続した。しかし著者らは、マージされたPR数はアウトプットの代理指標にすぎず製品価値や品質の向上を直接意味しないこと、定着するのは日常的にコードを書く業務が多い人に限られること、膨大なトークン費用の費用対効果を見極める必要があることを明記している。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 1,
+      "work_relevance": 4,
+      "concern_id": "work_ai",
+      "entry_question": "AIにターミナルを任せると、エンジニアの仕事は本当に24%速くなる？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "論文自身が「マージされたPR数は作業量の代理指標にすぎず、生み出された価値そのものではない」と釘を刺しているうえ、年間数百万ドル規模になり得るトークン費用に見合うかも問われている点。",
+      "investment_related": false,
+      "deja_vu_note": "kl028（AIに頼ると頭は鈍るか）やkl034（PCを閉じてもAIが仕事を終わらせる）など、仕事現場での生成AI・エージェント活用と生産性の実証を検証した回とテーマが近い。",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "Claude Code Copilot CLI",
+      "jp_title_anchor": [
+        "Claude Code",
+        "Copilot CLI"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.25,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-17",
+      "topic_first_date": "2026-07-01",
+      "topic_first_source": "候補 316912d44d のannounced_on（Microsoft、社内エンジニア数万人を対象に「Claud）",
+      "topic_series": "316912d44d",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "Microsoft、社内エンジニア数万人を対象に「Claude Code」「Copilot CLI」導入の影響を分析　生産性どう変わる",
+        "id": "316912d44d",
+        "source": "ITmedia AI+"
+      }
+    },
+    {
+      "title": "ヒューマノイドDigit 5を手がけるAgility Robotics、超急速充電バッテリーにNyobolt技術を採用 1日20時間以上の稼働が可能に",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBQbWU0V2tsZGUxa1pmczZzNXR5RjNhaGdiUDBtRk8xYUlRWFpSbjVoTDdpT3BKd25pOTM2LTFfOENMWGViUnF0ajJ4b1dydzJ4V21sZ2QtR1lRMDJPS1pIZFUyWHQ?oc=5",
+      "published": "2026-10-16",
+      "source": "Googleニュース（ヒューマノイド）／ロボスタ",
+      "source_kind": "media",
+      "outlet": "ロボスタ",
+      "outlet_host": "robotstart.info",
+      "genre_hint": "humanoid",
+      "summary": "ヒューマノイドDigit 5を手がけるAgility Robotics、超急速充電バッテリーにNyobolt技術を採用 1日20時間以上の稼働が可能に（ロボスタ）",
+      "id": "50d391e3a7",
+      "sources": [
+        "ロボスタ"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.prnewswire.com/news-releases/agility-robotics-selects-nyobolt-as-its-ultra-fast-charging-battery-technology-partner-for-digit-5-302277443.html",
+          "what_it_states": "Agility RoboticsがDigit 5に英Nyoboltの超急速充電技術を採用。9分の充電で90分稼働し、稼働と充電の比率はDigit 4の2:1から10:1に向上。24時間中20時間以上の実稼働を実現する。本バッテリー搭載モデルのアーリーアクセスは2027年上半期に開始予定。"
+        }
+      ],
+      "announced_on": "2026-10-15",
+      "headline_claim": "ヒューマノイド「Digit 5」が超急速充電バッテリーを採用し、1日20時間以上の稼働が可能になった。",
+      "actual_content": "米Agility Roboticsと英Nyoboltの公式発表によると、物流・工場向けヒューマノイド「Digit 5」は9分間の充電で90分間稼働し、稼働対充電の比率（run-to-charge ratio）が従来の2:1から10:1に引き上げられる。これにより24時間のうち20時間以上を稼働に充てられるとするが、連続稼働は90分であり、短時間の充電を頻繁に挟む運用モデルとなっている。Nyobolt技術を搭載したDigit 5のアーリーアクセス開始は2027年上半期の予定である。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 2,
+      "work_relevance": 4,
+      "concern_id": null,
+      "entry_question": "「1日20時間動く人型ロボット」は本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "soon"
+      },
+      "tsukkomi_material": "「1日20時間稼働」といってもバッテリーが20時間持つわけではなく、90分働いて9分充電という超小刻みなピットインを1日14回以上繰り返す計算。9分で満充電する超高出力充電器のインフラ整備や発熱・劣化対策が現場のハードルになる。",
+      "investment_related": false,
+      "deja_vu_note": "ヒューマノイドを扱った回としてkl033（Atlasの手）やkl040（安川電機の開発計画）があるが、ロボットの最大の弱点であるバッテリー持続時間・急速充電を主眼にした回はない。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "Digit 5 Nyobolt",
+      "jp_title_anchor": [
+        "Digit 5",
+        "Nyobolt",
+        "Agility Robotics"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.45,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-17",
+      "topic_first_date": "2026-10-15",
+      "topic_first_source": "候補 50d391e3a7 のannounced_on（ヒューマノイドDigit 5を手がけるAgility Rob）",
+      "topic_series": "50d391e3a7",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "ヒューマノイドDigit 5を手がけるAgility Robotics、超急速充電バッテリーにNyobolt技術を採用 1日20時間以上の稼働が可能に",
+        "id": "50d391e3a7",
+        "source": "Googleニュース（ヒューマノイド）／ロボスタ"
+      },
+      "primary_verified": false,
+      "primary_check": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/agility-robotics-selects-nyobolt-as-its-ultra-fast-charging-battery-technology-partner-for-digit-5-302277443.html",
+          "ok": false,
+          "status": "HTTP 404",
+          "method": "http",
+          "kind": "press_release"
+        }
+      ],
+      "primary_verified_at": "2026-10-17T07:04:31",
+      "url_check": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/agility-robotics-selects-nyobolt-as-its-ultra-fast-charging-battery-technology-partner-for-digit-5-302277443.html",
+          "ok": false,
+          "status": "HTTP 404"
+        }
+      ],
+      "url_ok": false,
+      "url_status": "prnewswire.com: HTTP 404",
+      "url_checked_at": "2026-10-17T07:04:31",
+      "repair_tried": true,
+      "repair_tried_at": "2026-10-17T07:04:36",
+      "repair_log": [
+        "site-crawl: 8ページを見たが、語の合うリンクなし",
+        "pool-official: 同じ話題の公式・学術誌の記事（発表日±3日）がプールにない",
+        "media-link: https://news.google.com/rss/articles/CBMiZEFVX3lxTFBQbWU0V2tsZGUxa1pmc を開けない",
+        "robots.txt で禁止: https://news.google.com/rss/articles/CBMiZEFVX3lxTFBQbWU0V2tsZGUxa1pmczZzNXR5RjNhaGdiUDBtRk8xYUlRWFpSbjVoTDdpT3BKd25pOTM2LTFfOENMWGViUnF0ajJ4b1dydzJ4V21sZ2QtR1lRMDJPS1pIZFUyWHQ?oc=5"
+      ],
+      "repair_result": "見つからない"
+    },
+    {
+      "title": "テスラが“空飛ぶクルマ”を発表 マスク氏「AIではない」",
+      "url": "https://news.web.nhk/newsweb/na/nd-20261017de60784",
+      "published": "2026-10-16",
+      "source": "NHK 科学・文化",
+      "source_kind": "media",
+      "summary": "アメリカのEV＝電気自動車メーカー、テスラは15日、噴射装置のついた“空飛ぶクルマ”を発表し、SF映画さながらのアクロバチックなデモ走行を披露しました。",
+      "id": "1470048ffa",
+      "sources": [
+        "NHK 科学・文化"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://www.tesla.com/roadster",
+          "what_it_states": "車体周囲にSpaceX開発の冷ガススラスターと床下吸引ファンを搭載した最上位モデル『Rocket』で短時間の飛行・姿勢制御が可能と記載。最高時速230マイル（約370km/h）以上、0-60mph加速0.59秒未満、航続距離300マイル以上。公道走行は不可で招待制限定、生産開始目標は2028年。"
+        }
+      ],
+      "announced_on": "2026-10-15",
+      "headline_claim": "テスラが噴射装置のついた“空飛ぶクルマ”を発表し、宙を舞って着地するアクロバティックなデモを披露した。",
+      "actual_content": "発表されたのは次世代スポーツカー「Roadster」の最上位仕様「Rocket」で、宇宙機の姿勢制御に使う高圧冷ガススラスターと床下吸引ファンを組み合わせ、数秒間の空中跳躍や姿勢反転（キックフリップ）を行うデモが公開された。日常的な交通手段としての「空飛ぶクルマ（eVTOL）」ではなく、瞬間的なガス噴射でスタント飛行を行う1人乗り仕様である。公道走行の認可はなく一般販売も招待制で、2028年の生産開始目標以外に正式価格や詳細な飛行持続時間は明かされていない。",
+      "buzz_jp_est": 5,
+      "verifiability": 4,
+      "hype_gap": 5,
+      "debate": 3,
+      "wonder": 5,
+      "life_relevance": 1,
+      "work_relevance": 1,
+      "concern_id": "mobility",
+      "entry_question": "テスラの「空飛ぶクルマ」は、渋滞を飛び越えて通勤できる乗り物なの？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "「空飛ぶクルマ」と報じられているが、実態は圧縮空気を一気に噴射して数秒跳ねるだけの1人乗りアクロバット車で、公道走行すら認められていない。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "テスラ ロードスター",
+      "jp_title_anchor": [
+        "テスラ",
+        "ロードスター"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 4.3,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-17",
+      "topic_first_date": "2026-10-15",
+      "topic_first_source": "候補 1470048ffa のannounced_on（テスラが“空飛ぶクルマ”を発表 マスク氏「AIではない」）",
+      "topic_series": "1470048ffa",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "テスラが“空飛ぶクルマ”を発表 マスク氏「AIではない」",
+        "id": "1470048ffa",
+        "source": "NHK 科学・文化"
+      }
+    },
+    {
+      "title": "CBD単回摂取で食欲増進？最新研究が示す意外な結果",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9LWlV5bXUwVmtSSVNLdjF3M3IzaGM5SVM0R1lVX1JuWkJmdFpZZE9ITGw4VVhiSVhmZk1uNlBYWEJUc2N1WnI3bkZhQW10LUpGWk9IM3h5RHpiVmw3Q0g2clJoTllsbDdwZzUxUjJGZTZueG00NUJ6cDd0RFdXVDg?oc=5",
+      "published": "2026-10-16",
+      "source": "Googleニュース（研究 食事 健康 効果）／GREEN ZONE JAPAN",
+      "source_kind": "media",
+      "outlet": "GREEN ZONE JAPAN",
+      "outlet_host": "greenzonejapan.com",
+      "genre_hint": "food_health",
+      "summary": "CBD単回摂取で食欲増進？最新研究が示す意外な結果（GREEN ZONE JAPAN）",
+      "id": "9083f8bb1b",
+      "sources": [
+        "GREEN ZONE JAPAN"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1016/j.appet.2026.108531",
+          "what_it_states": "健康な成人15名（男性11名、女性4名）を対象とした二重盲検ランダム化クロスオーバー試験において、高用量CBD（298mg）を朝食30分前に単回摂取させたところ、摂取180分後の自由摂食ランチでプラセボ群（平均786±280kcal）に比べ平均193kcal有意に多い979±462kcalを摂取した（p=0.003）。一方で食後の血糖値、インスリン、GLP-1、脂質代謝、自覚的空腹感スコアには差がなく、食欲刺激ホルモンであるグレリン濃度はCBD群で有意に低かった（180分時点で107pg/mL低下）。"
+        }
+      ],
+      "announced_on": "2026-03-11",
+      "headline_claim": "CBDを単回摂取すると食欲が増進し、その後の食事の摂取カロリーが有意に増加する。",
+      "actual_content": "英ラフバラー大学などの研究チームが成人15名を対象に実施した二重盲検クロスオーバー試験において、高用量CBD（298mg）の単回摂取により昼食の自由摂取カロリーがプラセボ比で平均193kcal増加することが確認された。しかし、被験者が感じた自覚的な空腹感や血糖・インスリン反応には差がなく、食欲を刺激するホルモンであるグレリンはむしろ低下していた。市販サプリメントの日常的な摂取量（1回10〜30mg程度）を大幅に超える高用量かつ単回摂取の実験であり、被験者数も15名と小さいため、日常利用での長期的な体重影響を断定できる段階にはない。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 1,
+      "concern_id": "food",
+      "entry_question": "リラックス用に飲むCBDで、逆に食欲が増えて太りやすくなるって本当？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "実験で使われたCBDは298mgと市販品の約10〜30倍のメガドーズで、しかも被験者はわずか15名。さらにお腹が空いたと感じる自覚スコアや食欲ホルモンのグレリンは増えるどころか減っており、なぜパスタを多く食べたのかメカニズムすら解明されていない点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "CBD 食欲増進",
+      "jp_title_anchor": [
+        "CBD",
+        "食欲増進"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.45,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-17",
+      "topic_first_date": "2026-03-11",
+      "topic_first_source": "候補 9083f8bb1b のannounced_on（CBD単回摂取で食欲増進？最新研究が示す意外な結果）",
+      "topic_series": "9083f8bb1b",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "CBD単回摂取で食欲増進？最新研究が示す意外な結果",
+        "id": "9083f8bb1b",
+        "source": "Googleニュース（研究 食事 健康 効果）／GREEN ZONE JAPAN"
+      }
+    },
+    {
+      "title": "慢性肝炎の進行を抑える新たな免疫保護メカニズムを解明",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1YdEpUV3dhbm9oSThzNlJXZVdkdnpsQ2VSQW5sZWxRenVxOWxoUURreGhQUkF6WGVwajFONHFvemtrNmZabE9sX0FVZVg4dlpKd1VqY21SdDJiZEUySUM2NktpRWZzVjA?oc=5",
+      "published": "2026-10-16",
+      "source": "Googleニュース（がん 新しい治療 研究）／J-CAST ニュース",
+      "source_kind": "media",
+      "outlet": "J-CAST ニュース",
+      "outlet_host": "j-cast.com",
+      "genre_hint": "medical",
+      "summary": "慢性肝炎の進行を抑える新たな免疫保護メカニズムを解明（J-CAST ニュース）",
+      "id": "66bbf8b1f7",
+      "sources": [
+        "J-CAST ニュース"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.kindai.ac.jp/news-pr/news-release/2026/10/046830.html",
+          "what_it_states": "近畿大学薬学部の原雄大講師・中山隆志教授らの研究グループが、ケモカインCCL28が免疫制御性IgA抗体産生細胞を肝臓へ集積させ、慢性肝炎のモデルマウスにおいて炎症や肝線維化を抑える肝臓保護機構を世界で初めて解明したと発表した。"
+        },
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1016/j.lfs.2026.10.15",
+          "what_it_states": "学術誌『Life Sciences』に掲載された論文（題目：CCL28 ameliorates chronic liver damage associated with the recruitment of immunosuppressive IgA antibody-secreting cells in mice）において、マウス実験を通じCCL28依存的に遊走する免疫制御性IgA細胞が肝線維化の進展を抑制する病態制御機構を報告。"
+        }
+      ],
+      "announced_on": "2026-10-16",
+      "headline_claim": "慢性肝炎の進行や肝線維化を抑える新たな免疫保護メカニズムを世界で初めて解明した。",
+      "actual_content": "近畿大学の研究グループが、ケモカインの一種「CCL28」が免疫制御性IgA抗体産生細胞を肝臓に誘導し、肝炎や線維化を抑制することをモデルマウスを用いた実験で突き止めました。これまで感染防御が主と見なされていたIgA産生細胞の中に、炎症を抑える特殊なサブセットが存在し肝保護に関わっていることを示した基礎研究です。ただし実験はマウスモデルで行われた分子メカニズムの解明段階であり、ヒトを対象とした治験や既存薬としての検証はこれからの段階です。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 2,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 1,
+      "concern_id": "cancer",
+      "entry_question": "特殊な免疫細胞で肝炎や肝硬変の進行を抑える薬ができたって本当？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "解明されたのはあくまでモデルマウスでの分子メカニズムであり、実際の治療薬の候補すらまだできていない基礎研究の初期段階である点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "CCL28 慢性肝炎",
+      "jp_title_anchor": [
+        "CCL28",
+        "慢性肝炎"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.25,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-17",
+      "topic_first_date": "2026-10-16",
+      "topic_first_source": "候補 d6a2ae6d37 のannounced_on（世界初、ケモカインCCL28による肝臓保護機構を解明 特殊I）",
+      "topic_series": "66bbf8b1f7",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "世界初、ケモカインCCL28による肝臓保護機構を解明 特殊IgA細胞の動員で慢性肝炎の抑制、新規治療法開発に期待",
+        "id": "d6a2ae6d37",
+        "source": "Googleニュース（がん 新しい治療 研究）／アットプレス"
+      }
+    },
+    {
+      "title": "Amazon、Beeの新AIデバイス2機種発表　リストバンド型とスマホ装着型、会話を要約し「Alexa+」と連携",
+      "url": "https://www.itmedia.co.jp/news/article/2610/16/2000002316/",
+      "published": "2026-10-16",
+      "source": "ITmedia AI+",
+      "source_kind": "media",
+      "summary": "Amazonは、傘下BeeブランドのAIデバイス2機種を発表した。手首や衣服に着ける「Bee Frontier」とスマホ背面に貼る「Bee Eclipse」で、会話の要約やToDo作成を行う。「Alexa+」やAmazon.comとも連携し、音声や要約はNitro基盤の暗号化環境で保護される。",
+      "id": "fdf258d06a",
+      "sources": [
+        "ITmedia AI+"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+          "what_it_states": "Amazon傘下のBeeより『Bee Frontier』（74.99ドル、バッテリー最大7日、IP67防水）と『Bee Eclipse』（99.99ドル、薄さ4.6mmのMagSafe対応、バッテリー21日以上）の2機種を発表。ボタン操作で会話をリアルタイム要約・ToDo化し、生音声はAWS Nitro基盤で処理後に削除。無料版は14日間の履歴保存、月額11.99ドルのBee Pro加入でAlexa+連携やAmazon.comの買い物レコメンド連携が無制限で利用可能。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://bee.computer/",
+          "what_it_states": "Bee Frontier（74.99ドルで即時発売）とBee Eclipse（99.99ドル、近日発売）の製品スペックを掲載。40以上の言語に対応し、通話の両側録音やノイズフィルタリング、オンデバイス/プライベート暗号化処理に対応。"
+        }
+      ],
+      "announced_on": "2026-10-15",
+      "headline_claim": "Amazonが会話を自動で要約しToDo化するリストバンド型・スマホ装着型の新型AIデバイス2機種を75ドルから発売し、Alexa+や買い物機能とも連携する。",
+      "actual_content": "発表された『Bee Frontier』（74.99ドル）と『Bee Eclipse』（99.99ドル）は、物理ボタンを押した際に対面会話や通話をマイクで拾い、AIが要約やToDoリストを生成する専用端末です。常時盗聴ではなくボタン操作とLED点灯が必須で、生音声データはAWS Nitroの保護環境で処理された後に即時破棄される設計とされています。ただし、Alexa+連携や14日を超える長期記憶の保持、高度な連携機能を使うには月額11.99ドルのサブスクリプション（Bee Pro）が必要であり、Amazon連携を有効にすると会話に出た商品がECのトップ画面に推薦される仕様です。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 4,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 4,
+      "concern_id": "work_ai",
+      "entry_question": "75ドルの会話要約AI端末は、本当に仕事やもの忘れを劇的にラクにする？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "本体は75ドルとお手頃だが、フル活用するには月額約12ドル（年間約144ドル）のサブスクが延々と続く点と、日常会話に出てきた欲しいものがそのままAmazonのトップ画面に並ぶという生々しい買い物誘導。",
+      "investment_related": false,
+      "deja_vu_note": "kl038（一人に一台のパーソナルAI）と日常密着型AIというテーマは通じるが、今回は会議メモ・議事録特化の具体的な低価格ハードウェア発売の検証。",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "Amazon Bee Frontier",
+      "jp_title_anchor": [
+        "Bee Frontier",
+        "Bee Eclipse"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.65,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-17",
+      "topic_first_date": "2026-10-15",
+      "topic_first_source": "候補 fdf258d06a のannounced_on（Amazon、Beeの新AIデバイス2機種発表　リストバンド）",
+      "topic_series": "fdf258d06a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "Amazon、Beeの新AIデバイス2機種発表　リストバンド型とスマホ装着型、会話を要約し「Alexa+」と連携",
+        "id": "fdf258d06a",
+        "source": "ITmedia AI+"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+          "ok": true,
+          "status": "HTTP 200「Bee Frontier and Bee Eclipse: 」",
+          "page_title": "Bee Frontier and Bee Eclipse: Introducing new AI wearable and phone attachment",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_blog"
+        },
+        {
+          "url": "https://bee.computer/",
+          "ok": true,
+          "status": "HTTP 200「Bee | Your personal wearable A」",
+          "page_title": "Bee | Your personal wearable AI",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-10-17T07:04:36",
+      "url_check": [
+        {
+          "url": "https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse",
+          "ok": true,
+          "status": "HTTP 200「Bee Frontier and Bee Eclipse: 」"
+        },
+        {
+          "url": "https://bee.computer/",
+          "ok": true,
+          "status": "HTTP 200「Bee | Your personal wearable A」"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "aboutamazon.com: HTTP 200「Bee Frontier and Bee Eclipse: 」 ／ bee.computer: HTTP 200「Bee | Your personal wearable A」",
+      "url_checked_at": "2026-10-17T07:04:36",
+      "buzz_history": [
+        {
+          "at": "2026-10-17T07:05:23",
+          "query": "Amazon Bee",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "「Bee Frontier」「Eclipse」が登場 Amazonの新型AI端末、会話から予定やタスクを自動整理",
+              "outlet": "NOVAIST",
+              "date": "2026-10-16"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 52
+        }
+      ],
+      "buzz_measured_at": "2026-10-17T07:05:23",
+      "buzz_measured": 2,
+      "buzz_outlets": 1,
+      "yahoo": false,
+      "buzz_evidence": [
+        {
+          "title": "「Bee Frontier」「Eclipse」が登場 Amazonの新型AI端末、会話から予定やタスクを自動整理",
+          "outlet": "NOVAIST",
+          "date": "2026-10-16"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 1,
+      "buzz_raw_items": 52,
+      "buzz_query": "Amazon Bee",
+      "buzz_adopted_at": "2026-10-17T07:05:23",
+      "buzz_adopted_n": 1
+    },
+    {
+      "title": "人と同じ現場で働くヒューマノイド20台、韓国が4業種で条件付き実証を承認",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9Jcm1GNnRPTWd3V0ZfU1dEV3Y2SlI5QzhmTjdZME5DdTBoNy1XSzdqU290Z3pOUl90RTBWM05ocGxoVk55STRDUGpmcEszQUxKcjNrdFpkMHl5RGdFX0VhRjdDb1ViSTBJSkFQQk9n?oc=5",
+      "published": "2026-10-16",
+      "source": "Googleニュース（ヒューマノイド）／XenoSpectrum",
+      "source_kind": "media",
+      "outlet": "XenoSpectrum",
+      "outlet_host": "xenospectrum.com",
+      "genre_hint": "humanoid",
+      "summary": "人と同じ現場で働くヒューマノイド20台、韓国が4業種で条件付き実証を承認（XenoSpectrum）",
+      "id": "49255587c5",
+      "sources": [
+        "XenoSpectrum"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.motie.go.kr",
+          "what_it_states": "韓国産業通商資源部が2026年10月13日に開催した第6次産業融合規制特例審議委員会において、ROBROS（ロブロス）による二足歩行ヒューマノイド20台を半導体・自動車・造船・物流の4業種現場に投入する規制サンドボックス（実証特例）を承認。現行法が求める固定型ロボット向けの安全柵設置の例外を認め、作業者と同一・隣接空間での移動作業データを収集して今後の安全基準策定に活用する方針を示した。実証には雇用労働部による危険性評価と安全措置の履行が条件付けられている。"
+        }
+      ],
+      "announced_on": "2026-10-13",
+      "headline_claim": "人と同じ現場で働くヒューマノイド20台、韓国が4業種で条件付き実証を承認",
+      "actual_content": "韓国の産業通商資源部が2026年10月13日、ロボット開発企業ROBROSに対し、二足歩行ヒューマノイド20台をネペス（半導体）、ソンウハイテック（自動車）、HD現代三湖（造船）、デリバリーラボ（物流）の4社現場で稼働させる規制サンドボックス（実証特例）を承認した。従来の安全規則が義務付けていた「安全柵による人間との隔離」を免除し、作業員と空間を共有して作業させる計画である。ただし、これは商業導入や性能合格の発表ではなく、雇用労働部が定めるリスク評価と危険低減措置の実施を前提としたテスト運用の許可にとどまり、現場で安全を維持できる運用条件や作業効率のデータ収集はこれから行われる。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 1,
+      "work_relevance": 3,
+      "concern_id": "work_ai",
+      "entry_question": "韓国の工場で柵なしヒューマノイドが人と一緒に働くって本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「工場でヒューマノイドが稼働し始めた」のではなく、「安全柵を外して人と並んで作業できるか確かめる特例実験」が承認されただけ。労働当局の安全審査をパスすることが条件で、実際に現場で役に立つスピードや安全性を示せるかはこれからの検証課題。",
+      "investment_related": false,
+      "deja_vu_note": "kl040（安川電機「2030年までにヒューマノイド」は本当か）など、工場や現場への人型ロボット導入スケジュールを検証した回とテーマが近い。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "ROBROS ヒューマノイド",
+      "jp_title_anchor": [
+        "ROBROS",
+        "ロブロス",
+        "ヒューマノイド"
+      ],
+      "announcement_type": "policy",
+      "freshness": 5,
+      "overall_score": 3.25,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-17",
+      "topic_first_date": "2026-10-13",
+      "topic_first_source": "候補 49255587c5 のannounced_on（人と同じ現場で働くヒューマノイド20台、韓国が4業種で条件付）",
+      "topic_series": "49255587c5",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "人と同じ現場で働くヒューマノイド20台、韓国が4業種で条件付き実証を承認",
+        "id": "49255587c5",
+        "source": "Googleニュース（ヒューマノイド）／XenoSpectrum"
+      }
+    },
+    {
+      "title": "スペースデータ、物流ロボットの導入前検証を支援",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1JZ2EzbDZ1ZDJleFlQcXN2X1k5RW50ejdvQXg1d0lhMkQ4VTJhbnRxVnd4MUFSRFhFQ0l5S0EwLV81QXkxVVBNZHl3?oc=5",
+      "published": "2026-10-16",
+      "source": "Googleニュース（人型ロボット）／LOGISTICS TODAY",
+      "source_kind": "media",
+      "outlet": "LOGISTICS TODAY",
+      "outlet_host": "logi-today.com",
+      "genre_hint": "humanoid",
+      "summary": "スペースデータ、物流ロボットの導入前検証を支援（LOGISTICS TODAY）",
+      "id": "55d2ba8af2",
+      "sources": [
+        "LOGISTICS TODAY"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000000231.000080352.html",
+          "what_it_states": "ロボット実装基盤『RobotBrain』向けに、ドローン点検、人型ロボット協働搬送（CarryLab）、四足歩行（StrideLab）、アーム精密挿入（ContactLab）、ドローン2機吊り荷搬送（TetherLab）の物理シミュレーションデモ5種を公開したこと"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://catalog.robotbrain.space/",
+          "what_it_states": "RobotBrainの物理実験カタログにおいて、荷物の実重量とロボットへの設定通知重量の差異、床の滑りやすさ、重心位置の違いによる関節負荷や姿勢変化をシミュレーション上で比較可能と記載"
+        }
+      ],
+      "announced_on": "2026-10-15",
+      "headline_claim": "スペースデータが物流ロボットの導入前検証を支援し、ドローンや人型ロボット等の作業成否を仮想空間で事前に検証可能にした。",
+      "actual_content": "株式会社スペースデータが自社のロボット実装基盤『RobotBrain』向けに、ドローンや人型ロボット、四足歩行ロボットなどの挙動を試す物理シミュレーションデモ5種を公開した。人型ロボットの協働搬送デモ（CarryLab）では、荷物の実重量と設定値の乖離や重心の偏り、床の摩擦による姿勢の崩れを可視化できるとしている。ただし、公開されたのはシミュレータ上の概念検証用デモ（プロトタイプ）であり、実際の物流倉庫で人型ロボット等を稼働させて得られた検証実績ではない。",
+      "buzz_jp_est": 2,
+      "verifiability": 4,
+      "hype_gap": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 1,
+      "work_relevance": 2,
+      "concern_id": null,
+      "entry_question": "人型ロボットはシミュレーションだけで倉庫に導入できるようになる？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "現場で人型ロボットが動いた実績発表ではなく、仮想空間で『重さを勘違いさせたらロボットが転倒する』様子を可視化したシミュレータのデモ公開に留まる。現実の床の汚れや荷物の歪みといった実環境とのギャップ（Sim-to-Real）が埋まるかは未知数。",
+      "investment_related": false,
+      "deja_vu_note": "kl040: 安川電機「2030年までにヒューマノイド」は本当か（産業現場におけるロボット導入のハードル）",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "スペースデータ RobotBrain",
+      "jp_title_anchor": [
+        "スペースデータ",
+        "RobotBrain"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.25,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-17",
+      "topic_first_date": "2026-10-08",
+      "topic_first_source": "候補 7257e5d357 のannounced_on（スペースデータが公開した「RobotBrain」導入前検証デ）",
+      "topic_series": "55d2ba8af2",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "スペースデータ、物流ロボットの導入前検証を支援",
+        "id": "55d2ba8af2",
+        "source": "Googleニュース（人型ロボット）／LOGISTICS TODAY"
+      }
+    },
+    {
+      "title": "年上のきょうだい数と幼児の腸内細菌タイプの関連を発見",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBfU25hd0xoZno3NVhpUXlXWEZ2RVBqVGtTWGJIeVc4cTdwUDIwMkt1dklQcFhvd1k0UDBZWFhvdGRoQU9PQ2RGcklDOGh5bWZPNUdHUTRoYmUzaTg2YjdxMHlOTQ?oc=5",
+      "published": "2026-10-16",
+      "source": "Googleニュース（腸内細菌 研究）／理化学研究所",
+      "source_kind": "media",
+      "outlet": "理化学研究所",
+      "outlet_host": "riken.jp",
+      "genre_hint": "food_health",
+      "summary": "年上のきょうだい数と幼児の腸内細菌タイプの関連を発見（理化学研究所）",
+      "id": "2cf41f76b8",
+      "sources": [
+        "理化学研究所"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.riken.jp/press/2026/20261016_2/",
+          "what_it_states": "理研や千葉大などの共同研究グループが、エコチル調査の追加調査に参加した2歳児903人と4歳児684人の便を解析。年上のきょうだいがいる子どもは、細菌の多様性と便中プロピオン酸濃度が最も低い『タイプ1』に分類される割合が低く、年上のきょうだい数が多いほど短鎖脂肪酸濃度が高い関連を確認した。ただし病気の予防効果や疾患リスク低減の因果関係を示したものではないと注記。"
+        },
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1038/s41390-026-05478-3",
+          "what_it_states": "科学雑誌『Pediatric Research』（2026年10月14日オンライン掲載）。タイトルは『Sibling factors associated with gut microbiota and fecal short-chain fatty acids in preschoolers』。幼児期における年上のきょうだいの存在・人数と、腸内細菌叢のエンテロタイプおよび便中短鎖脂肪酸濃度との統計学的関連、抗菌薬使用歴の媒介分析を報告。"
+        }
+      ],
+      "announced_on": "2026-10-16",
+      "headline_claim": "年上のきょうだいが多い幼児ほど、腸内細菌の多様性や便中の短鎖脂肪酸濃度が高いタイプになりやすいことが判明した。",
+      "actual_content": "エコチル調査に参加した2歳児903人と4歳児684人の便を解析したところ、年上のきょうだいがいる子どもは細菌多様性や便中プロピオン酸濃度が最も低いタイプに分類される割合が低いことが示されました。4歳児では直近3カ月の抗菌薬使用がこの関連の一部に関与する可能性も示唆されています。ただし、本研究は家族構成と腸内環境の相関関係を示した観察研究であり、年上のきょうだいがいること自体が病気を防ぐことや、腸内環境の違いが疾患リスクを下げる直接の因果関係を証明したものではありません。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 1,
+      "concern_id": "parenting",
+      "entry_question": "「お兄ちゃんやお姉ちゃんがいると、子どものお腹の菌が強くなる」って本当？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "観察研究で統計的な相関が見つかった段階で病気の予防効果は実証されておらず、そもそも腸内環境を良くしたいからといって後から『年上のきょうだい』を増やすことはできません。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "理研 腸内細菌 きょうだい",
+      "jp_title_anchor": [
+        "きょうだい",
+        "腸内細菌"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.45,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-17",
+      "topic_first_date": "2026-10-16",
+      "topic_first_source": "候補 2cf41f76b8 のannounced_on（年上のきょうだい数と幼児の腸内細菌タイプの関連を発見）",
+      "topic_series": "2cf41f76b8",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "年上のきょうだい数と幼児の腸内細菌タイプの関連を発見",
+        "id": "2cf41f76b8",
+        "source": "Googleニュース（腸内細菌 研究）／理化学研究所"
+      }
+    },
+    {
+      "title": "「いつ食べるか」で脳の働きが変わる？　食事のタイミングと認知機能の関係",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5obzR5OUF2OUVxblRVUy1KUzFzQmJ4LU9QV3BVeHI4R3dpRW5IeFVaeHNvTmdrNlk2Uk9wX0N0c0lPbTdxekVDVmtkeUtmUUpTb1FlSlUxeDnSAV5BVV95cUxOTDY1Ylk1bXVxOVlLU2I0R0stWVFaV01RY2lndUdIMUNzRFRZdmI2MUZmLVJYMEVSU29ySUF2M2s1X2M4NXR4N1FteFpQSVZHangteWtqeFZ2dWxPSnJ3?oc=5",
+      "published": "2026-10-16",
+      "source": "Googleニュース（研究 食事 健康 効果）／大紀元 エポックタイムズ",
+      "source_kind": "media",
+      "outlet": "大紀元 エポックタイムズ",
+      "outlet_host": "epochtimes.jp",
+      "genre_hint": "food_health",
+      "summary": "「いつ食べるか」で脳の働きが変わる？　食事のタイミングと認知機能の関係（大紀元 エポックタイムズ）",
+      "id": "e680fc9211",
+      "sources": [
+        "大紀元 エポックタイムズ"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://www.sciencedaily.com/releases/2026/07/260727012125.htm",
+          "what_it_states": "米国栄養学会の年次総会『NUTRITION 2026』で発表された演題『Time-Restricted Eating and Caloric Restriction Influence Cognitive Function in Older Women』（ラトガース大学 Brandon D. McGuire、Sue A. Shapsesら）の発表要旨。過体重または肥満の閉経後女性47人（50〜79歳）を対象に、両群とも1日500 kcalのカロリー制限を行い、一方は1日8〜9時間以内（平均8.2時間、10:00〜18:00、就寝4時間前までに終了）、他方は通常通り約12時間（平均12.3時間）で食事を摂る6か月間の試験を実施。両群とも約15ポンド（約7 kg）の減量を達成したが、CANTAB検査において時間制限食群のみ空間計画・問題解決力（実行機能）の有意な改善がみられた一方、記憶・学習タスクのエラー減少は統計的有意差に達せず、反応時間やマルチタスクには群間差がなかった"
+        }
+      ],
+      "announced_on": "2026-07-26",
+      "headline_claim": "食べる量が同じでも食事を1日8〜9時間以内に収めるだけで、減量とは別枠で脳の働き（認知機能）が改善する。",
+      "actual_content": "ラトガース大学の研究チームが肥満傾向のある閉経後女性47人（50〜79歳）を対象に6か月間行ったパイロット比較試験の学会発表です。両群とも同じ500 kcalのカロリー制限を行い約7 kg減量しましたが、食事枠を平均8.2時間（就寝4時間前に終了）に絞った群は、約12時間枠の群に比べて計画力や問題解決力（実行機能）の向上が確認されました。ただし、記憶・学習の改善傾向は有意差に届かず、反応速度やマルチタスク能力には差がありませんでした。未査読の学会抄録段階であり、対象も小規模な特定集団に限られています。",
+      "buzz_jp_est": 2,
+      "verifiability": 3,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 2,
+      "concern_id": "dementia",
+      "entry_question": "食事の時間を8時間に縮めると、頭の働きが良くなるって本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "肥満傾向の女性47人だけを対象にした査読前の学会発表にすぎず、改善したのも計画・問題解決テストの一部だけで、記憶力や反応速度には統計的な差が出ていません。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "大紀元 食事のタイミング",
+      "jp_title_anchor": [
+        "いつ食べるか",
+        "食事のタイミング"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.35,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-17",
+      "topic_first_date": "2026-07-26",
+      "topic_first_source": "候補 e680fc9211 のannounced_on（「いつ食べるか」で脳の働きが変わる？　食事のタイミングと認知）",
+      "topic_series": "e680fc9211",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "「いつ食べるか」で脳の働きが変わる？　食事のタイミングと認知機能の関係",
+        "id": "e680fc9211",
+        "source": "Googleニュース（研究 食事 健康 効果）／大紀元 エポックタイムズ"
+      }
+    },
+    {
+      "title": "米アンソロピック共同創業者を直撃「AIがAIを開発する」とは？",
+      "url": "https://news.web.nhk/newsweb/na/nd-20261016de60399",
+      "published": "2026-10-16",
+      "source": "NHK 科学・文化",
+      "source_kind": "media",
+      "summary": "急速に開発が進むAIが、社会、そして人類に与える影響をめぐり議論が紛糾しています。 注目されているのが日本語で「再帰的自己改善」と訳される「RSI」と呼ばれるAI開発の手法です。AIがみずからコードな…",
+      "id": "46572d84b6",
+      "sources": [
+        "NHK 科学・文化"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://www.anthropic.com/research/when-ai-builds-itself",
+          "what_it_states": "Anthropic社内の本番環境にマージされるコードの80%以上をAI（Claude）が作成しており、エンジニア1人あたりの四半期コード出荷量は過去数年比で8倍に増加。ただしAIが自律して後継AIをゼロから設計・訓練する完全な再帰的自己改善（RSI）には至っていないと報告。"
+        },
+        {
+          "kind": "official_blog",
+          "url": "https://darioamodei.com/we-must-pace-the-frontier",
+          "what_it_states": "CEOのダリオ・アモデイ氏が、AIがAIを改善する再帰的自己改善（RSI）の加速に対し、軍縮条約のように開発速度に上限（スピードリミット）を設ける規制枠組みの必要性を提言。"
+        }
+      ],
+      "announced_on": "2026-06-04",
+      "headline_claim": "AIがAI自身を開発・改良する「再帰的自己改善（RSI）」が2027年にも到来し、人間による制御が困難になる恐れがあると米Anthropic創業者が警鐘を鳴らした。",
+      "actual_content": "Anthropicの社内データでは、エンジニアが出荷するコード量が過去比で8倍に達し、コードベースへの反映作業の8割以上をClaudeが担うなど開発補助の自動化が急速に進んでいる。しかし、現段階のAIは人間から与えられた指示に基づいてコード作成や実験補助を行っているに過ぎず、AIが自律的に次世代モデルの設計から訓練・評価までループを完結させる「完全な再帰的自己改善」は達成されていない。共同創業者のジャック・クラーク氏が予測を「2027年」へと前倒しした発言も、数学や生物学研究での進展を踏まえた主観的な見立て・問題提起であり、自律改善が技術的に実証されたわけではない。",
+      "buzz_jp_est": 3,
+      "verifiability": 3,
+      "hype_gap": 4,
+      "debate": 4,
+      "wonder": 4,
+      "life_relevance": 2,
+      "work_relevance": 4,
+      "concern_id": "work_ai",
+      "entry_question": "AIがAIを自分で作る時代が来年来るって本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「コードの8割をAIが書いている」と言っても、人間が指示を出しレビューしてマージしている道具の段階。AIが自ら計算資源を調達して次世代モデルを訓練する「完全な自律ループ」とはまだ距離がある。",
+      "investment_related": false,
+      "deja_vu_note": "kl034でAIエージェントの自律作業（OpenAI dots）を扱ったが、AIが次のAIを開発する「再帰的自己改善（RSI）」そのものを扱うのは初。",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "アンソロピック RSI",
+      "jp_title_anchor": [
+        "アンソロピック",
+        "再帰的自己改善",
+        "RSI"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.7,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-17",
+      "topic_first_date": "2026-06-04",
+      "topic_first_source": "候補 46572d84b6 のannounced_on（米アンソロピック共同創業者を直撃「AIがAIを開発する」とは）",
+      "topic_series": "46572d84b6",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "米アンソロピック共同創業者を直撃「AIがAIを開発する」とは？",
+        "id": "46572d84b6",
+        "source": "NHK 科学・文化"
+      }
     }
   ]
 }
