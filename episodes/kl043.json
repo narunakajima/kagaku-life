@@ -1,0 +1,2020 @@
+{
+ "episode_id": "kl043",
+ "format": "dialogue",
+ "structure": "rounds_v3",
+ "template": "myth_buster",
+ "source_type": "topic",
+ "verdict_as_of": "2026-10-17",
+ "genre": "ai",
+ "health": false,
+ "episode_title": "AGIは2027年に来る？「来た」と言える条件を一次資料で確かめる",
+ "youtube_title": "AGIは2027年に来る？「来た」と言える条件を一次資料で確認",
+ "entry_question": "AI企業は「AGIが2027年初までに来る」と言う。その「来た」は、何が起きたら言えるのか。AIがAIを改良する段階は、もう始まっているのか。",
+ "verdict": {
+  "dreamer": "soon",
+  "skeptic": "dubious"
+ },
+ "hook_lines": [
+  "AGIは2027年に来る？",
+  "「来た」の決め手は？"
+ ],
+ "thumbnail_headline": "2027年に来る？",
+ "thumbnail_exprs": {
+  "dreamer": "thinking",
+  "skeptic": "doubt"
+ },
+ "youtube_tags": [
+  "AGI",
+  "汎用人工知能",
+  "AI",
+  "再帰的自己改良",
+  "知能爆発",
+  "AIの進化",
+  "Anthropic",
+  "RAND",
+  "答え合わせ",
+  "科学ニュース"
+ ],
+ "references": [
+  {
+   "title": "Anthropic の政策提言についての公式投稿",
+   "authors": [],
+   "year": 2025,
+   "venue": "Anthropic 公式投稿（2025-03-06）",
+   "url": "https://anthropic.com/news/anthropic-s-recommendations-ostp-u-s-ai-action-plan",
+   "is_preprint": false,
+   "institution": "Anthropic",
+   "source_kind": "official_blog"
+  },
+  {
+   "title": "Q2.5 2026 Timelines Update: Uplift and Revenue",
+   "authors": [
+    "Eli Lifland",
+    "Daniel Kokotajlo",
+    "Brendan Halstead"
+   ],
+   "year": 2026,
+   "venue": "AI Futures Project（2026-08-17）",
+   "url": "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift",
+   "is_preprint": false,
+   "institution": "AI Futures Project",
+   "source_kind": "official_blog"
+  },
+  {
+   "title": "Recursive Self-Improvement and Automated AI Research and Development",
+   "authors": [
+    "Gopal P. Sarma",
+    "Rachel Steratore",
+    "Michael Jacob",
+    "Sunny D. Bhatt"
+   ],
+   "year": 2026,
+   "venue": "RAND Expert Insights（2026-10-12）",
+   "url": "https://www.rand.org/pubs/perspectives/PEA5068-1.html",
+   "is_preprint": false,
+   "institution": "RAND",
+   "source_kind": "tech_report"
+  },
+  {
+   "title": "Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops",
+   "authors": [
+    "Mingguang Chen",
+    "Licheng Wang",
+    "Bo Qu"
+   ],
+   "year": 2026,
+   "venue": "arXiv 2607.07663（2026-07-08投稿、09-06改訂）",
+   "url": "https://arxiv.org/abs/2607.07663",
+   "is_preprint": true,
+   "institution": "",
+   "source_kind": "preprint_survey"
+  },
+  {
+   "title": "Will Compute Bottlenecks Prevent a Software Intelligence Explosion?",
+   "authors": [
+    "Tom Davidson"
+   ],
+   "year": 2025,
+   "venue": "Forethought（2025-04-04、05-18更新）",
+   "url": "https://www.forethought.org/research/will-compute-bottlenecks-prevent-a-software-intelligence-explosion",
+   "is_preprint": false,
+   "institution": "Forethought",
+   "source_kind": "essay"
+  },
+  {
+   "title": "Anthropic Response to OSTP RFI (March 2025) - Final Submission",
+   "authors": [],
+   "year": 2025,
+   "venue": "Anthropic 提出文書（2025-03）",
+   "url": "https://www-cdn.anthropic.com/17a66ce2e943b82db8a021b974f0170baf6dce60.pdf",
+   "is_preprint": false,
+   "institution": "Anthropic",
+   "source_kind": "official_doc"
+  }
+ ],
+ "scenes": [
+  {
+   "type": "teaser",
+   "bgm_role": "intro",
+   "ken_burns": "zoom_out",
+   "image_prompt": "Bright daytime, a modern airy open-plan software office seen from behind empty desks, large monitors showing only blurred, unreadable colourful code-like lines, one big central monitor with a softly glowing abstract loop diagram in warm coral. Potted plants, coffee mugs. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
+   "lines": [
+    {
+     "speaker": "dreamer",
+     "text": "AGIは、2027年初までに来るらしい！",
+     "expression": "excited",
+     "tone": "excited, like breaking news",
+     "t0": 0.0,
+     "dur": 3.76,
+     "cards": [
+      {
+       "text": "AGIは、2027年初までに来るらしい！",
+       "start": 0.0,
+       "end": 3.76
+      }
+     ]
+    }
+   ],
+   "scene_id": 1,
+   "narrator": "dialogue",
+   "narration": "大輔「AGIは、2027年初までに来るらしい！」",
+   "lines_hash": "26e1b7980030",
+   "zoom_anchor": {
+    "x": 0.5,
+    "y": 0.5
+   }
+  },
+  {
+   "type": "teaser",
+   "bgm_role": "intro",
+   "ken_burns": "zoom_out",
+   "reuse_scene_id": 8,
+   "lines": [
+    {
+     "speaker": "skeptic",
+     "text": "でも予測を出したチームの見立ては、行ったり来たりしてる。",
+     "expression": "doubt",
+     "tone": "dry",
+     "t0": 0.0,
+     "dur": 3.28,
+     "cards": [
+      {
+       "text": "でも予測を出したチームの見立ては、",
+       "start": 0.0,
+       "end": 2.0
+      },
+      {
+       "text": "行ったり来たりしてる。",
+       "start": 2.15,
+       "end": 3.38
+      }
+     ]
+    }
+   ],
+   "scene_id": 2,
+   "narrator": "dialogue",
+   "narration": "沙織「でも予測を出したチームの見立ては、行ったり来たりしてる。」",
+   "lines_hash": "dae39027797a",
+   "zoom_anchor": {
+    "x": 0.5,
+    "y": 0.5
+   }
+  },
+  {
+   "type": "teaser",
+   "bgm_role": "intro",
+   "ken_burns": "zoom_out",
+   "reuse_scene_id": 11,
+   "lines": [
+    {
+     "speaker": "dreamer",
+     "text": "AIがAIの開発を手伝うのは、もう事実だ。",
+     "expression": "thinking",
+     "t0": 0.0,
+     "dur": 4.56,
+     "cards": [
+      {
+       "text": "AIがAIの開発を手伝うのは、もう事実だ。",
+       "start": 0.0,
+       "end": 4.12
+      }
+     ]
+    }
+   ],
+   "scene_id": 3,
+   "narrator": "dialogue",
+   "narration": "大輔「AIがAIの開発を手伝うのは、もう事実だ。」",
+   "lines_hash": "2e5fc112f61d",
+   "zoom_anchor": {
+    "x": 0.5,
+    "y": 0.5
+   }
+  },
+  {
+   "type": "teaser",
+   "bgm_role": "intro",
+   "ken_burns": "zoom_out",
+   "reuse_scene_id": 8,
+   "lines": [
+    {
+     "speaker": "skeptic",
+     "text": "で、AGIが「来た」って、どうなったら言えるの？",
+     "expression": "doubt",
+     "tag": "question",
+     "t0": 0.0,
+     "dur": 3.16,
+     "cards": [
+      {
+       "text": "で、AGIが「来た」って、どうなったら言えるの？",
+       "start": 0.2,
+       "end": 3.36
+      }
+     ]
+    }
+   ],
+   "scene_id": 4,
+   "narrator": "dialogue",
+   "narration": "沙織「で、AGIが「来た」って、どうなったら言えるの？」",
+   "lines_hash": "d746cab4f1fe",
+   "zoom_anchor": {
+    "x": 0.5,
+    "y": 0.5
+   }
+  },
+  {
+   "type": "setup",
+   "bgm_role": "intro",
+   "image_asset": "base_cafe_b",
+   "ken_burns": "zoom_out",
+   "lines": [
+    {
+     "speaker": "dreamer",
+     "text": "お題はAGI、何でもこなせるAI。AI企業は、2026年末から2027年初に来ると言ってる。",
+     "expression": "excited",
+     "t0": 0.0,
+     "dur": 9.0,
+     "cards": [
+      {
+       "text": "お題はAGI、何でもこなせるAI。",
+       "start": 0.0,
+       "end": 3.2
+      },
+      {
+       "text": "AI企業は、2026年末から2027年初に",
+       "start": 3.92,
+       "end": 7.85
+      },
+      {
+       "text": "来ると言ってる。",
+       "start": 8.0,
+       "end": 9.2
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "私の予想は、2027年前半になっても、誰も「来た」と言い切れない。",
+     "expression": "doubt",
+     "tag": "prediction",
+     "t0": 9.28,
+     "dur": 6.08,
+     "cards": [
+      {
+       "text": "私の予想は、2027年前半になっても、",
+       "start": 0.0,
+       "end": 3.64
+      },
+      {
+       "text": "誰も「来た」と言い切れない。",
+       "start": 3.86,
+       "end": 5.96
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "僕は、言い切れなくても、中身はもう動き始めてると思う。",
+     "expression": "thinking",
+     "tag": "prediction",
+     "t0": 15.64,
+     "dur": 4.36,
+     "cards": [
+      {
+       "text": "僕は、言い切れなくても、中身はもう",
+       "start": 0.0,
+       "end": 2.76
+      },
+      {
+       "text": "動き始めてると思う。",
+       "start": 2.91,
+       "end": 4.41
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "動き始めてるって、何が。",
+     "expression": "doubt",
+     "t0": 20.28,
+     "dur": 2.76,
+     "cards": [
+      {
+       "text": "動き始めてるって、何が。",
+       "start": 0.0,
+       "end": 2.76
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "そこが今日の本題。まず、時期から確かめよう。",
+     "expression": "neutral",
+     "t0": 23.32,
+     "dur": 3.64,
+     "cards": [
+      {
+       "text": "そこが今日の本題。まず、",
+       "start": 0.0,
+       "end": 1.8
+      },
+      {
+       "text": "時期から確かめよう。",
+       "start": 1.8,
+       "end": 3.3
+      }
+     ]
+    }
+   ],
+   "scene_id": 5,
+   "narrator": "dialogue",
+   "narration": "大輔「お題はAGI、何でもこなせるAI。AI企業は、2026年末から2027年初に来ると言ってる。」\n沙織「私の予想は、2027年前半になっても、誰も「来た」と言い切れない。」\n大輔「僕は、言い切れなくても、中身はもう動き始めてると思う。」\n沙織「動き始めてるって、何が。」\n大輔「そこが今日の本題。まず、時期から確かめよう。」",
+   "lines_hash": "8874484a80a7",
+   "zoom_anchor": {
+    "x": 0.5,
+    "y": 0.5
+   }
+  },
+  {
+   "type": "check",
+   "bgm_role": "main",
+   "reference_index": 0,
+   "round": 1,
+   "round_title": "「来る」と言ったのは誰？",
+   "ken_burns": "static",
+   "source_card": {
+    "kind": "blog",
+    "source": "Anthropic 公式投稿（2025年3月6日）",
+    "quote": "we expect powerful AI systems will emerge in late 2026 or early 2027",
+    "quote_type": "原文",
+    "highlight": "late 2026 or early 2027",
+    "items": [
+     "政府への政策提言についての投稿",
+     "提出文書の本文: as soon as late 2026 or 2027",
+     "書いたのは企業自身（予告の立場）"
+    ],
+    "reference_index": 0
+   },
+   "lines": [
+    {
+     "speaker": "dreamer",
+     "text": "Anthropicは2025年3月の公式投稿で、強力なAIが2026年末か2027年初に出てくる、と書いてる。",
+     "expression": "excited",
+     "t0": 0.0,
+     "dur": 9.76,
+     "cards": [
+      {
+       "text": "Anthropicは2025年3月の公式投稿で、",
+       "start": 0.0,
+       "end": 3.6
+      },
+      {
+       "text": "強力なAIが2026年末か",
+       "start": 3.75,
+       "end": 6.43
+      },
+      {
+       "text": "2027年初に出てくる、",
+       "start": 6.43,
+       "end": 8.91
+      },
+      {
+       "text": "と書いてる。",
+       "start": 9.06,
+       "end": 9.96
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "ちょっと待って。書いてあるのは「強力なAI」ね。AGIって言葉じゃない。",
+     "expression": "doubt",
+     "t0": 10.04,
+     "dur": 5.04,
+     "cards": [
+      {
+       "text": "ちょっと待って。書いてあるのは「強力なAI」",
+       "start": 0.0,
+       "end": 2.99
+      },
+      {
+       "text": "ね。AGIって言葉じゃない。",
+       "start": 3.14,
+       "end": 5.04
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "そこは言葉が違う。でも、時期ははっきり書いてある。",
+     "expression": "neutral",
+     "t0": 15.36,
+     "dur": 3.28,
+     "cards": [
+      {
+       "text": "そこは言葉が違う。でも、",
+       "start": 0.0,
+       "end": 1.57
+      },
+      {
+       "text": "時期ははっきり書いてある。",
+       "start": 1.57,
+       "end": 3.28
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "政府に出した文書の本文は、もう少し控えめ。早ければ2026年末か2027年、という書き方ね。",
+     "expression": "doubt",
+     "t0": 18.92,
+     "dur": 7.64,
+     "cards": [
+      {
+       "text": "政府に出した文書の本文は、もう少し控えめ。",
+       "start": 0.0,
+       "end": 3.15
+      },
+      {
+       "text": "早ければ2026年末か2027年、",
+       "start": 3.3,
+       "end": 6.49
+      },
+      {
+       "text": "という書き方ね。",
+       "start": 6.64,
+       "end": 7.84
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "投稿の方が、一歩踏み込んでるのか。",
+     "expression": "thinking",
+     "t0": 26.84,
+     "dur": 2.96,
+     "cards": [
+      {
+       "text": "投稿の方が、一歩踏み込んでるのか。",
+       "start": 0.0,
+       "end": 2.96
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "それに、企業自身の予告で、政府への提言の中の言葉。そこは頭に置いとく。",
+     "expression": "doubt",
+     "t0": 30.08,
+     "dur": 5.36,
+     "cards": [
+      {
+       "text": "それに、企業自身の予告で、",
+       "start": 0.0,
+       "end": 2.04
+      },
+      {
+       "text": "政府への提言の中の言葉。",
+       "start": 2.04,
+       "end": 3.92
+      },
+      {
+       "text": "そこは頭に置いとく。",
+       "start": 4.07,
+       "end": 5.56
+      }
+     ]
+    }
+   ],
+   "scene_id": 6,
+   "narrator": "dialogue",
+   "image_asset": "cards/kl043_S06",
+   "narration": "大輔「Anthropicは2025年3月の公式投稿で、強力なAIが2026年末か2027年初に出てくる、と書いてる。」\n沙織「ちょっと待って。書いてあるのは「強力なAI」ね。AGIって言葉じゃない。」\n大輔「そこは言葉が違う。でも、時期ははっきり書いてある。」\n沙織「政府に出した文書の本文は、もう少し控えめ。早ければ2026年末か2027年、という書き方ね。」\n大輔「投稿の方が、一歩踏み込んでるのか。」\n沙織「それに、企業自身の予告で、政府への提言の中の言葉。そこは頭に置いとく。」\n［画面の資料カード］Anthropic 公式投稿（2025年3月6日） 「we expect powerful AI systems will emerge in late 2026 or early 2027」（原文） ・政府への政策提言についての投稿 ・提出文書の本文: as soon as late 2026 or 2027 ・書いたのは企業自身（予告の立場）",
+   "lines_hash": "78f9589ea75f"
+  },
+  {
+   "type": "check",
+   "bgm_role": "main",
+   "reference_index": 1,
+   "round": 1,
+   "ken_burns": "static",
+   "source_card": {
+    "kind": "blog",
+    "source": "AI Futures Project（2026年8月17日）",
+    "quote": "reality seems to be going at roughly 70-90% the speed of AI 2027",
+    "quote_type": "原文",
+    "highlight": "70-90% the speed",
+    "items": [
+     "コード自動化AIの中央値: 2027年11月〜2030年1月",
+     "（著者3人で割れる。2026年8月）",
+     "AGI相当（TED-AI）: 最も早い人で2028年11月",
+     "条件: 技術的に可能な最速で進んだ場合"
+    ],
+    "reference_index": 1
+   },
+   "lines": [
+    {
+     "speaker": "dreamer",
+     "text": "見立てが動いたチームもある。「AI 2027」という予測を出したチームは、2025年に見立てを後ろにずらして、2026年8月にまた少し前に戻した。",
+     "expression": "thinking",
+     "t0": 0.0,
+     "dur": 11.72,
+     "cards": [
+      {
+       "text": "見立てが動いたチームもある。「AI",
+       "start": 0.0,
+       "end": 2.55
+      },
+      {
+       "text": "2027」という予測を出したチームは、",
+       "start": 2.7,
+       "end": 5.55
+      },
+      {
+       "text": "2025年に見立てを後ろにずらして、",
+       "start": 5.7,
+       "end": 8.94
+      },
+      {
+       "text": "2026年8月にまた少し前に戻した。",
+       "start": 9.09,
+       "end": 11.92
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "数字は？",
+     "expression": "doubt",
+     "t0": 12.0,
+     "dur": 1.32,
+     "cards": [
+      {
+       "text": "数字は？",
+       "start": 0.0,
+       "end": 1.32
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "人のエンジニアの代わりにコードを書けるAIだと、中央値は著者三人で2027年11月から2030年1月まで割れてる。",
+     "expression": "neutral",
+     "t0": 13.6,
+     "dur": 10.8,
+     "cards": [
+      {
+       "text": "人のエンジニアの代わりに",
+       "start": 0.0,
+       "end": 1.8
+      },
+      {
+       "text": "コードを書けるAIだと、",
+       "start": 1.8,
+       "end": 3.6
+      },
+      {
+       "text": "中央値は著者三人で2027年11月から",
+       "start": 3.75,
+       "end": 8.23
+      },
+      {
+       "text": "2030年1月まで割れてる。",
+       "start": 8.38,
+       "end": 10.76
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "割れてるのね。しかも「技術的に可能な最速で進めば」という条件つき。",
+     "expression": "neutral",
+     "t0": 24.68,
+     "dur": 5.92,
+     "cards": [
+      {
+       "text": "割れてるのね。",
+       "start": 0.0,
+       "end": 1.27
+      },
+      {
+       "text": "しかも「技術的に可能な最速で進めば」",
+       "start": 1.27,
+       "end": 4.54
+      },
+      {
+       "text": "という条件つき。",
+       "start": 4.69,
+       "end": 5.89
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "実際の進みは、最初の筋書きの7〜9割の速さ、と自分たちで評価してる。",
+     "expression": "neutral",
+     "t0": 30.88,
+     "dur": 5.72,
+     "cards": [
+      {
+       "text": "実際の進みは、最初の筋書きの7〜9割の速さ、",
+       "start": 0.0,
+       "end": 3.97
+      },
+      {
+       "text": "と自分たちで評価してる。",
+       "start": 4.12,
+       "end": 5.92
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "全分野で人間の専門家を上回るAI、AGI相当の方は、一番早い人の中央値でも2028年11月。2027年前半は、中央値の外ね。",
+     "expression": "doubt",
+     "t0": 36.88,
+     "dur": 10.96,
+     "cards": [
+      {
+       "text": "全分野で人間の専門家を上回るAI、",
+       "start": 0.0,
+       "end": 2.78
+      },
+      {
+       "text": "AGI相当の方は、一番早い人の中央値でも",
+       "start": 3.1,
+       "end": 6.1
+      },
+      {
+       "text": "2028年11月。2027年前半は、",
+       "start": 6.25,
+       "end": 9.65
+      },
+      {
+       "text": "中央値の外ね。",
+       "start": 9.8,
+       "end": 10.85
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "そこは譲る。2027年前半のAGIは早すぎる。でもコードを書けるAIなら、一番早い人で2027年のうちだ。",
+     "expression": "deflated",
+     "tag": "turn",
+     "t0": 48.12,
+     "dur": 9.6,
+     "cards": [
+      {
+       "text": "そこは譲る。2027年前半のAGIは早すぎる。",
+       "start": 0.0,
+       "end": 4.0
+      },
+      {
+       "text": "でもコードを書けるAIなら、",
+       "start": 4.26,
+       "end": 6.36
+      },
+      {
+       "text": "一番早い人で2027年のうちだ。",
+       "start": 6.6,
+       "end": 9.26
+      }
+     ]
+    }
+   ],
+   "scene_id": 7,
+   "narrator": "dialogue",
+   "image_asset": "cards/kl043_S07",
+   "narration": "大輔「見立てが動いたチームもある。「AI 2027」という予測を出したチームは、2025年に見立てを後ろにずらして、2026年8月にまた少し前に戻した。」\n沙織「数字は？」\n大輔「人のエンジニアの代わりにコードを書けるAIだと、中央値は著者三人で2027年11月から2030年1月まで割れてる。」\n沙織「割れてるのね。しかも「技術的に可能な最速で進めば」という条件つき。」\n大輔「実際の進みは、最初の筋書きの7〜9割の速さ、と自分たちで評価してる。」\n沙織「全分野で人間の専門家を上回るAI、AGI相当の方は、一番早い人の中央値でも2028年11月。2027年前半は、中央値の外ね。」\n大輔「そこは譲る。2027年前半のAGIは早すぎる。でもコードを書けるAIなら、一番早い人で2027年のうちだ。」\n［画面の資料カード］AI Futures Project（2026年8月17日） 「reality seems to be going at roughly 70-90% the speed of AI 2027」（原文） ・コード自動化AIの中央値: 2027年11月〜2030年1月 ・（著者3人で割れる。2026年8月） ・AGI相当（TED-AI）: 最も早い人で2028年11月 ・条件: 技術的に可能な最速で進んだ場合",
+   "lines_hash": "34c7a1d62d98"
+  },
+  {
+   "type": "paper",
+   "bgm_role": "main",
+   "round": 2,
+   "round_title": "「来た」は何で決まる？",
+   "ken_burns": "zoom_out",
+   "image_prompt": "Quiet research office at night, seen from behind a row of empty desks: several large monitors showing only blurred, unreadable flowing diagrams of looping arrows and branching nodes in teal and slate tones, one central monitor glowing with a soft warm coral loop-shaped diagram. Coffee mugs, notebooks, a city skyline glowing through large windows. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
+   "lines": [
+    {
+     "speaker": "skeptic",
+     "text": "そもそも、何が起きたらAGIが「来た」ことになるの？",
+     "expression": "doubt",
+     "t0": 0.0,
+     "dur": 3.4,
+     "cards": [
+      {
+       "text": "そもそも、何が起きたらAGIが「来た」",
+       "start": 0.0,
+       "end": 2.37
+      },
+      {
+       "text": "ことになるの？",
+       "start": 2.52,
+       "end": 3.4
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "大きく二つある。一つは能力型。人間と同じ水準で、ほとんどの仕事ができること。",
+     "expression": "neutral",
+     "t0": 3.68,
+     "dur": 6.48,
+     "cards": [
+      {
+       "text": "大きく二つある。一つは能力型。",
+       "start": 0.0,
+       "end": 2.66
+      },
+      {
+       "text": "人間と同じ水準で、",
+       "start": 3.22,
+       "end": 4.57
+      },
+      {
+       "text": "ほとんどの仕事ができること。",
+       "start": 4.57,
+       "end": 6.67
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "もう一つは？",
+     "expression": "doubt",
+     "t0": 10.44,
+     "dur": 1.04,
+     "cards": [
+      {
+       "text": "もう一つは？",
+       "start": 0.0,
+       "end": 1.04
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "自己改良型。AIが次のAIの開発を進めて、それでまた開発が速くなる。その循環に入ること。",
+     "expression": "excited",
+     "t0": 11.76,
+     "dur": 8.52,
+     "cards": [
+      {
+       "text": "自己改良型。AIが次のAIの開発を進めて、",
+       "start": 0.23,
+       "end": 4.14
+      },
+      {
+       "text": "それでまた開発が速くなる。",
+       "start": 4.29,
+       "end": 6.53
+      },
+      {
+       "text": "その循環に入ること。",
+       "start": 6.53,
+       "end": 8.25
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "前者は「できるか」、後者は「速度が変わるか」。測るものが違うのね。",
+     "expression": "thinking",
+     "t0": 20.56,
+     "dur": 5.4,
+     "cards": [
+      {
+       "text": "前者は「できるか」、",
+       "start": 0.0,
+       "end": 1.62
+      },
+      {
+       "text": "後者は「速度が変わるか」",
+       "start": 1.62,
+       "end": 3.56
+      },
+      {
+       "text": "。測るものが違うのね。",
+       "start": 3.84,
+       "end": 5.49
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "僕なら、これに使う。エンジニアに戻るとしたら、プログラムの手直し。AIに書かせて、試させて、直させる。AIの会社が自分の開発でこれをやれば、自己改良の入口だ。",
+     "expression": "excited",
+     "tag": "use_case",
+     "t0": 26.24,
+     "dur": 12.12,
+     "cards": [
+      {
+       "text": "僕なら、これに使う。",
+       "start": 0.0,
+       "end": 1.48
+      },
+      {
+       "text": "エンジニアに戻るとしたら、",
+       "start": 1.48,
+       "end": 3.4
+      },
+      {
+       "text": "プログラムの手直し。AIに書かせて、",
+       "start": 3.55,
+       "end": 6.21
+      },
+      {
+       "text": "試させて、直させる。AIの会社が自分の",
+       "start": 6.36,
+       "end": 9.36
+      },
+      {
+       "text": "開発でこれをやれば、自己改良の入口だ。",
+       "start": 9.51,
+       "end": 12.32
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "それ、AIの会社はもうやってるでしょ。",
+     "expression": "amused",
+     "t0": 38.64,
+     "dur": 3.2,
+     "cards": [
+      {
+       "text": "それ、AIの会社はもうやってるでしょ。",
+       "start": 0.0,
+       "end": 3.2
+      }
+     ]
+    }
+   ],
+   "scene_id": 8,
+   "narrator": "dialogue",
+   "narration": "沙織「そもそも、何が起きたらAGIが「来た」ことになるの？」\n大輔「大きく二つある。一つは能力型。人間と同じ水準で、ほとんどの仕事ができること。」\n沙織「もう一つは？」\n大輔「自己改良型。AIが次のAIの開発を進めて、それでまた開発が速くなる。その循環に入ること。」\n沙織「前者は「できるか」、後者は「速度が変わるか」。測るものが違うのね。」\n大輔「僕なら、これに使う。エンジニアに戻るとしたら、プログラムの手直し。AIに書かせて、試させて、直させる。AIの会社が自分の開発でこれをやれば、自己改良の入口だ。」\n沙織「それ、AIの会社はもうやってるでしょ。」",
+   "lines_hash": "19aaa730da2f",
+   "zoom_anchor": {
+    "x": 0.5,
+    "y": 0.5
+   }
+  },
+  {
+   "type": "check",
+   "bgm_role": "main",
+   "reference_index": 2,
+   "round": 2,
+   "ken_burns": "static",
+   "source_card": {
+    "kind": "report",
+    "source": "RAND 報告書（2026年10月12日）",
+    "quote": "AI systems are already automating significant parts of AI research.",
+    "quote_type": "原文",
+    "highlight": "already automating",
+    "items": [
+     "複数のラボ: 新しいコードの過半数がAI生成と報告",
+     "公表の範囲で、自分で方針を決めたり",
+     "後継を設計したりするシステムはない"
+    ],
+    "reference_index": 2
+   },
+   "lines": [
+    {
+     "speaker": "dreamer",
+     "text": "やってる。シンクタンクのRANDが、2026年10月12日の報告で、AIはすでにAI研究の重要な部分を自動化してる、と書いてる。",
+     "expression": "excited",
+     "t0": 0.0,
+     "dur": 9.96,
+     "cards": [
+      {
+       "text": "やってる。シンクタンクのRANDが、",
+       "start": 0.0,
+       "end": 2.67
+      },
+      {
+       "text": "2026年10月12日の報告で、",
+       "start": 2.82,
+       "end": 5.4
+      },
+      {
+       "text": "AIはすでにAI研究の重要な",
+       "start": 5.55,
+       "end": 7.63
+      },
+      {
+       "text": "部分を自動化してる、",
+       "start": 7.63,
+       "end": 9.12
+      },
+      {
+       "text": "と書いてる。",
+       "start": 9.27,
+       "end": 10.16
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "複数のラボが、新しいコードの過半数はAIが書いた、と報告してる。ラボ自身の申告だけどね。",
+     "expression": "neutral",
+     "t0": 10.24,
+     "dur": 7.04,
+     "cards": [
+      {
+       "text": "複数のラボが、",
+       "start": 0.0,
+       "end": 1.14
+      },
+      {
+       "text": "新しいコードの過半数はAIが書いた、",
+       "start": 1.14,
+       "end": 4.08
+      },
+      {
+       "text": "と報告してる。ラボ自身の申告だけどね。",
+       "start": 4.23,
+       "end": 7.08
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "うん。僕の言う「動き始めてる」は、これ。",
+     "expression": "convinced",
+     "t0": 17.56,
+     "dur": 2.68,
+     "cards": [
+      {
+       "text": "うん。僕の言う「動き始めてる」は、これ。",
+       "start": 0.0,
+       "end": 2.68
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "それは認める。「AIがAIを作るのを手伝ってる」は、事実として足場がある。",
+     "expression": "convinced",
+     "tag": "turn",
+     "t0": 20.52,
+     "dur": 5.12,
+     "cards": [
+      {
+       "text": "それは認める。",
+       "start": 0.0,
+       "end": 0.94
+      },
+      {
+       "text": "「AIがAIを作るのを手伝ってる」",
+       "start": 0.94,
+       "end": 3.22
+      },
+      {
+       "text": "は、事実として足場がある。",
+       "start": 3.37,
+       "end": 5.12
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "ただ同じ報告に、自分で研究の方針を決めるシステムは、公表の範囲ではない、とも書いてある。",
+     "expression": "doubt",
+     "t0": 25.86,
+     "dur": 6.56,
+     "cards": [
+      {
+       "text": "ただ同じ報告に、自分で研究の方針を決める",
+       "start": 0.0,
+       "end": 3.04
+      },
+      {
+       "text": "システムは、公表の範囲ではない、",
+       "start": 3.19,
+       "end": 5.47
+      },
+      {
+       "text": "とも書いてある。",
+       "start": 5.62,
+       "end": 6.76
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "じゃあ任せられるのは、書いて試すところまでか。",
+     "expression": "thinking",
+     "t0": 32.7,
+     "dur": 3.56,
+     "cards": [
+      {
+       "text": "じゃあ任せられるのは、",
+       "start": 0.0,
+       "end": 1.65
+      },
+      {
+       "text": "書いて試すところまでか。",
+       "start": 1.65,
+       "end": 3.45
+      }
+     ]
+    }
+   ],
+   "scene_id": 9,
+   "narrator": "dialogue",
+   "image_asset": "cards/kl043_S09",
+   "narration": "大輔「やってる。シンクタンクのRANDが、2026年10月12日の報告で、AIはすでにAI研究の重要な部分を自動化してる、と書いてる。」\n沙織「複数のラボが、新しいコードの過半数はAIが書いた、と報告してる。ラボ自身の申告だけどね。」\n大輔「うん。僕の言う「動き始めてる」は、これ。」\n沙織「それは認める。「AIがAIを作るのを手伝ってる」は、事実として足場がある。」\n沙織「ただ同じ報告に、自分で研究の方針を決めるシステムは、公表の範囲ではない、とも書いてある。」\n大輔「じゃあ任せられるのは、書いて試すところまでか。」\n［画面の資料カード］RAND 報告書（2026年10月12日） 「AI systems are already automating significant parts of AI research.」（原文） ・複数のラボ: 新しいコードの過半数がAI生成と報告 ・公表の範囲で、自分で方針を決めたり ・後継を設計したりするシステムはない",
+   "lines_hash": "2f59fd91dbe8"
+  },
+  {
+   "type": "check",
+   "bgm_role": "main",
+   "reference_index": 3,
+   "round": 2,
+   "ken_burns": "static",
+   "source_card": {
+    "kind": "paper",
+    "source": "arXiv 2607.07663（2026年7月投稿・9月改訂）",
+    "quote_type": "要約",
+    "items": [
+     "限定的な自己改良: 収束し、評価でき、",
+     "実務として使われている",
+     "終わりのない自己改良: 検証の足場・",
+     "性能の崩壊・計算資源に縛られる",
+     "対象: arXiv の約1,250本（2024〜2026）"
+    ],
+    "note": "サーベイ（研究の整理）",
+    "reference_index": 3
+   },
+   "lines": [
+    {
+     "speaker": "dreamer",
+     "text": "最近のサーベイも、同じ整理なんだ。範囲を決めた小さな自己改良は、もう実務で使われてる。",
+     "expression": "neutral",
+     "t0": 0.0,
+     "dur": 6.96,
+     "cards": [
+      {
+       "text": "最近のサーベイも、同じ整理なんだ。",
+       "start": 0.0,
+       "end": 2.55
+      },
+      {
+       "text": "範囲を決めた小さな自己改良は、",
+       "start": 2.82,
+       "end": 5.16
+      },
+      {
+       "text": "もう実務で使われてる。",
+       "start": 5.31,
+       "end": 6.96
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "じゃあ、終わりなく自分を改良し続ける方は？",
+     "expression": "doubt",
+     "t0": 7.24,
+     "dur": 3.4,
+     "cards": [
+      {
+       "text": "じゃあ、終わりなく自分を改良し続ける方は？",
+       "start": 0.45,
+       "end": 3.6
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "三つに縛られてる。改良が正しいか確かめる仕組み、性能の崩壊、それに計算資源。",
+     "expression": "thinking",
+     "t0": 10.92,
+     "dur": 6.76,
+     "cards": [
+      {
+       "text": "三つに縛られてる。",
+       "start": 0.36,
+       "end": 1.71
+      },
+      {
+       "text": "改良が正しいか確かめる仕組み、",
+       "start": 1.71,
+       "end": 3.96
+      },
+      {
+       "text": "性能の崩壊、それに計算資源。",
+       "start": 4.11,
+       "end": 6.53
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "約1,250本の論文を整理した結果ね。つまり「もう始まった」と「まだ爆発してない」は、両立する。",
+     "expression": "convinced",
+     "t0": 17.96,
+     "dur": 8.04,
+     "cards": [
+      {
+       "text": "約1,250本の論文を整理した結果ね。",
+       "start": 0.0,
+       "end": 2.96
+      },
+      {
+       "text": "つまり「もう始まった」と",
+       "start": 3.11,
+       "end": 5.07
+      },
+      {
+       "text": "「まだ爆発してない」",
+       "start": 5.07,
+       "end": 6.71
+      },
+      {
+       "text": "は、両立する。",
+       "start": 6.86,
+       "end": 7.98
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "そう。始まってるのは、小さい方の自己改良だ。",
+     "expression": "excited",
+     "t0": 26.28,
+     "dur": 4.24,
+     "cards": [
+      {
+       "text": "そう。始まってるのは、",
+       "start": 0.0,
+       "end": 1.92
+      },
+      {
+       "text": "小さい方の自己改良だ。",
+       "start": 1.92,
+       "end": 3.84
+      }
+     ]
+    }
+   ],
+   "scene_id": 10,
+   "narrator": "dialogue",
+   "image_asset": "cards/kl043_S10",
+   "narration": "大輔「最近のサーベイも、同じ整理なんだ。範囲を決めた小さな自己改良は、もう実務で使われてる。」\n沙織「じゃあ、終わりなく自分を改良し続ける方は？」\n大輔「三つに縛られてる。改良が正しいか確かめる仕組み、性能の崩壊、それに計算資源。」\n沙織「約1,250本の論文を整理した結果ね。つまり「もう始まった」と「まだ爆発してない」は、両立する。」\n大輔「そう。始まってるのは、小さい方の自己改良だ。」\n［画面の資料カード］arXiv 2607.07663（2026年7月投稿・9月改訂） ・限定的な自己改良: 収束し、評価でき、 ・実務として使われている ・終わりのない自己改良: 検証の足場・ ・性能の崩壊・計算資源に縛られる ・対象: arXiv の約1,250本（2024〜2026） ※サーベイ（研究の整理）",
+   "lines_hash": "36812f17c410"
+  },
+  {
+   "type": "tsukkomi",
+   "bgm_role": "main",
+   "round": 3,
+   "round_title": "爆発する？ 頭打ち？",
+   "ken_burns": "zoom_out",
+   "image_prompt": "Interior of a vast modern data center hall, long aisles of identical server racks receding into the distance, cool teal and slate lighting, thick bundles of power cables along the ceiling, a single rack row lit with a soft warm coral glow. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
+   "lines": [
+    {
+     "speaker": "dreamer",
+     "text": "でも爆発、つまり改良が改良を呼んで一気に進むのも、ありえると思う。",
+     "expression": "excited",
+     "t0": 0.0,
+     "dur": 5.8,
+     "cards": [
+      {
+       "text": "でも爆発、",
+       "start": 0.0,
+       "end": 0.92
+      },
+      {
+       "text": "つまり改良が改良を呼んで一気に進むのも、",
+       "start": 0.92,
+       "end": 4.62
+      },
+      {
+       "text": "ありえると思う。",
+       "start": 4.77,
+       "end": 5.97
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "争点はほぼ一つ。AIの研究者を何倍にしても、計算資源が同じなら詰まるんじゃないの？",
+     "expression": "doubt",
+     "t0": 6.08,
+     "dur": 6.48,
+     "cards": [
+      {
+       "text": "争点はほぼ一つ。AIの研究者を何倍にしても、",
+       "start": 0.32,
+       "end": 3.64
+      },
+      {
+       "text": "計算資源が同じなら詰まるんじゃないの？",
+       "start": 3.83,
+       "end": 6.68
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "詰まりにくい、と見る論考がある。AI研究は人手と計算の代わりが利きやすいから、計算の壁は爆発の後半まで効かない可能性が十分ある、と。",
+     "expression": "excited",
+     "t0": 12.84,
+     "dur": 10.84,
+     "cards": [
+      {
+       "text": "詰まりにくい、と見る論考がある。",
+       "start": 0.0,
+       "end": 2.63
+      },
+      {
+       "text": "AI研究は人手と計算の代わりが利き",
+       "start": 2.63,
+       "end": 5.42
+      },
+      {
+       "text": "やすいから、計算の壁は爆発の後半まで",
+       "start": 5.42,
+       "end": 8.38
+      },
+      {
+       "text": "効かない可能性が十分ある、と。",
+       "start": 8.38,
+       "end": 10.84
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "反対の見方もある。実験には計算資源が要るから、そこが壁になる、って。",
+     "expression": "doubt",
+     "tag": "barrier",
+     "t0": 23.96,
+     "dur": 5.08,
+     "cards": [
+      {
+       "text": "反対の見方もある。",
+       "start": 0.0,
+       "end": 1.33
+      },
+      {
+       "text": "実験には計算資源が要るから、",
+       "start": 1.33,
+       "end": 3.39
+      },
+      {
+       "text": "そこが壁になる、って。",
+       "start": 3.54,
+       "end": 5.14
+      }
+     ]
+    }
+   ],
+   "scene_id": 11,
+   "narrator": "dialogue",
+   "narration": "大輔「でも爆発、つまり改良が改良を呼んで一気に進むのも、ありえると思う。」\n沙織「争点はほぼ一つ。AIの研究者を何倍にしても、計算資源が同じなら詰まるんじゃないの？」\n大輔「詰まりにくい、と見る論考がある。AI研究は人手と計算の代わりが利きやすいから、計算の壁は爆発の後半まで効かない可能性が十分ある、と。」\n沙織「反対の見方もある。実験には計算資源が要るから、そこが壁になる、って。」",
+   "lines_hash": "2601acf93bb1",
+   "zoom_anchor": {
+    "x": 0.5,
+    "y": 0.5
+   }
+  },
+  {
+   "type": "check",
+   "bgm_role": "main",
+   "reference_index": 4,
+   "round": 3,
+   "ken_burns": "static",
+   "source_card": {
+    "kind": "blog",
+    "source": "Forethought の論考（2025年4月公開）",
+    "quote": "I'd say there's a 10-40% chance that an SIE happens despite compute bottlenecks.",
+    "quote_type": "原文",
+    "highlight": "10-40% chance",
+    "items": [
+     "SIE=ハードウェア増なしで1年未満に計算量換算で5桁増",
+     "経済の推計を当てはめると、上限は今の2〜100倍",
+     "AI研究は代わりが利きやすい、と筆者は見る"
+    ],
+    "reference_index": 4
+   },
+   "lines": [
+    {
+     "speaker": "skeptic",
+     "text": "で、その筆者自身は、爆発が起きる確率を何%と見てるの？",
+     "expression": "doubt",
+     "t0": 0.0,
+     "dur": 4.44,
+     "cards": [
+      {
+       "text": "で、その筆者自身は、爆発が起きる確率を何",
+       "start": 0.0,
+       "end": 3.08
+      },
+      {
+       "text": "%と見てるの？",
+       "start": 3.44,
+       "end": 4.49
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "計算の壁があっても、10〜40%。必ず、とは言ってない。",
+     "expression": "deflated",
+     "t0": 4.72,
+     "dur": 5.04,
+     "cards": [
+      {
+       "text": "計算の壁があっても、10〜40%。必ず、",
+       "start": 0.0,
+       "end": 3.89
+      },
+      {
+       "text": "とは言ってない。",
+       "start": 4.04,
+       "end": 5.24
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "それに、経済全体の推計を当てはめると、進む速さの上限は今の2〜100倍、とも書いてる。",
+     "expression": "neutral",
+     "t0": 10.04,
+     "dur": 6.44,
+     "cards": [
+      {
+       "text": "それに、経済全体の推計を当てはめると、",
+       "start": 0.0,
+       "end": 2.71
+      },
+      {
+       "text": "進む速さの上限は今の2〜100倍、",
+       "start": 2.86,
+       "end": 5.49
+      },
+      {
+       "text": "とも書いてる。",
+       "start": 5.64,
+       "end": 6.64
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "ただ筆者は、AI研究ならそれより上に行ける、と見てる。",
+     "expression": "thinking",
+     "t0": 16.76,
+     "dur": 4.6,
+     "cards": [
+      {
+       "text": "ただ筆者は、AI研究ならそれより上に行ける、",
+       "start": 0.0,
+       "end": 3.64
+      },
+      {
+       "text": "と見てる。",
+       "start": 3.79,
+       "end": 4.54
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "幅が二桁。まだ決着してないのね。",
+     "expression": "neutral",
+     "t0": 21.64,
+     "dur": 3.56,
+     "cards": [
+      {
+       "text": "幅が二桁。まだ決着してないのね。",
+       "start": 0.0,
+       "end": 3.56
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "爆発するかは、僕も言い切らない。",
+     "expression": "deflated",
+     "tag": "turn",
+     "t0": 25.48,
+     "dur": 2.4,
+     "cards": [
+      {
+       "text": "爆発するかは、僕も言い切らない。",
+       "start": 0.0,
+       "end": 2.4
+      }
+     ]
+    }
+   ],
+   "scene_id": 12,
+   "narrator": "dialogue",
+   "image_asset": "cards/kl043_S12",
+   "narration": "沙織「で、その筆者自身は、爆発が起きる確率を何%と見てるの？」\n大輔「計算の壁があっても、10〜40%。必ず、とは言ってない。」\n沙織「それに、経済全体の推計を当てはめると、進む速さの上限は今の2〜100倍、とも書いてる。」\n大輔「ただ筆者は、AI研究ならそれより上に行ける、と見てる。」\n沙織「幅が二桁。まだ決着してないのね。」\n大輔「爆発するかは、僕も言い切らない。」\n［画面の資料カード］Forethought の論考（2025年4月公開） 「I'd say there's a 10-40% chance that an SIE happens despite compute bottlenecks.」（原文） ・SIE=ハードウェア増なしで1年未満に計算量換算で5桁増 ・経済の推計を当てはめると、上限は今の2〜100倍 ・AI研究は代わりが利きやすい、と筆者は見る",
+   "lines_hash": "8036fc48ab44"
+  },
+  {
+   "type": "check",
+   "bgm_role": "main",
+   "reference_index": 2,
+   "round": 3,
+   "ken_burns": "static",
+   "source_card": {
+    "kind": "report",
+    "source": "RAND 報告書（2026年10月12日）",
+    "quote": "It is unclear how much AI is accelerating this.",
+    "quote_type": "原文",
+    "highlight": "unclear",
+    "items": [
+     "自動化の割合・AI主導の実験の計算資源",
+     "AIの案に由来する改良の割合",
+     "→ ラボからの体系的な報告がない",
+     "研究を担うAIは、機密コード・データに触れる"
+    ],
+    "reference_index": 2
+   },
+   "lines": [
+    {
+     "speaker": "skeptic",
+     "text": "もっと手前の問題もある。RANDの報告は、AIがどれだけ加速させてるかは不明、と書いてる。",
+     "expression": "doubt",
+     "t0": 0.0,
+     "dur": 7.16,
+     "cards": [
+      {
+       "text": "もっと手前の問題もある。RANDの報告は、",
+       "start": 0.0,
+       "end": 3.2
+      },
+      {
+       "text": "AIがどれだけ加速させてるかは不明、",
+       "start": 3.35,
+       "end": 6.31
+      },
+      {
+       "text": "と書いてる。",
+       "start": 6.46,
+       "end": 7.36
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "え、過半数のコードはAIが書いた、って話は？",
+     "expression": "surprised",
+     "t0": 7.44,
+     "dur": 3.32,
+     "cards": [
+      {
+       "text": "え、過半数のコードはAIが書いた、",
+       "start": 0.0,
+       "end": 2.46
+      },
+      {
+       "text": "って話は？",
+       "start": 2.61,
+       "end": 3.33
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "それはコードの量。速くなったかは別。自動化の割合も、AI主導の実験に回した計算資源も、ラボからの体系的な報告がない。",
+     "expression": "neutral",
+     "t0": 11.04,
+     "dur": 10.04,
+     "cards": [
+      {
+       "text": "それはコードの量。速くなったかは別。",
+       "start": 0.0,
+       "end": 2.8
+      },
+      {
+       "text": "自動化の割合も、",
+       "start": 3.46,
+       "end": 4.71
+      },
+      {
+       "text": "AI主導の実験に回した計算資源も、",
+       "start": 4.71,
+       "end": 7.36
+      },
+      {
+       "text": "ラボからの体系的な報告がない。",
+       "start": 7.62,
+       "end": 9.87
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "じゃあ僕の「動き始めてる」も、どのくらいかは言えないのか。",
+     "expression": "deflated",
+     "t0": 21.36,
+     "dur": 5.32,
+     "cards": [
+      {
+       "text": "じゃあ僕の「動き始めてる」も、",
+       "start": 0.0,
+       "end": 2.34
+      },
+      {
+       "text": "どのくらいかは言えないのか。",
+       "start": 3.3,
+       "end": 5.4
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "そう。だから、2027年前半に「爆発した」と言われても、確かめようがない。",
+     "expression": "doubt",
+     "tag": "weakness",
+     "t0": 26.96,
+     "dur": 5.16,
+     "cards": [
+      {
+       "text": "そう。だから、2027年前半に「爆発した」",
+       "start": 0.0,
+       "end": 3.04
+      },
+      {
+       "text": "と言われても、確かめようがない。",
+       "start": 3.19,
+       "end": 5.36
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "しかもRANDは、研究を担うAIが、ラボのいちばん秘密のコードやデータに触れられる、とも書いてる。",
+     "expression": "neutral",
+     "t0": 32.4,
+     "dur": 6.32,
+     "cards": [
+      {
+       "text": "しかもRANDは、研究を担うAIが、",
+       "start": 0.0,
+       "end": 2.41
+      },
+      {
+       "text": "ラボのいちばん秘密の",
+       "start": 2.56,
+       "end": 3.79
+      },
+      {
+       "text": "コードやデータに触れられる、",
+       "start": 3.79,
+       "end": 5.51
+      },
+      {
+       "text": "とも書いてる。",
+       "start": 5.66,
+       "end": 6.52
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "乗っ取られたら、次のAIの開発に、気づかれずに影響を与えられる。",
+     "expression": "doubt",
+     "t0": 39.0,
+     "dur": 5.04,
+     "cards": [
+      {
+       "text": "乗っ取られたら、次のAIの開発に、",
+       "start": 0.0,
+       "end": 2.7
+      },
+      {
+       "text": "気づかれずに影響を与えられる。",
+       "start": 2.85,
+       "end": 5.1
+      }
+     ]
+    }
+   ],
+   "scene_id": 13,
+   "narrator": "dialogue",
+   "image_asset": "cards/kl043_S13",
+   "narration": "沙織「もっと手前の問題もある。RANDの報告は、AIがどれだけ加速させてるかは不明、と書いてる。」\n大輔「え、過半数のコードはAIが書いた、って話は？」\n沙織「それはコードの量。速くなったかは別。自動化の割合も、AI主導の実験に回した計算資源も、ラボからの体系的な報告がない。」\n大輔「じゃあ僕の「動き始めてる」も、どのくらいかは言えないのか。」\n沙織「そう。だから、2027年前半に「爆発した」と言われても、確かめようがない。」\n大輔「しかもRANDは、研究を担うAIが、ラボのいちばん秘密のコードやデータに触れられる、とも書いてる。」\n沙織「乗っ取られたら、次のAIの開発に、気づかれずに影響を与えられる。」\n［画面の資料カード］RAND 報告書（2026年10月12日） 「It is unclear how much AI is accelerating this.」（原文） ・自動化の割合・AI主導の実験の計算資源 ・AIの案に由来する改良の割合 ・→ ラボからの体系的な報告がない ・研究を担うAIは、機密コード・データに触れる",
+   "lines_hash": "0a84ef61e1b7"
+  },
+  {
+   "type": "verdict",
+   "bgm_role": "outro",
+   "image_asset": "base_cafe",
+   "verdict_from_line": 4,
+   "ken_burns": "zoom_out",
+   "lines": [
+    {
+     "speaker": "dreamer",
+     "text": "僕の予想は「中身はもう動き始めてる」。ここは当たった。AGIの時期は譲ったけどね。",
+     "expression": "convinced",
+     "tag": "vs_prediction",
+     "t0": 0.0,
+     "dur": 6.2,
+     "cards": [
+      {
+       "text": "僕の予想は「中身はもう動き始めてる」。",
+       "start": 0.0,
+       "end": 2.84
+      },
+      {
+       "text": "ここは当たった。AGIの時期は譲ったけどね。",
+       "start": 2.99,
+       "end": 6.24
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "私の予想は、ほぼそのまま。ただ、AIがAIの開発を手伝うところまでは、もう始まってた。そこはそっちが正しい。",
+     "expression": "amused",
+     "tag": "vs_prediction",
+     "t0": 6.48,
+     "dur": 8.2,
+     "cards": [
+      {
+       "text": "私の予想は、ほぼそのまま。ただ、",
+       "start": 0.0,
+       "end": 2.4
+      },
+      {
+       "text": "AIがAIの開発を手伝うところまでは、",
+       "start": 2.55,
+       "end": 5.47
+      },
+      {
+       "text": "もう始まってた。そこはそっちが正しい。",
+       "start": 5.62,
+       "end": 8.4
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "判定は「もうすぐ来る」。どれだけ加速してるかは分からない。でも、AIが開発の重要な部分を担うのは、もう始まってる。",
+     "expression": "excited",
+     "t0": 14.96,
+     "dur": 8.88,
+     "cards": [
+      {
+       "text": "判定は「もうすぐ来る」。どれだけ加速",
+       "start": 0.0,
+       "end": 2.87
+      },
+      {
+       "text": "してるかは分からない。でも、",
+       "start": 3.02,
+       "end": 5.09
+      },
+      {
+       "text": "AIが開発の重要な部分を担うのは、",
+       "start": 5.24,
+       "end": 7.75
+      },
+      {
+       "text": "もう始まってる。",
+       "start": 7.9,
+       "end": 9.08
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "それは「AIが手伝う」の判定でしょ。私は「まだ眉唾」。AIが人の手を離れて自分で伸びる、って意味のAGIは、第三者が測れるまで、来たとは言えない。",
+     "expression": "doubt",
+     "t0": 24.12,
+     "dur": 12.72,
+     "cards": [
+      {
+       "text": "それは「AIが手伝う」の判定でしょ。",
+       "start": 0.0,
+       "end": 2.7
+      },
+      {
+       "text": "私は「まだ眉唾」。AIが人の手を離れて",
+       "start": 2.92,
+       "end": 6.7
+      },
+      {
+       "text": "自分で伸びる、って意味のAGIは、",
+       "start": 6.85,
+       "end": 9.4
+      },
+      {
+       "text": "第三者が測れるまで、来たとは言えない。",
+       "start": 9.6,
+       "end": 12.45
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "割れたね。で、AGIは未来を明るくするの？ 暗くするの？",
+     "expression": "thinking",
+     "t0": 37.12,
+     "dur": 5.2,
+     "cards": [
+      {
+       "text": "割れたね。で、AGIは未来を明るくするの？",
+       "start": 0.2,
+       "end": 4.2
+      },
+      {
+       "text": " 暗くするの？",
+       "start": 4.35,
+       "end": 5.4
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "同じ能力が、創薬にも悪用にも使える。問題は、安全対策と制度が間に合うか。",
+     "expression": "neutral",
+     "t0": 42.6,
+     "dur": 5.76,
+     "cards": [
+      {
+       "text": "同じ能力が、創薬にも悪用にも使える。",
+       "start": 0.0,
+       "end": 2.92
+      },
+      {
+       "text": "問題は、安全対策と制度が間に合うか。",
+       "start": 3.22,
+       "end": 5.92
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "その「間に合ったか」も、測れる指標がないと分からない。",
+     "expression": "deflated",
+     "t0": 48.64,
+     "dur": 4.04,
+     "cards": [
+      {
+       "text": "その「間に合ったか」も、測れる指標がないと",
+       "start": 0.0,
+       "end": 3.23
+      },
+      {
+       "text": "分からない。",
+       "start": 3.38,
+       "end": 4.24
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "持ち帰りはこれ。AIの会社では、コードを書いて試すところは、もうAIに任せ始めてる。方針を決めるのは、まだ人。だから「AGIが来た」というニュースは、ラボが自動化の割合を報告して、第三者が測れるまで、うのみにしない。",
+     "expression": "neutral",
+     "tag": "takeaway",
+     "t0": 52.96,
+     "dur": 16.16,
+     "cards": [
+      {
+       "text": "持ち帰りはこれ。AIの会社では、",
+       "start": 0.0,
+       "end": 2.48
+      },
+      {
+       "text": "コードを書いて試すところは、",
+       "start": 2.63,
+       "end": 4.63
+      },
+      {
+       "text": "もうAIに任せ始めてる。方針を決めるのは、",
+       "start": 4.78,
+       "end": 7.78
+      },
+      {
+       "text": "まだ人。だから「AGIが来た」",
+       "start": 7.93,
+       "end": 10.07
+      },
+      {
+       "text": "というニュースは、",
+       "start": 10.22,
+       "end": 11.5
+      },
+      {
+       "text": "ラボが自動化の割合を報告して、",
+       "start": 11.5,
+       "end": 13.64
+      },
+      {
+       "text": "第三者が測れるまで、うのみにしない。",
+       "start": 13.79,
+       "end": 16.36
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "これは、2026年10月17日時点の二人の見立て。",
+     "expression": "neutral",
+     "t0": 69.4,
+     "dur": 5.6,
+     "cards": [
+      {
+       "text": "これは、",
+       "start": 0.0,
+       "end": 0.83
+      },
+      {
+       "text": "2026年10月17日時点の二人の見立て。",
+       "start": 0.83,
+       "end": 5.2
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "3年より先は、そこまでは分からない。",
+     "expression": "neutral",
+     "t0": 75.28,
+     "dur": 3.32,
+     "cards": [
+      {
+       "text": "3年より先は、そこまでは分からない。",
+       "start": 0.0,
+       "end": 3.32
+      }
+     ]
+    }
+   ],
+   "scene_id": 14,
+   "narrator": "dialogue",
+   "narration": "大輔「僕の予想は「中身はもう動き始めてる」。ここは当たった。AGIの時期は譲ったけどね。」\n沙織「私の予想は、ほぼそのまま。ただ、AIがAIの開発を手伝うところまでは、もう始まってた。そこはそっちが正しい。」\n大輔「判定は「もうすぐ来る」。どれだけ加速してるかは分からない。でも、AIが開発の重要な部分を担うのは、もう始まってる。」\n沙織「それは「AIが手伝う」の判定でしょ。私は「まだ眉唾」。AIが人の手を離れて自分で伸びる、って意味のAGIは、第三者が測れるまで、来たとは言えない。」\n大輔「割れたね。で、AGIは未来を明るくするの？ 暗くするの？」\n沙織「同じ能力が、創薬にも悪用にも使える。問題は、安全対策と制度が間に合うか。」\n大輔「その「間に合ったか」も、測れる指標がないと分からない。」\n沙織「持ち帰りはこれ。AIの会社では、コードを書いて試すところは、もうAIに任せ始めてる。方針を決めるのは、まだ人。だから「AGIが来た」というニュースは、ラボが自動化の割合を報告して、第三者が測れるまで、うのみにしない。」\n大輔「これは、2026年10月17日時点の二人の見立て。」\n沙織「3年より先は、そこまでは分からない。」",
+   "lines_hash": "a51beaa86481",
+   "zoom_anchor": {
+    "x": 0.5,
+    "y": 0.5
+   }
+  },
+  {
+   "type": "closing",
+   "bgm_role": "outro",
+   "image_asset": "base_cafe_b",
+   "ken_burns": "zoom_out",
+   "lines": [
+    {
+     "speaker": "skeptic",
+     "text": "「来たか」より「測れるか」が、勝負どころね。",
+     "expression": "amused",
+     "t0": 0.0,
+     "dur": 3.56,
+     "cards": [
+      {
+       "text": "「来たか」より「測れるか」が、",
+       "start": 0.0,
+       "end": 2.48
+      },
+      {
+       "text": "勝負どころね。",
+       "start": 2.63,
+       "end": 3.68
+      }
+     ]
+    },
+    {
+     "speaker": "dreamer",
+     "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+     "expression": "excited",
+     "t0": 3.84,
+     "dur": 4.84,
+     "cards": [
+      {
+       "text": "次はどんな研究が、誰かの幸せな未来を",
+       "start": 0.0,
+       "end": 3.68
+      },
+      {
+       "text": "運んでくるのか。",
+       "start": 3.83,
+       "end": 5.03
+      }
+     ]
+    },
+    {
+     "speaker": "skeptic",
+     "text": "それが本物かどうか、また一緒に確かめましょう。論文は概要欄に載せています。チャンネル登録して、待っていてください。",
+     "expression": "amused",
+     "t0": 8.96,
+     "dur": 6.92,
+     "cards": [
+      {
+       "text": "それが本物かどうか、",
+       "start": 0.0,
+       "end": 1.16
+      },
+      {
+       "text": "また一緒に確かめましょう。",
+       "start": 1.16,
+       "end": 2.67
+      },
+      {
+       "text": "論文は概要欄に載せています。",
+       "start": 2.88,
+       "end": 4.51
+      },
+      {
+       "text": "チャンネル登録して、待っていてください。",
+       "start": 4.66,
+       "end": 6.98
+      }
+     ]
+    }
+   ],
+   "scene_id": 15,
+   "narrator": "dialogue",
+   "narration": "沙織「「来たか」より「測れるか」が、勝負どころね。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。論文は概要欄に載せています。チャンネル登録して、待っていてください。」",
+   "lines_hash": "66d4949179b1",
+   "zoom_anchor": {
+    "x": 0.5,
+    "y": 0.5
+   }
+  }
+ ],
+ "shorts": [
+  {
+   "shorts_id": 1,
+   "scenes": [
+    {
+     "narrator": "skeptic",
+     "narration": "AGI、来た？",
+     "telop_text": "AGI、来た？",
+     "expression": "doubt",
+     "scene_id": 1
+    },
+    {
+     "narrator": "dreamer",
+     "narration": "AGIは、2027年初までに来るらしい！",
+     "expression": "excited",
+     "scene_id": 1
+    },
+    {
+     "narrator": "skeptic",
+     "narration": "でも予測を出したチームの見立ても、行ったり来たり。",
+     "expression": "doubt",
+     "react": "surprised",
+     "scene_id": 8
+    },
+    {
+     "narrator": "dreamer",
+     "narration": "AIがAIの開発を手伝うのは、もう事実だ。",
+     "expression": "thinking",
+     "scene_id": 11
+    },
+    {
+     "narrator": "skeptic",
+     "narration": "でも、どれだけ加速してるか、誰も測れてない。",
+     "expression": "doubt",
+     "react": "deflated",
+     "scene_id": 11
+    },
+    {
+     "narrator": "dreamer",
+     "narration": "「来た」の条件は？ 判定は本編で。",
+     "expression": "thinking",
+     "scene_id": 14
+    }
+   ]
+  }
+ ],
+ "youtube_description": "AI企業が「強力なAIが2026年末から2027年に出てくる」と述べ、それが「AGIが来る」という話として受け取られています。ただ、AGIは何が起きたら「来た」と言えるのか。AIがAIの開発を進める「自己改良」の段階は、もう始まっているのか。期待担当の大輔と、ツッコミ担当の沙織が、Anthropicの政策提言、予測チームAI Futures Projectの更新記事、シンクタンクRANDの報告、研究の整理（サーベイ）、Forethoughtの論考の5つを読んで確かめます。\n\n■ この回の判定（2026年10月17日時点の、二人の見立て）\nお題: AGIは、2027年に「来た」と言えるか\n大輔: もうすぐ来る（AGI相当の時期は譲る。ただし、AIがAI開発の重要な部分を担う段階は、すでに来ている。コードの自動化なら、予測チームの中央値の一つは2027年11月で、2027年は現実的な範囲）\n沙織: まだ眉唾（「AIが人間の手を離れて自分で伸びる」という意味のAGIは、ラボから自動化の割合などの体系的な報告がなく、第三者が測れない。測れる指標が出るまでは、来たと言い切れない。3年より先のことは、そこまでは分からない）\n\n■ 一次資料に書いてあること\n・Anthropic 公式投稿（2025年3月6日）: 「we expect powerful AI systems will emerge in late 2026 or early 2027」。同社が米政府に出した提出文書（2025年3月）の本文は、「could emerge as soon as late 2026 or 2027」と、より控えめな書き方。どちらも企業自身が、自社の技術の到来時期を述べたもの\n・AI Futures Project「Q2.5 2026 Timelines Update」（2026年8月17日）: 著者3人が予測。コードを自動化するAI（会社が人間のエンジニアを解雇してでもAIを使いたがる段階）の中央値は、Daniel 2027年11月、Brendan 2029年1月、Eli 2030年1月。AGI相当（人間の専門家を全分野で上回るAI、TED-AI）の中央値は、Daniel で2028年11月。予測はすべて「技術的に可能な最速で進んだ場合」の条件つき。現実の進みは、AI 2027（2025年4月）の予測の約70〜90%の速さ、と自己評価している\n・RAND「Recursive Self-Improvement and Automated AI Research and Development」（2026年10月12日）: 「AIはすでにAI研究の重要な部分を自動化している」。複数の最先端ラボが、新しいコードの過半数はAI生成と報告。ただし、公表されている範囲で、自分で研究方針を決めたり後継を設計したりするシステムはない。「どれだけAIが加速させているかは不明」で、自動化の割合・AI主導の実験に回した計算資源・改良のうちAIの案に由来する割合について、ラボからの体系的な報告がない。研究を担うAIは、ラボの最も機密性の高いコード・データに触れられるため、それ自体がセキュリティ上の問題\n・サーベイ「Recursive Self-Improvement in AI」（arXiv 2607.07663、2026年7月投稿・9月改訂）: arXivの1,250本（2024〜2026年）を整理。限定的な自己改良は「収束し、評価でき、実務として使われている」。終わりのない自己改良は「検証の足場、性能の崩壊、計算資源に縛られている」。自己改良を政府レベルで測ることは、この分野で最も手薄な領域、とも書いている\n・Forethought「Will Compute Bottlenecks Prevent a Software Intelligence Explosion?」（2025年4月公開、筆者 Tom Davidson）: 計算資源の壁が、ソフトウェアだけでの知能爆発を、かなり後半まで遅らせない可能性が十分ある、という主張。「計算の壁があっても爆発が起きる確率は10〜40%」と筆者が見積もる（爆発＝ハードウェアを増やさず、1年未満に計算量換算で5桁の増加）。経済全体の推計を当てはめると、進歩の速さの上限は今の2〜100倍になるが、AI研究は人手と計算の代わりが利きやすいと筆者は見る\n\n■ 一次資料に書いていないこと\n・AGIの、一つに決まった定義。この動画では「人間並みの能力に届くこと」と「AIがAIの開発を進める循環に入ること」の2つに分けて話しています\n・ラボ内でAI研究のどれだけをAIが担っているかの、第三者が確かめられる数字\n\n■ 使わなかった情報\n・報道・解説記事で伝えられた各社の発言や数字は、この動画の根拠にしていません。台詞の数字は、上の一次資料にあるものだけです\n・AI Futures Project の記事にある、Anthropic の社内調査によるコーディング加速の推計（約4倍）は、記事自身が過大評価の偏りの可能性を認めており、第三者が確かめられないため、台詞では扱っていません\n・計算資源の壁を巡る、Epoch AI の分析は、原典を確かめきれなかったため扱っていません\n\n※この回の元は、企業の公式投稿・提出文書、予測チームの記事、シンクタンクの報告、評価前の論文、個人の論考で、専門家の審査を経た学術論文だけではありません。arXiv の論文は、専門家の審査を受ける前のものです。\n※予測は不確かなもので、各チームの中央値は更新のたびに変わります。この動画の判定も、2026年10月17日時点のものです。\n※特定のサービスの利用や、企業への投資を勧めるものではありません。\n\n■ 参考（一次資料）\n[1] Anthropic「Anthropic's Recommendations to OSTP for the U.S. AI Action Plan」(2025-03-06) https://anthropic.com/news/anthropic-s-recommendations-ostp-u-s-ai-action-plan\n[2] Anthropic「Response to OSTP RFI (March 2025)」 https://www-cdn.anthropic.com/17a66ce2e943b82db8a021b974f0170baf6dce60.pdf\n[3] AI Futures Project「Q2.5 2026 Timelines Update: Uplift and Revenue」(2026-08-17) https://blog.aifutures.org/p/q25-2026-timelines-update-uplift\n[4] RAND「Recursive Self-Improvement and Automated AI Research and Development」(2026-10-12) https://www.rand.org/pubs/perspectives/PEA5068-1.html\n[5] Chen, Wang, Qu「Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops」(arXiv 2607.07663, 2026-07-08) https://arxiv.org/abs/2607.07663\n[6] Forethought「Will Compute Bottlenecks Prevent a Software Intelligence Explosion?」(2025-04-04) https://www.forethought.org/research/will-compute-bottlenecks-prevent-a-software-intelligence-explosion\n\n🎵 Music: Calm Electronic Vibes by Matio888 (freesound.org) — CC BY 4.0",
+ "thumbnail_prompt": "Calm, bright daytime editorial illustration of a minimal, modern aisle inside a data center seen from the front: a soft pale blue-gray wall and a light gray floor running the full width of the frame, continuous across the whole frame with no panels, boxes, borders or abrupt colour changes. Keep the left 30%, the right 30% and the top 35% of the frame quiet and uncluttered (soft gradient only), but the wall and floor must visibly continue unbroken behind them. In the horizontal center, in the vertical band between 38% and 80% of the frame height: a single large, smooth, softly glowing warm coral ring (an open loop, like an unfinished circle with a small gap) floating just above the floor, in front of a short row of plain slate-and-teal server cabinets that fade softly into the background. No people, no robots, no arrows. No logos, no brand marks, no readable text, no letters, no numbers.",
+ "thumbnail_badge": "AGI＝汎用人工知能",
+ "bgm_sources": {
+  "intro": "BGM/kl043-BGM-intro.mp3",
+  "main": "BGM/kl037-BGM-main.mp3",
+  "outro": "BGM/kl043-BGM-outro.mp3"
+ }
+}

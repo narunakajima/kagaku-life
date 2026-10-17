@@ -2187,8 +2187,103 @@
       },
       "source_type": "news",
       "news_date": "2026-10-13"
+    },
+    {
+      "episode_id": "kl043",
+      "status": "produced",
+      "slot_type": "topic",
+      "genre": "ai",
+      "health": false,
+      "domain": "life",
+      "concern_id": null,
+      "entry_question": "AI企業は「AGIが2027年初までに来る」と言う。その「来た」は、何が起きたら言えるのか。AIがAIを改良する段階は、もう始まっているのか。",
+      "title": "AGIは2027年に来る？「来た」と言える条件を一次資料で確認",
+      "format": "dialogue",
+      "structure": "rounds_v3",
+      "verdict": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "verdict_as_of": "2026-10-17",
+      "references": [
+        {
+          "title": "Anthropic の政策提言についての公式投稿",
+          "authors": [],
+          "year": 2025,
+          "venue": "Anthropic 公式投稿（2025-03-06）",
+          "url": "https://anthropic.com/news/anthropic-s-recommendations-ostp-u-s-ai-action-plan",
+          "is_preprint": false,
+          "institution": "Anthropic",
+          "source_kind": "official_blog"
+        },
+        {
+          "title": "Q2.5 2026 Timelines Update: Uplift and Revenue",
+          "authors": [
+            "Eli Lifland",
+            "Daniel Kokotajlo",
+            "Brendan Halstead"
+          ],
+          "year": 2026,
+          "venue": "AI Futures Project（2026-08-17）",
+          "url": "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift",
+          "is_preprint": false,
+          "institution": "AI Futures Project",
+          "source_kind": "official_blog"
+        },
+        {
+          "title": "Recursive Self-Improvement and Automated AI Research and Development",
+          "authors": [
+            "Gopal P. Sarma",
+            "Rachel Steratore",
+            "Michael Jacob",
+            "Sunny D. Bhatt"
+          ],
+          "year": 2026,
+          "venue": "RAND Expert Insights（2026-10-12）",
+          "url": "https://www.rand.org/pubs/perspectives/PEA5068-1.html",
+          "is_preprint": false,
+          "institution": "RAND",
+          "source_kind": "tech_report"
+        },
+        {
+          "title": "Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops",
+          "authors": [
+            "Mingguang Chen",
+            "Licheng Wang",
+            "Bo Qu"
+          ],
+          "year": 2026,
+          "venue": "arXiv 2607.07663（2026-07-08投稿、09-06改訂）",
+          "url": "https://arxiv.org/abs/2607.07663",
+          "is_preprint": true,
+          "institution": "",
+          "source_kind": "preprint_survey"
+        },
+        {
+          "title": "Will Compute Bottlenecks Prevent a Software Intelligence Explosion?",
+          "authors": [
+            "Tom Davidson"
+          ],
+          "year": 2025,
+          "venue": "Forethought（2025-04-04、05-18更新）",
+          "url": "https://www.forethought.org/research/will-compute-bottlenecks-prevent-a-software-intelligence-explosion",
+          "is_preprint": false,
+          "institution": "Forethought",
+          "source_kind": "essay"
+        },
+        {
+          "title": "Anthropic Response to OSTP RFI (March 2025) - Final Submission",
+          "authors": [],
+          "year": 2025,
+          "venue": "Anthropic 提出文書（2025-03）",
+          "url": "https://www-cdn.anthropic.com/17a66ce2e943b82db8a021b974f0170baf6dce60.pdf",
+          "is_preprint": false,
+          "institution": "Anthropic",
+          "source_kind": "official_doc"
+        }
+      ]
     }
   ],
-  "total_topics": 42,
-  "last_updated": "2026-10-16"
+  "total_topics": 43,
+  "last_updated": "2026-10-17"
 }

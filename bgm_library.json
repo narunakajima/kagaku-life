@@ -1403,7 +1403,7 @@
     "source_id": "651716",
     "source_name": "Calamity GO GO demo loop.wav",
     "source_url": "https://freesound.org/s/651716/",
-    "bpm": 110.0,
+    "bpm": 155.0,
     "mood": [
       "bright",
       "funky"
@@ -1417,7 +1417,8 @@
     "era": "dialogue",
     "role_fit": [
       "intro"
-    ]
+    ],
+    "bpm_note": "2026-10-17 実測（キック・ハイハットとも152〜157）。旧記録110は誤り。introの目安105〜125から外れる（旧 110.0）"
   },
   {
     "id": "kl036-BGM-main",
@@ -1432,7 +1433,7 @@
     "source_id": "441300",
     "source_name": "OHC 458 - Hotdog Hiphop.wav",
     "source_url": "https://freesound.org/s/441300/",
-    "bpm": 100.0,
+    "bpm": 65.0,
     "mood": [
       "chill",
       "focused"
@@ -1446,7 +1447,8 @@
     "era": "dialogue",
     "role_fit": [
       "main"
-    ]
+    ],
+    "bpm_note": "2026-10-17 実測（65のハーフタイム、倍の130。kl043の最終検証でも「126BPMのトラップ」と判定）。旧記録100は誤り。mainの目安70〜100から外れる（旧 100.0）"
   },
   {
     "id": "kl036-BGM-outro",
@@ -1503,7 +1505,8 @@
     "era": "dialogue",
     "role_fit": [
       "intro"
-    ]
+    ],
+    "note": "2026-10-17 kl043の最終検証で、中身がDJスクラッチ入りのファンキーなヒップホップと聴き取られ、声のサンプルとして減点された（記録の synth-arp＋drums と食い違う可能性。BPM 120 は実測と一致）。使う前に耳で確認する"
   },
   {
     "id": "kl037-BGM-main",
@@ -1512,7 +1515,8 @@
     "credit": null,
     "tags": [],
     "used_in": [
-      "kl037"
+      "kl037",
+      "kl043"
     ],
     "duration": 170.67,
     "source_id": "573687",
@@ -1547,7 +1551,7 @@
     "source_id": "670039",
     "source_name": "Chill Background Music",
     "source_url": "https://freesound.org/s/670039/",
-    "bpm": 86.0,
+    "bpm": 66.0,
     "mood": [
       "chill",
       "settled"
@@ -1561,7 +1565,8 @@
     "era": "dialogue",
     "role_fit": [
       "outro"
-    ]
+    ],
+    "bpm_note": "2026-10-17 実測（kl043で計測。帯域別オンセットの自己相関、全帯域で66・倍の132）。旧記録86は誤り。outroの目安85〜100から外れる（旧 86.0）"
   },
   {
     "id": "kl038-BGM-intro",
@@ -1902,6 +1907,66 @@
       "electric-piano",
       "bass",
       "drums"
+    ],
+    "has_beat": true,
+    "era": "dialogue",
+    "role_fit": [
+      "outro"
+    ]
+  },
+  {
+    "id": "kl043-BGM-intro",
+    "path": "BGM/kl043-BGM-intro.mp3",
+    "license": "CC BY",
+    "credit": "🎵 Music: Calm Electronic Vibes by Matio888 (freesound.org) — CC BY 4.0",
+    "tags": [],
+    "used_in": [
+      "kl043"
+    ],
+    "duration": 133.12,
+    "source_id": "789279",
+    "source_name": "Calm Electronic Vibes",
+    "source_url": "https://freesound.org/s/789279/",
+    "bpm": 110.0,
+    "mood": [
+      "bright",
+      "spacey"
+    ],
+    "instruments": [
+      "synth-arp",
+      "synth-pad",
+      "synth-bass",
+      "electronic-drums"
+    ],
+    "has_beat": true,
+    "era": "dialogue",
+    "role_fit": [
+      "intro"
+    ]
+  },
+  {
+    "id": "kl043-BGM-outro",
+    "path": "BGM/kl043-BGM-outro.mp3",
+    "license": "CC0",
+    "credit": null,
+    "tags": [],
+    "used_in": [
+      "kl043"
+    ],
+    "duration": 298.67,
+    "source_id": "581757",
+    "source_name": "Podcast loop 001 90 bpm.wav",
+    "source_url": "https://freesound.org/s/581757/",
+    "bpm": 90.0,
+    "mood": [
+      "chill",
+      "settled"
+    ],
+    "instruments": [
+      "piano",
+      "synth-pluck",
+      "bass",
+      "hiphop-drums"
     ],
     "has_beat": true,
     "era": "dialogue",
