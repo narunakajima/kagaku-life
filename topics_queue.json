@@ -2295,7 +2295,7 @@
       "title": "人間は200歳まで生きるのか？AIで研究が爆発しても動かない壁",
       "format": "dialogue",
       "structure": "rounds_v3",
-      "template": "myth_buster",
+      "template": "verdict_first",
       "references": [
         {
           "title": "Implausibility of radical life extension in humans in the twenty-first century",
@@ -2306,7 +2306,7 @@
             "Hiram Beltrán-Sánchez"
           ],
           "year": 2024,
-          "venue": "Nature Aging 4, 1635–1642",
+          "venue": "Nature Aging 4, 1635–1642（2024-10-07）",
           "url": "https://www.nature.com/articles/s43587-024-00702-3",
           "doi": "10.1038/s43587-024-00702-3",
           "is_preprint": false,
@@ -2356,17 +2356,23 @@
           "url": "https://doi.org/10.1016/j.drudis.2024.104009",
           "doi": "10.1016/j.drudis.2024.104009",
           "is_preprint": false,
-          "institution": "BCG ほか",
+          "institution": "Boston Consulting Group（BCG）ほか",
           "source_kind": "paper"
         },
         {
           "title": "A generative AI-discovered TNIK inhibitor for idiopathic pulmonary fibrosis: a randomized phase 2a trial",
-          "authors": [],
+          "authors": [
+            "Zuojun Xu",
+            "Feng Ren",
+            "ほか",
+            "Alex Zhavoronkov"
+          ],
           "year": 2025,
-          "venue": "Nature Medicine（2025-06-03）",
+          "venue": "Nature Medicine 31（2025-06-03）",
           "url": "https://www.nature.com/articles/s41591-025-03743-2",
+          "doi": "10.1038/s41591-025-03743-2",
           "is_preprint": false,
-          "institution": "Insilico Medicine ほか",
+          "institution": "Insilico Medicine、北京協和医院（Peking Union Medical College Hospital）ほか",
           "source_kind": "paper"
         },
         {
@@ -2378,8 +2384,43 @@
           "venue": "個人サイトのエッセイ（2024-10）",
           "url": "https://www.darioamodei.com/essay/machines-of-loving-grace",
           "is_preprint": false,
-          "institution": "Anthropic（著者の所属）",
+          "institution": "Anthropic（著者の所属。CEO）",
           "source_kind": "essay"
+        },
+        {
+          "title": "SRT-H: A hierarchical framework for autonomous surgery via language-conditioned imitation learning",
+          "authors": [
+            "Ji Woong Kim",
+            "ほか",
+            "Axel Krieger"
+          ],
+          "year": 2025,
+          "venue": "Science Robotics（2025-07-09）",
+          "url": "https://doi.org/10.1126/scirobotics.adt5254",
+          "doi": "10.1126/scirobotics.adt5254",
+          "is_preprint": false,
+          "institution": "Johns Hopkins University ほか",
+          "source_kind": "paper"
+        },
+        {
+          "title": "Life Biosciences Announces First Patient Dosed in Phase 1 Trial of ER-100 for Optic Neuropathies",
+          "authors": [],
+          "year": 2026,
+          "venue": "Life Biosciences 発表（2026-06-09）",
+          "url": "https://www.lifebiosciences.com/life-biosciences-announces-first-patient-dosed-in-phase-1-trial-of-er-100-for-optic-neuropathies/",
+          "is_preprint": false,
+          "institution": "Life Biosciences",
+          "source_kind": "press"
+        },
+        {
+          "title": "LOY-002: FDA accepts Target Animal Safety technical section",
+          "authors": [],
+          "year": 2026,
+          "venue": "Loyal 発表（2026-01-13）",
+          "url": "https://loyal.com/posts/loy-002-tas-announcement",
+          "is_preprint": false,
+          "institution": "Loyal",
+          "source_kind": "press"
         }
       ],
       "hook_idea": "kl043の続き。「AGIが来て研究が爆発する」と仮定しても、寿命の試験・老化の測定・人体の時間は速くならない。",

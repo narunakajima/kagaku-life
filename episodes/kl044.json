@@ -1,0 +1,894 @@
+{
+  "episode_id": "kl044",
+  "format": "dialogue",
+  "structure": "rounds_v3",
+  "template": "verdict_first",
+  "source_type": "topic",
+  "verdict_as_of": "2026-10-17",
+  "genre": "medical",
+  "health": true,
+  "episode_title": "人間は200歳まで生きるのか？AIで研究が爆発しても動かない壁",
+  "youtube_title": "人間は200歳まで生きる？AIで研究が爆発しても速くならないもの",
+  "entry_question": "AIが研究を爆発的に速めたら、人間は200歳まで生きるのか。速くなるのは何で、速くならないのは何か。",
+  "verdict": {
+    "dreamer": "dubious",
+    "skeptic": "dubious"
+  },
+  "hook_lines": [
+    "人間は200歳まで生きる？",
+    "AIでも速くならない壁"
+  ],
+  "thumbnail_headline": "200歳まで\n生きる？",
+  "thumbnail_exprs": {
+    "dreamer": "excited",
+    "skeptic": "doubt"
+  },
+  "thumbnail_prompt": "Calm, bright editorial illustration of a clean modern biology laboratory seen from the front: a soft pale blue-gray wall and a light gray floor running the full width of the frame, continuous with no panels, boxes, borders or abrupt colour changes. Keep the left 30%, the right 30% and the top 35% of the frame quiet and uncluttered (soft gradient only), but the wall and floor must visibly continue unbroken behind them. In the horizontal center, in the vertical band between 38% and 80% of the frame height: a single cell-culture incubator with its glass inner door glowing warm coral, rows of culture flasks inside, on a plain white bench. No people, no robots. No logos, no brand marks, no readable text, no letters, no numbers.",
+  "youtube_tags": [
+    "寿命",
+    "200歳",
+    "平均寿命",
+    "老化",
+    "AI創薬",
+    "ロボット手術",
+    "長寿",
+    "医療の最前線",
+    "AIの進化",
+    "答え合わせ",
+    "科学ニュース"
+  ],
+  "references": [
+    {
+      "title": "Implausibility of radical life extension in humans in the twenty-first century",
+      "authors": [
+        "S. Jay Olshansky",
+        "Bradley J. Willcox",
+        "Lloyd Demetrius",
+        "Hiram Beltrán-Sánchez"
+      ],
+      "year": 2024,
+      "venue": "Nature Aging 4, 1635–1642（2024-10-07）",
+      "url": "https://www.nature.com/articles/s43587-024-00702-3",
+      "doi": "10.1038/s43587-024-00702-3",
+      "is_preprint": false,
+      "institution": "University of Illinois Chicago ほか",
+      "source_kind": "paper"
+    },
+    {
+      "title": "Probabilistic forecasting of maximum human lifespan by 2100 using Bayesian population projections",
+      "authors": [
+        "Michael Pearce",
+        "Adrian E. Raftery"
+      ],
+      "year": 2021,
+      "venue": "Demographic Research 44(52)",
+      "url": "https://doi.org/10.4054/DemRes.2021.44.52",
+      "doi": "10.4054/DemRes.2021.44.52",
+      "is_preprint": false,
+      "institution": "University of Washington",
+      "source_kind": "paper"
+    },
+    {
+      "title": "Evidence for a limit to human lifespan",
+      "authors": [
+        "Xiao Dong",
+        "Brandon Milholland",
+        "Jan Vijg"
+      ],
+      "year": 2016,
+      "venue": "Nature 538, 257–259",
+      "url": "https://doi.org/10.1038/nature19793",
+      "doi": "10.1038/nature19793",
+      "is_preprint": false,
+      "institution": "Albert Einstein College of Medicine",
+      "source_kind": "paper"
+    },
+    {
+      "title": "How successful are AI-discovered drugs in clinical trials? A first analysis and emerging lessons",
+      "authors": [
+        "Madura KP Jayatunga",
+        "Margaret Ayers",
+        "Lotte Bruens",
+        "Dhruv Jayanth",
+        "Christoph Meier"
+      ],
+      "year": 2024,
+      "venue": "Drug Discovery Today 29(6):104009",
+      "url": "https://doi.org/10.1016/j.drudis.2024.104009",
+      "doi": "10.1016/j.drudis.2024.104009",
+      "is_preprint": false,
+      "institution": "Boston Consulting Group（BCG）ほか",
+      "source_kind": "paper"
+    },
+    {
+      "title": "A generative AI-discovered TNIK inhibitor for idiopathic pulmonary fibrosis: a randomized phase 2a trial",
+      "authors": [
+        "Zuojun Xu",
+        "Feng Ren",
+        "ほか",
+        "Alex Zhavoronkov"
+      ],
+      "year": 2025,
+      "venue": "Nature Medicine 31（2025-06-03）",
+      "url": "https://www.nature.com/articles/s41591-025-03743-2",
+      "doi": "10.1038/s41591-025-03743-2",
+      "is_preprint": false,
+      "institution": "Insilico Medicine、北京協和医院（Peking Union Medical College Hospital）ほか",
+      "source_kind": "paper"
+    },
+    {
+      "title": "Machines of Loving Grace",
+      "authors": [
+        "Dario Amodei"
+      ],
+      "year": 2024,
+      "venue": "個人サイトのエッセイ（2024-10）",
+      "url": "https://www.darioamodei.com/essay/machines-of-loving-grace",
+      "is_preprint": false,
+      "institution": "Anthropic（著者の所属。CEO）",
+      "source_kind": "essay"
+    },
+    {
+      "title": "SRT-H: A hierarchical framework for autonomous surgery via language-conditioned imitation learning",
+      "authors": [
+        "Ji Woong Kim",
+        "ほか",
+        "Axel Krieger"
+      ],
+      "year": 2025,
+      "venue": "Science Robotics（2025-07-09）",
+      "url": "https://doi.org/10.1126/scirobotics.adt5254",
+      "doi": "10.1126/scirobotics.adt5254",
+      "is_preprint": false,
+      "institution": "Johns Hopkins University ほか",
+      "source_kind": "paper"
+    },
+    {
+      "title": "Life Biosciences Announces First Patient Dosed in Phase 1 Trial of ER-100 for Optic Neuropathies",
+      "authors": [],
+      "year": 2026,
+      "venue": "Life Biosciences 発表（2026-06-09）",
+      "url": "https://www.lifebiosciences.com/life-biosciences-announces-first-patient-dosed-in-phase-1-trial-of-er-100-for-optic-neuropathies/",
+      "is_preprint": false,
+      "institution": "Life Biosciences",
+      "source_kind": "press"
+    },
+    {
+      "title": "LOY-002: FDA accepts Target Animal Safety technical section",
+      "authors": [],
+      "year": 2026,
+      "venue": "Loyal 発表（2026-01-13）",
+      "url": "https://loyal.com/posts/loy-002-tas-announcement",
+      "is_preprint": false,
+      "institution": "Loyal",
+      "source_kind": "press"
+    }
+  ],
+  "youtube_description": "AIが研究を爆発的に速めたら、新しい薬やロボットの手術で、人間は200歳まで生きられるのか。期待担当の大輔と、ツッコミ担当の沙織が、AI創薬の成績をまとめた分析、AIが標的と分子を選んだ薬の臨床試験、自律手術ロボットの論文、長寿の国の死亡記録を調べた論文、最高齢の記録の予測、そして「150歳」を唱えたエッセイを読んで確かめます。前の回（AGIは2027年に来る？）で確かめた「研究が爆発的に速くなるかは、まだ分からない」を前提に、仮に速くなったとしたら、を考えます。\n\n■ この回の判定（2026年10月17日時点の、二人の見立て）\nお題: 人間は200歳まで生きられるようになるか\n大輔: まだ眉唾（200歳は、寿命に上限を置かない推計でも外。ただし、病気で早く亡くなる人を減らす薬は、AIで当たりやすくなる兆しがある）\n沙織: まだ眉唾（老化そのものに効くとヒトで確かめられた手段がまだ無い。長寿の国でも、平均寿命の延び方は最近むしろ遅くなっている。3年より先のことは、そこまでは分からない）\n\n■ 一次資料に書いてあること\n・Olshansky ほか「Implausibility of radical life extension in humans in the twenty-first century」（Nature Aging, 2024）: 長寿の8か国（オーストラリア、フランス、イタリア、日本、韓国、スペイン、スウェーデン、スイス）と香港・米国の1990〜2019年の死亡記録（Human Mortality Database）を分析。「急激な延び」を平均寿命が毎年0.3年以上延びることと定義し、これを満たしたのは韓国と香港（香港は1990〜2000年のみ）だけ。どの集団でも、直近の延び方は20世紀最後の10年より遅い。2019年の死亡率では、100歳まで生きる確率は平均で女性5.1%・男性1.8%（最も高い香港で女性12.8%・男性4.4%）。各国の最も低い死亡率を組み合わせても女性13.9%・男性4.5%。その組み合わせで50歳までの死亡をゼロにしても、平均寿命は女性で1.0年、男性で1.5年しか延びない。平均寿命110歳には、女性の約70%が100歳、24%超が122歳、約6%が150歳以上まで生きる必要がある。著者は、まだ無い医療の進歩の効果は数字で見積もれないこと、この限界は「壁」ではないことも書いている。マウスで試した50の化合物のうち寿命を延ばしたのは12で、どれも15%を超えなかった、とも。資金は米国立老化研究所など、利益相反なし\n・Pearce, Raftery「Probabilistic forecasting of maximum human lifespan by 2100」（Demographic Research, 2021、ワシントン大学）: 110歳を超えた後の生存率が一定（寿命に決まった上限を置かない）モデルでの予測。122歳の記録が2100年までに破られる確率は99%超、誰か1人でも126歳に届く確率は89%、128歳44%、130歳13%。135歳・140歳は「極めて考えにくい」。前提（今の死亡の状況）が変われば予測も変わる、と著者は書いている\n・Dong ほか「Evidence for a limit to human lifespan」（Nature, 2016、アルバート・アインシュタイン医科大学）: 最高齢者の死亡年齢が1990年代から伸びていないとして、寿命には上限があると主張。翌年、同じ雑誌に反論が5本掲載され、論争が続いている\n・Jayatunga ほか「How successful are AI-discovered drugs in clinical trials?」（Drug Discovery Today, 2024、BCG ほか）: AIを軸にした創薬企業の候補薬で、第I相（主に安全性）の成功率は80〜90%（24分子中21）と、従来の業界平均を大きく上回った。第II相（効果）は約40%で従来並み。ただし第II相の数は少ない\n・Xu ほか「A generative AI-discovered TNIK inhibitor for idiopathic pulmonary fibrosis: a randomized phase 2a trial」（Nature Medicine, 2025、Insilico Medicine・北京協和医院 ほか）: 生成AIで見つけた標的に対し、AIで設計した薬 rentosertib の第2a相。特発性肺線維症の71人、中国の21施設、12週間、偽薬と比較。主な目的は安全性。副次的な評価項目の肺活量（FVC）は、60mg 1日1回の群で平均+98.4mL、偽薬群で−20.3mL。著者は、より大規模で長期の試験が必要としている。参加者が全員中国在住で、各群の人数が少ないことも限界として挙げている\n・Kim ほか「SRT-H」（Science Robotics, 2025、ジョンズ・ホプキンス大学 ほか）: 胆のう摘出手術の工程を、取り出した豚の胆のう8個すべてで、人の介入なしに完了。生きた体・ヒトでの手術ではない\n・Amodei「Machines of Loving Grace」（2024年10月、Anthropic CEO の個人エッセイ）: 強力なAIが生物学の発見を少なくとも10倍に速めうる、20世紀に平均寿命がほぼ2倍（約40→約75歳）になったので150歳は流れの延長線上、と書く一方で、細胞や動物の実験の速さは縮められないかもしれない、ヒトでの試験は数年かかることが多い、寿命が2倍になったかは研究期間の中では分からないかもしれない、生物学的に可能だという保証はない、とも書いている。番組の根拠ではなく、議論の出どころとして紹介しています\n・Life Biosciences（2026年6月9日発表）: 視神経の細胞の部分的な若返りを狙う遺伝子治療 ER-100 の第1相（緑内障・NAION、目への投与）で最初の参加者に投与。安全性と忍容性を見る試験で、視機能も評価する\n・Loyal（2026年1月13日発表）: 犬の長寿薬 LOY-002 で、米国FDA獣医学センターが安全性の技術資料を受理（効果の資料は2025年2月に受理）。寿命を見る試験 STAY は1,300頭が参加\n\n■ 一次資料に書いていないこと\n・がんや心臓病など、特定の病気をなくした場合に寿命がどれだけ延びるか（Olshansky ほかの論文は、年齢で区切った計算をしています）\n・AIで研究が速くなったとき、寿命の延びがどれだけ速くなるかの数字\n\n■ 使わなかった情報\n・報道で伝えられた、自律手術ロボットの「精度100%」や、AI創薬の別の成功率の数字は、一次資料で確かめられなかったため使っていません\n・エッセイにある「ラットの最大寿命を25〜50%延ばす薬がある」という記述は、動物の話で、Olshansky ほかが引くマウスの試験結果とは対象が異なるため、台詞では扱っていません\n\n※この動画は研究の紹介で、健康や治療についての助言ではありません。紹介した薬・治療の多くは臨床試験の途中です。\n※この回の元には、専門家の審査を経た学術論文のほか、企業の発表、個人のエッセイが含まれます。\n※予測は不確かなもので、この動画の判定も2026年10月17日時点のものです。特定の企業への投資を勧めるものではありません。\n\n■ 参考（一次資料）\n[1] Olshansky SJ, Willcox BJ, Demetrius L, Beltrán-Sánchez H.「Implausibility of radical life extension in humans in the twenty-first century」Nature Aging 4, 1635–1642 (2024) https://www.nature.com/articles/s43587-024-00702-3\n[2] Pearce M, Raftery AE.「Probabilistic forecasting of maximum human lifespan by 2100 using Bayesian population projections」Demographic Research 44(52) (2021) https://doi.org/10.4054/DemRes.2021.44.52\n[3] Dong X, Milholland B, Vijg J.「Evidence for a limit to human lifespan」Nature 538, 257–259 (2016) https://doi.org/10.1038/nature19793\n[4] Jayatunga MKP ほか「How successful are AI-discovered drugs in clinical trials? A first analysis and emerging lessons」Drug Discovery Today 29(6):104009 (2024) https://doi.org/10.1016/j.drudis.2024.104009\n[5] Xu Z ほか「A generative AI-discovered TNIK inhibitor for idiopathic pulmonary fibrosis: a randomized phase 2a trial」Nature Medicine (2025) https://www.nature.com/articles/s41591-025-03743-2\n[6] Kim JW ほか「SRT-H: A hierarchical framework for autonomous surgery via language-conditioned imitation learning」Science Robotics (2025) https://doi.org/10.1126/scirobotics.adt5254\n[7] Amodei D.「Machines of Loving Grace」(2024-10) https://www.darioamodei.com/essay/machines-of-loving-grace\n[8] Life Biosciences「First Patient Dosed in Phase 1 Trial of ER-100 for Optic Neuropathies」(2026-06-09) https://www.lifebiosciences.com/life-biosciences-announces-first-patient-dosed-in-phase-1-trial-of-er-100-for-optic-neuropathies/\n[9] Loyal「LOY-002 TAS announcement」(2026-01-13) https://loyal.com/posts/loy-002-tas-announcement",
+  "scenes": [
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_out",
+      "reuse_scene_id": 6,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "AIが研究を爆発的に速めたら、寿命も延びるでしょ！",
+          "expression": "excited",
+          "tone": "excited, like breaking news"
+        }
+      ],
+      "scene_id": 1,
+      "narration": "大輔「AIが研究を爆発的に速めたら、寿命も延びるでしょ！」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_out",
+      "reuse_scene_id": 12,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "速くならないものが、一つある。",
+          "expression": "doubt",
+          "tone": "dry"
+        }
+      ],
+      "scene_id": 2,
+      "narration": "沙織「速くならないものが、一つある。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_out",
+      "reuse_scene_id": 9,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "ロボットの手術も、人の手なしで進んでる。",
+          "expression": "thinking"
+        }
+      ],
+      "scene_id": 3,
+      "narration": "大輔「ロボットの手術も、人の手なしで進んでる。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_out",
+      "reuse_scene_id": 12,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "で、人間は200歳まで生きられるの？",
+          "expression": "doubt",
+          "tag": "question"
+        }
+      ],
+      "scene_id": 4,
+      "narration": "沙織「で、人間は200歳まで生きられるの？」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "setup",
+      "bgm_role": "intro",
+      "image_asset": "base_cafe_b",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "お題は寿命。AIで薬も手術も速くなったら、人間は200歳まで生きられるか。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "研究が爆発するかは、前の回で、まだ分からないって確かめたよね。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だから今日は、仮に爆発したら、で考える。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "なら先に結論。私の予想は、200歳は来ない。",
+          "expression": "doubt",
+          "tag": "prediction"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕は、200歳は無理でも、寿命の延びはAIで加速すると思う。",
+          "expression": "excited",
+          "tag": "prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "面白いのは、その先。爆発しても、速くならない部分がある。",
+          "expression": "amused"
+        }
+      ],
+      "scene_id": 5,
+      "narration": "大輔「お題は寿命。AIで薬も手術も速くなったら、人間は200歳まで生きられるか。」\n沙織「研究が爆発するかは、前の回で、まだ分からないって確かめたよね。」\n大輔「だから今日は、仮に爆発したら、で考える。」\n沙織「なら先に結論。私の予想は、200歳は来ない。」\n大輔「僕は、200歳は無理でも、寿命の延びはAIで加速すると思う。」\n沙織「面白いのは、その先。爆発しても、速くならない部分がある。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 1,
+      "round_title": "研究が爆発したら、薬は当たる？",
+      "reference_index": 3,
+      "ken_burns": "zoom_out",
+      "image_prompt": "Bright daytime, a modern automated drug-discovery laboratory: rows of white liquid-handling robots with pipette heads over multi-well plates, glass-fronted compound storage racks, large monitors showing only blurred, unreadable 3D molecular ball-and-stick structures in teal and slate, one central monitor with a softly glowing warm coral molecule. Clean white benches, soft daylight from tall windows. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "まずは薬。AIが標的を選んで、分子を設計した薬が、もうヒトの試験に入ってる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "入るだけなら、昔からたくさんある。最後まで残るのは、一握りでしょ。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕なら、これに使う。病気を一つずつ潰す薬を、AIで次々に作る。外れが減れば、早く届く。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "外れが減る、の数字はある？ 候補薬をまとめて追った分析でもないと、言えないでしょ。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それが、ある。",
+          "expression": "convinced"
+        }
+      ],
+      "scene_id": 6,
+      "narration": "大輔「まずは薬。AIが標的を選んで、分子を設計した薬が、もうヒトの試験に入ってる。」\n沙織「入るだけなら、昔からたくさんある。最後まで残るのは、一握りでしょ。」\n大輔「僕なら、これに使う。病気を一つずつ潰す薬を、AIで次々に作る。外れが減れば、早く届く。」\n沙織「外れが減る、の数字はある？ 候補薬をまとめて追った分析でもないと、言えないでしょ。」\n大輔「それが、ある。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 1,
+      "reference_index": 3,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "paper",
+        "source": "Drug Discovery Today（2024年）BCG ほか",
+        "quote": "In Phase I we find AI-discovered molecules have an 80-90% success rate",
+        "quote_type": "原文",
+        "highlight": "80-90% success rate",
+        "items": [
+          "第I相（主に安全性を見る）: 24分子中21が通過",
+          "従来の業界平均を大きく上回る",
+          "第II相（効くかを見る）: 約40%で従来並み",
+          "第II相を終えたのは10分子ほど（数が少ない）"
+        ],
+        "reference_index": 3
+      },
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "BCGなどの分析。第I相を終えた24の薬のうち、21が通った。8〜9割だ。",
+          "expression": "excited",
+          "display": "第I相を終えた24分子中21が通過（80〜90%）"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "従来の目安は、4割から6割台。……確かに高い。",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、第I相は主に安全性を見る試験。効くかどうかは、次の第II相。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "第II相は、約4割。従来並み、と著者たちも書いてる。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "しかも第II相を終えたのは、10ほど。数が少なすぎて、まだ何とも言えない。",
+          "expression": "doubt",
+          "tag": "weakness"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "薬らしい分子を作るのは得意。効くかは、今のところ並み、ってことか。",
+          "expression": "thinking"
+        }
+      ],
+      "scene_id": 7,
+      "image_asset": "cards/kl044_S07",
+      "narration": "大輔「BCGなどの分析。第I相を終えた24の薬のうち、21が通った。8〜9割だ。」\n沙織「従来の目安は、4割から6割台。……確かに高い。」\n沙織「ただ、第I相は主に安全性を見る試験。効くかどうかは、次の第II相。」\n大輔「第II相は、約4割。従来並み、と著者たちも書いてる。」\n沙織「しかも第II相を終えたのは、10ほど。数が少なすぎて、まだ何とも言えない。」\n大輔「薬らしい分子を作るのは得意。効くかは、今のところ並み、ってことか。」\n［画面の資料カード］Drug Discovery Today（2024年）BCG ほか 「In Phase I we find AI-discovered molecules have an 80-90% success rate」（原文） ・第I相（主に安全性を見る）: 24分子中21が通過 ・従来の業界平均を大きく上回る ・第II相（効くかを見る）: 約40%で従来並み ・第II相を終えたのは10分子ほど（数が少ない）",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 1,
+      "reference_index": 4,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "paper",
+        "source": "Nature Medicine（2025年6月3日）Insilico Medicine ほか",
+        "quote": "warrants further investigation in larger-scale clinical trials of longer duration",
+        "quote_type": "原文",
+        "highlight": "larger-scale clinical trials",
+        "items": [
+          "特発性肺線維症、71人、中国の21施設、12週間",
+          "AIで見つけた標的・AIで設計した薬（第2a相）",
+          "60mg 1日1回: 肺活量 平均 +98.4mL",
+          "偽薬: 平均 −20.3mL",
+          "主目的は安全性。肺活量は副次的な項目"
+        ],
+        "reference_index": 4
+      },
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "でも、効いた兆しのある例もある。AIが標的も分子も選んだ、肺の病気の薬。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、それ何人で試したの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "71人を12週間、偽薬と比べた。",
+          "expression": "excited",
+          "display": "71人・12週間、偽薬と比較"
+        },
+        {
+          "speaker": "dreamer",
+          "expression": "excited",
+          "text": "60ミリグラムの群で、肺活量が平均で約100ミリリットル増えた。偽薬の群は、約20ミリリットル減った。",
+          "display": "60mg群: 肺活量 平均＋98.4mL／偽薬群: −20.3mL"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そこは認める。AIが選んだ標的で、ヒトで差の兆しまで来たのは、大きい。",
+          "expression": "convinced",
+          "tag": "turn"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、主な目的は安全性。肺活量は副次的な項目で、著者も、もっと大きく長い試験が要る、と書いてる。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "当たりを早く引く、は始まってる。そこまでは言っていいね。",
+          "expression": "convinced"
+        }
+      ],
+      "scene_id": 8,
+      "image_asset": "cards/kl044_S08",
+      "narration": "大輔「でも、効いた兆しのある例もある。AIが標的も分子も選んだ、肺の病気の薬。」\n沙織「で、それ何人で試したの？」\n大輔「71人を12週間、偽薬と比べた。」\n大輔「60ミリグラムの群で、肺活量が平均で約100ミリリットル増えた。偽薬の群は、約20ミリリットル減った。」\n沙織「そこは認める。AIが選んだ標的で、ヒトで差の兆しまで来たのは、大きい。」\n沙織「ただ、主な目的は安全性。肺活量は副次的な項目で、著者も、もっと大きく長い試験が要る、と書いてる。」\n大輔「当たりを早く引く、は始まってる。そこまでは言っていいね。」\n［画面の資料カード］Nature Medicine（2025年6月3日）Insilico Medicine ほか 「warrants further investigation in larger-scale clinical trials of longer duration」（原文） ・特発性肺線維症、71人、中国の21施設、12週間 ・AIで見つけた標的・AIで設計した薬（第2a相） ・60mg 1日1回: 肺活量 平均 +98.4mL ・偽薬: 平均 −20.3mL ・主目的は安全性。肺活量は副次的な項目",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 2,
+      "round_title": "病気を治せば、寿命は延び続ける？",
+      "reference_index": 6,
+      "ken_burns": "zoom_out",
+      "image_prompt": "Bright research laboratory at a university, a surgical robot research setup on a lab bench: two slim white-and-gray robotic instrument arms with long thin laparoscopic tools reaching into a small covered tray on a sterile blue drape, a nearby monitor showing only a soft, blurred, out-of-focus pinkish endoscopic view (not graphic, no blood), cables and a tidy instrument cart. No people. Not an operating room with a patient. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "次は手術。ジョンズ・ホプキンス大学のロボットが、胆のうを取る手術の工程を、人の手なしでやり切った。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "どこで？ 生きた体で？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "取り出した豚の胆のう、8個で。8個とも最後まで。",
+          "expression": "deflated"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "生きた体は、まだね。腕のいい手術が増えるのは、いいことだけど。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕なら、薬と手術を合わせて使う。若いうちに病気で亡くなる人を減らす。そうすれば、平均寿命は延び続ける。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そこは、ちょうど確かめた論文がある。",
+          "expression": "amused"
+        }
+      ],
+      "scene_id": 9,
+      "narration": "大輔「次は手術。ジョンズ・ホプキンス大学のロボットが、胆のうを取る手術の工程を、人の手なしでやり切った。」\n沙織「どこで？ 生きた体で？」\n大輔「取り出した豚の胆のう、8個で。8個とも最後まで。」\n沙織「生きた体は、まだね。腕のいい手術が増えるのは、いいことだけど。」\n大輔「僕なら、薬と手術を合わせて使う。若いうちに病気で亡くなる人を減らす。そうすれば、平均寿命は延び続ける。」\n沙織「そこは、ちょうど確かめた論文がある。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 2,
+      "reference_index": 0,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "paper",
+        "source": "Nature Aging（2024年）イリノイ大学シカゴ校 ほか",
+        "quote": "the most recent decade of change in life expectancy is slower than it was",
+        "quote_type": "原文",
+        "highlight": "slower",
+        "items": [
+          "長寿の8か国＋香港＋米国、1990〜2019年",
+          "急激な延び＝平均寿命が毎年0.3年以上",
+          "満たしたのは韓国と香港の一時期だけ",
+          "比べた相手: 20世紀最後の10年"
+        ],
+        "reference_index": 0
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "2024年の、ネイチャー・エイジングの論文。長寿の国と地域の、1990年から2019年の死亡の記録を調べてる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "日本も入ってる？ 急に延びた国は？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "目安は、平均寿命が毎年およそ3か月半ずつ延びること。満たしたのは、韓国と香港の一時期だけ。",
+          "expression": "doubt",
+          "display": "急激な延び＝平均寿命が毎年0.3年（約3か月半）以上"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "日本も満たしてないのか。しかも、どこも最近の延び方は、1990年代より遅い、って書いてある。",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "医学は進んでるのに、遅くなってる？",
+          "expression": "surprised"
+        }
+      ],
+      "scene_id": 10,
+      "image_asset": "cards/kl044_S10",
+      "narration": "沙織「2024年の、ネイチャー・エイジングの論文。長寿の国と地域の、1990年から2019年の死亡の記録を調べてる。」\n大輔「日本も入ってる？ 急に延びた国は？」\n沙織「目安は、平均寿命が毎年およそ3か月半ずつ延びること。満たしたのは、韓国と香港の一時期だけ。」\n大輔「日本も満たしてないのか。しかも、どこも最近の延び方は、1990年代より遅い、って書いてある。」\n大輔「医学は進んでるのに、遅くなってる？」\n［画面の資料カード］Nature Aging（2024年）イリノイ大学シカゴ校 ほか 「the most recent decade of change in life expectancy is slower than it was」（原文） ・長寿の8か国＋香港＋米国、1990〜2019年 ・急激な延び＝平均寿命が毎年0.3年以上 ・満たしたのは韓国と香港の一時期だけ ・比べた相手: 20世紀最後の10年",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 2,
+      "reference_index": 0,
+      "ken_burns": "static",
+      "image_prompt": "Clean flat bar chart. Title at the top in Japanese: 「100歳まで生きる確率（2019年の死亡率から）」. Two groups of bars side by side. Left group label: 「長寿の国・地域の平均」 with two bars: 「女性 5.1%」 and 「男性 1.8%」. Right group label: 「最も低い死亡率を組み合わせた場合」 with two bars: 「女性 13.9%」 and 「男性 4.5%」. Vertical axis from 0% to 20% with tick labels 「0%」「10%」「20%」 only. Female bars in warm coral, male bars in teal. Write each value label exactly as given above each bar. Do not add any other numbers, labels, notes or text.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "2019年の死亡率で、100歳まで生きる確率は、長寿の国・地域の平均で、女性5.1%、男性1.8%。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "一番長生きの組み合わせなら？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "各国の一番低い死亡率を集めても、女性13.9%、男性4.5%。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、若い人の死をなくしたら？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "50歳までの死亡をゼロにしても、平均寿命は、女性で約1年、男性で約1.5年しか延びない。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "1年……。じゃあ僕の使い道は、寿命を延ばす、じゃない。早すぎる死を減らす、だ。",
+          "expression": "deflated",
+          "tag": "turn"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう。手術も薬も、治すのは病気。老化は別の話。",
+          "expression": "convinced"
+        }
+      ],
+      "scene_id": 11,
+      "narration": "沙織「2019年の死亡率で、100歳まで生きる確率は、長寿の国・地域の平均で、女性5.1%、男性1.8%。」\n大輔「一番長生きの組み合わせなら？」\n沙織「各国の一番低い死亡率を集めても、女性13.9%、男性4.5%。」\n大輔「じゃあ、若い人の死をなくしたら？」\n沙織「50歳までの死亡をゼロにしても、平均寿命は、女性で約1年、男性で約1.5年しか延びない。」\n大輔「1年……。じゃあ僕の使い道は、寿命を延ばす、じゃない。早すぎる死を減らす、だ。」\n沙織「そう。手術も薬も、治すのは病気。老化は別の話。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 3,
+      "round_title": "老化を止めれば、200歳？",
+      "reference_index": 5,
+      "ken_burns": "zoom_out",
+      "image_prompt": "A biology laboratory late in the evening, quiet and dim: a long row of glowing cell-culture incubators with glass inner doors showing stacked culture flasks with pink-orange medium, a biosafety cabinet softly lit, an idle robotic arm parked on a bench beside petri dishes, a dark window with a night sky. Calm teal and slate tones with one warm coral glow from an incubator. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "でも、老化そのものを止めれば、話は別でしょ。AIの会社、Anthropicのトップが、2024年に書いたエッセイがある。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "20世紀に平均寿命は、約40歳から約75歳へ、ほぼ2倍。AIで研究が速まれば、150歳は流れの延長線上だ、って。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "20世紀の倍増は、主に子どもの早すぎる死を防いだ分。本人も、老化を遅らせる手段は前の世紀とは違う、と書いてる。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、その手段は今どこまで来てる？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "視神経の細胞を若返らせる狙いの遺伝子治療が、目の病気で、最初のヒトの試験に入った。",
+          "expression": "excited",
+          "reference_index": 7
+        },
+        {
+          "speaker": "dreamer",
+          "text": "犬の長寿薬も、1,300頭で、寿命が延びるかを見る試験をしてる。",
+          "expression": "excited",
+          "reference_index": 8
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ヒトの方は、主に安全性を見る段階。犬は、寿命の結果待ち。ヒトの寿命が延びた証拠は、まだ無い。",
+          "expression": "doubt",
+          "tag": "barrier"
+        }
+      ],
+      "scene_id": 12,
+      "narration": "大輔「でも、老化そのものを止めれば、話は別でしょ。AIの会社、Anthropicのトップが、2024年に書いたエッセイがある。」\n大輔「20世紀に平均寿命は、約40歳から約75歳へ、ほぼ2倍。AIで研究が速まれば、150歳は流れの延長線上だ、って。」\n沙織「20世紀の倍増は、主に子どもの早すぎる死を防いだ分。本人も、老化を遅らせる手段は前の世紀とは違う、と書いてる。」\n沙織「で、その手段は今どこまで来てる？」\n大輔「視神経の細胞を若返らせる狙いの遺伝子治療が、目の病気で、最初のヒトの試験に入った。」\n大輔「犬の長寿薬も、1,300頭で、寿命が延びるかを見る試験をしてる。」\n沙織「ヒトの方は、主に安全性を見る段階。犬は、寿命の結果待ち。ヒトの寿命が延びた証拠は、まだ無い。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 3,
+      "reference_index": 5,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "blog",
+        "source": "Machines of Loving Grace（2024年10月）Anthropic CEO のエッセイ",
+        "quote": "experiments on them take a certain amount of time which may be irreducible",
+        "quote_type": "原文",
+        "highlight": "may be irreducible",
+        "items": [
+          "細胞や動物は、決まった速さでしか動かない",
+          "ヒトでの試験は、数年かかることが多い",
+          "寿命が2倍になったかは、研究期間の中では",
+          "分からないかもしれない",
+          "生物学的に可能だという保証はない"
+        ],
+        "reference_index": 5
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "同じエッセイに、本人の留保もある。細胞や動物は、決まった速さでしか動かない。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "……実験にかかる時間は、縮められないかもしれない、か。",
+          "expression": "deflated"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ヒトの試験は、数年かかることが多い。寿命が2倍になったかは、研究の期間内には分からないかもしれない、って。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "仮に研究が爆発しても、動物やヒトで確かめる時間は、縮まらないのか。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが今日の答え。AIが速めるのは、計算と設計と文献。人の体の時間は、速くならない。",
+          "expression": "convinced"
+        }
+      ],
+      "scene_id": 13,
+      "image_asset": "cards/kl044_S13",
+      "narration": "沙織「同じエッセイに、本人の留保もある。細胞や動物は、決まった速さでしか動かない。」\n大輔「……実験にかかる時間は、縮められないかもしれない、か。」\n沙織「ヒトの試験は、数年かかることが多い。寿命が2倍になったかは、研究の期間内には分からないかもしれない、って。」\n大輔「仮に研究が爆発しても、動物やヒトで確かめる時間は、縮まらないのか。」\n沙織「それが今日の答え。AIが速めるのは、計算と設計と文献。人の体の時間は、速くならない。」\n［画面の資料カード］Machines of Loving Grace（2024年10月）Anthropic CEO のエッセイ 「experiments on them take a certain amount of time which may be irreducible」（原文） ・細胞や動物は、決まった速さでしか動かない ・ヒトでの試験は、数年かかることが多い ・寿命が2倍になったかは、研究期間の中では ・分からないかもしれない ・生物学的に可能だという保証はない",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 3,
+      "reference_index": 1,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "paper",
+        "source": "Demographic Research（2021年）ワシントン大学",
+        "quote": "it is extremely unlikely that a person will attain age 135 or 140 this century",
+        "quote_type": "原文",
+        "highlight": "extremely unlikely",
+        "items": [
+          "122歳の記録が2100年までに破られる: 99%超",
+          "誰か1人でも126歳: 89%、130歳: 13%",
+          "寿命に決まった上限を置かないモデル",
+          "前提: 110歳を超えた後の生存率が今のまま"
+        ],
+        "reference_index": 1
+      },
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、寿命に上限はあるの？ 2016年のネイチャーに、最高齢の記録が1990年代から伸びてない、という論文があった。",
+          "expression": "thinking",
+          "reference_index": 2
+        },
+        {
+          "speaker": "skeptic",
+          "text": "上限がある、という側ね。翌年、同じ雑誌に反論が5本載った。そこは論争中。",
+          "expression": "neutral",
+          "reference_index": 2
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ上限を置かない側なら、200歳もありえる？",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "その側の推計がこれ。122歳の記録が、2100年までに破られる確率は、99%超。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "でも、誰か1人でも130歳に届く確率は、13%。135歳は、まずありえない、と書いてる。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それは、今の死亡率が続く前提でしょ。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう。前提が変われば、予測も変わる。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でも、1人でも135歳がまずないなら、200歳は、まるで別の話か。",
+          "expression": "deflated"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "平均寿命を110歳にするだけでも、女性の約6%が150歳を超える必要がある、という計算もある。",
+          "expression": "neutral",
+          "reference_index": 0
+        }
+      ],
+      "scene_id": 14,
+      "image_asset": "cards/kl044_S14",
+      "narration": "大輔「じゃあ、寿命に上限はあるの？ 2016年のネイチャーに、最高齢の記録が1990年代から伸びてない、という論文があった。」\n沙織「上限がある、という側ね。翌年、同じ雑誌に反論が5本載った。そこは論争中。」\n大輔「じゃあ上限を置かない側なら、200歳もありえる？」\n沙織「その側の推計がこれ。122歳の記録が、2100年までに破られる確率は、99%超。」\n沙織「でも、誰か1人でも130歳に届く確率は、13%。135歳は、まずありえない、と書いてる。」\n大輔「それは、今の死亡率が続く前提でしょ。」\n沙織「そう。前提が変われば、予測も変わる。」\n大輔「でも、1人でも135歳がまずないなら、200歳は、まるで別の話か。」\n沙織「平均寿命を110歳にするだけでも、女性の約6%が150歳を超える必要がある、という計算もある。」\n［画面の資料カード］Demographic Research（2021年）ワシントン大学 「it is extremely unlikely that a person will attain age 135 or 140 this century」（原文） ・122歳の記録が2100年までに破られる: 99%超 ・誰か1人でも126歳: 89%、130歳: 13% ・寿命に決まった上限を置かないモデル ・前提: 110歳を超えた後の生存率が今のまま",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "verdict",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "ken_burns": "zoom_out",
+      "verdict_from_line": 4,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想は、寿命の延びはAIで加速する。今ある証拠では、そうは言えなかった。延び方は、むしろ遅くなってる。",
+          "expression": "deflated",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想は、そのまま。ただ、AIの薬がヒトで兆しを見せたのは、思ったより進んでた。",
+          "expression": "amused",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "判定は、僕も「まだ眉唾」。200歳は、上限を置かない推計の、さらに外だ。ただ、早すぎる死を減らす薬は、AIで当たりやすくなる兆しがある。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私も「まだ眉唾」。理由は、老化そのものに効くと、ヒトで確かめられた手段が、まだ無いから。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "寿命が急に延びた、というニュースを見たら、平均寿命の延びが毎年3か月半を超えたか、100歳に届く人の割合が増えたかで確かめる。",
+          "expression": "neutral",
+          "tag": "takeaway"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "AIの新薬なら、第I相か第II相か。効くかを見始めるのは、第II相から。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "どちらも、2026年10月17日時点の見立て。3年より先は、そこまでは分からない。",
+          "expression": "neutral"
+        }
+      ],
+      "scene_id": 15,
+      "narration": "大輔「僕の予想は、寿命の延びはAIで加速する。今ある証拠では、そうは言えなかった。延び方は、むしろ遅くなってる。」\n沙織「私の予想は、そのまま。ただ、AIの薬がヒトで兆しを見せたのは、思ったより進んでた。」\n大輔「判定は、僕も「まだ眉唾」。200歳は、上限を置かない推計の、さらに外だ。ただ、早すぎる死を減らす薬は、AIで当たりやすくなる兆しがある。」\n沙織「私も「まだ眉唾」。理由は、老化そのものに効くと、ヒトで確かめられた手段が、まだ無いから。」\n沙織「寿命が急に延びた、というニュースを見たら、平均寿命の延びが毎年3か月半を超えたか、100歳に届く人の割合が増えたかで確かめる。」\n大輔「AIの新薬なら、第I相か第II相か。効くかを見始めるのは、第II相から。」\n沙織「どちらも、2026年10月17日時点の見立て。3年より先は、そこまでは分からない。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "closing",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe_b",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "速くなるのは、設計図まで。体の時間は、待つしかないのね。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。論文は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "amused"
+        }
+      ],
+      "scene_id": 16,
+      "narration": "沙織「速くなるのは、設計図まで。体の時間は、待つしかないのね。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。論文は概要欄に載せています。チャンネル登録して、待っていてください。」",
+      "narrator": "dialogue"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "skeptic",
+          "narration": "200歳まで、生きる？",
+          "telop_text": "200歳まで、生きる？",
+          "expression": "doubt",
+          "scene_id": 12
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "AIが研究を爆発的に速めたら、寿命も延びるでしょ！",
+          "expression": "excited",
+          "scene_id": 6
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "50歳までの死亡をゼロにしても、平均寿命は、女性で約1年、男性で約1.5年しか延びない。",
+          "expression": "doubt",
+          "react": "surprised",
+          "scene_id": 9
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "でも、老化そのものを止めれば、話は別でしょ。",
+          "expression": "excited",
+          "scene_id": 12
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "細胞や動物は、決まった速さでしか動かない。",
+          "expression": "doubt",
+          "react": "deflated",
+          "scene_id": 12
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "200歳は来る？ 判定は本編で。",
+          "expression": "thinking",
+          "scene_id": 6
+        }
+      ]
+    }
+  ]
+}
