@@ -2435,13 +2435,147 @@
       "domain": "body",
       "concern_id": null,
       "entry_question": "AIで人間が200歳まで生きるとしたら、何が起きている必要がある？ その条件は、今どこまで来ているのか。",
-      "title": "AIで200歳が来るとしたら、何が起きている必要がある？条件を一つずつ確認",
+      "title": "200歳に要る3つの条件、一番手前の「老化の物差し」はいつ来る？",
       "format": "dialogue",
       "structure": "rounds_v3",
       "template": "verdict_first",
-      "references": [],
+      "references": [
+        {
+          "title": "Effect of long-term caloric restriction on DNA methylation measures of biological aging in healthy adults from the CALERIE trial",
+          "authors": [
+            "R. Waziry",
+            "C. P. Ryan",
+            "D. L. Corcoran",
+            "ほか",
+            "D. W. Belsky"
+          ],
+          "year": 2023,
+          "venue": "Nature Aging 3, 248–257（2023-02-09）",
+          "url": "https://doi.org/10.1038/s43587-022-00357-y",
+          "doi": "10.1038/s43587-022-00357-y",
+          "is_preprint": false,
+          "institution": "Columbia University（Butler Columbia Aging Center）ほか",
+          "source_kind": "paper"
+        },
+        {
+          "title": "PROSPR: Proactive Solutions for Prolonging Resilience（プログラムのページ）",
+          "authors": [],
+          "year": 2026,
+          "venue": "ARPA-H（Advanced Research Projects Agency for Health）",
+          "url": "https://arpa-h.gov/explore-funding/programs/prospr",
+          "is_preprint": false,
+          "institution": "ARPA-H（米国保健福祉省の研究機関）",
+          "source_kind": "report"
+        },
+        {
+          "title": "Inhibition of IL-11 signalling extends mammalian healthspan and lifespan",
+          "authors": [
+            "Anissa A. Widjaja",
+            "ほか"
+          ],
+          "year": 2024,
+          "venue": "Nature 632, 157–165（2024-07-17）",
+          "url": "https://doi.org/10.1038/s41586-024-07701-9",
+          "doi": "10.1038/s41586-024-07701-9",
+          "is_preprint": false,
+          "institution": "Duke-NUS Medical School、MRC Laboratory of Medical Sciences ほか",
+          "source_kind": "paper"
+        },
+        {
+          "title": "Loyal Receives FDA Acceptance of Safety Package for Senior Dog Lifespan Extension Drug",
+          "authors": [],
+          "year": 2026,
+          "venue": "Loyal 発表（2026-01-13）",
+          "url": "https://loyal.com/posts/loy-002-tas-announcement",
+          "is_preprint": false,
+          "institution": "Loyal",
+          "source_kind": "press"
+        },
+        {
+          "title": "Slow mortality rate accelerations during aging in some animals approximate that of humans",
+          "authors": [
+            "Caleb E. Finch",
+            "Malcolm C. Pike",
+            "Matthew Witten"
+          ],
+          "year": 1990,
+          "venue": "Science 249, 902–905",
+          "url": "https://doi.org/10.1126/science.2392680",
+          "doi": "10.1126/science.2392680",
+          "is_preprint": false,
+          "institution": "University of Southern California ほか",
+          "source_kind": "paper"
+        },
+        {
+          "title": "Life Biosciences Announces First-in-Human Data from Ongoing Phase 1 Trial Evaluating ER-100 in Optic Neuropathies",
+          "authors": [],
+          "year": 2026,
+          "venue": "Life Biosciences 発表（2026-10-08）",
+          "url": "https://www.lifebiosciences.com/life-biosciences-announces-first-in-human-data-from-ongoing-phase-1-trial-evaluating-er-100-in-optic-neuropathies/",
+          "is_preprint": false,
+          "institution": "Life Biosciences",
+          "source_kind": "press"
+        },
+        {
+          "title": "Somatic mutation rates scale with lifespan across mammals",
+          "authors": [
+            "Alex Cagan",
+            "ほか"
+          ],
+          "year": 2022,
+          "venue": "Nature 604, 517–524（2022-04-13）",
+          "url": "https://doi.org/10.1038/s41586-022-04618-z",
+          "doi": "10.1038/s41586-022-04618-z",
+          "is_preprint": false,
+          "institution": "Wellcome Sanger Institute ほか",
+          "source_kind": "paper"
+        },
+        {
+          "title": "Phase I trial of hES cell-derived dopaminergic neurons for Parkinson's disease",
+          "authors": [
+            "Viviane Tabar",
+            "ほか"
+          ],
+          "year": 2025,
+          "venue": "Nature 641, 978–983（2025-04-16）",
+          "url": "https://doi.org/10.1038/s41586-025-08845-y",
+          "doi": "10.1038/s41586-025-08845-y",
+          "is_preprint": false,
+          "institution": "Memorial Sloan Kettering Cancer Center ほか",
+          "source_kind": "paper"
+        },
+        {
+          "title": "Equal numbers of neuronal and nonneuronal cells make the human brain an isometrically scaled-up primate brain",
+          "authors": [
+            "Frederico A. C. Azevedo",
+            "ほか",
+            "Suzana Herculano-Houzel"
+          ],
+          "year": 2009,
+          "venue": "Journal of Comparative Neurology 513(5), 532–541",
+          "url": "https://doi.org/10.1002/cne.21974",
+          "doi": "10.1002/cne.21974",
+          "is_preprint": false,
+          "institution": "Universidade Federal do Rio de Janeiro ほか",
+          "source_kind": "paper"
+        },
+        {
+          "title": "The STAY Study（参加者向けの説明ページ）",
+          "authors": [],
+          "year": 2026,
+          "venue": "Loyal",
+          "url": "https://loyal.com/stay",
+          "is_preprint": false,
+          "institution": "Loyal",
+          "source_kind": "press"
+        }
+      ],
       "hook_idea": "kl044の続き。『200歳』を結論ではなく条件の束として分解し、老化の物差し・規制・介入・若返りの安全性・AIの設計を、一次資料で一つずつ答え合わせする。",
-      "notes": "2026-10-17 制作者が案2（AIで200歳のまま、条件のチェックリスト形式）を選択。kl044と問いが重なることは承知の上。Opus検討(同日)の要点: 200歳の平均寿命は『老化の速さを約2.7分の1』か『65歳前後で止める』で届く(単純ゴンペルツ・メイカム、日本の生命表ではない)。今の高齢者には遅らせるだけでなく若返りが要る(70歳で止めても平均約150歳)。物差し(代用指標)が全ての前提。現在地: CALERIE(Waziry 2023, 3指標のうち1つが2〜3%)、ARPA-H PROSPR、TAME(最新状況は二次資料のみ・要確認)、Loyal LOY-002(RXE・TAS受理、製造残り)、ER-100第1相(目の病気・局所)、AI(GPT-4b micro RetroSOX/KLF は発表のみで査読論文未確認、Jayatunga 2024)。反証: マウス単独介入15〜25%、体細胞変異は種を超えて死ぬときほぼ同量(Cagan 2022)。脳の段階的置換仮説は1論点以内(量の差: 移植90万〜270万個 vs 脳の10分の1=約86億個)。kl044と同じ台詞・資料カードを使い回さない。"
+      "notes": "2026-10-17 制作者が案2（AIで200歳のまま、条件のチェックリスト形式）を選択。kl044と問いが重なることは承知の上。Opus検討(同日)の要点: 200歳の平均寿命は『老化の速さを約2.7分の1』か『65歳前後で止める』で届く(単純ゴンペルツ・メイカム、日本の生命表ではない)。今の高齢者には遅らせるだけでなく若返りが要る(70歳で止めても平均約150歳)。物差し(代用指標)が全ての前提。現在地: CALERIE(Waziry 2023, 3指標のうち1つが2〜3%)、ARPA-H PROSPR、TAME(最新状況は二次資料のみ・要確認)、Loyal LOY-002(RXE・TAS受理、製造残り)、ER-100第1相(目の病気・局所)、AI(GPT-4b micro RetroSOX/KLF は発表のみで査読論文未確認、Jayatunga 2024)。反証: マウス単独介入15〜25%、体細胞変異は種を超えて死ぬときほぼ同量(Cagan 2022)。脳の段階的置換仮説は1論点以内(量の差: 移植90万〜270万個 vs 脳の10分の1=約86億個)。kl044と同じ台詞・資料カードを使い回さない。",
+      "verdict": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      }
     }
   ],
   "total_topics": 45,

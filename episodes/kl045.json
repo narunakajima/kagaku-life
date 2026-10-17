@@ -1,0 +1,993 @@
+{
+  "episode_id": "kl045",
+  "format": "dialogue",
+  "structure": "rounds_v3",
+  "template": "verdict_first",
+  "source_type": "topic",
+  "verdict_as_of": "2026-10-17",
+  "genre": "medical",
+  "health": true,
+  "episode_title": "AIで200歳が来るとしたら、何が起きている必要がある？条件を一つずつ確認",
+  "youtube_title": "200歳に要る3つの条件、一番手前の「老化の物差し」はいつ来る？",
+  "entry_question": "AIで人間が200歳まで生きるとしたら、何が起きている必要がある？ その条件は、今どこまで来ているのか。",
+  "verdict": {
+    "dreamer": "decade",
+    "skeptic": "dubious"
+  },
+  "verdict_subject": "200歳に要る3つの条件の一番手前: 老化を測る物差し（試験の評価項目）。200歳そのものではない",
+  "hook_lines": [
+    "200歳に要る条件は？",
+    "70歳で止めても平均は届かない"
+  ],
+  "thumbnail_prompt": "Calm, bright editorial illustration of a quiet clinical measurement room seen from the front: a soft pale blue-gray wall and a light gray floor running the full width of the frame, continuous with no panels, boxes, borders or abrupt colour changes. Keep the left 30%, the right 30% and the top 35% of the frame quiet and uncluttered (soft gradient only), but the wall and floor must visibly continue unbroken behind them. In the horizontal center, in the vertical band between 38% and 80% of the frame height: a single plain white laboratory bench holding a row of small blood sample tubes in a rack, one tube glowing warm coral, beside an old-fashioned brass measuring ruler laid flat. No people, no animals. No logos, no brand marks, no readable text, no letters, no numbers.",
+  "thumbnail_headline": "200歳の第一条件\n老化の物差しは来る？",
+  "thumbnail_exprs": {
+    "dreamer": "thinking",
+    "skeptic": "doubt"
+  },
+  "youtube_tags": [
+    "寿命",
+    "200歳",
+    "老化",
+    "老化の物差し",
+    "生物学的年齢",
+    "カロリー制限",
+    "犬の長寿薬",
+    "若返り",
+    "遺伝子治療",
+    "医療の最前線",
+    "答え合わせ",
+    "科学ニュース"
+  ],
+  "references": [
+    {
+      "title": "Effect of long-term caloric restriction on DNA methylation measures of biological aging in healthy adults from the CALERIE trial",
+      "authors": [
+        "R. Waziry",
+        "C. P. Ryan",
+        "D. L. Corcoran",
+        "ほか",
+        "D. W. Belsky"
+      ],
+      "year": 2023,
+      "venue": "Nature Aging 3, 248–257（2023-02-09）",
+      "url": "https://doi.org/10.1038/s43587-022-00357-y",
+      "doi": "10.1038/s43587-022-00357-y",
+      "is_preprint": false,
+      "institution": "Columbia University（Butler Columbia Aging Center）ほか",
+      "source_kind": "paper"
+    },
+    {
+      "title": "PROSPR: Proactive Solutions for Prolonging Resilience（プログラムのページ）",
+      "authors": [],
+      "year": 2026,
+      "venue": "ARPA-H（Advanced Research Projects Agency for Health）",
+      "url": "https://arpa-h.gov/explore-funding/programs/prospr",
+      "is_preprint": false,
+      "institution": "ARPA-H（米国保健福祉省の研究機関）",
+      "source_kind": "report"
+    },
+    {
+      "title": "Inhibition of IL-11 signalling extends mammalian healthspan and lifespan",
+      "authors": [
+        "Anissa A. Widjaja",
+        "ほか"
+      ],
+      "year": 2024,
+      "venue": "Nature 632, 157–165（2024-07-17）",
+      "url": "https://doi.org/10.1038/s41586-024-07701-9",
+      "doi": "10.1038/s41586-024-07701-9",
+      "is_preprint": false,
+      "institution": "Duke-NUS Medical School、MRC Laboratory of Medical Sciences ほか",
+      "source_kind": "paper"
+    },
+    {
+      "title": "Loyal Receives FDA Acceptance of Safety Package for Senior Dog Lifespan Extension Drug",
+      "authors": [],
+      "year": 2026,
+      "venue": "Loyal 発表（2026-01-13）",
+      "url": "https://loyal.com/posts/loy-002-tas-announcement",
+      "is_preprint": false,
+      "institution": "Loyal",
+      "source_kind": "press"
+    },
+    {
+      "title": "Slow mortality rate accelerations during aging in some animals approximate that of humans",
+      "authors": [
+        "Caleb E. Finch",
+        "Malcolm C. Pike",
+        "Matthew Witten"
+      ],
+      "year": 1990,
+      "venue": "Science 249, 902–905",
+      "url": "https://doi.org/10.1126/science.2392680",
+      "doi": "10.1126/science.2392680",
+      "is_preprint": false,
+      "institution": "University of Southern California ほか",
+      "source_kind": "paper"
+    },
+    {
+      "title": "Life Biosciences Announces First-in-Human Data from Ongoing Phase 1 Trial Evaluating ER-100 in Optic Neuropathies",
+      "authors": [],
+      "year": 2026,
+      "venue": "Life Biosciences 発表（2026-10-08）",
+      "url": "https://www.lifebiosciences.com/life-biosciences-announces-first-in-human-data-from-ongoing-phase-1-trial-evaluating-er-100-in-optic-neuropathies/",
+      "is_preprint": false,
+      "institution": "Life Biosciences",
+      "source_kind": "press"
+    },
+    {
+      "title": "Somatic mutation rates scale with lifespan across mammals",
+      "authors": [
+        "Alex Cagan",
+        "ほか"
+      ],
+      "year": 2022,
+      "venue": "Nature 604, 517–524（2022-04-13）",
+      "url": "https://doi.org/10.1038/s41586-022-04618-z",
+      "doi": "10.1038/s41586-022-04618-z",
+      "is_preprint": false,
+      "institution": "Wellcome Sanger Institute ほか",
+      "source_kind": "paper"
+    },
+    {
+      "title": "Phase I trial of hES cell-derived dopaminergic neurons for Parkinson's disease",
+      "authors": [
+        "Viviane Tabar",
+        "ほか"
+      ],
+      "year": 2025,
+      "venue": "Nature 641, 978–983（2025-04-16）",
+      "url": "https://doi.org/10.1038/s41586-025-08845-y",
+      "doi": "10.1038/s41586-025-08845-y",
+      "is_preprint": false,
+      "institution": "Memorial Sloan Kettering Cancer Center ほか",
+      "source_kind": "paper"
+    },
+    {
+      "title": "Equal numbers of neuronal and nonneuronal cells make the human brain an isometrically scaled-up primate brain",
+      "authors": [
+        "Frederico A. C. Azevedo",
+        "ほか",
+        "Suzana Herculano-Houzel"
+      ],
+      "year": 2009,
+      "venue": "Journal of Comparative Neurology 513(5), 532–541",
+      "url": "https://doi.org/10.1002/cne.21974",
+      "doi": "10.1002/cne.21974",
+      "is_preprint": false,
+      "institution": "Universidade Federal do Rio de Janeiro ほか",
+      "source_kind": "paper"
+    },
+    {
+      "title": "The STAY Study（参加者向けの説明ページ）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Loyal",
+      "url": "https://loyal.com/stay",
+      "is_preprint": false,
+      "institution": "Loyal",
+      "source_kind": "press"
+    }
+  ],
+  "youtube_description": "人間が200歳まで生きるとしたら、何がそろっている必要があるのか。前の回（人間は200歳まで生きる？）の続きです。200歳を結論として論じるのではなく、「老化を測る物差し」「効く薬」「若返り」の3つの条件に分けて、それぞれが今どこまで来ているかを、期待担当の大輔と、ツッコミ担当の沙織が一次資料で確かめます。\n\n■ この回の判定（2026年10月17日時点の、二人の見立て）\n判定の対象: 200歳に要る条件の一番手前、「老化を測る物差し（老化に効く治療を、寿命を待たずに確かめるための評価項目）」\n大輔: 3年はかかる（加齢による健康の変化を3年で評価できるようにする米国の計画が動いており、FDA向けの提言書も出ている。ただ、その物差しが本当に健康な寿命を当てられるかは、ヒトで確かめる時間が要る）\n沙織: まだ眉唾（同じ人たちを測っても、物差しごとに答えが割れた。どれが本当の老化を測っているか決まるまでは、物差しと呼べない）\n200歳そのものは、二人とも前の回と同じく「まだ眉唾」。3年より先のことは、そこまでは分かりません。\n\n■ 一次資料に書いてあること\n・Waziry ほか「Effect of long-term caloric restriction on DNA methylation measures of biological aging in healthy adults from the CALERIE trial」（Nature Aging, 2023、コロンビア大学 ほか）: 健康な成人220人を、カロリー制限の群と普段どおりの群に分けた2年間の試験（CALERIE 第2相）。制限の目標は25%だったが、実際は平均約11.9%。血液のDNAメチル化から老化を測る3つのやり方のうち、DunedinPACE（老化の速さ）では2〜3%遅くなった一方、PhenoAge・GrimAge（生物学的年齢）は両群で差がなかった。著者は「効果の大きさは小さい」と書く一方、小さな減速でも集団の健康には大きな影響がありうる、とも書いている。DunedinPACE の考案者の2人が著者に含まれる（利益相反として開示）\n・ARPA-H「PROSPR」（米国政府の医療研究の機関、プログラムのページ）: 加齢に伴う病気の原因を狙う治療のために、体の指標と評価の道具を作る計画。家で集めるデータと臨床試験のやり方を作り、加齢による健康の変化を「何十年もの研究ではなく、3年で」評価できるようにする、としている。内在的能力（intrinsic capacity）を臨床試験の評価項目としてどう測り、使うかについて、FDA向けの専門家の提言書を公開している\n・Widjaja ほか「Inhibition of IL-11 signalling extends mammalian healthspan and lifespan」（Nature, 2024、Duke-NUS医科大学 ほか）: 炎症に関わる物質 IL-11 を抑える抗体を、生後75週のマウスに亡くなるまで毎月投与したところ、寿命の中央値がオスで22.5%、メスで25%延びた。マウスでの結果で、ヒトの寿命については何も示していない\n・Loyal（2026年1月13日発表）: 老犬の健康な寿命を延ばすことを狙う薬 LOY-002 で、米国FDA獣医学センターが、条件つき承認に向けた安全性の技術資料を受理。効く見込みの資料（2025年2月受理）と合わせ、発売に要る3つの大きな技術資料のうち2つが受理された。寿命が延びるかを見る試験 STAY には1,300頭が参加し、参加の説明ページでは「最長4年」の試験とされている。承認はまだ出ておらず、寿命が延びるかどうかは、この試験で確かめている途中\n・Finch ほか「Slow mortality rate accelerations during aging in some animals approximate that of humans」（Science, 1990、南カリフォルニア大学 ほか）: 死亡率が2倍になるまでの年数（MRD）は、人とアカゲザルで約8年\n・Life Biosciences（2026年10月8日発表）: 細胞の状態を取り戻すことを狙う3つの遺伝子（OCT4、SOX2、KLF4）を使う遺伝子治療 ER-100 の第1相試験（緑内障・NAION）の途中経過。緑内障の3人に、低い用量を目の中に1回注射し、遺伝子を働かせる薬（ドキシサイクリン）を毎日飲む形。56日後、3人中2人で視野の改善が見られた。用量を制限する毒性や重い有害事象の報告はなく、次の用量に進む。比較の群のない試験で、主な目的は安全性と忍容性。会社の発表で、効果を確かめたものではない\n・Cagan ほか「Somatic mutation rates scale with lifespan across mammals」（Nature, 2022、ウェルカム・サンガー研究所 ほか）: 16種の哺乳類の腸の細胞（腸陰窩）を調べ、1年あたりの体細胞の突然変異の速さは寿命の長い種ほど遅かった。寿命は約30倍違うのに、寿命の終わりの変異の量は約3倍の差に収まっていた。著者は、変異の速さが老化の一因かもしれない、と述べるにとどめている\n・Tabar ほか「Phase I trial of hES cell-derived dopaminergic neurons for Parkinson's disease」（Nature, 2025、メモリアル・スローン・ケタリングがんセンター ほか）: パーキンソン病の12人に、ES細胞から作ったドーパミン神経の前駆細胞を移植した第1相試験。多い用量の群は、左右の被殻それぞれに270万個。脳の一部（被殻）に細胞を補う治療で、脳を広く入れ替えるものではありません\n・Azevedo ほか（Journal of Comparative Neurology, 2009、リオデジャネイロ連邦大学 ほか）: 成人男性の脳の神経細胞は平均約861億個（4人の脳からの推計）。台詞の「10分の1でも86億個、移植の試験の3,000倍以上」は、この数と Tabar ほかの数を番組が割り算したものです\n\n■ 番組で行った計算と、その前提\n台詞の「8年 → 約21年」「50歳で止めれば約540歳、65歳なら約210歳、70歳なら約160歳」は、一次資料の数字ではなく、番組が単純な式で出した目安です。\n・式: 1年あたりの死亡率 μ(x) = c + a·e^(bx)（ゴンペルツ・メイカムの式）\n・b: 死亡率が8年で2倍になる値（ln2/8。Finch ほか 1990 の目安）、c: 年0.0002（年齢と関係のない死亡）、a: 生まれたときの平均余命が87歳になる値\n・高い年齢で死亡率の上がり方が鈍ること（105歳以上で横ばいになるという報告があります）は入れていません。日本の生命表から計算したものでもありません\n・「平均200歳には約21年」: 生まれたときの平均余命が200歳になるように、2倍になる年数を伸ばした値（約21.4年）\n・「その年齢で止めたら」: その年齢の死亡率のまま変わらないとした場合に、その年齢の人が平均で何歳まで生きるか（50歳 約537歳、65歳 約208歳、70歳 約164歳）\n前提を変えれば数字は変わります。条件どうしの大きさの違いをつかむための目安としてご覧ください。\n\n■ 一次資料に書いていないこと\n・どの物差し（老化の時計）が、本当に健康な寿命を当てるか（CALERIE の分析は、物差しどうしで結果が分かれたことを示しています）\n・遺伝子の働き方を戻す治療で、DNAに起きた突然変異が戻るか（台詞の「書き換わったDNAは戻らない」と「200年生きると、どの哺乳類も経験していない量の変異になる」は、Cagan ほかの結果からの番組の推論です）\n・脳の細胞を入れ替えたときに、記憶や人格がどうなるか\n\n■ 使わなかった情報\n・OpenAI と Retro Biosciences の、AIで設計した初期化因子（RetroSOX・RetroKLF）が多能性のマーカーの発現を50倍超にした、という発表: 発表元のページを開いて確かめられず、査読つきの論文も確認できなかったため。また、測っているのはマーカーの発現で、若返りの効果そのものではありません\n・メトホルミンの大規模試験 TAME の最新の状況: 二次資料でしか確認できなかったため\n・Olshansky ほか（Nature Aging, 2024）の「マウスで試した50の化合物のうち、寿命を延ばしたのは12で、どれも15%を超えない」という記述: 同じ試験プログラムでラパマイシンが2割を超えて延ばしたという別の報告と食い違って見えるため、台詞では扱っていません\n・「AI創薬の第II相の成功率」などの二次情報の数字: 一次資料で確かめられなかったため\n\n※この動画は研究の紹介で、健康や治療についての助言ではありません。紹介した治療・薬は、動物実験か臨床試験の途中のものです。市販の「生物学的年齢」の検査を勧めるものでもありません。\n※この回の元には、専門家の審査を経た学術論文のほか、企業の発表、政府機関のプログラムのページが含まれます。\n※予測は不確かなもので、この動画の判定も2026年10月17日時点のものです。特定の企業への投資を勧めるものではありません。\n\n■ 参考（一次資料）\n[1] Waziry R ほか「Effect of long-term caloric restriction on DNA methylation measures of biological aging in healthy adults from the CALERIE trial」Nature Aging 3, 248–257 (2023) https://doi.org/10.1038/s43587-022-00357-y\n[2] ARPA-H「PROSPR: Proactive Solutions for Prolonging Resilience」 https://arpa-h.gov/explore-funding/programs/prospr\n[3] Widjaja AA ほか「Inhibition of IL-11 signalling extends mammalian healthspan and lifespan」Nature 632, 157–165 (2024) https://doi.org/10.1038/s41586-024-07701-9\n[4] Loyal「Loyal Receives FDA Acceptance of Safety Package for Senior Dog Lifespan Extension Drug」(2026-01-13) https://loyal.com/posts/loy-002-tas-announcement\n[5] Finch CE, Pike MC, Witten M.「Slow mortality rate accelerations during aging in some animals approximate that of humans」Science 249, 902–905 (1990) https://doi.org/10.1126/science.2392680\n[6] Life Biosciences「First-in-Human Data from Ongoing Phase 1 Trial Evaluating ER-100 in Optic Neuropathies」(2026-10-08) https://www.lifebiosciences.com/life-biosciences-announces-first-in-human-data-from-ongoing-phase-1-trial-evaluating-er-100-in-optic-neuropathies/\n[7] Cagan A ほか「Somatic mutation rates scale with lifespan across mammals」Nature 604, 517–524 (2022) https://doi.org/10.1038/s41586-022-04618-z\n[8] Tabar V ほか「Phase I trial of hES cell-derived dopaminergic neurons for Parkinson's disease」Nature 641, 978–983 (2025) https://doi.org/10.1038/s41586-025-08845-y\n[9] Azevedo FAC ほか「Equal numbers of neuronal and nonneuronal cells make the human brain an isometrically scaled-up primate brain」J Comp Neurol 513, 532–541 (2009) https://doi.org/10.1002/cne.21974\n[10] Loyal「The STAY Study」 https://loyal.com/stay",
+  "scenes": [
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_in",
+      "reuse_scene_id": 13,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "200歳まで生きるには、何がそろえばいい？",
+          "expression": "doubt",
+          "tag": "question"
+        }
+      ],
+      "scene_id": 1,
+      "narration": "沙織「200歳まで生きるには、何がそろえばいい？」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_out",
+      "reuse_scene_id": 9,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "単純な計算でも、老化を3分の1近くの速さにする必要。",
+          "expression": "excited",
+          "tone": "excited, like breaking news"
+        }
+      ],
+      "scene_id": 2,
+      "narration": "大輔「単純な計算でも、老化を3分の1近くの速さにする必要。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_in",
+      "reuse_scene_id": 16,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "今70歳の人は、止めても平均では届かない。",
+          "expression": "doubt",
+          "tone": "dry"
+        }
+      ],
+      "scene_id": 3,
+      "narration": "沙織「今70歳の人は、止めても平均では届かない。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_out",
+      "reuse_scene_id": 6,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "でも、一番手前の条件は、もう動いてる。",
+          "expression": "thinking"
+        }
+      ],
+      "scene_id": 4,
+      "narration": "大輔「でも、一番手前の条件は、もう動いてる。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "setup",
+      "bgm_role": "intro",
+      "image_asset": "base_cafe_b",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "今日は前の回の続き。200歳まで生きるには、何がそろっている必要があるか。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "先に結論。200歳そのものは、前の回で二人とも眉唾。そこは動かない。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だから逆から考える。条件は3つ。老化を測る物差し、効く薬、それと若返り。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想。一番遠いのは物差し。測れないと、薬も若返りも、効いたか分からない。",
+          "expression": "doubt",
+          "tag": "prediction"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想は逆。物差しと薬は、AIで近い。遠いのは若返り。",
+          "expression": "excited",
+          "tag": "prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "判定は200歳じゃなく、一番手前の条件に付ける。面白いのは、今70歳の人の話。",
+          "expression": "amused"
+        }
+      ],
+      "scene_id": 5,
+      "narration": "大輔「今日は前の回の続き。200歳まで生きるには、何がそろっている必要があるか。」\n沙織「先に結論。200歳そのものは、前の回で二人とも眉唾。そこは動かない。」\n大輔「だから逆から考える。条件は3つ。老化を測る物差し、効く薬、それと若返り。」\n沙織「私の予想。一番遠いのは物差し。測れないと、薬も若返りも、効いたか分からない。」\n大輔「僕の予想は逆。物差しと薬は、AIで近い。遠いのは若返り。」\n沙織「判定は200歳じゃなく、一番手前の条件に付ける。面白いのは、今70歳の人の話。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 1,
+      "round_title": "老化は、数字で測れる？",
+      "reference_index": 1,
+      "ken_burns": "zoom_out",
+      "image_prompt": "Bright late-morning daylight in a tidy Japanese living room: on a light wooden low table, a set of home health measuring devices laid out neatly - an upper-arm blood pressure cuff with a small plain monitor, a grip-strength dynamometer, a fitness wristband, a small plain white sample-collection kit box, and a tablet showing only soft blurred abstract line graphs in teal. Sunlight through a window with sheer curtains, a potted plant. Calm teal and warm gray palette with one warm coral accent. No people, no hands, no faces. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "まず物差し。アメリカ政府の医療研究の機関、ARPA-Hに、老化の治療を早く確かめる計画がある。",
+          "expression": "excited",
+          "display": "まず物差し。米国政府の医療研究の機関 ARPA-H に、老化の治療を早く確かめる計画がある。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "老化に効いたかなんて、寿命が延びたかを待つしかないでしょ。何十年も。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それを3年にする計画。家で集めるデータと、試験のやり方から作る。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕なら、これに使う。AIが設計した老化の薬の候補を、その物差しで2年のうちに振り分ける。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "物差しが本物なら、ね。2年の試験で、物差しどうしの答えがそろった例はある？",
+          "expression": "doubt"
+        }
+      ],
+      "scene_id": 6,
+      "narration": "大輔「まず物差し。アメリカ政府の医療研究の機関、ARPA-Hに、老化の治療を早く確かめる計画がある。」\n沙織「老化に効いたかなんて、寿命が延びたかを待つしかないでしょ。何十年も。」\n大輔「それを3年にする計画。家で集めるデータと、試験のやり方から作る。」\n大輔「僕なら、これに使う。AIが設計した老化の薬の候補を、その物差しで2年のうちに振り分ける。」\n沙織「物差しが本物なら、ね。2年の試験で、物差しどうしの答えがそろった例はある？」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 1,
+      "reference_index": 0,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "paper",
+        "source": "Nature Aging（2023年）コロンビア大学 ほか",
+        "quote": "Treatment effect sizes were small.",
+        "quote_type": "原文",
+        "highlight": "were small",
+        "items": [
+          "CALERIE 試験: 健康な成人220人、2年間",
+          "カロリー制限の目標25%、実際は平均約12%",
+          "DunedinPACE: 老化の速さが2〜3%遅く",
+          "PhenoAge・GrimAge: 差なし"
+        ],
+        "reference_index": 0
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "確かめた試験がある。コロンビア大学などの、カロリーを減らす試験。220人を2年。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "どれくらい減らしたの？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "目標は25%。実際は、平均12%くらいしか減らせなかった。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "で、老化は遅くなった？",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "血液から老化を測るやり方を3つ使って、遅くなったと出たのは1つだけ。それも2〜3%。",
+          "expression": "doubt",
+          "tag": "weakness",
+          "display": "遅くなったのは DunedinPACE だけ（2〜3%）。PhenoAge・GrimAge は差なし"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でも著者は、少しの減速でも、集団には大きいって書いてるよ。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "否定はしない。ただ、同じ人たちを測って、物差しで答えが割れた。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "どれが本当の老化を測ってるのか、まだ決まってないのか。",
+          "expression": "deflated"
+        }
+      ],
+      "scene_id": 7,
+      "image_asset": "cards/kl045_S07",
+      "narration": "沙織「確かめた試験がある。コロンビア大学などの、カロリーを減らす試験。220人を2年。」\n大輔「どれくらい減らしたの？」\n沙織「目標は25%。実際は、平均12%くらいしか減らせなかった。」\n大輔「で、老化は遅くなった？」\n沙織「血液から老化を測るやり方を3つ使って、遅くなったと出たのは1つだけ。それも2〜3%。」\n大輔「でも著者は、少しの減速でも、集団には大きいって書いてるよ。」\n沙織「否定はしない。ただ、同じ人たちを測って、物差しで答えが割れた。」\n大輔「どれが本当の老化を測ってるのか、まだ決まってないのか。」\n［画面の資料カード］Nature Aging（2023年）コロンビア大学 ほか 「Treatment effect sizes were small.」（原文） ・CALERIE 試験: 健康な成人220人、2年間 ・カロリー制限の目標25%、実際は平均約12% ・DunedinPACE: 老化の速さが2〜3%遅く ・PhenoAge・GrimAge: 差なし",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 1,
+      "reference_index": 1,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "report",
+        "source": "ARPA-H（米国政府の医療研究の機関）PROSPR 計画のページ",
+        "quote": "assess age-associated health outcomes in just three years instead of decades of study",
+        "quote_type": "原文",
+        "highlight": "in just three years",
+        "items": [
+          "加齢による健康の変化を、3年で評価する",
+          "家で集めるデータと、試験のやり方を作る",
+          "物差しの使い方の提言書を、FDA向けに公開"
+        ],
+        "reference_index": 1
+      },
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "そのための計画なんだ。加齢による健康の変化を、何十年じゃなく3年で評価する、って。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "どう測って、試験にどう使うか。FDAに向けた提言書も、もう出してる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "……提言書まで、もう出てるのか。",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そこは認める。一番遠いと思ってた物差しに、目標と道筋までは書かれてる。",
+          "expression": "convinced",
+          "tag": "turn"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "あとは、その物差しで長く健康でいる人を当てられるか。それはヒトで確かめるしかない。",
+          "expression": "thinking"
+        }
+      ],
+      "scene_id": 8,
+      "image_asset": "cards/kl045_S08",
+      "narration": "大輔「そのための計画なんだ。加齢による健康の変化を、何十年じゃなく3年で評価する、って。」\n大輔「どう測って、試験にどう使うか。FDAに向けた提言書も、もう出してる。」\n沙織「……提言書まで、もう出てるのか。」\n沙織「そこは認める。一番遠いと思ってた物差しに、目標と道筋までは書かれてる。」\n沙織「あとは、その物差しで長く健康でいる人を当てられるか。それはヒトで確かめるしかない。」\n［画面の資料カード］ARPA-H（米国政府の医療研究の機関）PROSPR 計画のページ 「assess age-associated health outcomes in just three years instead of decades of study」（原文） ・加齢による健康の変化を、3年で評価する ・家で集めるデータと、試験のやり方を作る ・物差しの使い方の提言書を、FDA向けに公開",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 2,
+      "round_title": "効く薬は、どこまで来てる？",
+      "reference_index": 2,
+      "ken_burns": "zoom_out",
+      "image_prompt": "Bright daytime in a clean modern animal research facility: long tidy rows of clear ventilated mouse cages on stainless steel racks, each cage with fresh bedding, a small nest and a water bottle, a few small white laboratory mice visible inside some cages, soft even lighting, pale blue-gray walls. Calm teal and slate palette with one warm coral indicator light on a rack. No people, no hands, no faces. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "次は薬。マウスなら、年を取ってから始めて、寿命が延びた例がある。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "シンガポールのデューク・NUS医科大学などの研究。炎症に関わる物質を抑える抗体を、生後75週から。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "75週なら、マウスでは年を取った側ね。で、どれだけ延びたの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "寿命の真ん中の値で、オスが22.5%、メスが25%。",
+          "expression": "excited",
+          "display": "寿命の中央値: オス＋22.5%、メス＋25%"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "2割あまり。それは大きい。……マウスでは、ね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "犬も来てる。アメリカの会社ロイヤルの、老犬の寿命を延ばす狙いの薬。",
+          "expression": "excited",
+          "reference_index": 3,
+          "display": "犬も来てる。米国の会社 Loyal の、老犬の寿命を延ばす狙いの薬。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "犬で、寿命が延びた結果は出たの？",
+          "expression": "doubt"
+        }
+      ],
+      "scene_id": 9,
+      "narration": "大輔「次は薬。マウスなら、年を取ってから始めて、寿命が延びた例がある。」\n大輔「シンガポールのデューク・NUS医科大学などの研究。炎症に関わる物質を抑える抗体を、生後75週から。」\n沙織「75週なら、マウスでは年を取った側ね。で、どれだけ延びたの？」\n大輔「寿命の真ん中の値で、オスが22.5%、メスが25%。」\n沙織「2割あまり。それは大きい。……マウスでは、ね。」\n大輔「犬も来てる。アメリカの会社ロイヤルの、老犬の寿命を延ばす狙いの薬。」\n沙織「犬で、寿命が延びた結果は出たの？」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 2,
+      "reference_index": 3,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "press",
+        "source": "Loyal 発表（2026年1月13日）LOY-002",
+        "quote": "two of three major technical sections required for market launch",
+        "quote_type": "原文",
+        "highlight": "two of three",
+        "items": [
+          "FDA の動物の薬の部門が受理: 安全性の資料",
+          "効く見込みの資料は、2025年2月に受理",
+          "残る大きな資料は、あと1つ",
+          "寿命を見る試験 STAY は、最長4年"
+        ],
+        "reference_index": 3
+      },
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "FDAの動物の薬の部門が、発売に要る3つの大きな資料のうち、2つを受理した。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "受理されたのは、安全性と、効きそうだという見込み。寿命を見る試験は、最長で4年続く。",
+          "expression": "doubt",
+          "reference_index": 9
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕なら、犬の結果を人の物差しの答え合わせに使う。犬は早く年を取るから、寿命の答えが先に出る。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それは筋がいい。ただ、今あるのは見込みまで。延びたかは、結果待ち。",
+          "expression": "thinking"
+        }
+      ],
+      "scene_id": 10,
+      "image_asset": "cards/kl045_S10",
+      "narration": "大輔「FDAの動物の薬の部門が、発売に要る3つの大きな資料のうち、2つを受理した。」\n沙織「受理されたのは、安全性と、効きそうだという見込み。寿命を見る試験は、最長で4年続く。」\n大輔「僕なら、犬の結果を人の物差しの答え合わせに使う。犬は早く年を取るから、寿命の答えが先に出る。」\n沙織「それは筋がいい。ただ、今あるのは見込みまで。延びたかは、結果待ち。」\n［画面の資料カード］Loyal 発表（2026年1月13日）LOY-002 「two of three major technical sections required for market launch」（原文） ・FDA の動物の薬の部門が受理: 安全性の資料 ・効く見込みの資料は、2025年2月に受理 ・残る大きな資料は、あと1つ ・寿命を見る試験 STAY は、最長4年",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 2,
+      "reference_index": 4,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "paper",
+        "source": "Science（1990年）南カリフォルニア大学 ほか",
+        "quote": "Rhesus monkeys have an MRD close to that of humans, about 8 years",
+        "quote_type": "原文",
+        "highlight": "about 8 years",
+        "items": [
+          "MRD＝死亡率が2倍になるまでの年数",
+          "人もアカゲザルも、約8年",
+          "番組の計算（単純な式、前提は概要欄）",
+          "平均200歳には、約8年 → 約21年"
+        ],
+        "reference_index": 4
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ200歳には、どれだけ遅らせればいいか。単純な計算をした。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "大人の死亡率は、およそ8年ごとに2倍になる。1990年のサイエンスの論文の目安。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "その8年を、何年にすればいい？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "平均200歳なら、約21年。老化の速さを、3分の1近くにする計算。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "マウスで2割延びた話とは、遠さが違うな。",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、薬はAIで近い、は言い過ぎだ。近いのは、マウスと犬で確かめるところまで。",
+          "expression": "deflated",
+          "tag": "turn"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ごく単純な式で、日本の生命表でもない。前提は概要欄に書く。",
+          "expression": "neutral"
+        }
+      ],
+      "scene_id": 11,
+      "image_asset": "cards/kl045_S11",
+      "narration": "沙織「じゃあ200歳には、どれだけ遅らせればいいか。単純な計算をした。」\n沙織「大人の死亡率は、およそ8年ごとに2倍になる。1990年のサイエンスの論文の目安。」\n大輔「その8年を、何年にすればいい？」\n沙織「平均200歳なら、約21年。老化の速さを、3分の1近くにする計算。」\n大輔「マウスで2割延びた話とは、遠さが違うな。」\n大輔「じゃあ、薬はAIで近い、は言い過ぎだ。近いのは、マウスと犬で確かめるところまで。」\n沙織「ごく単純な式で、日本の生命表でもない。前提は概要欄に書く。」\n［画面の資料カード］Science（1990年）南カリフォルニア大学 ほか 「Rhesus monkeys have an MRD close to that of humans, about 8 years」（原文） ・MRD＝死亡率が2倍になるまでの年数 ・人もアカゲザルも、約8年 ・番組の計算（単純な式、前提は概要欄） ・平均200歳には、約8年 → 約21年",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 3,
+      "round_title": "今いる人は、遅らせるだけで足りる？",
+      "reference_index": 4,
+      "ken_burns": "static",
+      "image_prompt": "Clean flat bar chart. Title at the top in Japanese: 「老化をその年齢で止めたら、平均で何歳まで（単純な計算）」. Three vertical bars from left to right. Bar labels under each bar: 「50歳で止める」「65歳で止める」「70歳で止める」. Value labels above each bar exactly: 「約540歳」「約210歳」「約160歳」. Bar heights proportional to 540, 210 and 160 on a vertical axis from 0 to 600 with tick labels 「0」「200」「400」「600」 only. A thin dashed horizontal line at the height of 200 labeled 「200歳」 at its right end. First two bars in teal, the 70 bar in warm coral. Write each label exactly as given. Do not add any other numbers, labels, notes or text.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "遅らせるのが遠いなら、老化をそこで止めたら？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "同じ式で、止めた年齢ごとに、平均で何歳まで生きるかを出した。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "50歳で止めれば、約540歳。65歳なら、約210歳。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "70歳なら？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "約160歳。今70歳の人は、ここで止めても、平均では200歳に届かない。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、遅らせるだけじゃ足りない。時計を戻す、若返りが要るのか。",
+          "expression": "surprised"
+        }
+      ],
+      "scene_id": 12,
+      "narration": "大輔「遅らせるのが遠いなら、老化をそこで止めたら？」\n沙織「同じ式で、止めた年齢ごとに、平均で何歳まで生きるかを出した。」\n沙織「50歳で止めれば、約540歳。65歳なら、約210歳。」\n大輔「70歳なら？」\n沙織「約160歳。今70歳の人は、ここで止めても、平均では200歳に届かない。」\n大輔「じゃあ、遅らせるだけじゃ足りない。時計を戻す、若返りが要るのか。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 3,
+      "reference_index": 5,
+      "ken_burns": "zoom_in",
+      "image_prompt": "A quiet ophthalmology examination room in soft daytime light: a slit-lamp microscope on an adjustable table with its chin rest, a visual field testing machine with a white hemispherical dome, a wheeled stool, a small tray with sealed sterile eye-drop vials, pale blue-gray walls, a window with blinds. Calm teal and slate palette with one warm coral glow inside the visual field dome. No people, no hands, no faces. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "若返りを狙う治療なら、ヒトで始まってる。ボストンの会社の、目の遺伝子治療。",
+          "expression": "excited",
+          "display": "若返りを狙う治療なら、ヒトで始まってる。ボストンの会社 Life Biosciences の、目の遺伝子治療。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "若返りって、何を戻すの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "細胞を若い状態に戻す狙いの遺伝子を3つ、目の神経に。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "全身じゃなくて、目の神経に届けるのね。緑内障？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕なら、目を若返りの最初の試し場所に使う。視野の検査で、効いたかを確かめられる。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、それ何人で試したの？",
+          "expression": "doubt"
+        }
+      ],
+      "scene_id": 13,
+      "narration": "大輔「若返りを狙う治療なら、ヒトで始まってる。ボストンの会社の、目の遺伝子治療。」\n沙織「若返りって、何を戻すの？」\n大輔「細胞を若い状態に戻す狙いの遺伝子を3つ、目の神経に。」\n沙織「全身じゃなくて、目の神経に届けるのね。緑内障？」\n大輔「僕なら、目を若返りの最初の試し場所に使う。視野の検査で、効いたかを確かめられる。」\n沙織「で、それ何人で試したの？」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 3,
+      "reference_index": 5,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "press",
+        "source": "Life Biosciences 発表（2026年10月8日）ER-100",
+        "quote": "observed in 2 of 3 OAG participants at Day 56",
+        "quote_type": "原文",
+        "highlight": "2 of 3",
+        "items": [
+          "緑内障の3人に、目への注射を1回",
+          "56日後、3人中2人で視野の検査が改善",
+          "比べる群のない第1相（主に安全性）",
+          "重い副作用は報告なし、次は量を増やす"
+        ],
+        "reference_index": 5
+      },
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "そう、緑内障の3人。目に1回注射して、56日後、3人のうち2人で視野の検査の結果が良くなった。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "3人で、比べる相手もいない。主に安全性を見る試験だと、会社も書いてる。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "重い副作用は出てない。次は量を増やす段階。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "安全の面は、いい知らせね。全身の若返りとは、まだ別の話だけど。",
+          "expression": "neutral"
+        }
+      ],
+      "scene_id": 14,
+      "image_asset": "cards/kl045_S14",
+      "narration": "大輔「そう、緑内障の3人。目に1回注射して、56日後、3人のうち2人で視野の検査の結果が良くなった。」\n沙織「3人で、比べる相手もいない。主に安全性を見る試験だと、会社も書いてる。」\n大輔「重い副作用は出てない。次は量を増やす段階。」\n沙織「安全の面は、いい知らせね。全身の若返りとは、まだ別の話だけど。」\n［画面の資料カード］Life Biosciences 発表（2026年10月8日）ER-100 「observed in 2 of 3 OAG participants at Day 56」（原文） ・緑内障の3人に、目への注射を1回 ・56日後、3人中2人で視野の検査が改善 ・比べる群のない第1相（主に安全性） ・重い副作用は報告なし、次は量を増やす",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 3,
+      "reference_index": 6,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "paper",
+        "source": "Nature（2022年）英ウェルカム・サンガー研究所 ほか",
+        "quote": "the somatic mutation burden at the end of lifespan varied only by a factor of around 3",
+        "quote_type": "原文",
+        "highlight": "varied only by a factor of around 3",
+        "items": [
+          "16種の哺乳類、腸の細胞のDNAを調べた",
+          "寿命は約30倍違う",
+          "長生きの種ほど、変異がゆっくり溜まる",
+          "変異は老化の一因かもしれない（著者）"
+        ],
+        "reference_index": 6
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "それに、戻せないものがある。イギリスのサンガー研究所などの研究。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "16種の哺乳類で、腸の細胞のDNAの書き換わり、突然変異を数えた。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ネズミから、キリンや人まで？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "寿命は約30倍違うのに、死ぬときの変異の量は、約3倍の差だった。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "長生きの動物ほど、ゆっくり溜まるのか。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ここからは私の推論。200年生きたら、どの哺乳類も経験してない量になる。",
+          "expression": "doubt",
+          "tag": "barrier"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でも、若返りの治療で戻せない？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "あれは遺伝子の働き方を戻す狙い。書き換わったDNAは、戻らない。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "論文自体は、変異は老化の一因かもしれない、までだね。",
+          "expression": "thinking"
+        }
+      ],
+      "scene_id": 15,
+      "image_asset": "cards/kl045_S15",
+      "narration": "沙織「それに、戻せないものがある。イギリスのサンガー研究所などの研究。」\n沙織「16種の哺乳類で、腸の細胞のDNAの書き換わり、突然変異を数えた。」\n大輔「ネズミから、キリンや人まで？」\n沙織「寿命は約30倍違うのに、死ぬときの変異の量は、約3倍の差だった。」\n大輔「長生きの動物ほど、ゆっくり溜まるのか。」\n沙織「ここからは私の推論。200年生きたら、どの哺乳類も経験してない量になる。」\n大輔「でも、若返りの治療で戻せない？」\n沙織「あれは遺伝子の働き方を戻す狙い。書き換わったDNAは、戻らない。」\n大輔「論文自体は、変異は老化の一因かもしれない、までだね。」\n［画面の資料カード］Nature（2022年）英ウェルカム・サンガー研究所 ほか 「the somatic mutation burden at the end of lifespan varied only by a factor of around 3」（原文） ・16種の哺乳類、腸の細胞のDNAを調べた ・寿命は約30倍違う ・長生きの種ほど、変異がゆっくり溜まる ・変異は老化の一因かもしれない（著者）",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 3,
+      "reference_index": 7,
+      "ken_burns": "zoom_out",
+      "image_prompt": "A bright, sterile cell-therapy manufacturing cleanroom: a stainless steel liquid-nitrogen storage tank with its lid slightly open and cold white vapor rising, a rack of small sealed cryovials with colored caps lifted above it, a biosafety cabinet with a softly lit work surface, sealed culture flasks on a cart, smooth white walls and floor. Calm teal and slate palette with one warm coral status light. No people, no hands, no faces. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "なら、細胞ごと入れ替えたら？ 仮に、脳を10分の1ずつ新しい細胞に、とか。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "量を比べて。パーキンソン病で、脳の一部に細胞を補う移植の試験。多い方で、片側に270万個。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "脳の神経細胞は、成人男性4人の脳を数えた推計で、平均約860億個。",
+          "expression": "doubt",
+          "reference_index": 8
+        },
+        {
+          "speaker": "dreamer",
+          "text": "10分の1でも86億個。単純に割ると、片側に入れた数の3,000倍以上か。",
+          "expression": "surprised",
+          "display": "10分の1でも約86億個。単純に割ると、片側に入れた数の3,000倍以上（番組の計算）"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "しかも入れ替えた後、記憶が残るのかは……。",
+          "expression": "deflated"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それは、どの資料にも書いてない。分からない、で止めておこう。",
+          "expression": "neutral"
+        }
+      ],
+      "scene_id": 16,
+      "narration": "大輔「なら、細胞ごと入れ替えたら？ 仮に、脳を10分の1ずつ新しい細胞に、とか。」\n沙織「量を比べて。パーキンソン病で、脳の一部に細胞を補う移植の試験。多い方で、片側に270万個。」\n沙織「脳の神経細胞は、成人男性4人の脳を数えた推計で、平均約860億個。」\n大輔「10分の1でも86億個。単純に割ると、片側に入れた数の3,000倍以上か。」\n大輔「しかも入れ替えた後、記憶が残るのかは……。」\n沙織「それは、どの資料にも書いてない。分からない、で止めておこう。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "verdict",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "ken_burns": "zoom_out",
+      "verdict_from_line": 5,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想は、物差しと薬はAIで近い。薬は外れた。延びた証拠はマウスまで。",
+          "expression": "deflated",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は、物差しが一番遠いと思ってた。目標と道筋は、思ったより進んでた。",
+          "expression": "amused",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "判定は、200歳の一番手前、老化の物差しに付ける。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕は「3年はかかる」。計画は動いてる。ただ、当たるかはヒトで確かめる時間が要る。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は「まだ眉唾」。同じ人を測って、答えが割れた。どれが本物か決まるまで、物差しとは呼べない。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "「老化が遅くなった」と聞いたら、どの物差しで測ったか。ほかの物差しでも同じ答えか。そこを見る。",
+          "expression": "neutral",
+          "tag": "takeaway"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "どちらも、2026年10月17日時点の見立て。200歳は、分からないままにしておく。",
+          "expression": "neutral"
+        }
+      ],
+      "scene_id": 17,
+      "narration": "大輔「僕の予想は、物差しと薬はAIで近い。薬は外れた。延びた証拠はマウスまで。」\n沙織「私は、物差しが一番遠いと思ってた。目標と道筋は、思ったより進んでた。」\n大輔「判定は、200歳の一番手前、老化の物差しに付ける。」\n大輔「僕は「3年はかかる」。計画は動いてる。ただ、当たるかはヒトで確かめる時間が要る。」\n沙織「私は「まだ眉唾」。同じ人を測って、答えが割れた。どれが本物か決まるまで、物差しとは呼べない。」\n沙織「「老化が遅くなった」と聞いたら、どの物差しで測ったか。ほかの物差しでも同じ答えか。そこを見る。」\n沙織「どちらも、2026年10月17日時点の見立て。200歳は、分からないままにしておく。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "closing",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe_b",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "200歳を条件に分けたら、最初に要るのは、測り方だった。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "寿命の答えを先に持ってくるのは、犬の方かもね。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。論文は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "amused"
+        }
+      ],
+      "scene_id": 18,
+      "narration": "大輔「200歳を条件に分けたら、最初に要るのは、測り方だった。」\n沙織「寿命の答えを先に持ってくるのは、犬の方かもね。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。論文は概要欄に載せています。チャンネル登録して、待っていてください。」",
+      "narrator": "dialogue"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "skeptic",
+          "narration": "200歳に、要る条件は？",
+          "telop_text": "200歳に、要る条件は？",
+          "expression": "doubt",
+          "scene_id": 13
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "遅らせるのが遠いなら、老化をそこで止めたら？",
+          "expression": "thinking",
+          "scene_id": 9
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "単純な計算だと、今70歳の人は、止めても平均では200歳に届かない。",
+          "expression": "doubt",
+          "react": "surprised",
+          "scene_id": 6
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "じゃあ、遅らせるだけじゃ足りない。時計を戻す、若返りが要るのか。",
+          "expression": "surprised",
+          "scene_id": 13
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "若返りの治療でも、書き換わったDNAは戻らない。",
+          "expression": "doubt",
+          "react": "deflated",
+          "scene_id": 16
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "一番手前の条件、老化の物差しは来る？ 判定は本編で。",
+          "expression": "thinking",
+          "scene_id": 6
+        }
+      ]
+    }
+  ]
+}
