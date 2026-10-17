@@ -2428,7 +2428,7 @@
     },
     {
       "episode_id": "kl045",
-      "status": "confirmed",
+      "status": "cancelled",
       "slot_type": "topic",
       "genre": "medical",
       "health": true,
@@ -2575,9 +2575,10 @@
       "verdict": {
         "dreamer": "decade",
         "skeptic": "dubious"
-      }
+      },
+      "cancelled_reason": "2026-10-18 制作者の指示で中止。台本・資料カード・画像（Desktop）まで作成済み。音声・動画は未生成。台本は episodes/kl045.json に残す。"
     }
   ],
   "total_topics": 45,
-  "last_updated": "2026-10-17"
+  "last_updated": "2026-10-18"
 }
