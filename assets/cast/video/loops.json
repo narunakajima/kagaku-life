@@ -1,9 +1,13 @@
 {
   "dreamer_neutral": {
+    "kind": "idle",
+    "loop": "pingpong",
+    "breath": 0.008,
+    "seam_last_to_first": 0.26,
     "start": 0.0,
     "end": 3.542,
-    "frames": 170,
-    "seconds": 7.083,
+    "frames": 174,
+    "seconds": 7.25,
     "size": [
       672,
       900
@@ -14,13 +18,18 @@
       246
     ],
     "iou_vs_static_first_frame": 0.997,
+    "mouth_activity": 1.05,
     "source": "dreamer_neutral_veo.mp4"
   },
   "dreamer_excited": {
+    "kind": "idle",
+    "loop": "pingpong",
+    "breath": 0.008,
+    "seam_last_to_first": 0.32,
     "start": 1.0,
     "end": 2.5,
-    "frames": 72,
-    "seconds": 3.0,
+    "frames": 76,
+    "seconds": 3.167,
     "size": [
       672,
       900
@@ -31,13 +40,18 @@
       247
     ],
     "iou_vs_static_first_frame": 0.891,
+    "mouth_activity": 0.57,
     "source": "dreamer_excited_veo.mp4"
   },
   "dreamer_surprised": {
+    "kind": "idle",
+    "loop": "pingpong",
+    "breath": 0.008,
+    "seam_last_to_first": 0.3,
     "start": 0.792,
     "end": 2.292,
-    "frames": 72,
-    "seconds": 3.0,
+    "frames": 76,
+    "seconds": 3.167,
     "size": [
       672,
       900
@@ -48,13 +62,18 @@
       247
     ],
     "iou_vs_static_first_frame": 0.866,
+    "mouth_activity": 0.19,
     "source": "dreamer_surprised_veo.mp4"
   },
   "dreamer_thinking": {
+    "kind": "idle",
+    "loop": "pingpong",
+    "breath": 0.008,
+    "seam_last_to_first": 0.25,
     "start": 0.0,
     "end": 3.458,
-    "frames": 166,
-    "seconds": 6.917,
+    "frames": 170,
+    "seconds": 7.083,
     "size": [
       672,
       900
@@ -65,13 +84,18 @@
       246
     ],
     "iou_vs_static_first_frame": 0.997,
+    "mouth_activity": 2.99,
     "source": "dreamer_thinking_veo.mp4"
   },
   "dreamer_deflated": {
+    "kind": "idle",
+    "loop": "pingpong",
+    "breath": 0.008,
+    "seam_last_to_first": 0.29,
     "start": 0.167,
     "end": 3.542,
-    "frames": 162,
-    "seconds": 6.75,
+    "frames": 166,
+    "seconds": 6.917,
     "size": [
       672,
       900
@@ -82,13 +106,18 @@
       247
     ],
     "iou_vs_static_first_frame": 0.985,
+    "mouth_activity": 0.81,
     "source": "dreamer_deflated_veo.mp4"
   },
   "dreamer_convinced": {
+    "kind": "idle",
+    "loop": "pingpong",
+    "breath": 0.008,
+    "seam_last_to_first": 0.26,
     "start": 0.0,
     "end": 2.542,
-    "frames": 122,
-    "seconds": 5.083,
+    "frames": 126,
+    "seconds": 5.25,
     "size": [
       672,
       900
@@ -99,13 +128,18 @@
       249
     ],
     "iou_vs_static_first_frame": 0.997,
+    "mouth_activity": 1.01,
     "source": "dreamer_convinced_veo.mp4"
   },
   "skeptic_neutral": {
+    "kind": "idle",
+    "loop": "pingpong",
+    "breath": 0.008,
+    "seam_last_to_first": 0.17,
     "start": 0.208,
     "end": 3.792,
-    "frames": 172,
-    "seconds": 7.167,
+    "frames": 176,
+    "seconds": 7.333,
     "size": [
       672,
       900
@@ -116,13 +150,18 @@
       249
     ],
     "iou_vs_static_first_frame": 0.998,
+    "mouth_activity": 2.81,
     "source": "skeptic_neutral_veo.mp4"
   },
   "skeptic_doubt": {
+    "kind": "idle",
+    "loop": "pingpong",
+    "breath": 0.008,
+    "seam_last_to_first": 0.24,
     "start": 2.5,
     "end": 4.208,
-    "frames": 82,
-    "seconds": 3.417,
+    "frames": 86,
+    "seconds": 3.583,
     "size": [
       672,
       900
@@ -133,14 +172,19 @@
       251
     ],
     "iou_vs_static_first_frame": 0.983,
+    "mouth_activity": 1.62,
     "source": "skeptic_doubt_veo.mp4",
     "manual": true
   },
   "skeptic_surprised": {
+    "kind": "idle",
+    "loop": "pingpong",
+    "breath": 0.008,
+    "seam_last_to_first": 0.18,
     "start": 0.208,
     "end": 3.792,
-    "frames": 172,
-    "seconds": 7.167,
+    "frames": 176,
+    "seconds": 7.333,
     "size": [
       672,
       900
@@ -151,13 +195,18 @@
       251
     ],
     "iou_vs_static_first_frame": 0.993,
+    "mouth_activity": 2.32,
     "source": "skeptic_surprised_veo.mp4"
   },
   "skeptic_thinking": {
+    "kind": "idle",
+    "loop": "pingpong",
+    "breath": 0.008,
+    "seam_last_to_first": 0.2,
     "start": 0.083,
     "end": 3.167,
-    "frames": 148,
-    "seconds": 6.167,
+    "frames": 152,
+    "seconds": 6.333,
     "size": [
       672,
       900
@@ -168,13 +217,18 @@
       251
     ],
     "iou_vs_static_first_frame": 0.997,
+    "mouth_activity": 1.13,
     "source": "skeptic_thinking_veo.mp4"
   },
   "skeptic_amused": {
+    "kind": "idle",
+    "loop": "pingpong",
+    "breath": 0.008,
+    "seam_last_to_first": 0.19,
     "start": 0.458,
     "end": 4.0,
-    "frames": 170,
-    "seconds": 7.083,
+    "frames": 174,
+    "seconds": 7.25,
     "size": [
       672,
       900
@@ -185,13 +239,18 @@
       250
     ],
     "iou_vs_static_first_frame": 0.964,
+    "mouth_activity": 2.6,
     "source": "skeptic_amused_veo.mp4"
   },
   "skeptic_convinced": {
+    "kind": "idle",
+    "loop": "pingpong",
+    "breath": 0.008,
+    "seam_last_to_first": 0.19,
     "start": 0.042,
     "end": 3.625,
-    "frames": 172,
-    "seconds": 7.167,
+    "frames": 176,
+    "seconds": 7.333,
     "size": [
       672,
       900
@@ -202,14 +261,18 @@
       251
     ],
     "iou_vs_static_first_frame": 0.998,
+    "mouth_activity": 4.67,
     "source": "skeptic_convinced_veo.mp4"
   },
   "dreamer_neutral_talk": {
     "kind": "talk",
-    "start": 0.042,
-    "end": 3.625,
-    "frames": 172,
-    "seconds": 7.167,
+    "loop": "pingpong",
+    "breath": 0,
+    "seam_last_to_first": 0.0,
+    "start": 0.792,
+    "end": 3.667,
+    "frames": 142,
+    "seconds": 5.917,
     "size": [
       672,
       900
@@ -219,16 +282,24 @@
       32,
       246
     ],
-    "iou_vs_static_first_frame": 0.996,
-    "mouth_activity": 5.32,
-    "source": "dreamer_neutral_talk.mp4"
+    "iou_vs_static_first_frame": 0.949,
+    "mouth_activity": 4.89,
+    "source": "dreamer_neutral_talk.mp4",
+    "range": [
+      0.0,
+      3.7
+    ],
+    "manual": true
   },
   "dreamer_excited_talk": {
     "kind": "talk",
-    "start": 0.75,
-    "end": 3.792,
-    "frames": 146,
-    "seconds": 6.083,
+    "loop": "pingpong",
+    "breath": 0,
+    "seam_last_to_first": 0.0,
+    "start": 1.167,
+    "end": 4.458,
+    "frames": 162,
+    "seconds": 6.75,
     "size": [
       672,
       900
@@ -238,15 +309,22 @@
       20,
       249
     ],
-    "iou_vs_static_first_frame": 0.89,
-    "mouth_activity": 7.38,
+    "iou_vs_static_first_frame": 0.913,
+    "mouth_activity": 6.89,
     "source": "dreamer_excited_talk.mp4",
+    "range": [
+      0.75,
+      4.5
+    ],
     "manual": true
   },
   "dreamer_surprised_talk": {
     "kind": "talk",
+    "loop": "pingpong",
+    "breath": 0,
+    "seam_last_to_first": 0.0,
     "start": 0.0,
-    "end": 2.208,
+    "end": 2.125,
     "frames": 106,
     "seconds": 4.417,
     "size": [
@@ -259,16 +337,23 @@
       246
     ],
     "iou_vs_static_first_frame": 0.997,
-    "mouth_activity": 4.26,
+    "mouth_activity": 4.4,
     "source": "dreamer_surprised_talk.mp4",
+    "range": [
+      0.0,
+      2.25
+    ],
     "manual": true
   },
   "dreamer_thinking_talk": {
     "kind": "talk",
-    "start": 0.042,
-    "end": 3.625,
-    "frames": 172,
-    "seconds": 7.167,
+    "loop": "pingpong",
+    "breath": 0,
+    "seam_last_to_first": 0.0,
+    "start": 1.208,
+    "end": 4.5,
+    "frames": 162,
+    "seconds": 6.75,
     "size": [
       672,
       900
@@ -278,16 +363,24 @@
       20,
       244
     ],
-    "iou_vs_static_first_frame": 0.997,
-    "mouth_activity": 5.62,
-    "source": "dreamer_thinking_talk.mp4"
+    "iou_vs_static_first_frame": 0.903,
+    "mouth_activity": 4.48,
+    "source": "dreamer_thinking_talk.mp4",
+    "range": [
+      0.0,
+      4.5
+    ],
+    "manual": true
   },
   "dreamer_deflated_talk": {
     "kind": "talk",
-    "start": 0.458,
-    "end": 4.0,
-    "frames": 170,
-    "seconds": 7.083,
+    "loop": "pingpong",
+    "breath": 0,
+    "seam_last_to_first": 0.0,
+    "start": 0.833,
+    "end": 4.208,
+    "frames": 166,
+    "seconds": 6.917,
     "size": [
       672,
       900
@@ -297,16 +390,24 @@
       22,
       247
     ],
-    "iou_vs_static_first_frame": 0.919,
+    "iou_vs_static_first_frame": 0.924,
     "mouth_activity": 3.79,
-    "source": "dreamer_deflated_talk.mp4"
+    "source": "dreamer_deflated_talk.mp4",
+    "range": [
+      0.0,
+      4.5
+    ],
+    "manual": true
   },
   "dreamer_convinced_talk": {
     "kind": "talk",
+    "loop": "pingpong",
+    "breath": 0,
+    "seam_last_to_first": 0.0,
     "start": 0.042,
     "end": 3.625,
-    "frames": 172,
-    "seconds": 7.167,
+    "frames": 176,
+    "seconds": 7.333,
     "size": [
       672,
       900
@@ -318,14 +419,22 @@
     ],
     "iou_vs_static_first_frame": 0.997,
     "mouth_activity": 5.63,
-    "source": "dreamer_convinced_talk.mp4"
+    "source": "dreamer_convinced_talk.mp4",
+    "range": [
+      0.0,
+      4.0
+    ],
+    "manual": true
   },
   "skeptic_neutral_talk": {
     "kind": "talk",
-    "start": 0.0,
-    "end": 3.375,
-    "frames": 162,
-    "seconds": 6.75,
+    "loop": "pingpong",
+    "breath": 0,
+    "seam_last_to_first": 0.0,
+    "start": 1.708,
+    "end": 4.0,
+    "frames": 114,
+    "seconds": 4.75,
     "size": [
       672,
       900
@@ -335,16 +444,24 @@
       42,
       251
     ],
-    "iou_vs_static_first_frame": 0.999,
-    "mouth_activity": 6.04,
-    "source": "skeptic_neutral_talk.mp4"
+    "iou_vs_static_first_frame": 0.962,
+    "mouth_activity": 5.82,
+    "source": "skeptic_neutral_talk.mp4",
+    "range": [
+      0.0,
+      4.0
+    ],
+    "manual": true
   },
   "skeptic_doubt_talk": {
     "kind": "talk",
-    "start": 0.083,
-    "end": 2.083,
-    "frames": 96,
-    "seconds": 4.0,
+    "loop": "pingpong",
+    "breath": 0,
+    "seam_last_to_first": 0.0,
+    "start": 0.042,
+    "end": 2.042,
+    "frames": 100,
+    "seconds": 4.167,
     "size": [
       672,
       900
@@ -354,17 +471,24 @@
       33,
       253
     ],
-    "iou_vs_static_first_frame": 0.966,
-    "mouth_activity": 4.23,
+    "iou_vs_static_first_frame": 0.979,
+    "mouth_activity": 4.24,
     "source": "skeptic_doubt_talk.mp4",
+    "range": [
+      0.0,
+      2.15
+    ],
     "manual": true
   },
   "skeptic_surprised_talk": {
     "kind": "talk",
+    "loop": "pingpong",
+    "breath": 0,
+    "seam_last_to_first": 0.0,
     "start": 0.042,
     "end": 3.625,
-    "frames": 172,
-    "seconds": 7.167,
+    "frames": 176,
+    "seconds": 7.333,
     "size": [
       672,
       900
@@ -376,14 +500,22 @@
     ],
     "iou_vs_static_first_frame": 0.998,
     "mouth_activity": 6.41,
-    "source": "skeptic_surprised_talk.mp4"
+    "source": "skeptic_surprised_talk.mp4",
+    "range": [
+      0.0,
+      4.0
+    ],
+    "manual": true
   },
   "skeptic_thinking_talk": {
     "kind": "talk",
-    "start": 0.0,
-    "end": 2.042,
-    "frames": 98,
-    "seconds": 4.083,
+    "loop": "pingpong",
+    "breath": 0,
+    "seam_last_to_first": 0.0,
+    "start": 0.083,
+    "end": 2.083,
+    "frames": 100,
+    "seconds": 4.167,
     "size": [
       672,
       900
@@ -393,16 +525,24 @@
       35,
       251
     ],
-    "iou_vs_static_first_frame": 0.998,
-    "mouth_activity": 5.3,
-    "source": "skeptic_thinking_talk.mp4"
+    "iou_vs_static_first_frame": 0.98,
+    "mouth_activity": 5.03,
+    "source": "skeptic_thinking_talk.mp4",
+    "range": [
+      0.0,
+      2.25
+    ],
+    "manual": true
   },
   "skeptic_amused_talk": {
     "kind": "talk",
-    "start": 0.708,
-    "end": 2.917,
-    "frames": 106,
-    "seconds": 4.417,
+    "loop": "pingpong",
+    "breath": 0,
+    "seam_last_to_first": 0.0,
+    "start": 0.792,
+    "end": 2.792,
+    "frames": 100,
+    "seconds": 4.167,
     "size": [
       672,
       900
@@ -412,17 +552,24 @@
       39,
       250
     ],
-    "iou_vs_static_first_frame": 0.952,
-    "mouth_activity": 4.65,
+    "iou_vs_static_first_frame": 0.953,
+    "mouth_activity": 4.0,
     "source": "skeptic_amused_talk.mp4",
+    "range": [
+      0.6,
+      3.0
+    ],
     "manual": true
   },
   "skeptic_convinced_talk": {
     "kind": "talk",
+    "loop": "pingpong",
+    "breath": 0,
+    "seam_last_to_first": 0.0,
     "start": 0.0,
     "end": 3.167,
-    "frames": 152,
-    "seconds": 6.333,
+    "frames": 156,
+    "seconds": 6.5,
     "size": [
       672,
       900
@@ -434,6 +581,11 @@
     ],
     "iou_vs_static_first_frame": 0.998,
     "mouth_activity": 5.83,
-    "source": "skeptic_convinced_talk.mp4"
+    "source": "skeptic_convinced_talk.mp4",
+    "range": [
+      0.0,
+      4.0
+    ],
+    "manual": true
   }
 }

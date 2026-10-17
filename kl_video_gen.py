@@ -737,9 +737,10 @@ def overlay_dialogue(video_with_audio: Path, events: list, total_dur: float, lay
         chain.append(f"[{prev}][{k}:v]overlay={b['x']}:{b['y']}:shortest=1:enable='{en}'[bar]")
         prev, k = "bar", k + 1
     for t in sp["tracks"]:
-        inputs += ["-f", "concat", "-safe", "0", "-i", str(t["list"])]
-        chain.append(f"[{k}:v]fps={FPS}[s{k}];[{prev}][s{k}]overlay={t['x']}:{t['y']}:eof_action=pass[o{k}]")
-        prev, k = f"o{k}", k + 1
+        ins, flt, used = D.sprite_track_filter(t, k, FPS, f"s{k}")
+        inputs += ins
+        chain.append(f"{flt};[{prev}][s{k}]overlay={t['x']}:{t['y']}:eof_action=pass[o{k}]")
+        prev, k = f"o{k}", k + used
     chain.append(f"[{prev}][1:v]overlay=0:0:eof_action=pass,format=yuv420p[v]")
     run_cmd(
         [FFMPEG, "-y"] + inputs + [

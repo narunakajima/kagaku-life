@@ -1242,6 +1242,46 @@ def _us_floor(frames: int, fps: int) -> str:
     return f"{us // 1_000_000}.{us % 1_000_000:06d}"
 
 
+SPRITE_XFADE_FRAMES = 3   # 立ち絵の見た目の切り替え（口パク・明暗・大きさ）を重ねるフレーム数（0.125秒）
+SPRITE_XFADE_EXPR_FRAMES = 4  # 表情（手のポーズ）が変わる切り替えを重ねるフレーム数（0.17秒。長いと手・頭が二重に見える時間が延びる）
+TALK_HOLD_GAP = 0.6       # 台詞の合間がこれより短ければ、口パクを止めずに続ける（秒）
+
+
+def _write_phase_list(path: Path, segs: list, variants: dict, fps: int) -> int:
+    """区間 [f0, f1, key] の列を ffconcat に書く。ループの何フレーム目を出すかは「全体のフレーム番号 mod 周期」。"""
+    body = ["ffconcat version 1.0"]
+    n_entries = 0
+    for f0, f1, key in segs:
+        v = variants[key]
+        n = v["frames"]
+        f = f0
+        while f < f1:
+            ph = f % n
+            take = min(n - ph, f1 - f)
+            body += [f"file '{v['path']}'", f"inpoint {_us_ceil(ph, fps)}", f"outpoint {_us_floor(ph + take, fps)}"]
+            n_entries += 1
+            f += take
+    path.write_text("\n".join(body) + "\n", encoding="utf-8")
+    return n_entries
+
+
+def sprite_track_filter(track: dict, k: int, fps: int, out_label: str):
+    """build_sprite_tracks の1役分を ffmpeg の入力とフィルタにする。k は最初の入力番号。
+    返り値: (入力引数のリスト, フィルタ文字列, 使った入力の数)。出力は [out_label]（RGBA、立ち絵のキャンバス大）。
+    クロスフェードがある場合は、前の見た目のトラックと新しい見た目のトラックを、アルファで重みづけ（premultiply）して
+    重みのトラックで混ぜる（maskedmerge）。"""
+    inputs = ["-f", "concat", "-safe", "0", "-i", str(track["list"])]
+    if not track.get("prev_list"):
+        return inputs, f"[{k}:v]fps={fps},format=rgba[{out_label}]", 1
+    inputs += ["-f", "concat", "-safe", "0", "-i", str(track["prev_list"]),
+               "-f", "concat", "-safe", "0", "-i", str(track["mask_list"])]
+    flt = (f"[{k}:v]fps={fps},format=gbrap,premultiply=inplace=1[{out_label}_a];"
+           f"[{k + 1}:v]fps={fps},format=gbrap,premultiply=inplace=1[{out_label}_p];"
+           f"[{k + 2}:v]fps={fps},format=gbrap[{out_label}_m];"
+           f"[{out_label}_p][{out_label}_a][{out_label}_m]maskedmerge,unpremultiply=inplace=1,format=rgba[{out_label}]")
+    return inputs, flt, 3
+
+
 def build_sprite_tracks(events: list, total_dur: float, layout: dict, cast: dict, tmp: Path,
                         fps: int, ffmpeg: str = "ffmpeg", blank_after: float = None, talk: bool = True) -> dict:
     """立ち絵を役ごとの透明な動画トラックにする。返り値:
@@ -1363,22 +1403,80 @@ def build_sprite_tracks(events: list, total_dur: float, layout: dict, cast: dict
                 segs[-1][1] = f1
             else:
                 segs.append([f0, f1, key])
-        # ffconcat（位相 = 全体のフレーム番号 mod 周期）
-        body = ["ffconcat version 1.0"]
-        n_entries = 0
-        for f0, f1, key in segs:
-            v = variants[key]
-            n = v["frames"]
-            f = f0
-            while f < f1:
-                ph = f % n
-                take = min(n - ph, f1 - f)
-                body += [f"file '{v['path']}'", f"inpoint {_us_ceil(ph, fps)}", f"outpoint {_us_floor(ph + take, fps)}"]
-                n_entries += 1
-                f += take
+        # 口パクのヒステリシス（2026-10-17）: 台詞の合間の短い間（TALK_HOLD_GAP 秒未満）で talk→待機→talk と
+        # 細かく切り替わらないよう、その間は直前の talk のまま口を動かし続ける
+        if talk:
+            # 話し終わりの直後に短い待機だけはさんで別の見た目に替わる場合も同じ（kl042 の大輔は、台詞の後
+            # 0.2〜0.3秒だけ待機ループになってから聞き手の表情に替わり、短い間に2回切り替わっていた）
+            gap = int(round(TALK_HOLD_GAP * fps))
+            for i in range(1, len(segs)):
+                a, b = segs[i - 1], segs[i]
+                if (len(a[2]) == 5 and len(b[2]) == 5 and a[2][4] == "talk" and b[2][4] == "idle"
+                        and b[2][:4] == a[2][:4] and b[1] - b[0] < gap):
+                    b[2] = a[2]
+            merged = []
+            for sg in segs:
+                if merged and merged[-1][2] == sg[2] and merged[-1][1] == sg[0]:
+                    merged[-1][1] = sg[1]
+                else:
+                    merged.append(list(sg))
+            segs = merged
         lst = tmp / f"sprites_{role}.ffconcat"
-        lst.write_text("\n".join(body) + "\n", encoding="utf-8")
-        tracks.append({"role": role, "list": lst, "x": cx, "y": cy, "segments": len(segs), "entries": n_entries})
+        n_entries = _write_phase_list(lst, segs, variants, fps)
+        info = {"role": role, "list": lst, "x": cx, "y": cy, "segments": len(segs), "entries": n_entries,
+                "segs": [(f0, f1, key) for f0, f1, key in segs]}
+        # 切り替えのクロスフェード（2026-10-17）: 区間の境目から SPRITE_XFADE_FRAMES フレームかけて、前の見た目
+        # （同じ位相で続けたもの）から新しい見た目へ重ねて移る。前の見た目のトラック（境目を後ろへずらしたもの）と
+        # 重みのトラックを作り、kl_video_gen.overlay_dialogue が maskedmerge で混ぜる
+        K = SPRITE_XFADE_FRAMES
+        if K > 0 and len(segs) > 1:
+            last = len(segs) - 1
+
+            def kb(i):  # 境目 i（segs[i] の頭）を重ねるフレーム数。表情（手のポーズ）が変わるときは長め
+                a, b = segs[i - 1][2], segs[i][2]
+                return SPRITE_XFADE_EXPR_FRAMES if (len(a) == 5 and len(b) == 5 and a[1] != b[1]) else K
+            prev_segs = []
+            for i, (f0, f1, key) in enumerate(segs):
+                g0 = 0 if i == 0 else min(total_frames, f0 + kb(i))
+                g1 = total_frames if i == last else min(total_frames, f1 + kb(i + 1))
+                if g1 > g0:
+                    prev_segs.append([g0, g1, key])
+            plst = tmp / f"sprites_{role}_prev.ffconcat"
+            _write_phase_list(plst, prev_segs, variants, fps)
+            # 重み（0〜255）: 境目の直後 K フレームは (j+1)/(K+1)、それ以外は 255
+            wt = []
+            bounds = [f0 for f0, _, _ in segs[1:]]
+            cur = 0
+            for bi, b in enumerate(bounds):
+                if b > cur:
+                    wt.append([cur, b, ("mask", 255)])
+                nb = bounds[bi + 1] if bi + 1 < len(bounds) else total_frames
+                kk = kb(bi + 1)
+                for j in range(kk):
+                    fj = b + j
+                    if fj >= nb or fj >= total_frames:
+                        break
+                    # なめらかに（smoothstep）
+                    x = (j + 1) / (kk + 1)
+                    wt.append([fj, fj + 1, ("mask", int(round(255 * x * x * (3 - 2 * x))))])
+                cur = min(nb, b + kk, total_frames)
+            if cur < total_frames:
+                wt.append([cur, total_frames, ("mask", 255)])
+            for _, _, mk in wt:
+                if (role, mk) not in variants:
+                    v = mk[1]
+                    nfr = 24 if v == 255 else 1
+                    mp = vdir / f"{role}_mask_{v:03d}.mov"
+                    png = vdir / f"{role}_mask_{v:03d}.png"
+                    Image.new("RGBA", (cw, ch), (v, v, v, v)).save(png)
+                    variants[(role, mk)] = {"path": mp, "frames": nfr}
+                    jobs.append([ffmpeg, "-y", "-v", "error", "-loop", "1", "-framerate", str(fps), "-i", str(png),
+                                 "-frames:v", str(nfr), "-r", str(fps), "-c:v", "png",
+                                 "-video_track_timescale", str(fps), str(mp)])
+            mlst = tmp / f"sprites_{role}_mask.ffconcat"
+            _write_phase_list(mlst, [[a, b, (role, mk)] for a, b, mk in wt], variants, fps)
+            info.update({"prev_list": plst, "mask_list": mlst, "xfades": len(bounds)})
+        tracks.append(info)
 
     def run(cmd):
         r = subprocess.run(cmd, capture_output=True, text=True)
@@ -1386,10 +1484,11 @@ def build_sprite_tracks(events: list, total_dur: float, layout: dict, cast: dict
             raise RuntimeError("立ち絵のループの準備に失敗: " + " ".join(cmd[-1:]) + "\n" + r.stderr[-1500:])
     with ThreadPoolExecutor(6) as ex:
         list(ex.map(run, jobs))
-    n_video = sum(1 for k in variants if k[1] != "__blank__" and cast_video_path(k[0], k[1], k[4]))
-    n_talk = sum(1 for k in variants if k[1] != "__blank__" and k[4] == "talk")
-    print(f"  ▶ 立ち絵トラック: 見た目{len(variants)}種類（うち動画{n_video}、話しているループ{n_talk}）/ "
-          + " / ".join(f"{t['role']} 区間{t['segments']}・並び{t['entries']}" for t in tracks))
+    looks = [k for k in variants if len(k) == 5]
+    n_video = sum(1 for k in looks if cast_video_path(k[0], k[1], k[4]))
+    n_talk = sum(1 for k in looks if k[4] == "talk")
+    print(f"  ▶ 立ち絵トラック: 見た目{len(looks)}種類（うち動画{n_video}、話しているループ{n_talk}）/ "
+          + " / ".join(f"{t['role']} 区間{t['segments']}・並び{t['entries']}・重ねる切り替え{t.get('xfades', 0)}" for t in tracks))
     return {"tracks": tracks, "bar": bar_info}
 
 

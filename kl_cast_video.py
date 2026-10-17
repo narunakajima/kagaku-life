@@ -99,6 +99,21 @@ DRIFT_MAX = 8.0                     # 区間内で、開始フレームからの
 
 WHO = {"dreamer": "a young Japanese man", "skeptic": "a Japanese woman with glasses"}
 
+# 2026-10-17（なるさん「大輔のループがスムーズでない」）で足したもの:
+# - 待機ループの呼吸: Veo の大輔の待機の動画はまばたき以外ほぼ静止していて（フレーム間差の中央値 0.01、話している
+#   ループは 0.55）、話し始め・話し終わりで「止まった体が急に動く／急に止まる」ように見えた。待機ループに、下端を
+#   支点にしたごくわずかな上下の伸び縮み（呼吸）を、ループの周期でちょうど1往復するように焼き込む
+BREATH_AMP = 0.008   # 縦の伸びの最大（0.8%。900px の立ち絵で頭が約7px、画面上の 330px で約2.6px 上下する）
+# - 話しているループの折り返し: 以前は口の動きを加点したため、折り返しが体（頭・手）の速い動きの途中に来て
+#   跳ね返って見えた（大輔 excited の talk で継ぎ目の差 3.1）。口のあたりを除いた体の動きで折り返し点を選ぶ。
+#   末尾を先頭にクロスフェードでつなぐ「つなぎループ」（--loop xfade）も用意したが、大輔の talk はうなずきで頭の位置が
+#   区間の頭と後ろで大きく違い（体の差 7〜8、1フレームの動きの5倍以上）、重ねると頭が二重に見えるため既定は往復にした
+XFADE_FRAMES = 8     # つなぎループの重ねるフレーム数（0.33秒）
+TALK_WIN_MIN = 2.5   # つなぎループに使う区間の最短（秒）
+TURN_HOLD = 2           # 往復の折り返し点で止めるフレーム数（各端。0.08秒）
+TALK_TURN_WEIGHT = 1.5
+TALK_LOOP_MIN = 2.0     # 話しているループの区間の最短（秒、往復で4秒）。短いと同じ口の動きの繰り返しが目立つ  # 話しているループの往復で、折り返し点の体の動きにかける重み
+
 
 def load_cast() -> dict:
     return json.loads(CAST_JSON.read_text(encoding="utf-8"))
@@ -266,30 +281,69 @@ def mouth_activity(fr: np.ndarray, role: str) -> np.ndarray:
     return out
 
 
-def analyze_clip(path: Path, role: str = None, kind: str = "idle") -> dict:
+def body_frames(fr: np.ndarray, role: str) -> np.ndarray:
+    """口のあたりを塗りつぶした縮小フレーム（体・頭の動きだけを見るため）。"""
+    b = fr.copy()
+    if role:
+        x0, y0, x1, y1 = MOUTH_BOX[role]
+        b[:, y0:y1, x0:x1] = 0
+    return b
+
+
+def analyze_xfade(path: Path, role: str, lo: float = 0.0, hi: float = END_MAX) -> dict:
+    """話しているループ（つなぎループ）の区間を選ぶ。区間の末尾 XFADE_FRAMES と先頭の直前…ではなく、
+    「区間の頭の XFADE_FRAMES」と「区間の後ろに続く XFADE_FRAMES」の体の姿勢（口を除く）が近いほど継ぎ目が目立たない。
+    lo〜hi 秒の範囲（手が下がる・記号が出る区間を除いた範囲）の中で、長く・継ぎ目の差が小さいものを選ぶ。"""
+    fr = read_frames(path, 180, 240).astype(np.float32)
+    n = len(fr)
+    body = body_frames(fr, role)
+    mouth = mouth_activity(fr, role)
+    K = XFADE_FRAMES
+    f_lo, f_hi = int(round(lo * FPS)), min(n - 1, int(round(hi * FPS)))
+    best = None
+    for st in range(f_lo, f_hi + 1):
+        for L in range(int(TALK_WIN_MIN * FPS), f_hi - st + 2):
+            if st + L - 1 > f_hi:
+                break
+            N = L - K
+            seam = float(np.mean([np.abs(body[st + j] - body[st + N + j]).mean() for j in range(0, K, 2)]))
+            score = L / FPS - 1.2 * seam
+            if best is None or score > best[0]:
+                best = (score, st, st + L - 1, seam)
+    _, st, e, seam = best
+    return {"start": round(st / FPS, 3), "end": round(e / FPS, 3), "seam_body_diff": round(seam, 2),
+            "mouth_activity": round(float(mouth[st:e + 1].mean()), 2), "loop": "xfade"}
+
+
+def analyze_clip(path: Path, role: str = None, kind: str = "idle", lo: float = 0.0, hi: float = None) -> dict:
     """動きの量（隣のフレームとの差）とシルエットの変化を測り、往復ループに使う区間を選ぶ。
     折り返し点（区間の始まりと終わり）は動きの小さい瞬間にし、区間内でポーズが崩れない（シルエットの
     変化が DRIFT_MAX% 以下）ものの中で、長く・早く始まるものを選ぶ。
     kind="talk" では、口のあたりの動き（mouth_activity）が大きい区間を加点し、その平均も返す。"""
     fr = read_frames(path, 180, 240).astype(np.float32)
     n = len(fr)
+    mv = body_frames(fr, role) if kind == "talk" else fr  # 話しているループは口を除いた体の動きで見る
     motion = np.zeros(n)
-    motion[1:] = np.abs(fr[1:] - fr[:-1]).mean(axis=(1, 2, 3))
+    motion[1:] = np.abs(mv[1:] - mv[:-1]).mean(axis=(1, 2, 3))
     motion[0] = motion[1]
     k = np.ones(5) / 5
     sm = np.convolve(np.pad(motion, 2, mode="edge"), k, mode="valid")
     mask = np.sqrt(((fr - np.array([255, 40, 250])) ** 2).sum(-1)) > 130
     mouth = mouth_activity(fr, role) if role else np.zeros(n)
     best = None
-    for s in range(0, min(n, int(START_MAX * FPS) + 1)):
-        for e in range(s + int(WIN_MIN * FPS), min(n - 1, s + int(WIN_MAX * FPS), int(END_MAX * FPS)) + 1):
+    f_lo = int(round(lo * FPS))
+    f_hi = min(n - 1, int(round((hi if hi is not None else END_MAX) * FPS)))
+    s_max = max(f_lo, int(START_MAX * FPS)) if hi is None else f_hi
+    for s in range(f_lo, min(n, s_max + 1)):
+        win_min = TALK_LOOP_MIN if kind == "talk" else WIN_MIN
+        for e in range(s + int(win_min * FPS), min(f_hi, s + int(WIN_MAX * FPS)) + 1):
             drift = max((mask[i] ^ mask[s]).mean() * 100 for i in range(s, e + 1, 3))
             if drift > DRIFT_MAX:
                 break  # これより長い区間はさらに崩れる
             score = (e - s) / FPS - 1.5 * (sm[s] + sm[e]) - 0.4 * s / FPS
             if kind == "talk":
-                # 話しているループは口の動きが主役なので、折り返しの動きは軽めに見て、口がよく動く区間を選ぶ
-                score = (e - s) / FPS - 0.5 * (sm[s] + sm[e]) - 0.4 * s / FPS + 0.3 * float(mouth[s:e + 1].mean())
+                # 折り返し点の体（口を除く）の動きを強く減点し、口がよく動く区間を少し加点する
+                score = (e - s) / FPS - TALK_TURN_WEIGHT * (sm[s] + sm[e]) + 0.15 * float(mouth[s:e + 1].mean())
             if best is None or score > best[0]:
                 best = (score, s, e, drift)
     if best is None:
@@ -310,7 +364,12 @@ def cmd_analyze(args):
         if not p.exists():
             print(f"  {loop_key(role, expr, args.kind)}: 素の動画がありません")
             continue
-        a = analyze_clip(p, role, args.kind)
+        if args.kind == "talk" and args.loop == "xfade":
+            a = analyze_xfade(p, role, *(args.range or (0.0, END_MAX)))
+            print(f"  {loop_key(role, expr, args.kind):24s} つなぎループ 区間 {a['start']:.2f}〜{a['end']:.2f}秒"
+                  f"  継ぎ目の体の差 {a['seam_body_diff']}  口の動き {a['mouth_activity']}")
+            continue
+        a = analyze_clip(p, role, args.kind, *(args.range or (0.0, None)))
         warn = "  ⚠️ 口があまり動いていない" if args.kind == "talk" and a["mouth_activity"] < TALK_MOUTH_MIN else ""
         print(f"  {loop_key(role, expr, args.kind):24s} 区間 {a['start']:.2f}〜{a['end']:.2f}秒  折り返しの動き {a['turn_motion']}"
               f"  シルエット変化 {a['drift_pct']}%  口の動き {a['mouth_activity']}{warn}")
@@ -347,7 +406,8 @@ def key_frame(rgb: np.ndarray, bg) -> Image.Image:
     return Image.fromarray(rgba)
 
 
-def build_loop(role: str, expr: str, start: float, end: float, out: Path, kind: str = "idle") -> dict:
+def build_loop(role: str, expr: str, start: float, end: float, out: Path, kind: str = "idle",
+               loop_mode: str = "pingpong") -> dict:
     src = raw_video_path(role, expr, kind)
     fr = read_frames(src)
     h, w = fr.shape[1:3]
@@ -355,20 +415,53 @@ def build_loop(role: str, expr: str, start: float, end: float, out: Path, kind: 
     border = np.concatenate([first[0, ::7], first[::7, 0], first[::7, w - 1]])
     bg = tuple(int(x) for x in np.median(border, axis=0))
     s, e = int(round(start * FPS)), min(len(fr) - 1, int(round(end * FPS)))
-    idx = list(range(s, e + 1)) + list(range(e - 1, s, -1))  # 往復（前進＋逆再生、端のフレームは重ねない）
+    K = XFADE_FRAMES
+    if loop_mode == "pingpong":
+        # 往復（前進＋逆再生）。折り返し点では TURN_HOLD フレームだけ止めて、動きの向きが急に反転して
+        # 跳ね返って見えるのを和らげる（2026-10-17）
+        idx = list(range(s, e + 1)) + [e] * TURN_HOLD + list(range(e - 1, s, -1)) + [s] * TURN_HOLD
+        need = set(idx)
+    else:
+        # つなぎループ: 区間 s..e（L フレーム）から N = L-K フレームを出す。先頭の K フレームは、区間の後ろに続く
+        # K フレーム（s+N..e）と重ねてなめらかにつなぐ（末尾 s+N-1 の次は s+N に近い絵になる）
+        N = (e - s + 1) - K
+        idx = list(range(s, s + N))
+        need = set(range(s, e + 1))
     keyed = {}
     st_png = CAST_DIR / f"{role}_{expr}.png"
     # 静止画と同じ大きさ（672x900）にそろえる（716x960 からだと 671.25 になるため、静止画の幅を使う）
     sw = Image.open(st_png).width if st_png.exists() else int(w * SPRITE_H / h)
-    for i in sorted(set(idx)):
+    for i in sorted(need):
         keyed[i] = key_frame(fr[i], bg).resize((sw, SPRITE_H), Image.LANCZOS)
+
+    def premul(im):
+        a = np.asarray(im, np.float32)
+        return np.dstack([a[..., :3] * a[..., 3:4] / 255.0, a[..., 3]])
+
+    def unpremul(arr):
+        al = arr[..., 3:4]
+        rgb = np.where(al > 0, arr[..., :3] * 255.0 / np.maximum(al, 1e-3), 0)
+        return Image.fromarray(np.clip(np.dstack([rgb, al]), 0, 255).astype(np.uint8))
+
+    out_frames = []
+    for j, i in enumerate(idx):
+        im = keyed[i]
+        if loop_mode == "xfade" and j < K:
+            wgt = (j + 1) / (K + 1)
+            im = unpremul(premul(keyed[i]) * wgt + premul(keyed[i + N]) * (1 - wgt))
+        if kind == "idle" and BREATH_AMP:
+            # 呼吸: ループの周期でちょうど1往復する、下端を支点にした縦の伸び縮み（継ぎ目でも途切れない）
+            f = 1.0 + BREATH_AMP * 0.5 * (1 - np.cos(2 * np.pi * j / len(idx)))
+            Hh = im.height
+            im = im.transform(im.size, Image.AFFINE, (1, 0, 0, 0, 1 / f, Hh - Hh / f), resample=Image.BICUBIC)
+        out_frames.append(im)
     out.parent.mkdir(parents=True, exist_ok=True)
     cmd = [FFMPEG, "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "rgba", "-s", f"{sw}x{SPRITE_H}",
            "-r", str(FPS), "-i", "-", "-an", "-c:v", "libvpx-vp9", "-pix_fmt", "yuva420p",
            "-b:v", "0", "-crf", "24", "-auto-alt-ref", "0", "-row-mt", "1", str(out)]
     p = subprocess.Popen(cmd, stdin=subprocess.PIPE)
-    for i in idx:
-        p.stdin.write(keyed[i].tobytes())
+    for im in out_frames:
+        p.stdin.write(im.tobytes())
     p.stdin.close()
     if p.wait() != 0:
         raise RuntimeError(f"webm の書き出しに失敗: {out}")
@@ -381,7 +474,10 @@ def build_loop(role: str, expr: str, start: float, end: float, out: Path, kind: 
         if sa.shape == va.shape:
             iou = round(float((sa & va).sum() / max(1, (sa | va).sum())), 3)
     small = np.stack([np.asarray(Image.fromarray(fr[i]).resize((180, 240), Image.BILINEAR)) for i in range(s, e + 1)])
-    return {"kind": kind, "start": round(s / FPS, 3), "end": round(e / FPS, 3), "frames": len(idx),
+    seam = float(np.abs(np.asarray(out_frames[-1], np.float32) - np.asarray(out_frames[0], np.float32)).mean())
+    return {"kind": kind, "loop": loop_mode, "breath": BREATH_AMP if kind == "idle" else 0,
+            "seam_last_to_first": round(seam, 2),
+            "start": round(s / FPS, 3), "end": round(e / FPS, 3), "frames": len(idx),
             "seconds": round(len(idx) / FPS, 3), "size": [sw, SPRITE_H], "bg": list(bg),
             "iou_vs_static_first_frame": iou,
             "mouth_activity": round(float(mouth_activity(small, role)[1:].mean()), 2),
@@ -402,19 +498,26 @@ def cmd_post(args):
         if out.exists() and not args.force:
             print(f"  スキップ（作成済み）: {out.relative_to(BASE_DIR)}")
             continue
+        rng = args.range or (loops.get(key, {}).get("range") if not (args.start is not None) else None)
         if args.start is not None and args.end is not None:
             start, end, how = args.start, args.end, "指定"
-        elif key in loops and loops[key].get("manual"):
+        elif kind == "talk" and args.loop == "xfade":
+            a = analyze_xfade(src, role, *(rng or (0.0, END_MAX)))
+            start, end, how = a["start"], a["end"], ("範囲 %.2f〜%.2f 秒の中で自動選定" % tuple(rng) if rng else "自動選定")
+        elif not rng and key in loops and loops[key].get("manual") and not loops[key].get("range"):
             start, end, how = loops[key]["start"], loops[key]["end"], "loops.json の手動指定"
         else:
-            a = analyze_clip(src, role, kind)
-            start, end, how = a["start"], a["end"], "自動選定"
-        info = build_loop(role, expr, start, end, out, kind)
-        if how != "自動選定":
+            a = analyze_clip(src, role, kind, *(rng or (0.0, None)))
+            start, end, how = a["start"], a["end"], ("範囲 %.2f〜%.2f 秒の中で自動選定" % tuple(rng) if rng else "自動選定")
+        info = build_loop(role, expr, start, end, out, kind, loop_mode=args.loop)
+        if rng:
+            info["range"] = list(rng)  # 使ってよい範囲（手が下がる・記号が出る区間を除く。目で確かめて決めた）
+            info["manual"] = True
+        elif how == "指定" or how == "loops.json の手動指定":
             info["manual"] = True
         loops[key] = info
-        print(f"  ✅ {key}: {info['start']:.2f}〜{info['end']:.2f}秒（{how}）→ 往復 {info['seconds']:.2f}秒"
-              f" / 静止画との重なり {info['iou_vs_static_first_frame']} / 口の動き {info['mouth_activity']}")
+        print(f"  ✅ {key}: {info['start']:.2f}〜{info['end']:.2f}秒（{how}）→ {'往復' if info['loop'] == 'pingpong' else 'つなぎ'}ループ {info['seconds']:.2f}秒"
+              f" / 継ぎ目の差 {info['seam_last_to_first']} / 静止画との重なり {info['iou_vs_static_first_frame']} / 口の動き {info['mouth_activity']}")
         LOOPS_JSON.write_text(json.dumps(loops, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
@@ -473,6 +576,11 @@ def main():
         if name == "post":
             p.add_argument("--start", type=float, help="使う区間の始まり（秒）。--end と一緒に指定すると自動選定より優先")
             p.add_argument("--end", type=float)
+        if name in ("post", "analyze"):
+            p.add_argument("--loop", choices=["pingpong", "xfade"], default="pingpong",
+                           help="pingpong: 往復（既定）／ xfade: 末尾を先頭にクロスフェードでつなぐ")
+            p.add_argument("--range", type=float, nargs=2, metavar=("LO", "HI"),
+                           help="区間を選んでよい範囲（秒）。手が下がる・記号が出る部分を除くのに使う（loops.json に記録）")
         if name == "analyze":
             p.add_argument("--verbose", action="store_true")
         if name == "sheet":
