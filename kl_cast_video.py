@@ -125,7 +125,7 @@ def all_jobs(cast: dict, role: str = None, expr: str = None) -> list:
         if role and r != role:
             continue
         for e in cast[r]["expressions"]:
-            if expr and e != expr:
+            if expr and e not in expr.split(","):
                 continue
             out.append((r, e))
     return out
@@ -135,9 +135,10 @@ KINDS = ("idle", "talk")
 PRONOUN = {"dreamer": "He", "skeptic": "She"}
 
 
-def raw_video_path(role: str, expr: str, kind: str = "idle") -> Path:
-    """素の動画。待機（idle）は {role}_{expr}_veo.mp4、話している（talk）は {role}_{expr}_talk.mp4"""
-    return RAW_VIDEO_DIR / (f"{role}_{expr}_veo.mp4" if kind == "idle" else f"{role}_{expr}_talk.mp4")
+def raw_video_path(role: str, expr: str, kind: str = "idle", suffix: str = "") -> Path:
+    """素の動画。待機（idle）は {role}_{expr}_veo.mp4、話している（talk）は {role}_{expr}_talk.mp4。
+    suffix（例 "_v2"）は作り直しの候補（採用するまで今のクリップを上書きしない）"""
+    return RAW_VIDEO_DIR / ((f"{role}_{expr}_veo" if kind == "idle" else f"{role}_{expr}_talk") + suffix + ".mp4")
 
 
 def loop_key(role: str, expr: str, kind: str = "idle") -> str:
@@ -157,8 +158,31 @@ def load_loops() -> dict:
 
 # ── gen: Veo で素の動画を作る ─────────────────────────────────────────
 
+# 表情ごとの追加の指示（2026-10-17、作り直しで追加）。初回の Veo で、大輔 excited・surprised は両手を顔の横まで
+# 上げたポーズに変わり（静止画・サムネイルと手が違う）、大輔 deflated は目を閉じた笑顔の時間があり、沙織 doubt は
+# 「？」の記号が描き込まれた。入力画像の手の位置を言葉でも書いて、保つよう指示する
+POSE_GUARD = {
+    ("dreamer", "excited"): "IMPORTANT: keep both hands LOW, held together in front of his chest at chest height, palms "
+                            "up as if presenting an idea, exactly as in the input image. Do NOT raise the hands up beside "
+                            "his face or above the shoulders, do not spread the arms.",
+    ("dreamer", "surprised"): "IMPORTANT: keep both hands LOW at waist level in front of his body, palms up and open, "
+                              "exactly as in the input image. Do NOT raise the hands toward the chest or face.",
+    ("dreamer", "deflated"): "IMPORTANT: keep his eyes OPEN for the whole clip (only quick natural blinks) and keep the "
+                             "sheepish wry smile with eyebrows tilted down; do not close the eyes or smile with closed "
+                             "eyes. Keep one hand scratching the back of his head.",
+    ("skeptic", "doubt"): "IMPORTANT: keep her index finger raised next to her face for the whole clip, exactly as in "
+                          "the input image. Absolutely no question marks, symbols, text, sparkles or effects anywhere.",
+}
+# 大輔の待機ループは初回、まばたき以外ほぼ静止だった（話しているループとの動きの落差が大きい）ため、ゆっくりした揺れを足す
+IDLE_SWAY = {
+    "dreamer": "Add a gentle slow sway of the shoulders and a slight slow head tilt and return, as if listening and "
+               "nodding very slightly, continuing through the whole clip. ",
+}
+
+
 def veo_prompt(cast: dict, role: str, expr: str, kind: str = "idle") -> str:
     desc = cast[role]["expressions"][expr]
+    guard = (" " + POSE_GUARD[(role, expr)]) if (role, expr) in POSE_GUARD else ""
     if kind == "talk":
         # 2026-10-17: 話している間だけ使うループ（口パク）。大輔 neutral の試作で、口の開閉が自然で画風も保たれた
         # プロンプトに、表情・手のポーズを保つ指示と、待機ループで出た不具合（記号の描き込み・笑い出す・手が下がる）の禁止を足した
@@ -175,15 +199,19 @@ def veo_prompt(cast: dict, role: str, expr: str, kind: str = "idle") -> str:
             "Do NOT draw any symbols, question marks, exclamation marks, text, speech bubbles, sparkles or effect lines. "
             "The camera is fixed, no zoom, no pan. The background stays solid magenta. "
             "Keep the exact art style and line quality of the input image. Ambient audio: soft distant wind only."
+            + guard
         )
     return (
         f"A 2D flat-colour anime-style illustration of {WHO[role]}, waist-up, on a solid magenta (#FF00FF) background. "
         f"The pose and expression: {desc}. "
         "Subtle idle loop: the character HOLDS this exact pose and expression. Only gentle breathing (shoulders rise "
-        "and fall slightly) and a natural slow blink once or twice, plus a very slight head movement. The character "
+        "and fall slightly) and a natural slow blink once or twice, plus a very slight head movement. "
+        + IDLE_SWAY.get(role, "") +
+        "The character "
         "does NOT speak, does NOT laugh out loud, does NOT change expression, and does not lower or move the arms and "
         "hands away from their position. The camera is fixed, no zoom, no pan. The background stays solid magenta. "
         "Keep the exact art style and line quality of the input image. Ambient audio: soft distant wind only."
+        + guard
     )
 
 
@@ -202,13 +230,17 @@ def cmd_gen(args):
     cast = load_cast()
     kind = args.kind
     jobs = all_jobs(cast, args.role, args.expr)
-    todo = [(r, e) for r, e in jobs if args.force or not raw_video_path(r, e, kind).exists()]
+    sfx = args.suffix
+    todo = [(r, e) for r, e in jobs if args.force or not raw_video_path(r, e, kind, sfx).exists()]
     skip = [(r, e) for r, e in jobs if (r, e) not in todo]
     for r, e in skip:
-        print(f"  スキップ（生成済み）: {raw_video_path(r, e, kind).name}")
+        print(f"  スキップ（生成済み）: {raw_video_path(r, e, kind, sfx).name}")
     cost = len(todo) * VEO_SECONDS * VEO_USD_PER_SEC
     print(f"  [{kind}] 生成予定: {len(todo)}本（{', '.join(f'{r}_{e}' for r, e in todo) or 'なし'}）"
           f" — 費用の目安 約${cost:.1f}（{VEO_SECONDS}秒 × ${VEO_USD_PER_SEC}/秒）")
+    if args.show_prompt:
+        for r, e in todo:
+            print(f"--- {r}_{e} [{kind}]\n{veo_prompt(cast, r, e, kind)}")
     if args.dry_run or not todo:
         return
     api_key = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY")
@@ -221,7 +253,7 @@ def cmd_gen(args):
 
     def one(job):
         role, expr = job
-        out = raw_video_path(role, expr, kind)
+        out = raw_video_path(role, expr, kind, sfx)
         err = ""
         for _ in range(2):  # APIエラー（動画が返らない）のときだけ1回取り直す
             try:
@@ -571,6 +603,8 @@ def main():
             p.add_argument("--force", action="store_true", help="既存を作り直す")
         if name == "gen":
             p.add_argument("--dry-run", action="store_true", help="生成せず、予定と費用の目安だけ表示")
+            p.add_argument("--suffix", default="", help="作り直しの候補として別名で保存（例 _v2）。今のクリップを上書きしない")
+            p.add_argument("--show-prompt", action="store_true", help="プロンプトを表示する")
         p.add_argument("--kind", choices=KINDS, default="idle",
                        help="idle: 待機ループ（既定）／ talk: 話している間のループ（口パク）")
         if name == "post":

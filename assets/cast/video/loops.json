@@ -4,66 +4,84 @@
     "loop": "pingpong",
     "breath": 0.008,
     "seam_last_to_first": 0.26,
-    "start": 0.0,
-    "end": 3.542,
-    "frames": 174,
-    "seconds": 7.25,
+    "start": 0.208,
+    "end": 3.792,
+    "frames": 176,
+    "seconds": 7.333,
     "size": [
       672,
       900
     ],
     "bg": [
-      251,
-      31,
+      250,
+      30,
       246
     ],
     "iou_vs_static_first_frame": 0.997,
-    "mouth_activity": 1.05,
-    "source": "dreamer_neutral_veo.mp4"
+    "mouth_activity": 2.88,
+    "source": "dreamer_neutral_veo.mp4",
+    "range": [
+      0.0,
+      4.5
+    ],
+    "manual": true,
+    "note": "2026-10-17 作り直し（v2）: 肩・頭をゆっくり揺らす指示を追加（待機の動き 0.12→0.50）"
   },
   "dreamer_excited": {
     "kind": "idle",
     "loop": "pingpong",
     "breath": 0.008,
-    "seam_last_to_first": 0.32,
-    "start": 1.0,
-    "end": 2.5,
-    "frames": 76,
-    "seconds": 3.167,
+    "seam_last_to_first": 0.28,
+    "start": 0.542,
+    "end": 2.167,
+    "frames": 82,
+    "seconds": 3.417,
     "size": [
       672,
       900
     ],
     "bg": [
       251,
-      22,
-      247
+      20,
+      249
     ],
-    "iou_vs_static_first_frame": 0.891,
-    "mouth_activity": 0.57,
-    "source": "dreamer_excited_veo.mp4"
+    "iou_vs_static_first_frame": 0.948,
+    "mouth_activity": 0.68,
+    "source": "dreamer_excited_veo.mp4",
+    "range": [
+      0.0,
+      2.6
+    ],
+    "manual": true,
+    "note": "2026-10-17 作り直し（v2）: 初回は両手を顔の横まで上げたポーズに変わり、静止画・サムネイルと手が違った。手を胸の前に低く保つ指示で作り直し、静止画と一致（重なり 0.891→0.948）。2.6秒で手が下がるので範囲を 0〜2.6秒に"
   },
   "dreamer_surprised": {
     "kind": "idle",
     "loop": "pingpong",
     "breath": 0.008,
-    "seam_last_to_first": 0.3,
-    "start": 0.792,
-    "end": 2.292,
-    "frames": 76,
-    "seconds": 3.167,
+    "seam_last_to_first": 0.27,
+    "start": 0.0,
+    "end": 2.542,
+    "frames": 126,
+    "seconds": 5.25,
     "size": [
       672,
       900
     ],
     "bg": [
       252,
-      27,
-      247
+      26,
+      250
     ],
-    "iou_vs_static_first_frame": 0.866,
-    "mouth_activity": 0.19,
-    "source": "dreamer_surprised_veo.mp4"
+    "iou_vs_static_first_frame": 0.997,
+    "mouth_activity": 2.07,
+    "source": "dreamer_surprised_veo.mp4",
+    "range": [
+      0.0,
+      2.8
+    ],
+    "manual": true,
+    "note": "2026-10-17 作り直し（v2）: 初回は手が静止画より高かった（重なり 0.866）。手を腰の高さに保つ指示で作り直し（0.997）"
   },
   "dreamer_thinking": {
     "kind": "idle",
@@ -85,51 +103,60 @@
     ],
     "iou_vs_static_first_frame": 0.997,
     "mouth_activity": 2.99,
-    "source": "dreamer_thinking_veo.mp4"
+    "source": "dreamer_thinking_veo.mp4",
+    "note": "2026-10-17 作り直し（v2）を試したが、揺れを指示した v2 の方が動きが少なかった（中央値 1.41→0.12）ため、初回のクリップ（v1）を残した。v2 は raw/video/dreamer_thinking_veo_v2.mp4"
   },
   "dreamer_deflated": {
     "kind": "idle",
     "loop": "pingpong",
     "breath": 0.008,
     "seam_last_to_first": 0.29,
-    "start": 0.167,
-    "end": 3.542,
-    "frames": 166,
-    "seconds": 6.917,
+    "start": 0.0,
+    "end": 2.208,
+    "frames": 110,
+    "seconds": 4.583,
+    "size": [
+      672,
+      900
+    ],
+    "bg": [
+      252,
+      20,
+      249
+    ],
+    "iou_vs_static_first_frame": 0.997,
+    "mouth_activity": 1.76,
+    "source": "dreamer_deflated_veo.mp4",
+    "manual": true,
+    "note": "2026-10-17 作り直し（v2）: 初回は目を閉じた笑顔の時間があった。目を開けたまま苦笑いを保つ指示で作り直し。2.7〜3.0秒に目を細めるので区間は 0〜2.2秒"
+  },
+  "dreamer_convinced": {
+    "kind": "idle",
+    "loop": "pingpong",
+    "breath": 0.008,
+    "seam_last_to_first": 0.27,
+    "start": 1.292,
+    "end": 4.5,
+    "frames": 158,
+    "seconds": 6.583,
     "size": [
       672,
       900
     ],
     "bg": [
       251,
-      23,
+      25,
       247
     ],
-    "iou_vs_static_first_frame": 0.985,
-    "mouth_activity": 0.81,
-    "source": "dreamer_deflated_veo.mp4"
-  },
-  "dreamer_convinced": {
-    "kind": "idle",
-    "loop": "pingpong",
-    "breath": 0.008,
-    "seam_last_to_first": 0.26,
-    "start": 0.0,
-    "end": 2.542,
-    "frames": 126,
-    "seconds": 5.25,
-    "size": [
-      672,
-      900
+    "iou_vs_static_first_frame": 0.939,
+    "mouth_activity": 1.3,
+    "source": "dreamer_convinced_veo.mp4",
+    "range": [
+      0.0,
+      4.5
     ],
-    "bg": [
-      253,
-      25,
-      249
-    ],
-    "iou_vs_static_first_frame": 0.997,
-    "mouth_activity": 1.01,
-    "source": "dreamer_convinced_veo.mp4"
+    "manual": true,
+    "note": "2026-10-17 作り直し（v2）: 肩・頭をゆっくり揺らす指示を追加（待機の動き 0.12→0.46）"
   },
   "skeptic_neutral": {
     "kind": "idle",
@@ -157,11 +184,11 @@
     "kind": "idle",
     "loop": "pingpong",
     "breath": 0.008,
-    "seam_last_to_first": 0.24,
-    "start": 2.5,
-    "end": 4.208,
-    "frames": 86,
-    "seconds": 3.583,
+    "seam_last_to_first": 0.21,
+    "start": 0.542,
+    "end": 4.125,
+    "frames": 176,
+    "seconds": 7.333,
     "size": [
       672,
       900
@@ -169,12 +196,17 @@
     "bg": [
       252,
       34,
-      251
+      252
     ],
-    "iou_vs_static_first_frame": 0.983,
-    "mouth_activity": 1.62,
+    "iou_vs_static_first_frame": 0.935,
+    "mouth_activity": 0.98,
     "source": "skeptic_doubt_veo.mp4",
-    "manual": true
+    "range": [
+      0.0,
+      4.5
+    ],
+    "manual": true,
+    "note": "2026-10-17 作り直し（v2）: 初回は0.25〜2.25秒に「？」が描き込まれ、避けると3.4秒しか使えなかった。記号を描かない・指を立てたまま、の指示で作り直し、記号なし・7.3秒のループに"
   },
   "skeptic_surprised": {
     "kind": "idle",
@@ -296,54 +328,56 @@
     "loop": "pingpong",
     "breath": 0,
     "seam_last_to_first": 0.0,
-    "start": 1.167,
-    "end": 4.458,
-    "frames": 162,
-    "seconds": 6.75,
+    "start": 0.458,
+    "end": 3.875,
+    "frames": 168,
+    "seconds": 7.0,
     "size": [
       672,
       900
     ],
     "bg": [
       251,
-      20,
-      249
+      19,
+      247
     ],
-    "iou_vs_static_first_frame": 0.913,
-    "mouth_activity": 6.89,
+    "iou_vs_static_first_frame": 0.972,
+    "mouth_activity": 7.12,
     "source": "dreamer_excited_talk.mp4",
     "range": [
-      0.75,
-      4.5
+      0.4,
+      4.4
     ],
-    "manual": true
+    "manual": true,
+    "note": "2026-10-17 作り直し（v2）: 初回は両手を上げたポーズ。手を低く保つ指示で作り直し（重なり 0.913→0.972）"
   },
   "dreamer_surprised_talk": {
     "kind": "talk",
     "loop": "pingpong",
     "breath": 0,
     "seam_last_to_first": 0.0,
-    "start": 0.0,
-    "end": 2.125,
-    "frames": 106,
-    "seconds": 4.417,
+    "start": 0.292,
+    "end": 3.292,
+    "frames": 148,
+    "seconds": 6.167,
     "size": [
       672,
       900
     ],
     "bg": [
-      252,
-      26,
-      246
+      253,
+      27,
+      249
     ],
-    "iou_vs_static_first_frame": 0.997,
-    "mouth_activity": 4.4,
+    "iou_vs_static_first_frame": 0.908,
+    "mouth_activity": 4.44,
     "source": "dreamer_surprised_talk.mp4",
     "range": [
       0.0,
-      2.25
+      3.3
     ],
-    "manual": true
+    "manual": true,
+    "note": "2026-10-17 作り直し（v2）: 手を腰の高さに保つ指示。初回より手の保持が長い（2.25→3.3秒）"
   },
   "dreamer_thinking_talk": {
     "kind": "talk",

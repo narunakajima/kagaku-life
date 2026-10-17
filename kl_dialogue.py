@@ -818,8 +818,31 @@ def _draw_intro(im: Image.Image, dr: ImageDraw.ImageDraw, W: int, H: int, cast: 
                     fill=(30, 40, 62) if i else tuple(int(c * 0.62) for c in col))
 
 
+def nameplate_rect(dr, cast: dict, role: str, x: int, spw: int, H: int, big: bool):
+    """名札の位置と中身の寸法。立ち絵の左端 x・幅 spw から決まる。"""
+    fn = _font(FONT_BOLD, 24 if big else 28)
+    fr = _font(FONT_MEDIUM, 17 if big else 21)
+    name, role_short = cast[role]["name"], cast[role].get("role_short", "")
+    nw, rw = _text_w(dr, name, fn), (_text_w(dr, role_short, fr) if role_short else 0)
+    gap = 10 if role_short else 0
+    tw = nw + gap + rw
+    px = x + (spw - tw) // 2 - 14
+    py = H - 46
+    return (px, py, px + tw + 28, py + 38), (fn, fr, name, role_short, nw, gap)
+
+
+def draw_nameplate(dr, cast: dict, role: str, x: int, spw: int, H: int, big: bool, active: bool) -> None:
+    """名札（名前＋肩書き）。話している方は役の色、聞いている方はグレー。"""
+    (px, py, x1, y1), (fn, fr, name, role_short, nw, gap) = nameplate_rect(dr, cast, role, x, spw, H, big)
+    col = tuple(cast[role]["color"]) if active else (110, 118, 130)
+    dr.rounded_rectangle((px, py, x1, y1), radius=19, fill=col + (235,))
+    dr.text((px + 14, py + 4), name, font=fn, fill=(255, 255, 255))
+    if role_short:
+        dr.text((px + 14 + nw + gap, py + 10), role_short, font=fr, fill=(255, 255, 255, 235))
+
+
 def render_layer(state: dict, layout: dict, cast: dict, bank: SpriteBank,
-                 sprites: bool = True, bar: bool = True) -> Image.Image:
+                 sprites: bool = True, bar: bool = True, nameplates: bool = True) -> Image.Image:
     """1つの画面状態（誰が話しているか・表情・字幕・ラベル）を透明PNGに描く。
     state のキー: mode('normal'|'teaser'|'blank'), speaker, exprs{role: expr}, text,
                   chart(bool), badge(str|None), stamps(list[Image]|None), cta(str|None),
@@ -853,20 +876,10 @@ def render_layer(state: dict, layout: dict, cast: dict, bank: SpriteBank,
         if sprites:
             im.alpha_composite(sp, (x, H - sp.height))
         sprite_pos[role] = (x, sp.width, H - sp.height)
-        # 名札（名前＋肩書き。初めて見た人が「この人は誰か」を分かるように肩書きを常に添える）
-        fn = _font(FONT_BOLD, 24 if W > 1000 else 28)
-        fr = _font(FONT_MEDIUM, 17 if W > 1000 else 21)
-        name, role_short = cast[role]["name"], cast[role].get("role_short", "")
-        nw, rw = _text_w(dr, name, fn), (_text_w(dr, role_short, fr) if role_short else 0)
-        gap = 10 if role_short else 0
-        tw = nw + gap + rw
-        px = x + (sp.width - tw) // 2 - 14
-        py = H - 46
-        col = tuple(cast[role]["color"]) if active else (110, 118, 130)
-        dr.rounded_rectangle((px, py, px + tw + 28, py + 38), radius=19, fill=col + (235,))
-        dr.text((px + 14, py + 4), name, font=fn, fill=(255, 255, 255))
-        if role_short:
-            dr.text((px + 14 + nw + gap, py + 10), role_short, font=fr, fill=(255, 255, 255, 235))
+        # 名札（名前＋肩書き。初めて見た人が「この人は誰か」を分かるように肩書きを常に添える）。
+        # 動画の立ち絵のときは立ち絵のトラックに入れる（明暗の切り替えを立ち絵と同じクロスフェードにするため）
+        if nameplates:
+            draw_nameplate(dr, cast, role, x, sp.width, H, W > 1000, active)
 
     # 自己紹介（本編の冒頭の数秒だけ。二人の関係の一文と、それぞれの吹き出し）
     if state.get("intro"):
@@ -959,7 +972,7 @@ def _state_key(state: dict, sprites: bool = True) -> str:
     s["stamps"] = len(state.get("stamps") or [])
     s.pop("talk_end", None)  # 口パクの時刻は重ね合わせ（PNG）の見た目に影響しない
     if not sprites:
-        s.pop("exprs", None)  # 立ち絵を描かないなら表情は見た目に影響しない
+        s.pop("exprs", None)  # 立ち絵を描かないなら表情は見た目に影響しない（名札も立ち絵のトラックに入る）
     return json.dumps(s, ensure_ascii=False, sort_keys=True)
 
 
@@ -1178,7 +1191,7 @@ def build_overlay_track(events: list, total_dur: float, layout: dict, cast: dict
         key = _state_key(st, sprites)
         if key not in cache:
             p = tmp / f"layer_{len(cache):04d}.png"
-            render_layer(st, layout, cast, bank, sprites=sprites, bar=bar).save(p)
+            render_layer(st, layout, cast, bank, sprites=sprites, bar=bar, nameplates=sprites).save(p)
             cache[key] = p
         entries.append((cache[key], dur))
     lst = tmp / "layers.ffconcat"
@@ -1337,9 +1350,23 @@ def build_sprite_tracks(events: list, total_dur: float, layout: dict, cast: dict
     tracks = []
     for role in ROLES:
         left = cast[role]["screen_side"] == "left"
-        cw = bank.get(role, "neutral", layout["sprite_h"], True).width
+        big = W > 1000
+        _dr = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
+
+        def sprite_x(spw):  # 立ち絵の左端（画面の座標）。render_layer と同じ
+            return layout["sprite_margin"] if left else W - spw - layout["sprite_margin"]
+        # キャンバス: 立ち絵（通常・グラフ時、明るい・暗い）と名札がすべて収まる範囲（画面の座標）
+        xs0, xs1 = [], []
+        for hh in {layout["sprite_h"], layout["sprite_h_chart"]}:
+            for act in (True, False):
+                spw = bank.get(role, "neutral", hh, act).width
+                x = sprite_x(spw)
+                r, _ = nameplate_rect(_dr, cast, role, x, spw, H, big)
+                xs0 += [x, r[0]]
+                xs1 += [x + spw, r[2]]
+        cx, cx1 = max(0, min(xs0)), min(W, max(xs1))
+        cw = cx1 - cx
         ch = layout["sprite_h"]
-        cx = layout["sprite_margin"] if left else W - cw - layout["sprite_margin"]
         cy = H - ch
         blank_key = (role, "__blank__")
         if blank_key not in variants:
@@ -1379,11 +1406,17 @@ def build_sprite_tracks(events: list, total_dur: float, layout: dict, cast: dict
                 key = (role, expr, sh, active, kind)
                 if key not in variants:
                     sp = bank.get(role, expr, sh, active)
-                    sx = 0 if left else cw - sp.width
+                    sx = sprite_x(sp.width) - cx
                     sy = ch - sp.height
-                    vf = (f"scale={sp.width}:{sp.height}:flags=lanczos,format=rgba"
+                    # 名札（立ち絵の上に重ねる。明暗の切り替えを立ち絵と同じクロスフェードにするため、ここに入れる）
+                    plate = vdir / f"{role}_plate_{sh}_{'a' if active else 'i'}.png"
+                    if not plate.exists():
+                        pim = Image.new("RGBA", (cw, ch), (0, 0, 0, 0))
+                        draw_nameplate(ImageDraw.Draw(pim), cast, role, sprite_x(sp.width) - cx, sp.width, ch, big, active)
+                        pim.save(plate)
+                    vf = (f"[0:v]scale={sp.width}:{sp.height}:flags=lanczos,format=rgba"
                           + ("" if active else f",colorchannelmixer=rr={INACTIVE_BRIGHTNESS}:gg={INACTIVE_BRIGHTNESS}:bb={INACTIVE_BRIGHTNESS}")
-                          + f",pad={cw}:{ch}:{sx}:{sy}:color=black@0.0,setsar=1")
+                          + f",pad={cw}:{ch}:{sx}:{sy}:color=black@0.0,setsar=1[sp];[sp][1:v]overlay=0:0:format=rgb,format=rgba")
                     p = vdir / f"{role}_{expr}_{sh}_{'a' if active else 'i'}_{kind}.mov"
                     src = cast_video_path(role, expr, kind)
                     if src is not None:
@@ -1396,8 +1429,8 @@ def build_sprite_tracks(events: list, total_dur: float, layout: dict, cast: dict
                             png = CAST_DIR / f"{role}_neutral.png"
                         inp = ["-loop", "1", "-framerate", str(fps), "-i", str(png)]
                     variants[key] = {"path": p, "frames": n}
-                    jobs.append([ffmpeg, "-y", "-v", "error"] + inp +
-                                ["-vf", vf, "-frames:v", str(n), "-r", str(fps), "-an", "-c:v", "png",
+                    jobs.append([ffmpeg, "-y", "-v", "error"] + inp + ["-loop", "1", "-i", str(plate)] +
+                                ["-filter_complex", vf, "-frames:v", str(n), "-r", str(fps), "-an", "-c:v", "png",
                                  "-video_track_timescale", str(fps), str(p)])
             if segs and segs[-1][2] == key and segs[-1][1] == f0:
                 segs[-1][1] = f1
