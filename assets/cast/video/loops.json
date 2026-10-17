@@ -1,0 +1,207 @@
+{
+  "dreamer_neutral": {
+    "start": 0.0,
+    "end": 3.542,
+    "frames": 170,
+    "seconds": 7.083,
+    "size": [
+      672,
+      900
+    ],
+    "bg": [
+      251,
+      31,
+      246
+    ],
+    "iou_vs_static_first_frame": 0.997,
+    "source": "dreamer_neutral_veo.mp4"
+  },
+  "dreamer_excited": {
+    "start": 1.0,
+    "end": 2.5,
+    "frames": 72,
+    "seconds": 3.0,
+    "size": [
+      672,
+      900
+    ],
+    "bg": [
+      251,
+      22,
+      247
+    ],
+    "iou_vs_static_first_frame": 0.891,
+    "source": "dreamer_excited_veo.mp4"
+  },
+  "dreamer_surprised": {
+    "start": 0.792,
+    "end": 2.292,
+    "frames": 72,
+    "seconds": 3.0,
+    "size": [
+      672,
+      900
+    ],
+    "bg": [
+      252,
+      27,
+      247
+    ],
+    "iou_vs_static_first_frame": 0.866,
+    "source": "dreamer_surprised_veo.mp4"
+  },
+  "dreamer_thinking": {
+    "start": 0.0,
+    "end": 3.458,
+    "frames": 166,
+    "seconds": 6.917,
+    "size": [
+      672,
+      900
+    ],
+    "bg": [
+      252,
+      23,
+      246
+    ],
+    "iou_vs_static_first_frame": 0.997,
+    "source": "dreamer_thinking_veo.mp4"
+  },
+  "dreamer_deflated": {
+    "start": 0.167,
+    "end": 3.542,
+    "frames": 162,
+    "seconds": 6.75,
+    "size": [
+      672,
+      900
+    ],
+    "bg": [
+      251,
+      23,
+      247
+    ],
+    "iou_vs_static_first_frame": 0.985,
+    "source": "dreamer_deflated_veo.mp4"
+  },
+  "dreamer_convinced": {
+    "start": 0.0,
+    "end": 2.542,
+    "frames": 122,
+    "seconds": 5.083,
+    "size": [
+      672,
+      900
+    ],
+    "bg": [
+      253,
+      25,
+      249
+    ],
+    "iou_vs_static_first_frame": 0.997,
+    "source": "dreamer_convinced_veo.mp4"
+  },
+  "skeptic_neutral": {
+    "start": 0.208,
+    "end": 3.792,
+    "frames": 172,
+    "seconds": 7.167,
+    "size": [
+      672,
+      900
+    ],
+    "bg": [
+      247,
+      41,
+      249
+    ],
+    "iou_vs_static_first_frame": 0.998,
+    "source": "skeptic_neutral_veo.mp4"
+  },
+  "skeptic_doubt": {
+    "start": 2.5,
+    "end": 4.208,
+    "frames": 82,
+    "seconds": 3.417,
+    "size": [
+      672,
+      900
+    ],
+    "bg": [
+      252,
+      34,
+      251
+    ],
+    "iou_vs_static_first_frame": 0.983,
+    "source": "skeptic_doubt_veo.mp4",
+    "manual": true
+  },
+  "skeptic_surprised": {
+    "start": 0.208,
+    "end": 3.792,
+    "frames": 172,
+    "seconds": 7.167,
+    "size": [
+      672,
+      900
+    ],
+    "bg": [
+      251,
+      35,
+      251
+    ],
+    "iou_vs_static_first_frame": 0.993,
+    "source": "skeptic_surprised_veo.mp4"
+  },
+  "skeptic_thinking": {
+    "start": 0.083,
+    "end": 3.167,
+    "frames": 148,
+    "seconds": 6.167,
+    "size": [
+      672,
+      900
+    ],
+    "bg": [
+      251,
+      37,
+      251
+    ],
+    "iou_vs_static_first_frame": 0.997,
+    "source": "skeptic_thinking_veo.mp4"
+  },
+  "skeptic_amused": {
+    "start": 0.458,
+    "end": 4.0,
+    "frames": 170,
+    "seconds": 7.083,
+    "size": [
+      672,
+      900
+    ],
+    "bg": [
+      249,
+      35,
+      250
+    ],
+    "iou_vs_static_first_frame": 0.964,
+    "source": "skeptic_amused_veo.mp4"
+  },
+  "skeptic_convinced": {
+    "start": 0.042,
+    "end": 3.625,
+    "frames": 172,
+    "seconds": 7.167,
+    "size": [
+      672,
+      900
+    ],
+    "bg": [
+      252,
+      35,
+      251
+    ],
+    "iou_vs_static_first_frame": 0.998,
+    "source": "skeptic_convinced_veo.mp4"
+  }
+}

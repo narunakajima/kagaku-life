@@ -818,11 +818,14 @@ def _draw_intro(im: Image.Image, dr: ImageDraw.ImageDraw, W: int, H: int, cast: 
                     fill=(30, 40, 62) if i else tuple(int(c * 0.62) for c in col))
 
 
-def render_layer(state: dict, layout: dict, cast: dict, bank: SpriteBank) -> Image.Image:
+def render_layer(state: dict, layout: dict, cast: dict, bank: SpriteBank,
+                 sprites: bool = True, bar: bool = True) -> Image.Image:
     """1つの画面状態（誰が話しているか・表情・字幕・ラベル）を透明PNGに描く。
     state のキー: mode('normal'|'teaser'|'blank'), speaker, exprs{role: expr}, text,
                   chart(bool), badge(str|None), stamps(list[Image]|None), cta(str|None),
-                  intro(bool: 本編の冒頭に出す二人の自己紹介の吹き出しと関係の一文)"""
+                  intro(bool: 本編の冒頭に出す二人の自己紹介の吹き出しと関係の一文)
+    sprites=False: 立ち絵を描かない（動画の立ち絵を別トラックで重ねるとき。名札・吹き出しの位置は
+                   立ち絵があるときと同じ）。bar=False: 字幕帯を描かない（立ち絵の下に別に重ねるとき）"""
     W, H = layout["W"], layout["H"]
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     if state.get("mode") == "blank":
@@ -832,10 +835,8 @@ def render_layer(state: dict, layout: dict, cast: dict, bank: SpriteBank) -> Ima
     sh = layout["sprite_h_chart"] if state.get("chart") else layout["sprite_h"]
 
     # 字幕帯（本編のみ。Shortsは帯なしで画面中央に字幕）
-    if layout["bar_h"] and not teaser:
-        bar = Image.new("RGBA", (W, layout["bar_h"]), BAR_COLOR)
-        im.alpha_composite(bar, (0, H - layout["bar_h"]))
-        dr.line((0, H - layout["bar_h"], W, H - layout["bar_h"]), fill=(240, 168, 104, 200), width=3)
+    if bar and layout["bar_h"] and not teaser:
+        draw_bar(im, dr, layout)
 
     # 立ち絵（話している方は明るく大きく、聞いている方は少し暗く小さく）
     sprite_w = 0
@@ -849,7 +850,8 @@ def render_layer(state: dict, layout: dict, cast: dict, bank: SpriteBank) -> Ima
             x = layout["sprite_margin"]
         else:
             x = W - sp.width - layout["sprite_margin"]
-        im.alpha_composite(sp, (x, H - sp.height))
+        if sprites:
+            im.alpha_composite(sp, (x, H - sp.height))
         sprite_pos[role] = (x, sp.width, H - sp.height)
         # 名札（名前＋肩書き。初めて見た人が「この人は誰か」を分かるように肩書きを常に添える）
         fn = _font(FONT_BOLD, 24 if W > 1000 else 28)
@@ -944,9 +946,19 @@ def render_layer(state: dict, layout: dict, cast: dict, bank: SpriteBank) -> Ima
     return im
 
 
-def _state_key(state: dict) -> str:
+def draw_bar(im: Image.Image, dr: ImageDraw.ImageDraw, layout: dict) -> None:
+    """本編の字幕帯（画面下の半透明の帯と、上辺のオレンジの線）。立ち絵より下に描く。"""
+    W, H = layout["W"], layout["H"]
+    band = Image.new("RGBA", (W, layout["bar_h"]), BAR_COLOR)
+    im.alpha_composite(band, (0, H - layout["bar_h"]))
+    dr.line((0, H - layout["bar_h"], W, H - layout["bar_h"]), fill=(240, 168, 104, 200), width=3)
+
+
+def _state_key(state: dict, sprites: bool = True) -> str:
     s = dict(state)
     s["stamps"] = len(state.get("stamps") or [])
+    if not sprites:
+        s.pop("exprs", None)  # 立ち絵を描かないなら表情は見た目に影響しない
     return json.dumps(s, ensure_ascii=False, sort_keys=True)
 
 
@@ -1128,15 +1140,10 @@ def shorts_timeline(ep: dict, cuts: list, offsets: list, durs: list, narr_delay:
     return events
 
 
-def build_overlay_track(events: list, total_dur: float, layout: dict, cast: dict, tmp: Path,
-                        out_mov: Path, fps: int, ffmpeg: str = "ffmpeg",
-                        blank_after: float = None) -> None:
-    """時刻表から透明な重ね合わせ動画（qtrle .mov）を作る。同じ画面状態のPNGは使い回す。
-    blank_after を指定すると、その時刻以降は何も重ねない（本編のロゴアウトロ用）。"""
-    bank = SpriteBank(cast)
+def _prepare_events(events: list, blank_after: float = None) -> list:
+    """時刻表を整える: blank_after 以降を空にし、同時刻の重複は後勝ち、頭が0秒でなければ空の状態を足す。"""
     if blank_after is not None:
         events = [e for e in events if e[0] < blank_after] + [(blank_after, {"mode": "blank"})]
-    # 同時刻の重複は後勝ち
     dedup = []
     for t, st in events:
         if dedup and abs(dedup[-1][0] - t) < 1e-3:
@@ -1145,6 +1152,18 @@ def build_overlay_track(events: list, total_dur: float, layout: dict, cast: dict
             dedup.append((t, st))
     if not dedup or dedup[0][0] > 0:
         dedup.insert(0, (0.0, {"mode": "blank"}))
+    return dedup
+
+
+def build_overlay_track(events: list, total_dur: float, layout: dict, cast: dict, tmp: Path,
+                        out_mov: Path, fps: int, ffmpeg: str = "ffmpeg",
+                        blank_after: float = None, sprites: bool = True, bar: bool = True) -> None:
+    """時刻表から透明な重ね合わせ動画（qtrle .mov）を作る。同じ画面状態のPNGは使い回す。
+    blank_after を指定すると、その時刻以降は何も重ねない（本編のロゴアウトロ用）。
+    sprites=False・bar=False は、動画の立ち絵（build_sprite_tracks）と組み合わせるときに使う
+    （字幕帯 → 立ち絵 → この重ね合わせ、の順に重ねるため、帯と立ち絵をここから外す）。"""
+    bank = SpriteBank(cast)
+    dedup = _prepare_events(events, blank_after)
     cache = {}
     entries = []
     for i, (t, st) in enumerate(dedup):
@@ -1152,10 +1171,10 @@ def build_overlay_track(events: list, total_dur: float, layout: dict, cast: dict
         dur = max(0.0, t_next - t)
         if dur <= 0:
             continue
-        key = _state_key(st)
+        key = _state_key(st, sprites)
         if key not in cache:
             p = tmp / f"layer_{len(cache):04d}.png"
-            render_layer(st, layout, cast, bank).save(p)
+            render_layer(st, layout, cast, bank, sprites=sprites, bar=bar).save(p)
             cache[key] = p
         entries.append((cache[key], dur))
     lst = tmp / "layers.ffconcat"
@@ -1171,6 +1190,184 @@ def build_overlay_track(events: list, total_dur: float, layout: dict, cast: dict
     if r.returncode != 0:
         raise RuntimeError("重ね合わせトラックの生成に失敗: " + r.stderr[-2000:])
     print(f"  ▶ 重ね合わせトラック: 画面状態{len(cache)}種類 / 切り替え{len(entries)}回")
+
+
+# ── 立ち絵の動画化（2026-10-17、パイロット） ────────────────────────────
+# 二人の立ち絵を、静止画の代わりに待機ループの動画（assets/cast/video/{role}_{expr}.webm、
+# kl_cast_video.py で作る）で重ねる。字幕・名札・判定ラベルなどは従来の重ね合わせ（PNGの状態トラック）のまま。
+# 重ねる順: 背景 → 字幕帯（PNG、enable で区間指定）→ 大輔のトラック → 沙織のトラック → 状態トラック。
+
+CAST_VIDEO_DIR = CAST_DIR / "video"
+CAST_LOOPS_JSON = CAST_VIDEO_DIR / "loops.json"
+STATIC_VARIANT_FRAMES = 96   # 動画の無い表情（静止画）を何フレームの「ループ」として扱うか（4秒）
+BLANK_VARIANT_FRAMES = 24
+
+
+def cast_video_path(role: str, expr: str):
+    p = CAST_VIDEO_DIR / f"{role}_{expr}.webm"
+    return p if p.exists() else None
+
+
+def cast_video_available() -> bool:
+    return any(cast_video_path(r, e) for r in ROLES for e in (load_cast()[r].get("expressions") or {}))
+
+
+def _loop_frames(path: Path, ffmpeg: str) -> int:
+    try:
+        loops = json.loads(CAST_LOOPS_JSON.read_text(encoding="utf-8"))
+        key = path.stem
+        if key in loops and loops[key].get("frames"):
+            return int(loops[key]["frames"])
+    except Exception:
+        pass
+    ffprobe = shutil.which("ffprobe") or "ffprobe"
+    r = subprocess.run([ffprobe, "-v", "error", "-c:v", "libvpx-vp9", "-count_frames", "-select_streams", "v:0",
+                        "-show_entries", "stream=nb_read_frames", "-of", "csv=p=0", str(path)],
+                       capture_output=True, text=True)
+    return int(r.stdout.strip())
+
+
+def _us_ceil(frames: int, fps: int) -> str:
+    us = -(-frames * 1_000_000 // fps)
+    return f"{us // 1_000_000}.{us % 1_000_000:06d}"
+
+
+def _us_floor(frames: int, fps: int) -> str:
+    us = frames * 1_000_000 // fps
+    return f"{us // 1_000_000}.{us % 1_000_000:06d}"
+
+
+def build_sprite_tracks(events: list, total_dur: float, layout: dict, cast: dict, tmp: Path,
+                        fps: int, ffmpeg: str = "ffmpeg", blank_after: float = None) -> dict:
+    """立ち絵を役ごとの透明な動画トラックにする。返り値:
+      {"tracks": [{"role", "list": ffconcat のパス, "x", "y"}], "bar": {"png", "x", "y", "spans"} or None}
+    tracks の list は `-f concat -safe 0 -i` でそのまま入力にできる（kl_video_gen.overlay_dialogue）。
+
+    仕組み:
+    - 役ごとに、時刻表から「表情・話しているか（明るさと大きさ）・グラフ時の縮小・表示するか」の区間を作る
+    - 区間の見た目（variant）ごとに、立ち絵を最終の大きさ・明るさにした1周期分の短い動画（PNGコーデックの
+      mov、全フレームがキーフレーム）を先に作る。キャンバスは役ごとに固定の大きさ（通常時の立ち絵の箱）で、
+      立ち絵は下端・画面の外側にそろえて置く（render_layer と同じ位置）
+    - 位相: ループの何フレーム目を出すかは「全体の時刻（フレーム番号）mod 周期」で決める。話し手が替わって
+      明るさ・大きさが変わっても、同じ表情なら動きは途切れず続く。表情が変わるときだけ別のループに切り替わる
+      （静止画のときと同じく、表情の切り替えはカット）
+    - 区間を ffconcat の inpoint/outpoint で並べる（全フレームがキーフレームなので切り出しはフレーム単位で正確）。
+      数百の区間でもフィルタグラフは大きくならない
+    - webm の無い表情は静止画を STATIC_VARIANT_FRAMES の「動かないループ」として同じ仕組みで扱う
+    口パクを足すときは、区間の見た目のキーに口の状態（音声の大きさから決める開/閉）を加え、口の開いた版の
+    ループを同じ周期で用意すれば、位相を保ったまま切り替えられる（未実装）。"""
+    from concurrent.futures import ThreadPoolExecutor
+    bank = SpriteBank(cast)
+    W, H = layout["W"], layout["H"]
+    dedup = _prepare_events(events, blank_after)
+    total_frames = int(round(total_dur * fps))
+    vdir = tmp / "sprite_variants"
+    vdir.mkdir(parents=True, exist_ok=True)
+
+    # 字幕帯（本編のみ）: mode が normal の区間だけ出す
+    bar_info = None
+    if layout["bar_h"]:
+        im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        draw_bar(im, ImageDraw.Draw(im), layout)
+        bb = im.getbbox()
+        bar_png = vdir / "bar.png"
+        im.crop(bb).save(bar_png)
+        spans = []
+        for i, (t, st) in enumerate(dedup):
+            t1 = dedup[i + 1][0] if i + 1 < len(dedup) else total_dur
+            on = st.get("mode") == "normal"
+            if on and t1 > t:
+                if spans and abs(spans[-1][1] - t) < 1e-6:
+                    spans[-1][1] = t1
+                else:
+                    spans.append([t, t1])
+        bar_info = {"png": bar_png, "x": bb[0], "y": bb[1], "spans": spans}
+
+    variants = {}   # key -> {"path", "frames"}
+    jobs = []
+    tracks = []
+    for role in ROLES:
+        left = cast[role]["screen_side"] == "left"
+        cw = bank.get(role, "neutral", layout["sprite_h"], True).width
+        ch = layout["sprite_h"]
+        cx = layout["sprite_margin"] if left else W - cw - layout["sprite_margin"]
+        cy = H - ch
+        blank_key = (role, "__blank__")
+        if blank_key not in variants:
+            p = vdir / f"{role}_blank.mov"
+            variants[blank_key] = {"path": p, "frames": BLANK_VARIANT_FRAMES}
+            jobs.append([ffmpeg, "-y", "-v", "error", "-f", "lavfi",
+                         "-i", f"color=c=black@0.0:s={cw}x{ch}:r={fps},format=rgba",
+                         "-frames:v", str(BLANK_VARIANT_FRAMES), "-c:v", "png",
+                         "-video_track_timescale", str(fps), str(p)])
+        # 区間（フレーム単位）
+        segs = []
+        for i, (t, st) in enumerate(dedup):
+            f0 = int(round(t * fps))
+            f1 = int(round(dedup[i + 1][0] * fps)) if i + 1 < len(dedup) else total_frames
+            f1 = min(f1, total_frames)
+            if f1 <= f0:
+                continue
+            if st.get("mode") == "blank":
+                key = blank_key
+            else:
+                active = st.get("speaker") == role or st.get("speaker") == "both"
+                expr = (st.get("exprs") or {}).get(role, "neutral")
+                sh = layout["sprite_h_chart"] if st.get("chart") else layout["sprite_h"]
+                key = (role, expr, sh, active)
+                if key not in variants:
+                    sp = bank.get(role, expr, sh, active)
+                    sx = 0 if left else cw - sp.width
+                    sy = ch - sp.height
+                    vf = (f"scale={sp.width}:{sp.height}:flags=lanczos,format=rgba"
+                          + ("" if active else f",colorchannelmixer=rr={INACTIVE_BRIGHTNESS}:gg={INACTIVE_BRIGHTNESS}:bb={INACTIVE_BRIGHTNESS}")
+                          + f",pad={cw}:{ch}:{sx}:{sy}:color=black@0.0,setsar=1")
+                    p = vdir / f"{role}_{expr}_{sh}_{'a' if active else 'i'}.mov"
+                    src = cast_video_path(role, expr)
+                    if src is not None:
+                        n = _loop_frames(src, ffmpeg)
+                        inp = ["-c:v", "libvpx-vp9", "-i", str(src)]
+                    else:
+                        n = STATIC_VARIANT_FRAMES
+                        png = CAST_DIR / f"{role}_{expr}.png"
+                        if not png.exists():
+                            png = CAST_DIR / f"{role}_neutral.png"
+                        inp = ["-loop", "1", "-framerate", str(fps), "-i", str(png)]
+                    variants[key] = {"path": p, "frames": n}
+                    jobs.append([ffmpeg, "-y", "-v", "error"] + inp +
+                                ["-vf", vf, "-frames:v", str(n), "-r", str(fps), "-an", "-c:v", "png",
+                                 "-video_track_timescale", str(fps), str(p)])
+            if segs and segs[-1][2] == key and segs[-1][1] == f0:
+                segs[-1][1] = f1
+            else:
+                segs.append([f0, f1, key])
+        # ffconcat（位相 = 全体のフレーム番号 mod 周期）
+        body = ["ffconcat version 1.0"]
+        n_entries = 0
+        for f0, f1, key in segs:
+            v = variants[key]
+            n = v["frames"]
+            f = f0
+            while f < f1:
+                ph = f % n
+                take = min(n - ph, f1 - f)
+                body += [f"file '{v['path']}'", f"inpoint {_us_ceil(ph, fps)}", f"outpoint {_us_floor(ph + take, fps)}"]
+                n_entries += 1
+                f += take
+        lst = tmp / f"sprites_{role}.ffconcat"
+        lst.write_text("\n".join(body) + "\n", encoding="utf-8")
+        tracks.append({"role": role, "list": lst, "x": cx, "y": cy, "segments": len(segs), "entries": n_entries})
+
+    def run(cmd):
+        r = subprocess.run(cmd, capture_output=True, text=True)
+        if r.returncode != 0:
+            raise RuntimeError("立ち絵のループの準備に失敗: " + " ".join(cmd[-1:]) + "\n" + r.stderr[-1500:])
+    with ThreadPoolExecutor(6) as ex:
+        list(ex.map(run, jobs))
+    n_video = sum(1 for k in variants if k[1] != "__blank__" and cast_video_path(k[0], k[1]))
+    print(f"  ▶ 立ち絵トラック: 見た目{len(variants)}種類（うち動画{n_video}）/ "
+          + " / ".join(f"{t['role']} 区間{t['segments']}・並び{t['entries']}" for t in tracks))
+    return {"tracks": tracks, "bar": bar_info}
 
 
 # ── サムネイル ──────────────────────────────────────────────────────
