@@ -698,9 +698,15 @@ def static_cast_requested(flag: bool = False) -> bool:
     return flag or os.environ.get("KL_STATIC_CAST", "") not in ("", "0")
 
 
+def no_talk_requested(flag: bool = False) -> bool:
+    """口パク（話している間のループ）を止めて待機ループだけにするか（--no-talk または環境変数 KL_NO_TALK=1）。"""
+    import os
+    return flag or os.environ.get("KL_NO_TALK", "") not in ("", "0")
+
+
 def overlay_dialogue(video_with_audio: Path, events: list, total_dur: float, layout: dict, cast: dict,
                      tmp: Path, out: Path, static_cast: bool = False, blank_after: float = None,
-                     limit: float = None, label: str = "字幕・立ち絵の重ね合わせ"):
+                     limit: float = None, label: str = "字幕・立ち絵の重ね合わせ", talk: bool = True):
     """掛け合い形式の重ね合わせ。static_cast=False で assets/cast/video/*.webm がある表情は動画の立ち絵にする
     （2026-10-17、パイロット）。重ねる順: 背景 → 字幕帯 → 大輔 → 沙織 → 字幕・名札・判定ラベル等。
     static_cast=True、または動画の立ち絵が1つも無いときは従来どおり（立ち絵も字幕帯も1本の重ね合わせ動画）。
@@ -721,7 +727,7 @@ def overlay_dialogue(video_with_audio: Path, events: list, total_dur: float, lay
         return
     D.build_overlay_track(events, dur, layout, cast, tmp, overlay, FPS, FFMPEG, blank_after=blank_after,
                           sprites=False, bar=False)
-    sp = D.build_sprite_tracks(events, dur, layout, cast, tmp, FPS, FFMPEG, blank_after=blank_after)
+    sp = D.build_sprite_tracks(events, dur, layout, cast, tmp, FPS, FFMPEG, blank_after=blank_after, talk=talk)
     inputs = ["-i", str(video_with_audio), "-i", str(overlay)]
     chain, prev, k = [], "0:v", 2
     if sp["bar"] and sp["bar"]["spans"]:
@@ -744,7 +750,8 @@ def overlay_dialogue(video_with_audio: Path, events: list, total_dur: float, lay
     )
 
 
-def gen_video(episode_id: str, out_dir: Path = None, static_cast: bool = False, limit: float = None):
+def gen_video(episode_id: str, out_dir: Path = None, static_cast: bool = False, limit: float = None,
+              no_talk: bool = False):
     ep_path = BASE_DIR / "episodes" / f"{episode_id}.json"
     ep = json.loads(ep_path.read_text())
 
@@ -861,7 +868,8 @@ def gen_video(episode_id: str, out_dir: Path = None, static_cast: bool = False, 
             events = D.main_timeline(ep, all_scenes, all_offsets, all_durs, NARR_DELAY, total_dur, cast)
             overlay_dialogue(video_with_audio, events, total_dur, D.MAIN_LAYOUT, cast, tmp, output_file,
                              static_cast=static_cast_requested(static_cast),
-                             blank_after=intro_block_dur + main_block_dur, limit=limit)
+                             blank_after=intro_block_dur + main_block_dur, limit=limit,
+                             talk=not no_talk_requested(no_talk))
         else:
             burn_telop_global(video_with_audio, all_scenes, all_offsets, all_durs, output_file, tmp)
 
@@ -869,7 +877,8 @@ def gen_video(episode_id: str, out_dir: Path = None, static_cast: bool = False, 
           f"  合計尺: {total_dur:.1f}s ({total_dur/60:.1f}分)\n{'━'*60}")
 
 
-def gen_shorts_video(episode_id: str, out_dir: Path = None, static_cast: bool = False, limit: float = None):
+def gen_shorts_video(episode_id: str, out_dir: Path = None, static_cast: bool = False, limit: float = None,
+                     no_talk: bool = False):
     """Shorts（9:16縦動画）を1本組み立てる。本編と違いロゴイントロ/アウトロは
     付けず（短尺のため）、シンプルにシーンをクロスフェード結合するのみ。
     BGMはbgm_sources.mainを全編通して1トラックのみ使う。
@@ -901,9 +910,11 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None, static_cast: bool = 
         tmp = Path(tmp_str)
 
         durations = []
+        narr_durs = []  # 口パク: 各カットの台詞の長さ
         for i, scene in enumerate(scenes, start=1):
             wav = narration_dir / f"shorts{mid}_S{i:02d}.wav"
             narr_dur = probe_audio_duration(wav) if wav.exists() else 2.0
+            narr_durs.append(narr_dur if wav.exists() else 0.0)
             durations.append(max(1.5, narr_dur + NARR_DELAY + 0.3))
 
         offsets = [0.0]
@@ -987,10 +998,11 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None, static_cast: bool = 
             # その上にフック文字（hook_lines）だけ drawtext で焼き込む
             import kl_dialogue as D
             cast = D.load_cast()
-            events = D.shorts_timeline(ep, scenes, offsets, durations, NARR_DELAY, cast)
+            events = D.shorts_timeline(ep, scenes, offsets, durations, NARR_DELAY, cast, narr_durs=narr_durs)
             layered = tmp / "layered.mp4"
             overlay_dialogue(video_with_audio, events, total_dur, D.SHORTS_LAYOUT, cast, tmp, layered,
-                             static_cast=static_cast_requested(static_cast), limit=limit)
+                             static_cast=static_cast_requested(static_cast), limit=limit,
+                             talk=not no_talk_requested(no_talk))
             video_with_audio = layered
 
         print("\n--- テロップ焼き込み ---")
@@ -1087,6 +1099,8 @@ def main():
     parser.add_argument("--static-cast", action="store_true",
                         help="立ち絵を従来の静止画だけにする（動画の立ち絵 assets/cast/video/*.webm を使わない。"
                              "環境変数 KL_STATIC_CAST=1 でも同じ）")
+    parser.add_argument("--no-talk", action="store_true",
+                        help="口パク（話している間のループ *_talk.webm）を使わず、待機ループだけにする（環境変数 KL_NO_TALK=1 でも同じ）")
     parser.add_argument("--limit-seconds", type=float,
                         help="確認用: 完成動画を先頭のこの秒数で切る（短くなるのは最後の重ね合わせだけで、背景・音声は全編作る）。--out と一緒に使う")
     args = parser.parse_args()
@@ -1094,9 +1108,10 @@ def main():
     if args.limit_seconds and not out_dir:
         parser.error("--limit-seconds は本番の出力を上書きしないよう --out と一緒に指定してください")
     if not args.shorts_only:
-        gen_video(args.episode, out_dir, static_cast=args.static_cast, limit=args.limit_seconds)
+        gen_video(args.episode, out_dir, static_cast=args.static_cast, limit=args.limit_seconds, no_talk=args.no_talk)
     if not args.no_shorts:
-        gen_shorts_video(args.episode, out_dir, static_cast=args.static_cast, limit=args.limit_seconds)
+        gen_shorts_video(args.episode, out_dir, static_cast=args.static_cast, limit=args.limit_seconds,
+                         no_talk=args.no_talk)
 
 
 if __name__ == "__main__":

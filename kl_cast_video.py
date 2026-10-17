@@ -38,6 +38,14 @@ Veo の制約（2026-10-17 の試作で分かったこと。SC の narrator/toki
   python3 kl_cast_video.py post --role dreamer --expr excited --force --start 0.9 --end 3.4
   python3 kl_cast_video.py sheet --out ~/Desktop/kl_cast_video_proto/sheet.png
 
+口パク（話しているループ、2026-10-17）: どのサブコマンドも --kind talk で「話している間」のループを扱う。
+  素の動画 assets/cast/raw/video/{role}_{expr}_talk.mp4 → assets/cast/video/{role}_{expr}_talk.webm
+  （loops.json のキーは {role}_{expr}_talk）。kl_dialogue.build_sprite_tracks が台詞を話している間だけ使う。
+  python3 kl_cast_video.py gen --kind talk --dry-run
+  python3 kl_cast_video.py analyze --kind talk --verbose      # 口のあたりの動き（MOUTH_BOX）も表示
+  python3 kl_cast_video.py post --kind talk
+  python3 kl_cast_video.py sheet --kind talk --cols 8         # 手が下がる・記号・目閉じが無いか必ず目で確認する
+
 APIキーは環境変数 GEMINI_API_KEY_KL（無ければ GEMINI_API_KEY）。
 口パク（音声の大きさで口を切り替える）は未実装（kl_dialogue.build_sprite_tracks の docstring 参照）。
 """
@@ -108,12 +116,21 @@ def all_jobs(cast: dict, role: str = None, expr: str = None) -> list:
     return out
 
 
-def raw_video_path(role: str, expr: str) -> Path:
-    return RAW_VIDEO_DIR / f"{role}_{expr}_veo.mp4"
+KINDS = ("idle", "talk")
+PRONOUN = {"dreamer": "He", "skeptic": "She"}
 
 
-def loop_path(role: str, expr: str) -> Path:
-    return VIDEO_DIR / f"{role}_{expr}.webm"
+def raw_video_path(role: str, expr: str, kind: str = "idle") -> Path:
+    """素の動画。待機（idle）は {role}_{expr}_veo.mp4、話している（talk）は {role}_{expr}_talk.mp4"""
+    return RAW_VIDEO_DIR / (f"{role}_{expr}_veo.mp4" if kind == "idle" else f"{role}_{expr}_talk.mp4")
+
+
+def loop_key(role: str, expr: str, kind: str = "idle") -> str:
+    return f"{role}_{expr}" if kind == "idle" else f"{role}_{expr}_talk"
+
+
+def loop_path(role: str, expr: str, kind: str = "idle") -> Path:
+    return VIDEO_DIR / f"{loop_key(role, expr, kind)}.webm"
 
 
 def load_loops() -> dict:
@@ -125,8 +142,25 @@ def load_loops() -> dict:
 
 # ── gen: Veo で素の動画を作る ─────────────────────────────────────────
 
-def veo_prompt(cast: dict, role: str, expr: str) -> str:
+def veo_prompt(cast: dict, role: str, expr: str, kind: str = "idle") -> str:
     desc = cast[role]["expressions"][expr]
+    if kind == "talk":
+        # 2026-10-17: 話している間だけ使うループ（口パク）。大輔 neutral の試作で、口の開閉が自然で画風も保たれた
+        # プロンプトに、表情・手のポーズを保つ指示と、待機ループで出た不具合（記号の描き込み・笑い出す・手が下がる）の禁止を足した
+        pr = PRONOUN[role]
+        return (
+            f"A 2D flat-colour anime-style illustration of {WHO[role]}, waist-up, on a solid magenta (#FF00FF) background. "
+            f"The pose and expression: {desc}. "
+            f"{pr} is TALKING in a relaxed, friendly conversational way throughout the whole clip: the mouth opens and "
+            "closes naturally in clear speech movements, with small natural nods and slight head movement, a natural "
+            "blink once or twice, gentle breathing. "
+            "Keep this exact facial expression and this exact pose for the whole clip: no big smile, does NOT laugh, "
+            "does NOT change expression, does not keep the eyes closed (unless the expression above says so), and the "
+            "arms and hands stay exactly where they are — do not lower them or move them away. "
+            "Do NOT draw any symbols, question marks, exclamation marks, text, speech bubbles, sparkles or effect lines. "
+            "The camera is fixed, no zoom, no pan. The background stays solid magenta. "
+            "Keep the exact art style and line quality of the input image. Ambient audio: soft distant wind only."
+        )
     return (
         f"A 2D flat-colour anime-style illustration of {WHO[role]}, waist-up, on a solid magenta (#FF00FF) background. "
         f"The pose and expression: {desc}. "
@@ -151,13 +185,14 @@ def veo_input_png(role: str, expr: str) -> bytes:
 
 def cmd_gen(args):
     cast = load_cast()
+    kind = args.kind
     jobs = all_jobs(cast, args.role, args.expr)
-    todo = [(r, e) for r, e in jobs if args.force or not raw_video_path(r, e).exists()]
+    todo = [(r, e) for r, e in jobs if args.force or not raw_video_path(r, e, kind).exists()]
     skip = [(r, e) for r, e in jobs if (r, e) not in todo]
     for r, e in skip:
-        print(f"  スキップ（生成済み）: {raw_video_path(r, e).name}")
+        print(f"  スキップ（生成済み）: {raw_video_path(r, e, kind).name}")
     cost = len(todo) * VEO_SECONDS * VEO_USD_PER_SEC
-    print(f"  生成予定: {len(todo)}本（{', '.join(f'{r}_{e}' for r, e in todo) or 'なし'}）"
+    print(f"  [{kind}] 生成予定: {len(todo)}本（{', '.join(f'{r}_{e}' for r, e in todo) or 'なし'}）"
           f" — 費用の目安 約${cost:.1f}（{VEO_SECONDS}秒 × ${VEO_USD_PER_SEC}/秒）")
     if args.dry_run or not todo:
         return
@@ -171,12 +206,12 @@ def cmd_gen(args):
 
     def one(job):
         role, expr = job
-        out = raw_video_path(role, expr)
+        out = raw_video_path(role, expr, kind)
         err = ""
-        for _ in range(2):
+        for _ in range(2):  # APIエラー（動画が返らない）のときだけ1回取り直す
             try:
                 op = client.models.generate_videos(
-                    model=VEO_MODEL, prompt=veo_prompt(cast, role, expr),
+                    model=VEO_MODEL, prompt=veo_prompt(cast, role, expr, kind),
                     image=types.Image(image_bytes=veo_input_png(role, expr), mime_type="image/png"),
                     config=types.GenerateVideosConfig(aspect_ratio="9:16", duration_seconds=VEO_SECONDS,
                                                       number_of_videos=1, resolution="720p"))
@@ -214,10 +249,28 @@ def read_frames(path: Path, w: int = None, h: int = None) -> np.ndarray:
     return np.frombuffer(raw, np.uint8).reshape(-1, h, w, 3)
 
 
-def analyze_clip(path: Path) -> dict:
+# 口のあたりの範囲（180x240 に縮めた絵の中の座標 (x0, y0, x1, y1)）。二人とも全表情で頭の位置はほぼ同じ
+# （kl_cast_gen.py が同じ構図で差分を作っているため）。頭の傾き・うなずきでずれても入るよう広めに取る
+MOUTH_BOX = {"dreamer": (90, 82, 128, 108), "skeptic": (58, 74, 96, 100)}
+# 話しているループで、口のあたりの動き（隣のフレームとの差の平均）がこれ未満なら「口があまり動いていない」と警告
+TALK_MOUTH_MIN = 2.0
+
+
+def mouth_activity(fr: np.ndarray, role: str) -> np.ndarray:
+    """口のあたりの、隣のフレームとの差（フレームごと）。fr は 180x240 に縮めた (n, h, w, 3)。"""
+    x0, y0, x1, y1 = MOUTH_BOX[role]
+    m = fr[:, y0:y1, x0:x1].astype(np.float32)
+    out = np.zeros(len(fr))
+    out[1:] = np.abs(m[1:] - m[:-1]).mean(axis=(1, 2, 3))
+    out[0] = out[1]
+    return out
+
+
+def analyze_clip(path: Path, role: str = None, kind: str = "idle") -> dict:
     """動きの量（隣のフレームとの差）とシルエットの変化を測り、往復ループに使う区間を選ぶ。
     折り返し点（区間の始まりと終わり）は動きの小さい瞬間にし、区間内でポーズが崩れない（シルエットの
-    変化が DRIFT_MAX% 以下）ものの中で、長く・早く始まるものを選ぶ。"""
+    変化が DRIFT_MAX% 以下）ものの中で、長く・早く始まるものを選ぶ。
+    kind="talk" では、口のあたりの動き（mouth_activity）が大きい区間を加点し、その平均も返す。"""
     fr = read_frames(path, 180, 240).astype(np.float32)
     n = len(fr)
     motion = np.zeros(n)
@@ -226,6 +279,7 @@ def analyze_clip(path: Path) -> dict:
     k = np.ones(5) / 5
     sm = np.convolve(np.pad(motion, 2, mode="edge"), k, mode="valid")
     mask = np.sqrt(((fr - np.array([255, 40, 250])) ** 2).sum(-1)) > 130
+    mouth = mouth_activity(fr, role) if role else np.zeros(n)
     best = None
     for s in range(0, min(n, int(START_MAX * FPS) + 1)):
         for e in range(s + int(WIN_MIN * FPS), min(n - 1, s + int(WIN_MAX * FPS), int(END_MAX * FPS)) + 1):
@@ -233,6 +287,9 @@ def analyze_clip(path: Path) -> dict:
             if drift > DRIFT_MAX:
                 break  # これより長い区間はさらに崩れる
             score = (e - s) / FPS - 1.5 * (sm[s] + sm[e]) - 0.4 * s / FPS
+            if kind == "talk":
+                # 話しているループは口の動きが主役なので、折り返しの動きは軽めに見て、口がよく動く区間を選ぶ
+                score = (e - s) / FPS - 0.5 * (sm[s] + sm[e]) - 0.4 * s / FPS + 0.3 * float(mouth[s:e + 1].mean())
             if best is None or score > best[0]:
                 best = (score, s, e, drift)
     if best is None:
@@ -241,21 +298,25 @@ def analyze_clip(path: Path) -> dict:
         _, s, e, drift = best
     return {"start": round(s / FPS, 3), "end": round(e / FPS, 3), "turn_motion": [round(float(sm[s]), 2), round(float(sm[e]), 2)],
             "drift_pct": None if drift is None else round(float(drift), 1),
-            "profile": [round(float(x), 1) for x in sm[::3]]}
+            "mouth_activity": round(float(mouth[s:e + 1].mean()), 2),
+            "profile": [round(float(x), 1) for x in sm[::3]],
+            "mouth_profile": [round(float(x), 1) for x in mouth[::3]]}
 
 
 def cmd_analyze(args):
     cast = load_cast()
     for role, expr in all_jobs(cast, args.role, args.expr):
-        p = raw_video_path(role, expr)
+        p = raw_video_path(role, expr, args.kind)
         if not p.exists():
-            print(f"  {role}_{expr}: 素の動画がありません")
+            print(f"  {loop_key(role, expr, args.kind)}: 素の動画がありません")
             continue
-        a = analyze_clip(p)
-        print(f"  {role}_{expr:10s} 区間 {a['start']:.2f}〜{a['end']:.2f}秒  折り返しの動き {a['turn_motion']}"
-              f"  シルエット変化 {a['drift_pct']}%")
+        a = analyze_clip(p, role, args.kind)
+        warn = "  ⚠️ 口があまり動いていない" if args.kind == "talk" and a["mouth_activity"] < TALK_MOUTH_MIN else ""
+        print(f"  {loop_key(role, expr, args.kind):24s} 区間 {a['start']:.2f}〜{a['end']:.2f}秒  折り返しの動き {a['turn_motion']}"
+              f"  シルエット変化 {a['drift_pct']}%  口の動き {a['mouth_activity']}{warn}")
         if args.verbose:
-            print("     動き(0.125秒ごと): " + " ".join(f"{x:4.1f}" for x in a["profile"]))
+            print("     動き(0.125秒ごと):   " + " ".join(f"{x:4.1f}" for x in a["profile"]))
+            print("     口の動き(0.125秒ごと): " + " ".join(f"{x:4.1f}" for x in a["mouth_profile"]))
 
 
 # ── post: 背景抜き・往復ループ化 ─────────────────────────────────────
@@ -286,8 +347,8 @@ def key_frame(rgb: np.ndarray, bg) -> Image.Image:
     return Image.fromarray(rgba)
 
 
-def build_loop(role: str, expr: str, start: float, end: float, out: Path) -> dict:
-    src = raw_video_path(role, expr)
+def build_loop(role: str, expr: str, start: float, end: float, out: Path, kind: str = "idle") -> dict:
+    src = raw_video_path(role, expr, kind)
     fr = read_frames(src)
     h, w = fr.shape[1:3]
     first = fr[0]
@@ -319,18 +380,22 @@ def build_loop(role: str, expr: str, start: float, end: float, out: Path) -> dic
         va = np.asarray(keyed[s].getchannel("A")) > 128
         if sa.shape == va.shape:
             iou = round(float((sa & va).sum() / max(1, (sa | va).sum())), 3)
-    return {"start": round(s / FPS, 3), "end": round(e / FPS, 3), "frames": len(idx),
+    small = np.stack([np.asarray(Image.fromarray(fr[i]).resize((180, 240), Image.BILINEAR)) for i in range(s, e + 1)])
+    return {"kind": kind, "start": round(s / FPS, 3), "end": round(e / FPS, 3), "frames": len(idx),
             "seconds": round(len(idx) / FPS, 3), "size": [sw, SPRITE_H], "bg": list(bg),
-            "iou_vs_static_first_frame": iou, "source": src.name}
+            "iou_vs_static_first_frame": iou,
+            "mouth_activity": round(float(mouth_activity(small, role)[1:].mean()), 2),
+            "source": src.name}
 
 
 def cmd_post(args):
     cast = load_cast()
     loops = load_loops()
+    kind = args.kind
     for role, expr in all_jobs(cast, args.role, args.expr):
-        key = f"{role}_{expr}"
-        src = raw_video_path(role, expr)
-        out = loop_path(role, expr)
+        key = loop_key(role, expr, kind)
+        src = raw_video_path(role, expr, kind)
+        out = loop_path(role, expr, kind)
         if not src.exists():
             print(f"  {key}: 素の動画がありません（gen を先に）")
             continue
@@ -342,14 +407,14 @@ def cmd_post(args):
         elif key in loops and loops[key].get("manual"):
             start, end, how = loops[key]["start"], loops[key]["end"], "loops.json の手動指定"
         else:
-            a = analyze_clip(src)
+            a = analyze_clip(src, role, kind)
             start, end, how = a["start"], a["end"], "自動選定"
-        info = build_loop(role, expr, start, end, out)
+        info = build_loop(role, expr, start, end, out, kind)
         if how != "自動選定":
             info["manual"] = True
         loops[key] = info
         print(f"  ✅ {key}: {info['start']:.2f}〜{info['end']:.2f}秒（{how}）→ 往復 {info['seconds']:.2f}秒"
-              f" / 静止画との重なり {info['iou_vs_static_first_frame']}")
+              f" / 静止画との重なり {info['iou_vs_static_first_frame']} / 口の動き {info['mouth_activity']}")
         LOOPS_JSON.write_text(json.dumps(loops, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
@@ -369,17 +434,18 @@ def decode_webm_frames(path: Path, times: list) -> list:
 def cmd_sheet(args):
     cast = load_cast()
     loops = load_loops()
-    jobs = [j for j in all_jobs(cast, args.role, args.expr) if loop_path(*j).exists()]
+    kind = args.kind
+    jobs = [j for j in all_jobs(cast, args.role, args.expr) if loop_path(*j, kind).exists()]
     if not jobs:
         sys.exit("ループの webm がありません（post を先に）")
     th = 300
     cell_w = int(672 * th / 900)
-    cols = 4  # 静止画 / 始まり / 折り返し / 3/4
-    sheet = Image.new("RGB", (cell_w * cols, th * len(jobs)), (40, 60, 80))
+    n_cols = args.cols  # 静止画 + ループの前進側を等間隔に
+    sheet = Image.new("RGB", (cell_w * (n_cols + 1), th * len(jobs)), (40, 60, 80))
     for row, (role, expr) in enumerate(jobs):
-        n = loops.get(f"{role}_{expr}", {}).get("seconds", 6.0)
+        n = loops.get(loop_key(role, expr, kind), {}).get("seconds", 6.0)
         ims = [Image.open(CAST_DIR / f"{role}_{expr}.png").convert("RGBA")]
-        ims += decode_webm_frames(loop_path(role, expr), [0.0, n / 2 - 0.05, n * 0.75])
+        ims += decode_webm_frames(loop_path(role, expr, kind), [(n / 2 - 0.05) * i / max(1, n_cols - 1) for i in range(n_cols)])
         for c, im in enumerate(ims):
             im = im.resize((cell_w, th), Image.LANCZOS)
             cell = Image.new("RGBA", (cell_w, th), (60, 90, 110, 255))
@@ -388,7 +454,7 @@ def cmd_sheet(args):
     out = Path(args.out).expanduser()
     out.parent.mkdir(parents=True, exist_ok=True)
     sheet.save(out)
-    print(f"  シート: {out}（列: 静止画／ループの始まり／折り返し／3/4）")
+    print(f"  シート: {out}（列: 静止画／ループの前進側を始まりから折り返しまで等間隔に{n_cols}枚）")
 
 
 def main():
@@ -402,6 +468,8 @@ def main():
             p.add_argument("--force", action="store_true", help="既存を作り直す")
         if name == "gen":
             p.add_argument("--dry-run", action="store_true", help="生成せず、予定と費用の目安だけ表示")
+        p.add_argument("--kind", choices=KINDS, default="idle",
+                       help="idle: 待機ループ（既定）／ talk: 話している間のループ（口パク）")
         if name == "post":
             p.add_argument("--start", type=float, help="使う区間の始まり（秒）。--end と一緒に指定すると自動選定より優先")
             p.add_argument("--end", type=float)
@@ -409,6 +477,7 @@ def main():
             p.add_argument("--verbose", action="store_true")
         if name == "sheet":
             p.add_argument("--out", default=str(Path.home() / "Desktop" / "kl_cast_video_proto" / "cast_loop_sheet.png"))
+            p.add_argument("--cols", type=int, default=6, help="ループから取り出す枚数")
     args = ap.parse_args()
     {"gen": cmd_gen, "analyze": cmd_analyze, "post": cmd_post, "sheet": cmd_sheet}[args.cmd](args)
 

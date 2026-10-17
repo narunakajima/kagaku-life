@@ -957,6 +957,7 @@ def draw_bar(im: Image.Image, dr: ImageDraw.ImageDraw, layout: dict) -> None:
 def _state_key(state: dict, sprites: bool = True) -> str:
     s = dict(state)
     s["stamps"] = len(state.get("stamps") or [])
+    s.pop("talk_end", None)  # 口パクの時刻は重ね合わせ（PNG）の見た目に影響しない
     if not sprites:
         s.pop("exprs", None)  # 立ち絵を描かないなら表情は見た目に影響しない
     return json.dumps(s, ensure_ascii=False, sort_keys=True)
@@ -998,10 +999,11 @@ def main_timeline(ep: dict, scenes: list, offsets: list, durs: list, narr_delay:
                     stamps = verdict_stamps(cast, ep["verdict"])
                 st = stamps
             cards = line.get("cards") or [{"text": line_display(line), "start": 0.0, "end": line["dur"]}]
+            talk_end = round(off + narr_delay_s + line["t0"] + line["dur"], 3)  # 口パク: この行を話し終える時刻
             for c in cards:
                 t = off + narr_delay_s + line["t0"] + c["start"]
                 events.append((round(t, 3), dict(base, speaker=sp, exprs=exprs, text=c["text"],
-                                                 stamps=st)))
+                                                 stamps=st, talk_end=talk_end)))
         # シーンの終わり（次のシーンの開始）まで最後の状態を保つ。後続シーンの開始で切り替わる
     events.sort(key=lambda e: e[0])
     if intro_windows:
@@ -1108,7 +1110,8 @@ def split_for_one_row(text: str, layout: dict) -> list:
 
 
 def shorts_timeline(ep: dict, cuts: list, offsets: list, durs: list, narr_delay: float,
-                    cast: dict) -> list:
+                    cast: dict, narr_durs: list = None) -> list:
+    """narr_durs: 各カットの台詞の長さ（秒）。渡すと、口パク用に話し終える時刻（talk_end）を付ける"""
     events = []
     for i, (cut, off, dur) in enumerate(zip(cuts, offsets, durs)):
         last = i == len(cuts) - 1
@@ -1127,6 +1130,7 @@ def shorts_timeline(ep: dict, cuts: list, offsets: list, durs: list, narr_delay:
         chunks = split_for_one_row(text, SHORTS_LAYOUT)
         t0 = off + narr_delay
         span = max(0.1, (off + dur) - t0)
+        talk_end = round(t0 + narr_durs[i], 3) if narr_durs else None
         total_chars = sum(len(c) for c in chunks) or 1
         pos = 0
         for ci, chunk in enumerate(chunks):
@@ -1134,7 +1138,7 @@ def shorts_timeline(ep: dict, cuts: list, offsets: list, durs: list, narr_delay:
                            {"mode": "normal", "speaker": sp, "exprs": exprs, "text": chunk,
                             "chart": cut.get("style") == "chart",
                             "stamps": st, "cta": "↓ 続きは本編で" if last else None,
-                            "badge": cut.get("badge_text")}))
+                            "badge": cut.get("badge_text"), "talk_end": talk_end}))
             pos += len(chunk)
     events.sort(key=lambda e: e[0])
     return events
@@ -1203,8 +1207,9 @@ STATIC_VARIANT_FRAMES = 96   # 動画の無い表情（静止画）を何フレ�
 BLANK_VARIANT_FRAMES = 24
 
 
-def cast_video_path(role: str, expr: str):
-    p = CAST_VIDEO_DIR / f"{role}_{expr}.webm"
+def cast_video_path(role: str, expr: str, kind: str = "idle"):
+    """立ち絵のループ動画。kind="idle" は待機ループ、"talk" は話している間のループ（口パク）。無ければ None"""
+    p = CAST_VIDEO_DIR / (f"{role}_{expr}.webm" if kind == "idle" else f"{role}_{expr}_talk.webm")
     return p if p.exists() else None
 
 
@@ -1238,7 +1243,7 @@ def _us_floor(frames: int, fps: int) -> str:
 
 
 def build_sprite_tracks(events: list, total_dur: float, layout: dict, cast: dict, tmp: Path,
-                        fps: int, ffmpeg: str = "ffmpeg", blank_after: float = None) -> dict:
+                        fps: int, ffmpeg: str = "ffmpeg", blank_after: float = None, talk: bool = True) -> dict:
     """立ち絵を役ごとの透明な動画トラックにする。返り値:
       {"tracks": [{"role", "list": ffconcat のパス, "x", "y"}], "bar": {"png", "x", "y", "spans"} or None}
     tracks の list は `-f concat -safe 0 -i` でそのまま入力にできる（kl_video_gen.overlay_dialogue）。
@@ -1254,8 +1259,12 @@ def build_sprite_tracks(events: list, total_dur: float, layout: dict, cast: dict
     - 区間を ffconcat の inpoint/outpoint で並べる（全フレームがキーフレームなので切り出しはフレーム単位で正確）。
       数百の区間でもフィルタグラフは大きくならない
     - webm の無い表情は静止画を STATIC_VARIANT_FRAMES の「動かないループ」として同じ仕組みで扱う
-    口パクを足すときは、区間の見た目のキーに口の状態（音声の大きさから決める開/閉）を加え、口の開いた版の
-    ループを同じ周期で用意すれば、位相を保ったまま切り替えられる（未実装）。"""
+    - 口パク（2026-10-17、talk=True）: その役が実際に台詞を話している間（状態の talk_end まで。台詞の
+      t0〜t0+dur、main_timeline / shorts_timeline が付ける）は「話しているループ」（{role}_{expr}_talk.webm、
+      明るい・通常の大きさ）、それ以外（聞いている間は暗い・0.94倍、話し手でも台詞の合間は明るい）は待機ループ。
+      talk ループの無い表情は待機ループのまま。talk と idle は周期が違うので、それぞれ全体のフレーム番号 mod
+      自分の周期で位相を決める（同じ種類のループに戻ると動きは続きから）。切り替えはカット（どちらも同じ静止画
+      から作っているので頭の位置はほぼ同じ。kl042 で確認）"""
     from concurrent.futures import ThreadPoolExecutor
     bank = SpriteBank(cast)
     W, H = layout["W"], layout["H"]
@@ -1300,21 +1309,34 @@ def build_sprite_tracks(events: list, total_dur: float, layout: dict, cast: dict
                          "-i", f"color=c=black@0.0:s={cw}x{ch}:r={fps},format=rgba",
                          "-frames:v", str(BLANK_VARIANT_FRAMES), "-c:v", "png",
                          "-video_track_timescale", str(fps), str(p)])
-        # 区間（フレーム単位）
-        segs = []
+        # 区間（フレーム単位）。話している区間（talk_end まで）と、その後の区間に分ける
+        pieces = []
         for i, (t, st) in enumerate(dedup):
             f0 = int(round(t * fps))
             f1 = int(round(dedup[i + 1][0] * fps)) if i + 1 < len(dedup) else total_frames
             f1 = min(f1, total_frames)
             if f1 <= f0:
                 continue
+            speaking = st.get("mode") != "blank" and (st.get("speaker") == role or st.get("speaker") == "both")
+            te = st.get("talk_end")
+            if talk and speaking and te is not None:
+                fm = min(f1, max(f0, int(round(te * fps))))
+                if fm > f0:
+                    pieces.append((f0, fm, st, True))
+                if f1 > fm:
+                    pieces.append((fm, f1, st, False))
+            else:
+                pieces.append((f0, f1, st, False))
+        segs = []
+        for f0, f1, st, talking in pieces:
             if st.get("mode") == "blank":
                 key = blank_key
             else:
                 active = st.get("speaker") == role or st.get("speaker") == "both"
                 expr = (st.get("exprs") or {}).get(role, "neutral")
                 sh = layout["sprite_h_chart"] if st.get("chart") else layout["sprite_h"]
-                key = (role, expr, sh, active)
+                kind = "talk" if talking and cast_video_path(role, expr, "talk") is not None else "idle"
+                key = (role, expr, sh, active, kind)
                 if key not in variants:
                     sp = bank.get(role, expr, sh, active)
                     sx = 0 if left else cw - sp.width
@@ -1322,8 +1344,8 @@ def build_sprite_tracks(events: list, total_dur: float, layout: dict, cast: dict
                     vf = (f"scale={sp.width}:{sp.height}:flags=lanczos,format=rgba"
                           + ("" if active else f",colorchannelmixer=rr={INACTIVE_BRIGHTNESS}:gg={INACTIVE_BRIGHTNESS}:bb={INACTIVE_BRIGHTNESS}")
                           + f",pad={cw}:{ch}:{sx}:{sy}:color=black@0.0,setsar=1")
-                    p = vdir / f"{role}_{expr}_{sh}_{'a' if active else 'i'}.mov"
-                    src = cast_video_path(role, expr)
+                    p = vdir / f"{role}_{expr}_{sh}_{'a' if active else 'i'}_{kind}.mov"
+                    src = cast_video_path(role, expr, kind)
                     if src is not None:
                         n = _loop_frames(src, ffmpeg)
                         inp = ["-c:v", "libvpx-vp9", "-i", str(src)]
@@ -1364,8 +1386,9 @@ def build_sprite_tracks(events: list, total_dur: float, layout: dict, cast: dict
             raise RuntimeError("立ち絵のループの準備に失敗: " + " ".join(cmd[-1:]) + "\n" + r.stderr[-1500:])
     with ThreadPoolExecutor(6) as ex:
         list(ex.map(run, jobs))
-    n_video = sum(1 for k in variants if k[1] != "__blank__" and cast_video_path(k[0], k[1]))
-    print(f"  ▶ 立ち絵トラック: 見た目{len(variants)}種類（うち動画{n_video}）/ "
+    n_video = sum(1 for k in variants if k[1] != "__blank__" and cast_video_path(k[0], k[1], k[4]))
+    n_talk = sum(1 for k in variants if k[1] != "__blank__" and k[4] == "talk")
+    print(f"  ▶ 立ち絵トラック: 見た目{len(variants)}種類（うち動画{n_video}、話しているループ{n_talk}）/ "
           + " / ".join(f"{t['role']} 区間{t['segments']}・並び{t['entries']}" for t in tracks))
     return {"tracks": tracks, "bar": bar_info}
 
