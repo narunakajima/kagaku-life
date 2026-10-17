@@ -4191,7 +4191,7 @@
       "enriched_version": "2026-10-11-buzz-measured",
       "buzz_jp_est": 2,
       "buzz_error": "0件（検索語が合っていない可能性）",
-      "buzz_error_at": "2026-10-17T07:05:20",
+      "buzz_error_at": "2026-10-18T06:22:47",
       "jp_usable": 2,
       "work_relevance": 3,
       "topic_first_date": "2026-09-29",
@@ -10471,7 +10471,7 @@
       ],
       "url_ok": null,
       "url_status": "help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
-      "url_checked_at": "2026-10-17T07:06:25",
+      "url_checked_at": "2026-10-18T06:23:28",
       "topic_first_date": "2026-10-06",
       "topic_first_source": "候補 d60f64ecab のannounced_on（ChatGPT、ついに音声ファイルに対応　文字起こしや要約な）",
       "topic_series": "d60f64ecab",
@@ -10493,7 +10493,7 @@
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-10-17T07:06:25",
+      "primary_verified_at": "2026-10-18T06:23:28",
       "buzz_history": [
         {
           "at": "2026-10-15T11:33:30",
@@ -13032,7 +13032,7 @@
       ],
       "url_ok": true,
       "url_status": "cloud.google.com: HTTP 200「Gemini at Work 2026: Introduci」 ／ cloud.google.com: HTTP 200「Google Cloud Blog」",
-      "url_checked_at": "2026-10-17T07:06:19",
+      "url_checked_at": "2026-10-18T06:23:22",
       "topic_first_date": "2026-10-08",
       "topic_first_source": "候補 79d0885d3e のannounced_on（新サービス「Gemini agent」は企業向け、「Gemi）",
       "topic_series": "79d0885d3e",
@@ -13064,7 +13064,7 @@
           "kind": "official_blog"
         }
       ],
-      "primary_verified_at": "2026-10-17T07:06:19",
+      "primary_verified_at": "2026-10-18T06:23:22",
       "buzz_history": [
         {
           "at": "2026-10-15T11:33:10",
@@ -14418,7 +14418,13 @@
       "topic_first_date": "2026-10-13",
       "topic_first_source": "候補 3adaf81b40 のpublished（「善玉菌を増やす」腸活は時代遅れ？ 最新研究で変わった腸活の）",
       "topic_series": "3adaf81b40",
-      "freshness_basis": "topic_first_date"
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-13",
+        "title": "「善玉菌を増やす」腸活は時代遅れ？ 最新研究で変わった腸活の新常識 Gas Stations (3fX8lTUY6Z)",
+        "id": "3adaf81b40",
+        "source": "Googleニュース（腸内細菌 研究）／Unisba Media"
+      }
     },
     {
       "title": "1時間1200個、夜通し働く 中国のヒューマノイド、物流現場でベテラン作業員に迫った",
@@ -18962,7 +18968,7 @@
       "scored_at": "2026-10-16",
       "topic_first_date": "2026-10-15",
       "topic_first_source": "候補 c43a924dd7 のannounced_on（キリンＨＤ、紅茶ポリフェノールによる油の付着抑制を確認、独自）",
-      "topic_series": "c43a924dd7",
+      "topic_series": "f20d666da5",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-15",
@@ -19403,7 +19409,7 @@
           "kind": "press_release"
         }
       ],
-      "primary_verified_at": "2026-10-17T07:06:11",
+      "primary_verified_at": "2026-10-18T06:23:14",
       "url_check": [
         {
           "url": "https://prtimes.jp/main/html/rd/p/000000076.000083531.html",
@@ -19418,7 +19424,7 @@
       ],
       "url_ok": false,
       "url_status": "prtimes.jp: HTTP 200「燈とオリエンタル白石、吊り足場上での四足歩行ロボットの自律歩」 ／ prtimes.jp: HTTP 404",
-      "url_checked_at": "2026-10-17T07:06:11",
+      "url_checked_at": "2026-10-18T06:23:14",
       "buzz_history": [
         {
           "at": "2026-10-16T07:07:27",
@@ -19446,13 +19452,45 @@
           "trend": 0.0,
           "articles_14d": 5,
           "raw_items": 8
+        },
+        {
+          "at": "2026-10-18T06:22:58",
+          "query": "燈 オリエンタル白石",
+          "measured": 3,
+          "outlets": 5,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "オリエンタル白石、燈／つり足場で四足歩行ロボの自律歩行成功／ＡＩで姿勢制御",
+              "outlet": "千葉テレビ放送株式会社",
+              "date": "2026-10-07"
+            },
+            {
+              "title": "揺れる吊り足場を、四足歩行ロボットが自力で歩く。オリエンタル白石と燈、歩行AIによる自律歩行の実証に成功、現場巡回の実用化へ",
+              "outlet": "デジコン",
+              "date": "2026-10-06"
+            },
+            {
+              "title": "オリエンタル白石、燈／つり足場で四足歩行ロボの自律歩行成功／ＡＩで姿勢制御",
+              "outlet": "日刊建設工業新聞",
+              "date": "2026-10-06"
+            }
+          ],
+          "trend": 0.0,
+          "articles_14d": 5,
+          "raw_items": 8
         }
       ],
-      "buzz_measured_at": "2026-10-16T07:07:27",
+      "buzz_measured_at": "2026-10-18T06:22:58",
       "buzz_measured": 3,
       "buzz_outlets": 5,
       "yahoo": false,
       "buzz_evidence": [
+        {
+          "title": "オリエンタル白石、燈／つり足場で四足歩行ロボの自律歩行成功／ＡＩで姿勢制御",
+          "outlet": "千葉テレビ放送株式会社",
+          "date": "2026-10-07"
+        },
         {
           "title": "揺れる吊り足場を、四足歩行ロボットが自力で歩く。オリエンタル白石と燈、歩行AIによる自律歩行の実証に成功、現場巡回の実用化へ",
           "outlet": "デジコン",
@@ -19462,19 +19500,14 @@
           "title": "オリエンタル白石、燈／つり足場で四足歩行ロボの自律歩行成功／ＡＩで姿勢制御",
           "outlet": "日刊建設工業新聞",
           "date": "2026-10-06"
-        },
-        {
-          "title": "オリエンタル白石、燈／つり足場で四足歩行ロボの自律歩行成功／ＡＩで姿勢制御",
-          "outlet": "千葉テレビ放送株式会社",
-          "date": "2026-10-06"
         }
       ],
       "buzz_trend": 0.0,
       "buzz_articles_14d": 5,
       "buzz_raw_items": 8,
       "buzz_query": "燈 オリエンタル白石",
-      "buzz_adopted_at": "2026-10-16T07:07:27",
-      "buzz_adopted_n": 1
+      "buzz_adopted_at": "2026-10-18T06:22:58",
+      "buzz_adopted_n": 2
     },
     {
       "title": "ヒューマノイドにも衣服を、ZOZO NEXTがフィジカルAIスタートアップと共同研究：ロボット開発ニュース",
@@ -20592,6 +20625,1445 @@
         "id": "46572d84b6",
         "source": "NHK 科学・文化"
       }
+    },
+    {
+      "title": "「人型ロボット」で負担軽減 作業時間も夜間から日中へ JR東日本",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMickFVX3lxTFA2OXdVR0lqNXJBRnEwaEFWdFRURWJLbjVRT2pqT3VNcU8tb2JMc1R4ZW14SUo2MnZqMkR4VDRKZ1B6SGlaZXRoN2wtR3VCVkpZanQwZngzMDZ3YjNEbktqZFlLSS02ZmRxSWtDRnF0U0RZdw?oc=5",
+      "published": "2026-10-17",
+      "source": "Googleニュース（人型ロボット）／テレ朝NEWS",
+      "source_kind": "media",
+      "outlet": "テレ朝NEWS",
+      "outlet_host": "news.tv-asahi.co.jp",
+      "genre_hint": "humanoid",
+      "summary": "「人型ロボット」で負担軽減 作業時間も夜間から日中へ JR東日本（テレ朝NEWS）",
+      "id": "33c9569f5d",
+      "sources": [
+        "テレ朝NEWS",
+        "QAB 琉球朝日放送"
+      ],
+      "dup_ids": [
+        "90d69b9783"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.westjr.co.jp/press/article/2026/10/16/page_31121.html",
+          "what_it_states": "JR西日本が2026年10月16日に発表したプレスリリース。2024年7月に導入した人型ロボット重機「ZIZAI」に続き、最大120kgを把持する「重作業用単腕型ロボット」（10月運用開始）と支障木伐採向けの「量産型人型ロボット」（11月運用開始）の営業線導入を発表。作業人手の約3割削減や高所・感電事故防止を目指す。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://www.jreast.co.jp/press/2026/20260416_ho02.pdf",
+          "what_it_states": "JR東日本とJR西日本の技術連携レポート（2026年）。JR東日本は2026年3月に「多機能鉄道重機」を実導入し、第一線職場社員の負担が大きい沿線支障木の伐採作業などに投入を開始した。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.jinki.jp/news/2024071701",
+          "what_it_states": "人機一体および日本信号による製品化リリース。VRゴーグルと力触覚提示（バイラテラル制御）を用いた直感的な遠隔操作システムを搭載し、高所12m・最大40kgの重量物作業を地上操縦室から行う人型重機。"
+        }
+      ],
+      "announced_on": "2026-10-15",
+      "headline_claim": "JR東日本が「人型ロボット」を小海線に導入し、危険な高所作業を代替して夜間工事を日中へシフトさせている。",
+      "actual_content": "JR東日本が小海線で公開した「多機能鉄道重機」は、自律AI型ロボットではなく、作業員が地上操縦室からVRゴーグルと操作レバーを用いて遠隔操作する人型上半身重機（人機一体・日本信号の技術）である。チェンソーを把持して線路沿いの支障木伐採など熟練を要する高所危険作業を地上から行えるようにした。作業員の就労環境改善を目的に夜勤から日勤へ移行しているが、そのためには昼間に列車を計画運休させて線路を閉鎖する必要がある。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 3,
+      "work_relevance": 4,
+      "concern_id": "work_ai",
+      "entry_question": "「人型ロボが夜勤を肩代わり」って本当？ 列車は昼間に止まっちゃうの？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "soon"
+      },
+      "tsukkomi_material": "勝手に動く自律型AIロボットではなく人間がVRで遠隔操縦する巨大重機である点、そして夜勤をなくす代償として「昼間に普通に電車を止めて運休させている」という現場のリアルな妥協点。",
+      "investment_related": false,
+      "deja_vu_note": "人型ロボットの話題（kl033 Atlasの手、kl040 安川電機）はあるが、鉄道メンテナンス現場で遠隔操作する人型重機の実稼働は初。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "多機能鉄道重機 小海線",
+      "jp_title_anchor": [
+        "多機能鉄道重機",
+        "JR東日本",
+        "小海線"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 5,
+      "overall_score": 3.8,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-18",
+      "topic_first_date": "2026-10-15",
+      "topic_first_source": "候補 33c9569f5d のannounced_on（「人型ロボット」で負担軽減 作業時間も夜間から日中へ JR東）",
+      "topic_series": "33c9569f5d",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-17",
+        "title": "「人型ロボット」で負担軽減 作業時間も夜間から日中へ JR東日本",
+        "id": "33c9569f5d",
+        "source": "Googleニュース（人型ロボット）／テレ朝NEWS"
+      }
+    },
+    {
+      "title": "【動画】鉄道の保守、人手不足をロボット技術で解消図る JR西が「多機能鉄道重機」2機を導入",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5EZkYwdFQxaFRBSy0tYkhoWGVCU0g5RHZuM2ZRb0dxQkR5bFA4NXBLdkJrU0QxZEZINDhuZFllV1RVTmNoZFJPTC0zNll4VGstTG1LUU51bThlVTVZcmYyNkpGTlRWbjhud2lfZDk0Qlk5LW5GdlE?oc=5",
+      "published": "2026-10-17",
+      "source": "Googleニュース（人型ロボット）／産経ニュース",
+      "source_kind": "media",
+      "outlet": "産経ニュース",
+      "outlet_host": "sankei.com",
+      "genre_hint": "humanoid",
+      "summary": "【動画】鉄道の保守、人手不足をロボット技術で解消図る JR西が「多機能鉄道重機」2機を導入（産経ニュース）",
+      "id": "6b8b773347",
+      "sources": [
+        "産経ニュース"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.westjr.co.jp/press/article/2026/10/16/page_31121.html",
+          "what_it_states": "JR西日本が2024年7月導入の多機能鉄道重機『ZIZAI』に続き、最大120kgを把持して重量物作業を支援する『重作業用単腕型ロボット』（2026年10月使用開始）と、機体を約300kgへと半減しブームを15mに延伸した『量産型人型ロボット』（2026年11月使用開始）の2機種を営業線へ導入。高所作業の機械化による墜落・感電労災の防止と、作業に要する人手の約3割削減を目指すことを発表。"
+        }
+      ],
+      "announced_on": "2026-10-16",
+      "headline_claim": "JR西日本が人手不足解消と労災防止のため、人型など2機種の「多機能鉄道重機」を鉄道保守の現場へ本格導入する。",
+      "actual_content": "人機一体および日本信号と共同開発した鉄道保守用重機で、高所作業車のデッキ上に搭載して最大120kgの架線金具等を保持できる単腕型（2026年10月稼働）と、既存機から約300kgへ半減・小型化してブームを15mに伸ばした樹木伐採向け量産型人型ロボット（2026年11月稼働）の2機種が営業線に投入されます。完全自動化ではなく操縦室や手元からの遠隔操作（マスタースレーブ方式）で作業を代行・補助する仕組みで、伐採作業を4人から3人に圧縮するなど、現場作業人手の約3割削減を目指す水準にとどまります。高所での墜落や感電といった危険作業の撲滅と、腕力に頼らない幅広い人材の従事を主眼に置いています。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 2,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 2,
+      "work_relevance": 4,
+      "concern_id": "work_ai",
+      "entry_question": "JR西日本の人型ロボ重機は、鉄道の保守現場を本当に省人化できる？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "人型ロボットが勝手に動いて直してくれるわけではなく、操縦者がコックピットから手動操作する遠隔重機です。人手がゼロになるわけではなく、4〜5人体制の作業を3人に減らす（3割減）という堅実なアシストにとどまります。",
+      "investment_related": false,
+      "deja_vu_note": "人型ロボットの話題としてはkl033やkl040があるが、建設・保守専用の遠隔搭乗型重機の実戦配備は初。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "JR西日本 多機能鉄道重機",
+      "jp_title_anchor": [
+        "多機能鉄道重機",
+        "JR西"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.6,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-18",
+      "topic_first_date": "2026-10-16",
+      "topic_first_source": "候補 6b8b773347 のannounced_on（【動画】鉄道の保守、人手不足をロボット技術で解消図る JR西）",
+      "topic_series": "29aac390bf",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-17",
+        "title": "【動画】鉄道の保守、人手不足をロボット技術で解消図る JR西が「多機能鉄道重機」2機を導入",
+        "id": "6b8b773347",
+        "source": "Googleニュース（人型ロボット）／産経ニュース"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://www.westjr.co.jp/press/article/2026/10/16/page_31121.html",
+          "ok": true,
+          "status": "HTTP 200「新たな多機能鉄道重機2機種を営業線へ導入 &#65374;鉄」",
+          "page_title": "新たな多機能鉄道重機2機種を営業線へ導入 &#65374;鉄道現場の安全性・生産性向上と多様な人材が活躍できる環境づくり&#65374;：JR西日本",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "press_release"
+        }
+      ],
+      "primary_verified_at": "2026-10-18T06:23:07",
+      "url_check": [
+        {
+          "url": "https://www.westjr.co.jp/press/article/2026/10/16/page_31121.html",
+          "ok": true,
+          "status": "HTTP 200「新たな多機能鉄道重機2機種を営業線へ導入 &#65374;鉄」"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "westjr.co.jp: HTTP 200「新たな多機能鉄道重機2機種を営業線へ導入 &#65374;鉄」",
+      "url_checked_at": "2026-10-18T06:23:07",
+      "buzz_history": [
+        {
+          "at": "2026-10-18T06:22:47",
+          "query": "JR西日本 多機能鉄道重機",
+          "measured": 4,
+          "outlets": 3,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "JR西日本，新たな多機能鉄道重機2機種を営業線へ導入",
+              "outlet": "鉄道ファン・railf.jp",
+              "date": "2026-10-17"
+            },
+            {
+              "title": "【動画】鉄道の保守、人手不足をロボット技術で解消図る JR西が「多機能鉄道重機」2機を導入",
+              "outlet": "産経ニュース",
+              "date": "2026-10-17"
+            },
+            {
+              "title": "ＪＲ西日本、多機能鉄道重機２機種を営業線に導入、最大１２０キロ把持のロボットも",
+              "outlet": "https://kabu-ir.com/",
+              "date": "2026-10-17"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 3,
+          "raw_items": 8
+        }
+      ],
+      "buzz_measured_at": "2026-10-18T06:22:47",
+      "buzz_measured": 4,
+      "buzz_outlets": 3,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "JR西日本，新たな多機能鉄道重機2機種を営業線へ導入",
+          "outlet": "鉄道ファン・railf.jp",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "【動画】鉄道の保守、人手不足をロボット技術で解消図る JR西が「多機能鉄道重機」2機を導入",
+          "outlet": "産経ニュース",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "ＪＲ西日本、多機能鉄道重機２機種を営業線に導入、最大１２０キロ把持のロボットも",
+          "outlet": "https://kabu-ir.com/",
+          "date": "2026-10-17"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 3,
+      "buzz_raw_items": 8,
+      "buzz_query": "JR西日本 多機能鉄道重機",
+      "buzz_adopted_at": "2026-10-18T06:22:47",
+      "buzz_adopted_n": 1
+    },
+    {
+      "title": "「午後の紅茶 おいしい無糖」の研究から、紅茶ポリフェノールによる油の付着抑制作用を発見！紅茶の「油が口に残りにくい」「食事の後味がすっきりする」を科学的に説明する新知見",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBKSjVnWl9jVk9sYTBpXzlhcnZmbFkzenNUTm5ETG14VG1qZ2x5R3RwQzNtSVZxTUN3MGs5TjZlOE5PbGFMdEo1UzBTc2FvTnhja0RaVUJ1ek0xYWYzWGtvZDY3cGQ0SjI1eXNDVmJxMTdBaHA4Y1E?oc=5",
+      "published": "2026-10-15",
+      "source": "Googleニュース（研究 食事 健康 効果）／Kirin Holdings Company, Limited",
+      "source_kind": "media",
+      "outlet": "Kirin Holdings Company, Limited",
+      "outlet_host": "kirinholdings.com",
+      "genre_hint": "food_health",
+      "summary": "「午後の紅茶 おいしい無糖」の研究から、紅茶ポリフェノールによる油の付着抑制作用を発見！紅茶の「油が口に残りにくい」「食事の後味がすっきりする」を科学的に説明する新知見（Kirin Holdings Company, Limited）",
+      "id": "f20d666da5",
+      "sources": [
+        "Kirin Holdings Company, Limited"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.kirinholdings.com/jp/newsroom/release/2026/1015_02.html",
+          "what_it_states": "口内を模したマイクロ流路デバイスを用い、食用油と飲料を流して油滴の乳化と表面付着を検証。水と比較して「午後の紅茶 おいしい無糖」は油が付着しなかった面積の割合が1.5倍（3回実験の平均値）であり、ポリフェノール除去品や緑茶ポリフェノールと比較しても油の付着抑制作用が高いことを確認した。"
+        }
+      ],
+      "announced_on": "2026-10-15",
+      "headline_claim": "「午後の紅茶 おいしい無糖」に含まれる紅茶ポリフェノールが油の付着を抑え、脂っこい食事の後でも口の中がすっきりする理由を科学的に解明した。",
+      "actual_content": "キリン中央研究所が開発した、口内環境を模したマイクロ流路評価デバイスを用いた管内実験（in vitro）に基づく報告である。食用油と飲料を流した3回の平均測定において、水と比較して「午後の紅茶 おいしい無糖」は油が付着しなかった面積比が1.5倍となり、緑茶ポリフェノールやポリフェノール除去対照よりも付着を抑えることが確認された。ただし、ヒトの口腔粘膜での生体内試験や体内への脂肪吸収抑制（健康・ダイエット効果）を検証したものではなく、人工デバイス上で油滴が微細化されて洗い流されやすくなる物理現象を可視化した知見にとどまる。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 2,
+      "concern_id": "food",
+      "entry_question": "午後の紅茶で脂っこい食事の後味がすっきりするのは本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "ヒトの舌や口腔粘膜で検証した臨床試験ではなく人工のマイクロ流路に油と紅茶を流した物理実験にすぎず、体内に吸収される脂質の量が減るような健康効果・ダイエット効果ではない点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "午後の紅茶 紅茶ポリフェノール",
+      "jp_title_anchor": [
+        "午後の紅茶",
+        "紅茶ポリフェノール",
+        "おいしい無糖"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.55,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-18",
+      "topic_first_date": "2026-10-15",
+      "topic_first_source": "候補 c43a924dd7 のannounced_on（キリンＨＤ、紅茶ポリフェノールによる油の付着抑制を確認、独自）",
+      "topic_series": "f20d666da5",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-15",
+        "title": "「午後の紅茶 おいしい無糖」の研究から、紅茶ポリフェノールによる油の付着抑制作用を発見！紅茶の「油が口に残りにくい」「食事の後味がすっきりする」を科学的に説明する新知見",
+        "id": "f20d666da5",
+        "source": "Googleニュース（研究 食事 健康 効果）／Kirin Holdings Company, Limited"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://www.kirinholdings.com/jp/newsroom/release/2026/1015_02.html",
+          "ok": true,
+          "status": "HTTP 200「「午後の紅茶 おいしい無糖」の研究から、紅茶ポリフェノールに」",
+          "page_title": "「午後の紅茶 おいしい無糖」の研究から、紅茶ポリフェノールによる油の付着抑制作用を発見！紅茶の「油が口に残りにくい」「食事の後味がすっきりする」を科学的に説明する新知見 | 2026年 | KIRIN - キリンホールディングス株式会社",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "press_release"
+        }
+      ],
+      "primary_verified_at": "2026-10-18T06:22:35",
+      "url_check": [
+        {
+          "url": "https://www.kirinholdings.com/jp/newsroom/release/2026/1015_02.html",
+          "ok": true,
+          "status": "HTTP 200「「午後の紅茶 おいしい無糖」の研究から、紅茶ポリフェノールに」"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "kirinholdings.com: HTTP 200「「午後の紅茶 おいしい無糖」の研究から、紅茶ポリフェノールに」",
+      "url_checked_at": "2026-10-18T06:22:35",
+      "buzz_history": [
+        {
+          "at": "2026-10-18T06:22:52",
+          "query": "午後の紅茶 紅茶ポリフェノール",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "キリンＨＤ、紅茶ポリフェノールによる油の付着抑制を確認、独自装置で検証",
+              "outlet": "https://kabu-ir.com/",
+              "date": "2026-10-15"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 5
+        }
+      ],
+      "buzz_measured_at": "2026-10-18T06:22:52",
+      "buzz_measured": 2,
+      "buzz_outlets": 1,
+      "yahoo": false,
+      "buzz_evidence": [
+        {
+          "title": "キリンＨＤ、紅茶ポリフェノールによる油の付着抑制を確認、独自装置で検証",
+          "outlet": "https://kabu-ir.com/",
+          "date": "2026-10-15"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 1,
+      "buzz_raw_items": 5,
+      "buzz_query": "午後の紅茶 紅茶ポリフェノール",
+      "buzz_adopted_at": "2026-10-18T06:22:52",
+      "buzz_adopted_n": 1
+    },
+    {
+      "title": "PeproMene Bioは、再発・難治性B細胞リンパ腫において、CD19 CAR T細胞療法の事前治療が失敗した場合を含め、深く持続的な完全寛解が認められた画期的な第1相臨床試験の結果が『The Lancet』誌に掲載されたことを発表：紀伊民報AGARA｜和歌山県のニュースサイ",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBFZllUUXNNeWlLSmY3VTQ3blozN1phTV9JQjg1cTFoS1NlRVI4dUJ3QTRjN0RKckt0WWhKUHhQcDVTbjNkQ3RfbklGQUUtTWhsU3A0eXNibm1heGp2UDdj?oc=5",
+      "published": "2026-10-16",
+      "source": "Googleニュース（がん 新しい治療 研究）／AGARA 紀伊民報",
+      "source_kind": "media",
+      "outlet": "AGARA 紀伊民報",
+      "outlet_host": "agara.co.jp",
+      "genre_hint": "medical",
+      "summary": "PeproMene Bioは、再発・難治性B細胞リンパ腫において、CD19 CAR T細胞療法の事前治療が失敗した場合を含め、深く持続的な完全寛解が認められた画期的な第1相臨床試験の結果が『The Lancet』誌に掲載されたことを発表：紀伊民報AGARA｜和歌山県のニュースサイ（AGARA 紀伊民報）",
+      "id": "4f3f642669",
+      "sources": [
+        "AGARA 紀伊民報"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1016/S0140-6736(26)01329-2",
+          "what_it_states": "再発・難治性B細胞非ホジキンリンパ腫患者9名を対象としたBAFF-R標的CAR-T細胞療法（PMB-CT01）の第1相臨床試験において、9名中7名（約78%）が完全寛解（CR）を達成。事前のCD19標的CAR-T療法が無効となった6名中4名でもCRが認められ、最長35か月間再発なく寛解が継続。サイトカイン放出症候群（CRS）や神経毒性（ICANS）は全例Grade 1以下で、Grade 2以上の毒性は報告されず。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://pepromenebio.com/pepromene-bio-announces-publication-in-the-lancet-of-breakthrough-phase-1-clinical-trial-results-demonstrating-deep-and-durable-complete-responses-in-relapsed-refractory-b-cell-lymphomas-including-after-pr/",
+          "what_it_states": "The Lancet誌にPMB-CT01の第1相用量漸増試験の結果が掲載されたことを発表。9人中7人の完全寛解、最長35か月の継続、全例Grade 1以下の良好な安全性を報告し、治験を全米複数施設へ拡大したことを公表。"
+        }
+      ],
+      "announced_on": "2026-09-08",
+      "headline_claim": "既存のCD19 CAR-T療法が効かなくなった再発・難治性リンパ腫に対し、新標的のCAR-T療法で深く持続的な完全寛解が認められた。",
+      "actual_content": "米City of Hopeなどが実施したBAFF-R標的CAR-T細胞療法（PMB-CT01）の第1相臨床試験（9名）の結果が医学誌『The Lancet』にレターとして掲載された。既存のCD19標的CAR-Tが無効となった6名を含む9名中7名（約78%）が完全寛解を達成し、最長35か月間再発が確認されていない。重篤な副作用であるサイトカイン放出症候群や神経毒性はすべて軽微（Grade 1）にとどまり、良好な安全性プロファイルを示した。ただし、被験者はわずか9名の初期安全性試験であり、有効性の検証や承認には今後の拡大コホートや第2相・第3相試験が必要である。",
+      "buzz_jp_est": 1,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 3,
+      "work_relevance": 1,
+      "concern_id": "cancer",
+      "entry_question": "既存のCAR-T治療が効かないリンパ腫に、新薬で寛解が続くって本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "効果は目覚ましいものの、対象はたったの9名で行われた第1相の安全性確認試験にすぎない点。実用化や保険適用までには第2相・第3相の検証が必須であり、一般の患者に届くまでにはまだ何年もかかる。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "PeproMene CAR-T",
+      "jp_title_anchor": [
+        "PeproMene",
+        "PMB-CT01",
+        "BAFF-R"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.3,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-18",
+      "topic_first_date": "2026-09-08",
+      "topic_first_source": "候補 4f3f642669 のannounced_on（PeproMene Bioは、再発・難治性B細胞リンパ腫にお）",
+      "topic_series": "4f3f642669",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "PeproMene Bioは、再発・難治性B細胞リンパ腫において、CD19 CAR T細胞療法の事前治療が失敗した場合を含め、深く持続的な完全寛解が認められた画期的な第1相臨床試験の結果が『The Lancet』誌に掲載されたことを発表：紀",
+        "id": "4f3f642669",
+        "source": "Googleニュース（がん 新しい治療 研究）／AGARA 紀伊民報"
+      }
+    },
+    {
+      "title": "【速報】OpenAIがGPT-6 Astra発表。ついにClaudeを超えたのか？99.9%は何のスコアか、いつから使えるか、先行ユーザーは何を作ったか、コスト半額の意味までAIのプロが徹底解説 Alan Brazil (hqic0H9F2X)",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFB4RDA3eS1wRkVqRm54Y2V6d3Y2RkZDWjZFSWYyWjNvdTJoNEVCZnl2Wi1nWGlCN09xS3oxVkhkemFwMVhvSVJJMV9lYWVuaC1lbVhkeDFoZ0piTUJLTEJsby1yZEZzZw?oc=5",
+      "published": "2026-10-17",
+      "source": "Googleニュース（OpenAI 発表）／Unisba Media",
+      "source_kind": "media",
+      "outlet": "Unisba Media",
+      "outlet_host": "media.unisba.ac.id",
+      "genre_hint": "ai",
+      "summary": "【速報】OpenAIがGPT-6 Astra発表。ついにClaudeを超えたのか？99.9%は何のスコアか、いつから使えるか、先行ユーザーは何を作ったか、コスト半額の意味までAIのプロが徹底解説 Alan Brazil (hqic0H9F2X)（Unisba Media）",
+      "id": "a88ffe1fe0",
+      "sources": [
+        "Unisba Media"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://openai.com/index/gpt-6-astra",
+          "what_it_states": "GPT-6 Astraを発表。FrontierMath Tier 4で98%、ARC-AGI-3で99.9%、ExploitBenchで100%、OSWorldで72.6%を記録。API価格は入力10ドル/100万トークン、出力50ドル/100万トークン。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://arcprize.org/blog/astra",
+          "what_it_states": "ARC-AGI-3 Semi-Privateテストにおいて、推論状態を保持・圧縮するOpenAI特製のProvider Adapter harnessを用いた場合は99.9%（推論コスト1万8,817ドル）を記録したが、中立なStandard harnessでのスコアは62.7%（コスト約2万6,000ドル）。96%のレベルで人間の中央値より少ないアクション数で解いた。"
+        },
+        {
+          "kind": "tech_report",
+          "url": "https://deploymentsafety.openai.com/gpt-6-astra",
+          "what_it_states": "Preparedness Frameworkにおいてサイバーセキュリティ能力が初のCritical水準に到達したため、一部のサイバー攻撃プロンプトに対する安全制限を適用して公開。"
+        }
+      ],
+      "announced_on": "2026-09-03",
+      "headline_claim": "OpenAIがGPT-6 Astraを発表し、ベンチマークで99.9%を叩き出してClaudeを超えAGI時代に突入したと主張している。",
+      "actual_content": "話題となった「99.9%」のスコアは、推論履歴を保持・圧縮して再利用する独自のアダプター（Provider Adapter）を付け、約1万9000ドルの推論コストを投じた特定環境下での記録である。第三者が公平に比較する標準ハーネス（Standard harness）でのスコアは62.7%にとどまる。OSWorld（PC操作）で72.6%など自律エージェントとしての実力は大幅に向上しているものの、API料金は出力100万トークンあたり50ドルと非常に高額で、一般ユーザーが普段使いするモデルではない。 ",
+      "buzz_jp_est": 4,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "debate": 4,
+      "wonder": 4,
+      "life_relevance": 2,
+      "work_relevance": 4,
+      "concern_id": "work_ai",
+      "entry_question": "GPT-6 Astraの『99.9%』で、本当にAIが仕事を丸ごと代行する日はもうすぐ来る？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "話題の「99.9%」はベンチマーク標準テスト（62.7%）ではなく、独自のアダプターを噛ませて約1万9000ドル（約280万円）もの計算費をかけた特別記録であり、普段使いできるコスト感ではない点。",
+      "investment_related": false,
+      "deja_vu_note": "kl034（PCを自律操作するOpenAI dotsの回）、kl043（AGI到来の条件を一次資料で確認した回）",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "GPT-6 Astra OpenAI",
+      "jp_title_anchor": [
+        "GPT-6 Astra",
+        "GPT-6"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 1,
+      "overall_score": 3.15,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-18",
+      "topic_first_date": "2026-09-03",
+      "topic_first_source": "候補 a88ffe1fe0 のannounced_on（【速報】OpenAIがGPT-6 Astra発表。ついにCl）",
+      "topic_series": "a88ffe1fe0",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-09-28",
+        "title": "Basis completes a tax workbook 2x faster with GPT-6 Astra",
+        "id": "bf0fe8cc38",
+        "source": "OpenAI"
+      }
+    },
+    {
+      "title": "清水建設が出資した米国ヒューマノイド企業「Noble Machines」の技術的強み｜森山和道 ライター、書評屋",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9ZT283NVd2THV1NnZPWFdaMWlDa1JNaHdCTnJ0ZlBRaHU4bXRQNEgtTDBBdE1QUnhXY05QTHRwbXllcDJ5ZE9SZVN6SFlTVGUtSUxiaA?oc=5",
+      "published": "2026-10-17",
+      "source": "Googleニュース（ヒューマノイド）／note",
+      "source_kind": "media",
+      "outlet": "note",
+      "outlet_host": "note.com",
+      "genre_hint": "humanoid",
+      "summary": "清水建設が出資した米国ヒューマノイド企業「Noble Machines」の技術的強み｜森山和道 ライター、書評屋（note）",
+      "id": "715195eca7",
+      "sources": [
+        "note"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.shimz.co.jp/company/about/news-release/2026/20261016.html",
+          "what_it_states": "清水建設が米国の建設向けヒューマノイド開発新興企業Noble Machinesへの出資を完了し協業を開始。2026年内にBIM/CIMデータを連携させた仮想空間シミュレーション（資機材搬送や移動・巡回）に着手し、2027年春から実際の建設現場で実機検証を行う計画。出資金額は非開示。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://www.noblemachines.ai",
+          "what_it_states": "建設・重工業向け二足歩行ロボット「MOBY」シリーズを開発。可搬重量（ペイロード）約23〜27kg（50〜60ポンド）、稼働時間約5時間、不整地や傾斜に対応する全身AI制御（Whole-Body Control）を搭載。"
+        }
+      ],
+      "announced_on": "2026-10-16",
+      "headline_claim": "清水建設が米ヒューマノイド新興Noble Machinesに出資し、過酷な建設現場で人手に頼っていた資機材搬送や巡回を代替する人型AIロボットの現場導入を本格化させる。",
+      "actual_content": "清水建設が米国のNoble Machines社への出資を完了し協業を開始したが、出資額は非開示である。対象となる人型ロボット「MOBY」は可搬重量23〜27kgの過酷環境向けモデルだが、現時点で現場に導入・配備された実績はない。公表されたロードマップでは、2026年内に3次元設計（BIM/CIM）データを活用した仮想空間シミュレーションを開始し、2027年春から実際の現場で資機材搬送や巡回などの実機テストを行う計画にとどまり、実用配備の時期や作業成功率の数値は示されていない。",
+      "buzz_jp_est": 3,
+      "verifiability": 4,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 1,
+      "work_relevance": 3,
+      "concern_id": null,
+      "entry_question": "建設現場で働く人型ロボットは、本当に現場へ来る？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "現場で重労働を肩代わりするかのように期待させるが、2026年内に行うのはPCの仮想空間シミュレーションであり、現場での実機テストすら2027年春の予定である。さらに足場が不安定で粉塵が舞う工事現場で、高価で転倒リスクのある二足歩行ロボットが専用建機や車輪型台車に勝てる必然性はまだ示されていない。",
+      "investment_related": false,
+      "deja_vu_note": "kl040（安川電機のヒューマノイド計画）など産業用ロボットの実用化ロードマップを検証した回",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "清水建設 Noble Machines",
+      "jp_title_anchor": [
+        "Noble Machines",
+        "清水建設"
+      ],
+      "announcement_type": "other",
+      "freshness": 5,
+      "overall_score": 3.4,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-18",
+      "topic_first_date": "2026-10-16",
+      "topic_first_source": "候補 715195eca7 のannounced_on（清水建設が出資した米国ヒューマノイド企業「Noble Mac）",
+      "topic_series": "715195eca7",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-17",
+        "title": "清水建設が出資した米国ヒューマノイド企業「Noble Machines」の技術的強み｜森山和道 ライター、書評屋",
+        "id": "715195eca7",
+        "source": "Googleニュース（ヒューマノイド）／note"
+      }
+    },
+    {
+      "title": "働かないAI ロボット？ ルーデンスAIがペットロボット『INU』を発売 1枚目の写真・画像",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1Ja2tqMHktZGY0dEVLd0J1X0RmSHl3ZmNPZHBCTE1FRUFURXVRSUpaeENVcWJhamtobC1YMlhCc05ybG94SU5wYVlsZ0VPMDYycmZRSnJudVU2LUhpZDNMbzJvS0NPT3ZWSUNUWnVUdEp5ZXc?oc=5",
+      "published": "2026-10-16",
+      "source": "Googleニュース（ヒューマノイド）／ロボスタ",
+      "source_kind": "media",
+      "outlet": "ロボスタ",
+      "outlet_host": "robotstart.info",
+      "genre_hint": "humanoid",
+      "summary": "働かないAI ロボット？ ルーデンスAIがペットロボット『INU』を発売 1枚目の写真・画像（ロボスタ）",
+      "id": "da90e71339",
+      "sources": [
+        "ロボスタ"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000000003.000175570.html",
+          "what_it_states": "手のひらサイズのAIコンパニオンロボット『INU』の先行販売を2026年10月16日16時よりKibidangoとGREEN FUNDINGで開始。カメラや音声録音機能は搭載せず、ミリ波レーダーとタッチセンサーで検知。ローカルAI動作で月額費用なし、実機展示を二子玉川 蔦屋家電で実施。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://kibidango.com/projects/2967",
+          "what_it_states": "超早割29,800円（一般販売予定価格39,800円、税込）、発送は2027年2月頃予定。サイズ70×70×200mm、重量約500g、可動部4自由度（うなずき・首振り・しっぽ）。バッテリー4800mAhで通常稼働2〜3時間（最長4時間）、USB Type-C充電、非防水。"
+        }
+      ],
+      "announced_on": "2026-10-16",
+      "headline_claim": "ルーデンスAIが、あえて作業を代行しない卓上ペット型AIロボット「INU」を発売した。",
+      "actual_content": "株式会社Ludens AIは、ユカイ工学のデザイン協力のもと開発した卓上型AIコンパニオンロボット「INU」のクラウドファンディング先行販売をKibidango等で開始しました。本体は重さ約500g・4自由度の可動部を備え、カメラやマイク録音を行わずミリ波レーダーと4カ所のタッチセンサー、独自モデル（Klara VLA）のローカル処理により、人の気配やなで方に合わせて表情や鳴き声で反応します。一般販売予定価格は39,800円（クラファンは29,800円〜）で発送予定は2027年2月、4800mAhバッテリーによる通常稼働時間は約2〜3時間（最長4時間）となっています。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 2,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 2,
+      "concern_id": "stress_mind",
+      "entry_question": "働かないペット型AIロボットは、デスクの癒やしになる？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "「発売」と銘打たれているものの実態は2027年2月発送予定のクラファンであり、通常稼働が2〜3時間と短いため実質的に給電ケーブルをつなぎっぱなしの卓上置物になりやすい点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "Ludens AI INU",
+      "jp_title_anchor": [
+        "ルーデンスAI",
+        "Ludens AI",
+        "INU"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.6,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-18",
+      "topic_first_date": "2026-10-16",
+      "topic_first_source": "候補 da90e71339 のannounced_on（働かないAI ロボット？ ルーデンスAIがペットロボット『I）",
+      "topic_series": "da90e71339",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "働かないAI ロボット？ ルーデンスAIがペットロボット『INU』を発売 1枚目の写真・画像",
+        "id": "da90e71339",
+        "source": "Googleニュース（ヒューマノイド）／ロボスタ"
+      }
+    },
+    {
+      "title": "【摂南大学】日本人特有の腸内細菌5タイプと食事傾向の関連を解析 共同研究論文が国際学術誌『Gut Microbes Reports』に掲載 京丹後市の住民770人を対象にAIを活用して解析 エンテロタイプごとに異なる食事傾向を明らかに：紀伊民報AGARA｜和歌山県のニュースサイト",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE50VVVCeU5fRVNlcS1GTFg0UGVmM1VhNEVTRFdDVU9IdjdveUVZVWlyaDBSR3l3OTRCUEJQMEZkYzctV1p4NWpnOEp3ZXdzam8?oc=5",
+      "published": "2026-10-15",
+      "source": "Googleニュース（研究 食事 健康 効果）／AGARA 紀伊民報",
+      "source_kind": "media",
+      "outlet": "AGARA 紀伊民報",
+      "outlet_host": "agara.co.jp",
+      "genre_hint": "food_health",
+      "summary": "【摂南大学】日本人特有の腸内細菌5タイプと食事傾向の関連を解析 共同研究論文が国際学術誌『Gut Microbes Reports』に掲載 京丹後市の住民770人を対象にAIを活用して解析 エンテロタイプごとに異なる食事傾向を明らかに：紀伊民報AGARA｜和歌山県のニュースサイト（AGARA 紀伊民報）",
+      "id": "ceb1fa3473",
+      "sources": [
+        "AGARA 紀伊民報"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1080/29933935.2026.2705623",
+          "what_it_states": "京都府京丹後市の65歳以上の地域住民770人を対象に、16S rRNA遺伝子解析で特定した日本人特有の5つの腸内細菌エンテロタイプ（Type A〜E）と、簡易型自記式食事歴法質問票（BDHQ）による栄養摂取の関連を機械学習モデル（XGBoostおよびSHAP値）を用いて解析し、各タイプ特有の栄養素摂取プロファイルを示した。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.setsunan.ac.jp/news/detail.html?id=7016",
+          "what_it_states": "摂南大学、京都府立医科大学、株式会社プリメディカが共同発表。京丹後市の65歳以上住民770名のデータから、日本人特有の5つのエンテロタイプごとに異なる日常的な食事・栄養摂取傾向がみられることをAI手法により明らかにした。"
+        }
+      ],
+      "announced_on": "2026-09-30",
+      "headline_claim": "日本人特有の腸内細菌5タイプと食事傾向の関連を、長寿地域・京丹後市の住民770人のデータとAI解析により明らかにした。",
+      "actual_content": "京都府京丹後市に住む65歳以上の住民770人を対象に、腸内細菌叢の5つの分類（Type A〜E）と質問票による栄養素摂取量との関連を横断的に調査した研究である。機械学習手法（XGBoost）とSHAP値を組み合わせて各細菌タイプと相関する栄養素の特徴を可視化することに成功した。ただし、本研究は特定の長寿地域の高齢者を対象とした横断的観察研究であり、特定の食事をとることで腸内細菌タイプが変化するかどうかという因果関係や介入効果を検証したものではない。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 1,
+      "concern_id": "gut",
+      "entry_question": "腸内細菌の『タイプ別』に食べるべきものが分かる時代はもうすぐ来る？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "京丹後市の高齢者770人のアンケートによる相関関係を見た観察研究に過ぎず、食事を変えれば腸内タイプが変わるという介入・因果関係はまだ検証されていない点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "摂南大学 エンテロタイプ",
+      "jp_title_anchor": [
+        "摂南大学",
+        "エンテロタイプ",
+        "Gut Microbes Reports"
+      ],
+      "announcement_type": "research",
+      "freshness": 3,
+      "overall_score": 2.95,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-18",
+      "topic_first_date": "2026-09-30",
+      "topic_first_source": "候補 ceb1fa3473 のannounced_on（【摂南大学】日本人特有の腸内細菌5タイプと食事傾向の関連を解）",
+      "topic_series": "ceb1fa3473",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-15",
+        "title": "【摂南大学】日本人特有の腸内細菌5タイプと食事傾向の関連を解析 共同研究論文が国際学術誌『Gut Microbes Reports』に掲載 京丹後市の住民770人を対象にAIを活用して解析 エンテロタイプごとに異なる食事傾向を明らかに：紀伊",
+        "id": "ceb1fa3473",
+        "source": "Googleニュース（研究 食事 健康 効果）／AGARA 紀伊民報"
+      }
+    },
+    {
+      "title": "Opella：新研究、咳治療の成功は症状緩和にとどまらないことを示す",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5FaVNFLUQ5U3BkUVZBOEJVVXVzMjV1emlsdlA2Q0lpbnp2VDQ3LXVCVk9ZRGxKTlduRnU2NEVPTnZ3ZmkwbkdGRkpWaVdUWW9obE84THJGSDZZd0o2aFNJRjZGTFY?oc=5",
+      "published": "2026-10-16",
+      "source": "Googleニュース（がん 新しい治療 研究）／千葉テレビ放送株式会社",
+      "source_kind": "media",
+      "outlet": "千葉テレビ放送株式会社",
+      "outlet_host": "chiba-tv.com",
+      "genre_hint": "medical",
+      "summary": "Opella：新研究、咳治療の成功は症状緩和にとどまらないことを示す（千葉テレビ放送株式会社）",
+      "id": "f09642dcd5",
+      "sources": [
+        "千葉テレビ放送株式会社"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.prnewswire.com/news-releases/opella-new-study-demonstrates-successful-cough-treatment-extends-beyond-symptom-relief-302276536.html",
+          "what_it_states": "急性湿性咳嗽（痰を伴う咳）に対してMucosolvan（アンブロキソール）またはBisolvon（ブロムヘキシン）を薬局で購入したイタリアの成人消費者を対象とした前向き観察研究（RWE Cough Study）。初回服用からの症状緩和に加え、48時間後に入眠困難・中途覚醒・疲労感を訴える割合がそれぞれ59%、56%、55%減少、72時間以内に社会生活への支障度スコア（LCQ等）が臨床的に有意に改善したと報告"
+        }
+      ],
+      "announced_on": "2026-10-15",
+      "headline_claim": "咳治療の成功は単なる症状緩和にとどまらず、患者の社会生活や睡眠の質など総合的なウェルビーイングを大きく改善することを示す研究結果が発表された。",
+      "actual_content": "一般用医薬品メーカーOpella（サノフィのコンシューマーヘルスケア部門）が、自社製品である去痰薬Mucosolvan（アンブロキソール）およびBisolvon（ブロムヘキシン）の購入者を対象にイタリアで実施した前向き観察研究（リアルワールド研究）のプレスリリースです。対照群（プラセボ等）を置いた二重盲検比較試験ではなく、薬局で購入・服用した一般成人の質問票スコアを追跡した調査であり、48時間で睡眠トラブルが約55〜59%減少したことなどを報告しています。新規の治療法や新薬の発見ではなく、半世紀近く前から使われている既存の去痰薬について、薬剤師が患者へ推奨する際のエビデンスとするためのマーケティング的要素が強い発表です。",
+      "buzz_jp_est": 1,
+      "verifiability": 4,
+      "hype_gap": 4,
+      "debate": 1,
+      "wonder": 1,
+      "life_relevance": 2,
+      "work_relevance": 1,
+      "concern_id": null,
+      "entry_question": "咳止めで睡眠や会話まで劇的に良くなるという新研究は本当？",
+      "expected_verdicts": {
+        "dreamer": "dubious",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "新薬の研究ではなく、数十年前から市販されている定番の去痰薬（アンブロキソール等）を購入した人にアンケートを取り、「咳が楽になれば当然よく眠れるし会話もできる」という当たり前の結果をウェルビーイングという言葉で包み直しただけの自社PRである点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "Opella 咳",
+      "jp_title_anchor": [
+        "Opella",
+        "咳治療"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 2.7,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-18",
+      "topic_first_date": "2026-10-15",
+      "topic_first_source": "候補 f09642dcd5 のannounced_on（Opella：新研究、咳治療の成功は症状緩和にとどまらないこ）",
+      "topic_series": "f09642dcd5",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "Opella：新研究、咳治療の成功は症状緩和にとどまらないことを示す",
+        "id": "f09642dcd5",
+        "source": "Googleニュース（がん 新しい治療 研究）／千葉テレビ放送株式会社"
+      }
+    },
+    {
+      "title": "OpenAIが常時稼働AIエージェント『dots』発表、Microsoft領域へ本格参入の『ChatGPT Space』も",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1uYUNDTzhRaVlYcHZ3aE1qNUN4TEljVDl4Qi04TnVhYm1jZEdzR2REWTU3dDJ5ckhiS1V4blFHdzBIWFBDTHhUemgyLXBGRTJfcVpOSm5uUGlnTVRCdXE3bm9WbzI?oc=5",
+      "published": "2026-10-17",
+      "source": "Googleニュース（OpenAI 発表）／www.gigamen.com",
+      "source_kind": "media",
+      "outlet": "www.gigamen.com",
+      "outlet_host": "gigamen.com",
+      "genre_hint": "ai",
+      "summary": "OpenAIが常時稼働AIエージェント『dots』発表、Microsoft領域へ本格参入の『ChatGPT Space』も（www.gigamen.com）",
+      "id": "aaa3f33ae7",
+      "sources": [
+        "www.gigamen.com"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://help.openai.com/en/articles/chatgpt-space-sharing-data-and-controls",
+          "what_it_states": "ChatGPT Spaceは従来のLibraryを置き換える共有ワークスペース機能。編集可能なドキュメント『Pages』内でユーザー各自のChatGPTやDotエージェントを呼び出して共同作業が可能。Pro、Business、Enterpriseプラン等で利用可能だが、自動更新（Keep updated）機能やスライド・表計算の編集機能はローンチ時点では後日提供（coming soon）と記載。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://help.openai.com/en/articles/manage-dots-in-chatgpt-workspaces",
+          "what_it_states": "Enterpriseワークスペースにおけるdotsの利用はデフォルトで無効（Off）に設定されており、管理者が権限を個別に有効化する必要がある。ローカルPCへのアクセス権限やカスタムルールの編集権限も初期状態ではオフ。"
+        }
+      ],
+      "announced_on": "2026-09-29",
+      "headline_claim": "OpenAIが常時稼働AI『dots』と共同作業スペース『ChatGPT Space』を発表し、Microsoftのオフィス領域に本格参入したと報じられている。",
+      "actual_content": "2026年9月29日のDevDayで発表された新機能で、従来のLibraryを置き換えてドキュメント（Pages）上で人とAIエージェントが共同編集できる環境が提供された。しかし公式ヘルプによると、目玉機能である『ドキュメントの自動更新（Keep updated）』は初期リリースには含まれず、スライドや表計算の編集も後日提供の段階にとどまる。またdotsの利用には月額100ドル以上のProプランや法人契約が必要で、Enterpriseでは管理者の手動承認が必須となっている。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 5,
+      "concern_id": "work_ai",
+      "entry_question": "ChatGPTの新機能Spaceで、WordやTeamsはもう要らなくなる？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「勝手に最新情報を集めて更新する共有ノート」と宣伝されているが、公式ヘルプを見ると自動更新機能やスライド作成は未実装の「coming soon」扱い。さらにdotsの個人利用は最低でも月額100ドルからとハードルが高い。",
+      "investment_related": false,
+      "deja_vu_note": "kl034で「OpenAI dots」の単体機能、kl038で「一人に一台のAI」として既にdotsを取り上げており、中核技術が重複している。",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "ChatGPT Space",
+      "jp_title_anchor": [
+        "ChatGPT Space",
+        "dots"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 3,
+      "overall_score": 2.95,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-18",
+      "topic_first_date": "2026-09-29",
+      "topic_first_source": "候補 aaa3f33ae7 のannounced_on（OpenAIが常時稼働AIエージェント『dots』発表、Mi）",
+      "topic_series": "aaa3f33ae7",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-17",
+        "title": "OpenAIが常時稼働AIエージェント『dots』発表、Microsoft領域へ本格参入の『ChatGPT Space』も",
+        "id": "aaa3f33ae7",
+        "source": "Googleニュース（OpenAI 発表）／www.gigamen.com"
+      },
+      "primary_verified": null,
+      "primary_check": [
+        {
+          "url": "https://help.openai.com/en/articles/chatgpt-space-sharing-data-and-controls",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+          "method": "http",
+          "kind": "official_page"
+        },
+        {
+          "url": "https://help.openai.com/en/articles/manage-dots-in-chatgpt-workspaces",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+          "method": "http",
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-10-18T06:22:45",
+      "url_check": [
+        {
+          "url": "https://help.openai.com/en/articles/chatgpt-space-sharing-data-and-controls",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）"
+        },
+        {
+          "url": "https://help.openai.com/en/articles/manage-dots-in-chatgpt-workspaces",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）"
+        }
+      ],
+      "url_ok": null,
+      "url_status": "help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+      "url_checked_at": "2026-10-18T06:22:45",
+      "buzz_history": [
+        {
+          "at": "2026-10-18T06:23:06",
+          "query": "ChatGPT Space",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "OpenAIが常時稼働AIエージェント『dots』発表、Microsoft領域へ本格参入の『ChatGPT Space』も",
+              "outlet": "www.gigamen.com",
+              "date": "2026-10-17"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 12
+        }
+      ],
+      "buzz_measured_at": "2026-10-18T06:23:06",
+      "buzz_measured": 2,
+      "buzz_outlets": 1,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "OpenAIが常時稼働AIエージェント『dots』発表、Microsoft領域へ本格参入の『ChatGPT Space』も",
+          "outlet": "www.gigamen.com",
+          "date": "2026-10-17"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 1,
+      "buzz_raw_items": 12,
+      "buzz_query": "ChatGPT Space",
+      "buzz_adopted_at": "2026-10-18T06:23:06",
+      "buzz_adopted_n": 1
+    },
+    {
+      "title": "JR西日本，新たな多機能鉄道重機2機種を営業線へ導入",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9weGxzYzhnMHlRTHo1bEJIamx5MUhqWHlvUnhmX3dqUXI4ZElYckk0UTY1ckZ4N2phMko3cHlyQlo2Zk1ldGxiOE1QMXB1TGdwX19mYnBNQQ?oc=5",
+      "published": "2026-10-17",
+      "source": "Googleニュース（人型ロボット）／鉄道ファン・railf.jp",
+      "source_kind": "media",
+      "outlet": "鉄道ファン・railf.jp",
+      "outlet_host": "railf.jp",
+      "genre_hint": "humanoid",
+      "summary": "JR西日本，新たな多機能鉄道重機2機種を営業線へ導入（鉄道ファン・railf.jp）",
+      "id": "29aac390bf",
+      "sources": [
+        "鉄道ファン・railf.jp"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.westjr.co.jp/press/article/2026/10/16/page_31121.html",
+          "what_it_states": "2024年7月に導入した多機能鉄道重機『ZIZAI』の運用知見を活かし、最大120kgを把持して重量物作業をアシストする『重作業用単腕型ロボット』（2026年10月使用開始）と、小型軽量化・ブーム長延長を図った『量産型人型ロボット』（2026年11月使用開始）の2機種を営業線へ導入。高所作業の機械化による墜落・感電事故防止と、作業人員の約3割削減を目指す。"
+        }
+      ],
+      "announced_on": "2026-10-16",
+      "headline_claim": "JR西日本が最大120kgを把持する単腕型と小型軽量化した量産型人型の「多機能鉄道重機」2機種を営業線の設備保守に導入する。",
+      "actual_content": "JR西日本は、鉄道設備メンテナンスの安全性向上と省人化を目的に、新たな多機能鉄道重機2機種を営業線へ順次導入すると発表した。高所作業車のデッキ上に搭載し最大120kgを扱う『重作業用単腕型ロボット』を2026年10月から、沿線の支障木伐採向けに改良した『量産型人型ロボット』を2026年11月から使用開始する。現場作業員の高所作業に伴う墜落・感電リスクを低減し、作業人員の約3割削減を目標としている。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 2,
+      "debate": 2,
+      "wonder": 4,
+      "life_relevance": 2,
+      "work_relevance": 4,
+      "concern_id": "mobility",
+      "entry_question": "人型重機が線路を直す時代はもう来た？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "soon"
+      },
+      "tsukkomi_material": "「人型ロボット」とはいえ自律動作するAIロボットではなく、作業員が高所作業車から操縦する遠隔マニピュレータ重機である点。また「人手3割削減」は実績ではなく今後の達成目標値である点。",
+      "investment_related": false,
+      "deja_vu_note": "kl040: 安川電機「2030年までにヒューマノイド」は本当か（現場へのロボット導入の現実度）",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "多機能鉄道重機 JR西日本",
+      "jp_title_anchor": [
+        "多機能鉄道重機",
+        "JR西日本"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.5,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-18",
+      "topic_first_date": "2026-10-16",
+      "topic_first_source": "候補 6b8b773347 のannounced_on（【動画】鉄道の保守、人手不足をロボット技術で解消図る JR西）",
+      "topic_series": "29aac390bf",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-17",
+        "title": "【動画】鉄道の保守、人手不足をロボット技術で解消図る JR西が「多機能鉄道重機」2機を導入",
+        "id": "6b8b773347",
+        "source": "Googleニュース（人型ロボット）／産経ニュース"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://www.westjr.co.jp/press/article/2026/10/16/page_31121.html",
+          "ok": true,
+          "status": "HTTP 200「新たな多機能鉄道重機2機種を営業線へ導入 &#65374;鉄」",
+          "page_title": "新たな多機能鉄道重機2機種を営業線へ導入 &#65374;鉄道現場の安全性・生産性向上と多様な人材が活躍できる環境づくり&#65374;：JR西日本",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "press_release"
+        }
+      ],
+      "primary_verified_at": "2026-10-18T06:22:32",
+      "url_check": [
+        {
+          "url": "https://www.westjr.co.jp/press/article/2026/10/16/page_31121.html",
+          "ok": true,
+          "status": "HTTP 200「新たな多機能鉄道重機2機種を営業線へ導入 &#65374;鉄」"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "westjr.co.jp: HTTP 200「新たな多機能鉄道重機2機種を営業線へ導入 &#65374;鉄」",
+      "url_checked_at": "2026-10-18T06:22:32",
+      "buzz_history": [
+        {
+          "at": "2026-10-18T06:22:50",
+          "query": "多機能鉄道重機 JR西日本",
+          "measured": 4,
+          "outlets": 3,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "JR西日本，新たな多機能鉄道重機2機種を営業線へ導入",
+              "outlet": "鉄道ファン・railf.jp",
+              "date": "2026-10-17"
+            },
+            {
+              "title": "【動画】鉄道の保守、人手不足をロボット技術で解消図る JR西が「多機能鉄道重機」2機を導入",
+              "outlet": "産経ニュース",
+              "date": "2026-10-17"
+            },
+            {
+              "title": "ＪＲ西日本、多機能鉄道重機２機種を営業線に導入、最大１２０キロ把持のロボットも",
+              "outlet": "https://kabu-ir.com/",
+              "date": "2026-10-17"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 3,
+          "raw_items": 8
+        }
+      ],
+      "buzz_measured_at": "2026-10-18T06:22:50",
+      "buzz_measured": 4,
+      "buzz_outlets": 3,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "JR西日本，新たな多機能鉄道重機2機種を営業線へ導入",
+          "outlet": "鉄道ファン・railf.jp",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "【動画】鉄道の保守、人手不足をロボット技術で解消図る JR西が「多機能鉄道重機」2機を導入",
+          "outlet": "産経ニュース",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "ＪＲ西日本、多機能鉄道重機２機種を営業線に導入、最大１２０キロ把持のロボットも",
+          "outlet": "https://kabu-ir.com/",
+          "date": "2026-10-17"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 3,
+      "buzz_raw_items": 8,
+      "buzz_query": "多機能鉄道重機 JR西日本",
+      "buzz_adopted_at": "2026-10-18T06:22:50",
+      "buzz_adopted_n": 1
+    },
+    {
+      "title": "働かないAI ロボット？ ルーデンスAIがペットロボット『INU』を発売 2枚目の写真・画像",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1lVG1mdkhPSXE0Zzd2RkhRcU9yMDQxaTlWdFA5Mzk4aU5OelRLLUU1RlJWZ3N3VWZCeHhsRnNKMXBhUzFEMVctUUUyZHpTTFpZX0t4UjN3OHNQOUc5YllyQWdaR0ZkaHB4U082dzVieWR6Qjg?oc=5",
+      "published": "2026-10-16",
+      "source": "Googleニュース（ヒューマノイド）／ロボスタ",
+      "source_kind": "media",
+      "outlet": "ロボスタ",
+      "outlet_host": "robotstart.info",
+      "genre_hint": "humanoid",
+      "summary": "働かないAI ロボット？ ルーデンスAIがペットロボット『INU』を発売 2枚目の写真・画像（ロボスタ）",
+      "id": "80e613b08d",
+      "sources": [
+        "ロボスタ"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000000003.000175570.html",
+          "what_it_states": "株式会社Ludens AIがAIコンパニオンロボット『INU（イヌ）』のクラウドファンディング先行販売を2026年10月16日に開始。一般販売予定価格は税込39,800円で2027年2月配送予定。カメラ非搭載でミリ波レーダーとタッチセンサーを使用し、Klara OSと長期記憶システムを搭載。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://ludensai.com/ja/inu",
+          "what_it_states": "手のひらサイズのデスクコンパニオンロボット。人の言葉は話さず目のディスプレイや鳴き声で感情を表現。Magic Keyによるセンサーオフ機能やオフラインでの基本動作に対応。"
+        }
+      ],
+      "announced_on": "2026-10-16",
+      "headline_claim": "仕事や作業を一切代行しない、撫でて愛でるだけのAIペットロボット「INU」が発売された。",
+      "actual_content": "スタートアップのLudens AIが2026年10月16日、手のひらサイズのAIコンパニオンロボット「INU」のクラウドファンディング先行販売を開始した（一般予定価格39,800円、2027年2月発送予定）。タスク処理機能は持たず、ミリ波レーダーとタッチセンサーで人の気配や接触を検知し、目のディスプレイや仕草・鳴き声で反応する。プライバシー配慮のためカメラは搭載せず、独自OSと長期記憶システムでユーザーの生活リズムを学習する仕様となっている。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 2,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 2,
+      "concern_id": "stress_mind",
+      "entry_question": "「働かないAIペットロボット」は、本当にデスクの癒やしになる？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "「心の効率化」を謳うものの、要するに画面のついた動くぬいぐるみであり、数週間で飽きてデスクの置物になる懸念が拭えない。またクラファン段階であり、2027年2月に計画通り量産・出荷できるかも見極めが必要。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "ルーデンスAI INU",
+      "jp_title_anchor": [
+        "ルーデンスAI",
+        "Ludens AI",
+        "INU"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.6,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-18",
+      "topic_first_date": "2026-10-16",
+      "topic_first_source": "候補 80e613b08d のannounced_on（働かないAI ロボット？ ルーデンスAIがペットロボット『I）",
+      "topic_series": "80e613b08d",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "働かないAI ロボット？ ルーデンスAIがペットロボット『INU』を発売 1枚目の写真・画像",
+        "id": "da90e71339",
+        "source": "Googleニュース（ヒューマノイド）／ロボスタ"
+      }
+    },
+    {
+      "title": "【速報】GPT-5.5正式発表！OpenAIが本気で「AIエージェント」を本格化させた！ Food Safety News (du57li2lwK)",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE53MDFmcGlHSmhfNUFvQjBDTHE2Q3oyRmpRZVhBNFdjbFZETlBzaThsTFV0dTRRWWlxNEZMTWRxb01mMy1WQXZPZjZDQVBXM3JzZDBORWVBakFUQjJMb1lkNjRvNHlfUQ?oc=5",
+      "published": "2026-10-14",
+      "source": "Googleニュース（OpenAI 発表）／Unisba Media",
+      "source_kind": "media",
+      "outlet": "Unisba Media",
+      "outlet_host": "media.unisba.ac.id",
+      "genre_hint": "ai",
+      "summary": "【速報】GPT-5.5正式発表！OpenAIが本気で「AIエージェント」を本格化させた！ Food Safety News (du57li2lwK)（Unisba Media）",
+      "id": "da6a824109",
+      "sources": [
+        "Unisba Media"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://openai.com/index/introducing-gpt-5-5/",
+          "what_it_states": "GPT-5.5を2026年4月23日に発表。自律エージェント作業向けに設計され、Terminal-Bench 2.0で82.7%、OSWorldで78.7%（人間基準72.4%超）、FrontierMath Tier 1-3で51.7%を達成。Codexでのタスク完了に必要なトークン数をGPT-5.4より削減"
+        },
+        {
+          "kind": "tech_report",
+          "url": "https://openai.com/index/gpt-5-5-system-card/",
+          "what_it_states": "2026年4月23日公開（4月24日API追記）。約200社の早期アクセスパートナーから実利用フィードバックを収集し、サイバーセキュリティ・生物学リスクのレッドチーミングを実施したシステムカード"
+        }
+      ],
+      "announced_on": "2026-04-23",
+      "headline_claim": "OpenAIがGPT-5.5を正式発表し、AIエージェント機能を本格化させた。",
+      "actual_content": "一次資料によればGPT-5.5の正式発表日は2026年4月23日であり、10月の新発表ではない。取り上げられた見出しは、4月に公開された個人クリエイターの日本語YouTube解説動画タイトル（動画ID: du57li2lwK）を、海外のスクレイピングサイト（Unisba Media等）が無断転載・再配信したスパム誤報である。皮肉にも2026年10月14日は、OpenAIがChatGPT UI上からGPT-5.5の提供を終了（引退）させた当日にあたる。",
+      "buzz_jp_est": 1,
+      "verifiability": 5,
+      "hype_gap": 5,
+      "debate": 1,
+      "wonder": 1,
+      "life_relevance": 2,
+      "work_relevance": 3,
+      "concern_id": "work_ai",
+      "entry_question": "GPT-5.5が新発表されたって本当？",
+      "expected_verdicts": {
+        "dreamer": "dubious",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "新発表どころか約半年前（2026年4月）のYouTube動画タイトルを海外スパムサイトが転載した周回遅れの誤報で、むしろ10月14日はChatGPT上からGPT-5.5が引退した日である点。",
+      "investment_related": false,
+      "deja_vu_note": "kl034（OpenAI dots）、kl042（Gemini 4 Argon）などのAIモデル評価回",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "GPT-5.5 OpenAI",
+      "jp_title_anchor": [
+        "GPT-5.5"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 1,
+      "overall_score": 1.9,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-18",
+      "topic_first_date": "2026-04-23",
+      "topic_first_source": "候補 da6a824109 のannounced_on（【速報】GPT-5.5正式発表！OpenAIが本気で「AIエ）",
+      "topic_series": "da6a824109",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-14",
+        "title": "【速報】GPT-5.5正式発表！OpenAIが本気で「AIエージェント」を本格化させた！ Food Safety News (du57li2lwK)",
+        "id": "da6a824109",
+        "source": "Googleニュース（OpenAI 発表）／Unisba Media"
+      }
+    },
+    {
+      "title": "新たな研究、アラバマ州の地方部の双極性障害患者の家庭にケトジェニック療法を提供",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9MTFpNaVFzUXdwNEcwa2FEbEFKRW9UYmpSUzZsMmFaaUktN056ZEdzUVk5SHcyWTZnTXh6d29MVjVvSnYtZDBKTjQtSTJEdTlOMDNvQ3U0cnZ1NUZaY1Nnbjlmaw?oc=5",
+      "published": "2026-10-15",
+      "source": "Googleニュース（研究 食事 健康 効果）／時事ドットコム",
+      "source_kind": "media",
+      "outlet": "時事ドットコム",
+      "outlet_host": "jiji.com",
+      "genre_hint": "food_health",
+      "summary": "新たな研究、アラバマ州の地方部の双極性障害患者の家庭にケトジェニック療法を提供（時事ドットコム）",
+      "id": "9e1a9f87ef",
+      "sources": [
+        "時事ドットコム"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.businesswire.com/news/home/20261014178512/en/",
+          "what_it_states": "Baszucki Groupが、アラバマ大学バーミングハム校（UAB）モンゴメリー地域キャンパスの研究チームが主導する臨床試験への助成を発表。アラバマ州中部の農村部で、地元フードバンク（HAFB）と連携してケトジェニック食材ボックスを家庭に配送し、既存の気分安定薬治療を受ける双極性障害患者最大100名を対象に、6か月間の精神医学的および代謝的影響をパイロット検証する計画が明記されている。"
+        }
+      ],
+      "announced_on": "2026-10-14",
+      "headline_claim": "アラバマ州の地方部に暮らす双極性障害患者の自宅にケトジェニック食品を届け、症状や代謝の改善を検証する研究が始まった。",
+      "actual_content": "本発表は臨床研究の成果報告ではなく、パイロット試験の開始と助成決定のアナウンスである。アラバマ大学バーミングハム校（UAB）のウィル・ラトランド医師らが地元フードバンク（HAFB）と組み、地域の食肉や農産物を使ったケトジェニック食材ボックスを家庭へ直接配送し、既存治療と併用した効果を最大100名・6か月間にわたって追跡する。精神科リソースが不足する過疎地域での食事療法の実行可能性や、入院・救急受診の抑制効果を測る探索的段階であり、双極性障害に対する有効性のデータはまだ出ていない。",
+      "buzz_jp_est": 1,
+      "verifiability": 4,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 1,
+      "concern_id": "stress_mind",
+      "entry_question": "ケトジェニック食を届けると双極性障害がよくなる、は本当？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "「治療効果が実証された」という話ではなく、「これから最大100人で試験を始めます」という資金提供の発表にすぎない点。厳格な糖質制限を自宅で自発的に6か月も続けられるのかというハードルも残る。",
+      "investment_related": false,
+      "deja_vu_note": "精神疾患に対するケトジェニック療法（代謝精神医学）を取り上げた過去回はなく、テーマの重複はない。",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "Baszucki Group 双極性障害",
+      "jp_title_anchor": [
+        "Baszucki Group",
+        "双極性障害",
+        "ケトジェニック療法"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.1,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-18",
+      "topic_first_date": "2026-10-14",
+      "topic_first_source": "候補 9e1a9f87ef のannounced_on（新たな研究、アラバマ州の地方部の双極性障害患者の家庭にケトジ）",
+      "topic_series": "9e1a9f87ef",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-15",
+        "title": "新たな研究、アラバマ州の地方部の双極性障害患者の家庭にケトジェニック療法を提供",
+        "id": "9e1a9f87ef",
+        "source": "Googleニュース（研究 食事 健康 効果）／時事ドットコム"
+      }
+    },
+    {
+      "title": "NVIDIAの新モデル「Nemotron 3.5」、オープンウェイトAIの新たな一歩",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE42MkRUWG1aVUZBVmhia0dQNnFQaFhYYnM2dko4VmwzSlBnMGtiTzZYY0NEZk8xcFNQN3lnaFc5VmFjTkVPaUtsenBXRUJDQTVWa2c4?oc=5",
+      "published": "2026-10-16",
+      "source": "Googleニュース（生成AI 新モデル）／ZDNET Japan",
+      "source_kind": "media",
+      "outlet": "ZDNET Japan",
+      "outlet_host": "japan.zdnet.com",
+      "genre_hint": "ai",
+      "summary": "NVIDIAの新モデル「Nemotron 3.5」、オープンウェイトAIの新たな一歩（ZDNET Japan）",
+      "id": "59471b56ec",
+      "sources": [
+        "ZDNET Japan"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://blogs.nvidia.com/blog/nemotron-3-5-super-vl/",
+          "what_it_states": "総パラメータ120B・アクティブ12BのマルチモーダルMoEモデル『Nemotron 3.5 Super VL』およびローカル24GBメモリで動作する『Bolt 74B-A9B』（9Bアクティブ）を発表。同クラス比最大5倍のスループット、Artificial Analysis Intelligence Indexで米国オープンウェイト首位の26.5点を記録と記載。"
+        },
+        {
+          "kind": "tech_report",
+          "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf",
+          "what_it_states": "Mamba-2とTransformerのハイブリッド構造および再帰的投機的デコーディングを採用。1兆トークンの蒸留と継続事前学習を実施し、CharXivで80.8%を記録する一方、SWE-bench Verifiedは71.1%にとどまる。"
+        }
+      ],
+      "announced_on": "2026-10-15",
+      "headline_claim": "NVIDIAが新オープンモデル「Nemotron 3.5」を発表し、他社比5倍の超高速処理で米国のオープンウェイトAI首位に躍り出た。",
+      "actual_content": "NVIDIAが公開した『Nemotron 3.5 Super VL』は、1200億パラメータ（推論時有効120億）のMamba-Transformerハイブリッド構造を採用し、Artificial Analysisの知能指数で米国製オープンモデル首位となる26.5点を獲得した。同時に24GBのVRAMでローカル稼働する2ビット量子化版『Bolt 74B-A9B』も投入されたが、世界首位の中国製オープンモデル（MiMo-V2.6-Pro、46点）などには及ばず、実務コード検証ベンチマーク（SWE-bench Verified）も71.1%にとどまる。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 4,
+      "concern_id": "work_ai",
+      "entry_question": "NVIDIAのオープンAIは、社内データを預けずに自前で使える？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「米国首位・5倍速」と謳うが、世界首位の中国勢（MiMo-V2.6-Proの46点）にはスコアで大差をつけられている。また特定業務で最高精度を出すには企業側での追加学習（ポストトレーニング）が前提であり、箱から出してそのまま万能に動くわけではない。",
+      "investment_related": false,
+      "deja_vu_note": "kl034（PCを閉じても働くAI）、kl038（一人に一台AI）、kl041（無料開放モデルSarashina）と業務AIの系譜で近いが、NVIDIAの自社オンプレ/エッジ推論特化型MoEモデルの検証は初。",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "Nemotron NVIDIA",
+      "jp_title_anchor": [
+        "Nemotron",
+        "NVIDIA"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.35,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-18",
+      "topic_first_date": "2026-10-15",
+      "topic_first_source": "候補 59471b56ec のannounced_on（NVIDIAの新モデル「Nemotron 3.5」、オープン）",
+      "topic_series": "59471b56ec",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-16",
+        "title": "NVIDIAがAIエージェントによるタスクをローカルで実行するための「Nemotron 3.5 Bolt 74B-A9B 24GB」を発表",
+        "id": "24aee61631",
+        "source": "GIGAZINE"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://blogs.nvidia.com/blog/nemotron-3-5-super-vl/",
+          "ok": true,
+          "status": "HTTP 200「Open From Data Center to Deskt」",
+          "page_title": "Open From Data Center to Desktop: NVIDIA Expands Nemotron Family With Highest Efficiency Super VL and Bolt Models | NVID",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_blog"
+        },
+        {
+          "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf",
+          "ok": true,
+          "status": "HTTP 200",
+          "page_title": "",
+          "anchor_hit": false,
+          "method": "http",
+          "kind": "tech_report"
+        }
+      ],
+      "primary_verified_at": "2026-10-18T06:23:32",
+      "url_check": [
+        {
+          "url": "https://blogs.nvidia.com/blog/nemotron-3-5-super-vl/",
+          "ok": true,
+          "status": "HTTP 200「Open From Data Center to Deskt」"
+        },
+        {
+          "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf",
+          "ok": true,
+          "status": "HTTP 200"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "blogs.nvidia.com: HTTP 200「Open From Data Center to Deskt」 ／ research.nvidia.com: HTTP 200",
+      "url_checked_at": "2026-10-18T06:23:32",
+      "buzz_history": [
+        {
+          "at": "2026-10-18T06:22:55",
+          "query": "Nemotron NVIDIA",
+          "measured": 5,
+          "outlets": 10,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "NVIDIA Nemotron Labs Dory 1.0 4B：静かなHFリリース",
+              "outlet": "OrcaRouter",
+              "date": "2026-10-17"
+            },
+            {
+              "title": "Nemotron 3.5 Super VL - 120Bオープンモデルの文脈長とBolt公開日",
+              "outlet": "TECH NOISY",
+              "date": "2026-10-17"
+            },
+            {
+              "title": "NVIDIAが画像・動画・文章をまとめて理解するオープンウェイトAI「Nemotron 3.5 Super VL」を公開、処理コストを40分の1に削減する事例も",
+              "outlet": "GIGAZINE",
+              "date": "2026-10-16"
+            }
+          ],
+          "trend": 0.96,
+          "articles_14d": 45,
+          "raw_items": 85
+        }
+      ],
+      "buzz_measured_at": "2026-10-18T06:22:55",
+      "buzz_measured": 5,
+      "buzz_outlets": 10,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "NVIDIA Nemotron Labs Dory 1.0 4B：静かなHFリリース",
+          "outlet": "OrcaRouter",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "Nemotron 3.5 Super VL - 120Bオープンモデルの文脈長とBolt公開日",
+          "outlet": "TECH NOISY",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "NVIDIAが画像・動画・文章をまとめて理解するオープンウェイトAI「Nemotron 3.5 Super VL」を公開、処理コストを40分の1に削減する事例も",
+          "outlet": "GIGAZINE",
+          "date": "2026-10-16"
+        }
+      ],
+      "buzz_trend": 0.96,
+      "buzz_articles_14d": 45,
+      "buzz_raw_items": 85,
+      "buzz_query": "Nemotron NVIDIA",
+      "buzz_adopted_at": "2026-10-18T06:22:55",
+      "buzz_adopted_n": 1
     }
   ]
 }
