@@ -196,12 +196,16 @@
       "scene_id": 1,
       "narration": "大輔「AIが研究を爆発的に速めたら、寿命も延びるでしょ！」",
       "narrator": "dialogue",
-      "lines_hash": "a126dbee54b0"
+      "lines_hash": "a126dbee54b0",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "teaser",
       "bgm_role": "intro",
-      "ken_burns": "zoom_out",
+      "ken_burns": "zoom_in",
       "reuse_scene_id": 12,
       "lines": [
         {
@@ -223,7 +227,11 @@
       "scene_id": 2,
       "narration": "沙織「速くならないものが、一つある。」",
       "narrator": "dialogue",
-      "lines_hash": "412dfcb5c6d4"
+      "lines_hash": "412dfcb5c6d4",
+      "zoom_anchor": {
+        "x": 0.67,
+        "y": 0.53
+      }
     },
     {
       "type": "teaser",
@@ -249,12 +257,16 @@
       "scene_id": 3,
       "narration": "大輔「ロボットの手術も、人の手なしで進んでる。」",
       "narrator": "dialogue",
-      "lines_hash": "6c86d6ab24cd"
+      "lines_hash": "6c86d6ab24cd",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "teaser",
       "bgm_role": "intro",
-      "ken_burns": "zoom_out",
+      "ken_burns": "zoom_in",
       "reuse_scene_id": 12,
       "lines": [
         {
@@ -276,7 +288,11 @@
       "scene_id": 4,
       "narration": "沙織「で、人間は200歳まで生きられるの？」",
       "narrator": "dialogue",
-      "lines_hash": "a1a6125127b3"
+      "lines_hash": "a1a6125127b3",
+      "zoom_anchor": {
+        "x": 0.67,
+        "y": 0.53
+      }
     },
     {
       "type": "setup",
@@ -394,7 +410,11 @@
       "scene_id": 5,
       "narration": "大輔「お題は寿命。AIで薬も手術も速くなったら、人間は200歳まで生きられるか。」\n沙織「研究が爆発するかは、前の回で、まだ分からないって確かめたよね。」\n大輔「だから今日は、仮に爆発したら、で考える。」\n沙織「なら先に結論。私の予想は、200歳は来ない。」\n大輔「僕は、200歳は無理でも、寿命の延びはAIで加速すると思う。」\n沙織「面白いのは、その先。爆発しても、速くならない部分がある。」",
       "narrator": "dialogue",
-      "lines_hash": "88381bb4676e"
+      "lines_hash": "88381bb4676e",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "paper",
@@ -515,7 +535,11 @@
       "scene_id": 6,
       "narration": "大輔「まずは薬。AIが標的を選んで、分子を設計した薬が、もうヒトの試験に入ってる。」\n沙織「入るだけなら、昔からたくさんある。最後まで残るのは、一握りでしょ。」\n大輔「僕なら、これに使う。病気を一つずつ潰す薬を、AIで次々に作る。外れが減れば、早く届く。」\n沙織「外れが減る、の数字はある？ 候補薬をまとめて追った分析でもないと、言えないでしょ。」\n大輔「それが、ある。」",
       "narrator": "dialogue",
-      "lines_hash": "fa2014ad6ab8"
+      "lines_hash": "fa2014ad6ab8",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "check",
@@ -964,7 +988,11 @@
       "scene_id": 9,
       "narration": "大輔「次は手術。ジョンズ・ホプキンス大学のロボットが、胆のうを取る手術の工程を、人の手なしでやり切った。」\n沙織「どこで？ 生きた体で？」\n大輔「取り出した豚の胆のう、8個で。8個とも最後まで。」\n沙織「生きた体は、まだね。腕のいい手術が増えるのは、いいことだけど。」\n大輔「僕なら、薬と手術を合わせて使う。若いうちに病気で亡くなる人を減らす。そうすれば、平均寿命は延び続ける。」\n沙織「そこは、ちょうど確かめた論文がある。」",
       "narrator": "dialogue",
-      "lines_hash": "723410610fb9"
+      "lines_hash": "723410610fb9",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "check",
@@ -1249,7 +1277,7 @@
       "round": 3,
       "round_title": "老化を止めれば、200歳？",
       "reference_index": 5,
-      "ken_burns": "zoom_out",
+      "ken_burns": "zoom_in",
       "image_prompt": "A biology laboratory late in the evening, quiet and dim: a long row of glowing cell-culture incubators with glass inner doors showing stacked culture flasks with pink-orange medium, a biosafety cabinet softly lit, an idle robotic arm parked on a bench beside petri dishes, a dark window with a night sky. Calm teal and slate tones with one warm coral glow from an incubator. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
       "lines": [
         {
@@ -1412,7 +1440,11 @@
       "scene_id": 12,
       "narration": "大輔「でも、老化そのものを止めれば、話は別でしょ。AIの会社、Anthropicのトップが、2024年に書いたエッセイがある。」\n大輔「20世紀に平均寿命は、約40歳から約75歳へ、ほぼ2倍。AIで研究が速まれば、150歳は流れの延長線上だ、って。」\n沙織「20世紀の倍増は、主に子どもの早すぎる死を防いだ分。本人も、老化を遅らせる手段は前の世紀とは違う、と書いてる。」\n沙織「で、その手段は今どこまで来てる？」\n大輔「視神経の細胞を若返らせる狙いの遺伝子治療が、目の病気で、最初のヒトの試験に入った。」\n大輔「犬の長寿薬も、1,300頭で、寿命が延びるかを見る試験をしてる。」\n沙織「ヒトの方は、主に安全性を見る段階。犬は、寿命の結果待ち。ヒトの寿命が延びた証拠は、まだ無い。」",
       "narrator": "dialogue",
-      "lines_hash": "8fb682a0dcc4"
+      "lines_hash": "8fb682a0dcc4",
+      "zoom_anchor": {
+        "x": 0.67,
+        "y": 0.53
+      }
     },
     {
       "type": "check",
@@ -1942,7 +1974,11 @@
       "scene_id": 15,
       "narration": "大輔「僕の予想は、寿命の延びはAIで加速する。今ある証拠では、そうは言えなかった。延び方は、むしろ遅くなってる。」\n沙織「私の予想は、そのまま。ただ、AIの薬がヒトで兆しを見せたのは、思ったより進んでた。」\n大輔「判定は、僕も「まだ眉唾」。200歳は、上限を置かない推計の、さらに外だ。ただ、早すぎる死を減らす薬は、AIで当たりやすくなる兆しがある。」\n沙織「私も「まだ眉唾」。理由は、老化そのものに効くと、ヒトで確かめられた手段が、まだ無いから。」\n沙織「寿命が急に延びた、というニュースを見たら、平均寿命の延びが毎年3か月半を超えたか、100歳に届く人の割合が増えたかで確かめる。」\n大輔「AIの新薬なら、第I相か第II相か。効くかを見始めるのは、第II相から。」\n沙織「どちらも、2026年10月17日時点の見立て。3年より先は、そこまでは分からない。」",
       "narrator": "dialogue",
-      "lines_hash": "f340fa6c8ea1"
+      "lines_hash": "f340fa6c8ea1",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "closing",
@@ -2021,7 +2057,11 @@
       "scene_id": 16,
       "narration": "沙織「速くなるのは、設計図まで。体の時間は、待つしかないのね。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。論文は概要欄に載せています。チャンネル登録して、待っていてください。」",
       "narrator": "dialogue",
-      "lines_hash": "0eb3fac3d46f"
+      "lines_hash": "0eb3fac3d46f",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     }
   ],
   "shorts": [
