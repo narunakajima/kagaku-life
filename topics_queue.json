@@ -2580,14 +2580,14 @@
     },
     {
       "episode_id": "kl046",
-      "status": "confirmed",
+      "status": "produced",
       "slot_type": "topic",
       "genre": "ai",
       "health": false,
       "domain": "life",
       "concern_id": null,
-      "entry_question": "AIで生産性が爆上がりし、モノの値段が落ち、お金の意味がなくなり、ベーシックインカムで働かなくてよくなる——とマスク氏は言う。これは実現するのか。どこまでが根拠のある話で、どこからが飛躍なのか。",
-      "title": "AIで「お金の意味がなくなる」は実現する？マスク氏の2036年予測を経済データで確認",
+      "entry_question": "AIとロボットの能力が爆発的に伸びれば、モノがあふれ、お金の意味がなくなり、全員に配られる収入で働かなくてよくなる——とマスク氏は言う。その爆発は本当に起きているのか。起きたら、お金は本当に要らなくなるのか。",
+      "title": "AIが爆発的に進んだら、お金は要らなくなる？マスク氏の2036年予測を確認",
       "format": "dialogue",
       "structure": "rounds_v3",
       "template": "myth_buster",
@@ -2598,10 +2598,10 @@
       "verdict_as_of": "2026-10-18",
       "references": [
         {
-          "title": "An interview with Elon Musk（Recorded July 20th 2026、85分）",
+          "title": "An interview with Elon Musk（Recorded on July 20th 2026、85分06秒）",
           "authors": [],
           "year": 2026,
-          "venue": "The Economist 公式YouTube（2026-07、https://www.youtube.com/watch?v=XuoqKYxDHVc）",
+          "venue": "The Economist 公式YouTube（2026年7月20日収録）",
           "url": "https://www.youtube.com/watch?v=XuoqKYxDHVc",
           "is_preprint": false,
           "institution": "The Economist",
@@ -2626,9 +2626,9 @@
             "Emilie Vestergaard"
           ],
           "year": 2025,
-          "venue": "NBER Working Paper 33777（2026-03改訂）",
+          "venue": "NBER Working Paper 33777（2025年5月、2026年3月改訂）",
           "url": "https://www.nber.org/papers/w33777",
-          "is_preprint": false,
+          "is_preprint": true,
           "institution": "シカゴ大学・コペンハーゲン大学",
           "source_kind": "paper"
         },
@@ -2643,41 +2643,103 @@
             "Sarah Miller"
           ],
           "year": 2024,
-          "venue": "NBER Working Paper 32719（2026-08改訂）",
+          "venue": "NBER Working Paper 32719（2024年7月、2026年8月改訂）",
           "url": "https://www.nber.org/papers/w32719",
-          "is_preprint": false,
+          "is_preprint": true,
           "institution": "トロント大学ほか（OpenResearch）",
           "source_kind": "paper"
         },
         {
-          "title": "LLM inference price trends",
-          "authors": [],
+          "title": "LLM inference prices have fallen rapidly but unequally across tasks",
+          "authors": [
+            "Ben Cottier",
+            "Ben Snodin",
+            "David Owen",
+            "Tom Adamczewski"
+          ],
           "year": 2025,
-          "venue": "Epoch AI",
+          "venue": "Epoch AI Data Insight（2025年3月12日）",
           "url": "https://epoch.ai/data-insights/llm-inference-price-trends",
           "is_preprint": false,
           "institution": "Epoch AI",
           "source_kind": "data_insight"
         },
         {
-          "title": "令和6年度 一般会計決算概要",
+          "title": "令和７年度 租税及び印紙収入決算額調／令和７年度決算概要",
           "authors": [],
-          "year": 2025,
-          "venue": "財務省",
-          "url": "https://www.mof.go.jp/policy/budget/budger_workflow/account/fy2024/ke0711b.pdf",
+          "year": 2026,
+          "venue": "財務省（2026年7月）",
+          "url": "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf",
           "is_preprint": false,
           "institution": "財務省",
           "source_kind": "official_stat"
         },
         {
-          "title": "家計調査 2025年（二人以上の世帯）",
+          "title": "家計調査報告（家計収支編）2025年（令和7年）平均結果の概要",
           "authors": [],
           "year": 2026,
           "venue": "総務省統計局",
-          "url": "https://www.stat.go.jp/data/kakei/",
+          "url": "https://www.stat.go.jp/data/kakei/sokuhou/tsuki/pdf/fies_gaikyo2025.pdf",
           "is_preprint": false,
           "institution": "総務省統計局",
           "source_kind": "official_stat"
+        },
+        {
+          "title": "人口推計（2026年4月1日現在 確定値）",
+          "authors": [],
+          "year": 2026,
+          "venue": "総務省統計局（2026年9月24日公表）",
+          "url": "https://www.stat.go.jp/data/jinsui/new.html",
+          "is_preprint": false,
+          "institution": "総務省統計局",
+          "source_kind": "official_stat"
+        },
+        {
+          "title": "Time Horizon 1.1",
+          "authors": [],
+          "year": 2026,
+          "venue": "METR（2026年1月29日）",
+          "url": "https://metr.org/blog/2026-1-29-time-horizon-1-1/",
+          "is_preprint": false,
+          "institution": "METR",
+          "source_kind": "report"
+        },
+        {
+          "title": "Frontier Risk Report (February to March 2026)",
+          "authors": [],
+          "year": 2026,
+          "venue": "METR（2026年5月19日公表）",
+          "url": "https://metr.org/blog/2026-05-19-frontier-risk-report/",
+          "is_preprint": false,
+          "institution": "METR",
+          "source_kind": "report"
+        },
+        {
+          "title": "Scenarios for the Transition to AGI",
+          "authors": [
+            "Anton Korinek",
+            "Donghyun Suh"
+          ],
+          "year": 2024,
+          "venue": "NBER Working Paper 32255（2024年3月）／arXiv:2403.12107",
+          "url": "https://www.nber.org/papers/w32255",
+          "is_preprint": true,
+          "institution": "バージニア大学・ブルッキングス研究所・GovAI",
+          "source_kind": "paper"
+        },
+        {
+          "title": "Artificial Intelligence and Economic Growth",
+          "authors": [
+            "Philippe Aghion",
+            "Benjamin F. Jones",
+            "Charles I. Jones"
+          ],
+          "year": 2017,
+          "venue": "NBER Working Paper 23928（2017年10月）",
+          "url": "https://www.nber.org/papers/w23928",
+          "is_preprint": true,
+          "institution": "コレージュ・ド・フランス・ノースウェスタン大学・スタンフォード大学",
+          "source_kind": "paper"
         }
       ],
       "hook_idea": "マスク氏「2036年にはお金は重要でなくなる」。その前提の『モノは足りるほど安くなる』『小切手を配ってもデフレ』は、経済データと実験で確かめられるか。",
