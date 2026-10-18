@@ -1,0 +1,945 @@
+{
+  "episode_id": "kl046",
+  "format": "dialogue",
+  "structure": "rounds_v3",
+  "template": "myth_buster",
+  "source_type": "topic",
+  "verdict_as_of": "2026-10-18",
+  "genre": "ai",
+  "health": false,
+  "episode_title": "AIで「お金の意味がなくなる」は実現する？マスク氏の2036年予測を経済データで確かめる",
+  "youtube_title": "AIで『お金の意味がなくなる』は本当？マスク氏の予測を経済データで確認",
+  "entry_question": "AIで生産性が爆上がりし、モノの値段が落ち、お金の意味がなくなり、全員に配られる収入で働かなくてよくなる——とマスク氏は言う。これは実現するのか。どこまでが根拠のある話で、どこからが飛躍なのか。",
+  "verdict": {
+    "dreamer": "decade",
+    "skeptic": "dubious"
+  },
+  "hook_lines": [
+    "お金が要らなくなる？",
+    "マスク氏の予測を検証"
+  ],
+  "thumbnail_headline": "お金が\n要らなくなる？",
+  "thumbnail_exprs": {
+    "dreamer": "excited",
+    "skeptic": "doubt"
+  },
+  "thumbnail_prompt": "Calm, bright daytime editorial illustration of a clean, modern automated factory floor seen from the front: a soft pale blue-gray back wall and a light gray floor running the full width of the frame, continuous across the whole frame with no panels, boxes, borders or abrupt colour changes. Keep the left 30%, the right 30% and the top 35% of the frame quiet and uncluttered (soft gradient only), but the wall and floor must visibly continue unbroken behind them. In the horizontal center, in the vertical band between 38% and 80% of the frame height: a short conveyor belt carrying neat plain cardboard boxes and baskets of fresh vegetables, with two simple generic industrial robot arms in slate and teal beside it, and one large softly glowing warm coral coin with a plain blank face floating just above the belt. No people, no humanoid robots. No logos, no brand marks, no readable text, no letters, no numbers, no currency symbols.",
+  "youtube_tags": [
+    "イーロン・マスク",
+    "ユニバーサル・ハイインカム",
+    "ベーシックインカム",
+    "AI",
+    "生産性",
+    "お金の未来",
+    "働かなくていい未来",
+    "AIの進化",
+    "経済",
+    "答え合わせ",
+    "科学ニュース"
+  ],
+  "references": [
+    {
+      "title": "An interview with Elon Musk（Recorded on July 20th 2026、85分06秒）",
+      "authors": [],
+      "year": 2026,
+      "venue": "The Economist 公式YouTube（2026年7月20日収録）",
+      "url": "https://www.youtube.com/watch?v=XuoqKYxDHVc",
+      "is_preprint": false,
+      "institution": "The Economist",
+      "source_kind": "interview"
+    },
+    {
+      "title": "The Simple Macroeconomics of AI",
+      "authors": [
+        "Daron Acemoglu"
+      ],
+      "year": 2024,
+      "venue": "NBER Working Paper 32487 / Economic Policy 40(121), 2025",
+      "url": "https://www.nber.org/papers/w32487",
+      "is_preprint": false,
+      "institution": "MIT",
+      "source_kind": "paper"
+    },
+    {
+      "title": "Still Waters, Rapid Currents: Early Labor Market Transformation under Generative AI（旧題 Large Language Models, Small Labor Market Effects）",
+      "authors": [
+        "Anders Humlum",
+        "Emilie Vestergaard"
+      ],
+      "year": 2025,
+      "venue": "NBER Working Paper 33777（2025年5月、2026年3月改訂）",
+      "url": "https://www.nber.org/papers/w33777",
+      "is_preprint": true,
+      "institution": "シカゴ大学・コペンハーゲン大学",
+      "source_kind": "paper"
+    },
+    {
+      "title": "The Employment Effects of a Guaranteed Income: Experimental Evidence from Two U.S. States",
+      "authors": [
+        "Eva Vivalt",
+        "Elizabeth Rhodes",
+        "Alexander W. Bartik",
+        "David E. Broockman",
+        "Patrick Krause",
+        "Sarah Miller"
+      ],
+      "year": 2024,
+      "venue": "NBER Working Paper 32719（2024年7月、2026年8月改訂）",
+      "url": "https://www.nber.org/papers/w32719",
+      "is_preprint": true,
+      "institution": "トロント大学ほか（OpenResearch）",
+      "source_kind": "paper"
+    },
+    {
+      "title": "LLM inference prices have fallen rapidly but unequally across tasks",
+      "authors": [
+        "Ben Cottier",
+        "Ben Snodin",
+        "David Owen",
+        "Tom Adamczewski"
+      ],
+      "year": 2025,
+      "venue": "Epoch AI Data Insight（2025年3月12日）",
+      "url": "https://epoch.ai/data-insights/llm-inference-price-trends",
+      "is_preprint": false,
+      "institution": "Epoch AI",
+      "source_kind": "data_insight"
+    },
+    {
+      "title": "令和７年度 租税及び印紙収入決算額調／令和７年度決算概要",
+      "authors": [],
+      "year": 2026,
+      "venue": "財務省（2026年7月）",
+      "url": "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf",
+      "is_preprint": false,
+      "institution": "財務省",
+      "source_kind": "official_stat"
+    },
+    {
+      "title": "家計調査報告（家計収支編）2025年（令和7年）平均結果の概要",
+      "authors": [],
+      "year": 2026,
+      "venue": "総務省統計局",
+      "url": "https://www.stat.go.jp/data/kakei/sokuhou/tsuki/pdf/fies_gaikyo2025.pdf",
+      "is_preprint": false,
+      "institution": "総務省統計局",
+      "source_kind": "official_stat"
+    },
+    {
+      "title": "人口推計（2026年4月1日現在 確定値）",
+      "authors": [],
+      "year": 2026,
+      "venue": "総務省統計局（2026年9月24日公表）",
+      "url": "https://www.stat.go.jp/data/jinsui/new.html",
+      "is_preprint": false,
+      "institution": "総務省統計局",
+      "source_kind": "official_stat"
+    }
+  ],
+  "youtube_description": "イーロン・マスク氏は、2026年7月のThe Economistのインタビューで「2036年には、お金は重要でなくなる」と予測しました。ロボットとAIが、食べ物・住まい・移動・娯楽を使い切れないほど生み出せば、お金は何のためにあるのか、という理屈です。仕事は任意になり、全員に高い収入（ユニバーサル・ハイインカム）が配られる、とも述べています。これは実現するのか。期待担当の大輔と、ツッコミ担当の沙織が、主張を「生産性が爆上がりする → モノが安くなる → お金の意味がなくなる → 配っても大丈夫、働かなくてよい」の段階に分けて、経済の研究、AIの値段のデータ、日本の家計と税収の統計、所得保障の実験で確かめます。\n\n■ この回の判定（2026年10月18日時点の、二人の見立て）\nお題: AIで「お金の意味がなくなり、働かなくてよくなる」は実現するか\n大輔: 3年はかかる（頭を使う作業の道具としてのAIが安くなるのは、もう来ている。ただ、それが食べ物・住まい・電気の値段に届くには、ロボットと発電所を作る物理の壁があり、早くても3年はかかる。お金の意味がなくなるのはその先で、分からない）\n沙織: まだ眉唾（お題は「お金の意味がなくなるか」。経済全体の生産性、家計の値段、配った後の働き方のどれも、今の数字は裏付けていない。2036年がどうなるかは、そこまでは分からない）\n\n■ マスク氏が言ったこと（The Economist のインタビュー、2026年7月20日収録。時刻は動画内の位置）\n・04:39「money won't matter in 2036」（2036年にはお金は重要でなくなる）\n・04:58 お金は食べ物・住まい・交通・娯楽のため。ロボットとAIが、人が消費しきれないほどの財・サービスを生むなら、お金は何のために要るのか\n・31:20「work is going to be optional」（仕事は任意になる）／32:45「There's going to be universal high income.」\n・35:36 財務省が人々に小切手を配ればよい。聞き手（35:40）「財源は？ ただ配ればインフレになる」。マスク氏（35:45）インフレはお金と財・サービスの比率で、財・サービスがお金を作るより速く増えればデフレになる。「deflation will be the issue, not inflation」\n・前提として本人が述べたこと: 物理の世界では膨大な数のロボットが要る。AIとロボットの制約はチップと電力で、中国以外では新しい発電が追いついていない。文明を脱線させる大きな戦争などが起きないこと\n※「ユニバーサル・ハイインカム」は、本人が、生活の最低限を保障するベーシックインカムと区別して使っている言葉です\n\n■ 一次資料に書いてあること\n・MITの経済学者の論文「The Simple Macroeconomics of AI」（NBER Working Paper 32487、Economic Policy 誌 2025年）: 既存の推計から、AIによる全要素生産性（TFP）の上昇は10年間で「no more than 0.66%」。難しい仕事ほど効果が小さいと補正すると0.53%未満。資本と労働の所得の差は広がると予測\n・デンマークの研究「Still Waters, Rapid Currents」（NBER Working Paper 33777、2026年3月改訂）: 導入の調査と行政の労働記録を結びつけた。AIに関わる職業の多くの職場でチャットボットの導入が進み、働く人は生産性の向上を感じている。それでも、収入と記録上の労働時間への効果は、ChatGPT公開2年後で2%を超えるものは否定された。変わったのは仕事の組み立て（AIの監督・組み込みなどの新しい仕事）\n・Epoch AI「LLM inference price trends」（2025年3月12日）: 同じ性能に届くAIの利用料は、ベンチマークと性能の水準によって1年に9分の1〜900分の1に下がり、中央値は50分の1。最も速い下落はここ1年のもので、続くかははっきりしない、と書いている\n・総務省統計局「家計調査 2025年平均」（二人以上の世帯）: 1世帯1か月の消費支出は314,001円。食料94,895円、住居18,678円、光熱・水道24,547円（3つで約44%は二人の計算）。家賃は、家賃を払っていない持ち家の世帯も含めた平均\n・財務省「令和７年度 租税及び印紙収入決算額調」: 一般会計の税収は84兆2226億円。「令和７年度決算概要」: 歳出決算総額は129兆4661億円\n・トロント大学ほか（OpenResearch）の実験「The Employment Effects of a Guaranteed Income」（NBER Working Paper 32719、2026年8月改訂）: 米国の2つの州で、所得の低い1,000人に月1,000ドルを3年間、比べる2,000人には月50ドル。給付を除く個人の収入は年約1,900ドル減、労働市場への参加（labor market participation）の割合は4.2ポイント低下、働く時間は週1〜2時間減（配偶者も同程度）。いちばん増えたのは余暇。仕事の質に差はなし。学位の取得にははっきりした効果なし。主観的な幸福感は1年目は高く、その後は比べる群と同じ水準に戻った。研究者のまとめは「中程度の労働供給の減少で、ほかの生産的な活動で埋め合わされてはいない」\n\n■ 二人の概算（資料そのものではありません）\n・総人口1億2283万8千人（総務省 人口推計、2026年4月1日現在の確定値）に月10万円を配ると、1億2283万8千人×10万円×12か月＝約147兆円。2025年度の一般会計の税収（84兆2226億円）の1.7倍超（約1.75倍）、歳出決算総額（129兆4661億円）よりも多い。財源の議論の入口で、結論ではありません\n・「住居・電気などの増やしにくいものが足りなければ、そこだけ値上がりする」は二人の見立てで、上の資料に書いてあることではありません\n\n■ 一次資料に書いていないこと\n・AIやロボットで、食べ物・住まい・エネルギーの値段がどれだけ下がるかを示した数字\n・全員に「高い収入」を配ったときに人がどう働くかを確かめた実験（上の実験は月1,000ドル、所得の低い人が対象で、生活の足しの額です）\n\n※NBER Working Paper は、学術誌に載る前の段階を含む研究論文です（Acemoglu の論文は Economic Policy 誌に掲載済み）。\n※OpenResearch の所得保障の研究には、OpenAI が資金提供者の一つとして関わっています。\n※この動画は、マスク氏の発言が実現するかをデータで確かめるもので、特定の政策・政党・人物を支持または批判するものではありません。ベーシックインカムの是非そのものも扱っていません。特定の企業への投資を勧めるものでもありません。\n※判定は2026年10月18日時点のものです。\n\n■ 参考（一次資料）\n[1] The Economist「An interview with Elon Musk」（2026年7月20日収録） https://www.youtube.com/watch?v=XuoqKYxDHVc\n[2] Daron Acemoglu「The Simple Macroeconomics of AI」NBER Working Paper 32487 https://www.nber.org/papers/w32487\n[3] Anders Humlum, Emilie Vestergaard「Still Waters, Rapid Currents: Early Labor Market Transformation under Generative AI」NBER Working Paper 33777 https://www.nber.org/papers/w33777\n[4] Eva Vivalt ほか「The Employment Effects of a Guaranteed Income: Experimental Evidence from Two U.S. States」NBER Working Paper 32719 https://www.nber.org/papers/w32719\n[5] Epoch AI「LLM inference price trends」(2025-03-12) https://epoch.ai/data-insights/llm-inference-price-trends\n[6] 財務省「令和７年度 租税及び印紙収入決算額調」 https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf\n[7] 財務省「令和７年度決算概要」(2026-07-31) https://www.mof.go.jp/policy/budget/budger_workflow/account/fy2025/ke080731.pdf\n[8] 総務省統計局「家計調査報告（家計収支編）2025年平均結果の概要」 https://www.stat.go.jp/data/kakei/sokuhou/tsuki/pdf/fies_gaikyo2025.pdf\n[9] 総務省統計局「人口推計」 https://www.stat.go.jp/data/jinsui/new.html",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_out",
+      "image_prompt": "Bright daytime, a large clean modern automated factory hall seen from an elevated angle: long conveyor belts carrying neat plain cardboard boxes, crates of fresh vegetables and folded clothing, rows of simple generic industrial robot arms in slate and teal working along the belts, soft daylight from high windows, one section lit with a warm coral glow. No people, no humanoid robots. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "2036年、お金は意味がなくなるらしい！",
+          "expression": "excited",
+          "tone": "excited, like breaking news"
+        }
+      ],
+      "narration": "大輔「2036年、お金は意味がなくなるらしい！」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_out",
+      "reuse_scene_id": 9,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "でも、AIで伸びる生産性は10年分でも1%未満って推計も。",
+          "expression": "doubt",
+          "tone": "dry"
+        }
+      ],
+      "narration": "沙織「でも、AIで伸びる生産性は10年分でも1%未満って推計も。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_out",
+      "image_prompt": "Interior of a vast modern data center hall in cool daylight-white lighting, long aisles of identical plain server racks receding into the distance, neat bundles of cables along the ceiling, one row of racks lit with a soft warm coral glow. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "同じ性能のAIの値段は、真ん中の値で年50分の1。",
+          "expression": "excited"
+        }
+      ],
+      "narration": "大輔「同じ性能のAIの値段は、真ん中の値で年50分の1。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_out",
+      "reuse_scene_id": 15,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "で、働かなくていい日は、本当に来るの？",
+          "expression": "doubt",
+          "tag": "question"
+        }
+      ],
+      "narration": "沙織「で、働かなくていい日は、本当に来るの？」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 5,
+      "type": "setup",
+      "bgm_role": "intro",
+      "image_asset": "base_cafe_b",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "お題は、マスクさんの予測。エコノミスト誌のインタビューで、2036年にはお金が重要でなくなる、と。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ずいぶん大きく出たね。じゃあ、仕事はどうなるの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "任意になって、全員に高い収入が配られる、とも。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想。どの段階も、今の数字では裏付けがない。",
+          "expression": "doubt",
+          "tag": "prediction"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕は、最初の一歩、AIで頭を使う作業が安くなるのは、もう始まってると思う。",
+          "expression": "thinking",
+          "tag": "prediction"
+        }
+      ],
+      "narration": "大輔「お題は、マスクさんの予測。エコノミスト誌のインタビューで、2036年にはお金が重要でなくなる、と。」\n沙織「ずいぶん大きく出たね。じゃあ、仕事はどうなるの？」\n大輔「任意になって、全員に高い収入が配られる、とも。」\n沙織「私の予想。どの段階も、今の数字では裏付けがない。」\n大輔「僕は、最初の一歩、AIで頭を使う作業が安くなるのは、もう始まってると思う。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 6,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "round": 1,
+      "round_title": "生産性は、本当に爆上がり？",
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "press",
+        "source": "The Economist のインタビュー（2026年7月20日収録）",
+        "quote": "money won't matter in 2036",
+        "quote_type": "原文",
+        "highlight": "money won't matter",
+        "items": [
+          "04:39 2036年、お金は重要でなくなる",
+          "04:58 食べ物・住まい・移動・娯楽を",
+          "→ ロボットとAIが使い切れないほど生むなら",
+          "31:20 仕事は任意になる",
+          "32:45 全員に高い収入（UHI）"
+        ],
+        "reference_index": 0
+      },
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "本人の理屈はこう。お金は食べ物や住まいのため。それをロボットとAIが使い切れないほど作れば、お金は何のため？",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "段階があるのね。生産性が爆上がり、モノが安くなる、お金が要らなくなる。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そう。まず一段目。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "なら経済学の推計から。",
+          "expression": "doubt"
+        }
+      ],
+      "image_asset": "cards/kl046_S06",
+      "narration": "大輔「本人の理屈はこう。お金は食べ物や住まいのため。それをロボットとAIが使い切れないほど作れば、お金は何のため？」\n沙織「段階があるのね。生産性が爆上がり、モノが安くなる、お金が要らなくなる。」\n大輔「そう。まず一段目。」\n沙織「なら経済学の推計から。」\n［画面の資料カード］The Economist のインタビュー（2026年7月20日収録） 「money won't matter in 2036」（原文） ・04:39 2036年、お金は重要でなくなる ・04:58 食べ物・住まい・移動・娯楽を ・→ ロボットとAIが使い切れないほど生むなら ・31:20 仕事は任意になる ・32:45 全員に高い収入（UHI）",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 7,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 1,
+      "round": 1,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "paper",
+        "source": "MITの経済学者の論文（全米経済研究所 2024年、学術誌 2025年）",
+        "quote": "no more than a 0.66% increase in total factor productivity (TFP) over 10 years",
+        "quote_type": "原文",
+        "highlight": "0.66%",
+        "items": [
+          "難しい仕事ほど効果が小さいと補正すると",
+          "→ 0.53%未満",
+          "資本と労働の所得の差は広がる、と予測"
+        ],
+        "reference_index": 1
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "MITの経済学者の推計。AIで上がる経済全体の生産性は、10年間で0.66%以下。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "え、1年あたりじゃなくて、全部で？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "全部で。難しい仕事ほど効果が小さいと補正すると、0.53%未満。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でもそれ、今までの研究を積み上げた推計でしょ。実際の職場は？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それも見る。",
+          "expression": "neutral"
+        }
+      ],
+      "image_asset": "cards/kl046_S07",
+      "narration": "沙織「MITの経済学者の推計。AIで上がる経済全体の生産性は、10年間で0.66%以下。」\n大輔「え、1年あたりじゃなくて、全部で？」\n沙織「全部で。難しい仕事ほど効果が小さいと補正すると、0.53%未満。」\n大輔「でもそれ、今までの研究を積み上げた推計でしょ。実際の職場は？」\n沙織「それも見る。」\n［画面の資料カード］MITの経済学者の論文（全米経済研究所 2024年、学術誌 2025年） 「no more than a 0.66% increase in total factor productivity (TFP) over 10 years」（原文） ・難しい仕事ほど効果が小さいと補正すると ・→ 0.53%未満 ・資本と労働の所得の差は広がる、と予測",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 8,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 2,
+      "round": 1,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "paper",
+        "source": "デンマークの研究（全米経済研究所、2026年3月改訂）",
+        "quote": "ruling out effects larger than 2% two years after the launch of ChatGPT",
+        "quote_type": "原文",
+        "highlight": "larger than 2%",
+        "items": [
+          "多くの職場でチャットボットの導入が進んだ",
+          "働く人は、生産性の向上を感じている",
+          "でも収入と記録上の労働時間は、ほぼ動かず",
+          "変わったのは仕事の中身（AIの監督など）"
+        ],
+        "reference_index": 2
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "デンマークの研究。行政の記録で、働く人の収入と労働時間を追った。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "デンマークなら導入は進んでるし、働く人も速くなったと感じてるはず。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そこまでは合ってる。なのにChatGPTが出て2年たっても、収入にも労働時間にも、2%を超える変化はなかった。",
+          "expression": "doubt",
+          "tag": "weakness"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "速くなったのに？ 浮いた時間はどこへ？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "仕事の中身が変わった。AIの監督みたいな、新しい仕事が増えた。",
+          "expression": "neutral"
+        }
+      ],
+      "image_asset": "cards/kl046_S08",
+      "narration": "沙織「デンマークの研究。行政の記録で、働く人の収入と労働時間を追った。」\n大輔「デンマークなら導入は進んでるし、働く人も速くなったと感じてるはず。」\n沙織「そこまでは合ってる。なのにChatGPTが出て2年たっても、収入にも労働時間にも、2%を超える変化はなかった。」\n大輔「速くなったのに？ 浮いた時間はどこへ？」\n沙織「仕事の中身が変わった。AIの監督みたいな、新しい仕事が増えた。」\n［画面の資料カード］デンマークの研究（全米経済研究所、2026年3月改訂） 「ruling out effects larger than 2% two years after the launch of ChatGPT」（原文） ・多くの職場でチャットボットの導入が進んだ ・働く人は、生産性の向上を感じている ・でも収入と記録上の労働時間は、ほぼ動かず ・変わったのは仕事の中身（AIの監督など）",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 9,
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 1,
+      "ken_burns": "zoom_out",
+      "image_prompt": "Bright daytime, a modern airy open-plan office seen from behind a row of empty desks: several monitors showing only blurred, unreadable translated documents, summaries and code-like lines in teal and slate tones, one central monitor glowing softly in warm coral. Coffee mugs, notebooks, potted plants, large windows with daylight. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "でも、僕の予想はまだ負けてない。僕なら、これに使う。資料の要約や翻訳、プログラムの下書き。頼む値段は、去年よりずっと下がってるはず。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "頭を使う作業の下請けね。でも、下がってる、の根拠は？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "expression": "excited",
+          "text": "同じ性能のAIを使う値段を、測ったデータがある。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "どこの？ 会社の宣伝じゃなくて？",
+          "expression": "doubt"
+        }
+      ],
+      "narration": "大輔「でも、僕の予想はまだ負けてない。僕なら、これに使う。資料の要約や翻訳、プログラムの下書き。頼む値段は、去年よりずっと下がってるはず。」\n沙織「頭を使う作業の下請けね。でも、下がってる、の根拠は？」\n大輔「同じ性能のAIを使う値段を、測ったデータがある。」\n沙織「どこの？ 会社の宣伝じゃなくて？」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 10,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 4,
+      "round": 1,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "report",
+        "source": "Epoch AI の分析（2025年3月12日）",
+        "quote": "prices declining between 9x per year and 900x per year, with a median of 50x per year",
+        "quote_type": "原文",
+        "highlight": "median of 50x per year",
+        "items": [
+          "同じ性能に届くAIの利用料の下がり方",
+          "ベンチマークと性能の水準ごとに測った",
+          "最も速い下落はここ1年。続くかは不明"
+        ],
+        "reference_index": 4
+      },
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "expression": "excited",
+          "text": "Epoch AIという研究機関の分析。同じ性能に届く値段が、真ん中の値で、1年に50分の1。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "50分の1……1年で？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "expression": "convinced",
+          "text": "1年で。速いものは900分の1、遅いものでも9分の1。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それは認める。頭を使う作業の道具としてのAIは、本当に安くなってる。",
+          "expression": "convinced",
+          "tag": "turn"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、一番速い下落はここ1年のもので、続くかは分からない、と本人たちが書いてる。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それに、安くなったのはAIの使用料で、パンや家賃じゃない。そこが次だ。",
+          "expression": "thinking"
+        }
+      ],
+      "image_asset": "cards/kl046_S10",
+      "narration": "大輔「Epoch AIという研究機関の分析。同じ性能に届く値段が、真ん中の値で、1年に50分の1。」\n沙織「50分の1……1年で？」\n大輔「1年で。速いものは900分の1、遅いものでも9分の1。」\n沙織「それは認める。頭を使う作業の道具としてのAIは、本当に安くなってる。」\n沙織「ただ、一番速い下落はここ1年のもので、続くかは分からない、と本人たちが書いてる。」\n大輔「それに、安くなったのはAIの使用料で、パンや家賃じゃない。そこが次だ。」\n［画面の資料カード］Epoch AI の分析（2025年3月12日） 「prices declining between 9x per year and 900x per year, with a median of 50x per year」（原文） ・同じ性能に届くAIの利用料の下がり方 ・ベンチマークと性能の水準ごとに測った ・最も速い下落はここ1年。続くかは不明",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 11,
+      "type": "tsukkomi",
+      "bgm_role": "main",
+      "round": 2,
+      "round_title": "お金は、何に使ってる？",
+      "ken_burns": "zoom_out",
+      "image_prompt": "Bright late-afternoon interior of a tidy Japanese neighborhood supermarket aisle: shelves of fresh vegetables, rice bags, bread and packaged foods with plain unbranded packaging, through the large front window a row of ordinary low-rise apartment buildings and a utility pole with power lines, warm coral sunset light on the produce. No people. No logos, no brand marks, no readable text, no price tags with numbers, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "マスクさんは、お金は食べ物や住まいのため、と言った。なら実際の家計を見よう。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕なら、配られたお金はまず食費と家賃と電気代に回す。そこが下がれば、働く時間を減らせる。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "なら、その三つが家計のどれだけか。総務省の家計調査がある。",
+          "expression": "amused"
+        }
+      ],
+      "narration": "沙織「マスクさんは、お金は食べ物や住まいのため、と言った。なら実際の家計を見よう。」\n大輔「僕なら、配られたお金はまず食費と家賃と電気代に回す。そこが下がれば、働く時間を減らせる。」\n沙織「なら、その三つが家計のどれだけか。総務省の家計調査がある。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 12,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 6,
+      "round": 2,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "report",
+        "source": "総務省 家計調査 2025年平均（二人以上の世帯）",
+        "quote": "１世帯当たり１か月平均314,001円",
+        "quote_type": "原文",
+        "highlight": "314,001円",
+        "items": [
+          "食料 94,895円（約3割）",
+          "住居 18,678円 ／ 光熱・水道 24,547円",
+          "3つで約44%（二人の計算）",
+          "家賃は、払っていない持ち家も含めた平均"
+        ],
+        "reference_index": 6
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "2025年、二人以上の世帯の1か月の支出は31万4001円。食料が9万4895円。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "約3割が食べ物か。で、住まいと電気は？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "住居が1万8678円、光熱・水道が2万4547円。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "合わせて4割強か。住居、思ったより小さくない？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "家賃を払っていない持ち家も入れた平均だから。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でも畑も建設も発電所も、ロボットがやれば安くなるでしょ。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そのロボットを動かす電気。中国以外では新しい発電が追いついてない、とマスクさん自身が言ってる。",
+          "expression": "doubt",
+          "tag": "barrier"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "本人が認めてる壁か。",
+          "expression": "deflated"
+        }
+      ],
+      "image_asset": "cards/kl046_S12",
+      "narration": "沙織「2025年、二人以上の世帯の1か月の支出は31万4001円。食料が9万4895円。」\n大輔「約3割が食べ物か。で、住まいと電気は？」\n沙織「住居が1万8678円、光熱・水道が2万4547円。」\n大輔「合わせて4割強か。住居、思ったより小さくない？」\n沙織「家賃を払っていない持ち家も入れた平均だから。」\n大輔「でも畑も建設も発電所も、ロボットがやれば安くなるでしょ。」\n沙織「そのロボットを動かす電気。中国以外では新しい発電が追いついてない、とマスクさん自身が言ってる。」\n大輔「本人が認めてる壁か。」\n［画面の資料カード］総務省 家計調査 2025年平均（二人以上の世帯） 「１世帯当たり１か月平均314,001円」（原文） ・食料 94,895円（約3割） ・住居 18,678円 ／ 光熱・水道 24,547円 ・3つで約44%（二人の計算） ・家賃は、払っていない持ち家も含めた平均",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 13,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 0,
+      "round": 2,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "press",
+        "source": "The Economist のインタビュー 35:36〜36:43",
+        "quote": "deflation will be the issue, not inflation",
+        "quote_type": "原文",
+        "highlight": "deflation will be the issue",
+        "items": [
+          "35:36 財務省が小切手を配ればいい",
+          "35:40 聞き手「財源は？ 配ればインフレに」",
+          "35:56 財・サービスがお金より速く増えれば",
+          "→ インフレではなくデフレになる"
+        ],
+        "reference_index": 0
+      },
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "配り方は、財務省が小切手を配ればいい、とマスクさんは言ってる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "聞き手がすぐ返した。財源は？ ただ配ったらインフレになる、って。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "答えは、インフレはお金と物の比率。物とサービスが、お金を作るより速く増えれば、むしろデフレになる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "理屈は通ってる。問題は、物が本当にそんなに速く増えるか。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "AIの使用料なら、実際に急に下がってる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "家や電気は？ 増やしにくい物が足りなければ、そこだけ値上がりする。これは私の見立てね。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "どっちになるかは、資料には書いてないな。",
+          "expression": "thinking"
+        }
+      ],
+      "image_asset": "cards/kl046_S13",
+      "narration": "大輔「配り方は、財務省が小切手を配ればいい、とマスクさんは言ってる。」\n沙織「聞き手がすぐ返した。財源は？ ただ配ったらインフレになる、って。」\n大輔「答えは、インフレはお金と物の比率。物とサービスが、お金を作るより速く増えれば、むしろデフレになる。」\n沙織「理屈は通ってる。問題は、物が本当にそんなに速く増えるか。」\n大輔「AIの使用料なら、実際に急に下がってる。」\n沙織「家や電気は？ 増やしにくい物が足りなければ、そこだけ値上がりする。これは私の見立てね。」\n大輔「どっちになるかは、資料には書いてないな。」\n［画面の資料カード］The Economist のインタビュー 35:36〜36:43 「deflation will be the issue, not inflation」（原文） ・35:36 財務省が小切手を配ればいい ・35:40 聞き手「財源は？ 配ればインフレに」 ・35:56 財・サービスがお金より速く増えれば ・→ インフレではなくデフレになる",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 14,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 5,
+      "round": 2,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "report",
+        "source": "財務省 令和７年度の決算（2026年7月）",
+        "quote_type": "要約",
+        "items": [
+          "一般会計の税収: 84兆2226億円",
+          "一般会計の歳出（決算）: 129兆4661億円",
+          "（二人の概算）総人口1億2284万人に",
+          "月10万円 → 年147兆円＝税収の1.7倍超"
+        ],
+        "note": "人口: 総務省 人口推計（2026年4月1日）",
+        "reference_index": 5
+      },
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "財源の算数もしてみた。二人の概算で、赤ちゃんからお年寄りまで1億2284万人に月10万円。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "年に147兆円。2025年度の国の税収が84兆円だから、その1.7倍を超える。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "国の一般会計の歳出、129兆円よりも多い。",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "しかも月10万円は、高い収入じゃない。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だからマスクさんは、物が爆発的に増えた後の話をしてる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "その後の話は、今の資料では確かめられない。この算数は、議論の入口ね。",
+          "expression": "neutral"
+        }
+      ],
+      "image_asset": "cards/kl046_S14",
+      "narration": "大輔「財源の算数もしてみた。二人の概算で、赤ちゃんからお年寄りまで1億2284万人に月10万円。」\n沙織「年に147兆円。2025年度の国の税収が84兆円だから、その1.7倍を超える。」\n大輔「国の一般会計の歳出、129兆円よりも多い。」\n沙織「しかも月10万円は、高い収入じゃない。」\n大輔「だからマスクさんは、物が爆発的に増えた後の話をしてる。」\n沙織「その後の話は、今の資料では確かめられない。この算数は、議論の入口ね。」\n［画面の資料カード］財務省 令和７年度の決算（2026年7月） ・一般会計の税収: 84兆2226億円 ・一般会計の歳出（決算）: 129兆4661億円 ・（二人の概算）総人口1億2284万人に ・月10万円 → 年147兆円＝税収の1.7倍超 ※人口: 総務省 人口推計（2026年4月1日）",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 15,
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 3,
+      "round_title": "配ったら、人は働かなくなる？",
+      "ken_burns": "zoom_out",
+      "image_prompt": "Calm early-morning view of a quiet ordinary American suburban street: a row of plain metal residential mailboxes on posts in the foreground, modest single-story houses with small lawns behind them, soft clear dawn daylight (clearly morning, not night), one mailbox catching a warm coral glint of sunlight. No people. No logos, no brand marks, no readable text, no letters, no numbers, no flags.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "最後は、配ったら人がどう動くか。アメリカに、所得保障の実験がある。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、それ何人で試したの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "expression": "neutral",
+          "text": "所得の低い1000人に、月1000ドルを3年間。"
+        },
+        {
+          "speaker": "skeptic",
+          "expression": "thinking",
+          "text": "比べる相手は？"
+        },
+        {
+          "speaker": "dreamer",
+          "expression": "neutral",
+          "text": "2000人に、月50ドル。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "3000人を3年。ちゃんとした規模ね。で、もらったら何に使う？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕なら、これに使う。仕事を少し減らして、空いた時間で学校に通い直す。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが実際に起きたか、見てみよう。",
+          "expression": "neutral"
+        }
+      ],
+      "narration": "大輔「最後は、配ったら人がどう動くか。アメリカに、所得保障の実験がある。」\n沙織「で、それ何人で試したの？」\n大輔「所得の低い1000人に、月1000ドルを3年間。」\n沙織「比べる相手は？」\n大輔「2000人に、月50ドル。」\n沙織「3000人を3年。ちゃんとした規模ね。で、もらったら何に使う？」\n大輔「僕なら、これに使う。仕事を少し減らして、空いた時間で学校に通い直す。」\n沙織「それが実際に起きたか、見てみよう。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 16,
+      "type": "check",
+      "bgm_role": "main",
+      "reference_index": 3,
+      "round": 3,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "paper",
+        "source": "トロント大学ほかの実験（全米経済研究所、2026年8月改訂）",
+        "quote": "a 4.2 percentage point decrease in labor market participation",
+        "quote_type": "原文",
+        "highlight": "4.2 percentage point",
+        "items": [
+          "働く時間: 週1〜2時間減（配偶者も同程度）",
+          "給付以外の収入: 年に約1,900ドル減",
+          "いちばん増えたのは、余暇の時間",
+          "学位の取得: はっきりした効果なし",
+          "幸福感: 1年目は高く、その後は元の水準"
+        ],
+        "reference_index": 3
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "結果。仕事の世界に出ている人の割合が、4.2ポイント下がった。働く時間は週に1〜2時間減。配偶者も同じくらい。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ほら、少しは働かなくなる。仕事が任意になる入口は、見えてる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "いちばん増えたのは余暇。学位を取った人も、はっきりとは増えてない。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕の学び直しは、データでははっきり見えないのか。",
+          "expression": "deflated",
+          "tag": "turn"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに幸福感。1年目は高かったけど、その後は、比べる人たちと同じ水準に戻った。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でも、月1000ドルだよ。マスクさんの言う、高い収入とはぜんぜん違う。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そこはその通り。分かるのは、生活の足しを配ったときの動き方まで。全員が働かなくていい社会じゃない。",
+          "expression": "convinced"
+        }
+      ],
+      "image_asset": "cards/kl046_S16",
+      "narration": "沙織「結果。仕事の世界に出ている人の割合が、4.2ポイント下がった。働く時間は週に1〜2時間減。配偶者も同じくらい。」\n大輔「ほら、少しは働かなくなる。仕事が任意になる入口は、見えてる。」\n沙織「いちばん増えたのは余暇。学位を取った人も、はっきりとは増えてない。」\n大輔「僕の学び直しは、データでははっきり見えないのか。」\n沙織「それに幸福感。1年目は高かったけど、その後は、比べる人たちと同じ水準に戻った。」\n大輔「でも、月1000ドルだよ。マスクさんの言う、高い収入とはぜんぜん違う。」\n沙織「そこはその通り。分かるのは、生活の足しを配ったときの動き方まで。全員が働かなくていい社会じゃない。」\n［画面の資料カード］トロント大学ほかの実験（全米経済研究所、2026年8月改訂） 「a 4.2 percentage point decrease in labor market participation」（原文） ・働く時間: 週1〜2時間減（配偶者も同程度） ・給付以外の収入: 年に約1,900ドル減 ・いちばん増えたのは、余暇の時間 ・学位の取得: はっきりした効果なし ・幸福感: 1年目は高く、その後は元の水準",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 17,
+      "type": "verdict",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "verdict_from_line": 4,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想、最初の一歩はもう始まってる、は当たってた。",
+          "expression": "convinced",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想は、そこだけ外れ。でも、経済全体の生産性と、食べ物や家の値段には、まだ出てない。",
+          "expression": "amused",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "判定は「3年はかかる」。AIが安くなっても、食べ物や家や電気の値段に届くには、ロボットと発電所を作る物理の壁がある。早くても3年。お金の意味がなくなるのは、その先で分からない。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "お題は、お金の意味がなくなるか、でしょ。私は「まだ眉唾」。生産性も、家計も、配った後の働き方も、今の数字は裏付けていない。2036年は、そこまでは分からない。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "持ち帰りはこれ。資料の要約やプログラムの下書きなら、誰でも今、安くAIに頼める。確かめるのは自分、が条件。",
+          "expression": "excited",
+          "tag": "takeaway"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、速くなっても、給料や働く時間が変わるとは限らない。デンマークでは、2年たっても動かなかった。「働かなくてよくなる」は、まだ予測の段階。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "これは、2026年10月18日時点の、二人の見立て。",
+          "expression": "neutral"
+        }
+      ],
+      "narration": "大輔「僕の予想、最初の一歩はもう始まってる、は当たってた。」\n沙織「私の予想は、そこだけ外れ。でも、経済全体の生産性と、食べ物や家の値段には、まだ出てない。」\n大輔「判定は「3年はかかる」。AIが安くなっても、食べ物や家や電気の値段に届くには、ロボットと発電所を作る物理の壁がある。早くても3年。お金の意味がなくなるのは、その先で分からない。」\n沙織「お題は、お金の意味がなくなるか、でしょ。私は「まだ眉唾」。生産性も、家計も、配った後の働き方も、今の数字は裏付けていない。2036年は、そこまでは分からない。」\n大輔「持ち帰りはこれ。資料の要約やプログラムの下書きなら、誰でも今、安くAIに頼める。確かめるのは自分、が条件。」\n沙織「ただ、速くなっても、給料や働く時間が変わるとは限らない。デンマークでは、2年たっても動かなかった。「働かなくてよくなる」は、まだ予測の段階。」\n大輔「これは、2026年10月18日時点の、二人の見立て。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 18,
+      "type": "closing",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe_b",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "お金の意味より先に、電気とロボットの数字ね。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。論文は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "amused"
+        }
+      ],
+      "narration": "沙織「お金の意味より先に、電気とロボットの数字ね。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。論文は概要欄に載せています。チャンネル登録して、待っていてください。」",
+      "narrator": "dialogue"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "skeptic",
+          "narration": "お金、要らなくなる？",
+          "telop_text": "お金、要らなくなる？",
+          "expression": "doubt",
+          "scene_id": 1
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "2036年、お金は意味がなくなるらしい！",
+          "expression": "excited",
+          "scene_id": 1
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "でも、AIで伸びる生産性は10年分でも1%未満って推計も。",
+          "expression": "doubt",
+          "react": "surprised",
+          "scene_id": 9
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "同じ性能のAIの値段は、真ん中の値で年50分の1。",
+          "expression": "excited",
+          "scene_id": 3
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "配った実験、幸福感が高いのは1年目だけ。",
+          "expression": "doubt",
+          "react": "deflated",
+          "scene_id": 15
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "働かなくていい日は来る？ 判定は本編で。",
+          "expression": "thinking",
+          "scene_id": 17
+        }
+      ]
+    }
+  ]
+}
