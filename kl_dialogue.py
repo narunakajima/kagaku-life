@@ -1749,6 +1749,214 @@ def render_episode_cards(ep: dict) -> list:
     return done
 
 
+# ── 初見の視聴者向けの台詞テキスト（plain）と、読みやすさの機械チェック ────────────────
+# 2026-10-19、kl046 で制作者から「主語がない」「用語が分からない」「たとえが分からない」の指摘が
+# 1つずつ10回近く続いた。原因は「初めて聞く人として台本を読む工程」が無かったこと（書き手もレビューも
+# 資料を知っている）。そこで (1) 資料を見ていない別の Opus に、台詞だけのテキスト（plain）を読ませる
+# 初見レビューを STEP5.5 の必須ゲートにし（kl_prompts/beginner_review_prompt.md）、(2) 機械で拾える
+# 分かりにくさの手がかりを check に ⚠ として足した（不合格にはしない。初見レビューに渡す材料）。
+
+GLOSSARY_JSON = BASE_DIR / "kl_prompts" / "glossary_terms.json"
+_QUOTE_LABEL_RE = _re.compile(r"「([^」]{1,40})」")
+
+
+def load_glossary() -> dict:
+    try:
+        return json.loads(GLOSSARY_JSON.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        return {}
+
+
+def _figure_labels(prompt: str) -> list:
+    """チャート調の図の image_prompt から、画面に出る日本語ラベル（「…」で指定したもの）だけを取り出す。"""
+    out = []
+    for m in _QUOTE_LABEL_RE.findall(prompt or ""):
+        if any(ord(ch) > 0x3000 for ch in m) and m not in out:
+            out.append(m)
+    return out
+
+
+def plain_text(ep: dict, cast: dict = None) -> str:
+    """初見レビュー用: 視聴者が見聞きするものだけ（タイトル・サムネイルの見出し・台詞・画面の資料カード／
+    図のラベル／論点の見出し／判定ラベル）を順に並べたテキスト。概要欄・資料・image_prompt の英文は含めない。"""
+    cast = cast or load_cast()
+    name = {r: speaker_name(cast, r) for r in ROLES}
+    labels = {k: v.get("label", k) for k, v in (cast.get("verdicts") or {}).items()}
+    out = []
+    out.append(f"【動画のタイトル】{ep.get('youtube_title', '')}")
+    if ep.get("thumbnail_headline"):
+        out.append(f"【サムネイルの見出し】{ep['thumbnail_headline'].replace(chr(10), ' ')}")
+    rel = []
+    for r in ROLES:
+        c = cast.get(r, {})
+        rel.append(f"{name[r]}（{c.get('role_short') or c.get('role_label', '')}）")
+    out.append("")
+    out.append("登場するのは二人。" + "と".join(rel) + "。大学の研究室の同期で、気になる話題を持ち寄って語り合う。"
+               "名前と肩書きは画面の名札に出る（台詞では名前を呼ばない）。")
+    by_id = {s.get("scene_id"): s for s in ep.get("scenes", [])}
+    for s in ep.get("scenes", []):
+        out.append("")
+        head = f"=== シーン{s.get('scene_id')}"
+        if s.get("round_title"):
+            head += f"（見出し画面: {s['round_title']}）"
+        if s.get("type") == "teaser":
+            head += "（冒頭の予告）"
+        out.append(head + " ===")
+        c = s.get("source_card")
+        if c:
+            parts = [c.get("source", "")]
+            if c.get("quote"):
+                parts.append(f"引用: 「{c['quote']}」")
+            if c.get("items"):
+                parts.append("箇条書き: " + " / ".join(c["items"]))
+            if c.get("note"):
+                parts.append(f"注: {c['note']}")
+            out.append("[画面に出る資料カード] " + " ／ ".join(p for p in parts if p))
+        else:
+            src = s
+            if s.get("reuse_scene_id") and not s.get("image_prompt"):
+                src = by_id.get(s["reuse_scene_id"], s)
+            if scene_style(src) == "chart" and src.get("image_prompt"):
+                labs = _figure_labels(src["image_prompt"])
+                if labs:
+                    out.append("[画面に出る図の文字] " + " / ".join(labs))
+        for l in s.get("lines") or []:
+            out.append(f"{name.get(l.get('speaker'), l.get('speaker'))}：{line_display(l)}")
+        if s.get("type") == "verdict":
+            v = ep.get("verdict") or {}
+            out.append("[画面に判定ラベル: " + "、".join(f"{name[r]}「{labels.get(v.get(r), v.get(r))}」" for r in ROLES if v.get(r))
+                       + "（ラベルの種類: " + "／".join(labels.values()) + "）]")
+    return "\n".join(out) + "\n"
+
+
+_NUM_RE = _re.compile(r"\d+(?:[.,]\d+)*")
+_DATE_RE = _re.compile(r"\d+年\d+月(?:\d+日)?|\d+月\d+日|\d+年\d+月|\d+[〜~～]\d+")
+_FINE_NUM_RE = _re.compile(r"\d+億\d+万?|\d+万\d+|\d{5,}|\d{1,3}(?:,\d{3}){1,}")
+
+
+def _too_fine(num: str) -> bool:
+    """有効数字が4桁以上か（1億2284万・31万4001・314,001 は細かい。1億2000万・1,250 は可）。"""
+    digits = _re.sub(r"\D", "", num).rstrip("0")
+    return len(digits) >= 4
+_ASCII_RE = _re.compile(r"[A-Za-z][A-Za-z0-9.\-]*[A-Za-z0-9]|[A-Za-z]")
+_ATTR_QUOTE_RE = _re.compile(r"(?:さん|氏|自身)(?:が|の)?(?:言う|いう|言った)?「([^」]{2,40})」|「([^」]{2,40})」(?:と|って)(?:言|話)")
+
+
+def _norm(t: str) -> str:
+    return _re.sub(r"[、。，．・！？!?\s「」『』…ー〜]", "", t)
+
+
+def readability_warnings(ep: dict) -> list:
+    """初見の視聴者がつまずきやすい所の機械的な手がかり（⚠）。誤検出もあるので、不合格にはしない。
+    結果は STEP5.5 の初見レビューと、制作者に見せる前のセルフチェックの材料にする。"""
+    from difflib import SequenceMatcher
+    g = load_glossary()
+    if not g:
+        return ["読みやすさチェック: kl_prompts/glossary_terms.json がありません"]
+    scenes = ep.get("scenes") or []
+    # 本編の行（ティザーは見出しの役目なので、用語・比喩・指示語の判定からは外す）
+    seq = []   # (scene_id, 行番号1始まり, text, type)
+    for s in scenes:
+        for i, l in enumerate(s.get("lines") or []):
+            seq.append((s.get("scene_id"), i + 1, l.get("text", ""), s.get("type")))
+    main = [x for x in seq if x[3] != "teaser"]
+    warns = []
+
+    def near(k):  # その行と次の行
+        return main[k][2] + (main[k + 1][2] if k + 1 < len(main) else "")
+
+    # (a) 初出の専門用語
+    ex = g.get("explain_markers", [])
+    for term in g.get("terms", []):
+        k = next((k for k, x in enumerate(main) if term in x[2]), None)
+        if k is None:
+            continue
+        if not any(m in near(k) for m in ex):
+            sid, ln, t, _ = main[k]
+            warns.append(f"用語: S{sid:02d} 行{ln}「{term}」が初出で、その行・次の行に言い換えの手がかり（つまり／っていうのは／〜のこと 等）がありません: {t[:40]}")
+    # (a') 英字の固有名
+    allow = set(g.get("ascii_allow", [])) | set(g.get("terms", []))
+    pm = g.get("proper_markers", [])
+    seen = set()
+    for k, (sid, ln, t, _) in enumerate(main):
+        for w in _ASCII_RE.findall(t):
+            if w in seen or w in allow or len(w) < 2:
+                seen.add(w)
+                continue
+            seen.add(w)
+            if not any(m in near(k) for m in pm):
+                warns.append(f"固有名: S{sid:02d} 行{ln}「{w}」が初出で、何者か（〜という研究機関 等）の説明がありません: {t[:40]}")
+    # (b) 前に出ていない発言の引用（「〇〇さんの『…』」「『…』と言った」の形だけを見る）
+    earlier = ""
+    for sid, ln, t, _ in seq:
+        for m in _ATTR_QUOTE_RE.finditer(t):
+            q = _norm(m.group(1) or m.group(2))
+            ctx = _norm(earlier)
+            hit = SequenceMatcher(None, q, ctx, autojunk=False).find_longest_match(0, len(q), 0, len(ctx)).size if ctx else 0
+            if hit < max(2, int(len(q) * 0.6)):
+                warns.append(f"引用: S{sid:02d} 行{ln} の「{m.group(1) or m.group(2)}」は、それより前の台詞に出ていない発言です（初出なら、誰が何と言ったかを先に紹介する）")
+        earlier += t + "\n"
+    # (c) 行頭の指示語（情報として一覧）
+    dem = sorted(g.get("demonstratives", []), key=len, reverse=True)
+    hits = []
+    for sid, ln, t, _ in main:
+        skip = g.get("demonstrative_skip", [])
+        head = _re.sub(r"^(……|でも、|じゃあ、|ただ、)", "", t)
+        d = next((d for d in dem if head.startswith(d)), None)
+        if d and not any(head.startswith(x) for x in skip):
+            hits.append(f"S{sid:02d}行{ln}「{t[:14]}…」")
+    if hits:
+        warns.append(f"指示語（情報）: 行頭の指示語 {len(hits)}件。何を指すか、前の行だけで分かるか確認: " + "、".join(hits))
+    # (d) 数字の多さ・細かさ
+    th = g.get("number_thresholds", {"line": 4, "scene": 10})
+    for s in scenes:
+        n_scene = 0
+        if s.get("type") == "teaser":
+            continue
+        for i, l in enumerate(s.get("lines") or []):
+            t = l.get("text", "")
+            t2 = _DATE_RE.sub("#", t)
+            n = len(_NUM_RE.findall(t2)) + t2.count("#")
+            n_scene += n
+            if n >= th["line"]:
+                warns.append(f"数字: S{s['scene_id']:02d} 行{i + 1} に数字が{n}つ（耳で追えるか。分けるか減らす）: {t[:40]}")
+            for f in [f for f in _FINE_NUM_RE.findall(t) if _too_fine(f)]:
+                warns.append(f"数字: S{s['scene_id']:02d} 行{i + 1}「{f}」は細かすぎないか（およそ〇〇 に丸める）")
+        if n_scene >= th["scene"]:
+            warns.append(f"数字: S{s['scene_id']:02d} に数字が{n_scene}つ（1シーンに多い。大きさの感覚を添えるか、カードに任せる）")
+    # (e) 比喩語を3回以上使うのに定義が無い
+    dm = g.get("definition_markers", [])
+    for w in g.get("metaphor_words", []):
+        lines_w = [x for x in main if w in x[2]]
+        if len(lines_w) >= 3 and not any(any(m in x[2] for m in dm) for x in lines_w):
+            warns.append(f"比喩語: 「{w}」が{len(lines_w)}行に出るのに、定義の行（この回では〜と呼ぶ／〜っていうのは 等）がありません（初出 S{lines_w[0][0]:02d} 行{lines_w[0][1]}）")
+    # (f) 判定が何を指すか
+    vs = next((s for s in scenes if s.get("type") == "verdict"), None)
+    timed = any(v in ("soon", "decade") for v in (ep.get("verdict") or {}).values())
+    if vs is not None and timed:
+        txt = "".join(l.get("text", "") for l in vs.get("lines") or [])
+        if not any(m in txt for m in g.get("verdict_scope_markers", [])):
+            warns.append("判定: 時期を言うラベル（もうすぐ来る／3年はかかる）なのに、verdict の台詞に、そのラベルが何を指すか"
+                         "（何が・いつまでに。例「この3年は、〜までの話」「〜のは、もう始まってる」）を言う手がかりがありません")
+    return warns
+
+
+def lines_digest(ep: dict) -> str:
+    """全シーンの台詞（話者・本文・字幕表記）のハッシュ。初見レビューの合格記録が、今の台詞に対するものかを見る。"""
+    payload = json.dumps([[s.get("scene_id"), l.get("speaker"), l.get("text"), l.get("display", "")]
+                          for s in ep.get("scenes", []) for l in s.get("lines") or []], ensure_ascii=False)
+    return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:12]
+
+
+def beginner_review_status(ep: dict) -> str:
+    r = ep.get("beginner_review") or {}
+    if not r:
+        return "未実施（STEP5.5。制作者に見せる前に必須）"
+    if r.get("lines_digest") != lines_digest(ep):
+        return f"無効（{r.get('passed_at', '?')} の合格の後に台詞が変わった。STEP5.5 をやり直す）"
+    return f"済（{r.get('passed_at', '?')}、{r.get('rounds', '?')}周、{r.get('report', '')}）"
+
+
 # ── コマンドライン ────────────────────────────────────────────────
 
 def sync_derived(ep: dict, cast: dict = None) -> None:
@@ -1766,14 +1974,36 @@ def main():
     import argparse
     import sys
     ap = argparse.ArgumentParser(description="掛け合い形式の台本チェック／資料カードの描画")
-    ap.add_argument("command", choices=["check", "cards"],
-                    help="check: 構造チェック（narration を同期）／cards: 資料カード（source_card）を描いて image_asset を書き込む")
+    ap.add_argument("command", choices=["check", "cards", "plain", "review-pass"],
+                    help="check: 構造チェック（narration を同期）／cards: 資料カード（source_card）を描いて image_asset を書き込む／"
+                         "plain: 初見レビュー用に、視聴者が見聞きするもの（台詞・画面の文字・判定ラベル）だけのテキストを出す")
+    ap.add_argument("--out", help="plain の出力先（省略時は標準出力）")
+    ap.add_argument("--rounds", type=int, help="review-pass: 初見レビューを何周して合格したか")
+    ap.add_argument("--report", help="review-pass: 合格した回の初見レビュー結果のパス")
     ap.add_argument("--episode", required=True)
     ap.add_argument("--path", help="episodes/ 以外のJSONを確認するとき（試し書き・テスト用）。指定したファイルに narration を同期する")
     args = ap.parse_args()
     path = Path(args.path) if args.path else BASE_DIR / "episodes" / f"{args.episode}.json"
     ep = json.loads(path.read_text(encoding="utf-8"))
     cast = load_cast()
+    if args.command == "plain":
+        text = plain_text(ep, cast)
+        if args.out:
+            Path(args.out).write_text(text, encoding="utf-8")
+            print(f"✅ {args.out}（{len(text)}字）。初見レビューのサブエージェントには、このファイルのパスだけを渡す")
+        else:
+            sys.stdout.write(text)
+        return
+    if args.command == "review-pass":
+        # STEP5.5 の合格を記録する（致命的ゼロ・直すを反映済み・もう一周して致命的なし、をメインが確かめた後）
+        import datetime
+        ep["beginner_review"] = {"passed_at": datetime.date.today().isoformat(), "rounds": args.rounds,
+                                 "report": args.report or "", "lines_digest": lines_digest(ep)}
+        tmp = path.with_suffix(".json.tmp")
+        tmp.write_text(json.dumps(ep, ensure_ascii=False, indent=2), encoding="utf-8")
+        tmp.replace(path)
+        print("✅ 初見レビューの合格を記録しました: " + beginner_review_status(ep))
+        return
     if args.command == "cards":
         done = render_episode_cards(ep)
         tmp = path.with_suffix(".json.tmp")
@@ -1809,6 +2039,13 @@ def main():
         print("構成: 従来（structure なし。kl031〜kl040）")
     for w in episode_warnings(ep):
         print("⚠ " + w)
+    if st in ROUND_STRUCTURES:
+        print("初見レビュー（STEP5.5）: " + beginner_review_status(ep))
+    rw = readability_warnings(ep)
+    if rw:
+        print(f"── 読みやすさの手がかり（⚠ {len(rw)}件。不合格にはしない。STEP5.5 の初見レビューと、制作者に見せる前のセルフチェックの材料）")
+        for w in rw:
+            print("⚠ " + w)
     if errs:
         print(f"❌ {len(errs)}件の問題:")
         for e in errs:
