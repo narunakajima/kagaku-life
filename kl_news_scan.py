@@ -432,7 +432,7 @@ def past_episodes_brief() -> str:
 
 SCORE_PROMPT = """あなたは日本語の科学解説YouTubeチャンネル「幸せな未来のサイエンス」のネタ選定担当です。
 番組は、夢語り担当とツッコミ担当の二人が、最新の発表を「一次資料」で確かめ、「本物か、盛っているか、いつ暮らしに来るか」を
-「もうすぐ来る／3年はかかる／まだ眉唾」で判定する掛け合い形式です。
+「もうすぐ来る／3年はかかる／根拠待ち／まだ眉唾」で判定する掛け合い形式です。
 
 【候補のニュース】
 タイトル: {title}
@@ -472,7 +472,10 @@ Google検索で調べ、次を出力してください。
      開発者・研究者しか使わない専用品は低い）
 6. concern_id: いちばん近い関心ごとのid（無ければ null）
 7. entry_question: 視聴者側の問い（「〜は本当？」「〜はもう買える？」「〜はいつ来る？」の形。一次資料の範囲を超えない）
-8. expected_verdicts: {{"dreamer": "soon|decade|dubious", "skeptic": "soon|decade|dubious"}}
+8. expected_verdicts: {{"dreamer": "soon|decade|pending|dubious", "skeptic": "soon|decade|pending|dubious"}}
+   （soon=もうすぐ来る（もう使えるか1年ほどで）／decade=3年はかかる（お題の主張が3年以内に来そうで、物理・臨床の壁がある）／
+    pending=根拠待ち（否定する資料は無いが、支える資料もまだ無い。3年より先の予測を含む）／
+    dubious=まだ眉唾（資料が逆を示す・資料の範囲を大きく超える・数字が誇張）。お題の主張そのものに対して付ける）
 9. tsukkomi_material: ツッコミが突ける具体的な点（1〜2文）
 10. investment_related: 株価・投資判断の話が中心なら true
 11. deja_vu_note: 過去の回と似ていれば、どの回か
@@ -2692,7 +2695,7 @@ def cmd_slack(note_path: str):
     """夜間実行用: ベスト3の下書きをスマホで読める Slack の Block Kit にして標準出力へ JSON で出す（2026-10-14）。"""
     g = json.loads(GENRES_JSON.read_text(encoding="utf-8"))
     gen = {k: v for k, v in g["genres"]} if isinstance(g["genres"], list) else dict(g["genres"])
-    vname = {"soon": "もうすぐ", "decade": "3年", "dubious": "眉唾"}
+    vname = {"soon": "もうすぐ", "decade": "3年", "pending": "根拠待ち", "dubious": "眉唾"}
     rows = classify(load_candidates()["items"])
     picks, niche = best3(rows)
     nums = "①②③"

@@ -138,7 +138,7 @@ V3_PHRASE_LIMITS = {
 }
 V3_MAX_DREAM = 1
 
-VERDICT_KEYS = ("soon", "decade", "dubious")
+VERDICT_KEYS = ("soon", "decade", "pending", "dubious")  # pending（根拠待ち）は2026-10-18追加
 REQUIRED_TAGS = {
     "question": "冒頭の問い（teaser内）",
     "life_scene": "夢語りが描く具体的な生活の一場面（誰が・いつ・何をできるようになるか）",

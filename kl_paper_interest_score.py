@@ -264,13 +264,15 @@ STAGE3での注意点（動画化時に踏まえるべきヘッジ・限界）: 
    信頼性判断はSTAGE2で既に完了している前提）
 {relevance_items}4. surprise_score: 数字のインパクト（意外性のある定量的結果があるか）
 5. debate_score: 議論を呼ぶか。番組は「夢語り担当」と「ツッコミ担当」の二人の掛け合いで、最後に
-   「もうすぐ来る／3年はかかる／まだ眉唾」を判定する。夢語りが語りたくなる夢と、ツッコミが数字で
+   「もうすぐ来る／3年はかかる／根拠待ち／まだ眉唾」を判定する。夢語りが語りたくなる夢と、ツッコミが数字で
    突ける具体的な弱点（被験者数・試行回数・条件の狭さ・計算値か実測か・比較相手）の両方がある研究、
    常識や通説と逆の結果、効果が条件によって分かれる結果、二人の判定が割れそうな研究に高い点をつける。
    誰が見ても「良かったね」で終わり、突く所も意見が割れる所もない研究は低い点にする
 
 さらに、実際にこの論文を扱うとしたら:
-- expected_verdicts: 予想される二人の判定 {{"dreamer": "soon|decade|dubious", "skeptic": "soon|decade|dubious"}}
+- expected_verdicts: 予想される二人の判定 {{"dreamer": "soon|decade|pending|dubious", "skeptic": "soon|decade|pending|dubious"}}
+  （soon=もうすぐ来る／decade=3年はかかる（3年以内に来そうで物理・臨床の壁がある）／pending=根拠待ち（否定する資料は無いが、
+   支える資料もまだ無い。3年より先の予測を含む）／dubious=まだ眉唾（資料が逆を示す・範囲を大きく超える・誇張））
 - tsukkomi_material: ツッコミ担当が突ける具体的な弱点・限界を、アブストラクトから読み取れる範囲で1〜2文
   （読み取れなければ「本文で要確認」と書く）
 - hook_idea: 冒頭3〜5秒のフック文の叩き台（日本語、視聴者の問いか一番の驚き）
@@ -323,7 +325,7 @@ OUTPUT_FORMAT_CONCERN = (
     '"entry_question": "...", "future_scene_sketch": "...", "deja_vu_note": "...", "deja_vu_level": "none|partial|strong", '
     '"wonder_score": 1-5, "transformation_score": 1-5, "answer_fit_score": 1-5, "applicable_breadth_score": 1-5, '
     '"surprise_score": 1-5, "debate_score": 1-5, '
-    '"expected_verdicts": {"dreamer": "soon|decade|dubious", "skeptic": "soon|decade|dubious"}, '
+    '"expected_verdicts": {"dreamer": "soon|decade|pending|dubious", "skeptic": "soon|decade|pending|dubious"}, '
     '"tsukkomi_material": "...", "hook_idea": "...", "reasoning": "..."}'
 )
 
@@ -333,7 +335,7 @@ OUTPUT_FORMAT_WILDCARD = (
     '"demonstrated_capability": "...", "future_scene_sketch": "...", "deja_vu_note": "...", '
     '"deja_vu_level": "none|partial|strong", "wonder_score": 1-5, "transformation_score": 1-5, '
     '"life_relevance_score": 1-5, "surprise_score": 1-5, "debate_score": 1-5, '
-    '"expected_verdicts": {"dreamer": "soon|decade|dubious", "skeptic": "soon|decade|dubious"}, '
+    '"expected_verdicts": {"dreamer": "soon|decade|pending|dubious", "skeptic": "soon|decade|pending|dubious"}, '
     '"tsukkomi_material": "...", "hook_idea": "...", "reasoning": "..."}'
 )
 

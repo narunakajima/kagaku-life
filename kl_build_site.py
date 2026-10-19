@@ -506,7 +506,7 @@ def build_index(episodes: list[dict], published: list[dict], categories: list[di
     html = head_html(
         f"{CHANNEL_NAME} | 話題の科学は、本当にくらしに来る？",
         "AI・ロボット・医療・食べもの——話題の科学を、夢を語る大輔と数字の裏を確かめる沙織の二人が、発表元の資料で確かめて"
-        "「もうすぐ来る／3年はかかる／まだ眉唾」と判定します。"
+        "「もうすぐ来る／3年はかかる／根拠待ち／まだ眉唾」と判定します。"
     )
     html += nav_html("top")
     html += f"""
@@ -556,7 +556,7 @@ def build_index(episodes: list[dict], published: list[dict], categories: list[di
         量産型のAI雑学ではなく、根拠に忠実な<strong style="color:var(--coral-dim);font-weight:700;">「信頼できる先取り」</strong>をお届けします。
       </p>
       <p class="reveal reveal-delay-2" style="text-align:left;line-break:strict;font-size:clamp(.9rem,2.6vw,1rem);line-height:2;color:#5c6b78;max-width:680px;margin:0 auto 48px;">
-        判定は<strong style="color:var(--teal);font-weight:700;">「もうすぐ来る」「3年はかかる」「まだ眉唾」</strong>の3つ。二人の意見が割れる回もあります。<br>
+        判定は<strong style="color:var(--teal);font-weight:700;">「もうすぐ来る」「3年はかかる」「根拠待ち」「まだ眉唾」</strong>の4つ。「もうすぐ来る」はもう使えるか、1年ほどで来そう。「3年はかかる」は来そうだけれど、越える壁がある。「根拠待ち」は否定はしないけれど、確かめる資料がまだ無い。「まだ眉唾」は資料が言っていることと食い違う。二人の意見が割れる回もあります。<br>
         論文や発表の範囲を超えて言い切らず、まだ研究段階のものは、そのとおりに伝えます。
       </p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;max-width:720px;margin:0 auto;">
@@ -572,8 +572,8 @@ def build_index(episodes: list[dict], published: list[dict], categories: list[di
         </div>
         <div class="reveal reveal-delay-3" style="text-align:center;padding:26px 16px;border:1px solid var(--paper-dim);border-radius:12px;background:var(--paper);">
           <div style="font-size:1.8rem;margin-bottom:12px;">🔍</div>
-          <p style="font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:.82rem;color:var(--teal);">三つの判定</p>
-          <p style="font-size:.85rem;color:#5c6b78;line-height:1.7;margin-top:8px;">毎回、くらしに来る時期についての二人の見立てを出す</p>
+          <p style="font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:.82rem;color:var(--teal);">四つの判定</p>
+          <p style="font-size:.85rem;color:#5c6b78;line-height:1.7;margin-top:8px;">毎回、くらしに来る時期と根拠の確かさについて、二人の見立てを出す</p>
         </div>
       </div>
     </div>
