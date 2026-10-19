@@ -263,7 +263,7 @@
       "bgm_role": "intro",
       "ken_burns": "zoom_out",
       "image_prompt": "Interior of a vast modern data center hall in cool daylight-white lighting, long aisles of identical plain server racks receding into the distance, neat bundles of cables along the ceiling, one row of racks lit with a soft warm coral glow. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
-      "lines_hash": "d8fb19fd66f6",
+      "lines_hash": "dad9f719a6b0",
       "zoom_anchor": {
         "x": 0.5,
         "y": 0.5
@@ -273,7 +273,21 @@
           "speaker": "dreamer",
           "text": "AIがこなせる仕事の大きさが、3か月半ごとに倍になってる。",
           "expression": "excited",
-          "tone": "excited, like breaking news"
+          "tone": "excited, like breaking news",
+          "t0": 0.0,
+          "dur": 4.56,
+          "cards": [
+            {
+              "text": "AIがこなせる仕事の大きさが、",
+              "start": 0.26,
+              "end": 2.51
+            },
+            {
+              "text": "3か月半ごとに倍になってる。",
+              "start": 2.66,
+              "end": 4.76
+            }
+          ]
         }
       ],
       "narration": "大輔「AIがこなせる仕事の大きさが、3か月半ごとに倍になってる。」",
@@ -640,19 +654,28 @@
         ],
         "reference_index": 2
       },
-      "lines_hash": "22df1f083816",
+      "lines_hash": "70dcf818c393",
       "round": 1,
       "lines": [
         {
           "speaker": "skeptic",
           "text": "デンマークで働く人を調べた研究がある。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 2.84,
+          "cards": [
+            {
+              "text": "デンマークで働く人を調べた研究がある。",
+              "start": 0.0,
+              "end": 2.84
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "何を調べたの？",
           "expression": "neutral",
-          "t0": 8.72,
+          "t0": 3.12,
           "dur": 1.64,
           "cards": [
             {
@@ -665,13 +688,32 @@
         {
           "speaker": "skeptic",
           "text": "デンマークの国の記録を使って、働く人の収入と労働時間を、ChatGPTの登場から2年追った。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 5.04,
+          "dur": 6.96,
+          "cards": [
+            {
+              "text": "デンマークの国の記録を使って、",
+              "start": 0.0,
+              "end": 2.17
+            },
+            {
+              "text": "働く人の収入と労働時間を、ChatGPTの",
+              "start": 2.32,
+              "end": 5.56
+            },
+            {
+              "text": "登場から2年追った。",
+              "start": 5.71,
+              "end": 7.16
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "働く人は、仕事が速くなったと感じてるはずだよ。",
           "expression": "excited",
-          "t0": 17.68,
+          "t0": 12.28,
           "dur": 3.4,
           "cards": [
             {
@@ -689,18 +731,51 @@
         {
           "speaker": "skeptic",
           "text": "そこは合ってる。でも、収入も労働時間も、ほとんど動いてない。変わったとしても、どちらも2%より小さい。",
-          "expression": "doubt"
+          "expression": "doubt",
+          "t0": 15.96,
+          "dur": 6.8,
+          "cards": [
+            {
+              "text": "そこは合ってる。でも、収入も労働時間も、",
+              "start": 0.0,
+              "end": 2.75
+            },
+            {
+              "text": "ほとんど動いてない。変わったとしても、",
+              "start": 2.9,
+              "end": 5.32
+            },
+            {
+              "text": "どちらも2%より小さい。",
+              "start": 5.47,
+              "end": 7.0
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "収入の2%って、月30万円なら6000円くらいか。",
-          "expression": "surprised"
+          "expression": "surprised",
+          "t0": 23.04,
+          "dur": 5.6,
+          "cards": [
+            {
+              "text": "収入の2%って、",
+              "start": 0.0,
+              "end": 1.63
+            },
+            {
+              "text": "月30万円なら6000円くらいか。",
+              "start": 1.63,
+              "end": 5.1
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "そう。それより小さい。",
           "expression": "doubt",
-          "t0": 33.36,
+          "t0": 28.92,
           "dur": 1.8,
           "cards": [
             {
@@ -714,7 +789,7 @@
           "speaker": "dreamer",
           "text": "待って。ChatGPTが出たのは2022年の終わり。そこから2年なら、2024年ごろまでのAIでしょ。爆発の前の数字だ。",
           "expression": "thinking",
-          "t0": 35.44,
+          "t0": 31.0,
           "dur": 10.04,
           "cards": [
             {
@@ -744,7 +819,7 @@
           "text": "……その通り。少なくとも、これまでのAIでは、給料や働く時間は、まだ動いてない。爆発を見るなら、別の物差しが要る。",
           "expression": "convinced",
           "tag": "turn",
-          "t0": 45.76,
+          "t0": 41.32,
           "dur": 8.96,
           "cards": [
             {
@@ -780,7 +855,7 @@
       "bgm_role": "main",
       "ken_burns": "zoom_out",
       "image_prompt": "Bright daytime, a modern airy open-plan office seen from behind a row of empty desks: several monitors showing only blurred, unreadable translated documents, summaries and code-like lines in teal and slate tones, one central monitor glowing softly in warm coral. Coffee mugs, notebooks, potted plants, large windows with daylight. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
-      "lines_hash": "da7a411c01dc",
+      "lines_hash": "45583064eb70",
       "zoom_anchor": {
         "x": 0.5,
         "y": 0.5
@@ -815,19 +890,62 @@
         {
           "speaker": "skeptic",
           "text": "AIの力を、試験で測ってる所ね。その前に聞かせて。あなたなら、AIにどんな長い仕事を任せたい？",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 8.04,
+          "dur": 8.48,
+          "cards": [
+            {
+              "text": "AIの力を、試験で測ってる所ね。",
+              "start": 0.0,
+              "end": 2.56
+            },
+            {
+              "text": "その前に聞かせて。あなたなら、",
+              "start": 2.71,
+              "end": 5.25
+            },
+            {
+              "text": "AIにどんな長い仕事を任せたい？",
+              "start": 5.4,
+              "end": 8.3
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "僕なら、これに使う。人間のプログラマーなら何週間もかかる、会社の大きなシステム作りを、AIに丸ごと任せる。",
           "expression": "excited",
-          "tag": "use_case"
+          "tag": "use_case",
+          "t0": 16.8,
+          "dur": 7.96,
+          "cards": [
+            {
+              "text": "僕なら、これに使う。人間のプログラマーなら",
+              "start": 0.0,
+              "end": 3.04
+            },
+            {
+              "text": "何週間もかかる、",
+              "start": 3.19,
+              "end": 4.38
+            },
+            {
+              "text": "会社の大きなシステム作りを、",
+              "start": 4.38,
+              "end": 6.45
+            },
+            {
+              "text": "AIに丸ごと任せる。",
+              "start": 6.6,
+              "end": 8.16
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "今のAIがそこまで届いてるか、数字で見よう。",
           "expression": "neutral",
-          "t0": 21.64,
+          "t0": 25.04,
           "dur": 3.44,
           "cards": [
             {
@@ -867,7 +985,7 @@
         ],
         "reference_index": 9
       },
-      "lines_hash": "85b1e47dc8de",
+      "lines_hash": "6d6cc4268c16",
       "round": 1,
       "lines": [
         {
@@ -878,19 +996,19 @@
           "dur": 9.08,
           "cards": [
             {
-              "text": "METRの5月の報告。測り方はこう。",
+              "text": "メーターの5月の報告。測り方はこう。",
               "start": 0.0,
-              "end": 2.87
+              "end": 2.78
             },
             {
               "text": "人間なら1時間の仕事、10時間の仕事、と、",
-              "start": 2.87,
-              "end": 6.21
+              "start": 3.26,
+              "end": 6.41
             },
             {
               "text": "いろんな長さの仕事をAIにやらせる。",
-              "start": 6.21,
-              "end": 9.08
+              "start": 6.56,
+              "end": 9.26
             }
           ]
         },
@@ -949,93 +1067,332 @@
         {
           "speaker": "dreamer",
           "text": "2024年以降の最先端のAIは、その長さが、105日、つまり3か月半ほどごとに倍になってる。",
-          "expression": "excited"
+          "expression": "excited",
+          "t0": 27.36,
+          "dur": 8.88,
+          "cards": [
+            {
+              "text": "2024年以降の最先端のAIは、",
+              "start": 0.0,
+              "end": 2.84
+            },
+            {
+              "text": "その長さが、105日、つまり3か月半ほど",
+              "start": 2.99,
+              "end": 7.29
+            },
+            {
+              "text": "ごとに倍になってる。",
+              "start": 7.44,
+              "end": 8.94
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "1年なら、10倍を超えるペースね。今はどこまで？",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 36.52,
+          "dur": 4.48,
+          "cards": [
+            {
+              "text": "1年なら、10倍を超えるペースね。",
+              "start": 0.0,
+              "end": 2.68
+            },
+            {
+              "text": "今はどこまで？",
+              "start": 2.83,
+              "end": 4.25
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "今年2月から3月に出たAIで、人間なら約12時間かかる仕事を、2回に1回こなせる。",
-          "expression": "surprised"
+          "expression": "surprised",
+          "t0": 41.28,
+          "dur": 6.4,
+          "cards": [
+            {
+              "text": "今年2月から3月に出たAIで、",
+              "start": 0.0,
+              "end": 2.23
+            },
+            {
+              "text": "人間なら約12時間かかる仕事を、",
+              "start": 2.38,
+              "end": 4.8
+            },
+            {
+              "text": "2回に1回こなせる。",
+              "start": 4.95,
+              "end": 6.44
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "ただ、12時間は真ん中の見積もり。短ければ5時間、長ければ61時間。",
-          "expression": "doubt"
+          "expression": "doubt",
+          "t0": 47.96,
+          "dur": 5.6,
+          "cards": [
+            {
+              "text": "ただ、12時間は真ん中の見積もり。",
+              "start": 0.0,
+              "end": 2.55
+            },
+            {
+              "text": "短ければ5時間、長ければ61時間。",
+              "start": 2.74,
+              "end": 5.29
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "ずいぶん幅があるね。61時間でも2日半。何週間もかかるシステム作りには、まだ遠いか。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 53.84,
+          "dur": 8.52,
+          "cards": [
+            {
+              "text": "ずいぶん幅があるね。61時間でも2日半。",
+              "start": 0.0,
+              "end": 4.46
+            },
+            {
+              "text": "何週間もかかるシステム作りには、",
+              "start": 4.61,
+              "end": 7.01
+            },
+            {
+              "text": "まだ遠いか。",
+              "start": 7.16,
+              "end": 8.18
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "でも、半日かかるプログラムの不具合の修正なら、もう届いてる！",
-          "expression": "excited"
+          "expression": "excited",
+          "t0": 62.58,
+          "dur": 4.16,
+          "cards": [
+            {
+              "text": "でも、半日かかるプログラムの",
+              "start": 0.0,
+              "end": 1.94
+            },
+            {
+              "text": "不具合の修正なら、もう届いてる！",
+              "start": 1.94,
+              "end": 4.16
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "実際、プログラマーの仕事では、そのくらいの修正をAIに任せるのは、もう日常だよ。数日がかりのアプリ作りも、任せられるようになってきた。",
-          "expression": "surprised"
+          "expression": "surprised",
+          "t0": 66.96,
+          "dur": 9.72,
+          "cards": [
+            {
+              "text": "実際、プログラマーの仕事では、",
+              "start": 0.0,
+              "end": 2.08
+            },
+            {
+              "text": "そのくらいの修正をAIに任せるのは、",
+              "start": 2.23,
+              "end": 4.81
+            },
+            {
+              "text": "もう日常だよ。数日がかりのアプリ作りも、",
+              "start": 4.96,
+              "end": 7.83
+            },
+            {
+              "text": "任せられるようになってきた。",
+              "start": 7.98,
+              "end": 9.92
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "2回に1回、でしょ。それで日常なの？",
           "expression": "neutral",
-          "t0": 55.02,
-          "dur": 3.8,
+          "t0": 76.96,
+          "dur": 3.12,
           "cards": [
             {
               "text": "2回に1回、でしょ。それで日常なの？",
               "start": 0.0,
-              "end": 3.8
+              "end": 3.12
             }
           ]
         },
         {
           "speaker": "dreamer",
           "text": "2回に1回は、少し前のAIに、やり直しなしで1回だけやらせたときの成功率。ここ数週間に出た最新のAIは、失敗しても別のやり方を試して、最後はほぼ確実にやり遂げる。ここまでは、僕の実感だけど。",
-          "expression": "surprised"
+          "expression": "surprised",
+          "t0": 80.36,
+          "dur": 16.0,
+          "cards": [
+            {
+              "text": "2回に1回は、少し前のAIに、",
+              "start": 0.0,
+              "end": 2.88
+            },
+            {
+              "text": "やり直しなしで1回だけ",
+              "start": 3.03,
+              "end": 4.68
+            },
+            {
+              "text": "やらせたときの成功率。",
+              "start": 4.68,
+              "end": 6.33
+            },
+            {
+              "text": "ここ数週間に出た最新のAIは、",
+              "start": 6.7,
+              "end": 8.95
+            },
+            {
+              "text": "失敗しても別のやり方を試して、",
+              "start": 9.1,
+              "end": 11.48
+            },
+            {
+              "text": "最後はほぼ確実にやり遂げる。ここまでは、",
+              "start": 11.63,
+              "end": 14.77
+            },
+            {
+              "text": "僕の実感だけど。",
+              "start": 14.92,
+              "end": 16.12
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "そう。やり直しなしの一発勝負で、成功する割合ね。最新のAIは、まだこの数字に載ってない。やり直しを認めたらどうなるかも、この資料には無い。あなたの実感は、資料の外ね。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 96.64,
+          "dur": 12.16,
+          "cards": [
+            {
+              "text": "そう。やり直しなしの一発勝負で、",
+              "start": 0.0,
+              "end": 2.38
+            },
+            {
+              "text": "成功する割合ね。最新のAIは、",
+              "start": 2.53,
+              "end": 4.66
+            },
+            {
+              "text": "まだこの数字に載ってない。やり直しを",
+              "start": 4.81,
+              "end": 7.32
+            },
+            {
+              "text": "認めたらどうなるかも、この資料には無い。",
+              "start": 7.47,
+              "end": 10.26
+            },
+            {
+              "text": "あなたの実感は、資料の外ね。",
+              "start": 10.41,
+              "end": 12.36
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それに、評価した中で一番強いAIは、用意された一番長い仕事にも手が届きかけてる。もっと長い仕事が無いから、本当はどこまでできるのか、この物差しではもう測りきれない。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 109.02,
+          "dur": 11.8,
+          "cards": [
+            {
+              "text": "それに、評価した中で一番強いAIは、",
+              "start": 0.0,
+              "end": 2.68
+            },
+            {
+              "text": "用意された一番長い",
+              "start": 2.83,
+              "end": 4.08
+            },
+            {
+              "text": "仕事にも手が届きかけてる。",
+              "start": 4.08,
+              "end": 5.88
+            },
+            {
+              "text": "もっと長い仕事が無いから、本当はどこまで",
+              "start": 6.03,
+              "end": 8.8
+            },
+            {
+              "text": "できるのか、",
+              "start": 8.95,
+              "end": 9.78
+            },
+            {
+              "text": "この物差しではもう測りきれない。",
+              "start": 9.78,
+              "end": 12.0
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "物差しのほうが、AIに追いつかなくなってるのか。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 121.1,
+          "dur": 3.36,
+          "cards": [
+            {
+              "text": "物差しのほうが、",
+              "start": 0.0,
+              "end": 1.12
+            },
+            {
+              "text": "AIに追いつかなくなってるのか。",
+              "start": 1.12,
+              "end": 3.36
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それと、待って。12時間は、人間がやったらの時間でしょ。AIは、実際には何時間かかるの？",
           "expression": "convinced",
-          "t0": 100.02,
-          "dur": 6.84,
+          "t0": 124.74,
+          "dur": 7.0,
           "cards": [
             {
               "text": "それと、待って。12時間は、",
               "start": 0.0,
-              "end": 2.24
+              "end": 2.4
             },
             {
               "text": "人間がやったらの時間でしょ。AIは、",
-              "start": 2.39,
-              "end": 5.11
+              "start": 2.55,
+              "end": 5.25
             },
             {
               "text": "実際には何時間かかるの？",
-              "start": 5.26,
-              "end": 7.04
+              "start": 5.4,
+              "end": 7.2
             }
           ]
         },
@@ -1043,8 +1400,8 @@
           "speaker": "dreamer",
           "text": "そこは、この報告には書いてない。測ってるのは、人間なら何時間ぶんの仕事か、という物差し。",
           "expression": "surprised",
-          "t0": 107.14,
-          "dur": 7.04,
+          "t0": 132.02,
+          "dur": 7.12,
           "cards": [
             {
               "text": "そこは、この報告には書いてない。",
@@ -1053,13 +1410,13 @@
             },
             {
               "text": "測ってるのは、人間なら何時間ぶんの仕事か、",
-              "start": 2.55,
-              "end": 5.91
+              "start": 2.56,
+              "end": 5.82
             },
             {
               "text": "という物差し。",
-              "start": 6.06,
-              "end": 7.11
+              "start": 5.97,
+              "end": 7.02
             }
           ]
         },
@@ -1067,19 +1424,57 @@
           "speaker": "skeptic",
           "text": "なるほどね。実際にかかる時間は分からないし、測った仕事も、ほとんどがプログラム。料理や建設じゃない。",
           "expression": "doubt",
-          "tag": "weakness"
+          "tag": "weakness",
+          "t0": 139.42,
+          "dur": 7.0,
+          "cards": [
+            {
+              "text": "なるほどね。",
+              "start": 0.0,
+              "end": 0.86
+            },
+            {
+              "text": "実際にかかる時間は分からないし、",
+              "start": 0.86,
+              "end": 3.15
+            },
+            {
+              "text": "測った仕事も、ほとんどがプログラム。",
+              "start": 3.3,
+              "end": 5.71
+            },
+            {
+              "text": "料理や建設じゃない。",
+              "start": 5.86,
+              "end": 7.2
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それでも、倍々の伸びは、数字に出てる。悔しいけど。",
           "expression": "convinced",
-          "tag": "turn"
+          "tag": "turn",
+          "t0": 146.64,
+          "dur": 3.6,
+          "cards": [
+            {
+              "text": "それでも、倍々の伸びは、数字に出てる。",
+              "start": 0.0,
+              "end": 2.62
+            },
+            {
+              "text": "悔しいけど。",
+              "start": 2.77,
+              "end": 3.6
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "マスクさんの話は、モノがあふれて安くなる、だった。AIが仕事をこなせても、モノが安くなるかは、また別か。",
           "expression": "thinking",
-          "t0": 135.88,
+          "t0": 150.52,
           "dur": 7.76,
           "cards": [
             {
@@ -1123,7 +1518,7 @@
         ],
         "reference_index": 4
       },
-      "lines_hash": "f9fbb1504e7e",
+      "lines_hash": "6d44a6981d0f",
       "round": 1,
       "lines": [
         {
@@ -1205,12 +1600,50 @@
         {
           "speaker": "skeptic",
           "text": "値下がりは認める。ただ、こんなに速く下がったのはここ1年で、続くかは分からない、とある。",
-          "expression": "convinced"
+          "expression": "convinced",
+          "t0": 17.66,
+          "dur": 5.96,
+          "cards": [
+            {
+              "text": "値下がりは認める。ただ、こんなに速く",
+              "start": 0.2,
+              "end": 2.52
+            },
+            {
+              "text": "下がったのはここ1年で、",
+              "start": 2.67,
+              "end": 4.21
+            },
+            {
+              "text": "続くかは分からない、",
+              "start": 4.21,
+              "end": 5.5
+            },
+            {
+              "text": "とある。",
+              "start": 5.65,
+              "end": 6.16
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "それに、安くなったのはAIの使用料で、パンや家賃じゃない。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 23.9,
+          "dur": 4.52,
+          "cards": [
+            {
+              "text": "それに、安くなったのはAIの使用料で、",
+              "start": 0.0,
+              "end": 2.88
+            },
+            {
+              "text": "パンや家賃じゃない。",
+              "start": 3.03,
+              "end": 4.53
+            }
+          ]
         }
       ],
       "image_asset": "cards/kl046_S10",
@@ -1223,20 +1656,39 @@
       "bgm_role": "main",
       "ken_burns": "static",
       "image_prompt": "A simple, clean flat infographic flow diagram on a plain light background, with no title. Two horizontal rows stacked vertically, both read from left to right, and both ending in ONE shared rounded box on the far right that spans the height of both rows, labeled exactly 「モノを買う」 (gray). Upper row: a small dark-gray tag 「今」 at its left end, then a teal rounded box 「人が働く」, a right-pointing arrow, a thick teal rounded box 「給料」, and a thick right-pointing arrow from 「給料」 into the shared 「モノを買う」 box. Lower row: a small dark-gray tag 「爆発後（例）」 at its left end, then a teal rounded box 「AIとロボットが働く」; from it the arrow splits into two branches, one going up-right and one going down-right, to two warm coral rounded boxes stacked one above the other: 「持っている人に入るお金」 (upper) and 「配られるお金」 (lower); from each coral box a right-pointing arrow goes into the shared 「モノを買う」 box. The lower row has no 「給料」 box. Teal for the work boxes, coral only for the two branch boxes, gray for the shared box and the two tags. Exactly eight labels in total: 「今」「人が働く」「給料」「爆発後（例）」「AIとロボットが働く」「持っている人に入るお金」「配られるお金」「モノを買う」, each written exactly as given. Make the whole diagram compact so that everything sits within the central 70 percent of the picture width and within the top 70 percent of the picture height, with a large empty light area at the bottom (the lower 30 percent of the picture must be completely empty). Do not add any other text, numbers, icons, people or logos.",
-      "lines_hash": "11b7bec935c6",
+      "lines_hash": "eb0fea82f154",
       "round": 2,
       "round_title": "爆発したら、お金は要らなくなる？",
       "lines": [
         {
           "speaker": "skeptic",
           "text": "パンや家賃が安くなるかは、あとで確かめる。その前に、一つ聞きたい。そもそも、お金って何のためにある？",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 0.0,
+          "dur": 7.28,
+          "cards": [
+            {
+              "text": "パンや家賃が安くなるかは、あとで確かめる。",
+              "start": 0.0,
+              "end": 2.93
+            },
+            {
+              "text": "その前に、一つ聞きたい。そもそも、",
+              "start": 3.08,
+              "end": 5.65
+            },
+            {
+              "text": "お金って何のためにある？",
+              "start": 5.8,
+              "end": 7.48
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "モノと引き換える券。モノがあふれたら、券は要らない。それがマスクさんの理屈。",
           "expression": "excited",
-          "t0": 6.16,
+          "t0": 7.56,
           "dur": 5.88,
           "cards": [
             {
@@ -1255,7 +1707,7 @@
           "speaker": "skeptic",
           "text": "じゃあ、その券を、今はどうやって手に入れてる？",
           "expression": "neutral",
-          "t0": 12.32,
+          "t0": 13.72,
           "dur": 3.16,
           "cards": [
             {
@@ -1274,7 +1726,7 @@
           "speaker": "dreamer",
           "text": "働いて、給料をもらう。",
           "expression": "neutral",
-          "t0": 15.76,
+          "t0": 17.16,
           "dur": 2.4,
           "cards": [
             {
@@ -1288,7 +1740,7 @@
           "speaker": "skeptic",
           "text": "ほとんどの人はそうね。でも、お金が入ってくる道は、ほかにもある。ここでは「入り口」と呼ぶね。",
           "expression": "neutral",
-          "t0": 18.44,
+          "t0": 19.84,
           "dur": 5.96,
           "cards": [
             {
@@ -1312,7 +1764,7 @@
           "speaker": "dreamer",
           "text": "持っているものから入るお金か。部屋を貸して入る家賃とか、会社の株を持っていて、もうけの分け前として入る配当とか。",
           "expression": "thinking",
-          "t0": 24.68,
+          "t0": 26.08,
           "dur": 9.0,
           "cards": [
             {
@@ -1341,7 +1793,7 @@
           "speaker": "skeptic",
           "text": "それと、配られるお金。年金のような、国からの給付。",
           "expression": "neutral",
-          "t0": 33.96,
+          "t0": 35.36,
           "dur": 4.16,
           "cards": [
             {
@@ -1360,7 +1812,7 @@
           "speaker": "dreamer",
           "text": "入り口は3つ。働く、持つ、配られる。今は、働いて入るお金が、一番太い。",
           "expression": "convinced",
-          "t0": 38.4,
+          "t0": 39.8,
           "dur": 7.04,
           "cards": [
             {
@@ -1379,7 +1831,7 @@
           "speaker": "skeptic",
           "text": "爆発で、この3つの太さがどう変わるか。それが、お金の未来の答えになる。",
           "expression": "thinking",
-          "t0": 45.72,
+          "t0": 47.12,
           "dur": 5.92,
           "cards": [
             {
@@ -1419,7 +1871,7 @@
         ],
         "reference_index": 10
       },
-      "lines_hash": "5ef17a8f551f",
+      "lines_hash": "41debffce92e",
       "round": 2,
       "lines": [
         {
@@ -1515,13 +1967,32 @@
         {
           "speaker": "dreamer",
           "text": "全部こなせるようになった後は、経済全体で作るモノの量が、年18%ずつ増える。",
-          "expression": "excited"
+          "expression": "excited",
+          "t0": 26.74,
+          "dur": 6.92,
+          "cards": [
+            {
+              "text": "全部こなせるようになった後は、",
+              "start": 0.0,
+              "end": 2.25
+            },
+            {
+              "text": "経済全体で作るモノの量が、",
+              "start": 2.4,
+              "end": 5.05
+            },
+            {
+              "text": "年18%ずつ増える。",
+              "start": 5.05,
+              "end": 7.08
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "年18%って、およそ4年でモノが倍になる速さね。",
           "expression": "surprised",
-          "t0": 32.82,
+          "t0": 33.94,
           "dur": 4.72,
           "cards": [
             {
@@ -1539,19 +2010,47 @@
         {
           "speaker": "dreamer",
           "text": "AIが仕事を全部はこなさない、今までどおりの設定だと？",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 38.94,
+          "dur": 5.56,
+          "cards": [
+            {
+              "text": "AIが仕事を全部はこなさない、",
+              "start": 0.0,
+              "end": 3.14
+            },
+            {
+              "text": "今までどおりの設定だと？",
+              "start": 3.54,
+              "end": 5.34
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "モノの増え方は、年2%ほど。爆発的に増える、はその通りね。",
           "expression": "convinced",
-          "tag": "turn"
+          "tag": "turn",
+          "t0": 44.78,
+          "dur": 5.48,
+          "cards": [
+            {
+              "text": "モノの増え方は、年2%ほど。",
+              "start": 0.0,
+              "end": 2.4
+            },
+            {
+              "text": "爆発的に増える、はその通りね。",
+              "start": 2.55,
+              "end": 5.27
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "でも、お金の入り口を見て。この約20年の設定では、AIが仕事を全部こなすより前に、賃金、つまり給料が大きく下がる。",
           "expression": "doubt",
-          "t0": 44.92,
+          "t0": 50.48,
           "dur": 9.24,
           "cards": [
             {
@@ -1580,7 +2079,7 @@
           "speaker": "dreamer",
           "text": "全部こなす前に？ モノは増えてるのに、なんで給料が下がるの？",
           "expression": "surprised",
-          "t0": 54.44,
+          "t0": 60.0,
           "dur": 5.52,
           "cards": [
             {
@@ -1599,7 +2098,7 @@
           "speaker": "skeptic",
           "text": "設定しだいで、下がらない場合もある。その違いも含めて、お弁当工場にたとえて説明する。",
           "expression": "thinking",
-          "t0": 60.24,
+          "t0": 65.8,
           "dur": 5.92,
           "cards": [
             {
@@ -1750,18 +2249,46 @@
         {
           "speaker": "skeptic",
           "text": "だから、その工程をこなせる人が貴重になって、給料が上がる。",
-          "expression": "convinced"
+          "expression": "convinced",
+          "t0": 28.88,
+          "dur": 4.2,
+          "cards": [
+            {
+              "text": "だから、",
+              "start": 0.0,
+              "end": 0.56
+            },
+            {
+              "text": "その工程をこなせる人が貴重になって、",
+              "start": 0.56,
+              "end": 3.07
+            },
+            {
+              "text": "給料が上がる。",
+              "start": 3.22,
+              "end": 4.2
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "じゃあ、どんなときに下がるの？",
-          "expression": "surprised"
+          "expression": "surprised",
+          "t0": 33.36,
+          "dur": 2.2,
+          "cards": [
+            {
+              "text": "じゃあ、どんなときに下がるの？",
+              "start": 0.0,
+              "end": 2.2
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "ロボットに任せられる工程の種類が増えて、難しい工程まで引き受け始めると、人の手が要る工程が減っていく。",
           "expression": "doubt",
-          "t0": 36.76,
+          "t0": 35.84,
           "dur": 6.8,
           "cards": [
             {
@@ -1785,7 +2312,7 @@
           "speaker": "dreamer",
           "text": "人は余るのに、行き場の工程は少ない。",
           "expression": "thinking",
-          "t0": 43.84,
+          "t0": 42.92,
           "dur": 3.2,
           "cards": [
             {
@@ -1799,7 +2326,7 @@
           "speaker": "skeptic",
           "text": "そう。働く人が、残った少ない工程に押し寄せる。だから給料が下がる。",
           "expression": "doubt",
-          "t0": 47.32,
+          "t0": 46.4,
           "dur": 5.48,
           "cards": [
             {
@@ -1823,7 +2350,7 @@
           "speaker": "dreamer",
           "text": "つまり、競争なんだ。ロボットの数が増える速さと、ロボットに任せられる工程の種類が増える速さ。",
           "expression": "thinking",
-          "t0": 53.08,
+          "t0": 52.16,
           "dur": 7.24,
           "cards": [
             {
@@ -1852,7 +2379,7 @@
           "speaker": "skeptic",
           "text": "そう。種類が増える方が速いと、人が余って、給料は下がりうる。",
           "expression": "neutral",
-          "t0": 60.6,
+          "t0": 59.68,
           "dur": 4.56,
           "cards": [
             {
@@ -1871,7 +2398,7 @@
           "speaker": "dreamer",
           "text": "数が増える方が速ければ？",
           "expression": "thinking",
-          "t0": 65.44,
+          "t0": 64.52,
           "dur": 2.64,
           "cards": [
             {
@@ -1884,52 +2411,109 @@
         {
           "speaker": "skeptic",
           "text": "易しい工程ばかり進んで、人の手が要る工程が詰まる。さっきと同じで、その工程をこなせる人が貴重になる。だから、給料は上がりうる。",
-          "expression": "convinced"
+          "expression": "convinced",
+          "t0": 67.44,
+          "dur": 9.08,
+          "cards": [
+            {
+              "text": "易しい工程ばかり進んで、",
+              "start": 0.21,
+              "end": 1.88
+            },
+            {
+              "text": "人の手が要る工程が詰まる。",
+              "start": 1.88,
+              "end": 3.69
+            },
+            {
+              "text": "さっきと同じで、",
+              "start": 3.84,
+              "end": 4.95
+            },
+            {
+              "text": "その工程をこなせる人が貴重になる。",
+              "start": 4.95,
+              "end": 7.32
+            },
+            {
+              "text": "だから、給料は上がりうる。",
+              "start": 7.47,
+              "end": 9.28
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それに、人にしかできない工程がずっと残れば、給料は上がり続けうる。残るかどうかは、論文にも分からない。",
           "expression": "neutral",
-          "t0": 82.58,
-          "dur": 7.52,
+          "t0": 76.74,
+          "dur": 6.6,
           "cards": [
             {
               "text": "それに、",
               "start": 0.0,
-              "end": 0.57
+              "end": 0.51
             },
             {
               "text": "人にしかできない工程がずっと残れば、",
-              "start": 0.57,
-              "end": 3.11
+              "start": 0.51,
+              "end": 2.82
             },
             {
               "text": "給料は上がり続けうる。残るかどうかは、",
-              "start": 3.26,
-              "end": 6.15
+              "start": 2.97,
+              "end": 5.41
             },
             {
               "text": "論文にも分からない。",
-              "start": 6.3,
-              "end": 7.72
+              "start": 5.56,
+              "end": 6.8
             }
           ]
         },
         {
           "speaker": "dreamer",
           "text": "さっきの約20年の設定は、種類が増える方が速い場合か。だから、給料が下がったんだ。",
-          "expression": "convinced"
+          "expression": "convinced",
+          "t0": 83.62,
+          "dur": 7.2,
+          "cards": [
+            {
+              "text": "さっきの約20年の設定は、種類が増える",
+              "start": 0.0,
+              "end": 3.44
+            },
+            {
+              "text": "方が速い場合か。だから、",
+              "start": 3.59,
+              "end": 5.4
+            },
+            {
+              "text": "給料が下がったんだ。",
+              "start": 5.4,
+              "end": 6.91
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "そういうこと。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 91.1,
+          "dur": 1.2,
+          "cards": [
+            {
+              "text": "そういうこと。",
+              "start": 0.0,
+              "end": 1.2
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "じゃあ、増えたモノの分け前は、どこへ行くの？",
           "expression": "thinking",
-          "t0": 90.38,
+          "t0": 92.58,
           "dur": 3.0,
           "cards": [
             {
@@ -1948,7 +2532,7 @@
           "speaker": "skeptic",
           "text": "AIやロボット、工場を持っている人の側へ。経済の言葉では資本。入り口でいう「持つ」ね。",
           "expression": "neutral",
-          "t0": 93.66,
+          "t0": 95.86,
           "dur": 6.16,
           "cards": [
             {
@@ -1972,7 +2556,7 @@
           "speaker": "skeptic",
           "text": "ただ、それを誰が持つかは、この計算には入っていない。",
           "expression": "neutral",
-          "t0": 100.04,
+          "t0": 102.24,
           "dur": 3.44,
           "cards": [
             {
@@ -1991,7 +2575,7 @@
           "speaker": "dreamer",
           "text": "つまり、入り口のうち「持つ」が太くなって、「働く」が細くなる場合があるのか。",
           "expression": "convinced",
-          "t0": 103.76,
+          "t0": 105.96,
           "dur": 5.76,
           "cards": [
             {
@@ -2010,7 +2594,7 @@
           "speaker": "skeptic",
           "text": "そう。ただ、これは未来の予測じゃなく、仮定を置いた計算の例ね。",
           "expression": "neutral",
-          "t0": 109.8,
+          "t0": 112.0,
           "dur": 5.16,
           "cards": [
             {
@@ -2028,7 +2612,7 @@
       ],
       "narration": "沙織「お弁当は、いくつもの工程が全部そろわないと、完成しない。」\n大輔「ご飯を詰める、おかずを焼く、盛りつける、ふたをする、みたいな工程か。」\n沙織「そう。AIとロボットは、易しい工程から、人の代わりに引き受けていく。これが自動化。」\n大輔「ロボットの数が増えれば、易しい工程は、山ほど進むね。」\n沙織「すると、まだ人の手が要る工程が、全体の足を引っ張る。」\n大輔「そこが詰まると、お弁当全体が止まる。」\n沙織「だから、その工程をこなせる人が貴重になって、給料が上がる。」\n大輔「じゃあ、どんなときに下がるの？」\n沙織「ロボットに任せられる工程の種類が増えて、難しい工程まで引き受け始めると、人の手が要る工程が減っていく。」\n大輔「人は余るのに、行き場の工程は少ない。」\n沙織「そう。働く人が、残った少ない工程に押し寄せる。だから給料が下がる。」\n大輔「つまり、競争なんだ。ロボットの数が増える速さと、ロボットに任せられる工程の種類が増える速さ。」\n沙織「そう。種類が増える方が速いと、人が余って、給料は下がりうる。」\n大輔「数が増える方が速ければ？」\n沙織「易しい工程ばかり進んで、人の手が要る工程が詰まる。さっきと同じで、その工程をこなせる人が貴重になる。だから、給料は上がりうる。」\n沙織「それに、人にしかできない工程がずっと残れば、給料は上がり続けうる。残るかどうかは、論文にも分からない。」\n大輔「さっきの約20年の設定は、種類が増える方が速い場合か。だから、給料が下がったんだ。」\n沙織「そういうこと。」\n大輔「じゃあ、増えたモノの分け前は、どこへ行くの？」\n沙織「AIやロボット、工場を持っている人の側へ。経済の言葉では資本。入り口でいう「持つ」ね。」\n沙織「ただ、それを誰が持つかは、この計算には入っていない。」\n大輔「つまり、入り口のうち「持つ」が太くなって、「働く」が細くなる場合があるのか。」\n沙織「そう。ただ、これは未来の予測じゃなく、仮定を置いた計算の例ね。」",
       "narrator": "dialogue",
-      "lines_hash": "922518080960"
+      "lines_hash": "d96a8837bd83"
     },
     {
       "scene_id": 14,
@@ -2050,7 +2634,7 @@
         ],
         "reference_index": 6
       },
-      "lines_hash": "9080c1f0da08",
+      "lines_hash": "69cbf2e4a131",
       "round": 2,
       "lines": [
         {
@@ -2129,29 +2713,62 @@
         {
           "speaker": "dreamer",
           "text": "住まいって、そんなに安いの？ カードだと、月2万円足らずだけど。",
-          "expression": "surprised"
+          "expression": "surprised",
+          "t0": 23.38,
+          "dur": 6.08,
+          "cards": [
+            {
+              "text": "住まいって、そんなに安いの？ カードだと、",
+              "start": 0.25,
+              "end": 3.56
+            },
+            {
+              "text": "月2万円足らずだけど。",
+              "start": 3.71,
+              "end": 5.51
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "家賃を払っていない持ち家の家庭も含めた平均だから、低く出てるの。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 29.74,
+          "dur": 4.12,
+          "cards": [
+            {
+              "text": "家賃を払っていない持ち家の",
+              "start": 0.0,
+              "end": 1.61
+            },
+            {
+              "text": "家庭も含めた平均だから、",
+              "start": 1.61,
+              "end": 3.1
+            },
+            {
+              "text": "低く出てるの。",
+              "start": 3.25,
+              "end": 4.12
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "畑も建設も発電所も、ロボットがやれば安くなるでしょ。",
           "expression": "excited",
-          "t0": 23.38,
-          "dur": 4.68,
+          "t0": 34.14,
+          "dur": 4.56,
           "cards": [
             {
               "text": "畑も建設も発電所も、ロボットがやれば安く",
-              "start": 0.52,
-              "end": 3.8
+              "start": 0.4,
+              "end": 3.71
             },
             {
               "text": "なるでしょ。",
-              "start": 3.95,
-              "end": 4.85
+              "start": 3.86,
+              "end": 4.76
             }
           ]
         },
@@ -2160,18 +2777,18 @@
           "text": "壁は電気。ロボットもAIも、動かすには電気が要る。",
           "expression": "doubt",
           "tag": "barrier",
-          "t0": 28.34,
-          "dur": 4.72,
+          "t0": 38.98,
+          "dur": 4.68,
           "cards": [
             {
               "text": "壁は電気。ロボットもAIも、",
               "start": 0.0,
-              "end": 2.66
+              "end": 3.08
             },
             {
               "text": "動かすには電気が要る。",
-              "start": 2.81,
-              "end": 4.46
+              "start": 3.23,
+              "end": 4.88
             }
           ]
         },
@@ -2179,30 +2796,64 @@
           "speaker": "skeptic",
           "text": "マスクさん自身が、少なくとも中国以外では、AIを動かす部品、チップが増える速さに、新しい発電所が追いつかない、と言ってる。",
           "expression": "doubt",
-          "t0": 33.28,
-          "dur": 9.08,
+          "t0": 43.88,
+          "dur": 8.28,
           "cards": [
             {
               "text": "マスクさん自身が、少なくとも中国以外では、",
               "start": 0.0,
-              "end": 3.02
+              "end": 2.94
             },
             {
               "text": "AIを動かす部品、チップが増える速さに、",
-              "start": 3.17,
-              "end": 6.25
+              "start": 3.09,
+              "end": 5.71
             },
             {
               "text": "新しい発電所が追いつかない、と言ってる。",
-              "start": 6.4,
-              "end": 9.28
+              "start": 5.86,
+              "end": 8.48
             }
           ]
         },
         {
           "speaker": "dreamer",
           "text": "AIを動かすだけでも、電気が足りなくなるのか。じゃあ、畑や工場や建設のロボットまで動かして、食べ物や家を安くする電気は、まだ見えてないんだね。",
-          "expression": "deflated"
+          "expression": "deflated",
+          "t0": 52.44,
+          "dur": 11.4,
+          "cards": [
+            {
+              "text": "AIを動かすだけでも、",
+              "start": 0.4,
+              "end": 2.05
+            },
+            {
+              "text": "電気が足りなくなるのか。",
+              "start": 2.05,
+              "end": 3.85
+            },
+            {
+              "text": "じゃあ、",
+              "start": 4.1,
+              "end": 4.7
+            },
+            {
+              "text": "畑や工場や建設のロボットまで動かして、",
+              "start": 4.7,
+              "end": 7.55
+            },
+            {
+              "text": "食べ物や家を安くする電気は、",
+              "start": 7.7,
+              "end": 9.8
+            },
+            {
+              "text": "まだ見えてないんだね。",
+              "start": 9.95,
+              "end": 11.6
+            }
+          ]
         }
       ],
       "image_asset": "cards/kl046_S14",
@@ -2215,7 +2866,7 @@
       "bgm_role": "main",
       "ken_burns": "static",
       "reuse_scene_id": 11,
-      "lines_hash": "fd2cc4f31918",
+      "lines_hash": "4263a84677c4",
       "round": 2,
       "lines": [
         {
@@ -2375,7 +3026,26 @@
         {
           "speaker": "dreamer",
           "text": "給料が減ってから、モノがあふれるまでの間、お金の入り口は、「持つ」か「配られる」に移っていく。",
-          "expression": "convinced"
+          "expression": "convinced",
+          "t0": 37.18,
+          "dur": 6.68,
+          "cards": [
+            {
+              "text": "給料が減ってから、モノがあふれるまでの間、",
+              "start": 0.0,
+              "end": 2.85
+            },
+            {
+              "text": "お金の入り口は、「持つ」か「配られる」",
+              "start": 3.0,
+              "end": 5.78
+            },
+            {
+              "text": "に移っていく。",
+              "start": 5.93,
+              "end": 6.88
+            }
+          ]
         }
       ],
       "narration": "大輔「でも、核融合みたいな新しい発電や、宇宙での発電ができたら？ ロボットが建てれば、住む場所も増える。」\n沙織「それは資料には無い、できたらの話ね。」\n沙織「でも、否定はしない。モノが、誰でも使い切れないほどあふれたら、お金で分け合う必要はなくなる。」\n大輔「じゃあ、お金は要らなくなる？」\n沙織「そこまでは分からない。何が、どれだけ増えるかしだい。」\n大輔「ただ、さっきの計算では、ロボットに任せられる工程の種類が増える方が速いと、モノがあふれるより先に、給料が減ることもあった。」\n沙織「そう。その場合は、給料が減ってから、モノがあふれるまでの間ができる。」\n大輔「給料が減ってから、モノがあふれるまでの間、お金の入り口は、「持つ」か「配られる」に移っていく。」",
@@ -2603,7 +3273,7 @@
       "bgm_role": "main",
       "ken_burns": "zoom_out",
       "image_prompt": "Calm early-morning view of a quiet ordinary American suburban street: a row of plain metal residential mailboxes on posts in the foreground, modest single-story houses with small lawns behind them, soft clear dawn daylight (clearly morning, not night), one mailbox catching a warm coral glint of sunlight. No people. No logos, no brand marks, no readable text, no letters, no numbers, no flags.",
-      "lines_hash": "97f5b77b87ce",
+      "lines_hash": "559f7d3edabd",
       "zoom_anchor": {
         "x": 0.5,
         "y": 0.5
@@ -2614,13 +3284,37 @@
         {
           "speaker": "dreamer",
           "text": "最後は、配ったら人がどう動くか。アメリカの2つの州で、毎月お金を配り続けた実験がある。調べたのは、トロント大学などの研究者。",
-          "expression": "excited"
+          "expression": "excited",
+          "t0": 0.0,
+          "dur": 10.28,
+          "cards": [
+            {
+              "text": "最後は、配ったら人がどう動くか。",
+              "start": 0.0,
+              "end": 2.76
+            },
+            {
+              "text": "アメリカの2つの州で、毎月お金を配り続けた",
+              "start": 2.91,
+              "end": 6.49
+            },
+            {
+              "text": "実験がある。調べたのは、",
+              "start": 6.64,
+              "end": 8.44
+            },
+            {
+              "text": "トロント大学などの研究者。",
+              "start": 8.44,
+              "end": 10.39
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "で、それ何人で試したの？",
           "expression": "doubt",
-          "t0": 7.08,
+          "t0": 10.56,
           "dur": 2.2,
           "cards": [
             {
@@ -2634,7 +3328,7 @@
           "speaker": "dreamer",
           "text": "所得の低い1000人に、月1000ドル。日本円で十数万円を、3年間。",
           "expression": "excited",
-          "t0": 9.56,
+          "t0": 13.04,
           "dur": 6.04,
           "cards": [
             {
@@ -2653,7 +3347,7 @@
           "speaker": "dreamer",
           "text": "比べるための2000人には、月50ドルだけ。",
           "expression": "neutral",
-          "t0": 15.82,
+          "t0": 19.3,
           "dur": 3.64,
           "cards": [
             {
@@ -2672,7 +3366,7 @@
           "speaker": "skeptic",
           "text": "たくさん配った人と、少しだけの人を比べるのね。ちゃんとした規模。ただ、爆発した後の実験じゃない。",
           "expression": "neutral",
-          "t0": 19.74,
+          "t0": 23.22,
           "dur": 7.52,
           "cards": [
             {
@@ -2702,7 +3396,7 @@
           "text": "僕なら、これに使う。仕事を少し減らして、学校に通い直す。",
           "expression": "thinking",
           "tag": "use_case",
-          "t0": 27.54,
+          "t0": 31.02,
           "dur": 4.84,
           "cards": [
             {
@@ -2721,7 +3415,7 @@
           "speaker": "skeptic",
           "text": "学び直しが本当に起きたか、見よう。",
           "expression": "neutral",
-          "t0": 32.66,
+          "t0": 36.14,
           "dur": 2.28,
           "cards": [
             {
@@ -2914,7 +3608,7 @@
       "bgm_role": "outro",
       "verdict_from_line": 4,
       "ken_burns": "zoom_out",
-      "lines_hash": "411f8b88c259",
+      "lines_hash": "100c8a355059",
       "zoom_anchor": {
         "x": 0.5,
         "y": 0.5
@@ -2979,95 +3673,297 @@
         {
           "speaker": "dreamer",
           "text": "判定の札は、上から「もうすぐ来る」「3年はかかる」「根拠待ち」「まだ眉唾」の4つ。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 17.6,
+          "dur": 7.04,
+          "cards": [
+            {
+              "text": "判定の札は、上から「もうすぐ来る」",
+              "start": 0.0,
+              "end": 2.84
+            },
+            {
+              "text": "「3年はかかる」「根拠待ち」「まだ眉唾」",
+              "start": 2.99,
+              "end": 6.16
+            },
+            {
+              "text": "の4つ。",
+              "start": 6.31,
+              "end": 6.91
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "マスクさんの「2036年にお金は意味を失う」に、僕は「根拠待ち」。否定する資料は無いけど、支える資料もまだ無い、って意味。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 24.86,
+          "dur": 10.28,
+          "cards": [
+            {
+              "text": "マスクさんの「2036年にお金は意味を失う」",
+              "start": 0.0,
+              "end": 4.14
+            },
+            {
+              "text": "に、僕は「根拠待ち」。",
+              "start": 4.29,
+              "end": 6.01
+            },
+            {
+              "text": "否定する資料は無いけど、",
+              "start": 6.01,
+              "end": 7.89
+            },
+            {
+              "text": "支える資料もまだ無い、って意味。",
+              "start": 8.04,
+              "end": 10.44
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "私も、同じお題に「根拠待ち」。ただ、理由は違う。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 35.42,
+          "dur": 3.76,
+          "cards": [
+            {
+              "text": "私も、同じお題に「根拠待ち」。ただ、",
+              "start": 0.0,
+              "end": 2.88
+            },
+            {
+              "text": "理由は違う。",
+              "start": 3.03,
+              "end": 3.93
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "僕は、向きは合ってると思う。AIの力は、もう伸びてる。足りないのは、それがパンや電気を安くする、という証拠だ。",
           "expression": "convinced",
-          "t0": 24.72,
-          "dur": 9.08,
+          "t0": 39.46,
+          "dur": 9.24,
           "cards": [
             {
               "text": "僕は、向きは合ってると思う。AIの力は、",
               "start": 0.0,
-              "end": 3.42
+              "end": 3.22
             },
             {
               "text": "もう伸びてる。足りないのは、",
-              "start": 3.57,
-              "end": 5.67
+              "start": 3.37,
+              "end": 5.47
             },
             {
               "text": "それがパンや電気を安くする、という証拠だ。",
-              "start": 5.82,
-              "end": 9.26
+              "start": 5.62,
+              "end": 9.34
             }
           ]
         },
         {
           "speaker": "skeptic",
           "text": "私は、モノがあふれるかどうかを言い切れなかった。だからこそ、2036年という時期には、根拠が無いと思う。資料で分かるのは、ここ数年のAIの伸びまで。お金の行方は、計算の例と、短い実験だけ。",
-          "expression": "doubt"
+          "expression": "doubt",
+          "t0": 48.98,
+          "dur": 14.04,
+          "cards": [
+            {
+              "text": "私は、モノがあふれるかどうかを",
+              "start": 0.0,
+              "end": 2.24
+            },
+            {
+              "text": "言い切れなかった。だからこそ、",
+              "start": 2.24,
+              "end": 4.48
+            },
+            {
+              "text": "2036年という時期には、根拠が無いと思う。",
+              "start": 4.48,
+              "end": 7.77
+            },
+            {
+              "text": "資料で分かるのは、ここ数年のAIの伸びまで。",
+              "start": 7.77,
+              "end": 11.05
+            },
+            {
+              "text": "お金の行方は、計算の例と、短い実験だけ。",
+              "start": 11.05,
+              "end": 14.04
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "札が変わるとしたら、食べ物や電気の値段が、実際に下がり始めたとき。そうなったら、一つ上の「3年はかかる」、つまり、数年のうちに変化が見えてくる、という札に上げる。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 63.3,
+          "dur": 13.12,
+          "cards": [
+            {
+              "text": "札が変わるとしたら、食べ物や電気の値段が、",
+              "start": 0.0,
+              "end": 3.44
+            },
+            {
+              "text": "実際に下がり始めたとき。そうなったら、",
+              "start": 3.59,
+              "end": 6.72
+            },
+            {
+              "text": "一つ上の「3年はかかる」、つまり、",
+              "start": 6.87,
+              "end": 9.42
+            },
+            {
+              "text": "数年のうちに変化が見えてくる、",
+              "start": 9.57,
+              "end": 11.82
+            },
+            {
+              "text": "という札に上げる。",
+              "start": 11.97,
+              "end": 13.32
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "私は、配るお金の出どころと、大勢に配ったら暮らしがどう変わるか。その結果が出たら見直す。逆に、モノがあふれる前に給料だけ下がり始めたら、一つ下の「まだ眉唾」に下げる。",
-          "expression": "thinking"
+          "expression": "thinking",
+          "t0": 76.7,
+          "dur": 12.92,
+          "cards": [
+            {
+              "text": "私は、配るお金の出どころと、",
+              "start": 0.0,
+              "end": 2.27
+            },
+            {
+              "text": "大勢に配ったら暮らしがどう変わるか。",
+              "start": 2.42,
+              "end": 5.09
+            },
+            {
+              "text": "その結果が出たら見直す。逆に、",
+              "start": 5.24,
+              "end": 7.47
+            },
+            {
+              "text": "モノがあふれる前に給料だけ下がり始めたら、",
+              "start": 7.62,
+              "end": 10.74
+            },
+            {
+              "text": "一つ下の「まだ眉唾」に下げる。",
+              "start": 10.89,
+              "end": 13.12
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "「まだ眉唾」は、資料が否定している場合の札。今回は、否定する資料も無い。だから「根拠待ち」なの。",
-          "expression": "neutral"
+          "expression": "neutral",
+          "t0": 89.84,
+          "dur": 7.52,
+          "cards": [
+            {
+              "text": "「まだ眉唾」は、",
+              "start": 0.0,
+              "end": 1.2
+            },
+            {
+              "text": "資料が否定している場合の札。",
+              "start": 1.2,
+              "end": 3.3
+            },
+            {
+              "text": "今回は、否定する資料も無い。",
+              "start": 3.45,
+              "end": 5.55
+            },
+            {
+              "text": "だから「根拠待ち」なの。",
+              "start": 5.7,
+              "end": 7.56
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "今日の持ち帰り。プログラムを書く人なら、半日かかる不具合の修正を、一度AIに頼んでみて。2月から3月のAIでも、一発で成功するのは半分ほど。最新のAIはもっと確実だと、僕は感じてる。結果は、自分で確かめること。",
           "expression": "convinced",
-          "tag": "takeaway"
+          "tag": "takeaway",
+          "t0": 97.64,
+          "dur": 18.36,
+          "cards": [
+            {
+              "text": "今日の持ち帰り。プログラムを書く人なら、",
+              "start": 0.0,
+              "end": 3.04
+            },
+            {
+              "text": "半日かかる不具合の修正を、",
+              "start": 3.19,
+              "end": 5.6
+            },
+            {
+              "text": "一度AIに頼んでみて。",
+              "start": 5.6,
+              "end": 7.63
+            },
+            {
+              "text": "2月から3月のAIでも、一発で成功する",
+              "start": 7.78,
+              "end": 11.26
+            },
+            {
+              "text": "のは半分ほど。最新のAIはもっと確実だと、",
+              "start": 11.41,
+              "end": 14.85
+            },
+            {
+              "text": "僕は感じてる。結果は、自分で確かめること。",
+              "start": 15.0,
+              "end": 18.46
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "お金は、要らなくなるかどうかより、どこから入ってくるかが変わるかもしれない。働く、持つ、配られる。その太さの変化を、見ていこう。",
           "expression": "neutral",
           "tag": "takeaway",
-          "t0": 84.68,
-          "dur": 8.88,
+          "t0": 116.28,
+          "dur": 8.64,
           "cards": [
             {
               "text": "お金は、要らなくなるかどうかより、",
               "start": 0.0,
-              "end": 2.36
+              "end": 2.18
             },
             {
               "text": "どこから入ってくるかが変わるかもしれない。",
-              "start": 2.51,
-              "end": 5.28
+              "start": 2.33,
+              "end": 5.02
             },
             {
               "text": "働く、持つ、配られる。その太さの変化を、",
-              "start": 5.43,
-              "end": 8.14
+              "start": 5.17,
+              "end": 7.92
             },
             {
               "text": "見ていこう。",
-              "start": 8.29,
-              "end": 9.08
+              "start": 8.07,
+              "end": 8.84
             }
           ]
         },
@@ -3075,18 +3971,18 @@
           "speaker": "dreamer",
           "text": "これは、2026年10月18日時点の、二人の見立て。",
           "expression": "neutral",
-          "t0": 93.84,
-          "dur": 5.52,
+          "t0": 125.2,
+          "dur": 5.24,
           "cards": [
             {
               "text": "これは、2026年10月18日時点の、",
               "start": 0.0,
-              "end": 4.18
+              "end": 3.8
             },
             {
               "text": "二人の見立て。",
-              "start": 4.33,
-              "end": 5.38
+              "start": 3.95,
+              "end": 5.01
             }
           ]
         }
