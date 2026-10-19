@@ -439,7 +439,17 @@ def main():
                          help="--scenes未指定のフル実行で、既存ファイルがあっても全シーン再生成する（デフォルトは既存ファイルをスキップ）")
     parser.add_argument("--no-reading-qa", action="store_true",
                          help="読み照合QA（音素認識で台本の読みと照合し、不一致の行を作り直す。掛け合い形式のみ）を使わない")
+    parser.add_argument("--skip-beginner-review", action="store_true",
+                         help="初見レビュー（kl-new STEP5.5）が「済」でなくても続行する。rounds_v3 の kl046 以降は、しばらくは必須"
+                              "（なるさんの指示、2026-10-19）。制作者の了承なしに使わない。KL_SKIP_BEGINNER_REVIEW=1 でも同じ")
     args = parser.parse_args()
+
+    # 初見レビューの確認は、APIキーの確認・ファイルの書き込み・API呼び出しより先に行う（2026-10-19）
+    _ep_path = BASE_DIR / "episodes" / f"{args.episode}.json"
+    if _ep_path.exists():
+        import kl_dialogue as _D
+        _D.enforce_beginner_review(json.loads(_ep_path.read_text()), args.episode,
+                                   skip=args.skip_beginner_review, tool="kl_tts_gen.py")
 
     if not API_KEY:
         print("❌ GEMINI_API_KEY が設定されていません", file=sys.stderr)

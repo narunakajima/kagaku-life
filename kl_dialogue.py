@@ -1948,13 +1948,68 @@ def lines_digest(ep: dict) -> str:
     return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:12]
 
 
-def beginner_review_status(ep: dict) -> str:
+def beginner_review_state(ep: dict) -> tuple:
+    """初見レビュー（STEP5.5）の状態。("missing"|"stale"|"ok", 表示文)。
+    check の表示と、kl_tts_gen.py・kl_video_gen.py の入口の判定（enforce_beginner_review）が同じこの関数を使う。"""
     r = ep.get("beginner_review") or {}
     if not r:
-        return "未実施（STEP5.5。制作者に見せる前に必須）"
+        return "missing", "未実施（STEP5.5。制作者に見せる前に必須）"
     if r.get("lines_digest") != lines_digest(ep):
-        return f"無効（{r.get('passed_at', '?')} の合格の後に台詞が変わった。STEP5.5 をやり直す）"
-    return f"済（{r.get('passed_at', '?')}、{r.get('rounds', '?')}周、{r.get('report', '')}）"
+        return "stale", f"無効（{r.get('passed_at', '?')} の合格の後に台詞が変わった。STEP5.5 をやり直す）"
+    return "ok", f"済（{r.get('passed_at', '?')}、{r.get('rounds', '?')}周、{r.get('report', '')}）"
+
+
+def beginner_review_status(ep: dict) -> str:
+    return beginner_review_state(ep)[1]
+
+
+# 初見レビュー未通過なら音声・動画の生成を止める（2026-10-19、なるさんの指示「しばらくはそうしてほしい」）。
+# 対象は rounds_v3 で、エピソード番号が46以上の回だけ（kl045 以前・旧形式は止めない）。
+BEGINNER_REVIEW_GATE_FROM = 46
+SKIP_BEGINNER_REVIEW_HELP = ("初見レビュー（kl-new STEP5.5）が「済」でなくても続行する（警告だけ出す）。"
+                             "rounds_v3 の kl046 以降は、しばらくは必須（なるさんの指示、2026-10-19）。"
+                             "制作者の了承なしに使わない。環境変数 KL_SKIP_BEGINNER_REVIEW=1 でも同じ")
+
+
+def beginner_review_required(ep: dict, episode_id: str = None) -> bool:
+    if ep.get("structure") != STRUCTURE_V3:
+        return False
+    m = _re.search(r"(\d+)", episode_id or ep.get("episode_id", ""))
+    return bool(m) and int(m.group(1)) >= BEGINNER_REVIEW_GATE_FROM
+
+
+def enforce_beginner_review(ep: dict, episode_id: str, skip: bool = False, tool: str = "") -> None:
+    """kl_tts_gen.py・kl_video_gen.py の入口（API呼び出し・ファイル書き込みの前）で呼ぶ。
+    対象の回で初見レビューが「済」でなければ、理由とやることを表示して終了コード2で止める。"""
+    import os
+    import sys
+    if not beginner_review_required(ep, episode_id):
+        return
+    state, text = beginner_review_state(ep)
+    if state == "ok":
+        return
+    skip = skip or os.environ.get("KL_SKIP_BEGINNER_REVIEW") == "1"
+    reason = ("初見レビューがまだ行われていません" if state == "missing"
+              else "初見レビューに合格した後に台詞が変わったため、合格の記録が無効になっています")
+    if skip:
+        print(f"⚠ {tool}: {episode_id} の初見レビュー（STEP5.5）: {text}。--skip-beginner-review（または "
+              "KL_SKIP_BEGINNER_REVIEW=1）が指定されたので続行します。制作者の了承を得ていることを確かめてください。",
+              file=sys.stderr)
+        return
+    print(f"""❌ {tool}: {episode_id} は初見レビュー（kl-new STEP5.5）が「済」でないため止めました。
+   状態: {text}
+   理由: {reason}。
+   しばらくは、rounds_v3 の kl046 以降で、初見レビューの合格が音声・動画の生成の条件です（なるさんの指示、2026-10-19）。
+
+   やること（kl-new.md STEP5.5）:
+     1. python3 kl_dialogue.py plain --episode {episode_id} --out {{scratchpad}}/{episode_id}_plain.txt
+     2. kl_prompts/beginner_review_prompt.md の依頼文で、資料を見ていない Opus に plain テキストだけを読ませる
+     3. 書き手に直させ、致命的ゼロになるまで（最大2周）初見レビューをやり直す
+     4. python3 kl_dialogue.py review-pass --episode {episode_id} --rounds N --report {{レビュー結果のパス}}
+
+   どうしても飛ばす場合だけ --skip-beginner-review（または KL_SKIP_BEGINNER_REVIEW=1）を付ける。制作者の了承なしに使わない。""",
+          file=sys.stderr)
+    sys.exit(2)
 
 
 # ── コマンドライン ────────────────────────────────────────────────
@@ -2040,7 +2095,9 @@ def main():
     for w in episode_warnings(ep):
         print("⚠ " + w)
     if st in ROUND_STRUCTURES:
-        print("初見レビュー（STEP5.5）: " + beginner_review_status(ep))
+        gate = ("TTS・動画生成はこれが「済」でないと止まる" if beginner_review_required(ep, args.episode)
+                else f"kl{BEGINNER_REVIEW_GATE_FROM:03d}より前の回なので、TTS・動画生成は止まらない")
+        print("初見レビュー（STEP5.5）: " + beginner_review_status(ep) + f"　※{gate}")
     rw = readability_warnings(ep)
     if rw:
         print(f"── 読みやすさの手がかり（⚠ {len(rw)}件。不合格にはしない。STEP5.5 の初見レビューと、制作者に見せる前のセルフチェックの材料）")

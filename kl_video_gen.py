@@ -1104,7 +1104,16 @@ def main():
                         help="口パク（話している間のループ *_talk.webm）を使わず、待機ループだけにする（環境変数 KL_NO_TALK=1 でも同じ）")
     parser.add_argument("--limit-seconds", type=float,
                         help="確認用: 完成動画を先頭のこの秒数で切る（短くなるのは最後の重ね合わせだけで、背景・音声は全編作る）。--out と一緒に使う")
+    parser.add_argument("--skip-beginner-review", action="store_true",
+                        help="初見レビュー（kl-new STEP5.5）が「済」でなくても続行する。rounds_v3 の kl046 以降は、しばらくは必須"
+                             "（なるさんの指示、2026-10-19）。制作者の了承なしに使わない。KL_SKIP_BEGINNER_REVIEW=1 でも同じ")
     args = parser.parse_args()
+    # 初見レビューの確認（本編・Shorts のどの経路でも、生成を始める前に。2026-10-19）
+    _ep_path = BASE_DIR / "episodes" / f"{args.episode}.json"
+    if _ep_path.exists():
+        import kl_dialogue as _D
+        _D.enforce_beginner_review(json.loads(_ep_path.read_text(encoding="utf-8")), args.episode,
+                                   skip=args.skip_beginner_review, tool="kl_video_gen.py")
     out_dir = Path(args.out).expanduser() if args.out else None
     if args.limit_seconds and not out_dir:
         parser.error("--limit-seconds は本番の出力を上書きしないよう --out と一緒に指定してください")
