@@ -2393,18 +2393,45 @@
     },
     {
       "episode_id": "kl045",
-      "status": "cancelled",
+      "status": "published",
       "slot_type": "topic",
       "genre": "medical",
       "health": true,
       "domain": "body",
       "concern_id": null,
-      "entry_question": "AIで人間が200歳まで生きるとしたら、何が起きている必要がある？ その条件は、今どこまで来ているのか。",
-      "title": "200歳に要る3つの条件、一番手前の「老化の物差し」はいつ来る？",
+      "entry_question": "AIの伸びが想像以上に速かったら、200歳まで生きる人が出てくるのは「時間の問題」？",
+      "title": "前回の結論は変わる？AIが想像以上に速かったら、200歳をもう一度議論",
       "format": "dialogue",
       "structure": "rounds_v3",
-      "template": "verdict_first",
+      "template": "basic",
       "references": [
+        {
+          "title": "AI's Biggest Breakthrough Won't Be a Chatbot（著者本人による寄稿。書籍 The Eureka Machine: Why AI Is the Key to Unlocking a New Era of Scientific Discoveries, PublicAffairs, 2026-09-22 の紹介）",
+          "authors": [
+            "Richard Socher"
+          ],
+          "year": 2026,
+          "venue": "Next Big Idea Club（2026-10-08）",
+          "url": "https://nextbigideaclub.com/magazine/ais-biggest-breakthrough-wont-chatbot-bookbite/61534/",
+          "is_preprint": false,
+          "institution": "You.com（著者が創業・経営）",
+          "source_kind": "blog"
+        },
+        {
+          "title": "Measuring AI Ability to Complete Long Software Tasks",
+          "authors": [
+            "Thomas Kwa",
+            "Ben West",
+            "ほか",
+            "Lawrence Chan"
+          ],
+          "year": 2025,
+          "venue": "arXiv 2503.14499（v4、2026-07-10）",
+          "url": "https://arxiv.org/abs/2503.14499",
+          "is_preprint": true,
+          "institution": "METR（Model Evaluation & Threat Research）",
+          "source_kind": "paper"
+        },
         {
           "title": "Effect of long-term caloric restriction on DNA methylation measures of biological aging in healthy adults from the CALERIE trial",
           "authors": [
@@ -2415,12 +2442,41 @@
             "D. W. Belsky"
           ],
           "year": 2023,
-          "venue": "Nature Aging 3, 248–257（2023-02-09）",
+          "venue": "Nature Aging 3, 248–257（2023）",
           "url": "https://doi.org/10.1038/s43587-022-00357-y",
-          "doi": "10.1038/s43587-022-00357-y",
           "is_preprint": false,
           "institution": "Columbia University（Butler Columbia Aging Center）ほか",
           "source_kind": "paper"
+        },
+        {
+          "title": "Qualification opinion for Prognostic Covariate Adjustment (PROCOVA™)",
+          "authors": [],
+          "year": 2022,
+          "venue": "European Medicines Agency, CHMP（2022-09-15 採択）",
+          "url": "https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/qualification-opinion-prognostic-covariate-adjustment-procovatm_en.pdf",
+          "is_preprint": false,
+          "institution": "European Medicines Agency（欧州医薬品庁）",
+          "source_kind": "docs"
+        },
+        {
+          "title": "FDA Announces Plan to Phase Out Animal Testing Requirement for Monoclonal Antibodies and Other Drugs",
+          "authors": [],
+          "year": 2025,
+          "venue": "U.S. FDA 発表（2025-04-10）",
+          "url": "https://www.fda.gov/news-events/press-announcements/fda-announces-plan-phase-out-animal-testing-requirement-monoclonal-antibodies-and-other-drugs",
+          "is_preprint": false,
+          "institution": "U.S. Food and Drug Administration（米国食品医薬品局）",
+          "source_kind": "press"
+        },
+        {
+          "title": "Reducing Animal Testing in Nonclinical Studies: Year One Progress and the Path Forward",
+          "authors": [],
+          "year": 2026,
+          "venue": "U.S. FDA 報告書（2026年4月）",
+          "url": "https://www.fda.gov/media/191986/download",
+          "is_preprint": false,
+          "institution": "U.S. Food and Drug Administration（米国食品医薬品局）",
+          "source_kind": "report"
         },
         {
           "title": "PROSPR: Proactive Solutions for Prolonging Resilience（プログラムのページ）",
@@ -2433,17 +2489,15 @@
           "source_kind": "report"
         },
         {
-          "title": "Inhibition of IL-11 signalling extends mammalian healthspan and lifespan",
+          "title": "Escape Velocity: Why the Prospect of Extreme Human Life Extension Matters Now",
           "authors": [
-            "Anissa A. Widjaja",
-            "ほか"
+            "Aubrey D. N. J. de Grey"
           ],
-          "year": 2024,
-          "venue": "Nature 632, 157–165（2024-07-17）",
-          "url": "https://doi.org/10.1038/s41586-024-07701-9",
-          "doi": "10.1038/s41586-024-07701-9",
+          "year": 2004,
+          "venue": "PLoS Biology 2(6): e187（2004-06-15）",
+          "url": "https://doi.org/10.1371/journal.pbio.0020187",
           "is_preprint": false,
-          "institution": "Duke-NUS Medical School、MRC Laboratory of Medical Sciences ほか",
+          "institution": "University of Cambridge（当時）",
           "source_kind": "paper"
         },
         {
@@ -2457,74 +2511,6 @@
           "source_kind": "press"
         },
         {
-          "title": "Slow mortality rate accelerations during aging in some animals approximate that of humans",
-          "authors": [
-            "Caleb E. Finch",
-            "Malcolm C. Pike",
-            "Matthew Witten"
-          ],
-          "year": 1990,
-          "venue": "Science 249, 902–905",
-          "url": "https://doi.org/10.1126/science.2392680",
-          "doi": "10.1126/science.2392680",
-          "is_preprint": false,
-          "institution": "University of Southern California ほか",
-          "source_kind": "paper"
-        },
-        {
-          "title": "Life Biosciences Announces First-in-Human Data from Ongoing Phase 1 Trial Evaluating ER-100 in Optic Neuropathies",
-          "authors": [],
-          "year": 2026,
-          "venue": "Life Biosciences 発表（2026-10-08）",
-          "url": "https://www.lifebiosciences.com/life-biosciences-announces-first-in-human-data-from-ongoing-phase-1-trial-evaluating-er-100-in-optic-neuropathies/",
-          "is_preprint": false,
-          "institution": "Life Biosciences",
-          "source_kind": "press"
-        },
-        {
-          "title": "Somatic mutation rates scale with lifespan across mammals",
-          "authors": [
-            "Alex Cagan",
-            "ほか"
-          ],
-          "year": 2022,
-          "venue": "Nature 604, 517–524（2022-04-13）",
-          "url": "https://doi.org/10.1038/s41586-022-04618-z",
-          "doi": "10.1038/s41586-022-04618-z",
-          "is_preprint": false,
-          "institution": "Wellcome Sanger Institute ほか",
-          "source_kind": "paper"
-        },
-        {
-          "title": "Phase I trial of hES cell-derived dopaminergic neurons for Parkinson's disease",
-          "authors": [
-            "Viviane Tabar",
-            "ほか"
-          ],
-          "year": 2025,
-          "venue": "Nature 641, 978–983（2025-04-16）",
-          "url": "https://doi.org/10.1038/s41586-025-08845-y",
-          "doi": "10.1038/s41586-025-08845-y",
-          "is_preprint": false,
-          "institution": "Memorial Sloan Kettering Cancer Center ほか",
-          "source_kind": "paper"
-        },
-        {
-          "title": "Equal numbers of neuronal and nonneuronal cells make the human brain an isometrically scaled-up primate brain",
-          "authors": [
-            "Frederico A. C. Azevedo",
-            "ほか",
-            "Suzana Herculano-Houzel"
-          ],
-          "year": 2009,
-          "venue": "Journal of Comparative Neurology 513(5), 532–541",
-          "url": "https://doi.org/10.1002/cne.21974",
-          "doi": "10.1002/cne.21974",
-          "is_preprint": false,
-          "institution": "Universidade Federal do Rio de Janeiro ほか",
-          "source_kind": "paper"
-        },
-        {
           "title": "The STAY Study（参加者向けの説明ページ）",
           "authors": [],
           "year": 2026,
@@ -2533,15 +2519,29 @@
           "is_preprint": false,
           "institution": "Loyal",
           "source_kind": "press"
+        },
+        {
+          "title": "How successful are AI-discovered drugs in clinical trials? A first analysis and emerging lessons",
+          "authors": [
+            "Madura KP Jayatunga",
+            "ほか"
+          ],
+          "year": 2024,
+          "venue": "Drug Discovery Today 29(6), 104009（2024）",
+          "url": "https://doi.org/10.1016/j.drudis.2024.104009",
+          "is_preprint": false,
+          "institution": "Boston Consulting Group ほか",
+          "source_kind": "paper"
         }
       ],
-      "hook_idea": "kl044の続き。『200歳』を結論ではなく条件の束として分解し、老化の物差し・規制・介入・若返りの安全性・AIの設計を、一次資料で一つずつ答え合わせする。",
+      "hook_idea": "kl044の続き。前回の結論（大輔=根拠待ち・沙織=まだ眉唾）に「AIが想像以上に速かったら」という新しい見方を足し、探す工程と確かめる工程（実験室の層・人の体の層）に分け直して、もう一度議論する。",
       "notes": "2026-10-17 制作者が案2（AIで200歳のまま、条件のチェックリスト形式）を選択。kl044と問いが重なることは承知の上。Opus検討(同日)の要点: 200歳の平均寿命は『老化の速さを約2.7分の1』か『65歳前後で止める』で届く(単純ゴンペルツ・メイカム、日本の生命表ではない)。今の高齢者には遅らせるだけでなく若返りが要る(70歳で止めても平均約150歳)。物差し(代用指標)が全ての前提。現在地: CALERIE(Waziry 2023, 3指標のうち1つが2〜3%)、ARPA-H PROSPR、TAME(最新状況は二次資料のみ・要確認)、Loyal LOY-002(RXE・TAS受理、製造残り)、ER-100第1相(目の病気・局所)、AI(GPT-4b micro RetroSOX/KLF は発表のみで査読論文未確認、Jayatunga 2024)。反証: マウス単独介入15〜25%、体細胞変異は種を超えて死ぬときほぼ同量(Cagan 2022)。脳の段階的置換仮説は1論点以内(量の差: 移植90万〜270万個 vs 脳の10分の1=約86億個)。kl044と同じ台詞・資料カードを使い回さない。",
       "verdict": {
-        "dreamer": "decade",
-        "skeptic": "dubious"
+        "dreamer": "pending",
+        "skeptic": "pending"
       },
-      "cancelled_reason": "2026-10-18 制作者の指示で中止。台本・資料カード・画像（Desktop）まで作成済み。音声・動画は未生成。台本は episodes/kl045.json に残す。"
+      "revived_note": "2026-10-21 制作者の指示で復活し、台詞から全面的に書き直し（決定事項は script_prep/kl045_decisions.md、準備は script_prep/kl045.md）。判定は二人とも根拠待ち（沙織が眉唾から上げる）。旧台本（3つの条件・老化の物差しに判定）は使わない。",
+      "cancelled_reason_history": "2026-10-18 制作者の指示で中止。台本・資料カード・画像（Desktop）まで作成済み。音声・動画は未生成。台本は episodes/kl045.json に残す。"
     },
     {
       "episode_id": "kl046",

@@ -2,60 +2,99 @@
   "episode_id": "kl045",
   "format": "dialogue",
   "structure": "rounds_v3",
-  "template": "verdict_first",
+  "template": "basic",
   "source_type": "topic",
-  "verdict_as_of": "2026-10-17",
+  "verdict_as_of": "2026-10-21",
   "genre": "medical",
   "health": true,
-  "episode_title": "AIで200歳が来るとしたら、何が起きている必要がある？条件を一つずつ確認",
-  "youtube_title": "200歳に要る3つの条件、一番手前の「老化の物差し」はいつ来る？",
-  "entry_question": "AIで人間が200歳まで生きるとしたら、何が起きている必要がある？ その条件は、今どこまで来ているのか。",
+  "episode_title": "200歳は来る？AIが想像以上に速かったら、もう一度議論した",
+  "youtube_title": "200歳は来る？AIが想像以上に速かったら、もう一度議論した",
+  "entry_question": "AIの伸びが想像以上に速かったら、200歳まで生きる人が出てくるのは「時間の問題」？",
   "verdict": {
-    "dreamer": "decade",
-    "skeptic": "dubious"
+    "dreamer": "pending",
+    "skeptic": "pending"
   },
-  "verdict_subject": "200歳に要る3つの条件の一番手前: 老化を測る物差し（試験の評価項目）。200歳そのものではない",
   "hook_lines": [
-    "200歳に要る条件は？",
-    "70歳で止めても平均は届かない"
+    "200歳は時間の問題？",
+    "AIが速すぎたら"
   ],
-  "thumbnail_prompt": "Calm, bright editorial illustration of a quiet clinical measurement room seen from the front: a soft pale blue-gray wall and a light gray floor running the full width of the frame, continuous with no panels, boxes, borders or abrupt colour changes. Keep the left 30%, the right 30% and the top 35% of the frame quiet and uncluttered (soft gradient only), but the wall and floor must visibly continue unbroken behind them. In the horizontal center, in the vertical band between 38% and 80% of the frame height: a single plain white laboratory bench holding a row of small blood sample tubes in a rack, one tube glowing warm coral, beside an old-fashioned brass measuring ruler laid flat. No people, no animals. No logos, no brand marks, no readable text, no letters, no numbers.",
-  "thumbnail_headline": "200歳の第一条件\n老化の物差しは来る？",
+  "thumbnail_prompt": "Calm, bright editorial illustration of a modern fully automated laboratory seen from the front: a soft pale blue-gray back wall and a light gray bench running the full width of the frame, continuous across the whole frame with no panels, boxes, borders or abrupt colour changes. Keep the left 30%, the right 30% and the top 35% of the frame quiet and uncluttered (soft gradient only), but the wall and bench must visibly continue unbroken behind them. In the horizontal center, in the vertical band between 38% and 80% of the frame height: a slim white robotic arm holding a small sample plate, beside a small classic hourglass whose sand glows warm coral. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
+  "thumbnail_headline": "200歳は\n時間の問題？",
   "thumbnail_exprs": {
-    "dreamer": "thinking",
-    "skeptic": "doubt"
+    "dreamer": "excited",
+    "skeptic": "thinking"
   },
   "youtube_tags": [
     "寿命",
     "200歳",
     "老化",
+    "長生き",
+    "AIの進化",
+    "シミュレーション",
+    "臨床試験",
     "老化の物差し",
-    "生物学的年齢",
-    "カロリー制限",
-    "犬の長寿薬",
-    "若返り",
-    "遺伝子治療",
+    "寿命脱出速度",
     "医療の最前線",
     "答え合わせ",
     "科学ニュース"
   ],
   "references": [
     {
-      "title": "Effect of long-term caloric restriction on DNA methylation measures of biological aging in healthy adults from the CALERIE trial",
+      "title": "AI's Biggest Breakthrough Won't Be a Chatbot（著者本人による寄稿。書籍 The Eureka Machine: Why AI Is the Key to Unlocking a New Era of Scientific Discoveries, PublicAffairs, 2026-09-22 の紹介）",
       "authors": [
-        "R. Waziry",
-        "C. P. Ryan",
-        "D. L. Corcoran",
-        "ほか",
-        "D. W. Belsky"
+        "Richard Socher"
       ],
-      "year": 2023,
-      "venue": "Nature Aging 3, 248–257（2023-02-09）",
-      "url": "https://doi.org/10.1038/s43587-022-00357-y",
-      "doi": "10.1038/s43587-022-00357-y",
+      "year": 2026,
+      "venue": "Next Big Idea Club（2026-10-08）",
+      "url": "https://nextbigideaclub.com/magazine/ais-biggest-breakthrough-wont-chatbot-bookbite/61534/",
       "is_preprint": false,
-      "institution": "Columbia University（Butler Columbia Aging Center）ほか",
+      "institution": "You.com（著者が創業・経営）",
+      "source_kind": "blog"
+    },
+    {
+      "title": "Measuring AI Ability to Complete Long Software Tasks",
+      "authors": [
+        "Thomas Kwa",
+        "Ben West",
+        "ほか",
+        "Lawrence Chan"
+      ],
+      "year": 2025,
+      "venue": "arXiv 2503.14499（v4、2026-07-10）",
+      "url": "https://arxiv.org/abs/2503.14499",
+      "is_preprint": true,
+      "institution": "METR（Model Evaluation & Threat Research）",
       "source_kind": "paper"
+    },
+    {
+      "title": "Qualification opinion for Prognostic Covariate Adjustment (PROCOVA™)",
+      "authors": [],
+      "year": 2022,
+      "venue": "European Medicines Agency, CHMP（2022-09-15 採択）",
+      "url": "https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/qualification-opinion-prognostic-covariate-adjustment-procovatm_en.pdf",
+      "is_preprint": false,
+      "institution": "European Medicines Agency（欧州医薬品庁）",
+      "source_kind": "docs"
+    },
+    {
+      "title": "FDA Announces Plan to Phase Out Animal Testing Requirement for Monoclonal Antibodies and Other Drugs",
+      "authors": [],
+      "year": 2025,
+      "venue": "U.S. FDA 発表（2025-04-10）",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-announces-plan-phase-out-animal-testing-requirement-monoclonal-antibodies-and-other-drugs",
+      "is_preprint": false,
+      "institution": "U.S. Food and Drug Administration（米国食品医薬品局）",
+      "source_kind": "press"
+    },
+    {
+      "title": "Reducing Animal Testing in Nonclinical Studies: Year One Progress and the Path Forward",
+      "authors": [],
+      "year": 2026,
+      "venue": "U.S. FDA 報告書（2026年4月）",
+      "url": "https://www.fda.gov/media/191986/download",
+      "is_preprint": false,
+      "institution": "U.S. Food and Drug Administration（米国食品医薬品局）",
+      "source_kind": "report"
     },
     {
       "title": "PROSPR: Proactive Solutions for Prolonging Resilience（プログラムのページ）",
@@ -68,160 +107,69 @@
       "source_kind": "report"
     },
     {
-      "title": "Inhibition of IL-11 signalling extends mammalian healthspan and lifespan",
+      "title": "Escape Velocity: Why the Prospect of Extreme Human Life Extension Matters Now",
       "authors": [
-        "Anissa A. Widjaja",
+        "Aubrey D. N. J. de Grey"
+      ],
+      "year": 2004,
+      "venue": "PLoS Biology 2(6): e187（2004-06-15）",
+      "url": "https://doi.org/10.1371/journal.pbio.0020187",
+      "doi": "10.1371/journal.pbio.0020187",
+      "is_preprint": false,
+      "institution": "University of Cambridge（当時）",
+      "source_kind": "paper"
+    },
+    {
+      "title": "How successful are AI-discovered drugs in clinical trials? A first analysis and emerging lessons",
+      "authors": [
+        "Madura KP Jayatunga",
         "ほか"
       ],
       "year": 2024,
-      "venue": "Nature 632, 157–165（2024-07-17）",
-      "url": "https://doi.org/10.1038/s41586-024-07701-9",
-      "doi": "10.1038/s41586-024-07701-9",
+      "venue": "Drug Discovery Today 29(6), 104009（2024）",
+      "url": "https://doi.org/10.1016/j.drudis.2024.104009",
+      "doi": "10.1016/j.drudis.2024.104009",
       "is_preprint": false,
-      "institution": "Duke-NUS Medical School、MRC Laboratory of Medical Sciences ほか",
+      "institution": "Boston Consulting Group ほか",
       "source_kind": "paper"
-    },
-    {
-      "title": "Loyal Receives FDA Acceptance of Safety Package for Senior Dog Lifespan Extension Drug",
-      "authors": [],
-      "year": 2026,
-      "venue": "Loyal 発表（2026-01-13）",
-      "url": "https://loyal.com/posts/loy-002-tas-announcement",
-      "is_preprint": false,
-      "institution": "Loyal",
-      "source_kind": "press"
-    },
-    {
-      "title": "Slow mortality rate accelerations during aging in some animals approximate that of humans",
-      "authors": [
-        "Caleb E. Finch",
-        "Malcolm C. Pike",
-        "Matthew Witten"
-      ],
-      "year": 1990,
-      "venue": "Science 249, 902–905",
-      "url": "https://doi.org/10.1126/science.2392680",
-      "doi": "10.1126/science.2392680",
-      "is_preprint": false,
-      "institution": "University of Southern California ほか",
-      "source_kind": "paper"
-    },
-    {
-      "title": "Life Biosciences Announces First-in-Human Data from Ongoing Phase 1 Trial Evaluating ER-100 in Optic Neuropathies",
-      "authors": [],
-      "year": 2026,
-      "venue": "Life Biosciences 発表（2026-10-08）",
-      "url": "https://www.lifebiosciences.com/life-biosciences-announces-first-in-human-data-from-ongoing-phase-1-trial-evaluating-er-100-in-optic-neuropathies/",
-      "is_preprint": false,
-      "institution": "Life Biosciences",
-      "source_kind": "press"
-    },
-    {
-      "title": "Somatic mutation rates scale with lifespan across mammals",
-      "authors": [
-        "Alex Cagan",
-        "ほか"
-      ],
-      "year": 2022,
-      "venue": "Nature 604, 517–524（2022-04-13）",
-      "url": "https://doi.org/10.1038/s41586-022-04618-z",
-      "doi": "10.1038/s41586-022-04618-z",
-      "is_preprint": false,
-      "institution": "Wellcome Sanger Institute ほか",
-      "source_kind": "paper"
-    },
-    {
-      "title": "Phase I trial of hES cell-derived dopaminergic neurons for Parkinson's disease",
-      "authors": [
-        "Viviane Tabar",
-        "ほか"
-      ],
-      "year": 2025,
-      "venue": "Nature 641, 978–983（2025-04-16）",
-      "url": "https://doi.org/10.1038/s41586-025-08845-y",
-      "doi": "10.1038/s41586-025-08845-y",
-      "is_preprint": false,
-      "institution": "Memorial Sloan Kettering Cancer Center ほか",
-      "source_kind": "paper"
-    },
-    {
-      "title": "Equal numbers of neuronal and nonneuronal cells make the human brain an isometrically scaled-up primate brain",
-      "authors": [
-        "Frederico A. C. Azevedo",
-        "ほか",
-        "Suzana Herculano-Houzel"
-      ],
-      "year": 2009,
-      "venue": "Journal of Comparative Neurology 513(5), 532–541",
-      "url": "https://doi.org/10.1002/cne.21974",
-      "doi": "10.1002/cne.21974",
-      "is_preprint": false,
-      "institution": "Universidade Federal do Rio de Janeiro ほか",
-      "source_kind": "paper"
-    },
-    {
-      "title": "The STAY Study（参加者向けの説明ページ）",
-      "authors": [],
-      "year": 2026,
-      "venue": "Loyal",
-      "url": "https://loyal.com/stay",
-      "is_preprint": false,
-      "institution": "Loyal",
-      "source_kind": "press"
     }
   ],
-  "youtube_description": "人間が200歳まで生きるとしたら、何がそろっている必要があるのか。前の回（人間は200歳まで生きる？）の続きです。200歳を結論として論じるのではなく、「老化を測る物差し」「効く薬」「若返り」の3つの条件に分けて、それぞれが今どこまで来ているかを、期待担当の大輔と、ツッコミ担当の沙織が一次資料で確かめます。\n\n■ この回の判定（2026年10月17日時点の、二人の見立て）\n判定の対象: 200歳に要る条件の一番手前、「老化を測る物差し（老化に効く治療を、寿命を待たずに確かめるための評価項目）」\n大輔: 3年はかかる（加齢による健康の変化を3年で評価できるようにする米国の計画が動いており、FDA向けの提言書も出ている。ただ、その物差しが本当に健康な寿命を当てられるかは、ヒトで確かめる時間が要る）\n沙織: まだ眉唾（同じ人たちを測っても、物差しごとに答えが割れた。どれが本当の老化を測っているか決まるまでは、物差しと呼べない）\n200歳そのものは、二人とも前の回と同じく「まだ眉唾」。3年より先のことは、そこまでは分かりません。\n\n■ 一次資料に書いてあること\n・Waziry ほか「Effect of long-term caloric restriction on DNA methylation measures of biological aging in healthy adults from the CALERIE trial」（Nature Aging, 2023、コロンビア大学 ほか）: 健康な成人220人を、カロリー制限の群と普段どおりの群に分けた2年間の試験（CALERIE 第2相）。制限の目標は25%だったが、実際は平均約11.9%。血液のDNAメチル化から老化を測る3つのやり方のうち、DunedinPACE（老化の速さ）では2〜3%遅くなった一方、PhenoAge・GrimAge（生物学的年齢）は両群で差がなかった。著者は「効果の大きさは小さい」と書く一方、小さな減速でも集団の健康には大きな影響がありうる、とも書いている。DunedinPACE の考案者の2人が著者に含まれる（利益相反として開示）\n・ARPA-H「PROSPR」（米国政府の医療研究の機関、プログラムのページ）: 加齢に伴う病気の原因を狙う治療のために、体の指標と評価の道具を作る計画。家で集めるデータと臨床試験のやり方を作り、加齢による健康の変化を「何十年もの研究ではなく、3年で」評価できるようにする、としている。内在的能力（intrinsic capacity）を臨床試験の評価項目としてどう測り、使うかについて、FDA向けの専門家の提言書を公開している\n・Widjaja ほか「Inhibition of IL-11 signalling extends mammalian healthspan and lifespan」（Nature, 2024、Duke-NUS医科大学 ほか）: 炎症に関わる物質 IL-11 を抑える抗体を、生後75週のマウスに亡くなるまで毎月投与したところ、寿命の中央値がオスで22.5%、メスで25%延びた。マウスでの結果で、ヒトの寿命については何も示していない\n・Loyal（2026年1月13日発表）: 老犬の健康な寿命を延ばすことを狙う薬 LOY-002 で、米国FDA獣医学センターが、条件つき承認に向けた安全性の技術資料を受理。効く見込みの資料（2025年2月受理）と合わせ、発売に要る3つの大きな技術資料のうち2つが受理された。寿命が延びるかを見る試験 STAY には1,300頭が参加し、参加の説明ページでは「最長4年」の試験とされている。承認はまだ出ておらず、寿命が延びるかどうかは、この試験で確かめている途中\n・Finch ほか「Slow mortality rate accelerations during aging in some animals approximate that of humans」（Science, 1990、南カリフォルニア大学 ほか）: 死亡率が2倍になるまでの年数（MRD）は、人とアカゲザルで約8年\n・Life Biosciences（2026年10月8日発表）: 細胞の状態を取り戻すことを狙う3つの遺伝子（OCT4、SOX2、KLF4）を使う遺伝子治療 ER-100 の第1相試験（緑内障・NAION）の途中経過。緑内障の3人に、低い用量を目の中に1回注射し、遺伝子を働かせる薬（ドキシサイクリン）を毎日飲む形。56日後、3人中2人で視野の改善が見られた。用量を制限する毒性や重い有害事象の報告はなく、次の用量に進む。比較の群のない試験で、主な目的は安全性と忍容性。会社の発表で、効果を確かめたものではない\n・Cagan ほか「Somatic mutation rates scale with lifespan across mammals」（Nature, 2022、ウェルカム・サンガー研究所 ほか）: 16種の哺乳類の腸の細胞（腸陰窩）を調べ、1年あたりの体細胞の突然変異の速さは寿命の長い種ほど遅かった。寿命は約30倍違うのに、寿命の終わりの変異の量は約3倍の差に収まっていた。著者は、変異の速さが老化の一因かもしれない、と述べるにとどめている\n・Tabar ほか「Phase I trial of hES cell-derived dopaminergic neurons for Parkinson's disease」（Nature, 2025、メモリアル・スローン・ケタリングがんセンター ほか）: パーキンソン病の12人に、ES細胞から作ったドーパミン神経の前駆細胞を移植した第1相試験。多い用量の群は、左右の被殻それぞれに270万個。脳の一部（被殻）に細胞を補う治療で、脳を広く入れ替えるものではありません\n・Azevedo ほか（Journal of Comparative Neurology, 2009、リオデジャネイロ連邦大学 ほか）: 成人男性の脳の神経細胞は平均約861億個（4人の脳からの推計）。台詞の「10分の1でも86億個、移植の試験の3,000倍以上」は、この数と Tabar ほかの数を番組が割り算したものです\n\n■ 番組で行った計算と、その前提\n台詞の「8年 → 約21年」「50歳で止めれば約540歳、65歳なら約210歳、70歳なら約160歳」は、一次資料の数字ではなく、番組が単純な式で出した目安です。\n・式: 1年あたりの死亡率 μ(x) = c + a·e^(bx)（ゴンペルツ・メイカムの式）\n・b: 死亡率が8年で2倍になる値（ln2/8。Finch ほか 1990 の目安）、c: 年0.0002（年齢と関係のない死亡）、a: 生まれたときの平均余命が87歳になる値\n・高い年齢で死亡率の上がり方が鈍ること（105歳以上で横ばいになるという報告があります）は入れていません。日本の生命表から計算したものでもありません\n・「平均200歳には約21年」: 生まれたときの平均余命が200歳になるように、2倍になる年数を伸ばした値（約21.4年）\n・「その年齢で止めたら」: その年齢の死亡率のまま変わらないとした場合に、その年齢の人が平均で何歳まで生きるか（50歳 約537歳、65歳 約208歳、70歳 約164歳）\n前提を変えれば数字は変わります。条件どうしの大きさの違いをつかむための目安としてご覧ください。\n\n■ 一次資料に書いていないこと\n・どの物差し（老化の時計）が、本当に健康な寿命を当てるか（CALERIE の分析は、物差しどうしで結果が分かれたことを示しています）\n・遺伝子の働き方を戻す治療で、DNAに起きた突然変異が戻るか（台詞の「書き換わったDNAは戻らない」と「200年生きると、どの哺乳類も経験していない量の変異になる」は、Cagan ほかの結果からの番組の推論です）\n・脳の細胞を入れ替えたときに、記憶や人格がどうなるか\n\n■ 使わなかった情報\n・OpenAI と Retro Biosciences の、AIで設計した初期化因子（RetroSOX・RetroKLF）が多能性のマーカーの発現を50倍超にした、という発表: 発表元のページを開いて確かめられず、査読つきの論文も確認できなかったため。また、測っているのはマーカーの発現で、若返りの効果そのものではありません\n・メトホルミンの大規模試験 TAME の最新の状況: 二次資料でしか確認できなかったため\n・Olshansky ほか（Nature Aging, 2024）の「マウスで試した50の化合物のうち、寿命を延ばしたのは12で、どれも15%を超えない」という記述: 同じ試験プログラムでラパマイシンが2割を超えて延ばしたという別の報告と食い違って見えるため、台詞では扱っていません\n・「AI創薬の第II相の成功率」などの二次情報の数字: 一次資料で確かめられなかったため\n\n※この動画は研究の紹介で、健康や治療についての助言ではありません。紹介した治療・薬は、動物実験か臨床試験の途中のものです。市販の「生物学的年齢」の検査を勧めるものでもありません。\n※この回の元には、専門家の審査を経た学術論文のほか、企業の発表、政府機関のプログラムのページが含まれます。\n※予測は不確かなもので、この動画の判定も2026年10月17日時点のものです。特定の企業への投資を勧めるものではありません。\n\n■ 参考（一次資料）\n[1] Waziry R ほか「Effect of long-term caloric restriction on DNA methylation measures of biological aging in healthy adults from the CALERIE trial」Nature Aging 3, 248–257 (2023) https://doi.org/10.1038/s43587-022-00357-y\n[2] ARPA-H「PROSPR: Proactive Solutions for Prolonging Resilience」 https://arpa-h.gov/explore-funding/programs/prospr\n[3] Widjaja AA ほか「Inhibition of IL-11 signalling extends mammalian healthspan and lifespan」Nature 632, 157–165 (2024) https://doi.org/10.1038/s41586-024-07701-9\n[4] Loyal「Loyal Receives FDA Acceptance of Safety Package for Senior Dog Lifespan Extension Drug」(2026-01-13) https://loyal.com/posts/loy-002-tas-announcement\n[5] Finch CE, Pike MC, Witten M.「Slow mortality rate accelerations during aging in some animals approximate that of humans」Science 249, 902–905 (1990) https://doi.org/10.1126/science.2392680\n[6] Life Biosciences「First-in-Human Data from Ongoing Phase 1 Trial Evaluating ER-100 in Optic Neuropathies」(2026-10-08) https://www.lifebiosciences.com/life-biosciences-announces-first-in-human-data-from-ongoing-phase-1-trial-evaluating-er-100-in-optic-neuropathies/\n[7] Cagan A ほか「Somatic mutation rates scale with lifespan across mammals」Nature 604, 517–524 (2022) https://doi.org/10.1038/s41586-022-04618-z\n[8] Tabar V ほか「Phase I trial of hES cell-derived dopaminergic neurons for Parkinson's disease」Nature 641, 978–983 (2025) https://doi.org/10.1038/s41586-025-08845-y\n[9] Azevedo FAC ほか「Equal numbers of neuronal and nonneuronal cells make the human brain an isometrically scaled-up primate brain」J Comp Neurol 513, 532–541 (2009) https://doi.org/10.1002/cne.21974\n[10] Loyal「The STAY Study」 https://loyal.com/stay",
+  "youtube_description": "AIの進み方が想像以上に速かったら、200歳まで生きる人が出てくるのは「時間の問題」なのか。前の回（人間は200歳まで生きられる？）で二人の判定は割れました（大輔＝根拠待ち、沙織＝まだ眉唾）。今回は「AIで速くなる工程と、速くならない工程」という新しい見方を足して、期待担当の大輔と、ツッコミ担当の沙織が、同じお題をもう一度一次資料で確かめます。\n\n■ この回の判定（2026年10月21日時点の、二人の見立て）\n判定の対象: 一人でも200歳の誕生日を迎える人が出てくるか（前の回と同じお題）\n大輔: 根拠待ち（探す工程・実験室の工程が速くなり、残る壁の多くは確かめる時間の壁だという論理は筋が通る。ただ、確かめる一回りが実際に短くなった実績はまだ無い。札が上がる条件: 結果を伏せた過去の人の試験をシミュレーションで当て続けること、確かめる一回りが実際に短くなること）\n沙織: まだ眉唾 → 根拠待ち（前の回で眉唾にしたのは、人で確かめる時間が縮む見込みが見えなかったため。今回、規制当局がすでに試験の人数を減らす統計のやり方を認めていると分かった。また、逆の向きを示す資料は、前の回で見た「AIで見つけた薬も、効くかを見る試験の通り方は昔並み」という点だけだった。人で老化を遅らせた薬は今も無く、寿命脱出速度は仮説なので、根拠待ちまで。札が上がる条件: 人で老化が遅れたという結果が繰り返し確かめられること）\n二人の結論: 残っているのは、確かめる時間。確かめる一回りが速くなれば、「時間の問題」の答えも変わる。ただし、何年かかるか、必ず来るかは言えません。\n\n■ 一次資料に書いてあること\n・METR（Kwa ほか）「Measuring AI Ability to Complete Long Software Tasks」（arXiv 2503.14499、最新版 2026年7月。専門家の審査を受ける前の論文）: AIが50%の成功率でこなせる仕事の長さ（人がかかる時間で測る）は、2019年からおよそ7か月ごとに倍になってきた。2024年には速まった可能性もある\n・Richard Socher 氏の寄稿（Next Big Idea Club、2026年10月8日。著書『The Eureka Machine』PublicAffairs、2026年9月22日刊の紹介）: 発見を生み出す機械は4つの柱（人類の知識の地図、観測データ、高精度のシミュレーション、完全自律の実験室）からなり、危険・高額・物理的に不可能な「もしも」の実験を数十億回の単位で試し、ロボットの実験室で生物・化学・物理の実験を行って予測を現実の結果と照らし合わせる。数百万のAIエージェントが科学者の共同体のように連携し、互いの案を批判し合う。目標は病気を終わらせ、寿命を延ばす突破口。台詞の「人で試す必要は、ほとんどなくなる」は大輔の予想です\n・欧州医薬品庁（EMA）CHMP「Qualification opinion for Prognostic Covariate Adjustment (PROCOVA™)」（2022年9月採択）: 過去の試験データから「プラセボの場合の結果」を参加者ごとに予測（予後スコア）し、無作為化比較試験（第2相・第3相、連続値の評価項目）の解析に使う統計手法を、主解析に使える方法として認めた。不確かさを考慮することなどを条件に、試験の人数を減らすことに使える。過去のデータでは、治療の状況が変わった後の試験の結果を予測できない場合がある、とも書いている\n・米国FDA（2025年4月10日発表）: 抗体医薬などで、動物実験の要件を減らす・改める・置き換える計画（ロードマップ）。FDA の1年後の報告書（2026年4月）では（台詞では扱っていません）、2025年12月の指針案で、抗体医薬について条件つきで6か月のサルの毒性試験を不要とした、と報告している（指針案の段階）\n・ARPA-H「PROSPR」（米国政府の医療研究の機関、プログラムのページ）: 加齢に伴う健康の変化を「何十年もの研究ではなく、3年で」評価できるよう、体の指標・評価の道具・家で集めるデータ・臨床試験のやり方を作る計画。物差しの使い方について、FDA向けの専門家の提言書を公開している\n・de Grey「Escape Velocity: Why the Prospect of Extreme Human Life Extension Matters Now」（PLoS Biology, 2004）: 年齢ごとの死亡の危険を下げる治療の進歩が十分に速ければ、残りの寿命が延び続けるとし、その速さを「actuarial escape velocity」と名づけた（のちに「longevity escape velocity」の呼び方が広まりました）。予測として述べたもので、本人も時期の見立ては大きく外れうると書いている。人で起きた現象ではありません\n・Jayatunga ほか（Drug Discovery Today, 2024）: 前の回で紹介。AIで見つけた薬の、効くかを見る試験（第2相）の成功率は約4割で、昔からの平均並み（数が少ないことに注意）\n\n■ 番組の見立て（一次資料に書いていないこと）\n・カーナビのたとえ（予測は、過去の記録がある範囲なら当てられるが、200歳は誰も生きたことのない範囲なので、シミュレーションの回数を増やしても確かさは増えない）は二人の見立てです\n・「結果を伏せた過去の人の試験を、先に当てる実績を積めば、人の試験は大きく減らせる」も二人の見立てで、規制当局の方針ではありません\n・「老化の物差しが人の試験で使われ始めるか、見ておきたい」は予測ではなく、注目点です\n\n※この動画は研究の紹介で、健康や治療についての助言ではありません。紹介した薬・計画は、試験の途中か計画の段階のものです。\n※この回の元には、専門家の審査を経た学術論文のほか、審査前の論文、政府機関・規制当局の文書、企業の発表、著者の寄稿が含まれます。\n※予測は不確かなもので、この動画の判定も2026年10月21日時点のものです。特定の企業への投資を勧めるものではありません。\n\n■ 参考（一次資料）\n[1] Socher R.「AI's Biggest Breakthrough Won't Be a Chatbot」Next Big Idea Club (2026-10-08) https://nextbigideaclub.com/magazine/ais-biggest-breakthrough-wont-chatbot-bookbite/61534/ （書籍: The Eureka Machine, PublicAffairs, 2026）\n[2] Kwa T ほか「Measuring AI Ability to Complete Long Software Tasks」arXiv:2503.14499（審査前の論文） https://arxiv.org/abs/2503.14499\n[3] European Medicines Agency「Qualification opinion for Prognostic Covariate Adjustment (PROCOVA™)」(2022) https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/qualification-opinion-prognostic-covariate-adjustment-procovatm_en.pdf\n[4] U.S. FDA「FDA Announces Plan to Phase Out Animal Testing Requirement for Monoclonal Antibodies and Other Drugs」(2025-04-10) https://www.fda.gov/news-events/press-announcements/fda-announces-plan-phase-out-animal-testing-requirement-monoclonal-antibodies-and-other-drugs\n[5] U.S. FDA「Reducing Animal Testing in Nonclinical Studies: Year One Progress and the Path Forward」(2026) https://www.fda.gov/media/191986/download\n[6] ARPA-H「PROSPR: Proactive Solutions for Prolonging Resilience」 https://arpa-h.gov/explore-funding/programs/prospr\n[7] de Grey ADNJ「Escape Velocity: Why the Prospect of Extreme Human Life Extension Matters Now」PLoS Biology 2(6): e187 (2004) https://doi.org/10.1371/journal.pbio.0020187\n[8] Jayatunga MKP ほか「How successful are AI-discovered drugs in clinical trials? A first analysis and emerging lessons」Drug Discovery Today 29(6), 104009 (2024) https://doi.org/10.1016/j.drudis.2024.104009\n\n🎵 Music: Vibrant Positivity by ViraMiller (freesound.org) — CC BY 4.0\n\n🎵 Music: Laid Back Band Track by TheoJT (freesound.org) — CC BY 4.0",
   "scenes": [
     {
       "type": "teaser",
       "bgm_role": "intro",
-      "ken_burns": "zoom_in",
-      "reuse_scene_id": 13,
+      "ken_burns": "zoom_out",
+      "reuse_scene_id": 8,
       "lines": [
         {
           "speaker": "skeptic",
-          "text": "200歳まで生きるには、何がそろえばいい？",
+          "text": "200歳まで生きる人は出てくるか。前回、二人の判定は割れた。",
           "expression": "doubt",
-          "tag": "question"
+          "t0": 0.0,
+          "dur": 4.8,
+          "cards": [
+            {
+              "text": "200歳まで生きる人は出てくるか。前回、",
+              "start": 0.0,
+              "end": 3.28
+            },
+            {
+              "text": "二人の判定は割れた。",
+              "start": 3.43,
+              "end": 4.93
+            }
+          ]
         }
       ],
       "scene_id": 1,
-      "narration": "沙織「200歳まで生きるには、何がそろえばいい？」",
-      "narrator": "dialogue"
-    },
-    {
-      "type": "teaser",
-      "bgm_role": "intro",
-      "ken_burns": "zoom_out",
-      "reuse_scene_id": 9,
-      "lines": [
-        {
-          "speaker": "dreamer",
-          "text": "単純な計算でも、老化を3分の1近くの速さにする必要。",
-          "expression": "excited",
-          "tone": "excited, like breaking news"
-        }
-      ],
-      "scene_id": 2,
-      "narration": "大輔「単純な計算でも、老化を3分の1近くの速さにする必要。」",
-      "narrator": "dialogue"
-    },
-    {
-      "type": "teaser",
-      "bgm_role": "intro",
-      "ken_burns": "zoom_in",
-      "reuse_scene_id": 16,
-      "lines": [
-        {
-          "speaker": "skeptic",
-          "text": "今70歳の人は、止めても平均では届かない。",
-          "expression": "doubt",
-          "tone": "dry"
-        }
-      ],
-      "scene_id": 3,
-      "narration": "沙織「今70歳の人は、止めても平均では届かない。」",
-      "narrator": "dialogue"
+      "narration": "沙織「200歳まで生きる人は出てくるか。前回、二人の判定は割れた。」",
+      "narrator": "dialogue",
+      "lines_hash": "a70410d528da",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "teaser",
@@ -231,13 +179,95 @@
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "でも、一番手前の条件は、もう動いてる。",
-          "expression": "thinking"
+          "text": "でも、AIが想像以上に速かったら？",
+          "expression": "excited",
+          "tone": "excited, like breaking news",
+          "t0": 0.0,
+          "dur": 3.2,
+          "cards": [
+            {
+              "text": "でも、AIが想像以上に速かったら？",
+              "start": 0.0,
+              "end": 3.2
+            }
+          ]
+        }
+      ],
+      "scene_id": 2,
+      "narration": "大輔「でも、AIが想像以上に速かったら？」",
+      "narrator": "dialogue",
+      "lines_hash": "a922e0150010",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_out",
+      "reuse_scene_id": 14,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "200歳を確かめるのに、200年待つしかない？",
+          "expression": "thinking",
+          "tag": "question",
+          "t0": 0.0,
+          "dur": 4.08,
+          "cards": [
+            {
+              "text": "200歳を確かめるのに、200年待つしかない？",
+              "start": 0.0,
+              "end": 3.62
+            }
+          ]
+        }
+      ],
+      "scene_id": 3,
+      "narration": "大輔「200歳を確かめるのに、200年待つしかない？」",
+      "narrator": "dialogue",
+      "lines_hash": "b08a332b70e9",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_out",
+      "reuse_scene_id": 11,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "老化の薬づくり。AIで速くなる工程と、ならない工程がある。",
+          "expression": "doubt",
+          "tone": "dry",
+          "t0": 0.0,
+          "dur": 4.6,
+          "cards": [
+            {
+              "text": "老化の薬づくり。AIで速くなる工程と、",
+              "start": 0.29,
+              "end": 3.14
+            },
+            {
+              "text": "ならない工程がある。",
+              "start": 3.29,
+              "end": 4.79
+            }
+          ]
         }
       ],
       "scene_id": 4,
-      "narration": "大輔「でも、一番手前の条件は、もう動いてる。」",
-      "narrator": "dialogue"
+      "narration": "沙織「老化の薬づくり。AIで速くなる工程と、ならない工程がある。」",
+      "narrator": "dialogue",
+      "lines_hash": "927072590d8d",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "setup",
@@ -247,670 +277,2580 @@
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "今日は前の回の続き。200歳まで生きるには、何がそろっている必要があるか。",
-          "expression": "excited"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "先に結論。200歳そのものは、前の回で二人とも眉唾。そこは動かない。",
-          "expression": "doubt"
-        },
-        {
-          "speaker": "dreamer",
-          "text": "だから逆から考える。条件は3つ。老化を測る物差し、効く薬、それと若返り。",
-          "expression": "neutral"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "私の予想。一番遠いのは物差し。測れないと、薬も若返りも、効いたか分からない。",
-          "expression": "doubt",
-          "tag": "prediction"
-        },
-        {
-          "speaker": "dreamer",
-          "text": "僕の予想は逆。物差しと薬は、AIで近い。遠いのは若返り。",
+          "text": "前回の200歳の話、あれからずっと考えてた。",
           "expression": "excited",
-          "tag": "prediction"
+          "t0": 0.0,
+          "dur": 3.72,
+          "cards": [
+            {
+              "text": "前回の200歳の話、あれからずっと考えてた。",
+              "start": 0.0,
+              "end": 3.3
+            }
+          ]
         },
         {
           "speaker": "skeptic",
-          "text": "判定は200歳じゃなく、一番手前の条件に付ける。面白いのは、今70歳の人の話。",
-          "expression": "amused"
+          "text": "お題はこうだったね。一人でもいいから、200歳の誕生日を迎える人が出てくるか。",
+          "expression": "amused",
+          "t0": 4.0,
+          "dur": 5.92,
+          "cards": [
+            {
+              "text": "お題はこうだったね。一人でもいいから、",
+              "start": 0.0,
+              "end": 2.82
+            },
+            {
+              "text": "200歳の誕生日を迎える人が出てくるか。",
+              "start": 2.97,
+              "end": 5.93
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "この番組では、最後に二人が判定の札を出す。札は4枚。近くて確かな方から、もうすぐ来る、3年はかかる、根拠待ち、まだ眉唾。",
+          "expression": "neutral",
+          "t0": 10.14,
+          "dur": 10.72,
+          "cards": [
+            {
+              "text": "この番組では、最後に二人が判定の札を出す。",
+              "start": 0.0,
+              "end": 3.54
+            },
+            {
+              "text": "札は4枚。近くて確かな方から、",
+              "start": 3.69,
+              "end": 6.25
+            },
+            {
+              "text": "もうすぐ来る、3年はかかる、根拠待ち、",
+              "start": 6.4,
+              "end": 9.84
+            },
+            {
+              "text": "まだ眉唾。",
+              "start": 9.99,
+              "end": 10.92
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "前回、僕は「根拠待ち」。否定はできないけど、支える資料もまだ無い、という札。",
+          "expression": "thinking",
+          "t0": 21.14,
+          "dur": 5.96,
+          "cards": [
+            {
+              "text": "前回、僕は「根拠待ち」。",
+              "start": 0.0,
+              "end": 1.92
+            },
+            {
+              "text": "否定はできないけど、",
+              "start": 1.92,
+              "end": 3.52
+            },
+            {
+              "text": "支える資料もまだ無い、という札。",
+              "start": 3.67,
+              "end": 6.11
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は「まだ眉唾」。言ってることが、今の根拠から飛びすぎてる、という札。",
+          "expression": "doubt",
+          "t0": 27.38,
+          "dur": 5.24,
+          "cards": [
+            {
+              "text": "私は「まだ眉唾」。言ってることが、",
+              "start": 0.0,
+              "end": 2.5
+            },
+            {
+              "text": "今の根拠から飛びすぎてる、という札。",
+              "start": 2.65,
+              "end": 5.39
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "前回わかったのは、AIが設計した薬でも、本当に効くかの試験に通る割合は、ふつうの薬と同じだったこと。効くかは結局、人で時間をかけて確かめるしかない。それが前回の壁。",
+          "expression": "neutral",
+          "t0": 32.84,
+          "dur": 10.84,
+          "cards": [
+            {
+              "text": "前回わかったのは、AIが設計した薬でも、",
+              "start": 0.0,
+              "end": 2.56
+            },
+            {
+              "text": "本当に効くかの試験に通る割合は、",
+              "start": 2.71,
+              "end": 4.85
+            },
+            {
+              "text": "ふつうの薬と同じだったこと。効くかは結局、",
+              "start": 5.0,
+              "end": 7.62
+            },
+            {
+              "text": "人で時間をかけて確かめるしかない。",
+              "start": 7.77,
+              "end": 9.89
+            },
+            {
+              "text": "それが前回の壁。",
+              "start": 10.04,
+              "end": 11.04
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今日は、その壁を、AIが想像以上に速かったらどうなるか、で見直したい。",
+          "expression": "excited",
+          "t0": 43.96,
+          "dur": 6.36,
+          "cards": [
+            {
+              "text": "今日は、その壁を、AIが想像以上に速かったら",
+              "start": 0.0,
+              "end": 4.46
+            },
+            {
+              "text": "どうなるか、で見直したい。",
+              "start": 4.61,
+              "end": 6.56
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "その速さは、前回も説明したけど、アメリカの研究団体METRの測定で、AIが一人でこなせる仕事の長さが、2019年から約7か月ごとに倍になってる。",
+          "expression": "excited",
+          "display": "その速さは、前回も説明したけど、アメリカの研究団体METRの測定で、AIが一人でこなせる仕事の長さが、2019年から約7か月ごとに倍になってる。",
+          "t0": 50.54,
+          "dur": 12.16,
+          "cards": [
+            {
+              "text": "その速さは、前回も説明したけど、",
+              "start": 0.0,
+              "end": 2.7
+            },
+            {
+              "text": "アメリカの研究団体METRの測定で、",
+              "start": 2.7,
+              "end": 5.74
+            },
+            {
+              "text": "AIが一人でこなせる仕事の長さが、",
+              "start": 5.74,
+              "end": 8.61
+            },
+            {
+              "text": "2019年から約7か月ごとに倍になってる。",
+              "start": 8.61,
+              "end": 12.16
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕の見立てでは、薬の候補を考えるような長い仕事も、どんどんAIに任せられるようになる。",
+          "expression": "excited",
+          "t0": 62.92,
+          "dur": 6.0,
+          "cards": [
+            {
+              "text": "僕の見立てでは、",
+              "start": 0.0,
+              "end": 1.15
+            },
+            {
+              "text": "薬の候補を考えるような長い仕事も、",
+              "start": 1.15,
+              "end": 3.6
+            },
+            {
+              "text": "どんどんAIに任せられるようになる。",
+              "start": 3.75,
+              "end": 6.2
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "速いのは認める。ただ、これは今までの伸び方。この先も同じとは限らないよ。",
+          "expression": "neutral",
+          "t0": 69.2,
+          "dur": 6.16,
+          "cards": [
+            {
+              "text": "速いのは認める。ただ、",
+              "start": 0.33,
+              "end": 2.0
+            },
+            {
+              "text": "これは今までの伸び方。",
+              "start": 2.0,
+              "end": 3.66
+            },
+            {
+              "text": "この先も同じとは限らないよ。",
+              "start": 3.81,
+              "end": 5.91
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想。AIがここまで速いなら、200歳も時間の問題だと思う。",
+          "expression": "excited",
+          "tag": "prediction",
+          "t0": 75.64,
+          "dur": 4.92,
+          "cards": [
+            {
+              "text": "僕の予想。AIがここまで速いなら、",
+              "start": 0.0,
+              "end": 2.53
+            },
+            {
+              "text": "200歳も時間の問題だと思う。",
+              "start": 2.68,
+              "end": 5.0
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "時間の問題って、いつかは必ず来る、ってこと？",
+          "expression": "doubt",
+          "t0": 80.84,
+          "dur": 4.0,
+          "cards": [
+            {
+              "text": "時間の問題って、いつかは必ず来る、",
+              "start": 0.0,
+              "end": 3.0
+            },
+            {
+              "text": "ってこと？",
+              "start": 3.15,
+              "end": 3.9
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "何年後かは言えない。ただ、今日扱う壁で言えば、無理だと分かってる壁じゃない。残ってるのは、効くかを人で確かめるのに時間がかかる、っていう壁だけ。そういう意味。",
+          "expression": "thinking",
+          "t0": 85.12,
+          "dur": 10.68,
+          "cards": [
+            {
+              "text": "何年後かは言えない。",
+              "start": 0.0,
+              "end": 1.37
+            },
+            {
+              "text": "ただ、今日扱う壁で言えば、",
+              "start": 1.37,
+              "end": 3.15
+            },
+            {
+              "text": "無理だと分かってる壁じゃない。",
+              "start": 3.3,
+              "end": 5.21
+            },
+            {
+              "text": "残ってるのは、効くかを人で確かめるのに",
+              "start": 5.36,
+              "end": 7.78
+            },
+            {
+              "text": "時間がかかる、っていう壁だけ。",
+              "start": 7.93,
+              "end": 9.84
+            },
+            {
+              "text": "そういう意味。",
+              "start": 9.99,
+              "end": 10.88
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想。AIが速くするのは、答えを探す工程。確かめる工程は別で、そこは速くならない。",
+          "expression": "doubt",
+          "tag": "prediction",
+          "t0": 96.08,
+          "dur": 7.24,
+          "cards": [
+            {
+              "text": "私の予想。AIが速くするのは、",
+              "start": 0.0,
+              "end": 2.54
+            },
+            {
+              "text": "答えを探す工程。確かめる工程は別で、",
+              "start": 2.69,
+              "end": 5.69
+            },
+            {
+              "text": "そこは速くならない。",
+              "start": 5.84,
+              "end": 7.34
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、確かめよう。",
+          "expression": "neutral",
+          "t0": 103.6,
+          "dur": 1.36,
+          "cards": [
+            {
+              "text": "じゃあ、確かめよう。",
+              "start": 0.0,
+              "end": 1.36
+            }
+          ]
         }
       ],
       "scene_id": 5,
-      "narration": "大輔「今日は前の回の続き。200歳まで生きるには、何がそろっている必要があるか。」\n沙織「先に結論。200歳そのものは、前の回で二人とも眉唾。そこは動かない。」\n大輔「だから逆から考える。条件は3つ。老化を測る物差し、効く薬、それと若返り。」\n沙織「私の予想。一番遠いのは物差し。測れないと、薬も若返りも、効いたか分からない。」\n大輔「僕の予想は逆。物差しと薬は、AIで近い。遠いのは若返り。」\n沙織「判定は200歳じゃなく、一番手前の条件に付ける。面白いのは、今70歳の人の話。」",
-      "narrator": "dialogue"
+      "narration": "大輔「前回の200歳の話、あれからずっと考えてた。」\n沙織「お題はこうだったね。一人でもいいから、200歳の誕生日を迎える人が出てくるか。」\n沙織「この番組では、最後に二人が判定の札を出す。札は4枚。近くて確かな方から、もうすぐ来る、3年はかかる、根拠待ち、まだ眉唾。」\n大輔「前回、僕は「根拠待ち」。否定はできないけど、支える資料もまだ無い、という札。」\n沙織「私は「まだ眉唾」。言ってることが、今の根拠から飛びすぎてる、という札。」\n沙織「前回わかったのは、AIが設計した薬でも、本当に効くかの試験に通る割合は、ふつうの薬と同じだったこと。効くかは結局、人で時間をかけて確かめるしかない。それが前回の壁。」\n大輔「今日は、その壁を、AIが想像以上に速かったらどうなるか、で見直したい。」\n大輔「その速さは、前回も説明したけど、アメリカの研究団体METRの測定で、AIが一人でこなせる仕事の長さが、2019年から約7か月ごとに倍になってる。」\n大輔「僕の見立てでは、薬の候補を考えるような長い仕事も、どんどんAIに任せられるようになる。」\n沙織「速いのは認める。ただ、これは今までの伸び方。この先も同じとは限らないよ。」\n大輔「僕の予想。AIがここまで速いなら、200歳も時間の問題だと思う。」\n沙織「時間の問題って、いつかは必ず来る、ってこと？」\n大輔「何年後かは言えない。ただ、今日扱う壁で言えば、無理だと分かってる壁じゃない。残ってるのは、効くかを人で確かめるのに時間がかかる、っていう壁だけ。そういう意味。」\n沙織「私の予想。AIが速くするのは、答えを探す工程。確かめる工程は別で、そこは速くならない。」\n大輔「じゃあ、確かめよう。」",
+      "narrator": "dialogue",
+      "lines_hash": "9a67ef203916",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "paper",
       "bgm_role": "main",
       "round": 1,
-      "round_title": "老化は、数字で測れる？",
-      "reference_index": 1,
+      "round_title": "AIで速くなるのは、どの工程？",
       "ken_burns": "zoom_out",
-      "image_prompt": "Bright late-morning daylight in a tidy Japanese living room: on a light wooden low table, a set of home health measuring devices laid out neatly - an upper-arm blood pressure cuff with a small plain monitor, a grip-strength dynamometer, a fitness wristband, a small plain white sample-collection kit box, and a tablet showing only soft blurred abstract line graphs in teal. Sunlight through a window with sheer curtains, a potted plant. Calm teal and warm gray palette with one warm coral accent. No people, no hands, no faces. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "image_prompt": "Bright daytime inside a modern fully automated biology laboratory: long white benches with robotic arms moving small sample plates between compact lab instruments, a liquid-handling robot with rows of pipette tips, racks of small multi-well plates with pale pink and clear liquids, glass partitions, soft even daylight. Calm teal and slate palette with one warm coral status light on a robot arm. No people. No people's faces, no hands. No logos, no brand marks, no readable text, no letters, no numbers.",
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "まず物差し。アメリカ政府の医療研究の機関、ARPA-Hに、老化の治療を早く確かめる計画がある。",
+          "text": "最初に、前回の壁を、工程で分け直したい。薬ができるまでの仕事は、大きく2つに分けられる。",
           "expression": "excited",
-          "display": "まず物差し。米国政府の医療研究の機関 ARPA-H に、老化の治療を早く確かめる計画がある。"
+          "t0": 0.0,
+          "dur": 6.88,
+          "cards": [
+            {
+              "text": "最初に、前回の壁を、工程で分け直したい。",
+              "start": 0.0,
+              "end": 3.18
+            },
+            {
+              "text": "薬ができるまでの仕事は、",
+              "start": 3.44,
+              "end": 5.24
+            },
+            {
+              "text": "大きく2つに分けられる。",
+              "start": 5.24,
+              "end": 7.04
+            }
+          ]
         },
         {
           "speaker": "skeptic",
-          "text": "老化に効いたかなんて、寿命が延びたかを待つしかないでしょ。何十年も。",
-          "expression": "doubt"
+          "text": "答えを探す工程と、確かめる工程、ってこと？",
+          "expression": "thinking",
+          "t0": 7.16,
+          "dur": 3.48,
+          "cards": [
+            {
+              "text": "答えを探す工程と、確かめる工程、ってこと？",
+              "start": 0.0,
+              "end": 3.15
+            }
+          ]
         },
         {
           "speaker": "dreamer",
-          "text": "それを3年にする計画。家で集めるデータと、試験のやり方から作る。",
-          "expression": "excited"
-        },
-        {
-          "speaker": "dreamer",
-          "text": "僕なら、これに使う。AIが設計した老化の薬の候補を、その物差しで2年のうちに振り分ける。",
+          "text": "そう。探す工程っていうのは、老化に効きそうな薬の候補を考えて、形を設計するところ。AIが一番得意なところ。",
           "expression": "excited",
-          "tag": "use_case"
+          "t0": 10.92,
+          "dur": 8.8,
+          "cards": [
+            {
+              "text": "そう。探す工程っていうのは、",
+              "start": 0.0,
+              "end": 2.14
+            },
+            {
+              "text": "老化に効きそうな薬の候補を考えて、",
+              "start": 2.29,
+              "end": 4.97
+            },
+            {
+              "text": "形を設計するところ。AIが一番得意なところ。",
+              "start": 5.12,
+              "end": 8.5
+            }
+          ]
         },
         {
           "speaker": "skeptic",
-          "text": "物差しが本物なら、ね。2年の試験で、物差しどうしの答えがそろった例はある？",
-          "expression": "doubt"
+          "text": "探すのが速いのは、認める。",
+          "expression": "neutral",
+          "t0": 20.0,
+          "dur": 2.28,
+          "cards": [
+            {
+              "text": "探すのが速いのは、認める。",
+              "start": 0.0,
+              "end": 2.28
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕なら、これに使う。AIに、老化に効きそうな薬の候補を、何万通りでも探させる。",
+          "expression": "excited",
+          "tag": "use_case",
+          "t0": 22.56,
+          "dur": 6.52,
+          "cards": [
+            {
+              "text": "僕なら、これに使う。AIに、",
+              "start": 0.0,
+              "end": 2.62
+            },
+            {
+              "text": "老化に効きそうな薬の候補を、",
+              "start": 2.77,
+              "end": 4.87
+            },
+            {
+              "text": "何万通りでも探させる。",
+              "start": 5.02,
+              "end": 6.67
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "探すのは任せていい。問題は、見つけた候補が本当に働くかを、確かめる工程の方。",
+          "expression": "doubt",
+          "tag": "weakness",
+          "t0": 29.36,
+          "dur": 6.36,
+          "cards": [
+            {
+              "text": "探すのは任せていい。問題は、",
+              "start": 0.0,
+              "end": 2.34
+            },
+            {
+              "text": "見つけた候補が本当に働くかを、",
+              "start": 2.58,
+              "end": 4.88
+            },
+            {
+              "text": "確かめる工程の方。",
+              "start": 5.03,
+              "end": 6.38
+            }
+          ]
         }
       ],
       "scene_id": 6,
-      "narration": "大輔「まず物差し。アメリカ政府の医療研究の機関、ARPA-Hに、老化の治療を早く確かめる計画がある。」\n沙織「老化に効いたかなんて、寿命が延びたかを待つしかないでしょ。何十年も。」\n大輔「それを3年にする計画。家で集めるデータと、試験のやり方から作る。」\n大輔「僕なら、これに使う。AIが設計した老化の薬の候補を、その物差しで2年のうちに振り分ける。」\n沙織「物差しが本物なら、ね。2年の試験で、物差しどうしの答えがそろった例はある？」",
-      "narrator": "dialogue"
+      "narration": "大輔「最初に、前回の壁を、工程で分け直したい。薬ができるまでの仕事は、大きく2つに分けられる。」\n沙織「答えを探す工程と、確かめる工程、ってこと？」\n大輔「そう。探す工程っていうのは、老化に効きそうな薬の候補を考えて、形を設計するところ。AIが一番得意なところ。」\n沙織「探すのが速いのは、認める。」\n大輔「僕なら、これに使う。AIに、老化に効きそうな薬の候補を、何万通りでも探させる。」\n沙織「探すのは任せていい。問題は、見つけた候補が本当に働くかを、確かめる工程の方。」",
+      "narrator": "dialogue",
+      "lines_hash": "bba05657fa93",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "check",
       "bgm_role": "main",
       "round": 1,
+      "ken_burns": "static",
+      "image_prompt": "Clean flat infographic diagram on a plain light background, three rounded boxes in one horizontal row connected by arrows from left to right. Box 1 (teal) labeled in Japanese: 「探す」 with a small subtitle 「候補を考えて設計」. Box 2 (teal) labeled: 「確かめる①　実験室」 with subtitle 「細胞・化学の実験」. Box 3 (warm coral) labeled: 「確かめる②　人の体」 with subtitle 「長い時間をかけて追う」. Under box 1 and box 2, one shared bracket labeled 「速くなる」. Under box 3, a small clock icon and the label 「時間が残る」. Write each label exactly as given. Do not add any other numbers, labels, notes or text.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "確かめる工程も、2つの層に分けて考えたい。1つ目は、実験室で確かめる層。細胞や化学の実験で、候補が狙いどおり働くかを見る。",
+          "expression": "thinking",
+          "t0": 0.0,
+          "dur": 10.32,
+          "cards": [
+            {
+              "text": "確かめる工程も、2つの層に分けて考えたい。",
+              "start": 0.0,
+              "end": 3.15
+            },
+            {
+              "text": "1つ目は、実験室で確かめる層。",
+              "start": 3.48,
+              "end": 5.86
+            },
+            {
+              "text": "細胞や化学の実験で、",
+              "start": 6.26,
+              "end": 7.76
+            },
+            {
+              "text": "候補が狙いどおり働くかを見る。",
+              "start": 7.76,
+              "end": 10.01
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "2つ目は、人の体で確かめる層ね。人の試験は、まず体に入れても安全か、次に本当に効くか、の順に見る。",
+          "expression": "neutral",
+          "t0": 10.6,
+          "dur": 7.96,
+          "cards": [
+            {
+              "text": "2つ目は、人の体で確かめる層ね。",
+              "start": 0.0,
+              "end": 2.48
+            },
+            {
+              "text": "人の試験は、まず体に入れても安全か、",
+              "start": 2.63,
+              "end": 5.47
+            },
+            {
+              "text": "次に本当に効くか、の順に見る。",
+              "start": 5.62,
+              "end": 7.96
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "実験室の層は、ロボットに任せれば、速くなる見込みがある。",
+          "expression": "excited",
+          "t0": 18.84,
+          "dur": 4.32,
+          "cards": [
+            {
+              "text": "実験室の層は、ロボットに任せれば、",
+              "start": 0.0,
+              "end": 2.68
+            },
+            {
+              "text": "速くなる見込みがある。",
+              "start": 2.83,
+              "end": 4.47
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "人の体の層は？",
+          "expression": "doubt",
+          "t0": 23.44,
+          "dur": 1.64,
+          "cards": [
+            {
+              "text": "人の体の層は？",
+              "start": 0.0,
+              "end": 1.64
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "人の体の層は、ロボットでは代われない。人が実際に年を取っていくのを、追うしかないから。",
+          "expression": "thinking",
+          "t0": 25.36,
+          "dur": 6.72,
+          "cards": [
+            {
+              "text": "人の体の層は、ロボットでは代われない。",
+              "start": 0.0,
+              "end": 2.92
+            },
+            {
+              "text": "人が実際に年を取っていくのを、",
+              "start": 3.19,
+              "end": 5.43
+            },
+            {
+              "text": "追うしかないから。",
+              "start": 5.58,
+              "end": 6.92
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "老化に効くかなら、なおさら。何年も追わないと分からない。",
+          "expression": "doubt",
+          "tag": "barrier",
+          "t0": 32.36,
+          "dur": 3.88,
+          "cards": [
+            {
+              "text": "老化に効くかなら、なおさら。",
+              "start": 0.0,
+              "end": 1.98
+            },
+            {
+              "text": "何年も追わないと分からない。",
+              "start": 2.13,
+              "end": 4.0
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そこまでは認める。でも、人の体の層を短くできるかもしれない話が、いくつか出てきてる。それが次。",
+          "expression": "convinced",
+          "t0": 36.52,
+          "dur": 7.32,
+          "cards": [
+            {
+              "text": "そこまでは認める。でも、人の体の層を短く",
+              "start": 0.0,
+              "end": 3.18
+            },
+            {
+              "text": "できるかもしれない話が、",
+              "start": 3.33,
+              "end": 5.12
+            },
+            {
+              "text": "いくつか出てきてる。",
+              "start": 5.12,
+              "end": 6.62
+            },
+            {
+              "text": "それが次。",
+              "start": 6.77,
+              "end": 7.52
+            }
+          ]
+        }
+      ],
+      "scene_id": 7,
+      "narration": "大輔「確かめる工程も、2つの層に分けて考えたい。1つ目は、実験室で確かめる層。細胞や化学の実験で、候補が狙いどおり働くかを見る。」\n沙織「2つ目は、人の体で確かめる層ね。人の試験は、まず体に入れても安全か、次に本当に効くか、の順に見る。」\n大輔「実験室の層は、ロボットに任せれば、速くなる見込みがある。」\n沙織「人の体の層は？」\n大輔「人の体の層は、ロボットでは代われない。人が実際に年を取っていくのを、追うしかないから。」\n沙織「老化に効くかなら、なおさら。何年も追わないと分からない。」\n大輔「そこまでは認める。でも、人の体の層を短くできるかもしれない話が、いくつか出てきてる。それが次。」",
+      "narrator": "dialogue",
+      "lines_hash": "35c1cb338350"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 2,
+      "round_title": "シミュレーションで、人の試験は省ける？",
+      "reference_index": 0,
+      "ken_burns": "zoom_in",
+      "image_prompt": "A calm, bright modern computing room at daytime: rows of server racks with soft blue indicator lights on the left and right, and in the center a large wall display showing a translucent glowing 3D model of a human torso with organs rendered as soft teal wireframes and floating abstract molecule shapes, all softly blurred, no readable text. Calm teal and slate palette with one warm coral glow at the heart of the 3D model. No people. No people's faces, no hands. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "先月、アメリカで出た本がある。AIの研究者で、AIの会社を経営する人が書いた、『ユリーカ・マシン』。",
+          "expression": "excited",
+          "display": "先月、アメリカで出た本がある。AIの研究者で、AIの会社を経営する人が書いた『The Eureka Machine』。",
+          "t0": 0.0,
+          "dur": 8.08,
+          "cards": [
+            {
+              "text": "先月、アメリカで出た本がある。",
+              "start": 0.0,
+              "end": 2.09
+            },
+            {
+              "text": "AIの研究者で、AIの会社を経営する人が",
+              "start": 2.09,
+              "end": 4.88
+            },
+            {
+              "text": "書いた『The Eureka",
+              "start": 4.88,
+              "end": 6.83
+            },
+            {
+              "text": "Machine』。",
+              "start": 6.83,
+              "end": 8.08
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ユリーカって、「分かった！」っていう叫びね。発見する機械、ってこと？",
+          "expression": "thinking",
+          "t0": 8.36,
+          "dur": 4.4,
+          "cards": [
+            {
+              "text": "ユリーカって、「分かった！」",
+              "start": 0.0,
+              "end": 1.75
+            },
+            {
+              "text": "っていう叫びね。発見する機械、ってこと？",
+              "start": 1.9,
+              "end": 4.4
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そう。著者によると、発見を自動で生む機械は4つの柱でできる。",
+          "expression": "excited",
+          "t0": 13.04,
+          "dur": 5.52,
+          "cards": [
+            {
+              "text": "そう。著者によると、発見を自動で生む機械は",
+              "start": 0.0,
+              "end": 3.76
+            },
+            {
+              "text": "4つの柱でできる。",
+              "start": 3.91,
+              "end": 5.33
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "4つの柱って？",
+          "expression": "doubt",
+          "t0": 18.84,
+          "dur": 1.6,
+          "cards": [
+            {
+              "text": "4つの柱って？",
+              "start": 0.0,
+              "end": 1.6
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "知識とデータを集める柱が2つと、シミュレーション、全部自動の実験室。今日の話で大事なのは、後の2つ。",
+          "expression": "excited",
+          "t0": 20.72,
+          "dur": 8.64,
+          "cards": [
+            {
+              "text": "知識とデータを集める柱が2つと、",
+              "start": 0.0,
+              "end": 2.62
+            },
+            {
+              "text": "シミュレーション、全部自動の実験室。",
+              "start": 2.82,
+              "end": 5.52
+            },
+            {
+              "text": "今日の話で大事なのは、後の2つ。",
+              "start": 5.84,
+              "end": 8.24
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "シミュレーションっていうのは、コンピューターの中で試す、あれ？",
+          "expression": "thinking",
+          "t0": 29.64,
+          "dur": 3.84,
+          "cards": [
+            {
+              "text": "シミュレーションっていうのは、",
+              "start": 0.0,
+              "end": 1.79
+            },
+            {
+              "text": "コンピューターの中で試す、あれ？",
+              "start": 1.94,
+              "end": 3.84
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そう。コンピューターの中に、本物そっくりの体や物質を作って試す。危ない、高すぎる、現実には無理な「もしも」の実験を、数十億回の単位で。",
+          "expression": "excited",
+          "t0": 33.76,
+          "dur": 11.96,
+          "cards": [
+            {
+              "text": "そう。コンピューターの中に、",
+              "start": 0.0,
+              "end": 2.1
+            },
+            {
+              "text": "本物そっくりの体や物質を作って試す。",
+              "start": 2.25,
+              "end": 5.33
+            },
+            {
+              "text": "危ない、高すぎる、現実には無理な「もしも」",
+              "start": 5.48,
+              "end": 8.75
+            },
+            {
+              "text": "の実験を、数十億回の単位で。",
+              "start": 8.9,
+              "end": 11.89
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "数十億回。で、実験室の方は？",
+          "expression": "surprised",
+          "t0": 46.0,
+          "dur": 2.88,
+          "cards": [
+            {
+              "text": "数十億回。で、実験室の方は？",
+              "start": 0.0,
+              "end": 2.88
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ロボットが、生物や化学や物理の実験をして、シミュレーションの予測を、現実の結果で確かめる。",
+          "expression": "excited",
+          "t0": 49.16,
+          "dur": 7.56,
+          "cards": [
+            {
+              "text": "ロボットが、生物や化学や物理の実験をして、",
+              "start": 0.0,
+              "end": 3.66
+            },
+            {
+              "text": "シミュレーションの予測を、",
+              "start": 3.81,
+              "end": 5.76
+            },
+            {
+              "text": "現実の結果で確かめる。",
+              "start": 5.76,
+              "end": 7.41
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "予測を、本物の実験で答え合わせするわけね。",
+          "expression": "neutral",
+          "t0": 57.0,
+          "dur": 3.48,
+          "cards": [
+            {
+              "text": "予測を、本物の実験で答え合わせするわけね。",
+              "start": 0.0,
+              "end": 3.15
+            }
+          ]
+        }
+      ],
+      "scene_id": 8,
+      "narration": "大輔「先月、アメリカで出た本がある。AIの研究者で、AIの会社を経営する人が書いた、『ユリーカ・マシン』。」\n沙織「ユリーカって、「分かった！」っていう叫びね。発見する機械、ってこと？」\n大輔「そう。著者によると、発見を自動で生む機械は4つの柱でできる。」\n沙織「4つの柱って？」\n大輔「知識とデータを集める柱が2つと、シミュレーション、全部自動の実験室。今日の話で大事なのは、後の2つ。」\n沙織「シミュレーションっていうのは、コンピューターの中で試す、あれ？」\n大輔「そう。コンピューターの中に、本物そっくりの体や物質を作って試す。危ない、高すぎる、現実には無理な「もしも」の実験を、数十億回の単位で。」\n沙織「数十億回。で、実験室の方は？」\n大輔「ロボットが、生物や化学や物理の実験をして、シミュレーションの予測を、現実の結果で確かめる。」\n沙織「予測を、本物の実験で答え合わせするわけね。」",
+      "narrator": "dialogue",
+      "lines_hash": "fc689c29aad6",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.4
+      }
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 2,
       "reference_index": 0,
       "ken_burns": "static",
       "source_card": {
-        "kind": "paper",
-        "source": "Nature Aging（2023年）コロンビア大学 ほか",
-        "quote": "Treatment effect sizes were small.",
+        "kind": "blog",
+        "source": "著者本人の寄稿（Next Big Idea Club、2026年10月）",
+        "quote": "millions of AI agents will coordinate like a scientific community",
         "quote_type": "原文",
-        "highlight": "were small",
+        "highlight": "like a scientific community",
         "items": [
-          "CALERIE 試験: 健康な成人220人、2年間",
-          "カロリー制限の目標25%、実際は平均約12%",
-          "DunedinPACE: 老化の速さが2〜3%遅く",
-          "PhenoAge・GrimAge: 差なし"
+          "4つの柱: 知識の地図・観測データ・",
+          "　シミュレーション・自動の実験室",
+          "「もしも」の実験を、数十億回の単位で",
+          "実験室で、予測を現実の結果と照合",
+          "目標: 病気を終わらせ、寿命を延ばす"
         ],
         "reference_index": 0
       },
       "lines": [
         {
-          "speaker": "skeptic",
-          "text": "確かめた試験がある。コロンビア大学などの、カロリーを減らす試験。220人を2年。",
-          "expression": "neutral"
-        },
-        {
           "speaker": "dreamer",
-          "text": "どれくらい減らしたの？",
-          "expression": "thinking"
+          "text": "その機械の中では、AIの研究員が何百万も、科学者の集まりのように協力して、お互いの案を批判し合う。",
+          "expression": "excited",
+          "t0": 0.0,
+          "dur": 8.0,
+          "cards": [
+            {
+              "text": "その機械の中では、AIの研究員が何百万も、",
+              "start": 0.0,
+              "end": 3.64
+            },
+            {
+              "text": "科学者の集まりのように協力して、",
+              "start": 3.79,
+              "end": 6.19
+            },
+            {
+              "text": "お互いの案を批判し合う。",
+              "start": 6.34,
+              "end": 8.18
+            }
+          ]
         },
         {
           "speaker": "skeptic",
-          "text": "目標は25%。実際は、平均12%くらいしか減らせなかった。",
-          "expression": "neutral"
-        },
-        {
-          "speaker": "dreamer",
-          "text": "で、老化は遅くなった？",
-          "expression": "excited"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "血液から老化を測るやり方を3つ使って、遅くなったと出たのは1つだけ。それも2〜3%。",
+          "text": "AIの研究員って？",
           "expression": "doubt",
-          "tag": "weakness",
-          "display": "遅くなったのは DunedinPACE だけ（2〜3%）。PhenoAge・GrimAge は差なし"
+          "t0": 8.28,
+          "dur": 1.84,
+          "cards": [
+            {
+              "text": "AIの研究員って？",
+              "start": 0.0,
+              "end": 1.84
+            }
+          ]
         },
         {
           "speaker": "dreamer",
-          "text": "でも著者は、少しの減速でも、集団には大きいって書いてるよ。",
-          "expression": "thinking"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "否定はしない。ただ、同じ人たちを測って、物差しで答えが割れた。",
-          "expression": "doubt"
-        },
-        {
-          "speaker": "dreamer",
-          "text": "どれが本当の老化を測ってるのか、まだ決まってないのか。",
-          "expression": "deflated"
-        }
-      ],
-      "scene_id": 7,
-      "image_asset": "cards/kl045_S07",
-      "narration": "沙織「確かめた試験がある。コロンビア大学などの、カロリーを減らす試験。220人を2年。」\n大輔「どれくらい減らしたの？」\n沙織「目標は25%。実際は、平均12%くらいしか減らせなかった。」\n大輔「で、老化は遅くなった？」\n沙織「血液から老化を測るやり方を3つ使って、遅くなったと出たのは1つだけ。それも2〜3%。」\n大輔「でも著者は、少しの減速でも、集団には大きいって書いてるよ。」\n沙織「否定はしない。ただ、同じ人たちを測って、物差しで答えが割れた。」\n大輔「どれが本当の老化を測ってるのか、まだ決まってないのか。」\n［画面の資料カード］Nature Aging（2023年）コロンビア大学 ほか 「Treatment effect sizes were small.」（原文） ・CALERIE 試験: 健康な成人220人、2年間 ・カロリー制限の目標25%、実際は平均約12% ・DunedinPACE: 老化の速さが2〜3%遅く ・PhenoAge・GrimAge: 差なし",
-      "narrator": "dialogue"
-    },
-    {
-      "type": "check",
-      "bgm_role": "main",
-      "round": 1,
-      "reference_index": 1,
-      "ken_burns": "static",
-      "source_card": {
-        "kind": "report",
-        "source": "ARPA-H（米国政府の医療研究の機関）PROSPR 計画のページ",
-        "quote": "assess age-associated health outcomes in just three years instead of decades of study",
-        "quote_type": "原文",
-        "highlight": "in just three years",
-        "items": [
-          "加齢による健康の変化を、3年で評価する",
-          "家で集めるデータと、試験のやり方を作る",
-          "物差しの使い方の提言書を、FDA向けに公開"
-        ],
-        "reference_index": 1
-      },
-      "lines": [
-        {
-          "speaker": "dreamer",
-          "text": "そのための計画なんだ。加齢による健康の変化を、何十年じゃなく3年で評価する、って。",
-          "expression": "excited"
-        },
-        {
-          "speaker": "dreamer",
-          "text": "どう測って、試験にどう使うか。FDAに向けた提言書も、もう出してる。",
-          "expression": "excited"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "……提言書まで、もう出てるのか。",
-          "expression": "surprised"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "そこは認める。一番遠いと思ってた物差しに、目標と道筋までは書かれてる。",
-          "expression": "convinced",
-          "tag": "turn"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "あとは、その物差しで長く健康でいる人を当てられるか。それはヒトで確かめるしかない。",
-          "expression": "thinking"
-        }
-      ],
-      "scene_id": 8,
-      "image_asset": "cards/kl045_S08",
-      "narration": "大輔「そのための計画なんだ。加齢による健康の変化を、何十年じゃなく3年で評価する、って。」\n大輔「どう測って、試験にどう使うか。FDAに向けた提言書も、もう出してる。」\n沙織「……提言書まで、もう出てるのか。」\n沙織「そこは認める。一番遠いと思ってた物差しに、目標と道筋までは書かれてる。」\n沙織「あとは、その物差しで長く健康でいる人を当てられるか。それはヒトで確かめるしかない。」\n［画面の資料カード］ARPA-H（米国政府の医療研究の機関）PROSPR 計画のページ 「assess age-associated health outcomes in just three years instead of decades of study」（原文） ・加齢による健康の変化を、3年で評価する ・家で集めるデータと、試験のやり方を作る ・物差しの使い方の提言書を、FDA向けに公開",
-      "narrator": "dialogue"
-    },
-    {
-      "type": "paper",
-      "bgm_role": "main",
-      "round": 2,
-      "round_title": "効く薬は、どこまで来てる？",
-      "reference_index": 2,
-      "ken_burns": "zoom_out",
-      "image_prompt": "Bright daytime in a clean modern animal research facility: long tidy rows of clear ventilated mouse cages on stainless steel racks, each cage with fresh bedding, a small nest and a water bottle, a few small white laboratory mice visible inside some cages, soft even lighting, pale blue-gray walls. Calm teal and slate palette with one warm coral indicator light on a rack. No people, no hands, no faces. No logos, no brand marks, no readable text, no letters, no numbers.",
-      "lines": [
-        {
-          "speaker": "dreamer",
-          "text": "次は薬。マウスなら、年を取ってから始めて、寿命が延びた例がある。",
-          "expression": "excited"
-        },
-        {
-          "speaker": "dreamer",
-          "text": "シンガポールのデューク・NUS医科大学などの研究。炎症に関わる物質を抑える抗体を、生後75週から。",
-          "expression": "excited"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "75週なら、マウスでは年を取った側ね。で、どれだけ延びたの？",
-          "expression": "doubt"
-        },
-        {
-          "speaker": "dreamer",
-          "text": "寿命の真ん中の値で、オスが22.5%、メスが25%。",
+          "text": "自分で調べて、案を出すAIのこと。",
           "expression": "excited",
-          "display": "寿命の中央値: オス＋22.5%、メス＋25%"
+          "t0": 10.4,
+          "dur": 3.08,
+          "cards": [
+            {
+              "text": "自分で調べて、案を出すAIのこと。",
+              "start": 0.0,
+              "end": 3.08
+            }
+          ]
         },
         {
           "speaker": "skeptic",
-          "text": "2割あまり。それは大きい。……マウスでは、ね。",
-          "expression": "thinking"
+          "text": "その機械で、何を目指すの？",
+          "expression": "thinking",
+          "t0": 13.76,
+          "dur": 2.08,
+          "cards": [
+            {
+              "text": "その機械で、何を目指すの？",
+              "start": 0.0,
+              "end": 2.08
+            }
+          ]
         },
         {
           "speaker": "dreamer",
-          "text": "犬も来てる。アメリカの会社ロイヤルの、老犬の寿命を延ばす狙いの薬。",
+          "text": "病気を終わらせて、寿命を延ばす突破口。",
           "expression": "excited",
-          "reference_index": 3,
-          "display": "犬も来てる。米国の会社 Loyal の、老犬の寿命を延ばす狙いの薬。"
+          "t0": 16.12,
+          "dur": 3.52,
+          "cards": [
+            {
+              "text": "病気を終わらせて、寿命を延ばす突破口。",
+              "start": 0.0,
+              "end": 3.52
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕なら、これに使う。新しい薬の候補を、人で試す前に、シミュレーションの中の体で何十億回も試す。",
+          "expression": "excited",
+          "tag": "use_case",
+          "t0": 19.86,
+          "dur": 7.84,
+          "cards": [
+            {
+              "text": "僕なら、これに使う。新しい薬の候補を、",
+              "start": 0.0,
+              "end": 3.36
+            },
+            {
+              "text": "人で試す前に、シミュレーションの中の体で",
+              "start": 3.51,
+              "end": 6.51
+            },
+            {
+              "text": "何十億回も試す。",
+              "start": 6.66,
+              "end": 7.96
+            }
+          ]
         },
         {
           "speaker": "skeptic",
-          "text": "犬で、寿命が延びた結果は出たの？",
-          "expression": "doubt"
+          "text": "人で試す前の、ふるい分けね。",
+          "expression": "neutral",
+          "t0": 27.98,
+          "dur": 2.48,
+          "cards": [
+            {
+              "text": "人で試す前の、ふるい分けね。",
+              "start": 0.0,
+              "end": 2.48
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ここからは僕の予想。そこまでできたら、人で試す必要は、ほとんどなくなる。",
+          "expression": "excited",
+          "t0": 30.74,
+          "dur": 5.44,
+          "cards": [
+            {
+              "text": "ここからは僕の予想。そこまでできたら、",
+              "start": 0.0,
+              "end": 2.79
+            },
+            {
+              "text": "人で試す必要は、ほとんどなくなる。",
+              "start": 2.94,
+              "end": 5.44
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それは、著者が言ってること？ それとも、あなたの予想？",
+          "expression": "doubt",
+          "t0": 36.46,
+          "dur": 3.56,
+          "cards": [
+            {
+              "text": "それは、著者が言ってること？ それとも、",
+              "start": 0.0,
+              "end": 2.53
+            },
+            {
+              "text": "あなたの予想？",
+              "start": 2.68,
+              "end": 3.56
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想。著者が言ってるのは、シミュレーションの予測を、実験室の結果で確かめる、というところ。",
+          "expression": "thinking",
+          "t0": 40.3,
+          "dur": 6.48,
+          "cards": [
+            {
+              "text": "僕の予想。著者が言ってるのは、",
+              "start": 0.0,
+              "end": 1.97
+            },
+            {
+              "text": "シミュレーションの予測を、",
+              "start": 2.32,
+              "end": 4.03
+            },
+            {
+              "text": "実験室の結果で確かめる、",
+              "start": 4.03,
+              "end": 5.61
+            },
+            {
+              "text": "というところ。",
+              "start": 5.76,
+              "end": 6.68
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、規制の側はどう？ 人の試験を減らしていい、と認めた例はある？",
+          "expression": "doubt",
+          "t0": 47.06,
+          "dur": 4.64,
+          "cards": [
+            {
+              "text": "じゃあ、",
+              "start": 0.0,
+              "end": 0.53
+            },
+            {
+              "text": "規制の側はどう？ 人の試験を減らしていい、",
+              "start": 0.53,
+              "end": 3.3
+            },
+            {
+              "text": "と認めた例はある？",
+              "start": 3.45,
+              "end": 4.65
+            }
+          ]
         }
       ],
       "scene_id": 9,
-      "narration": "大輔「次は薬。マウスなら、年を取ってから始めて、寿命が延びた例がある。」\n大輔「シンガポールのデューク・NUS医科大学などの研究。炎症に関わる物質を抑える抗体を、生後75週から。」\n沙織「75週なら、マウスでは年を取った側ね。で、どれだけ延びたの？」\n大輔「寿命の真ん中の値で、オスが22.5%、メスが25%。」\n沙織「2割あまり。それは大きい。……マウスでは、ね。」\n大輔「犬も来てる。アメリカの会社ロイヤルの、老犬の寿命を延ばす狙いの薬。」\n沙織「犬で、寿命が延びた結果は出たの？」",
-      "narrator": "dialogue"
+      "image_asset": "cards/kl045_S09",
+      "narration": "大輔「その機械の中では、AIの研究員が何百万も、科学者の集まりのように協力して、お互いの案を批判し合う。」\n沙織「AIの研究員って？」\n大輔「自分で調べて、案を出すAIのこと。」\n沙織「その機械で、何を目指すの？」\n大輔「病気を終わらせて、寿命を延ばす突破口。」\n大輔「僕なら、これに使う。新しい薬の候補を、人で試す前に、シミュレーションの中の体で何十億回も試す。」\n沙織「人で試す前の、ふるい分けね。」\n大輔「ここからは僕の予想。そこまでできたら、人で試す必要は、ほとんどなくなる。」\n沙織「それは、著者が言ってること？ それとも、あなたの予想？」\n大輔「僕の予想。著者が言ってるのは、シミュレーションの予測を、実験室の結果で確かめる、というところ。」\n沙織「じゃあ、規制の側はどう？ 人の試験を減らしていい、と認めた例はある？」\n［画面の資料カード］著者本人の寄稿（Next Big Idea Club、2026年10月） 「millions of AI agents will coordinate like a scientific community」（原文） ・4つの柱: 知識の地図・観測データ・ ・　シミュレーション・自動の実験室 ・「もしも」の実験を、数十億回の単位で ・実験室で、予測を現実の結果と照合 ・目標: 病気を終わらせ、寿命を延ばす",
+      "narrator": "dialogue",
+      "lines_hash": "ee00a78d550e"
     },
     {
       "type": "check",
       "bgm_role": "main",
       "round": 2,
-      "reference_index": 3,
+      "reference_index": 2,
       "ken_burns": "static",
       "source_card": {
-        "kind": "press",
-        "source": "Loyal 発表（2026年1月13日）LOY-002",
-        "quote": "two of three major technical sections required for market launch",
+        "kind": "docs",
+        "source": "欧州医薬品庁（EMA）の評価文書（2022年9月）",
+        "quote": "using trial subjects’ predicted outcomes on placebo",
         "quote_type": "原文",
-        "highlight": "two of three",
+        "highlight": "predicted outcomes on placebo",
         "items": [
-          "FDA の動物の薬の部門が受理: 安全性の資料",
-          "効く見込みの資料は、2025年2月に受理",
-          "残る大きな資料は、あと1つ",
-          "寿命を見る試験 STAY は、最長4年"
+          "過去の試験のデータから、",
+          "「薬を飲まなかったら」の結果を予測",
+          "その予測を使って比べる統計のやり方",
+          "条件つきで、試験の人数を減らせる",
+          "人を集めて比べる試験の中で使う"
         ],
-        "reference_index": 3
+        "reference_index": 2
       },
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "FDAの動物の薬の部門が、発売に要る3つの大きな資料のうち、2つを受理した。",
-          "expression": "excited"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "受理されたのは、安全性と、効きそうだという見込み。寿命を見る試験は、最長で4年続く。",
-          "expression": "doubt",
-          "reference_index": 9
+          "text": "ある。ヨーロッパの審査機関、欧州医薬品庁が、2022年に認めた統計のやり方。",
+          "expression": "excited",
+          "t0": 0.0,
+          "dur": 6.56,
+          "cards": [
+            {
+              "text": "ある。ヨーロッパの審査機関、",
+              "start": 0.0,
+              "end": 2.2
+            },
+            {
+              "text": "欧州医薬品庁が、",
+              "start": 2.35,
+              "end": 3.61
+            },
+            {
+              "text": "2022年に認めた統計のやり方。",
+              "start": 3.61,
+              "end": 6.13
+            }
+          ]
         },
         {
           "speaker": "dreamer",
-          "text": "僕なら、犬の結果を人の物差しの答え合わせに使う。犬は早く年を取るから、寿命の答えが先に出る。",
+          "text": "過去の試験のデータから、参加者一人一人の「薬を飲まなかったら」の結果を予測して、差を見やすくする。",
           "expression": "excited",
-          "tag": "use_case"
+          "t0": 6.78,
+          "dur": 7.32,
+          "cards": [
+            {
+              "text": "過去の試験のデータから、参加者一人一人の",
+              "start": 0.0,
+              "end": 2.87
+            },
+            {
+              "text": "「薬を飲まなかったら」の結果を予測して、",
+              "start": 3.02,
+              "end": 5.89
+            },
+            {
+              "text": "差を見やすくする。",
+              "start": 6.04,
+              "end": 7.33
+            }
+          ]
         },
         {
           "speaker": "skeptic",
-          "text": "それは筋がいい。ただ、今あるのは見込みまで。延びたかは、結果待ち。",
-          "expression": "thinking"
+          "text": "そうすると、少ない人数でも差が見える。審査の文書にも、条件つきで試験の人数を減らせる、とある。",
+          "expression": "neutral",
+          "t0": 14.38,
+          "dur": 6.4,
+          "cards": [
+            {
+              "text": "そうすると、少ない人数でも差が見える。",
+              "start": 0.0,
+              "end": 2.47
+            },
+            {
+              "text": "審査の文書にも、",
+              "start": 2.62,
+              "end": 3.71
+            },
+            {
+              "text": "条件つきで試験の人数を減らせる、",
+              "start": 3.71,
+              "end": 5.88
+            },
+            {
+              "text": "とある。",
+              "start": 6.03,
+              "end": 6.55
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "認める。人の試験を軽くする道は、規制の側が、もう開けてた。",
+          "expression": "neutral",
+          "tag": "turn",
+          "t0": 21.0,
+          "dur": 4.64,
+          "cards": [
+            {
+              "text": "認める。人の試験を軽くする道は、",
+              "start": 0.0,
+              "end": 2.7
+            },
+            {
+              "text": "規制の側が、もう開けてた。",
+              "start": 2.85,
+              "end": 4.8
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "動物実験も、アメリカのFDAが、減らす計画を2025年に出してる。",
+          "expression": "excited",
+          "reference_index": 3,
+          "t0": 25.92,
+          "dur": 5.04,
+          "cards": [
+            {
+              "text": "動物実験も、アメリカのFDAが、",
+              "start": 0.0,
+              "end": 2.56
+            },
+            {
+              "text": "減らす計画を2025年に出してる。",
+              "start": 2.71,
+              "end": 5.23
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、どっちも人の試験を無くすものじゃない。欧州のやり方も、薬を飲まない組は残る。",
+          "expression": "neutral",
+          "t0": 31.24,
+          "dur": 5.36,
+          "cards": [
+            {
+              "text": "ただ、",
+              "start": 0.0,
+              "end": 0.38
+            },
+            {
+              "text": "どっちも人の試験を無くすものじゃない。",
+              "start": 0.38,
+              "end": 2.8
+            },
+            {
+              "text": "欧州のやり方も、薬を飲まない組は残る。",
+              "start": 2.95,
+              "end": 5.56
+            }
+          ]
         }
       ],
       "scene_id": 10,
       "image_asset": "cards/kl045_S10",
-      "narration": "大輔「FDAの動物の薬の部門が、発売に要る3つの大きな資料のうち、2つを受理した。」\n沙織「受理されたのは、安全性と、効きそうだという見込み。寿命を見る試験は、最長で4年続く。」\n大輔「僕なら、犬の結果を人の物差しの答え合わせに使う。犬は早く年を取るから、寿命の答えが先に出る。」\n沙織「それは筋がいい。ただ、今あるのは見込みまで。延びたかは、結果待ち。」\n［画面の資料カード］Loyal 発表（2026年1月13日）LOY-002 「two of three major technical sections required for market launch」（原文） ・FDA の動物の薬の部門が受理: 安全性の資料 ・効く見込みの資料は、2025年2月に受理 ・残る大きな資料は、あと1つ ・寿命を見る試験 STAY は、最長4年",
-      "narrator": "dialogue"
+      "narration": "大輔「ある。ヨーロッパの審査機関、欧州医薬品庁が、2022年に認めた統計のやり方。」\n大輔「過去の試験のデータから、参加者一人一人の「薬を飲まなかったら」の結果を予測して、差を見やすくする。」\n沙織「そうすると、少ない人数でも差が見える。審査の文書にも、条件つきで試験の人数を減らせる、とある。」\n沙織「認める。人の試験を軽くする道は、規制の側が、もう開けてた。」\n大輔「動物実験も、アメリカのFDAが、減らす計画を2025年に出してる。」\n沙織「ただ、どっちも人の試験を無くすものじゃない。欧州のやり方も、薬を飲まない組は残る。」\n［画面の資料カード］欧州医薬品庁（EMA）の評価文書（2022年9月） 「using trial subjects’ predicted outcomes on placebo」（原文） ・過去の試験のデータから、 ・「薬を飲まなかったら」の結果を予測 ・その予測を使って比べる統計のやり方 ・条件つきで、試験の人数を減らせる ・人を集めて比べる試験の中で使う",
+      "narrator": "dialogue",
+      "lines_hash": "3b6a3b4b1983"
+    },
+    {
+      "type": "tsukkomi",
+      "bgm_role": "main",
+      "round": 2,
+      "ken_burns": "zoom_out",
+      "image_prompt": "Top-down view of a stylized road map in soft flat colours, like a car navigation screen without any interface or text: on the left half a dense network of well-travelled roads drawn in bright teal with many small car-shaped markers, toward the right half the roads thin out and stop at the edge of a vast pale blank area with no roads at all, one single warm coral dotted line heading from the last road into the blank area. Calm teal and warm gray palette. No people's faces, no hands. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "さっきの予測も、本のシミュレーションも、過去の記録をもとに当てる点は同じ。たとえるなら、カーナビ。たくさんの車が走った道なら、到着時間をかなり当てられる。",
+          "expression": "thinking",
+          "t0": 0.0,
+          "dur": 10.04,
+          "cards": [
+            {
+              "text": "さっきの予測も、本のシミュレーションも、",
+              "start": 0.0,
+              "end": 2.49
+            },
+            {
+              "text": "過去の記録をもとに当てる点は同じ。",
+              "start": 2.64,
+              "end": 4.9
+            },
+            {
+              "text": "たとえるなら、カーナビ。たくさんの車が",
+              "start": 5.05,
+              "end": 7.47
+            },
+            {
+              "text": "走った道なら、到着時間をかなり当てられる。",
+              "start": 7.62,
+              "end": 10.24
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "走った記録が、たくさんあるからね。",
+          "expression": "thinking",
+          "t0": 10.32,
+          "dur": 2.76,
+          "cards": [
+            {
+              "text": "走った記録が、たくさんあるからね。",
+              "start": 0.0,
+              "end": 2.76
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "でも200歳は、まだ誰も走っていない道。そこまで生きた人の記録は、どこにも無い。",
+          "expression": "thinking",
+          "t0": 13.36,
+          "dur": 6.04,
+          "cards": [
+            {
+              "text": "でも200歳は、まだ誰も走っていない道。",
+              "start": 0.0,
+              "end": 3.15
+            },
+            {
+              "text": "そこまで生きた人の記録は、どこにも無い。",
+              "start": 3.3,
+              "end": 6.24
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "記録の無い道は、何十億回シミュレーションしても、当てる元が無いのか。",
+          "expression": "thinking",
+          "t0": 19.68,
+          "dur": 5.88,
+          "cards": [
+            {
+              "text": "記録の無い道は、",
+              "start": 0.0,
+              "end": 1.2
+            },
+            {
+              "text": "何十億回シミュレーションしても、",
+              "start": 1.2,
+              "end": 3.6
+            },
+            {
+              "text": "当てる元が無いのか。",
+              "start": 3.75,
+              "end": 5.41
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう。回数を増やしても、記録の無い範囲の確かさは増えない。これは二人の見立てね。",
+          "expression": "thinking",
+          "t0": 25.84,
+          "dur": 6.04,
+          "cards": [
+            {
+              "text": "そう。回数を増やしても、記録の無い範囲の",
+              "start": 0.0,
+              "end": 2.96
+            },
+            {
+              "text": "確かさは増えない。これは二人の見立てね。",
+              "start": 3.11,
+              "end": 6.06
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でも、もう終わった人の試験の結果を伏せて、シミュレーションに当てさせればいい。当たり続けたら、次の治療の試験は、人を減らしてもいいよね。",
+          "expression": "thinking",
+          "t0": 32.16,
+          "dur": 8.44,
+          "cards": [
+            {
+              "text": "でも、もう終わった人の試験の結果を伏せて、",
+              "start": 0.0,
+              "end": 2.66
+            },
+            {
+              "text": "シミュレーションに当てさせればいい。",
+              "start": 2.81,
+              "end": 4.93
+            },
+            {
+              "text": "当たり続けたら、次の治療の試験は、",
+              "start": 5.08,
+              "end": 7.08
+            },
+            {
+              "text": "人を減らしてもいいよね。",
+              "start": 7.23,
+              "end": 8.64
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "一つ一つの治療の試験なら、そこは筋が通ってる。ただ、200歳まで生きられるかを、まとめて当てる元にはならない。",
+          "expression": "thinking",
+          "t0": 40.88,
+          "dur": 8.32,
+          "cards": [
+            {
+              "text": "一つ一つの治療の試験なら、",
+              "start": 0.2,
+              "end": 2.09
+            },
+            {
+              "text": "そこは筋が通ってる。",
+              "start": 2.09,
+              "end": 3.55
+            },
+            {
+              "text": "ただ、200歳まで生きられるかを、",
+              "start": 3.7,
+              "end": 6.18
+            },
+            {
+              "text": "まとめて当てる元にはならない。",
+              "start": 6.33,
+              "end": 8.52
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "最後の話の前に、人の体の層を短くする、もう一つの方法を見よう。",
+          "expression": "thinking",
+          "t0": 49.48,
+          "dur": 5.16,
+          "cards": [
+            {
+              "text": "最後の話の前に、人の体の層を短くする、",
+              "start": 0.0,
+              "end": 3.32
+            },
+            {
+              "text": "もう一つの方法を見よう。",
+              "start": 3.47,
+              "end": 5.27
+            }
+          ]
+        }
+      ],
+      "scene_id": 11,
+      "narration": "沙織「さっきの予測も、本のシミュレーションも、過去の記録をもとに当てる点は同じ。たとえるなら、カーナビ。たくさんの車が走った道なら、到着時間をかなり当てられる。」\n大輔「走った記録が、たくさんあるからね。」\n沙織「でも200歳は、まだ誰も走っていない道。そこまで生きた人の記録は、どこにも無い。」\n大輔「記録の無い道は、何十億回シミュレーションしても、当てる元が無いのか。」\n沙織「そう。回数を増やしても、記録の無い範囲の確かさは増えない。これは二人の見立てね。」\n大輔「でも、もう終わった人の試験の結果を伏せて、シミュレーションに当てさせればいい。当たり続けたら、次の治療の試験は、人を減らしてもいいよね。」\n沙織「一つ一つの治療の試験なら、そこは筋が通ってる。ただ、200歳まで生きられるかを、まとめて当てる元にはならない。」\n大輔「最後の話の前に、人の体の層を短くする、もう一つの方法を見よう。」",
+      "narrator": "dialogue",
+      "lines_hash": "269848453588",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "check",
       "bgm_role": "main",
       "round": 2,
-      "reference_index": 4,
-      "ken_burns": "static",
-      "source_card": {
-        "kind": "paper",
-        "source": "Science（1990年）南カリフォルニア大学 ほか",
-        "quote": "Rhesus monkeys have an MRD close to that of humans, about 8 years",
-        "quote_type": "原文",
-        "highlight": "about 8 years",
-        "items": [
-          "MRD＝死亡率が2倍になるまでの年数",
-          "人もアカゲザルも、約8年",
-          "番組の計算（単純な式、前提は概要欄）",
-          "平均200歳には、約8年 → 約21年"
-        ],
-        "reference_index": 4
-      },
-      "lines": [
-        {
-          "speaker": "skeptic",
-          "text": "じゃあ200歳には、どれだけ遅らせればいいか。単純な計算をした。",
-          "expression": "neutral"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "大人の死亡率は、およそ8年ごとに2倍になる。1990年のサイエンスの論文の目安。",
-          "expression": "neutral"
-        },
-        {
-          "speaker": "dreamer",
-          "text": "その8年を、何年にすればいい？",
-          "expression": "thinking"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "平均200歳なら、約21年。老化の速さを、3分の1近くにする計算。",
-          "expression": "doubt"
-        },
-        {
-          "speaker": "dreamer",
-          "text": "マウスで2割延びた話とは、遠さが違うな。",
-          "expression": "surprised"
-        },
-        {
-          "speaker": "dreamer",
-          "text": "じゃあ、薬はAIで近い、は言い過ぎだ。近いのは、マウスと犬で確かめるところまで。",
-          "expression": "deflated",
-          "tag": "turn"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "ごく単純な式で、日本の生命表でもない。前提は概要欄に書く。",
-          "expression": "neutral"
-        }
-      ],
-      "scene_id": 11,
-      "image_asset": "cards/kl045_S11",
-      "narration": "沙織「じゃあ200歳には、どれだけ遅らせればいいか。単純な計算をした。」\n沙織「大人の死亡率は、およそ8年ごとに2倍になる。1990年のサイエンスの論文の目安。」\n大輔「その8年を、何年にすればいい？」\n沙織「平均200歳なら、約21年。老化の速さを、3分の1近くにする計算。」\n大輔「マウスで2割延びた話とは、遠さが違うな。」\n大輔「じゃあ、薬はAIで近い、は言い過ぎだ。近いのは、マウスと犬で確かめるところまで。」\n沙織「ごく単純な式で、日本の生命表でもない。前提は概要欄に書く。」\n［画面の資料カード］Science（1990年）南カリフォルニア大学 ほか 「Rhesus monkeys have an MRD close to that of humans, about 8 years」（原文） ・MRD＝死亡率が2倍になるまでの年数 ・人もアカゲザルも、約8年 ・番組の計算（単純な式、前提は概要欄） ・平均200歳には、約8年 → 約21年",
-      "narrator": "dialogue"
-    },
-    {
-      "type": "check",
-      "bgm_role": "main",
-      "round": 3,
-      "round_title": "今いる人は、遅らせるだけで足りる？",
-      "reference_index": 4,
-      "ken_burns": "static",
-      "image_prompt": "Clean flat bar chart. Title at the top in Japanese: 「老化をその年齢で止めたら、平均で何歳まで（単純な計算）」. Three vertical bars from left to right. Bar labels under each bar: 「50歳で止める」「65歳で止める」「70歳で止める」. Value labels above each bar exactly: 「約540歳」「約210歳」「約160歳」. Bar heights proportional to 540, 210 and 160 on a vertical axis from 0 to 600 with tick labels 「0」「200」「400」「600」 only. A thin dashed horizontal line at the height of 200 labeled 「200歳」 at its right end. First two bars in teal, the 70 bar in warm coral. Write each label exactly as given. Do not add any other numbers, labels, notes or text.",
-      "lines": [
-        {
-          "speaker": "dreamer",
-          "text": "遅らせるのが遠いなら、老化をそこで止めたら？",
-          "expression": "thinking"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "同じ式で、止めた年齢ごとに、平均で何歳まで生きるかを出した。",
-          "expression": "neutral"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "50歳で止めれば、約540歳。65歳なら、約210歳。",
-          "expression": "neutral"
-        },
-        {
-          "speaker": "dreamer",
-          "text": "70歳なら？",
-          "expression": "thinking"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "約160歳。今70歳の人は、ここで止めても、平均では200歳に届かない。",
-          "expression": "doubt"
-        },
-        {
-          "speaker": "dreamer",
-          "text": "じゃあ、遅らせるだけじゃ足りない。時計を戻す、若返りが要るのか。",
-          "expression": "surprised"
-        }
-      ],
-      "scene_id": 12,
-      "narration": "大輔「遅らせるのが遠いなら、老化をそこで止めたら？」\n沙織「同じ式で、止めた年齢ごとに、平均で何歳まで生きるかを出した。」\n沙織「50歳で止めれば、約540歳。65歳なら、約210歳。」\n大輔「70歳なら？」\n沙織「約160歳。今70歳の人は、ここで止めても、平均では200歳に届かない。」\n大輔「じゃあ、遅らせるだけじゃ足りない。時計を戻す、若返りが要るのか。」",
-      "narrator": "dialogue"
-    },
-    {
-      "type": "paper",
-      "bgm_role": "main",
-      "round": 3,
-      "reference_index": 5,
-      "ken_burns": "zoom_in",
-      "image_prompt": "A quiet ophthalmology examination room in soft daytime light: a slit-lamp microscope on an adjustable table with its chin rest, a visual field testing machine with a white hemispherical dome, a wheeled stool, a small tray with sealed sterile eye-drop vials, pale blue-gray walls, a window with blinds. Calm teal and slate palette with one warm coral glow inside the visual field dome. No people, no hands, no faces. No logos, no brand marks, no readable text, no letters, no numbers.",
-      "lines": [
-        {
-          "speaker": "dreamer",
-          "text": "若返りを狙う治療なら、ヒトで始まってる。ボストンの会社の、目の遺伝子治療。",
-          "expression": "excited",
-          "display": "若返りを狙う治療なら、ヒトで始まってる。ボストンの会社 Life Biosciences の、目の遺伝子治療。"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "若返りって、何を戻すの？",
-          "expression": "doubt"
-        },
-        {
-          "speaker": "dreamer",
-          "text": "細胞を若い状態に戻す狙いの遺伝子を3つ、目の神経に。",
-          "expression": "excited"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "全身じゃなくて、目の神経に届けるのね。緑内障？",
-          "expression": "thinking"
-        },
-        {
-          "speaker": "dreamer",
-          "text": "僕なら、目を若返りの最初の試し場所に使う。視野の検査で、効いたかを確かめられる。",
-          "expression": "excited",
-          "tag": "use_case"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "で、それ何人で試したの？",
-          "expression": "doubt"
-        }
-      ],
-      "scene_id": 13,
-      "narration": "大輔「若返りを狙う治療なら、ヒトで始まってる。ボストンの会社の、目の遺伝子治療。」\n沙織「若返りって、何を戻すの？」\n大輔「細胞を若い状態に戻す狙いの遺伝子を3つ、目の神経に。」\n沙織「全身じゃなくて、目の神経に届けるのね。緑内障？」\n大輔「僕なら、目を若返りの最初の試し場所に使う。視野の検査で、効いたかを確かめられる。」\n沙織「で、それ何人で試したの？」",
-      "narrator": "dialogue"
-    },
-    {
-      "type": "check",
-      "bgm_role": "main",
-      "round": 3,
       "reference_index": 5,
       "ken_burns": "static",
       "source_card": {
-        "kind": "press",
-        "source": "Life Biosciences 発表（2026年10月8日）ER-100",
-        "quote": "observed in 2 of 3 OAG participants at Day 56",
+        "kind": "report",
+        "source": "ARPA-H（米国政府の医療研究の機関）PROSPR 計画のページ",
+        "quote": "in just three years instead of decades of study",
         "quote_type": "原文",
-        "highlight": "2 of 3",
+        "highlight": "in just three years",
         "items": [
-          "緑内障の3人に、目への注射を1回",
-          "56日後、3人中2人で視野の検査が改善",
-          "比べる群のない第1相（主に安全性）",
-          "重い副作用は報告なし、次は量を増やす"
+          "加齢による健康の変化を、3年で評価",
+          "体の指標と、評価の道具を作る",
+          "家で集めるデータと、試験のやり方",
+          "物差しの使い方の提言書をFDA向けに"
         ],
         "reference_index": 5
       },
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "そう、緑内障の3人。目に1回注射して、56日後、3人のうち2人で視野の検査の結果が良くなった。",
-          "expression": "excited"
+          "text": "人の体の層を短くする鍵は、老化の物差し。寿命が来るのを待たずに、老化が遅くなったかを測る目盛り。",
+          "expression": "excited",
+          "display": "人の体の層を短くする鍵は、老化の物差し。寿命が来るのを待たずに、老化が遅くなったかを測る目盛り。",
+          "t0": 0.0,
+          "dur": 8.92,
+          "cards": [
+            {
+              "text": "人の体の層を短くする鍵は、老化の物差し。",
+              "start": 0.0,
+              "end": 3.72
+            },
+            {
+              "text": "寿命が来るのを待たずに、",
+              "start": 3.72,
+              "end": 5.95
+            },
+            {
+              "text": "老化が遅くなったかを",
+              "start": 5.95,
+              "end": 7.8
+            },
+            {
+              "text": "測る目盛り。",
+              "start": 7.8,
+              "end": 8.92
+            }
+          ]
         },
         {
           "speaker": "skeptic",
-          "text": "3人で、比べる相手もいない。主に安全性を見る試験だと、会社も書いてる。",
-          "expression": "doubt"
+          "text": "その物差しを作る計画があるわけ？",
+          "expression": "doubt",
+          "t0": 9.2,
+          "dur": 2.8,
+          "cards": [
+            {
+              "text": "その物差しを作る計画があるわけ？",
+              "start": 0.0,
+              "end": 2.8
+            }
+          ]
         },
         {
           "speaker": "dreamer",
-          "text": "重い副作用は出てない。次は量を増やす段階。",
-          "expression": "convinced"
+          "text": "アメリカ政府の医療研究の機関、アルパエイチの計画。加齢による健康の変化を、何十年もの研究じゃなく、3年で評価できるようにする。",
+          "expression": "excited",
+          "display": "アメリカ政府の医療研究の機関、ARPA-Hの計画。加齢による健康の変化を、何十年もの研究じゃなく、3年で評価できるようにする。",
+          "t0": 12.28,
+          "dur": 9.88,
+          "cards": [
+            {
+              "text": "アメリカ政府の医療研究の機関、",
+              "start": 0.0,
+              "end": 2.35
+            },
+            {
+              "text": "ARPA-Hの計画。加齢による健康の変化を、",
+              "start": 2.35,
+              "end": 5.8
+            },
+            {
+              "text": "何十年もの研究じゃなく、3年で評価できる",
+              "start": 5.8,
+              "end": 8.94
+            },
+            {
+              "text": "ようにする。",
+              "start": 8.94,
+              "end": 9.88
+            }
+          ]
         },
         {
           "speaker": "skeptic",
-          "text": "安全の面は、いい知らせね。全身の若返りとは、まだ別の話だけど。",
-          "expression": "neutral"
+          "text": "ただ、まだ計画の段階。その物差しで長く健康でいる人を当てられるかは、人で確かめる必要がある。",
+          "expression": "doubt",
+          "t0": 22.44,
+          "dur": 6.6,
+          "cards": [
+            {
+              "text": "ただ、まだ計画の段階。その物差しで長く",
+              "start": 0.0,
+              "end": 2.81
+            },
+            {
+              "text": "健康でいる人を当てられるかは、",
+              "start": 2.96,
+              "end": 5.01
+            },
+            {
+              "text": "人で確かめる必要がある。",
+              "start": 5.16,
+              "end": 6.8
+            }
+          ]
         }
       ],
-      "scene_id": 14,
-      "image_asset": "cards/kl045_S14",
-      "narration": "大輔「そう、緑内障の3人。目に1回注射して、56日後、3人のうち2人で視野の検査の結果が良くなった。」\n沙織「3人で、比べる相手もいない。主に安全性を見る試験だと、会社も書いてる。」\n大輔「重い副作用は出てない。次は量を増やす段階。」\n沙織「安全の面は、いい知らせね。全身の若返りとは、まだ別の話だけど。」\n［画面の資料カード］Life Biosciences 発表（2026年10月8日）ER-100 「observed in 2 of 3 OAG participants at Day 56」（原文） ・緑内障の3人に、目への注射を1回 ・56日後、3人中2人で視野の検査が改善 ・比べる群のない第1相（主に安全性） ・重い副作用は報告なし、次は量を増やす",
-      "narrator": "dialogue"
+      "scene_id": 12,
+      "image_asset": "cards/kl045_S12",
+      "narration": "大輔「人の体の層を短くする鍵は、老化の物差し。寿命が来るのを待たずに、老化が遅くなったかを測る目盛り。」\n沙織「その物差しを作る計画があるわけ？」\n大輔「アメリカ政府の医療研究の機関、アルパエイチの計画。加齢による健康の変化を、何十年もの研究じゃなく、3年で評価できるようにする。」\n沙織「ただ、まだ計画の段階。その物差しで長く健康でいる人を当てられるかは、人で確かめる必要がある。」\n［画面の資料カード］ARPA-H（米国政府の医療研究の機関）PROSPR 計画のページ 「in just three years instead of decades of study」（原文） ・加齢による健康の変化を、3年で評価 ・体の指標と、評価の道具を作る ・家で集めるデータと、試験のやり方 ・物差しの使い方の提言書をFDA向けに",
+      "narrator": "dialogue",
+      "lines_hash": "42bf49e006e6"
     },
     {
       "type": "check",
       "bgm_role": "main",
       "round": 3,
+      "round_title": "一歩ずつ確かめれば、200年待たずに済む？",
       "reference_index": 6,
       "ken_burns": "static",
-      "source_card": {
-        "kind": "paper",
-        "source": "Nature（2022年）英ウェルカム・サンガー研究所 ほか",
-        "quote": "the somatic mutation burden at the end of lifespan varied only by a factor of around 3",
-        "quote_type": "原文",
-        "highlight": "varied only by a factor of around 3",
-        "items": [
-          "16種の哺乳類、腸の細胞のDNAを調べた",
-          "寿命は約30倍違う",
-          "長生きの種ほど、変異がゆっくり溜まる",
-          "変異は老化の一因かもしれない（著者）"
-        ],
-        "reference_index": 6
-      },
+      "image_prompt": "Clean flat infographic diagram on a plain light background explaining a hypothesis. Title at the top in Japanese: 「寿命脱出速度（仮説）」. Left side: a small teal person icon with an arrow labeled 「1年たつ」 pointing to the right. Right side: a long horizontal bar labeled 「残りの寿命」 whose right end has a warm coral arrow pushing further right, labeled 「治療の進歩で、1年より多く延びる」. Below, a small rocket icon leaving a curved planet surface. Write each label exactly as given. Do not add any other numbers, labels, notes or text. Fill the entire frame edge to edge with the plain light background; no white bar, border or empty margin at the bottom; spread the elements across the full height so the composition is vertically balanced.",
       "lines": [
         {
-          "speaker": "skeptic",
-          "text": "それに、戻せないものがある。イギリスのサンガー研究所などの研究。",
-          "expression": "doubt"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "16種の哺乳類で、腸の細胞のDNAの書き換わり、突然変異を数えた。",
-          "expression": "neutral"
-        },
-        {
           "speaker": "dreamer",
-          "text": "ネズミから、キリンや人まで？",
-          "expression": "thinking"
+          "text": "最後に、200年待たなくてもいい、という考え方を出したい。",
+          "expression": "excited",
+          "t0": 0.0,
+          "dur": 4.52,
+          "cards": [
+            {
+              "text": "最後に、200年待たなくてもいい、",
+              "start": 0.0,
+              "end": 2.58
+            },
+            {
+              "text": "という考え方を出したい。",
+              "start": 2.73,
+              "end": 4.53
+            }
+          ]
         },
         {
           "speaker": "skeptic",
-          "text": "寿命は約30倍違うのに、死ぬときの変異の量は、約3倍の差だった。",
-          "expression": "neutral"
-        },
-        {
-          "speaker": "dreamer",
-          "text": "長生きの動物ほど、ゆっくり溜まるのか。",
-          "expression": "thinking"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "ここからは私の推論。200年生きたら、どの哺乳類も経験してない量になる。",
+          "text": "200歳を確かめるには、200年かかるんじゃないの？",
           "expression": "doubt",
-          "tag": "barrier"
+          "t0": 4.8,
+          "dur": 3.2,
+          "cards": [
+            {
+              "text": "200歳を確かめるには、200年かかる",
+              "start": 0.0,
+              "end": 2.38
+            },
+            {
+              "text": "んじゃないの？",
+              "start": 2.53,
+              "end": 3.35
+            }
+          ]
         },
         {
           "speaker": "dreamer",
-          "text": "でも、若返りの治療で戻せない？",
-          "expression": "thinking"
+          "text": "全部を一度に確かめなくていい、という考え方。イギリスの老化研究者、オーブリー・デ・グレイさんが、2004年の論文などで唱えた仮説で、寿命脱出速度と呼ばれてる。",
+          "expression": "thinking",
+          "display": "全部を一度に確かめなくていい、という考え方。イギリスの老化研究者、オーブリー・デ・グレイ（Aubrey de Grey）さんが、2004年の論文などで唱えた仮説で、寿命脱出速度と呼ばれてる。",
+          "t0": 8.28,
+          "dur": 12.0,
+          "cards": [
+            {
+              "text": "全部を一度に確かめなくていい、",
+              "start": 0.0,
+              "end": 1.91
+            },
+            {
+              "text": "という考え方。イギリスの老化研究者、",
+              "start": 1.91,
+              "end": 4.21
+            },
+            {
+              "text": "オーブリー・デ・グレイ（Aubrey",
+              "start": 4.21,
+              "end": 6.51
+            },
+            {
+              "text": "de Grey）さんが、2004年の",
+              "start": 6.51,
+              "end": 8.81
+            },
+            {
+              "text": "論文などで唱えた仮説で、",
+              "start": 8.81,
+              "end": 10.34
+            },
+            {
+              "text": "寿命脱出速度と呼ばれてる。",
+              "start": 10.34,
+              "end": 12.0
+            }
+          ]
         },
         {
           "speaker": "skeptic",
-          "text": "あれは遺伝子の働き方を戻す狙い。書き換わったDNAは、戻らない。",
-          "expression": "doubt"
+          "text": "脱出速度って、ロケットの？",
+          "expression": "surprised",
+          "t0": 20.56,
+          "dur": 2.2,
+          "cards": [
+            {
+              "text": "脱出速度って、ロケットの？",
+              "start": 0.0,
+              "end": 2.2
+            }
+          ]
         },
         {
           "speaker": "dreamer",
-          "text": "論文自体は、変異は老化の一因かもしれない、までだね。",
-          "expression": "thinking"
+          "text": "そう。ロケットは十分に速ければ、地球の重力を振り切れる。ここでの重力は、年を取るほど亡くなる危険が増えること。",
+          "expression": "excited",
+          "t0": 23.04,
+          "dur": 8.48,
+          "cards": [
+            {
+              "text": "そう。ロケットは十分に速ければ、",
+              "start": 0.0,
+              "end": 2.58
+            },
+            {
+              "text": "地球の重力を振り切れる。ここでの重力は、",
+              "start": 2.73,
+              "end": 5.7
+            },
+            {
+              "text": "年を取るほど亡くなる危険が増えること。",
+              "start": 5.85,
+              "end": 8.68
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ロケットの速さにあたるのが、治療が進む速さ、ってことね。",
+          "expression": "neutral",
+          "t0": 31.8,
+          "dur": 3.84,
+          "cards": [
+            {
+              "text": "ロケットの速さにあたるのが、",
+              "start": 0.0,
+              "end": 1.84
+            },
+            {
+              "text": "治療が進む速さ、ってことね。",
+              "start": 1.99,
+              "end": 3.83
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "1年たつと、人は1年分、年を取る。",
+          "expression": "excited",
+          "t0": 35.92,
+          "dur": 3.36,
+          "cards": [
+            {
+              "text": "1年たつと、人は1年分、年を取る。",
+              "start": 0.0,
+              "end": 3.36
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でもその1年の間に治療が進んで、残りの寿命が、1年より多く延びたら？",
+          "expression": "excited",
+          "t0": 39.5,
+          "dur": 6.36,
+          "cards": [
+            {
+              "text": "でもその1年の間に治療が進んで、",
+              "start": 0.0,
+              "end": 2.8
+            },
+            {
+              "text": "残りの寿命が、1年より多く延びたら？",
+              "start": 3.16,
+              "end": 6.0
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "年を取るより速く、寿命の終わりが遠ざかる。",
+          "expression": "thinking",
+          "t0": 46.14,
+          "dur": 3.36,
+          "cards": [
+            {
+              "text": "年を取るより速く、寿命の終わりが遠ざかる。",
+              "start": 0.0,
+              "end": 3.15
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そう。寿命の終わりが逃げていく。だから、200歳を一度に確かめる必要はない。次の治療を、一歩ずつ確かめていけばいい。",
+          "expression": "excited",
+          "t0": 49.78,
+          "dur": 9.36,
+          "cards": [
+            {
+              "text": "そう。寿命の終わりが逃げていく。だから、",
+              "start": 0.0,
+              "end": 3.38
+            },
+            {
+              "text": "200歳を一度に確かめる必要はない。",
+              "start": 3.64,
+              "end": 6.34
+            },
+            {
+              "text": "次の治療を、一歩ずつ確かめていけばいい。",
+              "start": 6.49,
+              "end": 9.49
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "一つの治療で延びる分を確かめて、次の治療でまた確かめる。その積み重ねでいい、ってことね。",
+          "expression": "neutral",
+          "t0": 59.42,
+          "dur": 6.68,
+          "cards": [
+            {
+              "text": "一つの治療で延びる分を確かめて、",
+              "start": 0.0,
+              "end": 2.32
+            },
+            {
+              "text": "次の治療でまた確かめる。",
+              "start": 2.6,
+              "end": 4.34
+            },
+            {
+              "text": "その積み重ねでいい、",
+              "start": 4.34,
+              "end": 5.79
+            },
+            {
+              "text": "ってことね。",
+              "start": 5.94,
+              "end": 6.81
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "念のため。これは仮説で、人で実際に起きたことはない。デ・グレイさん自身も、時期の見立ては大きく外れうる、と書いてる。",
+          "expression": "doubt",
+          "t0": 66.32,
+          "dur": 9.2,
+          "cards": [
+            {
+              "text": "念のため。これは仮説で、人で実際に起きた",
+              "start": 0.0,
+              "end": 3.4
+            },
+            {
+              "text": "ことはない。デ・グレイさん自身も、",
+              "start": 3.55,
+              "end": 6.1
+            },
+            {
+              "text": "時期の見立ては大きく外れうる、と書いてる。",
+              "start": 6.25,
+              "end": 9.4
+            }
+          ]
         }
       ],
-      "scene_id": 15,
-      "image_asset": "cards/kl045_S15",
-      "narration": "沙織「それに、戻せないものがある。イギリスのサンガー研究所などの研究。」\n沙織「16種の哺乳類で、腸の細胞のDNAの書き換わり、突然変異を数えた。」\n大輔「ネズミから、キリンや人まで？」\n沙織「寿命は約30倍違うのに、死ぬときの変異の量は、約3倍の差だった。」\n大輔「長生きの動物ほど、ゆっくり溜まるのか。」\n沙織「ここからは私の推論。200年生きたら、どの哺乳類も経験してない量になる。」\n大輔「でも、若返りの治療で戻せない？」\n沙織「あれは遺伝子の働き方を戻す狙い。書き換わったDNAは、戻らない。」\n大輔「論文自体は、変異は老化の一因かもしれない、までだね。」\n［画面の資料カード］Nature（2022年）英ウェルカム・サンガー研究所 ほか 「the somatic mutation burden at the end of lifespan varied only by a factor of around 3」（原文） ・16種の哺乳類、腸の細胞のDNAを調べた ・寿命は約30倍違う ・長生きの種ほど、変異がゆっくり溜まる ・変異は老化の一因かもしれない（著者）",
-      "narrator": "dialogue"
+      "scene_id": 13,
+      "narration": "大輔「最後に、200年待たなくてもいい、という考え方を出したい。」\n沙織「200歳を確かめるには、200年かかるんじゃないの？」\n大輔「全部を一度に確かめなくていい、という考え方。イギリスの老化研究者、オーブリー・デ・グレイさんが、2004年の論文などで唱えた仮説で、寿命脱出速度と呼ばれてる。」\n沙織「脱出速度って、ロケットの？」\n大輔「そう。ロケットは十分に速ければ、地球の重力を振り切れる。ここでの重力は、年を取るほど亡くなる危険が増えること。」\n沙織「ロケットの速さにあたるのが、治療が進む速さ、ってことね。」\n大輔「1年たつと、人は1年分、年を取る。」\n大輔「でもその1年の間に治療が進んで、残りの寿命が、1年より多く延びたら？」\n沙織「年を取るより速く、寿命の終わりが遠ざかる。」\n大輔「そう。寿命の終わりが逃げていく。だから、200歳を一度に確かめる必要はない。次の治療を、一歩ずつ確かめていけばいい。」\n沙織「一つの治療で延びる分を確かめて、次の治療でまた確かめる。その積み重ねでいい、ってことね。」\n沙織「念のため。これは仮説で、人で実際に起きたことはない。デ・グレイさん自身も、時期の見立ては大きく外れうる、と書いてる。」",
+      "narrator": "dialogue",
+      "lines_hash": "fef82569e30a"
     },
     {
-      "type": "paper",
+      "type": "tsukkomi",
       "bgm_role": "main",
       "round": 3,
-      "reference_index": 7,
       "ken_burns": "zoom_out",
-      "image_prompt": "A bright, sterile cell-therapy manufacturing cleanroom: a stainless steel liquid-nitrogen storage tank with its lid slightly open and cold white vapor rising, a rack of small sealed cryovials with colored caps lifted above it, a biosafety cabinet with a softly lit work surface, sealed culture flasks on a cart, smooth white walls and floor. Calm teal and slate palette with one warm coral status light. No people, no hands, no faces. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "image_prompt": "A calm, clean editorial illustration of a circular track seen from slightly above, drawn as a loop of soft teal stepping stones; a few small coral glowing markers sit at different points around the loop, and each lap of the loop is drawn slightly wider than the one before, suggesting steady repeated progress. Soft pale blue-gray background with gentle gradients, teal and warm gray palette with one warm coral accent. No people, no animals, no hands. No logos, no brand marks, no readable text, no letters, no numbers.",
       "lines": [
         {
+          "speaker": "skeptic",
+          "text": "この仮説が成り立つ条件は、2つある。",
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 2.68,
+          "cards": [
+            {
+              "text": "この仮説が成り立つ条件は、2つある。",
+              "start": 0.0,
+              "end": 2.68
+            }
+          ]
+        },
+        {
           "speaker": "dreamer",
-          "text": "なら、細胞ごと入れ替えたら？ 仮に、脳を10分の1ずつ新しい細胞に、とか。",
-          "expression": "excited"
+          "text": "1つ目は？",
+          "expression": "thinking",
+          "t0": 2.96,
+          "dur": 1.28,
+          "cards": [
+            {
+              "text": "1つ目は？",
+              "start": 0.0,
+              "end": 1.28
+            }
+          ]
         },
         {
           "speaker": "skeptic",
-          "text": "量を比べて。パーキンソン病で、脳の一部に細胞を補う移植の試験。多い方で、片側に270万個。",
-          "expression": "thinking"
+          "text": "確かめる一回りが、回り続けること。一回りっていうのは、新しい治療を探して、確かめて、使えるようにするまでの一周。",
+          "expression": "neutral",
+          "t0": 4.52,
+          "dur": 9.24,
+          "cards": [
+            {
+              "text": "確かめる一回りが、回り続けること。",
+              "start": 0.0,
+              "end": 2.86
+            },
+            {
+              "text": "一回りっていうのは、新しい治療を探して、",
+              "start": 3.01,
+              "end": 6.25
+            },
+            {
+              "text": "確かめて、使えるようにするまでの一周。",
+              "start": 6.4,
+              "end": 9.25
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "一周が止まったら、寿命の終わりは逃げていかないもんね。2つ目は？",
+          "expression": "thinking",
+          "t0": 14.04,
+          "dur": 5.08,
+          "cards": [
+            {
+              "text": "一周が止まったら、",
+              "start": 0.26,
+              "end": 1.61
+            },
+            {
+              "text": "寿命の終わりは逃げていかない",
+              "start": 1.61,
+              "end": 3.71
+            },
+            {
+              "text": "もんね。2つ目は？",
+              "start": 3.86,
+              "end": 5.24
+            }
+          ]
         },
         {
           "speaker": "skeptic",
-          "text": "脳の神経細胞は、成人男性4人の脳を数えた推計で、平均約860億個。",
+          "text": "治療の進歩で延びる寿命が、毎年、1年分を超え続けること。",
+          "expression": "neutral",
+          "t0": 19.4,
+          "dur": 4.52,
+          "cards": [
+            {
+              "text": "治療の進歩で延びる寿命が、毎年、",
+              "start": 0.0,
+              "end": 2.4
+            },
+            {
+              "text": "1年分を超え続けること。",
+              "start": 2.55,
+              "end": 4.35
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "1年たつ間に、1年より多く延びないと、年を取る方に追いつかれるのか。",
+          "expression": "thinking",
+          "t0": 24.2,
+          "dur": 4.88,
+          "cards": [
+            {
+              "text": "1年たつ間に、1年より多く延びないと、",
+              "start": 0.0,
+              "end": 2.64
+            },
+            {
+              "text": "年を取る方に追いつかれるのか。",
+              "start": 2.92,
+              "end": 5.01
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それは今、どれくらいなの？",
+          "expression": "excited",
+          "t0": 29.3,
+          "dur": 2.04,
+          "cards": [
+            {
+              "text": "それは今、どれくらいなの？",
+              "start": 0.0,
+              "end": 2.04
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "今は測れていない。老化が遅くなったかを素早く測る物差しが、まだ決まっていないから。",
           "expression": "doubt",
-          "reference_index": 8
+          "t0": 31.62,
+          "dur": 5.64,
+          "cards": [
+            {
+              "text": "今は測れていない。老化が遅くなったかを",
+              "start": 0.0,
+              "end": 2.74
+            },
+            {
+              "text": "素早く測る物差しが、",
+              "start": 2.89,
+              "end": 4.23
+            },
+            {
+              "text": "まだ決まっていないから。",
+              "start": 4.23,
+              "end": 5.84
+            }
+          ]
         },
         {
           "speaker": "dreamer",
-          "text": "10分の1でも86億個。単純に割ると、片側に入れた数の3,000倍以上か。",
-          "expression": "surprised",
-          "display": "10分の1でも約86億個。単純に割ると、片側に入れた数の3,000倍以上（番組の計算）"
-        },
-        {
-          "speaker": "dreamer",
-          "text": "しかも入れ替えた後、記憶が残るのかは……。",
-          "expression": "deflated"
+          "text": "じゃあ、一回りを短くできれば、話は変わる？",
+          "expression": "thinking",
+          "t0": 37.54,
+          "dur": 4.0,
+          "cards": [
+            {
+              "text": "じゃあ、一回りを短くできれば、話は変わる？",
+              "start": 0.0,
+              "end": 3.72
+            }
+          ]
         },
         {
           "speaker": "skeptic",
-          "text": "それは、どの資料にも書いてない。分からない、で止めておこう。",
-          "expression": "neutral"
+          "text": "変わる。手がかりは、さっき見た老化の物差し。人の試験で使われ始めるかは、見ておきたい。",
+          "expression": "amused",
+          "t0": 41.82,
+          "dur": 6.0,
+          "cards": [
+            {
+              "text": "変わる。手がかりは、",
+              "start": 0.0,
+              "end": 1.37
+            },
+            {
+              "text": "さっき見た老化の物差し。",
+              "start": 1.37,
+              "end": 3.02
+            },
+            {
+              "text": "人の試験で使われ始めるかは、見ておきたい。",
+              "start": 3.32,
+              "end": 6.18
+            }
+          ]
         }
       ],
-      "scene_id": 16,
-      "narration": "大輔「なら、細胞ごと入れ替えたら？ 仮に、脳を10分の1ずつ新しい細胞に、とか。」\n沙織「量を比べて。パーキンソン病で、脳の一部に細胞を補う移植の試験。多い方で、片側に270万個。」\n沙織「脳の神経細胞は、成人男性4人の脳を数えた推計で、平均約860億個。」\n大輔「10分の1でも86億個。単純に割ると、片側に入れた数の3,000倍以上か。」\n大輔「しかも入れ替えた後、記憶が残るのかは……。」\n沙織「それは、どの資料にも書いてない。分からない、で止めておこう。」",
-      "narrator": "dialogue"
+      "scene_id": 14,
+      "narration": "沙織「この仮説が成り立つ条件は、2つある。」\n大輔「1つ目は？」\n沙織「確かめる一回りが、回り続けること。一回りっていうのは、新しい治療を探して、確かめて、使えるようにするまでの一周。」\n大輔「一周が止まったら、寿命の終わりは逃げていかないもんね。2つ目は？」\n沙織「治療の進歩で延びる寿命が、毎年、1年分を超え続けること。」\n大輔「1年たつ間に、1年より多く延びないと、年を取る方に追いつかれるのか。」\n大輔「それは今、どれくらいなの？」\n沙織「今は測れていない。老化が遅くなったかを素早く測る物差しが、まだ決まっていないから。」\n大輔「じゃあ、一回りを短くできれば、話は変わる？」\n沙織「変わる。手がかりは、さっき見た老化の物差し。人の試験で使われ始めるかは、見ておきたい。」",
+      "narrator": "dialogue",
+      "lines_hash": "27271fe5b3fb",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "verdict",
       "bgm_role": "outro",
       "image_asset": "base_cafe",
       "ken_burns": "zoom_out",
-      "verdict_from_line": 5,
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "僕の予想は、物差しと薬はAIで近い。薬は外れた。延びた証拠はマウスまで。",
+          "text": "僕の予想は、AIがここまで速いなら、200歳も時間の問題。半分は合ってた。規制の側が試験を軽くする道をもう開けてたし、人で確かめる時間の壁は、無理だと示された壁じゃなく、時間がかかる壁だった。",
+          "expression": "convinced",
+          "tag": "vs_prediction",
+          "t0": 0.0,
+          "dur": 15.64,
+          "cards": [
+            {
+              "text": "僕の予想は、AIがここまで速いなら、",
+              "start": 0.0,
+              "end": 2.98
+            },
+            {
+              "text": "200歳も時間の問題。半分は合ってた。",
+              "start": 3.13,
+              "end": 6.25
+            },
+            {
+              "text": "規制の側が試験を軽く",
+              "start": 6.44,
+              "end": 7.94
+            },
+            {
+              "text": "する道をもう開けてたし、",
+              "start": 7.94,
+              "end": 9.74
+            },
+            {
+              "text": "人で確かめる時間の壁は、無理だと示された",
+              "start": 9.89,
+              "end": 13.14
+            },
+            {
+              "text": "壁じゃなく、時間がかかる壁だった。",
+              "start": 13.29,
+              "end": 15.84
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でも、その時間が実際に縮んだ実績は、まだ無い。そこは外れ。",
           "expression": "deflated",
-          "tag": "vs_prediction"
+          "t0": 15.86,
+          "dur": 5.68,
+          "cards": [
+            {
+              "text": "でも、その時間が実際に縮んだ実績は、",
+              "start": 0.0,
+              "end": 3.16
+            },
+            {
+              "text": "まだ無い。そこは外れ。",
+              "start": 3.31,
+              "end": 5.53
+            }
+          ]
         },
         {
           "speaker": "skeptic",
-          "text": "私は、物差しが一番遠いと思ってた。目標と道筋は、思ったより進んでた。",
+          "text": "私の予想は、確かめる工程は速くならない。そこは半分外れた。試験を軽くする道は、規制の側にもう開いてた。時間の方は、まだだけど。",
           "expression": "amused",
-          "tag": "vs_prediction"
+          "tag": "vs_prediction",
+          "t0": 21.82,
+          "dur": 10.16,
+          "cards": [
+            {
+              "text": "私の予想は、確かめる工程は速くならない。",
+              "start": 0.0,
+              "end": 3.0
+            },
+            {
+              "text": "そこは半分外れた。試験を軽くする道は、",
+              "start": 3.15,
+              "end": 6.46
+            },
+            {
+              "text": "規制の側にもう開いてた。時間の方は、",
+              "start": 6.61,
+              "end": 9.31
+            },
+            {
+              "text": "まだだけど。",
+              "start": 9.46,
+              "end": 10.36
+            }
+          ]
         },
         {
           "speaker": "dreamer",
-          "text": "判定は、200歳の一番手前、老化の物差しに付ける。",
-          "expression": "neutral"
-        },
-        {
-          "speaker": "dreamer",
-          "text": "僕は「3年はかかる」。計画は動いてる。ただ、当たるかはヒトで確かめる時間が要る。",
-          "expression": "convinced"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "私は「まだ眉唾」。同じ人を測って、答えが割れた。どれが本物か決まるまで、物差しとは呼べない。",
-          "expression": "doubt"
-        },
-        {
-          "speaker": "skeptic",
-          "text": "「老化が遅くなった」と聞いたら、どの物差しで測ったか。ほかの物差しでも同じ答えか。そこを見る。",
+          "text": "判定するのは、前回と同じお題。一人でも200歳の誕生日を迎える人が出てくるか。",
           "expression": "neutral",
-          "tag": "takeaway"
+          "t0": 32.26,
+          "dur": 6.88,
+          "cards": [
+            {
+              "text": "判定するのは、前回と同じお題。",
+              "start": 0.0,
+              "end": 2.64
+            },
+            {
+              "text": "一人でも200歳の誕生日を",
+              "start": 2.79,
+              "end": 4.88
+            },
+            {
+              "text": "迎える人が出てくるか。",
+              "start": 4.88,
+              "end": 6.65
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕は「根拠待ち」。一歩ずつ確かめれば200年待たなくていい、という考え方は筋が通ってる。でも、確かめる一回りが実際に短くなった実績は、まだ無い。",
+          "expression": "thinking",
+          "t0": 39.36,
+          "dur": 11.84,
+          "cards": [
+            {
+              "text": "僕は「根拠待ち」。一歩ずつ確かめれば",
+              "start": 0.0,
+              "end": 3.38
+            },
+            {
+              "text": "200年待たなくていい、という考え方は",
+              "start": 3.53,
+              "end": 6.38
+            },
+            {
+              "text": "筋が通ってる。でも、確かめる一回りが実際に",
+              "start": 6.53,
+              "end": 9.79
+            },
+            {
+              "text": "短くなった実績は、まだ無い。",
+              "start": 9.94,
+              "end": 12.04
+            }
+          ]
         },
         {
           "speaker": "skeptic",
-          "text": "どちらも、2026年10月17日時点の見立て。200歳は、分からないままにしておく。",
-          "expression": "neutral"
+          "text": "私は「まだ眉唾」から、「根拠待ち」に上げる。",
+          "expression": "convinced",
+          "tag": "turn",
+          "t0": 51.48,
+          "dur": 4.08,
+          "cards": [
+            {
+              "text": "私は「まだ眉唾」から、「根拠待ち」",
+              "start": 0.0,
+              "end": 3.38
+            },
+            {
+              "text": "に上げる。",
+              "start": 3.53,
+              "end": 4.28
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "眉唾から、上げるの？",
+          "expression": "surprised",
+          "t0": 55.84,
+          "dur": 2.48,
+          "cards": [
+            {
+              "text": "眉唾から、上げるの？",
+              "start": 0.0,
+              "end": 2.48
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "前回は、人で効いた薬が無いうえに、確かめる時間が縮む見込みも見えなかった。だから、飛びすぎに見えた。",
+          "expression": "neutral",
+          "t0": 58.6,
+          "dur": 6.88,
+          "cards": [
+            {
+              "text": "前回は、人で効いた薬が無いうえに、",
+              "start": 0.0,
+              "end": 2.24
+            },
+            {
+              "text": "確かめる時間が縮む見込みも見えなかった。",
+              "start": 2.39,
+              "end": 5.13
+            },
+            {
+              "text": "だから、飛びすぎに見えた。",
+              "start": 5.3,
+              "end": 7.01
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "でも今日、確かめる時間を縮める道が、見えてきた。老化を3年で測る物差しを作る計画がある。人の試験を軽くするやり方も、規制の側がもう認めてた。時間が実際に縮んだ実績はまだ無いけど、前回みたいに「縮む見込みが見えない」とは言えなくなった。",
+          "expression": "thinking",
+          "t0": 65.7,
+          "dur": 16.68,
+          "cards": [
+            {
+              "text": "でも今日、確かめる時間を縮める道が、",
+              "start": 0.0,
+              "end": 2.45
+            },
+            {
+              "text": "見えてきた。老化を3年で測る物差しを作る",
+              "start": 2.6,
+              "end": 5.52
+            },
+            {
+              "text": "計画がある。人の試験を軽くするやり方も、",
+              "start": 5.67,
+              "end": 8.39
+            },
+            {
+              "text": "規制の側がもう認めてた。時間が実際に縮んだ",
+              "start": 8.54,
+              "end": 11.4
+            },
+            {
+              "text": "実績はまだ無いけど、前回みたいに「縮む",
+              "start": 11.55,
+              "end": 14.14
+            },
+            {
+              "text": "見込みが見えない」とは言えなくなった。",
+              "start": 14.29,
+              "end": 16.88
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "逆向きの資料は、あった？",
+          "expression": "thinking",
+          "t0": 82.66,
+          "dur": 2.16,
+          "cards": [
+            {
+              "text": "逆向きの資料は、あった？",
+              "start": 0.0,
+              "end": 2.16
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "否定する側の資料は、AIが設計した薬でも、効くかの試験に通る割合はふつうの薬と同じ、という一点だけ。だから、飛びすぎとまでは言えない。",
+          "expression": "thinking",
+          "t0": 85.1,
+          "dur": 11.12,
+          "cards": [
+            {
+              "text": "否定する側の資料は、AIが設計した薬でも、",
+              "start": 0.0,
+              "end": 3.48
+            },
+            {
+              "text": "効くかの試験に通る割合はふつうの薬と同じ、",
+              "start": 3.63,
+              "end": 7.42
+            },
+            {
+              "text": "という一点だけ。だから、",
+              "start": 7.57,
+              "end": 9.37
+            },
+            {
+              "text": "飛びすぎとまでは言えない。",
+              "start": 9.37,
+              "end": 11.32
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、人で老化を遅らせた薬は今も無いし、寿命脱出速度も仮説。だから、上げても「根拠待ち」まで。",
+          "expression": "doubt",
+          "t0": 96.44,
+          "dur": 8.12,
+          "cards": [
+            {
+              "text": "ただ、人で老化を遅らせた薬は今も無いし、",
+              "start": 0.0,
+              "end": 3.02
+            },
+            {
+              "text": "寿命脱出速度も仮説。だから、",
+              "start": 3.3,
+              "end": 5.8
+            },
+            {
+              "text": "上げても「根拠待ち」まで。",
+              "start": 5.95,
+              "end": 7.9
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕の札が変わる条件は2つ。",
+          "expression": "excited",
+          "t0": 104.84,
+          "dur": 2.88,
+          "cards": [
+            {
+              "text": "僕の札が変わる条件は2つ。",
+              "start": 0.0,
+              "end": 2.88
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の札が変わる条件は、",
+          "expression": "neutral",
+          "t0": 108.0,
+          "dur": 2.16,
+          "cards": [
+            {
+              "text": "私の札が変わる条件は、",
+              "start": 0.0,
+              "end": 2.16
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "まとめると、残っているのは、確かめる時間。その一回りが速くなれば、時間の問題の答えも変わる。",
+          "expression": "thinking",
+          "t0": 110.44,
+          "dur": 7.4,
+          "cards": [
+            {
+              "text": "まとめると、残っているのは、確かめる時間。",
+              "start": 0.0,
+              "end": 3.15
+            },
+            {
+              "text": "その一回りが速くなれば、",
+              "start": 3.3,
+              "end": 5.32
+            },
+            {
+              "text": "時間の問題の答えも変わる。",
+              "start": 5.32,
+              "end": 7.5
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、何年かかるか、必ず来るかは、言えない。一歩ずつ確かめても、最後に200歳まで届くかは、誰かが実際に200歳になるまで分からないから。",
+          "expression": "doubt",
+          "t0": 118.12,
+          "dur": 9.56,
+          "cards": [
+            {
+              "text": "ただ、何年かかるか、必ず来るかは、",
+              "start": 0.0,
+              "end": 2.44
+            },
+            {
+              "text": "言えない。一歩ずつ確かめても、",
+              "start": 2.59,
+              "end": 4.57
+            },
+            {
+              "text": "最後に200歳まで届くかは、",
+              "start": 4.72,
+              "end": 6.57
+            },
+            {
+              "text": "誰かが実際に200歳に",
+              "start": 6.72,
+              "end": 8.17
+            },
+            {
+              "text": "なるまで分からないから。",
+              "start": 8.17,
+              "end": 9.76
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "「AIで〇〇が速くなる」と聞いたら、それが探す工程の話か、確かめる工程まで速くなった話か、を見てほしい。私たちも、そこを見る。",
+          "expression": "neutral",
+          "tag": "takeaway",
+          "t0": 127.9,
+          "dur": 8.68,
+          "cards": [
+            {
+              "text": "「AIで〇〇が速くなる」と聞いたら、",
+              "start": 0.21,
+              "end": 2.56
+            },
+            {
+              "text": "それが探す工程の話か、確かめる工程まで",
+              "start": 2.71,
+              "end": 5.19
+            },
+            {
+              "text": "速くなった話か、を見てほしい。私たちも、",
+              "start": 5.34,
+              "end": 7.95
+            },
+            {
+              "text": "そこを見る。",
+              "start": 8.1,
+              "end": 8.88
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "これは、2026年10月21日時点の、二人の見立て。",
+          "expression": "neutral",
+          "t0": 136.86,
+          "dur": 5.04,
+          "cards": [
+            {
+              "text": "これは、2026年10月21日時点の、",
+              "start": 0.0,
+              "end": 3.52
+            },
+            {
+              "text": "二人の見立て。",
+              "start": 3.67,
+              "end": 4.81
+            }
+          ]
         }
       ],
-      "scene_id": 17,
-      "narration": "大輔「僕の予想は、物差しと薬はAIで近い。薬は外れた。延びた証拠はマウスまで。」\n沙織「私は、物差しが一番遠いと思ってた。目標と道筋は、思ったより進んでた。」\n大輔「判定は、200歳の一番手前、老化の物差しに付ける。」\n大輔「僕は「3年はかかる」。計画は動いてる。ただ、当たるかはヒトで確かめる時間が要る。」\n沙織「私は「まだ眉唾」。同じ人を測って、答えが割れた。どれが本物か決まるまで、物差しとは呼べない。」\n沙織「「老化が遅くなった」と聞いたら、どの物差しで測ったか。ほかの物差しでも同じ答えか。そこを見る。」\n沙織「どちらも、2026年10月17日時点の見立て。200歳は、分からないままにしておく。」",
-      "narrator": "dialogue"
+      "scene_id": 15,
+      "verdict_from_line": 6,
+      "narration": "大輔「僕の予想は、AIがここまで速いなら、200歳も時間の問題。半分は合ってた。規制の側が試験を軽くする道をもう開けてたし、人で確かめる時間の壁は、無理だと示された壁じゃなく、時間がかかる壁だった。」\n大輔「でも、その時間が実際に縮んだ実績は、まだ無い。そこは外れ。」\n沙織「私の予想は、確かめる工程は速くならない。そこは半分外れた。試験を軽くする道は、規制の側にもう開いてた。時間の方は、まだだけど。」\n大輔「判定するのは、前回と同じお題。一人でも200歳の誕生日を迎える人が出てくるか。」\n大輔「僕は「根拠待ち」。一歩ずつ確かめれば200年待たなくていい、という考え方は筋が通ってる。でも、確かめる一回りが実際に短くなった実績は、まだ無い。」\n沙織「私は「まだ眉唾」から、「根拠待ち」に上げる。」\n大輔「眉唾から、上げるの？」\n沙織「前回は、人で効いた薬が無いうえに、確かめる時間が縮む見込みも見えなかった。だから、飛びすぎに見えた。」\n沙織「でも今日、確かめる時間を縮める道が、見えてきた。老化を3年で測る物差しを作る計画がある。人の試験を軽くするやり方も、規制の側がもう認めてた。時間が実際に縮んだ実績はまだ無いけど、前回みたいに「縮む見込みが見えない」とは言えなくなった。」\n大輔「逆向きの資料は、あった？」\n沙織「否定する側の資料は、AIが設計した薬でも、効くかの試験に通る割合はふつうの薬と同じ、という一点だけ。だから、飛びすぎとまでは言えない。」\n沙織「ただ、人で老化を遅らせた薬は今も無いし、寿命脱出速度も仮説。だから、上げても「根拠待ち」まで。」\n大輔「僕の札が変わる条件は2つ。」\n沙織「私の札が変わる条件は、」\n大輔「まとめると、残っているのは、確かめる時間。その一回りが速くなれば、時間の問題の答えも変わる。」\n沙織「ただ、何年かかるか、必ず来るかは、言えない。一歩ずつ確かめても、最後に200歳まで届くかは、誰かが実際に200歳になるまで分からないから。」\n沙織「「AIで〇〇が速くなる」と聞いたら、それが探す工程の話か、確かめる工程まで速くなった話か、を見てほしい。私たちも、そこを見る。」\n大輔「これは、2026年10月21日時点の、二人の見立て。」",
+      "narrator": "dialogue",
+      "lines_hash": "02799cbd57a2",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "type": "closing",
@@ -920,28 +2860,99 @@
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "200歳を条件に分けたら、最初に要るのは、測り方だった。",
-          "expression": "thinking"
+          "text": "前回は、時間の壁を見た。今日は、その時間を縮める道を見た。",
+          "expression": "thinking",
+          "t0": 0.0,
+          "dur": 5.84,
+          "cards": [
+            {
+              "text": "前回は、時間の壁を見た。今日は、",
+              "start": 0.0,
+              "end": 2.92
+            },
+            {
+              "text": "その時間を縮める道を見た。",
+              "start": 3.07,
+              "end": 5.61
+            }
+          ]
         },
         {
           "speaker": "skeptic",
-          "text": "寿命の答えを先に持ってくるのは、犬の方かもね。",
-          "expression": "amused"
+          "text": "確かめる時間が縮んだかは、老化の物差しが使われ始めるかで、先に分かるかもね。",
+          "expression": "amused",
+          "t0": 6.12,
+          "dur": 5.88,
+          "cards": [
+            {
+              "text": "確かめる時間が縮んだかは、老化の物差しが",
+              "start": 0.0,
+              "end": 3.23
+            },
+            {
+              "text": "使われ始めるかで、先に分かるかもね。",
+              "start": 3.38,
+              "end": 6.08
+            }
+          ]
         },
         {
           "speaker": "dreamer",
           "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
-          "expression": "excited"
+          "expression": "excited",
+          "t0": 12.28,
+          "dur": 4.88,
+          "cards": [
+            {
+              "text": "次はどんな研究が、誰かの幸せな未来を",
+              "start": 0.0,
+              "end": 3.64
+            },
+            {
+              "text": "運んでくるのか。",
+              "start": 3.79,
+              "end": 4.99
+            }
+          ]
         },
         {
           "speaker": "skeptic",
           "text": "それが本物かどうか、また一緒に確かめましょう。論文は概要欄に載せています。チャンネル登録して、待っていてください。",
-          "expression": "amused"
+          "expression": "amused",
+          "t0": 17.44,
+          "dur": 7.24,
+          "cards": [
+            {
+              "text": "それが本物かどうか、",
+              "start": 0.0,
+              "end": 1.22
+            },
+            {
+              "text": "また一緒に確かめましょう。",
+              "start": 1.22,
+              "end": 2.8
+            },
+            {
+              "text": "論文は概要欄に載せています。",
+              "start": 3.15,
+              "end": 4.85
+            },
+            {
+              "text": "チャンネル登録して、待っていてください。",
+              "start": 5.0,
+              "end": 7.44
+            }
+          ]
         }
       ],
-      "scene_id": 18,
-      "narration": "大輔「200歳を条件に分けたら、最初に要るのは、測り方だった。」\n沙織「寿命の答えを先に持ってくるのは、犬の方かもね。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。論文は概要欄に載せています。チャンネル登録して、待っていてください。」",
-      "narrator": "dialogue"
+      "scene_id": 16,
+      "narration": "大輔「前回は、時間の壁を見た。今日は、その時間を縮める道を見た。」\n沙織「確かめる時間が縮んだかは、老化の物差しが使われ始めるかで、先に分かるかもね。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。論文は概要欄に載せています。チャンネル登録して、待っていてください。」",
+      "narrator": "dialogue",
+      "lines_hash": "005c506f50a3",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     }
   ],
   "shorts": [
@@ -949,45 +2960,59 @@
       "shorts_id": 1,
       "scenes": [
         {
-          "narrator": "skeptic",
-          "narration": "200歳に、要る条件は？",
-          "telop_text": "200歳に、要る条件は？",
-          "expression": "doubt",
-          "scene_id": 13
+          "narrator": "dreamer",
+          "narration": "200歳は、時間の問題？",
+          "telop_text": "200歳は、時間の問題？",
+          "expression": "excited",
+          "scene_id": 8
         },
         {
           "narrator": "dreamer",
-          "narration": "遅らせるのが遠いなら、老化をそこで止めたら？",
-          "expression": "thinking",
-          "scene_id": 9
+          "narration": "AIがこなせる仕事の長さは、約7か月ごとに倍になってる。",
+          "expression": "excited",
+          "scene_id": 6
         },
         {
           "narrator": "skeptic",
-          "narration": "単純な計算だと、今70歳の人は、止めても平均では200歳に届かない。",
+          "narration": "AIが速くするのは、答えを探す工程。確かめる工程は別。",
           "expression": "doubt",
-          "react": "surprised",
+          "react": "thinking",
           "scene_id": 6
         },
         {
           "narrator": "dreamer",
-          "narration": "じゃあ、遅らせるだけじゃ足りない。時計を戻す、若返りが要るのか。",
-          "expression": "surprised",
-          "scene_id": 13
+          "narration": "僕の予想。シミュレーションで試せば、人で試す必要はほとんどなくなる。",
+          "expression": "excited",
+          "scene_id": 8
         },
         {
           "narrator": "skeptic",
-          "narration": "若返りの治療でも、書き換わったDNAは戻らない。",
+          "narration": "でも200歳は、まだ誰も走っていない道。",
           "expression": "doubt",
           "react": "deflated",
-          "scene_id": 16
+          "scene_id": 11
         },
         {
           "narrator": "dreamer",
-          "narration": "一番手前の条件、老化の物差しは来る？ 判定は本編で。",
+          "narration": "二人の札は動いた？ 判定は本編で。",
           "expression": "thinking",
-          "scene_id": 6
+          "scene_id": 14
         }
       ]
     }
-  ]
+  ],
+  "beginner_review": {
+    "passed_at": "2026-10-21",
+    "rounds": 2,
+    "report": "script_prep/review_reports/kl045_beginner_review_r2.md",
+    "lines_digest": "0c012ea2bb88"
+  },
+  "bgm_sources": {
+    "intro": "BGM/kl034-BGM-intro.mp3",
+    "outro": "BGM/kl040-BGM-outro.mp3",
+    "main": "BGM/kl045-BGM-main.mp3"
+  },
+  "youtube_url": "https://youtu.be/kpq_qKw59bU",
+  "shorts_url": "https://youtu.be/uMd8v4VHTcQ",
+  "scheduled_at": "2026-10-21 19:00"
 }
