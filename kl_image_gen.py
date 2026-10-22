@@ -686,6 +686,12 @@ def generate_with_qa(client: genai.Client, base_prompt: str, image_prompt_for_qa
             print(f"✅ {out_path.name}{suffix} [QA: OK]")
             return qa
         print(f"⚠️  {out_path.name}{suffix} [QA: {len(qa['issues'])}件] " + "; ".join(qa["issues"]))
+        if qa["issues"] and all(str(i).startswith("QA_ERROR") for i in qa["issues"]):
+            # QA自体がAPIエラーで判定できなかっただけ（画像の問題ではない）。再生成すると
+            # 画像を無駄に作り直すうえ、API障害中は生成側の例外で全体が止まる（kl047で発生）
+            print(f"   → QAが判定できませんでした（APIエラー）。画像は生成済み。目視確認してください: {out_path.name}")
+            qa["qa_error"] = True
+            return qa
         if _mentions_laterality(qa["issues"]):
             flip_qa = _try_flip_fix(client, out_path, image_prompt_for_qa, allow_text=allow_text)
             if flip_qa is not None:
@@ -903,21 +909,23 @@ def main():
             r["name"] = "thumbnail.png"
             qa_results.append(r)
             headline = ep.get("thumbnail_headline")
+            # 文字・立ち絵の合成は、QAがOKか、QA自体のAPIエラー（画像は生成済み）のときに行う（kl047で合成が飛んだ）
+            thumb_ready = r["ok"] or bool(r.get("qa_error"))
             thumb_b = ep.get("thumbnail_b") or {}
-            if thumb_b.get("keyword") and r["ok"]:
+            if thumb_b.get("keyword") and thumb_ready:
                 # B案はA案の文字を合成する前の背景から作る（2026-09-29追加）
                 thumb_b_path = out_dir / "thumbnail_b.png"
                 shutil.copyfile(thumb_path, thumb_b_path)
                 composite_thumbnail_keyword(thumb_b_path, thumb_b["keyword"], thumb_b.get("line", ""))
                 print(f"   → B案: 「{thumb_b['keyword']}」{thumb_b.get('line', '')}（{thumb_b_path.name}）")
-            if ep.get("format") == "dialogue" and r["ok"]:
+            if ep.get("format") == "dialogue" and thumb_ready:
                 # 掛け合い形式: 見出し＋二人の立ち絵＋判定ラベル（kl_dialogue.composite_thumbnail_dialogue）。
                 # 背景だけの画像も残しておく（判定や名前を変えたときに合成だけやり直せるように）
                 import kl_dialogue
                 shutil.copyfile(thumb_path, out_dir / "thumbnail_bg.png")
                 kl_dialogue.composite_thumbnail_dialogue(thumb_path, ep)
                 print(f"   → 掛け合い形式のサムネイルを合成: 「{headline}」")
-            elif headline and r["ok"]:
+            elif headline and thumb_ready:
                 composite_thumbnail_text(thumb_path, headline, ep.get("thumbnail_subcopy", ""))
                 print(f"   → テキスト合成: 「{headline}」")
 
