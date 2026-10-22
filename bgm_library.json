@@ -1065,7 +1065,8 @@
       "synth"
     ],
     "used_in": [
-      "kl030"
+      "kl030",
+      "kl047"
     ],
     "bpm": 128,
     "mood": [
@@ -2036,6 +2037,66 @@
     "era": "dialogue",
     "role_fit": [
       "main"
+    ]
+  },
+  {
+    "id": "kl047-BGM-main",
+    "path": "BGM/kl047-BGM-main.mp3",
+    "license": "CC BY",
+    "credit": "🎵 Music: Chill Gaming Beats by Matio888 (freesound.org) — CC BY 4.0",
+    "tags": [
+      "chill"
+    ],
+    "used_in": [
+      "kl047"
+    ],
+    "duration": 189.95,
+    "source_id": "797769",
+    "source_name": "Chill Gaming Beats",
+    "source_url": "https://freesound.org/s/797769/",
+    "bpm": 85.0,
+    "mood": [
+      "chill",
+      "lofi"
+    ],
+    "instruments": [
+      "electric-piano",
+      "bass",
+      "lofi-beat"
+    ],
+    "has_beat": true,
+    "era": "dialogue",
+    "role_fit": [
+      "main"
+    ]
+  },
+  {
+    "id": "kl047-BGM-outro",
+    "path": "BGM/kl047-BGM-outro.mp3",
+    "license": "CC0",
+    "credit": null,
+    "tags": [],
+    "used_in": [
+      "kl047"
+    ],
+    "duration": 121.26,
+    "source_id": "587315",
+    "source_name": "Dorian 12 Keys.wav",
+    "source_url": "https://freesound.org/s/587315/",
+    "bpm": 95.0,
+    "mood": [
+      "calm",
+      "jazzy"
+    ],
+    "instruments": [
+      "electric-piano",
+      "bass",
+      "drums"
+    ],
+    "has_beat": true,
+    "era": "dialogue",
+    "role_fit": [
+      "outro"
     ]
   }
 ]

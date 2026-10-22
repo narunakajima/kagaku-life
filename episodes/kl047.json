@@ -1,0 +1,3261 @@
+{
+  "episode_id": "kl047",
+  "format": "dialogue",
+  "structure": "rounds_v3",
+  "template": "myth_buster",
+  "source_type": "news",
+  "news_date": "2026-10-21",
+  "verdict_as_of": "2026-10-22",
+  "genre": "medical",
+  "health": true,
+  "depicts_real_product": true,
+  "episode_title": "iPS細胞の心臓シート「世界初の実用化」、心臓はもう治せる？国の審査報告書で確かめる",
+  "youtube_title": "iPS心臓シート「世界初の実用化」、本当に効く？試験は8人（10/21報道）",
+  "entry_question": "iPS細胞から作った心臓のシートが、世界で初めて「治療」として使われた。心臓は、もう治せる時代になったのか。",
+  "verdict": {
+    "dreamer": "pending",
+    "skeptic": "dubious"
+  },
+  "hook_lines": [
+    "iPS心臓シート",
+    "本当に効くの？"
+  ],
+  "thumbnail_headline": "iPS心臓シート\n本当に効く？",
+  "thumbnail_exprs": {
+    "dreamer": "excited",
+    "skeptic": "doubt"
+  },
+  "thumbnail_prompt": "Calm, bright daytime editorial illustration of a clean modern cell-culture laboratory seen from the front: a soft pale blue-gray back wall and a light gray bench running the full width of the frame, continuous across the whole frame with no panels, boxes, borders or abrupt colour changes. Keep the left 30%, the right 30% and the top 35% of the frame quiet and uncluttered (soft gradient only), but the wall and bench must visibly continue unbroken behind them. In the horizontal center, in the vertical band between 38% and 80% of the frame height: a few clear round culture dishes with pale pink liquid on the bench, the front one glowing softly in warm coral, and a simple stylized red heart shape outline faintly glowing above them. No people. Generic, not any specific product. No logos, no brand marks, no readable text, no letters, no numbers.",
+  "youtube_tags": [
+    "iPS細胞",
+    "心筋シート",
+    "リハート",
+    "再生医療",
+    "心不全",
+    "世界初",
+    "医療の最前線",
+    "条件付き承認",
+    "PMDA",
+    "臨床試験",
+    "答え合わせ",
+    "科学ニュース"
+  ],
+  "references": [
+    {
+      "title": "リハート（ヒト（同種）iPS細胞由来心筋細胞シート）審議結果報告書・審査報告書（令和8年2月10日付）",
+      "authors": [],
+      "year": 2026,
+      "venue": "独立行政法人医薬品医療機器総合機構（PMDA）",
+      "url": "https://www.pmda.go.jp/regenerative_medicines/2026/R20260406001/252508000_30800FZX00001_A100_2.pdf",
+      "is_preprint": false,
+      "institution": "PMDA（医薬品医療機器総合機構）",
+      "source_kind": "official_report"
+    },
+    {
+      "title": "再生医療等製品「リハート」第1例目の移植実施に関して様々なメディアに取り上げられました（2026年9月29日）",
+      "authors": [],
+      "year": 2026,
+      "venue": "クオリプス株式会社",
+      "url": "https://www.cuorips.co.jp/news/20260929",
+      "is_preprint": false,
+      "institution": "クオリプス",
+      "source_kind": "press_release"
+    },
+    {
+      "title": "再生医療等製品の保険適用について（令和8年9月1日収載予定）（中医協 総－２、令和8年7月22日）",
+      "authors": [],
+      "year": 2026,
+      "venue": "厚生労働省 中央社会保険医療協議会",
+      "url": "https://www.mhlw.go.jp/content/10808000/001726219.pdf",
+      "is_preprint": false,
+      "institution": "厚生労働省",
+      "source_kind": "official_report"
+    }
+  ],
+  "youtube_description": "iPS細胞から作った心臓のシート「リハート」（クオリプス）が、保険が使えるようになってから初めての移植を迎え、2026年10月21日に「世界初の実用化」と報じられました。心臓は、もう治せる時代になったのか。期待担当の大輔と、ツッコミ担当の沙織が、国の審査を担うPMDA（医薬品医療機器総合機構）の審査報告書を一次資料にして、(1) 何人で、何を確かめたか (2) それでも承認されたのはなぜか (3) 条件と期限つきの承認で、これから何を確かめるのか、の3つで確かめます。\n\n■ この回の判定（2026年10月22日時点の、二人の見立て）\nお題: 「世界初の実用化」で、心臓はもう治せる時代になったのか\n大輔: 根拠待ち（効かないという資料は無いが、効くと言い切れる資料もまだ無い。75人の調査で、別の研究の似た患者と比べて、1年後に運動の力が上がり心臓の大きさも広がらなかった人の割合がはっきり多ければ「もうすぐ来る」に上げる）\n沙織: まだ眉唾（製品が承認されて使われ始めたのは事実。札は「心臓はもう治せる」という受け止め方に付けた。第一の物差しの心臓のポンプの力で良くなったのは8人中2人で、「治せる」は資料の範囲を大きく超える。比較の結果に加え、ポンプの力や心臓の大きさでも改善が分かれば「根拠待ち」に上げる）\n※札の順は、まだ眉唾 → 根拠待ち → 3年はかかる → もうすぐ来る。\n\n■ 一次資料（PMDA 審査報告書）に書いてあること\n・製品: 他人（同種）のiPS細胞から作った心臓の筋肉の細胞のシート。胸を開く手術で、心臓の表面に3枚を移植。翌日から拒絶を抑える薬（免疫抑制剤）3種類を90日間\n・対象: 薬物治療や侵襲的治療を含む標準治療で効果不十分な、虚血性心筋症（心臓の血管が詰まるなどして心臓の筋肉の一部が死んだ病気）による重症心不全\n・承認: 条件及び期限付承認（期限7年）。条件は、全症例を対象にした製造販売後の調査、重症心不全の治療と開胸手術に十分な経験のある医師が体制の整った医療機関で使うこと、ほか。期限内に改めて承認申請を行う\n・承認のもとになった試験: 8人、5施設、比べる相手（対照群）なし、本人も医師も移植を知っている（非盲検）。審査側は「少数例の患者を対象に非盲検非対照で実施された試験」で、有効性の評価には限界がある、と書いています\n・第一の物差し（主要評価項目）: 移植後26週（約半年）の心臓のポンプの力（左室駆出率、LVEF。超音波で測定）。移植前より改善したのは8人中2人（変化量 +3.5／−5.1／+15.0／−9.1／+5.6／−3.3／+0.3／−11.4 ポイント）。超音波の画像は粗いものが多く、CTで測ると改善の2人はどちらも「維持」でした\n・ほかの物差し: 息切れの段階（NYHA心機能分類）は全員Ⅲ度から、26週でⅡ度6人・Ⅰ度2人に（審査側は、非盲検のため心理的な影響を否定できない、と記載）。運動の力（最高酸素摂取量、Peak VO2）が10%以上増えたのは52週で4人（審査側は臨床的に意義のある変化で有効性を示唆するとしつつ、心臓リハビリや運動意欲の影響は否定できない、と記載）\n・総合評価: 52週で8人全員が「有効」。審査側は「一部の客観的評価項目について悪化があるにもかかわらず、症状改善から有効と判断することには限界があり」、判定には慎重な判断が必要、と記載\n・一方で審査側は、一度壊死した心筋が自然に回復することは期待できないため、その点を踏まえた有効性の評価は可能、とも記載\n・仕組み: ヒトでは未確認。ラットの試験で、移植した細胞が出す物質が周りに働く（パラクライン効果）可能性。ヒトでの細胞の生着期間は不明\n・安全性: 本品の副作用は0と記録。重篤な有害事象は5人（10件）で、いずれも回復。審査側は、心室血栓症1件について本品の影響は否定できない、と記載。免疫抑制剤との因果関係が否定できない有害事象は7人（白血球数増加・高血糖・腎機能障害など。服用中止後に回復）。現時点で、移植に伴う腫瘍の発現は認められていない\n・これからの確認（使用成績調査計画の骨子・案）: 全例調査。効き目を見る目標は75人。別に行う前向きの臨床研究の、標準治療で効果不十分な患者（150人の予定）を外部対照にして比べる（くじ引きで分ける比較は、開胸手術を伴うため倫理的に困難）。主要評価は、52週で運動の力が10%以上増え、かつ心臓の大きさ（左室収縮末期容積係数、LVESVI）が改善または維持した患者の割合\n\n■ 保険適用（一次資料: 中医協 総会資料 2026年7月22日）\n・2026年9月1日に保険収載の予定として了承。対象は、標準治療で効果不十分な虚血性心筋症による重症心不全で、関連学会の適正使用指針に従って使う場合に限る。1人につき1回まで\n\n■ 報道などによる情報（一次資料では未確認）\n・承認日（2026年3月）、保険適用後の第1例の移植（2026年9月29日、クオリプスのお知らせ）\n\n※この動画は、承認された製品と、その審査の内容を紹介するものです。治療を受ける・受けないなどの医療上の助言ではありません。ご自身の治療については、主治医にご相談ください。\n※画面の製品の絵は、外観を確認できていないためのイメージ図です（実物と異なる場合があります）。\n※この回の一次資料は、国の審査報告書（PMDA）です。\n※判定は2026年10月22日時点のものです。\n\n■ 参考（一次資料）\n[1] PMDA「リハート 審議結果報告書・審査報告書」 https://www.pmda.go.jp/regenerative_medicines/2026/R20260406001/252508000_30800FZX00001_A100_2.pdf\n[2] クオリプス「再生医療等製品『リハート』第1例目の移植実施に関して様々なメディアに取り上げられました」（2026年9月29日） https://www.cuorips.co.jp/news/20260929\n[3] 厚生労働省 中央社会保険医療協議会 総会（2026年7月22日）資料「再生医療等製品の保険適用について（令和8年9月1日収載予定）」 https://www.mhlw.go.jp/content/10808000/001726219.pdf\n\n🎵 Music: Bright Beginnings (Uplifting Piano and Energetic Drums) by Gustavo_Alivera (freesound.org) — CC BY 4.0\n\n🎵 Music: Chill Gaming Beats by Matio888 (freesound.org) — CC BY 4.0",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_in",
+      "image_prompt": "Bright daytime, a clean modern cell-culture laboratory: on a white bench, a pair of gloved hands (only hands and forearms in blue sterile sleeves visible, no face) uses fine forceps to lift a thin, translucent, pale-pink sheet of cultured cells from a shallow clear round culture dish filled with light pink liquid. Several more identical clear dishes stacked nearby, a laminar-flow cabinet glass edge in the background, soft daylight, one dish lit with a warm coral glow. Generic laboratory scene, not any specific commercial product, no packaging. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "iPS細胞の心臓シート、世界初の治療が始まった！",
+          "expression": "excited",
+          "tone": "excited, like breaking news",
+          "t0": 0.0,
+          "dur": 4.6,
+          "cards": [
+            {
+              "text": "iPS細胞の心臓シート、世界初の治療が始まった！",
+              "start": 0.0,
+              "end": 3.88
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「iPS細胞の心臓シート、世界初の治療が始まった！」",
+      "narrator": "dialogue",
+      "lines_hash": "21f4629278a2",
+      "zoom_anchor": {
+        "x": 0.84,
+        "y": 0.46
+      }
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_out",
+      "reuse_scene_id": 9,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "でも、承認のもとになった試験は、8人だけ。",
+          "expression": "doubt",
+          "t0": 0.0,
+          "dur": 3.32,
+          "cards": [
+            {
+              "text": "でも、承認のもとになった試験は、8人だけ。",
+              "start": 0.0,
+              "end": 3.15
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「でも、承認のもとになった試験は、8人だけ。」",
+      "narrator": "dialogue",
+      "lines_hash": "baa78d3b93c1",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_in",
+      "reuse_scene_id": 6,
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "心臓のポンプの力が良くなったのは、2人だけ？",
+          "expression": "surprised",
+          "t0": 0.0,
+          "dur": 3.36,
+          "cards": [
+            {
+              "text": "心臓のポンプの力が良くなったのは、",
+              "start": 0.0,
+              "end": 2.48
+            },
+            {
+              "text": "2人だけ？",
+              "start": 2.63,
+              "end": 3.37
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「心臓のポンプの力が良くなったのは、2人だけ？」",
+      "narrator": "dialogue",
+      "lines_hash": "8b976eb80018",
+      "zoom_anchor": {
+        "x": 0.24,
+        "y": 0.42
+      }
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_out",
+      "reuse_scene_id": 13,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "心臓は、もう治せる時代になったの？",
+          "expression": "thinking",
+          "tag": "question",
+          "t0": 0.0,
+          "dur": 3.08,
+          "cards": [
+            {
+              "text": "心臓は、もう治せる時代になったの？",
+              "start": 0.0,
+              "end": 3.08
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「心臓は、もう治せる時代になったの？」",
+      "narrator": "dialogue",
+      "lines_hash": "b62de791902e",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 5,
+      "type": "setup",
+      "bgm_role": "intro",
+      "ken_burns": "zoom_out",
+      "image_asset": "base_cafe_b",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "お題は、10月21日に報じられたニュース。iPS細胞から作った心臓のシートを使う治療が、病院で始まった。",
+          "expression": "excited",
+          "t0": 0.0,
+          "dur": 10.48,
+          "cards": [
+            {
+              "text": "お題は、10月21日に報じられたニュース。",
+              "start": 0.0,
+              "end": 3.98
+            },
+            {
+              "text": "iPS細胞から作った心臓の",
+              "start": 4.62,
+              "end": 6.63
+            },
+            {
+              "text": "シートを使う治療が、",
+              "start": 6.63,
+              "end": 8.18
+            },
+            {
+              "text": "病院で始まった。",
+              "start": 8.33,
+              "end": 10.07
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "iPS細胞っていうのは、人の皮膚や血の細胞から作れて、心臓や神経など、いろんな細胞に育てられる細胞ね。",
+          "expression": "neutral",
+          "t0": 10.76,
+          "dur": 8.12,
+          "cards": [
+            {
+              "text": "iPS細胞っていうのは、人の皮膚や血の",
+              "start": 0.0,
+              "end": 2.98
+            },
+            {
+              "text": "細胞から作れて、心臓や神経など、",
+              "start": 3.13,
+              "end": 5.77
+            },
+            {
+              "text": "いろんな細胞に育てられる細胞ね。",
+              "start": 5.92,
+              "end": 8.32
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そう。報道では、保険が使えるようになってから初めての手術が、9月の終わりにあった。見出しは「世界初の実用化」。",
+          "expression": "excited",
+          "t0": 19.16,
+          "dur": 10.32,
+          "cards": [
+            {
+              "text": "そう。報道では、",
+              "start": 0.0,
+              "end": 1.43
+            },
+            {
+              "text": "保険が使えるようになってから",
+              "start": 1.43,
+              "end": 3.94
+            },
+            {
+              "text": "初めての手術が、9月の終わりにあった。",
+              "start": 4.09,
+              "end": 6.94
+            },
+            {
+              "text": "見出しは「世界初の実用化」。",
+              "start": 7.09,
+              "end": 10.52
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "「世界初の実用化」は、ニュースの見出しの言葉ね。国の審査の報告書には、そういう言い方は出てこない。",
+          "expression": "neutral",
+          "t0": 29.76,
+          "dur": 7.16,
+          "cards": [
+            {
+              "text": "「世界初の実用化」は、",
+              "start": 0.2,
+              "end": 1.77
+            },
+            {
+              "text": "ニュースの見出しの言葉ね。",
+              "start": 1.77,
+              "end": 3.63
+            },
+            {
+              "text": "国の審査の報告書には、",
+              "start": 3.78,
+              "end": 5.36
+            },
+            {
+              "text": "そういう言い方は出てこない。",
+              "start": 5.36,
+              "end": 7.36
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "国の承認を受けて、保険も使える。世間ではふつう、効くと確かめ終わった、と受け取るよね。",
+          "expression": "doubt",
+          "t0": 37.14,
+          "dur": 7.2,
+          "cards": [
+            {
+              "text": "国の承認を受けて、保険も使える。",
+              "start": 0.0,
+              "end": 2.82
+            },
+            {
+              "text": "世間ではふつう、効くと確かめ終わった、",
+              "start": 3.2,
+              "end": 6.05
+            },
+            {
+              "text": "と受け取るよね。",
+              "start": 6.2,
+              "end": 7.4
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想。心臓は、治せる時代に入った。弱った心臓に、新しい筋肉を足せるんだから。",
+          "expression": "excited",
+          "tag": "prediction",
+          "t0": 44.62,
+          "dur": 6.92,
+          "cards": [
+            {
+              "text": "僕の予想。心臓は、治せる時代に入った。",
+              "start": 0.0,
+              "end": 3.16
+            },
+            {
+              "text": "弱った心臓に、新しい筋肉を足せるんだから。",
+              "start": 3.7,
+              "end": 6.85
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想。国が承認したことと、効くと確かめ終わったことは、別。たぶん、ほんの少しの人数でしか試してない。",
+          "expression": "doubt",
+          "tag": "prediction",
+          "t0": 51.82,
+          "dur": 8.2,
+          "cards": [
+            {
+              "text": "私の予想。国が承認したことと、",
+              "start": 0.0,
+              "end": 2.55
+            },
+            {
+              "text": "効くと確かめ終わったことは、別。たぶん、",
+              "start": 2.7,
+              "end": 5.7
+            },
+            {
+              "text": "ほんの少しの人数でしか試してない。",
+              "start": 5.85,
+              "end": 8.4
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、どこで白黒つける？",
+          "expression": "thinking",
+          "t0": 60.3,
+          "dur": 2.64,
+          "cards": [
+            {
+              "text": "じゃあ、どこで白黒つける？",
+              "start": 0.0,
+              "end": 2.64
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "国の審査の報告書で、3つ確かめる。何人で、何を確かめたか。それでも認められたのは、なぜか。これから、何を確かめるのか。",
+          "expression": "neutral",
+          "t0": 63.22,
+          "dur": 9.48,
+          "cards": [
+            {
+              "text": "国の審査の報告書で、3つ確かめる。何人で、",
+              "start": 0.0,
+              "end": 3.44
+            },
+            {
+              "text": "何を確かめたか。それでも認められたのは、",
+              "start": 3.59,
+              "end": 6.61
+            },
+            {
+              "text": "なぜか。これから、何を確かめるのか。",
+              "start": 6.76,
+              "end": 9.46
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「お題は、10月21日に報じられたニュース。iPS細胞から作った心臓のシートを使う治療が、病院で始まった。」\n沙織「iPS細胞っていうのは、人の皮膚や血の細胞から作れて、心臓や神経など、いろんな細胞に育てられる細胞ね。」\n大輔「そう。報道では、保険が使えるようになってから初めての手術が、9月の終わりにあった。見出しは「世界初の実用化」。」\n沙織「「世界初の実用化」は、ニュースの見出しの言葉ね。国の審査の報告書には、そういう言い方は出てこない。」\n沙織「国の承認を受けて、保険も使える。世間ではふつう、効くと確かめ終わった、と受け取るよね。」\n大輔「僕の予想。心臓は、治せる時代に入った。弱った心臓に、新しい筋肉を足せるんだから。」\n沙織「私の予想。国が承認したことと、効くと確かめ終わったことは、別。たぶん、ほんの少しの人数でしか試してない。」\n大輔「じゃあ、どこで白黒つける？」\n沙織「国の審査の報告書で、3つ確かめる。何人で、何を確かめたか。それでも認められたのは、なぜか。これから、何を確かめるのか。」",
+      "narrator": "dialogue",
+      "lines_hash": "5614edbb05ca",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 6,
+      "type": "paper",
+      "bgm_role": "main",
+      "ken_burns": "zoom_in",
+      "round": 1,
+      "round_title": "何人で、何を確かめた？",
+      "image_prompt": "Bright daytime, another view of a clean modern cell-culture laboratory: on a white bench, a pair of gloved hands (only hands and forearms in blue sterile sleeves visible, no face) uses fine forceps to hold up a thin, translucent, pale-pink sheet of cultured cells from a shallow clear round culture dish filled with light pink liquid. Several more identical clear dishes stacked nearby, a laminar-flow cabinet glass edge in the background, soft daylight, one dish lit with a warm coral glow. Generic laboratory scene, not any specific commercial product, no packaging. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "まず、製品の中身。名前はリハート。クオリプスという日本の会社が作ってる。",
+          "expression": "excited",
+          "t0": 0.0,
+          "dur": 5.44,
+          "cards": [
+            {
+              "text": "まず、製品の中身。名前はリハート。",
+              "start": 0.0,
+              "end": 2.7
+            },
+            {
+              "text": "クオリプスという日本の会社が作ってる。",
+              "start": 2.85,
+              "end": 5.64
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "自分の細胞じゃなく、他人のiPS細胞から、心臓の筋肉の細胞を育てて、薄いシートにしてある。",
+          "expression": "excited",
+          "t0": 5.66,
+          "dur": 7.84,
+          "cards": [
+            {
+              "text": "自分の細胞じゃなく、他人のiPS細胞から、",
+              "start": 0.0,
+              "end": 3.5
+            },
+            {
+              "text": "心臓の筋肉の細胞を育てて、",
+              "start": 3.65,
+              "end": 5.78
+            },
+            {
+              "text": "薄いシートにしてある。",
+              "start": 5.78,
+              "end": 7.59
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それを、どうやって使うの？",
+          "expression": "neutral",
+          "t0": 13.78,
+          "dur": 1.92,
+          "cards": [
+            {
+              "text": "それを、どうやって使うの？",
+              "start": 0.0,
+              "end": 1.92
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "胸を開く手術で、心臓の表面に、シートを3枚貼る。",
+          "expression": "neutral",
+          "t0": 15.98,
+          "dur": 4.96,
+          "cards": [
+            {
+              "text": "胸を開く手術で、心臓の表面に、",
+              "start": 0.36,
+              "end": 3.04
+            },
+            {
+              "text": "シートを3枚貼る。",
+              "start": 3.19,
+              "end": 4.77
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "誰が受けるの？",
+          "expression": "neutral",
+          "t0": 21.22,
+          "dur": 1.56,
+          "cards": [
+            {
+              "text": "誰が受けるの？",
+              "start": 0.0,
+              "end": 1.56
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "心臓の血管が詰まるなどして、心臓の筋肉の一部が死んでしまった人。薬や手術を尽くしても、重い心不全が続く人が対象。",
+          "expression": "thinking",
+          "t0": 23.06,
+          "dur": 9.04,
+          "cards": [
+            {
+              "text": "心臓の血管が詰まるなどして、",
+              "start": 0.0,
+              "end": 2.1
+            },
+            {
+              "text": "心臓の筋肉の一部が死んでしまった人。",
+              "start": 2.26,
+              "end": 4.96
+            },
+            {
+              "text": "薬や手術を尽くしても、",
+              "start": 5.11,
+              "end": 6.83
+            },
+            {
+              "text": "重い心不全が続く人が対象。",
+              "start": 6.83,
+              "end": 8.87
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "心不全っていうのは、心臓のポンプの力が落ちて、体に血を送りきれなくなる状態のことね。息切れや疲れが出る。",
+          "expression": "neutral",
+          "t0": 32.38,
+          "dur": 8.36,
+          "cards": [
+            {
+              "text": "心不全っていうのは、",
+              "start": 0.0,
+              "end": 1.5
+            },
+            {
+              "text": "心臓のポンプの力が落ちて、",
+              "start": 1.5,
+              "end": 3.45
+            },
+            {
+              "text": "体に血を送りきれなくなる状態のことね。",
+              "start": 3.6,
+              "end": 6.45
+            },
+            {
+              "text": "息切れや疲れが出る。",
+              "start": 6.62,
+              "end": 8.12
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、それ、何人で試したの？",
+          "expression": "doubt",
+          "t0": 40.96,
+          "dur": 2.0,
+          "cards": [
+            {
+              "text": "で、それ、何人で試したの？",
+              "start": 0.0,
+              "end": 2.0
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「まず、製品の中身。名前はリハート。クオリプスという日本の会社が作ってる。」\n大輔「自分の細胞じゃなく、他人のiPS細胞から、心臓の筋肉の細胞を育てて、薄いシートにしてある。」\n沙織「それを、どうやって使うの？」\n大輔「胸を開く手術で、心臓の表面に、シートを3枚貼る。」\n沙織「誰が受けるの？」\n大輔「心臓の血管が詰まるなどして、心臓の筋肉の一部が死んでしまった人。薬や手術を尽くしても、重い心不全が続く人が対象。」\n沙織「心不全っていうのは、心臓のポンプの力が落ちて、体に血を送りきれなくなる状態のことね。息切れや疲れが出る。」\n沙織「で、それ、何人で試したの？」",
+      "narrator": "dialogue",
+      "lines_hash": "b78008faabb7",
+      "zoom_anchor": {
+        "x": 0.22,
+        "y": 0.35
+      }
+    },
+    {
+      "scene_id": 7,
+      "type": "check",
+      "bgm_role": "main",
+      "ken_burns": "static",
+      "round": 1,
+      "reference_index": 0,
+      "source_card": {
+        "kind": "report",
+        "source": "PMDA（医薬品医療機器総合機構）の審査報告書（2026年2月）",
+        "quote": "探索的な位置付けとして、少数例の患者を対象に非盲検非対照で実施された試験",
+        "quote_type": "原文",
+        "highlight": "少数例の患者",
+        "items": [
+          "参加: 8人（5つの医療機関、2019〜2024年）",
+          "全員がシートを貼った。比べる相手なし",
+          "本人も医師も、貼ったことを知っていた",
+          "第一の物差し: 半年後の心臓のポンプの力"
+        ],
+        "reference_index": 0
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "国の審査をする機関、PMDAの報告書。承認のもとになった試験に参加したのは、8人。",
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 6.84,
+          "cards": [
+            {
+              "text": "国の審査をする機関、PMDAの報告書。承認の",
+              "start": 0.0,
+              "end": 3.67
+            },
+            {
+              "text": "もとになった試験に参加したのは、8人。",
+              "start": 3.67,
+              "end": 6.84
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "8人！？ 国が認めるのに、たった8人なの？",
+          "expression": "surprised",
+          "t0": 7.12,
+          "dur": 4.0,
+          "cards": [
+            {
+              "text": "8人！？ 国が認めるのに、たった8人なの？",
+              "start": 0.0,
+              "end": 3.6
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "しかも、8人全員がシートを貼った。貼らなかった人のグループ、つまり比べる相手が、いないの。",
+          "expression": "doubt",
+          "tag": "weakness",
+          "t0": 11.4,
+          "dur": 6.44,
+          "cards": [
+            {
+              "text": "しかも、8人全員がシートを貼った。",
+              "start": 0.0,
+              "end": 2.46
+            },
+            {
+              "text": "貼らなかった人のグループ、",
+              "start": 2.67,
+              "end": 4.44
+            },
+            {
+              "text": "つまり比べる相手が、",
+              "start": 4.44,
+              "end": 5.81
+            },
+            {
+              "text": "いないの。",
+              "start": 5.96,
+              "end": 6.64
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "比べる相手がいないと、何が困るの？",
+          "expression": "thinking",
+          "t0": 18.12,
+          "dur": 2.68,
+          "cards": [
+            {
+              "text": "比べる相手がいないと、何が困るの？",
+              "start": 0.0,
+              "end": 2.68
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "良くなっても、シートのおかげか、シートを貼ったあとに薬の量を調整したり、心臓のリハビリを続けたりしたおかげか、区別がつかない。",
+          "expression": "doubt",
+          "t0": 21.08,
+          "dur": 8.6,
+          "cards": [
+            {
+              "text": "良くなっても、シートのおかげか、",
+              "start": 0.2,
+              "end": 2.27
+            },
+            {
+              "text": "シートを貼ったあとに薬の量を調整したり、",
+              "start": 2.42,
+              "end": 5.01
+            },
+            {
+              "text": "心臓のリハビリを続けたりしたおかげか、",
+              "start": 5.16,
+              "end": 7.62
+            },
+            {
+              "text": "区別がつかない。",
+              "start": 7.77,
+              "end": 8.8
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、本人も医師も、シートを貼ったと知っている。良くなったと感じやすいし、そう見えやすい。",
+          "expression": "doubt",
+          "t0": 29.9,
+          "dur": 6.12,
+          "cards": [
+            {
+              "text": "それに、本人も医師も、",
+              "start": 0.0,
+              "end": 1.43
+            },
+            {
+              "text": "シートを貼ったと知っている。",
+              "start": 1.43,
+              "end": 3.24
+            },
+            {
+              "text": "良くなったと感じやすいし、そう見えやすい。",
+              "start": 3.39,
+              "end": 6.12
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "なるほど。で、効いたかを判断する第一の物差し、つまり最初に決めた一番の目印は、心臓のポンプの力だね。1回ドクンと縮むたびに、心臓の中の血を、何%送り出せるか。",
+          "expression": "thinking",
+          "t0": 36.3,
+          "dur": 15.8,
+          "cards": [
+            {
+              "text": "なるほど。で、",
+              "start": 0.48,
+              "end": 1.83
+            },
+            {
+              "text": "効いたかを判断する第一の物差し、",
+              "start": 1.83,
+              "end": 4.9
+            },
+            {
+              "text": "つまり最初に決めた一番の目印は、",
+              "start": 5.08,
+              "end": 8.08
+            },
+            {
+              "text": "心臓のポンプの力だね。",
+              "start": 8.23,
+              "end": 10.34
+            },
+            {
+              "text": "1回ドクンと縮むたびに、",
+              "start": 10.34,
+              "end": 12.65
+            },
+            {
+              "text": "心臓の中の血を、何%送り出せるか。",
+              "start": 12.8,
+              "end": 15.66
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう。参加したのは、それが35%以下の人だけ。",
+          "expression": "neutral",
+          "t0": 52.38,
+          "dur": 3.36,
+          "cards": [
+            {
+              "text": "そう。参加したのは、",
+              "start": 0.0,
+              "end": 1.46
+            },
+            {
+              "text": "それが35%以下の人だけ。",
+              "start": 1.46,
+              "end": 3.36
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "心臓の中の血の、3分の1ほどしか送り出せない、重い人たちだけなのか。",
+          "expression": "surprised",
+          "t0": 56.02,
+          "dur": 5.44,
+          "cards": [
+            {
+              "text": "心臓の中の血の、",
+              "start": 0.0,
+              "end": 1.2
+            },
+            {
+              "text": "3分の1ほどしか送り出せない、",
+              "start": 1.2,
+              "end": 3.45
+            },
+            {
+              "text": "重い人たちだけなのか。",
+              "start": 3.6,
+              "end": 5.25
+            }
+          ]
+        }
+      ],
+      "image_asset": "cards/kl047_S07",
+      "narration": "沙織「国の審査をする機関、PMDAの報告書。承認のもとになった試験に参加したのは、8人。」\n大輔「8人！？ 国が認めるのに、たった8人なの？」\n沙織「しかも、8人全員がシートを貼った。貼らなかった人のグループ、つまり比べる相手が、いないの。」\n大輔「比べる相手がいないと、何が困るの？」\n沙織「良くなっても、シートのおかげか、シートを貼ったあとに薬の量を調整したり、心臓のリハビリを続けたりしたおかげか、区別がつかない。」\n沙織「それに、本人も医師も、シートを貼ったと知っている。良くなったと感じやすいし、そう見えやすい。」\n大輔「なるほど。で、効いたかを判断する第一の物差し、つまり最初に決めた一番の目印は、心臓のポンプの力だね。1回ドクンと縮むたびに、心臓の中の血を、何%送り出せるか。」\n沙織「そう。参加したのは、それが35%以下の人だけ。」\n大輔「心臓の中の血の、3分の1ほどしか送り出せない、重い人たちだけなのか。」\n［画面の資料カード］PMDA（医薬品医療機器総合機構）の審査報告書（2026年2月） 「探索的な位置付けとして、少数例の患者を対象に非盲検非対照で実施された試験」（原文） ・参加: 8人（5つの医療機関、2019〜2024年） ・全員がシートを貼った。比べる相手なし ・本人も医師も、貼ったことを知っていた ・第一の物差し: 半年後の心臓のポンプの力",
+      "narrator": "dialogue",
+      "lines_hash": "95433964e4bc"
+    },
+    {
+      "scene_id": 8,
+      "type": "check",
+      "bgm_role": "main",
+      "ken_burns": "static",
+      "round": 1,
+      "reference_index": 0,
+      "source_card": {
+        "kind": "report",
+        "source": "PMDA（医薬品医療機器総合機構）の審査報告書（2026年2月）",
+        "quote": "改善していると評価された患者数は、8例中2例",
+        "quote_type": "原文",
+        "highlight": "8例中2例",
+        "items": [
+          "最も上がった人: 32.7% → 47.7%",
+          "最も下がった人: 37.9% → 26.5%",
+          "超音波の画像は、粗いものが多かった",
+          "CTでは、良くなった2人とも「変わらず」"
+        ],
+        "reference_index": 0
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "結果。ポンプの力は、超音波の検査で、心臓の動きを映して測った。半年後に良くなったのは、8人中2人。",
+          "expression": "doubt",
+          "t0": 0.0,
+          "dur": 8.6,
+          "cards": [
+            {
+              "text": "結果。ポンプの力は、超音波の検査で、",
+              "start": 0.0,
+              "end": 3.44
+            },
+            {
+              "text": "心臓の動きを映して測った。",
+              "start": 3.59,
+              "end": 5.54
+            },
+            {
+              "text": "半年後に良くなったのは、",
+              "start": 5.54,
+              "end": 7.34
+            },
+            {
+              "text": "8人中2人。",
+              "start": 7.49,
+              "end": 8.71
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "2人だけ……。残りの6人は？",
+          "expression": "deflated",
+          "t0": 8.88,
+          "dur": 2.64,
+          "cards": [
+            {
+              "text": "2人だけ……。残りの6人は？",
+              "start": 0.0,
+              "end": 2.64
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ほぼ変わらない人と、下がった人。上がった人、下がった人の細かい数字は、カードに出しておくね。",
+          "expression": "neutral",
+          "t0": 11.8,
+          "dur": 5.36,
+          "cards": [
+            {
+              "text": "ほぼ変わらない人と、下がった人。",
+              "start": 0.0,
+              "end": 1.96
+            },
+            {
+              "text": "上がった人、下がった人の細かい数字は、",
+              "start": 2.11,
+              "end": 4.2
+            },
+            {
+              "text": "カードに出しておくね。",
+              "start": 4.35,
+              "end": 5.56
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "待って。カードに、超音波の画像は粗いものが多かった、とあるね。",
+          "expression": "thinking",
+          "t0": 17.44,
+          "dur": 5.96,
+          "cards": [
+            {
+              "text": "待って。カードに、超音波の画像は粗いものが",
+              "start": 0.0,
+              "end": 4.0
+            },
+            {
+              "text": "多かった、とあるね。",
+              "start": 4.15,
+              "end": 5.65
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう。だから、CTっていう、体の断面を撮る別の検査でも測ってる。そっちだと、超音波で「良くなった」2人は、どちらも「変わらず」だった。",
+          "expression": "neutral",
+          "t0": 23.68,
+          "dur": 9.44,
+          "cards": [
+            {
+              "text": "そう。だから、CTっていう、",
+              "start": 0.0,
+              "end": 1.88
+            },
+            {
+              "text": "体の断面を撮る別の検査でも測ってる。",
+              "start": 2.03,
+              "end": 4.64
+            },
+            {
+              "text": "そっちだと、超音波で「良くなった」2人は、",
+              "start": 4.79,
+              "end": 7.61
+            },
+            {
+              "text": "どちらも「変わらず」だった。",
+              "start": 7.76,
+              "end": 9.64
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "測り方を変えると、良くなった人が消えちゃうのか。",
+          "expression": "surprised",
+          "t0": 33.4,
+          "dur": 4.24,
+          "cards": [
+            {
+              "text": "測り方を変えると、",
+              "start": 0.45,
+              "end": 1.8
+            },
+            {
+              "text": "良くなった人が消えちゃうのか。",
+              "start": 1.8,
+              "end": 4.05
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、ポンプの力では、効いたとも、効かなかったとも、はっきり言えないのか。",
+          "expression": "thinking",
+          "t0": 37.86,
+          "dur": 5.88,
+          "cards": [
+            {
+              "text": "じゃあ、ポンプの力では、効いたとも、",
+              "start": 0.0,
+              "end": 2.93
+            },
+            {
+              "text": "効かなかったとも、はっきり言えないのか。",
+              "start": 3.08,
+              "end": 6.08
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "国が承認した、イコール、効くと確かめ終わった、じゃないんだね。",
+          "expression": "deflated",
+          "tag": "turn",
+          "t0": 43.96,
+          "dur": 5.32,
+          "cards": [
+            {
+              "text": "国が承認した、イコール、",
+              "start": 0.0,
+              "end": 2.0
+            },
+            {
+              "text": "効くと確かめ終わった、",
+              "start": 2.0,
+              "end": 3.84
+            },
+            {
+              "text": "じゃないんだね。",
+              "start": 4.06,
+              "end": 5.26
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "少なくとも、第一の物差しでは、はっきりした答えは出てない。",
+          "expression": "neutral",
+          "t0": 49.56,
+          "dur": 3.96,
+          "cards": [
+            {
+              "text": "少なくとも、第一の物差しでは、",
+              "start": 0.0,
+              "end": 2.17
+            },
+            {
+              "text": "はっきりした答えは出てない。",
+              "start": 2.32,
+              "end": 4.16
+            }
+          ]
+        }
+      ],
+      "image_asset": "cards/kl047_S08",
+      "narration": "沙織「結果。ポンプの力は、超音波の検査で、心臓の動きを映して測った。半年後に良くなったのは、8人中2人。」\n大輔「2人だけ……。残りの6人は？」\n沙織「ほぼ変わらない人と、下がった人。上がった人、下がった人の細かい数字は、カードに出しておくね。」\n大輔「待って。カードに、超音波の画像は粗いものが多かった、とあるね。」\n沙織「そう。だから、CTっていう、体の断面を撮る別の検査でも測ってる。そっちだと、超音波で「良くなった」2人は、どちらも「変わらず」だった。」\n大輔「測り方を変えると、良くなった人が消えちゃうのか。」\n大輔「じゃあ、ポンプの力では、効いたとも、効かなかったとも、はっきり言えないのか。」\n大輔「国が承認した、イコール、効くと確かめ終わった、じゃないんだね。」\n沙織「少なくとも、第一の物差しでは、はっきりした答えは出てない。」\n［画面の資料カード］PMDA（医薬品医療機器総合機構）の審査報告書（2026年2月） 「改善していると評価された患者数は、8例中2例」（原文） ・最も上がった人: 32.7% → 47.7% ・最も下がった人: 37.9% → 26.5% ・超音波の画像は、粗いものが多かった ・CTでは、良くなった2人とも「変わらず」",
+      "narrator": "dialogue",
+      "lines_hash": "0acfced50f1b"
+    },
+    {
+      "scene_id": 9,
+      "type": "paper",
+      "bgm_role": "main",
+      "ken_burns": "zoom_out",
+      "round": 2,
+      "round_title": "それでも、なぜ認められた？",
+      "image_prompt": "Bright daytime, an empty, clean hospital exercise-testing room: a stationary exercise bicycle in the center, a breathing mask with a hose hanging on a hook beside it, a medical monitor on a cart showing only blurred, unreadable soft wavy lines in teal, a blood-pressure cuff on a small table, large window with daylight, one warm coral accent light. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "でも、国は認めた。何か理由があるはずだよ。",
+          "expression": "thinking",
+          "t0": 0.0,
+          "dur": 3.76,
+          "cards": [
+            {
+              "text": "でも、国は認めた。何か理由があるはずだよ。",
+              "start": 0.0,
+              "end": 3.4
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "報告書では、ポンプの力だけじゃなく、ほかの物差しも合わせて、全体で判断してる。",
+          "expression": "neutral",
+          "t0": 4.04,
+          "dur": 5.36,
+          "cards": [
+            {
+              "text": "報告書では、ポンプの力だけじゃなく、",
+              "start": 0.0,
+              "end": 2.4
+            },
+            {
+              "text": "ほかの物差しも合わせて、全体で判断してる。",
+              "start": 2.55,
+              "end": 5.41
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "まず、息切れの段階。症状の重さを4つに分けたもの。参加したときは全員、重い方から2番目。ふつうの暮らしの軽い動きでも、息切れや疲れが出る段階だった。",
+          "expression": "excited",
+          "t0": 9.68,
+          "dur": 12.96,
+          "cards": [
+            {
+              "text": "まず、息切れの段階。",
+              "start": 0.32,
+              "end": 2.02
+            },
+            {
+              "text": "症状の重さを4つに分けたもの。",
+              "start": 2.02,
+              "end": 4.58
+            },
+            {
+              "text": "参加したときは全員、重い方から2番目。",
+              "start": 5.28,
+              "end": 8.13
+            },
+            {
+              "text": "ふつうの暮らしの軽い動きでも、",
+              "start": 8.28,
+              "end": 10.74
+            },
+            {
+              "text": "息切れや疲れが出る段階だった。",
+              "start": 10.89,
+              "end": 13.14
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "半年後には、8人全員の息切れが、一段以上軽くなってる。",
+          "expression": "excited",
+          "t0": 22.86,
+          "dur": 5.04,
+          "cards": [
+            {
+              "text": "半年後には、8人全員の息切れが、",
+              "start": 0.0,
+              "end": 3.0
+            },
+            {
+              "text": "一段以上軽くなってる。",
+              "start": 3.15,
+              "end": 4.8
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "でも、息切れの段階には弱点がある。本人の感じ方に近いの。本人も医師も貼ったと知ってるから、審査側も、気持ちの影響は否定できない、と書いてる。",
+          "expression": "doubt",
+          "t0": 28.18,
+          "dur": 10.24,
+          "cards": [
+            {
+              "text": "でも、息切れの段階には弱点がある。",
+              "start": 0.0,
+              "end": 2.38
+            },
+            {
+              "text": "本人の感じ方に近いの。本人も医師も貼ったと",
+              "start": 2.56,
+              "end": 5.66
+            },
+            {
+              "text": "知ってるから、審査側も、気持ちの影響は",
+              "start": 5.81,
+              "end": 8.47
+            },
+            {
+              "text": "否定できない、と書いてる。",
+              "start": 8.62,
+              "end": 10.44
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、運動の力の検査。体を動かしたときに、体がどれだけ酸素を使えるかを測る検査で、1年後に、10%以上増えた人が4人いた。",
+          "expression": "excited",
+          "t0": 38.7,
+          "dur": 12.28,
+          "cards": [
+            {
+              "text": "じゃあ、運動の力の検査。",
+              "start": 0.0,
+              "end": 2.69
+            },
+            {
+              "text": "体を動かしたときに、",
+              "start": 2.69,
+              "end": 4.94
+            },
+            {
+              "text": "体がどれだけ酸素を使えるかを測る検査で、",
+              "start": 5.09,
+              "end": 8.09
+            },
+            {
+              "text": "1年後に、10%以上増えた人が4人いた。",
+              "start": 8.24,
+              "end": 12.48
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "8人中4人ね。10%以上は、意味のある変化だと審査側も書いてる。ただ、心臓のリハビリや、検査のときのやる気の影響も、否定できない、とも。",
+          "expression": "neutral",
+          "t0": 51.26,
+          "dur": 10.72,
+          "cards": [
+            {
+              "text": "8人中4人ね。10%以上は、",
+              "start": 0.0,
+              "end": 2.37
+            },
+            {
+              "text": "意味のある変化だと審査側も書いてる。ただ、",
+              "start": 2.52,
+              "end": 5.67
+            },
+            {
+              "text": "心臓のリハビリや、",
+              "start": 5.82,
+              "end": 7.17
+            },
+            {
+              "text": "検査のときのやる気の影響も、",
+              "start": 7.17,
+              "end": 9.27
+            },
+            {
+              "text": "否定できない、とも。",
+              "start": 9.42,
+              "end": 10.92
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「でも、国は認めた。何か理由があるはずだよ。」\n沙織「報告書では、ポンプの力だけじゃなく、ほかの物差しも合わせて、全体で判断してる。」\n大輔「まず、息切れの段階。症状の重さを4つに分けたもの。参加したときは全員、重い方から2番目。ふつうの暮らしの軽い動きでも、息切れや疲れが出る段階だった。」\n大輔「半年後には、8人全員の息切れが、一段以上軽くなってる。」\n沙織「でも、息切れの段階には弱点がある。本人の感じ方に近いの。本人も医師も貼ったと知ってるから、審査側も、気持ちの影響は否定できない、と書いてる。」\n大輔「じゃあ、運動の力の検査。体を動かしたときに、体がどれだけ酸素を使えるかを測る検査で、1年後に、10%以上増えた人が4人いた。」\n沙織「8人中4人ね。10%以上は、意味のある変化だと審査側も書いてる。ただ、心臓のリハビリや、検査のときのやる気の影響も、否定できない、とも。」",
+      "narrator": "dialogue",
+      "lines_hash": "a1a34ab78169",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 10,
+      "type": "check",
+      "bgm_role": "main",
+      "ken_burns": "static",
+      "round": 2,
+      "reference_index": 0,
+      "image_prompt": "A simple, clean flat infographic horizontal bar chart on a plain light background, with no title. Three horizontal bars stacked vertically, each starting from the same left baseline at zero, on a shared horizontal scale from 0 to 8 people (the full length of the scale represents 8). Bar 1 (top), labeled at its left exactly 「心臓のポンプの力（半年後）」, length 2 out of 8, teal, with the value label 「2人」 at its right end. Bar 2 (middle), labeled exactly 「運動の力（1年後）」, length 4 out of 8, teal, with the value label 「4人」 at its right end. Bar 3 (bottom), labeled exactly 「息切れの段階（半年後）」, length 8 out of 8 (full length), warm coral, with the value label 「8人」 at its right end. A thin light-gray outline behind each bar shows the full length of 8. Below the three bars, one small gray caption exactly 「良くなった人（8人中）」. Exactly seven text labels in total: 「心臓のポンプの力（半年後）」「運動の力（1年後）」「息切れの段階（半年後）」「2人」「4人」「8人」「良くなった人（8人中）」, each written exactly as given; no other text, numbers, tick marks, icons, people or logos. Bar lengths must be exactly proportional (2, 4, 8 out of 8). Make the whole chart compact so that everything sits within the central 75 percent of the picture width and within the top 70 percent of the picture height, with a large empty light area at the bottom (the lower 30 percent of the picture must be completely empty).",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "測った時期は少し違うけど、並べると、こう。良くなった人は、ポンプの力で2人、運動の力で4人、息切れの段階で8人。",
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 9.6,
+          "cards": [
+            {
+              "text": "測った時期は少し違うけど、並べると、こう。",
+              "start": 0.2,
+              "end": 3.35
+            },
+            {
+              "text": "良くなった人は、ポンプの力で2人、",
+              "start": 3.5,
+              "end": 6.76
+            },
+            {
+              "text": "運動の力で4人、息切れの段階で8人。",
+              "start": 6.91,
+              "end": 9.8
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "機械で測る数字ほど、良くなった人が少ない。本人の感じ方に近いほど、多い。",
+          "expression": "thinking",
+          "t0": 9.88,
+          "dur": 6.32,
+          "cards": [
+            {
+              "text": "機械で測る数字ほど、良くなった人が少ない。",
+              "start": 0.0,
+              "end": 3.22
+            },
+            {
+              "text": "本人の感じ方に近いほど、多い。",
+              "start": 3.7,
+              "end": 5.95
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう。機械で測る数字と、本人の感じ方の、この食い違いを、審査側もはっきり書いてる。次の資料がそれ。",
+          "expression": "doubt",
+          "t0": 16.48,
+          "dur": 6.84,
+          "cards": [
+            {
+              "text": "そう。機械で測る数字と、本人の感じ方の、",
+              "start": 0.17,
+              "end": 2.87
+            },
+            {
+              "text": "この食い違いを、審査側もはっきり書いてる。",
+              "start": 3.02,
+              "end": 5.82
+            },
+            {
+              "text": "次の資料がそれ。",
+              "start": 5.97,
+              "end": 7.04
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「測った時期は少し違うけど、並べると、こう。良くなった人は、ポンプの力で2人、運動の力で4人、息切れの段階で8人。」\n大輔「機械で測る数字ほど、良くなった人が少ない。本人の感じ方に近いほど、多い。」\n沙織「そう。機械で測る数字と、本人の感じ方の、この食い違いを、審査側もはっきり書いてる。次の資料がそれ。」",
+      "narrator": "dialogue",
+      "lines_hash": "35ab4e0819eb"
+    },
+    {
+      "scene_id": 11,
+      "type": "check",
+      "bgm_role": "main",
+      "ken_burns": "static",
+      "round": 2,
+      "reference_index": 0,
+      "source_card": {
+        "kind": "report",
+        "source": "PMDA（医薬品医療機器総合機構）の審査報告書（2026年2月）",
+        "quote": "一部の客観的評価項目について悪化があるにもかかわらず、症状改善から有効と判断することには限界があり",
+        "quote_type": "原文",
+        "highlight": "限界があり",
+        "items": [
+          "試験をした医師の評価: 1年後に8人全員「有効」",
+          "試験の外部委員会（専門家3人）も「妥当」",
+          "国の審査側: その判定は慎重に、と注文"
+        ],
+        "reference_index": 0
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "試験をした医師たちの評価では、1年後に8人全員が「有効」。",
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 4.72,
+          "cards": [
+            {
+              "text": "試験をした医師たちの評価では、",
+              "start": 0.0,
+              "end": 2.25
+            },
+            {
+              "text": "1年後に8人全員が「有効」。",
+              "start": 2.4,
+              "end": 4.92
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "全員！ やっぱり効いてるじゃない。",
+          "expression": "excited",
+          "t0": 5.0,
+          "dur": 2.96,
+          "cards": [
+            {
+              "text": "全員！ やっぱり効いてるじゃない。",
+              "start": 0.0,
+              "end": 2.96
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "試験の中に置かれた、外部の専門家3人の委員会も、それでいい、と確かめてる。国の審査とは別の委員会ね。",
+          "expression": "neutral",
+          "t0": 8.24,
+          "dur": 7.16,
+          "cards": [
+            {
+              "text": "試験の中に置かれた、",
+              "start": 0.0,
+              "end": 1.37
+            },
+            {
+              "text": "外部の専門家3人の委員会も、",
+              "start": 1.37,
+              "end": 3.29
+            },
+            {
+              "text": "それでいい、と確かめてる。国の審査とは",
+              "start": 3.44,
+              "end": 6.18
+            },
+            {
+              "text": "別の委員会ね。",
+              "start": 6.33,
+              "end": 7.29
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "でも、国の審査側は、こう書いてる。客観的な検査で悪くなった項目があるのに、症状が良くなったから有効、とするのは限界がある。",
+          "expression": "doubt",
+          "t0": 15.62,
+          "dur": 9.32,
+          "cards": [
+            {
+              "text": "でも、国の審査側は、こう書いてる。",
+              "start": 0.0,
+              "end": 2.52
+            },
+            {
+              "text": "客観的な検査で悪くなった項目があるのに、",
+              "start": 2.86,
+              "end": 5.82
+            },
+            {
+              "text": "症状が良くなったから有効、",
+              "start": 5.97,
+              "end": 7.89
+            },
+            {
+              "text": "とするのは限界がある。",
+              "start": 7.89,
+              "end": 9.52
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "国の審査側が、自分で「限界」って書いてるのか。客観的な検査っていうのは、さっきのポンプの力みたいに、機械で測る数字のことだね。",
+          "expression": "surprised",
+          "t0": 25.22,
+          "dur": 10.64,
+          "cards": [
+            {
+              "text": "国の審査側が、自分で「限界」",
+              "start": 0.0,
+              "end": 2.78
+            },
+            {
+              "text": "って書いてるのか。",
+              "start": 2.93,
+              "end": 4.38
+            },
+            {
+              "text": "客観的な検査っていうのは、",
+              "start": 4.38,
+              "end": 6.47
+            },
+            {
+              "text": "さっきのポンプの力みたいに、",
+              "start": 6.62,
+              "end": 8.72
+            },
+            {
+              "text": "機械で測る数字のことだね。",
+              "start": 8.87,
+              "end": 10.83
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "だから、「全員有効」を、そのまま「全員治った」と受け取るのは無理。",
+          "expression": "doubt",
+          "t0": 36.14,
+          "dur": 5.08,
+          "cards": [
+            {
+              "text": "だから、「全員有効」を、",
+              "start": 0.0,
+              "end": 1.84
+            },
+            {
+              "text": "そのまま「全員治った」",
+              "start": 1.84,
+              "end": 3.52
+            },
+            {
+              "text": "と受け取るのは無理。",
+              "start": 3.67,
+              "end": 5.16
+            }
+          ]
+        }
+      ],
+      "image_asset": "cards/kl047_S11",
+      "narration": "沙織「試験をした医師たちの評価では、1年後に8人全員が「有効」。」\n大輔「全員！ やっぱり効いてるじゃない。」\n沙織「試験の中に置かれた、外部の専門家3人の委員会も、それでいい、と確かめてる。国の審査とは別の委員会ね。」\n沙織「でも、国の審査側は、こう書いてる。客観的な検査で悪くなった項目があるのに、症状が良くなったから有効、とするのは限界がある。」\n大輔「国の審査側が、自分で「限界」って書いてるのか。客観的な検査っていうのは、さっきのポンプの力みたいに、機械で測る数字のことだね。」\n沙織「だから、「全員有効」を、そのまま「全員治った」と受け取るのは無理。」\n［画面の資料カード］PMDA（医薬品医療機器総合機構）の審査報告書（2026年2月） 「一部の客観的評価項目について悪化があるにもかかわらず、症状改善から有効と判断することには限界があり」（原文） ・試験をした医師の評価: 1年後に8人全員「有効」 ・試験の外部委員会（専門家3人）も「妥当」 ・国の審査側: その判定は慎重に、と注文",
+      "narrator": "dialogue",
+      "lines_hash": "8a3d75bed006"
+    },
+    {
+      "scene_id": 12,
+      "type": "check",
+      "bgm_role": "main",
+      "ken_burns": "static",
+      "round": 2,
+      "reference_index": 0,
+      "source_card": {
+        "kind": "report",
+        "source": "PMDA（医薬品医療機器総合機構）の審査報告書（2026年2月）",
+        "quote": "一度壊死した心筋が自然に回復し心機能に関連する指標等が改善することは期待できないため",
+        "quote_type": "原文",
+        "highlight": "自然に回復",
+        "items": [
+          "比べる相手がいない弱さは、審査側も認める",
+          "ただ、その点を踏まえた評価はできる、とする",
+          "なぜ効くかは、ヒトでは分かっていない",
+          "ラットでは、細胞が出す物質が働く可能性"
+        ],
+        "reference_index": 0
+      },
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "でも、同じ報告書に、こうも書いてある。一度死んでしまった心臓の筋肉は、自然には元に戻らない。",
+          "expression": "excited",
+          "t0": 0.0,
+          "dur": 6.68,
+          "cards": [
+            {
+              "text": "でも、同じ報告書に、こうも書いてある。",
+              "start": 0.0,
+              "end": 2.64
+            },
+            {
+              "text": "一度死んでしまった心臓の筋肉は、",
+              "start": 2.79,
+              "end": 5.01
+            },
+            {
+              "text": "自然には元に戻らない。",
+              "start": 5.16,
+              "end": 6.69
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "この8人は、薬や手術を尽くしても、心不全が続いていた人たち。良くなった人がいるのは、たまたま自然に良くなったから、とは言いにくい。審査側も、そこを踏まえれば、比べる相手がいなくても評価はできる、って。",
+          "expression": "excited",
+          "t0": 6.9,
+          "dur": 14.64,
+          "cards": [
+            {
+              "text": "この8人は、薬や手術を尽くしても、",
+              "start": 0.0,
+              "end": 2.58
+            },
+            {
+              "text": "心不全が続いていた人たち。",
+              "start": 2.73,
+              "end": 4.56
+            },
+            {
+              "text": "良くなった人がいるのは、",
+              "start": 4.56,
+              "end": 6.24
+            },
+            {
+              "text": "たまたま自然に良くなったから、",
+              "start": 6.39,
+              "end": 8.5
+            },
+            {
+              "text": "とは言いにくい。審査側も、",
+              "start": 8.65,
+              "end": 10.48
+            },
+            {
+              "text": "そこを踏まえれば、",
+              "start": 10.48,
+              "end": 11.74
+            },
+            {
+              "text": "比べる相手がいなくても評価はできる、って。",
+              "start": 11.89,
+              "end": 14.84
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "……放っておいて良くならない人たち、という点は認める。良くなった人がいるのは、偶然じゃなさそう。そこは、私が厳しく見すぎてた。",
+          "expression": "convinced",
+          "tag": "turn",
+          "t0": 21.82,
+          "dur": 8.44,
+          "cards": [
+            {
+              "text": "……放っておいて良くならない人たち、",
+              "start": 0.0,
+              "end": 2.38
+            },
+            {
+              "text": "という点は認める。良くなった人がいるのは、",
+              "start": 2.53,
+              "end": 5.24
+            },
+            {
+              "text": "偶然じゃなさそう。そこは、",
+              "start": 5.39,
+              "end": 7.07
+            },
+            {
+              "text": "私が厳しく見すぎてた。",
+              "start": 7.07,
+              "end": 8.49
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、最初に言った心配は残る。シートを貼ったあとの薬の調整やリハビリ、やる気の分を、どれだけ差し引けばいいかは、この8人だけでは分からない。",
+          "expression": "thinking",
+          "t0": 30.48,
+          "dur": 9.72,
+          "cards": [
+            {
+              "text": "ただ、最初に言った心配は残る。",
+              "start": 0.0,
+              "end": 2.18
+            },
+            {
+              "text": "シートを貼ったあとの薬の調整やリハビリ、",
+              "start": 2.33,
+              "end": 4.99
+            },
+            {
+              "text": "やる気の分を、どれだけ差し引けばいいかは、",
+              "start": 5.14,
+              "end": 7.92
+            },
+            {
+              "text": "この8人だけでは分からない。",
+              "start": 8.07,
+              "end": 9.92
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "貼ったあとの薬やリハビリの分は、比べる相手がいないと分からない、か。少なくとも、全く効かない、という資料は無い。",
+          "expression": "thinking",
+          "t0": 40.48,
+          "dur": 9.68,
+          "cards": [
+            {
+              "text": "貼ったあとの薬やリハビリの分は、",
+              "start": 0.38,
+              "end": 2.78
+            },
+            {
+              "text": "比べる相手がいないと分からない、か。",
+              "start": 3.3,
+              "end": 6.0
+            },
+            {
+              "text": "少なくとも、全く効かない、",
+              "start": 6.15,
+              "end": 8.1
+            },
+            {
+              "text": "という資料は無い。",
+              "start": 8.1,
+              "end": 9.45
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それと、なぜ効くのかも、ヒトでは分かってない。ラットというネズミの実験で、シートの細胞が出す物質が、周りの弱った心臓に働きかけている可能性がある、というところまで。",
+          "expression": "thinking",
+          "t0": 50.44,
+          "dur": 11.88,
+          "cards": [
+            {
+              "text": "それと、なぜ効くのかも、",
+              "start": 0.0,
+              "end": 1.65
+            },
+            {
+              "text": "ヒトでは分かってない。",
+              "start": 1.65,
+              "end": 3.16
+            },
+            {
+              "text": "ラットというネズミの実験で、",
+              "start": 3.31,
+              "end": 5.44
+            },
+            {
+              "text": "シートの細胞が出す物質が、周りの弱った",
+              "start": 5.59,
+              "end": 8.2
+            },
+            {
+              "text": "心臓に働きかけている可能性がある、",
+              "start": 8.35,
+              "end": 10.69
+            },
+            {
+              "text": "というところまで。",
+              "start": 10.84,
+              "end": 12.08
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "貼った細胞は、どれくらいの間、心臓に残るの？",
+          "expression": "thinking",
+          "t0": 62.6,
+          "dur": 3.28,
+          "cards": [
+            {
+              "text": "貼った細胞は、どれくらいの間、",
+              "start": 0.2,
+              "end": 2.33
+            },
+            {
+              "text": "心臓に残るの？",
+              "start": 2.48,
+              "end": 3.48
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ヒトでは調べてない。ラットでは、時間とともに減っていく。",
+          "expression": "neutral",
+          "t0": 66.16,
+          "dur": 3.56,
+          "cards": [
+            {
+              "text": "ヒトでは調べてない。ラットでは、",
+              "start": 0.07,
+              "end": 2.02
+            },
+            {
+              "text": "時間とともに減っていく。",
+              "start": 2.17,
+              "end": 3.63
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、新しい筋肉が足されて、ずっと働く、とまでは言えないのか。",
+          "expression": "deflated",
+          "t0": 70.0,
+          "dur": 5.08,
+          "cards": [
+            {
+              "text": "じゃあ、新しい筋肉が足されて、ずっと働く、",
+              "start": 0.0,
+              "end": 3.24
+            },
+            {
+              "text": "とまでは言えないのか。",
+              "start": 3.39,
+              "end": 5.04
+            }
+          ]
+        }
+      ],
+      "image_asset": "cards/kl047_S12",
+      "narration": "大輔「でも、同じ報告書に、こうも書いてある。一度死んでしまった心臓の筋肉は、自然には元に戻らない。」\n大輔「この8人は、薬や手術を尽くしても、心不全が続いていた人たち。良くなった人がいるのは、たまたま自然に良くなったから、とは言いにくい。審査側も、そこを踏まえれば、比べる相手がいなくても評価はできる、って。」\n沙織「……放っておいて良くならない人たち、という点は認める。良くなった人がいるのは、偶然じゃなさそう。そこは、私が厳しく見すぎてた。」\n沙織「ただ、最初に言った心配は残る。シートを貼ったあとの薬の調整やリハビリ、やる気の分を、どれだけ差し引けばいいかは、この8人だけでは分からない。」\n大輔「貼ったあとの薬やリハビリの分は、比べる相手がいないと分からない、か。少なくとも、全く効かない、という資料は無い。」\n沙織「それと、なぜ効くのかも、ヒトでは分かってない。ラットというネズミの実験で、シートの細胞が出す物質が、周りの弱った心臓に働きかけている可能性がある、というところまで。」\n大輔「貼った細胞は、どれくらいの間、心臓に残るの？」\n沙織「ヒトでは調べてない。ラットでは、時間とともに減っていく。」\n大輔「じゃあ、新しい筋肉が足されて、ずっと働く、とまでは言えないのか。」\n［画面の資料カード］PMDA（医薬品医療機器総合機構）の審査報告書（2026年2月） 「一度壊死した心筋が自然に回復し心機能に関連する指標等が改善することは期待できないため」（原文） ・比べる相手がいない弱さは、審査側も認める ・ただ、その点を踏まえた評価はできる、とする ・なぜ効くかは、ヒトでは分かっていない ・ラットでは、細胞が出す物質が働く可能性",
+      "narrator": "dialogue",
+      "lines_hash": "bb573730f1f5"
+    },
+    {
+      "scene_id": 13,
+      "type": "paper",
+      "bgm_role": "main",
+      "ken_burns": "zoom_out",
+      "round": 3,
+      "round_title": "期限つきの承認、何を確かめる？",
+      "image_prompt": "Bright, calm, empty modern cardiac operating room in clean daylight-white lighting: an operating table in the center under large round surgical lights, neatly arranged sterile instrument trays covered with teal drapes, monitors on booms showing only blurred unreadable lines, a soft warm coral glow from one light. No people, no patient. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "それで、国が出したのは、ふつうの承認じゃない。条件と期限つきの承認。",
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 4.92,
+          "cards": [
+            {
+              "text": "それで、国が出したのは、",
+              "start": 0.0,
+              "end": 1.69
+            },
+            {
+              "text": "ふつうの承認じゃない。",
+              "start": 1.69,
+              "end": 3.23
+            },
+            {
+              "text": "条件と期限つきの承認。",
+              "start": 3.38,
+              "end": 5.12
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "条件と期限つきって、どういうこと？",
+          "expression": "thinking",
+          "t0": 5.2,
+          "dur": 5.16,
+          "cards": [
+            {
+              "text": "条件と期限つきって、どういうこと？",
+              "start": 0.0,
+              "end": 5.16
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "運転の仮免許に近い。条件を守れば、道路を走っていい。でも、期限までに、本番の試験を受けなきゃいけない。",
+          "expression": "neutral",
+          "t0": 10.64,
+          "dur": 6.96,
+          "cards": [
+            {
+              "text": "運転の仮免許に近い。条件を守れば、",
+              "start": 0.0,
+              "end": 2.42
+            },
+            {
+              "text": "道路を走っていい。でも、期限までに、",
+              "start": 2.57,
+              "end": 4.92
+            },
+            {
+              "text": "本番の試験を受けなきゃいけない。",
+              "start": 5.07,
+              "end": 7.16
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "道路を走るっていうのは、実際に患者さんに使うこと？",
+          "expression": "thinking",
+          "t0": 17.88,
+          "dur": 4.0,
+          "cards": [
+            {
+              "text": "道路を走るっていうのは、",
+              "start": 0.0,
+              "end": 1.8
+            },
+            {
+              "text": "実際に患者さんに使うこと？",
+              "start": 1.8,
+              "end": 3.75
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう。保険で使える、本物の治療としてね。条件は、使った人を全員追いかけて調べること。それと、経験の深い医師が、体制の整った病院で使うこと。期限は7年。",
+          "expression": "neutral",
+          "t0": 22.16,
+          "dur": 12.16,
+          "cards": [
+            {
+              "text": "そう。保険で使える、本物の治療としてね。",
+              "start": 0.0,
+              "end": 3.0
+            },
+            {
+              "text": "条件は、",
+              "start": 3.38,
+              "end": 4.02
+            },
+            {
+              "text": "使った人を全員追いかけて調べること。",
+              "start": 4.02,
+              "end": 6.88
+            },
+            {
+              "text": "それと、経験の深い医師が、体制の整った",
+              "start": 7.03,
+              "end": 10.09
+            },
+            {
+              "text": "病院で使うこと。期限は7年。",
+              "start": 10.24,
+              "end": 12.34
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "7年のうちに、使った人のデータを集めて、もう一度、承認を申請し直すんだね。そこで、改めて審査される。",
+          "expression": "thinking",
+          "t0": 34.6,
+          "dur": 7.96,
+          "cards": [
+            {
+              "text": "7年のうちに、使った人のデータを集めて、",
+              "start": 0.0,
+              "end": 3.0
+            },
+            {
+              "text": "もう一度、承認を申請し直すんだね。そこで、",
+              "start": 3.15,
+              "end": 6.49
+            },
+            {
+              "text": "改めて審査される。",
+              "start": 6.64,
+              "end": 7.99
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕なら、この7年をこう使う。最初に、何人で、何と比べて、何が良くなったら効いたと言えるかを、決めておく。",
+          "expression": "excited",
+          "tag": "use_case",
+          "t0": 42.78,
+          "dur": 8.36,
+          "cards": [
+            {
+              "text": "僕なら、この7年をこう使う。最初に、",
+              "start": 0.0,
+              "end": 3.16
+            },
+            {
+              "text": "何人で、何と比べて、何が良くなったら",
+              "start": 3.31,
+              "end": 6.01
+            },
+            {
+              "text": "効いたと言えるかを、決めておく。",
+              "start": 6.16,
+              "end": 8.56
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それなら、もう計画の案が、報告書に載ってる。",
+          "expression": "neutral",
+          "t0": 51.42,
+          "dur": 3.36,
+          "cards": [
+            {
+              "text": "それなら、もう計画の案が、",
+              "start": 0.0,
+              "end": 1.95
+            },
+            {
+              "text": "報告書に載ってる。",
+              "start": 1.95,
+              "end": 3.3
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「それで、国が出したのは、ふつうの承認じゃない。条件と期限つきの承認。」\n大輔「条件と期限つきって、どういうこと？」\n沙織「運転の仮免許に近い。条件を守れば、道路を走っていい。でも、期限までに、本番の試験を受けなきゃいけない。」\n大輔「道路を走るっていうのは、実際に患者さんに使うこと？」\n沙織「そう。保険で使える、本物の治療としてね。条件は、使った人を全員追いかけて調べること。それと、経験の深い医師が、体制の整った病院で使うこと。期限は7年。」\n大輔「7年のうちに、使った人のデータを集めて、もう一度、承認を申請し直すんだね。そこで、改めて審査される。」\n大輔「僕なら、この7年をこう使う。最初に、何人で、何と比べて、何が良くなったら効いたと言えるかを、決めておく。」\n沙織「それなら、もう計画の案が、報告書に載ってる。」",
+      "narrator": "dialogue",
+      "lines_hash": "e77bb3bd52a8",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 14,
+      "type": "check",
+      "bgm_role": "main",
+      "ken_burns": "static",
+      "round": 3,
+      "reference_index": 0,
+      "source_card": {
+        "kind": "report",
+        "source": "PMDA（医薬品医療機器総合機構）の審査報告書（2026年2月） 表34（計画の案）",
+        "quote_type": "要約",
+        "items": [
+          "シートを受けた人を全員追いかける調査",
+          "効き目を見るのは75人分のデータ",
+          "比べる相手: 別の研究の似た患者150人",
+          "合格の目印: 1年後、運動の力が10%以上増え",
+          "かつ心臓が大きく広がっていない人の割合"
+        ],
+        "reference_index": 0
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "シートを受けた人を、全員追いかける調査。そのうち75人分のデータで、効き目を確かめる。",
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 6.0,
+          "cards": [
+            {
+              "text": "シートを受けた人を、全員追いかける調査。",
+              "start": 0.0,
+              "end": 2.85
+            },
+            {
+              "text": "そのうち75人分のデータで、",
+              "start": 3.0,
+              "end": 4.86
+            },
+            {
+              "text": "効き目を確かめる。",
+              "start": 5.01,
+              "end": 6.2
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "比べる相手は？ 胸を開く手術だと、くじ引きで、貼る人と貼らない人に分けるのは難しいよね。",
+          "expression": "thinking",
+          "t0": 6.28,
+          "dur": 7.04,
+          "cards": [
+            {
+              "text": "比べる相手は？ 胸を開く手術だと、",
+              "start": 0.0,
+              "end": 2.89
+            },
+            {
+              "text": "くじ引きで、貼る人と貼らない人に分ける",
+              "start": 3.04,
+              "end": 5.89
+            },
+            {
+              "text": "のは難しいよね。",
+              "start": 6.04,
+              "end": 7.24
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "報告書にも、倫理的に難しい、とある。だから、別の研究で、ふつうの治療だけを受けている似た患者を集めて、比べる相手にする。150人の予定。",
+          "expression": "neutral",
+          "t0": 13.6,
+          "dur": 11.0,
+          "cards": [
+            {
+              "text": "報告書にも、倫理的に難しい、とある。",
+              "start": 0.0,
+              "end": 2.82
+            },
+            {
+              "text": "だから、別の研究で、ふつうの治療だけを",
+              "start": 2.97,
+              "end": 6.25
+            },
+            {
+              "text": "受けている似た患者を集めて、",
+              "start": 6.4,
+              "end": 8.5
+            },
+            {
+              "text": "比べる相手にする。150人の予定。",
+              "start": 8.65,
+              "end": 11.2
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "カードの下の2行が、合格の目印か。1年後に、運動の力が10%以上増えて、しかも心臓の大きさが広がっていない人の割合。それを、比べる相手と比べる。",
+          "expression": "thinking",
+          "t0": 24.88,
+          "dur": 16.48,
+          "cards": [
+            {
+              "text": "カードの下の2行が、合格の目印か。",
+              "start": 0.0,
+              "end": 3.3
+            },
+            {
+              "text": "1年後に、運動の力が10%以上増えて、",
+              "start": 3.45,
+              "end": 8.63
+            },
+            {
+              "text": "しかも心臓の大きさが",
+              "start": 8.78,
+              "end": 10.78
+            },
+            {
+              "text": "広がっていない人の割合。",
+              "start": 10.78,
+              "end": 13.18
+            },
+            {
+              "text": "それを、比べる相手と比べる。",
+              "start": 13.33,
+              "end": 16.23
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "心臓の大きさまで見るのは、なぜだと思う？",
+          "expression": "neutral",
+          "t0": 41.64,
+          "dur": 2.96,
+          "cards": [
+            {
+              "text": "心臓の大きさまで見るのは、なぜだと思う？",
+              "start": 0.0,
+              "end": 2.96
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "運動の力だけだと、やる気でも変わるから、心臓の大きさも一緒に見るのか。",
+          "expression": "convinced",
+          "t0": 44.88,
+          "dur": 5.84,
+          "cards": [
+            {
+              "text": "運動の力だけだと、やる気でも変わるから、",
+              "start": 0.0,
+              "end": 3.0
+            },
+            {
+              "text": "心臓の大きさも一緒に見るのか。",
+              "start": 3.36,
+              "end": 5.61
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "その通り。報告書にも、やる気の影響を受けにくい物差しとして足した、とある。",
+          "expression": "convinced",
+          "t0": 51.0,
+          "dur": 5.76,
+          "cards": [
+            {
+              "text": "その通り。報告書にも、やる気の影響を受け",
+              "start": 0.0,
+              "end": 3.26
+            },
+            {
+              "text": "にくい物差しとして足した、とある。",
+              "start": 3.41,
+              "end": 5.96
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でも、心臓は大きくならない方がいいの？",
+          "expression": "thinking",
+          "t0": 57.04,
+          "dur": 2.96,
+          "cards": [
+            {
+              "text": "でも、心臓は大きくならない方がいいの？",
+              "start": 0.0,
+              "end": 2.96
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "報告書には、この病気では、心臓が大きく広がって、動きが弱っていく、と書いてある。心臓の大きさが小さくなった人ほど、亡くなる危険が下がった、という別の研究も引いてある。",
+          "expression": "neutral",
+          "t0": 60.28,
+          "dur": 10.0,
+          "cards": [
+            {
+              "text": "報告書には、この病気では、",
+              "start": 0.0,
+              "end": 1.58
+            },
+            {
+              "text": "心臓が大きく広がって、",
+              "start": 1.58,
+              "end": 2.91
+            },
+            {
+              "text": "動きが弱っていく、と書いてある。",
+              "start": 3.06,
+              "end": 4.87
+            },
+            {
+              "text": "心臓の大きさが小さくなった人ほど、",
+              "start": 5.02,
+              "end": 6.95
+            },
+            {
+              "text": "亡くなる危険が下がった、という別の研究も",
+              "start": 7.1,
+              "end": 9.37
+            },
+            {
+              "text": "引いてある。",
+              "start": 9.52,
+              "end": 10.2
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "この人たちは、何もしなければ、今の状態を保つのも難しい。だから、大きく広がらずに保てていれば、合格に数える。",
+          "expression": "neutral",
+          "t0": 70.5,
+          "dur": 7.28,
+          "cards": [
+            {
+              "text": "この人たちは、何もしなければ、",
+              "start": 0.0,
+              "end": 1.98
+            },
+            {
+              "text": "今の状態を保つのも難しい。だから、",
+              "start": 2.13,
+              "end": 4.37
+            },
+            {
+              "text": "大きく広がらずに保てていれば、",
+              "start": 4.52,
+              "end": 6.42
+            },
+            {
+              "text": "合格に数える。",
+              "start": 6.57,
+              "end": 7.46
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、くじ引きで分けた比べ方じゃないから、似た人を選んでも、見えない違いは残る。審査側も、実施できるかを考えると、やむを得ない、という書き方。",
+          "expression": "doubt",
+          "t0": 78.0,
+          "dur": 11.08,
+          "cards": [
+            {
+              "text": "ただ、くじ引きで分けた比べ方じゃないから、",
+              "start": 0.0,
+              "end": 3.14
+            },
+            {
+              "text": "似た人を選んでも、見えない違いは残る。",
+              "start": 3.29,
+              "end": 6.13
+            },
+            {
+              "text": "審査側も、実施できるかを考えると、",
+              "start": 6.28,
+              "end": 8.98
+            },
+            {
+              "text": "やむを得ない、という書き方。",
+              "start": 9.13,
+              "end": 11.23
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "似た人どうしを選んでも、数字に出ない違いまでは、そろえきれないってことか。",
+          "expression": "thinking",
+          "t0": 89.36,
+          "dur": 5.48,
+          "cards": [
+            {
+              "text": "似た人どうしを選んでも、",
+              "start": 0.0,
+              "end": 1.73
+            },
+            {
+              "text": "数字に出ない違いまでは、",
+              "start": 1.73,
+              "end": 3.46
+            },
+            {
+              "text": "そろえきれないってことか。",
+              "start": 3.61,
+              "end": 5.68
+            }
+          ]
+        }
+      ],
+      "image_asset": "cards/kl047_S14",
+      "narration": "沙織「シートを受けた人を、全員追いかける調査。そのうち75人分のデータで、効き目を確かめる。」\n大輔「比べる相手は？ 胸を開く手術だと、くじ引きで、貼る人と貼らない人に分けるのは難しいよね。」\n沙織「報告書にも、倫理的に難しい、とある。だから、別の研究で、ふつうの治療だけを受けている似た患者を集めて、比べる相手にする。150人の予定。」\n大輔「カードの下の2行が、合格の目印か。1年後に、運動の力が10%以上増えて、しかも心臓の大きさが広がっていない人の割合。それを、比べる相手と比べる。」\n沙織「心臓の大きさまで見るのは、なぜだと思う？」\n大輔「運動の力だけだと、やる気でも変わるから、心臓の大きさも一緒に見るのか。」\n沙織「その通り。報告書にも、やる気の影響を受けにくい物差しとして足した、とある。」\n大輔「でも、心臓は大きくならない方がいいの？」\n沙織「報告書には、この病気では、心臓が大きく広がって、動きが弱っていく、と書いてある。心臓の大きさが小さくなった人ほど、亡くなる危険が下がった、という別の研究も引いてある。」\n沙織「この人たちは、何もしなければ、今の状態を保つのも難しい。だから、大きく広がらずに保てていれば、合格に数える。」\n沙織「ただ、くじ引きで分けた比べ方じゃないから、似た人を選んでも、見えない違いは残る。審査側も、実施できるかを考えると、やむを得ない、という書き方。」\n大輔「似た人どうしを選んでも、数字に出ない違いまでは、そろえきれないってことか。」\n［画面の資料カード］PMDA（医薬品医療機器総合機構）の審査報告書（2026年2月） 表34（計画の案） ・シートを受けた人を全員追いかける調査 ・効き目を見るのは75人分のデータ ・比べる相手: 別の研究の似た患者150人 ・合格の目印: 1年後、運動の力が10%以上増え ・かつ心臓が大きく広がっていない人の割合",
+      "narrator": "dialogue",
+      "lines_hash": "6541188eaedc"
+    },
+    {
+      "scene_id": 15,
+      "type": "tsukkomi",
+      "bgm_role": "main",
+      "ken_burns": "zoom_out",
+      "round": 3,
+      "image_prompt": "Quiet hospital ward room in soft morning daylight (clearly morning, bright window): a neatly made empty hospital bed by the window, a bedside table with a small tray holding a glass of water and plain unlabeled blister packs of white tablets, a folded cardigan on a chair, a potted plant on the sill, one warm coral accent from the morning sun. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "それと、受けるまでの壁もある。胸を開く大きな手術が要る。",
+          "expression": "doubt",
+          "tag": "barrier",
+          "t0": 0.0,
+          "dur": 4.8,
+          "cards": [
+            {
+              "text": "それと、受けるまでの壁もある。",
+              "start": 0.0,
+              "end": 2.25
+            },
+            {
+              "text": "胸を開く大きな手術が要る。",
+              "start": 2.4,
+              "end": 4.44
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "胸を開くのか。体への負担は大きいね。",
+          "expression": "thinking",
+          "t0": 5.08,
+          "dur": 4.0,
+          "cards": [
+            {
+              "text": "胸を開くのか。体への負担は大きいね。",
+              "start": 0.0,
+              "end": 4.0
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、他人の細胞だから、体が攻撃しないよう、拒絶を抑える薬を3か月飲む。心臓の移植を受けた人が飲むのと、同じような薬。",
+          "expression": "doubt",
+          "t0": 9.36,
+          "dur": 9.76,
+          "cards": [
+            {
+              "text": "それに、他人の細胞だから、",
+              "start": 0.0,
+              "end": 2.1
+            },
+            {
+              "text": "体が攻撃しないよう、",
+              "start": 2.1,
+              "end": 3.72
+            },
+            {
+              "text": "拒絶を抑える薬を3か月飲む。",
+              "start": 3.87,
+              "end": 6.21
+            },
+            {
+              "text": "心臓の移植を受けた人が飲むのと、",
+              "start": 6.36,
+              "end": 8.76
+            },
+            {
+              "text": "同じような薬。",
+              "start": 8.91,
+              "end": 9.96
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "臓器の移植と同じ考え方か。その薬の副作用は？",
+          "expression": "thinking",
+          "t0": 19.4,
+          "dur": 5.4,
+          "cards": [
+            {
+              "text": "臓器の移植と同じ考え方か。",
+              "start": 0.3,
+              "end": 3.09
+            },
+            {
+              "text": "その薬の副作用は？",
+              "start": 3.09,
+              "end": 5.02
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "8人中7人に、薬が原因かもしれない症状が出た。血糖が上がる、腎臓の働きが落ちる、など。薬をやめると回復してる。",
+          "expression": "neutral",
+          "t0": 25.08,
+          "dur": 8.32,
+          "cards": [
+            {
+              "text": "8人中7人に、",
+              "start": 0.0,
+              "end": 1.07
+            },
+            {
+              "text": "薬が原因かもしれない症状が出た。",
+              "start": 1.07,
+              "end": 3.5
+            },
+            {
+              "text": "血糖が上がる、腎臓の働きが落ちる、など。",
+              "start": 3.7,
+              "end": 6.62
+            },
+            {
+              "text": "薬をやめると回復してる。",
+              "start": 6.77,
+              "end": 8.52
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "シートそのものの副作用は？",
+          "expression": "thinking",
+          "t0": 33.68,
+          "dur": 2.12,
+          "cards": [
+            {
+              "text": "シートそのものの副作用は？",
+              "start": 0.0,
+              "end": 2.12
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "試験では、シートの副作用はゼロと記録された。ただ審査側は、心臓の中にできた血の塊1件について、シートの影響は否定できない、と書いてる。",
+          "expression": "neutral",
+          "t0": 36.08,
+          "dur": 10.6,
+          "cards": [
+            {
+              "text": "試験では、",
+              "start": 0.0,
+              "end": 0.75
+            },
+            {
+              "text": "シートの副作用はゼロと記録された。",
+              "start": 0.75,
+              "end": 3.3
+            },
+            {
+              "text": "ただ審査側は、",
+              "start": 3.45,
+              "end": 4.63
+            },
+            {
+              "text": "心臓の中にできた血の塊1件について、",
+              "start": 4.63,
+              "end": 7.65
+            },
+            {
+              "text": "シートの影響は否定できない、と書いてる。",
+              "start": 7.8,
+              "end": 10.8
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "iPS細胞って、がんになる心配もよく聞くけど、そこはどうなの？",
+          "expression": "thinking",
+          "t0": 46.96,
+          "dur": 4.84,
+          "cards": [
+            {
+              "text": "iPS細胞って、",
+              "start": 0.0,
+              "end": 1.2
+            },
+            {
+              "text": "がんになる心配もよく聞くけど、",
+              "start": 1.2,
+              "end": 3.45
+            },
+            {
+              "text": "そこはどうなの？",
+              "start": 3.6,
+              "end": 4.82
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "8人のうち3人は、試験のあとも追いかける調査に入っていて、3年ほどたった時点で、シートからできた腫瘍は見つかってない。これも、全員を追いかける調査で見ていく項目。",
+          "expression": "neutral",
+          "t0": 52.08,
+          "dur": 10.52,
+          "cards": [
+            {
+              "text": "8人のうち3人は、試験のあとも追いかける",
+              "start": 0.0,
+              "end": 2.68
+            },
+            {
+              "text": "調査に入っていて、3年ほどたった時点で、",
+              "start": 2.83,
+              "end": 5.32
+            },
+            {
+              "text": "シートからできた腫瘍は見つかってない。",
+              "start": 5.47,
+              "end": 7.83
+            },
+            {
+              "text": "これも、",
+              "start": 7.98,
+              "end": 8.48
+            },
+            {
+              "text": "全員を追いかける調査で見ていく項目。",
+              "start": 8.48,
+              "end": 10.72
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "受けられる病院も、経験の深い医師がいるところに限られる、と承認の条件にあったね。誰でも、どこでも受けられる治療じゃないんだ。",
+          "expression": "thinking",
+          "t0": 62.88,
+          "dur": 8.96,
+          "cards": [
+            {
+              "text": "受けられる病院も、経験の深い医師がいる",
+              "start": 0.0,
+              "end": 2.86
+            },
+            {
+              "text": "ところに限られる、と承認の条件にあったね。",
+              "start": 3.01,
+              "end": 5.94
+            },
+            {
+              "text": "誰でも、",
+              "start": 6.09,
+              "end": 6.65
+            },
+            {
+              "text": "どこでも受けられる治療じゃないんだ。",
+              "start": 6.65,
+              "end": 9.16
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「それと、受けるまでの壁もある。胸を開く大きな手術が要る。」\n大輔「胸を開くのか。体への負担は大きいね。」\n沙織「それに、他人の細胞だから、体が攻撃しないよう、拒絶を抑える薬を3か月飲む。心臓の移植を受けた人が飲むのと、同じような薬。」\n大輔「臓器の移植と同じ考え方か。その薬の副作用は？」\n沙織「8人中7人に、薬が原因かもしれない症状が出た。血糖が上がる、腎臓の働きが落ちる、など。薬をやめると回復してる。」\n大輔「シートそのものの副作用は？」\n沙織「試験では、シートの副作用はゼロと記録された。ただ審査側は、心臓の中にできた血の塊1件について、シートの影響は否定できない、と書いてる。」\n大輔「iPS細胞って、がんになる心配もよく聞くけど、そこはどうなの？」\n沙織「8人のうち3人は、試験のあとも追いかける調査に入っていて、3年ほどたった時点で、シートからできた腫瘍は見つかってない。これも、全員を追いかける調査で見ていく項目。」\n大輔「受けられる病院も、経験の深い医師がいるところに限られる、と承認の条件にあったね。誰でも、どこでも受けられる治療じゃないんだ。」",
+      "narrator": "dialogue",
+      "lines_hash": "523d5b9f1169",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 16,
+      "type": "verdict",
+      "bgm_role": "outro",
+      "ken_burns": "zoom_out",
+      "image_asset": "base_cafe",
+      "verdict_from_line": 5,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想は「心臓は、治せる時代に入った」。でも、第一の物差しのポンプの力では、はっきりした答えが出なかった。新しい筋肉が足されたのかも、分かってない。治せる、とは言えなかった。",
+          "expression": "deflated",
+          "tag": "vs_prediction",
+          "t0": 0.0,
+          "dur": 13.6,
+          "cards": [
+            {
+              "text": "僕の予想は「心臓は、治せる時代に入った」。",
+              "start": 0.0,
+              "end": 3.3
+            },
+            {
+              "text": "でも、第一の物差しのポンプの力では、",
+              "start": 3.45,
+              "end": 6.11
+            },
+            {
+              "text": "はっきりした答えが出なかった。",
+              "start": 6.26,
+              "end": 8.48
+            },
+            {
+              "text": "新しい筋肉が足されたのかも、分かってない。",
+              "start": 8.63,
+              "end": 11.73
+            },
+            {
+              "text": "治せる、とは言えなかった。",
+              "start": 11.88,
+              "end": 13.8
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想は「ほんの少しの人数でしか試してない」。8人で比べる相手なし、は当たり。でも審査側は、弱点を全部書いたうえで、7年で確かめ直す仕組みを付けてた。そこは見くびってた。",
+          "expression": "amused",
+          "tag": "vs_prediction",
+          "t0": 13.88,
+          "dur": 11.92,
+          "cards": [
+            {
+              "text": "私の予想は「ほんの少しの",
+              "start": 0.0,
+              "end": 1.66
+            },
+            {
+              "text": "人数でしか試してない」",
+              "start": 1.66,
+              "end": 3.18
+            },
+            {
+              "text": "。8人で比べる相手なし、は当たり。",
+              "start": 3.37,
+              "end": 5.61
+            },
+            {
+              "text": "でも審査側は、弱点を全部書いたうえで、",
+              "start": 5.76,
+              "end": 8.26
+            },
+            {
+              "text": "7年で確かめ直す仕組みを付けてた。",
+              "start": 8.41,
+              "end": 10.65
+            },
+            {
+              "text": "そこは見くびってた。",
+              "start": 10.8,
+              "end": 12.12
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "判定の札は、上から「もうすぐ来る」「3年はかかる」「根拠待ち」「まだ眉唾」の4つ。",
+          "expression": "neutral",
+          "t0": 26.08,
+          "dur": 6.96,
+          "cards": [
+            {
+              "text": "判定の札は、上から「もうすぐ来る」",
+              "start": 0.0,
+              "end": 2.86
+            },
+            {
+              "text": "「3年はかかる」「根拠待ち」「まだ眉唾」",
+              "start": 3.01,
+              "end": 6.01
+            },
+            {
+              "text": "の4つ。",
+              "start": 6.16,
+              "end": 6.76
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "お題は、「世界初の実用化」で、心臓はもう治せる時代になったのか。僕は「根拠待ち」。治せない、と示す資料は無い。でも、治せる、と言い切れる資料も、まだ無い、って意味。",
+          "expression": "thinking",
+          "t0": 33.26,
+          "dur": 14.24,
+          "cards": [
+            {
+              "text": "お題は、「世界初の実用化」で、",
+              "start": 0.0,
+              "end": 2.82
+            },
+            {
+              "text": "心臓はもう治せる時代になったのか。",
+              "start": 2.97,
+              "end": 5.93
+            },
+            {
+              "text": "僕は「根拠待ち」。治せない、",
+              "start": 6.28,
+              "end": 8.74
+            },
+            {
+              "text": "と示す資料は無い。でも、治せる、",
+              "start": 8.89,
+              "end": 11.29
+            },
+            {
+              "text": "と言い切れる資料も、まだ無い、って意味。",
+              "start": 11.44,
+              "end": 14.44
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は、同じお題に「まだ眉唾」。シートがインチキ、という意味じゃない。承認されて使われ始めたのは事実。眉唾なのは、「心臓はもう治せる」という受け止め方の方。",
+          "expression": "doubt",
+          "t0": 47.78,
+          "dur": 12.12,
+          "cards": [
+            {
+              "text": "私は、同じお題に「まだ眉唾」。",
+              "start": 0.0,
+              "end": 2.45
+            },
+            {
+              "text": "シートがインチキ、という意味じゃない。",
+              "start": 2.6,
+              "end": 5.44
+            },
+            {
+              "text": "承認されて使われ始めたのは事実。",
+              "start": 5.59,
+              "end": 7.98
+            },
+            {
+              "text": "眉唾なのは、「心臓はもう治せる」",
+              "start": 8.13,
+              "end": 10.52
+            },
+            {
+              "text": "という受け止め方の方。",
+              "start": 10.67,
+              "end": 12.32
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ポンプの力で良くなったのが8人中2人で、「治せる」は、資料の範囲を大きく超えてる。",
+          "expression": "doubt",
+          "t0": 60.12,
+          "dur": 6.68,
+          "cards": [
+            {
+              "text": "ポンプの力で良くなったのが8人中2人で、",
+              "start": 0.0,
+              "end": 3.0
+            },
+            {
+              "text": "「治せる」は、資料の範囲を大きく超えてる。",
+              "start": 3.15,
+              "end": 6.59
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕の札が変わるのは、75人の調査の結果。似た患者と比べて、運動の力が上がって、心臓も広がらなかった人の割合が、はっきり多ければ、「もうすぐ来る」に上げる。",
+          "expression": "thinking",
+          "t0": 67.08,
+          "dur": 11.8,
+          "cards": [
+            {
+              "text": "僕の札が変わるのは、75人の調査の結果。",
+              "start": 0.0,
+              "end": 3.04
+            },
+            {
+              "text": "似た患者と比べて、運動の力が上がって、",
+              "start": 3.26,
+              "end": 6.02
+            },
+            {
+              "text": "心臓も広がらなかった人の割合が、",
+              "start": 6.17,
+              "end": 8.5
+            },
+            {
+              "text": "はっきり多ければ、「もうすぐ来る」",
+              "start": 8.65,
+              "end": 11.12
+            },
+            {
+              "text": "に上げる。",
+              "start": 11.27,
+              "end": 12.0
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次の調査では、第一の物差しが、ポンプの力から、運動の力と心臓の大きさに変わった。だから僕は、その結果で決める。結果が良ければ、そのときには、比べて確かめた治療が、もう病院で使えている。だから「もうすぐ来る」。",
+          "expression": "thinking",
+          "t0": 79.1,
+          "dur": 16.4,
+          "cards": [
+            {
+              "text": "次の調査では、第一の物差しが、",
+              "start": 0.0,
+              "end": 2.46
+            },
+            {
+              "text": "ポンプの力から、",
+              "start": 2.61,
+              "end": 3.82
+            },
+            {
+              "text": "運動の力と心臓の大きさに変わった。",
+              "start": 3.82,
+              "end": 6.4
+            },
+            {
+              "text": "だから僕は、その結果で決める。",
+              "start": 6.55,
+              "end": 8.8
+            },
+            {
+              "text": "結果が良ければ、そのときには、",
+              "start": 8.95,
+              "end": 11.2
+            },
+            {
+              "text": "比べて確かめた治療が、",
+              "start": 11.35,
+              "end": 13.0
+            },
+            {
+              "text": "もう病院で使えている。",
+              "start": 13.0,
+              "end": 14.65
+            },
+            {
+              "text": "だから「もうすぐ来る」。",
+              "start": 14.8,
+              "end": 16.6
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は、それに加えて、ポンプの力でも良くなったと分かったら、「根拠待ち」に上げる。「治せる」と言うには、なぜ効くのかが、ヒトで分かるまで待ちたい。",
+          "expression": "neutral",
+          "t0": 95.78,
+          "dur": 9.6,
+          "cards": [
+            {
+              "text": "私は、それに加えて、ポンプの力でも良く",
+              "start": 0.0,
+              "end": 2.62
+            },
+            {
+              "text": "なったと分かったら、「根拠待ち」に上げる。",
+              "start": 2.77,
+              "end": 5.44
+            },
+            {
+              "text": "「治せる」と言うには、なぜ効くのかが、",
+              "start": 5.59,
+              "end": 8.0
+            },
+            {
+              "text": "ヒトで分かるまで待ちたい。",
+              "start": 8.15,
+              "end": 9.8
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "その75人の結果は、いつ出るの？",
+          "expression": "thinking",
+          "t0": 105.66,
+          "dur": 3.12,
+          "cards": [
+            {
+              "text": "その75人の結果は、いつ出るの？",
+              "start": 0.0,
+              "end": 3.12
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "報告書の見込みでは、シートを受ける人は、5年で88人ほど。",
+          "expression": "neutral",
+          "t0": 109.06,
+          "dur": 4.36,
+          "cards": [
+            {
+              "text": "報告書の見込みでは、シートを受ける人は、",
+              "start": 0.0,
+              "end": 2.9
+            },
+            {
+              "text": "5年で88人ほど。",
+              "start": 3.05,
+              "end": 4.41
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "見込みどおりなら、75人がそろうだけで、4年以上かかる計算。",
+          "expression": "neutral",
+          "t0": 113.64,
+          "dur": 4.88,
+          "cards": [
+            {
+              "text": "見込みどおりなら、75人がそろうだけで、",
+              "start": 0.0,
+              "end": 3.0
+            },
+            {
+              "text": "4年以上かかる計算。",
+              "start": 3.15,
+              "end": 4.75
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そこから、さらに1年追いかけるのか。",
+          "expression": "thinking",
+          "t0": 118.8,
+          "dur": 3.0,
+          "cards": [
+            {
+              "text": "そこから、さらに1年追いかけるのか。",
+              "start": 0.0,
+              "end": 3.0
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう。だから答えが出るのは、早くても5年ほど先。遅くとも、7年の期限までの審査で。",
+          "expression": "neutral",
+          "t0": 122.08,
+          "dur": 6.16,
+          "cards": [
+            {
+              "text": "そう。だから答えが出るのは、",
+              "start": 0.0,
+              "end": 2.0
+            },
+            {
+              "text": "早くても5年ほど先。遅くとも、",
+              "start": 2.15,
+              "end": 4.45
+            },
+            {
+              "text": "7年の期限までの審査で。",
+              "start": 4.6,
+              "end": 6.32
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今日の持ち帰り。これは、薬や手術を尽くしても重い心不全が続く、心臓の血管の病気が元になった人のための、新しい選択肢。「治る治療」じゃなくて、7年の期限までに「確かめている途中の治療」として出た。",
+          "expression": "convinced",
+          "tag": "takeaway",
+          "t0": 128.52,
+          "dur": 15.16,
+          "cards": [
+            {
+              "text": "今日の持ち帰り。これは、",
+              "start": 0.0,
+              "end": 1.91
+            },
+            {
+              "text": "薬や手術を尽くしても",
+              "start": 1.91,
+              "end": 3.5
+            },
+            {
+              "text": "重い心不全が続く、心臓の血管の病気が元に",
+              "start": 3.65,
+              "end": 6.66
+            },
+            {
+              "text": "なった人のための、新しい選択肢。",
+              "start": 6.81,
+              "end": 9.21
+            },
+            {
+              "text": "「治る治療」じゃなくて、7年の期限までに",
+              "start": 9.36,
+              "end": 12.36
+            },
+            {
+              "text": "「確かめている途中の治療」として出た。",
+              "start": 12.51,
+              "end": 15.36
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ニュースで「世界初の実用化」と見たら、何人で、何と比べたかを見る。今回は、8人で、比べる相手なし。答えは、これからの75人で出る。",
+          "expression": "neutral",
+          "tag": "takeaway",
+          "t0": 143.96,
+          "dur": 9.76,
+          "cards": [
+            {
+              "text": "ニュースで「世界初の実用化」と見たら、",
+              "start": 0.0,
+              "end": 2.72
+            },
+            {
+              "text": "何人で、何と比べたかを見る。今回は、",
+              "start": 2.87,
+              "end": 5.65
+            },
+            {
+              "text": "8人で、比べる相手なし。答えは、",
+              "start": 5.8,
+              "end": 8.09
+            },
+            {
+              "text": "これからの75人で出る。",
+              "start": 8.24,
+              "end": 9.96
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "これは、2026年10月22日時点の、二人の見立て。",
+          "expression": "neutral",
+          "t0": 154.0,
+          "dur": 5.32,
+          "cards": [
+            {
+              "text": "これは、2026年10月22日時点の、",
+              "start": 0.0,
+              "end": 3.94
+            },
+            {
+              "text": "二人の見立て。",
+              "start": 4.09,
+              "end": 5.14
+            }
+          ]
+        }
+      ],
+      "narration": "大輔「僕の予想は「心臓は、治せる時代に入った」。でも、第一の物差しのポンプの力では、はっきりした答えが出なかった。新しい筋肉が足されたのかも、分かってない。治せる、とは言えなかった。」\n沙織「私の予想は「ほんの少しの人数でしか試してない」。8人で比べる相手なし、は当たり。でも審査側は、弱点を全部書いたうえで、7年で確かめ直す仕組みを付けてた。そこは見くびってた。」\n大輔「判定の札は、上から「もうすぐ来る」「3年はかかる」「根拠待ち」「まだ眉唾」の4つ。」\n大輔「お題は、「世界初の実用化」で、心臓はもう治せる時代になったのか。僕は「根拠待ち」。治せない、と示す資料は無い。でも、治せる、と言い切れる資料も、まだ無い、って意味。」\n沙織「私は、同じお題に「まだ眉唾」。シートがインチキ、という意味じゃない。承認されて使われ始めたのは事実。眉唾なのは、「心臓はもう治せる」という受け止め方の方。」\n沙織「ポンプの力で良くなったのが8人中2人で、「治せる」は、資料の範囲を大きく超えてる。」\n大輔「僕の札が変わるのは、75人の調査の結果。似た患者と比べて、運動の力が上がって、心臓も広がらなかった人の割合が、はっきり多ければ、「もうすぐ来る」に上げる。」\n大輔「次の調査では、第一の物差しが、ポンプの力から、運動の力と心臓の大きさに変わった。だから僕は、その結果で決める。結果が良ければ、そのときには、比べて確かめた治療が、もう病院で使えている。だから「もうすぐ来る」。」\n沙織「私は、それに加えて、ポンプの力でも良くなったと分かったら、「根拠待ち」に上げる。「治せる」と言うには、なぜ効くのかが、ヒトで分かるまで待ちたい。」\n大輔「その75人の結果は、いつ出るの？」\n沙織「報告書の見込みでは、シートを受ける人は、5年で88人ほど。」\n沙織「見込みどおりなら、75人がそろうだけで、4年以上かかる計算。」\n大輔「そこから、さらに1年追いかけるのか。」\n沙織「そう。だから答えが出るのは、早くても5年ほど先。遅くとも、7年の期限までの審査で。」\n大輔「今日の持ち帰り。これは、薬や手術を尽くしても重い心不全が続く、心臓の血管の病気が元になった人のための、新しい選択肢。「治る治療」じゃなくて、7年の期限までに「確かめている途中の治療」として出た。」\n沙織「ニュースで「世界初の実用化」と見たら、何人で、何と比べたかを見る。今回は、8人で、比べる相手なし。答えは、これからの75人で出る。」\n大輔「これは、2026年10月22日時点の、二人の見立て。」",
+      "narrator": "dialogue",
+      "lines_hash": "7695798d20ee",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "scene_id": 17,
+      "type": "closing",
+      "bgm_role": "outro",
+      "ken_burns": "zoom_out",
+      "image_asset": "base_cafe_b",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "75人の結果が出たら、何年先でも、もう一度、答え合わせしよう。",
+          "expression": "amused",
+          "t0": 0.0,
+          "dur": 4.64,
+          "cards": [
+            {
+              "text": "75人の結果が出たら、何年先でも、",
+              "start": 0.2,
+              "end": 2.66
+            },
+            {
+              "text": "もう一度、答え合わせしよう。",
+              "start": 2.81,
+              "end": 4.84
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そのときは、僕が先に報告書を読んでくる。",
+          "expression": "excited",
+          "t0": 4.92,
+          "dur": 2.88,
+          "cards": [
+            {
+              "text": "そのときは、僕が先に報告書を読んでくる。",
+              "start": 0.0,
+              "end": 2.88
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "excited",
+          "t0": 8.02,
+          "dur": 4.32,
+          "cards": [
+            {
+              "text": "次はどんな研究が、誰かの幸せな未来を",
+              "start": 0.0,
+              "end": 3.17
+            },
+            {
+              "text": "運んでくるのか。",
+              "start": 3.32,
+              "end": 4.52
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "amused",
+          "t0": 12.62,
+          "dur": 7.0,
+          "cards": [
+            {
+              "text": "それが本物かどうか、",
+              "start": 0.0,
+              "end": 1.13
+            },
+            {
+              "text": "また一緒に確かめましょう。",
+              "start": 1.13,
+              "end": 2.61
+            },
+            {
+              "text": "元の発表は概要欄に載せています。",
+              "start": 2.76,
+              "end": 4.78
+            },
+            {
+              "text": "チャンネル登録して、待っていてください。",
+              "start": 4.93,
+              "end": 7.2
+            }
+          ]
+        }
+      ],
+      "narration": "沙織「75人の結果が出たら、何年先でも、もう一度、答え合わせしよう。」\n大輔「そのときは、僕が先に報告書を読んでくる。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」",
+      "narrator": "dialogue",
+      "lines_hash": "a029ba814518",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "skeptic",
+          "narration": "心臓、もう治せる？",
+          "telop_text": "心臓、もう治せる？",
+          "expression": "doubt",
+          "scene_id": 6,
+          "badge_text": "イメージ図（実物と異なる場合があります）"
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "iPS細胞の心臓シート、世界初の治療が始まった！",
+          "expression": "excited",
+          "scene_id": 1,
+          "badge_text": "イメージ図（実物と異なる場合があります）"
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "でも、承認のもとになった試験は、8人だけ。",
+          "expression": "doubt",
+          "react": "surprised",
+          "scene_id": 9
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "心臓のポンプの力が良くなったのは、2人だけ？",
+          "expression": "surprised",
+          "react": "doubt",
+          "scene_id": 13
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "それでも国が認めた理由は？ 判定は本編で。",
+          "expression": "thinking",
+          "scene_id": 16
+        }
+      ]
+    }
+  ],
+  "beginner_review": {
+    "passed_at": "2026-10-22",
+    "rounds": 2,
+    "report": "/private/tmp/claude-503/-Users-claude-kagaku-life/0c96ef25-1b50-4597-8265-8d0c0433b8c4/scratchpad/kl047_beginner_review_r2.md",
+    "lines_digest": "4ea039468eed"
+  },
+  "bgm_sources": {
+    "main": "BGM/kl047-BGM-main.mp3",
+    "outro": "BGM/kl047-BGM-outro.mp3",
+    "intro": "BGM/kl030-BGM-main.mp3"
+  }
+}
