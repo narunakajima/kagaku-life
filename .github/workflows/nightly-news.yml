@@ -11,7 +11,7 @@ name: nightly-news
 
 on:
   schedule:
-    - cron: "0 19 * * *"   # 毎日 04:00 JST
+    - cron: "17 17 * * *"   # 毎日 02:17 JST（毎時0分の混雑を避けて分をずらす。実測で2〜4時間遅れて起動するため前倒し）
   workflow_dispatch:
 
 permissions:
