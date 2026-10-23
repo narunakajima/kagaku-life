@@ -2745,8 +2745,118 @@
         "market_status": "novel"
       },
       "news_candidate_id": "3f1d61e78f"
+    },
+    {
+      "episode_id": "kl048",
+      "status": "confirmed",
+      "slot_type": "news",
+      "genre": "ai",
+      "health": false,
+      "domain": "life",
+      "concern_id": null,
+      "entry_question": "頼まれる前にAIが動く「秘書AI」が、2か月で4社から出そろった。人はAIに指示する側から、承認する側に変わる。その承認は、ちゃんと続くのか。",
+      "title": "頼む前に動くAI秘書が4社から。任せるのは惰性か、それとも「卒業」か（10月23日 Muse日本上陸）",
+      "format": "dialogue",
+      "structure": "rounds_v3",
+      "source_type": "news",
+      "news_date": "2026-10-21",
+      "verdict_as_of": "2026-10-23",
+      "references": [
+        {
+          "title": "Introducing Claude Duet",
+          "authors": [],
+          "year": 2026,
+          "venue": "Anthropic",
+          "url": "https://claude.com/resources/articles/claude-duet",
+          "is_preprint": false,
+          "institution": "Anthropic",
+          "source_kind": "official_blog"
+        },
+        {
+          "title": "Get started with Claude Duet",
+          "authors": [],
+          "year": 2026,
+          "venue": "Anthropic",
+          "url": "https://support.claude.com/en/articles/17631495-get-started-with-claude-duet",
+          "is_preprint": false,
+          "institution": "Anthropic",
+          "source_kind": "company_website"
+        },
+        {
+          "title": "Meta、パーソナルAIエージェント「Muse」を日本で提供開始",
+          "authors": [],
+          "year": 2026,
+          "venue": "Meta",
+          "url": "https://about.fb.com/ja/news/2026/10/muse-personal-ai-agent-launches-in-japan/",
+          "is_preprint": false,
+          "institution": "Meta",
+          "source_kind": "press_release"
+        },
+        {
+          "title": "Museがあなたのガイダンスと承認に基づいて機能する仕組み",
+          "authors": [],
+          "year": 2026,
+          "venue": "Meta",
+          "url": "https://www.meta.com/ja-jp/help/superintelligence/1385290430137537/",
+          "is_preprint": false,
+          "institution": "Meta",
+          "source_kind": "company_website"
+        },
+        {
+          "title": "dots のご紹介",
+          "authors": [],
+          "year": 2026,
+          "venue": "OpenAI",
+          "url": "https://openai.com/ja-JP/index/introducing-dots/",
+          "is_preprint": false,
+          "institution": "OpenAI",
+          "source_kind": "official_blog"
+        },
+        {
+          "title": "Grok Bot Security",
+          "authors": [],
+          "year": 2026,
+          "venue": "xAI",
+          "url": "https://docs.x.ai/grok-bot/security",
+          "is_preprint": false,
+          "institution": "xAI",
+          "source_kind": "company_website"
+        },
+        {
+          "title": "Measuring AI agent autonomy in practice",
+          "authors": [],
+          "year": 2026,
+          "venue": "Anthropic",
+          "url": "https://www.anthropic.com/research/measuring-agent-autonomy",
+          "is_preprint": false,
+          "institution": "Anthropic",
+          "source_kind": "tech_report"
+        },
+        {
+          "title": "Claude Code auto mode",
+          "authors": [],
+          "year": 2026,
+          "venue": "Anthropic",
+          "url": "https://www.anthropic.com/engineering/claude-code-auto-mode",
+          "is_preprint": false,
+          "institution": "Anthropic",
+          "source_kind": "official_blog"
+        },
+        {
+          "title": "arXiv:2608.27443（承認を事前のルールにする実験、113人）",
+          "authors": [],
+          "year": 2026,
+          "venue": "Yan",
+          "url": "https://arxiv.org/abs/2608.27443",
+          "is_preprint": true,
+          "institution": "Yan",
+          "source_kind": "paper"
+        }
+      ],
+      "hook_idea": "4社とも『先に動くが、送信・支払いの前で止まる』。では承認はどうなるか。Anthropic の測定では、慣れた人ほど自動承認が増え（約20%→40%超）、同時に途中で止める割合も増える（5%→9%）。一方、113人の模擬実験では、自分でルールを書いて任せた人ほど行き過ぎを通した。",
+      "notes": "なるさん（2026-10-23）の発案と方向づけ: 新しいのは『AIが先に動き、自ら働きかける』こと。制作者自身、パイプラインでAIに『この考え方で次回から自分で判断して事後報告』と教えて承認を減らしてきた体験がある（台本の根拠にはしない。問いの出発点。大輔の仮定の話にする）。\n■ お題=各社の主張『先回りして動く秘書が来た』（Duet の proactive agent、dots の『頼もうと思うより先に動く』）。予想判定: 大輔=soon（形はもう出ていて、日本でも Muse が今日から無料で使える）、沙織=pending（任せた後に事故が増えるか減るかを実利用者で測った資料が無い。札が変わる条件=日常の手続きでの誤り率の第三者検証、実利用者を数か月追った事故率、事後のログ確認が効くかの測定）。直近5話で根拠待ちが10中6なので、二人そろって根拠待ちは避ける。\n■ 論点案: (1)先回りは助かるのか邪魔なのか（Chen/Pu、dots の先回りリサーチは読み取り専用）(2)承認は形だけになるのか（Anthropic R6: 慣れると任せるがよく止める＝沙織が譲る turn。逆側: auto mode の手動承認は93%が承認、Dratsch）(3)誰が承認を卒業させるか（Muse・Grok Bot=人が教える『常に許可』とルール、Duet=分類器が代行・社員利用で行き過ぎの17%を見逃し。Yan 113人: 自分のルールで任せた人ほど行き過ぎを通し、140中114のルールは『先に聞いて』）。\n■ 一次資料と原文: script_prep/kl048_verified.md（確認済み）。調査メモ: script_prep/kl048_sources_*.md。\n■ 利害関係: 台本執筆に使うAIは Claude（Anthropic）。Duet と R6/R7 は Anthropic 製・自社測定。台詞で『提供元自身の測定』と言い、概要欄で開示。\n■ 外すもの: 攻撃成功率、GPS・学習の技能研究、ChatGPT の利用統計（考え方を5つ以内に）。\n■ dots は kl034 で扱い済み。4社の1つとして並べるだけ。日本で使えるか: Muse=可、Duet=不可（米国のみ）、dots・Grok Bot=未確認。\n■ news_candidates.json には未登録（制作者の持ち込み）。buzz 未計測。"
     }
   ],
-  "total_topics": 47,
-  "last_updated": "2026-10-22"
+  "total_topics": 48,
+  "last_updated": "2026-10-23"
 }

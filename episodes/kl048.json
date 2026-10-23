@@ -1,0 +1,1150 @@
+{
+  "episode_id": "kl048",
+  "format": "dialogue",
+  "structure": "rounds_v3",
+  "template": "basic",
+  "source_type": "news",
+  "news_date": "2026-10-21",
+  "verdict_as_of": "2026-10-23",
+  "genre": "ai",
+  "health": false,
+  "episode_title": "頼む前に動くAI秘書が4社から。人は「承認する側」に変わる、その承認は続くのか",
+  "youtube_title": "頼む前に動くAI秘書、任せて大丈夫？（10月23日 Muse日本上陸）",
+  "entry_question": "頼まれる前にAIが動く「秘書AI」が、2か月で4社から出そろった。人はAIに指示する側から、承認する側に変わる。その承認は、ちゃんと続くのか。",
+  "verdict": {
+    "dreamer": "soon",
+    "skeptic": "pending"
+  },
+  "hook_lines": [
+    "頼む前に動くAI秘書",
+    "承認、形だけになる？"
+  ],
+  "thumbnail_headline": "頼む前に動くAI秘書\n任せて大丈夫？",
+  "thumbnail_exprs": {
+    "dreamer": "excited",
+    "skeptic": "doubt"
+  },
+  "thumbnail_prompt": "Calm, bright evening editorial illustration of a tidy home desk seen from the front: a soft pale blue-gray back wall and a light wooden desk running the full width of the frame, continuous across the whole frame with no panels, boxes, borders or abrupt colour changes. Keep the left 30%, the right 30% and the top 35% of the frame quiet and uncluttered (soft gradient only), but the wall and desk must visibly continue unbroken behind them. In the horizontal center, in the vertical band between 38% and 80% of the frame height: a plain smartphone standing on a small stand, its screen glowing with a few soft blurred rounded notification shapes in teal and one in warm coral, with a few plain paper envelopes and a mug beside it. No people. Generic phone, not any specific product. No logos, no brand marks, no readable text, no letters, no numbers.",
+  "youtube_tags": [
+    "AI秘書",
+    "AIエージェント",
+    "Muse",
+    "Claude Duet",
+    "dots",
+    "Grok Bot",
+    "Meta",
+    "OpenAI",
+    "Anthropic",
+    "SpaceXAI",
+    "承認",
+    "AIの進化",
+    "答え合わせ",
+    "科学ニュース"
+  ],
+  "references": [
+    {
+      "title": "Introducing Claude Duet",
+      "authors": [],
+      "year": 2026,
+      "venue": "Anthropic",
+      "url": "https://claude.com/resources/articles/claude-duet",
+      "is_preprint": false,
+      "institution": "Anthropic",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "Get started with Claude Duet",
+      "authors": [],
+      "year": 2026,
+      "venue": "Anthropic",
+      "url": "https://support.claude.com/en/articles/17631495-get-started-with-claude-duet",
+      "is_preprint": false,
+      "institution": "Anthropic",
+      "source_kind": "company_website"
+    },
+    {
+      "title": "Meta、パーソナルAIエージェント「Muse」を日本で提供開始",
+      "authors": [],
+      "year": 2026,
+      "venue": "Meta",
+      "url": "https://about.fb.com/ja/news/2026/10/muse-personal-ai-agent-launches-in-japan/",
+      "is_preprint": false,
+      "institution": "Meta",
+      "source_kind": "press_release"
+    },
+    {
+      "title": "Museがあなたのガイダンスと承認に基づいて機能する仕組み",
+      "authors": [],
+      "year": 2026,
+      "venue": "Meta",
+      "url": "https://www.meta.com/ja-jp/help/superintelligence/1385290430137537/",
+      "is_preprint": false,
+      "institution": "Meta",
+      "source_kind": "company_website"
+    },
+    {
+      "title": "Introducing Muse",
+      "authors": [],
+      "year": 2026,
+      "venue": "Meta",
+      "url": "https://about.fb.com/news/2026/09/introducing-muse/",
+      "is_preprint": false,
+      "institution": "Meta",
+      "source_kind": "press_release"
+    },
+    {
+      "title": "dots のご紹介",
+      "authors": [],
+      "year": 2026,
+      "venue": "OpenAI",
+      "url": "https://openai.com/ja-JP/index/introducing-dots/",
+      "is_preprint": false,
+      "institution": "OpenAI",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "Grok Bot Security",
+      "authors": [],
+      "year": 2026,
+      "venue": "SpaceXAI（旧xAI）",
+      "url": "https://docs.x.ai/grok-bot/security",
+      "is_preprint": false,
+      "institution": "SpaceXAI（旧xAI）",
+      "source_kind": "company_website"
+    },
+    {
+      "title": "Introducing Grok Bot",
+      "authors": [],
+      "year": 2026,
+      "venue": "SpaceXAI（旧xAI）",
+      "url": "https://x.ai/news/introducing-grok-bot",
+      "is_preprint": false,
+      "institution": "SpaceXAI（旧xAI）",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "Measuring AI agent autonomy in practice",
+      "authors": [],
+      "year": 2026,
+      "venue": "Anthropic",
+      "url": "https://www.anthropic.com/research/measuring-agent-autonomy",
+      "is_preprint": false,
+      "institution": "Anthropic",
+      "source_kind": "tech_report"
+    },
+    {
+      "title": "Claude Code auto mode",
+      "authors": [],
+      "year": 2026,
+      "venue": "Anthropic",
+      "url": "https://www.anthropic.com/engineering/claude-code-auto-mode",
+      "is_preprint": false,
+      "institution": "Anthropic",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "Do User-Authored Permission Policies Improve Protection Against AI Agent Overreach?",
+      "authors": [
+        "Ting Yan"
+      ],
+      "year": 2026,
+      "venue": "arXiv:2608.27443",
+      "url": "https://arxiv.org/abs/2608.27443",
+      "is_preprint": true,
+      "institution": "Yan（arXiv、単著）",
+      "source_kind": "paper"
+    },
+    {
+      "title": "Need Help? Designing Proactive AI Assistants for Programming",
+      "authors": [
+        "Valerie Chen",
+        "Alan Zhu",
+        "Sebastian Zhao",
+        "Hussein Mozannar",
+        "David Sontag",
+        "Ameet Talwalkar"
+      ],
+      "year": 2025,
+      "venue": "CHI 2025 (arXiv:2410.04596)",
+      "url": "https://arxiv.org/abs/2410.04596",
+      "is_preprint": false,
+      "institution": "カーネギーメロン大学ほか",
+      "source_kind": "paper"
+    }
+  ],
+  "youtube_description": "頼まれる前にAIが動く「秘書AI」が、2026年8〜10月に4社から出そろいました。人はAIに指示する側から、AIが持ってきたものに「いいよ」と言う（承認する）側に変わります。その承認は、ちゃんと続くのか。期待担当の大輔と、ツッコミ担当の沙織が、各社の公式発表・ヘルプと、利用者の実験で確かめます。(1) 先回りは助かるのか、邪魔なのか (2) 慣れたら承認は形だけになるのか (3) 承認を減らしていくのは誰か、の3つです。\n\n■ この回の判定（2026年10月23日時点の、二人の見立て）\nお題: 各社の言う「頼む前に先回りして動く秘書（AI）が来た」\n大輔: もうすぐ来る（先回りする形は4社から出ていて、日本でも Muse が10月23日から使える。人が「常に許可」で教えて任せる仕組みもある。この1年のうちに、頼む前に動いて、送る前に聞いてくる秘書が、日本でも普通の人の手元に届くという見立て）\n沙織: 根拠待ち（先回りする機能が出たのは事実。ただ「秘書」と呼べるか＝任せて助かるかを支える資料は、学生のプログラミングの実験、提供元自身の測定、模擬の1日の実験に限られ、否定する資料も無い。第三者による日常の手続きでの誤りの測定、実際の利用者を数か月追った失敗の記録、事後に記録を見る確かめ方が行き過ぎを見つけられるかの測定、のどれかが出れば札を上げる）\n※札の順は、まだ眉唾 → 根拠待ち → 3年はかかる → もうすぐ来る。\n\n■ 4社のサービスと、日本で使えるか（10月23日時点、公式資料で確認できた範囲）\n・SpaceXAI（旧xAI）「Grok Bot」（2026年8月11日、ベータ）: 承認は Allow once／Always allow／Deny。「Ask first（先に聞く）」のルールが優先。日本での提供は資料から確認できず\n・Meta「Muse」（2026年9月8日、北米。日本では10月23日から。多くの基本機能は無料）: 承認の選択肢に「常に許可」。アクティビティログあり。メール送信などは元に戻せず、エラーの修正は利用者の責任、とヘルプに記載\n・OpenAI「dots」（2026年9月29日）: 頼まれていないときの「先回りリサーチ」は読み取り専用のツールだけを使う。日本が対象地域かは確認できず\n・Anthropic「Claude Duet」（2026年10月21日、米国の Pro・Max の待機リストによる研究プレビュー。日本では使えない）: 送信・支払い・署名・削除の前は利用者の承認を待つ。操作の承認には、Claude Code と同じ自動の分類器（番組では「見張り役のAI」）を使う、と発表に記載。利用者がルールを教える仕組みは、発表とヘルプには記載なし\n\n■ 資料に書いてあること\n・Chen ほか（CHI 2025、カーネギーメロン大学ほか）: 学生65人のプログラミング課題。先回りの提案を好んだ人は、2つの作り方で90%と80%。提案までの待ち時間を20秒から5秒に縮め、提案数を3から5に増やした作り方では47%\n・Anthropic「Claude Code auto mode」（2026年3月、提供元自身の測定）: 手動の承認を求められた場面の93%で、利用者は結局承認。社員の実際の利用から集めた行き過ぎた操作52件のうち、自動の分類器は17%を見逃した（Claude Code での数字で、Duet で測った数字ではありません）\n・Anthropic「Measuring AI agent autonomy in practice」（2026年2月、提供元自身の測定）: Claude Code で、聞かずに全部やらせる設定（full auto-approve）にした回は、使い始め（50回未満）で約20%、750回では40%超。途中で止める割合は約10回の人で5%、経験者で約9%。「一つずつ承認する形から、見守って必要なときに止める形に移る」。自動承認の増加には設定変更の分を含む可能性、と著者自身が注記。失敗の増減は測っていません\n・Yan（arXiv 2608.27443、2026年8月、査読前のプレプリント）: ソフトウェアの専門の経歴が無い113人が、行き過ぎ7個を含む18個の操作の模擬の1日を見張った。自分でルールを書いた条件は、毎回承認する条件より、行き過ぎを止めた割合が20.1ポイント低かった（自動の審査役の条件より14.5ポイント低い）。140のルールのうち114は「ask（先に聞く）」。通った行き過ぎ148件のうち133件は本人の承認のあと。ルールは一度書くだけで、教え直しを繰り返す使い方は測っていません\n\n■ 利害関係の開示\nこの番組の台本づくりには Anthropic の Claude を使っています。この回で扱う Claude Duet は Anthropic の製品で、承認の測定2つ（Claude Code auto mode、Measuring AI agent autonomy in practice）は Anthropic 自身の測定です。第三者の研究と同じ重さで扱いました。\n\n※判定は2026年10月23日時点のものです。各サービスの機能・提供地域は変わることがあります。\n※画面のスマートフォン・パソコンは、特定の製品を描いたものではありません。\n\n■ 参考（一次資料）\n[1] Anthropic「Introducing Claude Duet」（2026年10月21日） https://claude.com/resources/articles/claude-duet\n[2] Anthropic ヘルプ「Get started with Claude Duet」 https://support.claude.com/en/articles/17631495-get-started-with-claude-duet\n[3] Meta「パーソナルAIエージェント『Muse』を日本で提供開始」（2026年10月23日） https://about.fb.com/ja/news/2026/10/muse-personal-ai-agent-launches-in-japan/\n[4] Meta ヘルプ「Museがあなたのガイダンスと承認に基づいて機能する仕組み」 https://www.meta.com/ja-jp/help/superintelligence/1385290430137537/\n[5] Meta「Introducing Muse」（2026年9月8日） https://about.fb.com/news/2026/09/introducing-muse/\n[6] OpenAI「dots のご紹介」（2026年9月29日） https://openai.com/ja-JP/index/introducing-dots/\n[7] SpaceXAI（旧xAI）「Grok Bot Security」 https://docs.x.ai/grok-bot/security\n[8] SpaceXAI（旧xAI）「Introducing Grok Bot」（2026年8月11日） https://x.ai/news/introducing-grok-bot\n[9] Anthropic「Measuring AI agent autonomy in practice」（2026年2月18日） https://www.anthropic.com/research/measuring-agent-autonomy\n[10] Anthropic「Claude Code auto mode」（2026年3月25日） https://www.anthropic.com/engineering/claude-code-auto-mode\n[11] Ting Yan「Do User-Authored Permission Policies Improve Protection Against AI Agent Overreach?」arXiv:2608.27443（2026年8月、査読前のプレプリント） https://arxiv.org/abs/2608.27443\n[12] Valerie Chen ほか「Need Help? Designing Proactive AI Assistants for Programming」CHI 2025 https://arxiv.org/abs/2410.04596",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "image_prompt": "Early morning, soft clear dawn daylight through a window (clearly morning, not night): on a tidy wooden bedside table, a plain smartphone lying face-up glows gently, its screen showing only a few soft, blurred, rounded notification shapes in teal and warm coral, nothing legible. Beside it a ceramic mug and a folded paper notebook. Calm, quiet bedroom background softly out of focus. No people. Generic phone, not any specific brand or model. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "頼む前に動くAI秘書が、4社からそろった！",
+          "expression": "excited",
+          "tone": "excited, like breaking news"
+        }
+      ],
+      "narration": "大輔「頼む前に動くAI秘書が、4社からそろった！」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 6,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "でも、送る前には「送っていい？」と人に聞く。",
+          "expression": "doubt"
+        }
+      ],
+      "narration": "沙織「でも、送る前には「送っていい？」と人に聞く。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 9,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "慣れた人ほど、AIの作業に途中で「待った」をかけてた？",
+          "expression": "surprised"
+        }
+      ],
+      "narration": "大輔「慣れた人ほど、AIの作業に途中で「待った」をかけてた？」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 12,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "慣れたら、中身を見ずに「いいよ」を押すだけ？",
+          "expression": "thinking",
+          "tag": "question"
+        }
+      ],
+      "narration": "沙織「慣れたら、中身を見ずに「いいよ」を押すだけ？」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 5,
+      "type": "setup",
+      "bgm_role": "intro",
+      "image_asset": "base_cafe_b",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "お題は、この2か月で出そろった、AIの新しいサービス。大手4社が、頼まれる前に、自分から仕事を進めるAIを出した。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "この回では、それを「秘書AI」と呼ぼう。メールを読む、まとめる、下書きを作る。そこまでは、自分で先に進める。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でも、送る、払う、消す、の前には、人に「これでいい？」と聞いてくる。人が「いいよ」と押すのが、承認。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "4社って、どこ？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "会社の名前だけ言うね。イーロン・マスクさんのスペースエックス。ロケットの会社で、今はAIも作ってる。フェイスブックの会社、メタ。チャットジーピーティーの会社、オープンエーアイ。それと、クロードというAIを作っているアンソロピック。",
+          "expression": "excited",
+          "display": "会社の名前だけ言うね。イーロン・マスクさんのSpaceX。ロケットの会社で、今はAIも作ってる。Facebookの会社、Meta。ChatGPTの会社、OpenAI。それと、ClaudeというAIを作っているAnthropic。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "どれも、アメリカの会社ね。日本で使えるのは？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "メタの秘書AI、ミューズが、10月23日から日本で使える。基本の機能の多くは無料。ほかの3社の秘書AIは、日本で使えるとは確かめられなかった。",
+          "expression": "neutral",
+          "display": "Metaの秘書AI、Museが、10月23日から日本で使える。基本の機能の多くは無料。ほかの3社の秘書AIは、日本で使えるとは確かめられなかった。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "先に言っておく。今日の数字のいくつかは、アンソロピックが自分で測ったもの。自分の商品の話だから、いい方に寄っているかもしれない。",
+          "expression": "doubt",
+          "display": "先に言っておく。今日の数字のいくつかは、Anthropicが自分で測ったもの。自分の商品の話だから、いい方に寄っているかもしれない。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想。各社の言う「頼む前に先回りして動く秘書」は、もう来た。人は、AIに指示する側から、承認する側に変わる。",
+          "expression": "excited",
+          "tag": "prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想。それは盛ってる。人は慣れたら、中身を見ずに「いいよ」を押すだけになる。",
+          "expression": "doubt",
+          "tag": "prediction"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、3つ確かめよう。先回りは助かるのか。慣れたら承認は形だけになるのか。それと、毎回押すのは手間だから、聞かれる回数を減らしたくなる。それを決めるのは誰か。",
+          "expression": "thinking"
+        }
+      ],
+      "narration": "大輔「お題は、この2か月で出そろった、AIの新しいサービス。大手4社が、頼まれる前に、自分から仕事を進めるAIを出した。」\n沙織「この回では、それを「秘書AI」と呼ぼう。メールを読む、まとめる、下書きを作る。そこまでは、自分で先に進める。」\n大輔「でも、送る、払う、消す、の前には、人に「これでいい？」と聞いてくる。人が「いいよ」と押すのが、承認。」\n沙織「4社って、どこ？」\n大輔「会社の名前だけ言うね。イーロン・マスクさんのスペースエックス。ロケットの会社で、今はAIも作ってる。フェイスブックの会社、メタ。チャットジーピーティーの会社、オープンエーアイ。それと、クロードというAIを作っているアンソロピック。」\n沙織「どれも、アメリカの会社ね。日本で使えるのは？」\n大輔「メタの秘書AI、ミューズが、10月23日から日本で使える。基本の機能の多くは無料。ほかの3社の秘書AIは、日本で使えるとは確かめられなかった。」\n沙織「先に言っておく。今日の数字のいくつかは、アンソロピックが自分で測ったもの。自分の商品の話だから、いい方に寄っているかもしれない。」\n大輔「僕の予想。各社の言う「頼む前に先回りして動く秘書」は、もう来た。人は、AIに指示する側から、承認する側に変わる。」\n沙織「私の予想。それは盛ってる。人は慣れたら、中身を見ずに「いいよ」を押すだけになる。」\n大輔「じゃあ、3つ確かめよう。先回りは助かるのか。慣れたら承認は形だけになるのか。それと、毎回押すのは手間だから、聞かれる回数を減らしたくなる。それを決めるのは誰か。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 6,
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 1,
+      "round_title": "先回りは、助かる？ 邪魔？",
+      "image_prompt": "Bright daytime home office: on a light wooden desk by a window, a few plain paper invoices and envelopes are spread out next to a closed laptop; a hand (only the hand and forearm in a gray sweater sleeve visible, no face) holds a plain smartphone whose screen shows only a soft, blurred, rounded card shape glowing warm coral, nothing legible. A calendar on the wall is blurred and unreadable. Soft daylight, calm mood. Generic devices, not any specific brand or model. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "まず、先回りの中身。オープンエーアイが、自分たちの秘書AI、ドッツの発表で、こんな例を出してる。",
+          "expression": "excited",
+          "display": "まず、先回りの中身。OpenAIが、自分たちの秘書AI、dotsの発表で、こんな例を出してる。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "試した人の秘書AIが、ある仕事先への請求を、本人が忘れていたことに気づいた。それで、請求書を作った。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "作った請求書は、AIが勝手に送ったの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ううん。本人がOKしてから、送った。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "気づいて、作って、送る前に聞く。さっきの承認ね。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕なら、これに使う。月末に、出し忘れの請求や、返事をしていないメールに気づいてもらって、下書きまで作ってもらう。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "気づいてくれるのは助かる。でも、AIが勝手に動き回るのは、ちょっと怖い。どこまで先に動くの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そこは、ドッツの発表に、はっきり書いてある。",
+          "expression": "neutral",
+          "display": "そこは、dotsの発表に、はっきり書いてある。"
+        }
+      ],
+      "narration": "大輔「まず、先回りの中身。オープンエーアイが、自分たちの秘書AI、ドッツの発表で、こんな例を出してる。」\n大輔「試した人の秘書AIが、ある仕事先への請求を、本人が忘れていたことに気づいた。それで、請求書を作った。」\n沙織「作った請求書は、AIが勝手に送ったの？」\n大輔「ううん。本人がOKしてから、送った。」\n沙織「気づいて、作って、送る前に聞く。さっきの承認ね。」\n大輔「僕なら、これに使う。月末に、出し忘れの請求や、返事をしていないメールに気づいてもらって、下書きまで作ってもらう。」\n沙織「気づいてくれるのは助かる。でも、AIが勝手に動き回るのは、ちょっと怖い。どこまで先に動くの？」\n大輔「そこは、ドッツの発表に、はっきり書いてある。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 7,
+      "type": "check",
+      "bgm_role": "main",
+      "round": 1,
+      "reference_index": 5,
+      "source_card": {
+        "kind": "press",
+        "source": "OpenAI「dots のご紹介」（2026年9月29日）",
+        "quote": "dot は、すでに接続しているアプリを、読み取り専用に制限されたツールを使って参照します。",
+        "quote_type": "原文",
+        "highlight": "読み取り専用",
+        "items": [
+          "頼まれていないときの「先回りリサーチ」",
+          "送信・アプリ内の変更・パソコン操作はできない",
+          "請求書の例も、送ったのは本人の承認のあと",
+          "重要な作業は必ず確認を、と発表自身が注意"
+        ],
+        "reference_index": 5
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "ドッツが、頼まれていないときに裏で調べる「先回りリサーチ」は、読むだけの道具しか使えない。",
+          "expression": "neutral",
+          "display": "dotsが、頼まれていないときに裏で調べる「先回りリサーチ」は、読むだけの道具しか使えない。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "メッセージを送ったり、アプリの中身を変えたりは、できない作りか。頼まれていないときにやるのは、読んで気づくところまで。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう。発表には、ドッツも間違えることがあるから、重要な作業は必ず確認して、とも書いてある。",
+          "expression": "neutral",
+          "display": "そう。発表には、dotsも間違えることがあるから、重要な作業は必ず確認して、とも書いてある。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、気づいたことを、どれくらいの頻度で持ってこられたら、うれしいか。そこは別の話。",
+          "expression": "thinking"
+        }
+      ],
+      "image_asset": "cards/kl048_S07",
+      "narration": "沙織「ドッツが、頼まれていないときに裏で調べる「先回りリサーチ」は、読むだけの道具しか使えない。」\n大輔「メッセージを送ったり、アプリの中身を変えたりは、できない作りか。頼まれていないときにやるのは、読んで気づくところまで。」\n沙織「そう。発表には、ドッツも間違えることがあるから、重要な作業は必ず確認して、とも書いてある。」\n沙織「ただ、気づいたことを、どれくらいの頻度で持ってこられたら、うれしいか。そこは別の話。」\n［画面の資料カード］OpenAI「dots のご紹介」（2026年9月29日） 「dot は、すでに接続しているアプリを、読み取り専用に制限されたツールを使って参照します。」（原文） ・頼まれていないときの「先回りリサーチ」 ・送信・アプリ内の変更・パソコン操作はできない ・請求書の例も、送ったのは本人の承認のあと ・重要な作業は必ず確認を、と発表自身が注意",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 8,
+      "type": "check",
+      "bgm_role": "main",
+      "round": 1,
+      "reference_index": 11,
+      "source_card": {
+        "kind": "paper",
+        "source": "Chen ほか（カーネギーメロン大学など）CHI 2025 の論文",
+        "quote_type": "要約",
+        "items": [
+          "学生65人が、プログラミングの課題",
+          "AIの提案: プログラムの説明、間違いの直し方など",
+          "ゆっくりめの2通り: 先回りを好んだ人は9割と8割",
+          "待ち時間を20秒→5秒、提案を3つ→5つにすると47%",
+          "不満の声「気が散る」「うっとうしい」"
+        ],
+        "reference_index": 11
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "その頻度を試した実験がある。アメリカのカーネギーメロン大学などのチーム。学生65人が、プログラミングの課題をやった。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "AIは、何を先回りして提案してくるの？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "書いているプログラムの説明や、間違いの直し方。学生の手が止まると、頼まれる前に出してくる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "頼んだときだけ答えるAIと比べて、好まれた？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ゆっくり、控えめに提案を出す作り方だと、8割以上の人が「先回りの方がいい」と答えた。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ほら、やっぱり先回りは喜ばれてる！",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ところが、提案までの待ち時間を短くして、一度に出す数も増やしたら、先回りを好んだ人は47%。半分を切った。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "せっかちにしただけで、半分以下？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "「気が散る」「うっとうしい」という声が出てる。それに、これは学生が、決められたプログラミングの課題をやった実験。毎日の請求やメールで、何週間も使ったらどうなるかは、測ってない。",
+          "expression": "amused",
+          "tag": "weakness"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、僕の使い道は、こう狭める。思いつくたびに割り込ませない。月末に一度、出し忘れをまとめて持ってきてもらう。それなら、うっとうしくない。",
+          "expression": "thinking",
+          "tag": "turn"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それなら、この実験の向きとは合う。ただ、毎日の暮らしで確かめた資料は、まだ無い。",
+          "expression": "convinced"
+        }
+      ],
+      "image_asset": "cards/kl048_S08",
+      "narration": "沙織「その頻度を試した実験がある。アメリカのカーネギーメロン大学などのチーム。学生65人が、プログラミングの課題をやった。」\n大輔「AIは、何を先回りして提案してくるの？」\n沙織「書いているプログラムの説明や、間違いの直し方。学生の手が止まると、頼まれる前に出してくる。」\n大輔「頼んだときだけ答えるAIと比べて、好まれた？」\n沙織「ゆっくり、控えめに提案を出す作り方だと、8割以上の人が「先回りの方がいい」と答えた。」\n大輔「ほら、やっぱり先回りは喜ばれてる！」\n沙織「ところが、提案までの待ち時間を短くして、一度に出す数も増やしたら、先回りを好んだ人は47%。半分を切った。」\n大輔「せっかちにしただけで、半分以下？」\n沙織「「気が散る」「うっとうしい」という声が出てる。それに、これは学生が、決められたプログラミングの課題をやった実験。毎日の請求やメールで、何週間も使ったらどうなるかは、測ってない。」\n大輔「じゃあ、僕の使い道は、こう狭める。思いつくたびに割り込ませない。月末に一度、出し忘れをまとめて持ってきてもらう。それなら、うっとうしくない。」\n沙織「それなら、この実験の向きとは合う。ただ、毎日の暮らしで確かめた資料は、まだ無い。」\n［画面の資料カード］Chen ほか（カーネギーメロン大学など）CHI 2025 の論文 ・学生65人が、プログラミングの課題 ・AIの提案: プログラムの説明、間違いの直し方など ・ゆっくりめの2通り: 先回りを好んだ人は9割と8割 ・待ち時間を20秒→5秒、提案を3つ→5つにすると47% ・不満の声「気が散る」「うっとうしい」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 9,
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 2,
+      "round_title": "慣れたら、承認は形だけ？",
+      "image_prompt": "Evening at a home desk with warm lamp light and a dusk-blue sky visible through the window: an open laptop shows a soft, blurred rounded pop-up box with two blurred button shapes (one teal, one warm coral), nothing legible; a hand (only the hand and wrist visible, no face) rests near the trackpad, one finger hovering just above it. A mug of tea and a small plant beside the laptop. Generic laptop, not any specific brand. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "次は、私の予想の方。人は慣れると、中身を見ずに「いいよ」を押すようになる。この回では、それを「形だけの承認」と呼ぶ。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そうなったら、承認の仕組みがあっても、意味がないね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "秘書AIで、これを測った数字は、見つからなかった。だから、近いAIの数字を見る。",
+          "expression": "doubt"
+        }
+      ],
+      "narration": "沙織「次は、私の予想の方。人は慣れると、中身を見ずに「いいよ」を押すようになる。この回では、それを「形だけの承認」と呼ぶ。」\n大輔「そうなったら、承認の仕組みがあっても、意味がないね。」\n沙織「秘書AIで、これを測った数字は、見つからなかった。だから、近いAIの数字を見る。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 10,
+      "type": "check",
+      "bgm_role": "main",
+      "round": 2,
+      "reference_index": 9,
+      "source_card": {
+        "kind": "blog",
+        "source": "Anthropic（Claude Code の承認の解説、2026年3月）※提供元自身の測定",
+        "quote": "一つずつ承認を求めた場面のうち、93%で、利用者は結局OKしていた",
+        "quote_type": "要約",
+        "highlight": "93%",
+        "items": [
+          "対象: Claude Code（プログラミング用のAI）",
+          "記事は「押し続けると見なくなる」と注意",
+          "中身を見ていたかは、測っていない",
+          "測ったのは、提供元のAnthropic自身"
+        ],
+        "reference_index": 9
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "アンソロピックの、クロード・コード。プログラミング用のAIで、これも一つずつ「これをやっていい？」と聞いてくる。その場面のうち、93%で、人はOKしてた。",
+          "expression": "neutral",
+          "display": "Anthropicの、Claude Code。プログラミング用のAIで、これも一つずつ「これをやっていい？」と聞いてくる。その場面のうち、93%で、人はOKしてた。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "100回聞かれて、93回はOK。ほとんど断ってない。",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "この数字を出した記事は、承認を何度も押すうちに、何を承認しているか、よく見なくなる、と書いてる。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でも、93%は、AIのやろうとしたことが、たいてい正しかっただけかもしれない。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう。中身を見ずに押したかまでは、この数字からは分からない。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それに、同じアンソロピックが、慣れた人がクロード・コードをどう使っているかも測ってる。",
+          "expression": "thinking",
+          "display": "それに、同じAnthropicが、慣れた人がClaude Codeをどう使っているかも測ってる。"
+        }
+      ],
+      "image_asset": "cards/kl048_S10",
+      "narration": "沙織「アンソロピックの、クロード・コード。プログラミング用のAIで、これも一つずつ「これをやっていい？」と聞いてくる。その場面のうち、93%で、人はOKしてた。」\n大輔「100回聞かれて、93回はOK。ほとんど断ってない。」\n沙織「この数字を出した記事は、承認を何度も押すうちに、何を承認しているか、よく見なくなる、と書いてる。」\n大輔「でも、93%は、AIのやろうとしたことが、たいてい正しかっただけかもしれない。」\n沙織「そう。中身を見ずに押したかまでは、この数字からは分からない。」\n大輔「それに、同じアンソロピックが、慣れた人がクロード・コードをどう使っているかも測ってる。」\n［画面の資料カード］Anthropic（Claude Code の承認の解説、2026年3月）※提供元自身の測定 「一つずつ承認を求めた場面のうち、93%で、利用者は結局OKしていた」（要約） ・対象: Claude Code（プログラミング用のAI） ・記事は「押し続けると見なくなる」と注意 ・中身を見ていたかは、測っていない ・測ったのは、提供元のAnthropic自身",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 11,
+      "type": "check",
+      "bgm_role": "main",
+      "round": 2,
+      "reference_index": 8,
+      "source_card": {
+        "kind": "blog",
+        "source": "Anthropic「AIの自律性の測定」（2026年2月）※提供元自身の測定",
+        "quote": "一つずつ承認する形から、見守って、必要なときに止める形に移っていく",
+        "quote_type": "要約",
+        "highlight": "見守って",
+        "items": [
+          "聞かずに全部やらせる設定（作業の回）: 約2割→4割超",
+          "途中で割り込んで止める（やり取りの往復）: 5%→9%ほど",
+          "増えた分には、好みで設定を変えた分も含むかも",
+          "対象はClaude Code（主にプログラミング）",
+          "失敗が増えたか減ったかは、測っていない"
+        ],
+        "reference_index": 8
+      },
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "クロード・コードは、最初は、一つずつ「やっていい？」と聞いてくる設定。でも、聞かずに全部やらせる設定にも、切り替えられる。",
+          "expression": "neutral",
+          "display": "Claude Codeは、最初は、一つずつ「やっていい？」と聞いてくる設定。でも、聞かずに全部やらせる設定にも、切り替えられる。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "使い始めの人は2割ほどが、この聞かずに全部やらせる設定を使ってた。慣れた人だと、4割を超える。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ほら。慣れたら、任せっぱなし。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ところが、慣れた人ほど、AIの作業に途中で「待った」をかけて、止めてる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "慣れた人の方が、よく割り込んでるの？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "止めた割合は、使い始めの人で5%、慣れた人で9%ほど。2倍近く。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "報告は、慣れた人は、一つずつ承認するやり方から、見守っていて、必要なときに止めるやり方に移る、と書いてる。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "……そこは、私の読み違い。慣れた人は、目を離したんじゃなくて、見張り方を変えてた。",
+          "expression": "convinced",
+          "tag": "turn"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、これは主にプログラミングでの話。任せたあと、失敗が増えたか減ったかも、測ってない。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、2割から4割に増えたのは、慣れて信頼したからとは限らない。好みに合わせて設定を変えただけの人も入っているかも、と報告自身が書いてる。",
+          "expression": "thinking"
+        }
+      ],
+      "image_asset": "cards/kl048_S11",
+      "narration": "大輔「クロード・コードは、最初は、一つずつ「やっていい？」と聞いてくる設定。でも、聞かずに全部やらせる設定にも、切り替えられる。」\n大輔「使い始めの人は2割ほどが、この聞かずに全部やらせる設定を使ってた。慣れた人だと、4割を超える。」\n沙織「ほら。慣れたら、任せっぱなし。」\n大輔「ところが、慣れた人ほど、AIの作業に途中で「待った」をかけて、止めてる。」\n沙織「慣れた人の方が、よく割り込んでるの？」\n大輔「止めた割合は、使い始めの人で5%、慣れた人で9%ほど。2倍近く。」\n大輔「報告は、慣れた人は、一つずつ承認するやり方から、見守っていて、必要なときに止めるやり方に移る、と書いてる。」\n沙織「……そこは、私の読み違い。慣れた人は、目を離したんじゃなくて、見張り方を変えてた。」\n沙織「ただ、これは主にプログラミングでの話。任せたあと、失敗が増えたか減ったかも、測ってない。」\n沙織「それに、2割から4割に増えたのは、慣れて信頼したからとは限らない。好みに合わせて設定を変えただけの人も入っているかも、と報告自身が書いてる。」\n［画面の資料カード］Anthropic「AIの自律性の測定」（2026年2月）※提供元自身の測定 「一つずつ承認する形から、見守って、必要なときに止める形に移っていく」（要約） ・聞かずに全部やらせる設定（作業の回）: 約2割→4割超 ・途中で割り込んで止める（やり取りの往復）: 5%→9%ほど ・増えた分には、好みで設定を変えた分も含むかも ・対象はClaude Code（主にプログラミング） ・失敗が増えたか減ったかは、測っていない",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 12,
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 3,
+      "round_title": "承認を減らすのは、誰？",
+      "image_prompt": "Calm evening at a kitchen table under warm pendant light, dusk visible through the window: two hands (only hands and forearms visible, no face) hold a plain smartphone whose screen shows a soft, blurred list of rounded rows, each with a small blurred toggle switch, some teal and one warm coral, nothing legible. A notebook with a pen and a cup of tea on the table. Generic phone, not any specific brand or app. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "僕なら、これに使う。最初の1か月は、全部ひとつずつ承認する。慣れた種類から、「これは次から聞かなくていい」と教えていく。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "最初の1か月は、全部？ 手間がかかるね。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "その代わり、聞かなくていい範囲を、教えながら少しずつ広げる。この回では、これを承認の「卒業」と呼ぶ。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "その、教える仕組みは、4社にあるの？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "人が教える仕組みは、2社にある。メタのミューズと、スペースエックスの秘書AI、グロック・ボット。教え方は、承認のボタンの「常に許可」を押すこと。押すと、同じ種類の操作は次から聞かずにやる。",
+          "expression": "neutral",
+          "display": "人が教える仕組みは、2社にある。MetaのMuseと、SpaceXの秘書AI、Grok Bot。教え方は、承認のボタンの「常に許可」を押すこと。押すと、同じ種類の操作は次から聞かずにやる。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "「常に許可」を押したら、任せっぱなしにならない？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "グロック・ボットでは、利用者が「これは必ず先に聞いて」というルールも決めておける。そのルールは、「常に許可」より優先される。",
+          "expression": "neutral",
+          "display": "Grok Botでは、利用者が「これは必ず先に聞いて」というルールも決めておける。そのルールは、「常に許可」より優先される。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "アンソロピックの秘書AI、クロード・デュエットは？ さっきのクロード・コードとは別のAIよね。",
+          "expression": "neutral",
+          "display": "Anthropicの秘書AI、Claude Duetは？ さっきのClaude Codeとは別のAIよね。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そう、別物。デュエットの発表とヘルプには、人がルールを教える仕組みが、書かれていない。",
+          "expression": "thinking",
+          "display": "そう、別物。Duetの発表とヘルプには、人がルールを教える仕組みが、書かれていない。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "デュエットは、クラウドにある自分のブラウザで、サイトの操作も自分で進める。送る、払う、以外のそういう操作には、誰がOKを出すの？",
+          "expression": "thinking",
+          "display": "Duetは、クラウドにある自分のブラウザで、サイトの操作も自分で進める。送る、払う、以外のそういう操作には、誰がOKを出すの？"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "デュエット本体とは別のAIが、人の代わりにOKを出す。この回では、これを「見張り役のAI」と呼ぶ。",
+          "expression": "neutral",
+          "display": "Duet本体とは別のAIが、人の代わりにOKを出す。この回では、これを「見張り役のAI」と呼ぶ。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "人が教えるか、見張り役のAIに任せるか。まず、人が教える方。メタのミューズのヘルプから。",
+          "expression": "neutral",
+          "display": "人が教えるか、見張り役のAIに任せるか。まず、人が教える方。MetaのMuseのヘルプから。"
+        }
+      ],
+      "narration": "大輔「僕なら、これに使う。最初の1か月は、全部ひとつずつ承認する。慣れた種類から、「これは次から聞かなくていい」と教えていく。」\n沙織「最初の1か月は、全部？ 手間がかかるね。」\n大輔「その代わり、聞かなくていい範囲を、教えながら少しずつ広げる。この回では、これを承認の「卒業」と呼ぶ。」\n沙織「その、教える仕組みは、4社にあるの？」\n大輔「人が教える仕組みは、2社にある。メタのミューズと、スペースエックスの秘書AI、グロック・ボット。教え方は、承認のボタンの「常に許可」を押すこと。押すと、同じ種類の操作は次から聞かずにやる。」\n沙織「「常に許可」を押したら、任せっぱなしにならない？」\n大輔「グロック・ボットでは、利用者が「これは必ず先に聞いて」というルールも決めておける。そのルールは、「常に許可」より優先される。」\n沙織「アンソロピックの秘書AI、クロード・デュエットは？ さっきのクロード・コードとは別のAIよね。」\n大輔「そう、別物。デュエットの発表とヘルプには、人がルールを教える仕組みが、書かれていない。」\n沙織「デュエットは、クラウドにある自分のブラウザで、サイトの操作も自分で進める。送る、払う、以外のそういう操作には、誰がOKを出すの？」\n大輔「デュエット本体とは別のAIが、人の代わりにOKを出す。この回では、これを「見張り役のAI」と呼ぶ。」\n沙織「人が教えるか、見張り役のAIに任せるか。まず、人が教える方。メタのミューズのヘルプから。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 13,
+      "type": "check",
+      "bgm_role": "main",
+      "round": 3,
+      "reference_index": 3,
+      "source_card": {
+        "kind": "docs",
+        "source": "Meta ヘルプ「Museがあなたのガイダンスと承認に基づいて機能する仕組み」",
+        "quote": "Museは、どのような決定に承認が必要かを学習していきます。",
+        "quote_type": "原文",
+        "highlight": "学習していきます",
+        "items": [
+          "承認の選択肢に「常に許可」がある",
+          "アクティビティログで、操作の記録を見られる",
+          "メールの送信などは、元に戻せない",
+          "エラーの修正は、利用者の責任",
+          "まずリスクの少ないタスクから、と案内"
+        ],
+        "reference_index": 3
+      },
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "ミューズのヘルプ。ミューズは、どんな決定に承認が要るかを、学んでいく、とある。",
+          "expression": "excited",
+          "display": "Museのヘルプ。Museは、どんな決定に承認が要るかを、学んでいく、とある。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それに、ミューズが何をしたかの記録を、あとから見られる。",
+          "expression": "neutral",
+          "display": "それに、Museが何をしたかの記録を、あとから見られる。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "でも、同じページに、メールの送信は元に戻せない、と書いてある。それに、ミューズの間違いで相手に迷惑がかかっても、直すのは使った人の責任。",
+          "expression": "doubt",
+          "tag": "barrier",
+          "display": "でも、同じページに、メールの送信は元に戻せない、と書いてある。それに、Museの間違いで相手に迷惑がかかっても、直すのは使った人の責任。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "任せても、責任はこっちに残るのか。",
+          "expression": "deflated"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ヘルプ自身が、慣れるまでは、リスクの少ない作業から始めて、と書いてる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、卒業させるのは、間違えても取り返しがつく作業から。メールの送信や支払いは、最後まで自分で押す。",
+          "expression": "convinced",
+          "tag": "turn"
+        }
+      ],
+      "image_asset": "cards/kl048_S13",
+      "narration": "大輔「ミューズのヘルプ。ミューズは、どんな決定に承認が要るかを、学んでいく、とある。」\n大輔「それに、ミューズが何をしたかの記録を、あとから見られる。」\n沙織「でも、同じページに、メールの送信は元に戻せない、と書いてある。それに、ミューズの間違いで相手に迷惑がかかっても、直すのは使った人の責任。」\n大輔「任せても、責任はこっちに残るのか。」\n沙織「ヘルプ自身が、慣れるまでは、リスクの少ない作業から始めて、と書いてる。」\n大輔「じゃあ、卒業させるのは、間違えても取り返しがつく作業から。メールの送信や支払いは、最後まで自分で押す。」\n［画面の資料カード］Meta ヘルプ「Museがあなたのガイダンスと承認に基づいて機能する仕組み」 「Museは、どのような決定に承認が必要かを学習していきます。」（原文） ・承認の選択肢に「常に許可」がある ・アクティビティログで、操作の記録を見られる ・メールの送信などは、元に戻せない ・エラーの修正は、利用者の責任 ・まずリスクの少ないタスクから、と案内",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 14,
+      "type": "check",
+      "bgm_role": "main",
+      "round": 3,
+      "reference_index": 0,
+      "source_card": {
+        "kind": "blog",
+        "source": "Anthropic「Claude Duet」の発表（10月21日）と技術ブログ ※提供元自身の資料",
+        "quote": "送信・支払い・署名・削除の前は、人の承認を待つ。AIの操作は、自動の見張り役のAIが承認する",
+        "quote_type": "要約",
+        "highlight": "見張り役のAI",
+        "items": [
+          "見張り役のAIは、Claude Codeと同じ仕組み",
+          "利用者がルールを教える仕組み: 記載なし",
+          "社員の実利用で、行き過ぎ52件の17%を見逃し",
+          "17%はClaude Codeでの数字（Duetではない）"
+        ],
+        "reference_index": 0
+      },
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "次は、アンソロピックの秘書AI、デュエット。送る、払う、署名する、消す、の前には、人の承認を待つ。",
+          "expression": "neutral",
+          "display": "次は、Anthropicの秘書AI、Duet。送る、払う、署名する、消す、の前には、人の承認を待つ。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それ以外の操作は、見張り役のAIが一つずつ見て、OKを出す。発表によると、クロード・コードにもある見張り役と同じ仕組み。",
+          "expression": "neutral",
+          "display": "それ以外の操作は、見張り役のAIが一つずつ見て、OKを出す。発表によると、Claude Codeにもある見張り役と同じ仕組み。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "デュエットの見張り役は、どれくらい当たるの？",
+          "expression": "thinking",
+          "display": "Duetの見張り役は、どれくらい当たるの？"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "デュエットで測った数字は、見つからなかった。あるのは、クロード・コードでの測定。アンソロピックの社員が実際に使った記録から、頼んでいないことまでAIがやろうとした例を、52件集めた。",
+          "expression": "neutral",
+          "display": "Duetで測った数字は、見つからなかった。あるのは、Claude Codeでの測定。Anthropicの社員が実際に使った記録から、頼んでいないことまでAIがやろうとした例を、52件集めた。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "この回では、それを「行き過ぎ」と呼ぼう。たとえば、どんなこと？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "記事には、指示を読み違えて、チームで共有しているプログラムの一部を消した、という例が載ってる。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "クロード・コードでの測定では、見張り役のAIは、そのうち17%を見逃した。6件に1件ほど。",
+          "expression": "doubt",
+          "display": "Claude Codeでの測定では、見張り役のAIは、そのうち17%を見逃した。6件に1件ほど。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "6件に1件は、通っちゃうのか。じゃあ、人が自分でルールを教える方が安心だね。",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが、そうとも言えない実験がある。",
+          "expression": "doubt"
+        }
+      ],
+      "image_asset": "cards/kl048_S14",
+      "narration": "大輔「次は、アンソロピックの秘書AI、デュエット。送る、払う、署名する、消す、の前には、人の承認を待つ。」\n沙織「それ以外の操作は、見張り役のAIが一つずつ見て、OKを出す。発表によると、クロード・コードにもある見張り役と同じ仕組み。」\n大輔「デュエットの見張り役は、どれくらい当たるの？」\n沙織「デュエットで測った数字は、見つからなかった。あるのは、クロード・コードでの測定。アンソロピックの社員が実際に使った記録から、頼んでいないことまでAIがやろうとした例を、52件集めた。」\n大輔「この回では、それを「行き過ぎ」と呼ぼう。たとえば、どんなこと？」\n沙織「記事には、指示を読み違えて、チームで共有しているプログラムの一部を消した、という例が載ってる。」\n沙織「クロード・コードでの測定では、見張り役のAIは、そのうち17%を見逃した。6件に1件ほど。」\n大輔「6件に1件は、通っちゃうのか。じゃあ、人が自分でルールを教える方が安心だね。」\n沙織「それが、そうとも言えない実験がある。」\n［画面の資料カード］Anthropic「Claude Duet」の発表（10月21日）と技術ブログ ※提供元自身の資料 「送信・支払い・署名・削除の前は、人の承認を待つ。AIの操作は、自動の見張り役のAIが承認する」（要約） ・見張り役のAIは、Claude Codeと同じ仕組み ・利用者がルールを教える仕組み: 記載なし ・社員の実利用で、行き過ぎ52件の17%を見逃し ・17%はClaude Codeでの数字（Duetではない）",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 15,
+      "type": "check",
+      "bgm_role": "main",
+      "round": 3,
+      "reference_index": 10,
+      "source_card": {
+        "kind": "paper",
+        "source": "Yan（arXiv、2026年8月）※まだ専門家の審査前の論文",
+        "quote_type": "要約",
+        "items": [
+          "113人。作り物の1日に操作18個、うち行き過ぎ7個",
+          "止めた割合: 毎回承認 約6割・ルールを先に決める 約4割",
+          "ルール140のうち114が「先に聞いて」",
+          "ルールの群で通った行き過ぎ148件中133件は本人がOK",
+          "なぜかは未検証。教え直しも測っていない"
+        ],
+        "reference_index": 10
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "まだ、ほかの専門家の審査を受ける前の論文。参加したのは、プログラミングが仕事ではない、ふつうの人113人。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "参加した人は、何をしたの？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "秘書AIが働く一日を、作り物の場面で用意した。予定、メール、旅行の手続き。その中に、行き過ぎの操作が混ぜてある。たとえば、空港のラウンジの利用券を、勝手に買う。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "参加した人は、それを画面で見て、止められるか、だね。どうやって比べたの？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "比べたやり方のうち、二つを見る。毎回ひとつずつ、自分で承認する人。それと、先にルールを決めて任せる人。ルールは、お金を使う、送る、などの種類ごとに、「聞かずにやっていい」「先に聞いて」「やらないで」から選ぶ。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ルールを先に決める方が、僕の卒業の案に近い。どっちが、行き過ぎを止められた？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "毎回ひとつずつ承認した人は、行き過ぎの6割ほどを止めた。ルールを先に決めた人は、4割ほどしか止められなかった。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ルールを決めた方が、かえって通しちゃうの？ 僕の卒業の案、いきなり危ない。",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "面白いのはここから。決めたルールのうち、8割ほどは「先に聞いて」だった。任せるつもりでも、人は慎重に決める。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、なんで通しちゃうの？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ルールを決めた人のところで、通ってしまった行き過ぎを調べた。その9割ほどは、聞かれた本人がOKを押していた。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "毎回承認した人より、ルールを決めた人の方が、聞かれたときにOKを押しやすかったってこと？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "数字からは、そう読める。でも、なぜそうなったかは、この実験では確かめていない、と論文自身が書いてる。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それに、この実験は、ルールを一度決めるだけ。僕の案みたいに、何週間もかけて教え直すやり方は、測ってないよね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう。教え直しを続けるやり方が効くかは、今回集めた資料には無い。",
+          "expression": "convinced"
+        }
+      ],
+      "image_asset": "cards/kl048_S15",
+      "narration": "沙織「まだ、ほかの専門家の審査を受ける前の論文。参加したのは、プログラミングが仕事ではない、ふつうの人113人。」\n大輔「参加した人は、何をしたの？」\n沙織「秘書AIが働く一日を、作り物の場面で用意した。予定、メール、旅行の手続き。その中に、行き過ぎの操作が混ぜてある。たとえば、空港のラウンジの利用券を、勝手に買う。」\n大輔「参加した人は、それを画面で見て、止められるか、だね。どうやって比べたの？」\n沙織「比べたやり方のうち、二つを見る。毎回ひとつずつ、自分で承認する人。それと、先にルールを決めて任せる人。ルールは、お金を使う、送る、などの種類ごとに、「聞かずにやっていい」「先に聞いて」「やらないで」から選ぶ。」\n大輔「ルールを先に決める方が、僕の卒業の案に近い。どっちが、行き過ぎを止められた？」\n沙織「毎回ひとつずつ承認した人は、行き過ぎの6割ほどを止めた。ルールを先に決めた人は、4割ほどしか止められなかった。」\n大輔「ルールを決めた方が、かえって通しちゃうの？ 僕の卒業の案、いきなり危ない。」\n沙織「面白いのはここから。決めたルールのうち、8割ほどは「先に聞いて」だった。任せるつもりでも、人は慎重に決める。」\n大輔「じゃあ、なんで通しちゃうの？」\n沙織「ルールを決めた人のところで、通ってしまった行き過ぎを調べた。その9割ほどは、聞かれた本人がOKを押していた。」\n大輔「毎回承認した人より、ルールを決めた人の方が、聞かれたときにOKを押しやすかったってこと？」\n沙織「数字からは、そう読める。でも、なぜそうなったかは、この実験では確かめていない、と論文自身が書いてる。」\n大輔「それに、この実験は、ルールを一度決めるだけ。僕の案みたいに、何週間もかけて教え直すやり方は、測ってないよね。」\n沙織「そう。教え直しを続けるやり方が効くかは、今回集めた資料には無い。」\n［画面の資料カード］Yan（arXiv、2026年8月）※まだ専門家の審査前の論文 ・113人。作り物の1日に操作18個、うち行き過ぎ7個 ・止めた割合: 毎回承認 約6割・ルールを先に決める 約4割 ・ルール140のうち114が「先に聞いて」 ・ルールの群で通った行き過ぎ148件中133件は本人がOK ・なぜかは未検証。教え直しも測っていない",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 16,
+      "type": "verdict",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "verdict_from_line": 6,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想は「先回りして動く秘書は、もう来た」。そこは変わらない。変わったのは使い方。送る、払う、は最後まで自分で押す。",
+          "expression": "thinking",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想は「慣れたら押すだけになる」。半分外れた。慣れた人は、見守って止めてた。でも、ルールを先に決めた人は、行き過ぎにOKを押しやすかった。",
+          "expression": "amused",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "判定の札は、上から「もうすぐ来る」「3年はかかる」「根拠待ち」「まだ眉唾」の4つ。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "お題は、各社の言う「頼む前に先回りして動く秘書が来た」。僕は「もうすぐ来る」。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "頼む前に動いて、送る前に聞いてくる秘書は、日本でもメタのミューズで、もう使える。ここで言う「もうすぐ」は、普通の人の手元に広がるまでの話。それも、この1年のうちだと思う。",
+          "expression": "excited",
+          "display": "頼む前に動いて、送る前に聞いてくる秘書は、日本でもMetaのMuseで、もう使える。ここで言う「もうすぐ」は、普通の人の手元に広がるまでの話。それも、この1年のうちだと思う。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は、同じお題に「根拠待ち」。各社は、来ただけじゃなく、先回りして「助けてくれる」とまで言ってる。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "先回りする秘書が来た、という主張が間違いだと示す資料は無い。でも、今日の結果は、どれも条件つきだった。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "助かるかどうかは、別の問いじゃない？ 来たかどうかなら、もう来てる。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "形は来た。でも、毎日の請求やメールで、邪魔にならずに助かるか、任せて間違えないか。そこを確かめた資料が、まだ無い。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、何が出たら札が変わる？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "3つある。1つ目。作った会社と関係のない人たちが、請求やメールや予定で、任せたときの間違いを数える。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "2つ目。実際の利用者を数か月追って、任せた後に失敗が増えるか減るかを記録する。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "3つ目。AIが何をしたかの記録を、あとから人が見直して、行き過ぎに気づけるかを測る。どれかが出たら、札を上げる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今日の持ち帰り。僕なら、メタのミューズを試すとき、まずは、読む、まとめる、下書きまで。「次から聞かなくていい」と教えるのは、取り返しがつく作業だけ。送信や支払いは、最後まで自分で押す。",
+          "expression": "convinced",
+          "tag": "takeaway",
+          "display": "今日の持ち帰り。僕なら、MetaのMuseを試すとき、まずは、読む、まとめる、下書きまで。「次から聞かなくていい」と教えるのは、取り返しがつく作業だけ。送信や支払いは、最後まで自分で押す。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私なら、もう一つ。OKを押す前に、何を送るのかを一度は読む。押すだけになったら、承認の意味がない。",
+          "expression": "neutral",
+          "tag": "takeaway"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "これは、2026年10月23日時点の、二人の見立て。",
+          "expression": "neutral"
+        }
+      ],
+      "narration": "大輔「僕の予想は「先回りして動く秘書は、もう来た」。そこは変わらない。変わったのは使い方。送る、払う、は最後まで自分で押す。」\n沙織「私の予想は「慣れたら押すだけになる」。半分外れた。慣れた人は、見守って止めてた。でも、ルールを先に決めた人は、行き過ぎにOKを押しやすかった。」\n大輔「判定の札は、上から「もうすぐ来る」「3年はかかる」「根拠待ち」「まだ眉唾」の4つ。」\n大輔「お題は、各社の言う「頼む前に先回りして動く秘書が来た」。僕は「もうすぐ来る」。」\n大輔「頼む前に動いて、送る前に聞いてくる秘書は、日本でもメタのミューズで、もう使える。ここで言う「もうすぐ」は、普通の人の手元に広がるまでの話。それも、この1年のうちだと思う。」\n沙織「私は、同じお題に「根拠待ち」。各社は、来ただけじゃなく、先回りして「助けてくれる」とまで言ってる。」\n沙織「先回りする秘書が来た、という主張が間違いだと示す資料は無い。でも、今日の結果は、どれも条件つきだった。」\n大輔「助かるかどうかは、別の問いじゃない？ 来たかどうかなら、もう来てる。」\n沙織「形は来た。でも、毎日の請求やメールで、邪魔にならずに助かるか、任せて間違えないか。そこを確かめた資料が、まだ無い。」\n大輔「じゃあ、何が出たら札が変わる？」\n沙織「3つある。1つ目。作った会社と関係のない人たちが、請求やメールや予定で、任せたときの間違いを数える。」\n沙織「2つ目。実際の利用者を数か月追って、任せた後に失敗が増えるか減るかを記録する。」\n沙織「3つ目。AIが何をしたかの記録を、あとから人が見直して、行き過ぎに気づけるかを測る。どれかが出たら、札を上げる。」\n大輔「今日の持ち帰り。僕なら、メタのミューズを試すとき、まずは、読む、まとめる、下書きまで。「次から聞かなくていい」と教えるのは、取り返しがつく作業だけ。送信や支払いは、最後まで自分で押す。」\n沙織「私なら、もう一つ。OKを押す前に、何を送るのかを一度は読む。押すだけになったら、承認の意味がない。」\n大輔「これは、2026年10月23日時点の、二人の見立て。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 17,
+      "type": "closing",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe_b",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "指示する側から、承認する側へ。その承認をどう減らしていくかは、まだ資料が答えを持ってない。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だから、使った人の記録が出たら、また答え合わせしよう。教え直しを続けた人の話が、いちばん聞きたい。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "amused"
+        }
+      ],
+      "narration": "沙織「指示する側から、承認する側へ。その承認をどう減らしていくかは、まだ資料が答えを持ってない。」\n大輔「だから、使った人の記録が出たら、また答え合わせしよう。教え直しを続けた人の話が、いちばん聞きたい。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」",
+      "narrator": "dialogue"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "skeptic",
+          "narration": "AI秘書、任せて大丈夫？",
+          "telop_text": "AI秘書、任せて大丈夫？",
+          "expression": "doubt",
+          "scene_id": 1
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "頼む前に動くAI秘書が、4社からそろった！",
+          "expression": "excited",
+          "scene_id": 6
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "でも、プログラミング用AIでは、承認の93%が結局OK。",
+          "expression": "doubt",
+          "react": "surprised",
+          "scene_id": 9
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "ところが、慣れた人ほど、AIの作業に途中で「待った」をかけてた。",
+          "expression": "surprised",
+          "react": "thinking",
+          "scene_id": 9
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "人が教えるか、AIに任せるか。判定は本編で。",
+          "expression": "thinking",
+          "scene_id": 12
+        }
+      ]
+    }
+  ],
+  "beginner_review": {
+    "passed_at": "2026-10-23",
+    "rounds": 3,
+    "report": "/private/tmp/claude-503/-Users-claude-kagaku-life/1b35024b-d297-478f-9184-1db1e26f71ca/scratchpad/kl048_beginner_review_r3.md",
+    "lines_digest": "07bb5232f1ec"
+  }
+}
