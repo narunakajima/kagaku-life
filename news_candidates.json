@@ -2127,7 +2127,7 @@
       "buzz_trend": 0.0,
       "buzz_articles_14d": 1,
       "buzz_raw_items": 2,
-      "buzz_measured_at": "2026-10-22T07:19:55",
+      "buzz_measured_at": "2026-10-24T05:48:03",
       "buzz_query": "NVIDIA 乳がん",
       "jp_usable": 1,
       "work_relevance": 2,
@@ -2230,6 +2230,17 @@
         },
         {
           "at": "2026-10-22T07:19:55",
+          "query": "NVIDIA 乳がん",
+          "measured": 1,
+          "outlets": 0,
+          "yahoo": false,
+          "evidence": [],
+          "trend": null,
+          "articles_14d": 0,
+          "raw_items": 1
+        },
+        {
+          "at": "2026-10-24T05:48:03",
           "query": "NVIDIA 乳がん",
           "measured": 1,
           "outlets": 0,
@@ -2561,7 +2572,7 @@
       "buzz_trend": 0.5,
       "buzz_articles_14d": 2,
       "buzz_raw_items": 6,
-      "buzz_measured_at": "2026-10-22T07:19:58",
+      "buzz_measured_at": "2026-10-24T05:48:06",
       "buzz_query": "シャープ 介護AIトレーナー",
       "url_check": [
         {
@@ -2698,6 +2709,23 @@
           "trend": 0.0,
           "articles_14d": 1,
           "raw_items": 5
+        },
+        {
+          "at": "2026-10-24T05:48:06",
+          "query": "シャープ 介護AIトレーナー",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "シャープ・パナソニック：人材不足の介護現場、ＡＩで業務効率化…訓練や健康管理担いスタッフの負担軽減へ",
+              "outlet": "読売新聞",
+              "date": "2026-10-10"
+            }
+          ],
+          "trend": 0.0,
+          "articles_14d": 1,
+          "raw_items": 7
         }
       ],
       "buzz_adopted_at": "2026-10-20T08:00:04",
@@ -4305,7 +4333,7 @@
       "buzz_jp_est": 3,
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -8550,7 +8578,7 @@
       "scored_at": "2026-10-12",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -8960,7 +8988,7 @@
       "scored_at": "2026-10-12",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-11",
@@ -9561,7 +9589,7 @@
       "scored_at": "2026-10-12",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -9795,7 +9823,9 @@
         }
       ],
       "buzz_adopted_at": "2026-10-22T07:19:25",
-      "buzz_adopted_n": 3
+      "buzz_adopted_n": 3,
+      "buzz_error": "0件（検索語が合っていない可能性）",
+      "buzz_error_at": "2026-10-24T05:46:36"
     },
     {
       "title": "日本人の大腸がん、約半数に“腸内細菌の毒素”が関与　40歳以下の発症は7割　東大・阪大が200人を全ゲノム解析",
@@ -10001,7 +10031,7 @@
       "scored_at": "2026-10-12",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -10393,7 +10423,7 @@
       "scored_at": "2026-10-12",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -10584,7 +10614,9 @@
         }
       ],
       "buzz_adopted_at": "2026-10-22T07:19:27",
-      "buzz_adopted_n": 3
+      "buzz_adopted_n": 3,
+      "buzz_error": "0件（検索語が合っていない可能性）",
+      "buzz_error_at": "2026-10-24T05:46:36"
     },
     {
       "title": "「食べる順番」で血糖値の上昇が抑えられるのはなぜ? 「オリーブ油」を先に食べると◎!?京大などの研究グループがを用いたマウス実験で仕組みを解明",
@@ -10771,7 +10803,7 @@
       "buzz_articles_14d": 7,
       "buzz_raw_items": 33,
       "buzz_query": "ChatGPT 音声ファイル",
-      "buzz_measured_at": "2026-10-22T07:19:39",
+      "buzz_measured_at": "2026-10-24T05:47:44",
       "url_check": [
         {
           "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
@@ -10786,7 +10818,7 @@
       ],
       "url_ok": null,
       "url_status": "help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
-      "url_checked_at": "2026-10-22T12:16:23",
+      "url_checked_at": "2026-10-24T05:48:59",
       "topic_first_date": "2026-10-06",
       "topic_first_source": "候補 d60f64ecab のannounced_on（ChatGPT、ついに音声ファイルに対応　文字起こしや要約な）",
       "topic_series": "d60f64ecab",
@@ -10808,7 +10840,7 @@
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-10-22T12:16:23",
+      "primary_verified_at": "2026-10-24T05:48:59",
       "buzz_history": [
         {
           "at": "2026-10-15T11:33:30",
@@ -10945,6 +10977,28 @@
           "trend": 0.14,
           "articles_14d": 7,
           "raw_items": 33
+        },
+        {
+          "at": "2026-10-24T05:47:44",
+          "query": "ChatGPT 音声ファイル",
+          "measured": 2,
+          "outlets": 2,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "ChatGPTが音声アップロードに対応 文字起こしから議事録作成まで効率化",
+              "outlet": "PlusWeb3",
+              "date": "2026-10-14"
+            },
+            {
+              "title": "OpenAI、ChatGPTが音声ファイルの添付に対応 有料ユーザー向け、文字起こし・要約からメール下書きまで",
+              "outlet": "Ledge.ai",
+              "date": "2026-10-13"
+            }
+          ],
+          "trend": 0.0,
+          "articles_14d": 2,
+          "raw_items": 24
         }
       ],
       "buzz_adopted_at": "2026-10-22T07:19:39",
@@ -11089,7 +11143,7 @@
       "scored_at": "2026-10-12",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -11784,7 +11838,7 @@
       "scored_at": "2026-10-12",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -11983,7 +12037,7 @@
       "buzz_articles_14d": 24,
       "buzz_raw_items": 56,
       "buzz_query": "Gemini agent",
-      "buzz_measured_at": "2026-10-22T07:19:06",
+      "buzz_measured_at": "2026-10-24T05:47:47",
       "url_check": [
         {
           "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-agent-announcement",
@@ -12147,6 +12201,33 @@
           "trend": 0.17,
           "articles_14d": 23,
           "raw_items": 56
+        },
+        {
+          "at": "2026-10-24T05:47:47",
+          "query": "Gemini agent",
+          "measured": 5,
+          "outlets": 7,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "Googleの業務向けAIエージェント「Gemini Agent」が登場 しかし課題は山積み",
+              "outlet": "TechTargetジャパン",
+              "date": "2026-10-20"
+            },
+            {
+              "title": "Google Cloudが「Gemini agent」を発表｜専用メール・カレンダーを持つ「AIコワーカー」が長時間タスクを自律遂行、ルーティング先にはClau",
+              "outlet": "https://ai-hikari-ai.com/",
+              "date": "2026-10-16"
+            },
+            {
+              "title": "Geminiエージェント、数日続く業務に対応 提供は限定プレビュー",
+              "outlet": "quasa.io",
+              "date": "2026-10-15"
+            }
+          ],
+          "trend": 0.2,
+          "articles_14d": 10,
+          "raw_items": 53
         }
       ],
       "buzz_adopted_at": "2026-10-20T07:59:39",
@@ -12263,7 +12344,7 @@
       "scored_at": "2026-10-12",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -12590,7 +12671,7 @@
       "scored_at": "2026-10-14",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -12944,7 +13025,7 @@
       "buzz_articles_14d": 1,
       "buzz_raw_items": 2,
       "buzz_query": "早稲田大学 レジスタンス運動",
-      "buzz_measured_at": "2026-10-22T07:19:16",
+      "buzz_measured_at": "2026-10-24T05:47:24",
       "topic_first_date": "2026-10-13",
       "topic_first_source": "候補 32d1342208 のannounced_on（レジスタンス運動の休息時間の違いは脂質代謝に影響するのか？）",
       "topic_series": "32d1342208",
@@ -13076,9 +13157,26 @@
           "trend": 0.0,
           "articles_14d": 1,
           "raw_items": 2
+        },
+        {
+          "at": "2026-10-24T05:47:24",
+          "query": "早稲田大学 レジスタンス運動",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "レジスタンス運動の休息時間の違いは脂質代謝に影響するのか？",
+              "outlet": "秋田魁新報電子版",
+              "date": "2026-10-13"
+            }
+          ],
+          "trend": 0.0,
+          "articles_14d": 1,
+          "raw_items": 2
         }
       ],
-      "buzz_adopted_at": "2026-10-22T07:19:16",
+      "buzz_adopted_at": "2026-10-24T05:47:24",
       "buzz_adopted_n": 3
     },
     {
@@ -13178,7 +13276,7 @@
       "url_checked_at": "2026-10-15T12:30:19",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -13594,14 +13692,9 @@
       "excluded_reason": "",
       "scored_at": "2026-10-14",
       "buzz_measured": 5,
-      "buzz_outlets": 14,
+      "buzz_outlets": 12,
       "yahoo": true,
       "buzz_evidence": [
-        {
-          "title": "Google Cloudが「Gemini agent」を発表｜専用メール・カレンダーを持つ「AIコワーカー」が長時間タスクを自律遂行、ルーティング先にはClau",
-          "outlet": "https://ai-hikari-ai.com/",
-          "date": "2026-10-16"
-        },
         {
           "title": "OpenAI「Dots」に追随なるか Google「Gemini Agent」参戦で過熱するパーソナルAI競争（1/2 ページ）",
           "outlet": "ITmedia",
@@ -13611,13 +13704,18 @@
           "title": "グーグルがGemini agent発表 企業向けAI競争の主導権を握れるか？",
           "outlet": "Moomoo",
           "date": "2026-10-12"
+        },
+        {
+          "title": "Google純正の万能AIエージェント「Gemini agent」、頭脳に選んだのはライバルClaudeだった",
+          "outlet": "shiritomo",
+          "date": "2026-10-11"
         }
       ],
-      "buzz_trend": 0.37,
-      "buzz_articles_14d": 19,
+      "buzz_trend": 0.28,
+      "buzz_articles_14d": 18,
       "buzz_raw_items": 56,
       "buzz_query": "Gemini agent",
-      "buzz_measured_at": "2026-10-22T07:19:08",
+      "buzz_measured_at": "2026-10-24T05:47:49",
       "url_check": [
         {
           "url": "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026/",
@@ -13801,9 +13899,36 @@
           "trend": 0.12,
           "articles_14d": 17,
           "raw_items": 56
+        },
+        {
+          "at": "2026-10-24T05:47:49",
+          "query": "Gemini agent",
+          "measured": 4,
+          "outlets": 5,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "Googleの業務向けAIエージェント「Gemini Agent」が登場 しかし課題は山積み",
+              "outlet": "TechTargetジャパン",
+              "date": "2026-10-20"
+            },
+            {
+              "title": "Google Cloudが「Gemini agent」を発表｜専用メール・カレンダーを持つ「AIコワーカー」が長時間タスクを自律遂行、ルーティング先にはClau",
+              "outlet": "https://ai-hikari-ai.com/",
+              "date": "2026-10-16"
+            },
+            {
+              "title": "OpenAI「Dots」に追随なるか Google「Gemini Agent」参戦で過熱するパーソナルAI競争（1/2 ページ）",
+              "outlet": "ITmedia",
+              "date": "2026-10-14"
+            }
+          ],
+          "trend": 0.25,
+          "articles_14d": 8,
+          "raw_items": 53
         }
       ],
-      "buzz_adopted_at": "2026-10-19T06:27:26",
+      "buzz_adopted_at": "2026-10-20T07:59:42",
       "buzz_adopted_n": 3
     },
     {
@@ -13935,7 +14060,7 @@
       "scored_at": "2026-10-14",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -14085,7 +14210,7 @@
       "buzz_articles_14d": 0,
       "buzz_raw_items": 2,
       "buzz_query": "東京科学大学 食物繊維",
-      "buzz_measured_at": "2026-10-22T07:19:30",
+      "buzz_measured_at": "2026-10-24T05:47:41",
       "topic_first_date": "2026-10-13",
       "topic_first_source": "候補 879b885c6c のannounced_on（慢性腎臓病患者のたんぱく質摂取量と血中尿素窒素の関連に食物繊）",
       "topic_series": "879b885c6c",
@@ -14187,9 +14312,20 @@
           "trend": null,
           "articles_14d": 0,
           "raw_items": 2
+        },
+        {
+          "at": "2026-10-24T05:47:41",
+          "query": "東京科学大学 食物繊維",
+          "measured": 1,
+          "outlets": 0,
+          "yahoo": false,
+          "evidence": [],
+          "trend": null,
+          "articles_14d": 0,
+          "raw_items": 2
         }
       ],
-      "buzz_adopted_at": "2026-10-22T07:19:30",
+      "buzz_adopted_at": "2026-10-24T05:47:41",
       "buzz_adopted_n": 3
     },
     {
@@ -14520,7 +14656,7 @@
       "scored_at": "2026-10-14",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -14867,7 +15003,7 @@
       "scored_at": "2026-10-14",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -15203,7 +15339,7 @@
       "scored_at": "2026-10-14",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -15553,7 +15689,7 @@
       "scored_at": "2026-10-14",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -16012,7 +16148,7 @@
       "scored_at": "2026-10-14",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -16863,7 +16999,7 @@
       "scored_at": "2026-10-15",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -17145,7 +17281,7 @@
         }
       ],
       "repair_tried": true,
-      "repair_tried_at": "2026-10-15T12:27:07",
+      "repair_tried_at": "2026-10-24T05:45:31",
       "repair_log": [
         "site-crawl: https://www.tottori-u.ac.jp/item/ を開けない",
         "site-crawl: https://www.tottori-u.ac.jp/institute/ → HTTP 200「附属施設・附属病院 | 鳥取大学」（見出しに候補の固有の語がない。一覧ページ・別の資料の可能性）",
@@ -19185,7 +19321,7 @@
       "scored_at": "2026-10-16",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -19524,7 +19660,7 @@
       "scored_at": "2026-10-16",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -19861,7 +19997,7 @@
       "scored_at": "2026-10-16",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -20163,7 +20299,7 @@
           "kind": "press_release"
         }
       ],
-      "primary_verified_at": "2026-10-22T12:16:38",
+      "primary_verified_at": "2026-10-24T05:48:41",
       "url_check": [
         {
           "url": "https://prtimes.jp/main/html/rd/p/000000076.000083531.html",
@@ -20178,7 +20314,7 @@
       ],
       "url_ok": false,
       "url_status": "prtimes.jp: HTTP 200「燈とオリエンタル白石、吊り足場上での四足歩行ロボットの自律歩」 ／ prtimes.jp: HTTP 404",
-      "url_checked_at": "2026-10-22T12:16:38",
+      "url_checked_at": "2026-10-24T05:48:41",
       "buzz_history": [
         {
           "at": "2026-10-16T07:07:27",
@@ -20309,9 +20445,26 @@
           "trend": 0.5,
           "articles_14d": 2,
           "raw_items": 9
+        },
+        {
+          "at": "2026-10-24T05:47:52",
+          "query": "燈 オリエンタル白石",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "四足歩行ロボットが吊り足場内を自律歩行、オリエンタル白石と燈が開発",
+              "outlet": "日経クロステック",
+              "date": "2026-10-19"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 5
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:19:41",
+      "buzz_measured_at": "2026-10-24T05:47:52",
       "buzz_measured": 4,
       "buzz_outlets": 7,
       "yahoo": false,
@@ -20396,7 +20549,7 @@
       "scored_at": "2026-10-17",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -20735,7 +20888,7 @@
       "scored_at": "2026-10-17",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -21154,9 +21307,31 @@
           "trend": 1.0,
           "articles_14d": 2,
           "raw_items": 24
+        },
+        {
+          "at": "2026-10-24T05:47:27",
+          "query": "Amazon Bee",
+          "measured": 2,
+          "outlets": 2,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "米アマゾン、AIデバイス「Bee Frontier」「Bee Eclipse」を発表 会話の要約や分析・Alexa+連携",
+              "outlet": "ケータイ Watch",
+              "date": "2026-10-19"
+            },
+            {
+              "title": "「Bee Frontier」「Eclipse」が登場 Amazonの新型AI端末、会話から予定やタスクを自動整理",
+              "outlet": "NOVAIST",
+              "date": "2026-10-16"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 2,
+          "raw_items": 56
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:18:43",
+      "buzz_measured_at": "2026-10-24T05:47:27",
       "buzz_measured": 2,
       "buzz_outlets": 2,
       "yahoo": false,
@@ -21174,9 +21349,9 @@
       ],
       "buzz_trend": 1.0,
       "buzz_articles_14d": 2,
-      "buzz_raw_items": 24,
+      "buzz_raw_items": 56,
       "buzz_query": "Amazon Bee",
-      "buzz_adopted_at": "2026-10-22T07:18:43",
+      "buzz_adopted_at": "2026-10-24T05:47:27",
       "buzz_adopted_n": 3
     },
     {
@@ -21237,7 +21412,7 @@
       "scored_at": "2026-10-17",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -21799,34 +21974,61 @@
           "trend": 0.83,
           "articles_14d": 6,
           "raw_items": 19
+        },
+        {
+          "at": "2026-10-24T05:47:16",
+          "query": "JR西日本 多機能鉄道重機",
+          "measured": 5,
+          "outlets": 10,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "JR西日本が人手不足で新規導入したロボ、SFメカ味が強くて胸アツ",
+              "outlet": "Gizmodo",
+              "date": "2026-10-22"
+            },
+            {
+              "title": "JR西日本、273系「やくも」初の夜行運転！ 出雲市から岡山へ 2027年1月2日",
+              "outlet": "レイルラボ",
+              "date": "2026-10-22"
+            },
+            {
+              "title": "JR西日本が「量産型人型ロボット」を11月から導入へ",
+              "outlet": "電ファミニコゲーマー",
+              "date": "2026-10-21"
+            }
+          ],
+          "trend": 0.92,
+          "articles_14d": 13,
+          "raw_items": 26
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:18:29",
-      "buzz_measured": 4,
-      "buzz_outlets": 4,
+      "buzz_measured_at": "2026-10-24T05:47:16",
+      "buzz_measured": 5,
+      "buzz_outlets": 10,
       "yahoo": true,
       "buzz_evidence": [
+        {
+          "title": "JR西日本が人手不足で新規導入したロボ、SFメカ味が強くて胸アツ",
+          "outlet": "Gizmodo",
+          "date": "2026-10-22"
+        },
+        {
+          "title": "JR西日本、273系「やくも」初の夜行運転！ 出雲市から岡山へ 2027年1月2日",
+          "outlet": "レイルラボ",
+          "date": "2026-10-22"
+        },
         {
           "title": "JR西日本が「量産型人型ロボット」を11月から導入へ",
           "outlet": "電ファミニコゲーマー",
           "date": "2026-10-21"
-        },
-        {
-          "title": "JR西、新たな「多機能鉄道重機」2種を営業線へ！最大120kg対応の単腕型・改良型人型ロボ",
-          "outlet": "レイルラボ",
-          "date": "2026-10-19"
-        },
-        {
-          "title": "JR西日本，新たな多機能鉄道重機2機種を営業線へ導入",
-          "outlet": "鉄道ファン・railf.jp",
-          "date": "2026-10-17"
         }
       ],
-      "buzz_trend": 0.83,
-      "buzz_articles_14d": 6,
-      "buzz_raw_items": 19,
+      "buzz_trend": 0.92,
+      "buzz_articles_14d": 13,
+      "buzz_raw_items": 26,
       "buzz_query": "JR西日本 多機能鉄道重機",
-      "buzz_adopted_at": "2026-10-22T07:18:29",
+      "buzz_adopted_at": "2026-10-24T05:47:16",
       "buzz_adopted_n": 3
     },
     {
@@ -21986,9 +22188,26 @@
           "trend": 1.0,
           "articles_14d": 1,
           "raw_items": 5
+        },
+        {
+          "at": "2026-10-24T05:47:30",
+          "query": "午後の紅茶 紅茶ポリフェノール",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "キリンＨＤ、紅茶ポリフェノールによる油の付着抑制を確認、独自装置で検証",
+              "outlet": "https://kabu-ir.com/",
+              "date": "2026-10-15"
+            }
+          ],
+          "trend": 0.0,
+          "articles_14d": 1,
+          "raw_items": 4
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:18:46",
+      "buzz_measured_at": "2026-10-24T05:47:30",
       "buzz_measured": 2,
       "buzz_outlets": 1,
       "yahoo": false,
@@ -21999,11 +22218,11 @@
           "date": "2026-10-15"
         }
       ],
-      "buzz_trend": 1.0,
+      "buzz_trend": 0.0,
       "buzz_articles_14d": 1,
-      "buzz_raw_items": 5,
+      "buzz_raw_items": 4,
       "buzz_query": "午後の紅茶 紅茶ポリフェノール",
-      "buzz_adopted_at": "2026-10-22T07:18:46",
+      "buzz_adopted_at": "2026-10-24T05:47:30",
       "buzz_adopted_n": 3
     },
     {
@@ -22216,7 +22435,7 @@
       "scored_at": "2026-10-18",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -22805,34 +23024,61 @@
           "trend": 0.86,
           "articles_14d": 7,
           "raw_items": 20
+        },
+        {
+          "at": "2026-10-24T05:47:19",
+          "query": "多機能鉄道重機 JR西日本",
+          "measured": 5,
+          "outlets": 10,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "JR西日本が人手不足で新規導入したロボ、SFメカ味が強くて胸アツ",
+              "outlet": "Gizmodo",
+              "date": "2026-10-22"
+            },
+            {
+              "title": "JR西日本、273系「やくも」初の夜行運転！ 出雲市から岡山へ 2027年1月2日",
+              "outlet": "レイルラボ",
+              "date": "2026-10-22"
+            },
+            {
+              "title": "JR西日本が「量産型人型ロボット」を11月から導入へ",
+              "outlet": "電ファミニコゲーマー",
+              "date": "2026-10-21"
+            }
+          ],
+          "trend": 0.92,
+          "articles_14d": 13,
+          "raw_items": 26
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:18:32",
-      "buzz_measured": 4,
-      "buzz_outlets": 4,
+      "buzz_measured_at": "2026-10-24T05:47:19",
+      "buzz_measured": 5,
+      "buzz_outlets": 10,
       "yahoo": true,
       "buzz_evidence": [
+        {
+          "title": "JR西日本が人手不足で新規導入したロボ、SFメカ味が強くて胸アツ",
+          "outlet": "Gizmodo",
+          "date": "2026-10-22"
+        },
+        {
+          "title": "JR西日本、273系「やくも」初の夜行運転！ 出雲市から岡山へ 2027年1月2日",
+          "outlet": "レイルラボ",
+          "date": "2026-10-22"
+        },
         {
           "title": "JR西日本が「量産型人型ロボット」を11月から導入へ",
           "outlet": "電ファミニコゲーマー",
           "date": "2026-10-21"
-        },
-        {
-          "title": "JR西、新たな「多機能鉄道重機」2種を営業線へ！最大120kg対応の単腕型・改良型人型ロボ",
-          "outlet": "レイルラボ",
-          "date": "2026-10-19"
-        },
-        {
-          "title": "JR西日本，新たな多機能鉄道重機2機種を営業線へ導入",
-          "outlet": "鉄道ファン・railf.jp",
-          "date": "2026-10-17"
         }
       ],
-      "buzz_trend": 0.86,
-      "buzz_articles_14d": 7,
-      "buzz_raw_items": 20,
+      "buzz_trend": 0.92,
+      "buzz_articles_14d": 13,
+      "buzz_raw_items": 26,
       "buzz_query": "多機能鉄道重機 JR西日本",
-      "buzz_adopted_at": "2026-10-22T07:18:32",
+      "buzz_adopted_at": "2026-10-24T05:47:19",
       "buzz_adopted_n": 3
     },
     {
@@ -23135,7 +23381,7 @@
           "kind": "tech_report"
         }
       ],
-      "primary_verified_at": "2026-10-22T12:16:55",
+      "primary_verified_at": "2026-10-24T05:49:20",
       "url_check": [
         {
           "url": "https://blogs.nvidia.com/blog/nemotron-3-5-super-vl/",
@@ -23150,7 +23396,7 @@
       ],
       "url_ok": true,
       "url_status": "blogs.nvidia.com: HTTP 200「Open From Data Center to Deskt」 ／ research.nvidia.com: HTTP 200",
-      "url_checked_at": "2026-10-22T12:16:55",
+      "url_checked_at": "2026-10-24T05:49:20",
       "buzz_history": [
         {
           "at": "2026-10-18T06:22:55",
@@ -23259,34 +23505,61 @@
           "trend": 1.0,
           "articles_14d": 40,
           "raw_items": 80
+        },
+        {
+          "at": "2026-10-24T05:47:08",
+          "query": "Nemotron NVIDIA",
+          "measured": 5,
+          "outlets": 13,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "NVIDIA、AIモデル「Nemotron 3.5」シリーズを拡充。1200億パラメータのSuper VL、24GBで動くBoltも",
+              "outlet": "マイナビニュース",
+              "date": "2026-10-23"
+            },
+            {
+              "title": "Nemotron 3.5 Bolt E4B 4GB：実際に出荷されたものと、その名前が誤解を招く理由",
+              "outlet": "OrcaRouter",
+              "date": "2026-10-23"
+            },
+            {
+              "title": "NVIDIA、埋め込み・再ランキング・解析向けのオープンモデル「Nemotron 3.5」を発表",
+              "outlet": "Unite.AI",
+              "date": "2026-10-21"
+            }
+          ],
+          "trend": 0.85,
+          "articles_14d": 40,
+          "raw_items": 82
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:18:23",
+      "buzz_measured_at": "2026-10-24T05:47:08",
       "buzz_measured": 5,
-      "buzz_outlets": 12,
+      "buzz_outlets": 13,
       "yahoo": true,
       "buzz_evidence": [
+        {
+          "title": "NVIDIA、AIモデル「Nemotron 3.5」シリーズを拡充。1200億パラメータのSuper VL、24GBで動くBoltも",
+          "outlet": "マイナビニュース",
+          "date": "2026-10-23"
+        },
+        {
+          "title": "Nemotron 3.5 Bolt E4B 4GB：実際に出荷されたものと、その名前が誤解を招く理由",
+          "outlet": "OrcaRouter",
+          "date": "2026-10-23"
+        },
         {
           "title": "NVIDIA、埋め込み・再ランキング・解析向けのオープンモデル「Nemotron 3.5」を発表",
           "outlet": "Unite.AI",
           "date": "2026-10-21"
-        },
-        {
-          "title": "NVIDIA Nemotronの安全性トレーニング、2つのAI障害を標的にするも、証拠はなお内部検証にとどまる",
-          "outlet": "remio",
-          "date": "2026-10-21"
-        },
-        {
-          "title": "データセンターからデスクトップまでオープンに：NVIDIA、最高水準の効率を誇る Super VL と Bolt モデルを追加し、Nemotron ファミリーを",
-          "outlet": "NVIDIA | Japan Blog",
-          "date": "2026-10-20"
         }
       ],
-      "buzz_trend": 1.0,
+      "buzz_trend": 0.85,
       "buzz_articles_14d": 40,
-      "buzz_raw_items": 80,
+      "buzz_raw_items": 82,
       "buzz_query": "Nemotron NVIDIA",
-      "buzz_adopted_at": "2026-10-22T07:18:23",
+      "buzz_adopted_at": "2026-10-24T05:47:08",
       "buzz_adopted_n": 3
     },
     {
@@ -23364,7 +23637,7 @@
       "scored_at": "2026-10-19",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -23814,34 +24087,61 @@
           "trend": 0.67,
           "articles_14d": 6,
           "raw_items": 9
+        },
+        {
+          "at": "2026-10-24T05:47:58",
+          "query": "ZENB 黄えんどう豆",
+          "measured": 3,
+          "outlets": 5,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "ナチュラルローソンがZENBヌードル使用のグルテンフリーパスタ2品を発売",
+              "outlet": "Dellows News",
+              "date": "2026-10-22"
+            },
+            {
+              "title": "横浜ポルタに期間限定ストア 全56種類を販売／ZENB JAPAN",
+              "outlet": "フードウイークリーWEB",
+              "date": "2026-10-21"
+            },
+            {
+              "title": "ZENB を実際に“見て・選んで・買える”期間限定ストア 「ZENB STORE」横浜ポルタに10/20(火)オープン",
+              "outlet": "フーズチャネル",
+              "date": "2026-10-20"
+            }
+          ],
+          "trend": 0.86,
+          "articles_14d": 7,
+          "raw_items": 9
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:19:47",
+      "buzz_measured_at": "2026-10-24T05:47:58",
       "buzz_measured": 3,
-      "buzz_outlets": 4,
+      "buzz_outlets": 5,
       "yahoo": false,
       "buzz_evidence": [
+        {
+          "title": "ナチュラルローソンがZENBヌードル使用のグルテンフリーパスタ2品を発売",
+          "outlet": "Dellows News",
+          "date": "2026-10-22"
+        },
         {
           "title": "横浜ポルタに期間限定ストア 全56種類を販売／ZENB JAPAN",
           "outlet": "フードウイークリーWEB",
           "date": "2026-10-21"
         },
         {
-          "title": "【1都3県】グルテンフリーパスタ「ZENBパスタ」誕生 -「豆乳クリーム」と「ツナガーリックトマト」をナチュラルローソンにて発売",
-          "outlet": "マイナビニュース",
-          "date": "2026-10-19"
-        },
-        {
-          "title": "ZENB、黄えんどう豆のグルテン低減食でおなかの不調やQOL改善を確認",
-          "outlet": "Dellows News",
-          "date": "2026-10-19"
+          "title": "ZENB を実際に“見て・選んで・買える”期間限定ストア 「ZENB STORE」横浜ポルタに10/20(火)オープン",
+          "outlet": "フーズチャネル",
+          "date": "2026-10-20"
         }
       ],
-      "buzz_trend": 0.67,
-      "buzz_articles_14d": 6,
+      "buzz_trend": 0.86,
+      "buzz_articles_14d": 7,
       "buzz_raw_items": 9,
       "buzz_query": "ZENB 黄えんどう豆",
-      "buzz_adopted_at": "2026-10-22T07:19:47",
+      "buzz_adopted_at": "2026-10-24T05:47:58",
       "buzz_adopted_n": 3
     },
     {
@@ -23982,7 +24282,7 @@
           "kind": "press_release"
         }
       ],
-      "primary_verified_at": "2026-10-22T12:16:09",
+      "primary_verified_at": "2026-10-24T05:49:22",
       "url_check": [
         {
           "url": "https://www.westjr.co.jp/press/article/2026/10/16/page_31121.html",
@@ -23992,7 +24292,7 @@
       ],
       "url_ok": true,
       "url_status": "westjr.co.jp: HTTP 200「新たな多機能鉄道重機2機種を営業線へ導入 &#65374;鉄」",
-      "url_checked_at": "2026-10-22T12:16:09",
+      "url_checked_at": "2026-10-24T05:49:22",
       "buzz_history": [
         {
           "at": "2026-10-19T06:26:58",
@@ -24074,34 +24374,61 @@
           "trend": 0.83,
           "articles_14d": 6,
           "raw_items": 19
+        },
+        {
+          "at": "2026-10-24T05:47:22",
+          "query": "JR西日本 多機能鉄道重機",
+          "measured": 5,
+          "outlets": 10,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "JR西日本が人手不足で新規導入したロボ、SFメカ味が強くて胸アツ",
+              "outlet": "Gizmodo",
+              "date": "2026-10-22"
+            },
+            {
+              "title": "JR西日本、273系「やくも」初の夜行運転！ 出雲市から岡山へ 2027年1月2日",
+              "outlet": "レイルラボ",
+              "date": "2026-10-22"
+            },
+            {
+              "title": "JR西日本が「量産型人型ロボット」を11月から導入へ",
+              "outlet": "電ファミニコゲーマー",
+              "date": "2026-10-21"
+            }
+          ],
+          "trend": 0.92,
+          "articles_14d": 13,
+          "raw_items": 26
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:18:34",
-      "buzz_measured": 4,
-      "buzz_outlets": 4,
+      "buzz_measured_at": "2026-10-24T05:47:22",
+      "buzz_measured": 5,
+      "buzz_outlets": 10,
       "yahoo": true,
       "buzz_evidence": [
+        {
+          "title": "JR西日本が人手不足で新規導入したロボ、SFメカ味が強くて胸アツ",
+          "outlet": "Gizmodo",
+          "date": "2026-10-22"
+        },
+        {
+          "title": "JR西日本、273系「やくも」初の夜行運転！ 出雲市から岡山へ 2027年1月2日",
+          "outlet": "レイルラボ",
+          "date": "2026-10-22"
+        },
         {
           "title": "JR西日本が「量産型人型ロボット」を11月から導入へ",
           "outlet": "電ファミニコゲーマー",
           "date": "2026-10-21"
-        },
-        {
-          "title": "JR西、新たな「多機能鉄道重機」2種を営業線へ！最大120kg対応の単腕型・改良型人型ロボ",
-          "outlet": "レイルラボ",
-          "date": "2026-10-19"
-        },
-        {
-          "title": "JR西日本，新たな多機能鉄道重機2機種を営業線へ導入",
-          "outlet": "鉄道ファン・railf.jp",
-          "date": "2026-10-17"
         }
       ],
-      "buzz_trend": 0.83,
-      "buzz_articles_14d": 6,
-      "buzz_raw_items": 19,
+      "buzz_trend": 0.92,
+      "buzz_articles_14d": 13,
+      "buzz_raw_items": 26,
       "buzz_query": "JR西日本 多機能鉄道重機",
-      "buzz_adopted_at": "2026-10-22T07:18:34",
+      "buzz_adopted_at": "2026-10-24T05:47:22",
       "buzz_adopted_n": 3
     },
     {
@@ -24161,7 +24488,7 @@
       "scored_at": "2026-10-19",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -24380,9 +24707,26 @@
           "trend": 1.0,
           "articles_14d": 1,
           "raw_items": 6
+        },
+        {
+          "at": "2026-10-24T05:47:33",
+          "query": "αディフェンシン 森永乳業",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "妊娠中の食事で産後の気分良好に 森永乳業らαディフェンシン分泌の関連確認",
+              "outlet": "ウェルネスデイリーニュース",
+              "date": "2026-10-20"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 5
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:19:33",
+      "buzz_measured_at": "2026-10-24T05:47:33",
       "buzz_measured": 2,
       "buzz_outlets": 1,
       "yahoo": false,
@@ -24395,9 +24739,9 @@
       ],
       "buzz_trend": 1.0,
       "buzz_articles_14d": 1,
-      "buzz_raw_items": 6,
+      "buzz_raw_items": 5,
       "buzz_query": "αディフェンシン 森永乳業",
-      "buzz_adopted_at": "2026-10-22T07:19:33",
+      "buzz_adopted_at": "2026-10-24T05:47:33",
       "buzz_adopted_n": 3
     },
     {
@@ -24472,7 +24816,7 @@
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-10-22T12:16:32",
+      "primary_verified_at": "2026-10-24T05:49:07",
       "url_check": [
         {
           "url": "https://github.com/yksr-melt/Meltype",
@@ -24482,7 +24826,7 @@
       ],
       "url_ok": true,
       "url_status": "github.com: HTTP 200「GitHub - yksr-melt/Meltype: 雪解」",
-      "url_checked_at": "2026-10-22T12:16:32",
+      "url_checked_at": "2026-10-24T05:49:07",
       "buzz_history": [
         {
           "at": "2026-10-19T06:27:32",
@@ -24564,34 +24908,61 @@
           "trend": 0.5,
           "articles_14d": 8,
           "raw_items": 10
+        },
+        {
+          "at": "2026-10-24T05:47:55",
+          "query": "Meltype",
+          "measured": 4,
+          "outlets": 3,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "無料日本語入力アプリ「Meltype」v1.3.0が公開、公式サイトや新しいアイコン、ポータブル版も",
+              "outlet": "窓の杜",
+              "date": "2026-10-21"
+            },
+            {
+              "title": "無料日本語入力アプリ「Meltype」v1.3.0が公開、公式サイトや新しいアイコン、ポータブル版も／動作モードを2つに整理、多数のオプション設定も追加",
+              "outlet": "千葉テレビ放送",
+              "date": "2026-10-21"
+            },
+            {
+              "title": "コードを書かずに“自分専用IME” 日英を自動切り替えできる「Meltype」にAI変換を載せてみた：小寺信良のIT大作戦（1/2 ページ）",
+              "outlet": "ITmedia",
+              "date": "2026-10-16"
+            }
+          ],
+          "trend": 0.67,
+          "articles_14d": 6,
+          "raw_items": 9
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:19:44",
+      "buzz_measured_at": "2026-10-24T05:47:55",
       "buzz_measured": 4,
       "buzz_outlets": 5,
       "yahoo": true,
       "buzz_evidence": [
         {
+          "title": "無料日本語入力アプリ「Meltype」v1.3.0が公開、公式サイトや新しいアイコン、ポータブル版も",
+          "outlet": "窓の杜",
+          "date": "2026-10-21"
+        },
+        {
+          "title": "無料日本語入力アプリ「Meltype」v1.3.0が公開、公式サイトや新しいアイコン、ポータブル版も／動作モードを2つに整理、多数のオプション設定も追加",
+          "outlet": "千葉テレビ放送",
+          "date": "2026-10-21"
+        },
+        {
           "title": "コードを書かずに“自分専用IME” 日英を自動切り替えできる「Meltype」にAI変換を載せてみた：小寺信良のIT大作戦（1/2 ページ）",
           "outlet": "ITmedia",
           "date": "2026-10-16"
-        },
-        {
-          "title": "今注目の無料日本語入力アプリ「Meltype」に早速“大型アップデート”／「Meltype IME」、予測変換、「いま」「なう」で現在時刻変換などを導入",
-          "outlet": "千葉テレビ放送株式会社",
-          "date": "2026-10-13"
-        },
-        {
-          "title": "今注目の無料日本語入力アプリ「Meltype」に早速“大型アップデート”",
-          "outlet": "窓の杜",
-          "date": "2026-10-13"
         }
       ],
-      "buzz_trend": 0.71,
-      "buzz_articles_14d": 14,
-      "buzz_raw_items": 22,
+      "buzz_trend": 0.5,
+      "buzz_articles_14d": 8,
+      "buzz_raw_items": 10,
       "buzz_query": "Meltype",
-      "buzz_adopted_at": "2026-10-19T06:27:32",
+      "buzz_adopted_at": "2026-10-22T07:19:44",
       "buzz_adopted_n": 3
     },
     {
@@ -25081,9 +25452,31 @@
           "trend": 1.0,
           "articles_14d": 2,
           "raw_items": 4
+        },
+        {
+          "at": "2026-10-24T05:47:35",
+          "query": "リコー LMM_35B-A3B",
+          "measured": 2,
+          "outlets": 2,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "リコー、約350億パラメータのMoE型「リコーLMM_35B-A3B」を開発",
+              "outlet": "株式会社インプレス",
+              "date": "2026-10-15"
+            },
+            {
+              "title": "リコー、高速・省リソースを特徴とするMoE型マルチモーダルLLM「リコーLMM_35B-A3B」を開発",
+              "outlet": "マイナビニュース",
+              "date": "2026-10-15"
+            }
+          ],
+          "trend": 0.0,
+          "articles_14d": 2,
+          "raw_items": 7
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:18:49",
+      "buzz_measured_at": "2026-10-24T05:47:35",
       "buzz_measured": 2,
       "buzz_outlets": 2,
       "yahoo": false,
@@ -25099,11 +25492,11 @@
           "date": "2026-10-15"
         }
       ],
-      "buzz_trend": 1.0,
+      "buzz_trend": 0.0,
       "buzz_articles_14d": 2,
-      "buzz_raw_items": 4,
+      "buzz_raw_items": 7,
       "buzz_query": "リコー LMM_35B-A3B",
-      "buzz_adopted_at": "2026-10-22T07:18:49",
+      "buzz_adopted_at": "2026-10-24T05:47:35",
       "buzz_adopted_n": 3
     },
     {
@@ -25235,7 +25628,7 @@
       "scored_at": "2026-10-20",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -25453,9 +25846,26 @@
           "trend": 1.0,
           "articles_14d": 1,
           "raw_items": 2
+        },
+        {
+          "at": "2026-10-24T05:48:14",
+          "query": "順天堂大学 糖尿病性腎症",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "長時間の睡眠、実は不調のサインかも？ 糖尿病性腎症のリスクが上昇｜ニュース",
+              "outlet": "糖尿病ネットワーク",
+              "date": "2026-10-19"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 2
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:19:19",
+      "buzz_measured_at": "2026-10-24T05:48:14",
       "buzz_measured": 2,
       "buzz_outlets": 1,
       "yahoo": false,
@@ -25470,8 +25880,8 @@
       "buzz_articles_14d": 1,
       "buzz_raw_items": 2,
       "buzz_query": "順天堂大学 糖尿病性腎症",
-      "buzz_adopted_at": "2026-10-22T07:19:19",
-      "buzz_adopted_n": 2
+      "buzz_adopted_at": "2026-10-24T05:48:14",
+      "buzz_adopted_n": 3
     },
     {
       "title": "「税金で動かす以上……」　政府18万人が使うAI「源内」の「コストに関する工夫」とは",
@@ -25578,7 +25988,7 @@
           "kind": "tech_report"
         }
       ],
-      "primary_verified_at": "2026-10-22T12:16:16",
+      "primary_verified_at": "2026-10-24T05:48:49",
       "url_check": [
         {
           "url": "https://www.digital.go.jp/policies/genai",
@@ -25593,7 +26003,7 @@
       ],
       "url_ok": false,
       "url_status": "digital.go.jp: HTTP 200「ガバメントAI「源内」｜デジタル庁」 ／ digital.go.jp: HTTP 404",
-      "url_checked_at": "2026-10-22T12:16:16",
+      "url_checked_at": "2026-10-24T05:48:49",
       "repair_tried": true,
       "repair_tried_at": "2026-10-20T07:57:47",
       "repair_log": [
@@ -25658,35 +26068,62 @@
           "trend": 0.93,
           "articles_14d": 15,
           "raw_items": 27
+        },
+        {
+          "at": "2026-10-24T05:47:11",
+          "query": "デジタル庁 源内",
+          "measured": 5,
+          "outlets": 14,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "政府職員18万人向けAIエージェントを順次導入 「源内基準」も公表",
+              "outlet": "PlusWeb3",
+              "date": "2026-10-22"
+            },
+            {
+              "title": "古川デジタル大臣がAndroidのマイナンバーカード開始を報告｜源内に18万人規模のAIエージェント 10月20日会見の全文と動画",
+              "outlet": "Smart Watch Life",
+              "date": "2026-10-22"
+            },
+            {
+              "title": "デジタル庁、ガバメントAI「源内」でAIエージェント機能を提供開始 政府職員約18万人を対象、複数の業務工程を自律的に実行",
+              "outlet": "ビジネス+IT",
+              "date": "2026-10-21"
+            }
+          ],
+          "trend": 0.88,
+          "articles_14d": 16,
+          "raw_items": 25
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:19:13",
+      "buzz_measured_at": "2026-10-24T05:47:11",
       "buzz_measured": 5,
-      "buzz_outlets": 12,
+      "buzz_outlets": 14,
       "yahoo": true,
       "buzz_evidence": [
+        {
+          "title": "政府職員18万人向けAIエージェントを順次導入 「源内基準」も公表",
+          "outlet": "PlusWeb3",
+          "date": "2026-10-22"
+        },
+        {
+          "title": "古川デジタル大臣がAndroidのマイナンバーカード開始を報告｜源内に18万人規模のAIエージェント 10月20日会見の全文と動画",
+          "outlet": "Smart Watch Life",
+          "date": "2026-10-22"
+        },
         {
           "title": "デジタル庁、ガバメントAI「源内」でAIエージェント機能を提供開始 政府職員約18万人を対象、複数の業務工程を自律的に実行",
           "outlet": "ビジネス+IT",
           "date": "2026-10-21"
-        },
-        {
-          "title": "政府職員18万人がAIエージェントを自作へ、デジタル庁「源内」は何ができる？",
-          "outlet": "マイナビニュース",
-          "date": "2026-10-21"
-        },
-        {
-          "title": "デジタル庁、ガバメントAI「源内」で約18万人の政府職員にAIエージェント環境を提供開始——利用者・管理者・開発者の責務を定めた「源内基準」も公表",
-          "outlet": "Howl.link",
-          "date": "2026-10-21"
         }
       ],
-      "buzz_trend": 0.93,
-      "buzz_articles_14d": 15,
-      "buzz_raw_items": 27,
+      "buzz_trend": 0.88,
+      "buzz_articles_14d": 16,
+      "buzz_raw_items": 25,
       "buzz_query": "デジタル庁 源内",
-      "buzz_adopted_at": "2026-10-22T07:19:13",
-      "buzz_adopted_n": 2
+      "buzz_adopted_at": "2026-10-24T05:47:11",
+      "buzz_adopted_n": 3
     },
     {
       "title": "「HomeView」にロボットアーム付きの上位モデルが計画中か｜9インチで360度回転、2027年〜2028年に登場の見込み",
@@ -25810,7 +26247,7 @@
       "scored_at": "2026-10-20",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -26166,7 +26603,7 @@
       "scored_at": "2026-10-20",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -26595,7 +27032,7 @@
       "scored_at": "2026-10-21",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -26751,9 +27188,31 @@
           "trend": 0.5,
           "articles_14d": 2,
           "raw_items": 6
+        },
+        {
+          "at": "2026-10-24T05:47:38",
+          "query": "森永乳業 αディフェンシン",
+          "measured": 2,
+          "outlets": 2,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "妊娠中の食事で産後の気分良好に 森永乳業らαディフェンシン分泌の関連確認",
+              "outlet": "ウェルネスデイリーニュース",
+              "date": "2026-10-20"
+            },
+            {
+              "title": "新着情報: 産後の腸内αディフェンシン量は母親の良好な気分と関係～妊娠中の食事に着目した、周産期メンタルヘルスの新たなセルフケアの可能性～（先端生命科学研究院 ",
+              "outlet": "北海道大学",
+              "date": "2026-10-13"
+            }
+          ],
+          "trend": 0.5,
+          "articles_14d": 2,
+          "raw_items": 5
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:19:22",
+      "buzz_measured_at": "2026-10-24T05:47:38",
       "buzz_measured": 2,
       "buzz_outlets": 2,
       "yahoo": false,
@@ -26771,10 +27230,10 @@
       ],
       "buzz_trend": 0.5,
       "buzz_articles_14d": 2,
-      "buzz_raw_items": 6,
+      "buzz_raw_items": 5,
       "buzz_query": "森永乳業 αディフェンシン",
-      "buzz_adopted_at": "2026-10-22T07:19:22",
-      "buzz_adopted_n": 2
+      "buzz_adopted_at": "2026-10-24T05:47:38",
+      "buzz_adopted_n": 3
     },
     {
       "title": "GMO、生成AIの「答えるだけ問題」を解消へ　社内ナレッジを業務フローにつなぐ",
@@ -26850,7 +27309,7 @@
           "kind": "press_release"
         }
       ],
-      "primary_verified_at": "2026-10-21T07:13:20",
+      "primary_verified_at": "2026-10-24T05:49:05",
       "url_check": [
         {
           "url": "https://prtimes.jp/main/html/rd/p/000005592.000000136.html",
@@ -26860,7 +27319,7 @@
       ],
       "url_ok": true,
       "url_status": "prtimes.jp: HTTP 200「社内ナレッジを参照するAIが、業務フローまで自動化「GMO 」",
-      "url_checked_at": "2026-10-21T07:13:20",
+      "url_checked_at": "2026-10-24T05:49:05",
       "buzz_history": [
         {
           "at": "2026-10-21T07:14:34",
@@ -26905,11 +27364,38 @@
           "trend": 1.0,
           "articles_14d": 3,
           "raw_items": 65
+        },
+        {
+          "at": "2026-10-24T05:46:49",
+          "query": "GMO AI",
+          "measured": 3,
+          "outlets": 3,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "ＧＭＯグローバルサイン・ホールディングス[3788]：社内ナレッジを参照するAI が、業務フローまで自動化「GMO AI RAG」と「JOINT AI Flow",
+              "outlet": "日本経済新聞",
+              "date": "2026-10-21"
+            },
+            {
+              "title": "GMO、生成AIの「答えるだけ問題」を解消へ 社内ナレッジを業務フローにつなぐ",
+              "outlet": "キーマンズネット",
+              "date": "2026-10-20"
+            },
+            {
+              "title": "社内ナレッジを参照するAIが、業務フローまで自動化 「GMO AI RAG」と「JOINT AI Flow byGMO」が連携",
+              "outlet": "GMOインターネットグループ株式会社",
+              "date": "2026-10-19"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 4,
+          "raw_items": 100
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:18:52",
-      "buzz_measured": 2,
-      "buzz_outlets": 2,
+      "buzz_measured_at": "2026-10-24T05:46:49",
+      "buzz_measured": 3,
+      "buzz_outlets": 3,
       "yahoo": false,
       "buzz_evidence": [
         {
@@ -26921,14 +27407,19 @@
           "title": "GMO、生成AIの「答えるだけ問題」を解消へ 社内ナレッジを業務フローにつなぐ",
           "outlet": "キーマンズネット",
           "date": "2026-10-20"
+        },
+        {
+          "title": "社内ナレッジを参照するAIが、業務フローまで自動化 「GMO AI RAG」と「JOINT AI Flow byGMO」が連携",
+          "outlet": "GMOインターネットグループ株式会社",
+          "date": "2026-10-19"
         }
       ],
       "buzz_trend": 1.0,
-      "buzz_articles_14d": 3,
-      "buzz_raw_items": 65,
+      "buzz_articles_14d": 4,
+      "buzz_raw_items": 100,
       "buzz_query": "GMO AI",
-      "buzz_adopted_at": "2026-10-22T07:18:52",
-      "buzz_adopted_n": 2
+      "buzz_adopted_at": "2026-10-24T05:46:49",
+      "buzz_adopted_n": 3
     },
     {
       "title": "マクセル、全固体電池バックアップモジュールの量産を開始 生産設備の保守負荷を低減",
@@ -27124,19 +27615,30 @@
           "trend": null,
           "articles_14d": 0,
           "raw_items": 4
+        },
+        {
+          "at": "2026-10-24T05:48:25",
+          "query": "オレゴン健康科学大学 肝疾患",
+          "measured": 1,
+          "outlets": 0,
+          "yahoo": false,
+          "evidence": [],
+          "trend": null,
+          "articles_14d": 0,
+          "raw_items": 5
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:19:36",
+      "buzz_measured_at": "2026-10-24T05:48:25",
       "buzz_measured": 1,
       "buzz_outlets": 0,
       "yahoo": false,
       "buzz_evidence": [],
       "buzz_trend": null,
       "buzz_articles_14d": 0,
-      "buzz_raw_items": 4,
+      "buzz_raw_items": 5,
       "buzz_query": "オレゴン健康科学大学 肝疾患",
-      "buzz_adopted_at": "2026-10-22T07:19:36",
-      "buzz_adopted_n": 2
+      "buzz_adopted_at": "2026-10-24T05:48:25",
+      "buzz_adopted_n": 3
     },
     {
       "title": "ヒューマノイド「宮澤ノア」を新卒として迎えるカクイチ、実機が社員の前で動作を披露 4枚目の写真・画像",
@@ -27195,7 +27697,7 @@
       "scored_at": "2026-10-21",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -27429,35 +27931,62 @@
           "trend": 0.93,
           "articles_14d": 15,
           "raw_items": 27
+        },
+        {
+          "at": "2026-10-24T05:47:13",
+          "query": "デジタル庁 源内",
+          "measured": 5,
+          "outlets": 14,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "政府職員18万人向けAIエージェントを順次導入 「源内基準」も公表",
+              "outlet": "PlusWeb3",
+              "date": "2026-10-22"
+            },
+            {
+              "title": "古川デジタル大臣がAndroidのマイナンバーカード開始を報告｜源内に18万人規模のAIエージェント 10月20日会見の全文と動画",
+              "outlet": "Smart Watch Life",
+              "date": "2026-10-22"
+            },
+            {
+              "title": "デジタル庁、ガバメントAI「源内」でAIエージェント機能を提供開始 政府職員約18万人を対象、複数の業務工程を自律的に実行",
+              "outlet": "ビジネス+IT",
+              "date": "2026-10-21"
+            }
+          ],
+          "trend": 0.88,
+          "articles_14d": 16,
+          "raw_items": 25
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:19:11",
+      "buzz_measured_at": "2026-10-24T05:47:13",
       "buzz_measured": 5,
-      "buzz_outlets": 12,
+      "buzz_outlets": 14,
       "yahoo": true,
       "buzz_evidence": [
+        {
+          "title": "政府職員18万人向けAIエージェントを順次導入 「源内基準」も公表",
+          "outlet": "PlusWeb3",
+          "date": "2026-10-22"
+        },
+        {
+          "title": "古川デジタル大臣がAndroidのマイナンバーカード開始を報告｜源内に18万人規模のAIエージェント 10月20日会見の全文と動画",
+          "outlet": "Smart Watch Life",
+          "date": "2026-10-22"
+        },
         {
           "title": "デジタル庁、ガバメントAI「源内」でAIエージェント機能を提供開始 政府職員約18万人を対象、複数の業務工程を自律的に実行",
           "outlet": "ビジネス+IT",
           "date": "2026-10-21"
-        },
-        {
-          "title": "政府職員18万人がAIエージェントを自作へ、デジタル庁「源内」は何ができる？",
-          "outlet": "マイナビニュース",
-          "date": "2026-10-21"
-        },
-        {
-          "title": "デジタル庁、ガバメントAI「源内」で約18万人の政府職員にAIエージェント環境を提供開始——利用者・管理者・開発者の責務を定めた「源内基準」も公表",
-          "outlet": "Howl.link",
-          "date": "2026-10-21"
         }
       ],
-      "buzz_trend": 0.93,
-      "buzz_articles_14d": 15,
-      "buzz_raw_items": 27,
+      "buzz_trend": 0.88,
+      "buzz_articles_14d": 16,
+      "buzz_raw_items": 25,
       "buzz_query": "デジタル庁 源内",
-      "buzz_adopted_at": "2026-10-22T07:19:11",
-      "buzz_adopted_n": 2
+      "buzz_adopted_at": "2026-10-24T05:47:13",
+      "buzz_adopted_n": 3
     },
     {
       "title": "マクセルが全固体電池モジュール量産 電池交換の工数削減：耐用年数10年以上を想定",
@@ -27664,9 +28193,20 @@
           "trend": 1.0,
           "articles_14d": 1,
           "raw_items": 2
+        },
+        {
+          "at": "2026-10-24T05:46:51",
+          "query": "医薬基盤健康栄養研究所 KRAS",
+          "measured": 1,
+          "outlets": 0,
+          "yahoo": false,
+          "evidence": [],
+          "trend": null,
+          "articles_14d": 0,
+          "raw_items": 1
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:18:54",
+      "buzz_measured_at": "2026-10-24T05:46:51",
       "buzz_measured": 2,
       "buzz_outlets": 1,
       "yahoo": false,
@@ -27682,7 +28222,7 @@
       "buzz_raw_items": 2,
       "buzz_query": "医薬基盤健康栄養研究所 KRAS",
       "buzz_adopted_at": "2026-10-22T07:18:54",
-      "buzz_adopted_n": 2
+      "buzz_adopted_n": 3
     },
     {
       "title": "Agility Robotics、AGCOと契約を締結し、Digitヒューマノイドロボットの試験導入へ",
@@ -27742,7 +28282,7 @@
       "scored_at": "2026-10-21",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -27829,7 +28369,7 @@
           "kind": "press_release"
         }
       ],
-      "primary_verified_at": "2026-10-22T12:16:40",
+      "primary_verified_at": "2026-10-24T05:49:10",
       "url_check": [
         {
           "url": "https://www.meiji.ac.jp/koho/press/2026/lpcfhr0000016jm1.html",
@@ -27839,7 +28379,7 @@
       ],
       "url_ok": true,
       "url_status": "meiji.ac.jp: HTTP 200「明治大学と吉野家ホールディングスが共同研究成果を発表 牛由来」",
-      "url_checked_at": "2026-10-22T12:16:40",
+      "url_checked_at": "2026-10-24T05:49:10",
       "buzz_history": [
         {
           "at": "2026-10-21T07:14:45",
@@ -27884,9 +28424,26 @@
           "trend": 0.5,
           "articles_14d": 2,
           "raw_items": 7
+        },
+        {
+          "at": "2026-10-24T05:48:01",
+          "query": "吉野家 明治大学",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "吉野家と明治大が解明、牛丼を食べると意欲や集中力が高まる科学的根拠",
+              "outlet": "Forbes JAPAN",
+              "date": "2026-10-13"
+            }
+          ],
+          "trend": 0.0,
+          "articles_14d": 1,
+          "raw_items": 10
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:19:50",
+      "buzz_measured_at": "2026-10-24T05:48:01",
       "buzz_measured": 3,
       "buzz_outlets": 2,
       "yahoo": true,
@@ -27907,7 +28464,7 @@
       "buzz_raw_items": 7,
       "buzz_query": "吉野家 明治大学",
       "buzz_adopted_at": "2026-10-21T07:14:45",
-      "buzz_adopted_n": 2
+      "buzz_adopted_n": 3
     },
     {
       "title": "ネットバンキングにログインしたまま別作業は危険？　「ChatGPT Atlas」などのAIブラウザ7種でデータ窃取を検証",
@@ -28093,7 +28650,7 @@
       "scored_at": "2026-10-22",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -28204,7 +28761,7 @@
           "kind": "press_release"
         }
       ],
-      "primary_verified_at": "2026-10-22T12:16:29",
+      "primary_verified_at": "2026-10-24T05:48:34",
       "url_check": [
         {
           "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1608368",
@@ -28224,7 +28781,7 @@
       ],
       "url_ok": false,
       "url_status": "nejm.org: HTTP 403（ボット拒否の可能性。ブラウザで確認） → DOI実在（ハンドルAPI、10.1056/NEJMoa1608368） ／ cira.kyoto-u.ac.jp: ソフト404（HTTP 200、title「エラー 404｜ 京都大学iPS細胞研究所 CiRA（サイラ）」） ／ keio.ac.jp: HTTP 200「プレスリリース | 慶應義塾」",
-      "url_checked_at": "2026-10-22T12:16:29",
+      "url_checked_at": "2026-10-24T05:48:34",
       "buzz_history": [
         {
           "at": "2026-10-22T07:19:00",
@@ -28252,9 +28809,36 @@
           "trend": 0.5,
           "articles_14d": 8,
           "raw_items": 25
+        },
+        {
+          "at": "2026-10-24T05:46:43",
+          "query": "iPS細胞 臨床試験",
+          "measured": 3,
+          "outlets": 4,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "GPC-1 CAR-T療法の臨床試験計画に関するPMDA対面助言終了のお知らせ",
+              "outlet": "ZDNET Japan",
+              "date": "2026-10-19"
+            },
+            {
+              "title": "味の素㈱、iPS細胞用培地技術でクオリプス㈱のiPS細胞由来心筋細胞シートの実用化に貢献",
+              "outlet": "味の素株式会社",
+              "date": "2026-10-15"
+            },
+            {
+              "title": "「他国との競争ではなく受け皿を増やす」、台湾の臨床試験アライアンスが狙うFIH誘致の新戦略",
+              "outlet": "日経バイオテクONLINE",
+              "date": "2026-10-14"
+            }
+          ],
+          "trend": 0.25,
+          "articles_14d": 4,
+          "raw_items": 13
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:19:00",
+      "buzz_measured_at": "2026-10-24T05:46:43",
       "buzz_measured": 3,
       "buzz_outlets": 4,
       "yahoo": false,
@@ -28280,7 +28864,7 @@
       "buzz_raw_items": 25,
       "buzz_query": "iPS細胞 臨床試験",
       "buzz_adopted_at": "2026-10-22T07:19:00",
-      "buzz_adopted_n": 1
+      "buzz_adopted_n": 2
     },
     {
       "title": "海藻由来のアルギン酸が腸粘膜修復を促進 順天堂大などが仕組みを解明",
@@ -28404,9 +28988,20 @@
           "trend": 1.0,
           "articles_14d": 1,
           "raw_items": 2
+        },
+        {
+          "at": "2026-10-24T05:46:54",
+          "query": "アルギン酸 順天堂大学",
+          "measured": 1,
+          "outlets": 0,
+          "yahoo": false,
+          "evidence": [],
+          "trend": null,
+          "articles_14d": 0,
+          "raw_items": 1
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:18:57",
+      "buzz_measured_at": "2026-10-24T05:46:54",
       "buzz_measured": 2,
       "buzz_outlets": 1,
       "yahoo": false,
@@ -28422,7 +29017,7 @@
       "buzz_raw_items": 2,
       "buzz_query": "アルギン酸 順天堂大学",
       "buzz_adopted_at": "2026-10-22T07:18:57",
-      "buzz_adopted_n": 1
+      "buzz_adopted_n": 2
     },
     {
       "title": "PHPの脆弱性、OpenAIのAIで発見　「同様の発見、今後数カ月で急増」",
@@ -28514,7 +29109,7 @@
           "kind": "official_blog"
         }
       ],
-      "primary_verified_at": "2026-10-22T12:16:03",
+      "primary_verified_at": "2026-10-24T05:48:28",
       "url_check": [
         {
           "url": "https://openai.com/index/patch-the-planet-global-response-coordination/",
@@ -28529,7 +29124,7 @@
       ],
       "url_ok": null,
       "url_status": "openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ thephp.foundation: HTTP 200「Today's PHP Security Release, 」",
-      "url_checked_at": "2026-10-22T12:16:03",
+      "url_checked_at": "2026-10-24T05:48:28",
       "buzz_history": [
         {
           "at": "2026-10-22T07:18:37",
@@ -28557,35 +29152,62 @@
           "trend": 1.0,
           "articles_14d": 15,
           "raw_items": 40
+        },
+        {
+          "at": "2026-10-24T05:46:37",
+          "query": "OpenAI PHP",
+          "measured": 5,
+          "outlets": 19,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "OpenAI、PHPの重大な脆弱性への対応を主導。防御側のAI活用に10億ドル分「Daybreak」利用を補助",
+              "outlet": "AIsmiley",
+              "date": "2026-10-23"
+            },
+            {
+              "title": "OpenAIのGPT-5.6 SolがPHPの重大脆弱性を発見 5段階の防御体制を提案",
+              "outlet": "PlusWeb3",
+              "date": "2026-10-23"
+            },
+            {
+              "title": "OpenAI、PHPの重大欠陥をAIで発見 Google傘下のウィズもAI活用し独自に脆弱性を発見",
+              "outlet": "FNNプライムオンライン",
+              "date": "2026-10-22"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 22,
+          "raw_items": 37
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:18:37",
+      "buzz_measured_at": "2026-10-24T05:46:37",
       "buzz_measured": 5,
-      "buzz_outlets": 10,
+      "buzz_outlets": 19,
       "yahoo": true,
       "buzz_evidence": [
         {
-          "title": "PHPの脆弱性、OpenAIのAIで発見 「同様の発見、今後数カ月で急増」（1/2 ページ）",
-          "outlet": "ITmedia",
-          "date": "2026-10-21"
+          "title": "OpenAI、PHPの重大な脆弱性への対応を主導。防御側のAI活用に10億ドル分「Daybreak」利用を補助",
+          "outlet": "AIsmiley",
+          "date": "2026-10-23"
         },
         {
-          "title": "PHPの重大脆弱性、発見したのは「GPT-5.6Sol」 OpenAIが防御連携を呼びかけ",
-          "outlet": "Impress Watch",
-          "date": "2026-10-21"
+          "title": "OpenAIのGPT-5.6 SolがPHPの重大脆弱性を発見 5段階の防御体制を提案",
+          "outlet": "PlusWeb3",
+          "date": "2026-10-23"
         },
         {
-          "title": "PHPの重大脆弱性「PHP2Shell」はセキュリティ企業のCalifとWizがAIを用いて発見しOpenAIの枠組みを使って対策したことが判明",
-          "outlet": "GIGAZINE",
-          "date": "2026-10-21"
+          "title": "OpenAI、PHPの重大欠陥をAIで発見 Google傘下のウィズもAI活用し独自に脆弱性を発見",
+          "outlet": "FNNプライムオンライン",
+          "date": "2026-10-22"
         }
       ],
       "buzz_trend": 1.0,
-      "buzz_articles_14d": 15,
-      "buzz_raw_items": 40,
+      "buzz_articles_14d": 22,
+      "buzz_raw_items": 37,
       "buzz_query": "OpenAI PHP",
-      "buzz_adopted_at": "2026-10-22T07:18:37",
-      "buzz_adopted_n": 1
+      "buzz_adopted_at": "2026-10-24T05:46:37",
+      "buzz_adopted_n": 2
     },
     {
       "title": "フィジカルAIの社会実装と日本の勝ち筋 GROOVE X、Preferred Robotics、ugo、3社トップの講演とパネルディスカッション",
@@ -28711,7 +29333,7 @@
       "scored_at": "2026-10-22",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -29006,9 +29628,20 @@
           "trend": 1.0,
           "articles_14d": 1,
           "raw_items": 5
+        },
+        {
+          "at": "2026-10-24T05:48:17",
+          "query": "加熱殺菌ビフィズス菌 順天堂大",
+          "measured": 1,
+          "outlets": 0,
+          "yahoo": false,
+          "evidence": [],
+          "trend": null,
+          "articles_14d": 0,
+          "raw_items": 4
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:20:01",
+      "buzz_measured_at": "2026-10-24T05:48:17",
       "buzz_measured": 2,
       "buzz_outlets": 1,
       "yahoo": false,
@@ -29024,7 +29657,7 @@
       "buzz_raw_items": 5,
       "buzz_query": "加熱殺菌ビフィズス菌 順天堂大",
       "buzz_adopted_at": "2026-10-22T07:20:01",
-      "buzz_adopted_n": 1
+      "buzz_adopted_n": 2
     },
     {
       "title": "デジタル庁、「神Excel」対策ツールを公開　AIと組み合わせたデータ整備方法も紹介",
@@ -29163,12 +29796,29 @@
           "trend": 1.0,
           "articles_14d": 2,
           "raw_items": 4
+        },
+        {
+          "at": "2026-10-24T05:46:57",
+          "query": "デジタル庁 Harunobu",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "デジタル庁、「神Excel」対策ツールを公開 AIと組み合わせたデータ整備方法も紹介",
+              "outlet": "ITmedia",
+              "date": "2026-10-21"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 2,
+          "raw_items": 6
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:18:40",
+      "buzz_measured_at": "2026-10-24T05:46:57",
       "buzz_measured": 2,
       "buzz_outlets": 1,
-      "yahoo": false,
+      "yahoo": true,
       "buzz_evidence": [
         {
           "title": "デジタル庁、「神Excel」対策ツールを公開 AIと組み合わせたデータ整備方法も紹介",
@@ -29178,10 +29828,10 @@
       ],
       "buzz_trend": 1.0,
       "buzz_articles_14d": 2,
-      "buzz_raw_items": 4,
+      "buzz_raw_items": 6,
       "buzz_query": "デジタル庁 Harunobu",
-      "buzz_adopted_at": "2026-10-22T07:18:40",
-      "buzz_adopted_n": 1
+      "buzz_adopted_at": "2026-10-24T05:46:57",
+      "buzz_adopted_n": 2
     },
     {
       "title": "クァンタムスケープ、AIデータセンターおよび航空宇宙・防衛分野向けに100MWhの全固体電池生産ライン構築計画を発表",
@@ -29306,7 +29956,7 @@
       "scored_at": "2026-10-22",
       "topic_first_date": "2026-05-13",
       "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
-      "topic_series": "c0ce6d8be0",
+      "topic_series": "914acd9f83",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-13",
@@ -29533,9 +30183,31 @@
           "trend": 1.0,
           "articles_14d": 2,
           "raw_items": 3
+        },
+        {
+          "at": "2026-10-24T05:46:59",
+          "query": "UEGウィーク 抗生物質",
+          "measured": 2,
+          "outlets": 2,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "UEGウィーク2026（UEG Week 2026）：幼少期からの抗生物質使用、若年成人期のIBSのオッズ上昇と関連",
+              "outlet": "千葉テレビ放送株式会社",
+              "date": "2026-10-19"
+            },
+            {
+              "title": "UEGウィーク2026（UEG Week 2026）：幼少期からの抗生物質使用、若年成人期のIBSのオッズ上昇と関連",
+              "outlet": "東京バーゲンマニア",
+              "date": "2026-10-19"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 2,
+          "raw_items": 3
         }
       ],
-      "buzz_measured_at": "2026-10-22T07:19:03",
+      "buzz_measured_at": "2026-10-24T05:46:59",
       "buzz_measured": 2,
       "buzz_outlets": 2,
       "yahoo": false,
@@ -29555,8 +30227,8 @@
       "buzz_articles_14d": 2,
       "buzz_raw_items": 3,
       "buzz_query": "UEGウィーク 抗生物質",
-      "buzz_adopted_at": "2026-10-22T07:19:03",
-      "buzz_adopted_n": 1
+      "buzz_adopted_at": "2026-10-24T05:46:59",
+      "buzz_adopted_n": 2
     },
     {
       "title": "「政府機関向けGemini」登場　米国政府・自治体と共同開発　データをプライベートクラウドに保持",
@@ -29629,6 +30301,1459 @@
         "id": "bdc5f25a2a",
         "source": "ITmedia AI+"
       }
+    },
+    {
+      "title": "声で動く協働ロボット　フィジカルAIの検証ハードルを下げるパッケージ登場",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/23/news021.html",
+      "published": "2026-10-22",
+      "source": "ITmedia AI+",
+      "source_kind": "media",
+      "summary": "富士ソフトとダイドーは、協働ロボット向け「フィジカルAIスタートパッケージ」を共同で開発し、2027年1月から本格的に受注活動を開始する。",
+      "id": "f357383973",
+      "sources": [
+        "ITmedia AI+"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000000238.000061382.html",
+          "what_it_states": "富士ソフトとダイドーが共同開発した協働ロボット向け『フィジカルAIスタートパッケージ』の実機デモを公開。人が話しかけるとAIが音声を理解し、カメラ画像から対象物を認識して協働ロボットがつかみ、指定場所へ運ぶ一連の動作をオンプレミスで検証できる構成。"
+        }
+      ],
+      "announced_on": "2026-10-08",
+      "headline_claim": "声で指示するだけで動く協働ロボットの検証ハードルを下げる「フィジカルAIスタートパッケージ」が登場した",
+      "actual_content": "ファナック製協働ロボット「CRXシリーズ」やNVIDIAのGPU搭載PC、カメラ、専用ソフトを組み合わせた製造現場向けの検証用パッケージ。人が自然言語で話しかけると対象物を画像認識してピッキングする動作をオンプレミス環境で試すことができ、2027年1月に本格受注を開始、2028年度に年間100台の販売を目指す。価格はハード・基本ソフト込みで1000万〜1200万円（税抜き）程度を想定しており、現場ごとの固有タスクへの適応やカスタマイズにはROS 2やPythonなどのプログラミング技術が必要となる。",
+      "buzz_jp_est": 2,
+      "verifiability": 4,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 1,
+      "work_relevance": 3,
+      "concern_id": "work_ai",
+      "entry_question": "声で動く協働ロボットの検証セット、現場ですぐ実用化できる？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "騒音の激しい製造現場で音声指示がどれほど実用的に機能するのか疑問が残るうえ、1000万円以上するパッケージを導入しても実際の工程に合わせるには自社でROS 2やPythonを用いた調整が必要な検証用キットに留まります。",
+      "investment_related": false,
+      "deja_vu_note": "kl040（安川電機のヒューマノイド計画）など工場のロボット化を扱った回があるが、今回は非人型アームロボットの実装検証パッケージ。",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "フィジカルAIスタートパッケージ 富士ソフト",
+      "jp_title_anchor": [
+        "フィジカルAIスタートパッケージ",
+        "協働ロボット"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 3,
+      "overall_score": 2.55,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-24",
+      "topic_first_date": "2026-10-08",
+      "topic_first_source": "候補 f357383973 のannounced_on（声で動く協働ロボット　フィジカルAIの検証ハードルを下げるパ）",
+      "topic_series": "f357383973",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-22",
+        "title": "声で動く協働ロボット　フィジカルAIの検証ハードルを下げるパッケージ登場",
+        "id": "f357383973",
+        "source": "ITmedia AI+"
+      }
+    },
+    {
+      "title": "業界初、ヒューマノイドとCNC工作機械が連携する加工システムを開発",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1mN3U4VGdOaVNGT0ZyelN0NHdzdDVsRktXeGxPeEVSWXRQM0djR2VBLTczMi1jTVN5Qkw4QnJJeVRGZy1nZkRUak1vYVQyMFhnbDNIaEdvclNsckJqM2J6TU42QlAxTVk?oc=5",
+      "published": "2026-10-21",
+      "source": "Googleニュース（ヒューマノイド）／www.mitsubishielectric.co.jp",
+      "source_kind": "media",
+      "outlet": "www.mitsubishielectric.co.jp",
+      "outlet_host": "mitsubishielectric.co.jp",
+      "genre_hint": "humanoid",
+      "summary": "業界初、ヒューマノイドとCNC工作機械が連携する加工システムを開発（www.mitsubishielectric.co.jp）",
+      "id": "1fe680600f",
+      "sources": [
+        "bp-Affairs",
+        "www.mitsubishielectric.co.jp",
+        "ロボスタ",
+        "日本経済新聞"
+      ],
+      "dup_ids": [
+        "4837b63c8f",
+        "15acecbe65",
+        "74fe41518d"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.mitsubishielectric.co.jp/news/2026/1021.html",
+          "what_it_states": "フィジカルAIを介してヒューマノイドロボットとCNC工作機械が連携する加工システムを開発したと発表。AI加工タスクプランナー、フィジカルAI搭載CNC、一般的なヒューマノイドロボットの3要素で構成され、作業指示の自然言語解析や個別SI不要の連携を実現。2026年10月26日からのJIMTOF2026でデモ展示を行い、2030年の実用化を目指す"
+        }
+      ],
+      "announced_on": "2026-10-21",
+      "headline_claim": "三菱電機が業界で初めてヒューマノイドロボットとCNC工作機械が連携する加工システムを開発した。",
+      "actual_content": "自然言語の指示から加工タスクを自動生成・割り振るAIプランナーと、フィジカルAIを搭載したCNC工作機械、人型ロボットを連携させるシステムを開発したと発表した。従来オペレーターが行っていた段取り、清掃、完成品の取り出し、搬送、トラブル対応などの代替を想定している。ロボットごとの個別通信・制御開発を省く共通基盤を目指すが、発表時点では実機の定量性能データ（作業時間や成功率など）は非公開で、2026年10月26日開幕のJIMTOF2026でデモを披露し2030年の実用化を目標としている。",
+      "buzz_jp_est": 3,
+      "verifiability": 4,
+      "hype_gap": 3,
+      "debate": 4,
+      "wonder": 4,
+      "life_relevance": 2,
+      "work_relevance": 4,
+      "concern_id": "work_ai",
+      "entry_question": "人型ロボが工作機械を操作する無人工場は、いつ来る？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "公式発表でも実用化目標は2030年（4年後）と明記されており、現時点では展示会デモの段階。そもそもワークの着脱や清掃なら、高価な人型ロボットを歩かせるより専用の自動ローダーや産業用アームの方が安く確実ではないかという現場の疑問が残る。",
+      "investment_related": false,
+      "deja_vu_note": "kl040（安川電機「2030年までにヒューマノイド」）と、日本の大手FAメーカーが2030年を目標に人型ロボット参入を掲げる点で同系統の構図。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "三菱電機 ヒューマノイド",
+      "jp_title_anchor": [
+        "CNC",
+        "工作機械",
+        "三菱電機"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.7,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-24",
+      "topic_first_date": "2026-05-13",
+      "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
+      "topic_series": "914acd9f83",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-21",
+        "title": "業界初、ヒューマノイドとCNC工作機械が連携する加工システムを開発",
+        "id": "1fe680600f",
+        "source": "Googleニュース（ヒューマノイド）／www.mitsubishielectric.co.jp"
+      }
+    },
+    {
+      "title": "肺神経内分泌がんがセロトニンを利用して抗腫瘍免疫応答を抑える仕組みを解明―免疫療法への治療抵抗性の克服につながることが期待",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5felJUVlQxQUV4TkJMeW85YUZxMkh4eHhqOWRFcW9sVEhPU3NiOFg0ZnM2ZVZYclRWVXJfUmVTMUpmXzdvS2o4dmxCUldKQmc5WDYxSlRLNGQ2VDFwUDhKaTIwWQ?oc=5",
+      "published": "2026-10-23",
+      "source": "Googleニュース（がん 新しい治療 研究）／京都大学",
+      "source_kind": "media",
+      "outlet": "京都大学",
+      "outlet_host": "kyoto-u.ac.jp",
+      "genre_hint": "medical",
+      "summary": "肺神経内分泌がんがセロトニンを利用して抗腫瘍免疫応答を抑える仕組みを解明―免疫療法への治療抵抗性の克服につながることが期待（京都大学）",
+      "id": "c6a8a8ad9c",
+      "sources": [
+        "京都大学",
+        "Newscast.jp"
+      ],
+      "dup_ids": [
+        "52bda0bcc2"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1016/j.ccell.2026.09.016",
+          "what_it_states": "DLL3高発現の肺神経内分泌がんがTPH1誘導を介してセロトニンを産生し、HTR7発現マクロファージを活性化してタルラタマブ等によるCD8陽性T細胞免疫を阻害することをマウスおよび細胞実験で実証。TPH1またはHTR7の阻害により抗腫瘍効果が回復した。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.kyoto-u.ac.jp/ja/research-news/2026-10-23-0",
+          "what_it_states": "国立がん研究センター、京都大学、名古屋大学らの研究チームが、小細胞肺がん等の肺神経内分泌がんがセロトニンを利用して免疫細胞の働きを抑え、免疫療法に抵抗性を示す仕組みを解明したと発表。"
+        }
+      ],
+      "announced_on": "2026-10-23",
+      "headline_claim": "肺神経内分泌がんが神経伝達物質セロトニンを利用して免疫の攻撃を抑える仕組みが解明され、免疫療法の治療抵抗性克服への道が開かれた。",
+      "actual_content": "小細胞肺がんなどの肺神経内分泌がんでDLL3を標的とする免疫療法（二重特異性抗体タルラタマブ等）が効きにくい原因を調査した。がん細胞がセロトニン合成酵素TPH1を高発現してセロトニンを放出し、受容体HTR7を持つマクロファージを介して攻撃役のCD8陽性T細胞の働きを抑え込んでいることが判明した。マウス実験においてセロトニン産生や受容体HTR7を阻害すると免疫療法の抗腫瘍効果が増強することを確認したが、ヒトにおける安全性や有効性を検証する臨床試験はこれからである。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 3,
+      "work_relevance": 1,
+      "concern_id": "cancer",
+      "entry_question": "がんが「セロトニン」で免疫から逃げるって本当？新薬で治療はすぐ変わる？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「幸せホルモン」として知られるセロトニンをがん細胞が隠れ蓑に使っていたという生物学的な驚きはあるが、実証されたのは培養細胞とマウスの段階。既存の抗うつ薬などがそのままがんに効くわけではなく、ヒトでの併用薬開発には臨床試験の長いプロセスが必要。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "肺神経内分泌がん 京都大学",
+      "jp_title_anchor": [
+        "肺神経内分泌",
+        "セロトニン"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.55,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-24",
+      "topic_first_date": "2026-10-23",
+      "topic_first_source": "候補 c6a8a8ad9c のannounced_on（肺神経内分泌がんがセロトニンを利用して抗腫瘍免疫応答を抑える）",
+      "topic_series": "c6a8a8ad9c",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-23",
+        "title": "肺神経内分泌がんがセロトニンを利用して抗腫瘍免疫応答を抑える仕組みを解明―免疫療法への治療抵抗性の克服につながることが期待",
+        "id": "c6a8a8ad9c",
+        "source": "Googleニュース（がん 新しい治療 研究）／京都大学"
+      }
+    },
+    {
+      "title": "大腸炎に対抗する遺伝子操作された細菌：腸内工場",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPTDBMNGlqNzlaT0pCQ0lpUTRXSFNURVNCMTYzeW83eEF6RjRPVTljczd2MTZPaFJGRkNOSFo5bmMyaXFzY1JQUE5NRlZjRVhkQlBVVk9RTUJ5VXc5VDg3MkNreUo3YWxvUklqbHB5QkZDcGVUT2VJLUEtZHlsX2swVEgwOF9JSW1KOTNUUzRRMnBUV1N5YlZwSjF0LTR4VnUyWEgw?oc=5",
+      "published": "2026-10-23",
+      "source": "Googleニュース（腸内細菌 研究）／Futuro Prossimo",
+      "source_kind": "media",
+      "outlet": "Futuro Prossimo",
+      "outlet_host": "ja.futuroprossimo.it",
+      "genre_hint": "food_health",
+      "summary": "大腸炎に対抗する遺伝子操作された細菌：腸内工場（Futuro Prossimo）",
+      "id": "6abe13b0e9",
+      "sources": [
+        "Futuro Prossimo"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1016/j.scib.2026.09.052",
+          "what_it_states": "プロバイオティクス大腸菌Nissle 1917を遺伝子改変（eEcN）し、抗TNFαナノ抗体を搭載した外膜小胞（OMVs）を分泌させることで、化学誘発大腸炎マウスモデルにおいて局所のTNFα阻害と粘膜修復を達成。同時に腸内善玉菌（乳酸菌群）を増やしてGABA濃度を上昇させ、海馬の神経炎症を抑えてマウスの抑うつ様行動を有意に軽減した。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.eurekalert.org/news-releases/1062325",
+          "what_it_states": "Science Bulletin掲載の研究に関するScience China Pressの公式リリース。中国科学院大学等の研究チームが開発したeEcNが、大腸炎と精神的併発症を併せ持つマウスモデルにおいて、従来の抗TNF抗体全身投与を上回る治療効果と腸脳軸の恒常性回復を示したと報告。"
+        }
+      ],
+      "announced_on": "2026-09-17",
+      "headline_claim": "遺伝子操作された細菌を飲むだけで大腸内で薬を現地生産し、大腸炎と併発するうつ病を同時に治す「腸内工場」が開発された。",
+      "actual_content": "中国科学院大学などの研究チームは、プロバイオティクス大腸菌「E. coli Nissle 1917」を改変し、抗TNFαナノ抗体を含む外膜小胞を自律分泌する生菌製剤「eEcN」を作製した。化学物質で大腸炎を誘発したマウスモデルにおいて、局所で抗炎症ナノ抗体を放出して粘膜を修復するとともに、乳酸菌の増殖を促して腸内および血中のGABA濃度を高め、脳（海馬）の炎症とうつ様行動を改善した。ただし、成果はすべてマウスの前臨床段階であり、複雑なヒトの腸内細菌叢での生着性や、生きた遺伝子改変菌の体内封じ込め・免疫副反応などの安全性評価はこれからである。",
+      "buzz_jp_est": 1,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 4,
+      "work_relevance": 1,
+      "concern_id": "gut",
+      "entry_question": "遺伝子組み換え細菌を飲むだけで、大腸炎とうつが同時に治るって本当？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "効果が確認されたのは化学物質で炎症を起こしたマウスの行動テスト（水泳試験など）だけで、ヒトの臨床試験は始まってもいない。生きた遺伝子改変大腸菌を腸内に定着させるリスクや、細菌由来の小胞が引き起こす自己免疫反応など、医薬品としての規制基準をクリアできる根拠はまだ揃っていない。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "Nissle 1917 大腸炎",
+      "jp_title_anchor": [
+        "大腸炎",
+        "Nissle 1917",
+        "腸内細菌"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.4,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-24",
+      "topic_first_date": "2026-09-17",
+      "topic_first_source": "候補 6abe13b0e9 のannounced_on（大腸炎に対抗する遺伝子操作された細菌：腸内工場）",
+      "topic_series": "6abe13b0e9",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-23",
+        "title": "大腸炎に対抗する遺伝子操作された細菌：腸内工場",
+        "id": "6abe13b0e9",
+        "source": "Googleニュース（腸内細菌 研究）／Futuro Prossimo"
+      }
+    },
+    {
+      "title": "「Muse」日本で提供開始　MetaのAIエージェント、メルカリやマネフォ、ぴあと連携へ",
+      "url": "https://www.itmedia.co.jp/news/article/2610/23/2000002535/",
+      "published": "2026-10-23",
+      "source": "ITmedia NEWS",
+      "source_kind": "media",
+      "summary": "ユーザーに代わり、メール送信や旅行の予約などさまざまなタスクを進めるエージェント。Gmailなど既に連携済みのサービスに加え、日本では今後、メルカリ、マネーフォワード ME、チケットぴあのサービスと連携する予定だ。",
+      "id": "2c69b9bfaf",
+      "sources": [
+        "ITmedia NEWS"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://about.fb.com/ja/news/",
+          "what_it_states": "MetaがパーソナルAIエージェント「Muse」を北米以外で初めて日本で提供開始。iOS、Android、Web（muse.ai）で利用可能で基本機能は無料。GmailやGoogleカレンダー、Trip.com等に加え、国内ではメルカリ、マネーフォワード ME、チケットぴあとの連携を進めている。隔離されたMuse Secure VMとSentinelエージェントで安全性を確保し、メール送信や商品購入などの重要操作前には必ず本人の確認を求める。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://muse.ai",
+          "what_it_states": "パーソナルAIエージェント「Muse」の公式ポータル。チャットや音声でタスクを指示でき、アプリを閉じた後も自律的にバックグラウンドで計画・ブラウザ操作を実行する。"
+        }
+      ],
+      "announced_on": "2026-10-23",
+      "headline_claim": "MetaのAIエージェント「Muse」が日本で提供開始され、メルカリやマネーフォワード、チケットぴあと連携してタスクを代行する。",
+      "actual_content": "Metaは自律タスク代行AI「Muse」の日本提供を開始した（iOS/Android/Web対応、基本機能は無料）。ただし見出しにある「メルカリ」「マネーフォワード ME」「チケットぴあ」との連携は「今後連携を進める予定（開発中）」であり、提供開始時点で利用できるのはGmailやGoogleカレンダーなどグローバル連携サービスにとどまる。また、自律実行とはいえ、メール送信や商品購入の直前には独立した監視エージェント（Sentinel）を介して必ずユーザー本人の承認を挟む安全設計となっており、完全な自動決済・送信は行われない。",
+      "buzz_jp_est": 4,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 4,
+      "concern_id": "work_ai",
+      "entry_question": "MetaのAI「Muse」は、メルカリや家計簿を本当に勝手にやってくれる？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「メルカリやマネフォと連携」と報じられているが、一次資料では「連携を進める段階」とあり今日すぐ使えるわけではない。さらに誤爆防止のため購入や送信の前には毎回本人の承認が必要で、完全丸投げとは程遠い「確認待ちお膳立て係」である点。",
+      "investment_related": false,
+      "deja_vu_note": "kl038（AIは『一人に一台』の時代になるのか（Meta Muse と OpenAI dots、米国の動き））、kl034（「PCを閉じても、AIが仕事を終わらせている」は本当か）の続報にあたる。",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "Meta Muse 日本",
+      "jp_title_anchor": [
+        "Muse",
+        "Meta"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 4.05,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-24",
+      "topic_first_date": "2026-10-23",
+      "topic_first_source": "候補 2c69b9bfaf のannounced_on（「Muse」日本で提供開始　MetaのAIエージェント、メル）",
+      "topic_series": "2c69b9bfaf",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-23",
+        "title": "「Muse」日本で提供開始　MetaのAIエージェント、メルカリやマネフォ、ぴあと連携へ",
+        "id": "2c69b9bfaf",
+        "source": "ITmedia NEWS"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://about.fb.com/ja/news/",
+          "ok": true,
+          "status": "HTTP 200「ニュースルーム | Metaについて」",
+          "page_title": "ニュースルーム | Metaについて",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "press_release"
+        },
+        {
+          "url": "https://muse.ai",
+          "ok": null,
+          "status": "HTTP 400（ボット拒否の可能性。ブラウザで確認）",
+          "method": "http",
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-10-24T05:44:05",
+      "url_check": [
+        {
+          "url": "https://about.fb.com/ja/news/",
+          "ok": true,
+          "status": "HTTP 200「ニュースルーム | Metaについて」"
+        },
+        {
+          "url": "https://muse.ai",
+          "ok": null,
+          "status": "HTTP 400（ボット拒否の可能性。ブラウザで確認）"
+        }
+      ],
+      "url_ok": null,
+      "url_status": "about.fb.com: HTTP 200「ニュースルーム | Metaについて」 ／ muse.ai: HTTP 400（ボット拒否の可能性。ブラウザで確認）",
+      "url_checked_at": "2026-10-24T05:44:05",
+      "buzz_history": [
+        {
+          "at": "2026-10-24T05:46:40",
+          "query": "Meta Muse",
+          "measured": 5,
+          "outlets": 41,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "「Muse」日本で提供開始 MetaのAIエージェント、メルカリやマネフォ、ぴあと連携へ",
+              "outlet": "ITmedia",
+              "date": "2026-10-23"
+            },
+            {
+              "title": "メタのAIエージェント「Muse」、日本で開始 メルカリなどと連携",
+              "outlet": "日本経済新聞",
+              "date": "2026-10-23"
+            },
+            {
+              "title": "MetaのパーソナルAIエージェント「Muse」が日本でも利用可能に、メルカリやチケットぴあとも連携予定",
+              "outlet": "窓の杜",
+              "date": "2026-10-23"
+            }
+          ],
+          "trend": 0.72,
+          "articles_14d": 71,
+          "raw_items": 100
+        }
+      ],
+      "buzz_measured_at": "2026-10-24T05:46:40",
+      "buzz_measured": 5,
+      "buzz_outlets": 41,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "「Muse」日本で提供開始 MetaのAIエージェント、メルカリやマネフォ、ぴあと連携へ",
+          "outlet": "ITmedia",
+          "date": "2026-10-23"
+        },
+        {
+          "title": "メタのAIエージェント「Muse」、日本で開始 メルカリなどと連携",
+          "outlet": "日本経済新聞",
+          "date": "2026-10-23"
+        },
+        {
+          "title": "MetaのパーソナルAIエージェント「Muse」が日本でも利用可能に、メルカリやチケットぴあとも連携予定",
+          "outlet": "窓の杜",
+          "date": "2026-10-23"
+        }
+      ],
+      "buzz_trend": 0.72,
+      "buzz_articles_14d": 71,
+      "buzz_raw_items": 100,
+      "buzz_query": "Meta Muse",
+      "buzz_adopted_at": "2026-10-24T05:46:40",
+      "buzz_adopted_n": 1
+    },
+    {
+      "title": "NVIDIA Isaacを拡張 Agile Robotsの「Agile ONE SN」や「Isaac Lab 3.0」など発表【GTC Berlin】",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFByQmhFdXVwQ3V2M0lPYjVGdFBHM0puOWt6X3ctSmhEM2JBcE9rOW1FREFBRzFZWDBfdDh6RWFQTVNodGZoWXc4MVFaNkF1emFkRXdkTWQ2VHU2VDJoNDRKU3FpU04?oc=5",
+      "published": "2026-10-22",
+      "source": "Googleニュース（ヒューマノイド）／ロボスタ",
+      "source_kind": "media",
+      "outlet": "ロボスタ",
+      "outlet_host": "robotstart.info",
+      "genre_hint": "humanoid",
+      "summary": "NVIDIA Isaacを拡張 Agile Robotsの「Agile ONE SN」や「Isaac Lab 3.0」など発表【GTC Berlin】（ロボスタ）",
+      "id": "d0ff40b87a",
+      "sources": [
+        "ロボスタ"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-advances-isaac-platform-for-general-purpose-robotics-with-new-reference-humanoid-frameworks-simulation-pipelines-and-data",
+          "what_it_states": "NVIDIAがGTC Berlinでロボティクス基盤Isaacの拡張を発表。Agile Robotsと共同で、Jetson ThorおよびIsaac GR00Tを標準搭載した研究者向けリファレンスヒューマノイド『Agile ONE SN』（身長1.40m、重量40kg、31自由度、片腕可搬3kg、各20自由度の触覚5本指ハンド）を2027年初頭に提供予定。ロボット強化学習フレームワーク『Isaac Lab 3.0』やランタイム『Isaac OS』の一般提供も開始。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://www.agile-robots.com/de/news/detail/agile-robots-launches-agile-one-sn/",
+          "what_it_states": "Agile Robotsが研究・開発者向けヒューマノイド基準機『Agile ONE SN』を発表。本体と両手合わせて合計71自由度、1kHz力制御対応の五本指ハンド、RGB-DカメラやLiDARを一体化し、数週間かかっていたシミュレーションから実機学習へのセットアップ環境構築を数日へ短縮すると主張。"
+        }
+      ],
+      "announced_on": "2026-10-21",
+      "headline_claim": "NVIDIAがロボットの「ChatGPTモーメント」接近を宣言し、研究者が即座にAI学習を実機検証できる基準ヒューマノイド「Agile ONE SN」や「Isaac Lab 3.0」を発表した。",
+      "actual_content": "発表された『Agile ONE SN』は、身長1.40m・重量約40〜43kg、片腕可搬重量3kgの小型二足歩行ロボットで、車載AI基盤Jetson Thorと基盤モデルGR00T 1.7を事前構成した研究開発用プラットフォームである。ハードウェア・シミュレーション・AIモデルの統合にかかる開発準備期間を数か月から数日に短縮することを目指す。ただし一般家庭や工場への実戦配備用ではなく、大学や企業ラボ向けの研究用基準機であり、出荷開始は2027年初頭、年内生産目標も1,000〜2,000台にとどまる。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 1,
+      "work_relevance": 2,
+      "concern_id": null,
+      "entry_question": "NVIDIAの標準ヒューマノイド「Agile ONE SN」で、人型ロボットはすぐ普及する？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "「ChatGPTモーメントが近づいた」と大々的にアピールしているが、発表されたのは一般向けロボットではなく2027年に研究室へ届く開発用キットで、片腕3kgしか持てない。開発者のセットアップが数日に縮んでも、生活や現場で役立つ作業ができるようになるかは別の問題。",
+      "investment_related": false,
+      "deja_vu_note": "kl040（安川電機「2030年までにヒューマノイド」）やkl033（Atlasの手）などヒューマノイド開発の進捗を扱った回があるが、今回はNVIDIA主導の開発統合プラットフォームとリファレンス機が主題。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "Agile ONE SN",
+      "jp_title_anchor": [
+        "Agile ONE SN",
+        "Isaac Lab"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.25,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-24",
+      "topic_first_date": "2026-05-13",
+      "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
+      "topic_series": "914acd9f83",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-21",
+        "title": "業界初、ヒューマノイドとCNC工作機械が連携する加工システムを開発",
+        "id": "1fe680600f",
+        "source": "Googleニュース（ヒューマノイド）／www.mitsubishielectric.co.jp"
+      }
+    },
+    {
+      "title": "ヒューマノイドがより繊細に、バックラッシゼロの同軸ローラーカム式精密減速機：FAニュース",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5hanNQRVUwNDA2RTNNNllrMUhpMVJfUlA2SmFXNWRDMVNTOW9Gb2VwWGs1bEJTMmlUSWt6cDBIcXdsM1ZlZU84dm9OTVA4cDdXN1pFYTRnazhzUHE4dWtOVngzTjFJZVNsM3kycF80VQ?oc=5",
+      "published": "2026-10-22",
+      "source": "Googleニュース（ヒューマノイド）／MONOist",
+      "source_kind": "media",
+      "outlet": "MONOist",
+      "outlet_host": "monoist.itmedia.co.jp",
+      "genre_hint": "humanoid",
+      "summary": "ヒューマノイドがより繊細に、バックラッシゼロの同軸ローラーカム式精密減速機：FAニュース（MONOist）",
+      "id": "d3d399aff1",
+      "sources": [
+        "MONOist"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://www.techno-dynamics.co.jp/product/armourdrive.html",
+          "what_it_states": "同軸ローラーカム式精密減速機『アーマードライブ（ARMOURDRIVE）XRシリーズ』を開発。歳差運動を利用した独自機構で全ローラーが常時接触しバックラッシゼロを実現。1段で約1/8〜約1/200の減速比に対応。JIMTOF2026出展、2027年4月1日標準モデル受注開始、2030年度に年間1万台の出荷を目指す。"
+        }
+      ],
+      "announced_on": "2026-10-16",
+      "headline_claim": "ヒューマノイドロボットをより繊細に制御できる、バックラッシ（歯車のガタつき）がゼロの同軸ローラーカム式精密減速機が登場した。",
+      "actual_content": "FA装置開発を手掛けるテクノダイナミックスが、歳差運動を利用した独自の同軸ローラーカム式精密減速機「アーマードライブ XRシリーズ」を発表した。全ローラーが常時接触することで、同軸構造でありながらバックラッシゼロと高剛性を両立し、1段で約1/8〜約1/200の減速比を実現するとしている。標準モデルの受注開始は2027年4月1日で、2030年度に年間1万台の出荷を目指す計画だが、現時点で実機ヒューマノイドに組み込んで繊細動作を実証した試験データが示されたわけではない。",
+      "buzz_jp_est": 2,
+      "verifiability": 4,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 3,
+      "concern_id": null,
+      "entry_question": "ガタつきゼロの新減速機で、人型ロボットは本当に人間並みに繊細に動けるようになる？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "減速機単体の発表にすぎず、受注開始すら2027年4月と先の話で、ヒューマノイド実機に搭載して制御性能や耐久性を確かめたデータはまだ一切ない点。",
+      "investment_related": false,
+      "deja_vu_note": "kl040（安川電機のヒューマノイド参入）、kl033（Atlasの手の関節機構）などロボットの関節・アクチュエータ周りの話題と関連。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "テクノダイナミックス アーマードライブ",
+      "jp_title_anchor": [
+        "アーマードライブ",
+        "テクノダイナミックス",
+        "ローラーカム"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 4,
+      "overall_score": 3.0,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-24",
+      "topic_first_date": "2026-05-13",
+      "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
+      "topic_series": "914acd9f83",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-21",
+        "title": "業界初、ヒューマノイドとCNC工作機械が連携する加工システムを開発",
+        "id": "1fe680600f",
+        "source": "Googleニュース（ヒューマノイド）／www.mitsubishielectric.co.jp"
+      }
+    },
+    {
+      "title": "体内でがんを狙う免疫細胞を生み出す新戦略",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9nbFAySFVXT2NXX3pYc2JuX3F1X1B2MTlya0NNaVdaWkpNRHpoQ0lEZTdTSG1DbVB4VndrX3VVdUd0d3c3OFlEX20zWl9Eck11YTd0S0xTNkxlT0NjYWd6V2lXaVFSdw?oc=5",
+      "published": "2026-10-23",
+      "source": "Googleニュース（がん 新しい治療 研究）／大阪大学",
+      "source_kind": "media",
+      "outlet": "大阪大学",
+      "outlet_host": "resou.osaka-u.ac.jp",
+      "genre_hint": "medical",
+      "summary": "体内でがんを狙う免疫細胞を生み出す新戦略（大阪大学）",
+      "id": "bb64b60e62",
+      "sources": [
+        "大阪大学"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://resou.osaka-u.ac.jp/ja/research/2026/20261022_3",
+          "what_it_states": "大阪大学大学院医学系研究科の原知明特任講師、石井秀始特任教授らの研究グループが、東京科学大学や東海大学等との共同研究により、m6A修飾CAR mRNAを脂質ナノ粒子（LNP）で生体内送達し、体内でCARを発現させて抗腫瘍効果、抗原スプレッディング、長期免疫記憶を誘導する新戦略をマウスモデルで確認したと発表。"
+        },
+        {
+          "kind": "paper",
+          "url": "https://www.nature.com/articles/s41598-026-73127-0",
+          "what_it_states": "学術誌『Scientific Reports』に掲載された論文（DOI: 10.1038/s41598-026-73127-0）。m6A修飾を施したCAR mRNAをLNPに封入してマウス体内へ投与し、腫瘍微小環境でのCAR発現と抗腫瘍免疫応答、レパトア制御および免疫記憶の成立を実証した前臨床研究。"
+        }
+      ],
+      "announced_on": "2026-10-22",
+      "headline_claim": "患者から細胞を取り出さず、mRNA注射で体内の免疫細胞をがん攻撃細胞に変える画期的な新治療法が登場した。",
+      "actual_content": "大阪大学などの研究チームが、化学修飾（m6A）を施したCAR mRNAを脂質ナノ粒子（LNP）で投与し、生体内の細胞で直接CARを発現させる『in vivo CAR-T』戦略を開発した。マウスの固形がんモデルにおいて、標的抗原に応じた抗腫瘍効果に加え、標的外の腫瘍抗原へ攻撃が広がる抗原スプレッディングや免疫記憶の形成を確認した。ただし、成果はマウスを用いた前臨床試験の段階であり、ヒトに対する安全性評価や臨床試験（治験）は今後実施される計画である。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 4,
+      "work_relevance": 1,
+      "concern_id": "cancer",
+      "entry_question": "注射1本で体内の細胞をがんと闘う免疫細胞に変える治療は、本当に実用化する？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "患者から細胞を採取して体外培養する数千万円超の既存CAR-Tをワクチン感覚の注射に変える構想は魅力的だが、現時点ではマウス実験の概念実証にすぎない。ヒト体内で投与した場合に意図しない細胞へLNPが取り込まれるリスクや、mRNAの一時的な発現期間で十分な治療効果が出るかはヒトでの治験結果を待つ必要がある。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "大阪大学 がん免疫",
+      "jp_title_anchor": [
+        "大阪大学",
+        "免疫細胞"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.65,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-24",
+      "topic_first_date": "2026-10-22",
+      "topic_first_source": "候補 bb64b60e62 のannounced_on（体内でがんを狙う免疫細胞を生み出す新戦略）",
+      "topic_series": "bb64b60e62",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-23",
+        "title": "体内でがんを狙う免疫細胞を生み出す新戦略",
+        "id": "bb64b60e62",
+        "source": "Googleニュース（がん 新しい治療 研究）／大阪大学"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://resou.osaka-u.ac.jp/ja/research/2026/20261022_3",
+          "ok": true,
+          "status": "HTTP 200「体内でがんを狙う免疫細胞を生み出す新戦略 - ResOU」",
+          "page_title": "体内でがんを狙う免疫細胞を生み出す新戦略 - ResOU",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "press_release"
+        },
+        {
+          "url": "https://www.nature.com/articles/s41598-026-73127-0",
+          "ok": true,
+          "status": "HTTP 200「Client Challenge」",
+          "page_title": "Client Challenge",
+          "anchor_hit": false,
+          "method": "http",
+          "kind": "paper"
+        }
+      ],
+      "primary_verified_at": "2026-10-24T05:49:03",
+      "url_check": [
+        {
+          "url": "https://resou.osaka-u.ac.jp/ja/research/2026/20261022_3",
+          "ok": true,
+          "status": "HTTP 200「体内でがんを狙う免疫細胞を生み出す新戦略 - ResOU」"
+        },
+        {
+          "url": "https://www.nature.com/articles/s41598-026-73127-0",
+          "ok": true,
+          "status": "HTTP 200「Client Challenge」"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "resou.osaka-u.ac.jp: HTTP 200「体内でがんを狙う免疫細胞を生み出す新戦略 - ResOU」 ／ nature.com: HTTP 200「Client Challenge」",
+      "url_checked_at": "2026-10-24T05:49:03",
+      "buzz_history": [
+        {
+          "at": "2026-10-24T05:47:02",
+          "query": "大阪大学 がん免疫",
+          "measured": 3,
+          "outlets": 2,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "「分からないことはいっぱいある。続けて調べていきたい」 文化勲章授与決定の大阪大学の長田重一特任教授 「アポトーシス（細胞死）」のメカニズム解明 がんや免疫疾患",
+              "outlet": "FNNプライムオンライン",
+              "date": "2026-10-23"
+            },
+            {
+              "title": "【文化勲章】大阪大学・長田重一特任教授が受章決定 ウイルスに感染した細胞が自ら死滅する仕組み解明 阪大関係者の受章は26人目 | MBSニュース | 関西の最新",
+              "outlet": "TBS NEWS DIG",
+              "date": "2026-10-23"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 2,
+          "raw_items": 30
+        }
+      ],
+      "buzz_measured_at": "2026-10-24T05:47:02",
+      "buzz_measured": 3,
+      "buzz_outlets": 2,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "「分からないことはいっぱいある。続けて調べていきたい」 文化勲章授与決定の大阪大学の長田重一特任教授 「アポトーシス（細胞死）」のメカニズム解明 がんや免疫疾患",
+          "outlet": "FNNプライムオンライン",
+          "date": "2026-10-23"
+        },
+        {
+          "title": "【文化勲章】大阪大学・長田重一特任教授が受章決定 ウイルスに感染した細胞が自ら死滅する仕組み解明 阪大関係者の受章は26人目 | MBSニュース | 関西の最新",
+          "outlet": "TBS NEWS DIG",
+          "date": "2026-10-23"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 2,
+      "buzz_raw_items": 30,
+      "buzz_query": "大阪大学 がん免疫",
+      "buzz_adopted_at": "2026-10-24T05:47:02",
+      "buzz_adopted_n": 1
+    },
+    {
+      "title": "酪酸菌配合剤で高齢機能性便秘症が改善－順大",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOclhiN1EtbGk3VjNRZDRGUDY0Y3lBNGtkbEFsdjgwSkZ0LXVuN3g0dkh1NjQ3NGZWdW8teWd1NmxBXzVpNG5BaTVSNUVKMTZtZWtrRzFodUVnZ0JmZGZkOUJCNlRuYmVlZThKVWV1cWlSVlZFcjk1b1BhdzlOMUZYQzJFNFNqTmN2WVdSYjBuRElDd2VfRnhDVktmWEVUQ0FPSmU4RU1KLXNrTTRyLUU0LUs3RzhGLTRMNGZlWUZzLURGRC1xUFpraF9UTS01dWhmdWZaTFNBSkVOS1hLTVE?oc=5",
+      "published": "2026-10-22",
+      "source": "Googleニュース（腸内細菌 研究）／QLifePro",
+      "source_kind": "media",
+      "outlet": "QLifePro",
+      "outlet_host": "qlifepro.com",
+      "genre_hint": "food_health",
+      "summary": "酪酸菌配合剤で高齢機能性便秘症が改善－順大（QLifePro）",
+      "id": "0e534de564",
+      "sources": [
+        "QLifePro"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.juntendo.ac.jp/news/17393.html",
+          "what_it_states": "順天堂東京江東高齢者医療センターの浅岡大介教授らのグループが高齢機能性便秘症患者49名に医療用酪酸菌配合剤を8週間投与し、便性状やQOLスコアの改善傾向を確認したと発表。胃酸分泌抑制薬（PPI/P-CAB）非服用群で改善傾向が見られた一方、服用群では明確な変化がなかったと記載。"
+        },
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.3390/diseases14090317",
+          "what_it_states": "Diseases誌（2026年8月31日公開）掲載。RomeIV基準を満たす65〜89歳の高齢機能性便秘症患者49名を対象とした単施設・非盲検・単群試験（オープンラベル）。乳酸菌・糖化菌・酪酸菌の口腔内崩壊錠を1回2錠・1日3回投与し、排便スコアやJPAC-QOL、mCSSの推移および安全性を評価。有害事象は3例（6.1%）。"
+        }
+      ],
+      "announced_on": "2026-09-24",
+      "headline_claim": "医療用の酪酸菌配合剤を服用することで、高齢者の機能性便秘症における便性状や生活の質（QOL）が改善する。",
+      "actual_content": "RomeⅣ診断基準を満たす65歳以上の高齢機能性便秘症患者49名を対象に、乳酸菌・糖化菌・酪酸菌を含む医療用配合剤を8週間投与した単施設・非盲検・単群（対照群なし）の探索的臨床試験です。主要評価項目の排便スコアや副次項目のQOL・重症度スコアで改善傾向が示され、安全性も確認されました。ただしプラセボ群のないオープンラベル試験であり、胃酸分泌抑制薬（PPIなど）を併用している患者群では明確な改善が認められず、便中酪酸濃度自体の有意な増加も見られなかったという限界があります。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 4,
+      "work_relevance": 1,
+      "concern_id": "gut",
+      "entry_question": "酪酸菌の整腸剤で、高齢者の頑固な便秘が本当によくなる？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "対照群（偽薬）がない49人だけのオープンラベル試験なのでプラセボ効果を排除しきれず、しかも高齢者がよく飲んでいる胃酸止め（PPI）を一緒に飲んでいると改善が見られなかった点。",
+      "investment_related": false,
+      "deja_vu_note": "便秘や腸内細菌叢の臨床試験そのものを主テーマにした回は過去になく新規",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "順天堂大学 酪酸菌",
+      "jp_title_anchor": [
+        "酪酸菌",
+        "順大",
+        "機能性便秘"
+      ],
+      "announcement_type": "research",
+      "freshness": 2,
+      "overall_score": 2.7,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-24",
+      "topic_first_date": "2026-09-24",
+      "topic_first_source": "候補 0e534de564 のannounced_on（酪酸菌配合剤で高齢機能性便秘症が改善－順大）",
+      "topic_series": "0e534de564",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-22",
+        "title": "酪酸菌配合剤で高齢機能性便秘症が改善－順大",
+        "id": "0e534de564",
+        "source": "Googleニュース（腸内細菌 研究）／QLifePro"
+      }
+    },
+    {
+      "title": "OpenAIの判断特化「Decisions API」が導入企業から大絶賛　NVIDIAが追加学習不要AIモデルの発表も【AIニュース3選】",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1WMC1vOXhpbFFudHVwNFNWakNWMEdUci1XNktHTGdpYlVuOXV5MHEwWnZiRll5a01FRl9aTWNyX3N0STRtMEdPNV80Uk5wRVJwdDl1cjF0RU9JT19MZldnSNIBZkFVX3lxTE5PVlZsWU5HZ05KZ2owTzlSNjRDcmhSSDFTY3ZDblZaQVZhRnpEXzhZTjVkeHdnZlBuVGxIM05lLXlaWmp1c3dqbWlnQ0lWNmlNV1RVNDJMLVpNajg2MUJma05XUjN4QQ?oc=5",
+      "published": "2026-10-23",
+      "source": "Googleニュース（OpenAI 発表）／Real Sound｜リアルサウンド",
+      "source_kind": "media",
+      "outlet": "Real Sound｜リアルサウンド",
+      "outlet_host": "realsound.jp",
+      "genre_hint": "ai",
+      "summary": "OpenAIの判断特化「Decisions API」が導入企業から大絶賛　NVIDIAが追加学習不要AIモデルの発表も【AIニュース3選】（Real Sound｜リアルサウンド）",
+      "id": "c4823c97f5",
+      "sources": [
+        "Real Sound｜リアルサウンド"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://openai.com/index/decisions-api/",
+          "what_it_states": "GPT-6 Lunaを基盤とし、選択肢や確率を返す限定的な判断処理においてResponses API比で最大10倍高速化。料金は入力100万トークンあたり0.10ドル（キャッシュ時は0.01ドル）で出力トークン課金はなし。1リクエストで最大400問を同時評価可能。Boxの文書分類処理が約5倍高速化と報告。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://developers.openai.com/docs/guides/decisions",
+          "what_it_states": "テキスト・画像・JSONを評価し、真偽確率・固定選択肢・ルーブリックスコアを返すAPI。一般提供（GA）され、GPT-Live連携やプロンプトキャッシュに対応。対応モデルはgpt-6-luna。"
+        }
+      ],
+      "announced_on": "2026-10-22",
+      "headline_claim": "OpenAIが判断・分類処理に特化した『Decisions API』を一般提供し、最大10倍の高速化と格安料金で導入企業から大絶賛されている。",
+      "actual_content": "OpenAIはGPT-6 Lunaを基盤とする判断特化エンドポイント『Decisions API』の一般提供（GA）を開始した。自由文を出力させず、あらかじめ定義した選択肢（分類・真偽判定・スコアリングなど）のみを直接返させることで、従来のResponses APIと比較して最大約10倍の高速化を実現している。料金は入力100万トークンあたり0.10ドル（キャッシュ時は0.01ドル）で出力課金はゼロ、1回のリクエストで最大400件の判断を一括処理できる。Boxなどの先行導入企業では文書の仕分け処理が約5倍高速化したと報告されているが、用途はルーティングや判定などの定型的な選択に限られ、文章作成には別途通常の生成モデルが必要となる。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 2,
+      "debate": 2,
+      "wonder": 3,
+      "life_relevance": 1,
+      "work_relevance": 4,
+      "concern_id": "work_ai",
+      "entry_question": "OpenAIの『判断特化API』で、AIの処理は本当に10倍速く・安くなる？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "soon"
+      },
+      "tsukkomi_material": "万能な意思決定AIが登場したわけではなく、できるのは『A・B・Cのどれに該当するか』の定型的な仕分けだけ。裏方の交通整理やルーティングの高速化・低コスト化には抜群だが、ユーザーへの回答や複雑な文章生成には結局いつもの生成モデルを呼び出す必要がある。",
+      "investment_related": false,
+      "deja_vu_note": "kl034（OpenAI dots）などAIエージェントの話題はあるが、分類・ルーティングに特化した高速・軽量APIそのものの検証は初。",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "Decisions API OpenAI",
+      "jp_title_anchor": [
+        "Decisions API"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.3,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-24",
+      "topic_first_date": "2026-10-22",
+      "topic_first_source": "候補 c4823c97f5 のannounced_on（OpenAIの判断特化「Decisions API」が導入企）",
+      "topic_series": "c4823c97f5",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-23",
+        "title": "OpenAIの判断特化「Decisions API」が導入企業から大絶賛　NVIDIAが追加学習不要AIモデルの発表も【AIニュース3選】",
+        "id": "c4823c97f5",
+        "source": "Googleニュース（OpenAI 発表）／Real Sound｜リアルサウンド"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://openai.com/index/decisions-api/",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+          "method": "http",
+          "kind": "official_blog"
+        },
+        {
+          "url": "https://developers.openai.com/docs/guides/decisions",
+          "ok": true,
+          "status": "HTTP 200「Decisions | OpenAI API」",
+          "page_title": "Decisions | OpenAI API",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-10-24T05:48:52",
+      "url_check": [
+        {
+          "url": "https://openai.com/index/decisions-api/",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）"
+        },
+        {
+          "url": "https://developers.openai.com/docs/guides/decisions",
+          "ok": true,
+          "status": "HTTP 200「Decisions | OpenAI API」"
+        }
+      ],
+      "url_ok": null,
+      "url_status": "openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ developers.openai.com: HTTP 200「Decisions | OpenAI API」",
+      "url_checked_at": "2026-10-24T05:48:52",
+      "buzz_history": [
+        {
+          "at": "2026-10-24T05:46:46",
+          "query": "Decisions API",
+          "measured": 4,
+          "outlets": 5,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "OpenAI、判断特化「Decisions API」一般提供 最大10倍高速 入力100万トークン0.10ドル",
+              "outlet": "ビジネス+IT",
+              "date": "2026-10-23"
+            },
+            {
+              "title": "OpenAIの判断特化「Decisions API」が導入企業から大絶賛　NVIDIAが追加学習不要AIモデルの発表も【AIニュース3選】",
+              "outlet": "Real Sound｜リアルサウンド",
+              "date": "2026-10-23"
+            },
+            {
+              "title": "OpenAI、判断処理に特化した「Decisions API」を一般提供 GPT-6 Lunaを基盤に高速化",
+              "outlet": "マイナビニュース",
+              "date": "2026-10-22"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 5,
+          "raw_items": 27
+        }
+      ],
+      "buzz_measured_at": "2026-10-24T05:46:46",
+      "buzz_measured": 4,
+      "buzz_outlets": 5,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "OpenAI、判断特化「Decisions API」一般提供 最大10倍高速 入力100万トークン0.10ドル",
+          "outlet": "ビジネス+IT",
+          "date": "2026-10-23"
+        },
+        {
+          "title": "OpenAIの判断特化「Decisions API」が導入企業から大絶賛　NVIDIAが追加学習不要AIモデルの発表も【AIニュース3選】",
+          "outlet": "Real Sound｜リアルサウンド",
+          "date": "2026-10-23"
+        },
+        {
+          "title": "OpenAI、判断処理に特化した「Decisions API」を一般提供 GPT-6 Lunaを基盤に高速化",
+          "outlet": "マイナビニュース",
+          "date": "2026-10-22"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 5,
+      "buzz_raw_items": 27,
+      "buzz_query": "Decisions API",
+      "buzz_adopted_at": "2026-10-24T05:46:46",
+      "buzz_adopted_n": 1
+    },
+    {
+      "title": "テスラのヒト型ロボット販売、来年開始めざす マスク氏表明 | WSJ PickUp",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9VTkxKdUhlV2thRi15SXczVm1ZclVkbEwtbHBtX29BSFh0d0txV01VMkxxd19UeUFlNS1hc2ZwdTMtamhRX3dNblQ1TC0?oc=5",
+      "published": "2026-10-22",
+      "source": "Googleニュース（人型ロボット）／ダイヤモンド・オンライン",
+      "source_kind": "media",
+      "outlet": "ダイヤモンド・オンライン",
+      "outlet_host": "diamond.jp",
+      "genre_hint": "humanoid",
+      "summary": "テスラのヒト型ロボット販売、来年開始めざす マスク氏表明 | WSJ PickUp（ダイヤモンド・オンライン）",
+      "id": "54336b7dc8",
+      "sources": [
+        "ダイヤモンド・オンライン"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://ir.tesla.com",
+          "what_it_states": "Teslaの2026年第3四半期決算資料（Q3 2026 Update）および説明会トランスクリプト。カリフォルニア州フリモント工場の量産ラインでOptimusの初期生産が開始され初の量産品質モデルが製造されたと記載。電話会見でマスクCEOは外部企業への出荷開始を2027年末頃めざすと発言。"
+        }
+      ],
+      "announced_on": "2026-10-21",
+      "headline_claim": "テスラのヒト型ロボット「オプティマス」の外部企業への販売・出荷が来年末（2027年末）に開始される見通しであること。",
+      "actual_content": "テスラが2026年第3四半期の決算説明会で、フリモント工場のラインでOptimusの初期生産を始めたと発表した。一方でイーロン・マスクCEOは、外部企業への出荷は2027年末頃を目指すとしつつ、週2万台の量産には少なくとも1年以上を要し、手の設計変更や耐久性の改善（1カ月で壊れない設計）、データ収集のための訓練施設「Optimus Academy」での試行など膨大な課題が残っていることを認めている。",
+      "buzz_jp_est": 3,
+      "verifiability": 4,
+      "hype_gap": 4,
+      "debate": 4,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 3,
+      "concern_id": null,
+      "entry_question": "テスラのヒト型ロボットは、本当に来年買えるようになる？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "「来年販売」と見出しにあるものの、マスク氏自身が「1カ月で壊れないよう耐久性を調整中」「手の設計も未完成」と認めており、学習データ収集のために1〜2万台を自社で訓練させる段階にすぎず、公約通りの期日に外部へ出荷できる根拠は乏しい点。",
+      "investment_related": true,
+      "deja_vu_note": "kl040（安川電機「2030年までにヒューマノイド」）、kl033（Atlasの手）、kl046（マスク氏の2036年予測）とヒューマノイドおよびマスク氏のタイムライン関連で重複感がある。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "テスラ ヒト型ロボット",
+      "jp_title_anchor": [
+        "テスラ",
+        "ヒト型ロボット",
+        "オプティマス"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.7,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "excluded",
+      "excluded_reason": "投資・株価が中心",
+      "scored_at": "2026-10-24",
+      "topic_first_date": "2026-10-21",
+      "topic_first_source": "候補 54336b7dc8 のannounced_on（テスラのヒト型ロボット販売、来年開始めざす マスク氏表明 |）",
+      "topic_series": "54336b7dc8",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-22",
+        "title": "テスラのヒト型ロボット販売、来年開始めざす マスク氏表明 | WSJ PickUp",
+        "id": "54336b7dc8",
+        "source": "Googleニュース（人型ロボット）／ダイヤモンド・オンライン"
+      }
+    },
+    {
+      "title": "NVIDIA、ヒューマノイド開発を「数週間から数日」に Isaac拡充",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBlaXplaGp3Nlk5bXdJdjFUS2YtM21YbUZTdGVLYXpoQ1VQZThQLUItVkR0bjY4UXRYd0o2LXpEek5iSWgxb2JFeUpsa2dHdmVwZXJqdjJDRWxfNHk3MEFBWGVvYXo?oc=5",
+      "published": "2026-10-22",
+      "source": "Googleニュース（ヒューマノイド）／Impress Watch",
+      "source_kind": "media",
+      "outlet": "Impress Watch",
+      "outlet_host": "watch.impress.co.jp",
+      "genre_hint": "humanoid",
+      "summary": "NVIDIA、ヒューマノイド開発を「数週間から数日」に Isaac拡充（Impress Watch）",
+      "id": "914acd9f83",
+      "sources": [
+        "Impress Watch",
+        "Yahoo!ニュース",
+        "ｄメニューニュース"
+      ],
+      "dup_ids": [
+        "fc1788c765",
+        "f8045e5c93"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-advances-isaac-platform-for-general-purpose-robotics-with-new-reference-humanoid-frameworks-simulation-pipelines-and-data",
+          "what_it_states": "Agile Robotsの参照機『Agile ONE SN』により、シミュレーション・学習・展開ツールの統合にかかるセットアップ時間を『数週間から数日』に短縮すると明記。機体は身長1.4m・重量40kg・31自由度・片腕可搬3kg・Jetson Thor搭載で、提供開始は2027年初頭予定。Isaac Lab 3.0の一般提供、Isaac OS、2000点以上のシミュレーション素材を含むSimReadyライブラリも発表"
+        }
+      ],
+      "announced_on": "2026-10-21",
+      "headline_claim": "NVIDIAがロボット基盤Isaacを拡充し、ヒューマノイドロボットの開発を「数週間から数日」に短縮できるようになったと発表した。",
+      "actual_content": "「数週間から数日」に短縮されると主張されているのはヒューマノイド開発全般ではなく、個別のシミュレーション・学習・実機展開ツールを統合する『初期セットアップ時間（setup time）』である。また、その事前統合環境を備えたリファレンス実機『Agile ONE SN』（Agile Robots製）の提供開始は2027年初頭予定であり、現時点で手に入るわけではない。同時に物理シミュレーション対応の『Isaac Lab 3.0』やリアルタイム実行基盤『Isaac OS』が一般提供されたが、ロボットが実世界の複雑なタスクを学習・安全検証する工程そのものが数日で完了するわけではない。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 1,
+      "work_relevance": 2,
+      "concern_id": null,
+      "entry_question": "人型ロボットの開発が「数日」で終わる時代が来たって本当？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "「数週間から数日」に縮むのはロボットの学習や動作開発ではなく、バラバラな開発ツールの初期セットアップ（つなぎ込み）の話。しかもその統合済みハードウェア自体、手元に届くのは2027年初頭です。",
+      "investment_related": false,
+      "deja_vu_note": "kl040（安川電機ヒューマノイド）など人型ロボットの動向を扱っているが、今回は開発基盤・ツールチェーン（Isaac）側の進化が焦点",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "NVIDIA Isaac ヒューマノイド",
+      "jp_title_anchor": [
+        "Isaac",
+        "Agile ONE SN"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.6,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-24",
+      "topic_first_date": "2026-05-13",
+      "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
+      "topic_series": "914acd9f83",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-21",
+        "title": "業界初、ヒューマノイドとCNC工作機械が連携する加工システムを開発",
+        "id": "1fe680600f",
+        "source": "Googleニュース（ヒューマノイド）／www.mitsubishielectric.co.jp"
+      }
+    },
+    {
+      "title": "分子標的薬耐性の子宮体部漿液性がん腹膜播種に対する標的アルファ線治療の効果を確認～分子標的薬が効きにくくなったがんに対する新たな治療法として期待",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9GT3N1X1JGRm0xUWdJZjcxMUxrVnpjYUxzMnlUVHNYX1RmdVpVcU9DRWJjWG1YMlVqY0duZlUzVGVqSzI3ajN5UmRFdFlwS2ZjVUstcFAwbjQ1UQ?oc=5",
+      "published": "2026-10-23",
+      "source": "Googleニュース（がん 新しい治療 研究）／量子科学技術研究開発機構(QST)",
+      "source_kind": "media",
+      "outlet": "量子科学技術研究開発機構(QST)",
+      "outlet_host": "qst.go.jp",
+      "genre_hint": "medical",
+      "summary": "分子標的薬耐性の子宮体部漿液性がん腹膜播種に対する標的アルファ線治療の効果を確認～分子標的薬が効きにくくなったがんに対する新たな治療法として期待（量子科学技術研究開発機構(QST)）",
+      "id": "a39112b05d",
+      "sources": [
+        "量子科学技術研究開発機構(QST)"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.qst.go.jp",
+          "what_it_states": "QST病院重粒子線治療研究部とAMEDなどの共同研究チームが、トラスツズマブ耐性を獲得したHER2陽性子宮体部漿液性がん腹膜播種のモデルマウスに対し、211At-トラスツズマブ複合体を用いた標的アルファ線治療により腫瘍増殖を顕著に抑制することを確認し、今後は臨床試験に向けた検討を進めると発表。"
+        },
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.2967/jnumed.126.273073",
+          "what_it_states": "The Journal of Nuclear Medicine掲載論文（Title: Targeted Alpha Therapy with Astatine-211-labeled Trastuzumab Overcomes Trastuzumab Resistance in Uterine Serous Carcinoma in Mice）。分子標的薬耐性の子宮体部漿液性がん腹膜播種モデルマウスにおいて、単回投与による標的アルファ線治療の抗腫瘍効果と生体内分布を評価。"
+        }
+      ],
+      "announced_on": "2026-10-24",
+      "headline_claim": "分子標的薬が効かなくなった難治性の子宮体部漿液性がんの腹膜播種に対して、標的アルファ線治療が高い治療効果を示し新たな治療法として期待される。",
+      "actual_content": "研究チームは、抗HER2抗体であるトラスツズマブに耐性を持つ子宮体部漿液性がんの腹膜播種モデルマウスを作製し、アルファ線放出核種アスタチン-211（211At）を付加した複合体を単回投与した。生理食塩水投与群や通常のトラスツズマブ投与群ではがんが増殖し続けたのに対し、標的アルファ線治療群では個体イメージングによりがんの増殖が有意に抑制されたことが確認された。ただし本成果はマウスによる非臨床試験（動物実験）の段階であり、ヒトに対する臨床試験の実施可能性や安全性評価は今後の課題とされている。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 2,
+      "wonder": 4,
+      "life_relevance": 3,
+      "work_relevance": 1,
+      "concern_id": "cancer",
+      "entry_question": "効かなくなった抗がん剤に放射線をくっつける治療法、本当に効くの？",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "効かなくなった抗体を『アルファ線の運び屋』として再利用するアイデアは鮮やかですが、成果はまだマウス実験の段階です。アスタチン-211は半減期が約7.2時間と非常に短く、供給体制やヒトでの臨床試験（治験）のハードルを考えると実用化にはかなり時間がかかります。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "QST 子宮体部漿液性がん",
+      "jp_title_anchor": [
+        "子宮体部漿液性がん",
+        "標的アルファ線",
+        "トラスツズマブ"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.45,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-24",
+      "topic_first_date": "2026-10-23",
+      "topic_first_source": "候補 a39112b05d のpublished（分子標的薬耐性の子宮体部漿液性がん腹膜播種に対する標的アルフ）",
+      "topic_series": "a39112b05d",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-23",
+        "title": "分子標的薬耐性の子宮体部漿液性がん腹膜播種に対する標的アルファ線治療の効果を確認～分子標的薬が効きにくくなったがんに対する新たな治療法として期待",
+        "id": "a39112b05d",
+        "source": "Googleニュース（がん 新しい治療 研究）／量子科学技術研究開発機構(QST)"
+      }
+    },
+    {
+      "title": "サイキンソーとカネリョウ海藻、海藻の摂取頻度が高い人ほど酪酸産生菌が多いと発表",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE02bm03eUh3ZUphUlNET0RZNlg4TWllVDBuVnhXbE9UR002WWFkYXk1aS15Ni1ZM09yNUxvQzR5M3lIQkZ4R3c?oc=5",
+      "published": "2026-10-21",
+      "source": "Googleニュース（腸内細菌 研究）／Dellows News",
+      "source_kind": "media",
+      "outlet": "Dellows News",
+      "outlet_host": "news.dellows.jp",
+      "genre_hint": "food_health",
+      "summary": "サイキンソーとカネリョウ海藻、海藻の摂取頻度が高い人ほど酪酸産生菌が多いと発表（Dellows News）",
+      "id": "546777377b",
+      "sources": [
+        "Dellows News"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000000147.000015042.html",
+          "what_it_states": "サイキンソーが保有する腸内フローラ検査データから抽出した1,000例を対象に横断的観察研究を実施。海藻摂取頻度（週1回未満、週1～3回、週4～6回、毎日）を説明変数とし、年齢・性別・BMI・他食品の摂取頻度を共変量として重回帰分析を行った結果、摂取頻度が高い群ほどButyricicoccusなどの酪酸産生菌の存在比および保有者割合が有意に高かった。第73回日本栄養改善学会学術総会（2026年9月11〜13日）にて共同発表。"
+        }
+      ],
+      "announced_on": "2026-09-16",
+      "headline_claim": "海藻を食べる頻度が高い人ほど、腸内の健康長寿菌「酪酸産生菌」が多いことが判明した。",
+      "actual_content": "サイキンソーの検査データ1,000例を用いた横断的観察研究です。海藻の摂取頻度と腸内細菌叢の関連を多変量解析したところ、摂取頻度が高い人ほどButyricicoccus属をはじめとする酪酸産生菌の存在比や保有率が統計的に有意に高いことが確認されました。ただし、アンケートと細菌検査の結果を突き合わせた観察研究（相関関係）にとどまり、海藻を実際に摂取させて菌叢の変化を追う介入試験（因果関係の証明）や査読付き論文の発表はこれからの段階です。",
+      "buzz_jp_est": 2,
+      "verifiability": 4,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 1,
+      "concern_id": "gut",
+      "entry_question": "海藻をたくさん食べると腸内の「酪酸菌」が増えるって本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "1,000人のデータによる横断的な観察研究（相関関係）であって、実際に海藻を食べさせて菌が増えるかを検証した介入試験（RCT）ではない点。海藻を毎日食べるような健康意識が高い人の別の食生活や生活習慣が影響している交絡の可能性も残る。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "サイキンソー カネリョウ海藻",
+      "jp_title_anchor": [
+        "サイキンソー",
+        "カネリョウ海藻"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.45,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-24",
+      "topic_first_date": "2026-09-16",
+      "topic_first_source": "候補 546777377b のannounced_on（サイキンソーとカネリョウ海藻、海藻の摂取頻度が高い人ほど酪酸）",
+      "topic_series": "546777377b",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-21",
+        "title": "サイキンソーとカネリョウ海藻、海藻の摂取頻度が高い人ほど酪酸産生菌が多いと発表",
+        "id": "546777377b",
+        "source": "Googleニュース（腸内細菌 研究）／Dellows News"
+      }
+    },
+    {
+      "title": "1Password、AIエージェントがログインするためのツールを発表",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPUTdIRlhadXdPOTk2cDVoaURIdDBKLVBGR0xPcG9RTVhDdTlNdk95NVVkZUw1R0JzY0JFcnJhZEl1akJselQwVEFKNURpcklHeFljajVxekNMUl9iZjhPaktKQXhDcWNLZlRabkE5aDVNcW1SN0pTUmpHM21FLUxMRzZVT3d1MEZOXzVXODd1Y0Q0MlQ2cUpHd1pR?oc=5",
+      "published": "2026-10-23",
+      "source": "Googleニュース（OpenAI 発表）／PortalCripto",
+      "source_kind": "media",
+      "outlet": "PortalCripto",
+      "outlet_host": "portalcripto.com.br",
+      "genre_hint": "ai",
+      "summary": "1Password、AIエージェントがログインするためのツールを発表（PortalCripto）",
+      "id": "b7a65ccc01",
+      "sources": [
+        "PortalCripto"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://1password.com/blog/introducing-1password-for-agents",
+          "what_it_states": "AIエージェントがログイン画面に到達した際、独自のデジタルキーで1Passwordに照会し、ユーザーが自端末で承認するとパスワードをAIのコンテキストに露出させず直接入力する仕組み。Meta Muse、Claude Duet、ChatGPT Work/dots、Grok Bot、Townie等の対応を進め、個人・ファミリープラン利用者に無償提供。",
+          "repaired_url": "https://1password.com/jp/product/enterprise-password-manager",
+          "repair_method": "site-crawl",
+          "repair_from": "https://1password.com/jp",
+          "repaired_at": "2026-10-24T05:44:21",
+          "repair_claim_terms": {
+            "checked": [
+              "1password",
+              "aiエージェント"
+            ],
+            "found": [
+              "1password",
+              "aiエージェント"
+            ]
+          }
+        },
+        {
+          "kind": "press_release",
+          "url": "https://1password.com/press/1password-for-agents-launches-as-the-trust-layer-for-personal-ai-agents",
+          "what_it_states": "パーソナルAIエージェント向けの信頼レイヤーとして『1Password for Agents』を提供開始。認証情報は1Password側からフォームへ直接入力され、AIモデル側には保存・共有されない仕様を公表。",
+          "repaired_url": "https://1password.com/personal-ai-agent-integrations",
+          "repair_method": "site-crawl",
+          "repair_from": "https://1password.com/press",
+          "repaired_at": "2026-10-24T05:44:21",
+          "repair_claim_terms": {
+            "checked": [
+              "1password",
+              "aiエージェント"
+            ],
+            "found": [
+              "1password"
+            ]
+          }
+        }
+      ],
+      "announced_on": "2026-10-22",
+      "headline_claim": "1PasswordがAIエージェント向けの新機能「1Password for Agents」を発表し、パスワードをAIに知らせることなくWebサービスへ代理ログインさせることが可能になった。",
+      "actual_content": "AIエージェントがログイン画面に遭遇すると固有のキーで1Passwordにアクセス要求を行い、ユーザーが手元の端末で承認することで、1Passwordが画面へ直接認証情報を自動入力する仕組みです。AIのプロンプトやログ、コンテキストに平文パスワードが渡らないため漏洩リスクは低減されます。ただし、これはパスワード秘匿の仕組みであり、ログインに成功した後にAIがサービス内で閲覧・操作・決済などをどう実行するかという認可や安全性の制御は別問題です。また、ログインごとにユーザーが端末で手動承認する必要があり、欧州・カナダ管轄アカウントへの対応遅れなど段階的な展開となっています。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 3,
+      "work_relevance": 4,
+      "concern_id": "work_ai",
+      "entry_question": "「AIにパスワードを教えずにログインを任せられる」は本当？",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "パスワードをAIから隠せても「ログインした後の画面でAIが勝手に何をするか」は防げないうえ、ログインのたびに人間が手元のスマホで承認ボタンを押す必要があり、完全な自動丸投げにはならない点。",
+      "investment_related": false,
+      "deja_vu_note": "kl034（PCを閉じてもAIが仕事を終わらせるか）やkl038（一人に一台のAI時代：Meta MuseやOpenAI dots）で触れたパーソナルAIエージェントが、実世界のWebサービスを操作する際のセキュリティ基盤の話。",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "1Password AIエージェント",
+      "jp_title_anchor": [
+        "1Password",
+        "AIエージェント"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.55,
+      "scan_version": "2026-10-11-buzz-measured",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-10-24",
+      "topic_first_date": "2026-10-22",
+      "topic_first_source": "候補 b7a65ccc01 のannounced_on（1Password、AIエージェントがログインするためのツー）",
+      "topic_series": "b7a65ccc01",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-23",
+        "title": "1Password、AIエージェントがログインするためのツールを発表",
+        "id": "b7a65ccc01",
+        "source": "Googleニュース（OpenAI 発表）／PortalCripto"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://1password.com/jp/product/enterprise-password-manager",
+          "ok": true,
+          "status": "HTTP 200「エンタープライズ向けパスワード管理 | 1Password」",
+          "page_title": "エンタープライズ向けパスワード管理 | 1Password",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_blog",
+          "repaired": true,
+          "orig_url": "https://1password.com/blog/introducing-1password-for-agents",
+          "repair_method": "site-crawl",
+          "repair_from": "https://1password.com/jp"
+        },
+        {
+          "url": "https://1password.com/personal-ai-agent-integrations",
+          "ok": true,
+          "status": "HTTP 200「1Password for Agents: Secure A」",
+          "page_title": "1Password for Agents: Secure AI Password Manager | 1Password",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "press_release",
+          "repaired": true,
+          "orig_url": "https://1password.com/press/1password-for-agents-launches-as-the-trust-layer-for-personal-ai-agents",
+          "repair_method": "site-crawl",
+          "repair_from": "https://1password.com/press"
+        }
+      ],
+      "primary_verified_at": "2026-10-24T05:49:16",
+      "url_check": [
+        {
+          "url": "https://1password.com/jp/product/enterprise-password-manager",
+          "ok": true,
+          "status": "HTTP 200「エンタープライズ向けパスワード管理 | 1Password」"
+        },
+        {
+          "url": "https://1password.com/personal-ai-agent-integrations",
+          "ok": true,
+          "status": "HTTP 200「1Password for Agents: Secure A」"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "1password.com: HTTP 200「エンタープライズ向けパスワード管理 | 1Password」 ／ 1password.com: HTTP 200「1Password for Agents: Secure A」",
+      "url_checked_at": "2026-10-24T05:49:16",
+      "repair_tried": true,
+      "repair_tried_at": "2026-10-24T05:44:21",
+      "repair_log": [
+        "site-crawl: https://1password.com/jp/contact-sales → HTTP 200「営業部に問い合わせ | 1Password」（見出しに候補の固有の語がない。一覧ページ・別の資料の可能性）",
+        "site-crawl: https://1password.com/jp/pricing/enterprise → HTTP 200「エンタープライズの価格とプラン | 1Password」（見出しに候補の固有の語がない。一覧ページ・別の資料の可能性）",
+        "site-crawl: https://1password.com/product/credential-broker → HTTP 200「Machine and AI Agent Credentia」（見出しに候補の固有の語がない。一覧ページ・別の資料の可能性）",
+        "site-crawl: https://1password.com/jp/product/enterprise-password-manager → HTTP 200「エンタープライズ向けパスワード管理 | 1Password」（claude・work・エージェントが一致）",
+        "site-crawl: https://1password.com/personal-ai-agent-integrations → HTTP 200「1Password for Agents: Secure A」（1password for agents・agents・1passwordが一致）"
+      ],
+      "repair_result": "修復",
+      "buzz_history": [
+        {
+          "at": "2026-10-24T05:47:05",
+          "query": "1Password AIエージェント",
+          "measured": 5,
+          "outlets": 17,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "「1Password for Agents」が発表、AIエージェントにパスワードを見せずにサインインさせられる",
+              "outlet": "窓の杜",
+              "date": "2026-10-23"
+            },
+            {
+              "title": "「エージェント向け1Password」発表 AIにパスワード渡さずアクセス権限付与可能に（1/2 ページ）",
+              "outlet": "ITmedia",
+              "date": "2026-10-23"
+            },
+            {
+              "title": "AIエージェントに資格情報を渡さず自動ログインできる「1Password for Agents」発表　主要エージェントと連携へ",
+              "outlet": "Real Sound｜リアルサウンド",
+              "date": "2026-10-23"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 18,
+          "raw_items": 37
+        }
+      ],
+      "buzz_measured_at": "2026-10-24T05:47:05",
+      "buzz_measured": 5,
+      "buzz_outlets": 17,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "「1Password for Agents」が発表、AIエージェントにパスワードを見せずにサインインさせられる",
+          "outlet": "窓の杜",
+          "date": "2026-10-23"
+        },
+        {
+          "title": "「エージェント向け1Password」発表 AIにパスワード渡さずアクセス権限付与可能に（1/2 ページ）",
+          "outlet": "ITmedia",
+          "date": "2026-10-23"
+        },
+        {
+          "title": "AIエージェントに資格情報を渡さず自動ログインできる「1Password for Agents」発表　主要エージェントと連携へ",
+          "outlet": "Real Sound｜リアルサウンド",
+          "date": "2026-10-23"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 18,
+      "buzz_raw_items": 37,
+      "buzz_query": "1Password AIエージェント",
+      "buzz_adopted_at": "2026-10-24T05:47:05",
+      "buzz_adopted_n": 1
     }
   ]
 }
