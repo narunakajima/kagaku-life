@@ -1,0 +1,12 @@
+# サイト（kagaku-life.com）に必要なファイルだけを Vercel に上げる。
+# リポジトリ全体（立ち絵の動画など約100MB）が push のたびにデプロイとして保存され、
+# Deployment Storage の無料枠（10GB）を圧迫したため（2026-10-25）。
+# サイトで新しいファイルを参照するときは、下の許可リストに追加すること。
+/*
+!/index.html
+!/episodes.html
+!/playlists.html
+!/vercel.json
+!/LOGO.PNG
+!/cast_daisuke.png
+!/cast_saori.png
