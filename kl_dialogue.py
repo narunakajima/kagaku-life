@@ -158,6 +158,11 @@ V4_DOWNBEAT_PHRASES = ("測ってない", "測っていない", "分からない
 # 大輔が夢を小さくして終わる言い回し（⚠。「だったら、こう使う」と条件をつけて前に進む）
 V4_RETREAT_PHRASES = ("狭める", "危ない", "無理", "諦め", "あきらめ")
 V4_DOWNBEAT_VERDICTS = ("pending", "dubious")
+# 2026-10-26: 大輔の旧口癖。発表元がもう決めている使い道を大輔の思いつきのように言い直す決まり文句になっていた（なるさんの指摘）
+V4_PHRASE_LIMITS = {
+    "僕なら、これに使う": 0,
+    "次は、どこで使える": 1,    # 新しい口癖。決まり文句にしない
+}
 
 VERDICT_KEYS = ("soon", "decade", "pending", "dubious")  # pending（根拠待ち）は2026-10-18追加
 REQUIRED_TAGS = {
@@ -183,6 +188,8 @@ def phrase_limits(ep: dict) -> dict:
     limits = dict(PHRASE_LIMITS)
     if ep.get("structure") in V3_FAMILY:
         limits.update(V3_PHRASE_LIMITS)
+    if ep.get("structure") == STRUCTURE_V4:
+        limits.update(V4_PHRASE_LIMITS)
     return limits
 
 

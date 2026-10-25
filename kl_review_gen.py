@@ -142,7 +142,7 @@ def shorts_tile(label: str, sid_label: str, narration: str, img_rel: str,
 def scene_card(kind: str, sid: int, type_label: str, narrator: str, narration: str,
                img_rel: str, audio_rel: str, extra: str = "", bgm_role: str = None,
                bgm_uri: str = None, layout: str = "main", card_id: str = None,
-               caption: str = None) -> str:
+               caption: str = None, body_html: str = None) -> str:
     sid_label = f"S{sid:02d}"
     # 字幕の表記が読み上げ用の台詞と違うとき（display）だけ、画面に出る字幕を併記する
     caption_html = (f'<p class="narration sub">字幕（画面の表記）: {html.escape(caption)}</p>'
@@ -163,14 +163,27 @@ def scene_card(kind: str, sid: int, type_label: str, narrator: str, narration: s
       <div class="body">
         <img src="{html.escape(img_rel)}" loading="lazy" alt="{sid_label}">
         <div class="text-col">
-          <p class="narration">{html.escape(narration)}</p>
-          {caption_html}
+          {body_html or f'<p class="narration">{html.escape(narration)}</p>'}
+          {"" if body_html else caption_html}
           {play_row}
           {regen_controls(card_id or sid_label)}
         </div>
       </div>
     </section>
     """
+
+
+def dialogue_body(scene: dict, names: dict) -> str:
+    """掛け合い形式のシーン: 画面に出る字幕（display があればそれ、無ければ台詞）だけを1行ずつ話者つきで並べる。
+    資料カードの説明は載せない（2026-10-26、なるさんの指示「台詞が上、字幕が下にあるが、字幕だけでいい。
+    下の部分にはカードの説明はいらない」）。"""
+    rows = []
+    for line in scene.get("lines", []):
+        who = names.get(line.get("speaker"), line.get("speaker", ""))
+        shown = line.get("display") or line["text"]
+        rows.append(f'<p class="line line-{html.escape(line.get("speaker", ""))}"><span class="who">{html.escape(who)}</span>'
+                    f'<span class="said">{html.escape(shown)}</span></p>')
+    return f'<div class="lines">{"".join(rows)}</div>'
 
 
 def main():
@@ -204,6 +217,11 @@ def main():
         """)
 
     bgm_sources = ep.get("bgm_sources", {})
+    try:
+        cast = json.loads((BASE_DIR / "cast.json").read_text(encoding="utf-8"))
+        names = {r: cast[r]["name"] for r in ("dreamer", "skeptic")}
+    except (OSError, KeyError, ValueError):
+        names = {"dreamer": "大輔", "skeptic": "沙織"}
 
     # 表示順: サムネイル → Shorts（顔アップフック含む、横並びタイル） → 本編
     # （samurai-chroniclesのsc_scene_review.pyの.shorts-strip/.shorts-tileと
@@ -246,7 +264,7 @@ def main():
             "本編", sid, TYPE_LABEL.get(scene["type"], scene["type"]), scene["narrator"],
             scene["narration"], f"images/S{sid:02d}.png", f"narration/S{sid:02d}.wav",
             bgm_role=bgm_role, bgm_uri=bgm_uri, layout="main", card_id=f"本編 S{sid:02d}",
-            caption=caption,
+            caption=caption, body_html=dialogue_body(scene, names) if scene.get("lines") else None,
         ))
 
     html_doc = f"""<!doctype html>
@@ -285,6 +303,18 @@ def main():
   }}
   .narration {{ font-size: 15px; line-height: 1.7; margin: 0 0 12px; }}
   .narration.sub {{ color: #9aa5b1; font-size: 13px; }}
+  .lines {{ margin: 0 0 12px; }}
+  .line {{ font-size: 15px; line-height: 1.6; margin: 0 0 6px; display: flex; gap: 8px; flex-wrap: wrap; }}
+  .line .who {{ flex: 0 0 auto; font-weight: 700; font-size: 13px; padding: 1px 8px; border-radius: 10px; height: fit-content; margin-top: 2px; }}
+  .line-dreamer .who {{ background: #6b5418; color: #ffe7a3; }}
+  .line-skeptic .who {{ background: #164a52; color: #b7f0f5; }}
+  .line .said {{ flex: 1 1 0; min-width: 12em; }}
+  .line .line-sub {{ flex: 0 0 100%; color: #9aa5b1; font-size: 12px; padding-left: 4.5em; }}
+  .card-box {{ border: 1px dashed #8a7a4a; background: #2b2a22; border-radius: 8px; padding: 8px 12px; margin: 4px 0 12px; font-size: 13px; color: #d8d2bd; }}
+  .card-box-label {{ margin: 0 0 6px; font-weight: 700; color: #e8c766; font-size: 12px; }}
+  .card-box p, .card-box ul {{ margin: 0 0 4px; }}
+  .card-box ul {{ padding-left: 1.3em; }}
+  .card-box .qt {{ color: #9aa5b1; font-size: 12px; }}
   .play-row {{ display: flex; gap: 8px; align-items: center; margin-top: 10px; flex-wrap: wrap; }}
   .media-play {{
     font-size: 13px; padding: 4px 10px; border-radius: 6px; border: 1px solid #3a4453;
