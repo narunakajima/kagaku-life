@@ -1860,6 +1860,9 @@ def collapse_series(rows: list) -> list:
 
 
 BEST3_RELAXED_GENRE_MAX = 2     # 3件に満たないときだけ、同じジャンルをここまで許す
+# ベスト3に入れる条件（2026-10-26、なるさんの指示）。ジャンルを分けるために視聴者に合わない候補・健康系が入り込まないように
+BEST3_MIN_FIT = 3               # audience_fit（健康系は丸めた後の fit）がこれ未満の候補はベスト3に入れない（一覧には残す）
+BEST3_HEALTH_MAX = 1            # ベスト3に入れる健康系（health: true）の上限
 SLOT_HONMEI, SLOT_L2 = "本命", "答え合わせ"
 
 
@@ -1876,13 +1879,14 @@ def best3(rows: list):
       2. 3件に満たなければ、同じジャンルを BEST3_RELAXED_GENRE_MAX 件まで許して補う（r['relaxed']）
       3. それでも満たなければ、一次資料が「要確認」・未確認の候補を最後の補欠に（r['reserve']、ジャンルは2件まで）
     それでも満たなければ満たないまま返し（注目度の低い候補で埋めない）、ニッチ枠の先頭を別に添える。
-    再評価待ち（大手の製品発表で初出から2日未満）は入れない（決定4=(a)）。各行に r['slot']（〈本命〉／〈答え合わせ〉）を付ける。"""
+    再評価待ち（大手の製品発表で初出から2日未満）は入れない（決定4=(a)）。各行に r['slot']（〈本命〉／〈答え合わせ〉）を付ける。
+    どの段でも、視聴者との合い方が BEST3_MIN_FIT 未満の候補は入れず、健康系は BEST3_HEALTH_MAX 件まで（2026-10-26）。"""
     honmei = [dict(r, slot=SLOT_HONMEI) for r in _sorted_core([r for r in rows if r["lane"] == "本命"])]
     l2 = [dict(r, slot=SLOT_L2) for r in sorted(
         [r for r in rows if r["lane"] == L2_LANE],
         key=lambda r: (r["core"] if r["core"] is not None else -1, r["c"].get("buzz_measured") or 0,
                        r["c"].get("buzz_outlets") or 0, r["tb"]), reverse=True)]
-    order = honmei + l2
+    order = [r for r in honmei + l2 if fit(r["c"]) >= BEST3_MIN_FIT]
     picks, series = [], set()
     from collections import Counter
     genres = Counter()
@@ -1893,6 +1897,8 @@ def best3(rows: list):
                 return
             g = r["c"].get("genre")
             if r["series"] in series or genres[g] >= genre_max:
+                continue
+            if r["c"].get("health") and sum(1 for p in picks if p["c"].get("health")) >= BEST3_HEALTH_MAX:
                 continue
             picks.append(dict(r, relaxed=genres[g] > 0, **flags))
             genres[g] += 1
