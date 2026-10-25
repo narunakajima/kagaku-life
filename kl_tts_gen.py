@@ -440,7 +440,7 @@ def main():
     parser.add_argument("--no-reading-qa", action="store_true",
                          help="読み照合QA（音素認識で台本の読みと照合し、不一致の行を作り直す。掛け合い形式のみ）を使わない")
     parser.add_argument("--skip-beginner-review", action="store_true",
-                         help="初見レビュー（kl-new STEP5.5）が「済」でなくても続行する。rounds_v3 の kl046 以降は、しばらくは必須"
+                         help="初見レビュー（kl-new STEP5.5）が「済」でなくても続行する。rounds_v3・rounds_v4 の kl046 以降は、しばらくは必須"
                               "（なるさんの指示、2026-10-19）。制作者の了承なしに使わない。KL_SKIP_BEGINNER_REVIEW=1 でも同じ")
     args = parser.parse_args()
 

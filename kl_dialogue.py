@@ -127,7 +127,16 @@ CARD_DIR = BASE_DIR / "assets" / "cards"
 #   - 「言い直」0回・「想像してみて」1回まで
 # kl041・kl042（rounds_v2）と kl031〜kl040（structure なし）は従来の規則のまま。
 STRUCTURE_V3 = "rounds_v3"
-ROUND_STRUCTURES = (STRUCTURE_V2, STRUCTURE_V3)
+# ── 構成 v4「実現ラウンド」（2026-10-26、kl049 以降。DIALOGUE_REDESIGN_2026-10-26.md） ──────────────
+# なるさんの指摘「沙織の意見が強くて、結局は夢を潰す感じになる」を受けて、問いを「本当か？」から
+# 「どこまで来た？ どうすれば使える？」に変えた。v3 の規則をすべて引き継いだうえで、
+#   - 各論点は「壁 → 越え方（workaround）→ 残った手応え（hope、論点の最後の行）」で終える
+#   - 沙織も「本物なら私はこれに使いたい」（skeptic_wish）を言う。沙織が譲る turn を必須にする（v3 は ⚠）
+#   - 判定は2つ: verdict（二人が育てた使い道への札、画面で大きく）と claim_verdict（発表の言い方への札、小さく）
+#   - 判定の後に、視聴者が今日・今月できる一歩（next_step）を言う
+STRUCTURE_V4 = "rounds_v4"
+V3_FAMILY = (STRUCTURE_V3, STRUCTURE_V4)          # v3 の規則が効く構成（v4 は v3 を引き継ぐ）
+ROUND_STRUCTURES = (STRUCTURE_V2, STRUCTURE_V3, STRUCTURE_V4)
 V3_TAGS = {
     "use_case": "大輔（dreamer）が論点の中で置く具体的な使い道。同じ論点の check で一次資料に当てる",
     "takeaway": "verdict で言う「誰が・何に・どんな条件で／いつ」使えるか（どちらが言ってもよい）",
@@ -137,6 +146,18 @@ V3_PHRASE_LIMITS = {
     "想像してみて": 1,    # 旧口癖。使うなら1回まで（dream を置く回だけ）
 }
 V3_MAX_DREAM = 1
+V4_TAGS = {
+    "workaround": "壁に対する越え方（条件・使い方・待てば変わること）。各論点に1つ以上",
+    "hope": "論点の最後の行で言う「残った手応え」（資料で確かめられた、前向きに使える事実）",
+    "skeptic_wish": "沙織（skeptic）が言う「本物なら、私はこれに使いたい」",
+    "next_step": "判定の後に言う、視聴者が今日・今月できる一歩（verdict か closing の中）",
+}
+# 論点の最後の3行に置くと「潰して終わる」形になりやすい言い回し（⚠）
+V4_DOWNBEAT_PHRASES = ("測ってない", "測っていない", "分からない", "わからない", "資料は無い", "資料は、まだ無い",
+                       "まだ無い", "条件つき", "確かめていない")
+# 大輔が夢を小さくして終わる言い回し（⚠。「だったら、こう使う」と条件をつけて前に進む）
+V4_RETREAT_PHRASES = ("狭める", "危ない", "無理", "諦め", "あきらめ")
+V4_DOWNBEAT_VERDICTS = ("pending", "dubious")
 
 VERDICT_KEYS = ("soon", "decade", "pending", "dubious")  # pending（根拠待ち）は2026-10-18追加
 REQUIRED_TAGS = {
@@ -148,17 +169,19 @@ REQUIRED_TAGS = {
 
 
 def required_tags(ep: dict) -> dict:
-    """構成ごとの必須タグ。v3 は life_scene を外し、use_case・takeaway を足す。"""
-    if ep.get("structure") == STRUCTURE_V3:
+    """構成ごとの必須タグ。v3 は life_scene を外し、use_case・takeaway を足す。v4 はさらに V4_TAGS を足す。"""
+    if ep.get("structure") in V3_FAMILY:
         tags = {k: v for k, v in REQUIRED_TAGS.items() if k != "life_scene"}
         tags.update(V3_TAGS)
+        if ep.get("structure") == STRUCTURE_V4:
+            tags.update(V4_TAGS)
         return tags
     return dict(REQUIRED_TAGS)
 
 
 def phrase_limits(ep: dict) -> dict:
     limits = dict(PHRASE_LIMITS)
-    if ep.get("structure") == STRUCTURE_V3:
+    if ep.get("structure") in V3_FAMILY:
         limits.update(V3_PHRASE_LIMITS)
     return limits
 
@@ -260,7 +283,8 @@ def validate_episode(ep: dict, cast: dict = None) -> list:
     first_main = next((i for i, t in enumerate(types_) if t != "teaser"), len(types_))
     if any(t == "teaser" for t in types_[first_main:]):
         errs.append("teaser は冒頭にまとめてください")
-    v3 = ep.get("structure") == STRUCTURE_V3
+    v4 = ep.get("structure") == STRUCTURE_V4
+    v3 = ep.get("structure") in V3_FAMILY           # v4 は v3 の規則をすべて引き継ぐ
     v2 = ep.get("structure") in ROUND_STRUCTURES   # v3 は v2 の規則をすべて引き継ぐ
     # v2 ではツッコミを資料カードの答え合わせ（check）の中で言ってよいので、tsukkomi シーンは必須にしない
     # v3 では dream も必須にしない（任意・1つまで。下で上限を確認）
@@ -388,6 +412,8 @@ def validate_episode(ep: dict, cast: dict = None) -> list:
         errs += validate_rounds_v2(ep)
     if v3:
         errs += validate_rounds_v3(ep)
+    if v4:
+        errs += validate_rounds_v4(ep)
     return errs
 
 
@@ -424,10 +450,89 @@ def validate_rounds_v3(ep: dict) -> list:
     return errs
 
 
+def _round_lines(ep: dict) -> dict:
+    """論点の番号 → その論点の台詞（シーン順）の [(scene, line_index, line)]。"""
+    out = {}
+    for s in ep["scenes"]:
+        n = s.get("round")
+        if isinstance(n, int):
+            out.setdefault(n, []).extend((s, i, l) for i, l in enumerate(s.get("lines") or []))
+    return out
+
+
+def validate_rounds_v4(ep: dict) -> list:
+    """構成 v4（実現ラウンド）の追加チェック。v2・v3 の規則は別に通す。"""
+    errs = []
+    scenes = ep["scenes"]
+    for n, ls in sorted(_round_lines(ep).items()):
+        if not ls:
+            continue
+        s, i, last = ls[-1]
+        if last.get("tag") != "hope":
+            errs.append(f"v4: 論点{n}の最後の行（S{s['scene_id']} 行{i + 1}）に tag 'hope'（残った手応え）を付けてください。"
+                        "限界はその前に言い終え、資料で確かめられた前向きに使える事実で論点を終える")
+        if not any(l.get("tag") == "workaround" for _, _, l in ls):
+            errs.append(f"v4: 論点{n}に tag 'workaround'（壁の越え方）の行がありません")
+    for s in scenes:
+        for i, l in enumerate(s.get("lines") or []):
+            tag, where = l.get("tag"), f"v4: S{s['scene_id']} 行{i + 1}"
+            if tag == "skeptic_wish" and l.get("speaker") != "skeptic":
+                errs.append(f"{where}: tag 'skeptic_wish' は沙織（skeptic）の台詞に付けてください")
+            if tag == "hope" and not isinstance(s.get("round"), int):
+                errs.append(f"{where}: tag 'hope' は論点の中（各論点の最後の行）に付けてください")
+            if tag == "next_step" and s.get("type") not in ("verdict", "closing"):
+                errs.append(f"{where}: tag 'next_step' は verdict か closing の台詞に付けてください（判定の後に言う）")
+    if not any(l.get("tag") == "turn" and l.get("speaker") == "skeptic" for s in scenes for l in s.get("lines") or []):
+        errs.append("v4: 沙織が譲る turn（大輔の側を支える資料で、沙織が認める論点）がありません")
+    cv = ep.get("claim_verdict") or {}
+    for r in ROLES:
+        if cv.get(r) not in VERDICT_KEYS:
+            errs.append(f"v4: claim_verdict.{r}（発表の言い方への札）は {VERDICT_KEYS} のどれかにしてください。"
+                        "verdict は二人が育てた使い道への札")
+    return errs
+
+
+def recent_downbeat_share(ep: dict, n: int = 5) -> tuple:
+    """この回を含む直近 n 話（rounds_v4）の、使い道への札（verdict、二人分）のうち根拠待ち・まだ眉唾の割合。"""
+    try:
+        num = int(str(ep.get("episode_id", ""))[2:])
+    except ValueError:
+        return 0, 0
+    votes = []
+    for k in range(num, 0, -1):
+        if len(votes) >= n * 2:
+            break
+        p = BASE_DIR / "episodes" / f"kl{k:03d}.json"
+        e = ep if k == num else (json.loads(p.read_text(encoding="utf-8")) if p.exists() else None)
+        if not e or e.get("structure") != STRUCTURE_V4:
+            continue
+        votes += [(e.get("verdict") or {}).get(r) for r in ROLES]
+    bad = sum(1 for v in votes if v in V4_DOWNBEAT_VERDICTS)
+    return bad, len(votes)
+
+
 def episode_warnings(ep: dict) -> list:
     """不合格にはしないが、STEP5で見てほしいこと（⚠ として表示する）。"""
     warns = []
-    if ep.get("structure") == STRUCTURE_V3:
+    if ep.get("structure") == STRUCTURE_V4:
+        for n, ls in sorted(_round_lines(ep).items()):
+            for s, i, l in ls[-3:]:
+                hit = [p for p in V4_DOWNBEAT_PHRASES if p in l.get("text", "")]
+                if hit:
+                    warns.append(f"v4: 論点{n}の終わり（S{s['scene_id']} 行{i + 1}）に「{hit[0]}」。限界は越え方の前に言い、"
+                                 "論点を「残った手応え」で終える形になっているか確認")
+        for s in ep["scenes"]:
+            for i, l in enumerate(s.get("lines") or []):
+                if l.get("speaker") == "dreamer":
+                    hit = [p for p in V4_RETREAT_PHRASES if p in l.get("text", "")]
+                    if hit:
+                        warns.append(f"v4: S{s['scene_id']} 行{i + 1}: 大輔の「{hit[0]}」。夢を小さくして終わらず、"
+                                     "「だったら、こう使う」と条件をつけて前に進む言い方にできないか")
+        bad, tot = recent_downbeat_share(ep)
+        if tot >= 6 and bad * 2 > tot:
+            warns.append(f"v4: 直近の v4 の回で、使い道への札の{bad}/{tot}が根拠待ち・まだ眉唾です。"
+                         "ネタ選び（本物の進歩で使い道を描けるか）を見直す合図")
+    elif ep.get("structure") == STRUCTURE_V3:
         # 大輔が正しかった論点（沙織が譲る turn）が1つ以上あるか。毎回大輔が論破されるだけの型を避ける
         if not any(l.get("tag") == "turn" and l.get("speaker") == "skeptic"
                    for s in ep["scenes"] for l in s.get("lines") or []):
@@ -765,15 +870,55 @@ def draw_stamp(label: str, color, scale: float = 1.0, header: str = "判定") ->
     return im.rotate(-4, resample=Image.BICUBIC, expand=True)
 
 
-def verdict_stamps(cast: dict, verdict: dict, scale: float = 1.0) -> list:
+def verdict_stamps(cast: dict, verdict: dict, scale: float = 1.0, claim: dict = None) -> list:
     """verdict = {"dreamer": key, "skeptic": key}。二人の判定が同じなら1枚、割れたら2枚
-    （それぞれ「大輔の判定」「沙織の判定」）を返す。"""
+    （それぞれ「大輔の判定」「沙織の判定」）を返す。
+    claim（構成 v4 の claim_verdict、発表の言い方への札）を渡すと、verdict は「使い方の判定」として大きく出し、
+    その下に claim を小さな帯で添えた1枚の画像にして返す（2026-10-26）。"""
     vd = cast["verdicts"]
     if verdict.get("dreamer") == verdict.get("skeptic"):
         k = verdict["dreamer"]
-        return [draw_stamp(vd[k]["label"], vd[k]["color"], scale)]
-    return [draw_stamp(vd[verdict[r]]["label"], vd[verdict[r]]["color"], scale,
-                       header=f"{speaker_name(cast, r)}の判定") for r in ROLES]
+        stamps = [draw_stamp(vd[k]["label"], vd[k]["color"], scale, header="この使い方なら" if claim else "判定")]
+    else:
+        stamps = [draw_stamp(vd[verdict[r]]["label"], vd[verdict[r]]["color"], scale,
+                             header=f"{speaker_name(cast, r)}の判定" + ("（使い方）" if claim else "")) for r in ROLES]
+    if not claim:
+        return stamps
+    gap = int(24 * scale)
+    row_w = sum(s.width for s in stamps) + gap * (len(stamps) - 1)
+    strip = _claim_strip(cast, claim, scale)
+    w, h = max(row_w, strip.width), max(s.height for s in stamps) + int(10 * scale) + strip.height
+    im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    x = (w - row_w) // 2
+    for s in stamps:
+        im.alpha_composite(s, (x, 0))
+        x += s.width + gap
+    im.alpha_composite(strip, ((w - strip.width) // 2, h - strip.height))
+    return [im]
+
+
+def _claim_strip(cast: dict, claim: dict, scale: float = 1.0) -> Image.Image:
+    """発表の言い方への札（claim_verdict）を、白い帯に小さく1行で描く。色は札と同じ。"""
+    vd = cast["verdicts"]
+    fh = _font(FONT_BOLD, int(26 * scale))
+    if claim.get("dreamer") == claim.get("skeptic"):
+        parts = [("発表の言い方には　", (40, 50, 70)), (vd[claim["dreamer"]]["label"], vd[claim["dreamer"]]["color"])]
+    else:
+        parts = [("発表の言い方には　", (40, 50, 70))]
+        for r in ROLES:
+            parts += [(f"{speaker_name(cast, r)} ", (40, 50, 70)), (vd[claim[r]]["label"], vd[claim[r]]["color"]),
+                      ("　" if r == ROLES[0] else "", (40, 50, 70))]
+    d = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+    tw = sum(_text_w(d, t, fh) for t, _ in parts)
+    pad_x, pad_y = int(22 * scale), int(10 * scale)
+    im = Image.new("RGBA", (tw + pad_x * 2, fh.size + pad_y * 2 + int(6 * scale)), (0, 0, 0, 0))
+    dr = ImageDraw.Draw(im)
+    dr.rounded_rectangle((0, 0, im.width - 1, im.height - 1), radius=int(14 * scale), fill=(255, 255, 255, 235))
+    x = pad_x
+    for t, col in parts:
+        dr.text((x, pad_y), t, font=fh, fill=tuple(col))
+        x += _text_w(d, t, fh)
+    return im
 
 
 def _draw_intro(im: Image.Image, dr: ImageDraw.ImageDraw, W: int, H: int, cast: dict, sprite_pos: dict,
@@ -1009,7 +1154,7 @@ def main_timeline(ep: dict, scenes: list, offsets: list, durs: list, narr_delay:
             st = None
             if v_from and li + 1 >= v_from:
                 if stamps is None:
-                    stamps = verdict_stamps(cast, ep["verdict"])
+                    stamps = verdict_stamps(cast, ep["verdict"], claim=ep.get("claim_verdict"))
                 st = stamps
             cards = line.get("cards") or [{"text": line_display(line), "start": 0.0, "end": line["dur"]}]
             talk_end = round(off + narr_delay_s + line["t0"] + line["dur"], 3)  # 口パク: この行を話し終える時刻
@@ -1588,7 +1733,7 @@ def composite_thumbnail_dialogue(image_path: Path, ep: dict, cast: dict = None) 
         gap = w - 2 * bank.get("dreamer", exprs.get("dreamer", "neutral"), sh, True).width - 20
         scale = 1.15
         while True:
-            stamps = verdict_stamps(cast, ep["verdict"], scale=scale)
+            stamps = verdict_stamps(cast, ep["verdict"], scale=scale, claim=ep.get("claim_verdict"))
             total = sum(s.width for s in stamps) + 16 * (len(stamps) - 1)
             if total <= gap or scale <= 0.6:
                 break
@@ -1826,6 +1971,10 @@ def plain_text(ep: dict, cast: dict = None) -> str:
             v = ep.get("verdict") or {}
             out.append("[画面に判定ラベル: " + "、".join(f"{name[r]}「{labels.get(v.get(r), v.get(r))}」" for r in ROLES if v.get(r))
                        + "（ラベルの種類: " + "／".join(labels.values()) + "）]")
+            cv = ep.get("claim_verdict") or {}
+            if cv:
+                out.append("[画面の札の下に小さく、発表の言い方への札: " + "、".join(f"{name[r]}「{labels.get(cv.get(r), cv.get(r))}」" for r in ROLES if cv.get(r))
+                           + "（大きい札は、二人が話し合った使い方への札）]")
     return "\n".join(out) + "\n"
 
 
@@ -1964,15 +2113,15 @@ def beginner_review_status(ep: dict) -> str:
 
 
 # 初見レビュー未通過なら音声・動画の生成を止める（2026-10-19、なるさんの指示「しばらくはそうしてほしい」）。
-# 対象は rounds_v3 で、エピソード番号が46以上の回だけ（kl045 以前・旧形式は止めない）。
+# 対象は rounds_v3・rounds_v4 で、エピソード番号が46以上の回だけ（kl045 以前・旧形式は止めない）。
 BEGINNER_REVIEW_GATE_FROM = 46
 SKIP_BEGINNER_REVIEW_HELP = ("初見レビュー（kl-new STEP5.5）が「済」でなくても続行する（警告だけ出す）。"
-                             "rounds_v3 の kl046 以降は、しばらくは必須（なるさんの指示、2026-10-19）。"
+                             "rounds_v3・rounds_v4 の kl046 以降は、しばらくは必須（なるさんの指示、2026-10-19）。"
                              "制作者の了承なしに使わない。環境変数 KL_SKIP_BEGINNER_REVIEW=1 でも同じ")
 
 
 def beginner_review_required(ep: dict, episode_id: str = None) -> bool:
-    if ep.get("structure") != STRUCTURE_V3:
+    if ep.get("structure") not in V3_FAMILY:
         return False
     m = _re.search(r"(\d+)", episode_id or ep.get("episode_id", ""))
     return bool(m) and int(m.group(1)) >= BEGINNER_REVIEW_GATE_FROM
@@ -2083,7 +2232,13 @@ def main():
                 tags.setdefault(l["tag"], []).append(f"S{s['scene_id']:02d}")
     print("タグ:", ", ".join(f"{k}={v}" for k, v in tags.items()))
     st = ep.get("structure")
-    if st == STRUCTURE_V3:
+    if st == STRUCTURE_V4:
+        print("構成: rounds_v4（実現ラウンド。v2・v3 の規則＋下記）")
+        print(f"  必須タグ: {', '.join(required_tags(ep))}（life_scene は不要）")
+        print("  各論点: 最後の行が hope（残った手応え）・workaround（越え方）が1つ以上／skeptic_wish は沙織／"
+              "沙織が譲る turn が1つ以上／next_step は verdict か closing")
+        print("  判定: verdict（使い道への札、画面で大きく）と claim_verdict（発表の言い方への札、小さな帯）の両方")
+    elif st == STRUCTURE_V3:
         print("構成: rounds_v3（使い道ラウンド。v2 の規則＋下記）")
         print(f"  必須タグ: {', '.join(required_tags(ep))}（life_scene は不要）")
         print(f"  dream: 任意・{V3_MAX_DREAM}つまで／use_case は大輔・論点の中・その後に同じ論点の check／takeaway は verdict")

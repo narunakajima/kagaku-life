@@ -29,6 +29,11 @@ kl_news_scan.py — ニュース起点のネタ選定（2026-10-04〜）
   無い候補は暮らし・仕事の高い方で代用する。健康系は4までに丸める（健康が中心の番組にしないため）。同点の並びも 誇張＋議論＋視聴者。
   ゲート（暮らし・仕事≧4）は変えていない
 
+2026-10-26（構成 v4「実現ラウンド」、なるさんの指示。DIALOGUE_REDESIGN_2026-10-26.md）: 実現への手応え（promise、1〜5、PROMISE_RUBRIC）と
+  hope_material（一次資料で確かめられる前向きな事実）を採点に足した。同点の並びを 手応え＋議論＋視聴者 にし（誇張を外した）、
+  加重和の hype_gap を 0.10 → 0.05 に下げた。promise が3未満（誇張・宣伝が中心）の候補はベスト3に入れない（一覧・ニッチ枠には残る）。
+  同日、ベスト3に「視聴者との合い方3以上・健康系1件まで」の条件も足した
+
 2026-10-15（NEWS_REDESIGN_2026-10-15.md の1週目）:
   - verify: 採点の直後に一次資料URLの実在を確かめる（HTTP・ソフト404、DOIは doi.org のハンドルAPI）。
     primary_verified が False（全URLが404）の候補はゲートで落とし、None（403等で判断不能）は「要確認」で残す
@@ -98,6 +103,16 @@ AUDIENCE_FIT_RUBRIC = (
     "     1 = 専門家しか関心を持たない\n"
     "     迷ったら低い方を付ける。")
 HEALTH_FIT_MAX = 4   # 健康系（health: true）の audience_fit の上限。健康が中心の番組にしないため（コードで丸める）
+# 実現への手応え（2026-10-26、構成 v4。DIALOGUE_REDESIGN_2026-10-26.md）。番組の問いを「本当か？」から
+# 「どこまで来た？ どうすれば使える？」に変えたため、誇張（hype_gap）の加点を下げ、本物の進歩かを採点する
+PROMISE_RUBRIC = (
+    "promise: 実現への手応え。一次資料で確かめられる本物の進歩があり、上の視聴者が「こう使える」と使い道を思い描けるか。\n"
+    "     5 = 本物の進歩が一次資料の数字・実物で確かめられ、使い道がすぐ描ける（もう使える、または試せる）\n"
+    "     4 = 本物の進歩で、条件つきでも使い道が描ける\n"
+    "     3 = 進歩はあるが、使い道はまだぼんやりしている\n"
+    "     2 = 中身が薄い（見出しの盛りが話題の中心、既存品の組み合わせ・言い換え）\n"
+    "     1 = 宣伝・誇張だけで、確かめられる進歩がない\n"
+    "     迷ったら低い方を付ける。")
 
 # ベスト3・本命枠に入れる条件（2026-10-11、P0）。一覧そのものの足切りは MIN_VERIFIABILITY のまま
 GATE_MIN_VERIFIABILITY = 4
@@ -109,7 +124,8 @@ GATE_MIN_FRESHNESS = 3       # freshness_score で3以上＝発表から21日以
 WEIGHTS = {
     "freshness": 0.25,       # 発表からの日数（コードで計算）。最重視（2026-10-11、なるさんの指示: 旬の話題）
     "buzz": 0.25,            # 日本語圏での注目度（実測優先）。最重視（同: 注目度の高い話題）
-    "hype_gap": 0.10,        # 見出しと中身の差（大きいほどツッコミの材料）
+    "hype_gap": 0.05,        # 見出しと中身の差（2026-10-26 に 0.10 から下げた。誇張の大きさは番組の価値ではない）
+    "promise": 0.05,         # 実現への手応え（2026-10-26 追加、PROMISE_RUBRIC）
     "debate": 0.10,          # 議論を呼ぶか・二人の判定が割れそうか
     "wonder": 0.10,          # 驚き・ワクワク（温かい感動だけでなく知的な驚きも）
     "life_relevance": 0.10,  # 暮らしにどう関わるか（viewer_concerns.json を参照）
@@ -452,8 +468,8 @@ def past_episodes_brief() -> str:
 
 
 SCORE_PROMPT = """あなたは日本語の科学解説YouTubeチャンネル「幸せな未来のサイエンス」のネタ選定担当です。
-番組は、夢語り担当とツッコミ担当の二人が、最新の発表を「一次資料」で確かめ、「本物か、盛っているか、いつ暮らしに来るか」を
-「もうすぐ来る／3年はかかる／根拠待ち／まだ眉唾」で判定する掛け合い形式です。
+番組は、期待担当と確かめ担当の二人が、最新の発表を「一次資料」で確かめ、「どこまで来たか、どうすれば使えるか、いつ暮らしに来るか」を
+「もうすぐ来る／3年はかかる／根拠待ち／まだ眉唾」で判定する掛け合い形式です。夢を潰す番組ではなく、資料で確かめて夢を実現に近づける番組です。
 
 【候補のニュース】
 タイトル: {title}
@@ -488,7 +504,8 @@ Google検索で調べ、次を出力してください。
      1 = 見つからない
      迷ったら低い方を付ける。
    - verifiability: 一次資料で答え合わせできるか（一次資料が無い・噂・リーク・出典不明なら1。具体的な数値や条件が一次資料にあれば5）
-   - hype_gap: 見出しと実際の中身の差（差が大きいほど高い。ツッコミの材料になる）
+   - hype_gap: 見出しと実際の中身の差（差が大きいほど高い）
+   - {promise_rubric}
    - debate: 議論を呼ぶか・二人の判定が割れそうか
    - wonder: 驚き・ワクワク（温かい感動だけでなく「え、本当に？」という知的な驚きも）
    - life_relevance: 暮らしにどう関わるか（関心ごとのどれかに具体的につながるほど高い）
@@ -501,7 +518,8 @@ Google検索で調べ、次を出力してください。
    （soon=もうすぐ来る（もう使えるか1年ほどで）／decade=3年はかかる（お題の主張が3年以内に来そうで、物理・臨床の壁がある）／
     pending=根拠待ち（否定する資料は無いが、支える資料もまだ無い。3年より先の予測を含む）／
     dubious=まだ眉唾（資料が逆を示す・資料の範囲を大きく超える・数字が誇張）。お題の主張そのものに対して付ける）
-9. tsukkomi_material: ツッコミが突ける具体的な点（1〜2文）
+9. tsukkomi_material: 確かめ担当が突ける具体的な点（1〜2文）
+9b. hope_material: 一次資料で確かめられる、前向きに使える事実（数値・条件つき、1〜2文。資料に無ければ空にする）
 10. investment_related: 株価・投資判断の話が中心なら true
 11. deja_vu_note: 過去の回と似ていれば、どの回か
 12. genre: 次の5ジャンルのどれか1つ（id）。
@@ -515,8 +533,8 @@ Google検索で調べ、次を出力してください。
 
 JSONオブジェクトのみで出力（他の文章は書かない）:
 {{"primary_sources": [], "announced_on": "", "headline_claim": "", "actual_content": "", "buzz_jp_est": 0, "verifiability": 0,
-"hype_gap": 0, "debate": 0, "wonder": 0, "life_relevance": 0, "work_relevance": 0, "audience_fit": 0, "concern_id": null, "entry_question": "",
-"expected_verdicts": {{}}, "tsukkomi_material": "", "investment_related": false, "deja_vu_note": "", "genre": "", "health": false,
+"hype_gap": 0, "promise": 0, "debate": 0, "wonder": 0, "life_relevance": 0, "work_relevance": 0, "audience_fit": 0, "concern_id": null, "entry_question": "",
+"expected_verdicts": {{}}, "tsukkomi_material": "", "hope_material": "", "investment_related": false, "deja_vu_note": "", "genre": "", "health": false,
 "jp_news_query": "", "jp_title_anchor": [], "announcement_type": ""}}
 """
 
@@ -526,7 +544,8 @@ def score_item(client, types, item: dict, past: str, concerns: str) -> dict:
                                  source=item.get("source", ""), source_kind=item.get("source_kind", ""),
                                  url=item.get("url", ""), summary=item.get("summary", ""),
                                  past=past or "（なし）", concerns=concerns, genres=genres_brief(),
-                                 audience=AUDIENCE, audience_fit_rubric=AUDIENCE_FIT_RUBRIC)
+                                 audience=AUDIENCE, audience_fit_rubric=AUDIENCE_FIT_RUBRIC,
+                                 promise_rubric=PROMISE_RUBRIC)
     for attempt in range(3):
         try:
             resp = client.models.generate_content(
@@ -1627,7 +1646,8 @@ def backfill_work(cands: list, force: bool = False):
 def backfill_audience(cands: list, force: bool = False):
     """available の候補のうち audience_fit が無いものに、想定する視聴者との合い方（1〜5）を付ける（テキストのみ、2026-10-25）。
     score で付かなかった候補（2026-10-25 より前の採点）もこれで埋まる。"""
-    todo = [c for c in cands if c.get("status") == "available" and (force or c.get("audience_fit") is None)]
+    todo = [c for c in cands if c.get("status") == "available"
+            and (force or c.get("audience_fit") is None or c.get("promise") is None)]
     if not todo:
         return
     client, types = _gemini()
@@ -1638,24 +1658,29 @@ def backfill_audience(cands: list, force: bool = False):
             f"{i}. タイトル: {c['title']} / 見出し: {c.get('headline_claim', '')} / "
             f"中身: {(c.get('actual_content') or c.get('summary') or '')[:300]}" for i, c in enumerate(batch))
         prompt = (
-            "日本語の科学ニュース解説YouTube番組のネタ候補です。各候補について audience_fit（1〜5）を付けてください。\n"
+            "日本語の科学ニュース解説YouTube番組のネタ候補です。各候補について audience_fit と promise（1〜5）を付けてください。\n"
             f"【想定する視聴者】{AUDIENCE}\n"
             f"   - {AUDIENCE_FIT_RUBRIC}\n"
+            f"   - {PROMISE_RUBRIC}\n"
             "言語対応や提供地域は無関係。\n\n"
             f"候補:\n{rows}\n\n"
-            'JSON配列のみ出力: [{"i": 0, "audience_fit": 0}, ...]（全候補分）')
+            'JSON配列のみ出力: [{"i": 0, "audience_fit": 0, "promise": 0}, ...]（全候補分）')
         try:
             out = _json_from(client.models.generate_content(model=MODEL, contents=prompt).text)
         except Exception as e:  # noqa: BLE001
-            print(f"  ⚠️ audience_fit の付与に失敗（{k}〜{k + len(batch) - 1}件目）: {e}")
+            print(f"  ⚠️ audience_fit・promise の付与に失敗（{k}〜{k + len(batch) - 1}件目）: {e}")
             continue
         for r in out:
             try:
-                batch[int(r["i"])]["audience_fit"] = _clamp5(r["audience_fit"])
+                c = batch[int(r["i"])]
+                if force or c.get("audience_fit") is None:
+                    c["audience_fit"] = _clamp5(r["audience_fit"])
+                if (force or c.get("promise") is None) and r.get("promise") is not None:
+                    c["promise"] = _clamp5(r["promise"])
                 n += 1
             except (KeyError, ValueError, IndexError, TypeError):
                 continue
-    print(f"audience_fit を {n}/{len(todo)}件に付与しました")
+    print(f"audience_fit・promise を {n}/{len(todo)}件に付与しました")
 
 
 def cmd_enrich(force: bool):
@@ -1800,8 +1825,14 @@ def is_l2_type(c: dict) -> bool:
     return c.get("announcement_type") in L2_TYPES and (c.get("buzz_outlets") or 0) >= L2_MIN_JP_OUTLETS
 
 
+def promise(c: dict) -> int:
+    """実現への手応え（2026-10-26）。無い候補（付与前）は3（中立）として扱う。"""
+    return _clamp5(c["promise"]) if c.get("promise") is not None else 3
+
+
 def tie_break(c: dict) -> int:
-    return sum(_clamp5(c.get(k)) for k in ("hype_gap", "debate")) + fit(c)
+    # 2026-10-26: 誇張（hype_gap）を実現への手応え（promise）に替えた（構成 v4。夢を潰しやすいネタを上げない）
+    return promise(c) + _clamp5(c.get("debate")) + fit(c)
 
 
 def classify(cands: list) -> list:
@@ -1841,7 +1872,7 @@ def classify(cands: list) -> list:
 
 
 def _sorted_core(rows: list) -> list:
-    # core → 誇張+議論+視聴者 → 媒体数（同点が多いので最後に実測の媒体数で並べる）
+    # core → 手応え+議論+視聴者 → 媒体数（同点が多いので最後に実測の媒体数で並べる）
     return sorted(rows, key=lambda r: (r["core"] if r["core"] is not None else -1, r["tb"],
                                        r["c"].get("buzz_outlets") or 0), reverse=True)
 
@@ -1863,6 +1894,7 @@ BEST3_RELAXED_GENRE_MAX = 2     # 3件に満たないときだけ、同じジャ
 # ベスト3に入れる条件（2026-10-26、なるさんの指示）。ジャンルを分けるために視聴者に合わない候補・健康系が入り込まないように
 BEST3_MIN_FIT = 3               # audience_fit（健康系は丸めた後の fit）がこれ未満の候補はベスト3に入れない（一覧には残す）
 BEST3_HEALTH_MAX = 1            # ベスト3に入れる健康系（health: true）の上限
+BEST3_MIN_PROMISE = 3           # 実現への手応え（promise）がこれ未満（誇張・宣伝が中心）の候補はベスト3に入れない（2026-10-26、構成 v4）
 SLOT_HONMEI, SLOT_L2 = "本命", "答え合わせ"
 
 
@@ -1886,7 +1918,7 @@ def best3(rows: list):
         [r for r in rows if r["lane"] == L2_LANE],
         key=lambda r: (r["core"] if r["core"] is not None else -1, r["c"].get("buzz_measured") or 0,
                        r["c"].get("buzz_outlets") or 0, r["tb"]), reverse=True)]
-    order = [r for r in honmei + l2 if fit(r["c"]) >= BEST3_MIN_FIT]
+    order = [r for r in honmei + l2 if fit(r["c"]) >= BEST3_MIN_FIT and promise(r["c"]) >= BEST3_MIN_PROMISE]
     picks, series = [], set()
     from collections import Counter
     genres = Counter()
@@ -1958,7 +1990,7 @@ def _print_candidate(r: dict, short: bool = False):
         else f"core —（鮮度{r['fresh']}、推定なら{r['core_est']}）"
     warn = "  ⚠️一次資料 要確認" if c.get("primary_verified", "未") is None else \
         ("  ⚠️一次資料 未確認" if "primary_verified" not in c else "")
-    print(f"[{core}｜誇張+議論+視聴者 {r['tb']}｜旧加重和 {r['old']:.2f}] {c['title'][:76]}"
+    print(f"[{core}｜手応え+議論+視聴者 {r['tb']}｜旧加重和 {r['old']:.2f}] {c['title'][:76]}"
           f"（{c.get('announced_on') or c.get('published')}、{c.get('genre', '?')}）" + ("  ※健康系" if c.get("health") else "")
           + warn)
     print(f"   {_topic_line(c)}")
@@ -1975,6 +2007,8 @@ def _print_candidate(r: dict, short: bool = False):
     print(f"   問い: {c.get('entry_question')}")
     print(f"   見出し: {c.get('headline_claim')}")
     print(f"   実際: {c.get('actual_content')}")
+    if c.get("hope_material"):
+        print(f"   手応え: {c.get('hope_material')}（実現への手応え {c.get('promise', '未付与')}）")
     print(f"   ツッコミ: {c.get('tsukkomi_material')}  予想判定: {c.get('expected_verdicts')}")
     print(f"   一次資料: " + ", ".join((s["repaired_url"] + "（URLを自動で修復）") if s.get("repaired_url") else s.get("url", "")
                                   for s in c.get('primary_sources', [])))
@@ -2822,7 +2856,10 @@ def cmd_slack(note_path: str):
         verdict = (f"大輔 {vname.get(ev.get('dreamer'), '?')} ／ 沙織 {vname.get(ev.get('skeptic'), '?')}") if ev else ""
         lines = [f"*{nums[i]} 〈{r.get('slot', SLOT_HONMEI)}〉{title}*", meta]
         lines += [esc(x) for x in _slot_lines(r)]
-        lines += [f"💬 {esc(c.get('entry_question'))}", f"🔎 ツッコミ: {clip(c.get('tsukkomi_material'), 90)}"]
+        lines += [f"💬 {esc(c.get('entry_question'))}"]
+        if c.get("hope_material"):
+            lines.append(f"🌱 手応え: {clip(c.get('hope_material'), 90)}")
+        lines.append(f"🔎 ツッコミ: {clip(c.get('tsukkomi_material'), 90)}")
         if verdict:
             lines.append(f"⚖️ 予想判定: {verdict}")
         if c.get("deja_vu_note"):

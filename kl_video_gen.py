@@ -1105,7 +1105,7 @@ def main():
     parser.add_argument("--limit-seconds", type=float,
                         help="確認用: 完成動画を先頭のこの秒数で切る（短くなるのは最後の重ね合わせだけで、背景・音声は全編作る）。--out と一緒に使う")
     parser.add_argument("--skip-beginner-review", action="store_true",
-                        help="初見レビュー（kl-new STEP5.5）が「済」でなくても続行する。rounds_v3 の kl046 以降は、しばらくは必須"
+                        help="初見レビュー（kl-new STEP5.5）が「済」でなくても続行する。rounds_v3・rounds_v4 の kl046 以降は、しばらくは必須"
                              "（なるさんの指示、2026-10-19）。制作者の了承なしに使わない。KL_SKIP_BEGINNER_REVIEW=1 でも同じ")
     args = parser.parse_args()
     # 初見レビューの確認（本編・Shorts のどの経路でも、生成を始める前に。2026-10-19）
