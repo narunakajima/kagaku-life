@@ -23,6 +23,12 @@ kl_news_scan.py — ニュース起点のネタ選定（2026-10-04〜）
     buzz_measured（1〜5）にする。並び順は core = 鮮度 × buzz_measured（同点は 誇張＋議論＋暮らし）
   - list は「本命／ニッチ／速報（再計測待ち）」の3枠で出す（Gemini の推定 buzz_jp_est は予備）
 
+2026-10-25（想定する視聴者に合わせた並び、なるさんの指示）: core を 鮮度 × 実測の注目度 × 視聴者（audience_fit）にした。
+  audience_fit は「AIや新しい技術に興味がある50〜60代（経営者・自営業・商売人が多い）」が見たいと思い、自分の暮らし・店・会社に
+  引きつけて考えられるか（1〜5、AUDIENCE_FIT_RUBRIC）。score で付け、それ以前の候補には enrich がテキストのみで付ける。
+  無い候補は暮らし・仕事の高い方で代用する。健康系は4までに丸める（健康が中心の番組にしないため）。同点の並びも 誇張＋議論＋視聴者。
+  ゲート（暮らし・仕事≧4）は変えていない
+
 2026-10-15（NEWS_REDESIGN_2026-10-15.md の1週目）:
   - verify: 採点の直後に一次資料URLの実在を確かめる（HTTP・ソフト404、DOIは doi.org のハンドルAPI）。
     primary_verified が False（全URLが404）の候補はゲートで落とし、None（403等で判断不能）は「要確認」で残す
@@ -76,7 +82,22 @@ UA = {"User-Agent": "Mozilla/5.0 (kagaku-life news scan)"}
 
 # 一次資料が確認できない候補は採用しない（追記メモ §3）。検証可能性がこの点以下なら除外する
 MIN_VERIFIABILITY = 3
-SCAN_VERSION = "2026-10-11-buzz-measured"
+SCAN_VERSION = "2026-10-25-audience"
+
+# 想定する視聴者（2026-10-25、CLAUDE.md「想定する視聴者」）。audience_fit（1〜5）の採点に使い、
+# core の「関わり」は audience_fit で数える（無い候補は従来の暮らし・仕事の高い方）
+AUDIENCE = (
+    "50〜60代で、AIや新しい技術に興味がある人。経営者・自営業・商売をしている人が多く、会社勤めの人・退職した人もいる。"
+    "統計・論文・プログラミングの専門知識はない。健康の話題ばかりの番組は望んでいない")
+AUDIENCE_FIT_RUBRIC = (
+    "audience_fit: 上の視聴者が見出しを見て「見たい」と思い、自分の暮らし・店・会社に引きつけて考えられるか。\n"
+    "     5 = 自分の店・会社・暮らしで使えるか、お金を払う価値があるかをすぐ考えたくなる（例: 小さな会社でも使えるAIの新機能、人手不足を補う機械）\n"
+    "     4 = 強く興味を引く（AI・ロボットの大きな進歩で、自分や業界・取引先への影響が想像できる）\n"
+    "     3 = 興味は持つが、自分ごとにはなりにくい\n"
+    "     2 = 若い世代・特定の趣味向け（ゲーム、SNSの流行、若者のガジェット）や、開発者・研究者向けの道具\n"
+    "     1 = 専門家しか関心を持たない\n"
+    "     迷ったら低い方を付ける。")
+HEALTH_FIT_MAX = 4   # 健康系（health: true）の audience_fit の上限。健康が中心の番組にしないため（コードで丸める）
 
 # ベスト3・本命枠に入れる条件（2026-10-11、P0）。一覧そのものの足切りは MIN_VERIFIABILITY のまま
 GATE_MIN_VERIFIABILITY = 4
@@ -444,6 +465,9 @@ URL: {url}
 【この番組の過去の回（似た話の重複を避けるため）】
 {past}
 
+【想定する視聴者】
+{audience}
+
 【視聴者の関心ごと（暮らしとの関わりを描くときの参照）】
 {concerns}
 
@@ -470,6 +494,7 @@ Google検索で調べ、次を出力してください。
    - life_relevance: 暮らしにどう関わるか（関心ごとのどれかに具体的につながるほど高い）
    - work_relevance: 仕事・ビジネスにどう関わるか（働く人・経営者・個人事業主が今日の仕事や判断で使える、または影響を受けるほど高い。
      開発者・研究者しか使わない専用品は低い）
+   - {audience_fit_rubric}
 6. concern_id: いちばん近い関心ごとのid（無ければ null）
 7. entry_question: 視聴者側の問い（「〜は本当？」「〜はもう買える？」「〜はいつ来る？」の形。一次資料の範囲を超えない）
 8. expected_verdicts: {{"dreamer": "soon|decade|pending|dubious", "skeptic": "soon|decade|pending|dubious"}}
@@ -490,7 +515,7 @@ Google検索で調べ、次を出力してください。
 
 JSONオブジェクトのみで出力（他の文章は書かない）:
 {{"primary_sources": [], "announced_on": "", "headline_claim": "", "actual_content": "", "buzz_jp_est": 0, "verifiability": 0,
-"hype_gap": 0, "debate": 0, "wonder": 0, "life_relevance": 0, "work_relevance": 0, "concern_id": null, "entry_question": "",
+"hype_gap": 0, "debate": 0, "wonder": 0, "life_relevance": 0, "work_relevance": 0, "audience_fit": 0, "concern_id": null, "entry_question": "",
 "expected_verdicts": {{}}, "tsukkomi_material": "", "investment_related": false, "deja_vu_note": "", "genre": "", "health": false,
 "jp_news_query": "", "jp_title_anchor": [], "announcement_type": ""}}
 """
@@ -500,7 +525,8 @@ def score_item(client, types, item: dict, past: str, concerns: str) -> dict:
     prompt = SCORE_PROMPT.format(title=item["title"], published=item.get("published", ""),
                                  source=item.get("source", ""), source_kind=item.get("source_kind", ""),
                                  url=item.get("url", ""), summary=item.get("summary", ""),
-                                 past=past or "（なし）", concerns=concerns, genres=genres_brief())
+                                 past=past or "（なし）", concerns=concerns, genres=genres_brief(),
+                                 audience=AUDIENCE, audience_fit_rubric=AUDIENCE_FIT_RUBRIC)
     for attempt in range(3):
         try:
             resp = client.models.generate_content(
@@ -516,6 +542,13 @@ def score_item(client, types, item: dict, past: str, concerns: str) -> dict:
 def stake(c: dict) -> int:
     """視聴者との関わり＝暮らし（life_relevance）と仕事・ビジネス（work_relevance）の高い方。ゲートと core に使う。"""
     return max(_clamp5(c.get("life_relevance")), _clamp5(c.get("work_relevance")))
+
+
+def fit(c: dict) -> int:
+    """想定する視聴者との合い方（2026-10-25）。core と同点の並びに使う。audience_fit が無い候補は stake で代用する。
+    健康系は HEALTH_FIT_MAX までに丸める。ゲートは従来どおり stake（暮らし・仕事）で判定する。"""
+    v = _clamp5(c["audience_fit"]) if c.get("audience_fit") is not None else stake(c)
+    return min(v, HEALTH_FIT_MAX) if c.get("health") else v
 
 
 def _clamp5(v) -> int:
@@ -1591,10 +1624,45 @@ def backfill_work(cands: list, force: bool = False):
     print(f"work_relevance を {len(todo)}件に付与しました")
 
 
+def backfill_audience(cands: list, force: bool = False):
+    """available の候補のうち audience_fit が無いものに、想定する視聴者との合い方（1〜5）を付ける（テキストのみ、2026-10-25）。
+    score で付かなかった候補（2026-10-25 より前の採点）もこれで埋まる。"""
+    todo = [c for c in cands if c.get("status") == "available" and (force or c.get("audience_fit") is None)]
+    if not todo:
+        return
+    client, types = _gemini()
+    n = 0
+    for k in range(0, len(todo), ENRICH_BATCH):
+        batch = todo[k:k + ENRICH_BATCH]
+        rows = "\n".join(
+            f"{i}. タイトル: {c['title']} / 見出し: {c.get('headline_claim', '')} / "
+            f"中身: {(c.get('actual_content') or c.get('summary') or '')[:300]}" for i, c in enumerate(batch))
+        prompt = (
+            "日本語の科学ニュース解説YouTube番組のネタ候補です。各候補について audience_fit（1〜5）を付けてください。\n"
+            f"【想定する視聴者】{AUDIENCE}\n"
+            f"   - {AUDIENCE_FIT_RUBRIC}\n"
+            "言語対応や提供地域は無関係。\n\n"
+            f"候補:\n{rows}\n\n"
+            'JSON配列のみ出力: [{"i": 0, "audience_fit": 0}, ...]（全候補分）')
+        try:
+            out = _json_from(client.models.generate_content(model=MODEL, contents=prompt).text)
+        except Exception as e:  # noqa: BLE001
+            print(f"  ⚠️ audience_fit の付与に失敗（{k}〜{k + len(batch) - 1}件目）: {e}")
+            continue
+        for r in out:
+            try:
+                batch[int(r["i"])]["audience_fit"] = _clamp5(r["audience_fit"])
+                n += 1
+            except (KeyError, ValueError, IndexError, TypeError):
+                continue
+    print(f"audience_fit を {n}/{len(todo)}件に付与しました")
+
+
 def cmd_enrich(force: bool):
     cands = load_candidates()
     refresh_topic_ages(cands["items"])
     backfill_work(cands["items"], force)
+    backfill_audience(cands["items"], force)
     _save_candidates(cands)
     pool = _gate_pool(cands["items"])
     todo = [c for c in pool if force or not c.get("jp_news_query")]
@@ -1733,7 +1801,7 @@ def is_l2_type(c: dict) -> bool:
 
 
 def tie_break(c: dict) -> int:
-    return sum(_clamp5(c.get(k)) for k in ("hype_gap", "debate", "life_relevance"))
+    return sum(_clamp5(c.get(k)) for k in ("hype_gap", "debate")) + fit(c)
 
 
 def classify(cands: list) -> list:
@@ -1763,8 +1831,8 @@ def classify(cands: list) -> list:
         else:
             lane = "注目度低"
         rows.append({"c": c, "fresh": fresh, "gate": gate, "lane": lane,
-                     "core": fresh * bm * stake(c) if bm is not None else None,
-                     "core_est": fresh * buzz_value(c)[0] * stake(c), "tb": tie_break(c),
+                     "core": fresh * bm * fit(c) if bm is not None else None,
+                     "core_est": fresh * buzz_value(c)[0] * fit(c), "tb": tie_break(c),
                      "old": overall(c, c.get("published", ""))[0]})
     ser = assign_series([r["c"] for r in rows if not r["gate"]])
     for r in rows:
@@ -1773,7 +1841,7 @@ def classify(cands: list) -> list:
 
 
 def _sorted_core(rows: list) -> list:
-    # core → 誇張+議論+暮らし → 媒体数（同点が多いので最後に実測の媒体数で並べる）
+    # core → 誇張+議論+視聴者 → 媒体数（同点が多いので最後に実測の媒体数で並べる）
     return sorted(rows, key=lambda r: (r["core"] if r["core"] is not None else -1, r["tb"],
                                        r["c"].get("buzz_outlets") or 0), reverse=True)
 
@@ -1879,11 +1947,12 @@ def _buzz_line(c: dict) -> str:
 
 def _print_candidate(r: dict, short: bool = False):
     c = r["c"]
-    core = f"core {r['core']:3d}＝鮮度{r['fresh']}×注目{c['buzz_measured']}×関わり{stake(c)}" if r["core"] is not None \
+    fit_src = "" if c.get("audience_fit") is not None else "（暮らし・仕事で代用）"
+    core = f"core {r['core']:3d}＝鮮度{r['fresh']}×注目{c['buzz_measured']}×視聴者{fit(c)}{fit_src}" if r["core"] is not None \
         else f"core —（鮮度{r['fresh']}、推定なら{r['core_est']}）"
     warn = "  ⚠️一次資料 要確認" if c.get("primary_verified", "未") is None else \
         ("  ⚠️一次資料 未確認" if "primary_verified" not in c else "")
-    print(f"[{core}｜誇張+議論+暮らし {r['tb']}｜旧加重和 {r['old']:.2f}] {c['title'][:76]}"
+    print(f"[{core}｜誇張+議論+視聴者 {r['tb']}｜旧加重和 {r['old']:.2f}] {c['title'][:76]}"
           f"（{c.get('announced_on') or c.get('published')}、{c.get('genre', '?')}）" + ("  ※健康系" if c.get("health") else "")
           + warn)
     print(f"   {_topic_line(c)}")
