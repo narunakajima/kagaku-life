@@ -132,7 +132,8 @@ STRUCTURE_V3 = "rounds_v3"
 # 「どこまで来た？ どうすれば使える？」に変えた。v3 の規則をすべて引き継いだうえで、
 #   - 各論点は「壁 → 越え方（workaround）→ 残った手応え（hope、論点の最後の行）」で終える
 #   - 沙織も「本物なら私はこれに使いたい」（skeptic_wish）を言う。沙織が譲る turn を必須にする（v3 は ⚠）
-#   - 判定は2つ: verdict（二人が育てた使い道への札、画面で大きく）と claim_verdict（発表の言い方への札、小さく）
+#   - 画面の札は verdict（二人が育てた使い道への札）だけ。claim_verdict（発表の言い方の見立て）は記録用で、画面に出さない
+#     （2026-10-26、kl049 の初見レビューと制作者の「札が2組あって追いにくい。分かりやすくしよう」で、2組表示をやめた）
 #   - 判定の後に、視聴者が今日・今月できる一歩（next_step）を言う
 STRUCTURE_V4 = "rounds_v4"
 V3_FAMILY = (STRUCTURE_V3, STRUCTURE_V4)          # v3 の規則が効く構成（v4 は v3 を引き継ぐ）
@@ -494,7 +495,7 @@ def validate_rounds_v4(ep: dict) -> list:
     cv = ep.get("claim_verdict") or {}
     for r in ROLES:
         if cv.get(r) not in VERDICT_KEYS:
-            errs.append(f"v4: claim_verdict.{r}（発表の言い方への札）は {VERDICT_KEYS} のどれかにしてください。"
+            errs.append(f"v4: claim_verdict.{r}（発表の言い方の見立て、記録用・画面には出さない）は {VERDICT_KEYS} のどれかにしてください。"
                         "verdict は二人が育てた使い道への札")
     return errs
 
@@ -877,55 +878,15 @@ def draw_stamp(label: str, color, scale: float = 1.0, header: str = "判定") ->
     return im.rotate(-4, resample=Image.BICUBIC, expand=True)
 
 
-def verdict_stamps(cast: dict, verdict: dict, scale: float = 1.0, claim: dict = None) -> list:
+def verdict_stamps(cast: dict, verdict: dict, scale: float = 1.0) -> list:
     """verdict = {"dreamer": key, "skeptic": key}。二人の判定が同じなら1枚、割れたら2枚
-    （それぞれ「大輔の判定」「沙織の判定」）を返す。
-    claim（構成 v4 の claim_verdict、発表の言い方への札）を渡すと、verdict は「使い方の判定」として大きく出し、
-    その下に claim を小さな帯で添えた1枚の画像にして返す（2026-10-26）。"""
+    （それぞれ「大輔の判定」「沙織の判定」）を返す。"""
     vd = cast["verdicts"]
     if verdict.get("dreamer") == verdict.get("skeptic"):
         k = verdict["dreamer"]
-        stamps = [draw_stamp(vd[k]["label"], vd[k]["color"], scale, header="この使い方なら" if claim else "判定")]
-    else:
-        stamps = [draw_stamp(vd[verdict[r]]["label"], vd[verdict[r]]["color"], scale,
-                             header=f"{speaker_name(cast, r)}の判定" + ("（使い方）" if claim else "")) for r in ROLES]
-    if not claim:
-        return stamps
-    gap = int(24 * scale)
-    row_w = sum(s.width for s in stamps) + gap * (len(stamps) - 1)
-    strip = _claim_strip(cast, claim, scale)
-    w, h = max(row_w, strip.width), max(s.height for s in stamps) + int(10 * scale) + strip.height
-    im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
-    x = (w - row_w) // 2
-    for s in stamps:
-        im.alpha_composite(s, (x, 0))
-        x += s.width + gap
-    im.alpha_composite(strip, ((w - strip.width) // 2, h - strip.height))
-    return [im]
-
-
-def _claim_strip(cast: dict, claim: dict, scale: float = 1.0) -> Image.Image:
-    """発表の言い方への札（claim_verdict）を、白い帯に小さく1行で描く。色は札と同じ。"""
-    vd = cast["verdicts"]
-    fh = _font(FONT_BOLD, int(26 * scale))
-    if claim.get("dreamer") == claim.get("skeptic"):
-        parts = [("発表の言い方には　", (40, 50, 70)), (vd[claim["dreamer"]]["label"], vd[claim["dreamer"]]["color"])]
-    else:
-        parts = [("発表の言い方には　", (40, 50, 70))]
-        for r in ROLES:
-            parts += [(f"{speaker_name(cast, r)} ", (40, 50, 70)), (vd[claim[r]]["label"], vd[claim[r]]["color"]),
-                      ("　" if r == ROLES[0] else "", (40, 50, 70))]
-    d = ImageDraw.Draw(Image.new("RGB", (1, 1)))
-    tw = sum(_text_w(d, t, fh) for t, _ in parts)
-    pad_x, pad_y = int(22 * scale), int(10 * scale)
-    im = Image.new("RGBA", (tw + pad_x * 2, fh.size + pad_y * 2 + int(6 * scale)), (0, 0, 0, 0))
-    dr = ImageDraw.Draw(im)
-    dr.rounded_rectangle((0, 0, im.width - 1, im.height - 1), radius=int(14 * scale), fill=(255, 255, 255, 235))
-    x = pad_x
-    for t, col in parts:
-        dr.text((x, pad_y), t, font=fh, fill=tuple(col))
-        x += _text_w(d, t, fh)
-    return im
+        return [draw_stamp(vd[k]["label"], vd[k]["color"], scale)]
+    return [draw_stamp(vd[verdict[r]]["label"], vd[verdict[r]]["color"], scale,
+                       header=f"{speaker_name(cast, r)}の判定") for r in ROLES]
 
 
 def _draw_intro(im: Image.Image, dr: ImageDraw.ImageDraw, W: int, H: int, cast: dict, sprite_pos: dict,
@@ -1161,7 +1122,7 @@ def main_timeline(ep: dict, scenes: list, offsets: list, durs: list, narr_delay:
             st = None
             if v_from and li + 1 >= v_from:
                 if stamps is None:
-                    stamps = verdict_stamps(cast, ep["verdict"], claim=ep.get("claim_verdict"))
+                    stamps = verdict_stamps(cast, ep["verdict"])
                 st = stamps
             cards = line.get("cards") or [{"text": line_display(line), "start": 0.0, "end": line["dur"]}]
             talk_end = round(off + narr_delay_s + line["t0"] + line["dur"], 3)  # 口パク: この行を話し終える時刻
@@ -1740,7 +1701,7 @@ def composite_thumbnail_dialogue(image_path: Path, ep: dict, cast: dict = None) 
         gap = w - 2 * bank.get("dreamer", exprs.get("dreamer", "neutral"), sh, True).width - 20
         scale = 1.15
         while True:
-            stamps = verdict_stamps(cast, ep["verdict"], scale=scale, claim=ep.get("claim_verdict"))
+            stamps = verdict_stamps(cast, ep["verdict"], scale=scale)
             total = sum(s.width for s in stamps) + 16 * (len(stamps) - 1)
             if total <= gap or scale <= 0.6:
                 break
@@ -1978,10 +1939,6 @@ def plain_text(ep: dict, cast: dict = None) -> str:
             v = ep.get("verdict") or {}
             out.append("[画面に判定ラベル: " + "、".join(f"{name[r]}「{labels.get(v.get(r), v.get(r))}」" for r in ROLES if v.get(r))
                        + "（ラベルの種類: " + "／".join(labels.values()) + "）]")
-            cv = ep.get("claim_verdict") or {}
-            if cv:
-                out.append("[画面の札の下に小さく、発表の言い方への札: " + "、".join(f"{name[r]}「{labels.get(cv.get(r), cv.get(r))}」" for r in ROLES if cv.get(r))
-                           + "（大きい札は、二人が話し合った使い方への札）]")
     return "\n".join(out) + "\n"
 
 
@@ -2244,7 +2201,7 @@ def main():
         print(f"  必須タグ: {', '.join(required_tags(ep))}（life_scene は不要）")
         print("  各論点: 最後の行が hope（残った手応え）・workaround（越え方）が1つ以上／skeptic_wish は沙織／"
               "沙織が譲る turn が1つ以上／next_step は verdict か closing")
-        print("  判定: verdict（使い道への札、画面で大きく）と claim_verdict（発表の言い方への札、小さな帯）の両方")
+        print("  判定: 画面の札は verdict（使い方への札）だけ。claim_verdict（発表の言い方の見立て）は記録用で、台詞では札の言葉を使わず一言で触れる")
     elif st == STRUCTURE_V3:
         print("構成: rounds_v3（使い道ラウンド。v2 の規則＋下記）")
         print(f"  必須タグ: {', '.join(required_tags(ep))}（life_scene は不要）")
