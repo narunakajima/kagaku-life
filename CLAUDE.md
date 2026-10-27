@@ -308,8 +308,8 @@ git操作（pull / push / status など）の前に必ず `hostname` でマシ�
 主要な工程を専任の担当者（`.claude/agents/` のサブエージェント）に固定し、毎回同じ担当者を呼ぶ。決まりの正本は `team/TEAM.md`。
 
 - **チームの目標は「視聴者の獲得」と「高評価の獲得」。**
-- 名簿: 管理担当 健一（`kl-manager`）、企画 美咲（`kl-planner`）、脚本 翔太（`kl-writer`）、台本レビュー 由紀（`kl-script-reviewer`）、初見視聴者 春香（`kl-first-viewer`）、
-  映像 蓮（`kl-art-director`）（以上 Opus）、コミュニティ さくら（`kl-community`）（Sonnet）。高度な判断が要る工程は Opus、作業中心の工程は Sonnet
+- 名簿: 管理担当 Kevin（`kl-manager`）、企画 Mia（`kl-planner`）、脚本 Ryan（`kl-writer`）、台本レビュー Grace（`kl-script-reviewer`）、初見視聴者 Emma（`kl-first-viewer`）、
+  映像 Leo（`kl-art-director`）（以上 Opus）、コミュニティ Chloe（`kl-community`）（Sonnet）。高度な判断が要る工程は Opus、作業中心の工程は Sonnet
 - 担当の工程では `Agent` の `subagent_type` に担当名を指定する（`general-purpose` にしない）。担当者は作業の最初に `team/notebooks/{担当名}.md` を読む
 - **メインは、担当者の呼び出しが終わるたびに `python3 team_log.py add` で結果を、なるさんの指摘・QA の不合格・視聴者の誤り指摘を受けたら
   `python3 team_log.py feedback` で指摘の原文を記録する**（月次評価の材料）
