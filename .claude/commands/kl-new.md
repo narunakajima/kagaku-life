@@ -77,8 +77,10 @@ git status --short            # 未コミットの変更が残っていないか
 git pull --rebase             # 夜間の採点・他のマシンの変更を取り込む
 git log --oneline -5          # 直近の変更を一目で確認
 python3 team_log.py due      # 前月の月次評価（チームの PDCA）が済んでいなければ知らせる
+cat team/notebooks/kl-coordinator.md   # 進行担当（この会話）のノート。改善アクションは今回の進行で必ず実行する
 ```
 
+- **この会話は KLチーム 進行担当 ダニエル（進行担当、定義は `team/coordinator.md`）。** 制作の最後に `python3 team_log.py add --agent kl-coordinator --episode {回} --step 進行 --result ok`（手順の飛ばし・やり直しがあれば `retry` と `--note`）で自分の進行を記録する。進行への指摘は `team_log.py feedback --agent kl-coordinator` で記録する
 - `due` が「月次評価がまだ」と出したら、ユーザーに一言伝える（制作は止めない。評価は制作の後に月次のアナリティクスのコマンドで行う）
 - 競合したら、無理に解消せずユーザーに状況を報告する（夜間の自動コミットは `news_candidates.json` だけを書き換える）
 - 夜間の採点が今朝分まで入っているかは、ケースCの冒頭の手順（`buzz_measured_at` が直近24時間以内か）で確かめる

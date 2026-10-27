@@ -308,8 +308,9 @@ git操作（pull / push / status など）の前に必ず `hostname` でマシ�
 主要な工程を専任の担当者（`.claude/agents/` のサブエージェント）に固定し、毎回同じ担当者を呼ぶ。決まりの正本は `team/TEAM.md`。
 
 - **チームの目標は「視聴者の獲得」と「高評価の獲得」。**
-- 名簿（呼び方は「KLチーム ○○担当 名前」）: KLチーム 管理担当 ケビン（`kl-manager`・Opus）、KLチーム 企画担当 ミア（`kl-planner`・Opus）、KLチーム 脚本担当 ライアン（`kl-writer`・Opus）、KLチーム 台本レビュー担当 グレース（`kl-script-reviewer`・Opus）、KLチーム 初見視聴者担当 エマ（`kl-first-viewer`・Opus）、KLチーム 映像担当 レオ（`kl-art-director`・Opus）、KLチーム コミュニティ担当 クロエ（`kl-community`・Sonnet）。
+- 名簿（呼び方は「KLチーム ○○担当 名前」）: KLチーム 管理担当 ケビン（`kl-manager`・Opus）、KLチーム 企画担当 ミア（`kl-planner`・Opus）、KLチーム 脚本担当 ライアン（`kl-writer`・Opus）、KLチーム 台本レビュー担当 グレース（`kl-script-reviewer`・Opus）、KLチーム 初見視聴者担当 エマ（`kl-first-viewer`・Opus）、KLチーム 映像担当 レオ（`kl-art-director`・Opus）、KLチーム コミュニティ担当 クロエ（`kl-community`・Sonnet）、KLチーム 進行担当 ダニエル（`kl-coordinator`・メインの会話）。
   高度な判断が要る工程は Opus、作業中心の工程は Sonnet
+- **制作コマンドを実行するメインの会話は KLチーム 進行担当 ダニエル。** STEP 0 で `team/notebooks/kl-coordinator.md` を読み、改善アクションを実行し、制作の最後に自分の進行を記録する（定義は `team/coordinator.md`。サブエージェントではない）
 - 担当の工程では `Agent` の `subagent_type` に担当名を指定する（`general-purpose` にしない）。担当者は作業の最初に `team/notebooks/{担当名}.md` を読む
 - **メインは、担当者の呼び出しが終わるたびに `python3 team_log.py add` で結果を、なるさんの指摘・QA の不合格・視聴者の誤り指摘を受けたら
   `python3 team_log.py feedback` で指摘の原文を記録する**（月次評価の材料）

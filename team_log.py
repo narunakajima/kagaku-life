@@ -2,7 +2,7 @@
 """担当者制（チーム）の作業記録・月次集計・評価の記録。
 
 samurai-chronicles / kagaku-life / lamp-whisper の3リポジトリで同じファイルを使う（中身をそろえること）。
-名簿の正本は .claude/agents/*.md の frontmatter（name・model・description）。
+名簿の正本は .claude/agents/*.md と team/coordinator.md（進行担当＝メインの会話）の frontmatter。
 運用ルールは team/TEAM.md。
 
 使い方:
@@ -54,9 +54,10 @@ def now_jst() -> str:
 
 
 def load_roster() -> dict:
-    """.claude/agents/*.md の frontmatter から名簿を作る。"""
+    """.claude/agents/*.md（担当者）と team/coordinator.md（進行担当＝メインの会話）の frontmatter から名簿を作る。"""
     roster = {}
-    for path in sorted(AGENTS_DIR.glob("*.md")):
+    paths = sorted(AGENTS_DIR.glob("*.md")) + [p for p in [TEAM_DIR / "coordinator.md"] if p.exists()]
+    for path in paths:
         text = path.read_text(encoding="utf-8")
         m = re.match(r"^---\n(.*?)\n---", text, re.S)
         if not m:
