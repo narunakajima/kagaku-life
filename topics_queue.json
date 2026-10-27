@@ -2885,8 +2885,68 @@
       ],
       "hook_idea": "「人型ロボットが鉄道を直す」と報じられたが、実際は人が操縦する重機。では、人手不足の現場で何が変わるのか",
       "notes": "構成 v4（実現ラウンド）の最初の回。発表資料（PDF）: 2024年7月に多機能鉄道重機「ZIZAI」導入済み。重作業用単腕型ロボット（高所作業車のデッキ上、最大120kgを把持、2026年10月〜）と量産型人型ロボット（小型・軽量化・ブーム延長、線路沿いの支障木伐採、2026年11月〜）。効果: 高所作業の機械化で墜落・感電防止、作業の人手を約3割減らすのが目標、性別や年齢によらず従事可能。報道にだけある数字（4人→3人、約300kg、ブーム15m）は台詞に使わない。予想判定: 大輔 soon／沙織 decade。競合: 日本語動画5本（ニュース映像2本が大きい）。ニュース候補 6b8b773347。"
+    },
+    {
+      "episode_id": "kl050",
+      "status": "confirmed",
+      "slot_type": "news",
+      "genre": "ai",
+      "health": false,
+      "domain": "life",
+      "concern_id": null,
+      "entry_question": "iPhoneのSiriが日本語で話せるようになった。仕事や暮らしに、どこまで使える？ 中身はGeminiと聞くけれど、本当？",
+      "title": "日本語のSiri AIが始まった。Geminiの力で何ができる？どこまで使える？（10月27日）",
+      "format": "dialogue",
+      "structure": "rounds_v4",
+      "source_type": "news",
+      "news_date": "2026-10-27",
+      "verdict_as_of": "2026-10-27",
+      "references": [
+        {
+          "title": "About iOS 27 Updates（iOS 27.2 の更新内容）",
+          "authors": [],
+          "year": 2026,
+          "venue": "Apple Support",
+          "url": "https://support.apple.com/en-us/149076",
+          "is_preprint": false,
+          "institution": "Apple",
+          "source_kind": "official_blog"
+        },
+        {
+          "title": "Siri AI, a profoundly more capable and personal assistant, is here",
+          "authors": [],
+          "year": 2026,
+          "venue": "Apple Newsroom",
+          "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+          "is_preprint": false,
+          "institution": "Apple",
+          "source_kind": "press_release"
+        },
+        {
+          "title": "Introducing the Third Generation of Apple's Foundation Models",
+          "authors": [],
+          "year": 2026,
+          "venue": "Apple Machine Learning Research",
+          "url": "https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models",
+          "is_preprint": false,
+          "institution": "Apple",
+          "source_kind": "tech_report"
+        },
+        {
+          "title": "Learn about Apple Intelligence usage limits",
+          "authors": [],
+          "year": 2026,
+          "venue": "Apple Support",
+          "url": "https://support.apple.com/en-us/127901",
+          "is_preprint": false,
+          "institution": "Apple",
+          "source_kind": "official_blog"
+        }
+      ],
+      "hook_idea": "日本語になった新しいSiri。「中身はGemini」と言われるが、Appleの言い方は少し違う。賢さを比べた数字はあるのか。Googleのアプリは触れないのは本当か",
+      "notes": "なるさん指定のネタ（2026-10-27、iOS 27.2 公開直後に実機で試した所感）。構成 v4。確認済みの原文は script_prep/kl050_verified.md。論点案: (1)中身はGemini？賢さは比べられる？（Appleの言い方＝Googleとの協業で作った、比較の数字は自社の前世代との比較のみ→『一世代前』は印象で、数字では確かめられない）(2)自分の情報を横断して使える？（強み=メッセージ・メール・写真・予定を横断、30件の予定一括など。壁=開発者が対応したアプリだけ、LINE・Messenger不可、Gmailは一部、発表が名指しした他社アプリにGoogle無し→越え方=Apple純正アプリ側に集める、GoogleのアカウントをAppleのメール・カレンダーに同期する）(3)無料でどこまで？（ベータ、1日の上限・回数非公表、枠を増やすのは有料）。使った人の声は匿名の傾向として。予想判定: 大輔 soon／沙織 pending（またはsoon）。AI・ソフトウェアの制限は『3年はかかる』を使わない。競合動画は未確認（STEP後半で確認）。"
     }
   ],
-  "total_topics": 49,
-  "last_updated": "2026-10-26"
+  "total_topics": 50,
+  "last_updated": "2026-10-27"
 }
