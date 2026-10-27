@@ -54,7 +54,8 @@ def load_roster() -> dict:
                 meta[key.strip()] = val.strip()
         name = meta.get("name")
         if name:
-            roster[name] = {"model": meta.get("model", "?"), "description": meta.get("description", "")}
+            roster[name] = {"model": meta.get("model", "?"), "display_name": meta.get("display_name", ""),
+                            "description": meta.get("description", "")}
     return roster
 
 
@@ -78,6 +79,22 @@ def append_jsonl(path: Path, row: dict) -> None:
         f.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
+def resolve_agent(name: str, roster: dict) -> str:
+    """呼び出し名（sc-writer）でも名前（千尋）でも受け付け、呼び出し名を返す。"""
+    if name in roster:
+        return name
+    for agent_id, info in roster.items():
+        if info["display_name"] and info["display_name"] == name:
+            return agent_id
+    require_agent(name, roster)
+    return name
+
+
+def label(agent_id: str, roster: dict) -> str:
+    nm = roster.get(agent_id, {}).get("display_name")
+    return f"{nm}（{agent_id}）" if nm else agent_id
+
+
 def require_agent(name: str, roster: dict) -> None:
     if name not in roster:
         print(f"エラー: 担当者 '{name}' は名簿（.claude/agents/）にいません。登録済み: {', '.join(roster) or 'なし'}",
@@ -87,7 +104,7 @@ def require_agent(name: str, roster: dict) -> None:
 
 def cmd_add(args) -> None:
     roster = load_roster()
-    require_agent(args.agent, roster)
+    args.agent = resolve_agent(args.agent, roster)
     append_jsonl(WORK_LOG, {
         "ts": now_jst(), "kind": "work", "agent": args.agent, "episode": args.episode,
         "step": args.step, "result": args.result, "retries": args.retries, "note": args.note,
@@ -97,7 +114,7 @@ def cmd_add(args) -> None:
 
 def cmd_feedback(args) -> None:
     roster = load_roster()
-    require_agent(args.agent, roster)
+    args.agent = resolve_agent(args.agent, roster)
     append_jsonl(WORK_LOG, {
         "ts": now_jst(), "kind": "feedback", "agent": args.agent, "episode": args.episode,
         "source": args.source, "severity": args.severity, "text": args.text,
@@ -124,7 +141,7 @@ def month_rows(month: str) -> list:
 
 def build_summary(month: str) -> dict:
     roster = load_roster()
-    stats = {name: {"model": info["model"], "calls_auto": 0, "records": 0, "ok": 0, "retry": 0, "fail": 0,
+    stats = {name: {"model": info["model"], "display_name": info["display_name"], "calls_auto": 0, "records": 0, "ok": 0, "retry": 0, "fail": 0,
                     "escalated": 0, "retries": 0, "episodes": set(), "feedback_major": 0, "feedback_minor": 0,
                     "feedback": []}
              for name, info in roster.items()}
@@ -159,40 +176,41 @@ def build_summary(month: str) -> dict:
 
 
 def cmd_summary(args) -> None:
+    roster = load_roster()
     summary = build_summary(args.month)
     if args.json:
         print(json.dumps(summary, ensure_ascii=False, indent=2))
         return
     print(f"# チーム作業の集計 {args.month}\n")
-    print("| 担当 | モデル | 呼び出し(自動) | 記録 | 一発OK | 再試行 | 失敗 | 引き継ぎ | 一発OK率 | 指摘(重/軽) | 担当回 |")
+    print("| 名前（担当） | モデル | 呼び出し(自動) | 記録 | 一発OK | 再試行 | 失敗 | 引き継ぎ | 一発OK率 | 指摘(重/軽) | 担当回 |")
     print("|---|---|---|---|---|---|---|---|---|---|---|")
     for name, s in summary["agents"].items():
         rate = "-" if s["first_pass_rate"] is None else f"{s['first_pass_rate']:.0%}"
         eps = ", ".join(s["episodes"]) or "-"
-        print(f"| {name} | {s['model']} | {s['calls_auto']} | {s['records']} | {s['ok']} | {s['retry']} | "
+        print(f"| {label(name, roster)} | {s['model']} | {s['calls_auto']} | {s['records']} | {s['ok']} | {s['retry']} | "
               f"{s['fail']} | {s['escalated']} | {rate} | {s['feedback_major']}/{s['feedback_minor']} | {eps} |")
     print("\n## 指摘の原文")
     any_fb = False
     for name, s in summary["agents"].items():
         for fb in s["feedback"]:
             any_fb = True
-            print(f"- {name} {fb['episode']}（{fb['source']}/{fb['severity']}）: {fb['text']}")
+            print(f"- {label(name, roster)} {fb['episode']}（{fb['source']}/{fb['severity']}）: {fb['text']}")
     if not any_fb:
         print("- なし")
     print("\n## 前回の評価")
     if summary["previous_scores"]:
         for name, r in summary["previous_scores"].items():
-            print(f"- {name}（{r.get('month')}）: 総合 {r.get('overall')} — {r.get('summary', '')}")
+            print(f"- {label(name, roster)}（{r.get('month')}）: 総合 {r.get('overall')} — {r.get('summary', '')}")
     else:
         print("- なし（初回）")
-    gaps = [n for n, s in summary["agents"].items() if s["calls_auto"] > s["records"]]
+    gaps = [label(n, roster) for n, s in summary["agents"].items() if s["calls_auto"] > s["records"]]
     if gaps:
         print("\n注意: 自動の呼び出し数より手動の記録が少ない担当があります（記録漏れの可能性）: " + ", ".join(gaps))
 
 
 def cmd_score(args) -> None:
     roster = load_roster()
-    require_agent(args.agent, roster)
+    args.agent = resolve_agent(args.agent, roster)
     if not re.fullmatch(r"\d{4}-\d{2}", args.month):
         print("エラー: --month は YYYY-MM", file=sys.stderr)
         sys.exit(1)
@@ -206,19 +224,21 @@ def cmd_score(args) -> None:
 
 
 def cmd_scores(args) -> None:
+    roster = load_roster()
     rows = sorted(read_jsonl(SCORECARDS), key=lambda r: (r.get("agent", ""), r.get("month", "")))
     if args.agent:
-        rows = [r for r in rows if r.get("agent") == args.agent]
+        agent = resolve_agent(args.agent, roster)
+        rows = [r for r in rows if r.get("agent") == agent]
     if not rows:
         print("評価の記録はまだありません。")
         return
-    print("| 月 | 担当 | 成果 | 品質 | 改善 | 総合 | 要約 |")
+    print("| 月 | 名前（担当） | 成果 | 品質 | 改善 | 総合 | 要約 |")
     print("|---|---|---|---|---|---|---|")
     def show(v):
         return "-" if v is None else v
 
     for r in rows:
-        print(f"| {r.get('month')} | {r.get('agent')} | {show(r.get('outcome'))} | {show(r.get('quality'))} | "
+        print(f"| {r.get('month')} | {label(r.get('agent'), roster)} | {show(r.get('outcome'))} | {show(r.get('quality'))} | "
               f"{show(r.get('improvement'))} | {r.get('overall')} | {r.get('summary', '')} |")
 
 
@@ -228,7 +248,7 @@ def cmd_roster(_args) -> None:
         print("名簿が空です（.claude/agents/*.md がありません）。")
         return
     for name, info in roster.items():
-        print(f"- {name}（{info['model']}）: {info['description']}")
+        print(f"- {label(name, roster)}・{info['model']}: {info['description']}")
 
 
 def score_value(text: str):
