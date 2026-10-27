@@ -308,8 +308,8 @@ git操作（pull / push / status など）の前に必ず `hostname` でマシ�
 主要な工程を専任の担当者（`.claude/agents/` のサブエージェント）に固定し、毎回同じ担当者を呼ぶ。決まりの正本は `team/TEAM.md`。
 
 - **チームの目標は「視聴者の獲得」と「高評価の獲得」。**
-- 名簿: 管理担当 Kevin（`kl-manager`）、企画 Mia（`kl-planner`）、脚本 Ryan（`kl-writer`）、台本レビュー Grace（`kl-script-reviewer`）、初見視聴者 Emma（`kl-first-viewer`）、
-  映像 Leo（`kl-art-director`）（以上 Opus）、コミュニティ Chloe（`kl-community`）（Sonnet）。高度な判断が要る工程は Opus、作業中心の工程は Sonnet
+- 名簿（呼び方は「KLチーム ○○担当 名前」）: KLチーム 管理担当 ケビン（`kl-manager`・Opus）、KLチーム 企画担当 ミア（`kl-planner`・Opus）、KLチーム 脚本担当 ライアン（`kl-writer`・Opus）、KLチーム 台本レビュー担当 グレース（`kl-script-reviewer`・Opus）、KLチーム 初見視聴者担当 エマ（`kl-first-viewer`・Opus）、KLチーム 映像担当 レオ（`kl-art-director`・Opus）、KLチーム コミュニティ担当 クロエ（`kl-community`・Sonnet）。
+  高度な判断が要る工程は Opus、作業中心の工程は Sonnet
 - 担当の工程では `Agent` の `subagent_type` に担当名を指定する（`general-purpose` にしない）。担当者は作業の最初に `team/notebooks/{担当名}.md` を読む
 - **メインは、担当者の呼び出しが終わるたびに `python3 team_log.py add` で結果を、なるさんの指摘・QA の不合格・視聴者の誤り指摘を受けたら
   `python3 team_log.py feedback` で指摘の原文を記録する**（月次評価の材料）
@@ -343,8 +343,8 @@ git操作（pull / push / status など）の前に必ず `hostname` でマシ�
 - 原因の切り分けに**同種の試行を5回以上**重ねている
 
 止めたら、**ユーザーに確認せず**、Agent ツール（`model: "opus"`）で
-Opusの担当者に問題を丸ごと引き継ぐ（引き継ぎ先は `team/TEAM.md` の「エスカレーション」。画像→`kl-art-director`、台本→`kl-writer`、
-それ以外→`kl-manager`）。分析だけでなく、修正の実行（スクリプトの試行・画像の再生成・
+Opusの担当者に問題を丸ごと引き継ぐ（引き継ぎ先は `team/TEAM.md` の「エスカレーション」。画像→KLチーム 映像担当 レオ（`kl-art-director`）、台本→KLチーム 脚本担当 ライアン（`kl-writer`）、
+それ以外→KLチーム 管理担当 ケビン（`kl-manager`））。分析だけでなく、修正の実行（スクリプトの試行・画像の再生成・
 `episodes/kl{NNN}.json`の編集など）までサブエージェント側で行わせてよい。ユーザーには「Opusに引き継ぎます」と
 一言伝えるだけにし、可否は聞かない。
 

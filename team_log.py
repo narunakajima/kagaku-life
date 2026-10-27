@@ -54,8 +54,9 @@ def load_roster() -> dict:
                 meta[key.strip()] = val.strip()
         name = meta.get("name")
         if name:
+            parts = [meta.get("team", ""), meta.get("role", ""), meta.get("display_name", "")]
             roster[name] = {"model": meta.get("model", "?"), "display_name": meta.get("display_name", ""),
-                            "description": meta.get("description", "")}
+                            "full_name": " ".join(x for x in parts if x), "description": meta.get("description", "")}
     return roster
 
 
@@ -80,18 +81,18 @@ def append_jsonl(path: Path, row: dict) -> None:
 
 
 def resolve_agent(name: str, roster: dict) -> str:
-    """呼び出し名（sc-writer）でも名前（千尋）でも受け付け、呼び出し名を返す。"""
+    """呼び出し名（sc-writer）・名前（クレア）・呼び方（SCチーム 脚本担当 クレア）のどれでも受け付け、呼び出し名を返す。"""
     if name in roster:
         return name
     for agent_id, info in roster.items():
-        if info["display_name"] and info["display_name"] == name:
+        if name and name in (info["display_name"], info["full_name"]):
             return agent_id
     require_agent(name, roster)
     return name
 
 
 def label(agent_id: str, roster: dict) -> str:
-    nm = roster.get(agent_id, {}).get("display_name")
+    nm = roster.get(agent_id, {}).get("full_name")
     return f"{nm}（{agent_id}）" if nm else agent_id
 
 
@@ -182,7 +183,7 @@ def cmd_summary(args) -> None:
         print(json.dumps(summary, ensure_ascii=False, indent=2))
         return
     print(f"# チーム作業の集計 {args.month}\n")
-    print("| 名前（担当） | モデル | 呼び出し(自動) | 記録 | 一発OK | 再試行 | 失敗 | 引き継ぎ | 一発OK率 | 指摘(重/軽) | 担当回 |")
+    print("| 担当 | モデル | 呼び出し(自動) | 記録 | 一発OK | 再試行 | 失敗 | 引き継ぎ | 一発OK率 | 指摘(重/軽) | 担当回 |")
     print("|---|---|---|---|---|---|---|---|---|---|---|")
     for name, s in summary["agents"].items():
         rate = "-" if s["first_pass_rate"] is None else f"{s['first_pass_rate']:.0%}"
@@ -232,7 +233,7 @@ def cmd_scores(args) -> None:
     if not rows:
         print("評価の記録はまだありません。")
         return
-    print("| 月 | 名前（担当） | 成果 | 品質 | 改善 | 総合 | 要約 |")
+    print("| 月 | 担当 | 成果 | 品質 | 改善 | 総合 | 要約 |")
     print("|---|---|---|---|---|---|---|")
     def show(v):
         return "-" if v is None else v
@@ -248,7 +249,8 @@ def cmd_roster(_args) -> None:
         print("名簿が空です（.claude/agents/*.md がありません）。")
         return
     for name, info in roster.items():
-        print(f"- {label(name, roster)}・{info['model']}: {info['description']}")
+        desc = info["description"].removeprefix(info["full_name"] + "。")
+        print(f"- {label(name, roster)}・{info['model']}: {desc}")
 
 
 def score_value(text: str):
