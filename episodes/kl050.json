@@ -1,0 +1,867 @@
+{
+  "episode_id": "kl050",
+  "format": "dialogue",
+  "structure": "rounds_v4",
+  "template": "myth_buster",
+  "source_type": "news",
+  "news_date": "2026-10-27",
+  "verdict_as_of": "2026-10-27",
+  "genre": "ai",
+  "health": false,
+  "depicts_real_product": false,
+  "episode_title": "iPhoneの新しいSiriが日本語に。中身はGeminiなのか、仕事や暮らしにどこまで使えるか",
+  "youtube_title": "日本語のSiri AI、仕事にどこまで使える？中身はGemini？（10月27日）",
+  "entry_question": "iPhoneのSiriが日本語で話せるようになった。仕事や暮らしに、どこまで使える？ 中身はGeminiと聞くけれど、本当？",
+  "claim_verdict": {
+    "dreamer": "soon",
+    "skeptic": "soon"
+  },
+  "verdict": {
+    "dreamer": "soon",
+    "skeptic": "soon"
+  },
+  "hook_lines": [
+    "日本語のSiri AIが来た",
+    "仕事にどこまで使える？"
+  ],
+  "thumbnail_prompt": "Warm, bright morning editorial illustration of the counter of a small Japanese neighborhood shop, continuous across the whole frame with no panels, boxes or borders. Keep the left 30%, the right 30% and the top 35% of the frame quiet and uncluttered (soft blurred shop shelves and warm light only), but the background must continue unbroken behind them. Main subject, centered left-to-right in the middle band of the frame: on a wooden counter, a neat small arrangement of a paper desk calendar, a few opened envelopes, a stack of business cards and a printed photo, softly connected by thin glowing lines of warm light as if being gathered together, with a gentle glow above them. No phones, no screens, no devices. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
+  "thumbnail_headline": "日本語のSiri AI\n仕事に使える？",
+  "thumbnail_exprs": {
+    "dreamer": "excited",
+    "skeptic": "thinking"
+  },
+  "youtube_tags": [
+    "Siri AI",
+    "Siri",
+    "新しいSiri",
+    "iPhone",
+    "iOS 27.2",
+    "Apple",
+    "Apple Intelligence",
+    "Gemini",
+    "Google",
+    "日本語対応",
+    "AIアシスタント",
+    "仕事効率化",
+    "答え合わせ",
+    "科学ニュース"
+  ],
+  "references": [
+    {
+      "title": "About iOS 27 Updates（iOS 27.2 の更新内容）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Apple Support",
+      "url": "https://support.apple.com/en-us/149076",
+      "is_preprint": false,
+      "institution": "Apple",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "Siri AI, a profoundly more capable and personal assistant, is here",
+      "authors": [],
+      "year": 2026,
+      "venue": "Apple Newsroom",
+      "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+      "is_preprint": false,
+      "institution": "Apple",
+      "source_kind": "press_release"
+    },
+    {
+      "title": "Learn about Apple Intelligence usage limits",
+      "authors": [],
+      "year": 2026,
+      "venue": "Apple Support",
+      "url": "https://support.apple.com/en-us/127901",
+      "is_preprint": false,
+      "institution": "Apple",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "Introducing the Third Generation of Apple's Foundation Models",
+      "authors": [],
+      "year": 2026,
+      "venue": "Apple Machine Learning Research",
+      "url": "https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models",
+      "is_preprint": false,
+      "institution": "Apple",
+      "source_kind": "tech_report"
+    },
+    {
+      "title": "Add an email account to your iPhone or iPad",
+      "authors": [],
+      "year": 2026,
+      "venue": "Apple Support",
+      "url": "https://support.apple.com/en-us/102619",
+      "is_preprint": false,
+      "institution": "Apple",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "125 Tests of the New AI Siri",
+      "authors": [
+        "David Pogue"
+      ],
+      "year": 2026,
+      "venue": "Pogue's newsletter（Substack、個人の検証記事。英語版の Siri AI）",
+      "url": "https://pogueman.substack.com/p/125-tests-of-the-new-ai-siri",
+      "is_preprint": false,
+      "institution": "個人（ジャーナリストの検証記事、一次資料ではない）",
+      "source_kind": "personal_review"
+    }
+  ],
+  "youtube_description": "iPhoneの新しいSiri（Appleは「Siri AI」と呼ぶ）が、日本時間の2026年10月27日、iOS 27.2 で日本語にも対応しました。「中身はGoogleのGemini」とよく言われますが、本当なのか。仕事や暮らしに、どこまで使えるのか。期待担当の大輔と、確かめ担当の沙織が、Appleの発表資料と、海外（英語版）・日本（日本語版）の使った人の報告で確かめます。(1) 頭脳はGeminiなのか、賢さは比べられるのか (2) 自分の情報（メール・予定・連絡先・写真）をまとめて探せるのか (3) 試し版で、毎日どこまで頼れるのか、の3つです。\n\n■ この回の判定（2026年10月27日時点の、二人の見立て）\n判定するのは：iPhone 15 Pro か iPhone 16 以降を持つ人が、メールや予定を純正のアプリに集めて、日本語の声でまとめて探したり、予定を入れたりする。お店や会社の段取りに使う、という使い方\n大輔: もうすぐ来る（声でまとめて探すのは、もう日本語で始まっている。LINEのような日本で使うアプリが対応すれば、もう一段広がる、という見立て）\n沙織: もうすぐ来る（純正のアプリに集めるなら、今日から試せる。試し版なので、大事な送り先やお金の話は自分で確かめてから、という見立て）\n※Appleの発表は「ずっと有能で、会話がうまくなった（profoundly more capable and conversational）」という言い方ですが、Appleが公開した賢さの比べは、Apple社内の採点者による、自社の去年の頭脳との比較だけです。\n※札の順は、まだ眉唾 → 根拠待ち → 3年はかかる → もうすぐ来る。\n\n■ 資料に書いてあること\n・Apple（2026年9月14日の発表）: 新しい機能は、次の世代の Apple Foundation Models が動かしている。「custom-built in collaboration with Google and its Gemini models」（GoogleとGeminiモデルとの協業で作った）。端末の中と、Appleのサーバー（Private Cloud Compute）で動く。Siri AI はまず英語版のベータとして始まり、翌月にフランス語・日本語・韓国語・ポルトガル語・スペイン語に広げる。サーバー側の頭脳を使う機能（Siri AI を含む）には1日の利用上限があり、上限は機能・頼み方の難しさ・混み具合などで変わる。枠を増やすのは将来有料。Private Cloud Compute で処理するとき、個人のデータは保存されず、Appleも含め誰も見られない（Apple自身の説明）\n・Apple（iOS 27.2 の更新内容）: Siri AI は、過去の会話を覚えて使える。メッセージに添付された写真、カレンダーの参加者、留守番電話、Safariの履歴なども材料にできる。Siri・検索・提案が使えるアプリを、一つの設定で外せる（Excluded Apps）。日本語などに対応。対象は iPhone 16 以降と iPhone 15 Pro／Pro Max。EUと中国本土では使えない\n・Apple（利用上限のサポートページ）: 上限に達しても、しばらく時間をおけば、その機能はまた使える。回数・料金は書かれていない\n・Apple（機械学習研究のページ）: 評価は Apple 社内の採点者による。サーバーの新しい頭脳（AFM 3 Cloud）は、2025年の頭脳との比べで、64.7%の質問で選ばれ、2025年版は8.7%。この伸びは、日本語を含む言語のグループでも同じ向き。Geminiなど他社と性能を比べた数字は、このページに無い\n・Apple（メールのアカウントのサポートページ）: iPhone純正のメールのアプリには、Googleなどのメールのアカウントを登録できる\n\n■ 使った人の報告について（匿名の傾向として紹介）\n・海外（英語版、9月から約6週間）: 個人の検証記事で、筆者が自分で選んだ125項目のうち、×の印が付いたのは13項目（一部だけ成功を含む）。自分の情報の分野の×は、健康アプリの2つ（健康アプリが未対応）。GmailのアプリはSiri非対応と書かれている。ほかのAIと同じ項目で比べたものではありません。ほかの報告では「返事が遅い」「エラーが出る」という不満が多く見られました\n・日本（日本語版、発売前後の数日）: 同じ名前の候補が多くても意図した相手に送れた、チラシから30件を超える予定を一度に登録できた、日本語の聞き取りが大きく良くなった、など。不満は「答え方が硬い」「読み間違い」、LINEやMessengerは探せない、Gmailは一部しか読めない、など\n・海外と日本では、言語・版・使った期間が違うため、どちらが良い・悪いとは比べられません。「Geminiの一世代前くらい」という印象も、「深い調べ物はほかのAIが上」という声も、同じ問題で測った数字ではありません（確かめた範囲で、そうした数字は見つかりませんでした）\n\n■ この回の資料について\n・Siri AI の日本語版は、Appleがベータ版として広げているものです（2026年10月27日時点）\n・Siriの頭脳が「Geminiそのもの」かどうかは、Appleの資料には書かれていません（Appleの言い方は「Googleとの協業で作った」）\n・日本語版で対応している他社のアプリの一覧は、Appleの資料では確認できませんでした\n・Siriに他社のAIをつなぐ仕組みについては、資料で確認できていないため扱っていません\n\n※判定は2026年10月27日時点のものです。\n※画面の挿絵（データセンター・店の事務机・パン屋の台所）はイメージで、iPhoneやSiriの実際の画面は描いていません。\n\n■ 参考（一次資料）\n[1] Apple Support「About iOS 27 Updates」（iOS 27.2） https://support.apple.com/en-us/149076\n[2] Apple Newsroom「Siri AI, a profoundly more capable and personal assistant, is here」（2026年9月14日） https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/\n[3] Apple Support「Learn about Apple Intelligence usage limits」（2026年9月9日） https://support.apple.com/en-us/127901\n[4] Apple Machine Learning Research「Introducing the Third Generation of Apple's Foundation Models」（2026年6月8日、9月9日更新） https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models\n[5] Apple Support「Add an email account to your iPhone or iPad」 https://support.apple.com/en-us/102619\n\n■ 参考（使った人の検証。一次資料ではありません）\n[6] David Pogue「125 Tests of the New AI Siri」（2026年9月17日、英語版） https://pogueman.substack.com/p/125-tests-of-the-new-ai-siri",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 11,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "新しいシリが、日本語で使えるようになった！",
+          "expression": "excited",
+          "tone": "excited, like breaking news",
+          "display": "新しいSiriが、日本語で使えるようになった！"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「新しいシリが、日本語で使えるようになった！」"
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 6,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "中身はジェミニって聞くけど、本当？",
+          "expression": "doubt",
+          "display": "中身はGeminiって聞くけど、本当？"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "沙織「中身はジェミニって聞くけど、本当？」"
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 9,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "メールも予定も写真も、声でまとめて探せる。",
+          "expression": "excited"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「メールも予定も写真も、声でまとめて探せる。」"
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 11,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "でも、ラインは探せない。仕事にどこまで使える？",
+          "expression": "thinking",
+          "tag": "question",
+          "display": "でも、LINEは探せない。仕事にどこまで使える？"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "沙織「でも、ラインは探せない。仕事にどこまで使える？」"
+    },
+    {
+      "scene_id": 5,
+      "type": "setup",
+      "bgm_role": "intro",
+      "image_asset": "base_cafe_b",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "お題は、アイフォーンの新しいシリ。日本語でも使えるようになった。アップルは「シリ・エーアイ」と呼んでる。",
+          "expression": "excited",
+          "display": "お題は、iPhoneの新しいSiri。日本語でも使えるようになった。Appleは「Siri AI」と呼んでる。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "前のシリと、何が違うの？",
+          "expression": "neutral",
+          "display": "前のSiriと、何が違うの？"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "アップルの発表では、メールやメッセージ、写真といった自分の情報から、答えを探してくれる。アプリの操作も頼める。",
+          "expression": "excited",
+          "display": "Appleの発表では、メールやメッセージ、写真といった自分の情報から、答えを探してくれる。アプリの操作も頼める。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、まだ試し版。アップルは9月に、まず英語で、ベータ版、つまり試しに使ってもらう版として始めた。日本語も、その試し版に加わった形。使えるのは、アイフォーン15プロと、16以降。",
+          "expression": "neutral",
+          "display": "ただ、まだ試し版。Appleは9月に、まず英語で、ベータ版、つまり試しに使ってもらう版として始めた。日本語も、その試し版に加わった形。使えるのは、iPhone 15 Proと、16以降。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それと、よく言われてるのが、「新しいシリの中身は、グーグルのジェミニらしい」という話。ジェミニっていうのは、グーグルが作っているAIのこと。",
+          "expression": "thinking",
+          "display": "それと、よく言われてるのが、「新しいSiriの中身は、GoogleのGeminiらしい」という話。Geminiっていうのは、Googleが作っているAIのこと。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "この回では、AIの本体のことを「頭脳」と呼ぼう。頭脳がジェミニなら、ジェミニと同じくらい賢いはず、という話ね。",
+          "expression": "doubt",
+          "display": "この回では、AIの本体のことを「頭脳」と呼ぼう。頭脳がGeminiなら、Geminiと同じくらい賢いはず、という話ね。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想。頭脳がジェミニ譲りなら、もう仕事の秘書になれる。次は、小さなお店や会社の段取りにも、すぐ広がると思う。",
+          "expression": "excited",
+          "tag": "prediction",
+          "display": "僕の予想。頭脳がGemini譲りなら、もう仕事の秘書になれる。次は、小さなお店や会社の段取りにも、すぐ広がると思う。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想。本物なら、私も使いたい。日本語でも、使えるようにはなった。でも、日本語で自分の情報を正しく探せる出来になるのは、英語版から何か月も遅れると見てる。確かめたいのは、そこ。",
+          "expression": "thinking",
+          "tag": "prediction"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、3つ確かめよう。頭脳は本当にジェミニなのか。自分の情報を、どこまでまとめて探せるか。試し版で、毎日どこまで頼れるか。",
+          "expression": "thinking",
+          "display": "じゃあ、3つ確かめよう。頭脳は本当にGeminiなのか。自分の情報を、どこまでまとめて探せるか。試し版で、毎日どこまで頼れるか。"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「お題は、アイフォーンの新しいシリ。日本語でも使えるようになった。アップルは「シリ・エーアイ」と呼んでる。」\n沙織「前のシリと、何が違うの？」\n大輔「アップルの発表では、メールやメッセージ、写真といった自分の情報から、答えを探してくれる。アプリの操作も頼める。」\n沙織「ただ、まだ試し版。アップルは9月に、まず英語で、ベータ版、つまり試しに使ってもらう版として始めた。日本語も、その試し版に加わった形。使えるのは、アイフォーン15プロと、16以降。」\n大輔「それと、よく言われてるのが、「新しいシリの中身は、グーグルのジェミニらしい」という話。ジェミニっていうのは、グーグルが作っているAIのこと。」\n沙織「この回では、AIの本体のことを「頭脳」と呼ぼう。頭脳がジェミニなら、ジェミニと同じくらい賢いはず、という話ね。」\n大輔「僕の予想。頭脳がジェミニ譲りなら、もう仕事の秘書になれる。次は、小さなお店や会社の段取りにも、すぐ広がると思う。」\n沙織「私の予想。本物なら、私も使いたい。日本語でも、使えるようにはなった。でも、日本語で自分の情報を正しく探せる出来になるのは、英語版から何か月も遅れると見てる。確かめたいのは、そこ。」\n大輔「じゃあ、3つ確かめよう。頭脳は本当にジェミニなのか。自分の情報を、どこまでまとめて探せるか。試し版で、毎日どこまで頼れるか。」"
+    },
+    {
+      "scene_id": 6,
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 1,
+      "round_title": "頭脳はGemini？ 賢さは比べられる？",
+      "image_prompt": "Bright, clean daytime illustration of a modern data center aisle: long rows of tall dark-gray server racks with small green and blue status lights, a polished light floor, soft white ceiling lights, calm and orderly mood, seen from the middle of the aisle with the rows receding toward the center. No people. No logos, no brand marks, no readable text, no letters, no numbers, no screens with content.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "まず頭脳。日本語版を試した人からは、話しかけたことを、前よりずっと分かってくれる、という声がある。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、その頭脳はジェミニなの？ アップル自身は、どう書いてる？",
+          "expression": "doubt",
+          "display": "で、その頭脳はGeminiなの？ Apple自身は、どう書いてる？"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "9月の発表に、その一文がある。",
+          "expression": "neutral"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「まず頭脳。日本語版を試した人からは、話しかけたことを、前よりずっと分かってくれる、という声がある。」\n沙織「で、その頭脳はジェミニなの？ アップル自身は、どう書いてる？」\n大輔「9月の発表に、その一文がある。」"
+    },
+    {
+      "scene_id": 7,
+      "type": "check",
+      "bgm_role": "main",
+      "round": 1,
+      "reference_index": 1,
+      "source_card": {
+        "kind": "press",
+        "source": "Apple「Siri AI」の発表（2026年9月14日）",
+        "quote": "custom-built in collaboration with Google and its Gemini models",
+        "quote_type": "原文",
+        "highlight": "in collaboration with",
+        "items": [
+          "訳: GoogleとそのGeminiモデルと協力して作った",
+          "動かすのはAppleの頭脳（Apple Foundation Models）",
+          "端末の中と、Appleのサーバーで動く"
+        ],
+        "note": "Geminiと性能を比べた数字は、Appleの資料には無い",
+        "reference_index": 1
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "アップルの9月の発表。新しいシリを動かすのは、アップルの新しい頭脳。それを「グーグルと、そのジェミニと協力して作り込んだ」と書いてる。",
+          "expression": "neutral",
+          "display": "Appleの9月の発表。新しいSiriを動かすのは、Appleの新しい頭脳。それを「Googleと、そのGeminiと協力して作り込んだ」と書いてる。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "協力してってことは、ジェミニの力が入ってるってことでしょ。",
+          "expression": "excited",
+          "display": "協力してってことは、Geminiの力が入ってるってことでしょ。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "答えを一言で言うと、ジェミニと無関係ではない。グーグルと、そのジェミニと協力して作った、と書いてある。ただ、ジェミニそのもの、とは書いてない。名前はアップルの頭脳のまま。",
+          "expression": "thinking",
+          "display": "答えを一言で言うと、Geminiと無関係ではない。Googleと、そのGeminiと協力して作った、と書いてある。ただ、Geminiそのもの、とは書いてない。名前はAppleの頭脳のまま。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、僕の聞いた「中身はジェミニ」は、半分当たってた。正しくは、ジェミニと協力して作った、アップルの頭脳だ。",
+          "expression": "deflated",
+          "tag": "turn",
+          "display": "じゃあ、僕の聞いた「中身はGemini」は、半分当たってた。正しくは、Geminiと協力して作った、Appleの頭脳だ。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう。だから、ジェミニと同じ賢さ、とまでは言えない。この発表には、新しい頭脳の賢さを、ジェミニと比べた数字も無い。",
+          "expression": "doubt",
+          "tag": "weakness",
+          "display": "そう。だから、Geminiと同じ賢さ、とまでは言えない。この発表には、新しい頭脳の賢さを、Geminiと比べた数字も無い。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "使った人の中には、今のジェミニより少し前の版くらい、という印象を持つ人もいるね。",
+          "expression": "thinking",
+          "display": "使った人の中には、今のGeminiより少し前の版くらい、という印象を持つ人もいるね。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "海外でも、深い調べ物は専門のAIの方が上、という声がある。でも、どっちも印象。同じ問題で測った数字は、確かめた範囲では見つからなかった。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だったら、物差しを変えよう。ジェミニと比べられないなら、アップルの去年の頭脳から、どれだけ伸びたかを見る。",
+          "expression": "excited",
+          "tag": "workaround",
+          "display": "だったら、物差しを変えよう。Geminiと比べられないなら、Appleの去年の頭脳から、どれだけ伸びたかを見る。"
+        }
+      ],
+      "narrator": "dialogue",
+      "image_asset": "cards/kl050_S07",
+      "narration": "沙織「アップルの9月の発表。新しいシリを動かすのは、アップルの新しい頭脳。それを「グーグルと、そのジェミニと協力して作り込んだ」と書いてる。」\n大輔「協力してってことは、ジェミニの力が入ってるってことでしょ。」\n沙織「答えを一言で言うと、ジェミニと無関係ではない。グーグルと、そのジェミニと協力して作った、と書いてある。ただ、ジェミニそのもの、とは書いてない。名前はアップルの頭脳のまま。」\n大輔「じゃあ、僕の聞いた「中身はジェミニ」は、半分当たってた。正しくは、ジェミニと協力して作った、アップルの頭脳だ。」\n沙織「そう。だから、ジェミニと同じ賢さ、とまでは言えない。この発表には、新しい頭脳の賢さを、ジェミニと比べた数字も無い。」\n大輔「使った人の中には、今のジェミニより少し前の版くらい、という印象を持つ人もいるね。」\n沙織「海外でも、深い調べ物は専門のAIの方が上、という声がある。でも、どっちも印象。同じ問題で測った数字は、確かめた範囲では見つからなかった。」\n大輔「だったら、物差しを変えよう。ジェミニと比べられないなら、アップルの去年の頭脳から、どれだけ伸びたかを見る。」\n［画面の資料カード］Apple「Siri AI」の発表（2026年9月14日） 「custom-built in collaboration with Google and its Gemini models」（原文） ・訳: GoogleとそのGeminiモデルと協力して作った ・動かすのはAppleの頭脳（Apple Foundation Models） ・端末の中と、Appleのサーバーで動く ※Geminiと性能を比べた数字は、Appleの資料には無い"
+    },
+    {
+      "scene_id": 8,
+      "type": "check",
+      "bgm_role": "main",
+      "round": 1,
+      "reference_index": 3,
+      "source_card": {
+        "kind": "blog",
+        "source": "Apple 機械学習研究のページ（2026年6月8日、9月9日更新）",
+        "quote": "preferred on 64.7 percent of prompts compared to only 8.7 percent",
+        "quote_type": "原文",
+        "highlight": "64.7 percent",
+        "items": [
+          "Apple社内の採点者が、新旧の答えを並べて選ぶ",
+          "サーバーの新しい頭脳 64.7%",
+          "2025年の頭脳 8.7%",
+          "日本語を含む言語グループでも同じ向き",
+          "Gemini・他社と比べた数字は無い"
+        ],
+        "reference_index": 3
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "アップルが賢さの数字を出している、研究のページ。比べた相手は、自分たちの去年の頭脳だけ。社内の採点者が、同じ質問への新旧2つの答えを並べて、良い方を選ぶ。",
+          "expression": "neutral",
+          "display": "Appleが賢さの数字を出している、研究のページ。比べた相手は、自分たちの去年の頭脳だけ。社内の採点者が、同じ質問への新旧2つの答えを並べて、良い方を選ぶ。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "アップルの頭脳には、アイフォーンの中で動くものと、アップルの大きなコンピューター、つまりサーバーで動くものがある。この数字は、どっち？",
+          "expression": "thinking",
+          "display": "Appleの頭脳には、iPhoneの中で動くものと、Appleの大きなコンピューター、つまりサーバーで動くものがある。この数字は、どっち？"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "サーバーの方。新しい頭脳は、100問のうち、およそ65問で選ばれた。",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "去年の頭脳は？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "9問ほど。残りの、どちらの答えも選ばれなかった分が、およそ26問。その内訳は、書いてない。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "65対9。去年の頭脳とは、大差だ。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "日本語だけの数字は無い。でも、日本語を含むいくつかの言葉をまとめた比べでも、新しい頭脳の方がよく選ばれた。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ジェミニとの勝ち負けは別にして、日本語で頼んでも、去年より大きく伸びた頭脳が答えてくれる。",
+          "expression": "convinced",
+          "tag": "hope",
+          "display": "Geminiとの勝ち負けは別にして、日本語で頼んでも、去年より大きく伸びた頭脳が答えてくれる。"
+        }
+      ],
+      "narrator": "dialogue",
+      "image_asset": "cards/kl050_S08",
+      "narration": "沙織「アップルが賢さの数字を出している、研究のページ。比べた相手は、自分たちの去年の頭脳だけ。社内の採点者が、同じ質問への新旧2つの答えを並べて、良い方を選ぶ。」\n大輔「アップルの頭脳には、アイフォーンの中で動くものと、アップルの大きなコンピューター、つまりサーバーで動くものがある。この数字は、どっち？」\n沙織「サーバーの方。新しい頭脳は、100問のうち、およそ65問で選ばれた。」\n大輔「去年の頭脳は？」\n沙織「9問ほど。残りの、どちらの答えも選ばれなかった分が、およそ26問。その内訳は、書いてない。」\n大輔「65対9。去年の頭脳とは、大差だ。」\n沙織「日本語だけの数字は無い。でも、日本語を含むいくつかの言葉をまとめた比べでも、新しい頭脳の方がよく選ばれた。」\n大輔「ジェミニとの勝ち負けは別にして、日本語で頼んでも、去年より大きく伸びた頭脳が答えてくれる。」\n［画面の資料カード］Apple 機械学習研究のページ（2026年6月8日、9月9日更新） 「preferred on 64.7 percent of prompts compared to only 8.7 percent」（原文） ・Apple社内の採点者が、新旧の答えを並べて選ぶ ・サーバーの新しい頭脳 64.7% ・2025年の頭脳 8.7% ・日本語を含む言語グループでも同じ向き ・Gemini・他社と比べた数字は無い"
+    },
+    {
+      "scene_id": 9,
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 2,
+      "round_title": "自分の情報を、まとめて探せる？",
+      "image_prompt": "Warm late-afternoon light in the small back office of a Japanese neighborhood shop, seen from slightly above: a wooden desk with a paper wall calendar pinned above it with handwritten marks (no readable text), a stack of opened envelopes, a few printed invoices, a box of business cards, a paper flyer from a local event, a cup of green tea, and a closed notebook. Information is scattered across many places. No phones, no computers, no screens. No people. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "次は、仕事の段取り。アップルの発表の例は、友だちへのメッセージや、本の読み上げ。その先で、小さなお店や会社にも使えると思う。たとえば「返事をしていない取引先のメールは？」と聞く。",
+          "expression": "excited",
+          "tag": "use_case",
+          "display": "次は、仕事の段取り。Appleの発表の例は、友だちへのメッセージや、本の読み上げ。その先で、小さなお店や会社にも使えると思う。たとえば「返事をしていない取引先のメールは？」と聞く。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それは、メールと予定と連絡先を、またいで探す仕事ね。お店でも研究室でも、そこが一番手間がかかる。でも、日本語で、そこまでできるの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "まず海外の声。英語版は、9月から6週間ほど使われてる。自分で項目を選んで試した人がいる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、それ何項目で試したの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "125項目。",
+          "expression": "excited"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「次は、仕事の段取り。アップルの発表の例は、友だちへのメッセージや、本の読み上げ。その先で、小さなお店や会社にも使えると思う。たとえば「返事をしていない取引先のメールは？」と聞く。」\n沙織「それは、メールと予定と連絡先を、またいで探す仕事ね。お店でも研究室でも、そこが一番手間がかかる。でも、日本語で、そこまでできるの？」\n大輔「まず海外の声。英語版は、9月から6週間ほど使われてる。自分で項目を選んで試した人がいる。」\n沙織「で、それ何項目で試したの？」\n大輔「125項目。」"
+    },
+    {
+      "scene_id": 10,
+      "type": "check",
+      "bgm_role": "main",
+      "round": 2,
+      "reference_index": 5,
+      "source_card": {
+        "kind": "blog",
+        "source": "海外の個人の検証記事（英語版、2026年9月17日）",
+        "quote": "So I ran it through 125 tests.",
+        "quote_type": "原文",
+        "highlight": "125 tests",
+        "items": [
+          "英語版で、筆者が自分で選んだ125項目",
+          "×の印は13項目（一部だけ成功を含む）",
+          "自分の情報の分野の×は、健康アプリの2つ",
+          "GmailのアプリはSiriに対応していない",
+          "ほかのAIと同じ項目では比べていない"
+        ],
+        "reference_index": 5
+      },
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "試したのは、メッセージやメール、予定、写真といった自分の情報から、アプリの操作、カメラまで。125項目のうち、×の印が付いたのは13項目。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "9割近くは、うまくいったわけね。",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "自分の情報の分野では、×は健康のアプリの2つだけ。その人が「あの件のメールに、返事したっけ？」と聞いたら、返事をした日と中身まで答えた。「みんなが返事を待ってるものは？」にも、メールやメッセージから一覧を出した。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ちょっと待って。これは英語版で、試す項目は筆者が自分で選んだもの。ほかのAIと同じ問題で比べたわけでもない。一人の検証ね。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "その通り。だから、日本語版の声も持ってきた。みんなに配られる前の版で試した人と、使い始めたばかりの人の報告だけどね。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "日本語でも、ちゃんと探せてるの？ 返事をしていないメール、みたいな頼み方は？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "その頼み方ができた、という日本語の報告は、まだ見つけてない。でも、連絡先に同じ名前の人が9人ほどいても、言いたかった相手にメッセージを送れた。チラシを写真に撮って、30件を超える予定を一度に入れられた、という報告もある。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "連絡先の同じ名前の人を見分けたり、チラシから予定をまとめて入れたり。日本語でも、自分の情報を探して動かす力は褒められてる。何か月も遅れる、という私の予想は、外れそう。返事をしていないメールを探せるかは、これからの宿題ね。",
+          "expression": "convinced",
+          "tag": "turn"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、壁もある。使った人の報告では、シリが中を探せるのは、アプリを作った会社が、シリに対応させたアプリだけ。使う側の設定では増やせない。アプリを作った会社の対応待ち。",
+          "expression": "doubt",
+          "tag": "barrier",
+          "display": "ただ、壁もある。使った人の報告では、Siriが中を探せるのは、アプリを作った会社が、Siriに対応させたアプリだけ。使う側の設定では増やせない。アプリを作った会社の対応待ち。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "どのアプリが対応しているかは、日本と海外で違う。アップルの発表が名指ししたのは、海外でよく使われる、ワッツアップというメッセージのアプリ。日本で普段使われてるラインは、日本の報告がそろって「探せない」と言ってる。",
+          "expression": "thinking",
+          "display": "どのアプリが対応しているかは、日本と海外で違う。Appleの発表が名指ししたのは、海外でよく使われる、WhatsAppというメッセージのアプリ。日本で普段使われてるLINEは、日本の報告がそろって「探せない」と言ってる。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "グーグルが作ったジーメールのアプリの中は、日本の報告では、一部しか読めなかった。海外の検証でも、シリに対応していない、と書かれてる。日本だけの話じゃない。",
+          "expression": "neutral",
+          "display": "Googleが作ったGmailのアプリの中は、日本の報告では、一部しか読めなかった。海外の検証でも、Siriに対応していない、と書かれてる。日本だけの話じゃない。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "本物なら、私は、研究の打ち合わせの予定と、メールで届いた資料を、声で探すのに使いたい。だから、メールの壁は越えたい。",
+          "expression": "thinking",
+          "tag": "skeptic_wish"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だったら、見せたい情報を、アイフォーンに最初から入っているアップルのアプリに集める。メール、カレンダー、連絡先、写真のアプリ。この回では、これを純正のアプリと呼ぶ。たとえば、ジーメールのアドレスを、アイフォーンに最初から入っている「メール」のアプリに追加する。追加のしかたは、アップルの説明書に載ってる。",
+          "expression": "excited",
+          "tag": "workaround",
+          "display": "だったら、見せたい情報を、iPhoneに最初から入っているAppleのアプリに集める。メール、カレンダー、連絡先、写真のアプリ。この回では、これを純正のアプリと呼ぶ。たとえば、Gmailのアドレスを、iPhoneに最初から入っている「メール」のアプリに追加する。追加のしかたは、Appleの説明書に載ってる。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "グーグルのアプリの中を探すんじゃなくて、メールを純正の「メール」のアプリの側に持ってくるのね。そうすれば、シリが探せる可能性がある。海外でも、純正のメールのアプリを使っていない人は、メールが見つからないことがある、という報告があった。どこまで探せるかは、試して確かめよう。",
+          "expression": "thinking",
+          "display": "Googleのアプリの中を探すんじゃなくて、メールを純正の「メール」のアプリの側に持ってくるのね。そうすれば、Siriが探せる可能性がある。海外でも、純正のメールのアプリを使っていない人は、メールが見つからないことがある、という報告があった。どこまで探せるかは、試して確かめよう。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "自分の連絡、予定、写真をまたいで探す力は、英語でも日本語でも、一番の褒めどころ。純正のアプリに集めれば、その力が使える。",
+          "expression": "convinced",
+          "tag": "hope"
+        }
+      ],
+      "narrator": "dialogue",
+      "image_asset": "cards/kl050_S10",
+      "narration": "大輔「試したのは、メッセージやメール、予定、写真といった自分の情報から、アプリの操作、カメラまで。125項目のうち、×の印が付いたのは13項目。」\n沙織「9割近くは、うまくいったわけね。」\n大輔「自分の情報の分野では、×は健康のアプリの2つだけ。その人が「あの件のメールに、返事したっけ？」と聞いたら、返事をした日と中身まで答えた。「みんなが返事を待ってるものは？」にも、メールやメッセージから一覧を出した。」\n沙織「ちょっと待って。これは英語版で、試す項目は筆者が自分で選んだもの。ほかのAIと同じ問題で比べたわけでもない。一人の検証ね。」\n大輔「その通り。だから、日本語版の声も持ってきた。みんなに配られる前の版で試した人と、使い始めたばかりの人の報告だけどね。」\n沙織「日本語でも、ちゃんと探せてるの？ 返事をしていないメール、みたいな頼み方は？」\n大輔「その頼み方ができた、という日本語の報告は、まだ見つけてない。でも、連絡先に同じ名前の人が9人ほどいても、言いたかった相手にメッセージを送れた。チラシを写真に撮って、30件を超える予定を一度に入れられた、という報告もある。」\n沙織「連絡先の同じ名前の人を見分けたり、チラシから予定をまとめて入れたり。日本語でも、自分の情報を探して動かす力は褒められてる。何か月も遅れる、という私の予想は、外れそう。返事をしていないメールを探せるかは、これからの宿題ね。」\n沙織「ただ、壁もある。使った人の報告では、シリが中を探せるのは、アプリを作った会社が、シリに対応させたアプリだけ。使う側の設定では増やせない。アプリを作った会社の対応待ち。」\n大輔「どのアプリが対応しているかは、日本と海外で違う。アップルの発表が名指ししたのは、海外でよく使われる、ワッツアップというメッセージのアプリ。日本で普段使われてるラインは、日本の報告がそろって「探せない」と言ってる。」\n沙織「グーグルが作ったジーメールのアプリの中は、日本の報告では、一部しか読めなかった。海外の検証でも、シリに対応していない、と書かれてる。日本だけの話じゃない。」\n沙織「本物なら、私は、研究の打ち合わせの予定と、メールで届いた資料を、声で探すのに使いたい。だから、メールの壁は越えたい。」\n大輔「だったら、見せたい情報を、アイフォーンに最初から入っているアップルのアプリに集める。メール、カレンダー、連絡先、写真のアプリ。この回では、これを純正のアプリと呼ぶ。たとえば、ジーメールのアドレスを、アイフォーンに最初から入っている「メール」のアプリに追加する。追加のしかたは、アップルの説明書に載ってる。」\n沙織「グーグルのアプリの中を探すんじゃなくて、メールを純正の「メール」のアプリの側に持ってくるのね。そうすれば、シリが探せる可能性がある。海外でも、純正のメールのアプリを使っていない人は、メールが見つからないことがある、という報告があった。どこまで探せるかは、試して確かめよう。」\n大輔「自分の連絡、予定、写真をまたいで探す力は、英語でも日本語でも、一番の褒めどころ。純正のアプリに集めれば、その力が使える。」\n［画面の資料カード］海外の個人の検証記事（英語版、2026年9月17日） 「So I ran it through 125 tests.」（原文） ・英語版で、筆者が自分で選んだ125項目 ・×の印は13項目（一部だけ成功を含む） ・自分の情報の分野の×は、健康アプリの2つ ・GmailのアプリはSiriに対応していない ・ほかのAIと同じ項目では比べていない"
+    },
+    {
+      "scene_id": 11,
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 3,
+      "round_title": "試し版で、毎日どこまで頼れる？",
+      "image_prompt": "Early morning in a small Japanese bakery kitchen, clearly before sunrise with soft blue light outside the window and warm lights inside: on a floured wooden counter, two flour-dusted hands and forearms knead a ball of bread dough, seen from above and slightly in front, only the hands and forearms visible (no face, no body). Around them: baking trays with shaped rolls, a bag of flour, and a paper order slip clipped to the wall (no readable text). Busy, cozy, practical mood. No phones, no screens. No logos, no brand marks, no readable text, no letters, no numbers.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "最後は、毎日の使い方。手がふさがってる時こそ、声の出番。たとえばパン屋さんなら、生地をこねながら「明日の予約は何件？」と聞ける。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "声で頼むなら、答えの質はどう？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "日本語版の報告で多い不満は、答え方がぎこちなくて堅苦しい、読み上げで読み間違える。海外の英語版では、返事が遅い、エラーが出る、が中心。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、海外は6週間ほど使った人の声、日本は始まったばかりの声。言葉も版も違うから、どっちが上とは決められない。使えるけど、まだぎこちない、と思っておこう。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "確かに。もう一つの心配は、1日に何回でも使えるのか。",
+          "expression": "deflated"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "アップルの発表に、その注意書きがある。",
+          "expression": "neutral",
+          "display": "Appleの発表に、その注意書きがある。"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「最後は、毎日の使い方。手がふさがってる時こそ、声の出番。たとえばパン屋さんなら、生地をこねながら「明日の予約は何件？」と聞ける。」\n沙織「声で頼むなら、答えの質はどう？」\n大輔「日本語版の報告で多い不満は、答え方がぎこちなくて堅苦しい、読み上げで読み間違える。海外の英語版では、返事が遅い、エラーが出る、が中心。」\n沙織「ただ、海外は6週間ほど使った人の声、日本は始まったばかりの声。言葉も版も違うから、どっちが上とは決められない。使えるけど、まだぎこちない、と思っておこう。」\n大輔「確かに。もう一つの心配は、1日に何回でも使えるのか。」\n沙織「アップルの発表に、その注意書きがある。」"
+    },
+    {
+      "scene_id": 12,
+      "type": "check",
+      "bgm_role": "main",
+      "round": 3,
+      "reference_index": 1,
+      "source_card": {
+        "kind": "press",
+        "source": "Apple「Siri AI」の発表（2026年9月14日）の注意書き",
+        "quote": "features that rely on server-side models are subject to daily usage limits",
+        "quote_type": "原文",
+        "highlight": "daily usage limits",
+        "items": [
+          "訳: サーバーの頭脳を使う機能には、1日の上限",
+          "対象にSiri AIを含む",
+          "上限は機能・頼み方・混み具合などで変わる",
+          "回数は書かれていない",
+          "枠を増やすのは、将来は有料"
+        ],
+        "reference_index": 1
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "サーバーの頭脳を使う機能には、1日の上限がある。シリも、その対象。どの頼みがサーバーに回るかは、資料に書いてない。上限は、頼み方の難しさや、混み具合などで変わる、とある。",
+          "expression": "neutral",
+          "tag": "weakness",
+          "display": "サーバーの頭脳を使う機能には、1日の上限がある。Siriも、その対象。どの頼みがサーバーに回るかは、資料に書いてない。上限は、頼み方の難しさや、混み具合などで変わる、とある。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "何回までなの？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "回数も料金も、どこにも書いてない。枠を増やすのは、これから有料になる、と書いてある。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だったら、毎日の短い用事から使う。上限が頼み方の難しさで変わるなら、予定を入れる、相手を探す、くらいの用事から始めればいい。ここは僕の見立てだけど。",
+          "expression": "excited",
+          "tag": "workaround"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "アップルの別のページには、上限に達しても、しばらく時間をおけば、また使える、とある。",
+          "expression": "convinced",
+          "display": "Appleの別のページには、上限に達しても、しばらく時間をおけば、また使える、とある。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "お客さんのメールを読ませて大丈夫か、という心配はどう？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "アップルは、サーバーで処理するとき、個人のデータは保存せず、アップルも見られない、と書いてる。アップル自身の説明だけどね。気になるなら、お客さんの情報が入ったアプリは、設定一つで、シリに見せないようにできる。10月の更新で入った機能。",
+          "expression": "neutral",
+          "display": "Appleは、サーバーで処理するとき、個人のデータは保存せず、Appleも見られない、と書いてる。Apple自身の説明だけどね。気になるなら、お客さんの情報が入ったアプリは、設定一つで、Siriに見せないようにできる。10月の更新で入った機能。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "回数の上限はあっても、時間をおけばまた使える。手がふさがってる時の、毎日の小さな用事から、もう頼める。",
+          "expression": "convinced",
+          "tag": "hope"
+        }
+      ],
+      "narrator": "dialogue",
+      "image_asset": "cards/kl050_S12",
+      "narration": "沙織「サーバーの頭脳を使う機能には、1日の上限がある。シリも、その対象。どの頼みがサーバーに回るかは、資料に書いてない。上限は、頼み方の難しさや、混み具合などで変わる、とある。」\n大輔「何回までなの？」\n沙織「回数も料金も、どこにも書いてない。枠を増やすのは、これから有料になる、と書いてある。」\n大輔「だったら、毎日の短い用事から使う。上限が頼み方の難しさで変わるなら、予定を入れる、相手を探す、くらいの用事から始めればいい。ここは僕の見立てだけど。」\n沙織「アップルの別のページには、上限に達しても、しばらく時間をおけば、また使える、とある。」\n大輔「お客さんのメールを読ませて大丈夫か、という心配はどう？」\n沙織「アップルは、サーバーで処理するとき、個人のデータは保存せず、アップルも見られない、と書いてる。アップル自身の説明だけどね。気になるなら、お客さんの情報が入ったアプリは、設定一つで、シリに見せないようにできる。10月の更新で入った機能。」\n大輔「回数の上限はあっても、時間をおけばまた使える。手がふさがってる時の、毎日の小さな用事から、もう頼める。」\n［画面の資料カード］Apple「Siri AI」の発表（2026年9月14日）の注意書き 「features that rely on server-side models are subject to daily usage limits」（原文） ・訳: サーバーの頭脳を使う機能には、1日の上限 ・対象にSiri AIを含む ・上限は機能・頼み方・混み具合などで変わる ・回数は書かれていない ・枠を増やすのは、将来は有料"
+    },
+    {
+      "scene_id": 13,
+      "type": "verdict",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "verdict_from_line": 7,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想は「頭脳がジェミニ譲りなら、もう仕事の秘書になれる」。ジェミニ譲りは半分当たりで、頭脳は、ジェミニと協力して作ったアップルの頭脳だった。でも、仕事の段取りに使える場面は、もうある。",
+          "expression": "thinking",
+          "tag": "vs_prediction",
+          "display": "僕の予想は「頭脳がGemini譲りなら、もう仕事の秘書になれる」。Gemini譲りは半分当たりで、頭脳は、Geminiと協力して作ったAppleの頭脳だった。でも、仕事の段取りに使える場面は、もうある。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想は「日本語で自分の情報を正しく探せる出来になるのは、英語版から何か月も遅れる」。始まったばかりの声だけど、探す力は、日本でも海外と同じように褒められてた。遅れてたのは、ラインのような、日本で使うアプリへの対応の方。",
+          "expression": "amused",
+          "tag": "vs_prediction",
+          "display": "私の予想は「日本語で自分の情報を正しく探せる出来になるのは、英語版から何か月も遅れる」。始まったばかりの声だけど、探す力は、日本でも海外と同じように褒められてた。遅れてたのは、LINEのような、日本で使うアプリへの対応の方。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "判定の札は4つ。近くて確かな方から、「もうすぐ来る」「3年はかかる」「根拠待ち」「まだ眉唾」。「もうすぐ来る」は、もう来ている部分も含めて、使える形で出ているか、1年ほどで出そう、という札。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "アップルは、新しいシリを「格段に有能」と書いてる。でも、賢さを比べた相手は、自分たちの去年の頭脳だけだった。",
+          "expression": "neutral",
+          "display": "Appleは、新しいSiriを「格段に有能」と書いてる。でも、賢さを比べた相手は、自分たちの去年の頭脳だけだった。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だから札は、発表の言葉じゃなく、使い方に付ける。アイフォーン15プロか、16以降を持つ人が、メールや予定を純正のアプリに集めて、日本語の声でまとめて探したり、予定を入れたりする。お店や会社の段取りに使う、という使い方。",
+          "expression": "neutral",
+          "display": "だから札は、発表の言葉じゃなく、使い方に付ける。iPhone 15 Proか、16以降を持つ人が、メールや予定を純正のアプリに集めて、日本語の声でまとめて探したり、予定を入れたりする。お店や会社の段取りに使う、という使い方。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕は「もうすぐ来る」。声でまとめて探すのは、もう日本語で始まってる。ラインのように、日本で使うアプリが対応すれば、もう一段広がる。",
+          "expression": "excited",
+          "display": "僕は「もうすぐ来る」。声でまとめて探すのは、もう日本語で始まってる。LINEのように、日本で使うアプリが対応すれば、もう一段広がる。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私も「もうすぐ来る」。理由は別。純正のアプリに集めるなら、今日から試せる。ただ、試し版だから、大事な送り先やお金の話は、自分で確かめてから。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今日の持ち帰り。新しいシリは、純正のアプリに集めた情報なら、日本語の声でまとめて探せる。お店や会社の段取りに、もう試せる。",
+          "expression": "convinced",
+          "tag": "takeaway",
+          "display": "今日の持ち帰り。新しいSiriは、純正のアプリに集めた情報なら、日本語の声でまとめて探せる。お店や会社の段取りに、もう試せる。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ラインや、ジーメールのアプリの中は、まだ探せないと報告されてる。そこだけは、自分の目で見る。",
+          "expression": "neutral",
+          "display": "LINEや、Gmailのアプリの中は、まだ探せないと報告されてる。そこだけは、自分の目で見る。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今日からできること。対象のアイフォーンなら、10月の更新を入れて、本体とシリの言葉を日本語にしておく。日本語版の手順を紹介した記事では、設定のシリで新しいシリの試し版を選ぶと、順番待ちになって、待つ時間は人によって違う、とあった。",
+          "expression": "excited",
+          "tag": "next_step",
+          "display": "今日からできること。対象のiPhoneなら、10月の更新を入れて、本体とSiriの言葉を日本語にしておく。日本語版の手順を紹介した記事では、設定のSiriで新しいSiriの試し版を選ぶと、順番待ちになって、待つ時間は人によって違う、とあった。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そして、仕事のジーメールを純正のメールのアプリに登録して、「返事をしていない取引先のメールは？」と一つ聞いてみる。日本語でこの聞き方ができたという報告は、まだ無い。できたかどうかが、そのまま答え合わせになる。",
+          "expression": "excited",
+          "display": "そして、仕事のGmailを純正のメールのアプリに登録して、「返事をしていない取引先のメールは？」と一つ聞いてみる。日本語でこの聞き方ができたという報告は、まだ無い。できたかどうかが、そのまま答え合わせになる。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "その前に、シリに見せたくないアプリを外しておく。送る、消すは、自分で確かめてから。",
+          "expression": "amused",
+          "display": "その前に、Siriに見せたくないアプリを外しておく。送る、消すは、自分で確かめてから。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "使うのに今かかる料金は、アップルの発表には書いてない。有料になると書いてあるのは、1日の枠を増やすとき。その回数や料金が出たら、そこも確かめよう。",
+          "expression": "amused",
+          "display": "使うのに今かかる料金は、Appleの発表には書いてない。有料になると書いてあるのは、1日の枠を増やすとき。その回数や料金が出たら、そこも確かめよう。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "これは、2026年10月27日時点の、二人の見立て。",
+          "expression": "neutral"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「僕の予想は「頭脳がジェミニ譲りなら、もう仕事の秘書になれる」。ジェミニ譲りは半分当たりで、頭脳は、ジェミニと協力して作ったアップルの頭脳だった。でも、仕事の段取りに使える場面は、もうある。」\n沙織「私の予想は「日本語で自分の情報を正しく探せる出来になるのは、英語版から何か月も遅れる」。始まったばかりの声だけど、探す力は、日本でも海外と同じように褒められてた。遅れてたのは、ラインのような、日本で使うアプリへの対応の方。」\n大輔「判定の札は4つ。近くて確かな方から、「もうすぐ来る」「3年はかかる」「根拠待ち」「まだ眉唾」。「もうすぐ来る」は、もう来ている部分も含めて、使える形で出ているか、1年ほどで出そう、という札。」\n沙織「アップルは、新しいシリを「格段に有能」と書いてる。でも、賢さを比べた相手は、自分たちの去年の頭脳だけだった。」\n大輔「だから札は、発表の言葉じゃなく、使い方に付ける。アイフォーン15プロか、16以降を持つ人が、メールや予定を純正のアプリに集めて、日本語の声でまとめて探したり、予定を入れたりする。お店や会社の段取りに使う、という使い方。」\n大輔「僕は「もうすぐ来る」。声でまとめて探すのは、もう日本語で始まってる。ラインのように、日本で使うアプリが対応すれば、もう一段広がる。」\n沙織「私も「もうすぐ来る」。理由は別。純正のアプリに集めるなら、今日から試せる。ただ、試し版だから、大事な送り先やお金の話は、自分で確かめてから。」\n大輔「今日の持ち帰り。新しいシリは、純正のアプリに集めた情報なら、日本語の声でまとめて探せる。お店や会社の段取りに、もう試せる。」\n沙織「ラインや、ジーメールのアプリの中は、まだ探せないと報告されてる。そこだけは、自分の目で見る。」\n大輔「今日からできること。対象のアイフォーンなら、10月の更新を入れて、本体とシリの言葉を日本語にしておく。日本語版の手順を紹介した記事では、設定のシリで新しいシリの試し版を選ぶと、順番待ちになって、待つ時間は人によって違う、とあった。」\n大輔「そして、仕事のジーメールを純正のメールのアプリに登録して、「返事をしていない取引先のメールは？」と一つ聞いてみる。日本語でこの聞き方ができたという報告は、まだ無い。できたかどうかが、そのまま答え合わせになる。」\n沙織「その前に、シリに見せたくないアプリを外しておく。送る、消すは、自分で確かめてから。」\n沙織「使うのに今かかる料金は、アップルの発表には書いてない。有料になると書いてあるのは、1日の枠を増やすとき。その回数や料金が出たら、そこも確かめよう。」\n大輔「これは、2026年10月27日時点の、二人の見立て。」"
+    },
+    {
+      "scene_id": 14,
+      "type": "closing",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe_b",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "中身がジェミニかどうかより、自分の情報にどこまで届くか。今日、確かめたかったのは、そこだった。",
+          "expression": "amused",
+          "display": "中身がGeminiかどうかより、自分の情報にどこまで届くか。今日、確かめたかったのは、そこだった。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ラインやジーメールのアプリに届いたら、また答え合わせしよう。",
+          "expression": "excited",
+          "display": "LINEやGmailのアプリに届いたら、また答え合わせしよう。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "amused"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "沙織「中身がジェミニかどうかより、自分の情報にどこまで届くか。今日、確かめたかったのは、そこだった。」\n大輔「ラインやジーメールのアプリに届いたら、また答え合わせしよう。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "skeptic",
+          "narration": "新しいシリ、どこまで来た？",
+          "telop_text": "新しいSiri、どこまで来た？",
+          "expression": "doubt",
+          "scene_id": 9
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "新しいシリが、日本語で使えるようになった！",
+          "telop_text": "新しいSiriが、日本語で使えるようになった！",
+          "expression": "excited",
+          "scene_id": 11
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "中身はジェミニ？ アップルの言い方は、グーグルやジェミニと協力して作り込んだ、アップルの頭脳。",
+          "telop_text": "中身はGemini？ Appleの言い方は、GoogleやGeminiと協力して作り込んだ、Appleの頭脳。",
+          "expression": "thinking",
+          "react": "surprised",
+          "scene_id": 6
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "海外の125項目の検証では、自分の情報を探す分野の×は、2つだけ。",
+          "telop_text": "海外の125項目の検証では、自分の情報を探す分野の×は、2つだけ。",
+          "expression": "excited",
+          "react": "doubt",
+          "scene_id": 9
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "でも日本では、ラインが探せない。仕事にどこまで使えるか、判定は本編で。",
+          "telop_text": "でも日本では、LINEが探せない。仕事にどこまで使えるか、判定は本編で。",
+          "expression": "thinking",
+          "scene_id": 11
+        }
+      ]
+    }
+  ],
+  "beginner_review": {
+    "passed_at": "2026-10-27",
+    "rounds": 3,
+    "report": "/private/tmp/claude-503/-Users-claude-kagaku-life/8ddc43b6-c38d-4344-8bf8-1db9eb194845/scratchpad/kl050/kl050_beginner_review_r3.md",
+    "lines_digest": "f3e342166be5"
+  }
+}
