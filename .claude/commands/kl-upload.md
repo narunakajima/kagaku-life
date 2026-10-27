@@ -171,7 +171,9 @@ STEP 2で予約したばかりの本編は公開日まで選べないので、�
 **確認なしで**日本語で返信する。LWの定型返信と違い、コメント内容に合わせて Claude が1件ずつ書く。
 
 1. 取得: `python3 kl_comment_reply.py list`（JSON。`thread_id`・動画タイトル・投稿者・本文）。空なら終了。
-2. 返信文を書き、`{"thread_id": "返信文"}` のJSONをスクラッチパッドに保存する。
+2. 返信文はコミュニティ担当 `kl-community`（`subagent_type: "kl-community"`、`model: "sonnet"`）に書かせる（2026-10-27〜、担当者制）。
+   依頼文には、`list` の出力JSONのパス、保存先（スクラッチパッドの `{"thread_id": "返信文"}` のJSON）、下の「返信の方針」全文を書く。
+   終わったら `python3 team_log.py add --agent kl-community --episode kl{NNN} --step 3.6 --result ok --note "返信N件・見送りN件"` で記録する。
 3. 投稿: `python3 kl_comment_reply.py post <JSONパス>`（返信済みIDは `data/comment_replies.json` に記録。STEP 4 のコミットに含まれる）。
 
 **返信の方針（無難第一）:**

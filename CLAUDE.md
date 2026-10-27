@@ -303,6 +303,21 @@ git操作（pull / push / status など）の前に必ず `hostname` でマシ�
 
 ---
 
+## 制作チーム（担当者制。2026-10-27〜、なるさんの指示）
+
+主要な工程を専任の担当者（`.claude/agents/` のサブエージェント）に固定し、毎回同じ担当者を呼ぶ。決まりの正本は `team/TEAM.md`。
+
+- **チームの目標は「視聴者の獲得」と「高評価の獲得」。**
+- 名簿: 管理担当 `kl-manager`、企画 `kl-planner`、脚本 `kl-writer`、台本レビュー `kl-script-reviewer`、初見視聴者 `kl-first-viewer`、
+  映像 `kl-art-director`（以上 Opus）、コミュニティ `kl-community`（Sonnet）。高度な判断が要る工程は Opus、作業中心の工程は Sonnet
+- 担当の工程では `Agent` の `subagent_type` に担当名を指定する（`general-purpose` にしない）。担当者は作業の最初に `team/notebooks/{担当名}.md` を読む
+- **メインは、担当者の呼び出しが終わるたびに `python3 team_log.py add` で結果を、なるさんの指摘・QA の不合格・視聴者の誤り指摘を受けたら
+  `python3 team_log.py feedback` で指摘の原文を記録する**（月次評価の材料）
+- **毎月1回、`/kl-analytics` で管理担当がアナリティクスを解釈し、各担当の貢献を評価して（`team/evaluations/YYYY-MM.md`）、
+  ノートにフィードバックを書く。** 管理担当が自分で変えるのはノートと評価の記録だけで、CLAUDE.md・手順書・担当の定義の変更は提案し、なるさんが決める
+
+---
+
 ## モデルの使い分けとOpusへのエスカレーション（2026-09-29〜）
 
 **セッションの種類でメインモデルを分ける:**
@@ -327,8 +342,9 @@ git操作（pull / push / status など）の前に必ず `hostname` でマシ�
 - ユーザーから**同じ箇所について2回目の指摘**が来た、または自分の原因の見立てが外れた
 - 原因の切り分けに**同種の試行を5回以上**重ねている
 
-止めたら、**ユーザーに確認せず**、Agent ツール（`model: "opus"`、`subagent_type: "general-purpose"`）で
-Opusサブエージェントに問題を丸ごと引き継ぐ。分析だけでなく、修正の実行（スクリプトの試行・画像の再生成・
+止めたら、**ユーザーに確認せず**、Agent ツール（`model: "opus"`）で
+Opusの担当者に問題を丸ごと引き継ぐ（引き継ぎ先は `team/TEAM.md` の「エスカレーション」。画像→`kl-art-director`、台本→`kl-writer`、
+それ以外→`kl-manager`）。分析だけでなく、修正の実行（スクリプトの試行・画像の再生成・
 `episodes/kl{NNN}.json`の編集など）までサブエージェント側で行わせてよい。ユーザーには「Opusに引き継ぎます」と
 一言伝えるだけにし、可否は聞かない。
 

@@ -7,7 +7,9 @@
 `subscribed_status`列が常に`unknown`で使い物にならない等の違いがあるため、
 そのまま移植せず、以下の各所で意図的に差分を入れている（理由は該当箇所に記載）。
 
-月1回程度の低頻度想定（毎エピソードではない）。`docs/paper_selection.md`の
+月1回程度の低頻度想定（毎エピソードではない）。
+**2026-10-27〜、担当者制の月次評価もこのコマンドで行う（毎月1回。公開話数が少なくても、作業記録による評価のために毎月実行する）。**
+STEP 4 の解釈は管理担当 `kl-manager` が行い、あわせて各担当（`team/TEAM.md` の名簿）の貢献を評価してフィードバックを返す。`docs/paper_selection.md`の
 「カテゴリ重み（weight）とアナリティクス連動」に定めるとおり、**公開エピソードが
 最低12話に達するまではweightを全カテゴリ均等のまま固定する**運用のため、
 12話未満のうちにこのコマンドを実行してもweight見直しの判断材料にはしない
@@ -87,14 +89,23 @@ STEP2の出力だけで判断がつかない場合、以下を人手で深掘り
 - **Drive `Kagaku-Life/analytics/raw/`の生CSVを直接読む。** `kl_analytics_report.py`の集計に
   疑問がある場合（外れ値1本に引っ張られていないか等）は生データで検算する
 
-## STEP 4 — 解釈・提言をOpusサブエージェントに委任
+## STEP 3.5 — チーム評価の材料をそろえる（2026-10-27〜）
+
+```bash
+/usr/bin/python3 team_stats.py --since {前月1日} > {scratchpad}/team_stats.md     # 高評価・コメント数（Reporting の集計には無い）
+python3 team_log.py summary --month {評価する月 YYYY-MM} > {scratchpad}/team_log.md
+```
+
+`team_stats.py` はコメント返信用のトークン（`yt_token_kl.json`）を使う。
+
+## STEP 4 — 解釈・提言とチーム評価を管理担当に委任（2026-10-27〜 管理担当）
 
 **理由:** STEP1-3（集計の実行自体）はスクリプトでモデル非依存。Opusが効くのは
 「その結果をどう解釈し、次のアクションにどうつなげるか」の部分のみ。本コマンドは
 月1回程度の低頻度なのでOpus利用によるコスト増もほぼ無視できる。
 
 STEP1-3で得た**集計結果**（生CSVではなく集計済みの数値・比較表）を`Agent`ツールで
-`model: "opus"`のサブエージェントに渡す。サブエージェントは会話履歴を持たないため、
+管理担当（`subagent_type: "kl-manager"`、`model: "opus"`）に渡す。管理担当は会話履歴を持たないため、
 以下を明示的に含めること:
 
 - STEP2-3で得た集計結果（数値・比較表）全文
@@ -102,6 +113,7 @@ STEP1-3で得た**集計結果**（生CSVではなく集計済みの数値・比
 - 現在の`topics_queue.json`の`queue`配列のうち直近数話分の構成
   （**配列の並び順どおり**のcategory構成。同一カテゴリの連続がないか等、
   順序自体も判断材料にするため）
+- **チーム評価の材料（STEP 3.5）:** `team_stats.md`・`team_log.md` のパスと、評価する月
 
 **KLは`topics_queue.json`に`hypotheses`セクションを持たない**（SCとの構造的な
 差分）。仮説の検証・ステータス更新はこのコマンドの対象外とする。仮説レジストリを
@@ -141,14 +153,21 @@ Agentプロンプト:
   ように事後的に境界を動かさない
 - 複数のカテゴリ・期間を横断的に走査して「最良の結果」を報告する場合は、
   **走査した候補数と多重比較の影響**を明記する
+
+続けて、{YYYY-MM} のチーム評価を行ってください（手順と書き出す物は、あなたの定義の「仕事 1: 月次評価」と team/TEAM.md）:
+- 高評価・コメント数: {team_stats.md のパス}
+- 作業記録の集計: {team_log.md のパス}
+報告は「アナリティクスの提言」「チーム評価の要約」「ユーザーの承認が要る提案」に分けてください。
 ```
 
 `run_in_background: false`で結果を待つ。
 
 ## STEP 5 — ユーザーへ提示・承認
 
-Opusの提言をそのままユーザーに提示し、`query_vocabulary.json`のweight・
+管理担当の提言とチーム評価の要約（担当ごとの総合評価と一言）をユーザーに提示し、`query_vocabulary.json`のweight・
 `.claude/commands/kl-new.md`等への反映可否を確認する。ここで自動確定はしない。
+ノート（`team/notebooks/`）と評価の記録（`team/evaluations/`・`team/scorecards.jsonl`）は管理担当がすでに書いているので、
+ユーザーが内容に異論を出した場合だけ直す。
 
 ## STEP 6 — 承認内容の反映
 
@@ -156,3 +175,5 @@ Opusの提言をそのままユーザーに提示し、`query_vocabulary.json`�
 - `query_vocabulary.json`の該当カテゴリの`weight`を更新
 - 必要なら`.claude/commands/kl-new.md`の該当ルールを更新
 - 分析結果と意思決定の経緯をproject memoryに記録（数値・根拠・Why・How to applyを含める）
+- 担当の定義（`.claude/agents/`）・名簿の変更が承認されたら反映し、`team/TEAM.md` の名簿の表もそろえる
+- `team/` の変更（評価・ノート・作業記録）をコミット・プッシュする
