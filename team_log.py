@@ -344,13 +344,29 @@ def cmd_sync_notebooks(_args) -> None:
     print("ノートの改善アクションを更新しました")
 
 
+def nth_monday(year: int, month: int, n: int):
+    first = datetime(year, month, 1, tzinfo=JST)
+    return (first + timedelta(days=(7 - first.weekday()) % 7 + 7 * (n - 1))).date()
+
+
 def cmd_due(_args) -> None:
-    """前月の月次評価が無ければ一言だけ知らせる（制作コマンドの STEP 0 で呼ぶ）。"""
-    first = datetime.now(JST).replace(day=1)
-    prev = (first - timedelta(days=1)).strftime("%Y-%m")
-    if prev >= TEAM_START and not (EVALUATIONS / f"{prev}.md").exists():
-        print(f"お知らせ: {prev} の月次評価（アナリティクス → 担当の評価 → フィードバック）がまだです。"
-              "制作の後でよいので、月次のアナリティクスのコマンドを実行してください。")
+    """月次評価の日を過ぎても前月分の評価が無ければ知らせる。評価の日の当日も知らせる（制作コマンドの STEP 0 で呼ぶ）。
+    日程は team/schedule.json（毎月の第N月曜に前月分）。無ければ、前月分の {month}.md の有無だけを見る。"""
+    today = datetime.now(JST).date()
+    prev = (today.replace(day=1) - timedelta(days=1)).strftime("%Y-%m")
+    if prev < TEAM_START:
+        return
+    path = TEAM_DIR / "schedule.json"
+    evals = json.loads(path.read_text(encoding="utf-8")).get("evaluations", []) if path.exists() else \
+        [{"name": "月次", "nth_monday": 1, "command": "月次のアナリティクスのコマンド", "file": "{month}.md"}]
+    for e in evals:
+        day = nth_monday(today.year, today.month, int(e["nth_monday"]))
+        done = (EVALUATIONS / e["file"].format(month=prev)).exists()
+        if done or today < day:
+            continue
+        when = "今日は" if today == day else f"{day.month}/{day.day}（月）は"
+        print(f"お知らせ: {when}{e['name']}の月次評価（{prev} 分）の予定日ですが、まだ済んでいません。"
+              f"制作の後でよいので {e['command']} を実行してください。")
 
 
 def cmd_score(args) -> None:

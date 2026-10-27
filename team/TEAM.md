@@ -99,7 +99,7 @@ CLAUDE.md「モデルの使い分けとOpusへのエスカレーション」の�
 
 ## 月次評価（管理担当）
 
-**毎月1回、`/kl-analytics` の STEP 4 で行う。**
+**毎月第3月曜に、`/kl-analytics` の STEP 4 で前月分を評価する**（日程の正本は `team/schedule.json`）。
 
 材料:
 - アナリティクスの集計（`kl_analytics_report.py`）
