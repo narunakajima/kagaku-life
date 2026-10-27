@@ -1,0 +1,11 @@
+{
+  "_説明": "月次評価の日。毎月の第N月曜に、前月分を評価する（ユーザーの Google ToDo「ルーティン処理」と同じ。2026-10-27）。team_log.py due が読む",
+  "evaluations": [
+    {
+      "name": "KL",
+      "nth_monday": 3,
+      "command": "/kl-analytics",
+      "file": "{month}.md"
+    }
+  ]
+}

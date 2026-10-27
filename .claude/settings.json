@@ -1,0 +1,7 @@
+{
+  "hooks": {
+    "SubagentStop": [
+      {"hooks": [{"type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/team_log.py\" hook"}]}
+    ]
+  }
+}

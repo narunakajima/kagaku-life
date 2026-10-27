@@ -76,8 +76,12 @@ hostname                      # マシン判定（CLAUDE.md「マシン判定ル
 git status --short            # 未コミットの変更が残っていないか確認（あれば内容を見てから進める）
 git pull --rebase             # 夜間の採点・他のマシンの変更を取り込む
 git log --oneline -5          # 直近の変更を一目で確認
+python3 team_log.py due      # 前月の月次評価（チームの PDCA）が済んでいなければ知らせる
+cat team/notebooks/kl-coordinator.md   # 進行担当（この会話）のノート。改善アクションは今回の進行で必ず実行する
 ```
 
+- **この会話は KLチーム 進行担当 ダニエル（進行担当、定義は `team/coordinator.md`）。** 制作の最後に `python3 team_log.py add --agent kl-coordinator --episode {回} --step 進行 --result ok`（手順の飛ばし・やり直しがあれば `retry` と `--note`）で自分の進行を記録する。進行への指摘は `team_log.py feedback --agent kl-coordinator` で記録する
+- `due` が「月次評価がまだ」と出したら、ユーザーに一言伝える（制作は止めない。評価は制作の後に月次のアナリティクスのコマンドで行う）
 - 競合したら、無理に解消せずユーザーに状況を報告する（夜間の自動コミットは `news_candidates.json` だけを書き換える）
 - 夜間の採点が今朝分まで入っているかは、ケースCの冒頭の手順（`buzz_measured_at` が直近24時間以内か）で確かめる
 
@@ -346,7 +350,13 @@ WebSearchで補助的に探してよい。査読済み掲載であることを�
   - **速報（再計測待ち）:** 発表から72時間以内・実測3未満・`announcement_type` が research / product_release。加点はせず、
     48時間後に `buzz --id ID` で測り直す
 - **最初に「今回ぜひやるべきネタ ベスト3」を提案する（2026-10-11〜、なるさんの指示: 最も重視するのは旬の話題と注目度の高い話題）。**
-  収集・採点・タグ付け・enrich・buzz のあと、`list` の冒頭に出る「ベスト3の下書き」を土台にする。進め方:
+  収集・採点・タグ付け・enrich・buzz のあと、`list` の冒頭に出る「ベスト3の下書き」を土台にする。
+  **下の手順2〜5（外す判断・競合確認・一次資料の確認・提示の形づくり）はKLチーム 企画担当 ミア（`kl-planner`） が行う（2026-10-27〜、担当者制。`team/TEAM.md`）。**
+  メインはスクリプト（collect〜`list --top 10 --check-urls`）を実行し、`Agent`（`subagent_type: "kl-planner"`、`model: "opus"`、
+  `run_in_background: false`）に、`list` の出力、`news_candidates.json`・`topics_queue.json` のパス、直近3話の型、健康系の枠の残り、
+  この「ベスト3」の進め方の全文を渡す。返ってきた3案をメインが手順5の形で `AskUserQuestion` に出し、選ばれた候補の status 更新もメインが行う。
+  終わったら `python3 team_log.py add --agent kl-planner --episode kl{NNN} --step 1 --result ok --note "選ばれた順位"` で記録する
+  （なるさんが3案とも退けて作り直させたら `--result retry` と、理由を `team_log.py feedback --source user` で残す）。進め方:
   1. **本命と答え合わせ候補から選ぶ（2026-10-15に混成にした）。** 本命（core の順）→ 答え合わせ候補（実測の注目度→媒体数の順）を
      1列に並べ、本命の上位を優先して、**異なるジャンル**（同じジャンルは最大1件）・**同じ系列は1件**で3件まで。各候補に〈本命〉〈答え合わせ〉の
      枠が付き、〈答え合わせ〉には「証拠: 未確認（第三者の検証・使った人の声を探す）」「発表（初出）から◯日」が付く（証拠の件数を数えるのは3週目）。
@@ -434,7 +444,7 @@ STAGE0でワイルドカード回を選んだ場合（ワイルドカード枠�
 委任していたが、掛け合いの面白さ（相手の発言への反応、ツッコミの具体性、中盤の裏切り）はこの番組の中核で、
 台本を書くモデルの力がそのまま出るため。
 
-**メインがSonnetなら、自分で書かずに必ずOpusサブエージェントに委任する（2026-10-15〜）。** 定型運用はSonnetメイン
+**メインがSonnetなら、自分で書かずに必ずKLチーム 脚本担当 ライアン（`kl-writer`）（Opus）に委任する（2026-10-15〜。2026-10-27〜は担当者制で委任先を固定）。** 定型運用はSonnetメイン
 （CLAUDE.md「モデルの使い分け」）なので、通常の `/kl-new` ではこちらが既定になる。「メイン会話で書く」のは、
 ユーザーがモデルメニューでOpusを選んだセッションの場合だけ。自分のモデルが分からない場合も委任する
 （Opusが二重に書く無駄より、Sonnetが台本を書いてしまう損失の方が大きい）。委任は次の形で行い、`model` は省略しない
@@ -442,7 +452,7 @@ STAGE0でワイルドカード回を選んだ場合（ワイルドカード枠�
 
 ```
 Agent({
-  subagent_type: "general-purpose",
+  subagent_type: "kl-writer",
   model: "opus",
   description: "kl{NNN} 掛け合い台本の執筆",
   run_in_background: false,
@@ -458,6 +468,7 @@ Agent({
 論点ごとの「中学生に3文で説明すると」メモ、使うたとえの対応表（たとえの要素→原典の要素、原典の該当箇所）、「初めて説明が
 要る考え方」の数、キーワードとその定義、お題の主張の正確な形。メインは、書き手の報告にこのファイルのパスと、規則ファイル
 「3. セルフチェック」6項目の結果があるかを確かめる（無ければ書き手に戻す）。
+確かめたら `python3 team_log.py add --agent kl-writer --episode kl{NNN} --step 2 --result ok` で記録する（書き手に戻したら `retry`）。
 
 **お題が難しい回の構成判断（2026-10-19〜）:** 準備の「初めて説明が要る考え方」が**5つを超えた**ら、書き手は (1) 役目が重なる
 資料・論点を減らし（同じことを示す資料は1つに）、(2) 説明専用の場面を作る（たとえ1つと図1枚。その場面に台本の3割を割いてよい）。
@@ -872,8 +883,9 @@ HTML を取得して文字列で一致を確かめると確実。
 
 ## STEP 5 — 台本の面白さ・品質レビュー（Opusサブエージェント、2026-10-04改訂）
 
-STEP4の後、`Agent`（`model: "opus"`、`subagent_type: "general-purpose"`）に台本のレビューと直接修正を任せる
-（結果を待ってからSTEP6へ）。台本を書いたモデルとは別の目で読ませる。プロンプトには次を含める:
+STEP4の後、台本レビュー担当（`subagent_type: "kl-script-reviewer"`、`model: "opus"`）に台本のレビューと直接修正を任せる
+（結果を待ってからSTEP6へ。2026-10-27〜、担当者制）。台本を書いた担当（KLチーム 脚本担当 ライアン（`kl-writer`））とは別の目で読ませる。
+終わったら `python3 team_log.py add --agent kl-script-reviewer --episode kl{NNN} --step 5 --result ok --note "GO/NO-GO"` で記録する。プロンプトには次を含める:
 エピソードJSONと `cast.json`・`kl_dialogue.py` のパス、番組を掛け合い形式に変えた理由（STEP2冒頭）、下の観点、
 守るべきルール（数値・事実を変えない／足さない、名前を台詞に入れない、締めの固定文を変えない、常套句の上限、
 teaser30字・Shorts1カット目15字。尺は制約にしない＝伝わることが最優先）、修正後に `kl_dialogue.py check` を通すこと、報告の形式
@@ -931,9 +943,13 @@ STEP5.5 の初見レビュー（資料を見ていない別のOpus）で行う�
    ```
    台詞（字幕の表記）・画面の資料カード・図の文字・論点の見出し・判定ラベルだけが入る。概要欄・資料・英文の作画指示は入らない。
 2. `kl_prompts/beginner_review_prompt.md` の「依頼文」の `{PLAIN_PATH}` と `{OUT_PATH}`（例 `{scratchpad}/kl{NNN}_beginner_review_r1.md`）を
-   置き換えて、`Agent`（`subagent_type: "general-purpose"`、`model: "opus"`、`run_in_background: false`）に渡す。
+   置き換えて、初見視聴者担当（`subagent_type: "kl-first-viewer"`、`model: "opus"`、`run_in_background: false`）に渡す（2026-10-27〜、担当者制。
+   この担当は台詞のテキストと自分のノート以外を読まない定義になっている）。周回ごとに
+   `python3 team_log.py add --agent kl-first-viewer --episode kl{NNN} --step 5.5 --result ok --note "r{周} 致命的N・直すN"` で記録し、
+   担当メモに適用した改善アクションがあれば、エマは Bash を使えないので `python3 team_log.py applied --agent kl-first-viewer --episode kl{NNN} --ids {ID}` をメインが記録する。
+   【致命的】は書いた担当への指摘として `team_log.py feedback --agent kl-writer --source qa --severity major` で残す。
    **プロンプトには、plain テキストのパス以外の情報（JSON・概要欄・資料・経緯・前のレビュー）を書かない。** 書くと「分かってしまう」。
-3. 結果を台本の書き手（Opusサブエージェント。STEP2と同じ形で新しく起こしてよい）に渡して直させる。渡すものは、レビュー結果の
+3. 結果をKLチーム 脚本担当 ライアン（`kl-writer`）（STEP2と同じ形で呼ぶ）に渡して直させる。渡すものは、レビュー結果の
    パス、`kl_prompts/script_writer_rules.md`、エピソードJSON、資料。指示は次のとおり。
    - 【致命的】【直す】は全部反映する
    - 【できれば】は、伝わりが良くなるなら反映する
@@ -1000,7 +1016,7 @@ kl012で実際に、(a) 単純な2本比較のはずが片方が誤って2本の
 
 `episodes/kl{NNN}.json`の`scenes`のうち`type: "data"`のシーン、および
 `shorts[].scenes[]`のうち`style: "chart"`のカットを対象に、`Agent`ツールで
-`model: "opus"`のサブエージェントに委任する（`run_in_background: false`、
+映像担当（`subagent_type: "kl-art-director"`、`model: "opus"`。2026-10-27〜、担当者制）に委任する（`run_in_background: false`、
 結果を待ってからSTEP7へ進む）。対象画像ファイルのパス（
 `~/Desktop/kagaku-life/images/`配下）と、対応するシーンの`narration`・
 `image_prompt`をAgentプロンプトに含め、Read toolで画像を直接見て以下を
@@ -1060,7 +1076,7 @@ STEP11でユーザーに確認ページを見せる前に、主要シーン（�
 STEP6.5と同じ要領でユーザー確認なしに`image_prompt`を修正し
 `kl_image_gen.py --episode kl{NNN} --scenes {scene_id}`で再生成する。
 **同じシーンを2実行しても直らない場合は、それ以上Sonnetメインで再調整を続けず、
-ユーザーに確認せずOpusサブエージェントに引き継ぐ**（2026-09-29〜。`kl_image_gen.py`は
+ユーザーに確認せずKLチーム 映像担当 レオ（`kl-art-director`） に引き継ぐ**（2026-09-29〜。`kl_image_gen.py`は
 1実行の中で自動リトライするため、1実行＝1試行と数える。引き継ぎには、シーンの
 `narration`・元の`image_prompt`と修正後の`image_prompt`・QAの指摘・画像のパスを書く。
 CLAUDE.md「モデルの使い分けとOpusへのエスカレーション」参照）。
@@ -1125,7 +1141,9 @@ STEP6.5/6.6のチェックは「1枚の画像がそのシーン単体のimage_pr
 同じ玄関ドアの形状・金具が5枚でバラバラだったのをSonnetの目視QAが見落とし、
 すべてユーザー指摘で発覚した。kl007・kl016もユーザー指摘まで検出されていない）。
 そこで、上記3（JSONのテキスト確認）をメインが済ませたあと、画像の横断確認は
-Agent ツール（`model: "opus"`、`subagent_type: "general-purpose"`）に委任する。
+映像担当（`subagent_type: "kl-art-director"`、`model: "opus"`）に委任する（2026-10-27〜、担当者制）。
+終わったら `python3 team_log.py add --agent kl-art-director --episode kl{NNN} --step 6.7 --result ok` で記録し、
+CRITICAL があれば `--note "CRITICAL N件"` を添える（STEP 6.5 も同じ形で `--step 6.5`）。
 
 **サブエージェントは会話の経緯を持たないため、呼び出し前にメイン会話で
 「シーン設定表」を作って渡す:**
@@ -1142,7 +1160,7 @@ S14: type=impact / narration=「…」 / 時代・場面=未来・自宅 / 登�
 
 ```
 Agent({
-  subagent_type: "general-purpose",
+  subagent_type: "kl-art-director",
   model: "opus",
   description: "kl{NNN} 画像クロスシーン一貫性レビュー",
   run_in_background: false,
@@ -1182,7 +1200,7 @@ python3 kl_image_gen.py --episode kl{NNN} --scenes 14 --reference-scene 9
 
 **再生成の上限:** Sonnetメインでの再生成は同じシーンにつき2実行まで（`kl_image_gen.py`は
 1実行の中で自動リトライするため、1実行＝1試行と数える）。2実行で直らなければ、
-ユーザーに確認せず、そのシーンの修正をOpusサブエージェントに引き継ぐ（CLAUDE.md
+ユーザーに確認せず、そのシーンの修正をKLチーム 映像担当 レオ（`kl-art-director`） に引き継ぐ（CLAUDE.md
 「モデルの使い分けとOpusへのエスカレーション」参照）。Opusでも直らない場合に限り、
 STEP11の確認でユーザーに諮る。
 
