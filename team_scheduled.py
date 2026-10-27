@@ -10,9 +10,11 @@ samurai-chronicles / kagaku-life / lamp-whisper の3リポジトリで同じフ�
   python3 team_scheduled.py uninstall   # 登録を外す
   python3 team_scheduled.py check       # 前提（claude・ドライブ・トークン）を確かめる
   python3 team_scheduled.py run [--force] [--dry-run]   # launchd が呼ぶ。--force は日付に関係なく今月の評価を実行
+  python3 team_scheduled.py slack-test  # Slack への投稿を試す
 
 ログ: ~/Library/Logs/claude-team/{リポジトリ名}-{日時}-{コマンド}.log
-結果: 通知センターに通知し、~/Library/Logs/claude-team/{リポジトリ名}-runs.jsonl に記録する。
+結果: 通知センターに通知し、Slack に報告を投稿し（Incoming Webhook。URL は下の SLACK_WEBHOOK_FILES）、
+      ~/Library/Logs/claude-team/{リポジトリ名}-runs.jsonl に記録する。
 """
 import argparse
 import json
@@ -22,6 +24,7 @@ import shutil
 import socket
 import subprocess
 import sys
+import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -42,6 +45,9 @@ RUN_HOUR, RUN_MINUTE = 8, 7       # 毎週月曜 08:07 JST（Mac が眠ってい
 TIMEOUT_SEC = 3 * 60 * 60         # ブラウザの再認証待ちなどで止まったときの上限
 MODEL = "sonnet"                  # メイン（進行担当）。解釈と評価は管理担当（Opus のサブエージェント）が行う
 ALLOWED_TOOLS = "Bash,Read,Edit,Write,Glob,Grep,Agent,WebFetch,WebSearch"
+# Slack の Incoming Webhook の URL を1行だけ書いたファイル（リポジトリには置かない）。リポジトリ別のファイルがあれば優先する
+SLACK_WEBHOOK_FILES = [f"~/.claude/secrets/slack_webhook_team_reports_{REPO}.txt", "~/.claude/secrets/slack_webhook_team_reports.txt"]
+SLACK_SECTIONS = ["チームの目標", "担当ごとの評価", "改善アクションの判定（前回まで）", "ユーザーの承認が要る提案"]
 NEEDS = {  # check で存在を確かめるファイル（無くても run は止めない）
     "samurai-chronicles": ["~/.claude/secrets/yt_token_sc_reporting.json", "~/.claude/secrets/yt_token_sc.json",
                            "~/.claude/secrets/yt_token_learn_reporting.json", "~/.claude/secrets/yt_token_learn.json",
@@ -87,6 +93,96 @@ def notify(title: str, message: str) -> None:
     subprocess.run(["osascript", "-e", script], check=False, capture_output=True)
 
 
+def slack_webhook() -> str:
+    if os.environ.get("TEAM_SLACK_WEBHOOK"):
+        return os.environ["TEAM_SLACK_WEBHOOK"].strip()
+    for f in SLACK_WEBHOOK_FILES:
+        path = Path(os.path.expanduser(f))
+        if path.exists():
+            return path.read_text(encoding="utf-8").strip()
+    return ""
+
+
+def post_slack(text: str) -> bool:
+    """Slack に投稿する。URL が無い・失敗したときは False（自動実行は止めない）。"""
+    url = slack_webhook()
+    if not url:
+        return False
+    body = json.dumps({"text": text[:39000]}, ensure_ascii=False).encode("utf-8")
+    req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as res:
+            return res.status == 200
+    except Exception as exc:
+        print(f"Slack への投稿に失敗: {exc}", file=sys.stderr)
+        return False
+
+
+def section(markdown: str, title: str) -> str:
+    """評価ファイルから「## {title}」の節の本文を取り出す。"""
+    lines, out, inside = markdown.splitlines(), [], False
+    for line in lines:
+        if line.startswith("## "):
+            if inside:
+                break
+            inside = line[3:].strip().startswith(title)
+            continue
+        if inside:
+            out.append(line)
+    return "\n".join(out).strip()
+
+
+def to_slack(md: str) -> str:
+    """Markdown を Slack の書き方に寄せる（表はそのままでは崩れるので等幅で囲む）。"""
+    out, table = [], []
+    for line in md.splitlines():
+        if line.lstrip().startswith("|"):
+            if set(line.replace("|", "").strip()) <= set("-: "):
+                continue
+            table.append(line.strip())
+            continue
+        if table:
+            out.append("```\n" + "\n".join(table) + "\n```")
+            table = []
+        line = line.replace("**", "*")
+        if line.startswith("### "):
+            line = "*" + line[4:].strip() + "*"
+        out.append(line)
+    if table:
+        out.append("```\n" + "\n".join(table) + "\n```")
+    return "\n".join(out)
+
+
+def file_url(rel: str) -> str:
+    remote = run_cmd(["git", "remote", "get-url", "origin"]).stdout.strip()
+    branch = run_cmd(["git", "rev-parse", "--abbrev-ref", "HEAD"]).stdout.strip() or "main"
+    if remote.startswith("git@github.com:"):
+        remote = "https://github.com/" + remote.split(":", 1)[1]
+    remote = remote.removesuffix(".git")
+    return f"{remote}/blob/{branch}/{rel}" if "github.com" in remote else rel
+
+
+def build_report(e: dict, result: str, out: str, log: Path) -> str:
+    head = "✅ 完了" if result == "done" else "⚠️ 未完了"
+    lines = [f"*{team_name()}｜{e['name']} 月次評価（{e['month']} 分）* {head}"]
+    tail = [l for l in out.strip().splitlines() if l.strip()][-8:]
+    if tail:
+        lines += ["", "*要約*", *tail]
+    rel = f"team/evaluations/{e['file'].format(month=e['month'])}"
+    path = ROOT / rel
+    if path.exists():
+        md = path.read_text(encoding="utf-8")
+        for title in SLACK_SECTIONS:
+            body = section(md, title)
+            if body:
+                lines += ["", f"*{title}*", to_slack(body)[:3000]]
+        lines += ["", f"評価ファイル: {file_url(rel)}"]
+    if result != "done":
+        lines += ["", f"ログ（iMac）: {log}", "直したら iMac で `python3 team_scheduled.py run --force` を実行してください。"]
+    lines += ["", "承認が要る提案は自動では反映していません。会話を開いて確認してください。"]
+    return "\n".join(lines)
+
+
 def record(row: dict) -> None:
     with RUNS_LOG.open("a", encoding="utf-8") as f:
         f.write(json.dumps({"ts": now().isoformat(timespec="seconds"), **row}, ensure_ascii=False) + "\n")
@@ -120,6 +216,7 @@ def cmd_run(args) -> None:
         msg = f"git pull に失敗したので月次評価を始めませんでした: {pull.stderr.strip()[:200]}"
         record({"repo": REPO, "result": "error", "message": msg})
         notify(f"{REPO} 月次評価", msg)
+        post_slack(f"⚠️ *{REPO} 月次評価*\n{msg}")
         sys.exit(1)
     todo = due_evaluations(args.force)
     if not todo:
@@ -130,6 +227,7 @@ def cmd_run(args) -> None:
         msg = "claude コマンドが見つからないので月次評価を始めませんでした（install をやり直してください）"
         record({"repo": REPO, "result": "error", "message": msg})
         notify(f"{REPO} 月次評価", msg)
+        post_slack(f"⚠️ *{REPO} 月次評価*\n{msg}")
         sys.exit(1)
     for e in todo:
         prompt = PROMPT.format(team=team_name(), name=e["name"], command=e["command"].lstrip("/"), month=e["month"])
@@ -148,7 +246,9 @@ def cmd_run(args) -> None:
         done = (EVALUATIONS / e["file"].format(month=e["month"])).exists()
         result = "done" if ok and done else "incomplete"
         summary = out.strip().splitlines()[-1] if out.strip() else "出力なし"
-        record({"repo": REPO, "evaluation": e["name"], "month": e["month"], "result": result, "log": str(log)})
+        slack_ok = post_slack(build_report(e, result, out, log))
+        record({"repo": REPO, "evaluation": e["name"], "month": e["month"], "result": result, "log": str(log),
+                "slack": slack_ok})
         notify(f"{e['name']} 月次評価（{e['month']} 分）",
                ("完了: " if result == "done" else "未完了（ログを確認）: ") + summary[:120])
 
@@ -168,6 +268,7 @@ def cmd_check(_args) -> None:
         print(f"{'OK ' if exists else 'NG '} {item}")
         ok &= exists
     print(f"launchd: {'登録済み' if PLIST.exists() else '未登録'}（{PLIST}）")
+    print(f"Slack: {'設定済み' if slack_webhook() else '未設定（報告は投稿されない。' + SLACK_WEBHOOK_FILES[-1] + ' に Webhook の URL を書く）'}")
     for e in json.loads(SCHEDULE.read_text(encoding="utf-8")).get("evaluations", []):
         today = now().date()
         day = nth_monday(today.year, today.month, int(e["nth_monday"]))
@@ -176,6 +277,14 @@ def cmd_check(_args) -> None:
             day = nth_monday(nm.year, nm.month, int(e["nth_monday"]))
         print(f"次の評価: {e['name']} {day}（{e['command']}）")
     print("前提はそろっている" if ok else "NG の項目を直してください（ドライブが NG なら、team/TEAM.md「自動実行」の「フルディスクアクセス」を確認）")
+
+
+def cmd_slack_test(_args) -> None:
+    if not slack_webhook():
+        print(f"未設定です。{SLACK_WEBHOOK_FILES[-1]} に Incoming Webhook の URL を1行で書いてください", file=sys.stderr)
+        sys.exit(1)
+    ok = post_slack(f"🧪 *{team_name()}* の月次評価の報告は、このチャンネルに投稿されます（テスト）。")
+    print("投稿しました" if ok else "投稿に失敗しました（URL を確かめてください）")
 
 
 def cmd_install(_args) -> None:
@@ -222,6 +331,7 @@ def main() -> None:
     r.set_defaults(func=cmd_run)
     sub.add_parser("check").set_defaults(func=cmd_check)
     sub.add_parser("install").set_defaults(func=cmd_install)
+    sub.add_parser("slack-test").set_defaults(func=cmd_slack_test)
     sub.add_parser("uninstall").set_defaults(func=cmd_uninstall)
     args = p.parse_args()
     args.func(args)

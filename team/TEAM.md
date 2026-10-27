@@ -133,7 +133,11 @@ CLAUDE.md「モデルの使い分けとOpusへのエスカレーション」の�
 - **自動実行でやること:** データの取得・集計、管理担当による解釈と担当の評価、改善アクションの登録、ノートへの書き出し、コミットとプッシュ
 - **自動実行でやらないこと:** ユーザーの承認が要る変更（CLAUDE.md・手順書・担当の定義・制作ルールの設定）。評価ファイルの「ユーザーの承認が要る提案」に残るので、
   あとで会話を開いて承認する（「KLの今月の提案を見せて」など）
-- **終わったら通知センターに通知が出る。** ログは `~/Library/Logs/claude-team/`。未完了（トークンの失効でブラウザの再認証が要る、など）なら、
+- **終わったら Slack に報告を投稿する**（2026-10-27〜）: チームの目標、担当ごとの評価、改善アクションの判定、ユーザーの承認が要る提案、
+  評価ファイルへのリンク。未完了や失敗のときも理由を投稿する。投稿先は Incoming Webhook の URL を1行だけ書いたファイル
+  `~/.claude/secrets/slack_webhook_team_reports.txt`（iMac。3チーム共通。チームごとに分けるなら `slack_webhook_team_reports_{リポジトリ名}.txt`）。
+  `python3 team_scheduled.py slack-test` で試せる。URL はリポジトリ・チャットに書かない
+- **通知センターにも通知が出る。** ログは `~/Library/Logs/claude-team/`。未完了（トークンの失効でブラウザの再認証が要る、など）なら、
   通知とログに理由が出る。直したら `python3 team_scheduled.py run --force` でやり直す
 - **はじめに1回だけ（iMac で）:** `python3 team_scheduled.py check` で前提を確かめ、`python3 team_scheduled.py install` で登録する。外すときは `uninstall`
 - **フルディスクアクセス:** launchd から起動した Python は、Google ドライブの同期フォルダを読めないことがある（macOS の権限）。`check` でドライブが NG なら、
