@@ -164,7 +164,7 @@ Agentプロンプト:
 
 ## STEP 5 — ユーザーへ提示・承認
 
-管理担当の提言とチーム評価の要約（担当ごとの総合評価と一言）をユーザーに提示し、`query_vocabulary.json`のweight・
+管理担当の提言とチーム評価の要約（担当ごとの総合評価と一言、改善アクションの判定結果と新しく出したアクション）をユーザーに提示し、`query_vocabulary.json`のweight・
 `.claude/commands/kl-new.md`等への反映可否を確認する。ここで自動確定はしない。
 ノート（`team/notebooks/`）と評価の記録（`team/evaluations/`・`team/scorecards.jsonl`）は管理担当がすでに書いているので、
 ユーザーが内容に異論を出した場合だけ直す。

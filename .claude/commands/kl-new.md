@@ -76,8 +76,10 @@ hostname                      # マシン判定（CLAUDE.md「マシン判定ル
 git status --short            # 未コミットの変更が残っていないか確認（あれば内容を見てから進める）
 git pull --rebase             # 夜間の採点・他のマシンの変更を取り込む
 git log --oneline -5          # 直近の変更を一目で確認
+python3 team_log.py due      # 前月の月次評価（チームの PDCA）が済んでいなければ知らせる
 ```
 
+- `due` が「月次評価がまだ」と出したら、ユーザーに一言伝える（制作は止めない。評価は制作の後に月次のアナリティクスのコマンドで行う）
 - 競合したら、無理に解消せずユーザーに状況を報告する（夜間の自動コミットは `news_candidates.json` だけを書き換える）
 - 夜間の採点が今朝分まで入っているかは、ケースCの冒頭の手順（`buzz_measured_at` が直近24時間以内か）で確かめる
 
@@ -942,6 +944,7 @@ STEP5.5 の初見レビュー（資料を見ていない別のOpus）で行う�
    置き換えて、初見視聴者担当（`subagent_type: "kl-first-viewer"`、`model: "opus"`、`run_in_background: false`）に渡す（2026-10-27〜、担当者制。
    この担当は台詞のテキストと自分のノート以外を読まない定義になっている）。周回ごとに
    `python3 team_log.py add --agent kl-first-viewer --episode kl{NNN} --step 5.5 --result ok --note "r{周} 致命的N・直すN"` で記録し、
+   担当メモに適用した改善アクションがあれば、エマは Bash を使えないので `python3 team_log.py applied --agent kl-first-viewer --episode kl{NNN} --ids {ID}` をメインが記録する。
    【致命的】は書いた担当への指摘として `team_log.py feedback --agent kl-writer --source qa --severity major` で残す。
    **プロンプトには、plain テキストのパス以外の情報（JSON・概要欄・資料・経緯・前のレビュー）を書かない。** 書くと「分かってしまう」。
 3. 結果をKLチーム 脚本担当 ライアン（`kl-writer`）（STEP2と同じ形で呼ぶ）に渡して直させる。渡すものは、レビュー結果の
