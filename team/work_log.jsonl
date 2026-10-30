@@ -17,3 +17,7 @@
 {"ts": "2026-10-31T06:59:21+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl051", "step": "5.5", "result": "ok", "retries": 0, "note": "r3 致命的0・直す2・できれば7"}
 {"ts": "2026-10-31T07:01:54+09:00", "kind": "call", "agent": "kl-writer", "session": "a107a3b3-e434-488a-a970-950edd958388"}
 {"ts": "2026-10-31T07:02:01+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl051", "step": "5.5", "result": "ok", "retries": 0, "note": "r3反映 直す2・できれば7、4494→4420字"}
+{"ts": "2026-10-31T07:12:22+09:00", "kind": "call", "agent": "kl-art-director", "session": "a107a3b3-e434-488a-a970-950edd958388"}
+{"ts": "2026-10-31T07:12:27+09:00", "kind": "work", "agent": "kl-art-director", "episode": "kl051", "step": "6.7", "result": "ok", "retries": 0, "note": "CRITICAL1件(サムネ頭が見出しで隠れる)を修正"}
+{"ts": "2026-10-31T07:26:18+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl051", "step": "8-9", "result": "ok", "retries": 0, "note": "TTS不一致なし、話速差9%"}
+{"ts": "2026-10-31T07:43:34+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl051", "step": "10", "result": "retry", "retries": 0, "note": "BGM: 新曲探しはFreesoundタイムアウトでライブラリのみ、intro/outroを各1回差し替えて合格"}
