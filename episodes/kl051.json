@@ -1,0 +1,807 @@
+{
+  "episode_id": "kl051",
+  "format": "dialogue",
+  "structure": "rounds_v4",
+  "template": "basic",
+  "source_type": "news",
+  "news_date": "2026-10-21",
+  "verdict_as_of": "2026-10-31",
+  "genre": "humanoid",
+  "health": false,
+  "depicts_real_product": true,
+  "episode_title": "テスラの人型ロボ「オプティマス」が生産開始。何ができて、外の会社の現場に来るのはいつか",
+  "youtube_title": "テスラの人型ロボ、生産開始。うちの現場に来るのはいつ？（10月21日発表）",
+  "entry_question": "テスラの人型ロボ「Optimus」が生産を始めた。うちの会社や現場に来るのはいつ？ 何ができて、どこまで使える？",
+  "claim_verdict": {
+    "dreamer": "soon",
+    "skeptic": "pending"
+  },
+  "verdict": {
+    "dreamer": "decade",
+    "skeptic": "pending"
+  },
+  "hook_lines": [
+    "テスラの人型ロボ生産開始",
+    "現場に来るのはいつ？"
+  ],
+  "thumbnail_prompt": "Bright, clean daytime interior of a large modern factory, continuous across the whole frame with no panels, boxes or borders. Keep the left 30%, the right 30% and the top 35% of the frame quiet and uncluttered (soft blurred factory machinery and warm light only), but the background must continue unbroken behind them. Main subject, centered left-to-right in the middle band of the frame: a short neat row of three identical humanoid robots standing beside a factory assembly line. Each robot is a slim adult-sized humanoid robot with glossy white outer shell panels on the chest, upper arms, thighs and shins, a smooth rounded glossy black helmet-like head with no facial features (a black front face panel framed by a thin light outline), black joints at the neck, waist, elbows and knees with dark mechanical parts visible at the waist and hips, five-fingered white-and-black hands, and black shoe-like feet; no logos or lettering on the robot. No people. No readable text, no letters, no numbers, no logos, no brand marks.",
+  "thumbnail_headline": "人型ロボ 生産開始\n現場に来るのは？",
+  "thumbnail_exprs": {
+    "dreamer": "excited",
+    "skeptic": "thinking"
+  },
+  "youtube_tags": [
+    "テスラ",
+    "Tesla",
+    "オプティマス",
+    "Optimus",
+    "人型ロボット",
+    "ヒューマノイド",
+    "ロボット",
+    "工場",
+    "物流",
+    "倉庫",
+    "人手不足",
+    "答え合わせ",
+    "科学ニュース"
+  ],
+  "references": [
+    {
+      "title": "Tesla Q3 2026 Update（決算資料）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Tesla Investor Relations",
+      "url": "https://assets-ir.tesla.com/tesla-contents/IR/TSLA-Q3-2026-Update.pdf",
+      "is_preprint": false,
+      "institution": "Tesla",
+      "source_kind": "company_website"
+    },
+    {
+      "title": "Tesla Releases Third Quarter 2026 Financial Results",
+      "authors": [],
+      "year": 2026,
+      "venue": "Tesla Investor Relations",
+      "url": "https://ir.tesla.com/press-release/tesla-releases-third-quarter-2026-financial-results",
+      "is_preprint": false,
+      "institution": "Tesla",
+      "source_kind": "press_release"
+    },
+    {
+      "title": "Tesla (TSLA) Q3 2026 Earnings Call Transcript（決算説明会の書き起こし。第三者による。公式の録画は ir.tesla.com/webcast-2026-10-21）",
+      "authors": [],
+      "year": 2026,
+      "venue": "The Singju Post",
+      "url": "https://singjupost.com/transcript-tesla-tsla-q3-2026-earnings-call/",
+      "is_preprint": false,
+      "institution": "Tesla",
+      "source_kind": "transcript"
+    },
+    {
+      "title": "SI & Robotics（Tesla Optimus の紹介）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Tesla",
+      "url": "https://www.tesla.com/SI",
+      "is_preprint": false,
+      "institution": "Tesla",
+      "source_kind": "company_website"
+    }
+  ],
+  "youtube_description": "テスラが、人型ロボット「Optimus（オプティマス）」の生産を始めました（2026年10月21日の決算資料）。工場や倉庫を持つ会社の現場に来るのはいつか。何ができて、どこが壁か。期待担当の大輔と、確かめ担当の沙織が、決算資料と、同じ日の決算説明会での発言を分けて確かめます。(1) 本当に作り始めたのか、どこまで来たのか (2) 何ができて、どこが壁か (3) テスラの外の会社の現場に来るのはいつか、の3つです。\n\n■ この回の判定（2026年10月31日時点の、二人の見立て）\n判定するのは：工場や倉庫を持つ、テスラの外の会社が、危険な仕事や、形の決まった箱を運ぶ繰り返しの仕事を、オプティマスに任せる、という使い方\n大輔: 3年はかかる（外の会社に届き始めるのは来年の終わりごろの見込み。ただ、手の長持ちは機械の壁。3年は、外の会社の現場で繰り返しの仕事を任せ始めるまで、という見立て）\n沙織: 根拠待ち（否定する資料は無いが、台数・値段・外の会社で使った例がまだ無い。次の決算資料で台数の欄に数字が入り、外の会社で使った声と値段が出たら札を上げる、という見立て）\n※決算資料が書いているのは「量産のラインで生産を始めた。製品の品質の機体で、今の作り方は商用の製品に向くと確かめた」まで。生産能力の表の台数は空欄（「-」）です。\n\n■ 資料に書いてあること／説明会での発言\n・決算資料: フリーモント（カリフォルニア州）の量産ラインで生産開始。生産能力の表はカリフォルニア州「立ち上げの初め」、テキサス州「建設中」、台数は空欄\n・説明会での発言（マスク氏ほか。決算資料には書かれていません）: 1本で年100万台を作れるラインの大部分がフリーモントに入った／週2万台のペースまで少なくとも1年、もう少しかかるかも／手が最も難しい部分の一つ／「1か月ですり減るようでは困る」（長持ちの目標の話で、「手が1か月ですり減る」という結果ではありません）／手・長持ち・AIの課題は来年の終わりごろに解決の見込みで、そのころテスラの外の会社に届ける／1万〜2万台を作って練習場（Optimus Academy）で練習させる／1〜2か月で、あらかじめ決めた動きでない動画を出す予定\n・値段、日本での販売は、決算資料にも説明会にも出ていません\n・説明会の発言は、公式の録画（ir.tesla.com、再生には登録が必要）ではなく、第三者による書き起こし3本（The Singju Post、EV Wire、Bullfincher）で照合しました\n\n※この動画は技術の紹介で、株や投資の判断をすすめるものではありません。\n※ロボットの絵はイメージ図です（実物と異なる場合があります）。公式サイトの写真で確かめた特徴をもとに描いていますが、量産される機体の写真は資料にありません。\n\n■ 参考資料\n[1] Tesla「Q3 2026 Update」（決算資料、2026年10月21日） https://assets-ir.tesla.com/tesla-contents/IR/TSLA-Q3-2026-Update.pdf\n[2] Tesla「Tesla Releases Third Quarter 2026 Financial Results」（2026年10月21日） https://ir.tesla.com/press-release/tesla-releases-third-quarter-2026-financial-results\n[3] Tesla 2026年第3四半期 決算説明会の書き起こし（第三者による、The Singju Post） https://singjupost.com/transcript-tesla-tsla-q3-2026-earnings-call/\n[4] Tesla「SI & Robotics」 https://www.tesla.com/SI\n",
+  "scenes": [
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 6,
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "テスラの人型ロボが、量産のラインで作られ始めた！",
+          "expression": "excited"
+        }
+      ],
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "scene_id": 1,
+      "narrator": "dialogue",
+      "narration": "大輔「テスラの人型ロボが、量産のラインで作られ始めた！」"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 9,
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "でも、何台作ったかは、資料に書いてない。",
+          "expression": "doubt"
+        }
+      ],
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "scene_id": 2,
+      "narrator": "dialogue",
+      "narration": "沙織「でも、何台作ったかは、資料に書いてない。」"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 11,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "外の会社には、来年の終わりごろ届ける見込みだって。",
+          "expression": "excited"
+        }
+      ],
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "scene_id": 3,
+      "narrator": "dialogue",
+      "narration": "大輔「外の会社には、来年の終わりごろ届ける見込みだって。」"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 11,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "うちの現場に来るのはいつ？ 何ができる？",
+          "expression": "thinking",
+          "tag": "question"
+        }
+      ],
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "scene_id": 4,
+      "narrator": "dialogue",
+      "narration": "沙織「うちの現場に来るのはいつ？ 何ができる？」"
+    },
+    {
+      "type": "setup",
+      "bgm_role": "intro",
+      "image_asset": "base_cafe_b",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "お題は、テスラの人型ロボット「オプティマス」。テスラは、電気自動車の会社。そのテスラが、人の形をしたロボットを作り始めた、と発表した。",
+          "expression": "excited",
+          "display": "お題は、テスラの人型ロボット「Optimus（オプティマス）」。テスラは、電気自動車の会社。そのテスラが、人の形をしたロボットを作り始めた、と発表した。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "人の形のロボットって、何をするためのもの？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "テスラの公式サイトでは、二本の足で歩いて、自分で考えて動く、いろんな仕事に使える人型ロボット。危険な仕事、繰り返しの仕事、退屈な仕事をこなす、と書いてる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "発表は、10月21日。テスラが3か月ごとに出す、会社の成績と計画の資料、決算資料に書いてあった。同じ日に、経営陣が質問に答える説明会もあった。この回では、資料に書いてあることと、説明会での発言を、分けて話そう。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "説明会で話したのは、テスラの最高経営責任者、イーロン・マスクさん。そこで出た数字が、日本でもニュースになった。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想。テスラ自身は、まず工場の危険な仕事に使うつもり。次は、テスラの外の工場や倉庫にも広がる。ただ、人の手のように使えるまでには、3年はかかると見てる。",
+          "expression": "excited",
+          "tag": "prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想。本物なら、私も使いたい。でも、何台作れて、いくらで、どこで使えるのか。それが出るまでは、私たちの現場に来る時期は決められない、と見てる。",
+          "expression": "thinking",
+          "tag": "prediction"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、3つ確かめよう。本当に作り始めたのか。何ができて、どこが壁か。そして、外の会社の現場に来るのはいつか。",
+          "expression": "thinking"
+        }
+      ],
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "scene_id": 5,
+      "narrator": "dialogue",
+      "narration": "大輔「お題は、テスラの人型ロボット「オプティマス」。テスラは、電気自動車の会社。そのテスラが、人の形をしたロボットを作り始めた、と発表した。」\n沙織「人の形のロボットって、何をするためのもの？」\n大輔「テスラの公式サイトでは、二本の足で歩いて、自分で考えて動く、いろんな仕事に使える人型ロボット。危険な仕事、繰り返しの仕事、退屈な仕事をこなす、と書いてる。」\n沙織「発表は、10月21日。テスラが3か月ごとに出す、会社の成績と計画の資料、決算資料に書いてあった。同じ日に、経営陣が質問に答える説明会もあった。この回では、資料に書いてあることと、説明会での発言を、分けて話そう。」\n大輔「説明会で話したのは、テスラの最高経営責任者、イーロン・マスクさん。そこで出た数字が、日本でもニュースになった。」\n大輔「僕の予想。テスラ自身は、まず工場の危険な仕事に使うつもり。次は、テスラの外の工場や倉庫にも広がる。ただ、人の手のように使えるまでには、3年はかかると見てる。」\n沙織「私の予想。本物なら、私も使いたい。でも、何台作れて、いくらで、どこで使えるのか。それが出るまでは、私たちの現場に来る時期は決められない、と見てる。」\n大輔「じゃあ、3つ確かめよう。本当に作り始めたのか。何ができて、どこが壁か。そして、外の会社の現場に来るのはいつか。」"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 1,
+      "round_title": "本当に作り始めた？ どこまで来た？",
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "image_prompt": "Bright daytime inside a large, clean, modern factory: a long assembly line with overhead lights and gray machinery. Along the line stand several identical humanoid robots in a neat row, some partly assembled with open panels. Each robot is a slim adult-sized humanoid robot with glossy white outer shell panels on the chest, upper arms, thighs and shins, a smooth rounded glossy black helmet-like head with no facial features (a black front face panel framed by a thin light outline), black joints at the neck, waist, elbows and knees with dark mechanical parts visible at the waist and hips, five-fingered white-and-black hands, and black shoe-like feet; no logos or lettering on the robot. Seen from a slight distance at eye level, calm and orderly mood. No people. No readable text, no letters, no numbers, no logos, no brand marks.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "まず、本当に作り始めたのか。テスラの言い方では、量産のラインで作り始めた。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "量産のラインって、車の工場にあるような？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そう。同じ物を大量に作る、工場の流れ作業のこと。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、それ何台作ったの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "台数の前に、僕の期待を言わせて。量産で作れば、台数が増えて、値段も下がっていく。次は、ほかの会社の工場や倉庫にも並ぶはず。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "期待は分かった。でも、よその現場に並ぶには、まず台数が要る。決算資料に何と書いてあるか、一文ずつ見よう。",
+          "expression": "thinking"
+        }
+      ],
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "scene_id": 6,
+      "narrator": "dialogue",
+      "narration": "大輔「まず、本当に作り始めたのか。テスラの言い方では、量産のラインで作り始めた。」\n沙織「量産のラインって、車の工場にあるような？」\n大輔「そう。同じ物を大量に作る、工場の流れ作業のこと。」\n沙織「で、それ何台作ったの？」\n大輔「台数の前に、僕の期待を言わせて。量産で作れば、台数が増えて、値段も下がっていく。次は、ほかの会社の工場や倉庫にも並ぶはず。」\n沙織「期待は分かった。でも、よその現場に並ぶには、まず台数が要る。決算資料に何と書いてあるか、一文ずつ見よう。」"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 1,
+      "reference_index": 0,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "press",
+        "source": "テスラ 決算資料（2026年10月21日）",
+        "quote": "Optimus production began in Fremont on our high-volume lines",
+        "quote_type": "原文",
+        "highlight": "production began",
+        "items": [
+          "訳: 量産のラインで、オプティマスの生産を始めた",
+          "製品の品質の機体は、これが初めて",
+          "今の作り方は、売る製品に向くと確かめた",
+          "機体と作り方は、これからも改良する"
+        ],
+        "reference_index": 0
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "決算資料の、ロボットの段落。カリフォルニア州の工場の量産のラインで、オプティマスの生産が始まった。このラインから出てくるのは、テスラが作った初めての、製品の品質のロボット、と書いてある。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "製品の品質、ってところが大事なんだ。展示会で見せる試作品とは違う。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は正直、試作品を何台か並べただけ、と思ってた。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "続きもある。今の作り方は、商用の製品、つまりお客さんに売る製品に向いている、と確かめた、と書いてる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そこは私の読み違い。試作の段階は越えて、売る物の作り方で作り始めた。資料がそう言ってる。",
+          "expression": "convinced",
+          "tag": "turn"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、何台作ったかは、どこにも書いてない。",
+          "expression": "doubt",
+          "tag": "weakness"
+        }
+      ],
+      "scene_id": 7,
+      "narrator": "dialogue",
+      "image_asset": "cards/kl051_S07",
+      "narration": "沙織「決算資料の、ロボットの段落。カリフォルニア州の工場の量産のラインで、オプティマスの生産が始まった。このラインから出てくるのは、テスラが作った初めての、製品の品質のロボット、と書いてある。」\n大輔「製品の品質、ってところが大事なんだ。展示会で見せる試作品とは違う。」\n沙織「私は正直、試作品を何台か並べただけ、と思ってた。」\n大輔「続きもある。今の作り方は、商用の製品、つまりお客さんに売る製品に向いている、と確かめた、と書いてる。」\n沙織「そこは私の読み違い。試作の段階は越えて、売る物の作り方で作り始めた。資料がそう言ってる。」\n沙織「ただ、何台作ったかは、どこにも書いてない。」\n［画面の資料カード］テスラ 決算資料（2026年10月21日） 「Optimus production began in Fremont on our high-volume lines」（原文） ・訳: 量産のラインで、オプティマスの生産を始めた ・製品の品質の機体は、これが初めて ・今の作り方は、売る製品に向くと確かめた ・機体と作り方は、これからも改良する"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 1,
+      "reference_index": 0,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "press",
+        "source": "テスラ 決算資料（2026年10月21日）の生産能力の表",
+        "quote": "カリフォルニア州: 立ち上げの初め／テキサス州: 建設中",
+        "quote_type": "要約",
+        "highlight": "立ち上げの初め",
+        "items": [
+          "原文: Early Ramp ／ Construction",
+          "オプティマスの生産能力の欄は「-」（数字なし）",
+          "車の工場の欄には「年55万台以上」などの数字",
+          "注記: 生産能力は、今の生産ペースとは別"
+        ],
+        "reference_index": 0
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "同じ資料の、工場ごとの生産能力の表。車の工場には、年に55万台以上、のように数字が入ってる。オプティマスの欄は、横線だけ。数字が無い。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "状態の欄は？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "カリフォルニア州は、立ち上げの初め。テキサス州は、工場を建設中。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "台数の話は、説明会の方で出てる。マスクさんは、1本で年に100万台を作れるラインの、大部分がもう工場に入った、と言った。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それは説明会での発言ね。資料の表には無い。それに同じ説明会で、週に2万台のペースになるまで、少なくとも1年、もう少しかかるかも、とも言ってる。設計で、まだ変わるところがあるから、って。",
+          "expression": "doubt",
+          "tag": "barrier"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "週に2万台なら、1日に3000台近く。二人で割った計算だけどね。そこまでには、まだ時間がかかるのか。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "今、何台出てるかは、資料にも説明会にも出てこない。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だったら、物差しを変えよう。台数じゃなく、製品の品質のロボットが、量産のラインから出てきたか。ここは資料に書いてある。台数は、3か月ほど後の次の決算資料で、あの横線に数字が入るかを見ればいい。",
+          "expression": "excited",
+          "tag": "workaround"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "横線に数字が入るかどうか。それなら、誰でも確かめられる。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "試作品じゃなく、量産のラインから、製品の品質のロボットが出てきた。ここまでは、もう来てる。",
+          "expression": "convinced",
+          "tag": "hope"
+        }
+      ],
+      "scene_id": 8,
+      "narrator": "dialogue",
+      "image_asset": "cards/kl051_S08",
+      "narration": "沙織「同じ資料の、工場ごとの生産能力の表。車の工場には、年に55万台以上、のように数字が入ってる。オプティマスの欄は、横線だけ。数字が無い。」\n大輔「状態の欄は？」\n沙織「カリフォルニア州は、立ち上げの初め。テキサス州は、工場を建設中。」\n大輔「台数の話は、説明会の方で出てる。マスクさんは、1本で年に100万台を作れるラインの、大部分がもう工場に入った、と言った。」\n沙織「それは説明会での発言ね。資料の表には無い。それに同じ説明会で、週に2万台のペースになるまで、少なくとも1年、もう少しかかるかも、とも言ってる。設計で、まだ変わるところがあるから、って。」\n大輔「週に2万台なら、1日に3000台近く。二人で割った計算だけどね。そこまでには、まだ時間がかかるのか。」\n沙織「今、何台出てるかは、資料にも説明会にも出てこない。」\n大輔「だったら、物差しを変えよう。台数じゃなく、製品の品質のロボットが、量産のラインから出てきたか。ここは資料に書いてある。台数は、3か月ほど後の次の決算資料で、あの横線に数字が入るかを見ればいい。」\n沙織「横線に数字が入るかどうか。それなら、誰でも確かめられる。」\n大輔「試作品じゃなく、量産のラインから、製品の品質のロボットが出てきた。ここまでは、もう来てる。」\n［画面の資料カード］テスラ 決算資料（2026年10月21日）の生産能力の表 「カリフォルニア州: 立ち上げの初め／テキサス州: 建設中」（要約） ・原文: Early Ramp ／ Construction ・オプティマスの生産能力の欄は「-」（数字なし） ・車の工場の欄には「年55万台以上」などの数字 ・注記: 生産能力は、今の生産ペースとは別"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 2,
+      "round_title": "何ができる？ どこが壁？",
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "image_prompt": "Close-up of the right hand and forearm of a humanoid robot gripping the edge of a plain brown cardboard box on a metal warehouse shelf. The robot is a slim adult-sized humanoid robot with glossy white outer shell panels on the chest, upper arms, thighs and shins, a smooth rounded glossy black helmet-like head with no facial features (a black front face panel framed by a thin light outline), black joints at the neck, waist, elbows and knees with dark mechanical parts visible at the waist and hips, five-fingered white-and-black hands, and black shoe-like feet; no logos or lettering on the robot; only its hand and forearm are visible (no head, no body). Bright, even daytime factory lighting, shallow depth of field. No readable text, no letters, no numbers, no logos, no brand marks.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "次は、何ができるか。テスラ自身が狙うのは、さっきの公式サイトの、危険な仕事、繰り返しの仕事、退屈な仕事。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "説明会では、もっと具体的に言ってた。最初は重工業、つまり鉄や機械を扱う大きな工場の、危険な仕事。体を痛めやすい繰り返しの作業や、24時間回したい仕事。家で使うのは、量産が進んでから、という言い方だった。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "その先で、僕が期待するのは、物流の倉庫の夜の仕事。段ボールを棚から下ろして、台車に積む。人が集まりにくい時間帯だから、ここに来てほしい。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "段ボールをつかむのは、手ね。一晩中つかみ続けられるかが肝心。手のことは、説明会で技術者が答えてる。",
+          "expression": "doubt"
+        }
+      ],
+      "scene_id": 9,
+      "narrator": "dialogue",
+      "narration": "大輔「次は、何ができるか。テスラ自身が狙うのは、さっきの公式サイトの、危険な仕事、繰り返しの仕事、退屈な仕事。」\n沙織「説明会では、もっと具体的に言ってた。最初は重工業、つまり鉄や機械を扱う大きな工場の、危険な仕事。体を痛めやすい繰り返しの作業や、24時間回したい仕事。家で使うのは、量産が進んでから、という言い方だった。」\n大輔「その先で、僕が期待するのは、物流の倉庫の夜の仕事。段ボールを棚から下ろして、台車に積む。人が集まりにくい時間帯だから、ここに来てほしい。」\n沙織「段ボールをつかむのは、手ね。一晩中つかみ続けられるかが肝心。手のことは、説明会で技術者が答えてる。」"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 2,
+      "reference_index": 2,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "report",
+        "source": "テスラ 決算説明会の書き起こし（2026年10月21日）",
+        "quote": "hand is one of the most challenging hardware areas",
+        "quote_type": "原文",
+        "highlight": "most challenging",
+        "items": [
+          "訳: 手は、機械として最も難しい所の一つ",
+          "体の仕組みの大部分は、固まった（技術者）",
+          "すり減りに強く、壊れ物もつまめる手が難しい",
+          "「1か月ですり減っては困る」は目標の話"
+        ],
+        "reference_index": 2
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "オプティマスの技術者の答え。手は、機械として一番難しいところの一つ。体の仕組みの大部分は、もうちゃんと動く形に固まった、と言ってる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "難しいのは、手なんだ。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "マスクさんの説明では、手は、すり減りに強くないといけない。でも、壊れやすい物をつまめる柔らかさと、触れた感じを測るセンサーも要る。人の手は、すりむいても治る。ロボットの手は治らない、って。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ちなみに、ここは聞き違えやすい。マスクさんの言葉は「安全で長持ちするロボットを届けないといけない。1か月ですり減るようでは困る」。ロボットが1か月ですり減った、という結果じゃない。",
+          "expression": "doubt",
+          "tag": "weakness"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "すり減った報告じゃなくて、越えるべき目標なのか。",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "もう一つの壁は、頭の方。マスクさんは、決まっていない作業までこなすには、AIにまだかなり仕事が残っている、と言ってる。それに、車なら、走っている車から毎日データが集まる。ロボットには、それが無い。",
+          "expression": "thinking",
+          "tag": "barrier"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だから、ロボットを1万台か2万台作って、自分で練習させる、と言ってたね。いろんな作業を練習する場所を作っていて、オプティマス・アカデミー、つまりオプティマスの練習場、と呼んでる。",
+          "expression": "excited",
+          "display": "だから、ロボットを1万台か2万台作って、自分で練習させる、と言ってたね。いろんな作業を練習する場所を作っていて、Optimus Academy、つまりオプティマスの練習場、と呼んでる。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "本物なら、私は研究所で、冷凍庫から試料の箱を、夜通し出し入れする仕事に使いたい。寒くて、同じ動きの繰り返し。だから、手の長持ちは確かめたい。",
+          "expression": "thinking",
+          "tag": "skeptic_wish"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だったら、最初は手に優しい仕事から任せる。壊れ物じゃなく、形の決まった箱を、同じ場所から同じ場所へ運ぶ。テスラが最初に狙う、繰り返しの仕事と同じ向きだ。",
+          "expression": "excited",
+          "tag": "workaround"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "柔らかさが要る壊れ物は、後回し。形の決まった箱からなら、手の壁にぶつかりにくい。ここは二人の見立てだけど、テスラの狙いとは合ってる。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "体の大部分は、もう固まった。残る壁は手で、どこが難しいかもはっきりしてる。形の決まった箱を運ぶ繰り返しの仕事なら、最初の出番になりそうだ。",
+          "expression": "convinced",
+          "tag": "hope"
+        }
+      ],
+      "scene_id": 10,
+      "narrator": "dialogue",
+      "image_asset": "cards/kl051_S10",
+      "narration": "沙織「オプティマスの技術者の答え。手は、機械として一番難しいところの一つ。体の仕組みの大部分は、もうちゃんと動く形に固まった、と言ってる。」\n大輔「難しいのは、手なんだ。」\n沙織「マスクさんの説明では、手は、すり減りに強くないといけない。でも、壊れやすい物をつまめる柔らかさと、触れた感じを測るセンサーも要る。人の手は、すりむいても治る。ロボットの手は治らない、って。」\n沙織「ちなみに、ここは聞き違えやすい。マスクさんの言葉は「安全で長持ちするロボットを届けないといけない。1か月ですり減るようでは困る」。ロボットが1か月ですり減った、という結果じゃない。」\n大輔「すり減った報告じゃなくて、越えるべき目標なのか。」\n沙織「もう一つの壁は、頭の方。マスクさんは、決まっていない作業までこなすには、AIにまだかなり仕事が残っている、と言ってる。それに、車なら、走っている車から毎日データが集まる。ロボットには、それが無い。」\n大輔「だから、ロボットを1万台か2万台作って、自分で練習させる、と言ってたね。いろんな作業を練習する場所を作っていて、オプティマス・アカデミー、つまりオプティマスの練習場、と呼んでる。」\n沙織「本物なら、私は研究所で、冷凍庫から試料の箱を、夜通し出し入れする仕事に使いたい。寒くて、同じ動きの繰り返し。だから、手の長持ちは確かめたい。」\n大輔「だったら、最初は手に優しい仕事から任せる。壊れ物じゃなく、形の決まった箱を、同じ場所から同じ場所へ運ぶ。テスラが最初に狙う、繰り返しの仕事と同じ向きだ。」\n沙織「柔らかさが要る壊れ物は、後回し。形の決まった箱からなら、手の壁にぶつかりにくい。ここは二人の見立てだけど、テスラの狙いとは合ってる。」\n大輔「体の大部分は、もう固まった。残る壁は手で、どこが難しいかもはっきりしてる。形の決まった箱を運ぶ繰り返しの仕事なら、最初の出番になりそうだ。」\n［画面の資料カード］テスラ 決算説明会の書き起こし（2026年10月21日） 「hand is one of the most challenging hardware areas」（原文） ・訳: 手は、機械として最も難しい所の一つ ・体の仕組みの大部分は、固まった（技術者） ・すり減りに強く、壊れ物もつまめる手が難しい ・「1か月ですり減っては困る」は目標の話"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 3,
+      "round_title": "うちの現場に来るのはいつ？",
+      "image_prompt": "Night inside a small Japanese logistics warehouse: tall metal shelves stacked with plain brown cardboard boxes, a hand pallet truck parked in the aisle, bright ceiling lights on, dark windows showing that it is night outside. Quiet and empty. No people, no robots. No readable text, no letters, no numbers, no logos, no brand marks.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "最後は、テスラの外の会社の現場に来るのはいつか。マスクさんは説明会で、手、長持ち、AIの課題が片づくのは、来年の終わりごろの見込み、と言った。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "来年っていうのは、2027年ね。2027年の終わりごろ。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そう。そのころに、外の会社に届け始める、と言ってる。今から1年ちょっと先。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "外の会社に届ける、と本当に言ったのか。説明会の書き起こしで、言葉どおりに確かめよう。",
+          "expression": "thinking"
+        }
+      ],
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "scene_id": 11,
+      "narrator": "dialogue",
+      "narration": "大輔「最後は、テスラの外の会社の現場に来るのはいつか。マスクさんは説明会で、手、長持ち、AIの課題が片づくのは、来年の終わりごろの見込み、と言った。」\n沙織「来年っていうのは、2027年ね。2027年の終わりごろ。」\n大輔「そう。そのころに、外の会社に届け始める、と言ってる。今から1年ちょっと先。」\n沙織「外の会社に届ける、と本当に言ったのか。説明会の書き起こしで、言葉どおりに確かめよう。」"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 3,
+      "reference_index": 2,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "report",
+        "source": "テスラ 決算説明会の書き起こし（2026年10月21日）",
+        "quote": "that's the time to expect when we're delivering Optimus to companies outside of Tesla",
+        "quote_type": "原文",
+        "highlight": "companies outside of Tesla",
+        "items": [
+          "訳: そのころが、テスラの外の会社に届ける時期",
+          "手・長持ち・AIは、来年の終わりごろ解決の見込み",
+          "1〜2か月で、決めた動きでない動画を出す予定",
+          "値段・日本での販売は、話に出ていない"
+        ],
+        "reference_index": 2
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "説明会の書き起こし。課題が来年の終わりごろに片づく見込みで、そのころが、テスラの外の会社に届ける時期、と言ってる。マスクさんの見込みね。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、これは発言で、決算資料には書いてない。値段も、資料にも説明会にも出てこない。日本で売るかどうかも、話に出てない。",
+          "expression": "doubt",
+          "tag": "barrier"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "値段が出ないと、うちで使えるかは決められないね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "もう一つ。マスクさんは、1か月か2か月で、新しい動画を出すと言ってる。あらかじめ決めた動きをなぞるだけの見せ物じゃなく、決めていない動きをしているところ。見たものを信じられる動画にしたい、って。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "よその人型ロボットの動画には、決めた動きをなぞっているだけのものがある、とまで言ってたね。自分で、ハードルを上げてる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だったら、確かめる目印を決めよう。まず、その動画が、決めた動きか、その場の動きか。次に、次の決算資料で、台数の横線に数字が入るか。最後に、外の会社で使った声と、値段が出るか。",
+          "expression": "excited",
+          "tag": "workaround"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "3つとも、私たちでも見られる。発言を信じるか信じないかじゃなく、目印で確かめられる。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "外の会社に届けるのは、来年の終わりごろの見込み。3年より手前の話を、トップ自身が言った。確かめる目印も、はっきりしてる。",
+          "expression": "convinced",
+          "tag": "hope"
+        }
+      ],
+      "scene_id": 12,
+      "narrator": "dialogue",
+      "image_asset": "cards/kl051_S12",
+      "narration": "沙織「説明会の書き起こし。課題が来年の終わりごろに片づく見込みで、そのころが、テスラの外の会社に届ける時期、と言ってる。マスクさんの見込みね。」\n沙織「ただ、これは発言で、決算資料には書いてない。値段も、資料にも説明会にも出てこない。日本で売るかどうかも、話に出てない。」\n大輔「値段が出ないと、うちで使えるかは決められないね。」\n沙織「もう一つ。マスクさんは、1か月か2か月で、新しい動画を出すと言ってる。あらかじめ決めた動きをなぞるだけの見せ物じゃなく、決めていない動きをしているところ。見たものを信じられる動画にしたい、って。」\n大輔「よその人型ロボットの動画には、決めた動きをなぞっているだけのものがある、とまで言ってたね。自分で、ハードルを上げてる。」\n大輔「だったら、確かめる目印を決めよう。まず、その動画が、決めた動きか、その場の動きか。次に、次の決算資料で、台数の横線に数字が入るか。最後に、外の会社で使った声と、値段が出るか。」\n沙織「3つとも、私たちでも見られる。発言を信じるか信じないかじゃなく、目印で確かめられる。」\n大輔「外の会社に届けるのは、来年の終わりごろの見込み。3年より手前の話を、トップ自身が言った。確かめる目印も、はっきりしてる。」\n［画面の資料カード］テスラ 決算説明会の書き起こし（2026年10月21日） 「that's the time to expect when we're delivering Optimus to companies outside of Tesla」（原文） ・訳: そのころが、テスラの外の会社に届ける時期 ・手・長持ち・AIは、来年の終わりごろ解決の見込み ・1〜2か月で、決めた動きでない動画を出す予定 ・値段・日本での販売は、話に出ていない"
+    },
+    {
+      "type": "verdict",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "verdict_from_line": 7,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想は「人の手のように使えるまで、3年はかかる」。見立ては変わらない。ただ、壁の場所がはっきりした。体の大部分は固まっていて、残るのは手の長持ち。",
+          "expression": "thinking",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想は「何台、いくら、どこで、が出るまで、来る時期は決められない」。そこは同じ。でも、試作品だけ、という見方は外れた。量産のラインで、製品の品質のロボットが出てきてる。",
+          "expression": "thinking",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "判定の札は4つ。近くて確かな方から、「もうすぐ来る」「3年はかかる」「根拠待ち」「まだ眉唾」。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "先に言っておくと、決算資料が言っているのは「量産のラインで作り始めた。製品の品質で、売る物の作り方だ」まで。台数は書いてない。外の会社に届ける時期は、説明会での見込み。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だから札は、その先の使い方に付ける。工場や倉庫を持つ、テスラの外の会社が、危険な仕事や、形の決まった箱を運ぶ繰り返しの仕事を、オプティマスに任せる、という使い方。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕は「3年はかかる」。外の会社に届き始めるのは、来年の終わりごろの見込み。でも、手の長持ちは機械の壁。この3年は、外の会社の現場で、繰り返しの仕事を任せ始めるまでの話。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は「根拠待ち」。否定する資料は無い。でも、台数も、値段も、外の会社で使った例も、まだ無い。次の決算資料で台数の欄に数字が入って、外の会社で使った声と値段が出たら、札を上げる。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今日の持ち帰り。オプティマスは、量産のラインで作り始めたところ。テスラの外の工場や倉庫に届くのは、早くて来年の終わりごろの見込み。最初の出番は、危険な仕事や、形の決まった物を運ぶ繰り返しの仕事。",
+          "expression": "convinced",
+          "tag": "takeaway"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "今日からできること。自分の職場で、危険、同じ動きの繰り返し、夜も回したい、の3つが重なる作業を、一つ書き出す。扱うのが壊れ物か、形の決まった箱か、も書き添えておく。",
+          "expression": "amused",
+          "tag": "next_step"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そして、1か月か2か月で出るという動画を見る。決めた動きをなぞっているか、その場で動いているか。書き出した作業と、見比べればいい。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "これは、2026年10月31日時点の、二人の見立て。",
+          "expression": "neutral"
+        }
+      ],
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "scene_id": 13,
+      "narrator": "dialogue",
+      "narration": "大輔「僕の予想は「人の手のように使えるまで、3年はかかる」。見立ては変わらない。ただ、壁の場所がはっきりした。体の大部分は固まっていて、残るのは手の長持ち。」\n沙織「私の予想は「何台、いくら、どこで、が出るまで、来る時期は決められない」。そこは同じ。でも、試作品だけ、という見方は外れた。量産のラインで、製品の品質のロボットが出てきてる。」\n大輔「判定の札は4つ。近くて確かな方から、「もうすぐ来る」「3年はかかる」「根拠待ち」「まだ眉唾」。」\n沙織「先に言っておくと、決算資料が言っているのは「量産のラインで作り始めた。製品の品質で、売る物の作り方だ」まで。台数は書いてない。外の会社に届ける時期は、説明会での見込み。」\n大輔「だから札は、その先の使い方に付ける。工場や倉庫を持つ、テスラの外の会社が、危険な仕事や、形の決まった箱を運ぶ繰り返しの仕事を、オプティマスに任せる、という使い方。」\n大輔「僕は「3年はかかる」。外の会社に届き始めるのは、来年の終わりごろの見込み。でも、手の長持ちは機械の壁。この3年は、外の会社の現場で、繰り返しの仕事を任せ始めるまでの話。」\n沙織「私は「根拠待ち」。否定する資料は無い。でも、台数も、値段も、外の会社で使った例も、まだ無い。次の決算資料で台数の欄に数字が入って、外の会社で使った声と値段が出たら、札を上げる。」\n大輔「今日の持ち帰り。オプティマスは、量産のラインで作り始めたところ。テスラの外の工場や倉庫に届くのは、早くて来年の終わりごろの見込み。最初の出番は、危険な仕事や、形の決まった物を運ぶ繰り返しの仕事。」\n沙織「今日からできること。自分の職場で、危険、同じ動きの繰り返し、夜も回したい、の3つが重なる作業を、一つ書き出す。扱うのが壊れ物か、形の決まった箱か、も書き添えておく。」\n大輔「そして、1か月か2か月で出るという動画を見る。決めた動きをなぞっているか、その場で動いているか。書き出した作業と、見比べればいい。」\n大輔「これは、2026年10月31日時点の、二人の見立て。」"
+    },
+    {
+      "type": "closing",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe_b",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "「生産開始」の一言の中に、資料に書いてあることと、説明会での発言と、まだ出ていないことが混ざってた。今日は、それを分けたかった。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "動画と、次の決算資料が出たら、また答え合わせしよう。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "amused"
+        }
+      ],
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "scene_id": 14,
+      "narrator": "dialogue",
+      "narration": "沙織「「生産開始」の一言の中に、資料に書いてあることと、説明会での発言と、まだ出ていないことが混ざってた。今日は、それを分けたかった。」\n大輔「動画と、次の決算資料が出たら、また答え合わせしよう。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "skeptic",
+          "narration": "人型ロボ、どこまで来た？",
+          "expression": "doubt",
+          "scene_id": 6,
+          "badge_text": "イメージ図（実物と異なる場合があります）"
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "テスラの人型ロボが、量産のラインで作られ始めた！",
+          "expression": "excited",
+          "scene_id": 6,
+          "badge_text": "イメージ図（実物と異なる場合があります）"
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "でも、何台作ったかは、資料に書いてない。",
+          "expression": "doubt",
+          "react": "surprised",
+          "scene_id": 9,
+          "badge_text": "イメージ図（実物と異なる場合があります）"
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "外の会社には、来年の終わりごろ届ける見込みだって。",
+          "expression": "excited",
+          "react": "thinking",
+          "scene_id": 11
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "うちの現場に来るのはいつ？ 判定は本編で。",
+          "expression": "thinking",
+          "scene_id": 11
+        }
+      ]
+    }
+  ]
+}
