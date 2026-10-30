@@ -2945,8 +2945,57 @@
       ],
       "hook_idea": "日本語になった新しいSiri。「中身はGemini」と言われるが、Appleの言い方は少し違う。賢さを比べた数字はあるのか。Googleのアプリは触れないのは本当か",
       "notes": "なるさん指定のネタ（2026-10-27、iOS 27.2 公開直後に実機で試した所感）。構成 v4。確認済みの原文は script_prep/kl050_verified.md。論点案: (1)中身はGemini？賢さは比べられる？（Appleの言い方＝Googleとの協業で作った、比較の数字は自社の前世代との比較のみ→『一世代前』は印象で、数字では確かめられない）(2)自分の情報を横断して使える？（強み=メッセージ・メール・写真・予定を横断、30件の予定一括など。壁=開発者が対応したアプリだけ、LINE・Messenger不可、Gmailは一部、発表が名指しした他社アプリにGoogle無し→越え方=Apple純正アプリ側に集める、GoogleのアカウントをAppleのメール・カレンダーに同期する）(3)無料でどこまで？（ベータ、1日の上限・回数非公表、枠を増やすのは有料）。使った人の声は匿名の傾向として。予想判定: 大輔 soon／沙織 pending（またはsoon）。AI・ソフトウェアの制限は『3年はかかる』を使わない。競合動画は未確認（STEP後半で確認）。"
+    },
+    {
+      "episode_id": "kl051",
+      "status": "confirmed",
+      "slot_type": "news",
+      "genre": "humanoid",
+      "health": false,
+      "domain": "life",
+      "concern_id": null,
+      "entry_question": "テスラの人型ロボ「Optimus」が生産を始めた。うちの会社や現場に来るのはいつ？ 何ができて、どこまで使える？",
+      "title": "テスラの人型ロボ Optimus が生産開始。現場に来るのはいつ？（10月21日発表）",
+      "format": "dialogue",
+      "structure": "rounds_v4",
+      "source_type": "news",
+      "news_date": "2026-10-21",
+      "verdict_as_of": "2026-10-30",
+      "references": [
+        {
+          "title": "Tesla Q3 2026 Update（決算資料）",
+          "authors": [],
+          "year": 2026,
+          "venue": "Tesla Investor Relations",
+          "url": "https://assets-ir.tesla.com/tesla-contents/IR/TSLA-Q3-2026-Update.pdf",
+          "is_preprint": false,
+          "institution": "Tesla",
+          "source_kind": "company_website"
+        },
+        {
+          "title": "Tesla Releases Third Quarter 2026 Financial Results",
+          "authors": [],
+          "year": 2026,
+          "venue": "Tesla Investor Relations",
+          "url": "https://ir.tesla.com/press-release/tesla-releases-third-quarter-2026-financial-results",
+          "is_preprint": false,
+          "institution": "Tesla",
+          "source_kind": "press_release"
+        }
+      ],
+      "hook_idea": "テスラの人型ロボが「生産開始」。ただ資料に書いてあるのは「始めた」まで。台数は空欄。「週2万台」「外販は2027年末」は決算説明会の発言。",
+      "notes": "なるさんがベスト3から選択（2026-10-31）。構成 v4、テンプレ basic（どこまで来た？→どうすれば使える？）。ヒューマノイドは kl049 の2話前。【最重要】見出しの数字（年産100万台・週2万台に少なくとも1年・外販は2027年末ごろ・手が1か月で摩耗・学習データ不足・Optimus Academy 1〜2万台）は決算『説明会の発言』で、決算資料PDFには無い。一次資料（説明会の書き起こし・録画）で確認できた数字だけを台詞に使う。確認できなければ『発言として報じられている』と区別するか使わない。決算資料PDFで確認済みの事実: 『Optimus production began in Fremont on our high-volume lines』『最初の製品品質の機体で、今の製造工程は商用製品に適すると確かめた』、生産能力表はカリフォルニア Early Ramp・テキサス Construction・能力の数字は『-』。投資判断（株価・決算の評価）には寄せない。競合: 日本語解説動画が約10本（飽和気味）。差をつける切り口＝『うちの会社に来るのはいつ、どう備える？』『台数を言わない理由』ではなく、資料に書いてあること／発言／まだ分からないことの区別。使い道は経営者・商売人（倉庫・工場・小売の現場）。予想判定: 大輔 decade寄り（物理の壁＝手の耐久性は臨床でなく機械的な壁、使える）／沙織 pending。外観は想像で描かない（depicts_real_product、外観確認が必要）。",
+      "stage4_snapshot": {
+        "overall_score": 3.7,
+        "evidence_level": null,
+        "announcement_type": "product_release",
+        "buzz_measured": 5,
+        "buzz_outlets": 10,
+        "freshness": 4,
+        "candidate_id": "e61b1b9be2"
+      }
     }
   ],
-  "total_topics": 50,
-  "last_updated": "2026-10-27"
+  "total_topics": 51,
+  "last_updated": "2026-10-31"
 }
