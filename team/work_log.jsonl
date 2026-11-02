@@ -31,3 +31,16 @@
 {"ts": "2026-11-02T16:58:45+09:00", "kind": "call", "agent": "kl-writer", "session": "a107a3b3-e434-488a-a970-950edd958388"}
 {"ts": "2026-11-02T17:08:23+09:00", "kind": "work", "agent": "kl-planner", "episode": "kl051", "step": "再調査", "result": "ok", "retries": 0, "note": "11/2 発表後の再調査。新しい一次資料なし、A案で再構成"}
 {"ts": "2026-11-02T17:08:23+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl051", "step": "再構成", "result": "retry", "retries": 0, "note": "A案で作り直し、初見レビュー指摘で3回修正（S09 売り物と同じ出来の食い違いが3周残った）"}
+{"ts": "2026-11-02T22:24:14+09:00", "kind": "feedback", "agent": "kl-planner", "episode": "kl051", "source": "user", "severity": "major", "text": "発表された資料から問いを立てるのではなく、その発表が示唆する幸せな未来を問いにしてほしい／現場に来るか？は工場関係者しか関心なさそう。家庭にいつ来るかが知りたい"}
+{"ts": "2026-11-02T22:31:00+09:00", "kind": "call", "agent": "kl-planner", "session": "a107a3b3-e434-488a-a970-950edd958388"}
+{"ts": "2026-11-02T22:41:58+09:00", "kind": "call", "agent": "kl-writer", "session": "a107a3b3-e434-488a-a970-950edd958388"}
+{"ts": "2026-11-02T22:46:10+09:00", "kind": "call", "agent": "kl-writer", "session": "a107a3b3-e434-488a-a970-950edd958388"}
+{"ts": "2026-11-02T22:47:35+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "a107a3b3-e434-488a-a970-950edd958388"}
+{"ts": "2026-11-02T22:49:32+09:00", "kind": "call", "agent": "kl-writer", "session": "a107a3b3-e434-488a-a970-950edd958388"}
+{"ts": "2026-11-02T22:51:08+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "a107a3b3-e434-488a-a970-950edd958388"}
+{"ts": "2026-11-02T22:53:07+09:00", "kind": "call", "agent": "kl-writer", "session": "a107a3b3-e434-488a-a970-950edd958388"}
+{"ts": "2026-11-02T22:54:55+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "a107a3b3-e434-488a-a970-950edd958388"}
+{"ts": "2026-11-02T22:56:48+09:00", "kind": "call", "agent": "kl-writer", "session": "a107a3b3-e434-488a-a970-950edd958388"}
+{"ts": "2026-11-02T23:06:26+09:00", "kind": "call", "agent": "kl-art-director", "session": "a107a3b3-e434-488a-a970-950edd958388"}
+{"ts": "2026-11-02T23:23:11+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl051", "step": "再構成", "result": "retry", "retries": 0, "note": "家庭軸で全面作り直し。初見レビュー3周。予告と本編の食い違い、時期・呼び方の混在が各周で出た"}
+{"ts": "2026-11-02T23:23:11+09:00", "kind": "work", "agent": "kl-art-director", "episode": "kl051", "step": "6", "result": "ok", "retries": 0, "note": "家庭軸の画像・サムネ作り直し"}

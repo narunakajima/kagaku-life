@@ -9,11 +9,11 @@
   "genre": "humanoid",
   "health": false,
   "depicts_real_product": true,
-  "episode_title": "テスラの人型ロボ「オプティマス」が生産開始。何ができて、よその会社の現場に来るのはいつか",
-  "youtube_title": "テスラの人型ロボ、生産開始。うちの現場に来るのはいつ？（10月21日発表）",
-  "entry_question": "テスラの人型ロボ「Optimus」が生産を始めた。うちの会社や現場に来るのはいつ？ 何ができて、どこまで使える？",
+  "episode_title": "人型ロボットが家に来るのはいつ？ テスラ「オプティマス」の見込みと、予約を始めた他社を並べて確かめる",
+  "youtube_title": "人型ロボが家に来るのはいつ？テスラの見込みと他社の予約（10/21発表・11月時点）",
+  "entry_question": "家事や親の見守りを任せる人型ロボットが、家に来るのはいつ？ テスラの言う時期と、もう予約を取っている他社を並べて確かめる",
   "claim_verdict": {
-    "dreamer": "soon",
+    "dreamer": "pending",
     "skeptic": "pending"
   },
   "verdict": {
@@ -21,11 +21,11 @@
     "skeptic": "pending"
   },
   "hook_lines": [
-    "テスラの人型ロボ生産開始",
-    "現場に来るのはいつ？"
+    "テスラ人型ロボ量産開始",
+    "家事を任せられるのはいつ？"
   ],
-  "thumbnail_prompt": "Bright, clean daytime interior of a large modern factory, continuous across the whole frame with no panels, boxes or borders. Keep the left 30%, the right 30% and the top 42% of the frame quiet and uncluttered (no robot heads or bodies there) (soft blurred factory machinery and warm light only), but the background must continue unbroken behind them. Main subject, centered left-to-right: a short neat row of three identical humanoid robots standing beside a factory assembly line, seen from a slight distance so that the top of every robot's head sits clearly below the upper 42% of the frame (heads at about 45-55% of the frame height, the whole head and face panel fully visible), with their bodies continuing down toward the bottom edge. Each robot is a slim adult-sized humanoid robot with glossy white outer shell panels on the chest, upper arms, thighs and shins, a smooth rounded glossy black helmet-like head with no facial features (a black front face panel framed by a thin light outline), black joints at the neck, waist, elbows and knees with dark mechanical parts visible at the waist and hips, five-fingered white-and-black hands, and black shoe-like feet; no logos or lettering on the robot. No people. No readable text, no letters, no numbers, no logos, no brand marks.",
-  "thumbnail_headline": "人型ロボ 生産開始\n現場に来るのは？",
+  "thumbnail_prompt": "Warm, cozy evening interior of a home dining kitchen, continuous across the whole frame with no panels, boxes or borders. Keep the left 30%, the right 30% and the top 42% of the frame quiet and uncluttered (soft blurred kitchen cabinets and warm lamp light only), but the background must continue unbroken behind them. Bright, warm and inviting lighting from a pendant lamp over the table (not dark or gloomy). Main subject, centered left-to-right, with the tabletop at about 50-72% of the frame height: a tidy wooden dining table after dinner, already cleared, with a small neat stack of clean plates and two clean glasses on one side and a neat stack of freshly folded laundry (towels and shirts) on the other side, both clearly visible on top of the table, as if someone has just tidied up. Below about 78% of the frame height show only the table's front edge, its legs and the plain floor, with no important objects there. No people, no robots. No readable text, no letters, no numbers, no logos, no brand marks.",
+  "thumbnail_headline": "人型ロボ\n家に来るのはいつ？",
   "thumbnail_exprs": {
     "dreamer": "excited",
     "skeptic": "thinking"
@@ -37,11 +37,12 @@
     "Optimus",
     "人型ロボット",
     "ヒューマノイド",
-    "ロボット",
-    "工場",
-    "物流",
-    "倉庫",
-    "人手不足",
+    "家事ロボット",
+    "家庭用ロボット",
+    "見守り",
+    "1X",
+    "NEO",
+    "家事",
     "答え合わせ",
     "科学ニュース"
   ],
@@ -57,21 +58,91 @@
       "source_kind": "company_website"
     },
     {
-      "title": "Tesla Releases Third Quarter 2026 Financial Results",
-      "authors": [],
-      "year": 2026,
-      "venue": "Tesla Investor Relations",
-      "url": "https://ir.tesla.com/press-release/tesla-releases-third-quarter-2026-financial-results",
-      "is_preprint": false,
-      "institution": "Tesla",
-      "source_kind": "press_release"
-    },
-    {
       "title": "Tesla (TSLA) Q3 2026 Earnings Call Transcript（決算説明会の書き起こし。第三者による。公式の録画は ir.tesla.com/webcast-2026-10-21）",
       "authors": [],
       "year": 2026,
       "venue": "The Singju Post",
       "url": "https://singjupost.com/transcript-tesla-tsla-q3-2026-earnings-call/",
+      "is_preprint": false,
+      "institution": "Tesla",
+      "source_kind": "transcript"
+    },
+    {
+      "title": "Tesla (TSLA) Q3 2026 Earnings Call Full Transcript（決算説明会の書き起こし。第三者による）",
+      "authors": [],
+      "year": 2026,
+      "venue": "EV Wire",
+      "url": "https://evwire.com/p/tesla-tsla-q3-2026-earnings-call-full-transcript",
+      "is_preprint": false,
+      "institution": "Tesla",
+      "source_kind": "transcript"
+    },
+    {
+      "title": "Musk Speaks at WEF（ダボス会議 2026年1月22日の対談の書き起こし。第三者による）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Rev",
+      "url": "https://rev.com/transcripts/musk-speaks-at-wef",
+      "is_preprint": false,
+      "institution": "Tesla",
+      "source_kind": "transcript"
+    },
+    {
+      "title": "Elon Musk says Tesla will likely sell humanoid robots by end of next year",
+      "authors": [],
+      "year": 2026,
+      "venue": "Fox Business（2026年1月22日）",
+      "url": "https://www.foxbusiness.com/economy/elon-musk-says-tesla-likely-sell-humanoid-robots-end-next-year",
+      "is_preprint": false,
+      "institution": "Tesla",
+      "source_kind": "news"
+    },
+    {
+      "title": "NEO Home Robot（NEO の発表、2025年10月28日）",
+      "authors": [],
+      "year": 2025,
+      "venue": "1X Technologies",
+      "url": "https://www.1x.tech/discover/neo-home-robot",
+      "is_preprint": false,
+      "institution": "1X Technologies",
+      "source_kind": "company_website"
+    },
+    {
+      "title": "Order NEO（注文ページ）",
+      "authors": [],
+      "year": 2026,
+      "venue": "1X Technologies",
+      "url": "https://www.1x.tech/order",
+      "is_preprint": false,
+      "institution": "1X Technologies",
+      "source_kind": "company_website"
+    },
+    {
+      "title": "NEO Factory（工場の発表、2026年4月30日）",
+      "authors": [],
+      "year": 2026,
+      "venue": "1X Technologies",
+      "url": "https://www.1x.tech/discover/neo-factory",
+      "is_preprint": false,
+      "institution": "1X Technologies",
+      "source_kind": "company_website"
+    },
+    {
+      "title": "Sunday Robotics（Memo の紹介）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Sunday Robotics",
+      "url": "https://www.sunday.ai",
+      "is_preprint": false,
+      "institution": "Sunday Robotics",
+      "source_kind": "company_website"
+    },
+    {
+      "title": "Tesla (TSLA) Q2 2024 Earnings Call Transcript（2024年7月23日の決算説明会の書き起こし。第三者による）",
+      "authors": [],
+      "year": 2024,
+      "venue": "The Motley Fool",
+      "url": "https://www.fool.com/earnings/call-transcripts/2024/07/24/tesla-tsla-q2-2024-earnings-call-transcript/",
       "is_preprint": false,
       "institution": "Tesla",
       "source_kind": "transcript"
@@ -85,29 +156,9 @@
       "is_preprint": false,
       "institution": "Tesla",
       "source_kind": "company_website"
-    },
-    {
-      "title": "Tesla (TSLA) Q3 2026 Earnings Call Full Transcript（決算説明会の書き起こし。第三者による）",
-      "authors": [],
-      "year": 2026,
-      "venue": "EV Wire",
-      "url": "https://evwire.com/p/tesla-tsla-q3-2026-earnings-call-full-transcript",
-      "is_preprint": false,
-      "institution": "Tesla",
-      "source_kind": "transcript"
-    },
-    {
-      "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations",
-      "authors": [],
-      "year": 2026,
-      "venue": "GXO Logistics（プレスリリース）",
-      "url": "https://mfn.se/all/a/gxo-logistics-inc/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations-d1cb6bba",
-      "is_preprint": false,
-      "institution": "GXO Logistics",
-      "source_kind": "press_release"
     }
   ],
-  "youtube_description": "テスラが、人型ロボット「Optimus（オプティマス）」の生産を始めました（2026年10月21日の決算資料）。工場や倉庫を持つ会社の現場に来るのはいつか。何ができて、どこが壁か。期待担当の大輔と、確かめ担当の沙織が、決算資料と、同じ日の決算説明会での発言を分けて確かめます。(1) 本当に作り始めたのか、どこまで来たのか (2) 何ができて、どこが壁か (3) テスラ以外の会社の現場に来るのはいつか、の3つです。\n\n■ この回の判定（2026年11月2日時点の、二人の見立て）\n判定するのは：工場や倉庫を持つ、テスラ以外の会社が、危険な仕事や、形の決まった箱を運ぶ繰り返しの仕事を、オプティマスに任せる、という使い方\n大輔: 3年はかかる（よその会社に届き始めるのは来年の終わりごろの見込み。ただ、手の長持ちは機械の壁。3年は、今日から数えて、よその会社の現場で繰り返しの仕事を任せ始めるまで、という見立て）\n沙織: 根拠待ち（否定する資料は無いが、台数・値段・よその会社で使った例がまだ無い。次の決算資料で台数の欄に数字が入り、よその会社で使った声と値段が出たらもっと近い方の札に変える、という見立て）\n※決算資料が書いているのは「量産のラインで生産を始めた。売り物と同じ出来（production-quality）の機体で、今の作り方は商用の製品に向くと確かめた」まで。生産能力の表の台数は空欄（「-」）です。\n\n■ 資料に書いてあること／説明会での発言\n・決算資料: フリーモント（カリフォルニア州）の量産ラインで生産開始。機体と作り方はこれからも改良を続ける。生産能力の表はカリフォルニア州「立ち上げの初め」、テキサス州「建設中」、台数は空欄\n・説明会での発言（マスク氏ほか。決算資料には書かれていません）: 1本で年100万台を作れるラインの大部分がフリーモントに入った／週2万台のペースまで少なくとも1年、もう少しかかるかも／手が最も難しい部分の一つ／「1か月ですり減るようでは困る」（長持ちの目標の話で、「手が1か月ですり減る」という結果ではありません）／手・長持ち・AIの課題は来年の終わりごろに解決の見込みで、そのころテスラ以外の会社に届ける／今ラインで作っている機体は、手がまだ完成形ではない／ロボットに載せるコンピューターを、計算の力がおよそ10倍の「AI5」に替えるのは、予定どおりなら2027年4月ごろ／1万〜2万台を作って練習場で練習させる／説明会の日から1〜2か月で、あらかじめ決めた動きでない動画を出す予定（2026年11月2日時点では未公開）\n・値段、日本での販売は、決算資料にも説明会にも出ていません\n・他社の例（テスラではありません）: Agility Robotics の人型ロボット Digit が、物流大手 GXO の最初の倉庫で箱（トート）を10万個以上運び、2027年初めから2拠点を追加（2026年10月26日、GXO のプレスリリース。ロボットを使う会社自身の発表で、第三者の評価ではありません。台数・値段は非公表）\n・説明会の発言は、公式の録画（ir.tesla.com、再生には登録が必要）ではなく、第三者による書き起こし3本（The Singju Post、EV Wire、Bullfincher）で照合しました\n\n※この動画は技術の紹介で、株や投資の判断をすすめるものではありません。\n※ロボットの絵はイメージ図です（実物と異なる場合があります）。公式サイトの写真で確かめた特徴をもとに描いていますが、量産される機体の写真は資料にありません。\n\n■ 参考資料\n[1] Tesla「Q3 2026 Update」（決算資料、2026年10月21日） https://assets-ir.tesla.com/tesla-contents/IR/TSLA-Q3-2026-Update.pdf\n[2] Tesla「Tesla Releases Third Quarter 2026 Financial Results」（2026年10月21日） https://ir.tesla.com/press-release/tesla-releases-third-quarter-2026-financial-results\n[3] Tesla 2026年第3四半期 決算説明会の書き起こし（第三者による、The Singju Post） https://singjupost.com/transcript-tesla-tsla-q3-2026-earnings-call/\n[4] Tesla「SI & Robotics」 https://www.tesla.com/SI\n[5] Tesla 2026年第3四半期 決算説明会の書き起こし（第三者による、EV Wire） https://evwire.com/p/tesla-tsla-q3-2026-earnings-call-full-transcript\n[6] GXO「GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations」（2026年10月26日） https://mfn.se/all/a/gxo-logistics-inc/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations-d1cb6bba\n\n🎵 Music: laser_Retro_Arcade_Disco_110BPM_Am_Korg by fonoskop (freesound.org) — CC BY 4.0",
+  "youtube_description": "テスラが、人型ロボット「Optimus（オプティマス）」を量産のラインで作り始めました（2026年10月21日の決算資料）。同じ日の決算説明会でマスク氏は「量産が進めば、家庭用に買えるものになる」と話しましたが、時期と値段は言っていません。家事や親の見守りを、人型ロボットに任せられる日はいつ来るのか。期待担当の大輔と、確かめ担当の沙織が、テスラ自身の資料と発言、家庭用のロボットを売り出した他社の公式発表で確かめます。(1) テスラは家庭をいつと言っているか (2) 家事をするロボットは、今、家で何ができるか の2つです。\n\n■ この回の判定（2026年11月2日時点の、二人の見立て）\n判定するのは：人型ロボットが家に来て、決まった片づけ（食卓の皿を下げる、洗濯物をたたむ など）を任せ始められるのはいつか。テスラの言う時期（見込み）と、もう予約を取っている他社の実例を並べて判定しました\n大輔: 3年はかかる（1Xは2026年にアメリカで届け始めるとしている。ただ、ふつうの家で決まった片づけを任せて安心できるまでには、手の器用さと人のそばで動く安全という機械の壁がある。すぐではなく、今日から数えて、アメリカの家で決まった片づけを任せ始めるまで3年ほどはみておく、という見立て（予想どおり）。日本で売る予定は、どの会社からも出ていません）\n沙織: 根拠待ち（否定する資料は無いが、一般の家に届いたロボットが自分の力で家事をこなした、という第三者の確認がまだ無い。記者など第三者が家で試し、人が遠くから操作していないと分かったら、もっと近い方の札に変える、という見立て）\nテスラの見込みへの二人の見立て: マスク氏の「来年（2027年）の終わりまでに、一般の人に人型ロボットを売っていると思う」（2026年1月、ダボス会議）は、とても高い信頼性・安全性・できることの幅に自信が持てたら、という条件つきの見込み。10月の説明会では「来年の終わりごろ」はテスラ以外の会社に届ける時期で、家庭は「量産が進んでから」と後ろに置いた言い方になっている。値段・予約は出ておらず、これまでの見込みも後ろにずれてきたため、言葉どおりの時期になるかは今の資料では確かめられない（沙織）。条件が満たせたらの話として聞くが、家に来る順番（工場→よその会社→家庭）をテスラ自身が示したのは確か（大輔）。\n\n■ テスラの資料に書いてあること／発言\n・決算資料（2026年10月21日）: フリーモント（カリフォルニア州）の量産ラインで生産開始。売り物と同じ出来（production-quality）の機体で、今の作り方は商用の製品に向くと確かめた。台数は書いていません。家庭・個人向けの記述はありません\n・決算説明会（同日）での発言: 最初に一番役立つのは重工業の危険な仕事など／量産が進めば、家庭用に買えるものになる（時期・値段なし）／テスラ以外の会社に届けるのは来年（2027年）の終わりごろの見込み／説明会の日から1〜2か月で、見たまま信じられる動画を出す予定（2026年11月2日時点では未公開）\n・ダボス会議（世界経済フォーラム年次総会、2026年1月22日）での発言: 来年の終わりまでに一般の人に人型ロボットを売っていると思う（条件つき）。使い道の例として、子どもの見守り、ペットの世話、年老いた親の世話を挙げた。世界経済フォーラム公式の書き起こしは閲覧できなかったため、第三者の書き起こし（Rev）と報道（Fox Business）で照合しました\n・時期の見込みのずれ: 2024年7月の決算説明会では「2026年にテスラ以外の会社に提供する」と話していました\n・説明会の発言は、公式の録画（再生には登録が必要）ではなく、第三者による書き起こし（The Singju Post、EV Wire、The Motley Fool）で照合しました\n\n■ 他社の家庭用ロボット（会社自身の発表です。第三者の確認ではありません）\n・1X「NEO」（米国の人型ロボット）: 2025年10月28日に予約開始。2万ドル、または月499ドル（日本円は1ドル150円で計算した目安）。米国で2026年に届け始め、ほかの国は2027年から。最初は基本的な作業から始まり、知らない家事は1Xの専門スタッフが遠隔で導く（注文ページでは「予定した時間に遠隔で見守る」）。2026年4月の発表では、今できあがる機体はまず社内の家庭での試験に優先。一般の購入者の家に届いたという第三者の確認は、2026年11月2日時点で見つけられませんでした\n・Sunday「Memo」（米国の、車輪で動く家事ロボット）: 食卓の片づけ、食洗機、靴下たたみ。家で人が遠隔操作して覚えさせる必要はなく、手袋型の記録装置を付けた人の動きから学ぶ、と説明。2026年に試験提供を始めるとしています\n\n※この動画は技術の紹介で、株や投資の判断、商品の購入をすすめるものではありません。\n※ロボットの絵はイメージ図です（実物と異なる場合があります）。テスラの公式サイトの写真で確かめた特徴をもとに描いていますが、量産される機体の写真は資料にありません。家庭の場面の絵は、実在の家庭や製品を写したものではありません。\n\n■ 参考資料\n[1] Tesla「Q3 2026 Update」（決算資料、2026年10月21日） https://assets-ir.tesla.com/tesla-contents/IR/TSLA-Q3-2026-Update.pdf\n[2] Tesla 2026年第3四半期 決算説明会の書き起こし（第三者による、The Singju Post） https://singjupost.com/transcript-tesla-tsla-q3-2026-earnings-call/\n[3] Tesla 2026年第3四半期 決算説明会の書き起こし（第三者による、EV Wire） https://evwire.com/p/tesla-tsla-q3-2026-earnings-call-full-transcript\n[4] ダボス会議（2026年1月22日）でのマスク氏の対談の書き起こし（第三者による、Rev） https://rev.com/transcripts/musk-speaks-at-wef\n[5] Fox Business「Elon Musk says Tesla will likely sell humanoid robots by end of next year」（2026年1月22日） https://www.foxbusiness.com/economy/elon-musk-says-tesla-likely-sell-humanoid-robots-end-next-year\n[6] 1X「NEO Home Robot」（2025年10月28日） https://www.1x.tech/discover/neo-home-robot\n[7] 1X「Order NEO」（注文ページ） https://www.1x.tech/order\n[8] 1X「NEO Factory」（2026年4月30日） https://www.1x.tech/discover/neo-factory\n[9] Sunday Robotics 公式サイト https://www.sunday.ai\n[10] Tesla 2024年第2四半期 決算説明会の書き起こし（第三者による、The Motley Fool） https://www.fool.com/earnings/call-transcripts/2024/07/24/tesla-tsla-q2-2024-earnings-call-transcript/\n[11] Tesla「SI & Robotics」 https://www.tesla.com/SI\n\n🎵 Music: laser_Retro_Arcade_Disco_110BPM_Am_Korg by fonoskop (freesound.org) — CC BY 4.0",
   "scenes": [
     {
       "type": "teaser",
@@ -118,126 +169,134 @@
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "テスラの人型ロボが、工場の流れ作業で作られ始めた！",
+          "text": "テスラの人型ロボ、量産のラインで作り始めた！",
           "expression": "excited",
           "t0": 0.0,
-          "dur": 4.4,
+          "dur": 3.52,
           "cards": [
             {
-              "text": "テスラの人型ロボが、工場の流れ作業で作られ始めた！",
+              "text": "テスラの人型ロボ、量産のラインで作り始めた！",
               "start": 0.0,
-              "end": 3.8
+              "end": 3.3
             }
           ]
         }
       ],
-      "ken_burns": "zoom_out",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      },
       "scene_id": 1,
-      "narrator": "dialogue",
-      "narration": "大輔「テスラの人型ロボが、工場の流れ作業で作られ始めた！」",
-      "lines_hash": "dfbf77ea41ed"
-    },
-    {
-      "type": "teaser",
-      "bgm_role": "intro",
-      "reuse_scene_id": 9,
-      "shows_product": true,
-      "badge_text": "イメージ図（実物と異なる場合があります）",
-      "lines": [
-        {
-          "speaker": "skeptic",
-          "text": "でも、何台作ったかは、資料に書いてない。",
-          "expression": "doubt",
-          "t0": 0.0,
-          "dur": 2.72,
-          "cards": [
-            {
-              "text": "でも、何台作ったかは、資料に書いてない。",
-              "start": 0.0,
-              "end": 2.72
-            }
-          ]
-        }
-      ],
       "ken_burns": "zoom_out",
       "zoom_anchor": {
         "x": 0.5,
         "y": 0.5
       },
-      "scene_id": 2,
+      "narration": "大輔「テスラの人型ロボ、量産のラインで作り始めた！」",
       "narrator": "dialogue",
-      "narration": "沙織「でも、何台作ったかは、資料に書いてない。」",
-      "lines_hash": "cd0059030d55"
+      "lines_hash": "493026a184eb"
     },
     {
       "type": "teaser",
       "bgm_role": "intro",
-      "reuse_scene_id": 11,
+      "reuse_scene_id": 7,
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "テスラ以外の会社には、来年の終わりごろ届ける見込みだって。",
+          "text": "量産が進めば、家でも買えるものになる、だって。",
           "expression": "excited",
           "t0": 0.0,
-          "dur": 4.28,
+          "dur": 3.88,
           "cards": [
             {
-              "text": "テスラ以外の会社には、来年の終わりごろ",
-              "start": 0.0,
-              "end": 2.91
+              "text": "量産が進めば、家でも買えるものになる、",
+              "start": 0.37,
+              "end": 3.22
             },
             {
-              "text": "届ける見込みだって。",
-              "start": 3.06,
-              "end": 4.48
+              "text": "だって。",
+              "start": 3.37,
+              "end": 3.97
             }
           ]
         }
       ],
+      "scene_id": 2,
       "ken_burns": "zoom_out",
       "zoom_anchor": {
         "x": 0.5,
         "y": 0.5
       },
-      "scene_id": 3,
+      "narration": "大輔「量産が進めば、家でも買えるものになる、だって。」",
       "narrator": "dialogue",
-      "narration": "大輔「テスラ以外の会社には、来年の終わりごろ届ける見込みだって。」",
-      "lines_hash": "c1e4cf2c8f7d"
+      "lines_hash": "07fa1bc31af9"
     },
     {
       "type": "teaser",
       "bgm_role": "intro",
-      "reuse_scene_id": 11,
+      "reuse_scene_id": 7,
       "lines": [
         {
           "speaker": "skeptic",
-          "text": "うちの現場に来るのはいつ？ 何ができる？",
-          "expression": "thinking",
-          "tag": "question",
+          "text": "でも、10月の発表では、家に来る時期も値段も言ってない。",
+          "expression": "doubt",
           "t0": 0.0,
-          "dur": 2.92,
+          "dur": 4.84,
           "cards": [
             {
-              "text": "うちの現場に来るのはいつ？ 何ができる？",
+              "text": "でも、10月の発表では、家に来る時期も",
               "start": 0.0,
-              "end": 2.92
+              "end": 3.34
+            },
+            {
+              "text": "値段も言ってない。",
+              "start": 3.49,
+              "end": 4.84
             }
           ]
         }
       ],
+      "scene_id": 3,
       "ken_burns": "zoom_out",
       "zoom_anchor": {
         "x": 0.5,
         "y": 0.5
       },
-      "scene_id": 4,
+      "narration": "沙織「でも、10月の発表では、家に来る時期も値段も言ってない。」",
       "narrator": "dialogue",
-      "narration": "沙織「うちの現場に来るのはいつ？ 何ができる？」",
-      "lines_hash": "574404621155"
+      "lines_hash": "c675d561add4"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 10,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "ほかのロボット会社は予約中。人型ロボが家に来るのはいつ？",
+          "expression": "thinking",
+          "tag": "question",
+          "t0": 0.0,
+          "dur": 4.52,
+          "cards": [
+            {
+              "text": "ほかのロボット会社は予約中。",
+              "start": 0.03,
+              "end": 2.13
+            },
+            {
+              "text": "人型ロボが家に来るのはいつ？",
+              "start": 2.28,
+              "end": 4.38
+            }
+          ]
+        }
+      ],
+      "scene_id": 4,
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "narration": "沙織「ほかのロボット会社は予約中。人型ロボが家に来るのはいつ？」",
+      "narrator": "dialogue",
+      "lines_hash": "396892669062"
     },
     {
       "type": "setup",
@@ -246,36 +305,36 @@
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "お題は、テスラの人型ロボット「オプティマス」。テスラは、電気自動車の会社。そのテスラが、人の形をしたロボットを作り始めた、と発表した。",
+          "text": "お題は、テスラの人型ロボット「オプティマス」。テスラは、電気自動車の会社。そのテスラが10月21日、人の形をしたロボットを、大量生産の流れ作業で作り始めた、と発表した。",
           "expression": "excited",
-          "display": "お題は、テスラの人型ロボット「Optimus（オプティマス）」。テスラは、電気自動車の会社。そのテスラが、人の形をしたロボットを作り始めた、と発表した。",
+          "display": "お題は、テスラの人型ロボット「Optimus（オプティマス）」。テスラは、電気自動車の会社。そのテスラが10月21日、人の形をしたロボットを、大量生産の流れ作業で作り始めた、と発表した。",
           "t0": 0.0,
-          "dur": 10.08,
+          "dur": 13.52,
           "cards": [
             {
               "text": "お題は、テスラの人型ロボット「Optimus",
               "start": 0.0,
-              "end": 2.92
+              "end": 3.2
             },
             {
               "text": "（オプティマス）」。テスラは、",
-              "start": 2.92,
-              "end": 4.91
+              "start": 3.2,
+              "end": 5.38
             },
             {
-              "text": "電気自動車の会社。そのテスラが、",
-              "start": 4.91,
-              "end": 7.03
+              "text": "電気自動車の会社。そのテスラが10月21日、",
+              "start": 5.38,
+              "end": 8.58
             },
             {
-              "text": "人の形をしたロボットを作り始めた、",
-              "start": 7.03,
-              "end": 9.28
+              "text": "人の形をしたロボットを、大量生産の流れ",
+              "start": 8.58,
+              "end": 11.34
             },
             {
-              "text": "と発表した。",
-              "start": 9.28,
-              "end": 10.08
+              "text": "作業で作り始めた、と発表した。",
+              "start": 11.34,
+              "end": 13.52
             }
           ]
         },
@@ -283,8 +342,8 @@
           "speaker": "skeptic",
           "text": "人の形のロボットって、何をするためのもの？",
           "expression": "neutral",
-          "t0": 10.36,
-          "dur": 3.36,
+          "t0": 13.8,
+          "dur": 3.6,
           "cards": [
             {
               "text": "人の形のロボットって、何をするためのもの？",
@@ -295,2105 +354,1844 @@
         },
         {
           "speaker": "dreamer",
-          "text": "テスラの公式サイトでは、二本の足で歩いて、自分で考えて動く、いろんな仕事に使える人型ロボット。危険な仕事、繰り返しの仕事、退屈な仕事をこなす、と書いてる。",
-          "expression": "excited",
-          "t0": 14.0,
-          "dur": 12.56,
+          "text": "テスラの公式サイトでは、危険な仕事、繰り返しの仕事、退屈な仕事をこなす、いろんな仕事に使える人型ロボット。",
+          "expression": "neutral",
+          "t0": 17.68,
+          "dur": 8.56,
           "cards": [
             {
-              "text": "テスラの公式サイトでは、二本の足で歩いて、",
+              "text": "テスラの公式サイトでは、危険な仕事、",
               "start": 0.0,
-              "end": 3.15
+              "end": 2.8
             },
             {
-              "text": "自分で考えて動く、いろんな仕事に使える人",
-              "start": 3.3,
-              "end": 6.32
+              "text": "繰り返しの仕事、退屈な仕事をこなす、",
+              "start": 3.04,
+              "end": 5.74
             },
             {
-              "text": "型ロボット。危険な仕事、繰り返しの仕事、",
-              "start": 6.47,
-              "end": 9.59
-            },
-            {
-              "text": "退屈な仕事をこなす、と書いてる。",
-              "start": 9.74,
-              "end": 12.18
+              "text": "いろんな仕事に使える人型ロボット。",
+              "start": 6.04,
+              "end": 8.59
             }
           ]
         },
         {
           "speaker": "skeptic",
-          "text": "発表は、10月21日。決算資料、つまり、テスラが3か月ごとに出す、会社の成績と計画の資料に書いてあった。同じ日に、経営陣が質問に答える説明会もあった。この回では、資料に書いてあることと、説明会での発言を、分けて話そう。",
-          "expression": "neutral",
-          "t0": 26.84,
-          "dur": 17.8,
-          "cards": [
-            {
-              "text": "発表は、10月21日。決算資料、つまり、",
-              "start": 0.0,
-              "end": 3.48
-            },
-            {
-              "text": "テスラが3か月ごとに出す、会社の成績と",
-              "start": 3.63,
-              "end": 6.55
-            },
-            {
-              "text": "計画の資料に書いてあった。同じ日に、",
-              "start": 6.7,
-              "end": 9.4
-            },
-            {
-              "text": "経営陣が質問に答える説明会もあった。",
-              "start": 9.55,
-              "end": 12.25
-            },
-            {
-              "text": "この回では、資料に書いてあることと、",
-              "start": 12.4,
-              "end": 15.45
-            },
-            {
-              "text": "説明会での発言を、分けて話そう。",
-              "start": 15.6,
-              "end": 18.0
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "説明会で話したのは、テスラの最高経営責任者、イーロン・マスクさん。そこで出た、ロボットの台数や時期の数字が、日本でもニュースになった。",
+          "text": "最初は工場で使う、とテスラ自身が言ってるのよね。工場の話だと、私たちの暮らしからは遠い。今日知りたいのは、家に来るのはいつか。",
           "expression": "thinking",
-          "t0": 44.92,
-          "dur": 10.12,
+          "t0": 26.52,
+          "dur": 8.92,
           "cards": [
             {
-              "text": "説明会で話したのは、",
+              "text": "最初は工場で使う、",
               "start": 0.0,
-              "end": 1.54
+              "end": 1.23
             },
             {
-              "text": "テスラの最高経営責任者、",
-              "start": 1.54,
-              "end": 3.38
-            },
-            {
-              "text": "イーロン・マスクさん。そこで出た、",
-              "start": 3.53,
-              "end": 5.98
-            },
-            {
-              "text": "ロボットの台数や時期の数字が、",
-              "start": 6.13,
-              "end": 8.29
-            },
-            {
-              "text": "日本でもニュースになった。",
-              "start": 8.44,
-              "end": 10.32
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "僕の予想。テスラ自身は、まず工場の危険な仕事に使うつもり。次は、テスラ以外の会社の工場や倉庫にも広がる。ただ、そういうよその会社の現場で、本当に仕事を任せられるまでには、今から数えて3年はかかると見てる。",
-          "expression": "excited",
-          "tag": "prediction",
-          "t0": 55.26,
-          "dur": 15.8,
-          "cards": [
-            {
-              "text": "僕の予想。テスラ自身は、まず工場の危険な",
-              "start": 0.0,
-              "end": 3.14
-            },
-            {
-              "text": "仕事に使うつもり。次は、テスラ以外の会社の",
-              "start": 3.29,
-              "end": 6.39
-            },
-            {
-              "text": "工場や倉庫にも広がる。ただ、",
-              "start": 6.54,
-              "end": 8.61
-            },
-            {
-              "text": "そういうよその会社の現場で、",
-              "start": 8.76,
-              "end": 10.83
-            },
-            {
-              "text": "本当に仕事を任せられるまでには、",
-              "start": 10.98,
-              "end": 13.34
-            },
-            {
-              "text": "今から数えて3年はかかると見てる。",
-              "start": 13.49,
-              "end": 16.0
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "私の予想。本物なら、私も使いたい。でも、何台作れて、いくらで、どこで使えるのか。それが出るまでは、私たちの現場に来る時期は決められない、と見てる。",
-          "expression": "thinking",
-          "tag": "prediction",
-          "t0": 71.34,
-          "dur": 10.84,
-          "cards": [
-            {
-              "text": "私の予想。本物なら、私も使いたい。でも、",
-              "start": 0.0,
-              "end": 3.04
-            },
-            {
-              "text": "何台作れて、いくらで、どこで使えるのか。",
-              "start": 3.19,
-              "end": 6.04
-            },
-            {
-              "text": "それが出るまでは、私たちの現場に来る時期は",
-              "start": 6.19,
-              "end": 9.18
-            },
-            {
-              "text": "決められない、と見てる。",
-              "start": 9.33,
-              "end": 11.04
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "じゃあ、3つ確かめよう。本当に作り始めたのか。何ができて、どこが壁か。そして、よその会社の現場に来るのはいつか。",
-          "expression": "thinking",
-          "t0": 82.46,
-          "dur": 9.96,
-          "cards": [
-            {
-              "text": "じゃあ、3つ確かめよう。",
-              "start": 0.0,
-              "end": 2.11
-            },
-            {
-              "text": "本当に作り始めたのか。",
-              "start": 2.11,
-              "end": 4.04
-            },
-            {
-              "text": "何ができて、どこが壁か。そして、",
-              "start": 4.4,
-              "end": 7.38
-            },
-            {
-              "text": "よその会社の現場に来るのはいつか。",
-              "start": 7.53,
-              "end": 10.08
-            }
-          ]
-        }
-      ],
-      "ken_burns": "zoom_out",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "scene_id": 5,
-      "narrator": "dialogue",
-      "narration": "大輔「お題は、テスラの人型ロボット「オプティマス」。テスラは、電気自動車の会社。そのテスラが、人の形をしたロボットを作り始めた、と発表した。」\n沙織「人の形のロボットって、何をするためのもの？」\n大輔「テスラの公式サイトでは、二本の足で歩いて、自分で考えて動く、いろんな仕事に使える人型ロボット。危険な仕事、繰り返しの仕事、退屈な仕事をこなす、と書いてる。」\n沙織「発表は、10月21日。決算資料、つまり、テスラが3か月ごとに出す、会社の成績と計画の資料に書いてあった。同じ日に、経営陣が質問に答える説明会もあった。この回では、資料に書いてあることと、説明会での発言を、分けて話そう。」\n大輔「説明会で話したのは、テスラの最高経営責任者、イーロン・マスクさん。そこで出た、ロボットの台数や時期の数字が、日本でもニュースになった。」\n大輔「僕の予想。テスラ自身は、まず工場の危険な仕事に使うつもり。次は、テスラ以外の会社の工場や倉庫にも広がる。ただ、そういうよその会社の現場で、本当に仕事を任せられるまでには、今から数えて3年はかかると見てる。」\n沙織「私の予想。本物なら、私も使いたい。でも、何台作れて、いくらで、どこで使えるのか。それが出るまでは、私たちの現場に来る時期は決められない、と見てる。」\n大輔「じゃあ、3つ確かめよう。本当に作り始めたのか。何ができて、どこが壁か。そして、よその会社の現場に来るのはいつか。」",
-      "lines_hash": "0f997d4c595f"
-    },
-    {
-      "type": "paper",
-      "bgm_role": "main",
-      "round": 1,
-      "round_title": "本当に作り始めた？ どこまで来た？",
-      "shows_product": true,
-      "badge_text": "イメージ図（実物と異なる場合があります）",
-      "image_prompt": "Bright daytime inside a large, clean, modern factory: a long assembly line with overhead lights and gray machinery. Along the line stand several identical humanoid robots in a neat row, some partly assembled with open panels. Each robot is a slim adult-sized humanoid robot with glossy white outer shell panels on the chest, upper arms, thighs and shins, a smooth rounded glossy black helmet-like head with no facial features (a black front face panel framed by a thin light outline), black joints at the neck, waist, elbows and knees with dark mechanical parts visible at the waist and hips, five-fingered white-and-black hands, and black shoe-like feet; no logos or lettering on the robot. Seen from a slight distance at eye level, calm and orderly mood. No people. No readable text, no letters, no numbers, no logos, no brand marks.",
-      "lines": [
-        {
-          "speaker": "dreamer",
-          "text": "まず、本当に作り始めたのか。テスラの言い方では、量産のラインで作り始めた。",
-          "expression": "excited",
-          "t0": 0.0,
-          "dur": 6.08,
-          "cards": [
-            {
-              "text": "まず、本当に作り始めたのか。",
-              "start": 0.0,
-              "end": 2.1
-            },
-            {
-              "text": "テスラの言い方では、",
-              "start": 2.25,
-              "end": 3.8
-            },
-            {
-              "text": "量産のラインで作り始めた。",
-              "start": 3.8,
-              "end": 5.81
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "量産のラインって、車の工場にあるような？",
-          "expression": "neutral",
-          "t0": 6.36,
-          "dur": 3.52,
-          "cards": [
-            {
-              "text": "量産のラインって、車の工場にあるような？",
-              "start": 0.0,
-              "end": 3.52
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "そう。同じ物を大量に作る、工場の流れ作業のこと。",
-          "expression": "neutral",
-          "t0": 10.16,
-          "dur": 4.4,
-          "cards": [
-            {
-              "text": "そう。同じ物を大量に作る、",
-              "start": 0.0,
-              "end": 2.12
-            },
-            {
-              "text": "工場の流れ作業のこと。",
-              "start": 2.12,
-              "end": 3.92
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "で、それ何台作ったの？",
-          "expression": "doubt",
-          "t0": 14.84,
-          "dur": 1.92,
-          "cards": [
-            {
-              "text": "で、それ何台作ったの？",
-              "start": 0.0,
-              "end": 1.92
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "台数の前に、僕の期待を言わせて。量産で作れば、台数が増えて、値段も下がっていくはず。そうなれば、大きな工場だけじゃなく、町の中くらいの工場や倉庫でも、手が届く。",
-          "expression": "excited",
-          "tag": "use_case",
-          "t0": 17.04,
-          "dur": 12.84,
-          "cards": [
-            {
-              "text": "台数の前に、僕の期待を言わせて。",
-              "start": 0.29,
-              "end": 2.69
-            },
-            {
-              "text": "量産で作れば、台数が増えて、",
-              "start": 2.99,
-              "end": 5.09
-            },
-            {
-              "text": "値段も下がっていくはず。そうなれば、",
-              "start": 5.24,
-              "end": 7.94
-            },
-            {
-              "text": "大きな工場だけじゃなく、町の中くらいの",
-              "start": 8.09,
-              "end": 10.94
-            },
-            {
-              "text": "工場や倉庫でも、手が届く。",
-              "start": 11.09,
-              "end": 13.04
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "期待は分かった。でも、中くらいの工場に届くには、まず台数が要る。決算資料に何と書いてあるか、一文ずつ見よう。",
-          "expression": "thinking",
-          "t0": 30.16,
-          "dur": 7.96,
-          "cards": [
-            {
-              "text": "期待は分かった。でも、",
-              "start": 0.0,
-              "end": 1.56
-            },
-            {
-              "text": "中くらいの工場に届くには、",
-              "start": 1.56,
-              "end": 3.4
-            },
-            {
-              "text": "まず台数が要る。",
-              "start": 3.55,
-              "end": 4.76
-            },
-            {
-              "text": "決算資料に何と書いてあるか、",
-              "start": 4.76,
-              "end": 6.88
-            },
-            {
-              "text": "一文ずつ見よう。",
-              "start": 7.03,
-              "end": 8.16
-            }
-          ]
-        }
-      ],
-      "ken_burns": "zoom_out",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "scene_id": 6,
-      "narrator": "dialogue",
-      "narration": "大輔「まず、本当に作り始めたのか。テスラの言い方では、量産のラインで作り始めた。」\n沙織「量産のラインって、車の工場にあるような？」\n大輔「そう。同じ物を大量に作る、工場の流れ作業のこと。」\n沙織「で、それ何台作ったの？」\n大輔「台数の前に、僕の期待を言わせて。量産で作れば、台数が増えて、値段も下がっていくはず。そうなれば、大きな工場だけじゃなく、町の中くらいの工場や倉庫でも、手が届く。」\n沙織「期待は分かった。でも、中くらいの工場に届くには、まず台数が要る。決算資料に何と書いてあるか、一文ずつ見よう。」",
-      "lines_hash": "4799114bdcb1"
-    },
-    {
-      "type": "check",
-      "bgm_role": "main",
-      "round": 1,
-      "reference_index": 0,
-      "ken_burns": "static",
-      "source_card": {
-        "kind": "press",
-        "source": "テスラ 決算資料（2026年10月21日）",
-        "quote": "Optimus production began in Fremont on our high-volume lines",
-        "quote_type": "原文",
-        "highlight": "production began",
-        "items": [
-          "訳: 量産のラインで、オプティマスの生産を始めた",
-          "売り物と同じ出来の機体は、これが初めて",
-          "今の作り方は、売る製品に向くと確かめた",
-          "機体と作り方は、これからも改良する"
-        ],
-        "reference_index": 0
-      },
-      "lines": [
-        {
-          "speaker": "skeptic",
-          "text": "決算資料の、ロボットの段落。カリフォルニア州の工場の量産のラインで、オプティマスの生産が始まった。このラインから出てくるのは、テスラが作った初めての、売り物と同じ出来のロボット、と書いてある。",
-          "expression": "neutral",
-          "t0": 0.0,
-          "dur": 13.36,
-          "cards": [
-            {
-              "text": "決算資料の、ロボットの段落。",
-              "start": 0.0,
-              "end": 2.03
-            },
-            {
-              "text": "カリフォルニア州の工場の量産のラインで、",
-              "start": 2.18,
-              "end": 4.81
-            },
-            {
-              "text": "オプティマスの生産が始まった。",
-              "start": 4.96,
-              "end": 6.93
-            },
-            {
-              "text": "このラインから出てくるのは、",
-              "start": 7.08,
-              "end": 8.92
-            },
-            {
-              "text": "テスラが作った初めての、売り物と同じ出来の",
-              "start": 9.07,
-              "end": 11.83
-            },
-            {
-              "text": "ロボット、と書いてある。",
-              "start": 11.98,
-              "end": 13.56
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "売り物と同じ出来、ってところが大事なんだ。展示会で見せる試作品とは違う。",
-          "expression": "excited",
-          "t0": 13.64,
-          "dur": 5.16,
-          "cards": [
-            {
-              "text": "売り物と同じ出来、ってところが大事なんだ。",
-              "start": 0.2,
-              "end": 3.12
-            },
-            {
-              "text": "展示会で見せる試作品とは違う。",
-              "start": 3.27,
-              "end": 5.36
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "私は正直、試作品を何台か並べただけ、と思ってた。",
-          "expression": "doubt",
-          "t0": 19.08,
-          "dur": 4.4,
-          "cards": [
-            {
-              "text": "私は正直、試作品を何台か並べただけ、",
-              "start": 0.56,
-              "end": 3.55
-            },
-            {
-              "text": "と思ってた。",
-              "start": 3.7,
-              "end": 4.6
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "続きもある。今の作り方は、商用の製品、つまりお客さんに売る製品に向いている、と確かめた、と書いてる。",
-          "expression": "excited",
-          "t0": 23.76,
-          "dur": 9.4,
-          "cards": [
-            {
-              "text": "続きもある。今の作り方は、商用の製品、",
-              "start": 0.0,
-              "end": 3.86
-            },
-            {
-              "text": "つまりお客さんに売る製品に向いている、",
-              "start": 4.14,
-              "end": 7.04
-            },
-            {
-              "text": "と確かめた、と書いてる。",
-              "start": 7.19,
-              "end": 9.07
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "そこは私の思い込みだった。試作の段階は越えて、売る物の作り方で作り始めた。資料がそう言ってる。",
-          "expression": "convinced",
-          "tag": "turn",
-          "t0": 33.44,
-          "dur": 7.24,
-          "cards": [
-            {
-              "text": "そこは私の思い込みだった。",
-              "start": 0.0,
-              "end": 2.03
-            },
-            {
-              "text": "試作の段階は越えて、",
-              "start": 2.03,
-              "end": 3.59
-            },
-            {
-              "text": "売る物の作り方で作り始めた。",
-              "start": 3.74,
-              "end": 5.81
-            },
-            {
-              "text": "資料がそう言ってる。",
-              "start": 5.96,
-              "end": 7.44
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "ただ、何台作ったかは、どこにも書いてない。",
-          "expression": "doubt",
-          "tag": "weakness",
-          "t0": 40.9,
-          "dur": 2.92,
-          "cards": [
-            {
-              "text": "ただ、何台作ったかは、どこにも書いてない。",
-              "start": 0.0,
-              "end": 2.92
-            }
-          ]
-        }
-      ],
-      "scene_id": 7,
-      "narrator": "dialogue",
-      "image_asset": "cards/kl051_S07",
-      "narration": "沙織「決算資料の、ロボットの段落。カリフォルニア州の工場の量産のラインで、オプティマスの生産が始まった。このラインから出てくるのは、テスラが作った初めての、売り物と同じ出来のロボット、と書いてある。」\n大輔「売り物と同じ出来、ってところが大事なんだ。展示会で見せる試作品とは違う。」\n沙織「私は正直、試作品を何台か並べただけ、と思ってた。」\n大輔「続きもある。今の作り方は、商用の製品、つまりお客さんに売る製品に向いている、と確かめた、と書いてる。」\n沙織「そこは私の思い込みだった。試作の段階は越えて、売る物の作り方で作り始めた。資料がそう言ってる。」\n沙織「ただ、何台作ったかは、どこにも書いてない。」\n［画面の資料カード］テスラ 決算資料（2026年10月21日） 「Optimus production began in Fremont on our high-volume lines」（原文） ・訳: 量産のラインで、オプティマスの生産を始めた ・売り物と同じ出来の機体は、これが初めて ・今の作り方は、売る製品に向くと確かめた ・機体と作り方は、これからも改良する",
-      "lines_hash": "8cb8b3d1e62a"
-    },
-    {
-      "type": "check",
-      "bgm_role": "main",
-      "round": 1,
-      "reference_index": 0,
-      "ken_burns": "static",
-      "source_card": {
-        "kind": "press",
-        "source": "テスラ 決算資料（2026年10月21日）の生産能力の表",
-        "quote": "カリフォルニア州: 生産を始めたばかり／テキサス州: 建設中",
-        "quote_type": "要約",
-        "highlight": "生産を始めたばかり",
-        "items": [
-          "原文: Early Ramp ／ Construction",
-          "オプティマスの生産能力の欄は「-」（数字なし）",
-          "車の工場の欄には「年55万台以上」などの数字"
-        ],
-        "reference_index": 0
-      },
-      "lines": [
-        {
-          "speaker": "skeptic",
-          "text": "同じ資料の、工場ごとの生産能力の表。車の工場の欄には、台数の数字が入ってる。オプティマスの欄は、横線だけ。数字が無い。",
-          "expression": "neutral",
-          "t0": 0.0,
-          "dur": 9.64,
-          "cards": [
-            {
-              "text": "同じ資料の、工場ごとの生産能力の表。",
-              "start": 0.0,
-              "end": 2.86
-            },
-            {
-              "text": "車の工場の欄には、台数の数字が入ってる。",
-              "start": 3.3,
-              "end": 6.3
-            },
-            {
-              "text": "オプティマスの欄は、横線だけ。数字が無い。",
-              "start": 6.45,
-              "end": 9.6
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "状態の欄は？",
-          "expression": "thinking",
-          "t0": 9.92,
-          "dur": 1.8,
-          "cards": [
-            {
-              "text": "状態の欄は？",
-              "start": 0.0,
-              "end": 1.8
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "カリフォルニア州の工場は、生産を始めたばかり。テキサス州は、工場を建設中。",
-          "expression": "neutral",
-          "t0": 12.0,
-          "dur": 5.68,
-          "cards": [
-            {
-              "text": "カリフォルニア州の工場は、",
-              "start": 0.0,
-              "end": 1.94
-            },
-            {
-              "text": "生産を始めたばかり。",
-              "start": 1.94,
-              "end": 3.44
-            },
-            {
-              "text": "テキサス州は、工場を建設中。",
-              "start": 3.59,
-              "end": 5.88
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "台数の話は、説明会の方で出てる。マスクさんは、年に100万台を作れる生産ラインを1本作っていて、ロボットを作るための機械の大部分は、もう工場に運び込んだ、と言った。",
-          "expression": "excited",
-          "t0": 17.96,
-          "dur": 12.04,
-          "cards": [
-            {
-              "text": "台数の話は、説明会の方で出てる。",
-              "start": 0.2,
-              "end": 2.43
-            },
-            {
-              "text": "マスクさんは、年に100万台を作れる生産",
-              "start": 2.58,
-              "end": 5.37
-            },
-            {
-              "text": "ラインを1本作っていて、ロボットを作る",
-              "start": 5.52,
-              "end": 8.17
-            },
-            {
-              "text": "ための機械の大部分は、",
-              "start": 8.32,
-              "end": 9.86
-            },
-            {
-              "text": "もう工場に運び込んだ、",
-              "start": 9.86,
-              "end": 11.39
-            },
-            {
-              "text": "と言った。",
-              "start": 11.54,
-              "end": 12.24
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "それは説明会での発言ね。資料の表には無い。そのラインが全力の速さで動くまで、少なくとも1年、もう少しかかるかも、とも言ってる。設計で、まだ変わるところがあるから、って。それに、今、何台出てるかは、資料にも説明会にも出てこない。",
-          "expression": "doubt",
-          "t0": 30.28,
-          "dur": 16.52,
-          "cards": [
-            {
-              "text": "それは説明会での発言ね。資料の表には無い。",
-              "start": 0.0,
-              "end": 3.14
-            },
-            {
-              "text": "そのラインが全力の速さで動くまで、",
-              "start": 3.29,
-              "end": 5.66
-            },
-            {
-              "text": "少なくとも1年、もう少しかかるかも、",
-              "start": 5.81,
-              "end": 8.32
-            },
-            {
-              "text": "とも言ってる。設計で、",
-              "start": 8.47,
-              "end": 10.01
-            },
-            {
-              "text": "まだ変わるところがあるから、",
-              "start": 10.01,
-              "end": 11.96
-            },
-            {
-              "text": "って。それに、今、何台出てるかは、",
-              "start": 12.11,
-              "end": 14.48
-            },
-            {
-              "text": "資料にも説明会にも出てこない。",
-              "start": 14.63,
-              "end": 16.72
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "だったら、台数で見るのはいったん置いて、別のところで見よう。売り物と同じ出来のロボットが、量産のラインから出てきたか。ここは資料に書いてある。台数は、3か月ほど後の次の決算資料で、あの横線に数字が入るかを見ればいい。",
-          "expression": "excited",
-          "tag": "workaround",
-          "t0": 47.08,
-          "dur": 17.24,
-          "cards": [
-            {
-              "text": "だったら、台数で見るのはいったん置いて、",
-              "start": 0.0,
-              "end": 3.0
-            },
-            {
-              "text": "別のところで見よう。",
-              "start": 3.15,
-              "end": 4.67
-            },
-            {
-              "text": "売り物と同じ出来のロボットが、",
-              "start": 4.67,
-              "end": 6.95
-            },
-            {
-              "text": "量産のラインから出てきたか。",
-              "start": 7.1,
-              "end": 9.2
-            },
-            {
-              "text": "ここは資料に書いてある。台数は、",
-              "start": 9.35,
-              "end": 12.05
-            },
-            {
-              "text": "3か月ほど後の次の決算資料で、",
-              "start": 12.2,
-              "end": 14.59
-            },
-            {
-              "text": "あの横線に数字が入るかを見ればいい。",
-              "start": 14.74,
-              "end": 17.44
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "横線に数字が入るかどうか。それなら、誰でも確かめられる。",
-          "expression": "convinced",
-          "t0": 64.6,
-          "dur": 4.36,
-          "cards": [
-            {
-              "text": "横線に数字が入るかどうか。それなら、",
-              "start": 0.0,
-              "end": 2.7
-            },
-            {
-              "text": "誰でも確かめられる。",
-              "start": 2.85,
-              "end": 4.35
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "台数はまだ分からなくても、試作の段階は越えて、量産のラインが動き出した。ここまでは、もう来てる。",
-          "expression": "convinced",
-          "tag": "hope",
-          "t0": 69.24,
-          "dur": 6.72,
-          "cards": [
-            {
-              "text": "台数はまだ分からなくても、",
-              "start": 0.2,
-              "end": 1.94
-            },
-            {
-              "text": "試作の段階は越えて、",
-              "start": 1.94,
+              "text": "とテスラ自身が言ってるのよね。",
+              "start": 1.23,
               "end": 3.28
             },
             {
-              "text": "量産のラインが動き出した。ここまでは、",
+              "text": "工場の話だと、私たちの暮らしからは遠い。",
               "start": 3.43,
-              "end": 5.97
+              "end": 6.19
             },
             {
-              "text": "もう来てる。",
-              "start": 6.12,
-              "end": 6.92
-            }
-          ]
-        }
-      ],
-      "scene_id": 8,
-      "narrator": "dialogue",
-      "image_asset": "cards/kl051_S08",
-      "narration": "沙織「同じ資料の、工場ごとの生産能力の表。車の工場の欄には、台数の数字が入ってる。オプティマスの欄は、横線だけ。数字が無い。」\n大輔「状態の欄は？」\n沙織「カリフォルニア州の工場は、生産を始めたばかり。テキサス州は、工場を建設中。」\n大輔「台数の話は、説明会の方で出てる。マスクさんは、年に100万台を作れる生産ラインを1本作っていて、ロボットを作るための機械の大部分は、もう工場に運び込んだ、と言った。」\n沙織「それは説明会での発言ね。資料の表には無い。そのラインが全力の速さで動くまで、少なくとも1年、もう少しかかるかも、とも言ってる。設計で、まだ変わるところがあるから、って。それに、今、何台出てるかは、資料にも説明会にも出てこない。」\n大輔「だったら、台数で見るのはいったん置いて、別のところで見よう。売り物と同じ出来のロボットが、量産のラインから出てきたか。ここは資料に書いてある。台数は、3か月ほど後の次の決算資料で、あの横線に数字が入るかを見ればいい。」\n沙織「横線に数字が入るかどうか。それなら、誰でも確かめられる。」\n大輔「台数はまだ分からなくても、試作の段階は越えて、量産のラインが動き出した。ここまでは、もう来てる。」\n［画面の資料カード］テスラ 決算資料（2026年10月21日）の生産能力の表 「カリフォルニア州: 生産を始めたばかり／テキサス州: 建設中」（要約） ・原文: Early Ramp ／ Construction ・オプティマスの生産能力の欄は「-」（数字なし） ・車の工場の欄には「年55万台以上」などの数字",
-      "lines_hash": "b523332b4320"
-    },
-    {
-      "type": "paper",
-      "bgm_role": "main",
-      "round": 2,
-      "round_title": "何ができる？ どこが壁？",
-      "shows_product": true,
-      "badge_text": "イメージ図（実物と異なる場合があります）",
-      "image_prompt": "Close-up of the right hand and forearm of a humanoid robot gripping the edge of a plain brown cardboard box on a metal warehouse shelf. The robot is a slim adult-sized humanoid robot with glossy white outer shell panels on the chest, upper arms, thighs and shins, a smooth rounded glossy black helmet-like head with no facial features (a black front face panel framed by a thin light outline), black joints at the neck, waist, elbows and knees with dark mechanical parts visible at the waist and hips, five-fingered white-and-black hands, and black shoe-like feet; no logos or lettering on the robot; only its hand and forearm are visible (no head, no body). Bright, even daytime factory lighting, shallow depth of field. No readable text, no letters, no numbers, no logos, no brand marks.",
-      "lines": [
-        {
-          "speaker": "skeptic",
-          "text": "壁の話の前に、一つ。マスクさんは説明会で、今このラインで作っているロボットは、手がまだ完成形じゃない、とも言ってる。",
-          "expression": "thinking",
-          "t0": 0.0,
-          "dur": 8.48,
-          "cards": [
-            {
-              "text": "壁の話の前に、一つ。マスクさんは説明会で、",
-              "start": 0.0,
-              "end": 3.16
-            },
-            {
-              "text": "今このラインで作っているロボットは、",
-              "start": 3.31,
-              "end": 5.85
-            },
-            {
-              "text": "手がまだ完成形じゃない、とも言ってる。",
-              "start": 6.0,
-              "end": 8.68
+              "text": "今日知りたいのは、家に来るのはいつか。",
+              "start": 6.34,
+              "end": 9.06
             }
           ]
         },
         {
           "speaker": "dreamer",
-          "text": "つまり、売る物と同じ作り方で作ったロボット、というのはそのとおり。でも、手の設計は、よその会社に届け始めるまでに、まだ変わる。決算資料にも、機体と作り方は、これからも改良を続ける、と書いてあった。",
-          "expression": "neutral",
-          "t0": 8.76,
-          "dur": 14.68,
-          "cards": [
-            {
-              "text": "つまり、",
-              "start": 0.2,
-              "end": 0.77
-            },
-            {
-              "text": "売る物と同じ作り方で作ったロボット、",
-              "start": 0.77,
-              "end": 3.36
-            },
-            {
-              "text": "というのはそのとおり。でも、手の設計は、",
-              "start": 3.51,
-              "end": 6.38
-            },
-            {
-              "text": "よその会社に届け始めるまでに、まだ変わる。",
-              "start": 6.53,
-              "end": 9.55
-            },
-            {
-              "text": "決算資料にも、機体と作り方は、",
-              "start": 9.7,
-              "end": 11.86
-            },
-            {
-              "text": "これからも改良を続ける、と書いてあった。",
-              "start": 12.01,
-              "end": 14.88
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "手の話は、この後くわしく見よう。まず、何ができるか。",
-          "expression": "neutral",
-          "t0": 23.72,
-          "dur": 3.44,
-          "cards": [
-            {
-              "text": "手の話は、この後くわしく見よう。まず、",
-              "start": 0.0,
-              "end": 2.4
-            },
-            {
-              "text": "何ができるか。",
-              "start": 2.55,
-              "end": 3.44
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "テスラ自身が狙うのは、さっきの公式サイトの、危険な仕事、繰り返しの仕事、退屈な仕事。",
+          "text": "そこなんだ。同じ日に、経営陣が質問に答える説明会があって、テスラの最高経営責任者、イーロン・マスクさんが、量産が進めば、もちろん家庭でも買えるものになる、と言ってる。",
           "expression": "excited",
-          "t0": 27.44,
-          "dur": 6.96,
+          "t0": 35.72,
+          "dur": 12.08,
           "cards": [
             {
-              "text": "テスラ自身が狙うのは、",
+              "text": "そこなんだ。同じ日に、経営陣が質問に答える",
               "start": 0.0,
-              "end": 1.65
+              "end": 3.1
             },
             {
-              "text": "さっきの公式サイトの、",
-              "start": 1.65,
-              "end": 3.3
+              "text": "説明会があって、テスラの最高経営責任者、",
+              "start": 3.25,
+              "end": 6.02
             },
             {
-              "text": "危険な仕事、繰り返しの仕事、退屈な仕事。",
-              "start": 3.45,
-              "end": 7.11
+              "text": "イーロン・マスクさんが、量産が進めば、",
+              "start": 6.17,
+              "end": 8.8
+            },
+            {
+              "text": "もちろん家庭でも買えるものになる、",
+              "start": 8.95,
+              "end": 11.3
+            },
+            {
+              "text": "と言ってる。",
+              "start": 11.45,
+              "end": 12.28
             }
           ]
         },
         {
           "speaker": "skeptic",
-          "text": "説明会では、もっと具体的に言ってた。最初は重工業、つまり鉄や機械を扱う大きな工場の、危険な仕事。体を痛めやすい繰り返しの作業や、24時間回したい仕事。家で使うのは、量産が進んでから、という言い方だった。",
-          "expression": "neutral",
-          "t0": 34.68,
-          "dur": 16.08,
-          "cards": [
-            {
-              "text": "説明会では、もっと具体的に言ってた。",
-              "start": 0.0,
-              "end": 2.7
-            },
-            {
-              "text": "最初は重工業、",
-              "start": 2.85,
-              "end": 4.05
-            },
-            {
-              "text": "つまり鉄や機械を扱う大きな工場の、",
-              "start": 4.05,
-              "end": 6.98
-            },
-            {
-              "text": "危険な仕事。",
-              "start": 7.13,
-              "end": 8.03
-            },
-            {
-              "text": "体を痛めやすい繰り返しの作業や、",
-              "start": 8.03,
-              "end": 10.43
-            },
-            {
-              "text": "24時間回したい仕事。家で使うのは、",
-              "start": 10.58,
-              "end": 13.28
-            },
-            {
-              "text": "量産が進んでから、という言い方だった。",
-              "start": 13.43,
-              "end": 16.28
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "テスラの狙いは、まず工場。僕が次に期待するのは、物流の倉庫の夜の仕事。段ボールを棚から下ろして、台車に積む。人が集まりにくい時間帯だから、ここに来てほしい。",
-          "expression": "excited",
-          "tag": "use_case",
-          "t0": 51.04,
-          "dur": 12.88,
-          "cards": [
-            {
-              "text": "テスラの狙いは、まず工場。",
-              "start": 0.0,
-              "end": 2.1
-            },
-            {
-              "text": "僕が次に期待するのは、",
-              "start": 2.1,
-              "end": 3.88
-            },
-            {
-              "text": "物流の倉庫の夜の仕事。",
-              "start": 4.03,
-              "end": 5.98
-            },
-            {
-              "text": "段ボールを棚から下ろして、",
-              "start": 5.98,
-              "end": 8.28
-            },
-            {
-              "text": "台車に積む。人が集まりにくい時間帯だから、",
-              "start": 8.43,
-              "end": 11.58
-            },
-            {
-              "text": "ここに来てほしい。",
-              "start": 11.73,
-              "end": 13.08
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "段ボールをつかむのは、手ね。一晩中つかみ続けられるかが肝心。手のことは、説明会で技術者が答えてる。",
+          "text": "その説明会で、時期と値段は？",
           "expression": "doubt",
-          "t0": 64.2,
-          "dur": 7.48,
+          "t0": 48.08,
+          "dur": 2.84,
           "cards": [
             {
-              "text": "段ボールをつかむのは、手ね。",
-              "start": 0.21,
-              "end": 2.26
-            },
-            {
-              "text": "一晩中つかみ続けられるかが肝心。",
-              "start": 2.41,
-              "end": 4.75
-            },
-            {
-              "text": "手のことは、説明会で技術者が答えてる。",
-              "start": 4.9,
-              "end": 7.68
+              "text": "その説明会で、時期と値段は？",
+              "start": 0.0,
+              "end": 2.84
             }
           ]
-        }
-      ],
-      "scene_id": 9,
-      "narrator": "dialogue",
-      "narration": "沙織「壁の話の前に、一つ。マスクさんは説明会で、今このラインで作っているロボットは、手がまだ完成形じゃない、とも言ってる。」\n大輔「つまり、売る物と同じ作り方で作ったロボット、というのはそのとおり。でも、手の設計は、よその会社に届け始めるまでに、まだ変わる。決算資料にも、機体と作り方は、これからも改良を続ける、と書いてあった。」\n沙織「手の話は、この後くわしく見よう。まず、何ができるか。」\n大輔「テスラ自身が狙うのは、さっきの公式サイトの、危険な仕事、繰り返しの仕事、退屈な仕事。」\n沙織「説明会では、もっと具体的に言ってた。最初は重工業、つまり鉄や機械を扱う大きな工場の、危険な仕事。体を痛めやすい繰り返しの作業や、24時間回したい仕事。家で使うのは、量産が進んでから、という言い方だった。」\n大輔「テスラの狙いは、まず工場。僕が次に期待するのは、物流の倉庫の夜の仕事。段ボールを棚から下ろして、台車に積む。人が集まりにくい時間帯だから、ここに来てほしい。」\n沙織「段ボールをつかむのは、手ね。一晩中つかみ続けられるかが肝心。手のことは、説明会で技術者が答えてる。」",
-      "lines_hash": "f585421bb16e"
-    },
-    {
-      "type": "check",
-      "bgm_role": "main",
-      "round": 2,
-      "reference_index": 2,
-      "ken_burns": "static",
-      "source_card": {
-        "kind": "report",
-        "source": "テスラ 決算説明会の書き起こし（2026年10月21日）",
-        "quote": "hand is one of the most challenging hardware areas",
-        "quote_type": "原文",
-        "highlight": "most challenging",
-        "items": [
-          "訳: 手は、機械として最も難しい所の一つ",
-          "体の仕組みの大部分は、固まった（技術者）",
-          "すり減りに強く、壊れ物もつまめる手が難しい",
-          "「1か月ですり減っては困る」は目標の話"
-        ],
-        "reference_index": 2
-      },
-      "lines": [
+        },
+        {
+          "speaker": "dreamer",
+          "text": "その日は、どっちも言ってない。ただ、今年の1月には、時期を口にしてる。それは後で見よう。",
+          "expression": "thinking",
+          "t0": 51.2,
+          "dur": 6.32,
+          "cards": [
+            {
+              "text": "その日は、どっちも言ってない。ただ、",
+              "start": 0.0,
+              "end": 2.46
+            },
+            {
+              "text": "今年の1月には、時期を口にしてる。",
+              "start": 2.61,
+              "end": 5.07
+            },
+            {
+              "text": "それは後で見よう。",
+              "start": 5.22,
+              "end": 6.45
+            }
+          ]
+        },
         {
           "speaker": "skeptic",
-          "text": "オプティマスの技術者の答え。手は、機械として一番難しいところの一つ。体の仕組みの大部分は、もうちゃんと動く形に固まった、と言ってる。",
+          "text": "だったら今日は、家事や親の見守りを、ロボットに任せられる日がいつ来るのかを確かめよう。先に、予想を言っておこうか。",
           "expression": "neutral",
-          "t0": 0.0,
+          "t0": 57.8,
           "dur": 8.44,
           "cards": [
             {
-              "text": "オプティマスの技術者の答え。手は、",
+              "text": "だったら今日は、家事や親の見守りを、",
               "start": 0.0,
-              "end": 2.26
+              "end": 2.77
             },
             {
-              "text": "機械として一番難しいところの一つ。",
-              "start": 2.41,
-              "end": 4.47
+              "text": "ロボットに任せられる日が",
+              "start": 2.92,
+              "end": 4.63
             },
             {
-              "text": "体の仕組みの大部分は、もうちゃんと動く",
-              "start": 4.62,
-              "end": 6.92
+              "text": "いつ来るのかを確かめよう。",
+              "start": 4.63,
+              "end": 6.49
             },
             {
-              "text": "形に固まった、と言ってる。",
-              "start": 7.07,
+              "text": "先に、予想を言っておこうか。",
+              "start": 6.64,
               "end": 8.64
             }
           ]
         },
         {
           "speaker": "dreamer",
-          "text": "難しいのは、手なんだ。",
-          "expression": "thinking",
-          "t0": 8.72,
-          "dur": 2.44,
+          "text": "僕の予想。テスラは、まず自分の工場、次に工場や倉庫でロボットを仕事で使う会社、家はその後。でも、食卓の片づけのような決まった家事なら、テスラに限らず、3年ほどでアメリカの家に入り始める、と見てる。",
+          "expression": "excited",
+          "tag": "prediction",
+          "t0": 66.52,
+          "dur": 16.52,
           "cards": [
             {
-              "text": "難しいのは、手なんだ。",
+              "text": "僕の予想。テスラは、まず自分の工場、",
               "start": 0.0,
-              "end": 2.44
+              "end": 3.3
+            },
+            {
+              "text": "次に工場や倉庫でロボットを仕事で使う会社、",
+              "start": 3.68,
+              "end": 6.94
+            },
+            {
+              "text": "家はその後。でも、食卓の片づけのような",
+              "start": 7.42,
+              "end": 10.27
+            },
+            {
+              "text": "決まった家事なら、テスラに限らず、",
+              "start": 10.42,
+              "end": 12.97
+            },
+            {
+              "text": "3年ほどでアメリカの家に入り始める、",
+              "start": 13.12,
+              "end": 15.82
+            },
+            {
+              "text": "と見てる。",
+              "start": 15.97,
+              "end": 16.72
             }
           ]
         },
         {
           "speaker": "skeptic",
-          "text": "マスクさんの説明では、手は、すり減りに強くないといけない。でも、壊れやすい物をつまめる柔らかさと、触れた感じを測るセンサーも要る。人の手は、すりむいても治る。ロボットの手は治らない、って。",
+          "text": "私の予想。本物なら、私も家の片づけを任せたい。でも、ロボットが一般の家で、人の手を借りずに家事をこなした、と会社の外の人が確かめるまでは、いつ来るとは決められない、と見てる。",
+          "expression": "thinking",
+          "tag": "prediction",
+          "t0": 83.32,
+          "dur": 14.2,
+          "cards": [
+            {
+              "text": "私の予想。本物なら、",
+              "start": 0.0,
+              "end": 1.77
+            },
+            {
+              "text": "私も家の片づけを任せたい。",
+              "start": 1.77,
+              "end": 4.08
+            },
+            {
+              "text": "でも、ロボットが一般の家で、",
+              "start": 4.23,
+              "end": 6.45
+            },
+            {
+              "text": "人の手を借りずに家事をこなした、",
+              "start": 6.6,
+              "end": 9.0
+            },
+            {
+              "text": "と会社の外の人が確かめるまでは、",
+              "start": 9.15,
+              "end": 11.55
+            },
+            {
+              "text": "いつ来るとは決められない、と見てる。",
+              "start": 11.7,
+              "end": 14.4
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、2つ確かめよう。テスラ自身は、家庭をいつと言っているのか。それから、家事をするロボットは、今、家で何ができるのか。",
           "expression": "neutral",
-          "t0": 11.44,
-          "dur": 12.0,
+          "t0": 97.74,
+          "dur": 7.72,
           "cards": [
             {
-              "text": "マスクさんの説明では、手は、",
+              "text": "じゃあ、2つ確かめよう。テスラ自身は、",
               "start": 0.0,
-              "end": 1.79
+              "end": 2.31
             },
             {
-              "text": "すり減りに強くないといけない。でも、壊れ",
-              "start": 1.79,
-              "end": 4.34
+              "text": "家庭をいつと言っているのか。それから、",
+              "start": 2.46,
+              "end": 4.77
             },
             {
-              "text": "やすい物をつまめる柔らかさと、触れた感じを",
-              "start": 4.34,
-              "end": 7.02
+              "text": "家事をするロボットは、",
+              "start": 4.92,
+              "end": 6.26
             },
             {
-              "text": "測るセンサーも要る。人の手は、すりむいても",
-              "start": 7.02,
-              "end": 9.7
-            },
-            {
-              "text": "治る。ロボットの手は治らない、って。",
-              "start": 9.7,
-              "end": 12.0
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "マスクさんは、安全で長持ちするロボットを届けないといけない、1か月ですり減るようではだめだ、とも言ってる。今の手がそうだ、という意味じゃない。ここを越えないと届けられない、という目標の話。",
-          "expression": "doubt",
-          "tag": "weakness",
-          "t0": 23.66,
-          "dur": 12.12,
-          "cards": [
-            {
-              "text": "マスクさんは、安全で長持ちするロボットを",
-              "start": 0.0,
-              "end": 2.62
-            },
-            {
-              "text": "届けないといけない、1か月ですり減る",
-              "start": 2.77,
-              "end": 4.95
-            },
-            {
-              "text": "ようではだめだ、とも言ってる。",
-              "start": 5.1,
-              "end": 6.91
-            },
-            {
-              "text": "今の手がそうだ、という意味じゃない。",
-              "start": 7.06,
-              "end": 9.24
-            },
-            {
-              "text": "ここを越えないと届けられない、",
-              "start": 9.39,
-              "end": 11.2
-            },
-            {
-              "text": "という目標の話。",
-              "start": 11.35,
-              "end": 12.32
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "1か月どころじゃなく、長く働き続けられないといけない、ってことか。",
-          "expression": "surprised",
-          "t0": 36.06,
-          "dur": 4.4,
-          "cards": [
-            {
-              "text": "1か月どころじゃなく、",
-              "start": 0.0,
-              "end": 1.5
-            },
-            {
-              "text": "長く働き続けられないといけない",
-              "start": 1.5,
-              "end": 3.55
-            },
-            {
-              "text": "、ってことか。",
-              "start": 3.7,
-              "end": 4.6
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "もう一つの壁は、頭の方。マスクさんは、決まっていない作業までこなせるようにするには、ロボットの頭になるAIの開発も、ロボット本体の開発も、まだかなり残っている、と言ってる。それに、車の場合は、世の中を走る大勢のテスラ車が、走った記録を送ってくる。それがAIの練習の材料になる。ロボットには、まだそんなに大勢の仲間がいない。",
-          "expression": "thinking",
-          "tag": "barrier",
-          "t0": 40.74,
-          "dur": 24.08,
-          "cards": [
-            {
-              "text": "もう一つの壁は、頭の方。マスクさんは、",
-              "start": 0.0,
-              "end": 2.91
-            },
-            {
-              "text": "決まっていない作業まで",
-              "start": 3.06,
-              "end": 4.62
-            },
-            {
-              "text": "こなせるようにするには、",
-              "start": 4.62,
-              "end": 6.33
-            },
-            {
-              "text": "ロボットの頭になるAIの開発も、",
-              "start": 6.48,
-              "end": 8.75
-            },
-            {
-              "text": "ロボット本体の開発も、",
-              "start": 8.9,
-              "end": 10.46
-            },
-            {
-              "text": "まだかなり残っている、",
-              "start": 10.46,
-              "end": 12.03
-            },
-            {
-              "text": "と言ってる。それに、車の場合は、",
-              "start": 12.18,
-              "end": 14.45
-            },
-            {
-              "text": "世の中を走る大勢のテスラ車が、",
-              "start": 14.6,
-              "end": 16.73
-            },
-            {
-              "text": "走った記録を送ってくる。それがAIの練習の",
-              "start": 16.88,
-              "end": 19.86
-            },
-            {
-              "text": "材料になる。ロボットには、まだそんなに",
-              "start": 20.01,
-              "end": 22.71
-            },
-            {
-              "text": "大勢の仲間がいない。",
-              "start": 22.86,
-              "end": 24.28
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "だから、テスラは、ロボットもまず数を作る。この先、1万台か2万台作って、そのロボットたちに、いろんな作業を練習させる、と言ってたね。そのための練習場も、今、用意しているところだって。",
-          "expression": "excited",
-          "t0": 65.1,
-          "dur": 14.12,
-          "cards": [
-            {
-              "text": "だから、テスラは、ロボットもまず数を作る。",
-              "start": 0.0,
-              "end": 3.18
-            },
-            {
-              "text": "この先、1万台か2万台作って、",
-              "start": 3.33,
-              "end": 5.7
-            },
-            {
-              "text": "そのロボットたちに、",
-              "start": 5.85,
-              "end": 7.34
-            },
-            {
-              "text": "いろんな作業を練習させる、",
-              "start": 7.34,
-              "end": 9.27
-            },
-            {
-              "text": "と言ってたね。そのための練習場も、今、",
-              "start": 9.42,
-              "end": 12.24
-            },
-            {
-              "text": "用意しているところだって。",
-              "start": 12.39,
-              "end": 14.32
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "本物なら、私は研究所で、冷凍庫から検査のサンプルの箱を、夜通し出し入れする仕事に使いたい。寒くて、同じ動きの繰り返し。だから、手の長持ちは確かめたい。",
-          "expression": "thinking",
-          "tag": "skeptic_wish",
-          "t0": 79.5,
-          "dur": 11.28,
-          "cards": [
-            {
-              "text": "本物なら、私は研究所で、冷凍庫から検査の",
-              "start": 0.0,
-              "end": 3.09
-            },
-            {
-              "text": "サンプルの箱を、",
-              "start": 3.24,
-              "end": 4.4
-            },
-            {
-              "text": "夜通し出し入れする仕事に使いたい。",
-              "start": 4.4,
-              "end": 6.85
-            },
-            {
-              "text": "寒くて、同じ動きの繰り返し。だから、",
-              "start": 7.0,
-              "end": 9.6
-            },
-            {
-              "text": "手の長持ちは確かめたい。",
-              "start": 9.75,
-              "end": 11.48
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "だったら、最初はロボットの手が長持ちしやすい仕事から任せる。壊れ物じゃなく、形の決まった箱を、同じ場所から同じ場所へ運ぶ。テスラが最初に狙う、繰り返しの仕事と同じ向きだ。",
-          "expression": "excited",
-          "tag": "workaround",
-          "t0": 91.06,
-          "dur": 12.4,
-          "cards": [
-            {
-              "text": "だったら、最初はロボットの手が長持ちし",
-              "start": 0.0,
-              "end": 2.88
-            },
-            {
-              "text": "やすい仕事から任せる。壊れ物じゃなく、",
-              "start": 3.03,
-              "end": 5.7
-            },
-            {
-              "text": "形の決まった箱を、",
-              "start": 5.85,
-              "end": 7.11
-            },
-            {
-              "text": "同じ場所から同じ場所へ運ぶ。",
-              "start": 7.11,
-              "end": 9.08
-            },
-            {
-              "text": "テスラが最初に狙う、",
-              "start": 9.23,
-              "end": 10.63
-            },
-            {
-              "text": "繰り返しの仕事と同じ向きだ。",
-              "start": 10.63,
-              "end": 12.6
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "柔らかさが要る壊れ物は、後回し。形の決まった箱からなら、手の壁にぶつかりにくい。ここは二人の見立てだけど、テスラの狙いとは合ってる。",
-          "expression": "convinced",
-          "t0": 103.74,
-          "dur": 8.64,
-          "cards": [
-            {
-              "text": "柔らかさが要る壊れ物は、後回し。",
-              "start": 0.0,
-              "end": 2.14
-            },
-            {
-              "text": "形の決まった箱からなら、",
-              "start": 2.33,
-              "end": 3.82
-            },
-            {
-              "text": "手の壁にぶつかりにくい。",
-              "start": 3.82,
-              "end": 5.31
-            },
-            {
-              "text": "ここは二人の見立てだけど、テスラの狙いとは",
-              "start": 5.46,
-              "end": 8.07
-            },
-            {
-              "text": "合ってる。",
-              "start": 8.22,
-              "end": 8.84
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "体の大部分は、もう固まった。残る壁は手で、どこが難しいかもはっきりしてる。形の決まった箱を運ぶ繰り返しの仕事なら、最初の出番になりそうだ。",
-          "expression": "convinced",
-          "tag": "hope",
-          "t0": 112.66,
-          "dur": 10.76,
-          "cards": [
-            {
-              "text": "体の大部分は、もう固まった。残る壁は手で、",
-              "start": 0.0,
-              "end": 3.34
-            },
-            {
-              "text": "どこが難しいかもはっきりしてる。",
-              "start": 3.49,
-              "end": 5.88
-            },
-            {
-              "text": "形の決まった箱を運ぶ繰り返しの仕事なら、",
-              "start": 6.03,
-              "end": 9.02
-            },
-            {
-              "text": "最初の出番になりそうだ。",
-              "start": 9.17,
-              "end": 10.96
+              "text": "今、家で何ができるのか。",
+              "start": 6.26,
+              "end": 7.72
             }
           ]
         }
       ],
-      "scene_id": 10,
+      "scene_id": 5,
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "narration": "大輔「お題は、テスラの人型ロボット「オプティマス」。テスラは、電気自動車の会社。そのテスラが10月21日、人の形をしたロボットを、大量生産の流れ作業で作り始めた、と発表した。」\n沙織「人の形のロボットって、何をするためのもの？」\n大輔「テスラの公式サイトでは、危険な仕事、繰り返しの仕事、退屈な仕事をこなす、いろんな仕事に使える人型ロボット。」\n沙織「最初は工場で使う、とテスラ自身が言ってるのよね。工場の話だと、私たちの暮らしからは遠い。今日知りたいのは、家に来るのはいつか。」\n大輔「そこなんだ。同じ日に、経営陣が質問に答える説明会があって、テスラの最高経営責任者、イーロン・マスクさんが、量産が進めば、もちろん家庭でも買えるものになる、と言ってる。」\n沙織「その説明会で、時期と値段は？」\n大輔「その日は、どっちも言ってない。ただ、今年の1月には、時期を口にしてる。それは後で見よう。」\n沙織「だったら今日は、家事や親の見守りを、ロボットに任せられる日がいつ来るのかを確かめよう。先に、予想を言っておこうか。」\n大輔「僕の予想。テスラは、まず自分の工場、次に工場や倉庫でロボットを仕事で使う会社、家はその後。でも、食卓の片づけのような決まった家事なら、テスラに限らず、3年ほどでアメリカの家に入り始める、と見てる。」\n沙織「私の予想。本物なら、私も家の片づけを任せたい。でも、ロボットが一般の家で、人の手を借りずに家事をこなした、と会社の外の人が確かめるまでは、いつ来るとは決められない、と見てる。」\n沙織「じゃあ、2つ確かめよう。テスラ自身は、家庭をいつと言っているのか。それから、家事をするロボットは、今、家で何ができるのか。」",
       "narrator": "dialogue",
-      "image_asset": "cards/kl051_S10",
-      "narration": "沙織「オプティマスの技術者の答え。手は、機械として一番難しいところの一つ。体の仕組みの大部分は、もうちゃんと動く形に固まった、と言ってる。」\n大輔「難しいのは、手なんだ。」\n沙織「マスクさんの説明では、手は、すり減りに強くないといけない。でも、壊れやすい物をつまめる柔らかさと、触れた感じを測るセンサーも要る。人の手は、すりむいても治る。ロボットの手は治らない、って。」\n沙織「マスクさんは、安全で長持ちするロボットを届けないといけない、1か月ですり減るようではだめだ、とも言ってる。今の手がそうだ、という意味じゃない。ここを越えないと届けられない、という目標の話。」\n大輔「1か月どころじゃなく、長く働き続けられないといけない、ってことか。」\n沙織「もう一つの壁は、頭の方。マスクさんは、決まっていない作業までこなせるようにするには、ロボットの頭になるAIの開発も、ロボット本体の開発も、まだかなり残っている、と言ってる。それに、車の場合は、世の中を走る大勢のテスラ車が、走った記録を送ってくる。それがAIの練習の材料になる。ロボットには、まだそんなに大勢の仲間がいない。」\n大輔「だから、テスラは、ロボットもまず数を作る。この先、1万台か2万台作って、そのロボットたちに、いろんな作業を練習させる、と言ってたね。そのための練習場も、今、用意しているところだって。」\n沙織「本物なら、私は研究所で、冷凍庫から検査のサンプルの箱を、夜通し出し入れする仕事に使いたい。寒くて、同じ動きの繰り返し。だから、手の長持ちは確かめたい。」\n大輔「だったら、最初はロボットの手が長持ちしやすい仕事から任せる。壊れ物じゃなく、形の決まった箱を、同じ場所から同じ場所へ運ぶ。テスラが最初に狙う、繰り返しの仕事と同じ向きだ。」\n沙織「柔らかさが要る壊れ物は、後回し。形の決まった箱からなら、手の壁にぶつかりにくい。ここは二人の見立てだけど、テスラの狙いとは合ってる。」\n大輔「体の大部分は、もう固まった。残る壁は手で、どこが難しいかもはっきりしてる。形の決まった箱を運ぶ繰り返しの仕事なら、最初の出番になりそうだ。」\n［画面の資料カード］テスラ 決算説明会の書き起こし（2026年10月21日） 「hand is one of the most challenging hardware areas」（原文） ・訳: 手は、機械として最も難しい所の一つ ・体の仕組みの大部分は、固まった（技術者） ・すり減りに強く、壊れ物もつまめる手が難しい ・「1か月ですり減っては困る」は目標の話",
-      "lines_hash": "4392b6a31b9a"
+      "lines_hash": "43765477fc04"
     },
     {
       "type": "paper",
       "bgm_role": "main",
-      "round": 3,
-      "round_title": "うちの現場に来るのはいつ？",
-      "image_prompt": "Night inside a small Japanese logistics warehouse: tall metal shelves stacked with plain brown cardboard boxes, a hand pallet truck parked in the aisle, bright ceiling lights on, dark windows showing that it is night outside. Quiet and empty. No people, no robots. No readable text, no letters, no numbers, no logos, no brand marks.",
+      "round": 1,
+      "round_title": "テスラは、家庭をいつと言ってる？",
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "image_prompt": "Bright daytime inside a large, clean, modern factory: a long assembly line with overhead lights and gray machinery. Along the line stand several identical humanoid robots in a neat row, some partly assembled with open panels. Each robot is a slim adult-sized humanoid robot with glossy white outer shell panels on the chest, upper arms, thighs and shins, a smooth rounded glossy black helmet-like head with no facial features (a black front face panel framed by a thin light outline), black joints at the neck, waist, elbows and knees with dark mechanical parts visible at the waist and hips, five-fingered white-and-black hands, and black shoe-like feet; no logos or lettering on the robot. Seen from a slight distance at eye level, calm and orderly mood. No people. No readable text, no letters, no numbers, no logos, no brand marks.",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "最後は、よその会社の現場に来るのはいつか。マスクさんは説明会で、体の作りと長持ち、それに頭になるAIの課題が片づくのは、来年の終わりごろの見込み、と言った。",
+          "text": "まず、10月の発表。決算資料、つまりテスラが3か月ごとに出す、会社の成績と計画の資料に、量産のラインで生産を始めた、と書いてある。",
           "expression": "excited",
           "t0": 0.0,
-          "dur": 13.72,
+          "dur": 10.88,
           "cards": [
             {
-              "text": "最後は、よその会社の現場に来るのはいつか。",
-              "start": 0.44,
-              "end": 3.59
+              "text": "まず、10月の発表。決算資料、",
+              "start": 0.0,
+              "end": 2.72
             },
             {
-              "text": "マスクさんは説明会で、体の作りと長持ち、",
-              "start": 3.74,
-              "end": 7.46
+              "text": "つまりテスラが3か月ごとに出す、",
+              "start": 2.87,
+              "end": 5.41
             },
             {
-              "text": "それに頭になるAIの課題が片づくのは、",
-              "start": 7.61,
-              "end": 10.46
+              "text": "会社の成績と計画の資料に、量産のラインで",
+              "start": 5.56,
+              "end": 8.83
             },
             {
-              "text": "来年の終わりごろの見込み、と言った。",
-              "start": 10.61,
-              "end": 13.85
+              "text": "生産を始めた、と書いてある。",
+              "start": 8.98,
+              "end": 11.08
             }
           ]
         },
         {
           "speaker": "skeptic",
-          "text": "来年っていうのは、2027年ね。2027年の終わりごろ。",
+          "text": "量産のラインは、車の工場にあるような、同じ物を大量に作る流れ作業ね。で、それ何台作ったの？",
           "expression": "doubt",
-          "t0": 14.0,
-          "dur": 4.64,
+          "t0": 11.16,
+          "dur": 7.4,
           "cards": [
             {
-              "text": "来年っていうのは、2027年ね。",
+              "text": "量産のラインは、車の工場にあるような、",
               "start": 0.0,
-              "end": 2.64
+              "end": 2.85
             },
             {
-              "text": "2027年の終わりごろ。",
-              "start": 2.79,
-              "end": 4.79
+              "text": "同じ物を大量に作る流れ作業ね。で、",
+              "start": 3.0,
+              "end": 5.92
+            },
+            {
+              "text": "それ何台作ったの？",
+              "start": 6.07,
+              "end": 7.42
             }
           ]
         },
         {
           "speaker": "dreamer",
-          "text": "そう。そのころに、テスラ以外の会社に届け始める、と言ってる。今から1年ちょっと先。ただ、届き始めるのと、仕事を任せられるのは、別の話だけどね。",
+          "text": "台数は、資料に書いてない。でも、試作品じゃなく、売る物と同じ作り方で作り始めた、とある。",
+          "expression": "neutral",
+          "t0": 18.84,
+          "dur": 6.64,
+          "cards": [
+            {
+              "text": "台数は、資料に書いてない。でも、",
+              "start": 0.0,
+              "end": 2.5
+            },
+            {
+              "text": "試作品じゃなく、",
+              "start": 2.65,
+              "end": 3.8
+            },
+            {
+              "text": "売る物と同じ作り方で作り始めた、",
+              "start": 3.8,
+              "end": 6.11
+            },
+            {
+              "text": "とある。",
+              "start": 6.26,
+              "end": 6.84
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "量産を始めたことが、家まではどうつながるの？",
+          "expression": "thinking",
+          "t0": 25.76,
+          "dur": 3.68,
+          "cards": [
+            {
+              "text": "量産を始めたことが、",
+              "start": 0.58,
+              "end": 2.08
+            },
+            {
+              "text": "家まではどうつながるの？",
+              "start": 2.08,
+              "end": 3.88
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "説明会でマスクさんは、テスラのロボットを仕事で使う会社に届けるのは、来年、2027年の終わりごろの見込み、と言ってる。家庭は、量産が進んでから。",
+          "expression": "thinking",
+          "t0": 29.72,
+          "dur": 10.76,
+          "cards": [
+            {
+              "text": "説明会でマスクさんは、テスラのロボットを",
+              "start": 0.0,
+              "end": 3.07
+            },
+            {
+              "text": "仕事で使う会社に届けるのは、来年、",
+              "start": 3.22,
+              "end": 5.65
+            },
+            {
+              "text": "2027年の終わりごろの見込み、",
+              "start": 5.8,
+              "end": 8.09
+            },
+            {
+              "text": "と言ってる。家庭は、量産が進んでから。",
+              "start": 8.24,
+              "end": 10.96
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "つまり順番は、テスラの工場、仕事で使う会社、そして家庭。家は、最後なのね。",
+          "expression": "neutral",
+          "t0": 40.76,
+          "dur": 6.64,
+          "cards": [
+            {
+              "text": "つまり順番は、テスラの工場、",
+              "start": 0.0,
+              "end": 2.48
+            },
+            {
+              "text": "仕事で使う会社、そして家庭。家は、",
+              "start": 2.63,
+              "end": 5.75
+            },
+            {
+              "text": "最後なのね。",
+              "start": 5.9,
+              "end": 6.8
+            }
+          ]
+        }
+      ],
+      "scene_id": 6,
+      "narration": "大輔「まず、10月の発表。決算資料、つまりテスラが3か月ごとに出す、会社の成績と計画の資料に、量産のラインで生産を始めた、と書いてある。」\n沙織「量産のラインは、車の工場にあるような、同じ物を大量に作る流れ作業ね。で、それ何台作ったの？」\n大輔「台数は、資料に書いてない。でも、試作品じゃなく、売る物と同じ作り方で作り始めた、とある。」\n沙織「量産を始めたことが、家まではどうつながるの？」\n大輔「説明会でマスクさんは、テスラのロボットを仕事で使う会社に届けるのは、来年、2027年の終わりごろの見込み、と言ってる。家庭は、量産が進んでから。」\n沙織「つまり順番は、テスラの工場、仕事で使う会社、そして家庭。家は、最後なのね。」",
+      "narrator": "dialogue",
+      "lines_hash": "96cac0e57112"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 1,
+      "image_prompt": "Early evening inside a quiet, tidy Japanese home where an elderly person lives alone: a small living room with a low wooden table holding a single teacup, a floor cushion, a folded blanket, a hallway beyond with a soft night light glowing near the floor, warm lamp light, and a window showing the dusk sky. Calm and peaceful. No people, no robots. No readable text, no letters, no numbers, no logos, no brand marks.",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "ただ、家での使い道は、マスクさんが今年の1月にも口にしてる。スイスのダボス会議で。",
           "expression": "excited",
-          "t0": 18.92,
+          "t0": 0.0,
+          "dur": 6.44,
+          "cards": [
+            {
+              "text": "ただ、家での使い道は、マスクさんが今年の",
+              "start": 0.0,
+              "end": 3.2
+            },
+            {
+              "text": "1月にも口にしてる。スイスのダボス会議で。",
+              "start": 3.35,
+              "end": 6.5
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "世界の経営者や政治家が集まる会議ね。そこで、何て言ったの？",
+          "expression": "neutral",
+          "t0": 6.72,
+          "dur": 4.08,
+          "cards": [
+            {
+              "text": "世界の経営者や政治家が集まる会議ね。",
+              "start": 0.0,
+              "end": 2.44
+            },
+            {
+              "text": "そこで、何て言ったの？",
+              "start": 2.59,
+              "end": 4.08
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "とても安全なら、子どもを見守ったり、ペットの世話をしたりするロボットを、誰でも欲しがる。年老いた親の世話をして、守ってくれるロボットがあったら素晴らしい、って。",
+          "expression": "excited",
+          "t0": 11.08,
+          "dur": 9.8,
+          "cards": [
+            {
+              "text": "とても安全なら、子どもを見守ったり、",
+              "start": 0.0,
+              "end": 2.21
+            },
+            {
+              "text": "ペットの世話をしたりするロボットを、",
+              "start": 2.21,
+              "end": 4.41
+            },
+            {
+              "text": "誰でも欲しがる。年老いた親の世話をして、",
+              "start": 4.41,
+              "end": 6.86
+            },
+            {
+              "text": "守ってくれるロボットが",
+              "start": 6.86,
+              "end": 8.21
+            },
+            {
+              "text": "あったら素晴らしい、って。",
+              "start": 8.21,
+              "end": 9.8
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "親の見守りは、見ている人にも切実な話ね。親が遠くで一人で暮らしているなら、なおさら。",
+          "expression": "thinking",
+          "t0": 21.16,
+          "dur": 6.08,
+          "cards": [
+            {
+              "text": "親の見守りは、見ている人にも切実な話ね。",
+              "start": 0.0,
+              "end": 2.95
+            },
+            {
+              "text": "親が遠くで一人で暮らしているなら、",
+              "start": 3.1,
+              "end": 5.44
+            },
+            {
+              "text": "なおさら。",
+              "start": 5.59,
+              "end": 6.28
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "マスクさんが話したのは、アメリカの家の話。次は、日本で、親が一人で暮らす家にも来てほしい。夜、家の中を見て回って、何かあれば、離れて暮らす子どもに知らせてくれる。",
+          "expression": "excited",
+          "tag": "use_case",
+          "t0": 27.52,
+          "dur": 12.16,
+          "cards": [
+            {
+              "text": "マスクさんが話したのは、アメリカの家の話。",
+              "start": 0.0,
+              "end": 3.04
+            },
+            {
+              "text": "次は、日本で、",
+              "start": 3.19,
+              "end": 4.26
+            },
+            {
+              "text": "親が一人で暮らす家にも来てほしい。",
+              "start": 4.26,
+              "end": 6.86
+            },
+            {
+              "text": "夜、家の中を見て回って、何かあれば、",
+              "start": 7.01,
+              "end": 9.61
+            },
+            {
+              "text": "離れて暮らす子どもに知らせてくれる。",
+              "start": 9.76,
+              "end": 12.36
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "いい使い道ね。じゃあ、家に来る時期を、マスクさんがダボスで何て言ったのか。言葉どおりに見よう。",
+          "expression": "neutral",
+          "t0": 39.96,
+          "dur": 6.16,
+          "cards": [
+            {
+              "text": "いい使い道ね。じゃあ、家に来る時期を、",
+              "start": 0.0,
+              "end": 2.57
+            },
+            {
+              "text": "マスクさんがダボスで何て言ったのか。",
+              "start": 2.72,
+              "end": 4.96
+            },
+            {
+              "text": "言葉どおりに見よう。",
+              "start": 5.11,
+              "end": 6.36
+            }
+          ]
+        }
+      ],
+      "scene_id": 7,
+      "narration": "大輔「ただ、家での使い道は、マスクさんが今年の1月にも口にしてる。スイスのダボス会議で。」\n沙織「世界の経営者や政治家が集まる会議ね。そこで、何て言ったの？」\n大輔「とても安全なら、子どもを見守ったり、ペットの世話をしたりするロボットを、誰でも欲しがる。年老いた親の世話をして、守ってくれるロボットがあったら素晴らしい、って。」\n沙織「親の見守りは、見ている人にも切実な話ね。親が遠くで一人で暮らしているなら、なおさら。」\n大輔「マスクさんが話したのは、アメリカの家の話。次は、日本で、親が一人で暮らす家にも来てほしい。夜、家の中を見て回って、何かあれば、離れて暮らす子どもに知らせてくれる。」\n沙織「いい使い道ね。じゃあ、家に来る時期を、マスクさんがダボスで何て言ったのか。言葉どおりに見よう。」",
+      "narrator": "dialogue",
+      "lines_hash": "a1dc30102878"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 1,
+      "reference_index": 3,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "report",
+        "source": "ダボス会議でのマスク氏の発言（2026年1月22日、書き起こし）",
+        "quote": "By the end of next year, I think we'd be selling humanoid robots to the public.",
+        "quote_type": "原文",
+        "highlight": "By the end of next year",
+        "items": [
+          "訳: 来年末までに、一般の人に売っていると思う",
+          "条件: とても高い信頼性と安全性、できることの幅",
+          "使い道の例: 子どもの見守り、ペット、年老いた親",
+          "値段は話していない"
+        ],
+        "reference_index": 3
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "ダボス会議での、マスクさんの発言。来年の終わりまでに、一般の人に人型ロボットを売っていると思う、と言ってる。この来年は、2027年ね。",
+          "expression": "neutral",
+          "t0": 0.0,
           "dur": 10.8,
           "cards": [
             {
-              "text": "そう。そのころに、",
+              "text": "ダボス会議での、マスクさんの発言。",
               "start": 0.0,
-              "end": 1.32
+              "end": 2.72
             },
             {
-              "text": "テスラ以外の会社に届け始める、",
-              "start": 1.32,
-              "end": 3.52
+              "text": "来年の終わりまでに、",
+              "start": 2.87,
+              "end": 4.52
             },
             {
-              "text": "と言ってる。今から1年ちょっと先。ただ、",
-              "start": 3.67,
-              "end": 6.76
+              "text": "一般の人に人型ロボットを",
+              "start": 4.52,
+              "end": 6.5
             },
             {
-              "text": "届き始めるのと、仕事を任せられるのは、",
-              "start": 6.91,
-              "end": 9.68
+              "text": "売っていると思う、と言ってる。この来年は、",
+              "start": 6.65,
+              "end": 9.8
             },
             {
-              "text": "別の話だけどね。",
-              "start": 9.83,
+              "text": "2027年ね。",
+              "start": 9.95,
               "end": 11.0
             }
           ]
         },
         {
           "speaker": "dreamer",
-          "text": "届いた後、最初にどんな仕事を任されるのか。テスラではないけど、手がかりがある。アジリティという別の会社の人型ロボットが、アメリカの物流の大手の倉庫で、箱を10万個以上運んだ。来年の初めからは、倉庫を2か所増やすそうだ。",
+          "text": "今から、1年ちょっと先だ。思っていたより近い。",
           "expression": "excited",
-          "display": "届いた後、最初にどんな仕事を任されるのか。テスラではないけど、手がかりがある。アジリティ（Agility Robotics）という別の会社の人型ロボットが、アメリカの物流の大手（GXO）の倉庫で、箱を10万個以上運んだ。来年の初めからは、倉庫を2か所増やすそうだ。",
-          "t0": 29.94,
-          "dur": 16.2,
+          "t0": 11.08,
+          "dur": 4.52,
           "cards": [
             {
-              "text": "届いた後、最初にどんな仕事を任されるのか。",
+              "text": "今から、1年ちょっと先だ。",
               "start": 0.0,
-              "end": 2.6
+              "end": 2.34
             },
             {
-              "text": "テスラではないけど、手がかりがある。",
-              "start": 2.6,
-              "end": 4.82
-            },
-            {
-              "text": "アジリティ（Agility",
-              "start": 4.82,
-              "end": 6.43
-            },
-            {
-              "text": "Robotics）という別の",
-              "start": 6.43,
-              "end": 8.16
-            },
-            {
-              "text": "会社の人型ロボットが、",
-              "start": 8.16,
-              "end": 9.52
-            },
-            {
-              "text": "アメリカの物流の大手（GXO）の倉庫で、",
-              "start": 9.52,
-              "end": 12.0
-            },
-            {
-              "text": "箱を10万個以上運んだ。来年の初めからは、",
-              "start": 12.0,
-              "end": 14.59
-            },
-            {
-              "text": "倉庫を2か所増やすそうだ。",
-              "start": 14.59,
-              "end": 16.2
+              "text": "思っていたより近い。",
+              "start": 2.34,
+              "end": 4.14
             }
           ]
         },
         {
           "speaker": "skeptic",
-          "text": "この数字を発表したのは、ロボットを使っている物流の会社自身。このロボットを作った会社と、使っている物流の会社は、取引先どうし。だから、よその人の評価とまでは言えないし、台数も値段も出てない。でも、形の決まった箱を運ぶ繰り返しの仕事なら、人型ロボットが、もう本番の仕事をしてる。さっきの、最初の出番の見立てとは合う。",
-          "expression": "thinking",
-          "t0": 46.42,
-          "dur": 19.72,
+          "text": "ただ、条件がついてる。とても高い信頼性と安全性、それに、できることの幅に自信が持てたら、って。",
+          "expression": "doubt",
+          "tag": "barrier",
+          "t0": 15.88,
+          "dur": 7.12,
           "cards": [
             {
-              "text": "この数字を発表したのは、",
+              "text": "ただ、条件がついてる。",
               "start": 0.0,
-              "end": 1.43
+              "end": 1.67
             },
             {
-              "text": "ロボットを使っている",
-              "start": 1.43,
-              "end": 2.62
+              "text": "とても高い信頼性と安全性、それに、",
+              "start": 1.67,
+              "end": 4.24
             },
             {
-              "text": "物流の会社自身。",
-              "start": 2.77,
-              "end": 3.79
+              "text": "できることの幅に自信が持てたら、って。",
+              "start": 4.24,
+              "end": 7.12
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "家の中で、人のすぐそばを動くんだから。安全が先、というのは、当然だね。",
+          "expression": "thinking",
+          "t0": 23.28,
+          "dur": 5.36,
+          "cards": [
+            {
+              "text": "家の中で、人のすぐそばを動くんだから。",
+              "start": 0.0,
+              "end": 2.83
             },
             {
-              "text": "このロボットを作った会社と、",
-              "start": 3.79,
-              "end": 5.58
-            },
-            {
-              "text": "使っている物流の会社は、取引先どうし。",
-              "start": 5.73,
-              "end": 7.99
-            },
-            {
-              "text": "だから、よその人の評価とまでは言えないし、",
-              "start": 8.14,
-              "end": 10.64
-            },
-            {
-              "text": "台数も値段も出てない。でも、",
-              "start": 10.79,
-              "end": 12.45
-            },
-            {
-              "text": "形の決まった箱を運ぶ繰り返しの仕事なら、",
-              "start": 12.6,
-              "end": 14.98
-            },
-            {
-              "text": "人型ロボットが、もう本番の仕事をしてる。",
-              "start": 15.13,
-              "end": 17.51
-            },
-            {
-              "text": "さっきの、最初の出番の見立てとは合う。",
-              "start": 17.66,
-              "end": 19.92
+              "text": "安全が先、というのは、当然だね。",
+              "start": 2.98,
+              "end": 5.44
             }
           ]
         },
         {
           "speaker": "skeptic",
-          "text": "じゃあ、テスラの話に戻ろう。テスラが、よその会社に届ける、と本当に言ったのか。説明会の書き起こしで、言葉どおりに確かめよう。",
-          "expression": "thinking",
-          "t0": 66.36,
-          "dur": 9.08,
+          "text": "言い方も、思う、という見込みで、約束じゃない。値段も言ってない。",
+          "expression": "doubt",
+          "t0": 28.92,
+          "dur": 4.28,
           "cards": [
             {
-              "text": "じゃあ、テスラの話に戻ろう。テスラが、",
+              "text": "言い方も、思う、という見込みで、",
               "start": 0.0,
-              "end": 2.89
+              "end": 2.27
             },
             {
-              "text": "よその会社に届ける、と本当に言ったのか。",
-              "start": 3.04,
-              "end": 5.87
+              "text": "約束じゃない。値段も言ってない。",
+              "start": 2.42,
+              "end": 4.48
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "見込みでも、一般の人に売る時期を、トップが自分の口で言った。そこは大きいよ。",
+          "expression": "excited",
+          "t0": 33.48,
+          "dur": 5.56,
+          "cards": [
+            {
+              "text": "見込みでも、一般の人に売る時期を、",
+              "start": 0.0,
+              "end": 2.42
             },
             {
-              "text": "説明会の書き起こしで、",
-              "start": 6.02,
-              "end": 7.58
-            },
-            {
-              "text": "言葉どおりに確かめよう。",
-              "start": 7.58,
-              "end": 9.28
+              "text": "トップが自分の口で言った。そこは大きいよ。",
+              "start": 2.57,
+              "end": 5.56
             }
           ]
         }
       ],
-      "ken_burns": "zoom_out",
+      "scene_id": 8,
       "zoom_anchor": {
         "x": 0.5,
         "y": 0.5
       },
-      "scene_id": 11,
+      "image_asset": "cards/kl051_S08",
+      "narration": "沙織「ダボス会議での、マスクさんの発言。来年の終わりまでに、一般の人に人型ロボットを売っていると思う、と言ってる。この来年は、2027年ね。」\n大輔「今から、1年ちょっと先だ。思っていたより近い。」\n沙織「ただ、条件がついてる。とても高い信頼性と安全性、それに、できることの幅に自信が持てたら、って。」\n大輔「家の中で、人のすぐそばを動くんだから。安全が先、というのは、当然だね。」\n沙織「言い方も、思う、という見込みで、約束じゃない。値段も言ってない。」\n大輔「見込みでも、一般の人に売る時期を、トップが自分の口で言った。そこは大きいよ。」\n［画面の資料カード］ダボス会議でのマスク氏の発言（2026年1月22日、書き起こし） 「By the end of next year, I think we'd be selling humanoid robots to the public.」（原文） ・訳: 来年末までに、一般の人に売っていると思う ・条件: とても高い信頼性と安全性、できることの幅 ・使い道の例: 子どもの見守り、ペット、年老いた親 ・値段は話していない",
       "narrator": "dialogue",
-      "narration": "大輔「最後は、よその会社の現場に来るのはいつか。マスクさんは説明会で、体の作りと長持ち、それに頭になるAIの課題が片づくのは、来年の終わりごろの見込み、と言った。」\n沙織「来年っていうのは、2027年ね。2027年の終わりごろ。」\n大輔「そう。そのころに、テスラ以外の会社に届け始める、と言ってる。今から1年ちょっと先。ただ、届き始めるのと、仕事を任せられるのは、別の話だけどね。」\n大輔「届いた後、最初にどんな仕事を任されるのか。テスラではないけど、手がかりがある。アジリティという別の会社の人型ロボットが、アメリカの物流の大手の倉庫で、箱を10万個以上運んだ。来年の初めからは、倉庫を2か所増やすそうだ。」\n沙織「この数字を発表したのは、ロボットを使っている物流の会社自身。このロボットを作った会社と、使っている物流の会社は、取引先どうし。だから、よその人の評価とまでは言えないし、台数も値段も出てない。でも、形の決まった箱を運ぶ繰り返しの仕事なら、人型ロボットが、もう本番の仕事をしてる。さっきの、最初の出番の見立てとは合う。」\n沙織「じゃあ、テスラの話に戻ろう。テスラが、よその会社に届ける、と本当に言ったのか。説明会の書き起こしで、言葉どおりに確かめよう。」",
-      "lines_hash": "473d7c59976d"
+      "lines_hash": "f82eabd931f0"
     },
     {
       "type": "check",
       "bgm_role": "main",
-      "round": 3,
+      "round": 1,
       "reference_index": 2,
       "ken_burns": "static",
       "source_card": {
         "kind": "report",
         "source": "テスラ 決算説明会の書き起こし（2026年10月21日）",
-        "quote": "that's the time to expect when we're delivering Optimus to companies outside of Tesla",
+        "quote": "it would be something that people can buy for their home",
         "quote_type": "原文",
-        "highlight": "companies outside of Tesla",
+        "highlight": "buy for their home",
         "items": [
-          "訳: そのころが、テスラ以外の会社に届ける時期",
-          "体の作り・長持ち・AIは、来年の終わりごろ解決の見込み",
-          "1〜2か月で、決めた動きでない動画を出す予定",
-          "値段・日本での販売は、話に出ていない"
+          "訳: （量産が進めば）人が家庭用に買えるものになる",
+          "最初に一番役立つのは、重工業の危険な仕事など",
+          "仕事で使う会社へは、来年の終わりごろの見込み",
+          "家庭向けの時期・値段は、話に出ていない"
         ],
         "reference_index": 2
       },
       "lines": [
         {
           "speaker": "skeptic",
-          "text": "説明会の書き起こし。課題が来年の終わりごろに片づく見込みで、そのころが、テスラ以外の会社に届ける時期、と言ってる。マスクさんの見込みね。",
+          "text": "こっちは、10月の説明会の書き起こし。量産が進めば、もちろん、人が家庭用に買えるものになる。でも、最初に一番役に立つのは、重工業、つまり鉄や機械を扱う大きな工場の、危険な仕事だ、と言ってる。",
           "expression": "neutral",
           "t0": 0.0,
-          "dur": 9.0,
+          "dur": 13.28,
           "cards": [
             {
-              "text": "説明会の書き起こし。課題が来年の終わり",
+              "text": "こっちは、10月の説明会の書き起こし。",
               "start": 0.0,
-              "end": 2.59
+              "end": 2.54
             },
             {
-              "text": "ごろに片づく見込みで、そのころが、",
-              "start": 2.74,
-              "end": 4.88
+              "text": "量産が進めば、もちろん、人が家庭用に買える",
+              "start": 2.69,
+              "end": 5.49
             },
             {
-              "text": "テスラ以外の会社に届ける時期、と言ってる。",
-              "start": 5.03,
-              "end": 7.67
+              "text": "ものになる。でも、最初に一番役に立つのは、",
+              "start": 5.64,
+              "end": 8.44
             },
             {
-              "text": "マスクさんの見込みね。",
-              "start": 7.82,
-              "end": 9.2
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "ただ、これは発言で、決算資料には書いてない。値段も、資料にも説明会にも出てこない。日本で売るかどうかも、話に出てない。",
-          "expression": "doubt",
-          "tag": "barrier",
-          "t0": 9.22,
-          "dur": 8.16,
-          "cards": [
-            {
-              "text": "ただ、これは発言で、",
-              "start": 0.0,
-              "end": 1.33
+              "text": "重工業、つまり鉄や機械を扱う大きな工場の、",
+              "start": 8.59,
+              "end": 11.59
             },
             {
-              "text": "決算資料には書いてない。",
-              "start": 1.33,
-              "end": 2.93
-            },
-            {
-              "text": "値段も、資料にも説明会にも出てこない。",
-              "start": 3.1,
-              "end": 5.63
-            },
-            {
-              "text": "日本で売るかどうかも、話に出てない。",
-              "start": 5.88,
-              "end": 8.28
+              "text": "危険な仕事だ、と言ってる。",
+              "start": 11.74,
+              "end": 13.48
             }
           ]
         },
         {
           "speaker": "dreamer",
-          "text": "値段が出ないと、うちで使えるかは決められないね。",
-          "expression": "thinking",
-          "t0": 17.66,
-          "dur": 3.92,
+          "text": "家庭用に買える、とはっきり言ってるね。",
+          "expression": "excited",
+          "t0": 13.56,
+          "dur": 3.28,
           "cards": [
             {
-              "text": "値段が出ないと、",
+              "text": "家庭用に買える、とはっきり言ってるね。",
+              "start": 0.0,
+              "end": 3.28
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "でも、家庭の時期は、ここには無い。同じ「来年の終わり」でも、1月は、一般の人に売る時期だった。",
+          "expression": "doubt",
+          "tag": "weakness",
+          "t0": 17.12,
+          "dur": 6.44,
+          "cards": [
+            {
+              "text": "でも、家庭の時期は、ここには無い。",
+              "start": 0.0,
+              "end": 2.28
+            },
+            {
+              "text": "同じ「来年の終わり」でも、1月は、",
+              "start": 2.52,
+              "end": 4.74
+            },
+            {
+              "text": "一般の人に売る時期だった。",
+              "start": 4.89,
+              "end": 6.59
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "10月は、仕事で使う会社に届ける時期になって、家庭はその後ろに回った。",
+          "expression": "doubt",
+          "t0": 23.78,
+          "dur": 5.4,
+          "cards": [
+            {
+              "text": "10月は、",
+              "start": 0.0,
+              "end": 0.75
+            },
+            {
+              "text": "仕事で使う会社に届ける時期になって、",
+              "start": 0.75,
+              "end": 3.45
+            },
+            {
+              "text": "家庭はその後ろに回った。",
+              "start": 3.6,
+              "end": 5.4
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、テスラの見込みは、これまでもずれてきた。おととし、2024年の夏の説明会では、2026年には仕事で使う会社に届ける、と言っていた。それが今は、来年の終わりごろ。",
+          "expression": "doubt",
+          "t0": 29.4,
+          "dur": 13.24,
+          "cards": [
+            {
+              "text": "それに、テスラの見込みは、",
+              "start": 0.0,
+              "end": 1.95
+            },
+            {
+              "text": "これまでもずれてきた。",
+              "start": 1.95,
+              "end": 3.6
+            },
+            {
+              "text": "おととし、2024年の夏の説明会では、",
+              "start": 3.75,
+              "end": 6.85
+            },
+            {
+              "text": "2026年には仕事で使う会社に届ける、",
+              "start": 7.14,
+              "end": 9.99
+            },
+            {
+              "text": "と言っていた。それが今は、",
+              "start": 10.14,
+              "end": 12.09
+            },
+            {
+              "text": "来年の終わりごろ。",
+              "start": 12.09,
+              "end": 13.44
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だったら、時期の言葉より、中身で見よう。工場で数を作って、安全と長持ちを確かめてから家へ。家に入れてもらう側から見れば、むしろ安心できる進め方だ。",
+          "expression": "thinking",
+          "tag": "workaround",
+          "t0": 42.92,
+          "dur": 12.32,
+          "cards": [
+            {
+              "text": "だったら、時期の言葉より、中身で見よう。",
+              "start": 0.0,
+              "end": 3.44
+            },
+            {
+              "text": "工場で数を作って、",
+              "start": 3.59,
+              "end": 5.15
+            },
+            {
+              "text": "安全と長持ちを確かめてから家へ。",
+              "start": 5.15,
+              "end": 7.91
+            },
+            {
+              "text": "家に入れてもらう側から見れば、",
+              "start": 8.06,
+              "end": 10.31
+            },
+            {
+              "text": "むしろ安心できる進め方だ。",
+              "start": 10.46,
+              "end": 12.5
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そこは筋が通ってる。安全が先、は私も一番確かめたいところ。",
+          "expression": "convinced",
+          "t0": 55.52,
+          "dur": 4.76,
+          "cards": [
+            {
+              "text": "そこは筋が通ってる。安全が先、",
+              "start": 0.0,
+              "end": 2.5
+            },
+            {
+              "text": "は私も一番確かめたいところ。",
+              "start": 2.65,
+              "end": 4.75
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "安全を確かめてから家へ。その一歩目の量産のラインは、もう動き始めている。",
+          "expression": "convinced",
+          "tag": "hope",
+          "t0": 60.56,
+          "dur": 5.76,
+          "cards": [
+            {
+              "text": "安全を確かめてから家へ。その一歩目の量産の",
+              "start": 0.3,
+              "end": 3.54
+            },
+            {
+              "text": "ラインは、もう動き始めている。",
+              "start": 3.69,
+              "end": 5.94
+            }
+          ]
+        }
+      ],
+      "scene_id": 9,
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "image_asset": "cards/kl051_S09",
+      "narration": "沙織「こっちは、10月の説明会の書き起こし。量産が進めば、もちろん、人が家庭用に買えるものになる。でも、最初に一番役に立つのは、重工業、つまり鉄や機械を扱う大きな工場の、危険な仕事だ、と言ってる。」\n大輔「家庭用に買える、とはっきり言ってるね。」\n沙織「でも、家庭の時期は、ここには無い。同じ「来年の終わり」でも、1月は、一般の人に売る時期だった。」\n沙織「10月は、仕事で使う会社に届ける時期になって、家庭はその後ろに回った。」\n沙織「それに、テスラの見込みは、これまでもずれてきた。おととし、2024年の夏の説明会では、2026年には仕事で使う会社に届ける、と言っていた。それが今は、来年の終わりごろ。」\n大輔「だったら、時期の言葉より、中身で見よう。工場で数を作って、安全と長持ちを確かめてから家へ。家に入れてもらう側から見れば、むしろ安心できる進め方だ。」\n沙織「そこは筋が通ってる。安全が先、は私も一番確かめたいところ。」\n大輔「安全を確かめてから家へ。その一歩目の量産のラインは、もう動き始めている。」\n［画面の資料カード］テスラ 決算説明会の書き起こし（2026年10月21日） 「it would be something that people can buy for their home」（原文） ・訳: （量産が進めば）人が家庭用に買えるものになる ・最初に一番役立つのは、重工業の危険な仕事など ・仕事で使う会社へは、来年の終わりごろの見込み ・家庭向けの時期・値段は、話に出ていない",
+      "narrator": "dialogue",
+      "lines_hash": "141a9daf2fd2"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 2,
+      "round_title": "家の片づけ、もう任せられる？",
+      "image_prompt": "Late evening in a home dining kitchen after dinner: a dining table with used plates, glasses and chopsticks still on it, an open dishwasher beside the kitchen sink, and a basket of dry, unfolded laundry on a chair. Warm ceiling light, a dark window showing that it is night outside. Lived-in but clean. No people, no robots. No readable text, no letters, no numbers, no logos, no brand marks.",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "次は家事。家事ロボットを作る、ほかのロボット会社は、食器の片づけや、洗濯物をたたむことを挙げてる。",
+          "expression": "excited",
+          "t0": 0.0,
+          "dur": 7.2,
+          "cards": [
+            {
+              "text": "次は家事。家事ロボットを作る、",
+              "start": 0.0,
+              "end": 2.31
+            },
+            {
+              "text": "ほかのロボット会社は、食器の片づけや、",
+              "start": 2.46,
+              "end": 5.14
+            },
+            {
+              "text": "洗濯物をたたむことを挙げてる。",
+              "start": 5.29,
+              "end": 7.4
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "どれも、毎日のことね。",
+          "expression": "neutral",
+          "t0": 7.48,
+          "dur": 2.08,
+          "cards": [
+            {
+              "text": "どれも、毎日のことね。",
+              "start": 0.0,
+              "end": 2.08
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕が次に来てほしいのは、店を閉めて夜遅く帰る人の家。帰ったら、食卓が片づいて、洗濯物がたたんである。",
+          "expression": "excited",
+          "tag": "use_case",
+          "t0": 9.84,
+          "dur": 8.52,
+          "cards": [
+            {
+              "text": "僕が次に来てほしいのは、店を閉めて夜遅く",
+              "start": 0.0,
+              "end": 3.52
+            },
+            {
+              "text": "帰る人の家。帰ったら、食卓が片づいて、",
+              "start": 3.67,
+              "end": 6.92
+            },
+            {
+              "text": "洗濯物がたたんである。",
+              "start": 7.07,
+              "end": 8.72
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "でも、家で働く人型ロボットを、一般の家に売る話まで、本当に進んでるの？",
+          "expression": "doubt",
+          "t0": 18.64,
+          "dur": 5.88,
+          "cards": [
+            {
+              "text": "でも、家で働く人型ロボットを、",
+              "start": 0.0,
+              "end": 2.74
+            },
+            {
+              "text": "一般の家に売る話まで、本当に進んでるの？",
+              "start": 2.89,
+              "end": 5.89
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "進んでる。もう値段をつけて、予約を取っている会社がある。アメリカのワンエックスという会社の、ネオという人型ロボット。",
+          "expression": "excited",
+          "display": "進んでる。もう値段をつけて、予約を取っている会社がある。アメリカの1X（ワンエックス）という会社の、NEO（ネオ）という人型ロボット。",
+          "t0": 24.8,
+          "dur": 9.12,
+          "cards": [
+            {
+              "text": "進んでる。もう値段をつけて、",
+              "start": 0.0,
+              "end": 1.91
+            },
+            {
+              "text": "予約を取っている会社がある。",
+              "start": 1.91,
+              "end": 3.81
+            },
+            {
+              "text": "アメリカの1X（ワンエックス）",
+              "start": 3.81,
+              "end": 5.85
+            },
+            {
+              "text": "という会社の、NEO（ネオ）",
+              "start": 5.85,
+              "end": 7.76
+            },
+            {
+              "text": "という人型ロボット。",
+              "start": 7.76,
+              "end": 9.12
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "本当なら、会社自身のページに書いてあるはず。見よう。",
+          "expression": "neutral",
+          "t0": 34.2,
+          "dur": 3.16,
+          "cards": [
+            {
+              "text": "本当なら、",
+              "start": 0.2,
+              "end": 0.78
+            },
+            {
+              "text": "会社自身のページに書いてあるはず。",
+              "start": 0.78,
+              "end": 2.75
+            },
+            {
+              "text": "見よう。",
+              "start": 2.9,
+              "end": 3.36
+            }
+          ]
+        }
+      ],
+      "scene_id": 10,
+      "narration": "大輔「次は家事。家事ロボットを作る、ほかのロボット会社は、食器の片づけや、洗濯物をたたむことを挙げてる。」\n沙織「どれも、毎日のことね。」\n大輔「僕が次に来てほしいのは、店を閉めて夜遅く帰る人の家。帰ったら、食卓が片づいて、洗濯物がたたんである。」\n沙織「でも、家で働く人型ロボットを、一般の家に売る話まで、本当に進んでるの？」\n大輔「進んでる。もう値段をつけて、予約を取っている会社がある。アメリカのワンエックスという会社の、ネオという人型ロボット。」\n沙織「本当なら、会社自身のページに書いてあるはず。見よう。」",
+      "narrator": "dialogue",
+      "lines_hash": "4fba444be3b3"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 2,
+      "reference_index": 5,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "press",
+        "source": "1X 公式サイト「NEO」の発表（2025年10月28日）",
+        "quote": "NEO will arrive to early owners with the ability to handle basic tasks",
+        "quote_type": "原文",
+        "highlight": "basic tasks",
+        "items": [
+          "訳: 最初の持ち主には、基本的な作業ができる状態で届く",
+          "値段: 2万ドル、または月499ドル",
+          "届け始め: 米国で2026年、ほかの国は2027年から",
+          "知らない家事は、1Xの専門スタッフが遠くから導く"
+        ],
+        "reference_index": 5
+      },
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "ワンエックスの公式ページ。値段は、日本円でおよそ300万円。",
+          "expression": "excited",
+          "t0": 0.0,
+          "dur": 5.88,
+          "cards": [
+            {
+              "text": "ワンエックスの公式ページ。値段は、",
+              "start": 0.0,
+              "end": 2.96
+            },
+            {
+              "text": "日本円でおよそ300万円。",
+              "start": 3.11,
+              "end": 5.69
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "高めの車、1台くらいね。",
+          "expression": "surprised",
+          "t0": 6.16,
+          "dur": 1.96,
+          "cards": [
+            {
+              "text": "高めの車、1台くらいね。",
+              "start": 0.0,
+              "end": 1.96
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "月払いなら、月7万5千円ほど。",
+          "expression": "excited",
+          "t0": 8.4,
+          "dur": 3.12,
+          "cards": [
+            {
+              "text": "月払いなら、月7万5千円ほど。",
+              "start": 0.0,
+              "end": 3.12
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "届け始めるのは、アメリカで今年、2026年のうち。ほかの国は来年、2027年から。",
+          "expression": "excited",
+          "t0": 11.74,
+          "dur": 6.68,
+          "cards": [
+            {
+              "text": "届け始めるのは、アメリカで今年、",
+              "start": 0.0,
+              "end": 2.4
+            },
+            {
+              "text": "2026年のうち。ほかの国は来年、",
+              "start": 2.55,
+              "end": 5.53
+            },
+            {
+              "text": "2027年から。",
+              "start": 5.68,
+              "end": 6.88
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "値段と届ける時期を、会社がはっきり書いてる。予約まで進んでいるとは思わなかった。そこは、私の読みが甘かった。",
+          "expression": "convinced",
+          "tag": "turn",
+          "t0": 18.7,
+          "dur": 7.16,
+          "cards": [
+            {
+              "text": "値段と届ける時期を、",
+              "start": 0.0,
+              "end": 1.27
+            },
+            {
+              "text": "会社がはっきり書いてる。",
+              "start": 1.27,
+              "end": 2.79
+            },
+            {
+              "text": "予約まで進んでいるとは思わなかった。",
+              "start": 2.98,
+              "end": 5.27
+            },
+            {
+              "text": "そこは、私の読みが甘かった。",
+              "start": 5.42,
+              "end": 7.36
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、続きがある。最初に届くロボットができるのは、基本的な作業から。ロボットがまだ知らない家事は、ワンエックスの専門のスタッフが、離れた場所からロボットに付き添って、やり方を教えて覚えさせる、と書いてある。",
+          "expression": "doubt",
+          "tag": "weakness",
+          "t0": 26.08,
+          "dur": 14.48,
+          "cards": [
+            {
+              "text": "ただ、続きがある。",
+              "start": 0.0,
+              "end": 1.21
+            },
+            {
+              "text": "最初に届くロボットができるのは、",
+              "start": 1.21,
+              "end": 3.37
+            },
+            {
+              "text": "基本的な作業から。",
+              "start": 3.52,
+              "end": 4.8
+            },
+            {
+              "text": "ロボットがまだ知らない家事は、",
+              "start": 4.8,
+              "end": 6.94
+            },
+            {
+              "text": "ワンエックスの専門のスタッフが、",
+              "start": 7.09,
+              "end": 9.25
+            },
+            {
+              "text": "離れた場所からロボットに付き添って、",
+              "start": 9.4,
+              "end": 11.83
+            },
+            {
+              "text": "やり方を教えて覚えさせる、と書いてある。",
+              "start": 11.98,
+              "end": 14.68
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "人が、離れた所からロボットを動かして教える、ということか。家の中を、会社の人に見てもらう形になるね。",
+          "expression": "surprised",
+          "t0": 40.84,
+          "dur": 8.6,
+          "cards": [
+            {
+              "text": "人が、離れた所からロボットを動かして",
+              "start": 0.0,
+              "end": 3.1
+            },
+            {
+              "text": "教える、ということか。家の中を、",
+              "start": 3.1,
+              "end": 5.85
+            },
+            {
+              "text": "会社の人に見てもらう形になるね。",
+              "start": 5.85,
+              "end": 8.6
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう。家の中を見せていいかは、買う前に考えたいところね。それに、今年4月の会社の発表では、今できあがる機体は、まず社員の家での試験に回す、と書いてる。一般の買い手の家に届いた、という確認は、11月2日の時点で、私たちは見つけられなかった。",
+          "expression": "doubt",
+          "tag": "barrier",
+          "t0": 49.72,
+          "dur": 18.4,
+          "cards": [
+            {
+              "text": "そう。家の中を見せていいかは、",
+              "start": 0.0,
+              "end": 2.32
+            },
+            {
+              "text": "買う前に考えたいところね。それに、",
+              "start": 2.52,
+              "end": 5.04
+            },
+            {
+              "text": "今年4月の会社の発表では、",
+              "start": 5.2,
+              "end": 7.15
+            },
+            {
+              "text": "今できあがる機体は、",
+              "start": 7.15,
+              "end": 8.65
+            },
+            {
+              "text": "まず社員の家での試験に回す、と書いてる。",
+              "start": 8.8,
+              "end": 11.77
+            },
+            {
+              "text": "一般の買い手の家に届いた、という確認は、",
+              "start": 11.92,
+              "end": 14.89
+            },
+            {
+              "text": "11月2日の時点で、",
+              "start": 15.04,
+              "end": 16.52
+            },
+            {
+              "text": "私たちは見つけられなかった。",
+              "start": 16.52,
+              "end": 18.6
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今年のうち、という予定まで、あと2か月か。年内に一般の家に届くかが、一つ目の目印だね。",
+          "expression": "thinking",
+          "t0": 68.4,
+          "dur": 7.32,
+          "cards": [
+            {
+              "text": "今年のうち、という予定まで、あと2か月か。",
+              "start": 0.0,
+              "end": 3.15
+            },
+            {
+              "text": "年内に一般の家に届くかが、",
+              "start": 3.64,
+              "end": 5.63
+            },
+            {
+              "text": "一つ目の目印だね。",
+              "start": 5.63,
+              "end": 7.0
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それと、ほかの国は来年から、とあるけど、その中に日本が入るかは書いていない。",
+          "expression": "neutral",
+          "t0": 76.0,
+          "dur": 5.16,
+          "cards": [
+            {
+              "text": "それと、ほかの国は来年から、とあるけど、",
+              "start": 0.0,
+              "end": 2.64
+            },
+            {
+              "text": "その中に日本が入るかは書いていない。",
+              "start": 2.79,
+              "end": 5.16
+            }
+          ]
+        }
+      ],
+      "scene_id": 11,
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "image_asset": "cards/kl051_S11",
+      "narration": "大輔「ワンエックスの公式ページ。値段は、日本円でおよそ300万円。」\n沙織「高めの車、1台くらいね。」\n大輔「月払いなら、月7万5千円ほど。」\n大輔「届け始めるのは、アメリカで今年、2026年のうち。ほかの国は来年、2027年から。」\n沙織「値段と届ける時期を、会社がはっきり書いてる。予約まで進んでいるとは思わなかった。そこは、私の読みが甘かった。」\n沙織「ただ、続きがある。最初に届くロボットができるのは、基本的な作業から。ロボットがまだ知らない家事は、ワンエックスの専門のスタッフが、離れた場所からロボットに付き添って、やり方を教えて覚えさせる、と書いてある。」\n大輔「人が、離れた所からロボットを動かして教える、ということか。家の中を、会社の人に見てもらう形になるね。」\n沙織「そう。家の中を見せていいかは、買う前に考えたいところね。それに、今年4月の会社の発表では、今できあがる機体は、まず社員の家での試験に回す、と書いてる。一般の買い手の家に届いた、という確認は、11月2日の時点で、私たちは見つけられなかった。」\n大輔「今年のうち、という予定まで、あと2か月か。年内に一般の家に届くかが、一つ目の目印だね。」\n沙織「それと、ほかの国は来年から、とあるけど、その中に日本が入るかは書いていない。」\n［画面の資料カード］1X 公式サイト「NEO」の発表（2025年10月28日） 「NEO will arrive to early owners with the ability to handle basic tasks」（原文） ・訳: 最初の持ち主には、基本的な作業ができる状態で届く ・値段: 2万ドル、または月499ドル ・届け始め: 米国で2026年、ほかの国は2027年から ・知らない家事は、1Xの専門スタッフが遠くから導く",
+      "narrator": "dialogue",
+      "lines_hash": "12c38a875856"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 2,
+      "reference_index": 8,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "docs",
+        "source": "Sunday 公式サイト「Memo」（2026年11月2日に確認）",
+        "quote": "does not need to learn through human tele-operation in your home",
+        "quote_type": "原文",
+        "highlight": "does not need",
+        "items": [
+          "訳: 家で、人が遠くから操作して覚えさせる必要はない",
+          "できる家事: 食卓の片づけ、食洗機、靴下たたみ",
+          "覚え方: 手袋型の記録装置を付けた人の動きから",
+          "車輪で動く家事ロボット。2026年に試験提供"
+        ],
+        "reference_index": 8
+      },
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "だったら、人が遠くから操作しない道もある。こっちは人型じゃなく、車輪で動く家事ロボットだけど、サンデーという名前の、別のアメリカのロボット会社。食卓の皿やグラスを片づけて、食洗機に入れる。靴下もたたむ。",
+          "expression": "excited",
+          "tag": "workaround",
+          "display": "だったら、人が遠くから操作しない道もある。こっちは人型じゃなく、車輪で動く家事ロボットだけど、Sunday（サンデー）という名前の、別のアメリカのロボット会社。食卓の皿やグラスを片づけて、食洗機に入れる。靴下もたたむ。",
+          "t0": 0.0,
+          "dur": 15.04,
+          "cards": [
+            {
+              "text": "だったら、人が遠くから操作しない道もある。",
+              "start": 0.0,
+              "end": 2.9
+            },
+            {
+              "text": "こっちは人型じゃなく、車輪で動く家事",
+              "start": 2.9,
+              "end": 5.38
+            },
+            {
+              "text": "ロボットだけど、Sunday（サンデー）",
+              "start": 5.38,
+              "end": 8.14
+            },
+            {
+              "text": "という名前の、別のアメリカのロボット会社。",
+              "start": 8.14,
+              "end": 11.04
+            },
+            {
+              "text": "食卓の皿やグラスを片づけて、",
+              "start": 11.04,
+              "end": 12.97
+            },
+            {
+              "text": "食洗機に入れる。靴下もたたむ。",
+              "start": 12.97,
+              "end": 15.04
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "覚え方は？",
+          "expression": "thinking",
+          "t0": 15.32,
+          "dur": 1.36,
+          "cards": [
+            {
+              "text": "覚え方は？",
+              "start": 0.0,
+              "end": 1.36
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "家事をする人に、記録用の手袋を付けてもらって、その手の動きから覚える。だから、家で人が遠くから操作して覚えさせる必要はない、と書いてる。試しに使ってもらうのは、2026年から。",
+          "expression": "excited",
+          "t0": 16.96,
+          "dur": 14.32,
+          "cards": [
+            {
+              "text": "家事をする人に、",
               "start": 0.0,
               "end": 1.2
             },
             {
-              "text": "うちで使えるかは決められないね。",
+              "text": "記録用の手袋を付けてもらって、",
               "start": 1.2,
-              "end": 3.6
+              "end": 3.46
+            },
+            {
+              "text": "その手の動きから覚える。だから、",
+              "start": 3.61,
+              "end": 6.55
+            },
+            {
+              "text": "家で人が遠くから操作して",
+              "start": 6.7,
+              "end": 8.5
+            },
+            {
+              "text": "覚えさせる必要はない、",
+              "start": 8.5,
+              "end": 10.15
+            },
+            {
+              "text": "と書いてる。試しに使ってもらうのは、",
+              "start": 10.3,
+              "end": 13.0
+            },
+            {
+              "text": "2026年から。",
+              "start": 13.15,
+              "end": 14.52
             }
           ]
         },
         {
           "speaker": "skeptic",
-          "text": "もう一つ。マスクさんは、説明会の日から1か月か2か月で、新しい動画を出すと言ってる。あらかじめ決めた動きをなぞるだけの見せ物じゃなく、決めていない動きをしているところ。見たものを信じられる動画にしたい、って。",
-          "expression": "neutral",
-          "t0": 21.86,
-          "dur": 13.92,
-          "cards": [
-            {
-              "text": "もう一つ。マスクさんは、説明会の日から1",
-              "start": 0.0,
-              "end": 2.76
-            },
-            {
-              "text": "か月か2か月で、",
-              "start": 2.91,
-              "end": 3.94
-            },
-            {
-              "text": "新しい動画を出すと言ってる。",
-              "start": 3.94,
-              "end": 5.73
-            },
-            {
-              "text": "あらかじめ決めた動きを",
-              "start": 5.88,
-              "end": 7.29
-            },
-            {
-              "text": "なぞるだけの見せ物じゃなく、",
-              "start": 7.29,
-              "end": 9.08
-            },
-            {
-              "text": "決めていない動きをしているところ。",
-              "start": 9.23,
-              "end": 11.41
-            },
-            {
-              "text": "見たものを信じられる動画にしたい、って。",
-              "start": 11.56,
-              "end": 14.12
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "ほかの会社の人型ロボットの動画には、決めた動きをなぞっているだけのものがある、とまで言ってたね。自分で、ハードルを上げてる。",
-          "expression": "excited",
-          "t0": 36.06,
-          "dur": 8.24,
-          "cards": [
-            {
-              "text": "ほかの会社の人型ロボットの動画には、",
-              "start": 0.19,
-              "end": 2.5
-            },
-            {
-              "text": "決めた動きをなぞっているだけのものがある、",
-              "start": 2.65,
-              "end": 5.34
-            },
-            {
-              "text": "とまで言ってたね。自分で、",
-              "start": 5.49,
-              "end": 7.16
-            },
-            {
-              "text": "ハードルを上げてる。",
-              "start": 7.16,
-              "end": 8.44
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "だったら、確かめる目印を決めよう。目印は四つ。僕から三つ言うね。一つ目は、その動画。物の置き場所や向きが毎回違っても、こなせているか。決めた動きをなぞるだけかどうかは、そこに出る、と僕らは見てる。二つ目は、次の決算資料で、台数の横線に数字が入るか。三つ目は、よその会社で使った声と値段が出るか。",
-          "expression": "excited",
-          "tag": "workaround",
-          "t0": 44.52,
-          "dur": 25.96,
-          "cards": [
-            {
-              "text": "だったら、確かめる目印を決めよう。",
-              "start": 0.0,
-              "end": 2.55
-            },
-            {
-              "text": "目印は四つ。僕から三つ言うね。一つ目は、",
-              "start": 2.86,
-              "end": 6.54
-            },
-            {
-              "text": "その動画。",
-              "start": 6.69,
-              "end": 7.63
-            },
-            {
-              "text": "物の置き場所や向きが毎回違っても、",
-              "start": 7.63,
-              "end": 10.81
-            },
-            {
-              "text": "こなせているか。",
-              "start": 10.96,
-              "end": 12.16
-            },
-            {
-              "text": "決めた動きをなぞるだけかどうかは、",
-              "start": 12.16,
-              "end": 14.71
-            },
-            {
-              "text": "そこに出る、と僕らは見てる。二つ目は、",
-              "start": 14.86,
-              "end": 18.18
-            },
-            {
-              "text": "次の決算資料で、台数の横線に数字が入るか。",
-              "start": 18.33,
-              "end": 22.51
-            },
-            {
-              "text": "三つ目は、",
-              "start": 22.66,
-              "end": 23.42
-            },
-            {
-              "text": "よその会社で使った声と値段が出るか。",
-              "start": 23.42,
-              "end": 26.16
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "四つ目。説明会では、ロボットの頭になるAIを動かすコンピューターを、計算の力がおよそ10倍のものに載せ替える、とも言ってる。予定では、来年の4月ごろ。よその会社に届ける前にそろえるものの一つだから、そのころ載せ替えたと発表されるかを見る。",
+          "text": "これも会社自身の説明で、会社の外の人の確かめじゃない。でも、ロボットが自分で家事をしているのか、裏で人が動かしているのか。どちらの会社も、そこをはっきり書いてる。動画を見るときは、ここを確かめればいい。",
           "expression": "thinking",
-          "t0": 70.76,
-          "dur": 16.68,
+          "t0": 31.56,
+          "dur": 12.96,
           "cards": [
             {
-              "text": "四つ目。説明会では、ロボットの頭になる",
-              "start": 0.2,
-              "end": 2.74
+              "text": "これも会社自身の説明で、会社の外の人の",
+              "start": 0.0,
+              "end": 2.52
             },
             {
-              "text": "AIを動かすコンピューターを、",
-              "start": 2.89,
-              "end": 4.9
+              "text": "確かめじゃない。でも、ロボットが自分で",
+              "start": 2.67,
+              "end": 5.0
             },
             {
-              "text": "計算の力がおよそ10倍のものに載せ替える、",
-              "start": 5.05,
-              "end": 7.86
+              "text": "家事をしているのか、",
+              "start": 5.15,
+              "end": 6.37
             },
             {
-              "text": "とも言ってる。予定では、来年の4月ごろ。",
-              "start": 8.01,
-              "end": 10.69
+              "text": "裏で人が動かしているのか。",
+              "start": 6.37,
+              "end": 7.96
             },
             {
-              "text": "よその会社に届ける前に",
-              "start": 10.84,
-              "end": 12.31
+              "text": "どちらの会社も、そこをはっきり書いてる。",
+              "start": 8.11,
+              "end": 10.56
             },
             {
-              "text": "そろえるものの一つだから、",
-              "start": 12.31,
-              "end": 14.05
-            },
-            {
-              "text": "そのころ載せ替えたと発表されるかを見る。",
-              "start": 14.2,
-              "end": 16.88
+              "text": "動画を見るときは、ここを確かめればいい。",
+              "start": 10.71,
+              "end": 13.16
             }
           ]
         },
         {
           "speaker": "skeptic",
-          "text": "この四つは、私たちでも見られる。発言を信じるか信じないかじゃなく、目印で確かめられる。",
-          "expression": "convinced",
-          "t0": 87.66,
-          "dur": 6.28,
+          "text": "本物なら、私は夜の食卓の片づけを任せたい。仕事から帰って、皿が食洗機に入っていたら、それだけで助かる。",
+          "expression": "amused",
+          "tag": "skeptic_wish",
+          "t0": 44.74,
+          "dur": 8.28,
           "cards": [
             {
-              "text": "この四つは、私たちでも見られる。",
+              "text": "本物なら、私は夜の食卓の片づけを任せたい。",
               "start": 0.0,
-              "end": 2.23
+              "end": 3.44
             },
             {
-              "text": "発言を信じるか信じないかじゃなく、",
-              "start": 2.38,
-              "end": 4.74
+              "text": "仕事から帰って、皿が食洗機に入っていたら、",
+              "start": 3.83,
+              "end": 6.98
             },
             {
-              "text": "目印で確かめられる。",
-              "start": 4.89,
-              "end": 6.39
+              "text": "それだけで助かる。",
+              "start": 7.13,
+              "end": 8.48
             }
           ]
         },
         {
           "speaker": "dreamer",
-          "text": "よその会社に届けるのは、来年の終わりごろの見込み。届ける時期を、トップ自身が口にした。確かめる目印も、はっきりしてる。",
+          "text": "皿を下げる、食洗機に入れる、洗濯物をたたむ。人型も、そうでないものも含めて、決まった片づけから家に入る道を、時期をつけて出している会社が、もう複数ある。",
           "expression": "convinced",
           "tag": "hope",
-          "t0": 94.22,
-          "dur": 8.48,
+          "t0": 53.3,
+          "dur": 13.44,
           "cards": [
             {
-              "text": "よその会社に届けるのは、",
+              "text": "皿を下げる、食洗機に入れる、",
               "start": 0.0,
-              "end": 1.67
+              "end": 2.3
             },
             {
-              "text": "来年の終わりごろの見込み。",
-              "start": 1.67,
-              "end": 3.47
+              "text": "洗濯物をたたむ。人型も、",
+              "start": 2.45,
+              "end": 4.73
             },
             {
-              "text": "届ける時期を、トップ自身が口にした。",
-              "start": 3.62,
-              "end": 6.12
+              "text": "そうでないものも含めて、",
+              "start": 4.73,
+              "end": 7.01
             },
             {
-              "text": "確かめる目印も、はっきりしてる。",
-              "start": 6.27,
-              "end": 8.68
+              "text": "決まった片づけから家に入る道を、",
+              "start": 7.16,
+              "end": 10.04
+            },
+            {
+              "text": "時期をつけて出している会社が、",
+              "start": 10.19,
+              "end": 12.44
+            },
+            {
+              "text": "もう複数ある。",
+              "start": 12.59,
+              "end": 13.64
             }
           ]
         }
       ],
       "scene_id": 12,
-      "narrator": "dialogue",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
       "image_asset": "cards/kl051_S12",
-      "narration": "沙織「説明会の書き起こし。課題が来年の終わりごろに片づく見込みで、そのころが、テスラ以外の会社に届ける時期、と言ってる。マスクさんの見込みね。」\n沙織「ただ、これは発言で、決算資料には書いてない。値段も、資料にも説明会にも出てこない。日本で売るかどうかも、話に出てない。」\n大輔「値段が出ないと、うちで使えるかは決められないね。」\n沙織「もう一つ。マスクさんは、説明会の日から1か月か2か月で、新しい動画を出すと言ってる。あらかじめ決めた動きをなぞるだけの見せ物じゃなく、決めていない動きをしているところ。見たものを信じられる動画にしたい、って。」\n大輔「ほかの会社の人型ロボットの動画には、決めた動きをなぞっているだけのものがある、とまで言ってたね。自分で、ハードルを上げてる。」\n大輔「だったら、確かめる目印を決めよう。目印は四つ。僕から三つ言うね。一つ目は、その動画。物の置き場所や向きが毎回違っても、こなせているか。決めた動きをなぞるだけかどうかは、そこに出る、と僕らは見てる。二つ目は、次の決算資料で、台数の横線に数字が入るか。三つ目は、よその会社で使った声と値段が出るか。」\n沙織「四つ目。説明会では、ロボットの頭になるAIを動かすコンピューターを、計算の力がおよそ10倍のものに載せ替える、とも言ってる。予定では、来年の4月ごろ。よその会社に届ける前にそろえるものの一つだから、そのころ載せ替えたと発表されるかを見る。」\n沙織「この四つは、私たちでも見られる。発言を信じるか信じないかじゃなく、目印で確かめられる。」\n大輔「よその会社に届けるのは、来年の終わりごろの見込み。届ける時期を、トップ自身が口にした。確かめる目印も、はっきりしてる。」\n［画面の資料カード］テスラ 決算説明会の書き起こし（2026年10月21日） 「that's the time to expect when we're delivering Optimus to companies outside of Tesla」（原文） ・訳: そのころが、テスラ以外の会社に届ける時期 ・体の作り・長持ち・AIは、来年の終わりごろ解決の見込み ・1〜2か月で、決めた動きでない動画を出す予定 ・値段・日本での販売は、話に出ていない",
-      "lines_hash": "704f0b690315"
+      "narration": "大輔「だったら、人が遠くから操作しない道もある。こっちは人型じゃなく、車輪で動く家事ロボットだけど、サンデーという名前の、別のアメリカのロボット会社。食卓の皿やグラスを片づけて、食洗機に入れる。靴下もたたむ。」\n沙織「覚え方は？」\n大輔「家事をする人に、記録用の手袋を付けてもらって、その手の動きから覚える。だから、家で人が遠くから操作して覚えさせる必要はない、と書いてる。試しに使ってもらうのは、2026年から。」\n沙織「これも会社自身の説明で、会社の外の人の確かめじゃない。でも、ロボットが自分で家事をしているのか、裏で人が動かしているのか。どちらの会社も、そこをはっきり書いてる。動画を見るときは、ここを確かめればいい。」\n沙織「本物なら、私は夜の食卓の片づけを任せたい。仕事から帰って、皿が食洗機に入っていたら、それだけで助かる。」\n大輔「皿を下げる、食洗機に入れる、洗濯物をたたむ。人型も、そうでないものも含めて、決まった片づけから家に入る道を、時期をつけて出している会社が、もう複数ある。」\n［画面の資料カード］Sunday 公式サイト「Memo」（2026年11月2日に確認） 「does not need to learn through human tele-operation in your home」（原文） ・訳: 家で、人が遠くから操作して覚えさせる必要はない ・できる家事: 食卓の片づけ、食洗機、靴下たたみ ・覚え方: 手袋型の記録装置を付けた人の動きから ・車輪で動く家事ロボット。2026年に試験提供",
+      "narrator": "dialogue",
+      "lines_hash": "7fb426613b45"
     },
     {
       "type": "verdict",
       "bgm_role": "outro",
       "image_asset": "base_cafe",
-      "verdict_from_line": 8,
+      "verdict_from_line": 9,
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "僕の予想は「よその会社の現場で、本当に仕事を任せられるまで、今から3年はかかる」。見立ては変わらない。ただ、壁の場所がはっきりした。体の大部分は固まっていて、残るのは手の長持ち。",
+          "text": "僕の予想は「テスラに限らず、3年ほどでアメリカの家に入り始める」。見立ては変わらない。値段つきの予約が、もう出ていると分かった。",
           "expression": "thinking",
           "tag": "vs_prediction",
           "t0": 0.0,
-          "dur": 14.08,
+          "dur": 8.88,
           "cards": [
             {
-              "text": "僕の予想は「よその会社の現場で、",
+              "text": "僕の予想は「テスラに限らず、",
               "start": 0.0,
-              "end": 2.48
+              "end": 2.05
             },
             {
-              "text": "本当に仕事を任せられるまで、",
-              "start": 2.63,
-              "end": 4.73
+              "text": "3年ほどでアメリカの家に入り始める」。",
+              "start": 2.2,
+              "end": 4.7
             },
             {
-              "text": "今から3年はかかる」。見立ては変わらない。",
-              "start": 4.88,
-              "end": 8.03
+              "text": "見立ては変わらない。値段つきの予約が、",
+              "start": 4.85,
+              "end": 7.35
             },
             {
-              "text": "ただ、壁の場所がはっきりした。",
-              "start": 8.18,
-              "end": 10.43
-            },
-            {
-              "text": "体の大部分は固まっていて、",
-              "start": 10.58,
-              "end": 12.67
-            },
-            {
-              "text": "残るのは手の長持ち。",
-              "start": 12.67,
-              "end": 14.28
+              "text": "もう出ていると分かった。",
+              "start": 7.5,
+              "end": 9.08
             }
           ]
         },
         {
           "speaker": "skeptic",
-          "text": "私の予想は「何台、いくら、どこで、が出るまで、来る時期は決められない」。そこは同じ。でも、試作品を並べただけ、という私の見方は外れた。",
+          "text": "私の予想は「会社の外の人が、家で確かめるまで、いつとは決められない」。そこは同じ。でも、家で働く人型ロボットの予約まで進んでいる、とは思っていなかった。そこは外れた。",
           "expression": "thinking",
           "tag": "vs_prediction",
-          "t0": 14.36,
-          "dur": 10.04,
+          "t0": 9.16,
+          "dur": 11.96,
           "cards": [
             {
-              "text": "私の予想は「何台、いくら、どこで、",
+              "text": "私の予想は「会社の外の人が、",
               "start": 0.0,
-              "end": 2.63
+              "end": 2.12
             },
             {
-              "text": "が出るまで、来る時期は決められない」。",
-              "start": 2.78,
-              "end": 5.5
+              "text": "家で確かめるまで、いつとは決められない」。",
+              "start": 2.27,
+              "end": 5.14
             },
             {
-              "text": "そこは同じ。でも、試作品を並べただけ、",
-              "start": 5.65,
-              "end": 8.37
+              "text": "そこは同じ。でも、家で働く人型ロボットの",
+              "start": 5.29,
+              "end": 8.03
             },
             {
-              "text": "という私の見方は外れた。",
-              "start": 8.52,
-              "end": 10.24
+              "text": "予約まで進んでいる、とは思っていなかった。",
+              "start": 8.18,
+              "end": 11.05
+            },
+            {
+              "text": "そこは外れた。",
+              "start": 11.2,
+              "end": 12.16
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "テスラの見込みへの見立ても言っておく。1月の、来年の終わりまでに一般の人に売る、は条件つきで、10月には家庭を量産の後に置いた。言葉どおりの時期かは、今の資料では確かめられない。でも、家に来る順番を、テスラ自身が示したのは確か。",
+          "expression": "thinking",
+          "t0": 21.34,
+          "dur": 15.6,
+          "cards": [
+            {
+              "text": "テスラの見込みへの見立ても言っておく。",
+              "start": 0.0,
+              "end": 2.5
+            },
+            {
+              "text": "1月の、来年の終わりまでに一般の人に売る、",
+              "start": 2.65,
+              "end": 5.61
+            },
+            {
+              "text": "は条件つきで、",
+              "start": 5.76,
+              "end": 6.68
+            },
+            {
+              "text": "10月には家庭を量産の後に置いた。",
+              "start": 6.68,
+              "end": 8.92
+            },
+            {
+              "text": "言葉どおりの時期かは、",
+              "start": 9.07,
+              "end": 10.52
+            },
+            {
+              "text": "今の資料では確かめられない。",
+              "start": 10.52,
+              "end": 12.36
+            },
+            {
+              "text": "でも、家に来る順番を、",
+              "start": 12.51,
+              "end": 13.96
+            },
+            {
+              "text": "テスラ自身が示したのは確か。",
+              "start": 13.96,
+              "end": 15.8
             }
           ]
         },
@@ -2401,288 +2199,352 @@
           "speaker": "dreamer",
           "text": "判定の札は4つ。近くて確かな方から、「もうすぐ来る」「3年はかかる」「根拠待ち」「まだ眉唾」。",
           "expression": "neutral",
-          "t0": 24.68,
-          "dur": 8.08,
+          "t0": 37.22,
+          "dur": 7.68,
           "cards": [
             {
               "text": "判定の札は4つ。近くて確かな方から、",
               "start": 0.0,
-              "end": 3.12
+              "end": 2.92
             },
             {
               "text": "「もうすぐ来る」「3年はかかる」",
-              "start": 3.44,
-              "end": 5.84
+              "start": 3.07,
+              "end": 5.47
             },
             {
               "text": "「根拠待ち」「まだ眉唾」。",
-              "start": 5.99,
-              "end": 8.28
+              "start": 5.62,
+              "end": 7.88
             }
           ]
         },
         {
-          "speaker": "dreamer",
-          "text": "生産開始は、資料のとおり。でも札は、発表じゃなく、この問いに付ける。よその会社の工場や倉庫で、危険な仕事や繰り返しの仕事を、オプティマスに任せられるのはいつか。",
+          "speaker": "skeptic",
+          "text": "札を付けるのは、この問い。人型ロボットが家に来て、決まった片づけを任せ始められるのはいつか。親の見守りは、今日の資料では時期が出てこなかったから、札は片づけで付ける。",
           "expression": "neutral",
-          "t0": 32.98,
-          "dur": 12.88,
+          "t0": 45.18,
+          "dur": 11.96,
           "cards": [
             {
-              "text": "生産開始は、資料のとおり。でも札は、",
-              "start": 0.0,
-              "end": 3.18
+              "text": "札を付けるのは、この問い。",
+              "start": 0.2,
+              "end": 2.0
             },
             {
-              "text": "発表じゃなく、この問いに付ける。",
-              "start": 3.33,
-              "end": 5.73
+              "text": "人型ロボットが家に来て、",
+              "start": 2.0,
+              "end": 3.67
             },
             {
-              "text": "よその会社の工場や倉庫で、危険な仕事や",
-              "start": 5.88,
-              "end": 8.73
+              "text": "決まった片づけを任せ始められるのはいつか。",
+              "start": 3.82,
+              "end": 6.73
             },
             {
-              "text": "繰り返しの仕事を、オプティマスに任せられる",
-              "start": 8.88,
-              "end": 12.03
+              "text": "親の見守りは、今日の資料では時期が",
+              "start": 6.88,
+              "end": 9.24
             },
             {
-              "text": "のはいつか。",
-              "start": 12.18,
-              "end": 13.08
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "発表が本当かどうか、じゃなくて、任せられるのはいつか、ね。",
-          "expression": "thinking",
-          "t0": 46.14,
-          "dur": 4.52,
-          "cards": [
-            {
-              "text": "発表が本当かどうか、じゃなくて、",
-              "start": 0.0,
-              "end": 2.62
-            },
-            {
-              "text": "任せられるのはいつか、ね。",
-              "start": 2.77,
-              "end": 4.72
+              "text": "出てこなかったから、札は片づけで付ける。",
+              "start": 9.39,
+              "end": 12.16
             }
           ]
         },
         {
           "speaker": "dreamer",
-          "text": "僕は「3年はかかる」。届き始めるのは、来年の終わりごろの見込みで、今から1年ちょっと先。でも、届いてすぐ任せられるわけじゃない。手が一晩中の繰り返しに耐えるかは機械の壁で、現場で確かめて慣らす時間も要る。だから、この3年は、今日から数えて、任せ始めるまでの話。",
+          "text": "僕は「3年はかかる」。予想どおりだ。ワンエックスの予定は、アメリカで今年から。でも、一般の家に届いた確認は、まだ見つかっていない。それに、ふつうの家で決まった片づけを任せて安心できるまでには、手の器用さと、人のそばで動く安全という、機械の壁がある。だから、すぐじゃない。この3年は、今日から数えて、アメリカの家で決まった片づけを任せ始めるまで、3年ほどはみておく、という意味。",
           "expression": "excited",
-          "t0": 50.94,
-          "dur": 21.84,
+          "t0": 57.42,
+          "dur": 29.08,
           "cards": [
             {
-              "text": "僕は「3年はかかる」。届き始めるのは、",
+              "text": "僕は「3年はかかる」。予想どおりだ。",
               "start": 0.0,
-              "end": 3.36
+              "end": 2.84
             },
             {
-              "text": "来年の終わりごろの見込みで、",
-              "start": 3.51,
-              "end": 5.61
+              "text": "ワンエックスの予定は、アメリカで今年から。",
+              "start": 2.99,
+              "end": 6.07
             },
             {
-              "text": "今から1年ちょっと先。でも、",
-              "start": 5.76,
-              "end": 8.8
+              "text": "でも、一般の家に届いた確認は、",
+              "start": 6.22,
+              "end": 8.42
             },
             {
-              "text": "届いてすぐ任せられるわけじゃない。",
-              "start": 8.95,
-              "end": 11.5
+              "text": "まだ見つかっていない。それに、",
+              "start": 8.57,
+              "end": 10.77
             },
             {
-              "text": "手が一晩中の繰り返しに",
-              "start": 11.65,
-              "end": 13.3
+              "text": "ふつうの家で決まった片づけを任せて安心",
+              "start": 10.92,
+              "end": 13.71
             },
             {
-              "text": "耐えるかは機械の壁で、",
-              "start": 13.3,
-              "end": 14.95
+              "text": "できるまでには、手の器用さと、",
+              "start": 13.86,
+              "end": 16.06
             },
             {
-              "text": "現場で確かめて慣らす時間も要る。だから、",
-              "start": 15.1,
-              "end": 18.14
+              "text": "人のそばで動く安全という、機械の壁がある。",
+              "start": 16.21,
+              "end": 19.29
             },
             {
-              "text": "この3年は、今日から数えて、",
-              "start": 18.29,
-              "end": 20.39
+              "text": "だから、すぐじゃない。この3年は、",
+              "start": 19.44,
+              "end": 21.93
             },
             {
-              "text": "任せ始めるまでの話。",
-              "start": 20.54,
-              "end": 22.04
+              "text": "今日から数えて、アメリカの家で決まった",
+              "start": 22.08,
+              "end": 24.87
+            },
+            {
+              "text": "片づけを任せ始めるまで、",
+              "start": 25.02,
+              "end": 26.78
+            },
+            {
+              "text": "3年ほどはみておく、",
+              "start": 26.78,
+              "end": 28.25
+            },
+            {
+              "text": "という意味。",
+              "start": 28.4,
+              "end": 29.28
             }
           ]
         },
         {
           "speaker": "skeptic",
-          "text": "私は「根拠待ち」。否定する資料は無い。でも、台数も、値段も、よその会社で使った例も、まだ無い。次の決算資料で台数の欄に数字が入って、よその会社で使った声と値段が出たら、もっと近い方の札に変える。",
+          "text": "私は「根拠待ち」。否定する資料は無い。でも、一般の家に届いたロボットが、自分の力で家事をこなした、と会社の外の人が確かめた報告が、まだ無い。記者のような人が家で試して、人が遠くから操作していないと分かったら、もっと近い方の札に変える。",
           "expression": "convinced",
-          "t0": 73.06,
-          "dur": 13.96,
+          "t0": 86.78,
+          "dur": 16.52,
           "cards": [
             {
               "text": "私は「根拠待ち」。否定する資料は無い。",
               "start": 0.0,
-              "end": 2.62
+              "end": 2.73
             },
             {
-              "text": "でも、台数も、値段も、",
-              "start": 2.92,
-              "end": 4.44
+              "text": "でも、一般の家に届いたロボットが、",
+              "start": 2.88,
+              "end": 5.15
             },
             {
-              "text": "よその会社で使った例も、",
-              "start": 4.44,
-              "end": 6.09
+              "text": "自分の力で家事をこなした、と会社の外の",
+              "start": 5.3,
+              "end": 7.84
             },
             {
-              "text": "まだ無い。",
-              "start": 6.24,
-              "end": 6.94
+              "text": "人が確かめた報告が、まだ無い。",
+              "start": 7.99,
+              "end": 9.99
             },
             {
-              "text": "次の決算資料で台数の欄に数字が入って、",
-              "start": 6.94,
-              "end": 9.59
+              "text": "記者のような人が家で試して、",
+              "start": 10.14,
+              "end": 12.01
             },
             {
-              "text": "よその会社で使った声と値段が出たら、",
-              "start": 9.74,
-              "end": 12.22
+              "text": "人が遠くから操作していないと分かったら、",
+              "start": 12.16,
+              "end": 14.83
             },
             {
               "text": "もっと近い方の札に変える。",
-              "start": 12.37,
-              "end": 14.16
+              "start": 14.98,
+              "end": 16.72
             }
           ]
         },
         {
           "speaker": "dreamer",
-          "text": "今日の持ち帰り。オプティマスは、量産のラインで作り始めたところ。よその会社の工場や倉庫に届くのは、早くて来年の終わりごろの見込み。最初の出番は、危険な仕事や、形の決まった物を運ぶ繰り返しの仕事。",
-          "expression": "convinced",
-          "tag": "takeaway",
-          "t0": 87.3,
-          "dur": 15.32,
+          "text": "じゃあ、日本の家はいつか。これは、時期をどの会社も言っていない。言えるのは、アメリカで予約が始まっていること。日本で親が一人で暮らす家に来てほしい、という僕の期待は、日本の名前が出たら、また確かめたい。",
+          "expression": "thinking",
+          "t0": 103.58,
+          "dur": 15.04,
           "cards": [
             {
-              "text": "今日の持ち帰り。オプティマスは、",
+              "text": "じゃあ、日本の家はいつか。これは、",
               "start": 0.0,
-              "end": 2.4
+              "end": 2.6
             },
             {
-              "text": "量産のラインで作り始めたところ。",
-              "start": 2.55,
-              "end": 4.95
+              "text": "時期をどの会社も言っていない。言えるのは、",
+              "start": 2.75,
+              "end": 5.72
             },
             {
-              "text": "よその会社の工場や倉庫に届くのは、",
-              "start": 5.1,
-              "end": 7.87
+              "text": "アメリカで予約が始まっていること。",
+              "start": 5.87,
+              "end": 8.28
             },
             {
-              "text": "早くて来年の終わりごろの見込み。",
-              "start": 8.02,
-              "end": 10.42
+              "text": "日本で親が一人で暮らす家に来てほしい、",
+              "start": 8.43,
+              "end": 11.12
             },
             {
-              "text": "最初の出番は、危険な仕事や、",
-              "start": 10.57,
-              "end": 12.67
+              "text": "という僕の期待は、日本の名前が出たら、",
+              "start": 11.27,
+              "end": 13.96
             },
             {
-              "text": "形の決まった物を運ぶ繰り返しの仕事。",
-              "start": 12.82,
-              "end": 15.52
+              "text": "また確かめたい。",
+              "start": 14.11,
+              "end": 15.24
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今日の持ち帰り。テスラは量産を始めたところで、家庭はその先。家事をするロボットは、アメリカで予約や試しの提供が始まっていて、皿を下げる、たたむ、といった決まった片づけから入ってくる。",
+          "expression": "convinced",
+          "tag": "takeaway",
+          "t0": 118.84,
+          "dur": 13.32,
+          "cards": [
+            {
+              "text": "今日の持ち帰り。",
+              "start": 0.0,
+              "end": 1.18
+            },
+            {
+              "text": "テスラは量産を始めたところで、",
+              "start": 1.18,
+              "end": 3.4
+            },
+            {
+              "text": "家庭はその先。家事をするロボットは、",
+              "start": 3.55,
+              "end": 6.07
+            },
+            {
+              "text": "アメリカで予約や試しの提供が始まっていて、",
+              "start": 6.22,
+              "end": 9.16
+            },
+            {
+              "text": "皿を下げる、たたむ、といった決まった",
+              "start": 9.31,
+              "end": 11.83
+            },
+            {
+              "text": "片づけから入ってくる。",
+              "start": 11.98,
+              "end": 13.52
             }
           ]
         },
         {
           "speaker": "skeptic",
-          "text": "今日からできること。自分の職場で、危険、同じ動きの繰り返し、夜も回したい、の3つが重なる作業を、一つ書き出す。扱うのが壊れ物か、形の決まった箱か、も書き添えておく。",
-          "expression": "amused",
+          "text": "今日からできることを一つ。家事をするロボットの動画を見たら、ロボットが自分で動いているのか、人が遠くから操作しているのかを、その会社自身の説明で確かめる。",
+          "expression": "neutral",
           "tag": "next_step",
-          "t0": 102.9,
-          "dur": 14.0,
+          "t0": 132.44,
+          "dur": 10.6,
           "cards": [
             {
-              "text": "今日からできること。自分の職場で、危険、",
+              "text": "今日からできることを一つ。家事をする",
               "start": 0.0,
-              "end": 3.8
+              "end": 2.57
             },
             {
-              "text": "同じ動きの繰り返し、夜も回したい、",
-              "start": 4.08,
-              "end": 6.78
+              "text": "ロボットの動画を見たら、ロボットが自分で",
+              "start": 2.72,
+              "end": 5.36
             },
             {
-              "text": "の3つが重なる作業を、一つ書き出す。",
-              "start": 6.93,
-              "end": 9.77
+              "text": "動いているのか、",
+              "start": 5.51,
+              "end": 6.56
             },
             {
-              "text": "扱うのが壊れ物か、形の決まった箱か、",
-              "start": 9.92,
-              "end": 12.7
+              "text": "人が遠くから操作しているのかを、",
+              "start": 6.56,
+              "end": 8.67
             },
             {
-              "text": "も書き添えておく。",
-              "start": 12.85,
-              "end": 14.2
+              "text": "その会社自身の説明で確かめる。",
+              "start": 8.82,
+              "end": 10.8
             }
           ]
         },
         {
           "speaker": "dreamer",
-          "text": "そして、テスラが近く出すと言っている動画を見る。もう出ていれば、テスラ、オプティマス、動画、で検索すれば見つかる。物の置き場所や向きが毎回違っても、こなせているか。そこを見ればいい。",
+          "text": "ワンエックスみたいに、注文のページにはっきり書いている会社もある。店や会社で、ロボットの売り込みを受けたときも、同じことを聞けばいい。",
           "expression": "excited",
-          "t0": 117.18,
-          "dur": 13.52,
+          "t0": 143.32,
+          "dur": 9.4,
           "cards": [
             {
-              "text": "そして、",
-              "start": 0.2,
-              "end": 0.77
+              "text": "ワンエックスみたいに、注文のページに",
+              "start": 0.03,
+              "end": 2.52
             },
             {
-              "text": "テスラが近く出すと言っている動画を見る。",
-              "start": 0.77,
-              "end": 3.61
+              "text": "はっきり書いている会社もある。店や会社で、",
+              "start": 2.67,
+              "end": 5.56
             },
             {
-              "text": "もう出ていれば、テスラ、オプティマス、",
-              "start": 3.76,
-              "end": 6.46
+              "text": "ロボットの売り込みを受けたときも、",
+              "start": 5.71,
+              "end": 7.98
             },
             {
-              "text": "動画、で検索すれば見つかる。",
-              "start": 6.61,
-              "end": 8.6
+              "text": "同じことを聞けばいい。",
+              "start": 8.13,
+              "end": 9.6
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "テスラについては、説明会でマスクさんが、あらかじめ決めた動きの再生じゃない、ロボットが自分で動く様子の動画を、1か月か2か月で見せる、と言っていた。それと、ワンエックスが年内に一般の家に届けられるか。この二つを見ておこう。",
+          "expression": "excited",
+          "t0": 152.94,
+          "dur": 16.68,
+          "cards": [
+            {
+              "text": "テスラについては、説明会でマスクさんが、",
+              "start": 0.0,
+              "end": 2.87
             },
             {
-              "text": "物の置き場所や向きが毎回違っても、",
-              "start": 8.75,
-              "end": 11.16
+              "text": "あらかじめ決めた動きの再生じゃない、",
+              "start": 3.02,
+              "end": 5.6
             },
             {
-              "text": "こなせているか。そこを見ればいい。",
-              "start": 11.31,
-              "end": 13.72
+              "text": "ロボットが自分で動く様子の動画を、",
+              "start": 5.75,
+              "end": 8.35
+            },
+            {
+              "text": "1か月か2か月で見せる、と言っていた。",
+              "start": 8.5,
+              "end": 11.23
+            },
+            {
+              "text": "それと、ワンエックスが年内に一般の家に",
+              "start": 11.38,
+              "end": 14.15
+            },
+            {
+              "text": "届けられるか。この二つを見ておこう。",
+              "start": 14.3,
+              "end": 16.88
             }
           ]
         },
@@ -2690,106 +2552,96 @@
           "speaker": "dreamer",
           "text": "これは、2026年11月2日時点の、二人の見立て。",
           "expression": "neutral",
-          "t0": 130.92,
-          "dur": 5.08,
+          "t0": 169.84,
+          "dur": 4.92,
           "cards": [
             {
               "text": "これは、2026年11月2日時点の、",
               "start": 0.0,
-              "end": 3.62
+              "end": 3.52
             },
             {
               "text": "二人の見立て。",
-              "start": 3.77,
-              "end": 4.85
+              "start": 3.67,
+              "end": 4.72
             }
           ]
         }
       ],
-      "ken_burns": "zoom_out",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      },
       "scene_id": 13,
+      "narration": "大輔「僕の予想は「テスラに限らず、3年ほどでアメリカの家に入り始める」。見立ては変わらない。値段つきの予約が、もう出ていると分かった。」\n沙織「私の予想は「会社の外の人が、家で確かめるまで、いつとは決められない」。そこは同じ。でも、家で働く人型ロボットの予約まで進んでいる、とは思っていなかった。そこは外れた。」\n沙織「テスラの見込みへの見立ても言っておく。1月の、来年の終わりまでに一般の人に売る、は条件つきで、10月には家庭を量産の後に置いた。言葉どおりの時期かは、今の資料では確かめられない。でも、家に来る順番を、テスラ自身が示したのは確か。」\n大輔「判定の札は4つ。近くて確かな方から、「もうすぐ来る」「3年はかかる」「根拠待ち」「まだ眉唾」。」\n沙織「札を付けるのは、この問い。人型ロボットが家に来て、決まった片づけを任せ始められるのはいつか。親の見守りは、今日の資料では時期が出てこなかったから、札は片づけで付ける。」\n大輔「僕は「3年はかかる」。予想どおりだ。ワンエックスの予定は、アメリカで今年から。でも、一般の家に届いた確認は、まだ見つかっていない。それに、ふつうの家で決まった片づけを任せて安心できるまでには、手の器用さと、人のそばで動く安全という、機械の壁がある。だから、すぐじゃない。この3年は、今日から数えて、アメリカの家で決まった片づけを任せ始めるまで、3年ほどはみておく、という意味。」\n沙織「私は「根拠待ち」。否定する資料は無い。でも、一般の家に届いたロボットが、自分の力で家事をこなした、と会社の外の人が確かめた報告が、まだ無い。記者のような人が家で試して、人が遠くから操作していないと分かったら、もっと近い方の札に変える。」\n大輔「じゃあ、日本の家はいつか。これは、時期をどの会社も言っていない。言えるのは、アメリカで予約が始まっていること。日本で親が一人で暮らす家に来てほしい、という僕の期待は、日本の名前が出たら、また確かめたい。」\n大輔「今日の持ち帰り。テスラは量産を始めたところで、家庭はその先。家事をするロボットは、アメリカで予約や試しの提供が始まっていて、皿を下げる、たたむ、といった決まった片づけから入ってくる。」\n沙織「今日からできることを一つ。家事をするロボットの動画を見たら、ロボットが自分で動いているのか、人が遠くから操作しているのかを、その会社自身の説明で確かめる。」\n大輔「ワンエックスみたいに、注文のページにはっきり書いている会社もある。店や会社で、ロボットの売り込みを受けたときも、同じことを聞けばいい。」\n大輔「テスラについては、説明会でマスクさんが、あらかじめ決めた動きの再生じゃない、ロボットが自分で動く様子の動画を、1か月か2か月で見せる、と言っていた。それと、ワンエックスが年内に一般の家に届けられるか。この二つを見ておこう。」\n大輔「これは、2026年11月2日時点の、二人の見立て。」",
       "narrator": "dialogue",
-      "narration": "大輔「僕の予想は「よその会社の現場で、本当に仕事を任せられるまで、今から3年はかかる」。見立ては変わらない。ただ、壁の場所がはっきりした。体の大部分は固まっていて、残るのは手の長持ち。」\n沙織「私の予想は「何台、いくら、どこで、が出るまで、来る時期は決められない」。そこは同じ。でも、試作品を並べただけ、という私の見方は外れた。」\n大輔「判定の札は4つ。近くて確かな方から、「もうすぐ来る」「3年はかかる」「根拠待ち」「まだ眉唾」。」\n大輔「生産開始は、資料のとおり。でも札は、発表じゃなく、この問いに付ける。よその会社の工場や倉庫で、危険な仕事や繰り返しの仕事を、オプティマスに任せられるのはいつか。」\n沙織「発表が本当かどうか、じゃなくて、任せられるのはいつか、ね。」\n大輔「僕は「3年はかかる」。届き始めるのは、来年の終わりごろの見込みで、今から1年ちょっと先。でも、届いてすぐ任せられるわけじゃない。手が一晩中の繰り返しに耐えるかは機械の壁で、現場で確かめて慣らす時間も要る。だから、この3年は、今日から数えて、任せ始めるまでの話。」\n沙織「私は「根拠待ち」。否定する資料は無い。でも、台数も、値段も、よその会社で使った例も、まだ無い。次の決算資料で台数の欄に数字が入って、よその会社で使った声と値段が出たら、もっと近い方の札に変える。」\n大輔「今日の持ち帰り。オプティマスは、量産のラインで作り始めたところ。よその会社の工場や倉庫に届くのは、早くて来年の終わりごろの見込み。最初の出番は、危険な仕事や、形の決まった物を運ぶ繰り返しの仕事。」\n沙織「今日からできること。自分の職場で、危険、同じ動きの繰り返し、夜も回したい、の3つが重なる作業を、一つ書き出す。扱うのが壊れ物か、形の決まった箱か、も書き添えておく。」\n大輔「そして、テスラが近く出すと言っている動画を見る。もう出ていれば、テスラ、オプティマス、動画、で検索すれば見つかる。物の置き場所や向きが毎回違っても、こなせているか。そこを見ればいい。」\n大輔「これは、2026年11月2日時点の、二人の見立て。」",
-      "lines_hash": "f279720a260d"
+      "lines_hash": "c893fe372809"
     },
     {
       "type": "closing",
       "bgm_role": "outro",
       "image_asset": "base_cafe_b",
+      "ken_burns": "zoom_out",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
       "lines": [
         {
           "speaker": "skeptic",
-          "text": "「生産開始」の一言の中に、資料に書いてあることと、説明会での発言と、まだ出ていないことが混ざってた。今日は、それを分けたかった。",
+          "text": "「家庭でも買える」の一言の先に、家に来る順番と、条件と、もう動き出している会社が見えた。",
           "expression": "amused",
           "t0": 0.0,
-          "dur": 10.44,
+          "dur": 7.32,
           "cards": [
             {
-              "text": "「生産開始」の一言の中に、",
+              "text": "「家庭でも買える」の一言の先に、",
               "start": 0.0,
-              "end": 2.2
+              "end": 2.88
             },
             {
-              "text": "資料に書いてあることと、",
-              "start": 2.2,
-              "end": 4.24
+              "text": "家に来る順番と、条件と、もう動き出している",
+              "start": 3.04,
+              "end": 6.28
             },
             {
-              "text": "説明会での発言と、",
-              "start": 4.42,
-              "end": 5.77
-            },
-            {
-              "text": "まだ出ていないことが混ざってた。",
-              "start": 5.77,
-              "end": 8.17
-            },
-            {
-              "text": "今日は、それを分けたかった。",
-              "start": 8.32,
-              "end": 10.42
+              "text": "会社が見えた。",
+              "start": 6.43,
+              "end": 7.48
             }
           ]
         },
         {
           "speaker": "dreamer",
-          "text": "動画と、次の決算資料が出たら、また答え合わせしよう。",
+          "text": "テスラの動画と、家に届いた人の声が出たら、また答え合わせしよう。",
           "expression": "excited",
-          "t0": 10.72,
-          "dur": 3.92,
+          "t0": 7.6,
+          "dur": 5.2,
           "cards": [
             {
-              "text": "動画と、次の決算資料が出たら、",
+              "text": "テスラの動画と、家に届いた人の声が出たら、",
               "start": 0.0,
-              "end": 2.38
+              "end": 3.2
             },
             {
               "text": "また答え合わせしよう。",
-              "start": 2.53,
-              "end": 4.12
+              "start": 3.35,
+              "end": 5.0
             }
           ]
         },
         {
           "speaker": "dreamer",
           "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
-          "expression": "excited",
-          "t0": 14.86,
+          "expression": "neutral",
+          "t0": 13.02,
           "dur": 4.8,
           "cards": [
             {
               "text": "次はどんな研究が、誰かの幸せな未来を",
               "start": 0.0,
-              "end": 3.52
+              "end": 3.46
             },
             {
               "text": "運んでくるのか。",
-              "start": 3.67,
-              "end": 4.87
+              "start": 3.61,
+              "end": 4.81
             }
           ]
         },
@@ -2797,41 +2649,36 @@
           "speaker": "skeptic",
           "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
           "expression": "amused",
-          "t0": 19.94,
-          "dur": 7.2,
+          "t0": 18.1,
+          "dur": 7.84,
           "cards": [
             {
               "text": "それが本物かどうか、",
               "start": 0.0,
-              "end": 1.17
+              "end": 1.36
             },
             {
               "text": "また一緒に確かめましょう。",
-              "start": 1.17,
-              "end": 2.69
+              "start": 1.36,
+              "end": 3.12
             },
             {
               "text": "元の発表は概要欄に載せています。",
-              "start": 2.84,
-              "end": 4.91
+              "start": 3.29,
+              "end": 5.33
             },
             {
               "text": "チャンネル登録して、待っていてください。",
-              "start": 5.06,
-              "end": 7.4
+              "start": 5.48,
+              "end": 8.04
             }
           ]
         }
       ],
-      "ken_burns": "zoom_out",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      },
       "scene_id": 14,
+      "narration": "沙織「「家庭でも買える」の一言の先に、家に来る順番と、条件と、もう動き出している会社が見えた。」\n大輔「テスラの動画と、家に届いた人の声が出たら、また答え合わせしよう。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」",
       "narrator": "dialogue",
-      "narration": "沙織「「生産開始」の一言の中に、資料に書いてあることと、説明会での発言と、まだ出ていないことが混ざってた。今日は、それを分けたかった。」\n大輔「動画と、次の決算資料が出たら、また答え合わせしよう。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」",
-      "lines_hash": "53993d1ec10b"
+      "lines_hash": "00ebac91fdff"
     }
   ],
   "shorts": [
@@ -2840,47 +2687,46 @@
       "scenes": [
         {
           "narrator": "skeptic",
-          "narration": "人型ロボ、どこまで来た？",
-          "expression": "doubt",
-          "scene_id": 6,
-          "badge_text": "イメージ図（実物と異なる場合があります）"
+          "narration": "人型ロボ、家に来るのはいつ？",
+          "expression": "thinking",
+          "scene_id": 10
         },
         {
           "narrator": "dreamer",
-          "narration": "テスラの人型ロボが、工場の流れ作業で作られ始めた！",
+          "narration": "量産が進めば、家でも買えるものになる、だって。",
           "expression": "excited",
           "scene_id": 6,
+          "shows_product": true,
           "badge_text": "イメージ図（実物と異なる場合があります）"
         },
         {
           "narrator": "skeptic",
-          "narration": "でも、何台作ったかは、資料に書いてない。",
+          "narration": "でも、10月の発表では、家に来る時期も値段も言ってない。",
           "expression": "doubt",
           "react": "surprised",
-          "scene_id": 9,
-          "badge_text": "イメージ図（実物と異なる場合があります）"
+          "scene_id": 7
         },
         {
           "narrator": "dreamer",
-          "narration": "テスラ以外の会社には、来年の終わりごろ届ける見込みだって。",
+          "narration": "もう値段をつけて、予約を取っている会社がある。",
           "expression": "excited",
-          "react": "thinking",
-          "scene_id": 11
+          "react": "surprised",
+          "scene_id": 10
         },
         {
           "narrator": "skeptic",
-          "narration": "うちの現場に来るのはいつ？ 判定は本編で。",
+          "narration": "家事を任せられるのはいつ？ 判定は本編で。",
           "expression": "thinking",
-          "scene_id": 11
+          "scene_id": 10
         }
       ]
     }
   ],
   "beginner_review": {
     "passed_at": "2026-11-02",
-    "rounds": 6,
-    "report": "/private/tmp/claude-503/-Users-claude-kagaku-life/a107a3b3-e434-488a-a970-950edd958388/scratchpad/kl051_beginner_review_r6.md",
-    "lines_digest": "225aa3933979"
+    "rounds": 3,
+    "report": "/private/tmp/claude-503/-Users-claude-kagaku-life/a107a3b3-e434-488a-a970-950edd958388/scratchpad/kl051_home_review_r3.md",
+    "lines_digest": "29997ff5d0d4"
   },
   "bgm_sources": {
     "intro": "BGM/kl038-BGM-intro.mp3",
