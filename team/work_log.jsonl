@@ -44,3 +44,6 @@
 {"ts": "2026-11-02T23:06:26+09:00", "kind": "call", "agent": "kl-art-director", "session": "a107a3b3-e434-488a-a970-950edd958388"}
 {"ts": "2026-11-02T23:23:11+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl051", "step": "再構成", "result": "retry", "retries": 0, "note": "家庭軸で全面作り直し。初見レビュー3周。予告と本編の食い違い、時期・呼び方の混在が各周で出た"}
 {"ts": "2026-11-02T23:23:11+09:00", "kind": "work", "agent": "kl-art-director", "episode": "kl051", "step": "6", "result": "ok", "retries": 0, "note": "家庭軸の画像・サムネ作り直し"}
+{"ts": "2026-11-03T06:19:31+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "a107a3b3-e434-488a-a970-950edd958388"}
+{"ts": "2026-11-03T06:22:03+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl051", "step": "STEP5.5 初見レビュー4周目", "result": "ok", "retries": 0, "note": "致命的0・直す2・できれば5。直す2件（S12_L04 どの動画か不明、S13_L12 締め間際の長い一文）を反映、review-pass 4周で記録"}
+{"ts": "2026-11-03T06:22:03+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl051", "step": "STEP11 残りの判断（委任）", "result": "ok", "retries": 0, "note": "サブコピー入れない／CARD_KINDS に書き起こし・製品ページ追加しカード3枚作り直し／CLAUDE.md追記は提案（writerノートに教訓）／再レビュー実施、S12_L04・S13_L12を直し音声・テロップ再生成／読み照合の疑い2行は誤検知として採用"}
