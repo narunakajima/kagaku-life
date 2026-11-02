@@ -22,6 +22,7 @@ import os
 import plistlib
 import shutil
 import socket
+import re
 import subprocess
 import sys
 import urllib.request
@@ -47,7 +48,6 @@ MODEL = "sonnet"                  # メイン（進行担当）。解釈と評�
 ALLOWED_TOOLS = "Bash,Read,Edit,Write,Glob,Grep,Agent,WebFetch,WebSearch"
 # Slack の Incoming Webhook の URL を1行だけ書いたファイル（リポジトリには置かない）。リポジトリ別のファイルがあれば優先する
 SLACK_WEBHOOK_FILES = [f"~/.claude/secrets/slack_webhook_team_reports_{REPO}.txt", "~/.claude/secrets/slack_webhook_team_reports.txt"]
-SLACK_SECTIONS = ["チームの目標", "担当ごとの評価", "改善アクションの判定（前回まで）", "ユーザーの承認が要る提案"]
 NEEDS = {  # check で存在を確かめるファイル（無くても run は止めない）
     "samurai-chronicles": ["~/.claude/secrets/yt_token_sc_reporting.json", "~/.claude/secrets/yt_token_sc.json",
                            "~/.claude/secrets/yt_token_learn_reporting.json", "~/.claude/secrets/yt_token_learn.json",
@@ -132,24 +132,94 @@ def section(markdown: str, title: str) -> str:
     return "\n".join(out).strip()
 
 
-def to_slack(md: str) -> str:
-    """Markdown を Slack の書き方に寄せる（表はそのままでは崩れるので等幅で囲む）。"""
-    out, table = [], []
-    for line in md.splitlines():
+def _cells(line: str) -> list:
+    return [c.strip().replace("**", "") for c in line.strip().strip("|").split("|")]
+
+
+def _table_rows(block: list) -> list:
+    """Markdown の表（区切り行を除く）を、セルのリストの並びにする。"""
+    return [_cells(l) for l in block if not set(l.replace("|", "").strip()) <= set("-: ")]
+
+
+def _bullets_from_table(block: list) -> list:
+    """表を「• 行見出し: 列名 値 ／ 列名 値」の箇条書きにする（Slack では表が崩れるため）。"""
+    rows = _table_rows(block)
+    if len(rows) < 2:
+        return []
+    head, out = [re.sub(r"（.*?）", "", h).replace("・測定済み", "") for h in rows[0]], []
+    for r in rows[1:]:
+        pairs = [f"{h} {v}" if h else v for h, v in zip(head[1:], r[1:]) if v not in ("-", "—", "")]
+        out.append(f"• *{r[0]}*" + (": " + " ／ ".join(pairs) if pairs else ""))
+    return out
+
+
+def _mrkdwn(text: str) -> str:
+    return text.replace("**", "*").strip()
+
+
+def _split_blocks(body: str) -> list:
+    """節の本文を、見出し（###）・表・その他の行に分ける。"""
+    blocks, table = [], []
+    for line in body.splitlines():
         if line.lstrip().startswith("|"):
-            if set(line.replace("|", "").strip()) <= set("-: "):
-                continue
-            table.append(line.strip())
+            table.append(line)
             continue
         if table:
-            out.append("```\n" + "\n".join(table) + "\n```")
+            blocks.append(("table", table))
             table = []
-        line = line.replace("**", "*")
-        if line.startswith("### "):
-            line = "*" + line[4:].strip() + "*"
-        out.append(line)
+        blocks.append(("h" if line.startswith("### ") else "line", line))
     if table:
-        out.append("```\n" + "\n".join(table) + "\n```")
+        blocks.append(("table", table))
+    return blocks
+
+
+def summarize_goals(body: str) -> str:
+    """「チームの目標」: 見出し・表・「伸ばした回／落とした回」の行だけ残す。"""
+    out = []
+    for kind, v in _split_blocks(body):
+        if kind == "h":
+            out += ["", f"*{v[4:].strip()}*"]
+        elif kind == "table":
+            out += _bullets_from_table(v)
+        elif v.lstrip("- ").startswith(("伸ばした回", "落とした回")):
+            out.append("• " + _mrkdwn(v.lstrip("- ")))
+    return "\n".join(out).strip()
+
+
+def summarize_scores(body: str) -> str:
+    """「担当ごとの評価」: 表の部分だけ（担当ごとの詳細は評価ファイルで読む）。"""
+    top = body.split("\n### ", 1)[0]
+    rows = []
+    for kind, v in _split_blocks(top):
+        if kind == "table":
+            rows = _table_rows(v)
+    out = []
+    for r in rows[1:]:
+        if len(r) >= 6:
+            name = r[0].replace("LWチーム ", "").split("（")[0]
+            out.append(f"• *{name}*  総合 {r[4]} — {r[5]}")
+    return "\n".join(out)
+
+
+def summarize_actions(body: str) -> str:
+    """新しい改善アクションを、担当の詳細（### 担当）から「ID ／ 担当 ／ やること」の1行ずつにする。"""
+    out = []
+    for chunk in body.split("\n### ")[1:]:
+        who = chunk.splitlines()[0].replace("LWチーム ", "").split("（")[0]
+        for line in chunk.splitlines():
+            if "新しい改善アクション:" in line and "なし" not in line.split("新しい改善アクション:", 1)[1][:4]:
+                text = line.split("新しい改善アクション:", 1)[1].strip().split(" ／ ", 1)[0]
+                out.append(f"• *{who}* {text}")
+    return "\n".join(out)
+
+
+def summarize_proposals(body: str) -> str:
+    """「ユーザーの承認が要る提案」: 番号つきの見出し（太字の部分）だけ。"""
+    out = []
+    for line in body.splitlines():
+        m = re.match(r"^(\d+)\.\s+\*\*(.+?)\*\*", line)
+        if m:
+            out.append(f"{m.group(1)}. {m.group(2)}")
     return "\n".join(out)
 
 
@@ -165,18 +235,27 @@ def file_url(rel: str) -> str:
 def build_report(e: dict, result: str, out: str, log: Path) -> str:
     head = "✅ 完了" if result == "done" else "⚠️ 未完了"
     lines = [f"*{team_name()}｜{e['name']} 月次評価（{e['month']} 分）* {head}"]
-    tail = [l for l in out.strip().splitlines() if l.strip()][-8:]
-    if tail:
-        lines += ["", "*要約*", *tail]
+    if result != "done":
+        tail = [l for l in out.strip().splitlines() if l.strip()][-8:]
+        if tail:
+            lines += ["", "*要約*", *tail]
     rel = f"team/evaluations/{e['file'].format(month=e['month'])}"
     path = ROOT / rel
     if path.exists():
         md = path.read_text(encoding="utf-8")
-        for title in SLACK_SECTIONS:
-            body = section(md, title)
-            if body:
-                lines += ["", f"*{title}*", to_slack(body)[:3000]]
-        lines += ["", f"評価ファイル: {file_url(rel)}"]
+        found, scores = False, section(md, "担当ごとの評価")
+        for title, text in [
+            ("チームの目標", summarize_goals(section(md, "チームの目標"))),
+            ("担当ごとの評価", summarize_scores(scores)),
+            ("新しい改善アクション", summarize_actions(scores)),
+            ("承認が要る提案", summarize_proposals(section(md, "ユーザーの承認が要る提案"))),
+        ]:
+            if text:
+                lines += ["", f"━━━ *{title}* ━━━", text]
+                found = True
+        if not found:  # 評価ファイルの書き方が想定と違うときは、先頭を行の区切りで切って載せる
+            lines += ["", _mrkdwn(md[:2500].rsplit("\n", 1)[0])]
+        lines += ["", f"詳しくは評価ファイル: {file_url(rel)}"]
     if result != "done":
         lines += ["", f"ログ（iMac）: {log}", "直したら iMac で `python3 team_scheduled.py run --force` を実行してください。"]
     lines += ["", "承認が要る提案は自動では反映していません。会話を開いて確認してください。"]
