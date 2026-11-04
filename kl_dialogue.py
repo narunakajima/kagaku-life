@@ -385,14 +385,32 @@ def validate_episode(ep: dict, cast: dict = None) -> list:
     # （2026-10-05、kl032でFlourish 1の外観を想像で描いて実物と大きく違っていたとの指摘を受けて追加）
     if ep.get("depicts_real_product"):
         for s in scenes:
-            if s.get("shows_product") and "イメージ" not in (s.get("badge_text") or ""):
+            if s.get("shows_product") and not s.get("real_photo") and "イメージ" not in (s.get("badge_text") or ""):
                 errs.append(f"S{s['scene_id']}: 実在の製品を描いたシーン（shows_product）には badge_text に「イメージ図」を入れてください")
         if "イメージ図" not in ep.get("youtube_description", ""):
             errs.append("実在の製品を描く回は、概要欄に「イメージ図」の注記を入れてください")
         for i, c in enumerate(shorts if False else (ep.get("shorts") or [{}])[0].get("scenes") or [], start=1):
             ref = next((s for s in scenes if s.get("scene_id") == c.get("scene_id")), None)
-            if ref and ref.get("shows_product") and "イメージ" not in (c.get("badge_text") or ""):
+            if ref and ref.get("shows_product") and not ref.get("real_photo") and "イメージ" not in (c.get("badge_text") or ""):
                 errs.append(f"Shorts {i}カット目: 製品を描いた場面には badge_text（イメージ図）を付けてください")
+
+    # 実物の写真（kl_photo_commons.py、2026-11-04）: 出所の記録・使えるライセンス・概要欄のクレジットが揃っていること
+    for s in scenes:
+        if not s.get("real_photo"):
+            continue
+        sid = s["scene_id"]
+        rec_path = BASE_DIR / "assets" / "photos" / f"{ep.get('episode_id', '')}_S{sid:02d}.json"
+        if s.get("image_asset") != f"photos/{ep.get('episode_id', '')}_S{sid:02d}" or not rec_path.exists():
+            errs.append(f"S{sid}: 写真シーン（real_photo）の画像または出所の記録が見つかりません。"
+                        f"`python3 kl_photo_commons.py fetch --episode {ep.get('episode_id', 'klNNN')} --scene {sid} --file ... --apply` で取り込んでください")
+            continue
+        rec = json.loads(rec_path.read_text(encoding="utf-8"))
+        lic = rec.get("license", "")
+        if not _re.match(r"^(cc0|public domain|pd\b|cc[ -]by(-sa)?[ -][0-9.]+)", lic, _re.I) or _re.search(r"(\bnc\b|-nc|\bnd\b|-nd|gfdl|fair use|non-free)", lic, _re.I):
+            errs.append(f"S{sid}: 使えないライセンスの写真です: {lic or '不明'}")
+        name = rec.get("title", "").removeprefix("File:")
+        if name not in ep.get("youtube_description", ""):
+            errs.append(f"S{sid}: 概要欄に写真クレジットがありません（`python3 kl_photo_commons.py apply --episode {ep.get('episode_id', 'klNNN')} --scene {sid}`）")
 
     # 締めの固定CTA
     closing_lines = scenes[-1].get("lines") or []

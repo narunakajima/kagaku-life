@@ -113,6 +113,15 @@ SCの `sc_video_gen.py` と同じ考え方で、シーンタイプの並びか�
 チャート・フローチャート向けの別プロンプトテンプレートを使う。
 
 
+### 実物の写真（2026-11-04〜、`kl_photo_commons.py`）
+
+実在の製品・機体の見た目が話の中心の回は、イメージ図より、ライセンスが明記された実物の写真を優先する。写真は
+Wikimedia Commons のパブリックドメイン・CC0・CC BY・CC BY-SA のものだけ。`kl_photo_commons.py` が、検索・取り込み
+（1920x1080、右下に出所のクレジット入り。縦長でも中央に置き、両側はぼかした背景）・出所の記録（`assets/photos/kl{NNN}_S{NN}.json`）・
+概要欄の「【写真クレジット】」・整合の確認（`audit`、`kl_dialogue.py check`）を行う。シーンは `image_asset: "photos/kl{NNN}_S{NN}"`・
+`real_photo: true`（AIの画像生成・画風チェックの対象外、「イメージ図」の注記も不要）。公式サイト・報道・SNSの写真は許諾なく使わない
+（1X の報道用素材は「報道機関向け・商用不可・それ以外は書面の許諾が必要」。手順は `.claude/commands/kl-new.md` STEP2 の「実在の製品・機体」）。
+
 ### 画像スタイル（2026-08-21改訂）
 
 `gemini-3.1-flash-image` で実際に複数テイストを比較検証し、以下2種のBASE_CONTEXTに
