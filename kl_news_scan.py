@@ -87,7 +87,7 @@ UA = {"User-Agent": "Mozilla/5.0 (kagaku-life news scan)"}
 
 # 一次資料が確認できない候補は採用しない（追記メモ §3）。検証可能性がこの点以下なら除外する
 MIN_VERIFIABILITY = 3
-SCAN_VERSION = "2026-10-25-audience"
+SCAN_VERSION = "2026-11-04-subscriber"
 
 # 想定する視聴者（2026-10-25、CLAUDE.md「想定する視聴者」）。audience_fit（1〜5）の採点に使い、
 # core の「関わり」は audience_fit で数える（無い候補は従来の暮らし・仕事の高い方）
@@ -112,6 +112,33 @@ PROMISE_RUBRIC = (
     "     3 = 進歩はあるが、使い道はまだぼんやりしている\n"
     "     2 = 中身が薄い（見出しの盛りが話題の中心、既存品の組み合わせ・言い換え）\n"
     "     1 = 宣伝・誇張だけで、確かめられる進歩がない\n"
+    "     迷ったら低い方を付ける。")
+# 登録につながる要素（2026-11-04、他チャンネル調査 docs/channel_research_2026-11-04.md、なるさんが採用）。
+# 伸びている小〜中規模の日本語チャンネルは、人型ロボなど「物」を、値段・買える時期・どこで動いているかと組み合わせ、
+# 同じ問いを連番で続けている（推定）。当チャンネルで登録が出たShorts 4本のうち3本もロボット
+TANGIBLE_RUBRIC = (
+    "tangible: 手で触れる物として見せられるか。実物の映像・写真があり、一目で「何か」が分かるか。\n"
+    "     5 = 人型ロボット・機械・装置・治療の実物など、映像で一目で分かる物が主役\n"
+    "     4 = 物が主役だが、映像が限られる（試作機、図面が中心）\n"
+    "     3 = 物と抽象が半々（物を使うソフト、物を含む研究）\n"
+    "     2 = ソフト・サービスが中心で、画面の見せ方が限られる\n"
+    "     1 = 性能の数字・予測・方針など抽象的な話で、見せる物がない\n"
+    "     迷ったら低い方を付ける。")
+DECISION_NUMBER_RUBRIC = (
+    "decision_number: 経営者・商売人が「うちで使えるか、いくらか」を考えるための判断の数字が、一次資料で言えるか。\n"
+    "     5 = 値段（本体・月額）と、買える・予約できる・導入できる時期や条件が、一次資料に書かれている\n"
+    "     4 = 値段か時期のどちらか、または導入先・台数・稼働している現場が書かれている\n"
+    "     3 = 条件つきの目安はあるが、値段・時期は書かれていない\n"
+    "     2 = 数字はあるが、使う側の判断には関係しない（性能指標だけ）\n"
+    "     1 = 判断に使える数字が無い\n"
+    "     迷ったら低い方を付ける。")
+SERIES_FIT_RUBRIC = (
+    "series_fit: ヒューマノイド（人型ロボット）の定点観測シリーズ「いつ・いくらで・どこで店や家に来る？」の続きになるか。\n"
+    "     5 = 人型ロボの発表で、前回から動いた値段・予約・出荷・導入先・稼働中の現場が一次資料にある\n"
+    "     4 = 人型ロボの発表で、シリーズの物差し（どこまで来た？ いつ・いくらで？）に当てはめられる\n"
+    "     3 = 人型でないロボット・機械の発表で、同じ物差しで比べられる\n"
+    "     2 = ロボットだが、物差しには当てはめにくい（研究の途中経過、要素技術）\n"
+    "     1 = ロボットと関係がない\n"
     "     迷ったら低い方を付ける。")
 
 # ベスト3・本命枠に入れる条件（2026-10-11、P0）。一覧そのものの足切りは MIN_VERIFIABILITY のまま
@@ -512,6 +539,9 @@ Google検索で調べ、次を出力してください。
    - work_relevance: 仕事・ビジネスにどう関わるか（働く人・経営者・個人事業主が今日の仕事や判断で使える、または影響を受けるほど高い。
      開発者・研究者しか使わない専用品は低い）
    - {audience_fit_rubric}
+   - {tangible_rubric}
+   - {decision_number_rubric}
+   - {series_fit_rubric}
 6. concern_id: いちばん近い関心ごとのid（無ければ null）
 7. entry_question: 視聴者側の問い（「〜は本当？」「〜はもう買える？」「〜はいつ来る？」の形。一次資料の範囲を超えない）
 8. expected_verdicts: {{"dreamer": "soon|decade|pending|dubious", "skeptic": "soon|decade|pending|dubious"}}
@@ -533,7 +563,7 @@ Google検索で調べ、次を出力してください。
 
 JSONオブジェクトのみで出力（他の文章は書かない）:
 {{"primary_sources": [], "announced_on": "", "headline_claim": "", "actual_content": "", "buzz_jp_est": 0, "verifiability": 0,
-"hype_gap": 0, "promise": 0, "debate": 0, "wonder": 0, "life_relevance": 0, "work_relevance": 0, "audience_fit": 0, "concern_id": null, "entry_question": "",
+"hype_gap": 0, "promise": 0, "debate": 0, "wonder": 0, "life_relevance": 0, "work_relevance": 0, "audience_fit": 0, "tangible": 0, "decision_number": 0, "series_fit": 0, "concern_id": null, "entry_question": "",
 "expected_verdicts": {{}}, "tsukkomi_material": "", "hope_material": "", "investment_related": false, "deja_vu_note": "", "genre": "", "health": false,
 "jp_news_query": "", "jp_title_anchor": [], "announcement_type": ""}}
 """
@@ -545,7 +575,9 @@ def score_item(client, types, item: dict, past: str, concerns: str) -> dict:
                                  url=item.get("url", ""), summary=item.get("summary", ""),
                                  past=past or "（なし）", concerns=concerns, genres=genres_brief(),
                                  audience=AUDIENCE, audience_fit_rubric=AUDIENCE_FIT_RUBRIC,
-                                 promise_rubric=PROMISE_RUBRIC)
+                                 promise_rubric=PROMISE_RUBRIC, tangible_rubric=TANGIBLE_RUBRIC,
+                                 decision_number_rubric=DECISION_NUMBER_RUBRIC,
+                                 series_fit_rubric=SERIES_FIT_RUBRIC)
     for attempt in range(3):
         try:
             resp = client.models.generate_content(
@@ -1643,11 +1675,14 @@ def backfill_work(cands: list, force: bool = False):
     print(f"work_relevance を {len(todo)}件に付与しました")
 
 
+AUDIENCE_KEYS = ("audience_fit", "promise", "tangible", "decision_number", "series_fit")   # backfill_audience が付ける欄
+
+
 def backfill_audience(cands: list, force: bool = False):
     """available の候補のうち audience_fit が無いものに、想定する視聴者との合い方（1〜5）を付ける（テキストのみ、2026-10-25）。
     score で付かなかった候補（2026-10-25 より前の採点）もこれで埋まる。"""
     todo = [c for c in cands if c.get("status") == "available"
-            and (force or c.get("audience_fit") is None or c.get("promise") is None)]
+            and (force or any(c.get(k) is None for k in AUDIENCE_KEYS))]
     if not todo:
         return
     client, types = _gemini()
@@ -1658,13 +1693,18 @@ def backfill_audience(cands: list, force: bool = False):
             f"{i}. タイトル: {c['title']} / 見出し: {c.get('headline_claim', '')} / "
             f"中身: {(c.get('actual_content') or c.get('summary') or '')[:300]}" for i, c in enumerate(batch))
         prompt = (
-            "日本語の科学ニュース解説YouTube番組のネタ候補です。各候補について audience_fit と promise（1〜5）を付けてください。\n"
+            "日本語の科学ニュース解説YouTube番組のネタ候補です。各候補について "
+            "audience_fit・promise・tangible・decision_number・series_fit（1〜5）を付けてください。\n"
             f"【想定する視聴者】{AUDIENCE}\n"
             f"   - {AUDIENCE_FIT_RUBRIC}\n"
             f"   - {PROMISE_RUBRIC}\n"
+            f"   - {TANGIBLE_RUBRIC}\n"
+            f"   - {DECISION_NUMBER_RUBRIC}\n"
+            f"   - {SERIES_FIT_RUBRIC}\n"
             "言語対応や提供地域は無関係。\n\n"
             f"候補:\n{rows}\n\n"
-            'JSON配列のみ出力: [{"i": 0, "audience_fit": 0, "promise": 0}, ...]（全候補分）')
+            'JSON配列のみ出力: [{"i": 0, "audience_fit": 0, "promise": 0, "tangible": 0, "decision_number": 0, '
+            '"series_fit": 0}, ...]（全候補分）')
         try:
             out = _json_from(client.models.generate_content(model=MODEL, contents=prompt).text)
         except Exception as e:  # noqa: BLE001
@@ -1675,12 +1715,13 @@ def backfill_audience(cands: list, force: bool = False):
                 c = batch[int(r["i"])]
                 if force or c.get("audience_fit") is None:
                     c["audience_fit"] = _clamp5(r["audience_fit"])
-                if (force or c.get("promise") is None) and r.get("promise") is not None:
-                    c["promise"] = _clamp5(r["promise"])
+                for k in AUDIENCE_KEYS[1:]:   # promise 以降は、返ってきた欄だけ付ける（欠けても audience_fit は残す）
+                    if (force or c.get(k) is None) and r.get(k) is not None:
+                        c[k] = _clamp5(r[k])
                 n += 1
             except (KeyError, ValueError, IndexError, TypeError):
                 continue
-    print(f"audience_fit・promise を {n}/{len(todo)}件に付与しました")
+    print(f"audience_fit・promise・tangible・decision_number・series_fit を {n}/{len(todo)}件に付与しました")
 
 
 def cmd_enrich(force: bool):
@@ -1830,9 +1871,35 @@ def promise(c: dict) -> int:
     return _clamp5(c["promise"]) if c.get("promise") is not None else 3
 
 
+def _neutral3(c: dict, key: str) -> int:
+    """tangible・decision_number など、付与前の候補は3（中立）として扱う。"""
+    return _clamp5(c[key]) if c.get(key) is not None else 3
+
+
+def tangible_decision(c: dict) -> int:
+    """物として見せられるか＋判断の数字があるか（2〜10、2026-11-04）。同点の並びの先頭に使う。"""
+    return _neutral3(c, "tangible") + _neutral3(c, "decision_number")
+
+
 def tie_break(c: dict) -> int:
     # 2026-10-26: 誇張（hype_gap）を実現への手応え（promise）に替えた（構成 v4。夢を潰しやすいネタを上げない）
-    return promise(c) + _clamp5(c.get("debate")) + fit(c)
+    # 2026-11-04: 先頭に「物×判断の数字」（tangible + decision_number）を置いた（他チャンネル調査）。
+    # 百の位以上が物×判断の数字、下2桁が 手応え＋議論＋視聴者（最大15）
+    return tangible_decision(c) * 100 + promise(c) + _clamp5(c.get("debate")) + fit(c)
+
+
+def tb_parts(tb: int) -> tuple:
+    return tb // 100, tb % 100
+
+
+BEST3_TANGIBLE_MIN = 4           # ベスト3に「物×判断の数字」の候補を最低1件入れる条件（2026-11-04）
+BEST3_DECISION_MIN = 3
+
+
+def is_tangible_pick(c: dict) -> bool:
+    """物として見せられ（tangible≧4）、判断の数字がある（decision_number≧3）。付与前（None）は該当にしない。"""
+    return (c.get("tangible") is not None and c.get("decision_number") is not None
+            and _clamp5(c["tangible"]) >= BEST3_TANGIBLE_MIN and _clamp5(c["decision_number"]) >= BEST3_DECISION_MIN)
 
 
 def classify(cands: list) -> list:
@@ -1872,7 +1939,7 @@ def classify(cands: list) -> list:
 
 
 def _sorted_core(rows: list) -> list:
-    # core → 手応え+議論+視聴者 → 媒体数（同点が多いので最後に実測の媒体数で並べる）
+    # core → 物×判断の数字＋手応え＋議論＋視聴者（tb）→ 媒体数（同点が多いので最後に実測の媒体数で並べる）
     return sorted(rows, key=lambda r: (r["core"] if r["core"] is not None else -1, r["tb"],
                                        r["c"].get("buzz_outlets") or 0), reverse=True)
 
@@ -1937,6 +2004,9 @@ def best3(rows: list):
             series.add(r["series"])
 
     ok = [r for r in order if _primary_ok(r["c"])]
+    # 2026-11-04: 「物×判断の数字」の候補を最低1件（足りなければ空けたまま＝普通の選び方に戻る）。
+    # 先に1件取り、他は従来どおり。最後に元の並び（order）に戻す
+    take([r for r in ok if is_tangible_pick(r["c"])][:1], 1)
     take(ok, 1)
     if len(picks) < 3:
         take(ok, BEST3_RELAXED_GENRE_MAX)
@@ -1944,7 +2014,9 @@ def best3(rows: list):
         unv = [r for r in order if not _primary_ok(r["c"])]
         take(unv, 1, reserve=True)
         take(unv, BEST3_RELAXED_GENRE_MAX, reserve=True)
-    # 表示は本命の上位を先に（選んだ順のまま。補欠は最後）
+    # 表示は本命の上位を先に（元の並び order の順。補欠は最後）
+    pos = {r["c"]["id"]: i for i, r in enumerate(order)}
+    picks.sort(key=lambda p: (bool(p.get("reserve")), pos.get(p["c"]["id"], len(order))))
     niche = _sorted_core([r for r in rows if r["lane"] == "ニッチ"])
     return picks, (niche[0] if niche and len(picks) < 3 else None)
 
@@ -1990,7 +2062,8 @@ def _print_candidate(r: dict, short: bool = False):
         else f"core —（鮮度{r['fresh']}、推定なら{r['core_est']}）"
     warn = "  ⚠️一次資料 要確認" if c.get("primary_verified", "未") is None else \
         ("  ⚠️一次資料 未確認" if "primary_verified" not in c else "")
-    print(f"[{core}｜手応え+議論+視聴者 {r['tb']}｜旧加重和 {r['old']:.2f}] {c['title'][:76]}"
+    td, tb2 = tb_parts(r["tb"])
+    print(f"[{core}｜物×数字 {td}｜手応え+議論+視聴者 {tb2}｜旧加重和 {r['old']:.2f}] {c['title'][:76]}"
           f"（{c.get('announced_on') or c.get('published')}、{c.get('genre', '?')}）" + ("  ※健康系" if c.get("health") else "")
           + warn)
     print(f"   {_topic_line(c)}")
