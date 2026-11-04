@@ -565,6 +565,15 @@ def episode_warnings(ep: dict) -> list:
         if not any(l.get("tag") == "turn" and l.get("speaker") == "skeptic"
                    for s in ep["scenes"] for l in s.get("lines") or []):
             warns.append("v3: 沙織が譲る turn（大輔が正しかった論点）がありません。大輔が論破されるだけの回になっていないか、STEP5で確認")
+    # ニュース回のタイトルと概要欄1行目（2026-11-04、なるさんの決定）。タイトルは月だけ（「（11月時点）」）、発表日は書かない。
+    # 概要欄の1行目に、発表日と判定の時点を書く。不合格にはしない（過去の回は旧形式のまま）
+    if ep.get("source_type") == "news":
+        title = ep.get("youtube_title", "")
+        if _re.search(r"\d{1,2}月\d{1,2}日", title):
+            warns.append(f"タイトルに日付（月日）が入っています: 「{title}」。タイトルは「（11月時点）」のように月だけにし、発表日は概要欄の1行目へ")
+        first = next((ln for ln in (ep.get("youtube_description") or "").splitlines() if ln.strip()), "")
+        if "時点" not in first or "発表" not in first:
+            warns.append("概要欄の1行目に、発表日と判定の時点がありません（例「2026年10月21日の発表を、11月2日時点で確認した二人の見立て」）")
     return warns
 
 

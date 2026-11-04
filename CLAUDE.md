@@ -167,7 +167,7 @@ BGMの切り替えは type ではなく各シーンの `bgm_role` で決まる�
 `kl_reschedule.py move --episode kl0xx --to "YYYY-MM-DD 19:00"` で日時を入れる（`publish_hold` が自動で外れる）。
 以前の入れ替え計画（kl027〜030を先に公開）は取り消しにより無効。
 
-**計測:** Reporting API のトークン（`~/.claude/secrets/yt_token_kl_reporting.json`）は iMac に無い（2026-10-04確認）。
+**計測:** Reporting API のトークン（`~/.claude/secrets/yt_token_kl_reporting.json`）は iMac にある（2026-11-04確認。更新に成功）。新しい日のレポートは `kl_yt_download_reports.py` で取り込む。YouTube Analytics API（秒単位の維持率曲線・年齢・性別）はこのプロジェクトでは無効（2026-11-04確認）なので、それらは YouTube Studio の画面で見る（視聴者が少ないと年齢・性別は「データ不足」になる）。
 生データは Google Drive の `Kagaku-Life/analytics/raw/` に置き、`kl_yt_download_reports.py`・`kl_analytics_report.py` は
 そこを直接読み書きする（2026-10-04、MacBook・iMacで共有。リポジトリ内にコピーしない）。iMac で新しい日のレポートを
 取るには、`kl_yt_reporting_auth.py`（ブラウザ認証）でトークンを作るか、トークンのある端末で取得する。

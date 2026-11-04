@@ -85,6 +85,16 @@ def license_ok(short: str) -> bool:
     return bool(ALLOWED.match(short)) and not DENIED.search(short)
 
 
+PERSON_CAT = re.compile(r"people|person|portrait|\bmen\b|\bwomen\b|\bmale\b|\bfemale\b|businesspe|speakers|ceos|billionaires|"
+                        r"engineers|scientists|politicians|presidents|crowd|audience|children|\bboys\b|\bgirls\b", re.I)
+
+
+def is_person(i: dict) -> bool:
+    """人物の肖像の可能性（Commons の制限表示、またはカテゴリー名）。完全ではないので、目視でも確認する"""
+    return bool(re.search(r"person|portrait|identif", i["restrictions"], re.I)
+                or any(PERSON_CAT.search(c) for c in i.get("categories", [])))
+
+
 def _info(page: dict) -> dict:
     ii = (page.get("imageinfo") or [{}])[0]
     m = ii.get("extmetadata") or {}
@@ -104,13 +114,15 @@ def _info(page: dict) -> dict:
         "restrictions": v("Restrictions"),
         "attribution_required": v("AttributionRequired"),
         "date": v("DateTimeOriginal"),
+        "categories": [c.get("title", "") for c in (page.get("categories") or [])],
     }
 
 
 def cmd_search(a):
     d = _api({"action": "query", "generator": "search", "gsrsearch": f"{a.query} filetype:bitmap",
-              "gsrnamespace": "6", "gsrlimit": str(a.limit), "prop": "imageinfo",
-              "iiprop": "url|size|mime|extmetadata", "iiurlwidth": str(W)})
+              "gsrnamespace": "6", "gsrlimit": str(a.limit),
+              "iiprop": "url|size|mime|extmetadata", "iiurlwidth": str(W),
+              "prop": "imageinfo|categories", "cllimit": "max"})
     pages = sorted((d.get("query") or {}).get("pages") or [], key=lambda p: p.get("index", 0))
     if not pages:
         print("見つかりませんでした。別の語（英語の製品名など）で試してください。")
@@ -121,6 +133,8 @@ def cmd_search(a):
         mark = "○" if license_ok(i["license"]) else "×"
         small = "  ※小さい" if i["width"] < MIN_WIDTH else ""
         warn = f"  ※制限: {i['restrictions']}" if i["restrictions"] else ""
+        if is_person(i):
+            warn += "  ※人物の写真の可能性（使う前に制作者の確認が必要）"
         print(f"{mark} {i['title']}  [{i['license'] or '不明'}]  {i['width']}x{i['height']}{small}{warn}")
         print(f"    作者: {i['author'][:60] or '不明'} / 撮影: {i['date'][:30] or '不明'}")
         print(f"    {i['page_url']}")
@@ -129,7 +143,7 @@ def cmd_search(a):
 def _fetch_info(title: str) -> dict:
     if not title.startswith("File:"):
         title = "File:" + title
-    d = _api({"action": "query", "titles": title, "prop": "imageinfo",
+    d = _api({"action": "query", "titles": title, "prop": "imageinfo|categories", "cllimit": "max",
               "iiprop": "url|size|mime|extmetadata", "iiurlwidth": str(W)})
     pages = (d.get("query") or {}).get("pages") or []
     if not pages or pages[0].get("missing"):
@@ -191,6 +205,11 @@ def cmd_fetch(a):
         sys.exit(f"❌ 画像が小さすぎます（幅{i['width']}px < {MIN_WIDTH}px）。ぼやけるため使いません（--allow-small で許可）")
     if i["restrictions"]:
         print(f"⚠️  Commons の制限表示: {i['restrictions']}（商標・肖像など。人の顔が写る場合は制作者に確認する）")
+
+    if is_person(i) and not a.allow_person:
+        sys.exit("❌ 人物の写真の可能性があります（Commons の制限表示またはカテゴリー）。使う前に制作者の確認が必要です"
+                 "（確認済みなら --allow-person を付ける。人物は台詞の話題と無関係に使わない・悪く見える使い方をしない）。"
+                 "この判定は完全ではないので、製品や街の写真でも、人が大きく写っていないか目視で確認する")
     data = _get(i["thumb_url"])
     photo = Image.open(io.BytesIO(data))
     credit = _credit_text(i)
@@ -282,6 +301,7 @@ def main():
     f.add_argument("--note", default="", help="画面に出す注記（例: 2025年の機体）")
     f.add_argument("--apply", action="store_true")
     f.add_argument("--allow-small", action="store_true")
+    f.add_argument("--allow-person", action="store_true", help="人物の肖像に関わる制限表示がある写真を、制作者の確認後に使う")
     f.set_defaults(fn=cmd_fetch)
     ap = sub.add_parser("apply")
     ap.add_argument("--episode", required=True)
