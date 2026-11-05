@@ -2126,17 +2126,12 @@ def beginner_review_required(ep: dict, episode_id: str = None) -> bool:
     return bool(m) and int(m.group(1)) >= BEGINNER_REVIEW_GATE_FROM
 
 
-def enforce_beginner_review(ep: dict, episode_id: str, skip: bool = False, tool: str = "", pre_review: bool = False) -> None:
+def enforce_beginner_review(ep: dict, episode_id: str, skip: bool = False, tool: str = "") -> None:
     """kl_tts_gen.py・kl_video_gen.py の入口（API呼び出し・ファイル書き込みの前）で呼ぶ。
     対象の回で初見レビューが「済」でなければ、理由とやることを表示して終了コード2で止める。"""
     import os
     import sys
     if not beginner_review_required(ep, episode_id):
-        return
-    if pre_review:
-        # 初見レビューの前にTTSの読み検査を済ませる工程（kl-new STEP 4.5、2026-11-05〜）。制作者の了承は不要
-        print(f"ℹ {tool}: --pre-review。初見レビュー前の読み検査として音声を作ります"
-              "（台詞を直したら、変えた行・シーンだけが作り直されます）。", file=sys.stderr)
         return
     state, text = beginner_review_state(ep)
     if state == "ok":

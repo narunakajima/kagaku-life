@@ -3,7 +3,7 @@
 無人実行では `.claude/commands/kl-new.md` と `.claude/agents/*.md` の書き込みが許可されなかったため、変更を**そのまま貼れる形**でここに置く。
 セッションで人（または権限のあるメイン）が、下の4か所に反映する。本体の仕様（詳細）は、すでに次のファイルに入っている:
 `kl_prompts/beginner_review_prompt.md`（差分レビューの依頼文・収束ルール・合格後の再チェック・前倒し）、`kl_prompts/writer_self_checklist.md`（16項目）、
-`kl_prompts/script_writer_rules.md` 3.の10項目目、`kl_dialogue.py plain --scenes`・`review-pass --scenes`、`kl_tts_gen.py --pre-review`。
+`kl_prompts/script_writer_rules.md` 3.の10項目目、`kl_dialogue.py plain --scenes`・`review-pass --scenes`。（2026-11-06: `--pre-review` はユーザー決定で不採用・撤去済み）
 
 ## 1. `.claude/commands/kl-new.md`
 
@@ -24,15 +24,13 @@
 
 1. 形式チェック: `python3 kl_dialogue.py check --episode kl{NNN}` ❌ゼロ、⚠を一つずつ確認
 2. 事実確認: STEP 4 が済んでいること（STEP 5 の直しで数値・事実に触れたなら再実行）
-3. TTS の読み検査: `python3 kl_tts_gen.py --episode kl{NNN} --pre-review`（初見レビューのゲートを通さずに音声を作る。制作者の了承は不要。
-   読み照合QAで誤読の行が出たら、台詞の語を言い換えて、その行を作り直す。STEP 8 の記述に従う）。台詞を直したら変えた行だけが作り直される
-4. 書き手の自己チェックリスト（`kl_prompts/writer_self_checklist.md`）の報告があること
+3. 書き手の自己チェックリスト（`kl_prompts/writer_self_checklist.md`）の報告があること
 
 終わったら `python3 team_log.py add --agent kl-coordinator --episode kl{NNN} --step 4.5 --result ok` で記録し、STEP 5.5 へ進む。
 ```
 
-（STEP 5 の位置が STEP 4 の後・STEP 4.5 の前になるので、STEP 5 の冒頭の「STEP4の後」は変えなくてよい。見出しの並びは STEP 5 → STEP 4.5 → STEP 5.5 でも、
-STEP 4 → 4.5 → 5 でもよい。**ただし TTS の読み検査は、STEP 5 の直しが終わった後に行う。**）
+（STEP 5 の冒頭の「STEP4の後」は変えなくてよい。見出しの並びは STEP 5 → STEP 4.5 → STEP 5.5。2026-11-06 の更新: `--pre-review` は不採用になったので、TTS の読み検査は入れない。
+TTS の読みは、これまでどおり STEP 8 の読み照合QAで確かめる。）
 
 ### 1-c. STEP 5.5 の手順 3〜6 を次で置き換える
 
@@ -43,7 +41,7 @@ STEP 4 → 4.5 → 5 でもよい。**ただし TTS の読み検査は、STEP 5 
    - 反映しない項目は理由を書く
    - レビューの直し案には、資料の範囲を超える言い方が混ざる。原典で確かめてから台詞にする
    - 直した後、自己チェックリスト16項目を台本の全文に当てて、同種の問題を探して直す
-   - 数値・事実に触れたら `kl_fact_check.py` を再実行する。**TTS の読みに影響する語を変えたら、変えた行の読み検査（`kl_tts_gen.py --pre-review`）を、次の周回の前に済ませる**
+   - 数値・事実に触れたら `kl_fact_check.py` を再実行する
    - `kl_dialogue.py check` を❌ゼロで通す
    - **直したシーンの番号を、報告に一覧で書く**（差分レビューに渡すため）
 4. **2周目以降は差分レビュー**: `python3 kl_dialogue.py plain --episode kl{NNN} --scenes {直したシーン} --out {scratchpad}/kl{NNN}_plain_diff_r{周}.txt` を作り、
@@ -54,7 +52,7 @@ STEP 4 → 4.5 → 5 でもよい。**ただし TTS の読み検査は、STEP 5 
    **【致命的】が残るときは、この上限の例外として周回を続ける**（直して差分レビュー）。許容と決めた項目は、合格のレポートに残して STEP 11 の確認ページで見せる。
    周回のたびに説明が足されて台本が膨らむので、3周目の前に繰り返しと数字を削る（kl048）。
 6. 合格したら記録する（`kl_dialogue.py review-pass --episode kl{NNN} --rounds {周回数} --report {最後のレビュー結果のパス}`）。
-   **合格後に台詞を変えたときは、合格を全面無効にせず、変えたシーンだけを再チェックする:** 変えたシーンの事前チェック（check・事実確認・読み検査）→ そのシーンだけの差分レビュー
+   **合格後に台詞を変えたときは、合格を全面無効にせず、変えたシーンだけを再チェックする:** 変えたシーンの事前チェック（check・事実確認）→ そのシーンだけの差分レビュー
    → `review-pass ... --scenes {変えたシーン}` で記録し直す（`beginner_review.rechecked_scenes` に残る。全文の周回に数えない）。
    制作者の指摘で台詞を直したときも、同じ扱い（制作者に見せる前に、変えたシーンの再チェックを済ませる）。
 ```
@@ -62,11 +60,7 @@ STEP 4 → 4.5 → 5 でもよい。**ただし TTS の読み検査は、STEP 5 
 手順5の「**目安は2周。** ...」と、手順4の「**毎回新しいサブエージェントで、前のレビュー結果は渡さない**」は、上の差分レビューの形（引用と「何が分からないか」だけ渡す）に置き換わる。
 1周目の全文レビューは今までどおり、plain のパス以外は何も渡さない。
 
-### 1-d. STEP 8 冒頭（「TTS・動画生成は、初見レビュー（STEP5.5）が「済」でないと止まる」の段落の後）に追記
-
-```
-TTS は初見レビューの前に `--pre-review` で作ってある（STEP 4.5）。ここでの実行は、合格後に台詞を変えた行の作り直しと、未生成のシーンの生成が主。
-```
+### 1-d. （撤回: `--pre-review` 不採用のため、STEP 8 への追記は不要）
 
 ### 1-e. 「制作者に台本を見せる形・指摘を受けたとき」の最後の項目「直したら STEP5.5（初見レビュー）を通してから見せる」を次に置き換える
 

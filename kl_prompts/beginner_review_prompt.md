@@ -136,7 +136,7 @@ scratchpad に作り（`{PACKAGE_PATH}`）、検索語・狙い・ガードレ�
 ## 合格後に台詞を変えたとき（2026-11-05〜）
 合格の記録は台詞のハッシュ付きなので、変えると `check` が「無効」を出す。これは変えない。ただし、**全面的に最初からやり直さず、変えたシーンだけを再チェックする。**
 1. 変えたシーン番号を控える（TTS の誤読対策の語替えなども含む）
-2. 変えたシーンだけ、事前チェック（`kl_dialogue.py check`、数値・事実に触れたら `kl_fact_check.py`、読み検査）をやり直す
+2. 変えたシーンだけ、事前チェック（`kl_dialogue.py check`、数値・事実に触れたら `kl_fact_check.py`）をやり直す。TTS の読みは STEP 8 の読み照合QAで確かめる
 3. 変えたシーンだけを差分レビューに通す（`plain --scenes`）。前回の指摘は無いので、(1) は「省略」で、(2) 新しい詰まりだけを見る
 4. 問題なければ `python3 kl_dialogue.py review-pass --episode kl{NNN} --rounds {前回の周回数} --report {差分レビューの結果のパス} --scenes {変えたシーン}` で記録し直す
    （`beginner_review.rechecked_scenes` に残る）。この再チェックは全文レビューの周回に数えない
@@ -146,8 +146,6 @@ scratchpad に作り（`{PACKAGE_PATH}`）、検索語・狙い・ガードレ�
 初見レビューの開始前に、次を終えておく。合格後の語替えで合格が無効になる、が kl052 の無駄の最大の原因だった。
 - 形式チェック: `kl_dialogue.py check` ❌ゼロ、⚠の確認
 - 事実確認: `kl_fact_check.py`（STEP 4）
-- TTS の読み検査: `python3 kl_tts_gen.py --episode kl{NNN} --pre-review`（初見レビューのゲートを通さずに音声を作る。読み照合QAで誤読の行が出たら、
-  台詞の語を言い換える。`kl-new.md` STEP 8 の読み照合QA、規則 TTS誤読の語替えの方針）。台詞を直したら変えた行だけが作り直される
 - 書き手の自己チェックリスト（`writer_self_checklist.md` 16項目）の報告があること
 
 ## 合格の記録
