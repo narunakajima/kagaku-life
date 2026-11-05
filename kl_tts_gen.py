@@ -442,6 +442,9 @@ def main():
     parser.add_argument("--skip-beginner-review", action="store_true",
                          help="初見レビュー（kl-new STEP5.5）が「済」でなくても続行する。rounds_v3・rounds_v4 の kl046 以降は、しばらくは必須"
                               "（なるさんの指示、2026-10-19）。制作者の了承なしに使わない。KL_SKIP_BEGINNER_REVIEW=1 でも同じ")
+    parser.add_argument("--pre-review", action="store_true",
+                         help="初見レビューの前に、TTSの読み検査（読み照合QA・誤読の言い換え）を済ませるための実行（kl-new STEP 4.5、2026-11-05〜）。"
+                              "初見レビューのゲートを通さずに音声を作る。台詞を直したら変えた行だけが作り直される。制作者の了承は不要")
     args = parser.parse_args()
 
     # 初見レビューの確認は、APIキーの確認・ファイルの書き込み・API呼び出しより先に行う（2026-10-19）
@@ -449,7 +452,8 @@ def main():
     if _ep_path.exists():
         import kl_dialogue as _D
         _D.enforce_beginner_review(json.loads(_ep_path.read_text()), args.episode,
-                                   skip=args.skip_beginner_review, tool="kl_tts_gen.py")
+                                   skip=args.skip_beginner_review, tool="kl_tts_gen.py",
+                                   pre_review=args.pre_review)
 
     if not API_KEY:
         print("❌ GEMINI_API_KEY が設定されていません", file=sys.stderr)

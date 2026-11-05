@@ -1922,7 +1922,7 @@ def _figure_labels(prompt: str) -> list:
     return out
 
 
-def plain_text(ep: dict, cast: dict = None) -> str:
+def plain_text(ep: dict, cast: dict = None, only_scenes=None) -> str:
     """初見レビュー用: 視聴者が見聞きするものだけ（タイトル・サムネイルの見出し・台詞・画面の資料カード／
     図のラベル／論点の見出し／判定ラベル）を順に並べたテキスト。概要欄・資料・image_prompt の英文は含めない。"""
     cast = cast or load_cast()
@@ -1941,6 +1941,8 @@ def plain_text(ep: dict, cast: dict = None) -> str:
                "名前と肩書きは画面の名札に出る（台詞では名前を呼ばない）。")
     by_id = {s.get("scene_id"): s for s in ep.get("scenes", [])}
     for s in ep.get("scenes", []):
+        if only_scenes is not None and s.get("scene_id") not in only_scenes:
+            continue  # 差分レビュー（2周目以降）: 変更したシーンだけを出す
         out.append("")
         head = f"=== シーン{s.get('scene_id')}"
         if s.get("round_title"):
@@ -2124,12 +2126,17 @@ def beginner_review_required(ep: dict, episode_id: str = None) -> bool:
     return bool(m) and int(m.group(1)) >= BEGINNER_REVIEW_GATE_FROM
 
 
-def enforce_beginner_review(ep: dict, episode_id: str, skip: bool = False, tool: str = "") -> None:
+def enforce_beginner_review(ep: dict, episode_id: str, skip: bool = False, tool: str = "", pre_review: bool = False) -> None:
     """kl_tts_gen.py・kl_video_gen.py の入口（API呼び出し・ファイル書き込みの前）で呼ぶ。
     対象の回で初見レビューが「済」でなければ、理由とやることを表示して終了コード2で止める。"""
     import os
     import sys
     if not beginner_review_required(ep, episode_id):
+        return
+    if pre_review:
+        # 初見レビューの前にTTSの読み検査を済ませる工程（kl-new STEP 4.5、2026-11-05〜）。制作者の了承は不要
+        print(f"ℹ {tool}: --pre-review。初見レビュー前の読み検査として音声を作ります"
+              "（台詞を直したら、変えた行・シーンだけが作り直されます）。", file=sys.stderr)
         return
     state, text = beginner_review_state(ep)
     if state == "ok":
@@ -2179,6 +2186,8 @@ def main():
                     help="check: 構造チェック（narration を同期）／cards: 資料カード（source_card）を描いて image_asset を書き込む／"
                          "plain: 初見レビュー用に、視聴者が見聞きするもの（台詞・画面の文字・判定ラベル）だけのテキストを出す")
     ap.add_argument("--out", help="plain の出力先（省略時は標準出力）")
+    ap.add_argument("--scenes", help="plain: 差分レビュー用に、指定シーン（scene_id をカンマ区切り）だけを出す。review-pass: "
+                                     "合格後に変えたシーンだけを再チェックして記録し直したときの、そのシーン")
     ap.add_argument("--rounds", type=int, help="review-pass: 初見レビューを何周して合格したか")
     ap.add_argument("--report", help="review-pass: 合格した回の初見レビュー結果のパス")
     ap.add_argument("--episode", required=True)
@@ -2188,7 +2197,10 @@ def main():
     ep = json.loads(path.read_text(encoding="utf-8"))
     cast = load_cast()
     if args.command == "plain":
-        text = plain_text(ep, cast)
+        only = None
+        if args.scenes:
+            only = {int(x) if x.strip().isdigit() else x.strip() for x in args.scenes.split(",") if x.strip()}
+        text = plain_text(ep, cast, only)
         if args.out:
             Path(args.out).write_text(text, encoding="utf-8")
             print(f"✅ {args.out}（{len(text)}字）。初見レビューのサブエージェントには、このファイルのパスだけを渡す")
@@ -2200,6 +2212,8 @@ def main():
         import datetime
         ep["beginner_review"] = {"passed_at": datetime.date.today().isoformat(), "rounds": args.rounds,
                                  "report": args.report or "", "lines_digest": lines_digest(ep)}
+        if args.scenes:  # 合格後に変えたシーンだけを再チェックして記録し直した（2026-11-05）
+            ep["beginner_review"]["rechecked_scenes"] = [x.strip() for x in args.scenes.split(",") if x.strip()]
         tmp = path.with_suffix(".json.tmp")
         tmp.write_text(json.dumps(ep, ensure_ascii=False, indent=2), encoding="utf-8")
         tmp.replace(path)
