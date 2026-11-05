@@ -74,4 +74,7 @@
 {"ts": "2026-11-05T13:15:11+09:00", "kind": "work", "agent": "kl-art-director", "episode": "kl052", "step": "6.7", "result": "ok", "retries": 0, "note": "CRITICAL 1件（サムネ見出しが「郵便局が」だけ→2行に修正・背景再生成）"}
 {"ts": "2026-11-05T14:13:05+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl052", "step": "5.5", "result": "ok", "retries": 0, "note": "r12 致命的0・直す1、r13 致命的0・直す0。13周で合格再記録（S13品→商品の語替え後）"}
 {"ts": "2026-11-05T14:13:05+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl052", "step": "5.5", "result": "ok", "retries": 0, "note": "r12の直し反映（S07分割ほか）"}
-{"ts": "2026-11-05T14:24:18+09:00", "kind": "work", "agent": "kl-art-director", "episode": "kl052", "step": "10", "result": "ok", "retries": 0, "note": "BGMはライブラリ3曲(kl042 intro/kl039 main/kl036 outro)。final_checkはcp不可で未実施"}
+{"ts": "2026-11-05T14:24:18+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl052", "step": "10", "result": "ok", "retries": 0, "note": "BGMはライブラリ3曲(kl042 intro/kl039 main/kl036 outro)。final_checkはcp不可で未実施"}
+{"ts": "2026-11-05T14:47:04+09:00", "kind": "work", "agent": "kl-art-director", "episode": "kl052", "step": "6.5", "result": "retry", "retries": 1, "note": "ドローン描き直し（S08/S01/S02・Shorts S02 は完了、汎用リング型に）。サムネは2回続けて不合格（1回目: 機体が大きすぎ・電柱が脚に見える／2回目: 機体が右寄りで沙織の頭に近い）のため停止、旧サムネを復元。合成の上部暗幕で背景が暗く見える点も判明"}
+{"ts": "2026-11-05T14:48:46+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl052", "step": "2", "result": "ok", "retries": 0, "note": "概要欄のドローン注記を「イメージ図でありWingの機体とは異なります」に変更"}
+{"ts": "2026-11-05T14:53:09+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl052", "step": "10", "result": "retry", "retries": 1, "note": "outro(kl036)がfinal_checkでボーカル混入により不合格→kl039-BGM-outroに差し替えて合格。Desktop/BGM整理・確認ページ生成"}
