@@ -51,3 +51,7 @@
 {"ts": "2026-11-03T06:33:56+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl051", "step": "進行", "result": "retry", "retries": 0, "note": "10/21発表後の再集め→家庭軸へ作り直し（なるさん指示2回）。最後は管理担当ケビンの判断で動画まで完了"}
 {"ts": "2026-11-04T14:53:25+09:00", "kind": "call", "agent": "kl-manager", "session": "f77bd582-ef06-4299-b3e6-6eee56a1838d"}
 {"ts": "2026-11-04T14:53:29+09:00", "kind": "work", "agent": "kl-manager", "episode": "none", "step": "ネタ探し見直し:他チャンネル調査", "result": "ok", "retries": 0, "note": "docs/channel_research_2026-11-04.md 作成。提案5件はなるさん承認待ち、CLAUDE.md等は未変更"}
+{"ts": "2026-11-05T09:49:09+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl052", "step": "2", "result": "ok", "retries": 0, "note": "rounds_v4 basic 4159字"}
+{"ts": "2026-11-05T09:55:19+09:00", "kind": "work", "agent": "kl-script-reviewer", "episode": "kl052", "step": "5", "result": "ok", "retries": 0, "note": "GO（条件つき: 事実再確認）。能登・高萩の範囲の広げすぎを修正"}
+{"ts": "2026-11-05T09:59:15+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl052", "step": "5.5", "result": "ok", "retries": 0, "note": "r1 致命的0・直す9"}
+{"ts": "2026-11-05T10:05:14+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl052", "step": "5.5", "result": "retry", "retries": 0, "note": "初見レビューr1の直し"}

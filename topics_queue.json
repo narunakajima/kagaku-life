@@ -3014,8 +3014,75 @@
         "freshness": 4,
         "candidate_id": "e61b1b9be2"
       }
+    },
+    {
+      "episode_id": "kl052",
+      "status": "confirmed",
+      "slot_type": "news",
+      "genre": "life_tech",
+      "health": false,
+      "domain": "life",
+      "concern_id": "disaster",
+      "entry_question": "近所のローソンや郵便局から、ドローンで荷物が届く日は来る？",
+      "title": "ローソンの荷物がドローンで届く日は？KDDIとWingの提携（10月発表・11月時点）",
+      "format": "dialogue",
+      "structure": "rounds_v4",
+      "source_type": "news",
+      "news_date": "2026-10-27",
+      "verdict_as_of": "2026-11-05",
+      "references": [
+        {
+          "title": "KDDIとWing、国内のドローン配送実現に向け提携",
+          "authors": [],
+          "year": 2026,
+          "venue": "KDDI ニュースルーム（2026年10月27日）",
+          "url": "https://newsroom.kddi.com/news/detail/kddi_nr-1209_4782.html",
+          "is_preprint": false,
+          "institution": "KDDI",
+          "source_kind": "press_release"
+        },
+        {
+          "title": "日本郵便とKDDI、ドローン社会基盤化へ基本合意書を締結し、郵便局をドローンポート拠点とする実証を開始",
+          "authors": [],
+          "year": 2026,
+          "venue": "KDDI ニュースルーム（2026年9月28日）",
+          "url": "https://newsroom.kddi.com/news/detail/kddi_nr-1175_4731.html",
+          "is_preprint": false,
+          "institution": "KDDI／日本郵便",
+          "source_kind": "press_release"
+        },
+        {
+          "title": "国内初、圏外エリアでの衛星直接通信ドローン飛行実証に成功",
+          "authors": [],
+          "year": 2026,
+          "venue": "KDDI ニュースルーム（2026年7月22日）",
+          "url": "https://newsroom.kddi.com/news/detail/kddi_nr-1098_4627.html",
+          "is_preprint": false,
+          "institution": "KDDI／KDDIスマートドローン",
+          "source_kind": "press_release"
+        },
+        {
+          "title": "テレビ朝日、KDDI、KDDIスマートドローン、能登半島で常設ドローンポートを用いた災害報道の実証を実施",
+          "authors": [],
+          "year": 2026,
+          "venue": "KDDI ニュースルーム（2026年10月21日）",
+          "url": "https://newsroom.kddi.com/news/detail/kddi_nr-1202_4768.html",
+          "is_preprint": false,
+          "institution": "テレビ朝日／KDDI／KDDIスマートドローン",
+          "source_kind": "press_release"
+        }
+      ],
+      "hook_idea": "「ローソン・郵便局がドローン基地に」。KDDIの発表資料に書いてあるのは、Wingとの提携と『2027年中に一部エリアで配送開始を目指す』まで。『2万4000局』『33拠点』は報道の数字で、見つけたKDDIの資料には無い。",
+      "notes": "ベスト3の1位（Muse経由の依頼、2026-11-05）。構成 v4、問いは『その発表が示唆する幸せな未来（家・商売）』から（近所の店から荷物が届く暮らし）。【一次資料の裏取り結果 2026-11-05】KDDIリリース（10/27 Wing提携）で確認: Wing Aviation（Alphabet傘下）と提携、2027年中に一部エリアで配送開始を『目指す』、当初はローソン商品を含む食料品・日用品、住宅への配達完了100万件超（Wing、2026年10月時点）、米国で通常30分以内（日本での条件は記載なし）、食料品アクセス困難人口は約904万人（農水省2020）。Starlink・郵便局・33拠点・料金・距離・重さは書かれていない。KDDIリリース（9/28 日本郵便）: 基本合意は2026年6月、珠洲郵便局で9/28〜10/4の実証（Skydio X10、ポート1台）、『2027年度以降の本格的な協業を目指す』。『約2万4000局』『拠点数』は書かれていない（ITmedia記事 10/29 のみ。報道ベースで台詞に使う場合は『報道では』と区別）。KDDIリリース（7/22）: 2026年5月18日に茨城県高萩市で、au Starlink Direct でドローンを圏外で飛行制御（国内初、KDDI調べ）。KDDIリリース（10/21 テレ朝）: 10/7の発災直後想定の実証、能登の7か所のポート、東京からオペレーター2名が4機を同時運航、約15分で離陸、『実際の災害時の運用を示すものではない』。33拠点はITmedia（10/29）、9月の報道は8都道府県20拠点、時点違いの可能性。KDDI一次資料で33は未確認。ローソン池田市の常設ポート（2026年6月）もITmediaのみ。【避ける】kl049（人手不足をインフラ企業が補う構図）と同じ型にしない。投資判断に寄せない。天候・採算の数字は資料に無い（言わない、『資料に無い』と言う）。予想判定は依頼メモで大輔・沙織とも3年だが、確定は台本の論点で決める（3年は物理的な壁があるときだけ）。実在製品の外観: Wingの機体は想像で描かない（kl_photo_commons.py で確認、無ければ汎用の描き方＋イメージ図注記）。",
+      "stage4_snapshot": {
+        "overall_score": 3.75,
+        "evidence_level": null,
+        "announcement_type": "event",
+        "freshness": 5,
+        "candidate_id": "86b2fe10bb"
+      }
     }
   ],
-  "total_topics": 51,
-  "last_updated": "2026-10-31"
+  "total_topics": 52,
+  "last_updated": "2026-11-05"
 }
