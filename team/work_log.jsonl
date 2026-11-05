@@ -78,3 +78,9 @@
 {"ts": "2026-11-05T14:47:04+09:00", "kind": "work", "agent": "kl-art-director", "episode": "kl052", "step": "6.5", "result": "retry", "retries": 1, "note": "ドローン描き直し（S08/S01/S02・Shorts S02 は完了、汎用リング型に）。サムネは2回続けて不合格（1回目: 機体が大きすぎ・電柱が脚に見える／2回目: 機体が右寄りで沙織の頭に近い）のため停止、旧サムネを復元。合成の上部暗幕で背景が暗く見える点も判明"}
 {"ts": "2026-11-05T14:48:46+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl052", "step": "2", "result": "ok", "retries": 0, "note": "概要欄のドローン注記を「イメージ図でありWingの機体とは異なります」に変更"}
 {"ts": "2026-11-05T14:53:09+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl052", "step": "10", "result": "retry", "retries": 1, "note": "outro(kl036)がfinal_checkでボーカル混入により不合格→kl039-BGM-outroに差し替えて合格。Desktop/BGM整理・確認ページ生成"}
+{"ts": "2026-11-05T15:14:48+09:00", "kind": "call", "agent": "kl-art-director", "session": "f77bd582-ef06-4299-b3e6-6eee56a1838d"}
+{"ts": "2026-11-05T15:14:52+09:00", "kind": "work", "agent": "kl-art-director", "episode": "kl052", "step": "6.7", "result": "ok", "retries": 0, "note": "CRITICAL 0件、カード折り返し修正"}
+{"ts": "2026-11-05T15:15:06+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl052", "step": "8", "result": "ok", "retries": 0, "note": "TTS完了、読みQA不一致1行はウイング表記のみ"}
+{"ts": "2026-11-05T15:19:12+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl052", "step": "10", "result": "ok", "retries": 0, "note": "ライブラリ曲、最終検証 初回intro要差替→再実行で合格"}
+{"ts": "2026-11-05T15:22:05+09:00", "kind": "call", "agent": "kl-manager", "session": "f77bd582-ef06-4299-b3e6-6eee56a1838d"}
+{"ts": "2026-11-05T15:22:11+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl052", "step": "11", "result": "ok", "retries": 0, "note": "STEP11判定 進行可。サムネ見出しをローソン寄りに変更、暗幕140"}

@@ -1679,7 +1679,8 @@ def composite_thumbnail_dialogue(image_path: Path, ep: dict, cast: dict = None) 
     band_h = int(h * 0.45)
     grad = Image.new("L", (1, band_h))
     for y in range(band_h):
-        grad.putpixel((0, y), int(220 * (1 - y / band_h) ** 1.1))
+        # 濃さは回ごとに thumbnail_band_alpha で変えられる（既定220。kl052: 明るい背景が暗く沈むため140）
+        grad.putpixel((0, y), int(int(ep.get("thumbnail_band_alpha", 220)) * (1 - y / band_h) ** 1.1))
     band = Image.new("RGBA", (w, band_h), (10, 20, 35, 0))
     band.putalpha(grad.resize((w, band_h)))
     img.alpha_composite(band, (0, 0))
@@ -1763,6 +1764,9 @@ def _wrap_chars(text: str, font, max_w: int) -> list:
     alnum = lambda c: c.isascii() and (c.isalnum() or c in ".-%")
     # 形態素解析が英単語の途中に切れ目を付けることがある（"cod|e"）。英数字どうしの間は切れ目にしない
     good = {b for b in good if not (alnum(text[b - 1]) and alnum(text[b]))}
+    # カタカナ語の途中も切れ目にしない（janome が「ド|ローン」と切ることがある。kl052）
+    kata = lambda c: "ァ" <= c <= "ヺ" or c == "ー"
+    good = {b for b in good if not (kata(text[b - 1]) and kata(text[b]))}
     rows, i = [], 0
     while i < n:
         j = i + 1
