@@ -177,7 +177,7 @@ def _apply_marker(stack: Image.Image, rects: list, p: float) -> None:
         stack.paste(Image.merge("RGBA", (*rgb.split(), al)), box[:2])
 
 
-def card_timing(parts: dict, dur: float) -> dict:
+def card_timing(parts: dict, dur: float, cues: dict = None) -> dict:
     """マーカーと箇条書きを出す時刻。台詞の長さ（dur）の中に散らす。"""
     n = len(parts["items"])
     has_marker = bool(parts["markers"])
@@ -187,6 +187,13 @@ def card_timing(parts: dict, dur: float) -> dict:
         end = max(start + n * 0.6, dur * 0.72)
         step = min(2.6, max(0.55, (end - start) / n))
         timing["items_at"] = [start + i * step for i in range(n)]
+    # 台詞に合わせる指定（scene.motion_cues: marker＝マーカーを引く秒、items＝箇条書きを出す秒のリスト。シーンの頭から）
+    cues = cues or {}
+    if cues.get("marker") is not None:
+        timing["marker_at"] = float(cues["marker"])
+    for i, v in enumerate(cues.get("items") or []):
+        if i < n:
+            timing["items_at"][i] = float(v)
     return timing
 
 
@@ -233,7 +240,30 @@ def card_frame(parts: dict, bg_big: Image.Image, t: float, dur: float, timing: d
             moved.putalpha(alpha)
             layer = moved
         stack.alpha_composite(layer)
+    _zoom_highlight(stack, parts["markers"], (t - timing["marker_at"] - MARKER_SECONDS) / 0.7)
     return _compose(parts, bg_big, stack, t, dur)
+
+
+def _zoom_highlight(stack: Image.Image, rects: list, p: float, scale: float = 1.07) -> None:
+    """引用の強調箇所を、マーカーが引き終わったあとにわずかに拡大して見せる（最大 1.07 倍）。
+    動きの途中だけの見せ方で、静止画（最終フレーム）には適用しない。"""
+    if p <= 0 or not rects:
+        return
+    if p >= 1:
+        return          # 拡大して戻る（パルス）。最終フレームは等倍で静止画と一致する
+    p = math.sin(math.pi * p)
+    x0 = min(r[0] for r in rects) - 10
+    y0 = min(r[1] for r in rects) - 10
+    x1 = max(r[2] for r in rects) + 10
+    y1 = max(r[3] for r in rects) + 10
+    if (y1 - y0) > 220:
+        return
+    box = tuple(int(v) for v in (max(0, x0), max(0, y0), min(stack.width, x1), min(stack.height, y1)))
+    reg = stack.crop(box)
+    k = 1 + (scale - 1) * p
+    nw, nh = int(reg.width * k), int(reg.height * k)
+    big = reg.resize((nw, nh), Image.LANCZOS)
+    stack.alpha_composite(big, (box[0] - (nw - reg.width) // 2, box[1] - (nh - reg.height) // 2))
 
 
 def _compose(parts, bg_big, stack, t, dur):
@@ -369,7 +399,7 @@ def _anchor_box(parts: dict, idx: int):
 
 def _annotations_start(parts: dict) -> float:
     n = len(parts.get("rows") or parts.get("pts") or [])
-    return CHART_AT + max(0, n - 1) * CHART_STAGGER + CHART_GROW + 0.5
+    return parts.get("chart_at", CHART_AT) + max(0, n - 1) * CHART_STAGGER + CHART_GROW + 0.5
 
 
 def _draw_annotations(parts: dict, dr, t: float) -> None:
@@ -425,7 +455,7 @@ def chart_stack(parts: dict, t: float) -> Image.Image:
         _draw_annotations(parts, dr, t)
         return stack
     for i, r in enumerate(parts["rows"]):
-        p = ease_out((t - CHART_AT - i * CHART_STAGGER) / CHART_GROW)
+        p = ease_out((t - parts.get("chart_at", CHART_AT) - i * CHART_STAGGER) / CHART_GROW)
         if p <= 0:
             continue
         bx0, bh = parts["bx0"], parts["bar_h"]
@@ -441,7 +471,7 @@ def chart_stack(parts: dict, t: float) -> Image.Image:
 def _draw_line(parts, dr, t):
     """折れ線が左から右へ伸び、点の値が順に出る。"""
     pts = parts["pts"]
-    p = ease_io((t - CHART_AT) / 1.8)
+    p = ease_io((t - parts.get("chart_at", CHART_AT)) / 1.8)
     n = len(pts)
     pos = p * (n - 1)               # 何番目の点まで線が届いたか（小数）
     col = BAR_COLOR
@@ -471,7 +501,7 @@ def _draw_number(parts, dr, t):
     total = wn + (16 + wu if unit else 0)
     cx = (x0 + x1) / 2
     xr = cx - total / 2 + wn
-    p = ease_out((t - CHART_AT) / 1.5)
+    p = ease_out((t - parts.get("chart_at", CHART_AT)) / 1.5)
     cur = _fmt(value * p, dec)
     y = bt - 8
     if p > 0:
@@ -481,7 +511,7 @@ def _draw_number(parts, dr, t):
     cap = chart.get("caption", "")
     if cap:
         fc = D._font(D.FONT_MEDIUM, 40)
-        a = ease_out((t - CHART_AT - 1.0) / 0.5)
+        a = ease_out((t - parts.get("chart_at", CHART_AT) - 1.0) / 0.5)
         if a > 0:
             dr.text((cx, y + 262), cap, font=fc, fill=INK if a >= 1 else (90, 96, 108), anchor="mt")
 
@@ -521,7 +551,24 @@ def make_motion_clip(scene: dict, dur: float, dst: Path, fps: int = 24, ffmpeg: 
     if parts is None:
         return False
     bg_big = _prepare_bg_big(parts["bg"])
-    timing = card_timing(parts, dur) if parts["kind"] == "card" else None
+    cues = dict(scene.get("motion_cues") or {})
+    # 完成形で静止する時間を残すため、指定の秒は「シーンの長さ − 3.5秒」までに切り詰める（昇順にもそろえる）
+    cap = max(0.0, dur - 3.5)
+    if cues.get("marker") is not None:
+        cues["marker"] = min(float(cues["marker"]), max(0.0, cap - MARKER_SECONDS))
+    if cues.get("items"):
+        cues["items"] = [min(float(v), cap) for v in sorted(cues["items"])]
+    if cues.get("chart") is not None:
+        # グラフは「伸びる時間＋注釈の時間」も引く（完成形で2秒以上静止させる）
+        ch = scene.get("chart") or {}
+        n = len(parts.get("rows") or parts.get("pts") or [])
+        grow = {"line": 1.8, "number": 2.0}.get(ch.get("kind", "bar"), max(0, n - 1) * CHART_STAGGER + CHART_GROW)
+        na = len(ch.get("annotations") or [])
+        ann = (0.5 + (na - 1) * 1.4 + 1.1) if na else 0.0
+        cues["chart"] = max(0.0, min(float(cues["chart"]), dur - 2.0 - grow - ann))
+    timing = card_timing(parts, dur, cues) if parts["kind"] == "card" else None
+    if parts["kind"] != "card" and cues.get("chart") is not None:
+        parts["chart_at"] = cues["chart"]
     n = max(1, int(dur * fps))
     cmd = [ffmpeg, "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(fps), "-i", "-",
            "-c:v", "libx264", "-crf", "18", "-preset", "medium", "-pix_fmt", "yuv420p", str(dst)]
