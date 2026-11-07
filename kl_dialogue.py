@@ -714,18 +714,26 @@ def validate_rounds_v2(ep: dict) -> list:
         if s.get("source_card"):
             errs.append(f"v2: {where}: chart と source_card は同じシーンに置けません（別のシーンに分ける）")
         kind = c.get("kind", "bar")
-        if kind not in ("bar", "number"):
-            errs.append(f"v2: {where}: chart.kind は bar / number")
+        if kind not in ("bar", "line", "number"):
+            errs.append(f"v2: {where}: chart.kind は bar / line / number")
         if not c.get("source"):
             errs.append(f"v2: {where}: chart.source（資料名と日付）がありません")
         if not c.get("title") or len(c["title"]) > 30:
             errs.append(f"v2: {where}: chart.title は1〜30字")
         if len(c.get("unit", "")) > 6:
             errs.append(f"v2: {where}: chart.unit は6字以内")
-        if kind == "bar":
+        for an in c.get("annotations") or []:
+            # 注釈（囲み・矢印）: target は items の番号かラベル、text は12字以内（省略可）。bar / line のみ
+            tg = an.get("target")
+            its_ = c.get("items") or []
+            if kind == "number" or not (isinstance(tg, int) and 0 <= tg < len(its_) or tg in [i.get("label") for i in its_]):
+                errs.append(f"v2: {where}: chart.annotations の target は items の番号かラベル（bar / line のみ）")
+            if len(an.get("text", "")) > 12:
+                errs.append(f"v2: {where}: chart.annotations の text は12字以内")
+        if kind in ("bar", "line"):
             its = c.get("items") or []
-            if not (2 <= len(its) <= 6):
-                errs.append(f"v2: {where}: chart.items は2〜6本")
+            if not (2 <= len(its) <= (8 if kind == "line" else 6)):
+                errs.append(f"v2: {where}: chart.items は2〜{8 if kind == 'line' else 6}本")
             for it in its:
                 v = it.get("value")
                 if not isinstance(v, (int, float)) or isinstance(v, bool) or v < 0:
@@ -855,9 +863,13 @@ BAR_COLOR = (10, 22, 38, 205)
 INACTIVE_BRIGHTNESS = 0.55
 
 
+FOCUS_ACTIVE = 1.07   # 話している側を少し大きく・前に（動画の立ち絵のみ。聞き手は 0.94 倍＋暗く。2026-11-07）
+
+
 class SpriteBank:
-    def __init__(self, cast: dict):
+    def __init__(self, cast: dict, focus: float = 1.0):
         self.cast = cast
+        self.focus = focus   # 話し手の拡大率（1.0 は従来どおり）
         self._cache = {}
 
     def get(self, role: str, expr: str, h: int, active: bool) -> Image.Image:
@@ -867,7 +879,7 @@ class SpriteBank:
             if not path.exists():
                 path = CAST_DIR / f"{role}_neutral.png"
             im = Image.open(path).convert("RGBA")
-            hh = h if active else int(h * 0.94)
+            hh = int(h * self.focus) if active else int(h * 0.94)
             im = im.resize((int(im.width * hh / im.height), hh), Image.LANCZOS)
             if not active:
                 a = im.getchannel("A")
@@ -1136,9 +1148,19 @@ def render_layer(state: dict, layout: dict, cast: dict, bank: SpriteBank,
             else:
                 cy = int(H * layout["text_cy"])
             y = cy - (line_h * len(rows)) // 2
+        pop = state.get("pop")
+        if pop and not teaser:
+            # 出現の瞬間だけ少し小さい字から大きくなる（ポップイン。2026-11-07）。行の折り返しは最終の大きさと同じにするため、
+            # 最終の f で行を決めたあと、同じ行を pop 倍の字で描く
+            f = _font(FONT_MEDIUM, max(8, int(f.size * pop)))
+            line_h = int(f.size * 1.32)
+            y = cy - (line_h * len(rows)) // 2
         for r in rows:
-            rw = _text_w(dr, r, f, stroke)
-            dr.text(((W - rw) // 2, y), r, font=f, fill=color, stroke_width=stroke, stroke_fill=(0, 0, 0))
+            if state.get("kw") and not teaser:
+                _draw_row_keywords(dr, r, f, color, stroke, W, y)
+            else:
+                rw = _text_w(dr, r, f, stroke)
+                dr.text(((W - rw) // 2, y), r, font=f, fill=color, stroke_width=stroke, stroke_fill=(0, 0, 0))
             y += line_h
 
     # Shortsの最後の誘導など
@@ -1156,6 +1178,26 @@ def draw_bar(im: Image.Image, dr: ImageDraw.ImageDraw, layout: dict) -> None:
     band = Image.new("RGBA", (W, layout["bar_h"]), BAR_COLOR)
     im.alpha_composite(band, (0, H - layout["bar_h"]))
     dr.line((0, H - layout["bar_h"], W, H - layout["bar_h"]), fill=(240, 168, 104, 200), width=3)
+
+
+_KW_RE = _re.compile(r"\d[\d,.]*(?:[万億兆]|%|％|倍|割|年|か月|ヶ月|カ月|日|時間|分|秒|人|件|円|ドル|歳|回|台|個|kg|km|cm|mm|m)?")
+KW_COLOR = (255, 214, 90)   # 数字（と単位）は黄色で目立たせる（字幕の話者色の代わりに）
+
+
+def _draw_row_keywords(dr, row: str, f, color, stroke: int, W: int, y: int) -> None:
+    """字幕の1行を、数字＋単位だけ黄色にして描く（全体は中央ぞろえ）。"""
+    segs, pos = [], 0
+    for m in _KW_RE.finditer(row):
+        if m.start() > pos:
+            segs.append((row[pos:m.start()], color))
+        segs.append((m.group(0), KW_COLOR))
+        pos = m.end()
+    if pos < len(row):
+        segs.append((row[pos:], color))
+    x = (W - _text_w(dr, row, f, stroke)) // 2
+    for text, col in segs:
+        dr.text((x, y), text, font=f, fill=col, stroke_width=stroke, stroke_fill=(0, 0, 0))
+        x += dr.textlength(text, font=f)
 
 
 def _state_key(state: dict, sprites: bool = True) -> str:
@@ -1363,9 +1405,12 @@ def _prepare_events(events: list, blank_after: float = None) -> list:
     return dedup
 
 
+POP_SCALES = (0.88, 0.95, 1.04)   # 字幕のポップイン（3フレーム。その後 1.0 で静止）
+
+
 def build_overlay_track(events: list, total_dur: float, layout: dict, cast: dict, tmp: Path,
                         out_mov: Path, fps: int, ffmpeg: str = "ffmpeg",
-                        blank_after: float = None, sprites: bool = True, bar: bool = True) -> None:
+                        blank_after: float = None, sprites: bool = True, bar: bool = True, pop: bool = False) -> None:
     """時刻表から透明な重ね合わせ動画（qtrle .mov）を作る。同じ画面状態のPNGは使い回す。
     blank_after を指定すると、その時刻以降は何も重ねない（本編のロゴアウトロ用）。
     sprites=False・bar=False は、動画の立ち絵（build_sprite_tracks）と組み合わせるときに使う
@@ -1374,17 +1419,32 @@ def build_overlay_track(events: list, total_dur: float, layout: dict, cast: dict
     dedup = _prepare_events(events, blank_after)
     cache = {}
     entries = []
-    for i, (t, st) in enumerate(dedup):
-        t_next = dedup[i + 1][0] if i + 1 < len(dedup) else total_dur
-        dur = max(0.0, t_next - t)
-        if dur <= 0:
-            continue
+
+    def layer_png(st):
         key = _state_key(st, sprites)
         if key not in cache:
             p = tmp / f"layer_{len(cache):04d}.png"
             render_layer(st, layout, cast, bank, sprites=sprites, bar=bar, nameplates=sprites).save(p)
             cache[key] = p
-        entries.append((cache[key], dur))
+        return cache[key]
+
+    prev_text = None
+    for i, (t, st) in enumerate(dedup):
+        t_next = dedup[i + 1][0] if i + 1 < len(dedup) else total_dur
+        dur = max(0.0, t_next - t)
+        if dur <= 0:
+            continue
+        text = st.get("text")
+        if (pop and text and text != prev_text and st.get("mode") == "normal"
+                and dur > len(POP_SCALES) / fps + 0.3):
+            # 字幕の出現: 数フレームだけ小さい字から大きくなる。数字は黄色（kw）。残りは最終の大きさで静止
+            fr = 1.0 / fps
+            for sc in POP_SCALES:
+                entries.append((layer_png(dict(st, pop=sc, kw=True)), fr))
+            entries.append((layer_png(dict(st, kw=True)), dur - fr * len(POP_SCALES)))
+        else:
+            entries.append((layer_png(dict(st, kw=True) if (pop and text and st.get("mode") == "normal") else st), dur))
+        prev_text = text
     lst = tmp / "layers.ffconcat"
     body = ["ffconcat version 1.0"]
     for p, d in entries:
@@ -1487,7 +1547,7 @@ def sprite_track_filter(track: dict, k: int, fps: int, out_label: str):
 
 
 def build_sprite_tracks(events: list, total_dur: float, layout: dict, cast: dict, tmp: Path,
-                        fps: int, ffmpeg: str = "ffmpeg", blank_after: float = None, talk: bool = True) -> dict:
+                        fps: int, ffmpeg: str = "ffmpeg", blank_after: float = None, talk: bool = True, focus: bool = True) -> dict:
     """立ち絵を役ごとの透明な動画トラックにする。返り値:
       {"tracks": [{"role", "list": ffconcat のパス, "x", "y"}], "bar": {"png", "x", "y", "spans"} or None}
     tracks の list は `-f concat -safe 0 -i` でそのまま入力にできる（kl_video_gen.overlay_dialogue）。
@@ -1510,7 +1570,7 @@ def build_sprite_tracks(events: list, total_dur: float, layout: dict, cast: dict
       自分の周期で位相を決める（同じ種類のループに戻ると動きは続きから）。切り替えはカット（どちらも同じ静止画
       から作っているので頭の位置はほぼ同じ。kl042 で確認）"""
     from concurrent.futures import ThreadPoolExecutor
-    bank = SpriteBank(cast)
+    bank = SpriteBank(cast, focus=FOCUS_ACTIVE if focus else 1.0)
     W, H = layout["W"], layout["H"]
     dedup = _prepare_events(events, blank_after)
     total_frames = int(round(total_dur * fps))
@@ -1557,7 +1617,7 @@ def build_sprite_tracks(events: list, total_dur: float, layout: dict, cast: dict
                 xs1 += [x + spw, r[2]]
         cx, cx1 = max(0, min(xs0)), min(W, max(xs1))
         cw = cx1 - cx
-        ch = layout["sprite_h"]
+        ch = int(layout["sprite_h"] * (FOCUS_ACTIVE if focus else 1.0)) + 2   # 話し手を拡大しても収まる高さ
         cy = H - ch
         blank_key = (role, "__blank__")
         if blank_key not in variants:

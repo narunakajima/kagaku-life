@@ -263,6 +263,7 @@ def chart_text(chart: dict) -> str:
     else:
         unit = chart.get("unit", "")
         parts += [f"・{it['label']} {it['value']}{unit}" for it in chart.get("items") or []]
+    parts += [f"［注釈］{an['text']}" for an in chart.get("annotations") or [] if an.get("text")]
     if chart.get("note"):
         parts.append(f"※{chart['note']}")
     return " ".join(p for p in parts if p)
@@ -288,6 +289,9 @@ def chart_parts(chart: dict, W: int = W0, H: int = H0) -> dict:
         return parts
     items = chart["items"]
     unit = chart.get("unit", "")
+    if chart.get("kind") == "line":
+        _line_parts(parts, dr, items, unit, body_bottom)
+        return parts
     fl = D._font(D.FONT_MEDIUM, 34)
     label_w = min(380, max(int(D._text_w(dr, it["label"], fl)) for it in items))
     decs = [_decimals(it["value"]) for it in items]
@@ -316,12 +320,99 @@ def chart_parts(chart: dict, W: int = W0, H: int = H0) -> dict:
     return parts
 
 
+def _line_parts(parts, dr, items, unit, body_bottom):
+    """折れ線: 点の位置を決め、横軸のラベルと軸線は紙の層（動かさない）に描く。"""
+    bx0, bt, bx1, _ = parts["body"]
+    paper = parts["paper"]
+    fl = D._font(D.FONT_MEDIUM, 30)
+    fv = D._font(D.FONT_BOLD, 34)
+    chart = parts["chart"]
+    top, bottom = bt + 44, body_bottom - 46          # 値ラベルの余白と、横軸ラベルの余白
+    lo = float(chart.get("min", 0))
+    vmax = float(chart.get("max") or max(it["value"] for it in items))
+    span = (vmax - lo) or 1.0
+    n = len(items)
+    left, right = bx0 + 50, bx1 - 50
+    pts = []
+    hl = chart.get("highlight")
+    for i, it in enumerate(items):
+        x = left + (right - left) * (i / (n - 1))
+        y = bottom - (bottom - top) * ((it["value"] - lo) / span)
+        is_hl = (hl == i) if isinstance(hl, int) else (hl == it["label"])
+        pts.append({"x": x, "y": y, "label": it["label"], "value": it["value"], "dec": _decimals(it["value"]), "hl": is_hl})
+    pd = ImageDraw.Draw(paper)
+    pd.line((left - 24, bottom + 6, right + 24, bottom + 6), fill=(190, 194, 202, 255), width=3)
+    for p in pts:
+        pd.text((p["x"], bottom + 14), p["label"], font=fl, fill=INK, anchor="mt")
+    parts.update({"pts": pts, "unit": unit, "fv": fv})
+
+
+def _target_index(chart: dict, target) -> int:
+    items = chart["items"]
+    return target if isinstance(target, int) else [i["label"] for i in items].index(target)
+
+
+def _anchor_box(parts: dict, idx: int):
+    """注釈の囲みで囲む範囲（値の文字）の (cx, cy, rx, ry) と、その値の文字を描き終わる時刻のための番号。"""
+    fv = parts["fv"]
+    tmp = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+    if parts["chart"].get("kind") == "line":
+        p = parts["pts"][idx]
+        txt = _fmt(p["value"], p["dec"]) + parts["unit"]
+        w = D._text_w(tmp, txt, fv)
+        return p["x"], p["y"] - 41, w / 2 + 20, 32
+    r = parts["rows"][idx]
+    txt = _fmt(r["value"], r["dec"]) + parts["unit"]
+    w = D._text_w(tmp, txt, fv)
+    return parts["bx0"] + r["len"] + 14 + w / 2, r["cy"], w / 2 + 20, 32
+
+
+def _annotations_start(parts: dict) -> float:
+    n = len(parts.get("rows") or parts.get("pts") or [])
+    return CHART_AT + max(0, n - 1) * CHART_STAGGER + CHART_GROW + 0.5
+
+
+def _draw_annotations(parts: dict, dr, t: float) -> None:
+    """注釈の出現（台詞の順）: 値の周りに囲みが描かれ、矢印が伸びて短い一言が出る。注釈ごとに 1.4 秒ずつずらす。
+    scene の chart.annotations: [{"target": 番号かラベル, "text": 12字以内, "at": 出す秒（省略可）}]"""
+    ann = parts["chart"].get("annotations") or []
+    t0 = _annotations_start(parts)
+    for k, an in enumerate(ann):
+        at = float(an.get("at", t0 + k * 1.4))
+        cx, cy, rx, ry = _anchor_box(parts, _target_index(parts["chart"], an["target"]))
+        pc = ease_io((t - at) / 0.6)
+        if pc <= 0:
+            continue
+        col = (214, 60, 52)
+        # 囲み: 上から時計回りに一周描く（PIL の arc は 3時の位置が 0 度）
+        dr.arc((cx - rx, cy - ry, cx + rx, cy + ry), start=-90, end=-90 + 360 * pc, fill=col, width=5)
+        text = an.get("text", "")
+        pa = ease_out((t - at - 0.5) / 0.5)
+        if text and pa > 0:
+            ft = D._font(D.FONT_BOLD, 32)
+            tw = D._text_w(dr, text, ft)
+            x0, bt, x1, _ = parts["body"]
+            tx = min(max(cx, x0 + tw / 2 + 6), x1 - tw / 2 - 6)
+            ty = max(bt + 6, cy - ry - 74)
+            ay0, ay1 = ty + 40, cy - ry - 4          # 文字の下から囲みの上へ、矢印が伸びる
+            if ay1 > ay0:
+                ey = ay0 + (ay1 - ay0) * pa
+                dr.line((cx, ay0, cx, ey), fill=col, width=5)
+                if pa >= 1:
+                    dr.polygon([(cx, ay1 + 2), (cx - 9, ay1 - 14), (cx + 9, ay1 - 14)], fill=col)
+            dr.text((tx, ty), text, font=ft, fill=col if pa >= 1 else (180, 90, 84), anchor="mt")
+
+
 def chart_stack(parts: dict, t: float) -> Image.Image:
     stack = parts["paper"].copy()
     dr = ImageDraw.Draw(stack)
     chart = parts["chart"]
     if chart.get("kind", "bar") == "number":
         _draw_number(parts, dr, t)
+        return stack
+    if chart.get("kind") == "line":
+        _draw_line(parts, dr, t)
+        _draw_annotations(parts, dr, t)
         return stack
     for i, r in enumerate(parts["rows"]):
         p = ease_out((t - CHART_AT - i * CHART_STAGGER) / CHART_GROW)
@@ -333,7 +424,29 @@ def chart_stack(parts: dict, t: float) -> Image.Image:
         dr.rounded_rectangle((bx0, r["cy"] - bh / 2, bx0 + length, r["cy"] + bh / 2), radius=8, fill=col)
         txt = _fmt(r["value"] * p, r["dec"]) + parts["unit"]
         dr.text((bx0 + length + 14, r["cy"] - 24), txt, font=parts["fv"], fill=INK)
+    _draw_annotations(parts, dr, t)
     return stack
+
+
+def _draw_line(parts, dr, t):
+    """折れ線が左から右へ伸び、点の値が順に出る。"""
+    pts = parts["pts"]
+    p = ease_io((t - CHART_AT) / 1.8)
+    n = len(pts)
+    pos = p * (n - 1)               # 何番目の点まで線が届いたか（小数）
+    col = BAR_COLOR
+    for i in range(n - 1):
+        f = _clip01(pos - i)
+        if f <= 0:
+            break
+        a, b = pts[i], pts[i + 1]
+        dr.line((a["x"], a["y"], a["x"] + (b["x"] - a["x"]) * f, a["y"] + (b["y"] - a["y"]) * f), fill=col, width=7, joint="curve")
+    for i, q in enumerate(pts):
+        if pos < i - 1e-6:
+            break
+        r = 12 if q["hl"] else 9
+        dr.ellipse((q["x"] - r, q["y"] - r, q["x"] + r, q["y"] + r), fill=BAR_HIGHLIGHT if q["hl"] else col)
+        dr.text((q["x"], q["y"] - 24), _fmt(q["value"], q["dec"]) + parts["unit"], font=parts["fv"], fill=INK, anchor="mb")
 
 
 def _draw_number(parts, dr, t):
@@ -430,7 +543,85 @@ def main():
     p.add_argument("--scene", type=int, required=True)
     p.add_argument("--seconds", type=float, default=0, help="省略時はシーンの音声の長さ＋1.5秒（なければ14秒）")
     p.add_argument("--out", required=True)
+    d = sub.add_parser("demo", help="見本のグラフ（bar／line／number、注釈つき）を書き出して動きを確認する")
+    d.add_argument("--kind", choices=["bar", "line", "number"], default="line")
+    d.add_argument("--seconds", type=float, default=12.0)
+    d.add_argument("--out", required=True, help="出力の mp4（同名の .png に最後のフレーム）")
+    s2 = sub.add_parser("subtitle-demo", help="字幕のポップイン（3フレーム＋最終）と数字の黄色を PNG で書き出す")
+    s2.add_argument("--text", default="42.5%の人が3年以内に変わった")
+    s2.add_argument("--outdir", required=True)
+    s3 = sub.add_parser("ambient-demo", help="イラストの光の揺らぎ（ken burns + ambient）を1枚の画像から2秒だけ作る")
+    s3.add_argument("--image", required=True)
+    s3.add_argument("--out", required=True)
+    s4 = sub.add_parser("focus-demo", help="話者フォーカス（話し手 1.07 倍）の立ち絵トラックを短い疑似イベントで作り、1フレームずつ PNG にする")
+    s4.add_argument("--outdir", required=True)
     a = ap.parse_args()
+    if a.cmd == "focus-demo":
+        import tempfile
+        cast = D.load_cast()
+        od = Path(a.outdir)
+        od.mkdir(parents=True, exist_ok=True)
+        base = {"mode": "normal", "chart": False, "badge": None, "stamps": None, "cta": None,
+                "exprs": {"dreamer": "neutral", "skeptic": "neutral"}, "text": "テスト"}
+        events = [(0.0, dict(base, speaker="dreamer")), (2.0, dict(base, speaker="skeptic"))]
+        with tempfile.TemporaryDirectory() as tmp:
+            tp = Path(tmp)
+            sp = D.build_sprite_tracks(events, 4.0, D.MAIN_LAYOUT, cast, tp, 24, "ffmpeg", talk=False, focus=True)
+            for t in sp["tracks"]:
+                print("  トラック", t["role"], "x=", t["x"], "y=", t["y"])
+            ins = []
+            chain, prev, k = [], "bg", 1
+            for t in sp["tracks"]:
+                i2, flt, used = D.sprite_track_filter(t, k, 24, f"s{k}")
+                ins += i2
+                chain.append(f"{flt};[{prev}][s{k}]overlay={t['x']}:{t['y']}:eof_action=pass[o{k}]")
+                prev, k = f"o{k}", k + used
+            for name, ts in (("dreamer_speaks", 1.0), ("skeptic_speaks", 3.0)):
+                cmd = (["ffmpeg", "-y", "-v", "error", "-f", "lavfi", "-i", "color=c=0x3c465a:s=1408x768:r=24"] + ins
+                       + ["-filter_complex", chain[0].replace("[bg]", "[0:v]") if len(chain) == 1 else
+                          ";".join(chain).replace("[bg]", "[0:v]"),
+                          "-map", f"[{prev}]", "-ss", str(ts), "-frames:v", "1", str(od / f"focus_{name}.png")])
+                r = subprocess.run(cmd, capture_output=True, text=True)
+                if r.returncode != 0:
+                    print(r.stderr[-800:])
+                    return 1
+        print(f"書き出し: {od}/focus_dreamer_speaks.png, focus_skeptic_speaks.png")
+        return 0
+    if a.cmd == "subtitle-demo":
+        cast = D.load_cast()
+        bank = D.SpriteBank(cast)
+        od = Path(a.outdir)
+        od.mkdir(parents=True, exist_ok=True)
+        for name, extra in [("pop1", {"pop": D.POP_SCALES[0]}), ("pop3", {"pop": D.POP_SCALES[2]}), ("final", {})]:
+            st = {"mode": "normal", "chart": False, "badge": None, "stamps": None, "cta": None, "speaker": "dreamer",
+                  "exprs": {"dreamer": "neutral", "skeptic": "neutral"}, "text": a.text, "kw": True, **extra}
+            im = D.render_layer(st, D.MAIN_LAYOUT, cast, bank, sprites=False, bar=False, nameplates=False)
+            bg = Image.new("RGBA", im.size, (60, 70, 90, 255))
+            bg.alpha_composite(im)
+            bg.convert("RGB").save(od / f"subtitle_{name}.png")
+        print(f"書き出し: {od}/subtitle_pop1.png, subtitle_pop3.png, subtitle_final.png")
+        return 0
+    if a.cmd == "ambient-demo":
+        import kl_video_gen as V
+        V.make_ken_burns(Path(a.image), Path(a.out), 2.0, "zoom_in", ambient=True)
+        print(f"書き出し: {a.out}")
+        return 0
+    if a.cmd == "demo":
+        base = {"source": "見本の資料（2026-11-07）", "title": "見本のグラフ", "unit": "%", "highlight": 2,
+                "annotations": [{"target": 2, "text": "ここが転機"}]}
+        if a.kind == "number":
+            base = {"source": base["source"], "title": "見本の数字", "kind": "number", "value": 42.5, "unit": "%",
+                    "caption": "見本のキャプション"}
+        else:
+            base["kind"] = a.kind
+            base["items"] = [{"label": "2021", "value": 12}, {"label": "2022", "value": 18.5},
+                             {"label": "2023", "value": 41}, {"label": "2024", "value": 57}]
+        out = Path(a.out)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        render_chart_static(base, out.with_suffix(".png"))
+        make_motion_clip({"chart": base}, a.seconds, out)
+        print(f"書き出し: {out}（{a.seconds:.1f}秒）と {out.with_suffix('.png')}")
+        return 0
     ep = json.loads((D.BASE_DIR / "episodes" / f"{a.episode}.json").read_text())
     sc = next(s for s in ep["scenes"] if s["scene_id"] == a.scene)
     dur = a.seconds

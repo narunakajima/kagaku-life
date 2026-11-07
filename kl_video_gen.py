@@ -134,7 +134,7 @@ def probe_audio_duration(path: Path) -> float:
 
 
 def make_ken_burns(src: Path, dst: Path, duration: float, effect: str, anchor: tuple = (0.5, 0.5),
-                   w: int = OUTPUT_W, h: int = OUTPUT_H):
+                   w: int = OUTPUT_W, h: int = OUTPUT_H, ambient: bool = False):
     """画像にKen Burnsエフェクトを適用して動画クリップを生成する（SCのmake_ken_burnsと同じ仕組み）。"""
     if effect == "pan_zoom_out":
         # 2人構図用の汎用値。左右どちら向きにパンするかはSCと同じくランダムに
@@ -241,6 +241,11 @@ def make_ken_burns(src: Path, dst: Path, duration: float, effect: str, anchor: t
             f":d={total_frames}:s={w}x{h}:fps={FPS},setsar=1,format=yuv420p"
         )
 
+    if ambient and effect != "static":
+        # イラストシーンの緩い動き（2026-11-07）: ズームに加えて、光がゆっくり揺らぐ（明るさ±1.8%・周期7秒）。
+        # 構図は動かさないので、立ち絵・字幕の見やすさには影響しない。--no-motion で外れる
+        vf = vf.replace(",setsar=1,format=yuv420p",
+                        ",eq=brightness='0.018*sin(2*PI*t/7)':eval=frame,setsar=1,format=yuv420p")
     run_cmd(
         [
             FFMPEG, "-y", "-loop", "1", "-i", str(src),
@@ -706,7 +711,8 @@ def no_talk_requested(flag: bool = False) -> bool:
 
 def overlay_dialogue(video_with_audio: Path, events: list, total_dur: float, layout: dict, cast: dict,
                      tmp: Path, out: Path, static_cast: bool = False, blank_after: float = None,
-                     limit: float = None, label: str = "字幕・立ち絵の重ね合わせ", talk: bool = True):
+                     limit: float = None, label: str = "字幕・立ち絵の重ね合わせ", talk: bool = True,
+                     focus: bool = True):
     """掛け合い形式の重ね合わせ。static_cast=False で assets/cast/video/*.webm がある表情は動画の立ち絵にする
     （2026-10-17、パイロット）。重ねる順: 背景 → 字幕帯 → 大輔 → 沙織 → 字幕・名札・判定ラベル等。
     static_cast=True、または動画の立ち絵が1つも無いときは従来どおり（立ち絵も字幕帯も1本の重ね合わせ動画）。
@@ -716,7 +722,7 @@ def overlay_dialogue(video_with_audio: Path, events: list, total_dur: float, lay
     overlay = tmp / "overlay.mov"
     use_video = not static_cast and D.cast_video_available()
     if not use_video:
-        D.build_overlay_track(events, dur, layout, cast, tmp, overlay, FPS, FFMPEG, blank_after=blank_after)
+        D.build_overlay_track(events, dur, layout, cast, tmp, overlay, FPS, FFMPEG, blank_after=blank_after, pop=focus)
         run_cmd(
             [FFMPEG, "-y", "-i", str(video_with_audio), "-i", str(overlay),
              "-filter_complex", "[0:v][1:v]overlay=0:0:eof_action=pass,format=yuv420p[v]",
@@ -726,8 +732,8 @@ def overlay_dialogue(video_with_audio: Path, events: list, total_dur: float, lay
         )
         return
     D.build_overlay_track(events, dur, layout, cast, tmp, overlay, FPS, FFMPEG, blank_after=blank_after,
-                          sprites=False, bar=False)
-    sp = D.build_sprite_tracks(events, dur, layout, cast, tmp, FPS, FFMPEG, blank_after=blank_after, talk=talk)
+                          sprites=False, bar=False, pop=focus)
+    sp = D.build_sprite_tracks(events, dur, layout, cast, tmp, FPS, FFMPEG, blank_after=blank_after, talk=talk, focus=focus)
     inputs = ["-i", str(video_with_audio), "-i", str(overlay)]
     chain, prev, k = [], "0:v", 2
     if sp["bar"] and sp["bar"]["spans"]:
@@ -820,7 +826,8 @@ def gen_video(episode_id: str, out_dir: Path = None, static_cast: bool = False, 
                     print(f"  動きのクリップ S{sid:02d} ({dur:.1f}s)")
                     kl_motion.make_motion_clip(scene, dur, clip, FPS, FFMPEG, OUTPUT_W, OUTPUT_H)
                 else:
-                    make_ken_burns(img, clip, dur, scene.get("ken_burns", "static"), (anchor["x"], anchor["y"]))
+                    make_ken_burns(img, clip, dur, scene.get("ken_burns", "static"), (anchor["x"], anchor["y"]),
+                                   ambient=motion_requested(no_motion))
                 paths.append(clip)
             return paths
 
@@ -882,7 +889,7 @@ def gen_video(episode_id: str, out_dir: Path = None, static_cast: bool = False, 
             overlay_dialogue(video_with_audio, events, total_dur, D.MAIN_LAYOUT, cast, tmp, output_file,
                              static_cast=static_cast_requested(static_cast),
                              blank_after=intro_block_dur + main_block_dur, limit=limit,
-                             talk=not no_talk_requested(no_talk))
+                             talk=not no_talk_requested(no_talk), focus=motion_requested(no_motion))
         else:
             burn_telop_global(video_with_audio, all_scenes, all_offsets, all_durs, output_file, tmp)
 
@@ -1015,7 +1022,7 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None, static_cast: bool = 
             layered = tmp / "layered.mp4"
             overlay_dialogue(video_with_audio, events, total_dur, D.SHORTS_LAYOUT, cast, tmp, layered,
                              static_cast=static_cast_requested(static_cast), limit=limit,
-                             talk=not no_talk_requested(no_talk))
+                             talk=not no_talk_requested(no_talk), focus=False)
             video_with_audio = layered
 
         print("\n--- テロップ焼き込み ---")
