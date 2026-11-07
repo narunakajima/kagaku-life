@@ -395,7 +395,17 @@ def _draw_annotations(parts: dict, dr, t: float) -> None:
             tx = min(max(cx, x0 + tw / 2 + 6), x1 - tw / 2 - 6)
             ty = max(bt + 6, cy - ry - 74)
             ay0, ay1 = ty + 40, cy - ry - 4          # 文字の下から囲みの上へ、矢印が伸びる
-            if ay1 > ay0:
+            if ay1 <= ay0:
+                # 上に余白がない（折れ線の高い点など）: 囲みの左に一言を置き、横向きの矢印を伸ばす
+                ty = cy - 18
+                tx = max(x0 + tw / 2 + 6, cx - rx - 70 - tw / 2)
+                ax0, ax1 = tx + tw / 2 + 8, cx - rx - 4
+                if ax1 > ax0:
+                    ex = ax0 + (ax1 - ax0) * pa
+                    dr.line((ax0, cy, ex, cy), fill=col, width=5)
+                    if pa >= 1:
+                        dr.polygon([(ax1 + 2, cy), (ax1 - 14, cy - 9), (ax1 - 14, cy + 9)], fill=col)
+            elif ay1 > ay0:
                 ey = ay0 + (ay1 - ay0) * pa
                 dr.line((cx, ay0, cx, ey), fill=col, width=5)
                 if pa >= 1:

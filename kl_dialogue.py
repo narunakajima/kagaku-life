@@ -728,6 +728,9 @@ def validate_rounds_v2(ep: dict) -> list:
             its_ = c.get("items") or []
             if kind == "number" or not (isinstance(tg, int) and 0 <= tg < len(its_) or tg in [i.get("label") for i in its_]):
                 errs.append(f"v2: {where}: chart.annotations の target は items の番号かラベル（bar / line のみ）")
+            at_ = an.get("at")
+            if at_ is not None and (not isinstance(at_, (int, float)) or at_ < 0 or at_ > 20):
+                errs.append(f"v2: {where}: chart.annotations の at は 0〜20 秒（シーンの頭から。描き終わりに 1.1 秒かかるので、台詞の終わりの前に出す）")
             if len(an.get("text", "")) > 12:
                 errs.append(f"v2: {where}: chart.annotations の text は12字以内")
         if kind in ("bar", "line"):
