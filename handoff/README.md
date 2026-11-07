@@ -4,7 +4,7 @@ Muse（パーソナルAIエージェント）と Claude Code の受け渡し。2
 
 ## 経路
 
-- **Muse → Claude Code（指示）:** GitHub に書くだけ（Muse は読まない）。`handoff/inbox.md`（Muse の追記専用。Claude Code は編集しない）。1件1目的、件ごとに ID・目的・完了条件・触ってよい範囲。結果は `handoff/results/{ID}.md`。**inbox.md を使う受け渡しは、ポーラー（lamp-whisper/tools/handoff-poller.sh）の対応後に開始する（2026-11-07 時点で未対応）。**
+- **Muse → Claude Code（指示）:** GitHub に書くだけ（Muse は読まない）。`handoff/inbox.md`（Muse の追記専用。Claude Code は編集しない）。1件1目的、件ごとに ID・目的・完了条件・触ってよい範囲。結果は `handoff/results/{ID}.md`。ポーラー（lamp-whisper/tools/handoff-poller.sh）は、`## [YYYY-MM-DD-NNN]` 見出しの件のうち `results/{ID}.md` が無いものを1件ずつ処理する（2026-11-07 対応済み。既存の `handoff/*.md` メモが無いときだけ見る。`inbox.md` を最後にコミットした作者が `author_ok` のときだけ処理）。
 - **Claude Code → Muse（報告）:** Slack「cc-reports」（非公開、ID: C0CFNQ50DUN）に投稿。形式は `kl-new.md` の「進捗の報告」。
 - `handoff/progress/` の進捗メモは、補助（履歴・再開用）。Muse は読まない前提。
 
