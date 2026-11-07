@@ -1,0 +1,934 @@
+{
+  "episode_id": "kl053",
+  "format": "dialogue",
+  "structure": "rounds_v4",
+  "template": "myth_buster",
+  "source_type": "news",
+  "news_date": "2026-10-29",
+  "verdict_as_of": "2026-11-07",
+  "genre": "humanoid",
+  "health": false,
+  "series": "humanoid_watch",
+  "series_no": 1,
+  "depicts_real_product": true,
+  "episode_title": "人型ロボの店員は、いつ来る？ AGIBOTが上海のコンビニで6台を24時間。人型ロボ定点観測 第1回",
+  "youtube_title": "人型ロボがコンビニで24時間。店員として来るのはいつ？AGIBOT（11月時点）",
+  "entry_question": "人手が足りない店に、人型ロボが「店員」として来る日は近い？ そのとき何を見て導入を決めればいい？",
+  "claim_verdict": {
+    "dreamer": "soon",
+    "skeptic": "pending"
+  },
+  "verdict": {
+    "dreamer": "decade",
+    "skeptic": "pending"
+  },
+  "hook_lines": [
+    "人型ロボがコンビニで24時間",
+    "店員になる日は近い？"
+  ],
+  "thumbnail_prompt": "Bright, cheerful evening view inside a small modern convenience store, continuous across the whole frame with no panels, boxes or borders. Keep the left 30%, the right 30% and the top 42% of the frame quiet and uncluttered (soft blurred shelves and warm lights only), but the background must continue unbroken behind them. Main subject, centered left-to-right at about 48-72% of the frame height: a wheeled humanoid service robot (exactly the same design in every scene): a glossy white upper body shaped like a human torso, two long white segmented robotic arms, rounded charcoal-black shoulder joints, a thin orange accent light strip along each side of the chest, a glossy black helmet-like head whose smooth dark face plate shows a single softly glowing white-cyan ring in the center (no human face, no eyes, no mouth, no hair), and black five-fingered mechanical hands; the torso rests on one tall, smoothly curved black-and-white spine column that rises from a wide, low, rounded oval wheeled base, white on top and black on the bottom; it has no legs, standing in the aisle and placing a bottled drink onto a shelf. Shelves of generic unbranded products with plain blank labels. No people. No readable text, no letters, no numbers, no logos, no brand marks on products, signs or the robot.",
+  "thumbnail_headline": "人型ロボが\nコンビニで24時間",
+  "thumbnail_exprs": {
+    "dreamer": "excited",
+    "skeptic": "thinking"
+  },
+  "youtube_tags": [
+    "人型ロボット",
+    "ヒューマノイド",
+    "AGIBOT",
+    "アジボット",
+    "G2",
+    "Worken",
+    "ワーケン",
+    "コンビニ",
+    "ロボット店員",
+    "人手不足",
+    "上海",
+    "人型ロボ定点観測",
+    "答え合わせ",
+    "科学ニュース"
+  ],
+  "references": [
+    {
+      "title": "AGIBOT、ロボットの実際の有効労働を測るフレームワーク「Worken」を発表（AGIBOT Innovation Day 2026）",
+      "authors": [],
+      "year": 2026,
+      "venue": "AGIBOT 公式ニュース（2026年10月29日）",
+      "url": "https://www.agibot.com/article/231/detail/131.html",
+      "is_preprint": false,
+      "institution": "AGIBOT",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "How Much Work Do Robots Really Deliver? The Thinking Behind Worken（Worken の解説記事）",
+      "authors": [],
+      "year": 2026,
+      "venue": "AGIBOT 公式ニュース（2026年10月29日）",
+      "url": "https://www.agibot.com/article/231/detail/132.html",
+      "is_preprint": false,
+      "institution": "AGIBOT",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "上海の営業中のコンビニで人型ロボ G2 が6台、24時間の試験",
+      "authors": [],
+      "year": 2026,
+      "venue": "AGIBOT 公式ニュース（2026年11月6日公開）",
+      "url": "https://www.agibot.com/article/231/detail/134.html",
+      "is_preprint": false,
+      "institution": "AGIBOT",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "AGIBOT ストア（G2は『Contact sales』、価格の記載なし）",
+      "authors": [],
+      "year": 2026,
+      "venue": "AGIBOT ストア（2026年11月7日に確認）",
+      "url": "https://store.agibot.com/",
+      "is_preprint": false,
+      "institution": "AGIBOT",
+      "source_kind": "company_website"
+    }
+  ],
+  "youtube_description": "2026年10月29日と11月6日のAGIBOT（アジボット）の発表を、11月7日時点で確認した二人の見立てです。\n人型ロボ定点観測 第1回\n\n中国・上海のロボットの会社AGIBOTが、上海の営業中のコンビニで、人型ロボ「G2」を6台、24時間働かせました（2026年11月2日10時〜3日10時）。接客・コーヒー・品出しなど合わせて1,730件の作業をこなし、最終の評価に合格したのは6台中4台。同じ会社は10月29日に、ロボの働きを「何台作ったか」ではなく「どれだけ働いたか」で測る物差し「Worken（ワーケン）」を提案しています。\n人手が足りない店に、人型ロボの店員が来るのはいつか。期待担当の大輔と、確かめ担当の沙織が、AGIBOT自身の資料で確かめます。(1) 営業中の店で、一日中働けたか (2) ロボの働きは、何で測るか (3) いつ・いくらで・どこに来るか の3つです。\n\n■ 人型ロボ定点観測（今回から）\n人型ロボが、いつ・いくらで・どこに来るのかを、発表のたびに同じ物差しで確かめます。\n・値段: まだ発表されていない（販売サイトのG2の欄は「Contact sales（営業に問い合わせ）」で、値段の記載なし）\n・買える時期: まだ発表されていない（日本での販売時期の記載なし）\n・どこで動いているか: 上海の営業中のコンビニで24時間の試し。G2の仲間のロボは、中国の工場、地下鉄の駅、遊園地で働いているとAGIBOTが紹介\n\n■ この回の判定（2026年11月7日時点の、二人の見立て）\n判定するのは：日本の店で、人型ロボが、品出しやコーヒーのような決まった作業を、毎日任され始めるのはいつか\n大輔: 3年はかかる（営業中の店で24時間、6台中4台が合格したところまで来た。残る壁は、手先の器用さと何週間も続けて働くこと。機械の壁なので、すぐではないが、3年のうちには、という見立て。最初の予想「1年ほど」からは後ろにずらした）\n沙織: 根拠待ち（否定する札ではありません。日本の店で、いつ・いくらで、がまだ一つも出ていないため。値段が出て、AGIBOTではなく店の側が何週間も続けて使って測った数字が出たら、札を上げます。最初の予想「一日中働くのは無理」は外れました）\n今月できること: 自分の店の作業を一つ選んで、人が1時間に何件こなしているか、一度数えてみる（値段が出たとき、ロボと並べて比べるため）\n\n■ 補足\n・資料はすべてAGIBOT自身のものです。コンビニの試しはAGIBOTの催し（AI WAVE）の締めくくりとして行われ、評価をした人が誰か、2台がどの基準を満たさなかったかは、報告に書かれていません。\n・Workenは、AGIBOT自身が「提案（proposed framework）」としている物差しです。10台×6時間×0.8の例は、解説記事の仮の例で、実際の結果ではありません。コンビニの報告には、Workenの数字は出ていません。\n・「一台が一時間におよそ12件」は、6台が24時間ずっと動いていたと仮定して、合計1,730件をならした二人の計算です。\n・ロボットの絵はイメージ図です（実物と異なる場合があります）。\n\n■ 参考資料（一次資料）\n・AGIBOT, \"AGIBOT Introduces Worken ...\" AGIBOT Innovation Day 2026（2026年10月29日） https://www.agibot.com/article/231/detail/131.html\n・AGIBOT, \"How Much Work Do Robots Really Deliver? The Thinking Behind Worken\"（2026年10月29日） https://www.agibot.com/article/231/detail/132.html\n・AGIBOT, \"Six AGIBOT G2 Robots Complete 1,730 Tasks in 24-Hour Shanghai Convenience Store Trial\"（2026年11月6日） https://www.agibot.com/article/231/detail/134.html\n・AGIBOT Store（2026年11月7日に確認） https://store.agibot.com/\n\n#人型ロボット #AGIBOT #幸せな未来のサイエンス",
+  "scenes": [
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 6,
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "scene_id": 1,
+      "narrator": "dialogue",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "上海の営業中のコンビニで、人型ロボ6台が24時間働いた。",
+          "expression": "excited"
+        }
+      ],
+      "narration": "大輔「上海の営業中のコンビニで、人型ロボ6台が24時間働いた。」"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 9,
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "scene_id": 2,
+      "narrator": "dialogue",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "接客も、コーヒーも、品出しも。全部で1730件。",
+          "expression": "excited"
+        }
+      ],
+      "narration": "大輔「接客も、コーヒーも、品出しも。全部で1730件。」"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 8,
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "scene_id": 3,
+      "narrator": "dialogue",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "でも、合格したのは6台中4台。値段も、まだ出ていない。",
+          "expression": "doubt",
+          "react": "surprised"
+        }
+      ],
+      "narration": "沙織「でも、合格したのは6台中4台。値段も、まだ出ていない。」"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 12,
+      "scene_id": 4,
+      "narrator": "dialogue",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "人手が足りない店に、人型ロボの店員が来るのはいつ？",
+          "expression": "thinking",
+          "tag": "question"
+        }
+      ],
+      "narration": "沙織「人手が足りない店に、人型ロボの店員が来るのはいつ？」"
+    },
+    {
+      "type": "setup",
+      "bgm_role": "intro",
+      "image_asset": "base_cafe_b",
+      "scene_id": 5,
+      "narrator": "dialogue",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "今回から、新しい続きものを始める。人型ロボが、いつ・いくらで・どこに来るのかを、発表のたびに確かめる。名前は、人型ロボ定点観測。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "定点観測、つまり、同じ物差しで、くり返し見ていくのね。物差しは？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "3つ。値段。買える時期。それと、今どこで動いているか。発表に書いていないものは、まだ発表されていない、と言う。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、第1回のお題は？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "中国・上海のロボットの会社、アジボット。アジボットは、ふだん営業しているコンビニで、自分たちの人型ロボ、ジーツーを6台、24時間働かせた。",
+          "expression": "excited",
+          "display": "中国・上海のロボットの会社、AGIBOT（アジボット）。AGIBOTは、ふだん営業しているコンビニで、自分たちの人型ロボ、G2（ジーツー）を6台、24時間働かせた。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "人型ロボって、どんな形？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "上半身は人の形で、腕が2本。足のかわりに、車輪のついた台に乗ってる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "今日の資料は、全部アジボット自身のもの。コンビニの試しの報告。10月の発表会の発表と、その解説記事。それと、ロボの販売サイト。",
+          "expression": "neutral",
+          "display": "今日の資料は、全部AGIBOT自身のもの。コンビニの試しの報告。10月の発表会の発表と、その解説記事。それと、ロボの販売サイト。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "でも、人型ロボって、展示会で数分、決まった動きを見せるもの、という印象があるけど。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "展示会の数分じゃなく、本物の店で、一日中やってみせたのが今回。コンビニで、接客も、コーヒーも、品出しもやった。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想。次は、日本の、人手が足りない店にも広がる。1年ほどで、人型ロボが店員として来る。",
+          "expression": "excited",
+          "tag": "prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想。やってみせた、と、ずっと働けた、は別。営業中の店で一日中、ちゃんと働くのは、まだ無理。混む時間か夜中に、どこかで止まると見てる。本当に働けるなら、私も使いたいけど。",
+          "expression": "doubt",
+          "tag": "prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "3つ確かめよう。営業中の店で、一日中働けたのか。ロボの働きを、何で測るのか。最後に、物差しの3つ、いつ・いくらで・どこに来るのか。",
+          "expression": "neutral"
+        }
+      ],
+      "narration": "大輔「今回から、新しい続きものを始める。人型ロボが、いつ・いくらで・どこに来るのかを、発表のたびに確かめる。名前は、人型ロボ定点観測。」\n沙織「定点観測、つまり、同じ物差しで、くり返し見ていくのね。物差しは？」\n大輔「3つ。値段。買える時期。それと、今どこで動いているか。発表に書いていないものは、まだ発表されていない、と言う。」\n沙織「で、第1回のお題は？」\n大輔「中国・上海のロボットの会社、アジボット。アジボットは、ふだん営業しているコンビニで、自分たちの人型ロボ、ジーツーを6台、24時間働かせた。」\n沙織「人型ロボって、どんな形？」\n大輔「上半身は人の形で、腕が2本。足のかわりに、車輪のついた台に乗ってる。」\n沙織「今日の資料は、全部アジボット自身のもの。コンビニの試しの報告。10月の発表会の発表と、その解説記事。それと、ロボの販売サイト。」\n沙織「でも、人型ロボって、展示会で数分、決まった動きを見せるもの、という印象があるけど。」\n大輔「展示会の数分じゃなく、本物の店で、一日中やってみせたのが今回。コンビニで、接客も、コーヒーも、品出しもやった。」\n大輔「僕の予想。次は、日本の、人手が足りない店にも広がる。1年ほどで、人型ロボが店員として来る。」\n沙織「私の予想。やってみせた、と、ずっと働けた、は別。営業中の店で一日中、ちゃんと働くのは、まだ無理。混む時間か夜中に、どこかで止まると見てる。本当に働けるなら、私も使いたいけど。」\n沙織「3つ確かめよう。営業中の店で、一日中働けたのか。ロボの働きを、何で測るのか。最後に、物差しの3つ、いつ・いくらで・どこに来るのか。」"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 1,
+      "round_title": "営業中の店で、一日中働けた？",
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "image_prompt": "Bright, clean daytime interior of a small modern convenience store in a Chinese city. In the center aisle stands a wheeled humanoid service robot (exactly the same design in every scene): a glossy white upper body shaped like a human torso, two long white segmented robotic arms, rounded charcoal-black shoulder joints, a thin orange accent light strip along each side of the chest, a glossy black helmet-like head whose smooth dark face plate shows a single softly glowing white-cyan ring in the center (no human face, no eyes, no mouth, no hair), and black five-fingered mechanical hands; the torso rests on one tall, smoothly curved black-and-white spine column that rises from a wide, low, rounded oval wheeled base, white on top and black on the bottom; it has no legs, placing bottled drinks onto a shelf with one hand. Shelves of generic unbranded snacks and drinks with plain blank labels, a small coffee counter in the soft-focus background, large front windows with a sunny street outside. No people. No readable text, no letters, no numbers, no logos, no brand marks on products, signs or the robot.",
+      "scene_id": 6,
+      "narrator": "dialogue",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "まず、コンビニの試しの報告。場所は、上海の、ふだん営業しているコンビニ。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "時間は、11月2日の朝10時から、翌日の朝10時まで。ちょうど一日ね。ロボは、それぞれ何を？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "役割を分けた。接客、棚の点検、品出し、コーヒー、レジと温かい食べ物、店の掃除。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "店員の仕事を、ひととおり。でも、最後までちゃんともったのかが、私の一番の疑い。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "一日中もつなら、次は、どこで使える？ 僕は、日本の店の、夜中の店番だと思う。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "夜中の店番？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "資料の外の話だけど、夜に働く人を集めるのに苦労している店は多い。夜の品出しと掃除を、ロボに任せる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "夜中こそ、どこかで止まりそう。報告に、夜中のことは書いてある？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "書いてある。",
+          "expression": "neutral"
+        }
+      ],
+      "narration": "大輔「まず、コンビニの試しの報告。場所は、上海の、ふだん営業しているコンビニ。」\n沙織「時間は、11月2日の朝10時から、翌日の朝10時まで。ちょうど一日ね。ロボは、それぞれ何を？」\n大輔「役割を分けた。接客、棚の点検、品出し、コーヒー、レジと温かい食べ物、店の掃除。」\n沙織「店員の仕事を、ひととおり。でも、最後までちゃんともったのかが、私の一番の疑い。」\n大輔「一日中もつなら、次は、どこで使える？ 僕は、日本の店の、夜中の店番だと思う。」\n沙織「夜中の店番？」\n大輔「資料の外の話だけど、夜に働く人を集めるのに苦労している店は多い。夜の品出しと掃除を、ロボに任せる。」\n沙織「夜中こそ、どこかで止まりそう。報告に、夜中のことは書いてある？」\n大輔「書いてある。」"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 1,
+      "reference_index": 2,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "press",
+        "source": "AGIBOT コンビニの試しの報告（2026年11月6日）",
+        "quote": "Four of the six robots passed the final performance assessment.",
+        "quote_type": "原文",
+        "highlight": "Four of the six robots passed",
+        "items": [
+          "訳: 6台のうち4台が、最終の評価に合格",
+          "11月2日10時〜3日10時、上海の営業中の店",
+          "昼・夕方・夜中・翌朝の4つの時間帯",
+          "作業は合計1,730件。2台は基準の一部未達",
+          "評価: 勤務時間・完了・客の声・速さ・想定外"
+        ],
+        "reference_index": 2
+      },
+      "scene_id": 7,
+      "narrator": "dialogue",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "コンビニの報告は、24時間を、4つの時間帯に分けて見てる。昼の混む時間、夕方の混む時間、夜中、それと翌朝の朝食の時間。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "夜中も、入ってるのね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "6台で、合わせて1730件の作業をこなした。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それで、評価は？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "最後の評価に合格したのは、6台のうち4台。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "夜中も、翌朝の混む時間も、作業を続けて、4台は合格。一日中ちゃんと働くのは無理、と言ったのは、私の読み違いだった。",
+          "expression": "surprised",
+          "tag": "turn"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、この試しは、アジボット自身の催しの締めくくり。評価をしたのが誰かは、報告に書いていない。試したのも、一日だけ。",
+          "expression": "thinking",
+          "display": "ただ、この試しは、AGIBOT自身の催しの締めくくり。評価をしたのが誰かは、報告に書いていない。試したのも、一日だけ。",
+          "tag": "weakness"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そこは、その通り。評価の基準は書いてある。勤務した時間、作業をやり終えたか、お客さんの声、反応の速さ、想定外のことへの対応。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "残りの2台は、その基準の一部を満たせなかった。どれを満たせなかったかは、書いていない。",
+          "expression": "doubt"
+        }
+      ],
+      "image_asset": "cards/kl053_S07",
+      "narration": "大輔「コンビニの報告は、24時間を、4つの時間帯に分けて見てる。昼の混む時間、夕方の混む時間、夜中、それと翌朝の朝食の時間。」\n沙織「夜中も、入ってるのね。」\n大輔「6台で、合わせて1730件の作業をこなした。」\n沙織「それで、評価は？」\n大輔「最後の評価に合格したのは、6台のうち4台。」\n沙織「夜中も、翌朝の混む時間も、作業を続けて、4台は合格。一日中ちゃんと働くのは無理、と言ったのは、私の読み違いだった。」\n沙織「ただ、この試しは、アジボット自身の催しの締めくくり。評価をしたのが誰かは、報告に書いていない。試したのも、一日だけ。」\n大輔「そこは、その通り。評価の基準は書いてある。勤務した時間、作業をやり終えたか、お客さんの声、反応の速さ、想定外のことへの対応。」\n沙織「残りの2台は、その基準の一部を満たせなかった。どれを満たせなかったかは、書いていない。」\n［画面の資料カード］AGIBOT コンビニの試しの報告（2026年11月6日） 「Four of the six robots passed the final performance assessment.」（原文） ・訳: 6台のうち4台が、最終の評価に合格 ・11月2日10時〜3日10時、上海の営業中の店 ・昼・夕方・夜中・翌朝の4つの時間帯 ・作業は合計1,730件。2台は基準の一部未達 ・評価: 勤務時間・完了・客の声・速さ・想定外"
+    },
+    {
+      "type": "tsukkomi",
+      "bgm_role": "main",
+      "round": 1,
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "image_prompt": "Night inside a quiet, softly lit convenience store with dark windows. Close-up of the upper body and one arm of a wheeled humanoid service robot (exactly the same design in every scene): a glossy white upper body shaped like a human torso, two long white segmented robotic arms, rounded charcoal-black shoulder joints, a thin orange accent light strip along each side of the chest, a glossy black helmet-like head whose smooth dark face plate shows a single softly glowing white-cyan ring in the center (no human face, no eyes, no mouth, no hair), and black five-fingered mechanical hands; the torso rests on one tall, smoothly curved black-and-white spine column that rises from a wide, low, rounded oval wheeled base, white on top and black on the bottom; it has no legs, carefully reaching its black five-fingered mechanical hand toward small colorful candy bags hanging at slightly different angles on the hooks of a peg display; next to it a small glass case with plain slices of cake on white plates. Calm, focused mood. No people. No readable text, no letters, no numbers, no logos, no brand marks on products, signs or the robot.",
+      "scene_id": 8,
+      "narrator": "dialogue",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "審査役の2人は、わざと意地の悪い試しもしてる。普通のコーラと、砂糖なしのコーラを頼んで、見分けられるか。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "似た見た目の缶だ。店でよくある。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "棚のガムを並べ替えて、元の場所に戻せるか。人と箱で通路をふさいで、よけて通れるか。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "で、結果は？",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "一つずつの結果は、書いていない。それより、報告自身が、難しいのは手先の作業だ、と書いてる。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "少し角度の違う飴の袋を、隣の商品を崩さずにつかむ。ケーキを、つぶさず落とさずに持つ。",
+          "expression": "doubt",
+          "tag": "barrier"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "手先の作業には、手が打ってある。アジボットの仕組みは、うまくいった作業も、失敗した作業も記録して、次に似た場面で使う。",
+          "expression": "convinced",
+          "display": "手先の作業には、手が打ってある。AGIBOTの仕組みは、うまくいった作業も、失敗した作業も記録して、次に似た場面で使う。",
+          "tag": "workaround"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "失敗を次に生かす。店の新人と同じね。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それに、細かい手先の作業は、客の少ない夜の時間に、練習を足して良くしてきた、とも書いてある。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "夜中を、練習にも使ってるのね。",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "営業中の店で、夜中も含めて24時間、店員の仕事をひととおりこなすところまで来た。",
+          "expression": "convinced",
+          "tag": "hope"
+        }
+      ],
+      "narration": "沙織「審査役の2人は、わざと意地の悪い試しもしてる。普通のコーラと、砂糖なしのコーラを頼んで、見分けられるか。」\n大輔「似た見た目の缶だ。店でよくある。」\n沙織「棚のガムを並べ替えて、元の場所に戻せるか。人と箱で通路をふさいで、よけて通れるか。」\n大輔「で、結果は？」\n沙織「一つずつの結果は、書いていない。それより、報告自身が、難しいのは手先の作業だ、と書いてる。」\n沙織「少し角度の違う飴の袋を、隣の商品を崩さずにつかむ。ケーキを、つぶさず落とさずに持つ。」\n大輔「手先の作業には、手が打ってある。アジボットの仕組みは、うまくいった作業も、失敗した作業も記録して、次に似た場面で使う。」\n沙織「失敗を次に生かす。店の新人と同じね。」\n大輔「それに、細かい手先の作業は、客の少ない夜の時間に、練習を足して良くしてきた、とも書いてある。」\n沙織「夜中を、練習にも使ってるのね。」\n大輔「営業中の店で、夜中も含めて24時間、店員の仕事をひととおりこなすところまで来た。」"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 2,
+      "round_title": "ロボの働きは、何で測る？",
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "image_prompt": "Early morning at the coffee counter of a small modern convenience store in a Chinese city, warm sunrise light through the windows. On the right side of the frame, the upper body and one long arm of a wheeled humanoid service robot (exactly the same design in every scene): a glossy white upper body shaped like a human torso, two long white segmented robotic arms, rounded charcoal-black shoulder joints, a thin orange accent light strip along each side of the chest, a glossy black helmet-like head whose smooth dark face plate shows a single softly glowing white-cyan ring in the center (no human face, no eyes, no mouth, no hair), and black five-fingered mechanical hands; the torso rests on one tall, smoothly curved black-and-white spine column that rises from a wide, low, rounded oval wheeled base, white on top and black on the bottom; it has no legs, holding a plain white paper cup under the spout of a generic coffee machine; steam rising, a stack of plain cups and a tray of plain breakfast buns on the counter. No people. No readable text, no letters, no numbers, no logos, no brand marks on products, signs or the robot.",
+      "scene_id": 9,
+      "narrator": "dialogue",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "次は、ロボの働きを、何で測るか。1730件は多いけど、人で言うとどれくらいなのか、まだ見えない。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そこで、10月の発表会。アジボットは、新しい物差しを出した。名前は、ワーケン。",
+          "expression": "excited",
+          "display": "そこで、10月の発表会。AGIBOTは、新しい物差しを出した。名前は、Worken（ワーケン）。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ワーケン？ 聞いたことがない。",
+          "expression": "doubt",
+          "display": "Worken（ワーケン）？ 聞いたことがない。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "アジボットが作った言葉。ロボが実際にどれだけ働いたかで測ろう、という物差し。",
+          "expression": "neutral",
+          "display": "AGIBOTが作った言葉。ロボが実際にどれだけ働いたかで測ろう、という物差し。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "何台作ったか、何台売れたか、で比べるんじゃなくて、ね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "解説記事には、いずれ、こなした仕事の分だけ払う形にもつながるかもしれない、とまで書いてある。次は、それを町の小さな店で。ロボを買わずに、働いた分だけ払う。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "まず、式を見よう。",
+          "expression": "neutral"
+        }
+      ],
+      "narration": "沙織「次は、ロボの働きを、何で測るか。1730件は多いけど、人で言うとどれくらいなのか、まだ見えない。」\n大輔「そこで、10月の発表会。アジボットは、新しい物差しを出した。名前は、ワーケン。」\n沙織「ワーケン？ 聞いたことがない。」\n大輔「アジボットが作った言葉。ロボが実際にどれだけ働いたかで測ろう、という物差し。」\n沙織「何台作ったか、何台売れたか、で比べるんじゃなくて、ね。」\n大輔「解説記事には、いずれ、こなした仕事の分だけ払う形にもつながるかもしれない、とまで書いてある。次は、それを町の小さな店で。ロボを買わずに、働いた分だけ払う。」\n沙織「まず、式を見よう。」"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 2,
+      "reference_index": 0,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "press",
+        "source": "AGIBOT 10月の発表会の発表（2026年10月29日）",
+        "quote": "Worken = Number of Active Robots × Autonomous Working Hours × Output Efficiency Ratio",
+        "quote_type": "原文",
+        "highlight": "Autonomous Working Hours",
+        "items": [
+          "訳: 働く台数×自力で働いた時間×出来の比率",
+          "台数: 作っただけ・在庫のロボは数えない",
+          "時間: 電源が入っていた時間ではない",
+          "比率: 作業ごとの基準と比べた合格の出来",
+          "AGIBOT自身が「提案」と書く物差し"
+        ],
+        "reference_index": 0
+      },
+      "scene_id": 10,
+      "narrator": "dialogue",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "三つの掛け算。一つ目は、実際に働いている台数。作っただけ、倉庫にあるだけのロボは数えない。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "二つ目は、人の手を借りずに働いた時間。電源が入っていた時間じゃない。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "三つ目は、出来の比率。決めた作業で、合格の出来をどれだけ出したかを、基準と比べた割合。基準は、たとえば、人が決まったやり方でこなす量。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "例で言うと？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "解説記事に、仮の例がある。ロボ10台が、6時間ずつ、人の手を借りずに働いた。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "出来は？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "基準の8割。比率で言うと、0.8。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "掛け算すると、48ね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "基準の働きに直して、48時間ぶんの働き、という意味。基準を人にしていれば、人の48時間ぶん。実際の結果ではなく、仮の例だと、はっきり書いてある。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "考え方は分かりやすい。ただ、この物差しは、アジボット自身が、提案、つまり自分たちの案だ、と書いている。どこかが認めた決まり、ではない。",
+          "expression": "doubt",
+          "display": "考え方は分かりやすい。ただ、この物差しは、AGIBOT自身が、提案、つまり自分たちの案だ、と書いている。どこかが認めた決まり、ではない。",
+          "tag": "weakness"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、コンビニの報告には、ワーケンの数字も、人と比べた数字も出てこない。働いた分だけ払う形も、解説記事自身が、先の話で、まだ決まった商売の形ではない、と書いてる。",
+          "expression": "thinking"
+        }
+      ],
+      "image_asset": "cards/kl053_S10",
+      "narration": "大輔「三つの掛け算。一つ目は、実際に働いている台数。作っただけ、倉庫にあるだけのロボは数えない。」\n沙織「二つ目は、人の手を借りずに働いた時間。電源が入っていた時間じゃない。」\n大輔「三つ目は、出来の比率。決めた作業で、合格の出来をどれだけ出したかを、基準と比べた割合。基準は、たとえば、人が決まったやり方でこなす量。」\n沙織「例で言うと？」\n大輔「解説記事に、仮の例がある。ロボ10台が、6時間ずつ、人の手を借りずに働いた。」\n沙織「出来は？」\n大輔「基準の8割。比率で言うと、0.8。」\n沙織「掛け算すると、48ね。」\n大輔「基準の働きに直して、48時間ぶんの働き、という意味。基準を人にしていれば、人の48時間ぶん。実際の結果ではなく、仮の例だと、はっきり書いてある。」\n沙織「考え方は分かりやすい。ただ、この物差しは、アジボット自身が、提案、つまり自分たちの案だ、と書いている。どこかが認めた決まり、ではない。」\n沙織「それに、コンビニの報告には、ワーケンの数字も、人と比べた数字も出てこない。働いた分だけ払う形も、解説記事自身が、先の話で、まだ決まった商売の形ではない、と書いてる。」\n［画面の資料カード］AGIBOT 10月の発表会の発表（2026年10月29日） 「Worken = Number of Active Robots × Autonomous Working Hours × Output Efficiency Ratio」（原文） ・訳: 働く台数×自力で働いた時間×出来の比率 ・台数: 作っただけ・在庫のロボは数えない ・時間: 電源が入っていた時間ではない ・比率: 作業ごとの基準と比べた合格の出来 ・AGIBOT自身が「提案」と書く物差し"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 2,
+      "reference_index": 2,
+      "image_prompt": "Clean, simple horizontal bar chart on a soft off-white background, flat design, generous margins. Title at the top: 「24時間でこなした作業（合計1,730件）」. Six horizontal bars sorted from longest to shortest, each with its label on the left and its number at the end of the bar, bar lengths exactly proportional to the numbers, axis starting at 0: 「接客」 683, 「商品の受け渡し」 369, 「棚の点検・品出し」 277, 「コーヒー」 147, 「テーブル清掃」 128, 「朝食」 126. Bars in one calm teal color, the top bar slightly darker. Small caption at the bottom right: 「出典: AGIBOT コンビニの試しの報告（2026年11月6日）」. No other text, no other numbers, no robots, no people.",
+      "scene_id": 11,
+      "narrator": "dialogue",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "だったら、店の側で数えればいい。コンビニの報告の数字で、僕らが計算してみた。",
+          "expression": "excited",
+          "tag": "workaround"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "6台が24時間ずっと動いていたとして、1730件をならす。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "すると？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "一台が、一時間に、およそ12件。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "でも、接客1回と、コーヒー1杯は、同じ重さの仕事じゃないでしょ。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そう。だからワーケンは、作業ごとに基準を決める、と発表会の発表に書いてある。店なら、コーヒーはコーヒー、品出しは品出しで比べる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "作業ごとの数を見よう。一番多いのは、接客で683件。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "棚の点検と品出しが277件。コーヒーが147杯。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "接客から掃除まで、店の作業がまんべんなく入ってる。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "台数じゃなく、働いた中身で数える。その考え方には、私も賛成。数字の裏を見る仕事だと、何台出荷した、だけの発表は一番あてにならないから。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ロボの働きを、作業ごとに、人と同じ物差しで並べる考え方が出てきた。コーヒー何杯、品出し何件なら、店の人にも数えられる。",
+          "expression": "convinced",
+          "tag": "hope"
+        }
+      ],
+      "narration": "大輔「だったら、店の側で数えればいい。コンビニの報告の数字で、僕らが計算してみた。」\n大輔「6台が24時間ずっと動いていたとして、1730件をならす。」\n沙織「すると？」\n大輔「一台が、一時間に、およそ12件。」\n沙織「でも、接客1回と、コーヒー1杯は、同じ重さの仕事じゃないでしょ。」\n大輔「そう。だからワーケンは、作業ごとに基準を決める、と発表会の発表に書いてある。店なら、コーヒーはコーヒー、品出しは品出しで比べる。」\n沙織「作業ごとの数を見よう。一番多いのは、接客で683件。」\n大輔「棚の点検と品出しが277件。コーヒーが147杯。」\n沙織「接客から掃除まで、店の作業がまんべんなく入ってる。」\n沙織「台数じゃなく、働いた中身で数える。その考え方には、私も賛成。数字の裏を見る仕事だと、何台出荷した、だけの発表は一番あてにならないから。」\n大輔「ロボの働きを、作業ごとに、人と同じ物差しで並べる考え方が出てきた。コーヒー何杯、品出し何件なら、店の人にも数えられる。」"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 3,
+      "round_title": "いつ・いくらで、どこに来る？",
+      "image_prompt": "Evening just after closing time inside a small traditional Japanese neighborhood liquor and grocery shop: old wooden shelves with generic unlabeled bottles and jars, stacked plastic crates of bottled drinks and a few closed cardboard boxes on the concrete floor waiting to be shelved, a metal shutter half down at the entrance, a dark quiet shopping street outside, one warm ceiling light. Calm, hopeful mood. No people, no robots. No readable text, no letters, no numbers, no logos, no brand marks on products, signs or the robot.",
+      "scene_id": 12,
+      "narrator": "dialogue",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "最後は、物差しの3つ。値段、買える時期、どこで動いているか。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕が期待するのは、日本の町の小さな店。酒屋さんや八百屋さんで、店を閉めた後の夜に、片づけと品出しをロボがやっておく。人を一人雇うほどじゃない仕事を、ロボに。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "店に置くなら、まず値段。それと、日本で買える時期。販売サイトを見よう。",
+          "expression": "neutral"
+        }
+      ],
+      "narration": "大輔「最後は、物差しの3つ。値段、買える時期、どこで動いているか。」\n大輔「僕が期待するのは、日本の町の小さな店。酒屋さんや八百屋さんで、店を閉めた後の夜に、片づけと品出しをロボがやっておく。人を一人雇うほどじゃない仕事を、ロボに。」\n沙織「店に置くなら、まず値段。それと、日本で買える時期。販売サイトを見よう。」"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 3,
+      "reference_index": 3,
+      "ken_burns": "static",
+      "source_card": {
+        "kind": "web",
+        "source": "AGIBOT 販売サイト（2026年11月7日に確認）",
+        "quote": "Contact sales",
+        "quote_type": "原文",
+        "highlight": "Contact sales",
+        "items": [
+          "訳: 営業に問い合わせ",
+          "G2の欄: 運搬・対話・ロボットの学習向け",
+          "値段の記載: なし",
+          "日本で買える時期の記載: なし"
+        ],
+        "reference_index": 3
+      },
+      "scene_id": 13,
+      "narrator": "dialogue",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "販売サイトの、ジーツーの欄。あるのは値段ではなく、営業に問い合わせ、のボタン。",
+          "expression": "doubt",
+          "display": "販売サイトの、G2の欄。あるのは値段ではなく、営業に問い合わせ、のボタン。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "値段は、書いていない、か。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "日本で、いつから買えるのか、借りられるのかも、今日の資料のどれにも書いていない。値段も時期も、まだ発表されていない。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "値段と時期は、次の発表待ちだね。でも、3つ目の、どこで動いているか、は出てる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "10月の発表会で、ジーツーの仲間のロボが、中国の工場や、地下鉄の駅、遊園地で働いている、と紹介してる。",
+          "expression": "excited",
+          "display": "10月の発表会で、G2の仲間のロボが、中国の工場や、地下鉄の駅、遊園地で働いている、と紹介してる。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "工場、駅、遊園地に、今回の営業中のコンビニが加わったのね。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "これが本物なら、私は、重い飲み物の箱の品出しに使いたい。店の人に一番こたえる仕事だから。どれだけ重い箱を持てるかも、確かめたい。",
+          "expression": "convinced",
+          "tag": "skeptic_wish"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だったら、値段が出るまでに見る目印を決めておこう。一つは、販売サイトに値段が載るか。もう一つは、どこかの店が何週間も続けて使った数字が出るか。",
+          "expression": "thinking",
+          "tag": "workaround"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "コンビニの報告にも、これから別の仕事や、別の場所でも試し続ける、とある。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "値段より先に、働く場所が増えている。今度は、お客さんが出入りする営業中の店まで。",
+          "expression": "convinced",
+          "tag": "hope"
+        }
+      ],
+      "image_asset": "cards/kl053_S13",
+      "narration": "沙織「販売サイトの、ジーツーの欄。あるのは値段ではなく、営業に問い合わせ、のボタン。」\n大輔「値段は、書いていない、か。」\n沙織「日本で、いつから買えるのか、借りられるのかも、今日の資料のどれにも書いていない。値段も時期も、まだ発表されていない。」\n大輔「値段と時期は、次の発表待ちだね。でも、3つ目の、どこで動いているか、は出てる。」\n大輔「10月の発表会で、ジーツーの仲間のロボが、中国の工場や、地下鉄の駅、遊園地で働いている、と紹介してる。」\n沙織「工場、駅、遊園地に、今回の営業中のコンビニが加わったのね。」\n沙織「これが本物なら、私は、重い飲み物の箱の品出しに使いたい。店の人に一番こたえる仕事だから。どれだけ重い箱を持てるかも、確かめたい。」\n大輔「だったら、値段が出るまでに見る目印を決めておこう。一つは、販売サイトに値段が載るか。もう一つは、どこかの店が何週間も続けて使った数字が出るか。」\n沙織「コンビニの報告にも、これから別の仕事や、別の場所でも試し続ける、とある。」\n大輔「値段より先に、働く場所が増えている。今度は、お客さんが出入りする営業中の店まで。」\n［画面の資料カード］AGIBOT 販売サイト（2026年11月7日に確認） 「Contact sales」（原文） ・訳: 営業に問い合わせ ・G2の欄: 運搬・対話・ロボットの学習向け ・値段の記載: なし ・日本で買える時期の記載: なし"
+    },
+    {
+      "type": "verdict",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "verdict_from_line": 11,
+      "scene_id": 14,
+      "narrator": "dialogue",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想は、1年ほどで、日本の店にも人型ロボが店員として来る、だった。そこは早かった。24時間は働いたけど、2台は基準の一部を満たせなかったし、値段も時期も出ていない。",
+          "expression": "deflated",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想は、営業中の店で一日中働くのは、まだ無理、だった。そこは外れた。夜中も朝の混む時間も作業を続けて、4台が合格した。",
+          "expression": "convinced",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "先に言っておくと、コンビニの報告は、作られた展示から、本物の店に出られることを示した、と書いてる。一日、本物の店で働いたのは確か。判定するのは、その先。",
+          "expression": "neutral",
+          "display": "先に言っておくと、コンビニの報告は、作られた展示から、本物の店に出られることを示した、と書いてる。一日、本物の店で働いたのは確か。判定するのは、その先。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "判定の札は、4つ。もうすぐ来る、3年はかかる、根拠待ち、まだ眉唾。二人それぞれ一つ選ぶ。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "問いは最初のとおり。人手が足りない店に、人型ロボの店員が来るのはいつか。ここでは、日本の店で、品出しやコーヒーのような決まった作業を、毎日任され始めるのはいつか、で判定する。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "日本の店で、ね。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕は「3年はかかる」。この3年は、今日から数えて、日本の店で、人型ロボが決まった作業を毎日任され始めるまでの話。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "理由は？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "残る壁は、飴の袋やケーキをつかむような手先の器用さと、何週間も続けて働くこと。機械の壁だから、すぐではない。それでも、営業中の店で24時間、4台が合格したところまで来た。夜に練習を足して良くしていく仕組みもある。だから、3年のうちには来ると見る。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は「根拠待ち」。来ない、という札じゃない。日本の店で、いつ・いくらで、が一つも出ていないから、時期を決める材料が足りない、という札。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "値段が出て、アジボットではなく店の側が、何週間も続けて使って測った数字が出たら、札を上げる。",
+          "expression": "neutral",
+          "display": "値段が出て、AGIBOTではなく店の側が、何週間も続けて使って測った数字が出たら、札を上げる。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "日本で売る話がまだ出ていないのは、その通り。そこは、僕の3年の、一番の弱いところ。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今日の持ち帰り。人型ロボの店員は、中国の営業中の店で、一日中働くところまで来た。日本の店に来る時期を決めるのは、値段と、店が長く使った数字。",
+          "expression": "convinced",
+          "tag": "takeaway"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "今月できるのは、自分の店の作業を一つ選んで、人が一時間に何件こなしているか、一度数えてみること。品出しなら何箱、コーヒーなら何杯。値段が出たとき、ロボと並べて比べられる。",
+          "expression": "neutral",
+          "tag": "next_step"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "これは、2026年11月7日時点の、二人の見立て。",
+          "expression": "neutral"
+        }
+      ],
+      "narration": "大輔「僕の予想は、1年ほどで、日本の店にも人型ロボが店員として来る、だった。そこは早かった。24時間は働いたけど、2台は基準の一部を満たせなかったし、値段も時期も出ていない。」\n沙織「私の予想は、営業中の店で一日中働くのは、まだ無理、だった。そこは外れた。夜中も朝の混む時間も作業を続けて、4台が合格した。」\n沙織「先に言っておくと、コンビニの報告は、作られた展示から、本物の店に出られることを示した、と書いてる。一日、本物の店で働いたのは確か。判定するのは、その先。」\n大輔「判定の札は、4つ。もうすぐ来る、3年はかかる、根拠待ち、まだ眉唾。二人それぞれ一つ選ぶ。」\n大輔「問いは最初のとおり。人手が足りない店に、人型ロボの店員が来るのはいつか。ここでは、日本の店で、品出しやコーヒーのような決まった作業を、毎日任され始めるのはいつか、で判定する。」\n沙織「日本の店で、ね。」\n大輔「僕は「3年はかかる」。この3年は、今日から数えて、日本の店で、人型ロボが決まった作業を毎日任され始めるまでの話。」\n沙織「理由は？」\n大輔「残る壁は、飴の袋やケーキをつかむような手先の器用さと、何週間も続けて働くこと。機械の壁だから、すぐではない。それでも、営業中の店で24時間、4台が合格したところまで来た。夜に練習を足して良くしていく仕組みもある。だから、3年のうちには来ると見る。」\n沙織「私は「根拠待ち」。来ない、という札じゃない。日本の店で、いつ・いくらで、が一つも出ていないから、時期を決める材料が足りない、という札。」\n沙織「値段が出て、アジボットではなく店の側が、何週間も続けて使って測った数字が出たら、札を上げる。」\n大輔「日本で売る話がまだ出ていないのは、その通り。そこは、僕の3年の、一番の弱いところ。」\n大輔「今日の持ち帰り。人型ロボの店員は、中国の営業中の店で、一日中働くところまで来た。日本の店に来る時期を決めるのは、値段と、店が長く使った数字。」\n沙織「今月できるのは、自分の店の作業を一つ選んで、人が一時間に何件こなしているか、一度数えてみること。品出しなら何箱、コーヒーなら何杯。値段が出たとき、ロボと並べて比べられる。」\n大輔「これは、2026年11月7日時点の、二人の見立て。」"
+    },
+    {
+      "type": "closing",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe_b",
+      "scene_id": 15,
+      "narrator": "dialogue",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "次に、人型ロボの値段か、買える時期が出たら、この3つの物差しで、また確かめよう。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "第1回で答えが出た物差しは、どこで動いているか、の一つだけ。次の回で、値段か時期に答えが出るか。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "neutral"
+        }
+      ],
+      "narration": "大輔「次に、人型ロボの値段か、買える時期が出たら、この3つの物差しで、また確かめよう。」\n沙織「第1回で答えが出た物差しは、どこで動いているか、の一つだけ。次の回で、値段か時期に答えが出るか。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "skeptic",
+          "narration": "人型ロボがコンビニで24時間？",
+          "expression": "surprised",
+          "scene_id": 12
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "接客も、コーヒーも、品出しも。全部で1730件。",
+          "expression": "excited",
+          "react": "surprised",
+          "scene_id": 9,
+          "shows_product": true,
+          "badge_text": "イメージ図（実物と異なる場合があります）"
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "でも、合格したのは6台中4台。値段も、まだ出ていない。",
+          "expression": "doubt",
+          "scene_id": 6,
+          "shows_product": true,
+          "badge_text": "イメージ図（実物と異なる場合があります）"
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "失敗も記録して、次に使う。細かい作業は、夜に練習を足してきた。",
+          "expression": "convinced",
+          "scene_id": 8,
+          "shows_product": true,
+          "badge_text": "イメージ図（実物と異なる場合があります）"
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "日本の店に来るのはいつ？ 判定は本編で。",
+          "expression": "thinking",
+          "scene_id": 12
+        }
+      ]
+    }
+  ]
+}
