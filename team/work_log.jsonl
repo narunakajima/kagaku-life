@@ -91,3 +91,13 @@
 {"ts": "2026-11-07T09:36:33+09:00", "kind": "work", "agent": "kl-planner", "episode": "kl053", "step": "1", "result": "ok", "retries": 0, "note": "選ばれた順位: 2位（AGIBOT）。推奨1位（オラクル）は不採用"}
 {"ts": "2026-11-07T09:50:46+09:00", "kind": "call", "agent": "kl-writer", "session": "61240068-1c9b-44cb-b6a8-91cc7a14e81b"}
 {"ts": "2026-11-07T09:50:53+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl053", "step": "2", "result": "ok", "retries": 0, "note": "第1稿 myth_buster 15シーン 4460字"}
+{"ts": "2026-11-07T09:55:53+09:00", "kind": "call", "agent": "kl-script-reviewer", "session": "61240068-1c9b-44cb-b6a8-91cc7a14e81b"}
+{"ts": "2026-11-07T09:55:59+09:00", "kind": "work", "agent": "kl-script-reviewer", "episode": "kl053", "step": "5", "result": "ok", "retries": 0, "note": "GO。S13の事実範囲・S08の語を修正"}
+{"ts": "2026-11-07T09:55:59+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl053", "step": "4.5", "result": "ok", "retries": 0, "note": ""}
+{"ts": "2026-11-07T09:57:53+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "61240068-1c9b-44cb-b6a8-91cc7a14e81b"}
+{"ts": "2026-11-07T09:58:02+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl053", "step": "5.5", "result": "ok", "retries": 0, "note": "r1 致命的0・直す5・できれば9"}
+{"ts": "2026-11-07T10:02:00+09:00", "kind": "call", "agent": "kl-writer", "session": "61240068-1c9b-44cb-b6a8-91cc7a14e81b"}
+{"ts": "2026-11-07T10:03:36+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "61240068-1c9b-44cb-b6a8-91cc7a14e81b"}
+{"ts": "2026-11-07T10:03:44+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl053", "step": "5.5", "result": "ok", "retries": 0, "note": "r2差分 致命的0・直す0・できれば6。合格"}
+{"ts": "2026-11-07T10:05:03+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "61240068-1c9b-44cb-b6a8-91cc7a14e81b"}
+{"ts": "2026-11-07T10:05:14+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl053", "step": "5.6", "result": "ok", "retries": 0, "note": "パッケージ評価"}
