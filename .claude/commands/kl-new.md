@@ -67,9 +67,10 @@
 
 ## 進捗の報告（2026-11-07〜、ユーザー決定。Muse の承認を減らすための受け渡し仕様）
 - **報告は Slack の「cc-reports」（非公開、ID: C0CFNQ50DUN）に投稿する。** Muse が読んで、なるさんに中継する（なるさんはこのチャンネルを見ない）。**ステップの区切り、完成、判断待ち、停止のたびに、確認なしで投稿する**（投稿先と種類は、なるさんが指定した範囲。ほかのチャンネル・用途には使わない）。案件（`kl{NNN}`）ごとに1スレッド（最初の投稿を親に、続報は返信）。
-- **形式（1行、項目は「 / 」区切り）:** `from=claude-code / project=KL / case=kl053 / event=step_done / step=11 / state=ok / next=動画生成 / eta=40分 / needs_user=なし / ref=handoff/progress/…`
+- **形式（1行、項目は「 / 」区切り）:** `from=claude-code / project=KL / case=kl053 / event=step_done / step=11 / by=<担当者名> / state=ok / next=動画生成 / eta=40分 / needs_user=なし / ref=handoff/progress/…`
   - `event` は4種類: `step_done`（工程の区切り）／`done`（案件の完成）／`needs_decision`（なるさんの判断待ち。`needs_user` に内容を1行）／`blocked`（停止。`state` に理由、`needs_user` に必要な判断）
   - `eta` は次の工程の見込み時間。長時間工程（動画生成・ビルド等）では必ず書く（Muse の停滞判定に使う）
+  - `by` はその工程の担当者（日本語名。Muse が顔画像を付けて中継するために必ず書く）。進行担当が直接行った工程は進行担当名。複数の担当者の作業をまとめて報告する場合は `by=クレア,エドワード` のように全員を列挙する
   - 長い内容は投稿せず、`ref=` でファイルのパスを示す。書かないもの: APIキー・トークン・個人情報などの機密（事実だけを書く）
 - **従来の GitHub の進捗メモ（`handoff/progress/`）は補助として、これまでどおりステップの区切りでコミットして push してよい**（Muse は読まない前提。履歴・再開用）。
 - **Muse からの指示は `handoff/inbox.md`（Muse の追記専用。Claude Code は編集しない）で受ける。** 1件1目的、件ごとに ID・目的・完了条件・触ってよい範囲。結果は `handoff/results/{ID}.md` に書き、要約を Slack に投稿する。未処理の判定は「results/{ID}.md が無いこと」。
