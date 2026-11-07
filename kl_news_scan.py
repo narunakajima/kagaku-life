@@ -841,7 +841,8 @@ def cmd_score(top: int, dry_run: bool = False):
             excluded.append("投資・株価が中心")
         entry = dict(p, **v, freshness=fresh, overall_score=score, scan_version=SCAN_VERSION, interest_version=INTEREST_VERSION,
                      status="excluded" if excluded else "available", excluded_reason="・".join(excluded),
-                     scored_at=datetime.now().date().isoformat())
+                     scored_at=datetime.now().date().isoformat(),
+                     first_seen_at=datetime.now().isoformat(timespec="seconds"), presented_on=[])
         cands["items"].append(entry)
         mark = "×" if excluded else " "
         print(f" {mark}[{score:.2f}] {p['title'][:70]}")
@@ -1944,6 +1945,55 @@ def is_tangible_pick(c: dict) -> bool:
             and _clamp5(c["tangible"]) >= BEST3_TANGIBLE_MIN and _clamp5(c["decision_number"]) >= BEST3_DECISION_MIN)
 
 
+# ============================================================
+# 同一ネタの繰り返し対策（2026-11-08、handoff 2026-11-08-001）
+#   1. 提示履歴: 下書き（ベスト3）に載った日を presented_on（日付のリスト）に残す。同じ候補は最大 PRESENT_MAX_DAYS 日まで。
+#      それだけ提示して選ばれなかった候補は dedupe が status="shelved"（棚上げ。データは消さない）にする
+#   2. 重複統合: 同一ストーリー（same_story。直接つながる候補だけ）の候補を dedupe が1件（canonical）に寄せる。他は status="merged"（merged_into）。
+#      used / shelved の状態はストーリー単位で効かせる（記事の日付が状態の日以前の兄弟だけ。続報＝その後の日付の記事は新規として残す）
+#   3. 新規優先枠: ベスト3の1枠は、初回スキャン（first_seen_at）から NEW_WITHIN_HOURS 時間以内の候補を優先する
+# ============================================================
+PRESENT_MAX_DAYS = 2             # 同じ候補を下書きに載せる最大の日数
+NEW_WITHIN_HOURS = 48            # 新規候補とみなす、初回スキャンからの時間
+NEW_MAX_TOPIC_AGE_DAYS = 7       # 採点が遅れて古い話題が「新規」にならないように、話題の初出がこれを超えたものは新規にしない
+USED_STORY_GRACE_DAYS = 2        # used の兄弟を吸収する日付の余裕（used には使った日の記録が無いため、初回スキャン日から数える）
+STATE_SHELVED, STATE_MERGED = "shelved", "merged"
+
+
+def _today() -> str:
+    return datetime.now().date().isoformat()
+
+
+def first_seen_dt(c: dict):
+    """初回スキャンの日時。first_seen_at が無い（この機能の前の）候補は scored_at の日の 0 時。"""
+    for k in ("first_seen_at", "scored_at"):
+        v = c.get(k)
+        if v:
+            try:
+                return datetime.fromisoformat(v)
+            except ValueError:
+                pass
+    return None
+
+
+def is_new_candidate(c: dict) -> bool:
+    fs = first_seen_dt(c)
+    if fs is None or (datetime.now() - fs).total_seconds() > NEW_WITHIN_HOURS * 3600:
+        return False
+    return topic_age_days(c) <= NEW_MAX_TOPIC_AGE_DAYS
+
+
+def presented_days(c: dict) -> list:
+    return sorted(set(c.get("presented_on") or []))
+
+
+def presentable(c: dict, today: str = None) -> bool:
+    """下書きに載せてよいか。既に PRESENT_MAX_DAYS 日提示した候補は、今日の再実行で載るもの以外は載せない。"""
+    today = today or _today()
+    d = presented_days(c)
+    return today in d or len(d) < PRESENT_MAX_DAYS
+
+
 def classify(cands: list) -> list:
     """available な候補に、鮮度・core・枠（lane）・ゲートの理由・系列を付けて返す。
     話題の初出（topic_first_date）はメモリ上で計算し直す（保存は呼び出し側。verify・buzz・check-urls が保存する）。"""
@@ -2029,7 +2079,26 @@ def best3(rows: list):
         key=lambda r: (r["interest"], r["core"] if r["core"] is not None else -1, r["c"].get("buzz_measured") or 0,
                        r["c"].get("buzz_outlets") or 0, r["tb"]), reverse=True)]
     order = [r for r in honmei + l2 if fit(r["c"]) >= BEST3_MIN_FIT and promise(r["c"]) >= BEST3_MIN_PROMISE
-             and surprise_ok(r["c"])]   # 2026-11-07: 驚きの1行が言い切れない候補は入れない
+             and surprise_ok(r["c"])      # 2026-11-07: 驚きの1行が言い切れない候補は入れない
+             and presentable(r["c"])]     # 2026-11-08: 同じ候補は下書きに最大 PRESENT_MAX_DAYS 日まで
+    # 2026-11-08（管理担当の指摘）: 提示日数は同一ストーリー（same_story で直接つながる兄弟）で数える。兄弟が別々に2日ずつ載らないように。
+    # 最後に提示した日より後の記事（続報）は、その候補自身の提示日だけで数える
+    # 兄弟は直接つながる候補（same_story）だけ。topic_series は推移的に巨大になるので使わない（2026-11-08 管理担当の指摘）
+    if not _TOKEN_DF:
+        for c in load_candidates()["items"]:
+            for t in _latin_tokens(_nfkc(c.get("title", ""))):
+                _TOKEN_DF[t] = _TOKEN_DF.get(t, 0) + 1
+    presented_rows = [r["c"] for r in rows if presented_days(r["c"])]
+
+    def story_presentable(c):
+        d = set(presented_days(c))
+        for o in presented_rows:
+            if o is not c and same_story(c, o):
+                d.update(presented_days(o))
+        if d and _article_day(c) <= max(d) and _today() not in d and len(d) >= PRESENT_MAX_DAYS:
+            return False
+        return True
+    order = [r for r in order if story_presentable(r["c"])]
     picks, series = [], set()
     from collections import Counter
     genres = Counter()
@@ -2039,18 +2108,24 @@ def best3(rows: list):
             if len(picks) == 3:
                 return
             g = r["c"].get("genre")
-            if r["series"] in series or genres[g] >= genre_max:
+            ts = r["c"].get("topic_series")     # 2026-11-08: 同一ストーリー（topic_groups）も重ねない
+            if r["series"] in series or (ts and ("topic:" + ts) in series) or genres[g] >= genre_max:
                 continue
             if r["c"].get("health") and sum(1 for p in picks if p["c"].get("health")) >= BEST3_HEALTH_MAX:
                 continue
             picks.append(dict(r, relaxed=genres[g] > 0, **flags))
             genres[g] += 1
             series.add(r["series"])
+            if ts:
+                series.add("topic:" + ts)
 
     ok = [r for r in order if _primary_ok(r["c"])]
     # 2026-11-04: 「物×判断の数字」の候補を最低1件（足りなければ空けたまま＝普通の選び方に戻る）。
     # 先に1件取り、他は従来どおり。最後に元の並び（order）に戻す
-    take([r for r in ok if is_tangible_pick(r["c"])][:1], 1)
+    # 2026-11-08: 先に新規優先枠（初回スキャンから48時間以内）を1件。無ければ空けたまま（呼び出し側が「新規候補なし」と明記する）
+    take([r for r in ok if is_new_candidate(r["c"])][:1], 1)
+    if not any(is_tangible_pick(p["c"]) for p in picks):
+        take([r for r in ok if is_tangible_pick(r["c"])][:1], 1)
     take(ok, 1)
     if len(picks) < 3:
         take(ok, BEST3_RELAXED_GENRE_MAX)
@@ -2069,6 +2144,13 @@ def _slot_lines(r: dict) -> list:
     """ベスト3の各候補に付ける枠の注記（list・slack 共通）。"""
     c = r["c"]
     out = []
+    if is_new_candidate(c):
+        out.append("🆕 新規候補（初回スキャンから48時間以内）")
+    n = len(presented_days(c))
+    if n:      # 今日の再実行で載る場合は今日を含む。n は今日より前に提示した日数
+        today_in = _today() in presented_days(c)
+        out.append(f"提示 {n}日目（最大{PRESENT_MAX_DAYS}日。載せた日: {'・'.join(d[5:] for d in presented_days(c))}）" if today_in
+                   else f"提示 {n + 1}日目（最大{PRESENT_MAX_DAYS}日）")
     if r.get("slot") == SLOT_L2:
         out.append("証拠: 未確認（第三者の検証・使った人の声を探す）")
         out.append(f"発表（初出）から{topic_age_days(c)}日")
@@ -2077,6 +2159,14 @@ def _slot_lines(r: dict) -> list:
     if r.get("reserve"):
         out.append("補欠（一次資料が要確認。確認済みの候補で埋まらなかったため）")
     return out
+
+
+NO_NEW_LINE = f"新規候補なし（初回スキャンから{NEW_WITHIN_HOURS}時間以内で、ゲートを通った候補がありません）"
+
+
+def new_note(picks: list) -> str:
+    """新規優先枠の注記。ベスト3に新規候補が1件も無いときだけ明記する。"""
+    return "" if any(is_new_candidate(p["c"]) for p in picks) else NO_NEW_LINE
 
 
 def _buzz_line(c: dict) -> str:
@@ -2873,6 +2963,8 @@ def cmd_list(top: int, check_urls: bool):
         print(f"   ※ ジャンルを緩めて補いました（同じジャンルは{BEST3_RELAXED_GENRE_MAX}件まで）")
     if len(picks) < 3:
         print(f"   ※ 条件を満たす候補が{len(picks)}件しかない（3件に満たないまま出す）")
+    if new_note(picks):
+        print(f"   ※ {new_note(picks)}")
     for r in picks:
         print(f"〈{r['slot']}〉", end="")
         _print_candidate(r, short=True)
@@ -2919,12 +3011,13 @@ def cmd_list(top: int, check_urls: bool):
     print(f"\n（ゲート通過だが注目度が低くニッチ・速報の条件も満たさない候補: {len(low)}件）")
 
 
-def cmd_slack(note_path: str):
+def cmd_slack(note_path: str, record: bool = True):
     """夜間実行用: ベスト3の下書きをスマホで読める Slack の Block Kit にして標準出力へ JSON で出す（2026-10-14）。"""
     g = json.loads(GENRES_JSON.read_text(encoding="utf-8"))
     gen = {k: v for k, v in g["genres"]} if isinstance(g["genres"], list) else dict(g["genres"])
     vname = {"soon": "もうすぐ", "decade": "3年", "pending": "根拠待ち", "dubious": "眉唾"}
-    rows = classify(load_candidates()["items"])
+    cands = load_candidates()
+    rows = classify(cands["items"])
     picks, niche = best3(rows)
     nums = "①②③"
 
@@ -2976,8 +3069,9 @@ def cmd_slack(note_path: str):
         lines = [f"*{nums[i]} 〈{r.get('slot', SLOT_HONMEI)}〉{title}*", meta]
         lines += [esc(x) for x in _slot_lines(r)]
         lines += [f"💬 {esc(c.get('entry_question'))}"]
-        if c.get("surprise_line"):
-            lines.append(f"😲 驚き: {clip(c.get('surprise_line'), 60)}（面白さ{r['interest']}）")
+        # 2026-11-08: 面白さの内訳（wonder / audience_fit / tangible）と surprise_line を毎回出す（選定理由を制作者に見せる）
+        lines.append(f"📊 面白さ{r['interest']}＝驚き{_neutral3(c, 'wonder')}＋視聴者{fit(c)}＋見せる{_neutral3(c, 'tangible')}")
+        lines.append(f"😲 驚き: {clip(c.get('surprise_line'), 60) if c.get('surprise_line') else '（未付与）'}")
         if c.get("hope_material"):
             lines.append(f"🌱 手応え: {clip(c.get('hope_material'), 90)}")
         lines.append(f"🔎 ツッコミ: {clip(c.get('tsukkomi_material'), 90)}")
@@ -3001,6 +3095,8 @@ def cmd_slack(note_path: str):
         blocks.append({"type": "divider"})
         blocks.append(card(i, r))
     notes = []
+    if new_note(picks):
+        notes.append(new_note(picks))
     if any(r.get("relaxed") for r in picks):
         notes.append(f"ジャンルを緩めて補いました（同じジャンルは{BEST3_RELAXED_GENRE_MAX}件まで）")
     if len(picks) < 3 and picks:
@@ -3032,7 +3128,157 @@ def cmd_slack(note_path: str):
     if brk:
         blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": "速報（48時間後に再計測）: " + " ／ ".join(esc(r["c"]["title"][:28]) for r in brk)}]})
     blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": "朝の /kl-new で仕上げます（既視感・競合動画・一次資料の確認）"}]})
+    if record:      # 2026-11-08: 載せた日を残す（同じ日の再実行では増えない）。保存は news_candidates.json のみ
+        today = _today()
+        for r in picks:
+            d = presented_days(r["c"])
+            if today not in d:
+                r["c"]["presented_on"] = d + [today]
+        _save_candidates(cands)
     print(json.dumps({"text": "KL ネタ ベスト3の下書き", "blocks": blocks}, ensure_ascii=False))
+
+
+_TOKEN_DF = {}      # 英数語 → その語を見出しに含む候補の数（cmd_dedupe が作る）
+
+
+_RARE_STOP = {"introducing", "introduces", "launches", "launch", "announces", "announcing", "building", "using", "turns"}
+
+
+def _latin_tokens(title_n: str) -> set:
+    """製品名・固有名らしい英数語（数字を含む、または大文字を含む）。英語の見出し先頭の語と一般的な動詞は除く。"""
+    out = set()
+    for m in re.finditer(r"[A-Za-z0-9][A-Za-z0-9.+-]{3,}", title_n):
+        t = m.group(0)
+        if not (re.search(r"\d", t) or re.search(r"[A-Z]", t)):
+            continue
+        if t.lower() in _RARE_STOP:
+            continue
+        out.add(t.lower())
+    return out
+
+
+def _rare_tokens(title_n: str) -> set:
+    return {t for t in _latin_tokens(title_n) if 0 < _TOKEN_DF.get(t, 0) <= 6}
+
+
+def same_story(a: dict, b: dict) -> bool:
+    """2件が直接同じストーリーか（topic_groups と同じ条件を2件だけで判定する）。topic_groups は推移的につなぐので、
+    統合・状態の伝播には使わない（「GPT-6.1 Sol」の発表を核に別の発表までつながった。2026-11-08 の試験で確認）。"""
+    ta, tb = _nfkc(a.get("title", "")), _nfkc(b.get("title", ""))
+    if b["id"] in (a.get("dup_ids") or []) or a["id"] in (b.get("dup_ids") or []):
+        return True
+    if _distinct_numbers(a.get("title", ""), b.get("title", "")):
+        return bool(a.get("series")) and a.get("series") == b.get("series")
+    # 同じ時期（前後1日）の発表で、全候補の見出しに6件以下しか出ない固有の英数語（製品名など）を共有する
+    # （見出しの言い回しが違う同じ発表。「1Password」「ugo Nova」。2026-11-08 管理担当の指摘）
+    try:
+        close = abs((datetime.fromisoformat(_article_day(a)) - datetime.fromisoformat(_article_day(b))).days) <= 1
+    except ValueError:
+        close = False
+    if close and (_rare_tokens(ta) & _rare_tokens(tb)):
+        return True
+    qa, qb = (a.get("jp_news_query") or "").strip(), (b.get("jp_news_query") or "").strip()
+    if close and qa and qa == qb:      # 同じ日本語検索語（enrich が付ける）で、前後1日の発表
+        return True
+    aa, ab = _topic_anchors(a), _topic_anchors(b)
+    ka, kb = _title_tokens(a.get("title", "")), _title_tokens(b.get("title", ""))
+    return ((bool(a.get("series")) and a.get("series") == b.get("series"))
+            or bool(aa and ab and all(x in tb for x in aa) and all(x in ta for x in ab))    # 片方向だけだと「GPT-6.1 Sol」を含む別の発表がつながる
+            or (len(ka) >= 4 and len(kb) >= 4 and len(ka & kb) / len(ka | kb) >= DEDUP_JACCARD))
+
+
+def _article_day(c: dict) -> str:
+    return ((c.get("announced_on") or c.get("published") or "")[:10]) or "0000-00-00"
+
+
+def _canonical_key(c: dict):
+    """重複統合で残す1件の選び方（最良のものを残す）: 一次資料確認済み → 驚きの1行がある → 面白さ → 実測の注目度 → 媒体数 → 初回スキャンが早い。"""
+    fs = first_seen_dt(c)
+    return (c.get("primary_verified") is True, bool((c.get("surprise_line") or "").strip()), interest(c),
+            c.get("buzz_measured") if c.get("buzz_measured") is not None else -1, c.get("buzz_outlets") or 0,
+            -(fs.timestamp() if fs else 1e18))
+
+
+MERGE_FILL_KEYS = ("surprise_line", "wonder", "audience_fit", "tangible", "promise", "decision_number", "buzz_measured",
+                   "buzz_outlets", "buzz_measured_at", "primary_verified", "entry_question")
+
+
+def cmd_dedupe(dry_run: bool = False):
+    """同一ネタの繰り返し対策（2026-11-08）。費用ゼロ・データは消さず status と欄の追加だけ:
+      1. 下書きに PRESENT_MAX_DAYS 日提示して選ばれなかった候補を棚上げ（status=shelved、shelved_on）
+      2. 同一ストーリー（same_story）に used / shelved があれば、記事の日付がその状態の日以前の available な兄弟も同じ状態に（続報は残す）
+      3. 残った available な同一ストーリーの重複を、最良の1件（canonical）に統合（他は status=merged、merged_into）
+    夜間実行では buzz の後・list の前に回す。"""
+    cands = load_candidates()
+    items = cands["items"]
+    today = _today()
+    log = []
+    _TOKEN_DF.clear()
+    for c in items:
+        for t in _latin_tokens(_nfkc(c.get("title", ""))):
+            _TOKEN_DF[t] = _TOKEN_DF.get(t, 0) + 1
+
+    # 1. 棚上げ
+    for c in items:
+        d = presented_days(c)
+        if c.get("status") == "available" and len(d) >= PRESENT_MAX_DAYS and today not in d:
+            c.update(status=STATE_SHELVED, shelved_on=today, shelved_reason=f"下書きに{len(d)}日提示（{'・'.join(x[5:] for x in d)}）して選ばれなかった")
+            log.append(f"棚上げ: {c['id']} {c['title'][:50]}（提示 {'・'.join(d)}）")
+
+    # 2・3. ストーリー単位
+    live = [c for c in items if c.get("status") in ("available", "used", STATE_SHELVED, STATE_MERGED)]
+    # used / 棚上げの状態は、直接同じストーリー（same_story）の候補だけに効かせる（topic_series は推移的に巨大になるので使わない）
+    for c in [x for x in items if x.get("status") == "available"]:
+        for o in live:
+            if o is c or o.get("status") not in ("used", STATE_SHELVED) or not same_story(c, o):
+                continue
+            if o.get("status") == STATE_SHELVED and _article_day(c) <= (o.get("shelved_on") or "0000"):
+                c.update(status=STATE_SHELVED, shelved_on=o.get("shelved_on"), shelved_via=o["id"],
+                         shelved_reason=f"同一ストーリー（{o['id']}）が棚上げ済み")
+                log.append(f"棚上げ（ストーリー単位）: {c['id']} {c['title'][:50]} ← {o['id']} {o['title'][:30]}")
+                break
+            if o.get("status") == "used":
+                fs = first_seen_dt(o)
+                cut = (fs.date() + timedelta(days=USED_STORY_GRACE_DAYS)).isoformat() if fs else "9999"
+                if _article_day(c) <= cut:
+                    c.update(status=STATE_MERGED, merged_into=o["id"], merged_reason="同一ストーリーが使用済み")
+                    log.append(f"使用済みのストーリーに吸収: {c['id']} {c['title'][:50]} ← {o['id']} {o['title'][:30]}")
+                    break
+    # 同一ストーリーで PRESENT_MAX_DAYS 日提示済みなら、最後の提示日以前の記事の兄弟も棚上げ（続報は残す）。
+    # 提示日数は直接つながる兄弟（same_story）だけで数える。topic_series は推移的に巨大になる（68件）ので使わない
+    for c in [x for x in items if x.get("status") == "available"]:
+        mates = [o for o in live if o is not c and presented_days(o) and same_story(c, o)]
+        sdays = set(presented_days(c))
+        for o in mates:
+            sdays.update(presented_days(o))
+        if mates and len(sdays) >= PRESENT_MAX_DAYS and today not in sdays and _article_day(c) <= max(sdays):
+            c.update(status=STATE_SHELVED, shelved_on=today, shelved_via="story",
+                     shelved_reason=f"同一ストーリーが{len(sdays)}日提示済み（{'・'.join(x[5:] for x in sorted(sdays))}）")
+            log.append(f"棚上げ（同一ストーリーの提示日数）: {c['id']} {c['title'][:50]}")
+    # 3. 重複統合は available 全体で見る。残す1件と直接同じストーリー（same_story）の候補だけを寄せ、推移的にはつなげない
+    avail = sorted([c for c in items if c.get("status") == "available"], key=_canonical_key, reverse=True)
+    pairs = []      # (残す1件, 吸収する1件)
+    left = list(avail)
+    while left:
+        h = left.pop(0)
+        for o in [x for x in left if same_story(h, x)]:
+            left.remove(o)
+            pairs.append((h, o))
+    for head, o in pairs:
+        for k in MERGE_FILL_KEYS:     # 最良の1件に無い情報は、他の記事の値で補う
+            if head.get(k) in (None, "") and o.get(k) not in (None, ""):
+                head[k] = o[k]
+        head["dup_ids"] = list(dict.fromkeys((head.get("dup_ids") or []) + [o["id"]] + (o.get("dup_ids") or [])))
+        head["presented_on"] = sorted(set(presented_days(head)) | set(presented_days(o)))
+        fo, fh = first_seen_dt(o), first_seen_dt(head)
+        if fo and (not fh or fo < fh):
+            head["first_seen_at"] = o.get("first_seen_at") or o.get("scored_at")
+        o.update(status=STATE_MERGED, merged_into=head["id"], merged_reason="同一ストーリーの重複")
+        log.append(f"重複統合: {o['id']} {o['title'][:46]} → 残す {head['id']} {head['title'][:30]}")
+    print("\n".join(log) if log else "変更なし")
+    print(f"\n棚上げ・統合: {len(log)}件" + ("（--dry-run: 保存しません）" if dry_run else ""))
+    if log and not dry_run:
+        _save_candidates(cands)
 
 
 LANE_ORDER = {"本命": 0, L2_LANE: 1, "速報": 2, L2_WAIT_LANE: 3, "ニッチ": 4, "注目度低": 5, "未計測": 6}
@@ -3062,7 +3308,7 @@ def cmd_list_by_genre(per: int):
 
 def main():
     ap = argparse.ArgumentParser(description="ニュース起点のネタ選定（collect → score → verify → repair → tag → enrich → buzz → list）")
-    ap.add_argument("command", choices=["collect", "score", "verify", "repair", "list", "tag", "enrich", "buzz", "check-urls", "slack", "yt"])
+    ap.add_argument("command", choices=["collect", "score", "verify", "repair", "list", "tag", "enrich", "buzz", "check-urls", "slack", "yt", "dedupe"])
     ap.add_argument("--days", type=int, default=21)
     ap.add_argument("--top", type=int, default=15)
     ap.add_argument("--by-genre", action="store_true", help="list: 5ジャンルごとに上位を出す（--top はジャンルあたりの件数）")
@@ -3080,10 +3326,13 @@ def main():
     ap.add_argument("--dry-run", action="store_true", help="buzz: 測るが保存しない / score: 採点する候補を表示するだけ（課金なし）")
     ap.add_argument("--sources", type=Path, default=None, help="collect: news_sources.json の代わりに使う設定（試験用）")
     ap.add_argument("--no-gemini", action="store_true", help="collect: Gemini（話題の補完・分野の絞り込み）を呼ばない（試験用）")
+    ap.add_argument("--no-record", action="store_true", help="slack: 提示した日（presented_on）を news_candidates.json に記録しない（試験用）")
     ap.add_argument("--note", default="", help="slack: ジャンルの間隔などを拾うテキスト（kl_concern_select.py の出力）")
     args = ap.parse_args()
     if args.command == "slack":
-        cmd_slack(args.note)
+        cmd_slack(args.note, not args.no_record)
+    elif args.command == "dedupe":
+        cmd_dedupe(args.dry_run)
     elif args.command == "collect":
         cmd_collect(args.days, args.sources, args.no_gemini)
     elif args.command == "score":

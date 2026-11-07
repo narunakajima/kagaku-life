@@ -9190,7 +9190,7 @@
       "freshness": 5,
       "overall_score": 3.05,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-12",
       "topic_first_date": "2026-05-13",
@@ -9207,7 +9207,9 @@
       "promise": 2,
       "tangible": 4,
       "decision_number": 1,
-      "series_fit": 4
+      "series_fit": 4,
+      "merged_into": "a3d5ffaacc",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "＜画像1 / 7＞家庭用ロボット最前線！価格、機能、その進化に迫る",
@@ -9779,7 +9781,12 @@
       "promise": 3,
       "tangible": 5,
       "decision_number": 4,
-      "series_fit": 4
+      "series_fit": 4,
+      "dup_ids": [
+        "54e97a27e2",
+        "2f8fa76e81"
+      ],
+      "presented_on": []
     },
     {
       "title": "尿検査で自閉症をスクリーニングできる可能性｜CareNet.com",
@@ -10568,7 +10575,8 @@
       "promise": 2,
       "tangible": 1,
       "decision_number": 1,
-      "series_fit": 1
+      "series_fit": 1,
+      "presented_on": []
     },
     {
       "title": "AI「思考」過程は信用できず、暴走リスク高まる",
@@ -11110,7 +11118,7 @@
       "freshness": 5,
       "overall_score": 3.15,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-12",
       "topic_first_date": "2026-05-13",
@@ -11127,7 +11135,13 @@
       "promise": 3,
       "tangible": 5,
       "decision_number": 4,
-      "series_fit": 4
+      "series_fit": 4,
+      "dup_ids": [
+        "2f8fa76e81"
+      ],
+      "presented_on": [],
+      "merged_into": "1c1485dd41",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "置き配と床下収納を直結、住宅内物流を自動化",
@@ -13249,7 +13263,11 @@
       "promise": 1,
       "tangible": 4,
       "decision_number": 1,
-      "series_fit": 4
+      "series_fit": 4,
+      "dup_ids": [
+        "d3b663897b"
+      ],
+      "presented_on": []
     },
     {
       "title": "ヘルスケア分野向けソーシャルロボット「Home LEO」の試作機が完成",
@@ -13540,7 +13558,9 @@
         "ロボスタ"
       ],
       "dup_ids": [
-        "deb8e3a04d"
+        "deb8e3a04d",
+        "fe230307b9",
+        "b0959e82ec"
       ],
       "primary_sources": [
         {
@@ -13601,7 +13621,8 @@
       "promise": 3,
       "tangible": 5,
       "decision_number": 4,
-      "series_fit": 5
+      "series_fit": 5,
+      "presented_on": []
     },
     {
       "title": "四足歩行ロボットの背中にドローンを載せて点検・巡視 puerisomniaが空陸連携プラットフォームの提供を開始 5枚目の写真・画像",
@@ -15932,7 +15953,11 @@
       "promise": 2,
       "tangible": 2,
       "decision_number": 1,
-      "series_fit": 1
+      "series_fit": 1,
+      "dup_ids": [
+        "a02efb33b1"
+      ],
+      "presented_on": []
     },
     {
       "title": "Microsoft、Copilotなどを自社開発チップで稼働　新チップでNVIDIA依存から脱却狙いか",
@@ -16139,7 +16164,7 @@
       "freshness": 5,
       "overall_score": 3.6,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-14",
       "topic_first_date": "2026-05-13",
@@ -16156,7 +16181,9 @@
       "promise": 3,
       "tangible": 5,
       "decision_number": 4,
-      "series_fit": 5
+      "series_fit": 5,
+      "merged_into": "df184ef77f",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "【動画】4体のアヒル型ロボット「Microduck」が魅せる即興合唱 Hugging Face傘下Pollen Robotics",
@@ -16567,7 +16594,7 @@
       "freshness": 5,
       "overall_score": 3.6,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-14",
       "topic_first_date": "2026-10-11",
@@ -16584,7 +16611,9 @@
       "promise": 2,
       "tangible": 5,
       "decision_number": 2,
-      "series_fit": 1
+      "series_fit": 1,
+      "merged_into": "947ba99a5b",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "アレルギー性皮膚炎で症状繰り返す仕組み、マウスで発見 京大など",
@@ -17425,7 +17454,7 @@
       "freshness": 5,
       "overall_score": 3.6,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-14",
       "topic_first_date": "2026-10-11",
@@ -17442,7 +17471,9 @@
       "promise": 2,
       "tangible": 5,
       "decision_number": 2,
-      "series_fit": 1
+      "series_fit": 1,
+      "merged_into": "947ba99a5b",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "がん患者に発症したNTM症では、8割が治療の変更を要する",
@@ -18250,7 +18281,7 @@
       "freshness": 2,
       "overall_score": 2.75,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-15",
       "topic_first_date": "2026-05-13",
@@ -18267,7 +18298,9 @@
       "promise": 3,
       "tangible": 5,
       "decision_number": 4,
-      "series_fit": 3
+      "series_fit": 3,
+      "merged_into": "54e97a27e2",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "【あの「RCZ」がEVで復活へ】プジョー「RCZ ビジョン」公開！ 500馬力＆600km、全固体電池で10→80％を10分",
@@ -18757,7 +18790,7 @@
       "freshness": 5,
       "overall_score": 3.35,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-15",
       "topic_first_date": "2026-10-14",
@@ -18774,7 +18807,9 @@
       "promise": 5,
       "tangible": 5,
       "decision_number": 4,
-      "series_fit": 1
+      "series_fit": 1,
+      "merged_into": "c2367d48d9",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "ヤクルト、継続飲用で死亡リスク低減を確認",
@@ -19235,7 +19270,7 @@
       "freshness": 5,
       "overall_score": 3.05,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-15",
       "topic_first_date": "2026-10-14",
@@ -19252,7 +19287,9 @@
       "promise": 4,
       "tangible": 5,
       "decision_number": 4,
-      "series_fit": 1
+      "series_fit": 1,
+      "merged_into": "a42ee00f97",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "中年期の健康的な食事は認知機能低下リスクを抑制する？｜CareNet.com",
@@ -19382,7 +19419,7 @@
       "freshness": 5,
       "overall_score": 3.7,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-15",
       "topic_first_date": "2026-10-13",
@@ -19399,7 +19436,9 @@
       "promise": 3,
       "tangible": 1,
       "decision_number": 1,
-      "series_fit": 1
+      "series_fit": 1,
+      "merged_into": "e3df6810b7",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "Google、待望の新AIモデル「Gemini 4 Argon」一般提供を開始　推論の継続力を強化　一部ベンチでトップに",
@@ -19718,7 +19757,14 @@
       "promise": 2,
       "tangible": 5,
       "decision_number": 2,
-      "series_fit": 1
+      "series_fit": 1,
+      "dup_ids": [
+        "f77dfcc005",
+        "bcd7cde907",
+        "c7fe9e62db"
+      ],
+      "presented_on": [],
+      "first_seen_at": "2026-10-14"
     },
     {
       "title": "高血圧診断後の生活習慣改善は心血管リスク低下と関連するか｜CareNet.com",
@@ -20555,7 +20601,7 @@
       "freshness": 1,
       "overall_score": 3.15,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-15",
       "topic_first_date": "2026-08-10",
@@ -20572,7 +20618,9 @@
       "promise": 3,
       "tangible": 1,
       "decision_number": 1,
-      "series_fit": 1
+      "series_fit": 1,
+      "merged_into": "181a5dbd0a",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "小中学校の校務に“自前運用”の国産LLM　NTT西と茨木市が全国初の実証",
@@ -20658,7 +20706,10 @@
         "au Webポータル"
       ],
       "dup_ids": [
-        "c3503a12c5"
+        "c3503a12c5",
+        "7a69f42ca5",
+        "ae43f4c619",
+        "c96ce3e9a9"
       ],
       "primary_sources": [
         {
@@ -20714,7 +20765,8 @@
       "promise": 1,
       "tangible": 3,
       "decision_number": 1,
-      "series_fit": 2
+      "series_fit": 2,
+      "presented_on": []
     },
     {
       "title": "中国でAIロボットが身近に、「寄り添い型」に注目",
@@ -21413,7 +21465,7 @@
       "freshness": 5,
       "overall_score": 3.4,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-16",
       "topic_first_date": "2026-05-13",
@@ -21430,7 +21482,9 @@
       "promise": 1,
       "tangible": 1,
       "decision_number": 2,
-      "series_fit": 2
+      "series_fit": 2,
+      "merged_into": "2048184946",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "全固体電池向けの材料開発 軽量化に貢献も 電通大学と日亜化学",
@@ -22014,7 +22068,7 @@
       "freshness": 5,
       "overall_score": 3.5,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-17",
       "topic_first_date": "2026-05-13",
@@ -22031,7 +22085,9 @@
       "promise": 1,
       "tangible": 1,
       "decision_number": 2,
-      "series_fit": 2
+      "series_fit": 2,
+      "merged_into": "2048184946",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "「カレー作りたい」と注文→ロボが野菜をピックする「未来の八百屋」　AWS×安川電機が披露",
@@ -24212,7 +24268,7 @@
       "freshness": 5,
       "overall_score": 3.4,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-18",
       "topic_first_date": "2026-05-13",
@@ -24229,7 +24285,9 @@
       "promise": 3,
       "tangible": 4,
       "decision_number": 3,
-      "series_fit": 4
+      "series_fit": 4,
+      "merged_into": "be5cd200f7",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "働かないAI ロボット？ ルーデンスAIがペットロボット『INU』を発売 1枚目の写真・画像",
@@ -24366,7 +24424,7 @@
       "freshness": 3,
       "overall_score": 2.95,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-18",
       "topic_first_date": "2026-09-30",
@@ -24383,7 +24441,9 @@
       "promise": 2,
       "tangible": 1,
       "decision_number": 1,
-      "series_fit": 1
+      "series_fit": 1,
+      "merged_into": "c462dd6308",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "Opella：新研究、咳治療の成功は症状緩和にとどまらないことを示す",
@@ -25571,7 +25631,9 @@
         "Yahoo!ニュース"
       ],
       "dup_ids": [
-        "78a9027ab9"
+        "78a9027ab9",
+        "715195eca7",
+        "252e9cecb2"
       ],
       "primary_sources": [
         {
@@ -25759,7 +25821,9 @@
       "promise": 3,
       "tangible": 4,
       "decision_number": 3,
-      "series_fit": 4
+      "series_fit": 4,
+      "presented_on": [],
+      "first_seen_at": "2026-10-18"
     },
     {
       "title": "マクセル---全固体電池バックアップモジュールを11月上旬に量産開始、産業機器向けに国内販売",
@@ -25817,7 +25881,7 @@
       "freshness": 5,
       "overall_score": 3.6,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-19",
       "topic_first_date": "2026-10-14",
@@ -25834,7 +25898,9 @@
       "promise": 4,
       "tangible": 4,
       "decision_number": 4,
-      "series_fit": 1
+      "series_fit": 1,
+      "merged_into": "c2367d48d9",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "【がんウイルス療法の最前線】放射線との併用で12人中8人の腫瘍が消失 直腸がんでは「人工肛門」の回避を目指す【前後編の後編】",
@@ -26552,7 +26618,7 @@
       "freshness": 5,
       "overall_score": 3.65,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-19",
       "topic_first_date": "2026-05-13",
@@ -26569,7 +26635,9 @@
       "promise": 3,
       "tangible": 4,
       "decision_number": 3,
-      "series_fit": 4
+      "series_fit": 4,
+      "merged_into": "be5cd200f7",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "認知症でも、脳は「好きな音楽」に反応する",
@@ -27326,7 +27394,7 @@
       "freshness": 4,
       "overall_score": 3.35,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-19",
       "topic_first_date": "2026-10-11",
@@ -27343,7 +27411,9 @@
       "promise": 2,
       "tangible": 4,
       "decision_number": 1,
-      "series_fit": 1
+      "series_fit": 1,
+      "merged_into": "947ba99a5b",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "幻覚剤で脳は「混乱」するどころか、「整然」と動いていたと判明",
@@ -27938,7 +28008,8 @@
       ],
       "dup_ids": [
         "4052ae270b",
-        "7d730d89e8"
+        "7d730d89e8",
+        "d5817d7b05"
       ],
       "primary_sources": [
         {
@@ -27994,7 +28065,8 @@
       "promise": 2,
       "tangible": 5,
       "decision_number": 4,
-      "series_fit": 5
+      "series_fit": 5,
+      "presented_on": []
     },
     {
       "title": "高齢ドナーの赤血球前駆細胞から、分子年齢が元の約5〜13%の神経幹細胞へ:ボン大学などが捉えた「ゆっくり進む細胞若返り」の意義",
@@ -30409,7 +30481,16 @@
       "promise": 5,
       "tangible": 5,
       "decision_number": 4,
-      "series_fit": 1
+      "series_fit": 1,
+      "dup_ids": [
+        "0547879671",
+        "304da2e1cf",
+        "be698b7aaa",
+        "a42ee00f97",
+        "90a842d656"
+      ],
+      "presented_on": [],
+      "first_seen_at": "2026-10-15"
     },
     {
       "title": "研究は、夜遅くに食べる習慣が肝疾患のリスクを30%増加させることを明らかにします",
@@ -30676,7 +30757,7 @@
       "freshness": 5,
       "overall_score": 3.7,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-21",
       "topic_first_date": "2026-05-13",
@@ -30693,7 +30774,9 @@
       "promise": 2,
       "tangible": 5,
       "decision_number": 4,
-      "series_fit": 4
+      "series_fit": 4,
+      "merged_into": "cc50affc02",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "“腸内細菌の一種が腸炎改善に効果”島根大学など研究グループ",
@@ -31228,7 +31311,7 @@
       "freshness": 5,
       "overall_score": 3.6,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-21",
       "topic_first_date": "2026-10-14",
@@ -31245,7 +31328,14 @@
       "promise": 4,
       "tangible": 5,
       "decision_number": 4,
-      "series_fit": 1
+      "series_fit": 1,
+      "dup_ids": [
+        "90a842d656"
+      ],
+      "presented_on": [],
+      "first_seen_at": "2026-10-15",
+      "merged_into": "c2367d48d9",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "KRAS変異を標的とした二重特異性抗体を開発 ～膵がん・大腸がん患者の治療に応用期待～",
@@ -31634,7 +31724,7 @@
       "freshness": 5,
       "overall_score": 2.7,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-21",
       "topic_first_date": "2026-05-13",
@@ -31651,7 +31741,9 @@
       "promise": 3,
       "tangible": 5,
       "decision_number": 4,
-      "series_fit": 4
+      "series_fit": 4,
+      "merged_into": "b1fcab7898",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "明治大学と吉野家HD、脂質源の違いが意欲や自発的活動の維持に関与する可能性を発表",
@@ -32796,7 +32888,7 @@
       "freshness": 5,
       "overall_score": 4.15,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-22",
       "topic_first_date": "2026-10-21",
@@ -33147,7 +33239,9 @@
       "promise": 4,
       "tangible": 2,
       "decision_number": 2,
-      "series_fit": 1
+      "series_fit": 1,
+      "merged_into": "885a7b1a59",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "フィジカルAIの社会実装と日本の勝ち筋 GROOVE X、Preferred Robotics、ugo、3社トップの講演とパネルディスカッション",
@@ -34658,7 +34752,9 @@
       "dup_ids": [
         "4837b63c8f",
         "15acecbe65",
-        "74fe41518d"
+        "74fe41518d",
+        "9c8b2c8b87",
+        "7fa5c8b39a"
       ],
       "primary_sources": [
         {
@@ -34715,7 +34811,8 @@
       "promise": 2,
       "tangible": 5,
       "decision_number": 4,
-      "series_fit": 4
+      "series_fit": 4,
+      "presented_on": []
     },
     {
       "title": "肺神経内分泌がんがセロトニンを利用して抗腫瘍免疫応答を抑える仕組みを解明―免疫療法への治療抵抗性の克服につながることが期待",
@@ -35330,7 +35427,7 @@
       "freshness": 4,
       "overall_score": 3.0,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-24",
       "topic_first_date": "2026-05-13",
@@ -35347,7 +35444,9 @@
       "promise": 2,
       "tangible": 4,
       "decision_number": 4,
-      "series_fit": 2
+      "series_fit": 2,
+      "merged_into": "231f540348",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "体内でがんを狙う免疫細胞を生み出す新戦略",
@@ -36938,7 +37037,11 @@
       "promise": 4,
       "tangible": 2,
       "decision_number": 3,
-      "series_fit": 1
+      "series_fit": 1,
+      "dup_ids": [
+        "1508910b22"
+      ],
+      "presented_on": []
     },
     {
       "title": "家庭用ロボット「Voxel」が米国で予約開始、アニメーションから動作を学習",
@@ -38143,7 +38246,7 @@
       "freshness": 5,
       "overall_score": 3.45,
       "scan_version": "2026-10-11-buzz-measured",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-25",
       "topic_first_date": "2026-10-22",
@@ -38515,7 +38618,9 @@
       "promise": 4,
       "tangible": 2,
       "decision_number": 1,
-      "series_fit": 1
+      "series_fit": 1,
+      "merged_into": "b7a65ccc01",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "アヒル型ロボット「Microduck」の予約注文数が2万台を突破、NVIDIAのジェンスン・フアンCEOとの戯れで爆売れ",
@@ -38663,7 +38768,12 @@
       "promise": 3,
       "tangible": 5,
       "decision_number": 4,
-      "series_fit": 5
+      "series_fit": 5,
+      "dup_ids": [
+        "dfc4499e88"
+      ],
+      "presented_on": [],
+      "first_seen_at": "2026-10-21"
     },
     {
       "title": "「がんを狙い撃つ」を、ナノテクノロジーで進化。新たなホウ素薬剤が拓く次世代がん放射線治療：RadioNano Therapeutics",
@@ -39592,7 +39702,7 @@
       "freshness": 1,
       "overall_score": 2.65,
       "scan_version": "2026-10-25-audience",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-26",
       "topic_first_date": "2023-06-08",
@@ -39608,7 +39718,9 @@
       "promise": 2,
       "tangible": 2,
       "decision_number": 1,
-      "series_fit": 1
+      "series_fit": 1,
+      "merged_into": "0a47c794ac",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "腸内細菌が食物繊維と「腸粘膜の修復」をつなぐ",
@@ -40561,7 +40673,11 @@
       },
       "tangible": 5,
       "decision_number": 4,
-      "series_fit": 5
+      "series_fit": 5,
+      "dup_ids": [
+        "77379bf2a5"
+      ],
+      "presented_on": []
     },
     {
       "title": "全固体電池、日米技術対決",
@@ -40919,7 +41035,7 @@
       "freshness": 5,
       "overall_score": 3.2,
       "scan_version": "2026-10-25-audience",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-27",
       "topic_first_date": "2026-05-13",
@@ -40934,7 +41050,9 @@
       },
       "tangible": 5,
       "decision_number": 4,
-      "series_fit": 5
+      "series_fit": 5,
+      "merged_into": "8234ae1b9f",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "フィジカルAI、日本の勝ち筋は「人型」だけではない ロボット3社が語る社会実装の条件 | TECH+（テックプラス）",
@@ -41585,7 +41703,7 @@
       "freshness": 5,
       "overall_score": 3.7,
       "scan_version": "2026-10-25-audience",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-28",
       "topic_first_date": "2026-05-13",
@@ -41600,7 +41718,9 @@
       },
       "tangible": 4,
       "decision_number": 3,
-      "series_fit": 4
+      "series_fit": 4,
+      "merged_into": "1fe680600f",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "ヒューマノイド向け力制御アームの累計出荷が1万台に到達したROKAE、シェフラーの工場でのヒューマノイド「Helios」導入事例も",
@@ -43150,7 +43270,11 @@
       "buzz_adopted_n": 3,
       "tangible": 5,
       "decision_number": 5,
-      "series_fit": 1
+      "series_fit": 1,
+      "dup_ids": [
+        "5194d34cff"
+      ],
+      "presented_on": []
     },
     {
       "title": "Anthropic、独自の“創薬活動”に着手　社員1人のバイオ企業を買収、小児難病の治療薬研究を進める",
@@ -43745,7 +43869,7 @@
       "freshness": 5,
       "overall_score": 3.85,
       "scan_version": "2026-10-25-audience",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-10-29",
       "topic_first_date": "2026-10-28",
@@ -43760,7 +43884,9 @@
       },
       "tangible": 5,
       "decision_number": 5,
-      "series_fit": 1
+      "series_fit": 1,
+      "merged_into": "024239d914",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "東邦大、慈恵医大などとの共同研究で抗がん剤の薬剤耐性を克服する治療標的としてリン酸化酵素DYRK2を発見",
@@ -44765,7 +44891,12 @@
       },
       "tangible": 4,
       "decision_number": 4,
-      "series_fit": 2
+      "series_fit": 2,
+      "dup_ids": [
+        "d3d399aff1"
+      ],
+      "presented_on": [],
+      "first_seen_at": "2026-10-24"
     },
     {
       "title": "甲状腺未分化がんの発生に、がん細胞の\"初期化\"が関わることを発見",
@@ -47353,7 +47484,7 @@
       "freshness": 5,
       "overall_score": 3.25,
       "scan_version": "2026-10-25-audience",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-11-01",
       "topic_first_date": "2026-10-29",
@@ -47555,7 +47686,9 @@
       "buzz_adopted_n": 3,
       "tangible": 4,
       "decision_number": 2,
-      "series_fit": 4
+      "series_fit": 4,
+      "merged_into": "e414dc6b10",
+      "merged_reason": "同一ストーリーが使用済み"
     },
     {
       "title": "フィンランド研究、動物性タンパク質はテストステロン低下と、植物性タンパク質は高値と関連",
@@ -49223,7 +49356,13 @@
       "buzz_adopted_n": 3,
       "tangible": 2,
       "decision_number": 4,
-      "series_fit": 1
+      "series_fit": 1,
+      "dup_ids": [
+        "6bd1383f44",
+        "6e364c2458"
+      ],
+      "presented_on": [],
+      "first_seen_at": "2026-10-22"
     },
     {
       "title": "Metaがヒューマノイドロボット「Max」を開発／米国企業はすでに改良版の準備を進める",
@@ -51903,6 +52042,13 @@
       "source_kind": "media",
       "summary": "オラクルがOpenAIとの協業を拡大し、ChatGPTやCodex、AI技術を活用し、業務の効率化・実行からソフトウェアの脆弱性の検出、アプリケーション開発まで幅広く支援する。小規模企業には年間1万2000ドル分のクラウド利用枠を含むプランを提供する。",
       "id": "6d7236d704",
+      "presented_on": [
+        "2026-11-05",
+        "2026-11-06",
+        "2026-11-07",
+        "2026-11-08"
+      ],
+      "presented_on_note": "2026-11-08 Muse の実測（inbox 2026-11-08-001）から手で記録。下書きの提示履歴機能を入れる前の4日連続",
       "sources": [
         "ITmedia AI+"
       ],
@@ -53665,7 +53811,12 @@
         "title": "【摂南大学】日本人特有の腸内細菌5タイプと食事傾向の関連を解析 共同研究論文が国際学術誌『Gut Microbes Reports』に掲載 京丹後市の住民770人を対象にAIを活用して解析 エンテロタイプごとに異なる食事傾向を明らかに",
         "id": "c462dd6308",
         "source": "Googleニュース（腸内細菌 研究）／北海道新聞デジタル"
-      }
+      },
+      "dup_ids": [
+        "ceb1fa3473"
+      ],
+      "presented_on": [],
+      "first_seen_at": "2026-10-18"
     },
     {
       "title": "がん細胞死が抗腫瘍免疫を活性化する機序の一端を解明 ミトコンドリアDNAの量が重要な因子に",
@@ -54121,7 +54272,12 @@
         "title": "【論文紹介】iPS細胞由来の間葉系幹細胞から高品質な軟骨を作製（池谷真准教授） Drink (0z8OR53y9i)",
         "id": "0a47c794ac",
         "source": "Googleニュース（iPS細胞 研究 成果）／Unisba Media"
-      }
+      },
+      "dup_ids": [
+        "55330dfd0d"
+      ],
+      "presented_on": [],
+      "first_seen_at": "2026-10-26"
     },
     {
       "title": "GitHub、「Copilot Fusion」正式リリース　タスクに応じて最適なAIモデル選択、高性能・低コスト両立",

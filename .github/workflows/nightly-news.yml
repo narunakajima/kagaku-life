@@ -53,6 +53,8 @@ jobs:
           python3 kl_news_scan.py tag
           python3 kl_news_scan.py enrich
           python3 kl_news_scan.py buzz
+          # 同一ネタの繰り返し対策（2026-11-08）: 2日提示して選ばれなかった候補の棚上げ・同一ストーリーの重複統合（費用ゼロ、データは消さない）
+          python3 kl_news_scan.py dedupe || echo "dedupe に失敗（続行）"
           python3 kl_news_scan.py list --top 10 --check-urls > nightly_list.txt
           python3 kl_concern_select.py > nightly_concern.txt || true
 
@@ -81,3 +83,20 @@ jobs:
             jq -n '{text: "KL ネタ ベスト3: 整形に失敗しました。Actions のログを確認してください。"}' > slack_payload.json
           fi
           curl -sS -X POST -H 'Content-type: application/json' --data @slack_payload.json "$SLACK_WEBHOOK_URL_KL"
+
+      # 下書きに載せた日（presented_on）を残す（2026-11-08）。slack コマンドが news_candidates.json に書く
+      - name: Commit presented_on
+        if: always()
+        run: |
+          git config user.name "kl-nightly-bot"
+          git config user.email "kl-nightly-bot@users.noreply.github.com"
+          git add news_candidates.json
+          if git diff --cached --quiet; then
+            echo "変更なし"
+          else
+            git commit -m "data: 下書きの提示履歴を更新 [skip ci]"
+            for attempt in 1 2 3; do
+              if git push; then break; fi
+              git pull --rebase
+            done
+          fi
