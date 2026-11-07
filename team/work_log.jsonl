@@ -105,3 +105,6 @@
 {"ts": "2026-11-07T10:07:12+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl053", "step": "5.6", "result": "ok", "retries": 0, "note": "案6改（人手不足＋いつ＋中国、AGIBOTは概要欄・タグへ）。冒頭は変えない。次点: 案7、案4"}
 {"ts": "2026-11-07T10:27:13+09:00", "kind": "call", "agent": "kl-art-director", "session": "61240068-1c9b-44cb-b6a8-91cc7a14e81b"}
 {"ts": "2026-11-07T10:27:18+09:00", "kind": "work", "agent": "kl-art-director", "episode": "kl053", "step": "6.7", "result": "ok", "retries": 0, "note": "CRITICAL 3件（S09, サムネ, Shorts1）修正。shorts S04は安全フィルタ拒否→S08作り直し"}
+{"ts": "2026-11-07T10:54:10+09:00", "kind": "call", "agent": "kl-manager", "session": "61240068-1c9b-44cb-b6a8-91cc7a14e81b"}
+{"ts": "2026-11-07T10:54:16+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl053", "step": "11", "result": "ok", "retries": 0, "note": "進行可。S07_L05は照合の基準の仮名の誤りで許容。BGMはライブラリ曲 kl034/kl047/kl036 を承認。画像・資料カード・イメージ図注記OK。【できれば】6件は反映しない。次点は案7・案4"}
+{"ts": "2026-11-07T10:54:16+09:00", "kind": "feedback", "agent": "kl-coordinator", "episode": "kl053", "source": "manager", "severity": "minor", "text": "kl_reading_qa が訓読み動詞（動いた）の基準仮名を誤変換し4回無駄に再生成。基準の仮名が疑わしいとき再生成を止める仕組みを検討。review.html に BGM採用曲と次点パッケージ案が出ない（kl_review_gen.py）"}
