@@ -3081,8 +3081,67 @@
         "freshness": 5,
         "candidate_id": "86b2fe10bb"
       }
+    },
+    {
+      "episode_id": "kl053",
+      "status": "confirmed",
+      "slot_type": "news",
+      "genre": "humanoid",
+      "health": false,
+      "domain": "life",
+      "concern_id": "work_ai",
+      "entry_question": "人手が足りない店に、人型ロボが「店員」として来る日は近い？ そのとき何を見て導入を決めればいい？",
+      "title": "人型ロボ6台が上海のコンビニで24時間働いた。店に来るのはいつ？AGIBOT（11月時点）",
+      "format": "dialogue",
+      "structure": "rounds_v4",
+      "source_type": "news",
+      "news_date": "2026-10-29",
+      "verdict_as_of": "2026-11-07",
+      "series": "humanoid_watch",
+      "series_no": 1,
+      "references": [
+        {
+          "title": "AGIBOT、ロボットの実際の有効労働を測るフレームワーク「Worken」を発表（AGIBOT Innovation Day 2026）",
+          "authors": [],
+          "year": 2026,
+          "venue": "AGIBOT 公式ニュース（2026年10月29日）",
+          "url": "https://www.agibot.com/article/231/detail/131.html",
+          "is_preprint": false,
+          "institution": "AGIBOT",
+          "source_kind": "official_blog"
+        },
+        {
+          "title": "上海の営業中のコンビニで人型ロボ G2 が6台、24時間の試験",
+          "authors": [],
+          "year": 2026,
+          "venue": "AGIBOT 公式ニュース（2026年11月6日公開）",
+          "url": "https://www.agibot.com/article/231/detail/134.html",
+          "is_preprint": false,
+          "institution": "AGIBOT",
+          "source_kind": "official_blog"
+        },
+        {
+          "title": "AGIBOT ストア（G2は『営業に問い合わせ』、価格の記載なしの確認用）",
+          "authors": [],
+          "year": 2026,
+          "venue": "AGIBOT ストア",
+          "url": "https://store.agibot.com/",
+          "is_preprint": false,
+          "institution": "AGIBOT",
+          "source_kind": "company_website"
+        }
+      ],
+      "hook_idea": "営業中のコンビニで人型ロボ6台が24時間。1,730件の作業をこなし、6台中4台が合格、2台は基準の一部を満たさず。価格と買える時期は未発表。",
+      "notes": "ベスト3の2位（ミア提案、なるさん選択 2026-11-07）。人型ロボ定点観測 第1回（振り返りなし、『今回から、人型ロボがいつ・いくらで来るかを、発表のたびに確かめます』で始める）。構成 v4。問いは『人手不足の店に人型ロボが店員として来る暮らし』から。【一次資料 2026-11-07 ミア確認】Worken記事(10/29): Worken＝実際に働いている台数×人の手を借りずに働いた時間×出力効率比。『発展途上の枠組み』と会社自身が記載。同時発表: AHA3、GO-3 Preview、G2 Max、Link-U OS 1.0。コンビニ記事(11/2 10時〜11/3 10時、上海市徐匯区の営業中の店): 車輪型G2を6台、役割6つ。接客683件・商品受け渡し369件・コーヒー147杯・朝食126食・棚点検/品出し277件・テーブル清掃128件（合計1,730件）。6台中4台が最終評価に合格、2台は基準の一部未達。評価者は『コーラとゼロの見分け』『並べ替えたガムを棚に戻す』『人と箱でふさいだ通路をよける』を試した。生配信200万人超視聴（自社記載）。価格: ストアは『営業に問い合わせ』。物差し: 値段=未発表、買える時期=未発表、どこで動いているか=上海のコンビニ24時間試験。【沙織の材料】Workenは自社提案で第三者認定でも業界標準でもなく、出力効率比の基準も自社が決める。試験は自社の催しで1日のみ、評価基準も自社、2台不合格。【予想判定】大輔=3年はかかる（器用さの物理的な壁）／沙織=根拠待ち（第三者が測ったWorkenの数字と価格が出たら変わる、と台詞で一言）。【論点案】1コンビニで24時間（壁:2台不合格→越え方:失敗を記録して夜に練習させる仕組み『Genie Master』）、2『何台買ったか』でなく『何時間ぶん働いたか』で測る（壁:自社の式→越え方:自分の店の作業で人と比べる）、3値段と時期は未発表。【next_step案】自分の店の作業を、人が1時間に何件こなしているか一度数えてみる。【懸念】注目度実測3で低め。直近5話で人型は3話目。読売テレビが4週前に中国コンビニの人型ロボ導入を放送済み（今回の新しさは24時間の数字と合格数）。【避ける】kl049・kl051と同じ型（現場導入の構図）にしない。投資判断に寄せない。実在製品G2の外観は想像で描かない（kl_photo_commons.py で確認、無ければ汎用の描き方＋イメージ図注記）。採点候補の一次資料URLはトップページなので、台本の根拠は上の記事ページ2本。Worken解説 https://www.agibot.com/article/231/detail/132.html は未読の補足。採点要約の数字は台詞に使う前に上の資料で確かめる。",
+      "stage4_snapshot": {
+        "overall_score": 3.25,
+        "evidence_level": null,
+        "announcement_type": "product_release",
+        "freshness": 5,
+        "candidate_id": "e414dc6b10"
+      }
     }
   ],
-  "total_topics": 52,
-  "last_updated": "2026-11-05"
+  "total_topics": 53,
+  "last_updated": "2026-11-07"
 }
