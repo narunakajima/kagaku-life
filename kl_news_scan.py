@@ -34,6 +34,12 @@ kl_news_scan.py — ニュース起点のネタ選定（2026-10-04〜）
   加重和の hype_gap を 0.10 → 0.05 に下げた。promise が3未満（誇張・宣伝が中心）の候補はベスト3に入れない（一覧・ニッチ枠には残る）。
   同日、ベスト3に「視聴者との合い方3以上・健康系1件まで」の条件も足した
 
+2026-11-07（面白さで並べる、なるさんの決定。Muse の提案「ネタ選定の改善」）: 旬（鮮度）と実測の注目度は「入る条件」に下げ
+  （本命＝鮮度3以上・実測3以上のゲートはそのまま）、条件を通った候補の中は **面白さ＝驚き（wonder）＋視聴者（audience_fit）＋
+  見せられるか（tangible）**（3〜15）で並べる。core（鮮度×注目×視聴者）は面白さが同点のときの並びに回した。wonder は採点の目安を
+  WONDER_RUBRIC に書き直し、視聴者が何に驚くかの1行（surprise_line）を足した。1行で言い切れない（空の）候補はベスト3に入れない。
+  既存の候補は enrich が付け直す（interest_version）
+
 2026-10-15（NEWS_REDESIGN_2026-10-15.md の1週目）:
   - verify: 採点の直後に一次資料URLの実在を確かめる（HTTP・ソフト404、DOIは doi.org のハンドルAPI）。
     primary_verified が False（全URLが404）の候補はゲートで落とし、None（403等で判断不能）は「要確認」で残す
@@ -87,7 +93,8 @@ UA = {"User-Agent": "Mozilla/5.0 (kagaku-life news scan)"}
 
 # 一次資料が確認できない候補は採用しない（追記メモ §3）。検証可能性がこの点以下なら除外する
 MIN_VERIFIABILITY = 3
-SCAN_VERSION = "2026-11-04-subscriber"
+SCAN_VERSION = "2026-11-07-interest"
+INTEREST_VERSION = "2026-11-07"   # wonder（新しい目安）と surprise_line を付けた版。違えば enrich が付け直す
 
 # 想定する視聴者（2026-10-25、CLAUDE.md「想定する視聴者」）。audience_fit（1〜5）の採点に使い、
 # core の「関わり」は audience_fit で数える（無い候補は従来の暮らし・仕事の高い方）
@@ -141,12 +148,25 @@ SERIES_FIT_RUBRIC = (
     "     1 = ロボットと関係がない\n"
     "     迷ったら低い方を付ける。")
 
+# 驚き（2026-11-07、目安を書き直した）。面白さ（wonder＋audience_fit＋tangible）としてベスト3の並び順の主役に使う
+WONDER_RUBRIC = (
+    "wonder: 上の視聴者が「え、本当に？」「そこまで来たの？」と驚くか（一次資料の範囲で言える驚きだけ。見出しの盛りは数えない）。\n"
+    "     5 = 常識が覆る・予想と逆の結果、または桁違いの数字（例: 人がやると思っていた仕事を機械が丸一日こなした、値段が1/10になった）\n"
+    "     4 = 「もうそこまで？」と思う進み方（身近な店・家・仕事で、予想より早く実物が動いている）\n"
+    "     3 = 順当な進歩（前の版より良くなった、予想どおりの発表）\n"
+    "     2 = 業界の人には意味があるが、一般の人は驚かない（性能の数字の小さな更新、提携・人事）\n"
+    "     1 = 驚く点がない\n"
+    "     迷ったら低い方を付ける。")
+SURPRISE_LINE_RULE = (
+    "surprise_line: 上の視聴者のうち「誰が、何に驚くか」を1行（40字以内）で。形は「〇〇の人が、〜に驚く」"
+    "（例: 「コンビニの店主が、ロボが夜中も含め24時間店を回したことに驚く」）。一次資料に書かれていることだけで言い切れなければ空にする")
+
 # ベスト3・本命枠に入れる条件（2026-10-11、P0）。一覧そのものの足切りは MIN_VERIFIABILITY のまま
 GATE_MIN_VERIFIABILITY = 4
 GATE_MIN_LIFE = 4            # 暮らし（life_relevance）と仕事・ビジネス（work_relevance）の高い方が3以下なら本命に入れない（2026-10-12）
 GATE_MIN_FRESHNESS = 3       # freshness_score で3以上＝発表から21日以内
 
-# 互換用の加重和（overall_score）。list の並び順の主役は core（= 鮮度 × 実測の注目度）で、こちらは参考表示のみ。
+# 互換用の加重和（overall_score）。list の並び順の主役は面白さ（interest、2026-11-07〜。その次が core）で、こちらは参考表示のみ。
 # buzz は buzz_measured（実測）があればそれ、無ければ buzz_jp_est（推定。旧データは buzz_jp）を使う
 WEIGHTS = {
     "freshness": 0.25,       # 発表からの日数（コードで計算）。最重視（2026-10-11、なるさんの指示: 旬の話題）
@@ -534,7 +554,7 @@ Google検索で調べ、次を出力してください。
    - hype_gap: 見出しと実際の中身の差（差が大きいほど高い）
    - {promise_rubric}
    - debate: 議論を呼ぶか・二人の判定が割れそうか
-   - wonder: 驚き・ワクワク（温かい感動だけでなく「え、本当に？」という知的な驚きも）
+   - {wonder_rubric}
    - life_relevance: 暮らしにどう関わるか（関心ごとのどれかに具体的につながるほど高い）
    - work_relevance: 仕事・ビジネスにどう関わるか（働く人・経営者・個人事業主が今日の仕事や判断で使える、または影響を受けるほど高い。
      開発者・研究者しか使わない専用品は低い）
@@ -544,6 +564,7 @@ Google検索で調べ、次を出力してください。
    - {series_fit_rubric}
 6. concern_id: いちばん近い関心ごとのid（無ければ null）
 7. entry_question: 視聴者側の問い（「〜は本当？」「〜はもう買える？」「〜はいつ来る？」の形。一次資料の範囲を超えない）
+7b. {surprise_line_rule}
 8. expected_verdicts: {{"dreamer": "soon|decade|pending|dubious", "skeptic": "soon|decade|pending|dubious"}}
    （soon=もうすぐ来る（もう使えるか1年ほどで）／decade=3年はかかる（お題の主張が3年以内に来そうで、物理・臨床の壁がある）／
     pending=根拠待ち（否定する資料は無いが、支える資料もまだ無い。3年より先の予測を含む）／
@@ -563,7 +584,7 @@ Google検索で調べ、次を出力してください。
 
 JSONオブジェクトのみで出力（他の文章は書かない）:
 {{"primary_sources": [], "announced_on": "", "headline_claim": "", "actual_content": "", "buzz_jp_est": 0, "verifiability": 0,
-"hype_gap": 0, "promise": 0, "debate": 0, "wonder": 0, "life_relevance": 0, "work_relevance": 0, "audience_fit": 0, "tangible": 0, "decision_number": 0, "series_fit": 0, "concern_id": null, "entry_question": "",
+"hype_gap": 0, "promise": 0, "debate": 0, "wonder": 0, "life_relevance": 0, "work_relevance": 0, "audience_fit": 0, "tangible": 0, "decision_number": 0, "series_fit": 0, "concern_id": null, "entry_question": "", "surprise_line": "",
 "expected_verdicts": {{}}, "tsukkomi_material": "", "hope_material": "", "investment_related": false, "deja_vu_note": "", "genre": "", "health": false,
 "jp_news_query": "", "jp_title_anchor": [], "announcement_type": ""}}
 """
@@ -577,7 +598,8 @@ def score_item(client, types, item: dict, past: str, concerns: str) -> dict:
                                  audience=AUDIENCE, audience_fit_rubric=AUDIENCE_FIT_RUBRIC,
                                  promise_rubric=PROMISE_RUBRIC, tangible_rubric=TANGIBLE_RUBRIC,
                                  decision_number_rubric=DECISION_NUMBER_RUBRIC,
-                                 series_fit_rubric=SERIES_FIT_RUBRIC)
+                                 series_fit_rubric=SERIES_FIT_RUBRIC, wonder_rubric=WONDER_RUBRIC,
+                                 surprise_line_rule=SURPRISE_LINE_RULE)
     for attempt in range(3):
         try:
             resp = client.models.generate_content(
@@ -817,7 +839,7 @@ def cmd_score(top: int, dry_run: bool = False):
             excluded.append("一次資料で確認できない")
         if v.get("investment_related"):
             excluded.append("投資・株価が中心")
-        entry = dict(p, **v, freshness=fresh, overall_score=score, scan_version=SCAN_VERSION,
+        entry = dict(p, **v, freshness=fresh, overall_score=score, scan_version=SCAN_VERSION, interest_version=INTEREST_VERSION,
                      status="excluded" if excluded else "available", excluded_reason="・".join(excluded),
                      scored_at=datetime.now().date().isoformat())
         cands["items"].append(entry)
@@ -1682,7 +1704,7 @@ def backfill_audience(cands: list, force: bool = False):
     """available の候補のうち audience_fit が無いものに、想定する視聴者との合い方（1〜5）を付ける（テキストのみ、2026-10-25）。
     score で付かなかった候補（2026-10-25 より前の採点）もこれで埋まる。"""
     todo = [c for c in cands if c.get("status") == "available"
-            and (force or any(c.get(k) is None for k in AUDIENCE_KEYS))]
+            and (force or any(c.get(k) is None for k in AUDIENCE_KEYS) or c.get("interest_version") != INTEREST_VERSION)]
     if not todo:
         return
     client, types = _gemini()
@@ -1694,17 +1716,19 @@ def backfill_audience(cands: list, force: bool = False):
             f"中身: {(c.get('actual_content') or c.get('summary') or '')[:300]}" for i, c in enumerate(batch))
         prompt = (
             "日本語の科学ニュース解説YouTube番組のネタ候補です。各候補について "
-            "audience_fit・promise・tangible・decision_number・series_fit（1〜5）を付けてください。\n"
+            "audience_fit・promise・tangible・decision_number・series_fit・wonder（1〜5）と surprise_line を付けてください。\n"
             f"【想定する視聴者】{AUDIENCE}\n"
             f"   - {AUDIENCE_FIT_RUBRIC}\n"
             f"   - {PROMISE_RUBRIC}\n"
             f"   - {TANGIBLE_RUBRIC}\n"
             f"   - {DECISION_NUMBER_RUBRIC}\n"
             f"   - {SERIES_FIT_RUBRIC}\n"
+            f"   - {WONDER_RUBRIC}\n"
+            f"   - {SURPRISE_LINE_RULE}\n"
             "言語対応や提供地域は無関係。\n\n"
             f"候補:\n{rows}\n\n"
             'JSON配列のみ出力: [{"i": 0, "audience_fit": 0, "promise": 0, "tangible": 0, "decision_number": 0, '
-            '"series_fit": 0}, ...]（全候補分）')
+            '"series_fit": 0, "wonder": 0, "surprise_line": ""}, ...]（全候補分）')
         try:
             out = _json_from(client.models.generate_content(model=MODEL, contents=prompt).text)
         except Exception as e:  # noqa: BLE001
@@ -1718,10 +1742,15 @@ def backfill_audience(cands: list, force: bool = False):
                 for k in AUDIENCE_KEYS[1:]:   # promise 以降は、返ってきた欄だけ付ける（欠けても audience_fit は残す）
                     if (force or c.get(k) is None) and r.get(k) is not None:
                         c[k] = _clamp5(r[k])
+                # 2026-11-07: wonder は新しい目安で付け直し、surprise_line を付ける（interest_version が古い候補）
+                if (force or c.get("interest_version") != INTEREST_VERSION) and r.get("wonder") is not None:
+                    c["wonder"] = _clamp5(r["wonder"])
+                    c["surprise_line"] = (r.get("surprise_line") or "").strip()[:60]
+                    c["interest_version"] = INTEREST_VERSION
                 n += 1
             except (KeyError, ValueError, IndexError, TypeError):
                 continue
-    print(f"audience_fit・promise・tangible・decision_number・series_fit を {n}/{len(todo)}件に付与しました")
+    print(f"audience_fit・promise・tangible・decision_number・series_fit・wonder・surprise_line を {n}/{len(todo)}件に付与しました")
 
 
 def cmd_enrich(force: bool):
@@ -1888,6 +1917,19 @@ def tie_break(c: dict) -> int:
     return tangible_decision(c) * 100 + promise(c) + _clamp5(c.get("debate")) + fit(c)
 
 
+def interest(c: dict) -> int:
+    """面白さ（2026-11-07、なるさんの決定）＝驚き（wonder）＋視聴者（audience_fit、健康系は4まで）＋見せられるか（tangible）。3〜15。
+    ゲート（鮮度・実測の注目度など）を通った候補の中の並び順の主役。付与前の項目は3（中立）"""
+    return _neutral3(c, "wonder") + fit(c) + _neutral3(c, "tangible")
+
+
+def surprise_ok(c: dict) -> bool:
+    """驚きの1行が言い切れているか。新しい版で付けたのに空なら False（ベスト3に入れない）。付与前は判断しない（True）。"""
+    if c.get("interest_version") != INTEREST_VERSION:
+        return True
+    return bool((c.get("surprise_line") or "").strip())
+
+
 def tb_parts(tb: int) -> tuple:
     return tb // 100, tb % 100
 
@@ -1930,7 +1972,7 @@ def classify(cands: list) -> list:
             lane = "注目度低"
         rows.append({"c": c, "fresh": fresh, "gate": gate, "lane": lane,
                      "core": fresh * bm * fit(c) if bm is not None else None,
-                     "core_est": fresh * buzz_value(c)[0] * fit(c), "tb": tie_break(c),
+                     "core_est": fresh * buzz_value(c)[0] * fit(c), "tb": tie_break(c), "interest": interest(c),
                      "old": overall(c, c.get("published", ""))[0]})
     ser = assign_series([r["c"] for r in rows if not r["gate"]])
     for r in rows:
@@ -1939,8 +1981,9 @@ def classify(cands: list) -> list:
 
 
 def _sorted_core(rows: list) -> list:
-    # core → 物×判断の数字＋手応え＋議論＋視聴者（tb）→ 媒体数（同点が多いので最後に実測の媒体数で並べる）
-    return sorted(rows, key=lambda r: (r["core"] if r["core"] is not None else -1, r["tb"],
+    # 2026-11-07: 面白さ（interest）→ core（鮮度×注目×視聴者）→ 物×判断の数字＋手応え＋議論＋視聴者（tb）→ 媒体数。
+    # 旬と注目度はゲート（本命の条件）で効かせ、条件を通った中は面白さで並べる（なるさんの決定。2026-10-11 の core 主役を置き換え）
+    return sorted(rows, key=lambda r: (r["interest"], r["core"] if r["core"] is not None else -1, r["tb"],
                                        r["c"].get("buzz_outlets") or 0), reverse=True)
 
 
@@ -1983,9 +2026,10 @@ def best3(rows: list):
     honmei = [dict(r, slot=SLOT_HONMEI) for r in _sorted_core([r for r in rows if r["lane"] == "本命"])]
     l2 = [dict(r, slot=SLOT_L2) for r in sorted(
         [r for r in rows if r["lane"] == L2_LANE],
-        key=lambda r: (r["core"] if r["core"] is not None else -1, r["c"].get("buzz_measured") or 0,
+        key=lambda r: (r["interest"], r["core"] if r["core"] is not None else -1, r["c"].get("buzz_measured") or 0,
                        r["c"].get("buzz_outlets") or 0, r["tb"]), reverse=True)]
-    order = [r for r in honmei + l2 if fit(r["c"]) >= BEST3_MIN_FIT and promise(r["c"]) >= BEST3_MIN_PROMISE]
+    order = [r for r in honmei + l2 if fit(r["c"]) >= BEST3_MIN_FIT and promise(r["c"]) >= BEST3_MIN_PROMISE
+             and surprise_ok(r["c"])]   # 2026-11-07: 驚きの1行が言い切れない候補は入れない
     picks, series = [], set()
     from collections import Counter
     genres = Counter()
@@ -2063,7 +2107,8 @@ def _print_candidate(r: dict, short: bool = False):
     warn = "  ⚠️一次資料 要確認" if c.get("primary_verified", "未") is None else \
         ("  ⚠️一次資料 未確認" if "primary_verified" not in c else "")
     td, tb2 = tb_parts(r["tb"])
-    print(f"[{core}｜物×数字 {td}｜手応え+議論+視聴者 {tb2}｜旧加重和 {r['old']:.2f}] {c['title'][:76]}"
+    intr = f"面白さ {r['interest']:2d}＝驚き{_neutral3(c, 'wonder')}＋視聴者{fit(c)}＋見せる{_neutral3(c, 'tangible')}"
+    print(f"[{intr}｜{core}｜物×数字 {td}｜手応え+議論+視聴者 {tb2}] {c['title'][:76]}"
           f"（{c.get('announced_on') or c.get('published')}、{c.get('genre', '?')}）" + ("  ※健康系" if c.get("health") else "")
           + warn)
     print(f"   {_topic_line(c)}")
@@ -2078,6 +2123,7 @@ def _print_candidate(r: dict, short: bool = False):
     if short:
         return
     print(f"   問い: {c.get('entry_question')}")
+    print(f"   驚き: {c.get('surprise_line') or ('（言い切れない）' if c.get('interest_version') == INTEREST_VERSION else '（未付与）')}")
     print(f"   見出し: {c.get('headline_claim')}")
     print(f"   実際: {c.get('actual_content')}")
     if c.get("hope_material"):
@@ -2822,7 +2868,7 @@ def cmd_list(top: int, check_urls: bool):
     _print_exclusions(rows)
 
     picks, niche_extra = best3(rows)
-    print(f"\n==== ベスト3の下書き（本命 core の順 → 答え合わせ候補、ジャンルと系列が重ならないように）: {len(picks)}件 ====")
+    print(f"\n==== ベスト3の下書き（本命 面白さの順 → 答え合わせ候補、ジャンルと系列が重ならないように）: {len(picks)}件 ====")
     if any(r.get("relaxed") for r in picks):
         print(f"   ※ ジャンルを緩めて補いました（同じジャンルは{BEST3_RELAXED_GENRE_MAX}件まで）")
     if len(picks) < 3:
@@ -2930,6 +2976,8 @@ def cmd_slack(note_path: str):
         lines = [f"*{nums[i]} 〈{r.get('slot', SLOT_HONMEI)}〉{title}*", meta]
         lines += [esc(x) for x in _slot_lines(r)]
         lines += [f"💬 {esc(c.get('entry_question'))}"]
+        if c.get("surprise_line"):
+            lines.append(f"😲 驚き: {clip(c.get('surprise_line'), 60)}（面白さ{r['interest']}）")
         if c.get("hope_material"):
             lines.append(f"🌱 手応え: {clip(c.get('hope_material'), 90)}")
         lines.append(f"🔎 ツッコミ: {clip(c.get('tsukkomi_material'), 90)}")
@@ -2996,7 +3044,7 @@ def cmd_list_by_genre(per: int):
     rows = [r for r in classify(load_candidates()["items"]) if not r["gate"]]
     for key in g["order"]:
         mine = [r for r in rows if r["c"].get("genre") == key]
-        mine = collapse_series(sorted(mine, key=lambda r: (-LANE_ORDER[r["lane"]], r["core"] if r["core"] is not None else -1, r["tb"],
+        mine = collapse_series(sorted(mine, key=lambda r: (-LANE_ORDER[r["lane"]], r["interest"], r["core"] if r["core"] is not None else -1, r["tb"],
                                                              r["c"].get("buzz_outlets") or 0),
                                       reverse=True))
         nh = sum(1 for r in mine if r["lane"] == "本命")

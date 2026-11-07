@@ -97,6 +97,10 @@ def load_episode_map():
         concern_labels = {c["id"]: c["label"] for c in vc.get("concerns", [])}
 
     group_map = {}
+    pattern_labels = {}
+    pj = TOPICS_QUEUE_JSON.parent / "topic_patterns.json"   # 題材の型（2026-11-07〜）
+    if pj.exists():
+        pattern_labels = {k: v["label"] for k, v in json.loads(pj.read_text(encoding="utf-8"))["patterns"].items()}
     if TOPICS_QUEUE_JSON.exists():
         queue = json.loads(TOPICS_QUEUE_JSON.read_text(encoding="utf-8")).get("queue", [])
         for item in queue:
@@ -107,8 +111,9 @@ def load_episode_map():
                     "domain_label": domain_labels.get(item.get("domain") or "", None),
                     "concern_label": concern_labels.get(cid, "（関心ごとなし）") if cid else "（関心ごとなし）",
                     "slot_label": SLOT_LABELS.get(item.get("slot_type") or "", None),
+                    "pattern_label": pattern_labels.get(item.get("topic_pattern") or "", None),
                 }
-    empty = {"domain_label": None, "concern_label": None, "slot_label": None}
+    empty = {"domain_label": None, "concern_label": None, "slot_label": None, "pattern_label": None}
 
     vid_info = {}
     for p in sorted(EPISODES_DIR.glob("kl[0-9]*.json")):
@@ -261,6 +266,7 @@ def aggregate(vid_info, ep_filter=None, age_window_days=None):
             "domain_label": info.get("domain_label"),
             "concern_label": info.get("concern_label"),
             "slot_label": info.get("slot_label"),
+            "pattern_label": info.get("pattern_label"),
             "is_shorts": info.get("is_shorts", False),
             "vid": vid,
             "views": s["views"],
@@ -374,6 +380,32 @@ def print_shorts_rollup(shorts_rows: list, key: str, title: str) -> None:
         print(f"    内訳: {breakdown}")
 
 
+def print_pattern_rollup(main_rows: list, shorts_rows: list) -> None:
+    """題材の型ごとの engagedViews（2026-11-07〜、なるさんの決定）。最初の数秒を超えて見られた再生（engaged views）で、
+    どの型が伸びたかを比べる。本編は公開後AGE_WINDOW_DAYS日、Shortsは公開後SHORTS_WINDOW_DAYS日の窓。1本あたりの中央値も出す
+    （1本の外れ値で型の評価が決まらないように）。月次評価で管理担当が読み、採点の重みの変更を提案する材料にする"""
+    for title, rows, window in (("本編", [r for r in main_rows if not r["is_shorts"]], AGE_WINDOW_DAYS),
+                                ("Shorts", [r for r in (shorts_rows or []) if r["is_shorts"]], SHORTS_WINDOW_DAYS)):
+        groups = defaultdict(list)
+        for r in rows:
+            if r.get("pattern_label"):
+                groups[r["pattern_label"]].append(r)
+        if not groups:
+            continue
+        print(f"\n--- {title} 題材の型別の engagedViews（公開後{window}日間） ---")
+        print(f"{'題材の型':<22}{'話数':>5}{'engaged計':>10}{'1本の中央値':>11}{'エンゲージ率%':>13}")
+        for label, lst in sorted(groups.items(), key=lambda x: -sum(r["views"] * r["engaged_rate"] for r in x[1])):
+            ev = sorted(round(r["views"] * r["engaged_rate"] / 100) for r in lst)
+            k = len(ev)
+            med = ev[k // 2] if k % 2 else (ev[k // 2 - 1] + ev[k // 2]) / 2
+            views = sum(r["views"] for r in lst)
+            rate = sum(ev) / views * 100 if views else 0
+            n_note = "  ※n不足のため参考程度" if k < MIN_GROUP_N else ""
+            print(f"{label:<22}{k:>5}{sum(ev):>10}{med:>11}{rate:>13.1f}{n_note}")
+            print("    内訳: " + ", ".join(f"{r['ep']}:{round(r['views'] * r['engaged_rate'] / 100)}"
+                                          for r in sorted(lst, key=lambda x: -x["views"] * x["engaged_rate"])))
+
+
 def print_report(rows, traffic_stats, label, rows_age_adjusted=None, rows_shorts=None):
     print(f"\n{'='*95}\n{label}\n{'='*95}")
     # 「完了率%」は実際には engaged_views/views（エンゲージ率、Shorts的には
@@ -422,6 +454,7 @@ def print_report(rows, traffic_stats, label, rows_age_adjusted=None, rows_shorts
     if rows_shorts is not None:
         for key, title in (("slot_label", "選び方別"), ("domain_label", "領域別")):
             print_shorts_rollup(rows_shorts, key, title)
+    print_pattern_rollup(adj_rows, rows_shorts)
 
     src_total = defaultdict(int)
     for vid, d in traffic_stats.items():

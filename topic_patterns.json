@@ -1,0 +1,14 @@
+{
+  "_comment": "題材の型（2026-11-07〜、なるさんの決定。Muse の提案「ネタ選定の改善」の5）。topics_queue.json の各回の topic_pattern に1つ付ける。月次評価（/kl-analytics）で型ごとの engagedViews を比べ、管理担当が採点の重みの変更を提案する（決めるのはなるさん）。型を足す・分けるときは、既存の回の付け直しも一緒に行う。",
+  "order": ["shop_change", "home_arrival", "price_launch", "extreme_number", "reversal", "ai_capability", "big_prediction", "body_health"],
+  "patterns": {
+    "shop_change":    {"label": "身近な店・現場の変化", "def": "コンビニ・郵便局・工事現場など、視聴者が知っている場所で新しい技術が動き出した", "examples": ["kl049", "kl052", "kl053"]},
+    "home_arrival":   {"label": "家に来るか",           "def": "家事ロボ・家庭用の機械が家に来るのはいつか、何ができるか", "examples": ["kl032", "kl036", "kl051"]},
+    "price_launch":   {"label": "値段・発売・日本上陸", "def": "買えるか・いくらか・日本で使えるようになったか、が中心", "examples": ["kl048", "kl050"]},
+    "extreme_number": {"label": "極端な数字",           "def": "200歳・1位・成功率など、数字の大きさが入口", "examples": ["kl042", "kl044", "kl045"]},
+    "reversal":       {"label": "逆転・通説くずし",     "def": "常識や予想と逆の結果（AIのバーガーが勝った、ダイエット飲料は水と同じ）", "examples": ["kl031", "kl033", "kl035"]},
+    "ai_capability":  {"label": "AIにどこまで任せられるか", "def": "AIの新しい能力と、仕事を任せてよいか", "examples": ["kl034", "kl037", "kl038", "kl041"]},
+    "big_prediction": {"label": "大物・大企業の予測の確認", "def": "有名人・大企業が言った将来の予測が、資料でどこまで言えるか", "examples": ["kl040", "kl043", "kl046"]},
+    "body_health":    {"label": "体・健康の新発見",     "def": "食べ物・体・治療の研究の新しい結果", "examples": ["kl039", "kl047"]}
+  }
+}

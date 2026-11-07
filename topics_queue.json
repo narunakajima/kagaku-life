@@ -1624,7 +1624,9 @@
       "entry_question": "お肉を控えるように言われても、おいしいものを我慢しなくていい日は来る？",
       "notes": "パイロット（掛け合い形式）。genre/health付与のため2026-10-06に追記",
       "genre": "food_health",
-      "health": false
+      "health": false,
+      "topic_pattern": "reversal",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl032",
@@ -1636,7 +1638,9 @@
       "entry_question": "家事を任せられるロボット、もう買える？",
       "notes": "パイロット（掛け合い形式）。genre/health付与のため2026-10-06に追記",
       "genre": "life_tech",
-      "health": false
+      "health": false,
+      "topic_pattern": "home_arrival",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl033",
@@ -1663,7 +1667,9 @@
       "hook_idea": "人型ロボの手から小指が消えた。決め手は、社員が指をテープで縛った1日。",
       "notes": "2026-10-05: ニュース起点（news_date 2026-10-01、一次資料=公式ブログ）。構成=myth_buster。予想判定=夢語り:もうすぐ来る／ツッコミ:3年はかかる。ツッコミ材料=成功率の数字がない・根拠は人がテープで縛った1日・長期の賭け。",
       "genre": "humanoid",
-      "health": false
+      "health": false,
+      "topic_pattern": "reversal",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl034",
@@ -1699,7 +1705,9 @@
         }
       ],
       "hook_idea": "寝ている間にAIが仕事を終わらせている。ただし、送信ボタンは押せない。",
-      "notes": "構成=basic。予想判定: 夢語り=もうすぐ来る（発表日の時点で提供開始済み）、ツッコミ=まだ眉唾（成功率・時間短縮の数字が発表に無い）。ツッコミの材料: 先回り調査は読み取り専用で送信・変更・ブラウザ操作はできない／重要な操作は承認が要る／OpenAI自身が「dotは間違えることもある」と書く／発表に数字（成功率・削減時間）が無く事例は初期テスター1件／モバイルで作成不可・専用メール無し・電話不可。2026-10-06にニュース候補(最高4.45点)から選定。一次資料はブラウザで直接読んで確認済み（WebFetch/curlは403）。"
+      "notes": "構成=basic。予想判定: 夢語り=もうすぐ来る（発表日の時点で提供開始済み）、ツッコミ=まだ眉唾（成功率・時間短縮の数字が発表に無い）。ツッコミの材料: 先回り調査は読み取り専用で送信・変更・ブラウザ操作はできない／重要な操作は承認が要る／OpenAI自身が「dotは間違えることもある」と書く／発表に数字（成功率・削減時間）が無く事例は初期テスター1件／モバイルで作成不可・専用メール無し・電話不可。2026-10-06にニュース候補(最高4.45点)から選定。一次資料はブラウザで直接読んで確認済み（WebFetch/curlは403）。",
+      "topic_pattern": "ai_capability",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl035",
@@ -1744,7 +1752,9 @@
         "debate": 5
       },
       "source_type": "news",
-      "news_date": "2026-09-29"
+      "news_date": "2026-09-29",
+      "topic_pattern": "reversal",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl036",
@@ -1789,7 +1799,9 @@
         "debate": 4
       },
       "source_type": "news",
-      "news_date": "2026-09-29"
+      "news_date": "2026-09-29",
+      "topic_pattern": "home_arrival",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl037",
@@ -1826,7 +1838,9 @@
         "buzz_outlets": 10
       },
       "source_type": "news",
-      "news_date": "2026-10-09"
+      "news_date": "2026-10-09",
+      "topic_pattern": "ai_capability",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl038",
@@ -1958,7 +1972,9 @@
         "note": "ユーザー指定の題材のため採点なし"
       },
       "source_type": "news",
-      "news_date": "2026-10-12"
+      "news_date": "2026-10-12",
+      "topic_pattern": "ai_capability",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl039",
@@ -2000,7 +2016,9 @@
         "news_candidate_id": "7edb42445b"
       },
       "source_type": "news",
-      "news_date": "2026-10-08"
+      "news_date": "2026-10-08",
+      "topic_pattern": "body_health",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl040",
@@ -2052,7 +2070,9 @@
         "news_candidate_id": "943628176b"
       },
       "source_type": "news",
-      "news_date": "2026-10-09"
+      "news_date": "2026-10-09",
+      "topic_pattern": "big_prediction",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl041",
@@ -2094,7 +2114,9 @@
         "news_candidate_id": "630403055e"
       },
       "source_type": "news",
-      "news_date": "2026-10-13"
+      "news_date": "2026-10-13",
+      "topic_pattern": "ai_capability",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl042",
@@ -2186,7 +2208,9 @@
         "news_candidate_id": "9c83062f1d"
       },
       "source_type": "news",
-      "news_date": "2026-10-13"
+      "news_date": "2026-10-13",
+      "topic_pattern": "extreme_number",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl043",
@@ -2281,7 +2305,9 @@
           "institution": "Anthropic",
           "source_kind": "official_doc"
         }
-      ]
+      ],
+      "topic_pattern": "big_prediction",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl044",
@@ -2389,7 +2415,9 @@
       "verdict": {
         "dreamer": "pending",
         "skeptic": "dubious"
-      }
+      },
+      "topic_pattern": "extreme_number",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl045",
@@ -2541,7 +2569,9 @@
         "skeptic": "pending"
       },
       "revived_note": "2026-10-21 制作者の指示で復活し、台詞から全面的に書き直し（決定事項は script_prep/kl045_decisions.md、準備は script_prep/kl045.md）。判定は二人とも根拠待ち（沙織が眉唾から上げる）。旧台本（3つの条件・老化の物差しに判定）は使わない。",
-      "cancelled_reason_history": "2026-10-18 制作者の指示で中止。台本・資料カード・画像（Desktop）まで作成済み。音声・動画は未生成。台本は episodes/kl045.json に残す。"
+      "cancelled_reason_history": "2026-10-18 制作者の指示で中止。台本・資料カード・画像（Desktop）まで作成済み。音声・動画は未生成。台本は episodes/kl045.json に残す。",
+      "topic_pattern": "extreme_number",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl046",
@@ -2692,7 +2722,9 @@
       ],
       "hook_idea": "マスク氏「2036年にはお金は重要でなくなる」。その前提の『モノは足りるほど安くなる』『小切手を配ってもデフレ』は、経済データと実験で確かめられるか。",
       "notes": "制作者（なるさん）指定のテーマ（2026-10-18）。用意した材料: Economist インタビューの発言（お金は2036年に重要でなくなる／仕事は任意／UHI／財務省が小切手を発行／問題はインフレでなくデフレ）、Acemoglu（10年でTFP+0.66%以下）、Humlum（デンマーク、収入・労働時間に2%超の効果なし）、OpenResearch（月1000ドル×3年、労働参加-4.2pt、週1〜2時間減、幸福は1年で元に）、Epoch（AI推論価格は同性能で年9〜900倍下落）、財務省税収・家計調査（食料28.6%・住居5.9%・光熱7.8%）。大輔が正しい論点＝AIそのものの値段は急落（沙織が譲る）。沙織が正しい論点＝全体の生産性・物価・財源・配った後の働き方。政治的立場は取らず、発言の検証に限る。10年先（2036）は予測しない、3年先まで。",
-      "source_type": "topic"
+      "source_type": "topic",
+      "topic_pattern": "big_prediction",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl047",
@@ -2744,7 +2776,9 @@
         },
         "market_status": "novel"
       },
-      "news_candidate_id": "3f1d61e78f"
+      "news_candidate_id": "3f1d61e78f",
+      "topic_pattern": "body_health",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl048",
@@ -2854,7 +2888,9 @@
         }
       ],
       "hook_idea": "4社とも『先に動くが、送信・支払いの前で止まる』。では承認はどうなるか。Anthropic の測定では、慣れた人ほど自動承認が増え（約20%→40%超）、同時に途中で止める割合も増える（5%→9%）。一方、113人の模擬実験では、自分でルールを書いて任せた人ほど行き過ぎを通した。",
-      "notes": "なるさん（2026-10-23）の発案と方向づけ: 新しいのは『AIが先に動き、自ら働きかける』こと。制作者自身、パイプラインでAIに『この考え方で次回から自分で判断して事後報告』と教えて承認を減らしてきた体験がある（台本の根拠にはしない。問いの出発点。大輔の仮定の話にする）。\n■ お題=各社の主張『先回りして動く秘書が来た』（Duet の proactive agent、dots の『頼もうと思うより先に動く』）。予想判定: 大輔=soon（形はもう出ていて、日本でも Muse が今日から無料で使える）、沙織=pending（任せた後に事故が増えるか減るかを実利用者で測った資料が無い。札が変わる条件=日常の手続きでの誤り率の第三者検証、実利用者を数か月追った事故率、事後のログ確認が効くかの測定）。直近5話で根拠待ちが10中6なので、二人そろって根拠待ちは避ける。\n■ 論点案: (1)先回りは助かるのか邪魔なのか（Chen/Pu、dots の先回りリサーチは読み取り専用）(2)承認は形だけになるのか（Anthropic R6: 慣れると任せるがよく止める＝沙織が譲る turn。逆側: auto mode の手動承認は93%が承認、Dratsch）(3)誰が承認を卒業させるか（Muse・Grok Bot=人が教える『常に許可』とルール、Duet=分類器が代行・社員利用で行き過ぎの17%を見逃し。Yan 113人: 自分のルールで任せた人ほど行き過ぎを通し、140中114のルールは『先に聞いて』）。\n■ 一次資料と原文: script_prep/kl048_verified.md（確認済み）。調査メモ: script_prep/kl048_sources_*.md。\n■ 利害関係: 台本執筆に使うAIは Claude（Anthropic）。Duet と R6/R7 は Anthropic 製・自社測定。台詞で『提供元自身の測定』と言い、概要欄で開示。\n■ 外すもの: 攻撃成功率、GPS・学習の技能研究、ChatGPT の利用統計（考え方を5つ以内に）。\n■ dots は kl034 で扱い済み。4社の1つとして並べるだけ。日本で使えるか: Muse=可、Duet=不可（米国のみ）、dots・Grok Bot=未確認。\n■ news_candidates.json には未登録（制作者の持ち込み）。buzz 未計測。"
+      "notes": "なるさん（2026-10-23）の発案と方向づけ: 新しいのは『AIが先に動き、自ら働きかける』こと。制作者自身、パイプラインでAIに『この考え方で次回から自分で判断して事後報告』と教えて承認を減らしてきた体験がある（台本の根拠にはしない。問いの出発点。大輔の仮定の話にする）。\n■ お題=各社の主張『先回りして動く秘書が来た』（Duet の proactive agent、dots の『頼もうと思うより先に動く』）。予想判定: 大輔=soon（形はもう出ていて、日本でも Muse が今日から無料で使える）、沙織=pending（任せた後に事故が増えるか減るかを実利用者で測った資料が無い。札が変わる条件=日常の手続きでの誤り率の第三者検証、実利用者を数か月追った事故率、事後のログ確認が効くかの測定）。直近5話で根拠待ちが10中6なので、二人そろって根拠待ちは避ける。\n■ 論点案: (1)先回りは助かるのか邪魔なのか（Chen/Pu、dots の先回りリサーチは読み取り専用）(2)承認は形だけになるのか（Anthropic R6: 慣れると任せるがよく止める＝沙織が譲る turn。逆側: auto mode の手動承認は93%が承認、Dratsch）(3)誰が承認を卒業させるか（Muse・Grok Bot=人が教える『常に許可』とルール、Duet=分類器が代行・社員利用で行き過ぎの17%を見逃し。Yan 113人: 自分のルールで任せた人ほど行き過ぎを通し、140中114のルールは『先に聞いて』）。\n■ 一次資料と原文: script_prep/kl048_verified.md（確認済み）。調査メモ: script_prep/kl048_sources_*.md。\n■ 利害関係: 台本執筆に使うAIは Claude（Anthropic）。Duet と R6/R7 は Anthropic 製・自社測定。台詞で『提供元自身の測定』と言い、概要欄で開示。\n■ 外すもの: 攻撃成功率、GPS・学習の技能研究、ChatGPT の利用統計（考え方を5つ以内に）。\n■ dots は kl034 で扱い済み。4社の1つとして並べるだけ。日本で使えるか: Muse=可、Duet=不可（米国のみ）、dots・Grok Bot=未確認。\n■ news_candidates.json には未登録（制作者の持ち込み）。buzz 未計測。",
+      "topic_pattern": "price_launch",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl049",
@@ -2884,7 +2920,9 @@
         }
       ],
       "hook_idea": "「人型ロボットが鉄道を直す」と報じられたが、実際は人が操縦する重機。では、人手不足の現場で何が変わるのか",
-      "notes": "構成 v4（実現ラウンド）の最初の回。発表資料（PDF）: 2024年7月に多機能鉄道重機「ZIZAI」導入済み。重作業用単腕型ロボット（高所作業車のデッキ上、最大120kgを把持、2026年10月〜）と量産型人型ロボット（小型・軽量化・ブーム延長、線路沿いの支障木伐採、2026年11月〜）。効果: 高所作業の機械化で墜落・感電防止、作業の人手を約3割減らすのが目標、性別や年齢によらず従事可能。報道にだけある数字（4人→3人、約300kg、ブーム15m）は台詞に使わない。予想判定: 大輔 soon／沙織 decade。競合: 日本語動画5本（ニュース映像2本が大きい）。ニュース候補 6b8b773347。"
+      "notes": "構成 v4（実現ラウンド）の最初の回。発表資料（PDF）: 2024年7月に多機能鉄道重機「ZIZAI」導入済み。重作業用単腕型ロボット（高所作業車のデッキ上、最大120kgを把持、2026年10月〜）と量産型人型ロボット（小型・軽量化・ブーム延長、線路沿いの支障木伐採、2026年11月〜）。効果: 高所作業の機械化で墜落・感電防止、作業の人手を約3割減らすのが目標、性別や年齢によらず従事可能。報道にだけある数字（4人→3人、約300kg、ブーム15m）は台詞に使わない。予想判定: 大輔 soon／沙織 decade。競合: 日本語動画5本（ニュース映像2本が大きい）。ニュース候補 6b8b773347。",
+      "topic_pattern": "shop_change",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl050",
@@ -2944,7 +2982,9 @@
         }
       ],
       "hook_idea": "日本語になった新しいSiri。「中身はGemini」と言われるが、Appleの言い方は少し違う。賢さを比べた数字はあるのか。Googleのアプリは触れないのは本当か",
-      "notes": "なるさん指定のネタ（2026-10-27、iOS 27.2 公開直後に実機で試した所感）。構成 v4。確認済みの原文は script_prep/kl050_verified.md。論点案: (1)中身はGemini？賢さは比べられる？（Appleの言い方＝Googleとの協業で作った、比較の数字は自社の前世代との比較のみ→『一世代前』は印象で、数字では確かめられない）(2)自分の情報を横断して使える？（強み=メッセージ・メール・写真・予定を横断、30件の予定一括など。壁=開発者が対応したアプリだけ、LINE・Messenger不可、Gmailは一部、発表が名指しした他社アプリにGoogle無し→越え方=Apple純正アプリ側に集める、GoogleのアカウントをAppleのメール・カレンダーに同期する）(3)無料でどこまで？（ベータ、1日の上限・回数非公表、枠を増やすのは有料）。使った人の声は匿名の傾向として。予想判定: 大輔 soon／沙織 pending（またはsoon）。AI・ソフトウェアの制限は『3年はかかる』を使わない。競合動画は未確認（STEP後半で確認）。"
+      "notes": "なるさん指定のネタ（2026-10-27、iOS 27.2 公開直後に実機で試した所感）。構成 v4。確認済みの原文は script_prep/kl050_verified.md。論点案: (1)中身はGemini？賢さは比べられる？（Appleの言い方＝Googleとの協業で作った、比較の数字は自社の前世代との比較のみ→『一世代前』は印象で、数字では確かめられない）(2)自分の情報を横断して使える？（強み=メッセージ・メール・写真・予定を横断、30件の予定一括など。壁=開発者が対応したアプリだけ、LINE・Messenger不可、Gmailは一部、発表が名指しした他社アプリにGoogle無し→越え方=Apple純正アプリ側に集める、GoogleのアカウントをAppleのメール・カレンダーに同期する）(3)無料でどこまで？（ベータ、1日の上限・回数非公表、枠を増やすのは有料）。使った人の声は匿名の傾向として。予想判定: 大輔 soon／沙織 pending（またはsoon）。AI・ソフトウェアの制限は『3年はかかる』を使わない。競合動画は未確認（STEP後半で確認）。",
+      "topic_pattern": "price_launch",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl051",
@@ -3013,7 +3053,9 @@
         "buzz_outlets": 10,
         "freshness": 4,
         "candidate_id": "e61b1b9be2"
-      }
+      },
+      "topic_pattern": "home_arrival",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl052",
@@ -3080,7 +3122,9 @@
         "announcement_type": "event",
         "freshness": 5,
         "candidate_id": "86b2fe10bb"
-      }
+      },
+      "topic_pattern": "shop_change",
+      "topic_pattern_by": "backfill-2026-11-07"
     },
     {
       "episode_id": "kl053",
@@ -3139,7 +3183,9 @@
         "announcement_type": "product_release",
         "freshness": 5,
         "candidate_id": "e414dc6b10"
-      }
+      },
+      "topic_pattern": "shop_change",
+      "topic_pattern_by": "backfill-2026-11-07"
     }
   ],
   "total_topics": 53,
