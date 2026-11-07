@@ -236,6 +236,9 @@ def scene_text(scene: dict, cast: dict = None) -> str:
     out = "\n".join(f"{speaker_name(cast, l['speaker'])}「{l['text']}」" for l in scene["lines"])
     if scene.get("source_card"):
         out += "\n［画面の資料カード］" + card_text(scene["source_card"])
+    if scene.get("chart"):
+        import kl_motion
+        out += "\n［画面のグラフ］" + kl_motion.chart_text(scene["chart"])
     return out
 
 
@@ -699,6 +702,52 @@ def validate_rounds_v2(ep: dict) -> list:
             errs.append(f"v2: {where}: 資料カードの画像がありません（python3 kl_dialogue.py cards --episode {ep.get('episode_id')}）")
         if s.get("image_prompt"):
             errs.append(f"v2: {where}: source_card のシーンに image_prompt は書かない（カードを使う）")
+    # 6b) グラフ（scene.chart。棒が伸びて数字が増える動き。値は資料の数字そのまま）
+    for s in scenes:
+        c = s.get("chart")
+        if not c:
+            continue
+        card_ids.add(s["scene_id"])
+        where = f"S{s['scene_id']}"
+        if s.get("type") != "check":
+            errs.append(f"v2: {where}: chart は check シーンに置いてください")
+        if s.get("source_card"):
+            errs.append(f"v2: {where}: chart と source_card は同じシーンに置けません（別のシーンに分ける）")
+        kind = c.get("kind", "bar")
+        if kind not in ("bar", "number"):
+            errs.append(f"v2: {where}: chart.kind は bar / number")
+        if not c.get("source"):
+            errs.append(f"v2: {where}: chart.source（資料名と日付）がありません")
+        if not c.get("title") or len(c["title"]) > 30:
+            errs.append(f"v2: {where}: chart.title は1〜30字")
+        if len(c.get("unit", "")) > 6:
+            errs.append(f"v2: {where}: chart.unit は6字以内")
+        if kind == "bar":
+            its = c.get("items") or []
+            if not (2 <= len(its) <= 6):
+                errs.append(f"v2: {where}: chart.items は2〜6本")
+            for it in its:
+                v = it.get("value")
+                if not isinstance(v, (int, float)) or isinstance(v, bool) or v < 0:
+                    errs.append(f"v2: {where}: chart.items の value は0以上の数（{it.get('label')}）")
+                if not it.get("label") or len(it["label"]) > 14:
+                    errs.append(f"v2: {where}: chart.items の label は1〜14字（{str(it.get('label'))[:8]}…）")
+            hl = c.get("highlight")
+            if hl is not None and not (isinstance(hl, int) and 0 <= hl < len(its)) and hl not in [i.get("label") for i in its]:
+                errs.append(f"v2: {where}: chart.highlight は items の番号（0始まり）かラベル")
+        else:
+            if not isinstance(c.get("value"), (int, float)) or isinstance(c.get("value"), bool) or c["value"] < 0:
+                errs.append(f"v2: {where}: chart.value は0以上の数")
+            if len(c.get("caption", "")) > 26:
+                errs.append(f"v2: {where}: chart.caption は26字以内")
+        ri = c.get("reference_index", s.get("reference_index"))
+        if not isinstance(ri, int) or not (0 <= ri < len(ep.get("references") or [])):
+            errs.append(f"v2: {where}: chart の reference_index が references にありません")
+        want = _card_asset_name(ep, s)
+        if s.get("image_asset") != want or not (BASE_DIR / "assets" / f"{want}.png").exists():
+            errs.append(f"v2: {where}: グラフの静止画がありません（python3 kl_dialogue.py cards --episode {ep.get('episode_id')}）")
+        if s.get("image_prompt"):
+            errs.append(f"v2: {where}: chart のシーンに image_prompt は書かない（グラフは数字から描く）")
     # ティザー（ズームする）と Shorts（AIで縦に描き直す）では、文字のカードを使わない
     for s in scenes:
         if s.get("type") == "teaser" and s.get("reuse_scene_id") in card_ids:
@@ -1790,105 +1839,27 @@ def _wrap_chars(text: str, font, max_w: int) -> list:
 
 
 def render_source_card(card: dict, out_path: Path, W: int = 1408, H: int = 768) -> None:
-    """一次資料の該当箇所を、いつものカフェ（ぼかし）の上に置いた紙の資料として描く。
+    """一次資料の該当箇所を、いつものカフェ（ぼかし）の上に置いた紙の資料として描く（静止画）。
     文字はAIに描かせず、実フォントで正確に描く（数字・引用の捏造・誤字を防ぐ）。
+    描画は kl_motion.py（動画の動きの最後のフレームと同じ絵になる。2026-11-07）。
     card: {kind, source, quote?, quote_type(原文/要約)?, highlight?, items?[], note?}"""
-    bg = Image.open(CARD_BG_ASSET).convert("RGB").resize((W, H), Image.LANCZOS)
-    from PIL import ImageFilter
-    bg = ImageEnhance.Brightness(bg.filter(ImageFilter.GaussianBlur(14))).enhance(0.62).convert("RGBA")
-    x0, y0, x1, y1 = CARD_BOX
-    # 影と紙
-    shadow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    ImageDraw.Draw(shadow).rounded_rectangle((x0 + 8, y0 + 10, x1 + 8, y1 + 10), radius=18, fill=(0, 0, 0, 110))
-    bg.alpha_composite(shadow.filter(ImageFilter.GaussianBlur(8)))
-    dr = ImageDraw.Draw(bg)
-    dr.rounded_rectangle((x0, y0, x1, y1), radius=18, fill=(252, 250, 245, 255))
-    kind_label, kcol = CARD_KINDS.get(card.get("kind"), ("資料", (110, 118, 130)))
-    # 見出し: 種類のチップ＋資料名
-    fk, fs = _font(FONT_BOLD, 28), _font(FONT_MEDIUM, 26)
-    pad = 36
-    kw = _text_w(dr, kind_label, fk)
-    dr.rounded_rectangle((x0 + pad, y0 + 26, x0 + pad + kw + 32, y0 + 26 + 46), radius=10, fill=kcol)
-    dr.text((x0 + pad + 16, y0 + 31), kind_label, font=fk, fill=(255, 255, 255))
-    src = card.get("source", "")
-    sx = x0 + pad + kw + 32 + 18
-    ss = 26
-    while ss > 19 and _text_w(dr, src, _font(FONT_MEDIUM, ss)) > x1 - pad - sx:  # 資料名は1行に収める
-        ss -= 1
-    dr.text((sx, y0 + 34 + (26 - ss) // 2), src, font=_font(FONT_MEDIUM, ss), fill=(70, 78, 92))
-    top = y0 + 26 + 46 + 26
-    dr.line((x0 + pad, top - 12, x1 - pad, top - 12), fill=kcol + (255,), width=3)
-    # 本文の大きさを決めてから描く（大きい字から試し、箇条書きは1項目1行に収まるまで縮める）
-    max_w = (x1 - x0) - pad * 2
-    footer_h = 40
-    avail = (y1 - 22 - footer_h) - top
-    quote, items = card.get("quote", ""), card.get("items") or []
-    size_q, size_i = 50, 42
-    while True:
-        fq, fi = _font(FONT_MEDIUM, size_q), _font(FONT_MEDIUM, size_i)
-        q_rows = _wrap_chars(f"「{quote}」", fq, max_w) if quote else []
-        i_rows = [_wrap_chars(it, fi, max_w - 34) for it in items]
-        h = len(q_rows) * int(size_q * 1.45) + (18 if quote and items else 0) + sum(len(r) for r in i_rows) * int(size_i * 1.42)
-        if (h <= avail and all(len(r) == 1 for r in i_rows)) or size_q <= 28:
-            break
-        if any(len(r) > 1 for r in i_rows) and size_i > 26:
-            size_i -= 1
-        elif h > avail:
-            size_q -= 2
-            size_i = max(26, min(size_i, size_q - 6))
-        else:
-            break
-    # 箇条書きだけのカードで余白が大きいときは、行の間を広げて紙面に散らす
-    i_lh = int(size_i * 1.42)
-    n_i = sum(len(r) for r in i_rows)
-    if not quote and n_i and h < avail * 0.7:
-        i_lh = min(int(size_i * 2.0), int(avail * 0.8 / n_i))
-        h = n_i * i_lh
-    y = top + max(0, (avail - h) // 2)
-    if quote:
-        qt = f"「{quote}」"
-        hl = card.get("highlight")
-        hs = qt.find(hl) if hl else -1
-        he = hs + len(hl) if hs >= 0 else -1
-        lh = int(size_q * 1.45)
-        for a, b in q_rows:
-            row = qt[a:b]
-            if hs >= 0 and a < he and b > hs:
-                s0, s1 = max(a, hs), min(b, he)
-                hx0 = x0 + pad + dr.textlength(qt[a:s0], font=fq)
-                hx1 = x0 + pad + dr.textlength(qt[a:s1], font=fq)
-                dr.rectangle((hx0 - 2, y + int(size_q * 0.55), hx1 + 2, y + int(size_q * 1.18)), fill=(255, 214, 90))
-            dr.text((x0 + pad, y), row, font=fq, fill=(28, 34, 46))
-            y += lh
-        y += 18
-    for rows, it in zip(i_rows, items):
-        lh = i_lh
-        dr.ellipse((x0 + pad + 4, y + size_i // 2 - 6, x0 + pad + 16, y + size_i // 2 + 6), fill=kcol)
-        for a, b in rows:
-            dr.text((x0 + pad + 34, y), it[a:b], font=fi, fill=(28, 34, 46))
-            y += lh
-    # 足元: 原文か要約か、注記
-    ff = _font(FONT_MEDIUM, 22)
-    q_orig = quote and card.get("quote_type", "原文") == "原文"
-    if quote and items:
-        tag = "「…」は原文から引用、・は要約" if q_orig else "要約"
-    else:
-        tag = "原文から引用" if q_orig else "要約"
-    foot = tag + (f"　{card['note']}" if card.get("note") else "")
-    fw = _text_w(dr, foot, ff)
-    dr.text((x1 - pad - fw, y1 - 22 - 28), foot, font=ff, fill=(120, 126, 138))
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    bg.convert("RGB").save(out_path, "PNG")
+    import kl_motion
+    kl_motion.render_card_static(card, out_path, W, H)
 
 
 def render_episode_cards(ep: dict) -> list:
-    """source_card を持つシーンのカードを assets/cards/{episode}_S{NN}.png に描き、image_asset を書き込む。"""
+    """source_card / chart を持つシーンの静止画を assets/cards/{episode}_S{NN}.png に描き、image_asset を書き込む。
+    （動画では kl_motion.py が同じ見た目を動かす。この静止画は確認ページ・サムネイル・--no-motion 用）"""
+    import kl_motion
     done = []
     for s in ep.get("scenes", []):
-        if not s.get("source_card"):
+        if not (s.get("source_card") or s.get("chart")):
             continue
         name = _card_asset_name(ep, s)
-        render_source_card(s["source_card"], BASE_DIR / "assets" / f"{name}.png")
+        if s.get("source_card"):
+            render_source_card(s["source_card"], BASE_DIR / "assets" / f"{name}.png")
+        else:
+            kl_motion.render_chart_static(s["chart"], BASE_DIR / "assets" / f"{name}.png")
         s["image_asset"] = name
         s.pop("image_prompt", None)
         done.append((s["scene_id"], BASE_DIR / "assets" / f"{name}.png"))
@@ -1960,6 +1931,9 @@ def plain_text(ep: dict, cast: dict = None, only_scenes=None) -> str:
             if c.get("note"):
                 parts.append(f"注: {c['note']}")
             out.append("[画面に出る資料カード] " + " ／ ".join(p for p in parts if p))
+        elif s.get("chart"):
+            import kl_motion
+            out.append("[画面に出るグラフ（棒が伸び、数字が増えていく）] " + kl_motion.chart_text(s["chart"]))
         else:
             src = s
             if s.get("reuse_scene_id") and not s.get("image_prompt"):

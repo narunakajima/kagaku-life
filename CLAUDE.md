@@ -440,6 +440,7 @@ CLAUDE.md を軽くするため、次の詳細は別ファイルに移した（�
 | `docs/bgm.md` | BGMパイプライン、掛け合い形式のBGM方針（kl035以降の正） | BGM を選ぶ・検証するとき |
 | `docs/production_tech.md` | 動画尺・動画全体構成・シーンタイプ・画像スタイル・画像QA・台本ファクトチェック・zoom_anchor・テロップ・エピソードJSONフォーマット・Shorts | 画像・動画・テロップ・JSON を扱うとき |
 | `docs/cast_video.md` | 立ち絵の動画化 | 立ち絵のループを作る・直すとき |
+| `kl_motion.py`（説明は `docs/production_tech.md` の「zoom_anchor」節の冒頭） | 資料カード・グラフ（`chart`）の動き（2026-11-07〜。`--no-motion` で静止に戻せる） | check シーンの見せ方を直すとき |
 | `docs/channel_assets.md` | チャンネルロゴ・バナー | ロゴ・バナーを作り直すとき |
 | `docs/legacy_monologue.md` | 旧形式（kl001〜kl030）のストーリー構成・ボイス・BGM | 旧形式の回を直すとき |
 | `docs/history.md` | 判断の経緯・当時のデータ | 方針の理由を確かめるとき |

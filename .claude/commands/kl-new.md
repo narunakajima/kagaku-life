@@ -563,7 +563,7 @@ CLAUDE.md への記載は制作者の承認後に行う。下の「生成ルー�
   新しく足すときは「〜としたら」の仮定にする（設定が回をまたいで食い違わないように）
 - `life_scene` は従来どおり必須（誰が・いつ・何をできるようになるか）。「誰が」は上の仮定の主語でよい
 
-**画面（v2）: 4種類を使い分ける**
+**画面（v2）: 5種類を使い分ける**
 1. **固定背景**（`image_asset: base_cafe` / `base_cafe_b`）: お題と予想・判定・締め。二人の「いつもの場所」
 2. **資料カード**（`source_card`、`check` シーンだけ）: 一次資料の該当箇所を、実フォントで正確に描いたカード
    （`kl_dialogue.py cards` が描く。AIの画像生成を使わないので費用ゼロで、文字の誤り・捏造が起きない）。
@@ -575,10 +575,21 @@ CLAUDE.md への記載は制作者の承認後に行う。下の「生成ルー�
    `kind` は press / blog / terms / docs / paper / report / transcript（書き起こし）/ web（製品ページ）。`quote` は**一次資料の原文と一字一句同じ**ときだけ `quote_type: "原文"`、
    言い換えたら `"要約"`。条文・ページ番号を items に添える。`image_prompt` は書かない。書いたら
    `python3 kl_dialogue.py cards --episode kl{NNN}` で `assets/cards/kl{NNN}_S{NN}.png` を作り、`image_asset` が自動で入る。
-   **資料カードは `check` シーンにだけ置く**（ズームせず静止するのは `check` だけのため）。ティザーの流用・Shorts のカットには使わない
+   **資料カードは `check` シーンにだけ置く**（ズームせず、`kl_motion.py` が紙の動き・マーカー・箇条書きの出現を付けるのは `check` だけのため）。ティザーの流用・Shorts のカットには使わない
    （ズームで文字が切れる／AIで縦に描き直すと文字が崩れる）
-3. **図**（`check` の `image_prompt`、従来のチャート）: 数字の比較。作り方は従来どおり
-4. **挿絵**（`paper`・`tsukkomi`・`dream` の `image_prompt`）: **話題の実物**（製品・機体・実験の装置や様子・使われる場所）か、
+3. **グラフ**（`chart`、`check` シーンだけ。2026-11-07〜）: 数字の比較・1つの大きな数字を、**資料の数字からコードで描く**（AIの画像生成は使わない。
+   動画では棒が伸び、数字がカウントアップする）。`image_prompt` は書かない。静止画は `python3 kl_dialogue.py cards` が作る（`image_asset` が入る）
+   ```json
+   "chart": {"kind": "bar", "title": "24時間でこなした作業（合計1,730件）", "unit": "件", "highlight": 0,
+             "source": "AGIBOT コンビニの試しの報告（2026年11月6日）", "reference_index": 2,
+             "items": [{"label": "接客", "value": 683}, {"label": "受け渡し", "value": 369}]}
+   "chart": {"kind": "number", "title": "6台のうち、最終の評価に合格した台数", "value": 4, "unit": "台",
+             "caption": "6台中4台が合格", "source": "…", "reference_index": 2}
+   ```
+   `bar` は2〜6本（label 14字以内、value は0以上、軸は0から。`highlight` は強調する棒の番号（0始まり）かラベル）、`number` は1つの数字（caption 26字以内）。
+   **値は資料に書かれた数字だけ**（計算した値・推定値は書かない）。`kl_fact_check.py` が資料ごとに照合する。1つの `check` に `source_card` と `chart` は同居できない
+4. **図**（`check` の `image_prompt`、従来のAI生成チャート）: `chart` で表せない図（流れ図・位置関係など）だけに使う。数字の棒グラフは `chart` にする
+5. **挿絵**（`paper`・`tsukkomi`・`dream` の `image_prompt`）: **話題の実物**（製品・機体・実験の装置や様子・使われる場所）か、
    **夢語りの想像の場面**。意味を運ばない比喩の小道具（虫めがね・南京錠・天秤・机の上の書類）だけの絵は使わない
    （`kl_dialogue.py check` が magnifying glass / padlock / balance scale を検出する）。ツッコミの場面は資料カードにする
    - **`dream` の絵に、年齢・容姿を決めた人物を描かない**（`in her sixties` のような書き方を検出する）。使う場面を、

@@ -751,8 +751,14 @@ def overlay_dialogue(video_with_audio: Path, events: list, total_dur: float, lay
     )
 
 
+def motion_requested(no_motion: bool = False) -> bool:
+    """資料カード・グラフを動かすか（既定は動かす。--no-motion または環境変数 KL_NO_MOTION=1 で静止に戻す）。"""
+    import os
+    return not (no_motion or os.environ.get("KL_NO_MOTION", "") not in ("", "0"))
+
+
 def gen_video(episode_id: str, out_dir: Path = None, static_cast: bool = False, limit: float = None,
-              no_talk: bool = False):
+              no_talk: bool = False, no_motion: bool = False):
     ep_path = BASE_DIR / "episodes" / f"{episode_id}.json"
     ep = json.loads(ep_path.read_text())
 
@@ -808,7 +814,13 @@ def gen_video(episode_id: str, out_dir: Path = None, static_cast: bool = False, 
                 img = img_dir / f"S{sid:02d}.png"
                 clip = tmp / f"kb_S{sid:02d}.mp4"
                 anchor = (scene.get("zoom_anchor") or {"x": 0.5, "y": 0.5})
-                make_ken_burns(img, clip, dur, scene.get("ken_burns", "static"), (anchor["x"], anchor["y"]))
+                import kl_motion
+                if motion_requested(no_motion) and kl_motion.has_motion(scene):
+                    # 資料カード・グラフ: 紙が落ち着き、マーカーが引かれ、箇条書きが現れ、棒が伸びる（2026-11-07）
+                    print(f"  動きのクリップ S{sid:02d} ({dur:.1f}s)")
+                    kl_motion.make_motion_clip(scene, dur, clip, FPS, FFMPEG, OUTPUT_W, OUTPUT_H)
+                else:
+                    make_ken_burns(img, clip, dur, scene.get("ken_burns", "static"), (anchor["x"], anchor["y"]))
                 paths.append(clip)
             return paths
 
@@ -1100,6 +1112,8 @@ def main():
     parser.add_argument("--static-cast", action="store_true",
                         help="立ち絵を従来の静止画だけにする（動画の立ち絵 assets/cast/video/*.webm を使わない。"
                              "環境変数 KL_STATIC_CAST=1 でも同じ）")
+    parser.add_argument("--no-motion", action="store_true",
+                        help="資料カード・グラフを動かさず、従来どおり静止画にする")
     parser.add_argument("--no-talk", action="store_true",
                         help="口パク（話している間のループ *_talk.webm）を使わず、待機ループだけにする（環境変数 KL_NO_TALK=1 でも同じ）")
     parser.add_argument("--limit-seconds", type=float,
@@ -1118,7 +1132,8 @@ def main():
     if args.limit_seconds and not out_dir:
         parser.error("--limit-seconds は本番の出力を上書きしないよう --out と一緒に指定してください")
     if not args.shorts_only:
-        gen_video(args.episode, out_dir, static_cast=args.static_cast, limit=args.limit_seconds, no_talk=args.no_talk)
+        gen_video(args.episode, out_dir, static_cast=args.static_cast, limit=args.limit_seconds, no_talk=args.no_talk,
+                  no_motion=args.no_motion)
     if not args.no_shorts:
         gen_shorts_video(args.episode, out_dir, static_cast=args.static_cast, limit=args.limit_seconds,
                          no_talk=args.no_talk)

@@ -128,6 +128,13 @@ CARD_INSTRUCTIONS = """- 資料カードの「原文の引用」（quote_type: �
 
 def card_entries(scene: dict) -> list:
     """シーンの source_card を、照合用の文字列にする（reference_index, 文字列）のリスト。"""
+    ch = scene.get("chart")
+    if ch and not scene.get("source_card"):
+        import kl_motion
+        idx = ch.get("reference_index", scene.get("reference_index"))
+        if idx is None:
+            return []
+        return [(idx, f"S{scene['scene_id']:02d} 画面のグラフ（数字は資料の記載と一致しているか）: " + kl_motion.chart_text(ch))]
     card = scene.get("source_card")
     if not card:
         return []
