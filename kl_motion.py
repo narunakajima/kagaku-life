@@ -52,9 +52,11 @@ def ease_io(x):
 
 # ── 紙の下地（背景・影・見出し） ─────────────────────────────────────
 
-def _base(kind_label, kcol, source, W, H):
-    """ぼかしたカフェ（bg）と、紙の層（影・紙・見出し。paper）を作る。"""
-    bg = Image.open(D.CARD_BG_ASSET).convert("RGB").resize((W, H), Image.LANCZOS)
+def _base(kind_label, kcol, source, W, H, bg_asset=None):
+    """ぼかしたカフェ（bg）と、紙の層（影・紙・見出し。paper）を作る。
+    bg_asset（例: "photos/kl055_S05_b"）を渡すと、カフェの代わりにその素材をぼかして下に敷く（scene.visuals 用、2026-11-08）"""
+    bg_path = (D.BASE_DIR / "assets" / f"{bg_asset}.png") if bg_asset else D.CARD_BG_ASSET
+    bg = Image.open(bg_path).convert("RGB").resize((W, H), Image.LANCZOS)
     bg = ImageEnhance.Brightness(bg.filter(ImageFilter.GaussianBlur(14))).enhance(0.62).convert("RGBA")
     x0, y0, x1, y1 = D.CARD_BOX
     paper = Image.new("RGBA", (W, H), (0, 0, 0, 0))
@@ -90,8 +92,9 @@ def _footer(dr, text):
 def card_parts(card: dict, W: int = W0, H: int = H0) -> dict:
     """資料カードを層に分けて作る: bg / paper（引用の文字まで）/ marker（強調の長方形のリスト）/ items（1行ずつの層）。"""
     x0, y0, x1, y1 = D.CARD_BOX
-    kind_label, kcol = D.CARD_KINDS.get(card.get("kind"), ("資料", (110, 118, 130)))
-    bg, paper, dr, top, pad = _base(kind_label, kcol, card.get("source", ""), W, H)
+    kind_label, kcol = (D.CARD_KINDS.get(card.get("kind")) or D.SUMMARY_KINDS.get(card.get("kind"))
+                        or ("資料", (110, 118, 130)))
+    bg, paper, dr, top, pad = _base(kind_label, kcol, card.get("source", ""), W, H, card.get("bg_asset"))
     # 本文の大きさを決めてから描く（大きい字から試し、箇条書きは1項目1行に収まるまで縮める）
     max_w = (x1 - x0) - pad * 2
     footer_h = 40
@@ -152,6 +155,8 @@ def card_parts(card: dict, W: int = W0, H: int = H0) -> dict:
         tag = "「…」は原文から引用、・は要約" if q_orig else "要約"
     else:
         tag = "原文から引用" if q_orig else "要約"
+    if card.get("footer"):  # まとめのカード（recap_card・step_card）は資料の引用ではないことを足元に書く
+        tag = card["footer"]
     _footer(dr, tag + (f"　{card['note']}" if card.get("note") else ""))
     return {"kind": "card", "bg": bg, "paper": paper, "markers": markers, "items": item_layers, "W": W, "H": H}
 
@@ -302,7 +307,7 @@ def chart_text(chart: dict) -> str:
 def chart_parts(chart: dict, W: int = W0, H: int = H0) -> dict:
     x0, y0, x1, y1 = D.CARD_BOX
     label, kcol = CHART_CHIP
-    bg, paper, dr, top, pad = _base(label, kcol, chart.get("source", ""), W, H)
+    bg, paper, dr, top, pad = _base(label, kcol, chart.get("source", ""), W, H, chart.get("bg_asset"))
     note = chart.get("note")
     _footer(dr, "資料の数字をそのまま図にしたもの" + (f"　{note}" if note else ""))
     # タイトル

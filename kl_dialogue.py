@@ -239,6 +239,10 @@ def scene_text(scene: dict, cast: dict = None) -> str:
     if scene.get("chart"):
         import kl_motion
         out += "\n［画面のグラフ］" + kl_motion.chart_text(scene["chart"])
+    for v in scene_visuals(scene):
+        t = visual_text(v)
+        if t:
+            out += "\n" + t
     return out
 
 
@@ -439,6 +443,7 @@ def validate_episode(ep: dict, cast: dict = None) -> list:
         for i, c in enumerate(shorts, start=1):
             if c.get("narrator") not in ROLES:
                 errs.append(f"Shorts {i}カット目: narrator は dreamer/skeptic にしてください")
+    errs += validate_visuals(ep)
     if v2:
         errs += validate_rounds_v2(ep)
     if v3:
@@ -1235,6 +1240,11 @@ def main_timeline(ep: dict, scenes: list, offsets: list, durs: list, narr_delay:
             intro_windows.append((off, off + ROUND_TITLE_SECONDS,
                                   ("round", scene.get("round"), scene["round_title"])))
         lines = scene.get("lines") or []
+        vis = scene_visuals(scene)
+        if vis:
+            # 画像の列（2026-11-08）: カード・グラフの間だけ、立ち絵を check と同じ小さい大きさにする
+            vmap = visual_line_map(scene)
+            events[-1] = (off, dict(base, chart=visual_small_cast(vis[0])))
         v_from = scene.get("verdict_from_line") if scene["type"] == "verdict" else None
         for li, line in enumerate(lines):
             if "t0" not in line:
@@ -1251,8 +1261,9 @@ def main_timeline(ep: dict, scenes: list, offsets: list, durs: list, narr_delay:
             talk_end = round(off + narr_delay_s + line["t0"] + line["dur"], 3)  # 口パク: この行を話し終える時刻
             for c in cards:
                 t = off + narr_delay_s + line["t0"] + c["start"]
+                ln_chart = visual_small_cast(vis[vmap[li]]) if vis else chart
                 events.append((round(t, 3), dict(base, speaker=sp, exprs=exprs, text=c["text"],
-                                                 stamps=st, talk_end=talk_end)))
+                                                 stamps=st, talk_end=talk_end, chart=ln_chart)))
         # シーンの終わり（次のシーンの開始）まで最後の状態を保つ。後続シーンの開始で切り替わる
     events.sort(key=lambda e: e[0])
     if intro_windows:
@@ -1926,7 +1937,289 @@ def render_episode_cards(ep: dict) -> list:
         s["image_asset"] = name
         s.pop("image_prompt", None)
         done.append((s["scene_id"], BASE_DIR / "assets" / f"{name}.png"))
+    done += render_visual_cards(ep)
     return done
+
+
+# ── 1シーンの中の画像の列（scene.visuals、2026-11-08） ───────────────────────────
+# なるさんの指摘（kl054）「冒頭でずっとカフェの静止画で二人がおしゃべりだけだと、つまらないので離脱する。写真が一枚もない。
+# 最後のカフェのシーンも動きがなくてつまらない」を受けて、1シーンの中で、台詞の流れに合わせて画像を替えられるようにした。
+# シーンを分けない（type・bgm_role・round_title・verdict_from_line・締めの固定文・lines_hash・初見レビューのハッシュは
+# シーン単位のまま変わらない）。書き方:
+#   "visuals": [
+#     {"from_line": 1, "scene_image": true},                         # シーン自体の画像（image_prompt / image_asset / reuse）
+#     {"from_line": 4, "image_asset": "photos/kl055_S05_b", "real_photo": true},   # 写真（kl_photo_commons.py --slot b）
+#     {"from_line": 7, "source_card": {...}, "reference_index": 0},  # 資料カード（コードで描く。動く）
+#     {"from_line": 9, "chart": {...}, "reference_index": 1},        # グラフ
+#     {"from_line": 12, "recap_card": {"title": "...", "items": [...]}},  # まとめ（論点の振り返り）
+#     {"from_line": 15, "step_card": {"title": "...", "items": [...]}},   # 今日できる一歩
+#   ]
+#   from_line は1始まり（verdict_from_line と同じ）。最初の要素は 1。昇順。その行の話し始めの少し前（VISUAL_XFADE/2）から
+#   クロスフェードで次の画像に替わる。任意: ken_burns・zoom_anchor（写真・シーン画像）、motion_cues（カード。画像の頭からの秒）、
+#   small_cast（立ち絵を check と同じ小さい大きさにするか。カード・グラフ・まとめは既定で true）、bg_asset（カードの下に敷く素材）。
+VISUAL_SOURCES = ("scene_image", "image_asset", "source_card", "chart", "recap_card", "step_card")
+VISUAL_DRAWN = ("source_card", "chart", "recap_card", "step_card")   # コードで描く（AI生成なし・費用ゼロ）
+VISUAL_XFADE = 0.6          # 画像の切り替えのクロスフェード（秒）
+VISUAL_MIN_SECONDS = 3.0    # 1枚の画像を出す最短の秒数（これより短いと読めない・せわしない）
+SUMMARY_KINDS = {           # まとめのカード（資料の引用ではない）の見出しと色
+    "recap": ("ふりかえり", (196, 120, 40)),
+    "step":  ("今日の一歩", (52, 140, 96)),
+}
+SUMMARY_FOOTER = "二人のまとめ（資料の引用ではありません）"
+
+
+def scene_visuals(scene: dict) -> list:
+    v = scene.get("visuals")
+    return v if isinstance(v, list) and v and scene.get("type") != "teaser" else []
+
+
+def visual_source(v: dict):
+    keys = [k for k in VISUAL_SOURCES if v.get(k)]
+    return keys[0] if len(keys) == 1 else None
+
+
+def visual_asset_name(ep: dict, scene: dict, k: int) -> str:
+    """コードで描く画像（カード・グラフ・まとめ）の静止画の名前（k は0始まり）。"""
+    return f"cards/{ep.get('episode_id', 'klXXX')}_S{scene['scene_id']:02d}_v{k + 1}"
+
+
+def visual_small_cast(v: dict) -> bool:
+    if "small_cast" in v:
+        return bool(v["small_cast"])
+    return visual_source(v) in VISUAL_DRAWN
+
+
+def summary_card(spec: dict, kind: str) -> dict:
+    """recap_card / step_card を、資料カードの描画（kl_motion.card_parts）に渡せる形にする。"""
+    return {"kind": kind, "source": spec.get("title", ""), "items": list(spec.get("items") or []),
+            "footer": spec.get("footer") or SUMMARY_FOOTER, "note": spec.get("note", ""),
+            "bg_asset": spec.get("bg_asset")}
+
+
+def photo_credit(asset: str) -> str:
+    """写真の素材（photos/...）の、画面に出すクレジット（出所の記録の credit_on_screen）。記録が無ければ空。"""
+    rec_path = BASE_DIR / "assets" / f"{asset}.json"
+    if not asset or not rec_path.exists():
+        return ""
+    return json.loads(rec_path.read_text(encoding="utf-8")).get("credit_on_screen", "")
+
+
+def visual_motion_scene(v: dict) -> dict:
+    """カード・グラフ・まとめの画像を、kl_motion.make_motion_clip / scene_parts に渡す疑似シーンにする。
+    写真を下に敷く（bg_asset）ときは、ぼかしで見えなくなる写真のクレジットを、カードの足元の注記に足す。"""
+    src = visual_source(v)
+    out = {"motion_cues": v.get("motion_cues") or {}}
+    credit = photo_credit(v.get("bg_asset") or "") if (v.get("bg_asset") or "").startswith("photos/") else ""
+    if credit:
+        v = dict(v)
+        for key in ("source_card", "chart", "recap_card", "step_card"):
+            if v.get(key):
+                c = dict(v[key])
+                c["note"] = (c.get("note", "") + "　" if c.get("note") else "") + f"背景{credit}"
+                v[key] = c
+    if src == "source_card":
+        out["source_card"] = dict(v["source_card"], **({"bg_asset": v["bg_asset"]} if v.get("bg_asset") else {}))
+    elif src == "chart":
+        out["chart"] = dict(v["chart"], **({"bg_asset": v["bg_asset"]} if v.get("bg_asset") else {}))
+    elif src in ("recap_card", "step_card"):
+        card = summary_card(v[src], "recap" if src == "recap_card" else "step")
+        if v.get("bg_asset"):
+            card["bg_asset"] = v["bg_asset"]
+        out["source_card"] = card
+    return out
+
+
+def visual_line_map(scene: dict) -> list:
+    """各行（0始まり）がどの画像（visuals の番号）の間に話されるか。visuals が無ければ []。"""
+    vis = scene_visuals(scene)
+    if not vis:
+        return []
+    starts = [int(v.get("from_line") or 1) for v in vis]
+    out = []
+    for li in range(len(scene.get("lines") or [])):
+        k = 0
+        for j, st in enumerate(starts):
+            if li + 1 >= st:
+                k = j
+        out.append(k)
+    return out
+
+
+def visual_segments(scene: dict, dur: float, narr_delay: float) -> list:
+    """動画の中の、各画像の区間 [(開始秒, 終了秒, visual)]（シーンの頭からの秒。クロスフェード前の境目）。
+    台詞の行の t0（kl_tts_gen.py が書く）が要る。境目は、その行の話し始めの VISUAL_XFADE/2 秒前。"""
+    vis = scene_visuals(scene)
+    lines = scene.get("lines") or []
+    lead = narr_delay + scene.get("_lead_in", 0.0)
+    bounds = [0.0]
+    for v in vis[1:]:
+        li = int(v["from_line"]) - 1
+        t0 = lines[li].get("t0")
+        if t0 is None:
+            raise RuntimeError(f"S{scene['scene_id']:02d} 行{li + 1}: t0 がありません（kl_tts_gen.py を先に実行）")
+        bounds.append(max(bounds[-1], lead + t0 - VISUAL_XFADE / 2))
+    bounds.append(dur)
+    return [(bounds[k], bounds[k + 1], v) for k, v in enumerate(vis)]
+
+
+def visual_text(v: dict) -> str:
+    """画面に出る文字（plain・scene_text 用）。写真・シーン画像は文字なし。"""
+    src = visual_source(v)
+    if src == "source_card":
+        return "［画面の資料カード］" + card_text(v["source_card"])
+    if src == "chart":
+        import kl_motion
+        return "［画面のグラフ］" + kl_motion.chart_text(v["chart"])
+    if src in ("recap_card", "step_card"):
+        c = v[src]
+        label = SUMMARY_KINDS["recap" if src == "recap_card" else "step"][0]
+        return f"［画面のまとめカード（{label}）］" + " ".join([c.get("title", "")] + [f"・{it}" for it in c.get("items") or []])
+    return ""
+
+
+def render_visual_cards(ep: dict) -> list:
+    """visuals のカード・グラフ・まとめを assets/cards/{episode}_S{NN}_v{k}.png に描く（確認ページ・--no-motion 用の静止画）。"""
+    import kl_motion
+    done = []
+    for s in ep.get("scenes", []):
+        for k, v in enumerate(scene_visuals(s)):
+            if visual_source(v) not in VISUAL_DRAWN:
+                continue
+            path = BASE_DIR / "assets" / f"{visual_asset_name(ep, s, k)}.png"
+            path.parent.mkdir(parents=True, exist_ok=True)
+            kl_motion.render_static(kl_motion.scene_parts(visual_motion_scene(v))).save(path, "PNG")
+            done.append((s["scene_id"], path))
+    return done
+
+
+_LIC_OK = _re.compile(r"^(cc0|public domain|pd\b|cc[ -]by(-sa)?[ -][0-9.]+)", _re.I)
+_LIC_NG = _re.compile(r"(\bnc\b|-nc|\bnd\b|-nd|gfdl|fair use|non-free)", _re.I)
+
+
+def photo_record_errors(ep: dict, where: str, asset: str) -> list:
+    """写真の出所の記録（assets/{asset}.json。kl_photo_commons.py fetch / import が書く）を確かめる。"""
+    errs = []
+    rec_path = BASE_DIR / "assets" / f"{asset}.json"
+    if not rec_path.exists():
+        return [f"{where}: 写真の出所の記録がありません（{rec_path.name}。kl_photo_commons.py fetch / import で取り込む）"]
+    rec = json.loads(rec_path.read_text(encoding="utf-8"))
+    desc = ep.get("youtube_description", "")
+    if rec.get("origin") == "import":
+        # 公式・プレス素材（kl_photo_commons.py import）。条件の記録・確認の印・クレジットを確かめる
+        for k in ("source_url", "credit", "terms", "terms_url"):
+            if not rec.get(k):
+                errs.append(f"{where}: 取り込んだ素材の記録に {k} がありません")
+        if not rec.get("checked_no_watermark") or not rec.get("checked_not_stock"):
+            errs.append(f"{where}: 取り込んだ素材の、透かし・有料ストックでないことの確認の記録がありません")
+        if rec.get("credit") and rec["credit"] not in desc:
+            errs.append(f"{where}: 概要欄に素材のクレジット「{rec['credit']}」がありません（kl_photo_commons.py apply）")
+        return errs
+    lic = rec.get("license", "")
+    if not _LIC_OK.match(lic) or _LIC_NG.search(lic):
+        errs.append(f"{where}: 使えないライセンスの写真です: {lic or '不明'}")
+    name = rec.get("title", "").removeprefix("File:")
+    if name and name not in desc:
+        errs.append(f"{where}: 概要欄に写真クレジット（{name}）がありません（kl_photo_commons.py apply）")
+    return errs
+
+
+def validate_visuals(ep: dict) -> list:
+    """scene.visuals の確認（visuals が無い回は何もしない＝既存の回の結果は変わらない）。"""
+    errs = []
+    refs = ep.get("references") or []
+    for s in ep.get("scenes", []):
+        vis = s.get("visuals")
+        if vis is None:
+            continue
+        sid = s.get("scene_id")
+        lines = s.get("lines") or []
+        n0 = len(errs)
+        if not isinstance(vis, list) or not vis:
+            errs.append(f"S{sid}: visuals は1つ以上の要素のリストにしてください")
+            continue
+        if s.get("type") == "teaser":
+            errs.append(f"S{sid}: teaser に visuals は使えません（ティザーは数秒。1枚で見せる）")
+            continue
+        if s.get("source_card") or s.get("chart"):
+            errs.append(f"S{sid}: visuals のあるシーンでは、source_card・chart は visuals の要素として書いてください")
+        prev = 0
+        for k, v in enumerate(vis):
+            where = f"S{sid} visuals[{k}]"
+            if not isinstance(v, dict):
+                errs.append(f"{where}: 要素は辞書にしてください")
+                continue
+            fl = v.get("from_line")
+            if not isinstance(fl, int) or isinstance(fl, bool) or not (1 <= fl <= len(lines)):
+                errs.append(f"{where}: from_line は 1〜{len(lines)} の整数（1始まりの行番号）")
+            elif k == 0 and fl != 1:
+                errs.append(f"{where}: 最初の画像の from_line は 1 にしてください（シーンの頭から何かを出す）")
+            elif fl <= prev:
+                errs.append(f"{where}: from_line は前の画像より大きくしてください（昇順・重複なし）")
+            if isinstance(fl, int):
+                prev = max(prev, fl)
+            src = visual_source(v)
+            if src is None:
+                errs.append(f"{where}: {' / '.join(VISUAL_SOURCES)} のどれか1つだけを書いてください")
+                continue
+            if src == "scene_image":
+                if not (s.get("image_prompt") or s.get("reuse_scene_id") or s.get("image_asset")):
+                    errs.append(f"{where}: scene_image ですが、シーンに画像（image_prompt / image_asset / reuse_scene_id）がありません")
+            elif src == "image_asset":
+                asset = v["image_asset"]
+                if not (BASE_DIR / "assets" / f"{asset}.png").exists():
+                    errs.append(f"{where}: 画像がありません: assets/{asset}.png")
+                if asset.startswith("photos/") and not v.get("real_photo"):
+                    errs.append(f"{where}: 写真（photos/）には real_photo: true を付けてください（出所とクレジットを確かめるため）")
+                if v.get("real_photo"):
+                    errs += photo_record_errors(ep, where, asset)
+            else:
+                ri = v.get("reference_index", (v.get(src) or {}).get("reference_index", s.get("reference_index")))
+                if src in ("source_card", "chart") and not (isinstance(ri, int) and 0 <= ri < len(refs)):
+                    errs.append(f"{where}: {src} の reference_index が references にありません（画面に出す資料の出所）")
+                c = v[src]
+                if src == "source_card":
+                    if c.get("kind") not in CARD_KINDS:
+                        errs.append(f"{where}: source_card.kind は {tuple(CARD_KINDS)} のどれか")
+                    if not c.get("source"):
+                        errs.append(f"{where}: source_card.source（資料名と日付）がありません")
+                    if not c.get("quote") and not c.get("items"):
+                        errs.append(f"{where}: source_card に quote か items が必要です")
+                    if c.get("quote") and len(c["quote"]) > 90:
+                        errs.append(f"{where}: source_card.quote は90字以内")
+                    if c.get("highlight") and c["highlight"] not in (c.get("quote") or ""):
+                        errs.append(f"{where}: source_card.highlight は quote の中の文字列にしてください")
+                elif src == "chart":
+                    if c.get("kind", "bar") not in ("bar", "line", "number") or not c.get("source") or not c.get("title"):
+                        errs.append(f"{where}: chart には kind（bar/line/number）・source・title が要ります")
+                    if c.get("kind", "bar") in ("bar", "line") and not (2 <= len(c.get("items") or []) <= 8):
+                        errs.append(f"{where}: chart.items は2本以上")
+                else:
+                    if not c.get("title") or len(c["title"]) > 24:
+                        errs.append(f"{where}: {src}.title は1〜24字")
+                    if not (1 <= len(c.get("items") or []) <= 5):
+                        errs.append(f"{where}: {src}.items は1〜5行")
+                if src in ("source_card", "recap_card", "step_card"):
+                    for it in c.get("items") or []:
+                        if sum(0.5 if ch.isascii() else 1 for ch in it) > 26:
+                            errs.append(f"{where}: {src}.items の1行は26字以内（半角は0.5字）（{it[:12]}…）")
+                    if src == "source_card" and len(c.get("items") or []) > 5:
+                        errs.append(f"{where}: {src}.items は5行まで")
+                name = visual_asset_name(ep, s, k)
+                if not (BASE_DIR / "assets" / f"{name}.png").exists():
+                    errs.append(f"{where}: カードの静止画がありません（python3 kl_dialogue.py cards --episode {ep.get('episode_id')}）")
+            if v.get("bg_asset") and not (BASE_DIR / "assets" / f"{v['bg_asset']}.png").exists():
+                errs.append(f"{where}: bg_asset の画像がありません: assets/{v['bg_asset']}.png")
+            if (v.get("bg_asset") or "").startswith("photos/"):
+                errs += photo_record_errors(ep, where + " bg_asset", v["bg_asset"])
+        # 音声ができた後（t0 がある）なら、1枚の画像の長さを確かめる
+        if all("t0" in l for l in lines) and lines and len(errs) == n0:
+            last = lines[-1]
+            dur = 0.5 + last["t0"] + last.get("dur", 0) + 1.0
+            for a, b, v in visual_segments(s, dur, 0.5):
+                if b - a < VISUAL_MIN_SECONDS:
+                    errs.append(f"S{sid}: visuals の from_line {v.get('from_line')} の画像が{b - a:.1f}秒しか出ません"
+                                f"（{VISUAL_MIN_SECONDS:.0f}秒以上。行をまとめるか、画像を減らす）")
+    return errs
 
 
 # ── 初見の視聴者向けの台詞テキスト（plain）と、読みやすさの機械チェック ────────────────
@@ -2005,7 +2298,17 @@ def plain_text(ep: dict, cast: dict = None, only_scenes=None) -> str:
                 labs = _figure_labels(src["image_prompt"])
                 if labs:
                     out.append("[画面に出る図の文字] " + " / ".join(labs))
-        for l in s.get("lines") or []:
+        starts = {}
+        for v in scene_visuals(s):
+            if isinstance(v.get("from_line"), int):
+                starts.setdefault(v["from_line"], []).append(v)
+        for li, l in enumerate(s.get("lines") or [], start=1):
+            for v in starts.get(li, []):
+                src = visual_source(v)
+                if src in VISUAL_DRAWN:
+                    out.append("[画面が替わる] " + visual_text(v))
+                elif src == "image_asset" and v.get("real_photo"):
+                    out.append("[画面が替わる] 写真" + (f"（{v['caption']}）" if v.get("caption") else ""))
             out.append(f"{name.get(l.get('speaker'), l.get('speaker'))}：{line_display(l)}")
         if s.get("type") == "verdict":
             v = ep.get("verdict") or {}

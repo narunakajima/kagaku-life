@@ -127,7 +127,21 @@ CARD_INSTRUCTIONS = """- 資料カードの「原文の引用」（quote_type: �
 
 
 def card_entries(scene: dict) -> list:
-    """シーンの source_card を、照合用の文字列にする（reference_index, 文字列）のリスト。"""
+    """シーンの source_card を、照合用の文字列にする（reference_index, 文字列）のリスト。
+    scene.visuals（画像の列、2026-11-08）の資料カード・グラフも、それぞれの資料に照合する。"""
+    import kl_dialogue as D
+    out = []
+    for v in D.scene_visuals(scene):
+        src = D.visual_source(v)
+        if src not in ("source_card", "chart"):
+            continue
+        pseudo = {"scene_id": scene["scene_id"], src: v[src],
+                  "reference_index": v.get("reference_index", v[src].get("reference_index", scene.get("reference_index")))}
+        out += _card_entries_one(pseudo)
+    return out + _card_entries_one(scene)
+
+
+def _card_entries_one(scene: dict) -> list:
     ch = scene.get("chart")
     if ch and not scene.get("source_card"):
         import kl_motion

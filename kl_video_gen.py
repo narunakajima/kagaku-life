@@ -223,6 +223,16 @@ def make_ken_burns(src: Path, dst: Path, duration: float, effect: str, anchor: t
             f":x='{x_expr}':y='ih/2-(ih/zoom/2)'"
             f":d={total_frames}:s={w}x{h}:fps={FPS},setsar=1,format=yuv420p"
         )
+    elif effect in ("gentle_zoom", "gentle_zoom_out"):
+        # 写真用（2026-11-08）: 1.0〜1.06倍だけゆっくり寄る（または引く）。右上に焼き込んだクレジットが切れない範囲
+        zs = round(0.06 / max(total_frames, 1), 8)
+        z_expr = f"1+{zs}*on" if effect == "gentle_zoom" else f"1.06-{zs}*on"
+        vf = (
+            f"{prescale},"
+            f"zoompan=z='{z_expr}'"
+            f":x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
+            f":d={total_frames}:s={w}x{h}:fps={FPS},setsar=1,format=yuv420p"
+        )
     else:  # static
         # kl_zoom_anchor.pyが人数に応じてken_burnsを自動決定する仕様（SCと
         # 同じ）になったため、"static"は狙って選ばれることがなくなったが、
@@ -763,6 +773,52 @@ def motion_requested(no_motion: bool = False) -> bool:
     return not (no_motion or os.environ.get("KL_NO_MOTION", "") not in ("", "0"))
 
 
+PHOTO_EFFECTS = ("gentle_zoom", "gentle_zoom_out", "static")   # 写真（クレジット入り）に使う動き
+
+
+def make_visuals_clip(scene: dict, scene_img: Path, dur: float, dst: Path, tmp: Path, no_motion: bool = False,
+                      episode_id: str = ""):
+    """scene.visuals（画像の列）のシーンを1本のクリップにする（2026-11-08）。
+    画像ごとに Ken Burns（写真・シーン画像）か動き（カード・グラフ・まとめ。kl_motion）のクリップを作り、
+    VISUAL_XFADE 秒のクロスフェードでつなぐ。全体の長さはシーンの長さ（dur）と同じになる。
+    写真・カードの素材はリポジトリの assets/ から直接読む（資料カードの動きと同じ。シーン画像だけ Drive の S{NN}.png）。"""
+    import kl_dialogue as D
+    import kl_motion
+    sid = scene["scene_id"]
+    segs = D.visual_segments(scene, dur, NARR_DELAY)
+    xf = D.VISUAL_XFADE
+    n = len(segs)
+    clips, durs = [], []
+    for k, (a, b, v) in enumerate(segs):
+        seg_dur = round((b - a) + (xf if k < n - 1 else 0.0), 3)
+        sub = tmp / f"kb_S{sid:02d}_v{k + 1}.mp4"
+        src = D.visual_source(v)
+        anchor = v.get("zoom_anchor") or {"x": 0.5, "y": 0.5}
+        if src == "scene_image":
+            anchor = v.get("zoom_anchor") or scene.get("zoom_anchor") or {"x": 0.5, "y": 0.5}
+            make_ken_burns(scene_img, sub, seg_dur, v.get("ken_burns") or scene.get("ken_burns", "static"),
+                           (anchor["x"], anchor["y"]), ambient=motion_requested(no_motion))
+        elif src == "image_asset":
+            asset = BASE_DIR / "assets" / f"{v['image_asset']}.png"
+            # 写真はゆっくり寄るだけ（1.06倍まで。右上のクレジットを切らない。光の揺らぎも付けない＝実物の色を変えない）。
+            # 文字の画像（cards/）は動かさない
+            effect = v.get("ken_burns") or ("static" if v["image_asset"].startswith("cards/") else "gentle_zoom")
+            if v.get("real_photo") and effect not in PHOTO_EFFECTS:
+                print(f"  ⚠ S{sid:02d} 画像{k + 1}: 写真に {effect} は使わない（クレジットが切れる）→ gentle_zoom")
+                effect = "gentle_zoom"
+            make_ken_burns(asset, sub, seg_dur, effect, (anchor["x"], anchor["y"]))
+        elif motion_requested(no_motion):
+            print(f"  動きのクリップ S{sid:02d} 画像{k + 1} ({seg_dur:.1f}s)")
+            kl_motion.make_motion_clip(D.visual_motion_scene(v), seg_dur, sub, FPS, FFMPEG, OUTPUT_W, OUTPUT_H)
+        else:
+            png = BASE_DIR / "assets" / f"{D.visual_asset_name({'episode_id': episode_id}, scene, k)}.png"
+            make_ken_burns(png, sub, seg_dur, "static")
+        clips.append(sub)
+        durs.append(seg_dur)
+    print(f"  画像の列 S{sid:02d}: {n}枚（" + " / ".join(f"{a:.1f}s〜" for a, _b, _v in segs) + "）")
+    crossfade_concat_n(clips, durs, dst, xfade_dur=xf)
+
+
 def gen_video(episode_id: str, out_dir: Path = None, static_cast: bool = False, limit: float = None,
               no_talk: bool = False, no_motion: bool = False):
     ep_path = BASE_DIR / "episodes" / f"{episode_id}.json"
@@ -821,13 +877,20 @@ def gen_video(episode_id: str, out_dir: Path = None, static_cast: bool = False, 
                 clip = tmp / f"kb_S{sid:02d}.mp4"
                 anchor = (scene.get("zoom_anchor") or {"x": 0.5, "y": 0.5})
                 import kl_motion
-                if motion_requested(no_motion) and kl_motion.has_motion(scene):
+                import kl_dialogue as D
+                if D.scene_visuals(scene):
+                    # 1シーンの中で、台詞の流れに合わせて画像を替える（scene.visuals、2026-11-08）
+                    make_visuals_clip(scene, img, dur, clip, tmp, no_motion, episode_id)
+                elif motion_requested(no_motion) and kl_motion.has_motion(scene):
                     # 資料カード・グラフ: 紙が落ち着き、マーカーが引かれ、箇条書きが現れ、棒が伸びる（2026-11-07）
                     print(f"  動きのクリップ S{sid:02d} ({dur:.1f}s)")
                     kl_motion.make_motion_clip(scene, dur, clip, FPS, FFMPEG, OUTPUT_W, OUTPUT_H)
                 else:
-                    make_ken_burns(img, clip, dur, scene.get("ken_burns", "static"), (anchor["x"], anchor["y"]),
-                                   ambient=motion_requested(no_motion))
+                    effect = scene.get("ken_burns", "static")
+                    if scene.get("real_photo") and effect not in PHOTO_EFFECTS:
+                        effect = "gentle_zoom"  # 写真は寄りすぎると右上のクレジットが切れる（2026-11-08）
+                    make_ken_burns(img, clip, dur, effect, (anchor["x"], anchor["y"]),
+                                   ambient=motion_requested(no_motion) and not scene.get("real_photo"))
                 paths.append(clip)
             return paths
 
