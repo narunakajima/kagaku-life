@@ -6,43 +6,40 @@
   "source_type": "news",
   "news_date": "2026-10-27",
   "verdict_as_of": "2026-11-08",
-  "genre": "medical",
+  "genre": "ai",
   "health": true,
-  "episode_title": "社員1人の会社でも、AIで難しい開発を回せる？ Anthropicが買い取った創薬会社で、AIに任せた仕事を確かめる",
-  "youtube_title": "社員1人の薬の会社、外注11か所をAIにどこまで任せた？AI企業Anthropic発表（11月時点）",
-  "entry_question": "社員1人の会社でも、AIを使えば難しい開発を回せる日は来る？ 小さな会社や商売は、何から任せてみればいい？",
+  "episode_title": "研究者役のAIを何万も動かせば、薬は何十倍早くできる？ アンソロピックの創薬の発表を確かめる",
+  "youtube_title": "AI創薬、AIを何万も動かせば薬は何十倍早くできる？（11月時点）",
+  "entry_question": "正社員1人とAIで、大勢の研究者がやってきた薬づくりを回せる日は来る？ 研究者役のAIを何万人分も同時に動かせば、新しい薬は何十倍も早く生まれる？",
   "claim_verdict": {
-    "dreamer": "decade",
+    "dreamer": "pending",
     "skeptic": "pending"
   },
   "verdict": {
     "dreamer": "soon",
-    "skeptic": "soon"
+    "skeptic": "pending"
   },
   "hook_lines": [
-    "社員1人の薬の会社に外注11か所",
-    "AIにどこまで任せた？"
+    "AIを何万も動かせば",
+    "新しい薬は何十倍早くなる？"
   ],
-  "thumbnail_prompt": "Warm, cheerful evening view of a tiny start-up office, continuous across the whole frame with no panels, boxes or borders. Keep the left 30%, the right 30% and the top 42% of the frame quiet and uncluttered (soft blurred bookshelves and warm lamp light only), but the background must continue unbroken behind them. Main subject, centered left-to-right in the middle band: a single wooden desk with an open laptop placed at a three-quarter angle so that its softly glowing, blurred, unreadable screen is clearly visible to the viewer (the back of the lid is hidden and no emblem of any kind is visible anywhere on the laptop), a tall stack of thick printed lab report binders beside it, and in front a small plastic rack of laboratory sample tubes with colored caps. No people, no hands. No readable text, no letters, no numbers, no logos, no brand marks.",
-  "thumbnail_headline": "社員1人＋AI\n外注11か所",
+  "thumbnail_prompt": "Bright, hopeful view of a modern drug-discovery laboratory that blends into a data center, continuous across the whole frame with no panels, boxes or borders. Keep the left 30%, the right 30% and the top 42% of the frame quiet and uncluttered (soft blurred glowing blue server racks and soft lab lights only), but the background must continue unbroken behind them. Main subject, centered left-to-right in the middle band: a yellow industrial robotic arm holding a clear 96-well plate filled with small drops of colorful liquid, in front of rows of glowing blue servers. No people, no hands, no animals. No readable text, no letters, no numbers, no logos, no brand marks.",
+  "thumbnail_headline": "AIを何万も並べたら\n薬は何十倍早い？",
   "thumbnail_exprs": {
     "dreamer": "excited",
-    "skeptic": "thinking"
+    "skeptic": "doubt"
   },
   "youtube_tags": [
+    "AI創薬",
+    "創薬",
+    "AIエージェント",
     "Anthropic",
     "アンソロピック",
     "Claude",
     "クロード",
-    "AI創薬",
-    "創薬",
-    "社員1人",
-    "一人会社",
-    "Mithril Medicine",
-    "AI活用",
-    "中小企業",
-    "外注",
-    "筋ジストロフィー",
+    "製薬",
+    "新薬開発",
+    "希少疾患",
     "答え合わせ",
     "科学ニュース"
   ],
@@ -60,19 +57,89 @@
     {
       "title": "Preclinical Characterization of a Bispecific Bridging Antibody for the Treatment of LAMA2-Related Congenital Muscular Dystrophy",
       "authors": [
-        "Cody Tranbarger",
         "Mithril Medicine"
       ],
       "year": 2026,
-      "venue": "Technical report（2026年10月26日、Not peer reviewed）",
+      "venue": "Technical report（2026年10月、Not peer reviewed）",
       "url": "https://www-cdn.anthropic.com/52e1f5d50c47ca3818f56704c27cf19e59b62e77.pdf",
       "is_preprint": true,
       "institution": "Anthropic（Mithril Medicine）",
       "source_kind": "technical_report"
+    },
+    {
+      "title": "Mithril Medicine: Pipeline-in-a-Person（Anthropic の発表の中の項）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Anthropic 公式（2026年10月27日）",
+      "url": "https://www.anthropic.com/research/early-progress-drug-development",
+      "is_preprint": false,
+      "institution": "Anthropic（Mithril Medicine）",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "Divergence Labs: hit generation（Anthropic の発表の中の項）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Anthropic 公式（2026年10月27日）",
+      "url": "https://www.anthropic.com/research/early-progress-drug-development",
+      "is_preprint": false,
+      "institution": "Divergence Labs",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "BigHat Biosciences: lead optimization（Anthropic の発表の中の項）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Anthropic 公式（2026年10月27日）",
+      "url": "https://www.anthropic.com/research/early-progress-drug-development",
+      "is_preprint": false,
+      "institution": "BigHat Biosciences",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "The Column Group (TCG): company creation（Anthropic の発表の中の、TCG が書いた文）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Anthropic 公式（2026年10月27日）",
+      "url": "https://www.anthropic.com/research/early-progress-drug-development",
+      "is_preprint": false,
+      "institution": "The Column Group",
+      "source_kind": "official_blog"
     }
   ],
-  "youtube_description": "2026年10月27日のAnthropic（アンソロピック）の発表を、11月8日時点で確認した二人の見立てです。\n\nAIのClaude（クロード）を作るAnthropicが、正社員が創業者1人だけの創薬会社 Mithril Medicine（ミスリル・メディシン）を2026年7月に買い取り、自社で薬の開発を始めたと発表しました。創業者は、11の外の研究所との契約・物の受け渡し・実験の段取りをClaudeに任せ、子どもの珍しい筋ジストロフィー（LAMA2型）の薬の候補を、思いつきからマウスで手応えが出るまで18か月足らずで進めたとしています。\n社員1人の会社でも、AIを使えば難しい開発を回せる日は来るのか。小さな会社や商売は、何から任せてみればいいのか。期待担当の大輔と、確かめ担当の沙織が、Anthropicの発表と買い取った薬の会社（創業者と相談役のチーム）が書いた報告書で確かめます。(1) AIに任せたのは、どこまで？ (2) AIの間違いは、誰が止めた？ (3) 薬そのものも、速くなった？ の3つです。\n\n■ この回の判定（2026年11月8日時点の、二人の見立て）\n判定するのは：社員の少ない会社が、外注先とのやりとりの整理と、長い書類の読み込みをAIに任せ、決めて送るのは人、という形で、今より大きな仕事を回せるのはいつか\n大輔: もうすぐ来る（今日から1年のうちに、小さな会社がこの任せ方で、今より大きな仕事を回し始められる。報告書の一週間は「一番うまくいった例」だが、読み込みと下書きを任せる形は実際に回っていた。最初の予想「AIを社員の代わりに」は言い過ぎで、AIは読むことと下書きまで、決めて送るのは人だった）\n沙織: もうすぐ来る（間違いの止め方まで記録に残っているため。こちらの指示に書いていない点をAIが一覧にし、数字は人が確かめ、人が送る。最初の予想「AIが任されたのはメールの清書くらい」は外れました）\n今月できること: 取引先との長いメールのやりとりを1件選んで、AIに「今どこで止まっているか」「次に誰に何を頼むか」をまとめさせ、下書きと一緒にこちらの指示に書いていない点を一覧で出させる（外に出せない中身は消してから。数量と日付は自分で確かめ、送るのは自分）\n\n■ 補足\n・これは研究の紹介で、治療としておすすめするものではありません。マウスの結果は、薬を入れた7匹と入れなかった4匹の予備の試験で、組をくじ引きで分けておらず、組ごとに試した時期もずれています。報告書自身が、同じ時期に組を知らずに測る形での確かめ直しが必要と書いています。人での安全性や効果は示されていません。\n・人での試験の開始は、薬の候補が持ちこたえた場合に「早くて2028年後半」というAnthropicの目標です（2026年より後の日付は目標で、約束ではないと書かれています）。\n・資料はすべてAnthropic自身のものです。報告書は、ほかの専門家の審査（査読）を受ける前の技術報告です。報告書の「Claudeとの仕事」の章は、Claudeが自分の記録からまとめたもので、報告書自身が身びいきのおそれがあると断っています。取り上げた一週間は「最近で一番うまくいった例」として選ばれたものです。\n・Claudeはメールを1通も自分では送っておらず、下書きを人が直して送っています（17通の下書きのうち12通）。それでも少なくとも3つの誤りが外の研究所に届きました（調べた6つのうち5つはClaude自身が見つけた）。\n・買収の金額は、発表に書かれていません。\n\n■ 参考資料（一次資料）\n・Anthropic, \"Early progress on accelerating drug development with Claude\"（2026年10月27日） https://www.anthropic.com/research/early-progress-drug-development\n・Cody Tranbarger and Mithril Medicine, \"Preclinical Characterization of a Bispecific Bridging Antibody for the Treatment of LAMA2-Related Congenital Muscular Dystrophy\", Technical report（2026年10月26日、査読前） https://www-cdn.anthropic.com/52e1f5d50c47ca3818f56704c27cf19e59b62e77.pdf\n\n\n🎵 Music: Mystery Solved (loop).wav by X3nus (freesound.org) — CC BY 4.0\n#Anthropic #AI創薬 #幸せな未来のサイエンス",
+  "youtube_description": "2026年10月27日のAnthropic（アンソロピック）の発表を、11月8日時点で確認した二人の見立てです。\n\nAIの会社Anthropicが、薬づくりの取り組みの途中経過を発表しました。7月には、正社員1人の薬の会社 Mithril Medicine を買い取っています。研究者役のAIを何万人分も同時に動かせば、新しい薬は何十倍も早くできるのか。1人とAIで、薬づくりはどこまで回せるのか。期待担当の大輔と、確かめ担当の沙織が、発表と技術報告で確かめます。(1) 1人とAIで、薬づくりを回せるか (2) AIを何万も並べたら、何十倍か (3) 薬を作るのは、誰になるか の3つです。\n\n■ この回の判定（2026年11月8日時点の、二人の見立て）\n判定するのは：AIを並べて使うと、少人数でも、同時にいくつもの薬の挑戦（1つの病気に向けた薬づくり1本）を進めて、本命の薬（人で試す手前の、正式な薬の候補）に近づけるか。速くなるのは、考える・設計する・調べる・段取りする部分\n大輔: もうすぐ来る（買われた会社の研究者は1人で2本を進め、さらに数本を始める準備中。投資会社The Column Groupが、最初からAI前提の新しい会社Pleiadesを作り始め、そこで作るAIの仕組みを今後作るすべての会社で使うとしている。来年までに、少人数とAIで何本も回す会社が増え、挑戦の数を打てる分、本命の薬にも近づく、という見立て）\n沙織: 根拠待ち（否定する札ではありません。挑戦をいくつも進めるところまでは見えてきたものの、増えた挑戦が本命の薬に近づけるかは、まだ示されていないため。Mithril Medicineが2027年の目標どおり、2つの病気で本命の薬を決めたときに、札を「もうすぐ来る」に変えます）\n「AIを何万も並べれば、薬全体が何十倍も速くなる」は大輔の最初の推測で、資料が示した事実ではありません。研究者役のAIを何万も並べた例は、資料にはまだありません。何万も出ているのは、AIが作った設計案の数です（約3万5千個）。ただ、薬全体が何倍速くなるという倍率は、どの資料にも書かれていません。発表自身が「AIは細胞を早く育てられず、マウスを早く歳をとらせることもできない」と書いています。\n今月からの目印: Anthropicは、1人の研究者がAIと何本もの薬の挑戦を回す働き方を、ほかの研究者に広げる方法を「数か月のうちに話す」と書いています。出たら、誰が、どんな条件で使えるのかを見ます。\n\n■ 補足\n・資料はすべて、Anthropicと提携先が自分で出したものです。Anthropicは、提携先（The Column Group、Divergence Labsなど）にClaudeの利用分と技術支援を提供していると開示しています。第三者による確認はまだありません。\n・Mithril Medicineの技術報告は、ほかの専門家の審査（査読）を受ける前の報告です。報告自身が「Claudeと働いた節はClaudeが自分の記録からまとめたので、偏りの恐れがある」と書いています。マウスの試験は、くじ引き（無作為化）も目隠し（盲検化）もしていない予備的なもので、人での安全性・効果は示していません。\n・「研究者役のAIを何万人分も動かせば、何十倍も早くできる」「そこに目をつけて買った」は、大輔の推測です。Anthropicが書いている理由は、AIの強みと限界を知る、ほかの研究者の手本にする、うまく進めば薬そのものの成果になる、の3つと、この仕事を大きく広げる、です。\n・工程ごとの短縮（最大9か月→約3〜4週間半、計画づくり1〜2か月→2〜3日、文献の調べ物 数週間→数日）は、いずれも各社の以前の仕事、または本人の見積もりとの比較です。\n・この動画は研究の紹介で、治療や投資をすすめるものではありません。\n\n■ 参考資料（一次資料）\n・Anthropic, \"Early progress on accelerating drug development with Claude\"（2026年10月27日。Mithril Medicine、Divergence Labs、BigHat Biosciences、The Column Group の項・文を含む） https://www.anthropic.com/research/early-progress-drug-development\n・Mithril Medicine, \"Preclinical Characterization of a Bispecific Bridging Antibody for the Treatment of LAMA2-Related Congenital Muscular Dystrophy\"（技術報告、2026年10月、査読前） https://www-cdn.anthropic.com/52e1f5d50c47ca3818f56704c27cf19e59b62e77.pdf\n\n#AI創薬 #Anthropic #幸せな未来のサイエンス\n\n【写真クレジット】\nS06: 「Automated Screening (38709119951).jpg」 / Public domain / https://commons.wikimedia.org/wiki/File:Automated_Screening_(38709119951).jpg\nS07: 「Lab mice 436262.jpg」 / Understanding Animal Research / CC BY 2.0 / https://commons.wikimedia.org/wiki/File:Lab_mice_436262.jpg\nS08: 「BalticServers data center.jpg」 / BalticServers.com / CC BY-SA 3.0 / https://commons.wikimedia.org/wiki/File:BalticServers_data_center.jpg\nS09: 「96-well plate.jpg」 / Jaime Neto / CC BY-SA 4.0 / https://commons.wikimedia.org/wiki/File:96-well_plate.jpg\nS10: 「Automated pipetting system using manual pipettes.jpg」 / Pzucchel / CC BY-SA 3.0 / https://commons.wikimedia.org/wiki/File:Automated_pipetting_system_using_manual_pipettes.jpg\nS11: 「Disposable Pipette Tips in Laboratory Tip Boxes.jpg」 / Gannu03 / CC BY-SA 4.0 / https://commons.wikimedia.org/wiki/File:Disposable_Pipette_Tips_in_Laboratory_Tip_Boxes.jpg\n",
   "scenes": [
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 8,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "研究者役のAIを何万人分も動かせば、薬は何十倍早くできる。",
+          "expression": "excited"
+        }
+      ],
+      "scene_id": 1,
+      "narration": "大輔「研究者役のAIを何万人分も動かせば、薬は何十倍早くできる。」",
+      "narrator": "dialogue"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 7,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "マウスは、AIでも早く育たない。書いたのはAIの会社自身。",
+          "expression": "doubt",
+          "react": "surprised"
+        }
+      ],
+      "scene_id": 2,
+      "narration": "沙織「マウスは、AIでも早く育たない。書いたのはAIの会社自身。」",
+      "narrator": "dialogue"
+    },
     {
       "type": "teaser",
       "bgm_role": "intro",
@@ -80,33 +147,14 @@
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "社員1人の薬の会社が、外注先11か所の手配をAIに任せた。",
+          "text": "正社員ひとりの会社が、11の研究所の実験を、AIで回してた。",
           "expression": "excited",
-          "t0": 0.0,
-          "dur": 5.56,
-          "cards": [
-            {
-              "text": "社員1人の薬の会社が、外注先11か所の",
-              "start": 0.0,
-              "end": 3.62
-            },
-            {
-              "text": "手配をAIに任せた。",
-              "start": 3.77,
-              "end": 5.27
-            }
-          ]
+          "display": "正社員1人の会社が、11の研究所の実験を、AIで回してた。"
         }
       ],
-      "scene_id": 1,
-      "narration": "大輔「社員1人の薬の会社が、外注先11か所の手配をAIに任せた。」",
-      "narrator": "dialogue",
-      "lines_hash": "d777985152b5",
-      "ken_burns": "zoom_out",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "scene_id": 3,
+      "narration": "大輔「正社員ひとりの会社が、11の研究所の実験を、AIで回してた。」",
+      "narrator": "dialogue"
     },
     {
       "type": "teaser",
@@ -114,106 +162,16 @@
       "reuse_scene_id": 10,
       "lines": [
         {
-          "speaker": "dreamer",
-          "text": "研究所の341ページの資料を、AIが8分足らずでまとめた。",
-          "expression": "excited",
-          "t0": 0.0,
-          "dur": 5.04,
-          "cards": [
-            {
-              "text": "研究所の341ページの資料を、",
-              "start": 0.0,
-              "end": 2.64
-            },
-            {
-              "text": "AIが8分足らずでまとめた。",
-              "start": 2.79,
-              "end": 4.89
-            }
-          ]
-        }
-      ],
-      "scene_id": 2,
-      "narration": "大輔「研究所の341ページの資料を、AIが8分足らずでまとめた。」",
-      "narrator": "dialogue",
-      "lines_hash": "e5d00b09e385",
-      "ken_burns": "zoom_out",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    {
-      "type": "teaser",
-      "bgm_role": "intro",
-      "reuse_scene_id": 8,
-      "lines": [
-        {
           "speaker": "skeptic",
-          "text": "でも、人が見直したのに、AIの間違いが外の研究所に届いた。",
-          "expression": "doubt",
-          "react": "surprised",
-          "t0": 0.0,
-          "dur": 4.48,
-          "cards": [
-            {
-              "text": "でも、人が見直したのに、AIの間違いが",
-              "start": 0.0,
-              "end": 2.84
-            },
-            {
-              "text": "外の研究所に届いた。",
-              "start": 2.99,
-              "end": 4.48
-            }
-          ]
-        }
-      ],
-      "scene_id": 3,
-      "narration": "沙織「でも、人が見直したのに、AIの間違いが外の研究所に届いた。」",
-      "narrator": "dialogue",
-      "lines_hash": "b133a1b0fa8b",
-      "ken_burns": "zoom_out",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    {
-      "type": "teaser",
-      "bgm_role": "intro",
-      "reuse_scene_id": 11,
-      "lines": [
-        {
-          "speaker": "skeptic",
-          "text": "社員1人の薬の会社でも、AIで難しい開発を回せる日は来る？",
+          "text": "ひとりとAIで、薬づくりはどこまで回せる？ 何十倍は本当？",
           "expression": "thinking",
-          "tag": "question",
-          "t0": 0.0,
-          "dur": 5.44,
-          "cards": [
-            {
-              "text": "社員1人の薬の会社でも、AIで難しい開発を",
-              "start": 0.38,
-              "end": 3.74
-            },
-            {
-              "text": "回せる日は来る？",
-              "start": 3.89,
-              "end": 5.15
-            }
-          ]
+          "display": "1人とAIで、薬づくりはどこまで回せる？ 何十倍は本当？",
+          "tag": "question"
         }
       ],
       "scene_id": 4,
-      "narration": "沙織「社員1人の薬の会社でも、AIで難しい開発を回せる日は来る？」",
-      "narrator": "dialogue",
-      "lines_hash": "27b92758796c",
-      "ken_burns": "zoom_out",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "narration": "沙織「ひとりとAIで、薬づくりはどこまで回せる？ 何十倍は本当？」",
+      "narrator": "dialogue"
     },
     {
       "type": "setup",
@@ -222,2758 +180,1017 @@
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "今日の話は、AIの会社、アンソロピック。10月27日の発表で、社員1人の薬の会社を買い取って、自分たちで薬の開発を始めた、と明かした。",
+          "text": "AIの会社アンソロピックが、薬づくりの途中経過を発表した。",
           "expression": "excited",
-          "display": "今日の話は、AIの会社、Anthropic（アンソロピック）。10月27日の発表で、社員1人の薬の会社を買い取って、自分たちで薬の開発を始めた、と明かした。",
-          "t0": 0.0,
-          "dur": 11.36,
-          "cards": [
-            {
-              "text": "今日の話は、AIの会社、Anthropic",
-              "start": 0.0,
-              "end": 3.06
-            },
-            {
-              "text": "（アンソロピック）。10月27日の発表で、",
-              "start": 3.06,
-              "end": 6.12
-            },
-            {
-              "text": "社員1人の薬の会社を買い取って、",
-              "start": 6.12,
-              "end": 8.45
-            },
-            {
-              "text": "自分たちで薬の開発を始めた、と明かした。",
-              "start": 8.45,
-              "end": 11.36
-            }
-          ]
+          "display": "AIの会社Anthropic（アンソロピック）が、薬づくりの途中経過を発表した。"
         },
         {
           "speaker": "skeptic",
-          "text": "アンソロピックって、クロードというAIを作ってる会社ね。社員1人の薬の会社って？",
-          "expression": "neutral",
-          "display": "Anthropicって、Claude（クロード）というAIを作ってる会社ね。社員1人の薬の会社って？",
-          "t0": 11.64,
-          "dur": 6.08,
-          "cards": [
-            {
-              "text": "Anthropicって、Claude（クロード）",
-              "start": 0.0,
-              "end": 2.92
-            },
-            {
-              "text": "というAIを作ってる会社ね。",
-              "start": 2.92,
-              "end": 4.62
-            },
-            {
-              "text": "社員1人の薬の会社って？",
-              "start": 4.62,
-              "end": 6.08
-            }
-          ]
+          "text": "AIの会社が、薬を？",
+          "expression": "surprised"
         },
         {
           "speaker": "dreamer",
-          "text": "正社員は、創業者ひとりだけ。ほかは、お金を払って時々手伝ってもらう相談役が何人かと、外の研究所。",
-          "expression": "neutral",
-          "t0": 18.0,
-          "dur": 8.76,
-          "cards": [
-            {
-              "text": "正社員は、創業者ひとりだけ。ほかは、",
-              "start": 0.21,
-              "end": 3.76
-            },
-            {
-              "text": "お金を払って時々手伝ってもらう",
-              "start": 3.91,
-              "end": 6.16
-            },
-            {
-              "text": "相談役が何人かと、",
-              "start": 6.16,
-              "end": 7.51
-            },
-            {
-              "text": "外の研究所。",
-              "start": 7.66,
-              "end": 8.96
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "外の研究所？",
-          "expression": "neutral",
-          "t0": 27.04,
-          "dur": 1.44,
-          "cards": [
-            {
-              "text": "外の研究所？",
-              "start": 0.0,
-              "end": 1.44
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "お金を払って、実験を頼む研究所。この会社は、11か所に頼んでいた。",
-          "expression": "neutral",
-          "t0": 28.76,
-          "dur": 6.08,
-          "cards": [
-            {
-              "text": "お金を払って、実験を頼む研究所。",
-              "start": 0.0,
-              "end": 2.88
-            },
-            {
-              "text": "この会社は、11か所に頼んでいた。",
-              "start": 3.03,
-              "end": 5.87
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "つまり外注ね。商売で言えば、職人さんや工場に、仕事を出す形。",
-          "expression": "amused",
-          "t0": 35.12,
-          "dur": 5.16,
-          "cards": [
-            {
-              "text": "つまり外注ね。商売で言えば、",
-              "start": 0.0,
-              "end": 2.38
-            },
-            {
-              "text": "職人さんや工場に、仕事を出す形。",
-              "start": 2.53,
-              "end": 4.93
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "そう。買い取られる前、この会社の創業者は、その11か所との契約や、物の受け渡し、実験の段取りを、クロードに任せた。",
-          "expression": "neutral",
-          "t0": 40.56,
-          "dur": 9.44,
-          "cards": [
-            {
-              "text": "そう。買い取られる前、この会社の創業者は、",
-              "start": 0.0,
-              "end": 3.2
-            },
-            {
-              "text": "その11か所との契約や、物の受け渡し、",
-              "start": 3.35,
-              "end": 6.77
-            },
-            {
-              "text": "実験の段取りを、クロードに任せた。",
-              "start": 6.92,
-              "end": 9.47
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "それで、薬の候補を、思いついてから、マウスで手応えが出るまで、18か月足らずで進めた。創業者は今、アンソロピックで、この研究を続けてる。",
+          "text": "しかもアンソロピックは7月に、正社員ひとりの薬の会社を買ってる。",
           "expression": "excited",
-          "t0": 50.22,
-          "dur": 10.84,
-          "cards": [
-            {
-              "text": "それで、薬の候補を、思いついてから、",
-              "start": 0.0,
-              "end": 2.7
-            },
-            {
-              "text": "マウスで手応えが出るまで、",
-              "start": 2.85,
-              "end": 4.88
-            },
-            {
-              "text": "18か月足らずで進めた。",
-              "start": 4.88,
-              "end": 6.75
-            },
-            {
-              "text": "創業者は今、アンソロピックで、",
-              "start": 7.14,
-              "end": 9.39
-            },
-            {
-              "text": "この研究を続けてる。",
-              "start": 9.54,
-              "end": 11.04
-            }
-          ]
+          "display": "しかもアンソロピックは7月に、正社員1人の薬の会社を買ってる。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕の推測ね。研究者役のAI、つまり自分で調べて作るAIを、何万人分も同時に動かせば、新しい薬は何十倍も早くできる。",
+          "expression": "excited",
+          "tag": "prediction"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ひとりとAIで大勢の研究者の仕事ができる。そう見て買ったんだと思う。",
+          "expression": "convinced",
+          "display": "1人とAIで大勢の研究者の仕事ができる。そう見て買ったんだと思う。"
         },
         {
           "speaker": "skeptic",
-          "text": "18か月足らず。それが速いのかどうかは、あとで確かめよう。それにしても、なぜ、AIの会社が、薬を作るの？",
+          "text": "アンソロピックが、この取り組みの理由として書いてるのは、別。まず、AIの得意と苦手を、薬づくりで知ること。そのうえで、大きく広げる、と。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想。薬づくりには、考えて設計する部分と、細胞やマウスで実際に試す部分がある。",
           "expression": "doubt",
-          "t0": 61.34,
-          "dur": 7.84,
-          "cards": [
-            {
-              "text": "18か月足らず。それが速いのかどうかは、",
-              "start": 0.0,
-              "end": 3.05
-            },
-            {
-              "text": "あとで確かめよう。それにしても、なぜ、",
-              "start": 3.2,
-              "end": 5.96
-            },
-            {
-              "text": "AIの会社が、薬を作るの？",
-              "start": 6.11,
-              "end": 8.04
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "発表に書いてある理由は、本物の薬の開発に深く入って、自分たちのAIの得意と不得意を知るため。買い取った金額は、発表に書いていない。",
-          "expression": "neutral",
-          "t0": 69.46,
-          "dur": 9.96,
-          "cards": [
-            {
-              "text": "発表に書いてある理由は、本物の薬の開発に",
-              "start": 0.0,
-              "end": 3.13
-            },
-            {
-              "text": "深く入って、自分たちのAIの得意と不得意を",
-              "start": 3.28,
-              "end": 6.35
-            },
-            {
-              "text": "知るため。買い取った金額は、",
-              "start": 6.5,
-              "end": 8.55
-            },
-            {
-              "text": "発表に書いていない。",
-              "start": 8.7,
-              "end": 10.16
-            }
-          ]
+          "tag": "prediction"
         },
         {
           "speaker": "skeptic",
-          "text": "先に言っておくと、薬はまだ、マウスで試した段階。人では試していない。人での試験は、早くて2028年の後半、と発表にある。",
-          "expression": "thinking",
-          "t0": 79.7,
-          "dur": 8.6,
-          "cards": [
-            {
-              "text": "先に言っておくと、薬はまだ、",
-              "start": 0.0,
-              "end": 1.9
-            },
-            {
-              "text": "マウスで試した段階。人では試していない。",
-              "start": 2.05,
-              "end": 4.77
-            },
-            {
-              "text": "人での試験は、早くて2028年の後半、",
-              "start": 4.92,
-              "end": 7.7
-            },
-            {
-              "text": "と発表にある。",
-              "start": 7.85,
-              "end": 8.8
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "今日の資料は、全部アンソロピック自身のもの。発表と、買い取った薬の会社が書いた報告書。報告書は、ほかの専門家の審査を受ける前のもの。",
-          "expression": "neutral",
-          "t0": 88.52,
-          "dur": 8.28,
-          "cards": [
-            {
-              "text": "今日の資料は、",
-              "start": 0.0,
-              "end": 0.85
-            },
-            {
-              "text": "全部アンソロピック自身のもの。",
-              "start": 0.85,
-              "end": 2.66
-            },
-            {
-              "text": "発表と、買い取った薬の会社が書いた報告書。",
-              "start": 2.81,
-              "end": 5.55
-            },
-            {
-              "text": "報告書は、",
-              "start": 5.7,
-              "end": 6.3
-            },
-            {
-              "text": "ほかの専門家の審査を受ける前のもの。",
-              "start": 6.3,
-              "end": 8.48
-            }
-          ]
+          "text": "AIを何万人分も並べて、つまり同時に動かして速くなるのは、考える部分まで。細胞もマウスも早くは育たないから、薬全体は何十倍にならない。",
+          "expression": "doubt"
         },
         {
           "speaker": "dreamer",
-          "expression": "neutral",
-          "text": "報告書では、創業者と相談役の人たちを、まとめて「チーム」と呼んでる。社員は1人でも、1人で全部やったわけじゃない。仕事は何人かで分けてた。",
-          "t0": 97.08,
-          "dur": 9.48,
-          "cards": [
-            {
-              "text": "報告書では、創業者と相談役の人たちを、",
-              "start": 0.0,
-              "end": 2.69
-            },
-            {
-              "text": "まとめて「チーム」と呼んでる。",
-              "start": 2.84,
-              "end": 4.8
-            },
-            {
-              "text": "社員は1人でも、",
-              "start": 4.95,
-              "end": 6.0
-            },
-            {
-              "text": "1人で全部やったわけじゃない。",
-              "start": 6.0,
-              "end": 7.96
-            },
-            {
-              "text": "仕事は何人かで分けてた。",
-              "start": 8.11,
-              "end": 9.68
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "僕の予想。社員1人の会社が、AIを社員の代わりにして、難しい開発を回す形は、もう始まってる。次は、町の小さな会社にも、1年ほどで広がる。",
+          "text": "確かめよう。ひとりとAIで回せるか。AIを何万も並べたら何十倍か。薬を作るのは誰になるか。",
           "expression": "excited",
-          "tag": "prediction",
-          "t0": 106.78,
-          "dur": 11.64,
-          "cards": [
-            {
-              "text": "僕の予想。社員1人の会社が、",
-              "start": 0.0,
-              "end": 2.44
-            },
-            {
-              "text": "AIを社員の代わりにして、",
-              "start": 2.59,
-              "end": 4.73
-            },
-            {
-              "text": "難しい開発を回す形は、",
-              "start": 4.73,
-              "end": 6.55
-            },
-            {
-              "text": "もう始まってる。次は、町の小さな会社にも、",
-              "start": 6.7,
-              "end": 10.32
-            },
-            {
-              "text": "1年ほどで広がる。",
-              "start": 10.47,
-              "end": 11.82
-            }
-          ]
+          "display": "確かめよう。1人とAIで回せるか。AIを何万も並べたら何十倍か。薬を作るのは誰になるか。"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true
         },
         {
-          "speaker": "skeptic",
-          "text": "私の予想。「任せた」と言っても、中身はメールの清書くらいだと思う。長い資料をまとめさせても、そこから次に何をするかの案までは、任せていない、と見てる。本物なら私も使いたいから、そこを確かめたい。",
-          "expression": "doubt",
-          "tag": "prediction",
-          "t0": 118.7,
-          "dur": 14.28,
-          "cards": [
-            {
-              "text": "私の予想。「任せた」と言っても、",
-              "start": 0.0,
-              "end": 2.43
-            },
-            {
-              "text": "中身はメールの清書くらいだと思う。",
-              "start": 2.58,
-              "end": 4.95
-            },
-            {
-              "text": "長い資料をまとめさせても、そこから次に",
-              "start": 5.1,
-              "end": 7.75
-            },
-            {
-              "text": "何をするかの案までは、任せていない、",
-              "start": 7.9,
-              "end": 10.41
-            },
-            {
-              "text": "と見てる。本物なら私も使いたいから、",
-              "start": 10.56,
-              "end": 13.07
-            },
-            {
-              "text": "そこを確かめたい。",
-              "start": 13.22,
-              "end": 14.48
-            }
-          ]
+          "from_line": 3,
+          "image_asset": "photos/kl054_S06",
+          "real_photo": true
         },
         {
-          "speaker": "skeptic",
-          "text": "3つ確かめよう。AIは、どこまで任されたのか。AIの間違いは、誰が止めたのか。それと、薬づくりそのものは、本当に速くなったのか。",
-          "expression": "neutral",
-          "t0": 133.2,
-          "dur": 8.4,
-          "cards": [
-            {
-              "text": "3つ確かめよう。AIは、",
-              "start": 0.0,
-              "end": 1.52
-            },
-            {
-              "text": "どこまで任されたのか。",
-              "start": 1.52,
-              "end": 2.91
-            },
-            {
-              "text": "AIの間違いは、誰が止めたのか。それと、",
-              "start": 3.06,
-              "end": 5.6
-            },
-            {
-              "text": "薬づくりそのものは、本当に速くなったのか。",
-              "start": 5.75,
-              "end": 8.41
-            }
-          ]
+          "from_line": 4,
+          "image_asset": "photos/kl054_S08",
+          "real_photo": true
+        },
+        {
+          "from_line": 6,
+          "source_card": {
+            "kind": "press",
+            "source": "Anthropic の発表（2026年10月27日）",
+            "quote": "We plan to scale this work up substantially from here.",
+            "quote_type": "原文",
+            "highlight": "scale this work up substantially",
+            "items": [
+              "訳: ここから、この仕事を大きく広げる",
+              "まず: AIの得意と苦手を、薬づくりで知る"
+            ],
+            "reference_index": 0
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 9,
+          "recap_card": {
+            "title": "今日、確かめる3つ",
+            "items": [
+              "1 1人とAIで、薬づくりを回せる？",
+              "2 AIを何万も並べたら、何十倍？",
+              "3 薬を作るのは、誰になる？"
+            ]
+          }
         }
       ],
       "scene_id": 5,
-      "narration": "大輔「今日の話は、AIの会社、アンソロピック。10月27日の発表で、社員1人の薬の会社を買い取って、自分たちで薬の開発を始めた、と明かした。」\n沙織「アンソロピックって、クロードというAIを作ってる会社ね。社員1人の薬の会社って？」\n大輔「正社員は、創業者ひとりだけ。ほかは、お金を払って時々手伝ってもらう相談役が何人かと、外の研究所。」\n沙織「外の研究所？」\n大輔「お金を払って、実験を頼む研究所。この会社は、11か所に頼んでいた。」\n沙織「つまり外注ね。商売で言えば、職人さんや工場に、仕事を出す形。」\n大輔「そう。買い取られる前、この会社の創業者は、その11か所との契約や、物の受け渡し、実験の段取りを、クロードに任せた。」\n大輔「それで、薬の候補を、思いついてから、マウスで手応えが出るまで、18か月足らずで進めた。創業者は今、アンソロピックで、この研究を続けてる。」\n沙織「18か月足らず。それが速いのかどうかは、あとで確かめよう。それにしても、なぜ、AIの会社が、薬を作るの？」\n大輔「発表に書いてある理由は、本物の薬の開発に深く入って、自分たちのAIの得意と不得意を知るため。買い取った金額は、発表に書いていない。」\n沙織「先に言っておくと、薬はまだ、マウスで試した段階。人では試していない。人での試験は、早くて2028年の後半、と発表にある。」\n沙織「今日の資料は、全部アンソロピック自身のもの。発表と、買い取った薬の会社が書いた報告書。報告書は、ほかの専門家の審査を受ける前のもの。」\n大輔「報告書では、創業者と相談役の人たちを、まとめて「チーム」と呼んでる。社員は1人でも、1人で全部やったわけじゃない。仕事は何人かで分けてた。」\n大輔「僕の予想。社員1人の会社が、AIを社員の代わりにして、難しい開発を回す形は、もう始まってる。次は、町の小さな会社にも、1年ほどで広がる。」\n沙織「私の予想。「任せた」と言っても、中身はメールの清書くらいだと思う。長い資料をまとめさせても、そこから次に何をするかの案までは、任せていない、と見てる。本物なら私も使いたいから、そこを確かめたい。」\n沙織「3つ確かめよう。AIは、どこまで任されたのか。AIの間違いは、誰が止めたのか。それと、薬づくりそのものは、本当に速くなったのか。」",
-      "narrator": "dialogue",
-      "lines_hash": "ef001b8b92bf",
-      "ken_burns": "zoom_out",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "narration": "大輔「AIの会社アンソロピックが、薬づくりの途中経過を発表した。」\n沙織「AIの会社が、薬を？」\n大輔「しかもアンソロピックは7月に、正社員ひとりの薬の会社を買ってる。」\n大輔「僕の推測ね。研究者役のAI、つまり自分で調べて作るAIを、何万人分も同時に動かせば、新しい薬は何十倍も早くできる。」\n大輔「ひとりとAIで大勢の研究者の仕事ができる。そう見て買ったんだと思う。」\n沙織「アンソロピックが、この取り組みの理由として書いてるのは、別。まず、AIの得意と苦手を、薬づくりで知ること。そのうえで、大きく広げる、と。」\n沙織「私の予想。薬づくりには、考えて設計する部分と、細胞やマウスで実際に試す部分がある。」\n沙織「AIを何万人分も並べて、つまり同時に動かして速くなるのは、考える部分まで。細胞もマウスも早くは育たないから、薬全体は何十倍にならない。」\n大輔「確かめよう。ひとりとAIで回せるか。AIを何万も並べたら何十倍か。薬を作るのは誰になるか。」\n［画面の資料カード］Anthropic の発表（2026年10月27日） 「We plan to scale this work up substantially from here.」（原文） ・訳: ここから、この仕事を大きく広げる ・まず: AIの得意と苦手を、薬づくりで知る\n［画面のまとめカード（ふりかえり）］今日、確かめる3つ ・1 1人とAIで、薬づくりを回せる？ ・2 AIを何万も並べたら、何十倍？ ・3 薬を作るのは、誰になる？",
+      "narrator": "dialogue"
     },
     {
       "type": "paper",
       "bgm_role": "main",
       "round": 1,
-      "round_title": "AIに任せたのは、どこまで？",
-      "image_prompt": "A small, quiet office of a tiny biotech start-up at night, seen from a slightly high angle. On a single wooden desk: an open laptop whose screen glows with a soft, blurred list of email threads (nothing readable), a tall stack of thick printed lab reports in binders, a few sealed cardboard shipping boxes with plain blank labels, and an insulated sample shipping cooler. A window behind shows city lights. Warm desk lamp, calm, focused mood. No people, no hands. No readable text, no letters, no numbers, no logos, no brand marks.",
+      "round_title": "ひとりとAIで、薬づくりを回せる？",
+      "image_asset": "photos/kl054_S06",
+      "real_photo": true,
       "lines": [
         {
-          "speaker": "skeptic",
-          "text": "まず、任せた量。報告書に、ある一週間の記録が、細かく載ってる。",
-          "expression": "neutral",
-          "t0": 0.0,
-          "dur": 4.84,
-          "cards": [
-            {
-              "text": "まず、任せた量。報告書に、",
-              "start": 0.0,
-              "end": 2.0
-            },
-            {
-              "text": "ある一週間の記録が、",
-              "start": 2.0,
-              "end": 3.54
-            },
-            {
-              "text": "細かく載ってる。",
-              "start": 3.69,
-              "end": 4.89
-            }
-          ]
-        },
-        {
           "speaker": "dreamer",
-          "text": "週の初めに、外の研究所との実験の担当が、チームの中で、別の人に替わった。",
+          "text": "最初は、買われた薬の会社。正社員は創業者のひとりだけで、子どもの珍しい筋肉の病気の薬を作ってきた。",
           "expression": "neutral",
-          "t0": 5.12,
-          "dur": 5.56,
-          "cards": [
-            {
-              "text": "週の初めに、外の研究所との実験の担当が、",
-              "start": 0.21,
-              "end": 3.21
-            },
-            {
-              "text": "チームの中で、別の人に替わった。",
-              "start": 3.36,
-              "end": 5.76
-            }
-          ]
+          "display": "最初は、買われた薬の会社。正社員は創業者の1人だけで、子どもの珍しい筋肉の病気の薬を作ってきた。"
         },
         {
           "speaker": "skeptic",
-          "text": "引き継ぎね。前の担当のメールを、全部読まないといけない。",
-          "expression": "thinking",
-          "t0": 10.96,
-          "dur": 4.72,
-          "cards": [
-            {
-              "text": "引き継ぎね。前の担当のメールを、",
-              "start": 0.0,
-              "end": 2.97
-            },
-            {
-              "text": "全部読まないといけない。",
-              "start": 3.12,
-              "end": 4.92
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "チームの一人が、クロードに2文で頼んだ。前の担当と研究所との最近のメールを読んで、次に何をすればいいか勧めて、と。",
-          "expression": "neutral",
-          "t0": 15.96,
-          "dur": 7.88,
-          "cards": [
-            {
-              "text": "チームの一人が、クロードに2文で頼んだ。",
-              "start": 0.0,
-              "end": 2.66
-            },
-            {
-              "text": "前の担当と研究所との最近のメールを読んで、",
-              "start": 2.98,
-              "end": 5.77
-            },
-            {
-              "text": "次に何をすればいいか勧めて、と。",
-              "start": 5.92,
-              "end": 8.05
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "クロードは、メールのやりとりや引き継ぎの資料を読んで、今どこで止まっているかをまとめた。20分足らずで、計画と、5通のメールの下書きまで。",
-          "expression": "excited",
-          "t0": 24.06,
-          "dur": 10.32,
-          "cards": [
-            {
-              "text": "クロードは、メールのやりとりや引き継ぎの",
-              "start": 0.0,
-              "end": 2.9
-            },
-            {
-              "text": "資料を読んで、",
-              "start": 3.05,
-              "end": 4.07
-            },
-            {
-              "text": "今どこで止まっているかをまとめた。",
-              "start": 4.07,
-              "end": 6.54
-            },
-            {
-              "text": "20分足らずで、計画と、",
-              "start": 6.69,
-              "end": 8.53
-            },
-            {
-              "text": "5通のメールの下書きまで。",
-              "start": 8.53,
-              "end": 10.52
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "メールを読んで、段取りを書く。そこまでなら、まだ清書の延長に聞こえる。",
+          "text": "ひとりで、薬を？ 実験は、誰がやったの？",
           "expression": "doubt",
-          "t0": 34.66,
-          "dur": 5.12,
-          "cards": [
-            {
-              "text": "メールを読んで、段取りを書く。",
-              "start": 0.0,
-              "end": 2.13
-            },
-            {
-              "text": "そこまでなら、まだ清書の延長に聞こえる。",
-              "start": 2.28,
-              "end": 5.12
-            }
-          ]
+          "display": "1人で、薬を？ 実験は、誰がやったの？"
         },
         {
           "speaker": "dreamer",
-          "text": "この形は、次は、どこで使える？ 僕は、町の工務店だと思う。職人さん、材料屋さん、お客さんとの何十通のやりとりを読ませて、次に誰に何を頼むかの下書きまで作らせる。",
-          "expression": "excited",
-          "tag": "use_case",
-          "t0": 40.06,
-          "dur": 13.52,
-          "cards": [
-            {
-              "text": "この形は、次は、どこで使える？ 僕は、",
-              "start": 0.0,
-              "end": 3.76
-            },
-            {
-              "text": "町の工務店だと思う。職人さん、材料屋さん、",
-              "start": 3.91,
-              "end": 7.42
-            },
-            {
-              "text": "お客さんとの何十通のやりとりを読ませて、",
-              "start": 7.57,
-              "end": 10.57
-            },
-            {
-              "text": "次に誰に何を頼むかの下書きまで作らせる。",
-              "start": 10.72,
-              "end": 13.72
-            }
-          ]
+          "text": "外の研究所。お金を払って、実験を頼む会社のこと。11の研究所との契約や段取りを、AIに任せてた。",
+          "expression": "excited"
         },
         {
           "speaker": "skeptic",
-          "text": "工務店のメールと、薬の実験とでは、量が違う。もっと量の多い仕事は？",
-          "expression": "neutral",
-          "t0": 53.86,
-          "dur": 5.56,
-          "cards": [
-            {
-              "text": "工務店のメールと、薬の実験とでは、",
-              "start": 0.33,
-              "end": 2.88
-            },
-            {
-              "text": "量が違う。もっと量の多い仕事は？",
-              "start": 3.03,
-              "end": 5.43
-            }
-          ]
+          "text": "それで、どこまで来たの？",
+          "expression": "neutral"
         },
         {
           "speaker": "dreamer",
-          "text": "ある。同じ週の半ばに、外の研究所から届いた資料。",
+          "text": "思いつきから、マウスで有望な結果まで、18か月足らず。同じ病気のマウスで、いちばん良かった薬を打った組は、打たない組の、およそ2倍の力で、前足で握れた。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "18か月が速いのかどうか、比べる基準は書いてある？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "全体を比べる相手は、書いてない。でも工程一つなら、本人の見積もりがある。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "発表のここね。新しい薬の挑戦、つまり一つの病気に向けた薬づくり1本の計画が、AIありで2日から3日。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "AIなしなら1か月から2か月、と本人は見積もってる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "計画づくりだけで、ひと月以上が、数日に。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "アンソロピックはこれを、ひとりの研究者がAIと、いくつもの挑戦を同時に追う形の、最初の実験と呼んでる。",
           "expression": "neutral",
-          "t0": 59.7,
-          "dur": 4.28,
-          "cards": [
-            {
-              "text": "ある。同じ週の半ばに、",
-              "start": 0.0,
-              "end": 1.79
-            },
-            {
-              "text": "外の研究所から届いた資料。",
-              "start": 1.79,
-              "end": 3.9
-            }
-          ]
+          "display": "アンソロピックはこれを、1人の研究者がAIと、いくつもの挑戦を同時に追う形の、最初の実験と呼んでる。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "いま回してるのは、2つの病気の挑戦。どちらも2027年に、人で試す手前の、本命の薬を決めるのが目標。さらに数本を準備中。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次は、研究者役のAIをもっと増やせば、ひとりで何本も回せる。僕は、そこまで行くと思う。",
+          "expression": "excited",
+          "display": "次は、研究者役のAIをもっと増やせば、1人で何本も回せる。僕は、そこまで行くと思う。",
+          "tag": "use_case"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true
+        },
+        {
+          "from_line": 3,
+          "source_card": {
+            "kind": "press",
+            "source": "Anthropic の発表／Mithril Medicine の項",
+            "quote": "Mithril had only one full-time employee: its founder",
+            "quote_type": "原文",
+            "highlight": "only one full-time employee",
+            "items": [
+              "訳: 正社員は、創業者の1人だけ",
+              "残りは非常勤の相談役と、外の研究所が担当",
+              "外の研究所11か所との契約・段取りをAIで",
+              "思いつき→マウスで有望な結果: 18か月足らず"
+            ],
+            "reference_index": 2
+          },
+          "reference_index": 2
+        },
+        {
+          "from_line": 8,
+          "source_card": {
+            "kind": "press",
+            "source": "Anthropic の発表／Mithril Medicine の項",
+            "quote": "it would have taken him one to two months",
+            "quote_type": "原文",
+            "highlight": "one to two months",
+            "items": [
+              "新しい薬の挑戦の計画づくり（AIあり）: 2〜3日",
+              "AIなしなら: 1〜2か月（本人の見積もり）"
+            ],
+            "reference_index": 2
+          },
+          "reference_index": 2
+        },
+        {
+          "from_line": 11,
+          "source_card": {
+            "kind": "press",
+            "source": "Anthropic の発表／Mithril Medicine の項",
+            "quote": "one scientist works with Claude to pursue several biological hypotheses at the same time",
+            "quote_type": "原文",
+            "highlight": "at the same time",
+            "items": [
+              "訳: 1人がAIと、いくつもの仮説（挑戦）を同時に",
+              "アンソロピックで最初の実験",
+              "今は2本（2つの病気）を進め、さらに数本を準備",
+              "目標: 2027年に、2つの病気で本命の薬を決める"
+            ],
+            "reference_index": 2
+          },
+          "reference_index": 2
         }
       ],
       "scene_id": 6,
-      "narration": "沙織「まず、任せた量。報告書に、ある一週間の記録が、細かく載ってる。」\n大輔「週の初めに、外の研究所との実験の担当が、チームの中で、別の人に替わった。」\n沙織「引き継ぎね。前の担当のメールを、全部読まないといけない。」\n大輔「チームの一人が、クロードに2文で頼んだ。前の担当と研究所との最近のメールを読んで、次に何をすればいいか勧めて、と。」\n大輔「クロードは、メールのやりとりや引き継ぎの資料を読んで、今どこで止まっているかをまとめた。20分足らずで、計画と、5通のメールの下書きまで。」\n沙織「メールを読んで、段取りを書く。そこまでなら、まだ清書の延長に聞こえる。」\n大輔「この形は、次は、どこで使える？ 僕は、町の工務店だと思う。職人さん、材料屋さん、お客さんとの何十通のやりとりを読ませて、次に誰に何を頼むかの下書きまで作らせる。」\n沙織「工務店のメールと、薬の実験とでは、量が違う。もっと量の多い仕事は？」\n大輔「ある。同じ週の半ばに、外の研究所から届いた資料。」",
-      "narrator": "dialogue",
-      "lines_hash": "5dbbd9393668",
-      "ken_burns": "zoom_out",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "narration": "大輔「最初は、買われた薬の会社。正社員は創業者のひとりだけで、子どもの珍しい筋肉の病気の薬を作ってきた。」\n沙織「ひとりで、薬を？ 実験は、誰がやったの？」\n大輔「外の研究所。お金を払って、実験を頼む会社のこと。11の研究所との契約や段取りを、AIに任せてた。」\n沙織「それで、どこまで来たの？」\n大輔「思いつきから、マウスで有望な結果まで、18か月足らず。同じ病気のマウスで、いちばん良かった薬を打った組は、打たない組の、およそ2倍の力で、前足で握れた。」\n沙織「18か月が速いのかどうか、比べる基準は書いてある？」\n大輔「全体を比べる相手は、書いてない。でも工程一つなら、本人の見積もりがある。」\n沙織「発表のここね。新しい薬の挑戦、つまり一つの病気に向けた薬づくり1本の計画が、AIありで2日から3日。」\n沙織「AIなしなら1か月から2か月、と本人は見積もってる。」\n大輔「計画づくりだけで、ひと月以上が、数日に。」\n沙織「アンソロピックはこれを、ひとりの研究者がAIと、いくつもの挑戦を同時に追う形の、最初の実験と呼んでる。」\n沙織「いま回してるのは、2つの病気の挑戦。どちらも2027年に、人で試す手前の、本命の薬を決めるのが目標。さらに数本を準備中。」\n大輔「次は、研究者役のAIをもっと増やせば、ひとりで何本も回せる。僕は、そこまで行くと思う。」\n［画面の資料カード］Anthropic の発表／Mithril Medicine の項 「Mithril had only one full-time employee: its founder」（原文） ・訳: 正社員は、創業者の1人だけ ・残りは非常勤の相談役と、外の研究所が担当 ・外の研究所11か所との契約・段取りをAIで ・思いつき→マウスで有望な結果: 18か月足らず\n［画面の資料カード］Anthropic の発表／Mithril Medicine の項 「it would have taken him one to two months」（原文） ・新しい薬の挑戦の計画づくり（AIあり）: 2〜3日 ・AIなしなら: 1〜2か月（本人の見積もり）\n［画面の資料カード］Anthropic の発表／Mithril Medicine の項 「one scientist works with Claude to pursue several biological hypotheses at the same time」（原文） ・訳: 1人がAIと、いくつもの仮説（挑戦）を同時に ・アンソロピックで最初の実験 ・今は2本（2つの病気）を進め、さらに数本を準備 ・目標: 2027年に、2つの病気で本命の薬を決める",
+      "narrator": "dialogue"
     },
     {
       "type": "check",
       "bgm_role": "main",
       "round": 1,
-      "reference_index": 1,
-      "ken_burns": "static",
-      "source_card": {
-        "kind": "report",
-        "source": "買い取った薬の会社の報告書（2026年10月26日、審査前）",
-        "quote": "Each of the 113 constructs thus had a proposed next step in less than 8 min.",
-        "quote_type": "原文",
-        "highlight": "in less than 8 min",
-        "items": [
-          "訳: 113個の候補それぞれに、8分足らずで次の一手の案",
-          "週の半ばに届いた資料は341ページ",
-          "頼み方は2文。全ページを読んでまとめた",
-          "案は「そのまま試験」「手直し」「今回は外す」",
-          "この週は「最近で一番うまくいった例」"
-        ],
-        "reference_index": 1
-      },
+      "image_asset": "photos/kl054_S07",
+      "real_photo": true,
       "lines": [
         {
-          "speaker": "dreamer",
-          "text": "チームは、別の研究所に、薬の候補を113個作ってもらっていた。その研究所から、作った結果のデータ一式が届いた。341ページある。",
-          "expression": "neutral",
-          "t0": 0.0,
-          "dur": 10.92,
-          "cards": [
-            {
-              "text": "チームは、別の研究所に、薬の候補を",
-              "start": 0.0,
-              "end": 3.28
-            },
-            {
-              "text": "113個作ってもらっていた。",
-              "start": 3.43,
-              "end": 5.53
-            },
-            {
-              "text": "その研究所から、",
-              "start": 5.68,
-              "end": 6.88
-            },
-            {
-              "text": "作った結果のデータ一式が届いた。",
-              "start": 6.88,
-              "end": 9.28
-            },
-            {
-              "text": "341ページある。",
-              "start": 9.43,
-              "end": 11.12
-            }
-          ]
+          "speaker": "skeptic",
+          "text": "正社員ひとり、の中身を見たい。この会社は、技術の報告書も出してる。ほかの専門家の審査を受ける前のものね。",
+          "expression": "doubt",
+          "display": "正社員1人、の中身を見たい。この会社は、技術の報告書も出してる。ほかの専門家の審査を受ける前のものね。"
         },
         {
           "speaker": "skeptic",
-          "text": "341ページ。私でも、読むだけで何日もかかる。",
-          "expression": "surprised",
-          "t0": 11.2,
-          "dur": 4.36,
-          "cards": [
-            {
-              "text": "341ページ。私でも、",
-              "start": 0.0,
-              "end": 1.98
-            },
-            {
-              "text": "読むだけで何日もかかる。",
-              "start": 1.98,
-              "end": 4.14
-            }
-          ]
+          "text": "その報告書の最後に、お金を払った相談役が8人と、お金を払って実験を頼んだ研究所が、書いてある。",
+          "expression": "neutral"
         },
         {
           "speaker": "dreamer",
-          "text": "引き継ぎのときと同じ、チームの一人が、これも2つの文で頼んで、クロードに渡した。クロードは全部のページを読んで、8分足らずで、一覧にまとめた。",
+          "text": "ひとりきり、じゃないね。正社員ひとりに、相談役と研究所がつく形か。",
+          "expression": "thinking",
+          "display": "1人きり、じゃないね。正社員1人に、相談役と研究所がつく形か。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "もう一つ。報告書に、ある1週間の記録がある。チームがAIに頼みごとをすると、最初の答えまで、およそ1分半。",
+          "expression": "neutral",
+          "tag": "barrier"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "研究所に、メールで頼んだら？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "最初の返事まで、およそ8時間半。報告書いわく、仕事の速さを決めたのは、研究所の返事と、チーム自身の決断。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "AIが速くても、相手の返事と人の決断は、待つしかない、か。",
+          "expression": "deflated"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それと、さっきの病気のマウス。握る力は上がっても、健康なマウスよりは弱いまま。測ったのも、薬ありが7匹、なしが4匹だけ。たまたまの差かもしれない。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、薬を打つマウスをくじ引きで決めず、測る人に薬ありかを隠す目隠しもしていない。これだと、思い込みが入りうる。本人たちも、目隠しで確かめ直す必要がある、と書いてる。",
+          "expression": "doubt",
+          "tag": "weakness"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "マウスの結果は、確かめ直しを待とう。それより、決断が人に残るなら、決める所だけ人がやって、残りはAIに任せる。そうすれば、1人で同時に扱える数を増やせる。",
           "expression": "excited",
-          "t0": 15.84,
-          "dur": 9.96,
-          "cards": [
-            {
-              "text": "引き継ぎのときと同じ、チームの一人が、",
-              "start": 0.0,
-              "end": 2.54
-            },
-            {
-              "text": "これも2つの文で頼んで、クロードに渡した。",
-              "start": 2.69,
-              "end": 5.5
-            },
-            {
-              "text": "クロードは全部のページを読んで、",
-              "start": 5.65,
-              "end": 7.79
-            },
-            {
-              "text": "8分足らずで、一覧にまとめた。",
-              "start": 7.94,
-              "end": 9.95
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "何の一覧？",
-          "expression": "neutral",
-          "t0": 26.08,
-          "dur": 1.28,
-          "cards": [
-            {
-              "text": "何の一覧？",
-              "start": 0.0,
-              "end": 1.28
-            }
-          ]
+          "tag": "workaround"
         },
         {
           "speaker": "dreamer",
-          "text": "113個の候補、一つずつに、次の一手をつけた一覧。このまま試験に進める、手直ししてから、今回は外す、の3つに分けた。",
-          "expression": "neutral",
-          "t0": 27.64,
-          "dur": 10.0,
-          "cards": [
-            {
-              "text": "113個の候補、一つずつに、",
-              "start": 0.0,
-              "end": 2.56
-            },
-            {
-              "text": "次の一手をつけた一覧。",
-              "start": 2.71,
-              "end": 4.59
-            },
-            {
-              "text": "このまま試験に進める、",
-              "start": 4.59,
-              "end": 6.47
-            },
-            {
-              "text": "手直ししてから、今回は外す、",
-              "start": 6.62,
-              "end": 8.78
-            },
-            {
-              "text": "の3つに分けた。",
-              "start": 8.93,
-              "end": 10.13
-            }
-          ]
+          "text": "記録のあった1週間には、研究所から、試しに作った薬113種類の資料も届いてた。AIは8分足らずで、その一つずつに、次に何をするかの案を出してる。",
+          "expression": "excited"
         },
         {
           "speaker": "skeptic",
-          "text": "341ページを読んで、113個すべてに次の一手。メールの清書くらい、と言ったのは、私の読み違い。長い書類を読んで、次の一手の案を出す仕事まで任されてる。",
-          "expression": "surprised",
-          "tag": "turn",
-          "t0": 37.92,
-          "dur": 11.72,
-          "cards": [
-            {
-              "text": "341ページを読んで、",
-              "start": 0.2,
-              "end": 1.83
-            },
-            {
-              "text": "113個すべてに次の一手。",
-              "start": 1.83,
-              "end": 3.76
-            },
-            {
-              "text": "メールの清書くらい、と言ったのは、",
-              "start": 3.91,
-              "end": 6.43
-            },
-            {
-              "text": "私の読み違い。長い書類を読んで、",
-              "start": 6.58,
-              "end": 8.95
-            },
-            {
-              "text": "次の一手の案を出す仕事まで任されてる。",
-              "start": 9.1,
-              "end": 11.92
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "ただ、この一週間は、チームが、最近で一番うまくいった例として選んだもの。しかも、この章はクロードが自分の記録からまとめたので、身びいきのおそれがある、と報告書自身が断ってる。",
-          "expression": "thinking",
-          "tag": "weakness",
-          "t0": 49.86,
-          "dur": 12.68,
-          "cards": [
-            {
-              "text": "ただ、この一週間は、チームが、",
-              "start": 0.0,
-              "end": 2.08
-            },
-            {
-              "text": "最近で一番うまくいった例として選んだもの。",
-              "start": 2.23,
-              "end": 5.31
-            },
-            {
-              "text": "しかも、この章はクロードが自分の記録から",
-              "start": 5.46,
-              "end": 8.27
-            },
-            {
-              "text": "まとめたので、身びいきのおそれがある、",
-              "start": 8.42,
-              "end": 11.06
-            },
-            {
-              "text": "と報告書自身が断ってる。",
-              "start": 11.21,
-              "end": 12.88
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "そこは、その通り。",
-          "expression": "thinking",
-          "t0": 62.82,
-          "dur": 1.76,
-          "cards": [
-            {
-              "text": "そこは、その通り。",
-              "start": 0.0,
-              "end": 1.76
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "ただ報告書は、うまくいった話だけじゃなく、クロードの間違いも数えて載せてる。それを次に見よう。",
+          "text": "決めるのは人のまま。読む・計算する・書く仕事は、試作が増えるほど大変になる。そこをAIが引き受けてる。私は速さだけ見てた。扱える試作の数が増える、とは思ってなかった。",
           "expression": "convinced",
-          "tag": "workaround",
-          "t0": 64.8,
-          "dur": 6.64,
-          "cards": [
-            {
-              "text": "ただ報告書は、うまくいった話だけじゃなく、",
-              "start": 0.0,
-              "end": 2.88
-            },
-            {
-              "text": "クロードの間違いも数えて載せてる。",
-              "start": 3.19,
-              "end": 5.48
-            },
-            {
-              "text": "それを次に見よう。",
-              "start": 5.63,
-              "end": 6.84
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "選んだ週でも、記録に残った速さは速さね。",
-          "expression": "neutral",
-          "t0": 71.72,
-          "dur": 3.28,
-          "cards": [
-            {
-              "text": "選んだ週でも、記録に残った速さは速さね。",
-              "start": 0.0,
-              "end": 3.28
-            }
-          ]
+          "tag": "turn"
         },
         {
           "speaker": "dreamer",
-          "text": "何百ページを読んで、次の一手の一覧を作る。少ない人数では手が回らない量の仕事を、AIが分単位で返すところまで来てる。",
+          "text": "報告書にも、調べる試作の数は、指揮するチームの大きさに縛られなくていい、とある。ひとりで回す形は、もう動いてる。",
           "expression": "convinced",
           "tag": "hope",
-          "t0": 75.28,
-          "dur": 8.52,
-          "cards": [
-            {
-              "text": "何百ページを読んで、次の一手の一覧を作る。",
-              "start": 0.0,
-              "end": 3.18
-            },
-            {
-              "text": "少ない人数では手が回らない量の仕事を、",
-              "start": 3.33,
-              "end": 6.02
-            },
-            {
-              "text": "AIが分単位で返すところまで来てる。",
-              "start": 6.17,
-              "end": 8.72
-            }
-          ]
+          "display": "報告書にも、調べる試作の数は、指揮するチームの大きさに縛られなくていい、とある。1人で回す形は、もう動いてる。"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "source_card": {
+            "kind": "report",
+            "source": "Mithril Medicine 技術報告（2026年10月、審査前）",
+            "quote": "have been paid consultants or advisers to the company",
+            "quote_type": "原文",
+            "highlight": "paid consultants or advisers",
+            "items": [
+              "訳: チームの面々は、お金を払った相談役・顧問",
+              "謝辞に相談役8人の名前",
+              "実験をした外の研究所にも支払い",
+              "ほかの専門家の審査の前の報告書"
+            ],
+            "reference_index": 1
+          },
+          "reference_index": 1
+        },
+        {
+          "from_line": 4,
+          "chart": {
+            "kind": "number",
+            "title": "チームの頼みごとへの、AIの最初の答え（ある1週間）",
+            "value": 96,
+            "unit": "秒",
+            "caption": "ふつうの場合。およそ1分半",
+            "source": "Mithril Medicine 技術報告（2026年10月、審査前）",
+            "reference_index": 1
+          },
+          "reference_index": 1
+        },
+        {
+          "from_line": 6,
+          "source_card": {
+            "kind": "report",
+            "source": "Mithril Medicine 技術報告（2026年10月、審査前）",
+            "quote": "The pace of this work was therefore set by the replies of the CROs and by our decisions.",
+            "quote_type": "原文",
+            "highlight": "set by the replies of the CROs and by our decisions",
+            "items": [
+              "訳: 速さを決めたのは、研究所の返事と私たちの決断",
+              "研究所の最初の返事: 8.5時間（ふつうの場合）",
+              "AIの最初の答え: 96秒、全体の答え: 10分"
+            ],
+            "reference_index": 1
+          },
+          "reference_index": 1
+        },
+        {
+          "from_line": 8,
+          "image_asset": "photos/kl054_S07",
+          "real_photo": true
+        },
+        {
+          "from_line": 9,
+          "source_card": {
+            "kind": "report",
+            "source": "Mithril Medicine 技術報告（2026年10月、審査前）",
+            "quote": "experiments were neither randomized nor blinded",
+            "quote_type": "原文",
+            "highlight": "neither randomized nor blinded",
+            "items": [
+              "訳: くじ引きも、目隠しもしていない",
+              "力を測った匹数: 薬あり7・なし4・健康12",
+              "握る力は薬なしの約2倍。健康なマウスより弱い",
+              "本人たち: 目隠しで同時に確かめ直す必要"
+            ],
+            "reference_index": 1
+          },
+          "reference_index": 1
+        },
+        {
+          "from_line": 10,
+          "source_card": {
+            "kind": "report",
+            "source": "Mithril Medicine 技術報告（2026年10月、審査前）",
+            "quote": "Each of the 113 constructs thus had a proposed next step in less than 8 min.",
+            "quote_type": "原文",
+            "highlight": "in less than 8 min",
+            "items": [
+              "訳: 試作した113種類それぞれに、8分足らずで次の案",
+              "人の1回の判断で、24個を細胞の試験から外した",
+              "判断は人に残った"
+            ],
+            "reference_index": 1
+          },
+          "reference_index": 1
+        },
+        {
+          "from_line": 12,
+          "source_card": {
+            "kind": "report",
+            "source": "Mithril Medicine 技術報告（2026年10月、審査前）",
+            "quote": "the size of a screen need not be limited by the size of the team that directs it",
+            "quote_type": "原文",
+            "highlight": "need not be limited by the size of the team",
+            "items": [
+              "訳: 調べる数は、指揮するチームの大きさに縛られない",
+              "AI: 読む・計算・下書き・決めたことの反映",
+              "人: どの実験か、続けるか止めるかを決める"
+            ],
+            "reference_index": 1
+          },
+          "reference_index": 1
         }
       ],
       "scene_id": 7,
-      "narration": "大輔「チームは、別の研究所に、薬の候補を113個作ってもらっていた。その研究所から、作った結果のデータ一式が届いた。341ページある。」\n沙織「341ページ。私でも、読むだけで何日もかかる。」\n大輔「引き継ぎのときと同じ、チームの一人が、これも2つの文で頼んで、クロードに渡した。クロードは全部のページを読んで、8分足らずで、一覧にまとめた。」\n沙織「何の一覧？」\n大輔「113個の候補、一つずつに、次の一手をつけた一覧。このまま試験に進める、手直ししてから、今回は外す、の3つに分けた。」\n沙織「341ページを読んで、113個すべてに次の一手。メールの清書くらい、と言ったのは、私の読み違い。長い書類を読んで、次の一手の案を出す仕事まで任されてる。」\n沙織「ただ、この一週間は、チームが、最近で一番うまくいった例として選んだもの。しかも、この章はクロードが自分の記録からまとめたので、身びいきのおそれがある、と報告書自身が断ってる。」\n大輔「そこは、その通り。」\n大輔「ただ報告書は、うまくいった話だけじゃなく、クロードの間違いも数えて載せてる。それを次に見よう。」\n沙織「選んだ週でも、記録に残った速さは速さね。」\n大輔「何百ページを読んで、次の一手の一覧を作る。少ない人数では手が回らない量の仕事を、AIが分単位で返すところまで来てる。」\n［画面の資料カード］買い取った薬の会社の報告書（2026年10月26日、審査前） 「Each of the 113 constructs thus had a proposed next step in less than 8 min.」（原文） ・訳: 113個の候補それぞれに、8分足らずで次の一手の案 ・週の半ばに届いた資料は341ページ ・頼み方は2文。全ページを読んでまとめた ・案は「そのまま試験」「手直し」「今回は外す」 ・この週は「最近で一番うまくいった例」",
-      "narrator": "dialogue",
-      "image_asset": "cards/kl054_S07",
-      "lines_hash": "f2bc3870d86a"
+      "narration": "沙織「正社員ひとり、の中身を見たい。この会社は、技術の報告書も出してる。ほかの専門家の審査を受ける前のものね。」\n沙織「その報告書の最後に、お金を払った相談役が8人と、お金を払って実験を頼んだ研究所が、書いてある。」\n大輔「ひとりきり、じゃないね。正社員ひとりに、相談役と研究所がつく形か。」\n沙織「もう一つ。報告書に、ある1週間の記録がある。チームがAIに頼みごとをすると、最初の答えまで、およそ1分半。」\n大輔「研究所に、メールで頼んだら？」\n沙織「最初の返事まで、およそ8時間半。報告書いわく、仕事の速さを決めたのは、研究所の返事と、チーム自身の決断。」\n大輔「AIが速くても、相手の返事と人の決断は、待つしかない、か。」\n沙織「それと、さっきの病気のマウス。握る力は上がっても、健康なマウスよりは弱いまま。測ったのも、薬ありが7匹、なしが4匹だけ。たまたまの差かもしれない。」\n沙織「それに、薬を打つマウスをくじ引きで決めず、測る人に薬ありかを隠す目隠しもしていない。これだと、思い込みが入りうる。本人たちも、目隠しで確かめ直す必要がある、と書いてる。」\n大輔「マウスの結果は、確かめ直しを待とう。それより、決断が人に残るなら、決める所だけ人がやって、残りはAIに任せる。そうすれば、1人で同時に扱える数を増やせる。」\n大輔「記録のあった1週間には、研究所から、試しに作った薬113種類の資料も届いてた。AIは8分足らずで、その一つずつに、次に何をするかの案を出してる。」\n沙織「決めるのは人のまま。読む・計算する・書く仕事は、試作が増えるほど大変になる。そこをAIが引き受けてる。私は速さだけ見てた。扱える試作の数が増える、とは思ってなかった。」\n大輔「報告書にも、調べる試作の数は、指揮するチームの大きさに縛られなくていい、とある。ひとりで回す形は、もう動いてる。」\n［画面の資料カード］Mithril Medicine 技術報告（2026年10月、審査前） 「have been paid consultants or advisers to the company」（原文） ・訳: チームの面々は、お金を払った相談役・顧問 ・謝辞に相談役8人の名前 ・実験をした外の研究所にも支払い ・ほかの専門家の審査の前の報告書\n［画面のグラフ］Mithril Medicine 技術報告（2026年10月、審査前） チームの頼みごとへの、AIの最初の答え（ある1週間） 96秒 ふつうの場合。およそ1分半\n［画面の資料カード］Mithril Medicine 技術報告（2026年10月、審査前） 「The pace of this work was therefore set by the replies of the CROs and by our decisions.」（原文） ・訳: 速さを決めたのは、研究所の返事と私たちの決断 ・研究所の最初の返事: 8.5時間（ふつうの場合） ・AIの最初の答え: 96秒、全体の答え: 10分\n［画面の資料カード］Mithril Medicine 技術報告（2026年10月、審査前） 「experiments were neither randomized nor blinded」（原文） ・訳: くじ引きも、目隠しもしていない ・力を測った匹数: 薬あり7・なし4・健康12 ・握る力は薬なしの約2倍。健康なマウスより弱い ・本人たち: 目隠しで同時に確かめ直す必要\n［画面の資料カード］Mithril Medicine 技術報告（2026年10月、審査前） 「Each of the 113 constructs thus had a proposed next step in less than 8 min.」（原文） ・訳: 試作した113種類それぞれに、8分足らずで次の案 ・人の1回の判断で、24個を細胞の試験から外した ・判断は人に残った\n［画面の資料カード］Mithril Medicine 技術報告（2026年10月、審査前） 「the size of a screen need not be limited by the size of the team that directs it」（原文） ・訳: 調べる数は、指揮するチームの大きさに縛られない ・AI: 読む・計算・下書き・決めたことの反映 ・人: どの実験か、続けるか止めるかを決める",
+      "narrator": "dialogue"
     },
     {
-      "type": "tsukkomi",
+      "type": "paper",
       "bgm_role": "main",
       "round": 2,
-      "round_title": "AIの間違いは、誰が止めた？",
-      "image_prompt": "Close-up on a clean laboratory bench at a contract research lab: a plastic rack of many small labeled-blank sample tubes with colored caps, a pipette lying beside it, and an open insulated shipping cooler with ice packs ready to be filled. Soft daylight, crisp and clean, shallow depth of field. No people, no hands. No readable text, no letters, no numbers, no logos, no brand marks.",
+      "round_title": "AIを何万も並べたら、何十倍？",
+      "image_asset": "photos/kl054_S08",
+      "real_photo": true,
       "lines": [
         {
           "speaker": "skeptic",
-          "text": "次は、AIの間違い。",
-          "expression": "neutral",
-          "t0": 0.0,
-          "dur": 2.12,
-          "cards": [
-            {
-              "text": "次は、AIの間違い。",
-              "start": 0.0,
-              "end": 2.12
-            }
-          ]
+          "text": "次は、AIを何万も並べたら何十倍か。そんな例はあるの？",
+          "expression": "neutral"
         },
         {
           "speaker": "dreamer",
-          "text": "その前に、大事なこと。クロードは、メールを1通も自分では送っていない。下書きを作るだけで、送るのは、いつも人。",
-          "expression": "neutral",
-          "t0": 2.4,
-          "dur": 9.12,
-          "cards": [
-            {
-              "text": "その前に、大事なこと。クロードは、",
-              "start": 0.0,
-              "end": 3.0
-            },
-            {
-              "text": "メールを1通も自分では送っていない。",
-              "start": 3.15,
-              "end": 5.85
-            },
-            {
-              "text": "下書きを作るだけで、送るのは、いつも人。",
-              "start": 6.0,
-              "end": 9.26
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "人は、送る前に、その下書きを直してるの？",
-          "expression": "thinking",
-          "t0": 11.8,
-          "dur": 2.64,
-          "cards": [
-            {
-              "text": "人は、送る前に、その下書きを直してるの？",
-              "start": 0.0,
-              "end": 2.64
-            }
-          ]
+          "text": "AIを何万も並べた例は、資料には無い。でも、AIが設計案を何万も出した例はある。食べ物アレルギーの薬を作る、ある会社。",
+          "expression": "excited"
         },
         {
           "speaker": "dreamer",
-          "text": "そう、どれも直してから。だったら、小さな会社の発注にも使える。取引先に、何を、いくつ、いつまでに頼むか。下書きはAI、送るのは人。",
-          "expression": "excited",
-          "tag": "use_case",
-          "t0": 14.72,
-          "dur": 12.2,
-          "cards": [
-            {
-              "text": "そう、どれも直してから。だったら、",
-              "start": 0.0,
-              "end": 2.96
-            },
-            {
-              "text": "小さな会社の発注にも使える。取引先に、",
-              "start": 3.24,
-              "end": 6.3
-            },
-            {
-              "text": "何を、いくつ、いつまでに頼むか。",
-              "start": 6.45,
-              "end": 8.99
-            },
-            {
-              "text": "下書きはAI、送るのは人。",
-              "start": 9.46,
-              "end": 11.74
-            }
-          ]
+          "text": "その薬には腕が2本ある。アレルギーの引き金になる物質をつかむ腕と、それを免疫の細胞から引きはがす腕。その設計案を、AIが大部分を自分で、1か月でおよそ3万5千個作った。",
+          "expression": "excited"
         },
         {
           "speaker": "skeptic",
-          "text": "その「いくつ」、つまり数量で、間違いが起きた。",
-          "expression": "doubt",
-          "t0": 27.2,
-          "dur": 3.2,
-          "cards": [
-            {
-              "text": "その「いくつ」、つまり数量で、",
-              "start": 0.0,
-              "end": 2.16
-            },
-            {
-              "text": "間違いが起きた。",
-              "start": 2.31,
-              "end": 3.37
-            }
-          ]
+          "text": "3万5千。人なら、何人がかりの仕事？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "人で何人分かは、書いてない。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それで、どれだけ早くなったの？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "思いつきから実験の結果まで、3週間から4週間半。この会社は以前、同じような仕事に、長いと9か月かかってた。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "この一工程は、大きく縮んだね。ただ、比べる相手は前の自分たち。それに、薬づくりの最初の段階の話。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "AIを並べた例なら、もう一つある。薬の会社を自分で立ち上げて、お金も出す、ある投資会社。一つの調べ物を、AIが、研究者役のAI何十人分にも手分けさせてる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "数週間かかった調べ物が、数日になった、と書いてる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "並べたAIは何十人分、ね。何万じゃない。それに、薬全体が何十倍、と書いた資料はどこにも無い。あるのは、工程ごとの短縮だけ。",
+          "expression": "doubt"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true
+        },
+        {
+          "from_line": 3,
+          "chart": {
+            "kind": "number",
+            "title": "AIが約1か月で作った、薬の腕の設計案",
+            "value": 35000,
+            "unit": "個",
+            "caption": "約3万5千。大部分をAIが自分で作った",
+            "source": "Anthropic の発表／Divergence Labs の項",
+            "reference_index": 3
+          },
+          "reference_index": 3
+        },
+        {
+          "from_line": 7,
+          "source_card": {
+            "kind": "press",
+            "source": "Anthropic の発表／Divergence Labs の項",
+            "quote": "Previously, comparable work had taken Divergence up to nine months.",
+            "quote_type": "原文",
+            "highlight": "up to nine months",
+            "items": [
+              "訳: 以前は、同じような仕事に最大9か月",
+              "今回: 思いつき→実験結果まで約3〜4週間半",
+              "比べる相手は、この会社の以前の仕事"
+            ],
+            "reference_index": 3
+          },
+          "reference_index": 3
+        },
+        {
+          "from_line": 9,
+          "source_card": {
+            "kind": "press",
+            "source": "Anthropic の発表／The Column Group の文",
+            "quote": "Claude then assigns dozens of subagents to find and synthesize published research",
+            "quote_type": "原文",
+            "highlight": "dozens of subagents",
+            "items": [
+              "訳: AIが、数十の研究者役のAIに調べ物を割り振る",
+              "調べるもの: 論文・遺伝・過去の試験・競合",
+              "報告を人が読み、続けるかを決める",
+              "文献の調べ物: 数週間 → 数日"
+            ],
+            "reference_index": 5
+          },
+          "reference_index": 5
         }
       ],
       "scene_id": 8,
-      "narration": "沙織「次は、AIの間違い。」\n大輔「その前に、大事なこと。クロードは、メールを1通も自分では送っていない。下書きを作るだけで、送るのは、いつも人。」\n沙織「人は、送る前に、その下書きを直してるの？」\n大輔「そう、どれも直してから。だったら、小さな会社の発注にも使える。取引先に、何を、いくつ、いつまでに頼むか。下書きはAI、送るのは人。」\n沙織「その「いくつ」、つまり数量で、間違いが起きた。」",
-      "narrator": "dialogue",
-      "lines_hash": "5ca91568344f",
-      "ken_burns": "zoom_out",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "narration": "沙織「次は、AIを何万も並べたら何十倍か。そんな例はあるの？」\n大輔「AIを何万も並べた例は、資料には無い。でも、AIが設計案を何万も出した例はある。食べ物アレルギーの薬を作る、ある会社。」\n大輔「その薬には腕が2本ある。アレルギーの引き金になる物質をつかむ腕と、それを免疫の細胞から引きはがす腕。その設計案を、AIが大部分を自分で、1か月でおよそ3万5千個作った。」\n沙織「3万5千。人なら、何人がかりの仕事？」\n大輔「人で何人分かは、書いてない。」\n沙織「それで、どれだけ早くなったの？」\n大輔「思いつきから実験の結果まで、3週間から4週間半。この会社は以前、同じような仕事に、長いと9か月かかってた。」\n沙織「この一工程は、大きく縮んだね。ただ、比べる相手は前の自分たち。それに、薬づくりの最初の段階の話。」\n大輔「AIを並べた例なら、もう一つある。薬の会社を自分で立ち上げて、お金も出す、ある投資会社。一つの調べ物を、AIが、研究者役のAI何十人分にも手分けさせてる。」\n大輔「数週間かかった調べ物が、数日になった、と書いてる。」\n沙織「並べたAIは何十人分、ね。何万じゃない。それに、薬全体が何十倍、と書いた資料はどこにも無い。あるのは、工程ごとの短縮だけ。」\n［画面のグラフ］Anthropic の発表／Divergence Labs の項 AIが約1か月で作った、薬の腕の設計案 35000個 約3万5千。大部分をAIが自分で作った\n［画面の資料カード］Anthropic の発表／Divergence Labs の項 「Previously, comparable work had taken Divergence up to nine months.」（原文） ・訳: 以前は、同じような仕事に最大9か月 ・今回: 思いつき→実験結果まで約3〜4週間半 ・比べる相手は、この会社の以前の仕事\n［画面の資料カード］Anthropic の発表／The Column Group の文 「Claude then assigns dozens of subagents to find and synthesize published research」（原文） ・訳: AIが、数十の研究者役のAIに調べ物を割り振る ・調べるもの: 論文・遺伝・過去の試験・競合 ・報告を人が読み、続けるかを決める ・文献の調べ物: 数週間 → 数日",
+      "narrator": "dialogue"
     },
     {
       "type": "check",
       "bgm_role": "main",
       "round": 2,
-      "reference_index": 1,
-      "ken_burns": "static",
-      "source_card": {
-        "kind": "report",
-        "source": "買い取った薬の会社の報告書（2026年10月26日、審査前）",
-        "quote": "at least three reached a CRO in emails that we had edited and sent.",
-        "quote_type": "原文",
-        "highlight": "at least three reached a CRO",
-        "items": [
-          "訳: 少なくとも3つが外の研究所に届いた",
-          "人が直して送ったメールの中で",
-          "容器1本に詰める量の誤りは、1日で直った",
-          "2つは、4日以上気づかれないまま",
-          "6つのうち5つは、クロード自身が発見"
-        ],
-        "reference_index": 1
-      },
+      "image_asset": "photos/kl054_S09",
+      "real_photo": true,
       "lines": [
         {
           "speaker": "skeptic",
-          "text": "報告書は、クロードの間違いを6つ、詳しく調べてる。そのうち少なくとも3つは、人が直して送ったメールに混ざって、外の研究所に届いてしまった。",
-          "expression": "doubt",
-          "tag": "barrier",
-          "t0": 0.0,
-          "dur": 9.92,
-          "cards": [
-            {
-              "text": "報告書は、クロードの間違いを6つ、",
-              "start": 0.0,
-              "end": 2.48
-            },
-            {
-              "text": "詳しく調べてる。そのうち少なくとも3つは、",
-              "start": 2.63,
-              "end": 5.57
-            },
-            {
-              "text": "人が直して送ったメールに混ざって、",
-              "start": 5.72,
-              "end": 8.05
-            },
-            {
-              "text": "外の研究所に届いてしまった。",
-              "start": 8.2,
-              "end": 10.12
-            }
-          ]
+          "text": "じゃあ、3万5千の案は？ AIの予測で絞って、実際に作って試したのは、腕ごとに多くても96個。",
+          "expression": "neutral"
         },
         {
           "speaker": "dreamer",
-          "text": "人が目を通したのに、それでも届いたの？",
-          "expression": "surprised",
-          "t0": 10.2,
-          "dur": 3.04,
-          "cards": [
-            {
-              "text": "人が目を通したのに、それでも届いたの？",
-              "start": 0.0,
-              "end": 3.04
-            }
-          ]
+          "text": "案を何万も出して、作れたのは腕ごとに百足らずか。",
+          "expression": "surprised"
         },
         {
           "speaker": "skeptic",
-          "text": "一つは、薬の候補を容器に詰める量。研究所が頼んだより少なく書いていた。これは1日で直って、実際に詰める前に間に合った。",
-          "expression": "neutral",
-          "t0": 13.52,
-          "dur": 9.24,
-          "cards": [
-            {
-              "text": "一つは、薬の候補を容器に詰める量。",
-              "start": 0.0,
-              "end": 2.84
-            },
-            {
-              "text": "研究所が頼んだより少なく書いていた。",
-              "start": 2.99,
-              "end": 5.69
-            },
-            {
-              "text": "これは1日で直って、",
-              "start": 5.84,
-              "end": 7.34
-            },
-            {
-              "text": "実際に詰める前に間に合った。",
-              "start": 7.34,
-              "end": 9.44
-            }
-          ]
+          "text": "試した中から、今の標準の薬より良さそうなものも、3個出た。実験室での話ね。",
+          "expression": "neutral"
         },
         {
           "speaker": "skeptic",
-          "text": "届いた3つのうち、残りの2つは、クロードが研究所の資料を読んでまとめた中の、まとめ違い。4日以上、気づかれないままだった。",
-          "expression": "thinking",
-          "t0": 22.98,
-          "dur": 9.12,
-          "cards": [
-            {
-              "text": "届いた3つのうち、残りの2つは、",
-              "start": 0.0,
-              "end": 2.32
-            },
-            {
-              "text": "クロードが研究所の資料を",
-              "start": 2.66,
-              "end": 4.39
-            },
-            {
-              "text": "読んでまとめた中の、",
-              "start": 4.39,
-              "end": 5.84
-            },
-            {
-              "text": "まとめ違い。4日以上、",
-              "start": 5.99,
-              "end": 7.58
-            },
-            {
-              "text": "気づかれないままだった。",
-              "start": 7.58,
-              "end": 9.32
-            }
-          ]
+          "text": "試せる数は、実験室で決まる。機械の実験室で薬の元を作って測る、別の会社でも、1回の結果が返るまで、9日から10日。",
+          "expression": "doubt"
         },
         {
           "speaker": "dreamer",
-          "text": "AIは、自分の間違いに気づかないの？",
-          "expression": "thinking",
-          "t0": 32.38,
-          "dur": 2.92,
-          "cards": [
-            {
-              "text": "AIは、自分の間違いに気づかないの？",
-              "start": 0.0,
-              "end": 2.92
-            }
-          ]
+          "text": "案を出すのは一瞬なのに、実験は待つしかないのか。",
+          "expression": "deflated"
         },
         {
           "speaker": "skeptic",
-          "text": "6つのうち5つは、クロード自身が見つけてる。送る前に見つけたものもあるし、送ったあとで研究所に聞かれて気づいたものもある。",
-          "expression": "neutral",
-          "t0": 35.58,
-          "dur": 7.72,
-          "cards": [
-            {
-              "text": "6つのうち5つは、クロード自身が見つけてる。",
-              "start": 0.0,
-              "end": 2.68
-            },
-            {
-              "text": "送る前に見つけたものもあるし、",
-              "start": 2.96,
-              "end": 4.78
-            },
-            {
-              "text": "送ったあとで研究所に",
-              "start": 4.93,
-              "end": 6.15
-            },
-            {
-              "text": "聞かれて気づいたものもある。",
-              "start": 6.15,
-              "end": 7.85
-            }
-          ]
+          "text": "発表には、こうもある。AIは、細胞を早く育てられないし、マウスを早く歳をとらせることもできない。",
+          "expression": "doubt"
         },
         {
           "speaker": "dreamer",
-          "text": "人が読んでも、なぜ見落としたんだろう。",
-          "expression": "thinking",
-          "t0": 43.58,
-          "dur": 2.88,
-          "cards": [
-            {
-              "text": "人が読んでも、なぜ見落としたんだろう。",
-              "start": 0.0,
-              "end": 2.88
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "報告書の見立てでは、人が直すとき、メールの結論は確かめるけど、細かい数字や、AIが資料から読み取って書いた中身は、見落としやすい。",
-          "expression": "neutral",
-          "t0": 46.74,
-          "dur": 8.68,
-          "cards": [
-            {
-              "text": "報告書の見立てでは、人が直すとき、",
-              "start": 0.0,
-              "end": 2.3
-            },
-            {
-              "text": "メールの結論は確かめるけど、細かい数字や、",
-              "start": 2.45,
-              "end": 5.16
-            },
-            {
-              "text": "AIが資料から読み取って書いた中身は、",
-              "start": 5.31,
-              "end": 7.72
-            },
-            {
-              "text": "見落としやすい。",
-              "start": 7.87,
-              "end": 8.88
-            }
-          ]
+          "text": "全体が何十倍、は取り下げる。倍率は書いてないし、生き物の時間は縮まない。",
+          "expression": "deflated",
+          "tag": "turn"
         },
         {
           "speaker": "dreamer",
-          "text": "だったら、細かいところは、AIに先に挙げさせて、人はそこを見る。この週も、クロードは下書きと一緒に、確かめてほしい点を41か所、挙げてた。",
+          "text": "だったら、AIを並べるのは、試す前の絞り込みに使う。案を何万も出して、1回の実験で作る百足らずを、えりすぐる。",
           "expression": "excited",
-          "tag": "workaround",
-          "t0": 55.7,
-          "dur": 10.28,
-          "cards": [
-            {
-              "text": "だったら、細かいところは、",
-              "start": 0.0,
-              "end": 1.85
-            },
-            {
-              "text": "AIに先に挙げさせて、",
-              "start": 1.85,
-              "end": 3.42
-            },
-            {
-              "text": "人はそこを見る。この週も、クロードは",
-              "start": 3.57,
-              "end": 6.34
-            },
-            {
-              "text": "下書きと一緒に、確かめてほしい点を41か所、",
-              "start": 6.49,
-              "end": 9.62
-            },
-            {
-              "text": "挙げてた。",
-              "start": 9.77,
-              "end": 10.48
-            }
-          ]
+          "tag": "workaround"
         },
         {
           "speaker": "skeptic",
-          "text": "どんな点？",
-          "expression": "neutral",
-          "t0": 66.26,
-          "dur": 1.52,
-          "cards": [
-            {
-              "text": "どんな点？",
-              "start": 0.0,
-              "end": 1.52
-            }
-          ]
+          "text": "遅い側も縮み始めてる。さっきの、機械の実験室の会社。薬の元は、ふつうは細胞を育てて作るから、毎回1週間ほど余計にかかる。その1週間を、細胞を使わない作り方でなくして、いまの9日から10日になってる。",
+          "expression": "neutral"
         },
         {
           "speaker": "dreamer",
-          "text": "たとえば、送り方や、送り先。チームのメールや資料のどこにも、はっきり書いていなかった点。",
-          "expression": "neutral",
-          "t0": 68.06,
-          "dur": 6.76,
-          "cards": [
-            {
-              "text": "たとえば、送り方や、送り先。",
-              "start": 0.06,
-              "end": 2.25
-            },
-            {
-              "text": "チームのメールや資料のどこにも、",
-              "start": 2.4,
-              "end": 4.75
-            },
-            {
-              "text": "はっきり書いていなかった点。",
-              "start": 4.9,
-              "end": 6.96
-            }
-          ]
+          "text": "週に数千個作れる、とも書いてある。",
+          "expression": "excited"
         },
         {
           "speaker": "skeptic",
-          "text": "指示に書いていない点の一覧ね。人が送る前に、まずそこから見直せる。でも、資料のまとめ違いは、指示の話じゃないから、この一覧には出てこないと思う。",
-          "expression": "thinking",
-          "t0": 75.1,
-          "dur": 9.68,
-          "cards": [
-            {
-              "text": "指示に書いていない点の一覧ね。",
-              "start": 0.0,
-              "end": 1.92
-            },
-            {
-              "text": "人が送る前に、まずそこから見直せる。でも、",
-              "start": 2.26,
-              "end": 4.97
-            },
-            {
-              "text": "資料のまとめ違いは、指示の話じゃないから、",
-              "start": 5.12,
-              "end": 7.81
-            },
-            {
-              "text": "この一覧には出てこないと思う。",
-              "start": 7.96,
-              "end": 9.88
-            }
-          ]
+          "text": "本物なら、私はこれを、確かめ直しに使いたい。さっきのマウスみたいに、くじ引きと目隠しで、もう一度試す段取りを、AIに組ませる。",
+          "expression": "amused",
+          "tag": "skeptic_wish"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "AIを並べて増えるのは、えりすぐる元になる設計案の数。実験室で試せる数が増えるほど、その案が効いてくる。",
+          "expression": "convinced",
+          "tag": "hope"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "source_card": {
+            "kind": "press",
+            "source": "Anthropic の発表／Divergence Labs の項",
+            "quote": "kept only the highest scoring ones—no more than 96 per arm—to make and test in the lab",
+            "quote_type": "原文",
+            "highlight": "no more than 96 per arm",
+            "items": [
+              "訳: 作って試すのは、腕ごとに96個まで",
+              "約3万5千の案 → 予測で絞り込み",
+              "今の標準の薬より良さそう: 3個（実験室）"
+            ],
+            "reference_index": 3
+          },
+          "reference_index": 3
+        },
+        {
+          "from_line": 4,
+          "source_card": {
+            "kind": "press",
+            "source": "Anthropic の発表／BigHat Biosciences の項",
+            "quote": "Results typically came back in nine to 10 days",
+            "quote_type": "原文",
+            "highlight": "nine to 10 days",
+            "items": [
+              "訳: 結果が返るのは、ふつう9〜10日",
+              "1回に176個を作って測る",
+              "細胞を育てない作り方で、約1週間をなくした"
+            ],
+            "reference_index": 4
+          },
+          "reference_index": 4
+        },
+        {
+          "from_line": 6,
+          "source_card": {
+            "kind": "press",
+            "source": "Anthropic の発表／Mithril Medicine の項",
+            "quote": "Claude can’t make cells grow or mice age any faster",
+            "quote_type": "原文",
+            "highlight": "can’t make cells grow or mice age any faster",
+            "items": [
+              "訳: AIは、細胞もマウスも早く育てられない",
+              "段取りが片付けば、1人でもっと多くの案を試せる"
+            ],
+            "reference_index": 2
+          },
+          "reference_index": 2
+        },
+        {
+          "from_line": 7,
+          "recap_card": {
+            "title": "AIを並べて速くなる所・ならない所",
+            "items": [
+              "速くなる: 設計案・調べ物・段取り・下書き",
+              "ならない: 細胞やマウスが育つ時間",
+              "ならない: 研究所の返事・人の決断"
+            ]
+          }
+        },
+        {
+          "from_line": 9,
+          "image_asset": "photos/kl054_S09",
+          "real_photo": true
         }
       ],
       "scene_id": 9,
-      "narration": "沙織「報告書は、クロードの間違いを6つ、詳しく調べてる。そのうち少なくとも3つは、人が直して送ったメールに混ざって、外の研究所に届いてしまった。」\n大輔「人が目を通したのに、それでも届いたの？」\n沙織「一つは、薬の候補を容器に詰める量。研究所が頼んだより少なく書いていた。これは1日で直って、実際に詰める前に間に合った。」\n沙織「届いた3つのうち、残りの2つは、クロードが研究所の資料を読んでまとめた中の、まとめ違い。4日以上、気づかれないままだった。」\n大輔「AIは、自分の間違いに気づかないの？」\n沙織「6つのうち5つは、クロード自身が見つけてる。送る前に見つけたものもあるし、送ったあとで研究所に聞かれて気づいたものもある。」\n大輔「人が読んでも、なぜ見落としたんだろう。」\n沙織「報告書の見立てでは、人が直すとき、メールの結論は確かめるけど、細かい数字や、AIが資料から読み取って書いた中身は、見落としやすい。」\n大輔「だったら、細かいところは、AIに先に挙げさせて、人はそこを見る。この週も、クロードは下書きと一緒に、確かめてほしい点を41か所、挙げてた。」\n沙織「どんな点？」\n大輔「たとえば、送り方や、送り先。チームのメールや資料のどこにも、はっきり書いていなかった点。」\n沙織「指示に書いていない点の一覧ね。人が送る前に、まずそこから見直せる。でも、資料のまとめ違いは、指示の話じゃないから、この一覧には出てこないと思う。」\n［画面の資料カード］買い取った薬の会社の報告書（2026年10月26日、審査前） 「at least three reached a CRO in emails that we had edited and sent.」（原文） ・訳: 少なくとも3つが外の研究所に届いた ・人が直して送ったメールの中で ・容器1本に詰める量の誤りは、1日で直った ・2つは、4日以上気づかれないまま ・6つのうち5つは、クロード自身が発見",
-      "narrator": "dialogue",
-      "image_asset": "cards/kl054_S09",
-      "lines_hash": "30cae216e83d"
+      "narration": "沙織「じゃあ、3万5千の案は？ AIの予測で絞って、実際に作って試したのは、腕ごとに多くても96個。」\n大輔「案を何万も出して、作れたのは腕ごとに百足らずか。」\n沙織「試した中から、今の標準の薬より良さそうなものも、3個出た。実験室での話ね。」\n沙織「試せる数は、実験室で決まる。機械の実験室で薬の元を作って測る、別の会社でも、1回の結果が返るまで、9日から10日。」\n大輔「案を出すのは一瞬なのに、実験は待つしかないのか。」\n沙織「発表には、こうもある。AIは、細胞を早く育てられないし、マウスを早く歳をとらせることもできない。」\n大輔「全体が何十倍、は取り下げる。倍率は書いてないし、生き物の時間は縮まない。」\n大輔「だったら、AIを並べるのは、試す前の絞り込みに使う。案を何万も出して、1回の実験で作る百足らずを、えりすぐる。」\n沙織「遅い側も縮み始めてる。さっきの、機械の実験室の会社。薬の元は、ふつうは細胞を育てて作るから、毎回1週間ほど余計にかかる。その1週間を、細胞を使わない作り方でなくして、いまの9日から10日になってる。」\n大輔「週に数千個作れる、とも書いてある。」\n沙織「本物なら、私はこれを、確かめ直しに使いたい。さっきのマウスみたいに、くじ引きと目隠しで、もう一度試す段取りを、AIに組ませる。」\n大輔「AIを並べて増えるのは、えりすぐる元になる設計案の数。実験室で試せる数が増えるほど、その案が効いてくる。」\n［画面の資料カード］Anthropic の発表／Divergence Labs の項 「kept only the highest scoring ones—no more than 96 per arm—to make and test in the lab」（原文） ・訳: 作って試すのは、腕ごとに96個まで ・約3万5千の案 → 予測で絞り込み ・今の標準の薬より良さそう: 3個（実験室）\n［画面の資料カード］Anthropic の発表／BigHat Biosciences の項 「Results typically came back in nine to 10 days」（原文） ・訳: 結果が返るのは、ふつう9〜10日 ・1回に176個を作って測る ・細胞を育てない作り方で、約1週間をなくした\n［画面の資料カード］Anthropic の発表／Mithril Medicine の項 「Claude can’t make cells grow or mice age any faster」（原文） ・訳: AIは、細胞もマウスも早く育てられない ・段取りが片付けば、1人でもっと多くの案を試せる\n［画面のまとめカード（ふりかえり）］AIを並べて速くなる所・ならない所 ・速くなる: 設計案・調べ物・段取り・下書き ・ならない: 細胞やマウスが育つ時間 ・ならない: 研究所の返事・人の決断",
+      "narrator": "dialogue"
     },
     {
       "type": "paper",
       "bgm_role": "main",
-      "round": 2,
-      "image_prompt": "Close-up of an open laptop on a tidy office desk in soft morning light. The screen shows a blurred, unreadable email draft on the left and a narrow side panel with a short checklist of tick boxes on the right (all text blurred and unreadable). A printed page with a few lines highlighted in yellow lies next to the laptop, together with a coffee cup. No people, no hands. No readable text, no letters, no numbers, no logos, no brand marks.",
+      "round": 3,
+      "round_title": "薬を作るのは、誰になる？",
+      "image_asset": "photos/kl054_S10",
+      "real_photo": true,
       "lines": [
         {
+          "speaker": "dreamer",
+          "text": "最後は、薬を作るのは誰になるか。さっきの投資会社が、発表の中で、薬の会社の苦しさを、こう書いてる。",
+          "expression": "neutral"
+        },
+        {
           "speaker": "skeptic",
-          "text": "この仕組みが本物なら、私は、たとえば、いくつもの病院とやりとりする事務の仕事に使いたい。指示に書いていない点を、先に一覧で出してくれるなら、なおさら。",
-          "expression": "convinced",
-          "tag": "skeptic_wish",
-          "t0": 0.0,
-          "dur": 9.76,
-          "cards": [
-            {
-              "text": "この仕組みが本物なら、私は、たとえば、",
-              "start": 0.0,
-              "end": 2.36
-            },
-            {
-              "text": "いくつもの病院とやりとり",
-              "start": 2.58,
-              "end": 4.07
-            },
-            {
-              "text": "する事務の仕事に使いたい。",
-              "start": 4.07,
-              "end": 5.68
-            },
-            {
-              "text": "指示に書いていない点を、先に一覧で",
-              "start": 5.83,
-              "end": 8.07
-            },
-            {
-              "text": "出してくれるなら、なおさら。",
-              "start": 8.22,
-              "end": 9.96
-            }
-          ]
+          "text": "薬は、設計にも人での試験にも、お金と時間がかかる。だから、たいていの会社は、当てるチャンスが1回。運が良くて2回。",
+          "expression": "neutral"
         },
         {
           "speaker": "dreamer",
-          "text": "厳しく確かめる側に、そう言ってもらえると心強い。",
+          "text": "ソフトと違って、試しに作って直す、ができないんだ。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だから、お金を出す側は、ほかで確かめ済みの安全な案を選んで、患者を多く助けうる新しい案を避けてきた。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "お金の出し手が慎重になるのは、商売なら分かる話ね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "AIで1本あたりの時間とお金が減れば、難しい挑戦にもお金が回る。次は、日本の大学発の小さな薬の会社でも、少人数で何本も挑める。",
           "expression": "excited",
-          "t0": 10.04,
-          "dur": 3.84,
-          "cards": [
-            {
-              "text": "厳しく確かめる側に、",
-              "start": 0.0,
-              "end": 1.5
-            },
-            {
-              "text": "そう言ってもらえると心強い。",
-              "start": 1.5,
-              "end": 3.6
-            }
-          ]
+          "tag": "use_case"
         },
         {
           "speaker": "skeptic",
-          "text": "ただし、数字と、AIが資料から読み取って書いた中身は、人が元の資料で確かめる。そこは外せない。",
-          "expression": "neutral",
-          "t0": 14.16,
-          "dur": 6.88,
-          "cards": [
-            {
-              "text": "ただし、数字と、AIが資料から読み取って",
-              "start": 0.0,
-              "end": 3.0
-            },
-            {
-              "text": "書いた中身は、人が元の資料で確かめる。",
-              "start": 3.15,
-              "end": 5.81
-            },
-            {
-              "text": "そこは外せない。",
-              "start": 5.96,
-              "end": 7.08
-            }
-          ]
+          "text": "その投資会社は、もう新しい会社を作り始めてる。最初からAI前提で作って、そこで作ったAIの仕組みを、これから作るすべての会社で使う、と。",
+          "expression": "neutral"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true
         },
         {
-          "speaker": "dreamer",
-          "text": "下書きはAI、指示に書いていない点の一覧もAI、決めて送るのは人。この分け方なら、少ない人数でも、何か所もの外注先とのやりとりを回せる。報告書も、そう見てる。",
-          "expression": "convinced",
-          "tag": "hope",
-          "t0": 21.32,
-          "dur": 13.4,
-          "cards": [
-            {
-              "text": "下書きはAI、",
-              "start": 0.0,
-              "end": 1.31
-            },
-            {
-              "text": "指示に書いていない点の一覧もAI、",
-              "start": 1.31,
-              "end": 4.5
-            },
-            {
-              "text": "決めて送るのは人。この分け方なら、",
-              "start": 5.0,
-              "end": 7.6
-            },
-            {
-              "text": "少ない人数でも、何か所もの外注先との",
-              "start": 7.75,
-              "end": 10.45
-            },
-            {
-              "text": "やりとりを回せる。報告書も、そう見てる。",
-              "start": 10.6,
-              "end": 13.6
-            }
-          ]
+          "from_line": 2,
+          "source_card": {
+            "kind": "press",
+            "source": "Anthropic の発表／The Column Group の文",
+            "quote": "most companies have only one shot to get things right—maybe two, if they’re lucky",
+            "quote_type": "原文",
+            "highlight": "only one shot",
+            "items": [
+              "訳: たいていの会社は、チャンスが1回、運が良くて2回",
+              "ソフトと違い、試しに作って直すができない",
+              "投資は、確かめ済みの安全な案に集まりやすい"
+            ],
+            "reference_index": 5
+          },
+          "reference_index": 5
+        },
+        {
+          "from_line": 5,
+          "recap_card": {
+            "title": "お金の流れ（発表の見立て）",
+            "items": [
+              "今: 確かめ済みの安全な案にお金が集まる",
+              "AIで1本の時間とお金が減れば: 新しい案にも",
+              "条件: うまくいけば（発表自身の言葉）"
+            ]
+          }
+        },
+        {
+          "from_line": 7,
+          "source_card": {
+            "kind": "press",
+            "source": "Anthropic の発表／The Column Group の文",
+            "quote": "fully AI-enabled from Day One",
+            "quote_type": "原文",
+            "highlight": "fully AI-enabled",
+            "items": [
+              "訳: 初日から、完全にAIを前提にした会社",
+              "新しい会社の名前: Pleiades（プレアデス）",
+              "作ったAIの仕組みを、投資会社が今後作る全社で使う",
+              "狙い: 少人数で、ふつうより多くの挑戦を回す"
+            ],
+            "reference_index": 5
+          },
+          "reference_index": 5
         }
       ],
       "scene_id": 10,
-      "narration": "沙織「この仕組みが本物なら、私は、たとえば、いくつもの病院とやりとりする事務の仕事に使いたい。指示に書いていない点を、先に一覧で出してくれるなら、なおさら。」\n大輔「厳しく確かめる側に、そう言ってもらえると心強い。」\n沙織「ただし、数字と、AIが資料から読み取って書いた中身は、人が元の資料で確かめる。そこは外せない。」\n大輔「下書きはAI、指示に書いていない点の一覧もAI、決めて送るのは人。この分け方なら、少ない人数でも、何か所もの外注先とのやりとりを回せる。報告書も、そう見てる。」",
-      "narrator": "dialogue",
-      "lines_hash": "989eb0067310",
-      "ken_burns": "zoom_out",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "narration": "大輔「最後は、薬を作るのは誰になるか。さっきの投資会社が、発表の中で、薬の会社の苦しさを、こう書いてる。」\n沙織「薬は、設計にも人での試験にも、お金と時間がかかる。だから、たいていの会社は、当てるチャンスが1回。運が良くて2回。」\n大輔「ソフトと違って、試しに作って直す、ができないんだ。」\n大輔「だから、お金を出す側は、ほかで確かめ済みの安全な案を選んで、患者を多く助けうる新しい案を避けてきた。」\n沙織「お金の出し手が慎重になるのは、商売なら分かる話ね。」\n大輔「AIで1本あたりの時間とお金が減れば、難しい挑戦にもお金が回る。次は、日本の大学発の小さな薬の会社でも、少人数で何本も挑める。」\n沙織「その投資会社は、もう新しい会社を作り始めてる。最初からAI前提で作って、そこで作ったAIの仕組みを、これから作るすべての会社で使う、と。」\n［画面の資料カード］Anthropic の発表／The Column Group の文 「most companies have only one shot to get things right—maybe two, if they’re lucky」（原文） ・訳: たいていの会社は、チャンスが1回、運が良くて2回 ・ソフトと違い、試しに作って直すができない ・投資は、確かめ済みの安全な案に集まりやすい\n［画面のまとめカード（ふりかえり）］お金の流れ（発表の見立て） ・今: 確かめ済みの安全な案にお金が集まる ・AIで1本の時間とお金が減れば: 新しい案にも ・条件: うまくいけば（発表自身の言葉）\n［画面の資料カード］Anthropic の発表／The Column Group の文 「fully AI-enabled from Day One」（原文） ・訳: 初日から、完全にAIを前提にした会社 ・新しい会社の名前: Pleiades（プレアデス） ・作ったAIの仕組みを、投資会社が今後作る全社で使う ・狙い: 少人数で、ふつうより多くの挑戦を回す",
+      "narrator": "dialogue"
     },
     {
-      "type": "paper",
+      "type": "check",
       "bgm_role": "main",
       "round": 3,
-      "round_title": "薬そのものも、速くなった？",
-      "image_prompt": "A clean, bright animal research laboratory in the United States. In the foreground on a stainless-steel bench sits a clear plastic laboratory mouse cage with fresh bedding, where one small white laboratory mouse is gently gripping a thin metal bar. In the soft-focus background, two researchers in white lab coats work at a bench, seen from behind and blurred so that no faces are visible. Calm, careful, humane mood. No readable text, no letters, no numbers, no logos, no brand marks.",
+      "image_asset": "photos/kl054_S11",
+      "real_photo": true,
       "lines": [
         {
+          "speaker": "skeptic",
+          "text": "ただ、その新しい会社は、作っている途中。お金の額も、薬の挑戦の数も、どの病気かも、まだ書いてない。",
+          "expression": "doubt"
+        },
+        {
           "speaker": "dreamer",
-          "text": "最後は、薬そのもの。狙うのは、生まれつき筋肉が弱くなる、子どもの珍しい筋ジストロフィー。",
-          "expression": "neutral",
-          "t0": 0.0,
-          "dur": 7.6,
-          "cards": [
-            {
-              "text": "最後は、薬そのもの。狙うのは、",
-              "start": 0.0,
-              "end": 3.06
-            },
-            {
-              "text": "生まれつき筋肉が弱くなる、子どもの珍しい",
-              "start": 3.21,
-              "end": 6.3
-            },
-            {
-              "text": "筋ジストロフィー。",
-              "start": 6.45,
-              "end": 7.8
-            }
-          ]
+          "text": "じゃあ、決まってることは？",
+          "expression": "thinking"
         },
         {
           "speaker": "skeptic",
-          "text": "認められた治療が、まだ無い病気ね。それで、薬の候補は、どんな仕組みで働くの？",
-          "expression": "thinking",
-          "t0": 7.88,
-          "dur": 5.8,
-          "cards": [
-            {
-              "text": "認められた治療が、まだ無い病気ね。それで、",
-              "start": 0.0,
-              "end": 3.24
-            },
-            {
-              "text": "薬の候補は、どんな仕組みで働くの？",
-              "start": 3.39,
-              "end": 5.92
-            }
-          ]
+          "text": "2つ。1つは、新しい会社の最初の仕組み。さっきの、調べ物をAIに手分けさせるもの。薬で狙う体の中の標的と、病気の組み合わせを、45件で試して、もう投資会社の中で使ってる。",
+          "expression": "neutral"
         },
         {
           "speaker": "dreamer",
-          "text": "薬の候補は、筋肉の繊維を、まわりの膜につなぎ留めるもの。発表は、留め具のように働く、と書いてる。",
-          "expression": "neutral",
-          "t0": 13.96,
-          "dur": 7.6,
-          "cards": [
-            {
-              "text": "薬の候補は、筋肉の繊維を、まわりの膜に",
-              "start": 0.0,
-              "end": 3.15
-            },
-            {
-              "text": "つなぎ留めるもの。発表は、",
-              "start": 3.3,
-              "end": 5.25
-            },
-            {
-              "text": "留め具のように働く、",
-              "start": 5.25,
-              "end": 6.75
-            },
-            {
-              "text": "と書いてる。",
-              "start": 6.9,
-              "end": 7.8
-            }
-          ]
+          "text": "もう1つは、新しい会社の最初の薬の挑戦が、1本選ばれたこと。投資会社いわく、人で試す段階に入った薬の多くは、承認まで届かない。試験の作戦の弱さが、何年も後で分かることが多い。",
+          "expression": "thinking"
         },
         {
           "speaker": "dreamer",
-          "text": "事務にかかる時間がここまで縮むなら、薬の開発も速くなるはず。次は、小さなメーカーの新商品づくりでも、試作から発売までが縮む。",
+          "text": "だから、人で試す作戦を、先に練っておくAIの仕組みも作った。選ばれた1本は、この作戦の仕組みで調べたものだ。",
           "expression": "excited",
-          "tag": "use_case",
-          "t0": 21.78,
-          "dur": 9.68,
-          "cards": [
-            {
-              "text": "事務にかかる時間がここまで縮むなら、",
-              "start": 0.2,
-              "end": 2.88
-            },
-            {
-              "text": "薬の開発も速くなるはず。次は、",
-              "start": 3.03,
-              "end": 5.26
-            },
-            {
-              "text": "小さなメーカーの新商品づくりでも、",
-              "start": 5.41,
-              "end": 7.94
-            },
-            {
-              "text": "試作から発売までが縮む。",
-              "start": 8.09,
-              "end": 9.88
-            }
-          ]
+          "tag": "workaround"
         },
         {
           "speaker": "skeptic",
-          "text": "それを、薬の話で確かめよう。まず、マウスは何匹で試したの？",
-          "expression": "doubt",
-          "t0": 31.74,
-          "dur": 4.76,
-          "cards": [
-            {
-              "text": "それを、薬の話で確かめよう。まず、",
-              "start": 0.0,
-              "end": 2.68
-            },
-            {
-              "text": "マウスは何匹で試したの？",
-              "start": 2.83,
-              "end": 4.63
-            }
-          ]
+          "text": "ただ、この投資会社は、アンソロピックからAIの利用分と技術の支援を受けてる。仲間うちの話ね。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "で、日本の小さな会社は？ 誰が、どんな条件で使えるのか。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "この発表には、そこは書いてない。ただアンソロピックは、ひとりで回す働き方を、ほかの研究者に広げる方法を、数か月のうちに話す、と書いてる。",
+          "expression": "neutral",
+          "display": "この発表には、そこは書いてない。ただアンソロピックは、1人で回す働き方を、ほかの研究者に広げる方法を、数か月のうちに話す、と書いてる。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "大手の製薬会社も、人で試している最中の薬の計画を見直すのに、AIを使い始めた段階だ。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "整理すると、薬を作る側が、もう4つ動いてる。AIの会社自身、ひとりの研究者とAI、AI前提の新しい会社、それに、AIで計画を練る大手。",
+          "expression": "convinced",
+          "display": "整理すると、薬を作る側が、もう4つ動いてる。AIの会社自身、1人の研究者とAI、AI前提の新しい会社、それに、AIで計画を練る大手。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "挑戦の本数を決めるのが、研究者の人数とお金だけじゃなくなり始めた。発表も、うまくいけば業界に広がる、と書いてる。",
+          "expression": "convinced",
+          "tag": "hope"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "recap_card": {
+            "title": "新しい会社: 決まっていること",
+            "items": [
+              "決まっている1: 調べ物の仕組みを45件で試し、使用中",
+              "決まっている2: 最初の薬の挑戦が1本選ばれた",
+              "書いていない: お金の額・挑戦の数・病気・時期"
+            ]
+          }
+        },
+        {
+          "from_line": 4,
+          "source_card": {
+            "kind": "press",
+            "source": "Anthropic の発表／The Column Group の文",
+            "quote": "One of the programs evaluated with this Skill is the first program nominated in Pleiades.",
+            "quote_type": "原文",
+            "highlight": "the first program nominated in Pleiades",
+            "items": [
+              "訳: 作戦の仕組みで調べた1本が、新会社の最初の挑戦",
+              "人で試す作戦を、先に練る仕組み（8月から）",
+              "開示: アンソロピックが利用分と技術支援を提供"
+            ],
+            "reference_index": 5
+          },
+          "reference_index": 5
+        },
+        {
+          "from_line": 7,
+          "image_asset": "photos/kl054_S11",
+          "real_photo": true
+        },
+        {
+          "from_line": 9,
+          "source_card": {
+            "kind": "press",
+            "source": "Anthropic の発表（2026年10月27日）",
+            "quote": "BMS is using Claude to assess plans of an early-stage drug in clinical trials",
+            "quote_type": "原文",
+            "highlight": "assess plans of an early-stage drug in clinical trials",
+            "items": [
+              "訳: 人で試している初期の薬の計画を、AIで評価",
+              "試験がうまくいく見込みも見積もる",
+              "会社: Bristol Myers Squibb（大手の製薬会社）",
+              "幹部の談話: 数日かかる最初の分析が1回の指示で"
+            ],
+            "reference_index": 0
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 10,
+          "recap_card": {
+            "title": "薬を作る側、4つ",
+            "items": [
+              "AIの会社自身（アンソロピック）",
+              "1人の研究者とAI",
+              "最初からAI前提の新しい会社",
+              "人で試す計画にAIを使う大手"
+            ]
+          }
         }
       ],
       "scene_id": 11,
-      "narration": "大輔「最後は、薬そのもの。狙うのは、生まれつき筋肉が弱くなる、子どもの珍しい筋ジストロフィー。」\n沙織「認められた治療が、まだ無い病気ね。それで、薬の候補は、どんな仕組みで働くの？」\n大輔「薬の候補は、筋肉の繊維を、まわりの膜につなぎ留めるもの。発表は、留め具のように働く、と書いてる。」\n大輔「事務にかかる時間がここまで縮むなら、薬の開発も速くなるはず。次は、小さなメーカーの新商品づくりでも、試作から発売までが縮む。」\n沙織「それを、薬の話で確かめよう。まず、マウスは何匹で試したの？」",
-      "narrator": "dialogue",
-      "lines_hash": "417724587e9f",
-      "ken_burns": "zoom_out",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    {
-      "type": "check",
-      "bgm_role": "main",
-      "round": 3,
-      "reference_index": 0,
-      "ken_burns": "static",
-      "chart": {
-        "kind": "bar",
-        "title": "試したマウスの数（生後6週の握る力の試験）",
-        "unit": "匹",
-        "highlight": 0,
-        "source": "アンソロピックの発表（2026年10月27日）の図の説明",
-        "reference_index": 0,
-        "items": [
-          {
-            "label": "薬を入れた",
-            "value": 7
-          },
-          {
-            "label": "入れなかった",
-            "value": 4
-          },
-          {
-            "label": "病気でない",
-            "value": 12
-          }
-        ],
-        "note": "棒の長さは匹数。力の強さではない"
-      },
-      "lines": [
-        {
-          "speaker": "dreamer",
-          "text": "薬を入れたマウスが7匹、入れなかったマウスが4匹。",
-          "expression": "neutral",
-          "t0": 0.0,
-          "dur": 3.76,
-          "cards": [
-            {
-              "text": "薬を入れたマウスが7匹、",
-              "start": 0.0,
-              "end": 1.8
-            },
-            {
-              "text": "入れなかったマウスが4匹。",
-              "start": 1.8,
-              "end": 3.75
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "どれくらい違ったの？",
-          "expression": "neutral",
-          "t0": 4.04,
-          "dur": 1.52,
-          "cards": [
-            {
-              "text": "どれくらい違ったの？",
-              "start": 0.0,
-              "end": 1.52
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "生後6週で、前足の握る力と筋肉の力が、薬を入れなかったマウスの、およそ2倍だった。",
-          "expression": "excited",
-          "t0": 5.84,
-          "dur": 7.88,
-          "cards": [
-            {
-              "text": "生後6週で、前足の握る力と筋肉の力が、",
-              "start": 0.31,
-              "end": 4.24
-            },
-            {
-              "text": "薬を入れなかったマウスの、",
-              "start": 4.39,
-              "end": 6.35
-            },
-            {
-              "text": "およそ2倍だった。",
-              "start": 6.35,
-              "end": 7.71
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "7匹と4匹。本番の前に小さく試す、予備の試験ね。",
-          "expression": "thinking",
-          "t0": 14.0,
-          "dur": 4.84,
-          "cards": [
-            {
-              "text": "7匹と4匹。本番の前に小さく試す、",
-              "start": 0.0,
-              "end": 3.56
-            },
-            {
-              "text": "予備の試験ね。",
-              "start": 3.71,
-              "end": 4.76
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "それに、薬を入れたマウスも、病気でないマウスよりは弱いまま。治ったわけではない、と発表にもある。",
-          "expression": "neutral",
-          "t0": 19.06,
-          "dur": 6.44,
-          "cards": [
-            {
-              "text": "それに、薬を入れたマウスも、",
-              "start": 0.0,
-              "end": 1.9
-            },
-            {
-              "text": "病気でないマウスよりは弱いまま。",
-              "start": 2.05,
-              "end": 4.1
-            },
-            {
-              "text": "治ったわけではない、と発表にもある。",
-              "start": 4.25,
-              "end": 6.55
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "それでも、2倍の差は小さくない。発表も、大きな改善と書いてる。",
-          "expression": "excited",
-          "t0": 25.78,
-          "dur": 5.64,
-          "cards": [
-            {
-              "text": "それでも、2倍の差は小さくない。発表も、",
-              "start": 0.0,
-              "end": 3.5
-            },
-            {
-              "text": "大きな改善と書いてる。",
-              "start": 3.65,
-              "end": 5.41
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "比べ方にも弱いところがある。組をくじ引きで分けていないし、組ごとに試した時期もずれてる。薬の組は、一番最後に試した。",
-          "expression": "doubt",
-          "t0": 31.7,
-          "dur": 9.24,
-          "cards": [
-            {
-              "text": "比べ方にも弱いところがある。",
-              "start": 0.0,
-              "end": 2.1
-            },
-            {
-              "text": "組をくじ引きで分けていないし、",
-              "start": 2.3,
-              "end": 4.55
-            },
-            {
-              "text": "組ごとに試した時期もずれてる。薬の組は、",
-              "start": 4.7,
-              "end": 7.94
-            },
-            {
-              "text": "一番最後に試した。",
-              "start": 8.09,
-              "end": 9.44
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "測る人が、どちらの組か知らずに測る、という形でもない。",
-          "expression": "doubt",
-          "t0": 41.16,
-          "dur": 3.72,
-          "cards": [
-            {
-              "text": "測る人が、どちらの組か知らずに測る、",
-              "start": 0.0,
-              "end": 2.54
-            },
-            {
-              "text": "という形でもない。",
-              "start": 2.69,
-              "end": 3.88
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "時期がずれると、薬のおかげか、時期の違いか、分からなくなるね。",
-          "expression": "thinking",
-          "t0": 45.16,
-          "dur": 4.92,
-          "cards": [
-            {
-              "text": "時期がずれると、薬のおかげか、",
-              "start": 0.0,
-              "end": 2.39
-            },
-            {
-              "text": "時期の違いか、分からなくなるね。",
-              "start": 2.54,
-              "end": 4.94
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "expression": "thinking",
-          "text": "組を知って測ると、測る人の期待が、数字に入りこむおそれがある、ということ？",
-          "t0": 50.3,
-          "dur": 6.4,
-          "cards": [
-            {
-              "text": "組を知って測ると、測る人の期待が、",
-              "start": 0.0,
-              "end": 3.28
-            },
-            {
-              "text": "数字に入りこむおそれがある、ということ？",
-              "start": 3.43,
-              "end": 6.43
-            }
-          ]
-        }
-      ],
-      "scene_id": 12,
-      "narration": "大輔「薬を入れたマウスが7匹、入れなかったマウスが4匹。」\n沙織「どれくらい違ったの？」\n大輔「生後6週で、前足の握る力と筋肉の力が、薬を入れなかったマウスの、およそ2倍だった。」\n沙織「7匹と4匹。本番の前に小さく試す、予備の試験ね。」\n沙織「それに、薬を入れたマウスも、病気でないマウスよりは弱いまま。治ったわけではない、と発表にもある。」\n大輔「それでも、2倍の差は小さくない。発表も、大きな改善と書いてる。」\n沙織「比べ方にも弱いところがある。組をくじ引きで分けていないし、組ごとに試した時期もずれてる。薬の組は、一番最後に試した。」\n沙織「測る人が、どちらの組か知らずに測る、という形でもない。」\n大輔「時期がずれると、薬のおかげか、時期の違いか、分からなくなるね。」\n大輔「組を知って測ると、測る人の期待が、数字に入りこむおそれがある、ということ？」\n［画面のグラフ］アンソロピックの発表（2026年10月27日）の図の説明 試したマウスの数（生後6週の握る力の試験） ・薬を入れた 7匹 ・入れなかった 4匹 ・病気でない 12匹 ※棒の長さは匹数。力の強さではない",
-      "narrator": "dialogue",
-      "image_asset": "cards/kl054_S12",
-      "lines_hash": "d4d23d984b85"
-    },
-    {
-      "type": "check",
-      "bgm_role": "main",
-      "round": 3,
-      "reference_index": 1,
-      "ken_burns": "static",
-      "source_card": {
-        "kind": "report",
-        "source": "買い取った薬の会社の報告書（2026年10月26日、審査前）",
-        "quote": "This interpretation requires a concurrent, blinded replication",
-        "quote_type": "原文",
-        "highlight": "concurrent, blinded replication",
-        "items": [
-          "訳: 同じ時期に、組を知らずに測る確かめ直しが必要",
-          "安全性は、この報告書では調べていない",
-          "組はくじ引きで分けず、順番に試した",
-          "調べた項目が多く、偶然の差のおそれもある",
-          "新しい候補100個以上を、すでに設計して作った"
-        ],
-        "reference_index": 1
-      },
-      "lines": [
-        {
-          "speaker": "skeptic",
-          "text": "そう。だから報告書自身が、同じ時期に、どちらの組か知らずに測る形で、もう一度確かめる必要がある、と書いてる。",
-          "expression": "neutral",
-          "tag": "weakness",
-          "t0": 0.0,
-          "dur": 8.52,
-          "cards": [
-            {
-              "text": "そう。だから報告書自身が、同じ時期に、",
-              "start": 0.0,
-              "end": 3.17
-            },
-            {
-              "text": "どちらの組か知らずに測る形で、",
-              "start": 3.32,
-              "end": 5.57
-            },
-            {
-              "text": "もう一度確かめる必要がある、と書いてる。",
-              "start": 5.72,
-              "end": 8.72
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "人で安全か、効くかは、まだ何も分かっていない。これは研究の紹介で、治療として勧める話じゃない。",
-          "expression": "neutral",
-          "t0": 8.74,
-          "dur": 6.08,
-          "cards": [
-            {
-              "text": "人で安全か、効くかは、",
-              "start": 0.0,
-              "end": 1.39
-            },
-            {
-              "text": "まだ何も分かっていない。",
-              "start": 1.39,
-              "end": 2.9
-            },
-            {
-              "text": "これは研究の紹介で、",
-              "start": 3.06,
-              "end": 4.32
-            },
-            {
-              "text": "治療として勧める話じゃない。",
-              "start": 4.32,
-              "end": 6.09
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "アンソロピックの発表には、こうもある。クロードは、細胞を早く育てることも、マウスを早く年をとらせることもできない。",
-          "expression": "neutral",
-          "t0": 15.04,
-          "dur": 7.92,
-          "cards": [
-            {
-              "text": "アンソロピックの発表には、こうもある。",
-              "start": 0.0,
-              "end": 2.54
-            },
-            {
-              "text": "クロードは、細胞を早く育てることも、",
-              "start": 2.69,
-              "end": 5.23
-            },
-            {
-              "text": "マウスを早く年をとらせることもできない。",
-              "start": 5.38,
-              "end": 8.05
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "速くならないのは、マウスの育つ時間だけじゃない。あのうまくいった一週間でも、時間がかかっていたのは、AIの作業じゃなく、外の研究所の返事を待つ時間と、チームが決める時間だった、と報告書にある。",
-          "expression": "thinking",
-          "t0": 23.24,
-          "dur": 12.28,
-          "cards": [
-            {
-              "text": "速くならないのは、",
-              "start": 0.2,
-              "end": 1.29
-            },
-            {
-              "text": "マウスの育つ時間だけじゃない。",
-              "start": 1.29,
-              "end": 3.12
-            },
-            {
-              "text": "あのうまくいった一週間でも、",
-              "start": 3.27,
-              "end": 4.97
-            },
-            {
-              "text": "時間がかかっていたのは、AIの作業じゃなく、",
-              "start": 5.12,
-              "end": 7.8
-            },
-            {
-              "text": "外の研究所の返事を待つ時間と、",
-              "start": 7.95,
-              "end": 9.78
-            },
-            {
-              "text": "チームが決める時間だった、と報告書にある。",
-              "start": 9.93,
-              "end": 12.48
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "だったら、待つ時間は縮まなくても、その間に、試すことを何本も並べる。実際、マウスの試験をしている間に、新しい薬の候補を100個以上作って、細胞で試してる。",
-          "expression": "convinced",
-          "tag": "workaround",
-          "t0": 35.74,
-          "dur": 12.04,
-          "cards": [
-            {
-              "text": "だったら、待つ時間は縮まなくても、",
-              "start": 0.0,
-              "end": 2.53
-            },
-            {
-              "text": "その間に、試すことを何本も並べる。実際、",
-              "start": 2.68,
-              "end": 5.85
-            },
-            {
-              "text": "マウスの試験をしている間に、",
-              "start": 6.0,
-              "end": 8.08
-            },
-            {
-              "text": "新しい薬の候補を100個以上作って、",
-              "start": 8.23,
-              "end": 10.9
-            },
-            {
-              "text": "細胞で試してる。",
-              "start": 11.05,
-              "end": 12.24
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "これで、3つ目の答え。薬づくりそのものが速くなったかは、まだ言えない。18か月足らずが速いのか、比べる数字が資料に無いから。",
-          "expression": "convinced",
-          "t0": 48.06,
-          "dur": 10.12,
-          "cards": [
-            {
-              "text": "これで、3つ目の答え。薬づくりそのものが",
-              "start": 0.0,
-              "end": 3.2
-            },
-            {
-              "text": "速くなったかは、まだ言えない。",
-              "start": 3.35,
-              "end": 5.6
-            },
-            {
-              "text": "18か月足らずが速いのか、比べる数字が",
-              "start": 5.75,
-              "end": 8.97
-            },
-            {
-              "text": "資料に無いから。",
-              "start": 9.12,
-              "end": 10.32
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "言えるのは、待つ時間はAIでは縮まず、待つ間に試せる数が増える、ということ。小さなメーカーの試作も、同じね。",
-          "expression": "convinced",
-          "t0": 58.4,
-          "dur": 8.68,
-          "cards": [
-            {
-              "text": "言えるのは、待つ時間はAIでは縮まず、",
-              "start": 0.0,
-              "end": 3.18
-            },
-            {
-              "text": "待つ間に試せる数が増える、ということ。",
-              "start": 3.48,
-              "end": 6.33
-            },
-            {
-              "text": "小さなメーカーの試作も、同じね。",
-              "start": 6.48,
-              "end": 8.88
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "正社員1人の会社でも、薬の候補を何本も同時に進められるところまで来てる。",
-          "expression": "convinced",
-          "tag": "hope",
-          "t0": 67.36,
-          "dur": 5.76,
-          "cards": [
-            {
-              "text": "正社員1人の会社でも、薬の候補を何本も",
-              "start": 0.4,
-              "end": 3.26
-            },
-            {
-              "text": "同時に進められるところまで来てる。",
-              "start": 3.41,
-              "end": 5.96
-            }
-          ]
-        }
-      ],
-      "scene_id": 13,
-      "narration": "沙織「そう。だから報告書自身が、同じ時期に、どちらの組か知らずに測る形で、もう一度確かめる必要がある、と書いてる。」\n沙織「人で安全か、効くかは、まだ何も分かっていない。これは研究の紹介で、治療として勧める話じゃない。」\n沙織「アンソロピックの発表には、こうもある。クロードは、細胞を早く育てることも、マウスを早く年をとらせることもできない。」\n大輔「速くならないのは、マウスの育つ時間だけじゃない。あのうまくいった一週間でも、時間がかかっていたのは、AIの作業じゃなく、外の研究所の返事を待つ時間と、チームが決める時間だった、と報告書にある。」\n大輔「だったら、待つ時間は縮まなくても、その間に、試すことを何本も並べる。実際、マウスの試験をしている間に、新しい薬の候補を100個以上作って、細胞で試してる。」\n沙織「これで、3つ目の答え。薬づくりそのものが速くなったかは、まだ言えない。18か月足らずが速いのか、比べる数字が資料に無いから。」\n沙織「言えるのは、待つ時間はAIでは縮まず、待つ間に試せる数が増える、ということ。小さなメーカーの試作も、同じね。」\n大輔「正社員1人の会社でも、薬の候補を何本も同時に進められるところまで来てる。」\n［画面の資料カード］買い取った薬の会社の報告書（2026年10月26日、審査前） 「This interpretation requires a concurrent, blinded replication」（原文） ・訳: 同じ時期に、組を知らずに測る確かめ直しが必要 ・安全性は、この報告書では調べていない ・組はくじ引きで分けず、順番に試した ・調べた項目が多く、偶然の差のおそれもある ・新しい候補100個以上を、すでに設計して作った",
-      "narrator": "dialogue",
-      "image_asset": "cards/kl054_S13",
-      "lines_hash": "027a65df6dad"
+      "narration": "沙織「ただ、その新しい会社は、作っている途中。お金の額も、薬の挑戦の数も、どの病気かも、まだ書いてない。」\n大輔「じゃあ、決まってることは？」\n沙織「2つ。1つは、新しい会社の最初の仕組み。さっきの、調べ物をAIに手分けさせるもの。薬で狙う体の中の標的と、病気の組み合わせを、45件で試して、もう投資会社の中で使ってる。」\n大輔「もう1つは、新しい会社の最初の薬の挑戦が、1本選ばれたこと。投資会社いわく、人で試す段階に入った薬の多くは、承認まで届かない。試験の作戦の弱さが、何年も後で分かることが多い。」\n大輔「だから、人で試す作戦を、先に練っておくAIの仕組みも作った。選ばれた1本は、この作戦の仕組みで調べたものだ。」\n沙織「ただ、この投資会社は、アンソロピックからAIの利用分と技術の支援を受けてる。仲間うちの話ね。」\n大輔「で、日本の小さな会社は？ 誰が、どんな条件で使えるのか。」\n沙織「この発表には、そこは書いてない。ただアンソロピックは、ひとりで回す働き方を、ほかの研究者に広げる方法を、数か月のうちに話す、と書いてる。」\n大輔「大手の製薬会社も、人で試している最中の薬の計画を見直すのに、AIを使い始めた段階だ。」\n沙織「整理すると、薬を作る側が、もう4つ動いてる。AIの会社自身、ひとりの研究者とAI、AI前提の新しい会社、それに、AIで計画を練る大手。」\n大輔「挑戦の本数を決めるのが、研究者の人数とお金だけじゃなくなり始めた。発表も、うまくいけば業界に広がる、と書いてる。」\n［画面のまとめカード（ふりかえり）］新しい会社: 決まっていること ・決まっている1: 調べ物の仕組みを45件で試し、使用中 ・決まっている2: 最初の薬の挑戦が1本選ばれた ・書いていない: お金の額・挑戦の数・病気・時期\n［画面の資料カード］Anthropic の発表／The Column Group の文 「One of the programs evaluated with this Skill is the first program nominated in Pleiades.」（原文） ・訳: 作戦の仕組みで調べた1本が、新会社の最初の挑戦 ・人で試す作戦を、先に練る仕組み（8月から） ・開示: アンソロピックが利用分と技術支援を提供\n［画面の資料カード］Anthropic の発表（2026年10月27日） 「BMS is using Claude to assess plans of an early-stage drug in clinical trials」（原文） ・訳: 人で試している初期の薬の計画を、AIで評価 ・試験がうまくいく見込みも見積もる ・会社: Bristol Myers Squibb（大手の製薬会社） ・幹部の談話: 数日かかる最初の分析が1回の指示で\n［画面のまとめカード（ふりかえり）］薬を作る側、4つ ・AIの会社自身（アンソロピック） ・1人の研究者とAI ・最初からAI前提の新しい会社 ・人で試す計画にAIを使う大手",
+      "narrator": "dialogue"
     },
     {
       "type": "verdict",
       "bgm_role": "outro",
       "image_asset": "base_cafe",
+      "verdict_from_line": 5,
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "僕の予想は、社員1人の会社がAIを社員の代わりにして難しい開発を回す形は、もう始まってる、だった。始まってる、は当たり。でも、社員の代わり、は言い過ぎ。AIが受け持ったのは、読むことと、下書きや次の一手の案までだった。",
-          "expression": "thinking",
-          "tag": "vs_prediction",
-          "t0": 0.0,
-          "dur": 19.4,
-          "cards": [
-            {
-              "text": "僕の予想は、社員1人の会社がAIを社員の",
-              "start": 0.0,
-              "end": 4.2
-            },
-            {
-              "text": "代わりにして難しい開発を回す形は、",
-              "start": 4.35,
-              "end": 7.07
-            },
-            {
-              "text": "もう始まってる、だった。始まってる、",
-              "start": 7.22,
-              "end": 10.24
-            },
-            {
-              "text": "は当たり。でも、社員の代わり、は言い過ぎ。",
-              "start": 10.39,
-              "end": 14.35
-            },
-            {
-              "text": "AIが受け持ったのは、読むことと、",
-              "start": 14.5,
-              "end": 17.05
-            },
-            {
-              "text": "下書きや次の一手の案までだった。",
-              "start": 17.2,
-              "end": 19.6
-            }
-          ]
+          "text": "先に、僕の予想から。AIを何万も並べた例も、薬全体が何十倍という数字も、資料には無かった。何万も出せたのは、設計案のほう。",
+          "expression": "deflated",
+          "tag": "vs_prediction"
         },
         {
           "speaker": "skeptic",
-          "text": "私の予想は、中身はメールの清書くらいで、次に何をするかの案までは任せていない、だった。そこは外れ。何百ページの読み込みも、候補ごとの次の一手の案も、AIが出してた。",
-          "expression": "amused",
-          "tag": "vs_prediction",
-          "t0": 19.68,
-          "dur": 13.08,
-          "cards": [
-            {
-              "text": "私の予想は、中身はメールの清書くらいで、",
-              "start": 0.0,
-              "end": 3.0
-            },
-            {
-              "text": "次に何をするかの案までは任せていない、",
-              "start": 3.15,
-              "end": 6.0
-            },
-            {
-              "text": "だった。そこは外れ。",
-              "start": 6.15,
-              "end": 7.8
-            },
-            {
-              "text": "何百ページの読み込みも、",
-              "start": 7.8,
-              "end": 9.77
-            },
-            {
-              "text": "候補ごとの次の一手の案も、AIが出してた。",
-              "start": 9.92,
-              "end": 13.28
-            }
-          ]
+          "text": "札は4つ。もうすぐ来る、3年はかかる、根拠待ち、まだ眉唾。",
+          "expression": "neutral"
         },
         {
           "speaker": "skeptic",
-          "text": "薬のほうは、人での試験が早くて2028年の後半、と発表にある。でも、マウスの小さな試験1回では、その時期はまだ言い切れない、と私は思う。",
-          "expression": "neutral",
-          "t0": 32.98,
-          "dur": 9.8,
-          "cards": [
-            {
-              "text": "薬のほうは、",
-              "start": 0.0,
-              "end": 0.89
-            },
-            {
-              "text": "人での試験が早くて2028年の後半、",
-              "start": 0.89,
-              "end": 3.56
-            },
-            {
-              "text": "と発表にある。でも、",
-              "start": 3.71,
-              "end": 5.11
-            },
-            {
-              "text": "マウスの小さな試験1回では、",
-              "start": 5.11,
-              "end": 7.06
-            },
-            {
-              "text": "その時期はまだ言い切れない、と私は思う。",
-              "start": 7.21,
-              "end": 10.0
-            }
-          ]
+          "text": "札を付けるのは、今日二人でたどり着いた答え。AIを並べると、少人数でも、同時にいくつもの薬の挑戦を進めて、本命の薬に近づける。",
+          "expression": "neutral"
         },
         {
           "speaker": "dreamer",
-          "expression": "neutral",
-          "text": "うん。だから今日判定するのは、薬の見通しじゃなく、AIの任せ方のほう。",
-          "t0": 43.06,
-          "dur": 5.44,
-          "cards": [
-            {
-              "text": "うん。だから今日判定するのは、",
-              "start": 0.0,
-              "end": 2.25
-            },
-            {
-              "text": "薬の見通しじゃなく、AIの任せ方のほう。",
-              "start": 2.4,
-              "end": 5.64
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "判定の札は4つ。もうすぐ来る、3年はかかる、根拠待ち、まだ眉唾。二人それぞれ一つ選ぶ。",
-          "expression": "neutral",
-          "t0": 48.72,
-          "dur": 7.64,
-          "cards": [
-            {
-              "text": "判定の札は4つ。もうすぐ来る、",
-              "start": 0.0,
-              "end": 2.52
-            },
-            {
-              "text": "3年はかかる、根拠待ち、まだ眉唾。",
-              "start": 2.67,
-              "end": 5.64
-            },
-            {
-              "text": "二人それぞれ一つ選ぶ。",
-              "start": 5.79,
-              "end": 7.6
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "問いは最初のとおり。社員1人の会社でも、AIで難しい開発を回せる日は来るか。",
-          "expression": "neutral",
-          "t0": 56.58,
-          "dur": 6.4,
-          "cards": [
-            {
-              "text": "問いは最初のとおり。社員1人の会社でも、",
-              "start": 0.26,
-              "end": 3.26
-            },
-            {
-              "text": "AIで難しい開発を回せる日は来るか。",
-              "start": 3.41,
-              "end": 6.27
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "大きい問いね。どこで線を引く？",
-          "expression": "thinking",
-          "t0": 63.26,
-          "dur": 3.12,
-          "cards": [
-            {
-              "text": "大きい問いね。どこで線を引く？",
-              "start": 0.0,
-              "end": 3.12
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "社員の少ない会社が、外注先とのやりとりの整理と、長い書類の読み込みをAIに任せる。決めて送るのは人。この形で、今より大きな仕事を回せるのはいつか、で判定する。",
-          "expression": "neutral",
-          "t0": 66.66,
-          "dur": 12.8,
-          "cards": [
-            {
-              "text": "社員の少ない会社が、",
-              "start": 0.0,
-              "end": 1.57
-            },
-            {
-              "text": "外注先とのやりとりの整理と、",
-              "start": 1.57,
-              "end": 3.76
-            },
-            {
-              "text": "長い書類の読み込みをAIに任せる。",
-              "start": 3.91,
-              "end": 6.57
-            },
-            {
-              "text": "決めて送るのは人。この形で、",
-              "start": 6.72,
-              "end": 9.1
-            },
-            {
-              "text": "今より大きな仕事を回せるのはいつか、",
-              "start": 9.25,
-              "end": 11.95
-            },
-            {
-              "text": "で判定する。",
-              "start": 12.1,
-              "end": 13.0
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "何から任せればいいか、の答えも、そこに入ってるね。",
-          "expression": "neutral",
-          "t0": 79.74,
-          "dur": 3.16,
-          "cards": [
-            {
-              "text": "何から任せればいいか、の答えも、",
-              "start": 0.0,
-              "end": 2.13
-            },
-            {
-              "text": "そこに入ってるね。",
-              "start": 2.28,
-              "end": 3.36
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "僕は「もうすぐ来る」。ここで言う、もうすぐ、は、今日から1年のうちに、小さな会社がこの任せ方で、今より大きな仕事を回し始められる、という意味。",
+          "text": "僕は、もうすぐ来る。ひとりで2つの挑戦が動き、AI前提の新しい会社もできつつある。来年までに、少人数とAIで何本も回す会社は増える。数を打てる分、本命にも近づくと見てる。",
           "expression": "excited",
-          "t0": 83.18,
-          "dur": 11.4,
-          "cards": [
-            {
-              "text": "僕は「もうすぐ来る」。ここで言う、",
-              "start": 0.0,
-              "end": 2.58
-            },
-            {
-              "text": "もうすぐ、は、今日から1年のうちに、",
-              "start": 2.73,
-              "end": 5.43
-            },
-            {
-              "text": "小さな会社がこの任せ方で、今より大きな",
-              "start": 5.58,
-              "end": 8.9
-            },
-            {
-              "text": "仕事を回し始められる、という意味。",
-              "start": 9.05,
-              "end": 11.6
-            }
-          ]
+          "display": "僕は、もうすぐ来る。1人で2つの挑戦が動き、AI前提の新しい会社もできつつある。来年までに、少人数とAIで何本も回す会社は増える。数を打てる分、本命にも近づくと見てる。"
         },
         {
           "speaker": "skeptic",
-          "text": "理由は？",
+          "text": "私は、根拠待ち。否定じゃない。速さだけ見てた私の読みは、外れた。挑戦をいくつも進める所までは、見えてきた。でも、挑戦は本命の薬にたどり着くためのもの。そこに近づけるかは、まだ出てない。",
+          "expression": "thinking",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の札が、もうすぐ来る、に変わるのは、アンソロピックが買った、正社員ひとりの会社が、2027年の目標どおり、2つの病気で、人で試す手前の本命の薬を決めたとき。",
           "expression": "neutral",
-          "t0": 94.86,
-          "dur": 1.32,
-          "cards": [
-            {
-              "text": "理由は？",
-              "start": 0.0,
-              "end": 1.32
-            }
-          ]
+          "display": "私の札が、もうすぐ来る、に変わるのは、アンソロピックが買った、正社員1人の会社が、2027年の目標どおり、2つの病気で本命の薬を決めたとき。"
         },
         {
           "speaker": "dreamer",
-          "text": "一番いい週とはいえ、読み込みと下書きを任せる形は、実際に回ってた。それに、資料の外の話だけど、クロードのようなAIは、もう契約すれば使える。",
+          "text": "持ち帰りは、調べる・設計する・段取りはAIに手分けさせて、決めるのは人。この分け方なら、少人数でも何本も同時に回せる。薬の会社に限らない形だと思う。",
           "expression": "convinced",
-          "t0": 96.46,
-          "dur": 11.36,
-          "cards": [
-            {
-              "text": "一番いい週とはいえ、",
-              "start": 0.0,
-              "end": 1.51
-            },
-            {
-              "text": "読み込みと下書きを任せる形は、",
-              "start": 1.51,
-              "end": 3.78
-            },
-            {
-              "text": "実際に回ってた。それに、",
-              "start": 3.93,
-              "end": 6.05
-            },
-            {
-              "text": "資料の外の話だけど、",
-              "start": 6.05,
-              "end": 7.81
-            },
-            {
-              "text": "クロードのようなAIは、",
-              "start": 7.96,
-              "end": 9.76
-            },
-            {
-              "text": "もう契約すれば使える。",
-              "start": 9.76,
-              "end": 11.41
-            }
-          ]
+          "tag": "takeaway"
         },
         {
           "speaker": "skeptic",
-          "expression": "neutral",
-          "text": "費用は？",
-          "t0": 108.1,
-          "dur": 1.12,
-          "cards": [
-            {
-              "text": "費用は？",
-              "start": 0.0,
-              "end": 1.12
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "expression": "neutral",
-          "text": "この会社がAIにいくら払ったかは、資料に書いていない。",
-          "t0": 109.5,
-          "dur": 3.76,
-          "cards": [
-            {
-              "text": "この会社がAIにいくら払ったかは、",
-              "start": 0.0,
-              "end": 2.36
-            },
-            {
-              "text": "資料に書いていない。",
-              "start": 2.51,
-              "end": 3.85
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "私も「もうすぐ来る」。理由は別。間違いの止め方まで、記録に残っているから。止め方は三つ。こちらの指示に書いていない点をAIが一覧にする、数字は人が確かめる、送るのは人。この線を守れば、小さく試すのは今日からでもできる。大きな仕事を回せるのは、1年のうち、と見てる。",
-          "expression": "convinced",
-          "t0": 113.54,
-          "dur": 19.08,
-          "cards": [
-            {
-              "text": "私も「もうすぐ来る」。理由は別。",
-              "start": 0.0,
-              "end": 2.26
-            },
-            {
-              "text": "間違いの止め方まで、記録に残っているから。",
-              "start": 2.54,
-              "end": 5.41
-            },
-            {
-              "text": "止め方は三つ。こちらの指示に書いていない",
-              "start": 5.56,
-              "end": 8.29
-            },
-            {
-              "text": "点をAIが一覧にする、数字は人が確かめる、",
-              "start": 8.44,
-              "end": 11.31
-            },
-            {
-              "text": "送るのは人。この線を守れば、",
-              "start": 11.46,
-              "end": 13.37
-            },
-            {
-              "text": "小さく試すのは今日からでもできる。",
-              "start": 13.52,
-              "end": 15.84
-            },
-            {
-              "text": "大きな仕事を回せるのは、1年のうち、",
-              "start": 15.99,
-              "end": 18.45
-            },
-            {
-              "text": "と見てる。",
-              "start": 18.6,
-              "end": 19.28
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "二人とも、もうすぐ来る。",
-          "expression": "excited",
-          "t0": 132.9,
-          "dur": 1.96,
-          "cards": [
-            {
-              "text": "二人とも、もうすぐ来る。",
-              "start": 0.0,
-              "end": 1.96
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "今日の持ち帰り。社員1人の会社は、AIに、読む・まとめる・下書きを任せて、外の研究所とのやりとりを回した。速くならないのは、生き物の育つ時間と、相手の返事を待つ時間。",
-          "expression": "convinced",
-          "tag": "takeaway",
-          "t0": 135.08,
-          "dur": 13.8,
-          "cards": [
-            {
-              "text": "今日の持ち帰り。社員1人の会社は、AIに、",
-              "start": 0.0,
-              "end": 3.52
-            },
-            {
-              "text": "読む・まとめる・下書きを任せて、",
-              "start": 3.67,
-              "end": 6.07
-            },
-            {
-              "text": "外の研究所とのやりとりを回した。",
-              "start": 6.22,
-              "end": 8.62
-            },
-            {
-              "text": "速くならないのは、生き物の育つ時間と、",
-              "start": 8.77,
-              "end": 12.2
-            },
-            {
-              "text": "相手の返事を待つ時間。",
-              "start": 12.35,
-              "end": 14.0
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "今月できるのは、取引先との長いメールのやりとりを1件選んで、AIに、今どこで止まっているか、次に誰に何を頼むかをまとめさせること。下書きと一緒に、こちらの指示に書いていない点も一覧で出させる。",
-          "expression": "neutral",
-          "tag": "next_step",
-          "t0": 149.16,
-          "dur": 14.6,
-          "cards": [
-            {
-              "text": "今月できるのは、取引先との長いメールの",
-              "start": 0.0,
-              "end": 2.97
-            },
-            {
-              "text": "やりとりを1件選んで、AIに、",
-              "start": 3.12,
-              "end": 5.31
-            },
-            {
-              "text": "今どこで止まっているか、次に誰に何を",
-              "start": 5.46,
-              "end": 8.09
-            },
-            {
-              "text": "頼むかをまとめさせること。下書きと一緒に、",
-              "start": 8.24,
-              "end": 11.3
-            },
-            {
-              "text": "こちらの指示に書いていない",
-              "start": 11.45,
-              "end": 13.34
-            },
-            {
-              "text": "点も一覧で出させる。",
-              "start": 13.34,
-              "end": 14.8
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "外に出せない中身は、消してから渡す。数量と日付は自分で確かめて、送るのは自分で。",
-          "expression": "neutral",
-          "t0": 164.04,
-          "dur": 7.16,
-          "cards": [
-            {
-              "text": "外に出せない中身は、消してから渡す。",
-              "start": 0.0,
-              "end": 2.94
-            },
-            {
-              "text": "数量と日付は自分で確かめて、",
-              "start": 3.3,
-              "end": 5.4
-            },
-            {
-              "text": "送るのは自分で。",
-              "start": 5.55,
-              "end": 7.13
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "これは、2026年11月8日時点の、二人の見立て。",
-          "expression": "neutral",
-          "t0": 171.48,
-          "dur": 3.96,
-          "cards": [
-            {
-              "text": "これは、2026年11月8日時点の、",
-              "start": 0.0,
-              "end": 2.94
-            },
-            {
-              "text": "二人の見立て。",
-              "start": 3.09,
-              "end": 4.14
-            }
-          ]
+          "text": "今日の話は、ほとんどが人で試す前の段階で、どれも出した会社自身の報告。11月時点の見立てで、研究の紹介。おすすめではないからね。",
+          "expression": "neutral"
         }
       ],
-      "scene_id": 14,
-      "verdict_from_line": 13,
-      "narration": "大輔「僕の予想は、社員1人の会社がAIを社員の代わりにして難しい開発を回す形は、もう始まってる、だった。始まってる、は当たり。でも、社員の代わり、は言い過ぎ。AIが受け持ったのは、読むことと、下書きや次の一手の案までだった。」\n沙織「私の予想は、中身はメールの清書くらいで、次に何をするかの案までは任せていない、だった。そこは外れ。何百ページの読み込みも、候補ごとの次の一手の案も、AIが出してた。」\n沙織「薬のほうは、人での試験が早くて2028年の後半、と発表にある。でも、マウスの小さな試験1回では、その時期はまだ言い切れない、と私は思う。」\n大輔「うん。だから今日判定するのは、薬の見通しじゃなく、AIの任せ方のほう。」\n大輔「判定の札は4つ。もうすぐ来る、3年はかかる、根拠待ち、まだ眉唾。二人それぞれ一つ選ぶ。」\n大輔「問いは最初のとおり。社員1人の会社でも、AIで難しい開発を回せる日は来るか。」\n沙織「大きい問いね。どこで線を引く？」\n大輔「社員の少ない会社が、外注先とのやりとりの整理と、長い書類の読み込みをAIに任せる。決めて送るのは人。この形で、今より大きな仕事を回せるのはいつか、で判定する。」\n沙織「何から任せればいいか、の答えも、そこに入ってるね。」\n大輔「僕は「もうすぐ来る」。ここで言う、もうすぐ、は、今日から1年のうちに、小さな会社がこの任せ方で、今より大きな仕事を回し始められる、という意味。」\n沙織「理由は？」\n大輔「一番いい週とはいえ、読み込みと下書きを任せる形は、実際に回ってた。それに、資料の外の話だけど、クロードのようなAIは、もう契約すれば使える。」\n沙織「費用は？」\n大輔「この会社がAIにいくら払ったかは、資料に書いていない。」\n沙織「私も「もうすぐ来る」。理由は別。間違いの止め方まで、記録に残っているから。止め方は三つ。こちらの指示に書いていない点をAIが一覧にする、数字は人が確かめる、送るのは人。この線を守れば、小さく試すのは今日からでもできる。大きな仕事を回せるのは、1年のうち、と見てる。」\n大輔「二人とも、もうすぐ来る。」\n大輔「今日の持ち帰り。社員1人の会社は、AIに、読む・まとめる・下書きを任せて、外の研究所とのやりとりを回した。速くならないのは、生き物の育つ時間と、相手の返事を待つ時間。」\n沙織「今月できるのは、取引先との長いメールのやりとりを1件選んで、AIに、今どこで止まっているか、次に誰に何を頼むかをまとめさせること。下書きと一緒に、こちらの指示に書いていない点も一覧で出させる。」\n大輔「外に出せない中身は、消してから渡す。数量と日付は自分で確かめて、送るのは自分で。」\n沙織「これは、2026年11月8日時点の、二人の見立て。」",
-      "narrator": "dialogue",
-      "lines_hash": "e7c0541a8319",
-      "ken_burns": "zoom_out",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "visuals": [
+        {
+          "from_line": 1,
+          "recap_card": {
+            "title": "二人の答え合わせ",
+            "items": [
+              "1 1人とAI: 扱える試作の数は人数に縛られない",
+              "2 AIを何万も: 例は無し。何万も出たのは設計案",
+              "3 誰が作る: AIの会社・1人とAI・新会社・大手"
+            ]
+          }
+        },
+        {
+          "from_line": 4,
+          "image_asset": "photos/kl054_S08",
+          "real_photo": true
+        },
+        {
+          "from_line": 6,
+          "image_asset": "photos/kl054_S07",
+          "real_photo": true
+        }
+      ],
+      "scene_id": 12,
+      "narration": "大輔「先に、僕の予想から。AIを何万も並べた例も、薬全体が何十倍という数字も、資料には無かった。何万も出せたのは、設計案のほう。」\n沙織「札は4つ。もうすぐ来る、3年はかかる、根拠待ち、まだ眉唾。」\n沙織「札を付けるのは、今日二人でたどり着いた答え。AIを並べると、少人数でも、同時にいくつもの薬の挑戦を進めて、本命の薬に近づける。」\n大輔「僕は、もうすぐ来る。ひとりで2つの挑戦が動き、AI前提の新しい会社もできつつある。来年までに、少人数とAIで何本も回す会社は増える。数を打てる分、本命にも近づくと見てる。」\n沙織「私は、根拠待ち。否定じゃない。速さだけ見てた私の読みは、外れた。挑戦をいくつも進める所までは、見えてきた。でも、挑戦は本命の薬にたどり着くためのもの。そこに近づけるかは、まだ出てない。」\n沙織「私の札が、もうすぐ来る、に変わるのは、アンソロピックが買った、正社員ひとりの会社が、2027年の目標どおり、2つの病気で、人で試す手前の本命の薬を決めたとき。」\n大輔「持ち帰りは、調べる・設計する・段取りはAIに手分けさせて、決めるのは人。この分け方なら、少人数でも何本も同時に回せる。薬の会社に限らない形だと思う。」\n沙織「今日の話は、ほとんどが人で試す前の段階で、どれも出した会社自身の報告。11月時点の見立てで、研究の紹介。おすすめではないからね。」\n［画面のまとめカード（ふりかえり）］二人の答え合わせ ・1 1人とAI: 扱える試作の数は人数に縛られない ・2 AIを何万も: 例は無し。何万も出たのは設計案 ・3 誰が作る: AIの会社・1人とAI・新会社・大手",
+      "narrator": "dialogue"
     },
     {
       "type": "closing",
@@ -2982,105 +1199,52 @@
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "薬の候補のほうは、人で試す日が近づいたら、またその後を確かめよう。",
+          "text": "今月の一歩。自分の仕事で、調べ物を一つ、AIに下調べさせてみる。その答えを、自分で確かめてから使う。",
           "expression": "excited",
-          "t0": 0.0,
-          "dur": 4.96,
-          "cards": [
-            {
-              "text": "薬の候補のほうは、人で試す日が近づいたら、",
-              "start": 0.0,
-              "end": 3.06
-            },
-            {
-              "text": "またその後を確かめよう。",
-              "start": 3.21,
-              "end": 4.96
-            }
-          ]
+          "tag": "next_step"
         },
         {
           "speaker": "skeptic",
-          "text": "次に見るのは、同じ時期に、組を知らずに測る形で、確かめ直した結果が出るか、ね。",
-          "expression": "neutral",
-          "t0": 5.24,
-          "dur": 6.4,
-          "cards": [
-            {
-              "text": "次に見るのは、同じ時期に、",
-              "start": 0.0,
-              "end": 2.18
-            },
-            {
-              "text": "組を知らずに測る形で、",
-              "start": 2.18,
-              "end": 4.02
-            },
-            {
-              "text": "確かめ直した結果が出るか、ね。",
-              "start": 4.17,
-              "end": 6.42
-            }
-          ]
+          "text": "それと、アンソロピックが数か月のうちに話す、ひとりで回す働き方を広げる方法。出たら、日本の小さな会社でも使えるのか、また二人で確かめよう。",
+          "expression": "amused",
+          "display": "それと、アンソロピックが数か月のうちに話す、1人で回す働き方を広げる方法。出たら、日本の小さな会社でも使えるのか、また二人で確かめよう。"
         },
         {
           "speaker": "dreamer",
           "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
-          "expression": "convinced",
-          "t0": 11.92,
-          "dur": 5.08,
-          "cards": [
-            {
-              "text": "次はどんな研究が、誰かの幸せな未来を",
-              "start": 0.0,
-              "end": 3.7
-            },
-            {
-              "text": "運んでくるのか。",
-              "start": 3.85,
-              "end": 5.05
-            }
-          ]
+          "expression": "convinced"
         },
         {
           "speaker": "skeptic",
           "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
-          "expression": "amused",
-          "t0": 17.28,
-          "dur": 6.6,
-          "cards": [
-            {
-              "text": "それが本物かどうか、",
-              "start": 0.0,
-              "end": 1.08
-            },
-            {
-              "text": "また一緒に確かめましょう。",
-              "start": 1.08,
-              "end": 2.48
-            },
-            {
-              "text": "元の発表は概要欄に載せています。",
-              "start": 2.8,
-              "end": 4.51
-            },
-            {
-              "text": "チャンネル登録して、待っていてください。",
-              "start": 4.66,
-              "end": 6.8
-            }
-          ]
+          "expression": "amused"
         }
       ],
-      "scene_id": 15,
-      "narration": "大輔「薬の候補のほうは、人で試す日が近づいたら、またその後を確かめよう。」\n沙織「次に見るのは、同じ時期に、組を知らずに測る形で、確かめ直した結果が出るか、ね。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」",
-      "narrator": "dialogue",
-      "lines_hash": "d62ff4fdb202",
-      "ken_burns": "zoom_out",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "visuals": [
+        {
+          "from_line": 1,
+          "step_card": {
+            "title": "今月の一歩",
+            "items": [
+              "自分の仕事の調べ物を一つ、AIに下調べさせる",
+              "答えは、自分で確かめてから使う",
+              "目印: アンソロピックが話す「広げる方法」"
+            ]
+          }
+        },
+        {
+          "from_line": 3,
+          "image_asset": "photos/kl054_S11",
+          "real_photo": true
+        },
+        {
+          "from_line": 4,
+          "scene_image": true
+        }
+      ],
+      "scene_id": 13,
+      "narration": "大輔「今月の一歩。自分の仕事で、調べ物を一つ、AIに下調べさせてみる。その答えを、自分で確かめてから使う。」\n沙織「それと、アンソロピックが数か月のうちに話す、ひとりで回す働き方を広げる方法。出たら、日本の小さな会社でも使えるのか、また二人で確かめよう。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」\n［画面のまとめカード（今日の一歩）］今月の一歩 ・自分の仕事の調べ物を一つ、AIに下調べさせる ・答えは、自分で確かめてから使う ・目印: アンソロピックが話す「広げる方法」",
+      "narrator": "dialogue"
     }
   ],
   "shorts": [
@@ -3089,50 +1253,47 @@
       "scenes": [
         {
           "narrator": "skeptic",
-          "narration": "社員1人で、薬の開発？",
+          "narration": "AIを何万も動かせば、何十倍？",
           "expression": "surprised",
-          "scene_id": 6
-        },
-        {
-          "narrator": "dreamer",
-          "narration": "研究所の341ページの資料を、AIが8分足らずでまとめた。",
-          "expression": "excited",
-          "react": "surprised",
-          "scene_id": 10
-        },
-        {
-          "narrator": "skeptic",
-          "narration": "でも、人が見直したのに、AIの間違いが外の研究所に届いた。",
-          "expression": "doubt",
           "scene_id": 8
         },
         {
           "narrator": "dreamer",
-          "narration": "下書きはAI、決めて送るのは人。",
-          "expression": "convinced",
-          "scene_id": 10
+          "narration": "研究者役のAIを何万人分も動かせば、薬は何十倍早くできる。",
+          "expression": "excited",
+          "scene_id": 6
         },
         {
           "narrator": "skeptic",
-          "narration": "小さな会社は、何から任せる？ 判定は本編で。",
-          "expression": "thinking",
+          "narration": "マウスは、AIでも早く育たない。書いたのはAIの会社自身。",
+          "expression": "doubt",
+          "scene_id": 7
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "正社員ひとりの会社が、11の研究所の実験を、AIで回してた。",
+          "expression": "excited",
           "scene_id": 6
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "速さを決めたのは、研究所の返事と、人の決断だった。",
+          "expression": "thinking",
+          "scene_id": 9
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "どこまで本当か。判定は本編で。",
+          "expression": "excited",
+          "scene_id": 10
         }
       ]
     }
   ],
   "beginner_review": {
     "passed_at": "2026-11-08",
-    "rounds": 13,
+    "rounds": 4,
     "report": "script_prep/review_reports/kl054_beginner_review_pass.md",
-    "lines_digest": "df76ee086750",
-    "rechecked_scenes": [
-      "7"
-    ]
-  },
-  "bgm_sources": {
-    "intro": "BGM/kl035-BGM-intro.mp3",
-    "main": "BGM/kl042-BGM-main.mp3",
-    "outro": "BGM/kl041-BGM-outro.mp3"
+    "lines_digest": "a1585f92382f"
   }
 }
