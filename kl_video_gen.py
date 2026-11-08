@@ -1015,6 +1015,11 @@ def gen_shorts_video(episode_id: str, out_dir: Path = None, static_cast: bool = 
             # （ズームすると数値の位置関係が読み取りにくくなる）で完全静止にする
             # （2026-08-25追加。本編側の修正時にShortsが対象外だったことに気づいた）。
             effect = "static" if scene.get("style") == "chart" else "zoom_in"
+            ref = next((s for s in ep["scenes"] if s["scene_id"] == scene.get("scene_id")), None) if scene.get("scene_id") else None
+            if effect == "zoom_in" and ref and ref.get("real_photo") and (ref.get("image_asset") or "").startswith("photos/"):
+                # 実物の写真から作ったカット（kl_image_gen が kl_photo_commons.vertical_from_asset で作る、2026-11-08）は、
+                # 焼き込んだクレジットが切れないよう、本編の写真と同じゆっくりした寄り（最大1.06倍）にする
+                effect = "gentle_zoom"
             make_ken_burns(img, dst, durations[i - 1], effect, w=SHORTS_W, h=SHORTS_H)
             clips.append(dst)
 

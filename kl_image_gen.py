@@ -954,7 +954,13 @@ def main():
                     r["name"] = face_path.name
                     qa_results.append(r)
 
+            photo_uses = {}  # 写真の素材ごとの使った回数（同じ写真が続くときに構図を変える。対象外のカットも数える）
             for i, s in enumerate(shorts["scenes"], start=1):
+                ref_main = scenes_by_id.get(s.get("scene_id")) if s.get("scene_id") else None
+                photo_asset = (ref_main.get("image_asset") or "") if (ref_main and ref_main.get("real_photo")) else ""
+                photo_use_index = photo_uses.get(photo_asset, 0) if photo_asset.startswith("photos/") else 0
+                if photo_asset.startswith("photos/"):
+                    photo_uses[photo_asset] = photo_use_index + 1
                 if shorts_target_ids is not None and i not in shorts_target_ids:
                     continue
                 out_path = out_dir / f"shorts{mid}_S{i:02d}.png"
@@ -971,7 +977,21 @@ def main():
                 main_scene = scenes_by_id.get(ref_scene_id) if ref_scene_id else None
                 main_img_path = (out_dir / f"S{ref_scene_id:02d}.png") if ref_scene_id else None
 
-                if main_scene is not None and main_img_path.exists():
+                if photo_asset.startswith("photos/"):
+                    # 実物の写真のシーン（real_photo）は AI で描き直さない（2026-11-08、kl054）。描き直すと「実物ではない
+                    # 写真風の画像」になり、実物の写真を使ったと言いながら偽の写真を出すことになる（画風の QA にも通らない）。
+                    # 元の写真を縦の枠に置き、余白を同じ写真のぼかしで埋め、クレジットを焼き込む（kl_photo_commons）。
+                    # カットに photo_view（{"fit": "contain"|"fill", "focus": [x, y], "zoom": z}）があればその構図にする
+                    import kl_photo_commons
+                    try:
+                        info = kl_photo_commons.vertical_from_asset(photo_asset, out_path, view=s.get("photo_view"),
+                                                                    use_index=photo_use_index)
+                        print(f"✅ {out_path.name}（実物の写真 {photo_asset} から作成、AI不使用。構図: {info['view']}）")
+                        r = {"ok": True, "issues": [], "attempts": 0, "real_photo": photo_asset, "view": info["view"]}
+                    except Exception as e:  # noqa: BLE001 — 元の写真が無い・ハッシュ不一致など。AI の描き直しには逃げない
+                        print(f"❌ {out_path.name}: 写真から縦長画像を作れません: {e}", file=sys.stderr)
+                        r = {"ok": False, "issues": [f"写真から縦長画像を作れません: {e}"], "attempts": 0}
+                elif main_scene is not None and main_img_path.exists():
                     # 固定素材（image_asset）のシーンには image_prompt が無いので、素材の説明で代用する
                     image_prompt = main_scene.get("image_prompt") or ASSET_DESCRIPTIONS.get(
                         main_scene.get("image_asset"), "the same scene as the reference image")

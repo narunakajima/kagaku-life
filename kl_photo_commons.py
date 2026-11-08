@@ -198,6 +198,159 @@ def _compose(photo: Image.Image, credit: str, note: str) -> Image.Image:
     return canvas
 
 
+# ── Shorts（9:16）の縦長画像を、実物の写真から作る（2026-11-08、kl054） ─────────────────────────
+# 写真のシーンを Shorts で使うとき、AI で縦に描き直すと「実物ではない写真風の画像」になる（実物の写真を使ったと言いながら
+# 偽の写真を出すことになり、画風の規則とも食い違う）。そこで、元の写真をそのまま縦の枠に置き、余白を同じ写真のぼかしで埋める。
+# 位置は kl_dialogue.SHORTS_LAYOUT（768×1376）に合わせる:
+#   - 1カット目の hook_lines（y=96〜約275）、字幕（y≈0.56H=770 の1行）、最後のカットの判定ラベル（y=330〜516）と
+#     「↓ 続きは本編で」（y≈908〜）、下の立ち絵（y≥976）
+#   - YouTube の Shorts の画面は、右上に検索・メニューのアイコン、右の縦一列に高評価などのボタンが重なる
+#   クレジットは、写真のすぐ下・字幕の下の左側（y≈810〜886）に置く。上の要素と YouTube のボタンのどれにも重ならない。
+#   動画では写真のカットを gentle_zoom（最大1.06倍、中央）で動かすので、その寄りでも画面内に残る位置にしてある。
+VW, VH = 768, 1376
+V_PHOTO_CY = 0.355          # 写真の縦の中心（画面の高さに対する割合）
+V_PHOTO_MAX_H = 700         # 写真の最大の高さ（縦長の写真がこれで決まる）
+V_CREDIT_X = 28             # クレジットの左端
+V_CREDIT_TOP = 812          # クレジットの上端（字幕 y≈738〜802 の下、「続きは本編で」y≈908 の上）
+V_CREDIT_FONT = 22
+V_CREDIT_MAX_W = 480        # これを超える行は「／」で折り返す（右の YouTube のボタンに掛からない幅）
+
+
+def _photo_stem(asset: str) -> str:
+    m = re.fullmatch(r"photos/(.+)", asset or "")
+    if not m:
+        raise ValueError(f"写真の素材ではありません: {asset}")
+    return m.group(1)
+
+
+def source_path(stem: str) -> Path | None:
+    """取り込んだときの元の写真（クレジットを焼き込む前）。assets/photos/{stem}_src.{jpg|png|webp}"""
+    for ext in ("jpg", "png", "webp"):
+        p = PHOTO_DIR / f"{stem}_src.{ext}"
+        if p.exists():
+            return p
+    return None
+
+
+def _save_source(data: bytes, stem: str) -> Path:
+    fmt = (Image.open(io.BytesIO(data)).format or "JPEG").lower()
+    ext = {"jpeg": "jpg", "png": "png", "webp": "webp"}.get(fmt, "jpg")
+    p = PHOTO_DIR / f"{stem}_src.{ext}"
+    p.write_bytes(data)
+    return p
+
+
+def load_source(asset: str) -> tuple[Image.Image, dict]:
+    """写真の素材（photos/...）の元の写真と出所の記録を返す。元の写真が無ければ、Commons の記録の URL から取り直し、
+    取り込んだときのハッシュと一致したものだけを保存して使う（別の画像に差し替わっていたら止める）"""
+    stem = _photo_stem(asset)
+    rec_path = PHOTO_DIR / f"{stem}.json"
+    if not rec_path.exists():
+        raise FileNotFoundError(f"出所の記録がありません: {rec_path}")
+    rec = json.loads(rec_path.read_text(encoding="utf-8"))
+    src = source_path(stem)
+    if src is None:
+        if rec.get("origin") == "import" or not rec.get("thumb_url"):
+            raise FileNotFoundError(f"元の画像がありません: {PHOTO_DIR / (stem + '_src.*')}"
+                                    "（import の素材は、取り込んだ元の画像をこの名前で置く）")
+        data = _get(rec["thumb_url"])
+        if rec.get("downloaded_sha256") and hashlib.sha256(data).hexdigest() != rec["downloaded_sha256"]:
+            raise RuntimeError(f"Commons の画像が取り込んだときと違います（ハッシュ不一致）: {rec['page_url']}。"
+                               "fetch で取り込み直してください")
+        src = _save_source(data, stem)
+        print(f"   元の写真を保存（ハッシュ一致）: {_rel(src)}")
+    data = src.read_bytes()
+    if rec.get("downloaded_sha256") and hashlib.sha256(data).hexdigest() != rec["downloaded_sha256"]:
+        raise RuntimeError(f"元の写真が取り込んだときと違います（ハッシュ不一致）: {src}")
+    return Image.open(io.BytesIO(data)).convert("RGB"), rec
+
+
+def crop_allowed(rec: dict) -> bool:
+    """切り抜いてよいか。Commons（PD・CC0・CC BY・CC BY-SA）は改変できる。import の素材は、利用条件が改変不可・
+    報道目的に限ることがあるので、切り抜かない（縮小して中央に置くだけ）"""
+    return rec.get("origin") != "import"
+
+
+def _fit_credit_lines(d: ImageDraw.ImageDraw, credit: str, note: str, font) -> list[str]:
+    lines = []
+    for t in [credit] + ([note] if note else []):
+        if d.textlength(t, font=font) <= V_CREDIT_MAX_W:
+            lines.append(t)
+            continue
+        # 「写真: 作者／ライセンス／Wikimedia Commons」は、作者の後ろで折り返す
+        head, sep, rest = t.partition("／")
+        if sep:
+            lines += [head, rest]
+        else:
+            lines.append(t)
+    return lines
+
+
+def compose_vertical(photo: Image.Image, credit: str, note: str = "", view: dict | None = None,
+                     allow_crop: bool = True) -> Image.Image:
+    """写真から Shorts の 9:16（768×1376）の画像を作る。AI は使わない。
+    view: {"fit": "contain"|"fill", "focus": [x, y]（0〜1、fill の切り抜きの中心）, "zoom": 1.0〜}
+      contain = 写真の全体を縦の枠の中に置く（既定）。fill = 枠（768×V_PHOTO_MAX_H）いっぱいに切り抜く（同じ写真が
+      続くときに構図を変えるため）。allow_crop=False のときは常に contain"""
+    photo = photo.convert("RGB")
+    view = view or {}
+    # 背景: 写真を画面全体に引き伸ばして強くぼかし、暗くする（本編の写真と同じ見せ方）
+    cover = max(VW / photo.width, VH / photo.height)
+    bg = photo.resize((round(photo.width * cover), round(photo.height * cover)), Image.LANCZOS)
+    bg = bg.crop(((bg.width - VW) // 2, (bg.height - VH) // 2, (bg.width - VW) // 2 + VW, (bg.height - VH) // 2 + VH))
+    bg = bg.filter(ImageFilter.GaussianBlur(28))
+    bg = Image.eval(bg, lambda v: int(v * 0.55))
+    canvas = bg.copy()
+    box_w, box_h = VW, V_PHOTO_MAX_H
+    fit = view.get("fit", "contain") if allow_crop else "contain"
+    if fit == "fill":
+        zoom = max(1.0, float(view.get("zoom", 1.0)))
+        fx, fy = (view.get("focus") or [0.5, 0.5])[:2]
+        scale = max(box_w / photo.width, box_h / photo.height) * zoom
+        cw, ch = box_w / scale, box_h / scale   # 元の写真での切り抜きの大きさ
+        x0 = min(max(fx * photo.width - cw / 2, 0), photo.width - cw)
+        y0 = min(max(fy * photo.height - ch / 2, 0), photo.height - ch)
+        fg = photo.crop((round(x0), round(y0), round(x0 + cw), round(y0 + ch))).resize((box_w, box_h), Image.LANCZOS)
+    else:
+        contain = min(box_w / photo.width, box_h / photo.height)
+        fg = photo.resize((round(photo.width * contain), round(photo.height * contain)), Image.LANCZOS)
+    cy = int(VH * V_PHOTO_CY)
+    canvas.paste(fg, ((VW - fg.width) // 2, cy - fg.height // 2))
+    # クレジット（写真の下の左。出所は常に画面に出す）
+    d = ImageDraw.Draw(canvas, "RGBA")
+    font = ImageFont.truetype(str(FONT_MEDIUM), V_CREDIT_FONT)
+    lines = _fit_credit_lines(d, credit, note, font)
+    wmax = max(d.textlength(t, font=font) for t in lines)
+    pad, lh = 10, 30
+    x0, y0 = V_CREDIT_X, V_CREDIT_TOP
+    x1, y1 = x0 + wmax + pad * 2, y0 + lh * len(lines) + pad * 2 - 4
+    d.rounded_rectangle((x0, y0, x1, y1), radius=8, fill=(0, 0, 0, 175))
+    for n, t in enumerate(lines):
+        d.text((x0 + pad, y0 + pad - 2 + n * lh), t, font=font, fill=(255, 255, 255, 255))
+    return canvas
+
+
+# 同じ写真を Shorts で何度も使うときの、2回目以降の構図（切り抜きの位置を変えて単調にしない）
+AUTO_VIEWS = [
+    {"fit": "contain"},
+    {"fit": "fill", "focus": [0.5, 0.5], "zoom": 1.0},
+    {"fit": "fill", "focus": [0.3, 0.5], "zoom": 1.25},
+    {"fit": "fill", "focus": [0.7, 0.5], "zoom": 1.25},
+]
+
+
+def vertical_from_asset(asset: str, out_path: Path, view: dict | None = None, use_index: int = 0) -> dict:
+    """写真の素材（photos/...）から Shorts の縦長画像を作って保存する。view が無ければ、同じ写真の何回目か（use_index）で
+    構図を選ぶ（AUTO_VIEWS）。戻り値: 使った構図とクレジット"""
+    photo, rec = load_source(asset)
+    if view is None:
+        view = AUTO_VIEWS[min(use_index, len(AUTO_VIEWS) - 1)]
+    allow = crop_allowed(rec)
+    img = compose_vertical(photo, rec.get("credit_on_screen", ""), rec.get("note", ""), view=view, allow_crop=allow)
+    img.save(out_path)
+    return {"view": view if allow else {"fit": "contain"}, "credit": rec.get("credit_on_screen", "")}
+
+
 def _rel(p: Path) -> str:
     try:
         return str(p.relative_to(BASE_DIR))
@@ -242,6 +395,7 @@ def cmd_fetch(a):
     out_png, out_json = _paths(a.episode, a.scene, slot)
     PHOTO_DIR.mkdir(parents=True, exist_ok=True)
     _compose(photo, credit, a.note or "").save(out_png)
+    _save_source(data, out_png.stem)  # 元の写真も残す（Shorts の縦長画像を写真から作るため）
     rec = {**i, "episode": a.episode, "scene_id": a.scene, "slot": slot, "origin": "commons",
            "credit_on_screen": credit, "note": a.note or "",
            "retrieved": date.today().isoformat(), "downloaded_sha256": hashlib.sha256(data).hexdigest(),
@@ -395,6 +549,7 @@ def cmd_import(a):
     out_png, out_json = _paths(a.episode, a.scene, slot)
     PHOTO_DIR.mkdir(parents=True, exist_ok=True)
     _compose(photo, a.credit.strip(), a.note or "").save(out_png)
+    _save_source(data, out_png.stem)  # 元の画像も残す（Shorts の縦長画像を写真から作るため。切り抜かない）
     rec = {"origin": "import", "kind": a.kind, "episode": a.episode, "scene_id": a.scene, "slot": slot,
            "source_url": a.source_url, "credit": a.credit.strip(), "credit_on_screen": a.credit.strip(),
            "terms": a.terms.strip(), "terms_url": a.terms_url, "note": a.note or "",
