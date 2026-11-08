@@ -203,3 +203,10 @@
 {"ts": "2026-11-08T19:41:25+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl054", "step": "5.6", "result": "ok", "retries": 0, "note": "案1＋案5の数字をサムネに。S01に『僕の推測。』"}
 {"ts": "2026-11-08T19:47:16+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl054", "step": "6", "result": "retry", "retries": 0, "note": "Shorts縦長画像: 写真シーンをAIが描き直すためQA未解決6件。実写真は9:16の構図で使う方針をレオへ"}
 {"ts": "2026-11-08T19:55:07+09:00", "kind": "call", "agent": "kl-art-director", "session": "78422bd5-eaf3-4817-92f1-fd54e0c97661"}
+{"ts": "2026-11-08T19:55:21+09:00", "kind": "work", "agent": "kl-art-director", "episode": "kl054", "step": "6.7", "result": "ok", "retries": 0, "note": "Shorts縦長画像を実写真から作る方式に（AI描き直しをやめた）。本編・サムネ確認OK"}
+{"ts": "2026-11-08T20:12:38+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl054", "step": "8", "result": "ok", "retries": 0, "note": "TTS完了 12.5分、S05 64秒・S12 93秒、読み照合QA不一致なし、話速差10%"}
+{"ts": "2026-11-08T20:17:28+09:00", "kind": "call", "agent": "kl-manager", "session": "78422bd5-eaf3-4817-92f1-fd54e0c97661"}
+{"ts": "2026-11-08T20:17:38+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl054", "step": "11", "result": "ok", "retries": 0, "note": "GO。verdict_from_line 4 を推奨、BGM ライブラリ3曲で確定、話速差10%（句読点を除くと9%）は許容"}
+{"ts": "2026-11-08T20:31:10+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl054", "step": "12", "result": "retry", "retries": 0, "note": "動画確認: 予告の写真クレジットがズームで右端切れ、判定ラベルが写真クレジットに重なる→レオへ"}
+{"ts": "2026-11-08T20:36:17+09:00", "kind": "call", "agent": "kl-art-director", "session": "78422bd5-eaf3-4817-92f1-fd54e0c97661"}
+{"ts": "2026-11-08T20:48:45+09:00", "kind": "call", "agent": "kl-art-director", "session": "78422bd5-eaf3-4817-92f1-fd54e0c97661"}

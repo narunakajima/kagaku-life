@@ -75,6 +75,19 @@ def image_part_from_path(path: Path) -> types.Part:
 BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 
+def _is_real_photo(scene: dict, scenes: list) -> bool:
+    """実物の写真のシーンか（reuse_scene_id の参照先が写真なら、流用するシーンも写真）。kl_video_gen.scene_is_real_photo と同じ判定。"""
+    by_id = {s.get("scene_id"): s for s in scenes}
+    seen = set()
+    s = scene
+    while s is not None and s.get("scene_id") not in seen:
+        if s.get("real_photo"):
+            return True
+        seen.add(s.get("scene_id"))
+        s = by_id.get(s.get("reuse_scene_id")) if s.get("reuse_scene_id") else None
+    return False
+
+
 def is_target_scene(scene: dict) -> bool:
     # SCと同じ仕様にする（2026-08-25改訂）: SCのinfer_zoom_anchor()は
     # 全シーンに対して必ず何らかのeffect（pan_zoom_out_lr/rl・zoom_in・
@@ -176,6 +189,15 @@ def run(episode_id: str, scene_filter: list = None):
             scene.pop("zoom_anchor", None)
             updated += 1
             print(f"  S{scene_id:02d}: dataタイプ → ken_burns=static（完全静止、判定スキップ）")
+            continue
+        if _is_real_photo(scene, ep["scenes"]):
+            # 実物の写真（右上にクレジットを焼き込んだもの）と、それを reuse_scene_id で流用するシーン（ティザーなど）は、
+            # 強い寄り・引きでクレジットが切れるので、1.06倍までのゆっくりした寄りにする（2026-11-08、kl054）。
+            # kl_video_gen.py も同じ置き換えをするが、JSON の値も実際の動きと合わせておく
+            scene["ken_burns"] = "gentle_zoom"
+            scene["zoom_anchor"] = {"x": 0.5, "y": 0.5}
+            updated += 1
+            print(f"  S{scene_id:02d}: 実物の写真 → ken_burns=gentle_zoom（クレジットを切らない。判定スキップ）")
             continue
         try:
             result = determine_zoom_anchor(client, img_path)

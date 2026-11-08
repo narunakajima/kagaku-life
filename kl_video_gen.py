@@ -776,8 +776,29 @@ def motion_requested(no_motion: bool = False) -> bool:
 PHOTO_EFFECTS = ("gentle_zoom", "gentle_zoom_out", "static")   # 写真（クレジット入り）に使う動き
 
 
+def scene_is_real_photo(scene: dict, scenes: list) -> bool:
+    """シーンの画像が実物の写真（右上にクレジットを焼き込んだもの）か。reuse_scene_id で写真のシーンの画像を流用する
+    シーン（ティザーなど）も写真として扱う（2026-11-08、kl054: ティザーの zoom_in／zoom_out でクレジットの右端が切れた）。"""
+    by_id = {s.get("scene_id"): s for s in scenes}
+    seen = set()
+    s = scene
+    while s is not None and s.get("scene_id") not in seen:
+        if s.get("real_photo"):
+            return True
+        seen.add(s.get("scene_id"))
+        s = by_id.get(s.get("reuse_scene_id")) if s.get("reuse_scene_id") else None
+    return False
+
+
+def photo_effect(effect: str) -> str:
+    """写真に使う動きに置き換える。強い寄り・引き・パンは、寄りの向きだけ残して1.06倍までのゆっくりした動きにする。"""
+    if effect in PHOTO_EFFECTS:
+        return effect
+    return "gentle_zoom_out" if effect in ("zoom_out", "pan_zoom_out") else "gentle_zoom"
+
+
 def make_visuals_clip(scene: dict, scene_img: Path, dur: float, dst: Path, tmp: Path, no_motion: bool = False,
-                      episode_id: str = ""):
+                      episode_id: str = "", all_scenes: list = None):
     """scene.visuals（画像の列）のシーンを1本のクリップにする（2026-11-08）。
     画像ごとに Ken Burns（写真・シーン画像）か動き（カード・グラフ・まとめ。kl_motion）のクリップを作り、
     VISUAL_XFADE 秒のクロスフェードでつなぐ。全体の長さはシーンの長さ（dur）と同じになる。
@@ -796,8 +817,16 @@ def make_visuals_clip(scene: dict, scene_img: Path, dur: float, dst: Path, tmp: 
         anchor = v.get("zoom_anchor") or {"x": 0.5, "y": 0.5}
         if src == "scene_image":
             anchor = v.get("zoom_anchor") or scene.get("zoom_anchor") or {"x": 0.5, "y": 0.5}
-            make_ken_burns(scene_img, sub, seg_dur, v.get("ken_burns") or scene.get("ken_burns", "static"),
-                           (anchor["x"], anchor["y"]), ambient=motion_requested(no_motion))
+            effect = v.get("ken_burns") or scene.get("ken_burns", "static")
+            is_photo = scene_is_real_photo(scene, all_scenes or [scene])
+            if is_photo and effect not in PHOTO_EFFECTS:
+                # シーン自体の画像が写真（image_asset が photos/ の real_photo）なら、写真と同じゆっくりした動きにする
+                # （2026-11-08、kl054 S06・S08・S10 の頭で zoom_out／zoom_in がクレジットを切っていた）
+                new = photo_effect(effect)
+                print(f"  ⚠ S{sid:02d} 画像{k + 1}: 写真に {effect} は使わない（クレジットが切れる）→ {new}")
+                effect = new
+            make_ken_burns(scene_img, sub, seg_dur, effect,
+                           (anchor["x"], anchor["y"]), ambient=motion_requested(no_motion) and not is_photo)
         elif src == "image_asset":
             asset = BASE_DIR / "assets" / f"{v['image_asset']}.png"
             # 写真はゆっくり寄るだけ（1.06倍まで。右上のクレジットを切らない。光の揺らぎも付けない＝実物の色を変えない）。
@@ -880,17 +909,21 @@ def gen_video(episode_id: str, out_dir: Path = None, static_cast: bool = False, 
                 import kl_dialogue as D
                 if D.scene_visuals(scene):
                     # 1シーンの中で、台詞の流れに合わせて画像を替える（scene.visuals、2026-11-08）
-                    make_visuals_clip(scene, img, dur, clip, tmp, no_motion, episode_id)
+                    make_visuals_clip(scene, img, dur, clip, tmp, no_motion, episode_id, scenes)
                 elif motion_requested(no_motion) and kl_motion.has_motion(scene):
                     # 資料カード・グラフ: 紙が落ち着き、マーカーが引かれ、箇条書きが現れ、棒が伸びる（2026-11-07）
                     print(f"  動きのクリップ S{sid:02d} ({dur:.1f}s)")
                     kl_motion.make_motion_clip(scene, dur, clip, FPS, FFMPEG, OUTPUT_W, OUTPUT_H)
                 else:
                     effect = scene.get("ken_burns", "static")
-                    if scene.get("real_photo") and effect not in PHOTO_EFFECTS:
-                        effect = "gentle_zoom"  # 写真は寄りすぎると右上のクレジットが切れる（2026-11-08）
+                    is_photo = scene_is_real_photo(scene, scenes)
+                    if is_photo and effect not in PHOTO_EFFECTS:
+                        # 写真は寄りすぎると右上のクレジットが切れる（2026-11-08）。写真のシーンを流用するティザーも同じ
+                        new = photo_effect(effect)
+                        print(f"  S{sid:02d}: 写真に {effect} は使わない（クレジットが切れる）→ {new}")
+                        effect = new
                     make_ken_burns(img, clip, dur, effect, (anchor["x"], anchor["y"]),
-                                   ambient=motion_requested(no_motion) and not scene.get("real_photo"))
+                                   ambient=motion_requested(no_motion) and not is_photo)
                 paths.append(clip)
             return paths
 

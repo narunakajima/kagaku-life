@@ -94,6 +94,8 @@ def card_parts(card: dict, W: int = W0, H: int = H0) -> dict:
     x0, y0, x1, y1 = D.CARD_BOX
     kind_label, kcol = (D.CARD_KINDS.get(card.get("kind")) or D.SUMMARY_KINDS.get(card.get("kind"))
                         or ("資料", (110, 118, 130)))
+    if card.get("badge"):  # まとめのカードの見出しの文言を JSON で指定したとき（色は種類のまま。2026-11-08）
+        kind_label = card["badge"]
     bg, paper, dr, top, pad = _base(kind_label, kcol, card.get("source", ""), W, H, card.get("bg_asset"))
     # 本文の大きさを決めてから描く（大きい字から試し、箇条書きは1項目1行に収まるまで縮める）
     max_w = (x1 - x0) - pad * 2

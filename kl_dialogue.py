@@ -1132,7 +1132,7 @@ def render_layer(state: dict, layout: dict, cast: dict, bank: SpriteBank,
     if stamps:
         total_w = sum(s.width for s in stamps) + 40 * (len(stamps) - 1)
         x = (W - total_w) // 2
-        y = int(H * (0.06 if W > 1000 else 0.24))
+        y = state.get("stamp_y") or int(H * (0.06 if W > 1000 else 0.24))
         for s in stamps:
             im.alpha_composite(s, (x, y))
             x += s.width + 40
@@ -1253,17 +1253,23 @@ def main_timeline(ep: dict, scenes: list, offsets: list, durs: list, narr_delay:
             other = "skeptic" if sp == "dreamer" else "dreamer"
             exprs = {sp: line.get("expression", "neutral"), other: line.get("react", "neutral")}
             st = None
+            extra = {}
             if v_from and li + 1 >= v_from:
                 if stamps is None:
                     stamps = verdict_stamps(cast, ep["verdict"])
                 st = stamps
+                photo = line_photo_asset(scene, li, vis, vmap if vis else None)
+                if photo:
+                    # 写真の右上のクレジットを隠さないよう、判定ラベルをクレジットの箱の下に下げる（2026-11-08）。
+                    # 写真の無い回（kl031〜kl053）はこのキーが付かず、位置は従来どおり
+                    extra["stamp_y"] = photo_credit_bottom(photo, MAIN_LAYOUT["H"]) + 10
             cards = line.get("cards") or [{"text": line_display(line), "start": 0.0, "end": line["dur"]}]
             talk_end = round(off + narr_delay_s + line["t0"] + line["dur"], 3)  # 口パク: この行を話し終える時刻
             for c in cards:
                 t = off + narr_delay_s + line["t0"] + c["start"]
                 ln_chart = visual_small_cast(vis[vmap[li]]) if vis else chart
                 events.append((round(t, 3), dict(base, speaker=sp, exprs=exprs, text=c["text"],
-                                                 stamps=st, talk_end=talk_end, chart=ln_chart)))
+                                                 stamps=st, talk_end=talk_end, chart=ln_chart, **extra)))
         # シーンの終わり（次のシーンの開始）まで最後の状態を保つ。後続シーンの開始で切り替わる
     events.sort(key=lambda e: e[0])
     if intro_windows:
@@ -1957,6 +1963,8 @@ def render_episode_cards(ep: dict) -> list:
 #   from_line は1始まり（verdict_from_line と同じ）。最初の要素は 1。昇順。その行の話し始めの少し前（VISUAL_XFADE/2）から
 #   クロスフェードで次の画像に替わる。任意: ken_burns・zoom_anchor（写真・シーン画像）、motion_cues（カード。画像の頭からの秒）、
 #   small_cast（立ち絵を check と同じ小さい大きさにするか。カード・グラフ・まとめは既定で true）、bg_asset（カードの下に敷く素材）。
+#   recap_card・step_card の任意の badge: 左上の見出しの文言（既定は「ふりかえり」「今日の一歩」。例: 台詞が「今月の一歩」なら
+#   "badge": "今月の一歩"。2026-11-08、kl054 で見出し・台詞とバッジが食い違ったため。色は変わらない）。
 VISUAL_SOURCES = ("scene_image", "image_asset", "source_card", "chart", "recap_card", "step_card")
 VISUAL_DRAWN = ("source_card", "chart", "recap_card", "step_card")   # コードで描く（AI生成なし・費用ゼロ）
 VISUAL_XFADE = 0.6          # 画像の切り替えのクロスフェード（秒）
@@ -1993,7 +2001,7 @@ def summary_card(spec: dict, kind: str) -> dict:
     """recap_card / step_card を、資料カードの描画（kl_motion.card_parts）に渡せる形にする。"""
     return {"kind": kind, "source": spec.get("title", ""), "items": list(spec.get("items") or []),
             "footer": spec.get("footer") or SUMMARY_FOOTER, "note": spec.get("note", ""),
-            "bg_asset": spec.get("bg_asset")}
+            "bg_asset": spec.get("bg_asset"), "badge": spec.get("badge")}
 
 
 def photo_credit(asset: str) -> str:
@@ -2002,6 +2010,34 @@ def photo_credit(asset: str) -> str:
     if not asset or not rec_path.exists():
         return ""
     return json.loads(rec_path.read_text(encoding="utf-8")).get("credit_on_screen", "")
+
+
+def line_photo_asset(scene: dict, li: int, vis: list = None, vmap: list = None) -> str:
+    """行 li（0始まり）を話している間に画面に出ている写真の素材名（photos/...、real_photo のもの）。写真でなければ空。"""
+    vis = scene_visuals(scene) if vis is None else vis
+    if vis:
+        vmap = visual_line_map(scene) if vmap is None else vmap
+        v = vis[vmap[li]]
+        if v.get("real_photo") and (v.get("image_asset") or "").startswith("photos/"):
+            return v["image_asset"]
+        if not v.get("scene_image"):
+            return ""
+    if scene.get("real_photo") and (scene.get("image_asset") or "").startswith("photos/"):
+        return scene["image_asset"]
+    return ""
+
+
+def photo_credit_bottom(asset: str, H: int) -> int:
+    """横長の写真（kl_photo_commons._compose、1920×1080）の右上に焼き込んだクレジットの箱の下端を、画面の高さ H の画素で返す。
+    判定ラベルをこの下に置くのに使う（2026-11-08、kl054 S12: ラベルがクレジットを隠した）。"""
+    import kl_photo_commons as P
+    rec_path = BASE_DIR / "assets" / f"{asset}.json"
+    note = ""
+    if rec_path.exists():
+        note = json.loads(rec_path.read_text(encoding="utf-8")).get("note", "")
+    n = 2 if note else 1
+    bottom = P.CREDIT_TOP + 36 * n + 14 * 2 - 6   # _compose の lh=36・pad=14 と同じ
+    return int(round(bottom * H / P.H))
 
 
 def visual_motion_scene(v: dict) -> dict:
@@ -2072,7 +2108,7 @@ def visual_text(v: dict) -> str:
         return "［画面のグラフ］" + kl_motion.chart_text(v["chart"])
     if src in ("recap_card", "step_card"):
         c = v[src]
-        label = SUMMARY_KINDS["recap" if src == "recap_card" else "step"][0]
+        label = c.get("badge") or SUMMARY_KINDS["recap" if src == "recap_card" else "step"][0]
         return f"［画面のまとめカード（{label}）］" + " ".join([c.get("title", "")] + [f"・{it}" for it in c.get("items") or []])
     return ""
 
@@ -2198,6 +2234,8 @@ def validate_visuals(ep: dict) -> list:
                         errs.append(f"{where}: {src}.title は1〜24字")
                     if not (1 <= len(c.get("items") or []) <= 5):
                         errs.append(f"{where}: {src}.items は1〜5行")
+                    if c.get("badge") is not None and not (1 <= len(str(c["badge"])) <= 10):
+                        errs.append(f"{where}: {src}.badge（見出しの文言）は1〜10字")
                 if src in ("source_card", "recap_card", "step_card"):
                     for it in c.get("items") or []:
                         if sum(0.5 if ch.isascii() else 1 for ch in it) > 26:
