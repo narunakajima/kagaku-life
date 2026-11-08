@@ -117,7 +117,7 @@ SCの `sc_video_gen.py` と同じ考え方で、シーンタイプの並びか�
 
 実在の製品・機体の見た目が話の中心の回は、イメージ図より、ライセンスが明記された実物の写真を優先する。写真は
 Wikimedia Commons のパブリックドメイン・CC0・CC BY・CC BY-SA のものだけ。`kl_photo_commons.py` が、検索・取り込み
-（1920x1080、右下に出所のクレジット入り。縦長でも中央に置き、両側はぼかした背景）・出所の記録（`assets/photos/kl{NNN}_S{NN}.json`）・
+（1920x1080、右上に出所のクレジット入り（2026-11-08〜。右下は字幕帯と立ち絵に隠れるため）。縦長でも中央に置き、両側はぼかした背景）・出所の記録（`assets/photos/kl{NNN}_S{NN}.json`）・
 概要欄の「【写真クレジット】」・整合の確認（`audit`、`kl_dialogue.py check`）を行う。シーンは `image_asset: "photos/kl{NNN}_S{NN}"`・
 `real_photo: true`（AIの画像生成・画風チェックの対象外、「イメージ図」の注記も不要）。公式サイト・報道・SNSの写真は許諾なく使わない
 （1X の報道用素材は「報道機関向け・商用不可・それ以外は書面の許諾が必要」。手順は `.claude/commands/kl-new.md` STEP2 の「実在の製品・機体」）。
@@ -564,6 +564,40 @@ Shorts（`shorts`フィールド）は2026-08-21に追加した（経緯は下�
 `topics_queue.json` の該当エントリにSTAGE4で生成済みの値があればそれを引き継ぐ。
 `narrator` は `persona`/`research` の2値、`reference_index` は `finding`/`data`
 シーンにのみ付与する（上記「ストーリー構成と2ナレーターボイス制」参照）。
+
+**`scene.visuals`（1シーンの中の画像の列、2026-11-08〜。実装は `kl_dialogue.py` の `validate_visuals`・`visual_segments`、`kl_video_gen.py` の `make_visuals_clip`）:**
+1シーンの中で、台詞の行に合わせて画像を替える。シーンは分けない（type・bgm_role・round_title・`verdict_from_line`・締めの固定文・初見レビューのハッシュはシーン単位のまま）。
+使いどころの決まりは CLAUDE.md「構成 v4」と `/kl-new` STEP2「画面（v2）」6.。
+
+```json
+"visuals": [
+  {"from_line": 1, "scene_image": true},
+  {"from_line": 4, "image_asset": "photos/kl055_S05_b", "real_photo": true},
+  {"from_line": 7, "source_card": {"kind": "press", "source": "…", "quote": "…", "items": ["…"]}, "reference_index": 0},
+  {"from_line": 9, "chart": {"kind": "number", "source": "…", "title": "…", "value": 6, "unit": "社"}, "reference_index": 0},
+  {"from_line": 12, "recap_card": {"title": "二人の答え合わせ", "items": ["論点1 …：手応えあり"]}},
+  {"from_line": 15, "step_card": {"title": "今日できる一歩", "items": ["…"]}, "bg_asset": "photos/kl055_S15_b"}
+]
+```
+
+- **種類（1要素にちょうど1つ）:** `scene_image`（シーン自体の画像。シーンに `image_prompt`／`image_asset`／`reuse_scene_id` のどれかが要る）、
+  `image_asset`（`assets/{名前}.png`。写真 `photos/…` か固定背景 `base_cafe*`）、`source_card`・`chart`（シーン直下と同じ書き方。`reference_index` が references にあること）、
+  `recap_card`（ふりかえり）・`step_card`（今日の一歩）。まとめの2種は二人のまとめで、足元に「二人のまとめ（資料の引用ではありません）」が出る（`footer` で文を替えられる）
+- **`from_line`:** 1始まりの行番号（`verdict_from_line` と同じ）。最初の要素は 1、昇順・重複なし、1〜行数
+- **時間:** 境目は、その行の話し始め（`lines[].t0`）の0.3秒前（`VISUAL_XFADE` 0.6秒の半分）で、0.6秒のクロスフェードでつなぐ。
+  音声の後（全行に `t0` がある）なら、`check` が1枚3秒以上（`VISUAL_MIN_SECONDS`）を確かめる
+- **字数:** `recap_card`・`step_card` はタイトル1〜24字・1〜5行・1行26字（半角は0.5字）。`source_card` は quote 90字以内・items 5行・1行26字、`chart` は kind（bar/line/number）・source・title、bar／line は items 2〜8本
+- **任意の項目:** `ken_burns`・`zoom_anchor`（写真・シーン画像）、`motion_cues`（カード。画像の頭からの秒）、`small_cast`（立ち絵を check と同じ小さい大きさにするか。カード・グラフ・まとめは既定で true）、
+  `bg_asset`（カードの下にぼかして敷く素材。写真なら、そのクレジットをカードの足元の注記に足す）、`caption`（写真。初見レビュー用の plain に出る）
+- **写真の動き:** `real_photo: true` の写真は `gentle_zoom`／`gentle_zoom_out`／`static` だけ（1.06倍まで。右上のクレジットを切らない）。それ以外を指定しても `gentle_zoom` に置き換わる
+- **カードの静止画:** `python3 kl_dialogue.py cards --episode kl{NNN}` が `assets/cards/{ep}_S{NN}_v{k}.png`（k は1始まり）を描く。無いと `check` が止まる
+- **使えない場所:** teaser（`check` で不合格）。visuals のあるシーンにシーン直下の `source_card`・`chart` を置かない（visuals の要素にする）
+- **写真の記録:** `photos/` の素材（要素の `image_asset`・`bg_asset`）は `real_photo: true` と出所の記録 `assets/photos/{名前}.json` が要る。
+  1シーンに複数の写真は `kl_photo_commons.py fetch|import --slot b` で `photos/kl{NNN}_S{NN}_b` に分け、`apply --slot b --from-line N` で visuals に入れる。
+  Commons（`origin: commons`）はライセンスが PD・CC0・CC BY・CC BY-SA で、概要欄に写真の名前があること。取り込み（`origin: import`、`kind` は press／official／government）は
+  `source_url`・`credit`・`terms`・`terms_url` と、透かし・有料ストックでないことの確認の印（`checked_no_watermark`・`checked_not_stock`）があり、概要欄にクレジットがあること（`check` が確かめる）
+- **ファクトチェック:** visuals の `source_card`・`chart` も、`kl_fact_check.py` が `reference_index` の資料ごとに照合する
+- visuals が無い回（kl031〜kl054）は、check の結果・plain・時刻表・カードの絵が従来と同じ
 
 **Shorts（`shorts`フィールド、2026-08-21追加）:** samurai-chroniclesが販促目的で
 Shortsを別立てで作っているのに倣い追加した。当初は企画書に記載がないという理由で
