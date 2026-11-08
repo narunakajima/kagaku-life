@@ -464,10 +464,16 @@ STAGE0でワイルドカード回を選んだ場合（ワイルドカード枠�
 3. **外れた型で落とす（ミア）。** `team/question_gate_checklist.md` の各項目に1つでも当てはまる案は落とす。落とした理由も `question.md` に残す
 4. **エマの判定（`kl-first-viewer`）。** 資料も台詞も渡さず、問い・フック・驚きの1行だけ（`kl_prompts/beginner_review_prompt.md`「問い段階の依頼文」）。
    「見たいか」「期待とずれていないか」と、3案の順位を答えさせる
-5. **なるさんが選ぶ（人間ゲート）。** `AskUserQuestion` に3案（問い1行・フック1行・驚き1行・エマの判定。推奨を先頭）を出す。3案とも退けられたら、
+5. **管理担当ケビンの判断（2026-11-09〜、なるさんの指示）。** なるさんに渡す前に、メインが管理担当（`kl-manager`、`model: "opus"`、`run_in_background: false`）に、
+   ミアの `question.md`（発表の本体・3案・落とした型）、エマの判定と理由、`team/question_gate_checklist.md`、一次資料のパスを渡す。ケビンは、ミアとエマの意見を読んで
+   「このまま問いとして進められるか」を判断し、返す: ①推奨する案（1つ。理由を2〜3行）②次点 ③3案とも不十分なら「ミアに作り直させる」と理由（作り直しは1回まで。
+   その場合ケビンの指摘をミアに渡して問いを作り直し、エマの判定を取り直してからケビンに戻す。2回目も不十分ならそのままなるさんに「不十分だが出す」と理由つきで出す）④ミアとエマの意見が割れたときは、
+   どちらを採ったかと理由。判断の基準は、チームの目標（視聴者の獲得・高評価の獲得）、チェックリストの外れた型、想定する視聴者（CLAUDE.md）、誠実さ。迷ったら誠実さを優先する。
+   `python3 team_log.py add --agent kl-manager --episode kl{NNN} --step 1.5 --result ok --note "推奨案と理由"`（作り直しなら `--result retry`）
+6. **なるさんが選ぶ（人間ゲート）。** `AskUserQuestion` に3案（問い1行・フック1行・驚き1行・エマの判定）を出す。**先頭はケビンの推奨案で、理由と次点も添える。** 3案とも退けられたら、
    指摘を `team_log.py feedback --source user` に残してミアに作り直させる。承認されたら `question.md` の末尾に `承認: YYYY-MM-DD 案◯` と選ばれた問いを書き、
    `topics_queue.json` の該当回の `pitch` に `question` を入れる。**STEP 2 の書き手には、この問いと `question.md` を渡す**（書き手は問いを変えない。変えたくなったらメインに戻す）
-6. **記録:** `python3 team_log.py add --agent kl-planner --episode kl{NNN} --step 1.5 --result ok --note "選ばれた案・落とした型"`（作り直しなら `--result retry`）
+7. **記録:** `python3 team_log.py add --agent kl-planner --episode kl{NNN} --step 1.5 --result ok --note "選ばれた案・落とした型"`（作り直しなら `--result retry`）
 
 当面は毎回、なるさんが選ぶ。外れが数回出なくなったら、エマの評価だけで進める運用に緩めるかを、なるさんに提案する（管理担当の月次評価で数える）。
 `kl_dialogue.py check` は、kl055 以降のニュース回で `question.md` に「承認:」の行が無いと ⚠ を出す。
