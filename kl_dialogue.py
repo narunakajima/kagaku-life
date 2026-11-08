@@ -582,6 +582,40 @@ def episode_warnings(ep: dict) -> list:
         first = next((ln for ln in (ep.get("youtube_description") or "").splitlines() if ln.strip()), "")
         if "時点" not in first or "発表" not in first:
             warns.append("概要欄の1行目に、発表日と判定の時点がありません（例「2026年10月21日の発表を、11月2日時点で確認した二人の見立て」）")
+    # 画面の単調さ（2026-11-09、kl054 の全面作り直しの反省。不合格にはしない）。音声ができた後（t0 がある）に確かめる:
+    # カフェの固定背景が40秒を超えて出ている区間、本編に実写真が1枚もない回
+    if ep.get("structure") in (STRUCTURE_V2, STRUCTURE_V3, STRUCTURE_V4):
+        has_photo = False
+        for sc in ep.get("scenes", []):
+            lines_ = sc.get("lines") or []
+            base = str(sc.get("image_asset") or "")
+            if base.startswith("photos/") or sc.get("real_photo"):
+                has_photo = True
+            for v in scene_visuals(sc):
+                if (v.get("image_asset") or "").startswith("photos/") or (v.get("bg_asset") or "").startswith("photos/"):
+                    has_photo = True
+            if sc.get("type") == "teaser" or not lines_ or not all("t0" in l for l in lines_):
+                continue
+            dur_ = 0.5 + lines_[-1]["t0"] + lines_[-1].get("dur", 0) + 1.0
+            vis_ = scene_visuals(sc)
+            segs = [(a, b, v) for a, b, v in visual_segments(sc, dur_, 0.5)] if vis_ else [(0.0, dur_, None)]
+            for a, b, v in segs:
+                cafe = base.startswith("base_cafe") and (v is None or v.get("scene_image"))
+                if cafe and b - a > 40:
+                    warns.append(f"画面: S{sc.get('scene_id')} でカフェの固定背景が{b - a:.0f}秒続きます（40秒まで）。"
+                                 "写真・資料カード・グラフ・まとめのカードを scene.visuals で挟んでください")
+        if not has_photo and any("t0" in l for sc in ep.get("scenes", []) for l in sc.get("lines") or []):
+            warns.append("画面: 本編に実写真が1枚もありません。製品・場所・人の実物の写真（kl-new.md STEP2 の写真の手順）を探してください")
+    # 問いゲート（2026-11-09〜、kl054 の全面作り直しの反省）。kl055 以降は script_prep/klNNN_question.md に「承認:」の行が必要
+    try:
+        _num = int(str(ep.get("episode_id", ""))[2:])
+    except ValueError:
+        _num = 0
+    if _num >= 55:
+        _qp = BASE_DIR / "script_prep" / f"{ep.get('episode_id')}_question.md"
+        if not _qp.exists() or "承認:" not in _qp.read_text(encoding="utf-8"):
+            warns.append(f"問いゲート: script_prep/{ep.get('episode_id')}_question.md が無いか、承認の記録（「承認:」の行）がありません。"
+                         "kl-new.md「STEP 1.5 — 問いゲート」を先に済ませてください")
     return warns
 
 
