@@ -7,6 +7,10 @@ kl_related_auto.py — ショートの「関連動画」（同じ回の本編）
   - 対象 = kl_related_targets.targets()（アップロード済み・本編の公開時刻を過ぎている・related_video_set 未設定）。
   - 対象があれば、制作専用 Chrome で YouTube Studio を開き、そのショートの関連動画に同じ回の本編を設定する
     （claude -p --chrome に、関連動画の設定だけを許可した固定プロンプトで実行させる。手順は studio_related_video.js）。
+  - 実行方式は SC と同じ「制作専用 Chrome＋ガード方式」（2026-11-10 指示008）。ガードは kl_chrome_guard.py
+    （PreToolUse フック。KLリポジトリ内で完結）。制作専用 Chrome の device_id が特定できなければ blocked で何もしない。
+    接続先は studio.youtube.com / www.youtube.com のみ。ガードに止められたら回避せず中断し blocked として報告する。
+    device_id は環境変数 KL_CHROME_DEVICE_ID か ~/.config/kl-related/chrome.json の device_id から取る。
   - 成功したら episodes/kl{NNN}.json の related_video_set を true にして完了を報告する。
   - 失敗したら未設定のまま残す（次のチェックで再試行）。画面ロック等で実行できないときは blocked として1回だけ報告する。
 
@@ -28,6 +32,7 @@ import json
 import os
 import plistlib
 import re
+import shlex
 import shutil
 import subprocess
 import sys
@@ -47,6 +52,8 @@ TIMEOUT_SEC = 20 * 60
 MODEL = "sonnet"
 ALLOWED_TOOLS = "Read,mcp__claude-in-chrome__*"
 FAIL_NOTIFY_AT = 3   # 同じ回が続けて失敗したらこの回数で1回だけ報告する
+DEVICE_CONFIG = Path.home() / ".config" / "kl-related" / "chrome.json"
+GUARD = ROOT / "kl_chrome_guard.py"
 SLACK_CONFIG = Path.home() / ".config" / "handoff-poller" / "slack.json"   # #cc-reports の Incoming Webhook（cc_reports_webhook_url。ポーラーと同じ設定）
 JST = timezone(timedelta(hours=9))
 
@@ -57,6 +64,9 @@ PROMPT = """あなたは KL のショート「関連動画」自動設定タイ�
   本編動画ID: {main}（タイトル先頭の検索語: 「{kw}」）
 
 やること（これ以外の操作は一切しない）:
+0. ブラウザは制作専用 Chrome（device_id: {device}）だけを使う。他のブラウザへの切り替えはしない。
+   ガード（フック）がツール呼び出しを拒否したら、回避・再試行せずに何も変更せず BLOCKED として終える。
+   接続先は studio.youtube.com / www.youtube.com のみ。
 1. 制作専用 Chrome（Claude in Chrome）で https://studio.youtube.com/video/{shorts}/edit を開き、3秒待つ。
 2. リポジトリの studio_related_video.js の「関数本体」を使い、検索語「{kw}」で関連動画に本編を設定する
    （手順はそのファイル冒頭のコメントのとおり。FORCE は false、STRICT は true）。
@@ -135,24 +145,58 @@ def title_matches(related, title):
     return bool(a) and bool(b) and (b in a or a in b)
 
 
+def chrome_device_id():
+    """制作専用 Chrome の device_id。特定できなければ空文字（= blocked）。"""
+    d = os.environ.get("KL_CHROME_DEVICE_ID", "").strip()
+    if d:
+        return d
+    try:
+        return str(json.loads(DEVICE_CONFIG.read_text(encoding="utf-8")).get("device_id", "")).strip()
+    except Exception:
+        return ""
+
+
+def guard_settings():
+    hook = {"type": "command", "command": f"{shlex.quote(sys.executable)} {shlex.quote(str(GUARD))}"}
+    return json.dumps({"hooks": {"PreToolUse": [{"matcher": "mcp__claude-in-chrome__.*", "hooks": [hook]}]}})
+
+
 def process(t, st, claude):
     eid = t["episode_id"]
     if screen_locked():
         return {"status": "blocked", "reason": "画面ロック中"}
-    prompt = PROMPT.format(eid=eid, shorts=t["shorts_id"], main=t["main_id"], kw=t["search"])
-    cmd = [claude, "-p", prompt, "--model", MODEL, "--chrome", "--allowedTools", ALLOWED_TOOLS]
+    device = chrome_device_id()
+    if not device:
+        return {"status": "blocked", "reason": f"制作専用 Chrome の device_id が特定できない（{DEVICE_CONFIG} か KL_CHROME_DEVICE_ID）"}
+    if not GUARD.exists():
+        return {"status": "blocked", "reason": "ガード kl_chrome_guard.py が無い"}
+    prompt = PROMPT.format(eid=eid, shorts=t["shorts_id"], main=t["main_id"], kw=t["search"], device=device)
+    cmd = [claude, "-p", prompt, "--model", MODEL, "--chrome", "--allowedTools", ALLOWED_TOOLS,
+           "--settings", guard_settings()]
     log = LOG_DIR / f"kagaku-life-related-{eid}-{now():%Y%m%d-%H%M}.log"
+    mark = LOG_DIR / f"kagaku-life-related-guard-{eid}.mark"
+    mark.unlink(missing_ok=True)
+    seen = LOG_DIR / f"kagaku-life-related-guard-{eid}.seen"
+    seen.unlink(missing_ok=True)
+    env = dict(os.environ, KL_CHROME_DEVICE_ID=device, KL_GUARD_MARK=str(mark), KL_GUARD_SEEN=str(seen))
     try:
-        res = subprocess.run(cmd, capture_output=True, text=True, timeout=TIMEOUT_SEC, cwd=ROOT)
+        res = subprocess.run(cmd, capture_output=True, text=True, timeout=TIMEOUT_SEC, cwd=ROOT, env=env)
         out = res.stdout
     except subprocess.TimeoutExpired:
         out = ""
         log.write_text("timeout", encoding="utf-8")
         return {"status": "failed", "reason": "タイムアウト"}
     log.write_text(out, encoding="utf-8")
+    if mark.exists():   # ガードが止めた → 結果にかかわらず blocked（回避しない）
+        reason = mark.read_text(encoding="utf-8")
+        mark.unlink(missing_ok=True)
+        return {"status": "blocked", "reason": f"ガードに止められた: {reason}"}
     r = parse_result(out)
     if not r or r.get("episode") != eid:
         return {"status": "failed", "reason": "結果を読み取れない（ログ: %s）" % log}
+    if r.get("status") in ("ok", "already") and not (seen.exists() and seen.read_text(encoding="utf-8").strip()):
+        # ガードが一度も呼ばれていない＝守りが効いていない → 成功扱いにしない
+        return {"status": "blocked", "reason": "ガードが動作した記録が無い（--settings のフックが効いていない可能性）"}
     return r
 
 
