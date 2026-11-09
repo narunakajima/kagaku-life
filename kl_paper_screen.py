@@ -45,7 +45,7 @@ VENUE_ALLOWLIST_PATH = BASE_DIR / "reputable_venues.json"
 import os
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-MODEL = "models/gemini-flash-latest"
+MODEL = "models/gemini-3.8-flash"
 # 2026-09追加: コスト削減のため、STAGE2のGemini審査ではデフォルトでGoogle Search
 # グラウンディングを使わない（アブストラクト・掲載誌・著者名・被引用数のみで判断）。
 # 検索課金は1クエリ約¥2.2で、STAGE2の全件個別審査では月数千円規模になっていた。

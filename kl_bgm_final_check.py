@@ -37,7 +37,7 @@ from pathlib import Path
 from google import genai
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-MODEL = os.environ.get("KL_BGM_CHECK_MODEL", "gemini-flash-latest")  # --model でも切り替え可（2026-10-06）
+MODEL = os.environ.get("KL_BGM_CHECK_MODEL", "gemini-3.8-flash")  # --model でも切り替え可（2026-10-06）
 
 DESKTOP_KL = Path(os.path.expanduser("~/Desktop/kagaku-life"))
 

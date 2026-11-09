@@ -88,7 +88,11 @@ QUEUE_JSON = BASE_DIR / "topics_queue.json"
 GENRES_JSON = BASE_DIR / "genres.json"            # 2026-10-06: 5ジャンル（再生リスト・提案の分類）
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-MODEL = "gemini-flash-latest"
+# 2026-11-09: "gemini-flash-latest" は Actions（nightly-news #27）で 404（models/gemini-flash-latest is not found for API version v1）
+# になり、採点・付与が全件失敗した。-latest のエイリアスは使わず、安定版のモデルIDを固定する
+# gemini-2.5-flash は「新規キーでは使えない」404 になったため（2026-11-09 実測）、ListModels にある gemini-3.8-flash にした
+MODEL = "gemini-3.8-flash"
+STALL_FILE = BASE_DIR / "nightly_stall.txt"   # 採点停止の記録（Actions が Slack に「止まっています」を送る。コミットしない）
 UA = {"User-Agent": "Mozilla/5.0 (kagaku-life news scan)"}
 
 # 一次資料が確認できない候補は採用しない（追記メモ §3）。検証可能性がこの点以下なら除外する
@@ -805,6 +809,15 @@ def _pool_age(p: dict):
         return None
 
 
+def report_stall(msg: str):
+    """採点・付与が「対象があるのに0件」のときの可視化（2026-11-09）。緑のまま0件、を起こさない。
+    STALL_FILE に追記し、呼び出し側は終了コードを非0にする。"""
+    line = f"採点が止まっています: {msg}"
+    print(f"\n⚠️ {line}")
+    with STALL_FILE.open("a", encoding="utf-8") as f:
+        f.write(line + "\n")
+
+
 def cmd_score(top: int, dry_run: bool = False):
     pool = json.loads(POOL_JSON.read_text(encoding="utf-8"))["items"]
     cands = load_candidates()
@@ -826,9 +839,11 @@ def cmd_score(top: int, dry_run: bool = False):
     concerns_txt = "\n".join(f"- {c['id']}: {c['label']}" for c in concerns)
     client, types = _gemini()
     past = past_episodes_brief()
+    failed = 0
     for p in todo:
         v = score_item(client, types, p, past, concerns_txt)
         if "_error" in v:
+            failed += 1
             print(f"  ⚠️ 採点失敗: {p['title'][:60]} ({v['_error'][:80]})")
             continue
         if "buzz_jp_est" not in v and "buzz_jp" in v:   # 旧キーで返ってきたときの互換
@@ -851,7 +866,10 @@ def cmd_score(top: int, dry_run: bool = False):
               + (f"  除外: {entry['excluded_reason']}" if excluded else ""))
         time.sleep(1.0)
     CANDIDATES_JSON.write_text(json.dumps(cands, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"\n{len(todo)}件を採点して {CANDIDATES_JSON.name} に追記しました")
+    print(f"\n{len(todo) - failed}/{len(todo)}件を採点して {CANDIDATES_JSON.name} に追記しました")
+    if todo and failed == len(todo):
+        report_stall(f"score: 対象{len(todo)}件すべて失敗（0件採点）")
+        sys.exit(1)
 
 
 def cmd_tag():
@@ -1671,7 +1689,7 @@ def backfill_work(cands: list, force: bool = False):
     todo = [c for c in cands if c.get("status") == "available" and (force or c.get("work_relevance") is None)
             and not [x for x in gate_reasons(c, used) if not x.startswith("暮らし")]]
     if not todo:
-        return
+        return 0, 0
     client, types = _gemini()
     for k in range(0, len(todo), ENRICH_BATCH):
         batch = todo[k:k + ENRICH_BATCH]
@@ -1695,7 +1713,9 @@ def backfill_work(cands: list, force: bool = False):
                 batch[int(r["i"])]["work_relevance"] = _clamp5(r["work_relevance"])
             except (KeyError, ValueError, IndexError, TypeError):
                 continue
-    print(f"work_relevance を {len(todo)}件に付与しました")
+    got = sum(1 for c in todo if c.get("work_relevance") is not None)
+    print(f"work_relevance を {got}/{len(todo)}件に付与しました")
+    return len(todo), got
 
 
 AUDIENCE_KEYS = ("audience_fit", "promise", "tangible", "decision_number", "series_fit")   # backfill_audience が付ける欄
@@ -1707,7 +1727,7 @@ def backfill_audience(cands: list, force: bool = False):
     todo = [c for c in cands if c.get("status") == "available"
             and (force or any(c.get(k) is None for k in AUDIENCE_KEYS) or c.get("interest_version") != INTEREST_VERSION)]
     if not todo:
-        return
+        return 0, 0
     client, types = _gemini()
     n = 0
     for k in range(0, len(todo), ENRICH_BATCH):
@@ -1752,18 +1772,28 @@ def backfill_audience(cands: list, force: bool = False):
             except (KeyError, ValueError, IndexError, TypeError):
                 continue
     print(f"audience_fit・promise・tangible・decision_number・series_fit・wonder・surprise_line を {n}/{len(todo)}件に付与しました")
+    return len(todo), n
 
 
 def cmd_enrich(force: bool):
     cands = load_candidates()
     refresh_topic_ages(cands["items"])
-    backfill_work(cands["items"], force)
-    backfill_audience(cands["items"], force)
+    w_todo, w_got = backfill_work(cands["items"], force) or (0, 0)
+    a_todo, a_got = backfill_audience(cands["items"], force) or (0, 0)
     _save_candidates(cands)
+    stalls = []
+    if w_todo and w_got == 0:
+        stalls.append(f"enrich(work_relevance): 対象{w_todo}件に0件付与")
+    if a_todo and a_got == 0:
+        stalls.append(f"enrich(audience_fit・wonder・surprise_line): 対象{a_todo}件に0件付与")
     pool = _gate_pool(cands["items"])
     todo = [c for c in pool if force or not c.get("jp_news_query")]
     if not todo:
         print("付与が必要な候補はありません（ゲート通過分はすべて jp_news_query あり）")
+        for m in stalls:
+            report_stall(m)
+        if stalls:
+            sys.exit(1)
         return
     client, types = _gemini()
     n = 0
@@ -1814,6 +1844,12 @@ def cmd_enrich(force: bool):
             print(f"  {c['id']} [{c.get('announcement_type', '?'):15s}] {q!r} {anc} series={c.get('series', '')}  {c['title'][:40]}")
     _save_candidates(cands)
     print(f"\n{n}/{len(todo)}件に検索語・見出しの語・発表の種類を付けました（{CANDIDATES_JSON.name}）")
+    if n == 0:
+        stalls.append(f"enrich(jp_news_query): 対象{len(todo)}件に0件付与")
+    for m in stalls:
+        report_stall(m)
+    if stalls:
+        sys.exit(1)
 
 
 # ============================================================

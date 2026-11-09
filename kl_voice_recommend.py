@@ -33,7 +33,7 @@ API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY"
 # （Fable 5.1監査の指摘）。本番と同じモデルに統一する。
 # 2026-09-28: kl_tts_gen.pyのgemini-3.8-flash-tts移行に合わせて更新（本番と同一モデルを維持）。
 TTS_MODEL = "gemini-3.8-flash-tts"
-RECOMMEND_MODEL = "gemini-flash-latest"
+RECOMMEND_MODEL = "gemini-3.8-flash"
 MAX_RETRIES = 5  # TTSは稀にfinish_reason=OTHERで空データを返すことがある
 
 BASE_DIR = Path(__file__).parent

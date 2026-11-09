@@ -50,7 +50,7 @@ POOL_PATH = BASE_DIR / "stage1_pool.json"
 CONCERNS_PATH = BASE_DIR / "viewer_concerns.json"
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-MODEL = "models/gemini-flash-latest"
+MODEL = "models/gemini-3.8-flash"
 BATCH_SIZE = 40
 ABSTRACT_CHARS = 350
 PARALLEL_CALLS = 6

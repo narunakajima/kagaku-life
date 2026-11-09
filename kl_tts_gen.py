@@ -54,7 +54,7 @@ BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-QA_MODEL = "gemini-flash-latest"  # ナレーション音声が台本通りか判定する用（sc_tts_gen.pyと同じ考え方）
+QA_MODEL = "gemini-3.8-flash"  # ナレーション音声が台本通りか判定する用（sc_tts_gen.pyと同じ考え方）
 # 2026-09-28: gemini-3.1-flash-tts-preview → gemini-3.8-flash-tts（正式版）に移行。
 # 3.8は入力テキストを「読み上げ原稿そのもの」として扱うため、演技指導（STYLE_PREFIX・
 # persona_style）をテキスト先頭に付けると指示文まで読み上げられてしまう。演技指導は
