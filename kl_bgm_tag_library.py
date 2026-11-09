@@ -3,7 +3,7 @@ kl_bgm_tag_library.py — BGMライブラリ（bgm_library.json）の既存曲�
 
 2026-10-06追加（BGM方針の再設計）。それまでの tags は、登録時にファイル名から語を拾えないと
 自動で ["warm","gentle"] が入る仕様で、曲調を表していなかった（33曲中28曲）。各曲の実音声を
-Gemini（既定は gemini-3.1-pro-preview、温度0）に2回聴かせ、次を記録する:
+Gemini（既定は gemini-3.8-flash、温度0）に2回聴かせ、次を記録する:
 
   duration（ffprobe 実測）, bpm（2回の推定の平均）, mood, instruments, has_beat, has_vocals,
   era（dialogue=掛け合い向き / legacy_monologue=旧形式向き）, role_fit（intro/main/outro）,
@@ -37,7 +37,7 @@ LIBRARY_JSON = BASE_DIR / "bgm_library.json"
 DRIVE_BASE = (Path.home() / "Library/CloudStorage" / "GoogleDrive-naru.nakajima@gmail.com"
               / "マイドライブ" / "Kagaku-Life")
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-DEFAULT_MODEL = os.environ.get("KL_BGM_TAG_MODEL", "gemini-3.1-pro-preview")
+DEFAULT_MODEL = os.environ.get("KL_BGM_TAG_MODEL", "gemini-3.8-flash")
 CLIP_SECONDS = 90
 
 PROMPT = """あなたは番組のBGMを整理する音楽担当です。添付の音声（曲の頭90秒）を実際に聴いて、次のJSONだけを出力してください。

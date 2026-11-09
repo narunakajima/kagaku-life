@@ -8,7 +8,7 @@ Gemini TTS がたまに起こす読み間違い（「同じ」→「おのじ」
   Gemini（音声理解）や Whisper は文脈から「正しい語」へ補正して書き起こすため、1音の違いを
   見逃しやすい。そこで、言語モデルを持たない CTC の音素認識
   （prj-beatrice/japanese-hubert-base-phoneme-ctc-v4、Apache-2.0、約380MB）で
-  「聞こえたとおりの音素」を出し、台本の期待する読み（LLM＝Gemini Pro がテキストだけを見て
+  「聞こえたとおりの音素」を出し、台本の期待する読み（LLM＝Gemini Flash がテキストだけを見て
   文脈込みで決めたカタカナ）と、行の中の局所的な差（ポケット）ごとに比べる。
 
   ・ポケットごとに、CTC の尤度で「期待する読み」と「認識された音」のどちらが音声に合うかを
@@ -26,7 +26,7 @@ Gemini TTS がたまに起こす読み間違い（「同じ」→「おのじ」
   ・非常に速い発話（8モーラ/秒超）では音素認識が音を落とし、誤検知が出ることがある。
     認識した音素が期待の75%未満なら、音声を0.8倍速に伸ばして認識し直す。
   ・期待する読みは LLM が決めるので、LLM の読み自体が誤っていると誤検知になる
-    （例: 推測→スイスク）。Gemini Pro を使い、別の読みも許容する（alt）ことで減らしている。
+    （例: 推測→スイスク）。Gemini Flash（2026-11-09 にコスト理由で Pro から統一）を使い、別の読みも許容する（alt）ことで減らしている。
 """
 
 import difflib
@@ -46,7 +46,7 @@ HF_HOME = Path(os.environ.get("KL_READING_QA_HF_HOME", Path.home() / ".cache" / 
 # transformers の一部の処理は cache_dir を渡しても既定の ~/.cache/huggingface を見に行くため、
 # 取り込みより前に専用フォルダを指定しておく（kl_tts_gen.py は torch/transformers より先にこのモジュールを読む）
 os.environ.setdefault("HF_HUB_CACHE", str(HF_HOME / "hub"))
-READING_MODEL = "gemini-3.1-pro-preview"   # 期待する読み（テキストのみ）。flash は読み誤りが多かった
+READING_MODEL = "gemini-3.8-flash"   # 期待する読み（テキストのみ）。2026-11-09 コスト理由でFlashに統一（ユーザー決定）
 READING_CACHE = Path.home() / ".cache" / "kl_reading_qa" / "readings.json"
 READING_BATCH = 30                    # 1回の LLM 呼び出しで読む台詞数
 READING_WORKERS = 4                   # 並列に投げる呼び出し数
