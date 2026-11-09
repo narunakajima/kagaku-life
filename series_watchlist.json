@@ -1,0 +1,29 @@
+{
+  "_comment": "シリーズ案のウォッチ対象と節目イベントの登録簿（2026-11-09、指示2026-11-09-009。ユーザー発案の『提案』として記録。まだどのスクリプト・フローからも読まれない＝登録のみ）。既存のシリーズ定義は docs/series_humanoid.md（『人型ロボ定点観測』、問い=いつ・いくらで・どこに来る？）。本案はそれを『節目イベント起点・鮮度は節目の発生日で測る』形に発展させる提案。制作に入る場合は通常どおり問いゲートを通す。",
+  "series": [
+    {
+      "series_id": "humanoid_home_watch",
+      "name_tentative": "家庭用ヒューマノイド定点観測",
+      "status": "proposed",
+      "genre": "humanoid",
+      "proposed_by": "なるさん（ユーザー発案）",
+      "registered": "2026-11-09",
+      "related_docs": ["docs/series_humanoid.md", "handoff/results/2026-11-09-008.md"],
+      "watch_targets": [
+        {"name": "1X NEO", "priority": "base", "note": "家庭向け。価格・予約・出荷が節目"},
+        {"name": "Figure（03）", "priority": "base"},
+        {"name": "Tesla Optimus", "priority": "base"},
+        {"name": "Unitree 等の家庭向けモデル", "priority": "optional", "note": "必要に応じて追加（G1+ など）"}
+      ],
+      "milestone_events": [
+        "一般家庭への出荷・納品開始",
+        "価格改定",
+        "実際に家庭で使った人の報告・レビュー",
+        "対応できる家事タスクの追加",
+        "大型のモデル更新"
+      ],
+      "freshness_rule": "各回の鮮度は『節目イベントの発生日』で測る（元の製品発表日ではない）",
+      "production_rule": "制作に入る場合は通常どおり問いゲートを通す。この登録は制作の決定ではない"
+    }
+  ]
+}
