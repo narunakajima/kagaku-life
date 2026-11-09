@@ -3,7 +3,7 @@
 
 Reporting API の集計（kl_analytics_report.py）には高評価の数が無いため、
 YouTube Data API（videos.list の statistics）で補う。認証はコメント返信用のスクリプトのものを流用する。
-管理担当（kl-manager）の月次評価（/kl-analytics の「チーム評価」）で使う。
+編集長（kl-manager）の月次評価（/kl-analytics の「チーム評価」）で使う。
 
   /usr/bin/python3 team_stats.py                       # 全動画（新しい順）
   /usr/bin/python3 team_stats.py --since 2026-10-01    # 公開日で絞る

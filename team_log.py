@@ -337,7 +337,7 @@ def cmd_sync_notebooks(_args) -> None:
             head = head[:head.rfind("## 改善アクション")] if "## 改善アクション" in head else head
             text = head.rstrip("\n") + "\n\n" + block + text[text.index(ACTION_END) + len(ACTION_END):]
         else:
-            anchor = "## 管理担当からのフィードバック"
+            anchor = "## 編集長からのフィードバック"
             i = text.find(anchor)
             text = (text[:i] + block + "\n\n" + text[i:]) if i >= 0 else (text.rstrip("\n") + "\n\n" + block + "\n")
         path.write_text(text, encoding="utf-8")
@@ -448,7 +448,7 @@ def main() -> None:
     s.add_argument("--json", action="store_true")
     s.set_defaults(func=cmd_summary)
 
-    sc = sub.add_parser("score", help="管理担当の月次評価を記録する")
+    sc = sub.add_parser("score", help="編集長の月次評価を記録する")
     sc.add_argument("--month", required=True)
     sc.add_argument("--agent", required=True)
     sc.add_argument("--outcome", required=True, type=score_value)
@@ -465,7 +465,7 @@ def main() -> None:
     r = sub.add_parser("roster", help="名簿")
     r.set_defaults(func=cmd_roster)
 
-    ac = sub.add_parser("action", help="改善アクション（管理担当が出し、担当が実行し、効果を判定する）")
+    ac = sub.add_parser("action", help="改善アクション（編集長が出し、担当が実行し、効果を判定する）")
     acs = ac.add_subparsers(dest="action_cmd", required=True)
     aa = acs.add_parser("add")
     aa.add_argument("--agent", required=True)

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""月次評価（管理担当のアナリティクス）を、毎週月曜に iMac で自動実行する。
+"""月次評価（編集長のアナリティクス）を、毎週月曜に iMac で自動実行する。
 
 samurai-chronicles / kagaku-life / lamp-whisper の3リポジトリで同じファイルを使う（中身をそろえること）。
 毎週月曜に launchd が3リポジトリの `run` を起動し、各リポジトリは team/schedule.json を見て
@@ -44,7 +44,7 @@ TEAM_START = "2026-10"          # 担当者制を始めた月。これより前�
 RUN_HOST = "naru-iMac.local"      # 二重に走らないよう、iMac だけで動かす
 RUN_HOUR, RUN_MINUTE = 8, 7       # 毎週月曜 08:07 JST（Mac が眠っていれば起きたときに走る）
 TIMEOUT_SEC = 3 * 60 * 60         # ブラウザの再認証待ちなどで止まったときの上限
-MODEL = "sonnet"                  # メイン（進行担当）。解釈と評価は管理担当（Opus のサブエージェント）が行う
+MODEL = "sonnet"                  # メイン（進行担当）。解釈と評価は編集長（Opus のサブエージェント）が行う
 ALLOWED_TOOLS = "Bash,Read,Edit,Write,Glob,Grep,Agent,WebFetch,WebSearch"
 # Slack の Incoming Webhook の URL を1行だけ書いたファイル（リポジトリには置かない）。リポジトリ別のファイルがあれば優先する
 SLACK_WEBHOOK_FILES = [f"~/.claude/secrets/slack_webhook_team_reports_{REPO}.txt", "~/.claude/secrets/slack_webhook_team_reports.txt"]
@@ -59,12 +59,12 @@ NEEDS = {  # check で存在を確かめるファイル（無くても run は�
 }
 
 PROMPT = """あなたは {team} の進行担当です。今日は{name}の月次評価の日で、これは自動実行です（ユーザーはその場にいません）。
-`.claude/commands/{command}.md` を読み、その手順どおりに {month} 分の月次評価（アナリティクス → 管理担当による解釈と担当の評価 →
+`.claude/commands/{command}.md` を読み、その手順どおりに {month} 分の月次評価（アナリティクス → 編集長による解釈と担当の評価 →
 改善アクション → ノートへの書き出し）を最後まで行ってください。自動実行なので、次を守ること:
 
 - ユーザーの承認が要る変更（CLAUDE.md・手順書・担当の定義・名簿・制作ルールの設定ファイル）は反映しない。
   評価ファイルの「ユーザーの承認が要る提案」に残す（承認の段階は、ユーザーが後で行う）
-- 管理担当が自分で変えてよいもの（team/evaluations/・team/notebooks/・team/scorecards.jsonl・team/actions.jsonl）は書いてよい
+- 編集長が自分で変えてよいもの（team/evaluations/・team/notebooks/・team/scorecards.jsonl・team/actions.jsonl）は書いてよい
 - トークンの失効などでブラウザでの再認証が必要になったら、その処理は待たずに止め、何をすれば続けられるかを報告に書く
   （取れたデータだけで評価を続けられるなら続け、評価ファイルに「データ不足」と明記する）
 - 最後に、変更をコミットしてプッシュする（今のブランチ。CLAUDE.md のマシン判定どおり hostname を確かめる）
