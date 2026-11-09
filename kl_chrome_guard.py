@@ -18,7 +18,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 ALLOWED_HOSTS = {"studio.youtube.com", "www.youtube.com"}
-SWITCH_RE = re.compile(r"switch|select_browser|list_browsers|connect", re.I)
+SWITCH_RE = re.compile(r"switch|list_browsers|connect(?!ed)", re.I)   # select_browser・list_connected_browsers は別扱い（下の check）
 URL_RE = re.compile(r"[a-zA-Z][a-zA-Z0-9+.-]*://[^\s\"'<>]+")
 
 
@@ -33,14 +33,23 @@ def walk(o):
             yield from walk(v)
 
 
-def check(data, expected_device):
-    """None なら許可、文字列なら拒否理由。"""
+def check(data, expected_device, selected=True):
+    """None なら許可、文字列なら拒否理由。selected=制作専用ブラウザを select_browser で選び終えたか（PostToolUse で立つ印）。"""
     if not expected_device:
         return "制作専用 Chrome の device_id が特定できない"
     tool = str(data.get("tool_name", ""))
     inp = data.get("tool_input") or {}
-    if SWITCH_RE.search(tool.split("__")[-1]):
+    name = tool.split("__")[-1]
+    if name == "list_connected_browsers":
+        return None
+    if name == "select_browser":
+        if str(inp.get("deviceId", inp.get("device_id", ""))) != expected_device:
+            return "制作専用 Chrome 以外は選べない"
+        return None
+    if SWITCH_RE.search(name):
         return f"ブラウザ切り替え系ツールは使えない: {tool}"
+    if not selected:
+        return f"先に select_browser で制作専用 Chrome（device_id {expected_device}）を選び、成功させること"
     for k, v in walk(inp):
         if str(k) in ("device_id", "deviceId") and v and str(v) != expected_device:
             return "device_id が制作専用 Chrome と一致しない"
@@ -58,7 +67,40 @@ def check(data, expected_device):
     return None
 
 
+def post_hook():
+    """PostToolUse（ツールが成功したときだけ発火）: select_browser 成功で印を立て、list_connected_browsers で inUse を検証する。"""
+    flag = os.environ.get("KL_GUARD_FLAG", "")
+    dev = os.environ.get("KL_CHROME_DEVICE_ID", "")
+    try:
+        data = json.load(sys.stdin)
+        name = str(data.get("tool_name", "")).split("__")[-1]
+        inp = data.get("tool_input") or {}
+        if not (flag and dev):
+            return
+        if name == "select_browser" and str(inp.get("deviceId", inp.get("device_id", ""))) == dev:
+            Path(flag).write_text(dev, encoding="utf-8")
+        elif name == "list_connected_browsers":
+            resp = data.get("tool_response")
+            if isinstance(resp, list):
+                text = "".join(str(b.get("text", "")) for b in resp if isinstance(b, dict))
+            elif isinstance(resp, dict) and isinstance(resp.get("content"), list):
+                text = "".join(str(b.get("text", "")) for b in resp["content"] if isinstance(b, dict))
+            else:
+                text = str(resp or "")
+            m = re.search(r"\[.*\]", text, re.S)
+            browsers = json.loads(m.group(0)) if m else []
+            in_use = [b.get("deviceId") for b in browsers if b.get("inUse")]
+            ours = any(b.get("deviceId") == dev for b in browsers)
+            if (not ours or any(d != dev for d in in_use)) and Path(flag).exists():
+                Path(flag).unlink()
+    except Exception:
+        pass
+
+
 def main():
+    if len(sys.argv) > 1 and sys.argv[1] == "post":
+        post_hook()
+        sys.exit(0)
     try:
         data = json.load(sys.stdin)
     except Exception:
@@ -66,7 +108,8 @@ def main():
         reason = "ガード入力を読めない"
     else:
         try:
-            reason = check(data, os.environ.get("KL_CHROME_DEVICE_ID", ""))   # 例外は拒否扱い（fail-closed）
+            flag = os.environ.get("KL_GUARD_FLAG", "")
+            reason = check(data, os.environ.get("KL_CHROME_DEVICE_ID", ""), bool(flag) and os.path.exists(flag))   # 例外は拒否扱い（fail-closed）
             seen = os.environ.get("KL_GUARD_SEEN")
             if seen and isinstance(data, dict):   # ガードが動いた証拠（ツール名と入力キー名）
                 ti = data.get("tool_input")
@@ -98,6 +141,9 @@ def selftest():
         ("拒否: スキーム無しURL", nav("evil.com"), "d1", False),
         ("拒否: device_id 未特定", nav("https://studio.youtube.com/"), "", False),
         ("拒否: ブラウザ切替", {"tool_name": "mcp__claude-in-chrome__switch_browser", "tool_input": {}}, "d1", False),
+        ("許可: 制作専用を select_browser", {"tool_name": "mcp__claude-in-chrome__select_browser", "tool_input": {"deviceId": "d1"}}, "d1", True),
+        ("拒否: 別ブラウザを select_browser", {"tool_name": "mcp__claude-in-chrome__select_browser", "tool_input": {"deviceId": "zz"}}, "d1", False),
+        ("許可: list_connected_browsers", {"tool_name": "mcp__claude-in-chrome__list_connected_browsers", "tool_input": {}}, "d1", True),
         ("拒否: 別 device", {"tool_name": "mcp__claude-in-chrome__tabs_create", "tool_input": {"deviceId": "x"}}, "d1", False),
         ("拒否: リスト内の外部URL", {"tool_name": "mcp__claude-in-chrome__x", "tool_input": {"urls": ["https://evil.example.com/"]}}, "d1", False),
         ("拒否: javascript 内の外部URL", {"tool_name": "mcp__claude-in-chrome__javascript_tool",
@@ -110,6 +156,9 @@ def selftest():
         bad += 1
     except Exception:
         print("OK  非dict入力は例外 → main で拒否（fail-closed）")
+    r = check(nav("https://studio.youtube.com/"), "d1", selected=False)
+    print(("OK  " if r else "NG  ") + "拒否: 選択前の navigate" + (f" → {r}" if r else ""))
+    bad += not r
     for name, d, dev, ok in cases:
         r = check(d, dev)
         good = (r is None) == ok

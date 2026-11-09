@@ -36,6 +36,7 @@ import shlex
 import shutil
 import subprocess
 import sys
+import time
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -54,6 +55,8 @@ ALLOWED_TOOLS = "Read,mcp__claude-in-chrome__*"
 FAIL_NOTIFY_AT = 3   # 同じ回が続けて失敗したらこの回数で1回だけ報告する
 DEVICE_CONFIG = Path.home() / ".config" / "kl-related" / "chrome.json"
 GUARD = ROOT / "kl_chrome_guard.py"
+CHROME_UDD = Path(os.environ.get("HANDOFF_CHROME_UDD", str(Path.home() / ".lw-chrome-production")))   # 制作専用 Chrome（SC・LW と共通）
+KL_CHANNEL = "幸せな未来のサイエンス（@kagaku-life、UCj5pDosl_4FiaZ_NdNg7IcA）"
 SLACK_CONFIG = Path.home() / ".config" / "handoff-poller" / "slack.json"   # #cc-reports の Incoming Webhook（cc_reports_webhook_url。ポーラーと同じ設定）
 JST = timezone(timedelta(hours=9))
 
@@ -64,9 +67,14 @@ PROMPT = """あなたは KL のショート「関連動画」自動設定タイ�
   本編動画ID: {main}（タイトル先頭の検索語: 「{kw}」）
 
 やること（これ以外の操作は一切しない）:
-0. ブラウザは制作専用 Chrome（device_id: {device}）だけを使う。他のブラウザへの切り替えはしない。
+0. ブラウザは制作専用 Chrome（device_id: {device}）だけを使う。最初に list_connected_browsers を呼び、その device_id を
+   select_browser で選び、もう一度 list_connected_browsers で、そのブラウザが inUse になっていることを確かめる
+   （選べない・inUse にならないときは何も操作せず BLOCKED）。他のブラウザには切り替えない。
    ガード（フック）がツール呼び出しを拒否したら、回避・再試行せずに何も変更せず BLOCKED として終える。
    接続先は studio.youtube.com / www.youtube.com のみ。
+0b. チャンネルは「""" + "{channel}" + """」でなければならない。URL を直接開いても切り替わらない（権限エラーになる）ので、
+   https://studio.youtube.com/ を開き、右上のアバター → 「アカウントを切り替える」 → 一覧から上記チャンネルを選ぶ。
+   アバターのメニュー先頭のチャンネル名で確かめる。違えば何も変更せず BLOCKED。他チャンネルの動画は編集しない。
 1. 制作専用 Chrome（Claude in Chrome）で https://studio.youtube.com/video/{shorts}/edit を開き、3秒待つ。
 2. リポジトリの studio_related_video.js の「関数本体」を使い、検索語「{kw}」で関連動画に本編を設定する
    （手順はそのファイル冒頭のコメントのとおり。FORCE は false、STRICT は true）。
@@ -157,8 +165,46 @@ def chrome_device_id():
 
 
 def guard_settings():
-    hook = {"type": "command", "command": f"{shlex.quote(sys.executable)} {shlex.quote(str(GUARD))}"}
-    return json.dumps({"hooks": {"PreToolUse": [{"matcher": "mcp__claude-in-chrome__.*", "hooks": [hook]}]}})
+    cmd = f"{shlex.quote(sys.executable)} {shlex.quote(str(GUARD))}"
+    cm = "mcp__claude-in-chrome__"
+    return json.dumps({"hooks": {
+        "PreToolUse": [{"matcher": cm + ".*", "hooks": [{"type": "command", "command": cmd}]}],
+        "PostToolUse": [{"matcher": cm + "(select_browser|list_connected_browsers)",
+                         "hooks": [{"type": "command", "command": cmd + " post"}]}]}})
+
+
+def chrome_pid():
+    try:
+        pid = int(os.readlink(CHROME_UDD / "SingletonLock").rsplit("-", 1)[1])
+        os.kill(pid, 0)
+        return pid
+    except Exception:
+        return 0
+
+
+def chrome_ext_up():
+    pid = chrome_pid()
+    if not pid:
+        return False
+    out = subprocess.run(["ps", "-eo", "ppid=,command="], capture_output=True, text=True).stdout
+    return any(l.split(None, 1)[0] == str(pid) and "--chrome-native-host" in l for l in out.splitlines() if l.strip())
+
+
+def ensure_chrome():
+    """制作専用 Chrome を操作できる状態にする。できなければ理由を返す（起動済みなら再起動も終了もしない）。
+    拡張は「ウィンドウが1つも無い」と接続しないため、無ければ背景に空ウィンドウを開く（2026-11-10 実機確認）。"""
+    base = ["open", "-g", "-na", "Google Chrome", "--args", f"--user-data-dir={CHROME_UDD}",
+            "--no-first-run", "--no-default-browser-check", "about:blank"]
+    if not chrome_pid():
+        subprocess.run(base, check=False)
+        time.sleep(5)
+    elif not chrome_ext_up():
+        subprocess.run(base, check=False)
+    for _ in range(30):
+        if chrome_ext_up():
+            return ""
+        time.sleep(3)
+    return "制作専用 Chrome の拡張機能（Claude in Chrome）が90秒待っても接続しない"
 
 
 def process(t, st, claude):
@@ -170,7 +216,10 @@ def process(t, st, claude):
         return {"status": "blocked", "reason": f"制作専用 Chrome の device_id が特定できない（{DEVICE_CONFIG} か KL_CHROME_DEVICE_ID）"}
     if not GUARD.exists():
         return {"status": "blocked", "reason": "ガード kl_chrome_guard.py が無い"}
-    prompt = PROMPT.format(eid=eid, shorts=t["shorts_id"], main=t["main_id"], kw=t["search"], device=device)
+    why = ensure_chrome()
+    if why:
+        return {"status": "blocked", "reason": why}
+    prompt = PROMPT.format(eid=eid, shorts=t["shorts_id"], main=t["main_id"], kw=t["search"], device=device, channel=KL_CHANNEL)
     cmd = [claude, "-p", prompt, "--model", MODEL, "--chrome", "--allowedTools", ALLOWED_TOOLS,
            "--settings", guard_settings()]
     log = LOG_DIR / f"kagaku-life-related-{eid}-{now():%Y%m%d-%H%M}.log"
@@ -178,7 +227,9 @@ def process(t, st, claude):
     mark.unlink(missing_ok=True)
     seen = LOG_DIR / f"kagaku-life-related-guard-{eid}.seen"
     seen.unlink(missing_ok=True)
-    env = dict(os.environ, KL_CHROME_DEVICE_ID=device, KL_GUARD_MARK=str(mark), KL_GUARD_SEEN=str(seen))
+    flag = LOG_DIR / f"kagaku-life-related-guard-{eid}.selected"
+    flag.unlink(missing_ok=True)
+    env = dict(os.environ, KL_CHROME_DEVICE_ID=device, KL_GUARD_MARK=str(mark), KL_GUARD_SEEN=str(seen), KL_GUARD_FLAG=str(flag))
     try:
         res = subprocess.run(cmd, capture_output=True, text=True, timeout=TIMEOUT_SEC, cwd=ROOT, env=env)
         out = res.stdout

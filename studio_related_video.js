@@ -27,7 +27,7 @@ return (async()=>{
   const id=location.pathname.split('/')[2];
   const trig=await until(()=>deep(document,'ytcp-text-dropdown-trigger').find(e=>(e.innerText||'').trim().startsWith('関連動画')),40);
   if(!trig)return JSON.stringify({id,err:'no-trigger'});
-  const rd=()=>{const m=document.body.innerText.match(/関連動画\s*\n\s*([^\n]+)/);return m?m[1].trim():null};
+  const rd=()=>{const t=document.body.innerText;let p=0;for(;;){const i=t.indexOf('関連動画',p);if(i<0)return null;let j=i+4,nl=false;while(j<t.length&&t[j].trim()===''){if(t.charCodeAt(j)===10)nl=true;j++}if(nl&&j<t.length){let k=j;while(k<t.length&&t.charCodeAt(k)!==10)k++;return t.slice(j,k).trim()}p=i+4}};
   const before=rd();
   if(before&&before!=='なし'&&!FORCE)return JSON.stringify({id,skip:'already',before});
   // 「子ども向けか」: 未選択のときだけ「いいえ」を選ぶ
