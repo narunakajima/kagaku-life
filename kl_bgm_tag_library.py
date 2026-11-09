@@ -3,7 +3,7 @@ kl_bgm_tag_library.py — BGMライブラリ（bgm_library.json）の既存曲�
 
 2026-10-06追加（BGM方針の再設計）。それまでの tags は、登録時にファイル名から語を拾えないと
 自動で ["warm","gentle"] が入る仕様で、曲調を表していなかった（33曲中28曲）。各曲の実音声を
-Gemini（既定は gemini-3.8-flash、温度0）に2回聴かせ、次を記録する:
+Gemini（既定は gemini-3.1-pro-preview 固定、温度0。タグ付けだけ Pro）に2回聴かせ、次を記録する:
 
   duration（ffprobe 実測）, bpm（2回の推定の平均）, mood, instruments, has_beat, has_vocals,
   era（dialogue=掛け合い向き / legacy_monologue=旧形式向き）, role_fit（intro/main/outro）,
@@ -34,11 +34,14 @@ from google import genai
 from google.genai import types
 
 BASE_DIR = Path(__file__).parent
-LIBRARY_JSON = BASE_DIR / "bgm_library.json"
+LIBRARY_JSON = Path(os.environ.get("KL_BGM_LIBRARY_JSON") or (BASE_DIR / "bgm_library.json"))  # 検証用に一時コピーへ向けられる
 DRIVE_BASE = (Path.home() / "Library/CloudStorage" / "GoogleDrive-naru.nakajima@gmail.com"
               / "マイドライブ" / "Kagaku-Life")
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-DEFAULT_MODEL = os.environ.get("KL_BGM_TAG_MODEL", gm.primary())
+# タグ付けだけ Pro 固定（Flash は dreamy が付きやすく role_fit が空になる。ユーザー決定 2026-11-10 指示007）。
+# -latest 系は使わない。モデル不存在(404)でも Flash へ自動フォールバックしない（タグ品質が黙って落ちるため）。
+# → kl_gemini_model.wrap_client は使わず、404 は止めて異常終了する。
+DEFAULT_MODEL = os.environ.get("KL_BGM_TAG_MODEL", "gemini-3.1-pro-preview")
 CLIP_SECONDS = 90
 
 PROMPT = """あなたは番組のBGMを整理する音楽担当です。添付の音声（曲の頭90秒）を実際に聴いて、次のJSONだけを出力してください。
@@ -87,6 +90,15 @@ def parse_json(text: str) -> dict:
     return json.loads(s[a:b + 1])
 
 
+class ModelMissing(Exception):
+    pass
+
+
+def is_model_missing(e: Exception) -> bool:
+    t = str(e)
+    return ("404" in t and ("NOT_FOUND" in t or "not found" in t.lower())) or "is not found for API version" in t
+
+
 def listen(client, model: str, audio: bytes) -> dict:
     last = None
     for attempt in range(4):
@@ -97,6 +109,8 @@ def listen(client, model: str, audio: bytes) -> dict:
                 config=types.GenerateContentConfig(temperature=0))
             return parse_json(resp.text)
         except Exception as e:  # noqa: BLE001
+            if is_model_missing(e):
+                raise ModelMissing(f"モデル {model} が存在しません（Flash へは切り替えません）: {e}") from e
             last = e
             time.sleep(2 ** (attempt + 1))
     raise RuntimeError(f"聴き取りに失敗: {last}")
@@ -205,7 +219,11 @@ def main():
     ap.add_argument("--force", action="store_true", help="タグ付け済みの曲も付け直す")
     ap.add_argument("--report", action="store_true", help="結果の一覧を表示するだけ")
     ap.add_argument("--rederive", action="store_true", help="聴き直さず、保存済みの項目から era/role_fit 等を再計算する")
+    ap.add_argument("--dry-run", action="store_true", help="検証用: 聴き取りと表示だけ行い、bgm_library.json には保存しない")
     args = ap.parse_args()
+    if args.dry_run:
+        global save_library
+        save_library = lambda lib: None  # noqa: E731
     lib = load_library()
     if args.report:
         report(lib)
@@ -220,12 +238,15 @@ def main():
     if not API_KEY:
         print("❌ GEMINI_API_KEY が設定されていません", file=sys.stderr)
         sys.exit(1)
-    client = gm.wrap_client(genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=180_000)))
+    client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=180_000))  # wrap_client は使わない（指示007）
     todo = [e for e in lib if (args.only == e["id"] if args.only else (args.force or not e.get("tagged_at")))]
     print(f"タグ付け対象: {len(todo)}曲（モデル {args.model}、{args.runs}回ずつ）")
     for n, e in enumerate(todo, 1):
         try:
             tags = tag_entry(client, args.model, e, args.runs)
+        except ModelMissing as ex:
+            print(f"❌ 異常: {ex}", file=sys.stderr)
+            sys.exit(2)
         except Exception as ex:  # noqa: BLE001
             print(f"  [{n}/{len(todo)}] ⚠️ {e['id']}: {ex}")
             continue
