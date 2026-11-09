@@ -1,14 +1,24 @@
 {
-  "_comment": "シリーズ案のウォッチ対象と節目イベントの登録簿（2026-11-09、指示2026-11-09-009。ユーザー発案の『提案』として記録。まだどのスクリプト・フローからも読まれない＝登録のみ）。既存のシリーズ定義は docs/series_humanoid.md（『人型ロボ定点観測』、問い=いつ・いくらで・どこに来る？）。本案はそれを『節目イベント起点・鮮度は節目の発生日で測る』形に発展させる提案。制作に入る場合は通常どおり問いゲートを通す。",
+  "_comment": "既存シリーズ『人型ロボ定点観測』（docs/series_humanoid.md、2026-11-04〜、第1回=kl053 AGIBOT）の第2回以降の候補管理簿（登録のみ。どのスクリプト・フローからも読まれない）。2026-11-09-009 で新規シリーズ『家庭用ヒューマノイド定点観測』として登録したが、指示 2026-11-09-010 で訂正した。新規シリーズは作らない。制作に入る場合は通常どおり問いゲートを通す。",
   "series": [
     {
-      "series_id": "humanoid_home_watch",
-      "name_tentative": "家庭用ヒューマノイド定点観測",
-      "status": "proposed",
+      "series_id": "humanoid_watch",
+      "name": "人型ロボ定点観測",
+      "status": "existing",
+      "existing_doc": "docs/series_humanoid.md",
       "genre": "humanoid",
-      "proposed_by": "なるさん（ユーザー発案）",
       "registered": "2026-11-09",
-      "related_docs": ["docs/series_humanoid.md", "handoff/results/2026-11-09-008.md"],
+      "episodes_done": [
+        {
+          "no": 1,
+          "episode": "kl053",
+          "note": "AGIBOT、人型ロボ6台が上海のコンビニで24時間稼働（ミアのベスト3からなるさんが選択）"
+        }
+      ],
+      "next_episode_no": 2,
+      "proposed_by": "なるさん（ウォッチ対象・節目の考え方）",
+      "related_docs": ["docs/series_humanoid.md", "handoff/results/2026-11-09-008.md", "handoff/results/2026-11-09-010.md"],
+      "note": "ウォッチ対象は家庭向けが中心だが、シリーズ全体は人型ロボ全般（既存の問い：いつ・いくらで・どこに来る？）。第2回以降の候補管理に使う",
       "watch_targets": [
         {"name": "1X NEO", "priority": "base", "note": "家庭向け。価格・予約・出荷が節目"},
         {"name": "Figure（03）", "priority": "base"},
@@ -22,7 +32,7 @@
         "対応できる家事タスクの追加",
         "大型のモデル更新"
       ],
-      "freshness_rule": "各回の鮮度は『節目イベントの発生日』で測る（元の製品発表日ではない）",
+      "freshness_rule": "【提案・未承認】各回の鮮度は『節目イベントの発生日』で測る（元の製品発表日ではない）。現行の仕組み（topic_first_date）とは別物",
       "production_rule": "制作に入る場合は通常どおり問いゲートを通す。この登録は制作の決定ではない"
     }
   ]
