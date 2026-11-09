@@ -1983,6 +1983,63 @@ def is_new_candidate(c: dict) -> bool:
     return topic_age_days(c) <= NEW_MAX_TOPIC_AGE_DAYS
 
 
+# ============================================================
+# シリーズ候補の優先枠（2026-11-09、handoff 2026-11-09-011、なるさんの指示）
+#   『人型ロボ定点観測』（series_watchlist.json の humanoid_watch）のウォッチ対象に、節目イベント（出荷・価格・家庭での使用報告・
+#   対応家事の追加・大型更新）が出た候補を、ベスト3の最初の1枠に優先して入れる。
+#   入口条件は一切ゆるめない: 優先枠の候補は、旬21日以内・注目度3以上（本命）・視聴者との合い方・手応え・驚きの1行・一次資料確認・
+#   提示日数の上限を通った後の並び（order。面白さ順）からだけ選ぶ（best3 の ok から取る）。条件を通らなければ空けたまま。
+#   判定は名前と語の一致による機械的な目安（採点とは別）。series_fit が付いていて 3 未満なら対象にしない。
+# ============================================================
+SERIES_WATCHLIST_JSON = BASE_DIR / "series_watchlist.json"
+SERIES_WATCH_ID = "humanoid_watch"
+SERIES_TARGET_PATTERNS = {      # ウォッチ対象の名前の表記ゆれ（series_watchlist.json の watch_targets.name の先頭と対応。英字の一般語は大文字小文字を区別）
+    # \b は仮名・漢字も単語文字とみなす（「1X社」「NEOが」を逃す）ので、英数字だけで境界を見る
+    "1X NEO": r"(?<![A-Za-z0-9])1X(?![A-Za-z0-9])|(?<![A-Za-z0-9])NEO(?![A-Za-z0-9])",
+    "Figure": r"(?<![A-Za-z0-9])Figure(?:\s?(?:AI|0\d)(?![A-Za-z0-9])|(?=社|の|が|は|も|、))|(?<![A-Za-z0-9])Helix(?![A-Za-z0-9])|フィギュア(?:AI|ロボ)",
+    "Tesla Optimus": r"Optimus|オプティマス",
+    "Unitree": r"Unitree|ユニツリー",
+}
+SERIES_MILESTONE_PATTERNS = {   # 節目イベント5種（series_watchlist.json の milestone_events）
+    "出荷・納品開始": r"出荷|納品|納入|配送|お届け|発売|一般販売|\bshipp?ing\b|\bdeliver|\bships\b",
+    "価格改定": r"価格|値下げ|値上げ|定価|月額|(?<![\d億兆.,])\d{1,2}万ドル|\bpric(?:e|es|ing)\b|\bMSRP\b|\$\d{1,3},\d{3}(?![\d,.]*\s?(?:[BbMm]illion|bn\b))",
+    "家庭での使用報告": r"自宅|家庭で|使ってみ|試してみ|レビュー|体験|\breview|\bin homes?\b|\bhands-on\b|\bat home\b",
+    "対応家事の追加": r"家事|洗濯|皿洗い|食洗|掃除|畳む|\bchores?\b|\blaundry\b|\bdishes\b",
+    "大型更新": r"アップデート|大型更新|新モデル|新型|次世代|\bupdate\b|\bnew model\b",
+}
+
+
+def _series_watch() -> dict:
+    try:
+        for s in json.loads(SERIES_WATCHLIST_JSON.read_text(encoding="utf-8")).get("series", []):
+            if s.get("series_id") == SERIES_WATCH_ID:
+                return s
+    except (OSError, ValueError):
+        pass
+    return {}
+
+
+def series_candidate_info(c: dict):
+    """『人型ロボ定点観測』の第○回候補か（ウォッチ対象 × 節目イベント）。該当すれば
+    {"name", "no", "target", "milestones"}、しなければ None。"""
+    s = _series_watch()
+    if not s or c.get("genre") != "humanoid":
+        return None
+    sf = c.get("series_fit")
+    if sf is not None and _clamp5(sf) < 3:
+        return None
+    text = c.get("title", "") + " " + (c.get("summary") or "")      # 本文（actual_content）は広すぎるので照合しない
+    names = [t.get("name", "") for t in s.get("watch_targets", [])]
+    target = next((n for n, pat in SERIES_TARGET_PATTERNS.items()
+                   if any(x.startswith(n) for x in names) and re.search(pat, text)), None)
+    if not target:
+        return None
+    ms = [m for m, pat in SERIES_MILESTONE_PATTERNS.items() if re.search(pat, text, re.I)]
+    if not ms:
+        return None
+    return {"name": s.get("name", "人型ロボ定点観測"), "no": s.get("next_episode_no"), "target": target, "milestones": ms}
+
+
 def presented_days(c: dict) -> list:
     return sorted(set(c.get("presented_on") or []))
 
@@ -2123,7 +2180,14 @@ def best3(rows: list):
     # 2026-11-04: 「物×判断の数字」の候補を最低1件（足りなければ空けたまま＝普通の選び方に戻る）。
     # 先に1件取り、他は従来どおり。最後に元の並び（order）に戻す
     # 2026-11-08: 先に新規優先枠（初回スキャンから48時間以内）を1件。無ければ空けたまま（呼び出し側が「新規候補なし」と明記する）
-    take([r for r in ok if is_new_candidate(r["c"])][:1], 1)
+    # 2026-11-09: その前に、シリーズ候補の優先枠（人型ロボ定点観測）を1件。ok は入口条件を通った面白さ順なので、条件は迂回しない
+    take([r for r in ok if series_candidate_info(r["c"])][:1], 1)
+    if not any(is_new_candidate(p["c"]) for p in picks):
+        for r in [r for r in ok if is_new_candidate(r["c"])]:     # take が受け入れる最初の1件（先頭が弾かれても次を試す）
+            n0 = len(picks)
+            take([r], 1)
+            if len(picks) > n0:
+                break
     if not any(is_tangible_pick(p["c"]) for p in picks):
         take([r for r in ok if is_tangible_pick(r["c"])][:1], 1)
     take(ok, 1)
@@ -2144,6 +2208,9 @@ def _slot_lines(r: dict) -> list:
     """ベスト3の各候補に付ける枠の注記（list・slack 共通）。"""
     c = r["c"]
     out = []
+    si = series_candidate_info(c)
+    if si:
+        out.append(f"📌 シリーズ候補: {si['name']} 第{si['no']}回候補（ウォッチ対象: {si['target']}／節目の可能性: {'・'.join(si['milestones'])}。語の一致による目安）")
     if is_new_candidate(c):
         out.append("🆕 新規候補（初回スキャンから48時間以内）")
     n = len(presented_days(c))
