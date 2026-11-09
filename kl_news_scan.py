@@ -2009,35 +2009,79 @@ SERIES_MILESTONE_PATTERNS = {   # 節目イベント5種（series_watchlist.json
 }
 
 
-def _series_watch() -> dict:
+# 2026-11-09 (handoff 2026-11-09-012): 優先対象は人型ロボに限らず、定点観測シリーズ全般。
+#   series_watchlist.json の series のうち、下の SERIES_RULES に照合の語があるものが対象。候補ジャンルは JSON の candidate_genres（無ければ genre）。
+#   series_fit（人型ロボ専用の物差し）で足切りするのは humanoid_watch だけ。語の一致による目安で、採点ではない。
+SERIES_RULES = {
+    "humanoid_watch": {"series_fit_gate": True, "targets": SERIES_TARGET_PATTERNS, "milestones": SERIES_MILESTONE_PATTERNS},
+    "ai_scientist_watch": {
+        "series_fit_gate": False,
+        "targets": {
+            "AIによる未解決問題への成果": r"未解決|予想を証明|数理物理|\bconjecture|\bunsolved|open problem|Erd[oő]s",
+            "AI実験室・研究自動化": r"AI科学者|AI Scientist|AIサイエンティスト|AI研究者|co-scientist|研究自動化|自律(?:型)?(?:実験|研究|ラボ)|AI実験室|self-driving lab|autonomous lab|AutoDNA|AlphaEvolve|AlphaFold",
+            "主要ラボの科学応用発表": r"(?is)(?=.*(?:科学|発見|論文|証明|実験|science|scientific|discover|proof))(?=.*(?:Anthropic|アンソロピック|DeepMind|ディープマインド|OpenAI))",
+            "創薬AIの進展": r"AI創薬|創薬AI|AI drug discovery|Isomorphic",
+        },
+        "milestones": {
+            "査読誌への掲載": r"査読|peer.?review|Nature誌|Science誌|学術誌|誌に掲載|論文.{0,10}掲載|published in (?:Nature|Science|Cell)|\bjournal\b",
+            "新規性・難度の更新": r"未解決|難問を解|世界初の発見|新発見|予想を証明|を証明した|ブレークスルー|breakthrough|\bproves?\b|\bproved\b|solves? (?:a |an )?(?:long-standing|open|unsolved)",
+            "自律実行範囲の拡大": r"研究の自動化|実験の自動化|自律(?:的に|型)?(?:実験|研究)|ロボット実験|closed.loop|autonomous(?:ly)? (?:experiment|research|lab)|self-driving lab",
+            "研究者の役割の変化": r"研究者の(?:役割|仕事)|人間の研究者|AIとの?共同研究|AIが共著|AIを共著者|co-scientist|科学者の(?:役割|仕事)|researchers?'? role",
+        },
+    },
+    "autonomy_logistics_watch": {
+        "series_fit_gate": False,
+        "targets": {
+            "ロボタクシー": r"Waymo|ウェイモ|Zoox|Apollo Go|[Rr]obotaxi|ロボタクシー|Cybercab|自動運転タクシー|無人タクシー",
+            "自動運転トラック・幹線物流": r"自動運転トラック|自動運転(?:の)?物流|レベル4|Level 4|Aurora Innovation|Kodiak|autonomous truck|self-driving truck|幹線輸送|隊列走行",
+            "配送ロボット": r"配送ロボ|デリバリーロボ|delivery robot|Starship|Serve Robotics|Coco Robotics|自動配送",
+            "ドローン配送": r"ドローン配送|ドローン宅配|drone delivery|Zipline|Wing(?![A-Za-z])|ドローンポート|ドローン基地",
+            "倉庫・店舗の無人化": r"無人店舗|無人コンビニ|無人倉庫|倉庫.{0,6}(?:無人|自動化|ロボット)|Amazon Robotics|Ocado|Just Walk Out",
+        },
+        "milestones": {
+            "運行エリアの拡大": r"(?:運行|営業|サービス|配送|提供)(?:エリア|地域|範囲).{0,8}(?:拡大|拡張|追加|開始)|(?:エリア|都市|地域).{0,6}(?:へ|に)(?:拡大|展開)|\bexpand(?:s|ed|ing)? (?:to|into|its)\b|\blaunch(?:es|ed)? in\b|service area",
+            "無人化段階の移行": r"完全無人|ドライバーなし|運転手なし|無人化|安全(?:ドライバー|監視)|監視(?:付き|員)|遠隔監視|レベル4|Level 4|driverless|safety driver|without (?:a )?driver|fully autonomous|unsupervised",
+            "日本での実用化・法規制": r"(?:国内|日本).{0,12}(?:実用化|解禁|認可|許可|承認|法改正|規制)|道路交通法|国土交通省|警察庁|特区|レベル4.{0,6}(?:認可|許可|承認)",
+            "逆向きの節目（事故・停止）": r"事故|死亡|運休|運行停止|サービス停止|営業停止|リコール|撤退|\bcrash|collision|\brecall|suspend(?:s|ed)? (?:service|operations)|shut ?down|outage|\bkilled",
+        },
+    },
+}
+
+
+def _series_list() -> list:
     try:
-        for s in json.loads(SERIES_WATCHLIST_JSON.read_text(encoding="utf-8")).get("series", []):
-            if s.get("series_id") == SERIES_WATCH_ID:
-                return s
+        return [s for s in json.loads(SERIES_WATCHLIST_JSON.read_text(encoding="utf-8")).get("series", [])
+                if s.get("series_id") in SERIES_RULES]
     except (OSError, ValueError):
-        pass
-    return {}
+        return []
+
+
+def _series_watch() -> dict:
+    return next((s for s in _series_list() if s.get("series_id") == SERIES_WATCH_ID), {})
 
 
 def series_candidate_info(c: dict):
-    """『人型ロボ定点観測』の第○回候補か（ウォッチ対象 × 節目イベント）。該当すれば
-    {"name", "no", "target", "milestones"}、しなければ None。"""
-    s = _series_watch()
-    if not s or c.get("genre") != "humanoid":
-        return None
-    sf = c.get("series_fit")
-    if sf is not None and _clamp5(sf) < 3:
-        return None
+    """定点観測シリーズの第○回候補か（ウォッチ対象 × 節目イベント）。最初に合ったシリーズについて
+    {"series_id", "name", "no", "target", "milestones"} を返す。どれにも合わなければ None。"""
     text = c.get("title", "") + " " + (c.get("summary") or "")      # 本文（actual_content）は広すぎるので照合しない
-    names = [t.get("name", "") for t in s.get("watch_targets", [])]
-    target = next((n for n, pat in SERIES_TARGET_PATTERNS.items()
-                   if any(x.startswith(n) for x in names) and re.search(pat, text)), None)
-    if not target:
-        return None
-    ms = [m for m, pat in SERIES_MILESTONE_PATTERNS.items() if re.search(pat, text, re.I)]
-    if not ms:
-        return None
-    return {"name": s.get("name", "人型ロボ定点観測"), "no": s.get("next_episode_no"), "target": target, "milestones": ms}
+    for s in _series_list():
+        rule = SERIES_RULES[s["series_id"]]
+        if c.get("genre") not in (s.get("candidate_genres") or [s.get("genre")]):
+            continue
+        sf = c.get("series_fit")
+        if rule["series_fit_gate"] and sf is not None and _clamp5(sf) < 3:
+            continue
+        names = [t.get("name", "") for t in s.get("watch_targets", [])]
+        target = next((n for n, pat in rule["targets"].items()
+                       if any(x.startswith(n) for x in names) and re.search(pat, text)), None)
+        if not target:
+            continue
+        ms = [m for m, pat in rule["milestones"].items() if re.search(pat, text, re.I)]
+        if not ms:
+            continue
+        return {"series_id": s["series_id"], "name": s.get("name", s["series_id"]), "no": s.get("next_episode_no"),
+                "target": target, "milestones": ms}
+    return None
 
 
 def presented_days(c: dict) -> list:
@@ -2180,7 +2224,7 @@ def best3(rows: list):
     # 2026-11-04: 「物×判断の数字」の候補を最低1件（足りなければ空けたまま＝普通の選び方に戻る）。
     # 先に1件取り、他は従来どおり。最後に元の並び（order）に戻す
     # 2026-11-08: 先に新規優先枠（初回スキャンから48時間以内）を1件。無ければ空けたまま（呼び出し側が「新規候補なし」と明記する）
-    # 2026-11-09: その前に、シリーズ候補の優先枠（人型ロボ定点観測）を1件。ok は入口条件を通った面白さ順なので、条件は迂回しない
+    # 2026-11-09: その前に、シリーズ候補の優先枠（定点観測シリーズ全般。2026-11-09-012 で人型ロボ以外に拡張）を1件。ok は入口条件を通った面白さ順なので、条件は迂回しない
     take([r for r in ok if series_candidate_info(r["c"])][:1], 1)
     if not any(is_new_candidate(p["c"]) for p in picks):
         for r in [r for r in ok if is_new_candidate(r["c"])]:     # take が受け入れる最初の1件（先頭が弾かれても次を試す）

@@ -90,6 +90,7 @@ HTTPだけで正しいURLを探し、見出しの語・公開日まで合えば 
     シリーズ候補＝ジャンル humanoid・series_fit 3以上（付与済みなら）・タイトル/要約にウォッチ対象（1X NEO／Figure／Tesla Optimus／Unitree）の名前と節目イベント（出荷・価格・家庭での使用報告・対応家事の追加・大型更新）の語がある候補（`series_candidate_info`。語の一致による目安）。
     入口条件はゆるめない: 旬21日以内・注目度3以上（本命）・視聴者との合い方・手応え・驚きの1行・一次資料確認・提示日数の上限を通った候補（面白さ順）からだけ取り、無ければ空けたまま。1日1件まで。優先枠→新規優先枠（48時間以内）→物×判断の数字の順。
     表示は「📌 シリーズ候補: 人型ロボ定点観測 第○回候補」（○＝`next_episode_no`）。試験: `python3 kl_test_series_priority.py`
+  - 2026-11-09-012 追記（優先対象を定点観測シリーズ全般に拡張）: 優先枠の対象は人型ロボに限らず、`series_watchlist.json` に登録された定点観測シリーズ全般（『人型ロボ定点観測』『AI科学者の定点観測』（ai_scientist_watch、候補ジャンル ai・medical）『自動運転・物流無人化の定点観測』（autonomy_logistics_watch、候補ジャンル life_tech・ai。人型ロボの記事は humanoid_watch 側で扱う））。照合の語は `kl_news_scan.py` の `SERIES_RULES`。`series_fit` の足切りは人型ロボだけ（物差しが人型ロボ専用のため）。枠は全シリーズ合わせて1日1件、入口条件は同じ。表示はシリーズ名（`name`）と `next_episode_no`。
 - 同点の並び（`tie_break`）の先頭に `tangible + decision_number` を置いた（百の位以上が物×数字、下2桁が 手応え＋議論＋視聴者）。`core`（鮮度×注目度×視聴者）は変えていない。一覧の表示は「物×数字 N｜手応え+議論+視聴者 M」
 - ベスト3: `tangible`≧4 かつ `decision_number`≧3（`BEST3_TANGIBLE_MIN`・`BEST3_DECISION_MIN`、`is_tangible_pick`）の候補を、一次資料が確認済みの中にあれば1件入れる（付与前の候補は該当にしない。足りなければ空けない）。表示は元の並びに戻す
 - `SCAN_VERSION` を `2026-11-04-subscriber` にした。夜間の採点（`enrich`）が、既存の available 候補にも3項目を付ける
