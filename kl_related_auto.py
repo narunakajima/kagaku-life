@@ -47,9 +47,7 @@ TIMEOUT_SEC = 20 * 60
 MODEL = "sonnet"
 ALLOWED_TOOLS = "Read,mcp__claude-in-chrome__*"
 FAIL_NOTIFY_AT = 3   # 同じ回が続けて失敗したらこの回数で1回だけ報告する
-WEBHOOKS = ["~/.claude/secrets/slack_webhook_cc_reports.txt",
-            "~/.claude/secrets/slack_webhook_team_reports_kagaku-life.txt",
-            "~/.claude/secrets/slack_webhook_team_reports.txt"]
+SLACK_CONFIG = Path.home() / ".config" / "handoff-poller" / "slack.json"   # #cc-reports の Incoming Webhook（cc_reports_webhook_url。ポーラーと同じ設定）
 JST = timezone(timedelta(hours=9))
 
 PROMPT = """あなたは KL のショート「関連動画」自動設定タイマーから起動されました。次の1件だけを処理します。
@@ -93,20 +91,22 @@ def save_state(st):
 
 
 def post(text):
-    for f in WEBHOOKS:
-        p = Path(os.path.expanduser(f))
-        if p.exists():
-            body = json.dumps({"text": text}, ensure_ascii=False).encode("utf-8")
-            req = urllib.request.Request(p.read_text().strip(), data=body,
-                                         headers={"Content-Type": "application/json"})
-            try:
-                with urllib.request.urlopen(req, timeout=30) as r:
-                    return r.status == 200
-            except Exception as exc:
-                print(f"Slack 投稿失敗: {exc}", file=sys.stderr)
-                return False
-    print("警告: Slack の Webhook ファイルが見つからない（報告できない）", file=sys.stderr)
-    return False
+    """#cc-reports へ投稿（~/.config/handoff-poller/slack.json の cc_reports_webhook_url。ポーラーと同じ）。"""
+    try:
+        url = json.loads(SLACK_CONFIG.read_text(encoding="utf-8")).get("cc_reports_webhook_url", "")
+    except Exception:
+        url = ""
+    if not url:
+        print(f"警告: {SLACK_CONFIG} に cc_reports_webhook_url が無い（報告できない）", file=sys.stderr)
+        return False
+    body = json.dumps({"text": text}, ensure_ascii=False).encode("utf-8")
+    req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return r.status == 200
+    except Exception as exc:
+        print(f"Slack 投稿失敗: {type(exc).__name__}", file=sys.stderr)   # URL を含みうるので詳細は出さない
+        return False
 
 
 def screen_locked():
