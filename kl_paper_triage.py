@@ -35,6 +35,7 @@ stage1_pool.json を上書きする（残した候補に `triage` フィール�
 import argparse
 import json
 import os
+import kl_gemini_model as gm
 import re
 import sys
 import time
@@ -50,7 +51,7 @@ POOL_PATH = BASE_DIR / "stage1_pool.json"
 CONCERNS_PATH = BASE_DIR / "viewer_concerns.json"
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-MODEL = "models/gemini-3.8-flash"
+MODEL = "models/" + gm.primary()
 BATCH_SIZE = 40
 ABSTRACT_CHARS = 350
 PARALLEL_CALLS = 6
@@ -163,7 +164,7 @@ def main():
     candidates = entry["candidates"]
     print(f"=== トリアージ: {concern['label']}（{len(candidates)}件、{BATCH_SIZE}件ずつ判定） ===")
 
-    client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
+    client = gm.wrap_client(genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS)))
     batches = [candidates[i : i + BATCH_SIZE] for i in range(0, len(candidates), BATCH_SIZE)]
     failed_batches = 0
     done = 0

@@ -19,6 +19,7 @@ kl_bgm_final_check.py と同じ仕組み: テキストラベルによる絞り�
 import argparse
 import json
 import os
+import kl_gemini_model as gm
 import sys
 import time
 import wave
@@ -33,7 +34,7 @@ API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY"
 # （Fable 5.1監査の指摘）。本番と同じモデルに統一する。
 # 2026-09-28: kl_tts_gen.pyのgemini-3.8-flash-tts移行に合わせて更新（本番と同一モデルを維持）。
 TTS_MODEL = "gemini-3.8-flash-tts"
-RECOMMEND_MODEL = "gemini-3.8-flash"
+RECOMMEND_MODEL = gm.primary()
 MAX_RETRIES = 5  # TTSは稀にfinish_reason=OTHERで空データを返すことがある
 
 BASE_DIR = Path(__file__).parent
@@ -125,7 +126,7 @@ def main():
     out_dir = DESKTOP_DIR / "voice_test"
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    client = genai.Client(api_key=API_KEY)
+    client = gm.wrap_client(genai.Client(api_key=API_KEY))
 
     print(f"--- {len(voices)}候補の音声を生成中 ---")
     sample_paths = []

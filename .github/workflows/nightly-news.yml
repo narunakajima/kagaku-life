@@ -89,6 +89,11 @@ jobs:
             jq -n --rawfile m nightly_stall.txt '{text: ("🚨 KL ニュース: " + $m + "Actions のログ（Scan news）を確認してください。")}' > stall_payload.json
             curl -sS -X POST -H 'Content-type: application/json' --data @stall_payload.json "$SLACK_WEBHOOK_URL_KL"
           fi
+          # Gemini モデルの自動フォールバック通知（2026-11-09 指示024。kl_gemini_model.py が model_fallback.txt に書く）
+          if [ -s model_fallback.txt ]; then
+            jq -n --rawfile m model_fallback.txt '{text: ("⚠️ KL ニュース: " + $m + "（モデル名の見直しが必要です）")}' > model_payload.json
+            curl -sS -X POST -H 'Content-type: application/json' --data @model_payload.json "$SLACK_WEBHOOK_URL_KL"
+          fi
 
       # 下書きに載せた日（presented_on）を残す（2026-11-08）。slack コマンドが news_candidates.json に書く
       - name: Commit presented_on

@@ -37,6 +37,7 @@ Opusは使わない。Geminiのみで完結する（STAGE2/STAGE3と同方針）
 import argparse
 import json
 import os
+import kl_gemini_model as gm
 import re
 import sys
 import time
@@ -51,7 +52,7 @@ BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-MODEL = "models/gemini-3.8-flash"
+MODEL = "models/" + gm.primary()
 CALL_DELAY_SEC = 1.5
 REQUEST_TIMEOUT_MS = 60_000
 
@@ -294,7 +295,7 @@ def run(episode_id: str):
             cards_by_ref.setdefault(ci, []).append(text)
             by_ref.setdefault(ci, [])
 
-    client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
+    client = gm.wrap_client(genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS)))
 
     results = []
     counts = {"ok": 0, "caution": 0, "high_risk": 0}

@@ -21,6 +21,7 @@ used_in など他の項目は変えない。
 import argparse
 import json
 import os
+import kl_gemini_model as gm
 import statistics
 import subprocess
 import sys
@@ -37,7 +38,7 @@ LIBRARY_JSON = BASE_DIR / "bgm_library.json"
 DRIVE_BASE = (Path.home() / "Library/CloudStorage" / "GoogleDrive-naru.nakajima@gmail.com"
               / "マイドライブ" / "Kagaku-Life")
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-DEFAULT_MODEL = os.environ.get("KL_BGM_TAG_MODEL", "gemini-3.8-flash")
+DEFAULT_MODEL = os.environ.get("KL_BGM_TAG_MODEL", gm.primary())
 CLIP_SECONDS = 90
 
 PROMPT = """あなたは番組のBGMを整理する音楽担当です。添付の音声（曲の頭90秒）を実際に聴いて、次のJSONだけを出力してください。
@@ -219,7 +220,7 @@ def main():
     if not API_KEY:
         print("❌ GEMINI_API_KEY が設定されていません", file=sys.stderr)
         sys.exit(1)
-    client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=180_000))
+    client = gm.wrap_client(genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=180_000)))
     todo = [e for e in lib if (args.only == e["id"] if args.only else (args.force or not e.get("tagged_at")))]
     print(f"タグ付け対象: {len(todo)}曲（モデル {args.model}、{args.runs}回ずつ）")
     for n, e in enumerate(todo, 1):

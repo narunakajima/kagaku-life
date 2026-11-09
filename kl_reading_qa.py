@@ -33,6 +33,7 @@ import difflib
 import hashlib
 import json
 import os
+import kl_gemini_model as gm
 import re
 import subprocess
 from pathlib import Path
@@ -46,7 +47,7 @@ HF_HOME = Path(os.environ.get("KL_READING_QA_HF_HOME", Path.home() / ".cache" / 
 # transformers の一部の処理は cache_dir を渡しても既定の ~/.cache/huggingface を見に行くため、
 # 取り込みより前に専用フォルダを指定しておく（kl_tts_gen.py は torch/transformers より先にこのモジュールを読む）
 os.environ.setdefault("HF_HUB_CACHE", str(HF_HOME / "hub"))
-READING_MODEL = "gemini-3.8-flash"   # 期待する読み（テキストのみ）。2026-11-09 コスト理由でFlashに統一（ユーザー決定）
+READING_MODEL = gm.primary()   # 期待する読み（テキストのみ）。2026-11-09 コスト理由でFlashに統一（ユーザー決定）
 READING_CACHE = Path.home() / ".cache" / "kl_reading_qa" / "readings.json"
 READING_BATCH = 30                    # 1回の LLM 呼び出しで読む台詞数
 READING_WORKERS = 4                   # 並列に投げる呼び出し数
@@ -477,7 +478,7 @@ def main():
     ep = json.loads((Path(__file__).parent / "episodes" / f"{args.episode}.json").read_text(encoding="utf-8"))
     nd = Path(args.narration_dir)
     targets = {int(x) for x in args.scenes.split(",")} if args.scenes else None
-    qa = ReadingQA(genai.Client(api_key=key))
+    qa = ReadingQA(gm.wrap_client(genai.Client(api_key=key)))
     scenes = [s for s in ep["scenes"] if targets is None or s["scene_id"] in targets]
     qa.prefetch([l["text"] for s in scenes for l in s.get("lines", [])])
     results, bad = {}, []

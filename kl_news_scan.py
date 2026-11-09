@@ -67,6 +67,7 @@ import email.utils
 import hashlib
 import json
 import os
+import kl_gemini_model as gm
 import re
 import sys
 import time
@@ -91,7 +92,7 @@ API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY"
 # 2026-11-09: "gemini-flash-latest" は Actions（nightly-news #27）で 404（models/gemini-flash-latest is not found for API version v1）
 # になり、採点・付与が全件失敗した。-latest のエイリアスは使わず、安定版のモデルIDを固定する
 # gemini-2.5-flash は「新規キーでは使えない」404 になったため（2026-11-09 実測）、ListModels にある gemini-3.8-flash にした
-MODEL = "gemini-3.8-flash"
+MODEL = gm.primary()
 STALL_FILE = BASE_DIR / "nightly_stall.txt"   # 採点停止の記録（Actions が Slack に「止まっています」を送る。コミットしない）
 UA = {"User-Agent": "Mozilla/5.0 (kagaku-life news scan)"}
 
@@ -376,7 +377,7 @@ def prescore_exclusions(it: dict, used: dict) -> str:
 def _gemini():
     from google import genai
     from google.genai import types
-    return genai.Client(api_key=API_KEY), types
+    return gm.wrap_client(genai.Client(api_key=API_KEY)), types
 
 
 def _json_from(text: str):

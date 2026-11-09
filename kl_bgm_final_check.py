@@ -28,6 +28,7 @@ samurai-chroniclesの sc_bgm_final_check.py と同じ仕組み。テキストベ
 import argparse
 import json
 import os
+import kl_gemini_model as gm
 import re
 import statistics
 import subprocess
@@ -37,7 +38,7 @@ from pathlib import Path
 from google import genai
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-MODEL = os.environ.get("KL_BGM_CHECK_MODEL", "gemini-3.8-flash")  # --model でも切り替え可（2026-10-06）
+MODEL = os.environ.get("KL_BGM_CHECK_MODEL", gm.primary())  # --model でも切り替え可（2026-10-06）
 
 DESKTOP_KL = Path(os.path.expanduser("~/Desktop/kagaku-life"))
 
@@ -419,7 +420,7 @@ def main():
         "main": find_role_file(bgm_dir, "main"),
         "outro": find_role_file(bgm_dir, "outro"),
     }
-    client = genai.Client(api_key=API_KEY)
+    client = gm.wrap_client(genai.Client(api_key=API_KEY))
 
     if ep.get("format") == "dialogue":
         sys.exit(run_dialogue_check(client, args.episode, ep, tracks, max(1, args.runs)))

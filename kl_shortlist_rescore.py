@@ -74,6 +74,7 @@ kl_paper_interest_score.pyからimportして再利用——プロンプト・重
 import argparse
 import json
 import os
+import kl_gemini_model as gm
 import sys
 import time
 import urllib.error
@@ -220,7 +221,7 @@ def rescore_legacy_one(paper_id: str) -> None:
         "abstract": abstract or "",
         "stage3": {},
     }
-    client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=60_000))
+    client = gm.wrap_client(genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=60_000)))
     verdict = score_paper(client, paper, build_past_episodes_context(), None)
     if verdict.get("_fallback"):
         print(f"❌ Gemini採点に失敗しました: {verdict.get('reasoning')}", file=sys.stderr)
@@ -324,7 +325,7 @@ def main():
         print("❌ GEMINI_API_KEY が設定されていません", file=sys.stderr)
         sys.exit(1)
 
-    client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=60_000))
+    client = gm.wrap_client(genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=60_000)))
     past_episodes = build_past_episodes_context()
     today = date.today().isoformat()
     concerns = load_concerns()

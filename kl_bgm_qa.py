@@ -24,11 +24,12 @@ from pathlib import Path
 from google import genai
 
 import os
+import kl_gemini_model as gm
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
 # 2026-10-06: --model / 環境変数 KL_BGM_QA_MODEL で切り替えられる。実測で gemini-pro-latest は6曲×3回の
 # 判定がすべて一致した一方、flash は3曲で判定が割れた（ソロピアノに「男性ボーカル」など）。費用は pro の方が高い
-QA_MODEL = os.environ.get("KL_BGM_QA_MODEL", "gemini-3.8-flash")
+QA_MODEL = os.environ.get("KL_BGM_QA_MODEL", gm.primary())
 
 # ボーカル混入は大抵冒頭〜中盤で判別できるため、全尺ではなく先頭 QA_CLIP_SECONDS 秒
 # のみをQAに送る（Gemini音声入力トークンを大幅削減する）。sc_bgm_qa.pyと同じ仕組み。
@@ -162,7 +163,7 @@ def run(paths: list) -> list:
     if not API_KEY:
         print("❌ GEMINI_API_KEY が設定されていません")
         sys.exit(1)
-    client = genai.Client(api_key=API_KEY)
+    client = gm.wrap_client(genai.Client(api_key=API_KEY))
 
     results = []
     for p in paths:

@@ -33,6 +33,7 @@ kl_video_gen.pyがKen Burnsのズーム焦点・カメラワークとして使�
 import argparse
 import json
 import os
+import kl_gemini_model as gm
 import re
 import sys
 from pathlib import Path
@@ -43,7 +44,7 @@ from google.genai import types
 sys.stdout.reconfigure(line_buffering=True)
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-MODEL = "gemini-3.8-flash"
+MODEL = gm.primary()
 
 
 def atomic_write_json(path: Path, data) -> None:
@@ -160,7 +161,7 @@ def run(episode_id: str, scene_filter: list = None):
         ep = json.load(f)
 
     images_dir = DESKTOP_DIR / "images"
-    client = genai.Client(api_key=API_KEY)
+    client = gm.wrap_client(genai.Client(api_key=API_KEY))
 
     targets = [s for s in ep["scenes"] if is_target_scene(s)]
     if scene_filter:

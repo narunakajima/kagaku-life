@@ -20,6 +20,7 @@ Opusは使わない。Geminiのみで完結する（STAGE2と同方針）。
 import argparse
 import json
 import os
+import kl_gemini_model as gm
 import re
 import sys
 import time
@@ -34,7 +35,7 @@ INPUT_PATH = BASE_DIR / "stage2_screened.json"
 OUTPUT_PATH = BASE_DIR / "stage3_hypecheck.json"
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-MODEL = "models/gemini-3.8-flash"
+MODEL = "models/" + gm.primary()
 CALL_DELAY_SEC = 1.5
 REQUEST_TIMEOUT_MS = 60_000  # 2026-08追加: タイムアウト未設定で1件が3時間以上ハングした事故があったため（kl_paper_screen.py参照）
 
@@ -177,7 +178,7 @@ def main():
             sys.exit(1)
         groups = {args.concern: groups[args.concern]}
 
-    client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
+    client = gm.wrap_client(genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS)))
 
     def write_checkpoint(results: dict, done: bool) -> dict:
         total_counts = {"ok": 0, "caution": 0, "high_risk": 0}

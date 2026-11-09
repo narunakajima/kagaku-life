@@ -103,6 +103,7 @@ latest_known_episode_id() / STAGE4_VERSION は `kl_shortlist_rescore.py`
 import argparse
 import json
 import os
+import kl_gemini_model as gm
 import re
 import sys
 import time
@@ -120,7 +121,7 @@ CONCERNS_PATH = BASE_DIR / "viewer_concerns.json"
 LEGACY_SHORTLIST_PATH = BASE_DIR / "topics_shortlist_legacy.json"
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-MODEL = "models/gemini-3.8-flash"
+MODEL = "models/" + gm.primary()
 CALL_DELAY_SEC = 1.0
 REQUEST_TIMEOUT_MS = 60_000  # 2026-08追加: タイムアウト未設定で1件が3時間以上ハングした事故があったため（kl_paper_screen.py参照）
 
@@ -726,7 +727,7 @@ def main():
         groups = {args.concern: groups[args.concern]}
     concerns = load_concerns()
 
-    client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
+    client = gm.wrap_client(genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS)))
     past_episodes = build_past_episodes_context()
 
     all_scored = []

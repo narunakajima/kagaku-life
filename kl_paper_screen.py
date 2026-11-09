@@ -43,9 +43,10 @@ OUTPUT_PATH = BASE_DIR / "stage2_screened.json"
 VENUE_ALLOWLIST_PATH = BASE_DIR / "reputable_venues.json"
 
 import os
+import kl_gemini_model as gm
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-MODEL = "models/gemini-3.8-flash"
+MODEL = "models/" + gm.primary()
 # 2026-09追加: コスト削減のため、STAGE2のGemini審査ではデフォルトでGoogle Search
 # グラウンディングを使わない（アブストラクト・掲載誌・著者名・被引用数のみで判断）。
 # 検索課金は1クエリ約¥2.2で、STAGE2の全件個別審査では月数千円規模になっていた。
@@ -263,7 +264,7 @@ def main():
             sys.exit(1)
         groups = {args.concern: groups[args.concern]}
 
-    client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
+    client = gm.wrap_client(genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS)))
 
     def write_checkpoint(results: dict, done: bool) -> dict:
         total_counts = {"pass": 0, "flag": 0, "exclude": 0}

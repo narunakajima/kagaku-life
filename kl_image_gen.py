@@ -53,6 +53,7 @@ Shorts冒頭の顔アップフックについて（2026-09-06〜）:
 import argparse
 import json
 import os
+import kl_gemini_model as gm
 import re
 import shutil
 import sys
@@ -69,7 +70,7 @@ DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
 MODEL = "gemini-nano-banana-2.1"
-QA_MODEL = "gemini-3.8-flash"
+QA_MODEL = gm.primary()
 REQUEST_TIMEOUT_MS = 60_000
 MAX_QA_ATTEMPTS = 2  # SCの実績（89話分・3回目のリトライは効果薄）を踏襲し2回に抑える
 
@@ -762,7 +763,7 @@ def main():
         print(f"✅ サムネイルを合成し直しました: {out_dir / 'thumbnail.png'}")
         return
 
-    client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
+    client = gm.wrap_client(genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS)))
 
     qa_results = []
 

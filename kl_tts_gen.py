@@ -36,6 +36,7 @@ import base64
 import io
 import json
 import os
+import kl_gemini_model as gm
 import re
 import shutil
 import sys
@@ -54,7 +55,7 @@ BASE_DIR = Path(__file__).parent
 DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
-QA_MODEL = "gemini-3.8-flash"  # ナレーション音声が台本通りか判定する用（sc_tts_gen.pyと同じ考え方）
+QA_MODEL = gm.primary()  # ナレーション音声が台本通りか判定する用（sc_tts_gen.pyと同じ考え方）
 # 2026-09-28: gemini-3.1-flash-tts-preview → gemini-3.8-flash-tts（正式版）に移行。
 # 3.8は入力テキストを「読み上げ原稿そのもの」として扱うため、演技指導（STYLE_PREFIX・
 # persona_style）をテキスト先頭に付けると指示文まで読み上げられてしまう。演技指導は
@@ -354,7 +355,7 @@ def run_dialogue(args, ep: dict, ep_path: Path, client) -> None:
                 import kl_reading_qa
                 import torch  # noqa: F401（音素認識に必要。無ければ ImportError で照合なしに切り替える）
                 import transformers  # noqa: F401
-                reading_qa = kl_reading_qa.ReadingQA(genai.Client(api_key=API_KEY))
+                reading_qa = kl_reading_qa.ReadingQA(gm.wrap_client(genai.Client(api_key=API_KEY)))
                 reading_qa.prefetch_async(todo)
             except ImportError as e:
                 print(f"⚠️ 読み照合QAを使えません（{e}）。pip3 install --user transformers で入ります。"
@@ -467,7 +468,7 @@ def main():
         guard_desktop_episode(DESKTOP_DIR, args.episode)
         out_dir.mkdir(parents=True, exist_ok=True)
         (DESKTOP_DIR / ".current_episode").write_text(args.episode, encoding="utf-8")
-        client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
+        client = gm.wrap_client(genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS)))
         run_dialogue(args, ep, ep_path, client)
         return
 
@@ -487,7 +488,7 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
     (DESKTOP_DIR / ".current_episode").write_text(args.episode, encoding="utf-8")
 
-    client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
+    client = gm.wrap_client(genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS)))
 
     target_ids = None
     if args.scenes:
