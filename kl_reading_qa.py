@@ -46,7 +46,7 @@ HF_HOME = Path(os.environ.get("KL_READING_QA_HF_HOME", Path.home() / ".cache" / 
 # transformers の一部の処理は cache_dir を渡しても既定の ~/.cache/huggingface を見に行くため、
 # 取り込みより前に専用フォルダを指定しておく（kl_tts_gen.py は torch/transformers より先にこのモジュールを読む）
 os.environ.setdefault("HF_HUB_CACHE", str(HF_HOME / "hub"))
-READING_MODEL = "gemini-pro-latest"   # 期待する読み（テキストのみ）。flash は読み誤りが多かった
+READING_MODEL = "gemini-3.1-pro-preview"   # 期待する読み（テキストのみ）。flash は読み誤りが多かった
 READING_CACHE = Path.home() / ".cache" / "kl_reading_qa" / "readings.json"
 READING_BATCH = 30                    # 1回の LLM 呼び出しで読む台詞数
 READING_WORKERS = 4                   # 並列に投げる呼び出し数

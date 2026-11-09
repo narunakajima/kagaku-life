@@ -2096,28 +2096,41 @@
     "path": "BGM/kl047-BGM-outro.mp3",
     "license": "CC0",
     "credit": null,
-    "tags": [],
+    "tags": [
+      "bass",
+      "calm",
+      "drums",
+      "electric-piano",
+      "neutral"
+    ],
     "used_in": [
       "kl047"
     ],
-    "duration": 121.26,
+    "duration": 121.3,
     "source_id": "587315",
     "source_name": "Dorian 12 Keys.wav",
     "source_url": "https://freesound.org/s/587315/",
-    "bpm": 95.0,
+    "bpm": 78,
     "mood": [
       "calm",
-      "jazzy"
+      "neutral"
     ],
     "instruments": [
-      "electric-piano",
       "bass",
-      "drums"
+      "drums",
+      "electric-piano"
     ],
     "has_beat": true,
     "era": "dialogue",
     "role_fit": [
-      "outro"
-    ]
+      "main"
+    ],
+    "has_vocals": false,
+    "tag_note": "落ち着いたエレピとドラムのジャズ風BGM",
+    "tagged_by": "gemini-3.1-pro-preview x2",
+    "tagged_at": "2026-11-09",
+    "ear_check_reason": "",
+    "short_for_role": [],
+    "needs_ear_check": false
   }
 ]
