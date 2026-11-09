@@ -5,9 +5,11 @@
 //   1. このファイルの内容を、Studio のページの localStorage に保存する（最初の1回だけ）:
 //        localStorage.setItem('rel_fn', `<このファイルの「関数本体」部分（return (async()=>{ ... })() ）>`)
 //   2. Shorts の編集画面（studio.youtube.com/video/{SHORTS_ID}/edit）を開いて3秒待ち、次を実行する:
-//        await (new Function('KW','FORCE',localStorage.getItem('rel_fn')))("検索語", false)
+//        await (new Function('KW','FORCE','STRICT',localStorage.getItem('rel_fn')))("検索語", false, false)   // 無人実行は第3引数 STRICT を true にする
 //      KW   = *_related_targets.py が出した検索語（他のエピソードのタイトルに含まれない先頭部分）
 //      FORCE = true なら、すでに設定済みでも上書きする（取り違えの修正用）。通常は false
+//      STRICT = true なら「子ども向けか」が未選択のとき何も変えずに err:'kid-unset' で止まる（無人実行用。
+//               kl_related_auto.py はこちら）。省略・false なら従来どおり未選択のとき「いいえ」を選ぶ
 //   3. 返ってくるJSON: { id, kid, before, label, rel, saved }
 //        - skip:'already'  すでに設定済み（before が現在の本編タイトル。期待する本編か確認する）
 //        - err:'no-option' 検索語に合う本編が見つからない（その回はスキップして報告）
@@ -32,6 +34,7 @@ return (async()=>{
   const rs=deep(document,'tp-yt-paper-radio-button').filter(e=>/子ども向け/.test(e.innerText)&&e.innerText.length<80);
   let kid='already';
   if(!rs.some(e=>e.getAttribute('aria-checked')==='true')){
+    if(typeof STRICT!=='undefined'&&STRICT)return JSON.stringify({id,err:'kid-unset'});
     const no=rs.find(e=>e.innerText.includes('いいえ'));
     if(no){no.click();kid='set-no';await sl(500)}else kid='radio-not-found';
   }
