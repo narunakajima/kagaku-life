@@ -4099,8 +4099,14 @@
       "buzz_jp_est": 5,
       "topic_first_date": "2026-09-29",
       "topic_first_source": "候補 884977ecb8 のannounced_on（Introducing dots）",
-      "topic_series": "884977ecb8",
-      "freshness_basis": "topic_first_date"
+      "topic_series": "5181d1b7ff",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-10",
+        "title": "dotsが「複数台のローカルコンピュータ接続」に対応　各マシンでタスクを分担可能に",
+        "id": "5181d1b7ff",
+        "source": "ITmedia AI+"
+      }
     },
     {
       "title": "How Diffusion Controller unifies and simplifies AI image generation",
@@ -25065,8 +25071,8 @@
       "excluded_reason": "",
       "scored_at": "2026-10-18",
       "topic_first_date": "2026-09-29",
-      "topic_first_source": "候補 aaa3f33ae7 のannounced_on（OpenAIが常時稼働AIエージェント『dots』発表、Mi）",
-      "topic_series": "aaa3f33ae7",
+      "topic_first_source": "候補 884977ecb8 のannounced_on（Introducing dots）",
+      "topic_series": "5181d1b7ff",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-17",
@@ -32820,7 +32826,7 @@
           "kind": "press_release"
         }
       ],
-      "primary_verified_at": "2026-11-10T10:01:21",
+      "primary_verified_at": "2026-11-11T07:46:57",
       "url_check": [
         {
           "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1608368",
@@ -32840,7 +32846,7 @@
       ],
       "url_ok": false,
       "url_status": "nejm.org: HTTP 403（ボット拒否の可能性。ブラウザで確認） → DOI実在（ハンドルAPI、10.1056/NEJMoa1608368） ／ cira.kyoto-u.ac.jp: ソフト404（HTTP 200、title「エラー 404｜ 京都大学iPS細胞研究所 CiRA（サイラ）」） ／ keio.ac.jp: HTTP 200「プレスリリース | 慶應義塾」",
-      "url_checked_at": "2026-11-10T10:01:21",
+      "url_checked_at": "2026-11-11T07:46:57",
       "buzz_history": [
         {
           "at": "2026-10-27T06:56:26",
@@ -33146,7 +33152,15 @@
       "decision_number": 1,
       "series_fit": 1,
       "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "interest_version": "2026-11-07",
+      "surprise_retry": [
+        {
+          "at": "2026-11-11T07:43:14",
+          "ok": false,
+          "reason": "一次資料は安全性確認が主で、機能回復の限界は言い切れないため"
+        }
+      ],
+      "surprise_hold_reason": "一次資料は安全性確認が主で、機能回復の限界は言い切れないため"
     },
     {
       "title": "海藻由来のアルギン酸が腸粘膜修復を促進 順天堂大などが仕組みを解明",
@@ -33394,7 +33408,15 @@
       "decision_number": 1,
       "series_fit": 1,
       "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "interest_version": "2026-11-07",
+      "surprise_retry": [
+        {
+          "at": "2026-11-11T07:43:20",
+          "ok": false,
+          "reason": "症状改善の有意差がなく、想定視聴者が驚く要素が乏しいため。"
+        }
+      ],
+      "surprise_hold_reason": "症状改善の有意差がなく、想定視聴者が驚く要素が乏しいため。"
     },
     {
       "title": "PHPの脆弱性、OpenAIのAIで発見　「同様の発見、今後数カ月で急増」",
@@ -34616,8 +34638,15 @@
       "tangible": 2,
       "decision_number": 4,
       "series_fit": 1,
-      "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "surprise_line": "エクセル業務が多い経営者が、国が神エクセルを100点満点で採点することに驚く",
+      "interest_version": "2026-11-07",
+      "surprise_retry": [
+        {
+          "at": "2026-11-11T07:43:30",
+          "ok": true,
+          "reason": ""
+        }
+      ]
     },
     {
       "title": "クァンタムスケープ、AIデータセンターおよび航空宇宙・防衛分野向けに100MWhの全固体電池生産ライン構築計画を発表",
@@ -36347,7 +36376,15 @@
       "decision_number": 1,
       "series_fit": 1,
       "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "interest_version": "2026-11-07",
+      "surprise_retry": [
+        {
+          "at": "2026-11-11T07:43:39",
+          "ok": false,
+          "reason": "想定視聴者が驚く具体的事実が資料内に記載されていないため"
+        }
+      ],
+      "surprise_hold_reason": "想定視聴者が驚く具体的事実が資料内に記載されていないため"
     },
     {
       "title": "酪酸菌配合剤で高齢機能性便秘症が改善－順大",
@@ -36772,8 +36809,15 @@
       "tangible": 1,
       "decision_number": 5,
       "series_fit": 1,
-      "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "surprise_line": "企業の経営者が、AIの文書仕分けが5倍速く出力課金ゼロなことに驚く",
+      "interest_version": "2026-11-07",
+      "surprise_retry": [
+        {
+          "at": "2026-11-11T07:43:50",
+          "ok": true,
+          "reason": ""
+        }
+      ]
     },
     {
       "title": "テスラのヒト型ロボット販売、来年開始めざす マスク氏表明 | WSJ PickUp",
@@ -37199,7 +37243,7 @@
           "repair_from": "https://1password.com/press"
         }
       ],
-      "primary_verified_at": "2026-11-10T10:00:57",
+      "primary_verified_at": "2026-11-11T07:46:36",
       "url_check": [
         {
           "url": "https://1password.com/jp/product/enterprise-password-manager",
@@ -37214,7 +37258,7 @@
       ],
       "url_ok": true,
       "url_status": "1password.com: HTTP 200「エンタープライズ向けパスワード管理 | 1Password」 ／ 1password.com: HTTP 200「1Password for Agents: Secure A」",
-      "url_checked_at": "2026-11-10T10:00:57",
+      "url_checked_at": "2026-11-11T07:46:36",
       "repair_tried": true,
       "repair_tried_at": "2026-10-24T05:44:21",
       "repair_log": [
@@ -37847,7 +37891,7 @@
           "kind": "press_release"
         }
       ],
-      "primary_verified_at": "2026-11-10T10:01:25",
+      "primary_verified_at": "2026-11-11T07:47:00",
       "url_check": [
         {
           "url": "https://doi.org/10.1111/joim.70172",
@@ -37862,7 +37906,7 @@
       ],
       "url_ok": true,
       "url_status": "doi.org: DOI実在（ハンドルAPI、10.1111/joim.70172） ／ eurekalert.org: HTTP 202",
-      "url_checked_at": "2026-11-10T10:01:25",
+      "url_checked_at": "2026-11-11T07:47:00",
       "buzz_history": [
         {
           "at": "2026-10-27T06:56:34",
@@ -38106,7 +38150,15 @@
       "decision_number": 1,
       "series_fit": 1,
       "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "interest_version": "2026-11-07",
+      "surprise_retry": [
+        {
+          "at": "2026-11-11T07:44:01",
+          "ok": false,
+          "reason": "新技術関連でなく、対象層が驚く一次資料の要素がないため。"
+        }
+      ],
+      "surprise_hold_reason": "新技術関連でなく、対象層が驚く一次資料の要素がないため。"
     },
     {
       "title": "OpenAI、訓練中の最先端AIをインターネットから遮断すると発表。モデルの不正アクセス受け",
@@ -38587,7 +38639,15 @@
       "decision_number": 1,
       "series_fit": 1,
       "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "interest_version": "2026-11-07",
+      "surprise_retry": [
+        {
+          "at": "2026-11-11T07:44:05",
+          "ok": false,
+          "reason": "マウスの基礎研究段階で視聴者が驚く事実を言い切れないため"
+        }
+      ],
+      "surprise_hold_reason": "マウスの基礎研究段階で視聴者が驚く事実を言い切れないため"
     },
     {
       "title": "アキュルクス社、抗生物質クラスのマイクロバイオームへの影響に関する研究を発表 執筆",
@@ -43634,7 +43694,7 @@
       "freshness": 5,
       "overall_score": 4.05,
       "scan_version": "2026-10-25-audience",
-      "status": "available",
+      "status": "shelved",
       "excluded_reason": "",
       "scored_at": "2026-10-29",
       "topic_first_date": "2026-10-28",
@@ -43985,7 +44045,9 @@
       "yt_competitors_checked_at": "2026-11-08T14:01:41",
       "yt_competitors_query": "Echo Time",
       "surprise_line": "会社員が、体を身につけず超音波だけで浅い眠りに起こされる時計に驚く",
-      "interest_version": "2026-11-07"
+      "interest_version": "2026-11-07",
+      "shelved_on": "2026-11-11",
+      "shelved_reason": "下書きに2日提示（11-09・11-10）して選ばれなかった"
     },
     {
       "title": "Anthropic、独自の“創薬活動”に着手　社員1人のバイオ企業を買収、小児難病の治療薬研究を進める",
@@ -46452,8 +46514,15 @@
       "tangible": 2,
       "decision_number": 5,
       "series_fit": 1,
-      "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "surprise_line": "会社の経営者が、チャット有料プランで月最大8万円分のAPIが付くことに驚く",
+      "interest_version": "2026-11-07",
+      "surprise_retry": [
+        {
+          "at": "2026-11-11T07:44:17",
+          "ok": true,
+          "reason": ""
+        }
+      ]
     },
     {
       "title": "テスラの人型ロボ「Optimus」、生産開始 週2万台には「少なくとも1年」",
@@ -48143,7 +48212,15 @@
       "decision_number": 2,
       "series_fit": 1,
       "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "interest_version": "2026-11-07",
+      "surprise_retry": [
+        {
+          "at": "2026-11-11T07:44:24",
+          "ok": false,
+          "reason": "対象視聴者が驚く事実が一次資料に直接記載されていないため。"
+        }
+      ],
+      "surprise_hold_reason": "対象視聴者が驚く事実が一次資料に直接記載されていないため。"
     },
     {
       "title": "Gemini Notebook、無料で数百冊の教科書にアクセス可能に　米国・インドの出版社提供　日本でも利用可",
@@ -48731,7 +48808,7 @@
           "kind": "paper"
         }
       ],
-      "primary_verified_at": "2026-11-10T10:01:07",
+      "primary_verified_at": "2026-11-11T07:46:47",
       "url_check": [
         {
           "url": "https://cancer-c.pref.aichi.jp/wp/wp-content/uploads/Press-release_261025_HP.pdf",
@@ -48746,7 +48823,7 @@
       ],
       "url_ok": false,
       "url_status": "cancer-c.pref.aichi.jp: HTTP 200 ／ doi.org: DOIが存在しない（ハンドルAPI、10.1016/S0140-6736(26)01784-2）",
-      "url_checked_at": "2026-11-10T10:01:07",
+      "url_checked_at": "2026-11-11T07:46:47",
       "buzz_history": [
         {
           "at": "2026-11-01T05:44:17",
@@ -48959,7 +49036,15 @@
       "decision_number": 4,
       "series_fit": 1,
       "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "interest_version": "2026-11-07",
+      "surprise_retry": [
+        {
+          "at": "2026-11-11T07:44:34",
+          "ok": false,
+          "reason": "想定視聴者が驚く内容を一次資料から言い切れないため。"
+        }
+      ],
+      "surprise_hold_reason": "想定視聴者が驚く内容を一次資料から言い切れないため。"
     },
     {
       "title": "AIの「費用対効果が分からない」問題、解決へ？　Claude Enterprise搭載の「3つの新機能」",
@@ -49037,7 +49122,7 @@
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-10T10:01:15",
+      "primary_verified_at": "2026-11-11T07:46:51",
       "url_check": [
         {
           "url": "https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets",
@@ -49047,7 +49132,7 @@
       ],
       "url_ok": true,
       "url_status": "claude.com: HTTP 200「Smart reports, surveys, and po」",
-      "url_checked_at": "2026-11-10T10:01:15",
+      "url_checked_at": "2026-11-11T07:46:51",
       "buzz_history": [
         {
           "at": "2026-11-01T05:43:46",
@@ -49269,8 +49354,15 @@
       "tangible": 2,
       "decision_number": 4,
       "series_fit": 1,
-      "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "surprise_line": "企業の経営者が、AI自身が対話ログを要約し業務成果を可視化することに驚く",
+      "interest_version": "2026-11-07",
+      "surprise_retry": [
+        {
+          "at": "2026-11-11T07:44:47",
+          "ok": true,
+          "reason": ""
+        }
+      ]
     },
     {
       "title": "Meta Platforms、中国フーリエと人型ロボット開発——家庭用ロボット参入を拡大 執筆",
@@ -49632,7 +49724,15 @@
       "decision_number": 3,
       "series_fit": 1,
       "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "interest_version": "2026-11-07",
+      "surprise_retry": [
+        {
+          "at": "2026-11-11T07:44:54",
+          "ok": false,
+          "reason": "想定視聴者が驚く具体的な内容が一次資料にないため"
+        }
+      ],
+      "surprise_hold_reason": "想定視聴者が驚く具体的な内容が一次資料にないため"
     },
     {
       "title": "膀胱がんで免疫細胞が集まる腫瘍内環境の特徴を解明 CXCL13を介した腫瘍免疫環境形成の可能性を示す",
@@ -50158,7 +50258,7 @@
       "freshness": 4,
       "overall_score": 3.5,
       "scan_version": "2026-10-25-audience",
-      "status": "available",
+      "status": "shelved",
       "excluded_reason": "",
       "scored_at": "2026-11-01",
       "topic_first_date": "2026-10-21",
@@ -50440,7 +50540,9 @@
       "yt_competitors_checked_at": "2026-11-08T14:01:41",
       "yt_competitors_query": "PHP 脆弱性 OpenAI",
       "surprise_line": "Web担当者が、AIが10年見逃されたPHPの重大な欠陥を見抜いたことに驚く",
-      "interest_version": "2026-11-07"
+      "interest_version": "2026-11-07",
+      "shelved_on": "2026-11-11",
+      "shelved_reason": "下書きに2日提示（11-09・11-10）して選ばれなかった"
     },
     {
       "title": "Metaがヒューマノイドロボット「Max」を開発／米国企業はすでに改良版の準備を進める",
@@ -50987,7 +51089,7 @@
           "kind": "official_blog"
         }
       ],
-      "primary_verified_at": "2026-11-10T10:01:13",
+      "primary_verified_at": "2026-11-11T07:46:45",
       "url_check": [
         {
           "url": "https://datatracker.ietf.org/doc/draft-kelley-aipref-training-preference-signal/",
@@ -51007,7 +51109,7 @@
       ],
       "url_ok": true,
       "url_status": "datatracker.ietf.org: HTTP 200「draft-kelley-aipref-training-p」 ／ developers.google.com: HTTP 200「ウェブサイト向けの共有 AI トレーニング コントロールのサ」 ／ blogs.bing.com: HTTP 200「Your content, your choice: cle」",
-      "url_checked_at": "2026-11-10T10:01:13",
+      "url_checked_at": "2026-11-11T07:46:45",
       "buzz_history": [
         {
           "at": "2026-11-02T06:28:43",
@@ -51202,8 +51304,15 @@
       "tangible": 2,
       "decision_number": 4,
       "series_fit": 1,
-      "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "surprise_line": "自社サイトを持つ自営業の人が、１行で主要AIの学習を一括拒否できることに驚く",
+      "interest_version": "2026-11-07",
+      "surprise_retry": [
+        {
+          "at": "2026-11-11T07:45:10",
+          "ok": true,
+          "reason": ""
+        }
+      ]
     },
     {
       "title": "「韓国人の糖類摂取量　アイスより市販キムチの方が多い」ソウル大学が発表",
@@ -51391,7 +51500,15 @@
       "decision_number": 3,
       "series_fit": 1,
       "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "interest_version": "2026-11-07",
+      "surprise_retry": [
+        {
+          "at": "2026-11-11T07:45:20",
+          "ok": false,
+          "reason": "一次資料に想定視聴者が驚く技術・ビジネス要素がないため"
+        }
+      ],
+      "surprise_hold_reason": "一次資料に想定視聴者が驚く技術・ビジネス要素がないため"
     },
     {
       "title": "高脂肪食で生じる抑うつ様行動に対する抗炎症物質の投与と運動の併用による増強的治療効果",
@@ -51706,7 +51823,15 @@
       "decision_number": 5,
       "series_fit": 1,
       "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "interest_version": "2026-11-07",
+      "surprise_retry": [
+        {
+          "at": "2026-11-11T07:45:28",
+          "ok": false,
+          "reason": "一次資料に対象となる人物の具体的影響の記載がないため"
+        }
+      ],
+      "surprise_hold_reason": "一次資料に対象となる人物の具体的影響の記載がないため"
     },
     {
       "title": "Hyundai Motor、FIFAWorld Cup2026™で人型ロボット「Atlas®」が史上初となる試合運用を実現",
@@ -53980,8 +54105,15 @@
       "tangible": 1,
       "decision_number": 2,
       "series_fit": 1,
-      "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "surprise_line": "経営者の人が、血液で乳がん再発を画像より7か月半早く検知できることに驚く",
+      "interest_version": "2026-11-07",
+      "surprise_retry": [
+        {
+          "at": "2026-11-11T07:45:39",
+          "ok": true,
+          "reason": ""
+        }
+      ]
     },
     {
       "title": "東北大とアイシンがSTT-MRAM搭載AIチップを開発、16nmプロセスでは世界初",
@@ -54785,7 +54917,15 @@
       "decision_number": 2,
       "series_fit": 1,
       "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "interest_version": "2026-11-07",
+      "surprise_retry": [
+        {
+          "at": "2026-11-11T07:45:47",
+          "ok": false,
+          "reason": "視聴者層（技術関心層・経営者）に響く驚きが資料にないため"
+        }
+      ],
+      "surprise_hold_reason": "視聴者層（技術関心層・経営者）に響く驚きが資料にないため"
     },
     {
       "title": "iPS細胞由来の人工心筋移植、心不全治療に有望／NEJM｜CareNet.com",
@@ -56069,7 +56209,15 @@
       "buzz_adopted_at": "2026-11-10T09:59:59",
       "buzz_adopted_n": 3,
       "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "interest_version": "2026-11-07",
+      "surprise_retry": [
+        {
+          "at": "2026-11-11T07:45:59",
+          "ok": false,
+          "reason": "想定視聴者が驚く根拠が一次資料に記載されていないため"
+        }
+      ],
+      "surprise_hold_reason": "想定視聴者が驚く根拠が一次資料に記載されていないため"
     },
     {
       "title": "食道がんのニボルマブ併用療法、5年後も全生存期間の改善を維持－国がんほか",
@@ -57000,7 +57148,7 @@
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-10T10:01:36",
+      "primary_verified_at": "2026-11-11T07:47:11",
       "url_check": [
         {
           "url": "https://www.preferred.jp/ja/news/pr20261105/",
@@ -57015,7 +57163,7 @@
       ],
       "url_ok": true,
       "url_status": "preferred.jp: HTTP 200「PFN、世界最高水準のAI翻訳がエッジで可能な大規模言語モデ」 ／ huggingface.co: HTTP 200「pfnet/plamo-3-translate-0.8b ·」",
-      "url_checked_at": "2026-11-10T10:01:36",
+      "url_checked_at": "2026-11-11T07:47:11",
       "buzz_history": [
         {
           "at": "2026-11-06T07:56:22",
@@ -57159,8 +57307,15 @@
       "presented_on": [
         "2026-11-09"
       ],
-      "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "surprise_line": "中小企業の経営者が、世界最高水準の翻訳AIを社内完結・無料で使えることに驚く",
+      "interest_version": "2026-11-07",
+      "surprise_retry": [
+        {
+          "at": "2026-11-11T07:46:13",
+          "ok": true,
+          "reason": ""
+        }
+      ]
     },
     {
       "title": "東京ガスエンジニアリングソリューションズ、人型ロボットで工場設備を点検する実証に着手",
@@ -58175,7 +58330,7 @@
           "kind": "tech_report"
         }
       ],
-      "primary_verified_at": "2026-11-10T10:01:32",
+      "primary_verified_at": "2026-11-11T07:47:07",
       "url_check": [
         {
           "url": "https://openai.com/index/introducing-images-2-6/",
@@ -58190,7 +58345,7 @@
       ],
       "url_ok": null,
       "url_status": "openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
-      "url_checked_at": "2026-11-10T10:01:32",
+      "url_checked_at": "2026-11-11T07:47:07",
       "buzz_history": [
         {
           "at": "2026-11-10T09:59:32",
@@ -59113,6 +59268,1326 @@
         "title": "フィジカルAIを介してヒューマノイドと工作機械がシームレスに連携する加工システムを開発",
         "id": "6ca6072cc0",
         "source": "Gemini検索（三菱電機）"
+      }
+    },
+    {
+      "title": "JALと豊田自動織機、羽田空港で自動運転レベル4の検証拡大…トンネル区間を含む難易度の高い新ルートで",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE13QVFIdkNmQjM0dUhSWDJvOE43QUJpNkRKaUgyckV6a0RlXy1INUQwX3d0Q240bFAtdEgwYjE1QmhaTm1KUURHYkpOaGpNa2hTcjBSOE1nV3JZVzdLd3RN?oc=5",
+      "published": "2026-11-10",
+      "source": "Googleニュース（自動運転 レベル4 開始）／レスポンス（Response.jp）",
+      "source_kind": "media",
+      "outlet": "レスポンス（Response.jp）",
+      "outlet_host": "response.jp",
+      "genre_hint": "life_tech",
+      "summary": "JALと豊田自動織機、羽田空港で自動運転レベル4の検証拡大…トンネル区間を含む難易度の高い新ルートで（レスポンス（Response.jp））",
+      "series_query": "autonomy_logistics_watch",
+      "id": "15d0709749",
+      "sources": [
+        "レスポンス（Response.jp）"
+      ],
+      "dup_ids": [
+        "43ccd9bc4f"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.toyota-shokki.co.jp/news/2026/10/30/009101/index.html",
+          "what_it_states": "羽田空港制限区域内での自動運転レベル4運用拡大に向け、2026年11月より豊田自動織機製トーイングトラクター（EV）1台を用いた走行検証を開始。2025年12月15日に実用化したルートに加え、GNSSが届きにくいトンネル区間を含む新ルートで国交省航空局の共通インフラ（信号設備・カメラ等）との連携精度や課題を精査する。"
+        }
+      ],
+      "announced_on": "2026-10-30",
+      "headline_claim": "JALと豊田自動織機が、羽田空港でトンネル区間を含む難所新ルートを対象に自動運転レベル4の検証拡大を開始した。",
+      "actual_content": "羽田空港の制限区域内において、2025年12月から先行実用化されている特定条件下での完全無人運転（レベル4）トーイングトラクターの適用範囲を広げるための走行検証です。電波環境が厳しいトンネル区間を含む新ルートを対象に、豊田自動織機製の車両1台を使い、航空局が整備する信号機や監視カメラなどの共通インフラとの連携を精査する段階です。空港全域の完全無人化が完了したわけではなく、限定領域での技術課題を洗い出すための実証実験です。",
+      "buzz_jp_est": 4,
+      "verifiability": 5,
+      "hype_gap": 2,
+      "promise": 4,
+      "debate": 2,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 3,
+      "audience_fit": 3,
+      "tangible": 5,
+      "decision_number": 3,
+      "series_fit": 3,
+      "concern_id": "mobility",
+      "entry_question": "空港の荷物運びは、もう運転手なしで回っているの？",
+      "surprise_line": "物流業の経営者が、空港の敷地内で無人の荷物けん引車が実際に動いていることに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「レベル4運用拡大」といっても今回は車両1台を使った走行検証の開始段階であり、GPSが遮られるトンネルでの走行や信号インフラとの連携を確かめるのが主目的です。",
+      "hope_material": "羽田・成田では2025年12月からすでに特定ルートでレベル4の無人搬送が実用化されており、限定された敷地内の自動化技術は着実に難所へ適用範囲を広げています。",
+      "investment_related": false,
+      "deja_vu_note": "kl055（誰も乗っていない車が空港を走る。無人の物流は、どこまで来たか）とテーマおよび現場（羽田空港の無人トーイングトラクター）が完全に重複している。",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "JAL 豊田自動織機 レベル4",
+      "jp_title_anchor": [
+        "豊田自動織機",
+        "トーイングトラクター",
+        "羽田空港"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 4,
+      "overall_score": 3.5,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-11",
+      "first_seen_at": "2026-11-11T07:33:13",
+      "presented_on": [],
+      "topic_first_date": "2026-10-30",
+      "topic_first_source": "候補 15d0709749 のannounced_on（JALと豊田自動織機、羽田空港で自動運転レベル4の検証拡大…）",
+      "topic_series": "15d0709749",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-10",
+        "title": "JALと豊田自動織機、羽田空港で自動運転レベル4の検証拡大…トンネル区間を含む難易度の高い新ルートで",
+        "id": "15d0709749",
+        "source": "Googleニュース（自動運転 レベル4 開始）／レスポンス（Response.jp）"
+      }
+    },
+    {
+      "title": "バディネット、渋谷区笹塚の自動配送ロボット実証で運用担当 無事故で総稼働312時間",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiR0FVX3lxTFBISWxOcXZaQnhyRmVyQlJTRllZWnN6dnk5MTNDVHJQRFVRUlFkQmk0YTNwT2UxdnlVX0J3ZXRKalM3ZXcyRnA4?oc=5",
+      "published": "2026-11-10",
+      "source": "Googleニュース（配送ロボット 実証 開始）／Dellows News",
+      "source_kind": "media",
+      "outlet": "Dellows News",
+      "outlet_host": "news.dellows.jp",
+      "genre_hint": "life_tech",
+      "summary": "バディネット、渋谷区笹塚の自動配送ロボット実証で運用担当 無事故で総稼働312時間（Dellows News）",
+      "series_query": "autonomy_logistics_watch",
+      "id": "b3b8faad75",
+      "sources": [
+        "Dellows News"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000000078.000030064.html",
+          "what_it_states": "2026年8月24日〜9月30日の実証期間中、渋谷区笹塚エリアでカレーショップC&C笹塚店・ドトールコーヒーショップ フレンテ笹塚店を対象にNeubility製自律走行ロボット『Neubie』を運用。重大事故ゼロ、総稼働時間312時間を達成。遠隔監視に加え、法令に基づく現地駆け付け要員や日常点検・清掃などの現場運用を担当した。"
+        }
+      ],
+      "announced_on": "2026-11-10",
+      "headline_claim": "渋谷区笹塚の複雑な都市部で自動配送ロボットが無事故・総稼働312時間を達成し、実用化に向け運用業務を完遂した。",
+      "actual_content": "出前館や渋谷区などが2026年8〜9月に実施した公道フードデリバリー実証で、バディネットがロボットの点検・清掃・遠隔監視・トラブル時の現地駆け付け業務を担当した。人通りの多い笹塚駅周辺で約1ヶ月間にわたり無事故・総稼働312時間を記録した。ただし、遠隔監視で1人複数台を運用する場合でも現行法令上は現地待機・駆け付け要員の確保が不可欠であり、完全無人化ではなく現場サポート体制を前提とした検証にとどまる。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 3,
+      "work_relevance": 3,
+      "audience_fit": 3,
+      "tangible": 4,
+      "decision_number": 2,
+      "series_fit": 3,
+      "concern_id": "mobility",
+      "entry_question": "配送ロボットは人手を減らせる？街を走らせるのに人は何人必要？",
+      "surprise_line": "飲食店の店主が、無人配送ロボを動かすために現場で待機する人が必要と知って驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "1人のオペレーターが最大4台を遠隔監視できる制度にはなったものの、現行法令ではトラブル対応のための『現地駆け付け要員』が常時必要。人手不足を補うはずのロボットに人間が付き添う体制では、人件費と配送コストの採算が合わない。",
+      "hope_material": "歩行者や自転車が行き交う笹塚の複雑な市街地公道において、約1ヶ月・累計312時間の運行で重大事故ゼロを維持できた点は、自律走行の安全性確立に向けた着実な実証データといえる。",
+      "investment_related": false,
+      "deja_vu_note": "kl052（ローソンのドローン配送）やkl055（空港の無人物流車）とラストワンマイル自動化の文脈で重複感がある",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "バディネット 配送ロボット",
+      "jp_title_anchor": [
+        "バディネット",
+        "笹塚",
+        "配送ロボット"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 5,
+      "overall_score": 3.35,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-11",
+      "first_seen_at": "2026-11-11T07:33:39",
+      "presented_on": [],
+      "topic_first_date": "2026-11-10",
+      "topic_first_source": "候補 b3b8faad75 のannounced_on（バディネット、渋谷区笹塚の自動配送ロボット実証で運用担当 無）",
+      "topic_series": "b3b8faad75",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-10",
+        "title": "バディネット、渋谷区笹塚エリアでの自動配送ロボットによるフードデリバリー実証で「現場運用・実行業務」を完遂",
+        "id": "da8a73d2a6",
+        "source": "Googleニュース（配送ロボット 実証 開始）／PR TIMES"
+      }
+    },
+    {
+      "title": "AIが18年間未解決だった数学の難問を証明、量子コンピュータの「高速化の限界」が明らかに",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPOE9CX1liOGVMTUd0djN0ZmdRVWUyTWFDcDJrZEdycm1jZVlsc2FsUHhuSUdjMFo1Q0cxWmljZHhnc1YxYVNlb3Rkb1lkaVpJblVENkl4RXBOWG0wWnNGVjlWeXJrVGJyVFZpUGNsaTREZGhDcUFEYlJnN2ozOV9aZ2k1WUtFQnhFUk0zN1B3?oc=5",
+      "published": "2026-11-07",
+      "source": "Googleニュース（AI 数学 難問 解決）／XenoSpectrum",
+      "source_kind": "media",
+      "outlet": "XenoSpectrum",
+      "outlet_host": "xenospectrum.com",
+      "genre_hint": "ai",
+      "summary": "AIが18年間未解決だった数学の難問を証明、量子コンピュータの「高速化の限界」が明らかに（XenoSpectrum）",
+      "series_query": "ai_scientist_watch",
+      "id": "8592648053",
+      "sources": [
+        "Yahoo!ニュース",
+        "XenoSpectrum"
+      ],
+      "dup_ids": [
+        "37f54c0152"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/abs/2611.09773",
+          "what_it_states": "未公開のAnthropicモデルを用いたAI研究システムが稼働3日目に2008年提起の『アーロンソン・アンバイニス予想』の証明を発見。ブール立方体上の次数dの有界多項式に影響度(ε/d)^7以上の変数が存在することを示し、定理証明系Lean 4で648個の命題検証を完了。構造のないランダム入力に対し量子アルゴリズムを多項式個のクエリで古典シミュレーション可能であることを数学的に証明した"
+        },
+        {
+          "kind": "official_blog",
+          "url": "https://psi.inc/research/aaronson-ambainis/",
+          "what_it_states": "米Physical Superintelligence（PSI）の社内インフラ上でAnthropicの非公開モデルを実行し、3日目に完全な証明を生成してLeanが受託。その後、結果のバウンドを2回改善した。クエリモデルにおいて入力に規則的構造がない場合、量子コンピュータが指数関数的な高速化を達成できない限界を確定したと記述"
+        }
+      ],
+      "announced_on": "2026-11-06",
+      "headline_claim": "AIが18年間未解決だった数学の難問を証明し、量子コンピュータの高速化には限界があることが明らかになった。",
+      "actual_content": "米研究機関Physical Superintelligence（PSI）のDavid Turturean氏が、未公開のAnthropic製AIモデルを組み込んだ自社研究システムを3日間稼働させ、2008年に提示された計算複雑性理論の難問『アーロンソン・アンバイニス予想』を証明した。証明は定理証明支援ソフト『Lean 4』により648ステップの論理チェックを公理の追加なしで通過している。この定理は、入力データに規則的・周期的構造がないランダムなYes/No判定において、量子コンピュータが古典コンピュータを指数関数的に上回る高速化（クエリ回数の大幅削減）はできないという理論的限界を示したものであり、ショアの素因数分解アルゴリズムや量子化学シミュレーションなど構造を持つ問題における量子優位性を否定するものではない。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 1,
+      "work_relevance": 1,
+      "audience_fit": 2,
+      "tangible": 1,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": null,
+      "entry_question": "AIが難問を解いて、量子コンピュータはこれ以上速くならないと分かったって本当？",
+      "surprise_line": "ITに関心がある人が、18年の数学難問をAIが3日で証明したことに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "証明されたのは『規則性のないランダムな問題では量子も指数関数的には速くならない』という計算理論上の特定枠組み（クエリモデル）の話であり、暗号解読や創薬シミュレーションなど実用が期待される量子の強みは何ひとつ否定されていない点。",
+      "hope_material": "AIが生成した証明の全ステップが定理証明支援系Lean 4によって機械的に検証されており、AIが嘘（ハルシネーション）をつかずに未解決の厳密な数学証明を完結できることが実証された点。",
+      "investment_related": false,
+      "deja_vu_note": "AIの推論性能（kl042）やAGIの到達基準（kl043）を扱った回はあるが、純粋数学の難問解決や量子コンピュータの理論的限界を主軸にした回はない",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "アーロンソン アンバイニス",
+      "jp_title_anchor": [
+        "アーロンソン",
+        "アンバイニス",
+        "数学の難問"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.25,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-11",
+      "first_seen_at": "2026-11-11T07:34:22",
+      "presented_on": [],
+      "topic_first_date": "2026-11-06",
+      "topic_first_source": "候補 8592648053 のannounced_on（AIが18年間未解決だった数学の難問を証明、量子コンピュータ）",
+      "topic_series": "8592648053",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-07",
+        "title": "AIが18年間未解決だった数学の難問を証明、量子コンピュータの「高速化の限界」が明らかに",
+        "id": "8592648053",
+        "source": "Googleニュース（AI 数学 難問 解決）／XenoSpectrum"
+      }
+    },
+    {
+      "title": "Anthropicの非公開AIモデルを使って18年間未解決だった量子コンピューターの難問が証明される",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5xNWNlZUFiTjE1Sm9NUHRLbkFuUmNybUg3N0lOMENPSTYxaHR2X0NlRVlnLURUVTRNZ0drWGhfbWtaUE1uMWo0WjI1ckRyeW4tY3g0YWc0aHVRNUdRVjFLZ2Jya1VJUUVJQ0FkN3FFYTVjemM2Qmc?oc=5",
+      "published": "2026-11-09",
+      "source": "Googleニュース（AI 未解決問題 証明）／GIGAZINE",
+      "source_kind": "media",
+      "outlet": "GIGAZINE",
+      "outlet_host": "gigazine.net",
+      "genre_hint": "ai",
+      "summary": "Anthropicの非公開AIモデルを使って18年間未解決だった量子コンピューターの難問が証明される（GIGAZINE）",
+      "series_query": "ai_scientist_watch",
+      "id": "5e369e32bf",
+      "sources": [
+        "GIGAZINE"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://psi.inc/research/aaronson-ambainis/",
+          "what_it_states": "AI物理学スタートアップPhysical Superintelligence（PSI）が2026年11月6日に発表。非公開のAnthropic基盤モデルを組み込んだ自社研究システムが、稼働3日目に2008年提起の『アーロンソン＝アンバイニス予想』の完全な証明を発見し、定理証明支援系Leanで検証されたと報告。"
+        },
+        {
+          "kind": "tech_report",
+          "url": "https://github.com/physical-superintelligence/aaronson-ambainis",
+          "what_it_states": "David Turtureanによる論文プレプリントとLean 4形式化コード。84モジュール・648の定理がプレースホルダー（sorry）や追加公理なしでLeanカーネルおよび独立検証器lean4leanにより機械検証済み。"
+        }
+      ],
+      "announced_on": "2026-11-06",
+      "headline_claim": "Anthropicの非公開AIモデルを使った独自システムが、2008年から18年間未解決だった量子コンピューターの難問『アーロンソン＝アンバイニス予想』をわずか3日で証明した。",
+      "actual_content": "AI物理学スタートアップPSIのDavid Turtureanらが、Anthropicの未公開モデルを組み込んだ研究システムを動かし、稼働3日目にアーロンソン＝アンバイニス予想の証明を導出し、Lean 4による648定理の形式検証を完了した。証明された内容は『ランダムで規則性のないデータに対しては、量子コンピューターは古典コンピューターに対して指数関数的な超高速化を達成できない』という量子の理論的限界を示すものである。提唱者のスコット・アーロンソン氏やスタンフォード大チームが内容を確認・解説している一方、論文自体は査読前プレプリントであり、使用されたAIモデルの詳細や推論コストは非公開となっている。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 4,
+      "wonder": 4,
+      "life_relevance": 1,
+      "work_relevance": 2,
+      "audience_fit": 3,
+      "tangible": 2,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "AIが解いた『量子コンピューターの18年の難問』って何？ 私たちの暮らしやPCはどう変わるの？",
+      "surprise_line": "AI好きの自営業者が、18年未解決の難問をAIがわずか3日で解き明かしたことに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "解かれたのは『量子PCは何でも速くなる魔法の箱ではない（規則性のないデータでは普通のPCと大差ない）』という限界の証明であり、使われたAIモデルも非公開で一般の現場ではまだ使えません。",
+      "hope_material": "数学の厳密な検証ソフトLean 4で648の定理に不備がないことが確認されており、AIが人間の天才でも18年解けなかった学術の難問を自律的に突破できる実力が証明されました。",
+      "investment_related": false,
+      "deja_vu_note": "kl043（AGIは2027年に来る？条件確認）やkl054（AI創薬で研究は何十倍速くなるか）など、AIによる知的探究の自動化・加速を扱った回と通底している。",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "Anthropic 量子コンピューター 難問",
+      "jp_title_anchor": [
+        "Anthropic",
+        "量子コンピューター",
+        "アーロンソン"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.7,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-11",
+      "first_seen_at": "2026-11-11T07:35:06",
+      "presented_on": [],
+      "topic_first_date": "2026-11-06",
+      "topic_first_source": "候補 5e369e32bf のannounced_on（Anthropicの非公開AIモデルを使って18年間未解決だ）",
+      "topic_series": "5e369e32bf",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-09",
+        "title": "Anthropicの非公開AIモデルを使って18年間未解決だった量子コンピューターの難問が証明される",
+        "id": "5e369e32bf",
+        "source": "Googleニュース（AI 未解決問題 証明）／GIGAZINE"
+      }
+    },
+    {
+      "title": "Apollo 2のヒューマノイド、Mercedes-Benzの仕分け実証実験で成功率96%を達成",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNOUd1eTEzM29ZSWRoM1NFUU5TdTlJWFF6X2VfOUZkXzVKb1h3QUNBazlrQUhDcVFHeUtwQ2xfYkg2dURCdkxkYXdEeGFzTmYyakFURTlHTjQ4N0FDOXBkYXQ4SkoySXZOeEU2LVdnLXBZUlNsMEVxZ2lwZWtObWxLZy1xUVA3LTR4TjA4ZWdGSGZrNV9tZlhZ?oc=5",
+      "published": "2026-11-10",
+      "source": "Googleニュース（ヒューマノイド）／Unite.AI",
+      "source_kind": "media",
+      "outlet": "Unite.AI",
+      "outlet_host": "unite.ai",
+      "genre_hint": "humanoid",
+      "summary": "Apollo 2のヒューマノイド、Mercedes-Benzの仕分け実証実験で成功率96%を達成（Unite.AI）",
+      "id": "6a6bec4fc5",
+      "sources": [
+        "Unite.AI"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://deepmind.google/discover/blog/gemini-robotics-2-5-accelerates-real-world-general-dexterity/",
+          "what_it_states": "Google DeepMindがロボット向け制御モデル『Gemini Robotics 2.5』を発表。Mercedes-Benzのドイツおよびハンガリー工場で、Apptronikの人型ロボット『Apollo 2』を用いた自動車部品の仕分け（キッティング）実証を行い、成功率96%を達成したと報告。モデルはロボットパートナー向けに順次提供される。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://deepmind.google/technologies/gemini-robotics/",
+          "what_it_states": "Gemini Robotics 2.5の仕様と機能紹介。22自由度の多指ハンド操作や、足踏み・屈伸などの全身動的バランシング制御に対応。200以上のタスクで従来ベースライン比30〜100%の成功率向上および20〜30%の高速化を記録したとする。"
+        }
+      ],
+      "announced_on": "2026-11-10",
+      "headline_claim": "人型ロボット『Apollo 2』が、メルセデス・ベンツの実際の自動車組み立てラインにおける部品仕分け実証で成功率96%を達成した。",
+      "actual_content": "Google DeepMindのロボット制御モデル『Gemini Robotics 2.5』を搭載したApptronikの人型ロボット『Apollo 2』が、ドイツとハンガリーのメルセデス・ベンツ工場で金属ブラケット等の部品を指示順にトレイへ並べるキッティング作業を行い、自律動作で96%の成功率を記録した。作業全体の計画・追跡をGemini Robotics ERが担い、手腕の動作をRobotics 2.5が制御する分担構成が採られている。一方で、残り4%のエラーには誤った箱への配置や把持ミスが含まれるほか、総ピック数（試行回数）や実証期間、人間の作業員と比べた処理速度（サイクルタイム）などの詳細数値は開示されておらず、一般公開や導入価格も未定の限定検証段階である。",
+      "buzz_jp_est": 2,
+      "verifiability": 4,
+      "hype_gap": 3,
+      "promise": 4,
+      "debate": 4,
+      "wonder": 4,
+      "life_relevance": 2,
+      "work_relevance": 3,
+      "audience_fit": 4,
+      "tangible": 5,
+      "decision_number": 2,
+      "series_fit": 4,
+      "concern_id": "work_ai",
+      "entry_question": "人型ロボがベンツの工場で成功率96%、もう現場を任せられる？",
+      "surprise_line": "工場を営む経営者が、人型ロボが実際の車製造ラインで部品を96%正しく並べたことに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "製造ラインにおける『4%のエラー（100個中4個の入れ間違いや落球）』はライン停止に直結するため、96%から実用水準（99.999%以上）への壁は非常に高いです。また、総試行回数や人間と比べた作業スピード（サイクルタイム）が非開示なため、実用的な時間で作業を終えているかも確かめられません。",
+      "hope_material": "わずか数週間の追加学習で実工場の複雑な金属部品仕分けに適応できた点や、22自由度の5本指ハンドによる器用な把持が実動ラインで機能した点は、汎用AIモデルと人型ハードウェアの連携における確かな進歩です。",
+      "investment_related": false,
+      "deja_vu_note": "kl051（テスラOptimus生産開始）やkl053（AGIBOTコンビニ24時間稼働）と類似するヒューマノイド実証回。今回は米Apptronik×Google DeepMind×独メルセデス・ベンツによる自動車工場キッティング作業のデータ。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "Apollo 2 メルセデス",
+      "jp_title_anchor": [
+        "Apollo 2",
+        "メルセデス",
+        "Gemini Robotics"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 5,
+      "overall_score": 3.5,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-11",
+      "first_seen_at": "2026-11-11T07:36:14",
+      "presented_on": [],
+      "topic_first_date": "2026-05-13",
+      "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
+      "topic_series": "39b45d161a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-23",
+        "title": "日常のWeb操作や手配を自律代行するパーソナルAIエージェント「Muse」国内提供開始",
+        "id": "d03e341527",
+        "source": "Gemini検索（Meta）"
+      }
+    },
+    {
+      "title": "兼松、全但バス、損保ジャパン、KDDIが連携し、豊岡市・城崎温泉で自動運転バスの実証運行を開始",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4tRUZXQnhHX21qSG15UHhXdDBsblE2TXNVbElHRzJhRG9jWk9Jb3JhYUNuQVV1Q0lmVy1YODdlQ0Jzbmx1VS0tOFJZekZlU3k4eWI3eXJGQzUyQkJTalBIWWRPQVlQZ2FzZDZyMw?oc=5",
+      "published": "2026-11-09",
+      "source": "Googleニュース（自動運転 レベル4 開始）／KDDI ニュースルーム",
+      "source_kind": "media",
+      "outlet": "KDDI ニュースルーム",
+      "outlet_host": "newsroom.kddi.com",
+      "genre_hint": "life_tech",
+      "summary": "兼松、全但バス、損保ジャパン、KDDIが連携し、豊岡市・城崎温泉で自動運転バスの実証運行を開始（KDDI ニュースルーム）",
+      "series_query": "autonomy_logistics_watch",
+      "id": "7f7a78e936",
+      "sources": [
+        "KDDI ニュースルーム",
+        "MOTOR CARS"
+      ],
+      "dup_ids": [
+        "c3c7ed7e16"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://news.kddi.com/kddi/corporate/topic/2026/11/09/8404.html",
+          "what_it_states": "豊岡市、兼松、全但バス、損保ジャパン、KDDI、KDDIスマートモビリティの6者が、城崎温泉街でレベル4を見据えた自動運転バスの実証運行を開始。韓国A2Z社の11人乗り自動運転車両「ROii」を国内初採用し、セーフティドライバーと同乗者が乗るレベル2で、時速20km以下・乗車定員最大9人・平日1日3便・運賃無料で約1.8kmの周回ルートを運行する。"
+        }
+      ],
+      "announced_on": "2026-11-09",
+      "headline_claim": "兼松やKDDIなどが城崎温泉街で韓国製新車両を用いたレベル4対応自動運転バスの実証運行を開始した。",
+      "actual_content": "発表された実証運行は、将来のレベル4導入を見据えたデータ収集が目的であり、今回の走行自体は運転員（オペレーター）と補助員の2名が同乗するレベル2自動運転である。国内初導入となる韓国A2Z社製の11人乗り車両「ROii」を使用し、一般乗客定員は最大9名、時速20km以下で1日3便のみ運行される。運行期間は2026年11月から12月上旬までの平日20日間程度で運賃は無料であり、浴衣客の歩行が混在する温泉街特有の環境下での遠隔監視や通信・安全性の課題抽出にとどまる。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 3,
+      "work_relevance": 3,
+      "audience_fit": 3,
+      "tangible": 4,
+      "decision_number": 3,
+      "series_fit": 1,
+      "concern_id": "mobility",
+      "entry_question": "温泉街を走る自動運転バスは、運転手不足の救世主になる？",
+      "surprise_line": "観光地の事業者が、韓国製新車両が浴衣客の間を時速20キロで走る実験に驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「レベル4を見据える」と掲げつつも、今回の実証は運転手と補助員の2人が乗車するレベル2運行であり、1日3便・時速20km以下・平日20日間の走行にとどまるため、運転手不足の現場解消にはまだ人手と時間がかかる点。",
+      "hope_material": "世界的な自律走行開発企業である韓国A2Z社の新型車両を日本に初投入し、KDDIの通信監視や損保ジャパンのリスク管理を組み合わせて、観光客が入り乱れる難度の高い温泉街道路での実証データを蓄積し始めている点。",
+      "investment_related": false,
+      "deja_vu_note": "kl055（無人物流・自動運転）",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "城崎温泉 自動運転 ROii",
+      "jp_title_anchor": [
+        "城崎温泉",
+        "ROii",
+        "自動運転"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 5,
+      "overall_score": 3.6,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-11",
+      "first_seen_at": "2026-11-11T07:36:45",
+      "presented_on": [],
+      "topic_first_date": "2026-11-09",
+      "topic_first_source": "候補 7f7a78e936 のannounced_on（兼松、全但バス、損保ジャパン、KDDIが連携し、豊岡市・城崎）",
+      "topic_series": "7f7a78e936",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-09",
+        "title": "兼松、全但バス、損保ジャパン、KDDIが連携し、豊岡市・城崎温泉で自動運転バスの実証運行を開始",
+        "id": "7f7a78e936",
+        "source": "Googleニュース（自動運転 レベル4 開始）／KDDI ニュースルーム"
+      }
+    },
+    {
+      "title": "超加工食品で早死にリスク増大、30年間の研究で判明",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5Vd09JOXJIcW1yRi14d01LbVd0WTdWc054S3NmUkpVdDE5UGc3bXQ5Y1RrcGktV0p4c0JPWXNNcnR3ODZUSThmOEczRDhfbGs5WFA2Xw?oc=5",
+      "published": "2026-11-10",
+      "source": "Googleニュース（研究 食事 健康 効果）／CNN",
+      "source_kind": "media",
+      "outlet": "CNN",
+      "outlet_host": "cnn.co.jp",
+      "genre_hint": "food_health",
+      "summary": "超加工食品で早死にリスク増大、30年間の研究で判明（CNN）",
+      "id": "05816cf847",
+      "sources": [
+        "CNN"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1136/bmj-2023-078476",
+          "what_it_states": "米国の医療従事者114,064人（女性74,563人、男性39,501人）を30年以上追跡した結果、超加工食品の摂取量が最も多い群（中央値7サービング/日）は最も少ない群（3サービング/日）に比べ、全死亡リスクの上昇は4%（ハザード比1.04, 95%信頼区間1.01-1.07）にとどまった。がん死亡や心血管疾患死亡との有意な関連は見られず、リスク上昇の主な要因は加工肉や加糖飲料など特定品目であり、食事全体の質を調整すると加工自体の付加的影響は限定的とされた。"
+        }
+      ],
+      "announced_on": "2024-05-08",
+      "headline_claim": "超加工食品を日常的に多く食べている人は、30年間の追跡調査で早死にリスクが高まることが判明した。",
+      "actual_content": "米国の健康な医療従事者114,064人を30年以上追跡した調査で、超加工食品の摂取量が最も多い群（中央値1日7食分）は最も少ない群（1日3食分）に比べ全死亡リスクが4%高く、粗死亡率の差も10万人年あたり64人（1472人対1536人）にとどまりました。がんや心血管疾患による死亡リスクの上昇は認められず、リスクを牽引していたのは加工肉（ソーセージ等）や加糖清涼飲料など一部の品目でした。さらに食事全体の栄養バランスを考慮すると加工自体の影響は限定的であり、研究チームは超加工食品を一律に全面禁止するのではなく、特定の品目を控えることが合理的であると結論づけています。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "promise": 3,
+      "debate": 4,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 2,
+      "audience_fit": 3,
+      "tangible": 2,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "food",
+      "entry_question": "超加工食品を食べると本当に早死にするの？",
+      "surprise_line": "健康を気にする人が、30年調べても死亡リスク増がわずか4％だったことに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "30年追跡しても全死亡リスクの差はわずか4％で、がんや心疾患の死亡増は見られず、論文でも加工肉やジュース以外の加工食品を一律に恐れる必要はないと明記されています。",
+      "hope_material": "超加工食品をすべて排除しなくても、加工肉や甘い清涼飲料水を控えて食事全体のバランスを保てば健康への悪影響は防げることが11万人の長期データで裏付けられています。",
+      "investment_related": false,
+      "deja_vu_note": "kl039（オリーブ油と血糖値）に続く食と健康のエビデンス検証",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "超加工食品 BMJ",
+      "jp_title_anchor": [
+        "超加工食品",
+        "BMJ"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.95,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-11",
+      "first_seen_at": "2026-11-11T07:37:25",
+      "presented_on": [],
+      "topic_first_date": "2024-05-08",
+      "topic_first_source": "候補 05816cf847 のannounced_on（超加工食品で早死にリスク増大、30年間の研究で判明）",
+      "topic_series": "05816cf847",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-10",
+        "title": "超加工食品で早死にリスク増大、30年間の研究で判明",
+        "id": "05816cf847",
+        "source": "Googleニュース（研究 食事 健康 効果）／CNN"
+      }
+    },
+    {
+      "title": "サイバー攻撃受けた医療現場のリアル　患者の死亡率が3割上昇　乳がん患者の半裸画像流出、セラピー記録で脅迫され自殺も",
+      "url": "https://www.itmedia.co.jp/news/article/2611/10/2000003027/",
+      "published": "2026-11-10",
+      "source": "ITmedia NEWS",
+      "source_kind": "media",
+      "summary": "米カリフォルニア大学サンディエゴ校などに所属する研究者らが医学誌「Journal of Medical Internet Research」で発表した論文「Unveiling Patient-Level Harms and At-Risk Clinical Groups During Hospital Cyberattacks: Systematic Review of Global Case Studies and Social Media Data」は、病院へのサイバー攻撃（ランサムウェア攻撃など）が患者の命や治療に及ぼす被害の実態を世界規模で調査した研究報告だ。",
+      "id": "74059d042f",
+      "sources": [
+        "ITmedia NEWS"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.2196/88257",
+          "what_it_states": "病院へのサイバー攻撃に関する学術論文59件とソーシャルメディア投稿を統合分析し、316件の患者被害を体系化。先行研究（Neprashら）で報告されたシステム停止中の院内死亡率34〜38%増加や、院外心停止の良好な神経学的生存率が40%から4.5%に激減した事例、院内PHS・電子錠ダウンによる救命遅れ、精神療法記録の流出・恐喝による自殺、がん患者の写真流出などの被害実態をまとめた。"
+        }
+      ],
+      "announced_on": "2026-09-28",
+      "headline_claim": "病院へのサイバー攻撃によって患者の死亡率が3割以上跳ね上がり、乳がん患者の写真流出や恐喝による自殺など深刻な人命被害が起きている。",
+      "actual_content": "米カリフォルニア大学サンディエゴ校などの研究チームが、査読付き学術論文59件とソーシャルメディア（Reddit等）の現場投稿を統合し、世界各地の病院サイバー攻撃による患者被害316件をシステマティックレビューした。先行研究の知見として、ランサムウェア被害中の院内死亡率が34〜38％上昇した報告や、連絡網・電子錠の機能不全による緊急招集の遅れ、精神療法の記録流出に伴う恐喝と自殺などを整理。被害は電子カルテの停止にとどまらず、放射線治療機器の停止や個人情報の悪用による精神的被害まで多岐にわたることを示した。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 2,
+      "promise": 2,
+      "debate": 2,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 3,
+      "audience_fit": 3,
+      "tangible": 2,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "disaster",
+      "entry_question": "サイバー攻撃で病院の患者死亡率が3割上がるって本当？",
+      "surprise_line": "病院経営者が、システム停止だけでなく電子錠や連絡網の遮断で命が奪われる現実に驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "soon"
+      },
+      "tsukkomi_material": "「死亡率3割上昇」はこの論文自体の新規調査ではなく、米国のデータを扱った先行研究（Neprashら）の引用。また全患者一律ではなく、集中治療室（ICU）や重い基礎疾患を持つ患者など、特に緊急性の高い層で影響が突出していた点には留意が必要。",
+      "hope_material": "攻撃手口と臨床被害を結びつけた「CIPHER」データセットがオープンソースで公開され、医療機関がどの機器や通信インフラから優先して多重化・保護すべきかの具体的な防護指針が得られる。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "カリフォルニア大学 病院 サイバー攻撃",
+      "jp_title_anchor": [
+        "サイバー攻撃",
+        "死亡率"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.25,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-11",
+      "first_seen_at": "2026-11-11T07:38:06",
+      "presented_on": [],
+      "topic_first_date": "2026-09-28",
+      "topic_first_source": "候補 74059d042f のannounced_on（サイバー攻撃受けた医療現場のリアル　患者の死亡率が3割上昇　）",
+      "topic_series": "74059d042f",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-10",
+        "title": "サイバー攻撃受けた医療現場のリアル　患者の死亡率が3割上昇　乳がん患者の半裸画像流出、セラピー記録で脅迫され自殺も",
+        "id": "74059d042f",
+        "source": "ITmedia NEWS"
+      }
+    },
+    {
+      "title": "NotebookLMに公式APIが登場　WebページやYouTube動画の取り込みを自動化でき、MCPでAIエージェントからも使える",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/11/news011.html",
+      "published": "2026-11-10",
+      "source": "ITmedia AI+",
+      "source_kind": "media",
+      "summary": "NotebookLM（現Gemini Notebook）に、個人アカウントで使える公式のREST APIとMCPサーバが公開プレビューとして登場した。今できること、まだできないこと、使う前の条件を整理し、筆者が手元で試した結果も添える。",
+      "id": "955c94374e",
+      "sources": [
+        "ITmedia AI+"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://developers.google.com/notebook/docs",
+          "what_it_states": "個人Googleアカウント向けにGemini Notebook（旧NotebookLM）のREST APIおよびリモートMCPサーバーのPublic Preview（公開プレビュー）を提供開始。WebページURL、YouTube動画URL、テキスト、Markdownをノートブックに追加・管理可能。認証はOAuth 2.0必須で、プレビュー期間中は利用料無料。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://developers.google.com/notebook/docs/roadmap",
+          "what_it_states": "公式ロードマップとして、現時点で未対応の「ノートブックからの情報取得（Retrieving information from a notebook）」、「生成物の作成（Generating artifacts）」、「ノートブックやソースの削除」、「Workspaceアカウント対応」、「バイナリファイル（PDF等）のアップロード」、「Googleドライブ連携」が順次開発中と明記。"
+        }
+      ],
+      "announced_on": "2026-10-29",
+      "headline_claim": "NotebookLMに待望の公式APIとMCPサーバーが登場し、WebやYouTubeの自動取り込みやAIエージェントからの活用が可能になった。",
+      "actual_content": "一次資料によると、公開されたのは個人用Googleアカウント限定の早期公開プレビュー（利用料無料）で、ノートブックの作成・更新と、Web URL・YouTube動画・テキスト等のソース追加・一覧取得に対応しています。一方で、NotebookLMの中核機能である「ノートブックへの質問・回答の取得（Q&A）」や「音声解説などの成果物生成」、PDFファイルの直接アップロード、企業向けWorkspaceアカウントの利用は未実装で、今後のロードマップ扱いとなっています。また利用にはGoogle CloudプロジェクトでのOAuth 2.0認証設定が必要です。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "promise": 3,
+      "debate": 4,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 4,
+      "audience_fit": 3,
+      "tangible": 2,
+      "decision_number": 4,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "NotebookLMの公式APIが出たって本当？ 何ができるの？",
+      "surprise_line": "仕事でNotebookLMを使う人が、APIで「質問や音声作成がまだできない」ことに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "公式ロードマップに「ノートブックからの情報取得」や「音声などの生成物作成」は未実装と明記されており、現行APIは資料を放り込むだけで肝心の質問・回答の取り出しができません。また会社のGoogle Workspaceアカウントでは弾かれ、導入にはOAuthの初期設定が必要です。",
+      "hope_material": "プレビュー期間中は無料で利用でき、AIエージェント（Claude CodeやCursorなど）から指定したWebページやYouTube動画を毎分20件までのペースで自動収集・蓄積する仕組みは今すぐ構築可能です。",
+      "investment_related": false,
+      "deja_vu_note": "kl048（頼む前に動くAI秘書）、kl042（Gemini 4 Argon）",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "Gemini Notebook API",
+      "jp_title_anchor": [
+        "NotebookLM",
+        "Gemini Notebook",
+        "API"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 4,
+      "overall_score": 3.25,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-11",
+      "first_seen_at": "2026-11-11T07:38:44",
+      "presented_on": [],
+      "topic_first_date": "2026-10-29",
+      "topic_first_source": "候補 955c94374e のannounced_on（NotebookLMに公式APIが登場　WebページやYou）",
+      "topic_series": "955c94374e",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-10",
+        "title": "NotebookLMに公式APIが登場　WebページやYouTube動画の取り込みを自動化でき、MCPでAIエージェントからも使える",
+        "id": "955c94374e",
+        "source": "ITmedia AI+"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://developers.google.com/notebook/docs",
+          "ok": true,
+          "status": "HTTP 200「Gemini Notebook API &nbsp;|&nb」",
+          "page_title": "Gemini Notebook API &nbsp;|&nbsp; Google for Developers",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_page"
+        },
+        {
+          "url": "https://developers.google.com/notebook/docs/roadmap",
+          "ok": true,
+          "status": "HTTP 200「Roadmap &nbsp;|&nbsp; Gemini N」",
+          "page_title": "Roadmap &nbsp;|&nbsp; Gemini Notebook API &nbsp;|&nbsp; Google for Developers",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-11-11T07:47:18",
+      "url_check": [
+        {
+          "url": "https://developers.google.com/notebook/docs",
+          "ok": true,
+          "status": "HTTP 200「Gemini Notebook API &nbsp;|&nb」"
+        },
+        {
+          "url": "https://developers.google.com/notebook/docs/roadmap",
+          "ok": true,
+          "status": "HTTP 200「Roadmap &nbsp;|&nbsp; Gemini N」"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "developers.google.com: HTTP 200「Gemini Notebook API &nbsp;|&nb」 ／ developers.google.com: HTTP 200「Roadmap &nbsp;|&nbsp; Gemini N」",
+      "url_checked_at": "2026-11-11T07:47:18",
+      "buzz_history": [
+        {
+          "at": "2026-11-11T07:46:21",
+          "query": "Gemini Notebook",
+          "measured": 5,
+          "outlets": 14,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "NotebookLMに公式APIが登場 WebページやYouTube動画の取り込みを自動化でき、MCPでAIエージェントからも使える",
+              "outlet": "ITmedia",
+              "date": "2026-11-10"
+            },
+            {
+              "title": "GeminiアプリからGemini Notebookを使う方法｜「@Gemini Notebook」の呼び出し方と、できること・オンオフの場所",
+              "outlet": "TECH NOISY",
+              "date": "2026-11-07"
+            },
+            {
+              "title": "新機能3つ！Gemini Notebook「フラッシュカード」画像表示対応",
+              "outlet": "Jetstream",
+              "date": "2026-11-06"
+            }
+          ],
+          "trend": 0.22,
+          "articles_14d": 23,
+          "raw_items": 40,
+          "jp_measured": 5,
+          "outlets_foreign": 28,
+          "foreign_boost": false,
+          "query_en": "Gemini Notebook"
+        }
+      ],
+      "buzz_measured_at": "2026-11-11T07:46:21",
+      "buzz_measured": 5,
+      "buzz_outlets": 14,
+      "yahoo": false,
+      "buzz_evidence": [
+        {
+          "title": "NotebookLMに公式APIが登場 WebページやYouTube動画の取り込みを自動化でき、MCPでAIエージェントからも使える",
+          "outlet": "ITmedia",
+          "date": "2026-11-10"
+        },
+        {
+          "title": "GeminiアプリからGemini Notebookを使う方法｜「@Gemini Notebook」の呼び出し方と、できること・オンオフの場所",
+          "outlet": "TECH NOISY",
+          "date": "2026-11-07"
+        },
+        {
+          "title": "新機能3つ！Gemini Notebook「フラッシュカード」画像表示対応",
+          "outlet": "Jetstream",
+          "date": "2026-11-06"
+        }
+      ],
+      "buzz_trend": 0.22,
+      "buzz_articles_14d": 23,
+      "buzz_raw_items": 40,
+      "buzz_query": "Gemini Notebook",
+      "buzz_jp_measured": 5,
+      "buzz_outlets_foreign": 28,
+      "buzz_foreign_boost": false,
+      "buzz_query_en": "Gemini Notebook",
+      "buzz_adopted_at": "2026-11-11T07:46:21",
+      "buzz_adopted_n": 1
+    },
+    {
+      "title": "Isaac GR00T | ヒューマノイド ロボット開発プラットフォーム",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4yRGJVME5hU25mOWFLdlpZQUlUYVZMM2t6YjRXdDFaZXJsWmpseEQ1NVhuRkp0VEFrY2ZfRUozS1ZVYThIM1RsTFhWbm96Z1IxRjhmM3ZZVlZnS3NKUGRHSkZ2OVk4czdEcm4yQ1NR?oc=5",
+      "published": "2026-11-10",
+      "source": "Googleニュース（ヒューマノイド）／NVIDIA",
+      "source_kind": "media",
+      "outlet": "NVIDIA",
+      "outlet_host": "nvidia.com",
+      "genre_hint": "humanoid",
+      "summary": "Isaac GR00T | ヒューマノイド ロボット開発プラットフォーム（NVIDIA）",
+      "id": "48a3fc77bd",
+      "sources": [
+        "NVIDIA"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://www.nvidia.com/ja-jp/industries/robotics/isaac-groot/",
+          "what_it_states": "汎用ロボットポリシー向けのリファレンス設計、ワークフロー、基盤モデルを備えたオープンな開発プラットフォーム。DGX（モデル学習）、Omniverse/Isaac Lab（シミュレーションと合成データ生成）、Jetson Thor（機体搭載推論）の3つのコンピューティング環境でヒューマノイドロボットの頭脳開発を支援する。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-advances-isaac-platform-for-general-purpose-robotics-with-new-reference-humanoid-frameworks-simulation-pipelines-and-data",
+          "what_it_states": "2026年10月21日発表。Agile Robots社がIsaac GR00TとJetson Thorを搭載した全高1.40mの研究開発向けリファレンス人型ロボット『Agile ONE SN』を発表。シミュレーションから実機配備までのセットアップ期間を数週間から数日へ短縮した。"
+        }
+      ],
+      "announced_on": "2026-11-10",
+      "headline_claim": "NVIDIAがヒューマノイドロボット開発プラットフォーム「Isaac GR00T」を提供し、人型ロボットの知能開発を加速しているとされる。",
+      "actual_content": "一次資料によれば、Isaac GR00Tは市販される完成品の人型ロボットではなく、ロボット開発企業や研究機関が全身協調動作や手先の操作スキルを学習・検証するためのソフトウェアスタックおよび基盤モデル群である。物理シミュレータ（Isaac Lab）上での大量訓練と機体搭載AIチップ（Jetson Thor）を直結し、各メーカーがゼロからAIを組む手間を省く共通基盤を提供する。店舗や中小企業の現場がそのまま購入・導入できる業務機やその価格が発表されたわけではない。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 2,
+      "audience_fit": 3,
+      "tangible": 3,
+      "decision_number": 1,
+      "series_fit": 4,
+      "concern_id": "work_ai",
+      "entry_question": "NVIDIAの人型ロボットは、いつ買える？現場に導入できる？",
+      "surprise_line": "経営者が、NVIDIAが本体を作らず各社の「頭脳基盤」を押さえている点に驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "お店や工場で動くロボット本体の発売ではなく、ロボット開発企業向けの『開発用ソフトウェアとAI基盤』です。いくらで買えていつ現場で働けるかという数字は書かれていません。",
+      "hope_material": "各メーカーがバラバラに開発していた手先動作の学習やシミュレーション基盤が共通化され、実機へのセットアップ期間が数週間から数日へと短縮されるなど、人型ロボット実用化への開発速度を確実に押し上げています。",
+      "investment_related": false,
+      "deja_vu_note": "kl040（安川電機）、kl051（Optimus）、kl053（上海コンビニAGIBOT）に続くヒューマノイド関連。今回は個別機体ではなく全社を支える開発基盤側の話題。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "Isaac GR00T",
+      "jp_title_anchor": [
+        "Isaac GR00T",
+        "GR00T"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.45,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-11",
+      "first_seen_at": "2026-11-11T07:39:21",
+      "presented_on": [],
+      "topic_first_date": "2026-05-13",
+      "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
+      "topic_series": "39b45d161a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-23",
+        "title": "日常のWeb操作や手配を自律代行するパーソナルAIエージェント「Muse」国内提供開始",
+        "id": "d03e341527",
+        "source": "Gemini検索（Meta）"
+      }
+    },
+    {
+      "title": "“何でもリバースエンジニアリング”生成AIで広がる　ソフトウェアもスマート家電も手軽に改造……ブームに潜む危険",
+      "url": "https://www.itmedia.co.jp/news/article/2611/10/2000002975/",
+      "published": "2026-11-10",
+      "source": "ITmedia AI+",
+      "source_kind": "media",
+      "summary": "AIを使ってスマート家電のOSに手を加え、AIに生成させたコードに入れ替えて、広告を消したり自分好みの機能を付け加えたりする行為がちょっとしたブームになっている。ソフトウェアの改造が手軽にできるとうたった“何でもリバースエンジニアリング”（REA）というツールもGitHubで注目を集めているが、セキュリティ上のリスクも懸念されている。",
+      "id": "c9146cd96a",
+      "sources": [
+        "ITmedia AI+"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://github.com/morluto/rea",
+          "what_it_states": "AIエージェント（Claude Code等）とGhidraやHopper等の解析ツールをMCP（Model Context Protocol）で接続し、ソースコード不要でバイナリ、Electronアプリ、.NET、APK、ファームウェアを静的・動的解析して仕様を特定・再実装できるようにするMITライセンスのオープンソースツール"
+        },
+        {
+          "kind": "tech_report",
+          "url": "https://www.dragos.com/blog/reverse-engineer-anything-what-ai-driven-rea-means-for-critical-infrastructure/",
+          "what_it_states": "REAが公開後に短期間でGitHubスター40万件超・10万フォークを記録。専門技能が必要だったファームウェアやバイナリ解析がプロンプトで可能になり、OT・IoT機器における『解析の難しさに頼ったセキュリティ（隠蔽による安全）』が破綻したと警告"
+        }
+      ],
+      "announced_on": "2026-10-10",
+      "headline_claim": "AIを使えば専門知識なしに誰でもスマート家電やソフトをリバースエンジニアリングして広告削除や改造ができる時代が来た",
+      "actual_content": "GitHubで急浮上した『REA（Reverse Engineer Anything）』は、Claude CodeなどのAIエージェントが逆アセンブラ（Ghidra等）を直接操作し、バイナリやファームウェアの挙動を解析するオープンソースツールである。スマートTVの広告削除や、サポートが終了したスマート家電の独自制御など個人による改造事例が相次ぐ一方、産業機器やIoTの脆弱性が容易に暴かれるリスクが指摘されている。ただし、AIが生成した改造コードのバグ対応や機器の文鎮化リスクは自己責任であり、一般消費者が安全にワンクリックで使える水準ではない。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 4,
+      "wonder": 4,
+      "life_relevance": 3,
+      "work_relevance": 3,
+      "audience_fit": 3,
+      "tangible": 2,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "スマート家電の広告消しや改造、AIで素人でもできるって本当？",
+      "surprise_line": "古い家電の買い替えに悩む人が、AIで勝手に延命・改造できることに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "環境構築には依然として専門的なツール連携が必要で、失敗すれば機器が起動しなくなり保証も失われる。さらにAIモデル提供元による悪用対策ブロックやメーカー側の暗号化強化も進んでおり、一般人が手軽に恩恵を受けられる状態とは言えない。",
+      "hope_material": "メーカーがサポートを打ち切って文鎮化しかけた家電を、個人がAIの助けを借りて独自ネットワークに繋ぎ直し、寿命を延ばすという『修理する権利』の実践が現実になり始めている。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "ITmedia リバースエンジニアリング",
+      "jp_title_anchor": [
+        "リバースエンジニアリング",
+        "スマート家電"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 1,
+      "overall_score": 2.65,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-11",
+      "first_seen_at": "2026-11-11T07:39:54",
+      "presented_on": [],
+      "topic_first_date": "2026-10-10",
+      "topic_first_source": "候補 c9146cd96a のannounced_on（“何でもリバースエンジニアリング”生成AIで広がる　ソフトウ）",
+      "topic_series": "c9146cd96a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-10",
+        "title": "“何でもリバースエンジニアリング”生成AIで広がる　ソフトウェアもスマート家電も手軽に改造……ブームに潜む危険",
+        "id": "c9146cd96a",
+        "source": "ITmedia AI+"
+      }
+    },
+    {
+      "title": "腸内細菌がつくるポリアミンが宿主の寿命を延ばす―腸内細菌をもたないハエを用いて因果関係を実証",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFA2VXhod1lDdEZGdG9hT0J2QXJzRzJTQXlFS2VZaWdkZ05TamlNZEprM0UyMEVoaThSdGlUbV81bmFTN0hwSVpLNnhmWlA4WERaYkNHMU1ZY0E?oc=5",
+      "published": "2026-11-10",
+      "source": "Googleニュース（腸内細菌 研究）／金沢大学",
+      "source_kind": "media",
+      "outlet": "金沢大学",
+      "outlet_host": "kanazawa-u.ac.jp",
+      "genre_hint": "food_health",
+      "summary": "腸内細菌がつくるポリアミンが宿主の寿命を延ばす―腸内細菌をもたないハエを用いて因果関係を実証（金沢大学）",
+      "id": "16f6ef575e",
+      "sources": [
+        "金沢大学"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1128/mbio.01484-26",
+          "what_it_states": "無菌ショウジョウバエにポリアミン生合成遺伝子を欠損または保持させた大腸菌を単一定着させ、ポリアミン不含の人工飼料で飼育したところ、非産生菌群の平均寿命11.0日に対し、産生菌群は最大13.8日へと有意に延長し、宿主のストレス応答遺伝子TotMおよびHaloの発現が抑制された。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.kindai.ac.jp/news-pr/news-release/2026/09/043818.html",
+          "what_it_states": "食事由来ポリアミンの影響を排除した実験系を構築し、腸内細菌がつくるポリアミン単独で宿主の寿命を延ばす因果関係を実証。ただしショウジョウバエを用いた基礎研究であり、ヒトの寿命延長を直接示すものではないと明記。"
+        }
+      ],
+      "announced_on": "2026-09-10",
+      "headline_claim": "腸内細菌が作るポリアミンが宿主の寿命を延ばすことを、無菌ハエを用いた実験で因果関係として実証した。",
+      "actual_content": "食事由来の影響を完全に排除するためポリアミン不含の人工餌を与えた無菌ショウジョウバエに、ポリアミン生合成遺伝子を持つ大腸菌または遺伝子欠損菌を定着させて比較した。ポリアミン非産生菌群の平均寿命11.0日に対し、産生菌群では最大13.8日（約25%延長）となり、ストレス応答遺伝子の発現抑制も確認された。ただし、実験はポリアミンが全くない極端な餌環境下のオスのハエでの基礎研究であり、メスでは再現せず、通常の食事を摂るヒトの健康寿命への直接的な効果を示すものではない。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 2,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 2,
+      "work_relevance": 1,
+      "audience_fit": 2,
+      "tangible": 2,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "aging",
+      "entry_question": "腸内細菌が作るポリアミンで、人間の寿命も延びるの？",
+      "surprise_line": "健康長寿に関心がある人が、腸内細菌の代謝物だけでハエの寿命が25％延びたことに驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "ポリアミンを一切含まない極端な餌を与えられたオスのハエでの基礎実験にすぎず、メスでは揃っていない。食事から普通にポリアミンを摂取している人間にそのまま当てはまる根拠にはまだ遠い。",
+      "hope_material": "細菌の生合成遺伝子を欠損させた比較対照を作ることで、食事の影響を排除し、腸内細菌が作る特定の代謝物単独で宿主の寿命が11.0日から13.8日に延びる因果関係を世界で初めて明確に証明した。",
+      "investment_related": false,
+      "deja_vu_note": "kl044（人間は200歳まで生きられる？AIで研究が爆発しても残る2つの壁）で老化制御や寿命の限界を取り上げている。",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "金沢大学 ポリアミン",
+      "jp_title_anchor": [
+        "ポリアミン",
+        "金沢大学"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.2,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-11",
+      "first_seen_at": "2026-11-11T07:40:37",
+      "presented_on": [],
+      "topic_first_date": "2026-09-10",
+      "topic_first_source": "候補 16f6ef575e のannounced_on（腸内細菌がつくるポリアミンが宿主の寿命を延ばす―腸内細菌をも）",
+      "topic_series": "16f6ef575e",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-10",
+        "title": "腸内細菌がつくるポリアミンが宿主の寿命を延ばす―腸内細菌をもたないハエを用いて因果関係を実証",
+        "id": "16f6ef575e",
+        "source": "Googleニュース（腸内細菌 研究）／金沢大学"
+      }
+    },
+    {
+      "title": "米FDA 糖尿病治療薬「マンジャロ」などに視力低下リスクを警告",
+      "url": "https://news.web.nhk/newsweb/na/nd-20261110de73780",
+      "published": "2026-11-10",
+      "source": "NHK 科学・文化",
+      "source_kind": "media",
+      "summary": "アメリカのFDA＝食品医薬品局は、肥満症や糖尿病の治療薬「GLP-1受容体作動薬」を使うことで、急激な視力低下などのリスクが高まる可能性があると発表しました。「GLP-1受容体作動薬」は日本では、糖尿…",
+      "id": "f1709abca1",
+      "sources": [
+        "NHK 科学・文化"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://www.fda.gov/drugs/drug-safety-and-availability/fda-requires-safety-labeling-changes-glucagon-like-peptide-1-receptor-agonists-glp-1-ras-due-potential",
+          "what_it_states": "126件の臨床試験（13万4253人、28万8879人年）のメタ解析において、非動脈炎性前部虚血性視神経症（NAION）の疑い例がGLP-1受容体作動薬群で10件（10万人年あたり6.4件）、プラセボ等の対照群で5件（10万人年あたり3.8件）確認された。これを受け、市販中の全GLP-1受容体作動薬の添付文書の警告欄にNAIONの潜在的リスクを追記するよう義務付けた。"
+        }
+      ],
+      "announced_on": "2026-11-09",
+      "headline_claim": "米FDAが、マンジャロやオゼンピックなどのGLP-1系治療薬に急激な視力低下や失明につながる稀な目の病気のリスクを警告し、添付文書への記載を義務付けた。",
+      "actual_content": "FDAは126件の臨床試験の解析などを通じ、視神経への血流低下で片目の視力が痛みを伴わず急激に落ちるNAIONの発生率が、GLP-1群で10万人年あたり6.4件、対照群で3.8件とやや高かったことを確認した。詳細な発症メカニズムや直接の因果関係は確立していないものの、全GLP-1受容体作動薬の添付文書に潜在的リスクの警告を義務付けた。一方でFDAは、適切に使用した場合の薬のベネフィットは依然としてリスクを上回るとしており、薬の使用中止を求めるものではない。",
+      "buzz_jp_est": 4,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 4,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 2,
+      "audience_fit": 4,
+      "tangible": 2,
+      "decision_number": 3,
+      "series_fit": 1,
+      "concern_id": "eyes",
+      "entry_question": "マンジャロで急に目が見えなくなるって本当？",
+      "surprise_line": "マンジャロを使う人が、朝起きて突然片目が見えなくなる稀なリスクに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "13万人超の治験データを洗ってもNAION疑いはわずか10件（10万人年あたり6.4件）と極めて稀で、FDA自身も因果関係は未解明としており、指示通りの服用ならメリットが上回ると明記しています。",
+      "hope_material": "薬の一律中止ではなく、朝起きた時の片目の視野の欠けなど初期サインが周知されたことで、万一の際にも早期受診で永続的な失明を防ぐ行動指針が得られます。",
+      "investment_related": false,
+      "deja_vu_note": "なし（血糖値を扱ったkl039はあるが、GLP-1薬の副作用警告は初）",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "マンジャロ 視力低下",
+      "jp_title_anchor": [
+        "マンジャロ",
+        "GLP-1",
+        "視力"
+      ],
+      "announcement_type": "policy",
+      "freshness": 5,
+      "overall_score": 4.15,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-11",
+      "first_seen_at": "2026-11-11T07:41:09",
+      "presented_on": [],
+      "topic_first_date": "2026-11-09",
+      "topic_first_source": "候補 f1709abca1 のannounced_on（米FDA 糖尿病治療薬「マンジャロ」などに視力低下リスクを警）",
+      "topic_series": "f1709abca1",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-10",
+        "title": "米FDA 糖尿病治療薬「マンジャロ」などに視力低下リスクを警告",
+        "id": "f1709abca1",
+        "source": "NHK 科学・文化"
+      },
+      "primary_verified": false,
+      "primary_check": [
+        {
+          "url": "https://www.fda.gov/drugs/drug-safety-and-availability/fda-requires-safety-labeling-changes-glucagon-like-peptide-1-receptor-agonists-glp-1-ras-due-potential",
+          "ok": false,
+          "status": "HTTP 404",
+          "method": "http",
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-11-11T07:42:20",
+      "url_check": [
+        {
+          "url": "https://www.fda.gov/drugs/drug-safety-and-availability/fda-requires-safety-labeling-changes-glucagon-like-peptide-1-receptor-agonists-glp-1-ras-due-potential",
+          "ok": false,
+          "status": "HTTP 404"
+        }
+      ],
+      "url_ok": false,
+      "url_status": "fda.gov: HTTP 404",
+      "url_checked_at": "2026-11-11T07:42:20",
+      "repair_tried": true,
+      "repair_tried_at": "2026-11-11T07:42:28",
+      "repair_log": [
+        "site-crawl: https://www.fda.gov/drugs/drug-safety-and-availability/ を開けない",
+        "site-crawl: https://www.fda.gov/drugs/ を開けない",
+        "site-crawl: https://www.fda.gov/ を開けない",
+        "site-crawl: 3ページを見たが、語の合うリンクなし",
+        "pool-official: 同じ話題の公式・学術誌の記事（発表日±3日）がプールにない",
+        "media-link: news.web.nhk の記事に発表元（fda.gov）へのリンクなし",
+        "取得失敗 https://www.fda.gov/drugs/drug-safety-and-availability/: HTTPError",
+        "取得失敗 https://www.fda.gov/drugs/: HTTPError",
+        "取得失敗 https://www.fda.gov/: HTTPError"
+      ],
+      "repair_result": "見つからない"
+    },
+    {
+      "title": "dotsが「複数台のローカルコンピュータ接続」に対応　各マシンでタスクを分担可能に",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2611/10/2000003058/",
+      "published": "2026-11-10",
+      "source": "ITmedia AI+",
+      "source_kind": "media",
+      "summary": "OpenAIは常時稼働型エージェントツール「dots」が複数台のローカルコンピュータに接続できるようになったと発表した。",
+      "id": "5181d1b7ff",
+      "sources": [
+        "ITmedia AI+"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://community.openai.com/t/you-can-now-connect-multiple-local-computers-to-the-same-dot/1414560",
+          "what_it_states": "1つのdotに複数のローカルPCを同時接続し、タスクごとに実行するマシンを選択可能になった。ノートPCで作業を続けながら別マシンのXcodeでビルドテストを行わせるなどの並行作業を想定"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://learn.chatgpt.com/docs/dots/computers-and-apps",
+          "what_it_states": "接続した各PCはChatGPTデスクトップアプリを通じて許可され、オンラインかつアプリ起動中のみ動作する。タスク調整はクラウド側で行われ、1つのタスクスレッドは1台のPCで実行される"
+        }
+      ],
+      "announced_on": "2026-11-09",
+      "headline_claim": "OpenAIの常時稼働AI「dots」が複数台のPC接続に対応し、各マシンに作業を分担させられるようになった。",
+      "actual_content": "1つのdotに対して複数のローカルPCを接続し、チャットで端末名を指定してタスクを振り分ける機能が追加された。手元のノートPCで作業を続けながら、別PCでアプリのビルドやUIテスト、古いSDK環境での不具合再現などを実行させることが想定されている。複数台の計算資源を束ねて1つの処理を高速化するクラスタ計算ではなく、独立したタスクスレッドをマシンごとに割り当てる調整機能であり、利用はChatGPT Pro（月額100ドル以上）やEnterprise等の上位プランに限定される。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 2,
+      "wonder": 2,
+      "life_relevance": 1,
+      "work_relevance": 3,
+      "audience_fit": 2,
+      "tangible": 2,
+      "decision_number": 3,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "AIに何台もパソコンをつなげば、仕事は何倍も速くなる？",
+      "surprise_line": "アプリ開発者が、手元の画面を塞がれずに別PCでテストを回せる点に驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "複数台で1つの処理を分散並列処理するわけではなく、人間が端末名を指定してタスクを1台ずつ割り振る仕組みに過ぎない。月100ドル以上の開発者向け上位プランが対象で、一般的な事務作業や店舗経営で複数台をAIに任せる実用性はまだ乏しい。",
+      "hope_material": "手元PCの画面やカーソルをAIに占有されず、テストや不具合検証などの重い処理を別マシンへ手軽に逃がせる環境が公式に整備された。",
+      "investment_related": false,
+      "deja_vu_note": "kl038（AIは『一人に一台』の時代になるのか：dots発表）、kl048（AI秘書）とテーマが重複。今回は開発者向けの細かな機能追加にとどまる。",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "OpenAI dots",
+      "jp_title_anchor": [
+        "dots",
+        "OpenAI"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.05,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-11",
+      "first_seen_at": "2026-11-11T07:41:42",
+      "presented_on": [],
+      "topic_first_date": "2026-09-29",
+      "topic_first_source": "候補 884977ecb8 のannounced_on（Introducing dots）",
+      "topic_series": "5181d1b7ff",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-10",
+        "title": "dotsが「複数台のローカルコンピュータ接続」に対応　各マシンでタスクを分担可能に",
+        "id": "5181d1b7ff",
+        "source": "ITmedia AI+"
+      }
+    },
+    {
+      "title": "YYフォースのヒューマノイドロボットとVLAトレーニングワークフロー、メディアコープの「AIに会おう」で紹介",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMimgVBVV95cUxOWTFKZE5nREdERXlfelk4cnJpd3FCb3QyM3g2SlVsYUhkbDZGeWI4QndIeV9Xd1RMOGRPMVVNaUw5dEdjemQyLU9CN0NtY1hxdm9pU3IxQTBhWWFOSUhPM3hfOGlUa1YzaEpDZk9wX3p0Z0dldTIxTlVJMTdzeDRxY0dVazJya2lXVGJERHJ3aVNGaU9KX3hLSVJVdDE3LXdoUGtxWGFzN012Y0hkTzJTVWVoZUkyUWZQbTFJWlRZamhycEUzZEFGbnUtWjJnSHVjYmJ6NDJqM0ZfT2E2Zkw1T3RCMFdXV2dQOHhtV183Y3I2WmpZNktRdTI5YmYwbXBpWjFrZk4xdnVObjdMZ2plREdWVXhnd3BrbUFtNGhQS1paanVaS0thb0dpODd1SngzamV1bGhURC0wZ2FwVnZWYW1Cdi14TTZreDhla3lYb215eHFRLThZWlhhS3BiM216dkRORTQ2SHFWQWpqZUwyQWpkRV94RkxUbUpRQlJSX1p1dVZXTUY5X0RlTDlPbUt0LWJpanJZbDBHWnpNU3B5WHQtemFTN0tCREROaV9rOUNWSVBDUUpLdU91bHdlazl2RUEyZ19ERUw1UHdMTG90RWE5bVZPeWFYSWhyV3kySm1XMjVsazJnd1otbW1ieUFDeW1SZzRzV1d0UVk3Z3d1b3J2b2pGZ0hLMW9EemhWZlF2Q1B6cUEzMU1HTTVSNmpKamJhbldSTzZ6NlVFVHNRSThfVEFGSkV0cGQ2ZG90UWYyQTFjTmhJTWViT0h1by02NW9VWU00X2Z3b0tndGk4ek1YYnBfYlVqVTJUS0xnMFh3a1hUeE8wRWZhRnlBeW9mOE1RR2c1c1g2QkVmbzR6WldsVHM1c0pZU1E?oc=5",
+      "published": "2026-11-10",
+      "source": "Googleニュース（ヒューマノイド）／GlobeNewswire",
+      "source_kind": "media",
+      "outlet": "GlobeNewswire",
+      "outlet_host": "globenewswire.com",
+      "genre_hint": "humanoid",
+      "summary": "YYフォースのヒューマノイドロボットとVLAトレーニングワークフロー、メディアコープの「AIに会おう」で紹介（GlobeNewswire）",
+      "id": "e82b8a8380",
+      "sources": [
+        "GlobeNewswire"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.globenewswire.com/news-release/2026/11/09/2978000/0/en/YYForce-s-Humanoid-Robotics-and-VLA-Training-Workflow-Featured-on-Mediacorp-s-Meeting-AI.html",
+          "what_it_states": "シンガポールのMediacorpの番組『Meeting AI』にてUnitree G1人型ロボットの訓練を紹介。VR機器と5つのセンサーを用いた遠隔操作でデータを取得し、コップを認識して掴み移動させる自律動作のために人間による40回の実演と約8時間のVLA（Vision-Language-Action）モデル学習を実施したと記載"
+        }
+      ],
+      "announced_on": "2026-11-09",
+      "headline_claim": "シンガポールのテレビ番組で、YYForceの人型ロボット訓練ワークフローとVLA学習の様子が紹介された",
+      "actual_content": "YYForce社が市販の人型ロボット（Unitree G1）にVR遠隔操作システムを接続し、人間の動作をロボットに模倣学習させるデモを公開した。コップを認識して掴んで移動させるという単一の動作を自律化するだけで、人間による40回の手動実演データと約8時間のニューラルネットワーク学習が必要だった。ホテル客室清掃などの複雑な実務への配備には程遠く、清掃やベッドメイキングへの応用は将来の構想段階にとどまる。",
+      "buzz_jp_est": 1,
+      "verifiability": 4,
+      "hype_gap": 4,
+      "promise": 2,
+      "debate": 2,
+      "wonder": 2,
+      "life_relevance": 2,
+      "work_relevance": 2,
+      "audience_fit": 3,
+      "tangible": 4,
+      "decision_number": 2,
+      "series_fit": 4,
+      "concern_id": "work_ai",
+      "entry_question": "人型ロボがホテルの片付けや清掃をこなせる日は近いの？",
+      "surprise_line": "人手不足に悩む経営者が、コップ1つ動かすのに40回の実演と8時間の学習が必要な現実に驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "自社開発のロボットではなく市販のUnitree G1を使っており、公開されたのもコップを1つ掴んで動かすだけの基本動作です。その単純作業に40回の手動実演と8時間のAI学習が必要だった段階で、ホテルの客室清掃などの現場実用化を語るのは時期尚早です。",
+      "hope_material": "VRゴーグルと5つの身体センサーを使って人間の作業ログを直接AI（VLAモデル）に流し込み、複雑なプログラミングなしで動作を覚えさせる手順自体は実証されています。",
+      "investment_related": false,
+      "deja_vu_note": "kl051（Tesla Optimus現場投入）、kl053（AGIBOTコンビニ24時間稼働）",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "YYForce ヒューマノイド",
+      "jp_title_anchor": [
+        "YYForce",
+        "Unitree"
+      ],
+      "announcement_type": "other",
+      "freshness": 5,
+      "overall_score": 2.8,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-11",
+      "first_seen_at": "2026-11-11T07:42:16",
+      "presented_on": [],
+      "topic_first_date": "2026-05-13",
+      "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
+      "topic_series": "39b45d161a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-23",
+        "title": "日常のWeb操作や手配を自律代行するパーソナルAIエージェント「Muse」国内提供開始",
+        "id": "d03e341527",
+        "source": "Gemini検索（Meta）"
       }
     }
   ]
