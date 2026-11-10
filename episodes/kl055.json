@@ -1,0 +1,3004 @@
+{
+  "episode_id": "kl055",
+  "format": "dialogue",
+  "structure": "rounds_v4",
+  "template": "myth_buster",
+  "source_type": "news",
+  "news_date": "2026-10-26",
+  "verdict_as_of": "2026-11-10",
+  "series": "autonomy_logistics_watch",
+  "series_no": 1,
+  "genre": "life_tech",
+  "health": false,
+  "episode_title": "誰も乗っていない車が空港を走る。無人の物流は、どこまで来たか",
+  "youtube_title": "誰も乗っていない車が空港を走る。無人の物流は、どこまで来たか（11月時点）",
+  "entry_question": "運転手が足りない日本で、荷物を運ぶ車の運転席は、空港から空になり始めた。次はどこが空になり、うちの会社の物流には、どんな条件がそろえば近づく？",
+  "claim_verdict": {
+    "dreamer": "soon",
+    "skeptic": "decade"
+  },
+  "verdict": {
+    "dreamer": "soon",
+    "skeptic": "decade"
+  },
+  "hook_lines": [
+    "運転席が空っぽの車が走る",
+    "JALで1年たたずに3空港"
+  ],
+  "thumbnail_prompt": "Bright daytime airport apron scene, continuous across the whole frame with no panels, boxes or borders. Keep the left 30%, the right 30% and the top 42% of the frame quiet and uncluttered (soft blurred apron, distant cargo buildings and a clear blue sky only), but the background must continue unbroken behind them. Main subject, centered left-to-right in the middle band: a small, generic white electric airport tow tractor with a clearly empty driver's seat and no person aboard, pulling a short train of three cargo carts covered with tarps along a painted lane on the apron. The tractor must look generic, not any specific brand or model. No people, no hands. No readable text, no letters, no numbers, no logos, no brand marks.",
+  "thumbnail_headline": "運転席が空っぽ\nどこまで来た？",
+  "thumbnail_exprs": {
+    "dreamer": "excited",
+    "skeptic": "doubt"
+  },
+  "depicts_real_product": true,
+  "youtube_tags": [
+    "自動運転",
+    "自動運転レベル4",
+    "レベル4",
+    "福岡空港",
+    "羽田空港",
+    "成田空港",
+    "JAL",
+    "日本航空",
+    "トーイングトラクター",
+    "物流",
+    "無人化",
+    "運転手不足",
+    "人手不足",
+    "全日空",
+    "国土交通省",
+    "科学ニュース"
+  ],
+  "references": [
+    {
+      "title": "西日本初、福岡空港で搬送用車両「自動運転レベル4」運用開始（JAL・福岡国際空港 共同リリース）",
+      "authors": [],
+      "year": 2026,
+      "venue": "JAL 企業サイト エリアニュース（2026年10月26日）",
+      "url": "https://press.jal.co.jp/ja/areanews/release/202610/009782.html",
+      "is_preprint": false,
+      "institution": "日本航空・福岡国際空港",
+      "source_kind": "press_release"
+    },
+    {
+      "title": "国内初、東京（羽田・成田）2空港同時に「自動運転レベル4」実用化を開始",
+      "authors": [],
+      "year": 2025,
+      "venue": "JAL プレスリリース（2025年12月15日）",
+      "url": "https://press.jal.co.jp/ja/release/202512/009185.html",
+      "is_preprint": false,
+      "institution": "日本航空",
+      "source_kind": "press_release"
+    },
+    {
+      "title": "JALと豊田自動織機、羽田空港における「自動運転レベル4」の走行ルート拡大に向けた検証を開始",
+      "authors": [],
+      "year": 2026,
+      "venue": "JAL 企業サイト エリアニュース（2026年10月30日）",
+      "url": "https://press.jal.co.jp/ja/areanews/release/202610/009795.html",
+      "is_preprint": false,
+      "institution": "日本航空・豊田自動織機",
+      "source_kind": "press_release"
+    },
+    {
+      "title": "空港制限区域内における搬送用車両の自動運転レベル４が実用化！",
+      "authors": [],
+      "year": 2025,
+      "venue": "国土交通省航空局 報道発表（2025年12月15日）",
+      "url": "https://www.mlit.go.jp/report/press/kouku09_hh_000302.html",
+      "is_preprint": false,
+      "institution": "国土交通省航空局",
+      "source_kind": "press_release"
+    }
+  ],
+  "youtube_description": "2026年10月26日の日本航空（JAL）と福岡国際空港の発表を、11月10日時点で確認した二人の見立てです。\n\n福岡空港で、貨物を積んだ台車を引く車（トーイングトラクター）が、誰も乗らずに走り始めました。JALでは、2025年12月の羽田・成田に次いで3つ目の空港です。運転手が足りない日本で、荷物を運ぶ車の運転席は、次はどこが空になるのか。無人の物流は、どこまで来たのか。期待担当の大輔と、確かめ担当の沙織が、JAL・国土交通省の発表で確かめます。(1) どこで、運転席が空になったか (2) なぜ空港からか、どう越えたか (3) 次はどこか、あなたの会社にはどんな条件で来るか の3つです。\n\nこの回から「自動運転・物流無人化の定点観測」を始めます。物差しは3つです。(1) どこで、何が無人になったか (2) 人はどの段階まで手を離したか (3) 次はどこへ行く、と言っているか（書かれていない項目は「まだ発表されていない」とします）。\n第1回の記録: (1) 福岡空港の中、国内貨物上屋と地上支援機材置場を結ぶ約1.7km、貨物 (2) 誰も乗らない段階（自動運転レベル4：特定条件下での完全無人運転）。羽田・成田では2025年12月まで、運転者が常時監視する「レベル3」相当 (3) 羽田でトンネル区間を含む難しいルートの検証（2026年11月〜）、全日本空輸（ANA）が同じ運用を検討、国は導入空港・車両数の拡大と、車種・走行区域の拡大の検討を進める\n\n■ この回の判定（2026年11月10日時点の、二人の見立て）\n判定するのは：空港の中の、トンネルのような難しいルートまで、誰も乗らない運搬車が走るようになるか（ほかの空港の決まったルートへの広がりは、二人とも早いと見ています）\n大輔: もうすぐ来る（羽田では今月から難しいルートの検証が始まり、国が道の側の設備を整え、ANAも同じ運用を検討している。難しいルートも1年ほどで検証から運用になる、という見立て）\n沙織: 3年はかかる（同じ難しいルートについて、トンネルのような難しいルートまで誰も乗らずに走れるようになるには、国が新たに整備する共通インフラ（信号設備・カメラ等）との連携の検証が要り、それが始まったばかりのため）\n発表は「全国の空港への普及・展開」を目指すと書いています。いつまでに、は書かれていないため、札はそこまでには付けていません。\n空港の外（工場・倉庫など）への広がりは、どの資料にも書かれていません。動画の「4つの条件」（関係者だけが入れる敷地／決まった2か所を結ぶ道／車に合わせて改めた決まり／道の側の信号やカメラ）は、今回の資料から二人がまとめたものです。\n\n■ 補足\n・効果について、発表は「ヒューマンエラーに起因する事故リスクの抑制が期待できる」と書いています。運用は始まったばかりで、実績の数字はまだ発表されていません。\n・人の仕事について: 人員の増減や配置換えは発表されていません。JALは、省人化・効率化とあわせて、リモコン式航空機牽引機・自動機体洗浄機・ワンマン除雪車などの技術を組み合わせ、「誰もが長く働き続けられる環境」を構築するとしています。\n・福岡空港の交通ルールの改訂の中身は、発表に書かれていません。\n・サムネイルの車両はイメージ図で、実際の車両（TLD Robotics製 EZTow）とは異なります。動画内の空港・車両の写真は参考の写真で、今回の車両ではありません。\n・この動画は発表の紹介で、投資をすすめるものではありません。\n\n■ 参考資料（一次資料）\n・日本航空・福岡国際空港「西日本初、福岡空港で搬送用車両『自動運転レベル4』運用開始」（共同リリース、2026年10月26日） https://press.jal.co.jp/ja/areanews/release/202610/009782.html\n・日本航空「国内初、東京（羽田・成田）2空港同時に『自動運転レベル4』実用化を開始」（2025年12月15日） https://press.jal.co.jp/ja/release/202512/009185.html\n・日本航空・豊田自動織機「羽田空港における『自動運転レベル4』の走行ルート拡大に向けた検証を開始」（共同リリース、2026年10月30日） https://press.jal.co.jp/ja/areanews/release/202610/009795.html\n・国土交通省 航空局「空港制限区域内における搬送用車両の自動運転レベル４が実用化！」（2025年12月15日） https://www.mlit.go.jp/report/press/kouku09_hh_000302.html\n\n\n🎵 Music: Calm Electronic Vibes by Matio888 (freesound.org) — CC BY 4.0\n#自動運転 #物流 #幸せな未来のサイエンス\n\n【写真クレジット】\nS06: 「Apron of Fukuoka Airport 20181003.jpg」 / そらみみ / CC BY-SA 4.0 / https://commons.wikimedia.org/wiki/File:Apron_of_Fukuoka_Airport_20181003.jpg\nS07: 「Dolly for ULD and dollies for loose luggages.JPG」 / Jamesshliu / CC BY-SA 4.0 / https://commons.wikimedia.org/wiki/File:Dolly_for_ULD_and_dollies_for_loose_luggages.JPG\nS08: 「Unloading JAL 747.jpg」 / Public domain / https://commons.wikimedia.org/wiki/File:Unloading_JAL_747.jpg\nS09: 「Aircraft cargo (ULD) loader in operaton.jpg」 / Jamesshliu / CC BY-SA 3.0 / https://commons.wikimedia.org/wiki/File:Aircraft_cargo_(ULD)_loader_in_operaton.jpg\nS11: 「Apron of Fukuoka Airport 20170818.jpg」 / そらみみ / CC BY-SA 4.0 / https://commons.wikimedia.org/wiki/File:Apron_of_Fukuoka_Airport_20170818.jpg\nS05-b: 「Tractor with baggage dolly at Boryspil Airport.jpg」 / Vasyatka1 / CC BY-SA 4.0 / https://commons.wikimedia.org/wiki/File:Tractor_with_baggage_dolly_at_Boryspil_Airport.jpg\nS10: 「Haneda Airport 20160716 070223.jpg」 / Ka23 13 / CC BY-SA 4.0 / https://commons.wikimedia.org/wiki/File:Haneda_Airport_20160716_070223.jpg\n",
+  "scenes": [
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 11,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "福岡空港で、運転席に誰も乗っていない車が、貨物を運んでる。",
+          "expression": "excited",
+          "t0": 0.0,
+          "dur": 6.0,
+          "cards": [
+            {
+              "text": "福岡空港で、運転席に誰も乗っていない車が、",
+              "start": 0.2,
+              "end": 4.08
+            },
+            {
+              "text": "貨物を運んでる。",
+              "start": 4.5,
+              "end": 5.7
+            }
+          ]
+        }
+      ],
+      "scene_id": 1,
+      "narration": "大輔「福岡空港で、運転席に誰も乗っていない車が、貨物を運んでる。」",
+      "narrator": "dialogue",
+      "lines_hash": "b9c9b626e1ab"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 8,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "空港の中だけの話でしょ？",
+          "expression": "doubt",
+          "t0": 0.0,
+          "dur": 2.16,
+          "cards": [
+            {
+              "text": "空港の中だけの話でしょ？",
+              "start": 0.0,
+              "end": 2.16
+            }
+          ]
+        }
+      ],
+      "scene_id": 2,
+      "narration": "沙織「空港の中だけの話でしょ？」",
+      "narrator": "dialogue",
+      "lines_hash": "5a4ff0580c4f"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 6,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "羽田、成田、福岡。JALでは1年たたずに3つの空港に。",
+          "expression": "excited",
+          "t0": 0.0,
+          "dur": 4.96,
+          "cards": [
+            {
+              "text": "羽田、成田、福岡。JALでは1年たたずに",
+              "start": 0.0,
+              "end": 3.64
+            },
+            {
+              "text": "3つの空港に。",
+              "start": 3.79,
+              "end": 4.84
+            }
+          ]
+        }
+      ],
+      "scene_id": 3,
+      "narration": "大輔「羽田、成田、福岡。JALでは1年たたずに3つの空港に。」",
+      "narrator": "dialogue",
+      "lines_hash": "89d92c267e17"
+    },
+    {
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 10,
+      "ken_burns": "zoom_in",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "次に空く運転席は？ あなたの会社には、どんな条件で来る？",
+          "expression": "thinking",
+          "tag": "question",
+          "t0": 0.0,
+          "dur": 4.0,
+          "cards": [
+            {
+              "text": "次に空く運転席は？ あなたの会社には、",
+              "start": 0.0,
+              "end": 2.61
+            },
+            {
+              "text": "どんな条件で来る？",
+              "start": 2.76,
+              "end": 4.0
+            }
+          ]
+        }
+      ],
+      "scene_id": 4,
+      "narration": "沙織「次に空く運転席は？ あなたの会社には、どんな条件で来る？」",
+      "narrator": "dialogue",
+      "lines_hash": "c6de1ff095e0"
+    },
+    {
+      "type": "setup",
+      "bgm_role": "intro",
+      "image_asset": "base_cafe_b",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "いま福岡空港で、運転席に誰も乗っていない車が、貨物を引っぱって走ってるんだ。",
+          "expression": "excited",
+          "t0": 0.0,
+          "dur": 7.24,
+          "cards": [
+            {
+              "text": "いま福岡空港で、",
+              "start": 0.47,
+              "end": 1.9
+            },
+            {
+              "text": "運転席に誰も乗っていない車が、",
+              "start": 1.9,
+              "end": 4.58
+            },
+            {
+              "text": "貨物を引っぱって走ってるんだ。",
+              "start": 4.94,
+              "end": 7.19
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "空港の中だけの話でしょ？",
+          "expression": "doubt",
+          "t0": 7.52,
+          "dur": 2.44,
+          "cards": [
+            {
+              "text": "空港の中だけの話でしょ？",
+              "start": 0.0,
+              "end": 2.44
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "空港の中だよ。でも、去年の暮れに羽田と成田、今年の秋に福岡。航空会社のJAL、つまり日本航空では、1年たたずに3つの空港に広がった。",
+          "expression": "excited",
+          "t0": 10.24,
+          "dur": 12.36,
+          "cards": [
+            {
+              "text": "空港の中だよ。でも、",
+              "start": 0.0,
+              "end": 1.98
+            },
+            {
+              "text": "去年の暮れに羽田と成田、",
+              "start": 1.98,
+              "end": 4.35
+            },
+            {
+              "text": "今年の秋に福岡。航空会社のJAL、",
+              "start": 4.58,
+              "end": 7.94
+            },
+            {
+              "text": "つまり日本航空では、1年たたずに3つの",
+              "start": 8.09,
+              "end": 11.21
+            },
+            {
+              "text": "空港に広がった。",
+              "start": 11.36,
+              "end": 12.56
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "1年で、3つ？",
+          "expression": "surprised",
+          "t0": 22.88,
+          "dur": 2.08,
+          "cards": [
+            {
+              "text": "1年で、3つ？",
+              "start": 0.0,
+              "end": 2.08
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今月からは羽田で、トンネルのある、もっと難しい道でも試すんだよ。",
+          "expression": "excited",
+          "t0": 25.24,
+          "dur": 4.8,
+          "cards": [
+            {
+              "text": "今月からは羽田で、トンネルのある、",
+              "start": 0.0,
+              "end": 2.47
+            },
+            {
+              "text": "もっと難しい道でも試すんだよ。",
+              "start": 2.62,
+              "end": 4.8
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "運転手が足りないのは、空港だけじゃないよね。次はどこで運転席が空になるのか、確かめよう。",
+          "expression": "thinking",
+          "t0": 30.32,
+          "dur": 6.36,
+          "cards": [
+            {
+              "text": "運転手が足りないのは、",
+              "start": 0.0,
+              "end": 1.51
+            },
+            {
+              "text": "空港だけじゃないよね。",
+              "start": 1.51,
+              "end": 3.03
+            },
+            {
+              "text": "次はどこで運転席が空になるのか、",
+              "start": 3.18,
+              "end": 5.58
+            },
+            {
+              "text": "確かめよう。",
+              "start": 5.73,
+              "end": 6.56
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "まず、その車って、どんな車？",
+          "expression": "neutral",
+          "t0": 36.9,
+          "dur": 2.36,
+          "cards": [
+            {
+              "text": "まず、その車って、どんな車？",
+              "start": 0.0,
+              "end": 2.36
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "トーイングトラクター。荷物を載せた台車を、何台もつないで引っぱる、小さな車のこと。",
+          "expression": "neutral",
+          "t0": 39.54,
+          "dur": 6.08,
+          "cards": [
+            {
+              "text": "トーイングトラクター。荷物を載せた台車を、",
+              "start": 0.0,
+              "end": 3.04
+            },
+            {
+              "text": "何台もつないで引っぱる、小さな車のこと。",
+              "start": 3.19,
+              "end": 6.08
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "この回では、誰も乗らずに、車が自分で走って運ぶことを、運転席が空になる、と言うね。",
+          "expression": "neutral",
+          "t0": 45.9,
+          "dur": 6.6,
+          "cards": [
+            {
+              "text": "この回では、誰も乗らずに、車が自分で走って",
+              "start": 0.0,
+              "end": 3.5
+            },
+            {
+              "text": "運ぶことを、運転席が空になる、と言うね。",
+              "start": 3.65,
+              "end": 6.65
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それと、今回から、荷物を運ぶ車や配達の無人化を、発表のたびに、同じ物差しで記録していく。",
+          "expression": "neutral",
+          "t0": 52.72,
+          "dur": 6.68,
+          "cards": [
+            {
+              "text": "それと、今回から、",
+              "start": 0.0,
+              "end": 1.33
+            },
+            {
+              "text": "荷物を運ぶ車や配達の無人化を、",
+              "start": 1.33,
+              "end": 3.56
+            },
+            {
+              "text": "発表のたびに、同じ物差しで記録していく。",
+              "start": 3.71,
+              "end": 6.68
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "物差しを決めておくんだね。",
+          "expression": "excited",
+          "t0": 59.68,
+          "dur": 2.16,
+          "cards": [
+            {
+              "text": "物差しを決めておくんだね。",
+              "start": 0.0,
+              "end": 2.16
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう。3つ。どこで無人になったか。人が乗って見張っているのか、もう誰も乗っていないのか。次はどこへ行く、と言っているか。",
+          "expression": "neutral",
+          "t0": 62.12,
+          "dur": 8.0,
+          "cards": [
+            {
+              "text": "そう。3つ。どこで無人になったか。",
+              "start": 0.0,
+              "end": 2.34
+            },
+            {
+              "text": "人が乗って見張っているのか、",
+              "start": 2.49,
+              "end": 4.25
+            },
+            {
+              "text": "もう誰も乗っていないのか。次はどこへ行く、",
+              "start": 4.4,
+              "end": 7.04
+            },
+            {
+              "text": "と言っているか。",
+              "start": 7.19,
+              "end": 8.2
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想。空港の中では、この1年で、もっと多くの空港と道に広がる。その次は、工場や倉庫の敷地の運搬にも来る。",
+          "expression": "excited",
+          "tag": "prediction",
+          "t0": 70.4,
+          "dur": 8.44,
+          "cards": [
+            {
+              "text": "僕の予想。空港の中では、この1年で、",
+              "start": 0.0,
+              "end": 2.94
+            },
+            {
+              "text": "もっと多くの空港と道に広がる。その次は、",
+              "start": 3.09,
+              "end": 6.09
+            },
+            {
+              "text": "工場や倉庫の敷地の運搬にも来る。",
+              "start": 6.24,
+              "end": 8.64
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想は、空港の中でも、広がるには3年はかかる。今は決まった1本の道。道や条件が変わるたびに、確かめ直しになるはずだから。",
+          "expression": "doubt",
+          "tag": "prediction",
+          "t0": 79.12,
+          "dur": 9.6,
+          "cards": [
+            {
+              "text": "私の予想は、空港の中でも、",
+              "start": 0.0,
+              "end": 2.05
+            },
+            {
+              "text": "広がるには3年はかかる。",
+              "start": 2.05,
+              "end": 3.95
+            },
+            {
+              "text": "今は決まった1本の道。",
+              "start": 4.1,
+              "end": 5.75
+            },
+            {
+              "text": "道や条件が変わるたびに、",
+              "start": 5.75,
+              "end": 7.55
+            },
+            {
+              "text": "確かめ直しになるはずだから。",
+              "start": 7.7,
+              "end": 9.8
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今日は、物差しに加えて、2つ見よう。なぜ空港から始まったか。それと、見ているあなたの会社には、どんな条件で来るか。",
+          "expression": "excited",
+          "t0": 89.0,
+          "dur": 8.28,
+          "cards": [
+            {
+              "text": "今日は、物差しに加えて、2つ見よう。",
+              "start": 0.0,
+              "end": 2.52
+            },
+            {
+              "text": "なぜ空港から始まったか。それと、",
+              "start": 2.82,
+              "end": 5.06
+            },
+            {
+              "text": "見ているあなたの会社には、",
+              "start": 5.26,
+              "end": 7.08
+            },
+            {
+              "text": "どんな条件で来るか。",
+              "start": 7.08,
+              "end": 8.48
+            }
+          ]
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true
+        },
+        {
+          "from_line": 3,
+          "source_card": {
+            "kind": "press",
+            "source": "JAL・福岡国際空港の発表（2026年10月26日）",
+            "items": [
+              "福岡空港: 2026年10月26日から",
+              "羽田・成田に次ぐ、JALで3つ目の空港"
+            ],
+            "reference_index": 0,
+            "quote": "JALにおける自動運転レベル4の導入は羽田・成田空港に次いで3空港目となり",
+            "quote_type": "原文",
+            "highlight": "3空港目"
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 7,
+          "image_asset": "photos/kl055_S05_b",
+          "real_photo": true
+        },
+        {
+          "from_line": 9,
+          "recap_card": {
+            "title": "この回から続ける物差し",
+            "items": [
+              "1 どこで、何が無人になったか",
+              "2 人が乗って見張るか、誰も乗らないか",
+              "3 次はどこへ行く、と言っているか"
+            ]
+          }
+        },
+        {
+          "from_line": 13,
+          "image_asset": "photos/kl055_S06",
+          "real_photo": true
+        },
+        {
+          "from_line": 15,
+          "recap_card": {
+            "title": "今日、見ること",
+            "items": [
+              "物差し3つ（どこで・人は乗るか・次はどこ）",
+              "＋ なぜ空港から？ どう越えた？",
+              "＋ あなたの会社には、どんな条件で？"
+            ]
+          }
+        }
+      ],
+      "scene_id": 5,
+      "narration": "大輔「いま福岡空港で、運転席に誰も乗っていない車が、貨物を引っぱって走ってるんだ。」\n沙織「空港の中だけの話でしょ？」\n大輔「空港の中だよ。でも、去年の暮れに羽田と成田、今年の秋に福岡。航空会社のJAL、つまり日本航空では、1年たたずに3つの空港に広がった。」\n沙織「1年で、3つ？」\n大輔「今月からは羽田で、トンネルのある、もっと難しい道でも試すんだよ。」\n沙織「運転手が足りないのは、空港だけじゃないよね。次はどこで運転席が空になるのか、確かめよう。」\n沙織「まず、その車って、どんな車？」\n大輔「トーイングトラクター。荷物を載せた台車を、何台もつないで引っぱる、小さな車のこと。」\n沙織「この回では、誰も乗らずに、車が自分で走って運ぶことを、運転席が空になる、と言うね。」\n沙織「それと、今回から、荷物を運ぶ車や配達の無人化を、発表のたびに、同じ物差しで記録していく。」\n大輔「物差しを決めておくんだね。」\n沙織「そう。3つ。どこで無人になったか。人が乗って見張っているのか、もう誰も乗っていないのか。次はどこへ行く、と言っているか。」\n大輔「僕の予想。空港の中では、この1年で、もっと多くの空港と道に広がる。その次は、工場や倉庫の敷地の運搬にも来る。」\n沙織「私の予想は、空港の中でも、広がるには3年はかかる。今は決まった1本の道。道や条件が変わるたびに、確かめ直しになるはずだから。」\n大輔「今日は、物差しに加えて、2つ見よう。なぜ空港から始まったか。それと、見ているあなたの会社には、どんな条件で来るか。」\n［画面の資料カード］JAL・福岡国際空港の発表（2026年10月26日） 「JALにおける自動運転レベル4の導入は羽田・成田空港に次いで3空港目となり」（原文） ・福岡空港: 2026年10月26日から ・羽田・成田に次ぐ、JALで3つ目の空港\n［画面のまとめカード（ふりかえり）］この回から続ける物差し ・1 どこで、何が無人になったか ・2 人が乗って見張るか、誰も乗らないか ・3 次はどこへ行く、と言っているか\n［画面のまとめカード（ふりかえり）］今日、見ること ・物差し3つ（どこで・人は乗るか・次はどこ） ・＋ なぜ空港から？ どう越えた？ ・＋ あなたの会社には、どんな条件で？",
+      "narrator": "dialogue",
+      "lines_hash": "8cd2d34f9720"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 1,
+      "round_title": "どこで、運転席が空になった？",
+      "image_asset": "photos/kl055_S06",
+      "real_photo": true,
+      "ken_burns": "gentle_zoom",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "まず、どこで、運転席が空になったか。",
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 3.24,
+          "cards": [
+            {
+              "text": "まず、どこで、運転席が空になったか。",
+              "start": 0.0,
+              "end": 3.24
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "福岡空港の中の、約1.7キロの道。国内の貨物を置く倉庫と、空港で働く車の置き場を、結んでる。",
+          "expression": "excited",
+          "t0": 3.52,
+          "dur": 8.64,
+          "cards": [
+            {
+              "text": "福岡空港の中の、約1.7キロの道。",
+              "start": 0.0,
+              "end": 3.32
+            },
+            {
+              "text": "国内の貨物を置く倉庫と、",
+              "start": 3.47,
+              "end": 5.61
+            },
+            {
+              "text": "空港で働く車の置き場を、",
+              "start": 5.61,
+              "end": 7.75
+            },
+            {
+              "text": "結んでる。",
+              "start": 7.9,
+              "end": 8.65
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そこを、貨物を積んだ台車を引いて、誰も乗らずに走る。",
+          "expression": "excited",
+          "t0": 12.38,
+          "dur": 4.64,
+          "cards": [
+            {
+              "text": "そこを、貨物を積んだ台車を引いて、",
+              "start": 0.0,
+              "end": 2.56
+            },
+            {
+              "text": "誰も乗らずに走る。",
+              "start": 2.71,
+              "end": 4.31
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "誰も乗らずに、ね。前は、誰か乗ってたの？",
+          "expression": "thinking",
+          "t0": 17.3,
+          "dur": 4.36,
+          "cards": [
+            {
+              "text": "誰も乗らずに、ね。前は、誰か乗ってたの？",
+              "start": 0.0,
+              "end": 4.36
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "羽田と成田では、去年の暮れまで、運転する人が乗ってた。",
+          "expression": "neutral",
+          "t0": 21.94,
+          "dur": 4.16,
+          "cards": [
+            {
+              "text": "羽田と成田では、去年の暮れまで、",
+              "start": 0.0,
+              "end": 2.44
+            },
+            {
+              "text": "運転する人が乗ってた。",
+              "start": 2.59,
+              "end": 4.22
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "乗って、何をしてたの？",
+          "expression": "neutral",
+          "t0": 26.38,
+          "dur": 2.08,
+          "cards": [
+            {
+              "text": "乗って、何をしてたの？",
+              "start": 0.0,
+              "end": 2.08
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "いつも見張っていて、ぶつかりそうなときは、その人がよける。これを、自動運転のレベル3相当、と呼んでた。",
+          "expression": "neutral",
+          "t0": 28.74,
+          "dur": 6.68,
+          "cards": [
+            {
+              "text": "いつも見張っていて、ぶつかりそうなときは、",
+              "start": 0.0,
+              "end": 2.63
+            },
+            {
+              "text": "その人がよける。これを、",
+              "start": 2.78,
+              "end": 4.38
+            },
+            {
+              "text": "自動運転のレベル3相当、",
+              "start": 4.38,
+              "end": 5.98
+            },
+            {
+              "text": "と呼んでた。",
+              "start": 6.13,
+              "end": 6.88
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "人が乗って、見張る段階ね。",
+          "expression": "neutral",
+          "t0": 35.7,
+          "dur": 2.32,
+          "cards": [
+            {
+              "text": "人が乗って、見張る段階ね。",
+              "start": 0.0,
+              "end": 2.32
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そこから、レベル4に上がった。決まった条件の中なら、人が乗らずに、車のシステムが運転を全部やる段階。",
+          "expression": "excited",
+          "t0": 38.3,
+          "dur": 8.44,
+          "cards": [
+            {
+              "text": "そこから、レベル4に上がった。",
+              "start": 0.0,
+              "end": 2.38
+            },
+            {
+              "text": "決まった条件の中なら、人が乗らずに、",
+              "start": 2.8,
+              "end": 5.5
+            },
+            {
+              "text": "車のシステムが運転を全部やる段階。",
+              "start": 5.65,
+              "end": 8.29
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "誰も乗っていなくて、何かあったときは？ 遠くから見守る人はいるの？",
+          "expression": "doubt",
+          "t0": 47.02,
+          "dur": 4.32,
+          "cards": [
+            {
+              "text": "誰も乗っていなくて、何かあったときは？",
+              "start": 0.0,
+              "end": 2.48
+            },
+            {
+              "text": "遠くから見守る人はいるの？",
+              "start": 2.63,
+              "end": 4.37
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "遠くから見守る体制は、どの発表にも書いてない。",
+          "expression": "neutral",
+          "t0": 51.62,
+          "dur": 4.24,
+          "cards": [
+            {
+              "text": "遠くから見守る体制は、",
+              "start": 0.0,
+              "end": 1.76
+            },
+            {
+              "text": "どの発表にも書いてない。",
+              "start": 1.76,
+              "end": 3.68
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そこは、次の発表で見ておきたいところね。試し始めたのは、いつから？",
+          "expression": "neutral",
+          "t0": 56.14,
+          "dur": 4.24,
+          "cards": [
+            {
+              "text": "そこは、次の発表で見ておきたいところね。",
+              "start": 0.0,
+              "end": 2.48
+            },
+            {
+              "text": "試し始めたのは、いつから？",
+              "start": 2.63,
+              "end": 4.24
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "JALは2018年から、国の取り組みの一つとして試してきた。",
+          "expression": "neutral",
+          "t0": 60.66,
+          "dur": 4.4,
+          "cards": [
+            {
+              "text": "JALは2018年から、国の取り組みの",
+              "start": 0.14,
+              "end": 2.89
+            },
+            {
+              "text": "一つとして試してきた。",
+              "start": 3.04,
+              "end": 4.6
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "7年がかりで、人が運転席から降りたわけね。",
+          "expression": "convinced",
+          "t0": 65.34,
+          "dur": 3.76,
+          "cards": [
+            {
+              "text": "7年がかりで、人が運転席から降りたわけね。",
+              "start": 0.0,
+              "end": 3.4
+            }
+          ]
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true,
+          "caption": "福岡空港（2018年撮影）"
+        },
+        {
+          "from_line": 5,
+          "source_card": {
+            "kind": "press",
+            "source": "JALの発表（2025年12月15日）",
+            "items": [
+              "羽田・成田: 2025年12月15日から、レベル4へ",
+              "JALは2018年から実証（国の取り組みの一環）"
+            ],
+            "reference_index": 1,
+            "quote": "これまで運転者が常時監視し、危険回避操作を行う「レベル3」相当での運用を重ねてまいりました",
+            "quote_type": "原文",
+            "highlight": "「レベル3」相当"
+          },
+          "reference_index": 1
+        },
+        {
+          "from_line": 9,
+          "source_card": {
+            "kind": "press",
+            "source": "国土交通省 航空局の発表（2025年12月15日）",
+            "items": [
+              "国交省による、自動運転レベル4の説明"
+            ],
+            "reference_index": 3,
+            "quote": "特定条件下において、運転者が乗車しない状態でシステムが全ての運転タスクを実施",
+            "quote_type": "原文",
+            "highlight": "運転者が乗車しない状態"
+          },
+          "reference_index": 3
+        }
+      ],
+      "scene_id": 6,
+      "narration": "沙織「まず、どこで、運転席が空になったか。」\n大輔「福岡空港の中の、約1.7キロの道。国内の貨物を置く倉庫と、空港で働く車の置き場を、結んでる。」\n大輔「そこを、貨物を積んだ台車を引いて、誰も乗らずに走る。」\n沙織「誰も乗らずに、ね。前は、誰か乗ってたの？」\n大輔「羽田と成田では、去年の暮れまで、運転する人が乗ってた。」\n沙織「乗って、何をしてたの？」\n大輔「いつも見張っていて、ぶつかりそうなときは、その人がよける。これを、自動運転のレベル3相当、と呼んでた。」\n沙織「人が乗って、見張る段階ね。」\n大輔「そこから、レベル4に上がった。決まった条件の中なら、人が乗らずに、車のシステムが運転を全部やる段階。」\n沙織「誰も乗っていなくて、何かあったときは？ 遠くから見守る人はいるの？」\n大輔「遠くから見守る体制は、どの発表にも書いてない。」\n沙織「そこは、次の発表で見ておきたいところね。試し始めたのは、いつから？」\n大輔「JALは2018年から、国の取り組みの一つとして試してきた。」\n沙織「7年がかりで、人が運転席から降りたわけね。」\n［画面の資料カード］JALの発表（2025年12月15日） 「これまで運転者が常時監視し、危険回避操作を行う「レベル3」相当での運用を重ねてまいりました」（原文） ・羽田・成田: 2025年12月15日から、レベル4へ ・JALは2018年から実証（国の取り組みの一環）\n［画面の資料カード］国土交通省 航空局の発表（2025年12月15日） 「特定条件下において、運転者が乗車しない状態でシステムが全ての運転タスクを実施」（原文） ・国交省による、自動運転レベル4の説明",
+      "narrator": "dialogue",
+      "lines_hash": "791a5de8f917"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 1,
+      "image_asset": "photos/kl055_S07",
+      "real_photo": true,
+      "ken_burns": "static",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "ただ、福岡で走っているのは、約1.7キロの決まった1本の道。運ぶのも、貨物だけ。",
+          "expression": "doubt",
+          "tag": "weakness",
+          "t0": 0.0,
+          "dur": 7.2,
+          "cards": [
+            {
+              "text": "ただ、福岡で走っているのは、",
+              "start": 0.0,
+              "end": 2.14
+            },
+            {
+              "text": "約1.7キロの決まった1本の道。運ぶのも、",
+              "start": 2.44,
+              "end": 6.24
+            },
+            {
+              "text": "貨物だけ。",
+              "start": 6.39,
+              "end": 7.14
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "成田は、運ぶ物が違う。旅客が預けた手荷物。羽田は、貨物のコンテナ。",
+          "expression": "neutral",
+          "t0": 7.48,
+          "dur": 5.68,
+          "cards": [
+            {
+              "text": "成田は、運ぶ物が違う。旅客が預けた手荷物。",
+              "start": 0.0,
+              "end": 3.46
+            },
+            {
+              "text": "羽田は、貨物のコンテナ。",
+              "start": 3.76,
+              "end": 5.56
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "効果のほうは？ 人の操作ミスによる事故が減る、とJALと、福岡空港を運営する会社は書いてるけど、言い方は、期待できる、まで。",
+          "expression": "thinking",
+          "t0": 13.44,
+          "dur": 9.92,
+          "cards": [
+            {
+              "text": "効果のほうは？ 人の操作",
+              "start": 0.0,
+              "end": 1.9
+            },
+            {
+              "text": "ミスによる事故が減る、",
+              "start": 1.9,
+              "end": 3.64
+            },
+            {
+              "text": "とJALと、",
+              "start": 3.79,
+              "end": 4.69
+            },
+            {
+              "text": "福岡空港を運営する会社は書いてるけど、",
+              "start": 4.69,
+              "end": 7.54
+            },
+            {
+              "text": "言い方は、期待できる、まで。",
+              "start": 7.69,
+              "end": 9.79
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "始まったばかりで、結果はまだ出ていない。",
+          "expression": "neutral",
+          "t0": 23.58,
+          "dur": 3.04,
+          "cards": [
+            {
+              "text": "始まったばかりで、結果はまだ出ていない。",
+              "start": 0.0,
+              "end": 3.04
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次は、空港の外でも使えると思う。たとえば、工場と倉庫のあいだを、決まった道で行き来する運搬。台車を引いて運ぶ作業は、空港の中とよく似てる。",
+          "expression": "excited",
+          "tag": "use_case",
+          "t0": 26.9,
+          "dur": 10.56,
+          "cards": [
+            {
+              "text": "次は、空港の外でも使えると思う。たとえば、",
+              "start": 0.0,
+              "end": 3.2
+            },
+            {
+              "text": "工場と倉庫のあいだを、",
+              "start": 3.35,
+              "end": 4.99
+            },
+            {
+              "text": "決まった道で行き来する運搬。",
+              "start": 4.99,
+              "end": 7.07
+            },
+            {
+              "text": "台車を引いて運ぶ作業は、",
+              "start": 7.22,
+              "end": 9.0
+            },
+            {
+              "text": "空港の中とよく似てる。",
+              "start": 9.0,
+              "end": 10.64
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "資料にあるのは、空港の中だけ。しかも空港の中は、関係者しか入れない場所。外の話は、どこにも書いてない。",
+          "expression": "doubt",
+          "t0": 37.74,
+          "dur": 8.2,
+          "cards": [
+            {
+              "text": "資料にあるのは、空港の中だけ。",
+              "start": 0.0,
+              "end": 2.54
+            },
+            {
+              "text": "しかも空港の中は、関係者しか入れない場所。",
+              "start": 2.85,
+              "end": 6.0
+            },
+            {
+              "text": "外の話は、どこにも書いてない。",
+              "start": 6.15,
+              "end": 8.4
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だったら、空港と同じ条件の場所を探せばいい。関係者だけが入れて、決まった2か所の間を、決まった道で行き来する場所。",
+          "expression": "excited",
+          "tag": "workaround",
+          "t0": 46.22,
+          "dur": 8.64,
+          "cards": [
+            {
+              "text": "だったら、",
+              "start": 0.0,
+              "end": 0.73
+            },
+            {
+              "text": "空港と同じ条件の場所を探せばいい。",
+              "start": 0.73,
+              "end": 3.22
+            },
+            {
+              "text": "関係者だけが入れて、決まった2か所の間を、",
+              "start": 3.57,
+              "end": 6.64
+            },
+            {
+              "text": "決まった道で行き来する場所。",
+              "start": 6.79,
+              "end": 8.84
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "たしかに、空港の3つの道は、どれも決まった2か所を結んでる。倉庫と車の置き場、貨物の地区どうし、ターミナルの本館と離れた建物。",
+          "expression": "neutral",
+          "t0": 55.14,
+          "dur": 9.96,
+          "cards": [
+            {
+              "text": "たしかに、空港の3つの道は、",
+              "start": 0.11,
+              "end": 2.21
+            },
+            {
+              "text": "どれも決まった2か所を結んでる。",
+              "start": 2.36,
+              "end": 4.76
+            },
+            {
+              "text": "倉庫と車の置き場、貨物の地区どうし、",
+              "start": 4.91,
+              "end": 7.76
+            },
+            {
+              "text": "ターミナルの本館と離れた建物。",
+              "start": 7.91,
+              "end": 10.16
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "決まった2か所を結ぶ道なら、誰も乗らない段階に、もう3つの空港で来てる。",
+          "expression": "convinced",
+          "tag": "hope",
+          "t0": 65.38,
+          "dur": 5.4,
+          "cards": [
+            {
+              "text": "決まった2か所を結ぶ道なら、",
+              "start": 0.0,
+              "end": 2.04
+            },
+            {
+              "text": "誰も乗らない段階に、",
+              "start": 2.19,
+              "end": 3.69
+            },
+            {
+              "text": "もう3つの空港で来てる。",
+              "start": 3.69,
+              "end": 5.49
+            }
+          ]
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "source_card": {
+            "kind": "press",
+            "source": "JAL・福岡国際空港の発表（2026年10月26日）",
+            "items": [
+              "国内貨物上屋: 国内の貨物を置く倉庫",
+              "地上支援機材置場: 空港で働く車などの置き場",
+              "運ぶもの: 貨物"
+            ],
+            "reference_index": 0,
+            "quote": "福岡空港内の国内貨物上屋と地上支援機材置場を結ぶ走行ライン約1.7kmにおける貨物の完全無人搬送を実現",
+            "quote_type": "原文",
+            "highlight": "約1.7km"
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 2,
+          "source_card": {
+            "kind": "press",
+            "source": "JALの発表（2025年12月15日）",
+            "items": [
+              "羽田: 貨物コンテナ（東⇔西の貨物地区）",
+              "成田: 預けた手荷物（本館⇔サテライト）",
+              "サテライト: 本館から離れた搭乗用の建物"
+            ],
+            "reference_index": 1
+          },
+          "reference_index": 1
+        },
+        {
+          "from_line": 3,
+          "source_card": {
+            "kind": "press",
+            "source": "JAL・福岡国際空港の発表（2026年10月26日）",
+            "items": [
+              "ヒューマンエラー: 人の操作ミス",
+              "運用は2026年10月26日に始まったばかり"
+            ],
+            "reference_index": 0,
+            "quote": "運転操作に伴うヒューマンエラーに起因する事故リスクの抑制が期待できる",
+            "quote_type": "原文",
+            "highlight": "期待できる"
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 5,
+          "scene_image": true,
+          "caption": "貨物・手荷物を載せる台車と、引っぱる車の例（今回の車両ではありません）"
+        },
+        {
+          "from_line": 8,
+          "recap_card": {
+            "title": "空港の3つの道は、どれも決まった2か所",
+            "items": [
+              "福岡: 国内貨物の倉庫 ⇔ 車の置き場",
+              "羽田: 東の貨物地区 ⇔ 西の貨物地区",
+              "成田: 本館 ⇔ サテライト"
+            ]
+          }
+        }
+      ],
+      "scene_id": 7,
+      "narration": "沙織「ただ、福岡で走っているのは、約1.7キロの決まった1本の道。運ぶのも、貨物だけ。」\n大輔「成田は、運ぶ物が違う。旅客が預けた手荷物。羽田は、貨物のコンテナ。」\n沙織「効果のほうは？ 人の操作ミスによる事故が減る、とJALと、福岡空港を運営する会社は書いてるけど、言い方は、期待できる、まで。」\n沙織「始まったばかりで、結果はまだ出ていない。」\n大輔「次は、空港の外でも使えると思う。たとえば、工場と倉庫のあいだを、決まった道で行き来する運搬。台車を引いて運ぶ作業は、空港の中とよく似てる。」\n沙織「資料にあるのは、空港の中だけ。しかも空港の中は、関係者しか入れない場所。外の話は、どこにも書いてない。」\n大輔「だったら、空港と同じ条件の場所を探せばいい。関係者だけが入れて、決まった2か所の間を、決まった道で行き来する場所。」\n沙織「たしかに、空港の3つの道は、どれも決まった2か所を結んでる。倉庫と車の置き場、貨物の地区どうし、ターミナルの本館と離れた建物。」\n大輔「決まった2か所を結ぶ道なら、誰も乗らない段階に、もう3つの空港で来てる。」\n［画面の資料カード］JAL・福岡国際空港の発表（2026年10月26日） 「福岡空港内の国内貨物上屋と地上支援機材置場を結ぶ走行ライン約1.7kmにおける貨物の完全無人搬送を実現」（原文） ・国内貨物上屋: 国内の貨物を置く倉庫 ・地上支援機材置場: 空港で働く車などの置き場 ・運ぶもの: 貨物\n［画面の資料カード］JALの発表（2025年12月15日） ・羽田: 貨物コンテナ（東⇔西の貨物地区） ・成田: 預けた手荷物（本館⇔サテライト） ・サテライト: 本館から離れた搭乗用の建物\n［画面の資料カード］JAL・福岡国際空港の発表（2026年10月26日） 「運転操作に伴うヒューマンエラーに起因する事故リスクの抑制が期待できる」（原文） ・ヒューマンエラー: 人の操作ミス ・運用は2026年10月26日に始まったばかり\n［画面のまとめカード（ふりかえり）］空港の3つの道は、どれも決まった2か所 ・福岡: 国内貨物の倉庫 ⇔ 車の置き場 ・羽田: 東の貨物地区 ⇔ 西の貨物地区 ・成田: 本館 ⇔ サテライト",
+      "narrator": "dialogue",
+      "lines_hash": "6813b1cf5239"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 2,
+      "round_title": "なぜ空港から？ どう越えた？",
+      "image_asset": "photos/kl055_S08",
+      "real_photo": true,
+      "ken_burns": "gentle_zoom",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "2つ目は、なぜ空港からなのか。空港の中って、車が走りやすい場所なの？",
+          "expression": "neutral",
+          "t0": 0.0,
+          "dur": 6.08,
+          "cards": [
+            {
+              "text": "2つ目は、なぜ空港からなのか。",
+              "start": 0.0,
+              "end": 2.7
+            },
+            {
+              "text": "空港の中って、車が走りやすい場所なの？",
+              "start": 3.04,
+              "end": 5.89
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "実は逆。JALの発表では、飛行機も、特別な作業車も、地上で働く人も、混ざって動いている場所。",
+          "expression": "neutral",
+          "t0": 6.36,
+          "dur": 7.8,
+          "cards": [
+            {
+              "text": "実は逆。JALの発表では、飛行機も、",
+              "start": 0.0,
+              "end": 3.5
+            },
+            {
+              "text": "特別な作業車も、地上で働く人も、",
+              "start": 3.65,
+              "end": 6.05
+            },
+            {
+              "text": "混ざって動いている場所。",
+              "start": 6.2,
+              "end": 8.0
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、なぜわざわざ空港から？",
+          "expression": "doubt",
+          "t0": 14.44,
+          "dur": 2.28,
+          "cards": [
+            {
+              "text": "じゃあ、なぜわざわざ空港から？",
+              "start": 0.0,
+              "end": 2.28
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "空港の中は、関係者しか入れない区域だから、だと思う。国土交通省の発表も、その区域の中の話として書いてる。",
+          "expression": "thinking",
+          "t0": 17.0,
+          "dur": 8.2,
+          "cards": [
+            {
+              "text": "空港の中は、関係者しか入れない区域だから、",
+              "start": 0.0,
+              "end": 3.2
+            },
+            {
+              "text": "だと思う。国土交通省の発表も、",
+              "start": 3.35,
+              "end": 5.85
+            },
+            {
+              "text": "その区域の中の話として書いてる。",
+              "start": 6.0,
+              "end": 8.4
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "国交省の発表には、こうもある。自動運転の車が、自分だけでは走れない箇所がある。",
+          "expression": "doubt",
+          "tag": "barrier",
+          "t0": 25.48,
+          "dur": 6.08,
+          "cards": [
+            {
+              "text": "国交省の発表には、こうもある。",
+              "start": 0.0,
+              "end": 2.25
+            },
+            {
+              "text": "自動運転の車が、",
+              "start": 2.4,
+              "end": 3.6
+            },
+            {
+              "text": "自分だけでは走れない箇所がある。",
+              "start": 3.6,
+              "end": 6.0
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だから、車の外から支える。羽田では国が、道の側に信号やカメラを置いた。",
+          "expression": "excited",
+          "tag": "workaround",
+          "t0": 31.84,
+          "dur": 6.8,
+          "cards": [
+            {
+              "text": "だから、車の外から支える。羽田では国が、",
+              "start": 0.0,
+              "end": 4.22
+            },
+            {
+              "text": "道の側に信号やカメラを置いた。",
+              "start": 4.37,
+              "end": 6.62
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "道のほうに、目と信号を足したわけね。",
+          "expression": "amused",
+          "t0": 38.92,
+          "dur": 3.12,
+          "cards": [
+            {
+              "text": "道のほうに、目と信号を足したわけね。",
+              "start": 0.0,
+              "end": 3.12
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "国交省は、こういう設備を、共通インフラと呼んでる。車が自分で走れない所を、道の側から支える設備のこと。",
+          "expression": "neutral",
+          "t0": 42.32,
+          "dur": 7.64,
+          "cards": [
+            {
+              "text": "国交省は、こういう設備を、",
+              "start": 0.0,
+              "end": 1.87
+            },
+            {
+              "text": "共通インフラと呼んでる。",
+              "start": 1.87,
+              "end": 3.6
+            },
+            {
+              "text": "車が自分で走れない所を、道の側から支える",
+              "start": 3.75,
+              "end": 6.83
+            },
+            {
+              "text": "設備のこと。",
+              "start": 6.98,
+              "end": 7.84
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "福岡は？",
+          "expression": "thinking",
+          "t0": 50.24,
+          "dur": 1.16,
+          "cards": [
+            {
+              "text": "福岡は？",
+              "start": 0.0,
+              "end": 1.16
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "福岡は、空港を運営する会社とJALで、空港の中の交通ルールを改めて、走る道の環境も整えた。",
+          "expression": "neutral",
+          "t0": 51.68,
+          "dur": 8.0,
+          "cards": [
+            {
+              "text": "福岡は、空港を運営する会社とJALで、",
+              "start": 0.0,
+              "end": 2.98
+            },
+            {
+              "text": "空港の中の交通ルールを改めて、",
+              "start": 3.13,
+              "end": 5.65
+            },
+            {
+              "text": "走る道の環境も整えた。",
+              "start": 5.8,
+              "end": 7.84
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ルールって、何を変えたの？",
+          "expression": "neutral",
+          "t0": 59.96,
+          "dur": 2.72,
+          "cards": [
+            {
+              "text": "ルールって、何を変えたの？",
+              "start": 0.0,
+              "end": 2.72
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "中身は書いてない。改めた、と、道を整えた、まで。",
+          "expression": "neutral",
+          "t0": 62.96,
+          "dur": 4.32,
+          "cards": [
+            {
+              "text": "中身は書いてない。改めた、",
+              "start": 0.0,
+              "end": 2.34
+            },
+            {
+              "text": "と、道を整えた、まで。",
+              "start": 2.34,
+              "end": 4.32
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "関係者だけの区域だから、道にも決まりにも、そこまで手を入れられた。そういうことね。",
+          "expression": "convinced",
+          "t0": 67.56,
+          "dur": 6.04,
+          "cards": [
+            {
+              "text": "関係者だけの区域だから、道にも決まりにも、",
+              "start": 0.0,
+              "end": 3.22
+            },
+            {
+              "text": "そこまで手を入れられた。そういうことね。",
+              "start": 3.37,
+              "end": 6.24
+            }
+          ]
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true,
+          "caption": "空港で貨物のコンテナを降ろす作業（2008年撮影）"
+        },
+        {
+          "from_line": 4,
+          "source_card": {
+            "kind": "press",
+            "source": "国土交通省 航空局の発表（2025年12月15日）",
+            "items": [
+              "空港の中の、関係者しか入れない区域での話",
+              "羽田: 国交省が信号設備やカメラ等を整備",
+              "運用ルールも、国が検討してきた"
+            ],
+            "reference_index": 3,
+            "quote": "自動運転車両が自律的に走行できない箇所において車両のサポート等を行う共通インフラ",
+            "quote_type": "原文",
+            "highlight": "自律的に走行できない箇所"
+          },
+          "reference_index": 3
+        },
+        {
+          "from_line": 10,
+          "source_card": {
+            "kind": "press",
+            "source": "JAL・福岡国際空港の発表（2026年10月26日）",
+            "items": [
+              "JALと福岡国際空港（空港の運営会社）",
+              "ルールの中身は、発表に書かれていない"
+            ],
+            "reference_index": 0,
+            "quote": "空港内における交通ルールの改訂や走行ルート上の環境整備など、ハード・ソフト両面において密接に連携",
+            "quote_type": "原文",
+            "highlight": "交通ルールの改訂"
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 13,
+          "image_asset": "photos/kl055_S09",
+          "real_photo": true
+        }
+      ],
+      "scene_id": 8,
+      "narration": "沙織「2つ目は、なぜ空港からなのか。空港の中って、車が走りやすい場所なの？」\n大輔「実は逆。JALの発表では、飛行機も、特別な作業車も、地上で働く人も、混ざって動いている場所。」\n沙織「じゃあ、なぜわざわざ空港から？」\n大輔「空港の中は、関係者しか入れない区域だから、だと思う。国土交通省の発表も、その区域の中の話として書いてる。」\n沙織「国交省の発表には、こうもある。自動運転の車が、自分だけでは走れない箇所がある。」\n大輔「だから、車の外から支える。羽田では国が、道の側に信号やカメラを置いた。」\n沙織「道のほうに、目と信号を足したわけね。」\n大輔「国交省は、こういう設備を、共通インフラと呼んでる。車が自分で走れない所を、道の側から支える設備のこと。」\n沙織「福岡は？」\n大輔「福岡は、空港を運営する会社とJALで、空港の中の交通ルールを改めて、走る道の環境も整えた。」\n沙織「ルールって、何を変えたの？」\n大輔「中身は書いてない。改めた、と、道を整えた、まで。」\n沙織「関係者だけの区域だから、道にも決まりにも、そこまで手を入れられた。そういうことね。」\n［画面の資料カード］国土交通省 航空局の発表（2025年12月15日） 「自動運転車両が自律的に走行できない箇所において車両のサポート等を行う共通インフラ」（原文） ・空港の中の、関係者しか入れない区域での話 ・羽田: 国交省が信号設備やカメラ等を整備 ・運用ルールも、国が検討してきた\n［画面の資料カード］JAL・福岡国際空港の発表（2026年10月26日） 「空港内における交通ルールの改訂や走行ルート上の環境整備など、ハード・ソフト両面において密接に連携」（原文） ・JALと福岡国際空港（空港の運営会社） ・ルールの中身は、発表に書かれていない",
+      "narrator": "dialogue",
+      "lines_hash": "13d54b109ac0"
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 2,
+      "image_asset": "photos/kl055_S09",
+      "real_photo": true,
+      "ken_burns": "static",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、運転していた人は、どうなったの？",
+          "expression": "doubt",
+          "t0": 0.0,
+          "dur": 3.0,
+          "cards": [
+            {
+              "text": "じゃあ、運転していた人は、どうなったの？",
+              "start": 0.0,
+              "end": 3.0
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それは、どの発表にも書いてない。人数が減ったのか、ほかの仕事に移ったのかも。",
+          "expression": "neutral",
+          "t0": 3.28,
+          "dur": 5.8,
+          "cards": [
+            {
+              "text": "それは、どの発表にも書いてない。",
+              "start": 0.2,
+              "end": 2.58
+            },
+            {
+              "text": "人数が減ったのか、",
+              "start": 2.73,
+              "end": 4.07
+            },
+            {
+              "text": "ほかの仕事に移ったのかも。",
+              "start": 4.07,
+              "end": 6.0
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "書いてある範囲で言うと、運転して運ぶ仕事は、機械に移り始めた。",
+          "expression": "neutral",
+          "t0": 9.3,
+          "dur": 5.0,
+          "cards": [
+            {
+              "text": "書いてある範囲で言うと、",
+              "start": 0.0,
+              "end": 1.8
+            },
+            {
+              "text": "運転して運ぶ仕事は、",
+              "start": 1.8,
+              "end": 3.3
+            },
+            {
+              "text": "機械に移り始めた。",
+              "start": 3.45,
+              "end": 4.95
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "代わりに増えた仕事は？",
+          "expression": "thinking",
+          "t0": 14.58,
+          "dur": 1.84,
+          "cards": [
+            {
+              "text": "代わりに増えた仕事は？",
+              "start": 0.0,
+              "end": 1.84
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "道と決まりを整える仕事。福岡で空港の中の交通ルールを改めたり、羽田で道に信号やカメラを置いたりする仕事。",
+          "expression": "neutral",
+          "t0": 16.7,
+          "dur": 9.4,
+          "cards": [
+            {
+              "text": "道と決まりを整える仕事。福岡で空港の中の",
+              "start": 0.0,
+              "end": 4.38
+            },
+            {
+              "text": "交通ルールを改めたり、羽田で道に信号や",
+              "start": 4.53,
+              "end": 7.5
+            },
+            {
+              "text": "カメラを置いたりする仕事。",
+              "start": 7.65,
+              "end": 9.6
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "運転していた人が、その仕事に移ったのかは、書いてないのね。",
+          "expression": "neutral",
+          "t0": 26.38,
+          "dur": 3.44,
+          "cards": [
+            {
+              "text": "運転していた人が、その仕事に移ったのかは、",
+              "start": 0.0,
+              "end": 2.54
+            },
+            {
+              "text": "書いてないのね。",
+              "start": 2.69,
+              "end": 3.6
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "JALは、目的は書いてる。少ない人数で回すこと、つまり省人化。それと、誰もが長く働き続けられる環境をつくること。",
+          "expression": "neutral",
+          "t0": 30.1,
+          "dur": 9.36,
+          "cards": [
+            {
+              "text": "JALは、目的は書いてる。",
+              "start": 0.0,
+              "end": 1.98
+            },
+            {
+              "text": "少ない人数で回すこと、",
+              "start": 1.98,
+              "end": 3.66
+            },
+            {
+              "text": "つまり省人化。それと、",
+              "start": 3.81,
+              "end": 5.84
+            },
+            {
+              "text": "誰もが長く働き続けられる",
+              "start": 5.84,
+              "end": 8.05
+            },
+            {
+              "text": "環境をつくること。",
+              "start": 8.2,
+              "end": 9.55
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "人を減らして回すことと、長く働ける職場にすること。その両方をねらってるのね。二つがどうつながるかは、書いてないけど。",
+          "expression": "thinking",
+          "t0": 39.74,
+          "dur": 7.96,
+          "cards": [
+            {
+              "text": "人を減らして回すことと、",
+              "start": 0.0,
+              "end": 1.67
+            },
+            {
+              "text": "長く働ける職場にすること。",
+              "start": 1.67,
+              "end": 3.48
+            },
+            {
+              "text": "その両方をねらってるのね。",
+              "start": 3.63,
+              "end": 5.36
+            },
+            {
+              "text": "二つがどうつながるかは、",
+              "start": 5.36,
+              "end": 6.95
+            },
+            {
+              "text": "書いてないけど。",
+              "start": 7.1,
+              "end": 8.16
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "無人で走らせるやり方は、もう形になってる。車を賢くするだけじゃなく、道と決まりのほうを、車に合わせて整える。",
+          "expression": "convinced",
+          "tag": "hope",
+          "t0": 47.98,
+          "dur": 8.32,
+          "cards": [
+            {
+              "text": "無人で走らせるやり方は、もう形になってる。",
+              "start": 0.0,
+              "end": 3.12
+            },
+            {
+              "text": "車を賢くするだけじゃなく、",
+              "start": 3.27,
+              "end": 5.2
+            },
+            {
+              "text": "道と決まりのほうを、",
+              "start": 5.2,
+              "end": 6.69
+            },
+            {
+              "text": "車に合わせて整える。",
+              "start": 6.84,
+              "end": 8.33
+            }
+          ]
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true,
+          "caption": "貨物を積み下ろす車の例"
+        },
+        {
+          "from_line": 7,
+          "source_card": {
+            "kind": "press",
+            "source": "JALの発表（2025年12月15日）",
+            "items": [
+              "目的: 省人化・効率化",
+              "人の増減・配置換えは、発表に書かれていない"
+            ],
+            "reference_index": 1,
+            "quote": "誰もが長く働き続けられる環境を構築",
+            "quote_type": "原文",
+            "highlight": "長く働き続けられる環境"
+          },
+          "reference_index": 1
+        },
+        {
+          "from_line": 9,
+          "recap_card": {
+            "title": "無人で走らせるやり方",
+            "items": [
+              "車だけに任せない",
+              "道の側: 信号やカメラ（羽田、国が整備）",
+              "決まり: 空港の中の交通ルールを改めた"
+            ]
+          }
+        }
+      ],
+      "scene_id": 9,
+      "narration": "沙織「じゃあ、運転していた人は、どうなったの？」\n大輔「それは、どの発表にも書いてない。人数が減ったのか、ほかの仕事に移ったのかも。」\n大輔「書いてある範囲で言うと、運転して運ぶ仕事は、機械に移り始めた。」\n沙織「代わりに増えた仕事は？」\n大輔「道と決まりを整える仕事。福岡で空港の中の交通ルールを改めたり、羽田で道に信号やカメラを置いたりする仕事。」\n沙織「運転していた人が、その仕事に移ったのかは、書いてないのね。」\n大輔「JALは、目的は書いてる。少ない人数で回すこと、つまり省人化。それと、誰もが長く働き続けられる環境をつくること。」\n沙織「人を減らして回すことと、長く働ける職場にすること。その両方をねらってるのね。二つがどうつながるかは、書いてないけど。」\n大輔「無人で走らせるやり方は、もう形になってる。車を賢くするだけじゃなく、道と決まりのほうを、車に合わせて整える。」\n［画面の資料カード］JALの発表（2025年12月15日） 「誰もが長く働き続けられる環境を構築」（原文） ・目的: 省人化・効率化 ・人の増減・配置換えは、発表に書かれていない\n［画面のまとめカード（ふりかえり）］無人で走らせるやり方 ・車だけに任せない ・道の側: 信号やカメラ（羽田、国が整備） ・決まり: 空港の中の交通ルールを改めた",
+      "narrator": "dialogue",
+      "lines_hash": "f9ccd4f4022e"
+    },
+    {
+      "type": "paper",
+      "bgm_role": "main",
+      "round": 3,
+      "round_title": "次はどこ？ あなたの会社には、どんな条件で？",
+      "ken_burns": "zoom_in",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "最後に、次はどこか。でも正直、空港の外でも、同じことができる？ 道も決まりも、そう簡単には変えられないでしょ。",
+          "expression": "doubt",
+          "t0": 0.0,
+          "dur": 8.6,
+          "cards": [
+            {
+              "text": "最後に、次はどこか。でも正直、",
+              "start": 0.34,
+              "end": 2.65
+            },
+            {
+              "text": "空港の外でも、同じことができる？",
+              "start": 2.8,
+              "end": 5.2
+            },
+            {
+              "text": "道も決まりも、",
+              "start": 5.35,
+              "end": 6.4
+            },
+            {
+              "text": "そう簡単には変えられないでしょ。",
+              "start": 6.4,
+              "end": 8.8
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "空港の外は、どの資料にも書いてない。",
+          "expression": "neutral",
+          "t0": 8.88,
+          "dur": 3.24,
+          "cards": [
+            {
+              "text": "空港の外は、どの資料にも書いてない。",
+              "start": 0.0,
+              "end": 3.24
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でも、空港の中の次なら、もう書いてある。羽田で今月から、トンネルのある道を試す。豊田自動織機という会社の車で。",
+          "expression": "excited",
+          "t0": 12.34,
+          "dur": 9.16,
+          "cards": [
+            {
+              "text": "でも、空港の中の次なら、もう書いてある。",
+              "start": 0.0,
+              "end": 3.0
+            },
+            {
+              "text": "羽田で今月から、トンネルのある道を試す。",
+              "start": 3.4,
+              "end": 6.4
+            },
+            {
+              "text": "豊田自動織機という会社の車で。",
+              "start": 6.55,
+              "end": 8.89
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "トンネル？ 何が違うの？",
+          "expression": "surprised",
+          "t0": 21.78,
+          "dur": 2.28,
+          "cards": [
+            {
+              "text": "トンネル？ 何が違うの？",
+              "start": 0.0,
+              "end": 2.28
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "JALと豊田自動織機の発表では、今の道より難しくて、走る環境も、運用の条件も、大きく違う。国が新しく置く設備と、うまくつながるかも確かめる。",
+          "expression": "neutral",
+          "t0": 24.34,
+          "dur": 11.44,
+          "cards": [
+            {
+              "text": "JALと豊田自動織機の発表では、",
+              "start": 0.12,
+              "end": 2.52
+            },
+            {
+              "text": "今の道より難しくて、走る環境も、",
+              "start": 2.7,
+              "end": 5.34
+            },
+            {
+              "text": "運用の条件も、大きく違う。",
+              "start": 5.49,
+              "end": 7.6
+            },
+            {
+              "text": "国が新しく置く設備と、",
+              "start": 7.6,
+              "end": 9.39
+            },
+            {
+              "text": "うまくつながるかも確かめる。",
+              "start": 9.54,
+              "end": 11.64
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "道や条件が変わるたびに、確かめ直し、なのね。",
+          "expression": "thinking",
+          "t0": 36.06,
+          "dur": 3.96,
+          "cards": [
+            {
+              "text": "道や条件が変わるたびに、確かめ直し、",
+              "start": 0.0,
+              "end": 3.06
+            },
+            {
+              "text": "なのね。",
+              "start": 3.21,
+              "end": 3.81
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それから、JALとは別の航空会社、全日空も、同じ運用を検討してる、と福岡の発表にある。",
+          "expression": "excited",
+          "t0": 40.3,
+          "dur": 7.8,
+          "cards": [
+            {
+              "text": "それから、JALとは別の航空会社、",
+              "start": 0.0,
+              "end": 2.76
+            },
+            {
+              "text": "全日空も、同じ運用を検討してる、",
+              "start": 3.0,
+              "end": 5.72
+            },
+            {
+              "text": "と福岡の発表にある。",
+              "start": 5.87,
+              "end": 7.47
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "国は？",
+          "expression": "neutral",
+          "t0": 48.38,
+          "dur": 1.04,
+          "cards": [
+            {
+              "text": "国は？",
+              "start": 0.0,
+              "end": 1.04
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "国交省は、導入する空港と台数を増やす、と書いてる。車の種類と、走る区域を広げる検討も、国と会社で進める。",
+          "expression": "neutral",
+          "t0": 49.7,
+          "dur": 8.6,
+          "cards": [
+            {
+              "text": "国交省は、導入する空港と台数を増やす、",
+              "start": 0.0,
+              "end": 3.14
+            },
+            {
+              "text": "と書いてる。車の種類と、",
+              "start": 3.29,
+              "end": 5.2
+            },
+            {
+              "text": "走る区域を広げる検討も、",
+              "start": 5.2,
+              "end": 7.11
+            },
+            {
+              "text": "国と会社で進める。",
+              "start": 7.26,
+              "end": 8.61
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "JALも、全国の空港に広げることを目指す、と書いてるね。いつまでに、とは書いてないけど。",
+          "expression": "neutral",
+          "t0": 58.58,
+          "dur": 6.08,
+          "cards": [
+            {
+              "text": "JALも、全国の空港に広げることを目指す、",
+              "start": 0.13,
+              "end": 3.03
+            },
+            {
+              "text": "と書いてるね。いつまでに、",
+              "start": 3.18,
+              "end": 4.93
+            },
+            {
+              "text": "とは書いてないけど。",
+              "start": 4.93,
+              "end": 6.28
+            }
+          ]
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true
+        },
+        {
+          "from_line": 3,
+          "source_card": {
+            "kind": "press",
+            "source": "JAL・豊田自動織機の発表（2026年10月30日）",
+            "items": [
+              "羽田で2026年11月から検証",
+              "車: 豊田自動織機製",
+              "国が新たに整備する共通インフラとの連携も"
+            ],
+            "reference_index": 2,
+            "quote": "トンネル区間を含むなど、現行ルートよりも難易度が高く、走行環境や運用条件が大きく異なります",
+            "quote_type": "原文",
+            "highlight": "トンネル区間を含む"
+          },
+          "reference_index": 2
+        },
+        {
+          "from_line": 7,
+          "source_card": {
+            "kind": "press",
+            "source": "JAL・福岡国際空港の発表（2026年10月26日）",
+            "items": [
+              "全日本空輸（全日空）: JALとは別の航空会社",
+              "発表: JALと福岡国際空港"
+            ],
+            "reference_index": 0,
+            "quote": "同運用を検討している全日本空輸株式会社とも協調",
+            "quote_type": "原文",
+            "highlight": "同運用を検討"
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 9,
+          "source_card": {
+            "kind": "press",
+            "source": "国土交通省 航空局の発表（2025年12月15日）",
+            "items": [
+              "あわせて: 車の種類・走る区域の拡大も検討",
+              "官民で連携して進める"
+            ],
+            "reference_index": 3,
+            "quote": "自動運転の導入空港や車両数の拡大など本格実装に向けた取組",
+            "quote_type": "原文",
+            "highlight": "導入空港や車両数の拡大"
+          },
+          "reference_index": 3
+        },
+        {
+          "from_line": 10,
+          "source_card": {
+            "kind": "press",
+            "source": "JALの発表（2025年12月15日）",
+            "items": [
+              "JALの目標: 全国の空港へ",
+              "いつまでに、は書かれていない"
+            ],
+            "reference_index": 1,
+            "quote": "今後は全国空港への普及を推進してまいります",
+            "quote_type": "原文",
+            "highlight": "全国空港への普及"
+          },
+          "reference_index": 1
+        }
+      ],
+      "scene_id": 10,
+      "narration": "沙織「最後に、次はどこか。でも正直、空港の外でも、同じことができる？ 道も決まりも、そう簡単には変えられないでしょ。」\n大輔「空港の外は、どの資料にも書いてない。」\n大輔「でも、空港の中の次なら、もう書いてある。羽田で今月から、トンネルのある道を試す。豊田自動織機という会社の車で。」\n沙織「トンネル？ 何が違うの？」\n大輔「JALと豊田自動織機の発表では、今の道より難しくて、走る環境も、運用の条件も、大きく違う。国が新しく置く設備と、うまくつながるかも確かめる。」\n沙織「道や条件が変わるたびに、確かめ直し、なのね。」\n大輔「それから、JALとは別の航空会社、全日空も、同じ運用を検討してる、と福岡の発表にある。」\n沙織「国は？」\n大輔「国交省は、導入する空港と台数を増やす、と書いてる。車の種類と、走る区域を広げる検討も、国と会社で進める。」\n沙織「JALも、全国の空港に広げることを目指す、と書いてるね。いつまでに、とは書いてないけど。」\n［画面の資料カード］JAL・豊田自動織機の発表（2026年10月30日） 「トンネル区間を含むなど、現行ルートよりも難易度が高く、走行環境や運用条件が大きく異なります」（原文） ・羽田で2026年11月から検証 ・車: 豊田自動織機製 ・国が新たに整備する共通インフラとの連携も\n［画面の資料カード］JAL・福岡国際空港の発表（2026年10月26日） 「同運用を検討している全日本空輸株式会社とも協調」（原文） ・全日本空輸（全日空）: JALとは別の航空会社 ・発表: JALと福岡国際空港\n［画面の資料カード］国土交通省 航空局の発表（2025年12月15日） 「自動運転の導入空港や車両数の拡大など本格実装に向けた取組」（原文） ・あわせて: 車の種類・走る区域の拡大も検討 ・官民で連携して進める\n［画面の資料カード］JALの発表（2025年12月15日） 「今後は全国空港への普及を推進してまいります」（原文） ・JALの目標: 全国の空港へ ・いつまでに、は書かれていない",
+      "narrator": "dialogue",
+      "lines_hash": "296d0ae2d978",
+      "image_asset": "photos/kl055_S10",
+      "real_photo": true
+    },
+    {
+      "type": "check",
+      "bgm_role": "main",
+      "round": 3,
+      "image_asset": "photos/kl055_S11",
+      "real_photo": true,
+      "ken_burns": "static",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "今と同じような決まった道なら、ほかの空港へ広がるのに、3年はかからない。そこは私の読み違いね。",
+          "expression": "convinced",
+          "tag": "turn",
+          "t0": 0.0,
+          "dur": 5.96,
+          "cards": [
+            {
+              "text": "今と同じような決まった道なら、",
+              "start": 0.0,
+              "end": 1.82
+            },
+            {
+              "text": "ほかの空港へ広がるのに、3年はかからない。",
+              "start": 1.97,
+              "end": 4.5
+            },
+            {
+              "text": "そこは私の読み違いね。",
+              "start": 4.65,
+              "end": 6.16
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "でも、トンネルのような難しい道は、試しが今月始まったばかり。そっちは、まだ時間がかかると思う。",
+          "expression": "thinking",
+          "t0": 6.18,
+          "dur": 6.76,
+          "cards": [
+            {
+              "text": "でも、トンネルのような難しい道は、",
+              "start": 0.0,
+              "end": 2.42
+            },
+            {
+              "text": "試しが今月始まったばかり。そっちは、",
+              "start": 2.57,
+              "end": 5.16
+            },
+            {
+              "text": "まだ時間がかかると思う。",
+              "start": 5.31,
+              "end": 6.96
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、ふつうの会社に、いつ来るかは、やっぱり書いてない。",
+          "expression": "doubt",
+          "t0": 13.16,
+          "dur": 3.76,
+          "cards": [
+            {
+              "text": "それに、ふつうの会社に、いつ来るかは、",
+              "start": 0.0,
+              "end": 2.57
+            },
+            {
+              "text": "やっぱり書いてない。",
+              "start": 2.72,
+              "end": 3.96
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そう、いつ来るかは、書いてない。でも、どんな場所から来るかは、ここまでで見えた。",
+          "expression": "thinking",
+          "t0": 17.2,
+          "dur": 5.8,
+          "cards": [
+            {
+              "text": "そう、いつ来るかは、書いてない。でも、",
+              "start": 0.0,
+              "end": 2.68
+            },
+            {
+              "text": "どんな場所から来るかは、ここまでで見えた。",
+              "start": 2.9,
+              "end": 5.87
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "整理すると、条件は4つ。関係者だけの敷地。決まった2か所を結ぶ道。車に合わせて改めた決まり。それに、道の側の信号やカメラ。",
+          "expression": "neutral",
+          "t0": 23.28,
+          "dur": 10.84,
+          "cards": [
+            {
+              "text": "整理すると、条件は4つ。関係者だけの敷地。",
+              "start": 0.0,
+              "end": 4.22
+            },
+            {
+              "text": "決まった2か所を結ぶ道。",
+              "start": 4.37,
+              "end": 6.22
+            },
+            {
+              "text": "車に合わせて改めた決まり。",
+              "start": 6.22,
+              "end": 8.23
+            },
+            {
+              "text": "それに、道の側の信号やカメラ。",
+              "start": 8.38,
+              "end": 10.72
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "資料には無い、私の願いだけど。本物なら、大きな病院の敷地で使いたい。建物と建物の間で、検査に出す血液などを運ぶ。",
+          "expression": "amused",
+          "tag": "skeptic_wish",
+          "t0": 34.34,
+          "dur": 8.32,
+          "cards": [
+            {
+              "text": "資料には無い、私の願いだけど。本物なら、",
+              "start": 0.0,
+              "end": 3.06
+            },
+            {
+              "text": "大きな病院の敷地で使いたい。",
+              "start": 3.21,
+              "end": 5.22
+            },
+            {
+              "text": "建物と建物の間で、",
+              "start": 5.37,
+              "end": 6.66
+            },
+            {
+              "text": "検査に出す血液などを運ぶ。",
+              "start": 6.66,
+              "end": 8.52
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だったら、病院でも会社でも、まず自分の敷地に、その4つがあるかを見ればいい。足りない所は、空港みたいに、道と決まりのほうを整える。",
+          "expression": "excited",
+          "tag": "workaround",
+          "t0": 42.94,
+          "dur": 9.72,
+          "cards": [
+            {
+              "text": "だったら、病院でも会社でも、",
+              "start": 0.0,
+              "end": 2.2
+            },
+            {
+              "text": "まず自分の敷地に、",
+              "start": 2.35,
+              "end": 3.63
+            },
+            {
+              "text": "その4つがあるかを見ればいい。",
+              "start": 3.63,
+              "end": 5.77
+            },
+            {
+              "text": "足りない所は、空港みたいに、",
+              "start": 5.92,
+              "end": 7.92
+            },
+            {
+              "text": "道と決まりのほうを整える。",
+              "start": 8.07,
+              "end": 9.92
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "空港も、そうやって越えてきたものね。じゃあ、敷地を持たない小さな会社は？",
+          "expression": "thinking",
+          "t0": 52.94,
+          "dur": 4.96,
+          "cards": [
+            {
+              "text": "空港も、そうやって越えてきたものね。",
+              "start": 0.0,
+              "end": 2.4
+            },
+            {
+              "text": "じゃあ、敷地を持たない小さな会社は？",
+              "start": 2.55,
+              "end": 5.16
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "荷物を預けている物流会社や、取引先の倉庫に、その4つがあるかを見ればいい。",
+          "expression": "excited",
+          "t0": 58.18,
+          "dur": 5.6,
+          "cards": [
+            {
+              "text": "荷物を預けている物流会社や、",
+              "start": 0.0,
+              "end": 2.2
+            },
+            {
+              "text": "取引先の倉庫に、",
+              "start": 2.41,
+              "end": 3.59
+            },
+            {
+              "text": "その4つがあるかを見ればいい。",
+              "start": 3.59,
+              "end": 5.8
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "空港の中では、この4つをそろえて、誰も乗らない運搬が、もう仕事として動いてる。",
+          "expression": "convinced",
+          "tag": "hope",
+          "t0": 64.0,
+          "dur": 6.36,
+          "cards": [
+            {
+              "text": "空港の中では、この4つをそろえて、",
+              "start": 0.0,
+              "end": 2.55
+            },
+            {
+              "text": "誰も乗らない運搬が、",
+              "start": 2.7,
+              "end": 4.2
+            },
+            {
+              "text": "もう仕事として動いてる。",
+              "start": 4.2,
+              "end": 6.0
+            }
+          ]
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "chart": {
+            "kind": "number",
+            "title": "JALで、誰も乗らない運搬車が走る空港",
+            "value": 3,
+            "unit": "空港",
+            "caption": "羽田・成田に次いで、福岡が3空港目",
+            "source": "JAL・福岡国際空港の発表（2026年10月26日）",
+            "reference_index": 0
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 3,
+          "scene_image": true,
+          "caption": "福岡空港（2017年撮影）"
+        },
+        {
+          "from_line": 4,
+          "recap_card": {
+            "title": "運転席が空になる、4つの条件",
+            "items": [
+              "1 関係者だけが入れる敷地",
+              "2 決まった2か所を結ぶ道",
+              "3 車に合わせて改めた決まり",
+              "4 道の側の信号やカメラ"
+            ]
+          }
+        },
+        {
+          "from_line": 8,
+          "image_asset": "photos/kl055_S09",
+          "real_photo": true
+        },
+        {
+          "from_line": 10,
+          "scene_image": true,
+          "caption": "福岡空港（2017年撮影）"
+        }
+      ],
+      "scene_id": 11,
+      "narration": "沙織「今と同じような決まった道なら、ほかの空港へ広がるのに、3年はかからない。そこは私の読み違いね。」\n沙織「でも、トンネルのような難しい道は、試しが今月始まったばかり。そっちは、まだ時間がかかると思う。」\n沙織「それに、ふつうの会社に、いつ来るかは、やっぱり書いてない。」\n大輔「そう、いつ来るかは、書いてない。でも、どんな場所から来るかは、ここまでで見えた。」\n沙織「整理すると、条件は4つ。関係者だけの敷地。決まった2か所を結ぶ道。車に合わせて改めた決まり。それに、道の側の信号やカメラ。」\n沙織「資料には無い、私の願いだけど。本物なら、大きな病院の敷地で使いたい。建物と建物の間で、検査に出す血液などを運ぶ。」\n大輔「だったら、病院でも会社でも、まず自分の敷地に、その4つがあるかを見ればいい。足りない所は、空港みたいに、道と決まりのほうを整える。」\n沙織「空港も、そうやって越えてきたものね。じゃあ、敷地を持たない小さな会社は？」\n大輔「荷物を預けている物流会社や、取引先の倉庫に、その4つがあるかを見ればいい。」\n大輔「空港の中では、この4つをそろえて、誰も乗らない運搬が、もう仕事として動いてる。」\n［画面のグラフ］JAL・福岡国際空港の発表（2026年10月26日） JALで、誰も乗らない運搬車が走る空港 3空港 羽田・成田に次いで、福岡が3空港目\n［画面のまとめカード（ふりかえり）］運転席が空になる、4つの条件 ・1 関係者だけが入れる敷地 ・2 決まった2か所を結ぶ道 ・3 車に合わせて改めた決まり ・4 道の側の信号やカメラ",
+      "narrator": "dialogue",
+      "lines_hash": "317827a9fe91"
+    },
+    {
+      "type": "verdict",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "verdict_from_line": 8,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "先に、僕の予想から。工場や倉庫に来る、とは、資料には書いてなかった。そこは先走り。でも、来るならどんな場所かは、4つの条件で見えた。",
+          "expression": "thinking",
+          "tag": "vs_prediction",
+          "t0": 0.0,
+          "dur": 9.76,
+          "cards": [
+            {
+              "text": "先に、僕の予想から。工場や倉庫に来る、",
+              "start": 0.0,
+              "end": 2.88
+            },
+            {
+              "text": "とは、資料には書いてなかった。",
+              "start": 3.03,
+              "end": 5.15
+            },
+            {
+              "text": "そこは先走り。でも、",
+              "start": 5.3,
+              "end": 6.71
+            },
+            {
+              "text": "来るならどんな場所かは、",
+              "start": 6.71,
+              "end": 8.4
+            },
+            {
+              "text": "4つの条件で見えた。",
+              "start": 8.55,
+              "end": 9.96
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "3つの物差しで、今日の記録を残すね。どこで、は空港の中の決まった道で、JALで3つの空港。人は、誰も乗らない段階まで来た。",
+          "expression": "neutral",
+          "react": "thinking",
+          "t0": 10.04,
+          "dur": 9.64,
+          "cards": [
+            {
+              "text": "3つの物差しで、今日の記録を残すね。",
+              "start": 0.0,
+              "end": 2.7
+            },
+            {
+              "text": "どこで、は空港の中の決まった道で、",
+              "start": 2.85,
+              "end": 5.4
+            },
+            {
+              "text": "JALで3つの空港。人は、誰も乗らない",
+              "start": 5.55,
+              "end": 8.64
+            },
+            {
+              "text": "段階まで来た。",
+              "start": 8.79,
+              "end": 9.84
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それから、次はどこへ行くか。羽田の難しい道の試しと、全日空も同じ運用を検討してること。",
+          "expression": "neutral",
+          "t0": 19.96,
+          "dur": 8.12,
+          "cards": [
+            {
+              "text": "それから、次はどこへ行くか。",
+              "start": 0.0,
+              "end": 2.7
+            },
+            {
+              "text": "羽田の難しい道の試しと、全日空も同じ運用を",
+              "start": 3.32,
+              "end": 6.97
+            },
+            {
+              "text": "検討してること。",
+              "start": 7.12,
+              "end": 8.32
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "最後に、二人で判定を出すね。画面に出す札、つまり判定のラベルは、近い順に、もうすぐ来る、3年はかかる、と並ぶ。",
+          "expression": "neutral",
+          "t0": 28.36,
+          "dur": 7.72,
+          "cards": [
+            {
+              "text": "最後に、二人で判定を出すね。画面に出す札、",
+              "start": 0.0,
+              "end": 2.83
+            },
+            {
+              "text": "つまり判定のラベルは、近い順に、",
+              "start": 2.98,
+              "end": 5.34
+            },
+            {
+              "text": "もうすぐ来る、3年はかかる、と並ぶ。",
+              "start": 5.49,
+              "end": 7.92
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ほかの空港の決まった道へ広がるのは、二人とも早いと見てる。",
+          "expression": "neutral",
+          "t0": 36.36,
+          "dur": 4.0,
+          "cards": [
+            {
+              "text": "ほかの空港の決まった道へ広がるのは、",
+              "start": 0.2,
+              "end": 2.59
+            },
+            {
+              "text": "二人とも早いと見てる。",
+              "start": 2.74,
+              "end": 4.2
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "札を付けるのは、その先。空港の中の、トンネルのような難しい道まで、誰も乗らずに走るようになるか。",
+          "expression": "neutral",
+          "t0": 40.64,
+          "dur": 7.16,
+          "cards": [
+            {
+              "text": "札を付けるのは、その先。空港の中の、",
+              "start": 0.21,
+              "end": 2.78
+            },
+            {
+              "text": "トンネルのような難しい道まで、",
+              "start": 2.93,
+              "end": 5.07
+            },
+            {
+              "text": "誰も乗らずに走るようになるか。",
+              "start": 5.22,
+              "end": 7.36
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕は、もうすぐ来る。トンネルの道も、1年ほどで試しから仕事になると見てる。国が道の側の設備を整えていて、全日空も同じ運用を検討してる。",
+          "expression": "excited",
+          "t0": 48.08,
+          "dur": 10.76,
+          "cards": [
+            {
+              "text": "僕は、もうすぐ来る。トンネルの道も、",
+              "start": 0.0,
+              "end": 2.98
+            },
+            {
+              "text": "1年ほどで試しから仕事になると見てる。",
+              "start": 3.13,
+              "end": 5.98
+            },
+            {
+              "text": "国が道の側の設備を整えていて、",
+              "start": 6.13,
+              "end": 8.56
+            },
+            {
+              "text": "全日空も同じ運用を検討してる。",
+              "start": 8.71,
+              "end": 10.96
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は、同じトンネルの道に、3年はかかると見る。国が新しく置く設備と、うまくつながるかを確かめる必要があって、それが今月始まったばかりだから。",
+          "expression": "thinking",
+          "tag": "vs_prediction",
+          "t0": 59.12,
+          "dur": 10.08,
+          "cards": [
+            {
+              "text": "私は、同じトンネルの道に、",
+              "start": 0.21,
+              "end": 2.0
+            },
+            {
+              "text": "3年はかかると見る。",
+              "start": 2.0,
+              "end": 3.37
+            },
+            {
+              "text": "国が新しく置く設備と、うまくつながるかを",
+              "start": 3.52,
+              "end": 6.27
+            },
+            {
+              "text": "確かめる必要があって、それが今月",
+              "start": 6.42,
+              "end": 8.62
+            },
+            {
+              "text": "始まったばかりだから。",
+              "start": 8.77,
+              "end": 10.28
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "全国の空港へ、はJALの目標。いつまでに、は書いてないから、そこは、まだ資料では分からない。",
+          "expression": "neutral",
+          "t0": 69.48,
+          "dur": 7.56,
+          "cards": [
+            {
+              "text": "全国の空港へ、はJALの目標。いつまでに、",
+              "start": 0.0,
+              "end": 3.7
+            },
+            {
+              "text": "は書いてないから、そこは、",
+              "start": 3.85,
+              "end": 5.8
+            },
+            {
+              "text": "まだ資料では分からない。",
+              "start": 5.8,
+              "end": 7.6
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今日覚えて帰ってほしいのは、いつ来るかより、どんな場所に来るか。関係者だけの敷地、決まった2か所を結ぶ道、車に合わせた決まり、道の側の設備。この4つがそろう場所から、運転席が空になる。",
+          "expression": "convinced",
+          "tag": "takeaway",
+          "t0": 77.26,
+          "dur": 15.0,
+          "cards": [
+            {
+              "text": "今日覚えて帰ってほしいのは、",
+              "start": 0.0,
+              "end": 2.1
+            },
+            {
+              "text": "いつ来るかより、どんな場所に来るか。",
+              "start": 2.25,
+              "end": 4.95
+            },
+            {
+              "text": "関係者だけの敷地、決まった2か所を結ぶ道、",
+              "start": 5.1,
+              "end": 8.4
+            },
+            {
+              "text": "車に合わせた決まり、道の側の設備。",
+              "start": 8.55,
+              "end": 11.75
+            },
+            {
+              "text": "この4つがそろう場所から、",
+              "start": 11.9,
+              "end": 13.85
+            },
+            {
+              "text": "運転席が空になる。",
+              "start": 13.85,
+              "end": 15.2
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "今日の話は、どれも発表した会社と国の資料。11月時点の、二人の見立てね。",
+          "expression": "neutral",
+          "t0": 92.54,
+          "dur": 5.68,
+          "cards": [
+            {
+              "text": "今日の話は、どれも発表した会社と国の資料。",
+              "start": 0.0,
+              "end": 3.15
+            },
+            {
+              "text": "11月時点の、二人の見立てね。",
+              "start": 3.3,
+              "end": 5.6
+            }
+          ]
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "recap_card": {
+            "title": "第1回の記録（3つの物差し）",
+            "items": [
+              "1 どこで: 空港の中の決まった道。JALで3つの空港",
+              "2 人: 誰も乗らない段階（レベル4）",
+              "3 次: 羽田の難しい道・全日空も同じ運用を検討",
+              "空港の外: 資料に無し。見るのは4つの条件"
+            ]
+          }
+        },
+        {
+          "from_line": 4,
+          "image_asset": "photos/kl055_S11",
+          "real_photo": true
+        },
+        {
+          "from_line": 6,
+          "image_asset": "photos/kl055_S06",
+          "real_photo": true
+        },
+        {
+          "from_line": 10,
+          "image_asset": "photos/kl055_S07",
+          "real_photo": true
+        }
+      ],
+      "scene_id": 12,
+      "narration": "大輔「先に、僕の予想から。工場や倉庫に来る、とは、資料には書いてなかった。そこは先走り。でも、来るならどんな場所かは、4つの条件で見えた。」\n沙織「3つの物差しで、今日の記録を残すね。どこで、は空港の中の決まった道で、JALで3つの空港。人は、誰も乗らない段階まで来た。」\n大輔「それから、次はどこへ行くか。羽田の難しい道の試しと、全日空も同じ運用を検討してること。」\n沙織「最後に、二人で判定を出すね。画面に出す札、つまり判定のラベルは、近い順に、もうすぐ来る、3年はかかる、と並ぶ。」\n大輔「ほかの空港の決まった道へ広がるのは、二人とも早いと見てる。」\n沙織「札を付けるのは、その先。空港の中の、トンネルのような難しい道まで、誰も乗らずに走るようになるか。」\n大輔「僕は、もうすぐ来る。トンネルの道も、1年ほどで試しから仕事になると見てる。国が道の側の設備を整えていて、全日空も同じ運用を検討してる。」\n沙織「私は、同じトンネルの道に、3年はかかると見る。国が新しく置く設備と、うまくつながるかを確かめる必要があって、それが今月始まったばかりだから。」\n大輔「全国の空港へ、はJALの目標。いつまでに、は書いてないから、そこは、まだ資料では分からない。」\n大輔「今日覚えて帰ってほしいのは、いつ来るかより、どんな場所に来るか。関係者だけの敷地、決まった2か所を結ぶ道、車に合わせた決まり、道の側の設備。この4つがそろう場所から、運転席が空になる。」\n沙織「今日の話は、どれも発表した会社と国の資料。11月時点の、二人の見立てね。」\n［画面のまとめカード（ふりかえり）］第1回の記録（3つの物差し） ・1 どこで: 空港の中の決まった道。JALで3つの空港 ・2 人: 誰も乗らない段階（レベル4） ・3 次: 羽田の難しい道・全日空も同じ運用を検討 ・空港の外: 資料に無し。見るのは4つの条件",
+      "narrator": "dialogue",
+      "lines_hash": "f36c186f6c56"
+    },
+    {
+      "type": "closing",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe_b",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "今月の一歩。配送を頼んでいる物流会社や取引先に、敷地の中や、決まった道の運搬を、無人にする予定があるか、聞いてみる。",
+          "expression": "excited",
+          "tag": "next_step",
+          "t0": 0.0,
+          "dur": 10.12,
+          "cards": [
+            {
+              "text": "今月の一歩。",
+              "start": 0.0,
+              "end": 1.07
+            },
+            {
+              "text": "配送を頼んでいる物流会社や取引先に、",
+              "start": 1.07,
+              "end": 4.28
+            },
+            {
+              "text": "敷地の中や、決まった道の運搬を、",
+              "start": 4.64,
+              "end": 7.22
+            },
+            {
+              "text": "無人にする予定があるか、聞いてみる。",
+              "start": 7.37,
+              "end": 10.07
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "予定があるなら、さっきの4つの条件の、どれがもうそろっているかも聞くといい。次の発表が出たら、3つの物差しで、また確かめよう。",
+          "expression": "amused",
+          "t0": 10.4,
+          "dur": 8.08,
+          "cards": [
+            {
+              "text": "予定があるなら、さっきの4つの条件の、",
+              "start": 0.0,
+              "end": 2.5
+            },
+            {
+              "text": "どれがもうそろっているかも聞くといい。",
+              "start": 2.65,
+              "end": 4.95
+            },
+            {
+              "text": "次の発表が出たら、3つの物差しで、",
+              "start": 5.1,
+              "end": 7.16
+            },
+            {
+              "text": "また確かめよう。",
+              "start": 7.31,
+              "end": 8.28
+            }
+          ]
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "convinced",
+          "t0": 18.76,
+          "dur": 5.0,
+          "cards": [
+            {
+              "text": "次はどんな研究が、誰かの幸せな未来を",
+              "start": 0.0,
+              "end": 3.66
+            },
+            {
+              "text": "運んでくるのか。",
+              "start": 3.81,
+              "end": 5.01
+            }
+          ]
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "amused",
+          "t0": 24.04,
+          "dur": 6.48,
+          "cards": [
+            {
+              "text": "それが本物かどうか、",
+              "start": 0.0,
+              "end": 1.05
+            },
+            {
+              "text": "また一緒に確かめましょう。",
+              "start": 1.05,
+              "end": 2.41
+            },
+            {
+              "text": "元の発表は概要欄に載せています。",
+              "start": 2.56,
+              "end": 4.36
+            },
+            {
+              "text": "チャンネル登録して、待っていてください。",
+              "start": 4.56,
+              "end": 6.65
+            }
+          ]
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "step_card": {
+            "title": "今月の一歩",
+            "badge": "次の一歩",
+            "items": [
+              "配送を頼む物流会社・取引先に聞く",
+              "敷地の中・決まった道の運搬を、無人にする予定は？",
+              "予定があれば: 4つの条件のどれがそろった？"
+            ]
+          }
+        },
+        {
+          "from_line": 2,
+          "image_asset": "photos/kl055_S11",
+          "real_photo": true
+        },
+        {
+          "from_line": 3,
+          "scene_image": true
+        }
+      ],
+      "scene_id": 13,
+      "narration": "大輔「今月の一歩。配送を頼んでいる物流会社や取引先に、敷地の中や、決まった道の運搬を、無人にする予定があるか、聞いてみる。」\n沙織「予定があるなら、さっきの4つの条件の、どれがもうそろっているかも聞くといい。次の発表が出たら、3つの物差しで、また確かめよう。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」\n［画面のまとめカード（次の一歩）］今月の一歩 ・配送を頼む物流会社・取引先に聞く ・敷地の中・決まった道の運搬を、無人にする予定は？ ・予定があれば: 4つの条件のどれがそろった？",
+      "narrator": "dialogue",
+      "lines_hash": "8bd948158ba6"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "skeptic",
+          "narration": "運転席が空っぽの車が、空港に？",
+          "expression": "surprised",
+          "scene_id": 6
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "福岡空港で、運転席に誰も乗っていない車が、貨物を運んでる。",
+          "expression": "excited",
+          "scene_id": 11
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "羽田、成田、福岡。JALでは1年たたずに3つの空港に。",
+          "expression": "excited",
+          "scene_id": 6
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "ただ、空港の外の話は、どの資料にも無い。",
+          "expression": "doubt",
+          "scene_id": 10
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "車を賢くするだけじゃない。道と決まりを、車に合わせて整えた。",
+          "expression": "convinced",
+          "scene_id": 8
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "次はどこが空くか。判定は本編で。",
+          "expression": "thinking",
+          "scene_id": 10
+        }
+      ]
+    }
+  ],
+  "beginner_review": {
+    "passed_at": "2026-11-10",
+    "rounds": 5,
+    "report": "/private/tmp/claude-503/-Users-claude-kagaku-life/41e11424-f6b7-4e13-93b3-23fc978e358e/scratchpad/kl055_beginner_review_r4.md",
+    "lines_digest": "2539381e1c60"
+  },
+  "bgm_sources": {
+    "intro": "BGM/kl043-BGM-intro.mp3",
+    "main": "BGM/kl037-BGM-main.mp3",
+    "outro": "BGM/kl042-BGM-outro.mp3"
+  }
+}
