@@ -17,13 +17,31 @@
       ],
       "next_episode_no": 2,
       "proposed_by": "なるさん（ウォッチ対象・節目の考え方）",
-      "related_docs": ["docs/series_humanoid.md", "handoff/results/2026-11-09-008.md", "handoff/results/2026-11-09-010.md"],
+      "related_docs": [
+        "docs/series_humanoid.md",
+        "handoff/results/2026-11-09-008.md",
+        "handoff/results/2026-11-09-010.md"
+      ],
       "note": "ウォッチ対象は家庭向けが中心だが、シリーズ全体は人型ロボ全般（既存の問い：いつ・いくらで・どこに来る？）。第2回以降の候補管理に使う",
       "watch_targets": [
-        {"name": "1X NEO", "priority": "base", "note": "家庭向け。価格・予約・出荷が節目"},
-        {"name": "Figure（03）", "priority": "base"},
-        {"name": "Tesla Optimus", "priority": "base"},
-        {"name": "Unitree 等の家庭向けモデル", "priority": "optional", "note": "必要に応じて追加（G1+ など）"}
+        {
+          "name": "1X NEO",
+          "priority": "base",
+          "note": "家庭向け。価格・予約・出荷が節目"
+        },
+        {
+          "name": "Figure（03）",
+          "priority": "base"
+        },
+        {
+          "name": "Tesla Optimus",
+          "priority": "base"
+        },
+        {
+          "name": "Unitree 等の家庭向けモデル",
+          "priority": "optional",
+          "note": "必要に応じて追加（G1+ など）"
+        }
       ],
       "milestone_events": [
         "一般家庭への出荷・納品開始",
@@ -41,20 +59,42 @@
       "name_status": "確定（指示 2026-11-09-012 で『名称は仮・確定名はチームで決めてよい』とされ、既存の『人型ロボ定点観測』に揃えて命名）",
       "status": "new",
       "genre": "ai",
-      "candidate_genres": ["ai", "medical"],
+      "candidate_genres": [
+        "ai",
+        "medical"
+      ],
       "registered": "2026-11-09",
       "episodes_done": [],
       "related_episodes": [
-        {"episode": "kl054", "note": "AI創薬（創薬AIの進展）。シリーズ化前の回で、さかのぼって第1回にはしない。続報はこのシリーズの候補に入る"}
+        {
+          "episode": "kl054",
+          "note": "AI創薬（創薬AIの進展）。シリーズ化前の回で、さかのぼって第1回にはしない。続報はこのシリーズの候補に入る"
+        }
       ],
       "next_episode_no": 1,
       "proposed_by": "なるさん（ユーザー決定 2026-11-09）",
       "theme": "AIが科学研究の担い手になっていく過程",
       "watch_targets": [
-        {"name": "AIによる未解決問題への成果", "priority": "base", "note": "Anthropic の数理物理論文のような発表"},
-        {"name": "AI実験室・研究自動化", "priority": "base", "note": "AutoDNA のような事例"},
-        {"name": "主要ラボの科学応用発表", "priority": "base", "note": "Anthropic、Google DeepMind、OpenAI 等"},
-        {"name": "創薬AIの進展", "priority": "base", "note": "kl054 の続報もここに入る"}
+        {
+          "name": "AIによる未解決問題への成果",
+          "priority": "base",
+          "note": "Anthropic の数理物理論文のような発表"
+        },
+        {
+          "name": "AI実験室・研究自動化",
+          "priority": "base",
+          "note": "AutoDNA のような事例"
+        },
+        {
+          "name": "主要ラボの科学応用発表",
+          "priority": "base",
+          "note": "Anthropic、Google DeepMind、OpenAI 等"
+        },
+        {
+          "name": "創薬AIの進展",
+          "priority": "base",
+          "note": "kl054 の続報もここに入る"
+        }
       ],
       "milestone_events": [
         "査読誌への掲載",
@@ -70,21 +110,50 @@
       "name_status": "確定（同上）",
       "status": "new",
       "genre": "life_tech",
-      "candidate_genres": ["life_tech", "ai"],
-      "registered": "2026-11-09",
-      "episodes_done": [],
-      "related_episodes": [
-        {"episode": "kl052", "note": "ドローン配送（グーグル系とKDDI）。シリーズ化前の回で、さかのぼって第1回にはしない。続報はこのシリーズの候補に入る"}
+      "candidate_genres": [
+        "life_tech",
+        "ai"
       ],
-      "next_episode_no": 1,
+      "registered": "2026-11-09",
+      "episodes_done": [
+        {
+          "no": 1,
+          "episode": "kl055",
+          "note": "福岡空港 貨物搬送車のレベル4（JAL・福岡国際空港 2026-10-26）。判定: 大輔=もうすぐ来る／沙織=3年はかかる（トンネルのある難ルートについて）。物差し3つ（どこで何が無人／人の関わりの段階／次の現場）を第1回で提示"
+        }
+      ],
+      "related_episodes": [
+        {
+          "episode": "kl052",
+          "note": "ドローン配送（グーグル系とKDDI）。シリーズ化前の回で、さかのぼって第1回にはしない。続報はこのシリーズの候補に入る"
+        }
+      ],
+      "next_episode_no": 2,
       "proposed_by": "なるさん（ユーザー決定 2026-11-09）",
       "theme": "タクシーに限定せず、自動運転と物流まわりの無人化全般",
       "watch_targets": [
-        {"name": "ロボタクシー", "priority": "base", "note": "Waymo、Tesla、日本国内の実証"},
-        {"name": "自動運転トラック・幹線物流", "priority": "base"},
-        {"name": "配送ロボット", "priority": "base"},
-        {"name": "ドローン配送", "priority": "base", "note": "kl052 の続報もここに入る"},
-        {"name": "倉庫・店舗の無人化", "priority": "base"}
+        {
+          "name": "ロボタクシー",
+          "priority": "base",
+          "note": "Waymo、Tesla、日本国内の実証"
+        },
+        {
+          "name": "自動運転トラック・幹線物流",
+          "priority": "base"
+        },
+        {
+          "name": "配送ロボット",
+          "priority": "base"
+        },
+        {
+          "name": "ドローン配送",
+          "priority": "base",
+          "note": "kl052 の続報もここに入る"
+        },
+        {
+          "name": "倉庫・店舗の無人化",
+          "priority": "base"
+        }
       ],
       "milestone_events": [
         "運行エリアの拡大",
