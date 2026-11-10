@@ -3225,8 +3225,79 @@
       },
       "topic_pattern": "ai_capability",
       "topic_pattern_by": "kl-coordinator-2026-11-08"
+    },
+    {
+      "episode_id": "kl055",
+      "status": "confirmed",
+      "slot_type": "news",
+      "genre": "life_tech",
+      "health": false,
+      "domain": "life",
+      "concern_id": "mobility",
+      "entry_question": "運転手が足りない日本で、荷物を運ぶ車の運転席は、空港から空になり始めた。次はどこが空になり、うちの会社の物流には、どんな条件がそろえば近づく？",
+      "title": "運転席が空っぽの貨物車、羽田・成田・福岡へ。運ぶ仕事の無人化はどこまで？（11月時点）",
+      "format": "dialogue",
+      "structure": "rounds_v4",
+      "source_type": "news",
+      "news_date": "2026-10-26",
+      "verdict_as_of": "2026-11-10",
+      "series": "autonomy_logistics_watch",
+      "series_no": 1,
+      "references": [
+        {
+          "title": "西日本初、福岡空港で搬送用車両「自動運転レベル4」運用開始（JAL・福岡国際空港 共同リリース）",
+          "authors": [],
+          "year": 2026,
+          "venue": "JAL 企業サイト エリアニュース（2026年10月26日）",
+          "url": "https://press.jal.co.jp/ja/areanews/release/202610/009782.html",
+          "is_preprint": false,
+          "institution": "日本航空・福岡国際空港",
+          "source_kind": "press_release"
+        },
+        {
+          "title": "国内初、東京（羽田・成田）2空港同時に「自動運転レベル4」実用化を開始",
+          "authors": [],
+          "year": 2025,
+          "venue": "JAL プレスリリース（2025年12月15日）",
+          "url": "https://press.jal.co.jp/ja/release/202512/009185.html",
+          "is_preprint": false,
+          "institution": "日本航空",
+          "source_kind": "press_release"
+        },
+        {
+          "title": "JALと豊田自動織機、羽田空港における「自動運転レベル4」の走行ルート拡大に向けた検証を開始",
+          "authors": [],
+          "year": 2026,
+          "venue": "JAL 企業サイト エリアニュース（2026年10月30日）",
+          "url": "https://press.jal.co.jp/ja/areanews/release/202610/009795.html",
+          "is_preprint": false,
+          "institution": "日本航空・豊田自動織機",
+          "source_kind": "press_release"
+        },
+        {
+          "title": "空港制限区域内における搬送用車両の自動運転レベル４が実用化！",
+          "authors": [],
+          "year": 2025,
+          "venue": "国土交通省航空局 報道発表（2025年12月15日）",
+          "url": "https://www.mlit.go.jp/report/press/kouku09_hh_000302.html",
+          "is_preprint": false,
+          "institution": "国土交通省航空局",
+          "source_kind": "press_release"
+        }
+      ],
+      "hook_idea": "運転席に誰も乗っていない貨物車が、1年たたずに羽田・成田・福岡の3空港に。今月からは羽田でトンネルのある難ルートも検証。",
+      "notes": "ユーザー決定（なるさん 2026-11-10）。自動運転・物流無人化の定点観測 第1回（振り返りなし）。構成 v4。詳細は script_prep/kl055_question.md（承認済み）と script_prep/kl055_sources.md（一次資料の裏取り。候補データの時速15km・URL404は誤り）。",
+      "topic_pattern": "shop_change",
+      "pitch": {
+        "title": "運転席が空っぽの貨物車、羽田・成田・福岡へ。運ぶ仕事の無人化はどこまで？（11月時点）",
+        "hook": "いま福岡空港で、運転席に誰も乗っていない車が、貨物を引っぱって走ってるんだ",
+        "surprise_line": "トラックの運転手不足に頭を抱える経営者が、空港ではもう貨物を運ぶ車の運転席に誰も乗っておらず、それが1年たたずに3つの空港に広がったことに驚く",
+        "emma": "A=見たい（2位、原案。冒頭の『首都圏の外では初めて』を外して対応）",
+        "question": "運転手が足りない日本で、荷物を運ぶ車の運転席は、空港から空になり始めた。次はどこが空になり、うちの会社の物流には、どんな条件がそろえば近づく？"
+      },
+      "candidate_id": "c86a513ce7"
     }
   ],
-  "total_topics": 54,
+  "total_topics": 55,
   "last_updated": "2026-11-08"
 }
