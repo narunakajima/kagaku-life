@@ -233,6 +233,27 @@ def ensure_chrome():
     return "制作専用 Chrome の拡張機能（Claude in Chrome）が90秒待っても接続しない"
 
 
+def tab_close_missing(seen: Path) -> bool:
+    """この実行で Studio を開いた（navigate した）のに、タブを閉じる（tabs_close_mcp）呼び出しが無かったら True。
+    ガードの記録（.seen、実行ごとに作り直す）で確かめる。別の実行（新しいセッション）は前の実行のタブ群を操作できないため、
+    閉じ忘れはその実行の中でしか直せない。コードでは「閉じたか」を検知して知らせるだけにしている。"""
+    try:
+        tools = [json.loads(l).get("tool", "").split("__")[-1] for l in seen.read_text(encoding="utf-8").splitlines() if l.strip()]
+    except Exception:
+        return False
+    return "navigate" in tools and "tabs_close_mcp" not in tools
+
+
+def check_tab_closed(seen: Path, eid: str, st: dict):
+    if not tab_close_missing(seen):
+        return
+    print(f"{eid}: Studio のタブを閉じた記録が無い（タブが残っている可能性）", file=sys.stderr)
+    if not st.get("close_warned"):
+        if post(f"🗂 *KL 関連動画の自動設定*: {eid} の実行で Studio のタブを閉じた記録がありません。"
+                "制作専用 Chrome にタブが残っている可能性があります（この通知は1回だけ。閉じるのは各実行の中でしかできません）。"):
+            st["close_warned"] = now().isoformat()
+
+
 def process(t, st, claude):
     eid = t["episode_id"]
     if screen_locked():
@@ -268,6 +289,7 @@ def process(t, st, claude):
         reason = mark.read_text(encoding="utf-8")
         mark.unlink(missing_ok=True)
         return {"status": "blocked", "reason": f"ガードに止められた: {reason}"}
+    check_tab_closed(seen, eid, st)
     r = parse_result(out)
     if not r or r.get("episode") != eid:
         return {"status": "failed", "reason": "結果を読み取れない（ログ: %s）" % log}
