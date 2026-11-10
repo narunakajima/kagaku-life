@@ -53,6 +53,7 @@ TIMEOUT_SEC = 20 * 60
 MODEL = "sonnet"
 ALLOWED_TOOLS = "Read,mcp__claude-in-chrome__*"
 FAIL_NOTIFY_AT = 3   # 同じ回が続けて失敗したらこの回数で1回だけ報告する
+FAIL_RETRY_HOURS = 6  # 上の回数を超えて失敗が続く回の再試行間隔（毎回開くとタブが増え続ける）
 DEVICE_CONFIG = Path.home() / ".config" / "kl-related" / "chrome.json"
 GUARD = ROOT / "kl_chrome_guard.py"
 CHROME_UDD = Path(os.environ.get("HANDOFF_CHROME_UDD", str(Path.home() / ".lw-chrome-production")))   # 制作専用 Chrome（SC・LW と共通）
@@ -80,6 +81,8 @@ PROMPT = """あなたは KL のショート「関連動画」自動設定タイ�
    （手順はそのファイル冒頭のコメントのとおり。FORCE は false、STRICT は true）。
    「子ども向けか」が未選択で err:'kid-unset' が返ったら、何も変更せず status を failed（reason に kid-unset）にする。
 3. 読み込み直して、関連動画が本編（ID {main}）のタイトルになっていることを確認する。
+4. 終わったら（結果が ok・already・failed・blocked のどれでも）、この処理で開いた Studio のタブを閉じる（tabs_close_mcp）。
+   他のタブは閉じない。
 
 禁止: アップロード・公開・公開日時の変更、関連動画以外の設定変更、コメント返信、他の動画の編集。
 Studio にログインできない・画面がロックされている・Chrome が使えない場合は、何も変更せず BLOCKED として終える。
@@ -164,8 +167,15 @@ def parse_result(out):
         return None
 
 
+def _norm_title(s):
+    """空白と末尾の時点表記（…（11月時点）／（11月時点・定点観測 第1回））を除いて比べる。
+    タイトル末尾の表記が JSON と YouTube で食い違っても、同じ動画なら一致とみなす（kl055 の無限再試行の再発防止）。"""
+    s = re.sub(r"\s+", "", s or "")
+    return re.sub(r"[（(][^（()）]*時点[^（()）]*[）)]$", "", s)
+
+
 def title_matches(related, title):
-    a, b = re.sub(r"\s+", "", related or ""), re.sub(r"\s+", "", title or "")
+    a, b = _norm_title(related), _norm_title(title)
     return bool(a) and bool(b) and (b in a or a in b)
 
 
@@ -286,6 +296,12 @@ def cmd_run(_a):
     st = load_state()
     for t in rows:
         eid = t["episode_id"]
+        # 失敗が続く回は毎回 Studio を開かない（タブが増え続けるため）。FAIL_NOTIFY_AT 回を超えたら FAIL_RETRY_HOURS 時間ごとにする
+        last = st.setdefault("last_attempt", {}).get(eid)
+        if st["attempts"].get(eid, 0) >= FAIL_NOTIFY_AT and last and \
+                now() - datetime.fromisoformat(last) < timedelta(hours=FAIL_RETRY_HOURS):
+            continue
+        st["last_attempt"][eid] = now().isoformat()
         if not claude:
             r = {"status": "blocked", "reason": "claude コマンドが見つからない"}
         else:
