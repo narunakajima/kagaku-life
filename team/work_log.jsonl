@@ -250,3 +250,4 @@
 {"ts": "2026-11-10T13:28:38+09:00", "kind": "call", "agent": "kl-manager", "session": "41e11424-f6b7-4e13-93b3-23fc978e358e"}
 {"ts": "2026-11-10T13:28:43+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl055", "step": "11", "result": "ok", "retries": 0, "note": "素材確認 進行可。読みQA15行は誤読なし。S12_L08のみ動画後に耳で確認"}
 {"ts": "2026-11-10T13:28:55+09:00", "kind": "call", "agent": "kl-manager", "session": "41e11424-f6b7-4e13-93b3-23fc978e358e"}
+{"ts": "2026-11-10T13:42:15+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl055", "step": "進行", "result": "retry", "retries": 0, "note": "候補データの誤り(URL404・時速15km)で裏取り手戻り、初見レビュー5周、S10 AI画像→実写真に変更、ユーザー決定でタイトル差し替え"}
