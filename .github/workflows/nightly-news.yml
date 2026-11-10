@@ -102,6 +102,7 @@ jobs:
           git config user.name "kl-nightly-bot"
           git config user.email "kl-nightly-bot@users.noreply.github.com"
           git add news_candidates.json
+          git add series_trace.json 2>/dev/null || true   # シリーズ候補の進み具合の日次記録（2026-11-10、指示 2026-11-10-015）
           if git diff --cached --quiet; then
             echo "変更なし"
           else

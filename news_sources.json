@@ -29,6 +29,8 @@
     {"name": "Electrek", "url": "https://electrek.co/feed/", "kind": "media", "max_items": 30}
   ],
   "_gnews_comment": "Google ニュースのキーワード検索フィード（2026-10-11）。collect が https://news.google.com/rss/search?q={検索語}+when:7d&hl=ja&gl=JP&ceid=JP:ja を検索語ごとに1回取得する（間隔2.5秒、1回の collect で15件まで、ブラウザ風UA）。取得物は報道（二次情報）なので source_kind は media、url は空にして Google のリダイレクトURLは gnews_link に参考として残す。一次資料は score が探す。429・同意画面・0件は警告して次へ進む（他のフィードには影響しない）。Google ニュースのRSSは公式APIではないので、取得は少数・低頻度に留める。2026-10-11の試験で件数が少なかった「治験 新薬 発表」（4件）「防災 技術 新開発」（2件）は使わない。gnews_max_per_query: 検索語ごとに取り込む上限（新しい順）。",
+  "_series_queries_comment": "2026-11-10（指示 2026-11-10-015）: series キー付きの検索語は、series_watchlist.json のウォッチ対象（1X NEO・Figure・Optimus、AI科学者の対象、Waymo・ロボタクシー・自動運転・配送ロボ・ドローン配送・無人化）を、節目の語（出荷・発売・量産・開始・実証・証明など）と組み合わせて狙う。一般語だけの検索に埋もれないため。collect の上限は GNEWS_COLLECT_MAX_REQ（30）。series 付きの1語あたりの取り込み上限は gnews_series_max_per_query。",
+  "gnews_series_max_per_query": 8,
   "gnews_max_per_query": 30,
   "gnews_queries": [
     {"genre": "humanoid", "q": "ヒューマノイド"},
@@ -40,6 +42,21 @@
     {"genre": "food_health", "q": "研究 食事 健康 効果"},
     {"genre": "food_health", "q": "腸内細菌 研究"},
     {"genre": "life_tech", "q": "家庭用ロボット"},
-    {"genre": "life_tech", "q": "全固体電池"}
+    {"genre": "life_tech", "q": "全固体電池"},
+    {"genre": "humanoid", "q": "1X NEO 出荷", "series": "humanoid_watch"},
+    {"genre": "humanoid", "q": "Figure 03 発売", "series": "humanoid_watch"},
+    {"genre": "humanoid", "q": "Tesla Optimus 量産", "series": "humanoid_watch"},
+    {"genre": "humanoid", "q": "1X NEO 家庭 予約", "series": "humanoid_watch"},
+    {"genre": "ai", "q": "AI 未解決問題 証明", "series": "ai_scientist_watch"},
+    {"genre": "ai", "q": "Anthropic 科学 発見 論文", "series": "ai_scientist_watch"},
+    {"genre": "ai", "q": "AI 数学 難問 解決", "series": "ai_scientist_watch"},
+    {"genre": "medical", "q": "AI創薬 臨床試験 開始", "series": "ai_scientist_watch"},
+    {"genre": "life_tech", "q": "Waymo 拡大 運行", "series": "autonomy_logistics_watch"},
+    {"genre": "life_tech", "q": "ロボタクシー 運行開始", "series": "autonomy_logistics_watch"},
+    {"genre": "life_tech", "q": "自動運転 レベル4 開始", "series": "autonomy_logistics_watch"},
+    {"genre": "life_tech", "q": "自動運転トラック 実証", "series": "autonomy_logistics_watch"},
+    {"genre": "life_tech", "q": "配送ロボット 実証 開始", "series": "autonomy_logistics_watch"},
+    {"genre": "life_tech", "q": "ドローン配送 開始", "series": "autonomy_logistics_watch"},
+    {"genre": "life_tech", "q": "無人店舗 倉庫 無人化 導入", "series": "autonomy_logistics_watch"}
   ]
 }

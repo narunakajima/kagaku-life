@@ -262,10 +262,10 @@ def fetch_feed(feed: dict, since: datetime) -> list:
 # ============================================================
 
 GNEWS_COLLECT_WINDOW = 7       # 日。検索語に when:7d を付ける
-GNEWS_COLLECT_MAX_REQ = 15     # 1回の collect で Google ニュースに送る上限
+GNEWS_COLLECT_MAX_REQ = 30     # 1回の collect で Google ニュースに送る上限（2026-11-10: 15→30。シリーズのウォッチ対象を狙う検索語を足したため）
 
 
-def collect_gnews(queries: list, since: datetime, per_query: int) -> list:
+def collect_gnews(queries: list, since: datetime, per_query: int, series_per_query: int = None) -> list:
     """news_sources.json の gnews_queries（[{"genre": "...", "q": "..."}]）を順に1回ずつ取得する。
     リクエスト間隔は GNEWS_INTERVAL（2秒以上）。失敗（429・同意画面・0件）は警告して次へ進む。"""
     out = []
@@ -279,16 +279,21 @@ def collect_gnews(queries: list, since: datetime, per_query: int) -> list:
             print(f"  ⚠️ Googleニュース「{q}」: 取得失敗 {e}")
             continue
         got = []
+        # 2026-11-10: series 付きの検索語（ウォッチ対象×節目の語）は取り込み上限を小さくし、ノイズでプールを埋めない
+        cap = (series_per_query or per_query) if gq.get("series") else per_query
         for it in sorted(items, key=lambda x: x["date"], reverse=True):
             if not it["date"] or it["date"] < since.date().isoformat():
                 continue
             outlet = it["outlet"] or it["host"]
-            got.append({"title": it["title"], "url": "", "gnews_link": it.get("link", ""),
-                        "published": it["date"],
-                        "source": f"Googleニュース（{q}）／{outlet}", "source_kind": "media",
-                        "outlet": outlet, "outlet_host": it.get("host", ""), "genre_hint": gq.get("genre", ""),
-                        "summary": f"{it['title']}（{outlet}）"})
-            if len(got) >= per_query:
+            row = {"title": it["title"], "url": "", "gnews_link": it.get("link", ""),
+                   "published": it["date"],
+                   "source": f"Googleニュース（{q}）／{outlet}", "source_kind": "media",
+                   "outlet": outlet, "outlet_host": it.get("host", ""), "genre_hint": gq.get("genre", ""),
+                   "summary": f"{it['title']}（{outlet}）"}
+            if gq.get("series"):
+                row["series_query"] = gq["series"]
+            got.append(row)
+            if len(got) >= cap:
                 break
         print(f"  Googleニュース「{q}」({gq.get('genre', '')}): {len(got)}件（取得 {len(items)}件）")
         out += got
@@ -427,7 +432,8 @@ def cmd_collect(days: int, sources_path: Path = None, no_gemini: bool = False):
         except Exception as e:  # noqa: BLE001
             print(f"  ⚠️ {f['name']}: 取得失敗 {type(e).__name__}: {str(e)[:100]}")
     if cfg.get("gnews_queries"):
-        pool += collect_gnews(cfg["gnews_queries"], since, int(cfg.get("gnews_max_per_query", 30)))
+        pool += collect_gnews(cfg["gnews_queries"], since, int(cfg.get("gnews_max_per_query", 30)),
+                              int(cfg.get("gnews_series_max_per_query", 12)))
     if not no_gemini:
         try:
             trend = gemini_trending(days)
@@ -756,8 +762,45 @@ def scoring_priority(p: dict) -> tuple:
     return (tier, _is_entertainment(p), -jp, _neg_date(p.get("published", "")))
 
 
+SERIES_SCORE_RESERVE = 4        # 採点 top 件のうち、シリーズ候補（ウォッチ対象×節目の語）に先に回す最大枠（15件枠の約1/4。残りは従来のジャンル均等）
+SERIES_SCORE_PER_SERIES = 2     # 1シリーズあたりの上限（1つのシリーズが優先枠を独占しない）
+
+
+def pool_series_info(p: dict):
+    """プール記事（未採点）の語マッチによるシリーズ判定。ジャンルは見出しの簡易分類（pool_genre）。series_fit は未付与（足切りしない）。"""
+    try:
+        return series_candidate_info(dict(p, genre=pool_genre(p), series_fit=None))
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def pick_series_priority(todo: list, limit: int = SERIES_SCORE_RESERVE) -> list:
+    """採点キューの先頭に回すシリーズ候補（語マッチ。収集段階の判定で、採点ではない）。
+    シリーズごとに最大 SERIES_SCORE_PER_SERIES 件、全体で最大 limit 件。並びは scoring_priority（日本語媒体が多い・公式・新しい順）。"""
+    per, out = {}, []
+    for p in sorted(todo, key=scoring_priority):
+        si = pool_series_info(p)
+        if not si or per.get(si["series_id"], 0) >= SERIES_SCORE_PER_SERIES:
+            continue
+        per[si["series_id"]] = per.get(si["series_id"], 0) + 1
+        out.append((si, p))
+        if len(out) >= limit:
+            break
+    return out
+
+
 def select_for_scoring(todo: list, cands: list, top: int, verbose: bool = True) -> list:
     used = used_source_urls(cands)
+    # 2026-11-10 (handoff 2026-11-10-015): シリーズ候補を先に採点キューへ。通常枠は top - 優先件数（最低 top - SERIES_SCORE_RESERVE = 11件）が残る
+    prio = pick_series_priority(todo)
+    prio_ids = {p["id"] for _, p in prio}
+    todo = [p for p in todo if p["id"] not in prio_ids]
+    top_regular = max(0, top - len(prio))
+    if verbose and prio:
+        print(f"シリーズ候補を優先: {len(prio)}件（上限{SERIES_SCORE_RESERVE}、1シリーズ{SERIES_SCORE_PER_SERIES}件まで）。通常枠は {top_regular}件")
+        for si, p in prio:
+            print(f"  ★ [{si['name']}] {p.get('published', '')} {p['title'][:60]} ｜ 対象:{si['target']} 節目:{'・'.join(si['milestones'])}")
+    top = top_regular
     have = {g: 0 for g in GENRE_ORDER}
     for c in cands:
         if c.get("status") == "available" and c.get("genre") in have and not gate_reasons(c, used):
@@ -790,7 +833,7 @@ def select_for_scoring(todo: list, cands: list, top: int, verbose: bool = True) 
         for n, (g, p) in enumerate(picked, 1):
             print(f"  {n:2d}. [{g}] {p.get('published', '')} 日本語媒体{jp_outlet_count(p)} {p.get('source_kind', '')}"
                   f" ｜ {p['title'][:60]} ｜ {p.get('source', '')[:40]}")
-    return [p for _, p in picked]
+    return [p for _, p in prio] + [p for _, p in picked]
 
 
 def _neg_date(d: str) -> int:
@@ -1882,11 +1925,67 @@ def backfill_audience(cands: list, force: bool = False):
     return len(todo), n
 
 
+SURPRISE_RETRY_MAX = 2   # 入口を通過した候補で驚きの1行が空のとき、付け直す最大回数（通算）
+
+
+def surprise_retry_targets(cands: list) -> list:
+    """入口（ゲート）を通過し、新しい版で付与済みなのに surprise_line が空で、再試行が上限未満の候補。"""
+    used = used_source_urls(cands)
+    return [c for c in cands if c.get("status") == "available" and c.get("interest_version") == INTEREST_VERSION
+            and not (c.get("surprise_line") or "").strip() and not gate_reasons(c, used)
+            and len(c.get("surprise_retry") or []) < SURPRISE_RETRY_MAX]
+
+
+def retry_surprise(cands: list):
+    """2026-11-10 (handoff 2026-11-10-015): 入口を通過した候補の驚きの1行が空（付与の失敗かもしれない）なら、
+    1候補ずつ、本文を多めに渡して付け直す。基準は変えない（SURPRISE_LINE_RULE のまま。一次資料に書かれていることだけで言い切れなければ
+    空のまま）。結果（成功・空・理由）は c['surprise_retry'] に残し、空のままなら surprise_hold_reason に理由を残す
+    （下書きに『驚きの1行が付かず保留』と出る）。戻り値: (対象, 付いた数)"""
+    todo = surprise_retry_targets(cands)
+    if not todo:
+        return 0, 0
+    client, types = _gemini()
+    got = 0
+    for c in todo:
+        prompt = (
+            "日本語の科学ニュース解説YouTube番組のネタ候補です。この候補の surprise_line（驚きの1行）だけを付けてください。\n"
+            f"【想定する視聴者】{AUDIENCE}\n   - {SURPRISE_LINE_RULE}\n"
+            "言い切れない場合は surprise_line を空にし、reason に空にした理由を30字以内で書く（無理に作らない）。\n\n"
+            f"タイトル: {c['title']}\n見出し: {c.get('headline_claim', '')}\n"
+            f"中身: {(c.get('actual_content') or c.get('summary') or '')[:900]}\n"
+            f"一次資料: {', '.join((s.get('url') or '') for s in (c.get('primary_sources') or [])[:3])}\n\n"
+            'JSONオブジェクトのみ出力: {"surprise_line": "", "reason": ""}')
+        line, reason = "", "付与の呼び出しに失敗"
+        try:
+            out = _json_from(client.models.generate_content(model=MODEL, contents=prompt).text)
+            if isinstance(out, list) and out:
+                out = out[0]
+            line = (out.get("surprise_line") or "").strip()[:60]
+            reason = (out.get("reason") or "").strip()[:60] or ("" if line else "理由の記載なし")
+        except Exception as e:  # noqa: BLE001
+            print(f"  ⚠️ 驚きの1行の再試行に失敗: {c['title'][:40]} ({str(e)[:80]})")
+        c.setdefault("surprise_retry", []).append({"at": datetime.now().isoformat(timespec="seconds"), "ok": bool(line), "reason": reason})
+        if line:
+            c["surprise_line"] = line
+            c.pop("surprise_hold_reason", None)
+            got += 1
+        else:
+            c["surprise_hold_reason"] = reason
+        print(f"  {'○' if line else '×'} 驚きの1行 再試行 {len(c['surprise_retry'])}回目: {c['title'][:40]} → {line or '（空）' + reason}")
+        time.sleep(1.0)
+    print(f"驚きの1行の再試行: {got}/{len(todo)}件に付きました（空のままの候補は理由を記録し、下書きに『保留』と出ます）")
+    return len(todo), got
+
+
 def cmd_enrich(force: bool):
     cands = load_candidates()
     refresh_topic_ages(cands["items"])
     w_todo, w_got = backfill_work(cands["items"], force) or (0, 0)
     a_todo, a_got = backfill_audience(cands["items"], force) or (0, 0)
+    try:      # 付与の失敗の取りこぼし対策（再試行の失敗は他の付与を止めない。停止扱いにもしない）
+        retry_surprise(cands["items"])
+    except Exception as e:  # noqa: BLE001
+        print(f"  ⚠️ 驚きの1行の再試行を中断: {e}")
     _save_candidates(cands)
     stalls = []
     if w_todo and w_got == 0:
@@ -3275,6 +3374,101 @@ def cmd_list(top: int, check_urls: bool):
     print(f"\n（ゲート通過だが注目度が低くニッチ・速報の条件も満たさない候補: {len(low)}件）")
 
 
+SERIES_TRACE_JSON = BASE_DIR / "series_trace.json"   # シリーズ候補が「収集→採点→入口→提示」のどこまで進んだかの日次記録（gitで追跡）
+SERIES_TRACE_KEEP_DAYS = 30
+SERIES_TRACE_MAX_AGE = 21      # 記事の日付がこれより古いものは記録しない
+
+
+def held_for_surprise(rows: list) -> list:
+    """入口（本命・答え合わせ）と他の条件は通ったが、驚きの1行が空でベスト3に入れない候補（基準は緩めない。保留として見せる）。
+    シリーズ候補を先に、次に面白さ順。提示上限を超えたものは出さない。"""
+    out = [r for r in rows if r["lane"] in ("本命", L2_LANE) and not surprise_ok(r["c"])
+           and fit(r["c"]) >= BEST3_MIN_FIT and promise(r["c"]) >= BEST3_MIN_PROMISE
+           and presentable(r["c"]) and story_presentable(r["c"], rows)]
+    return sorted(out, key=lambda r: (not series_candidate_info(r["c"]), -r["interest"]))
+
+
+def series_funnel(rows: list, picks: list, pool: list, items: list) -> list:
+    """シリーズ候補（語マッチ）ごとの進み具合。stage: 1収集 → 2採点済み → 3入口通過 → 4ベスト3。stopped は止まった理由。"""
+    cutoff = (datetime.now().date() - timedelta(days=SERIES_TRACE_MAX_AGE)).isoformat()
+    by_id = {c["id"]: c for c in items}
+    row_by_id = {r["c"]["id"]: r for r in rows}
+    pick_ids = {p["c"]["id"] for p in picks}
+    out, seen = [], set()
+    for c in items:
+        if c.get("status") == "merged" or _article_day(c) < cutoff:
+            continue
+        si = series_candidate_info(c)
+        if not si:
+            continue
+        e = {"id": c["id"], "title": c["title"][:70], "series": si["series_id"], "target": si["target"], "article": _article_day(c), "stage": 2}
+        r = row_by_id.get(c["id"])
+        if c.get("status") != "available":
+            e["stopped"] = f"採点後に除外（{c.get('excluded_reason') or c.get('status')}）"
+        elif r is None:
+            e["stopped"] = f"状態 {c.get('status')}"
+        elif r["gate"]:
+            e["stopped"] = "ゲートで落ちた（" + "・".join(r["gate"])[:60] + "）"
+        elif r["lane"] not in ("本命", L2_LANE):
+            e["stopped"] = f"入口（注目度・枠）を通らず（{r['lane']}）"
+        else:
+            e["stage"] = 3
+            if c["id"] in pick_ids:
+                e["stage"], e["stopped"] = 4, "ベスト3に掲載"
+            elif not surprise_ok(c):
+                e["stopped"] = "驚きの1行が付かず保留（" + (c.get("surprise_hold_reason") or "理由の記録なし") + "）"
+            elif fit(c) < BEST3_MIN_FIT or promise(c) < BEST3_MIN_PROMISE:
+                e["stopped"] = "視聴者との合い方・手応えが基準未満"
+            elif not presentable(c):
+                e["stopped"] = f"提示{PRESENT_MAX_DAYS}日の上限を使い切り"
+            elif not _primary_ok(c):
+                e["stopped"] = "入口通過・一次資料が要確認（補欠）"
+            else:
+                e["stopped"] = "入口通過・ほかの候補との枠の競合で次点"
+        seen.add(c["id"])
+        seen.update(c.get("dup_ids") or [])
+        out.append(e)
+    for p in pool:
+        if p["id"] in by_id or set(p.get("dup_ids") or []) & set(by_id) or p["id"] in seen:
+            continue
+        if (p.get("published") or "") < cutoff:
+            continue
+        si = pool_series_info(p)
+        if si:
+            out.append({"id": p["id"], "title": p["title"][:70], "series": si["series_id"], "target": si["target"],
+                        "article": (p.get("published") or "")[:10], "stage": 1,
+                        "stopped": "未採点（採点キュー待ち。採点枠は通常15件、シリーズ優先は最大4件）"})
+    return out
+
+
+def record_series_trace(funnel: list):
+    """日次の記録を SERIES_TRACE_JSON に残す（同じ日の再実行は上書き）。古い日は捨てる。"""
+    try:
+        data = json.loads(SERIES_TRACE_JSON.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        data = {}
+    days = data.get("days") or {}
+    days[_today()] = funnel
+    keep = sorted(days)[-SERIES_TRACE_KEEP_DAYS:]
+    data = {"_comment": "シリーズ候補の進み具合の日次記録（指示 2026-11-10-015）。stage: 1=収集（未採点）→2=採点済み→3=入口通過→4=ベスト3に掲載。"
+                        "stopped=止まった理由。kl_news_scan.py slack が書く。",
+            "days": {d: days[d] for d in keep}}
+    SERIES_TRACE_JSON.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
+def funnel_note(funnel: list) -> str:
+    if not funnel:
+        return "シリーズ候補: 今日はウォッチ対象×節目の語に当たる記事なし（収集・採点とも）"
+    n = [sum(1 for e in funnel if e["stage"] >= s) for s in (1, 2, 3, 4)]
+    sid = {s["series_id"]: s.get("name", s["series_id"]) for s in _series_list()}
+    lines = [f"*📌 シリーズ候補の進み具合*　語に当たった{n[0]}件 → 採点済み{n[1]} → 入口通過{n[2]} → ベスト3 {n[3]}"]
+    for e in sorted(funnel, key=lambda x: (-x["stage"], x["article"]))[:6]:
+        lines.append(f"・[{sid.get(e['series'], e['series'])}] {e['title'][:34]}（{e['article'][5:]}）→ {e['stopped']}")
+    if len(funnel) > 6:
+        lines.append(f"…ほか{len(funnel) - 6}件（series_trace.json）")
+    return "\n".join(lines)
+
+
 def cmd_slack(note_path: str, record: bool = True):
     """夜間実行用: ベスト3の下書きをスマホで読める Slack の Block Kit にして標準出力へ JSON で出す（2026-10-14）。"""
     g = json.loads(GENRES_JSON.read_text(encoding="utf-8"))
@@ -3382,6 +3576,16 @@ def cmd_slack(note_path: str, record: bool = True):
             f"*{L2_HEADING}*\n" + "\n".join(
                 f"・{esc(r['c']['title'][:40])}（{first(r['c']) or day(r['c'])}、{r['c'].get('buzz_outlets', 0)}媒体"
                 + ("、⚠️一次資料 要確認" if r["c"].get("primary_verified", "未") is None else "") + "）" for r in l2))[:2900]}]})
+    # 2026-11-10 (handoff 2026-11-10-015): 驚きの1行が付かず保留の候補（基準は緩めない。ベスト3には入れず、理由つきで見せる）
+    held = [r for r in held_for_surprise(rows) if r["series"] not in in_best][:3]
+    if held:
+        blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": (
+            "*😶 驚きの1行が付かず保留*（入口は通過。1行が言い切れないためベスト3には入れていません）\n" + "\n".join(
+                f"・{'📌' if series_candidate_info(r['c']) else ''}{esc(r['c']['title'][:40])}（{first(r['c']) or day(r['c'])}）"
+                f"再試行{len(r['c'].get('surprise_retry') or [])}回: {esc(r['c'].get('surprise_hold_reason') or '次の enrich で付け直します')}" for r in held))[:2900]}]})
+    pool_items = _load_pool_items()
+    funnel = series_funnel(rows, picks, pool_items, cands["items"])
+    blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": esc(funnel_note(funnel))[:2900]}]})
     wait = [r for r in rows if r["lane"] == L2_WAIT_LANE][:3]
     if wait:
         blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": f"再評価待ち（大手の製品発表、{L2_MIN_TOPIC_AGE_DAYS}日後に答え合わせ候補へ）: "
@@ -3402,6 +3606,7 @@ def cmd_slack(note_path: str, record: bool = True):
             if today not in d:
                 r["c"]["presented_on"] = d + [today]
         _save_candidates(cands)
+        record_series_trace(funnel)
     print(json.dumps({"text": "KL ネタ ベスト3の下書き", "blocks": blocks}, ensure_ascii=False))
 
 
