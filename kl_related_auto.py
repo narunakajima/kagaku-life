@@ -108,6 +108,22 @@ def save_state(st):
     STATE.write_text(json.dumps(st, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def commit_marked(eid: str):
+    """related_video_set を書いた episodes/{eid}.json だけをコミットする（2026-11-10、指示010）。
+    書いたまま残すと kagaku-life の作業ツリーが汚れ、ハンドオフのポーラーが「未コミットの変更があるため見送り」で
+    次の指示を処理しなくなる（実測: kl054 の記録が 08:14 から残り、指示 2026-11-10-010 が処理されなかった）。
+    他のファイルの変更には触れない（パス指定のコミット）。push はしない（ポーラーが処理の後に push する。失敗しても続行）。"""
+    path = f"episodes/{eid}.json"
+    try:
+        subprocess.run(["git", "add", "--", path], cwd=ROOT, check=True, capture_output=True, timeout=60)
+        r = subprocess.run(["git", "commit", "-m", f"{eid}: Shorts関連動画を設定済みに記録（自動タイマー）", "--", path],
+                           cwd=ROOT, capture_output=True, text=True, timeout=60)
+        if r.returncode != 0 and "nothing to commit" not in (r.stdout + r.stderr):
+            print(f"警告: {path} のコミットに失敗: {(r.stderr or r.stdout).strip()[:200]}", file=sys.stderr)
+    except Exception as e:  # noqa: BLE001 — コミットの失敗でタイマーを止めない
+        print(f"警告: {path} のコミットに失敗: {e}", file=sys.stderr)
+
+
 def post(text):
     """#cc-reports へ投稿（~/.config/handoff-poller/slack.json の cc_reports_webhook_url。ポーラーと同じ）。"""
     try:
@@ -280,6 +296,7 @@ def cmd_run(_a):
             s = "failed"
         if s in ("ok", "already"):
             rt.mark({eid})
+            commit_marked(eid)
             st["blocked_notified"].pop(eid, None)
             st["attempts"].pop(eid, None)
             post(f"✅ *KL 関連動画の自動設定*: {eid} のショート（{t['shorts_id']}）に本編（{t['main_id']}）を設定しました。"
