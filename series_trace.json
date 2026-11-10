@@ -1,0 +1,79 @@
+{
+ "_comment": "シリーズ候補の進み具合の日次記録（指示 2026-11-10-015）。stage: 1=収集（未採点）→2=採点済み→3=入口通過→4=ベスト3に掲載。stopped=止まった理由。kl_news_scan.py slack が書く。",
+ "days": {
+  "2026-11-11": [
+   {
+    "id": "c86a513ce7",
+    "title": "貨物の搬送車両で自動運転「レベル4」　福岡空港、国内3カ所目",
+    "series": "autonomy_logistics_watch",
+    "target": "自動運転トラック・幹線物流",
+    "article": "2026-10-26",
+    "stage": 2,
+    "stopped": "採点後に除外（used）"
+   },
+   {
+    "id": "15d0709749",
+    "title": "JALと豊田自動織機、羽田空港で自動運転レベル4の検証拡大…トンネル区間を含む難易度の高い新ルートで",
+    "series": "autonomy_logistics_watch",
+    "target": "自動運転トラック・幹線物流",
+    "article": "2026-10-30",
+    "stage": 2,
+    "stopped": "ゲートで落ちた（暮らし・仕事<4・宣伝（顧客の導入事例））"
+   },
+   {
+    "id": "b3b8faad75",
+    "title": "バディネット、渋谷区笹塚の自動配送ロボット実証で運用担当 無事故で総稼働312時間",
+    "series": "autonomy_logistics_watch",
+    "target": "配送ロボット",
+    "article": "2026-11-10",
+    "stage": 2,
+    "stopped": "ゲートで落ちた（暮らし・仕事<4・宣伝（顧客の導入事例））"
+   },
+   {
+    "id": "8592648053",
+    "title": "AIが18年間未解決だった数学の難問を証明、量子コンピュータの「高速化の限界」が明らかに",
+    "series": "ai_scientist_watch",
+    "target": "AIによる未解決問題への成果",
+    "article": "2026-11-06",
+    "stage": 2,
+    "stopped": "ゲートで落ちた（暮らし・仕事<4）"
+   },
+   {
+    "id": "5e369e32bf",
+    "title": "Anthropicの非公開AIモデルを使って18年間未解決だった量子コンピューターの難問が証明される",
+    "series": "ai_scientist_watch",
+    "target": "AIによる未解決問題への成果",
+    "article": "2026-11-06",
+    "stage": 2,
+    "stopped": "ゲートで落ちた（暮らし・仕事<4）"
+   },
+   {
+    "id": "7ee1b96867",
+    "title": "Tesla launches Robotaxi in San Antonio with a 274 sq mi geofence on pa",
+    "series": "autonomy_logistics_watch",
+    "target": "ロボタクシー",
+    "article": "2026-11-09",
+    "stage": 1,
+    "stopped": "未採点（採点キュー待ち。採点枠は通常15件、シリーズ優先は最大4件）"
+   },
+   {
+    "id": "84485c49bb",
+    "title": "自動運転レベル4向けL4S技術、国内初の遠隔監視実証を長野県塩尻市で開始…KDDIなど9者",
+    "series": "autonomy_logistics_watch",
+    "target": "自動運転トラック・幹線物流",
+    "article": "2026-11-09",
+    "stage": 1,
+    "stopped": "未採点（採点キュー待ち。採点枠は通常15件、シリーズ優先は最大4件）"
+   },
+   {
+    "id": "1d67a9fcac",
+    "title": "最先端推論モデル「Claude Fable 5.2」および「Claude Mythos 5.2」の発表",
+    "series": "ai_scientist_watch",
+    "target": "AIによる未解決問題への成果",
+    "article": "2026-11-09",
+    "stage": 1,
+    "stopped": "未採点（採点キュー待ち。採点枠は通常15件、シリーズ優先は最大4件）"
+   }
+  ]
+ }
+}
