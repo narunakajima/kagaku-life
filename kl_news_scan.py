@@ -2202,6 +2202,19 @@ def _primary_ok(c: dict) -> bool:
     return c.get("primary_verified") is True
 
 
+def story_presentable(c: dict, rows: list) -> bool:
+    """同一ストーリー（same_story で直接つながる兄弟）の提示日を合わせて数え、PRESENT_MAX_DAYS 日提示済みなら載せない。
+    最後に提示した日より後の記事（続報）は、その候補自身の提示日だけで数える。ベスト3・答え合わせ候補の一覧の両方で使う（2026-11-10）。"""
+    presented_rows = [r["c"] for r in rows if presented_days(r["c"])]
+    d = set(presented_days(c))
+    for o in presented_rows:
+        if o is not c and same_story(c, o):
+            d.update(presented_days(o))
+    if d and _article_day(c) <= max(d) and _today() not in d and len(d) >= PRESENT_MAX_DAYS:
+        return False
+    return True
+
+
 def best3(rows: list):
     """ベスト3の機械的な下書き（2026-10-15、混成）: 本命（core の順）→ 答え合わせ候補（実測の注目度→媒体数の順）を
     1列に並べ、本命の上位を優先して、ジャンルと系列が重ならないように選ぶ。
@@ -2226,17 +2239,7 @@ def best3(rows: list):
         for c in load_candidates()["items"]:
             for t in _latin_tokens(_nfkc(c.get("title", ""))):
                 _TOKEN_DF[t] = _TOKEN_DF.get(t, 0) + 1
-    presented_rows = [r["c"] for r in rows if presented_days(r["c"])]
-
-    def story_presentable(c):
-        d = set(presented_days(c))
-        for o in presented_rows:
-            if o is not c and same_story(c, o):
-                d.update(presented_days(o))
-        if d and _article_day(c) <= max(d) and _today() not in d and len(d) >= PRESENT_MAX_DAYS:
-            return False
-        return True
-    order = [r for r in order if story_presentable(r["c"])]
+    order = [r for r in order if story_presentable(r["c"], rows)]
     picks, series = [], set()
     from collections import Counter
     genres = Counter()
@@ -3256,7 +3259,10 @@ def cmd_slack(note_path: str, record: bool = True):
         blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": "ニッチ（注目度は低い）: " + esc(niche["c"]["title"][:60])}]})
     # ベスト3に入った答え合わせ候補（と同じ系列）は、別枠に重ねて出さない
     in_best = {r["series"] for r in picks}
-    l2 = [r for r in collapse_series(_sorted_core([r for r in rows if r["lane"] == L2_LANE])) if r["series"] not in in_best][:3]
+    # 2026-11-10 (handoff 2026-11-10-012): 答え合わせ候補の一覧も提示日数の上限を効かせ、載せた日も記録する
+    #   （従来は一覧が上限の対象外・記録の対象外で、ベスト3に入らない候補が毎晩一覧に載り続けた）
+    l2 = [r for r in collapse_series(_sorted_core([r for r in rows if r["lane"] == L2_LANE]))
+          if r["series"] not in in_best and presentable(r["c"]) and story_presentable(r["c"], rows)][:3]
     if l2:
         blocks.append({"type": "divider"})
         blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": (
@@ -3278,7 +3284,7 @@ def cmd_slack(note_path: str, record: bool = True):
     blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": "朝の /kl-new で仕上げます（既視感・競合動画・一次資料の確認）"}]})
     if record:      # 2026-11-08: 載せた日を残す（同じ日の再実行では増えない）。保存は news_candidates.json のみ
         today = _today()
-        for r in picks:
+        for r in picks + l2:      # ベスト3＋答え合わせ候補の一覧（2026-11-10）
             d = presented_days(r["c"])
             if today not in d:
                 r["c"]["presented_on"] = d + [today]
