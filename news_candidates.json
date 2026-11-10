@@ -33160,7 +33160,18 @@
           "reason": "一次資料は安全性確認が主で、機能回復の限界は言い切れないため"
         }
       ],
-      "surprise_hold_reason": "一次資料は安全性確認が主で、機能回復の限界は言い切れないため"
+      "surprise_hold_reason": "一次資料は安全性確認が主で、機能回復の限界は言い切れないため",
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:41:26",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "iPS細胞移植による身体機能の回復は再生医療の臨床研究段階であり、AIやOS等の一般製品で実現される性質のものではないため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "海藻由来のアルギン酸が腸粘膜修復を促進 順天堂大などが仕組みを解明",
@@ -33416,7 +33427,18 @@
           "reason": "症状改善の有意差がなく、想定視聴者が驚く要素が乏しいため。"
         }
       ],
-      "surprise_hold_reason": "症状改善の有意差がなく、想定視聴者が驚く要素が乏しいため。"
+      "surprise_hold_reason": "症状改善の有意差がなく、想定視聴者が驚く要素が乏しいため。",
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:41:34",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "海藻由来アルギン酸と腸内細菌による腸粘膜修復機構を解明した医学・生物学研究の成果であり、主要AIやOS、一般製品等で提供される機能には該当しない。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "PHPの脆弱性、OpenAIのAIで発見　「同様の発見、今後数カ月で急増」",
@@ -34646,7 +34668,18 @@
           "ok": true,
           "reason": ""
         }
-      ]
+      ],
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:41:47",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "ルールに基づきExcelの機械可読性を採点・問題特定する固有の仕組みは主要AIやOS等で未提供のため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "クァンタムスケープ、AIデータセンターおよび航空宇宙・防衛分野向けに100MWhの全固体電池生産ライン構築計画を発表",
@@ -36384,7 +36417,18 @@
           "reason": "想定視聴者が驚く具体的事実が資料内に記載されていないため"
         }
       ],
-      "surprise_hold_reason": "想定視聴者が驚く具体的事実が資料内に記載されていないため"
+      "surprise_hold_reason": "想定視聴者が驚く具体的事実が資料内に記載されていないため",
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:41:56",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "マウスでの前臨床段階の研究成果であり、主要AIやOS等の一般製品分野ではなく、医療としても一般ユーザー向けに実用化されていないため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "酪酸菌配合剤で高齢機能性便秘症が改善－順大",
@@ -36817,7 +36861,24 @@
           "ok": true,
           "reason": ""
         }
-      ]
+      ],
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:42:11",
+        "status": "realized",
+        "evidence": [
+          {
+            "service": "TypeSafe AI",
+            "feature": "Jev API",
+            "url": "https://api.typesafe.ai"
+          }
+        ],
+        "reason": "TypeSafe AIが2026年9月より、文章生成を行わず分類やスコア等の判断のみを高速かつ型安全に返す「Jev API」を先行して一般提供しているため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "テスラのヒト型ロボット販売、来年開始めざす マスク氏表明 | WSJ PickUp",
@@ -37576,7 +37637,24 @@
         "2026-11-11"
       ],
       "surprise_line": "会社の経営者が、パスワードを教えずにAIに作業代行させられる仕組みに驚く",
-      "interest_version": "2026-11-07"
+      "interest_version": "2026-11-07",
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:42:29",
+        "status": "realized",
+        "evidence": [
+          {
+            "service": "Muse（Secure Vault 等）",
+            "feature": "認証情報はボールトに置かれ、AI本人には見えない。承認のもとで、ブラウザ側が入力する",
+            "url": ""
+          }
+        ],
+        "reason": "MetaのMuse等で、パスワードをAIに見せず保管庫から代理入力する仕組みは既に実装・提供されているため。",
+        "known_id": "agent_login_without_seeing_password",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "家庭用ロボット「Voxel」が米国で予約開始、アニメーションから動作を学習",
@@ -38159,7 +38237,18 @@
           "reason": "新技術関連でなく、対象層が驚く一次資料の要素がないため。"
         }
       ],
-      "surprise_hold_reason": "新技術関連でなく、対象層が驚く一次資料の要素がないため。"
+      "surprise_hold_reason": "新技術関連でなく、対象層が驚く一次資料の要素がないため。",
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:42:36",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "お茶の飲み方と血管疾患リスクに関する疫学研究の知見であり、主要なAIやOS等の機能として提供される性質のものではないため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "OpenAI、訓練中の最先端AIをインターネットから遮断すると発表。モデルの不正アクセス受け",
@@ -38648,7 +38737,18 @@
           "reason": "マウスの基礎研究段階で視聴者が驚く事実を言い切れないため"
         }
       ],
-      "surprise_hold_reason": "マウスの基礎研究段階で視聴者が驚く事実を言い切れないため"
+      "surprise_hold_reason": "マウスの基礎研究段階で視聴者が驚く事実を言い切れないため",
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:42:43",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "EBウイルスの仕組みを応用した抗原提示促進によるがん免疫療法の基礎研究であり、主要AIやOS、一般製品等で実現された機能ではないため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "アキュルクス社、抗生物質クラスのマイクロバイオームへの影響に関する研究を発表 執筆",
@@ -46523,7 +46623,24 @@
           "ok": true,
           "reason": ""
         }
-      ]
+      ],
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:42:58",
+        "status": "realized",
+        "evidence": [
+          {
+            "service": "Claude",
+            "feature": "Monthly API credits for Max, Ultra, and Team plans",
+            "url": "https://claude.ai"
+          }
+        ],
+        "reason": "Anthropicが2026年10月上旬よりClaudeのMax・Ultra・Team加入者向けに月最大500ドルのAPI枠付与を既に提供しているため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "テスラの人型ロボ「Optimus」、生産開始 週2万台には「少なくとも1年」",
@@ -48221,7 +48338,18 @@
           "reason": "対象視聴者が驚く事実が一次資料に直接記載されていないため。"
         }
       ],
-      "surprise_hold_reason": "対象視聴者が驚く事実が一次資料に直接記載されていないため。"
+      "surprise_hold_reason": "対象視聴者が驚く事実が一次資料に直接記載されていないため。",
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:43:04",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "医療・臨床医学の専門研究成果であり、主要AIやOS、一般向けIT製品等で提供される機能ではないため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "Gemini Notebook、無料で数百冊の教科書にアクセス可能に　米国・インドの出版社提供　日本でも利用可",
@@ -49045,7 +49173,18 @@
           "reason": "想定視聴者が驚く内容を一次資料から言い切れないため。"
         }
       ],
-      "surprise_hold_reason": "想定視聴者が驚く内容を一次資料から言い切れないため。"
+      "surprise_hold_reason": "想定視聴者が驚く内容を一次資料から言い切れないため。",
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:43:14",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "大腸がん抗がん剤の服薬スケジュールに関する臨床試験の医学的成果であり、主要AIやOS、IT製品等で提供・実現される機能ではないため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "AIの「費用対効果が分からない」問題、解決へ？　Claude Enterprise搭載の「3つの新機能」",
@@ -49363,7 +49502,29 @@
           "ok": true,
           "reason": ""
         }
-      ]
+      ],
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:43:31",
+        "status": "realized",
+        "evidence": [
+          {
+            "service": "ChatGPT Enterprise",
+            "feature": "Workspace analytics（Task insights / User surveys）",
+            "url": "https://help.openai.com/en/articles/10875114-workspace-analytics-for-chatgpt-enterprise-and-edu"
+          },
+          {
+            "service": "Microsoft 365 Copilot",
+            "feature": "Copilot Dashboard（Viva Insights）",
+            "url": "https://learn.microsoft.com/ja-jp/viva/insights/copilot-dashboard"
+          }
+        ],
+        "reason": "対話のタスク自動分類やアプリ内調査で削減時間や導入効果を可視化する仕組みは、ChatGPT EnterpriseやMicrosoft 365等で既に提供されている。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "Meta Platforms、中国フーリエと人型ロボット開発——家庭用ロボット参入を拡大 執筆",
@@ -49733,7 +49894,18 @@
           "reason": "想定視聴者が驚く具体的な内容が一次資料にないため"
         }
       ],
-      "surprise_hold_reason": "想定視聴者が驚く具体的な内容が一次資料にないため"
+      "surprise_hold_reason": "想定視聴者が驚く具体的な内容が一次資料にないため",
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:43:39",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "AIサービスや主要OS、IT製品等で代替できる機能ではなく、指定難病に対する医療技術（腸内細菌叢移植）の臨床試験であるため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "膀胱がんで免疫細胞が集まる腫瘍内環境の特徴を解明 CXCL13を介した腫瘍免疫環境形成の可能性を示す",
@@ -51316,7 +51488,18 @@
       ],
       "presented_on": [
         "2026-11-11"
-      ]
+      ],
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:43:50",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "robots.txtで主要AI各社を一括拒否する共通仕様はこれまで存在せず各社個別指定が必要で、本件が初の共通対応方針であるため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "「韓国人の糖類摂取量　アイスより市販キムチの方が多い」ソウル大学が発表",
@@ -51512,7 +51695,18 @@
           "reason": "一次資料に想定視聴者が驚く技術・ビジネス要素がないため"
         }
       ],
-      "surprise_hold_reason": "一次資料に想定視聴者が驚く技術・ビジネス要素がないため"
+      "surprise_hold_reason": "一次資料に想定視聴者が驚く技術・ビジネス要素がないため",
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:43:57",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "本件は公衆衛生・食習慣に関する栄養調査統計の分析結果であり、AIやOS等の製品機能として提供・実現される性質の技術ではないため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "高脂肪食で生じる抑うつ様行動に対する抗炎症物質の投与と運動の併用による増強的治療効果",
@@ -51835,7 +52029,18 @@
           "reason": "一次資料に対象となる人物の具体的影響の記載がないため"
         }
       ],
-      "surprise_hold_reason": "一次資料に対象となる人物の具体的影響の記載がないため"
+      "surprise_hold_reason": "一次資料に対象となる人物の具体的影響の記載がないため",
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:44:13",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "1行の指示文から複数音の連続再現や音楽・声を統合合成できる効果音専用機能は、他社の主要AIサービス等で一般提供されている事例が見当たらないため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "Hyundai Motor、FIFAWorld Cup2026™で人型ロボット「Atlas®」が史上初となる試合運用を実現",
@@ -54117,7 +54322,18 @@
           "ok": true,
           "reason": ""
         }
-      ]
+      ],
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:44:19",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "AIやOS等の一般向け製品で提供される機能ではなく、乳がん術後の微小残存病変を血液検査で捉える臨床腫瘍学の専門的な研究成果であるため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "東北大とアイシンがSTT-MRAM搭載AIチップを開発、16nmプロセスでは世界初",
@@ -54929,7 +55145,18 @@
           "reason": "視聴者層（技術関心層・経営者）に響く驚きが資料にないため"
         }
       ],
-      "surprise_hold_reason": "視聴者層（技術関心層・経営者）に響く驚きが資料にないため"
+      "surprise_hold_reason": "視聴者層（技術関心層・経営者）に響く驚きが資料にないため",
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:44:26",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "栄養学や健康効果に関する医学研究の知見であり、主要なAIやOS機能、家電等のデジタル製品において機能として実装・提供される性質のものではないため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "iPS細胞由来の人工心筋移植、心不全治療に有望／NEJM｜CareNet.com",
@@ -56221,7 +56448,18 @@
           "reason": "想定視聴者が驚く根拠が一次資料に記載されていないため"
         }
       ],
-      "surprise_hold_reason": "想定視聴者が驚く根拠が一次資料に記載されていないため"
+      "surprise_hold_reason": "想定視聴者が驚く根拠が一次資料に記載されていないため",
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:44:33",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "青果物の可食部と廃棄部位における食物繊維含有量の学術的な分析研究であり、AIやOS等の製品機能として提供される対象ではないため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "食道がんのニボルマブ併用療法、5年後も全生存期間の改善を維持－国がんほか",
@@ -57320,7 +57558,18 @@
           "ok": true,
           "reason": ""
         }
-      ]
+      ],
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:45:06",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "翻訳特化LLMの重みを無償公開してオンデバイス実行可能にした発表であり、同等の仕組みが一般向け主要サービス等で提供済みとは言えないため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "東京ガスエンジニアリングソリューションズ、人型ロボットで工場設備を点検する実証に着手",
@@ -58408,7 +58657,18 @@
       "buzz_raw_items": 54,
       "buzz_query": "Images 2.6",
       "buzz_adopted_at": "2026-11-10T09:59:32",
-      "buzz_adopted_n": 1
+      "buzz_adopted_n": 1,
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:45:43",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "主要な対話型AIや生成AIサービスにおいて、静止画からループGIFを生成する機能や画像を名前で別チャットから呼出す同等の機能は見当たらないため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "ヒューマノイド「Figure 03」、キャンパスを歩く姿を公開――量産は1時間に1台、350台超に",
@@ -58792,7 +59052,18 @@
       "buzz_raw_items": 2,
       "buzz_query": "国立がん研究センター レゴラフェニブ",
       "buzz_adopted_at": "2026-11-10T09:59:34",
-      "buzz_adopted_n": 1
+      "buzz_adopted_n": 1,
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:45:50",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "胃がん等の3剤併用療法や耐性機序解明に関する医学臨床研究であり、AIやOS等の一般向け製品で代替・実現される機能ではないため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "OpenAI、サイバーセキュリティ特化型「GPT-6 Cyber」発表 Firefoxの未知の脆弱性81件を発見",
@@ -60097,7 +60368,18 @@
       "buzz_foreign_boost": false,
       "buzz_query_en": "Gemini Notebook",
       "buzz_adopted_at": "2026-11-11T07:46:21",
-      "buzz_adopted_n": 1
+      "buzz_adopted_n": 1,
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-11T08:45:58",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "NotebookLMの公式APIおよび公式MCPサーバーの提供という固有の発表であり、他社が代替できる性質のものではなく先行事例も見当たらないため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
     },
     {
       "title": "Isaac GR00T | ヒューマノイド ロボット開発プラットフォーム",

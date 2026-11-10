@@ -162,10 +162,12 @@ WONDER_RUBRIC = (
     "     3 = 順当な進歩（前の版より良くなった、予想どおりの発表）\n"
     "     2 = 業界の人には意味があるが、一般の人は驚かない（性能の数字の小さな更新、提携・人事）\n"
     "     1 = 驚く点がない\n"
+    "     既に主要なAIサービス・OS・アプリで一般の人が普通に使えている機能は、新発表でも2以下（先行事例チェックでも上限2を掛ける）。\n"
     "     迷ったら低い方を付ける。")
 SURPRISE_LINE_RULE = (
     "surprise_line: 上の視聴者のうち「誰が、何に驚くか」を1行（40字以内）で。形は「〇〇の人が、〜に驚く」"
-    "（例: 「コンビニの店主が、ロボが夜中も含め24時間店を回したことに驚く」）。一次資料に書かれていることだけで言い切れなければ空にする")
+    "（例: 「コンビニの店主が、ロボが夜中も含め24時間店を回したことに驚く」）。一次資料に書かれていることだけで言い切れなければ空にする。"
+    "「誰が」は特定の業界・職種・立場に狭めない（経営者だけ・エンジニアだけが驚く話は向かない）")
 
 # ベスト3・本命枠に入れる条件（2026-10-11、P0）。一覧そのものの足切りは MIN_VERIFIABILITY のまま
 GATE_MIN_VERIFIABILITY = 4
@@ -2190,6 +2192,131 @@ def retry_surprise(cands: list):
     return len(todo), got
 
 
+PRIOR_ART_PROMPT = (
+    "日本語の科学ニュース解説YouTube番組のネタ候補です。この候補の中心主張（見出しが言っている新しいこと）について、"
+    "『既に主要なAIエージェント・AIサービス（ChatGPT・Claude・Gemini・Copilot 等）・OS標準機能（iOS・Android・Windows・macOS）・"
+    "パスワードマネージャー・主要なクラウド／家電／ロボットの製品等で、一般ユーザーが普通に使える形で実現済みではないか』をGoogle検索で調べてください。\n"
+    "- **先行事例に数えないもの:** この発表そのもの（同じ発表元の同じ製品・同じ機能。例: 発表された新モデルを、その発表元のサービスが提供していること）。"
+    "『同じ分野の別のもの』『似た一般的な機能』も数えない。数えるのは、**同じ仕組み・同じ約束（見出しの中心主張）を、別の提供元が既に一般ユーザー向けに出している場合**だけ。\n"
+    "- status: realized（実現済み。一般ユーザーが今日使える）／not_realized（調べたが見当たらない）／unsure（判断できない）。"
+    "迷ったら unsure（realized にするには、具体的なサービス名と機能名が挙げられること）\n"
+    "- evidence: 実現済みの根拠。[{\"service\": \"サービス名\", \"feature\": \"機能名\", \"url\": \"公式ページ（分かれば）\"}] を1〜3件。"
+    "realized のときは必須。\n"
+    "- reason: 30〜80字で判断の理由\n"
+    "- novelty_exception: realized のとき、今回のニュースの新規性が『技術が初めて登場した』ことではなく"
+    "『標準化・業界横断の合意・大手の足並み・社会全体に広がる段階に入った』ことにあるなら true。それ以外は false\n"
+    "- novelty_line: novelty_exception が true のとき、「何が今回初めてか」を1行（60字以内）。一次資料に書かれていることだけで言い切る。言い切れなければ空\n"
+    "- novelty_line_primary: novelty_line が一次資料（発表元の資料）に書かれていて言い切れるなら true、推測・報道の解釈なら false\n")
+
+
+def prior_art_targets(cands: list, force: bool = False) -> list:
+    """入口（ゲート）を通過し、驚き・視聴者の付与が済んでいて、先行事例チェックが今の版でない候補。"""
+    used = used_source_urls(cands)
+    return [c for c in cands if c.get("status") == "available" and c.get("interest_version") == INTEREST_VERSION
+            and not gate_reasons(c, used) and (force or prior_art_state(c) == "unchecked")]
+
+
+PRIOR_ART_KNOWN_JSON = BASE_DIR / "prior_art_known.json"
+
+
+def known_prior_art(c: dict, path: Path = None):
+    """運営側で既に使えていると確認済みの機能（prior_art_known.json）に、候補が当たるか。当たれば該当の entry、なければ None。
+    AIの検索は、運営が日常的に使っている機能（Secure Vault 等）を見落とすため、判定の前に照合する（2026-11-11）。"""
+    try:
+        entries = json.loads((path or PRIOR_ART_KNOWN_JSON).read_text(encoding="utf-8")).get("entries", [])
+    except (OSError, ValueError):
+        return None
+    text = _nfkc(" ".join(str(c.get(k) or "") for k in ("title", "headline_claim", "actual_content", "summary"))).lower()
+    for e in entries:
+        groups = e.get("match_all") or []
+        if groups and all(any(_nfkc(w).lower() in text for w in g) for g in groups):
+            return e
+    return None
+
+
+def backfill_prior_art(cands: list, force: bool = False, only_ids: list = None):
+    """2026-11-11（指示2026-11-11-001）: 先行事例チェック。1候補ずつ Google 検索つきで判定し、結果と根拠を c['prior_art'] に残す
+    （形式は prior_art_state の上のコメント）。realized のときだけ驚きに上限（PRIOR_ART_WONDER_CAP）がかかる。戻り値: (対象, 付いた数)"""
+    todo = [c for c in cands if c["id"] in only_ids] if only_ids else prior_art_targets(cands, force)
+    if not todo:
+        return 0, 0
+    client, types = _gemini()
+    got = 0
+    for c in todo:
+        known = known_prior_art(c)      # 運営が確認済みの既存機能に当たるか（当たれば realized。AIの検索結果より優先）
+        known_ev = [{"service": known["service"][:40], "feature": known["feature"][:60], "url": known.get("url", "")}] if known else []
+        prompt = (PRIOR_ART_PROMPT
+                  + (f"\n【運営が確認済みの先行事例】{known['service']}の「{known['feature']}」。この候補の中心主張が同じ仕組みなら、"
+                     "status は realized とし、evidence の先頭にこれを入れる。novelty_exception の判断だけをしてください。\n" if known else "")
+                  + f"\nタイトル: {c['title']}\n見出し: {c.get('headline_claim', '')}\n"
+                  f"中身: {(c.get('actual_content') or c.get('summary') or '')[:700]}\n発表日: {c.get('announced_on') or c.get('published')}\n"
+                  f"一次資料: {', '.join((s.get('url') or '') for s in (c.get('primary_sources') or [])[:3])}\n\n"
+                  'JSONオブジェクトのみ出力: {"status": "", "evidence": [], "reason": "", "novelty_exception": false, '
+                  '"novelty_line": "", "novelty_line_primary": false}')
+        out = {}
+        try:
+            resp = client.models.generate_content(
+                model=MODEL, contents=prompt,
+                config=types.GenerateContentConfig(tools=[types.Tool(google_search=types.GoogleSearch())]))
+            out = _json_from(resp.text)
+            if isinstance(out, list) and out:
+                out = out[0]
+            if not isinstance(out, dict):
+                out = {}
+        except Exception as e:  # noqa: BLE001
+            print(f"  ⚠️ 先行事例チェックの呼び出しに失敗: {c['title'][:40]} ({str(e)[:80]})")
+            if not known:
+                time.sleep(1.0)
+                continue
+        st = out.get("status") if out.get("status") in ("realized", "not_realized", "unsure") else "unsure"
+        ev = [{"service": str(e.get("service", ""))[:40], "feature": str(e.get("feature", ""))[:60], "url": str(e.get("url", ""))[:200]}
+              for e in (out.get("evidence") or []) if isinstance(e, dict)]
+        if known:
+            st = "realized"
+            ev = known_ev      # 運営確認済みの根拠だけを残す（AIが足す根拠は URL・サービス名の誤りが混ざるため）
+        ev = ev[:3]
+        if st == "realized" and not any(e["service"] and e["feature"] for e in ev):
+            st = "unsure"      # 根拠（どのサービスのどの機能か）が挙げられない realized は認めない
+        exc = bool(out.get("novelty_exception")) and st == "realized"
+        c["prior_art"] = {"version": PRIOR_ART_VERSION, "checked_at": datetime.now().isoformat(timespec="seconds"), "status": st,
+                          "evidence": ev, "reason": (str(out.get("reason", "")) or (f"運営確認済みの先行事例に一致（{known['id']}）" if known else ""))[:120],
+                          "known_id": known["id"] if known else "", "novelty_exception": exc,
+                          "novelty_line": str(out.get("novelty_line", "")).strip()[:80] if exc else "",
+                          "novelty_line_primary": bool(out.get("novelty_line_primary")) if exc else False}
+        got += 1
+        print(f"  {'🔁' if st == 'realized' else '○'} 先行事例 {st}: {c['title'][:44]} → {prior_art_evidence_text(c) if st == 'realized' else ''}")
+        time.sleep(1.0)
+    print(f"先行事例チェック: {got}/{len(todo)}件")
+    return len(todo), got
+
+
+def cmd_prior_art(ids: list, force: bool, confirm: str = "", by: str = ""):
+    """先行事例チェックだけを実行する（--id で候補を指定。指定した候補は、ゲートに関係なく・判定済みでも付け直す）。"""
+    cands = load_candidates()
+    if ids and confirm:
+        # 例外の確認: 一次資料を読んだ人が「何が今回初めてか」の1行を言い切れたときだけ記録する（--by は確認者）
+        hit = [c for c in cands["items"] if c["id"] in ids and isinstance(c.get("prior_art"), dict)]
+        if not hit or not by:
+            sys.exit("prior-art --confirm: 先行事例チェック済みの候補の --id と、確認者 --by（例: kl-planner）が必要です")
+        for c in hit:
+            pa = c["prior_art"]
+            pa.update({"novelty_exception": True, "novelty_line": confirm.strip()[:80], "novelty_line_primary": True,
+                       "novelty_confirmed_by": by, "novelty_confirmed_at": datetime.now().isoformat(timespec="seconds")})
+            print(f"  例外を確認: {c['title'][:44]} → 今回初めて＝{pa['novelty_line']}（確認者 {by}。状態: {prior_art_state(c)}）")
+        _save_candidates(cands)
+        return
+    if ids:
+        hit = [c for c in cands["items"] if c["id"] in ids]
+        if not hit:
+            sys.exit(f"prior-art: 候補が見つかりません: {ids}")
+        for c in hit:
+            c.pop("prior_art", None)
+        backfill_prior_art(cands["items"], True, only_ids=ids)      # 指定時はゲートに関係なく付ける
+    else:
+        backfill_prior_art(cands["items"], force)
+    _save_candidates(cands)
+
+
 def cmd_enrich(force: bool):
     cands = load_candidates()
     refresh_topic_ages(cands["items"])
@@ -2199,6 +2326,10 @@ def cmd_enrich(force: bool):
         retry_surprise(cands["items"])
     except Exception as e:  # noqa: BLE001
         print(f"  ⚠️ 驚きの1行の再試行を中断: {e}")
+    try:      # 2026-11-11: 先行事例チェック（失敗しても他の付与は止めない。判定できなかった候補は未判定のまま＝従来どおりの扱い）
+        backfill_prior_art(cands["items"], force)
+    except Exception as e:  # noqa: BLE001
+        print(f"  ⚠️ 先行事例チェックを中断: {e}")
     _save_candidates(cands)
     stalls = []
     if w_todo and w_got == 0:
@@ -2385,7 +2516,92 @@ def tie_break(c: dict) -> int:
 def interest(c: dict) -> int:
     """面白さ（2026-11-07、なるさんの決定）＝驚き（wonder）＋視聴者（audience_fit、健康系は4まで）＋見せられるか（tangible）。3〜15。
     ゲート（鮮度・実測の注目度など）を通った候補の中の並び順の主役。付与前の項目は3（中立）"""
-    return _neutral3(c, "wonder") + fit(c) + _neutral3(c, "tangible")
+    return wonder_eff(c) + fit(c) + _neutral3(c, "tangible")
+
+
+# ---- 先行事例チェック（既知度チェック）と本命の絶対基準（2026-11-11、handoff 2026-11-11-001、ユーザー決定）----
+# 背景: 「AIにパスワードを教えずにログイン」（1Password for Agents）が、Muse では既に日常的に使えているのに驚き8で1位になった。
+# 候補データの c["prior_art"] に、中心主張が「既に主要なAIエージェント・AIサービス・OS標準機能・パスワードマネージャー等で、
+# 一般ユーザーが普通に使える形で実現済みか」の判定と根拠（どのサービスのどの機能か）を残す。形式:
+#   {"version": PRIOR_ART_VERSION, "checked_at": ISO, "status": "realized" | "not_realized" | "unsure",
+#    "evidence": [{"service": "サービス名", "feature": "機能名", "url": "任意"}], "reason": "30〜80字",
+#    "novelty_exception": bool,         # 新規性が「初登場」でなく「標準化・業界横断の合意・大手の足並み・社会全体へ広がる段階」にあるか
+#    "novelty_line": "何が今回初めてか（1行）", "novelty_line_primary": bool}   # 1行が一次資料等で言い切れるか
+PRIOR_ART_VERSION = "2026-11-11"
+PRIOR_ART_WONDER_CAP = 2          # 実現済みと判定された候補の驚き（wonder）の上限
+HONMEI_MIN_WONDER = 4             # ベスト3の1位（本命の筆頭）に置く驚きの下限（3以下は1位に置かない）
+WEAK_DAY_LABEL = "本命なし・弱い日"
+
+
+def prior_art_state(c: dict) -> str:
+    """unchecked（未判定・古い版）／clear（実現済みでない）／realized_excluded（実現済み→本命に入れない・驚き上限）／
+    realized_exception（実現済みだが、新規性の例外が一次資料等で言い切れている→本命の対象）／
+    realized_held（例外を主張するが『何が今回初めてか』の1行が空・言い切れない→ベスト3に入れず保留）。"""
+    pa = c.get("prior_art")
+    if not isinstance(pa, dict) or pa.get("version") != PRIOR_ART_VERSION:
+        return "unchecked"
+    if pa.get("status") != "realized":
+        return "clear"
+    if not pa.get("novelty_exception"):
+        return "realized_excluded"
+    if ((pa.get("novelty_line") or "").strip() and (pa.get("novelty_confirmed_by") or "").strip()
+            and c.get("primary_verified") is True):
+        return "realized_exception"      # 例外は、人（企画担当・編集長）が一次資料を読んで1行を確認し（prior-art --confirm）、一次資料URLが実在確認済みのときだけ
+    return "realized_held"      # AIが例外を主張しても、確認が付くまでは保留（理由つきで下書きに出す）
+
+
+def prior_art_ok(c: dict) -> bool:
+    """ベスト3に入れてよいか。実現済み（例外なし）と、例外を主張して言い切れない候補は入れない。未判定は通す。"""
+    return prior_art_state(c) not in ("realized_excluded", "realized_held")
+
+
+def prior_art_evidence_text(c: dict, n: int = 2) -> str:
+    pa = c.get("prior_art") or {}
+    ev = [f"{e.get('service', '?')}の{e.get('feature', '?')}" for e in (pa.get("evidence") or [])[:n]]
+    return "、".join(ev) or "根拠の記載なし"
+
+
+def wonder_eff(c: dict) -> int:
+    """採点に使う驚き。実現済み（例外が認められていない）なら PRIOR_ART_WONDER_CAP が上限。付与前は3（中立）。"""
+    w = _neutral3(c, "wonder")
+    if prior_art_state(c) in ("realized_excluded", "realized_held"):
+        w = min(w, PRIOR_ART_WONDER_CAP)
+    return w
+
+
+def honmei_strong(c: dict) -> bool:
+    """ベスト3の1位に置ける強さか。驚き（先行事例の上限適用後）が HONMEI_MIN_WONDER 以上。驚きが未付与の候補は判断しない（True）。"""
+    return c.get("wonder") is None or wonder_eff(c) >= HONMEI_MIN_WONDER
+
+
+_NARROW_AUDIENCE = re.compile(r"(経営者|社長|エンジニア|開発者|情シス|IT担当|管理者|担当者|研究者|投資家|医師|薬剤師|弁護士|CISO|CTO)")
+
+
+def narrow_audience(c: dict) -> bool:
+    """驚きの1行の『誰が』が特定の業界・職種・立場に限られていそうか（語の一致による目安。落とさず注記する。最終判断はエマの初見判定）。"""
+    line = (c.get("surprise_line") or "").strip()
+    head = line.split("が", 1)[0] if "が" in line else ""
+    return bool(_NARROW_AUDIENCE.search(head))
+
+
+def prior_art_lines(c: dict) -> list:
+    """list・slack 共通の注記行。"""
+    st = prior_art_state(c)
+    pa = c.get("prior_art") or {}
+    out = []
+    if st == "realized_excluded":
+        out.append(f"🔁 先行事例あり（実現済み。驚きは上限{PRIOR_ART_WONDER_CAP}・本命に入れない）: {prior_art_evidence_text(c)}")
+    elif st == "realized_exception":
+        out.append(f"🔁 先行事例あり・例外で本命の対象: 今回初めて＝{(pa.get('novelty_line') or '').strip()}（根拠: {prior_art_evidence_text(c)}）")
+    elif st == "realized_held":
+        prop = (pa.get("novelty_line") or "").strip()
+        out.append(f"🔁 先行事例あり・「何が今回初めてか」が一次資料で確認されておらず保留（先行: {prior_art_evidence_text(c)}"
+                   + (f"／AI案の1行: {prop}＝確認待ち。企画担当が一次資料を読み prior-art --confirm で確認すれば本命の対象）" if prop else "／例外の主張なし）"))
+    elif st == "unchecked" and c.get("interest_version") == INTEREST_VERSION:
+        out.append("🔁 先行事例チェック: 未判定")
+    if narrow_audience(c):
+        out.append("⚠️ 驚きの1行の「誰が」が特定の職種・立場に狭い可能性（エマの初見判定で確認）")
+    return out
 
 
 def surprise_ok(c: dict) -> bool:
@@ -2667,7 +2883,8 @@ def best3(rows: list):
                        r["c"].get("buzz_outlets") or 0, r["tb"]), reverse=True)]
     order = [r for r in honmei + l2 if fit(r["c"]) >= BEST3_MIN_FIT and promise(r["c"]) >= BEST3_MIN_PROMISE
              and surprise_ok(r["c"])      # 2026-11-07: 驚きの1行が言い切れない候補は入れない
-             and presentable(r["c"])]     # 2026-11-08: 同じ候補は下書きに最大 PRESENT_MAX_DAYS 日まで
+             and presentable(r["c"])      # 2026-11-08: 同じ候補は下書きに最大 PRESENT_MAX_DAYS 日まで
+             and prior_art_ok(r["c"])]    # 2026-11-11: 先行事例あり（実現済み）で例外が言い切れない候補は入れない
     # 2026-11-08（管理担当の指摘）: 提示日数は同一ストーリー（same_story で直接つながる兄弟）で数える。兄弟が別々に2日ずつ載らないように。
     # 最後に提示した日より後の記事（続報）は、その候補自身の提示日だけで数える
     # 兄弟は直接つながる候補（same_story）だけ。topic_series は推移的に巨大になるので使わない（2026-11-08 管理担当の指摘）
@@ -2717,9 +2934,27 @@ def best3(rows: list):
         unv = [r for r in order if not _primary_ok(r["c"])]
         take(unv, 1, reserve=True)
         take(unv, BEST3_RELAXED_GENRE_MAX, reserve=True)
-    # 表示は本命の上位を先に（元の並び order の順。補欠は最後）
     pos = {r["c"]["id"]: i for i, r in enumerate(order)}
-    picks.sort(key=lambda p: (bool(p.get("reserve")), pos.get(p["c"]["id"], len(order))))
+    # 2026-11-11（指示2026-11-11-001）: 本命の絶対基準。驚き（先行事例の上限適用後）が HONMEI_MIN_WONDER 未満の候補は1位に置かない。
+    # 強い候補（確認済みの入口条件を通ったもの）が選ばれていなければ、枠の競合で漏れた強い候補を最後の1枠と入れ替える。
+    if picks and not any(honmei_strong(p["c"]) and not p.get("reserve") for p in picks):
+        for r in ok:
+            if not honmei_strong(r["c"]) or r["c"]["id"] in {p["c"]["id"] for p in picks}:
+                continue
+            rest = sorted(picks, key=lambda p: pos.get(p["c"]["id"], len(order)))
+            keep = rest[:-1] if len(picks) == 3 else rest
+            ts = r["c"].get("topic_series")
+            if any(p["series"] == r["series"] or (ts and p["c"].get("topic_series") == ts) or p["c"].get("genre") == r["c"].get("genre")
+                   for p in keep):
+                continue
+            if r["c"].get("health") and sum(1 for p in keep if p["c"].get("health")) >= BEST3_HEALTH_MAX:
+                continue
+            picks = keep + [dict(r, relaxed=False)]
+            break
+    # 表示は本命の上位を先に（元の並び order の順。補欠は最後）。強い候補（驚き4以上）を先頭に（絶対基準）
+    picks.sort(key=lambda p: (bool(p.get("reserve")), not honmei_strong(p["c"]), pos.get(p["c"]["id"], len(order))))
+    if picks and not any(honmei_strong(p["c"]) and not p.get("reserve") for p in picks):
+        picks = [dict(p, weak_day=True) for p in picks]     # 基準に達する候補がない日。呼び出し側が「本命なし・弱い日」と明記する
     niche = _sorted_core([r for r in rows if r["lane"] == "ニッチ"])
     return picks, (niche[0] if niche and len(picks) < 3 else None)
 
@@ -2738,6 +2973,8 @@ def _slot_lines(r: dict) -> list:
         today_in = _today() in presented_days(c)
         out.append(f"提示 {n}日目（最大{PRESENT_MAX_DAYS}日。載せた日: {'・'.join(d[5:] for d in presented_days(c))}）" if today_in
                    else f"提示 {n + 1}日目（最大{PRESENT_MAX_DAYS}日）")
+    if r.get("weak_day"):
+        out.append(f"参考（{WEAK_DAY_LABEL}: 驚き{HONMEI_MIN_WONDER}以上の候補がないため、順位は付けず本命にしません）")
     if r.get("slot") == SLOT_L2:
         out.append("証拠: 未確認（第三者の検証・使った人の声を探す）")
         out.append(f"発表（初出）から{topic_age_days(c)}日")
@@ -2746,6 +2983,19 @@ def _slot_lines(r: dict) -> list:
     if r.get("reserve"):
         out.append("補欠（一次資料が要確認。確認済みの候補で埋まらなかったため）")
     return out
+
+
+def weak_day_note(picks: list) -> str:
+    """本命の絶対基準（驚き HONMEI_MIN_WONDER 以上）を満たす候補が1件もない日の注記。ベスト3が空のときは呼び出し側が別に書く。"""
+    return (f"【{WEAK_DAY_LABEL}】驚き{HONMEI_MIN_WONDER}以上の候補がありません。以下は順位なしの参考候補で、無理に本命1位は作りません"
+            if picks and all(p.get("weak_day") for p in picks) else "")
+
+
+def prior_art_rows(rows: list, states: tuple) -> list:
+    """入口（本命・答え合わせ）を通ったが、先行事例チェックで外れた・保留になった候補（面白さ順）。提示上限を超えたものは出さない。"""
+    out = [r for r in rows if r["lane"] in ("本命", L2_LANE) and prior_art_state(r["c"]) in states
+           and presentable(r["c"]) and story_presentable(r["c"], rows)]
+    return sorted(out, key=lambda r: -r["interest"])
 
 
 NO_NEW_LINE = f"新規候補なし（初回スキャンから{NEW_WITHIN_HOURS}時間以内で、ゲートを通った候補がありません）"
@@ -2789,7 +3039,7 @@ def _print_candidate(r: dict, short: bool = False):
     warn = "  ⚠️一次資料 要確認" if c.get("primary_verified", "未") is None else \
         ("  ⚠️一次資料 未確認" if "primary_verified" not in c else "")
     td, tb2 = tb_parts(r["tb"])
-    intr = f"面白さ {r['interest']:2d}＝驚き{_neutral3(c, 'wonder')}＋視聴者{fit(c)}＋見せる{_neutral3(c, 'tangible')}"
+    intr = f"面白さ {r['interest']:2d}＝驚き{wonder_eff(c)}＋視聴者{fit(c)}＋見せる{_neutral3(c, 'tangible')}"
     print(f"[{intr}｜{core}｜物×数字 {td}｜手応え+議論+視聴者 {tb2}] {c['title'][:76]}"
           f"（{c.get('announced_on') or c.get('published')}、{c.get('genre', '?')}）" + ("  ※健康系" if c.get("health") else "")
           + warn)
@@ -2806,6 +3056,8 @@ def _print_candidate(r: dict, short: bool = False):
         return
     print(f"   問い: {c.get('entry_question')}")
     print(f"   驚き: {c.get('surprise_line') or ('（言い切れない）' if c.get('interest_version') == INTEREST_VERSION else '（未付与）')}")
+    for ln in prior_art_lines(c):
+        print(f"   {ln}")
     print(f"   見出し: {c.get('headline_claim')}")
     print(f"   実際: {c.get('actual_content')}")
     if c.get("hope_material"):
@@ -3557,11 +3809,21 @@ def cmd_list(top: int, check_urls: bool):
         print(f"   ※ 条件を満たす候補が{len(picks)}件しかない（3件に満たないまま出す）")
     if new_note(picks):
         print(f"   ※ {new_note(picks)}")
+    if not picks:
+        print(f"   ※ 【{WEAK_DAY_LABEL}】ゲートを通った本命・答え合わせ候補がありません（無理に1位は作りません）")
+    if weak_day_note(picks):
+        print(f"   ※ {weak_day_note(picks)}")
     for r in picks:
-        print(f"〈{r['slot']}〉", end="")
+        print(f"〈{'参考' if r.get('weak_day') else r['slot']}〉", end="")
         _print_candidate(r, short=True)
-        for ln in _slot_lines(r):
+        for ln in _slot_lines(r) + prior_art_lines(r["c"]):
             print(f"   {ln}")
+    # 2026-11-11: 先行事例チェックで外れた・保留の候補（判定の根拠つき）
+    for r in prior_art_rows(rows, ("realized_excluded",)):
+        print(f"   🔁 先行事例ありのため本命から外した: {r['c']['title'][:50]}（面白さ{r['interest']}＝驚き{wonder_eff(r['c'])}"
+              f"＜上限{PRIOR_ART_WONDER_CAP}適用＞）根拠: {prior_art_evidence_text(r['c'])}")
+    for r in prior_art_rows(rows, ("realized_held",)):
+        print(f"   😶 先行事例あり・「何が今回初めてか」が言い切れず保留: {r['c']['title'][:50]}（{(r['c'].get('prior_art') or {}).get('reason', '')}）")
     unv = [r for r in picks if r["c"].get("primary_verified", "未") is None or "primary_verified" not in r["c"]]
     if unv:
         print(f"   ⚠️ 一次資料が「要確認」または未確認の候補が{len(unv)}件: ブラウザか WebFetch で開いて確かめてから提示する")
@@ -3646,6 +3908,8 @@ def series_funnel(rows: list, picks: list, pool: list, items: list) -> list:
                 e["stage"], e["stopped"] = 4, "ベスト3に掲載"
             elif not surprise_ok(c):
                 e["stopped"] = "驚きの1行が付かず保留（" + (c.get("surprise_hold_reason") or "理由の記録なし") + "）"
+            elif not prior_art_ok(c):
+                e["stopped"] = "先行事例あり（実現済み。" + prior_art_evidence_text(c, 1) + "）"
             elif fit(c) < BEST3_MIN_FIT or promise(c) < BEST3_MIN_PROMISE:
                 e["stopped"] = "視聴者との合い方・手応えが基準未満"
             elif not presentable(c):
@@ -3753,12 +4017,13 @@ def cmd_slack(note_path: str, record: bool = True):
             link += "\n" + repaired_note
         ev = c.get("expected_verdicts") or {}
         verdict = (f"大輔 {vname.get(ev.get('dreamer'), '?')} ／ 沙織 {vname.get(ev.get('skeptic'), '?')}") if ev else ""
-        lines = [f"*{nums[i]} 〈{r.get('slot', SLOT_HONMEI)}〉{title}*", meta]
+        lines = [f"*{nums[i]} 〈{'参考・順位なし' if r.get('weak_day') else r.get('slot', SLOT_HONMEI)}〉{title}*", meta]
         lines += [esc(x) for x in _slot_lines(r)]
         lines += [f"💬 {esc(c.get('entry_question'))}"]
         # 2026-11-08: 面白さの内訳（wonder / audience_fit / tangible）と surprise_line を毎回出す（選定理由を制作者に見せる）
-        lines.append(f"📊 面白さ{r['interest']}＝驚き{_neutral3(c, 'wonder')}＋視聴者{fit(c)}＋見せる{_neutral3(c, 'tangible')}")
+        lines.append(f"📊 面白さ{r['interest']}＝驚き{wonder_eff(c)}＋視聴者{fit(c)}＋見せる{_neutral3(c, 'tangible')}")
         lines.append(f"😲 驚き: {clip(c.get('surprise_line'), 60) if c.get('surprise_line') else '（未付与）'}")
+        lines += [esc(x) for x in prior_art_lines(c)]
         if c.get("hope_material"):
             lines.append(f"🌱 手応え: {clip(c.get('hope_material'), 90)}")
         lines.append(f"🔎 ツッコミ: {clip(c.get('tsukkomi_material'), 90)}")
@@ -3777,7 +4042,9 @@ def cmd_slack(note_path: str, record: bool = True):
         if keep:
             blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": esc("\n".join(keep))[:1900]}]})
     if not picks:
-        blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": "今夜はベスト3なし（ゲートを通った本命・答え合わせ候補がありません）。"}})
+        blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": f"今夜はベスト3なし（ゲートを通った本命・答え合わせ候補がありません）。*{WEAK_DAY_LABEL}*"}})
+    elif weak_day_note(picks):
+        blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": f"*{esc(weak_day_note(picks))}*"}})
     for i, r in enumerate(picks):
         blocks.append({"type": "divider"})
         blocks.append(card(i, r))
@@ -3812,6 +4079,18 @@ def cmd_slack(note_path: str, record: bool = True):
             "*😶 驚きの1行が付かず保留*（入口は通過。1行が言い切れないためベスト3には入れていません）\n" + "\n".join(
                 f"・{'📌' if series_candidate_info(r['c']) else ''}{esc(r['c']['title'][:40])}（{first(r['c']) or day(r['c'])}）"
                 f"再試行{len(r['c'].get('surprise_retry') or [])}回: {esc(r['c'].get('surprise_hold_reason') or '次の enrich で付け直します')}" for r in held))[:2900]}]})
+    # 2026-11-11 (handoff 2026-11-11-001): 先行事例チェックで本命から外した候補・例外が言い切れず保留の候補（判定の根拠つき）
+    pa_ex = [r for r in prior_art_rows(rows, ("realized_excluded",)) if r["series"] not in in_best][:3]
+    pa_hold = [r for r in prior_art_rows(rows, ("realized_held",)) if r["series"] not in in_best][:3]
+    if pa_ex or pa_hold:
+        txt = []
+        if pa_ex:
+            txt.append("*🔁 先行事例あり（既に使える形で実現済み）のため本命から外しました*（驚きは上限2）\n" + "\n".join(
+                f"・{esc(r['c']['title'][:40])}（{first(r['c']) or day(r['c'])}）根拠: {esc(prior_art_evidence_text(r['c']))}" for r in pa_ex))
+        if pa_hold:
+            txt.append("*😶 先行事例あり・「何が今回初めてか」が一次資料で言い切れず保留*\n" + "\n".join(
+                f"・{esc(r['c']['title'][:40])}（{first(r['c']) or day(r['c'])}）{esc((r['c'].get('prior_art') or {}).get('reason', ''))[:60]}" for r in pa_hold))
+        blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": "\n".join(txt)[:2900]}]})
     pool_items = _load_pool_items()
     funnel = series_funnel(rows, picks, pool_items, cands["items"])
     blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": esc(funnel_note(funnel))[:2900]}]})
@@ -3900,7 +4179,7 @@ def _canonical_key(c: dict):
             -(fs.timestamp() if fs else 1e18))
 
 
-MERGE_FILL_KEYS = ("surprise_line", "wonder", "audience_fit", "tangible", "promise", "decision_number", "buzz_measured",
+MERGE_FILL_KEYS = ("surprise_line", "wonder", "prior_art", "audience_fit", "tangible", "promise", "decision_number", "buzz_measured",
                    "buzz_outlets", "buzz_measured_at", "primary_verified", "entry_question")
 
 
@@ -4017,7 +4296,7 @@ def cmd_list_by_genre(per: int):
 
 def main():
     ap = argparse.ArgumentParser(description="ニュース起点のネタ選定（collect → score → verify → repair → tag → enrich → buzz → list）")
-    ap.add_argument("command", choices=["collect", "score", "verify", "repair", "list", "tag", "enrich", "buzz", "check-urls", "slack", "yt", "dedupe"])
+    ap.add_argument("command", choices=["collect", "score", "verify", "repair", "list", "tag", "enrich", "buzz", "check-urls", "slack", "yt", "dedupe", "prior-art"])
     ap.add_argument("--days", type=int, default=21)
     ap.add_argument("--top", type=int, default=15)
     ap.add_argument("--by-genre", action="store_true", help="list: 5ジャンルごとに上位を出す（--top はジャンルあたりの件数）")
@@ -4036,6 +4315,8 @@ def main():
     ap.add_argument("--sources", type=Path, default=None, help="collect: news_sources.json の代わりに使う設定（試験用）")
     ap.add_argument("--no-gemini", action="store_true", help="collect: Gemini（話題の補完・分野の絞り込み）を呼ばない（試験用）")
     ap.add_argument("--no-record", action="store_true", help="slack: 提示した日（presented_on）を news_candidates.json に記録しない（試験用）")
+    ap.add_argument("--confirm", default="", help="prior-art: 例外の確認。一次資料を読んで言い切れた「何が今回初めてか」の1行（--id と --by が必要）")
+    ap.add_argument("--by", default="", help="prior-art --confirm: 確認者（例: kl-planner）")
     ap.add_argument("--note", default="", help="slack: ジャンルの間隔などを拾うテキスト（kl_concern_select.py の出力）")
     args = ap.parse_args()
     if args.command == "slack":
@@ -4050,6 +4331,8 @@ def main():
         cmd_tag()
     elif args.command == "enrich":
         cmd_enrich(args.force)
+    elif args.command == "prior-art":
+        cmd_prior_art(args.id, args.force, args.confirm, args.by)
     elif args.command == "buzz":
         cmd_buzz(args.max or GNEWS_MAX_PER_RUN, args.force, args.remeasure_hours, args.id, args.dry_run)
     elif args.command == "verify":

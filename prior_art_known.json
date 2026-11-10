@@ -1,0 +1,18 @@
+{
+  "_comment": "先行事例チェック（kl_news_scan.py の prior_art）が、判定の前に照合する『運営側で既に使えていると確認済みの機能』の一覧。AIの検索だけでは、運営（Muse など）が日常的に使っている機能を見落とすため（2026-11-11、1Password 候補の事例）。entries を足すときは、service・feature に『どのサービスのどの機能か』を書き、confirmed_by に確認者と日付を書く。match_all は、候補のタイトル・見出し・中身（NFKC・小文字）に、各グループのどれか1語が含まれるとき一致とする（全グループが必要）。",
+  "entries": [
+    {
+      "id": "agent_login_without_seeing_password",
+      "claim": "AIエージェントに ID・パスワードを教えず、ログインを任せられる",
+      "service": "Muse（Secure Vault 等）",
+      "feature": "認証情報はボールトに置かれ、AI本人には見えない。承認のもとで、ブラウザ側が入力する",
+      "url": "",
+      "confirmed_by": "ユーザー指摘 2026-11-11（handoff 2026-11-11-001）",
+      "match_all": [
+        ["パスワード", "ログイン", "サインイン", "認証情報", "資格情報", "password", "login", "log in", "sign in", "sign-in", "credential"],
+        ["エージェント", "agent"],
+        ["見せず", "見ずに", "教えず", "渡さず", "非開示", "見えない", "without seeing", "without sharing", "without exposing", "ボールト", "vault", "代理", "on your behalf"]
+      ]
+    }
+  ]
+}
