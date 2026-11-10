@@ -66,6 +66,7 @@ import argparse
 import email.utils
 import hashlib
 import json
+import math
 import os
 import kl_gemini_model as gm
 import re
@@ -369,8 +370,50 @@ def dedup_similar(items: list, known_ids: set) -> tuple:
     return out, merged
 
 
+# NHK の政治ニュースの除外（2026-11-10、指示 2026-11-10-016。ソース×ジャンルの判定）。
+#   対象の「ソース」= NHK（フィード名・Googleニュースの媒体名・URL が NHK）。他の媒体の政治ニュースはここでは扱わない。
+#   「ジャンル」= 見出し・要約の語による簡易判定（政治）。強い語（首相・大統領・外相・与野党・国会・首脳会談・選挙・戦争・和平 等）に
+#   当たれば常に除外。弱い語（政府・規制・省庁 等）は、科学・技術の語（AI・ロボット・研究・実験・開発 等）が無いときだけ除外。
+#   NHK の科学・技術系（研究成果・技術・医療・製品）は残る。収集（prescore_exclusions）・採点キュー（cmd_score）・
+#   既存の採点済み候補（gate_reasons）の3か所で同じ判定を使う。
+NHK_POLITICS_STRONG = re.compile(
+    r"首相|大統領|外相|官房長官|副総理|総理|閣僚|大臣|与党|野党|自民|維新|立憲|公明|国民民主|共産党|参政党|れいわ|国会|参院|衆院|"
+    r"議員|議運|内閣|政権|首脳|外交|会談|選挙|解散|法案|予算案|安保|防衛|自衛隊|軍事侵攻|侵攻|停戦|和平|戦闘|ミサイル|ウクライナ|(?<![ァ-ヶー])イラン|イスラエル|ロシア|北朝鮮|"
+    r"制裁|関税|サミット|G7|G20|APEC|ASEAN|外相会合|COP\d+|国連|大使|領事|首相動静|知事|市長|"
+    r"農相|法相|財務相|経産相|文科相|国交相|厚労相|環境相|総務相|防衛相|デジタル相|議会|議席|議長|県議|都議|市議|党|与野|検査院|財務省|財政審|"
+    r"トランプ|習近平|プーチン|ゼレンスキー|ネタニヤフ|高市|石破|茂木|木原|フーシ派|(?<![ァ-ヶー])ハマス|(?<![ァ-ヶー])ガザ|"
+    r"(?<![ァ-ヶー])テロ|銃乱射|クーデター", re.I)
+NHK_POLITICS_WEAK = re.compile(r"政府|規制|省|庁|国交|法改正|支持率|世論調査|審議|税|補助金|与野党", re.I)
+NHK_SCITECH = re.compile(
+    r"AI|人工知能|ロボット|研究|実験|開発|技術|発見|ウイルス|治療|治験|新薬|医療|がん|iPS|細胞|遺伝子|量子|半導体|"
+    r"宇宙|衛星|ロケット|電池|自動運転|ドローン|センサー|解明|成功|論文|大学|科学|搭載", re.I)
+
+
+def is_nhk(it: dict) -> bool:
+    """NHK の記事か（フィード名・Googleニュースの媒体名・URL のどれかが NHK）。"""
+    s = " ".join([it.get("source") or "", it.get("outlet") or "", it.get("outlet_host") or "", it.get("url") or ""] + list(it.get("sources") or []))
+    return bool(re.search(r"NHK|nhk\.or\.jp|news\.web\.nhk", s, re.I))
+
+
+def nhk_politics_reason(it: dict) -> str:
+    """NHK の政治ニュースなら除外の理由（語）、そうでなければ空。見出し・要約・（採点済みなら）問いと実際の内容で判定する。"""
+    if not is_nhk(it):
+        return ""
+    t = _nfkc((it.get("title") or "") + " " + (it.get("summary") or "")[:120])
+    m = NHK_POLITICS_STRONG.search(t)
+    if m:
+        return f"NHKの政治ニュース（語: {m.group(0)}）"
+    m = NHK_POLITICS_WEAK.search(t)
+    if m and not NHK_SCITECH.search(t):
+        return f"NHKの政治ニュース（語: {m.group(0)}、科学・技術の語なし）"
+    return ""
+
+
 def prescore_exclusions(it: dict, used: dict) -> str:
-    """プールの段階で外す理由（score の課金を避ける）。使用済み・却下済みと同じ一次資料のURL、顧客の導入事例（宣伝）。"""
+    """プールの段階で外す理由（score の課金を避ける）。使用済み・却下済みと同じ一次資料のURL、顧客の導入事例（宣伝）、NHK の政治ニュース。"""
+    why = nhk_politics_reason(it)
+    if why:
+        return why
     u = _norm_url(it.get("url", ""))
     if u and u in used:
         return f"使用済みと同じ資料（{used[u]}）"
@@ -873,6 +916,10 @@ def cmd_score(top: int, dry_run: bool = False):
     if stale:
         print(f"  発表から{SCORE_MAX_AGE_DAYS}日を超えた {len(stale)}件は採点しません")
     todo = [p for p in todo if p not in stale]
+    pol = [p for p in todo if nhk_politics_reason(p)]       # 2026-11-10: NHK の政治ニュースは採点しない（既にプールにあるもの）
+    if pol:
+        print(f"  NHK の政治ニュース {len(pol)}件は採点しません")
+        todo = [p for p in todo if p not in pol]
     # ジャンルを順に回して最大 top 件だけ採点する（検索つきの呼び出しは1件ずつ課金されるため）。2026-10-11:
     # 以前は新しい順だけで、その日の ScienceDaily・GIGAZINE などで埋まっていた
     todo = select_for_scoring(todo, cands["items"], top)
@@ -1049,6 +1096,8 @@ def gate_reasons(c: dict, used: dict) -> list:
         r.append(f"使用済みと同じ一次資料（{hit[0]}）")
     if is_customer_case(c):
         r.append("宣伝（顧客の導入事例）")
+    if nhk_politics_reason(c):
+        r.append("NHKの政治ニュース")
     return r
 
 
@@ -1652,6 +1701,143 @@ def count_foreign(items: list, anchors: list, issuer: set = frozenset()) -> int:
     return len(outlets)
 
 
+# YouTube の「英語では熱いが日本語では薄い」差（2026-11-10、handoff 2026-11-10-016。編集長ケビンの設計）:
+#   狙い: 英語の YouTube で広く取り上げられているのに日本語の YouTube ではまだ薄い話題は、日本語チャンネルが先行できる好機。
+#   測り方: YouTube Data API v3（キー YOUTUBE_API_KEY_KL。無ければ何もしない＝従来どおり）。1候補につき英語・日本語それぞれ
+#     search.list（100ユニット）＋videos.list（1ユニット）。14日窓・視聴数順・最大50件。見出しに候補の固有の語を含む動画だけ数える。
+#     数えるもの: 独立したチャンネル数・再生数の合計（1本あたり上限 YT_VIEW_CAP。1本のバイラルで膨らまない）・直近7日の本数。
+#     差 = log10((英語の再生数+1)/(日本語の再生数+1))。単なる合算ではなく、英語が広く（チャンネル数）・今（7日以内）・厚く（再生数）、
+#     かつ日本語が薄い（チャンネル数・再生数比）ときだけ「差あり」。
+#   注目度への入れ方（013 の海外メディアとは別枠）: 海外メディア分（combine_foreign）を先に足し、その後に YouTube の差で +1。
+#     ・合算の上限: 最終値 ≤ 日本だけの値 + 2（海外メディアと YouTube の合計の持ち上げ幅）、かつ最大 YT_GAP_CAP(=4)。5 は日本の報道が広がった候補だけ
+#     ・差あり、の条件に「英語の独立媒体（ニュース）が3以上」を含める（YouTube の再生数だけの話題＝釣り・内輪を除く。実際のニュースを伴うこと）
+#     ・視聴者への合い方（audience_fit）が FOREIGN_BOOST_MIN_FIT(4) 未満の候補では、classify が YouTube 分の加点を外して並べる
+#       （日本の視聴者に無関係な話題が、差だけで浮かない）。日本語がゼロでも、日本の視聴者に合わない話題は上がらない
+YT_API = "https://www.googleapis.com/youtube/v3/"
+YT_WINDOW_DAYS = 14
+YT_MAX_RESULTS = 50
+YT_VIEW_CAP = 500_000            # 1本あたりの再生数の上限（合計に入れる値）
+YT_EN_MIN_CHANNELS = 4           # 英語: 独立したチャンネル数
+YT_EN_MIN_VIEWS = 50_000         # 英語: 再生数の合計（上限つき）
+YT_EN_MIN_RECENT7 = 2            # 英語: 直近7日の本数（今も広がっている）
+YT_JA_MAX_CHANNELS = 2           # 日本語: これ以下なら薄い
+YT_GAP_MIN_LOG = 1.3             # 差（log10）。20倍以上
+YT_MIN_FOREIGN_MEDIA = 3         # 英語の独立媒体（ニュース）がこれ以上ある候補だけ測る・差ありにする（ニュースを伴うこと）
+YT_GAP_CAP = 4
+YT_TOTAL_LIFT_MAX = 2            # 海外メディア＋YouTube の合計の持ち上げ幅の上限（日本だけの値に対して）
+YT_MAX_PER_RUN = 25              # 1回の buzz で YouTube を測る候補の上限（1候補≒202ユニット、無料枠は1日10,000ユニット）
+
+
+class YTError(Exception):
+    pass
+
+
+def yt_api_key() -> str:
+    return os.environ.get("YOUTUBE_API_KEY_KL", "")
+
+
+def _yt_get(path: str, params: dict, key: str, timeout: int = 20) -> dict:
+    url = YT_API + path + "?" + urllib.parse.urlencode(dict(params, key=key))
+    try:
+        return json.loads(urllib.request.urlopen(url, timeout=timeout).read())
+    except urllib.error.HTTPError as e:
+        try:
+            msg = json.loads(e.read().decode("utf-8", "replace"))["error"].get("status", "")
+        except Exception:  # noqa: BLE001
+            msg = ""
+        raise YTError(f"HTTP {e.code} {msg}") from e
+    except Exception as e:  # noqa: BLE001
+        raise YTError(f"{type(e).__name__}: {str(e)[:60]}") from e
+
+
+def fetch_yt_videos(query: str, lang: str, key: str) -> list:
+    """YouTube で query の動画を14日窓・視聴数順に最大50件。lang は "en" か "ja"。各: title・channel_id・views・published(YYYY-MM-DD)。
+    quota: search.list 100 + videos.list 1。失敗は YTError。"""
+    since = (datetime.now(timezone.utc) - timedelta(days=YT_WINDOW_DAYS)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    region = {"en": "US", "ja": "JP"}[lang]
+    s = _yt_get("search", {"part": "id", "q": query, "type": "video", "order": "viewCount", "maxResults": YT_MAX_RESULTS,
+                           "publishedAfter": since, "relevanceLanguage": lang, "regionCode": region}, key)
+    ids = [i["id"]["videoId"] for i in s.get("items", []) if i.get("id", {}).get("videoId")]
+    if not ids:
+        return []
+    v = _yt_get("videos", {"part": "snippet,statistics", "id": ",".join(ids)}, key)
+    out = []
+    for it in v.get("items", []):
+        sn, st = it.get("snippet", {}), it.get("statistics", {})
+        out.append({"title": sn.get("title", ""), "channel_id": sn.get("channelId", ""),
+                    "views": int(st.get("viewCount") or 0), "published": (sn.get("publishedAt") or "")[:10]})
+    return out
+
+
+def _word_hit(anchor: str, text: str) -> bool:
+    return bool(re.search(r"(?<![a-z0-9])" + re.escape(anchor) + r"(?![a-z0-9])", text))
+
+
+def count_yt(videos: list, lang: str, en_anchors: list, jp_anchors: list = None) -> dict:
+    """候補に関連する動画だけを数える。en: 見出しが en_anchors を全て含み、かな文字を含まない。
+    ja: かな・漢字を含む見出しで、jp_anchors（組織名・略語だけの語を除く）のどれかか en_anchors の全てを含む。
+    戻り値: videos（本数）・channels（独立したチャンネル数）・views（1本 YT_VIEW_CAP で頭打ちの合計）・recent7（直近7日の本数）。"""
+    since7 = (datetime.now(timezone.utc).date() - timedelta(days=7)).isoformat()
+    jp = [_nfkc(a) for a in (jp_anchors or []) if a and a.strip()]
+    if any(a not in GENERIC_ANCHORS for a in jp):
+        jp = [a for a in jp if a not in GENERIC_ANCHORS]
+    chans, n, views, recent = set(), 0, 0, 0
+    for v in videos:
+        t = _nfkc(v["title"])
+        en_hit = bool(en_anchors) and all(_word_hit(a, t) for a in en_anchors)
+        if lang == "en":
+            if not en_hit or KANA.search(v["title"]):
+                continue
+        else:
+            if not (KANA.search(v["title"]) or KANJI.search(v["title"])):
+                continue
+            if not (en_hit or any(a in t for a in jp)):
+                continue
+        n += 1
+        chans.add(v["channel_id"] or v["title"])
+        views += min(int(v["views"]), YT_VIEW_CAP)
+        if (v["published"] or "") >= since7:
+            recent += 1
+    return {"videos": n, "channels": len(chans), "views": views, "recent7": recent}
+
+
+def yt_gap(en: dict, ja: dict, foreign_media: int) -> dict:
+    """英語 YouTube が広く熱く、日本語 YouTube が薄い「差」。戻り値: gap_log（差）・gap（True/False）・why（差なしの理由 or 差ありの根拠）。"""
+    g = round(math.log10(en["views"] + 1) - math.log10(ja["views"] + 1), 2)
+    why = []
+    if foreign_media < YT_MIN_FOREIGN_MEDIA:
+        why.append(f"英語の独立媒体{foreign_media}（{YT_MIN_FOREIGN_MEDIA}未満。ニュースを伴わない）")
+    if en["channels"] < YT_EN_MIN_CHANNELS:
+        why.append(f"英語のチャンネル{en['channels']}（{YT_EN_MIN_CHANNELS}未満。広がっていない）")
+    if en["views"] < YT_EN_MIN_VIEWS:
+        why.append(f"英語の再生{en['views']}（{YT_EN_MIN_VIEWS}未満）")
+    if en["recent7"] < YT_EN_MIN_RECENT7:
+        why.append(f"英語の直近7日{en['recent7']}本（{YT_EN_MIN_RECENT7}未満。今は熱くない）")
+    if ja["channels"] > YT_JA_MAX_CHANNELS:
+        why.append(f"日本語のチャンネル{ja['channels']}（{YT_JA_MAX_CHANNELS}超。もう薄くない）")
+    if g < YT_GAP_MIN_LOG:
+        why.append(f"差{g}（{YT_GAP_MIN_LOG}未満）")
+    return {"gap_log": g, "gap": not why, "why": "・".join(why)}
+
+
+def apply_yt_gap(r: dict, en: dict, ja: dict, foreign_media: int) -> dict:
+    """measure_buzz の結果 r（combine_foreign 済み）に YouTube の差を足す。buzz_yt に測定値、差ありなら buzz_measured を +1（上限つき）。
+    別枠: 加点は海外メディア分の後。合計の持ち上げは YT_TOTAL_LIFT_MAX・YT_GAP_CAP まで。"""
+    g = yt_gap(en, ja, foreign_media)
+    m0 = r["buzz_measured"]
+    jp_m = r.get("buzz_jp_measured", m0)
+    bonus = 0
+    if g["gap"]:
+        m1 = min(m0 + 1, YT_GAP_CAP, jp_m + YT_TOTAL_LIFT_MAX)
+        bonus = max(0, m1 - m0)
+    r["buzz_yt"] = {"en": en, "ja": ja, "gap_log": g["gap_log"], "gap": g["gap"], "why": g["why"], "bonus": bonus,
+                    "pre_yt": m0, "jp_m": jp_m}
+    r["buzz_measured"] = m0 + bonus
+    r["buzz_yt_bonus"] = bonus
+    r["buzz_yt_boost"] = bool(bonus) and r["buzz_measured"] >= 3 and m0 < 3
+    return r
+
+
 def issuer_hosts(c: dict) -> set:
     hs = {_host(s.get("url", "")) for s in c.get("primary_sources", []) or []}
     return {h for h in hs if h and not _host_in(h, GENERIC_SOURCE_HOSTS)}
@@ -1670,7 +1856,28 @@ def _fallback_query(c: dict, used_q: str) -> str:
     return cand[0] if cand and cand[0] != used_q else ""
 
 
-def measure_buzz(c: dict, query: str = None) -> dict:
+def measure_yt(c: dict, r: dict, yt_budget: list) -> None:
+    """YouTube の英日の差を測って r に足す（キーが無い・英語の独立媒体が少ない・上限超過・失敗のときは何もしない）。
+    yt_budget は [残り件数]（呼び出し側が回をまたいで共有）。"""
+    key = yt_api_key()
+    fnm = r.get("buzz_outlets_foreign")
+    if not key or yt_budget[0] <= 0 or fnm is None or fnm < YT_MIN_FOREIGN_MEDIA or not r.get("buzz_query_en"):
+        return
+    eq, eanc = foreign_query(c)
+    jq = r.get("buzz_query") or _two_words(c.get("jp_news_query", ""))
+    anchors = c.get("jp_title_anchor") or []
+    anchors = [anchors] if isinstance(anchors, str) else anchors
+    try:
+        yt_budget[0] -= 1
+        en = count_yt(fetch_yt_videos(eq, "en", key), "en", eanc)
+        ja = count_yt(fetch_yt_videos(jq, "ja", key), "ja", eanc, anchors)
+    except YTError as e:
+        r["buzz_yt_error"] = str(e)
+        return
+    apply_yt_gap(r, en, ja, fnm)
+
+
+def measure_buzz(c: dict, query: str = None, yt_budget: list = None) -> dict:
     """1候補1回の取得が基本。0件のときだけ、見出しの語で1回だけ取り直す（その間も GNEWS_INTERVAL をあける）。"""
     q = _two_words(query or c["jp_news_query"])
     try:
@@ -1697,6 +1904,7 @@ def measure_buzz(c: dict, query: str = None) -> dict:
     r["buzz_raw_items"], r["buzz_query"] = len(items), q
     if fn is not None:
         r["buzz_query_en"] = fq
+        measure_yt(c, r, yt_budget if yt_budget is not None else [YT_MAX_PER_RUN])
     return r
 
 
@@ -1721,6 +1929,8 @@ def _buzz_entry(r: dict, at: str, seeded: bool = False) -> dict:
     if r.get("buzz_outlets_foreign") is not None:       # 2026-11-10: 海外分（無ければ欄を足さない＝従来の履歴と同じ形）
         e.update({"jp_measured": r.get("buzz_jp_measured"), "outlets_foreign": r.get("buzz_outlets_foreign"),
                   "foreign_boost": bool(r.get("buzz_foreign_boost")), "query_en": r.get("buzz_query_en", "")})
+    if r.get("buzz_yt"):                                # 2026-11-10: YouTube の英日の差（無ければ欄を足さない）
+        e.update({"yt": r["buzz_yt"], "yt_boost": bool(r.get("buzz_yt_boost"))})
     if seeded:
         e["seeded"] = True       # 履歴を持つ前の測定（読み込み時に現在の値から作った1件目）
     return e
@@ -1770,8 +1980,11 @@ def adopt_buzz(c: dict) -> dict:
     c.update({"buzz_measured": best["measured"], "buzz_outlets": best["outlets"], "yahoo": best["yahoo"],
               "buzz_evidence": best["evidence"], "buzz_trend": best["trend"],
               "buzz_articles_14d": best["articles_14d"], "buzz_raw_items": best["raw_items"], "buzz_query": best["query"]})
-    for k in ("buzz_jp_measured", "buzz_outlets_foreign", "buzz_foreign_boost", "buzz_query_en"):
+    for k in ("buzz_jp_measured", "buzz_outlets_foreign", "buzz_foreign_boost", "buzz_query_en", "buzz_yt", "buzz_yt_bonus", "buzz_yt_boost"):
         c.pop(k, None)
+    if best.get("yt"):          # 2026-11-10: YouTube の英日の差（無ければ欄を足さない）
+        c.update({"buzz_yt": best["yt"], "buzz_yt_bonus": best["yt"].get("bonus", 0),
+                  "buzz_yt_boost": bool(best.get("yt_boost"))})
     if best.get("outlets_foreign") is not None:
         c.update({"buzz_jp_measured": best.get("jp_measured"), "buzz_outlets_foreign": best["outlets_foreign"],
                   "buzz_foreign_boost": bool(best.get("foreign_boost")), "buzz_query_en": best.get("query_en", "")})
@@ -2084,12 +2297,15 @@ def cmd_buzz(max_n: int, force: bool, remeasure_hours: float, ids: list, dry_run
     if no_q:
         print(f"  ※ jp_news_query が無い {len(no_q)}件は測れません（先に enrich）")
     print(f"実測 {len(todo)}件（Google ニュース RSS、{GNEWS_INTERVAL}秒間隔）")
+    yt_budget = [YT_MAX_PER_RUN]
+    print("  YouTube の英日の差: " + (f"測る（キーあり、上限{YT_MAX_PER_RUN}件。英語の独立媒体{YT_MIN_FOREIGN_MEDIA}以上の候補だけ）"
+                                    if yt_api_key() else "測らない（YOUTUBE_API_KEY_KL が未設定）"))
     ok = fail = 0
     for k, c in enumerate(todo):
         if k:
             time.sleep(GNEWS_INTERVAL)
         try:
-            r = measure_buzz(c)
+            r = measure_buzz(c, yt_budget=yt_budget)
         except GNewsError as e:
             fail += 1
             c["buzz_error"], c["buzz_error_at"] = str(e), now.isoformat(timespec="seconds")
@@ -2103,6 +2319,12 @@ def cmd_buzz(max_n: int, force: bool, remeasure_hours: float, ids: list, dry_run
                  if c.get("buzz_adopted_at") != c.get("buzz_measured_at") else "")
         print(f"  {c['id']} 実測{r['buzz_measured']}（{r['buzz_outlets']}媒体{'・Yahoo!あり' if r['yahoo'] else ''}、"
               f"関連{r['buzz_articles_14d']}/取得{r['buzz_raw_items']}件）{r['buzz_query']!r}{adopt}  {c['title'][:40]}")
+        if r.get("buzz_yt"):
+            y = r["buzz_yt"]
+            print(f"      YouTube 英{y['en']['channels']}ch/{y['en']['views']}再生・日{y['ja']['channels']}ch/{y['ja']['views']}再生 差{y['gap_log']}"
+                  + (f" → 差あり +{y['bonus']}" if y["bonus"] else f"（差なし: {y['why'][:60]}）"))
+        elif r.get("buzz_yt_error"):
+            print(f"      ⚠️ YouTube の測定に失敗（{r['buzz_yt_error']}）。ニュースだけの値で続行")
     if dry_run:
         print(f"\n（--dry-run のため保存しません）成功{ok}・失敗{fail}")
         return
@@ -2351,6 +2573,10 @@ def classify(cands: list) -> list:
         bm = c.get("buzz_measured")
         # 2026-11-10: 海外分で入口（3）を越えた候補は、視聴者への合い方が FOREIGN_BOOST_MIN_FIT 以上のときだけ本命にする。
         # 満たさないときは日本だけの値で枠を決める（日本の視聴者に無関係な海外バズだけで本命にならない）
+        # 2026-11-10（指示016）: YouTube の差の加点も同じ。視聴者への合い方が FOREIGN_BOOST_MIN_FIT 未満なら YouTube 分の加点を外して
+        # 並べる（枠・core の両方）。差だけで日本の視聴者に無関係な話題が浮かない
+        if bm is not None and c.get("buzz_yt_bonus") and fit(c) < FOREIGN_BOOST_MIN_FIT:
+            bm = max(1, bm - int(c["buzz_yt_bonus"]))
         bm_lane = bm
         if bm is not None and c.get("buzz_foreign_boost") and fit(c) < FOREIGN_BOOST_MIN_FIT:
             bm_lane = c.get("buzz_jp_measured") or 1
@@ -2544,6 +2770,9 @@ def _buzz_line(c: dict) -> str:
                 f"{'・Yahoo!あり' if c.get('yahoo') else '・Yahoo!なし'}"
                 + (f"・海外{c['buzz_outlets_foreign']}媒体" + ("＝海外分で入口超え" if c.get("buzz_foreign_boost") else "")
                    if c.get("buzz_outlets_foreign") is not None else "")
+                + (f"・YouTube 英{c['buzz_yt']['en']['channels']}ch/日{c['buzz_yt']['ja']['channels']}ch 差{c['buzz_yt']['gap_log']}"
+                   + (f"＝差あり+{c['buzz_yt_bonus']}" if c.get("buzz_yt_bonus") else "")
+                   if c.get("buzz_yt") else "")
                 + (f"、勢い{t:.2f}" if t is not None else "")
                 + f"、{(c.get('buzz_measured_at') or '')[:16]}計測、検索語 {c.get('buzz_query', '')!r}）")
     msg = f"注目度: 推定{buzz_value(c)[0]}（未計測"

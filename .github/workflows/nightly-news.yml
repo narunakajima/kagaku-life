@@ -28,6 +28,7 @@ jobs:
     env:
       GEMINI_API_KEY_KL: ${{ secrets.GEMINI_API_KEY_KL }}
       SLACK_WEBHOOK_URL_KL: ${{ secrets.SLACK_WEBHOOK_URL_KL }}
+      YOUTUBE_API_KEY_KL: ${{ secrets.YOUTUBE_API_KEY_KL }}   # 未設定なら空。YouTube の英日の差は測らない（従来どおり）
       TZ: Asia/Tokyo
     steps:
       - uses: actions/checkout@v4
