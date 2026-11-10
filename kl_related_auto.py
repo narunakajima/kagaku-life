@@ -289,6 +289,11 @@ def cmd_dry_run(_a):
 
 def cmd_run(_a):
     LOG_DIR.mkdir(parents=True, exist_ok=True)
+    try:   # 本編タイトルの手動変更による JSON との食い違いを検知して Slack に通知（API 1回。失敗しても続行）
+        import kl_title_check
+        kl_title_check.check()
+    except Exception as e:  # noqa: BLE001
+        print(f"タイトル確認でエラー: {type(e).__name__}", file=sys.stderr)
     rows = rt.targets(now())
     if not rows:
         return
