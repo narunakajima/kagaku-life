@@ -1477,8 +1477,9 @@ def fetch_gnews(query: str, timeout: int = 20, window_days: int = None) -> list:
     return items
 
 
-def count_buzz(items: list, anchors: list, issuer_hosts: set) -> dict:
-    """関連する記事（見出しが anchors のどれかを含む）から、日本語の独立媒体の数 n と換算値を出す。"""
+def count_buzz(items: list, anchors: list, issuer_hosts: set, foreign_n: int = None) -> dict:
+    """関連する記事（見出しが anchors のどれかを含む）から、日本語の独立媒体の数 n と換算値を出す。
+    foreign_n（海外の独立媒体数）を渡すと、海外分を合成した値にする（combine_foreign）。渡さなければ従来どおり日本だけ。"""
     anc = [_nfkc(a) for a in anchors if a and a.strip()]
     if any(a not in GENERIC_ANCHORS for a in anc):
         anc = [a for a in anc if a not in GENERIC_ANCHORS]
@@ -1517,8 +1518,95 @@ def count_buzz(items: list, anchors: list, issuer_hosts: set) -> dict:
     c7 = sum(1 for it in counted if it["date"] >= since7.isoformat())
     evidence = [{"title": it["title"][:80], "outlet": it["outlet"] or it["host"], "date": it["date"]}
                 for it in list(outlets.values())[:3]]
-    return {"buzz_measured": m, "buzz_outlets": n, "yahoo": yahoo, "buzz_evidence": evidence,
-            "buzz_trend": round(c7 / c14, 2) if c14 else None, "buzz_articles_14d": c14}
+    out = {"buzz_measured": m, "buzz_outlets": n, "yahoo": yahoo, "buzz_evidence": evidence,
+           "buzz_trend": round(c7 / c14, 2) if c14 else None, "buzz_articles_14d": c14}
+    if foreign_n is not None:
+        out.update(combine_foreign(n, yahoo, foreign_n))
+    return out
+
+
+# 海外メディアの取り入れ（2026-11-10、handoff 2026-11-10-013。編集長ケビンの設計）:
+#   日本の独立媒体 nj に、海外（英語圏）の独立媒体 nf を「半分の重み」で足して段階に換算する。
+#     n_合算 = nj + ceil(nf / 2)  → BUZZ_TIERS で段階に換算（海外だけでも nf≥5 で 3、nf≥11 で 4。上限6のため海外だけでは5にならない）
+#     Yahoo!加点は従来どおり（Yahoo!掲載 かつ 日本の媒体 nj≥2 のときだけ +1。海外分では付かない）
+#     新しい値 = max(従来の日本だけの値, 合算の値)  → 従来より下がることはない（海外は足すだけ）
+#   buzz_outlets は日本の媒体数のまま（答え合わせ候補の条件 L2_MIN_JP_OUTLETS の意味を変えない）。
+#   海外分で入口（3以上）を越えた候補は buzz_foreign_boost=True。本命に入れるには視聴者への合い方が FOREIGN_BOOST_MIN_FIT 以上
+#   （日本の視聴者に無関係な海外バズで本命にならないためのゲート。classify 参照）
+FOREIGN_WEIGHT_DIV = 2
+FOREIGN_EFF_MAX = 6          # 海外分として足せる上限（媒体数換算）。海外だけでは最大4（日本の媒体が4以上あって初めて5）
+FOREIGN_BOOST_MIN_FIT = 4
+# 汎用の語（製品群・媒体名・分野名だけの検索語は、無関係な記事まで拾って海外の件数がふくらむ。2026-11-10 の実測で
+# 「ChatGPT」69媒体・「AMR」24媒体・「Our Future」34媒体）。この語だけの検索語は海外を測らない
+FOREIGN_GENERIC = GENERIC_ANCHORS | {"chatgpt", "gemini", "claude", "llm", "amr", "cnn", "bbc", "robot", "our future",
+                                     "xai", "ibm", "samsung", "sony", "tesla", "nature", "science"}
+
+
+def combine_foreign(nj: int, yahoo: bool, nf: int) -> dict:
+    jp_m = next(score for lo, score in BUZZ_TIERS if nj >= lo)
+    if yahoo and nj >= BUZZ_YAHOO_BONUS_MIN_OUTLETS:
+        jp_m = min(5, jp_m + 1)
+    n_all = nj + min(FOREIGN_EFF_MAX, (nf + FOREIGN_WEIGHT_DIV - 1) // FOREIGN_WEIGHT_DIV)
+    m = next(score for lo, score in BUZZ_TIERS if n_all >= lo)
+    if yahoo and nj >= BUZZ_YAHOO_BONUS_MIN_OUTLETS:
+        m = min(5, m + 1)
+    m = max(m, jp_m)
+    return {"buzz_measured": m, "buzz_jp_measured": jp_m, "buzz_outlets_foreign": nf,
+            "buzz_foreign_boost": m >= 3 and jp_m < 3}
+
+
+def _latin_words(s: str) -> list:
+    return [w for w in (s or "").split() if re.search(r"[A-Za-z0-9]", w) and w.isascii()]
+
+
+def foreign_query(c: dict) -> tuple:
+    """海外（英語圏）の検索語と、見出しに全て含まれるべき語。日本語だけの候補は ("", [])（海外は測らない）。
+    en_news_query・en_title_anchor があればそれ、無ければ jp_news_query の英数字の語（固有名詞は英語表記のまま使われるため）。"""
+    q = c.get("en_news_query") or " ".join(_latin_words(c.get("jp_news_query") or "")[:2])
+    anc = c.get("en_title_anchor") or _latin_words(q)
+    anc = [a.lower() for a in ([anc] if isinstance(anc, str) else anc) if a]
+    if not q or not anc or all(a in FOREIGN_GENERIC for a in anc) or q.lower() in FOREIGN_GENERIC:
+        return "", []
+    return q, anc
+
+
+def fetch_gnews_en(query: str, timeout: int = 20) -> list:
+    """Google ニュース RSS（英語・米国版）を1回取得する。fetch_gnews の英語版。失敗は GNewsError。"""
+    url = GNEWS_URL + urllib.parse.urlencode({"q": f"{query} when:{GNEWS_WINDOW_DAYS}d",
+                                              "hl": "en-US", "gl": "US", "ceid": "US:en"})
+    try:
+        raw = urllib.request.urlopen(urllib.request.Request(url, headers=BROWSER_UA), timeout=timeout).read()
+        root = ET.fromstring(raw)
+    except Exception as e:  # noqa: BLE001
+        raise GNewsError(f"{type(e).__name__}: {str(e)[:60]}") from e
+    items = []
+    for it in root.findall(".//item"):
+        src = it.find("source")
+        d = _parse_date(it.findtext("pubDate") or "")
+        items.append({"title": (it.findtext("title") or "").strip(), "outlet": ((src.text if src is not None else "") or "").strip(),
+                      "host": _host((src.get("url") if src is not None else "") or ""),
+                      "date": d.date().isoformat() if d else ""})
+    return items
+
+
+def count_foreign(items: list, anchors: list, issuer: set = frozenset()) -> int:
+    """英語圏の独立媒体数。見出しが anchors を全て含み、日本語の見出し・転載・PR配信・発表元自身・SNS を除く。14日窓。"""
+    since = (datetime.now(timezone.utc).date() - timedelta(days=GNEWS_WINDOW_DAYS)).isoformat()
+    outlets = set()
+    for it in items:
+        t = _nfkc(it["title"])
+        # 語境界で照合（"bee" が been、"neo" が neon、"03" が 2003 に当たらないように。管理担当の指摘）
+        if not all(re.search(r"(?<![a-z0-9])" + re.escape(a) + r"(?![a-z0-9])", t) for a in anchors) or KANA.search(it["title"]) or (it["date"] and it["date"] < since):
+            continue
+        h, name = it["host"], it["outlet"]
+        if _host_in(h, AGGREGATOR_HOSTS) or any(n.lower() in name.lower() for n in AGGREGATOR_NAMES):
+            continue
+        if _host_in(h, PR_WIRE_HOSTS) or any(n.lower() in name.lower() for n in PR_WIRE_NAMES) or _host_in(h, SKIP_HOSTS):
+            continue
+        if any(h == x or h.endswith("." + x) or x.endswith("." + h) for x in issuer if h):
+            continue
+        outlets.add(name or h)
+    return len(outlets)
 
 
 def issuer_hosts(c: dict) -> set:
@@ -1554,8 +1642,18 @@ def measure_buzz(c: dict, query: str = None) -> dict:
     anchors = c.get("jp_title_anchor") or []
     if isinstance(anchors, str):
         anchors = [anchors]
-    r = count_buzz(items, anchors, issuer_hosts(c))
+    fn, fq = None, ""
+    eq, eanc = foreign_query(c)
+    if eq:                      # 海外分（英語圏）。取得に失敗しても日本だけで続ける（従来の値）
+        time.sleep(GNEWS_INTERVAL)
+        try:
+            fn, fq = count_foreign(fetch_gnews_en(eq), eanc, issuer_hosts(c)), eq
+        except GNewsError:
+            fn = None
+    r = count_buzz(items, anchors, issuer_hosts(c), foreign_n=fn)
     r["buzz_raw_items"], r["buzz_query"] = len(items), q
+    if fn is not None:
+        r["buzz_query_en"] = fq
     return r
 
 
@@ -1577,6 +1675,9 @@ def _buzz_entry(r: dict, at: str, seeded: bool = False) -> dict:
          "outlets": r.get("buzz_outlets", 0), "yahoo": bool(r.get("yahoo")),
          "evidence": r.get("buzz_evidence") or [], "trend": r.get("buzz_trend"),
          "articles_14d": r.get("buzz_articles_14d"), "raw_items": r.get("buzz_raw_items")}
+    if r.get("buzz_outlets_foreign") is not None:       # 2026-11-10: 海外分（無ければ欄を足さない＝従来の履歴と同じ形）
+        e.update({"jp_measured": r.get("buzz_jp_measured"), "outlets_foreign": r.get("buzz_outlets_foreign"),
+                  "foreign_boost": bool(r.get("buzz_foreign_boost")), "query_en": r.get("buzz_query_en", "")})
     if seeded:
         e["seeded"] = True       # 履歴を持つ前の測定（読み込み時に現在の値から作った1件目）
     return e
@@ -1626,6 +1727,11 @@ def adopt_buzz(c: dict) -> dict:
     c.update({"buzz_measured": best["measured"], "buzz_outlets": best["outlets"], "yahoo": best["yahoo"],
               "buzz_evidence": best["evidence"], "buzz_trend": best["trend"],
               "buzz_articles_14d": best["articles_14d"], "buzz_raw_items": best["raw_items"], "buzz_query": best["query"]})
+    for k in ("buzz_jp_measured", "buzz_outlets_foreign", "buzz_foreign_boost", "buzz_query_en"):
+        c.pop(k, None)
+    if best.get("outlets_foreign") is not None:
+        c.update({"buzz_jp_measured": best.get("jp_measured"), "buzz_outlets_foreign": best["outlets_foreign"],
+                  "buzz_foreign_boost": bool(best.get("foreign_boost")), "buzz_query_en": best.get("query_en", "")})
     c["buzz_adopted_at"] = best.get("at", "")
     c["buzz_adopted_n"] = len(win)
     return best
@@ -2144,13 +2250,18 @@ def classify(cands: list) -> list:
         fresh = freshness_score(fresh_date(c))
         gate = gate_reasons(c, used)
         bm = c.get("buzz_measured")
+        # 2026-11-10: 海外分で入口（3）を越えた候補は、視聴者への合い方が FOREIGN_BOOST_MIN_FIT 以上のときだけ本命にする。
+        # 満たさないときは日本だけの値で枠を決める（日本の視聴者に無関係な海外バズだけで本命にならない）
+        bm_lane = bm
+        if bm is not None and c.get("buzz_foreign_boost") and fit(c) < FOREIGN_BOOST_MIN_FIT:
+            bm_lane = c.get("buzz_jp_measured") or 1
         if gate:
             lane = "除外"
         elif bm is None:
             lane = "未計測"
         elif is_l2_type(c):
             lane = L2_LANE if topic_age_days(c) >= L2_MIN_TOPIC_AGE_DAYS else L2_WAIT_LANE
-        elif bm >= 3:
+        elif bm_lane >= 3:
             lane = "本命"
         elif topic_age_days(c) * 24 <= BREAKING_HOURS and c.get("announcement_type") in BREAKING_TYPES:
             lane = "速報"
@@ -2332,6 +2443,8 @@ def _buzz_line(c: dict) -> str:
             hist = ""
         return (f"注目度: 実測{c['buzz_measured']}（{hist}{c.get('buzz_outlets', 0)}媒体"
                 f"{'・Yahoo!あり' if c.get('yahoo') else '・Yahoo!なし'}"
+                + (f"・海外{c['buzz_outlets_foreign']}媒体" + ("＝海外分で入口超え" if c.get("buzz_foreign_boost") else "")
+                   if c.get("buzz_outlets_foreign") is not None else "")
                 + (f"、勢い{t:.2f}" if t is not None else "")
                 + f"、{(c.get('buzz_measured_at') or '')[:16]}計測、検索語 {c.get('buzz_query', '')!r}）")
     msg = f"注目度: 推定{buzz_value(c)[0]}（未計測"
@@ -3419,6 +3532,14 @@ def cmd_dedupe(dry_run: bool = False):
             left.remove(o)
             pairs.append((h, o))
     for head, o in pairs:
+        # 2026-11-10: 注目度の実測を補うときは、海外分の欄も同じ候補から一緒に写す（印だけ落ちて海外分のガードをすり抜けないように）。
+        # head が自分の実測を持っているときは何も写さない（値が下がらない）
+        if head.get("buzz_measured") in (None, "") and o.get("buzz_measured") not in (None, ""):
+            for k in ("buzz_jp_measured", "buzz_outlets_foreign", "buzz_foreign_boost", "buzz_query_en"):
+                if k in o:
+                    head[k] = o[k]
+                else:
+                    head.pop(k, None)
         for k in MERGE_FILL_KEYS:     # 最良の1件に無い情報は、他の記事の値で補う
             if head.get(k) in (None, "") and o.get(k) not in (None, ""):
                 head[k] = o[k]
