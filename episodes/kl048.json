@@ -3515,5 +3515,15 @@
   "youtube_url": "https://youtu.be/zoAj4VYU72g",
   "shorts_url": "https://youtu.be/ibtrF_0b9ek",
   "scheduled_at": "2026-10-24 22:39",
-  "related_video_set": true
+  "related_video_set": true,
+  "related_plan": {
+    "main_video_id": "zoAj4VYU72g",
+    "shorts": [
+      {
+        "video_id": "ibtrF_0b9ek",
+        "related_main_video_id": "zoAj4VYU72g"
+      }
+    ],
+    "publish_at": "2026-10-24 22:39"
+  }
 }

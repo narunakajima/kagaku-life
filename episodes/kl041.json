@@ -2195,5 +2195,15 @@
   "youtube_url": "https://youtu.be/BRzNen-Ml3I",
   "shorts_url": "https://youtu.be/KBzDF6c6LYA",
   "scheduled_at": "2026-10-17 19:00",
-  "related_video_set": true
+  "related_video_set": true,
+  "related_plan": {
+    "main_video_id": "BRzNen-Ml3I",
+    "shorts": [
+      {
+        "video_id": "KBzDF6c6LYA",
+        "related_main_video_id": "BRzNen-Ml3I"
+      }
+    ],
+    "publish_at": "2026-10-17 19:00"
+  }
 }

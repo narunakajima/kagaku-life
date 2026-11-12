@@ -2393,5 +2393,15 @@
   "youtube_url": "https://youtu.be/GJUKF0z3vnQ",
   "shorts_url": "https://youtu.be/Px2Efxu0f1g",
   "scheduled_at": "2026-10-14 19:00",
-  "related_video_set": true
+  "related_video_set": true,
+  "related_plan": {
+    "main_video_id": "GJUKF0z3vnQ",
+    "shorts": [
+      {
+        "video_id": "Px2Efxu0f1g",
+        "related_main_video_id": "GJUKF0z3vnQ"
+      }
+    ],
+    "publish_at": "2026-10-14 19:00"
+  }
 }

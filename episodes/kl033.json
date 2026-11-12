@@ -1467,5 +1467,15 @@
   "youtube_url": "https://youtu.be/JnlCbKnby2c",
   "shorts_url": "https://youtu.be/4pjMayP68SI",
   "scheduled_at": "2026-10-07 19:00",
-  "related_video_set": true
+  "related_video_set": true,
+  "related_plan": {
+    "main_video_id": "JnlCbKnby2c",
+    "shorts": [
+      {
+        "video_id": "4pjMayP68SI",
+        "related_main_video_id": "JnlCbKnby2c"
+      }
+    ],
+    "publish_at": "2026-10-07 19:00"
+  }
 }

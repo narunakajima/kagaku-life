@@ -90,16 +90,40 @@ def mark(episode_ids, only_published: bool = False, now: datetime = None):
     print(f"{n}件を記録しました")
 
 
+def backfill_plan():
+    """youtube_url/shorts_url がある回に related_plan を補う（既存の related_plan は上書きしない）。"""
+    n = 0
+    for path, ep in load_all():
+        if ep.get("related_plan") or not (ep.get("youtube_url") and ep.get("shorts_url")):
+            continue
+        m, s = video_id(ep["youtube_url"]), video_id(ep["shorts_url"])
+        if not (m and s):
+            continue
+        ep["related_plan"] = {
+            "main_video_id": m,
+            "shorts": [{"video_id": s, "related_main_video_id": m}],
+            "publish_at": ep.get("scheduled_at", ""),
+        }
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(ep, f, ensure_ascii=False, indent=2)
+        n += 1
+    print(f"related_plan を {n}件 補いました")
+
+
 def main():
     ap = argparse.ArgumentParser(description="Shorts関連動画の設定対象を管理する")
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--mark", nargs="+", metavar="EPISODE")
+    ap.add_argument("--backfill-plan", action="store_true")
     ap.add_argument("--mark-all-published", action="store_true")
     args = ap.parse_args()
     now = datetime.now(JST)
 
     if args.mark:
         mark(set(args.mark))
+        return
+    if args.backfill_plan:
+        backfill_plan()
         return
     if args.mark_all_published:
         mark(set(), only_published=True, now=now)

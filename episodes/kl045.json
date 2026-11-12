@@ -3015,5 +3015,15 @@
   "youtube_url": "https://youtu.be/kpq_qKw59bU",
   "shorts_url": "https://youtu.be/uMd8v4VHTcQ",
   "scheduled_at": "2026-10-21 19:00",
-  "related_video_set": true
+  "related_video_set": true,
+  "related_plan": {
+    "main_video_id": "kpq_qKw59bU",
+    "shorts": [
+      {
+        "video_id": "uMd8v4VHTcQ",
+        "related_main_video_id": "kpq_qKw59bU"
+      }
+    ],
+    "publish_at": "2026-10-21 19:00"
+  }
 }

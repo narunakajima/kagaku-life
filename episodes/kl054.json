@@ -3202,5 +3202,15 @@
   "youtube_url": "https://youtu.be/oOwpklk2zqk",
   "shorts_url": "https://youtu.be/MDmxNHNooS0",
   "scheduled_at": "2026-11-09 19:00",
-  "related_video_set": true
+  "related_video_set": true,
+  "related_plan": {
+    "main_video_id": "oOwpklk2zqk",
+    "shorts": [
+      {
+        "video_id": "MDmxNHNooS0",
+        "related_main_video_id": "oOwpklk2zqk"
+      }
+    ],
+    "publish_at": "2026-11-09 19:00"
+  }
 }

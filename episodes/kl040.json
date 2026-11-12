@@ -2048,5 +2048,15 @@
   "youtube_url": "https://youtu.be/8Rpxt98TeIc",
   "shorts_url": "https://youtu.be/E-q01v4k9TQ",
   "scheduled_at": "2026-10-16 19:00",
-  "related_video_set": true
+  "related_video_set": true,
+  "related_plan": {
+    "main_video_id": "8Rpxt98TeIc",
+    "shorts": [
+      {
+        "video_id": "E-q01v4k9TQ",
+        "related_main_video_id": "8Rpxt98TeIc"
+      }
+    ],
+    "publish_at": "2026-10-16 19:00"
+  }
 }

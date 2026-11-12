@@ -329,9 +329,15 @@ def run(episode_id: str, publish_at: Optional[str] = None, publish_now: bool = F
     ep["youtube_url"] = f"https://youtu.be/{main_id}"
     ep["shorts_url"] = f"https://youtu.be/{shorts_id}"
     ep["scheduled_at"] = publish_at if publish_at else ""
+    # 2026-11-12: 関連動画設定（Muse が Studio で実施）用に、動画ID・公開日時・関連付けを必ず記録する
+    ep["related_plan"] = {
+        "main_video_id": main_id,
+        "shorts": [{"video_id": shorts_id, "related_main_video_id": main_id}],
+        "publish_at": ep["scheduled_at"],  # JST "YYYY-MM-DD HH:MM"。空なら即時公開
+    }
     with open(ep_json, "w", encoding="utf-8") as f:
         json.dump(ep, f, ensure_ascii=False, indent=2)
-    print(f"  ✓ {episode_id}.json に youtube_url / shorts_url / scheduled_at を保存しました")
+    print(f"  ✓ {episode_id}.json に youtube_url / shorts_url / scheduled_at / related_plan を保存しました")
 
     update_topics_queue_status(episode_id)
 

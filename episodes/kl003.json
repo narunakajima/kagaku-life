@@ -1173,5 +1173,15 @@
   "youtube_url": "https://youtu.be/3U6ySWgIuEE",
   "shorts_url": "https://youtu.be/X7xC6Goky3o",
   "scheduled_at": "2026-08-29 19:00",
-  "related_video_set": true
+  "related_video_set": true,
+  "related_plan": {
+    "main_video_id": "3U6ySWgIuEE",
+    "shorts": [
+      {
+        "video_id": "X7xC6Goky3o",
+        "related_main_video_id": "3U6ySWgIuEE"
+      }
+    ],
+    "publish_at": "2026-08-29 19:00"
+  }
 }

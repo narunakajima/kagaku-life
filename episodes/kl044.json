@@ -2273,5 +2273,15 @@
   "youtube_url": "https://youtu.be/bGYQ-iGzFds",
   "shorts_url": "https://youtu.be/N0h5-YnuCRE",
   "scheduled_at": "",
-  "related_video_set": true
+  "related_video_set": true,
+  "related_plan": {
+    "main_video_id": "bGYQ-iGzFds",
+    "shorts": [
+      {
+        "video_id": "N0h5-YnuCRE",
+        "related_main_video_id": "bGYQ-iGzFds"
+      }
+    ],
+    "publish_at": ""
+  }
 }

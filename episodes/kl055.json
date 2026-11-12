@@ -3040,5 +3040,15 @@
   "youtube_url": "https://youtu.be/Szj_RZZ_tQg",
   "shorts_url": "https://youtu.be/V3JLr6_aKxU",
   "scheduled_at": "2026-11-10 19:00",
-  "related_video_set": true
+  "related_video_set": true,
+  "related_plan": {
+    "main_video_id": "Szj_RZZ_tQg",
+    "shorts": [
+      {
+        "video_id": "V3JLr6_aKxU",
+        "related_main_video_id": "Szj_RZZ_tQg"
+      }
+    ],
+    "publish_at": "2026-11-10 19:00"
+  }
 }

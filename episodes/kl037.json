@@ -2051,5 +2051,15 @@
   "youtube_url": "https://youtu.be/x_gVKRq_O4s",
   "shorts_url": "https://youtu.be/Y1EKuPfHcz0",
   "scheduled_at": "2026-10-13 19:00",
-  "related_video_set": true
+  "related_video_set": true,
+  "related_plan": {
+    "main_video_id": "x_gVKRq_O4s",
+    "shorts": [
+      {
+        "video_id": "Y1EKuPfHcz0",
+        "related_main_video_id": "x_gVKRq_O4s"
+      }
+    ],
+    "publish_at": "2026-10-13 19:00"
+  }
 }
