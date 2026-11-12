@@ -61722,7 +61722,9 @@
       "primary_sources": [
         {
           "kind": "official_blog",
-          "url": "https://www.aboutamazon.com/news/devices/ring-robotics-drone-cam-rover-cam",
+          "url": "https://www.aboutamazon.com/news/devices/ring-drone-cam-rover-cam-security-robot",
+          "url_replaced_from": "https://www.aboutamazon.com/news/devices/ring-robotics-drone-cam-rover-cam",
+          "url_replaced_note": "2026-11-12 handoff 007: 元のURLは404（誤記）。DroneLife記事のリンクから見つけた Amazon公式発表（Ring announces Ring Robotics, 11/10付）に差し替え",
           "what_it_states": "Amazon傘下のRingが『Ring Robotics』シリーズとして家庭向け自律飛行カメラ『Ring Drone Cam』（249.99ドル）と法人向け巡回ロボット『Ring Rover Cam』（999.99ドル）を発表。AI Pilotシステムで自律飛行し、米連邦通信委員会（FCC）の認可取得を条件に2027年1月27日に米国出荷予定と記載。"
         },
         {
@@ -61787,39 +61789,109 @@
         "id": "13538e44f9",
         "source": "ITmedia NEWS"
       },
-      "primary_verified": false,
+      "primary_verified": true,
       "primary_check": [
         {
-          "url": "https://www.aboutamazon.com/news/devices/ring-robotics-drone-cam-rover-cam",
-          "ok": false,
-          "status": "HTTP 404",
+          "url": "https://www.aboutamazon.com/news/devices/ring-drone-cam-rover-cam-security-robot",
+          "ok": true,
+          "status": "HTTP 200「Ring announces Ring Robotics, 」",
+          "page_title": "Ring announces Ring Robotics, ushering in a new era of security",
+          "anchor_hit": true,
           "method": "http",
           "kind": "official_blog"
         },
         {
           "url": "https://ring.com/products/drone-cam",
           "ok": false,
-          "status": "HTTP 404",
+          "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）（再確認5回とも404・開けず）",
+          "final_url": "https://ring.com/jp/ja/products/drone-cam",
+          "redirects": [
+            "302 https://ring.com/jp/ja/products/drone-cam"
+          ],
           "method": "http",
+          "attempts": [
+            {
+              "url": "https://ring.com/products/drone-cam",
+              "via": "初回",
+              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）",
+              "final_url": "https://ring.com/jp/ja/products/drone-cam",
+              "redirects": [
+                "302 https://ring.com/jp/ja/products/drone-cam"
+              ],
+              "at": "2026-11-12T15:32:45"
+            },
+            {
+              "url": "https://ring.com/products/drone-cam",
+              "via": "英語のAccept-Languageで再試行",
+              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）",
+              "final_url": "https://ring.com/jp/ja/products/drone-cam",
+              "redirects": [
+                "302 https://ring.com/jp/ja/products/drone-cam"
+              ],
+              "at": "2026-11-12T15:32:50"
+            },
+            {
+              "url": "https://ring.com/products/drone-cam",
+              "via": "20秒おいて再試行",
+              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）",
+              "final_url": "https://ring.com/jp/ja/products/drone-cam",
+              "redirects": [
+                "302 https://ring.com/jp/ja/products/drone-cam"
+              ],
+              "at": "2026-11-12T15:33:12"
+            },
+            {
+              "url": "https://ring.com/us/en/products/drone-cam",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）",
+              "final_url": "https://ring.com/jp/ja/products/drone-cam",
+              "redirects": [
+                "301 https://ring.com/products/drone-cam",
+                "302 https://ring.com/jp/ja/products/drone-cam"
+              ],
+              "at": "2026-11-12T15:33:18"
+            },
+            {
+              "url": "https://ring.com/en-us/products/drone-cam",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）",
+              "final_url": "https://ring.com/jp/ja/products/drone-cam",
+              "redirects": [
+                "302 https://ring.com/jp/ja/products/drone-cam"
+              ],
+              "at": "2026-11-12T15:33:22"
+            },
+            {
+              "url": "https://ring.com/en/products/drone-cam",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）",
+              "final_url": "https://ring.com/jp/ja/products/drone-cam",
+              "redirects": [
+                "301 https://ring.com/products/drone-cam",
+                "302 https://ring.com/jp/ja/products/drone-cam"
+              ],
+              "at": "2026-11-12T15:33:28"
+            }
+          ],
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-12T08:57:38",
+      "primary_verified_at": "2026-11-12T15:33:28",
       "url_check": [
         {
-          "url": "https://www.aboutamazon.com/news/devices/ring-robotics-drone-cam-rover-cam",
-          "ok": false,
-          "status": "HTTP 404"
+          "url": "https://www.aboutamazon.com/news/devices/ring-drone-cam-rover-cam-security-robot",
+          "ok": true,
+          "status": "HTTP 200「Ring announces Ring Robotics, 」"
         },
         {
           "url": "https://ring.com/products/drone-cam",
           "ok": false,
-          "status": "HTTP 404"
+          "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）（再確認5回とも404・開けず）"
         }
       ],
       "url_ok": false,
-      "url_status": "aboutamazon.com: HTTP 404 ／ ring.com: HTTP 404",
-      "url_checked_at": "2026-11-12T08:57:38",
+      "url_status": "aboutamazon.com: HTTP 200「Ring announces Ring Robotics, 」 ／ ring.com: HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）（再確認5回とも404・開けず）",
+      "url_checked_at": "2026-11-12T15:33:28",
       "prior_art": {
         "version": "2026-11-11",
         "checked_at": "2026-11-12T08:49:31",
@@ -61894,7 +61966,63 @@
       "buzz_foreign_boost": false,
       "buzz_query_en": "Ring Drone",
       "buzz_adopted_at": "2026-11-12T08:49:53",
-      "buzz_adopted_n": 1
+      "buzz_adopted_n": 1,
+      "primary_history": [
+        {
+          "at": "2026-11-12T08:51:30",
+          "verdict": true,
+          "urls": [
+            {"url": "https://www.aboutamazon.com/news/devices/ring-robotics-drone-cam-rover-cam", "status": "HTTP 404", "final_url": "", "ok": false},
+            {"url": "https://ring.com/products/drone-cam", "status": "HTTP 200「Drone Cam | Ring」（夜間 GitHub Actions・米国）", "final_url": "", "ok": true}
+          ],
+          "note": "handoff 007 で git 履歴（b3ac7b3）から復元して記録"
+        },
+        {
+          "at": "2026-11-12T08:57:38",
+          "verdict": false,
+          "urls": [
+            {"url": "https://www.aboutamazon.com/news/devices/ring-robotics-drone-cam-rover-cam", "status": "HTTP 404", "final_url": "", "ok": false},
+            {"url": "https://ring.com/products/drone-cam", "status": "HTTP 404（/jp/ja/ へ転送され404と推定。iMac・日本）", "final_url": "https://ring.com/jp/ja/products/drone-cam", "ok": false}
+          ],
+          "note": "handoff 007 で記録。夜間（08:51）と食い違った確認。この時は無言でゲート落ち"
+        },
+        {
+          "at": "2026-11-12T15:31:50",
+          "verdict": false,
+          "urls": [
+            {
+              "url": "https://www.aboutamazon.com/news/devices/ring-robotics-drone-cam-rover-cam",
+              "status": "HTTP 404（再確認5回とも404・開けず）",
+              "final_url": "",
+              "ok": false
+            },
+            {
+              "url": "https://ring.com/products/drone-cam",
+              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）（再確認5回とも404・開けず）",
+              "final_url": "https://ring.com/jp/ja/products/drone-cam",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "at": "2026-11-12T15:33:28",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://www.aboutamazon.com/news/devices/ring-drone-cam-rover-cam-security-robot",
+              "status": "HTTP 200「Ring announces Ring Robotics, 」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://ring.com/products/drone-cam",
+              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）（再確認5回とも404・開けず）",
+              "final_url": "https://ring.com/jp/ja/products/drone-cam",
+              "ok": false
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "採血前の絶食時間が最も影響する検査項目は？",

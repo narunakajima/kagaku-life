@@ -1125,21 +1125,35 @@ def _decode(raw: bytes, content_type: str) -> str:
         return raw.decode("utf-8", errors="replace")
 
 
-def check_primary_url(url: str, timeout: int = 15, anchors: list = None) -> dict:
+class _RedirectRecorder(urllib.request.HTTPRedirectHandler):
+    """リダイレクトの経路を記録する（2026-11-12: 国別リダイレクト先の404を見分けるため）。"""
+
+    def __init__(self):
+        self.chain = []
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        self.chain.append(f"{code} {newurl}")
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+def check_primary_url(url: str, timeout: int = 15, anchors: list = None, headers: dict = None) -> dict:
     """一次資料のURLを開いて確かめる（標準ライブラリのみ。取得したHTMLは <title> と本文の先頭を文字列として読むだけで実行しない）。
     ok: True=開ける / False=404・ソフト404 / None=判断できない（403・429等。ボット拒否の可能性があり人が確認）
-    anchors（候補の固有の語）を渡すと、<title>＋本文の先頭にどれかが含まれるかを anchor_hit に入れる（参考表示。判定には使わない）"""
+    anchors（候補の固有の語）を渡すと、<title>＋本文の先頭にどれかが含まれるかを anchor_hit に入れる（参考表示。判定には使わない）
+    redirects（経路）と final_url（最終URL）を、転送があったときに結果へ入れる。headers は既定の BROWSER_UA を置き換える"""
+    rec = _RedirectRecorder()
     try:
-        resp = urllib.request.urlopen(urllib.request.Request(url, headers=BROWSER_UA), timeout=timeout)
+        resp = urllib.request.build_opener(rec).open(urllib.request.Request(url, headers=headers or BROWSER_UA), timeout=timeout)
         raw = resp.read(400_000)
         html = _decode(raw, resp.headers.get("Content-Type", ""))
         m = re.search(r"<title[^>]*>(.*?)</title>", html, re.I | re.S)
         title = re.sub(r"\s+", " ", m.group(1)).strip() if m else ""
+        final = resp.geturl() or url
         if title and SOFT404_TITLE.search(title):
-            return {"url": url, "ok": False, "status": f"ソフト404（HTTP {resp.status}、title「{title[:40]}」）"}
+            return dict({"url": url, "ok": False, "status": f"ソフト404（HTTP {resp.status}、title「{title[:40]}」）"}, **_redir_info(url, final, rec))
         out = {"url": url, "ok": True, "status": f"HTTP {resp.status}" + (f"「{title[:30]}」" if title else ""),
                "page_title": title[:120]}
-        final = resp.geturl() or url
+        out.update(_redir_info(url, final, rec))
         if final != url and urllib.parse.urlsplit(final).path in ("", "/") and urllib.parse.urlsplit(url).path not in ("", "/"):
             out["redirected_to_top"] = True      # 記事のURLがトップページに転送された（記事が無い可能性）
             out["status"] += f"（トップページへ転送: {final[:60]}）"
@@ -1149,11 +1163,20 @@ def check_primary_url(url: str, timeout: int = 15, anchors: list = None) -> dict
             out["anchor_hit"] = any(a in head for a in anchors)
         return out
     except urllib.error.HTTPError as e:
+        info = _redir_info(url, getattr(e, "url", None) or url, rec)
         if e.code in (404, 410):
-            return {"url": url, "ok": False, "status": f"HTTP {e.code}"}
-        return {"url": url, "ok": None, "status": f"HTTP {e.code}（ボット拒否の可能性。ブラウザで確認）", "http": e.code}
+            st = f"HTTP {e.code}" + (f"（転送先 {info['final_url'][:80]} が{e.code}）" if info.get("final_url") else "")
+            return dict({"url": url, "ok": False, "status": st, "http404": e.code}, **info)
+        return dict({"url": url, "ok": None, "status": f"HTTP {e.code}（ボット拒否の可能性。ブラウザで確認）", "http": e.code}, **info)
     except Exception as e:  # noqa: BLE001
         return {"url": url, "ok": None, "status": f"取得失敗（{type(e).__name__}: {str(e)[:60]}）", "transient": True}
+
+
+def _redir_info(url: str, final: str, rec) -> dict:
+    """転送があれば final_url と redirects（経路）を返す。無ければ空。"""
+    if rec.chain or (final and final != url):
+        return {"final_url": final, "redirects": list(rec.chain)}
+    return {}
 
 
 # ============================================================
@@ -1235,6 +1258,72 @@ def verify_one_url(url: str, anchors: list) -> dict:
     return r
 
 
+RECHECK_404_WAIT = 20.0        # 秒。404のとき、少し時間をおいて取り直す
+RECHECK_EN_HEADERS = dict(BROWSER_UA, **{"Accept-Language": "en-US,en;q=0.9",
+                                         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"})
+LOCALE_PREFIXES = ("/us/en", "/en-us", "/en")     # 国別リダイレクトで404になるサイト向けの、別地域・別言語の候補
+_LOCALE_RE = re.compile(r"^/([a-z]{2}([-_][a-z]{2})?)(/[a-z]{2})?(/|$)", re.I)
+
+
+def alt_locale_urls(url: str) -> list:
+    """元のURLに地域・言語の接頭辞を付けた別のURL（元のURLが既に /jp/ja/ のような接頭辞を持つときは、それを外した形も）。"""
+    try:
+        sp = urllib.parse.urlsplit(url)
+    except ValueError:
+        return []
+    path = sp.path or "/"
+    out = []
+    m = _LOCALE_RE.match(path)
+    base = path[m.end(0) - (1 if m.group(0).endswith("/") else 0):] if m else path
+    if m:
+        out.append(urllib.parse.urlunsplit((sp.scheme, sp.netloc, base or "/", sp.query, "")))
+    for p in LOCALE_PREFIXES:
+        if path.startswith(p + "/"):
+            continue
+        out.append(urllib.parse.urlunsplit((sp.scheme, sp.netloc, p + base, sp.query, "")))
+    seen, res = {url}, []
+    for u in out:
+        if u not in seen:
+            seen.add(u)
+            res.append(u)
+    return res
+
+
+def recheck_404(url: str, first: dict, anchors: list, pacer=None, wait: float = None, fetch=None) -> dict:
+    """HTTP 404/410 を1回で「実在しない」にしない（2026-11-12）。経路と最終URLを記録し、
+    (1) 英語のAccept-Languageで取り直す (2) 少し時間をおいて元のヘッダで取り直す (3) 別の地域・言語のURLを試す。
+    どれかで開ければ、その結果を返す（別のURLで開けたときは alt_url を付ける）。全て404のときだけ ok=False のまま返す。
+    すべての試行を attempts に残す。fetch は試験用の差し替え。"""
+    fetch = fetch or (lambda u, h: check_primary_url(u, anchors=anchors, headers=h))
+    wait = RECHECK_404_WAIT if wait is None else wait
+    attempts = [{"url": url, "via": "初回", "status": first.get("status", ""), "final_url": first.get("final_url", ""),
+                 "redirects": first.get("redirects", []), "at": datetime.now().isoformat(timespec="seconds")}]
+
+    def rec(u, via, r):
+        attempts.append({"url": u, "via": via, "status": r.get("status", ""), "final_url": r.get("final_url", ""),
+                         "redirects": r.get("redirects", []), "at": datetime.now().isoformat(timespec="seconds")})
+
+    plan = [(url, "英語のAccept-Languageで再試行", RECHECK_EN_HEADERS, 0.0),
+            (url, f"{int(wait)}秒おいて再試行", BROWSER_UA, wait)]
+    plan += [(u, "別の地域・言語のURL", BROWSER_UA, 0.0) for u in alt_locale_urls(url)[:4]]
+    for u, via, hdr, w in plan:
+        if w:
+            time.sleep(w)
+        if pacer:
+            pacer.wait(u)
+        r = fetch(u, hdr)
+        rec(u, via, r)
+        if r.get("ok") is not False:        # True（開けた）または None（403等＝判断できない）
+            out = dict(r, url=url, attempts=attempts, recheck=via)
+            if u != url:
+                out["alt_url"] = u
+                out["status"] = f"{r.get('status', '')}（元のURLは404。{via}: {u}）"
+            else:
+                out["status"] = f"{r.get('status', '')}（初回は404、{via}で開けた）"
+            return out
+    return dict(first, attempts=attempts, status=f"{first.get('status', 'HTTP 404')}（再確認{len(attempts) - 1}回とも404・開けず）")
+
+
 class _HostPacer:
     """全体で URL_CHECK_INTERVAL、同じホストには VERIFY_SAME_HOST_INTERVAL 以上の間隔をあける。"""
 
@@ -1286,10 +1375,18 @@ def verify_candidate(c: dict, pacer: "_HostPacer") -> list:
             pacer.wait(url)
             r2 = verify_one_url(url, anchors)
             r = dict(r2, status=r2["status"] + "（再試行）")
+        if r.get("ok") is False and r.get("http404"):
+            # 2026-11-12: 1回の404で「実在しない」にしない。取り直し・別地域のURLを試し、全部404のときだけ False のまま
+            r = dict(recheck_404(url, r, anchors, pacer=pacer), method=r.get("method", "http"))
+            if r.get("alt_url") and r.get("ok"):      # 別の地域・言語のURLで開けた → そのURLを一次資料として差し替える
+                s["repaired_url"], s["repair_method"] = r["alt_url"], "locale-alt"
+                s["repair_from"], s["repaired_at"] = url, datetime.now().isoformat(timespec="seconds")
+                r.update(url=r["alt_url"], repaired=True, orig_url=url, repair_method="locale-alt", repair_from=url)
         r.pop("transient", None)
         r.pop("http", None)
+        r.pop("http404", None)
         r["kind"] = s.get("kind", "")
-        if s.get("repaired_url"):
+        if s.get("repaired_url") and not r.get("repaired"):
             if r.get("ok") and _is_pdf(url) and s.get("repair_pdf_text_checked") is False:
                 # PDFの本文は標準ライブラリで読めない（check_primary_url の語の照合は当てにならない）。repair の採用時の照合を引き継ぐ
                 r.pop("anchor_hit", None)
@@ -1298,9 +1395,18 @@ def verify_candidate(c: dict, pacer: "_HostPacer") -> list:
                      repair_from=s.get("repair_from", ""))
         res.append(r)
     now = datetime.now().isoformat(timespec="seconds")
-    c["primary_verified"] = primary_verdict(res)
+    prev = {"verdict": c.get("primary_verified"), "at": c.get("primary_verified_at"),
+            "check": c.get("primary_check")} if "primary_verified" in c else None
+    verdict = primary_verdict(res)
+    note = None
+    if prev:
+        verdict, note = reconcile_primary(c, prev, verdict, res, now)
+    c["primary_verified"] = verdict
     c["primary_check"] = res
     c["primary_verified_at"] = now
+    hist = c.get("primary_history") or []
+    hist.append({"at": now, "verdict": verdict, "urls": [_hist_url(x) for x in res]})
+    c["primary_history"] = hist[-6:]
     if not res:
         c["primary_verified_note"] = "一次資料のURLが無い"
     else:
@@ -1311,7 +1417,32 @@ def verify_candidate(c: dict, pacer: "_HostPacer") -> list:
         c["url_ok"] = False if False in oks else (True if all(oks) else None)
         c["url_status"] = " ／ ".join(f"{_host(x['url'])}: {x['status']}" for x in res)
         c["url_checked_at"] = now
+    if note:
+        c["primary_verified_note"] = note
     return res
+
+
+def _hist_url(x: dict) -> dict:
+    return {"url": x.get("url", ""), "status": x.get("status", ""), "final_url": x.get("final_url", ""), "ok": x.get("ok")}
+
+
+def reconcile_primary(c: dict, prev: dict, verdict, res: list, now: str):
+    """前回の確認と今回の確認が食い違ったとき、候補を無言で落とさない（2026-11-12）。
+    前回 True（開けた）→ 今回 全URLが404（False）のときは、判定を None（要確認）にして primary_conflict に両方の結果
+    （時刻・判定・URLごとの状態・最終URL）を残す。落とすかどうかは編集長・ユーザーが決める。
+    今回 True になれば食い違いは解消（primary_conflict を消す）。戻り値は (判定, 注記 or None)。"""
+    if verdict is True:
+        c.pop("primary_conflict", None)
+        return verdict, None
+    had_ok = prev["verdict"] is True or bool(c.get("primary_conflict"))
+    if not had_ok or verdict is not False:
+        return verdict, None
+    old = c.get("primary_conflict", {}).get("before") if prev["verdict"] is not True else \
+        {"at": prev["at"], "verdict": True, "urls": [_hist_url(x) for x in prev["check"] or []]}
+    now_r = {"at": now, "verdict": False, "urls": [_hist_url(x) for x in res]}
+    c["primary_conflict"] = {"before": old, "after": now_r,
+                             "reason": f"確認が食い違い: {(old or {}).get('at', '')[:16]} は開けた／{now[:16]} は全URLが404（再確認でも）"}
+    return None, "確認が食い違い（以前は開けたが、今回の再確認は全URL404）。落とすかは編集長・ユーザーが判断"
 
 
 def _primary_line(c: dict) -> str:
@@ -1332,7 +1463,44 @@ def _primary_line(c: dict) -> str:
     if pv is False and c.get("repair_tried"):
         body += f"（自動修復も見つからず、{(c.get('repair_tried_at') or '')[:10]}）"
     return f"一次資料の実在: {PRIMARY_LABEL[pv]}{'（ブラウザで開いて確かめる）' if pv is None else ''} — {body}" \
-           f"（{(c.get('primary_verified_at') or '')[:16]}確認）" + (f"\n   ⚠️ {REPAIR_CAUTION}" if repaired else "")
+           f"（{(c.get('primary_verified_at') or '')[:16]}確認）" + (f"\n   ⚠️ {REPAIR_CAUTION}" if repaired else "") \
+           + ("".join("\n   " + ln for ln in conflict_lines(c)))
+
+
+def _short_urls(side: dict) -> str:
+    return "、".join(f"{_host(u['url'])} {u.get('status', '')}" + (f"→最終URL {u['final_url'][:70]}" if u.get("final_url") else "")
+                    for u in (side or {}).get("urls", []))
+
+
+def conflict_lines(c: dict) -> list:
+    """確認が食い違っている候補の説明（両方の結果。時刻・状態・最終URL）。無ければ空。"""
+    cf = c.get("primary_conflict")
+    if not cf:
+        return []
+    b, a = cf.get("before") or {}, cf.get("after") or {}
+    return [f"🔀 {cf.get('reason', '確認が食い違い')}",
+            f"   前: {(b.get('at') or '')[:16]} {PRIMARY_LABEL.get(b.get('verdict'), '?')} — {_short_urls(b)}",
+            f"   後: {(a.get('at') or '')[:16]} {PRIMARY_LABEL.get(a.get('verdict'), '?')} — {_short_urls(a)}"]
+
+
+def primary_gate_dropped(rows: list) -> list:
+    """一次資料のゲート（全URLが404）だけが理由で、ベスト3・本命から外れた候補。無言で消さず理由つきで見せる用。"""
+    out = []
+    for r in rows:
+        g = r.get("gate") or []
+        if g and all(x.startswith("一次資料") for x in g) and r["c"].get("status") == "available":
+            out.append(r)
+    return out
+
+
+def primary_drop_text(c: dict) -> str:
+    """ゲート落ちの理由つきの1行（URLごとの状態・転送先・再確認の回数・確認時刻）。"""
+    parts = []
+    for x in c.get("primary_check") or []:
+        extra = f"→最終URL {x['final_url'][:60]}" if x.get("final_url") else ""
+        n = len(x.get("attempts") or [])
+        parts.append(f"{_host(x['url'])} {x.get('status', '')}{extra}" + (f"（試行{n}回）" if n > 1 else ""))
+    return f"{'／'.join(parts) or c.get('primary_verified_note', '')}（{(c.get('primary_verified_at') or '')[:16]}確認）"
 
 
 # ============================================================
@@ -3082,6 +3250,22 @@ def _print_exclusions(rows: list):
             print(f"   × {r['c']['title'][:60]} — {'・'.join(named)}")
 
 
+def _print_primary_issues(rows: list):
+    """一次資料の確認で問題があった候補を、理由つきで見せる（2026-11-12）。無言で消さない。"""
+    conflicts = [r for r in rows if r["c"].get("primary_conflict") and r["c"].get("status") == "available"]
+    if conflicts:
+        print(f"\n==== 🔀 確認が食い違っている候補（夜間と再確認の結果が違う。落とすかは編集長・ユーザーが判断）: {len(conflicts)}件 ====")
+        for r in conflicts:
+            print(f"・{r['c']['title'][:60]}（id {r['c']['id']}、面白さ{r['interest']}）")
+            for ln in conflict_lines(r["c"]):
+                print(f"   {ln}")
+    dropped = primary_gate_dropped(rows)
+    if dropped:
+        print(f"\n==== ❌ 一次資料の全URLが404でゲート落ちした候補: {len(dropped)}件（上位10件。「試行n回」は再確認の回数、無ければ旧方式の1回確認） ====")
+        for r in sorted(dropped, key=lambda r: -r["interest"])[:10]:
+            print(f"・{r['c']['title'][:60]}（id {r['c']['id']}、面白さ{r['interest']}）— {primary_drop_text(r['c'])}")
+
+
 def run_url_checks(targets: list, cands: dict) -> dict:
     """一次資料のURLを確かめて候補に保存する（verify と check-urls の共通部分。1候補あたり最大 VERIFY_MAX_URLS、
     全体で2秒以上・同じホストには5秒以上の間隔）。primary_verified と、既存の url_ok・url_status の両方を更新する。"""
@@ -3156,7 +3340,7 @@ REPAIR_STOP_TERMS = {"発表", "開始", "提供", "研究", "開発", "公開",
                      "with", "from", "this", "that", "their", "about", "release", "news"}
 REPAIR_CAUTION = "資料の実在は確認。見出しの主張が書いてあるかは、台本前に資料で確かめる"
 REPAIR_METHOD_LABEL = {"site-crawl": "発表元サイトを辿って", "pool-official": "プールの公式記事から",
-                       "media-link": "報道記事のリンクを辿って"}
+                       "media-link": "報道記事のリンクを辿って", "locale-alt": "別の地域・言語の公式ページに差し替え"}
 
 
 def _reg_domain(host: str) -> str:
@@ -3800,6 +3984,7 @@ def cmd_list(top: int, check_urls: bool):
         print()
     rows = classify(load_candidates()["items"])
     _print_exclusions(rows)
+    _print_primary_issues(rows)
 
     picks, niche_extra = best3(rows)
     print(f"\n==== ベスト3の下書き（本命 面白さの順 → 答え合わせ候補、ジャンルと系列が重ならないように）: {len(picks)}件 ====")
@@ -4005,6 +4190,9 @@ def cmd_slack(note_path: str, record: bool = True):
             mark, label = {True: ("✅", "確認済み"), False: ("❌", "実在しない"), None: ("⚠️", "要確認")}[pv]
             ok_src = [x for x in c.get("primary_check") or [] if x.get("ok")]
             src = ok_src[0]["url"] if ok_src else (c.get("primary_sources") or [{}])[0].get("url", "")
+            if c.get("primary_conflict"):
+                label += "（確認が食い違い）"
+                repaired_note = "🔀 " + esc(c["primary_conflict"].get("reason", ""))
             if ok_src and ok_src[0].get("repaired"):      # 2026-10-15: repair で修復したURL
                 label += "（URLを自動で修復）"
                 repaired_note = f"🔧 {REPAIR_CAUTION}"
@@ -4098,6 +4286,17 @@ def cmd_slack(note_path: str, record: bool = True):
     if wait:
         blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": f"再評価待ち（大手の製品発表、{L2_MIN_TOPIC_AGE_DAYS}日後に答え合わせ候補へ）: "
                                                        + " ／ ".join(esc(r["c"]["title"][:28]) for r in wait)}]})
+    # 2026-11-12: 食い違い・ゲート落ちは理由つきで出す（無言で消さない）。件数の行（下）は従来どおり残す
+    cf_rows = [r for r in rows if r["c"].get("primary_conflict") and r["c"].get("status") == "available"][:3]
+    if cf_rows:
+        blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": (
+            "*🔀 一次資料の確認が食い違っている候補*（夜間と再確認で結果が違う。落とすかは編集長・ユーザーが判断）\n" + "\n".join(
+                f"・{esc(r['c']['title'][:40])}（面白さ{r['interest']}）{esc(r['c']['primary_conflict'].get('reason', ''))}" for r in cf_rows))[:2900]}]})
+    dr_rows = sorted(primary_gate_dropped(rows), key=lambda r: -r["interest"])[:5]
+    if dr_rows:
+        blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": (
+            "*❌ 一次資料の全URLが404でゲート落ち*（「試行n回」は再確認の回数。無ければ旧方式の1回確認）\n" + "\n".join(
+                f"・{esc(r['c']['title'][:40])}（面白さ{r['interest']}）{esc(primary_drop_text(r['c']))[:160]}" for r in dr_rows))[:2900]}]})
     n_false = sum(1 for r in rows if r["c"].get("primary_verified") is False)
     if n_false:
         n_tried = sum(1 for r in rows if r["c"].get("primary_verified") is False and r["c"].get("repair_tried"))
