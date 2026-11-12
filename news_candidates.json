@@ -923,7 +923,13 @@
       "decision_number": 2,
       "series_fit": 2,
       "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "interest_version": "2026-11-07",
+      "topic_pool_first": {
+        "date": "2026-11-12",
+        "title": "Runway’s Praxis-1 world action model for robotics is now available",
+        "id": "452d03a429",
+        "source": "The Robot Report"
+      }
     },
     {
       "title": "New tool lets users repair AI-generated 3D models, then fabricate them just the way they want",
@@ -46385,7 +46391,7 @@
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-12T08:58:11",
+      "primary_verified_at": "2026-11-13T08:02:05",
       "url_check": [
         {
           "url": "https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions",
@@ -46400,7 +46406,7 @@
       ],
       "url_ok": null,
       "url_status": "help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
-      "url_checked_at": "2026-11-12T08:58:11",
+      "url_checked_at": "2026-11-13T08:02:05",
       "buzz_history": [
         {
           "at": "2026-10-30T07:10:01",
@@ -46708,6 +46714,26 @@
       },
       "presented_on": [
         "2026-11-12"
+      ],
+      "primary_history": [
+        {
+          "at": "2026-11-13T08:02:05",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            },
+            {
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            }
+          ]
+        }
       ]
     },
     {
@@ -49376,12 +49402,16 @@
           "ok": true,
           "status": "HTTP 200「Smart reports, surveys, and po」",
           "page_title": "Smart reports, surveys, and pooled group budgets for Claude Enterprise | Claude by Anthropic",
+          "final_url": "https://claude.com/ja/resources/articles/smart-reports-surveys-pooled-budgets",
+          "redirects": [
+            "307 https://claude.com/ja/resources/articles/smart-reports-surveys-pooled-budgets"
+          ],
           "anchor_hit": true,
           "method": "http",
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-12T08:57:53",
+      "primary_verified_at": "2026-11-13T08:01:59",
       "url_check": [
         {
           "url": "https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets",
@@ -49391,7 +49421,7 @@
       ],
       "url_ok": true,
       "url_status": "claude.com: HTTP 200「Smart reports, surveys, and po」",
-      "url_checked_at": "2026-11-12T08:57:53",
+      "url_checked_at": "2026-11-13T08:01:59",
       "buzz_history": [
         {
           "at": "2026-11-01T05:43:46",
@@ -49678,7 +49708,21 @@
       "buzz_jp_measured": 4,
       "buzz_outlets_foreign": 15,
       "buzz_foreign_boost": false,
-      "buzz_query_en": "Claude Enterprise"
+      "buzz_query_en": "Claude Enterprise",
+      "primary_history": [
+        {
+          "at": "2026-11-13T08:01:59",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets",
+              "status": "HTTP 200「Smart reports, surveys, and po」",
+              "final_url": "https://claude.com/ja/resources/articles/smart-reports-surveys-pooled-budgets",
+              "ok": true
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "Meta Platforms、中国フーリエと人型ロボット開発——家庭用ロボット参入を拡大 執筆",
@@ -51383,7 +51427,7 @@
       "freshness": 5,
       "overall_score": 3.3,
       "scan_version": "2026-10-25-audience",
-      "status": "available",
+      "status": "shelved",
       "excluded_reason": "",
       "scored_at": "2026-11-02",
       "topic_first_date": "2026-10-30",
@@ -51699,7 +51743,9 @@
       "buzz_jp_measured": 5,
       "buzz_outlets_foreign": 10,
       "buzz_foreign_boost": false,
-      "buzz_query_en": "robots.txt OpenAI"
+      "buzz_query_en": "robots.txt OpenAI",
+      "shelved_on": "2026-11-13",
+      "shelved_reason": "下書きに2日提示（11-11・11-12）して選ばれなかった"
     },
     {
       "title": "「韓国人の糖類摂取量　アイスより市販キムチの方が多い」ソウル大学が発表",
@@ -54585,7 +54631,7 @@
         "novelty_line_primary": false
       },
       "buzz_error": "0件（検索語が合っていない可能性）",
-      "buzz_error_at": "2026-11-12T08:49:44"
+      "buzz_error_at": "2026-11-13T08:01:37"
     },
     {
       "title": "東北大とアイシンがSTT-MRAM搭載AIチップを開発、16nmプロセスでは世界初",
@@ -58887,7 +58933,7 @@
       "overall_score": 3.55,
       "scan_version": "2026-11-07-interest",
       "interest_version": "2026-11-07",
-      "status": "available",
+      "status": "shelved",
       "excluded_reason": "",
       "scored_at": "2026-11-10",
       "first_seen_at": "2026-11-10T09:53:04",
@@ -59035,7 +59081,9 @@
         "novelty_exception": false,
         "novelty_line": "",
         "novelty_line_primary": false
-      }
+      },
+      "shelved_on": "2026-11-13",
+      "shelved_reason": "下書きに2日提示（11-11・11-12）して選ばれなかった"
     },
     {
       "title": "ヒューマノイド「Figure 03」、キャンパスを歩く姿を公開――量産は1時間に1台、350台超に",
@@ -60168,21 +60216,23 @@
       "overall_score": 3.25,
       "scan_version": "2026-11-07-interest",
       "interest_version": "2026-11-07",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-11-11",
       "first_seen_at": "2026-11-11T07:34:22",
       "presented_on": [],
       "topic_first_date": "2026-11-06",
       "topic_first_source": "候補 8592648053 のannounced_on（AIが18年間未解決だった数学の難問を証明、量子コンピュータ）",
-      "topic_series": "8592648053",
+      "topic_series": "ddf94a746f",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-11-07",
         "title": "AIが18年間未解決だった数学の難問を証明、量子コンピュータの「高速化の限界」が明らかに",
         "id": "8592648053",
         "source": "Googleニュース（AI 数学 難問 解決）／XenoSpectrum"
-      }
+      },
+      "merged_into": "ddf94a746f",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "Anthropicの非公開AIモデルを使って18年間未解決だった量子コンピューターの難問が証明される",
@@ -60641,7 +60691,7 @@
       "overall_score": 3.25,
       "scan_version": "2026-11-07-interest",
       "interest_version": "2026-11-07",
-      "status": "available",
+      "status": "shelved",
       "excluded_reason": "",
       "scored_at": "2026-11-11",
       "first_seen_at": "2026-11-11T07:38:44",
@@ -60801,7 +60851,9 @@
       "buzz_jp_measured": 5,
       "buzz_outlets_foreign": 28,
       "buzz_foreign_boost": false,
-      "buzz_query_en": "Gemini Notebook"
+      "buzz_query_en": "Gemini Notebook",
+      "shelved_on": "2026-11-13",
+      "shelved_reason": "下書きに2日提示（11-11・11-12）して選ばれなかった"
     },
     {
       "title": "Isaac GR00T | ヒューマノイド ロボット開発プラットフォーム",
@@ -61802,81 +61854,15 @@
         },
         {
           "url": "https://ring.com/products/drone-cam",
-          "ok": false,
-          "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）（再確認5回とも404・開けず）",
-          "final_url": "https://ring.com/jp/ja/products/drone-cam",
-          "redirects": [
-            "302 https://ring.com/jp/ja/products/drone-cam"
-          ],
+          "ok": true,
+          "status": "HTTP 200「Drone Cam | Ring」",
+          "page_title": "Drone Cam | Ring",
+          "anchor_hit": true,
           "method": "http",
-          "attempts": [
-            {
-              "url": "https://ring.com/products/drone-cam",
-              "via": "初回",
-              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）",
-              "final_url": "https://ring.com/jp/ja/products/drone-cam",
-              "redirects": [
-                "302 https://ring.com/jp/ja/products/drone-cam"
-              ],
-              "at": "2026-11-12T15:32:45"
-            },
-            {
-              "url": "https://ring.com/products/drone-cam",
-              "via": "英語のAccept-Languageで再試行",
-              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）",
-              "final_url": "https://ring.com/jp/ja/products/drone-cam",
-              "redirects": [
-                "302 https://ring.com/jp/ja/products/drone-cam"
-              ],
-              "at": "2026-11-12T15:32:50"
-            },
-            {
-              "url": "https://ring.com/products/drone-cam",
-              "via": "20秒おいて再試行",
-              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）",
-              "final_url": "https://ring.com/jp/ja/products/drone-cam",
-              "redirects": [
-                "302 https://ring.com/jp/ja/products/drone-cam"
-              ],
-              "at": "2026-11-12T15:33:12"
-            },
-            {
-              "url": "https://ring.com/us/en/products/drone-cam",
-              "via": "別の地域・言語のURL",
-              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）",
-              "final_url": "https://ring.com/jp/ja/products/drone-cam",
-              "redirects": [
-                "301 https://ring.com/products/drone-cam",
-                "302 https://ring.com/jp/ja/products/drone-cam"
-              ],
-              "at": "2026-11-12T15:33:18"
-            },
-            {
-              "url": "https://ring.com/en-us/products/drone-cam",
-              "via": "別の地域・言語のURL",
-              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）",
-              "final_url": "https://ring.com/jp/ja/products/drone-cam",
-              "redirects": [
-                "302 https://ring.com/jp/ja/products/drone-cam"
-              ],
-              "at": "2026-11-12T15:33:22"
-            },
-            {
-              "url": "https://ring.com/en/products/drone-cam",
-              "via": "別の地域・言語のURL",
-              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）",
-              "final_url": "https://ring.com/jp/ja/products/drone-cam",
-              "redirects": [
-                "301 https://ring.com/products/drone-cam",
-                "302 https://ring.com/jp/ja/products/drone-cam"
-              ],
-              "at": "2026-11-12T15:33:28"
-            }
-          ],
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-12T15:33:28",
+      "primary_verified_at": "2026-11-13T08:01:52",
       "url_check": [
         {
           "url": "https://www.aboutamazon.com/news/devices/ring-drone-cam-rover-cam-security-robot",
@@ -61885,13 +61871,13 @@
         },
         {
           "url": "https://ring.com/products/drone-cam",
-          "ok": false,
-          "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）（再確認5回とも404・開けず）"
+          "ok": true,
+          "status": "HTTP 200「Drone Cam | Ring」"
         }
       ],
-      "url_ok": false,
-      "url_status": "aboutamazon.com: HTTP 200「Ring announces Ring Robotics, 」 ／ ring.com: HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）（再確認5回とも404・開けず）",
-      "url_checked_at": "2026-11-12T15:33:28",
+      "url_ok": true,
+      "url_status": "aboutamazon.com: HTTP 200「Ring announces Ring Robotics, 」 ／ ring.com: HTTP 200「Drone Cam | Ring」",
+      "url_checked_at": "2026-11-13T08:01:52",
       "prior_art": {
         "version": "2026-11-11",
         "checked_at": "2026-11-12T08:49:31",
@@ -61972,8 +61958,18 @@
           "at": "2026-11-12T08:51:30",
           "verdict": true,
           "urls": [
-            {"url": "https://www.aboutamazon.com/news/devices/ring-robotics-drone-cam-rover-cam", "status": "HTTP 404", "final_url": "", "ok": false},
-            {"url": "https://ring.com/products/drone-cam", "status": "HTTP 200「Drone Cam | Ring」（夜間 GitHub Actions・米国）", "final_url": "", "ok": true}
+            {
+              "url": "https://www.aboutamazon.com/news/devices/ring-robotics-drone-cam-rover-cam",
+              "status": "HTTP 404",
+              "final_url": "",
+              "ok": false
+            },
+            {
+              "url": "https://ring.com/products/drone-cam",
+              "status": "HTTP 200「Drone Cam | Ring」（夜間 GitHub Actions・米国）",
+              "final_url": "",
+              "ok": true
+            }
           ],
           "note": "handoff 007 で git 履歴（b3ac7b3）から復元して記録"
         },
@@ -61981,8 +61977,18 @@
           "at": "2026-11-12T08:57:38",
           "verdict": false,
           "urls": [
-            {"url": "https://www.aboutamazon.com/news/devices/ring-robotics-drone-cam-rover-cam", "status": "HTTP 404", "final_url": "", "ok": false},
-            {"url": "https://ring.com/products/drone-cam", "status": "HTTP 404（/jp/ja/ へ転送され404と推定。iMac・日本）", "final_url": "https://ring.com/jp/ja/products/drone-cam", "ok": false}
+            {
+              "url": "https://www.aboutamazon.com/news/devices/ring-robotics-drone-cam-rover-cam",
+              "status": "HTTP 404",
+              "final_url": "",
+              "ok": false
+            },
+            {
+              "url": "https://ring.com/products/drone-cam",
+              "status": "HTTP 404（/jp/ja/ へ転送され404と推定。iMac・日本）",
+              "final_url": "https://ring.com/jp/ja/products/drone-cam",
+              "ok": false
+            }
           ],
           "note": "handoff 007 で記録。夜間（08:51）と食い違った確認。この時は無言でゲート落ち"
         },
@@ -62019,6 +62025,24 @@
               "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）（再確認5回とも404・開けず）",
               "final_url": "https://ring.com/jp/ja/products/drone-cam",
               "ok": false
+            }
+          ]
+        },
+        {
+          "at": "2026-11-13T08:01:52",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://www.aboutamazon.com/news/devices/ring-drone-cam-rover-cam-security-robot",
+              "status": "HTTP 200「Ring announces Ring Robotics, 」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://ring.com/products/drone-cam",
+              "status": "HTTP 200「Drone Cam | Ring」",
+              "final_url": "",
+              "ok": true
             }
           ]
         }
@@ -62822,6 +62846,1329 @@
         "title": "Tauの人型ロボットが100ドルで家を掃除、ただし操縦するのは遠隔の人間",
         "id": "2ea5ab60fd",
         "source": "Googleニュース（家庭用ロボット）／Martin Cid Magazine"
+      }
+    },
+    {
+      "title": "OpenAIのヤン＝ミルズ理論の証明を委員会が確認、質量ギャップは未解決",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQaWlPRFBnQURyUVV1TFZjVHlUeTJBeHNuQ0dWX0hYaWVzQWZaVENFM2JPRGNXLWJqUjRZOVR2NGpnNGdDUFJSNTBoc1UwMWI3OTJ0YkRWemM5ZG9MWXVncmlWeFo2ekFaRzVMUG9KS21YbmlNbW5jYnBza21FaHBPSHNicldXTkpVdG42enlR?oc=5",
+      "published": "2026-11-12",
+      "source": "Googleニュース（AI 未解決問題 証明）／Pasquale Pillitteri",
+      "source_kind": "media",
+      "outlet": "Pasquale Pillitteri",
+      "outlet_host": "pasqualepillitteri.it",
+      "genre_hint": "ai",
+      "summary": "OpenAIのヤン＝ミルズ理論の証明を委員会が確認、質量ギャップは未解決（Pasquale Pillitteri）",
+      "series_query": "ai_scientist_watch",
+      "id": "878d47e01c",
+      "sources": [
+        "Pasquale Pillitteri"
+      ],
+      "primary_sources": [
+        {
+          "kind": "tech_report",
+          "url": "https://github.com/yang-mills-group/YM/blob/main/docs/assessment-1.pdf",
+          "what_it_states": "2026年10月28日にOpenAIが提出したLeanコードを検証し、任意の単純コンパクトゲージ群において4次元Wilson格子ゲージ理論のスケーリング極限としてWightman公理を満たす純粋ヤン＝ミルズ理論が存在することを機械検証で確認した。一方、無限体積極限の一意性は証明されておらず、ミレニアム懸賞問題の必須条件である質量ギャップ（mass gap）は未証明・未解決である。"
+        },
+        {
+          "kind": "official_blog",
+          "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+          "what_it_states": "OpenAIのAIモデルが2026年9月9日に純粋ヤン＝ミルズ理論の存在証明を自然言語で生成し、10月16日にLeanによる形式検証コードを完成させた。ノーベル物理学賞受賞者のデービッド・グロス氏ら外部の理論物理学専門家グループに資料を引き渡し、査読と検証を委ねた。"
+        }
+      ],
+      "announced_on": "2026-11-09",
+      "headline_claim": "OpenAIのAIが物理学の未解決難問であるヤン＝ミルズ理論の存在証明を導き、ノーベル賞学者らの検証委員会がその正当性を確認した。",
+      "actual_content": "デービッド・グロス氏率いる5人の専門家委員会が公開した評価文書によると、OpenAIが生成したLeanコードは『4次元の格子ゲージ理論の連続極限として純粋ヤン＝ミルズ理論が数学的に構成できること』を論理的に過不足なく証明していると確認された。しかし、クレイ数学研究所の100万ドル懸賞問題の核心である『正の質量ギャップの証明』には手をつけておらず、空間を無限大にした極限の一意性も未解決のままである。さらに委員会は機械検算に合格したことを確認したにとどまり、人間がその証明の物理的全体像を完全に理解できたわけではないと明記している。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "promise": 2,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 1,
+      "work_relevance": 1,
+      "audience_fit": 2,
+      "tangible": 1,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": null,
+      "entry_question": "AIが物理の100万ドル未解決問題を解いたって本当？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "pending",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "100万ドルのミレニアム問題の半分である『質量ギャップ（なぜ素粒子が質量を持つのか）』は未解決のままで、AI自身が提出した数万行のコードも人間が意味を完全に理解して検証したわけではない。",
+      "hope_material": "物理学者が70年間にわたり数学的な厳密性を与えられなかった基本方程式の『存在』を、AIが形式証明言語Leanで矛盾なく組み立て、ノーベル賞学者の検証を通過させた。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "ヤン＝ミルズ OpenAI",
+      "jp_title_anchor": [
+        "ヤン＝ミルズ",
+        "ヤン・ミルズ",
+        "OpenAI"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.35,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-13",
+      "first_seen_at": "2026-11-13T07:53:09",
+      "presented_on": [],
+      "topic_first_date": "2026-11-09",
+      "topic_first_source": "候補 878d47e01c のannounced_on（OpenAIのヤン＝ミルズ理論の証明を委員会が確認、質量ギャ）",
+      "topic_series": "878d47e01c",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-12",
+        "title": "OpenAIのヤン＝ミルズ理論の証明を委員会が確認、質量ギャップは未解決",
+        "id": "878d47e01c",
+        "source": "Googleニュース（AI 未解決問題 証明）／Pasquale Pillitteri"
+      }
+    },
+    {
+      "title": "AI confirms a long-suspected limit on quantum computers’ advantages",
+      "url": "https://www.newscientist.com/article/2598418-ai-confirms-a-long-suspected-limit-on-quantum-computers-advantages/?utm_campaign=RSS|NSNS&utm_content=home&utm_medium=RSS&utm_source=NSNS",
+      "published": "2026-11-12",
+      "source": "New Scientist",
+      "source_kind": "media",
+      "summary": "AI-powered proof has rigorously proved that using quantum computers would not have huge advantages for a whole class of mathematical problems, confirming a vastly influential conjecture.",
+      "id": "ddf94a746f",
+      "sources": [
+        "New Scientist"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/abs/2611.09773",
+          "what_it_states": "論文『A proof of the Aaronson-Ambainis conjecture』。有界な低次多項式には影響度の高い変数が存在することを厳密に証明し、yes/no判定問題において量子アルゴリズムのクエリ数が古典アルゴリズムに対し指数関数的優位性を持たない限界（多項式クエリでシミュレート可能）を数式で示した"
+        },
+        {
+          "kind": "official_blog",
+          "url": "https://psi.inc/research/aaronson-ambainis",
+          "what_it_states": "Physical Superintelligence（PSI）の公式発表。Anthropicの未公開モデルを組み込んだ独自AI研究システムを実行し、開始3日目で2008年提唱のアーロンソン＝アンバイニス予想の完全な証明を発見し、形式検証ツールLeanで検証されたことを報告"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://github.com/physical-superintelligence/aaronson-ambainis",
+          "what_it_states": "Lean 4（v4.33.0）による証明コードと論文PDFを公開。Mathlibのみに依存し、外部公理を用いずに命題が機械検証済みであることを提示"
+        }
+      ],
+      "announced_on": "2026-11-06",
+      "headline_claim": "AIが数学の難問を厳密に解き明かし、量子コンピュータの優位性には限界があるとする長年の予想を確定させた",
+      "actual_content": "AI研究スタートアップのPhysical Superintelligence（PSI）は、Anthropicの未公開モデルを用いたシステムが、2008年に提唱された未解決問題「アーロンソン＝アンバイニス予想」を3日間の稼働で証明したと発表した。証明は形式検証ソフト「Lean 4」により全ステップの正しさが機械検証されている。証明された内容は、規則性のないランダムな入力に対する判定問題において、量子コンピュータが古典コンピュータに対して入力データ参照回数（クエリ数）で指数関数的な高速化を得られないという理論的限界であり、問題に構造がある場合の量子加速（ショアのアルゴリズム等）や計算時間そのものを否定するものではない。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 1,
+      "work_relevance": 1,
+      "audience_fit": 2,
+      "tangible": 1,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": null,
+      "entry_question": "量子コンピュータの限界をAIが証明したって本当？",
+      "surprise_line": "技術好きの人が、AIが18年解けなかった量子の数学難問を3日で解いたことに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "証明されたのは『構造のないランダムな問題でのデータ参照回数の限界』であり、量子コンピュータが役に立たないと証明されたわけでも、既知の実用的な量子加速が否定されたわけでもない点。また、純粋数学・計算量理論の成果であり、一般のビジネスや暮らしに直接影響する話ではない点。",
+      "hope_material": "未公開のAIモデルがわずか3日で18年間未解決だった難問の証明を組み立て、形式検証ソフトLeanの厳密なチェックをクリアしたという、AIの科学・数学推論能力の具体的な実証。",
+      "investment_related": false,
+      "deja_vu_note": "kl043: AGIは2027年に来る？「来た」と言える条件を一次資料で確認",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "アーロンソン アンバイニス",
+      "jp_title_anchor": [
+        "アーロンソン",
+        "アンバイニス",
+        "Physical Superintelligence"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.35,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-13",
+      "first_seen_at": "2026-11-11T07:34:22",
+      "presented_on": [],
+      "topic_first_date": "2026-11-06",
+      "topic_first_source": "候補 8592648053 のannounced_on（AIが18年間未解決だった数学の難問を証明、量子コンピュータ）",
+      "topic_series": "ddf94a746f",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-07",
+        "title": "AIが18年間未解決だった数学の難問を証明、量子コンピュータの「高速化の限界」が明らかに",
+        "id": "8592648053",
+        "source": "Googleニュース（AI 数学 難問 解決）／XenoSpectrum"
+      },
+      "dup_ids": [
+        "8592648053",
+        "37f54c0152"
+      ]
+    },
+    {
+      "title": "韓国のKakao Mobility、エヌビディアと提携しレベル4ロボタクシー基盤を構築 起亜のPBVから開始",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5Ld1VuR0pyY2pwcUdPaHpZOU1Jb18xVGg3UlhBVUZjOXZWZTdVNTFjY2pOc2U1X0N5UWRmY0JNb3dKTXAyVlVySHdFZ3N5elNnRmNBMXJwWmwxQ1k0cE9rUDMxZUcxV21KTE5LajlMT0hYLVBw?oc=5",
+      "published": "2026-11-09",
+      "source": "Googleニュース（自動運転 レベル4 開始）／BigGo ファイナンス",
+      "source_kind": "media",
+      "outlet": "BigGo ファイナンス",
+      "outlet_host": "finance.biggo.jp",
+      "genre_hint": "life_tech",
+      "summary": "韓国のKakao Mobility、エヌビディアと提携しレベル4ロボタクシー基盤を構築 起亜のPBVから開始（BigGo ファイナンス）",
+      "series_query": "autonomy_logistics_watch",
+      "id": "db834b6ad8",
+      "sources": [
+        "BigGo ファイナンス"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.kakaomobility.com/newsroom/detail/%EC%B9%B4%EC%B9%B4%EC%98%A4%EB%AA%A8%EB%B9%8C%EB%A6%AC%ED%8B%B0-%EC%97%94%EB%B9%84%EB%94%94%EC%95%84%EC%99%80-%EB%A0%88%EB%B2%A84-%EC%9E%90%EC%9C%A8%EC%A3%BC%ED%96%89-%EA%B8%B0%EC%88%A0%ED%98%91%EB%A0%A5-MOU-%EC%B2%B4%EA%B2%B0-411",
+          "what_it_states": "Kakao Mobilityの自社製E2E自動運転AIモデルと、NVIDIA DRIVE AGX Thorを2基搭載した自動運転コンピューティングユニット（ADCU）、Hyperion参照アーキテクチャ、Halos安全システムを組み合わせ、起亜のPBV（PV5等）へ統合する技術協力覚書（MOU）を締結。商用展開の時期、台数、投資規模は公表されていない"
+        }
+      ],
+      "announced_on": "2026-11-09",
+      "headline_claim": "韓国のKakao Mobilityがエヌビディアと提携し、起亜のPBVを用いたレベル4自動運転ロボタクシー基盤の構築を開始したと報じられている。",
+      "actual_content": "発表された内容は技術協力に関する覚書（MOU）の締結であり、KakaoのE2E自動運転AIモデル向けにNVIDIAのDRIVE AGX Thorチップ2基を搭載した計算ユニットやHyperionアーキテクチャ、Halos安全システムを採用して起亜のPBVへの統合を進める方針を示したもの。商用ロボタクシーサービスの開始時期や走行実証のスケジュール、車両の導入台数や投資額などは一次資料に記載されていない。",
+      "buzz_jp_est": 2,
+      "verifiability": 4,
+      "hype_gap": 3,
+      "promise": 2,
+      "debate": 2,
+      "wonder": 2,
+      "life_relevance": 1,
+      "work_relevance": 2,
+      "audience_fit": 2,
+      "tangible": 2,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "mobility",
+      "entry_question": "韓国でエヌビディア搭載の無人タクシーが走り出すって本当？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "発表されたのは法的拘束力のない技術協力の覚書（MOU）にとどまり、実車による走行試験の開始時期や商業展開のスケジュール、配備台数は一切明らかにされていない点。",
+      "hope_material": "認知から判断まで一元処理するE2E自動運転AIに対して、DRIVE AGX Thorプロセッサ2基と機能安全システムHalosを組み合わせる起亜PBV向けの具体的な実装構成が示された点。",
+      "investment_related": false,
+      "deja_vu_note": "kl055（無人物流・自動運転）と自動運転のテーマで一部重なるが、本件は海外企業の協業MOU発表",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "カカオモビリティ エヌビディア",
+      "jp_title_anchor": [
+        "カカオモビリティ",
+        "エヌビディア",
+        "Kakao Mobility"
+      ],
+      "announcement_type": "other",
+      "freshness": 5,
+      "overall_score": 2.9,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-13",
+      "first_seen_at": "2026-11-13T07:54:25",
+      "presented_on": [],
+      "topic_first_date": "2026-11-09",
+      "topic_first_source": "候補 db834b6ad8 のannounced_on（韓国のKakao Mobility、エヌビディアと提携しレベ）",
+      "topic_series": "db834b6ad8",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-09",
+        "title": "韓国のKakao Mobility、エヌビディアと提携しレベル4ロボタクシー基盤を構築 起亜のPBVから開始",
+        "id": "db834b6ad8",
+        "source": "Googleニュース（自動運転 レベル4 開始）／BigGo ファイナンス"
+      }
+    },
+    {
+      "title": "シェフラーが中国・太倉にライトハウス工場を開設 ヒューマノイドがヒューマノイドの主要部品を組み立て",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9JWU5SYTdUSUFQTXdDT0N4dmlZS3VQendpb043d1FRRWJoRDdYVGdwVTIxUUU1VXE4SUZkM242bDVKXzN6NkFOLVdOMGJUMkt5c0ViRQ?oc=5",
+      "published": "2026-11-12",
+      "source": "Googleニュース（ヒューマノイド）／note",
+      "source_kind": "media",
+      "outlet": "note",
+      "outlet_host": "note.com",
+      "genre_hint": "humanoid",
+      "summary": "シェフラーが中国・太倉にライトハウス工場を開設 ヒューマノイドがヒューマノイドの主要部品を組み立て（note）",
+      "id": "ff113178f4",
+      "sources": [
+        "note"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.schaeffler.com/en/news_media/press_releases/press_releases_detail.jsp?id=88235264",
+          "what_it_states": "中国・江蘇省太倉に延床面積約7,500平方メートルのヒューマノイド向けライトハウス工場を開設。5つのステーションで6台のヒューマノイドが部品の仕分け、結合、検査、梱包を担当し、次世代ヒューマノイド向けの関節モジュール（アクチュエーター）を組み立てる。同分野の受注高は約4億ユーロに達したと公表。"
+        }
+      ],
+      "announced_on": "2026-10-20",
+      "headline_claim": "ヒューマノイドロボットが仲間のヒューマノイドの関節部品を自ら組み立てる最先端工場が本格稼働した。",
+      "actual_content": "シェフラーが開設した約7,500平方メートルの工場では、5つのステーションに計6台のヒューマノイドが配置され、部品の仕分け、圧入結合、検査、梱包を行って関節モジュールを組み立てている。工場全体が自律稼働しているわけではなく、デジタルツインと連動した訓練・データ収集センターを兼ねた実証的な量産ラインである。同社はヒューマノイド関連部品で約4億ユーロの受注を確保したと発表しているが、ロボット自身のタクトタイムや不良率といった具体的な生産効率の数値は公表されていない。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 1,
+      "work_relevance": 2,
+      "audience_fit": 3,
+      "tangible": 5,
+      "decision_number": 2,
+      "series_fit": 4,
+      "concern_id": "work_ai",
+      "entry_question": "ヒューマノイドが自分自身の部品を組み立てる工場、本当に実用化された？",
+      "surprise_line": "ものづくりの人が、人型ロボが自らの関節部品を組み立てる光景に驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「ロボットがロボットを作る」と聞くとSFのようだが、配置されているのはわずか6台で、作業スピードや歩留まりの数字は非公開。固定型の産業用ロボットアームで自動化した方がはるかに速く確実な工程も多く、実用生産というよりは実証データ収集の段階にとどまる。",
+      "hope_material": "世界的な駆動部品大手のシェフラーが約4億ユーロの受注を背景に量産ラインを立ち上げたことで、ヒューマノイド向け関節アクチュエーターが標準部品として市場に出回り、ロボット製造コストが下がる土台が整いつつある。",
+      "investment_related": false,
+      "deja_vu_note": "kl051（Optimus生産開始）やkl053（AGIBOTコンビニ配備）に続くヒューマノイドの実現場検証だが、今回はロボット部品の製造現場が舞台。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "シェフラー ライトハウス工場",
+      "jp_title_anchor": [
+        "シェフラー",
+        "太倉",
+        "ライトハウス工場"
+      ],
+      "announcement_type": "other",
+      "freshness": 2,
+      "overall_score": 2.5,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-13",
+      "first_seen_at": "2026-11-13T07:54:59",
+      "presented_on": [],
+      "topic_first_date": "2026-05-13",
+      "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
+      "topic_series": "39b45d161a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-11",
+        "title": "世界初のバイオニック・ヒューマノイドロボットのニュースキャスターを公開",
+        "id": "dc67a45c82",
+        "source": "Googleニュース（ヒューマノイド）／共同通信PRワイヤー"
+      }
+    },
+    {
+      "title": "パナソニックが250人体制で挑む「フィジカルAI」　職人の暗黙知をAI化、外販も視野に",
+      "url": "https://www.itmedia.co.jp/business/articles/2611/12/news037.html",
+      "published": "2026-11-12",
+      "source": "ITmedia AI+",
+      "source_kind": "media",
+      "summary": "パナソニックホールディングス（HD）は11月11日、AIとロボットを組み合わせた「フィジカルAI」の研究開発を強化する方針を明らかにした。約250人体制で開発を進め、工場や物流など自社が強みを持つ領域で3～5年先を見据えて事業成果につなげる。",
+      "id": "0c7427552c",
+      "sources": [
+        "ITmedia AI+"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://news.panasonic.com/jp/press/jn261111-2",
+          "what_it_states": "2026年10月に新設した『AI・ロボティクス研究開発本部』を中心に約250人体制（直接の研究開発は約200人）を構築。熟練者の力加減や摩擦などの知見をAIに学習させ、自社工場等での検証を経て3〜5年先を見据えて事業成果や外販を目指す技術戦略方針を発表"
+        }
+      ],
+      "announced_on": "2026-11-11",
+      "headline_claim": "パナソニックが250人体制でフィジカルAI開発を強化し、職人の暗黙知をAI化して3〜5年後に外販も目指す方針を明らかにした。",
+      "actual_content": "パナソニックHDが年次技術説明会（Technology Day）で発表した技術戦略方針である。2026年10月新設の組織に約250人（直接開発約200人）を集約し、3次元空間認識や触覚を用いた精密制御の研究を進める。指先の触覚に即応する独自制御AI（T-Rex）で12種類の実機作業成功率を従来の35％から65％へ高めた国際共同研究などの成果を基盤とし、自社工場での実証を経て3〜5年後の事業化・外販を視野に入れる段階である。具体的な外販製品や価格が決まったわけではない。",
+      "buzz_jp_est": 3,
+      "verifiability": 4,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 4,
+      "wonder": 2,
+      "life_relevance": 2,
+      "work_relevance": 3,
+      "audience_fit": 3,
+      "tangible": 3,
+      "decision_number": 2,
+      "series_fit": 3,
+      "concern_id": "work_ai",
+      "entry_question": "パナソニックの『職人ワザをAI化するロボ』は、街の現場にいつ来る？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "『職人ワザのAI化』といっても完成品が出たわけではなく、10月に発足した250人体制の部署が『3〜5年先を見据えて自社工場で検証する』という方針発表にとどまります。先行研究の触覚制御でも作業成功率は65％（約3回に1回は失敗）で、町工場や一般企業が導入できる製品になるには時間がかかります。",
+      "hope_material": "視覚と言語だけでなく指先の触覚（力加減）をAI制御に組み込み、鍵開けや電球取り付けなど12種類の実機タスクで平均成功率を35％から65％へ引き上げた研究成果があり、日本の製造現場が持つ暗黙知をデータ化する現実的な足がかりを示しています。",
+      "investment_related": false,
+      "deja_vu_note": "kl040（安川電機のヒューマノイド開発計画）やkl049（JR西日本のロボ重機）と似た、日本大手メーカーによる現場向けロボット技術のロードマップ発表。",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "パナソニック フィジカルAI",
+      "jp_title_anchor": [
+        "フィジカルAI",
+        "パナソニック"
+      ],
+      "announcement_type": "policy",
+      "freshness": 5,
+      "overall_score": 3.5,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-13",
+      "first_seen_at": "2026-11-13T07:55:39",
+      "presented_on": [],
+      "topic_first_date": "2026-11-11",
+      "topic_first_source": "候補 0c7427552c のannounced_on（パナソニックが250人体制で挑む「フィジカルAI」　職人の暗）",
+      "topic_series": "0c7427552c",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-12",
+        "title": "パナソニックが250人体制で挑む「フィジカルAI」　職人の暗黙知をAI化、外販も視野に",
+        "id": "0c7427552c",
+        "source": "ITmedia AI+"
+      }
+    },
+    {
+      "title": "ビートルートの硝酸塩は効くのか ― 80研究メタ分析が示す「小さく、条件つき」",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiO0FVX3lxTE1zOXVCVW1DQjBETDVMYXMyczNldnNWdmpiZ0FMcGRjdFNqR1NRNGdDUTBLZHJ5X0haTm9R?oc=5",
+      "published": "2026-11-12",
+      "source": "Googleニュース（研究 食事 健康 効果）／Howl.Link",
+      "source_kind": "media",
+      "outlet": "Howl.Link",
+      "outlet_host": "t.co",
+      "genre_hint": "food_health",
+      "summary": "ビートルートの硝酸塩は効くのか ― 80研究メタ分析が示す「小さく、条件つき」（Howl.Link）",
+      "id": "a7108f43f4",
+      "sources": [
+        "Howl.Link"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1249/MSS.0000000000002363",
+          "what_it_states": "若年健康成人を対象とした80件のランダム化クロスオーバー対照試験をメタ分析した結果、硝酸塩補給による運動パフォーマンス向上効果（Cohen's d）は0.174（95% CI: 0.120〜0.229, P<0.001）と客観的に「小さい（small）」値にとどまった。さらに女性のみの研究（6件、d=0.116, P=0.347）や有酸素能力の高い持久系アスリート（VO2max≧65 mL/kg/min、26件、d=0.021, P=0.745）では有意な効果がみられず、効果が確認されたのはレクリエーションレベルで運動する健康な一般男性にほぼ限られていた。"
+        }
+      ],
+      "announced_on": "2020-04-22",
+      "headline_claim": "ビートルートに含まれる硝酸塩を摂取すると運動パフォーマンスが向上するのか、80研究のメタ分析で効果は小さく条件つきであることが判明した。",
+      "actual_content": "2033件の文献から選ばれた80件のランダム化クロスオーバー・プラセボ対照試験を統合したところ、運動能力の改善効果は効果量d=0.174と統計的に有意ではあるものの客観的にはごくわずかだった。サブグループ解析では、女性のみを対象とした研究や日頃から鍛え上げられた持久力アスリート（VO2max 65以上）では有意な向上が確認されなかった。効果が確認できたのは適度に運動習慣のある健康な若い男性が中心で、硝酸塩が一酸化窒素へ変換される時間を確保するため運動の2時間以上前に摂取する必要があるなど、条件がかなり限定されている。",
+      "buzz_jp_est": 1,
+      "verifiability": 5,
+      "hype_gap": 2,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 3,
+      "work_relevance": 1,
+      "audience_fit": 2,
+      "tangible": 2,
+      "decision_number": 2,
+      "series_fit": 1,
+      "concern_id": "bone_muscle",
+      "entry_question": "ビーツジュースを飲むと運動が劇的に楽になる、は本当？",
+      "surprise_line": "運動好きの人が、ビーツの効果は一流アスリートほど出ないと知って驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "80研究を統合した効果量はわずか0.174と小さく、女性や鍛えられた持久系アスリートでは有意差すら出ていません。「飲むだけで運動能力が劇的アップ」というサプリの謳い文句をそのまま信じるのは無理があります。",
+      "hope_material": "週末にジョギングやスポーツを楽しむ一般男性であれば、運動の2時間以上前に摂取することでわずかな持久力の底上げが期待できる可能性は示されています。",
+      "investment_related": false,
+      "deja_vu_note": "kl039（オリーブ油と血糖値）など食品の健康・機能性効果を検証する回と近いトーン",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "ビートルート 硝酸塩 メタ分析",
+      "jp_title_anchor": [
+        "ビートルート",
+        "硝酸塩",
+        "ビーツ"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.05,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-13",
+      "first_seen_at": "2026-11-13T07:56:21",
+      "presented_on": [],
+      "topic_first_date": "2020-04-22",
+      "topic_first_source": "候補 a7108f43f4 のannounced_on（ビートルートの硝酸塩は効くのか ― 80研究メタ分析が示す「）",
+      "topic_series": "a7108f43f4",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-12",
+        "title": "ビートルートの硝酸塩は効くのか ― 80研究メタ分析が示す「小さく、条件つき」",
+        "id": "a7108f43f4",
+        "source": "Googleニュース（研究 食事 健康 効果）／Howl.Link"
+      }
+    },
+    {
+      "title": "Google DeepMind、「AlphaGenome 2」発表　細胞の種類ごとにDNA変異の影響を予測するAI",
+      "url": "https://www.itmedia.co.jp/news/article/2611/12/2000003132/",
+      "published": "2026-11-12",
+      "source": "ITmedia AI+",
+      "source_kind": "media",
+      "summary": "Google DeepMindは、DNA配列が特定の細胞種に与える影響を予測する次世代AIモデル「AlphaGenome 2」を発表した。1億超の細胞データで学習し、細胞の種類や状態を条件指定して予測できる。疾患に関わる遺伝子変異の特定精度を前モデルから大幅に向上させており、非営利目的ならAPI経由で利用できる。",
+      "id": "8a30428b8f",
+      "sources": [
+        "ITmedia AI+"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+          "what_it_states": "ヒトおよびマウスの68組織・1億700万個以上の単一細胞プロファイルで学習。免疫細胞ベンチマーク（TenK10K）において原因遺伝子変異の特定率が従来の16%から30%へ向上し、遺伝子発現の増減方向の特定率は23%から43%に向上。数十個の細胞データがあれば未学習の細胞状態でも再学習なしで変異影響を予測可能。非営利研究向けにAPIを無料提供"
+        }
+      ],
+      "announced_on": "2026-11-11",
+      "headline_claim": "Google DeepMindが「AlphaGenome 2」を発表し、細胞の種類や状態ごとにDNA変異の影響を高精度に予測可能になったと報じられている。",
+      "actual_content": "AlphaGenome 2は、組織全体の平均値ではなく特定の細胞種や活性化状態に条件付けして、DNA配列変異が遺伝子制御に与える影響を単一細胞レベルで予測する基盤モデルである。免疫細胞ベンチマーク（TenK10K）での原因変異特定率は前モデルの16%から30%へと倍増したものの、依然として7割は見落とす水準にとどまる。臨床診断用ではなく研究室での実験候補絞り込みを支援するツールとして位置づけられており、非営利研究者向けにAPI経由で提供されている。",
+      "buzz_jp_est": 2,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 1,
+      "audience_fit": 2,
+      "tangible": 1,
+      "decision_number": 2,
+      "series_fit": 1,
+      "concern_id": "cancer",
+      "entry_question": "AIでDNA変異の影響がわかるなら、病気はすぐ治るようになる？",
+      "surprise_line": "18か月かかった遺伝子変異の解析実験をAIが30分で再現したことに驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "前作から倍増したとはいえ原因変異の特定率は30%にとどまり、7割は見逃す水準であるため、実験室での泥臭い検証を丸ごと不要にするものではない点。",
+      "hope_material": "1億700万個超の単一細胞プロファイルで学習しており、わずか数十個の細胞データがあれば新しい細胞状態でも再学習なしで変異影響を予測できる点。",
+      "investment_related": false,
+      "deja_vu_note": "kl054: AI創薬、AIを何万も動かせば薬は何十倍早くできる？（11月時点）",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "AlphaGenome DeepMind",
+      "jp_title_anchor": [
+        "AlphaGenome"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.35,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-13",
+      "first_seen_at": "2026-11-13T07:56:49",
+      "presented_on": [],
+      "topic_first_date": "2026-11-11",
+      "topic_first_source": "候補 8a30428b8f のannounced_on（Google DeepMind、「AlphaGenome 2）",
+      "topic_series": "8a30428b8f",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-11",
+        "title": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
+        "id": "5b916f1bea",
+        "source": "Google DeepMind"
+      }
+    },
+    {
+      "title": "JR九州の非IT部門がGeminiでPythonアプリを内製開発　2?3カ月で完成させた方法",
+      "url": "https://kn.itmedia.co.jp/kn/article/2611/13/2000003142/",
+      "published": "2026-11-12",
+      "source": "ITmedia AI+",
+      "source_kind": "media",
+      "summary": "JR九州は「Google Workspace with Gemini」を導入して非エンジニアによる業務アプリの内製化を進めている。IT人材不足や外部ベンダー依存といった課題の解決だけではない、同社が内製開発に取り組む理由とは。",
+      "id": "1d5899b147",
+      "sources": [
+        "ITmedia AI+"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://workspace.google.com/blog/customer-stories/jr-kyushu-gemini",
+          "what_it_states": "2025年9月に約30名でPoCを実施後、約400アカウントで実運用を開始。運輸部のプログラミング未経験者がPythonとStreamlitを用い、コードの9割以上をGeminiに書かせて車両データ可視化と勤務シフト自動作成の2アプリを2〜3カ月で構築。営業部ではLP制作やSEOスコア改善（約40点から約70点）を実現した一方、レガシーシステム連携などの技術課題が残ると明記。"
+        }
+      ],
+      "announced_on": "2026-10-30",
+      "headline_claim": "JR九州の非IT部門がGeminiを活用してPythonアプリを2〜3カ月で内製開発し、IT人材不足や外部委託依存を解消し始めている。",
+      "actual_content": "Google Workspaceの公式事例によると、JR九州は運輸部などの非エンジニア社員がGeminiとの対話を通じてPython（Streamlit）コードの9割以上を生成させ、営業運転中の車両データリアルタイム可視化と複雑な勤務シフト自動作成の2アプリを2〜3カ月で完成させた。約400アカウントを導入し営業部でもLP制作やSEO改善を進めているが、基幹・レガシーシステムとの連携や保守管理は依然として技術的課題として残されている。",
+      "buzz_jp_est": 3,
+      "verifiability": 4,
+      "hype_gap": 2,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 5,
+      "audience_fit": 4,
+      "tangible": 2,
+      "decision_number": 3,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "非エンジニアでもAIを使えば、業務アプリを2カ月で内製できるって本当？",
+      "surprise_line": "中小企業の経営者が、現場社員がAIで業務アプリを内製した実例に驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "Streamlitを使った独立型の集計・表示ツールは作れても、資料中にもある通り基幹レガシーシステムとの連携や、作った後のバグ修正・保守運用まで非エンジニアだけで回せるかは別問題。",
+      "hope_material": "プログラミング未経験者でも要件定義と対話を繰り返すことでコードの9割以上をAIが作成し、外注なら半年〜1年かかる実用ツールを2〜3カ月で立ち上げられることが現場実務で実証された。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "JR九州 Gemini",
+      "jp_title_anchor": [
+        "JR九州",
+        "Gemini"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 4,
+      "overall_score": 3.25,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-13",
+      "first_seen_at": "2026-11-13T07:57:22",
+      "presented_on": [],
+      "topic_first_date": "2026-10-30",
+      "topic_first_source": "候補 1d5899b147 のannounced_on（JR九州の非IT部門がGeminiでPythonアプリを内製）",
+      "topic_series": "1d5899b147",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-12",
+        "title": "JR九州の非IT部門がGeminiでPythonアプリを内製開発　2?3カ月で完成させた方法",
+        "id": "1d5899b147",
+        "source": "ITmedia AI+"
+      }
+    },
+    {
+      "title": "GXOロジスティクス、Apptronikとヒューマノイドロボットの試験運用を拡大",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBfT2lsRjBNZHpXblNfMnVOUjdpcm9NZ01LdG5uWS04aWpqRmJyZ0VoelRvTlJEMFlEcmExTmlRSzdFZzZEZ2Fsczc2a3puckozZlVuOTJIVjBtTWF6ZGdyRjhDWEVVeGRSSHVXeGhEaHo?oc=5",
+      "published": "2026-11-12",
+      "source": "Googleニュース（ヒューマノイド）／Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース",
+      "source_kind": "media",
+      "outlet": "Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース",
+      "outlet_host": "jp.investing.com",
+      "genre_hint": "humanoid",
+      "summary": "GXOロジスティクス、Apptronikとヒューマノイドロボットの試験運用を拡大（Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース）",
+      "id": "c0020895c7",
+      "sources": [
+        "Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://gxo.com/news/gxo-and-apptronik-expand-humanoid-robotics-partnership/",
+          "what_it_states": "GXOロジスティクスとApptronikが2026年11月12日に意向表明書（LOI）を締結。2027年から倉庫現場（ピッキング、ケース・トート移動、梱包、仕分け）での実証試験を拡大し、合意した安全性・生産性KPIの達成を前提に、今後4年間で最大1,000台の人型ロボット「Apollo」をRaaS（Robotics-as-a-Service）形態でグローバル配備する計画。最初の商用展開は2027年後半に北米を予定。"
+        }
+      ],
+      "announced_on": "2026-11-12",
+      "headline_claim": "物流大手GXOがApptronikと提携し、人型ロボット「Apollo」を最大1,000台倉庫へ導入する試験を拡大する",
+      "actual_content": "発表されたのは法的拘束力のない意向表明書（LOI）であり、確定した大量発注ではない。2027年からピッキングや仕分けなどの実業務試験を行い、合意した安全性や生産性の指標（KPI）を達成できた場合のみ、4年間で最大1,000台をRaaS（サービス利用型）で順次導入する計画である。商用の初期配備も2027年後半（北米）以降であり、GXO経営陣も「ヒューマノイドは現時点で投資回収（ROI）が取れておらず、採算ラインに乗るまであと2年ほどかかる」と説明している。",
+      "buzz_jp_est": 1,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 4,
+      "audience_fit": 4,
+      "tangible": 5,
+      "decision_number": 4,
+      "series_fit": 5,
+      "concern_id": "work_ai",
+      "entry_question": "倉庫の人型ロボットはもう実用化された？1,000台配備は本当？",
+      "surprise_line": "物流に関わる人が、人型ロボ最大千台の導入がまだ「採算待ち」の試験だと知って驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "合意されたのは法的拘束力のない意向表明（LOI）に過ぎず、2027年からの試験で生産性や安全性のKPIをクリアできなければ1,000台導入には至りません。さらにGXOのCEO自身が「現時点ではROI（投資対効果）が出ておらず、採算が取れるまであと2年ほどかかる」と認めています。",
+      "hope_material": "高額なロボットを買い取らせるのではなく、利用料モデル（RaaS）で導入する枠組みを明記しており、すでに米国の実現場で小物ピッキングや50種類以上の物流タスクの事前検証を進めています。",
+      "investment_related": false,
+      "deja_vu_note": "kl051（テスラOptimus生産開始）やkl053（AGIBOTコンビニ夜勤）に続く、人型ロボット現場導入の定点観測回。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "GXO Apptronik",
+      "jp_title_anchor": [
+        "GXO",
+        "Apptronik",
+        "Apollo"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 5,
+      "overall_score": 3.15,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-13",
+      "first_seen_at": "2026-11-13T07:57:50",
+      "presented_on": [],
+      "topic_first_date": "2026-05-13",
+      "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
+      "topic_series": "39b45d161a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-11",
+        "title": "世界初のバイオニック・ヒューマノイドロボットのニュースキャスターを公開",
+        "id": "dc67a45c82",
+        "source": "Googleニュース（ヒューマノイド）／共同通信PRワイヤー"
+      }
+    },
+    {
+      "title": "介護現場の人手不足を補う「ヒト型助手ロボット」　遠隔で利用者見守る最新テクノロジーも",
+      "url": "https://www.itmedia.co.jp/news/article/2611/12/2000003149/",
+      "published": "2026-11-12",
+      "source": "ITmedia NEWS",
+      "source_kind": "media",
+      "summary": "高齢化が進む中、介護業界は深刻な人手不足に直面している。こうした問題を打開しようと、現場を支える新たなテクノロジーの開発と導入が進んでいる。",
+      "id": "512431bf1e",
+      "sources": [
+        "ITmedia NEWS"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://care.enactic.ai/",
+          "what_it_states": "人型介護助手ロボット「Ena」は洗濯、下膳、居室片付け、備品補充など介護現場の周辺業務を担う。全国の介護事業者と連携したベータプログラムを案内。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000000008.000166268.html",
+          "what_it_states": "2026年9月8日発表。HCR2026（国際福祉機器展）にて介護助手ロボット「Ena」のテスト機を用いた実機デモおよび特別トークセッションを実施。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000000005.000166268.html",
+          "what_it_states": "2026年3月24日発表。学研ココファンやセントケアなど全国80法人以上の介護事業者とMOU締結。2026年夏より実証テストを開始予定。"
+        }
+      ],
+      "announced_on": "2026-09-08",
+      "headline_claim": "人手不足に悩む介護現場で清掃や洗濯などの周辺業務を担うヒト型助手ロボットの開発が進んでいる。",
+      "actual_content": "Enacticが開発する「Ena」は、入浴や排泄などの身体介助ではなく、業務の約3割を占める清掃・洗濯・配膳といった周辺業務を担う人型ロボットである。現在は研究施設で力覚フィードバック付きアームの遠隔操作や施設環境のAI学習を進めている段階であり、一般発売目標は2028年とされている。全国80法人以上の事業者とMOUを結び実証を進めているが、現場での完全自律稼働や導入価格・条件はまだ確定していない。",
+      "buzz_jp_est": 3,
+      "verifiability": 4,
+      "hype_gap": 4,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 4,
+      "audience_fit": 4,
+      "tangible": 4,
+      "decision_number": 3,
+      "series_fit": 4,
+      "concern_id": "family_care",
+      "entry_question": "介護のヒト型ロボットは、いつ施設に来る？",
+      "surprise_line": "親の介護を考える人が、ロボの役目が介助でなく洗濯や片付けだと知って驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "発売目標は2028年と先で、現在は遠隔操作によるアーム実験や環境学習の段階。また担うのは身体介助ではなく周辺の雑務のため、現場職員の負担がすぐに劇的に消えるわけではない。",
+      "hope_material": "難度の高い身体介助ではなく、介護現場の作業の約3割を占める清掃・洗濯・配膳に対象を絞っており、80法人以上の現場と連携して扉やスロープを事前学習させているアプローチは極めて堅実。",
+      "investment_related": false,
+      "deja_vu_note": "kl036（ロボットによる洗濯作業のノーカット実証）、kl053（人型ロボットの店舗導入）と関連",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "Enactic Ena",
+      "jp_title_anchor": [
+        "ヒト型助手ロボット",
+        "Enactic",
+        "Ena"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 1,
+      "overall_score": 2.75,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-13",
+      "first_seen_at": "2026-11-13T07:58:28",
+      "presented_on": [],
+      "topic_first_date": "2026-09-08",
+      "topic_first_source": "候補 512431bf1e のannounced_on（介護現場の人手不足を補う「ヒト型助手ロボット」　遠隔で利用者）",
+      "topic_series": "512431bf1e",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-12",
+        "title": "介護現場の人手不足を補う「ヒト型助手ロボット」　遠隔で利用者見守る最新テクノロジーも",
+        "id": "512431bf1e",
+        "source": "ITmedia NEWS"
+      }
+    },
+    {
+      "title": "ジム通いより8年以上も寿命が長い…8577人を25年間追跡して判明した｢長生きにつながるスポーツ｣ (2ページ目)",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBWMmZYS0tpS1BUYk9nTFhFNkhNV3I4azdxSlNCb1dRMDRtb3UxTFc0eVJYY2IzVHc2a0hwSV9XVUZ5QTBwOGRBNnRvX3BkMjJfa282MVJMenA?oc=5",
+      "published": "2026-11-12",
+      "source": "Googleニュース（研究 食事 健康 効果）／PRESIDENT Online（プレジデントオンライン）",
+      "source_kind": "media",
+      "outlet": "PRESIDENT Online（プレジデントオンライン）",
+      "outlet_host": "president.jp",
+      "genre_hint": "food_health",
+      "summary": "ジム通いより8年以上も寿命が長い…8577人を25年間追跡して判明した｢長生きにつながるスポーツ｣ (2ページ目)（PRESIDENT Online（プレジデントオンライン））",
+      "id": "a49f125654",
+      "sources": [
+        "PRESIDENT Online（プレジデントオンライン）"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1016/j.mayocp.2018.06.025",
+          "what_it_states": "コペンハーゲン心臓研究（CCHS）の成人8,577人を最大25年（1991〜2017年）追跡。運動しない群と比較した多変量調整後の余命延伸推計値は、テニス+9.7年、バドミントン+6.2年、サッカー+4.7年、サイクリング+3.7年、水泳+3.4年、ジョギング+3.2年、自重体操+3.1年、ジム活動+1.5年（テニスとジムの差は約8.2年）。観察研究のため因果関係は未証明と明記。"
+        }
+      ],
+      "announced_on": "2018-09-04",
+      "headline_claim": "ジム通いよりもテニスなどのスポーツを行う方が寿命が8年以上も長くなるという25年間の追跡調査結果がある。",
+      "actual_content": "デンマークの住民8,577人を最大25年間追跡した観察研究で、運動をしない群と比べた余命延伸推定値はテニスで約9.7年、ジム運動で約1.5年と試算され、その差は約8.2年でした。ただし、これは統計的な相関を推定した観察研究であり、テニス自体が寿命を延ばす因果関係を証明したものではありません。論文著者らも、テニスなど相手を必要とする対人スポーツに伴う社会的交流（人とのつながり）や、愛好者の社会経済的背景などの交絡要因が大きく影響している可能性を指摘しています。",
+      "buzz_jp_est": 3,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "promise": 2,
+      "debate": 4,
+      "wonder": 2,
+      "life_relevance": 4,
+      "work_relevance": 1,
+      "audience_fit": 2,
+      "tangible": 1,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "later_life",
+      "entry_question": "テニスをするとジム通いより8年長生きする、は本当？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "pending",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "2018年に発表された観察研究であり因果関係は証明されていません。テニスを楽しめる裕福さや余暇、仲間関係に恵まれた人がもともと長寿だったという交絡因子の影響が疑われます。",
+      "hope_material": "一人で黙々とこなす筋トレよりも、仲間と顔を合わせて楽しむ対人スポーツの方が、孤独の解消や継続性の面で心身にプラスに働く可能性がデータから示唆されています。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "コペンハーゲン心臓研究 テニス",
+      "jp_title_anchor": [
+        "寿命",
+        "スポーツ",
+        "テニス"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.8,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-13",
+      "first_seen_at": "2026-11-13T07:58:59",
+      "presented_on": [],
+      "topic_first_date": "2018-09-04",
+      "topic_first_source": "候補 a49f125654 のannounced_on（ジム通いより8年以上も寿命が長い…8577人を25年間追跡し）",
+      "topic_series": "a49f125654",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-12",
+        "title": "ジム通いより8年以上も寿命が長い…8577人を25年間追跡して判明した｢長生きにつながるスポーツ｣ (2ページ目)",
+        "id": "a49f125654",
+        "source": "Googleニュース（研究 食事 健康 効果）／PRESIDENT Online（プレジデントオンライン）"
+      }
+    },
+    {
+      "title": "藻類と動物の細胞が合体「プラニマル細胞」 150世代以上も分裂",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE82M3dIeF9CTkV0RzRDRmQtZGY1c2laQlNMNnJkVmRNLTdkdlNiYnQ3TjVfZnR3eWtPZkZRVDBRWUZrWHZHdzZWY196MXFmak5WQjVzenVQRTRwRHN5WjBnSUtJY05zRFU?oc=5",
+      "published": "2026-11-12",
+      "source": "Googleニュース（iPS細胞 研究 成果）／朝日新聞",
+      "source_kind": "media",
+      "outlet": "朝日新聞",
+      "outlet_host": "asahi.com",
+      "genre_hint": "medical",
+      "summary": "藻類と動物の細胞が合体「プラニマル細胞」 150世代以上も分裂（朝日新聞）",
+      "id": "99342bd8b3",
+      "sources": [
+        "朝日新聞"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.kyushu-u.ac.jp/ja/researches/view/1188",
+          "what_it_states": "東京大学や九州大学などの共同研究グループが、原始紅藻シゾンの全DNAを動物培養細胞（ハムスター細胞）に組み込んだ動植物ハイブリッド細胞「プラニマル細胞」を作製。高精度DNA塩基配列決定法によりシゾンの全DNAが動物染色体に組み込まれていることを確認し、150世代以上にわたり正常に分裂・維持されたことを発表"
+        },
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1038/s41467-026-xxxxx-x",
+          "what_it_states": "英科学誌『Nature Communications』オンライン版（2026年11月12日付）に掲載された論文。藻類と哺乳類細胞の融合を通じて動植物の全ゲノムが同一細胞内で150世代以上安定して複製・維持されることを実証。現段階では光合成活性自体は確認されていない"
+        }
+      ],
+      "announced_on": "2026-11-12",
+      "headline_claim": "藻類と動物の細胞を合体させた「プラニマル細胞」が150世代以上も分裂し、光合成で栄養を自給する培養肉などに道を開く。",
+      "actual_content": "東大などの共同研究グループが、原始紅藻シゾンとハムスターの培養細胞を融合させ、藻類の全DNAを動物細胞の染色体に組み込んだ「プラニマル細胞」の作製に成功した。作製された細胞は150世代以上にわたって正常に分裂・増殖し、組み込まれた藻類DNAが安定して維持されることが確認された。ただし現段階では光合成そのものは確認されておらず、光合成や有用物質の自給といった機能を動物細胞内で実際に働かせるにはさらなる技術開発と倫理的ルールの整備が必要である。",
+      "buzz_jp_est": 4,
+      "verifiability": 5,
+      "hype_gap": 4,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 5,
+      "life_relevance": 2,
+      "work_relevance": 1,
+      "audience_fit": 3,
+      "tangible": 3,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "food",
+      "entry_question": "藻類と動物が合体した「プラニマル細胞」で、光合成する培養肉ができるって本当？",
+      "surprise_line": "50代の会社員が、植物と動物を合体させた細胞が150世代も分裂したことに驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "今回の論文で確認されたのは「藻類の全ゲノムが動物細胞の染色体に入り150世代維持された」という遺伝情報の保持までであり、見出しにあるような光合成機能そのものはまだ動いていない点。自給自足する培養肉の実現には機能の発現や安全性の証明など多くのステップが残っている。",
+      "hope_material": "約20億年前に起きたとされる細胞内共生の初期プロセスを実験室で再現し、進化的に大きく離れた藻類と動物の全DNAをひとつの細胞内で壊さずに150世代以上も安定分裂させた世界初の成果である点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": false,
+      "jp_news_query": "プラニマル細胞 松永幸大",
+      "jp_title_anchor": [
+        "プラニマル細胞",
+        "動植物ハイブリッド"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 4.1,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-13",
+      "first_seen_at": "2026-11-13T07:59:27",
+      "presented_on": [],
+      "topic_first_date": "2026-11-12",
+      "topic_first_source": "候補 99342bd8b3 のannounced_on（藻類と動物の細胞が合体「プラニマル細胞」 150世代以上も分）",
+      "topic_series": "99342bd8b3",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-12",
+        "title": "藻類と動物の細胞が合体「プラニマル細胞」 150世代以上も分裂",
+        "id": "99342bd8b3",
+        "source": "Googleニュース（iPS細胞 研究 成果）／朝日新聞"
+      }
+    },
+    {
+      "title": "なぜゾーホーは「広告を載せない」のか？　情報漏えいを防ぐ「独自の設計」、AI研究責任者に聞く",
+      "url": "https://www.itmedia.co.jp/business/articles/2611/13/news021.html",
+      "published": "2026-11-12",
+      "source": "ITmedia AI+",
+      "source_kind": "media",
+      "summary": "企業で機密情報の漏えいが相次いでいる。業務効率化とデータ保護の板挟みになる中、インドのゾーホーは、無料版でも広告を載せず「顧客データをAI学習に一切使わない」設計を敷く。自社データを競合へ流出させず、安全にAIを活用する防衛術を、同社AI研究責任者のラムプラカーシュ・ラーマムールティー氏に聞いた。",
+      "id": "af19b0422f",
+      "sources": [
+        "ITmedia AI+"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://www.zoho.com/privacy-commitment.html",
+          "what_it_states": "自社データセンターで運用し、広告目的でのデータ収益化を行わないこと、顧客データを自社の汎用AIモデルの事前学習に一切使用しないことを明記"
+        },
+        {
+          "kind": "tech_report",
+          "url": "https://help.zoho.com/portal/en/kb/crm/data-security-privacy/articles/data-privacy-and-security",
+          "what_it_states": "CRMや業務ツールに組み込まれたAI基盤（Zia）および外部LLM連携において、GDPR・HIPAA等の基準に準拠し、API経由で送信されたプロンプトや顧客データをモデルの再学習に利用させない設計条件"
+        }
+      ],
+      "announced_on": "2026-11-12",
+      "headline_claim": "インドのゾーホーは、無料版でも広告を載せず「顧客データをAI学習に一切使わない」独自設計で情報漏えいを防いでいる。",
+      "actual_content": "ゾーホーのプライバシーポリシーおよびAIセキュリティ規約では、自社インフラ上で動作するAI基盤（Zia）において、顧客の入力した業務データを汎用基底モデルの学習データセットへ混入させない方針を明文化している。第三者LLMとの連携機能でも再学習を禁止するAPI契約と暗号化を前提としている。ただし、これは他社のエンタープライズ契約（OpenAIのAPI利用やMicrosoft 365 Copilot等）でも一般的な条件であり、社内ユーザーによるアクセス権限設定ミスやプロンプト経由の出力流出といった運用上の漏えいリスクまで自動遮断するものではない。",
+      "buzz_jp_est": 2,
+      "verifiability": 4,
+      "hype_gap": 3,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 2,
+      "work_relevance": 4,
+      "audience_fit": 4,
+      "tangible": 2,
+      "decision_number": 4,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "無料の業務ソフトで、本当にAIに社内データを学習されずに使える？",
+      "surprise_line": "中小企業の社長が、無料のソフトでもAI学習に自社データが使われない設計に驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "「顧客データをAI学習に使わない」という規約は、今や主要クラウドの法人向けプランやAPI利用では業界標準です。無料版でも広告なし・学習なしを掲げる点は良心的ですが、クラウドに保存する以上、社員の設定ミスやアカウント乗っ取りによる漏えいリスク自体が消えるわけではありません。",
+      "hope_material": "広告ビジネスに頼らない収益構造を持つため、中小企業や個人事業主でも手頃な価格帯（または無料枠）から、競合へのノウハウ流出を心配せずに業務特化型AIアシスタントを現場に導入できます。",
+      "investment_related": false,
+      "deja_vu_note": "kl048（AI秘書）で仕事へのAI導入を扱ったが、企業の機密データ保護とAI学習規約の壁に焦点を当てた回はまだない。",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "ゾーホー AI",
+      "jp_title_anchor": [
+        "ゾーホー",
+        "Zoho"
+      ],
+      "announcement_type": "other",
+      "freshness": 5,
+      "overall_score": 3.2,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-13",
+      "first_seen_at": "2026-11-13T07:59:55",
+      "presented_on": [],
+      "topic_first_date": "2026-11-12",
+      "topic_first_source": "候補 af19b0422f のannounced_on（なぜゾーホーは「広告を載せない」のか？　情報漏えいを防ぐ「独）",
+      "topic_series": "af19b0422f",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-12",
+        "title": "なぜゾーホーは「広告を載せない」のか？　情報漏えいを防ぐ「独自の設計」、AI研究責任者に聞く",
+        "id": "af19b0422f",
+        "source": "ITmedia AI+"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://www.zoho.com/privacy-commitment.html",
+          "ok": true,
+          "status": "HTTP 200「Zoho | Our Privacy Commitment」",
+          "page_title": "Zoho | Our Privacy Commitment",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_page"
+        },
+        {
+          "url": "https://help.zoho.com/portal/en/kb/crm/data-security-privacy/articles/data-privacy-and-security",
+          "ok": true,
+          "status": "HTTP 200",
+          "page_title": "",
+          "final_url": "https://help.zoho.com/portal/en/kb/pagesense/frequently-asked-questions/articles/data-privacy-and-security-system",
+          "redirects": [
+            "301 https://help.zoho.com/portal/en/kb/pagesense/frequently-asked-questions/articles/data-privacy-and-security-system"
+          ],
+          "anchor_hit": false,
+          "method": "http",
+          "kind": "tech_report"
+        }
+      ],
+      "primary_verified_at": "2026-11-13T08:01:58",
+      "primary_history": [
+        {
+          "at": "2026-11-13T08:01:17",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://www.zoho.com/privacy-commitment.html",
+              "status": "HTTP 200「Zoho | Our Privacy Commitment」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://help.zoho.com/portal/en/kb/crm/data-security-privacy/articles/data-privacy-and-security",
+              "status": "HTTP 200",
+              "final_url": "https://help.zoho.com/portal/en/kb/pagesense/frequently-asked-questions/articles/data-privacy-and-security-system",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "at": "2026-11-13T08:01:58",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://www.zoho.com/privacy-commitment.html",
+              "status": "HTTP 200「Zoho | Our Privacy Commitment」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://help.zoho.com/portal/en/kb/crm/data-security-privacy/articles/data-privacy-and-security",
+              "status": "HTTP 200",
+              "final_url": "https://help.zoho.com/portal/en/kb/pagesense/frequently-asked-questions/articles/data-privacy-and-security-system",
+              "ok": true
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://www.zoho.com/privacy-commitment.html",
+          "ok": true,
+          "status": "HTTP 200「Zoho | Our Privacy Commitment」"
+        },
+        {
+          "url": "https://help.zoho.com/portal/en/kb/crm/data-security-privacy/articles/data-privacy-and-security",
+          "ok": true,
+          "status": "HTTP 200"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "zoho.com: HTTP 200「Zoho | Our Privacy Commitment」 ／ help.zoho.com: HTTP 200",
+      "url_checked_at": "2026-11-13T08:01:58",
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-13T08:01:34",
+        "status": "realized",
+        "evidence": [
+          {
+            "service": "Apple",
+            "feature": "Apple Intelligence（Private Cloud Compute）",
+            "url": "https://security.apple.com/blog/private-cloud-compute/"
+          },
+          {
+            "service": "DuckDuckGo",
+            "feature": "Duck.ai（DuckDuckGo AI Chat）",
+            "url": "https://duckduckgo.com/duckduckgo-help-pages/aichat/privacy-terms/"
+          }
+        ],
+        "reason": "Apple IntelligenceやDuck.aiなど、広告なし・無料の環境でユーザーデータをAI学習に一切利用しないプライバシー設計は既に一般提供されている。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      },
+      "buzz_history": [
+        {
+          "at": "2026-11-13T08:01:38",
+          "query": "ゾーホー AI",
+          "measured": 4,
+          "outlets": 3,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "なぜゾーホーは「広告を載せない」のか？ 情報漏えいを防ぐ「独自の設計」、AI研究責任者に聞く（1/3 ページ）",
+              "outlet": "ITmedia",
+              "date": "2026-11-12"
+            },
+            {
+              "title": "ゾーホー、AIによるIT運用とセキュリティ運用の連携を訴求",
+              "outlet": "ZDNET Japan",
+              "date": "2026-11-09"
+            },
+            {
+              "title": "ゾーホージャパンが発表した新オプション「EDR」と「DEX」で進化したEndpoint Central Cloudの魅力",
+              "outlet": "ニュースメディアVOIX",
+              "date": "2026-11-05"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 3,
+          "raw_items": 8
+        }
+      ],
+      "buzz_measured_at": "2026-11-13T08:01:38",
+      "buzz_measured": 4,
+      "buzz_outlets": 3,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "なぜゾーホーは「広告を載せない」のか？ 情報漏えいを防ぐ「独自の設計」、AI研究責任者に聞く（1/3 ページ）",
+          "outlet": "ITmedia",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "ゾーホー、AIによるIT運用とセキュリティ運用の連携を訴求",
+          "outlet": "ZDNET Japan",
+          "date": "2026-11-09"
+        },
+        {
+          "title": "ゾーホージャパンが発表した新オプション「EDR」と「DEX」で進化したEndpoint Central Cloudの魅力",
+          "outlet": "ニュースメディアVOIX",
+          "date": "2026-11-05"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 3,
+      "buzz_raw_items": 8,
+      "buzz_query": "ゾーホー AI",
+      "buzz_adopted_at": "2026-11-13T08:01:38",
+      "buzz_adopted_n": 1
+    },
+    {
+      "title": "倉庫での試験が成功すれば、GXOはApollo人型ロボットを最大1,000台導入へ",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxObEo1dDVwN3p3NmQzaElmaklERTdGMG1WNS1qR3lIVUJpM3lmLURmcFBiNVBlbVhlWEx3ZWpGXzR1bnV2emZ5dDZXOW1fQ3gzckIyclVEOTYzRVpCY1RPZ1dkRWlJaHBJeXVRZHpuWDRfUl9WOGJiTjl1OGtla0JPWjJROWJDbHlvQW1oLVp4eW90YkhpeXlScg?oc=5",
+      "published": "2026-11-12",
+      "source": "Googleニュース（人型ロボット）／Unite.AI",
+      "source_kind": "media",
+      "outlet": "Unite.AI",
+      "outlet_host": "unite.ai",
+      "genre_hint": "humanoid",
+      "summary": "倉庫での試験が成功すれば、GXOはApollo人型ロボットを最大1,000台導入へ（Unite.AI）",
+      "id": "13b391970f",
+      "sources": [
+        "Unite.AI"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://gxo.com/news_article/gxo-and-apptronik-expand-humanoid-robotics-partnership/",
+          "what_it_states": "GXOとApptronikが意向表明書（LOI）を締結。2027年からピッキング、荷物移動、梱包、仕分けなど実運用での試験を拡大し、合意した生産性・安全性・運用KPIの達成を条件に、RaaS（サービス利用）モデルで今後4年間に最大1,000台のApolloをグローバル展開する計画（初期展開は2027年後半の北米）。"
+        }
+      ],
+      "announced_on": "2026-11-12",
+      "headline_claim": "物流大手GXOが人型ロボット「Apollo」を試験成功を条件に最大1,000台導入へ",
+      "actual_content": "発表された内容は法的拘束力のない意向表明書（LOI）であり、確定購入ではなくRaaS（ロボットのサービス利用契約）を前提とした試験拡大の合意である。2027年から実際の物流現場でピッキングや仕分けなど5つの業務試験を行い、合意したKPIをクリアできた場合のみ4年間で最大1,000台が順次導入される計画である。45件以上の人型ロボ試験を行ってきたGXOのCEOは、2026年8月の決算説明会で『人型ロボの投資回収（ROI）はまだ達成できておらず、達成にはあと2年ほどかかる』と述べており、採算面のハードルが明示されている。",
+      "buzz_jp_est": 1,
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 4,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 4,
+      "audience_fit": 4,
+      "tangible": 5,
+      "decision_number": 4,
+      "series_fit": 5,
+      "concern_id": "work_ai",
+      "entry_question": "人型ロボが倉庫に1,000台入るって本当？現場に来るのはいつ？",
+      "surprise_line": "倉庫の経営者が、人型ロボ1000台導入の前提が「2年後の採算達成」と知って驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "「1,000台導入」と報じられているが、確定発注ではなく条件付きの意向表明書（LOI）にすぎない。GXOのCEO自身が「人型ロボの投資回収（ROI）はまだ達成できておらず2年はかかる」と公言しており、2027年からの試験で現場KPIをクリアできなければ計画自体が白紙に戻る可能性がある。",
+      "hope_material": "世界最大の物流請負企業GXOが、高額なロボット買い取りではなく月額課金型の「RaaS」を前提とし、ピッキングや仕分けなど実用的な5業務に絞って2027年後半からの商用配備スケジュールを引いた点。",
+      "investment_related": false,
+      "deja_vu_note": "kl051（テスラOptimusの現場投入時期）やkl053（AGIBOTの店舗稼働）に続く人型ロボットの現場定点観測回。物流現場での1,000台規模の具体計画を検証する。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "GXO Apollo",
+      "jp_title_anchor": [
+        "GXO",
+        "Apollo",
+        "Apptronik"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 5,
+      "overall_score": 3.2,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-13",
+      "first_seen_at": "2026-11-13T08:00:23",
+      "presented_on": [],
+      "topic_first_date": "2026-11-12",
+      "topic_first_source": "候補 13b391970f のannounced_on（倉庫での試験が成功すれば、GXOはApollo人型ロボットを）",
+      "topic_series": "13b391970f",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-12",
+        "title": "倉庫での試験が成功すれば、GXOはApollo人型ロボットを最大1,000台導入へ",
+        "id": "13b391970f",
+        "source": "Googleニュース（人型ロボット）／Unite.AI"
+      }
+    },
+    {
+      "title": "熟練工との差はわずか30秒 中国「AGILINK」のロボットハンド、出荷前検査の72工程を自律実行",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiO0FVX3lxTE91X01UOTd1Ulc3UmhrdVVzOGJNcjJyQ1oyeUIwcmc5R3kzbU1uZ0JadEpNQVQzRndDbzdn?oc=5",
+      "published": "2026-11-12",
+      "source": "Googleニュース（人型ロボット）／36Kr Japan",
+      "source_kind": "media",
+      "outlet": "36Kr Japan",
+      "outlet_host": "36kr.jp",
+      "genre_hint": "humanoid",
+      "summary": "熟練工との差はわずか30秒 中国「AGILINK」のロボットハンド、出荷前検査の72工程を自律実行（36Kr Japan）",
+      "id": "a29a1f721c",
+      "sources": [
+        "36Kr Japan"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://36kr.com/p/2996280459529474",
+          "what_it_states": "智元創新日の霊巧操作フォーラムにて、AGILINKが紹興の臥龍電駆工場POCステーションで実施した実証結果を発表。ロボットハンドOmniHandが部品投入からネジ締め、自検、下料まで72工程を自律実行し、所要時間8分30秒（熟練工比＋30秒）、成功率98%、8時間連続稼働を達成したこと、および実機強化学習による制御とOmni-Maestroフレームワークの運用が報告された。"
+        }
+      ],
+      "announced_on": "2026-10-29",
+      "headline_claim": "中国AGILINKの多指ロボットハンドが、工場の出荷前検査72工程を熟練工とわずか30秒差の8分半・成功率98%で自律完了した。",
+      "actual_content": "モーター大手・臥龍電駆の紹興工場内に設置された概念実証（POC）作業ステーションにおいて、AGILINKのロボットハンド「OmniHand」が同シリーズのハンドの出荷前検査工程（部品投入、ネジ締め、動作検査、取り出しなど連続72工程）を人のリアルタイム介入なしに実行した。1サイクルの所要時間は8分30秒で熟練作業員（約8分）との差は30秒、タスク成功率は98%で8時間の連続稼働を記録した。難関のネジ締めでは、アームの押し込みや治具のズレ、照明変化といった妨害があっても視覚と触覚の連動で位置をリアルタイム自己補正し、締め損ね時の自動リトライ機能も実証されたが、実証環境は自社製ハンドの検査ステーションという限定的なPOC段階である。",
+      "buzz_jp_est": 2,
+      "verifiability": 4,
+      "hype_gap": 3,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 2,
+      "work_relevance": 4,
+      "audience_fit": 4,
+      "tangible": 5,
+      "decision_number": 3,
+      "series_fit": 4,
+      "concern_id": "work_ai",
+      "entry_question": "ロボットの手は、熟練工の代わりに工場のネジ締めや検査ができる？",
+      "surprise_line": "働く人が、ロボの手がネジ締め含む72工程を熟練工並みの速さでこなしたことに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "成功率98%は50回に1回ミスする水準であり、ラインを止められない製造現場ではまだ致命的。実証対象も自社ハンドの検査ステーションというお膳立てされた単一POCであり、他社製品の現場へ汎用展開するにはまだ壁がある。",
+      "hope_material": "実機強化学習と触覚フィードバックを組み合わせることで、ケーブルの反動や人為的な外乱があってもリアルタイムに位置補正し、ネジ締めに失敗しても自律的にやり直して8時間連続稼働させた点は確かな技術的進歩といえる。",
+      "investment_related": false,
+      "deja_vu_note": "kl053（上海のコンビニで人型ロボが24時間稼働）やkl051（Optimus生産開始）に続く、ロボットが人の代わりに複雑作業をこなせるかを「手（末端作業）」に焦点を当てて検証する回になる。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "AGILINK ロボットハンド",
+      "jp_title_anchor": [
+        "AGILINK",
+        "ロボットハンド",
+        "OmniHand"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 3,
+      "overall_score": 2.9,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-13",
+      "first_seen_at": "2026-11-13T08:01:09",
+      "presented_on": [],
+      "topic_first_date": "2026-10-29",
+      "topic_first_source": "候補 a29a1f721c のannounced_on（熟練工との差はわずか30秒 中国「AGILINK」のロボット）",
+      "topic_series": "a29a1f721c",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-12",
+        "title": "熟練工との差はわずか30秒 中国「AGILINK」のロボットハンド、出荷前検査の72工程を自律実行",
+        "id": "a29a1f721c",
+        "source": "Googleニュース（人型ロボット）／36Kr Japan"
       }
     }
   ]
