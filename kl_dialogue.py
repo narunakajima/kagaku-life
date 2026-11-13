@@ -1010,15 +1010,16 @@ def draw_stamp(label: str, color, scale: float = 1.0, header: str = "判定") ->
     return im.rotate(-4, resample=Image.BICUBIC, expand=True)
 
 
-def verdict_stamps(cast: dict, verdict: dict, scale: float = 1.0) -> list:
+def verdict_stamps(cast: dict, verdict: dict, scale: float = 1.0, header: str = "判定") -> list:
     """verdict = {"dreamer": key, "skeptic": key}。二人の判定が同じなら1枚、割れたら2枚
-    （それぞれ「大輔の判定」「沙織の判定」）を返す。"""
+    （それぞれ「大輔の判定」「沙織の判定」）を返す。header は札の上の小さな見出し（既定「判定」。
+    割れたときは「大輔の{header}」）。"""
     vd = cast["verdicts"]
     if verdict.get("dreamer") == verdict.get("skeptic"):
         k = verdict["dreamer"]
-        return [draw_stamp(vd[k]["label"], vd[k]["color"], scale)]
+        return [draw_stamp(vd[k]["label"], vd[k]["color"], scale, header=header)]
     return [draw_stamp(vd[verdict[r]]["label"], vd[verdict[r]]["color"], scale,
-                       header=f"{speaker_name(cast, r)}の判定") for r in ROLES]
+                       header=f"{speaker_name(cast, r)}の{header}") for r in ROLES]
 
 
 def _draw_intro(im: Image.Image, dr: ImageDraw.ImageDraw, W: int, H: int, cast: dict, sprite_pos: dict,
@@ -1894,7 +1895,10 @@ def composite_thumbnail_dialogue(image_path: Path, ep: dict, cast: dict = None) 
         gap = w - 2 * bank.get("dreamer", exprs.get("dreamer", "neutral"), sh, True).width - 20
         scale = 1.15
         while True:
-            stamps = verdict_stamps(cast, ep["verdict"], scale=scale)
+            # thumbnail_verdict_header: サムネイルの札の上の見出しだけを回ごとに替える（任意。既定「判定」。
+            # 2026-11-13、kl056「判定（アメリカ）」: 札がアメリカについての判定だと分かるように。本編の札は変えない）
+            stamps = verdict_stamps(cast, ep["verdict"], scale=scale,
+                                    header=ep.get("thumbnail_verdict_header") or "判定")
             total = sum(s.width for s in stamps) + 16 * (len(stamps) - 1)
             if total <= gap or scale <= 0.6:
                 break
