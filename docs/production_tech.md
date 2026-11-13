@@ -599,6 +599,8 @@ Shorts（`shorts`フィールド）は2026-08-21に追加した（経緯は下�
 - **ファクトチェック:** visuals の `source_card`・`chart` も、`kl_fact_check.py` が `reference_index` の資料ごとに照合する
 - visuals が無い回（kl031〜kl054）は、check の結果・plain・時刻表・カードの絵が従来と同じ
 
+**Shorts画像の本編切り出し（2026-11-14、削減プラン項目J、kl057以降の既定）:** `kl_image_gen.py` は、Shortsのカットが参照する本編画像（`scene_id`）が「被写体1つの物語シーン」なら、本編画像から縦(9:16)を切り出して 768x1376 にする（AI生成なし）。切り出し位置は `zoom_anchor.x`（無ければ Gemini Vision の判定）。図・資料カード・固定素材・被写体2つ以上・被写体が端に寄る・切り出しがQA不合格の枚だけ、従来の「Geminiで縦に再構成」へ回す。実物の写真は従来どおり `kl_photo_commons`。`--no-shorts-crop` で無効、`--shorts-crop` でkl056以前にも有効。
+
 **Shorts（`shorts`フィールド、2026-08-21追加）:** samurai-chroniclesが販促目的で
 Shortsを別立てで作っているのに倣い追加した。当初は企画書に記載がないという理由で
 除外していたが、離脱防止ティザーと同じ理由（チャンネルの認知拡大）で採用する

@@ -367,6 +367,65 @@ def build_shorts_reframe_prompt(scene_prompt: str) -> str:
     )
 
 
+# --- Shorts画像を本編画像の切り出しでまかなう（2026-11-14、削減プラン項目J）-----------------
+# kl057以降の制作分から既定で有効（--shorts-crop / --no-shorts-crop で上書き）。本編(16:9)の承認済み画像から、
+# 主被写体が1つの場面だけ縦(9:16)に切り出す。図・資料カード（CHART_TYPES）、固定素材、被写体が2つ以上、
+# 切り出しがQAを通らない場合は None を返し、呼び出し側が従来の「Geminiで縦に再構成」へ回す。
+SHORTS_CROP_FROM_EPISODE = 57
+SHORTS_SIZE = (768, 1376)  # kl_dialogue.SHORTS_LAYOUT の W, H
+
+
+def shorts_crop_default(episode_id: str) -> bool:
+    m = re.search(r"(\d+)", episode_id or "")
+    return bool(m) and int(m.group(1)) >= SHORTS_CROP_FROM_EPISODE
+
+
+def crop_main_to_shorts(client, main_scene: dict, main_img_path: Path, out_path: Path,
+                        skip_qa: bool = False):
+    """本編画像から縦の窓を切り出して 768x1376 に保存する。使えなければ (None, 理由)、成功なら (結果dict, "")。"""
+    if main_scene.get("type") in CHART_TYPES:
+        return None, "図・資料カードは切り出さない"
+    if main_scene.get("image_asset") or not main_scene.get("image_prompt"):
+        return None, "固定素材（image_prompt無し）は切り出さない"
+    try:
+        import kl_zoom_anchor
+        info = kl_zoom_anchor.determine_zoom_anchor(client, main_img_path)
+    except Exception as e:  # noqa: BLE001 — 判定できなければ安全側（従来方式）
+        return None, f"被写体の判定に失敗: {e}"
+    if info.get("subject_count") != "one":
+        return None, f"被写体が1つではない（{info.get('subject_count')}）"
+    za = main_scene.get("zoom_anchor") or {}
+    cx = float(za.get("x", info["x"]))
+    with Image.open(main_img_path) as im:
+        im = im.convert("RGB")
+        w, h = im.size
+        win_w = int(round(h * 9 / 16))
+        if win_w >= w:
+            return None, "本編画像が縦長で切り出せない"
+        left = max(0, min(w - win_w, int(round(cx * w - win_w / 2))))
+        # 被写体の中心が窓の中央50%に入らない（端に寄っていて切れる）なら使わない
+        if not (left + win_w * 0.25 <= cx * w <= left + win_w * 0.75):
+            return None, "被写体が画像の端に寄っていて縦の窓に収まらない"
+        im.crop((left, 0, left + win_w, h)).resize(SHORTS_SIZE, Image.LANCZOS).save(out_path)
+    if skip_qa:
+        print(f"✅ {out_path.name}（本編 {main_img_path.name} の切り出し、AI生成なし）")
+        return {"ok": True, "issues": [], "attempts": 0, "cropped_from": main_img_path.name}, ""
+    qa = qa_image_with_gemini(client, out_path, main_scene["image_prompt"])
+    if not qa["ok"]:
+        return None, "切り出し結果がQA不合格: " + "; ".join(str(i) for i in qa["issues"])
+    qa["attempts"] = 0
+    qa["cropped_from"] = main_img_path.name
+    print(f"✅ {out_path.name}（本編 {main_img_path.name} の切り出し、AI生成なし） [QA: OK]")
+    return qa, ""
+
+
+def _shorts_crop_or_log(client, main_scene, main_img_path, out_path, skip_qa):
+    res, reason = crop_main_to_shorts(client, main_scene, main_img_path, out_path, skip_qa=skip_qa)
+    if res is None:
+        print(f"↪️  {out_path.name}: 切り出し不可（{reason}）→ 従来の生成にフォールバック")
+    return res
+
+
 def gen_image(client: genai.Client, prompt: str, out_path: Path, aspect_ratio: str = None,
               reference_image_path: Path = None) -> bool:
     config_kwargs = {"response_modalities": ["IMAGE"]}
@@ -715,6 +774,10 @@ def main():
     parser.add_argument("--no-thumbnail", action="store_true", help="サムネイルを生成しない")
     parser.add_argument("--shorts-only", action="store_true", help="Shortsのみ生成")
     parser.add_argument("--shorts-scenes", help="Shorts内の生成する番号をカンマ区切りで指定（例: 4）。指定時は自動的に--shorts-only扱い")
+    parser.add_argument("--shorts-crop", dest="shorts_crop", action="store_true", default=None,
+                         help="Shortsの画像を本編画像の縦切り出しでまかなう（kl057以降は既定で有効。使えない/QA不合格の枚だけ従来生成）")
+    parser.add_argument("--no-shorts-crop", dest="shorts_crop", action="store_false",
+                         help="Shortsの切り出しを使わず、従来どおり全て生成する")
     parser.add_argument("--recomposite-thumbnail", action="store_true",
                          help="掛け合い形式: 保存済みの背景（thumbnail_bg.png）に見出し・立ち絵・判定ラベルを合成し直す"
                               "（画像は生成しない。キャラクターの名前や判定を変えたときに使う）")
@@ -768,6 +831,7 @@ def main():
     qa_results = []
 
     shorts_only = args.shorts_only or bool(args.shorts_scenes)
+    use_shorts_crop = shorts_crop_default(args.episode) if args.shorts_crop is None else args.shorts_crop
 
     if not args.thumbnail_only and not shorts_only:
         target_ids = None
@@ -992,6 +1056,9 @@ def main():
                     except Exception as e:  # noqa: BLE001 — 元の写真が無い・ハッシュ不一致など。AI の描き直しには逃げない
                         print(f"❌ {out_path.name}: 写真から縦長画像を作れません: {e}", file=sys.stderr)
                         r = {"ok": False, "issues": [f"写真から縦長画像を作れません: {e}"], "attempts": 0}
+                elif (use_shorts_crop and main_scene is not None and main_img_path.exists()
+                      and (crop_out := _shorts_crop_or_log(client, main_scene, main_img_path, out_path, args.no_qa)) is not None):
+                    r = crop_out  # 本編画像の切り出し（AI生成なし）。使えない・QA不合格なら次の elif（従来の再構成生成）へ
                 elif main_scene is not None and main_img_path.exists():
                     # 固定素材（image_asset）のシーンには image_prompt が無いので、素材の説明で代用する
                     image_prompt = main_scene.get("image_prompt") or ASSET_DESCRIPTIONS.get(
