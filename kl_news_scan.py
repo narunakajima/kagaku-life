@@ -2549,6 +2549,48 @@ def prior_art_targets(cands: list, force: bool = False) -> list:
             and not gate_reasons(c, used) and (force or prior_art_state(c) == "unchecked")]
 
 
+PRIOR_ART_TOP_N = 10      # 2026-11-13（指示2026-11-13-005）: 先行事例チェックの対象は、list の本命の上位この件数と、ベスト3の下書きに載る候補だけ
+
+
+def presented_candidates(rows: list, top: int = PRIOR_ART_TOP_N) -> list:
+    """提示される候補（list の本命の上位 top 件＋ベスト3の下書き）。list・slack の表示と同じ並びで選ぶ。"""
+    picks, _ = best3(rows)
+    honmei = collapse_series(_sorted_core([r for r in rows if r["lane"] == "本命"]))[:top]
+    seen, out = set(), []
+    for r in picks + honmei:
+        if r["c"]["id"] not in seen:
+            seen.add(r["c"]["id"])
+            out.append(r["c"])
+    return out
+
+
+def ensure_prior_art_presented(cands: dict = None, top: int = PRIOR_ART_TOP_N, max_rounds: int = 5) -> int:
+    """提示される候補（presented_candidates）のうち先行事例チェックが未判定のものだけをチェックする。
+    チェック結果（実現済みなら驚き上限）で順位が変わり、繰り上がった候補が新たに提示対象に入ることがあるので、
+    未判定の提示対象がなくなるまで（または max_rounds 回まで）、並べ直しては続ける。戻り値: チェックした件数。
+    cands を渡さないときは読み込み・保存まで行う。失敗しても呼び出し元は止めない（未判定のまま＝従来どおり）。"""
+    own = cands is None
+    if own:
+        cands = load_candidates()
+    items = cands["items"]
+    tried, total = set(), 0
+    for _ in range(max_rounds):
+        refresh_ids = {c["id"] for c in prior_art_targets(items)}
+        todo = [c["id"] for c in presented_candidates(classify(items), top) if c["id"] in refresh_ids and c["id"] not in tried]
+        if not todo:
+            break
+        tried.update(todo)
+        try:
+            backfill_prior_art(items, only_ids=todo)
+        except Exception as e:  # noqa: BLE001
+            print(f"  ⚠️ 先行事例チェックを中断: {e}")
+            break
+        total += len(todo)
+    if total:
+        _save_candidates(cands)      # --no-record の slack でもチェック結果は残す（課金の二重払いを防ぐ）
+    return total
+
+
 PRIOR_ART_KNOWN_JSON = BASE_DIR / "prior_art_known.json"
 
 
@@ -2659,10 +2701,8 @@ def cmd_enrich(force: bool):
         retry_surprise(cands["items"])
     except Exception as e:  # noqa: BLE001
         print(f"  ⚠️ 驚きの1行の再試行を中断: {e}")
-    try:      # 2026-11-11: 先行事例チェック（失敗しても他の付与は止めない。判定できなかった候補は未判定のまま＝従来どおりの扱い）
-        backfill_prior_art(cands["items"], force)
-    except Exception as e:  # noqa: BLE001
-        print(f"  ⚠️ 先行事例チェックを中断: {e}")
+    # 2026-11-13: 先行事例チェックは enrich では行わない（順位が決まる buzz の後、list・slack・check-urls が
+    # 提示前に ensure_prior_art_presented で、上位10件とベスト3だけに行う）。
     _save_candidates(cands)
     stalls = []
     if w_todo and w_got == 0:
@@ -4126,6 +4166,8 @@ def cmd_yt(ids: list, count, query: str):
 
 
 def cmd_check_urls(ids: list, top: int):
+    if not ids:
+        ensure_prior_art_presented()
     cands = load_candidates()
     if ids:
         targets = [c for c in cands["items"] if c["id"] in ids]
@@ -4147,6 +4189,7 @@ def cmd_list(top: int, check_urls: bool):
     if check_urls:
         cmd_check_urls([], top)
         print()
+    ensure_prior_art_presented()      # 2026-11-13: 提示する候補（本命の上位10件・ベスト3）は必ずチェック済みにしてから並べる
     rows = classify(load_candidates()["items"])
     _print_exclusions(rows)
     _print_primary_issues(rows)
@@ -4318,6 +4361,7 @@ def cmd_slack(note_path: str, record: bool = True):
     gen = {k: v for k, v in g["genres"]} if isinstance(g["genres"], list) else dict(g["genres"])
     vname = {"soon": "もうすぐ", "decade": "3年", "pending": "根拠待ち", "dubious": "眉唾"}
     cands = load_candidates()
+    ensure_prior_art_presented(cands)      # 2026-11-13: ベスト3・本命の上位10件は必ずチェック済みにしてから並べる
     rows = classify(cands["items"])
     picks, niche = best3(rows)
     nums = "①②③"
