@@ -431,6 +431,32 @@ def _gemini():
     return gm.wrap_client(genai.Client(api_key=API_KEY)), types
 
 
+# 2026-11-13 指示007（削減プラン項目G）: 夜間処理（score・予備採点・tag・enrich）の思考量（thinking）を low にする。
+# 新旧比較（kl_thinking_compare.py、20件）でゲート通過・落選が4件入れ替わったため、既定は【無効】のまま（要確認）。
+# 有効化: 環境変数 KL_THINKING_LOW=1（または既定値を "1" にする）。
+THINKING_LOW = os.environ.get("KL_THINKING_LOW", "0") == "1"
+
+
+def _thinking(types):
+    """思考量 low の ThinkingConfig（無効時は None）。Gemini 3 系は thinking_level、無ければ小さい thinking_budget。"""
+    if not THINKING_LOW:
+        return None
+    if "thinking_level" in types.ThinkingConfig.model_fields:
+        return types.ThinkingConfig(thinking_level="LOW")
+    return types.ThinkingConfig(thinking_budget=1024)
+
+
+def _cfg(types, tools: bool = False):
+    """generate_content の config。tools=True で Google 検索つき。思考量 low を含める。"""
+    kw = {}
+    if tools:
+        kw["tools"] = [types.Tool(google_search=types.GoogleSearch())]
+    tc = _thinking(types)
+    if tc is not None:
+        kw["thinking_config"] = tc
+    return types.GenerateContentConfig(**kw)
+
+
 def _json_from(text: str):
     text = (text or "").strip()
     m = re.search(r"```(?:json)?\s*(.*?)```", text, re.DOTALL)
@@ -539,7 +565,7 @@ def cmd_collect(days: int, sources_path: Path = None, no_gemini: bool = False, n
                   "製品の値下げ・人事・決算・株価・資金調達だけの話題、イベント告知は除きます。\n"
                   f"{listing}\n\nJSON配列（番号のリスト）のみで出力。")
         try:
-            idx = _json_from(client.models.generate_content(model=MODEL, contents=prompt).text)
+            idx = _json_from(client.models.generate_content(model=MODEL, contents=prompt, config=_cfg(types)).text)
             keep += [batch[k] for k in idx if isinstance(k, int) and 0 <= k < len(batch)]
         except Exception as e:  # noqa: BLE001
             print(f"  ⚠️ 絞り込みに失敗（このまとまりは全件残す）: {e}")
@@ -653,8 +679,7 @@ def score_item(client, types, item: dict, past: str, concerns: str) -> dict:
     for attempt in range(3):
         try:
             resp = client.models.generate_content(
-                model=MODEL, contents=prompt,
-                config=types.GenerateContentConfig(tools=[types.Tool(google_search=types.GoogleSearch())]))
+                model=MODEL, contents=prompt, config=_cfg(types, tools=True))
         except Exception as e:  # noqa: BLE001  （呼び出し自体の失敗だけを再試行する）
             if attempt == 2:
                 return {"_error": str(e)}
@@ -738,7 +763,7 @@ def prelim_judge(client, types, items: list, past: str, concerns_txt: str) -> li
                                       audience_fit_rubric=AUDIENCE_FIT_RUBRIC, genres=genres_brief(), rows=rows)
         for attempt in range(3):
             try:
-                resp = client.models.generate_content(model=MODEL, contents=prompt)
+                resp = client.models.generate_content(model=MODEL, contents=prompt, config=_cfg(types))
                 for r in _json_from(resp.text):
                     i = int(r["i"])
                     if 0 <= i < len(chunk):
@@ -1144,7 +1169,7 @@ def cmd_tag():
                      for i, c in enumerate(todo))
     prompt = (f"科学解説番組のニュース候補を5ジャンルに分類してください。\n{genres_brief()}\n\n候補:\n{rows}\n\n"
               'JSON配列のみ出力: [{"i": 0, "genre": "id", "health": false}, ...]（全候補分）')
-    resp = client.models.generate_content(model=MODEL, contents=prompt)
+    resp = client.models.generate_content(model=MODEL, contents=prompt, config=_cfg(types))
     out = _json_from(resp.text)
     valid = set(json.loads(GENRES_JSON.read_text(encoding="utf-8"))["order"])
     n = 0
@@ -2404,7 +2429,7 @@ def backfill_work(cands: list, force: bool = False):
             f"候補:\n{rows}\n\n"
             'JSON配列のみ出力: [{"i": 0, "work_relevance": 0}, ...]（全候補分）')
         try:
-            out = _json_from(client.models.generate_content(model=MODEL, contents=prompt).text)
+            out = _json_from(client.models.generate_content(model=MODEL, contents=prompt, config=_cfg(types)).text)
         except Exception as e:  # noqa: BLE001
             print(f"  ⚠️ work_relevance の付与に失敗（{k}〜{k + len(batch) - 1}件目）: {e}")
             continue
@@ -2451,7 +2476,7 @@ def backfill_audience(cands: list, force: bool = False):
             'JSON配列のみ出力: [{"i": 0, "audience_fit": 0, "promise": 0, "tangible": 0, "decision_number": 0, '
             '"series_fit": 0, "wonder": 0, "surprise_line": ""}, ...]（全候補分）')
         try:
-            out = _json_from(client.models.generate_content(model=MODEL, contents=prompt).text)
+            out = _json_from(client.models.generate_content(model=MODEL, contents=prompt, config=_cfg(types)).text)
         except Exception as e:  # noqa: BLE001
             print(f"  ⚠️ audience_fit・promise の付与に失敗（{k}〜{k + len(batch) - 1}件目）: {e}")
             continue
@@ -2507,7 +2532,7 @@ def retry_surprise(cands: list):
             'JSONオブジェクトのみ出力: {"surprise_line": "", "reason": ""}')
         line, reason = "", "付与の呼び出しに失敗"
         try:
-            out = _json_from(client.models.generate_content(model=MODEL, contents=prompt).text)
+            out = _json_from(client.models.generate_content(model=MODEL, contents=prompt, config=_cfg(types)).text)
             if isinstance(out, list) and out:
                 out = out[0]
             line = (out.get("surprise_line") or "").strip()[:60]
@@ -2633,8 +2658,7 @@ def backfill_prior_art(cands: list, force: bool = False, only_ids: list = None):
         out = {}
         try:
             resp = client.models.generate_content(
-                model=MODEL, contents=prompt,
-                config=types.GenerateContentConfig(tools=[types.Tool(google_search=types.GoogleSearch())]))
+                model=MODEL, contents=prompt, config=_cfg(types, tools=True))
             out = kss.parse_with_reformat(client, MODEL, resp, _json_from, "prior_art")
             if isinstance(out, list) and out:
                 out = out[0]
@@ -2744,7 +2768,7 @@ def cmd_enrich(force: bool):
             f"候補:\n{rows}\n\n"
             'JSON配列のみ出力: [{"i": 0, "jp_news_query": "", "jp_title_anchor": [], "announcement_type": "", "series": ""}, ...]（全候補分）')
         try:
-            out = _json_from(client.models.generate_content(model=MODEL, contents=prompt).text)
+            out = _json_from(client.models.generate_content(model=MODEL, contents=prompt, config=_cfg(types)).text)
         except Exception as e:  # noqa: BLE001
             print(f"  ⚠️ 付与に失敗（{k}〜{k + len(batch) - 1}件目）: {e}")
             continue

@@ -1,0 +1,625 @@
+{
+  "summary": {
+    "n": 20,
+    "compared": 20,
+    "errors": 0,
+    "gate_flips": 4,
+    "mean_abs_score_diff": 0.11,
+    "max_abs_score_diff": 0.30000000000000027,
+    "score_diff_ge_0.5": 0,
+    "field_diff_counts": {
+      "life_relevance": 6,
+      "work_relevance": 5,
+      "audience_fit": 7,
+      "verifiability": 7,
+      "hype_gap": 8,
+      "debate": 4,
+      "promise": 7,
+      "wonder": 4
+    },
+    "sec_old": 695.9,
+    "sec_new": 250.1
+  },
+  "rows": [
+    {
+      "title": "OpenAIのヤン＝ミルズ理論の証明を委員会が確認、質量ギャップは未解決",
+      "id": "878d47e01c",
+      "old": {
+        "score": 3.4,
+        "gate": false,
+        "sec": 40.7,
+        "life_relevance": 1,
+        "work_relevance": 1,
+        "audience_fit": 2,
+        "verifiability": 5,
+        "hype_gap": 3,
+        "debate": 4,
+        "promise": 2,
+        "wonder": 4
+      },
+      "new": {
+        "score": 3.35,
+        "gate": false,
+        "sec": 15.2,
+        "life_relevance": 1,
+        "work_relevance": 1,
+        "audience_fit": 2,
+        "verifiability": 5,
+        "hype_gap": 3,
+        "debate": 3,
+        "promise": 3,
+        "wonder": 4
+      }
+    },
+    {
+      "title": "AI confirms a long-suspected limit on quantum computers’ advantages",
+      "id": "ddf94a746f",
+      "old": {
+        "score": 3.0,
+        "gate": false,
+        "sec": 38.4,
+        "life_relevance": 1,
+        "work_relevance": 1,
+        "audience_fit": 2,
+        "verifiability": 5,
+        "hype_gap": 3,
+        "debate": 3,
+        "promise": 3,
+        "wonder": 3
+      },
+      "new": {
+        "score": 2.9,
+        "gate": false,
+        "sec": 12.0,
+        "life_relevance": 1,
+        "work_relevance": 1,
+        "audience_fit": 1,
+        "verifiability": 4,
+        "hype_gap": 4,
+        "debate": 3,
+        "promise": 2,
+        "wonder": 3
+      }
+    },
+    {
+      "title": "韓国のKakao Mobility、エヌビディアと提携しレベル4ロボタクシー基盤を構築 起亜のPBVから開始",
+      "id": "db834b6ad8",
+      "old": {
+        "score": 3.0,
+        "gate": false,
+        "sec": 27.3,
+        "life_relevance": 2,
+        "work_relevance": 2,
+        "audience_fit": 2,
+        "verifiability": 4,
+        "hype_gap": 3,
+        "debate": 2,
+        "promise": 2,
+        "wonder": 2
+      },
+      "new": {
+        "score": 2.95,
+        "gate": false,
+        "sec": 10.1,
+        "life_relevance": 2,
+        "work_relevance": 2,
+        "audience_fit": 2,
+        "verifiability": 3,
+        "hype_gap": 4,
+        "debate": 2,
+        "promise": 2,
+        "wonder": 2
+      }
+    },
+    {
+      "title": "シェフラーが中国・太倉にライトハウス工場を開設 ヒューマノイドがヒューマノイドの主要部品を組み立て",
+      "id": "ff113178f4",
+      "old": {
+        "score": 2.4,
+        "gate": false,
+        "sec": 30.7,
+        "life_relevance": 1,
+        "work_relevance": 3,
+        "audience_fit": 3,
+        "verifiability": 4,
+        "hype_gap": 3,
+        "debate": 3,
+        "promise": 3,
+        "wonder": 3
+      },
+      "new": {
+        "score": 2.5,
+        "gate": false,
+        "sec": 11.2,
+        "life_relevance": 1,
+        "work_relevance": 3,
+        "audience_fit": 3,
+        "verifiability": 4,
+        "hype_gap": 3,
+        "debate": 3,
+        "promise": 3,
+        "wonder": 4
+      }
+    },
+    {
+      "title": "パナソニックが250人体制で挑む「フィジカルAI」　職人の暗黙知をAI化、外販も視野に",
+      "id": "0c7427552c",
+      "old": {
+        "score": 3.15,
+        "gate": true,
+        "sec": 40.9,
+        "life_relevance": 2,
+        "work_relevance": 4,
+        "audience_fit": 3,
+        "verifiability": 4,
+        "hype_gap": 3,
+        "debate": 3,
+        "promise": 3,
+        "wonder": 2
+      },
+      "new": {
+        "score": 3.35,
+        "gate": true,
+        "sec": 11.1,
+        "life_relevance": 2,
+        "work_relevance": 4,
+        "audience_fit": 4,
+        "verifiability": 5,
+        "hype_gap": 3,
+        "debate": 3,
+        "promise": 3,
+        "wonder": 3
+      }
+    },
+    {
+      "title": "ビートルートの硝酸塩は効くのか ― 80研究メタ分析が示す「小さく、条件つき」",
+      "id": "a7108f43f4",
+      "old": {
+        "score": 2.4,
+        "gate": false,
+        "sec": 18.3,
+        "life_relevance": 3,
+        "work_relevance": 1,
+        "audience_fit": 2,
+        "verifiability": 5,
+        "hype_gap": 4,
+        "debate": 3,
+        "promise": 3,
+        "wonder": 2
+      },
+      "new": {
+        "score": 2.35,
+        "gate": false,
+        "sec": 13.3,
+        "life_relevance": 3,
+        "work_relevance": 1,
+        "audience_fit": 2,
+        "verifiability": 5,
+        "hype_gap": 4,
+        "debate": 3,
+        "promise": 2,
+        "wonder": 2
+      }
+    },
+    {
+      "title": "Google DeepMind、「AlphaGenome 2」発表　細胞の種類ごとにDNA変異の影響を予測するAI",
+      "id": "8a30428b8f",
+      "old": {
+        "score": 3.35,
+        "gate": false,
+        "sec": 39.8,
+        "life_relevance": 2,
+        "work_relevance": 1,
+        "audience_fit": 2,
+        "verifiability": 5,
+        "hype_gap": 3,
+        "debate": 3,
+        "promise": 3,
+        "wonder": 3
+      },
+      "new": {
+        "score": 3.3,
+        "gate": false,
+        "sec": 9.0,
+        "life_relevance": 2,
+        "work_relevance": 1,
+        "audience_fit": 2,
+        "verifiability": 5,
+        "hype_gap": 2,
+        "debate": 3,
+        "promise": 3,
+        "wonder": 3
+      }
+    },
+    {
+      "title": "JR九州の非IT部門がGeminiでPythonアプリを内製開発　2?3カ月で完成させた方法",
+      "id": "1d5899b147",
+      "old": {
+        "score": 2.85,
+        "gate": true,
+        "sec": 42.5,
+        "life_relevance": 2,
+        "work_relevance": 5,
+        "audience_fit": 4,
+        "verifiability": 5,
+        "hype_gap": 2,
+        "debate": 3,
+        "promise": 4,
+        "wonder": 3
+      },
+      "new": {
+        "score": 2.75,
+        "gate": true,
+        "sec": 10.4,
+        "life_relevance": 1,
+        "work_relevance": 5,
+        "audience_fit": 4,
+        "verifiability": 5,
+        "hype_gap": 2,
+        "debate": 3,
+        "promise": 4,
+        "wonder": 3
+      }
+    },
+    {
+      "title": "GXOロジスティクス、Apptronikとヒューマノイドロボットの試験運用を拡大",
+      "id": "c0020895c7",
+      "old": {
+        "score": 3.35,
+        "gate": false,
+        "sec": 30.1,
+        "life_relevance": 2,
+        "work_relevance": 3,
+        "audience_fit": 3,
+        "verifiability": 5,
+        "hype_gap": 3,
+        "debate": 3,
+        "promise": 3,
+        "wonder": 3
+      },
+      "new": {
+        "score": 3.35,
+        "gate": true,
+        "sec": 12.1,
+        "life_relevance": 2,
+        "work_relevance": 4,
+        "audience_fit": 4,
+        "verifiability": 5,
+        "hype_gap": 2,
+        "debate": 3,
+        "promise": 4,
+        "wonder": 3
+      }
+    },
+    {
+      "title": "介護現場の人手不足を補う「ヒト型助手ロボット」　遠隔で利用者見守る最新テクノロジーも",
+      "id": "512431bf1e",
+      "old": {
+        "score": 2.45,
+        "gate": false,
+        "sec": 42.7,
+        "life_relevance": 4,
+        "work_relevance": 3,
+        "audience_fit": 4,
+        "verifiability": 3,
+        "hype_gap": 3,
+        "debate": 4,
+        "promise": 3,
+        "wonder": 3
+      },
+      "new": {
+        "score": 2.45,
+        "gate": true,
+        "sec": 15.8,
+        "life_relevance": 4,
+        "work_relevance": 4,
+        "audience_fit": 4,
+        "verifiability": 4,
+        "hype_gap": 3,
+        "debate": 3,
+        "promise": 3,
+        "wonder": 3
+      }
+    },
+    {
+      "title": "ジム通いより8年以上も寿命が長い…8577人を25年間追跡して判明した｢長生きにつながるスポーツ｣ (2ページ目)",
+      "id": "a49f125654",
+      "old": {
+        "score": 2.4,
+        "gate": true,
+        "sec": 31.6,
+        "life_relevance": 4,
+        "work_relevance": 1,
+        "audience_fit": 2,
+        "verifiability": 5,
+        "hype_gap": 3,
+        "debate": 3,
+        "promise": 2,
+        "wonder": 2
+      },
+      "new": {
+        "score": 2.35,
+        "gate": false,
+        "sec": 11.7,
+        "life_relevance": 3,
+        "work_relevance": 1,
+        "audience_fit": 2,
+        "verifiability": 5,
+        "hype_gap": 4,
+        "debate": 3,
+        "promise": 2,
+        "wonder": 2
+      }
+    },
+    {
+      "title": "藻類と動物の細胞が合体「プラニマル細胞」 150世代以上も分裂",
+      "id": "99342bd8b3",
+      "old": {
+        "score": 3.25,
+        "gate": false,
+        "sec": 26.1,
+        "life_relevance": 1,
+        "work_relevance": 1,
+        "audience_fit": 2,
+        "verifiability": 5,
+        "hype_gap": 4,
+        "debate": 3,
+        "promise": 2,
+        "wonder": 3
+      },
+      "new": {
+        "score": 3.5,
+        "gate": false,
+        "sec": 13.2,
+        "life_relevance": 2,
+        "work_relevance": 1,
+        "audience_fit": 3,
+        "verifiability": 5,
+        "hype_gap": 4,
+        "debate": 3,
+        "promise": 3,
+        "wonder": 4
+      }
+    },
+    {
+      "title": "なぜゾーホーは「広告を載せない」のか？　情報漏えいを防ぐ「独自の設計」、AI研究責任者に聞く",
+      "id": "af19b0422f",
+      "old": {
+        "score": 2.0,
+        "gate": true,
+        "sec": 46.2,
+        "life_relevance": 1,
+        "work_relevance": 4,
+        "audience_fit": 3,
+        "verifiability": 4,
+        "hype_gap": 3,
+        "debate": 3,
+        "promise": 2,
+        "wonder": 2
+      },
+      "new": {
+        "score": 2.2,
+        "gate": true,
+        "sec": 16.8,
+        "life_relevance": 2,
+        "work_relevance": 4,
+        "audience_fit": 3,
+        "verifiability": 4,
+        "hype_gap": 3,
+        "debate": 3,
+        "promise": 4,
+        "wonder": 2
+      }
+    },
+    {
+      "title": "倉庫での試験が成功すれば、GXOはApollo人型ロボットを最大1,000台導入へ",
+      "id": "13b391970f",
+      "old": {
+        "score": 3.45,
+        "gate": false,
+        "sec": 29.5,
+        "life_relevance": 2,
+        "work_relevance": 3,
+        "audience_fit": 3,
+        "verifiability": 5,
+        "hype_gap": 3,
+        "debate": 4,
+        "promise": 3,
+        "wonder": 3
+      },
+      "new": {
+        "score": 3.35,
+        "gate": true,
+        "sec": 10.8,
+        "life_relevance": 2,
+        "work_relevance": 4,
+        "audience_fit": 4,
+        "verifiability": 5,
+        "hype_gap": 3,
+        "debate": 3,
+        "promise": 3,
+        "wonder": 3
+      }
+    },
+    {
+      "title": "熟練工との差はわずか30秒 中国「AGILINK」のロボットハンド、出荷前検査の72工程を自律実行",
+      "id": "a29a1f721c",
+      "old": {
+        "score": 2.9,
+        "gate": true,
+        "sec": 38.9,
+        "life_relevance": 2,
+        "work_relevance": 4,
+        "audience_fit": 4,
+        "verifiability": 4,
+        "hype_gap": 3,
+        "debate": 3,
+        "promise": 4,
+        "wonder": 4
+      },
+      "new": {
+        "score": 2.9,
+        "gate": true,
+        "sec": 13.3,
+        "life_relevance": 2,
+        "work_relevance": 4,
+        "audience_fit": 4,
+        "verifiability": 4,
+        "hype_gap": 3,
+        "debate": 3,
+        "promise": 4,
+        "wonder": 4
+      }
+    },
+    {
+      "title": "人型ロボのフィギュアAI、新モデルに「AGIの萌芽」──CEOが自ら語る衝撃のデータ戦略",
+      "id": "7185f05818",
+      "old": {
+        "score": 2.55,
+        "gate": false,
+        "sec": 40.5,
+        "life_relevance": 2,
+        "work_relevance": 2,
+        "audience_fit": 3,
+        "verifiability": 3,
+        "hype_gap": 4,
+        "debate": 4,
+        "promise": 3,
+        "wonder": 3
+      },
+      "new": {
+        "score": 2.75,
+        "gate": false,
+        "sec": 13.8,
+        "life_relevance": 3,
+        "work_relevance": 3,
+        "audience_fit": 4,
+        "verifiability": 4,
+        "hype_gap": 4,
+        "debate": 4,
+        "promise": 3,
+        "wonder": 3
+      }
+    },
+    {
+      "title": "Anthropicの非公開AIモデルを使って18年間未解決だった量子コンピューターの難問が証明される",
+      "id": "952c10bc9c",
+      "old": {
+        "score": 2.85,
+        "gate": false,
+        "sec": 32.5,
+        "life_relevance": 1,
+        "work_relevance": 1,
+        "audience_fit": 2,
+        "verifiability": 4,
+        "hype_gap": 3,
+        "debate": 3,
+        "promise": 2,
+        "wonder": 3
+      },
+      "new": {
+        "score": 3.1,
+        "gate": false,
+        "sec": 12.4,
+        "life_relevance": 1,
+        "work_relevance": 1,
+        "audience_fit": 2,
+        "verifiability": 5,
+        "hype_gap": 2,
+        "debate": 3,
+        "promise": 4,
+        "wonder": 4
+      }
+    },
+    {
+      "title": "三菱電機、フィジカルAIでヒューマノイドとCNC工作機械が連携する加工システムを開発。省人化に貢献",
+      "id": "cf64f9535b",
+      "old": {
+        "score": 2.3,
+        "gate": false,
+        "sec": 23.7,
+        "life_relevance": 1,
+        "work_relevance": 4,
+        "audience_fit": 3,
+        "verifiability": 3,
+        "hype_gap": 3,
+        "debate": 3,
+        "promise": 3,
+        "wonder": 3
+      },
+      "new": {
+        "score": 2.4,
+        "gate": false,
+        "sec": 11.6,
+        "life_relevance": 1,
+        "work_relevance": 3,
+        "audience_fit": 3,
+        "verifiability": 4,
+        "hype_gap": 3,
+        "debate": 3,
+        "promise": 3,
+        "wonder": 3
+      }
+    },
+    {
+      "title": "AIに自販機経営を1年任せてみた　指示は“利益の最大化”だけ　米ハーバード大などがシミュレーション",
+      "id": "17779919b4",
+      "old": {
+        "score": 3.1,
+        "gate": true,
+        "sec": 38.6,
+        "life_relevance": 2,
+        "work_relevance": 5,
+        "audience_fit": 5,
+        "verifiability": 5,
+        "hype_gap": 3,
+        "debate": 4,
+        "promise": 4,
+        "wonder": 4
+      },
+      "new": {
+        "score": 2.8,
+        "gate": true,
+        "sec": 15.4,
+        "life_relevance": 3,
+        "work_relevance": 5,
+        "audience_fit": 4,
+        "verifiability": 5,
+        "hype_gap": 2,
+        "debate": 3,
+        "promise": 4,
+        "wonder": 4
+      }
+    },
+    {
+      "title": "食後高血糖を抑える「食べる順番」に新知見 脂質・GLP-1・迷走神経の働きを解明 秋田大学",
+      "id": "69a5ec8413",
+      "old": {
+        "score": 2.55,
+        "gate": true,
+        "sec": 36.9,
+        "life_relevance": 4,
+        "work_relevance": 1,
+        "audience_fit": 3,
+        "verifiability": 5,
+        "hype_gap": 3,
+        "debate": 3,
+        "promise": 3,
+        "wonder": 3
+      },
+      "new": {
+        "score": 2.5,
+        "gate": true,
+        "sec": 10.9,
+        "life_relevance": 4,
+        "work_relevance": 1,
+        "audience_fit": 3,
+        "verifiability": 5,
+        "hype_gap": 2,
+        "debate": 3,
+        "promise": 3,
+        "wonder": 3
+      }
+    }
+  ]
+}
