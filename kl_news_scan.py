@@ -465,7 +465,7 @@ def _id(item: dict) -> str:
     return hashlib.sha1((item.get("url") or item["title"]).encode("utf-8")).hexdigest()[:10]
 
 
-def cmd_collect(days: int, sources_path: Path = None, no_gemini: bool = False):
+def cmd_collect(days: int, sources_path: Path = None, no_gemini: bool = False, no_trending: bool = False):
     since = datetime.now(timezone.utc) - timedelta(days=days)
     cfg = json.loads((sources_path or SOURCES_JSON).read_text(encoding="utf-8"))
     feeds = cfg["feeds"]
@@ -480,7 +480,9 @@ def cmd_collect(days: int, sources_path: Path = None, no_gemini: bool = False):
     if cfg.get("gnews_queries"):
         pool += collect_gnews(cfg["gnews_queries"], since, int(cfg.get("gnews_max_per_query", 30)),
                               int(cfg.get("gnews_series_max_per_query", 12)))
-    if not no_gemini:
+    if no_trending and not no_gemini:
+        print("  Gemini検索（日本語圏で話題）: 今回は実行しない（--no-trending。分野の絞り込みは行う）")
+    if not no_gemini and not no_trending:
         try:
             trend = gemini_trending(days)
             pool += trend
@@ -4723,6 +4725,7 @@ def main():
     ap.add_argument("--no-prelim", action="store_true", help="score: 検索なしの予備採点を使わず従来どおり全件を本採点する（巻き戻し用）")
     ap.add_argument("--sources", type=Path, default=None, help="collect: news_sources.json の代わりに使う設定（試験用）")
     ap.add_argument("--no-gemini", action="store_true", help="collect: Gemini（話題の補完・分野の絞り込み）を呼ばない（試験用）")
+    ap.add_argument("--no-trending", action="store_true", help="collect: 話題の補完検索（gemini_trending）だけ止める。分野の絞り込みは行う（--no-gemini と違う）")
     ap.add_argument("--no-record", action="store_true", help="slack: 提示した日（presented_on）を news_candidates.json に記録しない（試験用）")
     ap.add_argument("--confirm", default="", help="prior-art: 例外の確認。一次資料を読んで言い切れた「何が今回初めてか」の1行（--id と --by が必要）")
     ap.add_argument("--by", default="", help="prior-art --confirm: 確認者（例: kl-planner）")
@@ -4733,7 +4736,7 @@ def main():
     elif args.command == "dedupe":
         cmd_dedupe(args.dry_run)
     elif args.command == "collect":
-        cmd_collect(args.days, args.sources, args.no_gemini)
+        cmd_collect(args.days, args.sources, args.no_gemini, args.no_trending)
     elif args.command == "score":
         cmd_score(args.top, args.dry_run, args.no_prelim)
     elif args.command == "tag":

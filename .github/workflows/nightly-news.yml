@@ -43,7 +43,11 @@ jobs:
       - name: Scan news
         run: |
           set -o pipefail
-          python3 kl_news_scan.py collect --days 21
+          # gemini_trending（日本語圏の話題の補完検索）は週1回、JST の月曜（月曜 02:17 JST 起動分）だけ実行（2026-11-13、削減プラン項目F）。
+          # 他の曜日は --no-trending（分野の絞り込みと RSS 等の収集は毎晩そのまま）。TZ=Asia/Tokyo なので date は JST
+          TREND_OPT="--no-trending"
+          [ "$(date +%u)" = "1" ] && TREND_OPT=""
+          python3 kl_news_scan.py collect --days 21 $TREND_OPT
           python3 kl_news_scan.py score --top 30 || STALL=1   # 0件採点は非0終了。後の工程・コミットは続け、最後に失敗にする（2026-11-09）
           # 一次資料URLの実在確認（2026-10-15、NEWS_REDESIGN_2026-10-15.md §3.5。HTTPだけで Gemini 不要）。
           # 全URLが404の候補はゲートで落ち、後の enrich・buzz の対象にもならない。失敗しても後の工程は止めない
