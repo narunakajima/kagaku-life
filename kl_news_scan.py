@@ -668,6 +668,162 @@ def score_item(client, types, item: dict, past: str, concerns: str) -> dict:
             time.sleep(2 ** (attempt + 1))
 
 
+# ============================================================
+# 検索なしの予備採点（2026-11-13 指示002、削減プラン項目A）
+# 検索つきの本採点（score_item）は1件ずつ課金されるため、タイトル・要約だけで判断できる項目で先にふるいにかける。
+# 無効化（巻き戻し）: PRELIM_ENABLED を False にする / 環境変数 KL_PRELIM=0 / score --no-prelim。
+# ============================================================
+PRELIM_ENABLED = True            # 取りこぼし率の実測（kl_prelim_measure.py）が10%以下なら True。超えたら False のまま報告する
+PRELIM_MIN_STAKE = 3             # 予備採点の通過条件: stake（life/work の高い方）がこれ以上。本ゲート（GATE_MIN_LIFE=4）より1段ゆるい
+FULL_SCORE_MAX = 7               # 検索つき本採点にかける最大件数（シリーズ優先枠を含む）。ここ1か所だけで変える
+PRELIM_BATCH = 40                # 予備採点の1回の呼び出しに入れる候補数（夜間は --top 以下なので1回で済む）
+PRELIM_LOG_JSON = BASE_DIR / "news_prefilter_log.json"   # 予備採点で落とした候補の記録（gitで追跡）
+PRELIM_LOG_KEEP_RUNS = 60
+PRELIM_LOG_KEEP_IDS = 2000
+LEGACY_SCORE_MAX = 15            # 予備採点を使わないときの本採点の上限（従来の --top 15 と同じ）。無効化しても検索代が増えないようにする
+
+
+def prelim_seen_ids() -> set:
+    """予備採点で落とした候補のID。次回以降は選ばず（枠を埋めさせない）、予備採点にも回さない。"""
+    if PRELIM_LOG_JSON.exists():
+        try:
+            return set(json.loads(PRELIM_LOG_JSON.read_text(encoding="utf-8")).get("ids", []))
+        except Exception:  # noqa: BLE001
+            pass
+    return set()
+
+PRELIM_PROMPT = """あなたは日本語の科学解説YouTubeチャンネル「幸せな未来のサイエンス」のネタ選定担当です。
+下の候補ニュースを、検索せずタイトル・要約・情報源だけで一次ふるいにかけます（後で検索つきの本採点があります）。
+本採点で通るはずの候補を落とさないことが最優先です。迷ったら高い方（通す方）に付けてください。
+
+【想定する視聴者】
+{audience}
+
+【視聴者の関心ごと】
+{concerns}
+
+【この番組の過去の回】
+{past}
+
+【判定項目】
+- life_relevance（1〜5）: 暮らしにどう関わるか（関心ごとに具体的につながるほど高い）
+- work_relevance（1〜5）: 仕事・ビジネスにどう関わるか（働く人・経営者・個人事業主が使える／影響を受けるほど高い。開発者・研究者専用は低い）
+- {audience_fit_rubric}
+- genre: 次の5ジャンルのどれか1つ（id）
+{genres}
+- health: 健康系の回として数えるか（true/false）
+- investment_related: 株価・投資判断の話が中心なら true
+- duplicate_of_past: 過去の回と「同じ発表・同じ研究」を扱っているときだけ true（似たテーマというだけなら false）
+- reason: 1文（日本語）
+
+【候補】
+{rows}
+
+JSON配列のみ出力（全候補分）:
+[{{"i": 0, "life_relevance": 0, "work_relevance": 0, "audience_fit": 0, "genre": "", "health": false,
+"investment_related": false, "duplicate_of_past": false, "reason": ""}}]
+"""
+
+
+def prelim_judge(client, types, items: list, past: str, concerns_txt: str) -> list:
+    """検索なしの予備採点。items と同じ長さのリスト（判定の dict、取れなかったものは None）を返す。
+    1回の呼び出しに PRELIM_BATCH 件まで。呼び出しが失敗した分は None（呼び出し側は通す）。"""
+    out = [None] * len(items)
+    for s in range(0, len(items), PRELIM_BATCH):
+        chunk = items[s:s + PRELIM_BATCH]
+        rows = "\n".join(f"{i}. {p.get('title', '')} ｜ 情報源: {p.get('source', '')}（{p.get('source_kind', '')}） ｜ 日付: "
+                         f"{(p.get('published') or '')[:10]} ｜ 要約: {(p.get('summary') or '')[:300]}"
+                         for i, p in enumerate(chunk))
+        prompt = PRELIM_PROMPT.format(audience=AUDIENCE, concerns=concerns_txt, past=past or "（なし）",
+                                      audience_fit_rubric=AUDIENCE_FIT_RUBRIC, genres=genres_brief(), rows=rows)
+        for attempt in range(3):
+            try:
+                resp = client.models.generate_content(model=MODEL, contents=prompt)
+                for r in _json_from(resp.text):
+                    i = int(r["i"])
+                    if 0 <= i < len(chunk):
+                        out[s + i] = r
+                break
+            except Exception as e:  # noqa: BLE001
+                if attempt == 2:
+                    print(f"  ⚠️ 予備採点の呼び出しに失敗（この{len(chunk)}件は通します）: {str(e)[:80]}")
+                else:
+                    time.sleep(2 ** (attempt + 1))
+    return out
+
+
+def prelim_decision(j, check_duplicate: bool = True) -> tuple:
+    """予備採点の判定 → (通す?, 落とす理由, stake)。判定が無い（None）ものは通す。"""
+    if not j:
+        return True, "", None
+    st = stake(j)
+    if st < PRELIM_MIN_STAKE:
+        return False, f"暮らし・仕事<{PRELIM_MIN_STAKE}", st
+    if j.get("investment_related"):
+        return False, "投資・株価が中心", st
+    if check_duplicate and j.get("duplicate_of_past"):
+        return False, "過去の回と重複", st
+    return True, "", st
+
+
+def prelim_enabled(no_prelim: bool = False) -> bool:
+    if no_prelim or os.environ.get("KL_PRELIM", "").strip() == "0":
+        return False
+    return PRELIM_ENABLED
+
+
+def log_prelim(run: dict):
+    log = {"_comment": "kl_news_scan.py score の予備採点（検索なし）で落とした候補の記録。runs[].dropped に件数・理由・stake。"
+                       "ids は落とした候補のID（次回以降の予備採点から外す）", "runs": [], "ids": []}
+    if PRELIM_LOG_JSON.exists():
+        try:
+            log = json.loads(PRELIM_LOG_JSON.read_text(encoding="utf-8"))
+        except Exception:  # noqa: BLE001
+            pass
+    log["runs"] = (log.get("runs", []) + [run])[-PRELIM_LOG_KEEP_RUNS:]
+    ids = [i for i in log.get("ids", []) if i not in {d["id"] for d in run["dropped"]}] + [d["id"] for d in run["dropped"]]
+    log["ids"] = ids[-PRELIM_LOG_KEEP_IDS:]   # 古い順に間引く（プールは21日で古くなるので十分）
+    PRELIM_LOG_JSON.write_text(json.dumps(log, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def prelim_filter(todo: list, prio_ids: set, no_prelim: bool = False) -> list:
+    """select_for_scoring の結果（シリーズ優先枠が先頭）に予備採点をかけ、本採点にかける FULL_SCORE_MAX 件までを返す。
+    シリーズ優先枠は素通り。落とした候補は PRELIM_LOG_JSON に件数・理由つきで記録する。"""
+    if not prelim_enabled(no_prelim):
+        print(f"予備採点: 無効（従来どおり、本採点は先頭{min(len(todo), LEGACY_SCORE_MAX)}件・上限{LEGACY_SCORE_MAX}）")
+        return todo[:LEGACY_SCORE_MAX]
+    prio = [p for p in todo if p["id"] in prio_ids]
+    rest = [p for p in todo if p["id"] not in prio_ids]
+    if not rest:
+        return prio[:FULL_SCORE_MAX] if prio else []
+    concerns = json.loads(CONCERNS_JSON.read_text(encoding="utf-8"))["concerns"]
+    concerns_txt = "\n".join(f"- {c['id']}: {c['label']}" for c in concerns)
+    client, types = _gemini()
+    js = prelim_judge(client, types, rest, past_episodes_brief(), concerns_txt)
+    passed, dropped, reasons = [], [], {}
+    for n, (p, j) in enumerate(zip(rest, js)):
+        ok, why, st = prelim_decision(j)
+        if ok:
+            passed.append((-(st if st is not None else 5), -(fit(j) if j else 5), n, p))
+        else:
+            reasons[why] = reasons.get(why, 0) + 1
+            dropped.append({"id": p["id"], "title": p.get("title", ""), "url": p.get("url", ""), "stake": st,
+                            "reason": why, "note": (j or {}).get("reason", "")})
+    passed.sort(key=lambda t: t[:3])
+    chosen = prio + [t[3] for t in passed]
+    todo2 = chosen[:FULL_SCORE_MAX]
+    print(f"予備採点（検索なし）: 対象{len(rest)}件 → 通過{len(passed)}件・落とした{len(dropped)}件"
+          + (f"（{'、'.join(f'{k} {v}件' for k, v in reasons.items())}）" if reasons else "")
+          + f"。シリーズ優先枠{len(prio)}件は素通り。本採点は先頭{len(todo2)}件（上限{FULL_SCORE_MAX}）")
+    for d in dropped:
+        print(f"   ✗ 予備で落とす [{d['reason']}] {d['title'][:60]}")
+    if dropped or passed:
+        log_prelim({"date": datetime.now().isoformat(timespec="seconds"), "checked": len(rest), "passed": len(passed),
+                    "prio_passthrough": len(prio), "scored": len(todo2), "dropped_n": len(dropped),
+                    "reasons": reasons, "dropped": dropped})
+    return todo2
+
+
 def stake(c: dict) -> int:
     """視聴者との関わり＝暮らし（life_relevance）と仕事・ビジネス（work_relevance）の高い方。ゲートと core に使う。"""
     return max(_clamp5(c.get("life_relevance")), _clamp5(c.get("work_relevance")))
@@ -907,7 +1063,7 @@ def report_stall(msg: str):
         f.write(line + "\n")
 
 
-def cmd_score(top: int, dry_run: bool = False):
+def cmd_score(top: int, dry_run: bool = False, no_prelim: bool = False):
     pool = json.loads(POOL_JSON.read_text(encoding="utf-8"))["items"]
     cands = load_candidates()
     known = {c["id"] for c in cands["items"]}
@@ -924,10 +1080,15 @@ def cmd_score(top: int, dry_run: bool = False):
         todo = [p for p in todo if p not in pol]
     # ジャンルを順に回して最大 top 件だけ採点する（検索つきの呼び出しは1件ずつ課金されるため）。2026-10-11:
     # 以前は新しい順だけで、その日の ScienceDaily・GIGAZINE などで埋まっていた
+    if prelim_enabled(no_prelim):   # 予備採点で落とした候補は選び直さない（毎晩の枠を埋めないように、選ぶ前に外す）
+        seen = prelim_seen_ids()
+        todo = [p for p in todo if p["id"] not in seen]
+    prio_ids = {p["id"] for _, p in pick_series_priority(todo)}   # select_for_scoring と同じ入力なので同じ結果（優先枠は予備採点を素通り）
     todo = select_for_scoring(todo, cands["items"], top)
     if dry_run:
-        print("\n--dry-run: 採点せずに終了します")
+        print("\n--dry-run: 採点せずに終了します（予備採点も課金のため呼びません）")
         return
+    todo = prelim_filter(todo, prio_ids, no_prelim)
     concerns = json.loads(CONCERNS_JSON.read_text(encoding="utf-8"))["concerns"]
     concerns_txt = "\n".join(f"- {c['id']}: {c['label']}" for c in concerns)
     client, types = _gemini()
@@ -4511,6 +4672,7 @@ def main():
     ap.add_argument("--force", action="store_true", help="enrich: 付与済みも付け直す / buzz: 最近測った候補も測り直す / repair: 7日以内に試した候補も試す")
     ap.add_argument("--remeasure-hours", type=float, default=24, help="buzz: これより最近に測った候補は飛ばす（既定24時間）")
     ap.add_argument("--dry-run", action="store_true", help="buzz: 測るが保存しない / score: 採点する候補を表示するだけ（課金なし）")
+    ap.add_argument("--no-prelim", action="store_true", help="score: 検索なしの予備採点を使わず従来どおり全件を本採点する（巻き戻し用）")
     ap.add_argument("--sources", type=Path, default=None, help="collect: news_sources.json の代わりに使う設定（試験用）")
     ap.add_argument("--no-gemini", action="store_true", help="collect: Gemini（話題の補完・分野の絞り込み）を呼ばない（試験用）")
     ap.add_argument("--no-record", action="store_true", help="slack: 提示した日（presented_on）を news_candidates.json に記録しない（試験用）")
@@ -4525,7 +4687,7 @@ def main():
     elif args.command == "collect":
         cmd_collect(args.days, args.sources, args.no_gemini)
     elif args.command == "score":
-        cmd_score(args.top, args.dry_run)
+        cmd_score(args.top, args.dry_run, args.no_prelim)
     elif args.command == "tag":
         cmd_tag()
     elif args.command == "enrich":
