@@ -1924,7 +1924,8 @@ def _wrap_chars(text: str, font, max_w: int) -> list:
     except Exception:  # janome が無い環境
         good = set()
     good |= {i + 1 for i, ch in enumerate(text) if ch in "、。，．）」』・ "}
-    alnum = lambda c: c.isascii() and (c.isalnum() or c in ".-%")
+    # "$" "," も英数字の仲間にする（"$|999.99" "3,|500円" と数字の途中で切れた。kl056、2026-11-13）
+    alnum = lambda c: c.isascii() and (c.isalnum() or c in ".-%$,")
     # 形態素解析が英単語の途中に切れ目を付けることがある（"cod|e"）。英数字どうしの間は切れ目にしない
     good = {b for b in good if not (alnum(text[b - 1]) and alnum(text[b]))}
     # カタカナ語の途中も切れ目にしない（janome が「ド|ローン」と切ることがある。kl052）
