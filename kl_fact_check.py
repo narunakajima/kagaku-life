@@ -38,6 +38,7 @@ import argparse
 import json
 import os
 import kl_gemini_model as gm
+import kl_search_stats as kss
 import re
 import sys
 import time
@@ -196,22 +197,7 @@ def check_reference(client: genai.Client, ref: dict, narrations: list, retries: 
                 ),
             )
             raw = strip_code_fence(resp.text or "")
-            return json.loads(raw)
-        except json.JSONDecodeError:
-            # 2026-09-04修正: 以前は1回目の解析失敗で即座にフォールバック（caution扱い）
-            # していたが、一過性の応答不良でも即座にファクトチェックが不確定のまま
-            # 終わってしまうため、下のExceptionと同様にリトライしてから諦めるようにする。
-            if attempt < retries - 1:
-                wait = 2 ** (attempt + 1)
-                print(f"    ⚠️ JSON解析失敗、{wait}秒待って再試行: raw={raw[:200]}", file=sys.stderr)
-                time.sleep(wait)
-                continue
-            return {
-                "numbers_match": None, "institution_match": None, "hedging_preserved": None,
-                "scope_exaggerated": None, "issues": [], "overall": "caution",
-                "reasoning": f"Geminiの応答をJSONとして解析できなかった（{retries}回試行）。生の応答: {raw[:300]}",
-            }
-        except Exception as e:  # noqa: BLE001
+        except Exception as e:  # noqa: BLE001  （呼び出し自体の失敗だけを再試行する）
             if attempt < retries - 1:
                 wait = 2 ** (attempt + 1)
                 print(f"    ⚠️ Gemini呼び出し失敗、{wait}秒待って再試行: {e}", file=sys.stderr)
@@ -221,6 +207,17 @@ def check_reference(client: genai.Client, ref: dict, narrations: list, retries: 
                 "numbers_match": None, "institution_match": None, "hedging_preserved": None,
                 "scope_exaggerated": None, "issues": [], "overall": "caution",
                 "reasoning": f"Gemini呼び出しが{retries}回とも失敗: {e}",
+            }
+        # 2026-11-13 指示004: JSON が読めないときは検索つきで呼び直さず、1回目の応答を検索なしで1回だけ整形し直す
+        # （2026-09-04 の「解析失敗も検索つきで再試行」は廃止。再試行のたびに検索代がかかるため）
+        try:
+            return kss.parse_with_reformat(client, MODEL, resp, lambda t: json.loads(strip_code_fence(t or "")),
+                                           "check_reference")
+        except Exception:  # noqa: BLE001
+            return {
+                "numbers_match": None, "institution_match": None, "hedging_preserved": None,
+                "scope_exaggerated": None, "issues": [], "overall": "caution",
+                "reasoning": f"Geminiの応答をJSONとして解析できなかった（検索なしの整形し直しでも不可）。生の応答: {raw[:300]}",
             }
 
 

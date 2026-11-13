@@ -69,6 +69,7 @@ import json
 import math
 import os
 import kl_gemini_model as gm
+import kl_search_stats as kss
 import re
 import sys
 import time
@@ -652,11 +653,17 @@ def score_item(client, types, item: dict, past: str, concerns: str) -> dict:
             resp = client.models.generate_content(
                 model=MODEL, contents=prompt,
                 config=types.GenerateContentConfig(tools=[types.Tool(google_search=types.GoogleSearch())]))
-            return _json_from(resp.text)
-        except Exception as e:  # noqa: BLE001
+        except Exception as e:  # noqa: BLE001  （呼び出し自体の失敗だけを再試行する）
             if attempt == 2:
                 return {"_error": str(e)}
             time.sleep(2 ** (attempt + 1))
+            continue
+        # 2026-11-13 指示004: JSON が読めなくても検索つきで呼び直さない（検索なしで1回だけ整形し直す。それでも読めなければ失敗）
+        try:
+            out = kss.parse_with_reformat(client, MODEL, resp, _json_from, "score_item")
+            return out if isinstance(out, dict) and out else {"_error": "JSON が dict でない／空"}
+        except Exception as e:  # noqa: BLE001
+            return {"_error": str(e)}
 
 
 # ============================================================
@@ -2584,7 +2591,7 @@ def backfill_prior_art(cands: list, force: bool = False, only_ids: list = None):
             resp = client.models.generate_content(
                 model=MODEL, contents=prompt,
                 config=types.GenerateContentConfig(tools=[types.Tool(google_search=types.GoogleSearch())]))
-            out = _json_from(resp.text)
+            out = kss.parse_with_reformat(client, MODEL, resp, _json_from, "prior_art")
             if isinstance(out, list) and out:
                 out = out[0]
             if not isinstance(out, dict):
