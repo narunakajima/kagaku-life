@@ -1,0 +1,929 @@
+{
+  "model_new": "gemini-3.5-flash-lite",
+  "model_old": "gemini-3.8-flash",
+  "tag": {
+    "n": 633,
+    "genre_match": 559,
+    "health_match": 619,
+    "both_match": 555,
+    "genre_pct": 88.3,
+    "both_pct": 87.7,
+    "mismatch": [
+      {
+        "title": "Your gut may be making a molecule that raises Alzh",
+        "old": [
+          "food_health",
+          true
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "Computational tools for society’s most complex cha",
+        "old": [
+          "ai",
+          false
+        ],
+        "new": [
+          "life_tech",
+          false
+        ]
+      },
+      {
+        "title": "Vagus Nerve Stimulation Could Help New Skills Stic",
+        "old": [
+          "food_health",
+          true
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "テレビとAIを活用した「介護向けAIトレーナー」の特別養護老人ホーム実証開始",
+        "old": [
+          "ai",
+          false
+        ],
+        "new": [
+          "life_tech",
+          true
+        ]
+      },
+      {
+        "title": "Children at risk for depression get “stuck” on sad",
+        "old": [
+          "medical",
+          true
+        ],
+        "new": [
+          "food_health",
+          true
+        ]
+      },
+      {
+        "title": "Diabetes study finds keeping blood sugar too stead",
+        "old": [
+          "medical",
+          true
+        ],
+        "new": [
+          "food_health",
+          true
+        ]
+      },
+      {
+        "title": "Glucosamine, a popular joint supplement, linked to",
+        "old": [
+          "food_health",
+          true
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "Scientists say house cats could help unlock better",
+        "old": [
+          "medical",
+          false
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "Zepbound and Mounjaro may turn on the body’s calor",
+        "old": [
+          "medical",
+          true
+        ],
+        "new": [
+          "food_health",
+          true
+        ]
+      },
+      {
+        "title": "That fresh cleaning smell could be filling your ho",
+        "old": [
+          "food_health",
+          true
+        ],
+        "new": [
+          "life_tech",
+          true
+        ]
+      },
+      {
+        "title": "Estimating suicide risk from text",
+        "old": [
+          "medical",
+          true
+        ],
+        "new": [
+          "ai",
+          false
+        ]
+      },
+      {
+        "title": "GLP-1 weight loss and diabetes drugs linked to nut",
+        "old": [
+          "medical",
+          true
+        ],
+        "new": [
+          "food_health",
+          true
+        ]
+      },
+      {
+        "title": "Introducing MentalHealthBench",
+        "old": [
+          "ai",
+          true
+        ],
+        "new": [
+          "ai",
+          false
+        ]
+      },
+      {
+        "title": "5 Companies Using NVIDIA AI for Clean Energy",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "ai",
+          false
+        ]
+      },
+      {
+        "title": "Why dexterity is physical AI’s real bottleneck",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "ai",
+          false
+        ]
+      },
+      {
+        "title": "Nearly 30,000 people tested quit-smoking methods. ",
+        "old": [
+          "medical",
+          true
+        ],
+        "new": [
+          "food_health",
+          true
+        ]
+      },
+      {
+        "title": "創薬・分子ツール開発を自律化・加速する「AIパワード自律型ラボ」の設立を発表",
+        "old": [
+          "medical",
+          true
+        ],
+        "new": [
+          "ai",
+          false
+        ]
+      },
+      {
+        "title": "＜画像1 / 7＞家庭用ロボット最前線！価格、機能、その進化に迫る",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      },
+      {
+        "title": "スペースデータが公開した「RobotBrain」導入前検証デモ7種の魅力と活用法",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "ai",
+          false
+        ]
+      },
+      {
+        "title": "3歳時の腸内細菌叢、5歳時の問題行動リスクと関連－京大",
+        "old": [
+          "food_health",
+          true
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "新生児の免疫システムは生後7日間で決まる",
+        "old": [
+          "food_health",
+          true
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "【動画】4体のアヒル型ロボット「Microduck」が魅せる即興合唱 Hugging Face傘下P",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      },
+      {
+        "title": "健康と「食」の新たな関係 エピジェネティクス研究で見えてきた免疫・炎症・がん予防",
+        "old": [
+          "food_health",
+          true
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "Apple、「Welcome home」イベントで発表されたことまとめ　日本でも2製品予約開始",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "ai",
+          false
+        ]
+      },
+      {
+        "title": "ペット向けのがん放射線治療やロボット手術、鳥取大に高度医療の動物医療拠点を整備へ",
+        "old": [
+          "medical",
+          false
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "高血圧診断後の生活習慣改善は心血管リスク低下と関連するか｜CareNet.com",
+        "old": [
+          "food_health",
+          true
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "フィジカルAI＝人型ロボットではない 製造業の現場が今知っておくべきこと【XR Kaigi Hub ",
+        "old": [
+          "ai",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      },
+      {
+        "title": "フロスの使用に脳梗塞の予防効果？｜CareNet.com",
+        "old": [
+          "food_health",
+          true
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "日本人の冠動脈石灰化リスクに関連する腸内細菌叢｜CareNet.com",
+        "old": [
+          "medical",
+          true
+        ],
+        "new": [
+          "food_health",
+          true
+        ]
+      },
+      {
+        "title": "中国でAIロボットが身近に、「寄り添い型」に注目",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      },
+      {
+        "title": "動物の「落とし物」から腸内細菌を調べて健康不調を読み取る 北大など",
+        "old": [
+          "medical",
+          false
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "国際家電イベント「IFA」トップが語るAI／ロボティクスの現在地。2026年のトレンド、2027年の",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "ai",
+          false
+        ]
+      },
+      {
+        "title": "スペースデータ、物流ロボットの導入前検証を支援",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      },
+      {
+        "title": "働かないAI ロボット？ ルーデンスAIがペットロボット『INU』を発売 1枚目の写真・画像",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      },
+      {
+        "title": "働かないAI ロボット？ ルーデンスAIがペットロボット『INU』を発売 2枚目の写真・画像",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      },
+      {
+        "title": "新たな研究、アラバマ州の地方部の双極性障害患者の家庭にケトジェニック療法を提供",
+        "old": [
+          "medical",
+          true
+        ],
+        "new": [
+          "food_health",
+          true
+        ]
+      },
+      {
+        "title": "血液検査の前に必ず絶食する必要はないという研究結果",
+        "old": [
+          "food_health",
+          true
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "“テスラ超え”狙う――チューリング「完全自動運転」までの道　「GPUより速いチップ」使った開発のウラ",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "ai",
+          false
+        ]
+      },
+      {
+        "title": "長時間の睡眠、実は不調のサインかも？ 糖尿病性腎症のリスクが上昇｜ニュース",
+        "old": [
+          "food_health",
+          true
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "「HomeView」にロボットアーム付きの上位モデルが計画中か｜9インチで360度回転、2027年〜",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      },
+      {
+        "title": "研究は、夜遅くに食べる習慣が肝疾患のリスクを30%増加させることを明らかにします",
+        "old": [
+          "food_health",
+          true
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "フィジカルAIの社会実装と日本の勝ち筋 GROOVE X、Preferred Robotics、ug",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      },
+      {
+        "title": "加熱殺菌ビフィズス菌の摂取で筋量低下抑制の可能性 順天堂大などが臨床試験",
+        "old": [
+          "food_health",
+          true
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "アヒル型ロボット「Microduck」の予約注文数が2万台を突破、NVIDIAのジェンスン・フアンC",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      },
+      {
+        "title": "フィジカルAI、日本の勝ち筋は「人型」だけではない ロボット3社が語る社会実装の条件 | TECH+",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      },
+      {
+        "title": "CATL、全固体電池の試験生産を2027に開始する目標",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "不妊症、免疫抑えて治療 薬剤投与の６割が妊娠 有効性確認、普及に期待",
+        "old": [
+          "medical",
+          true
+        ],
+        "new": [
+          "food_health",
+          true
+        ]
+      },
+      {
+        "title": "職場で塩分控えめや野菜・果物の摂取促すと…従業員の血圧低下、健診基にした指導と社食減塩メニューで効果",
+        "old": [
+          "food_health",
+          true
+        ],
+        "new": [
+          "ai",
+          false
+        ]
+      },
+      {
+        "title": "メアドを検索→AIで“その人専用フィッシングメール”を生成する手法、クリック率が約2.7倍に　700",
+        "old": [
+          "ai",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      },
+      {
+        "title": "Amazon、睡眠モニター搭載のスマートクロック「Echo Time」。新「Echo Dot」と同時",
+        "old": [
+          "life_tech",
+          true
+        ],
+        "new": [
+          "food_health",
+          true
+        ]
+      },
+      {
+        "title": "Amazon、スマートクロック「Echo Time」と新型「Echo Dot」発売。睡眠サポートやス",
+        "old": [
+          "life_tech",
+          true
+        ],
+        "new": [
+          "food_health",
+          true
+        ]
+      },
+      {
+        "title": "360度カメラの映像から高精細な3Dモデルを生成、東電PGの建物保全業務に導入",
+        "old": [
+          "ai",
+          false
+        ],
+        "new": [
+          "life_tech",
+          false
+        ]
+      },
+      {
+        "title": "ローソン・郵便局が「ドローン基地」に　回線はStarlinkで　ドローンインフラを急ピッチで作るKD",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      },
+      {
+        "title": "AIロボットの関節向け減速機 新機構で精度「工作機械並み」 - 日経テックフォーサイト",
+        "old": [
+          "humanoid",
+          false
+        ],
+        "new": [
+          "life_tech",
+          false
+        ]
+      },
+      {
+        "title": "MIT scientists build a tiny robot that swims using",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "iPS細胞由来の再生医療等製品が世界初｢条件・期限付き承認｣､医療現場への実装に向けて新段階へ｡iP",
+        "old": [
+          "medical",
+          true
+        ],
+        "new": [
+          "ai",
+          false
+        ]
+      },
+      {
+        "title": "OpenAI、「GPT-6.1 Terra」を発表 API料金をGPT-6.1 Solの半額に、視覚",
+        "old": [
+          "ai",
+          false
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "変形性股関節症に対する運動、期待ほどの効果は得られない？｜CareNet.com",
+        "old": [
+          "medical",
+          true
+        ],
+        "new": [
+          "food_health",
+          true
+        ]
+      },
+      {
+        "title": "Jianghao Huoの家事重視研究で、掃除機の先へ進むDreame Home Robots",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      },
+      {
+        "title": "Metaがヒューマノイドロボット「Max」を開発／米国企業はすでに改良版の準備を進める",
+        "old": [
+          "humanoid",
+          false
+        ],
+        "new": [
+          "life_tech",
+          false
+        ]
+      },
+      {
+        "title": "「高Si負極電池を長寿命に」「熱雑音で通信」 海外動向",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "ai",
+          false
+        ]
+      },
+      {
+        "title": "次の「HomeView Ultra」開発中？9インチ画面が自律移動する新型ホーム端末",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      },
+      {
+        "title": "AIで腸内環境を読み解く─肥満治療の個別化に向けた研究動向（2026/9/16）",
+        "old": [
+          "medical",
+          true
+        ],
+        "new": [
+          "food_health",
+          true
+        ]
+      },
+      {
+        "title": "アップルのスマートホームロボ「HomeVeww Ultra」、すでに完成も発売は2028年？",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      },
+      {
+        "title": "東北大とアイシンがSTT-MRAM搭載AIチップを開発、16nmプロセスでは世界初",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "ai",
+          false
+        ]
+      },
+      {
+        "title": "Appleの家庭用ロボットは本当に2027年に登場するのか？",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      },
+      {
+        "title": "歯数少ない高齢者～口腔咽頭がんリスクに（東京科学大大学院　木内桜助教）～",
+        "old": [
+          "food_health",
+          true
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "アップルのスマートホームロボ「HomeView Ultra」、すでに完成も発売は2028年？",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      },
+      {
+        "title": "パナソニック、ロボット操作AI「T-Rex」をNVIDIAや海外大学などと共同開発 12種類の実環境",
+        "old": [
+          "humanoid",
+          false
+        ],
+        "new": [
+          "ai",
+          false
+        ]
+      },
+      {
+        "title": "AppleのHomeView Ultraロボット、2027年に発表か 価格は約1000ドル",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      },
+      {
+        "title": "FLEXは人間の修正から汎化する方法をロボットに教える",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "ai",
+          false
+        ]
+      },
+      {
+        "title": "MITのシステムにより、ロボットは文字通りの命令を超えて推論できるようになる",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "ai",
+          false
+        ]
+      },
+      {
+        "title": "腸内細菌がつくるポリアミンが宿主の寿命を延ばす―腸内細菌をもたないハエを用いて因果関係を実証",
+        "old": [
+          "food_health",
+          true
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "腎臓と膀胱をつなぐ「上部尿路」のがん再発予防に新治療…国立がん研など、手術２４時間以内に抗がん剤を膀",
+        "old": [
+          "medical",
+          true
+        ],
+        "new": [
+          "ai",
+          false
+        ]
+      },
+      {
+        "title": "パナソニックが250人体制で挑む「フィジカルAI」　職人の暗黙知をAI化、外販も視野に",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "ai",
+          false
+        ]
+      },
+      {
+        "title": "藻類と動物の細胞が合体「プラニマル細胞」 150世代以上も分裂",
+        "old": [
+          "food_health",
+          false
+        ],
+        "new": [
+          "medical",
+          true
+        ]
+      },
+      {
+        "title": "人型ロボのフィギュアAI、新モデルに「AGIの萌芽」──CEOが自ら語る衝撃のデータ戦略",
+        "old": [
+          "humanoid",
+          false
+        ],
+        "new": [
+          "ai",
+          false
+        ]
+      },
+      {
+        "title": "Amazon、これまでにない家庭用ロボットの開発チームを結成",
+        "old": [
+          "life_tech",
+          false
+        ],
+        "new": [
+          "humanoid",
+          false
+        ]
+      }
+    ]
+  },
+  "enrich": {
+    "n": 50,
+    "got_query": 50,
+    "type_match": 41,
+    "type_pct": 82.0,
+    "series_match": 12,
+    "series_pct": 24.0,
+    "anchor_overlap": 39,
+    "anchor_pct": 78.0,
+    "type_mismatch": [
+      {
+        "title": "Toward provably private learning from federated da",
+        "old": "research",
+        "new": "product_release"
+      },
+      {
+        "title": "From Scan to Treatment Plan, AI Helps Close Breast",
+        "old": "other",
+        "new": "product_release"
+      },
+      {
+        "title": "テレビとAIを活用した「介護向けAIトレーナー」の特別養護老人ホーム実証開始",
+        "old": "product_release",
+        "new": "customer_case"
+      },
+      {
+        "title": "スマートペイロードがロボットやUAVの自律飛行・任務を誘導する特許技術を取得",
+        "old": "other",
+        "new": "product_release"
+      },
+      {
+        "title": "Groceryshop 2026 shows that retail robots are read",
+        "old": "event",
+        "new": "other"
+      },
+      {
+        "title": "Figure Helix 2.5、ヒューマノイドロボットの家事成功率は56%",
+        "old": "research",
+        "new": "product_release"
+      },
+      {
+        "title": "お知らせ｜ugo Nova、国産汎用ロボット開発コンペティションの改良機開発フェーズに進出",
+        "old": "press_release",
+        "new": "policy"
+      },
+      {
+        "title": "OpenAI「722本の数学論文発表します」数学者「AI使うのやめろおおおおおおお！」",
+        "old": "research",
+        "new": "product_release"
+      },
+      {
+        "title": "AI「思考」過程は信用できず、暴走リスク高まる",
+        "old": "research",
+        "new": "other"
+      }
+    ]
+  }
+}

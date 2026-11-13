@@ -33,6 +33,12 @@ DEFAULT_CANDIDATES = [
     "gemini-3.5-flash",
 ]
 
+# 軽い工程（分類・整形レベル）用の Flash-Lite 系固定ID（2026-11-14 指示008。kl_list_models.py で gemini-3.5-flash-lite の実在を確認）。
+# 事前承認済みはこの1件のみ。不存在時は他の Lite へ飛ばさず例外のまま（通常の Flash への自動復帰は未実装。フラグ有効化の前に要対応）。
+LIGHT_CANDIDATES = [
+    "gemini-3.5-flash-lite",
+]
+
 LOG_FILE = BASE_DIR / "gemini_model_fallback.log"      # 追記ログ（コミットしない）
 NOTE_FILE = BASE_DIR / "model_fallback.txt"            # 今回の実行での切替メモ（Actions が Slack に出す。コミットしない）
 
@@ -59,6 +65,17 @@ def candidates() -> list:
 
 def primary() -> str:
     return candidates()[0]
+
+
+def light_candidates() -> list:
+    """軽い工程用の候補。環境変数 KL_GEMINI_LIGHT_MODEL で第一候補を上書き可（検証用）。"""
+    env = _strip(os.environ.get("KL_GEMINI_LIGHT_MODEL", "").strip())
+    return [env] + [c for c in LIGHT_CANDIDATES if c != env] if env else list(LIGHT_CANDIDATES)
+
+
+def light_model() -> str:
+    """軽い工程用（分類・整形）の Flash-Lite 系モデル名。"""
+    return light_candidates()[0]
 
 
 def is_model_not_found(exc: Exception) -> bool:
@@ -95,6 +112,8 @@ def generate_with_fallback(call, model: str, *args, **kwargs):
     """call(model=..., ...) を、不存在エラー時に限り次の候補で再試行して実行する。"""
     cands = candidates()
     base = _strip(model)
+    if base in light_candidates():
+        cands = light_candidates()       # 軽い工程用は Lite 候補の中だけで切り替える
     if base not in cands:
         return call(model=model, *args, **kwargs)        # 候補外（TTS・画像・pro 等）は素通し
     prefix = "models/" if model.startswith("models/") else ""

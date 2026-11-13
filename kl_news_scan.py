@@ -431,6 +431,16 @@ def _gemini():
     return gm.wrap_client(genai.Client(api_key=API_KEY)), types
 
 
+# 2026-11-14 指示008（削減プラン項目I）: 軽い工程（collect の分野の絞り込み・tag・enrich の検索語生成）を Flash-Lite にする。
+# フラグ KL_LIGHT_MODEL=1 で有効（既定は無効。新旧比較の一致率が95%未満、または比較データ不足のため。結果ファイル参照）。
+LIGHT_MODEL_ON = os.environ.get("KL_LIGHT_MODEL", "0") == "1"
+
+
+def _light_model() -> str:
+    """軽い工程用のモデル名。フラグが無効なら通常の MODEL。"""
+    return gm.light_model() if LIGHT_MODEL_ON else MODEL
+
+
 # 2026-11-13 指示007（削減プラン項目G）: 夜間処理（score・予備採点・tag・enrich）の思考量（thinking）を low にする。
 # 新旧比較（kl_thinking_compare.py、20件）でゲート通過・落選が4件入れ替わったため、既定は【無効】のまま（要確認）。
 # 有効化: 環境変数 KL_THINKING_LOW=1（または既定値を "1" にする）。
@@ -565,7 +575,7 @@ def cmd_collect(days: int, sources_path: Path = None, no_gemini: bool = False, n
                   "製品の値下げ・人事・決算・株価・資金調達だけの話題、イベント告知は除きます。\n"
                   f"{listing}\n\nJSON配列（番号のリスト）のみで出力。")
         try:
-            idx = _json_from(client.models.generate_content(model=MODEL, contents=prompt, config=_cfg(types)).text)
+            idx = _json_from(client.models.generate_content(model=_light_model(), contents=prompt, config=_cfg(types)).text)
             keep += [batch[k] for k in idx if isinstance(k, int) and 0 <= k < len(batch)]
         except Exception as e:  # noqa: BLE001
             print(f"  ⚠️ 絞り込みに失敗（このまとまりは全件残す）: {e}")
@@ -1169,7 +1179,7 @@ def cmd_tag():
                      for i, c in enumerate(todo))
     prompt = (f"科学解説番組のニュース候補を5ジャンルに分類してください。\n{genres_brief()}\n\n候補:\n{rows}\n\n"
               'JSON配列のみ出力: [{"i": 0, "genre": "id", "health": false}, ...]（全候補分）')
-    resp = client.models.generate_content(model=MODEL, contents=prompt, config=_cfg(types))
+    resp = client.models.generate_content(model=_light_model(), contents=prompt, config=_cfg(types))
     out = _json_from(resp.text)
     valid = set(json.loads(GENRES_JSON.read_text(encoding="utf-8"))["order"])
     n = 0
@@ -2768,7 +2778,7 @@ def cmd_enrich(force: bool):
             f"候補:\n{rows}\n\n"
             'JSON配列のみ出力: [{"i": 0, "jp_news_query": "", "jp_title_anchor": [], "announcement_type": "", "series": ""}, ...]（全候補分）')
         try:
-            out = _json_from(client.models.generate_content(model=MODEL, contents=prompt, config=_cfg(types)).text)
+            out = _json_from(client.models.generate_content(model=_light_model(), contents=prompt, config=_cfg(types)).text)
         except Exception as e:  # noqa: BLE001
             print(f"  ⚠️ 付与に失敗（{k}〜{k + len(batch) - 1}件目）: {e}")
             continue
