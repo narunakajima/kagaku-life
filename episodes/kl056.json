@@ -1,0 +1,1373 @@
+{
+  "episode_id": "kl056",
+  "format": "dialogue",
+  "structure": "rounds_v4",
+  "template": "basic",
+  "source_type": "news",
+  "news_date": "2026-11-10",
+  "verdict_as_of": "2026-11-13",
+  "genre": "life_tech",
+  "health": false,
+  "topic_pattern": "shop_change",
+  "episode_title": "アマゾンのRing、夜の店を見回るロボ。小さな店や会社にも来る？",
+  "youtube_title": "アマゾンのRing、夜の店を見回るロボが来月米国で。小さな店や会社にも？（11月時点）",
+  "entry_question": "誰もいない夜の店や事務所を、人の代わりに機械が見回る時代は、小さな店や会社にも来る？",
+  "claim_verdict": {
+    "dreamer": "soon",
+    "skeptic": "pending"
+  },
+  "verdict": {
+    "dreamer": "soon",
+    "skeptic": "soon"
+  },
+  "hook_lines": [
+    "閉店後の店をロボが見回る",
+    "棚の上からのぞいて見に行く"
+  ],
+  "thumbnail_prompt": "Interior of a small neighborhood retail shop at night after closing, continuous across the whole frame with no panels, boxes or borders. Keep the left 30%, the right 30% and the top 42% of the frame quiet and uncluttered (dark softly blurred shelves and a dim night-blue window glow only), but the background must continue unbroken behind them. Main subject, centered left-to-right in the middle band: a long empty aisle between shelves leading to a checkout counter with a cash register, lit by a single soft cone of warm light from above, as if something is about to check the aisle. Calm and intriguing, not scary. No people, no robots, no text.",
+  "thumbnail_headline": "夜の店を\nロボが見回る",
+  "thumbnail_exprs": {
+    "dreamer": "excited",
+    "skeptic": "doubt"
+  },
+  "youtube_tags": [
+    "Ring",
+    "リング",
+    "アマゾン",
+    "Amazon",
+    "Ring Rover Cam",
+    "Ring Drone Cam",
+    "防犯",
+    "防犯カメラ",
+    "防犯ロボット",
+    "見回りロボット",
+    "警備ロボット",
+    "ドローン",
+    "店舗防犯",
+    "事務所",
+    "小さな会社",
+    "科学ニュース"
+  ],
+  "references": [
+    {
+      "title": "Ring announces Ring Robotics, ushering in a new era of security",
+      "authors": [],
+      "year": 2026,
+      "venue": "Amazon 公式ニュース（2026年11月10日）",
+      "url": "https://www.aboutamazon.com/news/devices/ring-drone-cam-rover-cam-security-robot",
+      "is_preprint": false,
+      "institution": "Amazon / Ring",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "Ring Rover Cam（製品ページ）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Amazon.com（2026年11月13日確認）",
+      "url": "https://www.amazon.com/dp/B0HDVQ32Q7",
+      "is_preprint": false,
+      "institution": "Ring",
+      "source_kind": "product_page"
+    },
+    {
+      "title": "Ring Drone Cam（製品ページ）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Amazon.com（2026年11月13日確認）",
+      "url": "https://www.amazon.com/dp/B0H1PBKM3X",
+      "is_preprint": false,
+      "institution": "Ring",
+      "source_kind": "product_page"
+    },
+    {
+      "title": "Introducing Ring Always Home Cam: An Innovative New Approach to Always Being Home",
+      "authors": [],
+      "year": 2020,
+      "venue": "Ring 公式ブログ（2020年9月24日）",
+      "url": "https://blog.ring.com/?p=5151",
+      "is_preprint": false,
+      "institution": "Ring",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "Ring Press Release 9.24.2020（Always Home Cam ほか）",
+      "authors": [],
+      "year": 2020,
+      "venue": "Ring プレスリリース（2020年9月24日、Wayback Machine 保存版）",
+      "url": "https://web.archive.org/web/20211006110007/https://assets.ctfassets.net/a3peezndovsu/3ReZCqzFZqlxGA4TCuosIh/3a9b364d002400cd192369e3d3a212e1/Ring_Press_Release_9.24.2020.pdf",
+      "is_preprint": false,
+      "institution": "Ring",
+      "source_kind": "press_release"
+    },
+    {
+      "title": "Ring 日本のサイト（ドアベル＆セキュリティカメラ、Ringプロテクトプラン）",
+      "authors": [],
+      "year": 2026,
+      "venue": "ring.com 日本（2026年11月13日確認）",
+      "url": "https://ring.com/jp/ja",
+      "is_preprint": false,
+      "institution": "Ring",
+      "source_kind": "product_page"
+    },
+    {
+      "title": "Ring Announces Next Generation of Home Security Devices and Services That Protect Every Corner of the Home",
+      "authors": [],
+      "year": 2021,
+      "venue": "Ring プレスリリース（2021年9月28日、Business Wire。Wayback Machine 保存版）",
+      "url": "https://web.archive.org/web/20210928185644/https://www.businesswire.com/news/home/20210928005996/en/",
+      "is_preprint": false,
+      "institution": "Ring",
+      "source_kind": "press_release"
+    }
+  ],
+  "youtube_description": "2026年11月10日のRing（リング、アマゾン傘下の防犯カメラの会社）の発表を、11月13日時点で確認した二人の見立てです。\n\nRingが、店や会社向けに、床を走って見回るロボット「Ring Rover Cam」と、家の中を飛ぶ防犯カメラ「Ring Drone Cam」を発表しました。誰もいない夜の店や事務所を、人の代わりに機械が見回る時代は、小さな店や会社にも来るのか。期待担当の大輔と、確かめ担当の沙織が、Ringの発表と製品ページで確かめます。(1) 今の守り方と何が違うか (2) どんな建物なら任せられるか (3) 留守の家と日本には、いつか の3つです。\n\n■ この回の判定（2026年11月13日時点の、二人の見立て）\n判定するのは：アメリカの、1つの階の小さな店や事務所に、閉店後に見回る機械が、この1年で来るか（日本は判定していません）\n大輔: もうすぐ来る（Rover Camは予約受付中で、アメリカで2026年12月16日に出荷予定。今あるRingのカメラ・センサーと同じアプリで使える）\n沙織: もうすぐ来る（最初の予想は「3年はかかる」。1つの階の建物なら来月から届き始めるため変えた。夜を任せきれるかは、使った店の声で確かめたい）\n家の中を飛ぶDrone Camは、アメリカの連邦通信委員会（FCC）の認可をまだ得ておらず、認可が出るまで販売できません（出荷予定は2027年1月27日）。二人は「まだ判断できない。認可が出て、1月27日に届くかを見てから」という見立てで、札は付けていません。日本での発売が発表されていないため、日本にも札は付けていません。発表は「すべての家と事業者が、先回りして自分で動く防犯を持てる未来の始まり」と述べています。札はそこまでには付けていません。\n\n■ 補足\n・Rover Camの範囲（製品ページ）: 1つの階・屋内のみで、階段は上り下りできません。曲がった縁、くぼみ、3.5cm（1.375インチ）を超える床の段差、黒い光沢の床には対応していません。広さは約5,000平方フィートまで（約465平方メートル、約140坪。換算は二人によるもの）。屋内の乾いた場所、0〜35℃。\n・時刻を決めた巡回と、録画の見返しには、Ringの有料プラン（Ring Protect）が必要です。\n・Drone Camの飛行時間は、製品ページで「新しい電池を満充電にし、管理された条件で試験して最大8分」（環境・使い方・電池の状態で変わる）とされています。光る床・模様のない壁・枠のないガラスや鏡が苦手、とも書かれています。\n・Ringは2020年9月にも、家の中を飛ぶ防犯カメラ「Ring Always Home Cam」を249.99ドル、2021年発売予定として発表していました（同じくFCCの認可前と記載）。2021年9月28日のRingのプレスリリースでは「アメリカで招待制で提供を始める」と発表されています（このリリースにもFCCの認可前の注意書きがあります）。その後、誰でも買えるようになったかは、今回確かめた資料では分かりません。動画で比べた違いは、2020年の公式ブログと今回の発表・製品ページによるものです。\n・警備会社と比べた費用の損得は、発表には書かれていません。\n・円の金額は、2026年11月13日の為替（1ドル＝約160円）で二人が換算したものです。\n・Ringは日本でも、ドアベル・屋内/屋外のカメラと、月額のプロテクトプラン（Basic 月額350円〜、税込）を販売しています（ring.com 日本）。Rover Cam・Drone Camの日本での発売は発表されていません。\n・この動画は発表の紹介で、特定の商品の購入や投資をすすめるものではありません。\n\n■ 参考資料（一次資料）\n・Amazon「Ring announces Ring Robotics, ushering in a new era of security」（2026年11月10日） https://www.aboutamazon.com/news/devices/ring-drone-cam-rover-cam-security-robot\n・Amazon.com「Ring Rover Cam」製品ページ https://www.amazon.com/dp/B0HDVQ32Q7\n・Amazon.com「Ring Drone Cam」製品ページ https://www.amazon.com/dp/B0H1PBKM3X\n・Ring 公式ブログ「Introducing Ring Always Home Cam」（2020年9月24日） https://blog.ring.com/?p=5151\n・Ring プレスリリース（2020年9月24日、Wayback Machine の保存版） https://web.archive.org/web/20211006110007/https://assets.ctfassets.net/a3peezndovsu/3ReZCqzFZqlxGA4TCuosIh/3a9b364d002400cd192369e3d3a212e1/Ring_Press_Release_9.24.2020.pdf\n・Ring 日本のサイト https://ring.com/jp/ja\n\n#防犯 #Ring #幸せな未来のサイエンス",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 6,
+      "ken_burns": "gentle_zoom",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "閉店後の店を、ロボットが一人で見回る。",
+          "expression": "excited"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「閉店後の店を、ロボットが一人で見回る。」"
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 7,
+      "ken_burns": "gentle_zoom",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "天井のカメラと警備会社で、もう足りてるんじゃない？",
+          "expression": "doubt"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "沙織「天井のカメラと警備会社で、もう足りてるんじゃない？」"
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 8,
+      "ken_burns": "gentle_zoom",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "柱を伸ばして棚の上をのぞき、センサーが鳴れば見に行く。",
+          "expression": "excited"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「柱を伸ばして棚の上をのぞき、センサーが鳴れば見に行く。」"
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 9,
+      "ken_burns": "gentle_zoom",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "誰もいない夜の店や事務所、機械が見回る時代は来る？",
+          "expression": "thinking",
+          "tag": "question"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "沙織「誰もいない夜の店や事務所、機械が見回る時代は来る？」"
+    },
+    {
+      "scene_id": 5,
+      "type": "setup",
+      "bgm_role": "intro",
+      "image_asset": "base_cafe_b",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "アマゾン傘下の防犯カメラの会社、リングが、店や会社向けの見回りロボットを発表したんだ。来月、アメリカで届き始める。",
+          "expression": "excited",
+          "display": "アマゾン傘下の防犯カメラの会社、Ring（リング）が、店や会社向けの見回りロボットを発表したんだ。来月、アメリカで届き始める。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "見回りロボット？ 何を、どう見回るの？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ロボットが一人で、閉店後の店の中を回る。名前はローバーカム。値段は約1,000ドル、今の為替で16万円ほど。",
+          "expression": "excited",
+          "display": "ロボットが一人で、閉店後の店の中を回る。名前はRover Cam（ローバーカム）。値段は約1,000ドル、今の為替で16万円ほど。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "店の夜の見回りって、ふつうは人か、天井に付けたカメラよね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "その夜の見回りを、機械が自分で動いてやる。決まった時刻に回るし、ドアが開くなど何か起きたら、見に行く。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "人じゃなくて、機械が建物の中を動いて、見に行く見回りね。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "閉店後の店の見回りは、リングがもう発表で言ってること。僕の予想は、その先。アメリカでは、夜の事務所や診療所、留守の家にも、この1年で広がると思う。",
+          "expression": "excited",
+          "tag": "prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は、アメリカでも、小さな店や会社に来るには、3年はかかると思う。小さな建物ほど、段差や階段が多いし、天井のカメラと警備会社で足りてる所も多いはずだから。",
+          "expression": "doubt",
+          "tag": "prediction"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、今日の問いはこれだ。誰もいない夜の店や事務所を、人の代わりに機械が見回る時代は、小さな店や会社にも来るか。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "本物なら使いたいから、確かめたいのは3つ。今の守り方と何が違うか。どんな建物なら任せられるか。それと、留守の家と日本には、いつか。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ここまでの予想は、どちらもアメリカの話。日本のことは、3つ目で確かめよう。",
+          "expression": "neutral"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true
+        },
+        {
+          "from_line": 3,
+          "source_card": {
+            "kind": "press",
+            "source": "Amazon 公式ニュース（Ring の発表、2026年11月10日）",
+            "quote": "will begin shipping to customers in the U.S. on December 16, 2026, for $999.99",
+            "quote_type": "原文",
+            "highlight": "December 16, 2026",
+            "items": [
+              "Ring Rover Cam: 店・会社向けの見回りロボ",
+              "アメリカで2026年12月16日に出荷",
+              "値段: 999.99ドル（約1,000ドル）"
+            ]
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 6,
+          "scene_image": true
+        },
+        {
+          "from_line": 9,
+          "recap_card": {
+            "title": "今日の問い",
+            "badge": "問い",
+            "items": [
+              "誰もいない夜の店や事務所を",
+              "人の代わりに機械が見回る時代は",
+              "小さな店や会社にも来る？"
+            ]
+          }
+        },
+        {
+          "from_line": 10,
+          "recap_card": {
+            "title": "今日、確かめること",
+            "items": [
+              "1 今の守り方と、何が違う？",
+              "2 どんな建物なら、任せられる？",
+              "3 留守の家と日本には、いつ？"
+            ]
+          }
+        }
+      ],
+      "photo_plan": [
+        {
+          "from_line": 6,
+          "slot": "b",
+          "asset": "photos/kl056_S05_b",
+          "what": "Amazon 公式ニュースの Rover Cam の写真（倉庫の通路）",
+          "url": "https://assets.aboutamazon.com/7b/9d/a5e9a5ee4e77a798f59cc0718716/amazon-ring-rover-camera-amazonnews-cdlt-11092026.jpeg",
+          "fallback": "今の visuals（カフェの scene_image）のまま"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「アマゾン傘下の防犯カメラの会社、リングが、店や会社向けの見回りロボットを発表したんだ。来月、アメリカで届き始める。」\n沙織「見回りロボット？ 何を、どう見回るの？」\n大輔「ロボットが一人で、閉店後の店の中を回る。名前はローバーカム。値段は約1,000ドル、今の為替で16万円ほど。」\n沙織「店の夜の見回りって、ふつうは人か、天井に付けたカメラよね。」\n大輔「その夜の見回りを、機械が自分で動いてやる。決まった時刻に回るし、ドアが開くなど何か起きたら、見に行く。」\n沙織「人じゃなくて、機械が建物の中を動いて、見に行く見回りね。」\n大輔「閉店後の店の見回りは、リングがもう発表で言ってること。僕の予想は、その先。アメリカでは、夜の事務所や診療所、留守の家にも、この1年で広がると思う。」\n沙織「私は、アメリカでも、小さな店や会社に来るには、3年はかかると思う。小さな建物ほど、段差や階段が多いし、天井のカメラと警備会社で足りてる所も多いはずだから。」\n大輔「じゃあ、今日の問いはこれだ。誰もいない夜の店や事務所を、人の代わりに機械が見回る時代は、小さな店や会社にも来るか。」\n沙織「本物なら使いたいから、確かめたいのは3つ。今の守り方と何が違うか。どんな建物なら任せられるか。それと、留守の家と日本には、いつか。」\n大輔「ここまでの予想は、どちらもアメリカの話。日本のことは、3つ目で確かめよう。」\n［画面の資料カード］Amazon 公式ニュース（Ring の発表、2026年11月10日） 「will begin shipping to customers in the U.S. on December 16, 2026, for $999.99」（原文） ・Ring Rover Cam: 店・会社向けの見回りロボ ・アメリカで2026年12月16日に出荷 ・値段: 999.99ドル（約1,000ドル）\n［画面のまとめカード（問い）］今日の問い ・誰もいない夜の店や事務所を ・人の代わりに機械が見回る時代は ・小さな店や会社にも来る？\n［画面のまとめカード（ふりかえり）］今日、確かめること ・1 今の守り方と、何が違う？ ・2 どんな建物なら、任せられる？ ・3 留守の家と日本には、いつ？"
+    },
+    {
+      "scene_id": 6,
+      "type": "paper",
+      "round": 1,
+      "round_title": "閉店後の店を、どう見回る？",
+      "bgm_role": "main",
+      "image_prompt": "Interior of a small neighborhood retail shop after closing time at night, seen from the entrance: a few rows of waist-to-shoulder-high shelves with packaged goods, a checkout counter with a cash register on the right, a narrow back corridor and a side door marked only by a small green exit light at the far end. Lights are mostly off, soft bluish night light from the front window, faint glow from a refrigerator case. Calm, quiet, safe mood, not scary. No people, no robots, no cameras in the foreground, no text or signs with words. Warm editorial illustration style.",
+      "ken_burns": "gentle_zoom",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "まず、今の守り方と何が違うか。そのロボット、閉店後に何をするの？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "店の人が決めた時刻に、決めた道を回る。部屋に着くと、ぐるっと回って、周りを全部映す。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "動いている間は、ずっと録画してる。店の人は、スマホで見られる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "録画なら、天井のカメラでもできるわよ。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "違いは、見に行けること。たとえば、ドアや窓が開いた、人が動いた、を知らせる小さな機器、センサーが鳴ったとする。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "夜中に鳴ったら？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "夜中の2時でも、ロボットが自分で、その場所へ向かう。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "人が操作しなくても？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "しなくても。同じ会社のカメラやセンサーとつながっていて、どれかが鳴ると、決めておいた場所を見に行く。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "着いたら、どうするの？ 映すだけ？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "サイレンを鳴らして、上に付いた明るいライトを光らせる。スマホから、その場に声もかけられる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "でも、背の低いロボットでしょ。棚が並んだ店だと、棚の向こうは見えないんじゃない？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そこで、伸び縮みする柱。柱の上にカメラがあって、レジのカウンターや棚の上から、のぞける。潜望鏡みたいにね。止まる場所ごとに、高さも覚えさせられる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "棚の上から、のぞき込むわけね。",
+          "expression": "amused"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true
+        },
+        {
+          "from_line": 5,
+          "source_card": {
+            "kind": "press",
+            "source": "Amazon 公式ニュース（Ring の発表、2026年11月10日）",
+            "quote": "investigate when a sensor trips at 2 a.m.",
+            "quote_type": "原文",
+            "highlight": "a sensor trips at 2 a.m.",
+            "items": [
+              "決めた時刻に巡回（閉店後・開店前）",
+              "カメラやセンサーが鳴ると、自分で見に行く",
+              "着くと360度を撮る。動く間は録画"
+            ]
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 11,
+          "scene_image": true
+        },
+        {
+          "from_line": 13,
+          "source_card": {
+            "kind": "press",
+            "source": "Amazon 公式ニュース（Ring の発表、2026年11月10日）",
+            "quote": "An adjustable mast lets Ring Rover see over counters, shelving, and obstacles.",
+            "quote_type": "原文",
+            "highlight": "see over counters, shelving",
+            "items": [
+              "伸び縮みする柱の上にカメラ（潜望鏡）",
+              "止まる場所ごとに、高さを覚える",
+              "サイレン・明るいライト・スマホからの声"
+            ]
+          },
+          "reference_index": 0
+        }
+      ],
+      "photo_plan": [
+        {
+          "from_line": 11,
+          "slot": "b",
+          "asset": "photos/kl056_S06_b",
+          "what": "Rover Cam の公式写真（柱が見えるもの）",
+          "url": "https://assets.aboutamazon.com/7b/9d/a5e9a5ee4e77a798f59cc0718716/amazon-ring-rover-camera-amazonnews-cdlt-11092026.jpeg",
+          "fallback": "閉店後の店の挿絵（scene_image）のまま"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "沙織「まず、今の守り方と何が違うか。そのロボット、閉店後に何をするの？」\n大輔「店の人が決めた時刻に、決めた道を回る。部屋に着くと、ぐるっと回って、周りを全部映す。」\n大輔「動いている間は、ずっと録画してる。店の人は、スマホで見られる。」\n沙織「録画なら、天井のカメラでもできるわよ。」\n大輔「違いは、見に行けること。たとえば、ドアや窓が開いた、人が動いた、を知らせる小さな機器、センサーが鳴ったとする。」\n沙織「夜中に鳴ったら？」\n大輔「夜中の2時でも、ロボットが自分で、その場所へ向かう。」\n沙織「人が操作しなくても？」\n大輔「しなくても。同じ会社のカメラやセンサーとつながっていて、どれかが鳴ると、決めておいた場所を見に行く。」\n沙織「着いたら、どうするの？ 映すだけ？」\n大輔「サイレンを鳴らして、上に付いた明るいライトを光らせる。スマホから、その場に声もかけられる。」\n沙織「でも、背の低いロボットでしょ。棚が並んだ店だと、棚の向こうは見えないんじゃない？」\n大輔「そこで、伸び縮みする柱。柱の上にカメラがあって、レジのカウンターや棚の上から、のぞける。潜望鏡みたいにね。止まる場所ごとに、高さも覚えさせられる。」\n沙織「棚の上から、のぞき込むわけね。」\n［画面の資料カード］Amazon 公式ニュース（Ring の発表、2026年11月10日） 「investigate when a sensor trips at 2 a.m.」（原文） ・決めた時刻に巡回（閉店後・開店前） ・カメラやセンサーが鳴ると、自分で見に行く ・着くと360度を撮る。動く間は録画\n［画面の資料カード］Amazon 公式ニュース（Ring の発表、2026年11月10日） 「An adjustable mast lets Ring Rover see over counters, shelving, and obstacles.」（原文） ・伸び縮みする柱の上にカメラ（潜望鏡） ・止まる場所ごとに、高さを覚える ・サイレン・明るいライト・スマホからの声"
+    },
+    {
+      "scene_id": 7,
+      "type": "check",
+      "round": 1,
+      "bgm_role": "main",
+      "image_prompt": "A small ground-floor office at night with no one inside: a few desks with closed laptops, a filing cabinet, a small safe-like cabinet under a counter, a back door with a window, and a long corridor leading to the rear. A small white motion sensor is mounted high in one corner of the ceiling. Dim night lighting from the street, calm and orderly mood, not scary. No people, no robots, no readable text. Warm editorial illustration style.",
+      "ken_burns": "static",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "ただ、天井のカメラを増やして、警備会社と契約すれば、それで足りる店も多いんじゃない？",
+          "expression": "doubt",
+          "tag": "barrier"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "リングの発表は、こう書いてる。部屋の隅々まで線を引いてカメラを付ける、その手間と費用をかけずに、見回れる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それは会社の言い分ね。警備会社と比べて得かどうかは？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "比べた数字は、どこにも無い。そこは自分の店で考えるしかない。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でも、使い道なら見えてる。最初の予想で言った、夜は誰もいない事務所や、小さな診療所だ。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "発表に書いてあるのは、事業者向け、まで。例は、店の表と裏、それに倉庫。事務所や診療所の話は無いわ。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だったら、店と同じつくりの場所を選べばいい。夜に人がいなくて、勝手口や窓や、お金を置く所がある場所。",
+          "expression": "excited",
+          "tag": "workaround"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "店と同じつくりの場所なら、発表にヒントがある。最初にロボットが建物を走り回って、間取り図を作る。それから、見回るべき場所を、自分で提案するの。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "例に挙がってるのは、勝手口、窓、レジ、長い廊下。自分で場所を足すこともできる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "見るべき場所を機械が考えてくれるなら、事務所でも、勝手口と窓は同じね。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "つまり、部屋ごとにカメラを増やす代わりに、1台が見て回る。",
+          "expression": "convinced",
+          "tag": "hope"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "source_card": {
+            "kind": "press",
+            "source": "Amazon 公式ニュース（Ring の発表、2026年11月10日）",
+            "quote": "without the cost and complexity of wiring up every corner of every room",
+            "quote_type": "原文",
+            "highlight": "wiring up every corner",
+            "items": [
+              "部屋の隅々まで配線する手間と費用なしに",
+              "警備会社との損得の比較は、発表に無い"
+            ]
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 5,
+          "scene_image": true
+        },
+        {
+          "from_line": 8,
+          "source_card": {
+            "kind": "press",
+            "source": "Amazon 公式ニュース（Ring の発表、2026年11月10日）",
+            "quote": "This could be a side door, windows, a register, or a long corridor",
+            "quote_type": "原文",
+            "highlight": "a side door, windows, a register",
+            "items": [
+              "最初に建物を走り、間取り図を作る",
+              "見回る場所を提案（勝手口・窓・レジ・廊下）",
+              "自分で場所を足せる"
+            ]
+          },
+          "reference_index": 0
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "沙織「ただ、天井のカメラを増やして、警備会社と契約すれば、それで足りる店も多いんじゃない？」\n大輔「リングの発表は、こう書いてる。部屋の隅々まで線を引いてカメラを付ける、その手間と費用をかけずに、見回れる。」\n沙織「それは会社の言い分ね。警備会社と比べて得かどうかは？」\n大輔「比べた数字は、どこにも無い。そこは自分の店で考えるしかない。」\n大輔「でも、使い道なら見えてる。最初の予想で言った、夜は誰もいない事務所や、小さな診療所だ。」\n沙織「発表に書いてあるのは、事業者向け、まで。例は、店の表と裏、それに倉庫。事務所や診療所の話は無いわ。」\n大輔「だったら、店と同じつくりの場所を選べばいい。夜に人がいなくて、勝手口や窓や、お金を置く所がある場所。」\n沙織「店と同じつくりの場所なら、発表にヒントがある。最初にロボットが建物を走り回って、間取り図を作る。それから、見回るべき場所を、自分で提案するの。」\n大輔「例に挙がってるのは、勝手口、窓、レジ、長い廊下。自分で場所を足すこともできる。」\n沙織「見るべき場所を機械が考えてくれるなら、事務所でも、勝手口と窓は同じね。」\n大輔「つまり、部屋ごとにカメラを増やす代わりに、1台が見て回る。」\n［画面の資料カード］Amazon 公式ニュース（Ring の発表、2026年11月10日） 「without the cost and complexity of wiring up every corner of every room」（原文） ・部屋の隅々まで配線する手間と費用なしに ・警備会社との損得の比較は、発表に無い\n［画面の資料カード］Amazon 公式ニュース（Ring の発表、2026年11月10日） 「This could be a side door, windows, a register, or a long corridor」（原文） ・最初に建物を走り、間取り図を作る ・見回る場所を提案（勝手口・窓・レジ・廊下） ・自分で場所を足せる"
+    },
+    {
+      "scene_id": 8,
+      "type": "paper",
+      "round": 2,
+      "round_title": "どんな建物なら任せられる？",
+      "bgm_role": "main",
+      "image_prompt": "Ground-level view across the floor of a small single-story shop at night: a short raised step at the entrance, a strip of glossy black tile flooring next to light wooden flooring, and a staircase in the background leading up to a dark second floor. Shelves and a counter in soft focus. Calm, quiet night lighting. No people, no robots, no readable text. Warm editorial illustration style.",
+      "ken_burns": "gentle_zoom",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "次は、どんな建物なら任せられるか。ローバーカムの製品のページに、注意書きがあるの。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "動けるのは、1つの階だけ。階段は上り下りできない。",
+          "expression": "doubt",
+          "tag": "weakness"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "1つの階、専用なんだ。",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "床にも苦手がある。3.5センチを超える段差、くぼみ、それに、黒くて光る床。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "3.5センチって、指2本分くらいの高さだね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そう。広さは、1台で約5,000平方フィートまで。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "平方フィートだと、ぴんと来ないな。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "坪で言うと、140坪くらい。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "140坪なら、小さな店や事務所の1つの階は、だいたい入りそうだ。これは僕の感覚だけど。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それと、使うのは屋内の乾いた場所。外では使えない。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だったら、2階建ての事務所でも使える。お金や書類を置く1階だけを、夜に任せる。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "1階だけだと、2階は見ないままね。",
+          "expression": "doubt"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true
+        },
+        {
+          "from_line": 2,
+          "source_card": {
+            "kind": "web",
+            "source": "Amazon.com の Ring Rover Cam 製品ページ（2026年11月13日確認）",
+            "quote": "operates in a single-floor, indoor environment, and can't go up or down stairs",
+            "quote_type": "原文",
+            "highlight": "can't go up or down stairs",
+            "items": [
+              "動けるのは1つの階・屋内だけ",
+              "苦手: 3.5cmを超える段差・くぼみ",
+              "苦手: 黒い光沢の床",
+              "屋内の乾いた場所、0〜35℃"
+            ]
+          },
+          "reference_index": 1
+        },
+        {
+          "from_line": 6,
+          "source_card": {
+            "kind": "web",
+            "source": "Amazon.com の Ring Rover Cam 製品ページ（2026年11月13日確認）",
+            "quote": "Autonomously map and cover up to 5,000 sq ft of space.",
+            "quote_type": "原文",
+            "highlight": "up to 5,000 sq ft",
+            "items": [
+              "5,000平方フィート＝約465㎡（換算）",
+              "坪にすると約140坪（換算）"
+            ]
+          },
+          "reference_index": 1
+        },
+        {
+          "from_line": 11,
+          "scene_image": true
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "沙織「次は、どんな建物なら任せられるか。ローバーカムの製品のページに、注意書きがあるの。」\n沙織「動けるのは、1つの階だけ。階段は上り下りできない。」\n大輔「1つの階、専用なんだ。」\n沙織「床にも苦手がある。3.5センチを超える段差、くぼみ、それに、黒くて光る床。」\n大輔「3.5センチって、指2本分くらいの高さだね。」\n沙織「そう。広さは、1台で約5,000平方フィートまで。」\n大輔「平方フィートだと、ぴんと来ないな。」\n沙織「坪で言うと、140坪くらい。」\n大輔「140坪なら、小さな店や事務所の1つの階は、だいたい入りそうだ。これは僕の感覚だけど。」\n沙織「それと、使うのは屋内の乾いた場所。外では使えない。」\n大輔「だったら、2階建ての事務所でも使える。お金や書類を置く1階だけを、夜に任せる。」\n沙織「1階だけだと、2階は見ないままね。」\n［画面の資料カード］Amazon.com の Ring Rover Cam 製品ページ（2026年11月13日確認） 「operates in a single-floor, indoor environment, and can't go up or down stairs」（原文） ・動けるのは1つの階・屋内だけ ・苦手: 3.5cmを超える段差・くぼみ ・苦手: 黒い光沢の床 ・屋内の乾いた場所、0〜35℃\n［画面の資料カード］Amazon.com の Ring Rover Cam 製品ページ（2026年11月13日確認） 「Autonomously map and cover up to 5,000 sq ft of space.」（原文） ・5,000平方フィート＝約465㎡（換算） ・坪にすると約140坪（換算）"
+    },
+    {
+      "scene_id": 9,
+      "type": "check",
+      "round": 2,
+      "bgm_role": "main",
+      "image_prompt": "Cutaway illustration of a small two-story office building at night, front view: the ground floor has a front door, a reception counter and a back door, softly lit; the dark upper floor has desks and a small ceiling-mounted dome camera in one corner. Clean, simple, friendly cutaway style like an architectural diagram, no people, no robots, no readable text.",
+      "ken_burns": "static",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "2階は、今の天井のカメラのまま。動くロボットは、入口とお金のある1階を見に行く。階ごとに役目を分ければいい。",
+          "expression": "excited",
+          "tag": "workaround"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "固定のカメラとロボットの組み合わせ、か。一緒に使えるのは本当？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "本当。発表には、今あるカメラやドアベル、センサーと、1つのアプリ、1つのアカウントで使える、と書いてある。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "決まった時刻に回らせるには、有料のプランが要る、とも書いてあるわね。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そう。時刻を決めて回らせることと、録画を見返すことには、月々のプランが要る。アメリカでの月々の値段は、今回の発表には書いてない。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "で、本当に来月届くの？ 予定だけじゃなくて。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "予約は、もう始まってる。出荷の日も、12月16日と、日付で書いてある。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "段差や階段の心配は、条件で分ければ済むのね。1つの階で段差の少ない店なら、アメリカでは3年はかからない。そこは私の読み違い。",
+          "expression": "convinced",
+          "tag": "turn"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "でも、警備会社で足りてる店に要るかは、まだ答えが出ない。そこは最後まで残すわ。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "資料には無い、私の願いだけど。本物なら、夜の研究室で使いたい。人の気配の知らせが来たら、まず見に行かせる。",
+          "expression": "amused",
+          "tag": "skeptic_wish"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "その条件に合うアメリカの店なら、閉店後の見回りを機械に任せる形が、もう手の届く所まで来てる。",
+          "expression": "convinced",
+          "tag": "hope"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true
+        },
+        {
+          "from_line": 3,
+          "source_card": {
+            "kind": "press",
+            "source": "Amazon 公式ニュース（Ring の発表、2026年11月10日）",
+            "quote": "one app, one account, one place to manage it all",
+            "quote_type": "原文",
+            "highlight": "one app, one account",
+            "items": [
+              "今あるカメラ・ドアベル・センサーと一緒に",
+              "時刻を決めた巡回・録画の見返し: 有料プラン",
+              "予約受付中、アメリカで12月16日に出荷"
+            ]
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 8,
+          "recap_card": {
+            "title": "任せられる建物の目安",
+            "items": [
+              "1つの階（階段は上り下りできない）",
+              "広さは約140坪まで",
+              "段差3.5cm以下、黒く光る床でない",
+              "2階建てなら、1階だけを任せる"
+            ]
+          }
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「2階は、今の天井のカメラのまま。動くロボットは、入口とお金のある1階を見に行く。階ごとに役目を分ければいい。」\n沙織「固定のカメラとロボットの組み合わせ、か。一緒に使えるのは本当？」\n大輔「本当。発表には、今あるカメラやドアベル、センサーと、1つのアプリ、1つのアカウントで使える、と書いてある。」\n沙織「決まった時刻に回らせるには、有料のプランが要る、とも書いてあるわね。」\n大輔「そう。時刻を決めて回らせることと、録画を見返すことには、月々のプランが要る。アメリカでの月々の値段は、今回の発表には書いてない。」\n沙織「で、本当に来月届くの？ 予定だけじゃなくて。」\n大輔「予約は、もう始まってる。出荷の日も、12月16日と、日付で書いてある。」\n沙織「段差や階段の心配は、条件で分ければ済むのね。1つの階で段差の少ない店なら、アメリカでは3年はかからない。そこは私の読み違い。」\n沙織「でも、警備会社で足りてる店に要るかは、まだ答えが出ない。そこは最後まで残すわ。」\n沙織「資料には無い、私の願いだけど。本物なら、夜の研究室で使いたい。人の気配の知らせが来たら、まず見に行かせる。」\n大輔「その条件に合うアメリカの店なら、閉店後の見回りを機械に任せる形が、もう手の届く所まで来てる。」\n［画面の資料カード］Amazon 公式ニュース（Ring の発表、2026年11月10日） 「one app, one account, one place to manage it all」（原文） ・今あるカメラ・ドアベル・センサーと一緒に ・時刻を決めた巡回・録画の見返し: 有料プラン ・予約受付中、アメリカで12月16日に出荷\n［画面のまとめカード（ふりかえり）］任せられる建物の目安 ・1つの階（階段は上り下りできない） ・広さは約140坪まで ・段差3.5cm以下、黒く光る床でない ・2階建てなら、1階だけを任せる"
+    },
+    {
+      "scene_id": 10,
+      "type": "paper",
+      "round": 3,
+      "round_title": "留守の家と日本には、いつ？",
+      "bgm_role": "main",
+      "image_prompt": "A quiet family living room at night while the family is away on a trip: curtains half open with moonlight, a sofa, a low table, a window latch visible, a hallway leading to other rooms, a small white charging dock-shaped box sitting flat on a low shelf (plain, no logo). Calm, peaceful, safe mood. No people, no flying devices, no readable text. Warm editorial illustration style.",
+      "ken_burns": "gentle_zoom",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "最後に、家と日本。リングは同じ日に、家の中を飛ぶ防犯カメラも発表した。ドローンカム。約250ドル、今の為替で4万円ほど。",
+          "expression": "excited",
+          "display": "最後に、家と日本。Ringは同じ日に、家の中を飛ぶ防犯カメラも発表した。Drone Cam（ドローンカム）。約250ドル、今の為替で4万円ほど。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "その会社、6年前にも、家の中を飛ぶ防犯カメラを発表してたよね。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "してた。2020年。値段も同じ、約250ドル。翌年の秋に、アメリカで売り始めた。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "誰でも買えたの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "いや。申し込んで、招待された人だけ。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "expression": "thinking",
+          "text": "その後、誰でも買えるようになったかは、今回の資料では分からない。だから今回も、本当に届くかを見たいの。"
+        },
+        {
+          "speaker": "dreamer",
+          "expression": "neutral",
+          "text": "今回も、何か引っかかる？"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "同じ但し書きが付いてること。6年前も今回も、FCCという、アメリカの電波や通信を管理する役所の認可を、まだ得ていない、と書いてある。認可が出るまでは、売ることができない。",
+          "expression": "doubt",
+          "tag": "barrier"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "飛ぶほうの出荷予定は、来年の1月27日。但し書きが付いてるのも、こっちだけ。店向けのロボットには、付いてない。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、6年前と、何が違うの？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "大きく2つ。1つ目は、道の決め方。6年前は、最初に人が決めた道を、そのとおりに飛ぶだけだった。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "今回は？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "さっきのロボットと同じ。機械が間取り図を作って、見回る場所を提案する。そこへ行く道も、機械が決める。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "2つ目は？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "飛ぶきっかけ。6年前の発表では、自動で飛ぶのは、留守の設定にした家で警報が鳴ったとき。今回は、それに加えて、つながった防犯カメラが何かをとらえたときにも飛ぶ。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "飛べる時間は？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "1回の飛行で、最大8分。新しい電池を満充電にして、決まった条件で試した数字。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "expression": "thinking",
+          "text": "8分なら、鳴った所まで飛んで、見て、戻るくらいの長さね。ずっと飛んで見張る物ではない。"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true
+        },
+        {
+          "from_line": 3,
+          "source_card": {
+            "kind": "press",
+            "source": "Ring のプレスリリース（2020年9月24日）",
+            "quote": "Ring Always Home Cam ($249.99) will be available on Ring.com and Amazon.com in 2021",
+            "quote_type": "原文",
+            "highlight": "($249.99)",
+            "items": [
+              "6年前の、家の中を飛ぶ防犯カメラ",
+              "値段は今回と同じ249.99ドル",
+              "このときもFCCの認可の前"
+            ]
+          },
+          "reference_index": 4
+        },
+        {
+          "from_line": 8,
+          "source_card": {
+            "kind": "web",
+            "source": "Amazon.com の Ring Drone Cam 製品ページ（2026年11月13日確認）",
+            "quote": "has not been authorized as required by the rules of the Federal Communications Commission",
+            "quote_type": "原文",
+            "highlight": "has not been authorized",
+            "items": [
+              "FCC: アメリカの電波・通信を管理する役所",
+              "認可が出るまで、売ることができない",
+              "製品ページの表示: Coming Soon（近日）"
+            ]
+          },
+          "reference_index": 2
+        },
+        {
+          "from_line": 11,
+          "source_card": {
+            "kind": "blog",
+            "source": "Ring 公式ブログ（2020年9月24日）",
+            "quote": "the Always Home Cam will automatically fly a set path",
+            "quote_type": "原文",
+            "highlight": "fly a set path",
+            "items": [
+              "6年前: 最初に人が決めた道を飛ぶ",
+              "6年前: 留守の設定で警報が鳴ると飛ぶ"
+            ]
+          },
+          "reference_index": 3
+        },
+        {
+          "from_line": 13,
+          "recap_card": {
+            "title": "6年前と今回の違い",
+            "items": [
+              "1 道: 人が決める → 機械が提案し決める",
+              "2 きっかけ: 留守の警報 → カメラでも"
+            ]
+          }
+        },
+        {
+          "from_line": 17,
+          "source_card": {
+            "kind": "web",
+            "source": "Amazon.com の Ring Drone Cam 製品ページ（2026年11月13日確認）",
+            "quote": "Up to 8 minutes of flight time tested with a new, fully-charged battery",
+            "quote_type": "原文",
+            "highlight": "Up to 8 minutes",
+            "items": [
+              "1回の飛行は最大8分（決まった条件で試験）",
+              "苦手: 光る床・模様のない壁",
+              "苦手: 枠のないガラスや鏡"
+            ]
+          },
+          "reference_index": 2
+        }
+      ],
+      "photo_plan": [
+        {
+          "from_line": 1,
+          "slot": "b",
+          "asset": "photos/kl056_S10_b",
+          "what": "Amazon 公式ニュースの Drone Cam の写真（充電台の上を飛ぶ）",
+          "url": "https://assets.aboutamazon.com/2c/ca/dd0c6bb84c3896a7165e4503c268/amazon-ring-drone-camera-amazonnews-cdlt-11092026.jpeg",
+          "fallback": "留守の家の居間の挿絵（scene_image）のまま"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「最後に、家と日本。リングは同じ日に、家の中を飛ぶ防犯カメラも発表した。ドローンカム。約250ドル、今の為替で4万円ほど。」\n沙織「その会社、6年前にも、家の中を飛ぶ防犯カメラを発表してたよね。」\n大輔「してた。2020年。値段も同じ、約250ドル。翌年の秋に、アメリカで売り始めた。」\n沙織「誰でも買えたの？」\n大輔「いや。申し込んで、招待された人だけ。」\n沙織「その後、誰でも買えるようになったかは、今回の資料では分からない。だから今回も、本当に届くかを見たいの。」\n大輔「今回も、何か引っかかる？」\n沙織「同じ但し書きが付いてること。6年前も今回も、FCCという、アメリカの電波や通信を管理する役所の認可を、まだ得ていない、と書いてある。認可が出るまでは、売ることができない。」\n大輔「飛ぶほうの出荷予定は、来年の1月27日。但し書きが付いてるのも、こっちだけ。店向けのロボットには、付いてない。」\n沙織「じゃあ、6年前と、何が違うの？」\n大輔「大きく2つ。1つ目は、道の決め方。6年前は、最初に人が決めた道を、そのとおりに飛ぶだけだった。」\n沙織「今回は？」\n大輔「さっきのロボットと同じ。機械が間取り図を作って、見回る場所を提案する。そこへ行く道も、機械が決める。」\n沙織「2つ目は？」\n大輔「飛ぶきっかけ。6年前の発表では、自動で飛ぶのは、留守の設定にした家で警報が鳴ったとき。今回は、それに加えて、つながった防犯カメラが何かをとらえたときにも飛ぶ。」\n沙織「飛べる時間は？」\n大輔「1回の飛行で、最大8分。新しい電池を満充電にして、決まった条件で試した数字。」\n沙織「8分なら、鳴った所まで飛んで、見て、戻るくらいの長さね。ずっと飛んで見張る物ではない。」\n［画面の資料カード］Ring のプレスリリース（2020年9月24日） 「Ring Always Home Cam ($249.99) will be available on Ring.com and Amazon.com in 2021」（原文） ・6年前の、家の中を飛ぶ防犯カメラ ・値段は今回と同じ249.99ドル ・このときもFCCの認可の前\n［画面の資料カード］Amazon.com の Ring Drone Cam 製品ページ（2026年11月13日確認） 「has not been authorized as required by the rules of the Federal Communications Commission」（原文） ・FCC: アメリカの電波・通信を管理する役所 ・認可が出るまで、売ることができない ・製品ページの表示: Coming Soon（近日）\n［画面の資料カード］Ring 公式ブログ（2020年9月24日） 「the Always Home Cam will automatically fly a set path」（原文） ・6年前: 最初に人が決めた道を飛ぶ ・6年前: 留守の設定で警報が鳴ると飛ぶ\n［画面のまとめカード（ふりかえり）］6年前と今回の違い ・1 道: 人が決める → 機械が提案し決める ・2 きっかけ: 留守の警報 → カメラでも\n［画面の資料カード］Amazon.com の Ring Drone Cam 製品ページ（2026年11月13日確認） 「Up to 8 minutes of flight time tested with a new, fully-charged battery」（原文） ・1回の飛行は最大8分（決まった条件で試験） ・苦手: 光る床・模様のない壁 ・苦手: 枠のないガラスや鏡"
+    },
+    {
+      "scene_id": 11,
+      "type": "check",
+      "round": 3,
+      "bgm_role": "main",
+      "image_prompt": "Exterior of a small two-story mixed-use building on a quiet street at night: a small shop on the ground floor with its shutter half down and a dim light inside, and a home on the second floor with warm light behind curtains. A potted plant by the door, a bicycle parked nearby. Peaceful, safe mood. No people, no robots, no drones, no readable text or signs. Warm editorial illustration style.",
+      "ken_burns": "static",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "もう一つ。下が店で、上が住まいの建物にも使える。夜は、下の店をロボットが回って、上の住まいは、飛ぶカメラが見る。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "飛ぶほうは、認可が出るまで、まだ売ることができないのよ。それに、日本は？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "日本での発売は、どちらも発表されてない。ローバーカムのページは、日本の住所だと、配送できない、と出る。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "日本でいつかは、そこまでは分からない、ね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でも、日本で売る下地はある。リングは、日本でもう、ドアベルや屋内のカメラと、月々のプランを売ってる。カメラ用のプランは、月350円から。ロボットのプランの値段とは、別の話だけどね。",
+          "expression": "excited",
+          "tag": "workaround"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "日本で売る会社が、もういる、ということね。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "だったら、見ておく目印は3つ。12月16日に、ローバーカムが本当に届くか。飛ぶほうに、認可が出るか。1月27日に届くか。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "値段は6年前と同じでも、中身は進んだ。アメリカで届くかどうかは、12月と1月に、はっきりする。",
+          "expression": "convinced",
+          "tag": "hope"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true
+        },
+        {
+          "from_line": 3,
+          "source_card": {
+            "kind": "web",
+            "source": "Amazon.com の Ring Rover Cam 製品ページ（2026年11月13日確認）",
+            "quote": "This item cannot be shipped to your selected delivery location.",
+            "quote_type": "原文",
+            "highlight": "cannot be shipped",
+            "items": [
+              "届け先を日本にしたときの表示",
+              "日本での発売は、発表されていない"
+            ]
+          },
+          "reference_index": 1
+        },
+        {
+          "from_line": 5,
+          "source_card": {
+            "kind": "web",
+            "source": "Ring 日本のサイト（2026年11月13日確認）",
+            "quote": "Basicプラン 月額350円または年額3,500円 (デバイス1台あたり)",
+            "quote_type": "原文",
+            "highlight": "月額350円",
+            "items": [
+              "日本でも販売: ドアベル・屋内/屋外のカメラ",
+              "カメラ用の月々のプラン: 350円〜2,380円（税込）"
+            ]
+          },
+          "reference_index": 5
+        },
+        {
+          "from_line": 7,
+          "recap_card": {
+            "title": "これから見ておく目印",
+            "items": [
+              "12月16日: ローバーカムが届くか",
+              "飛ぶカメラに、FCCの認可が出るか",
+              "1月27日: ドローンカムが届くか"
+            ]
+          }
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「もう一つ。下が店で、上が住まいの建物にも使える。夜は、下の店をロボットが回って、上の住まいは、飛ぶカメラが見る。」\n沙織「飛ぶほうは、認可が出るまで、まだ売ることができないのよ。それに、日本は？」\n大輔「日本での発売は、どちらも発表されてない。ローバーカムのページは、日本の住所だと、配送できない、と出る。」\n沙織「日本でいつかは、そこまでは分からない、ね。」\n大輔「でも、日本で売る下地はある。リングは、日本でもう、ドアベルや屋内のカメラと、月々のプランを売ってる。カメラ用のプランは、月350円から。ロボットのプランの値段とは、別の話だけどね。」\n沙織「日本で売る会社が、もういる、ということね。」\n沙織「だったら、見ておく目印は3つ。12月16日に、ローバーカムが本当に届くか。飛ぶほうに、認可が出るか。1月27日に届くか。」\n大輔「値段は6年前と同じでも、中身は進んだ。アメリカで届くかどうかは、12月と1月に、はっきりする。」\n［画面の資料カード］Amazon.com の Ring Rover Cam 製品ページ（2026年11月13日確認） 「This item cannot be shipped to your selected delivery location.」（原文） ・届け先を日本にしたときの表示 ・日本での発売は、発表されていない\n［画面の資料カード］Ring 日本のサイト（2026年11月13日確認） 「Basicプラン 月額350円または年額3,500円 (デバイス1台あたり)」（原文） ・日本でも販売: ドアベル・屋内/屋外のカメラ ・カメラ用の月々のプラン: 350円〜2,380円（税込）\n［画面のまとめカード（ふりかえり）］これから見ておく目印 ・12月16日: ローバーカムが届くか ・飛ぶカメラに、FCCの認可が出るか ・1月27日: ドローンカムが届くか"
+    },
+    {
+      "scene_id": 12,
+      "type": "verdict",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "先に、僕の予想から。事務所や診療所は、資料には書いてなかった。そこは先走り。留守の家は、飛ぶカメラの認可待ち。",
+          "expression": "thinking",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "事務所や診療所は、どこまでなら言える？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "店と同じつくりの建物なら、見るべき場所は同じ。そこまでは言えると思う。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "expression": "neutral",
+          "text": "今日の答えをまとめるね。今の守り方との違いは、棚の上からのぞいて、センサーが鳴ったら自分で見に行くこと。任せられるのは、1つの階の建物。"
+        },
+        {
+          "speaker": "dreamer",
+          "expression": "thinking",
+          "text": "家の中を飛ぶほうの判断は、1月27日に本当に届くかを見てから。"
+        },
+        {
+          "speaker": "skeptic",
+          "expression": "neutral",
+          "text": "日本にいつ来るかは、どちらも、そこまでは分からない。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "発表は、すべての家と事業者が持てる未来の始まり、と言ってる。始まりなのは本当。すべて、までは、資料は言ってない。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "判定の札は4つ。実現に近い順に、もうすぐ来る、3年はかかる、根拠待ち、まだ眉唾。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "expression": "neutral",
+          "text": "札を付けるのは、最初の問いを絞ったこれ。アメリカの、1つの階の店や、同じつくりの事務所に、夜の見回りロボットが、この1年で来るか。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "日本には、まだ札を付けられない。日本での発売が発表されたら、そこで付け直すわ。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "expression": "excited",
+          "text": "アメリカなら、僕は、もうすぐ来る。店向けのロボットは、もう予約が始まっていて、12月16日、来月から届く。今あるカメラと、同じアプリで使える。"
+        },
+        {
+          "speaker": "skeptic",
+          "expression": "convinced",
+          "text": "私も、アメリカなら、もうすぐ来る。段差や階段の心配は、1つの階で段差の少ない店に分ければ越えられる。警備会社で足りてる店に要るかは、まだ残るけど。",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "dreamer",
+          "expression": "thinking",
+          "text": "その、警備会社より得かどうか。どうすれば確かめられる？"
+        },
+        {
+          "speaker": "skeptic",
+          "expression": "neutral",
+          "text": "まず、アメリカでの月々のプランの値段。巡回の予定や録画を見返すのに要るお金ね。それと、使った店の声。夜を任せきれるかは、そこで分かる。"
+        },
+        {
+          "speaker": "dreamer",
+          "expression": "convinced",
+          "text": "今日覚えて帰ってほしいのは、夜の見回りは、まずアメリカの、1つの階の小さな店や、同じつくりの事務所から、機械に移り始めるということ。勝手口、窓、レジ、廊下を、1台が見に行く。",
+          "tag": "takeaway"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "今日の話は、どれもリングとアマゾンの資料。11月時点の、二人の見立てね。",
+          "expression": "neutral"
+        }
+      ],
+      "verdict_from_line": 9,
+      "visuals": [
+        {
+          "from_line": 1,
+          "recap_card": {
+            "title": "二人の答え合わせ",
+            "items": [
+              "1 違い: 棚越しにのぞき、鳴ったら見に行く",
+              "2 建物: 1つの階・140坪まで・段差が少ない",
+              "3 家: 飛ぶほうは認可待ち／日本: 未発表"
+            ]
+          }
+        },
+        {
+          "from_line": 5,
+          "source_card": {
+            "kind": "press",
+            "source": "Amazon 公式ニュース（Ring の発表、2026年11月10日）",
+            "quote": "something every home and every business can have",
+            "quote_type": "原文",
+            "highlight": "every home and every business",
+            "items": [
+              "発表: すべての家と事業者が持てる未来の始まり",
+              "家の飛ぶカメラ: FCCの認可と1月27日の出荷待ち"
+            ]
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 8,
+          "recap_card": {
+            "title": "判定の札（実現に近い順）",
+            "items": [
+              "もうすぐ来る",
+              "3年はかかる",
+              "根拠待ち",
+              "まだ眉唾"
+            ]
+          }
+        },
+        {
+          "from_line": 9,
+          "recap_card": {
+            "title": "札を付ける問い（アメリカ）",
+            "badge": "札の対象",
+            "items": [
+              "夜の見回りロボットは、この1年で来る？",
+              "場所: アメリカの、1つの階の店や、同じつくりの事務所",
+              "日本は、発売が発表されたら札を付ける"
+            ]
+          }
+        },
+        {
+          "from_line": 11,
+          "recap_card": {
+            "title": "二人の判定（アメリカ）",
+            "items": [
+              "二人とも: もうすぐ来る",
+              "12月16日から、店向けが届き始める",
+              "1つの階で段差の少ない店なら越えられる",
+              "残る: 警備会社で足りる店に要るか"
+            ]
+          }
+        },
+        {
+          "from_line": 13,
+          "recap_card": {
+            "title": "これから確かめること",
+            "items": [
+              "警備会社と比べた損得",
+              "アメリカでの月々のプランの値段",
+              "使った店の声（夜を任せきれるか）"
+            ]
+          }
+        },
+        {
+          "from_line": 15,
+          "scene_image": true
+        }
+      ],
+      "photo_plan": [
+        {
+          "from_line": 15,
+          "slot": "b",
+          "asset": "photos/kl056_S05_b",
+          "what": "Rover Cam の公式写真（S05 と同じもの）を再使用。札とカードを重ねず、カフェが40秒を超えないように",
+          "fallback": "カフェ（scene_image）のまま。行15〜16で約30秒の見込み"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「先に、僕の予想から。事務所や診療所は、資料には書いてなかった。そこは先走り。留守の家は、飛ぶカメラの認可待ち。」\n沙織「事務所や診療所は、どこまでなら言える？」\n大輔「店と同じつくりの建物なら、見るべき場所は同じ。そこまでは言えると思う。」\n沙織「今日の答えをまとめるね。今の守り方との違いは、棚の上からのぞいて、センサーが鳴ったら自分で見に行くこと。任せられるのは、1つの階の建物。」\n大輔「家の中を飛ぶほうの判断は、1月27日に本当に届くかを見てから。」\n沙織「日本にいつ来るかは、どちらも、そこまでは分からない。」\n大輔「発表は、すべての家と事業者が持てる未来の始まり、と言ってる。始まりなのは本当。すべて、までは、資料は言ってない。」\n沙織「判定の札は4つ。実現に近い順に、もうすぐ来る、3年はかかる、根拠待ち、まだ眉唾。」\n沙織「札を付けるのは、最初の問いを絞ったこれ。アメリカの、1つの階の店や、同じつくりの事務所に、夜の見回りロボットが、この1年で来るか。」\n沙織「日本には、まだ札を付けられない。日本での発売が発表されたら、そこで付け直すわ。」\n大輔「アメリカなら、僕は、もうすぐ来る。店向けのロボットは、もう予約が始まっていて、12月16日、来月から届く。今あるカメラと、同じアプリで使える。」\n沙織「私も、アメリカなら、もうすぐ来る。段差や階段の心配は、1つの階で段差の少ない店に分ければ越えられる。警備会社で足りてる店に要るかは、まだ残るけど。」\n大輔「その、警備会社より得かどうか。どうすれば確かめられる？」\n沙織「まず、アメリカでの月々のプランの値段。巡回の予定や録画を見返すのに要るお金ね。それと、使った店の声。夜を任せきれるかは、そこで分かる。」\n大輔「今日覚えて帰ってほしいのは、夜の見回りは、まずアメリカの、1つの階の小さな店や、同じつくりの事務所から、機械に移り始めるということ。勝手口、窓、レジ、廊下を、1台が見に行く。」\n沙織「今日の話は、どれもリングとアマゾンの資料。11月時点の、二人の見立てね。」\n［画面のまとめカード（ふりかえり）］二人の答え合わせ ・1 違い: 棚越しにのぞき、鳴ったら見に行く ・2 建物: 1つの階・140坪まで・段差が少ない ・3 家: 飛ぶほうは認可待ち／日本: 未発表\n［画面の資料カード］Amazon 公式ニュース（Ring の発表、2026年11月10日） 「something every home and every business can have」（原文） ・発表: すべての家と事業者が持てる未来の始まり ・家の飛ぶカメラ: FCCの認可と1月27日の出荷待ち\n［画面のまとめカード（ふりかえり）］判定の札（実現に近い順） ・もうすぐ来る ・3年はかかる ・根拠待ち ・まだ眉唾\n［画面のまとめカード（札の対象）］札を付ける問い（アメリカ） ・夜の見回りロボットは、この1年で来る？ ・場所: アメリカの、1つの階の店や、同じつくりの事務所 ・日本は、発売が発表されたら札を付ける\n［画面のまとめカード（ふりかえり）］二人の判定（アメリカ） ・二人とも: もうすぐ来る ・12月16日から、店向けが届き始める ・1つの階で段差の少ない店なら越えられる ・残る: 警備会社で足りる店に要るか\n［画面のまとめカード（ふりかえり）］これから確かめること ・警備会社と比べた損得 ・アメリカでの月々のプランの値段 ・使った店の声（夜を任せきれるか）"
+    },
+    {
+      "scene_id": 13,
+      "type": "closing",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe_b",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "今月の一歩。このロボットが日本に来なくても、役に立つ。自分の店や事務所の間取りを紙に描いて、勝手口、窓、レジ、長い廊下に印をつける。今のカメラで見えていない所が、どこかを確かめる。",
+          "expression": "excited",
+          "tag": "next_step"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "印をつけた場所まで、段差や階段なしで行けるかも、見ておくといい。1つの階で回れるなら、機械に任せられるつくりの建物よ。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "amused"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "step_card": {
+            "title": "今月の一歩",
+            "badge": "次の一歩",
+            "items": [
+              "店や事務所の間取りを紙に描く",
+              "勝手口・窓・レジ・廊下に印をつける",
+              "今のカメラで見えない所を確かめる",
+              "印まで、段差や階段なしで行ける？"
+            ]
+          }
+        },
+        {
+          "from_line": 3,
+          "scene_image": true
+        }
+      ],
+      "photo_plan": [
+        {
+          "from_line": 2,
+          "slot": "b",
+          "asset": "photos/kl056_S13_b",
+          "what": "Drone と Rover が並んだ公式画像（ring-devices-drone-rover-amazon-amazonnews-cdlt-09112026.png）",
+          "fallback": "今日の一歩のカードを続ける"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「今月の一歩。このロボットが日本に来なくても、役に立つ。自分の店や事務所の間取りを紙に描いて、勝手口、窓、レジ、長い廊下に印をつける。今のカメラで見えていない所が、どこかを確かめる。」\n沙織「印をつけた場所まで、段差や階段なしで行けるかも、見ておくといい。1つの階で回れるなら、機械に任せられるつくりの建物よ。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」\n［画面のまとめカード（次の一歩）］今月の一歩 ・店や事務所の間取りを紙に描く ・勝手口・窓・レジ・廊下に印をつける ・今のカメラで見えない所を確かめる ・印まで、段差や階段なしで行ける？"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "skeptic",
+          "narration": "夜の店を、ロボが見回る？",
+          "expression": "surprised",
+          "scene_id": 6
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "閉店後の店を、ロボットが一人で見回る。",
+          "expression": "excited",
+          "scene_id": 6
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "棚の上からのぞいて、鳴ったら自分で見に行く。",
+          "expression": "excited",
+          "scene_id": 7
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "動けるのは、1つの階だけ。階段は上り下りできない。",
+          "expression": "doubt",
+          "scene_id": 8
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "予約は、もう始まってる。出荷の日も、12月16日と、日付で書いてある。",
+          "expression": "excited",
+          "scene_id": 9
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "小さな店や会社にも来るか。判定は本編で。",
+          "expression": "thinking",
+          "scene_id": 11
+        }
+      ]
+    }
+  ],
+  "beginner_review": {
+    "passed_at": "2026-11-13",
+    "rounds": 3,
+    "report": "/private/tmp/claude-503/-Users-claude-kagaku-life/664bec7e-7b4a-4a52-b3bb-4acfcb0ca29b/scratchpad/kl056_beginner_review_r6.md",
+    "lines_digest": "e1df901c812f"
+  }
+}
