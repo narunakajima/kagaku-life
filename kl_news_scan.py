@@ -597,15 +597,6 @@ Google検索で調べ、次を出力してください。
 3. headline_claim: 見出し・報道で言われていること（1文）
 4. actual_content: 一次資料に実際に書かれていること（数値・条件・被験者数・試行回数・限界を具体的に、2〜4文）
 5. 採点（1〜5）:
-   - buzz_jp_est: 現時点（今日まで）の日本語圏での注目度の推定（RSSでの実測が失敗したときの予備）。将来話題になりそうかは含めない。
-     数えるのは「この発表（この研究・この製品）そのもの」を扱った日本語の記事だけ。テーマ全般の記事（薬の名前・食品名だけの記事）、
-     発表元の自社リリース、PR TIMES等の配信、転載サイトは数えない。
-     5 = 全国紙・NHK・Yahoo!ニュースを含む10以上の媒体が報じ、一般の人も名前を聞いたことがある
-     4 = 6〜9の媒体が報じた、またはYahoo!ニュースに掲載された
-     3 = 3〜5の媒体が報じた（専門メディア中心でもよい）
-     2 = 1〜2本だけ
-     1 = 見つからない
-     迷ったら低い方を付ける。
    - verifiability: 一次資料で答え合わせできるか（一次資料が無い・噂・リーク・出典不明なら1。具体的な数値や条件が一次資料にあれば5）
    - hype_gap: 見出しと実際の中身の差（差が大きいほど高い）
    - {promise_rubric}
@@ -639,7 +630,7 @@ Google検索で調べ、次を出力してください。
 16. announcement_type: research | product_release | customer_case | policy | event | other（企業による顧客の導入事例・成功談は customer_case）
 
 JSONオブジェクトのみで出力（他の文章は書かない）:
-{{"primary_sources": [], "announced_on": "", "headline_claim": "", "actual_content": "", "buzz_jp_est": 0, "verifiability": 0,
+{{"primary_sources": [], "announced_on": "", "headline_claim": "", "actual_content": "", "verifiability": 0,
 "hype_gap": 0, "promise": 0, "debate": 0, "wonder": 0, "life_relevance": 0, "work_relevance": 0, "audience_fit": 0, "tangible": 0, "decision_number": 0, "series_fit": 0, "concern_id": null, "entry_question": "", "surprise_line": "",
 "expected_verdicts": {{}}, "tsukkomi_material": "", "hope_material": "", "investment_related": false, "deja_vu_note": "", "genre": "", "health": false,
 "jp_news_query": "", "jp_title_anchor": [], "announcement_type": ""}}
@@ -843,12 +834,18 @@ def _clamp5(v) -> int:
         return 0
 
 
+BUZZ_FALLBACK = 2   # 実測（buzz_measured）が無いときの固定値（2026-11-13 指示003、削減プラン項目D。採点では注目度を推定させない）
+
+
 def buzz_value(c: dict):
-    """注目度の値と出どころ。実測（buzz_measured）があればそれ、無ければ推定（buzz_jp_est、旧データは buzz_jp）。"""
+    """注目度の値と出どころ。実測（buzz_measured）があればそれ。
+    無ければ、旧データに残る推定（buzz_jp_est / buzz_jp）があればそれ、新規採点分は固定値 BUZZ_FALLBACK。"""
     if c.get("buzz_measured") is not None:
         return _clamp5(c["buzz_measured"]), "実測"
     est = c.get("buzz_jp_est", c.get("buzz_jp"))
-    return _clamp5(est), "推定"
+    if est is not None:
+        return _clamp5(est), "推定"
+    return BUZZ_FALLBACK, "既定値"
 
 
 def overall(v: dict, published: str) -> float:
@@ -1116,7 +1113,7 @@ def cmd_score(top: int, dry_run: bool = False, no_prelim: bool = False):
         mark = "×" if excluded else " "
         print(f" {mark}[{score:.2f}] {p['title'][:70]}")
         print(f"       問い: {v.get('entry_question', '')}  鮮度{fresh} 検証{v.get('verifiability')} "
-              f"誇張{v.get('hype_gap')} 議論{v.get('debate')} 話題(推定){v.get('buzz_jp_est', v.get('buzz_jp'))}"
+              f"誇張{v.get('hype_gap')} 議論{v.get('debate')}"
               + (f"  除外: {entry['excluded_reason']}" if excluded else ""))
         time.sleep(1.0)
     CANDIDATES_JSON.write_text(json.dumps(cands, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -2769,7 +2766,7 @@ def cmd_buzz(max_n: int, force: bool, remeasure_hours: float, ids: list, dry_run
         except GNewsError as e:
             fail += 1
             c["buzz_error"], c["buzz_error_at"] = str(e), now.isoformat(timespec="seconds")
-            print(f"  ⚠️ {c['id']} 実測失敗（{e}）→ 推定 {buzz_value(c)[0]} で代用  {c['title'][:40]}")
+            print(f"  ⚠️ {c['id']} 実測失敗（{e}）→ {buzz_value(c)[1]} {buzz_value(c)[0]} で代用  {c['title'][:40]}")
             continue
         ok += 1
         record_buzz(c, r)       # 2026-10-15: 上書きせず履歴に足し、直近の最大を採用する
@@ -3354,7 +3351,7 @@ def _buzz_line(c: dict) -> str:
                    if c.get("buzz_yt") else "")
                 + (f"、勢い{t:.2f}" if t is not None else "")
                 + f"、{(c.get('buzz_measured_at') or '')[:16]}計測、検索語 {c.get('buzz_query', '')!r}）")
-    msg = f"注目度: 推定{buzz_value(c)[0]}（未計測"
+    msg = f"注目度: {buzz_value(c)[1]}{buzz_value(c)[0]}（未計測"
     if c.get("buzz_error"):
         msg += f"。実測失敗: {c['buzz_error']}"
     return msg + "）"
