@@ -46391,7 +46391,7 @@
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-13T08:02:05",
+      "primary_verified_at": "2026-11-13T09:42:21",
       "url_check": [
         {
           "url": "https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions",
@@ -46406,7 +46406,7 @@
       ],
       "url_ok": null,
       "url_status": "help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
-      "url_checked_at": "2026-11-13T08:02:05",
+      "url_checked_at": "2026-11-13T09:42:21",
       "buzz_history": [
         {
           "at": "2026-10-30T07:10:01",
@@ -46719,6 +46719,24 @@
       "primary_history": [
         {
           "at": "2026-11-13T08:02:05",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            },
+            {
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            }
+          ]
+        },
+        {
+          "at": "2026-11-13T09:42:21",
           "verdict": null,
           "urls": [
             {
@@ -49412,7 +49430,7 @@
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-13T08:01:59",
+      "primary_verified_at": "2026-11-13T09:42:15",
       "url_check": [
         {
           "url": "https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets",
@@ -49422,7 +49440,7 @@
       ],
       "url_ok": true,
       "url_status": "claude.com: HTTP 200「Smart reports, surveys, and po」",
-      "url_checked_at": "2026-11-13T08:01:59",
+      "url_checked_at": "2026-11-13T09:42:15",
       "buzz_history": [
         {
           "at": "2026-11-01T05:43:46",
@@ -49713,6 +49731,18 @@
       "primary_history": [
         {
           "at": "2026-11-13T08:01:59",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets",
+              "status": "HTTP 200「Smart reports, surveys, and po」",
+              "final_url": "https://claude.com/ja/resources/articles/smart-reports-surveys-pooled-budgets",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "at": "2026-11-13T09:42:15",
           "verdict": true,
           "urls": [
             {
@@ -59592,7 +59622,71 @@
         "title": "OpenAI、サイバーセキュリティ特化モデル「GPT-6 Cyber」を発表 許可範囲を守るよう訓練、審査済みの一部組織に提供",
         "id": "b60133ea3e",
         "source": "Googleニュース（生成AI 新モデル）／Ledge.ai"
-      }
+      },
+      "buzz_history": [
+        {
+          "at": "2026-11-13T09:44:09",
+          "query": "GPT-6 Cyber",
+          "measured": 5,
+          "outlets": 26,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "続発する企業の不正アクセス問題、OpenAIがサイバーセキュリティ研究に特化した最新モデル「GPT-6 Cyber」を発表",
+              "outlet": "@DIME アットダイム",
+              "date": "2026-11-10"
+            },
+            {
+              "title": "OpenAI、新型サイバーAI「GPT-6 Cyber」公開 Linuxの脆弱性1724件を発見",
+              "outlet": "マイナビニュース",
+              "date": "2026-11-09"
+            },
+            {
+              "title": "OpenAIが新モデル「GPT-6 Cyber」発表 Firefoxの未知の脆弱性検知",
+              "outlet": "日経クロステック Active",
+              "date": "2026-11-09"
+            }
+          ],
+          "trend": 0.69,
+          "articles_14d": 29,
+          "raw_items": 46,
+          "jp_measured": 5,
+          "outlets_foreign": 76,
+          "foreign_boost": false,
+          "query_en": "GPT-6 Cyber"
+        }
+      ],
+      "buzz_measured_at": "2026-11-13T09:44:09",
+      "buzz_measured": 5,
+      "buzz_outlets": 26,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "続発する企業の不正アクセス問題、OpenAIがサイバーセキュリティ研究に特化した最新モデル「GPT-6 Cyber」を発表",
+          "outlet": "@DIME アットダイム",
+          "date": "2026-11-10"
+        },
+        {
+          "title": "OpenAI、新型サイバーAI「GPT-6 Cyber」公開 Linuxの脆弱性1724件を発見",
+          "outlet": "マイナビニュース",
+          "date": "2026-11-09"
+        },
+        {
+          "title": "OpenAIが新モデル「GPT-6 Cyber」発表 Firefoxの未知の脆弱性検知",
+          "outlet": "日経クロステック Active",
+          "date": "2026-11-09"
+        }
+      ],
+      "buzz_trend": 0.69,
+      "buzz_articles_14d": 29,
+      "buzz_raw_items": 46,
+      "buzz_query": "GPT-6 Cyber",
+      "buzz_jp_measured": 5,
+      "buzz_outlets_foreign": 76,
+      "buzz_foreign_boost": false,
+      "buzz_query_en": "GPT-6 Cyber",
+      "buzz_adopted_at": "2026-11-13T09:44:09",
+      "buzz_adopted_n": 1
     },
     {
       "title": "靴製造で受注96億円超、鉱山の危険作業にも。中国CASBOT、「働く人型ロボ」の実用化へ【動画あり】",
@@ -60316,7 +60410,71 @@
         "title": "Anthropicの非公開AIモデルを使って18年間未解決だった量子コンピューターの難問が証明される",
         "id": "5e369e32bf",
         "source": "Googleニュース（AI 未解決問題 証明）／GIGAZINE"
-      }
+      },
+      "buzz_history": [
+        {
+          "at": "2026-11-13T09:43:57",
+          "query": "Anthropic 量子コンピューター",
+          "measured": 4,
+          "outlets": 3,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "Anthropicの非公開AIモデルを使って18年間未解決だった量子コンピューターの難問が証明される",
+              "outlet": "GIGAZINE",
+              "date": "2026-11-09"
+            },
+            {
+              "title": "PSIがアーロンソン＝アンバイニス予想の証明を発表、Anthropic非公開モデルを使用",
+              "outlet": "Pasquale Pillitteri",
+              "date": "2026-11-07"
+            },
+            {
+              "title": "AIモデルの「すり替え」を見破る新技術、Anthropicが開発：GPU1基で4000億パラメータを検証可能に",
+              "outlet": "XenoSpectrum",
+              "date": "2026-11-04"
+            }
+          ],
+          "trend": 0.67,
+          "articles_14d": 3,
+          "raw_items": 8,
+          "jp_measured": 3,
+          "outlets_foreign": 26,
+          "foreign_boost": false,
+          "query_en": "Anthropic"
+        }
+      ],
+      "buzz_measured_at": "2026-11-13T09:43:57",
+      "buzz_measured": 4,
+      "buzz_outlets": 3,
+      "yahoo": false,
+      "buzz_evidence": [
+        {
+          "title": "Anthropicの非公開AIモデルを使って18年間未解決だった量子コンピューターの難問が証明される",
+          "outlet": "GIGAZINE",
+          "date": "2026-11-09"
+        },
+        {
+          "title": "PSIがアーロンソン＝アンバイニス予想の証明を発表、Anthropic非公開モデルを使用",
+          "outlet": "Pasquale Pillitteri",
+          "date": "2026-11-07"
+        },
+        {
+          "title": "AIモデルの「すり替え」を見破る新技術、Anthropicが開発：GPU1基で4000億パラメータを検証可能に",
+          "outlet": "XenoSpectrum",
+          "date": "2026-11-04"
+        }
+      ],
+      "buzz_trend": 0.67,
+      "buzz_articles_14d": 3,
+      "buzz_raw_items": 8,
+      "buzz_query": "Anthropic 量子コンピューター",
+      "buzz_jp_measured": 3,
+      "buzz_outlets_foreign": 26,
+      "buzz_foreign_boost": false,
+      "buzz_query_en": "Anthropic",
+      "buzz_adopted_at": "2026-11-13T09:43:57",
+      "buzz_adopted_n": 1
     },
     {
       "title": "Apollo 2のヒューマノイド、Mercedes-Benzの仕分け実証実験で成功率96%を達成",
@@ -61436,7 +61594,74 @@
         "title": "Anthropic、「Claude Fable 5.2」「Claude Mythos 5.2」を発表 ～最強モデルがより高速・安価に",
         "id": "c9a7b49ecb",
         "source": "Googleニュース（生成AI 新モデル）／窓の杜"
-      }
+      },
+      "buzz_history": [
+        {
+          "at": "2026-11-13T09:44:03",
+          "query": "Claude Fable",
+          "measured": 5,
+          "outlets": 34,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "エクサウィザーズが提供する最新AIモデル「Claude Fable 5.2」の魅力と機能",
+              "outlet": "ニュースメディアVOIX",
+              "date": "2026-11-12"
+            },
+            {
+              "title": "会社員の仕事に「Claude Fable 5.2」は必要か？ 調査、要約、資料作成でOpus／Sonnetと比較してみた（1/2 ページ）",
+              "outlet": "ITmedia",
+              "date": "2026-11-11"
+            },
+            {
+              "title": "Claude Fable 5.2、フェルマーの最終定理を約30時間で形式化―1000エージェントの協調実験",
+              "outlet": "財経新聞",
+              "date": "2026-11-11"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 40,
+          "raw_items": 80,
+          "jp_measured": 5,
+          "outlets_foreign": 65,
+          "foreign_boost": false,
+          "query_en": "Claude Fable"
+        }
+      ],
+      "buzz_measured_at": "2026-11-13T09:44:03",
+      "buzz_measured": 5,
+      "buzz_outlets": 34,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "エクサウィザーズが提供する最新AIモデル「Claude Fable 5.2」の魅力と機能",
+          "outlet": "ニュースメディアVOIX",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "会社員の仕事に「Claude Fable 5.2」は必要か？ 調査、要約、資料作成でOpus／Sonnetと比較してみた（1/2 ページ）",
+          "outlet": "ITmedia",
+          "date": "2026-11-11"
+        },
+        {
+          "title": "Claude Fable 5.2、フェルマーの最終定理を約30時間で形式化―1000エージェントの協調実験",
+          "outlet": "財経新聞",
+          "date": "2026-11-11"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 40,
+      "buzz_raw_items": 80,
+      "buzz_query": "Claude Fable",
+      "buzz_jp_measured": 5,
+      "buzz_outlets_foreign": 65,
+      "buzz_foreign_boost": false,
+      "buzz_query_en": "Claude Fable",
+      "buzz_adopted_at": "2026-11-13T09:44:03",
+      "buzz_adopted_n": 1,
+      "yt_competitors": 6,
+      "yt_competitors_checked_at": "2026-11-13T09:46:35",
+      "yt_competitors_query": "Claude Fable 5.2 解説"
     },
     {
       "title": "大阪や福岡が「ロボタクシー特区」に？副首都で維新提言",
@@ -61825,7 +62050,7 @@
       "overall_score": 4.05,
       "scan_version": "2026-11-07-interest",
       "interest_version": "2026-11-07",
-      "status": "available",
+      "status": "used",
       "excluded_reason": "",
       "scored_at": "2026-11-12",
       "first_seen_at": "2026-11-12T08:42:10",
@@ -61856,15 +62081,81 @@
         },
         {
           "url": "https://ring.com/products/drone-cam",
-          "ok": true,
-          "status": "HTTP 200「Drone Cam | Ring」",
-          "page_title": "Drone Cam | Ring",
-          "anchor_hit": true,
+          "ok": false,
+          "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）（再確認5回とも404・開けず）",
+          "final_url": "https://ring.com/jp/ja/products/drone-cam",
+          "redirects": [
+            "302 https://ring.com/jp/ja/products/drone-cam"
+          ],
           "method": "http",
+          "attempts": [
+            {
+              "url": "https://ring.com/products/drone-cam",
+              "via": "初回",
+              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）",
+              "final_url": "https://ring.com/jp/ja/products/drone-cam",
+              "redirects": [
+                "302 https://ring.com/jp/ja/products/drone-cam"
+              ],
+              "at": "2026-11-13T09:41:28"
+            },
+            {
+              "url": "https://ring.com/products/drone-cam",
+              "via": "英語のAccept-Languageで再試行",
+              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）",
+              "final_url": "https://ring.com/jp/ja/products/drone-cam",
+              "redirects": [
+                "302 https://ring.com/jp/ja/products/drone-cam"
+              ],
+              "at": "2026-11-13T09:41:33"
+            },
+            {
+              "url": "https://ring.com/products/drone-cam",
+              "via": "20秒おいて再試行",
+              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）",
+              "final_url": "https://ring.com/jp/ja/products/drone-cam",
+              "redirects": [
+                "302 https://ring.com/jp/ja/products/drone-cam"
+              ],
+              "at": "2026-11-13T09:41:54"
+            },
+            {
+              "url": "https://ring.com/us/en/products/drone-cam",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）",
+              "final_url": "https://ring.com/jp/ja/products/drone-cam",
+              "redirects": [
+                "301 https://ring.com/products/drone-cam",
+                "302 https://ring.com/jp/ja/products/drone-cam"
+              ],
+              "at": "2026-11-13T09:42:00"
+            },
+            {
+              "url": "https://ring.com/en-us/products/drone-cam",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）",
+              "final_url": "https://ring.com/jp/ja/products/drone-cam",
+              "redirects": [
+                "302 https://ring.com/jp/ja/products/drone-cam"
+              ],
+              "at": "2026-11-13T09:42:04"
+            },
+            {
+              "url": "https://ring.com/en/products/drone-cam",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）",
+              "final_url": "https://ring.com/jp/ja/products/drone-cam",
+              "redirects": [
+                "301 https://ring.com/products/drone-cam",
+                "302 https://ring.com/jp/ja/products/drone-cam"
+              ],
+              "at": "2026-11-13T09:42:10"
+            }
+          ],
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-13T08:01:52",
+      "primary_verified_at": "2026-11-13T09:42:10",
       "url_check": [
         {
           "url": "https://www.aboutamazon.com/news/devices/ring-drone-cam-rover-cam-security-robot",
@@ -61873,13 +62164,13 @@
         },
         {
           "url": "https://ring.com/products/drone-cam",
-          "ok": true,
-          "status": "HTTP 200「Drone Cam | Ring」"
+          "ok": false,
+          "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）（再確認5回とも404・開けず）"
         }
       ],
-      "url_ok": true,
-      "url_status": "aboutamazon.com: HTTP 200「Ring announces Ring Robotics, 」 ／ ring.com: HTTP 200「Drone Cam | Ring」",
-      "url_checked_at": "2026-11-13T08:01:52",
+      "url_ok": false,
+      "url_status": "aboutamazon.com: HTTP 200「Ring announces Ring Robotics, 」 ／ ring.com: HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）（再確認5回とも404・開けず）",
+      "url_checked_at": "2026-11-13T09:42:10",
       "prior_art": {
         "version": "2026-11-11",
         "checked_at": "2026-11-12T08:49:31",
@@ -62047,8 +62338,30 @@
               "ok": true
             }
           ]
+        },
+        {
+          "at": "2026-11-13T09:42:10",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://www.aboutamazon.com/news/devices/ring-drone-cam-rover-cam-security-robot",
+              "status": "HTTP 200「Ring announces Ring Robotics, 」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://ring.com/products/drone-cam",
+              "status": "HTTP 404（転送先 https://ring.com/jp/ja/products/drone-cam が404）（再確認5回とも404・開けず）",
+              "final_url": "https://ring.com/jp/ja/products/drone-cam",
+              "ok": false
+            }
+          ]
         }
-      ]
+      ],
+      "yt_competitors": 0,
+      "yt_competitors_checked_at": "2026-11-13T09:46:35",
+      "yt_competitors_query": "Ring Drone Cam",
+      "used_in": "kl056"
     },
     {
       "title": "採血前の絶食時間が最も影響する検査項目は？",
@@ -62300,7 +62613,10 @@
       "buzz_foreign_boost": true,
       "buzz_query_en": "Japanese",
       "buzz_adopted_at": "2026-11-12T08:49:58",
-      "buzz_adopted_n": 1
+      "buzz_adopted_n": 1,
+      "yt_competitors": 0,
+      "yt_competitors_checked_at": "2026-11-13T09:46:35",
+      "yt_competitors_query": "腸内細菌 発酵食品 6800人"
     },
     {
       "title": "Google、選択肢から答えを選ぶことに特化した「Gemini Decisions API」発表　回答を生成せず確率で返す",
@@ -63169,10 +63485,10 @@
       "topic_series": "39b45d161a",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
-        "date": "2026-11-11",
-        "title": "世界初のバイオニック・ヒューマノイドロボットのニュースキャスターを公開",
-        "id": "dc67a45c82",
-        "source": "Googleニュース（ヒューマノイド）／共同通信PRワイヤー"
+        "date": "2026-10-19",
+        "title": "人の「1回の成功動作」からズレを自律補正して再現するヒューマノイド向け動作再現ソフトを提供開始",
+        "id": "a96624ed64",
+        "source": "Gemini検索（イマクリエイト株式会社）"
       }
     },
     {
@@ -63538,10 +63854,10 @@
       "topic_series": "39b45d161a",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
-        "date": "2026-11-11",
-        "title": "世界初のバイオニック・ヒューマノイドロボットのニュースキャスターを公開",
-        "id": "dc67a45c82",
-        "source": "Googleニュース（ヒューマノイド）／共同通信PRワイヤー"
+        "date": "2026-10-19",
+        "title": "人の「1回の成功動作」からズレを自律補正して再現するヒューマノイド向け動作再現ソフトを提供開始",
+        "id": "a96624ed64",
+        "source": "Gemini検索（イマクリエイト株式会社）"
       }
     },
     {
@@ -63783,7 +64099,63 @@
         "title": "藻類と動物の細胞が合体「プラニマル細胞」 150世代以上も分裂",
         "id": "99342bd8b3",
         "source": "Googleニュース（iPS細胞 研究 成果）／朝日新聞"
-      }
+      },
+      "buzz_history": [
+        {
+          "at": "2026-11-13T09:43:51",
+          "query": "プラニマル細胞 松永幸大",
+          "measured": 4,
+          "outlets": 4,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "動植物ハイブリッド細胞「プラニマル細胞」の作製に成功 ～物と植物の境界を越えた細胞の誕生～",
+              "outlet": "量子科学技術研究開発機構（QST）",
+              "date": "2026-11-12"
+            },
+            {
+              "title": "「プラニマル細胞」を初作製＝原始的藻類と動物培養細胞を融合―将来は有用物質生産に応用・東大など",
+              "outlet": "時事通信ニュース",
+              "date": "2026-11-12"
+            },
+            {
+              "title": "藻類と動物の細胞が合体「プラニマル細胞」 150世代以上も分裂",
+              "outlet": "朝日新聞",
+              "date": "2026-11-12"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 4,
+          "raw_items": 16
+        }
+      ],
+      "buzz_measured_at": "2026-11-13T09:43:51",
+      "buzz_measured": 4,
+      "buzz_outlets": 4,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "動植物ハイブリッド細胞「プラニマル細胞」の作製に成功 ～物と植物の境界を越えた細胞の誕生～",
+          "outlet": "量子科学技術研究開発機構（QST）",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "「プラニマル細胞」を初作製＝原始的藻類と動物培養細胞を融合―将来は有用物質生産に応用・東大など",
+          "outlet": "時事通信ニュース",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "藻類と動物の細胞が合体「プラニマル細胞」 150世代以上も分裂",
+          "outlet": "朝日新聞",
+          "date": "2026-11-12"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 4,
+      "buzz_raw_items": 16,
+      "buzz_query": "プラニマル細胞 松永幸大",
+      "buzz_adopted_at": "2026-11-13T09:43:51",
+      "buzz_adopted_n": 1
     },
     {
       "title": "なぜゾーホーは「広告を載せない」のか？　情報漏えいを防ぐ「独自の設計」、AI研究責任者に聞く",
@@ -63886,7 +64258,7 @@
           "kind": "tech_report"
         }
       ],
-      "primary_verified_at": "2026-11-13T08:01:58",
+      "primary_verified_at": "2026-11-13T09:42:14",
       "primary_history": [
         {
           "at": "2026-11-13T08:01:17",
@@ -63923,6 +64295,24 @@
               "ok": true
             }
           ]
+        },
+        {
+          "at": "2026-11-13T09:42:14",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://www.zoho.com/privacy-commitment.html",
+              "status": "HTTP 200「Zoho | Our Privacy Commitment」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://help.zoho.com/portal/en/kb/crm/data-security-privacy/articles/data-privacy-and-security",
+              "status": "HTTP 200",
+              "final_url": "https://help.zoho.com/portal/en/kb/pagesense/frequently-asked-questions/articles/data-privacy-and-security-system",
+              "ok": true
+            }
+          ]
         }
       ],
       "url_check": [
@@ -63939,7 +64329,7 @@
       ],
       "url_ok": true,
       "url_status": "zoho.com: HTTP 200「Zoho | Our Privacy Commitment」 ／ help.zoho.com: HTTP 200",
-      "url_checked_at": "2026-11-13T08:01:58",
+      "url_checked_at": "2026-11-13T09:42:14",
       "prior_art": {
         "version": "2026-11-11",
         "checked_at": "2026-11-13T08:01:34",

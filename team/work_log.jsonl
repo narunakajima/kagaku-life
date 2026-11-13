@@ -251,3 +251,12 @@
 {"ts": "2026-11-10T13:28:43+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl055", "step": "11", "result": "ok", "retries": 0, "note": "素材確認 進行可。読みQA15行は誤読なし。S12_L08のみ動画後に耳で確認"}
 {"ts": "2026-11-10T13:28:55+09:00", "kind": "call", "agent": "kl-manager", "session": "41e11424-f6b7-4e13-93b3-23fc978e358e"}
 {"ts": "2026-11-10T13:42:15+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl055", "step": "進行", "result": "retry", "retries": 0, "note": "候補データの誤り(URL404・時速15km)で裏取り手戻り、初見レビュー5周、S10 AI画像→実写真に変更、ユーザー決定でタイトル差し替え"}
+{"ts": "2026-11-13T09:48:01+09:00", "kind": "call", "agent": "kl-planner", "session": "664bec7e-7b4a-4a52-b3bb-4acfcb0ca29b"}
+{"ts": "2026-11-13T09:49:04+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "664bec7e-7b4a-4a52-b3bb-4acfcb0ca29b"}
+{"ts": "2026-11-13T09:49:11+09:00", "kind": "work", "agent": "kl-planner", "episode": "kl056", "step": "1", "result": "ok", "retries": 0, "note": "ベスト3: 弱い日。Ring/腸活/Fable5.2"}
+{"ts": "2026-11-13T09:49:11+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl056", "step": "1", "result": "ok", "retries": 0, "note": "見たい3／見たくない0。最推し=Ring"}
+{"ts": "2026-11-13T09:59:59+09:00", "kind": "call", "agent": "kl-planner", "session": "664bec7e-7b4a-4a52-b3bb-4acfcb0ca29b"}
+{"ts": "2026-11-13T10:01:03+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "664bec7e-7b4a-4a52-b3bb-4acfcb0ca29b"}
+{"ts": "2026-11-13T10:02:15+09:00", "kind": "call", "agent": "kl-manager", "session": "664bec7e-7b4a-4a52-b3bb-4acfcb0ca29b"}
+{"ts": "2026-11-13T10:02:26+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl056", "step": "1.5", "result": "ok", "retries": 0, "note": "推奨=案A（問いを1本に縮め直し）、次点=案B"}
+{"ts": "2026-11-13T10:02:26+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl056", "step": "1.5", "result": "ok", "retries": 0, "note": "問い3案すべて見たい。順位 B>A>C"}

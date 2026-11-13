@@ -3297,8 +3297,46 @@
         "title_note": "2026-11-10 ユーザー決定でタイトルを差し替え（パッケージ選定の案1改を却下。理由: 「うちの会社には〜」だと物流会社の視聴者に限定されるため）"
       },
       "candidate_id": "c86a513ce7"
+    },
+    {
+      "episode_id": "kl056",
+      "status": "confirmed",
+      "slot_type": "news",
+      "genre": "life_tech",
+      "health": false,
+      "domain": "life",
+      "concern_id": null,
+      "entry_question": "誰もいない夜の店や事務所を、人の代わりに機械が見回る時代は、小さな店や会社にも来る？",
+      "title": "4万円の空飛ぶ防犯カメラ、家と店の見回りはどう変わる？（11月時点）",
+      "format": "dialogue",
+      "structure": "rounds_v4",
+      "source_type": "news",
+      "news_date": "2026-11-10",
+      "references": [
+        {
+          "title": "Ring announces Ring Robotics, Ring Drone Cam and Rover Cam",
+          "year": 2026,
+          "venue": "Amazon 公式ニュース（2026年11月10日）",
+          "url": "https://www.aboutamazon.com/news/devices/ring-drone-cam-rover-cam-security-robot",
+          "is_preprint": false,
+          "institution": "Amazon / Ring",
+          "source_kind": "official_blog"
+        }
+      ],
+      "hook_idea": "留守の家の中を、4万円くらいのカメラが自分で飛んで見回ってくれる。",
+      "notes": "2026-11-13 ベスト3（弱い日）からなるさんが選択。エマ: 見たい（最推し）。懸念: life_tech 直近5話で3回目、日本発売未定・FCC認可待ち、前身Always Home Cam未発売、Astro for Business(撤退)との差。重さ・飛行時間は報道のみで一次資料に無い。詳細は問いゲートで確定。",
+      "topic_pattern": "home_arrival",
+      "pitch": {
+        "title": "夜の店を一人で見回るロボが1,000ドルで来月出荷。小さな店にも来る？（11月時点）",
+        "hook": "留守の家の中を、4万円くらいのカメラが自分で飛んで見回ってくれる。Ring がそう発表したんだ",
+        "surprise_line": "警備は人か固定カメラだと思っている人が、約1,000ドルのロボットが閉店後の建物を決まった時刻に回り、センサーが鳴れば自分で見に行くと知って驚く（条件: 大きな施設の警備ロボとの比較は一次資料で確かめられなければ使わない）",
+        "emma": "見たい（3案中最推し）",
+        "question": "誰もいない夜の店や事務所を、人の代わりに機械が見回る時代は、小さな店や会社にも来る？",
+        "title_note": "仮。最終は STEP 5.6。問いゲート 2026-11-13 なるさんが案B選択（編集長推奨はA、エマ1位はB）"
+      },
+      "candidate_id": "13538e44f9"
     }
   ],
-  "total_topics": 55,
+  "total_topics": 56,
   "last_updated": "2026-11-08"
 }
