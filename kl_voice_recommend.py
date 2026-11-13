@@ -34,6 +34,8 @@ API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY"
 # （Fable 5.1監査の指摘）。本番と同じモデルに統一する。
 # 2026-09-28: kl_tts_gen.pyのgemini-3.8-flash-tts移行に合わせて更新（本番と同一モデルを維持）。
 TTS_MODEL = "gemini-3.8-flash-tts"
+# 2026-11-14: 試聴用。--tts-model lite で Flash-Lite TTS に切り替えられる（既定は本番と同じモデル）。
+TTS_MODELS = {"default": "gemini-3.8-flash-tts", "lite": "gemini-3.8-flash-lite-tts"}
 RECOMMEND_MODEL = gm.primary()
 MAX_RETRIES = 5  # TTSは稀にfinish_reason=OTHERで空データを返すことがある
 
@@ -110,7 +112,11 @@ def main():
     parser.add_argument("--role", required=True, choices=["persona", "research"], help="ボイスの役割")
     parser.add_argument("--voices", required=True, help="候補ボイス名（カンマ区切り、Claudeが3件程度に絞り込み済みのもの）")
     parser.add_argument("--text", required=True, help="読み上げるサンプルナレーション文")
+    parser.add_argument("--tts-model", choices=sorted(TTS_MODELS), default="default",
+                        help="TTSモデル。既定は本番の gemini-3.8-flash-tts。lite は試聴用の gemini-3.8-flash-lite-tts")
     args = parser.parse_args()
+    global TTS_MODEL
+    TTS_MODEL = TTS_MODELS[args.tts_model]
 
     if not API_KEY:
         print("❌ GEMINI_API_KEY が設定されていません", file=sys.stderr)
