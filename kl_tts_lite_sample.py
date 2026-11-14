@@ -38,7 +38,7 @@ def main():
     cast = D.load_cast()
     OUT_ROOT.mkdir(parents=True, exist_ok=True)
 
-    for label, model in (("current", T.TTS_MODELS["default"]), ("lite", T.TTS_MODELS["lite"])):
+    for label, model in (("current", T.TTS_MODELS["flash"]), ("lite", T.TTS_MODELS["lite"])):
         wavs = []
         for k, line in enumerate(lines, start=1):
             c = cast[line["speaker"]]
