@@ -9512,7 +9512,7 @@
       "scored_at": "2026-10-12",
       "topic_first_date": "2015-11-14",
       "topic_first_source": "候補 6d57535a95 のannounced_on（＜画像1 / 7＞家庭用ロボット最前線！価格、機能、その進化）",
-      "topic_series": "4a60e64112",
+      "topic_series": "7e8ec115cc",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-14",
@@ -18833,7 +18833,7 @@
       "scored_at": "2026-10-15",
       "topic_first_date": "2026-04-21",
       "topic_first_source": "候補 4cf947cd03 のannounced_on（コーヒーの効果はカフェインだけではない？ 腸内細菌との関係が）",
-      "topic_series": "4cf947cd03",
+      "topic_series": "94635b45e9",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-14",
@@ -37752,7 +37752,7 @@
       "scored_at": "2026-10-25",
       "topic_first_date": "2015-11-14",
       "topic_first_source": "候補 6d57535a95 のannounced_on（＜画像1 / 7＞家庭用ロボット最前線！価格、機能、その進化）",
-      "topic_series": "4a60e64112",
+      "topic_series": "7e8ec115cc",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-22",
@@ -46850,7 +46850,7 @@
       "scored_at": "2026-10-30",
       "topic_first_date": "2026-10-21",
       "topic_first_source": "候補 e61b1b9be2 のannounced_on（テスラの人型ロボ「Optimus」、生産開始 週2万台には「）",
-      "topic_series": "e61b1b9be2",
+      "topic_series": "19f2a31ebf",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-21",
@@ -49480,7 +49480,7 @@
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-14T07:54:34",
+      "primary_verified_at": "2026-11-15T06:42:36",
       "url_check": [
         {
           "url": "https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets",
@@ -49490,7 +49490,7 @@
       ],
       "url_ok": true,
       "url_status": "claude.com: HTTP 200「Claude Enterprise 向けのスマートレポート、」",
-      "url_checked_at": "2026-11-14T07:54:34",
+      "url_checked_at": "2026-11-15T06:42:36",
       "buzz_history": [
         {
           "at": "2026-11-01T05:43:46",
@@ -49836,6 +49836,18 @@
               "ok": true
             }
           ]
+        },
+        {
+          "at": "2026-11-15T06:42:36",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets",
+              "status": "HTTP 200「Claude Enterprise 向けのスマートレポート、」",
+              "final_url": "https://claude.com/ja/resources/articles/smart-reports-surveys-pooled-budgets",
+              "ok": true
+            }
+          ]
         }
       ],
       "buzz_jp_measured": 4,
@@ -49898,7 +49910,7 @@
       "scored_at": "2026-11-01",
       "topic_first_date": "2015-11-14",
       "topic_first_source": "候補 6d57535a95 のannounced_on（＜画像1 / 7＞家庭用ロボット最前線！価格、機能、その進化）",
-      "topic_series": "4a60e64112",
+      "topic_series": "7e8ec115cc",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-31",
@@ -55005,7 +55017,7 @@
       "scored_at": "2026-11-04",
       "topic_first_date": "2015-11-14",
       "topic_first_source": "候補 6d57535a95 のannounced_on（＜画像1 / 7＞家庭用ロボット最前線！価格、機能、その進化）",
-      "topic_series": "4a60e64112",
+      "topic_series": "7e8ec115cc",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-11-03",
@@ -56108,12 +56120,12 @@
       "freshness": 5,
       "overall_score": 3.45,
       "scan_version": "2026-11-04-subscriber",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-11-05",
       "topic_first_date": "2026-11-02",
       "topic_first_source": "候補 f2a7f0a9ec のannounced_on（がん細胞死が抗腫瘍免疫を活性化する機序の一端を解明 ミトコン）",
-      "topic_series": "f2a7f0a9ec",
+      "topic_series": "dd1eb30d62",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-11-02",
@@ -56122,7 +56134,9 @@
         "source": "Googleニュース（がん 新しい治療 研究）／国立がん研究センター"
       },
       "surprise_line": "",
-      "interest_version": "2026-11-07"
+      "interest_version": "2026-11-07",
+      "merged_into": "dd1eb30d62",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "深刻な「中国依存」を脱せるか　老舗問屋が動いた「空気を使った肥料づくり」とAI農業とは？",
@@ -64455,7 +64469,7 @@
           "kind": "tech_report"
         }
       ],
-      "primary_verified_at": "2026-11-14T07:54:34",
+      "primary_verified_at": "2026-11-15T06:42:36",
       "primary_history": [
         {
           "at": "2026-11-13T08:01:17",
@@ -64528,6 +64542,24 @@
               "ok": true
             }
           ]
+        },
+        {
+          "at": "2026-11-15T06:42:36",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://www.zoho.com/privacy-commitment.html",
+              "status": "HTTP 200「Zoho | Our Privacy Commitment」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://help.zoho.com/portal/en/kb/crm/data-security-privacy/articles/data-privacy-and-security",
+              "status": "HTTP 200",
+              "final_url": "https://help.zoho.com/portal/en/kb/pagesense/frequently-asked-questions/articles/data-privacy-and-security-system",
+              "ok": true
+            }
+          ]
         }
       ],
       "url_check": [
@@ -64544,7 +64576,7 @@
       ],
       "url_ok": true,
       "url_status": "zoho.com: HTTP 200「Zoho | Our Privacy Commitment」 ／ help.zoho.com: HTTP 200",
-      "url_checked_at": "2026-11-14T07:54:34",
+      "url_checked_at": "2026-11-15T06:42:36",
       "prior_art": {
         "version": "2026-11-11",
         "checked_at": "2026-11-13T08:01:34",
@@ -64594,11 +64626,38 @@
           "trend": 1.0,
           "articles_14d": 3,
           "raw_items": 8
+        },
+        {
+          "at": "2026-11-15T06:41:16",
+          "query": "ゾーホー AI",
+          "measured": 4,
+          "outlets": 4,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "なぜゾーホーは「広告を載せない」のか？ 情報漏えいを防ぐ「独自の設計」、AI研究責任者に聞く（1/3 ページ）",
+              "outlet": "ITmedia",
+              "date": "2026-11-12"
+            },
+            {
+              "title": "ゾーホー、AIによるIT運用とセキュリティ運用の連携を訴求",
+              "outlet": "ZDNET Japan",
+              "date": "2026-11-09"
+            },
+            {
+              "title": "業務用アプリケーションのための独自の小型AIモデル、印Zohoが日本でも展開",
+              "outlet": "デジタルクロス",
+              "date": "2026-11-05"
+            }
+          ],
+          "trend": 0.5,
+          "articles_14d": 4,
+          "raw_items": 7
         }
       ],
-      "buzz_measured_at": "2026-11-13T08:01:38",
+      "buzz_measured_at": "2026-11-15T06:41:16",
       "buzz_measured": 4,
-      "buzz_outlets": 3,
+      "buzz_outlets": 4,
       "yahoo": true,
       "buzz_evidence": [
         {
@@ -64612,17 +64671,17 @@
           "date": "2026-11-09"
         },
         {
-          "title": "ゾーホージャパンが発表した新オプション「EDR」と「DEX」で進化したEndpoint Central Cloudの魅力",
-          "outlet": "ニュースメディアVOIX",
+          "title": "業務用アプリケーションのための独自の小型AIモデル、印Zohoが日本でも展開",
+          "outlet": "デジタルクロス",
           "date": "2026-11-05"
         }
       ],
-      "buzz_trend": 1.0,
-      "buzz_articles_14d": 3,
-      "buzz_raw_items": 8,
+      "buzz_trend": 0.5,
+      "buzz_articles_14d": 4,
+      "buzz_raw_items": 7,
       "buzz_query": "ゾーホー AI",
-      "buzz_adopted_at": "2026-11-13T08:01:38",
-      "buzz_adopted_n": 1
+      "buzz_adopted_at": "2026-11-15T06:41:16",
+      "buzz_adopted_n": 2
     },
     {
       "title": "倉庫での試験が成功すれば、GXOはApollo人型ロボットを最大1,000台導入へ",
@@ -65005,10 +65064,10 @@
       "topic_series": "b625e1631a",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
-        "date": "2026-11-12",
-        "title": "AI「Muse」専用メアド開始、「日本で取れた」報告続々　メール送受信も任せられる",
-        "id": "952d3f8c51",
-        "source": "ITmedia AI+"
+        "date": "2026-11-09",
+        "title": "UBTECH、Tianyiと提携し、ヒューマノイドロボットの普及拡大を目指す",
+        "id": "9f8a89d4b5",
+        "source": "Googleニュース（家庭用ロボット）／Unite.AI"
       },
       "dup_ids": [
         "1fe680600f",
@@ -65337,10 +65396,10 @@
       "topic_series": "b625e1631a",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
-        "date": "2026-11-12",
-        "title": "AI「Muse」専用メアド開始、「日本で取れた」報告続々　メール送受信も任せられる",
-        "id": "952d3f8c51",
-        "source": "ITmedia AI+"
+        "date": "2026-11-09",
+        "title": "UBTECH、Tianyiと提携し、ヒューマノイドロボットの普及拡大を目指す",
+        "id": "9f8a89d4b5",
+        "source": "Googleニュース（家庭用ロボット）／Unite.AI"
       }
     },
     {
@@ -65410,8 +65469,14 @@
       "presented_on": [],
       "topic_first_date": "2015-11-14",
       "topic_first_source": "候補 6d57535a95 のannounced_on（＜画像1 / 7＞家庭用ロボット最前線！価格、機能、その進化）",
-      "topic_series": "4a60e64112",
-      "freshness_basis": "topic_first_date"
+      "topic_series": "7e8ec115cc",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-08",
+        "title": "アマゾンが家庭用ロボットに再挑戦：新チームは「前例のない」製品を目指すも、Astroの前例が課題に",
+        "id": "6547733230",
+        "source": "Googleニュース（家庭用ロボット）／BigGo ファイナンス"
+      }
     },
     {
       "title": "【動画】佐賀市の自動運転バス、発車します 11月14日から実証運行 レベル4相当で佐賀駅バスセンターからSAGAサンライズパーク間を走行 | 行政・社会 | 佐賀県のニュース",
@@ -65473,21 +65538,23 @@
       "overall_score": 3.35,
       "scan_version": "2026-11-07-interest",
       "interest_version": "2026-11-07",
-      "status": "available",
+      "status": "merged",
       "excluded_reason": "",
       "scored_at": "2026-11-14",
       "first_seen_at": "2026-11-14T07:49:19",
       "presented_on": [],
       "topic_first_date": "2026-11-13",
       "topic_first_source": "候補 3cd8f147bb のannounced_on（【動画】佐賀市の自動運転バス、発車します 11月14日から実）",
-      "topic_series": "3cd8f147bb",
+      "topic_series": "39d1001308",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-11-13",
         "title": "【動画】佐賀市の自動運転バス、発車します 11月14日から実証運行 レベル4相当で佐賀駅バスセンターからSAGAサンライズパーク間を走行 | 行政・社会 | 佐賀県のニュース",
         "id": "3cd8f147bb",
         "source": "Googleニュース（自動運転 レベル4 開始）／佐賀新聞"
-      }
+      },
+      "merged_into": "39d1001308",
+      "merged_reason": "同一ストーリーの重複"
     },
     {
       "title": "アイサンテクノロジーら、伊勢市で自動運転バス実証を継続 レベル4見据えデータ収集",
@@ -65646,10 +65713,10 @@
       "topic_series": "37f54c0152",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
-        "date": "2026-11-11",
-        "title": "AIが18年未解決の物理学難問を証明、量子コンピュータの「高速化の限界」が明らかに（ビジネス＋IT）",
-        "id": "37f54c0152",
-        "source": "Googleニュース（AI 未解決問題 証明）／Yahoo!ニュース"
+        "date": "2026-11-07",
+        "title": "AIが18年間未解決だった数学の難問を証明、量子コンピュータの「高速化の限界」が明らかに",
+        "id": "8592648053",
+        "source": "Googleニュース（AI 数学 難問 解決）／XenoSpectrum"
       },
       "merged_into": "ddf94a746f",
       "merged_reason": "同一ストーリーの重複"
@@ -65801,10 +65868,10 @@
       "topic_series": "b625e1631a",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
-        "date": "2026-11-12",
-        "title": "AI「Muse」専用メアド開始、「日本で取れた」報告続々　メール送受信も任せられる",
-        "id": "952d3f8c51",
-        "source": "ITmedia AI+"
+        "date": "2026-11-09",
+        "title": "UBTECH、Tianyiと提携し、ヒューマノイドロボットの普及拡大を目指す",
+        "id": "9f8a89d4b5",
+        "source": "Googleニュース（家庭用ロボット）／Unite.AI"
       },
       "dup_ids": [
         "c0020895c7"
@@ -65923,7 +65990,7 @@
           "kind": "official_blog"
         }
       ],
-      "primary_verified_at": "2026-11-14T07:54:41",
+      "primary_verified_at": "2026-11-15T06:42:43",
       "primary_history": [
         {
           "at": "2026-11-14T07:52:35",
@@ -65972,6 +66039,30 @@
               "ok": true
             }
           ]
+        },
+        {
+          "at": "2026-11-15T06:42:43",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/",
+              "status": "HTTP 200「Intelligent eyewear collection」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://samsungmobilepress.com/articles/samsung-intelligent-eyewear-december-release-smarter-way-see-world",
+              "status": "HTTP 200「Samsung Announces December Rel」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://blog.google/innovation-and-ai/technology/safety-security/intelligent-eyewear-privacy-protections/",
+              "status": "HTTP 200「Privacy protections for intell」",
+              "final_url": "",
+              "ok": true
+            }
+          ]
         }
       ],
       "url_check": [
@@ -65993,7 +66084,7 @@
       ],
       "url_ok": true,
       "url_status": "blog.google: HTTP 200「Intelligent eyewear collection」 ／ samsungmobilepress.com: HTTP 200「Samsung Announces December Rel」 ／ blog.google: HTTP 200「Privacy protections for intell」",
-      "url_checked_at": "2026-11-14T07:54:41",
+      "url_checked_at": "2026-11-15T06:42:43",
       "buzz_history": [
         {
           "at": "2026-11-14T07:52:52",
@@ -66214,7 +66305,17 @@
       "excluded_reason": "一次資料で確認できない",
       "scored_at": "2026-11-15",
       "first_seen_at": "2026-11-15T05:24:24",
-      "presented_on": []
+      "presented_on": [],
+      "topic_first_date": "2026-09-22",
+      "topic_first_source": "候補 197909eb27 のannounced_on（【独自】人型ロボットの防衛活用研究へ ＡＩ搭載、基地警備や輸）",
+      "topic_series": "197909eb27",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-14",
+        "title": "【独自】人型ロボットの防衛活用研究へ ＡＩ搭載、基地警備や輸送を想定",
+        "id": "197909eb27",
+        "source": "Googleニュース（人型ロボット）／山陽新聞"
+      }
     },
     {
       "title": "AIロボット6台をコンビニの24時間シフトで働かせたら、2台がクビに",
@@ -66279,7 +66380,11 @@
       "excluded_reason": "",
       "scored_at": "2026-11-15",
       "first_seen_at": "2026-11-15T05:24:40",
-      "presented_on": []
+      "presented_on": [],
+      "topic_first_date": "2026-11-03",
+      "topic_first_source": "候補 16b5fd4618 のannounced_on（AIロボット6台をコンビニの24時間シフトで働かせたら、2台）",
+      "topic_series": "16b5fd4618",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "第40回「老化スピード」がコントロールできる時代へ？！ 腸から始める新しいエイジングケアとビフィズス菌の可能性",
@@ -66345,7 +66450,11 @@
       "excluded_reason": "",
       "scored_at": "2026-11-15",
       "first_seen_at": "2026-11-15T05:24:54",
-      "presented_on": []
+      "presented_on": [],
+      "topic_first_date": "2026-07-27",
+      "topic_first_source": "候補 446b261cfb のannounced_on（第40回「老化スピード」がコントロールできる時代へ？！ 腸か）",
+      "topic_series": "446b261cfb",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "がん細胞のミトコンドリアDNA量が抗腫瘍免疫を左右 国立がん研などが解明",
@@ -66415,8 +66524,107 @@
       "status": "available",
       "excluded_reason": "",
       "scored_at": "2026-11-15",
-      "first_seen_at": "2026-11-15T05:25:08",
-      "presented_on": []
+      "first_seen_at": "2026-11-05",
+      "presented_on": [],
+      "topic_first_date": "2026-11-02",
+      "topic_first_source": "候補 f2a7f0a9ec のannounced_on（がん細胞死が抗腫瘍免疫を活性化する機序の一端を解明 ミトコン）",
+      "topic_series": "dd1eb30d62",
+      "freshness_basis": "topic_first_date",
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://www.ncc.go.jp/jp/information/pr_release/2026/1102/index.html",
+          "ok": true,
+          "status": "HTTP 200「がん細胞死が抗腫瘍免疫を活性化する機序の一端を解明 ミトコン」",
+          "page_title": "がん細胞死が抗腫瘍免疫を活性化する機序の一端を解明 ミトコンドリアDNAの量が重要な因子に｜国立がん研究センター",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "press_release"
+        },
+        {
+          "ok": true,
+          "status": "DOI実在（ハンドルAPI、10.1016/j.immuni.2026.10.002）",
+          "url": "https://doi.org/10.1016/j.immuni.2026.10.002",
+          "method": "doi_handle",
+          "kind": "paper"
+        }
+      ],
+      "primary_verified_at": "2026-11-15T06:38:57",
+      "primary_history": [
+        {
+          "at": "2026-11-15T06:38:57",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://www.ncc.go.jp/jp/information/pr_release/2026/1102/index.html",
+              "status": "HTTP 200「がん細胞死が抗腫瘍免疫を活性化する機序の一端を解明 ミトコン」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://doi.org/10.1016/j.immuni.2026.10.002",
+              "status": "DOI実在（ハンドルAPI、10.1016/j.immuni.2026.10.002）",
+              "final_url": "",
+              "ok": true
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://www.ncc.go.jp/jp/information/pr_release/2026/1102/index.html",
+          "ok": true,
+          "status": "HTTP 200「がん細胞死が抗腫瘍免疫を活性化する機序の一端を解明 ミトコン」"
+        },
+        {
+          "url": "https://doi.org/10.1016/j.immuni.2026.10.002",
+          "ok": true,
+          "status": "DOI実在（ハンドルAPI、10.1016/j.immuni.2026.10.002）"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "ncc.go.jp: HTTP 200「がん細胞死が抗腫瘍免疫を活性化する機序の一端を解明 ミトコン」 ／ doi.org: DOI実在（ハンドルAPI、10.1016/j.immuni.2026.10.002）",
+      "url_checked_at": "2026-11-15T06:38:57",
+      "buzz_history": [
+        {
+          "at": "2026-11-15T06:41:38",
+          "query": "国立がん研究センター ミトコンドリアDNA",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "がん細胞のミトコンドリアDNA量が抗腫瘍免疫を左右 国立がん研などが解明",
+              "outlet": "Dellows News",
+              "date": "2026-11-10"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 4
+        }
+      ],
+      "buzz_measured_at": "2026-11-15T06:41:38",
+      "buzz_measured": 2,
+      "buzz_outlets": 1,
+      "yahoo": false,
+      "buzz_evidence": [
+        {
+          "title": "がん細胞のミトコンドリアDNA量が抗腫瘍免疫を左右 国立がん研などが解明",
+          "outlet": "Dellows News",
+          "date": "2026-11-10"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 1,
+      "buzz_raw_items": 4,
+      "buzz_query": "国立がん研究センター ミトコンドリアDNA",
+      "buzz_adopted_at": "2026-11-15T06:41:38",
+      "buzz_adopted_n": 1,
+      "dup_ids": [
+        "f2a7f0a9ec",
+        "055085e8b2"
+      ]
     },
     {
       "title": "画像生成AIは既存のキャラクターをどれくらい出力する？　ソニーAIなどが14モデルを調査",
@@ -66477,7 +66685,11 @@
       "excluded_reason": "",
       "scored_at": "2026-11-15",
       "first_seen_at": "2026-11-15T05:25:23",
-      "presented_on": []
+      "presented_on": [],
+      "topic_first_date": "2026-07-01",
+      "topic_first_source": "候補 d5507ce5c5 のannounced_on（画像生成AIは既存のキャラクターをどれくらい出力する？　ソニ）",
+      "topic_series": "d5507ce5c5",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "HITCH：全身ハーネスを通じてヒューマノイドの操作を視覚言語モデルに教える",
@@ -66542,7 +66754,17 @@
       "excluded_reason": "",
       "scored_at": "2026-11-15",
       "first_seen_at": "2026-11-15T05:25:39",
-      "presented_on": []
+      "presented_on": [],
+      "topic_first_date": "2026-05-13",
+      "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
+      "topic_series": "b625e1631a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-09",
+        "title": "UBTECH、Tianyiと提携し、ヒューマノイドロボットの普及拡大を目指す",
+        "id": "9f8a89d4b5",
+        "source": "Googleニュース（家庭用ロボット）／Unite.AI"
+      }
     },
     {
       "title": "AIニュースキャスターがついに「身体」を持った、中国・新華社が人間そっくりのロボット2体を発表",
@@ -66608,7 +66830,11 @@
       "excluded_reason": "",
       "scored_at": "2026-11-15",
       "first_seen_at": "2026-11-15T05:25:53",
-      "presented_on": []
+      "presented_on": [],
+      "topic_first_date": "2026-11-05",
+      "topic_first_source": "候補 11d145c0a5 のannounced_on（AIニュースキャスターがついに「身体」を持った、中国・新華社）",
+      "topic_series": "11d145c0a5",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "ただの薬味が世界の老化研究を覆す存在へ!?“本わさび”がもたらす驚きのパワーとは",
@@ -66679,7 +66905,17 @@
       "excluded_reason": "",
       "scored_at": "2026-11-15",
       "first_seen_at": "2026-11-15T05:26:07",
-      "presented_on": []
+      "presented_on": [],
+      "topic_first_date": "2023-10-30",
+      "topic_first_source": "候補 98af3b140c のannounced_on（ただの薬味が世界の老化研究を覆す存在へ!?“本わさび”がもた）",
+      "topic_series": "98af3b140c",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-08",
+        "title": "ただの薬味が世界の老化研究を覆す存在へ!?“本わさび”がもたらす驚きのパワーとは",
+        "id": "98af3b140c",
+        "source": "Googleニュース（研究 食事 健康 効果）／ウォーカープラス"
+      }
     },
     {
       "title": "腎臓病克服にｉＰＳ細胞技術 治療法開発や創薬に活用 京大発ベンチャー",
@@ -66750,7 +66986,17 @@
       "excluded_reason": "",
       "scored_at": "2026-11-15",
       "first_seen_at": "2026-11-15T05:26:21",
-      "presented_on": []
+      "presented_on": [],
+      "topic_first_date": "2026-06-22",
+      "topic_first_source": "候補 dad8600864 のannounced_on（腎臓病克服にｉＰＳ細胞技術 治療法開発や創薬に活用 京大発ベ）",
+      "topic_series": "dad8600864",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-08",
+        "title": "腎臓病克服にｉＰＳ細胞技術 治療法開発や創薬に活用 京大発ベンチャー",
+        "id": "dad8600864",
+        "source": "Googleニュース（iPS細胞 研究 成果）／静岡新聞DIGITAL"
+      }
     },
     {
       "title": "Qwen3.8-27Bベースに「西洋の価値観を強化」したオープンモデル登場、「逆に偏っている」との批判も　Hermes Agent開発元",
@@ -66811,7 +67057,11 @@
       "excluded_reason": "",
       "scored_at": "2026-11-15",
       "first_seen_at": "2026-11-15T05:26:36",
-      "presented_on": []
+      "presented_on": [],
+      "topic_first_date": "2026-11-06",
+      "topic_first_source": "候補 ce8cf5d76c のannounced_on（Qwen3.8-27Bベースに「西洋の価値観を強化」したオー）",
+      "topic_series": "ce8cf5d76c",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "Meta、中国Fourierと開発した人型ロボット「Max」を認める",
@@ -66871,7 +67121,17 @@
       "excluded_reason": "一次資料で確認できない",
       "scored_at": "2026-11-15",
       "first_seen_at": "2026-11-15T05:26:46",
-      "presented_on": []
+      "presented_on": [],
+      "topic_first_date": "2026-05-13",
+      "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
+      "topic_series": "b625e1631a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-09",
+        "title": "UBTECH、Tianyiと提携し、ヒューマノイドロボットの普及拡大を目指す",
+        "id": "9f8a89d4b5",
+        "source": "Googleニュース（家庭用ロボット）／Unite.AI"
+      }
     },
     {
       "title": "アマゾンは新たな家庭用ロボットチームを設立し、「世界初のロボット製品」の開発を進めています。",
@@ -66930,7 +67190,17 @@
       "excluded_reason": "一次資料で確認できない",
       "scored_at": "2026-11-15",
       "first_seen_at": "2026-11-15T05:26:57",
-      "presented_on": []
+      "presented_on": [],
+      "topic_first_date": "2015-11-14",
+      "topic_first_source": "候補 6d57535a95 のannounced_on（＜画像1 / 7＞家庭用ロボット最前線！価格、機能、その進化）",
+      "topic_series": "7e8ec115cc",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-08",
+        "title": "アマゾンが家庭用ロボットに再挑戦：新チームは「前例のない」製品を目指すも、Astroの前例が課題に",
+        "id": "6547733230",
+        "source": "Googleニュース（家庭用ロボット）／BigGo ファイナンス"
+      }
     },
     {
       "title": "【苦味】が【肥満】を解消！マンジャロと同じ血糖値を下げ食欲を抑える効果がある食品",
@@ -66996,7 +67266,11 @@
       "excluded_reason": "",
       "scored_at": "2026-11-15",
       "first_seen_at": "2026-11-15T05:27:15",
-      "presented_on": []
+      "presented_on": [],
+      "topic_first_date": "2024-09-24",
+      "topic_first_source": "候補 38837b33dd のannounced_on（【苦味】が【肥満】を解消！マンジャロと同じ血糖値を下げ食欲を）",
+      "topic_series": "38837b33dd",
+      "freshness_basis": "topic_first_date"
     },
     {
       "title": "ｉＰＳ細胞活用したがん治験、来年開始…治療薬となれば活用一気に広がる可能性",
@@ -67067,7 +67341,116 @@
       "excluded_reason": "",
       "scored_at": "2026-11-15",
       "first_seen_at": "2026-11-15T05:27:32",
-      "presented_on": []
+      "presented_on": [],
+      "topic_first_date": "2026-11-07",
+      "topic_first_source": "候補 9c5573ce54 のannounced_on（ｉＰＳ細胞活用したがん治験、来年開始…治療薬となれば活用一気）",
+      "topic_series": "9c5573ce54",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-08",
+        "title": "ｉＰＳ細胞活用したがん治験、来年開始…治療薬となれば活用一気に広がる可能性（読売新聞オンライン）",
+        "id": "b7414d5019",
+        "source": "Googleニュース（がん 新しい治療 研究）／Yahoo!ニュース"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://www.shinobitx.com/",
+          "ok": true,
+          "status": "HTTP 200「Shinobi Therapeutics」",
+          "page_title": "Shinobi Therapeutics",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_page"
+        },
+        {
+          "url": "https://amedfind.amed.go.jp/",
+          "ok": null,
+          "status": "取得失敗（URLError: <urlopen error timed out>）（再試行）",
+          "method": "http",
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-11-15T06:40:07",
+      "primary_history": [
+        {
+          "at": "2026-11-15T06:40:07",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://www.shinobitx.com/",
+              "status": "HTTP 200「Shinobi Therapeutics」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://amedfind.amed.go.jp/",
+              "status": "取得失敗（URLError: <urlopen error timed out>）（再試行）",
+              "final_url": "",
+              "ok": null
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://www.shinobitx.com/",
+          "ok": true,
+          "status": "HTTP 200「Shinobi Therapeutics」"
+        },
+        {
+          "url": "https://amedfind.amed.go.jp/",
+          "ok": null,
+          "status": "取得失敗（URLError: <urlopen error timed out>）（再試行）"
+        }
+      ],
+      "url_ok": null,
+      "url_status": "shinobitx.com: HTTP 200「Shinobi Therapeutics」 ／ amedfind.amed.go.jp: 取得失敗（URLError: <urlopen error timed out>）（再試行）",
+      "url_checked_at": "2026-11-15T06:40:07",
+      "buzz_history": [
+        {
+          "at": "2026-11-15T06:41:44",
+          "query": "シノビ・セラピューティクス NJA-001",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "ｉＰＳ細胞活用したがん治験、来年開始…治療薬となれば活用一気に広がる可能性",
+              "outlet": "読売新聞",
+              "date": "2026-11-07"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 1,
+          "jp_measured": 2,
+          "outlets_foreign": 0,
+          "foreign_boost": false,
+          "query_en": "NJA-001"
+        }
+      ],
+      "buzz_measured_at": "2026-11-15T06:41:44",
+      "buzz_measured": 2,
+      "buzz_outlets": 1,
+      "yahoo": false,
+      "buzz_evidence": [
+        {
+          "title": "ｉＰＳ細胞活用したがん治験、来年開始…治療薬となれば活用一気に広がる可能性",
+          "outlet": "読売新聞",
+          "date": "2026-11-07"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 1,
+      "buzz_raw_items": 1,
+      "buzz_query": "シノビ・セラピューティクス NJA-001",
+      "buzz_jp_measured": 2,
+      "buzz_outlets_foreign": 0,
+      "buzz_foreign_boost": false,
+      "buzz_query_en": "NJA-001",
+      "buzz_adopted_at": "2026-11-15T06:41:44",
+      "buzz_adopted_n": 1
     },
     {
       "title": "自社の認証情報で生成AI不正利用される　ネット印刷・キングプリンターズへの不正アクセス、個人情報漏えいなし",
@@ -67127,7 +67510,1296 @@
       "excluded_reason": "",
       "scored_at": "2026-11-15",
       "first_seen_at": "2026-11-15T05:27:44",
-      "presented_on": []
+      "presented_on": [],
+      "topic_first_date": "2026-11-09",
+      "topic_first_source": "候補 8c324ff19e のannounced_on（自社の認証情報で生成AI不正利用される　ネット印刷・キングプ）",
+      "topic_series": "8c324ff19e",
+      "freshness_basis": "topic_first_date"
+    },
+    {
+      "title": "テスラはOptimusを売らずに貸し出す可能性、価格はまだ未定",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNdzEyN25BOEx5dFdTVlRsdkI5clhwZ3BVMF9LenJJWkM5d0lNeGZabXRlZlhZMGlWWVU3NkRYM01lVEFUeEJzM2xmWEJMaEREWGk2eFBmY3NZa0t6emhXdmZIczZaSHJaWExSU3hfVXZJc1cyWW1Pa2dFUEFoVlozVWpIclppSkZ4SGlvSVU1SWFEYXVsb1E?oc=5",
+      "published": "2026-11-11",
+      "source": "Googleニュース（家庭用ロボット）／Pasquale Pillitteri",
+      "source_kind": "media",
+      "outlet": "Pasquale Pillitteri",
+      "outlet_host": "pasqualepillitteri.it",
+      "genre_hint": "life_tech",
+      "summary": "テスラはOptimusを売らずに貸し出す可能性、価格はまだ未定（Pasquale Pillitteri）",
+      "id": "19f2a31ebf",
+      "sources": [
+        "Pasquale Pillitteri"
+      ],
+      "primary_sources": [
+        {
+          "kind": "event",
+          "url": "https://www.youtube.com/watch?v=BaronInvestmentConference2026",
+          "what_it_states": "2026年11月6日の第33回Baron Investment Conferenceの壇上で、ロン・バロン氏からの『Optimusを売るのか、それとも貸し出すのか』という問いに対し、イーロン・マスク氏が『恐らく貸し出す形になると思う（I think probably rent them）』と口頭で発言。ロボット1台あたりの製造コストは当初約3万ドルから始まり、長期的には2万ドル程度に下がると試言したが、公式なレンタル料金、契約条件、注文受付などの制度・規約は一切公表されていない。社外企業への納品は2027年末頃を見込むと回答"
+        }
+      ],
+      "announced_on": "2026-11-06",
+      "headline_claim": "テスラは人型ロボットOptimusを一般販売せず、月額などのレンタル形式で提供する方針を固めつつあり、価格は未定と報じられている。",
+      "actual_content": "2026年11月6日の投資家向けカンファレンスで、イーロン・マスク氏が質問に答える形で『恐らく販売ではなくレンタルになるだろう』と私見を述べたに過ぎず、テスラ社としての公式決定やプレスリリース、IR開示は出ていない。レンタル料、保守費用、故障時の責任分界点などの商用条件は未定であり、製造原価について初期3万ドル・将来2万ドルという目標数字が語られた程度である。外部への納品時期も早くとも2027年末とされ、直近で店舗や家庭に届く具体的な計画は示されていない。",
+      "verifiability": 2,
+      "hype_gap": 4,
+      "promise": 2,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 2,
+      "work_relevance": 3,
+      "audience_fit": 4,
+      "tangible": 3,
+      "decision_number": 2,
+      "series_fit": 4,
+      "concern_id": "work_ai",
+      "entry_question": "テスラの人型ロボOptimusは買えずにレンタルになる？いくらで借りられる？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "投資家向けイベントでのマスク氏の口頭での思いつき発言（『たぶんレンタル』）が独り歩きしているだけで、公式の仕様書も価格表も貸出条件も何も決まっていません。過去にも『完全自動運転で来年にはロボタクシーが走る』と言い続けて何年も遅れた経緯があり、2027年末という外部提供時期すら一次資料の裏付けがない口約束の段階です。",
+      "hope_material": "初期の製造原価を約3万ドル（約450万円）、将来的には2万ドル（約300万円）程度に抑える製造ライン整備（年産100万台規模構想）をフリーモント工場で進めており、売り切りではなく保守付きのサブスクリプション（RaaS）になれば、中小の現場でも初期費用なしで試験導入しやすくなる可能性はあります。",
+      "investment_related": false,
+      "deja_vu_note": "kl051（テスラOptimus生産開始）の直近回とテーマが同じで、新情報はマスク氏の口頭コメントのみ",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "テスラ Optimus レンタル",
+      "jp_title_anchor": [
+        "Optimus",
+        "テスラ",
+        "レンタル"
+      ],
+      "announcement_type": "event",
+      "freshness": 4,
+      "overall_score": 2.7,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "excluded",
+      "excluded_reason": "一次資料で確認できない",
+      "scored_at": "2026-11-15",
+      "first_seen_at": "2026-11-15T06:35:09",
+      "presented_on": [],
+      "topic_first_date": "2026-10-21",
+      "topic_first_source": "候補 e61b1b9be2 のannounced_on（テスラの人型ロボ「Optimus」、生産開始 週2万台には「）",
+      "topic_series": "19f2a31ebf",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-09",
+        "title": "テスラのOptimus、リース制へ転換か マスク氏「3万ドルのロボットは販売せず貸与のみの可能性」",
+        "id": "987e3233a8",
+        "source": "Googleニュース（Tesla Optimus 量産）／BigGo ファイナンス"
+      }
+    },
+    {
+      "title": "Tesla Cybercab orders open at $29,990 + $299/mo, only in Robotaxi zones",
+      "url": "https://electrek.co/2026/11/13/tesla-cybercab-personal-use-orders-299-subscription-geofence/",
+      "published": "2026-11-14",
+      "source": "Electrek",
+      "source_kind": "media",
+      "summary": "Tesla is now inviting “select customers” to buy a Cybercab for personal use at $29,990, but the car won’t move unless you also pay $299 a month for an “Autonomy Subscription.” And it only works inside Tesla’s Robotaxi service areas in Texas and Florida, the same geofences that have turned out to be significantly smaller than what Tesla advertises. more…",
+      "id": "4dbfb303f1",
+      "sources": [
+        "Electrek"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://x.com/robotaxi",
+          "what_it_states": "テスラ公式アカウント（@robotaxi）および注文画面（Cybercab Autonomy Subscription Agreement）: 招待された特定顧客向けに個人用Cybercabの注文を開始。車両価格は税前29,990ドル、返金不可の予約金1,000ドル、推定納車時期は2026年12月。ハンドル・ペダルがなく運行には月額299ドルの「Autonomy Subscription」必須（初月無料、解約すると走行不可）。利用可能地域はロボタクシー対応エリア（テキサス州・フロリダ州の一部）のジオフェンス内に限定、商業利用・ライドシェア利用は禁止"
+        }
+      ],
+      "announced_on": "2026-11-13",
+      "headline_claim": "テスラがハンドルなし自動運転車Cybercabの個人向け予約を約3万ドルで開始したが、月額299ドルの課金が必須で走れるエリアも限定されている。",
+      "actual_content": "テスラは招待制で個人向けにCybercabの受注を開始し、本体価格29,990ドル（予約金1,000ドル）で2026年12月納車予定と案内した。ただしハンドルやペダルがない完全自動運転設計のため、走行には月額299ドルの「Autonomy Subscription」の契約と定期メンテが規約上必須で、未払いでは動かすことができない。さらに運行可能な範囲はオースティンなどテキサスやフロリダの限定されたロボタクシー運行エリア内に限られ、配車や配送などの商用利用は禁止されている。",
+      "verifiability": 5,
+      "hype_gap": 4,
+      "promise": 4,
+      "debate": 4,
+      "wonder": 4,
+      "life_relevance": 4,
+      "work_relevance": 3,
+      "audience_fit": 4,
+      "tangible": 5,
+      "decision_number": 5,
+      "series_fit": 1,
+      "concern_id": "mobility",
+      "entry_question": "3万ドルのハンドルなし自動運転車、本当に買って街中を走れるの？",
+      "surprise_line": "運転免許の返納を考えるシニアが、車を買っても月額課金がないと1歩も動かないことに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "本体が約3万ドルでも月額299ドル（年間約3,600ドル、5年で約1.8万ドル）を払い続けなければ車庫の置物になり、走行可能エリアも米国の特定都市の一部に縛られている。さらに米運輸省道路交通安全局（NHTSA）による手動装置なし車両の安全性認証調査も継続中で、規制クリアの壁が残る。",
+      "hope_material": "ハンドルもペダルもない完全自動運転の量産市販車が、予告どおり29,990ドルという一般大衆車の価格帯で実際に個人向け注文画面と納車時期（2026年12月）まで到達した。",
+      "investment_related": false,
+      "deja_vu_note": "自動運転・無人移動としてはkl055（無人物流車）があるが、一般向けの完全自動運転EVの販売開始は初。",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "Cybercab テスラ 29990",
+      "jp_title_anchor": [
+        "Cybercab",
+        "サイバーキャブ",
+        "テスラ"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.85,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-15",
+      "first_seen_at": "2026-11-15T06:35:22",
+      "presented_on": [],
+      "topic_first_date": "2026-11-13",
+      "topic_first_source": "候補 4dbfb303f1 のannounced_on（Tesla Cybercab orders open at ）",
+      "topic_series": "4dbfb303f1",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-14",
+        "title": "Tesla Cybercab orders open at $29,990 + $299/mo, only in Robotaxi zones",
+        "id": "4dbfb303f1",
+        "source": "Electrek"
+      },
+      "primary_verified": null,
+      "primary_check": [
+        {
+          "url": "https://x.com/robotaxi",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+          "method": "http",
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-11-15T06:42:20",
+      "primary_history": [
+        {
+          "at": "2026-11-15T06:36:34",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://x.com/robotaxi",
+              "status": "HTTP 200「Robotaxi（@robotaxi） / X」",
+              "final_url": "",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "at": "2026-11-15T06:42:20",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://x.com/robotaxi",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://x.com/robotaxi",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）"
+        }
+      ],
+      "url_ok": null,
+      "url_status": "x.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+      "url_checked_at": "2026-11-15T06:42:20",
+      "buzz_history": [
+        {
+          "at": "2026-11-15T06:41:21",
+          "query": "Cybercab テスラ",
+          "measured": 5,
+          "outlets": 22,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "テスラのCybercab、2万9990ドルでも月299ドル払わないと動かない",
+              "outlet": "Martin Cid Magazine",
+              "date": "2026-11-14"
+            },
+            {
+              "title": "テスラのロボタクシー車両「利回り170％」 個人運用で試算",
+              "outlet": "自動運転ラボ",
+              "date": "2026-11-14"
+            },
+            {
+              "title": "Teslaの個人用Cybercabは、走行に有料の月額自動運転サービスへの加入が必要",
+              "outlet": "Securities.io",
+              "date": "2026-11-14"
+            }
+          ],
+          "trend": 0.84,
+          "articles_14d": 31,
+          "raw_items": 46,
+          "jp_measured": 5,
+          "outlets_foreign": 2,
+          "foreign_boost": false,
+          "query_en": "Cybercab 29990"
+        }
+      ],
+      "buzz_measured_at": "2026-11-15T06:41:21",
+      "buzz_measured": 5,
+      "buzz_outlets": 22,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "テスラのCybercab、2万9990ドルでも月299ドル払わないと動かない",
+          "outlet": "Martin Cid Magazine",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "テスラのロボタクシー車両「利回り170％」 個人運用で試算",
+          "outlet": "自動運転ラボ",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "Teslaの個人用Cybercabは、走行に有料の月額自動運転サービスへの加入が必要",
+          "outlet": "Securities.io",
+          "date": "2026-11-14"
+        }
+      ],
+      "buzz_trend": 0.84,
+      "buzz_articles_14d": 31,
+      "buzz_raw_items": 46,
+      "buzz_query": "Cybercab テスラ",
+      "buzz_jp_measured": 5,
+      "buzz_outlets_foreign": 2,
+      "buzz_foreign_boost": false,
+      "buzz_query_en": "Cybercab 29990",
+      "buzz_adopted_at": "2026-11-15T06:41:21",
+      "buzz_adopted_n": 1,
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-15T06:42:01",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "ハンドルやペダルのない完全自動運転車を個人向けに販売・予約受付した競合事例は他に存在しないため。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
+    },
+    {
+      "title": "佐賀駅〜サンライズパーク自動運転バス実証　全区間レベル4相当、運賃設定",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5kbEgxR3dMQWUtbEt0RlR0NVVaWjlWUGdpcERVQ0d2UWkxdXZyX2tjOXVTeVA4angzYVZJZE1HMVB4cWtnZ255VldaX2oyRWtFOUZsSEp3aXNEUWxqb3hFNUNRLVdUbW16a0hnWkJXY2ZDUUN2NHZXONIBfkFVX3lxTE03UTFZQzBwUHJ2aFJNT21wZUVuSXduTUFRVVQ4OF9jSTlBclVkdXhBNEt4TnlneklHa05wNWRabklYQlRsS0Q5RTdOTkdFdnQyR0RzU3FuWmZCU3NEcVBiLWxtQnFOZ1pLUzJ5ZlNSSFo4N21tRXd3MVNRdzlGUQ?oc=5",
+      "published": "2026-11-13",
+      "source": "Googleニュース（自動運転トラック 実証）／ｄメニューニュース",
+      "source_kind": "media",
+      "outlet": "ｄメニューニュース",
+      "outlet_host": "topics.smt.docomo.ne.jp",
+      "genre_hint": "life_tech",
+      "summary": "佐賀駅〜サンライズパーク自動運転バス実証　全区間レベル4相当、運賃設定（ｄメニューニュース）",
+      "series_query": "autonomy_logistics_watch",
+      "id": "39d1001308",
+      "sources": [
+        "ｄメニューニュース"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://www.city.saga.lg.jp/main/8545.html",
+          "what_it_states": "令和8年11月14日〜12月22日の期間、佐賀駅バスセンター〜SAGAサンライズパークの全区間でレベル4相当の実証運行を実施。緊急時対応のため全日程・全区間で運転士が同乗。運賃は160円〜180円（予約不要、交通系ICカード等対応）。交差点の信号機連携装置により赤信号切り替えまでの残り秒数を受信して走行判断を行う"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://www.city.saga.lg.jp/kotsu/410.html",
+          "what_it_states": "佐賀市交通局による実証運行案内。期間中は毎日運行し、佐賀駅バスセンター〜商業校門前・SAGAサンライズパーク間180円、佐賀駅北口〜SAGAサンライズパーク間160円。定員制で予約不要"
+        }
+      ],
+      "announced_on": "2026-11-13",
+      "headline_claim": "佐賀駅〜サンライズパーク間で全区間レベル4相当・運賃有料の自動運転バス実証運行が始まった",
+      "actual_content": "佐賀市が導入を目指す自動運転バスの実証運行で、佐賀駅バスセンターからSAGAサンライズパークまでの約1.8km区間を運行する。見出しには『全区間レベル4相当』とあるが、道路交通法上の無人運行認可（レベル4）ではなく、全日程・全区間に安全確保のための運転士が同乗する形態である。将来の営業運行を見据えて今回初めて運賃（160円〜180円）を設定し、信号機と通信して残り秒数に応じた加減速判断を行う仕組みを導入しているが、本格運用目標は2028年度中とされている。",
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 4,
+      "work_relevance": 3,
+      "audience_fit": 3,
+      "tangible": 5,
+      "decision_number": 4,
+      "series_fit": 3,
+      "concern_id": "mobility",
+      "entry_question": "佐賀の自動運転バスはもう無人で走れる？運賃を取るなら実用化？",
+      "surprise_line": "免許返納を考えるシニアが、一般の公道を運賃を払って自動運転バスに乗れることに驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "『レベル4相当』と謳っているものの法的なレベル4運行ではなく運転士がずっと座っており、市自身も本格運用の目標時期を2028年度（約2年後）としている点。",
+      "hope_material": "事前予約制だったこれまでの無料体験から前進し、予約不要・交通系ICカード対応・通常運賃（160〜180円）で一般客が路線バスと同じ感覚で乗れる運用手順の実証に入っている点。",
+      "investment_related": false,
+      "deja_vu_note": "kl055（無人物流・空港自動運転）と自動運転のテーマで一部重なるが、こちらは地域住民の路線バス・移動手段の話。",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "佐賀市 自動運転バス",
+      "jp_title_anchor": [
+        "佐賀市",
+        "自動運転バス",
+        "サンライズパーク"
+      ],
+      "announcement_type": "event",
+      "freshness": 5,
+      "overall_score": 3.45,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-15",
+      "first_seen_at": "2026-11-14T07:49:19",
+      "presented_on": [],
+      "topic_first_date": "2026-11-13",
+      "topic_first_source": "候補 3cd8f147bb のannounced_on（【動画】佐賀市の自動運転バス、発車します 11月14日から実）",
+      "topic_series": "39d1001308",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-13",
+        "title": "【動画】佐賀市の自動運転バス、発車します 11月14日から実証運行 レベル4相当で佐賀駅バスセンターからSAGAサンライズパーク間を走行 | 行政・社会 | 佐賀県のニュース",
+        "id": "3cd8f147bb",
+        "source": "Googleニュース（自動運転 レベル4 開始）／佐賀新聞"
+      },
+      "primary_verified": false,
+      "primary_check": [
+        {
+          "url": "https://www.city.saga.lg.jp/main/8545.html",
+          "ok": false,
+          "status": "HTTP 404（再確認5回とも404・開けず）",
+          "method": "http",
+          "attempts": [
+            {
+              "url": "https://www.city.saga.lg.jp/main/8545.html",
+              "via": "初回",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-15T06:36:36"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/main/8545.html",
+              "via": "英語のAccept-Languageで再試行",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-15T06:36:41"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/main/8545.html",
+              "via": "20秒おいて再試行",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-15T06:37:01"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/us/en/main/8545.html",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-15T06:37:07"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/en-us/main/8545.html",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-15T06:37:11"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/en/main/8545.html",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-15T06:37:16"
+            }
+          ],
+          "kind": "official_page"
+        },
+        {
+          "url": "https://www.city.saga.lg.jp/kotsu/410.html",
+          "ok": false,
+          "status": "HTTP 404（再確認5回とも404・開けず）",
+          "method": "http",
+          "attempts": [
+            {
+              "url": "https://www.city.saga.lg.jp/kotsu/410.html",
+              "via": "初回",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-15T06:37:21"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/kotsu/410.html",
+              "via": "英語のAccept-Languageで再試行",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-15T06:37:26"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/kotsu/410.html",
+              "via": "20秒おいて再試行",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-15T06:37:47"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/us/en/kotsu/410.html",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-15T06:37:52"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/en-us/kotsu/410.html",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-15T06:37:57"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/en/kotsu/410.html",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-15T06:38:02"
+            }
+          ],
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-11-15T06:38:02",
+      "primary_history": [
+        {
+          "at": "2026-11-15T06:38:02",
+          "verdict": false,
+          "urls": [
+            {
+              "url": "https://www.city.saga.lg.jp/main/8545.html",
+              "status": "HTTP 404（再確認5回とも404・開けず）",
+              "final_url": "",
+              "ok": false
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/kotsu/410.html",
+              "status": "HTTP 404（再確認5回とも404・開けず）",
+              "final_url": "",
+              "ok": false
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://www.city.saga.lg.jp/main/8545.html",
+          "ok": false,
+          "status": "HTTP 404（再確認5回とも404・開けず）"
+        },
+        {
+          "url": "https://www.city.saga.lg.jp/kotsu/410.html",
+          "ok": false,
+          "status": "HTTP 404（再確認5回とも404・開けず）"
+        }
+      ],
+      "url_ok": false,
+      "url_status": "city.saga.lg.jp: HTTP 404（再確認5回とも404・開けず） ／ city.saga.lg.jp: HTTP 404（再確認5回とも404・開けず）",
+      "url_checked_at": "2026-11-15T06:38:02",
+      "repair_tried": true,
+      "repair_tried_at": "2026-11-15T06:40:07",
+      "repair_log": [
+        "site-crawl: 8ページを見たが、語の合うリンクなし",
+        "pool-official: 同じ話題の公式・学術誌の記事（発表日±3日）がプールにない",
+        "media-link: https://news.google.com/rss/articles/CBMieEFVX3lxTE5kbEgxR3dMQWUtbEt0R を開けない",
+        "robots.txt で禁止: https://news.google.com/rss/articles/CBMieEFVX3lxTE5kbEgxR3dMQWUtbEt0RlR0NVVaWjlWUGdpcERVQ0d2UWkxdXZyX2tjOXVTeVA4angzYVZJZE1HMVB4cWtnZ255VldaX2oyRWtFOUZsSEp3aXNEUWxqb3hFNUNRLVdUbW16a0hnWkJXY2ZDUUN2NHZXONIBfkFVX3lxTE03UTFZQzBwUHJ2aFJNT21wZUVuSXduTUFRVVQ4OF9jSTlBclVkdXhBNEt4TnlneklHa05wNWRabklYQlRsS0Q5RTdOTkdFdnQyR0RzU3FuWmZCU3NEcVBiLWxtQnFOZ1pLUzJ5ZlNSSFo4N21tRXd3MVNRdzlGUQ?oc=5",
+        "site-crawl: https://www.city.saga.lg.jp/kotsu/ を開けない",
+        "site-crawl: 4ページを見たが、語の合うリンクなし",
+        "pool-official: 同じ話題の公式・学術誌の記事（発表日±3日）がプールにない",
+        "media-link: https://news.google.com/rss/articles/CBMieEFVX3lxTE5kbEgxR3dMQWUtbEt0R を開けない",
+        "取得失敗 https://www.city.saga.lg.jp/kotsu/: HTTPError",
+        "robots.txt で禁止: https://news.google.com/rss/articles/CBMieEFVX3lxTE5kbEgxR3dMQWUtbEt0RlR0NVVaWjlWUGdpcERVQ0d2UWkxdXZyX2tjOXVTeVA4angzYVZJZE1HMVB4cWtnZ255VldaX2oyRWtFOUZsSEp3aXNEUWxqb3hFNUNRLVdUbW16a0hnWkJXY2ZDUUN2NHZXONIBfkFVX3lxTE03UTFZQzBwUHJ2aFJNT21wZUVuSXduTUFRVVQ4OF9jSTlBclVkdXhBNEt4TnlneklHa05wNWRabklYQlRsS0Q5RTdOTkdFdnQyR0RzU3FuWmZCU3NEcVBiLWxtQnFOZ1pLUzJ5ZlNSSFo4N21tRXd3MVNRdzlGUQ?oc=5"
+      ],
+      "repair_result": "見つからない",
+      "dup_ids": [
+        "3cd8f147bb"
+      ]
+    },
+    {
+      "title": "AIに財布を預ける時代へ OpenAIは「払う」、Googleは「見るだけ」",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE8tNjdvZmpBdzg3Wmk4R3I5WFZBcFBBa1hSTERYZHZiNGcyUHpycUhrV0VUWVJXdzg4YzV6V2ktRmR2cXU3eHdfOWtWMGliZDZuYkh3OG1NVW5DcTFTQmhzWmdSdDFjaUE0?oc=5",
+      "published": "2026-11-14",
+      "source": "Googleニュース（OpenAI 発表）／株式会社エクサウィザーズ",
+      "source_kind": "media",
+      "outlet": "株式会社エクサウィザーズ",
+      "outlet_host": "exawizards.com",
+      "genre_hint": "ai",
+      "summary": "AIに財布を預ける時代へ OpenAIは「払う」、Googleは「見るだけ」（株式会社エクサウィザーズ）",
+      "id": "fd333d9440",
+      "sources": [
+        "株式会社エクサウィザーズ"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://openai.com/index/chatgpt-wallet",
+          "what_it_states": "米国時間2026年11月13日発表。米国在住の18歳以上のChatGPT Pro加入者（dot利用環境）を対象に提供開始。Visa、Mastercard、American Expressと提携。カード情報はOpenAI側でトークン化されAIエージェントや加盟店には渡らない。購入ごとに生体認証（Face IDや指紋）等の承認が必須で、上限額設定による完全自動購入は今後の予定（未提供）"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://blog.google/products/search/universal-commerce-protocol",
+          "what_it_states": "Google WalletとGeminiの連携拡大。Universal Commerce Protocol（UCP）を通じて商品検索・カート・Google Payによる直接決済を連携させるが、取引履歴の参照や確認を中心とし、エージェントによる完全自律の代理決済ではなく確認フローを重視"
+        }
+      ],
+      "announced_on": "2026-11-13",
+      "headline_claim": "AIが利用者に代わって支払いを済ませる「AIに財布を預ける時代」が始まった",
+      "actual_content": "OpenAIが発表した「ChatGPT Wallet」は、米国の有料プラン（Pro）加入者限定の機能で、Visa・Mastercard・Amexと連携してAIエージェントが代理決済を行う。ただし『財布を丸ごと預ける（上限額内での完全自立購入）』機能はまだ提供されておらず、現状は買い物ごとに毎回ユーザーが顔認証や指紋で承認しなければ支払いは成立しない。また日本国内での利用は未対応である。 ",
+      "verifiability": 5,
+      "hype_gap": 4,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 3,
+      "audience_fit": 4,
+      "tangible": 2,
+      "decision_number": 3,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "AIに買い物を丸投げして支払わせる時代はもう来た？",
+      "surprise_line": "ネット通販を使う人が、AIが代理で支払うのに毎回指紋承認が必要なことに驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "「AIに財布を預ける」という見出しですが、実態は買い物ごとに毎回スマホで顔認証や指紋認証を求められるため、人間が最後に決済ボタンを押しているのとほぼ変わりません。さらに現在は米国のProユーザー限定で、日本からは試すことすらできません。",
+      "hope_material": "カード番号そのものをAIや購入先の店舗に直接渡さず、決済ネットワークのトークン（身代わり情報）で安全に処理する仕組みが大手カード3社と構築された点は、今後の代理購入に向けた確実な一歩です。",
+      "investment_related": false,
+      "deja_vu_note": "kl038（OpenAI dotsの発表）、kl048（AI秘書にどこまで任せるか）の決済・購入に関する直接の続報",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "ChatGPT Wallet OpenAI",
+      "jp_title_anchor": [
+        "ChatGPT Wallet",
+        "OpenAI"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.6,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-15",
+      "first_seen_at": "2026-11-15T06:35:49",
+      "presented_on": [],
+      "topic_first_date": "2026-11-13",
+      "topic_first_source": "候補 fd333d9440 のannounced_on（AIに財布を預ける時代へ OpenAIは「払う」、Googl）",
+      "topic_series": "fd333d9440",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-13",
+        "title": "Introducing ChatGPT Wallet",
+        "id": "5bf4951adb",
+        "source": "OpenAI"
+      },
+      "primary_verified": null,
+      "primary_check": [
+        {
+          "url": "https://openai.com/index/chatgpt-wallet",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+          "method": "http",
+          "kind": "official_page"
+        },
+        {
+          "url": "https://blog.google/products/search/universal-commerce-protocol",
+          "ok": false,
+          "status": "HTTP 404（転送先 https://blog.google/products/search/universal-commerce-protocol/ が404）（再確認5回とも404・開けず）",
+          "final_url": "https://blog.google/products/search/universal-commerce-protocol/",
+          "redirects": [
+            "308 https://blog.google/products/search/universal-commerce-protocol/"
+          ],
+          "method": "http",
+          "attempts": [
+            {
+              "url": "https://blog.google/products/search/universal-commerce-protocol",
+              "via": "初回",
+              "status": "HTTP 404（転送先 https://blog.google/products/search/universal-commerce-protocol/ が404）",
+              "final_url": "https://blog.google/products/search/universal-commerce-protocol/",
+              "redirects": [
+                "308 https://blog.google/products/search/universal-commerce-protocol/"
+              ],
+              "at": "2026-11-15T06:38:07"
+            },
+            {
+              "url": "https://blog.google/products/search/universal-commerce-protocol",
+              "via": "英語のAccept-Languageで再試行",
+              "status": "HTTP 404（転送先 https://blog.google/products/search/universal-commerce-protocol/ が404）",
+              "final_url": "https://blog.google/products/search/universal-commerce-protocol/",
+              "redirects": [
+                "308 https://blog.google/products/search/universal-commerce-protocol/"
+              ],
+              "at": "2026-11-15T06:38:12"
+            },
+            {
+              "url": "https://blog.google/products/search/universal-commerce-protocol",
+              "via": "20秒おいて再試行",
+              "status": "HTTP 404（転送先 https://blog.google/products/search/universal-commerce-protocol/ が404）",
+              "final_url": "https://blog.google/products/search/universal-commerce-protocol/",
+              "redirects": [
+                "308 https://blog.google/products/search/universal-commerce-protocol/"
+              ],
+              "at": "2026-11-15T06:38:32"
+            },
+            {
+              "url": "https://blog.google/us/en/products/search/universal-commerce-protocol",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404（転送先 https://blog.google/us/en/products/search/universal-commerce-protocol/ が404）",
+              "final_url": "https://blog.google/us/en/products/search/universal-commerce-protocol/",
+              "redirects": [
+                "308 https://blog.google/us/en/products/search/universal-commerce-protocol/"
+              ],
+              "at": "2026-11-15T06:38:38"
+            },
+            {
+              "url": "https://blog.google/en-us/products/search/universal-commerce-protocol",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404（転送先 https://blog.google/en-us/products/search/universal-commerce-protocol/ が404）",
+              "final_url": "https://blog.google/en-us/products/search/universal-commerce-protocol/",
+              "redirects": [
+                "308 https://blog.google/en-us/products/search/universal-commerce-protocol/"
+              ],
+              "at": "2026-11-15T06:38:43"
+            },
+            {
+              "url": "https://blog.google/en/products/search/universal-commerce-protocol",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404（転送先 https://blog.google/en/products/search/universal-commerce-protocol/ が404）",
+              "final_url": "https://blog.google/en/products/search/universal-commerce-protocol/",
+              "redirects": [
+                "308 https://blog.google/en/products/search/universal-commerce-protocol/"
+              ],
+              "at": "2026-11-15T06:38:47"
+            }
+          ],
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-11-15T06:38:47",
+      "primary_history": [
+        {
+          "at": "2026-11-15T06:38:47",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://openai.com/index/chatgpt-wallet",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            },
+            {
+              "url": "https://blog.google/products/search/universal-commerce-protocol",
+              "status": "HTTP 404（転送先 https://blog.google/products/search/universal-commerce-protocol/ が404）（再確認5回とも404・開けず）",
+              "final_url": "https://blog.google/products/search/universal-commerce-protocol/",
+              "ok": false
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://openai.com/index/chatgpt-wallet",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）"
+        },
+        {
+          "url": "https://blog.google/products/search/universal-commerce-protocol",
+          "ok": false,
+          "status": "HTTP 404（転送先 https://blog.google/products/search/universal-commerce-protocol/ が404）（再確認5回とも404・開けず）"
+        }
+      ],
+      "url_ok": false,
+      "url_status": "openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ blog.google: HTTP 404（転送先 https://blog.google/products/search/universal-commerce-protocol/ が404）（再確認5回とも404・開けず）",
+      "url_checked_at": "2026-11-15T06:38:47",
+      "buzz_history": [
+        {
+          "at": "2026-11-15T06:41:27",
+          "query": "ChatGPT Wallet",
+          "measured": 5,
+          "outlets": 11,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "PA日報 | OpenAIがChatGPT Walletを開始、dotがユーザーの代理支払いに対応；Maple共同創業者Joe FlanaganとCOOのRya",
+              "outlet": "PANews",
+              "date": "2026-11-14"
+            },
+            {
+              "title": "ChatGPT Wallet、AIが代わりに買い物 支払いは毎回顔か指紋で承認",
+              "outlet": "Martin Cid Magazine",
+              "date": "2026-11-14"
+            },
+            {
+              "title": "OpenAI、ChatGPT Walletを公開。dotsが決済まで代行",
+              "outlet": "ゴリミー",
+              "date": "2026-11-14"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 12,
+          "raw_items": 26,
+          "jp_measured": 5,
+          "outlets_foreign": 80,
+          "foreign_boost": false,
+          "query_en": "ChatGPT Wallet"
+        }
+      ],
+      "buzz_measured_at": "2026-11-15T06:41:27",
+      "buzz_measured": 5,
+      "buzz_outlets": 11,
+      "yahoo": false,
+      "buzz_evidence": [
+        {
+          "title": "PA日報 | OpenAIがChatGPT Walletを開始、dotがユーザーの代理支払いに対応；Maple共同創業者Joe FlanaganとCOOのRya",
+          "outlet": "PANews",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "ChatGPT Wallet、AIが代わりに買い物 支払いは毎回顔か指紋で承認",
+          "outlet": "Martin Cid Magazine",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "OpenAI、ChatGPT Walletを公開。dotsが決済まで代行",
+          "outlet": "ゴリミー",
+          "date": "2026-11-14"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 12,
+      "buzz_raw_items": 26,
+      "buzz_query": "ChatGPT Wallet",
+      "buzz_jp_measured": 5,
+      "buzz_outlets_foreign": 80,
+      "buzz_foreign_boost": false,
+      "buzz_query_en": "ChatGPT Wallet",
+      "buzz_adopted_at": "2026-11-15T06:41:27",
+      "buzz_adopted_n": 1
+    },
+    {
+      "title": "OpenAIの“接客AI”で私たちの買い物はどう変わるのか？ 『Businesses in ChatGPT』の発表を機に考える（リアルサウンド）",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFAycGdCaC1uckxmOS1Ca2JrOEV5SEE1cDJVZ1JMcHc2OGxtSkhLWU1ucWtKSmhjbmUwVmlhQmlMaGJWeVk4VEFUU19YZVp0RlV3bThqbkhQZDhDQzBibl9pNTItSGpyd1QyVHVSUGtBMVVWdG9aSEpsY0VjbWMwOVk?oc=5",
+      "published": "2026-11-14",
+      "source": "Googleニュース（OpenAI 発表）／Yahoo!ニュース",
+      "source_kind": "media",
+      "outlet": "Yahoo!ニュース",
+      "outlet_host": "news.yahoo.co.jp",
+      "genre_hint": "ai",
+      "summary": "OpenAIの“接客AI”で私たちの買い物はどう変わるのか？ 『Businesses in ChatGPT』の発表を機に考える（リアルサウンド）（Yahoo!ニュース）",
+      "id": "bb634dc083",
+      "sources": [
+        "Yahoo!ニュース",
+        "リアルサウンド"
+      ],
+      "dup_ids": [
+        "a65f20cd19"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://openai.com/business/businesses-in-chatgpt",
+          "what_it_states": "企業向け新機能『Businesses in ChatGPT』をベータ公開。企業がBusiness Hubで自社登録・認証を行うと、価格・在庫等の商品カタログ連携や言及回数・クリック数・頻出トピックの集計インサイトを確認可能。ただし対話型接客を行う『Business Agent』は米国対象のEC・オンラインサービス事業者に限定して先行提供され、顧客との個別会話内容は企業には共有されない設計"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "what_it_states": "2026年11月10日付リリースノート。Business Hubにおける事業者プロフィール登録、Shopify連携、およびBusiness Agentの限定ベータ提供開始を明記"
+        }
+      ],
+      "announced_on": "2026-11-10",
+      "headline_claim": "OpenAIがChatGPT内で接客するAI窓口を発表し、買い物やビジネス体験が一変すると話題に",
+      "actual_content": "OpenAIは自社情報を登録・管理できる『Business Hub』のベータ版を開始した。言及数やクリック数の集計データの閲覧やShopify連携による在庫・価格情報の同期が可能だが、期待される自社専用の接客窓口『Business Agent』は米国内の対象EC・オンライン事業者に限定された初期提供にとどまる。またプライバシー保護のため、顧客の個別チャット内容は企業側に開示されず、一定量以上の集計トピックのみの提供となる。",
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 5,
+      "audience_fit": 5,
+      "tangible": 2,
+      "decision_number": 4,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "ChatGPTの“接客AI”は、日本の中小企業や個人商店でもすぐ使える？",
+      "surprise_line": "ネット販売の店主が、ChatGPTが自社専用の接客員になる仕組みに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "接客AIである『Business Agent』は現時点では米国のEC・オンライン事業者限定のベータ版で、日本の事業者は自社情報の登録や集計データの閲覧までしか使えない。また顧客が何を話したかの個別会話ログはプライバシー保護のため一切見られない。",
+      "hope_material": "日本を含む地域の事業者でも『Business Hub』を通じた自社登録・認証は可能で、Shopify等と連携して正確な価格・在庫をChatGPTの回答に反映させる仕組みは無料で導入検証できる。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "Businesses in ChatGPT OpenAI",
+      "jp_title_anchor": [
+        "Businesses in ChatGPT",
+        "Business Hub",
+        "Business Agent"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.6,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-15",
+      "first_seen_at": "2026-11-15T06:36:03",
+      "presented_on": [],
+      "topic_first_date": "2026-11-10",
+      "topic_first_source": "候補 bb634dc083 のannounced_on（OpenAIの“接客AI”で私たちの買い物はどう変わるのか？）",
+      "topic_series": "bb634dc083",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-14",
+        "title": "OpenAIの“接客AI”で私たちの買い物はどう変わるのか？ 『Businesses in ChatGPT』の発表を機に考える（リアルサウンド）",
+        "id": "bb634dc083",
+        "source": "Googleニュース（OpenAI 発表）／Yahoo!ニュース"
+      },
+      "primary_verified": null,
+      "primary_check": [
+        {
+          "url": "https://openai.com/business/businesses-in-chatgpt",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+          "method": "http",
+          "kind": "official_page"
+        },
+        {
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+          "method": "http",
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-11-15T06:42:29",
+      "primary_history": [
+        {
+          "at": "2026-11-15T06:38:51",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://openai.com/business/businesses-in-chatgpt",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            },
+            {
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            }
+          ]
+        },
+        {
+          "at": "2026-11-15T06:42:29",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://openai.com/business/businesses-in-chatgpt",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            },
+            {
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://openai.com/business/businesses-in-chatgpt",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）"
+        },
+        {
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）"
+        }
+      ],
+      "url_ok": null,
+      "url_status": "openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+      "url_checked_at": "2026-11-15T06:42:29",
+      "buzz_history": [
+        {
+          "at": "2026-11-15T06:41:33",
+          "query": "Businesses in",
+          "measured": 5,
+          "outlets": 6,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "OpenAIの“接客AI”で私たちの買い物はどう変わるのか？　『Businesses in ChatGPT』の発表を機に考える",
+              "outlet": "リアルサウンド",
+              "date": "2026-11-14"
+            },
+            {
+              "title": "ChatGPTに「Businesses in ChatGPT」ベータ版、企業が自社情報を管理しBusiness Agentも開始",
+              "outlet": "AntenneFrance",
+              "date": "2026-11-12"
+            },
+            {
+              "title": "に商品情報などを提供できる「Businesses in ChatGPT」",
+              "outlet": "gihyo.jp",
+              "date": "2026-11-11"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 7,
+          "raw_items": 17,
+          "jp_measured": 5,
+          "outlets_foreign": 45,
+          "foreign_boost": false,
+          "query_en": "Businesses in"
+        }
+      ],
+      "buzz_measured_at": "2026-11-15T06:41:33",
+      "buzz_measured": 5,
+      "buzz_outlets": 6,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "OpenAIの“接客AI”で私たちの買い物はどう変わるのか？　『Businesses in ChatGPT』の発表を機に考える",
+          "outlet": "リアルサウンド",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "ChatGPTに「Businesses in ChatGPT」ベータ版、企業が自社情報を管理しBusiness Agentも開始",
+          "outlet": "AntenneFrance",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "に商品情報などを提供できる「Businesses in ChatGPT」",
+          "outlet": "gihyo.jp",
+          "date": "2026-11-11"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 7,
+      "buzz_raw_items": 17,
+      "buzz_query": "Businesses in",
+      "buzz_jp_measured": 5,
+      "buzz_outlets_foreign": 45,
+      "buzz_foreign_boost": false,
+      "buzz_query_en": "Businesses in",
+      "buzz_adopted_at": "2026-11-15T06:41:33",
+      "buzz_adopted_n": 1,
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-15T06:42:06",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "AIプラットフォーム内で企業が認証窓口を構え接客・商品案内する仕組みは他社未提供。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
+    },
+    {
+      "title": "テスラ、ロボタクシー「サイバーキャブ」の個人販売開始 台数限定で",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE53THliWktzemRUOTdLWURObzBCU24zd1dKaENEVjFicHU2ZkM3N05XWGY1amRXLVBhSTJ3MkVfRVFOVWlHMGFIeDlnaWd1ZkxiRmV1b0RPd3N4cHd6Z0o4ZWdrei10NjBBNzVoTw?oc=5",
+      "published": "2026-11-14",
+      "source": "Googleニュース（ロボタクシー 運行開始）／日本経済新聞",
+      "source_kind": "media",
+      "outlet": "日本経済新聞",
+      "outlet_host": "nikkei.com",
+      "genre_hint": "life_tech",
+      "summary": "テスラ、ロボタクシー「サイバーキャブ」の個人販売開始 台数限定で（日本経済新聞）",
+      "series_query": "autonomy_logistics_watch",
+      "id": "012a31fd90",
+      "sources": [
+        "日本経済新聞"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://x.com/robotaxi/status/2121384435241402737",
+          "what_it_states": "招待制（select customers）による個人向け販売を開始。車両価格29,990ドル（手付金1,000ドル・返金不可）、月額299ドルの「Autonomy Subscription」加入および定期メンテナンスが走行に必須（初月込み、解約すると走行不可）。運行は認可済みサービスエリア（オースティン等）に限定、納車開始予定は2026年12月、商業利用（配車ネットワーク貸出等）は現時点で不可で個人利用限定"
+        }
+      ],
+      "announced_on": "2026-11-13",
+      "headline_claim": "テスラがハンドルもペダルもない完全自動運転車「サイバーキャブ」を約3万ドルで個人向けに販売開始した。",
+      "actual_content": "テスラは招待された一部顧客向けにサイバーキャブの受注を開始し、車両価格は2万9,990ドル、手付金1,000ドルで2026年12月納車予定とした。ただし運転席・ハンドル・ペダルがないため、車両を動かすには月額299ドル（年約3,600ドル）の運行サブスク契約と定期メンテが義務付けられており、解約すると走行できない。さらに運行可能範囲はテキサス州オースティンなど認可済みのジオフェンス内に限定され、一般のロボタクシー網への貸出による収益化は禁止（個人利用限定）という強い制約がある。",
+      "verifiability": 5,
+      "hype_gap": 4,
+      "promise": 3,
+      "debate": 4,
+      "wonder": 4,
+      "life_relevance": 4,
+      "work_relevance": 3,
+      "audience_fit": 4,
+      "tangible": 5,
+      "decision_number": 5,
+      "series_fit": 3,
+      "concern_id": "mobility",
+      "entry_question": "ハンドル無しの自動運転車は、本当に3万ドルで買えて自分の車になる？",
+      "surprise_line": "運転を卒業したい高齢ドライバーが、車体代に加えて毎月約4.5万円の維持費が必要なことに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "「3万ドルで買える」と謳うが月額299ドルのサブスクを払い続けないと車が一切動かず、しかもテスラが指定した米国の一部の街（ジオフェンス内）から出られない。他人に貸して稼ぐ副業タクシー利用も規約で禁止されており、実質は「移動制限付きのリース縛り」に近い。",
+      "hope_material": "ハンドルやペダルのない完全自動運転専用EVが、実験フリートではなく一般個人の名義として2万9,990ドル（約460万円）という大衆車価格で注文開始され、2026年12月納車と具体的な日付が出たのは自動車史上初の実績。",
+      "investment_related": false,
+      "deja_vu_note": "kl055（無人物流・空港自動運転）と自動運転の文脈で重なるが、こちらは個人向け乗用車の販売開始と月額モデルの是非が論点。",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "サイバーキャブ 個人販売",
+      "jp_title_anchor": [
+        "サイバーキャブ",
+        "テスラ"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.8,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-15",
+      "first_seen_at": "2026-11-15T06:36:16",
+      "presented_on": [],
+      "topic_first_date": "2026-11-13",
+      "topic_first_source": "候補 012a31fd90 のannounced_on（テスラ、ロボタクシー「サイバーキャブ」の個人販売開始 台数限）",
+      "topic_series": "012a31fd90",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-14",
+        "title": "テスラ、ロボタクシー「サイバーキャブ」の個人販売開始 台数限定で",
+        "id": "012a31fd90",
+        "source": "Googleニュース（ロボタクシー 運行開始）／日本経済新聞"
+      },
+      "primary_verified": null,
+      "primary_check": [
+        {
+          "url": "https://x.com/robotaxi/status/2121384435241402737",
+          "ok": true,
+          "status": "HTTP 200「XユーザーのRobotaxiさん: 「Select cust」",
+          "page_title": "XユーザーのRobotaxiさん: 「Select customers are now being invited to purchase Cybercab for personal use」 / X",
+          "anchor_hit": false,
+          "method": "http",
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-11-15T06:42:26",
+      "primary_history": [
+        {
+          "at": "2026-11-15T06:38:54",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://x.com/robotaxi/status/2121384435241402737",
+              "status": "HTTP 200「XユーザーのRobotaxiさん: 「Select cust」",
+              "final_url": "",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "at": "2026-11-15T06:42:26",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://x.com/robotaxi/status/2121384435241402737",
+              "status": "HTTP 200「XユーザーのRobotaxiさん: 「Select cust」",
+              "final_url": "",
+              "ok": true
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://x.com/robotaxi/status/2121384435241402737",
+          "ok": true,
+          "status": "HTTP 200「XユーザーのRobotaxiさん: 「Select cust」"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "x.com: HTTP 200「XユーザーのRobotaxiさん: 「Select cust」",
+      "url_checked_at": "2026-11-15T06:42:26",
+      "buzz_history": [
+        {
+          "at": "2026-11-15T06:41:36",
+          "query": "サイバーキャブ 個人販売",
+          "measured": 5,
+          "outlets": 12,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "テスラ、ロボタクシー「サイバーキャブ」の個人販売開始 台数限定で",
+              "outlet": "日本経済新聞",
+              "date": "2026-11-14"
+            },
+            {
+              "title": "テスラ ロボタクシーに全ツッパか！？サイバートラック生産止めてサイバーキャブ増産へ",
+              "outlet": "自動運転ラボ",
+              "date": "2026-11-14"
+            },
+            {
+              "title": "テスラが完全自動運転EV「サイバーキャブ」の個人向け販売を開始。その車両価格2万9,990ドル、しかしサブスクへの加入が「必須」という縛りつき",
+              "outlet": "https://intensive911.com/",
+              "date": "2026-11-14"
+            }
+          ],
+          "trend": 0.64,
+          "articles_14d": 14,
+          "raw_items": 21
+        }
+      ],
+      "buzz_measured_at": "2026-11-15T06:41:36",
+      "buzz_measured": 5,
+      "buzz_outlets": 12,
+      "yahoo": false,
+      "buzz_evidence": [
+        {
+          "title": "テスラ、ロボタクシー「サイバーキャブ」の個人販売開始 台数限定で",
+          "outlet": "日本経済新聞",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "テスラ ロボタクシーに全ツッパか！？サイバートラック生産止めてサイバーキャブ増産へ",
+          "outlet": "自動運転ラボ",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "テスラが完全自動運転EV「サイバーキャブ」の個人向け販売を開始。その車両価格2万9,990ドル、しかしサブスクへの加入が「必須」という縛りつき",
+          "outlet": "https://intensive911.com/",
+          "date": "2026-11-14"
+        }
+      ],
+      "buzz_trend": 0.64,
+      "buzz_articles_14d": 14,
+      "buzz_raw_items": 21,
+      "buzz_query": "サイバーキャブ 個人販売",
+      "buzz_adopted_at": "2026-11-15T06:41:36",
+      "buzz_adopted_n": 1,
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-15T06:42:12",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "ハンドルやペダルのない完全自動運転車を個人ユーザー向けに市販・受注した事例は他社になく、先行する実現事例は確認できない。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
+    },
+    {
+      "title": "コーヒーと消化：コペンハーゲン大学研究が腸内細菌と排便の変化を指摘 - ニュースと統計",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPalhCTzVxd1d1YS1qTzl2SXM5MVJQdG5TQkJhSnFZSTNoYjBsVGFic3pNcVJCY3lfWE5KeGw0VFhsR1ZXSDBEU1FOTUFsSmhWZmRDc0Q3WUVOWDNNbzNnM2FYWE5VSDlVZXh5YXdDcS1TTWxDdlhjdUdWZ2FFUUkxY1M4cDdMTVl0cDVVZWRrNlVOM1d0c2RSRzBVVkVQZzB3UEtUc0MxQU9lZ2xIclhsTjFYb1Y?oc=5",
+      "published": "2026-11-14",
+      "source": "Googleニュース（腸内細菌 研究）／IndexBox",
+      "source_kind": "media",
+      "outlet": "IndexBox",
+      "outlet_host": "indexbox.io",
+      "genre_hint": "food_health",
+      "summary": "コーヒーと消化：コペンハーゲン大学研究が腸内細菌と排便の変化を指摘 - ニュースと統計（IndexBox）",
+      "id": "94635b45e9",
+      "sources": [
+        "IndexBox"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1016/j.gutmic.2026.100018",
+          "what_it_states": "健康な成人61名を対象に8日間の食事記録・糞便・尿検査を行い、うち50名が小型カプセル型センサー（SmartPill）を服用して消化管内のpH・温度・収縮圧を測定した。日常的にコーヒーを飲む群（8日中4日以上、1〜5杯/日）は非飲用群と比べ腸内細菌叢の多様性が高く、小腸のpHが有意に低かった。また尿中カフェイン代謝物の上昇が大腸の収縮頻度増加と相関したが、観察研究のため因果関係は証明されておらず、便秘改善の臨床試験は未実施"
+        }
+      ],
+      "announced_on": "2026-11-10",
+      "headline_claim": "コーヒーを飲むと腸内細菌が変化し排便が促される仕組みが、コペンハーゲン大学の体内センサー研究で解明された",
+      "actual_content": "健康なデンマーク人成人61名（カプセルセンサー服用は50名）の腸内データを8日間にわたり追跡した観察研究です。日常的なコーヒー飲用者は非飲用者に比べ腸内細菌の多様性が高く、小腸内がより酸性（低pH）で、尿中カフェイン代謝物が多い人ほど結腸の収縮が多い相関が確認されました。ただし介入試験（コーヒーを飲ませる前後比較）ではなく、収縮の増加が実際の排便速度や便秘解消につながるかは未検証で、因果関係は確定していません。",
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 4,
+      "work_relevance": 1,
+      "audience_fit": 3,
+      "tangible": 3,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "gut",
+      "entry_question": "コーヒーで便通が良くなる仕組みは、どこまで科学で確かめられた？",
+      "surprise_line": "毎朝コーヒーを飲む人が、腸の収縮増が確かめられた一方因果関係は未証明と知って驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "61人の観察研究に過ぎず、実際にコーヒーを飲ませて便秘が治るかを確かめた介入試験はまだ行われていない。大腸の収縮が増えても通過時間が早くなったかは確認されていない。",
+      "hope_material": "飲むタイプの小型センサー（SmartPill）を使い、カフェイン代謝物と大腸の蠕動運動の相関や小腸のpH変化など、腸内の物理的な動きを客観的に捉えられた点。",
+      "investment_related": false,
+      "deja_vu_note": "kl039（オリーブ油と血糖値の検証）と類似した日常の飲食・健康効果の検証構造だが、直近はロボット・AI回が続いておりジャンル重複は少ない。",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "コペンハーゲン大学 コーヒー 腸内細菌",
+      "jp_title_anchor": [
+        "コペンハーゲン大学",
+        "SmartPill",
+        "腸内細菌"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.45,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-15",
+      "first_seen_at": "2026-11-15T06:36:29",
+      "presented_on": [],
+      "topic_first_date": "2026-04-21",
+      "topic_first_source": "候補 4cf947cd03 のannounced_on（コーヒーの効果はカフェインだけではない？ 腸内細菌との関係が）",
+      "topic_series": "94635b45e9",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-14",
+        "title": "コーヒーと消化：コペンハーゲン大学研究が腸内細菌と排便の変化を指摘 - ニュースと統計",
+        "id": "94635b45e9",
+        "source": "Googleニュース（腸内細菌 研究）／IndexBox"
+      }
     }
   ]
 }
