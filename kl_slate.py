@@ -113,6 +113,8 @@ def cmd_show(as_json):
     if as_json:
         print(json.dumps({"week_of": s["week_of"], "main": todo_main, "backup": todo_back}, ensure_ascii=False, indent=2))
     else:
+        if s["week_of"] != _monday(date.today()).isoformat():
+            print(f"  （注: このスレートは {s['week_of']} 週のもの。今週の分が未記録なら、週次下書きから選び直す。期限が残る未制作分は使える）")
         print(f"週次スレート（{s['week_of']}週）— 未制作の本命 {len(todo_main)}本・次点 {len(todo_back)}本（鮮度期限の近い順）")
         for r in todo_main:
             tag = "【期限切れ→差し替え】" if r["expired"] else ""
@@ -149,6 +151,9 @@ def cmd_swap(out_id, in_id, reason):
         in_id = backs[0]["id"]
     if in_id not in ent or ent[in_id]["role"] != "backup":
         sys.exit(f"{in_id} は次点ではありません")
+    if ent[in_id].get("series") and not ent[out_id].get("series") and sum(
+            1 for e in s["entries"] if e["role"] == "main" and e.get("series")) >= 1:
+        sys.exit(f"{in_id} はシリーズ候補で、制作に既にシリーズ候補があります（週の3本中1本まで）。別の次点を --in で指定してください")
     ent[out_id]["role"], ent[out_id]["drop_reason"] = "dropped", reason
     ent[in_id]["role"] = "main"
     s["swaps"].append({"date": date.today().isoformat(), "out": out_id, "in": in_id, "reason": reason})

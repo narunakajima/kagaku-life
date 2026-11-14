@@ -2628,7 +2628,11 @@ def ensure_prior_art_presented(cands: dict = None, top: int = PRIOR_ART_TOP_N, m
     tried, total = set(), 0
     for _ in range(max_rounds):
         refresh_ids = {c["id"] for c in prior_art_targets(items)}
-        todo = [c["id"] for c in presented_candidates(classify(items), top) if c["id"] in refresh_ids and c["id"] not in tried]
+        rows_now = classify(items)
+        if WEEKLY_MODE:     # 週次: 下書きはスレートの候補を除いて並べるので、チェック対象も同じ並びで決める（漏れ防止）
+            slated = slated_active_ids(items)
+            rows_now = [r for r in rows_now if r["c"]["id"] not in slated]
+        todo = [c["id"] for c in presented_candidates(rows_now, top) if c["id"] in refresh_ids and c["id"] not in tried]
         if not todo:
             break
         tried.update(todo)
@@ -4459,7 +4463,7 @@ def cmd_slack(note_path: str, record: bool = True):
     gen = {k: v for k, v in g["genres"]} if isinstance(g["genres"], list) else dict(g["genres"])
     vname = {"soon": "もうすぐ", "decade": "3年", "pending": "根拠待ち", "dubious": "眉唾"}
     cands = load_candidates()
-    ensure_prior_art_presented(cands)      # 2026-11-13: ベスト3・本命の上位10件は必ずチェック済みにしてから並べる
+    ensure_prior_art_presented(cands)      # 2026-11-13: ベスト3・本命の上位10件は必ずチェック済みにしてから並べる（週次は下書きの全件。スレートの候補を除いた並びで決める）
     rows = classify(cands["items"])
     if WEEKLY_MODE:     # 週次方式: その週のスレートに入っている未制作の候補は下書きに重ねて出さない（制作待ちのため）
         slated = slated_active_ids(cands["items"])
