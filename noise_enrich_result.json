@@ -1,0 +1,28 @@
+{
+  "model": "gemini-3.8-flash",
+  "n": 50,
+  "run1_vs_run2": 48,
+  "run1_vs_old": 47,
+  "run2_vs_old": 47,
+  "got_query_run1": 50,
+  "got_query_run2": 50,
+  "pct": {
+    "run1_vs_run2": 96.0,
+    "run1_vs_old": 94.0,
+    "run2_vs_old": 94.0
+  },
+  "mismatch_run1_run2": [
+    {
+      "title": "From Scan to Treatment Plan, AI Helps Close Breast",
+      "r1": "product_release",
+      "r2": "other",
+      "old": "other"
+    },
+    {
+      "title": "Introducing MentalHealthBench",
+      "r1": "product_release",
+      "r2": "research",
+      "old": "product_release"
+    }
+  ]
+}
