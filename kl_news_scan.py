@@ -442,9 +442,9 @@ def _light_model() -> str:
 
 
 # 2026-11-13 指示007（削減プラン項目G）: 夜間処理（score・予備採点・tag・enrich）の思考量（thinking）を low にする。
-# 新旧比較（kl_thinking_compare.py、20件）でゲート通過・落選が4件入れ替わったため、既定は【無効】のまま（要確認）。
-# 有効化: 環境変数 KL_THINKING_LOW=1（または既定値を "1" にする）。
-THINKING_LOW = os.environ.get("KL_THINKING_LOW", "0") == "1"
+# 2026-11-15 指示002: 揺らぎ測定（指示001）を受けて【既定で有効】にした（旧設定同士でも入れ替わりは同数）。
+# 無効に戻す: 環境変数 KL_THINKING_LOW=0。
+THINKING_LOW = os.environ.get("KL_THINKING_LOW", "1") == "1"
 
 
 def _thinking(types):
