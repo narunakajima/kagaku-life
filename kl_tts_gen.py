@@ -3,7 +3,7 @@ kl_tts_gen.py — くらしを変える科学 ナレーション音声生成ス�
 
 episodes/kl{NNN}.json の各シーンのnarration文を、scene.narrator（persona/research）
 に応じて narration_voices（エピソードごとに選定済みのボイス名）で読み分け、
-gemini-3.8-flash-lite-tts（既定。--tts-model flash で gemini-3.8-flash-tts）で音声を生成する（CLAUDE.md「ストーリー構成と
+gemini-3.8-flash-tts（既定。--tts-model lite で gemini-3.8-flash-lite-tts）で音声を生成する（CLAUDE.md「ストーリー構成と
 2ナレーターボイス制」参照）。
 
 narration_voicesが未設定のエピソードは、先にボイス選定（聴き比べ）を行ってから
@@ -73,11 +73,10 @@ QA_MODEL = gm.primary()  # ナレーション音声が台本通りか判定す�
 # speech_metadataを使わないためSDKのままでよい。SDKがspeech_metadataに
 # 対応したら synth() 内の _tts_rest_call 呼び出しを
 # client.models.generate_content に戻してよい。
-# 2026-11-14: 本番の既定を Flash-Lite TTS に切り替え（試聴で問題なしと判定、指示 2026-11-14-001）。
-# 現行の gemini-3.8-flash-tts へは --tts-model flash で戻せる。
+# 2026-11-15: 本番の既定を Flash に戻した（Lite化は保留、指示 2026-11-15-003）。Lite は --tts-model lite で選べる。
 # モデルIDは公式モデル一覧（aistudio.google.com/docs/models）で確認。
 TTS_MODELS = {"lite": "gemini-3.8-flash-lite-tts", "flash": "gemini-3.8-flash-tts"}
-DEFAULT_TTS_MODEL_KEY = "lite"
+DEFAULT_TTS_MODEL_KEY = "flash"
 # キャッシュ署名にモデルを含めない（=従来の署名の）モデル。切替前に作った既存キャッシュはこのモデルのもの。
 LEGACY_SIG_MODEL = "gemini-3.8-flash-tts"
 MODEL = TTS_MODELS[DEFAULT_TTS_MODEL_KEY]
@@ -453,7 +452,7 @@ def main():
                          help="初見レビュー（kl-new STEP5.5）が「済」でなくても続行する。rounds_v3・rounds_v4 の kl046 以降は、しばらくは必須"
                               "（なるさんの指示、2026-10-19）。制作者の了承なしに使わない。KL_SKIP_BEGINNER_REVIEW=1 でも同じ")
     parser.add_argument("--tts-model", choices=sorted(TTS_MODELS), default=DEFAULT_TTS_MODEL_KEY,
-                         help="TTSモデル。既定は本番の lite（gemini-3.8-flash-lite-tts）。flash は従来の gemini-3.8-flash-tts")
+                         help="TTSモデル。既定は本番の flash（gemini-3.8-flash-tts）。lite は gemini-3.8-flash-lite-tts（保留中）")
     args = parser.parse_args()
     global MODEL
     MODEL = TTS_MODELS[args.tts_model]
