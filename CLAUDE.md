@@ -255,12 +255,22 @@ AI分野の進み方から見て古めかしく「どこかで聞いた話」に
 - **題材の型と実績（2026-11-07〜）:** 各回に題材の型（`topic_patterns.json`、`topics_queue.json` の `topic_pattern`）を付け、月次評価で型ごとの engagedViews を編集長が分析し、採点の重みの変更を提案する（決めるのはなるさん）
 - 採点の仕組み（実測の注目度、ゲート、本命／ニッチ／速報の枠、ベスト3の選び方、収集源、一次資料URLの確認と修復）は `docs/news_scan.md`
 
-**夜間のニュース採点（2026-10-14〜）:** GitHub Actions（`.github/workflows/nightly-news.yml`）が毎日 04:00 JST に
-`kl_news_scan.py` の collect→score --top 15→verify→repair→tag→enrich→buzz→list を実行し、`news_candidates.json` を main に push して
-Slack（KL News アプリの Incoming Webhook）にベスト3の下書きを送る。Claude は使わない。Secrets は `GEMINI_API_KEY_KL`・
-`SLACK_WEBHOOK_URL_KL`（`gh secret set` で登録。値はチャット・ファイルに書かない）。所要約15分。朝の作業前に `git pull` する。
-当初はクラウドルーティンで作ったが、クラウド環境には環境変数の設定が無く（ネットワークシークレットはヘッダー注入のみ）、
-Webhook URL を渡せないため GitHub Actions に切り替えた（ルーティンは削除済み）。
+**週次のニュース採点・週次スレート（2026-11-15〜、指示 2026-11-15-004）:** GitHub Actions（`.github/workflows/nightly-news.yml`）は
+**週1回（JST の月曜 02:17 起動分）と手動実行だけ**、`kl_news_scan.py` の collect→score --top 30 --weekly→verify→repair→tag→enrich→buzz→list を実行し、
+`news_candidates.json` を main に push して Slack（KL News アプリの Incoming Webhook）に**週次下書き（6〜9件）**を送る。月曜以外は「Weekly gate」工程で全工程を飛ばす。
+Claude は使わない。Secrets は `GEMINI_API_KEY_KL`・`SLACK_WEBHOOK_URL_KL`（`gh secret set` で登録。値はチャット・ファイルに書かない）。朝の作業前に `git pull` する。
+- **週次回（`--weekly`）の違い:** 検索つき本採点の上限は7→15件（予備採点の取りこぼし率は 15/265＝5.7% で10%以下、悪化なし）。下書きはベスト3でなく6〜9件
+  （同ジャンル2件まで・健康系3件まで。6件に満たなければ緩めて補い、弱い週は無理に埋めない）。各候補に面白さの内訳・驚きの1行・先行事例・
+  「鮮度期限（21日）まで今日あと何日／制作日（火・木・土）時点で何日か」を出す。先行事例チェックは提示される全件。「本命N本／参考M本」を明記し、
+  本命が3本に満たない週は無理に3本を埋めない。新規優先は「初回スキャンから7日以内」、未選択の候補は翌週の下書きに**最大1回まで**再提示（`PRESENT_MAX_DAYS`=2 は「回数」の意味になる）
+- **週次スレート:** ユーザーが選んだ「制作3本＋次点2本」を `python3 kl_slate.py add --main … --backup …` で `weekly_slate.json` に記録する。
+  次点は差し替え用（本命級でなくてよい）。選択後のURL再確認はこの5件だけ。差し替えは URL再確認で落ちた・制作日までに鮮度期限を過ぎた・制作に入って素材不足と分かった、のとき（`kl_slate.py swap`）。
+  `/kl-new` STEP 1 はスレートがあれば未制作分を鮮度期限の近い順に表示して始める（再採点・再提示しない）。スレートが無い・尽きたときだけケースC（その場収集）にフォールバック
+- **定点観測のシリーズ優先枠:** 「1日1件」から「週の3本中1本まで」に読み替える（`kl_slate.py add` が制作に2本以上は拒否する）
+- 週途中の速報・節目は自動では拾わない。手動で指示があったときだけ追加収集する
+- **戻し方:** `nightly-news.yml` の `KL_WEEKLY_GATE` を `"0"` にすると、月曜ゲートも `--weekly` も外れて毎晩・ベスト3に戻る。コードは `WEEKLY_MODE`（`--weekly` が無ければ False）で従来動作のまま
+- 以前の毎晩方式（2026-10-14〜2026-11-14）: 毎日 04:00 JST（のち 02:17）に同じ工程を回し、ベスト3の下書きを送っていた。当初はクラウドルーティンで作ったが、
+  クラウド環境には環境変数の設定が無くWebhook URL を渡せないため GitHub Actions に切り替えた（ルーティンは削除済み）
 
 **公開までのリードタイム:** ニュース起点の回は、制作後すぐ（目安3日以内）に公開する。予約の列が埋まっているときは、ニュース回はアップロード後に
 `kl_reschedule.py bump` で直近の枠に割り込ませ、他の回を後ろへずらす（2026-10-05時点で予約は空）。旧方式の在庫 kl022〜kl030 は2026-10-05に公開予約を取り消した（上記）。

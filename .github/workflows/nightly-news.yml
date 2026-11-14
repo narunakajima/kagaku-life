@@ -30,6 +30,7 @@ jobs:
       SLACK_WEBHOOK_URL_KL: ${{ secrets.SLACK_WEBHOOK_URL_KL }}
       YOUTUBE_API_KEY_KL: ${{ secrets.YOUTUBE_API_KEY_KL }}   # 未設定なら空。YouTube の英日の差は測らない（従来どおり）
       TZ: Asia/Tokyo
+      KL_WEEKLY_GATE: "1"   # 週次スレート方式（2026-11-15 指示004）。"0" にすると毎晩・従来の3件に戻る
     steps:
       - uses: actions/checkout@v4
 
@@ -40,7 +41,25 @@ jobs:
       - name: Install dependencies
         run: pip install google-genai
 
+      # 週次スレート方式の月曜ゲート（2026-11-15 指示004）。収集・本採点・下書き生成は週1回（JST の月曜 02:17 起動分）と手動実行だけ。
+      # 他の曜日は以降の工程をすべて飛ばす（gemini_trending の週1回化と同じ方式）。
+      # 戻し方（毎晩・従来の3件に戻す）: 上の env の KL_WEEKLY_GATE を "0" にする（この工程ごと消してもよい。その場合は各工程の
+      # `if: always() && steps.gate...` の条件と `$WEEKLY_OPT` も外す）。
+      - name: Weekly gate
+        id: gate
+        run: |
+          if [ "$KL_WEEKLY_GATE" = "1" ] && [ "$GITHUB_EVENT_NAME" != "workflow_dispatch" ] && [ "$(date +%u)" != "1" ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "月曜以外のため、今夜の収集・採点・下書きは飛ばします（週次スレート方式）"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            if [ "$KL_WEEKLY_GATE" = "1" ]; then echo "weekly_opt=--weekly" >> "$GITHUB_OUTPUT"; else echo "weekly_opt=" >> "$GITHUB_OUTPUT"; fi
+          fi
+
       - name: Scan news
+        if: steps.gate.outputs.run == 'true'
+        env:
+          WEEKLY_OPT: ${{ steps.gate.outputs.weekly_opt }}
         run: |
           set -o pipefail
           # gemini_trending（日本語圏の話題の補完検索）は週1回、JST の月曜（月曜 02:17 JST 起動分）だけ実行（2026-11-13、削減プラン項目F）。
@@ -48,7 +67,7 @@ jobs:
           TREND_OPT="--no-trending"
           [ "$(date +%u)" = "1" ] && TREND_OPT=""
           python3 kl_news_scan.py collect --days 21 $TREND_OPT
-          python3 kl_news_scan.py score --top 30 || STALL=1   # 0件採点は非0終了。後の工程・コミットは続け、最後に失敗にする（2026-11-09）
+          python3 kl_news_scan.py score --top 30 $WEEKLY_OPT || STALL=1  # 0件採点は非0終了。後の工程・コミットは続け、最後に失敗にする（2026-11-09）
           # 一次資料URLの実在確認（2026-10-15、NEWS_REDESIGN_2026-10-15.md §3.5。HTTPだけで Gemini 不要）。
           # 全URLが404の候補はゲートで落ち、後の enrich・buzz の対象にもならない。失敗しても後の工程は止めない
           python3 kl_news_scan.py verify --max 60 || echo "verify に失敗（続行）"
@@ -60,12 +79,12 @@ jobs:
           python3 kl_news_scan.py buzz
           # 同一ネタの繰り返し対策（2026-11-08）: 2日提示して選ばれなかった候補の棚上げ・同一ストーリーの重複統合（費用ゼロ、データは消さない）
           python3 kl_news_scan.py dedupe || echo "dedupe に失敗（続行）"
-          python3 kl_news_scan.py list --top 10 --check-urls > nightly_list.txt
+          python3 kl_news_scan.py list --top 10 --check-urls $WEEKLY_OPT > nightly_list.txt
           python3 kl_concern_select.py > nightly_concern.txt || true
           if [ -n "$STALL" ]; then echo "採点・付与が止まっています（nightly_stall.txt）"; exit 1; fi
 
       - name: Commit news_candidates.json
-        if: always()   # 採点が止まって Scan news が失敗しても、途中までのデータは残す（2026-11-09）
+        if: always() && steps.gate.outputs.run == 'true'   # 採点が止まって Scan news が失敗しても、途中までのデータは残す（2026-11-09）。月曜以外は何もしない
         run: |
           git config user.name "kl-nightly-bot"
           git config user.email "kl-nightly-bot@users.noreply.github.com"
@@ -82,10 +101,12 @@ jobs:
           fi
 
       - name: Post to Slack
-        if: always()
+        if: always() && steps.gate.outputs.run == 'true'
+        env:
+          WEEKLY_OPT: ${{ steps.gate.outputs.weekly_opt }}
         run: |
           if [ -z "$SLACK_WEBHOOK_URL_KL" ]; then echo "Webhook 未設定"; exit 0; fi
-          if python3 kl_news_scan.py slack --note nightly_concern.txt > slack_payload.json; then
+          if python3 kl_news_scan.py slack $WEEKLY_OPT --note nightly_concern.txt > slack_payload.json; then
             :
           else
             jq -n '{text: "KL ネタ ベスト3: 整形に失敗しました。Actions のログを確認してください。"}' > slack_payload.json
@@ -103,7 +124,7 @@ jobs:
 
       # 下書きに載せた日（presented_on）を残す（2026-11-08）。slack コマンドが news_candidates.json に書く
       - name: Commit presented_on
-        if: always()
+        if: always() && steps.gate.outputs.run == 'true'
         run: |
           git config user.name "kl-nightly-bot"
           git config user.email "kl-nightly-bot@users.noreply.github.com"

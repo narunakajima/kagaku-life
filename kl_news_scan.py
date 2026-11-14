@@ -715,7 +715,22 @@ PRELIM_BATCH = 40                # 予備採点の1回の呼び出しに入れ�
 PRELIM_LOG_JSON = BASE_DIR / "news_prefilter_log.json"   # 予備採点で落とした候補の記録（gitで追跡）
 PRELIM_LOG_KEEP_RUNS = 60
 PRELIM_LOG_KEEP_IDS = 2000
-LEGACY_SCORE_MAX = 15            # 予備採点を使わないときの本採点の上限（従来の --top 15 と同じ）。無効化しても検索代が増えないようにする
+# 週次スレート方式（2026-11-15 指示004）: 収集・本採点・下書きを週1回（月曜）にまとめる。--weekly で有効（ワークフローが月曜だけ付ける）。
+# 戻し方: nightly-news.yml の KL_WEEKLY_GATE を "0" にする（または gate 工程を外す）と、--weekly も付かず毎晩・従来の3件に戻る。
+WEEKLY_MODE = False              # main が --weekly で True にする（試験・夜間では False のまま）
+FULL_SCORE_MAX_WEEKLY = 15       # 週次回の本採点の上限（通常は FULL_SCORE_MAX=7）。--top 30 の予備採点を通った候補のうち、上位この件数まで
+WEEKLY_DRAFT_MIN, WEEKLY_DRAFT_MAX = 6, 9      # 週次下書きの件数（6件に満たなければ緩めて補い、9件で止める。弱い週は無理に埋めない）
+WEEKLY_GENRE_MAX, WEEKLY_GENRE_RELAXED = 2, 3  # 週次下書きの同ジャンル上限（通常→6件に満たないときだけ緩める）
+WEEKLY_HEALTH_MAX = 3            # 週次下書きの健康系の上限（制作は3本、5話に2話の上限は選ぶ側で守る）
+WEEKLY_PRODUCE_DAYS = (("火", 1), ("木", 3), ("土", 5))   # 週次回（月曜）から数えた制作日（鮮度期限の表示用）
+FRESH_DEADLINE_DAYS = 21         # 鮮度期限（freshness_score 3以上＝話題の初出から21日以内）
+
+
+def full_score_max() -> int:
+    return FULL_SCORE_MAX_WEEKLY if WEEKLY_MODE else FULL_SCORE_MAX
+
+
+LEGACY_SCORE_MAX = 15           # 予備採点を使わないときの本採点の上限（従来の --top 15 と同じ）。無効化しても検索代が増えないようにする
 
 
 def prelim_seen_ids() -> set:
@@ -830,7 +845,7 @@ def prelim_filter(todo: list, prio_ids: set, no_prelim: bool = False) -> list:
     prio = [p for p in todo if p["id"] in prio_ids]
     rest = [p for p in todo if p["id"] not in prio_ids]
     if not rest:
-        return prio[:FULL_SCORE_MAX] if prio else []
+        return prio[:full_score_max()] if prio else []
     concerns = json.loads(CONCERNS_JSON.read_text(encoding="utf-8"))["concerns"]
     concerns_txt = "\n".join(f"- {c['id']}: {c['label']}" for c in concerns)
     client, types = _gemini()
@@ -846,10 +861,10 @@ def prelim_filter(todo: list, prio_ids: set, no_prelim: bool = False) -> list:
                             "reason": why, "note": (j or {}).get("reason", "")})
     passed.sort(key=lambda t: t[:3])
     chosen = prio + [t[3] for t in passed]
-    todo2 = chosen[:FULL_SCORE_MAX]
+    todo2 = chosen[:full_score_max()]
     print(f"予備採点（検索なし）: 対象{len(rest)}件 → 通過{len(passed)}件・落とした{len(dropped)}件"
           + (f"（{'、'.join(f'{k} {v}件' for k, v in reasons.items())}）" if reasons else "")
-          + f"。シリーズ優先枠{len(prio)}件は素通り。本採点は先頭{len(todo2)}件（上限{FULL_SCORE_MAX}）")
+          + f"。シリーズ優先枠{len(prio)}件は素通り。本採点は先頭{len(todo2)}件（上限{full_score_max()}）")
     for d in dropped:
         print(f"   ✗ 予備で落とす [{d['reason']}] {d['title'][:60]}")
     if dropped or passed:
@@ -3065,9 +3080,16 @@ def first_seen_dt(c: dict):
     return None
 
 
+NEW_WITHIN_HOURS_WEEKLY = 168    # 週次方式では「直近7日以内」に読み替える（指示004 項目9）
+
+
+def new_within_hours() -> int:
+    return NEW_WITHIN_HOURS_WEEKLY if WEEKLY_MODE else NEW_WITHIN_HOURS
+
+
 def is_new_candidate(c: dict) -> bool:
     fs = first_seen_dt(c)
-    if fs is None or (datetime.now() - fs).total_seconds() > NEW_WITHIN_HOURS * 3600:
+    if fs is None or (datetime.now() - fs).total_seconds() > new_within_hours() * 3600:
         return False
     return topic_age_days(c) <= NEW_MAX_TOPIC_AGE_DAYS
 
@@ -3171,6 +3193,23 @@ def series_candidate_info(c: dict):
         return {"series_id": s["series_id"], "name": s.get("name", s["series_id"]), "no": s.get("next_episode_no"),
                 "target": target, "milestones": ms}
     return None
+
+
+SLATE_JSON = BASE_DIR / "weekly_slate.json"      # 週次スレート（制作3本＋次点2本）。書き込みは kl_slate.py
+
+
+def slated_active_ids(items: list) -> set:
+    """最新の週次スレートにある、まだ制作（status=used）にも却下にも入っていない候補のID（本命・次点とも）。"""
+    if not SLATE_JSON.exists():
+        return set()
+    try:
+        slates = json.loads(SLATE_JSON.read_text(encoding="utf-8")).get("slates") or []
+    except Exception:  # noqa: BLE001
+        return set()
+    if not slates:
+        return set()
+    done = {c["id"] for c in items if c.get("status") in ("used", "rejected")}
+    return {e["id"] for e in slates[-1].get("entries", []) if e.get("role") in ("main", "backup") and e["id"] not in done}
 
 
 def presented_days(c: dict) -> list:
@@ -3305,16 +3344,21 @@ def best3(rows: list):
     picks, series = [], set()
     from collections import Counter
     genres = Counter()
+    # 週次方式（2026-11-15 指示004）: 9件まで・同ジャンル2件まで（6件に満たなければ3件まで）・健康系3件まで。それ以外の入口条件は同じ
+    n_max = WEEKLY_DRAFT_MAX if WEEKLY_MODE else 3
+    n_min = WEEKLY_DRAFT_MIN if WEEKLY_MODE else 3
+    g_max, g_relaxed = (WEEKLY_GENRE_MAX, WEEKLY_GENRE_RELAXED) if WEEKLY_MODE else (1, BEST3_RELAXED_GENRE_MAX)
+    h_max = WEEKLY_HEALTH_MAX if WEEKLY_MODE else BEST3_HEALTH_MAX
 
     def take(pool, genre_max, **flags):
         for r in pool:
-            if len(picks) == 3:
+            if len(picks) == n_max:
                 return
             g = r["c"].get("genre")
             ts = r["c"].get("topic_series")     # 2026-11-08: 同一ストーリー（topic_groups）も重ねない
             if r["series"] in series or (ts and ("topic:" + ts) in series) or genres[g] >= genre_max:
                 continue
-            if r["c"].get("health") and sum(1 for p in picks if p["c"].get("health")) >= BEST3_HEALTH_MAX:
+            if r["c"].get("health") and sum(1 for p in picks if p["c"].get("health")) >= h_max:
                 continue
             picks.append(dict(r, relaxed=genres[g] > 0, **flags))
             genres[g] += 1
@@ -3336,13 +3380,13 @@ def best3(rows: list):
                 break
     if not any(is_tangible_pick(p["c"]) for p in picks):
         take([r for r in ok if is_tangible_pick(r["c"])][:1], 1)
-    take(ok, 1)
-    if len(picks) < 3:
-        take(ok, BEST3_RELAXED_GENRE_MAX)
-    if len(picks) < 3:
+    take(ok, g_max)
+    if len(picks) < n_min:
+        take(ok, g_relaxed)
+    if len(picks) < n_min:
         unv = [r for r in order if not _primary_ok(r["c"])]
-        take(unv, 1, reserve=True)
-        take(unv, BEST3_RELAXED_GENRE_MAX, reserve=True)
+        take(unv, g_max, reserve=True)
+        take(unv, g_relaxed, reserve=True)
     pos = {r["c"]["id"]: i for i, r in enumerate(order)}
     # 2026-11-11（指示2026-11-11-001）: 本命の絶対基準。驚き（先行事例の上限適用後）が HONMEI_MIN_WONDER 未満の候補は1位に置かない。
     # 強い候補（確認済みの入口条件を通ったもの）が選ばれていなければ、枠の競合で漏れた強い候補を最後の1枠と入れ替える。
@@ -3351,12 +3395,12 @@ def best3(rows: list):
             if not honmei_strong(r["c"]) or r["c"]["id"] in {p["c"]["id"] for p in picks}:
                 continue
             rest = sorted(picks, key=lambda p: pos.get(p["c"]["id"], len(order)))
-            keep = rest[:-1] if len(picks) == 3 else rest
+            keep = rest[:-1] if len(picks) == n_max else rest
             ts = r["c"].get("topic_series")
-            if any(p["series"] == r["series"] or (ts and p["c"].get("topic_series") == ts) or p["c"].get("genre") == r["c"].get("genre")
-                   for p in keep):
+            if any(p["series"] == r["series"] or (ts and p["c"].get("topic_series") == ts) for p in keep) \
+                    or sum(1 for p in keep if p["c"].get("genre") == r["c"].get("genre")) >= g_max:
                 continue
-            if r["c"].get("health") and sum(1 for p in keep if p["c"].get("health")) >= BEST3_HEALTH_MAX:
+            if r["c"].get("health") and sum(1 for p in keep if p["c"].get("health")) >= h_max:
                 continue
             picks = keep + [dict(r, relaxed=False)]
             break
@@ -3364,8 +3408,24 @@ def best3(rows: list):
     picks.sort(key=lambda p: (bool(p.get("reserve")), not honmei_strong(p["c"]), pos.get(p["c"]["id"], len(order))))
     if picks and not any(honmei_strong(p["c"]) and not p.get("reserve") for p in picks):
         picks = [dict(p, weak_day=True) for p in picks]     # 基準に達する候補がない日。呼び出し側が「本命なし・弱い日」と明記する
+    if WEEKLY_MODE and not (picks and picks[0].get("weak_day")):
+        # 週次方式: 本命（驚き4以上・確認済み）以外は1件ずつ「参考」と明記する（弱い週は無理に本命として埋めない）
+        picks = [p if (honmei_strong(p["c"]) and not p.get("reserve")) else dict(p, ref_only=True) for p in picks]
     niche = _sorted_core([r for r in rows if r["lane"] == "ニッチ"])
-    return picks, (niche[0] if niche and len(picks) < 3 else None)
+    return picks, (niche[0] if niche and len(picks) < n_min else None)
+
+
+def freshness_remaining(c: dict, offset_days: int = 0) -> int:
+    """鮮度期限（話題の初出から FRESH_DEADLINE_DAYS 日、ゲートの freshness_score 3 以上と同じ）まで、今日から offset_days 日後の時点であと何日か。負は期限切れ。"""
+    return FRESH_DEADLINE_DAYS - topic_age_days(c) - offset_days
+
+
+def freshness_deadline_line(c: dict) -> str:
+    """週次下書き・スレートの表示用。制作日（週次回の月曜から数えた火・木・土）時点の残り日数を出す。"""
+    def f(n):
+        return f"{n}日" if n >= 0 else "期限切れ"
+    days = "／".join(f"{w}{f(freshness_remaining(c, o))}" for w, o in WEEKLY_PRODUCE_DAYS)
+    return f"⏳ 鮮度期限（{FRESH_DEADLINE_DAYS}日）まで 今日あと{f(freshness_remaining(c))}（制作日時点: {days}）"
 
 
 def _slot_lines(r: dict) -> list:
@@ -3376,12 +3436,13 @@ def _slot_lines(r: dict) -> list:
     if si:
         out.append(f"📌 シリーズ候補: {si['name']} 第{si['no']}回候補（ウォッチ対象: {si['target']}／節目の可能性: {'・'.join(si['milestones'])}。語の一致による目安）")
     if is_new_candidate(c):
-        out.append("🆕 新規候補（初回スキャンから48時間以内）")
+        out.append("🆕 新規候補（初回スキャンから" + ("7日以内）" if WEEKLY_MODE else "48時間以内）"))
     n = len(presented_days(c))
+    unit = "回" if WEEKLY_MODE else "日"     # 週次方式では週1回の提示なので、PRESENT_MAX_DAYS は「回数」（前週1回＝翌週に最大1回まで再提示）
     if n:      # 今日の再実行で載る場合は今日を含む。n は今日より前に提示した日数
         today_in = _today() in presented_days(c)
-        out.append(f"提示 {n}日目（最大{PRESENT_MAX_DAYS}日。載せた日: {'・'.join(d[5:] for d in presented_days(c))}）" if today_in
-                   else f"提示 {n + 1}日目（最大{PRESENT_MAX_DAYS}日）")
+        out.append(f"提示 {n}{unit}目（最大{PRESENT_MAX_DAYS}{unit}。載せた日: {'・'.join(d[5:] for d in presented_days(c))}）" if today_in
+                   else f"提示 {n + 1}{unit}目（最大{PRESENT_MAX_DAYS}{unit}）")
     if r.get("weak_day"):
         out.append(f"参考（{WEAK_DAY_LABEL}: 驚き{HONMEI_MIN_WONDER}以上の候補がないため、順位は付けず本命にしません）")
     if r.get("slot") == SLOT_L2:
@@ -3407,12 +3468,13 @@ def prior_art_rows(rows: list, states: tuple) -> list:
     return sorted(out, key=lambda r: -r["interest"])
 
 
-NO_NEW_LINE = f"新規候補なし（初回スキャンから{NEW_WITHIN_HOURS}時間以内で、ゲートを通った候補がありません）"
+def no_new_line() -> str:
+    return f"新規候補なし（初回スキャンから{new_within_hours()}時間以内で、ゲートを通った候補がありません）"
 
 
 def new_note(picks: list) -> str:
     """新規優先枠の注記。ベスト3に新規候補が1件も無いときだけ明記する。"""
-    return "" if any(is_new_candidate(p["c"]) for p in picks) else NO_NEW_LINE
+    return "" if any(is_new_candidate(p["c"]) for p in picks) else no_new_line()
 
 
 def _buzz_line(c: dict) -> str:
@@ -4399,8 +4461,11 @@ def cmd_slack(note_path: str, record: bool = True):
     cands = load_candidates()
     ensure_prior_art_presented(cands)      # 2026-11-13: ベスト3・本命の上位10件は必ずチェック済みにしてから並べる
     rows = classify(cands["items"])
+    if WEEKLY_MODE:     # 週次方式: その週のスレートに入っている未制作の候補は下書きに重ねて出さない（制作待ちのため）
+        slated = slated_active_ids(cands["items"])
+        rows = [r for r in rows if r["c"]["id"] not in slated]
     picks, niche = best3(rows)
-    nums = "①②③"
+    nums = "①②③④⑤⑥⑦⑧⑨"
 
     def esc(t):
         return (t or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
@@ -4450,12 +4515,15 @@ def cmd_slack(note_path: str, record: bool = True):
             link += "\n" + repaired_note
         ev = c.get("expected_verdicts") or {}
         verdict = (f"大輔 {vname.get(ev.get('dreamer'), '?')} ／ 沙織 {vname.get(ev.get('skeptic'), '?')}") if ev else ""
-        lines = [f"*{nums[i]} 〈{'参考・順位なし' if r.get('weak_day') else r.get('slot', SLOT_HONMEI)}〉{title}*", meta]
+        label = "参考・順位なし" if r.get("weak_day") else "参考（本命基準に未達）" if r.get("ref_only") else r.get("slot", SLOT_HONMEI)
+        lines = [f"*{nums[i]} 〈{label}〉{title}*", meta]
         lines += [esc(x) for x in _slot_lines(r)]
         lines += [f"💬 {esc(c.get('entry_question'))}"]
         # 2026-11-08: 面白さの内訳（wonder / audience_fit / tangible）と surprise_line を毎回出す（選定理由を制作者に見せる）
         lines.append(f"📊 面白さ{r['interest']}＝驚き{wonder_eff(c)}＋視聴者{fit(c)}＋見せる{_neutral3(c, 'tangible')}")
         lines.append(f"😲 驚き: {clip(c.get('surprise_line'), 60) if c.get('surprise_line') else '（未付与）'}")
+        if WEEKLY_MODE:
+            lines.append(freshness_deadline_line(c))
         lines += [esc(x) for x in prior_art_lines(c)]
         if c.get("hope_material"):
             lines.append(f"🌱 手応え: {clip(c.get('hope_material'), 90)}")
@@ -4467,7 +4535,14 @@ def cmd_slack(note_path: str, record: bool = True):
         lines.append(f"{mark} {link}")
         return {"type": "section", "text": {"type": "mrkdwn", "text": "\n".join(lines)[:2900]}}
 
-    blocks = [{"type": "header", "text": {"type": "plain_text", "text": f"KL ネタ ベスト3の下書き　{datetime.now().strftime('%-m/%-d')}"}}]
+    title_txt = "KL 週次スレートの下書き" if WEEKLY_MODE else "KL ネタ ベスト3の下書き"
+    blocks = [{"type": "header", "text": {"type": "plain_text", "text": f"{title_txt}　{datetime.now().strftime('%-m/%-d')}"}}]
+    if WEEKLY_MODE:
+        n_honmei = sum(1 for r in picks if not r.get("ref_only") and not r.get("weak_day") and not r.get("reserve"))
+        msg = (f"*本命 {n_honmei}本*／参考 {len(picks) - n_honmei}本（計{len(picks)}件）。制作3本＋次点2本を選んでください（次点は差し替え用で、本命級でなくて構いません）。")
+        if n_honmei < 3:
+            msg += f"\n*⚠️ 本命が3本に満たない週です（{n_honmei}本）。無理に3本を埋めず、制作は本命の本数に合わせるか、手動で追加収集を指示してください。*"
+        blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": esc(msg).replace("&lt;", "<")[:2900]}})
     note = Path(note_path) if note_path else None
     if note and note.exists():
         keep = [ln.strip() for ln in note.read_text(encoding="utf-8").splitlines()
@@ -4486,7 +4561,10 @@ def cmd_slack(note_path: str, record: bool = True):
         notes.append(new_note(picks))
     if any(r.get("relaxed") for r in picks):
         notes.append(f"ジャンルを緩めて補いました（同じジャンルは{BEST3_RELAXED_GENRE_MAX}件まで）")
-    if len(picks) < 3 and picks:
+    if WEEKLY_MODE:
+        if len(picks) < WEEKLY_DRAFT_MIN and picks:
+            notes.append(f"下書きが{len(picks)}件のみ（{WEEKLY_DRAFT_MIN}件に満たないまま出しています）")
+    elif len(picks) < 3 and picks:
         notes.append(f"ベスト3が{len(picks)}件のみ（3件に満たないまま出しています）")
     if notes:
         blocks.append({"type": "context", "elements": [{"type": "mrkdwn", "text": "／".join(notes)}]})
@@ -4559,7 +4637,7 @@ def cmd_slack(note_path: str, record: bool = True):
                 r["c"]["presented_on"] = d + [today]
         _save_candidates(cands)
         record_series_trace(funnel)
-    print(json.dumps({"text": "KL ネタ ベスト3の下書き", "blocks": blocks}, ensure_ascii=False))
+    print(json.dumps({"text": title_txt, "blocks": blocks}, ensure_ascii=False))
 
 
 _TOKEN_DF = {}      # 英数語 → その語を見出しに含む候補の数（cmd_dedupe が作る）
@@ -4764,7 +4842,11 @@ def main():
     ap.add_argument("--confirm", default="", help="prior-art: 例外の確認。一次資料を読んで言い切れた「何が今回初めてか」の1行（--id と --by が必要）")
     ap.add_argument("--by", default="", help="prior-art --confirm: 確認者（例: kl-planner）")
     ap.add_argument("--note", default="", help="slack: ジャンルの間隔などを拾うテキスト（kl_concern_select.py の出力）")
+    ap.add_argument("--weekly", action="store_true", help="週次スレート方式（指示004）: score の本採点上限を15件に、slack/list の下書きを6〜9件に、新規優先を7日以内に。夜間ワークフローが月曜だけ付ける")
     args = ap.parse_args()
+    if args.weekly:
+        global WEEKLY_MODE
+        WEEKLY_MODE = True
     if args.command == "slack":
         cmd_slack(args.note, not args.no_record)
     elif args.command == "dedupe":
