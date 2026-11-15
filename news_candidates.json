@@ -7644,7 +7644,7 @@
       "buzz_jp_est": 2,
       "topic_first_date": "2026-10-09",
       "topic_first_source": "候補 edd58468d5 のannounced_on（Sophos cuts threat investigati）",
-      "topic_series": "edd58468d5",
+      "topic_series": "27ed1bee0d",
       "freshness_basis": "topic_first_date",
       "audience_fit": 3,
       "promise": 4,
@@ -7652,7 +7652,13 @@
       "decision_number": 4,
       "series_fit": 1,
       "surprise_line": "企業のIT担当者が、脅威調査の半分以上がAIだけで完結したことに驚く",
-      "interest_version": "2026-11-07"
+      "interest_version": "2026-11-07",
+      "topic_pool_first": {
+        "date": "2026-10-27",
+        "title": "How Check Point accelerates vulnerability research with Daybreak",
+        "id": "8cb333260a",
+        "source": "OpenAI"
+      }
     },
     {
       "title": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
@@ -48541,7 +48547,9 @@
       "buzz_jp_measured": 2,
       "buzz_outlets_foreign": 0,
       "buzz_foreign_boost": false,
-      "buzz_query_en": "CIRCULATE-Japan"
+      "buzz_query_en": "CIRCULATE-Japan",
+      "buzz_error": "0件（検索語が合っていない可能性）",
+      "buzz_error_at": "2026-11-16T07:01:03"
     },
     {
       "title": "Gemini Notebook、無料で数百冊の教科書にアクセス可能に　米国・インドの出版社提供　日本でも利用可",
@@ -49480,7 +49488,7 @@
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-15T06:42:36",
+      "primary_verified_at": "2026-11-16T07:03:51",
       "url_check": [
         {
           "url": "https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets",
@@ -49490,7 +49498,7 @@
       ],
       "url_ok": true,
       "url_status": "claude.com: HTTP 200「Claude Enterprise 向けのスマートレポート、」",
-      "url_checked_at": "2026-11-15T06:42:36",
+      "url_checked_at": "2026-11-16T07:03:51",
       "buzz_history": [
         {
           "at": "2026-11-01T05:43:46",
@@ -49737,9 +49745,30 @@
           "outlets_foreign": 12,
           "foreign_boost": true,
           "query_en": "Claude Enterprise"
+        },
+        {
+          "at": "2026-11-16T07:02:04",
+          "query": "Claude Enterprise",
+          "measured": 4,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "Claude Enterpriseがセキュリティと管理機能を強化 DLP・EDR連携など新機能の全容は",
+              "outlet": "キーマンズネット",
+              "date": "2026-11-11"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 26,
+          "jp_measured": 2,
+          "outlets_foreign": 10,
+          "foreign_boost": true,
+          "query_en": "Claude Enterprise"
         }
       ],
-      "buzz_measured_at": "2026-11-14T07:53:12",
+      "buzz_measured_at": "2026-11-16T07:02:04",
       "buzz_measured": 5,
       "buzz_outlets": 3,
       "yahoo": true,
@@ -49839,6 +49868,18 @@
         },
         {
           "at": "2026-11-15T06:42:36",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets",
+              "status": "HTTP 200「Claude Enterprise 向けのスマートレポート、」",
+              "final_url": "https://claude.com/ja/resources/articles/smart-reports-surveys-pooled-budgets",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "at": "2026-11-16T07:03:51",
           "verdict": true,
           "urls": [
             {
@@ -50214,18 +50255,41 @@
           "trend": null,
           "articles_14d": 0,
           "raw_items": 3
+        },
+        {
+          "at": "2026-11-16T07:02:23",
+          "query": "順天堂大学 腸内細菌叢移植療法",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "GLINが腸内細菌創薬のメタジェンセラピューティクスに3億円を出資",
+              "outlet": "Dellows News",
+              "date": "2026-11-14"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 4
         }
       ],
-      "buzz_measured_at": "2026-11-14T07:53:39",
-      "buzz_measured": 1,
-      "buzz_outlets": 0,
+      "buzz_measured_at": "2026-11-16T07:02:23",
+      "buzz_measured": 2,
+      "buzz_outlets": 1,
       "yahoo": false,
-      "buzz_evidence": [],
-      "buzz_trend": null,
-      "buzz_articles_14d": 0,
-      "buzz_raw_items": 3,
+      "buzz_evidence": [
+        {
+          "title": "GLINが腸内細菌創薬のメタジェンセラピューティクスに3億円を出資",
+          "outlet": "Dellows News",
+          "date": "2026-11-14"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 1,
+      "buzz_raw_items": 4,
       "buzz_query": "順天堂大学 腸内細菌叢移植療法",
-      "buzz_adopted_at": "2026-11-14T07:53:39",
+      "buzz_adopted_at": "2026-11-16T07:02:23",
       "buzz_adopted_n": 3,
       "tangible": 3,
       "decision_number": 3,
@@ -52449,9 +52513,24 @@
           "outlets_foreign": 0,
           "foreign_boost": false,
           "query_en": "ElevenLabs SFX"
+        },
+        {
+          "at": "2026-11-16T07:02:15",
+          "query": "ElevenLabs SFX",
+          "measured": 1,
+          "outlets": 0,
+          "yahoo": false,
+          "evidence": [],
+          "trend": null,
+          "articles_14d": 0,
+          "raw_items": 1,
+          "jp_measured": 1,
+          "outlets_foreign": 0,
+          "foreign_boost": false,
+          "query_en": "ElevenLabs SFX"
         }
       ],
-      "buzz_measured_at": "2026-11-14T07:53:28",
+      "buzz_measured_at": "2026-11-16T07:02:15",
       "buzz_measured": 2,
       "buzz_outlets": 1,
       "yahoo": false,
@@ -55609,24 +55688,51 @@
           "trend": 1.0,
           "articles_14d": 1,
           "raw_items": 5
+        },
+        {
+          "at": "2026-11-16T07:02:18",
+          "query": "青森県りんご対策協議会 工藤あき",
+          "measured": 2,
+          "outlets": 2,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "青森県りんご対策協議会、りんごの健康効果や目利きを紹介するメディアセミナーを開催",
+              "outlet": "Dellows News",
+              "date": "2026-11-15"
+            },
+            {
+              "title": "これからシーズン最盛期！ 青森県産りんごの魅力を「腸活」「目利き」「レシピ」という3つの視点でプロが解説",
+              "outlet": "舌肥",
+              "date": "2026-11-02"
+            }
+          ],
+          "trend": 0.5,
+          "articles_14d": 2,
+          "raw_items": 5
         }
       ],
-      "buzz_measured_at": "2026-11-14T07:53:01",
+      "buzz_measured_at": "2026-11-16T07:02:18",
       "buzz_measured": 2,
-      "buzz_outlets": 1,
+      "buzz_outlets": 2,
       "yahoo": false,
       "buzz_evidence": [
         {
           "title": "青森県りんご対策協議会、りんごの健康効果や目利きを紹介するメディアセミナーを開催",
           "outlet": "Dellows News",
-          "date": "2026-11-12"
+          "date": "2026-11-15"
+        },
+        {
+          "title": "これからシーズン最盛期！ 青森県産りんごの魅力を「腸活」「目利き」「レシピ」という3つの視点でプロが解説",
+          "outlet": "舌肥",
+          "date": "2026-11-02"
         }
       ],
-      "buzz_trend": 1.0,
-      "buzz_articles_14d": 1,
+      "buzz_trend": 0.5,
+      "buzz_articles_14d": 2,
       "buzz_raw_items": 5,
       "buzz_query": "青森県りんご対策協議会 工藤あき",
-      "buzz_adopted_at": "2026-11-14T07:53:01",
+      "buzz_adopted_at": "2026-11-16T07:02:18",
       "buzz_adopted_n": 3,
       "tangible": 1,
       "decision_number": 2,
@@ -56956,9 +57062,26 @@
           "trend": 0.0,
           "articles_14d": 1,
           "raw_items": 2
+        },
+        {
+          "at": "2026-11-16T07:02:20",
+          "query": "キングス・カレッジ・ロンドン 食物繊維",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "果物や野菜で最も食物繊維が豊富なのは可食部ではなく「通常は捨てられてしまう部分」だとの研究結果",
+              "outlet": "GIGAZINE",
+              "date": "2026-11-04"
+            }
+          ],
+          "trend": 0.0,
+          "articles_14d": 1,
+          "raw_items": 1
         }
       ],
-      "buzz_measured_at": "2026-11-14T07:53:31",
+      "buzz_measured_at": "2026-11-16T07:02:20",
       "buzz_measured": 2,
       "buzz_outlets": 1,
       "yahoo": false,
@@ -56971,9 +57094,9 @@
       ],
       "buzz_trend": 0.0,
       "buzz_articles_14d": 1,
-      "buzz_raw_items": 2,
+      "buzz_raw_items": 1,
       "buzz_query": "キングス・カレッジ・ロンドン 食物繊維",
-      "buzz_adopted_at": "2026-11-14T07:53:31",
+      "buzz_adopted_at": "2026-11-16T07:02:20",
       "buzz_adopted_n": 3,
       "surprise_line": "日常的に料理する人が、野菜や果物は捨てる皮や芯にこそ食物繊維が多いと知り驚く",
       "interest_version": "2026-11-07",
@@ -59688,9 +59811,26 @@
           "trend": 1.0,
           "articles_14d": 1,
           "raw_items": 6
+        },
+        {
+          "at": "2026-11-16T07:01:31",
+          "query": "国立がん研究センター レゴラフェニブ",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "進行胃がん等の一次併用療法で奏効割合73％、国立がん研究センターが発表",
+              "outlet": "Dellows News",
+              "date": "2026-11-14"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 7
         }
       ],
-      "buzz_measured_at": "2026-11-14T07:52:47",
+      "buzz_measured_at": "2026-11-16T07:01:31",
       "buzz_measured": 2,
       "buzz_outlets": 1,
       "yahoo": false,
@@ -59698,14 +59838,14 @@
         {
           "title": "進行胃がん等の一次併用療法で奏効割合73％、国立がん研究センターが発表",
           "outlet": "Dellows News",
-          "date": "2026-11-11"
+          "date": "2026-11-14"
         }
       ],
       "buzz_trend": 1.0,
       "buzz_articles_14d": 1,
-      "buzz_raw_items": 6,
+      "buzz_raw_items": 7,
       "buzz_query": "国立がん研究センター レゴラフェニブ",
-      "buzz_adopted_at": "2026-11-14T07:52:47",
+      "buzz_adopted_at": "2026-11-16T07:01:31",
       "buzz_adopted_n": 3,
       "prior_art": {
         "version": "2026-11-11",
@@ -62800,9 +62940,30 @@
           "outlets_foreign": 48,
           "foreign_boost": true,
           "query_en": "Japanese"
+        },
+        {
+          "at": "2026-11-16T07:01:48",
+          "query": "Japanese 4Dコホート",
+          "measured": 4,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "生活習慣と健康・慢性疾患をつなぐ腸内細菌の「対照的な2つの媒介軸」を発見― 日本人約6,800人の大規模解析から「腸活」のエビデンスを提示 ―",
+              "outlet": "AGARA 紀伊民報",
+              "date": "2026-11-05"
+            }
+          ],
+          "trend": 0.0,
+          "articles_14d": 1,
+          "raw_items": 1,
+          "jp_measured": 2,
+          "outlets_foreign": 38,
+          "foreign_boost": true,
+          "query_en": "Japanese"
         }
       ],
-      "buzz_measured_at": "2026-11-14T07:52:58",
+      "buzz_measured_at": "2026-11-16T07:01:48",
       "buzz_measured": 4,
       "buzz_outlets": 1,
       "yahoo": false,
@@ -62817,13 +62978,13 @@
       "buzz_articles_14d": 1,
       "buzz_raw_items": 1,
       "buzz_query": "Japanese 4Dコホート",
-      "buzz_adopted_at": "2026-11-14T07:52:58",
-      "buzz_adopted_n": 2,
+      "buzz_adopted_at": "2026-11-16T07:01:48",
+      "buzz_adopted_n": 3,
       "yt_competitors": 0,
       "yt_competitors_checked_at": "2026-11-13T09:46:35",
       "yt_competitors_query": "腸内細菌 発酵食品 6800人",
       "buzz_jp_measured": 2,
-      "buzz_outlets_foreign": 48,
+      "buzz_outlets_foreign": 38,
       "buzz_foreign_boost": true,
       "buzz_query_en": "Japanese"
     },
@@ -64469,7 +64630,7 @@
           "kind": "tech_report"
         }
       ],
-      "primary_verified_at": "2026-11-15T06:42:36",
+      "primary_verified_at": "2026-11-16T07:03:50",
       "primary_history": [
         {
           "at": "2026-11-13T08:01:17",
@@ -64560,6 +64721,24 @@
               "ok": true
             }
           ]
+        },
+        {
+          "at": "2026-11-16T07:03:50",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://www.zoho.com/privacy-commitment.html",
+              "status": "HTTP 200「Zoho | Our Privacy Commitment」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://help.zoho.com/portal/en/kb/crm/data-security-privacy/articles/data-privacy-and-security",
+              "status": "HTTP 200",
+              "final_url": "https://help.zoho.com/portal/en/kb/pagesense/frequently-asked-questions/articles/data-privacy-and-security-system",
+              "ok": true
+            }
+          ]
         }
       ],
       "url_check": [
@@ -64576,7 +64755,7 @@
       ],
       "url_ok": true,
       "url_status": "zoho.com: HTTP 200「Zoho | Our Privacy Commitment」 ／ help.zoho.com: HTTP 200",
-      "url_checked_at": "2026-11-15T06:42:36",
+      "url_checked_at": "2026-11-16T07:03:50",
       "prior_art": {
         "version": "2026-11-11",
         "checked_at": "2026-11-13T08:01:34",
@@ -64653,9 +64832,36 @@
           "trend": 0.5,
           "articles_14d": 4,
           "raw_items": 7
+        },
+        {
+          "at": "2026-11-16T07:01:29",
+          "query": "ゾーホー AI",
+          "measured": 4,
+          "outlets": 4,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "なぜゾーホーは「広告を載せない」のか？ 情報漏えいを防ぐ「独自の設計」、AI研究責任者に聞く（1/3 ページ）",
+              "outlet": "ITmedia",
+              "date": "2026-11-12"
+            },
+            {
+              "title": "ゾーホー、AIによるIT運用とセキュリティ運用の連携を訴求",
+              "outlet": "ZDNET Japan",
+              "date": "2026-11-09"
+            },
+            {
+              "title": "業務用アプリケーションのための独自の小型AIモデル、印Zohoが日本でも展開",
+              "outlet": "デジタルクロス",
+              "date": "2026-11-06"
+            }
+          ],
+          "trend": 0.5,
+          "articles_14d": 4,
+          "raw_items": 8
         }
       ],
-      "buzz_measured_at": "2026-11-15T06:41:16",
+      "buzz_measured_at": "2026-11-16T07:01:29",
       "buzz_measured": 4,
       "buzz_outlets": 4,
       "yahoo": true,
@@ -64673,15 +64879,15 @@
         {
           "title": "業務用アプリケーションのための独自の小型AIモデル、印Zohoが日本でも展開",
           "outlet": "デジタルクロス",
-          "date": "2026-11-05"
+          "date": "2026-11-06"
         }
       ],
       "buzz_trend": 0.5,
       "buzz_articles_14d": 4,
-      "buzz_raw_items": 7,
+      "buzz_raw_items": 8,
       "buzz_query": "ゾーホー AI",
-      "buzz_adopted_at": "2026-11-15T06:41:16",
-      "buzz_adopted_n": 2
+      "buzz_adopted_at": "2026-11-16T07:01:29",
+      "buzz_adopted_n": 3
     },
     {
       "title": "倉庫での試験が成功すれば、GXOはApollo人型ロボットを最大1,000台導入へ",
@@ -65225,9 +65431,24 @@
           "outlets_foreign": 0,
           "foreign_boost": false,
           "query_en": "Robber Bots"
+        },
+        {
+          "at": "2026-11-16T07:02:29",
+          "query": "Robber Bots",
+          "measured": 1,
+          "outlets": 0,
+          "yahoo": false,
+          "evidence": [],
+          "trend": null,
+          "articles_14d": 0,
+          "raw_items": 1,
+          "jp_measured": 1,
+          "outlets_foreign": 0,
+          "foreign_boost": false,
+          "query_en": "Robber Bots"
         }
       ],
-      "buzz_measured_at": "2026-11-14T07:53:37",
+      "buzz_measured_at": "2026-11-16T07:02:29",
       "buzz_measured": 1,
       "buzz_outlets": 0,
       "yahoo": false,
@@ -65236,18 +65457,18 @@
       "buzz_articles_14d": 0,
       "buzz_raw_items": 1,
       "buzz_query": "Robber Bots",
-      "buzz_jp_measured": 1,
-      "buzz_outlets_foreign": 0,
-      "buzz_foreign_boost": false,
-      "buzz_query_en": "Robber Bots",
-      "buzz_adopted_at": "2026-11-14T07:53:37",
-      "buzz_adopted_n": 1,
+      "buzz_adopted_at": "2026-11-16T07:02:29",
+      "buzz_adopted_n": 2,
       "topic_pool_first": {
         "date": "2026-11-06",
         "title": "AIに自販機経営を1年任せてみた　指示は“利益の最大化”だけ　米ハーバード大などがシミュレーション",
         "id": "17779919b4",
         "source": "ITmedia AI+"
-      }
+      },
+      "buzz_jp_measured": 1,
+      "buzz_outlets_foreign": 0,
+      "buzz_foreign_boost": false,
+      "buzz_query_en": "Robber Bots"
     },
     {
       "title": "食後高血糖を抑える「食べる順番」に新知見 脂質・GLP-1・迷走神経の働きを解明 秋田大学",
@@ -65955,7 +66176,7 @@
       "overall_score": 3.6,
       "scan_version": "2026-11-07-interest",
       "interest_version": "2026-11-07",
-      "status": "available",
+      "status": "shelved",
       "excluded_reason": "",
       "scored_at": "2026-11-14",
       "first_seen_at": "2026-11-14T07:51:54",
@@ -66129,9 +66350,40 @@
           "outlets_foreign": 17,
           "foreign_boost": false,
           "query_en": "Google Intelligent"
+        },
+        {
+          "at": "2026-11-16T07:01:06",
+          "query": "Google Intelligent",
+          "measured": 5,
+          "outlets": 12,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "グーグル、Gemini搭載スマートグラス「Intelligent Eyewear」 395ドルから",
+              "outlet": "Impress Watch",
+              "date": "2026-11-13"
+            },
+            {
+              "title": "Google、Geminiを搭載したスマートグラス「Intelligent Eyewear」の予約を開始",
+              "outlet": "BRIDGE（ブリッジ）",
+              "date": "2026-11-13"
+            },
+            {
+              "title": "GoogleのGemini搭載スマートグラス「Intelligent Eyewear」が予約受付開始、70以上の言語のリアルタイム翻訳やハンズフリーでのAI操作",
+              "outlet": "GIGAZINE",
+              "date": "2026-11-13"
+            }
+          ],
+          "trend": 0.92,
+          "articles_14d": 13,
+          "raw_items": 30,
+          "jp_measured": 5,
+          "outlets_foreign": 20,
+          "foreign_boost": false,
+          "query_en": "Google Intelligent"
         }
       ],
-      "buzz_measured_at": "2026-11-14T07:52:52",
+      "buzz_measured_at": "2026-11-16T07:01:06",
       "buzz_measured": 5,
       "buzz_outlets": 12,
       "yahoo": false,
@@ -66152,16 +66404,12 @@
           "date": "2026-11-13"
         }
       ],
-      "buzz_trend": 1.0,
+      "buzz_trend": 0.92,
       "buzz_articles_14d": 13,
-      "buzz_raw_items": 28,
+      "buzz_raw_items": 30,
       "buzz_query": "Google Intelligent",
-      "buzz_jp_measured": 5,
-      "buzz_outlets_foreign": 17,
-      "buzz_foreign_boost": false,
-      "buzz_query_en": "Google Intelligent",
-      "buzz_adopted_at": "2026-11-14T07:52:52",
-      "buzz_adopted_n": 1,
+      "buzz_adopted_at": "2026-11-16T07:01:06",
+      "buzz_adopted_n": 2,
       "prior_art": {
         "version": "2026-11-11",
         "checked_at": "2026-11-14T07:54:21",
@@ -66178,7 +66426,13 @@
         "novelty_exception": false,
         "novelty_line": "",
         "novelty_line_primary": false
-      }
+      },
+      "buzz_jp_measured": 5,
+      "buzz_outlets_foreign": 20,
+      "buzz_foreign_boost": false,
+      "buzz_query_en": "Google Intelligent",
+      "shelved_on": "2026-11-16",
+      "shelved_reason": "下書きに2日提示（11-14・11-15）して選ばれなかった"
     },
     {
       "title": "ティアフォーとコマツ、ダンプトラックの自動運転システムを共同開発",
@@ -66627,25 +66881,52 @@
           "trend": 1.0,
           "articles_14d": 1,
           "raw_items": 4
+        },
+        {
+          "at": "2026-11-16T07:01:50",
+          "query": "国立がん研究センター ミトコンドリアDNA",
+          "measured": 2,
+          "outlets": 2,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "がん細胞のミトコンドリアDNA量が抗腫瘍免疫を左右 国立がん研などが解明",
+              "outlet": "Dellows News",
+              "date": "2026-11-10"
+            },
+            {
+              "title": "がん細胞死が抗腫瘍免疫を活性化する機序の一端を解明―ミトコンドリアDNAの量が重要な因子に",
+              "outlet": "京都大学",
+              "date": "2026-11-02"
+            }
+          ],
+          "trend": 0.5,
+          "articles_14d": 2,
+          "raw_items": 5
         }
       ],
-      "buzz_measured_at": "2026-11-15T06:41:38",
+      "buzz_measured_at": "2026-11-16T07:01:50",
       "buzz_measured": 2,
-      "buzz_outlets": 1,
+      "buzz_outlets": 2,
       "yahoo": false,
       "buzz_evidence": [
         {
           "title": "がん細胞のミトコンドリアDNA量が抗腫瘍免疫を左右 国立がん研などが解明",
           "outlet": "Dellows News",
           "date": "2026-11-10"
+        },
+        {
+          "title": "がん細胞死が抗腫瘍免疫を活性化する機序の一端を解明―ミトコンドリアDNAの量が重要な因子に",
+          "outlet": "京都大学",
+          "date": "2026-11-02"
         }
       ],
-      "buzz_trend": 1.0,
-      "buzz_articles_14d": 1,
-      "buzz_raw_items": 4,
+      "buzz_trend": 0.5,
+      "buzz_articles_14d": 2,
+      "buzz_raw_items": 5,
       "buzz_query": "国立がん研究センター ミトコンドリアDNA",
-      "buzz_adopted_at": "2026-11-15T06:41:38",
-      "buzz_adopted_n": 1,
+      "buzz_adopted_at": "2026-11-16T07:01:50",
+      "buzz_adopted_n": 2,
       "dup_ids": [
         "f2a7f0a9ec",
         "055085e8b2"
@@ -67483,9 +67764,30 @@
           "outlets_foreign": 0,
           "foreign_boost": false,
           "query_en": "NJA-001"
+        },
+        {
+          "at": "2026-11-16T07:01:56",
+          "query": "シノビ・セラピューティクス NJA-001",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "ｉＰＳ細胞活用したがん治験、来年開始…治療薬となれば活用一気に広がる可能性",
+              "outlet": "読売新聞",
+              "date": "2026-11-07"
+            }
+          ],
+          "trend": 0.0,
+          "articles_14d": 1,
+          "raw_items": 1,
+          "jp_measured": 2,
+          "outlets_foreign": 0,
+          "foreign_boost": false,
+          "query_en": "NJA-001"
         }
       ],
-      "buzz_measured_at": "2026-11-15T06:41:44",
+      "buzz_measured_at": "2026-11-16T07:01:56",
       "buzz_measured": 2,
       "buzz_outlets": 1,
       "yahoo": false,
@@ -67496,16 +67798,16 @@
           "date": "2026-11-07"
         }
       ],
-      "buzz_trend": 1.0,
+      "buzz_trend": 0.0,
       "buzz_articles_14d": 1,
       "buzz_raw_items": 1,
       "buzz_query": "シノビ・セラピューティクス NJA-001",
+      "buzz_adopted_at": "2026-11-16T07:01:56",
+      "buzz_adopted_n": 2,
       "buzz_jp_measured": 2,
       "buzz_outlets_foreign": 0,
       "buzz_foreign_boost": false,
-      "buzz_query_en": "NJA-001",
-      "buzz_adopted_at": "2026-11-15T06:41:44",
-      "buzz_adopted_n": 1
+      "buzz_query_en": "NJA-001"
     },
     {
       "title": "自社の認証情報で生成AI不正利用される　ネット印刷・キングプリンターズへの不正アクセス、個人情報漏えいなし",
@@ -67726,17 +68028,19 @@
         "id": "4dbfb303f1",
         "source": "Electrek"
       },
-      "primary_verified": null,
+      "primary_verified": true,
       "primary_check": [
         {
           "url": "https://x.com/robotaxi",
-          "ok": null,
-          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+          "ok": true,
+          "status": "HTTP 200「Robotaxi（@robotaxi） / X」",
+          "page_title": "Robotaxi（@robotaxi） / X",
+          "anchor_hit": true,
           "method": "http",
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-15T06:42:20",
+      "primary_verified_at": "2026-11-16T07:02:49",
       "primary_history": [
         {
           "at": "2026-11-15T06:36:34",
@@ -67761,18 +68065,30 @@
               "ok": null
             }
           ]
+        },
+        {
+          "at": "2026-11-16T07:02:49",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://x.com/robotaxi",
+              "status": "HTTP 200「Robotaxi（@robotaxi） / X」",
+              "final_url": "",
+              "ok": true
+            }
+          ]
         }
       ],
       "url_check": [
         {
           "url": "https://x.com/robotaxi",
-          "ok": null,
-          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）"
+          "ok": true,
+          "status": "HTTP 200「Robotaxi（@robotaxi） / X」"
         }
       ],
-      "url_ok": null,
-      "url_status": "x.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
-      "url_checked_at": "2026-11-15T06:42:20",
+      "url_ok": true,
+      "url_status": "x.com: HTTP 200「Robotaxi（@robotaxi） / X」",
+      "url_checked_at": "2026-11-16T07:02:49",
       "buzz_history": [
         {
           "at": "2026-11-15T06:41:21",
@@ -67804,9 +68120,40 @@
           "outlets_foreign": 2,
           "foreign_boost": false,
           "query_en": "Cybercab 29990"
+        },
+        {
+          "at": "2026-11-16T07:01:11",
+          "query": "Cybercab テスラ",
+          "measured": 5,
+          "outlets": 20,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "画像2 / 7＞テスラはなぜ日本で、まだ実装未定の「Cybercab」をお披露目したのか？ テスラジャパン社長が明かした理由とは",
+              "outlet": "ウォーカープラス",
+              "date": "2026-11-15"
+            },
+            {
+              "title": "テスラのCybercabが個人利用向けに注文可能に：価格29,990ドル、月額299ドルのサブスクリプション - ニュースと統計",
+              "outlet": "IndexBox",
+              "date": "2026-11-15"
+            },
+            {
+              "title": "Teslaは、一部の個人顧客にCybercabを29,990ドルで提供し、自動運転機能の利用料として月額299ドルを追加で請求します",
+              "outlet": "Informat.ro",
+              "date": "2026-11-15"
+            }
+          ],
+          "trend": 0.75,
+          "articles_14d": 32,
+          "raw_items": 48,
+          "jp_measured": 5,
+          "outlets_foreign": 2,
+          "foreign_boost": false,
+          "query_en": "Cybercab 29990"
         }
       ],
-      "buzz_measured_at": "2026-11-15T06:41:21",
+      "buzz_measured_at": "2026-11-16T07:01:11",
       "buzz_measured": 5,
       "buzz_outlets": 22,
       "yahoo": true,
@@ -67831,12 +68178,8 @@
       "buzz_articles_14d": 31,
       "buzz_raw_items": 46,
       "buzz_query": "Cybercab テスラ",
-      "buzz_jp_measured": 5,
-      "buzz_outlets_foreign": 2,
-      "buzz_foreign_boost": false,
-      "buzz_query_en": "Cybercab 29990",
       "buzz_adopted_at": "2026-11-15T06:41:21",
-      "buzz_adopted_n": 1,
+      "buzz_adopted_n": 2,
       "prior_art": {
         "version": "2026-11-11",
         "checked_at": "2026-11-15T06:42:01",
@@ -67847,7 +68190,11 @@
         "novelty_exception": false,
         "novelty_line": "",
         "novelty_line_primary": false
-      }
+      },
+      "buzz_jp_measured": 5,
+      "buzz_outlets_foreign": 2,
+      "buzz_foreign_boost": false,
+      "buzz_query_en": "Cybercab 29990"
     },
     {
       "title": "佐賀駅〜サンライズパーク自動運転バス実証　全区間レベル4相当、運賃設定",
@@ -68173,15 +68520,15 @@
       "presented_on": [
         "2026-11-15"
       ],
-      "topic_first_date": "2026-11-13",
-      "topic_first_source": "候補 fd333d9440 のannounced_on（AIに財布を預ける時代へ OpenAIは「払う」、Googl）",
-      "topic_series": "fd333d9440",
+      "topic_first_date": "2026-11-12",
+      "topic_first_source": "プールの記事（OpenAI ChatGPT Wallet、AI決済競争に参入）",
+      "topic_series": "2215c1d3ed",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
-        "date": "2026-11-13",
-        "title": "Introducing ChatGPT Wallet",
-        "id": "5bf4951adb",
-        "source": "OpenAI"
+        "date": "2026-11-12",
+        "title": "OpenAI ChatGPT Wallet、AI決済競争に参入",
+        "id": "4b1d2484dc",
+        "source": "Googleニュース（OpenAI 発表）／FinanceFeeds"
       },
       "primary_verified": null,
       "primary_check": [
@@ -68210,7 +68557,7 @@
               "redirects": [
                 "308 https://blog.google/products/search/universal-commerce-protocol/"
               ],
-              "at": "2026-11-15T06:38:07"
+              "at": "2026-11-16T07:03:04"
             },
             {
               "url": "https://blog.google/products/search/universal-commerce-protocol",
@@ -68220,7 +68567,7 @@
               "redirects": [
                 "308 https://blog.google/products/search/universal-commerce-protocol/"
               ],
-              "at": "2026-11-15T06:38:12"
+              "at": "2026-11-16T07:03:09"
             },
             {
               "url": "https://blog.google/products/search/universal-commerce-protocol",
@@ -68230,7 +68577,7 @@
               "redirects": [
                 "308 https://blog.google/products/search/universal-commerce-protocol/"
               ],
-              "at": "2026-11-15T06:38:32"
+              "at": "2026-11-16T07:03:29"
             },
             {
               "url": "https://blog.google/us/en/products/search/universal-commerce-protocol",
@@ -68240,7 +68587,7 @@
               "redirects": [
                 "308 https://blog.google/us/en/products/search/universal-commerce-protocol/"
               ],
-              "at": "2026-11-15T06:38:38"
+              "at": "2026-11-16T07:03:35"
             },
             {
               "url": "https://blog.google/en-us/products/search/universal-commerce-protocol",
@@ -68250,7 +68597,7 @@
               "redirects": [
                 "308 https://blog.google/en-us/products/search/universal-commerce-protocol/"
               ],
-              "at": "2026-11-15T06:38:43"
+              "at": "2026-11-16T07:03:40"
             },
             {
               "url": "https://blog.google/en/products/search/universal-commerce-protocol",
@@ -68260,16 +68607,34 @@
               "redirects": [
                 "308 https://blog.google/en/products/search/universal-commerce-protocol/"
               ],
-              "at": "2026-11-15T06:38:47"
+              "at": "2026-11-16T07:03:44"
             }
           ],
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-15T06:38:47",
+      "primary_verified_at": "2026-11-16T07:03:44",
       "primary_history": [
         {
           "at": "2026-11-15T06:38:47",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://openai.com/index/chatgpt-wallet",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            },
+            {
+              "url": "https://blog.google/products/search/universal-commerce-protocol",
+              "status": "HTTP 404（転送先 https://blog.google/products/search/universal-commerce-protocol/ が404）（再確認5回とも404・開けず）",
+              "final_url": "https://blog.google/products/search/universal-commerce-protocol/",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "at": "2026-11-16T07:03:44",
           "verdict": null,
           "urls": [
             {
@@ -68301,7 +68666,7 @@
       ],
       "url_ok": false,
       "url_status": "openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ blog.google: HTTP 404（転送先 https://blog.google/products/search/universal-commerce-protocol/ が404）（再確認5回とも404・開けず）",
-      "url_checked_at": "2026-11-15T06:38:47",
+      "url_checked_at": "2026-11-16T07:03:44",
       "buzz_history": [
         {
           "at": "2026-11-15T06:41:27",
@@ -68333,39 +68698,66 @@
           "outlets_foreign": 80,
           "foreign_boost": false,
           "query_en": "ChatGPT Wallet"
+        },
+        {
+          "at": "2026-11-16T07:01:17",
+          "query": "ChatGPT Wallet",
+          "measured": 5,
+          "outlets": 16,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "生成AIのOpenAI、利用者の承認で買い物を進めるChatGPT Walletを提供",
+              "outlet": "AT PARTNERS",
+              "date": "2026-11-15"
+            },
+            {
+              "title": "OpenAI、ChatGPT Walletを開始 AIエージェントが本物のカード番号を見ずに支払い",
+              "outlet": "innovaTopia",
+              "date": "2026-11-15"
+            },
+            {
+              "title": "AIに本物のカード番号を渡さない「ChatGPT Wallet」発表！購入ごとに生体認証で承認、まず米国Proで",
+              "outlet": "すまほん!!",
+              "date": "2026-11-15"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 16,
+          "raw_items": 29,
+          "jp_measured": 5,
+          "outlets_foreign": 79,
+          "foreign_boost": false,
+          "query_en": "ChatGPT Wallet"
         }
       ],
-      "buzz_measured_at": "2026-11-15T06:41:27",
+      "buzz_measured_at": "2026-11-16T07:01:17",
       "buzz_measured": 5,
-      "buzz_outlets": 11,
+      "buzz_outlets": 16,
       "yahoo": false,
       "buzz_evidence": [
         {
-          "title": "PA日報 | OpenAIがChatGPT Walletを開始、dotがユーザーの代理支払いに対応；Maple共同創業者Joe FlanaganとCOOのRya",
-          "outlet": "PANews",
-          "date": "2026-11-14"
+          "title": "生成AIのOpenAI、利用者の承認で買い物を進めるChatGPT Walletを提供",
+          "outlet": "AT PARTNERS",
+          "date": "2026-11-15"
         },
         {
-          "title": "ChatGPT Wallet、AIが代わりに買い物 支払いは毎回顔か指紋で承認",
-          "outlet": "Martin Cid Magazine",
-          "date": "2026-11-14"
+          "title": "OpenAI、ChatGPT Walletを開始 AIエージェントが本物のカード番号を見ずに支払い",
+          "outlet": "innovaTopia",
+          "date": "2026-11-15"
         },
         {
-          "title": "OpenAI、ChatGPT Walletを公開。dotsが決済まで代行",
-          "outlet": "ゴリミー",
-          "date": "2026-11-14"
+          "title": "AIに本物のカード番号を渡さない「ChatGPT Wallet」発表！購入ごとに生体認証で承認、まず米国Proで",
+          "outlet": "すまほん!!",
+          "date": "2026-11-15"
         }
       ],
       "buzz_trend": 1.0,
-      "buzz_articles_14d": 12,
-      "buzz_raw_items": 26,
+      "buzz_articles_14d": 16,
+      "buzz_raw_items": 29,
       "buzz_query": "ChatGPT Wallet",
-      "buzz_jp_measured": 5,
-      "buzz_outlets_foreign": 80,
-      "buzz_foreign_boost": false,
-      "buzz_query_en": "ChatGPT Wallet",
-      "buzz_adopted_at": "2026-11-15T06:41:27",
-      "buzz_adopted_n": 1,
+      "buzz_adopted_at": "2026-11-16T07:01:17",
+      "buzz_adopted_n": 2,
       "prior_art": {
         "version": "2026-11-11",
         "checked_at": "2026-11-15T06:57:43",
@@ -68376,7 +68768,14 @@
         "novelty_exception": false,
         "novelty_line": "",
         "novelty_line_primary": false
-      }
+      },
+      "buzz_jp_measured": 5,
+      "buzz_outlets_foreign": 79,
+      "buzz_foreign_boost": false,
+      "buzz_query_en": "ChatGPT Wallet",
+      "dup_ids": [
+        "2215c1d3ed"
+      ]
     },
     {
       "title": "OpenAIの“接客AI”で私たちの買い物はどう変わるのか？ 『Businesses in ChatGPT』の発表を機に考える（リアルサウンド）",
@@ -68481,7 +68880,7 @@
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-15T06:42:29",
+      "primary_verified_at": "2026-11-16T07:02:58",
       "primary_history": [
         {
           "at": "2026-11-15T06:38:51",
@@ -68518,6 +68917,24 @@
               "ok": null
             }
           ]
+        },
+        {
+          "at": "2026-11-16T07:02:58",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://openai.com/business/businesses-in-chatgpt",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            },
+            {
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            }
+          ]
         }
       ],
       "url_check": [
@@ -68534,7 +68951,7 @@
       ],
       "url_ok": null,
       "url_status": "openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
-      "url_checked_at": "2026-11-15T06:42:29",
+      "url_checked_at": "2026-11-16T07:02:58",
       "buzz_history": [
         {
           "at": "2026-11-15T06:41:33",
@@ -68566,11 +68983,42 @@
           "outlets_foreign": 45,
           "foreign_boost": false,
           "query_en": "Businesses in"
+        },
+        {
+          "at": "2026-11-16T07:01:23",
+          "query": "Businesses in",
+          "measured": 5,
+          "outlets": 7,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "OpenAIの“接客AI”で私たちの買い物はどう変わるのか？　『Businesses in ChatGPT』の発表を機に考える",
+              "outlet": "リアルサウンド",
+              "date": "2026-11-14"
+            },
+            {
+              "title": "ChatGPTに「Businesses in ChatGPT」ベータ版、企業が自社情報を管理しBusiness Agentも開始",
+              "outlet": "AntenneFrance",
+              "date": "2026-11-12"
+            },
+            {
+              "title": "に商品情報などを提供できる「Businesses in ChatGPT」",
+              "outlet": "gihyo.jp",
+              "date": "2026-11-11"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 8,
+          "raw_items": 21,
+          "jp_measured": 5,
+          "outlets_foreign": 44,
+          "foreign_boost": false,
+          "query_en": "Businesses in"
         }
       ],
-      "buzz_measured_at": "2026-11-15T06:41:33",
+      "buzz_measured_at": "2026-11-16T07:01:23",
       "buzz_measured": 5,
-      "buzz_outlets": 6,
+      "buzz_outlets": 7,
       "yahoo": true,
       "buzz_evidence": [
         {
@@ -68590,15 +69038,11 @@
         }
       ],
       "buzz_trend": 1.0,
-      "buzz_articles_14d": 7,
-      "buzz_raw_items": 17,
+      "buzz_articles_14d": 8,
+      "buzz_raw_items": 21,
       "buzz_query": "Businesses in",
-      "buzz_jp_measured": 5,
-      "buzz_outlets_foreign": 45,
-      "buzz_foreign_boost": false,
-      "buzz_query_en": "Businesses in",
-      "buzz_adopted_at": "2026-11-15T06:41:33",
-      "buzz_adopted_n": 1,
+      "buzz_adopted_at": "2026-11-16T07:01:23",
+      "buzz_adopted_n": 2,
       "prior_art": {
         "version": "2026-11-11",
         "checked_at": "2026-11-15T06:42:06",
@@ -68609,7 +69053,11 @@
         "novelty_exception": false,
         "novelty_line": "",
         "novelty_line_primary": false
-      }
+      },
+      "buzz_jp_measured": 5,
+      "buzz_outlets_foreign": 44,
+      "buzz_foreign_boost": false,
+      "buzz_query_en": "Businesses in"
     },
     {
       "title": "テスラ、ロボタクシー「サイバーキャブ」の個人販売開始 台数限定で",
@@ -68700,7 +69148,7 @@
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-15T06:42:26",
+      "primary_verified_at": "2026-11-16T07:02:54",
       "primary_history": [
         {
           "at": "2026-11-15T06:38:54",
@@ -68725,6 +69173,18 @@
               "ok": true
             }
           ]
+        },
+        {
+          "at": "2026-11-16T07:02:54",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://x.com/robotaxi/status/2121384435241402737",
+              "status": "HTTP 200「XユーザーのRobotaxiさん: 「Select cust」",
+              "final_url": "",
+              "ok": true
+            }
+          ]
         }
       ],
       "url_check": [
@@ -68736,7 +69196,7 @@
       ],
       "url_ok": true,
       "url_status": "x.com: HTTP 200「XユーザーのRobotaxiさん: 「Select cust」",
-      "url_checked_at": "2026-11-15T06:42:26",
+      "url_checked_at": "2026-11-16T07:02:54",
       "buzz_history": [
         {
           "at": "2026-11-15T06:41:36",
@@ -68764,9 +69224,36 @@
           "trend": 0.64,
           "articles_14d": 14,
           "raw_items": 21
+        },
+        {
+          "at": "2026-11-16T07:01:26",
+          "query": "サイバーキャブ 個人販売",
+          "measured": 4,
+          "outlets": 9,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "テスラ、ロボタクシー「サイバーキャブ」の個人販売開始 台数限定で",
+              "outlet": "日本経済新聞",
+              "date": "2026-11-14"
+            },
+            {
+              "title": "テスラのロボタクシー車両「利回り170％」 個人運用で試算",
+              "outlet": "自動運転ラボ",
+              "date": "2026-11-14"
+            },
+            {
+              "title": "テスラが完全自動運転EV「サイバーキャブ」の個人向け販売を開始。その車両価格2万9,990ドル、しかしサブスクへの加入が「必須」という縛りつき",
+              "outlet": "https://intensive911.com/",
+              "date": "2026-11-14"
+            }
+          ],
+          "trend": 0.7,
+          "articles_14d": 10,
+          "raw_items": 15
         }
       ],
-      "buzz_measured_at": "2026-11-15T06:41:36",
+      "buzz_measured_at": "2026-11-16T07:01:26",
       "buzz_measured": 5,
       "buzz_outlets": 12,
       "yahoo": false,
@@ -68792,7 +69279,7 @@
       "buzz_raw_items": 21,
       "buzz_query": "サイバーキャブ 個人販売",
       "buzz_adopted_at": "2026-11-15T06:41:36",
-      "buzz_adopted_n": 1,
+      "buzz_adopted_n": 2,
       "prior_art": {
         "version": "2026-11-11",
         "checked_at": "2026-11-15T06:42:12",
@@ -68879,6 +69366,1579 @@
         "title": "コーヒーと消化：コペンハーゲン大学研究が腸内細菌と排便の変化を指摘 - ニュースと統計",
         "id": "94635b45e9",
         "source": "Googleニュース（腸内細菌 研究）／IndexBox"
+      }
+    },
+    {
+      "title": "グーグルがGemini Robotics 2.5を発表、人型ロボットがメルセデス工場で稼働",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxONkhoa0ZTbjhaQm5IWXFnZl94TDBsbkY2Q2Z1U2luQ1ZCX2owcVRwM2htNkVUOUVCQ29OZFI3R1h4VDFVb25ZazE0NFRTdVZfMmlleVZ1OEhnTXBmQkI3TTFtcmxvM2JZS000VDFYQkFmY0UxejRKR0JFZnp1Z2VjRGFtVFlzVmFCa2xCZGc4Yw?oc=5",
+      "published": "2026-11-15",
+      "source": "Googleニュース（人型ロボット）／Pasquale Pillitteri",
+      "source_kind": "media",
+      "outlet": "Pasquale Pillitteri",
+      "outlet_host": "pasqualepillitteri.it",
+      "genre_hint": "humanoid",
+      "summary": "グーグルがGemini Robotics 2.5を発表、人型ロボットがメルセデス工場で稼働（Pasquale Pillitteri）",
+      "id": "69139a13f9",
+      "sources": [
+        "Pasquale Pillitteri"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://deepmind.google/technologies/gemini-robotics/",
+          "what_it_states": "Gemini Robotics 2.5は視覚・言語・行動（VLA）モデルで、200以上のタスクで従来比30〜100%成功率向上、20〜30%タスク完了が高速化。ドイツおよびハンガリーのメルセデス・ベンツ工場でのパイロット試験にて、Apptronik社のApollo 2ヒューマノイドが部品キッティング（金属ブラケットの選別・配置）作業で96%の成功率を記録したと公表。障害物周辺での安全完了率が33%、人周辺で43%改善"
+        }
+      ],
+      "announced_on": "2026-11-10",
+      "headline_claim": "グーグルの最新AI「Gemini Robotics 2.5」を搭載した人型ロボットがメルセデスの工場で稼働し始めた。",
+      "actual_content": "Google DeepMindが発表したロボット制御向けVLAモデル「Gemini Robotics 2.5」の実証実験（PoC）結果です。ドイツとハンガリーにあるメルセデス・ベンツの工場ラインで、米Apptronik製の人型ロボット「Apollo 2」（シンガポールSharpa製22自由度ハンド装着）に搭載し、部品ケースから金属ブラケットを取り出してトレイへ順に並べるキッティング作業を行い、成功率96%を記録しました。ただし本運用としての正式導入ではなく概念実証（パイロットテスト）段階であり、総試行回数や稼働時間、失敗時のリカバリー手順などの詳細は開示されていません。",
+      "verifiability": 4,
+      "hype_gap": 3,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 2,
+      "work_relevance": 4,
+      "audience_fit": 4,
+      "tangible": 5,
+      "decision_number": 3,
+      "series_fit": 5,
+      "concern_id": "work_ai",
+      "entry_question": "グーグルの人型ロボは、メルセデスの現場でもう普通に働いているの？",
+      "surprise_line": "町工場の社長が、人型ロボが車の部品並べを96%ミスなくこなしたことに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「現場で稼働」と見出しにあっても、実際は実用配備ではなく実証実験（PoC）の段階です。96%という成功率は高く見えますが、4%の失敗（100個に4個のミス）は自動車工場の量産ラインでは致命的であり、人が横で監視・修正しないとラインが止まる水準です。",
+      "hope_material": "Googleの頭脳（Gemini Robotics 2.5）と他社製ハード（Apollo 2＋5指ハンド）を組み合わせ、シミュレーション訓練を経て実際の生産ライン環境で96%の部品ピッキング・整列に成功した点は、汎用AIロボットの実用化に向けた大きな一歩です。",
+      "investment_related": false,
+      "deja_vu_note": "kl040（安川電機）、kl051（テスラOptimus）、kl053（上海のAGIBOTコンビニ稼働）に続くヒューマノイド実用化・現場導入の定点観測シリーズ",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "Gemini Robotics メルセデス",
+      "jp_title_anchor": [
+        "Gemini Robotics",
+        "メルセデス",
+        "Apollo"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 5,
+      "overall_score": 3.4,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T06:55:18",
+      "presented_on": [],
+      "topic_first_date": "2026-11-10",
+      "topic_first_source": "候補 69139a13f9 のannounced_on（グーグルがGemini Robotics 2.5を発表、人型）",
+      "topic_series": "69139a13f9",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-15",
+        "title": "グーグルがGemini Robotics 2.5を発表、人型ロボットがメルセデス工場で稼働",
+        "id": "69139a13f9",
+        "source": "Googleニュース（人型ロボット）／Pasquale Pillitteri"
+      }
+    },
+    {
+      "title": "家事ロボットはここまで来た！ 洗濯物を入れ、掃除道具を持ち替える、ドイツ展示会で見た「フィジカルAI」最前線",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1tMEQwRmp4R1BiWmpHSjVjRVdyM3ZNTzBaWmFJcXRUTmNva2FkQWU1UWNQVUpzbWVseVpZV2hLMFZmTDkxZ2c?oc=5",
+      "published": "2026-11-15",
+      "source": "Googleニュース（人型ロボット）／VAGUE(ヴァーグ)",
+      "source_kind": "media",
+      "outlet": "VAGUE(ヴァーグ)",
+      "outlet_host": "vague.style",
+      "genre_hint": "humanoid",
+      "summary": "家事ロボットはここまで来た！ 洗濯物を入れ、掃除道具を持ち替える、ドイツ展示会で見た「フィジカルAI」最前線（VAGUE(ヴァーグ)）",
+      "id": "e9af77e80d",
+      "sources": [
+        "VAGUE(ヴァーグ)",
+        "Yahoo!ニュース"
+      ],
+      "dup_ids": [
+        "ac7e197870"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.prnewswire.com/news-releases/dreame-showcases-three-physical-ai-technology-foundations-across-100-products-at-ifa-2026-302239401.html",
+          "what_it_states": "ドイツ・ベルリンのIFA 2026にてDreame Technologyが発表。家庭向けフィジカルAIアーキテクチャ（全域知覚システム、家庭用統合知能モデル、知能駆動・制御システム）の検証として、研究開発段階のプラットフォームである車輪型ロボット『ECHO S1』（片腕・洗濯工程の検証用）および『ECHO P1』（両腕ヒューマノイド・片付けや運搬検証用）を展示・デモ公開したと記載。市販品ではなく研究段階の技術実証である。"
+        }
+      ],
+      "announced_on": "2026-09-05",
+      "headline_claim": "ドイツの家電見本市で、洗濯物の投入や掃除道具の持ち替えまでこなす「家事ロボット」がフィジカルAI最前線として登場した",
+      "actual_content": "中国家電大手のDreameがIFA 2026で公開したのは、市販製品ではなく研究開発段階の検証用プラットフォーム「ECHO S1」「ECHO P1」です。車輪型ボディにアームを備え、散らばった衣類の認識から洗濯機の扉の開閉、投入・取り出しといった一連の動作や片付けの検証を行いましたが、発売日や価格は一切未定です。また、一般家庭の乱雑な環境で自律完遂できる成功率や、遠隔操作（テレオペレーション）の介在比率などの定量データは開示されていません。",
+      "verifiability": 4,
+      "hype_gap": 4,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 2,
+      "audience_fit": 4,
+      "tangible": 5,
+      "decision_number": 1,
+      "series_fit": 4,
+      "concern_id": "housework",
+      "entry_question": "洗濯や片付けをしてくれる家事ロボットは、もうすぐ家にやってくる？",
+      "surprise_line": "毎日の洗濯に追われる人が、ロボットが洗濯機を開けて服を入れる姿に驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「家事ロボットがここまで来た」と見出しは踊るが、一次資料ではっきりと「研究段階のプラットフォーム（research-stage platform）」と明記されており、発売時期も価格も決まっていない。展示ブースという整った環境でのデモであり、家庭内の多様な衣類や散らかりに対応できる自律成功率の数字も出ていない。",
+      "hope_material": "ロボット掃除機で家の中の空間認識や走行実績を大量に持つ家電メーカーが、洗濯機の扉開閉や衣類投入という「家電と人間の隙間の作業」に特化した単腕・車輪型（ECHO S1）という実用的な形状でフィジカルAIの検証を進めている点は地に足がついている。",
+      "investment_related": false,
+      "deja_vu_note": "kl051（テスラOptimus）、kl053（AGIBOTコンビニ夜間作業）など人型ロボットの実用化検証シリーズとテーマが連続するが、本件は「家庭の洗濯・家事」に特化した家電メーカーのアプローチ。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "Dreame ECHO IFA",
+      "jp_title_anchor": [
+        "Dreame",
+        "ECHO"
+      ],
+      "announcement_type": "event",
+      "freshness": 1,
+      "overall_score": 2.5,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T06:55:35",
+      "presented_on": [],
+      "topic_first_date": "2026-09-05",
+      "topic_first_source": "候補 e9af77e80d のannounced_on（家事ロボットはここまで来た！ 洗濯物を入れ、掃除道具を持ち替）",
+      "topic_series": "e9af77e80d",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-15",
+        "title": "家事ロボットはここまで来た！ 洗濯物を入れ、掃除道具を持ち替える、ドイツ展示会で見た「フィジカルAI」最前線",
+        "id": "e9af77e80d",
+        "source": "Googleニュース（人型ロボット）／VAGUE(ヴァーグ)"
+      }
+    },
+    {
+      "title": "「肉やバターの脂」を多く取っても動脈硬化の指標は増えず？ 2年間の研究で中性脂肪は改善、医師が注意点を解説",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE8zQWlvN2RPSFZJdWxiemtSaXFuNjRZZDlUX2tMbVlEaVp0YU9kaFNlNzd4bWJXV3NGa2pjT1NycGNNdU5YWTJJZ2lQWGRpa1NONUxOUGloNA?oc=5",
+      "published": "2026-11-15",
+      "source": "Googleニュース（研究 食事 健康 効果）／メディカルドック",
+      "source_kind": "media",
+      "outlet": "メディカルドック",
+      "outlet_host": "medicaldoc.jp",
+      "genre_hint": "food_health",
+      "summary": "「肉やバターの脂」を多く取っても動脈硬化の指標は増えず？ 2年間の研究で中性脂肪は改善、医師が注意点を解説（メディカルドック）",
+      "id": "c91ca42393",
+      "sources": [
+        "メディカルドック"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1016/j.ebiom.2026.106524",
+          "what_it_states": "肥満成人193名を対象とした最長2年間の無作為化比較試験（CARBFUNC試験の二次解析）。摂取カロリーの約3分の1を飽和脂肪酸（従来の推奨上限の3倍以上）かつ炭水化物10%未満とした群では、LDLコレステロール値が5〜10%上昇（主に大型LDLの増加による）したものの、動脈硬化リスクの指標とされるアポB（apoB）や小型高密度LDL（sdLDL）の有意な増加は見られず、中性脂肪は20〜35%低下、HDLは5〜18%上昇した。12か月時点の冠動脈石灰化スコアにも群間差はなかった。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.uib.no/en/news/171542/high-intake-saturated-fat-can-promote-favorable-changes-cardiovascular-risk-markers",
+          "what_it_states": "ノルウェー・ベルゲン大学による発表。飽和脂肪酸を2倍以上に増やした食事でもapoBが上昇せず一部の脂質マーカーが改善したことを報告しつつ、LDLの上昇を軽視すべきではなく長期的な安全性確認にはさらなる研究が必要と言及。"
+        }
+      ],
+      "announced_on": "2026-10-24",
+      "headline_claim": "肉やバターなどの脂をたっぷり摂っても動脈硬化の主因マーカーは増えず、中性脂肪も劇的に改善する可能性がある。",
+      "actual_content": "ベルゲン大学のCARBFUNC試験（肥満成人193名・最長2年間）において、飽和脂肪酸を総エネルギー比約30%まで増やし炭水化物を10%未満に抑えた食事群を追跡しました。結果として、中性脂肪が20〜35%低下しHDLが上昇、動脈硬化を促すリポ蛋白の総数を示すアポB（apoB）の増加は見られませんでした。ただしLDLコレステロール自体は5〜10%上昇しており、研究者や監修医師は「飽和脂肪酸を無制限に食べてよい保証にはならず、長期的な心血管イベントへの影響は未解明」と注意を促しています。",
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 4,
+      "wonder": 4,
+      "life_relevance": 4,
+      "work_relevance": 1,
+      "audience_fit": 3,
+      "tangible": 1,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "bp_stroke_heart",
+      "entry_question": "肉やバターの脂を多く取っても、本当に動脈硬化は進まない？",
+      "surprise_line": "健康診断で脂質を気にする人が、飽和脂肪酸を増やしても動脈硬化指標が増えないことに驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "「動脈硬化指標のアポBが増えなかった」のは事実ですが、LDLコレステロール自体は5〜10%しっかり上がっています。また被験者はノルウェーの肥満成人に限られており、心筋梗塞や脳卒中の実発症リスクが長期間でどうなるかはまだ確かめられていません。",
+      "hope_material": "超低糖質・高飽和脂肪食でも、砂糖を抑えて野菜を毎日約500gしっかり食べる管理条件を守れば、2年間で中性脂肪が20〜35%下がり、小型悪玉LDLの急増も防げることが比較試験の数値で確認されました。",
+      "investment_related": false,
+      "deja_vu_note": "kl039（食事前のオリーブ油と血糖値）に続く油・食事管理の話題。",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "CARBFUNC 飽和脂肪酸",
+      "jp_title_anchor": [
+        "CARBFUNC",
+        "ベルゲン大学",
+        "飽和脂肪"
+      ],
+      "announcement_type": "research",
+      "freshness": 2,
+      "overall_score": 3.0,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T06:55:58",
+      "presented_on": [],
+      "topic_first_date": "2026-10-24",
+      "topic_first_source": "候補 c91ca42393 のannounced_on（「肉やバターの脂」を多く取っても動脈硬化の指標は増えず？ 2）",
+      "topic_series": "c91ca42393",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-15",
+        "title": "「肉やバターの脂」を多く取っても動脈硬化の指標は増えず？ 2年間の研究で中性脂肪は改善、医師が注意点を解説",
+        "id": "c91ca42393",
+        "source": "Googleニュース（研究 食事 健康 効果）／メディカルドック"
+      }
+    },
+    {
+      "title": "OpenAIが「Daybreak」を発表、AIエージェントがアプリをハッキングして守ってくれる",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBjY2ZpSVRwNE4wQXVEMC03aEtjN0FTd1VPZ1gxbXBQSFAtWUNXWU1pQTVsMEhyb28wdFZSQWdrbWJpWVpQRUh3Z0FUV0gzaTVNaGtycjdMQ2liQklHbHVFaElHZTRLYzRkVVZBQTFB?oc=5",
+      "published": "2026-11-15",
+      "source": "Googleニュース（OpenAI 発表）／Korben",
+      "source_kind": "media",
+      "outlet": "Korben",
+      "outlet_host": "korben.info",
+      "genre_hint": "ai",
+      "summary": "OpenAIが「Daybreak」を発表、AIエージェントがアプリをハッキングして守ってくれる（Korben）",
+      "id": "27ed1bee0d",
+      "sources": [
+        "Korben"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://openai.com/daybreak",
+          "what_it_states": "サイバーセキュリティ向けプログラム「Daybreak」において、Webアプリの疑似侵入テストを行う「Daybreak Red Team」（アーリーアクセス）と、脆弱性の修正コード作成・検証を行う「Daybreak Defense Factory」を発表。重要インフラや非営利団体向けに10億ドル規模の利用枠支援も公表しているが、一般開放ではなく審査制（Trusted Access）による企業・専門家限定提供"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://learn.chatgpt.com/docs/cyber-safety",
+          "what_it_states": "防衛目的の検証を行うGPT-Daybreak-Blueと、侵入テスト・脆弱性再現など攻撃側検証を行うGPT-Daybreak-Redモデルの運用要件。許可されたシステムのみ、隔離環境と人間による監視下で実行することが義務付けられている"
+        }
+      ],
+      "announced_on": "2026-11-12",
+      "headline_claim": "OpenAIが「Daybreak」を発表し、AIエージェントが自社アプリをあえてハッキング（疑似攻撃）して欠陥を見つけ自動で守ってくれるようになった。",
+      "actual_content": "OpenAIが発表したDaybreak Red TeamとDefense Factoryは、複数AIエージェントがWebアプリのソースコードと挙動を調べて攻撃経路を検証し、修正パッチの作成と再テストを支援する仕組みである。ただし誰でも使えるわけではなく、事前審査を通った特定組織・専門家に限定された早期アクセス（Trusted Access）にとどまる。またAIが独断で直すのではなく、エンジニアがパッチを審査・テストして承認するワークフローが前提となっている。",
+      "verifiability": 4,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 3,
+      "audience_fit": 2,
+      "tangible": 2,
+      "decision_number": 2,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "AIが自社のWebサイトをハッキングして自動で守ってくれる、は本当？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "一般の自営業や中小企業がChatGPTのようにすぐ契約して自社サイトを守れるツールではなく、事前審査制（Trusted Access）の大企業・セキュリティ専門チーム向け早期アクセスにとどまる点。修正もAI任せではなく人間がコードを検証してマージする前提である点。",
+      "hope_material": "ソースコードの脆弱性発見から修正パッチ作成・再テストまでを複数エージェントが連携して自動検証できるため、専門の侵入テスト技術者が不足している組織の守りを大幅に省力化できる可能性はある。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "OpenAI Daybreak",
+      "jp_title_anchor": [
+        "Daybreak",
+        "OpenAI"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.25,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T06:56:08",
+      "presented_on": [],
+      "topic_first_date": "2026-10-09",
+      "topic_first_source": "候補 edd58468d5 のannounced_on（Sophos cuts threat investigati）",
+      "topic_series": "27ed1bee0d",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-10-27",
+        "title": "How Check Point accelerates vulnerability research with Daybreak",
+        "id": "8cb333260a",
+        "source": "OpenAI"
+      }
+    },
+    {
+      "title": "コーヒーをよく飲む人の腸に「意外な違い」61人の研究で分かったこと",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE52dnBLUS1mT2lBVUpCTG8xeVZwNGVxWW1fcnhJbXN1THBXZDlNY1FRSHViY2xocjhkMTRfeWJTX3J4WTcxSWNkalFGUTJ3aFhvX3FPbHF0WDlMSGlp?oc=5",
+      "published": "2026-11-15",
+      "source": "Googleニュース（研究 食事 健康 効果）／XenoSpectrum",
+      "source_kind": "media",
+      "outlet": "XenoSpectrum",
+      "outlet_host": "xenospectrum.com",
+      "genre_hint": "food_health",
+      "summary": "コーヒーをよく飲む人の腸に「意外な違い」61人の研究で分かったこと（XenoSpectrum）",
+      "id": "e8fcef9473",
+      "sources": [
+        "XenoSpectrum"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1016/j.gutmic.2026.100018",
+          "what_it_states": "コペンハーゲン大学等の研究チーム（Francesca Bucciら）が成人61人（うちSmartPill測定カプセルを飲んだ50人）の観察データを解析。8日間のうちコーヒーを4日以上飲んだ高頻度群（48人、平均343.5mL/日）は0〜2日の低頻度群（13人、平均17.7mL/日）に比べ小腸のpHが有意に低く酸性に傾いていた（p=0.022、順位相関係数ρ=-0.42）。大腸収縮頻度と尿中カフェイン代謝物に相関が見られた一方、大腸通過時間との有意な相関はなく、pH低下が健康に良いか悪いかは不明とされている。"
+        }
+      ],
+      "announced_on": "2026-09-15",
+      "headline_claim": "コーヒーを日常的に飲む人の腸内を無線カプセル等で調べると、小腸が酸性に傾き大腸の動きが活発になるなど意外な違いが判明した。",
+      "actual_content": "デンマークの健康な成人61人（観察研究PRIMAの再解析）を対象に、飲食記録と小型電子カプセル「SmartPill」で消化管内のpHや収縮を測定した探索的観察研究。コーヒーを週4日以上飲む群（48人）は週2日以下の群（13人）より小腸内pHが有意に低く、腸内細菌の多様性や大腸の収縮頻度が高い傾向が見られた。しかし大腸の通過時間（便の進む速さ）には有意差がなく、小腸の酸性化が健康に有益かも未検証であり、介入試験ではないため因果関係は断定できないとしている。",
+      "verifiability": 4,
+      "hype_gap": 3,
+      "promise": 2,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 3,
+      "work_relevance": 1,
+      "audience_fit": 2,
+      "tangible": 2,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "gut",
+      "entry_question": "コーヒーで腸の酸性度や便通が変わるって本当？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "pending",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "たった61人の観察研究の再解析であり、コーヒーを飲ませる介入試験ではないため因果関係は不明。小腸のpHが酸性に傾くことが健康に良いのか悪いのかすら分かっておらず、通過時間（便通の速さ）にも差は出ていない。",
+      "hope_material": "飲み込むセンサーカプセルで消化管内のリアルタイムなpHや収縮圧力を測定し、食事と腸内環境の物理的な動態を可視化する研究手法が進歩している。",
+      "investment_related": false,
+      "deja_vu_note": "kl039（食事と血糖値・消化器官の反応）",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "コペンハーゲン大学 コーヒー 腸内細菌",
+      "jp_title_anchor": [
+        "コペンハーゲン大学",
+        "SmartPill",
+        "小腸"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.2,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T06:56:19",
+      "presented_on": [],
+      "topic_first_date": "2026-09-15",
+      "topic_first_source": "候補 e8fcef9473 のannounced_on（コーヒーをよく飲む人の腸に「意外な違い」61人の研究で分かっ）",
+      "topic_series": "e8fcef9473",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-15",
+        "title": "コーヒーをよく飲む人の腸に「意外な違い」61人の研究で分かったこと",
+        "id": "e8fcef9473",
+        "source": "Googleニュース（研究 食事 健康 効果）／XenoSpectrum"
+      }
+    },
+    {
+      "title": "OpenAIと同日に発表、しかしアプローチは対照的！GoogleがGeminiとGoogleウォレット、Plaidの連携を開放、銀行口座の読み取りが可能に",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPZE84WHEtTUMtblo5cDBTbHg3UGdlQXZDanNyVS1CRmFXbjk0dXVBOVlVb1ZFSWNucWtOM3ZnNTBCYmk2SUxFLTRhX0o1WUpwM0oybXNSVm5zS1BtQ3BRUmwxX3U5djdoTUdyb0wxczhZb25NZ2o3dDZGTGdoZFU5cVZJdVlqQQ?oc=5",
+      "published": "2026-11-15",
+      "source": "Googleニュース（OpenAI 発表）／Mashdigi",
+      "source_kind": "media",
+      "outlet": "Mashdigi",
+      "outlet_host": "mashdigi.com",
+      "genre_hint": "ai",
+      "summary": "OpenAIと同日に発表、しかしアプローチは対照的！GoogleがGeminiとGoogleウォレット、Plaidの連携を開放、銀行口座の読み取りが可能に（Mashdigi）",
+      "id": "ae589bbd93",
+      "sources": [
+        "Mashdigi"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://blog.google/products/gemini/google-wallet-personal-finance/",
+          "what_it_states": "米国全土のGeminiアプリユーザー（Web、Android、iOS）向けにGoogleウォレットとの連携を順次開放。Plaidを介して銀行口座・クレジットカード・投資口座を連携可能。アクセスは読み取り専用（read-only）であり、資金移動や投資実行は不可。支出のグラフ化、値上げされたサブスクの検知、予算設計の対話が可能。",
+          "repaired_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/",
+          "repair_method": "site-crawl",
+          "repair_from": "https://blog.google/products-and-platforms/products/gemini/",
+          "repaired_at": "2026-11-16T06:59:50",
+          "repair_claim_terms": {
+            "checked": [
+              "gemini",
+              "googleウォレット",
+              "plaid"
+            ],
+            "found": [
+              "gemini"
+            ]
+          }
+        },
+        {
+          "kind": "official_blog",
+          "url": "https://plaid.com/blog/google-gemini-wallet-integration/",
+          "what_it_states": "PlaidがGoogleウォレットとGeminiアプリの口座連携バックエンドを担当。オプトイン方式でユーザー自身の支出習慣に応じたパーソナライズ回答を提供。Plaid調査で55%の人が過去1年間にAIをお金関連のタスクに使用したと報告。",
+          "repaired_url": "https://plaid.com/blog/google-wallet-gemini-plaid/",
+          "repair_method": "site-crawl",
+          "repair_from": "https://plaid.com/blog/",
+          "repaired_at": "2026-11-16T06:59:50",
+          "repair_claim_terms": {
+            "checked": [
+              "gemini",
+              "googleウォレット",
+              "plaid"
+            ],
+            "found": [
+              "gemini",
+              "plaid"
+            ]
+          }
+        }
+      ],
+      "announced_on": "2026-11-13",
+      "headline_claim": "GoogleがGeminiとGoogleウォレット、Plaidの連携を開放し、銀行口座の読み取りによる家計・資産分析が可能になった。",
+      "actual_content": "米国の18歳以上のGeminiユーザー向けに、GoogleウォレットおよびPlaid経由での銀行・クレジットカード・投資口座連携機能が展開されました。Geminiに与えられる権限は完全な「読み取り専用（read-only）」であり、AI自身が送金・口座管理・決済・投資操作を行うことはできません。機能としては支出のカテゴリ分類やキャッシュフローの可視化、値上げされたサブスクの検出、過去実績に基づく予算作成の対話支援に限定され、日本など米国外での展開時期は未定です。",
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 4,
+      "work_relevance": 3,
+      "audience_fit": 4,
+      "tangible": 2,
+      "decision_number": 4,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "Geminiに銀行口座を見せると、本当にお金の管理や節約をやってくれる？",
+      "surprise_line": "自営業の人が、AIに送金権限はなく支出の読み取りと集計に限られる点に驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「銀行口座と連携」と聞くとAIが自動で振込や資産運用をしてくれそうに見えますが、実際は完全な読み取り専用（read-only）で勝手な送金や決済は一切できません。また現時点では米国の18歳以上限定の提供で、日本の銀行（全銀システムや国内API）との連携予定や日本展開の時期は示されていません。",
+      "hope_material": "米国ではすでに一般提供が始まっており、オプトイン設定でいつでも連携を解除できる安全設計です。値上げされたサブスクのあぶり出しや過去3カ月の支出をもとにした節約グラフの自動生成など、日々の家計簿付けや支出点検の手間を省く機能はすでに動いています。",
+      "investment_related": false,
+      "deja_vu_note": "kl048（頼む前に動くAI秘書）、kl050（Siri AIとGemini連携）",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "Gemini Googleウォレット Plaid",
+      "jp_title_anchor": [
+        "Gemini",
+        "Googleウォレット",
+        "Plaid"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.5,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T06:56:30",
+      "presented_on": [],
+      "topic_first_date": "2026-11-13",
+      "topic_first_source": "候補 ae589bbd93 のannounced_on（OpenAIと同日に発表、しかしアプローチは対照的！Goog）",
+      "topic_series": "ae589bbd93",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-15",
+        "title": "OpenAIと同日に発表、しかしアプローチは対照的！GoogleがGeminiとGoogleウォレット、Plaidの連携を開放、銀行口座の読み取りが可能に",
+        "id": "ae589bbd93",
+        "source": "Googleニュース（OpenAI 発表）／Mashdigi"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/",
+          "ok": true,
+          "status": "HTTP 200「Gemini Models」（android・geminiが一致）",
+          "page_title": "Gemini Models",
+          "method": "http",
+          "anchor_hit": true,
+          "kind": "official_blog",
+          "repaired": true,
+          "orig_url": "https://blog.google/products/gemini/google-wallet-personal-finance/",
+          "orig_status": "HTTP 404（再確認5回とも404・開けず）",
+          "repair_method": "site-crawl",
+          "repair_from": "https://blog.google/products-and-platforms/products/gemini/"
+        },
+        {
+          "url": "https://plaid.com/blog/google-wallet-gemini-plaid/",
+          "ok": true,
+          "status": "HTTP 200「Plaid is powering personalized」（google・geminiが一致）",
+          "page_title": "Plaid is powering personalized financial insights with Google Wallet in the Gemini app | Plaid",
+          "method": "http",
+          "anchor_hit": true,
+          "page_date": "2026-11-13",
+          "kind": "official_blog",
+          "repaired": true,
+          "orig_url": "https://plaid.com/blog/google-gemini-wallet-integration/",
+          "orig_status": "HTTP 404（再確認5回とも404・開けず）",
+          "repair_method": "site-crawl",
+          "repair_from": "https://plaid.com/blog/"
+        }
+      ],
+      "primary_verified_at": "2026-11-16T06:59:50",
+      "primary_history": [
+        {
+          "at": "2026-11-16T06:59:40",
+          "verdict": false,
+          "urls": [
+            {
+              "url": "https://blog.google/products/gemini/google-wallet-personal-finance/",
+              "status": "HTTP 404（再確認5回とも404・開けず）",
+              "final_url": "",
+              "ok": false
+            },
+            {
+              "url": "https://plaid.com/blog/google-gemini-wallet-integration/",
+              "status": "HTTP 404（再確認5回とも404・開けず）",
+              "final_url": "",
+              "ok": false
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/",
+          "ok": true,
+          "status": "HTTP 200「Gemini Models」（android・geminiが一致）"
+        },
+        {
+          "url": "https://plaid.com/blog/google-wallet-gemini-plaid/",
+          "ok": true,
+          "status": "HTTP 200「Plaid is powering personalized」（google・geminiが一致）"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "blog.google: HTTP 200「Gemini Models」（android・geminiが一致） ／ plaid.com: HTTP 200「Plaid is powering personalized」（google・geminiが一致）",
+      "url_checked_at": "2026-11-16T06:59:40",
+      "repair_tried": true,
+      "repair_tried_at": "2026-11-16T06:59:50",
+      "repair_log": [
+        "site-crawl: https://blog.google/innovation-and-ai/models-and-research/gemini-models/ → HTTP 200「Gemini Models」（android・geminiが一致）",
+        "site-crawl: https://plaid.com/blog/google-wallet-gemini-plaid/ → HTTP 200「Plaid is powering personalized」（google・geminiが一致）"
+      ],
+      "primary_verified_note": "URLを自動で修復（repair）: blog.google → https://blog.google/innovation-and-ai/models-and-research/gemini-models/（site-crawl） ／ plaid.com → https://plaid.com/blog/google-wallet-gemini-plaid/（site-crawl）",
+      "repair_result": "修復",
+      "buzz_history": [
+        {
+          "at": "2026-11-16T07:01:37",
+          "query": "Gemini Googleウォレット",
+          "measured": 5,
+          "outlets": 11,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "Geminiが「あなたの家計」を読み始めた、銀行・カード口座も連携し米国の全ユーザーへ ｜FinTech Journal",
+              "outlet": "ビジネス+IT",
+              "date": "2026-11-15"
+            },
+            {
+              "title": "OpenAIと同日に発表、しかしアプローチは対照的！GoogleがGeminiとGoogleウォレット、Plaidの連携を開放、銀行口座の読み取りが可能に",
+              "outlet": "Mashdigi",
+              "date": "2026-11-15"
+            },
+            {
+              "title": "Googleウォレット、スマートロックのデジタルキーを追加可能に",
+              "outlet": "Impress Watch",
+              "date": "2026-11-14"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 12,
+          "raw_items": 16,
+          "jp_measured": 5,
+          "outlets_foreign": 2,
+          "foreign_boost": false,
+          "query_en": "Gemini Plaid"
+        }
+      ],
+      "buzz_measured_at": "2026-11-16T07:01:37",
+      "buzz_measured": 5,
+      "buzz_outlets": 11,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "Geminiが「あなたの家計」を読み始めた、銀行・カード口座も連携し米国の全ユーザーへ ｜FinTech Journal",
+          "outlet": "ビジネス+IT",
+          "date": "2026-11-15"
+        },
+        {
+          "title": "OpenAIと同日に発表、しかしアプローチは対照的！GoogleがGeminiとGoogleウォレット、Plaidの連携を開放、銀行口座の読み取りが可能に",
+          "outlet": "Mashdigi",
+          "date": "2026-11-15"
+        },
+        {
+          "title": "Googleウォレット、スマートロックのデジタルキーを追加可能に",
+          "outlet": "Impress Watch",
+          "date": "2026-11-14"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 12,
+      "buzz_raw_items": 16,
+      "buzz_query": "Gemini Googleウォレット",
+      "buzz_jp_measured": 5,
+      "buzz_outlets_foreign": 2,
+      "buzz_foreign_boost": false,
+      "buzz_query_en": "Gemini Plaid",
+      "buzz_adopted_at": "2026-11-16T07:01:37",
+      "buzz_adopted_n": 1,
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-16T07:02:42",
+        "status": "realized",
+        "evidence": [
+          {
+            "service": "ChatGPT",
+            "feature": "Finances (Plaid連携)",
+            "url": "https://help.openai.com/en/articles/9253457-finances-in-chatgpt"
+          },
+          {
+            "service": "Claude",
+            "feature": "Personal Finance (Plaid連携)",
+            "url": "https://www.zdnet.com/article/claudes-new-personal-finance-tool-aims-to-help-analyze-your-spending-read-only-of-course/"
+          }
+        ],
+        "reason": "OpenAI（ChatGPT Finances）やAnthropic（Claude）が既にPlaid経由の読み取り専用連携による支出分析機能を提供済み。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
+    },
+    {
+      "title": "AIに本物のカード番号を渡さない「ChatGPT Wallet」発表！購入ごとに生体認証で承認、まず米国Proで",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBVdXBuU0hYR0Z3cUN2dVg2enhOeTB2a2V5NExvWGRwdTlvanl2T056MEh3cUhHLW5QaEJEampHZTlnNlVsYXRlbldKUTBTZjNZWTlhTnFMUTlKUTJWV1g5b1d4MVNUMmUyRUE4bDNxTGdhX2dIbTRv0gF8QVVfeXFMT3hwNDAwZkxEV3BEclhVV2xxSmVrTnA2dTFHeVBlS2VMQ2FXaGZIRXlWSGJiVWxFX2stR3F2SE9LaUs0aUdic2ZPXzN3RXZQem9SM19jSF9oNWpiMk9pZDF0Z3NxRDNLY21hS0YxUGV0dzFWRFlSTG16dWc3cw?oc=5",
+      "published": "2026-11-15",
+      "source": "Googleニュース（OpenAI 発表）／すまほん!!",
+      "source_kind": "media",
+      "outlet": "すまほん!!",
+      "outlet_host": "smhn.info",
+      "genre_hint": "ai",
+      "summary": "AIに本物のカード番号を渡さない「ChatGPT Wallet」発表！購入ごとに生体認証で承認、まず米国Proで（すまほん!!）",
+      "id": "2215c1d3ed",
+      "sources": [
+        "すまほん!!"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://openai.com/index/introducing-chatgpt-wallet/",
+          "what_it_states": "American Express、Mastercard、Visaと提携。米国の18歳以上のChatGPT Pro加入者（dotsエージェント利用者）を対象に順次提供。AIエージェントや加盟店に本物のカード番号を渡さず、決済ネットワークのトークン（代替番号・セキュリティコード・有効期限）を使用。購入前に商品・合計額・カードを確認し、Face IDや指紋などの生体認証で承認必須。開始時の手数料はゼロで、カード特典や異議申し立て保護は維持される。"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://help.openai.com/",
+          "what_it_states": "利用には米国発行の対象カード（Amex、Mastercard、Visa、Chase本会員）および米国の請求先住所が必要。通常のChat、Work、Codexスレッドでは利用不可でdots内でのみ動作。デビットカードや自作バーチャルカードは開始時非対応。"
+        }
+      ],
+      "announced_on": "2026-11-13",
+      "headline_claim": "AIに本物のカード番号を渡さず代理購入できる「ChatGPT Wallet」が米国Pro向けに発表された。",
+      "actual_content": "OpenAIが発表した「ChatGPT Wallet」は、自律型エージェントdotsが商品検索から決済画面入力まで代行する機能である。実カード番号はカード会社のネットワークトークンに置き換えられAIや店舗には渡らない設計で、購入ごとに品目や合計額を確認し端末の生体認証で承認する必要がある。初期提供は米国在住の18歳以上のChatGPT Pro契約者かつ米国発行カードに限られ、日本での提供予定や一般プランへの開放時期は明記されていない。",
+      "verifiability": 5,
+      "hype_gap": 2,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 4,
+      "audience_fit": 4,
+      "tangible": 2,
+      "decision_number": 3,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "AIに買い物を頼んで本当に安全？日本でももう使える？",
+      "surprise_line": "ネット通販を使う人が、AIにも店にもカード番号を明かさず代理決済できる仕組みに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「AIが自律決済」といっても現状は毎回画面を見て生体認証で承認する手動チェックが必須で、何より米国のPro契約者かつ米国発行クレカ限定のため日本のユーザーや通常プランではまだ試せない点。",
+      "hope_material": "カード会社3大網（Visa・Mastercard・Amex）が公式トークン化に対応しており、ポイント付与や不正利用時の補償など既存クレカの権利がそのまま維持される点。",
+      "investment_related": false,
+      "deja_vu_note": "kl038（一人に一台のdots）、kl048（AI秘書への仕事の任せ方）",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "ChatGPT Wallet OpenAI",
+      "jp_title_anchor": [
+        "ChatGPT Wallet",
+        "OpenAI"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.45,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "merged",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T06:56:40",
+      "presented_on": [],
+      "topic_first_date": "2026-11-12",
+      "topic_first_source": "プールの記事（OpenAI ChatGPT Wallet、AI決済競争に参入）",
+      "topic_series": "2215c1d3ed",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-12",
+        "title": "OpenAI ChatGPT Wallet、AI決済競争に参入",
+        "id": "4b1d2484dc",
+        "source": "Googleニュース（OpenAI 発表）／FinanceFeeds"
+      },
+      "primary_verified": null,
+      "primary_check": [
+        {
+          "url": "https://openai.com/index/introducing-chatgpt-wallet/",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+          "method": "http",
+          "kind": "official_blog"
+        },
+        {
+          "url": "https://help.openai.com/",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+          "method": "http",
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-11-16T06:59:43",
+      "primary_history": [
+        {
+          "at": "2026-11-16T06:59:43",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://openai.com/index/introducing-chatgpt-wallet/",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            },
+            {
+              "url": "https://help.openai.com/",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://openai.com/index/introducing-chatgpt-wallet/",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）"
+        },
+        {
+          "url": "https://help.openai.com/",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）"
+        }
+      ],
+      "url_ok": null,
+      "url_status": "openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+      "url_checked_at": "2026-11-16T06:59:43",
+      "buzz_history": [
+        {
+          "at": "2026-11-16T07:01:42",
+          "query": "ChatGPT Wallet",
+          "measured": 5,
+          "outlets": 16,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "生成AIのOpenAI、利用者の承認で買い物を進めるChatGPT Walletを提供",
+              "outlet": "AT PARTNERS",
+              "date": "2026-11-15"
+            },
+            {
+              "title": "OpenAI、ChatGPT Walletを開始 AIエージェントが本物のカード番号を見ずに支払い",
+              "outlet": "innovaTopia",
+              "date": "2026-11-15"
+            },
+            {
+              "title": "AIに本物のカード番号を渡さない「ChatGPT Wallet」発表！購入ごとに生体認証で承認、まず米国Proで",
+              "outlet": "すまほん!!",
+              "date": "2026-11-15"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 16,
+          "raw_items": 29,
+          "jp_measured": 5,
+          "outlets_foreign": 79,
+          "foreign_boost": false,
+          "query_en": "ChatGPT Wallet"
+        }
+      ],
+      "buzz_measured_at": "2026-11-16T07:01:42",
+      "buzz_measured": 5,
+      "buzz_outlets": 16,
+      "yahoo": false,
+      "buzz_evidence": [
+        {
+          "title": "生成AIのOpenAI、利用者の承認で買い物を進めるChatGPT Walletを提供",
+          "outlet": "AT PARTNERS",
+          "date": "2026-11-15"
+        },
+        {
+          "title": "OpenAI、ChatGPT Walletを開始 AIエージェントが本物のカード番号を見ずに支払い",
+          "outlet": "innovaTopia",
+          "date": "2026-11-15"
+        },
+        {
+          "title": "AIに本物のカード番号を渡さない「ChatGPT Wallet」発表！購入ごとに生体認証で承認、まず米国Proで",
+          "outlet": "すまほん!!",
+          "date": "2026-11-15"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 16,
+      "buzz_raw_items": 29,
+      "buzz_query": "ChatGPT Wallet",
+      "buzz_jp_measured": 5,
+      "buzz_outlets_foreign": 79,
+      "buzz_foreign_boost": false,
+      "buzz_query_en": "ChatGPT Wallet",
+      "buzz_adopted_at": "2026-11-16T07:01:42",
+      "buzz_adopted_n": 1,
+      "merged_into": "fd333d9440",
+      "merged_reason": "同一ストーリーの重複"
+    },
+    {
+      "title": "ウコンの成分に大きな大腸ポリープの再発抑制効果…研究チーム、インドの食生活に着目",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBfM01kQko2dld4RElRUDg2cHZJZVo0WGlPUktuWVRPLVNiZ1BwZzg2QzB4MTVQdHNWUWVqVldDdmEzb015Q2FZRXNuVDg3bjBQSGNpZHdPRDR5V0pyX2ZVdU4yU2w?oc=5",
+      "published": "2026-11-13",
+      "source": "Googleニュース（がん 新しい治療 研究）／読売新聞",
+      "source_kind": "media",
+      "outlet": "読売新聞",
+      "outlet_host": "yomiuri.co.jp",
+      "genre_hint": "medical",
+      "summary": "ウコンの成分に大きな大腸ポリープの再発抑制効果…研究チーム、インドの食生活に着目（読売新聞）",
+      "id": "1dc3f12e73",
+      "sources": [
+        "読売新聞"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000000085.000057288.html",
+          "what_it_states": "全国26施設で大腸腺腫を内視鏡摘除した患者577人を対象に、高吸収型クルクミン（セラクルミン、180mgを1日2回）と偽薬を2年間投与する二重盲検ランダム化比較試験を実施。主要評価項目であるポリープ全体の再発率には有意差がなかったが（リスク比0.98）、切除対象となる6mm以上の腺腫の発生率は13.3%から7.5%へと約44%有意に低下（リスク比0.56, P=0.04）"
+        },
+        {
+          "kind": "paper",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39207085/",
+          "what_it_states": "論文名『Curcumin Suppresses Growth of Recurrent Colorectal Adenoma After Endoscopic Resection: A Randomized, Double-Blind, Placebo-Controlled, Multicenter Trial』。主要評価項目の全腺腫再発率は両群同等（RR 0.98; 95% CI 0.82-1.16）。6mm以上の腺腫発生率はクルクミン群で有意に抑制（RR 0.56; 95% CI 0.33-0.95; P=0.04）。腺腫の中央値サイズも有意に縮小（P=0.003）"
+        }
+      ],
+      "announced_on": "2026-10-21",
+      "headline_claim": "ウコンの成分クルクミンに大腸の大きなポリープの再発を44%抑える効果が臨床試験で確かめられた",
+      "actual_content": "徳島大学などの全国26施設でポリープ切除後の患者577人を対象に行われた2年間の二重盲検RCTで検証された。主要評価項目であるポリープ全体の再発率には差がなかったが（リスク比0.98）、切除手術の対象となる6mm以上の病変の発生率は偽薬群13.3%に対しクルクミン群7.5%と約44%減少した。日常のカレー粉摂取ではなく、吸収性を高めた特殊な製剤（セラクルミン1日360mg）を2年間服用した結果である。",
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 1,
+      "audience_fit": 3,
+      "tangible": 3,
+      "decision_number": 2,
+      "series_fit": 1,
+      "concern_id": "cancer",
+      "entry_question": "カレーやウコンを食べれば、大腸ポリープは防げるようになる？",
+      "surprise_line": "内視鏡検査を受ける中高年が、ポリープの発生自体は減らないことに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "主要評価項目のポリープ全体の再発率は全く減っておらず（リスク比0.98）、大腸がん自体の予防効果が確かめられたわけではない。またカレーを食べるのではなく、吸収性を劇的に高めた特殊なカプセル製剤を毎日2年間飲み続けた結果である点に注意が必要。",
+      "hope_material": "全国26施設・577人規模の本格的な二重盲検比較試験において、手術対象となる6mm以上の腺腫が約44%減り、重大な副作用も認められなかった点は非常に堅実なデータである。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "徳島大学 クルクミン 大腸ポリープ",
+      "jp_title_anchor": [
+        "クルクミン",
+        "大腸ポリープ",
+        "徳島大"
+      ],
+      "announcement_type": "research",
+      "freshness": 2,
+      "overall_score": 2.85,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T06:56:55",
+      "presented_on": [],
+      "topic_first_date": "2026-10-21",
+      "topic_first_source": "候補 1dc3f12e73 のannounced_on（ウコンの成分に大きな大腸ポリープの再発抑制効果…研究チーム、）",
+      "topic_series": "1dc3f12e73",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-13",
+        "title": "ウコンの成分に大きな大腸ポリープの再発抑制効果…研究チーム、インドの食生活に着目",
+        "id": "1dc3f12e73",
+        "source": "Googleニュース（がん 新しい治療 研究）／読売新聞"
+      }
+    },
+    {
+      "title": "Why an Automotive Dealership is Buying 400 Humanoid Robots | UBTECH and Yongda Automobiles' Sales and Service Strategy｜吉川真人＠中国テックトレンドニュース",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9VUkdMVHRacWVtb19RdTRSajVVT19FVy1NTzBvMkQ5d0F5bHpiMkNNVjRZeEd5bndyTVhkemFrUG1ZLVJQLWNFMWNETjRGbUdIQmY0MmZuOGlMMnM3?oc=5",
+      "published": "2026-11-14",
+      "source": "Googleニュース（ヒューマノイド）／note",
+      "source_kind": "media",
+      "outlet": "note",
+      "outlet_host": "note.com",
+      "genre_hint": "humanoid",
+      "summary": "Why an Automotive Dealership is Buying 400 Humanoid Robots | UBTECH and Yongda Automobiles' Sales and Service Strategy｜吉川真人＠中国テックトレンドニュース（note）",
+      "id": "4073cc072b",
+      "sources": [
+        "note"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.ubtrobot.com/",
+          "what_it_states": "UBTECHと高級車ディーラーグループの永達汽車（Yongda Auto）が戦略提携を締結。永達汽車が超生体ヒューマノイドロボット『U1 Pro』を初回バッチとして400台調達し、年内（2026年中）に納品予定。自動車ショールームでの顧客案内・展示・販売促進、およびロボット自体の代理店販売・リース・体験拠点の展開を目的とする"
+        }
+      ],
+      "announced_on": "2026-11-11",
+      "headline_claim": "中国の大手自動車ディーラーが、接客や販売のために人型ロボット400台を一括購入した",
+      "actual_content": "UBTECHと香港上場の高級車ディーラー永達汽車が戦略提携を結び、対面接客向けの等身大ロボット『U1 Pro』400台を年内納品予定で購入合意した。U1 ProはJD.com上で公称16万9800元（約360万円）で掲載されているが、実際の契約金額や値引き条件は非開示。工場の労働代替ではなく、自動車販売店舗での集客・展示接客のほか、ディーラー店舗網を使ったロボット自体の代理販売やリース展開の開拓が主な目的である。",
+      "verifiability": 4,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 4,
+      "audience_fit": 4,
+      "tangible": 5,
+      "decision_number": 4,
+      "series_fit": 5,
+      "concern_id": "work_ai",
+      "entry_question": "車屋さんが人型ロボ400台購入って本当？店番ができるの？",
+      "surprise_line": "店舗経営者が、車屋が400台もの人型ロボを店先に並べる契約を結んだことに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "工場で人を置き換えて作業するわけではなく、実態はショールームの客引き展示と、苦境の自動車ディーラーがロボットの代理販売代理店になるための枠組み。実際の商談や車検受付などの実務をロボット単体でこなせるわけではない点に注意が必要。",
+      "hope_material": "提携覚書（MOU）のような曖昧な数字ではなく、機種名（U1 Pro）、台数（400台）、納品期限（年内）が具体的に特定された商業流通契約である点。",
+      "investment_related": false,
+      "deja_vu_note": "kl053（上海のコンビニで人型ロボ6台が棚出し・レジ実証した話）の商業展開版。今回は実作業というよりショールーム接客・代理販売流通の話。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "UBTECH 永達汽車",
+      "jp_title_anchor": [
+        "UBTECH",
+        "永達汽車",
+        "U1 Pro"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 5,
+      "overall_score": 3.25,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T06:57:08",
+      "presented_on": [],
+      "topic_first_date": "2026-11-11",
+      "topic_first_source": "候補 4073cc072b のannounced_on（Why an Automotive Dealership i）",
+      "topic_series": "4073cc072b",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-14",
+        "title": "Why an Automotive Dealership is Buying 400 Humanoid Robots | UBTECH and Yongda Automobiles' Sales and Service Strategy｜吉",
+        "id": "4073cc072b",
+        "source": "Googleニュース（ヒューマノイド）／note"
+      }
+    },
+    {
+      "title": "スーパーのトマトが味気ない理由の手がかりを発見",
+      "url": "https://nazology.kusuguru.co.jp/archives/208385",
+      "published": "2026-11-15",
+      "source": "ナゾロジー",
+      "source_kind": "media",
+      "summary": "スーパーに並ぶトマトは、病気にも強く、長く日持ちします。 けれど、家庭菜園で育てた昔ながらの品種と食べ比べて、味の違いに気づいた人もいるでしょう。 現代のトマトは、たくさん実ることや日持ち、病気への強さを優先して改良されてきました。 その引き換えに、風味は後回しにされてきたと言われています。 では、トマトの味は、品種改良の歩みの中で、どんな仕組みで薄れていったのでしょうか？ そして、失われた味を取り戻す手がかりは、トマト自身の遺伝子の中に残っているのでしょうか？ 研究の詳細は、米ジョージア大学らにより、2026年8月18日付で学術誌『Proceedings of the National Academy of Sciences』に掲載されました。",
+      "id": "f80300d7cc",
+      "sources": [
+        "ナゾロジー"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1073/pnas.2610136123",
+          "what_it_states": "野生種から栽培種まで世界中のトマト558系統を収集し、糖、酸、数十種類の揮発性有機化合物（VOC）の成分プロファイルと全ゲノム関連解析（GWAS）を実施。品種改良と家畜化（栽培化）の過程で糖酸比が低下し、好ましい香気成分が失われて不快香気成分が残った遺伝的座位とメカニズムを特定した。"
+        },
+        {
+          "kind": "official_blog",
+          "url": "https://www.futurity.org/tomatoes-flavor-3352252/",
+          "what_it_states": "ジョージア大学の研究チームによる発表。収量や日持ち・耐病性を優先した交配によって失われた風味成分の遺伝的経路を特定し、現代の品種に豊かな風味を取り戻すための育種ツールを提供できると報告。"
+        }
+      ],
+      "announced_on": "2026-08-18",
+      "headline_claim": "スーパーのトマトが味気なくなった遺伝的メカニズムが解明され、昔の豊かな味を取り戻す手がかりが見つかった。",
+      "actual_content": "野生種や在来種、現代種を含む世界中から集めた558系統のトマトを対象に、糖・有機酸および数十種類の揮発性香気成分のプロファイルと全ゲノム関連解析（GWAS）を実施した基礎研究である。現代の品種改良において収量や日持ち、耐病性が優先された結果、糖酸比の低下や好ましい揮発成分に関わる遺伝子型が脱落していたことが特定された。将来の品種改良に役立つ遺伝的マーカーが見出された段階であり、新品種の実用化や店頭への流通時期・コストについては示されていない。",
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 2,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 1,
+      "audience_fit": 3,
+      "tangible": 3,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "food",
+      "entry_question": "スーパーのトマトが昔より味気ないのは本当？美味しいトマトはいつ店頭に戻る？",
+      "surprise_line": "家庭菜園好きが、トマトの味が落ちた原因が遺伝子の脱落にあったことに驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "解明されたのは『失われた原因の遺伝子座』であり、日持ちや収量と味を両立させた新種トマトがスーパーに並ぶ時期や価格は一次資料に一切書かれていない。",
+      "hope_material": "558系統の大規模ゲノム解析によって風味の鍵となる香気成分や糖酸比の遺伝マーカーが特定され、育種家が風味をピンポイントで戻すための設計図が得られた。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": false,
+      "jp_news_query": "ジョージア大学 トマト",
+      "jp_title_anchor": [
+        "トマト",
+        "ジョージア大学"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.35,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T06:57:19",
+      "presented_on": [],
+      "topic_first_date": "2026-08-18",
+      "topic_first_source": "候補 f80300d7cc のannounced_on（スーパーのトマトが味気ない理由の手がかりを発見）",
+      "topic_series": "f80300d7cc",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-15",
+        "title": "スーパーのトマトが味気ない理由の手がかりを発見",
+        "id": "f80300d7cc",
+        "source": "ナゾロジー"
+      }
+    },
+    {
+      "title": "大和ハウスなど3社、自動運転トラック受け入れ・運用の実証事業に採択",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1tVnpjT0FWUGMyaUVIQmphem1VazJZYTdOczdmeGNWUVhadGZOUXotMFBHUXpFUXhmTWZnUFJ5SUpKS2g2elE?oc=5",
+      "published": "2026-11-15",
+      "source": "Googleニュース（自動運転トラック 実証）／Dellows News",
+      "source_kind": "media",
+      "outlet": "Dellows News",
+      "outlet_host": "news.dellows.jp",
+      "genre_hint": "life_tech",
+      "summary": "大和ハウスなど3社、自動運転トラック受け入れ・運用の実証事業に採択（Dellows News）",
+      "series_query": "autonomy_logistics_watch",
+      "id": "9fdc880f8f",
+      "sources": [
+        "Dellows News"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.daiwahouse.co.jp/about/release/house/20261016-01.html",
+          "what_it_states": "大和ハウス工業、ダイナミックマッププラットフォーム、Hacobuの3社が国交省「自動運転トラック実装支援事業」に採択。2026年12月頃から物流施設「DPL平塚」「DPL新横浜III」を実証フィールドとし、ティアフォーが開発した自動運転トラック（レベル4相当）を用いて施設内自動誘導、インフラカメラによる死角検知・安全走行支援、モビリティハブでのトレーラー交換・予約管理の運用モデルを検証する"
+        }
+      ],
+      "announced_on": "2026-10-16",
+      "headline_claim": "大和ハウスなど3社が国交省の実証事業に採択され、自動運転トラック受け入れ・施設内運用の実証を開始する",
+      "actual_content": "これまで高速道路の幹線輸送が主だった自動運転トラックに対し、荷物の発着拠点となる物流施設内での走行・誘導やモビリティハブでのトレーラー付け替え運用を検証する実証事業。2026年12月頃から大和ハウスの物流施設2拠点（平塚・新横浜）で開始され、ティアフォーの自動運転トラックを高精度3次元地図やインフラカメラ、Hacobuのバース予約システムと連携させて安全誘導や運用の成立性を検証する。実証採択の発表であり、定常的な無人運行や商用サービス化の開始ではない。",
+      "verifiability": 5,
+      "hype_gap": 2,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 4,
+      "audience_fit": 3,
+      "tangible": 4,
+      "decision_number": 3,
+      "series_fit": 3,
+      "concern_id": "mobility",
+      "entry_question": "自動運転トラックは、高速道路だけでなく物流センターの中まで無人で走れるようになる？",
+      "surprise_line": "運送や物流に関わる人が、高速だけでなく倉庫敷地内の無人誘導まで実験が進むことに驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "今回はあくまで国交省補助金の実証実験の採択発表であり、施設内の事故責任やイレギュラー時の対応ルールなど運用基準の整理はこれから始まる段階です。",
+      "hope_material": "高速道路の走行だけでなく、人が混在する物流施設内への進入やトラックバースへの自動誘導、トレーラー交換といった「ラストワンマイルの荷扱い拠点」のインフラ連携に具体的に踏み出しています。",
+      "investment_related": false,
+      "deja_vu_note": "kl055（無人物流・空港内自動運転）とテーマは近いが、こちらは幹線物流施設・大型トラックでの実証",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "大和ハウス 自動運転トラック 実証",
+      "jp_title_anchor": [
+        "大和ハウス",
+        "自動運転トラック"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 2,
+      "overall_score": 2.65,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T06:57:31",
+      "presented_on": [],
+      "topic_first_date": "2026-10-16",
+      "topic_first_source": "候補 9fdc880f8f のannounced_on（大和ハウスなど3社、自動運転トラック受け入れ・運用の実証事業）",
+      "topic_series": "9fdc880f8f",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-15",
+        "title": "大和ハウスなど3社、自動運転トラック受け入れ・運用の実証事業に採択",
+        "id": "9fdc880f8f",
+        "source": "Googleニュース（自動運転トラック 実証）／Dellows News"
+      }
+    },
+    {
+      "title": "生活習慣と慢性疾患、2つの腸内細菌群が関与か 6803人調査",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiREFVX3lxTE1NWVg4bnM1empsREI4N3g4X2dIdUJ0b0FSa0JVYjAzYk5oWDRhWGZJVUVUekx5V29FdVJmeE5xd2VUVmw2?oc=5",
+      "published": "2026-11-14",
+      "source": "Googleニュース（腸内細菌 研究）／NEWS SALT",
+      "source_kind": "media",
+      "outlet": "NEWS SALT",
+      "outlet_host": "newssalt.com",
+      "genre_hint": "food_health",
+      "summary": "生活習慣と慢性疾患、2つの腸内細菌群が関与か 6803人調査（NEWS SALT）",
+      "id": "92d106ccbb",
+      "sources": [
+        "NEWS SALT"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1038/s41591-026-04744-5",
+          "what_it_states": "日本人6,803人（Japanese 4Dコホート、平均年齢60.9歳）の便メタゲノム解析を実施。野菜・大豆・乳製品摂取などと酪酸産生菌を介して結びつく『健康軸』と、精製炭水化物や長時間の座位（9.5時間以上）などと口腔由来菌・日和見菌を介して15の慢性疾患に結びつく『疾患軸』の2つの媒介経路を同定。発酵食品の種菌自体は健康効果の媒介として有意ではなかった。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.jihs.go.jp/content4/pressrelease/2026/20261105_1900.pdf",
+          "what_it_states": "東京医科大学、国立健康危機管理研究機構、東京大学、理化学研究所の共同発表。生活習慣28項目と15の慢性疾患をつなぐ腸内細菌の媒介軸を明らかにし、腸内細菌予測スコア（MADEスコア）が海外13コホート（3,095人）でも疾患の識別に有用であることを確認。"
+        }
+      ],
+      "announced_on": "2026-11-05",
+      "headline_claim": "日本人6,800人超の調査で、生活習慣と15の慢性疾患をつなぐ腸内細菌の2大グループが明らかになった。",
+      "actual_content": "東京医大や理研などのチームが日本人6,803人の便検体をショットガンメタゲノム解析し、28の生活習慣と15の疾患をつなぐ腸内細菌の統計的媒介モデルを検証した。野菜や大豆、適度な運動は酪酸産生菌を介した抗炎症性の健康軸と相関し、精製炭水化物や9.5時間以上の座りっぱなしは口腔由来菌などを介した炎症・疾患軸と相関していた。ただし本研究は観察データの媒介分析であり、特定の食品や菌を摂取すれば病気が予防・治癒できるという因果関係を直接実証した介入試験ではない。",
+      "verifiability": 5,
+      "hype_gap": 2,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 1,
+      "audience_fit": 3,
+      "tangible": 1,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "gut",
+      "entry_question": "腸活で納豆やヨーグルトを食べれば病気は防げる、は本当？",
+      "surprise_line": "腸活を気にする人が、納豆菌自体より元からいる菌が鍵と知って驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "統計的に媒介関係のモデルを示した観察研究であり、特定の菌や食品を摂れば病気を防げるという因果関係や介入試験の結果ではありません。また、発酵食品の菌そのものは腸内での健康効果を直接媒介していなかった点も見落とせません。",
+      "hope_material": "日本人6,803人という大規模コホートで、長時間の座位や精製炭水化物が疾患リスク側の細菌群と結びつく一方、野菜・大豆や運動が酪酸産生菌を介して抗炎症に働く仕組みが数字で裏付けられました。",
+      "investment_related": false,
+      "deja_vu_note": "kl039（オリーブ油と血糖値）など食と健康に関する研究検証回",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "東京医科大学 腸内細菌",
+      "jp_title_anchor": [
+        "Japanese 4Dコホート",
+        "東京医科大学",
+        "媒介軸"
+      ],
+      "announcement_type": "research",
+      "freshness": 4,
+      "overall_score": 3.25,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T06:57:43",
+      "presented_on": [],
+      "topic_first_date": "2026-11-05",
+      "topic_first_source": "候補 92d106ccbb のannounced_on（生活習慣と慢性疾患、2つの腸内細菌群が関与か 6803人調査）",
+      "topic_series": "92d106ccbb",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-14",
+        "title": "生活習慣と慢性疾患、2つの腸内細菌群が関与か 6803人調査",
+        "id": "92d106ccbb",
+        "source": "Googleニュース（腸内細菌 研究）／NEWS SALT"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "ok": true,
+          "status": "DOI実在（ハンドルAPI、10.1038/s41591-026-04744-5）",
+          "url": "https://doi.org/10.1038/s41591-026-04744-5",
+          "method": "doi_handle",
+          "kind": "paper"
+        },
+        {
+          "url": "https://www.jihs.go.jp/content4/pressrelease/2026/20261105_1900.pdf",
+          "ok": true,
+          "status": "HTTP 200",
+          "page_title": "",
+          "anchor_hit": false,
+          "method": "http",
+          "kind": "press_release"
+        }
+      ],
+      "primary_verified_at": "2026-11-16T06:59:49",
+      "primary_history": [
+        {
+          "at": "2026-11-16T06:59:49",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://doi.org/10.1038/s41591-026-04744-5",
+              "status": "DOI実在（ハンドルAPI、10.1038/s41591-026-04744-5）",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://www.jihs.go.jp/content4/pressrelease/2026/20261105_1900.pdf",
+              "status": "HTTP 200",
+              "final_url": "",
+              "ok": true
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://doi.org/10.1038/s41591-026-04744-5",
+          "ok": true,
+          "status": "DOI実在（ハンドルAPI、10.1038/s41591-026-04744-5）"
+        },
+        {
+          "url": "https://www.jihs.go.jp/content4/pressrelease/2026/20261105_1900.pdf",
+          "ok": true,
+          "status": "HTTP 200"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "doi.org: DOI実在（ハンドルAPI、10.1038/s41591-026-04744-5） ／ jihs.go.jp: HTTP 200",
+      "url_checked_at": "2026-11-16T06:59:49",
+      "buzz_history": [
+        {
+          "at": "2026-11-16T07:01:59",
+          "query": "東京医科大学 腸内細菌",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "生活習慣と健康・慢性疾患をつなぐ腸内細菌の「対照的な2つの媒介軸」を発見― 日本人約6,800人の大規模解析から「腸活」のエビデンスを提示 ―",
+              "outlet": "沖縄タイムス社",
+              "date": "2026-11-05"
+            }
+          ],
+          "trend": 0.0,
+          "articles_14d": 1,
+          "raw_items": 7
+        }
+      ],
+      "buzz_measured_at": "2026-11-16T07:01:59",
+      "buzz_measured": 2,
+      "buzz_outlets": 1,
+      "yahoo": false,
+      "buzz_evidence": [
+        {
+          "title": "生活習慣と健康・慢性疾患をつなぐ腸内細菌の「対照的な2つの媒介軸」を発見― 日本人約6,800人の大規模解析から「腸活」のエビデンスを提示 ―",
+          "outlet": "沖縄タイムス社",
+          "date": "2026-11-05"
+        }
+      ],
+      "buzz_trend": 0.0,
+      "buzz_articles_14d": 1,
+      "buzz_raw_items": 7,
+      "buzz_query": "東京医科大学 腸内細菌",
+      "buzz_adopted_at": "2026-11-16T07:01:59",
+      "buzz_adopted_n": 1
+    },
+    {
+      "title": "エナジードリンクに関連する心停止の報告頻度はノンカフェイン製品の約11倍、特に若年層で報告が目立つ",
+      "url": "https://gigazine.net/news/20261113-energy-drink-cardiac-arrest/",
+      "published": "2026-11-13",
+      "source": "GIGAZINE",
+      "source_kind": "media",
+      "summary": "エナジードリンクやカフェインを含むサプリメントに関連した心停止の報告頻度が刺激成分を含まない製品と比べて約11倍に上るという研究結果が発表されました。アメリカ心臓協会が発表した研究では心筋梗塞や不整脈の報告頻度も高く、特に18～34歳の若年層に関する報告が目立ったとのことです。 続きを読む...",
+      "id": "4430a33e2d",
+      "sources": [
+        "GIGAZINE"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://newsroom.heart.org/",
+          "what_it_states": "2017〜2025年にFDA（米国食品医薬品局）へ報告された健康被害2万8345件（うち刺激物入りエナジードリンク・サプリメント関連854件、非刺激物関連2万7491件）を分析。自発報告の中で心停止が記載された比率（報告オッズ比／不均衡報告比）がノンカフェイン製品群と比べ約11倍（心筋梗塞約4.5倍、心室性不整脈・動悸約4倍）であった。心血管報告の約45%が18〜34歳。因果関係や全摂取者における実際の発症リスクを示すものではなく、査読前の予備的研究（AHA Scientific Sessions 2026 抄録MDP0323）"
+        }
+      ],
+      "announced_on": "2026-11-02",
+      "headline_claim": "エナジードリンクに関連する心停止の報告頻度はノンカフェイン製品の約11倍で、特に若年層で目立つとされる。",
+      "actual_content": "バージニア大学医学部の研究チームがFDAの自発的有害事象報告データベース（2017〜2025年の計2万8345件、うち刺激物含有製品は854件）を解析した予備的抄録発表です。カフェインや刺激物を含む製品に関する有害報告のうち、心停止と記載された割合が非刺激製品の報告と比べて約11倍（心筋梗塞約4.5倍）に達し、その約45%が18〜34歳でした。ただし母集団（安全に飲んだ総人数）が分からない自発報告の比較であるため「飲むと心停止リスクが11倍になる」という意味ではなく、因果関係も証明されていません。",
+      "verifiability": 4,
+      "hype_gap": 4,
+      "promise": 2,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 3,
+      "work_relevance": 2,
+      "audience_fit": 2,
+      "tangible": 1,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "bp_stroke_heart",
+      "entry_question": "エナジードリンクで心停止が11倍になるって本当？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "pending",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "「心停止のリスクが11倍」ではなく、FDAに寄せられた被害報告の中で「心停止」という言葉が出てくる比率が約11倍だったという統計の数字です。安全に飲んでいる人の総数が分からない自発報告データであり、査読前の学会発表抄録の段階です。",
+      "hope_material": "一般的な健康な成人の場合、FDAや米国心臓協会（AHA）は1日400mgまでのカフェイン（コーヒー4〜5杯分）であれば一般に安全な範囲としています。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "エナジードリンク 心停止",
+      "jp_title_anchor": [
+        "エナジードリンク",
+        "心停止"
+      ],
+      "announcement_type": "research",
+      "freshness": 4,
+      "overall_score": 3.0,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T06:57:53",
+      "presented_on": [],
+      "topic_first_date": "2026-11-02",
+      "topic_first_source": "候補 4430a33e2d のannounced_on（エナジードリンクに関連する心停止の報告頻度はノンカフェイン製）",
+      "topic_series": "4430a33e2d",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-13",
+        "title": "エナジードリンクに関連する心停止の報告頻度はノンカフェイン製品の約11倍、特に若年層で報告が目立つ",
+        "id": "4430a33e2d",
+        "source": "GIGAZINE"
+      }
+    },
+    {
+      "title": "全固体電池のEVは１台１億円？　ナトリウム、カリウム、硫黄……多岐に渡って研究される次世代バッテリーの実用化は「当分先」な理由",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE90dGpicFZDcVZxRUxfUFNLaUdwdHY2Mm05elJzdWtjOHNxM2hkX2M5NjZDVjY2OHB2S3k2bFJneDdkMUJpdzRia3JrX3FFRlBvZTF30gFYQVVfeXFMT1FIZU1PSFJlZm1IQWxJZ3dhVDdXX0FVdnNOTW0tNHd6cXdZY3l2OWVVNTl3ckVmb1FPejhnMmgyWmZlNEhCeVljRUM5U0pvTk5IcFppdDJVYg?oc=5",
+      "published": "2026-11-12",
+      "source": "Googleニュース（全固体電池）／WEB CARTOP",
+      "source_kind": "media",
+      "outlet": "WEB CARTOP",
+      "outlet_host": "webcartop.jp",
+      "genre_hint": "life_tech",
+      "summary": "全固体電池のEVは１台１億円？　ナトリウム、カリウム、硫黄……多岐に渡って研究される次世代バッテリーの実用化は「当分先」な理由（WEB CARTOP）",
+      "id": "e54623531f",
+      "sources": [
+        "carview!",
+        "WEB CARTOP",
+        "Yahoo!ニュース",
+        "ｄメニューニュース"
+      ],
+      "dup_ids": [
+        "19e4da769a",
+        "f4f7c21c42",
+        "01ec370d95"
+      ],
+      "primary_sources": [],
+      "announced_on": "2026-11-12",
+      "headline_claim": "全固体電池を積んだEVは現在1台1億円相当になり、実用化は当分先である。",
+      "actual_content": "本記事は自動車ジャーナリストによる概況コラム記事であり、特定の研究機関や企業が発表したプレスリリースや学術論文といった一次資料に基づくものではない。記事中では「現在はEV1台の値段が1億円相当になる」との記述があるものの、具体的な試算根拠、前提となるセル容量、製造原価の内訳、算出企業・研究機関などのデータは示されていない。",
+      "verifiability": 1,
+      "hype_gap": 4,
+      "promise": 2,
+      "debate": 2,
+      "wonder": 2,
+      "life_relevance": 2,
+      "work_relevance": 2,
+      "audience_fit": 2,
+      "tangible": 1,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "mobility",
+      "entry_question": "全固体電池のEVは本当に1台1億円もするの？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "pending",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "記事自体が自動車ライターのコラムで、1台1億円という金額の積算根拠や参照元データが一切書かれておらず、一次資料で検証できない。",
+      "hope_material": "",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "全固体電池 御堀直嗣",
+      "jp_title_anchor": [
+        "全固体電池",
+        "1億円"
+      ],
+      "announcement_type": "other",
+      "freshness": 5,
+      "overall_score": 2.75,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "excluded",
+      "excluded_reason": "一次資料で確認できない",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T06:57:59",
+      "presented_on": [],
+      "topic_first_date": "2026-11-12",
+      "topic_first_source": "候補 e54623531f のannounced_on（全固体電池のEVは１台１億円？　ナトリウム、カリウム、硫黄…）",
+      "topic_series": "e54623531f",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-12",
+        "title": "全固体電池のEVは１台１億円？　ナトリウム、カリウム、硫黄……多岐に渡って研究される次世代バッテリーの実用化は「当分先」な理由",
+        "id": "e54623531f",
+        "source": "Googleニュース（全固体電池）／WEB CARTOP"
+      }
+    },
+    {
+      "title": "【からだ・こころナビ】おなかに散らばる腹膜播種を放射線でたたく 大阪大が新薬候補を開発",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFB4eU5zTzhlXzgwcDVmdzdsejNIcUVvMzB5V0pmcm81b1ZFQjhQUGpTTlJNUFdJX0loUkhlU3JwbjJ4ZzZ4TGd2SVlQdjlXUQ?oc=5",
+      "published": "2026-11-15",
+      "source": "Googleニュース（がん 新しい治療 研究）／静岡新聞DIGITAL",
+      "source_kind": "media",
+      "outlet": "静岡新聞DIGITAL",
+      "outlet_host": "news.at-s.com",
+      "genre_hint": "medical",
+      "summary": "【からだ・こころナビ】おなかに散らばる腹膜播種を放射線でたたく 大阪大が新薬候補を開発（静岡新聞DIGITAL）",
+      "id": "16d99889bc",
+      "sources": [
+        "静岡新聞DIGITAL"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://resou.osaka-u.ac.jp/ja/research/2026/20261023_2",
+          "what_it_states": "大阪大学大学院医学系研究科等のチームが、アルファ線放出核種アスタチン211（211At）を標識したナノ粒子を腹腔内に直接投与する薬剤を開発。浮遊がん細胞を狙い撃ちし全身被ばくを抑制する基礎研究成果を発表"
+        },
+        {
+          "kind": "paper",
+          "url": "https://www.mdpi.com/journal/pharmaceutics",
+          "what_it_states": "学術誌「Pharmaceutics」に公開。アスタチン211（半減期7.2時間、体内飛程数十〜100μm未満のα線）を結合したナノ粒子による腹膜播種モデルでの細胞傷害性と体内動態を検証"
+        }
+      ],
+      "announced_on": "2026-10-23",
+      "headline_claim": "おなかに散らばって手術や抗がん剤が効きにくい腹膜播種を、放射線（アルファ線）で狙い撃ちする新薬候補を大阪大学が開発した。",
+      "actual_content": "大阪大学などのチームが、飛距離がごく短く破壊力が強いアルファ線を出す放射性核種「アスタチン211」を結合したナノ粒子を開発し、腹腔内に直接投与する実験手法を学術誌Pharmaceuticsで発表した。全身への被ばくや副作用を抑えつつ、腹腔内に散らばる微小な浮遊がん細胞を局所滞留させて叩く設計である。ただし現在は前臨床（動物・細胞実験）段階であり、ヒトを対象とした安全性・有効性を確認する臨床試験（治験）はこれからの段階である。",
+      "verifiability": 5,
+      "hype_gap": 2,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 1,
+      "audience_fit": 3,
+      "tangible": 3,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "cancer",
+      "entry_question": "おなかに散らばるがん「腹膜播種」を放射線でたたく新薬は、もうすぐ使える？",
+      "surprise_line": "50〜60代の人が、切除不能な散らばるがんを腹腔内放射線で狙い撃つ技術に驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "マウスや細胞での基礎実験段階であり、ヒトでの安全性や効果を確かめる臨床治験は始まっていない。アスタチン211は半減期が約7.2時間と非常に短いため、病院への供給・配送体制のハードルも残る。",
+      "hope_material": "アルファ線は飛距離が細胞数個分（数十μm）と短いため、腹腔内への直接投与で正常組織や全身への被ばくを抑えながら難治性の微小播種を攻撃できる論理的利点がある。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "大阪大 腹膜播種 アスタチン",
+      "jp_title_anchor": [
+        "腹膜播種",
+        "大阪大",
+        "アスタチン"
+      ],
+      "announcement_type": "research",
+      "freshness": 2,
+      "overall_score": 2.75,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T06:58:12",
+      "presented_on": [],
+      "topic_first_date": "2026-10-23",
+      "topic_first_source": "候補 16d99889bc のannounced_on（【からだ・こころナビ】おなかに散らばる腹膜播種を放射線でたた）",
+      "topic_series": "16d99889bc",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-15",
+        "title": "【からだ・こころナビ】おなかに散らばる腹膜播種を放射線でたたく 大阪大が新薬候補を開発",
+        "id": "16d99889bc",
+        "source": "Googleニュース（がん 新しい治療 研究）／静岡新聞DIGITAL"
       }
     }
   ]
