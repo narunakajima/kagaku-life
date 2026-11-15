@@ -328,12 +328,15 @@ def run(episode_id: str, publish_at: Optional[str] = None, publish_now: bool = F
 
     ep["youtube_url"] = f"https://youtu.be/{main_id}"
     ep["shorts_url"] = f"https://youtu.be/{shorts_id}"
-    ep["scheduled_at"] = publish_at if publish_at else ""
+    # 2026-11-16: 即時公開（--now）でも公開日時を空にしない（月次集計 kl_analytics_report.py が
+    # scheduled_at の日付で14日窓を決めるため、空だと集計から落ちる。kl044・kl046 の教訓）。
+    # 即時公開は、アップロード完了時刻（JST）を公開日時として残す。
+    ep["scheduled_at"] = publish_at if publish_at else datetime.now(JST).strftime("%Y-%m-%d %H:%M")
     # 2026-11-12: 関連動画設定（Muse が Studio で実施）用に、動画ID・公開日時・関連付けを必ず記録する
     ep["related_plan"] = {
         "main_video_id": main_id,
         "shorts": [{"video_id": shorts_id, "related_main_video_id": main_id}],
-        "publish_at": ep["scheduled_at"],  # JST "YYYY-MM-DD HH:MM"。空なら即時公開
+        "publish_at": ep["scheduled_at"],  # JST "YYYY-MM-DD HH:MM"（即時公開はアップロード完了時刻）
     }
     with open(ep_json, "w", encoding="utf-8") as f:
         json.dump(ep, f, ensure_ascii=False, indent=2)

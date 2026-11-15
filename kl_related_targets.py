@@ -41,7 +41,7 @@ def search_keyword(title: str) -> str:
 def is_public(ep: dict, now: datetime) -> bool:
     sched = ep.get("scheduled_at")
     if not sched:
-        # --now で即時公開した回は scheduled_at が空。予約取り消し中でなければ公開済み
+        # 2026-11-16 以前に --now で即時公開した回（kl044・kl046 は補記済み）は scheduled_at が空。予約取り消し中でなければ公開済み
         return not ep.get("publish_hold")
     when = datetime.strptime(sched, "%Y-%m-%d %H:%M").replace(tzinfo=JST)
     return when <= now

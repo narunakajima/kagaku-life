@@ -92,6 +92,7 @@ def collect(since: str) -> list:
             out.append({
                 "channel": label, "video_id": v["id"], "episode": episode, "kind": kind,
                 "title": sn.get("title", ""), "published": published[:10],
+                "published_at": published,  # 2026-11-16: 時刻まで（UTC, RFC3339）。公開日時の裏取り用
                 "age_days": (now - pub_dt).days, "views": views, "likes": likes,
                 "like_rate": round(likes / views, 4) if views else None,
                 "comments": int(st.get("commentCount", 0)),

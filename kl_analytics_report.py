@@ -22,6 +22,7 @@ import sys
 from collections import defaultdict
 from datetime import date, datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 BASE = Path(__file__).resolve().parent
 # 2026-10-04: 保存先をGoogle Driveの同期フォルダに移した（MacBook・iMacで共有するため。
@@ -130,8 +131,16 @@ def load_episode_map():
         publish_date = None
         scheduled_at = d.get("scheduled_at") or ""
         if scheduled_at:
+            # 2026-11-16: Reporting API の date は太平洋時間の日付。scheduled_at は JST なので、
+            # 時刻があれば太平洋時間に直した日付を公開日にする（即時公開の回で初日の再生が窓から落ちるのを防ぐ。
+            # 19:00 JST の予約回は太平洋時間でも同じ日付なので、既存の数字は変わらない）
             try:
-                publish_date = datetime.strptime(scheduled_at.split(" ")[0], "%Y-%m-%d").date()
+                if " " in scheduled_at.strip():
+                    dt = datetime.strptime(scheduled_at.strip()[:16], "%Y-%m-%d %H:%M").replace(
+                        tzinfo=ZoneInfo("Asia/Tokyo"))
+                    publish_date = dt.astimezone(ZoneInfo("America/Los_Angeles")).date()
+                else:
+                    publish_date = datetime.strptime(scheduled_at, "%Y-%m-%d").date()
             except ValueError:
                 publish_date = None
 
@@ -238,6 +247,23 @@ def aggregate(vid_info, ep_filter=None, age_window_days=None):
                     continue
                 traffic_stats[vid][row["traffic_source_type"]] += int(row["views"])
 
+    # 2026-11-16追加: 動画ごとの登録の増減・高評価（kl-channel_basic_a3。2026-10-04分から存在）。
+    # 既存の集計には触れず、別の辞書に積んで rows に項目を足すだけにしている。
+    # ZZ（国不明）の行に高評価・登録が乗ることがあるので、views の有無にかかわらず全行を足す。
+    engage_stats = defaultdict(lambda: {"likes": 0, "subs_gained": 0, "subs_lost": 0})
+    for path in glob.glob(str(RAW / "kl-channel_basic_a3" / "*.csv")):
+        with open(path, encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                vid = row["video_id"]
+                if ep_filter and not ep_filter(vid_info.get(vid, {}).get("ep")):
+                    continue
+                if not in_window(vid, row["date"]):
+                    continue
+                e = engage_stats[vid]
+                e["likes"] += int(float(row.get("likes") or 0))
+                e["subs_gained"] += int(float(row.get("subscribers_gained") or 0))
+                e["subs_lost"] += int(float(row.get("subscribers_lost") or 0))
+
     # 以前は video_stats（channel_combined_a3由来）だけをループしており、
     # 再生数が0日でこのレポートに一切行を持たない動画（例: kl006本編。
     # 再生0のため combined_a3 に該当日の行自体が生成されないが、
@@ -276,6 +302,10 @@ def aggregate(vid_info, ep_filter=None, age_window_days=None):
             "engaged_rate": round(engaged_rate, 1),
             "impressions": r["impressions"],
             "ctr_pct": round(ctr, 2),
+            "publish_date": info.get("publish_date"),
+            "likes": engage_stats[vid]["likes"] if vid in engage_stats else 0,
+            "subs_gained": engage_stats[vid]["subs_gained"] if vid in engage_stats else 0,
+            "subs_lost": engage_stats[vid]["subs_lost"] if vid in engage_stats else 0,
         })
     rows.sort(key=lambda x: -x["views"])
     return rows, traffic_stats
@@ -406,6 +436,43 @@ def print_pattern_rollup(main_rows: list, shorts_rows: list) -> None:
                                           for r in sorted(lst, key=lambda x: -x["views"] * x["engaged_rate"])))
 
 
+def _basic_first_date():
+    """kl-channel_basic_a3（高評価・登録の増減）の一番古い日付。これより前に公開した回は
+    窓の頭が欠けるので「データ不足」と表示する。"""
+    dates = []
+    for path in glob.glob(str(RAW / "kl-channel_basic_a3" / "*.csv")):
+        try:
+            dates.append(datetime.strptime(Path(path).stem, "%Y-%m-%d").date())
+        except ValueError:
+            continue
+    return min(dates) if dates else None
+
+
+def print_engagement_table(adj_rows: list) -> None:
+    """動画ごとの公開後AGE_WINDOW_DAYS日の「登録の増減」と「高評価」（2026-11-16追加、月次評価の提案2）。
+    チームの目標（登録の純増・高評価率）の月次集計を手作業にしないための表。窓が完了した動画だけ。
+    basic_a3 は 2026-10-04 分からしか無いため、それより前に公開した回は「データ不足」を付ける。"""
+    if not adj_rows:
+        return
+    first = _basic_first_date()
+    print(f"\n--- 動画ごとの登録の増減・高評価（公開後{AGE_WINDOW_DAYS}日間・窓が完了した動画のみ） ---")
+    print(f"{'EP':<8}{'登録+':>6}{'登録-':>6}{'純増':>6}{'高評価':>7}{'Views':>7}{'高評価率%':>10}  備考")
+    tot = {"g": 0, "l": 0, "likes": 0, "views": 0}
+    for r in sorted(adj_rows, key=lambda x: (x["ep"], x["is_shorts"])):
+        ep_label = r["ep"] + ("*" if r["is_shorts"] else "")
+        short_data = first is not None and r.get("publish_date") is not None and r["publish_date"] < first
+        rate = f"{r['likes'] / r['views'] * 100:.2f}" if r["views"] else "-"
+        note = "データ不足（basic_a3は10/4〜）" if short_data else ""
+        print(f"{ep_label:<8}{r['subs_gained']:>6}{r['subs_lost']:>6}{r['subs_gained'] - r['subs_lost']:>6}"
+              f"{r['likes']:>7}{r['views']:>7}{rate:>10}  {note}")
+        if not short_data:
+            tot["g"] += r["subs_gained"]; tot["l"] += r["subs_lost"]
+            tot["likes"] += r["likes"]; tot["views"] += r["views"]
+    rate = f"{tot['likes'] / tot['views'] * 100:.2f}" if tot["views"] else "-"
+    print(f"合計（データ不足を除く）: 登録+{tot['g']} / 登録-{tot['l']} / 純増{tot['g'] - tot['l']} / 高評価{tot['likes']} / 高評価率{rate}%")
+    print("（* = Shorts。高評価率は高評価÷再生数。1本あたりの数が小さいので、回どうしの比較は参考程度）")
+
+
 def print_report(rows, traffic_stats, label, rows_age_adjusted=None, rows_shorts=None):
     print(f"\n{'='*95}\n{label}\n{'='*95}")
     # 「完了率%」は実際には engaged_views/views（エンゲージ率、Shorts的には
@@ -455,6 +522,7 @@ def print_report(rows, traffic_stats, label, rows_age_adjusted=None, rows_shorts
         for key, title in (("slot_label", "選び方別"), ("domain_label", "領域別")):
             print_shorts_rollup(rows_shorts, key, title)
     print_pattern_rollup(adj_rows, rows_shorts)
+    print_engagement_table(adj_rows)
 
     src_total = defaultdict(int)
     for vid, d in traffic_stats.items():
