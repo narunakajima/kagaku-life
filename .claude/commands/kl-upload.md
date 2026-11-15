@@ -43,6 +43,10 @@ python3 $HOME/kagaku-life/kl_sns_up.py --episode kl{NNN}
 python3 $HOME/kagaku-life/kl_sns_up.py --episode kl{NNN} --now
 ```
 
+即時公開（`--now`）でも、公開日時は `kl_sns_up.py` がエピソードJSONに記録する
+（2026-11-16、指示2026-11-16-001で対応）。月次集計はこの公開日時を基準にするため、
+STEP 3 の完了報告で記録が残っていることを確認する。
+
 **日時を手動指定（JST）:**
 ```bash
 python3 $HOME/kagaku-life/kl_sns_up.py --episode kl{NNN} --publish-at "2026-08-29 19:00"
