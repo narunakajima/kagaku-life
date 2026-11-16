@@ -348,3 +348,10 @@
 {"ts": "2026-11-16T17:22:31+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl057", "step": "11", "result": "ok", "retries": 0, "note": "進行可（条件: サムネの札の見出しを日本の店に、S09カードの引用を縮める）。読みQA 11行は言い換えなし。写真なしを了承。Muse所見: 16:9は届く・9:16の位置指定は効かない"}
 {"ts": "2026-11-16T17:23:17+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl057", "step": "7", "result": "ok", "retries": 0, "note": "zoom_anchor 3/13書込（残りはカード・固定背景）、finalize完了"}
 {"ts": "2026-11-17T07:33:04+09:00", "kind": "call", "agent": "kl-art-director", "session": "bf1c7a21-4e6f-470a-82cd-97289eb4101c"}
+{"ts": "2026-11-17T07:46:32+09:00", "kind": "call", "agent": "kl-manager", "session": "bf1c7a21-4e6f-470a-82cd-97289eb4101c"}
+{"ts": "2026-11-17T07:47:59+09:00", "kind": "feedback", "agent": "kl-coordinator", "episode": "kl056", "source": "user", "severity": "major", "text": "2026-11-15 ユーザー判定: 製品紹介の回で製品写真・実物に近いイラストが無く、汎用イラストだけでは公開不可（製品ビジュアル基準未達）。台本・画像の段階で、実在の製品を描く回は製品が画面に出る設計になっていなかった"}
+{"ts": "2026-11-17T07:47:59+09:00", "kind": "feedback", "agent": "kl-coordinator", "episode": "kl056", "source": "manager", "severity": "minor", "text": "最終確認（ケビン）: イメージ図バッジがシーン単位で付き、引用カード・製品の無い画面にも出た。visual 単位（shows_product）に直した（kl_dialogue.main_timeline）"}
+{"ts": "2026-11-17T07:47:59+09:00", "kind": "work", "agent": "kl-art-director", "episode": "kl056", "step": "製品イラスト画像レビュー・修正（S07・S08・Shorts）", "result": "ok", "retries": 0, "note": "ロボットが小さい・柱の形が不一致の2枚を作り直し"}
+{"ts": "2026-11-17T07:47:59+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl056", "step": "最終判定（製品イラスト作り直し後）", "result": "retry", "retries": 0, "note": "バッジの出し方を直して再判定"}
+{"ts": "2026-11-17T08:27:33+09:00", "kind": "call", "agent": "kl-manager", "session": "bf1c7a21-4e6f-470a-82cd-97289eb4101c"}
+{"ts": "2026-11-17T08:27:40+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl056", "step": "最終判定（バッジ修正後の再判定）", "result": "ok", "retries": 0, "note": "合格。完成動画をユーザー確認へ"}

@@ -1136,8 +1136,10 @@ def render_layer(state: dict, layout: dict, cast: dict, bank: SpriteBank,
     if state.get("badge"):
         fb = _font(FONT_MEDIUM, 28 if W > 1000 else 30)
         bw = _text_w(dr, state["badge"], fb)
-        dr.rounded_rectangle((24, 22, 24 + bw + 28, 22 + 48), radius=10, fill=(0, 0, 0, 120))
-        dr.text((38, 29), state["badge"], font=fb, fill=(255, 255, 255))
+        # 自己紹介の帯（上部の関係の一文）が出ている間は、帯に重ならないよう下げる
+        by0 = 100 if state.get("intro") else 22
+        dr.rounded_rectangle((24, by0, 24 + bw + 28, by0 + 48), radius=10, fill=(0, 0, 0, 120))
+        dr.text((38, by0 + 7), state["badge"], font=fb, fill=(255, 255, 255))
 
     # 論点の見出し（構成 v2。ラウンドの頭の数秒だけ、画面の中ほどに帯で出す。台詞は止めない）
     if state.get("round_title"):
@@ -1252,6 +1254,16 @@ def _state_key(state: dict, sprites: bool = True) -> str:
     return json.dumps(s, ensure_ascii=False, sort_keys=True)
 
 
+def _visual_badge(badge, vis: list, k: int):
+    """シーンのバッジ（「イメージ図」など）を、画像ごとに出すか決める（2026-11-17、kl056 の最終確認で指摘）。
+    visuals のどれかに shows_product が付いているシーンは、shows_product の画像の区間だけバッジを出す
+    （一次資料の引用カード・まとめカードに「実物と異なる場合があります」が重ならないように）。
+    どれにも付いていなければ従来どおりシーン全体に出す。"""
+    if badge and any(v.get("shows_product") for v in vis):
+        return badge if vis[k].get("shows_product") else None
+    return badge
+
+
 def main_timeline(ep: dict, scenes: list, offsets: list, durs: list, narr_delay: float,
                   total_dur: float, cast: dict) -> list:
     """本編の重ね合わせの時刻表 [(t_start, state), ...] を作る（時刻はグローバル秒）。"""
@@ -1279,7 +1291,7 @@ def main_timeline(ep: dict, scenes: list, offsets: list, durs: list, narr_delay:
         if vis:
             # 画像の列（2026-11-08）: カード・グラフの間だけ、立ち絵を check と同じ小さい大きさにする
             vmap = visual_line_map(scene)
-            events[-1] = (off, dict(base, chart=visual_small_cast(vis[0])))
+            events[-1] = (off, dict(base, chart=visual_small_cast(vis[0]), badge=_visual_badge(base["badge"], vis, 0)))
         v_from = scene.get("verdict_from_line") if scene["type"] == "verdict" else None
         for li, line in enumerate(lines):
             if "t0" not in line:
@@ -1303,8 +1315,9 @@ def main_timeline(ep: dict, scenes: list, offsets: list, durs: list, narr_delay:
             for c in cards:
                 t = off + narr_delay_s + line["t0"] + c["start"]
                 ln_chart = visual_small_cast(vis[vmap[li]]) if vis else chart
+                ln_badge = _visual_badge(base["badge"], vis, vmap[li]) if vis else base["badge"]
                 events.append((round(t, 3), dict(base, speaker=sp, exprs=exprs, text=c["text"],
-                                                 stamps=st, talk_end=talk_end, chart=ln_chart, **extra)))
+                                                 stamps=st, talk_end=talk_end, chart=ln_chart, badge=ln_badge, **extra)))
         # シーンの終わり（次のシーンの開始）まで最後の状態を保つ。後続シーンの開始で切り替わる
     events.sort(key=lambda e: e[0])
     if intro_windows:
