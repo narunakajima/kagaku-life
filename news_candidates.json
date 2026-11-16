@@ -65778,7 +65778,7 @@
       "presented_on": [],
       "topic_first_date": "2026-11-13",
       "topic_first_source": "候補 3cd8f147bb のannounced_on（【動画】佐賀市の自動運転バス、発車します 11月14日から実）",
-      "topic_series": "39d1001308",
+      "topic_series": "41c581ac2c",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-11-13",
@@ -68041,7 +68041,7 @@
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-16T07:02:49",
+      "primary_verified_at": "2026-11-16T14:13:02",
       "primary_history": [
         {
           "at": "2026-11-15T06:36:34",
@@ -68078,6 +68078,18 @@
               "ok": true
             }
           ]
+        },
+        {
+          "at": "2026-11-16T14:13:02",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://x.com/robotaxi",
+              "status": "HTTP 200「Robotaxi（@robotaxi） / X」",
+              "final_url": "",
+              "ok": true
+            }
+          ]
         }
       ],
       "url_check": [
@@ -68089,7 +68101,7 @@
       ],
       "url_ok": true,
       "url_status": "x.com: HTTP 200「Robotaxi（@robotaxi） / X」",
-      "url_checked_at": "2026-11-16T07:02:49",
+      "url_checked_at": "2026-11-16T14:13:02",
       "buzz_history": [
         {
           "at": "2026-11-15T06:41:21",
@@ -68270,7 +68282,7 @@
       "presented_on": [],
       "topic_first_date": "2026-11-13",
       "topic_first_source": "候補 3cd8f147bb のannounced_on（【動画】佐賀市の自動運転バス、発車します 11月14日から実）",
-      "topic_series": "39d1001308",
+      "topic_series": "41c581ac2c",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-11-13",
@@ -68524,7 +68536,7 @@
       ],
       "topic_first_date": "2026-11-12",
       "topic_first_source": "プールの記事（OpenAI ChatGPT Wallet、AI決済競争に参入）",
-      "topic_series": "2215c1d3ed",
+      "topic_series": "03ba69f8ab",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-11-12",
@@ -68543,79 +68555,13 @@
         },
         {
           "url": "https://blog.google/products/search/universal-commerce-protocol",
-          "ok": false,
-          "status": "HTTP 404（転送先 https://blog.google/products/search/universal-commerce-protocol/ が404）（再確認5回とも404・開けず）",
-          "final_url": "https://blog.google/products/search/universal-commerce-protocol/",
-          "redirects": [
-            "308 https://blog.google/products/search/universal-commerce-protocol/"
-          ],
+          "ok": null,
+          "status": "HTTP 308（ボット拒否の可能性。ブラウザで確認）",
           "method": "http",
-          "attempts": [
-            {
-              "url": "https://blog.google/products/search/universal-commerce-protocol",
-              "via": "初回",
-              "status": "HTTP 404（転送先 https://blog.google/products/search/universal-commerce-protocol/ が404）",
-              "final_url": "https://blog.google/products/search/universal-commerce-protocol/",
-              "redirects": [
-                "308 https://blog.google/products/search/universal-commerce-protocol/"
-              ],
-              "at": "2026-11-16T07:03:04"
-            },
-            {
-              "url": "https://blog.google/products/search/universal-commerce-protocol",
-              "via": "英語のAccept-Languageで再試行",
-              "status": "HTTP 404（転送先 https://blog.google/products/search/universal-commerce-protocol/ が404）",
-              "final_url": "https://blog.google/products/search/universal-commerce-protocol/",
-              "redirects": [
-                "308 https://blog.google/products/search/universal-commerce-protocol/"
-              ],
-              "at": "2026-11-16T07:03:09"
-            },
-            {
-              "url": "https://blog.google/products/search/universal-commerce-protocol",
-              "via": "20秒おいて再試行",
-              "status": "HTTP 404（転送先 https://blog.google/products/search/universal-commerce-protocol/ が404）",
-              "final_url": "https://blog.google/products/search/universal-commerce-protocol/",
-              "redirects": [
-                "308 https://blog.google/products/search/universal-commerce-protocol/"
-              ],
-              "at": "2026-11-16T07:03:29"
-            },
-            {
-              "url": "https://blog.google/us/en/products/search/universal-commerce-protocol",
-              "via": "別の地域・言語のURL",
-              "status": "HTTP 404（転送先 https://blog.google/us/en/products/search/universal-commerce-protocol/ が404）",
-              "final_url": "https://blog.google/us/en/products/search/universal-commerce-protocol/",
-              "redirects": [
-                "308 https://blog.google/us/en/products/search/universal-commerce-protocol/"
-              ],
-              "at": "2026-11-16T07:03:35"
-            },
-            {
-              "url": "https://blog.google/en-us/products/search/universal-commerce-protocol",
-              "via": "別の地域・言語のURL",
-              "status": "HTTP 404（転送先 https://blog.google/en-us/products/search/universal-commerce-protocol/ が404）",
-              "final_url": "https://blog.google/en-us/products/search/universal-commerce-protocol/",
-              "redirects": [
-                "308 https://blog.google/en-us/products/search/universal-commerce-protocol/"
-              ],
-              "at": "2026-11-16T07:03:40"
-            },
-            {
-              "url": "https://blog.google/en/products/search/universal-commerce-protocol",
-              "via": "別の地域・言語のURL",
-              "status": "HTTP 404（転送先 https://blog.google/en/products/search/universal-commerce-protocol/ が404）",
-              "final_url": "https://blog.google/en/products/search/universal-commerce-protocol/",
-              "redirects": [
-                "308 https://blog.google/en/products/search/universal-commerce-protocol/"
-              ],
-              "at": "2026-11-16T07:03:44"
-            }
-          ],
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-16T07:03:44",
+      "primary_verified_at": "2026-11-16T14:13:10",
       "primary_history": [
         {
           "at": "2026-11-15T06:38:47",
@@ -68652,6 +68598,24 @@
               "ok": false
             }
           ]
+        },
+        {
+          "at": "2026-11-16T14:13:10",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://openai.com/index/chatgpt-wallet",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            },
+            {
+              "url": "https://blog.google/products/search/universal-commerce-protocol",
+              "status": "HTTP 308（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            }
+          ]
         }
       ],
       "url_check": [
@@ -68662,13 +68626,13 @@
         },
         {
           "url": "https://blog.google/products/search/universal-commerce-protocol",
-          "ok": false,
-          "status": "HTTP 404（転送先 https://blog.google/products/search/universal-commerce-protocol/ が404）（再確認5回とも404・開けず）"
+          "ok": null,
+          "status": "HTTP 308（ボット拒否の可能性。ブラウザで確認）"
         }
       ],
-      "url_ok": false,
-      "url_status": "openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ blog.google: HTTP 404（転送先 https://blog.google/products/search/universal-commerce-protocol/ が404）（再確認5回とも404・開けず）",
-      "url_checked_at": "2026-11-16T07:03:44",
+      "url_ok": null,
+      "url_status": "openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ blog.google: HTTP 308（ボット拒否の可能性。ブラウザで確認）",
+      "url_checked_at": "2026-11-16T14:13:10",
       "buzz_history": [
         {
           "at": "2026-11-15T06:41:27",
@@ -68800,6 +68764,11 @@
       ],
       "primary_sources": [
         {
+          "kind": "official_blog",
+          "url": "https://openai.com/index/introducing-businesses-chatgpt/",
+          "what_it_states": "本体の発表文（2026-11-10）。物を選ぶ場所が検索からAIとの会話へ移る最初の一歩という位置づけ（2026-11-16 内蔵ブラウザで全文確認）"
+        },
+        {
           "kind": "official_page",
           "url": "https://openai.com/business/businesses-in-chatgpt",
           "what_it_states": "企業向け新機能『Businesses in ChatGPT』をベータ公開。企業がBusiness Hubで自社登録・認証を行うと、価格・在庫等の商品カタログ連携や言及回数・クリック数・頻出トピックの集計インサイトを確認可能。ただし対話型接客を行う『Business Agent』は米国対象のEC・オンラインサービス事業者に限定して先行提供され、顧客との個別会話内容は企業には共有されない設計"
@@ -68848,7 +68817,7 @@
       "overall_score": 3.6,
       "scan_version": "2026-11-07-interest",
       "interest_version": "2026-11-07",
-      "status": "available",
+      "status": "used",
       "excluded_reason": "",
       "scored_at": "2026-11-15",
       "first_seen_at": "2026-11-15T06:36:03",
@@ -68883,7 +68852,7 @@
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-16T07:02:58",
+      "primary_verified_at": "2026-11-16T14:13:13",
       "primary_history": [
         {
           "at": "2026-11-15T06:38:51",
@@ -68938,6 +68907,24 @@
               "ok": null
             }
           ]
+        },
+        {
+          "at": "2026-11-16T14:13:13",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://openai.com/business/businesses-in-chatgpt",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            },
+            {
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            }
+          ]
         }
       ],
       "url_check": [
@@ -68954,7 +68941,7 @@
       ],
       "url_ok": null,
       "url_status": "openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
-      "url_checked_at": "2026-11-16T07:02:58",
+      "url_checked_at": "2026-11-16T14:13:13",
       "buzz_history": [
         {
           "at": "2026-11-15T06:41:33",
@@ -69049,9 +69036,9 @@
       "prior_art": {
         "version": "2026-11-11",
         "checked_at": "2026-11-15T06:42:06",
-        "status": "not_realized",
+        "status": "realized_partial",
         "evidence": [],
-        "reason": "AIプラットフォーム内で企業が認証窓口を構え接客・商品案内する仕組みは他社未提供。",
+        "reason": "2026-01-11 に Google が検索の中で Business Agent（米国の小売）を開始済み。『初めて』とは言わない（2026-11-16 ミア確認）",
         "known_id": "",
         "novelty_exception": false,
         "novelty_line": "",
@@ -69060,7 +69047,8 @@
       "buzz_jp_measured": 5,
       "buzz_outlets_foreign": 44,
       "buzz_foreign_boost": false,
-      "buzz_query_en": "Businesses in"
+      "buzz_query_en": "Businesses in",
+      "used_in": "kl057"
     },
     {
       "title": "テスラ、ロボタクシー「サイバーキャブ」の個人販売開始 台数限定で",
@@ -70109,7 +70097,7 @@
       "presented_on": [],
       "topic_first_date": "2026-11-12",
       "topic_first_source": "プールの記事（OpenAI ChatGPT Wallet、AI決済競争に参入）",
-      "topic_series": "2215c1d3ed",
+      "topic_series": "03ba69f8ab",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-11-12",
@@ -70945,6 +70933,1322 @@
         "title": "【からだ・こころナビ】おなかに散らばる腹膜播種を放射線でたたく 大阪大が新薬候補を開発",
         "id": "16d99889bc",
         "source": "Googleニュース（がん 新しい治療 研究）／静岡新聞DIGITAL"
+      }
+    },
+    {
+      "title": "「ロボタクシー」事故の責任はメーカーか乗客か？ 法整備と自動車保険のいま",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBIQmlqcnJVVElGR212ZDZTMmtyRnllVGJLcDMxTVJfcW5ocVJoNEhaMkNhZjVXeExvOWF2UTlYbWZlZVNTcUxOei1iS2lQdUFFS2h6UkN2WVl6N1hoOC0w?oc=5",
+      "published": "2026-11-15",
+      "source": "Googleニュース（ロボタクシー 運行開始）／bestcarweb.jp",
+      "source_kind": "media",
+      "outlet": "bestcarweb.jp",
+      "outlet_host": "bestcarweb.jp",
+      "genre_hint": "life_tech",
+      "summary": "「ロボタクシー」事故の責任はメーカーか乗客か？ 法整備と自動車保険のいま（bestcarweb.jp）",
+      "series_query": "autonomy_logistics_watch",
+      "id": "7aaddbaae2",
+      "sources": [
+        "bestcarweb.jp",
+        "carview!"
+      ],
+      "dup_ids": [
+        "01d2d1bf2c"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://www.mlit.go.jp/jidosha/jidosha_tk2_000180.html",
+          "what_it_states": "国土交通省「ロボットタクシー導入等に向けた自動運転における自賠法上の損害賠償責任に関する検討会」報告書。レベル4ロボタクシー事故時の運行供用者責任（自賠法第3条）は原則として運行事業者（タクシー会社等）が負い、乗客は指示や運行に関与しないため運行供用者には当たらないと整理されている"
+        }
+      ],
+      "announced_on": "2025-04-18",
+      "headline_claim": "完全無人ロボタクシーが事故を起こした場合、責任を負うのは自動車メーカーか乗客かという疑問に対し、日本の現行法規と保険制度の整理が進んでいる。",
+      "actual_content": "国土交通省の検討会報告書等によると、レベル4無人自動運転タクシーにおける被害者救済は既存の自賠法（自動車損害賠償保障法）の枠組みが適用される。クルマを走らせて利益を得る運行事業者（タクシー会社等）が「運行供用者」として賠償責任を負い、乗客は運転に関与しないため責任を負わない。メーカーへの求償（PL法・製品瑕疵）は事業者が被害者へ補償した後の求償関係として整理されている。",
+      "verifiability": 4,
+      "hype_gap": 3,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 4,
+      "work_relevance": 3,
+      "audience_fit": 4,
+      "tangible": 3,
+      "decision_number": 2,
+      "series_fit": 1,
+      "concern_id": "mobility",
+      "entry_question": "無人ロボタクシーで事故が起きたら、乗客やメーカーの責任はどうなる？",
+      "surprise_line": "タクシー利用者が、無人車の事故でも客ではなく運行会社が賠償すると知り驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "soon"
+      },
+      "tsukkomi_material": "事故が起きても乗客が責任を問われない法的整理は既に確立しているが、システムの欠陥による事故で運行会社からメーカーへの求償がスムーズに進むかや保険料水準の不透明さは残る。",
+      "hope_material": "自賠責保険と任意保険の既存スキームにより、万が一歩行者事故等が起きても被害者が泣き寝入りせず、乗客も責任を負わずに利用できる制度設計が整っている。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "ロボタクシー 損害賠償責任 国土交通省",
+      "jp_title_anchor": [
+        "ロボタクシー",
+        "自賠法",
+        "運行供用者"
+      ],
+      "announcement_type": "policy",
+      "freshness": 1,
+      "overall_score": 2.4,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T14:18:07",
+      "presented_on": [],
+      "topic_first_date": "2025-04-18",
+      "topic_first_source": "候補 7aaddbaae2 のannounced_on（「ロボタクシー」事故の責任はメーカーか乗客か？ 法整備と自動）",
+      "topic_series": "7aaddbaae2",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-15",
+        "title": "「ロボタクシー」事故の責任はメーカーか乗客か？ 法整備と自動車保険のいま",
+        "id": "7aaddbaae2",
+        "source": "Googleニュース（ロボタクシー 運行開始）／bestcarweb.jp"
+      }
+    },
+    {
+      "title": "ナレッジセンス、未解決問題に関する数学的成果56本を公開",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1wajI5S1ZyZ2VvTFV6SFRjRFlTWlVGc1VCZlE3LVJoWDBpemJtUjVUZGJDeGtPWGpiaXpuUFJBcVB3Q3BjTzVQYjRjTGJoTkt4QUJjZUZoaFVkT0xaWlJuSmtuV05adlNUVmQ4Ri1CRVd1Ynl1OUY0?oc=5",
+      "published": "2026-11-14",
+      "source": "Googleニュース（AI 未解決問題 証明）／山口新聞 電子版",
+      "source_kind": "media",
+      "outlet": "山口新聞 電子版",
+      "outlet_host": "yama.minato-yamaguchi.co.jp",
+      "genre_hint": "ai",
+      "summary": "ナレッジセンス、未解決問題に関する数学的成果56本を公開（山口新聞 電子版）",
+      "series_query": "ai_scientist_watch",
+      "id": "43a009d679",
+      "sources": [
+        "山口新聞 電子版"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000000423.000073671.html",
+          "what_it_states": "自社構築のAuto Researchシステム（研究ハーネス）を用いて1週間で56本の数学研究成果をまとめ、GitHubでプレプリントとして公開。2001年に提起された幾何学のBarker–Larman問題に対し、4次元以上のすべての次元で反例を示した成果などを含む"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://github.com/KnowledgeSense/math",
+          "what_it_states": "未解決問題へのアプローチおよび論文プレプリント、証明、補助コード資料一式が公開されているレポジトリ"
+        }
+      ],
+      "announced_on": "2026-10-15",
+      "headline_claim": "ナレッジセンスが自社AI研究システムを使い、数学の未解決問題に関する研究成果56本を1週間でまとめて公開した。",
+      "actual_content": "ナレッジセンスが自社構築したAI研究ハーネスを用い、1週間で56本の数学プレプリント（未査読論文）を作成してGitHub上に公開した。2001年提起のBarker–Larman問題（球に接する切断面の体積から元の凸体を一意に特定できるか）に対し、4次元以上で断面体積が等しい異なる図形を構成し反例を示したとする成果が含まれる。ただし全成果はプレプリント段階であり、数学コミュニティによる査読やLean等の完全形式検証による厳密な確認は進行中である。",
+      "verifiability": 4,
+      "hype_gap": 3,
+      "promise": 2,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 1,
+      "work_relevance": 2,
+      "audience_fit": 2,
+      "tangible": 1,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "AIが未解決の数学問題を1週間で56本解いたって本当？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "pending",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "公開された56本はあくまで未査読のプレプリントであり、数学界での検証や査読を通過して真に未解決問題が解かれたと認められたわけではない点です。",
+      "hope_material": "AIに先行研究のサーベイから証明・反例探索の検証までを自動実行させる研究ハーネスを国内企業が構築し、実際にコードやプレプリントをGitHubで一般公開して検証可能な状態にしたことです。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "ナレッジセンス 未解決問題",
+      "jp_title_anchor": [
+        "ナレッジセンス",
+        "未解決問題"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.1,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T14:18:26",
+      "presented_on": [],
+      "topic_first_date": "2026-10-15",
+      "topic_first_source": "候補 43a009d679 のannounced_on（ナレッジセンス、未解決問題に関する数学的成果56本を公開）",
+      "topic_series": "43a009d679",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-14",
+        "title": "ナレッジセンス、未解決問題に関する数学的成果56本を公開",
+        "id": "43a009d679",
+        "source": "Googleニュース（AI 未解決問題 証明）／山口新聞 電子版"
+      }
+    },
+    {
+      "title": "佐賀駅～サンライズパーク自動運転バス実証 全区間レベル4相当、運賃設定（みんなの経済新聞ネットワーク）",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBxVnZvcG9teWNjTXVkUUFQY1VjZmFHdmRNRjRzR0Q3aHJRM2xnZGRLVG9vSzVyeFpuMnNrYkhRbnpLNnpuMjBtdUk1d0JTWWNRSlJJalZ5cF9CcmlTZTFydjAySmI0ZndlcVo5ejBTaGFkT25sU0d0N3FFbWlQME0?oc=5",
+      "published": "2026-11-13",
+      "source": "Googleニュース（自動運転 レベル4 開始）／Yahoo!ニュース",
+      "source_kind": "media",
+      "outlet": "Yahoo!ニュース",
+      "outlet_host": "news.yahoo.co.jp",
+      "genre_hint": "life_tech",
+      "summary": "佐賀駅～サンライズパーク自動運転バス実証 全区間レベル4相当、運賃設定（みんなの経済新聞ネットワーク）（Yahoo!ニュース）",
+      "series_query": "autonomy_logistics_watch",
+      "id": "41c581ac2c",
+      "sources": [
+        "Yahoo!ニュース"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://www.city.saga.lg.jp/main/8545.html",
+          "what_it_states": "令和8年11月14日〜12月22日に佐賀駅バスセンター〜SAGAサンライズパークの全区間（片道約1.6〜1.8km）をレベル4相当で実証運行。全日程・全区間で運転士が同乗して緊急時の安全を確保。運賃は160〜180円（現金・交通系IC対応、予約不要）。交差点に信号機連携装置を設置し『あと5秒で赤信号』などの情報を車両に送信して通過・停止判断を行う"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://www.city.saga.lg.jp/main/117953.html",
+          "what_it_states": "2026年10月21日の佐賀市長定例記者会見にて、将来の営業運行を見据えた運賃収受と全区間レベル4相当の実証実施を発表。2027年度中にレベル4認可を国に申請し、2028年度の社会実装を目指す計画"
+        }
+      ],
+      "announced_on": "2026-11-13",
+      "headline_claim": "佐賀駅〜サンライズパーク間で全区間レベル4相当の自動運転バスが運賃をとって実証運行を始める",
+      "actual_content": "佐賀市が2026年11月14日から12月22日まで実施する実証実験。佐賀駅バスセンター〜SAGAサンライズパーク間の全区間を「レベル4相当」として運行するが、法的なレベル4運行ではなく、全日程・全区間に運転士が同乗して緊急時対応を行う体制をとる。運賃は将来の社会実装（2028年度目標）を見据えて160〜180円に設定され、信号機から残秒数を受け取るインフラ協調装置も設置されている。",
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 3,
+      "audience_fit": 4,
+      "tangible": 5,
+      "decision_number": 4,
+      "series_fit": 3,
+      "concern_id": "mobility",
+      "entry_question": "自動運転バスの「全区間レベル4相当」は、もう無人で走れるの？",
+      "surprise_line": "地方在住の人が、有料の路線バスとして自動運転が日常路線に入り始めたことに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "見出しに「全区間レベル4相当」とあるが、実際には全区間に運転士が同乗する実証であり、法的な無人レベル4ではない。本格的な社会実装は2028年度目標で、まだ2年以上先の実証フェーズにとどまる。",
+      "hope_material": "無料の体験イベントから一歩進み、160〜180円の運賃収受や信号連携インフラを組み込んだ公道定期ダイヤでの走行が実現しており、路線維持に向けた運用検証が着実に進んでいる。",
+      "investment_related": false,
+      "de_ja_vu_note": "kl055（空港の無人自動運転車両）と自動運転関連で近いが、空港内の特殊環境ではなく公道の生活路線・一般乗客輸送である点が異なる。",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "佐賀市 自動運転バス レベル4",
+      "jp_title_anchor": [
+        "佐賀",
+        "自動運転バス",
+        "レベル4"
+      ],
+      "announcement_type": "policy",
+      "freshness": 5,
+      "overall_score": 3.6,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T14:18:39",
+      "presented_on": [],
+      "topic_first_date": "2026-11-13",
+      "topic_first_source": "候補 3cd8f147bb のannounced_on（【動画】佐賀市の自動運転バス、発車します 11月14日から実）",
+      "topic_series": "41c581ac2c",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-13",
+        "title": "【動画】佐賀市の自動運転バス、発車します 11月14日から実証運行 レベル4相当で佐賀駅バスセンターからSAGAサンライズパーク間を走行 | 行政・社会 | 佐賀県のニュース",
+        "id": "3cd8f147bb",
+        "source": "Googleニュース（自動運転 レベル4 開始）／佐賀新聞"
+      },
+      "primary_verified": false,
+      "primary_check": [
+        {
+          "url": "https://www.city.saga.lg.jp/main/8545.html",
+          "ok": false,
+          "status": "HTTP 404（再確認5回とも404・開けず）",
+          "method": "http",
+          "attempts": [
+            {
+              "url": "https://www.city.saga.lg.jp/main/8545.html",
+              "via": "初回",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-16T14:20:48"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/main/8545.html",
+              "via": "英語のAccept-Languageで再試行",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-16T14:20:53"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/main/8545.html",
+              "via": "20秒おいて再試行",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-16T14:21:13"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/us/en/main/8545.html",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-16T14:21:18"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/en-us/main/8545.html",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-16T14:21:23"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/en/main/8545.html",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-16T14:21:28"
+            }
+          ],
+          "kind": "official_page"
+        },
+        {
+          "url": "https://www.city.saga.lg.jp/main/117953.html",
+          "ok": false,
+          "status": "HTTP 404（再確認5回とも404・開けず）",
+          "method": "http",
+          "attempts": [
+            {
+              "url": "https://www.city.saga.lg.jp/main/117953.html",
+              "via": "初回",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-16T14:21:33"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/main/117953.html",
+              "via": "英語のAccept-Languageで再試行",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-16T14:21:38"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/main/117953.html",
+              "via": "20秒おいて再試行",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-16T14:21:58"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/us/en/main/117953.html",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-16T14:22:03"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/en-us/main/117953.html",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-16T14:22:08"
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/en/main/117953.html",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-16T14:22:13"
+            }
+          ],
+          "kind": "press_release"
+        }
+      ],
+      "primary_verified_at": "2026-11-16T14:22:13",
+      "primary_history": [
+        {
+          "at": "2026-11-16T14:22:13",
+          "verdict": false,
+          "urls": [
+            {
+              "url": "https://www.city.saga.lg.jp/main/8545.html",
+              "status": "HTTP 404（再確認5回とも404・開けず）",
+              "final_url": "",
+              "ok": false
+            },
+            {
+              "url": "https://www.city.saga.lg.jp/main/117953.html",
+              "status": "HTTP 404（再確認5回とも404・開けず）",
+              "final_url": "",
+              "ok": false
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://www.city.saga.lg.jp/main/8545.html",
+          "ok": false,
+          "status": "HTTP 404（再確認5回とも404・開けず）"
+        },
+        {
+          "url": "https://www.city.saga.lg.jp/main/117953.html",
+          "ok": false,
+          "status": "HTTP 404（再確認5回とも404・開けず）"
+        }
+      ],
+      "url_ok": false,
+      "url_status": "city.saga.lg.jp: HTTP 404（再確認5回とも404・開けず） ／ city.saga.lg.jp: HTTP 404（再確認5回とも404・開けず）",
+      "url_checked_at": "2026-11-16T14:22:13",
+      "repair_tried": true,
+      "repair_tried_at": "2026-11-16T14:22:24",
+      "repair_log": [
+        "site-crawl: 8ページを見たが、語の合うリンクなし",
+        "pool-official: 同じ話題の公式・学術誌の記事（発表日±3日）がプールにない",
+        "media-link: https://news.google.com/rss/articles/CBMif0FVX3lxTFBxVnZvcG9teWNjTXVkU を開けない",
+        "robots.txt で禁止: https://news.google.com/rss/articles/CBMif0FVX3lxTFBxVnZvcG9teWNjTXVkUUFQY1VjZmFHdmRNRjRzR0Q3aHJRM2xnZGRLVG9vSzVyeFpuMnNrYkhRbnpLNnpuMjBtdUk1d0JTWWNRSlJJalZ5cF9CcmlTZTFydjAySmI0ZndlcVo5ejBTaGFkT25sU0d0N3FFbWlQME0?oc=5",
+        "site-crawl: 4ページを見たが、語の合うリンクなし",
+        "pool-official: 同じ話題の公式・学術誌の記事（発表日±3日）がプールにない",
+        "media-link: https://news.google.com/rss/articles/CBMif0FVX3lxTFBxVnZvcG9teWNjTXVkU を開けない",
+        "robots.txt で禁止: https://news.google.com/rss/articles/CBMif0FVX3lxTFBxVnZvcG9teWNjTXVkUUFQY1VjZmFHdmRNRjRzR0Q3aHJRM2xnZGRLVG9vSzVyeFpuMnNrYkhRbnpLNnpuMjBtdUk1d0JTWWNRSlJJalZ5cF9CcmlTZTFydjAySmI0ZndlcVo5ejBTaGFkT25sU0d0N3FFbWlQME0?oc=5"
+      ],
+      "repair_result": "見つからない"
+    },
+    {
+      "title": "OpenAIが「ChatGPT Wallet」発表 AIエージェントがカード番号を見ずに買い物、生体認証で承認（テクノエッジ）",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1RaDAxaE9PUHZseWQ2clp4QXRVek9SWUZRdk5JcHJGQ051cWptVWRYOWVTblFEZVRIMGpaek51b2NrUEtfUXFhQXREb3R6eUFBcUJaNGpfamhCN1RVc1hjS3lmNWhSSE56YXJCcXlHQjNBckNmcXNISEJfZjhrM0E?oc=5",
+      "published": "2026-11-16",
+      "source": "Googleニュース（OpenAI 発表）／Yahoo!ニュース",
+      "source_kind": "media",
+      "outlet": "Yahoo!ニュース",
+      "outlet_host": "news.yahoo.co.jp",
+      "genre_hint": "ai",
+      "summary": "OpenAIが「ChatGPT Wallet」発表 AIエージェントがカード番号を見ずに買い物、生体認証で承認（テクノエッジ）（Yahoo!ニュース）",
+      "id": "f9ea137331",
+      "sources": [
+        "Yahoo!ニュース",
+        "テクノエッジ TechnoEdge",
+        "UQライフ"
+      ],
+      "dup_ids": [
+        "30442807cd",
+        "1a0d088ae2"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://openai.com/index/introducing-chatgpt-wallet/",
+          "what_it_states": "Visa・Mastercard・American Expressと提携し、AIエージェント『dots』向けに決済機能を提供開始。初期対象は米国の18歳以上ChatGPT Pro加入者（米国発行カード・米国請求先住所）。カード番号はAIや加盟店に直接渡さずネットワークトークンで代替し、購入ごとに商品・金額・カードの確認と端末生体認証（Face ID/Touch ID等）による承認が必須。将来構想として事前承認（上限金額やカテゴリ指定）による自律購入を挙げるが、現時点では毎回承認制"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://help.openai.com/en/articles/making-purchases-with-chatgpt-wallet",
+          "what_it_states": "通常のChat、Work、単体のCodexスレッドでは利用できずdots内でのみ動作。デビットカードは対象外。加盟店側のBot対策や不正検知によって購入がブロックまたはキャンセルされる場合がある"
+        }
+      ],
+      "announced_on": "2026-11-13",
+      "headline_claim": "OpenAIが「ChatGPT Wallet」を発表し、AIエージェントがカード番号を見ずに買い物して生体認証で承認する仕組みを導入した",
+      "actual_content": "米国の18歳以上ChatGPT Pro加入者を対象に、常時稼働エージェント『dots』内でVisa・Mastercard・Amex等を用いた買い物決済機能が提供開始された。購入ごとに品目や総額を確認し、Face IDや指紋などの生体認証を行ってからトークン決済する仕組みで、AIや店舗に本物のカード番号は渡らない。将来構想にある事前承認による完全自動購入は未実装で、現在は都度の手動承認が必須であり、既存のボット遮断や不正検知で弾かれる制約もある。",
+      "verifiability": 5,
+      "hype_gap": 2,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 4,
+      "audience_fit": 4,
+      "tangible": 2,
+      "decision_number": 3,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "AIが勝手に買い物して決済する時代はもう来た？",
+      "surprise_line": "ネット通販を使う人が、AIにカード番号を隠したまま支払わせる仕組みに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "「勝手にお使いしてくれる」と期待しがちだが、現時点では毎回スマホのFace ID等で画面を見て手動承認する必要があり、自動決済はまだ将来の構想にとどまる。また米国発行カードと米国のPro加入者限定で、日本の一般ユーザーには届いていない。",
+      "hope_material": "大手カード3社と連携し、Apple Pay等と同様のトークン決済を採用したことで、AIエージェントに実カード番号を漏洩させずに買い物代行をさせる安全な枠組みが商用レベルで初めて稼働した。",
+      "investment_related": false,
+      "deja_vu_note": "kl038（OpenAI dotsとMeta Museの一人一台AI秘書）の続報にあたり、dotsの決済実用化という位置づけ。",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "ChatGPT Wallet OpenAI",
+      "jp_title_anchor": [
+        "ChatGPT Wallet"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.45,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T14:18:53",
+      "presented_on": [],
+      "topic_first_date": "2026-11-12",
+      "topic_first_source": "プールの記事（OpenAI ChatGPT Wallet、AI決済競争に参入）",
+      "topic_series": "03ba69f8ab",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-12",
+        "title": "OpenAI ChatGPT Wallet、AI決済競争に参入",
+        "id": "4b1d2484dc",
+        "source": "Googleニュース（OpenAI 発表）／FinanceFeeds"
+      },
+      "primary_verified": null,
+      "primary_check": [
+        {
+          "url": "https://openai.com/index/introducing-chatgpt-wallet/",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+          "method": "http",
+          "kind": "official_blog"
+        },
+        {
+          "url": "https://help.openai.com/en/articles/making-purchases-with-chatgpt-wallet",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+          "method": "http",
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-11-16T14:22:17",
+      "primary_history": [
+        {
+          "at": "2026-11-16T14:22:17",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://openai.com/index/introducing-chatgpt-wallet/",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            },
+            {
+              "url": "https://help.openai.com/en/articles/making-purchases-with-chatgpt-wallet",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://openai.com/index/introducing-chatgpt-wallet/",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）"
+        },
+        {
+          "url": "https://help.openai.com/en/articles/making-purchases-with-chatgpt-wallet",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）"
+        }
+      ],
+      "url_ok": null,
+      "url_status": "openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+      "url_checked_at": "2026-11-16T14:22:17"
+    },
+    {
+      "title": "OpenAI、AIエージェントが代わりに支払う「ChatGPT Wallet」　カード番号は渡さず、購入ごとに生体認証",
+      "url": "https://www.itmedia.co.jp/news/article/2611/16/2000003208/",
+      "published": "2026-11-16",
+      "source": "ITmedia AI+",
+      "source_kind": "media",
+      "summary": "OpenAIは、AIエージェント「dot」による決済機能「ChatGPT Wallet」を発表した。実際のカード情報を店舗に渡さず、購入ごとに生体認証を求める仕組みで安全性を確保する。米国のChatGPT Pro加入者向けに提供を開始した。将来は事前承認に基づく自律決済にも対応する計画。",
+      "id": "03ba69f8ab",
+      "sources": [
+        "ITmedia AI+"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://openai.com/index/introducing-chatgpt-wallet/",
+          "what_it_states": "American Express、Mastercard、Visaと提携。米国の18歳以上のChatGPT Pro加入者向けにdots経由で順次提供。カード実番号は渡さず決済トークンを発行。購入ごとにFace IDなどのセキュリティ確認を要求。立ち上げ時点ではOpenAI側の取引手数料はゼロ"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://help.openai.com/en/articles/making-purchases-with-chatgpt-wallet",
+          "what_it_states": "利用には常時稼働エージェントdotの設定が必要（通常ChatやWork、Codex単体では非対応）。米国発行の対象カードかつ米国請求先住所が必要。Face IDまたはTouch IDによる生体認証で購入を承認"
+        }
+      ],
+      "announced_on": "2026-11-13",
+      "headline_claim": "OpenAIがAIエージェントに買い物を代行させる「ChatGPT Wallet」を発表し、カード情報を渡さず生体認証で安全に支払えるとした。",
+      "actual_content": "発表されたChatGPT Walletは、常時稼働AI「dots」が商品検索から決済手続きまで進める機能だが、購入実行時には必ず画面で店舗・商品・金額を確認しFace ID等の生体認証で承認する必要がある。店舗やAIにはカード実番号ではなく決済ネットワーク発行のトークンが渡され、既存のカード特典や紛争保護は維持される。提供対象は米国の18歳以上かつ月額200ドルのChatGPT Pro加入者に限られ、通常チャットでは使えず、自律決済は将来構想にとどまる。",
+      "verifiability": 5,
+      "hype_gap": 2,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 4,
+      "audience_fit": 4,
+      "tangible": 2,
+      "decision_number": 4,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "AIに買い物を任せて支払わせるWalletは、もう日本でも使える？勝手に買われない？",
+      "surprise_line": "ネット通販の店主が、AIが客の代わりに買っていく専用の仕組みが動き出したことに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "「AIが代わりに支払う」と言っても全自動ではなく、買うたびにスマホでFace ID承認が必要なので、実質はフォーム自動入力の安全版。しかも米国の月額200ドルProユーザー限定で、日本提供時期は未定。",
+      "hope_material": "VisaやMastercardと組み、店舗やAI自体に本物のカード番号を一切渡さないトークン決済の仕組みを整えたことで、AIエージェント経由の不正請求や情報漏洩を原理的に防ぐ道筋がついた点。",
+      "investment_related": false,
+      "deja_vu_note": "kl038（OpenAI dots）、kl048（頼む前に動くAI秘書）",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "ChatGPT Wallet OpenAI",
+      "jp_title_anchor": [
+        "ChatGPT Wallet"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.45,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T14:19:06",
+      "presented_on": [],
+      "topic_first_date": "2026-11-12",
+      "topic_first_source": "プールの記事（OpenAI ChatGPT Wallet、AI決済競争に参入）",
+      "topic_series": "03ba69f8ab",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-12",
+        "title": "OpenAI ChatGPT Wallet、AI決済競争に参入",
+        "id": "4b1d2484dc",
+        "source": "Googleニュース（OpenAI 発表）／FinanceFeeds"
+      },
+      "primary_verified": null,
+      "primary_check": [
+        {
+          "url": "https://openai.com/index/introducing-chatgpt-wallet/",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+          "method": "http",
+          "kind": "official_blog"
+        },
+        {
+          "url": "https://help.openai.com/en/articles/making-purchases-with-chatgpt-wallet",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+          "method": "http",
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-11-16T14:22:22",
+      "primary_history": [
+        {
+          "at": "2026-11-16T14:22:22",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://openai.com/index/introducing-chatgpt-wallet/",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            },
+            {
+              "url": "https://help.openai.com/en/articles/making-purchases-with-chatgpt-wallet",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://openai.com/index/introducing-chatgpt-wallet/",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）"
+        },
+        {
+          "url": "https://help.openai.com/en/articles/making-purchases-with-chatgpt-wallet",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）"
+        }
+      ],
+      "url_ok": null,
+      "url_status": "openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認） ／ help.openai.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+      "url_checked_at": "2026-11-16T14:22:22"
+    },
+    {
+      "title": "ヒューマノイド派遣サービスに掃除を頼んでみた／AIの「断る力」に危うさ",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5QRVUtMVVzeWl2dF9HYkwzWjZ5SWhLdWxkS0ZWRjh3WUJ5VnN3OEZhbjlwSUdLdWJWNEdMakxoOGFleWM3cXh2WUVNbTYydmlQQnUxVg?oc=5",
+      "published": "2026-11-16",
+      "source": "Googleニュース（ヒューマノイド）／ASCII.jp",
+      "source_kind": "media",
+      "outlet": "ASCII.jp",
+      "outlet_host": "ascii.jp",
+      "genre_hint": "humanoid",
+      "summary": "ヒューマノイド派遣サービスに掃除を頼んでみた／AIの「断る力」に危うさ（ASCII.jp）",
+      "id": "72787bf189",
+      "sources": [
+        "ASCII.jp"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://tau-robotics.com/service-privacy",
+          "what_it_states": "サンフランシスコ発のTau Roboticsが提供するヒューマノイド清掃派遣サービス。機体（Unitree G1ベース・身長約137cm）は自律動作ではなく遠隔地のオペレーターがカメラ映像を見ながら操作。料金は招待制でロボット2台の週1回清掃で週60ドル（単発100ドル、初期は1時間30ドル）。家庭内映像は削除要請がない限り無期限保存されAI学習に活用される"
+        }
+      ],
+      "announced_on": "2026-10-24",
+      "headline_claim": "時給30ドルでヒューマノイドを自宅に呼んで掃除を頼める派遣サービスが始まった",
+      "actual_content": "米スタートアップTau Roboticsがサンフランシスコで提供する実証実験的な派遣サービスだが、AIによる完全自律動作ではなく、自社オフィスの人間がVR等で遠隔操縦（テレオペレーション）している。掃除機の操作やモップがけの一部を除き階段の昇降や細かな片付けはぎこちなく、作業実績も累計200件程度である。清掃サービス名目でユーザー宅のリアルな動画データを収集し、将来の自律学習に利用することが実質的な主目的である。",
+      "verifiability": 4,
+      "hype_gap": 4,
+      "promise": 3,
+      "debate": 4,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 3,
+      "audience_fit": 4,
+      "tangible": 5,
+      "decision_number": 4,
+      "series_fit": 5,
+      "concern_id": "housework",
+      "entry_question": "ヒューマノイドが時給30ドルで家を掃除してくれる派遣サービスは本当？",
+      "surprise_line": "家の掃除を頼みたい人が、ロボの中身は遠隔操作の人間だと知って驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "「ヒューマノイドが掃除に来た」と言っても、裏で遠隔操作している人間がカメラ映像を見ながら動かしているだけで、自律型AIロボットではない。実質的には格安で家の間取りや生活の映像データを集めるためのデータ収集実験である。",
+      "hope_material": "人間が遠隔操縦することで、トイレ掃除や床拭きなど実際の家庭環境で人型ロボットが作業を完遂できること自体は実証されており、この操作ログデータが将来の完全自律モデルの学習元になる。",
+      "investment_related": false,
+      "deja_vu_note": "kl053（人型ロボ6台が上海のコンビニで24時間働いた）、kl051（テスラOptimus生産開始）に続く人型ロボットの現場実証シリーズだが、今回は「家庭内の家事代行派遣」という新しい利用形態を扱う。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "Tau Robotics ヒューマノイド 掃除",
+      "jp_title_anchor": [
+        "Tau Robotics",
+        "ヒューマノイド",
+        "掃除"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 2,
+      "overall_score": 2.85,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T14:19:20",
+      "presented_on": [],
+      "topic_first_date": "2026-05-13",
+      "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
+      "topic_series": "b625e1631a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-09",
+        "title": "UBTECH、Tianyiと提携し、ヒューマノイドロボットの普及拡大を目指す",
+        "id": "9f8a89d4b5",
+        "source": "Googleニュース（家庭用ロボット）／Unite.AI"
+      }
+    },
+    {
+      "title": "データセンターの排熱でエビ養殖、NTT系が実験　育ったら食べられる？　担当者に聞いてみた",
+      "url": "https://www.itmedia.co.jp/news/article/2611/13/2000003200/",
+      "published": "2026-11-13",
+      "source": "ITmedia NEWS",
+      "source_kind": "media",
+      "summary": "NTTドコモビジネスなど4社が、データセンターの排熱を使ったエビ養殖の実証に乗り出す。2027年度にはバナメイエビの飼育を始める計画だ。なぜエビを選んだのか、育てたエビをどうするのか。同社の担当者に話を聞いた。",
+      "id": "7e818c3ce5",
+      "sources": [
+        "ITmedia NEWS"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.ntt.com/about-us/press-releases/news/article/2026/1113.html",
+          "what_it_states": "NTTドコモビジネス、IMTエンジニアリング、日比谷総合設備、NTTグリーン＆フードの4社が東京都の未利用熱活用促進事業に採択され、都内近郊のDCで実証開始。実証期間は2028年3月まで。2026年度は排熱回収と評価、2027年度に回収熱でバナメイエビ飼育実証を実施し、水温維持効果や加温エネルギー削減効果、DC運用への影響を確認する計画"
+        }
+      ],
+      "announced_on": "2026-11-13",
+      "headline_claim": "データセンターの排熱でエビ養殖、NTT系など4社が実証を開始し2027年度にバナメイエビ飼育へ",
+      "actual_content": "東京都の未利用熱活用促進事業に採択された共同実証プロジェクトで、都内近郊のNTTドコモビジネスのデータセンター冷却設備から排熱を回収する計画。2026年度は熱量や温度などのデータ取得と回収方法の評価を行い、実際のバナメイエビ飼育実証は2027年度から開始する予定。期間は2028年3月までで、現時点ではエビの飼育実績や具体的なコスト削減率などの実証数値はなく、システムの検証着手段階にとどまる。",
+      "verifiability": 5,
+      "hype_gap": 2,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 2,
+      "audience_fit": 3,
+      "tangible": 3,
+      "decision_number": 3,
+      "series_fit": 1,
+      "concern_id": "food",
+      "entry_question": "データセンターの排熱でエビが育つって本当？食べられるのはいつ？",
+      "surprise_line": "地域の飲食店主が、身近なサーバーの捨て熱で高級エビが育つ計画に驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "まだ実証を始めたばかりで、実際にエビを育てるのは2027年度以降であり、現時点で省エネ効果やエビの収穫量、事業採算性のデータは一切出ていない。",
+      "hope_material": "バナメイエビは約16〜18週間で出荷サイズまで育つため検証サイクルが早く、陸上養殖で最大のコスト要因である加温エネルギーをデータセンターの低温排熱で賄えれば、安定した国産エビ生産モデルになる可能性がある。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": false,
+      "jp_news_query": "NTTドコモビジネス 排熱 エビ養殖",
+      "jp_title_anchor": [
+        "排熱",
+        "バナメイエビ",
+        "NTTドコモビジネス"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.4,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T14:19:31",
+      "presented_on": [],
+      "topic_first_date": "2026-11-13",
+      "topic_first_source": "候補 7e818c3ce5 のannounced_on（データセンターの排熱でエビ養殖、NTT系が実験　育ったら食べ）",
+      "topic_series": "7e818c3ce5",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-13",
+        "title": "データセンターの排熱でエビ養殖、NTT系が実験　育ったら食べられる？　担当者に聞いてみた",
+        "id": "7e818c3ce5",
+        "source": "ITmedia NEWS"
+      }
+    },
+    {
+      "title": "人型ロボット普及で「修理難民」問題 中国EC大手が修理市場に参入、配達員も技術者に",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiO0FVX3lxTFBXVTl3N1Myc2VXRVhXRG1vMmFPT0twdVZZTDZBNHptcEwyaU11QmNybklmNVJKYWNYRHBr?oc=5",
+      "published": "2026-11-15",
+      "source": "Googleニュース（ヒューマノイド）／36Kr Japan",
+      "source_kind": "media",
+      "outlet": "36Kr Japan",
+      "outlet_host": "36kr.jp",
+      "genre_hint": "humanoid",
+      "summary": "人型ロボット普及で「修理難民」問題 中国EC大手が修理市場に参入、配達員も技術者に（36Kr Japan）",
+      "id": "1029ad919e",
+      "sources": [
+        "36Kr Japan"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://corporate.jd.com",
+          "what_it_states": "京東集団（JD.com）がロボットアフターサービス網の構築を発表し、今後5年間で10万人以上のロボット修理エンジニア職を創出する計画を提示。中国国内に8大修理センターを構え、智元機器人（Agibot）や雲深処科技（DEEP Robotics）など約100社と提携したこと、自社配送員の研修による技術者化を進める方針を表明"
+        },
+        {
+          "kind": "tech_report",
+          "url": "https://www.idc.com",
+          "what_it_states": "2026年上半期の中国における人型ロボット出荷台数が1万9000台を超え、世界シェアの約77.9%を占めたとする市場調査データ"
+        }
+      ],
+      "announced_on": "2026-08-21",
+      "headline_claim": "人型ロボットの急増で修理難民が多発し、中国EC大手の京東が配達員を技術者にするなどして修理市場へ本格参入した",
+      "actual_content": "中国市場で2026年上半期に約1.9万台の人型ロボットが出荷される一方、各社製品の保証期間は6ヶ月〜1年と短く、転倒等による関節モジュール交換費用が本体価格の10〜20%（3万元・約60万円前後）に達する事例が多発している。EC大手の京東はロボットメーカー約100社と組み、5年で10万人の修理エンジニア育成計画や救急車型出張修理（120サービス）を展開。既存の配達員をロボット保守員へリスキリングする動きが進む一方、現状は精密校正や独自部品の供給不足から街の独立系修理業者が対応できる範囲は限られている。",
+      "verifiability": 4,
+      "hype_gap": 2,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 3,
+      "work_relevance": 5,
+      "audience_fit": 4,
+      "tangible": 5,
+      "decision_number": 4,
+      "series_fit": 5,
+      "concern_id": "work_ai",
+      "entry_question": "人型ロボットの「修理難民」問題は本当？買った後いくらで直せる？",
+      "surprise_line": "商売人が、ロボットの故障修理に本体の2割もかかる現実に驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「配達員がすぐ直してくれる」と期待させますが、人型ロボットの転倒による減速機や関節の歪みはミリ単位のレーザー校正が必要で、現場で誰でも簡単に直せるレベルではありません。保証期間も半年から1年と短く、1回の修理に数十万円かかる現状では維持費倒れのリスクがあります。",
+      "hope_material": "京東などの大手プラットフォーマーが共通の修理インフラや出張駆けつけ網を立ち上げたことで、メーカー単体では手が回らないアフターサービスの体制整備と部品供給網の標準化が確実に動き始めています。",
+      "investment_related": false,
+      "deja_vu_note": "kl053（上海のコンビニで人型ロボ稼働）やkl051（Optimus生産開始）の続きとして、「導入された後、現場で壊れたらどう維持するか」という運用コスト・保守の実態を掘り下げる回になります。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "京東 人型ロボット 修理",
+      "jp_title_anchor": [
+        "人型ロボット",
+        "修理難民",
+        "京東"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 1,
+      "overall_score": 2.45,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T14:19:44",
+      "presented_on": [],
+      "topic_first_date": "2026-08-21",
+      "topic_first_source": "候補 1029ad919e のannounced_on（人型ロボット普及で「修理難民」問題 中国EC大手が修理市場に）",
+      "topic_series": "1029ad919e",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-15",
+        "title": "人型ロボット普及で「修理難民」問題 中国EC大手が修理市場に参入、配達員も技術者に",
+        "id": "1029ad919e",
+        "source": "Googleニュース（ヒューマノイド）／36Kr Japan"
+      }
+    },
+    {
+      "title": "運営現場データでロボットを教える、XYZのフィジカルAI開発方式を公開",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBlSGpuMkltV0pyMjg0dHFLZ0YyVVNCcEc2bUpMZTEzWmNRVXBUeTZrZURmYUdLcWlnRDQ2ZUtmaWZoVXhlcHJfWnd1ckR1MkNNUC1NVlBZT2FPamt1WUNwY3ZwZDFUU0R6QzNXcFRYU3Roa1ZaNlZj?oc=5",
+      "published": "2026-11-16",
+      "source": "Googleニュース（人型ロボット）／KORIT",
+      "source_kind": "media",
+      "outlet": "KORIT",
+      "outlet_host": "korit.jp",
+      "genre_hint": "humanoid",
+      "summary": "運営現場データでロボットを教える、XYZのフィジカルAI開発方式を公開（KORIT）",
+      "id": "3d5baa6dca",
+      "sources": [
+        "KORIT"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://platum.kr/archives/298311",
+          "what_it_states": "韓国のロボット企業XYZ（代表：ファン・ソンジェ）が『NVIDIA AI Day Seoul 2026』にて現場データと仮想学習を循環させるフィジカルAI開発方式を発表。子会社が運営する50の現場からデータを集め、NVIDIAのシミュレーション技術を用いて検証・実機適用するサイクルを構築。ロボットが服をたたむ作業時間を50秒から25秒に短縮し、成功率96%を記録したと公表。上半身中心のセミヒューマノイド『DEUX』などに適用を進めている"
+        }
+      ],
+      "announced_on": "2026-11-10",
+      "headline_claim": "韓国XYZが現場データとシミュレーションを循環させてロボットを鍛えるフィジカルAI開発方式を公開し、服たたみ時間を半減させた",
+      "actual_content": "XYZ社がNVIDIA AI Day Seoul 2026で発表した内容は、子会社が運営する50のサービス現場で集めた運用データとNVIDIAのロボットシミュレーションを組み合わせ、実機へ反映するデータ循環の枠組み（BrainX）です。具体成果として、ロボットの服をたたむ作業時間を50秒から25秒へと半減させつつ、成功率96%を記録したと報告されています。ただし、これは上半身中心のセミヒューマノイド「DEUX」などを用いた開発・実証段階の成果であり、一般家庭や店舗への市販価格や発売日は提示されていません。",
+      "verifiability": 3,
+      "hype_gap": 2,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 3,
+      "audience_fit": 3,
+      "tangible": 4,
+      "decision_number": 2,
+      "series_fit": 4,
+      "concern_id": "housework",
+      "entry_question": "ロボットが服をたたむ時間はどこまで縮まった？",
+      "surprise_line": "家事や店舗の作業を減らしたい人が、服たたみ25秒・成功率96％の数字に驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "服をたたむ作業を25秒・成功率96%にしたとはいえ、決まった布地や整った環境での検証にとどまる可能性があり、散らかった家庭の現場で自律して動ける保証や価格は示されていません。",
+      "hope_material": "自社運営の50店舗という実現場からデータを集め、NVIDIAの仮想シミュレーションと連動させて作業時間を従来の半分に縮める具体的な改善サイクルが実証されています。",
+      "investment_related": false,
+      "deja_vu_note": "kl051（Optimusの現場配備）、kl053（AGIBOTのコンビニ稼働）と類似するが、今回は「現場データ×シミュレーション循環」による家事系動作（服たたみ）の高速化・成功率改善に焦点を当てたもの。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "XYZ フィジカルAI",
+      "jp_title_anchor": [
+        "XYZ",
+        "フィジカルAI"
+      ],
+      "announcement_type": "event",
+      "freshness": 5,
+      "overall_score": 3.2,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T14:19:57",
+      "presented_on": [],
+      "topic_first_date": "2026-11-10",
+      "topic_first_source": "候補 3d5baa6dca のannounced_on（運営現場データでロボットを教える、XYZのフィジカルAI開発）",
+      "topic_series": "3d5baa6dca",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-16",
+        "title": "運営現場データでロボットを教える、XYZのフィジカルAI開発方式を公開",
+        "id": "3d5baa6dca",
+        "source": "Googleニュース（人型ロボット）／KORIT"
+      }
+    },
+    {
+      "title": "腸活は「菌を摂る」から「菌を育てる」へ 最新研究で見えてきたブロッコリースプラウトの可能性",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMi0AJBVV95cUxOejlZcm9yQVhMYnBvMW9zN1N0Mm1rT3lySW5KNnV5MGxrMm9fMGdNX2pnRlZCclpTbnZtQzRjR1RfNERRdU9UM1JiVnJBekgteWJpbFA2ZGJ4WWNzbF9wY2ZQaHhxSDJObWRWVzlkNHhyY1lQYWlaWEtSWVN2Tzc2c0xMV2t5bmxLd0NDc3NQcldzUzVmZmkzdDF6V3JUNkxqb0RaNGdpTGlrQ3FnZUxSSnhsangzM0xPYVZuUkJjdDI5Z05pUmJVc3dseHRqQ0Vscy04MTRrcE1OWldYV0ZUVVJMNEt6Qzc5U1VqMS03c3JRTERtUTU1aGVJRXhFVHllSktEaEFpbGNkOXhXa3paS1JNNUdmemRseDd5SHBLMHI5RHZpRi1kSDYzaThHVDhHSXZkRVVBRFJXSmRrVFF4WmxGejV1SzVET3hXNDdDcVI?oc=5",
+      "published": "2026-11-15",
+      "source": "Googleニュース（研究 食事 健康 効果）／RanRun",
+      "source_kind": "media",
+      "outlet": "RanRun",
+      "outlet_host": "ranrun.jp",
+      "genre_hint": "food_health",
+      "summary": "腸活は「菌を摂る」から「菌を育てる」へ 最新研究で見えてきたブロッコリースプラウトの可能性（RanRun）",
+      "id": "f753b933fb",
+      "sources": [
+        "RanRun"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.murakamifarm.com/company/release/368afb4d37bce94aea7bd1ceb6785af08fa1ee86.jpg",
+          "what_it_states": "村上農園が2026年11月13日に発表。健康な成人42名（解析対象31名）を対象に、ブロッコリースプラウト50g/日、または対照群としてスルフォラファンを含まないアルファルファスプラウト50g/日を各4週間摂取するクロスオーバー試験を実施したところ、ブロッコリースプラウト摂取後に腸内「酪酸産生菌」の構成比および便中酪酸濃度が増加した（アルファルファ群では変化なし）。成果は2026年10月の国際会議（Functional Food Center 第36回）で発表"
+        }
+      ],
+      "announced_on": "2026-11-13",
+      "headline_claim": "ブロッコリースプラウトを食べることで腸内の酪酸産生菌と酪酸が増え、菌を育てる新しい腸活になる",
+      "actual_content": "健康な成人42名（解析対象31名）を対象に、ブロッコリースプラウト50g/日または対照のアルファルファスプラウト50g/日を各4週間摂取させるクロスオーバー比較試験を実施した。ブロッコリースプラウト摂取群でのみ腸内の酪酸産生菌の構成比と便中酪酸濃度の上昇が確認された。ただしサンプル数は31名と小規模であり、毎日50g（一般的な市販パックの半分〜1パック程度）を4週間食べ続ける条件での観察に留まり、長期的な疾患予防や具体的な体感効果までは直接証明されていない。",
+      "verifiability": 4,
+      "hype_gap": 2,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 2,
+      "audience_fit": 3,
+      "tangible": 3,
+      "decision_number": 3,
+      "series_fit": 1,
+      "concern_id": "gut",
+      "entry_question": "ブロッコリースプラウトを毎日食べると本当に腸内環境が良くなるの？",
+      "surprise_line": "健康を気にする人が、毎日50gを4週間続けて菌が増えた結果に驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "解析対象が31名と小規模な試験であり、毎日ブロッコリースプラウトを50g（市販パックの半分以上）欠かさず4週間食べ続けるというハードルがある点です。また、便中の酪酸が増えたからといって、具体的にどんな健康効果や体調の変化が得られるかまではまだ検証されていません。",
+      "hope_material": "対照群（アルファルファスプラウト）を設けた厳密なヒトクロスオーバー試験で、スルフォラファンを含む群でのみ酪酸産生菌と酪酸濃度の有意な増加が確認されており、スーパーで1パック100〜200円程度で手に入る身近な食材ですぐ試せる点です。",
+      "investment_related": false,
+      "deja_vu_note": "kl039（食事前のオリーブ油と血糖値）と同様の身近な食品・食習慣の検証テーマ",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "村上農園 ブロッコリースプラウト",
+      "jp_title_anchor": [
+        "ブロッコリースプラウト",
+        "村上農園"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.45,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T14:20:11",
+      "presented_on": [],
+      "topic_first_date": "2026-11-13",
+      "topic_first_source": "候補 f753b933fb のannounced_on（腸活は「菌を摂る」から「菌を育てる」へ 最新研究で見えてきた）",
+      "topic_series": "f753b933fb",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-15",
+        "title": "腸活は「菌を摂る」から「菌を育てる」へ 最新研究で見えてきたブロッコリースプラウトの可能性",
+        "id": "f753b933fb",
+        "source": "Googleニュース（研究 食事 健康 効果）／RanRun"
+      },
+      "primary_verified": null,
+      "primary_check": [
+        {
+          "url": "https://www.murakamifarm.com/company/release/368afb4d37bce94aea7bd1ceb6785af08fa1ee86.jpg",
+          "ok": true,
+          "status": "HTTP 200",
+          "page_title": "",
+          "anchor_hit": false,
+          "method": "http",
+          "kind": "press_release"
+        }
+      ],
+      "primary_verified_at": "2026-11-16T14:22:24",
+      "primary_history": [
+        {
+          "at": "2026-11-16T14:22:24",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://www.murakamifarm.com/company/release/368afb4d37bce94aea7bd1ceb6785af08fa1ee86.jpg",
+              "status": "HTTP 200",
+              "final_url": "",
+              "ok": true
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://www.murakamifarm.com/company/release/368afb4d37bce94aea7bd1ceb6785af08fa1ee86.jpg",
+          "ok": true,
+          "status": "HTTP 200"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "murakamifarm.com: HTTP 200",
+      "url_checked_at": "2026-11-16T14:22:24"
+    },
+    {
+      "title": "MINDダイエットとは？ 脳を守る食事法とその仕組みについて専門家が解説",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9Fa2NVZ19hREl1ekw0M251YWxSMHdZd0xwUkFGZGZOZ0ZVXzBkOWd6TGkzTm5BQWlrOF9GNVdtd1RzM0VCZHJtLWxJZGluZWc?oc=5",
+      "published": "2026-11-16",
+      "source": "Googleニュース（研究 食事 健康 効果）／TRILL",
+      "source_kind": "media",
+      "outlet": "TRILL",
+      "outlet_host": "trilltrill.jp",
+      "genre_hint": "food_health",
+      "summary": "MINDダイエットとは？ 脳を守る食事法とその仕組みについて専門家が解説（TRILL）",
+      "id": "b000014500",
+      "sources": [
+        "TRILL"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1056/NEJMoa2302368",
+          "what_it_states": "認知症家族歴があり過体重の高齢者604名を対象とした3年間のランダム化比較試験（RCT）。MIND食群（301名）と通常食群（303名、両群とも軽度カロリー制限）の3年後の総合認知機能スコア変化はMIND群+0.205、対照群+0.170で群間差0.035（95%CI -0.022〜0.092、P=0.23）と有意差なし。脳MRI（脳容積や白質病変）でも有意差は認められなかった"
+        },
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1016/j.jalz.2014.11.009",
+          "what_it_states": "2015年の観察研究（923名、平均4.5年追跡）。MIND食の遵守度が高い群でアルツハイマー病発症リスクが53%低下（HR 0.47）と相関していたが、因果関係を証明する試験ではなかった"
+        }
+      ],
+      "announced_on": "2023-08-17",
+      "headline_claim": "MIND食は脳を守り、認知症の予防に効果がある食事法である",
+      "actual_content": "MIND食（地中海食とDASH食を組み合わせた食事法）は過去の観察研究で認知症リスク低下との相関が示されていたが、厳密なランダム化比較試験（RCT、604名・3年間）では通常の健康食（カロリー制限）と比較して認知機能や脳MRI画像に統計的有意な差は見られなかった。両群ともに食事指導やカロリー制限によりわずかに認知スコアが改善しており、「MIND食特有の認知症予防効果」は確認されていない。",
+      "verifiability": 5,
+      "hype_gap": 4,
+      "promise": 2,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 4,
+      "work_relevance": 1,
+      "audience_fit": 2,
+      "tangible": 1,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "dementia",
+      "entry_question": "MIND食で脳が若返り、認知症を防げるというのは本当？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "pending",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "観察研究では効果があるように見えたが、2023年にNEJMで発表された604人・3年間の厳密な比較試験（RCT）では、普通の健康的なカロリー制限食と比べて認知機能にも脳の萎縮にも差が出なかった。",
+      "hope_material": "MIND食に限らず、食べ過ぎを抑えてカロリーを適切に管理し健康的な食生活を送る指導を受けたグループは、いずれも3年間で認知機能スコアがわずかに向上していた。",
+      "investment_related": false,
+      "deja_vu_note": "kl039（食事と健康の科学検証）",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "MIND食 認知症",
+      "jp_title_anchor": [
+        "MIND食",
+        "MINDダイエット"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.45,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T14:20:24",
+      "presented_on": [],
+      "topic_first_date": "2023-08-17",
+      "topic_first_source": "候補 b000014500 のannounced_on（MINDダイエットとは？ 脳を守る食事法とその仕組みについて）",
+      "topic_series": "b000014500",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-16",
+        "title": "MINDダイエットとは？ 脳を守る食事法とその仕組みについて専門家が解説",
+        "id": "b000014500",
+        "source": "Googleニュース（研究 食事 健康 効果）／TRILL"
+      }
+    },
+    {
+      "title": "LG Electronics、KIRIAとヒューマノイドの安全認証を目指す",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNSDByd0ExYmRBWDlKc1BJM2VHdEJCUURUSFFZSTRDNzVXUnNpeW1kQjVPelJKbk9GMmpEZi1Sc1RqUWo0aFpGaFRFazNxM0cyc0JlbVByZTVjZTdZNmRjLUNIRUR0UV9oQUp3c093SnNQVTl1bk9zZ01yZTJmTVJxT3JkcHVBRmRVOHF2V0wySENqQQ?oc=5",
+      "published": "2026-11-16",
+      "source": "Googleニュース（ヒューマノイド）／Unite.AI",
+      "source_kind": "media",
+      "outlet": "Unite.AI",
+      "outlet_host": "unite.ai",
+      "genre_hint": "humanoid",
+      "summary": "LG Electronics、KIRIAとヒューマノイドの安全認証を目指す（Unite.AI）",
+      "id": "289285610e",
+      "sources": [
+        "Unite.AI"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.fnnews.com/news/202611160914282305",
+          "what_it_states": "LG電子が韓国ロボット産業振興院（KIRIA）と11月13日にMOUを締結。KIRIAのヒューマノイドロボット安全認証センターの評価体系構築支援と国内外の標準策定に参加し、自社開発中のロボット「LG CLOiD」などの国内パイロット安全認証を推進。2027年第1四半期にNvidia技術を活用した二足歩行ロボットの公開を予定。"
+        }
+      ],
+      "announced_on": "2026-11-16",
+      "headline_claim": "LGエレクトロニクスが韓国政府機関KIRIAと提携し、人型ロボットの安全認証と規格策定を目指す",
+      "actual_content": "LG電子は韓国ロボット産業振興院（KIRIA）と、人型ロボットの安全性・実用性評価の仕組み作りに関する業務協約（MOU）を2026年11月13日に締結し16日に公表した。KIRIAが新設するヒューマノイド安全認証センターの評価システム構築や国際・国内標準の開発に参画し、自社開発ロボット「LG CLOiD」での試験認証を進める。NVIDIAと共同開発中の二足歩行ロボットの公開は2027年第1四半期、家庭用人型ロボットの本格参入は2030年頃を見込んでおり、今回は実機の性能発表ではなく認証制度作りの協力合意である。",
+      "verifiability": 4,
+      "hype_gap": 3,
+      "promise": 2,
+      "debate": 2,
+      "wonder": 2,
+      "life_relevance": 2,
+      "work_relevance": 2,
+      "audience_fit": 2,
+      "tangible": 2,
+      "decision_number": 1,
+      "series_fit": 3,
+      "concern_id": "work_ai",
+      "entry_question": "人型ロボットの「安全マーク」ができる？LGの認証づくりで暮らしに来る時期は早まる？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "新しいロボットが完成して動いたわけではなく、公的機関と「安全評価の基準をこれから一緒に作りましょう」という覚書（MOU）を交わした段階にすぎない点。家庭や店への本格導入時期もLG自身が2030年前後と明言しており、今すぐ現場で使える話ではない。",
+      "hope_material": "人型ロボットが店舗や家庭で人と接触する際の「国際・国家安全規格」がまだ世界的に定まっていない中、製品投入に先駆けて評価認証の枠組み作りに着手している点。",
+      "investment_related": false,
+      "deja_vu_note": "kl040（安川電機2030年ヒューマノイド）、kl051（Optimus）、kl053（上海AGIBOT）",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "LG電子 KIRIA ヒューマノイド",
+      "jp_title_anchor": [
+        "LG電子",
+        "KIRIA"
+      ],
+      "announcement_type": "other",
+      "freshness": 5,
+      "overall_score": 3.0,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T14:20:35",
+      "presented_on": [],
+      "topic_first_date": "2026-05-13",
+      "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
+      "topic_series": "b625e1631a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-09",
+        "title": "UBTECH、Tianyiと提携し、ヒューマノイドロボットの普及拡大を目指す",
+        "id": "9f8a89d4b5",
+        "source": "Googleニュース（家庭用ロボット）／Unite.AI"
+      }
+    },
+    {
+      "title": "中国で家庭用ロボット開発加速、安全性や価格面で普及に課題",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE41YmhDU2ZIMXFaU2JhZllfdmpCOEkzekNPVGpiR1oxOWxxVllJT1JxT1ZOR044RWNlMXZ3T1RwVnVKZW5tcVlra09faGtFWFpmRGhSOUlqc2oyVG9NLTJreXAyWjdjMFhL?oc=5",
+      "published": "2026-11-16",
+      "source": "Googleニュース（家庭用ロボット）／ashu-chinastatistics.com",
+      "source_kind": "media",
+      "outlet": "ashu-chinastatistics.com",
+      "outlet_host": "ashu-chinastatistics.com",
+      "genre_hint": "life_tech",
+      "summary": "中国で家庭用ロボット開発加速、安全性や価格面で普及に課題（ashu-chinastatistics.com）",
+      "id": "9d4125f764",
+      "sources": [
+        "ashu-chinastatistics.com"
+      ],
+      "primary_sources": [],
+      "announced_on": "2026-11-16",
+      "headline_claim": "中国で家事や高齢者介護を担う家庭用サービスロボットの開発が加速しているが、安全性や高価格・修理コストが普及の壁となっている。",
+      "actual_content": "本件は亜州ビジネス等の経済メディアによる展示会動向や市場情勢をまとめた概況解説記事（コラム・市況レポート）であり、特定の研究機関の論文や企業による新型ロボットの公式発表・プレスリリースといった単一の一次資料が存在しない。家庭内の複雑な環境下での突発的な衝突回避など安全性の課題や、故障時の高額な修理費（関節1つの交換に数十万円規模を要する事例等）が家庭普及のボトルネックとして挙げられているが、特定の検証可能な数値や検証条件が示された発表ではない。",
+      "verifiability": 1,
+      "hype_gap": 2,
+      "promise": 2,
+      "debate": 1,
+      "wonder": 1,
+      "life_relevance": 3,
+      "work_relevance": 2,
+      "audience_fit": 2,
+      "tangible": 2,
+      "decision_number": 1,
+      "series_fit": 2,
+      "concern_id": "housework",
+      "entry_question": "中国の家庭用ロボットはもう買える？家事や介護は任せられる？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "ニュースメディアによる産業全般のまとめ記事であり、根拠となる特定の新型機の発売発表や論文・技術レポートといった一次資料が存在しない。",
+      "hope_material": "",
+      "investment_related": false,
+      "deja_vu_note": "kl053（人型ロボ6台が上海のコンビニで24時間働いた。AGIBOT）",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "家庭用ロボット 中国 普及",
+      "jp_title_anchor": [
+        "家庭用ロボット",
+        "中国"
+      ],
+      "announcement_type": "other",
+      "freshness": 5,
+      "overall_score": 2.55,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "excluded",
+      "excluded_reason": "一次資料で確認できない",
+      "scored_at": "2026-11-16",
+      "first_seen_at": "2026-11-16T14:20:44",
+      "presented_on": [],
+      "topic_first_date": "2015-11-14",
+      "topic_first_source": "候補 6d57535a95 のannounced_on（＜画像1 / 7＞家庭用ロボット最前線！価格、機能、その進化）",
+      "topic_series": "7e8ec115cc",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-10",
+        "title": "アマゾン、家庭用ロボットに再挑戦―新チーム編成とCNBC報道",
+        "id": "4433d884c7",
+        "source": "Googleニュース（家庭用ロボット）／財経新聞"
       }
     }
   ]

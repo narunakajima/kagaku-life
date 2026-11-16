@@ -296,3 +296,10 @@
 {"ts": "2026-11-13T12:38:26+09:00", "kind": "work", "agent": "kl-art-director", "episode": "kl056", "step": "12", "result": "ok", "retries": 0, "note": "フレーム確認。直す問題なし。立ち絵excited口パクで手が枠で切れる（素材起因）"}
 {"ts": "2026-11-13T12:38:26+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl056", "step": "進行", "result": "retry", "retries": 0, "note": "初見レビュー全文3周+差分3周、BGM入替4回、S12札/カード重なり対応。ネタは弱い日でRing選択"}
 {"ts": "2026-11-16T08:17:07+09:00", "kind": "call", "agent": "kl-manager", "session": "2937fa47-8693-443a-868e-9cf4166c208f"}
+{"ts": "2026-11-16T14:19:14+09:00", "kind": "applied", "agent": "kl-planner", "episode": "kl057", "ids": ["KL2611-01"], "skipped": [], "reason": ""}
+{"ts": "2026-11-16T14:19:39+09:00", "kind": "call", "agent": "kl-planner", "session": "85027d17-b5bf-48ca-84e4-8e629515518a"}
+{"ts": "2026-11-16T14:20:44+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "85027d17-b5bf-48ca-84e4-8e629515518a"}
+{"ts": "2026-11-16T14:21:53+09:00", "kind": "call", "agent": "kl-manager", "session": "85027d17-b5bf-48ca-84e4-8e629515518a"}
+{"ts": "2026-11-16T14:21:57+09:00", "kind": "work", "agent": "kl-planner", "episode": "kl057", "step": "1.5", "result": "ok", "retries": 0, "note": "問い3案(A社会/B暮らし/C商売)、落とした5案"}
+{"ts": "2026-11-16T14:21:57+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl057", "step": "1.5", "result": "ok", "retries": 0, "note": "C見たい1位/A見たい2位/B見たくない"}
+{"ts": "2026-11-16T14:21:57+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl057", "step": "1.5", "result": "ok", "retries": 0, "note": "推奨A(フック・驚きを直す)、次点C、Bは型1・5とエマ見たくないで外す"}

@@ -1,4 +1,39 @@
 {
   "_comment": "週次スレート（kl_slate.py が書く）。entries[].role: main（制作）/ backup（次点）/ dropped（外した）。使い方は kl_slate.py の docstring",
-  "slates": []
+  "slates": [
+    {
+      "week_of": "2026-11-16",
+      "recorded_on": "2026-11-16",
+      "entries": [
+        {
+          "id": "4dbfb303f1",
+          "title": "Tesla Cybercab orders open at $29,990 + $299/mo, only in Robotaxi zones",
+          "role": "main",
+          "genre": "life_tech",
+          "series": true,
+          "freshness_deadline": "2026-12-04",
+          "selected_on": "2026-11-16"
+        },
+        {
+          "id": "bb634dc083",
+          "title": "OpenAIの“接客AI”で私たちの買い物はどう変わるのか？ 『Businesses in ChatGPT』の発表を機に考える（リアルサウンド）",
+          "role": "main",
+          "genre": "ai",
+          "series": false,
+          "freshness_deadline": "2026-12-01",
+          "selected_on": "2026-11-16"
+        },
+        {
+          "id": "fd333d9440",
+          "title": "AIに財布を預ける時代へ OpenAIは「払う」、Googleは「見るだけ」",
+          "role": "main",
+          "genre": "ai",
+          "series": false,
+          "freshness_deadline": "2026-12-03",
+          "selected_on": "2026-11-16"
+        }
+      ],
+      "swaps": []
+    }
+  ]
 }

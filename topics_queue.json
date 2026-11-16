@@ -3335,8 +3335,73 @@
         "title_note": "仮。最終は STEP 5.6。問いゲート 2026-11-13 なるさんが案B選択（編集長推奨はA、エマ1位はB）"
       },
       "candidate_id": "13538e44f9"
+    },
+    {
+      "episode_id": "kl057",
+      "status": "confirmed",
+      "slot_type": "news",
+      "genre": "ai",
+      "health": false,
+      "domain": "life",
+      "concern_id": null,
+      "entry_question": "買い物の相談相手が検索からAIに変わったら、お店はどうやってお客さんに見つけてもらう時代になる？",
+      "title": "店の看板は検索からAIの中へ？ ChatGPTに「店の窓口」（11月時点）",
+      "format": "dialogue",
+      "structure": "rounds_v4",
+      "source_type": "news",
+      "news_date": "2026-11-10",
+      "references": [
+        {
+          "title": "Businesses in ChatGPT のご紹介",
+          "year": 2026,
+          "venue": "OpenAI 公式ニュース（2026年11月10日）",
+          "url": "https://openai.com/index/introducing-businesses-chatgpt/",
+          "is_preprint": false,
+          "institution": "OpenAI",
+          "source_kind": "official_blog"
+        },
+        {
+          "title": "Businesses in ChatGPT：事業者として登録する",
+          "year": 2026,
+          "venue": "OpenAI 事業者向け案内ページ",
+          "url": "https://openai.com/business/businesses-in-chatgpt",
+          "is_preprint": false,
+          "institution": "OpenAI",
+          "source_kind": "company_website"
+        },
+        {
+          "title": "Setting up your business on ChatGPT",
+          "year": 2026,
+          "venue": "OpenAI ヘルプ記事",
+          "url": "https://help.openai.com/articles/20001635",
+          "is_preprint": false,
+          "institution": "OpenAI",
+          "source_kind": "official_blog"
+        },
+        {
+          "title": "Business Agents Policy",
+          "year": 2026,
+          "venue": "OpenAI ポリシー（2026年11月10日更新）",
+          "url": "https://openai.com/policies/business-agents-policy/",
+          "is_preprint": false,
+          "institution": "OpenAI",
+          "source_kind": "official_blog"
+        }
+      ],
+      "hook_idea": "買い物の相談を検索ではなくAIにする人が増えている、とOpenAIは言う。そのAIの中に、お店が自分のページを持てるようになった。",
+      "notes": "2026-11-16 週次スレート本命（なるさん選択）。問いゲート 案A（ケビン推奨）をなるさんが承認。詳細は script_prep/kl057_question.md。先行事例は Google Business Agent（2026-01、米国）で『初めて』と言わない。日本の事業者の登録可否は未確認。",
+      "topic_pattern": "shop_change",
+      "candidate_id": "bb634dc083",
+      "pitch": {
+        "title": "店の看板は検索からAIの中へ？ ChatGPTに「店の窓口」（11月時点）",
+        "hook": "買い物の相談を検索ではなくAIにする人が増えている、とOpenAIは言う。そのAIの中に、お店が自分のページを持てるようになった。",
+        "surprise_line": "店は看板や検索で見つけてもらうものだと思っている人が、AIの中では店が自分で値段や返品の決まりを入れられ、AIに何回紹介されたか・どんな話題で名前が出たかを店自身が見られる、しかも広告を出さなくても申し込めると知って驚く",
+        "emma": "案A 見たい（2位・弱い。指摘: 12億人が大企業に聞こえる／問いと驚きのずれ→直す）",
+        "question": "買い物の相談相手が検索からAIに変わったら、お店はどうやってお客さんに見つけてもらう時代になる？",
+        "title_note": "仮。最終は STEP 5.6。問いゲート 2026-11-16 なるさんが案A選択（編集長推奨A、エマ1位はC）"
+      }
     }
   ],
-  "total_topics": 56,
-  "last_updated": "2026-11-08"
+  "total_topics": 57,
+  "last_updated": "2026-11-16"
 }
