@@ -146,6 +146,48 @@
       "queries": 0,
       "json_failed": false,
       "reformat": "none"
+    },
+    {
+      "at": "2026-11-16T14:47:33",
+      "kind": "check_reference",
+      "queries": 0,
+      "json_failed": false,
+      "reformat": "none"
+    },
+    {
+      "at": "2026-11-16T14:47:46",
+      "kind": "check_reference",
+      "queries": 0,
+      "json_failed": false,
+      "reformat": "none"
+    },
+    {
+      "at": "2026-11-16T14:48:07",
+      "kind": "check_reference",
+      "queries": 0,
+      "json_failed": false,
+      "reformat": "none"
+    },
+    {
+      "at": "2026-11-16T14:48:23",
+      "kind": "check_reference",
+      "queries": 2,
+      "json_failed": false,
+      "reformat": "none"
+    },
+    {
+      "at": "2026-11-16T14:48:37",
+      "kind": "check_reference",
+      "queries": 0,
+      "json_failed": false,
+      "reformat": "none"
+    },
+    {
+      "at": "2026-11-16T14:48:59",
+      "kind": "check_reference",
+      "queries": 0,
+      "json_failed": false,
+      "reformat": "none"
     }
   ],
   "totals": {
@@ -164,8 +206,8 @@
       "reformat_failed": 0
     },
     "check_reference": {
-      "calls": 6,
-      "queries": 0,
+      "calls": 12,
+      "queries": 2,
       "json_failed": 0,
       "reformat_ok": 0,
       "reformat_failed": 0

@@ -307,3 +307,6 @@
 {"ts": "2026-11-16T14:34:46+09:00", "kind": "call", "agent": "kl-writer", "session": "85027d17-b5bf-48ca-84e4-8e629515518a"}
 {"ts": "2026-11-16T14:34:51+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl057", "step": "2", "result": "ok", "retries": 0, "note": "check❌0 ⚠2、自己チェック16項目報告あり"}
 {"ts": "2026-11-16T14:39:38+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl057", "step": "4", "result": "ok", "retries": 0, "note": "ファクトチェック ok=6 caution0 high_risk0（Gemini 504を再試行で通過）"}
+{"ts": "2026-11-16T14:44:36+09:00", "kind": "call", "agent": "kl-script-reviewer", "session": "85027d17-b5bf-48ca-84e4-8e629515518a"}
+{"ts": "2026-11-16T14:44:41+09:00", "kind": "work", "agent": "kl-script-reviewer", "episode": "kl057", "step": "5", "result": "ok", "retries": 0, "note": "GO。台詞9か所・visuals調整、パッケージ案3のみ×"}
+{"ts": "2026-11-16T14:49:12+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl057", "step": "4.5", "result": "ok", "retries": 0, "note": "check❌0・ファクト再実行ok=6"}
