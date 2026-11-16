@@ -90,11 +90,32 @@
       "queries": 0,
       "json_failed": false,
       "reformat": "none"
+    },
+    {
+      "at": "2026-11-16T14:23:54",
+      "kind": "prior_art",
+      "queries": 0,
+      "json_failed": false,
+      "reformat": "none"
+    },
+    {
+      "at": "2026-11-16T14:23:58",
+      "kind": "prior_art",
+      "queries": 0,
+      "json_failed": false,
+      "reformat": "none"
     }
   ],
   "totals": {
     "score_item": {
       "calls": 13,
+      "queries": 0,
+      "json_failed": 0,
+      "reformat_ok": 0,
+      "reformat_failed": 0
+    },
+    "prior_art": {
+      "calls": 2,
       "queries": 0,
       "json_failed": 0,
       "reformat_ok": 0,
