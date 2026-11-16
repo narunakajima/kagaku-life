@@ -1,0 +1,1134 @@
+{
+  "episode_id": "kl057",
+  "format": "dialogue",
+  "structure": "rounds_v4",
+  "template": "basic",
+  "source_type": "news",
+  "news_date": "2026-11-10",
+  "verdict_as_of": "2026-11-16",
+  "genre": "ai",
+  "health": false,
+  "topic_pattern": "shop_change",
+  "episode_title": "ChatGPTに店の公式ページ。AIに相談する時代、店はどう見つけてもらう？",
+  "youtube_title": "店の看板は検索からAIの中へ？ ChatGPTに「店の窓口」（11月時点）",
+  "entry_question": "買い物の相談相手が検索からAIに変わったら、お店はどうやってお客さんに見つけてもらう時代になる？",
+  "claim_verdict": {
+    "dreamer": "soon",
+    "skeptic": "soon"
+  },
+  "verdict": {
+    "dreamer": "soon",
+    "skeptic": "pending"
+  },
+  "hook_lines": [
+    "AIの中に、店の公式ページ",
+    "紹介された回数が店に見える"
+  ],
+  "thumbnail_prompt": "A small shopping street at dusk, continuous across the whole frame with no panels, boxes or borders. Keep the left 30%, the right 30% and the top 42% of the frame quiet and uncluttered (softly blurred shopfronts and a calm evening sky only), but the background must continue unbroken behind them. Main subject, centered left-to-right in the middle band: one small warmly lit shopfront with a blank signboard, and floating just above its doorway a large softly glowing rounded speech bubble, as if the shop is being talked about in a conversation. Hopeful and intriguing. No people, no robots, no text, no logos.",
+  "thumbnail_headline": "店の看板が\nAIの中へ",
+  "thumbnail_exprs": {
+    "dreamer": "excited",
+    "skeptic": "doubt"
+  },
+  "youtube_tags": [
+    "ChatGPT",
+    "OpenAI",
+    "Businesses in ChatGPT",
+    "Business Agent",
+    "ビジネスエージェント",
+    "AI",
+    "生成AI",
+    "集客",
+    "AI集客",
+    "店舗",
+    "ネットショップ",
+    "Shopify",
+    "AI検索",
+    "Google",
+    "小さな店",
+    "科学ニュース"
+  ],
+  "references": [
+    {
+      "title": "Businesses in ChatGPT のご紹介",
+      "authors": [],
+      "year": 2026,
+      "venue": "OpenAI 公式ニュース（2026年11月10日）",
+      "url": "https://openai.com/index/introducing-businesses-chatgpt/",
+      "is_preprint": false,
+      "institution": "OpenAI",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "Businesses in ChatGPT：事業者として登録する",
+      "authors": [],
+      "year": 2026,
+      "venue": "OpenAI 事業者向け案内ページ（2026年11月16日確認）",
+      "url": "https://openai.com/business/businesses-in-chatgpt",
+      "is_preprint": false,
+      "institution": "OpenAI",
+      "source_kind": "company_website"
+    },
+    {
+      "title": "Setting up your business on ChatGPT",
+      "authors": [],
+      "year": 2026,
+      "venue": "OpenAI ヘルプ記事（2026年11月16日確認）",
+      "url": "https://help.openai.com/articles/20001635",
+      "is_preprint": false,
+      "institution": "OpenAI",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "Business Agents Policy",
+      "authors": [],
+      "year": 2026,
+      "venue": "OpenAI ポリシー（2026年11月10日更新）",
+      "url": "https://openai.com/policies/business-agents-policy/",
+      "is_preprint": false,
+      "institution": "OpenAI",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "New tech and tools for retailers to succeed in an agentic shopping era",
+      "authors": [],
+      "year": 2026,
+      "venue": "Google 公式ブログ（2026年1月11日）",
+      "url": "https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/",
+      "is_preprint": false,
+      "institution": "Google",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "ChatGPT（Shopify アプリ、開発者 OpenAI）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Shopify App Store（2026年11月16日確認）",
+      "url": "https://apps.shopify.com/chatgpt",
+      "is_preprint": false,
+      "institution": "Shopify / OpenAI",
+      "source_kind": "product_page"
+    }
+  ],
+  "youtube_description": "2026年11月10日のOpenAIの発表「Businesses in ChatGPT」（ベータ版）を、11月16日時点で確認した二人の見立てです。\n\nChatGPTの中に、お店が自分の公式のページを持ち、値段・在庫・返品や配送の決まりを自分で入れたり、店が用意した案内役のAI（Business Agent）でお客さんの質問に答えたりできるようになりました。買い物の相談相手が検索からAIに変わったら、お店はどうやってお客さんに見つけてもらう時代になるのか。期待担当の大輔と、確かめ担当の沙織が、OpenAIの発表・案内ページ・ヘルプ記事・ポリシーで確かめます。(1) AIは、店のことを正しく話せるか (2) お客さんは、店のAIと話せるか (3) お金を出した店が勧められるのか の3つです。\n\n■ この回の判定（2026年11月16日時点の、二人の見立て）\n判定するのは：日本の店が、AIの中に自分の正しい情報を置いて、見つけてもらう形は、この1年で来るか\n大輔: もうすぐ来る（ChatGPTは日本でも使え、発表は「ChatGPTが利用可能な地域に所在し、利用条件を満たす企業」は登録できるとしている。自分の店がAIにどう紹介されているかは今日から確かめられる）\n沙織: 根拠待ち（最初の予想「勧められるのは大きな会社かお金を出した店だけ」は、仕組みの上では外れたと認めた。ただ、日本の店が登録と本人確認まで進めた例をまだ確かめられていない。その例が出たら「もうすぐ来る」に変える）\n発表は今回を「企業が ChatGPT により深く関わるための初期の一歩」と述べています。\n\n■ 補足\n・町の店・飲食店が登録できるのは、今のところ米国の既存の掲載だけです（ヘルプ記事）。日本の事業者が登録・本人確認まで進めるかは、今回確かめた資料では分かりません。日本での提供時期も資料にありません（発表は「より多くの市場や業種へ拡大する予定」）。\n・案内役のAI（Business Agent）は、今は米国の、ウェブサイトのある対象のネット通販・オンラインサービス事業者だけが作れます。商品や決まりの説明と、店のサイトへのリンクまでで、購入・予約・注文の確認はできません（ヘルプ記事）。\n・店が見られる数（インサイト）は過去28日の集計で、AIの答えに店が出た回数（ネットの店は、店のサイトが参照されたとき。店の名前だけでは数えない）、サイトのクリック数、名前が出た話題です。一人ひとりの質問や会話は店に渡されません。\n・案内ページには「事業者として登録しても、上位表示や売上が保証されるわけではありません」、ヘルプ記事には「広告はChatGPTの独立した回答に影響しない」とあります。これはOpenAIの説明で、外部から確かめた資料ではありません。広告（スポンサー付きエージェント）は、広告であることが示され、回答とは分けて表示されます。\n・店の案内役のAIは、ChatGPTが初めてではありません。Googleが2026年1月11日に、検索の中でブランドと話せる「Business Agent」を米国の小売店で始めると発表しています。\n・ShopifyのChatGPTアプリ（開発者 OpenAI、2026年9月公開）の評価は、2026年11月16日の確認で5点満点の1.4（103件中91件が星1つ）です。アプリ全体の評価で、今回の仕組みだけへの評価ではありません。\n・この動画は発表の紹介で、特定のサービスの利用や投資をすすめるものではありません。\n\n■ 参考資料（一次資料）\n・OpenAI「Businesses in ChatGPT のご紹介」（2026年11月10日） https://openai.com/index/introducing-businesses-chatgpt/\n・OpenAI「Businesses in ChatGPT：事業者として登録する」 https://openai.com/business/businesses-in-chatgpt\n・OpenAI ヘルプ記事「Setting up your business on ChatGPT」 https://help.openai.com/articles/20001635\n・OpenAI「Business Agents Policy」（2026年11月10日更新） https://openai.com/policies/business-agents-policy/\n・Google「New tech and tools for retailers to succeed in an agentic shopping era」（2026年1月11日） https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/\n・Shopify App Store「ChatGPT」 https://apps.shopify.com/chatgpt\n\n#ChatGPT #AI #幸せな未来のサイエンス",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 8,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "AIに買い物を相談する人が増えた、とOpenAIは言う。",
+          "expression": "excited"
+        }
+      ],
+      "narration": "大輔「AIに買い物を相談する人が増えた、とOpenAIは言う。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 6,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "そのAIの中に、店が値段や返品の決まりを入れられる。",
+          "expression": "excited"
+        }
+      ],
+      "narration": "大輔「そのAIの中に、店が値段や返品の決まりを入れられる。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 10,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "結局、大きな会社か、お金を出した店が勧められるんじゃない？",
+          "expression": "doubt"
+        }
+      ],
+      "narration": "沙織「結局、大きな会社か、お金を出した店が勧められるんじゃない？」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 6,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "相談相手がAIになったら、店はどう見つけてもらう？",
+          "expression": "thinking",
+          "tag": "question"
+        }
+      ],
+      "narration": "沙織「相談相手がAIになったら、店はどう見つけてもらう？」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 5,
+      "type": "setup",
+      "bgm_role": "intro",
+      "image_asset": "base_cafe_b",
+      "ken_burns": "zoom_out",
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true
+        },
+        {
+          "from_line": 3,
+          "source_card": {
+            "kind": "press",
+            "source": "OpenAI 公式ニュース（2026年11月10日）",
+            "quote": "商品を探し、選択肢を比較し、意思決定する際に AI が活用されるなか、ChatGPT は AI を通じて人々と企業をつなぐプラットフォームとなっています。",
+            "quote_type": "原文",
+            "highlight": "AI が活用されるなか",
+            "items": [
+              "試験版（ベータ）を公開",
+              "店が値段・在庫・返品の決まりを入れる",
+              "店が用意した案内役のAIに質問できる"
+            ]
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 7,
+          "recap_card": {
+            "title": "二人の予想",
+            "badge": "予想",
+            "items": [
+              "大輔: 1年ほどで、日本の町の店も準備を始める",
+              "沙織: 勧められるのは大きな会社か",
+              "　　　お金を出した店だけ"
+            ]
+          }
+        },
+        {
+          "from_line": 9,
+          "source_card": {
+            "kind": "docs",
+            "source": "OpenAI ヘルプ記事（2026年11月16日確認）",
+            "quote": "Local stores and restaurants can currently claim only an existing U.S. listing.",
+            "quote_type": "原文",
+            "highlight": "only an existing U.S. listing",
+            "items": [
+              "町の店・飲食店: 今はアメリカの既存の掲載だけ",
+              "登録できるかは、店の場所と業種しだい"
+            ]
+          },
+          "reference_index": 2
+        },
+        {
+          "from_line": 10,
+          "recap_card": {
+            "title": "今日の問い",
+            "badge": "問い",
+            "items": [
+              "買い物の相談相手が、検索からAIに",
+              "変わったら、お店はどうやって",
+              "お客さんに見つけてもらう時代になる？"
+            ]
+          }
+        },
+        {
+          "from_line": 11,
+          "recap_card": {
+            "title": "今日、確かめること",
+            "items": [
+              "1 AIは、店のことを正しく話せる？",
+              "2 お客さんは、店のAIと話せる？",
+              "3 お金を出した店が勧められる？"
+            ]
+          }
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "11月10日に、OpenAI、ChatGPTを作っている会社が、新しい仕組みを試しに始めたんだ。ChatGPTの中に、お店が自分の窓口になる、公式のページを持てる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "公式のページ？ 中身は何？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "店が自分で、値段や在庫、返品や配送の決まりを入れられる。それに、店が用意した案内役のAIに、お客さんが質問できる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "なんで今、そんな仕組みを？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "発表は、こう言ってる。商品を探して、比べて、決めるのに、AIが使われるようになった。だから、ChatGPTを、人と店をつなぐ場所にする、って。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "検索で一覧を見比べる代わりに、AIに相談して決める人が出てきた、ということね。それは発表した会社の見方だけど。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "まず始まったのは、アメリカのネットの店から。僕の予想は、その先。1年もすれば、日本の町の店も、AIに見つけてもらう準備を始める。",
+          "expression": "excited",
+          "tag": "prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想は逆。結局、AIに勧められるのは、大きな会社か、お金を出した店。小さな店には、あまり関係がない仕組みになると見てる。",
+          "expression": "doubt",
+          "tag": "prediction"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "日本のことは、先に言っておくね。町の店や飲食店が登録できるのは、今はアメリカで、すでにChatGPTに載っている店だけ。日本の店が登録できるかは、資料からは確かめられなかった。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、今日の問いはこれね。買い物の相談相手が、検索からAIに変わったら、お店はどうやってお客さんに見つけてもらう時代になるか。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "確かめるのは3つ。AIは、店のことを正しく話せるか。お客さんは、店のAIと話せるか。そして、お金を出した店が勧められるのか。",
+          "expression": "neutral"
+        }
+      ],
+      "narration": "大輔「11月10日に、OpenAI、ChatGPTを作っている会社が、新しい仕組みを試しに始めたんだ。ChatGPTの中に、お店が自分の窓口になる、公式のページを持てる。」\n沙織「公式のページ？ 中身は何？」\n大輔「店が自分で、値段や在庫、返品や配送の決まりを入れられる。それに、店が用意した案内役のAIに、お客さんが質問できる。」\n沙織「なんで今、そんな仕組みを？」\n大輔「発表は、こう言ってる。商品を探して、比べて、決めるのに、AIが使われるようになった。だから、ChatGPTを、人と店をつなぐ場所にする、って。」\n沙織「検索で一覧を見比べる代わりに、AIに相談して決める人が出てきた、ということね。それは発表した会社の見方だけど。」\n大輔「まず始まったのは、アメリカのネットの店から。僕の予想は、その先。1年もすれば、日本の町の店も、AIに見つけてもらう準備を始める。」\n沙織「私の予想は逆。結局、AIに勧められるのは、大きな会社か、お金を出した店。小さな店には、あまり関係がない仕組みになると見てる。」\n大輔「日本のことは、先に言っておくね。町の店や飲食店が登録できるのは、今はアメリカで、すでにChatGPTに載っている店だけ。日本の店が登録できるかは、資料からは確かめられなかった。」\n沙織「じゃあ、今日の問いはこれね。買い物の相談相手が、検索からAIに変わったら、お店はどうやってお客さんに見つけてもらう時代になるか。」\n大輔「確かめるのは3つ。AIは、店のことを正しく話せるか。お客さんは、店のAIと話せるか。そして、お金を出した店が勧められるのか。」\n［画面の資料カード］OpenAI 公式ニュース（2026年11月10日） 「商品を探し、選択肢を比較し、意思決定する際に AI が活用されるなか、ChatGPT は AI を通じて人々と企業をつなぐプラットフォームとなっています。」（原文） ・試験版（ベータ）を公開 ・店が値段・在庫・返品の決まりを入れる ・店が用意した案内役のAIに質問できる\n［画面のまとめカード（予想）］二人の予想 ・大輔: 1年ほどで、日本の町の店も準備を始める ・沙織: 勧められるのは大きな会社か ・　　　お金を出した店だけ\n［画面の資料カード］OpenAI ヘルプ記事（2026年11月16日確認） 「Local stores and restaurants can currently claim only an existing U.S. listing.」（原文） ・町の店・飲食店: 今はアメリカの既存の掲載だけ ・登録できるかは、店の場所と業種しだい\n［画面のまとめカード（問い）］今日の問い ・買い物の相談相手が、検索からAIに ・変わったら、お店はどうやって ・お客さんに見つけてもらう時代になる？\n［画面のまとめカード（ふりかえり）］今日、確かめること ・1 AIは、店のことを正しく話せる？ ・2 お客さんは、店のAIと話せる？ ・3 お金を出した店が勧められる？",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 6,
+      "type": "paper",
+      "round": 1,
+      "round_title": "AIは、店のことを正しく話せる？",
+      "bgm_role": "main",
+      "image_prompt": "Interior of a small independent neighborhood shop in the early evening, seen from just behind the counter: a wooden counter with a smartphone lying flat on it, its screen glowing softly with a few abstract rounded chat bubbles and a small product thumbnail (no readable text, no logos), a paper price tag and a small gift box beside it. Shelves of neatly arranged goods and a glass front door with a warm street glow behind. Calm, hopeful mood. No people, no hands, no robots, no readable text or signs with words. Warm editorial illustration style.",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "まず1つ目。今でも、ChatGPTに店のことを聞けば答えてくれるわよね。何を元に答えてるの？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ネットにある情報。店のサイトや、ほかのサイトだね。店のほうから、ChatGPTに直接情報を届ける入口は無かった。発表は、そこを新しい方法だと言ってる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "今回は、どうやって届けるの？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "まず店が、ChatGPTの中の自分の店を見つけて、うちの店です、と名乗り出る。確かめ方は、店の電話やメールに届く番号や、店のサイトの設定。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "名乗り出るだけで、なりすましは防げる？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "その次がある。身分証や、事業の登録の書類で、本人かどうかを確かめる。通ると、店のページに、確認済みの青いチェックが付く。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そこまで済ませて、やっと値段や返品の決まりを入れられるのね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そう。ChatGPTは、毎週12億人が使ってる。日本の人口のおよそ10倍だ。次は、ネットの店だけじゃない。町のパン屋や工務店でも、ここが看板になる。近くで頼める店はどこ？とAIに聞かれて、名前が出る。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "町の店や飲食店は、今はアメリカの、もう載っている店だけだったでしょ。それに、店が入れた情報が、そのまま答えに出るのかしら。",
+          "expression": "doubt"
+        }
+      ],
+      "narration": "沙織「まず1つ目。今でも、ChatGPTに店のことを聞けば答えてくれるわよね。何を元に答えてるの？」\n大輔「ネットにある情報。店のサイトや、ほかのサイトだね。店のほうから、ChatGPTに直接情報を届ける入口は無かった。発表は、そこを新しい方法だと言ってる。」\n沙織「今回は、どうやって届けるの？」\n大輔「まず店が、ChatGPTの中の自分の店を見つけて、うちの店です、と名乗り出る。確かめ方は、店の電話やメールに届く番号や、店のサイトの設定。」\n沙織「名乗り出るだけで、なりすましは防げる？」\n大輔「その次がある。身分証や、事業の登録の書類で、本人かどうかを確かめる。通ると、店のページに、確認済みの青いチェックが付く。」\n沙織「そこまで済ませて、やっと値段や返品の決まりを入れられるのね。」\n大輔「そう。ChatGPTは、毎週12億人が使ってる。日本の人口のおよそ10倍だ。次は、ネットの店だけじゃない。町のパン屋や工務店でも、ここが看板になる。近くで頼める店はどこ？とAIに聞かれて、名前が出る。」\n沙織「町の店や飲食店は、今はアメリカの、もう載っている店だけだったでしょ。それに、店が入れた情報が、そのまま答えに出るのかしら。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 7,
+      "type": "check",
+      "round": 1,
+      "bgm_role": "main",
+      "image_asset": "cards/kl057_S07_v1",
+      "ken_burns": "static",
+      "visuals": [
+        {
+          "from_line": 1,
+          "source_card": {
+            "kind": "docs",
+            "source": "OpenAI ヘルプ記事（2026年11月16日確認）",
+            "quote": "OpenAI reviews and publishes changes.",
+            "quote_type": "原文",
+            "highlight": "OpenAI reviews and publishes changes",
+            "items": [
+              "店が直した情報は、OpenAIが確かめて載せる",
+              "ChatGPTは、ほかの情報源も使う",
+              "本人確認には身分証・事業の登録の書類"
+            ]
+          },
+          "reference_index": 2
+        },
+        {
+          "from_line": 3,
+          "chart": {
+            "kind": "bar",
+            "title": "ChatGPTとShopifyをつなぐアプリの評価",
+            "unit": "件",
+            "highlight": 4,
+            "source": "Shopify App Store の ChatGPT アプリ（2026年11月16日確認）",
+            "items": [
+              {
+                "label": "星5",
+                "value": 7
+              },
+              {
+                "label": "星4",
+                "value": 0
+              },
+              {
+                "label": "星3",
+                "value": 2
+              },
+              {
+                "label": "星2",
+                "value": 3
+              },
+              {
+                "label": "星1",
+                "value": 91
+              }
+            ],
+            "annotations": [
+              {
+                "target": 4,
+                "text": "103件中91件"
+              }
+            ]
+          },
+          "reference_index": 5
+        },
+        {
+          "from_line": 10,
+          "source_card": {
+            "kind": "docs",
+            "source": "OpenAI ヘルプ記事（2026年11月16日確認）",
+            "quote": "match your official business records",
+            "quote_type": "原文",
+            "highlight": "match your official business records",
+            "items": [
+              "名前・住所・登録の番号を公式の書類とそろえる",
+              "店の名前（ブランド）ごとに別に登録"
+            ]
+          },
+          "reference_index": 2
+        },
+        {
+          "from_line": 12,
+          "source_card": {
+            "kind": "docs",
+            "source": "OpenAI ヘルプ記事（2026年11月16日確認）",
+            "quote": "Insights show aggregate activity over the past 28 days",
+            "quote_type": "原文",
+            "highlight": "past 28 days",
+            "items": [
+              "AIの答えに店が出た回数",
+              "店のサイトが押された回数",
+              "名前が出た話題",
+              "一人ひとりの質問や会話は、店に渡さない"
+            ]
+          },
+          "reference_index": 2
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "ヘルプの記事、つまりOpenAIの使い方の説明のページに、こうある。店が直した情報は、OpenAIが確かめてから載せる。答えに出るまで時間がかかるし、ChatGPTは、ほかの情報源も使う。",
+          "expression": "neutral",
+          "tag": "barrier"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "店の言い分を、そのまま流すわけじゃない、ってことだね。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "もう一つ、使った店の声。ネットの店を作るサービスの大手、ショッピファイと、ChatGPTをつなぐアプリがあるの。作ったのはOpenAI。評価は、5点満点で1.4。",
+          "expression": "doubt",
+          "tag": "weakness",
+          "display": "もう一つ、使った店の声。ネットの店を作るサービスの大手、Shopify（ショッピファイ）と、ChatGPTをつなぐアプリがあるの。作ったのはOpenAI。評価は、5点満点で1.4。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "1.4は、ずいぶん低いね。",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "103件のうち、91件が一番低い星1つ。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そこまで低いのは、今回の仕組みのせい？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そこは分からない。9月からある、このアプリ全体の評価だから。ただ、11月14日の、アメリカの店の声に、登録の話がある。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "どんな声？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "登録した会社の名前と、お客さんに見せている店の名前が違うと、会社の名前のほうでしか記録してくれない、って。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だったら、名前をそろえてから申し込む。ヘルプの記事にも、会社の名前や住所、登録の番号を、公式の書類と同じにして、と書いてある。店の名前が複数あるなら、名前ごとに別に登録する。",
+          "expression": "excited",
+          "tag": "workaround"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "最初のつまずきは、準備で減らせるわけね。で、登録が済んだ店には、何が見えるの？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ここが面白い。過去28日の間に、AIの答えに自分の店が何回出たか。店のサイトが何回押されたか。それに、どんな話題のときに名前が出たか。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "お客さんが何を聞いたかも、見えるの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "見えない。一人ひとりの質問や会話は、店に渡さない。見えるのは、まとめた数と話題だけ。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "AIの答えに出た回数は、どう数えるの？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ネットの店なら、AIが店のサイトを答えの元にしたときに1回。店の名前が出ただけでは数えない。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "店のサイトが、AIの答えの元になる。だから数えるのね。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "AIに相談される時代に、自分の店がどんな話題で、何回紹介されたかを、店が数字で確かめられるようになった。",
+          "expression": "convinced",
+          "tag": "hope"
+        }
+      ],
+      "narration": "沙織「ヘルプの記事、つまりOpenAIの使い方の説明のページに、こうある。店が直した情報は、OpenAIが確かめてから載せる。答えに出るまで時間がかかるし、ChatGPTは、ほかの情報源も使う。」\n大輔「店の言い分を、そのまま流すわけじゃない、ってことだね。」\n沙織「もう一つ、使った店の声。ネットの店を作るサービスの大手、ショッピファイと、ChatGPTをつなぐアプリがあるの。作ったのはOpenAI。評価は、5点満点で1.4。」\n大輔「1.4は、ずいぶん低いね。」\n沙織「103件のうち、91件が一番低い星1つ。」\n大輔「そこまで低いのは、今回の仕組みのせい？」\n沙織「そこは分からない。9月からある、このアプリ全体の評価だから。ただ、11月14日の、アメリカの店の声に、登録の話がある。」\n大輔「どんな声？」\n沙織「登録した会社の名前と、お客さんに見せている店の名前が違うと、会社の名前のほうでしか記録してくれない、って。」\n大輔「だったら、名前をそろえてから申し込む。ヘルプの記事にも、会社の名前や住所、登録の番号を、公式の書類と同じにして、と書いてある。店の名前が複数あるなら、名前ごとに別に登録する。」\n沙織「最初のつまずきは、準備で減らせるわけね。で、登録が済んだ店には、何が見えるの？」\n大輔「ここが面白い。過去28日の間に、AIの答えに自分の店が何回出たか。店のサイトが何回押されたか。それに、どんな話題のときに名前が出たか。」\n沙織「お客さんが何を聞いたかも、見えるの？」\n大輔「見えない。一人ひとりの質問や会話は、店に渡さない。見えるのは、まとめた数と話題だけ。」\n沙織「AIの答えに出た回数は、どう数えるの？」\n大輔「ネットの店なら、AIが店のサイトを答えの元にしたときに1回。店の名前が出ただけでは数えない。」\n沙織「店のサイトが、AIの答えの元になる。だから数えるのね。」\n大輔「AIに相談される時代に、自分の店がどんな話題で、何回紹介されたかを、店が数字で確かめられるようになった。」\n［画面の資料カード］OpenAI ヘルプ記事（2026年11月16日確認） 「OpenAI reviews and publishes changes.」（原文） ・店が直した情報は、OpenAIが確かめて載せる ・ChatGPTは、ほかの情報源も使う ・本人確認には身分証・事業の登録の書類\n［画面のグラフ］Shopify App Store の ChatGPT アプリ（2026年11月16日確認） ChatGPTとShopifyをつなぐアプリの評価 ・星5 7件 ・星4 0件 ・星3 2件 ・星2 3件 ・星1 91件 ［注釈］103件中91件\n［画面の資料カード］OpenAI ヘルプ記事（2026年11月16日確認） 「match your official business records」（原文） ・名前・住所・登録の番号を公式の書類とそろえる ・店の名前（ブランド）ごとに別に登録\n［画面の資料カード］OpenAI ヘルプ記事（2026年11月16日確認） 「Insights show aggregate activity over the past 28 days」（原文） ・AIの答えに店が出た回数 ・店のサイトが押された回数 ・名前が出た話題 ・一人ひとりの質問や会話は、店に渡さない",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 8,
+      "type": "paper",
+      "round": 2,
+      "round_title": "お客さんは、店のAIと話せる？",
+      "bgm_role": "main",
+      "image_prompt": "A laptop open on a wooden dining table at night in a quiet home, its screen showing an abstract chat layout with rounded speech bubbles and two small product pictures side by side (two similar electric kettles), no readable text and no logos. Next to the laptop, the two real kettles of slightly different shapes stand side by side, and a mug of tea. Soft warm lamp light, calm and curious mood. No people, no hands, no readable text. Warm editorial illustration style.",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "2つ目。AIの答えに店が出てきたら、お客さんは、その店のページを開ける。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "開いたら、何ができるの？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "案内役のAIがある店なら、そこで話せる。発表での名前は、ビジネスエージェント。つまり、店の代わりに質問に答えるAIのこと。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "具体的に、何を聞くの？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "発表の例だと、2つの商品で迷ったとき。どこが違うのか、自分にはどっちが合うのか。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "答えの元は、店が渡した情報ね。ChatGPTの、ふだんの答えと混ざらない？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "混ざらない。店のAIとの会話は、元の会話とは分けて、はっきり表示される。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "いま話している相手は店のAIだ、と見て分かるわけね。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次は、店の人が少ない、小さなネットの店にこそ効く。夜中に来る、セールの品は返品できる？という質問にも、店の決まりどおりに答える。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "答えるだけ？ そのまま買えるの？",
+          "expression": "doubt"
+        }
+      ],
+      "narration": "大輔「2つ目。AIの答えに店が出てきたら、お客さんは、その店のページを開ける。」\n沙織「開いたら、何ができるの？」\n大輔「案内役のAIがある店なら、そこで話せる。発表での名前は、ビジネスエージェント。つまり、店の代わりに質問に答えるAIのこと。」\n沙織「具体的に、何を聞くの？」\n大輔「発表の例だと、2つの商品で迷ったとき。どこが違うのか、自分にはどっちが合うのか。」\n沙織「答えの元は、店が渡した情報ね。ChatGPTの、ふだんの答えと混ざらない？」\n大輔「混ざらない。店のAIとの会話は、元の会話とは分けて、はっきり表示される。」\n沙織「いま話している相手は店のAIだ、と見て分かるわけね。」\n大輔「次は、店の人が少ない、小さなネットの店にこそ効く。夜中に来る、セールの品は返品できる？という質問にも、店の決まりどおりに答える。」\n沙織「答えるだけ？ そのまま買えるの？」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 9,
+      "type": "check",
+      "round": 2,
+      "bgm_role": "main",
+      "image_asset": "cards/kl057_S09_v1",
+      "ken_burns": "static",
+      "visuals": [
+        {
+          "from_line": 1,
+          "source_card": {
+            "kind": "docs",
+            "source": "OpenAI ヘルプ記事（2026年11月16日確認）",
+            "quote": "lets your agent explain products and policies and link to your website",
+            "quote_type": "原文",
+            "highlight": "explain products and policies and link to your website",
+            "items": [
+              "買う・予約する・注文を確かめる: できない",
+              "作れるのは、アメリカのサイトのある",
+              "ネット通販とネットのサービスの会社"
+            ]
+          },
+          "reference_index": 2
+        },
+        {
+          "from_line": 5,
+          "source_card": {
+            "kind": "terms",
+            "source": "OpenAI 店の案内役AIの決まり（2026年11月10日更新）",
+            "quote": "keep pushing a sale or follow-up after someone declines",
+            "quote_type": "原文",
+            "highlight": "after someone declines",
+            "items": [
+              "急かす・焦らせる: 禁止",
+              "断られた後も売り込む: 禁止",
+              "AIだと示す。人や中立の相談役のふり: 禁止",
+              "健康・身分証・カード番号を聞く: 禁止"
+            ]
+          },
+          "reference_index": 3
+        },
+        {
+          "from_line": 10,
+          "source_card": {
+            "kind": "blog",
+            "source": "Google 公式ブログ（2026年1月11日）",
+            "quote": "a new way for shoppers to chat with brands, right on Search",
+            "quote_type": "原文",
+            "highlight": "chat with brands, right on Search",
+            "items": [
+              "グーグル検索の中で、ブランドと話せる",
+              "アメリカの対象の小売店から"
+            ]
+          },
+          "reference_index": 4
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "買えないのが、今の壁。ヘルプの記事だと、店のAIは、買う、予約する、注文を確かめる、のどれもできない。できるのは、商品と決まりの説明と、店のサイトへの案内まで。",
+          "expression": "doubt",
+          "tag": "barrier"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、店のAIを作れるのは、今はアメリカの、サイトのあるネット通販と、ネットのサービスの会社だけ。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だったら、店のAIは、買わせる係じゃなくて、店の入口の案内係として使えばいい。疑問を解いてから、店のサイトで、いつもどおり自分で買う。",
+          "expression": "excited",
+          "tag": "workaround"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "案内係なら、もう一つ気になる。AIの店員に、うまく乗せられて買わされたりしない？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "乗せられないように、決まりがある。OpenAIが、店の案内役のAIに守らせる決まりを出してる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "読むわね。急かすこと、今すぐと焦らせること、断られた後も売り込み続けることは、禁止。",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "AIだと示すこと。人間や、中立の相談役のふりをしないこと、も書いてある。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "健康のことや、身分証、カードの番号を聞くのも禁止。決まりがあることと、守られていることは別だけど、書いてあるのは安心材料ね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "本物なら、私は、研究で使う器具を選ぶときに使いたい。似た型が2つあると、分厚いカタログを読み比べるのが大変なの。",
+          "expression": "amused",
+          "tag": "skeptic_wish"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ちなみに、店の案内役のAIは、ChatGPTが初めてじゃない。グーグルが今年の1月に、検索の中で、ブランドと話せる案内役のAIを始めてる。名前まで同じ、ビジネスエージェント。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "検索の会社も、同じ方向に動いてるのね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "検索のグーグルも、相談のChatGPTも、店の案内役を置き始めた。買う前に店に聞ける場所が、AIの中にできつつある。",
+          "expression": "convinced",
+          "tag": "hope"
+        }
+      ],
+      "narration": "沙織「買えないのが、今の壁。ヘルプの記事だと、店のAIは、買う、予約する、注文を確かめる、のどれもできない。できるのは、商品と決まりの説明と、店のサイトへの案内まで。」\n沙織「それに、店のAIを作れるのは、今はアメリカの、サイトのあるネット通販と、ネットのサービスの会社だけ。」\n大輔「だったら、店のAIは、買わせる係じゃなくて、店の入口の案内係として使えばいい。疑問を解いてから、店のサイトで、いつもどおり自分で買う。」\n沙織「案内係なら、もう一つ気になる。AIの店員に、うまく乗せられて買わされたりしない？」\n大輔「乗せられないように、決まりがある。OpenAIが、店の案内役のAIに守らせる決まりを出してる。」\n沙織「読むわね。急かすこと、今すぐと焦らせること、断られた後も売り込み続けることは、禁止。」\n大輔「AIだと示すこと。人間や、中立の相談役のふりをしないこと、も書いてある。」\n沙織「健康のことや、身分証、カードの番号を聞くのも禁止。決まりがあることと、守られていることは別だけど、書いてあるのは安心材料ね。」\n沙織「本物なら、私は、研究で使う器具を選ぶときに使いたい。似た型が2つあると、分厚いカタログを読み比べるのが大変なの。」\n大輔「ちなみに、店の案内役のAIは、ChatGPTが初めてじゃない。グーグルが今年の1月に、検索の中で、ブランドと話せる案内役のAIを始めてる。名前まで同じ、ビジネスエージェント。」\n沙織「検索の会社も、同じ方向に動いてるのね。」\n大輔「検索のグーグルも、相談のChatGPTも、店の案内役を置き始めた。買う前に店に聞ける場所が、AIの中にできつつある。」\n［画面の資料カード］OpenAI ヘルプ記事（2026年11月16日確認） 「lets your agent explain products and policies and link to your website」（原文） ・買う・予約する・注文を確かめる: できない ・作れるのは、アメリカのサイトのある ・ネット通販とネットのサービスの会社\n［画面の資料カード］OpenAI 店の案内役AIの決まり（2026年11月10日更新） 「keep pushing a sale or follow-up after someone declines」（原文） ・急かす・焦らせる: 禁止 ・断られた後も売り込む: 禁止 ・AIだと示す。人や中立の相談役のふり: 禁止 ・健康・身分証・カード番号を聞く: 禁止\n［画面の資料カード］Google 公式ブログ（2026年1月11日） 「a new way for shoppers to chat with brands, right on Search」（原文） ・グーグル検索の中で、ブランドと話せる ・アメリカの対象の小売店から",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 10,
+      "type": "paper",
+      "round": 3,
+      "round_title": "お金を出した店が勧められる？",
+      "bgm_role": "main",
+      "image_prompt": "A small shopping street at dusk, seen at eye level from the middle of the street: a row of different small shopfronts (a bakery, a florist, a hardware store, a cafe) with blank signboards and no readable letters, warm light in the windows, a few potted plants and a bicycle parked by a door. Above the street, a softly glowing, abstract rounded speech-bubble shape floats faintly in the evening sky, suggesting conversation. Hopeful, calm mood. No people, no robots, no readable text or logos. Warm editorial illustration style.",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "3つ目は、私の予想。結局、大きな会社か、お金を出した店が勧められるんじゃない？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "お金と勧め方の関係なら、OpenAIの説明がある。事業者向けの案内のページに、こう書いてある。登録しても、上位に出ることや、売上は保証しない。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "でも、広告は出せるんでしょ？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "出せる。店の案内役のAIを、広告の行き先にもできる。ただ、広告は広告だとはっきり示されて、ChatGPTの答えとは分けて表示される。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "分けて表示する、はわかった。でも、広告が答えの中身に影響しないかは、OpenAIの言い分よね。外から確かめた資料は、無い。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "答えの中身が独立しているかは、会社の説明だけ、だね。",
+          "expression": "thinking"
+        }
+      ],
+      "narration": "沙織「3つ目は、私の予想。結局、大きな会社か、お金を出した店が勧められるんじゃない？」\n大輔「お金と勧め方の関係なら、OpenAIの説明がある。事業者向けの案内のページに、こう書いてある。登録しても、上位に出ることや、売上は保証しない。」\n沙織「でも、広告は出せるんでしょ？」\n大輔「出せる。店の案内役のAIを、広告の行き先にもできる。ただ、広告は広告だとはっきり示されて、ChatGPTの答えとは分けて表示される。」\n沙織「分けて表示する、はわかった。でも、広告が答えの中身に影響しないかは、OpenAIの言い分よね。外から確かめた資料は、無い。」\n大輔「答えの中身が独立しているかは、会社の説明だけ、だね。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 11,
+      "type": "check",
+      "round": 3,
+      "bgm_role": "main",
+      "image_asset": "cards/kl057_S11_v1",
+      "ken_burns": "static",
+      "visuals": [
+        {
+          "from_line": 1,
+          "source_card": {
+            "kind": "web",
+            "source": "OpenAI 事業者向け案内ページ（2026年11月16日確認）",
+            "quote": "事業者として登録しても、上位表示や売上が保証されるわけではありません。",
+            "quote_type": "原文",
+            "highlight": "上位表示や売上が保証されるわけではありません",
+            "items": [
+              "推奨や比較は、ChatGPTが独立して判断",
+              "まずはウェブサイトのある事業者から"
+            ]
+          },
+          "reference_index": 1
+        },
+        {
+          "from_line": 3,
+          "source_card": {
+            "kind": "docs",
+            "source": "OpenAI ヘルプ記事（2026年11月16日確認）",
+            "quote": "You don’t need an Ads account or a ChatGPT Enterprise agreement",
+            "quote_type": "原文",
+            "highlight": "You don’t need an Ads account",
+            "items": [
+              "広告を出す登録がなくても申し込める",
+              "広告は、ChatGPTの独立した答えに",
+              "影響しない（OpenAIの説明）"
+            ]
+          },
+          "reference_index": 2
+        },
+        {
+          "from_line": 9,
+          "recap_card": {
+            "title": "3つ目で分かったこと",
+            "items": [
+              "広告は「広告」と示され、答えと分けて出る",
+              "登録しても、上位や売上は保証しない",
+              "サイトのある店は、広告なしで申し込める",
+              "紹介のされ方は、28日分の数で確かめる"
+            ]
+          }
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "だったら、見分け方を覚えておけばいい。広告と書いてある枠と、ChatGPTの答えの本文を、分けて読む。",
+          "expression": "excited",
+          "tag": "workaround"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、広告を出さない店は、答えの本文には出られないの？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ヘルプの記事には、広告は、ChatGPTの独立した答えに影響しない、と書いてある。それに、店のページを持つのに、広告を出す登録は要らない。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "広告を出さなくても、申し込めるのね。料金は？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "料金は、発表にも、ヘルプの記事にも書いてない。そこは分からない。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "大きな会社のための仕組み、ではないの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "申し込めるのは、まずはウェブサイトがあって、条件を満たす事業者。大きな会社だけ、とは書いてない。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、申し込めることと、答えに名前が出ることは別よ。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "名前が出たかどうかは、1つ目で見た、28日分の数で、店ごとに確かめられる。何回紹介されて、何回サイトが押されたか。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "大きな会社か、お金を出した店だけ、という私の予想は、少なくとも仕組みの上では外れね。サイトがあれば、小さな店も、広告なしで申し込める。そこは私の読み違い。",
+          "expression": "convinced",
+          "tag": "turn"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "大きな会社でなくても、サイトがあって条件を満たせば、広告なしで、AIの中に自分の正しい情報を置く入口ができた。",
+          "expression": "convinced",
+          "tag": "hope"
+        }
+      ],
+      "narration": "大輔「だったら、見分け方を覚えておけばいい。広告と書いてある枠と、ChatGPTの答えの本文を、分けて読む。」\n沙織「じゃあ、広告を出さない店は、答えの本文には出られないの？」\n大輔「ヘルプの記事には、広告は、ChatGPTの独立した答えに影響しない、と書いてある。それに、店のページを持つのに、広告を出す登録は要らない。」\n沙織「広告を出さなくても、申し込めるのね。料金は？」\n大輔「料金は、発表にも、ヘルプの記事にも書いてない。そこは分からない。」\n沙織「大きな会社のための仕組み、ではないの？」\n大輔「申し込めるのは、まずはウェブサイトがあって、条件を満たす事業者。大きな会社だけ、とは書いてない。」\n沙織「ただ、申し込めることと、答えに名前が出ることは別よ。」\n大輔「名前が出たかどうかは、1つ目で見た、28日分の数で、店ごとに確かめられる。何回紹介されて、何回サイトが押されたか。」\n沙織「大きな会社か、お金を出した店だけ、という私の予想は、少なくとも仕組みの上では外れね。サイトがあれば、小さな店も、広告なしで申し込める。そこは私の読み違い。」\n大輔「大きな会社でなくても、サイトがあって条件を満たせば、広告なしで、AIの中に自分の正しい情報を置く入口ができた。」\n［画面の資料カード］OpenAI 事業者向け案内ページ（2026年11月16日確認） 「事業者として登録しても、上位表示や売上が保証されるわけではありません。」（原文） ・推奨や比較は、ChatGPTが独立して判断 ・まずはウェブサイトのある事業者から\n［画面の資料カード］OpenAI ヘルプ記事（2026年11月16日確認） 「You don’t need an Ads account or a ChatGPT Enterprise agreement」（原文） ・広告を出す登録がなくても申し込める ・広告は、ChatGPTの独立した答えに ・影響しない（OpenAIの説明）\n［画面のまとめカード（ふりかえり）］3つ目で分かったこと ・広告は「広告」と示され、答えと分けて出る ・登録しても、上位や売上は保証しない ・サイトのある店は、広告なしで申し込める ・紹介のされ方は、28日分の数で確かめる",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 12,
+      "type": "verdict",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "ken_burns": "zoom_out",
+      "verdict_from_line": 9,
+      "visuals": [
+        {
+          "from_line": 1,
+          "recap_card": {
+            "title": "二人の答え合わせ",
+            "items": [
+              "1 店が情報を入れ、紹介の回数を見られる",
+              "2 店のAIは説明と案内まで。買うのはサイト",
+              "3 広告なしで申し込める。上位は保証なし"
+            ]
+          }
+        },
+        {
+          "from_line": 6,
+          "recap_card": {
+            "title": "判定の札（実現に近い順）",
+            "items": [
+              "もうすぐ来る",
+              "3年はかかる",
+              "根拠待ち",
+              "まだ眉唾"
+            ]
+          }
+        },
+        {
+          "from_line": 7,
+          "recap_card": {
+            "title": "札を付ける問い",
+            "badge": "札の対象",
+            "items": [
+              "日本の店が、AIの中に自分の正しい",
+              "情報を置いて、見つけてもらう形は",
+              "この1年で来る？"
+            ]
+          }
+        },
+        {
+          "from_line": 9,
+          "scene_image": true
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "先に、僕の予想から。1年で日本の町の店も、と言ったけど、町の店の登録は、今はアメリカだけ。そこは先走りだった。",
+          "expression": "deflated",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、どこまでなら言える？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ChatGPTは、日本でも使える。発表には、ChatGPTが使える地域で、条件を満たす事業者なら登録できる、とある。始まるなら、サイトのあるネットの店からだと思う。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "今日の答えをまとめるね。AIは、店が入れた情報も使って答える。店のAIは、説明と案内まで。登録しても上位は保証しない、と会社は書いてる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "発表は、企業がChatGPTに深く関わる、最初の一歩だと言ってる。最初の一歩なのは本当。どこまで広がるかは、ここからだ。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "判定の札は4つ。実現に近い順に、もうすぐ来る、3年はかかる、根拠待ち、まだ眉唾。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "札を付けるのは、この問い。日本の店が、AIの中に自分の正しい情報を置いて、見つけてもらう形は、この1年で来るか。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕は、もうすぐ来る。ここで言うのは、この1年で、まずサイトのあるネットの店から、日本でも始まるという意味。登録の条件に、日本を外すとは書いてないし、自分の店がAIにどう紹介されているかは、今日からでも確かめられる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は、根拠待ち。最初の予想は外れたけど、日本の店が、登録と本人確認まで進めた例を、まだ確かめられていない。その例が出たら、もうすぐ来る、に変える。",
+          "expression": "thinking",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "根拠待ちは、否定じゃなくて、確かめる材料を待つ札だね。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今日覚えて帰ってほしいのは、店の看板が、通りや検索に加えて、AIの答えの中にも出る時代が始まったこと。まずアメリカの、サイトのある店から。店が自分で正しい情報を入れ、紹介された回数を見られる。",
+          "expression": "convinced",
+          "tag": "takeaway"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "今日の話は、OpenAIとグーグル、ショッピファイのページの資料。11月時点の、二人の見立てね。",
+          "expression": "neutral"
+        }
+      ],
+      "narration": "大輔「先に、僕の予想から。1年で日本の町の店も、と言ったけど、町の店の登録は、今はアメリカだけ。そこは先走りだった。」\n沙織「じゃあ、どこまでなら言える？」\n大輔「ChatGPTは、日本でも使える。発表には、ChatGPTが使える地域で、条件を満たす事業者なら登録できる、とある。始まるなら、サイトのあるネットの店からだと思う。」\n沙織「今日の答えをまとめるね。AIは、店が入れた情報も使って答える。店のAIは、説明と案内まで。登録しても上位は保証しない、と会社は書いてる。」\n大輔「発表は、企業がChatGPTに深く関わる、最初の一歩だと言ってる。最初の一歩なのは本当。どこまで広がるかは、ここからだ。」\n沙織「判定の札は4つ。実現に近い順に、もうすぐ来る、3年はかかる、根拠待ち、まだ眉唾。」\n沙織「札を付けるのは、この問い。日本の店が、AIの中に自分の正しい情報を置いて、見つけてもらう形は、この1年で来るか。」\n大輔「僕は、もうすぐ来る。ここで言うのは、この1年で、まずサイトのあるネットの店から、日本でも始まるという意味。登録の条件に、日本を外すとは書いてないし、自分の店がAIにどう紹介されているかは、今日からでも確かめられる。」\n沙織「私は、根拠待ち。最初の予想は外れたけど、日本の店が、登録と本人確認まで進めた例を、まだ確かめられていない。その例が出たら、もうすぐ来る、に変える。」\n大輔「根拠待ちは、否定じゃなくて、確かめる材料を待つ札だね。」\n大輔「今日覚えて帰ってほしいのは、店の看板が、通りや検索に加えて、AIの答えの中にも出る時代が始まったこと。まずアメリカの、サイトのある店から。店が自分で正しい情報を入れ、紹介された回数を見られる。」\n沙織「今日の話は、OpenAIとグーグル、ショッピファイのページの資料。11月時点の、二人の見立てね。」\n［画面のまとめカード（ふりかえり）］二人の答え合わせ ・1 店が情報を入れ、紹介の回数を見られる ・2 店のAIは説明と案内まで。買うのはサイト ・3 広告なしで申し込める。上位は保証なし\n［画面のまとめカード（ふりかえり）］判定の札（実現に近い順） ・もうすぐ来る ・3年はかかる ・根拠待ち ・まだ眉唾\n［画面のまとめカード（札の対象）］札を付ける問い ・日本の店が、AIの中に自分の正しい ・情報を置いて、見つけてもらう形は ・この1年で来る？",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 13,
+      "type": "closing",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe_b",
+      "ken_burns": "zoom_out",
+      "visuals": [
+        {
+          "from_line": 1,
+          "step_card": {
+            "title": "今月の一歩",
+            "badge": "次の一歩",
+            "items": [
+              "ChatGPTに、自分の町の店を聞いてみる",
+              "自分の店・よく行く店が出てくるか",
+              "営業時間や値段が合っているか",
+              "違っていたら、まず店のサイトを新しく"
+            ]
+          }
+        },
+        {
+          "from_line": 3,
+          "scene_image": true
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "今月の一歩。ChatGPTに、自分の町の名前を入れて、たとえば、この町で贈り物のお菓子を買うならどこ？と聞いてみる。自分の店や、よく行く店が出てくるか。営業時間や値段が合っているかを確かめる。",
+          "expression": "excited",
+          "tag": "next_step"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "違っていたら、まず自分の店のサイトを新しくしておくといい。1つ目で見たとおり、AIは店のサイトを答えの元にすることがあるから。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "amused"
+        }
+      ],
+      "narration": "大輔「今月の一歩。ChatGPTに、自分の町の名前を入れて、たとえば、この町で贈り物のお菓子を買うならどこ？と聞いてみる。自分の店や、よく行く店が出てくるか。営業時間や値段が合っているかを確かめる。」\n沙織「違っていたら、まず自分の店のサイトを新しくしておくといい。1つ目で見たとおり、AIは店のサイトを答えの元にすることがあるから。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」\n［画面のまとめカード（次の一歩）］今月の一歩 ・ChatGPTに、自分の町の店を聞いてみる ・自分の店・よく行く店が出てくるか ・営業時間や値段が合っているか ・違っていたら、まず店のサイトを新しく",
+      "narrator": "dialogue"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "skeptic",
+          "narration": "AIの中に、店の窓口？",
+          "expression": "surprised",
+          "scene_id": 6
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "店が自分で、値段や在庫、返品や配送の決まりを入れられる。それに、店が用意した案内役のAIに、お客さんが質問できる。",
+          "expression": "excited",
+          "scene_id": 6
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "結局、大きな会社か、お金を出した店が勧められるんじゃない？",
+          "expression": "doubt",
+          "scene_id": 10
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "OpenAIは、登録しても上位に出ることや売上は保証しない、と書いてる。",
+          "expression": "neutral",
+          "scene_id": 10
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "店のAIは、買う、予約する、注文を確かめる、のどれもできない。",
+          "expression": "doubt",
+          "scene_id": 8
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "店はどう見つけてもらう時代になる？ 判定は本編で。",
+          "expression": "excited",
+          "scene_id": 6
+        }
+      ]
+    }
+  ]
+}
