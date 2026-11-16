@@ -310,3 +310,14 @@
 {"ts": "2026-11-16T14:44:36+09:00", "kind": "call", "agent": "kl-script-reviewer", "session": "85027d17-b5bf-48ca-84e4-8e629515518a"}
 {"ts": "2026-11-16T14:44:41+09:00", "kind": "work", "agent": "kl-script-reviewer", "episode": "kl057", "step": "5", "result": "ok", "retries": 0, "note": "GO。台詞9か所・visuals調整、パッケージ案3のみ×"}
 {"ts": "2026-11-16T14:49:12+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl057", "step": "4.5", "result": "ok", "retries": 0, "note": "check❌0・ファクト再実行ok=6"}
+{"ts": "2026-11-16T14:51:05+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "85027d17-b5bf-48ca-84e4-8e629515518a"}
+{"ts": "2026-11-16T14:51:08+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl057", "step": "5.5", "result": "ok", "retries": 0, "note": "r1 致命的0・直す7・できれば9"}
+{"ts": "2026-11-16T14:57:10+09:00", "kind": "applied", "agent": "kl-writer", "episode": "kl057", "ids": ["KL2611-02"], "skipped": [], "reason": ""}
+{"ts": "2026-11-16T14:57:50+09:00", "kind": "call", "agent": "kl-writer", "session": "85027d17-b5bf-48ca-84e4-8e629515518a"}
+{"ts": "2026-11-16T15:07:21+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "85027d17-b5bf-48ca-84e4-8e629515518a"}
+{"ts": "2026-11-16T15:11:40+09:00", "kind": "applied", "agent": "kl-writer", "episode": "kl057", "ids": ["KL2611-02"], "skipped": [], "reason": ""}
+{"ts": "2026-11-16T15:12:14+09:00", "kind": "call", "agent": "kl-writer", "session": "85027d17-b5bf-48ca-84e4-8e629515518a"}
+{"ts": "2026-11-16T15:12:29+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl057", "step": "5.5", "result": "ok", "retries": 0, "note": "r2 致命的0・直す4・できれば5"}
+{"ts": "2026-11-16T15:16:41+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "85027d17-b5bf-48ca-84e4-8e629515518a"}
+{"ts": "2026-11-16T15:18:30+09:00", "kind": "call", "agent": "kl-manager", "session": "85027d17-b5bf-48ca-84e4-8e629515518a"}
+{"ts": "2026-11-16T15:18:49+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl057", "step": "5.5", "result": "ok", "retries": 0, "note": "再レビュー（差分1周）。①うちは申し込めるかが決まらず判定の問いも依存、S12に一次資料を超える言い方。4件とも語替え・削除で線引きを『ネットで注文を受けて売るか』の一言に。できれば6は必須、9解消、5・7・8・10は書き手判断"}
