@@ -501,11 +501,17 @@ def _draw_number(parts, dr, t):
     x0, bt, x1, bb = parts["body"]
     value, unit = chart["value"], chart.get("unit", "")
     dec = _decimals(value)
-    big = D._font(D.FONT_BOLD, 200)
-    fu = D._font(D.FONT_BOLD, 80)
     final = _fmt(value, dec)
-    wn, wu = D._text_w(dr, final, big), D._text_w(dr, unit, fu)
-    total = wn + (16 + wu if unit else 0)
+    # 桁が多い数字（例: 29,990ドル）でも、数字と単位がカードの本文の幅に収まるまで文字を小さくする（kl058）
+    bs = 200
+    while True:
+        big = D._font(D.FONT_BOLD, bs)
+        fu = D._font(D.FONT_BOLD, int(bs * 0.4))
+        wn, wu = D._text_w(dr, final, big), D._text_w(dr, unit, fu)
+        total = wn + (16 + wu if unit else 0)
+        if total <= (x1 - x0) or bs <= 120:
+            break
+        bs -= 8
     cx = (x0 + x1) / 2
     xr = cx - total / 2 + wn
     p = ease_out((t - parts.get("chart_at", CHART_AT)) / 1.5)
