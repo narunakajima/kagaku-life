@@ -74,8 +74,7 @@ python3 $HOME/kagaku-life/kl_sns_up.py --episode kl{NNN} --publish-at "2026-08-2
   ※ 指定日時まで非公開状態です。YouTube Studio で確認できます。
 ```
 
-**Shortsの「関連動画」（本編）の設定は、このあとのSTEP 3.5でClaudeがChromeで行う
-（2026-10-02から。それまではユーザーに依頼していた）。**
+**Shortsの「関連動画」（本編）の設定は、公開後に Muse（クラウド）が公開10分後に自動で行う（STEP 3.5参照。セッションでは設定しない）。**
 
 **サムネイルの「テストと比較」（A案 vs B案）は2026-10-01から一時中止中。依頼しない。**
 構成を大きく変えた（ロゴイントロ廃止・タイトルの付け方・Shortsの冒頭）直後で、サムネイルの差か
@@ -86,93 +85,24 @@ python3 $HOME/kagaku-life/kl_sns_up.py --episode kl{NNN} --publish-at "2026-08-2
 Drive `Kagaku-Life/KL{NNN}/images/thumbnail_b.png`（B案）を登録してもらう。判定は総再生時間で
 行われ、Shortsは対象外。結果は `/kl-analytics` で記録する。
 
-## STEP 3.5 — Shortsの「関連動画」を設定する（Chromeを自動操作、2026-10-02追加）
+## STEP 3.5 — Shortsの「関連動画」（2026-11-17〜: クラウド自動設定に移行。手動設定は廃止）
 
-Shortsの最後のカットは「↓ 続きは本編で」と誘導しているので、YouTube Studioで
-Shortsの「関連動画」に本編を設定しておかないと誘導先がない（YouTube公式ブログ:
-Shortsの最後の5秒で言葉と画面の両方で関連動画へ誘導する）。`kl_sns_up.py` からは
-設定していない（YouTube Data APIで設定できるかは未確認）ため、Claude in Chrome
-（ユーザーのログイン済みChrome。内蔵ブラウザはログインが必要で使えない）で操作する。
+Shortsの「関連動画」（本編への誘導）は、**公開後に Muse（クラウド）が公開10分後に自動で設定する**。
+`/kl-upload` の中では設定しない（Chromeも開かない）。
+分担が Muse 側に移った2026-11-13以降も、旧STEP（セッションがChromeで設定する手順）がこの手順書に残っていたため、本節へ置き換えた（2026-11-17、ユーザー決定。SC は移行時に更新済み）。
 
-**重要な制約: Studioの関連動画の選択画面には「公開済みの動画」しか出ない。**
-STEP 2で予約したばかりの本編は公開日まで選べないので、今回アップロードした回は
-この時点では設定できない。そこで「公開日時を過ぎていて、まだ設定していないエピソード」を
-全てまとめて対象にする（前回までに予約した回が、公開された後の `/kl-upload` で拾われる）。
-完了の記録は `episodes/kl{NNN}.json` の `related_video_set: true`。
+- 設定の記録（`episodes/kl{NNN}.json` の `related_video_set`）は自動処理側が更新する
+- セッションの役割は、対象エピソード・公開日時・動画IDを記録するところまで。関連動画を設定できないことを理由に「要確認」として残さない
+- 公開後に Muse の設定が失敗していた場合だけ、その報告が別途上がる（セッションがその場で手動設定はしない）
 
-### 手順
-
-1. 対象を出す:
-   ```bash
-   python3 kl_related_targets.py
-   ```
-   「設定が必要なShortsはありません」なら、このSTEPは終了（今回の回は公開後の
-   `/kl-upload` で設定される、と完了報告に一言添える）。Chromeは開かない。
-
-2. Chromeを用意する。**起動時点でChromeが動いていたかを必ず記録する**:
-   ```bash
-   pgrep -x "Google Chrome" >/dev/null && echo running || echo not-running
-   ```
-   `not-running` なら `open -a "Google Chrome"` で起動する（この場合は最後に終了する）。
-   `list_connected_browsers` でClaude in Chrome拡張の接続を確認する（起動直後は数十秒かかる
-   ことがある）。接続できなければ、このSTEPは諦めて完了報告にその旨を書く（Chromeは
-   自分で起動していた場合のみ終了する）。ツールが未読込なら `ToolSearch` で
-   `mcp__claude-in-chrome__*`（`browser_batch`・`computer`・`navigate`・`tabs_context_mcp` 等）を
-   まとめて読み込む。
-
-3. チャンネルを切り替える。Chromeは通常、別チャンネル（ランプのひとりごと等）でログインして
-   いる。アバター → 「アカウントを切り替える」で **「幸せな未来のサイエンス」（@kagaku-life、
-   チャンネルID `UCj5pDosl_4FiaZ_NdNg7IcA`）** を選ぶ。**作業後に元のチャンネルへ戻す必要は
-   ない**（2026-10-04、ユーザー指示）。切り替え後、`studio.youtube.com/channel/` のURLが
-   上記のIDになっていることを確認する。**他チャンネルの動画は絶対に編集しない。**
-
-4. 対象のShortsごとに（`kl_related_targets.py` が出した shorts ID・検索語を使う）。
-   **座標クリックは使わない**（ウィンドウサイズが操作ごとに変わり、2026-10-02にクリックが外れた）。
-   ページ内のスクリプト `studio_related_video.js` を `javascript_tool` で実行する:
-   1. 最初に1回だけ、スクリプトの「関数本体」（`return (async()=>{ ... })()` の部分）を
-      StudioのページのlocalStorageに保存する:
-      `localStorage.setItem('rel_fn', `<関数本体>`)`
-   2. 1本ごとに `studio.youtube.com/video/{SHORTS_ID}/edit` を開き（未保存の変更があると
-      「Leave site?」が出るので `navigate` は `force: true`）、3秒待ってから実行する:
-      `await (new Function('KW','FORCE',localStorage.getItem('rel_fn')))("検索語", false)`
-      複数本は `browser_batch` に「navigate → wait 3 → javascript_tool」を並べると速い
-      （1バッチ6〜8本。接続が切れて途中で止まることがあるが、実行は何度やっても安全な
-      作りで、設定済みなら `skip:'already'` で飛ばす）。
-   3. スクリプトがやること: 現在の関連動画が「なし」でなければ何もしない（`skip:'already'`、
-      `before` が現在値）／「子ども向けか」が**未選択のときだけ**「いいえ、子ども向けでは
-      ありません」を選ぶ（選択済みの値は書き換えない）／関連動画の選択画面で検索語に合う
-      **本編**（`#Shorts` が付かない方）を選ぶ／「保存」を押す。
-      結果は `{id, kid, before, label, rel, saved}` のJSONで返る。
-   4. **確認する**: `skip` だった回は `before` が**その回の本編のタイトルと一致するか**見る。
-      一致しなければ取り違えなので、`FORCE=true` で再実行して上書きする（SCのep016で
-      別の回の本編が設定されていた実例がある）。`err:'no-option'` の回（検索語に合う本編が
-      ない）はスキップして報告する。保存後は読み込み直して、関連動画欄が本編のタイトルで
-      あることを確かめる（`saved` の値だけに頼らない。`saved:false` でも保存されていた例がある）。
-      確認できた回だけ `python3 kl_related_targets.py --mark kl{NNN}`。
-   5. 全部終わったら `localStorage.removeItem('rel_fn')` で片付ける。
-   - 関連動画以外の設定（公開日時・タイトル・説明・字幕など）は変更しない。
-   - 想定と違うUI（要素が見つからない等）で `err` が続く場合は、無理に操作せずそのSTEPを
-     中断して報告する。
-
-
-5. 後片付け（**必ずこの順**。チャンネルは元に戻さなくてよい）:
-   1. `localStorage.removeItem('rel_fn')` で保存したスクリプトを片付ける（手順4-5）。
-   2. 自分で開いたタブ（MCPのタブグループ内）を閉じる。
-   3. **手順2で自分がChromeを起動した場合のみ**、Chromeを終了する:
-      ```bash
-      osascript -e 'quit app "Google Chrome"'
-      ```
-      **すでにChromeが動いていた場合は終了しない**（ユーザーが他のタブ・作業を開いている
-      ため）。自分が開いたタブを閉じるだけにして、完了報告に「Chromeは元から開いて
-      いたので終了していません」と書く。
-
-6. 完了報告に、設定した件数・スキップした回（理由つき）・Chromeを終了したかを書く。
-   `episodes/kl*.json` に `related_video_set` の変更が出るので、STEP 4で一緒にコミットする。
+---
 
 ## STEP 3.6 — 未返信コメントに内容に合わせて返信する（2026-10-20追加）
 
 アップロード後（STEP 3.5 の後）、チャンネル（`UCj5pDosl_4FiaZ_NdNg7IcA`）の**未返信コメント**に、
 **確認なしで**日本語で返信する。LWの定型返信と違い、コメント内容に合わせて Claude が1件ずつ書く。
+
+- **報告の形（2026-11-17〜、ユーザー決定）:** コメント返信は確認不要のセッション作業であり、完了報告で「要確認」と書かない。見送った分は従来どおり、完了報告で本文と理由を伝える
 
 1. 取得: `python3 kl_comment_reply.py list`（JSON。`thread_id`・動画タイトル・投稿者・本文）。空なら終了。
 2. 返信文はコミュニティ担当 `kl-community`（`subagent_type: "kl-community"`、`model: "sonnet"`）に書かせる（2026-10-27〜、担当者制）。
