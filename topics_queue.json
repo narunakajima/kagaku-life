@@ -3400,8 +3400,46 @@
         "question": "買い物の相談相手が検索からAIに変わったら、お店はどうやってお客さんに見つけてもらう時代になる？",
         "title_note": "STEP5.6 編集長選定: 案2（文言微修正）。次点: 案3言い換え「うちの店も載せられる？」"
       }
+    },
+    {
+      "episode_id": "kl058",
+      "status": "confirmed",
+      "slot_type": "news",
+      "genre": "life_tech",
+      "health": false,
+      "domain": "life",
+      "concern_id": null,
+      "entry_question": "運転しない車は、「買えば自分の物」から「月々払わないと動かない物」になる？ どこまで来た？",
+      "title": "運転しない車は月々払わないと動かない？Tesla Cybercab（11月時点・定点観測 第2回）",
+      "format": "dialogue",
+      "structure": "rounds_v4",
+      "source_type": "news",
+      "news_date": "2026-11-13",
+      "references": [
+        {
+          "title": "Tesla Robotaxi 公式アカウント（Cybercab 個人向け受注の案内・注文画面・招待メール）",
+          "year": 2026,
+          "venue": "X @robotaxi（2026年11月13日）",
+          "url": "https://x.com/robotaxi",
+          "source_kind": "official_page",
+          "is_preprint": false,
+          "institution": "Tesla"
+        }
+      ],
+      "hook_idea": "ハンドルもペダルも無い車を、個人が自分の車として注文できるようになった。ただし注文画面には、月299ドルの契約が無いと動かせない、と書いてある。",
+      "notes": "2026-11-17 週次スレート本命（なるさん選択）。問いゲート 案A（ケビン推奨）をなるさんが承認。詳細は script_prep/kl058_question.md。自動運転・物流無人化の定点観測 第2回（第1回=kl055）。商用・ライドシェア禁止は資料に無いので使わない。円を併記（レート・日付明記）。日本への一言は GO/日本交通の発表文を開いて確認。",
+      "topic_pattern": "reversal",
+      "candidate_id": "4dbfb303f1",
+      "series": "autonomy_logistics_watch",
+      "pitch": {
+        "title": "運転しない車は月々払わないと動かない？Tesla Cybercab（11月時点・定点観測 第2回）",
+        "hook": "ハンドルもペダルも無い車を、個人が自分の車として注文できるようになった。アメリカで、約3万ドル。",
+        "surprise_line": "車は買えば好きな所へ走らせられると思っている人が、ハンドルの無い車では、毎月の契約と会社が決めた区域が『車が動く条件』になると知って驚く",
+        "emma": "見たい（1位）",
+        "question": "運転しない車は、「買えば自分の物」から「月々払わないと動かない物」になる？ どこまで来た？"
+      }
     }
   ],
-  "total_topics": 57,
+  "total_topics": 58,
   "last_updated": "2026-11-16"
 }

@@ -68011,7 +68011,7 @@
       "overall_score": 3.85,
       "scan_version": "2026-11-07-interest",
       "interest_version": "2026-11-07",
-      "status": "available",
+      "status": "used",
       "excluded_reason": "",
       "scored_at": "2026-11-15",
       "first_seen_at": "2026-11-15T06:35:22",
@@ -68041,7 +68041,7 @@
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-16T14:13:02",
+      "primary_verified_at": "2026-11-17T10:21:50",
       "primary_history": [
         {
           "at": "2026-11-15T06:36:34",
@@ -68090,6 +68090,18 @@
               "ok": true
             }
           ]
+        },
+        {
+          "at": "2026-11-17T10:21:50",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://x.com/robotaxi",
+              "status": "HTTP 200「Robotaxi（@robotaxi） / X」",
+              "final_url": "",
+              "ok": true
+            }
+          ]
         }
       ],
       "url_check": [
@@ -68101,7 +68113,7 @@
       ],
       "url_ok": true,
       "url_status": "x.com: HTTP 200「Robotaxi（@robotaxi） / X」",
-      "url_checked_at": "2026-11-16T14:13:02",
+      "url_checked_at": "2026-11-17T10:21:50",
       "buzz_history": [
         {
           "at": "2026-11-15T06:41:21",
@@ -68207,7 +68219,8 @@
       "buzz_jp_measured": 5,
       "buzz_outlets_foreign": 2,
       "buzz_foreign_boost": false,
-      "buzz_query_en": "Cybercab 29990"
+      "buzz_query_en": "Cybercab 29990",
+      "used_in": "kl058"
     },
     {
       "title": "佐賀駅〜サンライズパーク自動運転バス実証　全区間レベル4相当、運賃設定",
