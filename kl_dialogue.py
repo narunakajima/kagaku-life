@@ -1846,13 +1846,27 @@ def build_sprite_tracks(events: list, total_dur: float, layout: dict, cast: dict
 
 # ── サムネイル ──────────────────────────────────────────────────────
 
-def _draw_series_sign(img, series_no) -> int:
+def _series_topic(ep: dict) -> str:
+    """看板に出すシリーズ名（「人型ロボ」など）。series_watchlist.json の name から「の定点観測」を除いて作る。
+    thumbnail_series_label があればそれを優先。"""
+    if ep.get("thumbnail_series_label"):
+        return ep["thumbnail_series_label"]
+    try:
+        for sr in json.load(open(BASE_DIR / "series_watchlist.json", encoding="utf-8"))["series"]:
+            if sr.get("series_id") == ep.get("series"):
+                return sr["name"].replace("の定点観測", "").replace("定点観測", "")
+    except Exception:
+        pass
+    return ""
+
+
+def _draw_series_sign(img, series_no, topic="") -> int:
     """定点観測シリーズの看板（サムネイル最上部・中央。青地に白文字「定点観測」＋黄色の「第N回」）。
     使った高さ（px）を返す。固定デザインなので色・位置は回ごとに変えない。"""
     w, h = img.size
     ph = int(h * 0.105)
     f = _font(FONT_BOLD, int(ph * 0.66))
-    t1 = "定点観測"
+    t1 = f"{topic} 定点観測" if topic else "定点観測"
     t2 = f" 第{series_no}回" if series_no else ""
     d0 = ImageDraw.Draw(img)
     w1, w2 = _text_w(d0, t1, f), (_text_w(d0, t2, f) if t2 else 0)
@@ -1902,7 +1916,7 @@ def composite_thumbnail_dialogue(image_path: Path, ep: dict, cast: dict = None) 
     # 「定点観測 第N回」の帯を固定デザインで出し、見出し・バッジはその下へ下げる。回数は series_no
     series_h = 0
     if ep.get("series"):
-        series_h = _draw_series_sign(img, ep.get("series_no"))
+        series_h = _draw_series_sign(img, ep.get("series_no"), _series_topic(ep))
     # thumbnail_badge: 製品名などを見出しの上に大きく目立たせる（2026-10-06、kl034「Dots」。なるさんの指示）
     badge = ep.get("thumbnail_badge", "")
     badge_h = 0
