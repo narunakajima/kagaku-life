@@ -1,0 +1,1272 @@
+{
+  "episode_id": "kl058",
+  "format": "dialogue",
+  "structure": "rounds_v4",
+  "template": "myth_buster",
+  "source_type": "news",
+  "news_date": "2026-11-13",
+  "verdict_as_of": "2026-11-17",
+  "series": "autonomy_logistics_watch",
+  "series_no": 2,
+  "genre": "life_tech",
+  "health": false,
+  "topic_pattern": "reversal",
+  "episode_title": "運転しない車は、月々払わないと動かない？ テスラ・サイバーキャブはどこまで来たか",
+  "youtube_title": "運転しない車は月々払わないと動かない？Tesla Cybercab（11月時点・定点観測 第2回）",
+  "entry_question": "運転しない車は、「買えば自分の物」から「月々払わないと動かない物」になる？ どこまで来た？",
+  "claim_verdict": {
+    "dreamer": "soon",
+    "skeptic": "pending"
+  },
+  "verdict": {
+    "dreamer": "soon",
+    "skeptic": "soon"
+  },
+  "hook_lines": [
+    "ハンドルのない車を個人に",
+    "契約が無いと動かせない"
+  ],
+  "thumbnail_prompt": "A calm American suburban street at golden hour, continuous across the whole frame with no panels, boxes or borders. Keep the left 30%, the right 30% and the top 42% of the frame quiet and uncluttered (softly blurred houses, trees and a warm evening sky only), but the background must continue unbroken behind them. Main subject, centered left-to-right in the middle band: Tesla Cybercab, a real two-seat autonomous car, depicted faithfully: a low, compact two-door fastback coupe whose smooth roofline slopes all the way down to a short, squared-off tail; the whole body is satin champagne-gold metallic, with black lower body trim; large flat smooth disc-shaped wheel covers painted the same champagne gold; a single thin full-width white LED light bar across the front and a single thin full-width red light bar across the rear; no side mirrors; dark tinted glass; two large doors hinged at the top that swing upward. Inside there is only a two-person bench seat in dark leather and a large center touchscreen, with no steering wheel and no pedals. No lettering, logos or signatures on the car. Shown from a front three-quarter angle with both upward-swinging doors raised open like wings, the empty two-seat cabin with no steering wheel visible through the open doors. Hopeful and intriguing. No people, no robots, no text, no logos.",
+  "thumbnail_headline": "月々払わないと\n動かない？",
+  "thumbnail_exprs": {
+    "dreamer": "excited",
+    "skeptic": "doubt"
+  },
+  "thumbnail_verdict_header": "判定（アメリカの区域）",
+  "depicts_real_product": true,
+  "youtube_tags": [
+    "テスラ",
+    "Tesla",
+    "サイバーキャブ",
+    "Cybercab",
+    "ロボタクシー",
+    "Robotaxi",
+    "自動運転",
+    "無人タクシー",
+    "ハンドルのない車",
+    "月額",
+    "サブスク",
+    "GO",
+    "日本交通",
+    "Waymo",
+    "ウェイモ",
+    "定点観測",
+    "科学ニュース"
+  ],
+  "references": [
+    {
+      "title": "Robotaxi 公式アカウントの投稿「Select customers are now being invited to purchase Cybercab for personal use」と添付の注文画面",
+      "authors": [],
+      "year": 2026,
+      "venue": "X @robotaxi（2026年11月13日 米国時間）",
+      "url": "https://x.com/robotaxi/status/2121384435241402737",
+      "is_preprint": false,
+      "institution": "Tesla",
+      "source_kind": "official_page"
+    },
+    {
+      "title": "同じ投稿への自己返信に添付された Cybercab の招待メール（Early Access, Limited Release）",
+      "authors": [],
+      "year": 2026,
+      "venue": "X @robotaxi（2026年11月13日 米国時間）",
+      "url": "https://x.com/robotaxi/status/2121384438496190523",
+      "is_preprint": false,
+      "institution": "Tesla",
+      "source_kind": "official_page"
+    },
+    {
+      "title": "Robotaxi（Tesla 公式ページ）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Tesla 公式サイト（2026年11月17日確認）",
+      "url": "https://www.tesla.com/robotaxi",
+      "is_preprint": false,
+      "institution": "Tesla",
+      "source_kind": "company_website"
+    },
+    {
+      "title": "Robotaxi（Tesla サポート）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Tesla サポートページ（2026年11月17日確認）",
+      "url": "https://www.tesla.com/support/robotaxi",
+      "is_preprint": false,
+      "institution": "Tesla",
+      "source_kind": "company_website"
+    },
+    {
+      "title": "Robotaxi 公式アカウントの投稿「Robotaxi now runs 24/7 Every city we're available in」",
+      "authors": [],
+      "year": 2026,
+      "venue": "X @robotaxi（2026年11月12日）",
+      "url": "https://x.com/robotaxi/status/2120736143566344324",
+      "is_preprint": false,
+      "institution": "Tesla",
+      "source_kind": "official_page"
+    },
+    {
+      "title": "Robotaxi 公式アカウントの投稿「Now serving more of Miami」",
+      "authors": [],
+      "year": 2026,
+      "venue": "X @robotaxi（2026年11月16日 日本時間）",
+      "url": "https://x.com/robotaxi/status/2122234442328740005",
+      "is_preprint": false,
+      "institution": "Tesla",
+      "source_kind": "official_page"
+    },
+    {
+      "title": "GO、Waymo、日本交通 自動運転タクシー商用化の実現に向けて合意 2027年中に国内初の完全無人タクシー運行を目指す",
+      "authors": [],
+      "year": 2026,
+      "venue": "GO株式会社 プレスリリース（2026年9月15日）",
+      "url": "https://goinc.jp/news/pr/2026/09/15/6pzjypdxzuza8kawb2ocfg/",
+      "is_preprint": false,
+      "institution": "GO株式会社・Waymo・日本交通",
+      "source_kind": "press_release"
+    }
+  ],
+  "youtube_description": "2026年11月13日（米国時間）のテスラの発表を、11月17日時点で確認した二人の見立てです。\nシリーズ「自動運転・物流無人化の定点観測」第2回。\n\nテスラが、ハンドルもペダルも無い2人乗りの車「サイバーキャブ（Cybercab）」を、招待した一部のお客さんに、個人用として売り始めました。ただし注文画面には、月299ドルの自動運転の契約と定期的な整備が「車を動かすのに必要」とあり、招待メールには「対応するサービス区域でだけ」と書かれています。運転しない車は、「買えば自分の物」から「月々払わないと動かない物」になるのか。どこまで来たのか。期待担当の大輔と、確かめ担当の沙織が、テスラの注文画面・招待メール・公式ページと、GO・日本交通・ウェイモの発表で確かめます。(1) ハンドルの無い車を、自分の車として持てるか (2) 月々の契約が、車の動く条件になるのか (3) 日本の私たちには、どこから来るか の3つです。\n\n■ 定点観測の記録（第2回、2026年11月17日時点）\n物差しは第1回と同じ3つです。(1) どこで、何が無人になったか (2) 人はどの段階まで手を離したか (3) 次はどこへ行く、と言っているか（書かれていない項目は「まだ発表されていない」とします）。今回は個人が買う車なので、値段も記録します。\n第2回の記録: (1) テスラの配車サービス（Robotaxi）は、テキサス州とフロリダ州の8都市（オースティン、ダラス、フォートワース、ヒューストン、サンアントニオ、マイアミ、オーランド、タンパ）の限られた区域で、客を乗せて走っています。今回、サイバーキャブを個人用として注文できるようになりました。走れるのは、招待メールでは「対応するサービス区域でだけ」。どこが対応区域かは、注文の資料には書かれていません (2) ハンドルもペダルも無く、乗っている人は運転しません。招待メールには「Fully Autonomous」とあり、持ち主はアプリで車を見守り、乗車を管理する、と書かれています (3) テスラが次にどこへ行くかは、確認した資料には書かれていません（まだ発表されていない）。配車サービスは、11月16日（日本時間）にマイアミで走る範囲を広げました。日本では、テスラとは別に、GO・日本交通・ウェイモが「2027年中に東京で」無人のタクシーの運行を目指しています\n今回の追加: 値段 — 本体の見込み価格 29,990ドル（税別）、自動運転の契約 月299ドル（税別、購入時に1か月分込み）、予約金 1,000ドル（返金なし）。届くのは2026年12月の見込みで、受け取りはテキサス州オースティン。招待された一部の人から（「最初は数が限られる」）\n（第1回 kl055 は、福岡空港で誰も乗らずに貨物を運ぶ車でした。判定は 大輔「もうすぐ来る」、沙織「3年はかかる」）\n\n■ この回の判定（2026年11月17日時点の、二人の見立て）\n判定するのは：アメリカの走れる区域で、招待された人が、月々の契約で動く自分の車を使い始める形は、この1年で来るか\n大輔: もうすぐ来る（納車は2026年12月の見込み。同じ車種が、テスラの配車サービスでもう客を乗せている）\n沙織: もうすぐ来る（最初の予想は「3年はかかる」。同じ車種がもう客を乗せ、配車サービスが24時間になり、12月に届く見込みのため変えた。区域の外でどうなるかは、届いた人の声で確かめたい）\n日本には札を付けていません。日本で個人に売る話は発表されていないためです。札を付ける目印は、東京で無人のタクシーが許可を取って走り出すか、日本で個人に売る話が出るか、の2つです。\n発表は「移動を、これまでより効率よく、安く、誰でも使えるものにする」と述べています。「安く」「誰でも」は、今回確かめた資料では確かめられないため、札はそこまでには付けていません。\n\n■ 補足\n・注文画面の注記（原文）: \"One month included with purchase. Subscription and regular vehicle maintenance required to operate.\" \"Price shown excludes taxes and is billed separately each month until canceled. Terms apply.\"\n・招待メールの注記（原文）: \"Only available in supported service areas. Subscription required for operation. Terms apply.\"\n・注文時に同意する「Cybercab Order Agreement」「Autonomy Subscription Agreement」の本文は、公開された場所が見つからず確認できていません。契約をやめた場合の扱い、免許・保険・車の置き場所、区域の外での動き、呼んだときの料金の金額は、確認した資料には書かれていません。\n・テスラの配車サービスの車は、モデルYとサイバーキャブです。どちらが来るかは、空いている車と乗る人数で決まります（テスラのサポートページ）。\n・配車サービスの公式アカウントは、2026年11月12日に「全部の都市で24時間運行」、11月16日（日本時間）に「マイアミで走る範囲を拡大」と投稿しています（サポートページには「運行時間は区域によって異なる場合がある」とあります）。\n・日本: GO・日本交通・ウェイモ（Waymo、米国Alphabet傘下）は2026年9月15日、「2027年中に東京で、段階的に100台規模の自動運転タクシーを運行することを目指す」と発表しました。2025年から東京都内7区で試験走行をしており、現在は日本交通の乗務員が同乗しています。正式な運行開始時期は、安全性が認められ、必要な許認可の取得が完了した後に決まります。\n・円の金額は、2026年11月17日に三菱UFJ銀行が公表した米ドルの売値（160.48円）と買値（158.48円）の中間、1ドル＝159.48円（約159円）で二人が換算したものです。本体およそ478万円、月額およそ4万7700円、予約金およそ16万円（いずれも税別）。\n・この動画は発表の紹介で、特定の商品の購入や投資をすすめるものではありません。\n\n※映像に出てくるサイバーキャブの絵は、公式の発表をもとに描いたイメージ図です。実物と異なる場合があります。\n\n■ 参考資料（一次資料）\n・Robotaxi（テスラ）公式アカウントの投稿と注文画面（2026年11月13日 米国時間） https://x.com/robotaxi/status/2121384435241402737\n・同じ投稿への返信に添付された招待メール https://x.com/robotaxi/status/2121384438496190523\n・Tesla「Robotaxi」公式ページ https://www.tesla.com/robotaxi\n・Tesla サポート「Robotaxi」 https://www.tesla.com/support/robotaxi\n・Robotaxi 公式アカウントの投稿（2026年11月12日） https://x.com/robotaxi/status/2120736143566344324\n・Robotaxi 公式アカウントの投稿（2026年11月16日 日本時間） https://x.com/robotaxi/status/2122234442328740005\n・GO株式会社 プレスリリース（2026年9月15日） https://goinc.jp/news/pr/2026/09/15/6pzjypdxzuza8kawb2ocfg/\n\n#自動運転 #テスラ #幸せな未来のサイエンス",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 6,
+      "ken_burns": "gentle_zoom",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "ハンドルもペダルも無い車を、個人が注文できるようになった。",
+          "expression": "excited"
+        }
+      ],
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "narration": "大輔「ハンドルもペダルも無い車を、個人が注文できるようになった。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 8,
+      "ken_burns": "gentle_zoom",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "でも注文画面には、月々の契約が無いと動かせない、とある。",
+          "expression": "doubt"
+        }
+      ],
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "narration": "沙織「でも注文画面には、月々の契約が無いと動かせない、とある。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 6,
+      "ken_burns": "gentle_zoom",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "同じ車種は、もう配車サービスで、客を乗せて走ってる。",
+          "expression": "excited"
+        }
+      ],
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "narration": "大輔「同じ車種は、もう配車サービスで、客を乗せて走ってる。」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 10,
+      "ken_burns": "gentle_zoom",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "車は、月々払わないと動かない物になる？ どこまで来た？",
+          "expression": "thinking",
+          "tag": "question"
+        }
+      ],
+      "narration": "沙織「車は、月々払わないと動かない物になる？ どこまで来た？」",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 5,
+      "type": "setup",
+      "bgm_role": "intro",
+      "image_asset": "base_cafe_b",
+      "ken_burns": "gentle_zoom",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "11月13日に、アメリカのテスラが、ハンドルもペダルも無い2人乗りの車を、個人の車として売り始めたんだ。名前は、サイバーキャブ。",
+          "expression": "excited",
+          "display": "11月13日に、アメリカのテスラが、ハンドルもペダルも無い2人乗りの車を、個人の車として売り始めたんだ。名前は、サイバーキャブ（Cybercab）。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ハンドルが無い？ じゃあ、誰が運転するの？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "テスラの自動運転が、運転する。人は乗るだけ。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そんな車、本当に道を走ってるの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "走ってる。テスラには、アプリで呼ぶと無人の車が来る、配車サービスがあって、この車種も、そこで客を乗せてる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "呼んで乗る車を、今度は自分で持てる、ということね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、注文画面の小さい字に、気になることが書いてある。月々の契約が無いと、動かせない。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "今日の問いはこれ。運転しない車は、買えば自分の物、から、月々払わないと動かない物、になるのか。どこまで来たのか。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今回は、前回の続きでもあるんだ。前回は、福岡空港で、誰も乗らずに貨物を運ぶ車を見た。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "あのときは、判定が割れたわね。そっちは、もうすぐ来る。私は、3年はかかる。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今回は、客を乗せる車。物差しは、前回と同じ3つ。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "どこで無人になったか。人が乗って見張るのか、誰も乗らないのか。次はどこへ行く、と言っているか。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今回は買う話だから、値段も記録しておこう。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想。月々の契約で動く車でも、欲しい人は多い。アメリカでは、この1年で、持ち主の手に届き始める。",
+          "expression": "excited",
+          "tag": "prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想は、3年はかかる。どこを走れて、契約をやめたらどうなるのか。そこがはっきりしないうちは、自分の車として役に立つ形にならないと見てる。",
+          "expression": "doubt",
+          "tag": "prediction"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true
+        },
+        {
+          "from_line": 7,
+          "source_card": {
+            "kind": "web",
+            "source": "テスラの注文画面（@robotaxi の投稿、2026年11月13日）",
+            "quote": "Subscription and regular vehicle maintenance required to operate.",
+            "quote_type": "原文",
+            "highlight": "required to operate",
+            "items": [
+              "自動運転の契約と定期的な整備が、",
+              "車を動かすのに必要"
+            ]
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 9,
+          "recap_card": {
+            "title": "前回（第1回）の札",
+            "items": [
+              "福岡空港で、誰も乗らずに貨物を運ぶ車",
+              "大輔: もうすぐ来る",
+              "沙織: 3年はかかる"
+            ]
+          }
+        },
+        {
+          "from_line": 12,
+          "recap_card": {
+            "title": "今回の物差し（前回と同じ3つ＋値段）",
+            "items": [
+              "1 どこで、何が無人になったか",
+              "2 人が乗って見張るか、誰も乗らないか",
+              "3 次はどこへ行く、と言っているか",
+              "＋ 今回は買う話なので、値段も"
+            ]
+          }
+        },
+        {
+          "from_line": 14,
+          "recap_card": {
+            "title": "二人の予想",
+            "badge": "予想",
+            "items": [
+              "大輔: アメリカでは1年で、持ち主の手に",
+              "沙織: 自分の車として役に立つには3年"
+            ]
+          }
+        }
+      ],
+      "narration": "大輔「11月13日に、アメリカのテスラが、ハンドルもペダルも無い2人乗りの車を、個人の車として売り始めたんだ。名前は、サイバーキャブ。」\n沙織「ハンドルが無い？ じゃあ、誰が運転するの？」\n大輔「テスラの自動運転が、運転する。人は乗るだけ。」\n沙織「そんな車、本当に道を走ってるの？」\n大輔「走ってる。テスラには、アプリで呼ぶと無人の車が来る、配車サービスがあって、この車種も、そこで客を乗せてる。」\n沙織「呼んで乗る車を、今度は自分で持てる、ということね。」\n沙織「ただ、注文画面の小さい字に、気になることが書いてある。月々の契約が無いと、動かせない。」\n沙織「今日の問いはこれ。運転しない車は、買えば自分の物、から、月々払わないと動かない物、になるのか。どこまで来たのか。」\n大輔「今回は、前回の続きでもあるんだ。前回は、福岡空港で、誰も乗らずに貨物を運ぶ車を見た。」\n沙織「あのときは、判定が割れたわね。そっちは、もうすぐ来る。私は、3年はかかる。」\n大輔「今回は、客を乗せる車。物差しは、前回と同じ3つ。」\n沙織「どこで無人になったか。人が乗って見張るのか、誰も乗らないのか。次はどこへ行く、と言っているか。」\n大輔「今回は買う話だから、値段も記録しておこう。」\n大輔「僕の予想。月々の契約で動く車でも、欲しい人は多い。アメリカでは、この1年で、持ち主の手に届き始める。」\n沙織「私の予想は、3年はかかる。どこを走れて、契約をやめたらどうなるのか。そこがはっきりしないうちは、自分の車として役に立つ形にならないと見てる。」\n［画面の資料カード］テスラの注文画面（@robotaxi の投稿、2026年11月13日） 「Subscription and regular vehicle maintenance required to operate.」（原文） ・自動運転の契約と定期的な整備が、 ・車を動かすのに必要\n［画面のまとめカード（ふりかえり）］前回（第1回）の札 ・福岡空港で、誰も乗らずに貨物を運ぶ車 ・大輔: もうすぐ来る ・沙織: 3年はかかる\n［画面のまとめカード（ふりかえり）］今回の物差し（前回と同じ3つ＋値段） ・1 どこで、何が無人になったか ・2 人が乗って見張るか、誰も乗らないか ・3 次はどこへ行く、と言っているか ・＋ 今回は買う話なので、値段も\n［画面のまとめカード（予想）］二人の予想 ・大輔: アメリカでは1年で、持ち主の手に ・沙織: 自分の車として役に立つには3年",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 6,
+      "type": "paper",
+      "round": 1,
+      "round_title": "ハンドルの無い車を、自分の車に？",
+      "bgm_role": "main",
+      "ken_burns": "gentle_zoom",
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "image_prompt": "A quiet American suburban street in soft late-afternoon light, seen at eye level from the sidewalk: parked in a home's concrete driveway in front of a closed garage door is Tesla Cybercab, a real two-seat autonomous car, depicted faithfully: a low, compact two-door fastback coupe whose smooth roofline slopes all the way down to a short, squared-off tail; the whole body is satin champagne-gold metallic, with black lower body trim; large flat smooth disc-shaped wheel covers painted the same champagne gold; a single thin full-width white LED light bar across the front and a single thin full-width red light bar across the rear; no side mirrors; dark tinted glass; two large doors hinged at the top that swing upward. Inside there is only a two-person bench seat in dark leather and a large center touchscreen, with no steering wheel and no pedals. No lettering, logos or signatures on the car. The car is the clear focal point in the center, seen from a front three-quarter angle, both upward-swinging doors closed, nobody inside. Neat lawn, a small tree, neighboring houses continuing to the left and right edges. Calm, hopeful mood. No people, no readable text or signs. Warm editorial illustration style.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "まず1つ目。ハンドルの無い車を、本当に自分の車として持てるのか。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "テスラの配車サービスの公式アカウントが、11月13日に、こう投稿した。選ばれたお客さんに、サイバーキャブを個人用に買ってもらう招待を始めた。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "選ばれたお客さん？ 誰でも買えるわけじゃないのね。",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "招待のメールの見出しは、早く使える人向けの、数を限った販売。最初は数が限られる、とも書いてある。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "値段は？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "本体の見込みの値段が、およそ3万ドル。税は別。",
+          "expression": "excited",
+          "display": "本体の見込みの値段が、およそ3万ドル（29,990ドル）。税は別。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "日本円にすると、およそ480万円ね。1ドル約159円、11月17日の値で計算して。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "注文するときに払うお金は？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "予約金が1000ドル、約16万円。返金はされない、と注文画面にある。",
+          "expression": "neutral",
+          "display": "予約金が1,000ドル、約16万円。返金はされない、と注文画面にある。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "届くのは、いつ？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "12月の見込み。受け取りは、テキサス州のオースティン。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "車の中は？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "2人掛けの座席と、大きな画面だけ。ハンドルもペダルも無い。テスラは、運転していた時間を、見る、働く、休む時間にできる、と書いてる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "運転しなくていい分、時間が空くわけね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕が期待するのは、その先。家族の車の使い方が変わる。運転できる人の都合を待たずに、乗る人がアプリで、車と乗車を管理する。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "アプリで管理、って、どこまで書いてあるの？",
+          "expression": "doubt"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true,
+          "shows_product": true
+        },
+        {
+          "from_line": 2,
+          "source_card": {
+            "kind": "web",
+            "source": "テスラの配車サービスの公式アカウント（2026年11月13日）",
+            "quote": "Select customers are now being invited to purchase Cybercab for personal use",
+            "quote_type": "原文",
+            "highlight": "for personal use",
+            "items": [
+              "選ばれたお客さんを、個人用の購入に招待"
+            ]
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 6,
+          "chart": {
+            "kind": "number",
+            "title": "本体の見込みの値段（税別）",
+            "value": 29990,
+            "unit": "ドル",
+            "caption": "予約金1,000ドルは返金なし",
+            "source": "テスラの注文画面（@robotaxi の投稿、2026年11月13日）",
+            "reference_index": 0
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 10,
+          "source_card": {
+            "kind": "web",
+            "source": "テスラの注文画面（@robotaxi の投稿、2026年11月13日）",
+            "quote": "Est. Delivery: Dec 2026",
+            "quote_type": "原文",
+            "highlight": "Dec 2026",
+            "items": [
+              "納車の見込み: 2026年12月",
+              "受け取り: テキサス州オースティン"
+            ]
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 12,
+          "scene_image": true,
+          "shows_product": true
+        }
+      ],
+      "narration": "沙織「まず1つ目。ハンドルの無い車を、本当に自分の車として持てるのか。」\n大輔「テスラの配車サービスの公式アカウントが、11月13日に、こう投稿した。選ばれたお客さんに、サイバーキャブを個人用に買ってもらう招待を始めた。」\n沙織「選ばれたお客さん？ 誰でも買えるわけじゃないのね。」\n大輔「招待のメールの見出しは、早く使える人向けの、数を限った販売。最初は数が限られる、とも書いてある。」\n沙織「値段は？」\n大輔「本体の見込みの値段が、およそ3万ドル。税は別。」\n沙織「日本円にすると、およそ480万円ね。1ドル約159円、11月17日の値で計算して。」\n沙織「注文するときに払うお金は？」\n大輔「予約金が1000ドル、約16万円。返金はされない、と注文画面にある。」\n沙織「届くのは、いつ？」\n大輔「12月の見込み。受け取りは、テキサス州のオースティン。」\n沙織「車の中は？」\n大輔「2人掛けの座席と、大きな画面だけ。ハンドルもペダルも無い。テスラは、運転していた時間を、見る、働く、休む時間にできる、と書いてる。」\n沙織「運転しなくていい分、時間が空くわけね。」\n大輔「僕が期待するのは、その先。家族の車の使い方が変わる。運転できる人の都合を待たずに、乗る人がアプリで、車と乗車を管理する。」\n沙織「アプリで管理、って、どこまで書いてあるの？」\n［画面の資料カード］テスラの配車サービスの公式アカウント（2026年11月13日） 「Select customers are now being invited to purchase Cybercab for personal use」（原文） ・選ばれたお客さんを、個人用の購入に招待\n［画面のグラフ］テスラの注文画面（@robotaxi の投稿、2026年11月13日） 本体の見込みの値段（税別） 29990ドル 予約金1,000ドルは返金なし\n［画面の資料カード］テスラの注文画面（@robotaxi の投稿、2026年11月13日） 「Est. Delivery: Dec 2026」（原文） ・納車の見込み: 2026年12月 ・受け取り: テキサス州オースティン",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 7,
+      "type": "check",
+      "image_asset": "cards/kl058_S07_v1",
+      "round": 1,
+      "bgm_role": "main",
+      "ken_burns": "none",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "招待のメールに、こうある。完全自動運転。アプリで車を見守って、乗車を管理する。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "見守る、と、管理する、まで。家族だけで乗っていいのか、免許が要るのかは、注文の資料には書いてない。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに今は、招待された人しか買えない。招待の外の人が、いつ買えるようになるかは、書いてない。",
+          "expression": "doubt",
+          "tag": "weakness"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "始まったばかりの売り方だね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、招待されていない人は、待つしかないの？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "待たなくても、同じ車種に、呼んで乗ってみることはできる。テスラの配車サービスで使っている車は、モデルワイと、このサイバーキャブ。",
+          "expression": "excited",
+          "tag": "workaround",
+          "display": "待たなくても、同じ車種に、呼んで乗ってみることはできる。テスラの配車サービスで使っている車は、モデルYと、このサイバーキャブ。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "呼んだら、必ずサイバーキャブが来るの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そうとは限らない。どっちが来るかは、空いている車と、乗る人数で決まる、とテスラのサポートのページにある。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それでも、同じ車種が、もう客を乗せて走ってる、というのは大きいわね。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ハンドルもペダルも無い車が、呼ぶ車だけじゃなく、自分の車として注文できるところまで来た。届くのは、12月の見込み。",
+          "expression": "convinced",
+          "tag": "hope"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "source_card": {
+            "kind": "web",
+            "source": "テスラの招待メール（@robotaxi の投稿、2026年11月13日）",
+            "quote": "Monitor your vehicle and manage your ride in the app.",
+            "quote_type": "原文",
+            "highlight": "manage your ride in the app",
+            "items": [
+              "見出し: Early Access, Limited Release",
+              "最初は数が限られる"
+            ]
+          },
+          "reference_index": 1
+        },
+        {
+          "from_line": 6,
+          "source_card": {
+            "kind": "docs",
+            "source": "テスラ サポートのページ（2026年11月17日確認）",
+            "quote": "Our fleet consists of Model Y and Cybercab vehicles.",
+            "quote_type": "原文",
+            "highlight": "Cybercab vehicles",
+            "items": [
+              "配車サービスの車: モデルYとサイバーキャブ",
+              "どちらが来るかは、空いている車と人数で決まる"
+            ]
+          },
+          "reference_index": 3
+        }
+      ],
+      "narration": "大輔「招待のメールに、こうある。完全自動運転。アプリで車を見守って、乗車を管理する。」\n沙織「見守る、と、管理する、まで。家族だけで乗っていいのか、免許が要るのかは、注文の資料には書いてない。」\n沙織「それに今は、招待された人しか買えない。招待の外の人が、いつ買えるようになるかは、書いてない。」\n大輔「始まったばかりの売り方だね。」\n沙織「じゃあ、招待されていない人は、待つしかないの？」\n大輔「待たなくても、同じ車種に、呼んで乗ってみることはできる。テスラの配車サービスで使っている車は、モデルワイと、このサイバーキャブ。」\n沙織「呼んだら、必ずサイバーキャブが来るの？」\n大輔「そうとは限らない。どっちが来るかは、空いている車と、乗る人数で決まる、とテスラのサポートのページにある。」\n沙織「それでも、同じ車種が、もう客を乗せて走ってる、というのは大きいわね。」\n大輔「ハンドルもペダルも無い車が、呼ぶ車だけじゃなく、自分の車として注文できるところまで来た。届くのは、12月の見込み。」\n［画面の資料カード］テスラの招待メール（@robotaxi の投稿、2026年11月13日） 「Monitor your vehicle and manage your ride in the app.」（原文） ・見出し: Early Access, Limited Release ・最初は数が限られる\n［画面の資料カード］テスラ サポートのページ（2026年11月17日確認） 「Our fleet consists of Model Y and Cybercab vehicles.」（原文） ・配車サービスの車: モデルYとサイバーキャブ ・どちらが来るかは、空いている車と人数で決まる",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 8,
+      "type": "paper",
+      "round": 2,
+      "round_title": "月々の契約が、車の動く条件？",
+      "bgm_role": "main",
+      "ken_burns": "gentle_zoom",
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "image_prompt": "Night in a quiet American residential neighborhood, seen from across the street at eye level: parked at the curb under a warm streetlight in front of a modest single-story house with a lit porch is Tesla Cybercab, a real two-seat autonomous car, depicted faithfully: a low, compact two-door fastback coupe whose smooth roofline slopes all the way down to a short, squared-off tail; the whole body is satin champagne-gold metallic, with black lower body trim; large flat smooth disc-shaped wheel covers painted the same champagne gold; a single thin full-width white LED light bar across the front and a single thin full-width red light bar across the rear; no side mirrors; dark tinted glass; two large doors hinged at the top that swing upward. Inside there is only a two-person bench seat in dark leather and a large center touchscreen, with no steering wheel and no pedals. No lettering, logos or signatures on the car. Seen from a rear three-quarter angle so the thin red full-width rear light bar glows softly; nobody inside. A smartphone is not shown. Calm, slightly thoughtful mood, warm light from house windows, neighboring houses and trees continuing to the left and right edges. No people, no readable text or signs. Warm editorial illustration style.",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "2つ目は、月々の契約。注文画面には、本体の値段とは別に、もう一つ項目がある。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "自動運転の契約で、月299ドル。約4万8000円。買ったときに、1か月分は込み。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "その項目の下に、小さい字でこうある。この契約と、定期的な整備が、車を動かすのに必要。料金は税別で、解約するまで毎月かかる。",
+          "expression": "doubt",
+          "tag": "barrier"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ふつうの車なら、何かの契約が切れても、自分でハンドルを握れば走れる。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "この車には、そのハンドルが無い。注文画面の言い方どおりなら、月々の契約が、車が動く条件そのものになる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "買えば自分の物、のつもりでも、動かすのは会社のサービス、ということか。",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "もう一つ。招待のメールの一番下の注に、こうある。対応するサービス区域でだけ。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "この回では、それを、走れる区域、と呼ぼう。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "どこが走れる区域かは、注文の資料には書いてない。区域の外に出ようとしたらどうなるかも、書いてない。",
+          "expression": "doubt"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true,
+          "shows_product": true
+        },
+        {
+          "from_line": 2,
+          "source_card": {
+            "kind": "web",
+            "source": "テスラの注文画面（@robotaxi の投稿、2026年11月13日）",
+            "quote": "Subscription and regular vehicle maintenance required to operate.",
+            "quote_type": "原文",
+            "highlight": "required to operate",
+            "items": [
+              "自動運転の契約: 月299ドル（税別）",
+              "購入時に1か月分込み",
+              "解約するまで毎月請求"
+            ]
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 7,
+          "source_card": {
+            "kind": "web",
+            "source": "テスラの招待メール（@robotaxi の投稿、2026年11月13日）",
+            "quote": "Only available in supported service areas. Subscription required for operation.",
+            "quote_type": "原文",
+            "highlight": "supported service areas",
+            "items": [
+              "どこが対応する区域かは、注文の資料に無し"
+            ]
+          },
+          "reference_index": 1
+        }
+      ],
+      "narration": "大輔「2つ目は、月々の契約。注文画面には、本体の値段とは別に、もう一つ項目がある。」\n大輔「自動運転の契約で、月299ドル。約4万8000円。買ったときに、1か月分は込み。」\n沙織「その項目の下に、小さい字でこうある。この契約と、定期的な整備が、車を動かすのに必要。料金は税別で、解約するまで毎月かかる。」\n大輔「ふつうの車なら、何かの契約が切れても、自分でハンドルを握れば走れる。」\n沙織「この車には、そのハンドルが無い。注文画面の言い方どおりなら、月々の契約が、車が動く条件そのものになる。」\n大輔「買えば自分の物、のつもりでも、動かすのは会社のサービス、ということか。」\n沙織「もう一つ。招待のメールの一番下の注に、こうある。対応するサービス区域でだけ。」\n大輔「この回では、それを、走れる区域、と呼ぼう。」\n沙織「どこが走れる区域かは、注文の資料には書いてない。区域の外に出ようとしたらどうなるかも、書いてない。」\n［画面の資料カード］テスラの注文画面（@robotaxi の投稿、2026年11月13日） 「Subscription and regular vehicle maintenance required to operate.」（原文） ・自動運転の契約: 月299ドル（税別） ・購入時に1か月分込み ・解約するまで毎月請求\n［画面の資料カード］テスラの招待メール（@robotaxi の投稿、2026年11月13日） 「Only available in supported service areas. Subscription required for operation.」（原文） ・どこが対応する区域かは、注文の資料に無し",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 9,
+      "type": "check",
+      "image_asset": "cards/kl058_S09_v1",
+      "round": 2,
+      "bgm_role": "main",
+      "ken_burns": "none",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "手がかりはある。テスラの配車サービスが今走っているのは、テキサスとフロリダの、8つの都市。サポートのページでは、どこも、その中の限られた区域。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "受け取りのオースティンも、その8つの一つね。持ち主の車が同じ区域なのかは、書いてないけど。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "配車サービスのほうは、走る時間も範囲も広がってる。公式アカウントの投稿では、11月12日から、全部の都市で24時間走ってる。",
+          "expression": "excited",
+          "tag": "workaround"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "24時間？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それに、16日には、マイアミで走る範囲を広げた、と投稿してる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、持つのと呼ぶのは、どっちがいいの？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "呼ぶなら、予約金も、月々の契約も要らない。料金は、乗る前にアプリに出る。持つなら、自分専用の1台が手元にある。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "呼んだときの料金は、いくら？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "金額は書いてない。乗る前にアプリに出る、とだけ。だから、どっちが得かの計算は、まだできない。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "正直、自分の車として役に立つ形になるには、3年はかかると思ってた。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "どこまで走れるかは、まだ書いてない。でも、同じ車種がもう客を乗せていて、配車サービスは24時間になった。12月に届くなら、区域の中で使う分には、3年も待たない。そこは私の読み違い。",
+          "expression": "convinced",
+          "tag": "turn"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "月々の契約で動く車でも、呼ぶか、持つか、自分の使い方で選べるようになった。配車サービスの走る範囲も、広がる向きに動いてる。",
+          "expression": "convinced",
+          "tag": "hope"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "chart": {
+            "kind": "number",
+            "title": "配車サービスが走る都市（アメリカ）",
+            "value": 8,
+            "unit": "都市",
+            "caption": "テキサスとフロリダ、どこも限られた区域",
+            "source": "テスラ サポートのページ（2026年11月17日確認）",
+            "reference_index": 3
+          },
+          "reference_index": 3
+        },
+        {
+          "from_line": 3,
+          "source_card": {
+            "kind": "web",
+            "source": "テスラの配車サービスの公式アカウント（2026年11月12日）",
+            "quote": "Robotaxi now runs 24/7",
+            "quote_type": "原文",
+            "highlight": "24/7",
+            "items": [
+              "配車サービスを利用できる全部の都市で"
+            ]
+          },
+          "reference_index": 4
+        },
+        {
+          "from_line": 5,
+          "source_card": {
+            "kind": "web",
+            "source": "テスラの配車サービスの公式アカウント（2026年11月16日）",
+            "quote": "Now serving more of Miami",
+            "quote_type": "原文",
+            "highlight": "more of Miami",
+            "items": [
+              "マイアミで走る範囲を拡大"
+            ]
+          },
+          "reference_index": 5
+        },
+        {
+          "from_line": 6,
+          "recap_card": {
+            "title": "持つか、呼ぶか",
+            "items": [
+              "持つ: 本体およそ480万円＋月約4.8万円",
+              "　自分専用の1台が手元に",
+              "呼ぶ: 予約金・月々の契約なし",
+              "　料金は乗る前にアプリに出る"
+            ]
+          }
+        },
+        {
+          "from_line": 10,
+          "recap_card": {
+            "title": "2つ目で分かったこと",
+            "items": [
+              "契約と整備が、車を動かすのに必要",
+              "走れるのは、対応する区域だけ",
+              "配車サービスは24時間に。マイアミで範囲を拡大"
+            ]
+          }
+        }
+      ],
+      "narration": "大輔「手がかりはある。テスラの配車サービスが今走っているのは、テキサスとフロリダの、8つの都市。サポートのページでは、どこも、その中の限られた区域。」\n沙織「受け取りのオースティンも、その8つの一つね。持ち主の車が同じ区域なのかは、書いてないけど。」\n大輔「配車サービスのほうは、走る時間も範囲も広がってる。公式アカウントの投稿では、11月12日から、全部の都市で24時間走ってる。」\n沙織「24時間？」\n大輔「それに、16日には、マイアミで走る範囲を広げた、と投稿してる。」\n沙織「じゃあ、持つのと呼ぶのは、どっちがいいの？」\n大輔「呼ぶなら、予約金も、月々の契約も要らない。料金は、乗る前にアプリに出る。持つなら、自分専用の1台が手元にある。」\n沙織「呼んだときの料金は、いくら？」\n大輔「金額は書いてない。乗る前にアプリに出る、とだけ。だから、どっちが得かの計算は、まだできない。」\n沙織「正直、自分の車として役に立つ形になるには、3年はかかると思ってた。」\n沙織「どこまで走れるかは、まだ書いてない。でも、同じ車種がもう客を乗せていて、配車サービスは24時間になった。12月に届くなら、区域の中で使う分には、3年も待たない。そこは私の読み違い。」\n大輔「月々の契約で動く車でも、呼ぶか、持つか、自分の使い方で選べるようになった。配車サービスの走る範囲も、広がる向きに動いてる。」\n［画面のグラフ］テスラ サポートのページ（2026年11月17日確認） 配車サービスが走る都市（アメリカ） 8都市 テキサスとフロリダ、どこも限られた区域\n［画面の資料カード］テスラの配車サービスの公式アカウント（2026年11月12日） 「Robotaxi now runs 24/7」（原文） ・配車サービスを利用できる全部の都市で\n［画面の資料カード］テスラの配車サービスの公式アカウント（2026年11月16日） 「Now serving more of Miami」（原文） ・マイアミで走る範囲を拡大\n［画面のまとめカード（ふりかえり）］持つか、呼ぶか ・持つ: 本体およそ480万円＋月約4.8万円 ・　自分専用の1台が手元に ・呼ぶ: 予約金・月々の契約なし ・　料金は乗る前にアプリに出る\n［画面のまとめカード（ふりかえり）］2つ目で分かったこと ・契約と整備が、車を動かすのに必要 ・走れるのは、対応する区域だけ ・配車サービスは24時間に。マイアミで範囲を拡大",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 10,
+      "type": "paper",
+      "round": 3,
+      "round_title": "日本の私たちには、どこから？",
+      "bgm_role": "main",
+      "ken_burns": "gentle_zoom",
+      "image_prompt": "A taxi stand in front of a train station in Tokyo in the early evening, seen at eye level: a short line of generic Japanese taxis with roof lamps waiting at the curb, a covered walkway, station building lights, a pedestrian crossing and city buildings continuing to the left and right edges, the sky turning deep blue. The taxis have no company names, no logos and no readable text. No people in focus; at most a few tiny distant silhouettes. Calm, hopeful mood. No readable text or signs. Warm editorial illustration style.",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "3つ目。日本の私たちには、どこから来るのか。日本で個人に売る話は、テスラの資料のどこにも無い。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "日本は、呼ぶ形が先に来そうなんだ。9月15日に、3つの会社が発表した。タクシーアプリのゴーと、東京のタクシー会社の日本交通。",
+          "expression": "neutral",
+          "display": "日本は、呼ぶ形が先に来そうなんだ。9月15日に、3つの会社が発表した。タクシーアプリのGOと、東京のタクシー会社の日本交通。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "配車のアプリと、タクシー会社ね。もう一つは？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "アメリカの自動運転の会社、ウェイモ。グーグルの親会社のグループの会社だよ。",
+          "expression": "neutral",
+          "display": "アメリカの自動運転の会社、ウェイモ（Waymo）。グーグルの親会社のグループの会社だよ。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "3つの会社で、何を？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "2027年中に、東京で、完全に無人のタクシーを走らせることを目指す。少しずつ増やして、100台くらいの規模に。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "目指す、ね。今は、どこまで？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "2025年から、都内の7つの区で、道を走って試してる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "もう誰も乗っていないの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "まだ。今は、日本交通の乗務員が乗った状態で試してる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次は、東京の外にも来てほしい。運転手が足りない町こそ、呼べば無人の車が来る形が効く。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "発表にあるのは、東京だけよ。",
+          "expression": "doubt"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true
+        },
+        {
+          "from_line": 5,
+          "source_card": {
+            "kind": "press",
+            "source": "GO・日本交通・ウェイモの発表（2026年9月15日）",
+            "quote": "2027年中に東京で、段階的に100台規模の自動運転タクシーを運行することを目指します",
+            "quote_type": "原文",
+            "highlight": "2027年中に東京で",
+            "items": [
+              "GO・日本交通・ウェイモの3社",
+              "2025年から都内7区で試験",
+              "今は日本交通の乗務員が同乗"
+            ]
+          },
+          "reference_index": 6
+        },
+        {
+          "from_line": 10,
+          "scene_image": true
+        }
+      ],
+      "narration": "沙織「3つ目。日本の私たちには、どこから来るのか。日本で個人に売る話は、テスラの資料のどこにも無い。」\n大輔「日本は、呼ぶ形が先に来そうなんだ。9月15日に、3つの会社が発表した。タクシーアプリのゴーと、東京のタクシー会社の日本交通。」\n沙織「配車のアプリと、タクシー会社ね。もう一つは？」\n大輔「アメリカの自動運転の会社、ウェイモ。グーグルの親会社のグループの会社だよ。」\n沙織「3つの会社で、何を？」\n大輔「2027年中に、東京で、完全に無人のタクシーを走らせることを目指す。少しずつ増やして、100台くらいの規模に。」\n沙織「目指す、ね。今は、どこまで？」\n大輔「2025年から、都内の7つの区で、道を走って試してる。」\n沙織「もう誰も乗っていないの？」\n大輔「まだ。今は、日本交通の乗務員が乗った状態で試してる。」\n大輔「次は、東京の外にも来てほしい。運転手が足りない町こそ、呼べば無人の車が来る形が効く。」\n沙織「発表にあるのは、東京だけよ。」\n［画面の資料カード］GO・日本交通・ウェイモの発表（2026年9月15日） 「2027年中に東京で、段階的に100台規模の自動運転タクシーを運行することを目指します」（原文） ・GO・日本交通・ウェイモの3社 ・2025年から都内7区で試験 ・今は日本交通の乗務員が同乗",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 11,
+      "type": "check",
+      "image_asset": "cards/kl058_S11_v1",
+      "round": 3,
+      "bgm_role": "main",
+      "ken_burns": "none",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "それに、始める時期は、安全が確かめられて、法律で決められた許可が取れてから決める、と発表にある。2027年中は、目標。",
+          "expression": "doubt",
+          "tag": "barrier"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "許可は、国や自治体と連携して取りにいく、とも書いてある。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "資料には無い、私の願いだけど。本物なら、出張先の知らない町で使いたい。重い資料を積んで、夜の駅から宿まで。",
+          "expression": "amused",
+          "tag": "skeptic_wish"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だったら、日本の順番は、まず呼ぶ形。東京で無人のタクシーが走り出したら、走れる区域と料金を見る。それが見えれば、東京の外の町に広げる話もできる。持つ話は、その先だ。",
+          "expression": "excited",
+          "tag": "workaround"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ゴーのアプリ一つで、ふつうのタクシーと無人のタクシーを、両方使えるようになる、とも書いてあるわね。",
+          "expression": "neutral",
+          "display": "GOのアプリ一つで、ふつうのタクシーと無人のタクシーを、両方使えるようになる、とも書いてあるわね。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "日本でも、無人の車を呼んで乗る形は、東京で2027年中を目指して、3つの会社がもう準備を進めてる。",
+          "expression": "convinced",
+          "tag": "hope"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "source_card": {
+            "kind": "press",
+            "source": "GO・日本交通・ウェイモの発表（2026年9月15日）",
+            "quote": "正式な運行開始時期は、確かな安全性が認められ、道路交通法や道路運送法等に規定された必要な許認可の取得が完了した後に決定されます。",
+            "quote_type": "原文",
+            "highlight": "許認可の取得が完了した後",
+            "items": [
+              "関係省庁・関係自治体と連携して許認可へ"
+            ]
+          },
+          "reference_index": 6
+        },
+        {
+          "from_line": 5,
+          "source_card": {
+            "kind": "press",
+            "source": "GO・日本交通・ウェイモの発表（2026年9月15日）",
+            "quote": "タクシーアプリ『GO』一つで、従来のタクシーとWaymoの自動運転タクシーの両方を利用可能になります。",
+            "quote_type": "原文",
+            "highlight": "『GO』一つで",
+            "items": [
+              "GOの社長のコメントから"
+            ]
+          },
+          "reference_index": 6
+        }
+      ],
+      "narration": "沙織「それに、始める時期は、安全が確かめられて、法律で決められた許可が取れてから決める、と発表にある。2027年中は、目標。」\n大輔「許可は、国や自治体と連携して取りにいく、とも書いてある。」\n沙織「資料には無い、私の願いだけど。本物なら、出張先の知らない町で使いたい。重い資料を積んで、夜の駅から宿まで。」\n大輔「だったら、日本の順番は、まず呼ぶ形。東京で無人のタクシーが走り出したら、走れる区域と料金を見る。それが見えれば、東京の外の町に広げる話もできる。持つ話は、その先だ。」\n沙織「ゴーのアプリ一つで、ふつうのタクシーと無人のタクシーを、両方使えるようになる、とも書いてあるわね。」\n大輔「日本でも、無人の車を呼んで乗る形は、東京で2027年中を目指して、3つの会社がもう準備を進めてる。」\n［画面の資料カード］GO・日本交通・ウェイモの発表（2026年9月15日） 「正式な運行開始時期は、確かな安全性が認められ、道路交通法や道路運送法等に規定された必要な許認可の取得が完了した後に決定されます。」（原文） ・関係省庁・関係自治体と連携して許認可へ\n［画面の資料カード］GO・日本交通・ウェイモの発表（2026年9月15日） 「タクシーアプリ『GO』一つで、従来のタクシーとWaymoの自動運転タクシーの両方を利用可能になります。」（原文） ・GOの社長のコメントから",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 12,
+      "type": "verdict",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "ken_burns": "gentle_zoom",
+      "verdict_from_line": 10,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "先に、僕の予想から。アメリカでは、この1年で持ち主の手に届き始める、と言った。12月の見込みだから、今のところ、そこは合ってる。",
+          "expression": "thinking",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "欲しい人は多い、のほうは？",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そこは、資料では分からない。言い過ぎだった。",
+          "expression": "deflated"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "前回と同じ3つの物差しで、今日の記録を残すね。まず、どこで無人か。配車サービスが、テキサスとフロリダの8つの都市の、限られた区域で、客を乗せて走ってる。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今回は、個人が注文できる車にもなった。ただし、使えるのは、走れる区域の中だけ。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "人は乗って見張るか。ハンドルもペダルも無いから、乗っている人は運転しない。持ち主は、アプリで車を見守る。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどこか。テスラが次に行く町は、資料には無い。配車サービスは、マイアミで走る範囲を広げたばかり。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "テスラとは別の話だけど、日本では、ゴーたちが、東京で2027年中を目指してる。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今回足した値段は、本体がおよそ480万円、月々の契約が約4万8000円。どちらも税別。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "届くのは、12月の見込み。招待された人から。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "発表は、移動をもっと効率よく、安く、誰でも使えるものにする、と言ってる。安く、と、誰でも、は、今日の資料では確かめられない。判定するのは、その手前。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "判定の札は4つ。実現に近い順に、もうすぐ来る、3年はかかる、根拠待ち、まだ眉唾。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "札を付けるのは、この問い。アメリカの走れる区域で、招待された人が、月々の契約で動く自分の車を使い始める形は、この1年で来るか。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕は、もうすぐ来る。この1年は、招待された人が受け取って、使い始めるまでの話。12月に届く見込みで、同じ車種が、もう客を乗せて走ってる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私も、もうすぐ来る。最初は3年はかかると見てたけど、区域の中では、もう使える形に近い。区域の外でどうなるかは、届いた人の声で確かめたい。",
+          "expression": "convinced",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "日本には、札を付けない。日本で個人に売る話は、まだ出ていないから。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "札を付ける目印は2つ。東京で無人のタクシーが、許可を取って走り出すか。それと、日本で個人に売る話が出るか。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今日の答え。運転しない車は、買っても、月々の契約が無いと動かせない、と注文画面に書いてある。その意味では、はい。でも同時に、呼ぶか、持つかを選べる時代が始まった。",
+          "expression": "convinced",
+          "tag": "takeaway"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "今日の話は、テスラの注文画面と公式のページ、それにゴーたちの発表。11月時点の、二人の見立てね。",
+          "expression": "neutral",
+          "display": "今日の話は、テスラの注文画面と公式のページ、それにGOたちの発表。11月時点の、二人の見立てね。"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "recap_card": {
+            "title": "二人の予想",
+            "badge": "予想",
+            "items": [
+              "大輔: アメリカでは1年で、持ち主の手に",
+              "沙織: 自分の車として役に立つには3年"
+            ]
+          }
+        },
+        {
+          "from_line": 4,
+          "recap_card": {
+            "title": "第2回の記録（3つの物差し＋値段）",
+            "items": [
+              "1 どこで: 米国の限られた区域。個人用も注文開始",
+              "2 人: 乗る人は運転しない。持ち主はアプリで見守る",
+              "3 次: マイアミで拡大。東京は別の3社が2027年中目標",
+              "＋ 値段: 本体約480万円＋月約4.8万円（税別）",
+              "　 12月の見込み・招待制（1ドル約159円、11/17）"
+            ]
+          }
+        },
+        {
+          "from_line": 11,
+          "recap_card": {
+            "title": "二人の答え合わせ",
+            "items": [
+              "1 自分の車として注文できる所まで来た",
+              "2 契約が動く条件。でも呼ぶか持つか選べる",
+              "3 日本は、まず呼ぶ形（東京で2027年中目標）"
+            ]
+          }
+        },
+        {
+          "from_line": 12,
+          "recap_card": {
+            "title": "判定の札（実現に近い順）",
+            "items": [
+              "もうすぐ来る",
+              "3年はかかる",
+              "根拠待ち",
+              "まだ眉唾"
+            ]
+          }
+        },
+        {
+          "from_line": 13,
+          "recap_card": {
+            "title": "札を付ける問い",
+            "badge": "札の対象",
+            "items": [
+              "アメリカの走れる区域で、招待された人が、",
+              "月々の契約で動く自分の車を",
+              "使い始める形は、この1年で来る？"
+            ]
+          }
+        },
+        {
+          "from_line": 14,
+          "scene_image": true
+        }
+      ],
+      "narration": "大輔「先に、僕の予想から。アメリカでは、この1年で持ち主の手に届き始める、と言った。12月の見込みだから、今のところ、そこは合ってる。」\n沙織「欲しい人は多い、のほうは？」\n大輔「そこは、資料では分からない。言い過ぎだった。」\n沙織「前回と同じ3つの物差しで、今日の記録を残すね。まず、どこで無人か。配車サービスが、テキサスとフロリダの8つの都市の、限られた区域で、客を乗せて走ってる。」\n大輔「今回は、個人が注文できる車にもなった。ただし、使えるのは、走れる区域の中だけ。」\n沙織「人は乗って見張るか。ハンドルもペダルも無いから、乗っている人は運転しない。持ち主は、アプリで車を見守る。」\n大輔「次はどこか。テスラが次に行く町は、資料には無い。配車サービスは、マイアミで走る範囲を広げたばかり。」\n沙織「テスラとは別の話だけど、日本では、ゴーたちが、東京で2027年中を目指してる。」\n大輔「今回足した値段は、本体がおよそ480万円、月々の契約が約4万8000円。どちらも税別。」\n沙織「届くのは、12月の見込み。招待された人から。」\n大輔「発表は、移動をもっと効率よく、安く、誰でも使えるものにする、と言ってる。安く、と、誰でも、は、今日の資料では確かめられない。判定するのは、その手前。」\n沙織「判定の札は4つ。実現に近い順に、もうすぐ来る、3年はかかる、根拠待ち、まだ眉唾。」\n沙織「札を付けるのは、この問い。アメリカの走れる区域で、招待された人が、月々の契約で動く自分の車を使い始める形は、この1年で来るか。」\n大輔「僕は、もうすぐ来る。この1年は、招待された人が受け取って、使い始めるまでの話。12月に届く見込みで、同じ車種が、もう客を乗せて走ってる。」\n沙織「私も、もうすぐ来る。最初は3年はかかると見てたけど、区域の中では、もう使える形に近い。区域の外でどうなるかは、届いた人の声で確かめたい。」\n大輔「日本には、札を付けない。日本で個人に売る話は、まだ出ていないから。」\n沙織「札を付ける目印は2つ。東京で無人のタクシーが、許可を取って走り出すか。それと、日本で個人に売る話が出るか。」\n大輔「今日の答え。運転しない車は、買っても、月々の契約が無いと動かせない、と注文画面に書いてある。その意味では、はい。でも同時に、呼ぶか、持つかを選べる時代が始まった。」\n沙織「今日の話は、テスラの注文画面と公式のページ、それにゴーたちの発表。11月時点の、二人の見立てね。」\n［画面のまとめカード（予想）］二人の予想 ・大輔: アメリカでは1年で、持ち主の手に ・沙織: 自分の車として役に立つには3年\n［画面のまとめカード（ふりかえり）］第2回の記録（3つの物差し＋値段） ・1 どこで: 米国の限られた区域。個人用も注文開始 ・2 人: 乗る人は運転しない。持ち主はアプリで見守る ・3 次: マイアミで拡大。東京は別の3社が2027年中目標 ・＋ 値段: 本体約480万円＋月約4.8万円（税別） ・　 12月の見込み・招待制（1ドル約159円、11/17）\n［画面のまとめカード（ふりかえり）］二人の答え合わせ ・1 自分の車として注文できる所まで来た ・2 契約が動く条件。でも呼ぶか持つか選べる ・3 日本は、まず呼ぶ形（東京で2027年中目標）\n［画面のまとめカード（ふりかえり）］判定の札（実現に近い順） ・もうすぐ来る ・3年はかかる ・根拠待ち ・まだ眉唾\n［画面のまとめカード（札の対象）］札を付ける問い ・アメリカの走れる区域で、招待された人が、 ・月々の契約で動く自分の車を ・使い始める形は、この1年で来る？",
+      "narrator": "dialogue"
+    },
+    {
+      "scene_id": 13,
+      "type": "closing",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe_b",
+      "ken_burns": "gentle_zoom",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "今月の一歩。今の車に、毎月いくら払っているかを書き出してみる。駐車場、保険、ローン。",
+          "expression": "excited",
+          "tag": "next_step"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "書き出した合計を、月々の契約で動く車や、呼んで乗る車と比べる目で見ておくといい。次の発表が出たら、また同じ物差しで確かめよう。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "amused"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "step_card": {
+            "title": "今月の一歩",
+            "badge": "次の一歩",
+            "items": [
+              "今の車に、毎月いくら払っているか書き出す",
+              "例: 駐車場・保険・ローン",
+              "月々の契約の車や、呼ぶ車と比べる目で"
+            ]
+          }
+        },
+        {
+          "from_line": 3,
+          "scene_image": true
+        }
+      ],
+      "narration": "大輔「今月の一歩。今の車に、毎月いくら払っているかを書き出してみる。駐車場、保険、ローン。」\n沙織「書き出した合計を、月々の契約で動く車や、呼んで乗る車と比べる目で見ておくといい。次の発表が出たら、また同じ物差しで確かめよう。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」\n［画面のまとめカード（次の一歩）］今月の一歩 ・今の車に、毎月いくら払っているか書き出す ・例: 駐車場・保険・ローン ・月々の契約の車や、呼ぶ車と比べる目で",
+      "narrator": "dialogue"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "skeptic",
+          "narration": "ハンドルの無い車を、個人に？",
+          "expression": "surprised",
+          "scene_id": 6,
+          "badge_text": "イメージ図（実物と異なる場合があります）"
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "ハンドルもペダルも無い車を、個人が注文できるようになった。",
+          "expression": "excited",
+          "scene_id": 6,
+          "badge_text": "イメージ図（実物と異なる場合があります）"
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "でも注文画面には、月々の契約が無いと動かせない、とある。",
+          "expression": "doubt",
+          "scene_id": 8,
+          "badge_text": "イメージ図（実物と異なる場合があります）"
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "同じ車種は、もう配車サービスで、客を乗せて走ってる。",
+          "expression": "excited",
+          "scene_id": 6,
+          "badge_text": "イメージ図（実物と異なる場合があります）"
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "日本の私たちには、どこから来る？ 判定は本編で。",
+          "expression": "thinking",
+          "scene_id": 10
+        }
+      ]
+    }
+  ]
+}
