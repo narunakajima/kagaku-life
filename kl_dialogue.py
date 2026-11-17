@@ -1846,6 +1846,32 @@ def build_sprite_tracks(events: list, total_dur: float, layout: dict, cast: dict
 
 # ── サムネイル ──────────────────────────────────────────────────────
 
+def _draw_series_sign(img, series_no) -> int:
+    """定点観測シリーズの看板（サムネイル最上部・中央。青地に白文字「定点観測」＋黄色の「第N回」）。
+    使った高さ（px）を返す。固定デザインなので色・位置は回ごとに変えない。"""
+    w, h = img.size
+    ph = int(h * 0.105)
+    f = _font(FONT_BOLD, int(ph * 0.66))
+    t1 = "定点観測"
+    t2 = f" 第{series_no}回" if series_no else ""
+    d0 = ImageDraw.Draw(img)
+    w1, w2 = _text_w(d0, t1, f), (_text_w(d0, t2, f) if t2 else 0)
+    padx = int(ph * 0.45)
+    bw = w1 + w2 + padx * 2
+    x0, y0 = (w - bw) // 2, int(h * 0.025)
+    layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    ld = ImageDraw.Draw(layer)
+    ld.rounded_rectangle((x0, y0, x0 + bw, y0 + ph), radius=ph // 2,
+                         fill=(30, 90, 190, 245), outline=(255, 255, 255, 255), width=max(3, ph // 20))
+    img.alpha_composite(layer)
+    d = ImageDraw.Draw(img)
+    ty = y0 + (ph - int(ph * 0.66)) // 2 - int(ph * 0.08)
+    d.text((x0 + padx, ty), t1, font=f, fill=(255, 255, 255))
+    if t2:
+        d.text((x0 + padx + w1, ty), t2, font=f, fill=(255, 214, 10))
+    return y0 + ph - int(h * 0.025) + int(h * 0.01)
+
+
 def composite_thumbnail_dialogue(image_path: Path, ep: dict, cast: dict = None) -> None:
     """掛け合い形式のサムネイル: 背景画像の上に、見出し（上部）、二人の立ち絵（左下・右下）、
     判定ラベル（中央下寄り）を合成する。表情は thumbnail_exprs（無ければ excited/doubt）。"""
@@ -1872,6 +1898,11 @@ def composite_thumbnail_dialogue(image_path: Path, ep: dict, cast: dict = None) 
 
     dr = ImageDraw.Draw(img)
     headline = ep.get("thumbnail_headline", "")
+    # 定点観測シリーズの看板（2026-11-17、なるさんの指示）: エピソードJSONに series があれば、サムネイルの最上部に
+    # 「定点観測 第N回」の帯を固定デザインで出し、見出し・バッジはその下へ下げる。回数は series_no
+    series_h = 0
+    if ep.get("series"):
+        series_h = _draw_series_sign(img, ep.get("series_no"))
     # thumbnail_badge: 製品名などを見出しの上に大きく目立たせる（2026-10-06、kl034「Dots」。なるさんの指示）
     badge = ep.get("thumbnail_badge", "")
     badge_h = 0
@@ -1884,7 +1915,7 @@ def composite_thumbnail_dialogue(image_path: Path, ep: dict, cast: dict = None) 
                 break
             bsize -= 4
         bw = _text_w(dr, badge, bf, bstroke)
-        dr.text(((w - bw) // 2, int(h * 0.02)), badge, font=bf, fill=(255, 214, 10),
+        dr.text(((w - bw) // 2, int(h * 0.02) + series_h), badge, font=bf, fill=(255, 214, 10),
                 stroke_width=bstroke, stroke_fill=(20, 20, 20))
         badge_h = int(bsize * 1.12)
     if headline:
@@ -1897,7 +1928,7 @@ def composite_thumbnail_dialogue(image_path: Path, ep: dict, cast: dict = None) 
             if all(_text_w(dr, r, f, stroke) <= w - margin * 2 for r in rows):
                 break
             size -= 4
-        y = int(h * 0.05) + (badge_h if badge else 0)
+        y = int(h * 0.05) + series_h + (badge_h if badge else 0)
         for r in headline.split("\n"):
             rw = _text_w(dr, r, f, stroke)
             dr.text(((w - rw) // 2, y), r, font=f, fill=(255, 255, 255), stroke_width=stroke,
