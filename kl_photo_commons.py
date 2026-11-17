@@ -55,7 +55,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 BASE_DIR = Path(__file__).parent
 PHOTO_DIR = BASE_DIR / "assets" / "photos"
 API = "https://commons.wikimedia.org/w/api.php"
-UA = "kagaku-life-research/1.0 (https://kagaku-life.com; naru.nakajima@gmail.com)"
+UA = "kagaku-life-research/1.0 (https://kagaku-life.com; info@andante-rd.com)"
 MAX_BYTES = 20 * 1024 * 1024
 MIN_WIDTH = 1280
 W, H = 1920, 1080
