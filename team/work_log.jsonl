@@ -421,3 +421,50 @@
 {"ts": "2026-11-18T09:56:59+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl059", "step": "1.5", "result": "ok", "retries": 0, "note": "問い段階: 案C見たい・案B見たい・案A見たくない（順位 C>B>A）"}
 {"ts": "2026-11-18T09:57:46+09:00", "kind": "call", "agent": "kl-manager", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
 {"ts": "2026-11-18T09:57:59+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl059", "step": "1.5", "result": "ok", "retries": 0, "note": "推奨: 案A′（案A＋エマ指摘と案Cの日本を反映）。次点: 案C問い直し。作り直し不要"}
+{"ts": "2026-11-18T10:18:55+09:00", "kind": "applied", "agent": "kl-writer", "episode": "kl059", "ids": ["KL2611-02"], "skipped": [], "reason": ""}
+{"ts": "2026-11-18T10:19:48+09:00", "kind": "call", "agent": "kl-writer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-18T10:19:53+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl059", "step": "2", "result": "ok", "retries": 0, "note": "verdict_first・13シーン・4846字"}
+{"ts": "2026-11-18T10:27:23+09:00", "kind": "call", "agent": "kl-script-reviewer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-18T10:27:28+09:00", "kind": "work", "agent": "kl-script-reviewer", "episode": "kl059", "step": "5", "result": "ok", "retries": 0, "note": "GO。事実に触れる修正あり（役割分担の食い違い・カード要約5枚・S09カード追加）。判定は変更なし"}
+{"ts": "2026-11-18T10:29:20+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl059", "step": "4", "result": "ok", "retries": 0, "note": "ファクトチェック: 初回 high_risk1/caution1（カード要約のずれ）→修正→再実行 ok=6"}
+{"ts": "2026-11-18T10:29:20+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl059", "step": "4.5", "result": "ok", "retries": 0, "note": ""}
+{"ts": "2026-11-18T10:31:41+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-18T10:31:57+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl059", "step": "5.5", "result": "ok", "retries": 0, "note": "r1 全文 致命的0・直す5・できれば8"}
+{"ts": "2026-11-18T10:32:00+09:00", "kind": "feedback", "agent": "kl-writer", "episode": "kl059", "source": "qa", "severity": "minor", "text": "初見r1: 町の店のレジと取れる「レジ」、前の回前提の行、「遠くのコンピューターのブラウザー」、主語混在、「私が確かめて届ける」"}
+{"ts": "2026-11-18T10:35:46+09:00", "kind": "applied", "agent": "kl-writer", "episode": "kl059", "ids": ["KL2611-02"], "skipped": [], "reason": ""}
+{"ts": "2026-11-18T10:36:26+09:00", "kind": "call", "agent": "kl-writer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-18T10:36:32+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl059", "step": "5.5", "result": "retry", "retries": 0, "note": "初見r1反映（直す5全反映・できれば6/8）"}
+{"ts": "2026-11-18T10:40:02+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-18T10:40:16+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl059", "step": "5.5", "result": "ok", "retries": 0, "note": "r2 差分 致命的0・直す1・できれば8（前回11件は9直り・2ほぼ直り）"}
+{"ts": "2026-11-18T10:42:39+09:00", "kind": "applied", "agent": "kl-writer", "episode": "kl059", "ids": ["KL2611-02"], "skipped": [], "reason": ""}
+{"ts": "2026-11-18T10:43:16+09:00", "kind": "call", "agent": "kl-writer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-18T10:43:22+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl059", "step": "5.5", "result": "retry", "retries": 0, "note": "初見r2反映（直す1・できれば8 全反映）"}
+{"ts": "2026-11-18T10:46:25+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-18T10:46:41+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl059", "step": "5.5", "result": "ok", "retries": 0, "note": "r3 差分 致命的0・直す0・できれば7（前回A〜H直った）"}
+{"ts": "2026-11-18T10:48:21+09:00", "kind": "applied", "agent": "kl-writer", "episode": "kl059", "ids": ["KL2611-02"], "skipped": [], "reason": ""}
+{"ts": "2026-11-18T10:48:43+09:00", "kind": "call", "agent": "kl-writer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-18T10:48:49+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl059", "step": "5.5", "result": "retry", "retries": 0, "note": "初見r3軽微反映"}
+{"ts": "2026-11-18T10:52:38+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-18T10:52:58+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl059", "step": "5.5", "result": "ok", "retries": 0, "note": "r4 全文 致命的0・直す3・できれば6（予告と沙織の予想の食い違い、確認を強くする表現、定期便の同意の説明）"}
+{"ts": "2026-11-18T10:56:06+09:00", "kind": "applied", "agent": "kl-writer", "episode": "kl059", "ids": ["KL2611-02"], "skipped": [], "reason": ""}
+{"ts": "2026-11-18T10:56:42+09:00", "kind": "call", "agent": "kl-writer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-18T10:56:48+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl059", "step": "5.5", "result": "retry", "retries": 0, "note": "初見r4（全文）反映 直す3全反映"}
+{"ts": "2026-11-18T10:59:53+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-18T11:00:01+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl059", "step": "5.5", "result": "ok", "retries": 0, "note": "r5 差分 致命的0・直す0・できれば4（前回指摘 全部直った/おおむね直った）→合格"}
+{"ts": "2026-11-18T11:01:30+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-18T11:01:47+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl059", "step": "5.6", "result": "ok", "retries": 0, "note": "パッケージ評価: 上位 案3>案5>案6、つまらなそう 案1"}
+{"ts": "2026-11-18T11:03:27+09:00", "kind": "call", "agent": "kl-manager", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-18T11:03:33+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl059", "step": "5.6", "result": "ok", "retries": 0, "note": "案3選定（カード番号はAIに渡る？、エマ5点・グレース○・S02で即答）。次点: 案5修正版・案2。S01語順修正を推奨"}
+{"ts": "2026-11-18T11:04:27+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-18T11:04:36+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl059", "step": "5.5", "result": "ok", "retries": 0, "note": "r6 予告のみ 致命的0・直す1（スマホ払いと違う、が中身なし）"}
+{"ts": "2026-11-18T11:05:15+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-18T11:05:20+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl059", "step": "5.5", "result": "ok", "retries": 0, "note": "r7 予告のみ 致命的0・直す0 →再合格"}
+{"ts": "2026-11-18T11:16:43+09:00", "kind": "call", "agent": "kl-art-director", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-18T11:16:51+09:00", "kind": "work", "agent": "kl-art-director", "episode": "kl059", "step": "6.7", "result": "ok", "retries": 0, "note": "CRITICAL 0。カード7枚の文言調整のみ"}
+{"ts": "2026-11-18T11:44:47+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-18T11:44:53+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl059", "step": "5.5", "result": "ok", "retries": 0, "note": "r8 S13のみ（誤読対策の言い換え）致命的0・直す0"}
+{"ts": "2026-11-18T11:50:06+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl059", "step": "8-9", "result": "ok", "retries": 0, "note": "TTS: 読み照合7行→S13_L03「断って」を言い換え(止めて)、他は読みのゆれ。話速 6.23/6.82 字/秒(差9%)、尺14.2分"}
+{"ts": "2026-11-18T11:57:16+09:00", "kind": "call", "agent": "kl-manager", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-18T11:57:24+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl059", "step": "11", "result": "ok", "retries": 0, "note": "進行可。サムネ見出しのみ変更（札が読めない→カード番号は？/任せきりは？）。BGM最新合格を採用、新曲例外を認める"}
+{"ts": "2026-11-18T11:57:24+09:00", "kind": "feedback", "agent": "kl-coordinator", "episode": "kl059", "source": "qa", "severity": "minor", "text": "reading_qa の誤検知（期待する読みの誤り）が6行・各4回の作り直し。kl053 に続き2回目。作り直しを止める仕組みの検討を提案（編集長）"}
+{"ts": "2026-11-18T12:11:02+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl059", "step": "進行", "result": "ok", "retries": 0, "note": "初見レビュー: 全文2周＋差分3周＋予告・S13の再チェック（直す: r1=5/r2=1/r3=0/r4全文=3/r5=0）。画像CRITICAL 0。ファクトチェックは初回でカード要約のずれ(high_risk)→修正。BGM最終検証は判定ぶれ(1回目要差し替え→2回目合格)。ミアの先行事例見落としを問いゲートで検出。承認待ちポーラーの実機テスト実施"}
