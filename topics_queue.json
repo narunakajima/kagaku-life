@@ -3438,8 +3438,63 @@
         "emma": "見たい（1位）",
         "question": "運転しない車は、「買えば自分の物」から「月々払わないと動かない物」になる？ どこまで来た？"
       }
+    },
+    {
+      "episode_id": "kl059",
+      "status": "confirmed",
+      "slot_type": "news",
+      "genre": "ai",
+      "health": false,
+      "domain": "life",
+      "concern_id": null,
+      "entry_question": "AIが店を探して、比べて、支払いまで済ませる時代が始まった。日用品の買い足しを、AIに任せきりにできる日は来る？",
+      "title": "AIが探して払うまで。買い物を任せきりにできる日は来る？（11月時点）",
+      "format": "dialogue",
+      "structure": "rounds_v4",
+      "source_type": "news",
+      "news_date": "2026-11-13",
+      "references": [
+        {
+          "title": "ChatGPT ウォレットのご紹介",
+          "year": 2026,
+          "venue": "OpenAI（2026年11月13日）",
+          "url": "https://openai.com/ja-JP/index/introducing-chatgpt-wallet/",
+          "source_kind": "official_page",
+          "is_preprint": false,
+          "institution": "OpenAI"
+        },
+        {
+          "title": "コマースパートナー向け実践ガイド（Accept payments / Agent access ほか）",
+          "year": 2026,
+          "venue": "OpenAI Developers",
+          "url": "https://developers.openai.com/commerce",
+          "source_kind": "official_page",
+          "is_preprint": false,
+          "institution": "OpenAI"
+        },
+        {
+          "title": "dots のご紹介",
+          "year": 2026,
+          "venue": "OpenAI（2026年9月29日、11月3日更新）",
+          "url": "https://openai.com/ja-JP/index/introducing-dots/",
+          "source_kind": "official_page",
+          "is_preprint": false,
+          "institution": "OpenAI"
+        }
+      ],
+      "hook_idea": "スマホ払いは探すのもレジに進むのも自分。今度はAIが探して、比べて、レジまで進んで払う。本物のカード番号はAIも店も見ない。",
+      "notes": "2026-11-18 週次スレート本命 fd333d9440（Muse経由で承認）。OpenAI ChatGPT Wallet 軸。問いゲート 案A′（ケビン推奨）を Muse経由で承認。詳細は script_prep/kl059_question.md。『Googleは見るだけ』は使わない。日本は対象外（米国Pro限定）。『任せきり』は未提供の構想。候補JSONの一次資料URLは404なので上の実在URLを使う。",
+      "topic_pattern": "ai_capability",
+      "candidate_id": "fd333d9440",
+      "pitch": {
+        "title": "AIが探して払うまで。買い物を任せきりにできる日は来る？（11月時点）",
+        "hook": "スマホ払いは、店を探すのもレジに進むのも自分。今度はAIが探して、比べて、レジまで進んで、お金を払う。",
+        "surprise_line": "AIに支払いを任せたらカード番号を握られて勝手に買われると思っている人が、AIはレジまで進めても本物のカード番号を一度も見ず、人がやるのは最後の1回の承認だけ、という形で始まったと知って驚く",
+        "emma": "元の案A=見たくない／案C・案B=見たい（A′は未確認）",
+        "question": "AIが店を探して、比べて、支払いまで済ませる時代が始まった。日用品の買い足しを、AIに任せきりにできる日は来る？"
+      }
     }
   ],
-  "total_topics": 58,
-  "last_updated": "2026-11-16"
+  "total_topics": 59,
+  "last_updated": "2026-11-18"
 }
