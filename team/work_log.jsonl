@@ -496,3 +496,4 @@
 {"ts": "2026-11-19T16:05:54+09:00", "kind": "call", "agent": "kl-manager", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
 {"ts": "2026-11-19T16:05:59+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl059", "step": "11", "result": "ok", "retries": 0, "note": "完成判定。読みQA5行は誤検知。概要欄の札の問いのずれを修正指示"}
 {"ts": "2026-11-19T17:00:01+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl059", "step": "動画生成", "result": "ok", "retries": 0, "note": "12.0分、フレーム確認で重なりなし"}
+{"ts": "2026-11-19T17:35:52+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl059", "step": "承認受領", "result": "retry", "retries": 0, "note": "upload=yes を17:28に受信、取り込みが1.5時間遅れ（監視が拾えず）"}
