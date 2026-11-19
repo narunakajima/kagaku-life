@@ -498,3 +498,4 @@
 {"ts": "2026-11-19T17:00:01+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl059", "step": "動画生成", "result": "ok", "retries": 0, "note": "12.0分、フレーム確認で重なりなし"}
 {"ts": "2026-11-19T17:35:52+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl059", "step": "承認受領", "result": "retry", "retries": 0, "note": "upload=yes を17:28に受信、取り込みが1.5時間遅れ（監視が拾えず）"}
 {"ts": "2026-11-19T17:37:16+09:00", "kind": "feedback", "agent": "kl-coordinator", "episode": "kl059", "source": "user", "severity": "major", "text": "3分ごとにスラック確認するはずでは？（承認 upload=yes を17:28に受信後、約1.5時間取り込めず。監視は検知済みだったが結果ファイルを読まなかった）"}
+{"ts": "2026-11-19T17:37:42+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl059", "step": "進行", "result": "retry", "retries": 0, "note": "承認の取り込み遅れ1.5時間、停止2回（次工程を呼ばず応答終了）、報告漏れ1回。改善: 待機中も数分おきにcc-inbox確認"}
