@@ -10,7 +10,7 @@
   "health": false,
   "topic_pattern": "ai_capability",
   "episode_title": "AIに買い物を頼む暮らしは、日本でもう始まっている。最後のひと押しまで任せきりにするには、あと何が足りない？",
-  "youtube_title": "AIが映画のチケットを払えた。日本で“最後のひと押し”まで任せられる？（11月時点）",
+  "youtube_title": "AIに支払いまで任せて、カード番号は大丈夫？ Metaの「Muse」、日本で払えた体験から（11月時点）",
   "entry_question": "AIに買い物を頼む暮らしは、日本でもう始まっている。「最後のひと押し」まで任せきりにするには、あと何が足りない？",
   "claim_verdict": {
     "dreamer": "pending",
@@ -21,11 +21,11 @@
     "skeptic": "soon"
   },
   "hook_lines": [
-    "AIが映画の券を払えた",
-    "最後のひと押しは誰が？"
+    "AIが支払いまで済ませた",
+    "カード番号は見せずに"
   ],
   "thumbnail_prompt": "A cozy Japanese living room table in soft evening light, continuous across the whole frame with no panels, boxes or borders. Keep the left 30%, the right 30% and the top 42% of the frame quiet and uncluttered (softly blurred sofa, a window and warm lamp light only), but the background must continue unbroken behind them. Main subject, centered left-to-right in the middle band: a hand holding a smartphone with a fingertip just above a large round confirm button; the screen shows only abstract shapes (a ticket-shaped tile, a small seat grid, the round button) with no readable text; beside it a plain paper cinema ticket stub with no printing and a small bag of pet food with only a simple paw shape on its plain label. Hopeful and intriguing. No faces, no robots, no text, no logos, no brand names.",
-  "thumbnail_headline": "AIに\n払わせてみた",
+  "thumbnail_headline": "AIが払う時\nカード番号は？",
   "thumbnail_exprs": {
     "dreamer": "excited",
     "skeptic": "surprised"
@@ -149,12 +149,12 @@
       "lines": [
         {
           "speaker": "skeptic",
-          "text": "払う前に、払っていいか、を聞く画面が出たって。",
+          "text": "払う前に確認の画面が出た。カード番号はAIに見えないって。",
           "expression": "surprised"
         }
       ],
       "narrator": "dialogue",
-      "narration": "沙織「払う前に、払っていいか、を聞く画面が出たって。」"
+      "narration": "沙織「払う前に確認の画面が出た。カード番号はAIに見えないって。」"
     },
     {
       "scene_id": 3,
@@ -1128,19 +1128,19 @@
       "scenes": [
         {
           "narrator": "dreamer",
-          "narration": "AIが払えた、映画のチケット。",
+          "narration": "AIが買えた、映画のチケット。",
           "expression": "excited",
           "scene_id": 6
         },
         {
           "narrator": "dreamer",
-          "narration": "体験者が日本で、AIのミューズで映画のチケットを買えた。",
+          "narration": "ある利用者が日本で、AIのミューズで映画のチケットを買えた。",
           "expression": "excited",
           "scene_id": 6
         },
         {
           "narrator": "skeptic",
-          "narration": "払う前に、払っていいか、を聞く画面が出たって。",
+          "narration": "払う前に確認の画面が出た。カード番号はAIに見えないって。",
           "expression": "surprised",
           "scene_id": 8
         },
