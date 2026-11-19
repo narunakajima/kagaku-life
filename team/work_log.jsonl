@@ -468,3 +468,9 @@
 {"ts": "2026-11-18T11:57:24+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl059", "step": "11", "result": "ok", "retries": 0, "note": "進行可。サムネ見出しのみ変更（札が読めない→カード番号は？/任せきりは？）。BGM最新合格を採用、新曲例外を認める"}
 {"ts": "2026-11-18T11:57:24+09:00", "kind": "feedback", "agent": "kl-coordinator", "episode": "kl059", "source": "qa", "severity": "minor", "text": "reading_qa の誤検知（期待する読みの誤り）が6行・各4回の作り直し。kl053 に続き2回目。作り直しを止める仕組みの検討を提案（編集長）"}
 {"ts": "2026-11-18T12:11:02+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl059", "step": "進行", "result": "ok", "retries": 0, "note": "初見レビュー: 全文2周＋差分3周＋予告・S13の再チェック（直す: r1=5/r2=1/r3=0/r4全文=3/r5=0）。画像CRITICAL 0。ファクトチェックは初回でカード要約のずれ(high_risk)→修正。BGM最終検証は判定ぶれ(1回目要差し替え→2回目合格)。ミアの先行事例見落としを問いゲートで検出。承認待ちポーラーの実機テスト実施"}
+{"ts": "2026-11-18T15:12:04+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl059", "step": "進行", "result": "ok", "retries": 0, "note": "最終動画の確認の承認待ちポーラーが3時間でタイムアウト。progress_requestに報告済み。承認未着のため停止"}
+{"ts": "2026-11-19T09:46:59+09:00", "kind": "feedback", "agent": "kl-planner", "episode": "kl059", "source": "user", "severity": "major", "text": "完成動画の確認での、なるさんの指摘: 動画確認しましたが、この機能（AIが店を探して支払いまで）はすでに日本でもMuseが実現しています。それも含めて台本を作り直して。（補足: ご自身がMuseで買い物を2つ（ペット用品、映画のチケット）済ませた。Museの名指しOK。YouTubeに実例多数）。企画の先行事例・日本の状況の調べが不足だった"}
+{"ts": "2026-11-19T09:54:33+09:00", "kind": "applied", "agent": "kl-planner", "episode": "kl059", "ids": ["KL2611-01"], "skipped": [], "reason": ""}
+{"ts": "2026-11-19T09:55:02+09:00", "kind": "call", "agent": "kl-planner", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-19T09:55:46+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-19T09:57:27+09:00", "kind": "call", "agent": "kl-manager", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}

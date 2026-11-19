@@ -3441,13 +3441,13 @@
     },
     {
       "episode_id": "kl059",
-      "status": "produced",
+      "status": "in_production",
       "slot_type": "news",
       "genre": "ai",
       "health": false,
       "domain": "life",
       "concern_id": null,
-      "entry_question": "AIが店を探して、比べて、支払いまで済ませる時代が始まった。日用品の買い足しを、AIに任せきりにできる日は来る？",
+      "entry_question": "AIに買い物を頼む暮らしは、日本でもう始まっている。「最後のひと押し」まで任せきりにするには、あと何が足りない？",
       "title": "AIが探して払うまで。買い物を任せきりにできる日は来る？（11月時点）",
       "format": "dialogue",
       "structure": "rounds_v4",
@@ -3483,7 +3483,7 @@
         }
       ],
       "hook_idea": "スマホ払いは探すのもレジに進むのも自分。今度はAIが探して、比べて、レジまで進んで払う。本物のカード番号はAIも店も見ない。",
-      "notes": "2026-11-18 週次スレート本命 fd333d9440（Muse経由で承認）。OpenAI ChatGPT Wallet 軸。問いゲート 案A′（ケビン推奨）を Muse経由で承認。詳細は script_prep/kl059_question.md。『Googleは見るだけ』は使わない。日本は対象外（米国Pro限定）。『任せきり』は未提供の構想。候補JSONの一次資料URLは404なので上の実在URLを使う。",
+      "notes": "2026-11-18 週次スレート本命 fd333d9440（Muse経由で承認）。OpenAI ChatGPT Wallet 軸。問いゲート 案A′（ケビン推奨）を Muse経由で承認。詳細は script_prep/kl059_question.md。『Googleは見るだけ』は使わない。日本は対象外（米国Pro限定）。『任せきり』は未提供の構想。候補JSONの一次資料URLは404なので上の実在URLを使う。 ／2026-11-19 作り直し: なるさんの指示「日本でもMuseがすでに実現している」。Muse軸の案A（Muse経由で承認）。詳細は script_prep/kl059_question_v2.md。旧版（ChatGPTウォレット軸）はgit 855e789とDrive KL059_v1_wallet。",
       "topic_pattern": "ai_capability",
       "candidate_id": "fd333d9440",
       "pitch": {
