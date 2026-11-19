@@ -33,6 +33,10 @@ lamp-whisper / samurai-chronicles と同じ認証アプリを使用:
 
 ## STEP 2 — アップロード実行
 
+**【実行前の確認（必須。2026-11-19、kl059 で Drive の `output/` に動画が無いまま入りかけたため）】** アップロードの前に、Drive の `Kagaku-Life/KL{NNN}/output/` に本編・Shorts があり、
+Desktop の `~/Desktop/kagaku-life/output/` と同じファイルサイズであることを確かめる（`ls -l` で比べる）。無い・サイズが違うときは、先に `python3 kl_finalize.py --episode kl{NNN}` を実行する
+（`/kl-new` STEP 12 の手順 5 の抜け）。確かめてからアップロードを実行する。
+
 **通常（火・木・土の19:00 JST・1日1本の最短空きスロットに自動予約）:**
 ```bash
 python3 $HOME/kagaku-life/kl_sns_up.py --episode kl{NNN}
@@ -65,6 +69,9 @@ python3 $HOME/kagaku-life/kl_sns_up.py --episode kl{NNN} --publish-at "2026-08-2
 2. 毎日 19:00 JST を今日から1日ずつ走査し、使用済みでない・かつ現在時刻より
    未来の最初のスロットを採用する
 
+
+**【締め（必須。2026-11-19、kl059 の作業漏れの再発防止）】** この STEP が終わったら、同じ応答の中で続けて行う: (1) `python3 kl_report.py step --case kl{NNN} --step "upload 2 アップロード実行" --by <担当者名> --next "STEP 3 完了報告"` で報告文を作り、#cc-reports の案件スレッドに投稿して #cc-inbox を読む。(2) 次の工程（STEP 3 完了報告）をその場で実行する。「次は〇〇」と書いて応答を終えない（待ってよいのは、完了通知が来る作業か呼び出し中の担当者があるときだけ。`--waiting bg|agent`）。(3) 待機から戻ったら、最初に #cc-inbox と結果ファイルを確かめる。
+
 ## STEP 3 — 完了報告
 
 ```
@@ -84,6 +91,9 @@ python3 $HOME/kagaku-life/kl_sns_up.py --episode kl{NNN} --publish-at "2026-08-2
 再開する場合の手順（旧）: YouTube Studio の本編の編集画面で「テストと比較」を開き、A案と
 Drive `Kagaku-Life/KL{NNN}/images/thumbnail_b.png`（B案）を登録してもらう。判定は総再生時間で
 行われ、Shortsは対象外。結果は `/kl-analytics` で記録する。
+
+
+**【締め（必須。2026-11-19、kl059 の作業漏れの再発防止）】** この STEP が終わったら、同じ応答の中で続けて行う: (1) `python3 kl_report.py step --case kl{NNN} --step "upload 3 完了報告" --by <担当者名> --next "STEP 3.5 関連動画（Muse が自動設定。セッションは記録のみ）→STEP 3.6"` で報告文を作り、#cc-reports の案件スレッドに投稿して #cc-inbox を読む。(2) 次の工程（STEP 3.5 関連動画（Muse が自動設定。セッションは記録のみ）→STEP 3.6）をその場で実行する。「次は〇〇」と書いて応答を終えない（待ってよいのは、完了通知が来る作業か呼び出し中の担当者があるときだけ。`--waiting bg|agent`）。(3) 待機から戻ったら、最初に #cc-inbox と結果ファイルを確かめる。
 
 ## STEP 3.5 — Shortsの「関連動画」（2026-11-17〜: クラウド自動設定に移行。手動設定は廃止）
 
@@ -122,6 +132,9 @@ Shortsの「関連動画」（本編への誘導）は、**公開後に Muse（�
 - 動画の誤りを指摘するコメントは、返信せずに必ずユーザーへ報告する。
 - 失敗してもアップロード自体には影響しない。
 
+
+**【締め（必須。2026-11-19、kl059 の作業漏れの再発防止）】** この STEP が終わったら、同じ応答の中で続けて行う: (1) `python3 kl_report.py step --case kl{NNN} --step "upload 3.6 コメント返信" --by <担当者名> --next "STEP 3.7 固定コメント"` で報告文を作り、#cc-reports の案件スレッドに投稿して #cc-inbox を読む。(2) 次の工程（STEP 3.7 固定コメント）をその場で実行する。「次は〇〇」と書いて応答を終えない（待ってよいのは、完了通知が来る作業か呼び出し中の担当者があるときだけ。`--waiting bg|agent`）。(3) 待機から戻ったら、最初に #cc-inbox と結果ファイルを確かめる。
+
 ---
 
 ## STEP 3.7 — 公開した本編に「問い」の固定コメントを置く（2026-11-16追加、月次評価2026-10分の提案3）
@@ -149,6 +162,9 @@ Shortsの「関連動画」（本編への誘導）は、**公開後に Muse（�
 3. 記録: `python3 team_log.py add --agent kl-community --episode kl{NNN} --step 3.7 --result ok --note "固定コメント投稿"` で記録する。
    失敗してもアップロード自体には影響しない。
 
+
+**【締め（必須。2026-11-19、kl059 の作業漏れの再発防止）】** この STEP が終わったら、同じ応答の中で続けて行う: (1) `python3 kl_report.py step --case kl{NNN} --step "upload 3.7 固定コメント" --by <担当者名> --next "STEP 4 コミット・push 確認"` で報告文を作り、#cc-reports の案件スレッドに投稿して #cc-inbox を読む。(2) 次の工程（STEP 4 コミット・push 確認）をその場で実行する。「次は〇〇」と書いて応答を終えない（待ってよいのは、完了通知が来る作業か呼び出し中の担当者があるときだけ。`--waiting bg|agent`）。(3) 待機から戻ったら、最初に #cc-inbox と結果ファイルを確かめる。
+
 ---
 
 ## STEP 4 — コミット・プッシュ確認
@@ -168,6 +184,9 @@ git status --short
 **差分が残っている場合のみ**（自動コミットが何らかの理由で走らなかった場合のフォールバック）、
 手動でコミット・pushする。
 
+
+**【締め（必須。2026-11-19、kl059 の作業漏れの再発防止）】** この STEP が終わったら、同じ応答の中で続けて行う: (1) `python3 kl_report.py step --case kl{NNN} --step "upload 4 コミット・push" --by <担当者名> --next "STEP 5 キュー状態の確認"` で報告文を作り、#cc-reports の案件スレッドに投稿して #cc-inbox を読む。(2) 次の工程（STEP 5 キュー状態の確認）をその場で実行する。「次は〇〇」と書いて応答を終えない（待ってよいのは、完了通知が来る作業か呼び出し中の担当者があるときだけ。`--waiting bg|agent`）。(3) 待機から戻ったら、最初に #cc-inbox と結果ファイルを確かめる。
+
 ## STEP 5 — topics_queue.json のステータス更新
 
 `kl_sns_up.py` は `run()` 内で `update_topics_queue_status()` を実行し、`youtube_url`書き戻しと
@@ -175,6 +194,9 @@ git status --short
 （2026-09-08自動化。手順書頼みの手動更新だと実行し忘れても誰も気づかないという教訓から、
 STEP4のコミット自動化と同様にコード側に移した）。該当エントリが見つからない場合はコンソールに
 警告が出るので、その場合のみ手動で確認・更新する。
+
+
+**【締め（必須。2026-11-19、kl059 の作業漏れの再発防止）】** この STEP が終わったら、同じ応答の中で続けて行う: (1) `python3 kl_report.py step --case kl{NNN} --step "upload 5 キュー更新" --by <担当者名> --next "STEP 6 公式サイト再生成"` で報告文を作り、#cc-reports の案件スレッドに投稿して #cc-inbox を読む。(2) 次の工程（STEP 6 公式サイト再生成）をその場で実行する。「次は〇〇」と書いて応答を終えない（待ってよいのは、完了通知が来る作業か呼び出し中の担当者があるときだけ。`--waiting bg|agent`）。(3) 待機から戻ったら、最初に #cc-inbox と結果ファイルを確かめる。
 
 ## STEP 6 — 公式サイトを再生成する
 
@@ -209,6 +231,9 @@ GitHub連携でデプロイされている場合、`main`へのpushで自動デ�
 失敗する場合）はCLIから手動デプロイはできないため、push後にVercelの
 ダッシュボードで実際にデプロイが走ったか確認するようユーザーに促す。
 
+
+**【締め（必須。2026-11-19、kl059 の作業漏れの再発防止）】** この STEP が終わったら、同じ応答の中で続けて行う: (1) `python3 kl_report.py step --case kl{NNN} --step "upload 6 サイト再生成" --by <担当者名> --next "STEP 7 Desktop の後片付け"` で報告文を作り、#cc-reports の案件スレッドに投稿して #cc-inbox を読む。(2) 次の工程（STEP 7 Desktop の後片付け）をその場で実行する。「次は〇〇」と書いて応答を終えない（待ってよいのは、完了通知が来る作業か呼び出し中の担当者があるときだけ。`--waiting bg|agent`）。(3) 待機から戻ったら、最初に #cc-inbox と結果ファイルを確かめる。
+
 ## STEP 7 — Desktopの残骸を削除する
 
 STEP2のアップロードが成功し、対象素材（画像・音声・動画・BGM）がGoogle Drive
@@ -228,6 +253,8 @@ rm -rf ~/Desktop/kagaku-life/
 
 Drive同期前（`kl_finalize.py`未実行、または一部ファイルが見つからないとの警告が出ている状態）
 であればこのSTEPは実行しない——先にDrive同期を完了させること。
+
+**案件を閉じる（2026-11-19）:** STEP 7 まで終わったら、`python3 kl_report.py done --case kl{NNN}` を実行し、出力の1行（`event=done`、本文に本編・Shortsの URL・予約日時・コメント返信件数を書く）を #cc-reports の案件スレッドに投稿する。これで Stop フック（`kl_stop_check.py`）の監視が外れる。
 
 ---
 
