@@ -4,50 +4,90 @@
   "structure": "rounds_v4",
   "template": "verdict_first",
   "source_type": "news",
-  "news_date": "2026-11-13",
-  "verdict_as_of": "2026-11-18",
+  "news_date": "2026-10-23",
+  "verdict_as_of": "2026-11-19",
   "genre": "ai",
   "health": false,
   "topic_pattern": "ai_capability",
-  "episode_title": "ChatGPTウォレット、AIが支払いまで。日用品の買い足しを任せきりにできる日は来る？",
-  "youtube_title": "ChatGPTが店を探して支払いまで。カード番号はAIに渡る？（11月時点）",
-  "entry_question": "AIが店を探して、比べて、支払いまで済ませる時代が始まった。日用品の買い足しを、AIに任せきりにできる日は来る？",
+  "episode_title": "AIに買い物を頼む暮らしは、日本でもう始まっている。最後のひと押しまで任せきりにするには、あと何が足りない？",
+  "youtube_title": "AIが映画のチケットを払えた。日本で“最後のひと押し”まで任せられる？（11月時点）",
+  "entry_question": "AIに買い物を頼む暮らしは、日本でもう始まっている。「最後のひと押し」まで任せきりにするには、あと何が足りない？",
   "claim_verdict": {
-    "dreamer": "soon",
-    "skeptic": "soon"
+    "dreamer": "pending",
+    "skeptic": "pending"
   },
   "verdict": {
     "dreamer": "soon",
-    "skeptic": "pending"
+    "skeptic": "soon"
   },
   "hook_lines": [
-    "AIが探して払うまで",
-    "カード番号はAIに渡る？"
+    "AIが映画の券を払えた",
+    "最後のひと押しは誰が？"
   ],
-  "thumbnail_prompt": "A bright, calm Japanese home kitchen counter in morning light, continuous across the whole frame with no panels, boxes or borders. Keep the left 30%, the right 30% and the top 42% of the frame quiet and uncluttered (softly blurred cabinets, a window and warm light only), but the background must continue unbroken behind them. Main subject, centered left-to-right in the middle band: a hand holding a smartphone with a fingertip on its fingerprint area; the screen shows only abstract shapes (a product tile, a cart symbol, a fingerprint symbol) with no readable text; beside it a neat row of everyday refills — laundry detergent with a plain label, toilet paper rolls, garbage bags — and a plain card with no numbers or logo lying face down. Hopeful and intriguing. No faces, no robots, no text, no logos, no brand names.",
-  "thumbnail_headline": "カード番号は？\n任せきりは？",
+  "thumbnail_prompt": "A cozy Japanese living room table in soft evening light, continuous across the whole frame with no panels, boxes or borders. Keep the left 30%, the right 30% and the top 42% of the frame quiet and uncluttered (softly blurred sofa, a window and warm lamp light only), but the background must continue unbroken behind them. Main subject, centered left-to-right in the middle band: a hand holding a smartphone with a fingertip just above a large round confirm button; the screen shows only abstract shapes (a ticket-shaped tile, a small seat grid, the round button) with no readable text; beside it a plain paper cinema ticket stub with no printing and a small bag of pet food with only a simple paw shape on its plain label. Hopeful and intriguing. No faces, no robots, no text, no logos, no brand names.",
+  "thumbnail_headline": "AIに\n払わせてみた",
   "thumbnail_exprs": {
     "dreamer": "excited",
-    "skeptic": "doubt"
+    "skeptic": "surprised"
   },
-  "thumbnail_verdict_header": "判定（任せきり）",
+  "thumbnail_verdict_header": "判定（ひと押しつき）",
   "youtube_tags": [
-    "ChatGPT",
-    "ChatGPTウォレット",
-    "ChatGPT Wallet",
-    "OpenAI",
-    "dot",
-    "dots",
+    "Muse",
+    "Meta Muse",
+    "ミューズ",
+    "Meta",
     "AIエージェント",
     "AI 買い物",
     "AI 支払い",
-    "キャッシュレス",
-    "ネットショップ",
-    "日用品",
-    "定期便",
+    "Stripe Link",
+    "ChatGPTウォレット",
+    "OpenAI",
+    "3Dセキュア",
+    "ネットショッピング",
+    "映画 チケット",
     "科学ニュース"
   ],
   "references": [
+    {
+      "title": "Meta、パーソナルAIエージェント「Muse」を日本で提供開始",
+      "authors": [],
+      "year": 2026,
+      "venue": "Meta（2026年10月23日）",
+      "url": "https://about.fb.com/ja/news/2026/10/muse-personal-ai-agent-launches-in-japan/",
+      "is_preprint": false,
+      "institution": "Meta",
+      "source_kind": "press_release"
+    },
+    {
+      "title": "Museがあなたのガイダンスと承認に基づいて機能する仕組み（Museヘルプセンター）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Meta ヘルプセンター（2026年11月19日確認）",
+      "url": "https://www.meta.com/ja-jp/help/superintelligence/1385290430137537/",
+      "is_preprint": false,
+      "institution": "Meta",
+      "source_kind": "official_doc"
+    },
+    {
+      "title": "Introducing Muse: The World's First Personal AI Agent Built for Everyone",
+      "authors": [],
+      "year": 2026,
+      "venue": "Meta（2026年9月8日、米国での提供開始）",
+      "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+      "is_preprint": false,
+      "institution": "Meta",
+      "source_kind": "press_release"
+    },
+    {
+      "title": "Stripe のデジタルウォレット「Link」で、Meta の新たな AI エージェント「Muse」の決済が可能に",
+      "authors": [],
+      "year": 2026,
+      "venue": "Stripe（2026年9月8日、米国時間）",
+      "url": "https://stripe.com/jp/newsroom/news/stripe-helps-meta-muse-shop-with-link",
+      "is_preprint": false,
+      "institution": "Stripe",
+      "source_kind": "press_release"
+    },
     {
       "title": "ChatGPT ウォレットのご紹介",
       "authors": [],
@@ -59,57 +99,29 @@
       "source_kind": "official_page"
     },
     {
-      "title": "Partner Playbook Overview（コマースパートナー向け実践ガイド）",
-      "authors": [],
+      "title": "MetaのパーソナルAI「Muse」を使ってみた　先回りして気遣えるAI",
+      "authors": [
+        "佐々木 翼"
+      ],
       "year": 2026,
-      "venue": "OpenAI Developers（2026年11月18日確認）",
-      "url": "https://developers.openai.com/commerce/guides/overview",
+      "venue": "Impress Watch（2026年10月27日、報道。一次資料ではない）",
+      "url": "https://www.watch.impress.co.jp/docs/topic/2151191.html",
       "is_preprint": false,
-      "institution": "OpenAI",
-      "source_kind": "official_page"
+      "institution": "Impress Watch",
+      "source_kind": "media"
     },
     {
-      "title": "Accept payments（コマースパートナー向け実践ガイド）",
+      "title": "カード決済時の本人認証サービス（EMV 3-Dセキュア）導入のご案内",
       "authors": [],
       "year": 2026,
-      "venue": "OpenAI Developers（2026年11月18日確認）",
-      "url": "https://developers.openai.com/commerce/guides/accept-payments",
+      "venue": "JCB 加盟店向けのお知らせ（2026年11月19日確認）",
+      "url": "https://www.jcb.co.jp/merchant/release/emv3-dsecure.html",
       "is_preprint": false,
-      "institution": "OpenAI",
-      "source_kind": "official_page"
-    },
-    {
-      "title": "Help ensure cloud browser access to your site（コマースパートナー向け実践ガイド）",
-      "authors": [],
-      "year": 2026,
-      "venue": "OpenAI Developers（2026年11月18日確認）",
-      "url": "https://developers.openai.com/commerce/agent-access",
-      "is_preprint": false,
-      "institution": "OpenAI",
-      "source_kind": "official_page"
-    },
-    {
-      "title": "dots のご紹介",
-      "authors": [],
-      "year": 2026,
-      "venue": "OpenAI（2026年9月29日、11月3日更新）",
-      "url": "https://openai.com/ja-JP/index/introducing-dots/",
-      "is_preprint": false,
-      "institution": "OpenAI",
-      "source_kind": "official_page"
-    },
-    {
-      "title": "ChatGPT で購入する：Instant Checkout と Agentic Commerce Protocol",
-      "authors": [],
-      "year": 2025,
-      "venue": "OpenAI（2025年9月29日）",
-      "url": "https://openai.com/ja-JP/index/buy-it-in-chatgpt/",
-      "is_preprint": false,
-      "institution": "OpenAI",
-      "source_kind": "official_page"
+      "institution": "JCB",
+      "source_kind": "company_website"
     }
   ],
-  "youtube_description": "2026年11月13日のOpenAIの発表を、11月18日時点で確認した二人の見立てです。\n\nOpenAIが「ChatGPT ウォレット（ChatGPT Wallet）」を発表しました。ChatGPTの中で働くAIの助手「dot（ドット）」が、ネットの店で候補を探し、利用者が選んだ品について、店のサイトの支払いまで進めます。人がやるのは、選ぶことと、購入のたびに商品・合計金額・カードを確認して、Face IDや指紋で承認することです。日用品の買い足しを、AIに任せきりにできる日は来るのか。期待担当の大輔と、確かめ担当の沙織が、OpenAIの発表、店向けの手引き（コマースパートナー向け実践ガイド）、dotsの紹介ページで確かめます。(1) AIは、買い物のどこまでをやってくれるか (2) AIに払わせて、カードは大丈夫か (3) 最後の1回の承認も、いらなくなるか の3つです。\n\n■ 判定（2026年11月18日時点の二人の見立て）\n札を付けた問い: アメリカで、日用品の買い足しを、上限・品目・期間を決めて、AIに任せきりにできる形が、この1年で使えるようになるか。\n・大輔「もうすぐ来る」: 上限・品目・期間を決めて事前に承認する形を、OpenAIがすでに書いている。カード会社・銀行の4社と組んでいる。今、任せきりを止めているのは機械の限界ではなく「大事な操作は人が確かめる」という決まりで、守りを強くすれば変えられると見る（1年という時期は、資料ではなく大輔の見立て）。\n・沙織「根拠待ち」: 代わりに渡る番号を使い回されないかの心配には答えが出たが、事前承認の機能がいつ出るかを示す資料がない。任せきりの機能（事前承認）が実際に提供されたと発表されたら、札を変える。\n・日本には札を付けていません（日本の会社が出しているカードは対象外）。日本に札を付けられる目印は、日本の会社が出しているカードが対象になるかどうかです。\n\n■ 補足\n・提供対象は、当初は米国発行の対象カードを持つ、米国在住の18歳以上のChatGPT Proユーザーです（dotsを通じて順次）。日本での提供時期は、確認した資料に書かれていません。\n・提携先は American Express、Chase、Mastercard、Visa です。「初のウォレット」は、OpenAIの発表の表現です（実際のカード情報にアクセスせずに決済でき、購入のたびにセキュリティ確認を必須とする、という意味）。ChatGPTの中で買い物をする仕組みは、2025年9月29日から米国で「Instant Checkout」（対応した店の商品のみ）として提供されています。\n・承認後、決済ネットワークが実際のカード情報の代わりとなる決済トークン（カード番号・セキュリティコード・有効期限を含む）を出し、代金は選んだカードに請求されます。発表には「ChatGPT ウォレットがユーザーの実際のカード情報を企業やエージェントと共有することはありません」とあります。これはOpenAIの説明です。\n・店向けの手引きによると、店はウォレット専用の組み込みなしに、今の支払い画面で受け付けられます。一方、店のリスク管理（不正よけ）の仕組みが、AIによる正当な購入を疑わしい取引と判定し、拒否・キャンセルすることがある、と発表に書かれています。\n・店向けの手引きには「支払いや注文の誤りは、最終的に客の責任」「すべての利用者について、重要な操作の前には人の確認を必須にしている」「客が同意するのはその1回の取引だけ」「店の支払いの仕組みが定期的な請求に対応し、客が同意すれば定期購入にも使える（店からの請求は決済の会社のやり方に従う）」とあります。1回きりの番号で毎月の請求ができる仕組みそのものは、確認した資料に書かれていません。\n・上限・品目・期間を決めて事前に承認し「エージェントにすべて任せられる」形は、発表で「将来的には」と書かれた構想で、現在は提供されていません。\n・実店舗のレジでの利用は、確認した資料には書かれていません。ChatGPT Proの料金、店の手数料、不正の件数などは、確認した資料に書かれていません。\n・この動画は発表の紹介で、特定のサービスの利用や投資をすすめるものではありません。\n\n■ 参考資料（一次資料）\n・OpenAI「ChatGPT ウォレットのご紹介」（2026年11月13日） https://openai.com/ja-JP/index/introducing-chatgpt-wallet/\n・OpenAI Developers「Partner Playbook Overview」 https://developers.openai.com/commerce/guides/overview\n・OpenAI Developers「Accept payments」 https://developers.openai.com/commerce/guides/accept-payments\n・OpenAI Developers「Help ensure cloud browser access to your site」 https://developers.openai.com/commerce/agent-access\n・OpenAI「dots のご紹介」（2026年9月29日、11月3日更新） https://openai.com/ja-JP/index/introducing-dots/\n・OpenAI「ChatGPT で購入する：Instant Checkout と Agentic Commerce Protocol」（2025年9月29日） https://openai.com/ja-JP/index/buy-it-in-chatgpt/\n\n\n🎵 Music: Vibrant Positivity by ViraMiller (freesound.org) — CC BY 4.0\n🎵 Music: Chill Gaming Beats by Matio888 (freesound.org) — CC BY 4.0\n#ChatGPT #AI #幸せな未来のサイエンス",
+  "youtube_description": "2026年10月23日に日本で始まったMetaのAIエージェント「Muse（ミューズ）」と、11月13日のOpenAIの発表を、11月19日時点で確認した二人の見立てです。\n\nMuseは、利用者に代わってブラウザを開き、店のサイトの入力などを進めるAIの助手です。体験者がMuseで日本の買い物を2件（通販サイトのペット用品、映画館のチケット）試したところ、どちらも支払いまで済みました。一方、公式の日本向けの案内には、日本での支払い方法の詳しい記述はありません。AIに買い物を頼む暮らしは、日本でもう始まっている。「最後のひと押し」まで任せきりにするには、あと何が足りないのか。期待担当の大輔と、確かめ担当の沙織が、Metaの日本向けの案内とヘルプ、Stripe・OpenAIの発表、体験者の体験で確かめます。(1) 日本で、本当に払えたのか (2) 最後のひと押しは、なぜ残るのか (3) 任せきりには、何が足りないのか の3つです。\n\n■ 判定（2026年11月19日時点の二人の見立て）\n札を付けた問い: 日本で、ネットの買い物を、AIに探させて支払いの手前まで進めてもらい、最後のひと押し（払う前の承認）だけ自分で押す使い方が、もう使えるか。\n・大輔「もうすぐ来る」: Metaの日本向けの案内に、購入の前に本人に確認する作りが書かれていて、体験者の2件では日本でも支払いまで済んだ。\n・沙織「もうすぐ来る」: 押すのが人なので、AIが間違えても押す前に止められる。始めるなら、カードを預けてある店から。\n・まだの所: 体験者の体験では、カード会社の本人確認（3Dセキュア）で止まり、自分で操作したケースもありました。日本でLinkが使えることは、公式の日本向けの案内には書かれていません。\n・「最後のひと押し」も無しでAIに払わせる「任せきり」は、時期を言える資料がありません。次の3つが出たら考え直します: (1) 上限を決めて前もって任せる機能 (2) 日本でのLink・購入保護の公式の案内 (3) 3Dセキュアをどう通すかの公式の説明。\n\n■ 体験者の体験について（公式の資料ではありません）\n・体験者1人の、2件の体験です。日本で誰でも同じように支払えることを示すものではありません。\n・通販サイトのペット用品: その店に決済情報を登録していたため、Muse経由でも決済情報の入力は不要でした。\n・映画館のチケット: Stripe の Link で決済できました。\n・支払いの前に、払ってよいかを確認する画面が出ました。\n・3Dセキュアで止まり、自分で操作したケースもありました。\n・店名・映画館名は伏せています。\n\n■ 補足\n・Metaの日本向けの案内（2026年10月23日）: 「Museは利用者のパスワードや支払い方法を確認できず、メールの送信や商品の購入など重要な操作の前には利用者本人に確認します」。Stripe・Shopify などとの連携で、ショッピングや旅行の予約などに使えるとあります。Link・購入保護・3Dセキュアの記述はありません。\n・Museのヘルプ: 支払いや購入の前には利用者の確認を求める、Museは間違えることがある、承認する責任とエラーの修正は利用者にある、慣れるまではリスクの少ないタスクから始める、とあります。購入を毎回の確認なしにできるとは書かれていません。\n・Metaの米国向けの発表（2026年9月8日）とStripeの発表: 米国の消費者は、LinkをMuseにつないで代理決済ができ、Linkの購入保護の対象になります。最終的な金額の承認は本人がチャット画面で行います（StripeはMetaの提携先です）。\n・報道（Impress Watch、2026年10月27日）では、記者が日本の映画館で席と券種まで進め、実際の決済の手前で操作を止めています。\n・OpenAI「ChatGPT ウォレット」（2026年11月13日）: 購入のたびに商品・合計金額・カードを確認し、Face IDや指紋認証で承認します。当初は米国在住・米国発行の対象カード・18歳以上のChatGPT Proユーザーが対象で、日本では使えません。支出上限・購入カテゴリー・期間を決めて事前に承認し「エージェントにすべて任せられる」形は、「将来的には」と書かれた構想です（時期の記載なし）。\n・3Dセキュアの説明は、JCBの加盟店向けのお知らせによります。\n・Museの基本的な機能の多くは無料で、サブスクリプションプランもあります（料金はMetaの日本向けの案内に記載がありません）。\n・Museが日本に来たときの回（Museの承認の仕組み）: https://youtu.be/zoAj4VYU72g\n・この動画は体験と発表の紹介で、特定のサービスの利用や投資をすすめるものではありません。\n\n■ 参考資料（一次資料）\n・Meta「Meta、パーソナルAIエージェント「Muse」を日本で提供開始」（2026年10月23日） https://about.fb.com/ja/news/2026/10/muse-personal-ai-agent-launches-in-japan/\n・Meta ヘルプセンター「Museがあなたのガイダンスと承認に基づいて機能する仕組み」 https://www.meta.com/ja-jp/help/superintelligence/1385290430137537/\n・Meta「Introducing Muse: The World's First Personal AI Agent Built for Everyone」（2026年9月8日） https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/\n・Stripe「Stripe のデジタルウォレット「Link」で、Meta の新たな AI エージェント「Muse」の決済が可能に」（2026年9月8日） https://stripe.com/jp/newsroom/news/stripe-helps-meta-muse-shop-with-link\n・OpenAI「ChatGPT ウォレットのご紹介」（2026年11月13日） https://openai.com/ja-JP/index/introducing-chatgpt-wallet/\n・JCB「カード決済時の本人認証サービス（EMV 3-Dセキュア）導入のご案内」 https://www.jcb.co.jp/merchant/release/emv3-dsecure.html\n\n■ 参考（報道。一次資料ではありません）\n・Impress Watch「MetaのパーソナルAI「Muse」を使ってみた　先回りして気遣えるAI」（2026年10月27日） https://www.watch.impress.co.jp/docs/topic/2151191.html\n\n#Muse #AI #幸せな未来のサイエンス",
   "scenes": [
     {
       "scene_id": 1,
@@ -120,31 +132,13 @@
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "ネットの店探しから支払いまで、AIが代わりにやる。",
+          "text": "体験者が、AIのミューズに頼んで、映画のチケットを払えた。",
           "expression": "excited",
-          "t0": 0.0,
-          "dur": 3.92,
-          "cards": [
-            {
-              "text": "ネットの店探しから支払いまで、",
-              "start": 0.0,
-              "end": 2.25
-            },
-            {
-              "text": "AIが代わりにやる。",
-              "start": 2.4,
-              "end": 3.9
-            }
-          ]
+          "display": "体験者が、AIのMuseに頼んで、映画のチケットを払えた。"
         }
       ],
-      "narration": "大輔「ネットの店探しから支払いまで、AIが代わりにやる。」",
       "narrator": "dialogue",
-      "lines_hash": "5dc188328e02",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "narration": "大輔「体験者が、AIのミューズに頼んで、映画のチケットを払えた。」"
     },
     {
       "scene_id": 2,
@@ -155,66 +149,28 @@
       "lines": [
         {
           "speaker": "skeptic",
-          "text": "しかも、AIにも店にも、本物のカード番号は渡らないって。",
-          "expression": "surprised",
-          "t0": 0.0,
-          "dur": 3.44,
-          "cards": [
-            {
-              "text": "しかも、AIにも店にも、本物のカード番号は",
-              "start": 0.0,
-              "end": 2.56
-            },
-            {
-              "text": "渡らないって。",
-              "start": 2.71,
-              "end": 3.53
-            }
-          ]
+          "text": "払う前に、払っていいか、を聞く画面が出たって。",
+          "expression": "surprised"
         }
       ],
-      "narration": "沙織「しかも、AIにも店にも、本物のカード番号は渡らないって。」",
       "narrator": "dialogue",
-      "lines_hash": "c16cf61197af",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "narration": "沙織「払う前に、払っていいか、を聞く画面が出たって。」"
     },
     {
       "scene_id": 3,
       "type": "teaser",
       "bgm_role": "intro",
-      "reuse_scene_id": 8,
+      "reuse_scene_id": 10,
       "ken_burns": "zoom_out",
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "払う時、人は指紋で1回押すだけ。今はアメリカの一部の人から。",
-          "expression": "excited",
-          "t0": 0.0,
-          "dur": 5.12,
-          "cards": [
-            {
-              "text": "払う時、人は指紋で1回押すだけ。",
-              "start": 0.0,
-              "end": 2.5
-            },
-            {
-              "text": "今はアメリカの一部の人から。",
-              "start": 3.06,
-              "end": 5.16
-            }
-          ]
+          "text": "でも、カード会社の本人確認で、止まったこともある。",
+          "expression": "thinking"
         }
       ],
-      "narration": "大輔「払う時、人は指紋で1回押すだけ。今はアメリカの一部の人から。」",
       "narrator": "dialogue",
-      "lines_hash": "8765e045ea00",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "narration": "大輔「でも、カード会社の本人確認で、止まったこともある。」"
     },
     {
       "scene_id": 4,
@@ -225,27 +181,13 @@
       "lines": [
         {
           "speaker": "skeptic",
-          "text": "日用品の買い足し、AIに任せきりにできる日は来る？",
+          "text": "最後のひと押しまで任せきりにするには、何が足りない？",
           "expression": "thinking",
-          "tag": "question",
-          "t0": 0.0,
-          "dur": 4.2,
-          "cards": [
-            {
-              "text": "日用品の買い足し、AIに任せきりにできる日は来る？",
-              "start": 0.0,
-              "end": 3.75
-            }
-          ]
+          "tag": "question"
         }
       ],
-      "narration": "沙織「日用品の買い足し、AIに任せきりにできる日は来る？」",
       "narrator": "dialogue",
-      "lines_hash": "e8674eba48d1",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "narration": "沙織「最後のひと押しまで任せきりにするには、何が足りない？」"
     },
     {
       "scene_id": 5,
@@ -259,972 +201,312 @@
           "scene_image": true
         },
         {
+          "from_line": 3,
+          "source_card": {
+            "kind": "press",
+            "source": "メタの日本向けの案内（2026年10月23日）",
+            "quote": "ブラウザを開き、フォームに入力するなど、利用者に代わってさまざまな操作を行うことができます。",
+            "quote_type": "原文",
+            "highlight": "利用者に代わって",
+            "items": [
+              "10月23日から日本で提供（北米以外で初めて）",
+              "買い物など、承認が要るときは通知が来る"
+            ]
+          },
+          "reference_index": 0
+        },
+        {
           "from_line": 8,
-          "source_card": {
-            "kind": "press",
-            "source": "OpenAIの発表（2026年11月13日）",
-            "quote": "購入のたびに、ユーザーは商品、合計金額、選択したカードを確認し、Face ID や指紋認証などのセキュリティ確認を経て承認します。",
-            "quote_type": "原文",
-            "highlight": "購入のたびに",
-            "items": [
-              "見るのは: 商品・合計金額・使うカード",
-              "顔か指紋で承認（買い物1回ごとに1回）"
-            ]
-          },
-          "reference_index": 0
-        },
-        {
-          "from_line": 12,
-          "source_card": {
-            "kind": "press",
-            "source": "OpenAIの発表（2026年11月13日）",
-            "quote": "当初は、米国発行の対象カードをお持ちの、米国在住の18歳以上の ChatGPT Pro ユーザーに提供します。",
-            "quote_type": "原文",
-            "highlight": "米国在住",
-            "items": [
-              "米国在住・米国の会社が出すカード・18歳以上",
-              "ChatGPTの有料プラン Pro の人から",
-              "日本では、まだ使えない"
-            ]
-          },
-          "reference_index": 0
-        },
-        {
-          "from_line": 17,
           "recap_card": {
-            "title": "任せきり",
+            "title": "公式と体験を分ける",
+            "badge": "この回の聞き方",
             "items": [
-              "金額や品目の範囲を、先に決めておく",
-              "その中なら、毎回の確認なしでAIが払う",
-              "今は、1回ずつ指紋で確かめる形"
-            ],
-            "badge": "この回の言葉"
+              "公式の案内: メタ・ストライプ・OpenAI",
+              "体験者の体験: 1人・2件（映画館・通販）",
+              "アメリカの財布は、日本は対象外"
+            ]
           }
         },
         {
-          "from_line": 20,
+          "from_line": 11,
+          "recap_card": {
+            "title": "この回の言葉",
+            "badge": "この回の言葉",
+            "items": [
+              "最後のひと押し: 払う前に中身を見て「いいよ」",
+              "任せきり: そのひと押しも無しで払わせる"
+            ]
+          }
+        },
+        {
+          "from_line": 14,
+          "recap_card": {
+            "title": "4つの札",
+            "badge": "判定の札",
+            "items": [
+              "もうすぐ来る",
+              "3年はかかる",
+              "根拠待ち（時期を言える資料を待つ）",
+              "まだ眉唾"
+            ]
+          }
+        },
+        {
+          "from_line": 15,
           "recap_card": {
             "title": "二人の予想",
             "badge": "予想",
             "items": [
-              "大輔: アメリカでは、この1年で任せきりに",
-              "沙織: 3年はかかる（代わりの番号は安全？）"
+              "大輔: この1年で、日本でも任せきりに",
+              "沙織: 払うところまでも、まだ安定しない"
             ]
           }
         },
         {
-          "from_line": 22,
+          "from_line": 17,
           "recap_card": {
             "title": "今日確かめる3つ",
+            "badge": "これから",
             "items": [
-              "1 AIは、買い物のどこまでをやる？",
-              "2 AIに払わせて、カードは大丈夫？",
-              "3 最後の1回も、いらなくなる？"
-            ],
-            "badge": "これから"
+              "1 日本で、本当に払えた？",
+              "2 最後のひと押しは、なぜ残る？",
+              "3 任せきりには、何が足りない？"
+            ]
           }
         }
       ],
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "11月13日に、ChatGPTを作っているOpenAIが、ChatGPTウォレットを発表したんだ。ウォレットは、財布のこと。AIが、ネットの店で、支払いまで済ませる。",
+          "text": "この話をしてくれた体験者は、10月に日本で始まった、ミューズというサービスで、実際に払った人。ミューズは、インスタグラムを運営しているメタの、AIの助手なんだ。",
           "expression": "excited",
-          "t0": 0.0,
-          "dur": 12.88,
-          "cards": [
-            {
-              "text": "11月13日に、ChatGPTを作っている",
-              "start": 0.0,
-              "end": 3.35
-            },
-            {
-              "text": "OpenAIが、ChatGPTウォレットを",
-              "start": 3.5,
-              "end": 6.64
-            },
-            {
-              "text": "発表したんだ。ウォレットは、財布のこと。",
-              "start": 6.79,
-              "end": 9.79
-            },
-            {
-              "text": "AIが、ネットの店で、支払いまで済ませる。",
-              "start": 9.94,
-              "end": 13.08
-            }
-          ]
+          "display": "この話をしてくれた体験者は、10月に日本で始まった、ミューズ（Muse）というサービスで、実際に払った人。ミューズは、インスタグラムを運営しているメタ（Meta）の、AIの助手なんだ。"
         },
         {
           "speaker": "skeptic",
-          "text": "支払いだけなら、スマホ払いでもできるわよね。何が違うの？",
-          "expression": "doubt",
-          "t0": 13.16,
-          "dur": 3.76,
-          "cards": [
-            {
-              "text": "支払いだけなら、",
-              "start": 0.0,
-              "end": 1.03
-            },
-            {
-              "text": "スマホ払いでもできるわよね。",
-              "start": 1.03,
-              "end": 2.84
-            },
-            {
-              "text": "何が違うの？",
-              "start": 2.99,
-              "end": 3.95
-            }
-          ]
+          "text": "1か月前、ミューズが日本に来たときの回で、話したわね。あのときは、送るのも払うのも、最後は自分で押そう、で終えた。",
+          "expression": "neutral"
         },
         {
           "speaker": "dreamer",
-          "text": "スマホ払いは、店を探すのも、支払いの画面まで進むのも、人がやる。今度は、店を探して、候補を並べて、支払いの画面に進むところまで、AIがやる。",
-          "expression": "excited",
-          "t0": 17.2,
-          "dur": 12.4,
-          "cards": [
-            {
-              "text": "スマホ払いは、店を探すのも、",
-              "start": 0.0,
-              "end": 2.68
-            },
-            {
-              "text": "支払いの画面まで進むのも、人がやる。",
-              "start": 2.83,
-              "end": 5.53
-            },
-            {
-              "text": "今度は、店を探して、候補を並べて、",
-              "start": 5.68,
-              "end": 8.74
-            },
-            {
-              "text": "支払いの画面に進むところまで、AIがやる。",
-              "start": 8.89,
-              "end": 12.31
-            }
-          ]
+          "text": "今回は、その続き。メタの日本向けの案内には、ミューズがブラウザを開いて、店のサイトの入力まで、代わりにやる、とある。体験者は、それで本当に払わせてみた。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "何を買ったの？",
+          "expression": "thinking"
         },
         {
           "speaker": "dreamer",
-          "text": "この仕事をするのは、ドットという、ChatGPTの中で一日中働いてくれるAIの助手。払うときに使う財布が、ウォレット。",
-          "expression": "neutral",
-          "display": "この仕事をするのは、ドット（dot）という、ChatGPTの中で一日中働いてくれるAIの助手。払うときに使う財布が、ウォレット。",
-          "t0": 29.82,
-          "dur": 8.84,
-          "cards": [
-            {
-              "text": "この仕事をするのは、ドット（dot）",
-              "start": 0.0,
-              "end": 2.49
-            },
-            {
-              "text": "という、ChatGPTの中で一日中",
-              "start": 2.49,
-              "end": 4.83
-            },
-            {
-              "text": "働いてくれるAIの助手。",
-              "start": 4.83,
-              "end": 6.49
-            },
-            {
-              "text": "払うときに使う財布が、",
-              "start": 6.49,
-              "end": 8.01
-            },
-            {
-              "text": "ウォレット。",
-              "start": 8.01,
-              "end": 8.84
-            }
-          ]
+          "text": "2件。映画館のチケットと、通販サイトの買い物。どっちも、支払いまで済んだ。",
+          "expression": "excited"
         },
         {
           "speaker": "skeptic",
-          "text": "助手が探して、財布で払う、と。",
-          "expression": "thinking",
-          "t0": 38.94,
-          "dur": 2.76,
-          "cards": [
-            {
-              "text": "助手が探して、財布で払う、と。",
-              "start": 0.0,
-              "end": 2.76
-            }
-          ]
+          "text": "で、それ何人で試したの？",
+          "expression": "doubt"
         },
         {
           "speaker": "dreamer",
-          "text": "たとえば、ノートパソコンが入るリュックを探して、と頼むと、候補を探して並べる。こっちが選んだら、店のサイトの支払いの画面まで進む。",
-          "expression": "excited",
-          "t0": 41.98,
-          "dur": 9.32,
-          "cards": [
-            {
-              "text": "たとえば、",
-              "start": 0.0,
-              "end": 0.68
-            },
-            {
-              "text": "ノートパソコンが入るリュックを探して、",
-              "start": 0.68,
-              "end": 3.28
-            },
-            {
-              "text": "と頼むと、候補を探して並べる。",
-              "start": 3.43,
-              "end": 5.67
-            },
-            {
-              "text": "こっちが選んだら、店のサイトの支払いの",
-              "start": 5.82,
-              "end": 8.41
-            },
-            {
-              "text": "画面まで進む。",
-              "start": 8.56,
-              "end": 9.52
-            }
-          ]
+          "text": "体験者1人の、2件。それで足りるかは、このあと確かめよう。",
+          "expression": "neutral"
         },
         {
           "speaker": "skeptic",
-          "text": "で、こっちは何をするの？",
-          "expression": "thinking",
-          "t0": 51.58,
-          "dur": 1.76,
-          "cards": [
-            {
-              "text": "で、こっちは何をするの？",
-              "start": 0.0,
-              "end": 1.76
-            }
-          ]
+          "text": "アメリカでは今月、ChatGPTを作っているOpenAIが、AIが払うための財布、ChatGPTウォレットを出したわね。日本は対象外だけど。",
+          "expression": "thinking"
         },
         {
           "speaker": "dreamer",
-          "text": "選ぶのと、最後の確認。商品と、合計の金額と、使うカードを見て、顔か指紋で、いいよ、と押す。1回の買い物に、1回。",
-          "expression": "neutral",
-          "t0": 53.62,
-          "dur": 10.8,
-          "cards": [
-            {
-              "text": "選ぶのと、最後の確認。商品と、",
-              "start": 0.0,
-              "end": 3.26
-            },
-            {
-              "text": "合計の金額と、使うカードを見て、",
-              "start": 3.41,
-              "end": 5.87
-            },
-            {
-              "text": "顔か指紋で、いいよ、と押す。",
-              "start": 6.02,
-              "end": 8.72
-            },
-            {
-              "text": "1回の買い物に、1回。",
-              "start": 8.94,
-              "end": 10.59
-            }
-          ]
+          "text": "そう。でも日本でも、ミューズで、払うところまで進んだ。体験者の体験では、ね。",
+          "expression": "excited"
         },
         {
           "speaker": "skeptic",
-          "text": "カードの会社は、話に乗ってるの？",
-          "expression": "doubt",
-          "t0": 64.7,
-          "dur": 2.2,
-          "cards": [
-            {
-              "text": "カードの会社は、話に乗ってるの？",
-              "start": 0.0,
-              "end": 2.2
-            }
-          ]
+          "text": "この回は、公式の案内に書いてあることと、体験者の体験を、分けて聞くわよ。",
+          "expression": "neutral"
         },
         {
           "speaker": "dreamer",
-          "text": "アメリカン・エキスプレス、マスターカード、ビザ、それに大きな銀行のチェース。カードの会社と銀行の4社と組んで作った、と発表にある。",
-          "expression": "excited",
-          "display": "アメリカン・エキスプレス、マスターカード、ビザ、それに大きな銀行のチェース（Chase）。カードの会社と銀行の4社と組んで作った、と発表にある。",
-          "t0": 67.18,
-          "dur": 9.36,
-          "cards": [
-            {
-              "text": "アメリカン・エキスプレス、マスターカード、",
-              "start": 0.0,
-              "end": 2.73
-            },
-            {
-              "text": "ビザ、それに大きな銀行のチェース（Chase）",
-              "start": 2.73,
-              "end": 5.72
-            },
-            {
-              "text": "。カードの会社と銀行の4社と組んで作った、",
-              "start": 5.72,
-              "end": 8.45
-            },
-            {
-              "text": "と発表にある。",
-              "start": 8.45,
-              "end": 9.36
-            }
-          ]
+          "text": "言葉を2つ決めておこう。払う前に、AIが、払っていい？と聞いてくる。そのとき、人が中身を見て、いいよ、と押す。これを、最後のひと押し、と呼ぶ。",
+          "expression": "neutral"
         },
         {
           "speaker": "skeptic",
-          "text": "で、誰が使えるの？",
-          "expression": "neutral",
-          "t0": 76.82,
-          "dur": 1.44,
-          "cards": [
-            {
-              "text": "で、誰が使えるの？",
-              "start": 0.0,
-              "end": 1.44
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "今は、アメリカに住んでいて、アメリカの会社が出しているカードを持つ、ChatGPTの有料プランの一つ、プロの人だけ。順番に広げていく、と書いてある。",
-          "expression": "neutral",
-          "display": "今は、アメリカに住んでいて、アメリカの会社が出しているカードを持つ、ChatGPTの有料プランの一つ、プロ（Pro）の人だけ。順番に広げていく、と書いてある。",
-          "t0": 78.54,
-          "dur": 10.44,
-          "cards": [
-            {
-              "text": "今は、アメリカに住んでいて、",
-              "start": 0.0,
-              "end": 1.85
-            },
-            {
-              "text": "アメリカの会社が出しているカードを持つ、",
-              "start": 1.85,
-              "end": 4.49
-            },
-            {
-              "text": "ChatGPTの有料プランの一つ、",
-              "start": 4.49,
-              "end": 6.74
-            },
-            {
-              "text": "プロ（Pro）の人だけ。順番に広げていく、",
-              "start": 6.74,
-              "end": 9.51
-            },
-            {
-              "text": "と書いてある。",
-              "start": 9.51,
-              "end": 10.44
-            }
-          ]
+          "text": "そのひと押しも無しで、AIに払わせきりにすること。それを、任せきり、と呼ぶわね。",
+          "expression": "neutral"
         },
         {
           "speaker": "skeptic",
-          "text": "日本では、まだ使えないのね。それと、ここで言う店は、どんな店？",
-          "expression": "thinking",
-          "t0": 89.26,
-          "dur": 4.4,
-          "cards": [
-            {
-              "text": "日本では、まだ使えないのね。それと、",
-              "start": 0.0,
-              "end": 2.5
-            },
-            {
-              "text": "ここで言う店は、どんな店？",
-              "start": 2.65,
-              "end": 4.43
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "ネットの店。資料にあるのは、ネットの店の支払いの画面で払う話。町のお店のレジで使う話は、資料には無い。",
-          "expression": "neutral",
-          "t0": 93.94,
-          "dur": 9.08,
-          "cards": [
-            {
-              "text": "ネットの店。資料にあるのは、",
-              "start": 0.0,
-              "end": 2.52
-            },
-            {
-              "text": "ネットの店の支払いの画面で払う話。",
-              "start": 2.67,
-              "end": 5.22
-            },
-            {
-              "text": "町のお店のレジで使う話は、資料には無い。",
-              "start": 5.37,
-              "end": 8.91
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "先に、結論の半分を言っておく。1回ずつ指紋で確かめて、AIに払ってもらう形は、アメリカでもう始まってる。",
-          "expression": "neutral",
-          "t0": 103.3,
-          "dur": 6.96,
-          "cards": [
-            {
-              "text": "先に、結論の半分を言っておく。",
-              "start": 0.0,
-              "end": 1.98
-            },
-            {
-              "text": "1回ずつ指紋で確かめて、",
-              "start": 2.13,
-              "end": 3.74
-            },
-            {
-              "text": "AIに払ってもらう形は、",
-              "start": 3.74,
-              "end": 5.35
-            },
-            {
-              "text": "アメリカでもう始まってる。",
-              "start": 5.5,
-              "end": 7.16
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "面白いのは、その先。最後の1回の指紋も、いらなくなる日が来るか。",
-          "expression": "excited",
-          "t0": 110.54,
-          "dur": 5.96,
-          "cards": [
-            {
-              "text": "面白いのは、その先。最後の1回の指紋も、",
-              "start": 0.0,
-              "end": 4.21
-            },
-            {
-              "text": "いらなくなる日が来るか。",
-              "start": 4.36,
-              "end": 6.16
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "この回では、それを、任せきり、と呼ぶわね。金額や品目の範囲を決めておいて、その中なら、毎回の確認なしでAIが払うこと。",
-          "expression": "neutral",
-          "t0": 116.78,
-          "dur": 8.4,
-          "cards": [
-            {
-              "text": "この回では、それを、任せきり、と呼ぶわね。",
-              "start": 0.0,
-              "end": 2.94
-            },
-            {
-              "text": "金額や品目の範囲を決めておいて、",
-              "start": 3.09,
-              "end": 5.29
-            },
-            {
-              "text": "その中なら、毎回の確認なしでAIが払うこと。",
-              "start": 5.44,
-              "end": 8.46
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "今日の問いはこれ。日用品の買い足しを、AIに任せきりにできる日は来るか。",
-          "expression": "neutral",
-          "t0": 125.4,
-          "dur": 5.16,
-          "cards": [
-            {
-              "text": "今日の問いはこれ。日用品の買い足しを、",
-              "start": 0.0,
-              "end": 2.8
-            },
-            {
-              "text": "AIに任せきりにできる日は来るか。",
-              "start": 2.95,
-              "end": 5.32
-            }
-          ]
+          "text": "今日の問いはこれ。AIに買い物を頼む暮らしは、日本でもう始まっている。最後のひと押しまで任せきりにするには、あと何が足りないか。",
+          "expression": "neutral"
         },
         {
           "speaker": "dreamer",
           "text": "この番組は最後に、4つの札で見立てを出す。もうすぐ来る、3年はかかる、時期を言える資料を待つ根拠待ち、それから、まだ眉唾。まずは予想から。",
-          "expression": "neutral",
-          "t0": 130.84,
-          "dur": 13.16,
-          "cards": [
-            {
-              "text": "この番組は最後に、4つの札で見立てを出す。",
-              "start": 0.0,
-              "end": 3.18
-            },
-            {
-              "text": "もうすぐ来る、3年はかかる、",
-              "start": 3.42,
-              "end": 6.22
-            },
-            {
-              "text": "時期を言える資料を待つ根拠待ち、それから、",
-              "start": 6.37,
-              "end": 9.91
-            },
-            {
-              "text": "まだ眉唾。まずは予想から。",
-              "start": 10.06,
-              "end": 13.08
-            }
-          ]
+          "expression": "neutral"
         },
         {
           "speaker": "dreamer",
-          "text": "僕の予想。日用品の買い足しなら、アメリカでは、この1年で任せきりにできるようになる。",
+          "text": "僕の予想。この1年で、日本でも、最後のひと押しまで任せきりにできる。",
           "expression": "excited",
-          "tag": "prediction",
-          "t0": 144.22,
-          "dur": 6.6,
-          "cards": [
-            {
-              "text": "僕の予想。日用品の買い足しなら、",
-              "start": 0.0,
-              "end": 2.6
-            },
-            {
-              "text": "アメリカでは、この1年で任せきりにできる",
-              "start": 2.75,
-              "end": 5.75
-            },
-            {
-              "text": "ようになる。",
-              "start": 5.9,
-              "end": 6.8
-            }
-          ]
+          "tag": "prediction"
         },
         {
           "speaker": "skeptic",
-          "text": "私の予想は、3年はかかる。本物の番号は渡らない、と言うけど、なら代わりに何が渡るのか。それを店が取っておいて、別の買い物に勝手に使われないか。そこがはっきりしないうちは、任せきりにはできないと見てる。",
+          "text": "私の予想は、もっと手前。日本では、払うところまで任せるのも、まだ安定しない。メタの日本向けの案内には、ショッピングに使える、とはあるけど、どう払うかまでは書いてないから。",
           "expression": "doubt",
-          "tag": "prediction",
-          "t0": 151.1,
-          "dur": 14.6,
-          "cards": [
-            {
-              "text": "私の予想は、3年はかかる。",
-              "start": 0.0,
-              "end": 1.93
-            },
-            {
-              "text": "本物の番号は渡らない、",
-              "start": 1.93,
-              "end": 3.56
-            },
-            {
-              "text": "と言うけど、なら代わりに何が渡るのか。",
-              "start": 3.71,
-              "end": 6.37
-            },
-            {
-              "text": "それを店が取っておいて、別の買い物に勝手に",
-              "start": 6.52,
-              "end": 9.46
-            },
-            {
-              "text": "使われないか。そこがはっきりしないうちは、",
-              "start": 9.61,
-              "end": 12.55
-            },
-            {
-              "text": "任せきりにはできないと見てる。",
-              "start": 12.7,
-              "end": 14.8
-            }
-          ]
+          "tag": "prediction"
         },
         {
           "speaker": "dreamer",
-          "text": "確かめるのは3つ。AIは、買い物のどこまでをやってくれるか。カードは大丈夫か。そして、最後の1回も、いらなくなるか。",
-          "expression": "neutral",
-          "t0": 165.98,
-          "dur": 8.44,
-          "cards": [
-            {
-              "text": "確かめるのは3つ。AIは、買い物のどこまでを",
-              "start": 0.0,
-              "end": 3.28
-            },
-            {
-              "text": "やってくれるか。カードは大丈夫か。そして、",
-              "start": 3.43,
-              "end": 6.38
-            },
-            {
-              "text": "最後の1回も、いらなくなるか。",
-              "start": 6.53,
-              "end": 8.64
-            }
-          ]
+          "text": "確かめるのは3つ。日本で、本当に払えたのか。最後のひと押しは、なぜ残るのか。任せきりには、何が足りないのか。",
+          "expression": "neutral"
         }
       ],
-      "narration": "大輔「11月13日に、ChatGPTを作っているOpenAIが、ChatGPTウォレットを発表したんだ。ウォレットは、財布のこと。AIが、ネットの店で、支払いまで済ませる。」\n沙織「支払いだけなら、スマホ払いでもできるわよね。何が違うの？」\n大輔「スマホ払いは、店を探すのも、支払いの画面まで進むのも、人がやる。今度は、店を探して、候補を並べて、支払いの画面に進むところまで、AIがやる。」\n大輔「この仕事をするのは、ドットという、ChatGPTの中で一日中働いてくれるAIの助手。払うときに使う財布が、ウォレット。」\n沙織「助手が探して、財布で払う、と。」\n大輔「たとえば、ノートパソコンが入るリュックを探して、と頼むと、候補を探して並べる。こっちが選んだら、店のサイトの支払いの画面まで進む。」\n沙織「で、こっちは何をするの？」\n大輔「選ぶのと、最後の確認。商品と、合計の金額と、使うカードを見て、顔か指紋で、いいよ、と押す。1回の買い物に、1回。」\n沙織「カードの会社は、話に乗ってるの？」\n大輔「アメリカン・エキスプレス、マスターカード、ビザ、それに大きな銀行のチェース。カードの会社と銀行の4社と組んで作った、と発表にある。」\n沙織「で、誰が使えるの？」\n大輔「今は、アメリカに住んでいて、アメリカの会社が出しているカードを持つ、ChatGPTの有料プランの一つ、プロの人だけ。順番に広げていく、と書いてある。」\n沙織「日本では、まだ使えないのね。それと、ここで言う店は、どんな店？」\n大輔「ネットの店。資料にあるのは、ネットの店の支払いの画面で払う話。町のお店のレジで使う話は、資料には無い。」\n沙織「先に、結論の半分を言っておく。1回ずつ指紋で確かめて、AIに払ってもらう形は、アメリカでもう始まってる。」\n大輔「面白いのは、その先。最後の1回の指紋も、いらなくなる日が来るか。」\n沙織「この回では、それを、任せきり、と呼ぶわね。金額や品目の範囲を決めておいて、その中なら、毎回の確認なしでAIが払うこと。」\n沙織「今日の問いはこれ。日用品の買い足しを、AIに任せきりにできる日は来るか。」\n大輔「この番組は最後に、4つの札で見立てを出す。もうすぐ来る、3年はかかる、時期を言える資料を待つ根拠待ち、それから、まだ眉唾。まずは予想から。」\n大輔「僕の予想。日用品の買い足しなら、アメリカでは、この1年で任せきりにできるようになる。」\n沙織「私の予想は、3年はかかる。本物の番号は渡らない、と言うけど、なら代わりに何が渡るのか。それを店が取っておいて、別の買い物に勝手に使われないか。そこがはっきりしないうちは、任せきりにはできないと見てる。」\n大輔「確かめるのは3つ。AIは、買い物のどこまでをやってくれるか。カードは大丈夫か。そして、最後の1回も、いらなくなるか。」\n［画面の資料カード］OpenAIの発表（2026年11月13日） 「購入のたびに、ユーザーは商品、合計金額、選択したカードを確認し、Face ID や指紋認証などのセキュリティ確認を経て承認します。」（原文） ・見るのは: 商品・合計金額・使うカード ・顔か指紋で承認（買い物1回ごとに1回）\n［画面の資料カード］OpenAIの発表（2026年11月13日） 「当初は、米国発行の対象カードをお持ちの、米国在住の18歳以上の ChatGPT Pro ユーザーに提供します。」（原文） ・米国在住・米国の会社が出すカード・18歳以上 ・ChatGPTの有料プラン Pro の人から ・日本では、まだ使えない\n［画面のまとめカード（この回の言葉）］任せきり ・金額や品目の範囲を、先に決めておく ・その中なら、毎回の確認なしでAIが払う ・今は、1回ずつ指紋で確かめる形\n［画面のまとめカード（予想）］二人の予想 ・大輔: アメリカでは、この1年で任せきりに ・沙織: 3年はかかる（代わりの番号は安全？）\n［画面のまとめカード（これから）］今日確かめる3つ ・1 AIは、買い物のどこまでをやる？ ・2 AIに払わせて、カードは大丈夫？ ・3 最後の1回も、いらなくなる？",
       "narrator": "dialogue",
-      "lines_hash": "5f1f9d20f8dc",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "narration": "大輔「この話をしてくれた体験者は、10月に日本で始まった、ミューズというサービスで、実際に払った人。ミューズは、インスタグラムを運営しているメタの、AIの助手なんだ。」\n沙織「1か月前、ミューズが日本に来たときの回で、話したわね。あのときは、送るのも払うのも、最後は自分で押そう、で終えた。」\n大輔「今回は、その続き。メタの日本向けの案内には、ミューズがブラウザを開いて、店のサイトの入力まで、代わりにやる、とある。体験者は、それで本当に払わせてみた。」\n沙織「何を買ったの？」\n大輔「2件。映画館のチケットと、通販サイトの買い物。どっちも、支払いまで済んだ。」\n沙織「で、それ何人で試したの？」\n大輔「体験者1人の、2件。それで足りるかは、このあと確かめよう。」\n沙織「アメリカでは今月、ChatGPTを作っているOpenAIが、AIが払うための財布、ChatGPTウォレットを出したわね。日本は対象外だけど。」\n大輔「そう。でも日本でも、ミューズで、払うところまで進んだ。体験者の体験では、ね。」\n沙織「この回は、公式の案内に書いてあることと、体験者の体験を、分けて聞くわよ。」\n大輔「言葉を2つ決めておこう。払う前に、AIが、払っていい？と聞いてくる。そのとき、人が中身を見て、いいよ、と押す。これを、最後のひと押し、と呼ぶ。」\n沙織「そのひと押しも無しで、AIに払わせきりにすること。それを、任せきり、と呼ぶわね。」\n沙織「今日の問いはこれ。AIに買い物を頼む暮らしは、日本でもう始まっている。最後のひと押しまで任せきりにするには、あと何が足りないか。」\n大輔「この番組は最後に、4つの札で見立てを出す。もうすぐ来る、3年はかかる、時期を言える資料を待つ根拠待ち、それから、まだ眉唾。まずは予想から。」\n大輔「僕の予想。この1年で、日本でも、最後のひと押しまで任せきりにできる。」\n沙織「私の予想は、もっと手前。日本では、払うところまで任せるのも、まだ安定しない。メタの日本向けの案内には、ショッピングに使える、とはあるけど、どう払うかまでは書いてないから。」\n大輔「確かめるのは3つ。日本で、本当に払えたのか。最後のひと押しは、なぜ残るのか。任せきりには、何が足りないのか。」\n［画面の資料カード］メタの日本向けの案内（2026年10月23日） 「ブラウザを開き、フォームに入力するなど、利用者に代わってさまざまな操作を行うことができます。」（原文） ・10月23日から日本で提供（北米以外で初めて） ・買い物など、承認が要るときは通知が来る\n［画面のまとめカード（この回の聞き方）］公式と体験を分ける ・公式の案内: メタ・ストライプ・OpenAI ・体験者の体験: 1人・2件（映画館・通販） ・アメリカの財布は、日本は対象外\n［画面のまとめカード（この回の言葉）］この回の言葉 ・最後のひと押し: 払う前に中身を見て「いいよ」 ・任せきり: そのひと押しも無しで払わせる\n［画面のまとめカード（判定の札）］4つの札 ・もうすぐ来る ・3年はかかる ・根拠待ち（時期を言える資料を待つ） ・まだ眉唾\n［画面のまとめカード（予想）］二人の予想 ・大輔: この1年で、日本でも任せきりに ・沙織: 払うところまでも、まだ安定しない\n［画面のまとめカード（これから）］今日確かめる3つ ・1 日本で、本当に払えた？ ・2 最後のひと押しは、なぜ残る？ ・3 任せきりには、何が足りない？"
     },
     {
       "scene_id": 6,
       "type": "paper",
       "round": 1,
-      "round_title": "AIは、どこまで買い物をしてくれる？",
+      "round_title": "日本で、本当に払えた？",
       "bgm_role": "main",
       "ken_burns": "zoom_out",
-      "image_prompt": "A bright, tidy Japanese home kitchen counter in soft morning light, seen at eye level. On the counter: a hand holding a smartphone whose screen shows only abstract, generic shopping icons (simple product tiles and a cart symbol, no readable text, no logos, no brand colors). Around it, everyday household refills: a bottle of laundry detergent with a plain label, a pack of toilet paper rolls, a roll of garbage bags, a ream of plain copy paper. Only the hand and forearm are visible, no face. The scene continues to the left and right edges with cabinets and a window. Calm, hopeful mood. No readable text, no logos, no brand names. Warm editorial illustration style.",
+      "image_prompt": "A cozy Japanese living room table in soft evening light, seen at eye level. On the table: a hand holding a smartphone whose screen shows only abstract shapes (a simple ticket-shaped tile, a seat-map grid of small squares, and a round confirm button), with no readable text, no logos, no brand colors. Beside the phone lie a plain paper cinema ticket stub with no printing and a small bag of pet food with a plain label showing only a simple paw shape. Only the hand and forearm are visible, no face. The room continues to the left and right edges with a sofa and a window. Hopeful, curious mood. No readable text, no logos, no brand names. Warm editorial illustration style.",
       "visuals": [
         {
           "from_line": 1,
           "scene_image": true
         },
         {
-          "from_line": 4,
-          "source_card": {
-            "kind": "docs",
-            "source": "OpenAI 店向けの手引き（全体の流れ）",
-            "quote": "The business confirms the purchase or booking.",
-            "quote_type": "原文",
-            "highlight": "The business confirms",
+          "from_line": 2,
+          "recap_card": {
+            "title": "体験者の2件（公式の資料ではない）",
+            "badge": "体験者の体験",
             "items": [
-              "客が頼む → AIが探す → 客が比べて選ぶ",
-              "AIが店のサイトで、いつもの手順で進む",
-              "注文を確定するのは、店"
+              "通販サイトのペット用品: 店に預けたカード",
+              "映画館のチケット: リンクで",
+              "1人・2件。誰でも通るとは言えない"
             ]
-          },
-          "reference_index": 1
+          }
+        },
+        {
+          "from_line": 6,
+          "scene_image": true
         },
         {
           "from_line": 7,
           "source_card": {
             "kind": "press",
-            "source": "OpenAIの去年の発表（2025年9月29日）",
-            "quote": "米国のChatGPT Plus、Pro、Free ユーザーは、チャット内で米国の Etsy の出店者から直接購入できるようになりました。",
+            "source": "ストライプの発表（2026年9月8日、米国時間）",
+            "quote": "この連携により、米国の消費者は Link アカウントを Muse に接続することで、AI エージェントによる代理決済が可能になりました。",
             "quote_type": "原文",
-            "highlight": "直接購入できる",
+            "highlight": "米国の消費者",
             "items": [
-              "去年9月からの仕組み: 対応した店の品だけ",
-              "ChatGPTの中で、店から直接買える"
+              "リンク: ストライプのネットの財布",
+              "ミューズで使える、と書いてあるのは米国"
+            ]
+          },
+          "reference_index": 3
+        },
+        {
+          "from_line": 8,
+          "source_card": {
+            "kind": "press",
+            "source": "メタのアメリカ向けの発表（2026年9月8日）",
+            "quote": "it is the first AI agent covered by Link's purchase protections",
+            "quote_type": "原文",
+            "highlight": "purchase protections",
+            "items": [
+              "リンクで払うと、買い物の保護の対象",
+              "壊れた品・なくした品、返品など",
+              "10月23日の日本提供開始の案内には、この記述は無い"
+            ]
+          },
+          "reference_index": 2
+        },
+        {
+          "from_line": 10,
+          "source_card": {
+            "kind": "report",
+            "source": "報道（Impress Watch、2026年10月27日）",
+            "quote": "今回は、Museの実用性のテストとし、実際の決済までは行なわず、予約確定前の操作までに留めています。",
+            "quote_type": "原文",
+            "highlight": "実際の決済までは行なわず",
+            "items": [
+              "記者が日本の映画館で、席と券種まで",
+              "払う手前で、記者が自分で止めた"
             ]
           },
           "reference_index": 5
-        },
-        {
-          "from_line": 11,
-          "scene_image": true
         }
       ],
       "lines": [
         {
           "speaker": "skeptic",
-          "text": "まず1つ目。AIは、買い物のどこまでをやってくれるのか。",
-          "expression": "neutral",
-          "t0": 0.0,
-          "dur": 3.64,
-          "cards": [
-            {
-              "text": "まず1つ目。AIは、買い物のどこまでを",
-              "start": 0.0,
-              "end": 2.57
-            },
-            {
-              "text": "やってくれるのか。",
-              "start": 2.72,
-              "end": 3.84
-            }
-          ]
+          "text": "まず1つ目。日本で、本当に払えたのか。",
+          "expression": "neutral"
         },
         {
           "speaker": "dreamer",
-          "text": "OpenAIは、ネットの店に向けた手引きも、同じ日に出してる。そこに、流れが書いてある。",
-          "expression": "neutral",
-          "t0": 3.92,
-          "dur": 5.68,
-          "cards": [
-            {
-              "text": "OpenAIは、ネットの店に向けた手引きも、",
-              "start": 0.13,
-              "end": 2.89
-            },
-            {
-              "text": "同じ日に出してる。",
-              "start": 3.04,
-              "end": 4.17
-            },
-            {
-              "text": "そこに、流れが書いてある。",
-              "start": 4.17,
-              "end": 5.8
-            }
-          ]
+          "text": "1件目は、通販サイトのペット用品。体験者は、その店に、前からカードを登録してあった。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だから、ミューズに頼んでも、カードの番号を入れる場面は無かった。店に預けてあるカードで、そのまま払えた。",
+          "expression": "excited"
         },
         {
           "speaker": "skeptic",
-          "text": "店向けの手引きね。どんな流れ？",
-          "expression": "thinking",
-          "t0": 9.88,
-          "dur": 2.6,
-          "cards": [
-            {
-              "text": "店向けの手引きね。どんな流れ？",
-              "start": 0.0,
-              "end": 2.6
-            }
-          ]
+          "text": "店にカードを預けてあったから、ね。2件目は？",
+          "expression": "thinking"
         },
         {
           "speaker": "dreamer",
-          "text": "客が頼むと、ドットが、ネットの情報や店の商品の一覧から探す。客が比べて選んだら、ドットが店のサイトで、いつもの手順で買いに進む。",
-          "expression": "neutral",
-          "t0": 12.76,
-          "dur": 9.88,
-          "cards": [
-            {
-              "text": "客が頼むと、ドットが、ネットの情報や店の",
-              "start": 0.0,
-              "end": 3.2
-            },
-            {
-              "text": "商品の一覧から探す。客が比べて選んだら、",
-              "start": 3.35,
-              "end": 6.34
-            },
-            {
-              "text": "ドットが店のサイトで、",
-              "start": 6.49,
-              "end": 8.14
-            },
-            {
-              "text": "いつもの手順で買いに進む。",
-              "start": 8.14,
-              "end": 10.08
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "注文を確かめて受けるのは、店なのね。",
-          "expression": "thinking",
-          "t0": 22.92,
-          "dur": 3.0,
-          "cards": [
-            {
-              "text": "注文を確かめて受けるのは、店なのね。",
-              "start": 0.0,
-              "end": 3.0
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "そう。値段も、返品も、問い合わせも、今までどおり店が受け持つ、と発表にある。",
-          "expression": "neutral",
-          "t0": 26.2,
-          "dur": 6.68,
-          "cards": [
-            {
-              "text": "そう。値段も、返品も、問い合わせも、",
-              "start": 0.0,
-              "end": 3.68
-            },
-            {
-              "text": "今までどおり店が受け持つ、と発表にある。",
-              "start": 3.83,
-              "end": 6.83
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "ChatGPTで物を買えるのは、今回が初めて？",
-          "expression": "doubt",
-          "t0": 33.16,
-          "dur": 3.32,
-          "cards": [
-            {
-              "text": "ChatGPTで物を買えるのは、",
-              "start": 0.03,
-              "end": 2.24
-            },
-            {
-              "text": "今回が初めて？",
-              "start": 2.39,
-              "end": 3.35
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "初めてじゃない。去年の9月から、アメリカでは、ChatGPTの中で、対応した店の品を買える仕組みがある。",
-          "expression": "neutral",
-          "t0": 36.76,
-          "dur": 7.68,
-          "cards": [
-            {
-              "text": "初めてじゃない。去年の9月から、",
-              "start": 0.0,
-              "end": 2.4
-            },
-            {
-              "text": "アメリカでは、ChatGPTの中で、",
-              "start": 2.55,
-              "end": 5.1
-            },
-            {
-              "text": "対応した店の品を買える仕組みがある。",
-              "start": 5.25,
-              "end": 7.8
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "今回は、特別な準備をしていない、ふつうのネットの店でも払える形にした。AIに本物のカード番号を見せず、毎回本人の確認を求める、初めてのウォレットだ、とOpenAIは書いてる。",
+          "text": "映画館のチケット。こっちは、リンクで払えた。リンクは、ストライプという決済の会社の、ネットの財布。カードを登録しておくと、対応した店で、番号を入れずに払える。",
           "expression": "excited",
-          "t0": 44.66,
-          "dur": 12.36,
-          "cards": [
-            {
-              "text": "今回は、特別な準備をしていない、",
-              "start": 0.0,
-              "end": 2.24
-            },
-            {
-              "text": "ふつうのネットの店でも払える形にした。",
-              "start": 2.39,
-              "end": 4.96
-            },
-            {
-              "text": "AIに本物のカード番号を見せず、",
-              "start": 5.23,
-              "end": 7.39
-            },
-            {
-              "text": "毎回本人の確認を求める、",
-              "start": 7.54,
-              "end": 9.16
-            },
-            {
-              "text": "初めてのウォレットだ、",
-              "start": 9.16,
-              "end": 10.65
-            },
-            {
-              "text": "とOpenAIは書いてる。",
-              "start": 10.8,
-              "end": 12.56
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "初めて、はOpenAIの言い方ね。対応した店だけ、から、ふつうのネットの店へ広げた、と。",
-          "expression": "thinking",
-          "t0": 57.3,
-          "dur": 6.96,
-          "cards": [
-            {
-              "text": "初めて、はOpenAIの言い方ね。",
-              "start": 0.0,
-              "end": 2.69
-            },
-            {
-              "text": "対応した店だけ、から、",
-              "start": 2.69,
-              "end": 4.43
-            },
-            {
-              "text": "ふつうのネットの店へ広げた、と。",
-              "start": 4.43,
-              "end": 6.96
-            }
-          ]
+          "display": "映画館のチケット。こっちは、リンク（Link）で払えた。リンクは、ストライプ（Stripe）という決済の会社の、ネットの財布。カードを登録しておくと、対応した店で、番号を入れずに払える。"
         },
         {
           "speaker": "dreamer",
-          "text": "僕が期待するのは、その先。家の洗剤やトイレットペーパー、店や事務所のゴミ袋やコピー用紙。切れる前に、AIが安い店を探して、買う手前まで進めておいてくれる。",
+          "text": "次は、いつも買う店の、店の備品や、毎月のペットフード。探して、比べて、払う手前まで、AIに頼める。",
           "expression": "excited",
-          "tag": "use_case",
-          "t0": 64.54,
-          "dur": 12.68,
-          "cards": [
-            {
-              "text": "僕が期待するのは、その先。家の洗剤や",
-              "start": 0.0,
-              "end": 3.58
-            },
-            {
-              "text": "トイレットペーパー、店や事務所のゴミ袋や",
-              "start": 3.73,
-              "end": 6.73
-            },
-            {
-              "text": "コピー用紙。切れる前に、",
-              "start": 6.88,
-              "end": 8.68
-            },
-            {
-              "text": "AIが安い店を探して、",
-              "start": 8.68,
-              "end": 10.33
-            },
-            {
-              "text": "買う手前まで進めておいてくれる。",
-              "start": 10.48,
-              "end": 12.88
-            }
-          ]
+          "tag": "use_case"
         },
         {
           "speaker": "skeptic",
-          "text": "特別な準備なしで、本当に受けられるの？ 店の人は、何もしなくていいの？",
+          "text": "待って。ストライプの発表では、ミューズでリンクが使えるのは、アメリカの消費者、と書いてある。",
           "expression": "doubt",
-          "t0": 77.5,
-          "dur": 4.28,
-          "cards": [
-            {
-              "text": "特別な準備なしで、本当に受けられるの？",
-              "start": 0.0,
-              "end": 2.46
-            },
-            {
-              "text": "店の人は、何もしなくていいの？",
-              "start": 2.66,
-              "end": 4.48
-            }
-          ]
+          "tag": "barrier"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "メタのアメリカ向けの発表には、リンクで払うと、壊れた品や返品などの、買い物の保護も付く、とある。でも、10月23日の、日本での提供開始の案内には、リンクの話も、その保護の話も無い。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "公式の日本向けの案内には、書いてないのか。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、報道の記者が日本で試したときも、映画の席を選ぶところまでで、払う手前で自分で止めてた。体験者は1人、2件。たまたま通っただけかもしれない。",
+          "expression": "doubt",
+          "tag": "weakness"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "たまたまかもしれない、は、そのとおり。日本で誰でも必ず払える、とは言えない。",
+          "expression": "thinking"
         }
       ],
-      "narration": "沙織「まず1つ目。AIは、買い物のどこまでをやってくれるのか。」\n大輔「OpenAIは、ネットの店に向けた手引きも、同じ日に出してる。そこに、流れが書いてある。」\n沙織「店向けの手引きね。どんな流れ？」\n大輔「客が頼むと、ドットが、ネットの情報や店の商品の一覧から探す。客が比べて選んだら、ドットが店のサイトで、いつもの手順で買いに進む。」\n沙織「注文を確かめて受けるのは、店なのね。」\n大輔「そう。値段も、返品も、問い合わせも、今までどおり店が受け持つ、と発表にある。」\n沙織「ChatGPTで物を買えるのは、今回が初めて？」\n大輔「初めてじゃない。去年の9月から、アメリカでは、ChatGPTの中で、対応した店の品を買える仕組みがある。」\n大輔「今回は、特別な準備をしていない、ふつうのネットの店でも払える形にした。AIに本物のカード番号を見せず、毎回本人の確認を求める、初めてのウォレットだ、とOpenAIは書いてる。」\n沙織「初めて、はOpenAIの言い方ね。対応した店だけ、から、ふつうのネットの店へ広げた、と。」\n大輔「僕が期待するのは、その先。家の洗剤やトイレットペーパー、店や事務所のゴミ袋やコピー用紙。切れる前に、AIが安い店を探して、買う手前まで進めておいてくれる。」\n沙織「特別な準備なしで、本当に受けられるの？ 店の人は、何もしなくていいの？」\n［画面の資料カード］OpenAI 店向けの手引き（全体の流れ） 「The business confirms the purchase or booking.」（原文） ・客が頼む → AIが探す → 客が比べて選ぶ ・AIが店のサイトで、いつもの手順で進む ・注文を確定するのは、店\n［画面の資料カード］OpenAIの去年の発表（2025年9月29日） 「米国のChatGPT Plus、Pro、Free ユーザーは、チャット内で米国の Etsy の出店者から直接購入できるようになりました。」（原文） ・去年9月からの仕組み: 対応した店の品だけ ・ChatGPTの中で、店から直接買える",
       "narrator": "dialogue",
-      "lines_hash": "a27685670b85",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "narration": "沙織「まず1つ目。日本で、本当に払えたのか。」\n大輔「1件目は、通販サイトのペット用品。体験者は、その店に、前からカードを登録してあった。」\n大輔「だから、ミューズに頼んでも、カードの番号を入れる場面は無かった。店に預けてあるカードで、そのまま払えた。」\n沙織「店にカードを預けてあったから、ね。2件目は？」\n大輔「映画館のチケット。こっちは、リンクで払えた。リンクは、ストライプという決済の会社の、ネットの財布。カードを登録しておくと、対応した店で、番号を入れずに払える。」\n大輔「次は、いつも買う店の、店の備品や、毎月のペットフード。探して、比べて、払う手前まで、AIに頼める。」\n沙織「待って。ストライプの発表では、ミューズでリンクが使えるのは、アメリカの消費者、と書いてある。」\n沙織「メタのアメリカ向けの発表には、リンクで払うと、壊れた品や返品などの、買い物の保護も付く、とある。でも、10月23日の、日本での提供開始の案内には、リンクの話も、その保護の話も無い。」\n大輔「公式の日本向けの案内には、書いてないのか。」\n沙織「それに、報道の記者が日本で試したときも、映画の席を選ぶところまでで、払う手前で自分で止めてた。体験者は1人、2件。たまたま通っただけかもしれない。」\n大輔「たまたまかもしれない、は、そのとおり。日本で誰でも必ず払える、とは言えない。」\n［画面のまとめカード（体験者の体験）］体験者の2件（公式の資料ではない） ・通販サイトのペット用品: 店に預けたカード ・映画館のチケット: リンクで ・1人・2件。誰でも通るとは言えない\n［画面の資料カード］ストライプの発表（2026年9月8日、米国時間） 「この連携により、米国の消費者は Link アカウントを Muse に接続することで、AI エージェントによる代理決済が可能になりました。」（原文） ・リンク: ストライプのネットの財布 ・ミューズで使える、と書いてあるのは米国\n［画面の資料カード］メタのアメリカ向けの発表（2026年9月8日） 「it is the first AI agent covered by Link's purchase protections」（原文） ・リンクで払うと、買い物の保護の対象 ・壊れた品・なくした品、返品など ・10月23日の日本提供開始の案内には、この記述は無い\n［画面の資料カード］報道（Impress Watch、2026年10月27日） 「今回は、Museの実用性のテストとし、実際の決済までは行なわず、予約確定前の操作までに留めています。」（原文） ・記者が日本の映画館で、席と券種まで ・払う手前で、記者が自分で止めた"
     },
     {
       "scene_id": 7,
@@ -1237,600 +519,131 @@
         {
           "from_line": 1,
           "source_card": {
-            "kind": "docs",
-            "source": "OpenAI 店向けの手引き（支払いの受け方）",
-            "quote": "No Wallet-specific integration is required.",
-            "quote_type": "原文",
-            "highlight": "No Wallet-specific integration",
-            "items": [
-              "今の支払いの画面で、そのまま動く",
-              "ウォレットのために作り直す必要はない"
-            ]
-          },
-          "reference_index": 2
-        },
-        {
-          "from_line": 2,
-          "source_card": {
             "kind": "press",
-            "source": "OpenAIの発表（2026年11月13日）",
-            "quote": "サイトによっては、ChatGPT ウォレットやその他のエージェント向け決済サービスを通じた購入を意図せずブロックしてしまう場合があります。",
+            "source": "メタの日本向けの案内（2026年10月23日）",
+            "quote": "Museは利用者のパスワードや支払い方法を確認できず、メールの送信や商品の購入など重要な操作の前には利用者本人に確認します。",
             "quote_type": "原文",
-            "highlight": "意図せずブロック",
+            "highlight": "支払い方法を確認できず",
             "items": [
-              "サイトによっては、AIの買い物を意図せず止める",
-              "例: 不正よけが、正当な買い物を怪しいと見て断る"
+              "AIは、パスワードや支払い方法を見られない",
+              "商品を買う前には、本人に確認する"
             ]
           },
           "reference_index": 0
         },
         {
-          "from_line": 7,
-          "source_card": {
-            "kind": "press",
-            "source": "OpenAIの発表（2026年11月13日）",
-            "quote": "各プロバイダーと連携して、こうした取引がどのように識別されているかを確認できます。",
-            "quote_type": "原文",
-            "highlight": "どのように識別されているか",
+          "from_line": 4,
+          "recap_card": {
+            "title": "まず始めるなら",
             "items": [
-              "OpenAIは、不正よけ・決済の会社と協力",
-              "店は、使っている決済・不正よけの会社に聞ける",
-              "聞くのは: AIの買い物を、どう見分けているか"
+              "カードを預けてある、いつもの店から",
+              "AIに番号を渡す場面が無い",
+              "払い方は、その店でいつも払うのと同じ"
             ]
-          },
-          "reference_index": 0
+          }
         }
       ],
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "店向けの手引きには、こうある。ウォレットのために、店が支払いの画面を作り直す必要はない。今の画面で、そのまま動く。",
+          "text": "でも、公式に言えることもある。メタの日本向けの案内の、ここ。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ミューズは、利用者のパスワードや支払い方法を見られない。商品を買う前には、利用者本人に確認する。AIは、カードの番号そのものを見ない作り、ということね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "体験者の1件目も、番号は前から店に預けてあった。ミューズが番号を入れる場面は、無かった。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だったら、始めるのは、自分がもうカードを預けてある店から。いつもの通販なら、AIに番号を渡す場面が無い。",
           "expression": "excited",
-          "t0": 0.0,
-          "dur": 8.48,
-          "cards": [
-            {
-              "text": "店向けの手引きには、こうある。",
-              "start": 0.0,
-              "end": 2.11
-            },
-            {
-              "text": "ウォレットのために、店が支払いの画面を",
-              "start": 2.26,
-              "end": 5.14
-            },
-            {
-              "text": "作り直す必要はない。今の画面で、",
-              "start": 5.29,
-              "end": 7.54
-            },
-            {
-              "text": "そのまま動く。",
-              "start": 7.69,
-              "end": 8.68
-            }
-          ]
+          "tag": "workaround"
         },
         {
           "speaker": "skeptic",
-          "text": "でも、発表には、こうも書いてある。サイトによっては、AIの買い物を、意図せず止めてしまうことがある。",
-          "expression": "doubt",
-          "tag": "barrier",
-          "t0": 8.76,
-          "dur": 6.68,
-          "cards": [
-            {
-              "text": "でも、発表には、こうも書いてある。",
-              "start": 0.0,
-              "end": 2.17
-            },
-            {
-              "text": "サイトによっては、AIの買い物を、",
-              "start": 2.32,
-              "end": 4.62
-            },
-            {
-              "text": "意図せず止めてしまうことがある。",
-              "start": 4.77,
-              "end": 6.83
-            }
-          ]
+          "text": "カードを預けてある店からなら、公式の作りとも食い違わない。払い方は、その店でいつも払っているのと同じだから。",
+          "expression": "convinced"
         },
         {
           "speaker": "dreamer",
-          "text": "止める？ どうして？",
-          "expression": "surprised",
-          "t0": 15.72,
-          "dur": 2.0,
-          "cards": [
-            {
-              "text": "止める？ どうして？",
-              "start": 0.0,
-              "end": 2.0
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "店の不正よけ。怪しい買い物を見つけて止める仕組みね。それが、AIの正当な買い物を、怪しい取引と見て、断ったり取り消したりすることがある、と発表元が自分で書いてる。",
-          "expression": "doubt",
-          "tag": "weakness",
-          "t0": 18.0,
-          "dur": 12.64,
-          "cards": [
-            {
-              "text": "店の不正よけ。怪しい買い物を見つけて止める",
-              "start": 0.0,
-              "end": 3.15
-            },
-            {
-              "text": "仕組みね。それが、AIの正当な買い物を、",
-              "start": 3.3,
-              "end": 6.54
-            },
-            {
-              "text": "怪しい取引と見て、断ったり取り消したり",
-              "start": 6.69,
-              "end": 9.54
-            },
-            {
-              "text": "することがある、と発表元が自分で書いてる。",
-              "start": 9.69,
-              "end": 12.84
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "AIは、OpenAIの側のコンピューターから、店のサイトを操作する。店の不正よけは、機械が自動でする買い物を、よく見張ってる。だから、AIの買い物も、たまたま引っかかるんだね。",
-          "expression": "thinking",
-          "t0": 30.92,
-          "dur": 12.48,
-          "cards": [
-            {
-              "text": "AIは、OpenAIの側のコンピューターから、",
-              "start": 0.0,
-              "end": 3.14
-            },
-            {
-              "text": "店のサイトを操作する。店の不正よけは、",
-              "start": 3.29,
-              "end": 6.09
-            },
-            {
-              "text": "機械が自動でする買い物を、よく見張ってる。",
-              "start": 6.24,
-              "end": 9.11
-            },
-            {
-              "text": "だから、AIの買い物も、",
-              "start": 9.26,
-              "end": 10.9
-            },
-            {
-              "text": "たまたま引っかかるんだね。",
-              "start": 10.9,
-              "end": 12.68
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "じゃあ、AIのお客は、断られっぱなし？",
-          "expression": "thinking",
-          "t0": 43.68,
-          "dur": 2.8,
-          "cards": [
-            {
-              "text": "じゃあ、AIのお客は、断られっぱなし？",
-              "start": 0.0,
-              "end": 2.8
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "直す道はある。OpenAIは、不正よけの会社や、決済の会社と組んで、AIの正当な買い物を見分けられるようにしてる。",
-          "expression": "excited",
-          "tag": "workaround",
-          "t0": 46.76,
-          "dur": 8.56,
-          "cards": [
-            {
-              "text": "直す道はある。OpenAIは、",
-              "start": 0.0,
-              "end": 2.38
-            },
-            {
-              "text": "不正よけの会社や、決済の会社と組んで、",
-              "start": 2.53,
-              "end": 5.28
-            },
-            {
-              "text": "AIの正当な買い物を",
-              "start": 5.43,
-              "end": 6.88
-            },
-            {
-              "text": "見分けられるようにしてる。",
-              "start": 6.88,
-              "end": 8.76
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "店の側で、できることは？",
-          "expression": "neutral",
-          "t0": 55.6,
-          "dur": 2.0,
-          "cards": [
-            {
-              "text": "店の側で、できることは？",
-              "start": 0.0,
-              "end": 2.0
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "自分の店が使っている決済の会社や、不正よけの会社に、聞いて確かめられる。AIの買い物を、どう見分けているか。そう発表にある。",
-          "expression": "neutral",
-          "t0": 57.88,
-          "dur": 8.88,
-          "cards": [
-            {
-              "text": "自分の店が使っている決済の会社や、",
-              "start": 0.0,
-              "end": 2.46
-            },
-            {
-              "text": "不正よけの会社に、聞いて確かめられる。",
-              "start": 2.61,
-              "end": 5.19
-            },
-            {
-              "text": "AIの買い物を、どう見分けているか。",
-              "start": 5.34,
-              "end": 7.84
-            },
-            {
-              "text": "そう発表にある。",
-              "start": 7.99,
-              "end": 9.08
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "支払いの画面を作り直さなくていいなら、アメリカのお客さんにも売っている店は、まずは確かめるだけで済むわね。",
+          "text": "体験者の2件では、日本でも、払うところまで進んで、払えた。公式の作りも、AIは番号を見ずに、買う前に本人に聞く。",
           "expression": "convinced",
-          "t0": 67.04,
-          "dur": 6.32,
-          "cards": [
-            {
-              "text": "支払いの画面を作り直さなくていいなら、",
-              "start": 0.0,
-              "end": 2.3
-            },
-            {
-              "text": "アメリカのお客さんにも売っている店は、",
-              "start": 2.51,
-              "end": 4.67
-            },
-            {
-              "text": "まずは確かめるだけで済むわね。",
-              "start": 4.82,
-              "end": 6.52
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "ネットの店は、今の支払いの画面のまま、AIのお客を受けられる。断ってしまう問題には、直し方の手引きも一緒に出た。",
-          "expression": "convinced",
-          "tag": "hope",
-          "t0": 73.64,
-          "dur": 9.08,
-          "cards": [
-            {
-              "text": "ネットの店は、今の支払いの画面のまま、",
-              "start": 0.0,
-              "end": 3.04
-            },
-            {
-              "text": "AIのお客を受けられる。",
-              "start": 3.19,
-              "end": 5.08
-            },
-            {
-              "text": "断ってしまう問題には、",
-              "start": 5.08,
-              "end": 6.81
-            },
-            {
-              "text": "直し方の手引きも一緒に出た。",
-              "start": 6.96,
-              "end": 9.06
-            }
-          ]
+          "tag": "hope"
         }
       ],
-      "narration": "大輔「店向けの手引きには、こうある。ウォレットのために、店が支払いの画面を作り直す必要はない。今の画面で、そのまま動く。」\n沙織「でも、発表には、こうも書いてある。サイトによっては、AIの買い物を、意図せず止めてしまうことがある。」\n大輔「止める？ どうして？」\n沙織「店の不正よけ。怪しい買い物を見つけて止める仕組みね。それが、AIの正当な買い物を、怪しい取引と見て、断ったり取り消したりすることがある、と発表元が自分で書いてる。」\n大輔「AIは、OpenAIの側のコンピューターから、店のサイトを操作する。店の不正よけは、機械が自動でする買い物を、よく見張ってる。だから、AIの買い物も、たまたま引っかかるんだね。」\n沙織「じゃあ、AIのお客は、断られっぱなし？」\n大輔「直す道はある。OpenAIは、不正よけの会社や、決済の会社と組んで、AIの正当な買い物を見分けられるようにしてる。」\n沙織「店の側で、できることは？」\n大輔「自分の店が使っている決済の会社や、不正よけの会社に、聞いて確かめられる。AIの買い物を、どう見分けているか。そう発表にある。」\n沙織「支払いの画面を作り直さなくていいなら、アメリカのお客さんにも売っている店は、まずは確かめるだけで済むわね。」\n大輔「ネットの店は、今の支払いの画面のまま、AIのお客を受けられる。断ってしまう問題には、直し方の手引きも一緒に出た。」\n［画面の資料カード］OpenAI 店向けの手引き（支払いの受け方） 「No Wallet-specific integration is required.」（原文） ・今の支払いの画面で、そのまま動く ・ウォレットのために作り直す必要はない\n［画面の資料カード］OpenAIの発表（2026年11月13日） 「サイトによっては、ChatGPT ウォレットやその他のエージェント向け決済サービスを通じた購入を意図せずブロックしてしまう場合があります。」（原文） ・サイトによっては、AIの買い物を意図せず止める ・例: 不正よけが、正当な買い物を怪しいと見て断る\n［画面の資料カード］OpenAIの発表（2026年11月13日） 「各プロバイダーと連携して、こうした取引がどのように識別されているかを確認できます。」（原文） ・OpenAIは、不正よけ・決済の会社と協力 ・店は、使っている決済・不正よけの会社に聞ける ・聞くのは: AIの買い物を、どう見分けているか",
       "narrator": "dialogue",
-      "lines_hash": "1ac609acd9d5"
+      "narration": "大輔「でも、公式に言えることもある。メタの日本向けの案内の、ここ。」\n沙織「ミューズは、利用者のパスワードや支払い方法を見られない。商品を買う前には、利用者本人に確認する。AIは、カードの番号そのものを見ない作り、ということね。」\n大輔「体験者の1件目も、番号は前から店に預けてあった。ミューズが番号を入れる場面は、無かった。」\n大輔「だったら、始めるのは、自分がもうカードを預けてある店から。いつもの通販なら、AIに番号を渡す場面が無い。」\n沙織「カードを預けてある店からなら、公式の作りとも食い違わない。払い方は、その店でいつも払っているのと同じだから。」\n大輔「体験者の2件では、日本でも、払うところまで進んで、払えた。公式の作りも、AIは番号を見ずに、買う前に本人に聞く。」\n［画面の資料カード］メタの日本向けの案内（2026年10月23日） 「Museは利用者のパスワードや支払い方法を確認できず、メールの送信や商品の購入など重要な操作の前には利用者本人に確認します。」（原文） ・AIは、パスワードや支払い方法を見られない ・商品を買う前には、本人に確認する\n［画面のまとめカード（ふりかえり）］まず始めるなら ・カードを預けてある、いつもの店から ・AIに番号を渡す場面が無い ・払い方は、その店でいつも払うのと同じ"
     },
     {
       "scene_id": 8,
       "type": "paper",
       "round": 2,
-      "round_title": "AIに払わせて、カードは大丈夫？",
+      "round_title": "最後のひと押しは、なぜ残る？",
       "bgm_role": "main",
       "ken_burns": "zoom_out",
-      "image_prompt": "Close-up of a hand resting a fingertip on the fingerprint area of a smartphone held over a wooden table in warm evening light. The phone screen shows a simple generic confirmation panel made of abstract shapes: a small product picture tile, a plain total line, a small card-shaped icon and a fingerprint symbol, with no readable text and no logos. A plain credit card with no printed numbers, no name and no logo lies face down on the table next to a coffee cup. Only the hand is visible, no face. Background softly blurred living room continuing to the edges. Reassuring, calm mood. No readable text, no logos, no brand names. Warm editorial illustration style.",
+      "image_prompt": "Close-up of a hand holding a smartphone over a wooden kitchen table in warm daylight, a fingertip hovering above a large round button on the screen. The screen shows only a simple generic confirmation panel made of abstract shapes: a small product tile, a plain total bar, a small card-shaped icon and the round button, with no readable text and no logos. Next to the phone, a few everyday household refills (a roll of paper towels, a bottle of dish soap with a plain label) are lined up. Only the hand is visible, no face. Background softly blurred home kitchen continuing to the edges. Reassuring, calm mood. No readable text, no logos, no brand names. Warm editorial illustration style.",
       "visuals": [
         {
           "from_line": 1,
           "scene_image": true
         },
         {
-          "from_line": 4,
+          "from_line": 5,
           "source_card": {
             "kind": "press",
-            "source": "OpenAIの発表（2026年11月13日）",
-            "quote": "ChatGPT ウォレットがユーザーの実際のカード情報を企業やエージェントと共有することはありません。",
+            "source": "メタの日本向けの案内（2026年10月23日）",
+            "quote": "利用者は、Museが行った操作や今後行う予定の操作の履歴を確認できます。",
             "quote_type": "原文",
-            "highlight": "共有することはありません",
+            "highlight": "履歴を確認できます",
             "items": [
-              "本物のカード情報は、店にもAIにも渡さない",
-              "承認すると、身代わりの番号（番号・裏の数字・期限）",
-              "代金は、いつものカードに請求"
+              "やったこと・これからやる予定を、履歴で見られる"
             ]
           },
           "reference_index": 0
-        },
-        {
-          "from_line": 6,
-          "source_card": {
-            "kind": "docs",
-            "source": "OpenAI 店向けの手引き（支払いの受け方）",
-            "quote": "The customer consents only to the specific transaction.",
-            "quote_type": "原文",
-            "highlight": "only to the specific transaction",
-            "items": [
-              "客が同意したのは、その1回の取引だけ",
-              "別の買い物に使い回さない・保存しない"
-            ]
-          },
-          "reference_index": 2
-        },
-        {
-          "from_line": 7,
-          "scene_image": true
         }
       ],
       "lines": [
         {
-          "speaker": "skeptic",
-          "text": "2つ目は、私の予想の、一番の引っかかり。本物のカード番号の代わりに、何が渡るの？",
-          "expression": "doubt",
-          "t0": 0.0,
-          "dur": 6.2,
-          "cards": [
-            {
-              "text": "2つ目は、私の予想の、一番の引っかかり。",
-              "start": 0.0,
-              "end": 3.02
-            },
-            {
-              "text": "本物のカード番号の代わりに、何が渡るの？",
-              "start": 3.28,
-              "end": 6.28
-            }
-          ]
-        },
-        {
           "speaker": "dreamer",
-          "text": "ここが、今回いちばん面白いところ。本物のカード番号は、AIにも店にも渡さない、と発表にある。",
-          "expression": "excited",
-          "t0": 6.48,
-          "dur": 7.88,
-          "cards": [
-            {
-              "text": "ここが、今回いちばん面白いところ。",
-              "start": 0.0,
-              "end": 2.8
-            },
-            {
-              "text": "本物のカード番号は、AIにも店にも渡さない、",
-              "start": 3.28,
-              "end": 6.7
-            },
-            {
-              "text": "と発表にある。",
-              "start": 6.9,
-              "end": 7.95
-            }
-          ]
+          "text": "2つ目。払う前の、最後のひと押し。体験者に聞いたら、払っていいか、を確かめる画面は、ちゃんと出た。",
+          "expression": "excited"
         },
         {
           "speaker": "skeptic",
-          "text": "じゃあ、店は何で代金を受け取るの？",
-          "expression": "surprised",
-          "t0": 14.64,
-          "dur": 2.56,
-          "cards": [
-            {
-              "text": "じゃあ、店は何で代金を受け取るの？",
-              "start": 0.0,
-              "end": 2.56
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "承認すると、ビザやマスターカードのような、カードの会社の側が、その買い物のための番号を出す。この回では、身代わりの番号と呼ぼう。カードの番号も、裏の確認の数字も、有効期限も、身代わり。代金は、いつものカードに請求される。",
-          "expression": "neutral",
-          "t0": 17.48,
-          "dur": 16.92,
-          "cards": [
-            {
-              "text": "承認すると、ビザやマスターカードのような、",
-              "start": 0.0,
-              "end": 3.09
-            },
-            {
-              "text": "カードの会社の側が、",
-              "start": 3.24,
-              "end": 4.71
-            },
-            {
-              "text": "その買い物のための番号を出す。",
-              "start": 4.71,
-              "end": 6.92
-            },
-            {
-              "text": "この回では、身代わりの番号と呼ぼう。",
-              "start": 7.07,
-              "end": 9.72
-            },
-            {
-              "text": "カードの番号も、裏の確認の数字も、",
-              "start": 9.87,
-              "end": 12.53
-            },
-            {
-              "text": "有効期限も、身代わり。代金は、",
-              "start": 12.68,
-              "end": 14.91
-            },
-            {
-              "text": "いつものカードに請求される。",
-              "start": 15.06,
-              "end": 17.12
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "身代わりの番号を、店が取っておいて、別の買い物に使ったら？",
-          "expression": "doubt",
-          "t0": 34.68,
-          "dur": 4.72,
-          "cards": [
-            {
-              "text": "身代わりの番号を、店が取っておいて、",
-              "start": 0.24,
-              "end": 2.94
-            },
-            {
-              "text": "別の買い物に使ったら？",
-              "start": 3.09,
-              "end": 4.74
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "使い回しも、店向けの手引きに答えがある。客が同意したのは、その1回の取引だけ。別の買い物に使い回したり、保存したりしないこと、と店に書いてる。",
-          "expression": "neutral",
-          "t0": 39.68,
-          "dur": 11.28,
-          "cards": [
-            {
-              "text": "使い回しも、店向けの手引きに答えがある。",
-              "start": 0.0,
-              "end": 3.28
-            },
-            {
-              "text": "客が同意したのは、その1回の取引だけ。",
-              "start": 3.53,
-              "end": 6.38
-            },
-            {
-              "text": "別の買い物に使い回したり、",
-              "start": 6.53,
-              "end": 8.48
-            },
-            {
-              "text": "保存したりしないこと、",
-              "start": 8.48,
-              "end": 10.13
-            },
-            {
-              "text": "と店に書いてる。",
-              "start": 10.28,
-              "end": 11.48
-            }
-          ]
+          "text": "メタの日本向けの案内のとおりね。買う前には、本人に確認する。",
+          "expression": "neutral"
         },
         {
           "speaker": "skeptic",
           "text": "資料には無い、私の願いだけど。本物なら、離れて住む親の、日用品の買い足しに使いたい。足りない物を私が確かめて、親の家に届くように、AIに買ってもらう。",
           "expression": "amused",
-          "tag": "skeptic_wish",
-          "t0": 51.24,
-          "dur": 12.04,
-          "cards": [
-            {
-              "text": "資料には無い、私の願いだけど。本物なら、",
-              "start": 0.0,
-              "end": 3.54
-            },
-            {
-              "text": "離れて住む親の、",
-              "start": 3.69,
-              "end": 4.89
-            },
-            {
-              "text": "日用品の買い足しに使いたい。",
-              "start": 4.89,
-              "end": 6.99
-            },
-            {
-              "text": "足りない物を私が確かめて、",
-              "start": 7.14,
-              "end": 9.09
-            },
-            {
-              "text": "親の家に届くように、",
-              "start": 9.09,
-              "end": 10.59
-            },
-            {
-              "text": "AIに買ってもらう。",
-              "start": 10.74,
-              "end": 12.24
-            }
-          ]
+          "tag": "skeptic_wish"
         },
         {
           "speaker": "dreamer",
-          "text": "親の分に使うなら、何を買ったかを、後から確かめたいね。",
-          "expression": "thinking",
-          "t0": 63.56,
-          "dur": 4.44,
-          "cards": [
-            {
-              "text": "親の分に使うなら、何を買ったかを、",
-              "start": 0.0,
-              "end": 2.9
-            },
-            {
-              "text": "後から確かめたいね。",
-              "start": 3.05,
-              "end": 4.55
-            }
-          ]
+          "text": "親の分なら、何を買ったか、後から見たいね。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "後から見る方法は、メタの日本向けの案内にある。ミューズがやったことと、これからやる予定のことを、履歴で見られる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、ミューズのヘルプには、こうも書いてある。ミューズは間違えることがある。承認する責任は、利用者にある。",
+          "expression": "doubt",
+          "tag": "barrier"
         }
       ],
-      "narration": "沙織「2つ目は、私の予想の、一番の引っかかり。本物のカード番号の代わりに、何が渡るの？」\n大輔「ここが、今回いちばん面白いところ。本物のカード番号は、AIにも店にも渡さない、と発表にある。」\n沙織「じゃあ、店は何で代金を受け取るの？」\n大輔「承認すると、ビザやマスターカードのような、カードの会社の側が、その買い物のための番号を出す。この回では、身代わりの番号と呼ぼう。カードの番号も、裏の確認の数字も、有効期限も、身代わり。代金は、いつものカードに請求される。」\n沙織「身代わりの番号を、店が取っておいて、別の買い物に使ったら？」\n大輔「使い回しも、店向けの手引きに答えがある。客が同意したのは、その1回の取引だけ。別の買い物に使い回したり、保存したりしないこと、と店に書いてる。」\n沙織「資料には無い、私の願いだけど。本物なら、離れて住む親の、日用品の買い足しに使いたい。足りない物を私が確かめて、親の家に届くように、AIに買ってもらう。」\n大輔「親の分に使うなら、何を買ったかを、後から確かめたいね。」\n［画面の資料カード］OpenAIの発表（2026年11月13日） 「ChatGPT ウォレットがユーザーの実際のカード情報を企業やエージェントと共有することはありません。」（原文） ・本物のカード情報は、店にもAIにも渡さない ・承認すると、身代わりの番号（番号・裏の数字・期限） ・代金は、いつものカードに請求\n［画面の資料カード］OpenAI 店向けの手引き（支払いの受け方） 「The customer consents only to the specific transaction.」（原文） ・客が同意したのは、その1回の取引だけ ・別の買い物に使い回さない・保存しない",
       "narrator": "dialogue",
-      "lines_hash": "93ad5cf2376f",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "narration": "大輔「2つ目。払う前の、最後のひと押し。体験者に聞いたら、払っていいか、を確かめる画面は、ちゃんと出た。」\n沙織「メタの日本向けの案内のとおりね。買う前には、本人に確認する。」\n沙織「資料には無い、私の願いだけど。本物なら、離れて住む親の、日用品の買い足しに使いたい。足りない物を私が確かめて、親の家に届くように、AIに買ってもらう。」\n大輔「親の分なら、何を買ったか、後から見たいね。」\n大輔「後から見る方法は、メタの日本向けの案内にある。ミューズがやったことと、これからやる予定のことを、履歴で見られる。」\n沙織「ただ、ミューズのヘルプには、こうも書いてある。ミューズは間違えることがある。承認する責任は、利用者にある。」\n［画面の資料カード］メタの日本向けの案内（2026年10月23日） 「利用者は、Museが行った操作や今後行う予定の操作の履歴を確認できます。」（原文） ・やったこと・これからやる予定を、履歴で見られる"
     },
     {
       "scene_id": 9,
@@ -1843,598 +656,184 @@
         {
           "from_line": 1,
           "source_card": {
-            "kind": "press",
-            "source": "OpenAIの発表（2026年11月13日）",
-            "quote": "これにより、ユーザーがどの購入をエージェントに許可したかが記録されます。",
+            "kind": "docs",
+            "source": "ミューズのヘルプ（2026年11月19日確認）",
+            "quote": "サードパーティのサービスや受信者との間で発生したエラーを含め、エラーの修正は利用者の責任です。",
             "quote_type": "原文",
-            "highlight": "記録されます",
+            "highlight": "エラーの修正は利用者の責任",
             "items": [
-              "承認のたびに、記録が残る",
-              "どの買い物をAIに許したか"
+              "ミューズは間違えることがある",
+              "承認する責任は、利用者に"
             ]
           },
-          "reference_index": 0
+          "reference_index": 1
         },
         {
           "from_line": 2,
-          "source_card": {
-            "kind": "web",
-            "source": "OpenAI ドットの紹介のページ（2026年11月3日更新）",
-            "quote": "dot も間違えることがあるため、重要な結果につながる作業は必ず確認してください。",
-            "quote_type": "原文",
-            "highlight": "dot も間違えることがある",
+          "recap_card": {
+            "title": "ひと押しの前に見る3つ",
             "items": [
-              "ドット（dot）も間違えることがある",
-              "重要な結果につながる作業は、必ず確認"
+              "何を",
+              "いくらで",
+              "どの店で"
             ]
-          },
-          "reference_index": 4
+          }
         },
         {
           "from_line": 3,
           "source_card": {
             "kind": "docs",
-            "source": "OpenAI 店向けの手引き（AIのアクセスへの対応）",
-            "quote": "Customers are ultimately responsible for the actions they take",
+            "source": "ミューズのヘルプ（2026年11月19日確認）",
+            "quote": "学習段階では、Museの仕組みに慣れるまで、リスクの少ないタスクから始めましょう。",
             "quote_type": "原文",
-            "highlight": "ultimately responsible",
+            "highlight": "リスクの少ないタスクから",
             "items": [
-              "支払いや注文の誤りは、最終的に客の責任",
-              "店は、客が自分で操作したときと同じ対応"
+              "慣れるまでは、危なくない用事から"
+            ]
+          },
+          "reference_index": 1
+        },
+        {
+          "from_line": 4,
+          "source_card": {
+            "kind": "press",
+            "source": "ストライプの発表（2026年9月8日、米国時間）",
+            "quote": "いずれのケースでも、最終的な取引金額の承認はユーザー自身がチャットのインターフェース上で行う仕組みです。",
+            "quote_type": "原文",
+            "highlight": "ユーザー自身",
+            "items": [
+              "最後の金額は、本人がチャットの画面で承認",
+              "メタと組んでいる会社の説明（米国向け）"
             ]
           },
           "reference_index": 3
-        },
-        {
-          "from_line": 5,
-          "recap_card": {
-            "title": "最後の1回で見る3つ",
-            "items": [
-              "商品",
-              "合計の金額",
-              "使うカード"
-            ]
-          }
-        },
-        {
-          "from_line": 6,
-          "source_card": {
-            "kind": "press",
-            "source": "OpenAIの発表（2026年11月13日）",
-            "quote": "適用条件を満たしていれば、カードに付帯する保護を引き続き受けられます。",
-            "quote_type": "原文",
-            "highlight": "引き続き受けられます",
-            "items": [
-              "商品の不良など、店との取引のトラブル",
-              "カードに付いている保護も、そのまま"
-            ]
-          },
-          "reference_index": 0
         }
       ],
       "lines": [
         {
-          "speaker": "dreamer",
-          "text": "記録は残る。どの買い物をAIに許したかが、承認のたびに記録される、と発表にある。",
-          "expression": "neutral",
-          "t0": 0.0,
-          "dur": 5.96,
-          "cards": [
-            {
-              "text": "記録は残る。どの買い物をAIに許したかが、",
-              "start": 0.0,
-              "end": 3.25
-            },
-            {
-              "text": "承認のたびに記録される、と発表にある。",
-              "start": 3.4,
-              "end": 6.16
-            }
-          ]
-        },
-        {
           "speaker": "skeptic",
-          "text": "でも、AIが間違えたら？ AIの助手、ドットの紹介のページにも、間違えることがある、と書いてある。",
-          "expression": "doubt",
-          "tag": "barrier",
-          "t0": 6.24,
-          "dur": 6.88,
-          "cards": [
-            {
-              "text": "でも、AIが間違えたら？ AIの助手、",
-              "start": 0.0,
-              "end": 2.75
-            },
-            {
-              "text": "ドットの紹介のページにも、",
-              "start": 2.9,
-              "end": 4.65
-            },
-            {
-              "text": "間違えることがある、",
-              "start": 4.65,
-              "end": 5.99
-            },
-            {
-              "text": "と書いてある。",
-              "start": 6.14,
-              "end": 7.08
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "それに、店向けの手引きには、支払いや注文の誤りは、最終的に客の責任、とある。",
-          "expression": "doubt",
-          "t0": 13.34,
-          "dur": 7.0,
-          "cards": [
-            {
-              "text": "それに、店向けの手引きには、",
-              "start": 0.0,
-              "end": 2.28
-            },
-            {
-              "text": "支払いや注文の誤りは、最終的に客の責任、",
-              "start": 2.5,
-              "end": 6.26
-            },
-            {
-              "text": "とある。",
-              "start": 6.41,
-              "end": 7.01
-            }
-          ]
+          "text": "間違いを直すのも、利用者の責任。店との間で起きた間違いも含めて、とある。",
+          "expression": "doubt"
         },
         {
           "speaker": "dreamer",
-          "text": "客の責任か。店は、客が自分で操作したときと同じように対応する、ってことだね。",
-          "expression": "thinking",
-          "t0": 20.62,
-          "dur": 6.36,
-          "cards": [
-            {
-              "text": "客の責任か。店は、客が自分で操作したときと",
-              "start": 0.0,
-              "end": 3.86
-            },
-            {
-              "text": "同じように対応する、ってことだね。",
-              "start": 4.01,
-              "end": 6.56
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "だったら、間違いは、最後の1回で止める。見るのは3つだけ。商品、合計の金額、使うカード。",
+          "text": "だから、最後のひと押しが残ってるんだね。押す前に見るのは、何を、いくらで、どの店で、の3つ。",
           "expression": "excited",
-          "tag": "workaround",
-          "t0": 27.2,
-          "dur": 8.28,
-          "cards": [
-            {
-              "text": "だったら、間違いは、最後の1回で止める。",
-              "start": 0.0,
-              "end": 3.02
-            },
-            {
-              "text": "見るのは3つだけ。商品、合計の金額、",
-              "start": 3.18,
-              "end": 6.86
-            },
-            {
-              "text": "使うカード。",
-              "start": 7.01,
-              "end": 8.07
-            }
-          ]
+          "tag": "workaround"
         },
         {
           "speaker": "skeptic",
-          "text": "それと、商品の不良みたいな、店とのトラブルなら、条件を満たせば、カードに付いている保護も、今までどおり受けられる、と発表にある。",
-          "expression": "neutral",
-          "t0": 35.76,
-          "dur": 8.72,
-          "cards": [
-            {
-              "text": "それと、商品の不良みたいな、",
-              "start": 0.0,
-              "end": 2.01
-            },
-            {
-              "text": "店とのトラブルなら、条件を満たせば、",
-              "start": 2.16,
-              "end": 4.49
-            },
-            {
-              "text": "カードに付いている保護も、",
-              "start": 4.64,
-              "end": 6.32
-            },
-            {
-              "text": "今までどおり受けられる、",
-              "start": 6.32,
-              "end": 7.87
-            },
-            {
-              "text": "と発表にある。",
-              "start": 8.02,
-              "end": 8.92
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "どれもOpenAIの資料の説明だけど、私の心配には答えがあった。代わりに渡るのは、カードの会社が出す、1回きりの身代わりの番号。店も、使い回さない決まり。",
-          "expression": "convinced",
-          "tag": "turn",
-          "t0": 44.7,
-          "dur": 11.28,
-          "cards": [
-            {
-              "text": "どれもOpenAIの資料の説明だけど、",
-              "start": 0.0,
-              "end": 2.67
-            },
-            {
-              "text": "私の心配には答えがあった。",
-              "start": 2.82,
-              "end": 4.65
-            },
-            {
-              "text": "代わりに渡るのは、",
-              "start": 4.65,
-              "end": 5.91
-            },
-            {
-              "text": "カードの会社が出す、",
-              "start": 6.06,
-              "end": 7.46
-            },
-            {
-              "text": "1回きりの身代わりの番号。",
-              "start": 7.46,
-              "end": 9.29
-            },
-            {
-              "text": "店も、使い回さない決まり。",
-              "start": 9.44,
-              "end": 11.27
-            }
-          ]
+          "text": "ヘルプには、慣れるまでは、危なくない用事から始めよう、ともある。",
+          "expression": "neutral"
         },
         {
           "speaker": "dreamer",
-          "text": "許すのは、その1回だけ。カードを丸ごと預けずに、AIに払ってもらう形はできた。",
+          "text": "ミューズと組んでいるストライプも、アメリカ向けの説明で、最後の金額は、本人がチャットの画面で承認する、と書いてる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "組んでいる会社の説明だから、第三者の評価ではないわね。でも、メタの言っていることとは、そろってる。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "認めるわ。私の予想の理由は、どう払うかが書いてないこと、だった。でも、作りははっきりしてた。AIは番号を見ない。買う前に、本人に聞く。体験者の画面にも、その確認が出た。",
           "expression": "convinced",
-          "tag": "hope",
-          "t0": 56.26,
-          "dur": 6.36,
-          "cards": [
-            {
-              "text": "許すのは、その1回だけ。",
-              "start": 0.0,
-              "end": 1.97
-            },
-            {
-              "text": "カードを丸ごと預けずに、",
-              "start": 1.97,
-              "end": 3.94
-            },
-            {
-              "text": "AIに払ってもらう形はできた。",
-              "start": 4.09,
-              "end": 6.34
-            }
-          ]
+          "tag": "turn"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "最後のひと押しは、安心して任せるための一手間。番号はAIに見せずに、中身と金額を見て押す。その形が、日本でも、もう動いてる。",
+          "expression": "convinced",
+          "tag": "hope"
         }
       ],
-      "narration": "大輔「記録は残る。どの買い物をAIに許したかが、承認のたびに記録される、と発表にある。」\n沙織「でも、AIが間違えたら？ AIの助手、ドットの紹介のページにも、間違えることがある、と書いてある。」\n沙織「それに、店向けの手引きには、支払いや注文の誤りは、最終的に客の責任、とある。」\n大輔「客の責任か。店は、客が自分で操作したときと同じように対応する、ってことだね。」\n大輔「だったら、間違いは、最後の1回で止める。見るのは3つだけ。商品、合計の金額、使うカード。」\n沙織「それと、商品の不良みたいな、店とのトラブルなら、条件を満たせば、カードに付いている保護も、今までどおり受けられる、と発表にある。」\n沙織「どれもOpenAIの資料の説明だけど、私の心配には答えがあった。代わりに渡るのは、カードの会社が出す、1回きりの身代わりの番号。店も、使い回さない決まり。」\n大輔「許すのは、その1回だけ。カードを丸ごと預けずに、AIに払ってもらう形はできた。」\n［画面の資料カード］OpenAIの発表（2026年11月13日） 「これにより、ユーザーがどの購入をエージェントに許可したかが記録されます。」（原文） ・承認のたびに、記録が残る ・どの買い物をAIに許したか\n［画面の資料カード］OpenAI ドットの紹介のページ（2026年11月3日更新） 「dot も間違えることがあるため、重要な結果につながる作業は必ず確認してください。」（原文） ・ドット（dot）も間違えることがある ・重要な結果につながる作業は、必ず確認\n［画面の資料カード］OpenAI 店向けの手引き（AIのアクセスへの対応） 「Customers are ultimately responsible for the actions they take」（原文） ・支払いや注文の誤りは、最終的に客の責任 ・店は、客が自分で操作したときと同じ対応\n［画面のまとめカード（ふりかえり）］最後の1回で見る3つ ・商品 ・合計の金額 ・使うカード\n［画面の資料カード］OpenAIの発表（2026年11月13日） 「適用条件を満たしていれば、カードに付帯する保護を引き続き受けられます。」（原文） ・商品の不良など、店との取引のトラブル ・カードに付いている保護も、そのまま",
       "narrator": "dialogue",
-      "lines_hash": "bc0ec3bb34c0"
+      "narration": "沙織「間違いを直すのも、利用者の責任。店との間で起きた間違いも含めて、とある。」\n大輔「だから、最後のひと押しが残ってるんだね。押す前に見るのは、何を、いくらで、どの店で、の3つ。」\n沙織「ヘルプには、慣れるまでは、危なくない用事から始めよう、ともある。」\n大輔「ミューズと組んでいるストライプも、アメリカ向けの説明で、最後の金額は、本人がチャットの画面で承認する、と書いてる。」\n沙織「組んでいる会社の説明だから、第三者の評価ではないわね。でも、メタの言っていることとは、そろってる。」\n沙織「認めるわ。私の予想の理由は、どう払うかが書いてないこと、だった。でも、作りははっきりしてた。AIは番号を見ない。買う前に、本人に聞く。体験者の画面にも、その確認が出た。」\n大輔「最後のひと押しは、安心して任せるための一手間。番号はAIに見せずに、中身と金額を見て押す。その形が、日本でも、もう動いてる。」\n［画面の資料カード］ミューズのヘルプ（2026年11月19日確認） 「サードパーティのサービスや受信者との間で発生したエラーを含め、エラーの修正は利用者の責任です。」（原文） ・ミューズは間違えることがある ・承認する責任は、利用者に\n［画面のまとめカード（ふりかえり）］ひと押しの前に見る3つ ・何を ・いくらで ・どの店で\n［画面の資料カード］ミューズのヘルプ（2026年11月19日確認） 「学習段階では、Museの仕組みに慣れるまで、リスクの少ないタスクから始めましょう。」（原文） ・慣れるまでは、危なくない用事から\n［画面の資料カード］ストライプの発表（2026年9月8日、米国時間） 「いずれのケースでも、最終的な取引金額の承認はユーザー自身がチャットのインターフェース上で行う仕組みです。」（原文） ・最後の金額は、本人がチャットの画面で承認 ・メタと組んでいる会社の説明（米国向け）"
     },
     {
       "scene_id": 10,
       "type": "paper",
       "round": 3,
-      "round_title": "最後の1回も、いらなくなる？",
+      "round_title": "任せきりには、何が足りない？",
       "bgm_role": "main",
       "ken_burns": "zoom_out",
-      "image_prompt": "The small back storage room of a modest Japanese shop or office, seen at eye level: neat metal shelves stocked with everyday consumables — stacks of plain copy paper reams, rolls of garbage bags, boxes of paper towels, cleaning spray bottles with plain labels. A cardboard delivery box sits on the floor, freshly arrived and opened. Soft daylight from a small window. No people. The shelves continue to the left and right edges. Hopeful, orderly mood. No readable text, no logos, no brand names. Warm editorial illustration style.",
+      "image_prompt": "The small back storage room of a modest Japanese shop, seen at eye level: neat metal shelves stocked with everyday consumables — stacks of plain copy paper reams, rolls of garbage bags, boxes of paper towels, and a few bags of pet food with plain labels showing only a simple paw shape. A cardboard delivery box sits on the floor, freshly arrived and opened. Soft daylight from a small window. No people. The shelves continue to the left and right edges. Hopeful, orderly mood. No readable text, no logos, no brand names. Warm editorial illustration style.",
       "visuals": [
         {
           "from_line": 1,
-          "source_card": {
-            "kind": "press",
-            "source": "OpenAIの発表（2026年11月13日）",
-            "quote": "その範囲内の購入を事前に承認することで、エージェントにすべて任せられるようになると考えています。",
-            "quote_type": "原文",
-            "highlight": "すべて任せられるようになると考えています",
-            "items": [
-              "将来の形（今は提供していない）",
-              "決めるのは: 使う金額の上限・品目・期間",
-              "生体認証・承認の記録など、守りをさらに強く"
-            ]
-          },
-          "reference_index": 0
+          "scene_image": true
         },
         {
-          "from_line": 7,
-          "scene_image": true
+          "from_line": 3,
+          "source_card": {
+            "kind": "web",
+            "source": "JCB 加盟店向けのお知らせ（3Dセキュアの説明）",
+            "quote": "オンラインショッピングをより安全に行うための本人認証サービスです。",
+            "quote_type": "原文",
+            "highlight": "本人認証サービス",
+            "items": [
+              "その時だけのパスワードなどで本人を確かめる"
+            ]
+          },
+          "reference_index": 6
+        },
+        {
+          "from_line": 5,
+          "source_card": {
+            "kind": "docs",
+            "source": "ミューズのヘルプ（2026年11月19日確認）",
+            "quote": "支払いや購入などの機密性の高いアクションの実行前に利用者による確認を求めます。",
+            "quote_type": "原文",
+            "highlight": "実行前に利用者による確認",
+            "items": [
+              "支払い・購入の前には、利用者に確認",
+              "購入を毎回聞かずに、とは書いていない"
+            ]
+          },
+          "reference_index": 1
         }
       ],
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "3つ目。いよいよ任せきり。OpenAIは、将来こうしたい、と発表に書いてる。",
+          "text": "3つ目。いよいよ、任せきり。僕の夢は、店の消耗品や、ペットフード。月に1万円までなら、毎回聞かずに、AIが買っておいてくれる。",
           "expression": "excited",
-          "t0": 0.0,
-          "dur": 5.88,
-          "cards": [
-            {
-              "text": "3つ目。いよいよ任せきり。OpenAIは、",
-              "start": 0.0,
-              "end": 3.38
-            },
-            {
-              "text": "将来こうしたい、と発表に書いてる。",
-              "start": 3.53,
-              "end": 6.08
-            }
-          ]
+          "tag": "use_case"
         },
         {
           "speaker": "skeptic",
-          "text": "将来の話ね。どんな形？",
-          "expression": "thinking",
-          "t0": 6.16,
-          "dur": 2.36,
-          "cards": [
-            {
-              "text": "将来の話ね。どんな形？",
-              "start": 0.0,
-              "end": 2.36
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "使う金額の上限、買う品目、期間を決めて、その範囲の買い物を、前もって許しておく。そうすれば、AIにすべて任せられるようになる、と考えている。",
-          "expression": "excited",
-          "t0": 8.8,
-          "dur": 11.32,
-          "cards": [
-            {
-              "text": "使う金額の上限、買う品目、期間を決めて、",
-              "start": 0.0,
-              "end": 3.57
-            },
-            {
-              "text": "その範囲の買い物を、前もって許しておく。",
-              "start": 3.72,
-              "end": 6.72
-            },
-            {
-              "text": "そうすれば、",
-              "start": 6.87,
-              "end": 7.77
-            },
-            {
-              "text": "AIにすべて任せられるようになる、",
-              "start": 7.77,
-              "end": 10.32
-            },
-            {
-              "text": "と考えている。",
-              "start": 10.47,
-              "end": 11.52
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "上限と品目と期間を、先に決めておくのね。ただ、今はまだ提供していない、将来の形でしょ。",
+          "text": "まず、体験者の体験から。カード会社の本人確認で止まって、自分で操作したケースもあった、と聞いてる。スリーディーセキュアというものね。",
           "expression": "doubt",
-          "t0": 20.4,
-          "dur": 7.36,
-          "cards": [
-            {
-              "text": "上限と品目と期間を、先に決めておくのね。",
-              "start": 0.0,
-              "end": 3.42
-            },
-            {
-              "text": "ただ、今はまだ提供していない、",
-              "start": 3.57,
-              "end": 5.93
-            },
-            {
-              "text": "将来の形でしょ。",
-              "start": 6.08,
-              "end": 7.28
-            }
-          ]
+          "tag": "barrier",
+          "display": "まず、体験者の体験から。カード会社の本人確認で止まって、自分で操作したケースもあった、と聞いてる。3Dセキュアというものね。"
         },
         {
           "speaker": "dreamer",
-          "text": "今は、まだ。でも、形はもう書いてある。そのときは、顔や指紋で本人かを確かめる仕組みや、何を許したかの記録を、今よりさらに強くする想定だ、と書いてある。",
+          "text": "スリーディーセキュアは、ネットでカードを使うとき、カード会社が、その時だけのパスワードなどで、本人かどうかを確かめる手続き。",
           "expression": "neutral",
-          "t0": 28.04,
-          "dur": 10.28,
-          "cards": [
-            {
-              "text": "今は、まだ。でも、形はもう書いてある。",
-              "start": 0.0,
-              "end": 2.49
-            },
-            {
-              "text": "そのときは、",
-              "start": 2.66,
-              "end": 3.45
-            },
-            {
-              "text": "顔や指紋で本人かを確かめる仕組みや、",
-              "start": 3.45,
-              "end": 5.81
-            },
-            {
-              "text": "何を許したかの記録を、",
-              "start": 6.04,
-              "end": 7.52
-            },
-            {
-              "text": "今よりさらに強くする想定だ、",
-              "start": 7.52,
-              "end": 9.41
-            },
-            {
-              "text": "と書いてある。",
-              "start": 9.56,
-              "end": 10.48
-            }
-          ]
+          "display": "3Dセキュアは、ネットでカードを使うとき、カード会社が、その時だけのパスワードなどで、本人かどうかを確かめる手続き。"
         },
         {
           "speaker": "skeptic",
-          "text": "毎回押さなくなる代わりに、守りのほうを固くする、ということね。どの場面で、どう確かめるかまでは、まだ書いてないけど。で、任せきりになったら、何に使いたいの？",
+          "text": "どの買い物で止まったかまでは、ここでは言えない。それと、ミューズの公式の案内には、スリーディーセキュアの話は書いてない。",
           "expression": "thinking",
-          "t0": 38.6,
-          "dur": 10.68,
-          "cards": [
-            {
-              "text": "毎回押さなくなる代わりに、",
-              "start": 0.0,
-              "end": 1.79
-            },
-            {
-              "text": "守りのほうを固くする、",
-              "start": 1.79,
-              "end": 3.3
-            },
-            {
-              "text": "ということね。どの場面で、",
-              "start": 3.45,
-              "end": 5.18
-            },
-            {
-              "text": "どう確かめるかまでは、",
-              "start": 5.18,
-              "end": 6.64
-            },
-            {
-              "text": "まだ書いてないけど。",
-              "start": 6.79,
-              "end": 8.1
-            },
-            {
-              "text": "で、任せきりになったら、",
-              "start": 8.1,
-              "end": 9.68
-            },
-            {
-              "text": "何に使いたいの？",
-              "start": 9.83,
-              "end": 10.88
-            }
-          ]
+          "display": "どの買い物で止まったかまでは、ここでは言えない。それと、ミューズの公式の案内には、3Dセキュアの話は書いてない。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "もう一つ。ヘルプでは、支払いや購入の前には、利用者の確認を求める作り。購入を毎回聞かずに済ませられる、とは書いてない。",
+          "expression": "doubt"
         },
         {
           "speaker": "dreamer",
-          "text": "僕の期待は、店の消耗品。ゴミ袋とコピー用紙だけ、月に1万円まで。切れたら、AIが安い店で買っておく。人手の少ない小さな店ほど、助かる。",
-          "expression": "excited",
-          "tag": "use_case",
-          "t0": 49.56,
-          "dur": 12.24,
-          "cards": [
-            {
-              "text": "僕の期待は、店の消耗品。",
-              "start": 0.0,
-              "end": 2.27
-            },
-            {
-              "text": "ゴミ袋とコピー用紙だけ、",
-              "start": 2.27,
-              "end": 4.54
-            },
-            {
-              "text": "月に1万円まで。切れたら、AIが安い店で",
-              "start": 4.88,
-              "end": 8.56
-            },
-            {
-              "text": "買っておく。人手の少ない小さな店ほど、",
-              "start": 8.71,
-              "end": 11.56
-            },
-            {
-              "text": "助かる。",
-              "start": 11.71,
-              "end": 12.31
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "月に1万円まで、と小さく決めるのは賛成。任せきりにしたときの間違いの扱いは、資料にはまだ書いてないから。",
-          "expression": "thinking",
-          "t0": 62.08,
-          "dur": 7.52,
-          "cards": [
-            {
-              "text": "月に1万円まで、と小さく決めるのは賛成。",
-              "start": 0.0,
-              "end": 2.98
-            },
-            {
-              "text": "任せきりにしたときの間違いの扱いは、",
-              "start": 3.13,
-              "end": 5.63
-            },
-            {
-              "text": "資料にはまだ書いてないから。",
-              "start": 5.78,
-              "end": 7.72
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "それと、今のAIは、お金を払うような大事な操作の前には、必ず人に聞く決まりじゃなかった？ 店向けの手引きで、見た気がする。",
-          "expression": "doubt",
-          "t0": 69.82,
-          "dur": 8.6,
-          "cards": [
-            {
-              "text": "それと、今のAIは、お金を払うような大事な",
-              "start": 0.0,
-              "end": 3.06
-            },
-            {
-              "text": "操作の前には、",
-              "start": 3.21,
-              "end": 4.16
-            },
-            {
-              "text": "必ず人に聞く決まりじゃなかった？",
-              "start": 4.16,
-              "end": 6.34
-            },
-            {
-              "text": " 店向けの手引きで、見た気がする。",
-              "start": 6.49,
-              "end": 8.8
-            }
-          ]
+          "text": "今のミューズでは、毎回のひと押しは外せない、ということか。",
+          "expression": "thinking"
         }
       ],
-      "narration": "大輔「3つ目。いよいよ任せきり。OpenAIは、将来こうしたい、と発表に書いてる。」\n沙織「将来の話ね。どんな形？」\n大輔「使う金額の上限、買う品目、期間を決めて、その範囲の買い物を、前もって許しておく。そうすれば、AIにすべて任せられるようになる、と考えている。」\n沙織「上限と品目と期間を、先に決めておくのね。ただ、今はまだ提供していない、将来の形でしょ。」\n大輔「今は、まだ。でも、形はもう書いてある。そのときは、顔や指紋で本人かを確かめる仕組みや、何を許したかの記録を、今よりさらに強くする想定だ、と書いてある。」\n沙織「毎回押さなくなる代わりに、守りのほうを固くする、ということね。どの場面で、どう確かめるかまでは、まだ書いてないけど。で、任せきりになったら、何に使いたいの？」\n大輔「僕の期待は、店の消耗品。ゴミ袋とコピー用紙だけ、月に1万円まで。切れたら、AIが安い店で買っておく。人手の少ない小さな店ほど、助かる。」\n沙織「月に1万円まで、と小さく決めるのは賛成。任せきりにしたときの間違いの扱いは、資料にはまだ書いてないから。」\n沙織「それと、今のAIは、お金を払うような大事な操作の前には、必ず人に聞く決まりじゃなかった？ 店向けの手引きで、見た気がする。」\n［画面の資料カード］OpenAIの発表（2026年11月13日） 「その範囲内の購入を事前に承認することで、エージェントにすべて任せられるようになると考えています。」（原文） ・将来の形（今は提供していない） ・決めるのは: 使う金額の上限・品目・期間 ・生体認証・承認の記録など、守りをさらに強く",
       "narrator": "dialogue",
-      "lines_hash": "a8db50116a5a",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "narration": "大輔「3つ目。いよいよ、任せきり。僕の夢は、店の消耗品や、ペットフード。月に1万円までなら、毎回聞かずに、AIが買っておいてくれる。」\n沙織「まず、体験者の体験から。カード会社の本人確認で止まって、自分で操作したケースもあった、と聞いてる。スリーディーセキュアというものね。」\n大輔「スリーディーセキュアは、ネットでカードを使うとき、カード会社が、その時だけのパスワードなどで、本人かどうかを確かめる手続き。」\n沙織「どの買い物で止まったかまでは、ここでは言えない。それと、ミューズの公式の案内には、スリーディーセキュアの話は書いてない。」\n沙織「もう一つ。ヘルプでは、支払いや購入の前には、利用者の確認を求める作り。購入を毎回聞かずに済ませられる、とは書いてない。」\n大輔「今のミューズでは、毎回のひと押しは外せない、ということか。」\n［画面の資料カード］JCB 加盟店向けのお知らせ（3Dセキュアの説明） 「オンラインショッピングをより安全に行うための本人認証サービスです。」（原文） ・その時だけのパスワードなどで本人を確かめる\n［画面の資料カード］ミューズのヘルプ（2026年11月19日確認） 「支払いや購入などの機密性の高いアクションの実行前に利用者による確認を求めます。」（原文） ・支払い・購入の前には、利用者に確認 ・購入を毎回聞かずに、とは書いていない"
     },
     {
       "scene_id": 11,
@@ -2447,414 +846,113 @@
         {
           "from_line": 1,
           "source_card": {
-            "kind": "docs",
-            "source": "OpenAI 店向けの手引き（AIのアクセスへの対応）",
-            "quote": "we require human review before any consequential action.",
+            "kind": "press",
+            "source": "OpenAIの発表（2026年11月13日）",
+            "quote": "当初は、米国発行の対象カードをお持ちの、米国在住の18歳以上の ChatGPT Pro ユーザーに提供します。",
             "quote_type": "原文",
-            "highlight": "require human review",
+            "highlight": "米国在住",
             "items": [
-              "大事な操作の前には、必ず人が確かめる",
-              "すべての利用者が対象"
-            ]
-          },
-          "reference_index": 3
-        },
-        {
-          "from_line": 3,
-          "source_card": {
-            "kind": "web",
-            "source": "OpenAI ドットの紹介のページ（2026年11月3日更新）",
-            "quote": "カスタムルールでは、特定のアクションを許可したり、承認を必須にしたり、ブロックしたりできます。",
-            "quote_type": "原文",
-            "highlight": "カスタムルール",
-            "items": [
-              "許可・承認を必須・ブロックを選べる",
-              "最初から入っている安全の決まりは、いつも効く"
+              "ChatGPTウォレット: AIが払うための財布",
+              "日本では、まだ使えない"
             ]
           },
           "reference_index": 4
         },
         {
-          "from_line": 9,
+          "from_line": 3,
           "source_card": {
-            "kind": "docs",
-            "source": "OpenAI 店向けの手引き（支払いの受け方）",
-            "quote": "Yes, if your existing checkout supports recurring billing.",
+            "kind": "press",
+            "source": "OpenAIの発表（2026年11月13日）",
+            "quote": "購入のたびに、ユーザーは商品、合計金額、選択したカードを確認し、Face ID や指紋認証などのセキュリティ確認を経て承認します。",
             "quote_type": "原文",
-            "highlight": "recurring billing",
+            "highlight": "購入のたびに",
             "items": [
-              "定期購入: 店の仕組みが毎月の請求に対応なら",
-              "毎月の請求には、客の同意をもらう",
-              "店から請求するときは、決済の会社の勧めに従う"
+              "見るのは: 商品・合計金額・使うカード",
+              "顔か指紋で承認（買い物1回ごとに）"
             ]
           },
-          "reference_index": 2
+          "reference_index": 4
+        },
+        {
+          "from_line": 4,
+          "source_card": {
+            "kind": "press",
+            "source": "OpenAIの発表（2026年11月13日）",
+            "quote": "その範囲内の購入を事前に承認することで、エージェントにすべて任せられるようになると考えています。",
+            "quote_type": "原文",
+            "highlight": "すべて任せられるようになると考えています",
+            "items": [
+              "将来の形（今は提供していない・時期は無い）",
+              "決めるのは: 金額の上限・品目・期間"
+            ]
+          },
+          "reference_index": 4
+        },
+        {
+          "from_line": 7,
+          "recap_card": {
+            "title": "今できる任せ方",
+            "items": [
+              "ひと押しつきで任せて慣れる",
+              "3Dセキュアが出たら、そこだけ自分で",
+              "危なくない用事から"
+            ]
+          }
         }
       ],
       "lines": [
         {
-          "speaker": "skeptic",
-          "text": "見たのは、ここ。OpenAIは、すべての利用者について、大事な操作の前には、人の確認を必ず求めている。",
-          "expression": "neutral",
-          "tag": "barrier",
-          "t0": 0.0,
-          "dur": 7.64,
-          "cards": [
-            {
-              "text": "見たのは、ここ。OpenAIは、",
-              "start": 0.0,
-              "end": 2.5
-            },
-            {
-              "text": "すべての利用者について、",
-              "start": 2.65,
-              "end": 4.38
-            },
-            {
-              "text": "大事な操作の前には、",
-              "start": 4.38,
-              "end": 5.82
-            },
-            {
-              "text": "人の確認を必ず求めている。",
-              "start": 5.97,
-              "end": 7.84
-            }
-          ]
-        },
-        {
           "speaker": "dreamer",
-          "text": "今は、支払いの前に、必ず人が見る決まりだね。",
-          "expression": "thinking",
-          "t0": 7.92,
-          "dur": 3.96,
-          "cards": [
-            {
-              "text": "今は、支払いの前に、",
-              "start": 0.0,
-              "end": 1.58
-            },
-            {
-              "text": "必ず人が見る決まりだね。",
-              "start": 1.58,
-              "end": 3.48
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "ドットには、もう決まりが入ってる。この作業は聞かずに進める、この作業は人に聞く、という決まり。使う人が、自分で決まりを足すこともできる。",
-          "expression": "neutral",
-          "t0": 12.1,
-          "dur": 9.68,
-          "cards": [
-            {
-              "text": "ドットには、もう決まりが入ってる。",
-              "start": 0.0,
-              "end": 2.31
-            },
-            {
-              "text": "この作業は聞かずに進める、",
-              "start": 2.46,
-              "end": 4.34
-            },
-            {
-              "text": "この作業は人に聞く、",
-              "start": 4.34,
-              "end": 5.78
-            },
-            {
-              "text": "という決まり。使う人が、自分で決まりを",
-              "start": 5.93,
-              "end": 8.51
-            },
-            {
-              "text": "足すこともできる。",
-              "start": 8.66,
-              "end": 9.88
-            }
-          ]
+          "text": "でも、任せきりの形を、もう書いている会社がある。最初に話した、アメリカのChatGPTウォレット。作っているOpenAIの発表に、こうある。",
+          "expression": "excited"
         },
         {
           "speaker": "skeptic",
-          "text": "でも、最初から入っている安全の決まりは、いつも効く、とも書いてある。支払いの確認を外せる、とは書いてない。",
+          "text": "アメリカに住んでいて、アメリカの会社が出しているカードを持つ、ChatGPTの有料プランの人から、ね。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今は、買うたびに、商品と合計金額とカードを見て、顔か指紋で承認する。最後のひと押しを、顔か指紋の1回にしてる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そして、将来は、使う金額の上限、買う品目、期間を決めて、その範囲を前もって許しておけば、AIにすべて任せられるようになる、と考えている、と書いてる。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "将来の話で、時期は書いてない。それに、スリーディーセキュアのような本人確認と、前もって許す形がどうつながるかも、どこにも書いてない。",
           "expression": "doubt",
-          "t0": 22.06,
-          "dur": 6.56,
-          "cards": [
-            {
-              "text": "でも、最初から入っている安全の決まりは、",
-              "start": 0.0,
-              "end": 2.36
-            },
-            {
-              "text": "いつも効く、とも書いてある。",
-              "start": 2.51,
-              "end": 4.29
-            },
-            {
-              "text": "支払いの確認を外せる、とは書いてない。",
-              "start": 4.44,
-              "end": 6.68
-            }
-          ]
+          "display": "将来の話で、時期は書いてない。それに、3Dセキュアのような本人確認と、前もって許す形がどうつながるかも、どこにも書いてない。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "でも、任せきりに要る部品は、はっきりしたわね。上限と、品目と、期間。",
+          "expression": "thinking"
         },
         {
           "speaker": "dreamer",
-          "text": "そこは、そのとおり。今の形では、支払いの確認は外せない。外すのは、OpenAIが守りを強くしてから、という順番だね。",
-          "expression": "thinking",
-          "t0": 28.9,
-          "dur": 8.52,
-          "cards": [
-            {
-              "text": "そこは、そのとおり。今の形では、",
-              "start": 0.0,
-              "end": 2.38
-            },
-            {
-              "text": "支払いの確認は外せない。外すのは、",
-              "start": 2.53,
-              "end": 4.94
-            },
-            {
-              "text": "OpenAIが守りを強くしてから、",
-              "start": 5.09,
-              "end": 7.46
-            },
-            {
-              "text": "という順番だね。",
-              "start": 7.61,
-              "end": 8.72
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "だったら、決まった物を決まった量なら、今の形でも手がある。店の定期便だ。",
+          "text": "だったら、今は、ひと押しつきで任せて慣れる。スリーディーセキュアが出たら、そこだけ自分で通す。",
           "expression": "excited",
           "tag": "workaround",
-          "t0": 37.64,
-          "dur": 5.72,
-          "cards": [
-            {
-              "text": "だったら、決まった物を決まった量なら、",
-              "start": 0.0,
-              "end": 2.85
-            },
-            {
-              "text": "今の形でも手がある。店の定期便だ。",
-              "start": 3.0,
-              "end": 5.64
-            }
-          ]
+          "display": "だったら、今は、ひと押しつきで任せて慣れる。3Dセキュアが出たら、そこだけ自分で通す。"
         },
         {
           "speaker": "skeptic",
-          "text": "定期便なら、AIが無くても、自分で申し込めるわよ。",
-          "expression": "doubt",
-          "t0": 43.64,
-          "dur": 3.24,
-          "cards": [
-            {
-              "text": "定期便なら、AIが無くても、",
-              "start": 0.2,
-              "end": 1.93
-            },
-            {
-              "text": "自分で申し込めるわよ。",
-              "start": 2.08,
-              "end": 3.44
-            }
-          ]
+          "text": "ヘルプの、危なくない用事から始めよう、とも合うわね。",
+          "expression": "convinced"
         },
         {
           "speaker": "dreamer",
-          "text": "申し込むまでの手間を、AIがやる。店を探して、定期便の支払いの画面まで進める。人は、最初の1回を確かめるだけ。",
-          "expression": "excited",
-          "t0": 47.16,
-          "dur": 9.2,
-          "cards": [
-            {
-              "text": "申し込むまでの手間を、AIがやる。",
-              "start": 0.0,
-              "end": 2.55
-            },
-            {
-              "text": "店を探して、",
-              "start": 2.7,
-              "end": 3.6
-            },
-            {
-              "text": "定期便の支払いの画面まで進める。",
-              "start": 3.6,
-              "end": 6.0
-            },
-            {
-              "text": "人は、最初の1回を確かめるだけ。",
-              "start": 6.15,
-              "end": 8.83
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "定期便でも、ウォレットで払えるの？",
-          "expression": "thinking",
-          "t0": 56.64,
-          "dur": 2.2,
-          "cards": [
-            {
-              "text": "定期便でも、ウォレットで払えるの？",
-              "start": 0.0,
-              "end": 2.2
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "店向けの手引きに、払える、とある。店の支払いの仕組みが、毎月の請求に対応していれば、ね。",
-          "expression": "neutral",
-          "t0": 59.12,
-          "dur": 7.04,
-          "cards": [
-            {
-              "text": "店向けの手引きに、払える、",
-              "start": 0.0,
-              "end": 2.08
-            },
-            {
-              "text": "とある。店の支払いの仕組みが、",
-              "start": 2.08,
-              "end": 4.48
-            },
-            {
-              "text": "毎月の請求に対応していれば、ね。",
-              "start": 4.48,
-              "end": 7.04
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "でも、身代わりの番号は、その1回の取引だけ、使い回さない、じゃなかった？ どうして毎月、請求できるの？",
-          "expression": "doubt",
-          "t0": 66.44,
-          "dur": 7.08,
-          "cards": [
-            {
-              "text": "でも、身代わりの番号は、",
-              "start": 0.0,
-              "end": 1.73
-            },
-            {
-              "text": "その1回の取引だけ、",
-              "start": 1.73,
-              "end": 3.18
-            },
-            {
-              "text": "使い回さない、じゃなかった？",
-              "start": 3.33,
-              "end": 5.23
-            },
-            {
-              "text": "どうして毎月、請求できるの？",
-              "start": 5.38,
-              "end": 7.28
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "資料には、その仕組みまでは書いてない。書いてあるのは2つ。毎月の請求には、店が客の同意をもらうこと。店の側から請求するときは、決済の会社が勧めるやり方に従うこと。",
-          "expression": "thinking",
-          "t0": 73.8,
-          "dur": 13.68,
-          "cards": [
-            {
-              "text": "資料には、その仕組みまでは書いてない。",
-              "start": 0.0,
-              "end": 2.85
-            },
-            {
-              "text": "書いてあるのは2つ。毎月の請求には、",
-              "start": 3.0,
-              "end": 5.76
-            },
-            {
-              "text": "店が客の同意をもらうこと。店の側から請求",
-              "start": 5.91,
-              "end": 10.11
-            },
-            {
-              "text": "するときは、",
-              "start": 10.26,
-              "end": 11.16
-            },
-            {
-              "text": "決済の会社が勧めるやり方に従うこと。",
-              "start": 11.16,
-              "end": 13.86
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "なら、定期便で払えるかは、店と決済の会社しだいね。申し込む前に、その店で使えるかを確かめる。",
-          "expression": "neutral",
-          "t0": 87.76,
-          "dur": 6.52,
-          "cards": [
-            {
-              "text": "なら、定期便で払えるかは、",
-              "start": 0.0,
-              "end": 1.8
-            },
-            {
-              "text": "店と決済の会社しだいね。",
-              "start": 1.8,
-              "end": 3.46
-            },
-            {
-              "text": "申し込む前に、その店で使えるかを確かめる。",
-              "start": 3.72,
-              "end": 6.63
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "任せきりは、OpenAIが将来の形として書いたところ。それまでは、決まった物なら、使える店で、AIに定期便を申し込ませて、確かめるのは最初の1回だけ。",
+          "text": "任せきりに要る部品は、上限、品目、期間まで、書かれ始めた。日本では、ひと押しつきなら、払うところまで、もう来てる。",
           "expression": "convinced",
-          "tag": "hope",
-          "t0": 94.56,
-          "dur": 10.68,
-          "cards": [
-            {
-              "text": "任せきりは、OpenAIが将来の形として",
-              "start": 0.0,
-              "end": 2.93
-            },
-            {
-              "text": "書いたところ。それまでは、決まった物なら、",
-              "start": 3.08,
-              "end": 5.94
-            },
-            {
-              "text": "使える店で、AIに定期便を申し込ませて、",
-              "start": 6.09,
-              "end": 8.82
-            },
-            {
-              "text": "確かめるのは最初の1回だけ。",
-              "start": 8.97,
-              "end": 10.88
-            }
-          ]
+          "tag": "hope"
         }
       ],
-      "narration": "沙織「見たのは、ここ。OpenAIは、すべての利用者について、大事な操作の前には、人の確認を必ず求めている。」\n大輔「今は、支払いの前に、必ず人が見る決まりだね。」\n大輔「ドットには、もう決まりが入ってる。この作業は聞かずに進める、この作業は人に聞く、という決まり。使う人が、自分で決まりを足すこともできる。」\n沙織「でも、最初から入っている安全の決まりは、いつも効く、とも書いてある。支払いの確認を外せる、とは書いてない。」\n大輔「そこは、そのとおり。今の形では、支払いの確認は外せない。外すのは、OpenAIが守りを強くしてから、という順番だね。」\n大輔「だったら、決まった物を決まった量なら、今の形でも手がある。店の定期便だ。」\n沙織「定期便なら、AIが無くても、自分で申し込めるわよ。」\n大輔「申し込むまでの手間を、AIがやる。店を探して、定期便の支払いの画面まで進める。人は、最初の1回を確かめるだけ。」\n沙織「定期便でも、ウォレットで払えるの？」\n大輔「店向けの手引きに、払える、とある。店の支払いの仕組みが、毎月の請求に対応していれば、ね。」\n沙織「でも、身代わりの番号は、その1回の取引だけ、使い回さない、じゃなかった？ どうして毎月、請求できるの？」\n大輔「資料には、その仕組みまでは書いてない。書いてあるのは2つ。毎月の請求には、店が客の同意をもらうこと。店の側から請求するときは、決済の会社が勧めるやり方に従うこと。」\n沙織「なら、定期便で払えるかは、店と決済の会社しだいね。申し込む前に、その店で使えるかを確かめる。」\n大輔「任せきりは、OpenAIが将来の形として書いたところ。それまでは、決まった物なら、使える店で、AIに定期便を申し込ませて、確かめるのは最初の1回だけ。」\n［画面の資料カード］OpenAI 店向けの手引き（AIのアクセスへの対応） 「we require human review before any consequential action.」（原文） ・大事な操作の前には、必ず人が確かめる ・すべての利用者が対象\n［画面の資料カード］OpenAI ドットの紹介のページ（2026年11月3日更新） 「カスタムルールでは、特定のアクションを許可したり、承認を必須にしたり、ブロックしたりできます。」（原文） ・許可・承認を必須・ブロックを選べる ・最初から入っている安全の決まりは、いつも効く\n［画面の資料カード］OpenAI 店向けの手引き（支払いの受け方） 「Yes, if your existing checkout supports recurring billing.」（原文） ・定期購入: 店の仕組みが毎月の請求に対応なら ・毎月の請求には、客の同意をもらう ・店から請求するときは、決済の会社の勧めに従う",
       "narrator": "dialogue",
-      "lines_hash": "0dee82373ce5"
+      "narration": "大輔「でも、任せきりの形を、もう書いている会社がある。最初に話した、アメリカのChatGPTウォレット。作っているOpenAIの発表に、こうある。」\n沙織「アメリカに住んでいて、アメリカの会社が出しているカードを持つ、ChatGPTの有料プランの人から、ね。」\n大輔「今は、買うたびに、商品と合計金額とカードを見て、顔か指紋で承認する。最後のひと押しを、顔か指紋の1回にしてる。」\n大輔「そして、将来は、使う金額の上限、買う品目、期間を決めて、その範囲を前もって許しておけば、AIにすべて任せられるようになる、と考えている、と書いてる。」\n沙織「将来の話で、時期は書いてない。それに、スリーディーセキュアのような本人確認と、前もって許す形がどうつながるかも、どこにも書いてない。」\n沙織「でも、任せきりに要る部品は、はっきりしたわね。上限と、品目と、期間。」\n大輔「だったら、今は、ひと押しつきで任せて慣れる。スリーディーセキュアが出たら、そこだけ自分で通す。」\n沙織「ヘルプの、危なくない用事から始めよう、とも合うわね。」\n大輔「任せきりに要る部品は、上限、品目、期間まで、書かれ始めた。日本では、ひと押しつきなら、払うところまで、もう来てる。」\n［画面の資料カード］OpenAIの発表（2026年11月13日） 「当初は、米国発行の対象カードをお持ちの、米国在住の18歳以上の ChatGPT Pro ユーザーに提供します。」（原文） ・ChatGPTウォレット: AIが払うための財布 ・日本では、まだ使えない\n［画面の資料カード］OpenAIの発表（2026年11月13日） 「購入のたびに、ユーザーは商品、合計金額、選択したカードを確認し、Face ID や指紋認証などのセキュリティ確認を経て承認します。」（原文） ・見るのは: 商品・合計金額・使うカード ・顔か指紋で承認（買い物1回ごとに）\n［画面の資料カード］OpenAIの発表（2026年11月13日） 「その範囲内の購入を事前に承認することで、エージェントにすべて任せられるようになると考えています。」（原文） ・将来の形（今は提供していない・時期は無い） ・決めるのは: 金額の上限・品目・期間\n［画面のまとめカード（ふりかえり）］今できる任せ方 ・ひと押しつきで任せて慣れる ・3Dセキュアが出たら、そこだけ自分で ・危なくない用事から"
     },
     {
       "scene_id": 12,
@@ -2862,7 +960,7 @@
       "bgm_role": "outro",
       "image_asset": "base_cafe",
       "ken_burns": "zoom_out",
-      "verdict_from_line": 14,
+      "verdict_from_line": 10,
       "visuals": [
         {
           "from_line": 1,
@@ -2870,32 +968,21 @@
             "title": "二人の予想",
             "badge": "予想",
             "items": [
-              "大輔: アメリカでは、この1年で任せきりに",
-              "沙織: 3年はかかる（代わりの番号は安全？）"
+              "大輔: この1年で、日本でも任せきりに",
+              "沙織: 払うところまでも、まだ安定しない"
             ]
           }
         },
         {
           "from_line": 4,
           "recap_card": {
-            "title": "二人の答え合わせ",
+            "title": "任せきりの目印",
+            "badge": "これから見るもの",
             "items": [
-              "1 AIは探して支払いの画面まで。人は選んで最後の1回",
-              "2 本物の番号は渡らない、と書いてある",
-              "3 任せきりは、OpenAIの書いた将来の形"
+              "1 上限を決めて、前もって任せる機能",
+              "2 日本でリンク・買い物の保護の公式の案内",
+              "3 3Dセキュアの通し方の公式の説明"
             ]
-          }
-        },
-        {
-          "from_line": 6,
-          "recap_card": {
-            "title": "4つの札の意味",
-            "items": [
-              "もうすぐ来る・3年はかかる: いつ来るか",
-              "根拠待ち: 時期を言える資料を待つ",
-              "まだ眉唾: 資料と食い違う"
-            ],
-            "badge": "判定の札"
           }
         },
         {
@@ -2904,458 +991,87 @@
             "title": "札を付ける問い",
             "badge": "札の対象",
             "items": [
-              "どこで: アメリカで",
-              "何を: 日用品の買い足しを、上限・品目・期間を決めて",
-              "どうする: AIに任せきりに",
-              "いつ: この1年で使えるようになるか"
+              "どこで: 日本の、ネットの買い物",
+              "AIが: 探して、払う手前まで",
+              "人が: 最後のひと押しだけ",
+              "いつ: もう使えるか"
             ]
           }
         },
         {
-          "from_line": 13,
+          "from_line": 10,
           "scene_image": true
-        },
-        {
-          "from_line": 15,
-          "image_asset": "base_cafe_b"
         }
       ],
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "まず、僕の予想から。この1年で任せきりにできる、と言った。今日の資料では、今は1回ずつ人が確かめる形だけ。任せきりは、将来の形として書いてあるところまで。",
-          "expression": "thinking",
-          "tag": "vs_prediction",
-          "t0": 0.0,
-          "dur": 12.6,
-          "cards": [
-            {
-              "text": "まず、僕の予想から。",
-              "start": 0.0,
-              "end": 1.7
-            },
-            {
-              "text": "この1年で任せきりにできる、",
-              "start": 1.7,
-              "end": 4.08
-            },
-            {
-              "text": "と言った。今日の資料では、今は1回ずつ",
-              "start": 4.23,
-              "end": 7.4
-            },
-            {
-              "text": "人が確かめる形だけ。任せきりは、",
-              "start": 7.55,
-              "end": 9.95
-            },
-            {
-              "text": "将来の形として書いてあるところまで。",
-              "start": 10.1,
-              "end": 12.8
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "いつ出るかは？",
-          "expression": "amused",
-          "t0": 12.88,
-          "dur": 1.24,
-          "cards": [
-            {
-              "text": "いつ出るかは？",
-              "start": 0.0,
-              "end": 1.24
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "時期は、どこにも書いてない。だから、この1年は、資料ではなく僕の見立て。理由は、札のところで言う。",
+          "text": "まず、僕の予想から。この1年で任せきり、と言った。でも、任せきりは、まだアメリカの会社が描いた将来の形。ミューズも、払う前には必ず聞く。そこは外れ。",
           "expression": "deflated",
-          "t0": 14.4,
-          "dur": 7.6,
-          "cards": [
-            {
-              "text": "時期は、どこにも書いてない。だから、",
-              "start": 0.0,
-              "end": 2.68
-            },
-            {
-              "text": "この1年は、資料ではなく僕の見立て。",
-              "start": 2.83,
-              "end": 5.71
-            },
-            {
-              "text": "理由は、札のところで言う。",
-              "start": 5.86,
-              "end": 7.8
-            }
-          ]
+          "tag": "vs_prediction"
         },
         {
           "speaker": "skeptic",
-          "text": "私の予想の理由は、代わりに渡る番号を、店に使い回されないか、だった。そこは、1回きりの身代わりの番号と、使い回さない決まりで、答えが出た。",
-          "expression": "neutral",
-          "t0": 22.28,
-          "dur": 10.68,
-          "cards": [
-            {
-              "text": "私の予想の理由は、代わりに渡る番号を、",
-              "start": 0.0,
-              "end": 3.01
-            },
-            {
-              "text": "店に使い回されないか、だった。そこは、",
-              "start": 3.16,
-              "end": 5.98
-            },
-            {
-              "text": "1回きりの身代わりの番号と、",
-              "start": 6.13,
-              "end": 8.21
-            },
-            {
-              "text": "使い回さない決まりで、答えが出た。",
-              "start": 8.36,
-              "end": 10.88
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "発表は、今は1回ずつ人が確かめる形、任せきりは将来の形、と書き分けてる。今の形は、もう始まってる。だから、札を付けるのは、その先の任せきりのほう。",
-          "expression": "neutral",
-          "t0": 33.24,
-          "dur": 11.8,
-          "cards": [
-            {
-              "text": "発表は、今は1回ずつ人が確かめる形、",
-              "start": 0.0,
-              "end": 3.0
-            },
-            {
-              "text": "任せきりは将来の形、と書き分けてる。",
-              "start": 3.45,
-              "end": 6.15
-            },
-            {
-              "text": "今の形は、もう始まってる。だから、",
-              "start": 6.3,
-              "end": 8.85
-            },
-            {
-              "text": "札を付けるのは、その先の任せきりのほう。",
-              "start": 9.0,
-              "end": 12.0
-            }
-          ]
+          "text": "私の予想は、日本で払うところまで任せるのも、まだ安定しない、だった。",
+          "expression": "neutral"
         },
         {
           "speaker": "skeptic",
-          "text": "札のうち、根拠待ちは、否定ではなく、時期を言える資料を待つ札ね。",
-          "expression": "neutral",
-          "t0": 45.32,
-          "dur": 5.2,
-          "cards": [
-            {
-              "text": "札のうち、根拠待ちは、否定ではなく、",
-              "start": 0.33,
-              "end": 3.03
-            },
-            {
-              "text": "時期を言える資料を待つ札ね。",
-              "start": 3.18,
-              "end": 5.3
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "札を付ける問いを言うね。アメリカで、日用品の買い足しを、上限と品目と期間を決めて、AIに任せきりにできる形が、この1年で使えるようになるか。",
-          "expression": "neutral",
-          "t0": 50.74,
-          "dur": 11.8,
-          "cards": [
-            {
-              "text": "札を付ける問いを言うね。アメリカで、",
-              "start": 0.33,
-              "end": 3.42
-            },
-            {
-              "text": "日用品の買い足しを、",
-              "start": 3.57,
-              "end": 5.21
-            },
-            {
-              "text": "上限と品目と期間を決めて、",
-              "start": 5.21,
-              "end": 7.35
-            },
-            {
-              "text": "AIに任せきりにできる形が、",
-              "start": 7.5,
-              "end": 9.6
-            },
-            {
-              "text": "この1年で使えるようになるか。",
-              "start": 9.75,
-              "end": 12.0
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "僕は、もうすぐ来る。この1年で来る、という意味。",
-          "expression": "excited",
-          "t0": 62.82,
-          "dur": 4.28,
-          "cards": [
-            {
-              "text": "僕は、もうすぐ来る。この1年で来る、",
-              "start": 0.0,
-              "end": 3.4
-            },
-            {
-              "text": "という意味。",
-              "start": 3.55,
-              "end": 4.45
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "上限、品目、期間まで、形はもう書いてある。カードの会社と銀行の4社とも、もう組んでいる。",
-          "expression": "excited",
-          "t0": 67.32,
-          "dur": 7.76,
-          "cards": [
-            {
-              "text": "上限、品目、期間まで、形はもう書いてある。",
-              "start": 0.0,
-              "end": 3.9
-            },
-            {
-              "text": "カードの会社と銀行の4社とも、",
-              "start": 4.36,
-              "end": 6.61
-            },
-            {
-              "text": "もう組んでいる。",
-              "start": 6.76,
-              "end": 7.96
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "今、任せきりを止めているのは、機械の限界じゃなくて、大事な操作は人が確かめる、という決まり。守りを強くすれば、決まりは変えられる。だから、動きは速いと見てる。",
-          "expression": "excited",
-          "t0": 75.3,
-          "dur": 14.0,
-          "cards": [
-            {
-              "text": "今、任せきりを止めているのは、",
-              "start": 0.0,
-              "end": 2.42
-            },
-            {
-              "text": "機械の限界じゃなくて、",
-              "start": 2.74,
-              "end": 4.65
-            },
-            {
-              "text": "大事な操作は人が確かめる、",
-              "start": 4.65,
-              "end": 6.9
-            },
-            {
-              "text": "という決まり。守りを強くすれば、",
-              "start": 7.05,
-              "end": 9.77
-            },
-            {
-              "text": "決まりは変えられる。だから、",
-              "start": 9.92,
-              "end": 12.12
-            },
-            {
-              "text": "動きは速いと見てる。",
-              "start": 12.27,
-              "end": 13.77
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "私は、根拠待ち。最初の予想の、3年はかかる、から変えた。遅くなると見たわけじゃない。",
-          "expression": "thinking",
-          "tag": "vs_prediction",
-          "t0": 89.58,
-          "dur": 6.04,
-          "cards": [
-            {
-              "text": "私は、根拠待ち。最初の予想の、",
-              "start": 0.0,
-              "end": 2.25
-            },
-            {
-              "text": "3年はかかる、から変えた。遅くなると見た",
-              "start": 2.4,
-              "end": 5.13
-            },
-            {
-              "text": "わけじゃない。",
-              "start": 5.28,
-              "end": 6.24
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "カードの心配には、答えが出た。残るのは、いつ出るか。それを言える資料は、どこにも無い。任せきりの機能が、実際に出たと発表されたら、札を変える。",
-          "expression": "neutral",
-          "t0": 95.84,
-          "dur": 10.88,
-          "cards": [
-            {
-              "text": "カードの心配には、答えが出た。残るのは、",
-              "start": 0.0,
-              "end": 2.94
-            },
-            {
-              "text": "いつ出るか。それを言える資料は、",
-              "start": 3.09,
-              "end": 5.44
-            },
-            {
-              "text": "どこにも無い。任せきりの機能が、",
-              "start": 5.59,
-              "end": 7.94
-            },
-            {
-              "text": "実際に出たと発表されたら、札を変える。",
-              "start": 8.09,
-              "end": 11.08
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "日本には、札を付けない。日本のカードは、まだ対象外だから。",
-          "expression": "neutral",
-          "t0": 107.0,
-          "dur": 4.36,
-          "cards": [
-            {
-              "text": "日本には、札を付けない。日本のカードは、",
-              "start": 0.0,
-              "end": 2.9
-            },
-            {
-              "text": "まだ対象外だから。",
-              "start": 3.05,
-              "end": 4.36
-            }
-          ]
-        },
-        {
-          "speaker": "skeptic",
-          "text": "日本に札を付けられる目印は、日本の会社が出しているカードが、対象になるかどうか。",
-          "expression": "neutral",
-          "t0": 111.64,
-          "dur": 5.4,
-          "cards": [
-            {
-              "text": "日本に札を付けられる目印は、",
-              "start": 0.0,
-              "end": 1.98
-            },
-            {
-              "text": "日本の会社が出しているカードが、",
-              "start": 2.13,
-              "end": 4.17
-            },
-            {
-              "text": "対象になるかどうか。",
-              "start": 4.32,
-              "end": 5.6
-            }
-          ]
-        },
-        {
-          "speaker": "dreamer",
-          "text": "今日の答え。日用品の買い足しは、AIが探して、選んだ品を払うところまで来た。人がやるのは、選ぶことと、最後の1回。その1回もいらなくなる任せきりは、まだOpenAIが描いた形。次は、それが本当に出るかどうか。",
+          "text": "その予想は変える。公式の作りは、AIが番号を見ずに、買う前に本人に聞く形で、はっきりしてた。体験者の2件も、払えた。",
           "expression": "convinced",
-          "tag": "takeaway",
-          "t0": 117.32,
-          "dur": 19.16,
-          "cards": [
-            {
-              "text": "今日の答え。日用品の買い足しは、",
-              "start": 0.0,
-              "end": 3.12
-            },
-            {
-              "text": "AIが探して、選んだ品を払うところまで来た。",
-              "start": 3.27,
-              "end": 6.95
-            },
-            {
-              "text": "人がやるのは、選ぶことと、最後の1回。",
-              "start": 7.1,
-              "end": 10.9
-            },
-            {
-              "text": "その1回もいらなくなる任せきりは、",
-              "start": 11.05,
-              "end": 13.79
-            },
-            {
-              "text": "まだOpenAIが描いた形。次は、",
-              "start": 13.94,
-              "end": 17.22
-            },
-            {
-              "text": "それが本当に出るかどうか。",
-              "start": 17.37,
-              "end": 19.36
-            }
-          ]
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "発表のほうに一言触れると、財布ごとAIに任せきりにする形は、メタもOpenAIも、まだ出していない。いつ出るかを言える資料も無い。",
+          "expression": "thinking"
         },
         {
           "speaker": "skeptic",
-          "text": "今日の話は、OpenAIの発表と、店向けの手引き、ドットの紹介のページ。11月時点の、二人の見立てね。",
+          "text": "任せきりのほうは、3つの目印が出たら考え直す。1つ目、上限を決めて、前もって任せる機能が出ること。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "2つ目、日本でリンクで払えることや、買い物の保護が、公式に案内されること。3つ目、スリーディーセキュアをどう通すかが、公式に説明されること。",
           "expression": "neutral",
-          "t0": 136.76,
-          "dur": 9.0,
-          "cards": [
-            {
-              "text": "今日の話は、OpenAIの発表と、",
-              "start": 0.0,
-              "end": 3.12
-            },
-            {
-              "text": "店向けの手引き、ドットの紹介のページ。",
-              "start": 3.27,
-              "end": 6.31
-            },
-            {
-              "text": "11月時点の、二人の見立てね。",
-              "start": 6.76,
-              "end": 9.01
-            }
-          ]
+          "display": "2つ目、日本でリンクで払えることや、買い物の保護が、公式に案内されること。3つ目、3Dセキュアをどう通すかが、公式に説明されること。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "札を付ける問いを言うね。日本で、ネットの買い物を、AIに探させて払う手前まで進めてもらい、最後のひと押しだけ自分で押す。その使い方が、もう使えるか。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕は、もうすぐ来る。ひと押しつきで任せる使い方は、もう始まってる、という意味。体験者の2件では、もう来ていた。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私も、もうすぐ来る。理由は別。押すのが人だから、AIが間違えても、押す前に止められる。始めるなら、カードを預けてある店からね。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "まだの所もある。スリーディーセキュアで止まることがあるし、日本でリンクが使えるとは、公式には書いてない。",
+          "expression": "thinking",
+          "display": "まだの所もある。3Dセキュアで止まることがあるし、日本でリンクが使えるとは、公式には書いてない。"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今日の答え。ネットの買い物は、日本でも、AIが探して払う手前まで進め、最後のひと押しを自分で押す形で、もう始まっている。任せきりに足りないのは、前もって任せる機能と、本人確認の通し方。",
+          "expression": "convinced",
+          "tag": "takeaway"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "今日の話は、メタの日本向けの案内とヘルプ、ストライプとOpenAIの発表、それに体験者の体験。11月時点の、二人の見立てね。",
+          "expression": "neutral"
         }
       ],
-      "narration": "大輔「まず、僕の予想から。この1年で任せきりにできる、と言った。今日の資料では、今は1回ずつ人が確かめる形だけ。任せきりは、将来の形として書いてあるところまで。」\n沙織「いつ出るかは？」\n大輔「時期は、どこにも書いてない。だから、この1年は、資料ではなく僕の見立て。理由は、札のところで言う。」\n沙織「私の予想の理由は、代わりに渡る番号を、店に使い回されないか、だった。そこは、1回きりの身代わりの番号と、使い回さない決まりで、答えが出た。」\n大輔「発表は、今は1回ずつ人が確かめる形、任せきりは将来の形、と書き分けてる。今の形は、もう始まってる。だから、札を付けるのは、その先の任せきりのほう。」\n沙織「札のうち、根拠待ちは、否定ではなく、時期を言える資料を待つ札ね。」\n沙織「札を付ける問いを言うね。アメリカで、日用品の買い足しを、上限と品目と期間を決めて、AIに任せきりにできる形が、この1年で使えるようになるか。」\n大輔「僕は、もうすぐ来る。この1年で来る、という意味。」\n大輔「上限、品目、期間まで、形はもう書いてある。カードの会社と銀行の4社とも、もう組んでいる。」\n大輔「今、任せきりを止めているのは、機械の限界じゃなくて、大事な操作は人が確かめる、という決まり。守りを強くすれば、決まりは変えられる。だから、動きは速いと見てる。」\n沙織「私は、根拠待ち。最初の予想の、3年はかかる、から変えた。遅くなると見たわけじゃない。」\n沙織「カードの心配には、答えが出た。残るのは、いつ出るか。それを言える資料は、どこにも無い。任せきりの機能が、実際に出たと発表されたら、札を変える。」\n大輔「日本には、札を付けない。日本のカードは、まだ対象外だから。」\n沙織「日本に札を付けられる目印は、日本の会社が出しているカードが、対象になるかどうか。」\n大輔「今日の答え。日用品の買い足しは、AIが探して、選んだ品を払うところまで来た。人がやるのは、選ぶことと、最後の1回。その1回もいらなくなる任せきりは、まだOpenAIが描いた形。次は、それが本当に出るかどうか。」\n沙織「今日の話は、OpenAIの発表と、店向けの手引き、ドットの紹介のページ。11月時点の、二人の見立てね。」\n［画面のまとめカード（予想）］二人の予想 ・大輔: アメリカでは、この1年で任せきりに ・沙織: 3年はかかる（代わりの番号は安全？）\n［画面のまとめカード（ふりかえり）］二人の答え合わせ ・1 AIは探して支払いの画面まで。人は選んで最後の1回 ・2 本物の番号は渡らない、と書いてある ・3 任せきりは、OpenAIの書いた将来の形\n［画面のまとめカード（判定の札）］4つの札の意味 ・もうすぐ来る・3年はかかる: いつ来るか ・根拠待ち: 時期を言える資料を待つ ・まだ眉唾: 資料と食い違う\n［画面のまとめカード（札の対象）］札を付ける問い ・どこで: アメリカで ・何を: 日用品の買い足しを、上限・品目・期間を決めて ・どうする: AIに任せきりに ・いつ: この1年で使えるようになるか",
       "narrator": "dialogue",
-      "lines_hash": "2a6fe91a367a",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "narration": "大輔「まず、僕の予想から。この1年で任せきり、と言った。でも、任せきりは、まだアメリカの会社が描いた将来の形。ミューズも、払う前には必ず聞く。そこは外れ。」\n沙織「私の予想は、日本で払うところまで任せるのも、まだ安定しない、だった。」\n沙織「その予想は変える。公式の作りは、AIが番号を見ずに、買う前に本人に聞く形で、はっきりしてた。体験者の2件も、払えた。」\n大輔「発表のほうに一言触れると、財布ごとAIに任せきりにする形は、メタもOpenAIも、まだ出していない。いつ出るかを言える資料も無い。」\n沙織「任せきりのほうは、3つの目印が出たら考え直す。1つ目、上限を決めて、前もって任せる機能が出ること。」\n沙織「2つ目、日本でリンクで払えることや、買い物の保護が、公式に案内されること。3つ目、スリーディーセキュアをどう通すかが、公式に説明されること。」\n大輔「札を付ける問いを言うね。日本で、ネットの買い物を、AIに探させて払う手前まで進めてもらい、最後のひと押しだけ自分で押す。その使い方が、もう使えるか。」\n大輔「僕は、もうすぐ来る。ひと押しつきで任せる使い方は、もう始まってる、という意味。体験者の2件では、もう来ていた。」\n沙織「私も、もうすぐ来る。理由は別。押すのが人だから、AIが間違えても、押す前に止められる。始めるなら、カードを預けてある店からね。」\n沙織「まだの所もある。スリーディーセキュアで止まることがあるし、日本でリンクが使えるとは、公式には書いてない。」\n大輔「今日の答え。ネットの買い物は、日本でも、AIが探して払う手前まで進め、最後のひと押しを自分で押す形で、もう始まっている。任せきりに足りないのは、前もって任せる機能と、本人確認の通し方。」\n沙織「今日の話は、メタの日本向けの案内とヘルプ、ストライプとOpenAIの発表、それに体験者の体験。11月時点の、二人の見立てね。」\n［画面のまとめカード（予想）］二人の予想 ・大輔: この1年で、日本でも任せきりに ・沙織: 払うところまでも、まだ安定しない\n［画面のまとめカード（これから見るもの）］任せきりの目印 ・1 上限を決めて、前もって任せる機能 ・2 日本でリンク・買い物の保護の公式の案内 ・3 3Dセキュアの通し方の公式の説明\n［画面のまとめカード（札の対象）］札を付ける問い ・どこで: 日本の、ネットの買い物 ・AIが: 探して、払う手前まで ・人が: 最後のひと押しだけ ・いつ: もう使えるか"
     },
     {
       "scene_id": 13,
@@ -3370,162 +1086,47 @@
             "title": "今月の一歩",
             "badge": "次の一歩",
             "items": [
-              "カードの明細で、毎月同じ物の支払いを3つ数える",
-              "例: 洗剤・ゴミ袋・コピー用紙",
-              "任せるなら、どの品目を月いくらまでか書いておく"
+              "次のネットの買い物で",
+              "カードを預けてある店を3つ書き出す",
+              "AIに頼むと、そのカードで払うことがある"
             ]
           }
         },
         {
-          "from_line": 4,
+          "from_line": 3,
           "scene_image": true
         }
       ],
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "今月の一歩。カードの明細を開いて、毎月同じ物を買っている支払いを、3つ数えてみる。洗剤、ゴミ袋、コピー用紙。",
+          "text": "今月の一歩。次にネットで買い物をするとき、どの店にカードを預けてあるかを、3つ書き出してみる。",
           "expression": "excited",
-          "tag": "next_step",
-          "t0": 0.0,
-          "dur": 10.84,
-          "cards": [
-            {
-              "text": "今月の一歩。カードの明細を開いて、",
-              "start": 0.0,
-              "end": 3.44
-            },
-            {
-              "text": "毎月同じ物を買っている支払いを、",
-              "start": 3.59,
-              "end": 6.29
-            },
-            {
-              "text": "3つ数えてみる。洗剤、ゴミ袋、コピー用紙。",
-              "start": 6.44,
-              "end": 11.04
-            }
-          ]
+          "tag": "next_step"
         },
         {
           "speaker": "skeptic",
-          "text": "任せるなら、どの品目を、月いくらまでにするか、書いておくといい。任せきりの機能が来たとき、すぐ決められる。",
-          "expression": "amused",
-          "t0": 11.12,
-          "dur": 6.4,
-          "cards": [
-            {
-              "text": "任せるなら、どの品目を、",
-              "start": 0.0,
-              "end": 1.49
-            },
-            {
-              "text": "月いくらまでにするか、",
-              "start": 1.49,
-              "end": 2.85
-            },
-            {
-              "text": "書いておくといい。",
-              "start": 3.0,
-              "end": 4.04
-            },
-            {
-              "text": "任せきりの機能が来たとき、",
-              "start": 4.04,
-              "end": 5.53
-            },
-            {
-              "text": "すぐ決められる。",
-              "start": 5.68,
-              "end": 6.6
-            }
-          ]
+          "text": "AIに頼むと、その店に預けたカードで払うことがある。体験者の1件目が、そうだった。どこに預けてあるか、知っておくと安心ね。",
+          "expression": "amused"
         },
         {
           "speaker": "dreamer",
-          "text": "ネットで、アメリカのお客さんにも売っている人は、決済の会社に一度聞いておくといいね。AIからの買い物を、止めていないか。",
-          "expression": "neutral",
-          "t0": 17.8,
-          "dur": 8.92,
-          "cards": [
-            {
-              "text": "ネットで、",
-              "start": 0.0,
-              "end": 0.72
-            },
-            {
-              "text": "アメリカのお客さんにも売っている人は、",
-              "start": 0.72,
-              "end": 3.45
-            },
-            {
-              "text": "決済の会社に一度聞いておくといいね。",
-              "start": 3.6,
-              "end": 6.19
-            },
-            {
-              "text": "AIからの買い物を、止めていないか。",
-              "start": 6.42,
-              "end": 9.01
-            }
-          ]
+          "text": "1か月前、この番組は、払うのは最後まで自分で押そう、と言った。それは今も同じ。ただ、そこまでの道のりは、AIがもう歩いてくれる。",
+          "expression": "convinced"
         },
         {
           "speaker": "dreamer",
           "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
-          "expression": "convinced",
-          "t0": 26.94,
-          "dur": 4.68,
-          "cards": [
-            {
-              "text": "次はどんな研究が、誰かの幸せな未来を",
-              "start": 0.0,
-              "end": 3.42
-            },
-            {
-              "text": "運んでくるのか。",
-              "start": 3.57,
-              "end": 4.77
-            }
-          ]
+          "expression": "convinced"
         },
         {
           "speaker": "skeptic",
           "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
-          "expression": "amused",
-          "t0": 31.9,
-          "dur": 7.4,
-          "cards": [
-            {
-              "text": "それが本物かどうか、",
-              "start": 0.0,
-              "end": 1.2
-            },
-            {
-              "text": "また一緒に確かめましょう。",
-              "start": 1.2,
-              "end": 2.77
-            },
-            {
-              "text": "元の発表は概要欄に載せています。",
-              "start": 2.92,
-              "end": 5.04
-            },
-            {
-              "text": "チャンネル登録して、待っていてください。",
-              "start": 5.19,
-              "end": 7.6
-            }
-          ]
+          "expression": "amused"
         }
       ],
-      "narration": "大輔「今月の一歩。カードの明細を開いて、毎月同じ物を買っている支払いを、3つ数えてみる。洗剤、ゴミ袋、コピー用紙。」\n沙織「任せるなら、どの品目を、月いくらまでにするか、書いておくといい。任せきりの機能が来たとき、すぐ決められる。」\n大輔「ネットで、アメリカのお客さんにも売っている人は、決済の会社に一度聞いておくといいね。AIからの買い物を、止めていないか。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」\n［画面のまとめカード（次の一歩）］今月の一歩 ・カードの明細で、毎月同じ物の支払いを3つ数える ・例: 洗剤・ゴミ袋・コピー用紙 ・任せるなら、どの品目を月いくらまでか書いておく",
       "narrator": "dialogue",
-      "lines_hash": "c5d13922b7ca",
-      "zoom_anchor": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "narration": "大輔「今月の一歩。次にネットで買い物をするとき、どの店にカードを預けてあるかを、3つ書き出してみる。」\n沙織「AIに頼むと、その店に預けたカードで払うことがある。体験者の1件目が、そうだった。どこに預けてあるか、知っておくと安心ね。」\n大輔「1か月前、この番組は、払うのは最後まで自分で押そう、と言った。それは今も同じ。ただ、そこまでの道のりは、AIがもう歩いてくれる。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」\n［画面のまとめカード（次の一歩）］今月の一歩 ・次のネットの買い物で ・カードを預けてある店を3つ書き出す ・AIに頼むと、そのカードで払うことがある"
     }
   ],
   "shorts": [
@@ -3534,49 +1135,35 @@
       "scenes": [
         {
           "narrator": "dreamer",
-          "narration": "AIが店を探して、払うまで。",
+          "narration": "AIが払えた、映画のチケット。",
           "expression": "excited",
           "scene_id": 6
         },
         {
           "narrator": "dreamer",
-          "narration": "ネットの店探しから支払いまで、AIが代わりにやる。",
+          "narration": "体験者が、AIのミューズに頼んで、映画のチケットを払えた。",
           "expression": "excited",
           "scene_id": 6
         },
         {
           "narrator": "skeptic",
-          "narration": "しかも、AIにも店にも、本物のカード番号は渡らないって。",
+          "narration": "払う前に、払っていいか、を聞く画面が出たって。",
           "expression": "surprised",
           "scene_id": 8
         },
         {
           "narrator": "dreamer",
-          "narration": "払う時、人は指紋で1回押すだけ。今はアメリカの一部の人から。",
-          "expression": "excited",
-          "scene_id": 8
+          "narration": "でも、カード会社の本人確認で、止まったこともある。",
+          "expression": "thinking",
+          "scene_id": 10
         },
         {
           "narrator": "skeptic",
-          "narration": "その1回もいらなくなる日は来る？ 判定は本編で。",
+          "narration": "最後のひと押しまで任せられる？ 判定は本編で。",
           "expression": "thinking",
           "scene_id": 10
         }
       ]
     }
-  ],
-  "beginner_review": {
-    "passed_at": "2026-11-18",
-    "rounds": 5,
-    "report": "/private/tmp/claude-503/-Users-claude-kagaku-life/4f1b8a00-621a-4f59-b1cf-c364be7316f6/scratchpad/kl059_beginner_review_r8.md",
-    "lines_digest": "563407a8d714",
-    "rechecked_scenes": [
-      "13"
-    ]
-  },
-  "bgm_sources": {
-    "intro": "BGM/kl034-BGM-intro.mp3",
-    "main": "BGM/kl047-BGM-main.mp3",
-    "outro": "BGM/kl043-BGM-outro.mp3"
-  }
+  ]
 }

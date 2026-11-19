@@ -474,3 +474,7 @@
 {"ts": "2026-11-19T09:55:02+09:00", "kind": "call", "agent": "kl-planner", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
 {"ts": "2026-11-19T09:55:46+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
 {"ts": "2026-11-19T09:57:27+09:00", "kind": "call", "agent": "kl-manager", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-19T11:36:43+09:00", "kind": "feedback", "agent": "kl-manager", "episode": "kl059", "source": "user", "severity": "major", "text": "完成動画の確認での、なるさんの指摘（STEP 1.5 の見落とし）: 日本でもMuseがすでに実現している。含めて台本を作り直して。旧ゲートで推奨を通したのは編集長（日本の先行サービスと自チャンネルの過去回kl048を見落とし）"}
+{"ts": "2026-11-19T11:39:23+09:00", "kind": "feedback", "agent": "kl-coordinator", "episode": "kl059", "source": "user", "severity": "major", "text": "私は基本的にMuseの報告しか見てないので、スラックに報告してもらわないと私には伝わらない。確実にスラックに報告するようにしてください。（チャットでの報告をSlackに投稿し忘れた件）"}
+{"ts": "2026-11-19T11:46:55+09:00", "kind": "applied", "agent": "kl-writer", "episode": "kl059", "ids": ["KL2611-02"], "skipped": [], "reason": ""}
+{"ts": "2026-11-19T11:47:35+09:00", "kind": "call", "agent": "kl-writer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
