@@ -478,3 +478,21 @@
 {"ts": "2026-11-19T11:39:23+09:00", "kind": "feedback", "agent": "kl-coordinator", "episode": "kl059", "source": "user", "severity": "major", "text": "私は基本的にMuseの報告しか見てないので、スラックに報告してもらわないと私には伝わらない。確実にスラックに報告するようにしてください。（チャットでの報告をSlackに投稿し忘れた件）"}
 {"ts": "2026-11-19T11:46:55+09:00", "kind": "applied", "agent": "kl-writer", "episode": "kl059", "ids": ["KL2611-02"], "skipped": [], "reason": ""}
 {"ts": "2026-11-19T11:47:35+09:00", "kind": "call", "agent": "kl-writer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-19T11:56:07+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl059", "step": "台本", "result": "ok", "retries": 0, "note": "Muse軸で作り直し。ファクトチェックは初回2点（JCBカードの体験混入、購入保護の日本向け表現）を進行が修正して ok=7"}
+{"ts": "2026-11-19T11:59:49+09:00", "kind": "call", "agent": "kl-script-reviewer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-19T12:04:30+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-19T12:07:46+09:00", "kind": "applied", "agent": "kl-writer", "episode": "kl059", "ids": ["KL2611-02"], "skipped": [], "reason": ""}
+{"ts": "2026-11-19T12:08:38+09:00", "kind": "call", "agent": "kl-writer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-19T12:12:56+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-19T12:15:42+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl059", "step": "初見レビュー", "result": "ok", "retries": 0, "note": "作り直し台本: 1周目不合格（直す5）、直して2周目合格。軽微な言い換え4点を合格後に反映"}
+{"ts": "2026-11-19T12:17:17+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-19T12:18:42+09:00", "kind": "call", "agent": "kl-manager", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-19T12:19:30+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl059", "step": "5.6", "result": "ok", "retries": 0, "note": "パッケージ選定: 6番と4番の合成（カード番号の不安を入口に、Metaの後ろにMuse）。次点: 4番を事実形に・2番"}
+{"ts": "2026-11-19T12:19:30+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl059", "step": "5.6", "result": "ok", "retries": 0, "note": "パッケージ評価"}
+{"ts": "2026-11-19T12:20:35+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-19T12:33:11+09:00", "kind": "call", "agent": "kl-art-director", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-19T15:09:55+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl059", "step": "音声生成", "result": "ok", "retries": 0, "note": "87行、11.4分、話速差9%、読みQA不一致5行は軽微"}
+{"ts": "2026-11-19T16:02:09+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl059", "step": "BGM", "result": "retry", "retries": 0, "note": "再利用曲3つで1回不合格、再検証でintro差し替え2回、最終合格"}
+{"ts": "2026-11-19T16:05:54+09:00", "kind": "call", "agent": "kl-manager", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-19T16:05:59+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl059", "step": "11", "result": "ok", "retries": 0, "note": "完成判定。読みQA5行は誤検知。概要欄の札の問いのずれを修正指示"}
+{"ts": "2026-11-19T17:00:01+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl059", "step": "動画生成", "result": "ok", "retries": 0, "note": "12.0分、フレーム確認で重なりなし"}
