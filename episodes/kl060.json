@@ -26,7 +26,7 @@
     "本物の車工場で人型ロボ",
     "成功率96%、残り4%は？"
   ],
-  "thumbnail_prompt": "Inside a bright modern car factory, continuous across the whole frame with no panels, boxes or borders. Keep the left 30%, the right 30% and the top 42% of the frame quiet and uncluttered (softly blurred factory hall, racks and warm overhead lights only), but the background must continue unbroken behind them. Main subject, centered left-to-right in the middle band: a generic humanoid robot (not any specific brand or real product): a slim two-legged robot with a smooth light-gray and white body, two arms, five-fingered mechanical hands, a rounded head with a plain dark face panel and a small soft glowing light strip where a mouth would be, and a small status display on its chest — reaching into a gray bin of small metal brackets and placing one into a compartmented tray, with partially assembled car bodies softly blurred on a production line behind. Hopeful and intriguing. No people, no text, no logos, no brand names.",
+  "thumbnail_prompt": "Inside a bright modern car factory, continuous across the whole frame with no panels, boxes or borders. The top 48% of the frame is only softly blurred factory hall: high ceiling, overhead lights, distant racks — nothing important there, and the robot must NOT reach into it. Keep the left 28% and the right 28% quiet and uncluttered too (softly blurred racks and car bodies), with the background continuing unbroken behind them. Main subject, small and low in the frame, centered left-to-right: a generic humanoid robot (not any specific brand or real product): a slim two-legged robot with a smooth light-gray and white body, two arms, five-fingered mechanical hands, a rounded helmet-like head whose whole front is one smooth, glossy, dark featureless visor panel with NO eyes, no eye slots, no eye lights and no other facial features — the only light on the face is a single short, soft, horizontal glowing strip near the bottom of the visor where a mouth would be — and a small blank status display on its chest — seen from the waist up behind a work table, with the TOP OF ITS HEAD at about 50% of the frame height (exactly the vertical middle) and its visor face fully visible between 50% and 62% of the frame height; its hands rest on a gray bin of small metal brackets and a compartmented tray on the table near the bottom of the frame. Partially assembled car bodies are softly blurred on a production line behind it. Hopeful and intriguing. No people, no text, no logos, no brand names.",
   "thumbnail_headline": "成功率96%\n人は何の仕事へ？",
   "thumbnail_exprs": {
     "dreamer": "excited",
@@ -325,7 +325,7 @@
       "ken_burns": "zoom_out",
       "shows_product": true,
       "badge_text": "イメージ図（実物と異なる場合があります）",
-      "image_prompt": "Inside a modern European car factory, a parts-logistics area beside an active assembly line, bright even industrial light: a generic humanoid robot (not any specific brand or real product): a slim two-legged robot with a smooth light-gray and white body, two arms, five-fingered mechanical hands, a rounded head with a plain dark face panel and a small soft glowing light strip where a mouth would be, and a small status display on its chest — stands at a row of gray supply bins full of loose small metal brackets, picking one bracket with its hand and placing it into a compartmented sequencing tray on a cart. Behind it, out of focus, partially assembled car bodies move along the production line, with racks and yellow safety markings on the floor continuing to the left and right edges. The robot is the clear focal point in the center. Hopeful, curious mood. No people, no readable text, no logos, no brand names. Warm editorial illustration style.",
+      "image_prompt": "Inside a modern European car factory, a parts-logistics area beside an active assembly line, bright even industrial light: a generic humanoid robot (not any specific brand or real product): a slim two-legged robot with a smooth light-gray and white body, two arms, five-fingered mechanical hands, a rounded helmet-like head whose whole front is one smooth, glossy, dark featureless visor panel with NO eyes, no eye slots, no eye lights and no other facial features — the only light on the face is a single short, soft, horizontal glowing strip near the bottom of the visor where a mouth would be — and a small blank status display on its chest — stands at a row of gray supply bins full of loose small metal brackets, picking one bracket with its hand and placing it into a compartmented sequencing tray on a cart. Behind it, out of focus, partially assembled car bodies move along the production line, with racks and yellow safety markings on the floor continuing to the left and right edges. The robot is the clear focal point in the center. Hopeful, curious mood. No people, no readable text, no logos, no brand names. Warm editorial illustration style.",
       "reference_index": 0,
       "lines": [
         {
@@ -545,7 +545,7 @@
       "ken_burns": "zoom_out",
       "shows_product": true,
       "badge_text": "イメージ図（実物と異なる場合があります）",
-      "image_prompt": "A car factory assembly hall in soft industrial light. In the foreground, seen from behind the shoulder with no face visible, a technician's gloved hands carefully fit a wiring connector into the inside of a partially assembled car door. In the middle ground, slightly out of focus, a generic humanoid robot (not any specific brand or real product): a slim two-legged robot with a smooth light-gray and white body, two arms, five-fingered mechanical hands, a rounded head with a plain dark face panel and a small soft glowing light strip where a mouth would be, and a small status display on its chest — walks toward the line carrying a compartmented tray of small metal brackets. Racks, carts and yellow floor markings continue to the left and right edges. Calm, cooperative mood. No faces, no readable text, no logos, no brand names. Warm editorial illustration style.",
+      "image_prompt": "A car factory assembly hall in soft industrial light. In the lower-right foreground, a close-up of only a technician's two gloved hands and forearms in dark-teal work sleeves, entering the frame from the bottom-right edge (no head, no face, no shoulders and no torso of the technician anywhere in the frame), carefully fitting a wiring connector into the inner panel of a partially assembled car door on the right side. In the center middle ground, slightly out of focus, a generic humanoid robot (not any specific brand or real product): a slim two-legged robot with a smooth light-gray and white body, two arms, five-fingered mechanical hands, a rounded helmet-like head whose whole front is one smooth, glossy, dark featureless visor panel with NO eyes, no eye slots, no eye lights and no other facial features — the only light on the face is a single short, soft, horizontal glowing strip near the bottom of the visor where a mouth would be — and a small blank status display on its chest — walks toward the line along a yellow-marked aisle, carrying a compartmented tray of small metal brackets with both hands. Racks, carts and yellow floor markings continue to the left and right edges. Calm, cooperative mood. The hands are the only human element; no faces anywhere, no readable text, no logos, no brand names. Warm editorial illustration style.",
       "reference_index": 0,
       "lines": [
         {
@@ -661,6 +661,11 @@
           "reference_index": 2
         },
         {
+          "from_line": 5,
+          "image_asset": "photos/kl060_S06_b",
+          "real_photo": true
+        },
+        {
           "from_line": 7,
           "source_card": {
             "kind": "blog",
@@ -733,7 +738,18 @@
       "narrator": "dialogue",
       "image_asset": "photos/kl060_S10",
       "real_photo": true,
-      "narration": "大輔「最後は、物差しの3つ。まず、どこで動いているか。前回の中国のコンビニから、ヨーロッパの車の工場の、動いているラインへ。」\n沙織「そこは、はっきり動いたね。じゃあ、値段は？」\n大輔「まだ発表されていない。頭脳のAIも、人型ロボの体も。」\n沙織「買える時期は？」\n大輔「頭脳のAIは、ロボットを作る協力会社に、順に配り始めたところ。」\n沙織「誰でも使える時期は、発表されていない。ふつうの会社がすぐ使える形には、まだなっていない、ってことね。」\n大輔「でも、2つ目の物差しの、借りる、なら話が動いてる。人型ロボを買うんじゃなくて、借りて働いてもらう形。」"
+      "narration": "大輔「最後は、物差しの3つ。まず、どこで動いているか。前回の中国のコンビニから、ヨーロッパの車の工場の、動いているラインへ。」\n沙織「そこは、はっきり動いたね。じゃあ、値段は？」\n大輔「まだ発表されていない。頭脳のAIも、人型ロボの体も。」\n沙織「買える時期は？」\n大輔「頭脳のAIは、ロボットを作る協力会社に、順に配り始めたところ。」\n沙織「誰でも使える時期は、発表されていない。ふつうの会社がすぐ使える形には、まだなっていない、ってことね。」\n大輔「でも、2つ目の物差しの、借りる、なら話が動いてる。人型ロボを買うんじゃなくて、借りて働いてもらう形。」",
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true
+        },
+        {
+          "from_line": 5,
+          "image_asset": "photos/kl060_S13_b",
+          "real_photo": true
+        }
+      ]
     },
     {
       "scene_id": 11,
@@ -947,7 +963,7 @@
             "items": [
               "1 値段: まだ発表されていない",
               "2 時期: 頭脳のAIは協力会社に順に",
-              "  借りる試験は2027年から（別の発表）",
+              "2 借りる: 試験は2027年から（別の発表）",
               "3 どこで: 欧州の車工場で試し"
             ]
           }
@@ -966,13 +982,23 @@
           }
         },
         {
-          "from_line": 10,
+          "from_line": 7,
+          "image_asset": "photos/kl060_S06_b",
+          "real_photo": true
+        },
+        {
+          "from_line": 9,
+          "image_asset": "photos/kl060_S05_b",
+          "real_photo": true
+        },
+        {
+          "from_line": 11,
           "scene_image": true
         }
       ],
       "narrator": "dialogue",
       "verdict_from_line": 9,
-      "narration": "大輔「僕の予想は、3年のうちに毎日任され始める、だった。時期の見立ては、変わらない。人が複雑な組み立てに回る、というのは、発表がそう書いているだけ。それを確かめた数字は、まだ無い。」\n沙織「私の予想は、3年より長くかかる、だった。11か月働いた例と、2027年に始まる借りる試験を見ると、そこは言い過ぎたかも。」\n沙織「ディープマインドの発表は、96%を、工場で広く使うことへの有望な一歩、と書いてる。判定するのは、その先。」\n大輔「札は4つ。もうすぐ来る、3年はかかる、根拠待ち、まだ眉唾。判定するのは、部品並べのような決まった仕事を、工場や倉庫が、一部の試しではなく、広く毎日任せるようになるのはいつか。」\n大輔「僕は「3年はかかる」。すぐではないけど、3年のうちに来る、という札で、予想と同じ向き。この3年は、今日から数えて、広く毎日任されるようになるまでの話。」\n沙織「理由は？」\n大輔「工場の試しで、96%が出た。別の発表だけど、借りる試験も2027年に始まる。残る壁は2つ。何か月も止まらずに動き続けられるか、という機械の壁と、値段。どちらも、すぐには越えられない。」\n沙織「私は、前回と同じ「根拠待ち」。気持ちは前に進んだ。でも、札を変える材料は、まだ足りない。」\n沙織「第1回で、札を変える材料に挙げたのは、値段と、工場の側が長く使って測った数字。今回、試した場所は本物の工場になった。でも数字は、今回もロボを作る会社の側から。値段も、まだ出ていない。」\n沙織「条件は2つ。値段が出ることと、工場の側が、何回試して何回成功したかを、長く使って測った数字を出すこと。両方そろったら、札を「3年はかかる」か「もうすぐ来る」に変える。」\n大輔「工場の側の数字がまだ無いのは、その通り。そこが、僕の3年の、一番弱いところ。」\n大輔「今日の持ち帰り。人型ロボは、本物の車工場で、部品並べを試すところまで来た。人の仕事は、発表の言い方では、きつい部品並べがロボへ、複雑な組み立てが人へ。僕の見立てでは、確かめる・直す仕事も、人に残る。」\n大輔「これは、2026年11月23日時点の、二人の見立て。」\n［画面のまとめカード（予想）］二人の予想 ・大輔: 3年のうちに、毎日任され始める ・沙織: 3年より長くかかる\n［画面のまとめカード（ふりかえり）］第2回の記録（3つの物差し） ・1 値段: まだ発表されていない ・2 時期: 頭脳のAIは協力会社に順に ・  借りる試験は2027年から（別の発表） ・3 どこで: 欧州の車工場で試し\n［画面のまとめカード（札の対象）］札を付ける問い ・どこで: 工場や倉庫で ・何を: 部品並べのような決まった仕事 ・いつ: 一部の試しではなく、広く毎日任されるのは ・札: もうすぐ来る／3年はかかる／根拠待ち／まだ眉唾"
+      "narration": "大輔「僕の予想は、3年のうちに毎日任され始める、だった。時期の見立ては、変わらない。人が複雑な組み立てに回る、というのは、発表がそう書いているだけ。それを確かめた数字は、まだ無い。」\n沙織「私の予想は、3年より長くかかる、だった。11か月働いた例と、2027年に始まる借りる試験を見ると、そこは言い過ぎたかも。」\n沙織「ディープマインドの発表は、96%を、工場で広く使うことへの有望な一歩、と書いてる。判定するのは、その先。」\n大輔「札は4つ。もうすぐ来る、3年はかかる、根拠待ち、まだ眉唾。判定するのは、部品並べのような決まった仕事を、工場や倉庫が、一部の試しではなく、広く毎日任せるようになるのはいつか。」\n大輔「僕は「3年はかかる」。すぐではないけど、3年のうちに来る、という札で、予想と同じ向き。この3年は、今日から数えて、広く毎日任されるようになるまでの話。」\n沙織「理由は？」\n大輔「工場の試しで、96%が出た。別の発表だけど、借りる試験も2027年に始まる。残る壁は2つ。何か月も止まらずに動き続けられるか、という機械の壁と、値段。どちらも、すぐには越えられない。」\n沙織「私は、前回と同じ「根拠待ち」。気持ちは前に進んだ。でも、札を変える材料は、まだ足りない。」\n沙織「第1回で、札を変える材料に挙げたのは、値段と、工場の側が長く使って測った数字。今回、試した場所は本物の工場になった。でも数字は、今回もロボを作る会社の側から。値段も、まだ出ていない。」\n沙織「条件は2つ。値段が出ることと、工場の側が、何回試して何回成功したかを、長く使って測った数字を出すこと。両方そろったら、札を「3年はかかる」か「もうすぐ来る」に変える。」\n大輔「工場の側の数字がまだ無いのは、その通り。そこが、僕の3年の、一番弱いところ。」\n大輔「今日の持ち帰り。人型ロボは、本物の車工場で、部品並べを試すところまで来た。人の仕事は、発表の言い方では、きつい部品並べがロボへ、複雑な組み立てが人へ。僕の見立てでは、確かめる・直す仕事も、人に残る。」\n大輔「これは、2026年11月23日時点の、二人の見立て。」\n［画面のまとめカード（予想）］二人の予想 ・大輔: 3年のうちに、毎日任され始める ・沙織: 3年より長くかかる\n［画面のまとめカード（ふりかえり）］第2回の記録（3つの物差し） ・1 値段: まだ発表されていない ・2 時期: 頭脳のAIは協力会社に順に ・2 借りる: 試験は2027年から（別の発表） ・3 どこで: 欧州の車工場で試し\n［画面のまとめカード（札の対象）］札を付ける問い ・どこで: 工場や倉庫で ・何を: 部品並べのような決まった仕事 ・いつ: 一部の試しではなく、広く毎日任されるのは ・札: もうすぐ来る／3年はかかる／根拠待ち／まだ眉唾"
     },
     {
       "scene_id": 13,

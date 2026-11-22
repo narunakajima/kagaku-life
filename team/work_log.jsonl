@@ -547,3 +547,6 @@
 {"ts": "2026-11-23T06:24:32+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl060", "step": "5.6", "result": "ok", "retries": 0, "note": "合成案（案2社名＋案5問い）。案2は4%の答えが資料外のため次点"}
 {"ts": "2026-11-23T06:25:04+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "ba5e2712-9120-41ea-b73f-d16b56cd5638"}
 {"ts": "2026-11-23T06:25:12+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl060", "step": "5.6", "result": "ok", "retries": 0, "note": "冒頭差分(S01の1語変更): 致命的0・直す0。review-pass --scenes 1"}
+{"ts": "2026-11-23T06:25:25+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl060", "step": "5.6 パッケージ確定・初見レビュー済（STEP5.5〜5.6 完了）／6 静止画生成を開始", "result": "ok", "retries": 0, "note": ""}
+{"ts": "2026-11-23T06:51:09+09:00", "kind": "call", "agent": "kl-art-director", "session": "ba5e2712-9120-41ea-b73f-d16b56cd5638"}
+{"ts": "2026-11-23T06:53:30+09:00", "kind": "work", "agent": "kl-art-director", "episode": "kl060", "step": "6.7", "result": "ok", "retries": 0, "note": "CRITICAL 4件（S08/S03顔と目、shorts3,4、サムネの見出し重なり、S12札とカードの重なり）全て1実行で修正。要相談1（shorts1_S05のクレジット3行）"}
