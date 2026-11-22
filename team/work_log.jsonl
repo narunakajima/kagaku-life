@@ -510,3 +510,14 @@
 {"ts": "2026-11-23T05:04:02+09:00", "kind": "call", "agent": "kl-manager", "session": "ba5e2712-9120-41ea-b73f-d16b56cd5638"}
 {"ts": "2026-11-23T05:04:08+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl060", "step": "1", "result": "ok", "retries": 0, "note": "本命なし日。推奨は案1（Gemini Robotics 2.5、人型ロボ定点観測 第2回、customer_case は誤判定で例外、成功率96%表記）、次点は追加収集、最後に案2"}
 {"ts": "2026-11-23T05:16:51+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl060", "step": "承認受領", "result": "ok", "retries": 0, "note": "案1 承認（Muse経由）。受信から取り込みまで数分"}
+{"ts": "2026-11-23T05:17:14+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl060", "step": "1 ネタ確定（案1承認）", "result": "ok", "retries": 0, "note": ""}
+{"ts": "2026-11-23T05:23:19+09:00", "kind": "applied", "agent": "kl-planner", "episode": "kl060", "ids": ["KL2611-01"], "skipped": [], "reason": ""}
+{"ts": "2026-11-23T05:23:45+09:00", "kind": "call", "agent": "kl-planner", "session": "ba5e2712-9120-41ea-b73f-d16b56cd5638"}
+{"ts": "2026-11-23T05:24:19+09:00", "kind": "work", "agent": "kl-planner", "episode": "kl060", "step": "1.5", "result": "ok", "retries": 0, "note": "問い7案→3案（A推奨・B条件つき・C弱い）。落とした型 D:6/4 E:4/3 F:8/7 G:6/避ける型"}
+{"ts": "2026-11-23T05:25:01+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "ba5e2712-9120-41ea-b73f-d16b56cd5638"}
+{"ts": "2026-11-23T05:25:23+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl060", "step": "1.5", "result": "ok", "retries": 0, "note": "問い段階: 見たい=B・C／見たくない=A（人の仕事はどう変わる＝既聴・問い2つ）。1位C 2位B 3位A"}
+{"ts": "2026-11-23T05:26:53+09:00", "kind": "call", "agent": "kl-manager", "session": "ba5e2712-9120-41ea-b73f-d16b56cd5638"}
+{"ts": "2026-11-23T05:27:19+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl060", "step": "1.5", "result": "ok", "retries": 0, "note": "合成案E（覚え直せる人型ロボ、借りる働き手になる日はいつ）を推奨、次点C・B、A退け"}
+{"ts": "2026-11-23T05:27:50+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "ba5e2712-9120-41ea-b73f-d16b56cd5638"}
+{"ts": "2026-11-23T05:28:02+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl060", "step": "1.5", "result": "ok", "retries": 0, "note": "合成案E: 見たい。注意: 問いの目玉『借りる』が冒頭15秒に出ない／登場物5つ"}
+{"ts": "2026-11-23T05:40:42+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl060", "step": "承認受領", "result": "ok", "retries": 0, "note": "問い 案A 承認（Muse経由、編集長推奨Eとは別）。受信から取り込みまで数分"}
