@@ -1,0 +1,1082 @@
+{
+  "episode_id": "kl060",
+  "format": "dialogue",
+  "structure": "rounds_v4",
+  "template": "basic",
+  "source_type": "news",
+  "news_date": "2026-11-10",
+  "verdict_as_of": "2026-11-23",
+  "series": "humanoid_watch",
+  "series_no": 2,
+  "genre": "humanoid",
+  "health": false,
+  "topic_pattern": "extreme_number",
+  "episode_title": "体にきつい繰り返しの仕事を人型ロボが引き受ける日、人の仕事はどう変わる？ どこまで来た？",
+  "youtube_title": "人型ロボが車工場で成功率96%。人の仕事はどう変わる？（11月時点・定点観測 第2回）",
+  "entry_question": "体にきつい繰り返しの仕事を人型ロボが引き受ける日、人の仕事はどう変わる？ どこまで来た？",
+  "claim_verdict": {
+    "dreamer": "soon",
+    "skeptic": "pending"
+  },
+  "verdict": {
+    "dreamer": "decade",
+    "skeptic": "pending"
+  },
+  "hook_lines": [
+    "動く車工場で人型ロボ",
+    "成功率96%、残り4%は？"
+  ],
+  "thumbnail_prompt": "Inside a bright modern car factory, continuous across the whole frame with no panels, boxes or borders. Keep the left 30%, the right 30% and the top 42% of the frame quiet and uncluttered (softly blurred factory hall, racks and warm overhead lights only), but the background must continue unbroken behind them. Main subject, centered left-to-right in the middle band: a generic humanoid robot (not any specific brand or real product): a slim two-legged robot with a smooth light-gray and white body, two arms, five-fingered mechanical hands, a rounded head with a plain dark face panel and a small soft glowing light strip where a mouth would be, and a small status display on its chest — reaching into a gray bin of small metal brackets and placing one into a compartmented tray, with partially assembled car bodies softly blurred on a production line behind. Hopeful and intriguing. No people, no text, no logos, no brand names.",
+  "thumbnail_headline": "車工場で人型ロボ\n成功率96%",
+  "thumbnail_exprs": {
+    "dreamer": "excited",
+    "skeptic": "doubt"
+  },
+  "depicts_real_product": true,
+  "youtube_tags": [
+    "人型ロボ",
+    "ヒューマノイド",
+    "Gemini Robotics",
+    "Gemini Robotics 2.5",
+    "Google DeepMind",
+    "ディープマインド",
+    "Apptronik",
+    "Apollo 2",
+    "メルセデス・ベンツ",
+    "人型ロボ 工場",
+    "Figure",
+    "GXO",
+    "人手不足",
+    "定点観測",
+    "科学ニュース"
+  ],
+  "references": [
+    {
+      "title": "Gemini Robotics 2.5 accelerates real-world physical intelligence",
+      "authors": [],
+      "year": 2026,
+      "venue": "Google DeepMind ブログ（2026年11月10日）",
+      "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+      "is_preprint": false,
+      "institution": "Google DeepMind",
+      "source_kind": "official_blog"
+    },
+    {
+      "title": "Gemini Robotics（製品ページ）",
+      "authors": [],
+      "year": 2026,
+      "venue": "Google DeepMind（2026年11月23日確認）",
+      "url": "https://deepmind.google/technologies/gemini-robotics/",
+      "is_preprint": false,
+      "institution": "Google DeepMind",
+      "source_kind": "company_website"
+    },
+    {
+      "title": "F.02 Contributed to the Production of 30,000 Cars at BMW",
+      "authors": [],
+      "year": 2025,
+      "venue": "Figure 社の報告（2025年11月19日）",
+      "url": "https://figure.ai/news/production-at-bmw",
+      "is_preprint": false,
+      "institution": "Figure AI",
+      "source_kind": "company_report"
+    },
+    {
+      "title": "GXO and Apptronik Expand Partnership to Scale Humanoid Deployment",
+      "authors": [],
+      "year": 2026,
+      "venue": "Apptronik の発表（2026年11月12日）",
+      "url": "https://apptronik.com/news-collection/gxo-and-apptronik-expand-partnership-to-scale-humanoid-deployment",
+      "is_preprint": false,
+      "institution": "Apptronik",
+      "source_kind": "press_release"
+    },
+    {
+      "title": "Agility Robotics Announces Commercial Agreement with Toyota Motor Manufacturing Canada",
+      "authors": [],
+      "year": 2026,
+      "venue": "Agility Robotics の発表（2026年2月19日）",
+      "url": "https://agilityrobotics.com/content/agility-robotics-announces-commercial-agreement-with-toyota-motor-manufacturing-canada",
+      "is_preprint": false,
+      "institution": "Agility Robotics",
+      "source_kind": "press_release"
+    }
+  ],
+  "youtube_description": "2026年11月10日の Google DeepMind の発表を、11月23日時点で確認した二人の見立てです。\nシリーズ「人型ロボ定点観測」第2回。\n\nGoogle DeepMind が発表した、ロボットを動かすAI「Gemini Robotics 2.5」と、それを積んだ Apptronik の人型ロボ「Apollo 2（アポロ2）」による、メルセデス・ベンツの車の工場での試験（成功率96%）を扱います。\n\n体にきつい繰り返しの仕事を、人型ロボが引き受ける日。人の仕事はどう変わるのか、まずどこまで来たのか。期待担当の大輔と、確かめ担当の沙織が、DeepMind の発表、Figure 社の報告、Apptronik と Agility Robotics の発表で確かめます。(1) 本物のラインで96%、どこまで確か？ (2) 残りの4%と人の仕事、どうなる？ (3) いつ・いくらで・どこに来る？ の3つです。\n\n■ 前回（第1回）の判定\n中国のコンビニで人型ロボが24時間働いた回。大輔「3年はかかる」、沙織「根拠待ち」（値段と、店の側が長く使って測った数字が出たら上げる）。\n\n■ 今回の物差し（2026年11月23日時点）\n1 値段: まだ発表されていません（Gemini Robotics 2.5、Apollo 2 とも）。\n2 買える・借りられる時期: Gemini Robotics 2.5 はロボットを作る協力会社に順に提供中で、一般の提供時期は発表されていません。別の発表として、Apptronik は物流大手 GXO と、ロボットをサービスとして借りる形の基本合意（2026年11月12日）をし、2027年に試験、北米での最初の導入は2027年の終わりごろ、性能・安全・運用の目標を満たせば4年で最大1,000台としています（値段の記載なし。96%の試験とは別の発表です）。\n3 どこで動いているか: 中国のコンビニ（第1回）から、ハンガリーとドイツのメルセデス・ベンツの動いている生産ラインでの試験へ。\n\n■ この回の判定（2026年11月23日時点の、二人の見立て）\n札を付けた問い: 工場や倉庫で、部品並べや仕分けのような決まった仕事を、人型ロボが試しではなく毎日任され始めるのはいつか。\n・大輔「3年はかかる」: 本物の車のラインで成功率96%、頭脳のAIも200を超える作業で前の版より伸び、借りる形の試験も2027年に始まる。残る壁は、何か月も続けて確かに動くことと値段。この3年は、今日から数えて毎日任され始めるまでの見立て。\n・沙織「根拠待ち」: 来ない、という札ではなく、時期を決める材料がまだ足りない、という札。第1回の条件のうち場所は本物の工場になったが、数字は今回もロボの側（DeepMind）から。工場の側が、何回試して何回成功したかを長く使って測った数字を出したら、または値段が出たら、札を上げる。\nDeepMind の発表は、この試験（proof-of-concept、パイロット）を「広く実際の産業で使うことへの有望な進歩」と書いています。\n\n■ 補足\n・成功率96%: DeepMind の発表の数字です。試行回数、試験の期間、何を1回の成功と数えたか、人と比べた速さは書かれていません。メルセデス・ベンツ自身が発表した文書は、確認できませんでした。\n・「成功率が作業の種類によって30%〜100%高い」「かかる時間が20〜30%短い」は、200を超える作業で前の版（Gemini Robotics 2 など）と比べた数字で、メルセデスの工場での試験の数字ではありません。\n・人のそばでの安全: 考えながら動く仕組みで、障害物のそばで安全に作業を終える割合が33%、近くに人がいるときに43%上がった、という DeepMind 自身の評価です。\n・発表は、部品並べ（キッティング）を「繰り返しで体にきつい作業」とし、ロボットに任せることで技術者が複雑な組み立てに集中できる、と書いています。\n・Figure 社の報告（2025年11月19日）: BMW のアメリカの工場で11か月、平日1日10時間、9万個を超える部品を積み、3万台を超える X3 の生産に関わったとしています。目標は1回の勤務あたり成功99%超・介入ゼロで、実際の成功率は書かれていません。\n・Agility Robotics の発表（2026年2月19日）: トヨタのカナダの工場が、試しのあとで、人型ロボ Digit をサービスとして借りる形の契約をしました。台数・値段・開始日は書かれていません。\n・ロボットを失敗の後に誰が直すかは、どの資料にも書かれていません。動画の中の「運ぶ・並べるはロボ、確かめる・直すは人」は二人の見立てです。\n・この動画は発表の紹介で、特定の商品の購入や投資をすすめるものではありません。\n\n※映像に出てくる人型ロボの絵は、特定の製品に見えないように描いたイメージ図です。実物と異なります。\n\n■ 参考資料（一次資料）\n・Google DeepMind「Gemini Robotics 2.5 accelerates real-world physical intelligence」（2026年11月10日） https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/\n・Google DeepMind「Gemini Robotics」 https://deepmind.google/technologies/gemini-robotics/\n・Figure「F.02 Contributed to the Production of 30,000 Cars at BMW」（2025年11月19日） https://figure.ai/news/production-at-bmw\n・Apptronik「GXO and Apptronik Expand Partnership to Scale Humanoid Deployment」（2026年11月12日） https://apptronik.com/news-collection/gxo-and-apptronik-expand-partnership-to-scale-humanoid-deployment\n・Agility Robotics「Agility Robotics Announces Commercial Agreement with Toyota Motor Manufacturing Canada」（2026年2月19日） https://agilityrobotics.com/content/agility-robotics-announces-commercial-agreement-with-toyota-motor-manufacturing-canada\n\n#人型ロボ #ヒューマノイド #幸せな未来のサイエンス\n\n【写真クレジット】\nS05-b: 「Mercedes-Benz-Werk Sindelfingen IMG 3908.jpg」 / Alexander Migl / CC BY-SA 4.0 / https://commons.wikimedia.org/wiki/File:Mercedes-Benz-Werk_Sindelfingen_IMG_3908.jpg\nS06-b: 「Mercedes-Benz Werk Sindelfingen.JPG」 / Cdalkmann / CC BY-SA 4.0 / https://commons.wikimedia.org/wiki/File:Mercedes-Benz_Werk_Sindelfingen.JPG\nS10: 「Mercedes-Benz Werk Sindelfingen - panoramio (1).jpg」 / qwesy qwesy / CC BY 3.0 / https://commons.wikimedia.org/wiki/File:Mercedes-Benz_Werk_Sindelfingen_-_panoramio_(1).jpg\nS13-b: 「Werk Sindelfingen aerial.jpg」 / The original uploader was Iggy-x at German Wikipedia. / CC BY-SA 3.0 / https://commons.wikimedia.org/wiki/File:Werk_Sindelfingen_aerial.jpg\n",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 6,
+      "ken_burns": "zoom_out",
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "動いている車の工場で、人型ロボが部品並べ。成功率96%。",
+          "expression": "excited",
+          "reference_index": 0
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「動いている車の工場で、人型ロボが部品並べ。成功率96%。」"
+    },
+    {
+      "scene_id": 2,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 6,
+      "ken_burns": "zoom_out",
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "96%ね。でも、残りの4%は、誰が直すの？",
+          "expression": "doubt"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "沙織「96%ね。でも、残りの4%は、誰が直すの？」"
+    },
+    {
+      "scene_id": 3,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 8,
+      "ken_burns": "zoom_out",
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "体にきつい繰り返しの仕事を、人型ロボが引き受ける日。",
+          "expression": "thinking"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「体にきつい繰り返しの仕事を、人型ロボが引き受ける日。」"
+    },
+    {
+      "scene_id": 4,
+      "type": "teaser",
+      "bgm_role": "intro",
+      "reuse_scene_id": 10,
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "どこまで来た？ そのとき、人の仕事はどう変わる？",
+          "expression": "thinking",
+          "tag": "question"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "沙織「どこまで来た？ そのとき、人の仕事はどう変わる？」"
+    },
+    {
+      "scene_id": 5,
+      "type": "setup",
+      "bgm_role": "intro",
+      "image_asset": "base_cafe_b",
+      "ken_burns": "zoom_out",
+      "reference_index": 0,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "11月の発表。ヨーロッパの車の工場の、動いている生産ラインで、人型ロボが部品並べをした。成功率96%。",
+          "expression": "excited",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "96%ね。でも、何回やったかは書いてない。残りの4%、誰が直すの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そこは、今日しっかり確かめよう。部品を箱から出して順番に並べる、荷物を仕分ける。こういう繰り返しの仕事は、日本の町工場にも、倉庫にもあるでしょ。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "あるね。ただ、今日の資料に、日本の工場の話は出てこない。そこは先に言っておく。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "それと今回は、続きものの第2回。人型ロボが、いつ・いくらで・どこに来るかを、発表のたびに同じ物差しで確かめてる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "物差しは3つ。値段。買える、または借りられる時期。今どこで動いているか。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "第1回は、中国のコンビニで、人型ロボが24時間働いた回。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "この番組は最後に、もうすぐ来る、3年はかかる、といった札で、二人の見立てを出すのよね。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "そう。前回、僕の札は「3年はかかる」。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は「根拠待ち」。値段と、店の側が何週間も使って測った数字が出たら、札を上げると言った。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今回動いたのは、3つ目の、どこで動いているか。中国のコンビニから、ヨーロッパの車の工場へ。値段と時期は、今回もまだ発表されていない。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "じゃあ、今日の問い。体にきつい繰り返しの仕事を、人型ロボが引き受ける日は、どこまで来たのか。そのとき、人の仕事はどう変わるのか。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想。部品並べのような決まった仕事なら、3年のうちに、人型ロボが毎日任され始める。人は、もっと複雑な組み立てに回る。",
+          "expression": "excited",
+          "tag": "prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想は、3年より長くかかる。96%は試験の数字で、残りを直すのは人だから。本物なら、私も使いたいけどね。",
+          "expression": "doubt",
+          "tag": "prediction"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true
+        },
+        {
+          "from_line": 2,
+          "image_asset": "photos/kl060_S05_b",
+          "real_photo": true
+        },
+        {
+          "from_line": 5,
+          "recap_card": {
+            "title": "人型ロボ定点観測の物差し（毎回同じ）",
+            "items": [
+              "1 値段",
+              "2 買える・借りられる時期",
+              "3 今どこで動いているか"
+            ]
+          }
+        },
+        {
+          "from_line": 7,
+          "recap_card": {
+            "title": "前回（第1回）の判定の札",
+            "items": [
+              "中国のコンビニで、人型ロボが24時間",
+              "大輔: 3年はかかる",
+              "沙織: 根拠待ち",
+              "上げる条件: 値段と、店の側の長い数字"
+            ]
+          }
+        },
+        {
+          "from_line": 11,
+          "recap_card": {
+            "title": "今回の物差し（第2回）",
+            "items": [
+              "1 値段: まだ発表されていない",
+              "2 買える・借りられる時期: まだ",
+              "3 どこで: 中国の店→欧州の車工場"
+            ]
+          }
+        },
+        {
+          "from_line": 13,
+          "recap_card": {
+            "title": "二人の予想",
+            "badge": "予想",
+            "items": [
+              "大輔: 3年のうちに、毎日任され始める",
+              "沙織: 3年より長くかかる"
+            ]
+          }
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「11月の発表。ヨーロッパの車の工場の、動いている生産ラインで、人型ロボが部品並べをした。成功率96%。」\n沙織「96%ね。でも、何回やったかは書いてない。残りの4%、誰が直すの？」\n大輔「そこは、今日しっかり確かめよう。部品を箱から出して順番に並べる、荷物を仕分ける。こういう繰り返しの仕事は、日本の町工場にも、倉庫にもあるでしょ。」\n沙織「あるね。ただ、今日の資料に、日本の工場の話は出てこない。そこは先に言っておく。」\n大輔「それと今回は、続きものの第2回。人型ロボが、いつ・いくらで・どこに来るかを、発表のたびに同じ物差しで確かめてる。」\n沙織「物差しは3つ。値段。買える、または借りられる時期。今どこで動いているか。」\n大輔「第1回は、中国のコンビニで、人型ロボが24時間働いた回。」\n沙織「この番組は最後に、もうすぐ来る、3年はかかる、といった札で、二人の見立てを出すのよね。」\n大輔「そう。前回、僕の札は「3年はかかる」。」\n沙織「私は「根拠待ち」。値段と、店の側が何週間も使って測った数字が出たら、札を上げると言った。」\n大輔「今回動いたのは、3つ目の、どこで動いているか。中国のコンビニから、ヨーロッパの車の工場へ。値段と時期は、今回もまだ発表されていない。」\n大輔「じゃあ、今日の問い。体にきつい繰り返しの仕事を、人型ロボが引き受ける日は、どこまで来たのか。そのとき、人の仕事はどう変わるのか。」\n大輔「僕の予想。部品並べのような決まった仕事なら、3年のうちに、人型ロボが毎日任され始める。人は、もっと複雑な組み立てに回る。」\n沙織「私の予想は、3年より長くかかる。96%は試験の数字で、残りを直すのは人だから。本物なら、私も使いたいけどね。」\n［画面のまとめカード（ふりかえり）］人型ロボ定点観測の物差し（毎回同じ） ・1 値段 ・2 買える・借りられる時期 ・3 今どこで動いているか\n［画面のまとめカード（ふりかえり）］前回（第1回）の判定の札 ・中国のコンビニで、人型ロボが24時間 ・大輔: 3年はかかる ・沙織: 根拠待ち ・上げる条件: 値段と、店の側の長い数字\n［画面のまとめカード（ふりかえり）］今回の物差し（第2回） ・1 値段: まだ発表されていない ・2 買える・借りられる時期: まだ ・3 どこで: 中国の店→欧州の車工場\n［画面のまとめカード（予想）］二人の予想 ・大輔: 3年のうちに、毎日任され始める ・沙織: 3年より長くかかる"
+    },
+    {
+      "scene_id": 6,
+      "type": "paper",
+      "round": 1,
+      "round_title": "本物のラインで96%、どこまで確か？",
+      "bgm_role": "main",
+      "ken_burns": "zoom_out",
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "image_prompt": "Inside a modern European car factory, a parts-logistics area beside an active assembly line, bright even industrial light: a generic humanoid robot (not any specific brand or real product): a slim two-legged robot with a smooth light-gray and white body, two arms, five-fingered mechanical hands, a rounded head with a plain dark face panel and a small soft glowing light strip where a mouth would be, and a small status display on its chest — stands at a row of gray supply bins full of loose small metal brackets, picking one bracket with its hand and placing it into a compartmented sequencing tray on a cart. Behind it, out of focus, partially assembled car bodies move along the production line, with racks and yellow safety markings on the floor continuing to the left and right edges. The robot is the clear focal point in the center. Hopeful, curious mood. No people, no readable text, no logos, no brand names. Warm editorial illustration style.",
+      "reference_index": 0,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "まず、誰の発表？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "グーグルのAIの研究部門、ディープマインド。11月10日に、ロボットを動かすAIの新しい版を出した。名前は、ジェミニ・ロボティクス2.5。",
+          "expression": "excited",
+          "reference_index": 0,
+          "display": "グーグルのAIの研究部門、ディープマインド。11月10日に、ロボットを動かすAIの新しい版を出した。名前は、Gemini Robotics 2.5。"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "グーグルが、ロボットも作ってるの？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "作ってない。このAIは、ロボットの頭脳にあたる部分。この回では「頭脳のAI」と呼ぶね。体はよその会社のロボットで、そこに頭脳のAIを積む。",
+          "expression": "neutral",
+          "reference_index": 1
+        },
+        {
+          "speaker": "skeptic",
+          "text": "頭脳と体が、別の会社なのね。で、今回はどの体に？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "アメリカのアプトロニクという会社の人型ロボ、アポロ2。メルセデス・ベンツの、ハンガリーとドイツの工場の、動いている生産ラインに、試しに入った。",
+          "expression": "excited",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "展示会じゃなくて、本物のラインね。何をしたの？",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "部品並べ。箱にばらばらに入った金属の部品を取って、車1台ごとに要る順番で、入れ物に並べる。抜けがあれば埋める。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "地味だけど、毎日ずっと続く仕事ね。発表も、繰り返しで体にきつい仕事、と書いてる。",
+          "expression": "thinking",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "メルセデスの工場では、部品並べをもう試した。じゃあ、次は、どこで使える？ 同じような並べる仕事は、部品を作る工場にも、通販の倉庫にもある。そこに広がると思う。",
+          "expression": "excited",
+          "tag": "use_case"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "広がる前に、96%の中身を確かめたい。ディープマインドの発表を、一緒に見よう。",
+          "expression": "thinking"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "scene_image": true,
+          "shows_product": true
+        },
+        {
+          "from_line": 6,
+          "image_asset": "photos/kl060_S06_b",
+          "real_photo": true
+        },
+        {
+          "from_line": 8,
+          "scene_image": true,
+          "shows_product": true
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "沙織「まず、誰の発表？」\n大輔「グーグルのAIの研究部門、ディープマインド。11月10日に、ロボットを動かすAIの新しい版を出した。名前は、ジェミニ・ロボティクス2.5。」\n沙織「グーグルが、ロボットも作ってるの？」\n大輔「作ってない。このAIは、ロボットの頭脳にあたる部分。この回では「頭脳のAI」と呼ぶね。体はよその会社のロボットで、そこに頭脳のAIを積む。」\n沙織「頭脳と体が、別の会社なのね。で、今回はどの体に？」\n大輔「アメリカのアプトロニクという会社の人型ロボ、アポロ2。メルセデス・ベンツの、ハンガリーとドイツの工場の、動いている生産ラインに、試しに入った。」\n沙織「展示会じゃなくて、本物のラインね。何をしたの？」\n大輔「部品並べ。箱にばらばらに入った金属の部品を取って、車1台ごとに要る順番で、入れ物に並べる。抜けがあれば埋める。」\n沙織「地味だけど、毎日ずっと続く仕事ね。発表も、繰り返しで体にきつい仕事、と書いてる。」\n大輔「メルセデスの工場では、部品並べをもう試した。じゃあ、次は、どこで使える？ 同じような並べる仕事は、部品を作る工場にも、通販の倉庫にもある。そこに広がると思う。」\n沙織「広がる前に、96%の中身を確かめたい。ディープマインドの発表を、一緒に見よう。」"
+    },
+    {
+      "scene_id": 7,
+      "type": "check",
+      "round": 1,
+      "bgm_role": "main",
+      "ken_burns": "static",
+      "reference_index": 0,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "成功率96%とは書いてある。でも、何回試したのかは、書いてない。",
+          "expression": "doubt",
+          "tag": "weakness",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "何日間の試験か、は？",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それも無い。何を1回の成功と数えたのか、人と比べて速いのか、も書いてない。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それに、発表自身が、この試験を、本番の前の試し、と呼んでる。毎日の本番の数字じゃない。",
+          "expression": "neutral",
+          "tag": "barrier",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "本番の前、なのはその通り。",
+          "expression": "deflated"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "もう一つ。96%は、ディープマインドの発表の数字。メルセデスが自分で出した発表は、私には見つけられなかった。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "だったら、頭脳のAIそのものの伸びを見よう。同じ発表で、200を超える作業を、前の版と比べてる。トングで料理を盛る、リボンを結ぶ、とか。",
+          "expression": "excited",
+          "tag": "workaround",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "前の版より、成功率は、作業の種類によって30%から100%高い。",
+          "expression": "surprised",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "作業のスピードも、20〜30%速い。",
+          "expression": "surprised",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "ただ、この伸びは、メルセデスの工場の数字じゃない。200の作業での、前の版との比べっこ。そこは混ぜないでおこう。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "了解。工場の96%と、200の作業の伸びは、別の数字ね。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "本番の前の試しとはいえ、動いている車のラインで96%。頭脳のAIも、200を超える作業で、前の版より伸びた。",
+          "expression": "convinced",
+          "tag": "hope",
+          "reference_index": 0
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "source_card": {
+            "kind": "blog",
+            "source": "Google DeepMind ブログ（2026年11月10日）",
+            "quote": "Achieving a 96% success rate, this pilot shows promising progress",
+            "quote_type": "原文",
+            "highlight": "96% success rate",
+            "items": [
+              "メルセデス・ベンツの生産ライン",
+              "人型ロボ「アポロ2」が部品並べを自分で",
+              "試行回数・期間・数え方は書かれていない"
+            ]
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 4,
+          "source_card": {
+            "kind": "blog",
+            "source": "Google DeepMind ブログ（2026年11月10日）",
+            "quote": "During a real-world proof-of-concept on Mercedes-Benz production lines",
+            "quote_type": "原文",
+            "highlight": "proof-of-concept",
+            "items": [
+              "proof-of-concept＝本番の前の試し",
+              "毎日の本番の数字ではない"
+            ]
+          },
+          "reference_index": 0
+        },
+        {
+          "from_line": 7,
+          "source_card": {
+            "kind": "blog",
+            "source": "Google DeepMind ブログ（2026年11月10日）",
+            "quote": "a 30% to 100% higher success rate depending on the type of task",
+            "quote_type": "原文",
+            "highlight": "30% to 100% higher success rate",
+            "items": [
+              "200を超える作業で、前の版と比べた",
+              "スピードは20〜30%速い",
+              "メルセデスの工場の数字ではない"
+            ]
+          },
+          "reference_index": 0
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "沙織「成功率96%とは書いてある。でも、何回試したのかは、書いてない。」\n大輔「何日間の試験か、は？」\n沙織「それも無い。何を1回の成功と数えたのか、人と比べて速いのか、も書いてない。」\n沙織「それに、発表自身が、この試験を、本番の前の試し、と呼んでる。毎日の本番の数字じゃない。」\n大輔「本番の前、なのはその通り。」\n沙織「もう一つ。96%は、ディープマインドの発表の数字。メルセデスが自分で出した発表は、私には見つけられなかった。」\n大輔「だったら、頭脳のAIそのものの伸びを見よう。同じ発表で、200を超える作業を、前の版と比べてる。トングで料理を盛る、リボンを結ぶ、とか。」\n沙織「前の版より、成功率は、作業の種類によって30%から100%高い。」\n沙織「作業のスピードも、20〜30%速い。」\n大輔「ただ、この伸びは、メルセデスの工場の数字じゃない。200の作業での、前の版との比べっこ。そこは混ぜないでおこう。」\n沙織「了解。工場の96%と、200の作業の伸びは、別の数字ね。」\n大輔「本番の前の試しとはいえ、動いている車のラインで96%。頭脳のAIも、200を超える作業で、前の版より伸びた。」\n［画面の資料カード］Google DeepMind ブログ（2026年11月10日） 「Achieving a 96% success rate, this pilot shows promising progress」（原文） ・メルセデス・ベンツの生産ライン ・人型ロボ「アポロ2」が部品並べを自分で ・試行回数・期間・数え方は書かれていない\n［画面の資料カード］Google DeepMind ブログ（2026年11月10日） 「During a real-world proof-of-concept on Mercedes-Benz production lines」（原文） ・proof-of-concept＝本番の前の試し ・毎日の本番の数字ではない\n［画面の資料カード］Google DeepMind ブログ（2026年11月10日） 「a 30% to 100% higher success rate depending on the type of task」（原文） ・200を超える作業で、前の版と比べた ・スピードは20〜30%速い ・メルセデスの工場の数字ではない",
+      "image_asset": "cards/kl060_S07_v1"
+    },
+    {
+      "scene_id": 8,
+      "type": "paper",
+      "round": 2,
+      "round_title": "残りの4%と人の仕事、どうなる？",
+      "bgm_role": "main",
+      "ken_burns": "zoom_out",
+      "shows_product": true,
+      "badge_text": "イメージ図（実物と異なる場合があります）",
+      "image_prompt": "A car factory assembly hall in soft industrial light. In the foreground, seen from behind the shoulder with no face visible, a technician's gloved hands carefully fit a wiring connector into the inside of a partially assembled car door. In the middle ground, slightly out of focus, a generic humanoid robot (not any specific brand or real product): a slim two-legged robot with a smooth light-gray and white body, two arms, five-fingered mechanical hands, a rounded head with a plain dark face panel and a small soft glowing light strip where a mouth would be, and a small status display on its chest — walks toward the line carrying a compartmented tray of small metal brackets. Racks, carts and yellow floor markings continue to the left and right edges. Calm, cooperative mood. No faces, no readable text, no logos, no brand names. Warm editorial illustration style.",
+      "reference_index": 0,
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "次は、人の仕事。ディープマインドの発表は、働く人のことを、何て書いてる？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "繰り返しで体にきつい部品並べをロボが引き受けて、技術者は、もっと複雑な組み立てに集中できる、と書いてる。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それは、発表した側の言い方ね。人型ロボが工場で長く働いた例はあるの？ 正直、私は、どれも数日の試しだと思ってた。",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "あるよ。アメリカのフィギュアという、人型ロボの会社の報告。BMWのアメリカの工場で、11か月働いた。平日、1日10時間。",
+          "expression": "excited",
+          "reference_index": 2
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "沙織「次は、人の仕事。ディープマインドの発表は、働く人のことを、何て書いてる？」\n大輔「繰り返しで体にきつい部品並べをロボが引き受けて、技術者は、もっと複雑な組み立てに集中できる、と書いてる。」\n沙織「それは、発表した側の言い方ね。人型ロボが工場で長く働いた例はあるの？ 正直、私は、どれも数日の試しだと思ってた。」\n大輔「あるよ。アメリカのフィギュアという、人型ロボの会社の報告。BMWのアメリカの工場で、11か月働いた。平日、1日10時間。」"
+    },
+    {
+      "scene_id": 9,
+      "type": "check",
+      "round": 2,
+      "bgm_role": "main",
+      "ken_burns": "static",
+      "reference_index": 2,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "板金の部品を、溶接の台に置く仕事。積んだ部品は9万個を超えて、3万台を超える車の生産に関わった、と書いてある。",
+          "expression": "excited",
+          "reference_index": 2
+        },
+        {
+          "speaker": "skeptic",
+          "text": "11か月で、3万台。それは、私の読み違いだった。人型ロボが工場で長く働くところまでは、もう来てる。",
+          "expression": "surprised",
+          "tag": "turn",
+          "reference_index": 2
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ただ、フィギュアも、成功率は出してない。目標は、1回の勤務で成功99%超え。実際の数字は、書いてない。",
+          "expression": "thinking",
+          "reference_index": 2
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今回のディープマインドは、成功率を出した。フィギュアは、期間と量を出した。両方そろった報告は、僕が調べた範囲では、まだ無いんだ。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "じゃあ、残りの4%に戻る。ロボが失敗した分は、誰が直すの？",
+          "expression": "doubt"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "誰が直すかは、発表には書いてない。ここからは資料の外の、僕の見立て。始めは、ロボのそばに直す人を置く。運ぶ・並べるはロボ、確かめる・直すは人、という分け方。",
+          "expression": "neutral",
+          "tag": "workaround"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "人のそばで動くなら、安全が気になる。ちょうど、ディープマインドの発表に数字がある。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "考えながら動く仕組みで、近くに人がいるときに、安全に作業を終えられた割合が43%上がった。ディープマインド自身の評価ね。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "本物なら、私は、重い箱を何度も持ち上げる仕事に使いたい。人がやるには、きつい仕事だから。だからこそ、人のそばで何日も続けて安全か、を確かめたい。",
+          "expression": "neutral",
+          "tag": "skeptic_wish"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "発表が描く人の仕事は、きつい部品並べをロボに渡して、技術者が複雑な組み立てに回る形。人のそばでの安全も、43%伸びた。",
+          "expression": "convinced",
+          "tag": "hope",
+          "reference_index": 0
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "source_card": {
+            "kind": "report",
+            "source": "Figure 社の報告（2025年11月19日）",
+            "quote": "Contributed to the production of 30,000+ X3 vehicles.",
+            "quote_type": "原文",
+            "highlight": "30,000+ X3 vehicles",
+            "items": [
+              "BMWのアメリカの工場で11か月",
+              "平日、1日10時間",
+              "積んだ部品は9万個超",
+              "目標は1回の勤務で成功99%超（実績は書かれていない）"
+            ]
+          },
+          "reference_index": 2
+        },
+        {
+          "from_line": 7,
+          "source_card": {
+            "kind": "blog",
+            "source": "Google DeepMind ブログ（2026年11月10日）",
+            "quote": "boosted safe task completion around obstacles by 33% and around nearby people by 43%.",
+            "quote_type": "原文",
+            "highlight": "around nearby people by 43%",
+            "items": [
+              "考えながら動く仕組みで",
+              "人が近くにいるとき、安全に終える割合43%増",
+              "ディープマインド自身の評価"
+            ]
+          },
+          "reference_index": 0
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「板金の部品を、溶接の台に置く仕事。積んだ部品は9万個を超えて、3万台を超える車の生産に関わった、と書いてある。」\n沙織「11か月で、3万台。それは、私の読み違いだった。人型ロボが工場で長く働くところまでは、もう来てる。」\n沙織「ただ、フィギュアも、成功率は出してない。目標は、1回の勤務で成功99%超え。実際の数字は、書いてない。」\n大輔「今回のディープマインドは、成功率を出した。フィギュアは、期間と量を出した。両方そろった報告は、僕が調べた範囲では、まだ無いんだ。」\n沙織「じゃあ、残りの4%に戻る。ロボが失敗した分は、誰が直すの？」\n大輔「誰が直すかは、発表には書いてない。ここからは資料の外の、僕の見立て。始めは、ロボのそばに直す人を置く。運ぶ・並べるはロボ、確かめる・直すは人、という分け方。」\n沙織「人のそばで動くなら、安全が気になる。ちょうど、ディープマインドの発表に数字がある。」\n沙織「考えながら動く仕組みで、近くに人がいるときに、安全に作業を終えられた割合が43%上がった。ディープマインド自身の評価ね。」\n沙織「本物なら、私は、重い箱を何度も持ち上げる仕事に使いたい。人がやるには、きつい仕事だから。だからこそ、人のそばで何日も続けて安全か、を確かめたい。」\n大輔「発表が描く人の仕事は、きつい部品並べをロボに渡して、技術者が複雑な組み立てに回る形。人のそばでの安全も、43%伸びた。」\n［画面の資料カード］Figure 社の報告（2025年11月19日） 「Contributed to the production of 30,000+ X3 vehicles.」（原文） ・BMWのアメリカの工場で11か月 ・平日、1日10時間 ・積んだ部品は9万個超 ・目標は1回の勤務で成功99%超（実績は書かれていない）\n［画面の資料カード］Google DeepMind ブログ（2026年11月10日） 「boosted safe task completion around obstacles by 33% and around nearby people by 43%.」（原文） ・考えながら動く仕組みで ・人が近くにいるとき、安全に終える割合43%増 ・ディープマインド自身の評価",
+      "image_asset": "cards/kl060_S09_v1"
+    },
+    {
+      "scene_id": 10,
+      "type": "paper",
+      "round": 3,
+      "round_title": "いつ・いくらで・どこに来る？",
+      "bgm_role": "main",
+      "ken_burns": "gentle_zoom",
+      "reference_index": 0,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "最後は、物差しの3つ。まず、どこで動いているか。前回の中国のコンビニから、ヨーロッパの車の工場の、動いているラインへ。",
+          "expression": "excited",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そこは、はっきり動いたね。じゃあ、値段は？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "まだ発表されていない。頭脳のAIも、人型ロボの体も。",
+          "expression": "deflated"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "買える時期は？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "頭脳のAIは、ロボットを作る協力会社に、順に配り始めたところ。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "skeptic",
+          "text": "誰でも使える時期は、発表されていない。ふつうの会社がすぐ使える形には、まだなっていない、ってことね。",
+          "expression": "thinking",
+          "tag": "barrier"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "でも、2つ目の物差しの、借りる、なら話が動いてる。人型ロボを買うんじゃなくて、借りて働いてもらう形。",
+          "expression": "excited",
+          "tag": "use_case"
+        }
+      ],
+      "narrator": "dialogue",
+      "image_asset": "photos/kl060_S10",
+      "real_photo": true,
+      "narration": "大輔「最後は、物差しの3つ。まず、どこで動いているか。前回の中国のコンビニから、ヨーロッパの車の工場の、動いているラインへ。」\n沙織「そこは、はっきり動いたね。じゃあ、値段は？」\n大輔「まだ発表されていない。頭脳のAIも、人型ロボの体も。」\n沙織「買える時期は？」\n大輔「頭脳のAIは、ロボットを作る協力会社に、順に配り始めたところ。」\n沙織「誰でも使える時期は、発表されていない。ふつうの会社がすぐ使える形には、まだなっていない、ってことね。」\n大輔「でも、2つ目の物差しの、借りる、なら話が動いてる。人型ロボを買うんじゃなくて、借りて働いてもらう形。」"
+    },
+    {
+      "scene_id": 11,
+      "type": "check",
+      "round": 3,
+      "bgm_role": "main",
+      "ken_burns": "static",
+      "reference_index": 3,
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "ここからは、96%の試験とは別の発表。アポロ2を作るアプトロニクが、11月12日に、アメリカの物流の大手、GXOと基本合意をした。",
+          "expression": "neutral",
+          "reference_index": 3
+        },
+        {
+          "speaker": "skeptic",
+          "text": "基本合意って、正式な契約の前の約束ね。中身は？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "人型ロボを、サービスとして借りる形。2027年に試験を始めて、北米での最初の導入は、2027年の終わりごろ。",
+          "expression": "neutral",
+          "reference_index": 3
+        },
+        {
+          "speaker": "skeptic",
+          "text": "うまくいけば、4年で最大1,000台、とも書いてある。ただ、試験で、決めた目標を満たせたら、が条件。値段も書いてない。",
+          "expression": "doubt",
+          "reference_index": 3
+        },
+        {
+          "speaker": "dreamer",
+          "text": "条件つきなのは、その通り。でも、借りる形なら、高い機械を一度に買わずに、試してから決められる。",
+          "expression": "neutral",
+          "tag": "workaround"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "その入り方なら、もう一つ例がある。台数と値段は書いてないけど、トヨタのカナダの工場は、今年の2月、試しのあとで、別の会社の人型ロボを借りる契約をした。",
+          "expression": "neutral",
+          "reference_index": 4
+        },
+        {
+          "speaker": "dreamer",
+          "text": "その発表も、繰り返しで体にきつい仕事を任せて、働く人をもっと価値のある仕事に回す、という向きだね。",
+          "expression": "convinced",
+          "reference_index": 4
+        },
+        {
+          "speaker": "skeptic",
+          "text": "試して、借りる。入り方が見えてきたね。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "試してから借りる、という入り方は、車の工場では契約に、物流では基本合意にまで来てる。",
+          "expression": "convinced",
+          "tag": "hope",
+          "reference_index": 3
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "source_card": {
+            "kind": "press",
+            "source": "Apptronik の発表（2026年11月12日）",
+            "quote": "initial deployment in North America in late 2027",
+            "quote_type": "原文",
+            "highlight": "late 2027",
+            "items": [
+              "物流の大手GXOと基本合意",
+              "ロボットをサービスとして借りる形",
+              "2027年に試験を始める",
+              "96%の試験とは別の発表"
+            ]
+          },
+          "reference_index": 3
+        },
+        {
+          "from_line": 4,
+          "source_card": {
+            "kind": "press",
+            "source": "Apptronik の発表（2026年11月12日）",
+            "quote": "up to 1,000 Apollo humanoid robots over the next four years",
+            "quote_type": "原文",
+            "highlight": "up to 1,000",
+            "items": [
+              "条件: 決めた性能・安全・運用の目標を満たせたら",
+              "値段は書かれていない"
+            ]
+          },
+          "reference_index": 3
+        },
+        {
+          "from_line": 6,
+          "source_card": {
+            "kind": "press",
+            "source": "Agility Robotics の発表（2026年2月19日）",
+            "quote": "Robots-as-a-Service (RaaS) agreement",
+            "quote_type": "原文",
+            "highlight": "Robots-as-a-Service",
+            "items": [
+              "トヨタのカナダの工場と",
+              "試しのあとで、借りる形の契約",
+              "台数・値段・開始日は書かれていない"
+            ]
+          },
+          "reference_index": 4
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "大輔「ここからは、96%の試験とは別の発表。アポロ2を作るアプトロニクが、11月12日に、アメリカの物流の大手、GXOと基本合意をした。」\n沙織「基本合意って、正式な契約の前の約束ね。中身は？」\n大輔「人型ロボを、サービスとして借りる形。2027年に試験を始めて、北米での最初の導入は、2027年の終わりごろ。」\n沙織「うまくいけば、4年で最大1,000台、とも書いてある。ただ、試験で、決めた目標を満たせたら、が条件。値段も書いてない。」\n大輔「条件つきなのは、その通り。でも、借りる形なら、高い機械を一度に買わずに、試してから決められる。」\n沙織「その入り方なら、もう一つ例がある。台数と値段は書いてないけど、トヨタのカナダの工場は、今年の2月、試しのあとで、別の会社の人型ロボを借りる契約をした。」\n大輔「その発表も、繰り返しで体にきつい仕事を任せて、働く人をもっと価値のある仕事に回す、という向きだね。」\n沙織「試して、借りる。入り方が見えてきたね。」\n大輔「試してから借りる、という入り方は、車の工場では契約に、物流では基本合意にまで来てる。」\n［画面の資料カード］Apptronik の発表（2026年11月12日） 「initial deployment in North America in late 2027」（原文） ・物流の大手GXOと基本合意 ・ロボットをサービスとして借りる形 ・2027年に試験を始める ・96%の試験とは別の発表\n［画面の資料カード］Apptronik の発表（2026年11月12日） 「up to 1,000 Apollo humanoid robots over the next four years」（原文） ・条件: 決めた性能・安全・運用の目標を満たせたら ・値段は書かれていない\n［画面の資料カード］Agility Robotics の発表（2026年2月19日） 「Robots-as-a-Service (RaaS) agreement」（原文） ・トヨタのカナダの工場と ・試しのあとで、借りる形の契約 ・台数・値段・開始日は書かれていない",
+      "image_asset": "cards/kl060_S11_v1"
+    },
+    {
+      "scene_id": 12,
+      "type": "verdict",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "dreamer",
+          "text": "僕の予想は、3年のうちに毎日任され始める、だった。時期の見立ては、変わらない。人が複雑な組み立てに回る、という所は、発表がそう書いているところまでで、確かめた数字はまだ無い。",
+          "expression": "neutral",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私の予想は、3年より長くかかる、だった。11か月働いた例と、2027年に始まる借りる試験を見ると、そこは言い過ぎたかも。",
+          "expression": "thinking",
+          "tag": "vs_prediction"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "ディープマインドの発表は、96%を、工場で広く使うことへの有望な一歩、と書いてる。判定するのは、その先。",
+          "expression": "neutral",
+          "reference_index": 0
+        },
+        {
+          "speaker": "dreamer",
+          "text": "札は4つ。もうすぐ来る、3年はかかる、根拠待ち、まだ眉唾。判定するのは、工場や倉庫で、部品並べのような決まった仕事を、一部の会社の試しではなく、広く毎日任されるようになるのはいつか。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "僕は「3年はかかる」。この3年は、今日から数えて、工場や倉庫で、広く毎日任されるようになるまでの話。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "理由は？",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "工場の試しで、96%が出た。別の発表だけど、借りる試験も2027年に始まる。残る壁は、何か月も続けて確かに動くことと、値段。機械の壁だから、すぐではない。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "私は「根拠待ち」。来ない、という札じゃなくて、時期を決める材料がまだ足りない、という札。第1回で言った条件は、値段と、使う側が長く使って測った数字。今回、試した場所は本物の工場になった。でも数字は、今回もロボの側から。値段も、まだ出ていない。",
+          "expression": "thinking"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "工場の側が、何回試して何回成功したかを、長く使って測った数字で出したら、札を上げる。値段が出ても、上げる。",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "工場の側の数字がまだ無いのは、その通り。そこが、僕の3年の、一番弱いところ。",
+          "expression": "deflated"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "今日の持ち帰り。人型ロボは、本物の車工場で、部品並べを試すところまで来た。人の仕事は、発表の言い方では、きつい部品並べがロボへ、複雑な組み立てが人へ。僕の見立てでは、確かめる・直す仕事も、人に残る。",
+          "expression": "convinced",
+          "tag": "takeaway"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "これは、2026年11月23日時点の、二人の見立て。",
+          "expression": "neutral"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "recap_card": {
+            "title": "二人の予想",
+            "badge": "予想",
+            "items": [
+              "大輔: 3年のうちに、毎日任され始める",
+              "沙織: 3年より長くかかる"
+            ]
+          }
+        },
+        {
+          "from_line": 3,
+          "recap_card": {
+            "title": "第2回の記録（3つの物差し）",
+            "items": [
+              "1 値段: まだ発表されていない",
+              "2 時期: 頭脳のAIは協力会社に順に",
+              "  借りる試験は2027年から（別の発表）",
+              "3 どこで: 欧州の車工場で試し"
+            ]
+          }
+        },
+        {
+          "from_line": 4,
+          "recap_card": {
+            "title": "札を付ける問い",
+            "badge": "札の対象",
+            "items": [
+              "どこで: 工場や倉庫で",
+              "何を: 部品並べのような決まった仕事",
+              "いつ: 一部の試しではなく、広く毎日任されるのは",
+              "札: もうすぐ来る／3年はかかる／根拠待ち／まだ眉唾"
+            ]
+          }
+        },
+        {
+          "from_line": 9,
+          "scene_image": true
+        }
+      ],
+      "narrator": "dialogue",
+      "verdict_from_line": 9,
+      "narration": "大輔「僕の予想は、3年のうちに毎日任され始める、だった。時期の見立ては、変わらない。人が複雑な組み立てに回る、という所は、発表がそう書いているところまでで、確かめた数字はまだ無い。」\n沙織「私の予想は、3年より長くかかる、だった。11か月働いた例と、2027年に始まる借りる試験を見ると、そこは言い過ぎたかも。」\n沙織「ディープマインドの発表は、96%を、工場で広く使うことへの有望な一歩、と書いてる。判定するのは、その先。」\n大輔「札は4つ。もうすぐ来る、3年はかかる、根拠待ち、まだ眉唾。判定するのは、工場や倉庫で、部品並べのような決まった仕事を、一部の会社の試しではなく、広く毎日任されるようになるのはいつか。」\n大輔「僕は「3年はかかる」。この3年は、今日から数えて、工場や倉庫で、広く毎日任されるようになるまでの話。」\n沙織「理由は？」\n大輔「工場の試しで、96%が出た。別の発表だけど、借りる試験も2027年に始まる。残る壁は、何か月も続けて確かに動くことと、値段。機械の壁だから、すぐではない。」\n沙織「私は「根拠待ち」。来ない、という札じゃなくて、時期を決める材料がまだ足りない、という札。第1回で言った条件は、値段と、使う側が長く使って測った数字。今回、試した場所は本物の工場になった。でも数字は、今回もロボの側から。値段も、まだ出ていない。」\n沙織「工場の側が、何回試して何回成功したかを、長く使って測った数字で出したら、札を上げる。値段が出ても、上げる。」\n大輔「工場の側の数字がまだ無いのは、その通り。そこが、僕の3年の、一番弱いところ。」\n大輔「今日の持ち帰り。人型ロボは、本物の車工場で、部品並べを試すところまで来た。人の仕事は、発表の言い方では、きつい部品並べがロボへ、複雑な組み立てが人へ。僕の見立てでは、確かめる・直す仕事も、人に残る。」\n大輔「これは、2026年11月23日時点の、二人の見立て。」\n［画面のまとめカード（予想）］二人の予想 ・大輔: 3年のうちに、毎日任され始める ・沙織: 3年より長くかかる\n［画面のまとめカード（ふりかえり）］第2回の記録（3つの物差し） ・1 値段: まだ発表されていない ・2 時期: 頭脳のAIは協力会社に順に ・  借りる試験は2027年から（別の発表） ・3 どこで: 欧州の車工場で試し\n［画面のまとめカード（札の対象）］札を付ける問い ・どこで: 工場や倉庫で ・何を: 部品並べのような決まった仕事 ・いつ: 一部の試しではなく、広く毎日任されるのは ・札: もうすぐ来る／3年はかかる／根拠待ち／まだ眉唾"
+    },
+    {
+      "scene_id": 13,
+      "type": "closing",
+      "bgm_role": "outro",
+      "image_asset": "base_cafe_b",
+      "ken_burns": "zoom_out",
+      "lines": [
+        {
+          "speaker": "skeptic",
+          "text": "今月できるのは、自分の職場で、決まった物を決まった順に並べる、箱から出して仕分ける、という作業を一つ選んで、1日に何回、何分しているかを数えること。それと、その作業を人がしなくてよくなったら、その人に何を任せたいか、一行書いておく。",
+          "expression": "neutral",
+          "tag": "next_step"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "来年、借りる試験が始まったら、また同じ物差しで確かめよう。",
+          "expression": "excited"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "そのときは、残りの4%を、誰がどう直したか、の数字も一緒にね。",
+          "expression": "amused"
+        },
+        {
+          "speaker": "dreamer",
+          "text": "次はどんな研究が、誰かの幸せな未来を運んでくるのか。",
+          "expression": "convinced"
+        },
+        {
+          "speaker": "skeptic",
+          "text": "それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。",
+          "expression": "amused"
+        }
+      ],
+      "visuals": [
+        {
+          "from_line": 1,
+          "step_card": {
+            "title": "今月できる一歩",
+            "badge": "次の一歩",
+            "items": [
+              "並べる・仕分ける作業を一つ選ぶ",
+              "1日に何回・何分しているか数える",
+              "その人に任せたい仕事を一行書く"
+            ]
+          }
+        },
+        {
+          "from_line": 2,
+          "image_asset": "photos/kl060_S13_b",
+          "real_photo": true
+        },
+        {
+          "from_line": 4,
+          "image_asset": "base_cafe_b"
+        }
+      ],
+      "narrator": "dialogue",
+      "narration": "沙織「今月できるのは、自分の職場で、決まった物を決まった順に並べる、箱から出して仕分ける、という作業を一つ選んで、1日に何回、何分しているかを数えること。それと、その作業を人がしなくてよくなったら、その人に何を任せたいか、一行書いておく。」\n大輔「来年、借りる試験が始まったら、また同じ物差しで確かめよう。」\n沙織「そのときは、残りの4%を、誰がどう直したか、の数字も一緒にね。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」\n［画面のまとめカード（次の一歩）］今月できる一歩 ・並べる・仕分ける作業を一つ選ぶ ・1日に何回・何分しているか数える ・その人に任せたい仕事を一行書く"
+    }
+  ],
+  "shorts": [
+    {
+      "shorts_id": 1,
+      "scenes": [
+        {
+          "narrator": "dreamer",
+          "narration": "車工場で人型ロボ成功率96%",
+          "expression": "excited",
+          "scene_id": 6,
+          "badge_text": "イメージ図（実物と異なる場合があります）"
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "動いている車の工場のラインで、人型ロボが、部品を車の順番に並べた。",
+          "expression": "excited",
+          "scene_id": 6,
+          "badge_text": "イメージ図（実物と異なる場合があります）"
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "でも、何回試したかは書いてない。残りの4%、誰が直すの？",
+          "expression": "doubt",
+          "scene_id": 8,
+          "badge_text": "イメージ図（実物と異なる場合があります）"
+        },
+        {
+          "narrator": "dreamer",
+          "narration": "別の会社の人型ロボは、アメリカの車の工場で、11か月働いた例もある。",
+          "expression": "neutral",
+          "scene_id": 8,
+          "badge_text": "イメージ図（実物と異なる場合があります）"
+        },
+        {
+          "narrator": "skeptic",
+          "narration": "人の仕事はどう変わる？ 判定は本編で。",
+          "expression": "thinking",
+          "scene_id": 10
+        }
+      ]
+    }
+  ]
+}
