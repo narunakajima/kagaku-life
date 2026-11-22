@@ -59828,25 +59828,52 @@
           "trend": 1.0,
           "articles_14d": 1,
           "raw_items": 7
+        },
+        {
+          "at": "2026-11-23T04:54:20",
+          "query": "国立がん研究センター レゴラフェニブ",
+          "measured": 2,
+          "outlets": 2,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "胃・食道接合部・食道腺がんに対し、「レゴラフェニブ＋ニボルマブ＋化学療法」併用で優れた効果を得られる可能性—国がん",
+              "outlet": "GemMed",
+              "date": "2026-11-19"
+            },
+            {
+              "title": "進行胃がん等の一次併用療法で奏効割合73％、国立がん研究センターが発表",
+              "outlet": "Dellows News",
+              "date": "2026-11-18"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 2,
+          "raw_items": 7
         }
       ],
-      "buzz_measured_at": "2026-11-16T07:01:31",
+      "buzz_measured_at": "2026-11-23T04:54:20",
       "buzz_measured": 2,
-      "buzz_outlets": 1,
+      "buzz_outlets": 2,
       "yahoo": false,
       "buzz_evidence": [
         {
+          "title": "胃・食道接合部・食道腺がんに対し、「レゴラフェニブ＋ニボルマブ＋化学療法」併用で優れた効果を得られる可能性—国がん",
+          "outlet": "GemMed",
+          "date": "2026-11-19"
+        },
+        {
           "title": "進行胃がん等の一次併用療法で奏効割合73％、国立がん研究センターが発表",
           "outlet": "Dellows News",
-          "date": "2026-11-14"
+          "date": "2026-11-18"
         }
       ],
       "buzz_trend": 1.0,
-      "buzz_articles_14d": 1,
+      "buzz_articles_14d": 2,
       "buzz_raw_items": 7,
       "buzz_query": "国立がん研究センター レゴラフェニブ",
-      "buzz_adopted_at": "2026-11-16T07:01:31",
-      "buzz_adopted_n": 3,
+      "buzz_adopted_at": "2026-11-23T04:54:20",
+      "buzz_adopted_n": 2,
       "prior_art": {
         "version": "2026-11-11",
         "checked_at": "2026-11-11T08:45:50",
@@ -60822,7 +60849,7 @@
       "primary_sources": [
         {
           "kind": "official_blog",
-          "url": "https://deepmind.google/discover/blog/gemini-robotics-2-5-accelerates-real-world-general-dexterity/",
+          "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
           "what_it_states": "Google DeepMindがロボット向け制御モデル『Gemini Robotics 2.5』を発表。Mercedes-Benzのドイツおよびハンガリー工場で、Apptronikの人型ロボット『Apollo 2』を用いた自動車部品の仕分け（キッティング）実証を行い、成功率96%を達成したと報告。モデルはロボットパートナー向けに順次提供される。"
         },
         {
@@ -60870,7 +60897,7 @@
       "overall_score": 3.5,
       "scan_version": "2026-11-07-interest",
       "interest_version": "2026-11-07",
-      "status": "available",
+      "status": "used",
       "excluded_reason": "",
       "scored_at": "2026-11-11",
       "first_seen_at": "2026-11-11T07:36:14",
@@ -60884,7 +60911,8 @@
         "title": "人の「1回の成功動作」からズレを自律補正して再現するヒューマノイド向け動作再現ソフトを提供開始",
         "id": "a96624ed64",
         "source": "Gemini検索（イマクリエイト株式会社）"
-      }
+      },
+      "used_in": "kl060"
     },
     {
       "title": "兼松、全但バス、損保ジャパン、KDDIが連携し、豊岡市・城崎温泉で自動運転バスの実証運行を開始",
@@ -61675,14 +61703,13 @@
       "url_status": "fda.gov: HTTP 404",
       "url_checked_at": "2026-11-11T07:42:20",
       "repair_tried": true,
-      "repair_tried_at": "2026-11-11T07:42:28",
+      "repair_tried_at": "2026-11-23T04:51:39",
       "repair_log": [
         "site-crawl: https://www.fda.gov/drugs/drug-safety-and-availability/ を開けない",
         "site-crawl: https://www.fda.gov/drugs/ を開けない",
         "site-crawl: https://www.fda.gov/ を開けない",
         "site-crawl: 3ページを見たが、語の合うリンクなし",
         "pool-official: 同じ話題の公式・学術誌の記事（発表日±3日）がプールにない",
-        "media-link: news.web.nhk の記事に発表元（fda.gov）へのリンクなし",
         "取得失敗 https://www.fda.gov/drugs/drug-safety-and-availability/: HTTPError",
         "取得失敗 https://www.fda.gov/drugs/: HTTPError",
         "取得失敗 https://www.fda.gov/: HTTPError"
@@ -62961,30 +62988,51 @@
           "outlets_foreign": 38,
           "foreign_boost": true,
           "query_en": "Japanese"
+        },
+        {
+          "at": "2026-11-23T04:54:27",
+          "query": "Japanese 4Dコホート",
+          "measured": 4,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "生活習慣と健康・慢性疾患をつなぐ腸内細菌の「対照的な2つの媒介軸」を発見 ― 日本人約6,800人の大規模解析から「腸活」のエビデンスを提示 ｜関連資料・リリー",
+              "outlet": "保健指導リソースガイド",
+              "date": "2026-11-19"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 1,
+          "jp_measured": 2,
+          "outlets_foreign": 49,
+          "foreign_boost": true,
+          "query_en": "Japanese"
         }
       ],
-      "buzz_measured_at": "2026-11-16T07:01:48",
+      "buzz_measured_at": "2026-11-23T04:54:27",
       "buzz_measured": 4,
       "buzz_outlets": 1,
       "yahoo": false,
       "buzz_evidence": [
         {
-          "title": "生活習慣と健康・慢性疾患をつなぐ腸内細菌の「対照的な2つの媒介軸」を発見― 日本人約6,800人の大規模解析から「腸活」のエビデンスを提示 ―",
-          "outlet": "AGARA 紀伊民報",
-          "date": "2026-11-05"
+          "title": "生活習慣と健康・慢性疾患をつなぐ腸内細菌の「対照的な2つの媒介軸」を発見 ― 日本人約6,800人の大規模解析から「腸活」のエビデンスを提示 ｜関連資料・リリー",
+          "outlet": "保健指導リソースガイド",
+          "date": "2026-11-19"
         }
       ],
-      "buzz_trend": 0.0,
+      "buzz_trend": 1.0,
       "buzz_articles_14d": 1,
       "buzz_raw_items": 1,
       "buzz_query": "Japanese 4Dコホート",
-      "buzz_adopted_at": "2026-11-16T07:01:48",
-      "buzz_adopted_n": 3,
+      "buzz_adopted_at": "2026-11-23T04:54:27",
+      "buzz_adopted_n": 2,
       "yt_competitors": 0,
       "yt_competitors_checked_at": "2026-11-13T09:46:35",
       "yt_competitors_query": "腸内細菌 発酵食品 6800人",
       "buzz_jp_measured": 2,
-      "buzz_outlets_foreign": 38,
+      "buzz_outlets_foreign": 49,
       "buzz_foreign_boost": true,
       "buzz_query_en": "Japanese"
     },
@@ -64630,26 +64678,8 @@
           "kind": "tech_report"
         }
       ],
-      "primary_verified_at": "2026-11-16T07:03:50",
+      "primary_verified_at": "2026-11-23T04:56:53",
       "primary_history": [
-        {
-          "at": "2026-11-13T08:01:17",
-          "verdict": true,
-          "urls": [
-            {
-              "url": "https://www.zoho.com/privacy-commitment.html",
-              "status": "HTTP 200「Zoho | Our Privacy Commitment」",
-              "final_url": "",
-              "ok": true
-            },
-            {
-              "url": "https://help.zoho.com/portal/en/kb/crm/data-security-privacy/articles/data-privacy-and-security",
-              "status": "HTTP 200",
-              "final_url": "https://help.zoho.com/portal/en/kb/pagesense/frequently-asked-questions/articles/data-privacy-and-security-system",
-              "ok": true
-            }
-          ]
-        },
         {
           "at": "2026-11-13T08:01:58",
           "verdict": true,
@@ -64739,6 +64769,24 @@
               "ok": true
             }
           ]
+        },
+        {
+          "at": "2026-11-23T04:56:53",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://www.zoho.com/privacy-commitment.html",
+              "status": "HTTP 200「Zoho | Our Privacy Commitment」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://help.zoho.com/portal/en/kb/crm/data-security-privacy/articles/data-privacy-and-security",
+              "status": "HTTP 200",
+              "final_url": "https://help.zoho.com/portal/en/kb/pagesense/frequently-asked-questions/articles/data-privacy-and-security-system",
+              "ok": true
+            }
+          ]
         }
       ],
       "url_check": [
@@ -64755,7 +64803,7 @@
       ],
       "url_ok": true,
       "url_status": "zoho.com: HTTP 200「Zoho | Our Privacy Commitment」 ／ help.zoho.com: HTTP 200",
-      "url_checked_at": "2026-11-16T07:03:50",
+      "url_checked_at": "2026-11-23T04:56:53",
       "prior_art": {
         "version": "2026-11-11",
         "checked_at": "2026-11-13T08:01:34",
@@ -64859,9 +64907,31 @@
           "trend": 0.5,
           "articles_14d": 4,
           "raw_items": 8
+        },
+        {
+          "at": "2026-11-23T04:54:15",
+          "query": "ゾーホー AI",
+          "measured": 3,
+          "outlets": 2,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "AI人材「85％不足」の時代 ゾーホーが「自前の学校」で技術者を育てる理由（1/2 ページ）",
+              "outlet": "ITmedia",
+              "date": "2026-11-15"
+            },
+            {
+              "title": "ゾーホー、AIによるIT運用とセキュリティ運用の連携を訴求",
+              "outlet": "ZDNET Japan",
+              "date": "2026-11-09"
+            }
+          ],
+          "trend": 0.33,
+          "articles_14d": 3,
+          "raw_items": 6
         }
       ],
-      "buzz_measured_at": "2026-11-16T07:01:29",
+      "buzz_measured_at": "2026-11-23T04:54:15",
       "buzz_measured": 4,
       "buzz_outlets": 4,
       "yahoo": true,
@@ -64887,7 +64957,7 @@
       "buzz_raw_items": 8,
       "buzz_query": "ゾーホー AI",
       "buzz_adopted_at": "2026-11-16T07:01:29",
-      "buzz_adopted_n": 3
+      "buzz_adopted_n": 2
     },
     {
       "title": "倉庫での試験が成功すれば、GXOはApollo人型ロボットを最大1,000台導入へ",
@@ -66903,9 +66973,26 @@
           "trend": 0.5,
           "articles_14d": 2,
           "raw_items": 5
+        },
+        {
+          "at": "2026-11-23T04:54:30",
+          "query": "国立がん研究センター ミトコンドリアDNA",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "がん細胞のミトコンドリアDNA量が抗腫瘍免疫を左右 国立がん研などが解明",
+              "outlet": "Dellows News",
+              "date": "2026-11-20"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 4
         }
       ],
-      "buzz_measured_at": "2026-11-16T07:01:50",
+      "buzz_measured_at": "2026-11-23T04:54:30",
       "buzz_measured": 2,
       "buzz_outlets": 2,
       "yahoo": false,
@@ -67785,25 +67872,46 @@
           "outlets_foreign": 0,
           "foreign_boost": false,
           "query_en": "NJA-001"
+        },
+        {
+          "at": "2026-11-23T04:54:40",
+          "query": "シノビ・セラピューティクス",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "iPS細胞による再生医療等の技術開発応援プロジェクト",
+              "outlet": "京都府",
+              "date": "2026-11-10"
+            }
+          ],
+          "trend": 0.0,
+          "articles_14d": 1,
+          "raw_items": 2,
+          "jp_measured": 2,
+          "outlets_foreign": 0,
+          "foreign_boost": false,
+          "query_en": "NJA-001"
         }
       ],
-      "buzz_measured_at": "2026-11-16T07:01:56",
+      "buzz_measured_at": "2026-11-23T04:54:40",
       "buzz_measured": 2,
       "buzz_outlets": 1,
       "yahoo": false,
       "buzz_evidence": [
         {
-          "title": "ｉＰＳ細胞活用したがん治験、来年開始…治療薬となれば活用一気に広がる可能性",
-          "outlet": "読売新聞",
-          "date": "2026-11-07"
+          "title": "iPS細胞による再生医療等の技術開発応援プロジェクト",
+          "outlet": "京都府",
+          "date": "2026-11-10"
         }
       ],
       "buzz_trend": 0.0,
       "buzz_articles_14d": 1,
-      "buzz_raw_items": 1,
-      "buzz_query": "シノビ・セラピューティクス NJA-001",
-      "buzz_adopted_at": "2026-11-16T07:01:56",
-      "buzz_adopted_n": 2,
+      "buzz_raw_items": 2,
+      "buzz_query": "シノビ・セラピューティクス",
+      "buzz_adopted_at": "2026-11-23T04:54:40",
+      "buzz_adopted_n": 1,
       "buzz_jp_measured": 2,
       "buzz_outlets_foreign": 0,
       "buzz_foreign_boost": false,
@@ -68457,7 +68565,7 @@
       "url_status": "city.saga.lg.jp: HTTP 404（再確認5回とも404・開けず） ／ city.saga.lg.jp: HTTP 404（再確認5回とも404・開けず）",
       "url_checked_at": "2026-11-15T06:38:02",
       "repair_tried": true,
-      "repair_tried_at": "2026-11-15T06:40:07",
+      "repair_tried_at": "2026-11-23T04:51:55",
       "repair_log": [
         "site-crawl: 8ページを見たが、語の合うリンクなし",
         "pool-official: 同じ話題の公式・学術誌の記事（発表日±3日）がプールにない",
@@ -69174,7 +69282,7 @@
           "kind": "official_page"
         }
       ],
-      "primary_verified_at": "2026-11-16T07:02:54",
+      "primary_verified_at": "2026-11-23T04:56:47",
       "primary_history": [
         {
           "at": "2026-11-15T06:38:54",
@@ -69211,6 +69319,18 @@
               "ok": true
             }
           ]
+        },
+        {
+          "at": "2026-11-23T04:56:47",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://x.com/robotaxi/status/2121384435241402737",
+              "status": "HTTP 200「XユーザーのRobotaxiさん: 「Select cust」",
+              "final_url": "",
+              "ok": true
+            }
+          ]
         }
       ],
       "url_check": [
@@ -69222,7 +69342,7 @@
       ],
       "url_ok": true,
       "url_status": "x.com: HTTP 200「XユーザーのRobotaxiさん: 「Select cust」",
-      "url_checked_at": "2026-11-16T07:02:54",
+      "url_checked_at": "2026-11-23T04:56:47",
       "buzz_history": [
         {
           "at": "2026-11-15T06:41:36",
@@ -69277,34 +69397,61 @@
           "trend": 0.7,
           "articles_14d": 10,
           "raw_items": 15
+        },
+        {
+          "at": "2026-11-23T04:54:06",
+          "query": "サイバーキャブ 個人販売",
+          "measured": 5,
+          "outlets": 8,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "サイバーキャブは299ドルのサブスクリプションを支払わないと、芝生で光り輝く金色の置物になる",
+              "outlet": "Business Insider Japan",
+              "date": "2026-11-19"
+            },
+            {
+              "title": "サイバーキャブの個人販売開始 テスラで最安､3万㌦切る",
+              "outlet": "日本経済新聞",
+              "date": "2026-11-18"
+            },
+            {
+              "title": "ハンドルもペダルもないテスラ「Cybercab」、個人向けに2万9990ドルで販売開始 月299ドルのサブスク必須、まずは招待制",
+              "outlet": "テクノエッジ TechnoEdge",
+              "date": "2026-11-17"
+            }
+          ],
+          "trend": 0.69,
+          "articles_14d": 13,
+          "raw_items": 23
         }
       ],
-      "buzz_measured_at": "2026-11-16T07:01:26",
+      "buzz_measured_at": "2026-11-23T04:54:06",
       "buzz_measured": 5,
-      "buzz_outlets": 12,
-      "yahoo": false,
+      "buzz_outlets": 8,
+      "yahoo": true,
       "buzz_evidence": [
         {
-          "title": "テスラ、ロボタクシー「サイバーキャブ」の個人販売開始 台数限定で",
+          "title": "サイバーキャブは299ドルのサブスクリプションを支払わないと、芝生で光り輝く金色の置物になる",
+          "outlet": "Business Insider Japan",
+          "date": "2026-11-19"
+        },
+        {
+          "title": "サイバーキャブの個人販売開始 テスラで最安､3万㌦切る",
           "outlet": "日本経済新聞",
-          "date": "2026-11-14"
+          "date": "2026-11-18"
         },
         {
-          "title": "テスラ ロボタクシーに全ツッパか！？サイバートラック生産止めてサイバーキャブ増産へ",
-          "outlet": "自動運転ラボ",
-          "date": "2026-11-14"
-        },
-        {
-          "title": "テスラが完全自動運転EV「サイバーキャブ」の個人向け販売を開始。その車両価格2万9,990ドル、しかしサブスクへの加入が「必須」という縛りつき",
-          "outlet": "https://intensive911.com/",
-          "date": "2026-11-14"
+          "title": "ハンドルもペダルもないテスラ「Cybercab」、個人向けに2万9990ドルで販売開始 月299ドルのサブスク必須、まずは招待制",
+          "outlet": "テクノエッジ TechnoEdge",
+          "date": "2026-11-17"
         }
       ],
-      "buzz_trend": 0.64,
-      "buzz_articles_14d": 14,
-      "buzz_raw_items": 21,
+      "buzz_trend": 0.69,
+      "buzz_articles_14d": 13,
+      "buzz_raw_items": 23,
       "buzz_query": "サイバーキャブ 個人販売",
-      "buzz_adopted_at": "2026-11-15T06:41:36",
+      "buzz_adopted_at": "2026-11-23T04:54:06",
       "buzz_adopted_n": 2,
       "prior_art": {
         "version": "2026-11-11",
@@ -69454,7 +69601,7 @@
       "overall_score": 3.4,
       "scan_version": "2026-11-07-interest",
       "interest_version": "2026-11-07",
-      "status": "available",
+      "status": "used",
       "excluded_reason": "",
       "scored_at": "2026-11-16",
       "first_seen_at": "2026-11-16T06:55:18",
@@ -69468,7 +69615,8 @@
         "title": "グーグルがGemini Robotics 2.5を発表、人型ロボットがメルセデス工場で稼働",
         "id": "69139a13f9",
         "source": "Googleニュース（人型ロボット）／Pasquale Pillitteri"
-      }
+      },
+      "used_in": "kl060"
     },
     {
       "title": "家事ロボットはここまで来た！ 洗濯物を入れ、掃除道具を持ち替える、ドイツ展示会で見た「フィジカルAI」最前線",
@@ -69902,34 +70050,31 @@
         {
           "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/",
           "ok": true,
-          "status": "HTTP 200「Gemini Models」（android・geminiが一致）",
+          "status": "HTTP 200「Gemini Models」",
           "page_title": "Gemini Models",
-          "method": "http",
           "anchor_hit": true,
+          "method": "http",
           "kind": "official_blog",
           "repaired": true,
           "orig_url": "https://blog.google/products/gemini/google-wallet-personal-finance/",
-          "orig_status": "HTTP 404（再確認5回とも404・開けず）",
           "repair_method": "site-crawl",
           "repair_from": "https://blog.google/products-and-platforms/products/gemini/"
         },
         {
           "url": "https://plaid.com/blog/google-wallet-gemini-plaid/",
           "ok": true,
-          "status": "HTTP 200「Plaid is powering personalized」（google・geminiが一致）",
+          "status": "HTTP 200「Plaid is powering personalized」",
           "page_title": "Plaid is powering personalized financial insights with Google Wallet in the Gemini app | Plaid",
-          "method": "http",
           "anchor_hit": true,
-          "page_date": "2026-11-13",
+          "method": "http",
           "kind": "official_blog",
           "repaired": true,
           "orig_url": "https://plaid.com/blog/google-gemini-wallet-integration/",
-          "orig_status": "HTTP 404（再確認5回とも404・開けず）",
           "repair_method": "site-crawl",
           "repair_from": "https://plaid.com/blog/"
         }
       ],
-      "primary_verified_at": "2026-11-16T06:59:50",
+      "primary_verified_at": "2026-11-23T04:56:56",
       "primary_history": [
         {
           "at": "2026-11-16T06:59:40",
@@ -69948,30 +70093,47 @@
               "ok": false
             }
           ]
+        },
+        {
+          "at": "2026-11-23T04:56:56",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/",
+              "status": "HTTP 200「Gemini Models」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://plaid.com/blog/google-wallet-gemini-plaid/",
+              "status": "HTTP 200「Plaid is powering personalized」",
+              "final_url": "",
+              "ok": true
+            }
+          ]
         }
       ],
       "url_check": [
         {
           "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/",
           "ok": true,
-          "status": "HTTP 200「Gemini Models」（android・geminiが一致）"
+          "status": "HTTP 200「Gemini Models」"
         },
         {
           "url": "https://plaid.com/blog/google-wallet-gemini-plaid/",
           "ok": true,
-          "status": "HTTP 200「Plaid is powering personalized」（google・geminiが一致）"
+          "status": "HTTP 200「Plaid is powering personalized」"
         }
       ],
       "url_ok": true,
-      "url_status": "blog.google: HTTP 200「Gemini Models」（android・geminiが一致） ／ plaid.com: HTTP 200「Plaid is powering personalized」（google・geminiが一致）",
-      "url_checked_at": "2026-11-16T06:59:40",
+      "url_status": "blog.google: HTTP 200「Gemini Models」 ／ plaid.com: HTTP 200「Plaid is powering personalized」",
+      "url_checked_at": "2026-11-23T04:56:56",
       "repair_tried": true,
       "repair_tried_at": "2026-11-16T06:59:50",
       "repair_log": [
         "site-crawl: https://blog.google/innovation-and-ai/models-and-research/gemini-models/ → HTTP 200「Gemini Models」（android・geminiが一致）",
         "site-crawl: https://plaid.com/blog/google-wallet-gemini-plaid/ → HTTP 200「Plaid is powering personalized」（google・geminiが一致）"
       ],
-      "primary_verified_note": "URLを自動で修復（repair）: blog.google → https://blog.google/innovation-and-ai/models-and-research/gemini-models/（site-crawl） ／ plaid.com → https://plaid.com/blog/google-wallet-gemini-plaid/（site-crawl）",
       "repair_result": "修復",
       "buzz_history": [
         {
@@ -70004,39 +70166,66 @@
           "outlets_foreign": 2,
           "foreign_boost": false,
           "query_en": "Gemini Plaid"
+        },
+        {
+          "at": "2026-11-23T04:54:12",
+          "query": "Gemini Googleウォレット",
+          "measured": 5,
+          "outlets": 14,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "Google HomeのGemini Liveが高速化 会話中に家電操作も｜Home Premium限定 日本は月1,000円から【海外ニュース】",
+              "outlet": "スマートウォッチライフ",
+              "date": "2026-11-19"
+            },
+            {
+              "title": "【Google】Geminiが通話・支払い・予約まで代行！新モデル「Gemini 4 Hydrogen」搭載の無料アップデートまとめ",
+              "outlet": "DXマガジン",
+              "date": "2026-11-18"
+            },
+            {
+              "title": "Geminiのタスク - 日本で無料の対象・任せられること・制限と注意点を整理",
+              "outlet": "TECH NOISY",
+              "date": "2026-11-18"
+            }
+          ],
+          "trend": 0.53,
+          "articles_14d": 17,
+          "raw_items": 25,
+          "jp_measured": 5,
+          "outlets_foreign": 4,
+          "foreign_boost": false,
+          "query_en": "Gemini Plaid"
         }
       ],
-      "buzz_measured_at": "2026-11-16T07:01:37",
+      "buzz_measured_at": "2026-11-23T04:54:12",
       "buzz_measured": 5,
-      "buzz_outlets": 11,
+      "buzz_outlets": 14,
       "yahoo": true,
       "buzz_evidence": [
         {
-          "title": "Geminiが「あなたの家計」を読み始めた、銀行・カード口座も連携し米国の全ユーザーへ ｜FinTech Journal",
-          "outlet": "ビジネス+IT",
-          "date": "2026-11-15"
+          "title": "Google HomeのGemini Liveが高速化 会話中に家電操作も｜Home Premium限定 日本は月1,000円から【海外ニュース】",
+          "outlet": "スマートウォッチライフ",
+          "date": "2026-11-19"
         },
         {
-          "title": "OpenAIと同日に発表、しかしアプローチは対照的！GoogleがGeminiとGoogleウォレット、Plaidの連携を開放、銀行口座の読み取りが可能に",
-          "outlet": "Mashdigi",
-          "date": "2026-11-15"
+          "title": "【Google】Geminiが通話・支払い・予約まで代行！新モデル「Gemini 4 Hydrogen」搭載の無料アップデートまとめ",
+          "outlet": "DXマガジン",
+          "date": "2026-11-18"
         },
         {
-          "title": "Googleウォレット、スマートロックのデジタルキーを追加可能に",
-          "outlet": "Impress Watch",
-          "date": "2026-11-14"
+          "title": "Geminiのタスク - 日本で無料の対象・任せられること・制限と注意点を整理",
+          "outlet": "TECH NOISY",
+          "date": "2026-11-18"
         }
       ],
-      "buzz_trend": 1.0,
-      "buzz_articles_14d": 12,
-      "buzz_raw_items": 16,
+      "buzz_trend": 0.53,
+      "buzz_articles_14d": 17,
+      "buzz_raw_items": 25,
       "buzz_query": "Gemini Googleウォレット",
-      "buzz_jp_measured": 5,
-      "buzz_outlets_foreign": 2,
-      "buzz_foreign_boost": false,
-      "buzz_query_en": "Gemini Plaid",
-      "buzz_adopted_at": "2026-11-16T07:01:37",
-      "buzz_adopted_n": 1,
+      "buzz_adopted_at": "2026-11-23T04:54:12",
+      "buzz_adopted_n": 2,
       "prior_art": {
         "version": "2026-11-11",
         "checked_at": "2026-11-16T07:02:42",
@@ -70058,7 +70247,11 @@
         "novelty_exception": false,
         "novelty_line": "",
         "novelty_line_primary": false
-      }
+      },
+      "buzz_jp_measured": 5,
+      "buzz_outlets_foreign": 4,
+      "buzz_foreign_boost": false,
+      "buzz_query_en": "Gemini Plaid"
     },
     {
       "title": "AIに本物のカード番号を渡さない「ChatGPT Wallet」発表！購入ごとに生体認証で承認、まず米国Proで",
@@ -70720,25 +70913,42 @@
           "trend": 0.0,
           "articles_14d": 1,
           "raw_items": 7
+        },
+        {
+          "at": "2026-11-23T04:54:43",
+          "query": "東京医科大学 腸内細菌",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "生活習慣と健康・慢性疾患をつなぐ腸内細菌の「対照的な2つの媒介軸」を発見 ― 日本人約6,800人の大規模解析から「腸活」のエビデンスを提示 ｜関連資料・リリー",
+              "outlet": "保健指導リソースガイド",
+              "date": "2026-11-19"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 6
         }
       ],
-      "buzz_measured_at": "2026-11-16T07:01:59",
+      "buzz_measured_at": "2026-11-23T04:54:43",
       "buzz_measured": 2,
       "buzz_outlets": 1,
       "yahoo": false,
       "buzz_evidence": [
         {
-          "title": "生活習慣と健康・慢性疾患をつなぐ腸内細菌の「対照的な2つの媒介軸」を発見― 日本人約6,800人の大規模解析から「腸活」のエビデンスを提示 ―",
-          "outlet": "沖縄タイムス社",
-          "date": "2026-11-05"
+          "title": "生活習慣と健康・慢性疾患をつなぐ腸内細菌の「対照的な2つの媒介軸」を発見 ― 日本人約6,800人の大規模解析から「腸活」のエビデンスを提示 ｜関連資料・リリー",
+          "outlet": "保健指導リソースガイド",
+          "date": "2026-11-19"
         }
       ],
-      "buzz_trend": 0.0,
+      "buzz_trend": 1.0,
       "buzz_articles_14d": 1,
-      "buzz_raw_items": 7,
+      "buzz_raw_items": 6,
       "buzz_query": "東京医科大学 腸内細菌",
-      "buzz_adopted_at": "2026-11-16T07:01:59",
-      "buzz_adopted_n": 1
+      "buzz_adopted_at": "2026-11-23T04:54:43",
+      "buzz_adopted_n": 2
     },
     {
       "title": "エナジードリンクに関連する心停止の報告頻度はノンカフェイン製品の約11倍、特に若年層で報告が目立つ",
@@ -72174,10 +72384,22 @@
           "kind": "press_release"
         }
       ],
-      "primary_verified_at": "2026-11-16T14:22:24",
+      "primary_verified_at": "2026-11-23T04:56:45",
       "primary_history": [
         {
           "at": "2026-11-16T14:22:24",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://www.murakamifarm.com/company/release/368afb4d37bce94aea7bd1ceb6785af08fa1ee86.jpg",
+              "status": "HTTP 200",
+              "final_url": "",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "at": "2026-11-23T04:56:45",
           "verdict": null,
           "urls": [
             {
@@ -72198,7 +72420,7 @@
       ],
       "url_ok": true,
       "url_status": "murakamifarm.com: HTTP 200",
-      "url_checked_at": "2026-11-16T14:22:24",
+      "url_checked_at": "2026-11-23T04:56:45",
       "buzz_history": [
         {
           "at": "2026-11-16T14:23:40",
@@ -72226,9 +72448,26 @@
           "trend": 0.5,
           "articles_14d": 6,
           "raw_items": 7
+        },
+        {
+          "at": "2026-11-23T04:54:18",
+          "query": "村上農園 ブロッコリースプラウト",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "腸活は「菌を摂る」から「菌を育てる」へ 最新研究で見えてきたブロッコリースプラウトの可能性",
+              "outlet": "RanRun",
+              "date": "2026-11-21"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 4
         }
       ],
-      "buzz_measured_at": "2026-11-16T14:23:40",
+      "buzz_measured_at": "2026-11-23T04:54:18",
       "buzz_measured": 3,
       "buzz_outlets": 4,
       "yahoo": false,
@@ -72254,7 +72493,7 @@
       "buzz_raw_items": 7,
       "buzz_query": "村上農園 ブロッコリースプラウト",
       "buzz_adopted_at": "2026-11-16T14:23:40",
-      "buzz_adopted_n": 1,
+      "buzz_adopted_n": 2,
       "prior_art": {
         "version": "2026-11-11",
         "checked_at": "2026-11-16T14:23:58",
@@ -72490,6 +72729,865 @@
         "id": "4433d884c7",
         "source": "Googleニュース（家庭用ロボット）／財経新聞"
       }
+    },
+    {
+      "title": "AIが数学の未解決問題「リーマン予想」を証明か　米アンソロピックの数学者が主張",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE8zeTR4VktHTGx4cjVVaEthaU15aWxxVW1qYXB6czQ0UGcwbjZWUms1d21UQTYtQmlwVTBnRG9NekNPb1E3ejg4OVBValQwS0k2a05uQmRWU3Qwa3VqSEEtX9IBZkFVX3lxTE05a18zUmcyaktvOGVoQTd3YWVEb2l0c3VUcFh0V29KSU9UVDAweWRYN1N6dGdxM2NiV05mZGJhT3UtVkJoUTR4YXhEZEs1S3dzTFFWTk84dVlteE5kMVpqN0xJWm1lZw?oc=5",
+      "published": "2026-11-21",
+      "source": "Googleニュース（AI 未解決問題 証明）／BBC",
+      "source_kind": "media",
+      "outlet": "BBC",
+      "outlet_host": "bbc.com",
+      "genre_hint": "ai",
+      "summary": "AIが数学の未解決問題「リーマン予想」を証明か　米アンソロピックの数学者が主張（BBC）",
+      "series_query": "ai_scientist_watch",
+      "id": "5fcd3c3214",
+      "sources": [
+        "BBC",
+        "朝日新聞",
+        "産経ニュース"
+      ],
+      "dup_ids": [
+        "d8cc5ebe90",
+        "a0753d1adf"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://alpo.ge/remark.pdf",
+          "what_it_states": "アンソロピックの研究者Levent Alpöge氏が公開した4ページの声明文『Remark』。AIモデルClaudeと協業し、約6週間の対話を経てリーマン予想（および一般化リーマン予想）の証明に到達したと主張。証明はLean 4コード（175,187ファイル、約1700万行相当、展開後約61.5GB）として形式化され、仮定なし（assumption-free）で機械検証可能な形式で公開されたとしている。"
+        }
+      ],
+      "announced_on": "2026-11-20",
+      "headline_claim": "AIモデルClaudeを使い、167年間未解決の超難問「リーマン予想」を証明したとアンソロピックの数学者が発表した。",
+      "actual_content": "アンソロピックの数学者Levent Alpöge氏が、Claudeと協同してリーマン予想を解いたとして175,187ファイルに及ぶLean 4の証明コードを公開した。Leanの公式カーネルや検証ツール群によるコードの論理整合チェックは通り始めているが、人間が読める形の簡潔な学術論文ではなく約25万ページ相当の膨大なコード群であるため、前提の定義に抜け穴や循環論法がないかの数学界全体による査読には数年単位の時間がかかるとみられている。またAI単独のひらめきではなく、高度な専門数学者による緻密な誘導と対話の産物である点も注記されている。",
+      "verifiability": 4,
+      "hype_gap": 4,
+      "promise": 3,
+      "debate": 5,
+      "wonder": 5,
+      "life_relevance": 1,
+      "work_relevance": 1,
+      "audience_fit": 2,
+      "tangible": 1,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": null,
+      "entry_question": "AIがリーマン予想を解いたって本当？私たちの暮らしや仕事に何か関係ある？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "公開されたのは人間が読めない1700万行・25万ページ分のプログラムコードで、数学界の正式な査読には年単位の時間がかかる。またAIが勝手に解いたのではなく、超一流の数学者が6週間つきっきりで誘導した結果であり、暮らしやビジネスで今すぐ役立つ道具ではない。",
+      "hope_material": "数学の命題を論理的に厳密な証明コードとして出力し、機械チェッカーを通過させられる水準にAIの論理推論能力が達していることが実証された。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "リーマン予想 アンソロピック",
+      "jp_title_anchor": [
+        "リーマン予想",
+        "アンソロピック"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.6,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-23",
+      "first_seen_at": "2026-11-23T04:48:46",
+      "presented_on": [],
+      "topic_first_date": "2026-11-20",
+      "topic_first_source": "候補 5fcd3c3214 のannounced_on（AIが数学の未解決問題「リーマン予想」を証明か　米アンソロピ）",
+      "topic_series": "5fcd3c3214",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-21",
+        "title": "AIが数学の未解決問題「リーマン予想」を証明か　米アンソロピックの数学者が主張",
+        "id": "5fcd3c3214",
+        "source": "Googleニュース（AI 未解決問題 証明）／BBC"
+      }
+    },
+    {
+      "title": "【AIチップ】テスラ、車は「AI4」のまま〜次世代「AI5」は人型ロボットOptimusへ",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1aUlBLRE5oODBlT1VvVDN2QXRiMkY5TUtIRUlvYk9TZGZMSUp6Z2h0aDg1dDFXNVctSmFOUmViTjJEcGFOMG1wakk1amVXZ2U4RkpraVNsd3ZWUXd5ZXNNLUw1amdvZDY3am9DTkU4dw?oc=5",
+      "published": "2026-11-22",
+      "source": "Googleニュース（人型ロボット）／Touch Lab",
+      "source_kind": "media",
+      "outlet": "Touch Lab",
+      "outlet_host": "touchlab.jp",
+      "genre_hint": "humanoid",
+      "summary": "【AIチップ】テスラ、車は「AI4」のまま〜次世代「AI5」は人型ロボットOptimusへ（Touch Lab）",
+      "id": "64df8b2d52",
+      "sources": [
+        "Touch Lab"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://x.com/elonmusk",
+          "what_it_states": "テスラ車は現行のAI4（HW4）を使い続け、AI4で人間を超える自動運転能力（superhuman driving）を実現可能。次世代チップAI5は演算負荷の高い人型ロボットOptimusおよび社内のAI訓練スーパーコンピュータ専用に割り当てる方針を表明"
+        }
+      ],
+      "announced_on": "2026-11-22",
+      "headline_claim": "テスラは車への次世代チップAI5搭載を取りやめ現行AI4を継続し、AI5は人型ロボットOptimus専用に回す方針を明かした。",
+      "actual_content": "マスク氏がX上のユーザー返信で明かしたロードマップ変更。車載の自動運転には現行AI4（約30億パラメータの運転モデルと約10億パラメータの可視化モデル）の計算資源で人間超えの安全性を達成可能とし、車載搭載を見送る一方、複雑な多自由度制御とマルチモーダル処理が必要な人型ロボットOptimusへAI5（AI4の約10倍の演算性能、2nmプロセス想定）を集中させる。ただし公式な技術論文や量産体制の確約ではなく、経営者のSNS発言による計画変更のアナウンスである。",
+      "verifiability": 3,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 4,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 2,
+      "audience_fit": 3,
+      "tangible": 2,
+      "decision_number": 2,
+      "series_fit": 4,
+      "concern_id": "work_ai",
+      "entry_question": "テスラ車に最新AIチップが載らないのは本当？ロボット優先で何が変わる？",
+      "surprise_line": "EVの買い時を待つ人が、最新チップが車ではなく人型ロボに回される方針に驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "これまで『車もロボも同じAI5で動かす』と説明していたロードマップがSNSの一言で覆されただけで、AI5自体の量産やOptimusへの実搭載は2027年以降の予定であり、実物の進歩が示されたわけではない。",
+      "hope_material": "自動運転車よりも人型ロボットの身体制御・環境認識の方がはるかに高いオンデバイス演算力を要するという課題の切り分けが明確になり、Optimus開発へのリソース集中姿勢が示された。",
+      "investment_related": true,
+      "deja_vu_note": "kl051（Optimus生産開始）やkl058（CybercabとAI4/HW4の定点観測）と密接に関連する、車と人型ロボのチップ割り当ての続報",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "テスラ AI5 Optimus",
+      "jp_title_anchor": [
+        "AI5",
+        "Optimus",
+        "AI4"
+      ],
+      "announcement_type": "policy",
+      "freshness": 5,
+      "overall_score": 3.25,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "excluded",
+      "excluded_reason": "投資・株価が中心",
+      "scored_at": "2026-11-23",
+      "first_seen_at": "2026-11-23T04:48:59",
+      "presented_on": [],
+      "topic_first_date": "2026-11-22",
+      "topic_first_source": "候補 64df8b2d52 のannounced_on（【AIチップ】テスラ、車は「AI4」のまま〜次世代「AI5」）",
+      "topic_series": "64df8b2d52",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-22",
+        "title": "【AIチップ】テスラ、車は「AI4」のまま〜次世代「AI5」は人型ロボットOptimusへ",
+        "id": "64df8b2d52",
+        "source": "Googleニュース（人型ロボット）／Touch Lab"
+      }
+    },
+    {
+      "title": "ソフト更新でも問題再発、Waymoが全米で高速道路の無人運行停止",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiR0FVX3lxTFBkUExzWnNiakhyeFdDY1cxaVdCeGlaMjJtQllJd01LMVg1RGdvdExUVG9Gdk95TjZIME0xWS1QeEVsUm5Fay1z?oc=5",
+      "published": "2026-11-19",
+      "source": "Googleニュース（Waymo 拡大 運行）／フロントロウ",
+      "source_kind": "media",
+      "outlet": "フロントロウ",
+      "outlet_host": "front-row.jp",
+      "genre_hint": "life_tech",
+      "summary": "ソフト更新でも問題再発、Waymoが全米で高速道路の無人運行停止（フロントロウ）",
+      "series_query": "autonomy_logistics_watch",
+      "id": "26f34c3e63",
+      "sources": [
+        "フロントロウ"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://www.nhtsa.gov/",
+          "what_it_states": "カリフォルニア州DMVの2026年11月11日付命令（工事区間への複数回進入等を理由とした高速道路運行制限）および、NHTSAに提出された高速道路工事車線進入と交差点手信号対応に関するソフトウェアリコール届出（2026年5月の3,871台対象リコール26E035の再発対応）"
+        }
+      ],
+      "announced_on": "2026-11-17",
+      "headline_claim": "ソフトを更新したにもかかわらず工事区間誤進入が再発し、Waymoが全米で高速道路の無人運行を停止した。",
+      "actual_content": "カリフォルニア州DMVが11月11日に国道101号の工事閉鎖車線への車両3台誤進入やハイウェイパトロール規制車両の追い越し事案を受けて高速走行制限を発令した。これを受けWaymoは州外を含む全米（フェニックス、オースティン等）で高速道路の無人乗客運行を自主停止し、NHTSAに閉鎖車線対応と警察手信号対応のソフトリコールを届け出た。いずれも人的被害・衝突はゼロであり、一般道での無人運行や、運転席に専門員を乗せた高速テスト走行は継続されている。",
+      "verifiability": 5,
+      "hype_gap": 2,
+      "promise": 3,
+      "debate": 4,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 3,
+      "audience_fit": 4,
+      "tangible": 3,
+      "decision_number": 3,
+      "series_fit": 3,
+      "concern_id": "mobility",
+      "entry_question": "高速道路の自動運転は、ソフトを直してもまた止まるのはなぜ？",
+      "surprise_line": "運転する人が、コーンや手信号など工事区間の咄嗟の判断の難しさに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "5月に3,871台規模のソフト修正を行っていたにもかかわらず、11月に同じ工事区間進入やパトカーの規制回避未遂が再発しており、不規則なコーン配置や手信号への対応というエッジケースの壁が依然として高い点。",
+      "hope_material": "一般道での無人商用サービスは停止せず稼働しており、今回の事案でも衝突や負傷者はゼロで、セーフティドライバー同乗の高速検証は続けられている点。",
+      "investment_related": false,
+      "deja_vu_note": "kl058（Tesla Cybercab）で自動運転を取り上げたが、今回はすでに街を走る商用Waymoの高速道路運行許認可の壁という別角度の進捗",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "Waymo 高速道路 運行停止",
+      "jp_title_anchor": [
+        "Waymo",
+        "高速道路"
+      ],
+      "announcement_type": "policy",
+      "freshness": 5,
+      "overall_score": 3.5,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-23",
+      "first_seen_at": "2026-11-23T04:49:13",
+      "presented_on": [],
+      "topic_first_date": "2026-11-17",
+      "topic_first_source": "候補 26f34c3e63 のannounced_on（ソフト更新でも問題再発、Waymoが全米で高速道路の無人運行）",
+      "topic_series": "26f34c3e63",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-17",
+        "title": "米カリフォルニア州DMV、Waymoに高速道路の運行禁止を通告 アルファベット傘下のWaymoは全米市場で高速道路の配車を停止",
+        "id": "c3584ae035",
+        "source": "Googleニュース（Waymo 拡大 運行）／BigGo ファイナンス"
+      }
+    },
+    {
+      "title": "ウェイモ、全米で高速道路の運行停止―カリフォルニア州当局がロボタクシーを「差し迫った危険」と判断",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1UUnRiazBEZ0pwdmVpckFBZ1c4eEN6NENoR3hwaUpKTjZ1NVBiNGwtMmNuckQ5MDFMX21qb2RkVDhHUlRBaktYOXJ4Vjd4WDlvZ0hURHJRdnRGSnRXVVhMMmRKb9IBaEFVX3lxTFA2bGxBNlpGV3hhU004MDhxeVJrVGNmSWpUUllfRjBlMGJ4bURRTWJmcGFzZllXMkpkcUZwMHdPQU1CZXQwVmRPLUxLYUJKMmJTaG9OVVEzdGZYdWtPdmFDbjZ6MDZ6cDN2?oc=5",
+      "published": "2026-11-18",
+      "source": "Googleニュース（Waymo 拡大 運行）／財経新聞",
+      "source_kind": "media",
+      "outlet": "財経新聞",
+      "outlet_host": "zaikei.co.jp",
+      "genre_hint": "life_tech",
+      "summary": "ウェイモ、全米で高速道路の運行停止―カリフォルニア州当局がロボタクシーを「差し迫った危険」と判断（財経新聞）",
+      "series_query": "autonomy_logistics_watch",
+      "id": "ea2e7a46a8",
+      "sources": [
+        "財経新聞"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.dmv.ca.gov/",
+          "what_it_states": "カリフォルニア州DMVは2026年11月11日付でWaymoの州内高速道路での無人運転運行・テスト許可を停止（11月17日公表）。理由は作業員や機材が存在する工事閉鎖区間への度重なる侵入（US-101等で3件）および交通整理中のパトカー追越未遂（I-280）を受け「公共の安全への差し迫った危険」と判断。5月の是正措置後も再発しており、有効な是正策を実証するまで停止を継続する"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://www.nhtsa.gov/",
+          "what_it_states": "Waymoが高速道路の閉鎖車線走行および手信号等による現場交通整理への対応不備に関して提出した2件の自主的安全性リコール届出（負傷者・衝突事故の報告はなし）"
+        }
+      ],
+      "announced_on": "2026-11-17",
+      "headline_claim": "ウェイモが全米で高速道路の自動運転タクシー運行を停止し、カリフォルニア州当局は「差し迫った危険」と判断した",
+      "actual_content": "カリフォルニア州DMVが2026年11月11日付でWaymoの高速道路運行許可を制限したことを受け、Waymoは展開中の5都市（サンフランシスコ、LA、フェニックス、マイアミ、オースティン）での高速道路サービスを自主的に一時停止した。停止理由は工事閉鎖区間への侵入（バーリンゲーム近郊のUS-101で3台）や、パトカーによる交通遮断中の追越未遂（I-280）などであり、人身事故や衝突は発生していない。なお一般道での商業運行（週50万回以上）および高速道路での有人セーフティドライバー同乗テストは15都市で継続中である。",
+      "verifiability": 5,
+      "hype_gap": 2,
+      "promise": 3,
+      "debate": 4,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 2,
+      "audience_fit": 3,
+      "tangible": 3,
+      "decision_number": 1,
+      "series_fit": 3,
+      "concern_id": "mobility",
+      "entry_question": "高速道路の完全自動運転タクシー、実用化はまた遠のいた？",
+      "surprise_line": "運転する人が、最先端の自動運転車でも工事現場のコーン標識を見落とすことに驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "5月に工事区間への侵入トラブルで3,800台規模のリコール改修を行ったばかりなのに、11月に同じ工事区間侵入やパトカーの手信号無視を再発させており、高速走行中のイレギュラー対応という物理的な壁が依然として解決できていません。",
+      "hope_material": "今回の停止は高速道路の無人走行のみで人身事故はなく、全米15都市の一般道では週50万回以上の無人配車運行が安全に継続されており、有人同乗での高速テストも続けられています。",
+      "investment_related": false,
+      "deja_vu_note": "kl058: 運転しない車は月々払わないと動かない？Tesla Cybercab（自動運転タクシーの現状と課題）",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "ウェイモ 高速道路 停止",
+      "jp_title_anchor": [
+        "ウェイモ",
+        "高速道路"
+      ],
+      "announcement_type": "policy",
+      "freshness": 5,
+      "overall_score": 3.5,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-23",
+      "first_seen_at": "2026-11-23T04:49:28",
+      "presented_on": [],
+      "topic_first_date": "2026-11-17",
+      "topic_first_source": "候補 ea2e7a46a8 のannounced_on（ウェイモ、全米で高速道路の運行停止―カリフォルニア州当局がロ）",
+      "topic_series": "ea2e7a46a8",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-18",
+        "title": "ウェイモ、全米で高速道路の運行停止―カリフォルニア州当局がロボタクシーを「差し迫った危険」と判断",
+        "id": "ea2e7a46a8",
+        "source": "Googleニュース（Waymo 拡大 運行）／財経新聞"
+      }
+    },
+    {
+      "title": "OpenAI、専門業務向けのGPT-6.2 Astraと日常業務向けのGPT-6.2 Solを発表",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5zREhkbFBBZzlkcDNzRE1sckVzWTFCYkNubmtpdHliYTVoU1p2TF8xczQ4UFdZQUk5SHJDSTNmeTFrYkVtRE90aEphUDBoRXNZaW1zZEVJUjJoZnUzOWREc1Vnbkc?oc=5",
+      "published": "2026-11-18",
+      "source": "Googleニュース（OpenAI 発表）／gihyo.jp",
+      "source_kind": "media",
+      "outlet": "gihyo.jp",
+      "outlet_host": "gihyo.jp",
+      "genre_hint": "ai",
+      "summary": "OpenAI、専門業務向けのGPT-6.2 Astraと日常業務向けのGPT-6.2 Solを発表（gihyo.jp）",
+      "id": "a300bfdd52",
+      "sources": [
+        "gihyo.jp",
+        "株式会社インプレス"
+      ],
+      "dup_ids": [
+        "68d6a8a0ec"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://openai.com/ja-JP/index/introducing-gpt-6-2-astra-sol/",
+          "what_it_states": "専門業務向けGPT-6.2 Astraと日常業務向けGPT-6.2 Solを発表。多段階の専門業務を測るAgents' Last ExamでGPT-6.2 AstraはGPT-6 Astra比で3分の1未満のコストで5.2pt上回る。API料金はAstraが入力8ドル/出力40ドル（旧比20%引き下げ）、Solは入力2ドル/出力10ドル。ChatGPT Work、Codex、APIで即日提供開始。"
+        },
+        {
+          "kind": "tech_report",
+          "url": "https://openai.com/index/gpt-6-2-system-card/",
+          "what_it_states": "サイバーセキュリティ能力や長時間自律行動に対するセーフガード評価、内部運用での利用実績とPreparedness Frameworkに基づく安全性評価を記載。"
+        }
+      ],
+      "announced_on": "2026-11-17",
+      "headline_claim": "OpenAIが専門業務向けの「GPT-6.2 Astra」と日常業務向けの「GPT-6.2 Sol」を発表し、出力トークンを削減しながら高い処理能力を実現した。",
+      "actual_content": "OpenAIはフロンティアモデルのGPT-6.2 Astraと実務向けモデルのGPT-6.2 Solを発表した。専門業務ベンチマーク『Agents' Last Exam』でAstraは前世代（GPT-6 Astra）と比べ3分の1未満のコストでスコアを5.2ポイント上回り、API利用料金（100万トークン）も入力8ドル・出力40ドルへと20%引き下げられた。日々のコーディングや文書作成向けのSolは入力2ドル・出力10ドルとAstraの4分の1の価格設定でありながら、実際のコード変更等の評価ではAstraとの差を0.5ポイント以内に抑えている。",
+      "verifiability": 5,
+      "hype_gap": 2,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 5,
+      "audience_fit": 4,
+      "tangible": 2,
+      "decision_number": 5,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "GPT-6.2は前の版と何が違う？中小企業の仕事で使い分けられる？",
+      "surprise_line": "会社の経営者が、日常業務向け廉価版が最上位とほぼ同等の精度を出すことに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "soon"
+      },
+      "tsukkomi_material": "モデルのバージョンアップ（0.1刻み）に伴う順当な性能向上と値下げであり、AIが自律的に仕事の全責任を負えるわけではなく、最終的な事実確認や修正の手間は依然として人間側に残る点。",
+      "hope_material": "日常業務向けのSolが最上位Astraの4分の1の料金（入力2ドル・出力10ドル/100万トークン）でありながら、一般的な実務コード改修ベンチマークでAstraとわずか0.5ポイント差に迫る費用対効果を実現している点。",
+      "investment_related": false,
+      "deja_vu_note": "kl042（Gemini 4 Argonの評価）、kl048（AI秘書）とAIモデル比較・業務適用のテーマで一部重なる",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "GPT-6.2 Astra",
+      "jp_title_anchor": [
+        "GPT-6.2",
+        "Astra",
+        "Sol"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.35,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-23",
+      "first_seen_at": "2026-11-23T04:49:41",
+      "presented_on": [],
+      "topic_first_date": "2026-11-17",
+      "topic_first_source": "候補 a300bfdd52 のannounced_on（OpenAI、専門業務向けのGPT-6.2 Astraと日常）",
+      "topic_series": "a300bfdd52",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-17",
+        "title": "Introducing GPT-6.2 Astra and Sol",
+        "id": "549a77347d",
+        "source": "OpenAI"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://openai.com/ja-JP/index/introducing-gpt-6-2-astra-sol/",
+          "ok": true,
+          "status": "HTTP 200「GPT-6.2 Astra と Sol のご紹介 | Ope」",
+          "page_title": "GPT-6.2 Astra と Sol のご紹介 | OpenAI",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_blog"
+        },
+        {
+          "url": "https://openai.com/index/gpt-6-2-system-card/",
+          "ok": false,
+          "status": "HTTP 404（再確認5回とも404・開けず）",
+          "method": "http",
+          "attempts": [
+            {
+              "url": "https://openai.com/index/gpt-6-2-system-card/",
+              "via": "初回",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-23T04:56:02"
+            },
+            {
+              "url": "https://openai.com/index/gpt-6-2-system-card/",
+              "via": "英語のAccept-Languageで再試行",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-23T04:56:07"
+            },
+            {
+              "url": "https://openai.com/index/gpt-6-2-system-card/",
+              "via": "20秒おいて再試行",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-23T04:56:28"
+            },
+            {
+              "url": "https://openai.com/us/en/index/gpt-6-2-system-card/",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404（転送先 https://openai.com/index/gpt-6-2-system-card/ が404）",
+              "final_url": "https://openai.com/index/gpt-6-2-system-card/",
+              "redirects": [
+                "302 https://openai.com/en-US/en/index/gpt-6-2-system-card/",
+                "302 https://openai.com/en/index/gpt-6-2-system-card/",
+                "302 https://openai.com/en-US/index/gpt-6-2-system-card/",
+                "302 https://openai.com/index/gpt-6-2-system-card/"
+              ],
+              "at": "2026-11-23T04:56:34"
+            },
+            {
+              "url": "https://openai.com/en-us/index/gpt-6-2-system-card/",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-23T04:56:38"
+            },
+            {
+              "url": "https://openai.com/en/index/gpt-6-2-system-card/",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404（転送先 https://openai.com/index/gpt-6-2-system-card/ が404）",
+              "final_url": "https://openai.com/index/gpt-6-2-system-card/",
+              "redirects": [
+                "302 https://openai.com/en-US/index/gpt-6-2-system-card/",
+                "302 https://openai.com/index/gpt-6-2-system-card/"
+              ],
+              "at": "2026-11-23T04:56:43"
+            }
+          ],
+          "kind": "tech_report"
+        }
+      ],
+      "primary_verified_at": "2026-11-23T04:56:43",
+      "primary_history": [
+        {
+          "at": "2026-11-23T04:50:58",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://openai.com/ja-JP/index/introducing-gpt-6-2-astra-sol/",
+              "status": "HTTP 200「GPT-6.2 Astra と Sol のご紹介 | Ope」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://openai.com/index/gpt-6-2-system-card/",
+              "status": "HTTP 404（再確認5回とも404・開けず）",
+              "final_url": "",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "at": "2026-11-23T04:56:43",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://openai.com/ja-JP/index/introducing-gpt-6-2-astra-sol/",
+              "status": "HTTP 200「GPT-6.2 Astra と Sol のご紹介 | Ope」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://openai.com/index/gpt-6-2-system-card/",
+              "status": "HTTP 404（再確認5回とも404・開けず）",
+              "final_url": "",
+              "ok": false
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://openai.com/ja-JP/index/introducing-gpt-6-2-astra-sol/",
+          "ok": true,
+          "status": "HTTP 200「GPT-6.2 Astra と Sol のご紹介 | Ope」"
+        },
+        {
+          "url": "https://openai.com/index/gpt-6-2-system-card/",
+          "ok": false,
+          "status": "HTTP 404（再確認5回とも404・開けず）"
+        }
+      ],
+      "url_ok": false,
+      "url_status": "openai.com: HTTP 200「GPT-6.2 Astra と Sol のご紹介 | Ope」 ／ openai.com: HTTP 404（再確認5回とも404・開けず）",
+      "url_checked_at": "2026-11-23T04:56:43",
+      "buzz_history": [
+        {
+          "at": "2026-11-23T04:54:03",
+          "query": "GPT-6.2 Astra",
+          "measured": 5,
+          "outlets": 39,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "GPT-6.2 AstraがSO-101ロボットボードで1,984 DCRを記録し首位に立つ",
+              "outlet": "OrcaRouter",
+              "date": "2026-11-21"
+            },
+            {
+              "title": "OpenAI、AIの思考過程を盗む攻撃の成功率を0.2%へ低減 GPT-6.2で多層防御を導入",
+              "outlet": "ビジネス+IT",
+              "date": "2026-11-21"
+            },
+            {
+              "title": "OpenAI、GPT-6.2を敵対的蒸留から守る新たな防御策",
+              "outlet": "Meteora Web",
+              "date": "2026-11-21"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 64,
+          "raw_items": 98,
+          "jp_measured": 5,
+          "outlets_foreign": 44,
+          "foreign_boost": false,
+          "query_en": "GPT-6.2 Astra"
+        }
+      ],
+      "buzz_measured_at": "2026-11-23T04:54:03",
+      "buzz_measured": 5,
+      "buzz_outlets": 39,
+      "yahoo": true,
+      "buzz_evidence": [
+        {
+          "title": "GPT-6.2 AstraがSO-101ロボットボードで1,984 DCRを記録し首位に立つ",
+          "outlet": "OrcaRouter",
+          "date": "2026-11-21"
+        },
+        {
+          "title": "OpenAI、AIの思考過程を盗む攻撃の成功率を0.2%へ低減 GPT-6.2で多層防御を導入",
+          "outlet": "ビジネス+IT",
+          "date": "2026-11-21"
+        },
+        {
+          "title": "OpenAI、GPT-6.2を敵対的蒸留から守る新たな防御策",
+          "outlet": "Meteora Web",
+          "date": "2026-11-21"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 64,
+      "buzz_raw_items": 98,
+      "buzz_query": "GPT-6.2 Astra",
+      "buzz_jp_measured": 5,
+      "buzz_outlets_foreign": 44,
+      "buzz_foreign_boost": false,
+      "buzz_query_en": "GPT-6.2 Astra",
+      "buzz_adopted_at": "2026-11-23T04:54:03",
+      "buzz_adopted_n": 1,
+      "prior_art": {
+        "version": "2026-11-11",
+        "checked_at": "2026-11-23T04:55:36",
+        "status": "not_realized",
+        "evidence": [],
+        "reason": "OpenAI固有の新モデル提供とその性能・効率向上に関する発表であり、他社による同等の先行実現は見当たらない。",
+        "known_id": "",
+        "novelty_exception": false,
+        "novelty_line": "",
+        "novelty_line_primary": false
+      }
+    },
+    {
+      "title": "ヒューマノイドからAIビジョンまで、三菱電機「Serendie Automation」の具体像",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2611/20/news045.html",
+      "published": "2026-11-20",
+      "source": "ITmedia AI+",
+      "source_kind": "media",
+      "summary": "三菱電機は、FA向けの新たな統合ソリューションブランドとして「Serendie Automation」を展開することを発表した。後編では「Serendie Automation」を体現する技術展示の内容を紹介する。",
+      "id": "c8ec3e0aa2",
+      "sources": [
+        "ITmedia AI+",
+        "MONOist"
+      ],
+      "dup_ids": [
+        "116ce7ff6c"
+      ],
+      "genre_hint": "humanoid",
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://www.mitsubishielectric.co.jp/fa/solutions/serendie-automation/",
+          "what_it_states": "2003年からのe-F@ctoryを継承・進化させた新ブランド『Serendie Automation』を発表。AIエージェント、フィジカルAI、データ共創基盤MAPsを柱とし、工場の自律化を目指す（具体的な製品価格や出荷時期の個別明記はなし）"
+        },
+        {
+          "kind": "tech_report",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2611/20/news045.html",
+          "what_it_states": "FA Serendie Days（2026年11月18-19日）にて展示。ヒューマノイドは三菱電機製ではなく外部製品を用いて自社尾張旭工場で2026年度から実証を開始した段階であり、自社でのヒューマノイド発売予定は現状なしと回答"
+        }
+      ],
+      "announced_on": "2026-11-18",
+      "headline_claim": "三菱電機がヒューマノイドやAIビジョンを活用した工場の自律化新ブランド「Serendie Automation」を発表した",
+      "actual_content": "三菱電機が2003年以来の「e-F@ctory」を進化させ、AIを活用して工場の自律化を支援する統合ブランド「Serendie Automation」を立ち上げました。展示では尾張旭工場で人型ロボットに作業代替させる実証が紹介されましたが、使われているヒューマノイドは他社製です。三菱電機自身が人型ロボットを製造・販売する予定はなく、あくまで外部のロボットと自社のFA制御・安全技術を組み合わせる実証検証にとどまっています。",
+      "verifiability": 3,
+      "hype_gap": 4,
+      "promise": 2,
+      "debate": 2,
+      "wonder": 2,
+      "life_relevance": 1,
+      "work_relevance": 3,
+      "audience_fit": 2,
+      "tangible": 3,
+      "decision_number": 1,
+      "series_fit": 2,
+      "concern_id": "work_ai",
+      "entry_question": "三菱電機も人型ロボットを発売するって本当？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "「三菱電機がヒューマノイド」という見出しですが、実証で動かしている人型ロボットは他社製であり、三菱電機自身は『ヒューマノイドをリリースする予定は今のところない』と明言しています。新ブランド構想の発表が主で、町工場や中小企業が今すぐ買える機械の価格や発売時期は示されていません。",
+      "hope_material": "自社の尾張旭工場をモデル拠点として、他社製ヒューマノイドや既存のFA設備・安全制御を組み合わせた実証実験を2026年度から実際に動かし始めています。",
+      "investment_related": false,
+      "deja_vu_note": "kl040（安川電機の人型ロボット構想）",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "三菱電機 Serendie Automation",
+      "jp_title_anchor": [
+        "Serendie Automation",
+        "三菱電機"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 2.85,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-23",
+      "first_seen_at": "2026-11-23T04:49:53",
+      "presented_on": [],
+      "topic_first_date": "2026-05-13",
+      "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
+      "topic_series": "b625e1631a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-18",
+        "title": "現代自動車グループのヒューマノイド「アトラス」、来年から半導体工場に初投入（中央日報日本語版）",
+        "id": "f144a0d451",
+        "source": "Googleニュース（ヒューマノイド）／Yahoo!ニュース"
+      }
+    },
+    {
+      "title": "ブロッコリースプラウトと腸内細菌の最新研究を発表。継続摂取で「酪酸産生菌」と「酪酸」が増加",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFAxeXkwZFlqOWNaMmt2Y05oU0dJRXRRS1dMSnFfdVE2cW1zb1R4S0MtSWRKb0pTcjUydWV4VlRfc1NTaXhuYktTRlBoRGk5LUJJb0E?oc=5",
+      "published": "2026-11-19",
+      "source": "Googleニュース（腸内細菌 研究）／山陽新聞",
+      "source_kind": "media",
+      "outlet": "山陽新聞",
+      "outlet_host": "sanyonews.jp",
+      "genre_hint": "food_health",
+      "summary": "ブロッコリースプラウトと腸内細菌の最新研究を発表。継続摂取で「酪酸産生菌」と「酪酸」が増加（山陽新聞）",
+      "id": "9c6a2df302",
+      "sources": [
+        "山陽新聞"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.murakamifarm.com/company/release/20261113.html",
+          "what_it_states": "健康な成人42名（最終解析31名）を対象に、ブロッコリースプラウト50g/日またはアルファルファスプラウト50g/日を各4週間摂取させるクロスオーバー試験を実施。ブロッコリースプラウト摂取群で腸内の酪酸産生菌構成比および便中酪酸濃度が増加（アルファルファ摂取群では変化なし）。研究成果は2026年10月の「Functional Food Center 第36回国際会議」で発表"
+        }
+      ],
+      "announced_on": "2026-11-13",
+      "headline_claim": "ブロッコリースプラウトを毎日食べ続けると、長寿や腸の健康に関わる「酪酸産生菌」と「酪酸」が増える。",
+      "actual_content": "村上農園と谷中昭典医師らの共同研究による成人42名（解析31名）を対象とした小規模なクロスオーバー試験です。1日あたり50gのブロッコリースプラウトを4週間摂取したところ、対照群（アルファルファ）と比べて腸内の酪酸産生菌の割合および便中の酪酸濃度が増加しました。ただし試験は学会発表段階であり査読付き論文ではなく、一般家庭で毎日50g（市販パックの半分〜1パック相当）を長期間食べ続ける現実的なハードルや、酪酸増加が具体的にどの程度の健康改善に直結したかの臨床的評価は含まれていません。",
+      "verifiability": 4,
+      "hype_gap": 2,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 1,
+      "audience_fit": 3,
+      "tangible": 3,
+      "decision_number": 3,
+      "series_fit": 1,
+      "concern_id": "gut",
+      "entry_question": "ブロッコリースプラウトを毎日食べると本当に腸内細菌が変わる？",
+      "surprise_line": "健康を気にする人が、毎日50g食べるだけで腸の酪酸が増えたことに驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "soon"
+      },
+      "tsukkomi_material": "試験で食べてもらった量は1日50g（市販の約1パック分）とかなり多く、解析対象も31人と小規模で学会発表段階です。スーパーで買ってすぐ試せる手軽さはありますが、毎日食べ続けるコストや習慣化の手間、そして具体的に病気予防などにどこまで直結するかはまだ検証途上です。",
+      "hope_material": "対照群（アルファルファ）を設けた厳密なヒト介入試験（クロスオーバー法）で、4週間で明確に酪酸産生菌の構成比と便中酪酸濃度が増加したことがデータで確認されています。特別なサプリや医薬品ではなく、スーパーで数百円で手に入る野菜で腸内環境にアプローチできる点は実用性が高いです。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "村上農園 ブロッコリースプラウト",
+      "jp_title_anchor": [
+        "ブロッコリースプラウト",
+        "村上農園",
+        "酪酸産生菌"
+      ],
+      "announcement_type": "research",
+      "freshness": 4,
+      "overall_score": 3.2,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-23",
+      "first_seen_at": "2026-11-23T04:50:08",
+      "presented_on": [],
+      "topic_first_date": "2026-11-13",
+      "topic_first_source": "候補 9c6a2df302 のannounced_on（ブロッコリースプラウトと腸内細菌の最新研究を発表。継続摂取で）",
+      "topic_series": "9c6a2df302",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-19",
+        "title": "ブロッコリースプラウトと腸内細菌の最新研究を発表。継続摂取で「酪酸産生菌」と「酪酸」が増加",
+        "id": "9c6a2df302",
+        "source": "Googleニュース（腸内細菌 研究）／山陽新聞"
+      },
+      "primary_verified": false,
+      "primary_check": [
+        {
+          "url": "https://www.murakamifarm.com/company/release/20261113.html",
+          "ok": false,
+          "status": "HTTP 404（再確認5回とも404・開けず）",
+          "method": "http",
+          "attempts": [
+            {
+              "url": "https://www.murakamifarm.com/company/release/20261113.html",
+              "via": "初回",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-23T04:50:59"
+            },
+            {
+              "url": "https://www.murakamifarm.com/company/release/20261113.html",
+              "via": "英語のAccept-Languageで再試行",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-23T04:51:04"
+            },
+            {
+              "url": "https://www.murakamifarm.com/company/release/20261113.html",
+              "via": "20秒おいて再試行",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-23T04:51:24"
+            },
+            {
+              "url": "https://www.murakamifarm.com/us/en/company/release/20261113.html",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-23T04:51:29"
+            },
+            {
+              "url": "https://www.murakamifarm.com/en-us/company/release/20261113.html",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-23T04:51:34"
+            },
+            {
+              "url": "https://www.murakamifarm.com/en/company/release/20261113.html",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404",
+              "final_url": "",
+              "redirects": [],
+              "at": "2026-11-23T04:51:39"
+            }
+          ],
+          "kind": "press_release"
+        }
+      ],
+      "primary_verified_at": "2026-11-23T04:51:39",
+      "primary_history": [
+        {
+          "at": "2026-11-23T04:51:39",
+          "verdict": false,
+          "urls": [
+            {
+              "url": "https://www.murakamifarm.com/company/release/20261113.html",
+              "status": "HTTP 404（再確認5回とも404・開けず）",
+              "final_url": "",
+              "ok": false
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://www.murakamifarm.com/company/release/20261113.html",
+          "ok": false,
+          "status": "HTTP 404（再確認5回とも404・開けず）"
+        }
+      ],
+      "url_ok": false,
+      "url_status": "murakamifarm.com: HTTP 404（再確認5回とも404・開けず）",
+      "url_checked_at": "2026-11-23T04:51:39",
+      "repair_tried": true,
+      "repair_tried_at": "2026-11-23T04:52:57",
+      "repair_log": [
+        "site-crawl: https://www.murakamifarm.com/company/release/2026/11/13/003073/ → HTTP 200「ニュースリリース&amp;トピックス｜村上農園」（見出しに候補の固有の語がない。一覧ページ・別の資料の可能性）",
+        "site-crawl: https://www.murakamifarm.com/company/release/2026/11/05/003070/ → HTTP 200「ニュースリリース&amp;トピックス｜村上農園」（見出しに候補の固有の語がない。一覧ページ・別の資料の可能性）",
+        "site-crawl: https://www.murakamifarm.com/aogaku-ekiden/ → HTTP 200「村上農園×青学駅伝｜食とスポーツが生む新しい挑戦」（見出しに候補の固有の語がない。一覧ページ・別の資料の可能性）",
+        "pool-official: 同じ話題の公式・学術誌の記事（発表日±3日）がプールにない",
+        "media-link: https://news.google.com/rss/articles/CBMiUkFVX3lxTFAxeXkwZFlqOWNaMmt2Y を開けない",
+        "robots.txt で禁止: https://news.google.com/rss/articles/CBMiUkFVX3lxTFAxeXkwZFlqOWNaMmt2Y05oU0dJRXRRS1dMSnFfdVE2cW1zb1R4S0MtSWRKb0pTcjUydWV4VlRfc1NTaXhuYktTRlBoRGk5LUJJb0E?oc=5"
+      ],
+      "repair_result": "見つからない"
     }
   ]
 }

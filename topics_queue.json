@@ -3437,7 +3437,8 @@
         "surprise_line": "車は買えば好きな所へ走らせられると思っている人が、ハンドルの無い車では、毎月の契約と会社が決めた区域が『車が動く条件』になると知って驚く",
         "emma": "見たい（1位）",
         "question": "運転しない車は、「買えば自分の物」から「月々払わないと動かない物」になる？ どこまで来た？"
-      }
+      },
+      "series_no": 2
     },
     {
       "episode_id": "kl059",
@@ -3493,8 +3494,56 @@
         "emma": "元の案A=見たくない／案C・案B=見たい（A′は未確認）",
         "question": "AIが店を探して、比べて、支払いまで済ませる時代が始まった。日用品の買い足しを、AIに任せきりにできる日は来る？"
       }
+    },
+    {
+      "episode_id": "kl060",
+      "status": "confirmed",
+      "slot_type": "news",
+      "genre": "humanoid",
+      "health": false,
+      "domain": "life",
+      "concern_id": null,
+      "entry_question": "（仮・問いゲートで確定）人型ロボが新人のように数週間で仕事を覚えるなら、人手が足りない仕事は、いつ・いくらで・どこから任せられるようになる？",
+      "title": "人型ロボが本物の車工場で成功率96%。人の仕事はどこまで任せられる？（11月時点・定点観測 第2回）",
+      "format": "dialogue",
+      "structure": "rounds_v4",
+      "source_type": "news",
+      "news_date": "2026-11-10",
+      "references": [
+        {
+          "title": "Gemini Robotics 2.5 accelerates real-world physical intelligence",
+          "year": 2026,
+          "venue": "Google DeepMind ブログ（2026年11月10日）",
+          "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+          "source_kind": "official_blog",
+          "is_preprint": false,
+          "institution": "Google DeepMind"
+        },
+        {
+          "title": "Gemini Robotics（製品ページ）",
+          "year": 2026,
+          "venue": "Google DeepMind",
+          "url": "https://deepmind.google/technologies/gemini-robotics/",
+          "source_kind": "company_website",
+          "is_preprint": false,
+          "institution": "Google DeepMind"
+        }
+      ],
+      "hook_idea": "人型ロボットが、動いている本物の車工場で部品を並べて、成功率96%。ただし何回試したかは書かれていない。",
+      "notes": "2026-11-23 弱い日（本命なし）に、なるさんが案1を選択（Muse経由）。ゲート例外: 宣伝判定(customer_case)は誤り、編集長が一次資料確認済み。先行事例（Figure×BMW等）あり→新しさでなく定点観測の更新で扱う。「100回中96回」は使わず「成功率96%」（試行回数未公表）。「数週間で上達」は Apptronik CEO の発言で DeepMind の言葉ではない。人型ロボ定点観測 第2回（第1回=kl053、前回札 大輔=3年はかかる／沙織=根拠待ち）。鮮度期限 12/1。シリーズ枠は全シリーズ合計で数えて収まる（編集長判断）。",
+      "topic_pattern": "extreme_number",
+      "candidate_id": "6a6bec4fc5",
+      "series": "humanoid_watch",
+      "series_no": 2,
+      "pitch": {
+        "title": "人型ロボが本物の車工場で成功率96%。人の仕事はどこまで任せられる？（11月時点・定点観測 第2回）",
+        "hook": "大輔「人型ロボットが、本物の車の工場で部品を並べて、成功率96%だったんだって」／沙織「96%ね。じゃあ残りの4%、そのラインはどうなってたの？」",
+        "surprise_line": "ロボットは一つの作業を長くかけて教え込むものだと思っている人が、数週間の追加練習で、動いている車工場の部品並べを96%こなしたことに驚く",
+        "emma": "見たい（1位、2案中）",
+        "shorts_first_cut": "成功率96%"
+      }
     }
   ],
-  "total_topics": 59,
-  "last_updated": "2026-11-18"
+  "total_topics": 60,
+  "last_updated": "2026-11-23"
 }
