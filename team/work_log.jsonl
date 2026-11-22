@@ -562,3 +562,10 @@
 {"ts": "2026-11-23T08:35:42+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl060", "step": "承認受領", "result": "ok", "retries": 0, "note": "完成動画 OK＋upload=yes（Muse経由）"}
 {"ts": "2026-11-23T08:35:55+09:00", "kind": "feedback", "agent": "kl-writer", "episode": "kl060", "source": "user", "severity": "minor", "text": "ユーザー指摘（Muse経由 2026-11-23）: 沙織の『本物なら私も使いたい』は工場関係者の言葉なら自然だが沙織が言うのは違和感。台詞は話者の立場に合ったものにする。利用者目線の感想台詞は、その立場として自然な場合だけ使う。さらに『私も使いたい』が毎回の決まり文句になっていること自体が違和感の元で、決まり文句化した感想台詞は繰り返さない。kl060は修正不要、次回から適用"}
 {"ts": "2026-11-23T08:35:55+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl060", "step": "12 完成動画OK＋upload=yes 受領／kl_finalize 2回目（Drive同期40件）完了／kl-upload へ", "result": "ok", "retries": 0, "note": ""}
+{"ts": "2026-11-23T08:38:03+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl060", "step": "upload 2 アップロード実行／3 完了報告", "result": "ok", "retries": 0, "note": ""}
+{"ts": "2026-11-23T08:39:07+09:00", "kind": "call", "agent": "kl-community", "session": "ba5e2712-9120-41ea-b73f-d16b56cd5638"}
+{"ts": "2026-11-23T08:39:21+09:00", "kind": "work", "agent": "kl-community", "episode": "kl060", "step": "3.6", "result": "ok", "retries": 0, "note": "返信0件・見送り1件（kl058動画『0:08』、意図不明）。固定コメント文案3本（kl056/057/058）"}
+{"ts": "2026-11-23T08:39:50+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl060", "step": "3.7", "result": "retry", "retries": 0, "note": "固定コメント3本: kl056は夜の守り方の公開を求めない問いに、kl057は「お店の周り」→「周り」で非店主も答えやすく、kl058は差し替え案を採り表現を整えた。確定文は編集長確認済みでそのまま投稿可（再確認不要）"}
+{"ts": "2026-11-23T08:40:03+09:00", "kind": "call", "agent": "kl-manager", "session": "ba5e2712-9120-41ea-b73f-d16b56cd5638"}
+{"ts": "2026-11-23T08:40:15+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl060", "step": "3.7", "result": "ok", "retries": 0, "note": "固定コメント3本 確定（直し反映済み）"}
+{"ts": "2026-11-23T08:43:49+09:00", "kind": "work", "agent": "kl-community", "episode": "kl060", "step": "3.7", "result": "ok", "retries": 0, "note": "固定コメント投稿・固定 kl056/kl057/kl058（kl059・kl060は予約公開のため公開後）"}
