@@ -557,3 +557,8 @@
 {"ts": "2026-11-23T07:29:55+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl060", "step": "11 編集長の確認（条件付き進行可）→(A)S07の言い換え2行・(B)Shorts最後のカット差し替えを実行中", "result": "retry", "retries": 0, "note": ""}
 {"ts": "2026-11-23T07:30:07+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "ba5e2712-9120-41ea-b73f-d16b56cd5638"}
 {"ts": "2026-11-23T07:33:56+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl060", "step": "11", "result": "ok", "retries": 0, "note": "S07差分(前のバージョン): 致命的0・直す0。review-pass --scenes 7"}
+{"ts": "2026-11-23T07:38:14+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl060", "step": "11 編集長の条件を実行（S07言い換え・Shorts差し替え・概要欄修正）／7 zoom_anchor／Drive同期／12 動画生成を開始", "result": "ok", "retries": 0, "note": ""}
+{"ts": "2026-11-23T08:04:39+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl060", "step": "12 動画生成完了（本編12.2分・Shorts 27秒）／フレーム確認OK", "result": "ok", "retries": 0, "note": ""}
+{"ts": "2026-11-23T08:35:42+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl060", "step": "承認受領", "result": "ok", "retries": 0, "note": "完成動画 OK＋upload=yes（Muse経由）"}
+{"ts": "2026-11-23T08:35:55+09:00", "kind": "feedback", "agent": "kl-writer", "episode": "kl060", "source": "user", "severity": "minor", "text": "ユーザー指摘（Muse経由 2026-11-23）: 沙織の『本物なら私も使いたい』は工場関係者の言葉なら自然だが沙織が言うのは違和感。台詞は話者の立場に合ったものにする。利用者目線の感想台詞は、その立場として自然な場合だけ使う。さらに『私も使いたい』が毎回の決まり文句になっていること自体が違和感の元で、決まり文句化した感想台詞は繰り返さない。kl060は修正不要、次回から適用"}
+{"ts": "2026-11-23T08:35:55+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl060", "step": "12 完成動画OK＋upload=yes 受領／kl_finalize 2回目（Drive同期40件）完了／kl-upload へ", "result": "ok", "retries": 0, "note": ""}
