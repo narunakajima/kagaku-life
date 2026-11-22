@@ -499,3 +499,5 @@
 {"ts": "2026-11-19T17:35:52+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl059", "step": "承認受領", "result": "retry", "retries": 0, "note": "upload=yes を17:28に受信、取り込みが1.5時間遅れ（監視が拾えず）"}
 {"ts": "2026-11-19T17:37:16+09:00", "kind": "feedback", "agent": "kl-coordinator", "episode": "kl059", "source": "user", "severity": "major", "text": "3分ごとにスラック確認するはずでは？（承認 upload=yes を17:28に受信後、約1.5時間取り込めず。監視は検知済みだったが結果ファイルを読まなかった）"}
 {"ts": "2026-11-19T17:37:42+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl059", "step": "進行", "result": "retry", "retries": 0, "note": "承認の取り込み遅れ1.5時間、停止2回（次工程を呼ばず応答終了）、報告漏れ1回。改善: 待機中も数分おきにcc-inbox確認"}
+{"ts": "2026-11-19T17:43:01+09:00", "kind": "call", "agent": "kl-manager", "session": "4f1b8a00-621a-4f59-b1cf-c364be7316f6"}
+{"ts": "2026-11-19T18:18:41+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl059", "step": "再発防止の実装", "result": "ok", "retries": 0, "note": "手順書3件・kl_report.py・Stop フック（6パターン試験済み）"}
