@@ -536,3 +536,7 @@
 {"ts": "2026-11-23T06:10:06+09:00", "kind": "applied", "agent": "kl-writer", "episode": "kl060", "ids": ["KL2611-02"], "skipped": [], "reason": ""}
 {"ts": "2026-11-23T06:10:46+09:00", "kind": "call", "agent": "kl-writer", "session": "ba5e2712-9120-41ea-b73f-d16b56cd5638"}
 {"ts": "2026-11-23T06:13:29+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl060", "step": "5.5", "result": "retry", "retries": 0, "note": "r1指摘6+8を反映。S12の札の条件を第1回(値段かつ店側の数字)に揃えるため進行が1行修正"}
+{"ts": "2026-11-23T06:14:45+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "ba5e2712-9120-41ea-b73f-d16b56cd5638"}
+{"ts": "2026-11-23T06:17:21+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl060", "step": "5.5", "result": "ok", "retries": 0, "note": "r2 差分: 致命的0・直す1（S9の43%の比べる相手）。進行が4点修正"}
+{"ts": "2026-11-23T06:17:59+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "ba5e2712-9120-41ea-b73f-d16b56cd5638"}
+{"ts": "2026-11-23T06:20:18+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl060", "step": "5.5", "result": "ok", "retries": 0, "note": "r3 差分: 前回4件直った・新規 致命的0 直す0。合格（3周）"}
