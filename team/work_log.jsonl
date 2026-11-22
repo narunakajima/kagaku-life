@@ -540,3 +540,10 @@
 {"ts": "2026-11-23T06:17:21+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl060", "step": "5.5", "result": "ok", "retries": 0, "note": "r2 差分: 致命的0・直す1（S9の43%の比べる相手）。進行が4点修正"}
 {"ts": "2026-11-23T06:17:59+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "ba5e2712-9120-41ea-b73f-d16b56cd5638"}
 {"ts": "2026-11-23T06:20:18+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl060", "step": "5.5", "result": "ok", "retries": 0, "note": "r3 差分: 前回4件直った・新規 致命的0 直す0。合格（3周）"}
+{"ts": "2026-11-23T06:20:20+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl060", "step": "5.5 初見レビュー合格（全文1＋差分2）", "result": "ok", "retries": 0, "note": ""}
+{"ts": "2026-11-23T06:21:33+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "ba5e2712-9120-41ea-b73f-d16b56cd5638"}
+{"ts": "2026-11-23T06:22:02+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl060", "step": "5.6", "result": "ok", "retries": 0, "note": "パッケージ評価: 1位案2(クリック5)・2位案5・3位案3、最下位案1"}
+{"ts": "2026-11-23T06:24:00+09:00", "kind": "call", "agent": "kl-manager", "session": "ba5e2712-9120-41ea-b73f-d16b56cd5638"}
+{"ts": "2026-11-23T06:24:32+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl060", "step": "5.6", "result": "ok", "retries": 0, "note": "合成案（案2社名＋案5問い）。案2は4%の答えが資料外のため次点"}
+{"ts": "2026-11-23T06:25:04+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "ba5e2712-9120-41ea-b73f-d16b56cd5638"}
+{"ts": "2026-11-23T06:25:12+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl060", "step": "5.6", "result": "ok", "retries": 0, "note": "冒頭差分(S01の1語変更): 致命的0・直す0。review-pass --scenes 1"}

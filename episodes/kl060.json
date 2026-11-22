@@ -12,7 +12,7 @@
   "health": false,
   "topic_pattern": "extreme_number",
   "episode_title": "体にきつい繰り返しの仕事を人型ロボが引き受ける日、人の仕事はどう変わる？ どこまで来た？",
-  "youtube_title": "人型ロボが車工場で成功率96%。人の仕事はどう変わる？（11月時点・定点観測 第2回）",
+  "youtube_title": "人型ロボ、メルセデスの工場で成功率96%。人は何の仕事に回る？（11月時点・定点観測 第2回）",
   "entry_question": "体にきつい繰り返しの仕事を人型ロボが引き受ける日、人の仕事はどう変わる？ どこまで来た？",
   "claim_verdict": {
     "dreamer": "soon",
@@ -23,11 +23,11 @@
     "skeptic": "pending"
   },
   "hook_lines": [
-    "動く車工場で人型ロボ",
+    "本物の車工場で人型ロボ",
     "成功率96%、残り4%は？"
   ],
   "thumbnail_prompt": "Inside a bright modern car factory, continuous across the whole frame with no panels, boxes or borders. Keep the left 30%, the right 30% and the top 42% of the frame quiet and uncluttered (softly blurred factory hall, racks and warm overhead lights only), but the background must continue unbroken behind them. Main subject, centered left-to-right in the middle band: a generic humanoid robot (not any specific brand or real product): a slim two-legged robot with a smooth light-gray and white body, two arms, five-fingered mechanical hands, a rounded head with a plain dark face panel and a small soft glowing light strip where a mouth would be, and a small status display on its chest — reaching into a gray bin of small metal brackets and placing one into a compartmented tray, with partially assembled car bodies softly blurred on a production line behind. Hopeful and intriguing. No people, no text, no logos, no brand names.",
-  "thumbnail_headline": "車工場で人型ロボ\n成功率96%",
+  "thumbnail_headline": "成功率96%\n人は何の仕事へ？",
   "thumbnail_exprs": {
     "dreamer": "excited",
     "skeptic": "doubt"
@@ -115,13 +115,13 @@
       "lines": [
         {
           "speaker": "dreamer",
-          "text": "動いている車の工場で、人型ロボが部品並べ。成功率96%。",
+          "text": "本物の車の工場で、人型ロボが部品並べ。成功率96%。",
           "expression": "excited",
           "reference_index": 0
         }
       ],
       "narrator": "dialogue",
-      "narration": "大輔「動いている車の工場で、人型ロボが部品並べ。成功率96%。」"
+      "narration": "大輔「本物の車の工場で、人型ロボが部品並べ。成功率96%。」"
     },
     {
       "scene_id": 2,
@@ -1079,7 +1079,10 @@
   "beginner_review": {
     "passed_at": "2026-11-23",
     "rounds": 3,
-    "report": "/private/tmp/claude-503/-Users-claude-kagaku-life/ba5e2712-9120-41ea-b73f-d16b56cd5638/scratchpad/kl060_beginner_review_r3.md",
-    "lines_digest": "2af86768fb11"
+    "report": "/private/tmp/claude-503/-Users-claude-kagaku-life/ba5e2712-9120-41ea-b73f-d16b56cd5638/scratchpad/kl060_beginner_review_r4.md",
+    "lines_digest": "e4a7484deacd",
+    "rechecked_scenes": [
+      "1"
+    ]
   }
 }
