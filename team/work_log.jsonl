@@ -576,3 +576,6 @@
 {"ts": "2026-11-23T09:46:12+09:00", "kind": "applied", "agent": "kl-first-viewer", "episode": "kl058", "ids": ["KL2611-03"], "skipped": [], "reason": ""}
 {"ts": "2026-11-23T09:46:12+09:00", "kind": "applied", "agent": "kl-coordinator", "episode": "kl059", "ids": [], "skipped": ["KL2611-06"], "reason": "アクション作成（11-19 17:42）前から続いた回で、この日の作業は再発防止の実装そのもの。適用の機会ではない"}
 {"ts": "2026-11-23T09:49:38+09:00", "kind": "call", "agent": "kl-manager", "session": "54182f1e-a932-4fd3-ae15-5044b03dd4d0"}
+{"ts": "2026-11-23T09:59:34+09:00", "kind": "applied", "agent": "kl-coordinator", "episode": "kl058", "ids": [], "skipped": ["KL2611-05"], "reason": "未実施（形跡なし）: 進行・6.7の記録にサムネ事前確認の記述が無い。適用の記録は補わず、判定では未適用として数える（2026-11-23 編集長判断）"}
+{"ts": "2026-11-23T09:59:34+09:00", "kind": "applied", "agent": "kl-coordinator", "episode": "kl059", "ids": [], "skipped": ["KL2611-05"], "reason": "未実施（形跡なし）: 進行・6.7の記録にサムネ事前確認の記述が無い。適用の記録は補わず、判定では未適用として数える（2026-11-23 編集長判断）"}
+{"ts": "2026-11-23T10:00:13+09:00", "kind": "call", "agent": "kl-manager", "session": "54182f1e-a932-4fd3-ae15-5044b03dd4d0"}
