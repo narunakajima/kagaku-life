@@ -573,3 +573,5 @@
 {"ts": "2026-11-23T08:44:38+09:00", "kind": "applied", "agent": "kl-coordinator", "episode": "kl060", "ids": ["KL2611-05", "KL2611-06"], "skipped": [], "reason": ""}
 {"ts": "2026-11-23T09:33:04+09:00", "kind": "applied", "agent": "kl-first-viewer", "episode": "kl059", "ids": ["KL2611-03"], "skipped": [], "reason": ""}
 {"ts": "2026-11-23T09:33:04+09:00", "kind": "applied", "agent": "kl-first-viewer", "episode": "kl060", "ids": ["KL2611-03"], "skipped": [], "reason": ""}
+{"ts": "2026-11-23T09:46:12+09:00", "kind": "applied", "agent": "kl-first-viewer", "episode": "kl058", "ids": ["KL2611-03"], "skipped": [], "reason": ""}
+{"ts": "2026-11-23T09:46:12+09:00", "kind": "applied", "agent": "kl-coordinator", "episode": "kl059", "ids": [], "skipped": ["KL2611-06"], "reason": "アクション作成（11-19 17:42）前から続いた回で、この日の作業は再発防止の実装そのもの。適用の機会ではない"}
