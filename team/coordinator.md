@@ -28,5 +28,9 @@ model: メイン（ユーザーが選んだモデル。いつもの制作は Son
 3. 制作の最後に、自分の進行を記録する（翌月、KLチーム 編集長 ケビンが評価する）:
    - `python3 team_log.py add --agent kl-coordinator --episode {回} --step 進行 --result ok|retry --note "手順の飛ばし・やり直しがあれば"`
    - 実施中の改善アクションがあれば `python3 team_log.py applied --agent kl-coordinator --episode {回} --ids {ID}`
+   - **全担当の改善アクションが行動に反映されているかを確かめる（2026-11-23〜、なるさんの指示）:** `python3 team_log.py audit` を実行する。
+     ⚠ が出たら、その担当の報告の「担当メモ」を見て `team_log.py applied` で補う（担当メモに無ければ、その担当に適用したかを確かめ、
+     行動に反映されていなければ次の呼び出しの依頼文で実行を求める）。⚠ が残ったまま制作を終えない。初見レビューなど周回のある工程は、
+     周ごとに担当メモを見て、その場で記録する
 4. なるさんから進行についての指摘（呼び忘れ・手順の飛ばし・記録漏れなど）を受けたら、自分への指摘として記録する:
    `python3 team_log.py feedback --agent kl-coordinator --episode {回} --source user --severity major|minor --text "指摘の原文"`

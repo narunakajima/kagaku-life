@@ -315,6 +315,34 @@ def cmd_applied(args) -> None:
     print(f"記録しました: {label(agent, roster)} {args.episode} 適用 {'、'.join(ids) or 'なし'} 見送り {'、'.join(skipped) or 'なし'}")
 
 
+def cmd_audit(args) -> None:
+    """実施中の改善アクションが、作業のたびに行動へ反映されて記録されているかを確かめる。
+    担当が作業した回（work）のうち、適用も見送りも記録されていない回を出す（直近 --last 回）。"""
+    roster = load_roster()
+    work = read_jsonl(WORK_LOG)
+    gaps = 0
+    for a in action_report():
+        if a["status"] != "open":
+            continue
+        since = a.get("created", "")
+        eps = []
+        for r in work:
+            if r.get("agent") == a["agent"] and r.get("kind") == "work" and r.get("episode") and str(r.get("ts", "")) >= since:
+                if r["episode"] not in eps:
+                    eps.append(r["episode"])
+        handled = set(a["applied_episodes"]) | {x.split("（")[0] for x in a["skipped"]}
+        missing = [e for e in eps[-args.last:] if e not in handled]
+        mark = "⚠" if missing else "OK"
+        print(f"{mark} {a['id']} {label(a['agent'], roster)}: 直近{min(len(eps), args.last)}回中 未記録 {len(missing)} 回"
+              + (f"（{', '.join(missing)}）" if missing else ""))
+        if missing:
+            gaps += 1
+    if gaps:
+        print("\n未記録の回は、担当の報告の「担当メモ」を見て `team_log.py applied` で補う。担当メモに無ければ、"
+              "その担当に適用したかを確かめる（行動に反映されていない可能性）。")
+        sys.exit(1)
+
+
 def cmd_sync_notebooks(_args) -> None:
     roster = load_roster()
     report = action_report()
@@ -490,6 +518,10 @@ def main() -> None:
     ap.add_argument("--skipped", default="", help="見送ったID（カンマ区切り）")
     ap.add_argument("--reason", default="", help="見送った理由")
     ap.set_defaults(func=cmd_applied)
+
+    au = sub.add_parser("audit", help="実施中の改善アクションが作業のたびに記録されているか確かめる")
+    au.add_argument("--last", type=int, default=3, help="担当ごとに直近何回の作業を見るか")
+    au.set_defaults(func=cmd_audit)
 
     sn = sub.add_parser("sync-notebooks", help="実施中の改善アクションをノートに書き出す")
     sn.set_defaults(func=cmd_sync_notebooks)
