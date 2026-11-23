@@ -571,3 +571,5 @@
 {"ts": "2026-11-23T08:43:49+09:00", "kind": "work", "agent": "kl-community", "episode": "kl060", "step": "3.7", "result": "ok", "retries": 0, "note": "固定コメント投稿・固定 kl056/kl057/kl058（kl059・kl060は予約公開のため公開後）"}
 {"ts": "2026-11-23T08:44:17+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl060", "step": "進行", "result": "ok", "retries": 0, "note": "報告漏れ0／停止0（承認の取り込みはいずれも数分以内）。周回: 初見レビュー全文1＋差分4、BGM3回目でライブラリ合格、画像CRITICAL4件を1実行で修正。KL2611-06の3点を各工程で実施。KL2611-05（サムネの事前確認）は6.7でレオが見出し重なりを検出して修正"}
 {"ts": "2026-11-23T08:44:38+09:00", "kind": "applied", "agent": "kl-coordinator", "episode": "kl060", "ids": ["KL2611-05", "KL2611-06"], "skipped": [], "reason": ""}
+{"ts": "2026-11-23T09:33:04+09:00", "kind": "applied", "agent": "kl-first-viewer", "episode": "kl059", "ids": ["KL2611-03"], "skipped": [], "reason": ""}
+{"ts": "2026-11-23T09:33:04+09:00", "kind": "applied", "agent": "kl-first-viewer", "episode": "kl060", "ids": ["KL2611-03"], "skipped": [], "reason": ""}
