@@ -492,6 +492,17 @@ A/Bテストが確かめようとしていた「冒頭の無音が離脱を招�
 `thumbnail_b.png` はDriveに残る）。再開の目安は、新構成のエピソードが数話積み上がって構成が
 安定してから。再開時は `kl-upload.md` STEP3の旧手順を戻す。
 
+## Chrome 作業の前の接続先の確認（2026-11-24〜、ユーザー決定）
+
+Claude in Chrome で作業する（YouTube Studio の操作など）前に、**操作先が `claude` ユーザーの Chrome（ユーザーの画面に見えているもの）であることを確かめてから**タブを開く。
+
+1. `list_connected_browsers` で、接続中のブラウザを一覧する
+2. `ps -axo user,comm | grep "[G]oogle Chrome.app/Contents/MacOS/Google Chrome$"` で、別の macOS ユーザー（`naru` など）の中でも Chrome が動いているか調べる
+3. 動いていなければ、一覧の Chrome を `select_browser` で選んで作業を始める
+4. 動いていれば、一覧の名前だけではどちらの Chrome か区別できない。新しいタブを開き、computer-use の `app_screenshot`（Google Chrome）でそのタブがユーザーの画面に見えるかを確かめる。見えなければ別ユーザーの Chrome なので作業せず、別のブラウザで代用もしない。ユーザーに、`claude` ユーザーの Chrome の拡張を接続するよう頼む
+
+理由: LW108（2026-11-24）で、ユーザーが macOS のユーザーを切り替えて別ユーザー（`naru`）で Chrome を使っていたため、そちらの Chrome につながって作業した。その Chrome はユーザーの画面に見えず、ログイン状態もダウンロード先も違ったため、作業がうまくいかなかった（ランプのひとりごと側では制作専用 Chrome の deviceId で選ぶ形で対策済み）。
+
 ## Chrome 連携の後片付け（2026-11-15〜）
 
 - セッション開始時に、残っている「Claude」タブグループがあれば、中身が作業中でないことを確認して閉じる
