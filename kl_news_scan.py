@@ -2632,6 +2632,8 @@ def ensure_prior_art_presented(cands: dict = None, top: int = PRIOR_ART_TOP_N, m
         if WEEKLY_MODE:     # 週次: 下書きはスレートの候補を除いて並べるので、チェック対象も同じ並びで決める（漏れ防止）
             slated = slated_active_ids(items)
             rows_now = [r for r in rows_now if r["c"]["id"] not in slated]
+            # 2026-11-24: ワイルドカードは暮らし・仕事のゲートを通っていない（prior_art_targets の外）ので、下書きに載る1件だけ対象に足す
+            refresh_ids |= {r["c"]["id"] for r in rows_now if wildcard_eligible(r, rows_now) and prior_art_state(r["c"]) == "unchecked"}
         todo = [c["id"] for c in presented_candidates(rows_now, top) if c["id"] in refresh_ids and c["id"] not in tried]
         if not todo:
             break
@@ -3319,6 +3321,61 @@ def story_presentable(c: dict, rows: list) -> bool:
     return True
 
 
+# ---- 弱い週のワイルドカード（2026-11-24、なるさんの決定。kl061 の企画担当の提案に編集長が条件を付けたもの）----
+# 週次下書き（WEEKLY_MODE）で本命（驚き4以上・確認済み）が3本に満たない週だけ、驚き5・視聴者との合い方がちょうど3の候補を
+# 「参考（ワイルドカード）」として1件まで足す。本命の数には入れない。合い方3未満は従来どおり落とす（BEST3_MIN_FIT は変えない）。
+# 入口のゲートのうち、ゆるめるのは「暮らし・仕事<4（GATE_MIN_LIFE）」と実測の注目度（lane）だけ。
+#   合い方3・驚き5の候補は、暮らし・仕事の関わり（stake）が4未満でゲート落ちしているのが実際の形（例: プラニマル細胞、stake 2）で、
+#   ゲート落ちの候補は buzz の実測対象にもならないため、どちらかを条件に残すと枠が働かない。
+# 旬（鮮度<3）・検証<3・一次資料（primary_verified が True のみ）・使用済みの一次資料・宣伝・NHKの政治・驚きの1行・手応え（promise）・
+# 先行事例・提示の上限・再評価待ち（大手の製品発表で初出から2日未満）はゆるめない。
+WILDCARD_WONDER = 5
+WILDCARD_FIT = 3
+WILDCARD_RELAXED_GATES = ("暮らし・仕事<",)     # ワイルドカードでだけ無視するゲートの理由（前方一致）
+WILDCARD_HONMEI_BELOW = 3       # 本命がこの本数に満たない週だけ出す
+SLOT_WILDCARD = "参考（ワイルドカード）"
+
+
+def wildcard_traits(c: dict) -> bool:
+    """驚き（先行事例の上限適用後）が WILDCARD_WONDER、視聴者との合い方（健康系の丸め後の fit）がちょうど WILDCARD_FIT。付与前は該当にしない。"""
+    return (c.get("wonder") is not None and c.get("audience_fit") is not None
+            and wonder_eff(c) == WILDCARD_WONDER and fit(c) == WILDCARD_FIT)
+
+
+def wildcard_gate_ok(gate: list) -> bool:
+    """ゲートの理由が、ワイルドカードでゆるめるもの（暮らし・仕事）だけか。"""
+    return all(g.startswith(WILDCARD_RELAXED_GATES) for g in gate)
+
+
+def wildcard_eligible(r: dict, rows: list) -> bool:
+    c = r["c"]
+    return (c.get("status") == "available" and wildcard_traits(c) and wildcard_gate_ok(r.get("gate") or [])
+            and r.get("lane") != L2_WAIT_LANE
+            and _primary_ok(c)
+            and bool((c.get("surprise_line") or "").strip()) and surprise_ok(c)
+            and promise(c) >= BEST3_MIN_PROMISE
+            and prior_art_ok(c) and presentable(c) and story_presentable(c, rows))
+
+
+def wildcard_pick(rows: list, picks: list, h_max: int):
+    """本命が WILDCARD_HONMEI_BELOW 本に満たないときに足すワイルドカード1件（無ければ None）。下書きの候補と系列・同一ストーリーを重ねない。"""
+    n_honmei = sum(1 for p in picks if honmei_strong(p["c"]) and not p.get("reserve") and not p.get("weak_day") and not p.get("ref_only"))
+    if n_honmei >= WILDCARD_HONMEI_BELOW:
+        return None
+    ids = {p["c"]["id"] for p in picks}
+    sers = {p["series"] for p in picks}
+    tss = {p["c"].get("topic_series") for p in picks if p["c"].get("topic_series")}
+    n_health = sum(1 for p in picks if p["c"].get("health"))
+    for r in _sorted_core([r for r in rows if wildcard_eligible(r, rows)]):
+        c = r["c"]
+        if c["id"] in ids or r["series"] in sers or (c.get("topic_series") and c["topic_series"] in tss):
+            continue
+        if c.get("health") and n_health >= h_max:
+            continue
+        return dict(r, slot=SLOT_WILDCARD, ref_only=True, wildcard=True, relaxed=False)
+    return None
+
+
 def best3(rows: list):
     """ベスト3の機械的な下書き（2026-10-15、混成）: 本命（core の順）→ 答え合わせ候補（実測の注目度→媒体数の順）を
     1列に並べ、本命の上位を優先して、ジャンルと系列が重ならないように選ぶ。
@@ -3415,7 +3472,12 @@ def best3(rows: list):
     if WEEKLY_MODE and not (picks and picks[0].get("weak_day")):
         # 週次方式: 本命（驚き4以上・確認済み）以外は1件ずつ「参考」と明記する（弱い週は無理に本命として埋めない）
         picks = [p if (honmei_strong(p["c"]) and not p.get("reserve")) else dict(p, ref_only=True) for p in picks]
-    niche = _sorted_core([r for r in rows if r["lane"] == "ニッチ"])
+    if WEEKLY_MODE:
+        # 2026-11-24: 本命が3本に満たない週だけ、ワイルドカード（驚き5・合い方3）を1件まで最後に足す（本命には数えない。件数の上限 n_max の外）
+        wc = wildcard_pick(rows, picks, h_max)
+        if wc:
+            picks = picks + [wc]
+    niche =_sorted_core([r for r in rows if r["lane"] == "ニッチ"])
     return picks, (niche[0] if niche and len(picks) < n_min else None)
 
 
@@ -3447,6 +3509,9 @@ def _slot_lines(r: dict) -> list:
         today_in = _today() in presented_days(c)
         out.append(f"提示 {n}{unit}目（最大{PRESENT_MAX_DAYS}{unit}。載せた日: {'・'.join(d[5:] for d in presented_days(c))}）" if today_in
                    else f"提示 {n + 1}{unit}目（最大{PRESENT_MAX_DAYS}{unit}）")
+    if r.get("wildcard"):
+        out.append(f"🃏 ワイルドカード（本命が{WILDCARD_HONMEI_BELOW}本に満たない週だけの参考。驚き{WILDCARD_WONDER}・視聴者{WILDCARD_FIT}"
+                   f"／暮らし・仕事{stake(c)}・注目度の条件はゆるめています。本命の数には入れません）")
     if r.get("weak_day"):
         out.append(f"参考（{WEAK_DAY_LABEL}: 驚き{HONMEI_MIN_WONDER}以上の候補がないため、順位は付けず本命にしません）")
     if r.get("slot") == SLOT_L2:
@@ -3602,6 +3667,13 @@ def cmd_verify(ids: list, all_: bool, max_n: int):
                 and not [g for g in gate_reasons(c, used) if not g.startswith("一次資料")]]
         targets = pool if all_ else [c for c in pool if "primary_verified" not in c]
         targets.sort(key=lambda c: (-freshness_score(fresh_date(c)), -buzz_value(c)[0]))
+        # 2026-11-24: 週次のワイルドカード（驚き5・合い方3）の候補は暮らし・仕事のゲートで落ちているが、一次資料の確認済みが条件なので
+        # ここで確かめる（無料のHTTPのみ）。通常の対象を押し出さないよう、後ろに足す
+        pool_ids = {c["id"] for c in pool}
+        extra = [c for c in cands["items"] if c.get("status") == "available" and c["id"] not in pool_ids and wildcard_traits(c)
+                 and wildcard_gate_ok([g for g in gate_reasons(c, used) if not g.startswith("一次資料")])]
+        extra = extra if all_ else [c for c in extra if "primary_verified" not in c]
+        targets += sorted(extra, key=lambda c: -freshness_score(fresh_date(c)))
         why = "一次資料以外のゲートを通る候補" + ("（確認済みも含む）" if all_ else "のうち未確認")
         if len(targets) > max_n:
             print(f"  対象が{len(targets)}件あるため、新しい順に{max_n}件だけ確かめます（残りは次回）")
@@ -4324,7 +4396,7 @@ def cmd_list(top: int, check_urls: bool):
     if weak_day_note(picks):
         print(f"   ※ {weak_day_note(picks)}")
     for r in picks:
-        print(f"〈{'参考' if r.get('weak_day') else r['slot']}〉", end="")
+        print(f"〈{SLOT_WILDCARD if r.get('wildcard') else '参考' if r.get('weak_day') else r['slot']}〉", end="")
         _print_candidate(r, short=True)
         for ln in _slot_lines(r) + prior_art_lines(r["c"]):
             print(f"   {ln}")
@@ -4484,7 +4556,7 @@ def cmd_slack(note_path: str, record: bool = True):
         slated = slated_active_ids(cands["items"])
         rows = [r for r in rows if r["c"]["id"] not in slated]
     picks, niche = best3(rows)
-    nums = "①②③④⑤⑥⑦⑧⑨"
+    nums = "①②③④⑤⑥⑦⑧⑨⑩"     # ⑩は週次の9件＋ワイルドカード1件のとき
 
     def esc(t):
         return (t or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
@@ -4534,7 +4606,7 @@ def cmd_slack(note_path: str, record: bool = True):
             link += "\n" + repaired_note
         ev = c.get("expected_verdicts") or {}
         verdict = (f"大輔 {vname.get(ev.get('dreamer'), '?')} ／ 沙織 {vname.get(ev.get('skeptic'), '?')}") if ev else ""
-        label = "参考・順位なし" if r.get("weak_day") else "参考（本命基準に未達）" if r.get("ref_only") else r.get("slot", SLOT_HONMEI)
+        label = SLOT_WILDCARD if r.get("wildcard") else "参考・順位なし" if r.get("weak_day") else "参考（本命基準に未達）" if r.get("ref_only") else r.get("slot", SLOT_HONMEI)
         lines = [f"*{nums[i]} 〈{label}〉{title}*", meta]
         lines += [esc(x) for x in _slot_lines(r)]
         lines += [f"💬 {esc(c.get('entry_question'))}"]
@@ -4558,7 +4630,8 @@ def cmd_slack(note_path: str, record: bool = True):
     blocks = [{"type": "header", "text": {"type": "plain_text", "text": f"{title_txt}　{datetime.now().strftime('%-m/%-d')}"}}]
     if WEEKLY_MODE:
         n_honmei = sum(1 for r in picks if not r.get("ref_only") and not r.get("weak_day") and not r.get("reserve"))
-        msg = (f"*本命 {n_honmei}本*／参考 {len(picks) - n_honmei}本（計{len(picks)}件）。制作3本＋次点2本を選んでください（次点は差し替え用で、本命級でなくて構いません）。")
+        n_wc = sum(1 for r in picks if r.get("wildcard"))
+        msg = (f"*本命 {n_honmei}本*／参考 {len(picks) - n_honmei}本{f'（うちワイルドカード{n_wc}件）' if n_wc else ''}（計{len(picks)}件）。制作3本＋次点2本を選んでください（次点は差し替え用で、本命級でなくて構いません）。")
         if n_honmei < 3:
             msg += f"\n*⚠️ 本命が3本に満たない週です（{n_honmei}本）。無理に3本を埋めず、制作は本命の本数に合わせるか、手動で追加収集を指示してください。*"
         blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": esc(msg).replace("&lt;", "<")[:2900]}})
