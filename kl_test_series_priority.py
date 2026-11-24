@@ -14,6 +14,11 @@ def check(name, cond):
     ok = ok and cond
 
 
+# シリーズの「次の回」は制作が進むと変わるので、試験に固定の番号を書かず、シリーズの定義から読む（2026-11-24）
+NEXT_NO = {x["series_id"]: x.get("next_episode_no") for x in k._series_list()}
+HUM_NO, AUTO_NO = NEXT_NO["humanoid_watch"], NEXT_NO["autonomy_logistics_watch"]
+
+
 base = {"genre": "humanoid", "title": "", "summary": "", "series_fit": 4}
 t = lambda **kw: dict(base, **kw)
 
@@ -23,7 +28,7 @@ check("節目なし → 非該当", k.series_candidate_info(t(title="Tesla Optim
 check("ジャンル違い → 非該当", k.series_candidate_info(t(genre="ai", title="1X NEO price")) is None)
 check("series_fit 2 → 非該当", k.series_candidate_info(t(title="1X NEO price", series_fit=2)) is None)
 si = k.series_candidate_info(t(title="Figure 03 begins shipping to homes"))
-check("Figure 03 出荷 → 第2回候補", bool(si) and si["no"] == 2 and si["name"] == "人型ロボ定点観測")
+check(f"Figure 03 出荷 → 第{HUM_NO}回候補", bool(si) and si["no"] == HUM_NO and si["name"] == "人型ロボ定点観測")
 
 # best3: 優先枠は ok（入口条件を通った面白さ順）からだけ選ぶ
 def row(i, genre, interest, lane="本命", title="x", **kw):
@@ -53,7 +58,7 @@ check("手応え不足のシリーズ候補は入らない", "h" not in [p["c"][
 
 picks, _ = k.best3(copy.deepcopy(rows))
 lines = [ln for p in picks for ln in k._slot_lines(p) if "シリーズ候補" in ln]
-check("表示: シリーズ名と第2回候補", len(lines) == 1 and "人型ロボ定点観測" in lines[0] and "第2回候補" in lines[0])
+check(f"表示: シリーズ名と第{HUM_NO}回候補", len(lines) == 1 and "人型ロボ定点観測" in lines[0] and f"第{HUM_NO}回候補" in lines[0])
 print(lines)
 
 # 管理担当の指摘 B: 日本語表記
@@ -112,5 +117,5 @@ rowsS = [row("a", "food_health", 15, title="Food A"), row("b", "medical", 14, ti
 picks, _ = k.best3(copy.deepcopy(rowsS))
 check("優先枠: 自動運転シリーズ候補も入る", "s" in [p["c"]["id"] for p in picks])
 lines = [ln for p in picks for ln in k._slot_lines(p) if "シリーズ候補" in ln]
-check("表示: 自動運転・物流無人化の定点観測 第1回候補", len(lines) == 1 and "自動運転・物流無人化の定点観測 第1回候補" in lines[0])
+check(f"表示: 自動運転・物流無人化の定点観測 第{AUTO_NO}回候補", len(lines) == 1 and f"自動運転・物流無人化の定点観測 第{AUTO_NO}回候補" in lines[0])
 raise SystemExit(0 if ok else 1)
