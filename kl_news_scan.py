@@ -4147,12 +4147,26 @@ def repair_source(c: dict, src: dict, pool: list, fx: _RepairFetcher, deadline: 
     return {"tried": tried}
 
 
+def _needs_repair(x: dict) -> bool:
+    """修復の対象にするURLか。404（ok=False）に加えて、HTTP 200 で開いてもトップページへ転送されたもの（記事が別の場所に移った可能性）。
+    固有の語が無いだけ（anchor_hit=False）は対象にしない（英語のページでは日本語の語が当たらず、正しいページでも False になるため）。"""
+    return x.get("ok") is False or bool(x.get("ok") and x.get("redirected_to_top"))
+
+
+def _repair_wanted(c: dict) -> bool:
+    """cmd_repair の既定の対象か。primary_verified が false、または要確認（None）で、トップページへ転送された一次資料があるもの。"""
+    if c.get("primary_verified") is False:
+        return True
+    return c.get("primary_verified") is None and any(
+        x.get("ok") and x.get("redirected_to_top") and not x.get("repaired") for x in c.get("primary_check") or [])
+
+
 def repair_candidate(c: dict, pool: list, pacer, deadline: float) -> bool:
     """候補の404の一次資料を修復する。1件でも修復できれば primary_verified を true にする。"""
     now = datetime.now().isoformat(timespec="seconds")
     checks = {x.get("url"): x for x in c.get("primary_check") or []}
     srcs = [s for s in (c.get("primary_sources") or [])[:VERIFY_MAX_URLS] if s.get("url")]
-    bad = [s for s in srcs if not s.get("repaired_url") and checks.get(s["url"], {}).get("ok") is False]
+    bad = [s for s in srcs if not s.get("repaired_url") and _needs_repair(checks.get(s["url"], {}))]
     log, fixed = [], []
     fx = _RepairFetcher(pacer)      # 取得回数の上限（REPAIR_MAX_FETCH）は候補ごと（一次資料が複数でも共通）
     for s in bad:
@@ -4202,6 +4216,7 @@ def repair_candidate(c: dict, pool: list, pacer, deadline: float) -> bool:
 
 def cmd_repair(ids: list, all_: bool, force: bool, max_n: int):
     """verify で一次資料URLが実在しない（primary_verified: false）候補の、正しいURLを無料のHTTPだけで探す（2026-10-15）。
+    HTTP 200 で開いてもトップページへ転送された一次資料（要確認のまま残る）も対象にする（2026-11-24）。
     既定は false で一次資料以外のゲートを通る available な候補のうち、前回の試行から REPAIR_RETRY_DAYS 日を過ぎたもの。
     --all はゲートに関係なく false の候補すべて、--id は指定の候補、--force は最近試した候補も試す。"""
     cands = load_candidates()
@@ -4210,7 +4225,7 @@ def cmd_repair(ids: list, all_: bool, force: bool, max_n: int):
         targets = [c for c in items if c["id"] in ids]
     else:
         used = used_source_urls(items)
-        targets = [c for c in items if c.get("primary_verified") is False and c.get("status") == "available"
+        targets = [c for c in items if _repair_wanted(c) and c.get("status") == "available"
                    and (all_ or not [g for g in gate_reasons(c, used) if not g.startswith("一次資料")])]
     if not force:
         cutoff = datetime.now() - timedelta(days=REPAIR_RETRY_DAYS)

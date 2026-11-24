@@ -56,7 +56,7 @@ DELTA_THRESHOLD = 4.5                 # ポケットの不一致判定（nat）�
 NUMBER_DELTA_THRESHOLD = 2.0          # 数字の範囲に重なるポケット
 SLOW_RETRY_RATIO = 0.75               # 認識音素数/期待音素数 がこれ未満なら 0.8 倍速で再認識
 POCKET_MERGE_GAP = 3                  # 間の一致がこの数以下の差はまとめる（45→54 の入れ替わり対策）
-PROMPT_VERSION = "2026-10-11-v1"
+PROMPT_VERSION = "2026-11-24-v2"   # v2: 撥音「ン」を落とさない規則を追加（配達員→ハイタツイ の誤り。kl060・kl061）
 
 # ── カナ → 音素（OpenJTalk 風。認識モデルの語彙と同じ）──────────────
 _V = {"ア": "a", "イ": "i", "ウ": "u", "エ": "e", "オ": "o"}
@@ -178,6 +178,7 @@ _PROMPT = """以下は日本語の台詞です。各台詞を、標準的なア�
 - 数字・記号・英字・単位もすべて読みに直す（例: 45歳→ヨンジューゴサイ、44.6%→ヨンジューヨンテンロクパーセント、WHO→ダブリューエイチオー、330ミリリットル→サンビャクサンジューミリリットル）。
 - 漢字の読みは文脈で決める（例: 「脚」が人の足の意味ならアシ、「人気のない夜道」ならヒトケ）。
 - 台詞の文字を飛ばさない。助詞も1文字ずつ必ず書く。句読点・記号・空白は書かない。
+- 語の終わりの「ん」（撥音）を落とさない。「員」は必ず「イン」と書く（例: 配達員→ハイタツイン、店員→テンイン、全員が→ゼンインガ）。
 - 読み方が2通り以上ありうる語（例: 1日→イチニチ／ツイタチ、博士→ハカセ／ハクシ、人数→ニンズー／ニンスー、寝てる間→アイダ／マ、1.1→イッテンイチ／イチテンイチ）は、もっとも自然な読みを "kana" に、他にも正しいと言える読みがあれば、その読みにした台詞全体を "alt" に配列で入れる（最大3つ）。なければ "alt" は空配列。
 - 台詞に算用数字・漢数字の数量（年齢・人数・割合・日付・金額など）があれば、"numbers" に [{"text": 台詞中の表記, "kana": その部分の読み, "alt": [別の正しい読み]}] を入れる。なければ空配列。
 出力はJSON配列のみ: [{"id": "...", "kana": "...", "alt": [], "numbers": []}, ...]
@@ -195,6 +196,19 @@ def _response_schema():
     return S(type=T.ARRAY, items=S(type=T.OBJECT, properties={
         "id": S(type=T.STRING), "kana": S(type=T.STRING), "alt": strs,
         "numbers": S(type=T.ARRAY, items=num)}, required=["id", "kana", "alt", "numbers"]))
+
+
+# 読みが1通りしかない字と、その読み。LLM の読みにこの読みが字の数だけ入っていなければ、読みの誤りとみなして使わない
+# （期待する読みの誤りで、正しい音声を「不一致」にして作り直すのを防ぐ。照合しなかった行は skipped になり、Gemini QA が見る）。
+FIXED_READINGS = {"員": "イン"}
+
+
+def reading_suspect(text: str, kana: str) -> str:
+    """LLM の読みが、読みの決まった字を落としていれば、その字を返す。問題なければ空文字。"""
+    for ch, yomi in FIXED_READINGS.items():
+        if text.count(ch) > kana.count(yomi):
+            return ch
+    return ""
 
 
 def _text_key(text: str) -> str:
@@ -257,6 +271,10 @@ class ReadingQA:
                 for n, t in enumerate(chunk):
                     x = got.get(str(n))
                     if x and re.fullmatch(r"[ァ-ヴー]+", x.get("kana") or ""):
+                        bad = reading_suspect(t, x["kana"])
+                        if bad:     # キャッシュに入れない（reading() が1行だけで取り直し、それでも誤りなら照合を飛ばす）
+                            self.log(f"  ⚠️ 期待する読みが「{bad}」の読みを落としているため使いません: {x['kana'][:40]}")
+                            continue
                         self.cache[_text_key(t)] = {
                             "text": t, "kana": x["kana"],
                             "alt": [a for a in (x.get("alt") or []) if re.fullmatch(r"[ァ-ヴー]+", a or "")][:3],
