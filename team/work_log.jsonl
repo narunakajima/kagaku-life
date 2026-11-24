@@ -601,3 +601,6 @@
 {"ts": "2026-11-24T09:40:14+09:00", "kind": "applied", "agent": "kl-writer", "episode": "kl061", "ids": ["KL2611-02"], "skipped": [], "reason": ""}
 {"ts": "2026-11-24T09:41:04+09:00", "kind": "call", "agent": "kl-writer", "session": "1b69e916-177f-48ba-ada9-2590bfb10fab"}
 {"ts": "2026-11-24T09:41:10+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl061", "step": "2", "result": "ok", "retries": 0, "note": "13シーン・論点3・札 二人とも根拠待ち・カード17枚・写真3"}
+{"ts": "2026-11-24T09:50:55+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl061", "step": "4", "result": "retry", "retries": 0, "note": "ref0(PR TIMES)がGemini 504で2回連続未照合→編集長に引き継ぎ。ref3の要約の混同はカードから削除"}
+{"ts": "2026-11-24T09:54:59+09:00", "kind": "call", "agent": "kl-manager", "session": "1b69e916-177f-48ba-ada9-2590bfb10fab"}
+{"ts": "2026-11-24T09:55:08+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl061", "step": "4", "result": "ok", "retries": 0, "note": "ref0の照合: Gemini締め切り60秒が原因、--timeout-sec/--refを追加し300秒でok。本文と画像6枚を直接照合し一致"}

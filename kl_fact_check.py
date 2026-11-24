@@ -55,7 +55,9 @@ DESKTOP_DIR = Path.home() / "Desktop" / "kagaku-life"
 API_KEY = os.environ.get("GEMINI_API_KEY_KL") or os.environ.get("GEMINI_API_KEY", "")
 MODEL = "models/" + gm.primary()
 CALL_DELAY_SEC = 1.5
-REQUEST_TIMEOUT_MS = 60_000
+# 2026-11-24: 台詞・資料カードが多い資料（kl061 の index 0、カード9枚）は検索つきの照合が60秒を越え、
+# 504 DEADLINE_EXCEEDED で3回とも落ちた。既定は変えず、--timeout-sec（または環境変数）で延ばせるようにした。
+REQUEST_TIMEOUT_MS = int(os.environ.get("KL_FACT_CHECK_TIMEOUT_MS", "60000"))
 
 JARGON_WORDS = ["査読", "プレプリント"]
 
@@ -253,7 +255,7 @@ def check_health_tone(client: genai.Client, ep: dict, retries: int = 3) -> dict:
             return {"issues": [], "overall": "caution", "reasoning": f"チェックに失敗（{retries}回試行）: {e}"}
 
 
-def run(episode_id: str):
+def run(episode_id: str, only_refs: "list | None" = None, timeout_ms: "int | None" = None):
     if not API_KEY:
         print("❌ GEMINI_API_KEY が設定されていません", file=sys.stderr)
         sys.exit(1)
@@ -292,12 +294,14 @@ def run(episode_id: str):
             cards_by_ref.setdefault(ci, []).append(text)
             by_ref.setdefault(ci, [])
 
-    client = gm.wrap_client(genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS)))
+    client = gm.wrap_client(genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=timeout_ms or REQUEST_TIMEOUT_MS)))
 
     results = []
     counts = {"ok": 0, "caution": 0, "high_risk": 0}
     for idx, narrations in sorted(by_ref.items()):
         if idx >= len(references):
+            continue
+        if only_refs is not None and idx not in only_refs:
             continue
         ref = references[idx]
         print(f"検証中: [{idx}] {ref.get('title', '')[:50]}... ", end="", flush=True)
@@ -319,6 +323,22 @@ def run(episode_id: str):
         if verdict.get("issues"):
             for issue in verdict["issues"]:
                 print(f"    - {issue}")
+
+    if only_refs is not None:
+        # --ref: 指定した資料だけを照合し、前回の結果ファイルの該当分だけを置き換える（健康の語り方などは前回のまま）
+        DESKTOP_DIR.mkdir(parents=True, exist_ok=True)
+        out_path = DESKTOP_DIR / "fact_check_result.json"
+        prev = json.loads(out_path.read_text()) if out_path.exists() else {"results": []}
+        kept = [r for r in prev.get("results", []) if r.get("reference_index") not in only_refs]
+        merged = sorted(kept + results, key=lambda r: r.get("reference_index", 0))
+        total = {"ok": 0, "caution": 0, "high_risk": 0}
+        for r in merged:
+            total[r.get("overall", "caution")] = total.get(r.get("overall", "caution"), 0) + 1
+        prev["results"], prev["counts"] = merged, total
+        out_path.write_text(json.dumps(prev, ensure_ascii=False, indent=2))
+        print(f"\n=== 資料 {only_refs} だけを照合し直した。全体: ok={total['ok']} caution={total['caution']} "
+              f"high_risk={total['high_risk']} ===\n結果を保存しました: {out_path}")
+        return
 
     jargon_hits = check_jargon(scenes)
     if jargon_hits:
@@ -351,8 +371,11 @@ def run(episode_id: str):
 def main():
     parser = argparse.ArgumentParser(description="くらしを変える科学 台本ファクトチェック")
     parser.add_argument("--episode", required=True, help="エピソードID（例: kl001）")
+    parser.add_argument("--ref", type=int, action="append",
+                        help="この reference_index の資料だけを照合し直す（複数回指定可。結果ファイルの該当分だけ置き換える）")
+    parser.add_argument("--timeout-sec", type=int, help="Gemini 1回の呼び出しの締め切り（秒。既定60）")
     args = parser.parse_args()
-    run(args.episode)
+    run(args.episode, only_refs=args.ref, timeout_ms=args.timeout_sec * 1000 if args.timeout_sec else None)
 
 
 if __name__ == "__main__":
