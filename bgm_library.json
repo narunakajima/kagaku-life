@@ -1937,7 +1937,8 @@
     "used_in": [
       "kl042",
       "kl049",
-      "kl055"
+      "kl055",
+      "kl061"
     ],
     "duration": 170.43,
     "source_id": "685302",
@@ -1968,7 +1969,8 @@
     "used_in": [
       "kl043",
       "kl049",
-      "kl055"
+      "kl055",
+      "kl061"
     ],
     "duration": 133.12,
     "source_id": "789279",
@@ -2153,5 +2155,34 @@
     "ear_check_reason": "",
     "short_for_role": [],
     "needs_ear_check": false
+  },
+  {
+    "id": "kl061-BGM-main",
+    "path": "BGM/kl061-BGM-main.mp3",
+    "license": "CC0",
+    "credit": null,
+    "tags": [],
+    "used_in": [
+      "kl061"
+    ],
+    "duration": 102.86,
+    "source_id": "664145",
+    "source_name": "lofibeat_70bpm.wav",
+    "source_url": "https://freesound.org/s/664145/",
+    "bpm": 70.0,
+    "mood": [
+      "mellow",
+      "chill"
+    ],
+    "instruments": [
+      "acoustic-guitar",
+      "lofi-beat",
+      "bass"
+    ],
+    "has_beat": true,
+    "era": "dialogue",
+    "role_fit": [
+      "main"
+    ]
   }
 ]
