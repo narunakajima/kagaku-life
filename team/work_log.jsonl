@@ -627,3 +627,8 @@
 {"ts": "2026-11-24T10:26:01+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl061", "step": "5.6", "result": "ok", "retries": 0, "note": "パッケージ評価: 上位 書き手案5(福岡の団地)・案3(配達員1階)・案4(再配達)、最下位 案2"}
 {"ts": "2026-11-24T10:26:46+09:00", "kind": "call", "agent": "kl-manager", "session": "1b69e916-177f-48ba-ada9-2590bfb10fab"}
 {"ts": "2026-11-24T10:26:58+09:00", "kind": "work", "agent": "kl-manager", "episode": "kl061", "step": "5.6", "result": "ok", "retries": 0, "note": "書き手5タイトル（『で実験。』に修正）＋書き手3サムネ＋冒頭変更なし。エマ1位・2位の合成、グレース○。次点は書き手3、書き手2"}
+{"ts": "2026-11-24T10:34:56+09:00", "kind": "applied", "agent": "kl-coordinator", "episode": "kl061", "ids": ["KL2611-05"], "skipped": [], "reason": ""}
+{"ts": "2026-11-24T10:34:56+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl061", "step": "6", "result": "ok", "retries": 0, "note": "サムネ事前確認: 重なり→見出しは二人の頭・ロボに重ならない／1語・切れ なし（2行とも完結）／暗幕 可。判定札がロボの下部に少し重なる→レオに確認依頼。QA要確認3件(S06腕・shorts S03/S04)は目視で許容範囲、レオに再確認"}
+{"ts": "2026-11-24T10:46:03+09:00", "kind": "call", "agent": "kl-art-director", "session": "1b69e916-177f-48ba-ada9-2590bfb10fab"}
+{"ts": "2026-11-24T10:46:12+09:00", "kind": "work", "agent": "kl-art-director", "episode": "kl061", "step": "6.5", "result": "ok", "retries": 0, "note": "CRITICAL 1件（S11_v2 の見出し kind web→report）直した"}
+{"ts": "2026-11-24T10:46:12+09:00", "kind": "work", "agent": "kl-art-director", "episode": "kl061", "step": "6.7", "result": "ok", "retries": 0, "note": "CRITICAL 1件（ロボの扉の付き方の不一致 S08/S02/shorts S01・S03・S04）再生成で直した。要相談: サムネの札がロボ下部を隠す（推奨A=そのまま）"}
