@@ -616,3 +616,8 @@
 {"ts": "2026-11-24T10:14:53+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl061", "step": "5.5", "result": "ok", "retries": 0, "note": "r2差分: 前回4件すべて直った・新規 致命的0・直す0・できれば6"}
 {"ts": "2026-11-24T10:15:51+09:00", "kind": "call", "agent": "kl-writer", "session": "1b69e916-177f-48ba-ada9-2590bfb10fab"}
 {"ts": "2026-11-24T10:16:09+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl061", "step": "5.5", "result": "ok", "retries": 0, "note": "r2できれば1〜4反映。直したシーン S8,S9,S11(カード),S12。S8『箱から』は推測のため進行担当が削除"}
+{"ts": "2026-11-24T10:20:27+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "1b69e916-177f-48ba-ada9-2590bfb10fab"}
+{"ts": "2026-11-24T10:20:44+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl061", "step": "5.5", "result": "ok", "retries": 0, "note": "r3全文 致命的0・直す1（受け皿・回収ボタン）・できれば5"}
+{"ts": "2026-11-24T10:21:31+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "1b69e916-177f-48ba-ada9-2590bfb10fab"}
+{"ts": "2026-11-24T10:22:50+09:00", "kind": "applied", "agent": "kl-first-viewer", "episode": "kl061", "ids": ["KL2611-03"], "skipped": [], "reason": ""}
+{"ts": "2026-11-24T10:23:04+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl061", "step": "5.5", "result": "ok", "retries": 0, "note": "KL2611-03 r3の印照合: 項目1(受け皿)はr1に無い文→照合では直しで生じた（エマは見落と）／項目5はr1に同文→照合では見落とし（エマは新規）／項目3・6は見落としで一致。照合を採用"}
