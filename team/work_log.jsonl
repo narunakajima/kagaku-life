@@ -621,3 +621,5 @@
 {"ts": "2026-11-24T10:21:31+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "1b69e916-177f-48ba-ada9-2590bfb10fab"}
 {"ts": "2026-11-24T10:22:50+09:00", "kind": "applied", "agent": "kl-first-viewer", "episode": "kl061", "ids": ["KL2611-03"], "skipped": [], "reason": ""}
 {"ts": "2026-11-24T10:23:04+09:00", "kind": "work", "agent": "kl-coordinator", "episode": "kl061", "step": "5.5", "result": "ok", "retries": 0, "note": "KL2611-03 r3の印照合: 項目1(受け皿)はr1に無い文→照合では直しで生じた（エマは見落と）／項目5はr1に同文→照合では見落とし（エマは新規）／項目3・6は見落としで一致。照合を採用"}
+{"ts": "2026-11-24T10:23:55+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "1b69e916-177f-48ba-ada9-2590bfb10fab"}
+{"ts": "2026-11-24T10:24:03+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl061", "step": "5.5", "result": "ok", "retries": 0, "note": "r4差分: 前回3件直った・新規 致命的0・直す0・できれば5→合格"}
