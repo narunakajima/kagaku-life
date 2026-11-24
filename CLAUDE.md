@@ -494,14 +494,15 @@ A/Bテストが確かめようとしていた「冒頭の無音が離脱を招�
 
 ## Chrome 作業の前の接続先の確認（2026-11-24〜、ユーザー決定）
 
-Claude in Chrome で作業する（YouTube Studio の操作など）前に、**操作先が `claude` ユーザーの Chrome（ユーザーの画面に見えているもの）であることを確かめてから**タブを開く。
+Claude in Chrome の作業（YouTube Studio の操作など）は、**制作専用 Chrome** で行う。制作専用 Chrome は LW・SC・KL 共通で、ユーザーデータは `~/.lw-chrome-production`、deviceId は `~/.config/handoff-poller/repos.json` の `production_chrome.device_id`。普段使いの Chrome や、ほかの macOS ユーザー（`naru` など）の Chrome では作業しない。
 
 1. `list_connected_browsers` で、接続中のブラウザを一覧する
-2. `ps -axo user,comm | grep "[G]oogle Chrome.app/Contents/MacOS/Google Chrome$"` で、別の macOS ユーザー（`naru` など）の中でも Chrome が動いているか調べる
-3. 動いていなければ、一覧の Chrome を `select_browser` で選んで作業を始める
-4. 動いていれば、一覧の名前だけではどちらの Chrome か区別できない。新しいタブを開き、computer-use の `app_screenshot`（Google Chrome）でそのタブがユーザーの画面に見えるかを確かめる。見えなければ別ユーザーの Chrome なので作業せず、別のブラウザで代用もしない。ユーザーに、`claude` ユーザーの Chrome の拡張を接続するよう頼む
+2. 制作専用 Chrome の deviceId が一覧に無ければ、`~/lamp-whisper/tools/lw-chrome-production.sh --no-url` で起動し、10秒ほど待ってから一覧し直す
+3. `select_browser` でその deviceId を選んでから、`tabs_context_mcp` で作業を始める。`inUse` が別のブラウザのまま作業しない
+4. 起動しても接続されない場合は、ほかのブラウザで代用せず、ユーザーに拡張の接続を依頼する
+5. 制作専用 Chrome は、同じ Google アカウントのまま LW・SC・KL のチャンネルを切り替えて使う（再ログインは不要。2026-11-24 に5チャンネルとも切り替え一覧にあることを確認済み）。Studio を開いたら、**操作の前に、URL の `/channel/UC…` が対象のチャンネルであることを確かめ**、違えば切り替えてから操作する
 
-理由: LW108（2026-11-24）で、ユーザーが macOS のユーザーを切り替えて別ユーザー（`naru`）で Chrome を使っていたため、そちらの Chrome につながって作業した。その Chrome はユーザーの画面に見えず、ログイン状態もダウンロード先も違ったため、作業がうまくいかなかった（ランプのひとりごと側では制作専用 Chrome の deviceId で選ぶ形で対策済み）。
+理由: LW108（2026-11-24）で、ユーザーが macOS のユーザーを切り替えて別ユーザー（`naru`）で Chrome を使っていたため、そちらの Chrome につながって作業した。その Chrome はユーザーの画面に見えず、ログイン状態もダウンロード先も違ったため、作業がうまくいかなかった。LW は制作専用 Chrome の deviceId で選ぶ形で対策済みで、同じ日に SC・KL も同じ制作専用 Chrome に揃えた（ユーザー決定）。
 
 ## Chrome 連携の後片付け（2026-11-15〜）
 

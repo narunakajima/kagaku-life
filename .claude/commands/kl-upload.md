@@ -151,8 +151,8 @@ Shortsの「関連動画」（本編への誘導）は、**公開後に Muse（�
 2. 投稿と固定: コメントを投稿し、固定する。**公開前の動画にはコメントを置けないので、STEP 3.5 と同じく
    「公開日時を過ぎていて、まだ固定コメントを置いていない本編」をまとめて対象にする**（前回までに予約した回が、公開後の
    `/kl-upload` で拾われる）。YouTube Data API にピン留めの公式エンドポイントがないため、Claude in Chrome で
-   YouTube Studio（チャンネル `UCj5pDosl_4FiaZ_NdNg7IcA`）から投稿して固定する（Chrome の起動・チャンネル切り替え・
-   後片付けは STEP 3.5 の手順2・3・5に従う。他チャンネルの動画には絶対に置かない）。
+   YouTube Studio（チャンネル `UCj5pDosl_4FiaZ_NdNg7IcA`）から投稿して固定する（Chrome は**制作専用 Chrome** を使う。接続先の確認とチャンネルの確認は
+   CLAUDE.md「Chrome 作業の前の接続先の確認」に従い、作業で開いたタブ・グループは最後に閉じる。他チャンネルの動画には絶対に置かない）。
    **誤字を投稿しないための手順（2026-11-17、kl051 で「親御さん」を「誌親さん」と打って1度削除した）:** 文案は `pin_comments.json` から `json.dumps` で `\u` 形式に出して、
    `computer type` と、入力欄の中身（`#contenteditable-root` の `innerText`）との一致確認に同じ文字列を使う。**一致したときだけ**投稿ボタンを押す（一致しなければ投稿しない）。
    投稿後は `ytd-comment-thread-renderer` の投稿者が `@kagaku-life` であることと、固定のトースト「コメントを固定しました」を確かめる。
