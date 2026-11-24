@@ -3545,8 +3545,53 @@
         "question_gate": "案A（なるさん選択 2026-11-23。ミア推奨A／エマ見たくない／編集長推奨E）",
         "packaging": "編集長選定 2026-11-23: 合成案（案2社名＋案5問い）。次点: 案2、案3"
       }
+    },
+    {
+      "episode_id": "kl061",
+      "status": "confirmed",
+      "slot_type": "news",
+      "genre": "life_tech",
+      "health": false,
+      "domain": "life",
+      "concern_id": null,
+      "entry_question": "留守でも荷物が玄関まで届く日は、うちのマンションにも来る？",
+      "title": "ロボがマンションの玄関まで荷物を。再配達ゼロの日は来る？（11月時点）",
+      "format": "dialogue",
+      "structure": "rounds_v4",
+      "source_type": "news",
+      "news_date": "2026-11-17",
+      "references": [
+        {
+          "title": "配送ロボットがマンションの玄関前まで置き配（福岡市 UR香椎での実証）",
+          "year": 2026,
+          "venue": "PR TIMES（2026年11月17日）",
+          "url": "https://prtimes.jp/main/html/rd/p/000000005.000172258.html",
+          "source_kind": "press_release",
+          "is_preprint": false,
+          "institution": "NETSDAR・アイホン・日本オーチス・ワールドサプライ ほか"
+        },
+        {
+          "title": "Zipline is now delivering to Uber Eats customers in Houston",
+          "year": 2026,
+          "venue": "Zipline Newsroom",
+          "url": "https://www.zipline.com/newsroom/zipline-is-now-delivering-to-uber-eats-customers-in-houston",
+          "source_kind": "official_blog",
+          "is_preprint": false,
+          "institution": "Zipline"
+        }
+      ],
+      "hook_idea": "ロボットがオートロックを通り、エレベーターに乗り、留守の玄関前に荷物を置いていく。福岡のマンションで実験が始まった。",
+      "notes": "2026-11-24 弱い週（本命0）。なるさんが当初B（GPT-6.2見送り・追加収集）を選び、追加収集後の再提示でA（推奨）を選択（Muse経由）。驚き3で本命基準未満。採点では宣伝（customer_case）判定だが、コンソーシアムの公的実証として扱う→問いゲートで編集長が確認。一次資料に成功率・費用・台数なし。約400万円・来年度実用化は報道のみ、台詞に使わない。比較材料: Zipline×Uber Eats（ヒューストン）。国交省の置き配指針案（11/21頃報道）は一次資料未確認。物流自動化回が続く（kl052・kl055・kl056）。鮮度期限 12/08。",
+      "topic_pattern": "shop_change",
+      "candidate_id": "adc278a877",
+      "pitch": {
+        "title": "ロボがマンションの玄関まで荷物を。再配達ゼロの日は来る？（11月時点）",
+        "hook": "大輔「ロボットがオートロックを通って、エレベーターに乗って、留守の家の玄関前に荷物を置いていく。福岡のマンションで実験が始まった」／沙織「で、何回やって、何回届いたの？」",
+        "surprise_line": "宅配の再配達を気にしている人が、配送ロボがマンションのオートロックとエレベーターを自分で通り、留守の玄関前に荷物を置いていくことに驚く",
+        "emma": "見たい（1位、2案中）。指摘: 驚きの中心は『留守の家に、オートロックの内側まで入って置いていく』ところ"
+      }
     }
   ],
-  "total_topics": 60,
-  "last_updated": "2026-11-23"
+  "total_topics": 61,
+  "last_updated": "2026-11-24"
 }

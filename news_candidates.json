@@ -46856,7 +46856,7 @@
       "scored_at": "2026-10-30",
       "topic_first_date": "2026-10-21",
       "topic_first_source": "候補 e61b1b9be2 のannounced_on（テスラの人型ロボ「Optimus」、生産開始 週2万台には「）",
-      "topic_series": "19f2a31ebf",
+      "topic_series": "f13864480b",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-10-21",
@@ -59850,9 +59850,31 @@
           "trend": 1.0,
           "articles_14d": 2,
           "raw_items": 7
+        },
+        {
+          "at": "2026-11-24T08:43:34",
+          "query": "国立がん研究センター レゴラフェニブ",
+          "measured": 2,
+          "outlets": 2,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "胃・食道接合部・食道腺がんに対し、「レゴラフェニブ＋ニボルマブ＋化学療法」併用で優れた効果を得られる可能性—国がん",
+              "outlet": "GemMed",
+              "date": "2026-11-19"
+            },
+            {
+              "title": "進行胃がん等の一次併用療法で奏効割合73％、国立がん研究センターが発表",
+              "outlet": "Dellows News",
+              "date": "2026-11-18"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 2,
+          "raw_items": 5
         }
       ],
-      "buzz_measured_at": "2026-11-23T04:54:20",
+      "buzz_measured_at": "2026-11-24T08:43:34",
       "buzz_measured": 2,
       "buzz_outlets": 2,
       "yahoo": false,
@@ -59870,9 +59892,9 @@
       ],
       "buzz_trend": 1.0,
       "buzz_articles_14d": 2,
-      "buzz_raw_items": 7,
+      "buzz_raw_items": 5,
       "buzz_query": "国立がん研究センター レゴラフェニブ",
-      "buzz_adopted_at": "2026-11-23T04:54:20",
+      "buzz_adopted_at": "2026-11-24T08:43:34",
       "buzz_adopted_n": 2,
       "prior_art": {
         "version": "2026-11-11",
@@ -63009,9 +63031,30 @@
           "outlets_foreign": 49,
           "foreign_boost": true,
           "query_en": "Japanese"
+        },
+        {
+          "at": "2026-11-24T08:43:31",
+          "query": "Japanese 4Dコホート",
+          "measured": 4,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "生活習慣と健康・慢性疾患をつなぐ腸内細菌の「対照的な2つの媒介軸」を発見 ― 日本人約6,800人の大規模解析から「腸活」のエビデンスを提示 ｜関連資料・リリー",
+              "outlet": "保健指導リソースガイド",
+              "date": "2026-11-19"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 1,
+          "jp_measured": 2,
+          "outlets_foreign": 51,
+          "foreign_boost": true,
+          "query_en": "Japanese"
         }
       ],
-      "buzz_measured_at": "2026-11-23T04:54:27",
+      "buzz_measured_at": "2026-11-24T08:43:31",
       "buzz_measured": 4,
       "buzz_outlets": 1,
       "yahoo": false,
@@ -63026,13 +63069,13 @@
       "buzz_articles_14d": 1,
       "buzz_raw_items": 1,
       "buzz_query": "Japanese 4Dコホート",
-      "buzz_adopted_at": "2026-11-23T04:54:27",
+      "buzz_adopted_at": "2026-11-24T08:43:31",
       "buzz_adopted_n": 2,
       "yt_competitors": 0,
       "yt_competitors_checked_at": "2026-11-13T09:46:35",
       "yt_competitors_query": "腸内細菌 発酵食品 6800人",
       "buzz_jp_measured": 2,
-      "buzz_outlets_foreign": 49,
+      "buzz_outlets_foreign": 51,
       "buzz_foreign_boost": true,
       "buzz_query_en": "Japanese"
     },
@@ -64575,7 +64618,65 @@
       "buzz_raw_items": 16,
       "buzz_query": "プラニマル細胞 松永幸大",
       "buzz_adopted_at": "2026-11-13T09:43:51",
-      "buzz_adopted_n": 1
+      "buzz_adopted_n": 1,
+      "primary_verified": null,
+      "primary_check": [
+        {
+          "url": "https://www.kyushu-u.ac.jp/ja/researches/view/1188",
+          "ok": true,
+          "status": "HTTP 200「「韓国のファーブル」石宙明の昆虫標本が九州大学に現存 | 研」",
+          "page_title": "「韓国のファーブル」石宙明の昆虫標本が九州大学に現存 | 研究成果 | 九州大学（KYUSHU UNIVERSITY）",
+          "anchor_hit": false,
+          "method": "http",
+          "kind": "press_release"
+        },
+        {
+          "ok": false,
+          "status": "DOIが存在しない（ハンドルAPI、10.1038/s41467-026-xxxxx-x）",
+          "url": "https://doi.org/10.1038/s41467-026-xxxxx-x",
+          "method": "doi_handle",
+          "kind": "paper"
+        }
+      ],
+      "primary_verified_at": "2026-11-24T07:47:53",
+      "primary_history": [
+        {
+          "at": "2026-11-24T07:47:53",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://www.kyushu-u.ac.jp/ja/researches/view/1188",
+              "status": "HTTP 200「「韓国のファーブル」石宙明の昆虫標本が九州大学に現存 | 研」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://doi.org/10.1038/s41467-026-xxxxx-x",
+              "status": "DOIが存在しない（ハンドルAPI、10.1038/s41467-026-xxxxx-x）",
+              "final_url": "",
+              "ok": false
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://www.kyushu-u.ac.jp/ja/researches/view/1188",
+          "ok": true,
+          "status": "HTTP 200「「韓国のファーブル」石宙明の昆虫標本が九州大学に現存 | 研」"
+        },
+        {
+          "url": "https://doi.org/10.1038/s41467-026-xxxxx-x",
+          "ok": false,
+          "status": "DOIが存在しない（ハンドルAPI、10.1038/s41467-026-xxxxx-x）"
+        }
+      ],
+      "url_ok": false,
+      "url_status": "kyushu-u.ac.jp: HTTP 200「「韓国のファーブル」石宙明の昆虫標本が九州大学に現存 | 研」 ／ doi.org: DOIが存在しない（ハンドルAPI、10.1038/s41467-026-xxxxx-x）",
+      "url_checked_at": "2026-11-24T07:47:53",
+      "yt_competitors": 3,
+      "yt_competitors_checked_at": "2026-11-24T07:50:40",
+      "yt_competitors_query": "プラニマル細胞"
     },
     {
       "title": "なぜゾーホーは「広告を載せない」のか？　情報漏えいを防ぐ「独自の設計」、AI研究責任者に聞く",
@@ -64929,34 +65030,46 @@
           "trend": 0.33,
           "articles_14d": 3,
           "raw_items": 6
+        },
+        {
+          "at": "2026-11-24T08:43:22",
+          "query": "ゾーホー AI",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "AI人材「85％不足」の時代 ゾーホーが「自前の学校」で技術者を育てる理由（1/2 ページ）",
+              "outlet": "ITmedia",
+              "date": "2026-11-15"
+            }
+          ],
+          "trend": 0.0,
+          "articles_14d": 2,
+          "raw_items": 5
         }
       ],
-      "buzz_measured_at": "2026-11-23T04:54:15",
-      "buzz_measured": 4,
-      "buzz_outlets": 4,
+      "buzz_measured_at": "2026-11-24T08:43:22",
+      "buzz_measured": 3,
+      "buzz_outlets": 2,
       "yahoo": true,
       "buzz_evidence": [
         {
-          "title": "なぜゾーホーは「広告を載せない」のか？ 情報漏えいを防ぐ「独自の設計」、AI研究責任者に聞く（1/3 ページ）",
+          "title": "AI人材「85％不足」の時代 ゾーホーが「自前の学校」で技術者を育てる理由（1/2 ページ）",
           "outlet": "ITmedia",
-          "date": "2026-11-12"
+          "date": "2026-11-15"
         },
         {
           "title": "ゾーホー、AIによるIT運用とセキュリティ運用の連携を訴求",
           "outlet": "ZDNET Japan",
           "date": "2026-11-09"
-        },
-        {
-          "title": "業務用アプリケーションのための独自の小型AIモデル、印Zohoが日本でも展開",
-          "outlet": "デジタルクロス",
-          "date": "2026-11-06"
         }
       ],
-      "buzz_trend": 0.5,
-      "buzz_articles_14d": 4,
-      "buzz_raw_items": 8,
+      "buzz_trend": 0.33,
+      "buzz_articles_14d": 3,
+      "buzz_raw_items": 6,
       "buzz_query": "ゾーホー AI",
-      "buzz_adopted_at": "2026-11-16T07:01:29",
+      "buzz_adopted_at": "2026-11-23T04:54:15",
       "buzz_adopted_n": 2
     },
     {
@@ -65848,7 +65961,7 @@
       "presented_on": [],
       "topic_first_date": "2026-11-13",
       "topic_first_source": "候補 3cd8f147bb のannounced_on（【動画】佐賀市の自動運転バス、発車します 11月14日から実）",
-      "topic_series": "41c581ac2c",
+      "topic_series": "15c49bf34f",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-11-13",
@@ -66090,9 +66203,9 @@
       "scored_at": "2026-11-14",
       "first_seen_at": "2026-11-14T07:50:49",
       "presented_on": [],
-      "topic_first_date": "2026-11-06",
-      "topic_first_source": "候補 987e3233a8 のannounced_on（テスラのOptimus、リース制へ転換か マスク氏「3万ドル）",
-      "topic_series": "987e3233a8",
+      "topic_first_date": "2026-10-21",
+      "topic_first_source": "候補 e61b1b9be2 のannounced_on（テスラの人型ロボ「Optimus」、生産開始 週2万台には「）",
+      "topic_series": "f13864480b",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-11-09",
@@ -67893,9 +68006,30 @@
           "outlets_foreign": 0,
           "foreign_boost": false,
           "query_en": "NJA-001"
+        },
+        {
+          "at": "2026-11-24T08:43:43",
+          "query": "シノビ・セラピューティクス",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "iPS細胞による再生医療等の技術開発応援プロジェクト",
+              "outlet": "京都府",
+              "date": "2026-11-10"
+            }
+          ],
+          "trend": 0.0,
+          "articles_14d": 1,
+          "raw_items": 2,
+          "jp_measured": 2,
+          "outlets_foreign": 0,
+          "foreign_boost": false,
+          "query_en": "NJA-001"
         }
       ],
-      "buzz_measured_at": "2026-11-23T04:54:40",
+      "buzz_measured_at": "2026-11-24T08:43:43",
       "buzz_measured": 2,
       "buzz_outlets": 1,
       "yahoo": false,
@@ -67910,8 +68044,8 @@
       "buzz_articles_14d": 1,
       "buzz_raw_items": 2,
       "buzz_query": "シノビ・セラピューティクス",
-      "buzz_adopted_at": "2026-11-23T04:54:40",
-      "buzz_adopted_n": 1,
+      "buzz_adopted_at": "2026-11-24T08:43:43",
+      "buzz_adopted_n": 2,
       "buzz_jp_measured": 2,
       "buzz_outlets_foreign": 0,
       "buzz_foreign_boost": false,
@@ -68054,7 +68188,7 @@
       "presented_on": [],
       "topic_first_date": "2026-10-21",
       "topic_first_source": "候補 e61b1b9be2 のannounced_on（テスラの人型ロボ「Optimus」、生産開始 週2万台には「）",
-      "topic_series": "19f2a31ebf",
+      "topic_series": "f13864480b",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-11-09",
@@ -68403,7 +68537,7 @@
       "presented_on": [],
       "topic_first_date": "2026-11-13",
       "topic_first_source": "候補 3cd8f147bb のannounced_on（【動画】佐賀市の自動運転バス、発車します 11月14日から実）",
-      "topic_series": "41c581ac2c",
+      "topic_series": "15c49bf34f",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-11-13",
@@ -69424,34 +69558,61 @@
           "trend": 0.69,
           "articles_14d": 13,
           "raw_items": 23
+        },
+        {
+          "at": "2026-11-24T08:43:13",
+          "query": "サイバーキャブ 個人販売",
+          "measured": 5,
+          "outlets": 16,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "編集者の視点 ｢テスラのサイバーキャブ購入者は所有者なのか｣ - 日経モビリティ",
+              "outlet": "日本経済新聞",
+              "date": "2026-11-23"
+            },
+            {
+              "title": "テスラが「FSD v15」を実装、人間越えの安全性とGTA風のRealityViewが話題",
+              "outlet": "ビジネス+IT",
+              "date": "2026-11-23"
+            },
+            {
+              "title": "サイバーキャブのインパクト",
+              "outlet": "日経クロステック",
+              "date": "2026-11-21"
+            }
+          ],
+          "trend": 0.63,
+          "articles_14d": 27,
+          "raw_items": 52
         }
       ],
-      "buzz_measured_at": "2026-11-23T04:54:06",
+      "buzz_measured_at": "2026-11-24T08:43:13",
       "buzz_measured": 5,
-      "buzz_outlets": 8,
+      "buzz_outlets": 16,
       "yahoo": true,
       "buzz_evidence": [
         {
-          "title": "サイバーキャブは299ドルのサブスクリプションを支払わないと、芝生で光り輝く金色の置物になる",
-          "outlet": "Business Insider Japan",
-          "date": "2026-11-19"
-        },
-        {
-          "title": "サイバーキャブの個人販売開始 テスラで最安､3万㌦切る",
+          "title": "編集者の視点 ｢テスラのサイバーキャブ購入者は所有者なのか｣ - 日経モビリティ",
           "outlet": "日本経済新聞",
-          "date": "2026-11-18"
+          "date": "2026-11-23"
         },
         {
-          "title": "ハンドルもペダルもないテスラ「Cybercab」、個人向けに2万9990ドルで販売開始 月299ドルのサブスク必須、まずは招待制",
-          "outlet": "テクノエッジ TechnoEdge",
-          "date": "2026-11-17"
+          "title": "テスラが「FSD v15」を実装、人間越えの安全性とGTA風のRealityViewが話題",
+          "outlet": "ビジネス+IT",
+          "date": "2026-11-23"
+        },
+        {
+          "title": "サイバーキャブのインパクト",
+          "outlet": "日経クロステック",
+          "date": "2026-11-21"
         }
       ],
-      "buzz_trend": 0.69,
-      "buzz_articles_14d": 13,
-      "buzz_raw_items": 23,
+      "buzz_trend": 0.63,
+      "buzz_articles_14d": 27,
+      "buzz_raw_items": 52,
       "buzz_query": "サイバーキャブ 個人販売",
-      "buzz_adopted_at": "2026-11-23T04:54:06",
+      "buzz_adopted_at": "2026-11-24T08:43:13",
       "buzz_adopted_n": 2,
       "prior_art": {
         "version": "2026-11-11",
@@ -70197,9 +70358,40 @@
           "outlets_foreign": 4,
           "foreign_boost": false,
           "query_en": "Gemini Plaid"
+        },
+        {
+          "at": "2026-11-24T08:43:19",
+          "query": "Gemini Googleウォレット",
+          "measured": 5,
+          "outlets": 13,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "Google、AI ModeにDrive、Wallet、Geminiアプリとの連携機能を追加",
+              "outlet": "Mezha.net",
+              "date": "2026-11-23"
+            },
+            {
+              "title": "Google HomeのGemini Liveが高速化 会話中に家電操作も｜Home Premium限定 日本は月1,000円から【海外ニュース】",
+              "outlet": "スマートウォッチライフ",
+              "date": "2026-11-19"
+            },
+            {
+              "title": "【Google】Geminiが通話・支払い・予約まで代行！新モデル「Gemini 4 Hydrogen」搭載の無料アップデートまとめ",
+              "outlet": "DXマガジン",
+              "date": "2026-11-18"
+            }
+          ],
+          "trend": 0.44,
+          "articles_14d": 16,
+          "raw_items": 23,
+          "jp_measured": 5,
+          "outlets_foreign": 4,
+          "foreign_boost": false,
+          "query_en": "Gemini Plaid"
         }
       ],
-      "buzz_measured_at": "2026-11-23T04:54:12",
+      "buzz_measured_at": "2026-11-24T08:43:19",
       "buzz_measured": 5,
       "buzz_outlets": 14,
       "yahoo": true,
@@ -70930,9 +71122,26 @@
           "trend": 1.0,
           "articles_14d": 1,
           "raw_items": 6
+        },
+        {
+          "at": "2026-11-24T08:43:46",
+          "query": "東京医科大学 腸内細菌",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "生活習慣と健康・慢性疾患をつなぐ腸内細菌の「対照的な2つの媒介軸」を発見 ― 日本人約6,800人の大規模解析から「腸活」のエビデンスを提示 ｜関連資料・リリー",
+              "outlet": "保健指導リソースガイド",
+              "date": "2026-11-19"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 7
         }
       ],
-      "buzz_measured_at": "2026-11-23T04:54:43",
+      "buzz_measured_at": "2026-11-24T08:43:46",
       "buzz_measured": 2,
       "buzz_outlets": 1,
       "yahoo": false,
@@ -70945,9 +71154,9 @@
       ],
       "buzz_trend": 1.0,
       "buzz_articles_14d": 1,
-      "buzz_raw_items": 6,
+      "buzz_raw_items": 7,
       "buzz_query": "東京医科大学 腸内細菌",
-      "buzz_adopted_at": "2026-11-23T04:54:43",
+      "buzz_adopted_at": "2026-11-24T08:43:46",
       "buzz_adopted_n": 2
     },
     {
@@ -71414,7 +71623,7 @@
       "presented_on": [],
       "topic_first_date": "2026-11-13",
       "topic_first_source": "候補 3cd8f147bb のannounced_on（【動画】佐賀市の自動運転バス、発車します 11月14日から実）",
-      "topic_series": "41c581ac2c",
+      "topic_series": "15c49bf34f",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
         "date": "2026-11-13",
@@ -71576,7 +71785,7 @@
       "url_status": "city.saga.lg.jp: HTTP 404（再確認5回とも404・開けず） ／ city.saga.lg.jp: HTTP 404（再確認5回とも404・開けず）",
       "url_checked_at": "2026-11-16T14:22:13",
       "repair_tried": true,
-      "repair_tried_at": "2026-11-16T14:22:24",
+      "repair_tried_at": "2026-11-24T08:42:02",
       "repair_log": [
         "site-crawl: 8ページを見たが、語の合うリンクなし",
         "pool-official: 同じ話題の公式・学術誌の記事（発表日±3日）がプールにない",
@@ -72384,7 +72593,7 @@
           "kind": "press_release"
         }
       ],
-      "primary_verified_at": "2026-11-23T04:56:45",
+      "primary_verified_at": "2026-11-24T07:47:55",
       "primary_history": [
         {
           "at": "2026-11-16T14:22:24",
@@ -72409,6 +72618,18 @@
               "ok": true
             }
           ]
+        },
+        {
+          "at": "2026-11-24T07:47:55",
+          "verdict": null,
+          "urls": [
+            {
+              "url": "https://www.murakamifarm.com/company/release/368afb4d37bce94aea7bd1ceb6785af08fa1ee86.jpg",
+              "status": "HTTP 200",
+              "final_url": "",
+              "ok": true
+            }
+          ]
         }
       ],
       "url_check": [
@@ -72420,7 +72641,7 @@
       ],
       "url_ok": true,
       "url_status": "murakamifarm.com: HTTP 200",
-      "url_checked_at": "2026-11-23T04:56:45",
+      "url_checked_at": "2026-11-24T07:47:55",
       "buzz_history": [
         {
           "at": "2026-11-16T14:23:40",
@@ -72465,34 +72686,51 @@
           "trend": 1.0,
           "articles_14d": 1,
           "raw_items": 4
+        },
+        {
+          "at": "2026-11-24T08:43:25",
+          "query": "村上農園 ブロッコリースプラウト",
+          "measured": 3,
+          "outlets": 2,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "腸活は「菌を摂る」から「菌を育てる」へ 最新研究で見えてきたブロッコリースプラウトの可能性",
+              "outlet": "RanRun",
+              "date": "2026-11-23"
+            },
+            {
+              "title": "村上農園は、世界小児がん啓発キャンペーンに協賛します",
+              "outlet": "山陽新聞",
+              "date": "2026-11-20"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 2,
+          "raw_items": 6
         }
       ],
-      "buzz_measured_at": "2026-11-23T04:54:18",
+      "buzz_measured_at": "2026-11-24T08:43:25",
       "buzz_measured": 3,
-      "buzz_outlets": 4,
-      "yahoo": false,
+      "buzz_outlets": 2,
+      "yahoo": true,
       "buzz_evidence": [
         {
-          "title": "村上農園が26年10月に月間最高売上17億2200万円を記録 6カ月連続更新",
-          "outlet": "Dellows News",
-          "date": "2026-11-15"
+          "title": "腸活は「菌を摂る」から「菌を育てる」へ 最新研究で見えてきたブロッコリースプラウトの可能性",
+          "outlet": "RanRun",
+          "date": "2026-11-23"
         },
         {
-          "title": "【キャベツもレタスも高すぎる…(泣)】今「あの野菜」が売れてる！？村上農園が6カ月連続で過去最高売上！「前年比156％」の大人気野菜も",
-          "outlet": "ヨムーノ",
-          "date": "2026-11-07"
-        },
-        {
-          "title": "村上農園、過去最高の月間売上17億円を達成",
+          "title": "村上農園は、世界小児がん啓発キャンペーンに協賛します",
           "outlet": "山陽新聞",
-          "date": "2026-11-05"
+          "date": "2026-11-20"
         }
       ],
-      "buzz_trend": 0.5,
-      "buzz_articles_14d": 6,
-      "buzz_raw_items": 7,
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 2,
+      "buzz_raw_items": 6,
       "buzz_query": "村上農園 ブロッコリースプラウト",
-      "buzz_adopted_at": "2026-11-16T14:23:40",
+      "buzz_adopted_at": "2026-11-24T08:43:25",
       "buzz_adopted_n": 2,
       "prior_art": {
         "version": "2026-11-11",
@@ -72504,7 +72742,10 @@
         "novelty_exception": false,
         "novelty_line": "",
         "novelty_line_primary": false
-      }
+      },
+      "yt_competitors": 0,
+      "yt_competitors_checked_at": "2026-11-24T07:50:40",
+      "yt_competitors_query": "ブロッコリースプラウト 酪酸"
     },
     {
       "title": "MINDダイエットとは？ 脳を守る食事法とその仕組みについて専門家が解説",
@@ -72877,15 +73118,15 @@
       "scored_at": "2026-11-23",
       "first_seen_at": "2026-11-23T04:48:59",
       "presented_on": [],
-      "topic_first_date": "2026-11-22",
-      "topic_first_source": "候補 64df8b2d52 のannounced_on（【AIチップ】テスラ、車は「AI4」のまま〜次世代「AI5」）",
-      "topic_series": "64df8b2d52",
+      "topic_first_date": "2026-10-21",
+      "topic_first_source": "候補 e61b1b9be2 のannounced_on（テスラの人型ロボ「Optimus」、生産開始 週2万台には「）",
+      "topic_series": "f13864480b",
       "freshness_basis": "topic_first_date",
       "topic_pool_first": {
-        "date": "2026-11-22",
-        "title": "【AIチップ】テスラ、車は「AI4」のまま〜次世代「AI5」は人型ロボットOptimusへ",
-        "id": "64df8b2d52",
-        "source": "Googleニュース（人型ロボット）／Touch Lab"
+        "date": "2026-11-20",
+        "title": "Musk Says Optimus Will Do the Dishes “Within 12-18 Months.” Here’s Where Tesla’s Robot Stands",
+        "id": "f13864480b",
+        "source": "Googleニュース（家庭用ロボット）／TIKR.com"
       }
     },
     {
@@ -73152,7 +73393,7 @@
               "status": "HTTP 404",
               "final_url": "",
               "redirects": [],
-              "at": "2026-11-23T04:56:02"
+              "at": "2026-11-24T07:48:03"
             },
             {
               "url": "https://openai.com/index/gpt-6-2-system-card/",
@@ -73160,7 +73401,7 @@
               "status": "HTTP 404",
               "final_url": "",
               "redirects": [],
-              "at": "2026-11-23T04:56:07"
+              "at": "2026-11-24T07:48:08"
             },
             {
               "url": "https://openai.com/index/gpt-6-2-system-card/",
@@ -73168,7 +73409,7 @@
               "status": "HTTP 404",
               "final_url": "",
               "redirects": [],
-              "at": "2026-11-23T04:56:28"
+              "at": "2026-11-24T07:48:28"
             },
             {
               "url": "https://openai.com/us/en/index/gpt-6-2-system-card/",
@@ -73181,7 +73422,7 @@
                 "302 https://openai.com/en-US/index/gpt-6-2-system-card/",
                 "302 https://openai.com/index/gpt-6-2-system-card/"
               ],
-              "at": "2026-11-23T04:56:34"
+              "at": "2026-11-24T07:48:36"
             },
             {
               "url": "https://openai.com/en-us/index/gpt-6-2-system-card/",
@@ -73189,7 +73430,7 @@
               "status": "HTTP 404",
               "final_url": "",
               "redirects": [],
-              "at": "2026-11-23T04:56:38"
+              "at": "2026-11-24T07:48:41"
             },
             {
               "url": "https://openai.com/en/index/gpt-6-2-system-card/",
@@ -73200,13 +73441,13 @@
                 "302 https://openai.com/en-US/index/gpt-6-2-system-card/",
                 "302 https://openai.com/index/gpt-6-2-system-card/"
               ],
-              "at": "2026-11-23T04:56:43"
+              "at": "2026-11-24T07:48:45"
             }
           ],
           "kind": "tech_report"
         }
       ],
-      "primary_verified_at": "2026-11-23T04:56:43",
+      "primary_verified_at": "2026-11-24T07:48:45",
       "primary_history": [
         {
           "at": "2026-11-23T04:50:58",
@@ -73243,6 +73484,24 @@
               "ok": false
             }
           ]
+        },
+        {
+          "at": "2026-11-24T07:48:45",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://openai.com/ja-JP/index/introducing-gpt-6-2-astra-sol/",
+              "status": "HTTP 200「GPT-6.2 Astra と Sol のご紹介 | Ope」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://openai.com/index/gpt-6-2-system-card/",
+              "status": "HTTP 404（再確認5回とも404・開けず）",
+              "final_url": "",
+              "ok": false
+            }
+          ]
         }
       ],
       "url_check": [
@@ -73259,7 +73518,7 @@
       ],
       "url_ok": false,
       "url_status": "openai.com: HTTP 200「GPT-6.2 Astra と Sol のご紹介 | Ope」 ／ openai.com: HTTP 404（再確認5回とも404・開けず）",
-      "url_checked_at": "2026-11-23T04:56:43",
+      "url_checked_at": "2026-11-24T07:48:45",
       "buzz_history": [
         {
           "at": "2026-11-23T04:54:03",
@@ -73291,17 +73550,48 @@
           "outlets_foreign": 44,
           "foreign_boost": false,
           "query_en": "GPT-6.2 Astra"
+        },
+        {
+          "at": "2026-11-24T08:43:10",
+          "query": "GPT-6.2 Astra",
+          "measured": 5,
+          "outlets": 40,
+          "yahoo": true,
+          "evidence": [
+            {
+              "title": "GPT-6.2 AstraがAA-3Dで首位：3D主張の意味とは",
+              "outlet": "OrcaRouter",
+              "date": "2026-11-23"
+            },
+            {
+              "title": "OpenAI、AIの思考過程を盗む攻撃の成功率を0.2%へ低減 GPT-6.2で多層防御を導入",
+              "outlet": "ビジネス+IT",
+              "date": "2026-11-21"
+            },
+            {
+              "title": "OpenAI、GPT-6.2を敵対的蒸留から守る新たな防御策",
+              "outlet": "Meteora Web",
+              "date": "2026-11-21"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 66,
+          "raw_items": 99,
+          "jp_measured": 5,
+          "outlets_foreign": 48,
+          "foreign_boost": false,
+          "query_en": "GPT-6.2 Astra"
         }
       ],
-      "buzz_measured_at": "2026-11-23T04:54:03",
+      "buzz_measured_at": "2026-11-24T08:43:10",
       "buzz_measured": 5,
-      "buzz_outlets": 39,
+      "buzz_outlets": 40,
       "yahoo": true,
       "buzz_evidence": [
         {
-          "title": "GPT-6.2 AstraがSO-101ロボットボードで1,984 DCRを記録し首位に立つ",
+          "title": "GPT-6.2 AstraがAA-3Dで首位：3D主張の意味とは",
           "outlet": "OrcaRouter",
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         {
           "title": "OpenAI、AIの思考過程を盗む攻撃の成功率を0.2%へ低減 GPT-6.2で多層防御を導入",
@@ -73315,15 +73605,11 @@
         }
       ],
       "buzz_trend": 1.0,
-      "buzz_articles_14d": 64,
-      "buzz_raw_items": 98,
+      "buzz_articles_14d": 66,
+      "buzz_raw_items": 99,
       "buzz_query": "GPT-6.2 Astra",
-      "buzz_jp_measured": 5,
-      "buzz_outlets_foreign": 44,
-      "buzz_foreign_boost": false,
-      "buzz_query_en": "GPT-6.2 Astra",
-      "buzz_adopted_at": "2026-11-23T04:54:03",
-      "buzz_adopted_n": 1,
+      "buzz_adopted_at": "2026-11-24T08:43:10",
+      "buzz_adopted_n": 2,
       "prior_art": {
         "version": "2026-11-11",
         "checked_at": "2026-11-23T04:55:36",
@@ -73334,7 +73620,14 @@
         "novelty_exception": false,
         "novelty_line": "",
         "novelty_line_primary": false
-      }
+      },
+      "yt_competitors": 15,
+      "yt_competitors_checked_at": "2026-11-24T07:50:40",
+      "yt_competitors_query": "GPT-6.2 Sol",
+      "buzz_jp_measured": 5,
+      "buzz_outlets_foreign": 48,
+      "buzz_foreign_boost": false,
+      "buzz_query_en": "GPT-6.2 Astra"
     },
     {
       "title": "ヒューマノイドからAIビジョンまで、三菱電機「Serendie Automation」の具体像",
@@ -73506,7 +73799,7 @@
               "status": "HTTP 404",
               "final_url": "",
               "redirects": [],
-              "at": "2026-11-23T04:50:59"
+              "at": "2026-11-24T07:48:45"
             },
             {
               "url": "https://www.murakamifarm.com/company/release/20261113.html",
@@ -73514,7 +73807,7 @@
               "status": "HTTP 404",
               "final_url": "",
               "redirects": [],
-              "at": "2026-11-23T04:51:04"
+              "at": "2026-11-24T07:48:50"
             },
             {
               "url": "https://www.murakamifarm.com/company/release/20261113.html",
@@ -73522,7 +73815,7 @@
               "status": "HTTP 404",
               "final_url": "",
               "redirects": [],
-              "at": "2026-11-23T04:51:24"
+              "at": "2026-11-24T07:49:12"
             },
             {
               "url": "https://www.murakamifarm.com/us/en/company/release/20261113.html",
@@ -73530,7 +73823,7 @@
               "status": "HTTP 404",
               "final_url": "",
               "redirects": [],
-              "at": "2026-11-23T04:51:29"
+              "at": "2026-11-24T07:49:18"
             },
             {
               "url": "https://www.murakamifarm.com/en-us/company/release/20261113.html",
@@ -73538,7 +73831,7 @@
               "status": "HTTP 404",
               "final_url": "",
               "redirects": [],
-              "at": "2026-11-23T04:51:34"
+              "at": "2026-11-24T07:49:21"
             },
             {
               "url": "https://www.murakamifarm.com/en/company/release/20261113.html",
@@ -73546,16 +73839,28 @@
               "status": "HTTP 404",
               "final_url": "",
               "redirects": [],
-              "at": "2026-11-23T04:51:39"
+              "at": "2026-11-24T07:49:26"
             }
           ],
           "kind": "press_release"
         }
       ],
-      "primary_verified_at": "2026-11-23T04:51:39",
+      "primary_verified_at": "2026-11-24T07:49:26",
       "primary_history": [
         {
           "at": "2026-11-23T04:51:39",
+          "verdict": false,
+          "urls": [
+            {
+              "url": "https://www.murakamifarm.com/company/release/20261113.html",
+              "status": "HTTP 404（再確認5回とも404・開けず）",
+              "final_url": "",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "at": "2026-11-24T07:49:26",
           "verdict": false,
           "urls": [
             {
@@ -73576,7 +73881,7 @@
       ],
       "url_ok": false,
       "url_status": "murakamifarm.com: HTTP 404（再確認5回とも404・開けず）",
-      "url_checked_at": "2026-11-23T04:51:39",
+      "url_checked_at": "2026-11-24T07:49:26",
       "repair_tried": true,
       "repair_tried_at": "2026-11-23T04:52:57",
       "repair_log": [
@@ -73588,6 +73893,1992 @@
         "robots.txt で禁止: https://news.google.com/rss/articles/CBMiUkFVX3lxTFAxeXkwZFlqOWNaMmt2Y05oU0dJRXRRS1dMSnFfdVE2cW1zb1R4S0MtSWRKb0pTcjUydWV4VlRfc1NTaXhuYktTRlBoRGk5LUJJb0E?oc=5"
       ],
       "repair_result": "見つからない"
+    },
+    {
+      "title": "テスラの車載AI4、コストは2倍とマスク氏―次世代AI5は人型ロボットOptimusへ",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBMYlB2RUhGZk5Ga29XNU5oMHRHR2F4Z2JIQUFFVlpJMTg5cTJTQzFuSDE2NWhkSkxxWjlkOXVfZldSQ2JCUk9CX09GQnNPMVF0djBRbXlaQUdfZF8xem82RWI3QdIBaEFVX3lxTE95dlRybW9VWXdmVVhjUnh3MnBqaHd3VnpvTE9Yd21yVlNxNW9lOWpDZkFYTXpoa29qSXUtWjBGU2RoXzJEdm8zS05ycnlSbUcwLWh1S1RXZmV1M0lJcHlRQ08tVXZzSEZH?oc=5",
+      "published": "2026-11-23",
+      "source": "Googleニュース（人型ロボット）／財経新聞",
+      "source_kind": "media",
+      "outlet": "財経新聞",
+      "outlet_host": "zaikei.co.jp",
+      "genre_hint": "humanoid",
+      "summary": "テスラの車載AI4、コストは2倍とマスク氏―次世代AI5は人型ロボットOptimusへ（財経新聞）",
+      "id": "66af46833b",
+      "sources": [
+        "財経新聞"
+      ],
+      "dup_ids": [
+        "69fec0d222"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://x.com/elonmusk",
+          "what_it_states": "マスク氏がX上のユーザーへの返信で、メモリとストレージの価格高騰により車載AI4（Hardware 4）のBOMコストが2倍になったと発言。さらに次世代チップAI5は人型ロボットOptimusとデータセンター向けに優先供給され、車両はAI4（および軽微な改修となるAI4.5）に留まる方針を示した。量産時期やチップの具体的な現在価格は未公表"
+        }
+      ],
+      "announced_on": "2026-11-22",
+      "headline_claim": "メモリ高騰で車載AI4の原価が2倍になり、次世代AI5チップは車ではなく人型ロボットOptimusに回されるとマスク氏が表明した。",
+      "actual_content": "マスクCEOがX上で行った質疑応答に基づく発言。世界的なメモリ・ストレージ価格の急騰により、現行のテスラ車載コンピューター「AI4」の部品コストが2倍に膨らんでいると述べた。これに伴い、約10倍の処理能力を持つ次世代「AI5」チップは車両向けには回さず人型ロボット「Optimus」へ優先配分し、自動車は現行のAI4を継続する方針を示した。具体的な製造原価の金額や、車両価格・FSD利用料への転嫁有無、Optimusへの具体的搭載時期の保証などは公式発表されておらず、経営者個人のSNS発言にとどまる。",
+      "verifiability": 2,
+      "hype_gap": 3,
+      "promise": 2,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 2,
+      "work_relevance": 2,
+      "audience_fit": 2,
+      "tangible": 1,
+      "decision_number": 1,
+      "series_fit": 3,
+      "concern_id": "mobility",
+      "entry_question": "テスラの次世代AIチップは車に来ないって本当？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "pending",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "公式な決算発表や技術仕様書ではなく、マスク氏がX（旧Twitter）で一般ユーザーに返信しただけのロードマップ変更。具体的なコスト額や次世代チップの供給スケジュールを裏付ける客観的データはない。",
+      "hope_material": "現行のAI4のままでも自動運転ソフト（FSD v15等）は動作可能とされており、既存オーナーの車が即座に旧式化して切り捨てられるリスクが低減した点。",
+      "investment_related": true,
+      "deja_vu_note": "kl051（Optimus生産開始）やkl058（Cybercabと自動運転）の周辺動向だが、今回はチップの配分と部品コスト高騰に関する経営者発言が中心",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "テスラ AI5 Optimus",
+      "jp_title_anchor": [
+        "AI4",
+        "AI5",
+        "Optimus"
+      ],
+      "announcement_type": "other",
+      "freshness": 5,
+      "overall_score": 2.9,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "excluded",
+      "excluded_reason": "一次資料で確認できない・投資・株価が中心",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:40:16",
+      "presented_on": [],
+      "topic_first_date": "2026-10-21",
+      "topic_first_source": "候補 e61b1b9be2 のannounced_on（テスラの人型ロボ「Optimus」、生産開始 週2万台には「）",
+      "topic_series": "f13864480b",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-20",
+        "title": "Musk Says Optimus Will Do the Dishes “Within 12-18 Months.” Here’s Where Tesla’s Robot Stands",
+        "id": "f13864480b",
+        "source": "Googleニュース（家庭用ロボット）／TIKR.com"
+      }
+    },
+    {
+      "title": "佐賀市、自動運転バスの実証運行をスタート 新車両で全区間「レベル4相当」かつ初の有償運行を実施",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1mX1U4cVo3Mjlma0N5eUltMEstSnhQaDM3LWtheVdwbmJmMHJtdWx0empOR0dNcVRGUktVS2d2OWE1ZHFtTmNjMFpZUWdZOFVUTktweDVQXzQ?oc=5",
+      "published": "2026-11-23",
+      "source": "Googleニュース（自動運転 レベル4 開始）／LIGARE（リガーレ）",
+      "source_kind": "media",
+      "outlet": "LIGARE（リガーレ）",
+      "outlet_host": "ligare.news",
+      "genre_hint": "life_tech",
+      "summary": "佐賀市、自動運転バスの実証運行をスタート 新車両で全区間「レベル4相当」かつ初の有償運行を実施（LIGARE（リガーレ））",
+      "series_query": "autonomy_logistics_watch",
+      "id": "15c49bf34f",
+      "sources": [
+        "LIGARE（リガーレ）"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000000256.000055607.html",
+          "what_it_states": "佐賀市役所発表。2026年11月14日〜12月22日まで佐賀駅バスセンター〜SAGAサンライズパーク間（片道約1.8km）を毎日6往復、大人最大180円の有償運行。全区間レベル4相当で運行するが全日程・全区間に運転士が同乗。信号連携装置（残秒数取得）や路上駐車の自動回避を検証し、2028年度のレベル4実用化を目指す"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://www.city.saga.lg.jp/main/8545.html",
+          "what_it_states": "佐賀市公式「令和8年度自動運転バスの実証運行について」。ルート詳細、運賃160円〜180円、予約不要、全区間レベル4相当で運転士同乗、交差点の信号機連携装置の動作条件を記載"
+        }
+      ],
+      "announced_on": "2026-11-20",
+      "headline_claim": "佐賀市が自動運転バスで全区間「レベル4相当」かつ初の有償実証運行をスタートさせた。",
+      "actual_content": "佐賀市が片道約1.8kmの公道区間（佐賀駅〜SAGAサンライズパーク）において、2026年11月14日〜12月22日まで毎日6往復、大人160〜180円で実証運行を実施しています。全区間「レベル4相当」の制御を行い複数路上駐車の自動回避や信号連携を試すものの、全日程・全区間で安全確保のため運転士が同乗しており無人運行ではありません。国へのレベル4認可申請は2027年度中、本格的な社会実装は2028年度を予定しています。",
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 3,
+      "audience_fit": 4,
+      "tangible": 5,
+      "decision_number": 4,
+      "series_fit": 3,
+      "concern_id": "mobility",
+      "entry_question": "佐賀市の「レベル4相当」自動運転バス、本当に運転手なしで乗れるの？",
+      "surprise_line": "免許返納を考えるシニアが、予約不要180円で自動運転バスに乗れることに驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "見出しに「レベル4相当」とあっても実際は安全確保のため運転士が常時同乗しており、国へのレベル4認可申請すら2027年度予定で、無人運行の実現目標は2028年度です。",
+      "hope_material": "片道1.8kmの一般公道で事前予約なし・運賃180円で誰でも乗れる有償運行が始まっており、信号からの秒数データ受信による判断や路上駐車の自動回避など現場レベルの着実な検証が進んでいます。",
+      "investment_related": false,
+      "deja_vu_note": "kl055（無人物流車・空港走行）やkl058（Tesla Cybercab）など自動運転を扱った回はあるが、国内地方都市での一般乗合路線バスの公道有償実証としては新規テーマ。",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "佐賀市 自動運転バス",
+      "jp_title_anchor": [
+        "佐賀市",
+        "自動運転バス"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 5,
+      "overall_score": 3.6,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:40:29",
+      "presented_on": [],
+      "topic_first_date": "2026-11-13",
+      "topic_first_source": "候補 3cd8f147bb のannounced_on（【動画】佐賀市の自動運転バス、発車します 11月14日から実）",
+      "topic_series": "15c49bf34f",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-23",
+        "title": "佐賀市、自動運転バスの実証運行をスタート 新車両で全区間「レベル4相当」かつ初の有償運行を実施",
+        "id": "15c49bf34f",
+        "source": "Googleニュース（自動運転 レベル4 開始）／LIGARE（リガーレ）"
+      }
+    },
+    {
+      "title": "Anthropicの数学者、「Claude」と共同で「リーマン予想」を証明したと主張　Leanコミュニティが「正しい」と認定",
+      "url": "https://www.itmedia.co.jp/news/article/2611/22/2000003388/",
+      "published": "2026-11-21",
+      "source": "ITmedia AI+",
+      "source_kind": "media",
+      "summary": "Anthropicの数学者レベント・アルポーゲ氏は、「Claude」と共同で未解決問題「リーマン予想」の証明を発見したと発表した。証明支援系「Lean」で記述された1700万行の形式証明を公開しており、Leanコミュニティは複数の検証を経て「証明は正しい」と認定する共同声明を出した。",
+      "id": "7affad66a7",
+      "sources": [
+        "ITmedia AI+"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://alpo.ge/remark.pdf",
+          "what_it_states": "レベント・アルポーゲ氏が公開した4ページの声明文書。2026年10月6日から本格着手し、11月16日にClaudeとの共同作業で一般化リーマン予想（GRH）の証明に到達したと主張。証明支援系Leanで記述された1737万4215行・17万5187ファイルのコードアーカイブを公開した"
+        },
+        {
+          "kind": "official_blog",
+          "url": "https://lean-lang.org/blog/2026-11-21-rh-verification/",
+          "what_it_states": "Lean Focused Research Organization（Lean FRO）とMathlib Initiativeによる共同声明。Mathlibのリーマン予想の命題とアルポーゲ氏の証明コードが一致することを確認し、複数の独立したチェッカー（Lean公式カーネル、con-leche、con-ronなど）でコンパイルおよび構文論理検証がパスしたと発表"
+        }
+      ],
+      "announced_on": "2026-11-20",
+      "headline_claim": "Anthropicの数学者がClaudeと共同で数学の未解決難問「リーマン予想」の証明をLeanで達成し、コミュニティが正しいと認定したとされる",
+      "actual_content": "アルポーゲ氏が公開した約1700万行のLeanコードは構文上エラーなくコンパイルされ、LeanおよびMathlibコミュニティの形式検証ツールで論理チェックを通過した。ただし、これは機械的ルールに矛盾がないことを示した段階であり、人間が読める論文（非公式ドラフトは25万ページ超）の査読や数学界全体・クレイ数学研究所による認定はこれからで数年単位の精査が必要とされる。",
+      "verifiability": 5,
+      "hype_gap": 4,
+      "promise": 3,
+      "debate": 4,
+      "wonder": 5,
+      "life_relevance": 1,
+      "work_relevance": 2,
+      "audience_fit": 2,
+      "tangible": 1,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "AIがリーマン予想を解いたというのは本当？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "コンピューターの形式検証（Lean）を通過したことと、数学界が定理として認めることは別問題です。コード量は1700万行、人間向け解説は25万ページに及び、人間が論理の意味や前提の抜け漏れを検証し終わるまでには何年もかかります。",
+      "hope_material": "AIが単なる文章作成にとどまらず、数ヶ月にわたる厳密な数学的推論と巨大な形式証明コードの構築を人間と協働してやり遂げられることが実証された点。",
+      "investment_related": false,
+      "deja_vu_note": "kl043（AGIは2027年に来る？）の「AIがどこまで高度な知能タスクをこなせるか」の議論と親和性があるが、特定数学難問への挑戦としては新規",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "Claude リーマン予想 アルポーゲ",
+      "jp_title_anchor": [
+        "リーマン予想",
+        "アルポーゲ",
+        "Anthropic"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.6,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:40:43",
+      "presented_on": [],
+      "topic_first_date": "2026-11-20",
+      "topic_first_source": "候補 7affad66a7 のannounced_on（Anthropicの数学者、「Claude」と共同で「リーマ）",
+      "topic_series": "be5db22880",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-20",
+        "title": "Anthropicの数学者、Claudeと共同でリーマン予想を攻略と主張 証明はLeanコードのみ公開、検証待ち",
+        "id": "4968dffd8c",
+        "source": "Googleニュース（Anthropic 科学 発見 論文）／BigGo ファイナンス"
+      }
+    },
+    {
+      "title": "物理学者が解けずにいたブラックホールの難問2つを、AIが解いたと開発元が発表",
+      "url": "https://nazology.kusuguru.co.jp/archives/210580",
+      "published": "2026-11-23",
+      "source": "ナゾロジー",
+      "source_kind": "media",
+      "summary": "アンソロピック社（Anthropic）が発表した研究によると、対話型AIのClaudeが自分のコピーでつくった小さな研究班が、2003年に手順だけが示されたあとだれも完走できなかったブラックホールの計算をやり切り、時空がぼやけるほど小さな理論上の宇宙でも、ブラックホールは水が沸くように急に生まれると示したといいます。 この研究班に専用の仕組みは用意されず、同社の研究者が未解決問題ごとに割り当てたAIが、約6週間ずっと裏で走り続けていただけでした。 人間の物理学者がだれも完走できなかった計算を、いったいなぜAIの研究班は走り切れたのでしょうか？ この話題の詳細は2026年11月17日に『anthropic.com』にて公開されました。",
+      "id": "1793980457",
+      "sources": [
+        "ナゾロジー"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://www.anthropic.com/research/claude-black-hole-physics",
+          "what_it_states": "Anthropicの研究員Hongbin ChenがClaudeに未解決問題を22件挙げさせ、複数のAIエージェントのコピーを約6週間バックグラウンドで走らせた。2003年に定式化され手計算が膨大で未完だった弱結合N=4超対称ヤン・ミルズ理論におけるホーキング・ペイジ相転移の計算（1次相転移であること）を完了し、2次元重力玩具モデルのモジュラーブートストラップ限界（約c/9.1266）を導出した。査読前のプレプリント（著者Claude名義）として公開され、Leanによる形式検証や物理学者による一部検算が行われたが、いずれも現実の我々の宇宙を表すものではなく実用的な応用はないと明記されている。"
+        },
+        {
+          "kind": "paper",
+          "url": "https://hexagonmath.org/2611.00175v1",
+          "what_it_states": "論文題名『The Hawking–Page transition at weak coupling』。著者としてClaude (Anthropic)が単独でクレジットされ、人間の理解度欄に「物理学者は一部を理解・確認した（some parts）」と注記された42ページのプレプリント。"
+        },
+        {
+          "kind": "paper",
+          "url": "https://hexagonmath.org/2611.00174v1",
+          "what_it_states": "論文題名『The spinless modular bootstrap at large central charge』。中心電荷cが大きい極限での最軽量状態の厳密な上限が12π²/(π²+4 arcsinh² 1)≈9.1266であることを証明した131ページのプレプリント。"
+        }
+      ],
+      "announced_on": "2026-11-17",
+      "headline_claim": "物理学者が解けずにいたブラックホールの難問2つを、AIが自律的な研究班を作って解いたと発表された。",
+      "actual_content": "Anthropicの研究者がClaudeに提示させた22の未解決問題に対し、AIエージェントが約6週間自律的に稼働して計算を行い、2本のプレプリント（未査読論文）を執筆した。解かれたのは「AdS空間などの理論上の玩具宇宙におけるブラックホール相転移の符号計算（2003年に手順が示された計算量過多の難問）」と「理論検証手法（ブートストラップ）の理論限界値（約9.1266）」である。いずれの成果も現実の我々の宇宙を説明するものではなく、実用的な応用もないと公式ブログで明記されている。",
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 4,
+      "life_relevance": 1,
+      "work_relevance": 2,
+      "audience_fit": 2,
+      "tangible": 1,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "AIがブラックホールの難問を解いたって本当？私たちの生活や仕事に関係ある？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "pending",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "Anthropic自身が「現実の宇宙の話ではなく実用的な応用はない」と公表しており、論文も査読を通っていないプレプリントです。さらに論文には「人間が理解できたのは一部だけ」と書かれており、学界での検証完了にはまだ時間がかかります。",
+      "hope_material": "人間なら計算量が多すぎて23年間放置されていた数式の展開を、AI同士が分担・相互検証しながら6週間で完走したという「知的作業を長時間回し切るエージェント能力」の実証としては本物の進歩です。",
+      "investment_related": false,
+      "deja_vu_note": "kl043（AGI到来の条件）、kl054（AIエージェントを多数動かす研究加速）とAIの自律研究という観点で近いテーマ。",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "Anthropic Claude ブラックホール",
+      "jp_title_anchor": [
+        "Claude",
+        "ブラックホール",
+        "Anthropic"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.35,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:41:13",
+      "presented_on": [],
+      "topic_first_date": "2026-11-17",
+      "topic_first_source": "候補 1793980457 のannounced_on（物理学者が解けずにいたブラックホールの難問2つを、AIが解い）",
+      "topic_series": "1793980457",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-23",
+        "title": "物理学者が解けずにいたブラックホールの難問2つを、AIが解いたと開発元が発表",
+        "id": "1793980457",
+        "source": "ナゾロジー"
+      }
+    },
+    {
+      "title": "AGIBOTのG2はスマホ検査で何をするのか ─ Lens Technology（藍思科技）「数十台」の次に見るべきこと",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE4taGJHVzZreTlfN28tQjZXb0pJVjNnZVI4N1JkdV9CMG5ZazlyRUI1SkEzM0RmZ3FVZXNFQU9mZkhFWDBQNE1UOTJWQkQ3Z1NwQ2EzVw?oc=5",
+      "published": "2026-11-23",
+      "source": "Googleニュース（人型ロボット）／note",
+      "source_kind": "media",
+      "outlet": "note",
+      "outlet_host": "note.com",
+      "genre_hint": "humanoid",
+      "summary": "AGIBOTのG2はスマホ検査で何をするのか ─ Lens Technology（藍思科技）「数十台」の次に見るべきこと（note）",
+      "id": "86ba252951",
+      "sources": [
+        "note"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://jp.agibot.com/G2",
+          "what_it_states": "AGIBOT G2は双腕・車輪式の産業グレード具現作業ロボット。全26自由度（単腕7×2、首3、腰脚5、台車4）、アーム可搬重量5kg、車載グレード部品、サブミリ精度組立対応、防護IP42対応"
+        }
+      ],
+      "announced_on": "2026-11-21",
+      "headline_claim": "AGIBOTの双腕人型ロボット「G2」数十台が藍思科技のスマホ試験ラインに導入され、自動搬送や試験機連携を開始した",
+      "actual_content": "AGIBOTと藍思科技（Lens Technology）の戦略提携により、スマートフォンのMMI、アンテナ、カメラ等の試験工程に車輪型双腕ロボット「精灵G2」数十台を配備する計画が報じられた。製品の自動搬送、仕分け、試験機へのローディング・アンローディングを担うとされる。ただし公式プレスリリースの詳細原文や現場ごとの稼働台数・継続稼働の検収データは未公表である。",
+      "verifiability": 2,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 4,
+      "audience_fit": 3,
+      "tangible": 4,
+      "decision_number": 2,
+      "series_fit": 4,
+      "concern_id": "work_ai",
+      "entry_question": "中国の人型ロボット数十台がスマホ工場に入ったのは本当？",
+      "surprise_line": "町工場の経営者が、人型ロボが数十台単位で検査工程に並ぶ光景に驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "「数十台導入」と報じられているものの、公式の納入実績や検収条件、実際の稼働ラインの稼働率は公表されておらず、提携発表ベースの先行報道に留まる点。",
+      "hope_material": "同機は龍旗科技の工場でもタブレット検査工程での実証実績があり、頻繁に機種変更がある電子機器ラインでの汎用双腕ロボットの作業代替が着実に検証され始めている。",
+      "investment_related": false,
+      "deja_vu_note": "kl053（AGIBOTコンビニ24時間稼働）、kl060（メルセデス工場での人型ロボ稼働）",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "AGIBOT 藍思科技",
+      "jp_title_anchor": [
+        "AGIBOT",
+        "藍思科技"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 5,
+      "overall_score": 3.05,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "excluded",
+      "excluded_reason": "一次資料で確認できない",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:41:25",
+      "presented_on": [],
+      "topic_first_date": "2026-11-21",
+      "topic_first_source": "候補 86ba252951 のannounced_on（AGIBOTのG2はスマホ検査で何をするのか ─ Lens ）",
+      "topic_series": "86ba252951",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-23",
+        "title": "AGIBOTのG2はスマホ検査で何をするのか ─ Lens Technology（藍思科技）「数十台」の次に見るべきこと",
+        "id": "86ba252951",
+        "source": "Googleニュース（人型ロボット）／note"
+      }
+    },
+    {
+      "title": "Uber Eats向け自律型ドローン配送、ヒューストンでZiplineが開始",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOOFItS1Rzc2xxR1pZNnQ2akxwN05FckFGRkVlQlJWRGtSMF9sM3ZubFBac0lUR3lBeW01eTVHTEs1SFJRaVlCSENrNGppeVNZdF80MzJFSGZZYmhqZHc2MmZabG44UkpYdnFfMHhyQVhzQUgyX19EdE9UVllWeW1GRlhuY01HLXRTejctMDNiM1dta0VXUDRB?oc=5",
+      "published": "2026-11-17",
+      "source": "Googleニュース（ドローン配送 開始）／Unite.AI",
+      "source_kind": "media",
+      "outlet": "Unite.AI",
+      "outlet_host": "unite.ai",
+      "genre_hint": "life_tech",
+      "summary": "Uber Eats向け自律型ドローン配送、ヒューストンでZiplineが開始（Unite.AI）",
+      "series_query": "autonomy_logistics_watch",
+      "id": "0b4342a0dd",
+      "sources": [
+        "Unite.AI",
+        "Securities.io",
+        "Mezha.net"
+      ],
+      "dup_ids": [
+        "6df1d55a4f",
+        "b36cd31b4c"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_blog",
+          "url": "https://www.zipline.com/newsroom",
+          "what_it_states": "2026年11月17日よりヒューストン郊外（Spring地区）でUber Eats向けドローン配送を商用開始。時速最大70マイル（約112km/h）、高度約300フィート（約90m）から着陸せずテザー（ワイヤー）で保護ポッドを下ろして庭先等に荷降ろし。重量上限8ポンド（約3.6kg）、半径10マイル圏内を10分未満で配送可能。2029年末までに全米複数都市へ拡大し日量100万件配送を目標"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://investor.uber.com/news-events/news/news-details/2026/Uber-and-Zipline-Partner-to-Bring-Drone-Delivery-to-Millions-of-Americans/default.aspx",
+          "what_it_states": "2026年8月にUberとZiplineが提携締結・戦略出資を発表。Uber Eatsアプリのトップ画面にドローン配送オプションを設け、提携チェーン店や地元店舗から数分で注文品を自動配送する計画"
+        }
+      ],
+      "announced_on": "2026-11-17",
+      "headline_claim": "Uber Eatsが米ヒューストンで自律型ドローンによる食品配達を正式に開始した。",
+      "actual_content": "Ziplineと提携し、テキサス州スプリング地区のUber Eatsアプリ上で「ドローン配送」を選択可能になった。機体は時速約112kmで高度約90mを飛行し、着陸せずにワイヤーで最大約3.6kgまでの食事ポッドを庭先などに吊り降ろす。半径約16km圏内なら10分未満で届くが、現時点の対応エリアは郊外の特定地域と一部加盟店に限られ、騒音や悪天候時の制限、着地スペース（庭や私有地）の確保が必要である。",
+      "verifiability": 5,
+      "hype_gap": 2,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 3,
+      "work_relevance": 3,
+      "audience_fit": 3,
+      "tangible": 5,
+      "decision_number": 3,
+      "series_fit": 3,
+      "concern_id": "food",
+      "entry_question": "ウーバーのドローン配送は本当？もう実用化された？",
+      "surprise_line": "出前を頼む人が、空から吊り下げワイヤーで10分で届く光景に驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "利用できるのはヒューストン郊外の庭付き一戸建てを中心とした特定エリアのみ。集合住宅や電線の多い日本の住宅密集地ではワイヤーでの荷降ろし自体が極めて難しく、すぐ日本にそのまま来るわけではない。",
+      "hope_material": "着陸せず高度90mからテザーで静かに荷物だけを降ろす仕組み（Platform 2系技術）により、従来のヘリ型ドローン着陸時の砂埃や接触事故リスクを大幅に減らし、一般アプリ（Uber Eats）からの通常注文フローに完全統合された。",
+      "investment_related": false,
+      "deja_vu_note": "kl052（ローソンの荷物がドローンで届く日は？KDDIとWingの提携）とドローン配送テーマで類似",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "Uber Eats Zipline",
+      "jp_title_anchor": [
+        "Uber Eats",
+        "Zipline",
+        "ドローン"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 5,
+      "overall_score": 3.45,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:41:41",
+      "presented_on": [],
+      "topic_first_date": "2026-11-17",
+      "topic_first_source": "候補 0b4342a0dd のannounced_on（Uber Eats向け自律型ドローン配送、ヒューストンでZi）",
+      "topic_series": "0b4342a0dd",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-17",
+        "title": "Uber Eats向け自律型ドローン配送、ヒューストンでZiplineが開始",
+        "id": "0b4342a0dd",
+        "source": "Googleニュース（ドローン配送 開始）／Unite.AI"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://www.zipline.com/newsroom",
+          "ok": true,
+          "status": "HTTP 200「Drone Delivery Insights | Zipl」",
+          "page_title": "Drone Delivery Insights | Zipline",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "official_blog"
+        },
+        {
+          "url": "https://investor.uber.com/news-events/news/news-details/2026/Uber-and-Zipline-Partner-to-Bring-Drone-Delivery-to-Millions-of-Americans/default.aspx",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+          "method": "http",
+          "kind": "press_release"
+        }
+      ],
+      "primary_verified_at": "2026-11-24T08:50:29",
+      "primary_history": [
+        {
+          "at": "2026-11-24T08:50:29",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://www.zipline.com/newsroom",
+              "status": "HTTP 200「Drone Delivery Insights | Zipl」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://investor.uber.com/news-events/news/news-details/2026/Uber-and-Zipline-Partner-to-Bring-Drone-Delivery-to-Millions-of-Americans/default.aspx",
+              "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+              "final_url": "",
+              "ok": null
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://www.zipline.com/newsroom",
+          "ok": true,
+          "status": "HTTP 200「Drone Delivery Insights | Zipl」"
+        },
+        {
+          "url": "https://investor.uber.com/news-events/news/news-details/2026/Uber-and-Zipline-Partner-to-Bring-Drone-Delivery-to-Millions-of-Americans/default.aspx",
+          "ok": null,
+          "status": "HTTP 403（ボット拒否の可能性。ブラウザで確認）"
+        }
+      ],
+      "url_ok": null,
+      "url_status": "zipline.com: HTTP 200「Drone Delivery Insights | Zipl」 ／ investor.uber.com: HTTP 403（ボット拒否の可能性。ブラウザで確認）",
+      "url_checked_at": "2026-11-24T08:50:29"
+    },
+    {
+      "title": "人型ロボットX1 Neoが（ゆっくりと）家々に近づいてくる",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPR0hjWFNhaTJXc21GZ0l1d01KMjZYVWdqNzFLM2s0bkp3Z2x2Q2p6cnRXMDRqNjhZckJMcl9TMU1iS3RETy1MdlNLeXlOekRIaE9Bd0Iwc2ZIU1lKN0R5T1dLQk9fTmhuUTlwRzdaOGNPNXZvaW40WllqYWloSVl2VVlnbDdSYzltbENtaTl4RXpUai10?oc=5",
+      "published": "2026-11-22",
+      "source": "Googleニュース（ヒューマノイド）／Futuro Prossimo",
+      "source_kind": "media",
+      "outlet": "Futuro Prossimo",
+      "outlet_host": "ja.futuroprossimo.it",
+      "genre_hint": "humanoid",
+      "summary": "人型ロボットX1 Neoが（ゆっくりと）家々に近づいてくる（Futuro Prossimo）",
+      "id": "e715b5e7fb",
+      "sources": [
+        "Futuro Prossimo"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://www.1x.tech/order",
+          "what_it_states": "1X Technologiesが家庭向け二足歩行ロボット「NEO」の予約を受け付け（本体購入20,000ドル、または月額499ドルのサブスクリプション）。2026年内に米国で初期配送を開始し、2027年以降に他地域展開を予定。重量30kg（66ポンド）、全高167cm、可搬重量20kg（44ポンド）、稼働時間は2〜4時間、動作音22dB、筋腱駆動（Tendon Drive）構造"
+        },
+        {
+          "kind": "official_blog",
+          "url": "https://www.1x.tech/stories/neo-factory",
+          "what_it_states": "米国カリフォルニア州ヘイワード工場で年間1万台の初期生産能力を整備。量産初期ロットはまず社内チームおよび社員宅でのテスト・開発加速に優先配分し、2026年内の一般顧客への配送開始を目指して検証中"
+        }
+      ],
+      "announced_on": "2026-04-30",
+      "headline_claim": "家庭用人型ロボット「NEO」が家々に近づいており、2026年内の家庭導入に向けて実用化が進んでいる。",
+      "actual_content": "ノルウェー発の1X Technologiesが開発する家庭向けヒューマノイド「NEO」は、金属フレームではなく筋腱駆動と柔らかいニット外装を採用した30kgの家庭用ロボットです。2万ドル（約300万円）または月額499ドルで予約受付を開始し、年間1万台規模の工場を稼働させていますが、現段階での家庭導入は「社員宅での社内テスト運用」にとどまっています。初期段階の家事動作は完全自律ではなく、遠隔オペレーター（人間）による遠隔操作・サポートと自律動作のハイブリッドであり、一般家庭への本格配備にはプライバシー保護や通信の安全確保など高い壁が残っています。",
+      "verifiability": 4,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 4,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 2,
+      "audience_fit": 3,
+      "tangible": 5,
+      "decision_number": 4,
+      "series_fit": 4,
+      "concern_id": "housework",
+      "entry_question": "2万ドルの家庭用人型ロボットNEOは、本当に今年家に来て家事をやってくれる？",
+      "surprise_line": "「家事を任せられる」と期待した人が、初期は遠隔の人間が裏で操作すると知って驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "「2026年配送」と謳いながら、現在配備されているのは社員宅での試験運用だけです。しかも初期モデルは自律AIではなく「遠隔のオペレーターがカメラ越しに操作する」仕組みが含まれており、居間や寝室の映像を他人に覗かれるプライバシーの壁をどうクリアするのか具体策が見えていません。",
+      "hope_material": "油圧や剥き出しの金属ではなく、重さ30kg・稼働音22dB（冷蔵庫並み）の筋腱駆動と柔らかい外装で、人や家具にぶつかっても安全な家庭特化の機体設計が量産工場まで到達している点は大きな前進です。",
+      "investment_related": false,
+      "deja_vu_note": "kl051（テスラOptimusの現場配備）、kl053（AGIBOTのコンビニ稼働）、kl060（メルセデス工場の人型ロボ）に続くヒューマノイド定点観測だが、工場・店舗向けではなく「一般家庭の家事代行」に特化した機種の検証として差別化できる。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "1X NEO ロボット",
+      "jp_title_anchor": [
+        "1X",
+        "NEO"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 1,
+      "overall_score": 2.55,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:41:59",
+      "presented_on": [],
+      "topic_first_date": "2026-04-30",
+      "topic_first_source": "候補 e715b5e7fb のannounced_on（人型ロボットX1 Neoが（ゆっくりと）家々に近づいてくる）",
+      "topic_series": "e715b5e7fb",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-22",
+        "title": "人型ロボットX1 Neoが（ゆっくりと）家々に近づいてくる",
+        "id": "e715b5e7fb",
+        "source": "Googleニュース（ヒューマノイド）／Futuro Prossimo"
+      }
+    },
+    {
+      "title": "167年の難問リーマン予想、AIと証明したとの発表に「人が読める証明」がない理由",
+      "url": "https://nazology.kusuguru.co.jp/archives/210477",
+      "published": "2026-11-23",
+      "source": "ナゾロジー",
+      "source_kind": "media",
+      "summary": "AI企業アンソロピック（Anthropic）に所属する数学者によって、同社のAI「Claude」と取り組んだ研究で、167年ものあいだ誰にも解かれていない数学の難問「リーマン予想」の証明を見つけたと信じる、という声明が出されました。 ふつうに考えれば、これほどの難問が解けたなら、まず人が読める証明の文書が公開されるはずです。ところが差し出されたのは、機械が正しさを検算するための言語で書かれたコードだけでした。 査読も第三者の確認も済んでいないなか、いったいなぜ、数学で指折りの有名な難問の証明が、人には読めない証明という形で世に出ることになったのでしょうか？ この話題の詳細は2026年11月20日に『New Scientist』にて公開されました。",
+      "id": "890f85a562",
+      "sources": [
+        "ナゾロジー"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://alpo.ge",
+          "what_it_states": "Anthropicの研究者Levent Alpögeが2026年11月20日に公開した4ページのノート『Remark』。Claudeとの約6週間の共同研究によりリーマン予想および一般化リーマン予想の証明を発見したと報告。証明は数式論文ではなく、14分割された計175,187個のLean 4ファイル（展開後約61.5GB、約1,700万行のコード、印刷すると25万ページ超相当）として公開された"
+        }
+      ],
+      "announced_on": "2026-11-20",
+      "headline_claim": "Anthropicの研究者がAI「Claude」と共に数学の最難問リーマン予想を証明したと発表したが、人間が読める論文が存在しない。",
+      "actual_content": "Anthropicの研究者Levent Alpöge氏は、Claudeを用いてリーマン予想および一般化リーマン予想を形式化したとする175,187個のLean 4ファイル（約1,700万行）を公開した。Leanの検証カーネルやコミュニティの独立チェッカーにより構文上の正当性（証明コードのエラーなし）は即座に確認されたが、文章化すると25万ページ超に及び、人間が全体像や新しい数学的アイデアを理解できていない状態である。また、Clay数学研究所のミレニアム懸賞問題の認定条件である「査読付き学術誌への掲載と2年間の学界検証」は経ていない。",
+      "verifiability": 4,
+      "hype_gap": 3,
+      "promise": 2,
+      "debate": 4,
+      "wonder": 4,
+      "life_relevance": 1,
+      "work_relevance": 1,
+      "audience_fit": 2,
+      "tangible": 1,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "AIが167年の難問を解いたって本当？私たちの暮らしに関係ある？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "pending",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "計算機言語Leanで書かれた約1,700万行のコードしかなく、文章にすると25万ページ超で人間が誰一人中身を理解できていない点。数学界の公式認定（論文誌掲載と2年間の検証）もまだこれからである点。",
+      "hope_material": "AIが提示した膨大な論理ステップを、数学証明検証ソフト「Lean」のカーネルが機械的に矛盾なく検算できたこと自体は、形式数学における確かなマイルストーンである点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "リーマン予想 Anthropic",
+      "jp_title_anchor": [
+        "リーマン予想",
+        "Anthropic"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.3,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:44:59",
+      "presented_on": [],
+      "topic_first_date": "2026-11-20",
+      "topic_first_source": "候補 7affad66a7 のannounced_on（Anthropicの数学者、「Claude」と共同で「リーマ）",
+      "topic_series": "be5db22880",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-20",
+        "title": "Anthropicの数学者、Claudeと共同でリーマン予想を攻略と主張 証明はLeanコードのみ公開、検証待ち",
+        "id": "4968dffd8c",
+        "source": "Googleニュース（Anthropic 科学 発見 論文）／BigGo ファイナンス"
+      }
+    },
+    {
+      "title": "Anthropicの研究者がAI「Claude」とともに数学の未解決問題「リーマン予想」を証明したと発表、1700万行の証明コードを専門家が検証中",
+      "url": "https://gigazine.net/news/20261122-anthropic-claude-said-riemann-hypothesis-solved/",
+      "published": "2026-11-22",
+      "source": "GIGAZINE",
+      "source_kind": "media",
+      "summary": "AI開発企業Anthropicの研究者であるレベント・アルポゲ氏が2026年11月20日、AnthropicのAIモデルであるClaudeとともに数学の未解決問題であるリーマン予想を証明したと発表しました。アルポゲ氏は約1700万行に及ぶ証明コードを公開しており、マサチューセッツ工科大学(MIT)などの研究者による独立した検証で証明の正しさを確認する複数の検査に成功しています。リーマン予想には100万ドル(約1億5800万円)の懸賞金が設定されていますが、記事作成時点では今回の証明はまだ正式に認められておらず、今後も専門家による評価が必要となります。 続きを読む...",
+      "id": "be5db22880",
+      "sources": [
+        "GIGAZINE"
+      ],
+      "dup_ids": [
+        "89d85d61a9"
+      ],
+      "genre_hint": "ai",
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://alpo.ge/remark.pdf",
+          "what_it_states": "Anthropicの研究者で数学者のLevent Alpöge氏が、Claudeと共同でリーマン予想（および一般化リーマン予想）の証明を発見し、仮定なしの形式的証明としてLeanコード（約1700万行）を公開したと宣言"
+        },
+        {
+          "kind": "official_blog",
+          "url": "https://lean-lang.org/blog/2026-11-21-riemann-hypothesis-verification/",
+          "what_it_states": "Lean FROとMathlib Initiativeの共同声明。Alpöge氏の公開した1700万行のLeanコードがMathlibのリーマン予想の定義と正確に一致していること、ビルドエラーなくコンパイルできること、Lean公式カーネルおよび独立した複数の証明検証器（con-leche等）で証明が通過したことを確認・認証したと報告"
+        }
+      ],
+      "announced_on": "2026-11-20",
+      "headline_claim": "Anthropicの研究者がAI「Claude」と共に数学界最大の未解決問題「リーマン予想」を証明したと発表し、1700万行の証明コードが専門家によって検証されている。",
+      "actual_content": "Anthropicの数学者Levent Alpöge氏が、Claudeと共に約6週間の共同作業を経てリーマン予想の完全な証明を作成したと2026年11月20日に発表した。証明は形式検証言語Leanで記述された約1700万行（テキスト換算で約1GB、25万ページ相当）のコードとして公開され、Lean FROとMathlib Initiativeによる独立した機械検証で、文の定義の正確性と証明カーネルの通過が認証された。ただし、AIが単独でゼロから解いたのではなく、超一流の数学者が方針を緻密に誘導した協働成果であり、人間が理解できる数学的な解説や新理論の抽出は数ヶ月以上かけて検証・整理される見通しである。",
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 5,
+      "life_relevance": 1,
+      "work_relevance": 2,
+      "audience_fit": 2,
+      "tangible": 1,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "AIがリーマン予想を解いたって本当？私たちの仕事や暮らしにも関係ある？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "pending",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "AIが勝手に解いたのではなく、天才数学者が何週間も手取り足取り誘導した1700万行の膨大なコードであり、人間が読んで理解できる数学の論文になるにはまだ専門家の手作業が必要。",
+      "hope_material": "機械検証言語Leanにより、1700万行の論理ステップに矛盾がないことは複数の独立検証器で即座に確認されており、数学の難問解決における「人間＋AI」の強力な協働モデルが実証された。",
+      "investment_related": false,
+      "deja_vu_note": "kl043（AGIは2027年に来る？）",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "Claude リーマン予想",
+      "jp_title_anchor": [
+        "Claude",
+        "リーマン予想"
+      ],
+      "announcement_type": "research",
+      "freshness": 5,
+      "overall_score": 3.5,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:45:09",
+      "presented_on": [],
+      "topic_first_date": "2026-11-20",
+      "topic_first_source": "候補 7affad66a7 のannounced_on（Anthropicの数学者、「Claude」と共同で「リーマ）",
+      "topic_series": "be5db22880",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-20",
+        "title": "Anthropicの数学者、Claudeと共同でリーマン予想を攻略と主張 証明はLeanコードのみ公開、検証待ち",
+        "id": "4968dffd8c",
+        "source": "Googleニュース（Anthropic 科学 発見 論文）／BigGo ファイナンス"
+      }
+    },
+    {
+      "title": "テスラの人型ロボ「Optimus」来年には皿洗いやゴミ捨てなど家事にも対応（ビジネス＋IT）",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1ESWpydU5rcDB6QnhwT29JUWt1Y0tlempSSE85WWI2alQwempld0pYYnhGN2NwWUthX0RreFk4SjBqYm12UGJGSHQyeDlablhuRnl6ZlBsMElQN19lTjF4SEV4aU15MjlLRmVhNHN5MEhVYU5qdWxJSC1iNl9JV0k?oc=5",
+      "published": "2026-11-23",
+      "source": "Googleニュース（人型ロボット）／Yahoo!ニュース",
+      "source_kind": "media",
+      "outlet": "Yahoo!ニュース",
+      "outlet_host": "news.yahoo.co.jp",
+      "genre_hint": "humanoid",
+      "summary": "テスラの人型ロボ「Optimus」来年には皿洗いやゴミ捨てなど家事にも対応（ビジネス＋IT）（Yahoo!ニュース）",
+      "id": "9ee1db7be0",
+      "sources": [
+        "Yahoo!ニュース"
+      ],
+      "dup_ids": [
+        "c8b3b11577"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://www.youtube.com/watch?v=DY8clym2-jQ",
+          "what_it_states": "2026年11月18日開催のTomorrowXカンファレンスにおけるインタビュー。マスク氏は『家庭でゴミ出しや食器の片付けができるようになるのはいつか』との問いに対し、『12〜18カ月以内にそうした作業が可能（capable）になると思う』と口頭で発言したのみで、実験データ・成功率の数値・論文・無編集の自律動作記録などは提示していない"
+        }
+      ],
+      "announced_on": "2026-11-18",
+      "headline_claim": "テスラの人型ロボ「Optimus」が、来年には皿洗いやゴミ捨てなどの家事に対応できるようになるとイーロン・マスク氏が表明した。",
+      "actual_content": "マスク氏が投資家向けカンファレンスで『12〜18カ月以内に家庭での皿の片付けやゴミ捨てが可能になるだろう』と見通しを口頭で述べたもの。現時点で未知の家庭環境で自律的に家事を完遂した検証データや論文は公開されておらず、一般販売の時期や価格も未定である。",
+      "verifiability": 1,
+      "hype_gap": 5,
+      "promise": 1,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 4,
+      "work_relevance": 2,
+      "audience_fit": 3,
+      "tangible": 3,
+      "decision_number": 1,
+      "series_fit": 2,
+      "concern_id": "housework",
+      "entry_question": "テスラの人型ロボが来年、皿洗いやゴミ捨てをやってくれるって本当？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "一次資料はカンファレンスでのマスク氏の口頭コメントだけで、論文も無編集の実験検証データも一切出ていない。過去のテスラのデモでも遠隔操作（テレオペレーション）疑惑が指摘されており、散らかった一般家庭での完全自律タスクの根拠はない。",
+      "hope_material": "",
+      "investment_related": false,
+      "deja_vu_note": "kl051でテスラOptimusの工場向け生産開始を扱ったばかり。今回は家庭向け家事という切り口だが、客観的な技術進歩の数字がなくマスク氏の口頭予告にとどまる。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "テスラ Optimus 家事",
+      "jp_title_anchor": [
+        "Optimus",
+        "テスラ"
+      ],
+      "announcement_type": "event",
+      "freshness": 5,
+      "overall_score": 3.05,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "excluded",
+      "excluded_reason": "一次資料で確認できない",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:45:20",
+      "presented_on": [],
+      "topic_first_date": "2026-10-21",
+      "topic_first_source": "候補 e61b1b9be2 のannounced_on（テスラの人型ロボ「Optimus」、生産開始 週2万台には「）",
+      "topic_series": "f13864480b",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-20",
+        "title": "Musk Says Optimus Will Do the Dishes “Within 12-18 Months.” Here’s Where Tesla’s Robot Stands",
+        "id": "f13864480b",
+        "source": "Googleニュース（家庭用ロボット）／TIKR.com"
+      }
+    },
+    {
+      "title": "Musk Says Optimus Will Do the Dishes “Within 12-18 Months.” Here’s Where Tesla’s Robot Stands",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQTGNCNEFYUXJlVkpMbnhWRExqZzFmTVB1TFRfUnRNeUJIX3RhVzhCMFVlODNoNi1HNjNmTmpEdFBfYVFzWEtCTnctT1hkekV0MU1Lck5Hb3ZjY1ptQnlKamstUmVwWUtMTDA1N2loTGc1clV6NjJjV0Z0bkpOZWJFaVZLeDVvd1pJUVVZUWJzUlU4RE9ia0ZUei1zWVJXVFdVU292RkJ3YmQzZ19hYlVrazBvdWxhaUot?oc=5",
+      "published": "2026-11-20",
+      "source": "Googleニュース（家庭用ロボット）／TIKR.com",
+      "source_kind": "media",
+      "outlet": "TIKR.com",
+      "outlet_host": "tikr.com",
+      "genre_hint": "life_tech",
+      "summary": "Musk Says Optimus Will Do the Dishes “Within 12-18 Months.” Here’s Where Tesla’s Robot Stands（TIKR.com）",
+      "id": "f13864480b",
+      "sources": [
+        "TIKR.com"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://www.youtube.com/watch?v=DY8clym2-jQ",
+          "what_it_states": "TomorrowX Summit（2026年11月18日）のインタビュー書き起こし。司会者から家庭でのゴミ出しや皿洗いについて問われ、マスク氏は『Optimusは12〜18カ月以内にそうした作業が可能になる（capable）と思う』と発言。一方で家庭への販売・出荷時期や価格は示しておらず、外部企業への初期納品は2027年末頃を想定、まずは24時間稼働の鉱山や工場などの産業用途が先であると述べている"
+        }
+      ],
+      "announced_on": "2026-11-18",
+      "headline_claim": "イーロン・マスク氏が「人型ロボットOptimusは12〜18カ月以内に皿洗いやゴミ出しなどの家事ができるようになる」と発言した。",
+      "actual_content": "マスク氏はTomorrowXカンファレンスでの質疑応答で、Optimusがゴミ出しや皿洗いなどの複数工程の家事をこなせる能力（capable）を持つ時期を「12〜18カ月以内」と予測した。ただしこれは家庭向けの出荷や販売開始の時期ではなく、価格や家庭向け生産計画は一切発表されていない。外部企業への出荷自体も2027年末頃が目標とされており、優先順位は24時間稼働できる鉱山や精錬所などの重工業現場が先で、一般家庭への導入はその後になると説明されている。",
+      "verifiability": 2,
+      "hype_gap": 5,
+      "promise": 2,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 3,
+      "work_relevance": 2,
+      "audience_fit": 4,
+      "tangible": 3,
+      "decision_number": 1,
+      "series_fit": 4,
+      "concern_id": "housework",
+      "entry_question": "テスラのロボットが1年半で皿洗いをしてくれるって本当？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "pending",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "発表されたのは製品や実証結果ではなく、イベント登壇時のマスク氏の口頭予測（いつもの楽観的なタイムライン）に過ぎない。皿洗いができる「能力を持つ」ことと、一般家庭で安全に買えて使えることは全く別で、家庭向け発売日も価格も一次資料には何も存在しない。",
+      "hope_material": "工場内での初期量産が進められており、遠隔操作ではない自律動作の実環境デモを今後数週間〜数カ月以内に行う計画を示している点。",
+      "investment_related": false,
+      "deja_vu_note": "kl051（テスラの人型ロボOptimusが生産開始。現場に来るのはいつ？）の続報だが、今回は実態の進展というよりCEOの口頭予測。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "テスラ Optimus 皿洗い",
+      "jp_title_anchor": [
+        "Optimus",
+        "皿洗い",
+        "テスラ"
+      ],
+      "announcement_type": "event",
+      "freshness": 5,
+      "overall_score": 3.1,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "excluded",
+      "excluded_reason": "一次資料で確認できない",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:45:34",
+      "presented_on": [],
+      "topic_first_date": "2026-10-21",
+      "topic_first_source": "候補 e61b1b9be2 のannounced_on（テスラの人型ロボ「Optimus」、生産開始 週2万台には「）",
+      "topic_series": "f13864480b",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-20",
+        "title": "Musk Says Optimus Will Do the Dishes “Within 12-18 Months.” Here’s Where Tesla’s Robot Stands",
+        "id": "f13864480b",
+        "source": "Googleニュース（家庭用ロボット）／TIKR.com"
+      }
+    },
+    {
+      "title": "【医療新世紀】糖尿病なら膵臓がんに注意、東北大チーム 病状変化や痩せが早期発見の契機に",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBOaFd0MGo3X3luUF8zZUVyelhEQkxvR3RqcFpldjI3RWtUc3dKanp2X1JESXFpWXMteEdYV1hOOTZyekYtMGxRSFVlQUhUUnkzTHhKQ1JGc2FnWE1TT1E?oc=5",
+      "published": "2026-11-22",
+      "source": "Googleニュース（がん 新しい治療 研究）／沖縄タイムス社",
+      "source_kind": "media",
+      "outlet": "沖縄タイムス社",
+      "outlet_host": "okinawatimes.co.jp",
+      "genre_hint": "medical",
+      "summary": "【医療新世紀】糖尿病なら膵臓がんに注意、東北大チーム 病状変化や痩せが早期発見の契機に（沖縄タイムス社）",
+      "id": "31b4d65a26",
+      "sources": [
+        "沖縄タイムス社",
+        "山陰中央新報デジタル"
+      ],
+      "dup_ids": [
+        "fd147b8f5b"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.med.tohoku.ac.jp/55799/",
+          "what_it_states": "東北大学大学院医学系研究科や国立国際医療研究所などのチームが、糖尿病学会認定教育施設で糖尿病を合併した膵がん患者2,291例を全国調査・解析。76.0%は膵がん診断の3年以上前から糖尿病を有していた。糖尿病関連の変化（新規発症や血糖悪化）を契機に診断された群は、腹痛等の症状契機と比べ早期（ステージ0/IA）が有意に多く（11.0% vs 3.9%、調整オッズ比2.87）、ステージIVが少なかった（26.1% vs 49.5%）。また診断1年前と比べ66.9%で2.5%以上の体重減少、46.4%でHbA1c値が1%以上上昇していた。"
+        },
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.3390/cancers18184518",
+          "what_it_states": "国際学術誌Cancers（2026年9月16日掲載）にて、糖尿病合併膵がん2,291例の臨床的特徴と早期発見の手がかりとしての血糖コントロール悪化および体重減少の関連を報告。"
+        }
+      ],
+      "announced_on": "2026-09-30",
+      "headline_claim": "糖尿病の急な悪化や体重減少に注意することで、難治性の膵臓がんを早期発見できる手がかりになる。",
+      "actual_content": "日本糖尿病学会認定教育施設の患者2,291例の後ろ向き解析により、糖尿病合併膵がん患者の76%は診断3年以上前からの長期罹患者であることが判明しました。糖尿病の急な悪化や新規発症を契機に見つかった例は、腹痛などの症状が出てから見つかった例に比べて早期（ステージ0/IA）の割合が11.0%対3.9%と約2.9倍高く、ステージIVの割合は26.1%対49.5%と半減していました。ただし、血糖悪化契機でも早期発見率は1割程度にとどまり、これだけで確実に早期診断できるスクリーニング法が確立したわけではなく、今後の絞り込み指標の構築が必要です。",
+      "verifiability": 5,
+      "hype_gap": 2,
+      "promise": 4,
+      "debate": 2,
+      "wonder": 3,
+      "life_relevance": 5,
+      "work_relevance": 1,
+      "audience_fit": 3,
+      "tangible": 2,
+      "decision_number": 3,
+      "series_fit": 1,
+      "concern_id": "cancer",
+      "entry_question": "血糖値が急に上がって体重が減ったら、膵臓がんを疑って検査を受けるべき？",
+      "surprise_line": "糖尿病歴の長い人が、生活習慣を変えていないのに痩せて血糖値が急悪化する予兆に驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "soon"
+      },
+      "tsukkomi_material": "「糖尿病の変化を契機に発見」できても早期（ステージ0/IA）で見つかったのは全体の11%にすぎず、約26%はすでにステージIVです。また体重減少や血糖悪化は他の原因でもよく起きるため、誰にどのタイミングで高額な画像検査（MRIや超音波内視鏡など）を行うかの具体的な基準はまだ研究段階です。",
+      "hope_material": "既存の糖尿病患者でも「急な血糖値の悪化（HbA1c 1%以上上昇など）」と「意図しない体重減少（2.5%以上）」が重なった場合、自覚症状が出る前のかかりつけ医での早期精密検査によって、早期発見率を症状発現時の約3倍（3.9%→11.0%）に引き上げられる具体的な実態が2,291例の全国データで示されました。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "東北大学 膵がん 糖尿病",
+      "jp_title_anchor": [
+        "膵がん",
+        "糖尿病",
+        "東北大"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.55,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:45:49",
+      "presented_on": [],
+      "topic_first_date": "2026-09-30",
+      "topic_first_source": "候補 31b4d65a26 のannounced_on（【医療新世紀】糖尿病なら膵臓がんに注意、東北大チーム 病状変）",
+      "topic_series": "31b4d65a26",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-22",
+        "title": "【医療新世紀】糖尿病なら膵臓がんに注意、東北大チーム 病状変化や痩せが早期発見の契機に",
+        "id": "31b4d65a26",
+        "source": "Googleニュース（がん 新しい治療 研究）／沖縄タイムス社"
+      }
+    },
+    {
+      "title": "「スローランニング」で健康に １０分間でも効果、筑波大チーム",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0yX3NwdER2bjUxNjhXR1Q1SE81LVdUTFdVQ0VybjFXU0hUNmoxMXpMUm5feXN2UmJ1S0lzS3ZDaEhQbXd1NXFzVHRPMGlOcUZfdnZsQUt3dEZzdktJNmc?oc=5",
+      "published": "2026-11-23",
+      "source": "Googleニュース（研究 食事 健康 効果）／沖縄タイムス社",
+      "source_kind": "media",
+      "outlet": "沖縄タイムス社",
+      "outlet_host": "okinawatimes.co.jp",
+      "genre_hint": "food_health",
+      "summary": "「スローランニング」で健康に １０分間でも効果、筑波大チーム（沖縄タイムス社）",
+      "id": "d522c7d8dd",
+      "sources": [
+        "沖縄タイムス社"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.tsukuba.ac.jp/journal/medicine-health/20260713140000.html",
+          "what_it_states": "時速3〜6km（最高酸素摂取量の約35%に相当する超低強度）で10分間のスローランニングを行うことで、実行機能を反映するストループ干渉時間の短縮と、快適度・覚醒度の向上が確認された。fNIRS測定により左背外側前頭前野および左前頭極の活動亢進が確認された"
+        },
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1162/IMAG.a.1297",
+          "what_it_states": "健常な若年成人男女24人（平均22歳）を対象としたクロスオーバー比較実験。トレッドミルでの10分間の超低強度走と安静対照条件を比較し、頭部加速度（上下動）と気分向上の間に正の相関が示された"
+        }
+      ],
+      "announced_on": "2026-07-13",
+      "headline_claim": "時速3〜6キロの歩くような超低速ランニングでも、わずか10分間で脳が活性化し判断力や気分が向上する。",
+      "actual_content": "健常な若年成人男女24人（平均22歳）を対象に、トレッドミル上で時速約3〜6km（最高酸素摂取量の約35%に相当する超低強度）の走運動を10分間実施させました。安静時と比較して、終了後にストループ課題の干渉時間が短縮し、二次元気分尺度での快適度・覚醒度が有意に向上するとともに、fNIRS計測で左背外側前頭前野や左前頭極の血流活性化が確認されました。ただし、被験者は体力のある若年者24人の即時効果測定にとどまり、中高齢者や運動習慣のない人での検証や長期的な健康・認知症予防効果は今後の検証課題とされています。",
+      "verifiability": 5,
+      "hype_gap": 2,
+      "promise": 4,
+      "debate": 2,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 2,
+      "audience_fit": 3,
+      "tangible": 2,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "dementia",
+      "entry_question": "歩く速度で10分走るだけで、本当に脳の働きは良くなる？",
+      "surprise_line": "運動が苦手な人が、早歩き並みの超スロー走10分で前頭葉が活発になると知って驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "実験の対象は平均22歳の健康な若者24人の一時的な変化だけで、中高年や運動不足の人がやっても同じ効果が出るかや、認知機能の低下を防げるかはまだ確かめられていません。",
+      "hope_material": "心拍がほとんど上がらない時速3〜6kmという「非常に楽」な運動負荷でも、脳の実行機能を司る前頭前野の血流が高まり頭がすっきりすることが客観的な脳機能計測で確かめられています。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "筑波大 スローランニング",
+      "jp_title_anchor": [
+        "スローランニング",
+        "筑波大"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.45,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:46:02",
+      "presented_on": [],
+      "topic_first_date": "2026-07-13",
+      "topic_first_source": "候補 d522c7d8dd のannounced_on（「スローランニング」で健康に １０分間でも効果、筑波大チーム）",
+      "topic_series": "d522c7d8dd",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-23",
+        "title": "「スローランニング」で健康に １０分間でも効果、筑波大チーム",
+        "id": "d522c7d8dd",
+        "source": "Googleニュース（研究 食事 健康 効果）／沖縄タイムス社"
+      }
+    },
+    {
+      "title": "ロックウェルがAIで狙う工程革新　各エージェントを“指揮”する新製品とは",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2611/24/news024.html",
+      "published": "2026-11-23",
+      "source": "ITmedia AI+",
+      "source_kind": "media",
+      "summary": "製造業が人手不足や国際競争に直面する中、ロックウェル オートメーションは「自動化から自律化へ」の変革を提唱する。LLMの進化やフィジカルAIの台頭を背景に、設備全体が自ら学習・最適化する次世代生産システムの姿とはどのようなものか。同社主催の「Automation Fair」で披露された新技術「FactoryTalk Conductor」やソフトウェア主導の生産基盤、今後の展望を聞いた。",
+      "id": "d6fe9f887c",
+      "sources": [
+        "ITmedia AI+"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.prnewswire.com/news-releases/rockwell-automation-introduces-factorytalk-conductor-an-ai-native-orchestration-platform-for-industrial-automation-302282296.html",
+          "what_it_states": "FactoryTalk Conductorは産業用オートメーション向けのAIネイティブ・オーケストレーション基盤。自然言語で指示を入力すると複数ソフト（Studio 5000 Logix Designer、Logix Echo、Emulate3D、FactoryTalk Optix）とAIエージェントを横断連携する。Automation Fair 2026（11月16〜19日）で先行公開され、商用提供開始は2027年第1四半期を予定。価格は未公表"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://www.rockwellautomation.com/en-us/products/software/factorytalk/conductor.html",
+          "what_it_states": "顧客自身による独自AIエージェントやスキルの作成・配備に対応し、NVIDIA Nemotron等のモデル統合に対応する仕様"
+        }
+      ],
+      "announced_on": "2026-10-21",
+      "headline_claim": "工場の設計から運用まで、複数のAIエージェントを束ねて設備全体を自律最適化する新製品が登場した。",
+      "actual_content": "ロックウェルが発表した「FactoryTalk Conductor」は、同社のPLC設計・シミュレーションソフト群を自然言語指示で横断連携させるオーケストレーション基盤である。展示会でのプレビュー段階であり、一般提供は2027年第1四半期予定で、導入費用や具体的な作業時間削減率などの定量的ベンチマークは公開されていない。また既存の自社製エンジニアリングソフトを前提とした産業エンジニア向けの支援ツールにとどまる。",
+      "verifiability": 4,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 2,
+      "life_relevance": 1,
+      "work_relevance": 2,
+      "audience_fit": 2,
+      "tangible": 2,
+      "decision_number": 2,
+      "series_fit": 1,
+      "concern_id": "work_ai",
+      "entry_question": "工場のAIエージェント連携ソフトはもう現場に導入できる？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "先行公開されたばかりのエンジニアリング用ソフトで、発売は2027年初頭予定であり価格も未定。町工場や中小製造業が手軽に買って設備を自動化できる代物ではなく、大手向けの専用FA環境が前提である点。",
+      "hope_material": "従来の単機能コパイロットと異なり、設計（Studio 5000）やシミュレーション（Emulate3D）など別々のソフトを自然言語で一括操作・連携させる仕組みを公式に提供する点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "ai",
+      "health": false,
+      "jp_news_query": "ロックウェル FactoryTalk Conductor",
+      "jp_title_anchor": [
+        "ロックウェル",
+        "FactoryTalk Conductor"
+      ],
+      "announcement_type": "product_release",
+      "freshness": 1,
+      "overall_score": 2.05,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:46:16",
+      "presented_on": [],
+      "topic_first_date": "2026-10-21",
+      "topic_first_source": "候補 d6fe9f887c のannounced_on（ロックウェルがAIで狙う工程革新　各エージェントを“指揮”す）",
+      "topic_series": "d6fe9f887c",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-23",
+        "title": "ロックウェルがAIで狙う工程革新　各エージェントを“指揮”する新製品とは",
+        "id": "d6fe9f887c",
+        "source": "ITmedia AI+"
+      }
+    },
+    {
+      "title": "視神経細胞のシート化技術を開発 ｉＰＳ細胞を活用、新治療に期待",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFB2OE14bm5vdWc5LTZHNFVmUnlJMnBPN0pyVTF0YkpZM0dNOGh6dzVPdHlXM054U0lPMU55S1lTMUNBN05mVF9rakE0eXg3S2dx?oc=5",
+      "published": "2026-11-23",
+      "source": "Googleニュース（iPS細胞 研究 成果）／日本海新聞",
+      "source_kind": "media",
+      "outlet": "日本海新聞",
+      "outlet_host": "nnn.co.jp",
+      "genre_hint": "medical",
+      "summary": "視神経細胞のシート化技術を開発 ｉＰＳ細胞を活用、新治療に期待（日本海新聞）",
+      "id": "0756c3678b",
+      "sources": [
+        "日本海新聞"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.tohoku.ac.jp/japanese/2026/08/press20260821-02-sheets.html",
+          "what_it_states": "東北大学大学院医学系研究科の中澤徹教授らの研究グループが、生体適合性ポリカプロラクトン（PCL）ナノファイバー配向膜を足場とし、インテグリンβ1シグナルを薬理学的に活性化させることで、ヒトiPS細胞由来の網膜神経節細胞（RGC）の生存率向上と線維伸長方向の制御に成功。動物由来成分を含まない（ゼノフリー）条件下で脱分極刺激に対し正常な電気生理学的応答を示す細胞シートを構築した"
+        },
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1021/acsbiomaterials.6c00694",
+          "what_it_states": "ACS Biomaterials Science & Engineering掲載論文。PCLナノファイバー上でインテグリンβ1を介した接着経路を標的とすることで、高生存率かつ興奮性を持ち配向されたヒトiPS細胞由来RGCシートの構築手法を実証"
+        }
+      ],
+      "announced_on": "2026-08-21",
+      "headline_claim": "東北大がiPS細胞から視神経細胞をシート化する技術を開発し、緑内障などによる視力障害の再生治療に期待が高まっている。",
+      "actual_content": "東北大学の研究チームは、緑内障などで失われる網膜神経節細胞（RGC）をヒトiPS細胞から作製し、PCLナノファイバーの足場膜上で一方向に神経突起を伸ばした状態でシート化する基盤技術を開発した。従来の細胞懸濁液の注射移植では生着率が著しく低かった課題に対し、接着シグナル活性化により生存率を高め、動物由来成分を用いない条件で電気刺激に正常応答するシート作製に成功した。ただし本成果は体外（in vitro）でのシート作製・機能実証にとどまり、動物やヒトへの実際の生体移植による視機能回復試験は今後の課題である。",
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 1,
+      "audience_fit": 3,
+      "tangible": 3,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "eyes",
+      "entry_question": "緑内障で失った視神経は、iPS細胞のシートで本当に治せるようになる？",
+      "surprise_line": "緑内障を気にする人が、視神経をシートにして向きを揃えて生かす技術に驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "報道見出しは新治療の実現が近い印象を与えるが、今回は体外での細胞シート作製と電気応答を確認した基礎技術の段階であり、動物への移植実験や脳への神経接続の確認、ヒト臨床試験はこれからの段階である。",
+      "hope_material": "従来の注射法で致命的だった移植細胞の死滅や散乱に対し、ナノファイバー足場とシグナル活性化によって細胞の生存率向上と神経突起の配向制御をゼノフリー（動物成分不使用）で両立させた点は、臨床応用への大きな技術的前進である。",
+      "investment_related": false,
+      "deja_vu_note": "kl047（iPS心筋シートの世界初移植）とiPS細胞シートという技術形式は重なるが、kl047は心臓病の実臨床治療開始であるのに対し、本作は緑内障・視神経の体外作製技術である",
+      "genre": "medical",
+      "health": true,
+      "jp_news_query": "東北大 網膜神経節細胞 シート",
+      "jp_title_anchor": [
+        "視神経細胞",
+        "網膜神経節細胞",
+        "東北大"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.55,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:46:31",
+      "presented_on": [],
+      "topic_first_date": "2026-08-21",
+      "topic_first_source": "候補 0756c3678b のannounced_on（視神経細胞のシート化技術を開発 ｉＰＳ細胞を活用、新治療に期）",
+      "topic_series": "0756c3678b",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-23",
+        "title": "視神経細胞のシート化技術を開発 ｉＰＳ細胞を活用、新治療に期待",
+        "id": "0756c3678b",
+        "source": "Googleニュース（iPS細胞 研究 成果）／日本海新聞"
+      }
+    },
+    {
+      "title": "｢1日30分睡眠｣に科学的根拠はない…遺伝子研究でわかった｢本物のショートスリーパー｣でも必要な睡眠時間",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBYOVd4ZGpjaDZuaEI5Z1hLQ3F4bEJadWxhYzZaeUtWcGhpNXNsak9ObzRjVWR5U0gxOXMwSWlBaHc3QzZ6MXNvazdUdkhRVWg0bmpmbFVNblU?oc=5",
+      "published": "2026-11-21",
+      "source": "Googleニュース（研究 食事 健康 効果）／PRESIDENT Online（プレジデントオンライン）",
+      "source_kind": "media",
+      "outlet": "PRESIDENT Online（プレジデントオンライン）",
+      "outlet_host": "president.jp",
+      "genre_hint": "food_health",
+      "summary": "｢1日30分睡眠｣に科学的根拠はない…遺伝子研究でわかった｢本物のショートスリーパー｣でも必要な睡眠時間（PRESIDENT Online（プレジデントオンライン））",
+      "id": "d74e07b8c7",
+      "sources": [
+        "PRESIDENT Online（プレジデントオンライン）"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1126/science.1174093",
+          "what_it_states": "ヒトのDEC2遺伝子（Pro385Arg変異）を持つ家系の被験者は平均睡眠時間6.25時間（非変異者の家族は8.06時間）と約2時間短く、遺伝子改変マウスでも睡眠時間が有意に短縮された"
+        },
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1016/j.neuron.2019.07.026",
+          "what_it_states": "ADRB1遺伝子の稀な変異（Ala187Val）を持つ家系の自然短時間睡眠者（FNSS）は平均睡眠時間約5.7時間（非変異者は約7.4〜8時間）であり、マウス実験でも1日あたり約55分の睡眠短縮が確認された"
+        }
+      ],
+      "announced_on": "2009-08-14",
+      "headline_claim": "「1日30分睡眠」に科学的根拠はなく、遺伝子研究で確認された本物のショートスリーパーでも5〜6時間程度の睡眠が必要である",
+      "actual_content": "米UCSFのFu教授らの研究（DEC2変異やADRB1変異）によると、遺伝的に確認された先天性ショートスリーパー（FNSS）でも実際の睡眠時間は平均5.5〜6.25時間程度確保されている。米睡眠医学会の診断基準（ICSD-3）でもショートスリーパーは「6時間未満」とされ、30分〜数時間の極端な睡眠で健康を保てるという臨床データはない。一般人が訓練や意思の力で短時間睡眠を習得できる科学的根拠は存在せず、自覚なき認知機能低下や生活習慣病・死亡リスクの上昇が報告されている。",
+      "verifiability": 5,
+      "hype_gap": 1,
+      "promise": 1,
+      "debate": 1,
+      "wonder": 1,
+      "life_relevance": 3,
+      "work_relevance": 2,
+      "audience_fit": 2,
+      "tangible": 1,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "sleep",
+      "entry_question": "訓練すれば「1日30分睡眠」でバリバリ働けるようになるって本当？",
+      "surprise_line": "仕事を増やしたい経営者が、短眠の限界が遺伝子の5時間と知り驚く",
+      "expected_verdicts": {
+        "dreamer": "dubious",
+        "skeptic": "dubious"
+      },
+      "tsukkomi_material": "記事自体が新しい研究発表ではなく、ネット上の「30分睡眠法」などの非科学的主張を医師が過去の既知の論文（DEC2やADRB1などの古典的発見）を引いて否定した啓発コラムにすぎません。新しい成果や検証データは一切提示されていません。",
+      "hope_material": "生まれつきの短眠体質でなくとも、自分に必要な睡眠時間（6〜8時間）をしっかり確保することが、認知機能の低下を防ぎ日中の仕事効率を最大化する最も確実な方法だと一次資料でも確認されています。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "ショートスリーパー 遺伝子 DEC2",
+      "jp_title_anchor": [
+        "ショートスリーパー",
+        "遺伝子研究"
+      ],
+      "announcement_type": "other",
+      "freshness": 1,
+      "overall_score": 1.85,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:46:47",
+      "presented_on": [],
+      "topic_first_date": "2009-08-14",
+      "topic_first_source": "候補 d74e07b8c7 のannounced_on（｢1日30分睡眠｣に科学的根拠はない…遺伝子研究でわかった｢）",
+      "topic_series": "d74e07b8c7",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-21",
+        "title": "｢1日30分睡眠｣に科学的根拠はない…遺伝子研究でわかった｢本物のショートスリーパー｣でも必要な睡眠時間",
+        "id": "d74e07b8c7",
+        "source": "Googleニュース（研究 食事 健康 効果）／PRESIDENT Online（プレジデントオンライン）"
+      }
+    },
+    {
+      "title": "中国郵政グループ広東支店の郵便網にROBOTERAのヒューマノイドを展開 8都市・11拠点で仕分け作業を担当",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1CMHhxSXM5YVp4OUtLQm5nb29RLTVLRE1kTHRrbkhZM2pVeHh6ZTZVTjZRWWtWekJlNUkwYWlsbFVKbzBYTWpLU2VKM3JpUlJmdGtwaVpQRGJESjduT3VZN3h5SEk?oc=5",
+      "published": "2026-11-19",
+      "source": "Googleニュース（ヒューマノイド）／ロボスタ",
+      "source_kind": "media",
+      "outlet": "ロボスタ",
+      "outlet_host": "robotstart.info",
+      "genre_hint": "humanoid",
+      "summary": "中国郵政グループ広東支店の郵便網にROBOTERAのヒューマノイドを展開 8都市・11拠点で仕分け作業を担当（ロボスタ）",
+      "id": "37bb154444",
+      "sources": [
+        "ロボスタ"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.prnewswire.com/news-releases/robotera-expands-humanoid-robot-deployment-across-china-posts-guangdong-network-reaching-eight-cities-province-wide-302941865.html",
+          "what_it_states": "中国郵政広東支社とROBOTERAが広東省内8都市（広州、深圳、東莞、江門、汕頭、汕尾、掲陽、河源）の11拠点にヒューマノイドを展開。2026年3月の広州拠点パイロット以降、1時間あたり平均1,500個超の小包仕分け処理（induction rate）を達成したと主張。自社製5本指ハンドと異常荷物除外機能を搭載。ただし各拠点のロボット台数、稼働時間、人の介入頻度、導入費用などは非開示"
+        }
+      ],
+      "announced_on": "2026-11-17",
+      "headline_claim": "中国郵政の郵便網にROBOTERAの人型ロボットを展開し、8都市11拠点で仕分け作業を担当していると発表された。",
+      "actual_content": "ROBOTERA（星動紀元）が広東省内8都市・11箇所の中国郵政拠点に人型ロボットを展開したとするリリースです。2026年3月の広州拠点での実証以来、平均で毎時1,500個超の小包を仕分けラインへ投入する処理速度を記録し、熟練作業員に匹敵すると発表しています。しかし、各拠点に何台配備されたのか、連続稼働時間、エラー時の人間による介入率、導入・維持にかかる費用などの重要条件は一切公表されていません。",
+      "verifiability": 3,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 2,
+      "work_relevance": 3,
+      "audience_fit": 3,
+      "tangible": 5,
+      "decision_number": 3,
+      "series_fit": 4,
+      "concern_id": "work_ai",
+      "entry_question": "郵便の仕分けを人型ロボがやる時代は、もう現場に来た？",
+      "surprise_line": "物流現場の責任者が、人型ロボが1時間に1500個を仕分けた数字に驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "11拠点に展開したとアピールしているものの、各拠点に何台置かれたのか、詰まりや例外時の人間の手助けが何回発生しているのかといった運用データが公表されておらず、宣伝用パイロットの域を出ているか確かめられません。",
+      "hope_material": "2026年3月の1拠点での試験から8都市11拠点へと実環境での検証規模を広げており、自社製多指ハンドで多様な荷姿の仕分けライン投入をこなす実証が進んでいる点は前進です。",
+      "investment_related": false,
+      "deja_vu_note": "kl053（上海コンビニでの人型ロボ24時間稼働）やkl060（メルセデス工場での人型ロボ）に続く、実店舗・現場での人型ロボ稼働シリーズの同工異曲。",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "ROBOTERA 中国郵政",
+      "jp_title_anchor": [
+        "ROBOTERA",
+        "中国郵政"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 5,
+      "overall_score": 3.15,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:47:00",
+      "presented_on": [],
+      "topic_first_date": "2026-05-13",
+      "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
+      "topic_series": "b625e1631a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-18",
+        "title": "現代自動車グループのヒューマノイド「アトラス」、来年から半導体工場に初投入（中央日報日本語版）",
+        "id": "f144a0d451",
+        "source": "Googleニュース（ヒューマノイド）／Yahoo!ニュース"
+      }
+    },
+    {
+      "title": "ベーコンや卵を含む食事が地中海食を上回った？　研究が示す代謝への影響",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFB3dWJ3Nm5TSjNxdnRYU3B1cWR2blliTkZfakw2Vi1zRG5qNEVBbnFRaHQyOGlXQVc1b2VfTlRVMlVFSlhSZGFESWs4cDgwd0t2SVlVa2RyVGXSAV5BVV95cUxQOGxrZnB4ZERQMVFKNk1fckotMUViU2FIYVE0aElfV0lNeHlmaXAxNGNYUjNETTRVdV9Rb3dGaFVYZUtDQkY1TFl2N0Y4azRHR3JuRU0zWlhlNUg0ajF3?oc=5",
+      "published": "2026-11-20",
+      "source": "Googleニュース（研究 食事 健康 効果）／大紀元 エポックタイムズ",
+      "source_kind": "media",
+      "outlet": "大紀元 エポックタイムズ",
+      "outlet_host": "epochtimes.jp",
+      "genre_hint": "food_health",
+      "summary": "ベーコンや卵を含む食事が地中海食を上回った？　研究が示す代謝への影響（大紀元 エポックタイムズ）",
+      "id": "bc6b06c41a",
+      "sources": [
+        "大紀元 エポックタイムズ"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1016/j.cmet.2024.08.006",
+          "what_it_states": "肥満・糖尿病予備群・脂肪肝を持つ成人42名を対象に、ケトジェニック食（炭水化物4%・脂質73%）、地中海食（炭水化物50%・脂質35%）、低脂質食（炭水化物70%・脂質15%）の3群で全食事を提供し、各群一律約10%の体重減少まで調整（4〜5か月）。肝臓脂肪はケト群で平均67%減少（地中海群・低脂質群は45%減少）。糖尿病予備群の診断基準を外れた割合はケト群50%、地中海群29%、低脂質群7%。"
+        },
+        {
+          "kind": "press_release",
+          "url": "https://medicine.wustl.edu/news/keto-diet-slashes-liver-fat-by-67-in-just-4-months/",
+          "what_it_states": "ワシントン大学医学部（セントルイス）のサミュエル・クライン教授らの研究チームによる臨床試験。同じ減量幅（10%減量）を達成した場合でも、極端な糖質制限が高インスリン血症の改善とグルカゴン増加を介して肝臓の脂肪蓄積抑制に特異的な効果をもたらしたことを報告。"
+        }
+      ],
+      "announced_on": "2026-08-27",
+      "headline_claim": "ベーコンや卵をたっぷり含む高脂肪な食事が、健康食の代表である地中海食よりも肝臓脂肪や血糖代謝の改善で上回った。",
+      "actual_content": "セントルイス・ワシントン大学が肥満・脂肪肝・予備群の成人42人を対象に行った4〜5か月の厳格な食事介入試験である。3群全員が全食事提供を受け同じ10%減量を達成した条件で、ケトジェニック食群は肝臓脂肪が67%減少し（地中海食・低脂質食は45%減）、予備群脱却率も50%と高値を示した。ただし被験者はわずか42人（各群14人）の短期間試験であり、全食事提供という厳密管理下での結果であること、飽和脂肪酸の長期的な心血管リスクや日常での継続性は検証されていない。",
+      "verifiability": 5,
+      "hype_gap": 4,
+      "promise": 3,
+      "debate": 4,
+      "wonder": 4,
+      "life_relevance": 4,
+      "work_relevance": 2,
+      "audience_fit": 3,
+      "tangible": 2,
+      "decision_number": 3,
+      "series_fit": 1,
+      "concern_id": "blood_sugar",
+      "entry_question": "ベーコンや卵を食べるケト食が地中海食より肝臓に効くって本当？",
+      "surprise_line": "健康診断で脂肪肝を指摘された人が、高脂質食で肝脂肪が激減した結果に驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "「ベーコンや卵が体に良い」と証明されたわけではなく、炭水化物をわずか4%に抑え全食事を研究者が管理して体重を10%落とした特殊な実験です。被験者は各群14人しかおらず、ベーコンなどの加工肉や飽和脂肪酸を日常で長期に摂り続けた場合の心臓や血管へのリスクは全く別問題です。",
+      "hope_material": "体重減少幅を同じ10%に揃えた比較でも、糖質を極力減らすことで肝臓の脂肪合成が抑えられ、短期間で肝脂肪が約67%減少した代謝メカニズム自体は確かな臨床データで裏付けられています。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "food_health",
+      "health": true,
+      "jp_news_query": "Cell Metabolism ケトジェニック 地中海食",
+      "jp_title_anchor": [
+        "Cell Metabolism",
+        "ケトジェニック",
+        "地中海食"
+      ],
+      "announcement_type": "research",
+      "freshness": 1,
+      "overall_score": 2.8,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:47:19",
+      "presented_on": [],
+      "topic_first_date": "2026-08-27",
+      "topic_first_source": "候補 bc6b06c41a のannounced_on（ベーコンや卵を含む食事が地中海食を上回った？　研究が示す代謝）",
+      "topic_series": "bc6b06c41a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-20",
+        "title": "ベーコンや卵を含む食事が地中海食を上回った？　研究が示す代謝への影響",
+        "id": "bc6b06c41a",
+        "source": "Googleニュース（研究 食事 健康 効果）／大紀元 エポックタイムズ"
+      }
+    },
+    {
+      "title": "東京都「フィジカルAI実証事業」の第2期公募が開始！ドローン・人型ロボットに最大3000万円補助",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5PVFRKV1ZMVlRTQ2gydkYtN01oenBRZEpSMXB1NUU4WTQ2cW9WenRobnNudXBVanJsSlpqb1dJQkd2Qkd2My14Q2N2dXdycEpzbWg4dk9fSQ?oc=5",
+      "published": "2026-11-17",
+      "source": "Googleニュース（配送ロボット 実証 開始）／創業手帳株式会社",
+      "source_kind": "media",
+      "outlet": "創業手帳株式会社",
+      "outlet_host": "sogyotecho.jp",
+      "genre_hint": "life_tech",
+      "summary": "東京都「フィジカルAI実証事業」の第2期公募が開始！ドローン・人型ロボットに最大3000万円補助（創業手帳株式会社）",
+      "series_query": "autonomy_logistics_watch",
+      "id": "1d18a00c0f",
+      "sources": [
+        "創業手帳株式会社"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2026/11/16/06.html",
+          "what_it_states": "都民広場でのドローン配送（上限2,000万円・1件程度）と、都庁舎でのヒューマノイドロボット等による来庁者案内（上限3,000万円・2件程度）の共同実証事業者を公募。実証期間は交付決定日から令和9年（2027年）3月末まで、申請締切は2026年12月7日"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://www.seisakukikaku.metro.tokyo.lg.jp/basic-plan/physical-ai/r8-2nd.html",
+          "what_it_states": "国内に拠点があり、事故・障害時に1時間以内に現場へ駆けつけ保守対応できる体制などを要件とし、ドローンや人型・人型に準ずるロボットの実証を行う公募要領"
+        }
+      ],
+      "announced_on": "2026-11-16",
+      "headline_claim": "東京都がドローン配送やヒューマノイドロボットの来庁者案内に最大3,000万円を補助する実証事業の公募を開始した。",
+      "actual_content": "東京都政策企画局が「フィジカルAI実証事業（令和8年度第2期）」として民間事業者の公募を開始した告知。募集枠は都民広場でのドローン配送（1件程度・補助上限2,000万円）と、都庁舎内での人型または人型に準ずるロボットによる案内（2件程度・補助上限3,000万円）の計3件程度である。事故時に1時間以内の駆けつけ保守体制が求められ、実施期間は交付決定から2027年3月末まで、新たな実証成果や運用実績の報告ではなく事業者募集の段階にとどまる。",
+      "verifiability": 5,
+      "hype_gap": 3,
+      "promise": 2,
+      "debate": 1,
+      "wonder": 1,
+      "life_relevance": 2,
+      "work_relevance": 2,
+      "audience_fit": 2,
+      "tangible": 2,
+      "decision_number": 2,
+      "series_fit": 2,
+      "concern_id": "work_ai",
+      "entry_question": "都庁でドローンや人型ロボットが働くのは本当？",
+      "surprise_line": "",
+      "expected_verdicts": {
+        "dreamer": "pending",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "技術や運用の新成果ではなく、これから実証する民間事業者を数件募集し始めただけの行政手続きであり、ロボットが実際にどう役立ったかのデータは何一つない点。",
+      "hope_material": "東京都庁という公的な現場で、2027年3月末まで民間事業者がドローンや人型ロボットの案内・配送運用を実証できる場が用意された点。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "東京都 フィジカルAI実証事業",
+      "jp_title_anchor": [
+        "フィジカルAI",
+        "東京都"
+      ],
+      "announcement_type": "policy",
+      "freshness": 4,
+      "overall_score": 2.65,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:47:32",
+      "presented_on": [],
+      "topic_first_date": "2026-11-16",
+      "topic_first_source": "候補 1d18a00c0f のannounced_on（東京都「フィジカルAI実証事業」の第2期公募が開始！ドローン）",
+      "topic_series": "1d18a00c0f",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-17",
+        "title": "東京都「フィジカルAI実証事業」の第2期公募が開始！ドローン・人型ロボットに最大3000万円補助",
+        "id": "1d18a00c0f",
+        "source": "Googleニュース（配送ロボット 実証 開始）／創業手帳株式会社"
+      }
+    },
+    {
+      "title": "特殊な靴下を履くだけで歩行時に消費するエネルギーを軽減できるという研究結果",
+      "url": "https://gigazine.net/news/20261124-foot-stiffening-socks-walking/",
+      "published": "2026-11-23",
+      "source": "GIGAZINE",
+      "source_kind": "media",
+      "summary": "人間の足はチンパンジーなど他の霊長類の足に比べて曲がりにくい構造を持っており、この構造のおかげで二足歩行に使うエネルギーを抑えられるという説がありますが、靴底を硬くしたり中敷きで土踏まずのたわみを抑えたりした従来の実験では普段の速度で歩く際のエネルギー消費は減りませんでした。そんな中、テキサス大学オースティン校の研究チームが「足指の付け根を締め付ける靴下」を開発し、その靴下を履くだけで歩く際に使うエネルギーを軽減できることが確かめられました。 続きを読む...",
+      "id": "9ab9215b6f",
+      "sources": [
+        "GIGAZINE"
+      ],
+      "primary_sources": [
+        {
+          "kind": "paper",
+          "url": "https://doi.org/10.1098/rspb.2026.1467",
+          "what_it_states": "テキサス大学オースティン校のHui TangとOwen Beckによる研究。健康な成人12名（女性5名、平均28歳）を対象に、足指の付け根（中足骨頭付近）を市販ソックスの約24倍強く締め付ける特殊靴下を履いて時速4.5km（1.25m/s）でトレッドミル歩行させたところ、土踏まずの内側縦アーチの剛性が65%向上し、12名中10名で全身の代謝エネルギー消費が平均約2%低下（p=0.008）した。ふくらはぎの筋線維短縮速度が15〜20%低下したことで筋活動の効率が高まったと報告されている"
+        }
+      ],
+      "announced_on": "2026-11-04",
+      "headline_claim": "足指の付け根を締め付ける特殊な靴下を履くだけで、歩行時に消費するエネルギーを軽減できる",
+      "actual_content": "健康な成人12名（平均28歳）を対象にした実験室内のトレッドミル歩行（時速4.5km、各5分間）において、足指の付け根に高密度の締め付けバンドを設けた試作ソックスを着用したところ、対照ソックスに比べ全身のエネルギー消費が平均2%減少しました（12名中10名で減少）。足の横への広がりを抑えて土踏まずの剛性を65%高めつつ、蹴り出し時の指の曲がりを阻害しない設計により、ふくらはぎの筋肉の短縮速度を抑えて効率化しています。ただし被験者は若年健常者12名のみの短時間実験であり、屋外の不整地や長距離歩行、高齢者や移動機能が低下した人での有効性は今後の検証課題です。",
+      "verifiability": 5,
+      "hype_gap": 2,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 3,
+      "audience_fit": 4,
+      "tangible": 4,
+      "decision_number": 1,
+      "series_fit": 1,
+      "concern_id": "bone_muscle",
+      "entry_question": "履くだけで歩くのが楽になる靴下は、もう買える？",
+      "surprise_line": "立ち仕事や散歩の人が、靴底ではなく靴下の締め付けで歩行が2%軽くなる点に驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "被験者は若い健康な成人わずか12人、しかも室内トレッドミルで5分間歩いただけの基礎実験です。外のデコボコ道や長時間の立ち仕事、筋力が落ちたシニア層で同じ効果が出るかはまだ一切確かめられておらず、製品化の時期や価格も未定です。",
+      "hope_material": "重いバッテリーや外骨格モーターを使わず、繊維の編み方だけで足のアーチ剛性を65%高め、腰の重りを約2kg外したのと同等のエネルギー消費削減（平均2%減）を達成しており、特許出願済みのため安価な日用品として普及する道筋があります。",
+      "investment_related": false,
+      "deja_vu_note": "",
+      "genre": "life_tech",
+      "health": true,
+      "jp_news_query": "テキサス大学 靴下 歩行",
+      "jp_title_anchor": [
+        "靴下",
+        "テキサス大学"
+      ],
+      "announcement_type": "research",
+      "freshness": 3,
+      "overall_score": 3.05,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:47:48",
+      "presented_on": [],
+      "topic_first_date": "2026-11-04",
+      "topic_first_source": "候補 9ab9215b6f のannounced_on（特殊な靴下を履くだけで歩行時に消費するエネルギーを軽減できる）",
+      "topic_series": "9ab9215b6f",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-23",
+        "title": "特殊な靴下を履くだけで歩行時に消費するエネルギーを軽減できるという研究結果",
+        "id": "9ab9215b6f",
+        "source": "GIGAZINE"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "ok": true,
+          "status": "DOI実在（ハンドルAPI、10.1098/rspb.2026.1467）",
+          "url": "https://doi.org/10.1098/rspb.2026.1467",
+          "method": "doi_handle",
+          "kind": "paper"
+        }
+      ],
+      "primary_verified_at": "2026-11-24T08:48:15",
+      "primary_history": [
+        {
+          "at": "2026-11-24T08:48:15",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://doi.org/10.1098/rspb.2026.1467",
+              "status": "DOI実在（ハンドルAPI、10.1098/rspb.2026.1467）",
+              "final_url": "",
+              "ok": true
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://doi.org/10.1098/rspb.2026.1467",
+          "ok": true,
+          "status": "DOI実在（ハンドルAPI、10.1098/rspb.2026.1467）"
+        }
+      ],
+      "url_ok": true,
+      "url_status": "doi.org: DOI実在（ハンドルAPI、10.1098/rspb.2026.1467）",
+      "url_checked_at": "2026-11-24T08:48:15",
+      "buzz_history": [
+        {
+          "at": "2026-11-24T08:48:21",
+          "query": "テキサス大学 靴下",
+          "measured": 2,
+          "outlets": 1,
+          "yahoo": false,
+          "evidence": [
+            {
+              "title": "特殊な靴下を履くだけで歩行時に消費するエネルギーを軽減できるという研究結果",
+              "outlet": "GIGAZINE",
+              "date": "2026-11-23"
+            }
+          ],
+          "trend": 1.0,
+          "articles_14d": 1,
+          "raw_items": 1
+        }
+      ],
+      "buzz_measured_at": "2026-11-24T08:48:21",
+      "buzz_measured": 2,
+      "buzz_outlets": 1,
+      "yahoo": false,
+      "buzz_evidence": [
+        {
+          "title": "特殊な靴下を履くだけで歩行時に消費するエネルギーを軽減できるという研究結果",
+          "outlet": "GIGAZINE",
+          "date": "2026-11-23"
+        }
+      ],
+      "buzz_trend": 1.0,
+      "buzz_articles_14d": 1,
+      "buzz_raw_items": 1,
+      "buzz_query": "テキサス大学 靴下",
+      "buzz_adopted_at": "2026-11-24T08:48:21",
+      "buzz_adopted_n": 1
+    },
+    {
+      "title": "配送ロボが「置き配」 マンションのエントランスから玄関までお届け 福岡市で実証実験",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPbDhkRjhWU3psUmxKUlJ3ckkwbXk2bThBR3gzUmw1a0k5SWZCVS04UEhCUjJ5MWhxRVhYcVZlSnVxeWxfcWdZZGE3Sng3WFZUM1hyV2pTNTZIMjZQR0VjOTctcC16Tk95bG9tLUlpYXhfQXNnbGk1UE91VmZJM3FBMEVDcE1oMDA?oc=5",
+      "published": "2026-11-23",
+      "source": "Googleニュース（配送ロボット 実証 開始）／日テレNEWS NNN",
+      "source_kind": "media",
+      "outlet": "日テレNEWS NNN",
+      "outlet_host": "news.ntv.co.jp",
+      "genre_hint": "life_tech",
+      "summary": "配送ロボが「置き配」 マンションのエントランスから玄関までお届け 福岡市で実証実験（日テレNEWS NNN）",
+      "series_query": "autonomy_logistics_watch",
+      "id": "adc278a877",
+      "sources": [
+        "日テレNEWS NNN"
+      ],
+      "primary_sources": [
+        {
+          "kind": "press_release",
+          "url": "https://prtimes.jp/main/html/rd/p/000000005.000172258.html",
+          "what_it_states": "NETSDAR Robot Solutions、アイホン、日本オーチス・エレベータ、ワールドサプライが連携し、2026年11月18日にURアーベインルネス香椎3号棟で館内配送の実証実験を実施。インターホン呼び出し、宅配解錠システム、エレベーター連携を通じて住戸前までの自動配送および不在時の置き配機能を検証"
+        },
+        {
+          "kind": "official_page",
+          "url": "https://www.fukuoka-dc.jp/fse-pressrelease-20261111/",
+          "what_it_states": "FUKUOKA Smart EAST推進コンソーシアム（福岡市、九州大学、UR都市機構、FDC）による集合住宅向け棟内配送サービス実証実験の実施発表"
+        }
+      ],
+      "announced_on": "2026-11-17",
+      "headline_claim": "配送ロボがエレベーターに乗ってマンションのエントランスから各戸の玄関前まで荷物を運び、置き配まで完了させる実証実験が福岡市で行われた",
+      "actual_content": "福岡市東区のUR賃貸住宅（URアーベインルネス香椎3号棟）にて、NETSDARの自律配送ロボット、アイホンのインターホン・オートロック解錠、オーチスのエレベーター連携システム、ワールドサプライの物流オペレーションを組み合わせて2026年11月18日に実施された実証実験。昨年度の手渡し配送実験に続き、今回は不在時の「置き配機能」とインターホン連携が新たに追加された。報道ベースでは初期導入費用約400万円からで来年度中の実用化を目指すとされているが、一次資料上には具体的な成功率や配達所要時間などの定量的検証データはまだ公開されていない。",
+      "verifiability": 4,
+      "hype_gap": 2,
+      "promise": 4,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 4,
+      "work_relevance": 3,
+      "audience_fit": 4,
+      "tangible": 5,
+      "decision_number": 3,
+      "series_fit": 3,
+      "concern_id": "housework",
+      "entry_question": "マンションの置き配ロボットは、本当にオートロックとエレベーターを越えて玄関に来る？",
+      "surprise_line": "マンション住民が、ロボットが自分でエレベーターに乗って玄関前に荷物を置く姿に驚く",
+      "expected_verdicts": {
+        "dreamer": "soon",
+        "skeptic": "decade"
+      },
+      "tsukkomi_material": "既存マンションのオートロックやエレベーター制御盤の改修・通信連携にかかる初期コスト（数百万円規模）を誰が負担するのかや、共用廊下の防火扉・私物放置などの障害物対応の検証データがまだ示されていない点。",
+      "hope_material": "荷物の手渡しだけでなく不在時の置き配まで完結させるシステム構成となっており、大手エレベーター（オーチス）やインターホン（アイホン）と連携した標準化が進めば新築・改修マンションへの導入が一気に現実味を帯びる点。",
+      "investment_related": false,
+      "deja_vu_note": "kl055（無人物流・自動運転）、kl052（ドローン配送）と物流自動化のテーマで同系統だが、マンション棟内特化の配送ロボット単独検証は初。",
+      "genre": "life_tech",
+      "health": false,
+      "jp_news_query": "ネットスター 配送ロボット 福岡",
+      "jp_title_anchor": [
+        "ネットスター",
+        "配送ロボ",
+        "置き配"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 5,
+      "overall_score": 3.45,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "used",
+      "excluded_reason": "",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:48:03",
+      "presented_on": [],
+      "topic_first_date": "2026-11-17",
+      "topic_first_source": "候補 adc278a877 のannounced_on（配送ロボが「置き配」 マンションのエントランスから玄関までお）",
+      "topic_series": "adc278a877",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-23",
+        "title": "配送ロボが「置き配」 マンションのエントランスから玄関までお届け 福岡市で実証実験",
+        "id": "adc278a877",
+        "source": "Googleニュース（配送ロボット 実証 開始）／日テレNEWS NNN"
+      },
+      "primary_verified": true,
+      "primary_check": [
+        {
+          "url": "https://prtimes.jp/main/html/rd/p/000000005.000172258.html",
+          "ok": true,
+          "status": "HTTP 200「インターホン・エレベーターと連携した配送ロボットで「置き配」」",
+          "page_title": "インターホン・エレベーターと連携した配送ロボットで「置き配」まで行う館内配送の実証実験を、福岡市のUR賃貸住宅で実施 | NetsdarRobotSolutions株式会社のプレスリリース",
+          "anchor_hit": true,
+          "method": "http",
+          "kind": "press_release"
+        },
+        {
+          "url": "https://www.fukuoka-dc.jp/fse-pressrelease-20261111/",
+          "ok": false,
+          "status": "HTTP 404（転送先 https://fukuoka-dc.jp/fse-pressrelease-20261111/ が404）（再確認5回とも404・開けず）",
+          "final_url": "https://fukuoka-dc.jp/fse-pressrelease-20261111/",
+          "redirects": [
+            "301 https://fukuoka-dc.jp/fse-pressrelease-20261111/"
+          ],
+          "method": "http",
+          "attempts": [
+            {
+              "url": "https://www.fukuoka-dc.jp/fse-pressrelease-20261111/",
+              "via": "初回",
+              "status": "HTTP 404（転送先 https://fukuoka-dc.jp/fse-pressrelease-20261111/ が404）",
+              "final_url": "https://fukuoka-dc.jp/fse-pressrelease-20261111/",
+              "redirects": [
+                "301 https://fukuoka-dc.jp/fse-pressrelease-20261111/"
+              ],
+              "at": "2026-11-24T08:50:33"
+            },
+            {
+              "url": "https://www.fukuoka-dc.jp/fse-pressrelease-20261111/",
+              "via": "英語のAccept-Languageで再試行",
+              "status": "HTTP 404（転送先 https://fukuoka-dc.jp/fse-pressrelease-20261111/ が404）",
+              "final_url": "https://fukuoka-dc.jp/fse-pressrelease-20261111/",
+              "redirects": [
+                "301 https://fukuoka-dc.jp/fse-pressrelease-20261111/"
+              ],
+              "at": "2026-11-24T08:50:39"
+            },
+            {
+              "url": "https://www.fukuoka-dc.jp/fse-pressrelease-20261111/",
+              "via": "20秒おいて再試行",
+              "status": "HTTP 404（転送先 https://fukuoka-dc.jp/fse-pressrelease-20261111/ が404）",
+              "final_url": "https://fukuoka-dc.jp/fse-pressrelease-20261111/",
+              "redirects": [
+                "301 https://fukuoka-dc.jp/fse-pressrelease-20261111/"
+              ],
+              "at": "2026-11-24T08:50:59"
+            },
+            {
+              "url": "https://www.fukuoka-dc.jp/us/en/fse-pressrelease-20261111/",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404（転送先 https://fukuoka-dc.jp/us/en/fse-pressrelease-20261111/ が404）",
+              "final_url": "https://fukuoka-dc.jp/us/en/fse-pressrelease-20261111/",
+              "redirects": [
+                "301 https://fukuoka-dc.jp/us/en/fse-pressrelease-20261111/"
+              ],
+              "at": "2026-11-24T08:51:04"
+            },
+            {
+              "url": "https://www.fukuoka-dc.jp/en-us/fse-pressrelease-20261111/",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404（転送先 https://fukuoka-dc.jp/en-us/fse-pressrelease-20261111/ が404）",
+              "final_url": "https://fukuoka-dc.jp/en-us/fse-pressrelease-20261111/",
+              "redirects": [
+                "301 https://fukuoka-dc.jp/en-us/fse-pressrelease-20261111/"
+              ],
+              "at": "2026-11-24T08:51:09"
+            },
+            {
+              "url": "https://www.fukuoka-dc.jp/en/fse-pressrelease-20261111/",
+              "via": "別の地域・言語のURL",
+              "status": "HTTP 404（転送先 https://fukuoka-dc.jp/en/fse-pressrelease-20261111/ が404）",
+              "final_url": "https://fukuoka-dc.jp/en/fse-pressrelease-20261111/",
+              "redirects": [
+                "301 https://fukuoka-dc.jp/en/fse-pressrelease-20261111/"
+              ],
+              "at": "2026-11-24T08:51:14"
+            }
+          ],
+          "kind": "official_page"
+        }
+      ],
+      "primary_verified_at": "2026-11-24T08:51:14",
+      "primary_history": [
+        {
+          "at": "2026-11-24T08:51:14",
+          "verdict": true,
+          "urls": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000005.000172258.html",
+              "status": "HTTP 200「インターホン・エレベーターと連携した配送ロボットで「置き配」」",
+              "final_url": "",
+              "ok": true
+            },
+            {
+              "url": "https://www.fukuoka-dc.jp/fse-pressrelease-20261111/",
+              "status": "HTTP 404（転送先 https://fukuoka-dc.jp/fse-pressrelease-20261111/ が404）（再確認5回とも404・開けず）",
+              "final_url": "https://fukuoka-dc.jp/fse-pressrelease-20261111/",
+              "ok": false
+            }
+          ]
+        }
+      ],
+      "url_check": [
+        {
+          "url": "https://prtimes.jp/main/html/rd/p/000000005.000172258.html",
+          "ok": true,
+          "status": "HTTP 200「インターホン・エレベーターと連携した配送ロボットで「置き配」」"
+        },
+        {
+          "url": "https://www.fukuoka-dc.jp/fse-pressrelease-20261111/",
+          "ok": false,
+          "status": "HTTP 404（転送先 https://fukuoka-dc.jp/fse-pressrelease-20261111/ が404）（再確認5回とも404・開けず）"
+        }
+      ],
+      "url_ok": false,
+      "url_status": "prtimes.jp: HTTP 200「インターホン・エレベーターと連携した配送ロボットで「置き配」」 ／ fukuoka-dc.jp: HTTP 404（転送先 https://fukuoka-dc.jp/fse-pressrelease-20261111/ が404）（再確認5回とも404・開けず）",
+      "url_checked_at": "2026-11-24T08:51:14",
+      "yt_competitors": 2,
+      "yt_competitors_checked_at": "2026-11-24T08:51:33",
+      "yt_competitors_query": "配送ロボット 置き配 マンション",
+      "used_in": "kl061"
+    },
+    {
+      "title": "中国の智元創新のヒューマノイド「精霊G2」、JCETの臨港工場に導入 半導体封止・検査ラインに具身知能が初接続",
+      "url": "",
+      "gnews_link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBQaXAtVm93UlZucmktTkIxTzhBTFl2cmptajFfbk9HR0lrNTJETHRuaXExMnNfU1pvNU1xZ2tGOG1XcGVSNWZrVXFaeXhxODJFZy1pVkl6LUtuTElHNEVLVk5nXzFtT1lVWmgtd1RnRVVfenBR?oc=5",
+      "published": "2026-11-23",
+      "source": "Googleニュース（ヒューマノイド）／BigGo ファイナンス",
+      "source_kind": "media",
+      "outlet": "BigGo ファイナンス",
+      "outlet_host": "finance.biggo.jp",
+      "genre_hint": "humanoid",
+      "summary": "中国の智元創新のヒューマノイド「精霊G2」、JCETの臨港工場に導入 半導体封止・検査ラインに具身知能が初接続（BigGo ファイナンス）",
+      "id": "aca0e97444",
+      "sources": [
+        "BigGo ファイナンス"
+      ],
+      "primary_sources": [
+        {
+          "kind": "official_page",
+          "url": "https://www.agibot.com",
+          "what_it_states": "精霊G2（Genie G2）は全身26自由度、車輪型（4舵輪）全向移動ベース、7自由度力制御アーム（定格可搬重量5kg、力制御絶対精度0.5N以下）、二重バッテリーによるホットスワップ7x24時間連続稼働に対応した産業用ロボット"
+        }
+      ],
+      "announced_on": "2026-11-23",
+      "headline_claim": "中国AGIBOTのヒューマノイド「精霊G2」がJCETの半導体工場に導入され、封止・検査ラインに初めて接続された",
+      "actual_content": "JCET（長電科技）の上海臨港工場（車載半導体）のチップテスト車間において、AGIBOTの精霊G2が既存の製造実行・自動化システム（MES/EAP）と接続して試運転を開始した。ロボットは人の介入なしにテスト前トレイの投入（上料）、テスト後トレイの回収（下料）、良品・不良品の自動仕分けを行う。ただし導入された具体的な台数や成功率、導入コストは公表されておらず、二足歩行ではなく車輪型ベースの機体である。",
+      "verifiability": 3,
+      "hype_gap": 3,
+      "promise": 3,
+      "debate": 3,
+      "wonder": 3,
+      "life_relevance": 1,
+      "work_relevance": 3,
+      "audience_fit": 3,
+      "tangible": 4,
+      "decision_number": 2,
+      "series_fit": 4,
+      "concern_id": "work_ai",
+      "entry_question": "人型ロボが半導体工場で働き始めたって本当？",
+      "surprise_line": "町工場の社長が、ロボが半導体の検査トレイを自動で仕分けたことに驚く",
+      "expected_verdicts": {
+        "dreamer": "decade",
+        "skeptic": "pending"
+      },
+      "tsukkomi_material": "「ヒューマノイド」と報じられているものの、足元は車輪型（AGV型）の台車に双腕が付いた構造であり、作業内容もトレイの搬送・載せ替えという従来型搬送アームの延長線上にとどまる。導入台数や稼働タクトタイム、エラー率の公表もない。",
+      "hope_material": "工場既存のMES/EAPシステムと直接連携し、現場のライン改造なしに良品・不良品の自動選別トレイ搬送を無人で行える点は実用検証として前進している。",
+      "investment_related": false,
+      "deja_vu_note": "kl053（AGIBOTがコンビニで24時間稼働）、kl060（メルセデス工場の人型ロボ実証）の延長線上にある産業現場導入テストの事例",
+      "genre": "humanoid",
+      "health": false,
+      "jp_news_query": "智元 精霊G2",
+      "jp_title_anchor": [
+        "精霊G2",
+        "智元創新",
+        "JCET"
+      ],
+      "announcement_type": "customer_case",
+      "freshness": 5,
+      "overall_score": 3.05,
+      "scan_version": "2026-11-07-interest",
+      "interest_version": "2026-11-07",
+      "status": "available",
+      "excluded_reason": "",
+      "scored_at": "2026-11-24",
+      "first_seen_at": "2026-11-24T08:48:11",
+      "presented_on": [],
+      "topic_first_date": "2026-05-13",
+      "topic_first_source": "候補 19c5b23c6b のannounced_on（1時間1200個、夜通し働く 中国のヒューマノイド、物流現場）",
+      "topic_series": "b625e1631a",
+      "freshness_basis": "topic_first_date",
+      "topic_pool_first": {
+        "date": "2026-11-18",
+        "title": "現代自動車グループのヒューマノイド「アトラス」、来年から半導体工場に初投入（中央日報日本語版）",
+        "id": "f144a0d451",
+        "source": "Googleニュース（ヒューマノイド）／Yahoo!ニュース"
+      }
     }
   ]
 }

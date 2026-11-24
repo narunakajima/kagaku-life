@@ -579,3 +579,14 @@
 {"ts": "2026-11-23T09:59:34+09:00", "kind": "applied", "agent": "kl-coordinator", "episode": "kl058", "ids": [], "skipped": ["KL2611-05"], "reason": "未実施（形跡なし）: 進行・6.7の記録にサムネ事前確認の記述が無い。適用の記録は補わず、判定では未適用として数える（2026-11-23 編集長判断）"}
 {"ts": "2026-11-23T09:59:34+09:00", "kind": "applied", "agent": "kl-coordinator", "episode": "kl059", "ids": [], "skipped": ["KL2611-05"], "reason": "未実施（形跡なし）: 進行・6.7の記録にサムネ事前確認の記述が無い。適用の記録は補わず、判定では未適用として数える（2026-11-23 編集長判断）"}
 {"ts": "2026-11-23T10:00:13+09:00", "kind": "call", "agent": "kl-manager", "session": "54182f1e-a932-4fd3-ae15-5044b03dd4d0"}
+{"ts": "2026-11-24T07:50:56+09:00", "kind": "applied", "agent": "kl-planner", "episode": "kl061", "ids": ["KL2611-01"], "skipped": [], "reason": ""}
+{"ts": "2026-11-24T07:51:47+09:00", "kind": "call", "agent": "kl-planner", "session": "1b69e916-177f-48ba-ada9-2590bfb10fab"}
+{"ts": "2026-11-24T07:52:08+09:00", "kind": "work", "agent": "kl-planner", "episode": "kl061", "step": "1", "result": "ok", "retries": 0, "note": "弱い週。3案: プラニマル細胞(WC)/GPT-6.2/スプラウト"}
+{"ts": "2026-11-24T07:52:54+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "1b69e916-177f-48ba-ada9-2590bfb10fab"}
+{"ts": "2026-11-24T07:53:09+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl061", "step": "1", "result": "ok", "retries": 0, "note": "ネタ段階: 見たい1(GPT-6.2)／見たくない2(スプラウト・プラニマル)"}
+{"ts": "2026-11-24T07:54:51+09:00", "kind": "call", "agent": "kl-planner", "session": "1b69e916-177f-48ba-ada9-2590bfb10fab"}
+{"ts": "2026-11-24T07:54:59+09:00", "kind": "work", "agent": "kl-planner", "episode": "kl061", "step": "1", "result": "retry", "retries": 0, "note": "エマ見たくない2→差し替え試行。プラニマル書き直せず・代替なし→1案のみ"}
+{"ts": "2026-11-24T08:52:07+09:00", "kind": "call", "agent": "kl-planner", "session": "1b69e916-177f-48ba-ada9-2590bfb10fab"}
+{"ts": "2026-11-24T08:52:20+09:00", "kind": "work", "agent": "kl-planner", "episode": "kl061", "step": "1", "result": "ok", "retries": 0, "note": "追加収集後の再提示: 1位 福岡置き配ロボ(驚き3)・2位 GPT-6.2。弱い週のまま"}
+{"ts": "2026-11-24T08:53:12+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "1b69e916-177f-48ba-ada9-2590bfb10fab"}
+{"ts": "2026-11-24T08:53:24+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl061", "step": "1", "result": "ok", "retries": 0, "note": "再提示: 見たい2／見たくない0。一番=置き配ロボ"}
