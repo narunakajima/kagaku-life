@@ -1071,6 +1071,9 @@ python3 kl_fact_check.py --episode kl{NNN}
 
 `ok` 以外が出たら、論文本文（WebFetch）で確認して台詞を直し、`kl_dialogue.py check` → 再チェック。
 
+**Gemini が 504 などで時間切れになった資料は、その資料だけ照合し直す。** `python3 kl_fact_check.py --episode kl{NNN} --ref N --timeout-sec 300`（N は資料の番号。複数は `--ref` を繰り返す。前回の結果ファイルの該当分だけを置き換える）。
+**中身が画像の資料（PR TIMES の画像など）は、原文の引用を画像と目で照合する。** 文字として取れない資料は Gemini の照合が当てにならないので、`quote_type: "原文"` の引用と数字を、画像を開いて1つずつ確かめ、確かめたことを作業記録の --note に書く。
+
 **資料カード（v2 の `source_card`）も資料ごとの照合に入る（2026-10-16〜）。** `kl_fact_check.py` がカードの引用・要約を
 `reference_index` の資料に振り分け、`quote_type: "原文"` の引用が一字一句同じか（前後を切った連続の抜き出しは一致扱い）を
 `card_quote_exact` で返す（不一致なら caution）。Gemini の照合は図の種類などで誤ることがある（kl041 で棒グラフを
