@@ -24,7 +24,7 @@
     "配達員は1階で荷物を預ける",
     "玄関前まではロボが運ぶ"
   ],
-  "thumbnail_prompt": "An open-air corridor of a Japanese apartment building in soft late-afternoon light, continuous across the whole frame with no panels, boxes or borders. The top 48% of the frame is only softly blurred sky and the upper part of the corridor ceiling — nothing important there, and nothing must reach into it. Keep the left 28% and the right 28% quiet and uncluttered too (softly blurred steel front doors and a concrete balcony wall), with the background continuing unbroken behind them. Main subject, small and low in the frame, centered left-to-right: in front of one steel apartment front door, a gray plastic tray holding a cardboard parcel sits on the floor, and right beside it a compact, knee-to-waist-high wheeled indoor delivery robot (generic, not any specific brand or real product): a low black rectangular chassis on four small wheels with a thin glowing light-blue light strip along its front, carrying on top a dark-gray box-shaped storage compartment with one pair of hinged doors on its FRONT face only (the same face as the light strip) and two shelves (upper and lower) inside; its left, right and back panels are plain flat panels with no doors and no handles; no face, no eyes, no arms, no screen with text, its top at about 50% of the frame height. Hopeful and intriguing. No people, no text, no door numbers, no logos, no brand names.",
+  "thumbnail_prompt": "An open-air corridor of a Japanese apartment building in soft late-afternoon light, seen from a low eye level, continuous across the whole frame with no panels, boxes or borders. The top 38% of the frame is only softly blurred sky and the upper part of the corridor ceiling — nothing important there, and nothing must reach into it. The bottom 30% of the frame is ONLY the empty, plain concrete corridor floor in the near foreground — nothing standing on it, no objects, no shadows of objects. Keep the left 25% and the right 25% quiet and uncluttered (softly blurred steel front doors and a concrete balcony wall), with the background continuing unbroken behind them. Main subject, LARGE and clearly visible, centered left-to-right, in the middle band between 40% and 68% of the frame height: a wheeled indoor delivery robot (generic, not any specific brand or real product) seen in a three-quarter front view, its whole body visible from its wheels to its top, its top edge at about 40% of the frame height and its wheels touching the floor at about 68% of the frame height, about 26% of the frame width wide. The robot: a low black rectangular chassis on four clearly visible small black wheels, with a bright glowing light-blue light strip running across the FRONT of the chassis; on top of the chassis a dark-gray box-shaped storage compartment with one pair of hinged doors on its FRONT face only (the same face as the light strip), shown slightly open so two shelves (upper and lower) inside are visible; its left, right and back panels are plain flat panels with no doors and no handles; no face, no eyes, no arms, no screen with text. Right beside the robot, just behind it, a steel apartment front door, and on the floor next to the door at the same depth as the robot, a gray plastic tray holding a cardboard parcel. Bright enough to read clearly, warm late-afternoon light falling on the robot. Hopeful and intriguing. No people, no text, no door numbers, no logos, no brand names.",
   "thumbnail_headline": "配達員は1階で帰る\n玄関まではロボ",
   "thumbnail_exprs": {
     "dreamer": "excited",
@@ -107,7 +107,7 @@
       "type": "teaser",
       "bgm_role": "intro",
       "reuse_scene_id": 6,
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "shows_product": true,
       "badge_text": "イメージ図（実物と異なる場合があります）",
       "lines": [
@@ -161,7 +161,11 @@
       ],
       "narration": "大輔「ロボットがエレベーターで上がり、留守なら玄関前に置く。」",
       "narrator": "dialogue",
-      "lines_hash": "e97389026587"
+      "lines_hash": "e97389026587",
+      "zoom_anchor": {
+        "x": 0.67,
+        "y": 0.63
+      }
     },
     {
       "scene_id": 3,
@@ -194,14 +198,18 @@
       ],
       "narration": "沙織「オートロックの中に、ロボットが入れるの？ 防犯は？」",
       "narrator": "dialogue",
-      "lines_hash": "213e92b3256d"
+      "lines_hash": "213e92b3256d",
+      "zoom_anchor": {
+        "x": 0.53,
+        "y": 0.58
+      }
     },
     {
       "scene_id": 4,
       "type": "teaser",
       "bgm_role": "intro",
       "reuse_scene_id": 10,
-      "ken_burns": "gentle_zoom",
+      "ken_burns": "zoom_in",
       "shows_product": true,
       "badge_text": "イメージ図（実物と異なる場合があります）",
       "lines": [
@@ -228,7 +236,11 @@
       ],
       "narration": "沙織「どこまで来た？ 何がそろえば、身近な建物に来る？」",
       "narrator": "dialogue",
-      "lines_hash": "54f181037eab"
+      "lines_hash": "54f181037eab",
+      "zoom_anchor": {
+        "x": 0.53,
+        "y": 0.58
+      }
     },
     {
       "scene_id": 5,
@@ -588,7 +600,11 @@
       ],
       "narration": "大輔「11月17日に、ロボットの会社、ネットスターが発表した実験。場所は、福岡市にある、URの賃貸住宅。」\n沙織「URって、昔の住宅公団？」\n大輔「そう。オートロックとエレベーターのある、団地の一棟。」\n沙織「団地で、ロボットが何をするの？」\n大輔「荷物を、玄関の前まで運ぶ。配達員は1階の入口でロボットに荷物を預けて、上の階には上がらずに、次の配達へ行く。」\n沙織「じゃあ、上の階まで運ぶのは？」\n大輔「ロボットだけで上がる。人は付いていかない。自分でエレベーターに乗る。」\n沙織「部屋の前に着いたら？」\n大輔「家にいれば手渡し。留守なら、玄関の前に置いて帰る。これを置き配っていうよね。」\n沙織「ロボットが、オートロックの中に入るってことよね。防犯は大丈夫なの？」\n大輔「条件つきで入れる。どんな条件かは、今日しっかり確かめよう。」\n沙織「今日の問い。留守でも、ロボットがエレベーターで玄関の前まで荷物を届けるマンション。どこまで来ていて、何がそろえば、身近な建物に来るのか。」\n大輔「僕の予想。3年のうちに、新しく建つマンションから、この形が使われ始める。」\n沙織「私は、この形がふつうになるのは、3年より先だと見てる。オートロックの中を任せる防犯が、まだ見えないから。本物なら、私も使いたいけどね。」\n［画面の資料カード］ネットスターの発表（2026年11月17日、PR TIMES） 「インターホン・エレベーターと連携した配送ロボットで「置き配」まで行う館内配送の実証実験を、福岡市のUR賃貸住宅で実施」（原文） ・実験の日: 11月18日（水）13:30〜15:00 ・場所: URアーベインルネス香椎3号棟 ・ロボット・インターホン・エレベーター・物流の4社\n［画面のまとめカード（ふりかえり）］今日の問い ・留守でも、ロボットが玄関の前まで届ける ・そんなマンションは、どこまで来た？ ・何がそろえば、身近な建物に来る？\n［画面のまとめカード（予想）］二人の予想 ・大輔: 3年のうちに、新しく建つマンションから ・沙織: ふつうになるのは、3年より先",
       "narrator": "dialogue",
-      "lines_hash": "bb3c3443d2f5"
+      "lines_hash": "bb3c3443d2f5",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 6,
@@ -596,7 +612,7 @@
       "round": 1,
       "round_title": "配達員は、1階で帰れる？",
       "bgm_role": "main",
-      "ken_burns": "zoom_in",
+      "ken_burns": "pan_zoom_out",
       "shows_product": true,
       "badge_text": "イメージ図（実物と異なる場合があります）",
       "reference_index": 0,
@@ -1103,7 +1119,7 @@
       "round": 2,
       "round_title": "留守でも玄関前に。防犯は？",
       "bgm_role": "main",
-      "ken_burns": "pan_zoom_out",
+      "ken_burns": "zoom_in",
       "shows_product": true,
       "badge_text": "イメージ図（実物と異なる場合があります）",
       "reference_index": 0,
@@ -1328,7 +1344,11 @@
       ],
       "narration": "沙織「次は、留守のとき。最初の心配に戻ると、ロボットは、どこまで入るの？」\n大輔「入るのは、オートロックの内側の廊下まで。部屋には入らない。留守なら、荷物を、載せている台ごと玄関の前に降ろして、ロボットは戻っていく。お盆のような台に載せたまま、置いていく形。」\n沙織「住んでる人は、帰ってから？」\n大輔「住んでる人は、荷物を取ったら、インターホンのボタンで、空になった台を片付けてもらうように頼む。誰がどう取りに来るかまでは、資料に書いてない。」\n沙織「留守で持ち帰って、もう一度運ぶ。いわゆる再配達は、今どれくらいあるの？」\n大輔「今年4月の国の調査で、再配達率は7.6%。」\n沙織「100個のうち、8個近くを、もう一度運び直してるってことね。」\n大輔「留守でも玄関の前で受け取れるなら、昼は店に出ている人も、夜遅く帰る人も、受け取りの時間を気にせずに通販を頼める。」\n沙織「便利なのは分かる。でも、オートロックが誰にでも開いたら困る。」\n［画面のグラフ］国土交通省の発表（2026年4月の調査、大手6社） 宅配便の再配達率（2026年4月の調査） 7.6% 100個のうち、8個近くを運び直し",
       "narrator": "dialogue",
-      "lines_hash": "0b8aeb1f209a"
+      "lines_hash": "0b8aeb1f209a",
+      "zoom_anchor": {
+        "x": 0.67,
+        "y": 0.63
+      }
     },
     {
       "scene_id": 9,
@@ -2065,7 +2085,11 @@
       ],
       "narration": "沙織「最後は、身近な建物に来るために、何がそろえばいいか。そもそも、ロボットはどうやってエレベーターに乗るの？」\n大輔「エレベーターの会社、オーチスのしくみで、ロボットがエレベーターを呼んで、自分で乗り降りする。オートロックはインターホンの会社、ロボットはネットスター。3つの会社のしくみを、ネットでつないでる。」\n沙織「住んでる人がエレベーターに乗りたいときは？」\n大輔「住んでる人が優先、と書いてある。」\n沙織「じゃあ、住んでる人は、何をすればいいの？」\n大輔「部屋のインターホンに、宅配が出発しました、まもなく到着します、到着しました、と順に出る。知らせを見て、玄関に出て、ボタンを押すだけ。」\n沙織「スマホのアプリは？」\n大輔「いらない。」\n沙織「それなら、スマホが苦手な人でも使えるね。」\n大輔「もう一つ大事なのは、建物にもうあるインターホンとエレベーターに、ロボットをつないでいること。」\n沙織「一から建て直す話じゃない、ってことね。」\n大輔「そう。だったら、次は、どこで使える？ 新しいマンションだけじゃない。エレベーターのある団地、たとえば親が住んでいるような団地や、会社の入っているビルにも広がる。ここは、資料には無い、僕の見立て。」\n沙織「広げる前に、どんな建物なら使えるのかを、確かめたい。」\n［画面の資料カード］ネットスターの発表（2026年11月17日、PR TIMES） 「スマートフォンのアプリは使いません。」（原文） ・部屋のインターホンに順に出る ・「宅配が出発しました。」 ・「まもなく宅配が到着します。」 ・「宅配が到着しました。」 ・住む人は「受取済」「回収」を押すだけ",
       "narrator": "dialogue",
-      "lines_hash": "b0f8b161252d"
+      "lines_hash": "b0f8b161252d",
+      "zoom_anchor": {
+        "x": 0.53,
+        "y": 0.59
+      }
     },
     {
       "scene_id": 11,
@@ -2771,7 +2795,11 @@
       ],
       "narration": "大輔「僕の予想は、3年のうちに、新しく建つマンションから使われ始める、だった。でも、時期を支える資料は無かった。予想が先走った。」\n沙織「私の予想は、ふつうになるのは3年より先、だった。でも、玄関の前の置き配は人の配達でもう始まってるし、実験も2年目。3年より先、とまでは言えなくなった。」\n沙織「判定の前に、もう一つ。発表は、再配達ゼロを目指す、と書いてる。これは会社の目標で、再配達が減ったという数字は、まだ無い。」\n大輔「判定するのは、留守でもロボットが玄関の前まで荷物を届ける形が、ふつうのマンションや団地で使えるようになるのはいつか。札は4つある。」\n大輔「もうすぐ来る、は、1年ほどで来そう。3年はかかる、は、すぐではないけど、3年のうちには来そう、という札。」\n沙織「あとは、根拠待ちと、まだ眉唾。まだ眉唾は、資料が逆を向いているときの札。今回は、そこまでじゃない。」\n大輔「僕は、根拠待ち。来ない、という札じゃない。時期を決める材料が、まだ足りない、という札。」\n沙織「私も、根拠待ち。3年のうちに来る、と言える材料も、まだ無いから。ただ、札を変える条件は違う。」\n大輔「僕の条件は、配り比べの結果で、配達員が建物の中にいた時間が減ったと分かること。それと、使い始める時期が発表されること。それが3年のうちなら、札を、3年はかかる、に変える。」\n沙織「私の条件は、費用と、どんな建物で使えるか。どの機種のインターホンとエレベーターならつながるのか。それと、置いた後の盗難への備え。それが出たら、3年はかかるか、もうすぐ来る、に変える。」\n大輔「今日の持ち帰り。ロボットが玄関の前まで運ぶ形は、本物の団地で、2年目の実験まで来た。オートロックの内側の置き配は、対応したインターホンのある建物なら、人の配達で、もう始まってる。」\n沙織「これは、11月24日時点の、二人の見立て。」\n［画面のまとめカード（ふりかえり）］二人の答え合わせ ・論点1 配達員は1階で帰る: 配り比べへ ・論点2 留守の置き配: 人の配達では始まっている ・論点3 建物の設備: もうあるものにつながった\n［画面のまとめカード（札の対象）］札を付ける問い ・どこで: ふつうのマンションや団地で ・何を: 留守でも玄関の前までロボットが届ける ・いつ: 使えるようになるのはいつか ・札: もうすぐ来る／3年はかかる／根拠待ち／まだ眉唾",
       "narrator": "dialogue",
-      "lines_hash": "03b0b3a5a8eb"
+      "lines_hash": "03b0b3a5a8eb",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "scene_id": 13,
@@ -2947,7 +2975,11 @@
       ],
       "narration": "沙織「今月できるのは、先月、再配達を何回頼んだか、数えてみること。家の分だけじゃなく、店や会社に届く荷物の分も。」\n大輔「そのうえで、次の通販では、受け取り方の欄で、置き配や宅配ボックスを選べるか見てみる。」\n大輔「配り比べの結果が出たら、また同じ問いで確かめよう。」\n沙織「そのときは、配達員が建物の中にいた時間が、何分減ったか、の数字も一緒にね。」\n大輔「次はどんな研究が、誰かの幸せな未来を運んでくるのか。」\n沙織「それが本物かどうか、また一緒に確かめましょう。元の発表は概要欄に載せています。チャンネル登録して、待っていてください。」\n［画面のまとめカード（次の一歩）］今月できる一歩 ・先月、再配達を何回頼んだか数える（家・店・会社） ・次の通販で、受け取り方の欄を見る ・置き配・宅配ボックスを選べるか確かめる",
       "narrator": "dialogue",
-      "lines_hash": "92cbfdaf2506"
+      "lines_hash": "92cbfdaf2506",
+      "zoom_anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
     }
   ],
   "shorts": [
