@@ -612,3 +612,7 @@
 {"ts": "2026-11-24T10:06:10+09:00", "kind": "applied", "agent": "kl-writer", "episode": "kl061", "ids": ["KL2611-02"], "skipped": [], "reason": ""}
 {"ts": "2026-11-24T10:06:50+09:00", "kind": "call", "agent": "kl-writer", "session": "1b69e916-177f-48ba-ada9-2590bfb10fab"}
 {"ts": "2026-11-24T10:06:58+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl061", "step": "5.5", "result": "ok", "retries": 0, "note": "r1直し: 直す4全反映・できれば6反映。直したシーン S5,S8,S9,S10,S12,S13"}
+{"ts": "2026-11-24T10:14:41+09:00", "kind": "call", "agent": "kl-first-viewer", "session": "1b69e916-177f-48ba-ada9-2590bfb10fab"}
+{"ts": "2026-11-24T10:14:53+09:00", "kind": "work", "agent": "kl-first-viewer", "episode": "kl061", "step": "5.5", "result": "ok", "retries": 0, "note": "r2差分: 前回4件すべて直った・新規 致命的0・直す0・できれば6"}
+{"ts": "2026-11-24T10:15:51+09:00", "kind": "call", "agent": "kl-writer", "session": "1b69e916-177f-48ba-ada9-2590bfb10fab"}
+{"ts": "2026-11-24T10:16:09+09:00", "kind": "work", "agent": "kl-writer", "episode": "kl061", "step": "5.5", "result": "ok", "retries": 0, "note": "r2できれば1〜4反映。直したシーン S8,S9,S11(カード),S12。S8『箱から』は推測のため進行担当が削除"}

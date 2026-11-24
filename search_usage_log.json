@@ -1889,6 +1889,20 @@
       "queries": 0,
       "json_failed": false,
       "reformat": "none"
+    },
+    {
+      "at": "2026-11-24T10:18:28",
+      "kind": "check_reference",
+      "queries": 0,
+      "json_failed": false,
+      "reformat": "none"
+    },
+    {
+      "at": "2026-11-24T10:18:40",
+      "kind": "check_reference",
+      "queries": 0,
+      "json_failed": false,
+      "reformat": "none"
     }
   ],
   "totals": {
@@ -1907,7 +1921,7 @@
       "reformat_failed": 0
     },
     "check_reference": {
-      "calls": 224,
+      "calls": 226,
       "queries": 8,
       "json_failed": 0,
       "reformat_ok": 0,
