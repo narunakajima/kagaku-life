@@ -1805,6 +1805,76 @@
       "queries": 0,
       "json_failed": false,
       "reformat": "none"
+    },
+    {
+      "at": "2026-11-24T09:25:28",
+      "kind": "prior_art",
+      "queries": 0,
+      "json_failed": false,
+      "reformat": "none"
+    },
+    {
+      "at": "2026-11-24T09:44:53",
+      "kind": "check_reference",
+      "queries": 0,
+      "json_failed": false,
+      "reformat": "none"
+    },
+    {
+      "at": "2026-11-24T09:45:16",
+      "kind": "check_reference",
+      "queries": 0,
+      "json_failed": false,
+      "reformat": "none"
+    },
+    {
+      "at": "2026-11-24T09:45:34",
+      "kind": "check_reference",
+      "queries": 0,
+      "json_failed": false,
+      "reformat": "none"
+    },
+    {
+      "at": "2026-11-24T09:49:43",
+      "kind": "check_reference",
+      "queries": 0,
+      "json_failed": false,
+      "reformat": "none"
+    },
+    {
+      "at": "2026-11-24T09:50:00",
+      "kind": "check_reference",
+      "queries": 0,
+      "json_failed": false,
+      "reformat": "none"
+    },
+    {
+      "at": "2026-11-24T09:50:21",
+      "kind": "check_reference",
+      "queries": 0,
+      "json_failed": false,
+      "reformat": "none"
+    },
+    {
+      "at": "2026-11-24T09:53:26",
+      "kind": "check_reference",
+      "queries": 0,
+      "json_failed": false,
+      "reformat": "none"
+    },
+    {
+      "at": "2026-11-24T09:59:37",
+      "kind": "check_reference",
+      "queries": 0,
+      "json_failed": false,
+      "reformat": "none"
+    },
+    {
+      "at": "2026-11-24T09:59:53",
+      "kind": "check_reference",
+      "queries": 0,
+      "json_failed": false,
+      "reformat": "none"
     }
   ],
   "totals": {
@@ -1816,14 +1886,14 @@
       "reformat_failed": 0
     },
     "prior_art": {
-      "calls": 3,
+      "calls": 4,
       "queries": 0,
       "json_failed": 0,
       "reformat_ok": 0,
       "reformat_failed": 0
     },
     "check_reference": {
-      "calls": 213,
+      "calls": 222,
       "queries": 8,
       "json_failed": 0,
       "reformat_ok": 0,
