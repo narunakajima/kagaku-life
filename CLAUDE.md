@@ -509,3 +509,4 @@ Claude in Chrome の作業（YouTube Studio の操作など）は、**制作専�
 - セッション開始時に、残っている「Claude」タブグループがあれば、中身が作業中でないことを確認して閉じる
 - 自分の作業で開いたグループは、作業終了時に必ず閉じる
 - 閉じられないグループがある場合は #cc-reports で報告する
+- 制作専用 Chrome でグループを閉じたあとは `list_connected_browsers` で一覧し、制作専用 Chrome が消えていたら `~/lamp-whisper/tools/lw-chrome-production.sh --no-url --background` で空ウィンドウを開き直す（グループの最後のタブがウィンドウの最後のタブだと、ウィンドウごと閉じて拡張の接続が切れるため。プロセスは動いたままなので、二重起動にはならない。2026-11-24）
